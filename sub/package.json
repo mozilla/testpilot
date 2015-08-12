@@ -1,0 +1,16 @@
+{
+  "title": "Idea Town",
+  "name": "idea-town-addon",
+  "version": "0.0.1",
+  "description": "The addon where ideas come to idea",
+  "main": "index.js",
+  "author": "Les Orchard <lorchard@mozilla.com>",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "jpm": "^1.0.1"
+  }
+}
