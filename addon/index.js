@@ -23,5 +23,5 @@ var button = buttons.ActionButton({
 });
 
 function handleClick(state) {
-  tabs.open("http://developer.mozilla.org/");
+  tabs.open("https://ideatown.firefox.com/");
 }
