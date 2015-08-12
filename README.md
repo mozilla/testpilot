@@ -7,5 +7,6 @@ yay all the ideas
 
 ## Info
 IRC: #ideatown
+
 WIKI: https://wiki.mozilla.org/Idea-Town
 
