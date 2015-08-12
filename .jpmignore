@@ -1,0 +1,11 @@
+README.md
+CONTRIBUTING.md
+.editorconfig
+.gitignore
+.jpmignore
+.git
+*.zip
+*.xpi
+*.xcf
+stub-content
+test
