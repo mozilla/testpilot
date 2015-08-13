@@ -16,6 +16,14 @@ IRC: #ideatown
 
 WIKI: https://wiki.mozilla.org/Idea-Town
 
+## Hacking TL;DR
+
+* [Install Docker](http://docs.docker.com/mac/started/) and docker-compose
+
+* `docker up`
+
+* Visit http://0.0.0.0:8000
+
 Run the tests
 -------------
 

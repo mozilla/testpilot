@@ -7,3 +7,5 @@ MANIFEST
 .coverage
 node_modules/
 static/
+static-src/vendor/
+venv/
