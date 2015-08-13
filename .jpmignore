@@ -7,5 +7,6 @@ CONTRIBUTING.md
 *.zip
 *.xpi
 *.xcf
+node_modules
 stub-content
 test
