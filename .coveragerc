@@ -1,0 +1,5 @@
+[run]
+source = idea_town
+
+[report]
+omit = */migrations/*
