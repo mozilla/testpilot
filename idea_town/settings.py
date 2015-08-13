@@ -32,8 +32,8 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 # Application definition
 
 INSTALLED_APPS = [
-    'django_gulp',
-    
+    #'django_gulp',
+
     # Project specific apps
     'idea_town.base',
 
