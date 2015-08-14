@@ -1,0 +1,129 @@
+#logo-header {
+  z-index: 2;
+
+  .splash-logo {
+    @include hidpi-background-image('town', 855px 374px);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    position: relative;
+    top: 37px;
+
+    @include respond-to('med-large') {
+      height: 374px;
+      max-width: 855px; 
+    }
+
+    @include respond-to('med-small') {
+      background-size: auto 187px;
+      height: 211px;
+      max-width: 100%; 
+      top: -6px;
+    }
+  }
+}
+
+#logo-header,
+.logo-stripe {
+  position: relative;
+
+  @include respond-to('med-large') {
+    height: 400px;
+  }
+
+  @include respond-to('med-small') {
+    height: 200px;
+  }
+}
+
+#splash-cta-container {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+#splash-cta {
+  text-align: center;
+
+  h1 {
+    margin: 0;
+
+    @include respond-to('med-small') {
+      font-size: 7vw;
+    }
+
+    @include respond-to('med-large') {
+      font-size: 64px;
+    }
+  }
+
+  h2 {
+    line-height: 30px;
+    margin: 0 auto 12px;
+
+    @include respond-to('small') {
+      font-size: 18px;
+    }
+
+    @include respond-to('med-small') {
+      font-size: 20px;
+      max-width: 650px;
+    }
+
+    @include respond-to('med-large') {
+      font-size: 24px;
+      line-height: 32px;
+      max-width: 650px;
+    }
+  }
+}
+
+#splash-content {
+
+  .splash-image {
+    background: $dark;
+    background-position: center center;
+    border-radius: 50%;
+    height: 150px;
+    margin: 14px auto 24px;
+    width: 150px;
+
+    &.try {
+      @include hidpi-background-image('try', 150px 150px);
+    }
+
+    &.feedback {
+      @include hidpi-background-image('feedback', 150px 150px);
+    }
+
+    &.build {
+      @include hidpi-background-image('build', 150px 150px);
+    }
+
+  }
+
+  .splash-title {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .splash-copy-point {
+    font-size: 18px;
+    margin: 0 auto;
+    max-width: 320px;
+    text-align: center;
+  }
+}
+
+.disclaimer {
+  color: $grey;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 24px 0 2px;
+
+  a {
+    color: $grey;
+    font-weight: 400;
+  }
+}

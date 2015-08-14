@@ -1,0 +1,11 @@
+.env
+*.pyc
+.DS_Store
+docs/_build
+.tox/
+MANIFEST
+.coverage
+node_modules/
+static/
+static-src/vendor/
+venv/
