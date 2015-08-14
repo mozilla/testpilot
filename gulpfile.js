@@ -16,6 +16,7 @@ const sass = require('gulp-sass');
 const source = require('vinyl-source-stream');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
+const connect = require('gulp-connect');
 
 const IS_DEBUG = true;
 
@@ -72,8 +73,7 @@ gulp.task('scripts', function scriptsTask() {
     .pipe(uglify())
     .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./static/scripts'))
-    .pipe(notify({ message: 'Scripts task complete' }));
+    .pipe(gulp.dest('./static/scripts'));
 });
 
 // Styles
@@ -84,16 +84,14 @@ gulp.task('styles', function stylesTask() {
     .pipe(gulp.dest('static/styles'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss())
-    .pipe(gulp.dest('static/styles'))
-    .pipe(notify({ message: 'Styles task complete' }));
+    .pipe(gulp.dest('static/styles'));
 });
 
 // Images
 gulp.task('images', function imagesTask() {
   return gulp.src('./static-src/images/**/*')
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('static/images'))
-    .pipe(notify({ message: 'Images task complete' }));
+    .pipe(gulp.dest('static/images'));
 });
 
 gulp.task('vendor', function vendorTask(done) {
@@ -116,8 +114,21 @@ gulp.task('build', function buildTask(done) {
 });
 
 // Watches the things
-gulp.task('default', ['build'], function defaultTask() {
+gulp.task('watch', ['build'], function watchTask () {
   gulp.watch('static-src/styles/**/*', ['styles']);
   gulp.watch('static-src/images/**/*', ['images']);
   gulp.watch('static-src/scripts/**/*', ['scripts']);
 });
+
+// Set up a webserver for the static assets
+gulp.task('connect', function connectTask () {
+  connect.server({
+    root: 'static',
+    livereload: false,
+    port: 9988
+  });
+});
+
+gulp.task('server', ['build', 'connect', 'watch']);
+
+gulp.task('default', ['server']);
