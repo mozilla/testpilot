@@ -1,17 +1,14 @@
-var Promise = require("bluebird");
-var App = require('ampersand-app');
+const App = require('ampersand-app');
 /*
-var AppModel = require('./js/models/App');
-var AppView = require('./js/views/App');
-var AppRouter = require('./js/Router');
-var StartupView = require('./js/views/Startup');
+const AppModel = require('./js/models/App');
+const AppView = require('./js/views/App');
+const AppRouter = require('./js/Router');
+const StartupView = require('./js/views/Startup');
 */
 
 module.exports = App.extend({
-
-  initialize: function () {
-
-    console.log("HELLO WORLD!");
+  initialize: function appInitialize() {
+    console.log('HELLO WORLD!');
 
     /*
     this.model = new AppModel();
@@ -30,7 +27,5 @@ module.exports = App.extend({
       hashChange: true
     });
     */
-
   }
-
 });

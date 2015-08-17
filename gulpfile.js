@@ -1,67 +1,66 @@
-var debug = true;
+const autoprefixer = require('gulp-autoprefixer');
+const babelify = require('babelify');
+const browserify = require('browserify');
+const buffer = require('vinyl-buffer');
+const cache = require('gulp-cache');
+const del = require('del');
+const eslint = require('gulp-eslint');
+const gulp = require('gulp');
+const gutil = require('gulp-util');
+const imagemin = require('gulp-imagemin');
+const minifycss = require('gulp-minify-css');
+const notify = require('gulp-notify');
+const rename = require('gulp-rename');
+const runSequence = require('run-sequence');
+const sass = require('gulp-sass');
+const source = require('vinyl-source-stream');
+const sourcemaps = require('gulp-sourcemaps');
+const uglify = require('gulp-uglify');
 
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var sass = require('gulp-sass');
-var imagemin = require('gulp-imagemin');
-var sass = require('gulp-sass');
-var del = require('del');
-var runSequence = require('run-sequence');
-var rename = require('gulp-rename');
-var browserify = require('browserify');
-var babelify = require('babelify');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
-var sourcemaps = require('gulp-sourcemaps');
-var notify = require('gulp-notify');
-var eslint = require('gulp-eslint');
-var autoprefixer = require('gulp-autoprefixer');
-var minifycss = require('gulp-minify-css');
-var uglify = require('gulp-uglify');
-var cache = require('gulp-cache');
+const IS_DEBUG = true;
 
 // Lint the gulpfile
-gulp.task('selfie', function(){
+gulp.task('selfie', function selfieTask() {
   return gulp.src('gulpfile.js')
     .pipe(eslint())
     .pipe(eslint.format());
 });
 
 // Lint the *.js files
-gulp.task('lint', function() {
+gulp.task('lint', function lintTask() {
   return gulp.src(['*.js', 'static-src/scripts/**/*.js'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failOnError());
 });
 
-gulp.task('clean', function (done) {
+gulp.task('clean', function cleanTask(done) {
   del([
     'static'
   ], done);
 });
 
-gulp.task('npm:tabzilla:img', function() {
+gulp.task('npm:tabzilla:img', function npmTabzillaImgTask() {
   return gulp.src('node_modules/mozilla-tabzilla/media/**')
     .pipe(gulp.dest('static/vendor/mozilla-tabzilla/media'));
 });
 
-gulp.task('npm:tabzilla:css', function() {
+gulp.task('npm:tabzilla:css', function npmTabzillaCssTask() {
   return gulp.src('./node_modules/mozilla-tabzilla/css/tabzilla.css')
     .pipe(rename('mozilla-tabzilla/css/tabzilla.scss'))
     .pipe(gulp.dest('./static-src/vendor'));
 });
 
-gulp.task('npm:normalize', function() {
+gulp.task('npm:normalize', function npmNormalizeTask() {
   return gulp.src('./node_modules/normalize.css/normalize.css')
     .pipe(rename('normalize.css/normalize.scss'))
     .pipe(gulp.dest('./static-src/vendor'));
 });
 
 // Scripts
-gulp.task('scripts', function () {
-  var b = browserify('./static-src/scripts/main.js', {
-    debug: debug
+gulp.task('scripts', function scriptsTask() {
+  const b = browserify('./static-src/scripts/main.js', {
+    debug: IS_DEBUG
   });
 
   return b
@@ -78,7 +77,7 @@ gulp.task('scripts', function () {
 });
 
 // Styles
-gulp.task('styles', function () {
+gulp.task('styles', function stylesTask() {
   return gulp.src('./static-src/styles/main.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer('last 2 version'))
@@ -90,14 +89,14 @@ gulp.task('styles', function () {
 });
 
 // Images
-gulp.task('images', function() {
+gulp.task('images', function imagesTask() {
   return gulp.src('./static-src/images/**/*')
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest('static/images'))
     .pipe(notify({ message: 'Images task complete' }));
 });
 
-gulp.task('vendor', function (done) {
+gulp.task('vendor', function vendorTask(done) {
   return runSequence([
     'npm:tabzilla:img',
     'npm:tabzilla:css',
@@ -105,7 +104,7 @@ gulp.task('vendor', function (done) {
   ], done);
 });
 
-gulp.task('build', function (done) {
+gulp.task('build', function buildTask(done) {
   runSequence(
     'clean',
     'vendor',
@@ -117,7 +116,7 @@ gulp.task('build', function (done) {
 });
 
 // Watches the things
-gulp.task('default', ['build'], function() {
+gulp.task('default', ['build'], function defaultTask() {
   gulp.watch('static-src/styles/**/*', ['styles']);
   gulp.watch('static-src/images/**/*', ['images']);
   gulp.watch('static-src/scripts/**/*', ['scripts']);
