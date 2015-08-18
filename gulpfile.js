@@ -23,6 +23,12 @@ const IS_DEBUG = true;
 const SRC_PATH = './client-src/';
 const DEST_PATH = './client-build/';
 
+// HACK: Under Docker, the node_modules install has been moved.
+// So, look for the vendor assets there. Otherwise, look in current dir
+const NODE_MODULES_PATH = ('NODE_PATH' in process.env) ?
+    process.env.NODE_PATH.split(':')[0] :
+    './node_modules/';
+
 // Lint the gulpfile
 gulp.task('selfie', function selfieTask() {
   return gulp.src('gulpfile.js')
@@ -45,20 +51,20 @@ gulp.task('clean', function cleanTask(done) {
 });
 
 gulp.task('npm:tabzilla:img', function npmTabzillaImgTask() {
-  return gulp.src('node_modules/mozilla-tabzilla/media/**')
+  return gulp.src(NODE_MODULES_PATH + 'mozilla-tabzilla/media/**')
     .pipe(gulp.dest(DEST_PATH + 'vendor/mozilla-tabzilla/media'));
 });
 
 // Copy the tabzilla assets into the src dir for inclusion in minimization
 gulp.task('npm:tabzilla:css', function npmTabzillaCssTask() {
-  return gulp.src('./node_modules/mozilla-tabzilla/css/tabzilla.css')
+  return gulp.src(NODE_MODULES_PATH + 'mozilla-tabzilla/css/tabzilla.css')
     .pipe(rename('mozilla-tabzilla/css/tabzilla.scss'))
     .pipe(gulp.dest(SRC_PATH + 'vendor'));
 });
 
 // Copy the normalize assets into the src dir for inclusion in minimization
 gulp.task('npm:normalize', function npmNormalizeTask() {
-  return gulp.src('./node_modules/normalize.css/normalize.css')
+  return gulp.src(NODE_MODULES_PATH + 'normalize.css/normalize.css')
     .pipe(rename('normalize.css/normalize.scss'))
     .pipe(gulp.dest(SRC_PATH + 'vendor'));
 });
