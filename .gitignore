@@ -8,5 +8,6 @@ MANIFEST
 .coverage
 node_modules/
 static/
-static-src/vendor/
+client-build/
+client-src/vendor/
 venv/
