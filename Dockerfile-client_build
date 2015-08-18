@@ -1,0 +1,20 @@
+FROM node:0.12.7
+
+EXPOSE 9988
+CMD ["./bin/run-client-build.sh"]
+
+RUN adduser --uid 1000 --disabled-password --gecos '' webdev
+
+WORKDIR /app
+
+# docker-compose mounts the project under /app. So, install all the node
+# dependencies in /home/webdev to have a copy of them in the container
+# that doesn't get clobbered.
+
+COPY package.json /home/webdev/package.json
+RUN cd /home/webdev && npm install
+
+COPY . /app
+
+RUN chown webdev.webdev -R . /home/webdev
+USER webdev

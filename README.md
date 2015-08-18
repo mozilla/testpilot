@@ -20,9 +20,37 @@ WIKI: https://wiki.mozilla.org/Idea-Town
 
 * [Install Docker](http://docs.docker.com/mac/started/) and docker-compose
 
-* `docker up`
+* Make sure you have a default Docker machine, i.e.:
+  * `docker-machine create -driver virtualbox default`
 
-* Visit http://0.0.0.0:8000
+* Make sure your shell can see the default Docker machine, i.e.:
+  * `eval "$(docker-machine env default)"`
+
+* Create & set up the Docker containers:
+  * `docker-compose up`
+  * This may take some time.
+  * Note! A papercut: Sometimes the database container is not yet fully started
+    up when the Django container wants to connect to it. When this happens, just
+    try `docker-compose up` again. ([Ugh, this is a known bug in
+    docker-compose][dc-bug]. Maybe we can find a workaround?)
+
+* To see the IP address of the default Docker machine:
+  * `docker-machine ip default` 
+
+* To visit the Django server:
+  * `open http://$(docker-machine ip default):8000/`
+  * (or, whatever IP was reported by `docker ip` and port 8000)
+
+* To shell into one of the containers, e.g. to run Django commands:
+  * `docker exec -t -i ideatown_server_1 bash`
+
+* If you change `package.json` to add dependencies for `gulpfile.js`, you must rebuild `client_build`:
+  * `docker-compose build client_build`
+
+* If you change `requirements.txt` to add dependencies for Django, you must rebuild `server`:
+  * `docker-compose build server`
+
+[dc-bug]: https://github.com/docker/compose/issues/374
 
 Run the tests
 -------------
