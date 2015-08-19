@@ -12,10 +12,12 @@ import os
 
 import dj_database_url
 from decouple import Csv, config
-
+import logging
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+SITE_ID = 1
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -28,21 +30,27 @@ DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
-
 # Application definition
 
 INSTALLED_APPS = [
     # Project specific apps
     'idea_town.base',
+    'idea_town.accounts',
 
     # Third party apps
     'django_jinja',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'idea_town.accounts.providers.fxa',
 
     # Django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
@@ -61,6 +69,36 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'csp.middleware.CSPMiddleware',
 )
+
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+SOCIALACCOUNT_PROVIDERS = {
+    'fxa': dict(
+        ACCESS_TOKEN_URL=config(
+            'FXA_ACCESS_TOKEN_URL',
+            default='https://oauth.accounts.firefox.com/v1/token'),
+        AUTHORIZE_URL=config(
+            'FXA_AUTHORIZE_URL',
+            default='https://oauth.accounts.firefox.com/v1/authorization'),
+        PROFILE_URL=config(
+            'FXA_PROFILE_URL',
+            default='https://profile.accounts.firefox.com/v1/profile'),
+        SCOPE=["profile"]
+    )
+}
+
+SOCIALACCOUNT_AUTO_SIGNUP = True
+
+SOCIALACCOUNT_EMAIL_VERIFICATION = False
+
+ACCOUNT_EMAIL_VERIFICATION = False
 
 ROOT_URLCONF = 'idea_town.urls'
 
@@ -107,7 +145,7 @@ TEMPLATES = [
         'BACKEND': 'django_jinja.backend.Jinja2',
         'APP_DIRS': True,
         'OPTIONS': {
-            'match_regex': r'^(?!!(admin|registration)/.*)',
+            'match_regex': r'^(?!(admin)/.*)',
             'match_extension': '.html',
             'newstyle_gettext': True,
             'context_processors': [
@@ -127,7 +165,12 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
+                'django.template.context_processors.request',
                 'django.contrib.messages.context_processors.messages',
+
+                # `allauth` needs this from django
+                'django.template.context_processors.request',
+
             ],
         }
     },
@@ -166,3 +209,31 @@ CSP_STYLE_SRC = (
     'http://*.mozilla.net',
     'https://*.mozilla.net',
 )
+
+if DEBUG:
+
+    LOG_LEVEL = logging.DEBUG
+
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'handlers': {
+            'console': {
+                'level': 'DEBUG',
+                'class': 'logging.StreamHandler',
+                'formatter': 'verbose'
+            },
+        },
+        'formatters': {
+            'verbose': {
+                'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+            },
+        },
+        'loggers': {
+            'idea_town': {
+                'handlers': ['console'],
+                'propagate': True,
+                'level': logging.DEBUG,
+            },
+        },
+    }
