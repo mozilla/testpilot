@@ -1,1 +1,14 @@
 .git
+tmp/
+.env
+*.sw?
+*.pyc
+.DS_Store
+docs/
+.tox/
+.coverage
+node_modules/
+venv/
+MANIFEST
+LICENSE
+README.md

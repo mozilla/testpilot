@@ -26,6 +26,14 @@ WIKI: https://wiki.mozilla.org/Idea-Town
 * Make sure your shell can see the default Docker machine, i.e.:
   * `eval "$(docker-machine env default)"`
 
+* To see the IP address of the default Docker machine:
+  * `docker-machine ip default` 
+
+* Add an entry for `ideatown.dev` in your `/etc/hosts` pointing to the Docker machine IP
+  * `192.168.99.100 ideatown.dev`
+  * This entry is necessary to support Firefox Accounts. (Possibly, also static
+    assets in the future)
+
 * Create & set up the Docker containers:
   * `docker-compose up`
   * This may take some time.
@@ -34,11 +42,8 @@ WIKI: https://wiki.mozilla.org/Idea-Town
     try `docker-compose up` again. ([Ugh, this is a known bug in
     docker-compose][dc-bug]. Maybe we can find a workaround?)
 
-* To see the IP address of the default Docker machine:
-  * `docker-machine ip default` 
-
 * To visit the Django server:
-  * `open http://$(docker-machine ip default):8000/`
+  * `open http://ideatown.dev:8000/`
   * (or, whatever IP was reported by `docker ip` and port 8000)
 
 * To shell into one of the containers, e.g. to run Django commands:

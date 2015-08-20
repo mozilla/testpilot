@@ -1,43 +1,7 @@
-<!DOCTYPE html>
+{% extends "idea_town/base.html" %}
 
-<html lang="{{ LANG }}" dir="{{ DIR }}">
+{% block page_title %}Home{% endblock %}
 
-  <head>
-    <title>sugardough - mozilla webdev</title>
-  </head>
-  <body>
-    <style>
-      @font-face {
-        font-family: 'Fira Sans';
-        font-style: normal;
-        font-weight: 400;
-        src: url('https://mozilla.org/media/fonts/FiraSans-Regular.eot?#iefix') ('embedded-opentype'), url('https://mozilla.org/media/fonts/FiraSans-Regular.woff') ('woff'), , url('https://mozilla.org/media/fonts/FiraSans-Regular.ttf') ('truetype');
-      }
-
-      body {
-        background: #1E1E21 radial-gradient(ellipse farthest-side at left top , #00549E 0px, transparent 100%) no-repeat scroll 0% 0% / auto 640px;
-        font-family: 'Fira Sans', 'Arial';
-        color: white;
-        margin: 0 auto;
-        width: 80%;
-        text-align: center;
-      }
-      header {
-        font-size: 1.2 rem;
-      }
-      footer {
-        margin-top: 2rem;
-        font-size: 0.9rem;
-      }
-    </style>
-    <header>
-      <h1>mozilla webdev</h1>
-    </header>
-    It works! Now build something.
-    <footer>
-      
-        {{ thisyear() }}
-      
-    </footer>
-  </body>
-</html>
+{% block content %}
+    <h1>Home page</h1>
+{% endblock %}
