@@ -1,8 +1,10 @@
 /* Styles for the stub content */
 body, html { margin: 1em; padding: 0; }
 
-.when-addon-available { display: none }
-.when-addon-unavailable { display: block }
+.when-addon-available { display: none; }
+.when-addon-unavailable { display: block; }
 
 body.addon-available .when-addon-available { display: block; }
 body.addon-available .when-addon-unavailable { display: none; }
+
+.update-submit { display: none; }
