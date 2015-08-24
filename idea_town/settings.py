@@ -36,10 +36,15 @@ INSTALLED_APPS = [
     # Project specific apps
     'idea_town.base',
     'idea_town.accounts',
+    'idea_town.experiments',
 
     # Third party apps
     'django_jinja',
+    'django_cleanup',
 
+    'rest_framework',
+
+    # FxA auth handling
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -78,6 +83,15 @@ AUTHENTICATION_BACKENDS = (
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 )
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ],
+    'PAGE_SIZE': 10
+}
 
 SOCIALACCOUNT_PROVIDERS = {
     'fxa': dict(
@@ -145,12 +159,13 @@ TEMPLATES = [
         'BACKEND': 'django_jinja.backend.Jinja2',
         'APP_DIRS': True,
         'OPTIONS': {
-            'match_regex': r'^(?!(admin)/.*)',
+            'match_regex': r'^(?!(admin|rest_framework)/.*)',
             'match_extension': '.html',
             'newstyle_gettext': True,
             'context_processors': [
                 'idea_town.base.context_processors.settings',
                 'idea_town.base.context_processors.i18n',
+                'django.template.context_processors.media',
             ],
         }
     },

@@ -8,6 +8,7 @@ docs/_build
 MANIFEST
 .coverage
 node_modules/
+media/
 static/
 client-build/
 client-src/vendor/

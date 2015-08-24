@@ -128,3 +128,18 @@ requests==2.7.0
 
 # sha256: x9LubC6MWKD9YMLX0hzpPI0rIuep8jLUv5FTJq-0ea8
 requests_oauthlib==0.5.0
+
+# sha256: DxedfnXnyDtjQblZXKHzlN5wgUhKnjUq1m1VOhw9qik
+Pillow==2.9.0
+
+# sha256: R7yJ6jHs9gbi9FPg5MXWNAgs9dsWC48vszi1HCXmeRo
+django-cleanup==0.3.1
+
+# sha256: 3zu65Xjyl2dXG1zmekcC_hTtZxC5e6tZJRpRE7a-w6M
+markdown==2.6.2
+
+# sha256: AMxHk1r7vYMmD90oOwqnkOZY0qcZIgSfbkZ9yooSRTc
+django-filter==0.11.0
+
+# sha256: CYQuyxx8OOWmZsBLz6kk9oLvHoLZyECA8Zwot3HQgMU
+djangorestframework==3.2.3
