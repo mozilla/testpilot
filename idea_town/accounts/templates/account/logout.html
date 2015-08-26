@@ -1,0 +1,17 @@
+{% extends "idea_town/base.html" %}
+
+{% block page_title %}{{ _('Sign out') }}{% endblock %}
+
+{% block content %}
+<h1>{{ _('Sign out') }}</h1>
+
+<p>{{ _('Are you sure you want to sign out?') }}</p>
+
+<form method="post" action="{{ url('account_logout') }}">
+  {% csrf_token %} 
+  {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+  {% endif %}
+  <button type="submit">{{ _('Sign out') }}</button>
+</form>
+{% endblock %}

@@ -8,9 +8,8 @@ peep==2.4.1
 # sha256: m7S7kSEJqteivOjiKGp9mgnrzKrv5Br4VYZrZgcVkGA
 peepin==0.11
 
-# sha256: BH0PTJMmKzOAEEmi3N2u8Jwp50HAOpR6NVbqR0ju0uI
-# sha256: K7ZU_MBf1TAXyIyvK8OLXF6iPJH4rH8KKLKQ2vIwW7o
-Django==1.8.3
+# sha256: I3bD2MX0lbMCsRLXIyyEdhEwxDDhhAwFoqArKPF91ZY
+Django==1.8.4
 
 # sha256: 8uJz7TSsu1YJYtXPEpF5NtjfAil98JvTCJuFRtRYQTg
 # sha256: ygF2j97N4TQwHzFwdDIm9g7f9cOTXxJDc3jr2RFQY1M
@@ -104,3 +103,43 @@ Pygments==2.0.2
 
 # sha256: b0wujFraFwOf8cHji8Ub6pMXrzZ24oRmFIyN9fx48TI
 django-jinja==1.4.1
+
+# django-allauth and dependencies
+
+# sha256: zVUdWlGLdFQHY1u4URbrgTgY7K8YLnc8NbNiOfw_JHg
+defusedxml==0.4.1
+
+# TODO: Re-install django-allauth from official sources once this PR is resolved:
+# https://github.com/pennersr/django-allauth/pull/1099
+# sha256: 67kjSmrxku6ahiO8lapstSNVdj0E_u2xmoiM2kC7NGY
+# django-allauth==0.23.0
+
+# sha256: ncGZzRVGv3eOrOdB8TKHKHyzmxffD99JmIFxL7f2Bx4
+https://github.com/lmorchard/django-allauth/archive/oauth2-get-access-token-scope-fix.zip#egg=django-allauth
+
+# sha256: 70v-RmPKO5eplYYMAXO5Z-vZgDPQLzjJ4bLLtsGR2a0
+oauthlib==1.0.3
+
+# sha256: gzCG5VRRXVj-Ofkybq5ckp_0SPD85jUNRfYiycwVkcY
+python3-openid==3.0.6
+
+# sha256: IPl2zc4CpCtpzoDp4DiXpRgUs21EizcohUYIbrxHMUY
+requests==2.7.0
+
+# sha256: x9LubC6MWKD9YMLX0hzpPI0rIuep8jLUv5FTJq-0ea8
+requests_oauthlib==0.5.0
+
+# sha256: DxedfnXnyDtjQblZXKHzlN5wgUhKnjUq1m1VOhw9qik
+Pillow==2.9.0
+
+# sha256: R7yJ6jHs9gbi9FPg5MXWNAgs9dsWC48vszi1HCXmeRo
+django-cleanup==0.3.1
+
+# sha256: 3zu65Xjyl2dXG1zmekcC_hTtZxC5e6tZJRpRE7a-w6M
+markdown==2.6.2
+
+# sha256: AMxHk1r7vYMmD90oOwqnkOZY0qcZIgSfbkZ9yooSRTc
+django-filter==0.11.0
+
+# sha256: CYQuyxx8OOWmZsBLz6kk9oLvHoLZyECA8Zwot3HQgMU
+djangorestframework==3.2.3

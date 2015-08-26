@@ -1,0 +1,8 @@
+{% extends "idea_town/base.html" %}
+
+{% block page_title %}Profile{% endblock %}
+
+{% block content %}
+    <h1>Profile</h1>
+    <p>Welcome, {{ request.user.email }}</p>
+{% endblock %}
