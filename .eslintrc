@@ -1,0 +1,9 @@
+extends:
+  - airbnb/base
+
+rules:
+  comma-dangle: [2, never]
+  no-console: 1
+  no-use-before-define: [2, nofunc]
+  new-cap: 1
+  func-names: 0

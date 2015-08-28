@@ -1,113 +1,156 @@
-const {Cc,Ci,Cr} = require("chrome");
+/*
+ * This Source Code is subject to the terms of the Mozilla Public License
+ * version 2.0 (the "License"). You can obtain a copy of the License at
+ * http://mozilla.org/MPL/2.0/.
+ */
 
-var self = require('sdk/self');
-var pageMod = require("sdk/page-mod");
-var buttons = require('sdk/ui/button/action');
-var tabs = require("sdk/tabs");
+const {Cu} = require('chrome');
+const self = require('sdk/self');
+const tabs = require('sdk/tabs');
+const pageMod = require('sdk/page-mod');
+const buttons = require('sdk/ui/button/action');
+const AddonManager = Cu.import('resource://gre/modules/AddonManager.jsm').AddonManager;
+const prefs = require('sdk/simple-prefs').prefs;
+const updates = require('./package.json').UPDATES;
+const state = {updates: updates.map(function(u) {
+                        return u.title;
+                      })};
 
-// TODO: Make these configurable in prefs?
-var CONTENT_URL = 'http://localhost:8899/stub-content/index.html';
-var ALLOWED_ORIGINS = [
-  'http://localhost:8899/*',
-  'https://ideatown.firefox.com/*',
-  'https://mozilla.github.io/idea-town-addon/stub-content/',
-  'https://lmorchard.github.io/idea-town-addon/stub-content/'
-];
-
-pageMod.PageMod({
-  include: ALLOWED_ORIGINS,
-  contentScriptFile: self.data.url("message-bridge.js"),
+const mod = new pageMod.PageMod({
+  include: prefs.ALLOWED_ORIGINS.split(','),
+  contentScriptFile: self.data.url('message-bridge.js'),
   contentScriptWhen: 'start',
   onAttach: setupWorker
 });
 
-var button = buttons.ActionButton({
-  id: "idea-town-link",
-  label: "Idea Town",
+const button = buttons.ActionButton({
+  id: 'idea-town-link',
+  label: 'Idea Town',
   icon: {
-    "16": "./icon-16.png",
-    "32": "./icon-32.png",
-    "64": "./icon-64.png"
+    '16': './icon-16.png',
+    '32': './icon-32.png',
+    '64': './icon-64.png'
   },
-  onClick: function () {
-    // Look for an existing tab, close if found.
-    // TODO: This might not be the best thing
-    for each (var tab in tabs) {
-      if (tab.url === CONTENT_URL) { tab.close(); }
-    }
-    // Otherwise, open a new tab.
-    tabs.open({ url: CONTENT_URL });
+  badge: state.updates.length,
+  badgeColor: prefs.BADGE_COLOR,
+  onClick: function() {
+    tabs.open({ url: prefs.CONTENT_URL });
   }
 });
 
-function setupWorker (worker) {
-  worker.port.on('from-web-to-addon', function (msg) {
+
+function sendToWeb(data) {
+  mod.port.emit('from-addon-to-web', data);
+}
+
+function formatInstallData(install, addon) {
+  let formatted = {
+    'name': install.name ? install.name : '',
+    'error': install.error,
+    'state': install.state,
+    'version': install.version ? install.version : '',
+    'progress': install.progress,
+    'maxProgress': install.maxProgress
+  };
+
+  if (addon) {
+    formatted = require('xtend')(formatted, {
+      'description': addon.description,
+      'homepageURL': addon.homepageURL,
+      'iconURL': addon.iconURL,
+      'size': addon.size,
+      'signedState': addon.signedState,
+      'permissions': addon.permissions
+    });
+  }
+
+  return formatted;
+}
+
+function installAddon(data) {
+  AddonManager.getInstallForURL(data, function(install) {
+    install.install();
+  }, 'application/x-xpinstall');
+}
+
+function filterUpdates(approvedUpdates) {
+  const filteredUpdates = [];
+  approvedUpdates.forEach(function(appUpdate) {
+    filteredUpdates.push(updates.find(function(update) {
+                            return update.title === appUpdate;
+                          }));
+  });
+
+  return filteredUpdates;
+}
+
+function triggerInstalls(approvedUpdates) {
+  filterUpdates(approvedUpdates).forEach(function(update) {
+    installAddon(update.url);
+  });
+}
+
+function setupWorker() {
+  if (self.loadReason === 'install') {
+    sendToWeb({type: 'addon-self:installed'});
+  } else if (self.loadReason === 'enable') {
+    sendToWeb({type: 'addon-self:enabled'});
+  } else if (self.loadReason === 'upgrade') {
+    sendToWeb({type: 'addon-self:upgraded'});
+  }
+
+  mod.port.on('from-web-to-addon', function(msg) {
     if (!msg.type) { return; }
     switch (msg.type) {
-      case 'loaded':
-        sendToWeb(worker, { type: 'addon-available' });
-        break;
-      case 'thing1':
-        thing1(worker, msg.data);
-        break;
-      default:
-        console.log('ADDON RECEIVED FROM WEB', msg);
-        sendToWeb(worker, { type: 'echo', data: msg });
-        break;
+    case 'update-check':
+      sendToWeb({ type: 'addon-updates', detail: state.updates });
+      break;
+    case 'update-approve':
+      state.updates = require('exclude')(state.updates, msg.detail);
+      button.badge = state.updates.length;
+      triggerInstalls(msg.detail);
+      break;
+    case 'loaded':
+      sendToWeb({ type: 'addon-available' });
+      break;
+    default:
+      sendToWeb({ type: 'echo', data: msg });
+      break;
     }
   });
-}
 
-function sendToWeb(worker, data) {
-  worker.port.emit('from-addon-to-web', data);
-}
+  const installListeners = {
+    onInstallEnded: function(install, addon) {
+      sendToWeb({type: 'addon-install:install-ended', detail: formatInstallData(install, addon)});
+    },
+    onInstallFailed: function(install) {
+      sendToWeb({type: 'addon-install:install-failed', detail: formatInstallData(install)});
+    },
+    onInstallStarted: function(install) {
+      sendToWeb({type: 'addon-install:install-started', detail: formatInstallData(install)});
+    },
+    onNewInstall: function(install) {
+      sendToWeb({type: 'addon-install:install-new', detail: formatInstallData(install)});
+    },
+    onInstallCancelled: function(install) {
+      sendToWeb({type: 'addon-install:install-cancelled', detail: formatInstallData(install)});
+    },
+    onDownloadStarted: function(install) {
+      sendToWeb({type: 'addon-install:download-started', detail: formatInstallData(install)});
+    },
+    onDownloadProgress: function(install) {
+      sendToWeb({type: 'addon-install:download-progress', detail: formatInstallData(install)});
+    },
+    onDownloadEnded: function(install) {
+      sendToWeb({type: 'addon-install:download-ended', detail: formatInstallData(install)});
+    },
+    onDownloadCancelled: function(install) {
+      sendToWeb({type: 'addon-install:download-cancelled', detail: formatInstallData(install)});
+    },
+    onDownloadFailed: function(install) {
+      sendToWeb({type: 'addon-install:download-failed', detail: formatInstallData(install)});
+    }
+  };
 
-function thing1 (worker, data) {
-  appendNotificationBox({
-    value: 'idea-town-feed-detected',
-    label: 'Idea Town has an idea for this page.',
-    buttons: [
-      { label: "Make it happen!",
-        accessKey: "w", popup: null,
-        callback: function (bar, button) {
-          sendToWeb(worker, { type: 'alert', message: "MAKING IT HAPPEN" });
-        }
-      },
-      { label: "I like ideas!",
-        accessKey: "p", popup: null,
-        callback: function (bar, button) {
-          sendToWeb(worker, { type: 'alert', message: "IDEAS LIKED" });
-          sendToWeb(worker, "IDEAS ARE LIKED");
-        }
-      },
-      { label: "Go away",
-        accessKey: "s", popup: null,
-        callback: function (bar, button) {
-          sendToWeb(worker, { type: 'alert', message: "GOING AWAY" });
-        }
-      },
-    ]
-  });
-}
-
-function appendNotificationBox(options) {
-
-  var WM = Cc['@mozilla.org/appshell/window-mediator;1'].
-    getService(Ci.nsIWindowMediator);
-  var win = WM.getMostRecentWindow('navigator:browser');
-  var browser = win.gBrowser;
-  var notifyBox = browser.getNotificationBox();
-
-  var label    = options.label || 'Default label';
-  var value    = options.value || 'Default value';
-  var image    = options.image;
-  var buttons  = options.buttons || [];
-  var priority = options.priority || notifyBox.PRIORITY_INFO_LOW;
-  var persistence = options.persistence || 0;
-
-  var box = notifyBox.appendNotification(
-    label, value, image, priority, buttons);
-
-  box.persistence = persistence;
-
+  AddonManager.addInstallListener(installListeners);
 }

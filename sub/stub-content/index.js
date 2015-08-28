@@ -1,9 +1,21 @@
-// Listen for events from the addon and dispatch.
+var statusBox = document.querySelector('.status');
+
+function statusUpdate(msg, detail) {
+  var p = document.createElement('p');
+  p.textContent = msg;
+  statusBox.appendChild(p);
+  console.log('STATUS UPDATE:: ', msg, ' :: ', detail);
+}
+
 window.addEventListener("from-addon-to-web", function (event) {
   if (!event.detail || !event.detail.type) { return; }
+  statusUpdate(event.detail.type, event.detail);
   switch (event.detail.type) {
     case 'addon-available':
-      handleWhenAddonAvailable(event.detail);
+      document.body.classList.add('addon-available');
+      break;
+    case 'addon-updates':
+      renderUpdates(event.detail);
       break;
     default:
       console.log('WEB RECEIVED FROM ADDON', JSON.stringify(event.detail, null, ' '));
@@ -17,12 +29,36 @@ function sendToAddon (data) {
   ));
 }
 
-function handleWhenAddonAvailable () {
-  document.body.classList.add('addon-available');
+sendToAddon({ type: 'loaded' });
+sendToAddon({type: 'update-check'});
+
+function renderUpdates(ev) {
+  var msgEls = ev.detail.map(function(update, i) {
+    var li = document.createElement('li');
+    var check = document.createElement('input');
+    var label = document.createElement('label');
+    check.type = 'checkbox';
+    label.textContent = update;
+
+    li.id = 'update-' + i;
+    li.appendChild(check);
+    li.appendChild(label);
+
+    return li;
+  });
+
+  var list = document.querySelector('.updates');
+  msgEls.forEach(function(msgEl) {
+    list.appendChild(msgEl);
+  });
+
+  if (ev.detail.length) document.querySelector('.update-submit').style.display = 'block';
 }
 
-document.querySelector('button#thing1').addEventListener('click', function (ev) {
-  sendToAddon({ type: 'thing1' });
-});
+document.querySelector('.update-submit').onclick = function(ev) {
+  var approvedUpdates = Array.slice.call(0, document.querySelectorAll('.updates li')).filter(function(el) {
+                          return (el.querySelector('input').checked);
+  }).map(function(el) {return el.textContent});
 
-sendToAddon({ type: 'loaded' });
+  sendToAddon({type: 'update-approve', detail: approvedUpdates});
+}
