@@ -23,11 +23,13 @@
   "devDependencies": {
     "babel-eslint": "^4.1.0",
     "eslint": "^1.2.1",
-    "eslint-config-airbnb": "0.0.8",
+    "eslint-config-airbnb": "^0.0.8",
+    "eslint-config-idea-town": "^1.2.0",
     "jpm": "^1.0.1",
     "st": "^0.5.5"
   },
-  "preferences": [{
+  "preferences": [
+    {
       "name": "CONTENT_URL",
       "title": "Ideatown content URL",
       "description": "Ideatown content URL",
@@ -35,34 +37,35 @@
       "value": "http://localhost:1337/stub-content/index.html"
     },
     {
-        "name": "BADGE_COLOR",
-        "title": "Ideatown Badge Color",
-        "description": "Color of the ideatown badge hex",
-        "type": "string",
-        "value": "#00AAAA"
+      "name": "BADGE_COLOR",
+      "title": "Ideatown Badge Color",
+      "description": "Color of the ideatown badge hex",
+      "type": "string",
+      "value": "#00AAAA"
     },
     {
-        "name": "ALLOWED_ORIGINS",
-        "title": "Allowed origins for addon",
-        "description": "Allowed origins for addon",
-        "type": "string",
-        "value": "http://localhost:1337/*,http://127.0.0.1:1337/*,https://ideatown.firefox.com/*,https://mozilla.github.io/idea-town-addon/stub-content/,https://people.mozilla.org/~jhirsch/universal-search-addon/*"
-    }],
-    "UPDATES": [
-      {
-        "title": "Universal Search",
-        "desc": "Expandable embed search from your address bar",
-        "url": "https://people.mozilla.org/~jhirsch/universal-search-addon/addon.xpi"
-      },
-      {
-        "title": "Fox Splitter",
-        "desc": "Split your browser windows like a tiling wm",
-        "url": "https://addons.mozilla.org/firefox/downloads/latest/324976/addon-324976-latest.xpi?src=search"
-      },
-      {
-        "title": "Idea Town",
-        "desc": "Manage idea town experiments",
-        "url": "http://localhost:1337/dist/idea-town-addon-0.0.1.xpi"
-      }
-    ]
+      "name": "ALLOWED_ORIGINS",
+      "title": "Allowed origins for addon",
+      "description": "Allowed origins for addon",
+      "type": "string",
+      "value": "http://localhost:1337/*,http://127.0.0.1:1337/*,https://ideatown.firefox.com/*,https://mozilla.github.io/idea-town-addon/stub-content/,https://people.mozilla.org/~jhirsch/universal-search-addon/*"
+    }
+  ],
+  "UPDATES": [
+    {
+      "title": "Universal Search",
+      "desc": "Expandable embed search from your address bar",
+      "url": "https://people.mozilla.org/~jhirsch/universal-search-addon/addon.xpi"
+    },
+    {
+      "title": "Fox Splitter",
+      "desc": "Split your browser windows like a tiling wm",
+      "url": "https://addons.mozilla.org/firefox/downloads/latest/324976/addon-324976-latest.xpi?src=search"
+    },
+    {
+      "title": "Idea Town",
+      "desc": "Manage idea town experiments",
+      "url": "http://localhost:1337/dist/idea-town-addon-0.0.1.xpi"
+    }
+  ]
 }
