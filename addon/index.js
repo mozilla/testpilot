@@ -7,23 +7,23 @@
 const {Cu} = require('chrome');
 const self = require('sdk/self');
 const tabs = require('sdk/tabs');
-const pageMod = require('sdk/page-mod');
-const buttons = require('sdk/ui/button/action');
+const {PageMod} = require('sdk/page-mod');
+const {ActionButton} = require('sdk/ui/button/action');
 const AddonManager = Cu.import('resource://gre/modules/AddonManager.jsm').AddonManager;
 const prefs = require('sdk/simple-prefs').prefs;
 const updates = require('./package.json').UPDATES;
 const state = {updates: updates.map(function(u) {
-                        return u.title;
-                      })};
+  return u.title;
+})};
 
-const mod = new pageMod.PageMod({
+const mod = new PageMod({
   include: prefs.ALLOWED_ORIGINS.split(','),
   contentScriptFile: self.data.url('message-bridge.js'),
   contentScriptWhen: 'start',
   onAttach: setupWorker
 });
 
-const button = buttons.ActionButton({
+const button = ActionButton({ // eslint-disable-line new-cap
   id: 'idea-town-link',
   label: 'Idea Town',
   icon: {
@@ -77,8 +77,8 @@ function filterUpdates(approvedUpdates) {
   const filteredUpdates = [];
   approvedUpdates.forEach(function(appUpdate) {
     filteredUpdates.push(updates.find(function(update) {
-                            return update.title === appUpdate;
-                          }));
+      return update.title === appUpdate;
+    }));
   });
 
   return filteredUpdates;
@@ -102,20 +102,20 @@ function setupWorker() {
   mod.port.on('from-web-to-addon', function(msg) {
     if (!msg.type) { return; }
     switch (msg.type) {
-    case 'update-check':
-      sendToWeb({ type: 'addon-updates', detail: state.updates });
-      break;
-    case 'update-approve':
-      state.updates = require('exclude')(state.updates, msg.detail);
-      button.badge = state.updates.length;
-      triggerInstalls(msg.detail);
-      break;
-    case 'loaded':
-      sendToWeb({ type: 'addon-available' });
-      break;
-    default:
-      sendToWeb({ type: 'echo', data: msg });
-      break;
+      case 'update-check':
+        sendToWeb({ type: 'addon-updates', detail: state.updates });
+        break;
+      case 'update-approve':
+        state.updates = require('exclude')(state.updates, msg.detail);
+        button.badge = state.updates.length;
+        triggerInstalls(msg.detail);
+        break;
+      case 'loaded':
+        sendToWeb({ type: 'addon-available' });
+        break;
+      default:
+        sendToWeb({ type: 'echo', data: msg });
+        break;
     }
   });
 
