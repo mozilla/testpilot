@@ -1,0 +1,17 @@
+language: node_js
+
+sudo: false
+
+node_js:
+  - "0.10"
+  - "0.12"
+  - "iojs"
+
+script:
+  - npm run lint
+  - npm run package
+
+matrix:
+  allow_failures:
+    - node_js: "iojs"
+  fast_finish: true
