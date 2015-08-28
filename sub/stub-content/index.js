@@ -4,10 +4,9 @@ function statusUpdate(msg, detail) {
   var p = document.createElement('p');
   p.textContent = msg;
   statusBox.appendChild(p);
-  console.log('STATUS UPDATE:: ', msg, ' :: ', detail);
 }
 
-window.addEventListener("from-addon-to-web", function (event) {
+window.addEventListener('from-addon-to-web', function(event) {
   if (!event.detail || !event.detail.type) { return; }
   statusUpdate(event.detail.type, event.detail);
   switch (event.detail.type) {
@@ -58,7 +57,7 @@ function renderUpdates(ev) {
 document.querySelector('.update-submit').onclick = function(ev) {
   var approvedUpdates = Array.slice.call(0, document.querySelectorAll('.updates li')).filter(function(el) {
                           return (el.querySelector('input').checked);
-  }).map(function(el) {return el.textContent});
+  }).map(function(el) {return el.textContent;});
 
   sendToAddon({type: 'update-approve', detail: approvedUpdates});
-}
+};
