@@ -1,3 +1,9 @@
+/*
+ * This Source Code is subject to the terms of the Mozilla Public License
+ * version 2.0 (the "License"). You can obtain a copy of the License at
+ * http://mozilla.org/MPL/2.0/.
+ */
+
 /* Styles for the stub content */
 body, html { margin: 1em; padding: 0; }
 
@@ -6,5 +12,3 @@ body, html { margin: 1em; padding: 0; }
 
 body.addon-available .when-addon-available { display: block; }
 body.addon-available .when-addon-unavailable { display: none; }
-
-.update-submit { display: none; }

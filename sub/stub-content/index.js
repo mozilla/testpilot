@@ -1,3 +1,9 @@
+/*
+ * This Source Code is subject to the terms of the Mozilla Public License
+ * version 2.0 (the "License"). You can obtain a copy of the License at
+ * http://mozilla.org/MPL/2.0/.
+ */
+
 var statusBox = document.querySelector('.status');
 
 function statusUpdate(msg, detail) {
@@ -12,6 +18,8 @@ window.addEventListener('from-addon-to-web', function(event) {
   switch (event.detail.type) {
     case 'addon-available':
       document.body.classList.add('addon-available');
+      renderUpdates(event.detail);
+      renderStatus(event.detail);
       break;
     case 'addon-updates':
       renderUpdates(event.detail);
@@ -29,35 +37,58 @@ function sendToAddon (data) {
 }
 
 sendToAddon({ type: 'loaded' });
-sendToAddon({type: 'update-check'});
 
 function renderUpdates(ev) {
-  var msgEls = ev.detail.map(function(update, i) {
-    var li = document.createElement('li');
-    var check = document.createElement('input');
-    var label = document.createElement('label');
-    check.type = 'checkbox';
-    label.textContent = update;
-
-    li.id = 'update-' + i;
-    li.appendChild(check);
-    li.appendChild(label);
-
-    return li;
-  });
-
   var list = document.querySelector('.updates');
-  msgEls.forEach(function(msgEl) {
-    list.appendChild(msgEl);
-  });
+  ev.detail.updates.map(getItemRenderer('update'))
+                    .forEach(function(msgEl) {
+                               list.appendChild(msgEl);
+                             });
 
   if (ev.detail.length) document.querySelector('.update-submit').style.display = 'block';
 }
 
-document.querySelector('.update-submit').onclick = function(ev) {
-  var approvedUpdates = Array.slice.call(0, document.querySelectorAll('.updates li')).filter(function(el) {
-                          return (el.querySelector('input').checked);
-  }).map(function(el) {return el.textContent;});
+function renderStatus(ev) {
+  var list = document.querySelector('.installed');
+  ev.detail.experiments.map(getItemRenderer('installed'))
+                   .forEach(function(msgEl) {
+                      list.appendChild(msgEl);
+                    });
+}
 
-  sendToAddon({type: 'update-approve', detail: approvedUpdates});
+document.querySelector('.update-submit').onclick = function(ev) {
+  sendToAddon({type: 'update-approve', detail: getApprovedList('.updates li')});
 };
+
+document.querySelector('.uninstall-selected').onclick = function(ev) {
+  sendToAddon({type: 'uninstall', detail: getApprovedList('.installed li')});
+}
+
+document.querySelector('.uninstall-all').onclick = function(ev) {
+    sendToAddon({type: 'uninstall-all', detail: []});
+}
+
+function getApprovedList(selector) {
+  return Array.slice.call(0, document.querySelectorAll(selector)).filter(function(el) {
+           return (el.querySelector('input').checked);
+         }).map(function(el) {return {
+           name: el.textContent,
+           id: el['data-id']
+         }});
+}
+
+function getItemRenderer(idPrefix) {
+  return function(obj, i) {
+    var li = document.createElement('li');
+    var check = document.createElement('input');
+    var label = document.createElement('label');
+    check.type = 'checkbox';
+    label.textContent = obj.name;
+    li['data-id'] = obj.id;
+    li.id = idPrefix+'-' + i;
+    label.appendChild(check);
+    li.appendChild(label);
+
+    return li;
+  }
+}
