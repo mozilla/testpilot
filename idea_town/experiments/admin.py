@@ -10,7 +10,8 @@ class ExperimentDetailInline(admin.TabularInline):
 
 class ExperimentAdmin(admin.ModelAdmin):
 
-    list_display = ('id', 'title', show_image('thumbnail'),
+    list_display = ('id', 'title', 'xpi_url',
+                    show_image('thumbnail'),
                     related_changelist_link('details'),
                     related_changelist_link('users'),
                     'created', 'modified',)
