@@ -1,15 +1,17 @@
 Idea Town!
 ==========
 
-[![Build Status](https://img.shields.io/travis/mozilla/idea-town/master.svg)](https://travis-ci.org/mozilla/idea-town)
+[![Build Status](https://img.shields.io/travis/mozilla/idea-town-server/master.svg)](https://travis-ci.org/mozilla/idea-town-server)
 
-[![Coverage status](https://img.shields.io/coveralls/mozilla/idea-town/master.svg)](https://coveralls.io/r/mozilla/idea-town)
+[![Coverage status](https://img.shields.io/coveralls/mozilla/idea-town-server/master.svg)](https://coveralls.io/r/mozilla/idea-town-server)
 
 yay all the ideas
 
 ## repos
+* [idea-town](https://github.com/mozilla/idea-town/) Idea Town parent repo
 * [idea-town-splash](https://github.com/mozilla/idea-town-splash/) Splash site for signups
 * [idea-town-addon](https://github.com/mozilla/idea-town-addon/) Main addon
+* [idea-town-app](https://github.com/mozilla/idea-town-app/) Front end site
 
 ## Info
 IRC: #ideatown
@@ -27,7 +29,7 @@ WIKI: https://wiki.mozilla.org/Idea-Town
   * `eval "$(docker-machine env default)"`
 
 * To see the IP address of the default Docker machine:
-  * `docker-machine ip default` 
+  * `docker-machine ip default`
 
 * Add an entry for `ideatown.dev` in your `/etc/hosts` pointing to the Docker machine IP
   * `192.168.99.100 ideatown.dev`
