@@ -23,7 +23,8 @@ class ExperimentDeepSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Experiment
-        fields = ('url', 'title', 'slug', 'thumbnail', 'description', 'details')
+        fields = ('url', 'title', 'slug', 'thumbnail', 'description',
+                  'xpi_url', 'details')
 
 
 class ExperimentSerializer(serializers.HyperlinkedModelSerializer):
@@ -32,7 +33,8 @@ class ExperimentSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Experiment
-        fields = ('url', 'title', 'slug', 'thumbnail', 'description', 'details_url')
+        fields = ('url', 'title', 'slug', 'thumbnail', 'description',
+                  'xpi_url', 'details_url')
 
     def get_details_url(self, obj):
         request = self.context['request']

@@ -14,6 +14,7 @@ class Experiment(models.Model):
     slug = models.SlugField(max_length=128, unique=True, db_index=True)
     thumbnail = models.ImageField(upload_to=experiment_thumbnail_upload_to)
     description = models.TextField()
+    xpi_url = models.URLField()
 
     users = models.ManyToManyField(User, through='UserInstallation')
 
