@@ -7,9 +7,6 @@ docs/_build
 .tox/
 MANIFEST
 .coverage
-node_modules/
 media/
 static/
-client-build/
-client-src/vendor/
 venv/

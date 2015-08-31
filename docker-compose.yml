@@ -1,26 +1,14 @@
 db:
   image: postgres:9.3
-client_build:
-  build: .
-  dockerfile: Dockerfile-client_build
-  ports:
-    - "9988:9988"
-  volumes:
-    - .:/app
-  environment:
-    - NODE_ENV=development
-  command:
-      ./bin/run-client-build.sh
 server:
   build: .
-  dockerfile: Dockerfile-server
+  dockerfile: Dockerfile
   ports:
     - "8000:8000"
   volumes:
     - .:/app
   links:
     - db
-    - client_build
   environment:
     - PYTHONUNBUFFERED=1
     - PYTHONDONTWRITEBYTECODE=1
