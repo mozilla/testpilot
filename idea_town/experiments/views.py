@@ -42,4 +42,3 @@ class ExperimentDetailViewSet(viewsets.ModelViewSet):
 def register_views(router):
     router.register(r'experiments', ExperimentViewSet)
     router.register(r'details', ExperimentDetailViewSet)
-    logger.debug(router.get_urls())

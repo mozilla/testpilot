@@ -1,0 +1,111 @@
+form {
+  margin: 0 auto 12px;
+  position: relative;
+  z-index: 2;
+
+  @include respond-to('med-small') {
+    max-width: 440px;
+    width: 100%;
+  }
+
+  @include respond-to('med-large') {
+    width: 440px;
+  }
+}
+
+.success-wrapper,
+.error-wrapper {
+  margin: 0  auto;
+  position: relative;
+  z-index: 1;
+
+  @include respond-to('med-small') {
+    max-width: 440px;
+    width: 100%;
+  }
+
+  @include respond-to('med-large') {
+    width: 440px;
+  }
+}
+
+.error-wrapper {
+  height: 29px;
+  margin-bottom: 12px;
+}
+
+input {
+  border: 0;
+  border-radius: $small-radius;
+  font-size: 18px;
+  font-weight: 400;
+  height: 40px;
+  padding: 5px 10px;
+  transition: border 100ms;
+
+  &[type='email'] {
+    background: $white;
+    border: 1px solid $blur-grey;
+    color: $black;
+    margin-bottom: 12px;
+    width: 100%;
+
+    @include respond-to('med-large') {
+      margin-right: 8px;
+      width: 330px;
+    }
+
+    @include respond-to('med-small') {
+      width: 100%;
+    }
+
+
+    &:focus {
+      border: 1px solid $medium;
+      outline: 0;
+    }
+
+    &.error {
+      border: 1px solid $error;
+      padding: 5px 10px;
+    }
+  }
+
+  &[type='submit'] {
+    background: $cta;
+    border-radius: $small-radius;
+    color: $white;
+    text-align: center;
+    user-select: none;
+  
+
+    @include respond-to('med-small') {
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    @include respond-to('med-large') {
+      width: 100px;
+    }
+
+
+    &.disabled,
+    &:disabled {
+      background: $disabled-grey;
+      
+      &:hover {
+        background: $disabled-grey;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background: darken($cta, 10%);
+      outline: none;
+    }
+
+    &:active {
+      background: darken($cta, 15%);
+    }
+  }
+}

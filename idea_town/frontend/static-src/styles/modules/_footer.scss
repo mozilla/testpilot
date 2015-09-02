@@ -1,0 +1,40 @@
+#footer {
+  @include clear-fix;
+  padding-top: 100px;
+
+  .moz-logo {
+    @include hidpi-background-image('mozilla', 77px 20px);
+    display: block;
+    float: left;
+    height: 20px;
+    margin-right: 20px;
+    width: 77px;
+    
+    @include respond-to('med-large') {
+      float: left;
+      margin-right: 20px;
+    }
+
+    @include respond-to('med-small') { 
+      margin-bottom: 20px;
+    }
+  }
+
+  .boilerplate {
+    color: $white;
+    display: block;
+    font-weight: 400;
+    position: relative;
+    
+    @include respond-to('med-large') {
+      float: left;
+      padding: 0 20px;
+      top: 4px;
+    }
+
+    @include respond-to('med-small') { 
+      clear: both;
+      padding: 10px 0;
+    }
+  }
+}

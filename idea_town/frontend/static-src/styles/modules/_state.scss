@@ -1,0 +1,101 @@
+.success,
+.error {
+  border-radius: $small-radius;
+  color: $white;
+  font-weight: 400;
+  margin-bottom: 12px;
+  padding: 5px;
+}
+
+.success {
+  background: $cta;
+  font-size: 16px;
+  height: 92px;
+  line-height: 28px;
+  margin: 20px 0 11px;
+  padding: 17px 0;
+  position: absolute;
+  top: 1000px;
+}
+
+.error {
+  background: $error;
+}
+
+.hidden {
+  display: none;
+}
+
+.fade-in-pop-in {
+  animation: fade-in-pop-in forwards $fast;
+  display: block;
+}
+
+.fade-out {
+  animation: fade-out forwards $fast;
+}
+
+.shake {
+  animation: shake $slow forwards;
+  opacity: 1;
+  position: relative;
+}
+
+.move-to-zero {
+  animation: move-to-zero  ($fast * 3) forwards;
+}
+
+@keyframes fade-in-pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  90% {
+    transform: scale(1.1);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-4px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes move-to-zero {
+  100% {
+    top: 0;
+  }
+}
+

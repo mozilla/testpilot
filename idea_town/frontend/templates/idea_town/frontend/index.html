@@ -1,0 +1,13 @@
+{% extends "idea_town/base.html" %}
+
+{% block page_title %}Idea Town!{% endblock %}
+
+{% block footer %}
+    {{ super() }}
+    <script src="{{ static('scripts/main.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <p>Idea town frontend client bootstrap goes here</p>
+    <p>URL: {{ route_url }}</p>
+{% endblock %}

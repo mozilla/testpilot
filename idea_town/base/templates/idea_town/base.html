@@ -4,13 +4,14 @@
         {% block head %}
             <meta charset="utf-8">
             <title>{% block page_title %}{% endblock %} | Idea Town</title>
+            <link href="{{ static('styles/main.css') }}" rel="stylesheet" type="text/css" />
         {% endblock %}
     </head>
     <body>
         <header>
             <nav>
                 <ul>
-                    <li><a href="{{ url('home') }}">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     {% if request.user.is_authenticated() %}
                     <li>Signed in as: <a href="{{ url('account_profile') }}">{{ request.user.email }}</a></li>
                     <li><a href="{{ url('account_logout') }}">Sign Out</a></li>
