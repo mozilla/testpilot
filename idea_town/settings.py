@@ -35,6 +35,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 INSTALLED_APPS = [
     # Project specific apps
     'idea_town.base',
+    'idea_town.frontend',
     'idea_town.accounts',
     'idea_town.experiments',
 

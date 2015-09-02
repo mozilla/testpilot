@@ -7,6 +7,9 @@ docs/_build
 .tox/
 MANIFEST
 .coverage
+node_modules/
 media/
 static/
 venv/
+idea_town/frontend/static/
+idea_town/frontend/static-src/vendor/
