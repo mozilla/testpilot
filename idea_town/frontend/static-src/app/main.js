@@ -5,6 +5,7 @@ import ViewSwitcher from 'ampersand-view-switcher';
 import ExperimentsCollection from './collections/experiments';
 import Me from './models/me';
 import HomePage from './views/home_page';
+import Header from './views/header';
 import Router from './lib/router';
 
 app.extend({
@@ -29,8 +30,8 @@ app.extend({
         isInstalled: false
       }
     ]);
-    // empty (for now) user model
-    // trying out ampersand's 'me' convention, though I find it kinda dumb
+
+    // user model holds session state
     app.me = new Me();
 
     // ping the addon to see if it's installed
@@ -41,6 +42,11 @@ app.extend({
     const view = new HomePage({
       experiments: app.experiments
     });
+
+    // the header is independent of the page container logic, so it lives
+    // outside the page container element
+    app.headerView = new Header({el: document.querySelector('header') });
+    app.headerView.render();
 
     // start router + history
     app.router = new Router();
@@ -70,6 +76,7 @@ app.extend({
   }
 });
 app.initialize();
+
 
 // make app accessible from window for debuggin'
 window.app = app;

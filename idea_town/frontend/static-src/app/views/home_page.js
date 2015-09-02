@@ -15,7 +15,6 @@ export default View.extend({
   render(opts) {
     // TODO: do I need to do this if I don't want to manually assign this.el?
     View.prototype.render.apply(this, arguments);
-    this.renderWithTemplate(this);
 
     if (opts && opts.experiments) {
       this.experiments = opts.experiments;

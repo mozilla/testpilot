@@ -12,7 +12,6 @@ const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const gutil = require('gulp-util');
 const imagemin = require('gulp-imagemin');
-const inject = require('gulp-inject');
 const minifycss = require('gulp-minify-css');
 const neat = require('node-neat');
 const rename = require('gulp-rename');
@@ -83,14 +82,6 @@ gulp.task('vendor', function vendorTask(done) {
   ], done);
 });
 
-gulp.task('html-pages', function htmlPages() {
-  const sources = IS_DEBUG ? [DEST_PATH + 'app/*.js', DEST_PATH + 'styles/**/*.css']
-                        : [DEST_PATH + 'app/*.js', DEST_PATH + 'styles/**/*.min.css'];
-  return gulp.src(SRC_PATH + '**/*.html')
-    .pipe(inject(gulp.src(sources, {read: false}), {ignorePath: 'dist'}))
-    .pipe(gulp.dest(DEST_PATH));
-});
-
 // based on https://github.com/gulpjs/gulp/blob/master/docs/recipes/browserify-with-globs.md,
 // except we use the Promise returned by globby, instead of passing it a callback
 gulp.task('scripts', function scriptsTask() {
@@ -108,9 +99,7 @@ gulp.task('scripts', function scriptsTask() {
     .pipe(gulp.dest(DEST_PATH + 'app/'));
 
   // this part runs first, then pipes to bundledStream
-  const promised = globby([SRC_PATH + 'app/**/*.js']);
-
-  promised.then(function gatherFiles(entries) {
+  globby([SRC_PATH + 'app/**/*.js']).then(function gatherFiles(entries) {
     const b = browserify({
       entries: entries,
       debug: IS_DEBUG,
@@ -151,7 +140,6 @@ gulp.task('build', function buildTask(done) {
     'scripts',
     'styles',
     'images',
-    'html-pages',
     done
   );
 });
