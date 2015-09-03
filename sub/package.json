@@ -17,6 +17,7 @@
   },
   "license": "MPL-2.0",
   "dependencies": {
+    "array-includes": "^3.0.1",
     "exclude": "^1.0.0",
     "xtend": "^4.0.0"
   },
@@ -53,19 +54,16 @@
   ],
   "UPDATES": [
     {
-      "title": "Universal Search",
+      "id": "universal-search-addon@mozilla.com",
+      "name": "Universal Search",
       "desc": "Expandable embed search from your address bar",
       "url": "https://people.mozilla.org/~jhirsch/universal-search-addon/addon.xpi"
     },
     {
-      "title": "Fox Splitter",
+      "id": "foxsplitter@piro.sakura.ne.jp",
+      "name": "Fox Splitter",
       "desc": "Split your browser windows like a tiling wm",
       "url": "https://addons.mozilla.org/firefox/downloads/latest/324976/addon-324976-latest.xpi?src=search"
-    },
-    {
-      "title": "Idea Town",
-      "desc": "Manage idea town experiments",
-      "url": "http://localhost:1337/dist/idea-town-addon-0.0.1.xpi"
     }
   ]
 }
