@@ -9,5 +9,12 @@ CONTRIBUTING.md
 *.xcf
 node_modules/st
 node_modules/.bin
+node_modules/jpm
+node_modules/eslint*
+node_modules/babel-eslint
 stub-content
 test
+.eslintignore
+.eslintrc
+.travis.yml
+node_modules/**/.*
