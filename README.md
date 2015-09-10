@@ -1,17 +1,16 @@
 Idea Town!
 ==========
 
-[![Build Status](https://img.shields.io/travis/mozilla/idea-town-server/master.svg)](https://travis-ci.org/mozilla/idea-town-server)
+[![Build Status](https://img.shields.io/travis/mozilla/idea-town/master.svg)](https://travis-ci.org/mozilla/idea-town)
 
-[![Coverage status](https://img.shields.io/coveralls/mozilla/idea-town-server/master.svg)](https://coveralls.io/r/mozilla/idea-town-server)
+[![Coverage status](https://img.shields.io/coveralls/mozilla/idea-town/master.svg)](https://coveralls.io/r/mozilla/idea-town)
 
 yay all the ideas
 
 ## repos
-* [idea-town](https://github.com/mozilla/idea-town/) Idea Town parent repo
+* [idea-town](https://github.com/mozilla/idea-town/) Idea Town server and front end repo
 * [idea-town-splash](https://github.com/mozilla/idea-town-splash/) Splash site for signups
 * [idea-town-addon](https://github.com/mozilla/idea-town-addon/) Main addon
-* [idea-town-app](https://github.com/mozilla/idea-town-app/) Front end site
 
 ## Info
 IRC: #ideatown
