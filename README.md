@@ -39,9 +39,9 @@ WIKI: https://wiki.mozilla.org/Idea-Town
   * `docker-compose up`
   * This may take some time.
   * Note! A papercut: Sometimes the database container is not yet fully started
-    up when the Django container wants to connect to it. When this happens, just
-    try `docker-compose up` again. ([Ugh, this is a known bug in
-    docker-compose][dc-bug]. Maybe we can find a workaround?)
+    up when the Django container wants to connect to it. When this happens:
+    * `docker ps` to get the name of the Django container, likely something like `ideatown_server_1`
+    * `docker restart ideatown_server_1` to restart the Django container
 
 * To visit the Django server:
   * `open http://ideatown.dev:8000/`
