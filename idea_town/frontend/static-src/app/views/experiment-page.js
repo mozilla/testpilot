@@ -1,13 +1,13 @@
-import View from 'ampersand-view';
+import app from 'ampersand-app';
 import dom from 'ampersand-dom';
-import mustache from 'mustache';
-import webChannel from '../lib/web_channel';
 
-export default View.extend({
-  template: mustache.render(`<section class="page" data-hook="experiment-page">
+import BaseView from './base-view';
+
+export default BaseView.extend({
+  _template: `<section class="page" data-hook="experiment-page">
                <h1 data-hook="displayName"></h1>
                <button data-hook="install">Install</button>
-             </section>`),
+             </section>`,
 
   events: {
     'click [data-hook=install]': 'install',
@@ -21,7 +21,7 @@ export default View.extend({
   },
 
   render(opts) {
-    View.prototype.render.apply(this, arguments);
+    BaseView.prototype.render.apply(this, arguments);
     this.renderWithTemplate(this);
 
     if (opts && opts.experiment) {
@@ -32,12 +32,6 @@ export default View.extend({
 
     this.button = this.el.querySelector('button');
     this.renderButton();
-  },
-
-  // TODO: move into a base view?
-  remove() {
-    const parent = this.el.parentNode;
-    if (parent) parent.removeChild(this.el);
   },
 
   renderButton() {
@@ -55,7 +49,7 @@ export default View.extend({
     this.model.isInstalled = !this.model.isInstalled;
     const packet = isInstall ? { install: this.model.name } :
                   { uninstall: this.model.name };
-    webChannel.sendMessage('from-web-to-addon', packet);
+    app.webChannel.sendMessage('from-web-to-addon', packet);
     // TODO: have to delay updates, or the event delegation code will call
     //       the other data-hook handler in the same turn (without yielding
     //       to the UI thread). This seems like a bug in ampersand-view:
