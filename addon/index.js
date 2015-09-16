@@ -21,6 +21,7 @@ const mod = new PageMod({
   include: prefs.ALLOWED_ORIGINS.split(','),
   contentScriptFile: self.data.url('message-bridge.js'),
   contentScriptWhen: 'start',
+  attachTo: ['top', 'existing'],
   onAttach: setupApp
 });
 
