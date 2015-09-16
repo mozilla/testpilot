@@ -1,64 +1,82 @@
-Idea Town!
+Idea Town
 ==========
+
+![Idea Town Rainbow Logo](https://wiki.mozilla.org/images/thumb/7/7a/IdeaTownSticker.png/400px-IdeaTownSticker.png)
 
 [![Build Status](https://img.shields.io/travis/mozilla/idea-town/master.svg)](https://travis-ci.org/mozilla/idea-town)
 
 [![Coverage status](https://img.shields.io/coveralls/mozilla/idea-town/master.svg)](https://coveralls.io/r/mozilla/idea-town)
 
-yay all the ideas
+Idea Town is an opt-in platform that allows us to perform controlled tests of new high-visibility product concepts in the general release channel of Firefox.
 
-## repos
-* [idea-town](https://github.com/mozilla/idea-town/) Idea Town server and front end repo
-* [idea-town-splash](https://github.com/mozilla/idea-town-splash/) Splash site for signups
-* [idea-town-addon](https://github.com/mozilla/idea-town-addon/) Main addon
+Idea Town is not intended to replace trains for most features, nor is it a test bed for concepts we do not believe have a strong chance of shipping in general release. Rather, it is reserved for features that require user feedback, testing, and tuning before they ship with the browser.
 
-## Info
-IRC: #ideatown
+## Repositories
 
-WIKI: https://wiki.mozilla.org/Idea-Town
+* **idea-town** - Idea Town server and front-end
+* [idea-town-splash](https://github.com/mozilla/idea-town-splash/) - Teaser site for collecting emails
+* [idea-town-addon](https://github.com/mozilla/idea-town-addon/) - Idea Town add-on
 
-## Hacking TL;DR
+## More Information
 
-* [Install Docker](http://docs.docker.com/mac/started/) and docker-compose
+- Wiki: <https://wiki.mozilla.org/Idea_Town>
+- IRC: #ideatown on irc.mozilla.org
 
-* Make sure you have a default Docker machine, i.e.:
-  * `docker-machine create -driver virtualbox default`
+## Development Setup
 
-* Make sure your shell can see the default Docker machine, i.e.:
-  * `eval "$(docker-machine env default)"`
+1. [Install Docker Toolbox](http://docs.docker.com/mac/started/)
 
-* To see the IP address of the default Docker machine:
-  * `docker-machine ip default`
+2. Make sure you have a default Docker machine:
 
-* Add an entry for `ideatown.dev` in your `/etc/hosts` pointing to the Docker machine IP
-  * `192.168.99.100 ideatown.dev`
-  * This entry is necessary to support Firefox Accounts. (Possibly, also static
-    assets in the future)
+  `docker-machine create -driver virtualbox default`
 
-* Create & set up the Docker containers:
-  * `docker-compose up`
-  * This may take some time.
-  * Note! A papercut: Sometimes the database container is not yet fully started
-    up when the Django container wants to connect to it. When this happens:
-    * `docker ps` to get the name of the Django container, likely something like `ideatown_server_1`
-    * `docker restart ideatown_server_1` to restart the Django container
+3. Make sure your shell can see the default Docker machine:
 
-* To visit the Django server:
-  * `open http://ideatown.dev:8000/`
-  * (or, whatever IP was reported by `docker ip` and port 8000)
+  `eval "$(docker-machine env default)"`
+
+4. Check the IP address of the default Docker machine:
+
+  `docker-machine ip default`
+
+5. Add an entry for `ideatown.dev` in your `/etc/hosts` pointing to the Docker machine IP
+
+  `192.168.99.100 ideatown.dev`
+
+  *This entry is necessary to support Firefox Accounts*
+
+6. Create and setup the Docker containers:
+
+  `docker-compose up`
+
+  *this may take some time*
+
+7. Visit the Django server:
+
+  `open http://ideatown.dev:8000/`
+
+  *you can also use whatever IP was reported by `docker ip` with port 8000*
+
+### Notes
 
 * To shell into one of the containers, e.g. to run Django commands:
-  * `docker exec -t -i ideatown_server_1 bash`
+
+  `docker exec -t -i ideatown_server_1 bash`
 
 * If you change `package.json` to add dependencies for `gulpfile.js`, you must rebuild `client_build`:
-  * `docker-compose build client_build`
+
+  `docker-compose build client_build`
 
 * If you change `requirements.txt` to add dependencies for Django, you must rebuild `server`:
-  * `docker-compose build server`
 
-[dc-bug]: https://github.com/docker/compose/issues/374
+  `docker-compose build server`
 
-Run the tests
+* Sometimes the database container hasn't fully started when the Django container wants to connect to it. If this happens:
+
+  * `docker ps` to get the name of the Django container (something like `ideatown_server_1`)
+  * `docker restart ideatown_server_1` to restart the Django container
+
+
+Testing
 -------------
 
 There's a sample test in `idea_town/base/tests.py` for your convenience, that
@@ -76,20 +94,6 @@ they are run by [travis](https://travis-ci.org)):
 The `.travis.yml` file will also run [coveralls](https://coveralls.io) by
 default.
 
-If you want to benefit from Travis and Coveralls, you will need to activate
-them both for your project.
-
-Oh, and you might want to change the "Build Status" and "Coverage Status" links
-at the top of this file to point to your own travis and coveralls accounts.
-
-
-Docker for development
-----------------------
-
-0. Make sure you have [docker](https://docker.io) and [docker-compose](https://github.com/docker/compose)
-1. docker-compose up
-
-
 Docker for deploying to production
 -----------------------------------
 
@@ -105,7 +109,6 @@ Heroku
 2. heroku config:set DEBUG=False ALLOWED_HOSTS=<foobar>.herokuapp.com, SECRET_KEY=something_secret
    DATABASE_URL gets populated by heroku once you setup a database.
 3. git push heroku master
-
 
 NewRelic Monitoring
 -------------------
