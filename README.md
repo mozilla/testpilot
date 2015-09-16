@@ -50,7 +50,7 @@ WIKI: https://wiki.mozilla.org/Idea-Town
 * To shell into one of the containers, e.g. to run Django commands:
   * `docker exec -t -i ideatown_server_1 bash`
 
-* If you change `package.json` to add dependencies for `gulpfile.babel.js`, you must rebuild `client_build`:
+* If you change `package.json` to add dependencies for `gulpfile.js`, you must rebuild `client_build`:
   * `docker-compose build client_build`
 
 * If you change `requirements.txt` to add dependencies for Django, you must rebuild `server`:

@@ -70,7 +70,6 @@
     "url": "git+https://github.com/mozilla/idea-town-server.git"
   },
   "scripts": {
-    "lint": "gulp lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

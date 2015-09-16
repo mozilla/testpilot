@@ -5,9 +5,9 @@
 rm -rf /app/node_modules
 
 # Be very specific about starting up a gulp process that uses modules from
-# /home/webdev/node_modules and restarts whenever gulpfile.babel.js is changed
+# /home/webdev/node_modules and restarts whenever gulpfile.js is changed
 NODE_PATH=/home/webdev/node_modules/ \
     /usr/local/bin/node \
         /home/webdev/node_modules/nodemon/bin/nodemon.js \
-            --watch /app/gulpfile.babel.js \
+            --watch /app/gulpfile.js \
             /home/webdev/node_modules/gulp/bin/gulp.js
