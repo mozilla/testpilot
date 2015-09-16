@@ -49,7 +49,7 @@
       "title": "Allowed origins for addon",
       "description": "Allowed origins for addon",
       "type": "string",
-      "value": "http://localhost:1337/*,http://127.0.0.1:1337/*,https://ideatown.firefox.com/*,https://mozilla.github.io/idea-town-addon/stub-content/,https://people.mozilla.org/~jhirsch/universal-search-addon/*"
+      "value": "http://ideatown.dev:8000/*,http://localhost:1337/*,http://127.0.0.1:1337/*,https://ideatown.firefox.com/*,https://mozilla.github.io/idea-town-addon/stub-content/,https://people.mozilla.org/~jhirsch/universal-search-addon/*"
     }
   ],
   "UPDATES": [
