@@ -26,6 +26,7 @@ const mod = new PageMod({
 
 require('sdk/system/unload').when(function(reason) {
   if (reason === 'uninstall') {
+    app.send('addon-self:uninstalled');
     if (store.experiments) {
       uninstall(store.experiments);
       delete store.experiments;
