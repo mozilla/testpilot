@@ -117,6 +117,10 @@ ROOT_URLCONF = 'idea_town.urls'
 
 WSGI_APPLICATION = 'idea_town.wsgi.application'
 
+DATADOG_KEYS = {
+    'api_key': '4f3b967bbf13c7769ac4fa89efda0fae',
+    'app_key': 'ddd45a7b3a3cb90ff1baf20ae8cfab04d1937038'
+}
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases

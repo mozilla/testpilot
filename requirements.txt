@@ -143,3 +143,9 @@ django-filter==0.11.0
 
 # sha256: CYQuyxx8OOWmZsBLz6kk9oLvHoLZyECA8Zwot3HQgMU
 djangorestframework==3.2.3
+
+# sha256: lcqHHird1Z7KXjs75h6v8_Zpx0YOV6jOs8j5u238DTQ
+datadog==0.9.0
+
+# sha256: IX5Hl9o6mkqfvmci4NuYBwuEQ6iCEtes29JBp2aBQdk
+simplejson==3.8.0
