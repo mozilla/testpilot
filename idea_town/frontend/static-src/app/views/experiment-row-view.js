@@ -1,11 +1,12 @@
 import app from 'ampersand-app';
 import dom from 'ampersand-dom';
-import View from 'ampersand-view';
+
+import BaseView from './base-view';
 
 // we have to drive the user to the detail page to view terms / privacy info before installing
 // calling the button 'install' is a bit of a misnomer, we might just want a > instead of a button
-export default View.extend({
-  template: `<li>Experiment name: <a class="name"></a> <button data-hook="show-detail">Install</button></li>`,
+export default BaseView.extend({
+  _template: `<li>Experiment name: <a class="name"></a> <button data-hook="show-detail">Install</button></li>`,
 
   events: {
     'click [data-hook=show-detail]': 'openDetailPage'
@@ -16,7 +17,7 @@ export default View.extend({
   },
 
   render() {
-    View.prototype.render.apply(this, arguments);
+    BaseView.prototype.render.apply(this, arguments);
 
     dom.text(this.el.querySelector('.name'), this.model.name);
 

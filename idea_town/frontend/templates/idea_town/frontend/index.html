@@ -5,20 +5,8 @@
     <link rel="stylesheet" href="{{ static('styles/main.css') }}">
 </head>
 <body>
-  <header><a href="/accounts/login/?next=/">log in</a></header>
-  <!-- container div -->
-  <div id="container">
-    <header>
-      <img id="logo">
-      <div id="avatar-or-signin-button"></div>
-    </header>
-    <div id="hero-space">
-      <!-- not idea town user? show idea town sales pitch.
-           idea town user? show something exciting and fun -->
-      <h1>Idea Town is the Best</h1>
-    </div>
-    <div id="experiments"></div>
-  </div>
+  <header></header>
+  <div data-hook="page-container"></div>
   <footer>
     <ul>
       <li><a href="//mozilla.com"><img src="mozilla-logo.png"></a>
@@ -38,7 +26,11 @@
     'use strict';
     window.sadface = {
       csrfToken: '{{ csrf_token }}',
-      userId: '{{ user_id }}'
+      userId: '{{ user_id }}',
+      addon: {
+        name: 'Idea Town',
+        url: 'https://github.com/mozilla/idea-town-addon/blob/master/dist/idea-town-addon-0.0.1.xpi?raw=true'
+      }
     };
   </script>
 

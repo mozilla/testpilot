@@ -1,43 +1,62 @@
 import app from 'ampersand-app';
 import Router from 'ampersand-router';
-import HomePage from '../views/home_page';
-import ExperimentPage from '../views/experiment_page';
-import SettingsPage from '../views/settings_page';
-import NotFoundPage from '../views/not_found_page';
+
+// publishes the 'router:new-page' event
+// packet format: { page, opts }
+// - page: string, the name of the requested page
+// - opts: object (not array) of variables passed as URL slugs
 
 export default Router.extend({
   routes: {
-    '': 'home',
+    '': 'landing',
+    'home': 'home',
     'experiments/:experiment': 'experimentDetail',
-    'settings': 'settings',
-    '404': 'notFound'
+    '404': 'notFound',
+    'error': 'error',
+    '(*path)': 'notFound'
   },
 
-  experimentDetail(experiment) {
-    // if the experiment exists, load a detail page; else, 404
-    const exp = app.experiments.get(experiment, 'name');
-    if (exp) {
-      const experimentPage = new ExperimentPage({experiment: exp});
-      this.trigger('newPage', experimentPage);
+  landing() {
+    if (app.me.session && app.me.hasAddon) {
+      this.redirectTo('home');
     } else {
-      this.redirectTo('404');
+      app.trigger('router:new-page', {page: 'landing'});
     }
   },
 
   home() {
-    this.trigger('newPage', new HomePage({experiments: app.experiments }));
+    if (!app.me.session || !app.me.hasAddon) {
+      this.redirectTo('');
+    } else {
+      app.trigger('router:new-page', {page: 'home'});
+    }
   },
 
-  settings() {
-    if (app.me.loggedIn) {
-      this.trigger('settings', new SettingsPage());
-    } else {
+  experimentDetail(experiment) {
+    if (!app.me.session || !app.me.hasAddon) {
       this.redirectTo('');
+    } else {
+      // if the experiment exists, load a detail page; else, 404
+      const exp = app.experiments.get(experiment, 'name');
+      if (exp) {
+        app.trigger('router:new-page', {
+          page: 'experimentDetail',
+          opts: {
+            experiment: exp
+          }
+        });
+      } else {
+        this.redirectTo('404');
+      }
     }
   },
 
   notFound() {
-    this.trigger('newPage', new NotFoundPage());
+    app.trigger('router:new-page', {page: 'notFound'});
+  },
+
+  error() {
+    app.trigger('router:new-page', {page: 'error'});
   }
 
 });
