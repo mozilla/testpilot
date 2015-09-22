@@ -1,57 +1,15 @@
-.full {
+@mixin layout-wrapper() {
   clear: both;
-  margin: 0;
-}
-
-.wrapper {
   margin: 0 auto;
-
-  @include respond-to('small') {
-    padding: 20px 2%;
-    width: 100%;
-  }
-
-  @include respond-to('med-small') {
-    padding: 20px;
-    width: 100%;
-  }
-
-  @include respond-to('med-large') {
-    padding: 20px;
-    width: 768px;
-  }
-
-  @include respond-to('large') {
-    width: 980px;
-  }
-
-  &-null {
-    @extend .wrapper;
-    padding: 0;
-  }
+  width: 1024px;
 }
 
-.row {
-
-  @include clear-fix;
-
-  @include respond-to('med-large') {
-    margin: 0 -10px;
-  }
-}
-
-.third {
-  margin-bottom: 30px;
-  width: 100%;
-
-  @include respond-to('med-large') {
-    float: left;
-    margin: 10px;  
-    width: 229px;
-  }
-
-  @include respond-to('large') {
-    margin: 20px;
-    width: 280px;
+@mixin flex-container($direction, $justification, $alignment, $wrapper: false) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justification;
+  align-items: $alignment;
+  @if ($wrapper) {
+    @include layout-wrapper;
   }
 }

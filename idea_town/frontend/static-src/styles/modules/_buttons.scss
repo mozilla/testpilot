@@ -1,0 +1,16 @@
+.button {
+  border: 0;
+  border-radius: 4px;
+  height: 36px;
+  padding: 0 16px;
+
+  &.large {
+    font-size: 3.2rem;
+    height: 72px;
+  }
+
+  &.primary {
+    @include color-scheme($white, $primary);
+  }
+
+}

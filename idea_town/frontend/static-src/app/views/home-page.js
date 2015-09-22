@@ -2,9 +2,10 @@ import app from 'ampersand-app';
 import ExperimentRowView from './experiment-row-view';
 
 import BaseView from './base-view';
+import template from '../templates/home-page';
 
 export default BaseView.extend({
-  _template: `<section class="page"><ul class="experiments"></ul></section>`,
+  _template: template,
 
   render() {
     // TODO: do I need to do this if I don't want to manually assign this.el?

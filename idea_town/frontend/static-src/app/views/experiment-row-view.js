@@ -1,15 +1,10 @@
 import app from 'ampersand-app';
 
 import BaseView from './base-view';
+import template from '../templates/experiment-row-view';
 
 export default BaseView.extend({
-  _template: `<li data-hook="show-detail"
-                  // toggle a class for styling purposes:
-                  class="{{#isInstalled}} active {{/isInstalled}}">
-                <img width="200" height="200" src="{{thumbnail}}">
-                <h2>{{title}}</h2>
-                <p>Status: {{^isInstalled}} Not {{/isInstalled}} Installed</p>
-              </li>`,
+  _template: template,
 
   events: {
     'click [data-hook=show-detail]': 'openDetailPage'

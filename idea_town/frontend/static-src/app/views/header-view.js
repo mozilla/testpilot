@@ -1,27 +1,27 @@
 import app from 'ampersand-app';
 
 import BaseView from './base-view';
+import template from '../templates/header-view';
 
 export default BaseView.extend({
-  _template: `<section class="navbar">
-                 Logged in as {{session}} <button data-hook="logout">Log out</button>
-               </section>`,
+  _template: template,
 
   events: {
     'click [data-hook=logout]': 'logout'
   },
 
   initialize() {
-    // since we reload the page on every session change, no need to observe
-    // the model; just treat it as a static data structure
-    this.session = app.me.user.id;
+    // addon changes may be broadcast by the idea-town addon outside the
+    // regular page load cycle, and those changes alter the header's appearance
+    app.me.on('change:hasAddon', this.render, this);
   },
 
   render() {
-    // don't render unless there's a session
-    if (!this.session) {
-      return;
-    }
+    this.session = app.me.user.id;
+
+    // an active user has an addon and a session
+    this.activeUser = !!app.me.user.id && app.me.hasAddon;
+
     BaseView.prototype.render.apply(this, arguments);
   },
 
