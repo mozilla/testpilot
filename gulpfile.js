@@ -49,10 +49,10 @@ gulp.task('selfie', function selfieTask() {
     .pipe(lintTask());
 });
 
-gulp.task('clean', function cleanTask(done) {
-  del([
+gulp.task('clean', function cleanTask() {
+  return del([
     DEST_PATH
-  ], done);
+  ]);
 });
 
 gulp.task('npm:tabzilla:img', function npmTabzillaImgTask() {

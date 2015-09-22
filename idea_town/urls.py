@@ -7,7 +7,7 @@ from .experiments import views as experiment_views
 
 
 # Allow apps to contribute API parts
-router = routers.DefaultRouter()
+router = routers.DefaultRouter(trailing_slash=False)
 experiment_views.register_views(router)
 
 urlpatterns = patterns(
