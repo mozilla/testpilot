@@ -1,7 +1,1 @@
-extends:
-  - eslint:recommended
-  - airbnb
-
-rules:
-  comma-dangle: [2, never]
-  no-console: 1
+extends: idea-town
