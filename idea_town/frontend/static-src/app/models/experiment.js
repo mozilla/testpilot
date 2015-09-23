@@ -1,7 +1,9 @@
 import Model from 'ampersand-model';
 
-// name: suitable for use in a url slug: "universal-search"
-// displayName: suitable for an h1: "Universal Search"
 export default Model.extend({
-  extraProperties: 'allow'
+  urlRoot: '/api/experiments',
+  extraProperties: 'allow',
+
+  // This shouldn't be necessary; see comments in collections/experiments.js
+  ajaxConfig: { headers: { 'Accept': 'application/json' }}
 });

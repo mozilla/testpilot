@@ -32,17 +32,16 @@ export default Router.extend({
     }
   },
 
+  // 'experiment' is a URL slug: for example, 'universal-search'
   experimentDetail(experiment) {
     if (!app.me.session || !app.me.hasAddon) {
       this.redirectTo('');
     } else {
-      // if the experiment exists, load a detail page; else, 404
-      const exp = app.experiments.get(experiment, 'name');
-      if (exp) {
+      if (app.experiments.get(experiment, 'slug')) {
         app.trigger('router:new-page', {
           page: 'experimentDetail',
           opts: {
-            experiment: exp
+            slug: experiment
           }
         });
       } else {
