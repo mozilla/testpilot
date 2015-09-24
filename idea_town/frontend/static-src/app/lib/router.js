@@ -17,7 +17,7 @@ export default Router.extend({
   },
 
   landing() {
-    if (app.me.session && app.me.hasAddon) {
+    if (app.me.user.id && app.me.hasAddon) {
       this.redirectTo('home');
     } else {
       app.trigger('router:new-page', {page: 'landing'});
@@ -25,7 +25,7 @@ export default Router.extend({
   },
 
   home() {
-    if (!app.me.session || !app.me.hasAddon) {
+    if (!app.me.user.id || !app.me.hasAddon) {
       this.redirectTo('');
     } else {
       app.trigger('router:new-page', {page: 'home'});
@@ -34,7 +34,7 @@ export default Router.extend({
 
   // 'experiment' is a URL slug: for example, 'universal-search'
   experimentDetail(experiment) {
-    if (!app.me.session || !app.me.hasAddon) {
+    if (!app.me.user.id || !app.me.hasAddon) {
       this.redirectTo('');
     } else {
       if (app.experiments.get(experiment, 'slug')) {

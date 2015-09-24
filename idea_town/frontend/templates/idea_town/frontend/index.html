@@ -3,6 +3,9 @@
 <head>
     <title>Idea Town</title>
     <link rel="stylesheet" href="{{ static('styles/main.css') }}">
+    <link rel="x-current-user" href="{{ url('users_self') }}">
+    {# TODO: Make this a dev / prod setting? Or, expose in an API endpoint? #}
+    <link rel="x-addon" title="Idea Town" href="https://github.com/mozilla/idea-town-addon/blob/master/dist/idea-town-addon-0.0.1.xpi?raw=true">
 </head>
 <body>
   <header></header>
@@ -21,21 +24,7 @@
   <!-- notification bar will pop down from the top of the screen -->
   <div id="notification-bar" hidden></div>
 
-  {# TODO: this fails csp and breaks if the html page is cached; use an api endpoint instead #}
-  <script>
-    'use strict';
-    window.sadface = {
-      csrfToken: '{{ csrf_token }}',
-      userId: '{{ user_id }}',
-      addon: {
-        name: 'Idea Town',
-        url: 'https://github.com/mozilla/idea-town-addon/blob/master/dist/idea-town-addon-0.0.1.xpi?raw=true'
-      }
-    };
-  </script>
-
   <script src="{{ static('app/app.js') }}"></script>
-
 
 </body>
 </html>

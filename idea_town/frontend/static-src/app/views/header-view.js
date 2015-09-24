@@ -15,7 +15,7 @@ export default BaseView.extend({
   initialize() {
     // since we reload the page on every session change, no need to observe
     // the model; just treat it as a static data structure
-    this.session = app.me.session;
+    this.session = app.me.user.id;
   },
 
   render() {
