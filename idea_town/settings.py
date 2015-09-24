@@ -19,6 +19,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 SITE_ID = 1
 
+ADDON_URL = config(
+    'ADDON_URL',
+    default='https://example.com/configure-your-addon-url')
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 

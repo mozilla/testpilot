@@ -17,6 +17,8 @@
     "ampersand-state": "^4.5.6",
     "ampersand-view": "^8.0.1",
     "ampersand-view-switcher": "^2.0.0",
+    "es6-promise": "^3.0.2",
+    "isomorphic-fetch": "^2.1.1",
     "js-cookie": "^2.0.3",
     "lodash": "^3.10.1",
     "mozilla-tabzilla": "^0.4.0",
@@ -24,8 +26,7 @@
     "node-bourbon": "^4.2.3",
     "node-neat": "^1.7.2",
     "nodemon": "^1.4.1",
-    "normalize.css": "^3.0.3",
-    "xhr": "^2.0.4"
+    "normalize.css": "^3.0.3"
   },
   "devDependencies": {
     "babel": "^5.8.21",
