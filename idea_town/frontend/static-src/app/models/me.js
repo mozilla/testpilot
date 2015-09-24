@@ -8,18 +8,18 @@ import State from 'ampersand-state';
 //       some kind of session-check API that sends over the user model
 //       (email, name, avatar, addon status) if the user's logged in.
 export default State.extend({
+
   props: {
-    hasAddon: ['boolean', true, false]
+    user: 'object',
+    addonUrl: 'string',
+    addonName: 'string',
+    hasAddon: {type: 'boolean', required: true, default: false}
   },
 
   derived: {
     csrfToken: {
       cache: false,
       fn: () => { return cookies.get('csrftoken'); }
-    },
-    session: {
-      cache: false,
-      fn: () => { return window.sadface.userId; }
     }
   },
 
