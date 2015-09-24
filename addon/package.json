@@ -31,6 +31,20 @@
   },
   "preferences": [
     {
+      "name": "BASE_URL",
+      "title": "Ideatown protocall",
+      "description": "protocall",
+      "type": "string",
+      "value": "http://ideatown.dev:8000"
+    },
+    {
+      "name": "HOSTNAME",
+      "title": "Ideatown hostname",
+      "description": "hostname",
+      "type": "string",
+      "value": "ideatown.dev"
+    },
+    {
       "name": "CONTENT_URL",
       "title": "Ideatown content URL",
       "description": "Ideatown content URL",
