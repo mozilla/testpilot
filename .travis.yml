@@ -7,10 +7,12 @@ before_script:
   - createdb idea_town_db
 install:
   - pip install tox coveralls
+  - nvm install 0.12
 env:
   - TOX_ENV=flake8
   - TOX_ENV=docs
   - TOX_ENV=tests
+  - TOX_ENV=eslint
 script:
   - tox -e $TOX_ENV
 after_success:
