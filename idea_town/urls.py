@@ -4,11 +4,13 @@ from django.contrib import admin
 from rest_framework import routers
 
 from .experiments import views as experiment_views
+from .users import views as users_views
 from .metrics import views as metrics_view
 
 # Allow apps to contribute API parts
 router = routers.DefaultRouter(trailing_slash=False)
 experiment_views.register_views(router)
+users_views.register_views(router)
 
 urlpatterns = patterns(
     '',

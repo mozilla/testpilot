@@ -1,5 +1,4 @@
 import app from 'ampersand-app';
-import xhr from 'xhr';
 
 import BaseView from './base-view';
 
@@ -15,7 +14,7 @@ export default BaseView.extend({
   initialize() {
     // since we reload the page on every session change, no need to observe
     // the model; just treat it as a static data structure
-    this.session = app.me.session;
+    this.session = app.me.user.id;
   },
 
   render() {
@@ -30,20 +29,15 @@ export default BaseView.extend({
   //       to pick up csrftoken cookie changes.
   logout(evt) {
     evt.preventDefault();
-    xhr({
+    fetch('/accounts/logout/', {
       method: 'POST',
-      uri: '/accounts/logout/',
-      headers: {
-        'X-CSRFTOKEN': app.me.csrfToken
-      }
-    // note, the xhr callback also has a third 'body' argument
-    }, (err, resp) => {
-      if (err || resp.statusCode >= 400) {
-        // for now, log the error in the console & do nothing in the UI
-        console && console.error(err); // eslint-disable-line no-console
-      } else {
-        window.location.reload();
-      }
+      credentials: 'same-origin',
+      headers: { 'X-CSRFTOKEN': app.me.csrfToken }
+    }).then(() => {
+      window.location.reload();
+    }).catch((err) => {
+      // for now, log the error in the console & do nothing in the UI
+      console && console.error(err); // eslint-disable-line no-console
     });
   }
 });

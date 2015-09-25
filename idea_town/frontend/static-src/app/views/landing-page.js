@@ -2,12 +2,6 @@ import app from 'ampersand-app';
 
 import BaseView from './base-view';
 
-// TODO replace with an api endpoint that exposes idea town addon info
-const addonInfo = {
-  name: window.sadface.addon.name,
-  url: window.sadface.addon.url
-};
-
 export default BaseView.extend({
   _template: `<section class="page {{#loggedIn}} loggedIn {{/loggedIn}}">
                 {{^loggedIn}}
@@ -26,8 +20,8 @@ export default BaseView.extend({
               </section>`,
 
   render() {
-    this.loggedIn = !!app.me.session;
-    this.downloadUrl = addonInfo.url;
+    this.loggedIn = !!app.me.user.id;
+    this.downloadUrl = app.me.user.addon.url;
     BaseView.prototype.render.apply(this, arguments);
   }
 });
