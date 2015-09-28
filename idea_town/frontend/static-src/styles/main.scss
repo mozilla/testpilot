@@ -1,13 +1,11 @@
-// vendor imports
-// check out the gulpfile to see how this happens!
-
 @import '../vendor/normalize.css/normalize';
-@import '../vendor/mozilla-tabzilla/css/tabzilla';
 
-@import 'variables';
-@import 'mixins';
+// pull in tabzilla just so the build tools see it
+@import '../vendor/mozilla-tabzilla/css/tabzilla.scss';
+
 @import 'base';
-@import 'layout';
-@import 'theme';
-@import 'modules/modules';
 
+@import 'theme';
+@import 'layout';
+
+@import 'modules';

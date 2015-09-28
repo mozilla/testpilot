@@ -2,24 +2,19 @@
 <html>
 <head>
     <title>Idea Town</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300">
     <link rel="stylesheet" href="{{ static('styles/main.css') }}">
 </head>
 <body>
-  <header></header>
-  <div data-hook="page-container"></div>
-  <footer>
-    <ul>
-      <li><a href="//mozilla.com"><img src="mozilla-logo.png"></a>
-      <li><a href="//blog.mozilla.org">Blog</a>
-      <li><a href="//mozilla.org/privacy">Privacy Policy</a>
-      <li><a href="//mozilla.org/cookies">Cookies</a>
-      <li><a href="//mozilla.org/legal">Legal Notices</a>
-    </ul>
-  </footer>
+  <div id="main-content">
+    <header></header>
+    <div data-hook="page-container"></div>
 
-  <!-- absolutely-positioned, conditionally-displayed components at the bottom of the page -->
-  <!-- notification bar will pop down from the top of the screen -->
-  <div id="notification-bar" hidden></div>
+    <!-- absolutely-positioned, conditionally-displayed components at the bottom of the page -->
+    <!-- notification bar will pop down from the top of the screen -->
+    <div id="notification-bar" hidden></div>
+  </div>
+  <div id="footer"></div>
 
   <script src="{{ static('app/app.js') }}"></script>
 

@@ -1,0 +1,56 @@
+#condensed-header {
+  @include color-scheme($white, $default);
+  .row {
+    @include flex-container(default, space-between, center, true);
+    height: 80px;
+  }
+
+  .condensed-title {
+    @include hidpi-background-image('small-firefox-logo', 57px 59px);
+    background-repeat: no-repeat;
+    height: 57px;
+    line-height: 57px;
+    padding-left: 72px;
+  }
+}
+
+#details {
+  padding: 50px 0;
+
+  .details-header {
+    @include flex-container(default, space-between, center, true);
+  }
+
+  .details-content {
+    @include flex-container(default, space-between, top, true);
+    padding-top: 30px;
+  }
+
+  .details-overview {
+    flex: 0 0 300px;
+  }
+
+  .details-description {
+    background: #fac;
+    flex: 0 0 660px;
+    height: 200px;
+  }
+
+}
+
+
+.idea-controls {
+  @include flex-container(default, space-between, center, false);
+
+  > * {
+    margin-left: 20px;
+  }
+}
+
+.user-count {
+  @include hidpi-background-image('count-avatar', 24px 30px);
+  background-repeat: no-repeat;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 32px;
+}

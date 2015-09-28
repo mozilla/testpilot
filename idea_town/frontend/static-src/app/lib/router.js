@@ -8,9 +8,9 @@ import Router from 'ampersand-router';
 
 export default Router.extend({
   routes: {
-    '': 'landing',
-    'home': 'home',
-    'experiments/:experiment': 'experimentDetail',
+    '(/)': 'landing',
+    'home(/)': 'home',
+    'experiments/:experiment(/)': 'experimentDetail',
     '404': 'notFound',
     'error': 'error',
     '(*path)': 'notFound'

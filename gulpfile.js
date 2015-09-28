@@ -57,7 +57,8 @@ gulp.task('clean', function cleanTask() {
 
 gulp.task('npm:tabzilla:img', function npmTabzillaImgTask() {
   return gulp.src(NODE_MODULES_PATH + 'mozilla-tabzilla/media/**')
-    .pipe(gulp.dest(DEST_PATH + 'vendor/mozilla-tabzilla/media/'));
+    // the tabzilla css looks for images in "../media/img/" :-(
+    .pipe(gulp.dest(DEST_PATH + 'media/'));
 });
 
 // Copy the tabzilla assets into the src dir for inclusion in minimization

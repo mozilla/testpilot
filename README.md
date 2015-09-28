@@ -75,6 +75,13 @@ Idea Town is not intended to replace trains for most features, nor is it a test 
   * `docker ps` to get the name of the Django container (something like `ideatown_server_1`)
   * `docker restart ideatown_server_1` to restart the Django container
 
+* Sometimes `docker-compose build` seems to hang while building the `client_build` image. If this happens:
+
+  * `docker rmi $(docker images -f dangling=true -q)` to remove any dangling images
+  * `npm install` (it's not clear why this has an effect, but it seems to)
+  * `docker-compose build`
+
+[dc-bug]: https://github.com/docker/compose/issues/374
 
 Testing
 -------------
