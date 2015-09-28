@@ -83,6 +83,18 @@ Idea Town is not intended to replace trains for most features, nor is it a test 
 
 [dc-bug]: https://github.com/docker/compose/issues/374
 
+* If the client build container reports "app crashed waiting for file
+  changes before starting", but never starts again - try this:
+
+  `docker exec -t -i ideatown_client_build_1 touch gulpfile.js`
+
+* Want to run Python linting and Django tests on file changes? Try this:
+  ```
+    sudo gem install kicker
+    kicker -c -e'docker exec -t -i ideatown_server_1 flake8 ./idea_town && \
+                 docker exec -t -i ideatown_server_1 ./manage.py test -v2' ./idea_town`
+  ```
+
 Testing
 -------------
 
