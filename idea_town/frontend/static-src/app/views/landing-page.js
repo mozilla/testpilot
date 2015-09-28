@@ -20,8 +20,9 @@ export default BaseView.extend({
               </section>`,
 
   render() {
-    this.loggedIn = !!app.me.user.id;
-    this.downloadUrl = app.me.user.addon.url;
+    const isLoggedIn = !!app.me.user.id;
+    this.loggedIn = isLoggedIn;
+    this.downloadUrl = isLoggedIn && app.me.user.addon.url;
     BaseView.prototype.render.apply(this, arguments);
   }
 });
