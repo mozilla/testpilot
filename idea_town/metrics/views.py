@@ -22,6 +22,11 @@ class MetricsView(APIView):
         d = request.data
         if 'title' not in d:
             d['title'] = 'ideatown-generic-event'
+        # TODO: we will be updating user instance state from these
+        # events down the road. But we want to always sanitize before
+        # sending to third party services.
+        if 'user' in d:
+            del d['user']
         d['created'] = datetime.datetime.now().isoformat()
         handle_metric(d)
         return Response(d)
