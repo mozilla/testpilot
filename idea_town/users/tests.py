@@ -78,7 +78,7 @@ class MeViewSetTests(TestCase):
                     {
                         'id': 4,
                         'description': 'This is a test',
-                        'details_url': 'http://testserver/api/experiments/4/details',
+                        'details': [],
                         'slug': 'test-1',
                         'thumbnail': None,
                         'title': 'Test 1',

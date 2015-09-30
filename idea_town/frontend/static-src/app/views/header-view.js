@@ -20,7 +20,7 @@ export default BaseView.extend({
     this.session = app.me.user.id;
 
     // an active user has an addon and a session
-    this.activeUser = !!app.me.user.id && app.me.hasAddon;
+    this.activeUser = !!this.session && app.me.hasAddon;
 
     BaseView.prototype.render.apply(this, arguments);
   },

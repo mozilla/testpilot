@@ -2,7 +2,7 @@ from rest_framework import viewsets
 from rest_framework.decorators import detail_route
 from rest_framework.response import Response
 from .models import (Experiment, ExperimentDetail)
-from .serializers import (ExperimentSerializer, ExperimentDeepSerializer,
+from .serializers import (ExperimentSerializer,
                           ExperimentDetailSerializer)
 
 import logging
@@ -20,7 +20,7 @@ class ExperimentViewSet(viewsets.ModelViewSet):
         """Use the deep serializer for individual retrieval, which includes
         ExperimentDetail items"""
         instance = self.get_object()
-        serializer = ExperimentDeepSerializer(
+        serializer = ExperimentSerializer(
             instance, context=self.get_serializer_context())
         return Response(serializer.data)
 

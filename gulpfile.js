@@ -1,6 +1,5 @@
 const autoprefixer = require('gulp-autoprefixer');
 const babelify = require('babelify');
-const bourbon = require('node-bourbon');
 const browserify = require('browserify');
 const buffer = require('vinyl-buffer');
 const cache = require('gulp-cache');
@@ -13,7 +12,7 @@ const gulpif = require('gulp-if');
 const gutil = require('gulp-util');
 const imagemin = require('gulp-imagemin');
 const minifycss = require('gulp-minify-css');
-const neat = require('node-neat');
+const normalize = require('node-normalize-scss');
 const rename = require('gulp-rename');
 const runSequence = require('run-sequence');
 const sass = require('gulp-sass');
@@ -118,7 +117,7 @@ gulp.task('scripts', function scriptsTask() {
 gulp.task('styles', function stylesTask() {
   return gulp.src(SRC_PATH + 'styles/**/*.scss')
     .pipe(sass({
-      includePaths: bourbon.with(neat.includePaths)
+      includePaths: normalize.includePaths
     }).on('error', sass.logError))
     .pipe(autoprefixer('last 2 versions'))
     .pipe(gulp.dest(DEST_PATH + 'styles'))

@@ -1,0 +1,65 @@
+#cta {
+
+  &.sign-up {
+    @include color-scheme-special(true);
+  }
+
+  &.add-on {
+    @include color-scheme-special-inverse(true);
+  }
+
+  .firefox-logo {
+    @include hidpi-background-image('firefox-logo', 141px 146px);
+    height: 146px;
+    margin: 6rem 0 2rem;
+    width: 141px;
+  }
+
+  h1 {
+    font-size: 8rem;
+    line-height: 8rem;
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    margin-bottom: 4rem;
+  }
+}
+
+#cta-layout-wrapper {
+  display: flex;
+  height: 322px;
+  justify-content: space-between;
+
+  .cta-layout {
+    flex: 1 1;
+
+    .button {
+      width: 100%;
+    }
+
+    .fxa-alternate {
+      color: $white;
+      display: block;
+      font-size: 2rem;
+      font-weight: 400;
+      padding: 12px 0 30px;
+    }
+
+    .cta-legal {
+      font-size: 14px;
+      margin: 0 24px 0 0;
+    }
+  }
+
+  .town {
+    @include hidpi-background-image('town', 657px 322px); 
+    flex: 0 1 657px;
+    height: 322px;
+    position: relative;
+    top: 18px;
+    width: 657px;
+  }
+}

@@ -1,0 +1,36 @@
+@mixin wrapper() {
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 1024px;
+}
+
+@mixin flex-container($direction, $justification, $alignment, $wrap: nowrap, $wrapper: false) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justification;
+  align-items: $alignment;
+  flex-wrap: $wrap;
+  @if ($wrapper) {
+    @include wrapper;
+  }
+}
+
+// Breakpoint controls
+$breakpoints: (
+  big: '(min-width: 1024px)',
+  medium: '(max-width: 1024px) and (min-width: 789px)'
+);
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+      @content;
+    }
+  } @else {
+    @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. '
+    + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}

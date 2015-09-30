@@ -17,26 +17,11 @@ class ExperimentDetailSerializer(serializers.HyperlinkedModelSerializer):
         return request.build_absolute_uri(path)
 
 
-class ExperimentDeepSerializer(serializers.HyperlinkedModelSerializer):
-    """Deep Experiment serializer that includes ExperimentDetails"""
+class ExperimentSerializer(serializers.HyperlinkedModelSerializer):
+    """Experiment serializer that includes ExperimentDetails"""
     details = ExperimentDetailSerializer(many=True, read_only=True)
 
     class Meta:
         model = Experiment
         fields = ('id', 'url', 'title', 'slug', 'thumbnail', 'description',
                   'xpi_url', 'details')
-
-
-class ExperimentSerializer(serializers.HyperlinkedModelSerializer):
-    """Shallow Experiment serializer that links to a set of ExperimentDetails"""
-    details_url = serializers.SerializerMethodField()
-
-    class Meta:
-        model = Experiment
-        fields = ('id', 'url', 'title', 'slug', 'thumbnail', 'description',
-                  'xpi_url', 'details_url')
-
-    def get_details_url(self, obj):
-        request = self.context['request']
-        path = reverse('experiment-details', args=(obj.pk,))
-        return request.build_absolute_uri(path)
