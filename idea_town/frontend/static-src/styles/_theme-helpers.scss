@@ -4,10 +4,15 @@ $default: #0c99d5;
 $primary: #6fbe4a;
 $wash: #e2eaed;
 $dark: #56565a;
+$light: #f3f3f3;
+$transparent-white: rgba(255, 255, 255, .6);
+$transparent-black: rgba(0, 0, 0, .3);
+$trasparent-wash: rgba(226, 234, 237, .96);
+$transparent-stick: rgba(255, 255, 255, .96);
 
 
 // Color Management
-@mixin color-scheme-special ($border-top: false)  {
+@mixin color-scheme-special ($border-top: false) {
   @include hidpi-background-image('grad-background', 1200px 1100px);
   background-position: center top;
   background-repeat: no-repeat;
@@ -18,10 +23,23 @@ $dark: #56565a;
   color: $white;
 }
 
+// Font Management
+@mixin outline-text($outline: $white) {
+  text-shadow: -1px -1px 0 $outline,
+               1px -1px 0 $outline,
+               -1px 1px 0 $outline,
+               1px 1px 0 $outline;
+}
+
 @mixin color-scheme-special-inverse($border-top: false) {
   @include hidpi-background-image('grad-background', 1200px 1100px);
-  border-top: 6px solid $default;
-  color: $default;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: $white;
+  @if($border-top) {
+    border-top: 6px solid $default;
+  }
+  color: $black;
 }
 
 @mixin color-scheme($color, $background) {

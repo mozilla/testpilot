@@ -1,10 +1,11 @@
 #avatar-wrapper {
-  @include flex-container(default, center, center, false);
+  @include flex-container(default, center, center, nowrap, false);
   border: 1px solid $white;
   border-radius: 50%;
+  cursor: pointer;
   flex: 0 0 48px;
   height: 48px;
-
+  
   .default-avatar {
     @include hidpi-background-image('default-avatar', 41px 41px);
     flex: 0 0 41px;

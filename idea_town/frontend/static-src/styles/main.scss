@@ -1,11 +1,8 @@
-@import '../vendor/normalize.css/normalize';
-
-// pull in tabzilla just so the build tools see it
+@import 'normalize';
 @import '../vendor/mozilla-tabzilla/css/tabzilla.scss';
 
+@import 'theme-helpers';
+@import 'layout-helpers';
+
 @import 'base';
-
-@import 'theme';
-@import 'layout';
-
 @import 'modules';
