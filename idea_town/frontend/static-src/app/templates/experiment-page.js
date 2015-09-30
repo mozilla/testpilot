@@ -20,16 +20,16 @@ export default `
 
       <div class="details-content">
         <div class="details-overview">
-          <img src="{{thumbnail}}" width="260">
-          <section>
-            <h3>Measurements</h3>
-            <p class="disclaimer">All data is collected anonymously and used only to help us improve this test. <a href="">Learn more.</a></p>
-            <ul class="measurement">
-              <li>Usage per session</li>
-              <li>Index of selected results</li>
-              <li>Time spent searching</li>
-            </ul>
-          </section>
+          <img src="{{thumbnail}}" width="260" height="auto">
+            <section>
+              <h3>Measurements</h3>
+              <p class="disclaimer">All data is collected anonymously and used only to help us improve this test. <a href="">Learn more.</a></p>
+              <ul class="measurement">
+                <li>Usage per session</li>
+                <li>Index of selected results</li>
+                <li>Time spent searching</li>
+              </ul>
+            </section>
           <section>
             <h3>Brought to you by</h3>
             <ul class="contributors">
@@ -79,7 +79,10 @@ export default `
           <p class="copy">{{description}}
           {{#details}}
             <div class="details-image">
-              <img src="{{image}}" width="680">
+              <img src="{{image}}" width="680" height="auto">
+              <p class="caption"><strong>{{headline}}</strong> {{copy}}</p>
+            </div>
+          {{/details}}
         </div>
       </div>
     </div>
