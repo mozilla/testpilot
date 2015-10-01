@@ -1,6 +1,6 @@
 /*
  * This Source Code is subject to the terms of the Mozilla Public License
- * version 2.0 (the "License"). You can obtain a copy of the License at
+ * version 2.0 (the 'License'). You can obtain a copy of the License at
  * http://mozilla.org/MPL/2.0/.
  */
 
@@ -139,7 +139,7 @@ AddonManager.addAddonListener({
     app.send('addons-uninstalled', {
       id: addon.id,
       name: addon.name
-    });
+    }, addon);
 
     store.experiments = store.experiments.filter(ex => ex.id !== addon.id);
     state.updates = require('exclude')(updates, store.experiments);
@@ -151,7 +151,7 @@ AddonManager.addInstallListener({
     store.experiments.push(state.updates.find(u => u.id === addon.id));
     state.updates = state.updates.filter(u => u.id !== addon.id);
     button.badge = state.updates.length;
-    app.send('addon-install:install-ended', formatInstallData(install, addon));
+    app.send('addon-install:install-ended', formatInstallData(install, addon), addon);
   },
   onInstallFailed: function(install) {
     app.send('addon-install:install-failed', formatInstallData(install));

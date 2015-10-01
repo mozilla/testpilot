@@ -18,8 +18,11 @@ Router.prototype.on = function(name, f) {
   return this;
 };
 
-Router.prototype.send = function(name, data) {
+Router.prototype.send = function(name, data, addon) {
   this.mod.port.emit('from-addon-to-web', {type: name, detail: data});
+  if (addon) {
+    require('./ping-server')(name, addon);
+  }
   return this;
 };
 
