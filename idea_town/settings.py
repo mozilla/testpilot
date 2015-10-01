@@ -161,6 +161,9 @@ MEDIA_URL = config('MEDIA_URL', '/media/')
 
 SESSION_COOKIE_SECURE = config('SESSION_COOKIE_SECURE', default=not DEBUG, cast=bool)
 
+FIVE_YEARS_IN_SECONDS = 60 * 60 * 24 * 365 * 5
+SESSION_COOKIE_AGE = FIVE_YEARS_IN_SECONDS
+
 TEMPLATES = [
     {
         'BACKEND': 'django_jinja.backend.Jinja2',
