@@ -4,9 +4,13 @@
 # successfully rebuild the client image, and probably also always
 # emit confusing semi-meaningless error messages.
 
-docker-machine create -driver virtualbox default
-docker-machine start default
-eval "$(docker-machine env default)"
+# test if docker-machine exists
+if [ -e docker-machine ]; then
+    docker-machine create -driver virtualbox default
+    docker-machine start default
+    eval "$(docker-machine env default)"
+fi
+
 docker rmi $(docker images -f dangling=true -q)
 npm install
 docker-compose build
