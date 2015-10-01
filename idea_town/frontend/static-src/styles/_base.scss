@@ -22,7 +22,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   font-weight: 200;
   margin: 0;
 }
@@ -34,5 +35,47 @@ h1 {
 h2 {
   font-size: 40px;
 }
+
+h3 {
+  font-size: 26px;
+}
+
+a {
+  color: $default;
+}
+
+// RECYCLABLE LITTLE BITS THAT
+// PROBABLY DON'T REQUIRE STAND ALONE
+// MODULES
+
+// LAYOUT
+
+.wrapper {
+  @include flex-container(default, space-between, top, nowrap, true);
+}
+
+.main-content {
+  @include wrapper;
+  flex: 1;
+}
+
+// TEXT FORMATTING
+
+.subtitle {
+  font-size: 16px;
+}
+
+.copy {
+  line-height: 2.5rem;
+  margin-bottom: 24px;
+}
+
+.caption {
+  font-size: 12px;
+  font-weight: 400;
+  margin: 6px 0 0 6px;
+}
+
+
 
 

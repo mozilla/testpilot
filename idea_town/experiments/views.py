@@ -14,7 +14,7 @@ class ExperimentViewSet(viewsets.ModelViewSet):
     Returns a list of all Experiments in the system.
     """
     queryset = Experiment.objects.all()
-    serializer_class = ExperimentSerializer
+    serializer_class = ExperimentDeepSerializer
 
     def retrieve(self, request, *args, **kwargs):
         """Use the deep serializer for individual retrieval, which includes

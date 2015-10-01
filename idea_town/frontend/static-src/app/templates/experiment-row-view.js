@@ -1,5 +1,5 @@
 export default `
-  <li data-hook="show-detail"
+  <li class="idea-card" data-hook="show-detail"
     // toggle a class for styling purposes:
     class="{{#isInstalled}} active {{/isInstalled}}">
     <img width="200" height="200" src="{{thumbnail}}">

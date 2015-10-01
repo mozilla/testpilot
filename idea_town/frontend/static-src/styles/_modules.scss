@@ -1,9 +1,13 @@
 @import 'modules/avatar';
 @import 'modules/buttons';
-@import 'modules/cta';
-@import 'modules/details';
 @import 'modules/footer';
-@import 'modules/idea-graphic';
 @import 'modules/main-content';
 
+// View modules contain all styles directly related
+// to an individual page.
+// The names of each corresponds to an ID on
+// the body of each tag.
 
+@import 'modules/cta-view';
+@import 'modules/idea-view';
+@import 'modules/list-view';
