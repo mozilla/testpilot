@@ -2,7 +2,7 @@ from rest_framework import viewsets
 from rest_framework.decorators import detail_route
 from rest_framework.response import Response
 from .models import (Experiment, ExperimentDetail)
-from .serializers import (ExperimentSerializer, ExperimentDeepSerializer,
+from .serializers import (ExperimentDeepSerializer,
                           ExperimentDetailSerializer)
 
 import logging
