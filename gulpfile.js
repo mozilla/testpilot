@@ -1,6 +1,5 @@
 const autoprefixer = require('gulp-autoprefixer');
 const babelify = require('babelify');
-const bourbon = require('node-bourbon');
 const browserify = require('browserify');
 const buffer = require('vinyl-buffer');
 const cache = require('gulp-cache');
@@ -13,7 +12,6 @@ const gulpif = require('gulp-if');
 const gutil = require('gulp-util');
 const imagemin = require('gulp-imagemin');
 const minifycss = require('gulp-minify-css');
-const neat = require('node-neat');
 const normalize = require('node-normalize-scss');
 const rename = require('gulp-rename');
 const runSequence = require('run-sequence');

@@ -10,7 +10,7 @@ export default `
           </header>
           <div class="town-background"></div>
           <div id="avatar-wrapper">
-            <p>Logged in as {{session}} <button data-hook="logout">Log out</button>
+            <span class="default-avatar" data-hook="logout"></span>
           </div>
         </div>
       </div>
