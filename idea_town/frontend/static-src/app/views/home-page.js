@@ -8,7 +8,10 @@ export default BaseView.extend({
   _template: template,
 
   render() {
-    // TODO: do I need to do this if I don't want to manually assign this.el?
+    // TODO: this is not awesome
+    document.body.id = document.body._id;
+    document.body.id = 'list-view';
+
     BaseView.prototype.render.apply(this, arguments);
 
     // render the experiment list into the page
@@ -17,6 +20,12 @@ export default BaseView.extend({
       ExperimentRowView,
       this.query('.experiments')
     );
+  },
+
+  remove() {
+    document.body.id = document.body._id;
+
+    BaseView.prototype.remove.apply(this, arguments);
   }
 
 });

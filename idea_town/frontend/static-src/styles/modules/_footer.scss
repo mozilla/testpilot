@@ -1,5 +1,44 @@
-#footer {
-  @include color-scheme($default, $wash);
-  border-top: 2px solid $black;
-  flex: 1 1 80px;
+#main-footer {
+  flex: 1 1;
+  padding: 60px 0 20px;
+
+  &.wash {
+    @include color-scheme($default, $wash);
+    border-top: 2px solid $black;
+  }
+
+  &.light {
+    @include color-scheme($black, $light);
+  }
+
+  &.fixed {
+    background: linear-gradient(to bottom, $transparent-white 0%, $wash 100%);
+    bottom: 0;
+    padding-top: 20px;
+    position: fixed;
+    width: 100%;
+  }
+
+  .wrapper {
+    @include flex-container(default, flex-start, flex-end, nowrap, false);
+  }
+
+  .moz-logo {
+    @include hidpi-background-image('mozilla', 77px 20px);
+    display: block;
+    float: left;
+    height: 20px;
+    margin-right: 20px;
+    width: 77px;
+  }
+
+  .boilerplate {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+    padding: 0 20px;
+    position: relative;
+    text-decoration: none;
+  }
 }

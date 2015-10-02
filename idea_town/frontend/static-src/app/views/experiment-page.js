@@ -18,14 +18,35 @@ export default BaseView.extend({
   render() {
     this.title = this.model.title;
     this.isInstalled = !!this.model.isInstalled;
+    this.details = this.model.details;
+    this.thumbnail = this.model.thumbnail;
+    this.description = this.model.description;
+
+    // TODO: let's not mess with body, if possible
+    if (this.isInstalled) {
+      document.body.classList.add('active');
+    } else {
+      document.body.classList.add('inactive');
+    }
+    document.body._id = document.body.id;
+    document.body.id = 'idea-view';
+
     BaseView.prototype.render.apply(this, arguments);
+  },
+
+  remove() {
+    document.body.id = document.body._id;
+    document.body.classList.remove('active');
+    document.body.classList.remove('inactive');
+
+    BaseView.prototype.remove.apply(this, arguments);
   },
 
   // isInstall is a boolean: true if we are installing, false if uninstalling
   _updateAddon(isInstall) {
     this.model.isInstalled = !this.model.isInstalled;
-    const packet = isInstall ? { install: this.model.name } :
-                  { uninstall: this.model.name };
+    const packet = isInstall ? { install: this.model.slug } :
+                  { uninstall: this.model.slug };
     app.webChannel.sendMessage('from-web-to-addon', packet);
     this.render();
   },

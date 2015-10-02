@@ -1,10 +1,8 @@
 export default `
-  <li data-hook="show-detail"
-    // toggle a class for styling purposes:
-    class="{{#isInstalled}} active {{/isInstalled}}">
-    <img width="200" height="200" src="{{thumbnail}}">
+  <li data-hook="show-detail" class="idea-card {{#isInstalled}} active {{/isInstalled}}">
+    <div class="idea-preview-image" style="background: url({{thumbnail}}) no-repeat"></div>
     <h2>{{title}}</h2>
-    <p>Status: {{^isInstalled}} Not {{/isInstalled}} Installed</p>
+    <p>{{description}}</p>
   </li>
 `;
 
