@@ -3,6 +3,8 @@ import AmpersandViewSwitcher from 'ampersand-view-switcher';
 
 import ErrorPage from '../views/error-page';
 import ExperimentPage from '../views/experiment-page';
+import HeaderView from '../views/header-view';
+import ScrollHeaderView from '../views/scroll-header-view';
 import HomePage from '../views/home-page';
 import LandingPage from '../views/landing-page';
 import NotFoundPage from '../views/not-found-page';
@@ -16,6 +18,8 @@ export default class PageManager {
     if (!opts.pageContainer) {
       throw new Error('PageManager constructor must be passed a pageContainer element');
     }
+
+    this.header = document.querySelector('header');
 
     this.pages = {
       'landing': LandingPage,
@@ -37,6 +41,15 @@ export default class PageManager {
       const Ctor = this.pages[page];
       const newPage = new Ctor(opts);
 
+      if (newPage.headerScroll) {
+        this.headerView = new ScrollHeaderView(opts);
+      } else {
+        this.headerView = new HeaderView();
+      }
+
+      this.headerView.render();
+      this.header.innerHTML = '';
+      this.header.appendChild(this.headerView.el);
       // load new page
       this._viewSwitcher.set(newPage);
     } else {

@@ -1,5 +1,5 @@
-@import 'normalize';
-@import '../vendor/mozilla-tabzilla/css/tabzilla.scss';
+// vendor code includes normalize.css; load it first
+@import 'vendor';
 
 @import 'theme-helpers';
 @import 'layout-helpers';

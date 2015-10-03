@@ -6,6 +6,8 @@ import template from '../templates/experiment-page';
 export default BaseView.extend({
   _template: template,
 
+  headerScroll: true,
+
   events: {
     'click [data-hook=install]': 'install',
     'click [data-hook=uninstall]': 'uninstall'
