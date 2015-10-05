@@ -1,5 +1,6 @@
 export default `
   <section id="details" class="page" data-hook="experiment-page">
+    <header data-hook="main-header"></header>
     <div id="details">
       <div class="details-sticker"></div>
 
@@ -80,6 +81,9 @@ export default `
           {{#details}}
             <div class="details-image">
               <img src="{{image}}" width="680">
+              <p class="caption"><strong>{{headline}}</strong> {{copy}}</p>
+            </div>
+          {{/details}}
         </div>
       </div>
     </div>

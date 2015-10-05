@@ -1,7 +1,9 @@
 import app from 'ampersand-app';
-
 import BaseView from './base-view';
+
 import template from '../templates/header-view';
+import scrollTemplate from '../templates/scroll-header-view';
+const changeHeaderOn = 100;
 
 export default BaseView.extend({
   _template: template,
@@ -10,9 +12,27 @@ export default BaseView.extend({
     'click [data-hook=logout]': 'logout'
   },
 
-  initialize() {
+  initialize(opts) {
+    if (opts.headerScroll) {
+      const chunkedUrl = location.pathname.split('/');
+      if (chunkedUrl.length < 2) {
+        return;
+      }
+      this._template = scrollTemplate;
+      this.model = app.experiments.get(chunkedUrl[2], 'slug');
+      this.didScroll = false;
+
+      window.addEventListener('scroll', function scrollListener() {
+        if (!this.didScroll) {
+          this.didScroll = true;
+          setTimeout(this.onScroll.bind(this), 200);
+        }
+      }.bind(this));
+    }
+
     // addon changes may be broadcast by the idea-town addon outside the
-    // regular page load cycle, and those changes alter the header's appearance
+    // regular page load cycle, and those changes alter the header's
+    // appearance
     app.me.on('change:hasAddon', this.render, this);
   },
 
@@ -22,13 +42,28 @@ export default BaseView.extend({
     // an active user has an addon and a session
     this.activeUser = !!this.session && app.me.hasAddon;
 
+    if (this.model) {
+      this.title = this.model.title;
+      this.isInstalled = !!this.model.isInstalled;
+    }
+
     BaseView.prototype.render.apply(this, arguments);
+  },
+
+  onScroll() {
+    const sy = window.pageYOffset || document.documentElement.scrollTop;
+    if (sy >= changeHeaderOn) {
+      this.scrolled = true;
+    } else {
+      this.scrolled = false;
+    }
+    this.render();
+    this.didScroll = false;
   },
 
   // TODO: actually manage state without refreshing the page. for now, just refresh
   //       to pick up csrftoken cookie changes.
-  logout(evt) {
-    evt.preventDefault();
+  logout() {
     fetch('/accounts/logout/', {
       method: 'POST',
       credentials: 'same-origin',

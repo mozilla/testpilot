@@ -1,5 +1,6 @@
 export default `
   <section class="page main-content" data-hook="landing-page">
+    <header data-hook="main-header"></header>
     {{^loggedIn}}
       <div class="firefox-logo"></div>
       <h1 class="hero">Introducing Idea Town</h1>
