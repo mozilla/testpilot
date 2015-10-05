@@ -25,7 +25,7 @@ export default Router.extend({
   },
 
   home() {
-    if (!app.me.user.id || !app.me.hasAddon) {
+    if (!app.me.user.id || !app.me.hasAddon ) {
       this.redirectTo('');
     } else {
       app.trigger('router:new-page', {page: 'home'});

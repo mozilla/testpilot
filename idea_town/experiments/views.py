@@ -17,8 +17,6 @@ class ExperimentViewSet(viewsets.ModelViewSet):
     serializer_class = ExperimentSerializer
 
     def retrieve(self, request, *args, **kwargs):
-        """Use the deep serializer for individual retrieval, which includes
-        ExperimentDetail items"""
         instance = self.get_object()
         serializer = ExperimentSerializer(
             instance, context=self.get_serializer_context())
