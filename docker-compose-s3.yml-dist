@@ -1,0 +1,18 @@
+db:
+  image: postgres:9.3
+client_build:
+  extends:
+    file: docker-compose-base.yml
+    service: client_build
+server:
+  extends:
+    file: docker-compose-base.yml
+    service: server
+  links:
+    - db
+  environment:
+    - DEFAULT_FILE_STORAGE=storages.backends.s3boto.S3BotoStorage
+    - AWS_ACCESS_KEY_ID={your access key id goes here}
+    - AWS_SECRET_ACCESS_KEY={your secret access key goes here}
+    - AWS_STORAGE_BUCKET_NAME={your bucket name here}
+    - MEDIA_URL=http://{your bucket name here}.s3.amazonaws.com/

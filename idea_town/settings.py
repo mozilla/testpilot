@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django_cleanup',
 
     'rest_framework',
+    'storages',
 
     # FxA auth handling
     'allauth',
@@ -158,6 +159,14 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 MEDIA_ROOT = config('MEDIA_ROOT', default=os.path.join(BASE_DIR, 'media'))
 MEDIA_URL = config('MEDIA_URL', '/media/')
+
+DEFAULT_FILE_STORAGE = config(
+    'DEFAULT_FILE_STORAGE',
+    default='django.core.files.storage.FileSystemStorage')
+
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID', default=None)
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY', default=None)
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME', default=None)
 
 SESSION_COOKIE_SECURE = config('SESSION_COOKIE_SECURE', default=not DEBUG, cast=bool)
 

@@ -14,3 +14,4 @@ venv/
 idea_town/frontend/static/
 idea_town/frontend/static-src/vendor/
 idea_town/frontend/static-src/styles/vendor/
+docker-compose-s3.yml

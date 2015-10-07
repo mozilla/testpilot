@@ -89,11 +89,20 @@ Idea Town is not intended to replace trains for most features, nor is it a test 
   `docker exec -t -i ideatown_client_build_1 touch gulpfile.js`
 
 * Want to run Python linting and Django tests on file changes? Try this:
-  ```
+  ```bash
     sudo gem install kicker
-    kicker -c -e'docker exec -t -i ideatown_server_1 flake8 ./idea_town && \
-                 docker exec -t -i ideatown_server_1 ./manage.py test -v2' ./idea_town`
+    kicker -c -e'docker exec -t -i ideatown_server_1 flake8 ./idea_town && docker exec -t -i ideatown_server_1 ./manage.py test -v2' ./idea_town`
   ```
+
+* You can customize settings for special development cases. For example, to
+  switch to using S3 for media uploads:
+  ```bash
+    cp docker-compose-s3.yml-dist docker-compose-s3.yml
+    # Edit docker-compose-s3.yml to include your AWS credentials
+    docker-compose -f docker-compose-s3.yml build
+    docker-compose -f docker-compose-s3.yml up
+  ```
+ 
 
 Testing
 -------------

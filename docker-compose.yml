@@ -1,36 +1,13 @@
 db:
   image: postgres:9.3
 client_build:
-  build: .
-  dockerfile: Dockerfile-client_build
-  ports:
-    - "9988:9988"
-  volumes:
-    - .:/app
-  environment:
-    - NODE_ENV=development
-  command:
-      ./bin/run-client-build.sh
+  extends:
+    file: docker-compose-base.yml
+    service: client_build
 server:
-  build: .
-  dockerfile: Dockerfile-server
-  ports:
-    - "8000:8000"
-  volumes:
-    - .:/app
+  extends:
+    file: docker-compose-base.yml
+    service: server
   links:
     - db
     - client_build
-  environment:
-    - PYTHONUNBUFFERED=1
-    - PYTHONDONTWRITEBYTECODE=1
-    - DATABASE_URL=postgres://postgres@db/postgres
-    - DEBUG=True
-    - ALLOWED_HOSTS=localhost,127.0.0.1,
-    - SECRET_KEY=59114b6a-2858-4caf-8878-482a24ee9542
-    - ADDON_URL=https://github.com/mozilla/idea-town-addon/blob/master/dist/idea-town-addon-0.0.1.xpi?raw=true
-    - FXA_ACCESS_TOKEN_URL=https://oauth-stable.dev.lcip.org/v1/token
-    - FXA_AUTHORIZE_URL=https://oauth-stable.dev.lcip.org/v1/authorization
-    - FXA_PROFILE_URL=https://stable.dev.lcip.org/profile/v1/profile
-  command:
-    ./bin/run-dev.sh
