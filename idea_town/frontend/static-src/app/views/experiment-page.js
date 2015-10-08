@@ -1,10 +1,12 @@
 import app from 'ampersand-app';
 
-import BaseView from './base-view';
+import PageView from './page-view';
 import template from '../templates/experiment-page';
 
-export default BaseView.extend({
+export default PageView.extend({
   _template: template,
+
+  headerScroll: true,
 
   events: {
     'click [data-hook=install]': 'install',
@@ -31,7 +33,7 @@ export default BaseView.extend({
     document.body._id = document.body.id;
     document.body.id = 'idea-view';
 
-    BaseView.prototype.render.apply(this, arguments);
+    PageView.prototype.render.apply(this, arguments);
   },
 
   remove() {
@@ -39,7 +41,7 @@ export default BaseView.extend({
     document.body.classList.remove('active');
     document.body.classList.remove('inactive');
 
-    BaseView.prototype.remove.apply(this, arguments);
+    PageView.prototype.remove.apply(this, arguments);
   },
 
   // isInstall is a boolean: true if we are installing, false if uninstalling

@@ -1,6 +1,6 @@
-import BaseView from './base-view';
+import PageView from './page-view';
 import template from '../templates/error-page';
 
-export default BaseView.extend({
+export default PageView.extend({
   _template: template
 });

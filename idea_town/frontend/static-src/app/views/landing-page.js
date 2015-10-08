@@ -1,9 +1,9 @@
 import app from 'ampersand-app';
 
-import BaseView from './base-view';
+import PageView from './page-view';
 import template from '../templates/landing-page';
 
-export default BaseView.extend({
+export default PageView.extend({
   _template: template,
 
   render() {
@@ -21,7 +21,7 @@ export default BaseView.extend({
     document.body._id = document.body.id;
     document.body.id = 'cta';
 
-    BaseView.prototype.render.apply(this, arguments);
+    PageView.prototype.render.apply(this, arguments);
   },
 
   remove() {
@@ -29,6 +29,6 @@ export default BaseView.extend({
     document.body.classList.remove('sign-up');
     document.body.id = document.body._id;
 
-    BaseView.prototype.remove.apply(this, arguments);
+    PageView.prototype.remove.apply(this, arguments);
   }
 });

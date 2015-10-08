@@ -1,10 +1,10 @@
 import app from 'ampersand-app';
 import ExperimentRowView from './experiment-row-view';
 
-import BaseView from './base-view';
+import PageView from './page-view';
 import template from '../templates/home-page';
 
-export default BaseView.extend({
+export default PageView.extend({
   _template: template,
 
   render() {
@@ -12,7 +12,7 @@ export default BaseView.extend({
     document.body.id = document.body._id;
     document.body.id = 'list-view';
 
-    BaseView.prototype.render.apply(this, arguments);
+    PageView.prototype.render.apply(this, arguments);
 
     // render the experiment list into the page
     this.experimentList = this.renderCollection(
@@ -25,7 +25,7 @@ export default BaseView.extend({
   remove() {
     document.body.id = document.body._id;
 
-    BaseView.prototype.remove.apply(this, arguments);
+    PageView.prototype.remove.apply(this, arguments);
   }
 
 });
