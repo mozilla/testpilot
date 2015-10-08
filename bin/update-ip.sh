@@ -3,7 +3,11 @@
 # Gets the ip address of the server container and sets it in place in
 # your /etc/hosts file.
 
-IPBASE=`/sbin/ifconfig docker0 | grep 'inet addr:'| awk '{print $2}' | sed -e 's/.*://g' | cut -d '.' -f 1-2`
-NEWIP=`docker inspect ideatown_server_1 | grep '"IPAddress' | awk '{sub(/["|,]/, "", $2); print $2}' | sed 's/["|,]//g'`
+# test if docker-machine exists
+if [ -e docker-machine ]; then
+    NEWIP=`docker-machine ip default`
+else
+    NEWIP=`docker inspect -f '{{ .NetworkSettings.IPAddress }}' ideatown_server_1`
+fi
 
-sed -ri 's/'$IPBASE'\.[0-9]{1,3}\.[0-9]{1,3}/'$NEWIP'/g' /etc/hosts
+sed -i.bak 's/.* ideatown\.dev/'$NEWIP' ideatown.dev/g' /etc/hosts
