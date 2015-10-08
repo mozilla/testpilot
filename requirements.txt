@@ -149,3 +149,9 @@ datadog==0.9.0
 
 # sha256: IX5Hl9o6mkqfvmci4NuYBwuEQ6iCEtes29JBp2aBQdk
 simplejson==3.8.0
+
+# sha256: dYSYx38W4muLYa8m-NDbsRm3E_LY0WZoHsiSMR81IMQ
+boto==2.38.0
+
+# sha256: 3gT6WE26Z7tSel6olB0v9HEoXLD5d8hjRP8oJ8OZgeI
+django-storages-redux==1.3
