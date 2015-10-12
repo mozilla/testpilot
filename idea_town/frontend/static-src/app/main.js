@@ -9,8 +9,10 @@ import ExperimentsCollection from './collections/experiments';
 import Me from './models/me';
 import PageManager from './lib/page-manager';
 import Router from './lib/router';
+import domReady from 'domready';
 
 app.extend({
+  router: new Router(),
 
   initialize() {
     app.webChannel = webChannel;
@@ -19,31 +21,45 @@ app.extend({
       credentials: 'same-origin'
     }).then((response) => response.json()).then((userData) => {
       app.me = new Me({
-        user: userData
+        user: userData,
+        hasAddon: Boolean(window.navigator.ideatownAddon)
       });
 
       app.experiments = new ExperimentsCollection();
-      app.experiments.fetch();
-
-      // session won't change without a hard refresh, but addon state could, so:
-      // if addon state changes, dump user back to '/' and let the router handle
-      // redirecting to the correct landing page
-      app.me.on('change:hasAddon', () => { app.router.reload(); });
-
-      app.pageManager = new PageManager({
-        pageContainer: document.querySelector('[data-hook=page-container]')
+      app.experiments.fetch({
+        success: app.blastOff,
+        error: (err) => {
+          console && console.error(err); // eslint-disable-line no-console
+          app.blastoff();
+        }
       });
-
-      app.router = new Router();
-      app.router.history.start();
     }).catch((err) => {
       // for now, log the error in the console & do nothing in the UI
       console && console.error(err); // eslint-disable-line no-console
     });
+  },
+
+  blastOff(exp) {
+    if (exp && exp.models) {
+      app.experiments.set(exp.models);
+    }
+
+    app.pageManager = new PageManager({
+      pageContainer: document.querySelector('[data-hook=page-container]')
+    });
+
+    if (!app.router.history.started()) {
+      app.router.history.start();
+    }
+
+    app.me.on('change:hasAddon', () => {
+      app.router.reload();
+    });
   }
 
 });
-app.initialize();
+
+domReady(app.initialize);
 
 // make app accessible from window for debuggin'
 window.app = app;

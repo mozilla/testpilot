@@ -22,10 +22,18 @@ export default State.extend({
   },
 
   initialize() {
-    // note: when the server exposes addon info, these listeners can go away
-    app.on('webChannel:addon-available', () => { this.hasAddon = true; });
-    app.on('webChannel:addon-self:installed', () => { app.me.hasAddon = true; });
-    app.on('webChannel:addon-self:uninstalled', () => { app.me.hasAddon = false; });
+    app.on('webChannel:addon-available', () => {
+      if (!app.me.hasAddon) app.me.hasAddon = true;
+    });
+
+    app.on('webChannel:addon-self:installed', () => {
+      if (!app.me.hasAddon) app.me.hasAddon = true;
+    });
+
+    app.on('webChannel:addon-self:uninstalled', () => {
+      if (app.me.hasAddon) app.me.hasAddon = false;
+    });
+
     this.addonCheck();
   },
 
