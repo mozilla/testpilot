@@ -4,9 +4,12 @@
  * http://mozilla.org/MPL/2.0/.
  */
 
-/* global cloneInto */
+/* global cloneInto unsafeWindow */
 
 // Page script acts as messaging bridge between addon and web content.
+
+// Let the client know that the addon is installed.
+unsafeWindow.navigator.ideatownAddon = true;
 
 window.addEventListener('from-web-to-addon', function(event) {
   self.port.emit('from-web-to-addon', event.detail);
