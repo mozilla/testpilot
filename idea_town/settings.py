@@ -34,6 +34,11 @@ DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
+# Credentials used to create the initial superuser account
+INITIAL_ADMIN_USERNAME = config('INITIAL_ADMIN_USERNAME', default=None)
+INITIAL_ADMIN_PASSWORD = config('INITIAL_ADMIN_PASSWORD', default=None)
+INITIAL_ADMIN_EMAIL = config('INITIAL_ADMIN_EMAIL', default=None)
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -112,6 +117,10 @@ SOCIALACCOUNT_PROVIDERS = {
     )
 }
 
+FXA_CLIENT_ID = config('FXA_CLIENT_ID', default=None)
+
+FXA_SECRET_KEY = config('FXA_SECRET_KEY', default=None)
+
 SOCIALACCOUNT_AUTO_SIGNUP = True
 
 SOCIALACCOUNT_EMAIL_VERIFICATION = False
@@ -123,19 +132,35 @@ ROOT_URLCONF = 'idea_town.urls'
 WSGI_APPLICATION = 'idea_town.wsgi.application'
 
 DATADOG_KEYS = {
-    'api_key': '4f3b967bbf13c7769ac4fa89efda0fae',
-    'app_key': 'ddd45a7b3a3cb90ff1baf20ae8cfab04d1937038'
+    'api_key': config('DATADOG_API_KEY', default=None),
+    'app_key': config('DATADOG_APP_KEY', default=None)
 }
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
-DATABASES = {
-    'default': config(
-        'DATABASE_URL',
-        cast=dj_database_url.parse
+RDS_DATABASE_TYPE = config('RDS_DATABASE_TYPE', default=None)
+if RDS_DATABASE_TYPE is None:
+    DATABASES = {
+        'default': config('DATABASE_URL', cast=dj_database_url.parse)
+    }
+else:
+    db_types = dict(
+        postgres='django.db.backends.postgresql_psycopg2',
+        mysql='django.db.backends.mysql'
     )
-}
+    db_types_default = 'postgres'
+    DATABASES = {
+        'default': {
+            'ENGINE': db_types.get(RDS_DATABASE_TYPE,
+                                   db_types[db_types_default]),
+            # Note: These env vars are automatically supplied by AWS/EB
+            'NAME': config('RDS_DB_NAME'),
+            'USER': config('RDS_USERNAME'),
+            'PASSWORD': config('RDS_PASSWORD'),
+            'HOST': config('RDS_HOSTNAME'),
+            'PORT': config('RDS_PORT'),
+        }
+    }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -157,16 +182,18 @@ STATICFILES_DIRS = [
 ]
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-MEDIA_ROOT = config('MEDIA_ROOT', default=os.path.join(BASE_DIR, 'media'))
-MEDIA_URL = config('MEDIA_URL', '/media/')
-
 DEFAULT_FILE_STORAGE = config(
     'DEFAULT_FILE_STORAGE',
     default='django.core.files.storage.FileSystemStorage')
 
-AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID', default=None)
-AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY', default=None)
-AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME', default=None)
+if DEFAULT_FILE_STORAGE == 'storages.backends.s3boto.S3BotoStorage':
+    AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+    MEDIA_URL = config('MEDIA_URL')
+else:
+    MEDIA_ROOT = config('MEDIA_ROOT', default=os.path.join(BASE_DIR, 'media'))
+    MEDIA_URL = config('MEDIA_URL', '/media/')
 
 SESSION_COOKIE_SECURE = config('SESSION_COOKIE_SECURE', default=not DEBUG, cast=bool)
 
