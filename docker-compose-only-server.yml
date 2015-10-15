@@ -1,0 +1,8 @@
+db:
+  image: postgres:9.3
+server:
+  extends:
+    file: docker-compose-base.yml
+    service: server
+  links:
+    - db

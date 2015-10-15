@@ -102,7 +102,19 @@ Idea Town is not intended to replace trains for most features, nor is it a test 
     docker-compose -f docker-compose-s3.yml build
     docker-compose -f docker-compose-s3.yml up
   ```
- 
+
+* If you'd like to run Gulp on your host computer because there are issues
+  running it in a Docker container, try this:
+  ```
+  docker-compose -f docker-compose-only-server.yml build
+  docker-compose -f docker-compose-only-server.yml up
+  ```
+  Then, in a second terminal, you can run Gulp like this (assuming you have
+  node.js installed locally):
+  ```
+  npm install
+  gulp
+  ```
 
 Testing
 -------------
