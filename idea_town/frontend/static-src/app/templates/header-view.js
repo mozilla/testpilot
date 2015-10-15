@@ -4,7 +4,7 @@ export default `
       <div id="expanded-branding">
         <div class="wrapper">
           <header>
-            <h1>Idea Town</h1>
+            <a class="base" href="/home"><h1>Idea Town</h1></a>
             <p class="subtitle"> A place where ideas come to ideas
             and also ideas are ideas etc.</p>
           </header>
