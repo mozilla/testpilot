@@ -32,7 +32,7 @@ export default Router.extend({
     }
   },
 
-  // 'experiment' is a URL slug: for example, 'universal-search'
+  // 'experiment' is a URL slug: for example, 'universal_search'
   experimentDetail(experiment) {
     if (!app.me.user.id || !app.me.hasAddon) {
       this.redirectTo('');

@@ -7,6 +7,7 @@ import mustache from 'mustache';
 export default AmpersandView.extend({
   // override _template with a mustache template
   _template: '',
+
   template(ctx) {
     return mustache.render(this._template, ctx);
   },
