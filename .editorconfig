@@ -15,3 +15,6 @@ indent_size = 2
 
 [*.md]
 trim_trailing_whitespace = false
+
+[*.{yml,yaml,config,config-dist}]
+indent_size = 2

@@ -1,17 +1,15 @@
-client_build:
+frontend-watcher:
   build: .
-  dockerfile: Dockerfile-client_build
-  ports:
-    - "9988:9988"
+  dockerfile: Dockerfile-frontend-build
   volumes:
     - .:/app
   environment:
     - NODE_ENV=development
   command:
-      ./bin/run-client-build.sh
+    ./bin/run-frontend-watch.sh
 server:
   build: .
-  dockerfile: Dockerfile-server
+  dockerfile: Dockerfile
   ports:
     - "8000:8000"
   volumes:
@@ -23,8 +21,15 @@ server:
     - PYTHONDONTWRITEBYTECODE=1
     - DATABASE_URL=postgres://postgres@db/postgres
     - DEBUG=True
+    - INITIAL_ADMIN_USERNAME=admin
+    - INITIAL_ADMIN_PASSWORD=admin
+    - INITIAL_ADMIN_EMAIL=admin@example.com
     - ALLOWED_HOSTS=localhost,127.0.0.1,
     - SECRET_KEY=59114b6a-2858-4caf-8878-482a24ee9542
     - FXA_ACCESS_TOKEN_URL=https://oauth-stable.dev.lcip.org/v1/token
     - FXA_AUTHORIZE_URL=https://oauth-stable.dev.lcip.org/v1/authorization
     - FXA_PROFILE_URL=https://stable.dev.lcip.org/profile/v1/profile
+    - FXA_CLIENT_ID=a6cbfd1c48c97307
+    - FXA_SECRET_KEY=57a02718ead7e7186cb22ce329dddc1abf01ad63bdedd85868a4836da4b8204c
+    - DATADOG_API_KEY=4f3b967bbf13c7769ac4fa89efda0fae
+    - DATADOG_APP_KEY=ddd45a7b3a3cb90ff1baf20ae8cfab04d1937038

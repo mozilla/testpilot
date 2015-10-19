@@ -1,13 +1,13 @@
 db:
   image: postgres:9.3
-client_build:
+frontend-watcher:
   extends:
     file: docker-compose-base.yml
-    service: client_build
+    service: frontend-watcher
 server:
   extends:
     file: docker-compose-base.yml
     service: server
   links:
     - db
-    - client_build
+    - frontend-watcher
