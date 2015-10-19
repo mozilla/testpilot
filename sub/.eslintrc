@@ -1,0 +1,4 @@
+extends: idea-town
+
+rules:
+  func-names: 0
