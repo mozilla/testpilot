@@ -7,6 +7,8 @@ from django.conf import settings
 from django.utils.deconstruct import deconstructible
 from django.core.urlresolvers import reverse
 
+from rest_framework import serializers
+
 import logging
 logger = logging.getLogger(__name__)
 
@@ -14,6 +16,18 @@ logger = logging.getLogger(__name__)
 MK_UPLOAD_TMPL = getattr(
     settings, 'MK_UPLOAD_TMPL',
     '%(base)s/%(h1)s/%(h2)s/%(hash)s_%(field_fn)s_%(now)s_%(rand)04d%(ext)s')
+
+
+class MarkupField(serializers.Field):
+    """Serializer for django-markupfield MarkupField"""
+
+    def to_internal_value(self, value):
+        # TODO: This needs implementation if we do a writeable API that accepts
+        # measurement field changes
+        pass
+
+    def to_representation(self, value):
+        return value.rendered
 
 
 @deconstructible
