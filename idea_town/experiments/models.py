@@ -17,6 +17,7 @@ class Experiment(models.Model):
     xpi_url = models.URLField()
 
     users = models.ManyToManyField(User, through='UserInstallation')
+    contributors = models.ManyToManyField(User, related_name='contributor')
 
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)

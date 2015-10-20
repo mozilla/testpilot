@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'idea_town.base',
     'idea_town.frontend',
     'idea_town.accounts',
+    'idea_town.users',
     'idea_town.experiments',
 
     # Third party apps

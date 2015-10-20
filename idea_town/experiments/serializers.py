@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from django.core.urlresolvers import reverse
 
+from ..users.models import UserProfile
+from ..users.serializers import UserProfileSerializer
 from .models import (Experiment, ExperimentDetail)
 
 
@@ -20,8 +22,17 @@ class ExperimentDetailSerializer(serializers.HyperlinkedModelSerializer):
 class ExperimentSerializer(serializers.HyperlinkedModelSerializer):
     """Experiment serializer that includes ExperimentDetails"""
     details = ExperimentDetailSerializer(many=True, read_only=True)
+    contributors = serializers.SerializerMethodField()
 
     class Meta:
         model = Experiment
         fields = ('id', 'url', 'title', 'slug', 'thumbnail', 'description',
-                  'xpi_url', 'details')
+                  'xpi_url', 'details', 'contributors')
+
+    def get_contributors(self, obj):
+        request = self.context['request']
+        return [
+            UserProfileSerializer(UserProfile.objects.get_profile(user),
+                                  context={'request': request}).data
+            for user in obj.contributors.all()
+        ]
