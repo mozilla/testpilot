@@ -1,0 +1,83 @@
+{
+  "title": "Idea Town",
+  "name": "idea-town-addon",
+  "version": "0.0.1",
+  "description": "The addon where ideas come to idea",
+  "repository": "mozilla/idea-town-addon",
+  "main": "index.js",
+  "author": "Mozilla (https://mozilla.org/)",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "scripts": {
+    "start": "st -nc .",
+    "lint": "eslint .",
+    "package": "jpm xpi && mv @idea-town-addon-0.0.1.xpi dist/idea-town-addon-0.0.1.xpi"
+  },
+  "license": "MPL-2.0",
+  "dependencies": {
+    "array-includes": "^3.0.1",
+    "exclude": "^1.0.0",
+    "xtend": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.1.0",
+    "eslint": "^1.2.1",
+    "eslint-config-airbnb": "^0.0.8",
+    "eslint-config-idea-town": "^1.2.0",
+    "jpm": "^1.0.1",
+    "st": "^0.5.5"
+  },
+  "preferences": [
+    {
+      "name": "BASE_URL",
+      "title": "Ideatown protocall",
+      "description": "protocall",
+      "type": "string",
+      "value": "http://ideatown.dev:8000"
+    },
+    {
+      "name": "HOSTNAME",
+      "title": "Ideatown hostname",
+      "description": "hostname",
+      "type": "string",
+      "value": "ideatown.dev"
+    },
+    {
+      "name": "CONTENT_URL",
+      "title": "Ideatown content URL",
+      "description": "Ideatown content URL",
+      "type": "string",
+      "value": "http://localhost:1337/stub-content/index.html"
+    },
+    {
+      "name": "BADGE_COLOR",
+      "title": "Ideatown Badge Color",
+      "description": "Color of the ideatown badge hex",
+      "type": "string",
+      "value": "#00AAAA"
+    },
+    {
+      "name": "ALLOWED_ORIGINS",
+      "title": "Allowed origins for addon",
+      "description": "Allowed origins for addon",
+      "type": "string",
+      "value": "http://ideatown.dev:8000/*,http://localhost:1337/*,http://127.0.0.1:1337/*,https://ideatown.firefox.com/*,https://mozilla.github.io/idea-town-addon/stub-content/,https://people.mozilla.org/~jhirsch/universal-search-addon/*"
+    }
+  ],
+  "UPDATES": [
+    {
+      "id": "universal-search-addon@mozilla.com",
+      "name": "Universal Search",
+      "desc": "Expandable embed search from your address bar",
+      "url": "https://people.mozilla.org/~jhirsch/universal-search-addon/addon.xpi"
+    },
+    {
+      "id": "foxsplitter@piro.sakura.ne.jp",
+      "name": "Fox Splitter",
+      "desc": "Split your browser windows like a tiling wm",
+      "url": "https://addons.mozilla.org/firefox/downloads/latest/324976/addon-324976-latest.xpi?src=search"
+    }
+  ]
+}
