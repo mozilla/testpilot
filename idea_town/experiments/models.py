@@ -15,6 +15,9 @@ class Experiment(models.Model):
     thumbnail = models.ImageField(upload_to=experiment_thumbnail_upload_to)
     description = models.TextField()
     xpi_url = models.URLField()
+    version = models.CharField(blank=True, max_length=128)
+    changelog_url = models.URLField(blank=True)
+    contribute_url = models.URLField(blank=True)
 
     users = models.ManyToManyField(User, through='UserInstallation')
 
