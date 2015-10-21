@@ -24,6 +24,9 @@ export default PageView.extend({
     this.thumbnail = this.model.thumbnail;
     this.description = this.model.description;
 
+    this.modified_date = new Date(this.model.modified);
+    this.created_date = new Date(this.model.created);
+
     // TODO: let's not mess with body, if possible
     if (this.isInstalled) {
       document.body.classList.add('active');

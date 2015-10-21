@@ -3,6 +3,7 @@ from django.core.urlresolvers import reverse
 from django.test import TestCase
 from django.test import Client
 from django.contrib.auth.models import User
+from rest_framework import fields
 
 from ..experiments.models import (Experiment, UserInstallation)
 
@@ -44,12 +45,14 @@ class MeViewSetTests(TestCase):
         self.client = Client()
 
     def test_get_anonymous(self):
+        """/api/me resource should contain no data for unauth'd user"""
         resp = self.client.get(self.url)
         data = json.loads(str(resp.content, encoding='utf8'))
 
         self.assertEqual(len(data.keys()), 0)
 
     def test_get_logged_in(self):
+        """/api/me resource should contain data for auth'd user"""
         self.client.login(username=self.username,
                           password=self.password)
 
@@ -63,12 +66,16 @@ class MeViewSetTests(TestCase):
             }
         )
 
+        experiment = self.experiments['test-1']
+
         UserInstallation.objects.create(
-            experiment=self.experiments['test-1'],
+            experiment=experiment,
             user=self.user
         )
 
         resp = self.client.get(self.url)
+        # HACK: Use a rest framework field to format dates as expected
+        date_field = fields.DateTimeField()
         self.assertJSONEqual(
             str(resp.content, encoding='utf8'),
             {
@@ -76,14 +83,22 @@ class MeViewSetTests(TestCase):
                 'addon': self.addonData,
                 'installed': [
                     {
-                        'id': 4,
-                        'description': 'This is a test',
-                        'details': [],
-                        'slug': 'test-1',
+                        'id': experiment.pk,
+                        'url': 'http://testserver/api/experiments/%s' %
+                               experiment.pk,
+                        'slug': experiment.slug,
+                        'title': experiment.title,
+                        'description': experiment.description,
+                        'version': experiment.version,
+                        'changelog_url': experiment.changelog_url,
+                        'contribute_url': experiment.contribute_url,
                         'thumbnail': None,
-                        'title': 'Test 1',
-                        'url': 'http://testserver/api/experiments/4',
-                        'xpi_url': ''
+                        'xpi_url': experiment.xpi_url,
+                        'details': [],
+                        'created': date_field.to_representation(
+                            experiment.created),
+                        'modified': date_field.to_representation(
+                            experiment.modified),
                     }
                 ]
             }

@@ -60,17 +60,19 @@ export default `
           <section>
             <h3>Details</h3>
             <table class="stats">
+              {{#model.version}}
               <tr>
                 <td>Version</td>
-                <td>0.4.5 <a href="">changelog</a></td>
+                <td>{{model.version}}{{#model.changelog_url}} <a href="{{model.changelog_url}}">changelog</a>{{/model.changelog_url}}</td>
               </tr>
+              {{/model.version}}
               <tr>
                 <td>Last Update</td>
-                <td>10/22/15</td>
+                <td>{{modified_date}}</td>
               </tr>
               <tr>
-                <td>Repo</td>
-                <td><a href="">https://github.com/mozilla/snooze-tabs<a></td>
+                <td>Contribute</td>
+                <td><a href="{{model.contribute_url}}">{{model.contribute_url}}<a></td>
               </tr>
             </table>
           </section>
