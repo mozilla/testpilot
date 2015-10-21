@@ -34,27 +34,24 @@ export default `
           <section>
             <h3>Brought to you by</h3>
             <ul class="contributors">
+              {{#model.contributors}}
               <li>
-                <img src="images/default-avatar@2x.png" width="56" height="56">
+                <img src="{{avatar}}" width="56" height="56">
                 <div class="contributor">
-                  <p class="name">Chris P. Bacon</span>
-                  <p class="title">Senior Strategy Dingus</span>
+                  <p class="name">{{display_name}}</span>
+                  <p class="title">{{title}}</span>
                 </div>
               </li>
-              <li>
-                <img src="images/default-avatar@2x.png" width="56" height="56">
-                <div class="contributor">
-                  <p class="name">Chris P. Bacon</span>
-                  <p class="title">Senior Strategy Dingus</span>
-                </div>
-              </li>
-              <li>
-                <img src="images/default-avatar@2x.png" width="56" height="56">
-                <div class="contributor">
-                  <p class="name">Chris P. Bacon</span>
-                  <p class="title">Senior Strategy Dingus</span>
-                </div>
-              </li>
+              {{/model.contributors}}
+              {{^model.contributors}}
+                <!-- TODO: need a blank slate case for no contributors? -->
+                <li>
+                  <img src="images/default-avatar@2x.png" width="56" height="56">
+                  <div class="contributor">
+                    <p class="name">To be announced</span>
+                  </div>
+                </li>
+              {{/model.contributors}}
             </ul>
           </section>
           <section>

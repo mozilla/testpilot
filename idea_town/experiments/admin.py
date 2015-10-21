@@ -18,6 +18,8 @@ class ExperimentAdmin(admin.ModelAdmin):
 
     prepopulated_fields = {"slug": ("title",)}
 
+    raw_id_fields = ('contributors',)
+
     inlines = (ExperimentDetailInline,)
 
 
