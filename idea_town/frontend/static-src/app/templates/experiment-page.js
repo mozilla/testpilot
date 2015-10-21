@@ -22,15 +22,20 @@ export default `
       <div class="details-content">
         <div class="details-overview">
           <img src="{{thumbnail}}" width="260">
-          <section>
+          {{#model.measurements}}
+          <section class="measurement">
             <h3>Measurements</h3>
-            <p class="disclaimer">All data is collected anonymously and used only to help us improve this test. <a href="">Learn more.</a></p>
+            <p class="disclaimer">All data is collected anonymously and used only to help us improve this test.</p>
+            {{{model.measurements}}}
+            <!--
             <ul class="measurement">
               <li>Usage per session</li>
               <li>Index of selected results</li>
               <li>Time spent searching</li>
             </ul>
+            -->
           </section>
+          {{/model.measurements}}
           <section>
             <h3>Brought to you by</h3>
             <ul class="contributors">

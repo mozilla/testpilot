@@ -20,8 +20,13 @@ class ExperimentDetailSerializer(serializers.HyperlinkedModelSerializer):
 class ExperimentSerializer(serializers.HyperlinkedModelSerializer):
     """Experiment serializer that includes ExperimentDetails"""
     details = ExperimentDetailSerializer(many=True, read_only=True)
+    measurements = serializers.SerializerMethodField()
 
     class Meta:
         model = Experiment
         fields = ('id', 'url', 'title', 'slug', 'thumbnail', 'description',
+                  'measurements',
                   'xpi_url', 'details')
+
+    def get_measurements(self, obj):
+        return obj.measurements.rendered

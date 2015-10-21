@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from markupfield.fields import MarkupField
+
 from ..utils import HashedUploadTo
 
 
@@ -14,6 +16,7 @@ class Experiment(models.Model):
     slug = models.SlugField(max_length=128, unique=True, db_index=True)
     thumbnail = models.ImageField(upload_to=experiment_thumbnail_upload_to)
     description = models.TextField()
+    measurements = MarkupField(blank=True, default='', default_markup_type='plain')
     xpi_url = models.URLField()
 
     users = models.ManyToManyField(User, through='UserInstallation')
