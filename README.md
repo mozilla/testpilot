@@ -15,7 +15,6 @@ Idea Town is not intended to replace trains for most features, nor is it a test 
 
 * **idea-town** - Idea Town server and front-end
 * [idea-town-splash](https://github.com/mozilla/idea-town-splash/) - Teaser site for collecting emails
-* [idea-town-addon](https://github.com/mozilla/idea-town-addon/) - Idea Town add-on
 
 ## More Information
 
