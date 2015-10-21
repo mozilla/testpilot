@@ -78,6 +78,7 @@ class MeViewSetTests(TestCase):
                     {
                         'id': 4,
                         'description': 'This is a test',
+                        'measurements': '<p></p>',
                         'details': [],
                         'slug': 'test-1',
                         'thumbnail': None,

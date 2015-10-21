@@ -98,11 +98,11 @@
 }
 
 .disclaimer {
-  font-size: 12px; 
+  font-size: 12px;
   margin-bottom: 18px;
 }
 
-.measurement {
+.measurement ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -119,7 +119,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-   
+
   li {
     @include flex-container(default, left, center, nowrap, false);
     padding-bottom: 10px;
