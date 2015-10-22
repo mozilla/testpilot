@@ -18,12 +18,15 @@ export default PageView.extend({
   },
 
   render() {
-    this.isInstalled = !!this.model.isInstalled;
     this.modified_date = new Date(this.model.modified);
     this.created_date = new Date(this.model.created);
 
     // TODO: let's not mess with body, if possible
-    if (this.isInstalled) {
+
+    // TODO:(DJ) enabled property is not set here when navigating
+    // directly to the experiment page. This will not be a problem
+    // when we start persisting state with the User Installation model.
+    if (this.model.enabled) {
       document.body.classList.add('active');
     } else {
       document.body.classList.add('inactive');
@@ -44,10 +47,20 @@ export default PageView.extend({
 
   // isInstall is a boolean: true if we are installing, false if uninstalling
   _updateAddon(isInstall) {
-    this.model.isInstalled = !this.model.isInstalled;
-    const packet = isInstall ? { install: this.model.slug } :
-                  { uninstall: this.model.slug };
-    app.webChannel.sendMessage('from-web-to-addon', packet);
+    let eventType = 'install-experiment';
+
+    if (!isInstall) {
+      eventType = 'uninstall-experiment';
+    }
+
+    app.webChannel.sendMessage(eventType, {
+      addon_id: this.model.addon_id,
+      xpi_url: this.model.xpi_url
+    });
+    // TODO:(DJ) need to setup some databinding and progress ui Since
+    // the addon can fail on install.
+    // https://github.com/mozilla/idea-town/issues/199
+    this.model.enabled = !this.model.enabled;
     this.render();
   },
 

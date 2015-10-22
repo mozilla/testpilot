@@ -45,13 +45,6 @@
       "value": "ideatown.dev"
     },
     {
-      "name": "CONTENT_URL",
-      "title": "Ideatown content URL",
-      "description": "Ideatown content URL",
-      "type": "string",
-      "value": "http://localhost:1337/stub-content/index.html"
-    },
-    {
       "name": "BADGE_COLOR",
       "title": "Ideatown Badge Color",
       "description": "Color of the ideatown badge hex",
@@ -63,21 +56,7 @@
       "title": "Allowed origins for addon",
       "description": "Allowed origins for addon",
       "type": "string",
-      "value": "http://ideatown.dev:8000/*,http://localhost:1337/*,http://127.0.0.1:1337/*,https://ideatown.firefox.com/*,https://mozilla.github.io/idea-town-addon/stub-content/,https://people.mozilla.org/~jhirsch/universal-search-addon/*"
-    }
-  ],
-  "UPDATES": [
-    {
-      "id": "universal-search-addon@mozilla.com",
-      "name": "Universal Search",
-      "desc": "Expandable embed search from your address bar",
-      "url": "https://people.mozilla.org/~jhirsch/universal-search-addon/addon.xpi"
-    },
-    {
-      "id": "foxsplitter@piro.sakura.ne.jp",
-      "name": "Fox Splitter",
-      "desc": "Split your browser windows like a tiling wm",
-      "url": "https://addons.mozilla.org/firefox/downloads/latest/324976/addon-324976-latest.xpi?src=search"
+      "value": "http://ideatown.dev:8000/*,https://ideatown.firefox.com/*, https://people.mozilla.org/~jhirsch/universal-search-addon/*"
     }
   ]
 }
