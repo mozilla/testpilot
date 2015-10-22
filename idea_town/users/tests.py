@@ -138,6 +138,7 @@ class MeViewSetTests(TestCase):
                         'contribute_url': experiment.contribute_url,
                         'thumbnail': None,
                         'xpi_url': experiment.xpi_url,
+                        'addon_id': experiment.addon_id,
                         'details': [],
                         'contributors': [],
                         'created': date_field.to_representation(

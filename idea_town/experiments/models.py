@@ -16,11 +16,13 @@ class Experiment(models.Model):
     slug = models.SlugField(max_length=128, unique=True, db_index=True)
     thumbnail = models.ImageField(upload_to=experiment_thumbnail_upload_to)
     description = models.TextField()
-    measurements = MarkupField(blank=True, default='', default_markup_type='plain')
+    measurements = MarkupField(blank=True, default='',
+                               default_markup_type='plain')
     xpi_url = models.URLField()
     version = models.CharField(blank=True, max_length=128)
     changelog_url = models.URLField(blank=True)
     contribute_url = models.URLField(blank=True)
+    addon_id = models.CharField(max_length=500, blank=False,)
 
     users = models.ManyToManyField(User, through='UserInstallation')
     contributors = models.ManyToManyField(User, related_name='contributor')

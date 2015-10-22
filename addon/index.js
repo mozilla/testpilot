@@ -11,11 +11,10 @@ const self = require('sdk/self');
 const tabs = require('sdk/tabs');
 const {PageMod} = require('sdk/page-mod');
 const {ActionButton} = require('sdk/ui/button/action');
+const request = require('sdk/request').Request;
 const AddonManager = Cu.import('resource://gre/modules/AddonManager.jsm').AddonManager;
 const prefs = require('sdk/simple-prefs').prefs;
-const updates = require('./package.json').UPDATES;
 const Router = require('./route');
-const state = {updates: updates};
 
 const mod = new PageMod({
   include: prefs.ALLOWED_ORIGINS.split(','),
@@ -25,19 +24,31 @@ const mod = new PageMod({
   onAttach: setupApp
 });
 
+if (!store.experiments) {
+  store.experiments = {};
+}
+
+if (!store.availableExperiments) {
+  store.availableExperiments = [];
+}
+
 require('sdk/system/unload').when(function(reason) {
   if (reason === 'uninstall') {
     app.send('addon-self:uninstalled');
     if (store.experiments) {
-      uninstall(store.experiments);
+      for (let ex in store.experiments) { // eslint-disable-line prefer-const
+        if (store.experiments.hasOwnProperty(ex)) {
+          uninstall({addon_id: ex});
+        }
+      }
       delete store.experiments;
     }
+
+    delete store.availableExperiments;
   }
 });
 
-if (!store.experiments) store.experiments = [];
-
-const button = ActionButton({ // eslint-disable-line new-cap
+ActionButton({ // eslint-disable-line new-cap
   id: 'idea-town-link',
   label: 'Idea Town',
   icon: {
@@ -45,12 +56,46 @@ const button = ActionButton({ // eslint-disable-line new-cap
     '32': './icon-32.png',
     '64': './icon-64.png'
   },
-  badge: state.updates.length,
-  badgeColor: prefs.BADGE_COLOR,
   onClick: function() {
-    tabs.open({ url: prefs.CONTENT_URL });
+    tabs.open({ url: prefs.BASE_URL });
   }
 });
+
+function getInstalledAddons(cb) {
+  request({
+    url: prefs.BASE_URL + '/api/experiments?format=json',
+    onComplete: res => {
+      if (!res.json.results.length || res.error) {
+        console.error('No experiments:: ', res);
+      }
+
+      store.availableExperiments = res.json.results.map(exp => {
+        return exp.addon_id;
+      });
+
+      AddonManager.getAllAddons(addons => {
+        addons.forEach(ex => {
+          if (isIdeatownAddon(ex.id)) {
+            store.experiments[ex.id] = ex.version;
+          }
+        });
+
+        // send back to client as an array
+        const installed = [];
+        for (let ex in store.experiments) { // eslint-disable-line prefer-const
+          if (store.experiments.hasOwnProperty(ex)) {
+            installed.push({
+              id: ex,
+              version: store.experiments[ex]
+            });
+          }
+        }
+
+        cb(installed);
+      });
+    }
+  }).get();
+}
 
 function setupApp() {
   app = new Router(mod);
@@ -63,45 +108,43 @@ function setupApp() {
     app.send('addon-self:upgraded');
   }
 
-  app.on('update-check', function() {
-    app.send('addon-updates', state.updates);
+  app.on('install-experiment', function(msg) {
+    installExperiment(msg);
   });
 
-  app.on('update-approve', function(msg) {
-    const msgIds = msg.map(m => m.id);
-    triggerInstalls(updates.filter(u => require('array-includes')(msgIds, u.id)));
-  });
-
-  app.on('uninstall-all', function() {
-    uninstall(store.experiments);
-  });
-
-  app.on('uninstall', function(msg) {
+  app.on('uninstall-experiment', function(msg) {
     uninstall(msg);
   });
 
+  app.on('uninstall-all', function() {
+    for (let ex in store.experiments) { // eslint-disable-line prefer-const
+      if (store.experiments.hasOwnProperty(ex)) {
+        uninstall({addon_id: ex});
+      }
+    }
+  });
+
   app.on('loaded', function() {
-    app.send('addon-available', {
-      experiments: store.experiments,
-      updates: state.updates
+    getInstalledAddons(addons => {
+      app.send('addon-available', {
+        installed: addons
+      });
     });
   });
 }
 
-function uninstall(toUninstall) {
-  toUninstall.forEach(u => {
-    AddonManager.getAddonByID(u.id, function(a) {
-      a.uninstall();
-    });
-  });
+function uninstall(experiment) {
+  if (isIdeatownAddon(experiment.addon_id)) {
+    AddonManager.getAddonByID(experiment.addon_id, a => a.uninstall());
+  }
 }
 
-function triggerInstalls(approvedUpdates) {
-  approvedUpdates.forEach(u => {
-    AddonManager.getInstallForURL(u.url, function(install) {
+function installExperiment(experiment) {
+  if (isIdeatownAddon(experiment.addon_id)) {
+    AddonManager.getInstallForURL(experiment.xpi_url, install => {
       install.install();
     }, 'application/x-xpinstall');
-  });
+  }
 }
 
 function formatInstallData(install, addon) {
@@ -116,6 +159,7 @@ function formatInstallData(install, addon) {
 
   if (addon) {
     formatted = require('xtend')(formatted, {
+      'id': addon.id,
       'description': addon.description,
       'homepageURL': addon.homepageURL,
       'iconURL': addon.iconURL,
@@ -130,28 +174,39 @@ function formatInstallData(install, addon) {
 
 AddonManager.addAddonListener({
   onUninstalling: function(addon) {
-    app.send('addons-uninstalling', {
-      id: addon.id,
-      name: addon.name
-    });
+    if (isIdeatownAddon(addon.id)) {
+      app.send('addon-uninstall:uninstall-started', {
+        id: addon.id,
+        name: addon.name,
+        version: addon.version
+      });
+    }
   },
   onUninstalled: function(addon) {
-    app.send('addons-uninstalled', {
-      id: addon.id,
-      name: addon.name
-    }, addon);
+    if (isIdeatownAddon(addon.id)) {
+      app.send('addon-uninstall:uninstall-ended', {
+        id: addon.id,
+        name: addon.name,
+        version: addon.version
+      }, addon);
 
-    store.experiments = store.experiments.filter(ex => ex.id !== addon.id);
-    state.updates = require('exclude')(updates, store.experiments);
+      if (store.experiments[addon.id]) {
+        delete store.experiments[addon.id];
+      }
+    }
   }
 });
 
+function isIdeatownAddon(id) {
+  return store.availableExperiments.indexOf(id) > -1;
+}
+
 AddonManager.addInstallListener({
   onInstallEnded: function(install, addon) {
-    store.experiments.push(state.updates.find(u => u.id === addon.id));
-    state.updates = state.updates.filter(u => u.id !== addon.id);
-    button.badge = state.updates.length;
-    app.send('addon-install:install-ended', formatInstallData(install, addon), addon);
+    if (isIdeatownAddon(addon.id)) {
+      store.experiments[addon.id] = addon.version;
+      app.send('addon-install:install-ended', formatInstallData(install, addon), addon);
+    }
   },
   onInstallFailed: function(install) {
     app.send('addon-install:install-failed', formatInstallData(install));

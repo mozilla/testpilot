@@ -8,12 +8,12 @@ export default `
         <div class="details-header">
           <h1>{{model.title}}</h1>
           <div class="idea-controls">
-            {{#isInstalled}}
-              <button data-hook="install" class="button primary">Enable {{model.title}}</button>
-            {{/isInstalled}}
-            {{^isInstalled}}
+            {{#model.enabled}}
               <button data-hook="uninstall" class="button primary">Disable {{model.title}}</button>
-            {{/isInstalled}}
+            {{/model.enabled}}
+            {{^model.enabled}}
+              <button data-hook="install" class="button primary">Enable {{model.title}}</button>
+            {{/model.enabled}}
             <div class="user-count">7,654,321</div>
           </div>
         </div>

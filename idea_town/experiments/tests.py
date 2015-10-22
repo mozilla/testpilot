@@ -61,6 +61,8 @@ class ExperimentViewTests(TestCase):
                         "version": experiment.version,
                         "changelog_url": experiment.changelog_url,
                         "contribute_url": experiment.contribute_url,
+                        "addon_id": experiment.addon_id,
+
                         "created": date_field.to_representation(
                             experiment.created),
                         "modified": date_field.to_representation(
