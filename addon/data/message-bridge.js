@@ -16,8 +16,8 @@ window.addEventListener('from-web-to-addon', function(event) {
 }, false);
 
 self.port.on('from-addon-to-web', function(data) {
-  const clonedDetail = cloneInto(data, document.defaultView);
+  const clonedData = cloneInto(data, document.defaultView);
   document.documentElement.dispatchEvent(new CustomEvent(
-    'from-addon-to-web', { bubbles: true, detail: clonedDetail }
+    'from-addon-to-web', { bubbles: true, data: clonedData }
   ));
 });

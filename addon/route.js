@@ -7,8 +7,8 @@
 function Router(mod) {
   this.mod = mod;
   this._events = {};
-  this.mod.port.on('from-web-to-addon', function(data) {
-    if (this._events[data.type]) this._events[data.type](data.detail);
+  this.mod.port.on('from-web-to-addon', function(evt) {
+    if (this._events[evt.type]) this._events[evt.type](evt.data);
   }.bind(this));
   return this;
 }

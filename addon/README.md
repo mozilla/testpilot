@@ -21,8 +21,9 @@ check the `CONFIG` property in `package.json`
 ## Events
 
 Accepted:
-* `update-check`
-* `update-approve`
+* `install-experiment`
+* `uninstall-experiment`
+* `uninstall-all`
 * `loaded`
 
 Emitted:
@@ -38,6 +39,8 @@ Emitted:
 * `addon-install:download-ended`
 * `addon-install:download-cancelled`
 * `addon-install:download-failed`
+* `addon-uninstall:uninstall-started`
+* `addon-uninstall:uninstall-ended`
 * `addon-self:installed`
 * `addon-self:enabled`
 * `addon-self:upgraded`
@@ -60,6 +63,7 @@ The event `addon-install:install-ended` will include some extra properties:
 
 ``` json
 {
+  "id": "foxsplitter@sakura.ne.jp",
   "name": "Fox Splitter",
   "error": 0,
   "state": 6,
@@ -89,7 +93,7 @@ function sendToAddon (data) {
 Then you can use the `sendToAddon` method to send messages.
 
 ``` javascript
-sendToAddon({type: 'update-check'});
+sendToAddon({type: 'loaded'});
 ```
 and to setup listeners.
 
@@ -101,9 +105,6 @@ window.addEventListener("from-addon-to-web", function (event) {
     case 'addon-available':
       handleWhenAddonAvailable(event.detail);
       break;
-    case 'addon-updates':
-      renderUpdates(event.detail);
-      break;
     default:
       console.log('WEB RECEIVED FROM ADDON', JSON.stringify(event.detail, null, ' '));
       break;
@@ -113,13 +114,8 @@ window.addEventListener("from-addon-to-web", function (event) {
 
 Submit updates:
 ``` javascript
-sendToAddon({type: 'update-approve', detail: approvedUpdates});
+sendToAddon({type: 'install-experiment', detail: {xpi_url: 'https://people.mozilla.com/~jhirsh/universal-search-addon/addon.xpi'}});
 ```
-
-`approvedUpdates` is an array of addon names.
-This will trigger the download/install process.
-
-find more examples in [stub-content/index.js](./stub-content/index.js).
 
 ## Maintainers
 

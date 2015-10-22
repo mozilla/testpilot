@@ -23,9 +23,9 @@ class WebChannel {
       this.channelId = newChannelId;
     }
 
-    const message = evt.detail;
+    const message = evt.data;
     if (message && message.type) {
-      app.trigger('webChannel:' + message.type, message.data);
+      app.trigger('webChannel:' + message.type, message.detail);
     }
   }
 }

@@ -21,6 +21,7 @@ class Experiment(models.Model):
     version = models.CharField(blank=True, max_length=128)
     changelog_url = models.URLField(blank=True)
     contribute_url = models.URLField(blank=True)
+    addon_id = models.CharField(max_length=500, default='addonid@mozilla.com')
 
     users = models.ManyToManyField(User, through='UserInstallation')
     contributors = models.ManyToManyField(User, related_name='contributor')
