@@ -1,20 +1,47 @@
+sudo: required
 language: python
 python:
   - "3.4"
 addons:
   postgresql: "9.3"
+services:
+  - docker
 before_script:
   - createdb idea_town_db
 install:
   - pip install tox coveralls
   - nvm install 0.12
 env:
-  - TOX_ENV=flake8
-  - TOX_ENV=docs
-  - TOX_ENV=tests
-  - TOX_ENV=eslint
-  - TOX_ENV=addon
+  global:
+    - DOCKER_EMAIL=me@lmorchard.com
+    - DOCKER_USERNAME=lmorchard
+    - secure: "HghbaBtvMWZ59a5z1J04k07RxgcQUSELFmGL/S8utL6XVUK3UWWHonT7iLVP8vK8jHAfrKxsTFcSxVYyRFo6HlFcY3Eyjg8dqkJzxDNWQ03Wuh90u1GDVpLJi9QDqEXCiGg45JK/wvsyJMKu3Zy7jvXexHdZWpet3kQ46UfeBiZYWSQVdhVEvnrjfZ3CaijZtbo+ziZWEc/8auqF2IFnX3tuKTWBG3p6MBIDnHeHnTs0HVW+8/ZG77ugMWU+vd6OxU6go/dLm5ReSB/rD4H0hvLWQ7h/qKq4361rEgbg9hL7g+u4MnfKu+zHTCJYX/T74uw9SW1BU3mooepeNJxk7MyHEH/cy7SSECXoRhbRi1X2H+rQy8FbeVyR0j8kL2yUnKc6GqaXi3xXPVpx9ZppYj/wCMvTrpr0vuOZHhy4iKXsMSPbbKu5FQJciF3JiYTKgh/PcDe9SZSHKqJeJ88mFUfP369un1hk1cOtQEY5TQjrjfvvsziIsTW0vLmTyD3W3GIvpZy91Tf1sZcQc45zEsee5icOlTxNMQW07n/gXTn0/IRUFnzb3ZwBT2zC5kQLH/hwC77vKIlmudtFeEc4WFFYhIybTtnzaKnWxyDE98UIk3AMrfW+md88KKQkpCbN1oYJjlSELFoXJ2Ne5gzgC9z9VX6c2bHbXMdCOTmtIqg="
+  matrix:
+    - TOX_ENV=flake8
+    - TOX_ENV=docs
+    - TOX_ENV=tests
+    - TOX_ENV=eslint
+    - TOX_ENV=addon
 script:
   - tox -e $TOX_ENV
 after_success:
   - coveralls
+before_deploy:
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - bin/build-prod.sh
+deploy:
+  provider: elasticbeanstalk
+  on:
+    branch: master
+    condition: $TOX_ENV = tests
+  skip_cleanup: true
+  zip-file: build/eb-app-latest.zip
+  app: idea-town-lorchard
+  env: idea-town-dev
+  region: us-west-2
+  bucket_name: elasticbeanstalk-us-west-2-927034868273
+  bucket_path: idea-town-lorchard/
+  access-key-id:
+    secure: "K23qxtLIU4dBv61R/cWwZGTWsCif3JasdJQvtkAVVIV4BU/imYzb/v+I55VkLz0DBsvaz5gsf+3fcMv8KXd9kAqVlbaH7LOuz8gHhfsfF7+pd6sDWJFEgl31X/nVSf5O4eWJA/XoOeJIby0n32yAXuTPKv5gKUEULxgPlj4JKzhAAvjd7Dvl41gYx+nqkiz61ipEQKFOMJ1oX9mHwshsj07Gk4Rk+ika0n6KiqxIs1jlEugF0cbY4qAb79H1pS2M01GGJkDje6PvkzI21zajL52WvrXR/0qV7xDDrUv8Xp0kfwt883y1JCkfvzOo6g8ri/dlHn5KWBuZtaN5f81GRwc/vU+bUO5m9qH/0TSnsbop8ZDABA+s1Fekq1QiSE5A6q9aBqvl1kHdTo0nSh+AKN5bG6TfJ90lW3/pJJ2NwOLwl6jQDFhSk7mpUQv31M953nBquExLCmY1IhLsHaSvW3Kp6QxXiUdJd8XM9PpysYABnGonjmBX9w9kTbsXOV3Z4Hevyx0SFEex5Zf7M2JGvirGl5V1gO3gXxPnSPuyaiVpHaQkgY6H6UVUFClsR2NVykdNWS3PUMiOhUR0z90jij+n02n/26BHDnCnOQ1l6a08sw7rJbjrSYUD1XmhPehFdIugVLIDHI28mp+zmFpK32MQhKhitrtQqPfYCHHwo6Y="
+  secret-access-key:
+    secure: "Im23MdR/w/08YMHNeLnz16r6QpqqBVbdajcqgjoeVRbZZV01DVqI/4IbclAll2LKytEV1ienxkh4/MbEGXW8jmQDMkrA9+mgeeJRAOny8ryaTpKljVvX2CxEvIfrRBaJxkZYDzF2CfF30EtglMifpWfF0XvcOoZsMHaXK+SeBrc1I9KPmvFQZk0gRrEqEl5E76cT40rN8mvHz34cLv3qrBD1U+WR3zdE50xUNOvlNU4zKdgU++HBrUQxqBhbQ280TTsvPY6E2X8BFWFfBhhoYbmpNCbo4gT5p0pnTOkyts3XCkNE0aaWFrvIXPGrr5mOGh69GkQquN5qrolyy8KRXuG7sQ5E54R1oSQQh30u6JAPicCqAeBcbKXbU0ok+pMcf0UPgI7XjX1gn2iqEVM5vdHsSuwUkcziu4R0vqtn5gS5APX0U4Lbo0rfb7ydthssIHljQ5hPj703hFoggcIRbc4Qeyi9qkxbE0ZzCFBK8DM/tO6L9y1d/hl4KpIzjIqDUYitq1P2rLES5q6gLlVSdm17sSXOTUsSxjx7L4iDQHTnEd4f43nbazRnLCHiVzSNPw7zvHokOZCvHZiKyQqkfHjtbzm2LZyWVjwGFpcN71XRSQex1A/d73XciYNu/xRanPok8sXe4tnJgzT3kYOnGsHPYX3+FZoG/7utY4RiKo8="

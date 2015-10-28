@@ -15,7 +15,7 @@ docker build -t $SERVER_NAME .
 # Push the images to the hub
 docker push $SERVER_NAME
 
-# Ensure the Dockerrun file has the correct SERVER_NAME and TAG
+# Ensure the Dockerrun file has the correct SERVER_NAME
 cat > Dockerrun.aws.json << EOF
 {
   "AWSEBDockerrunVersion": "1",
@@ -33,4 +33,4 @@ EOF
 
 # Prepare an app bundle for Elastic Beanstalk
 mkdir -p build
-zip -r build/idea-town-eb-app-$TAG.zip Dockerrun.aws.json .ebextensions/*.config
+zip -r build/eb-app-latest.zip Dockerrun.aws.json .ebextensions/*.config
