@@ -35,4 +35,5 @@ class MetricsView(APIView):
 def handle_metric(metric):
     # will eventually handle multiple types of metrics, including
     # statsd types.
-    datadog.api.Event.create(title=metric['title'], text=json.dumps(metric))
+    datadog.api.Event.create(title=metric['title'], text=json.dumps(metric),
+                             tags=metric['event-data']['tags'])

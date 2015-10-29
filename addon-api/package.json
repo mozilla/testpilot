@@ -1,0 +1,44 @@
+{
+  "title": "Idea Town Addon API",
+  "name": "idea-town",
+  "version": "0.3.0",
+  "description": "interact with the main ideatown server from your experiment",
+  "main": "index.js",
+  "repository": "mozilla/idea-town",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.1.0",
+    "eslint": "^1.2.1",
+    "eslint-config-airbnb": "^0.0.8",
+    "eslint-config-idea-town": "^1.2.0"
+  },
+  "keywords": [
+    "jpm",
+    "jetpack",
+    "ideatown",
+    "mozilla",
+    "idea-town",
+    "experiment",
+    "cookie",
+    "auth",
+    "metrics",
+    "api"
+  ],
+  "author": "Mozilla (https://mozilla.org/)",
+  "license": "MPL-2.0",
+  "CONFIG": {
+    "BASE_URL": "https://ideatown.firefox.com",
+    "HOSTNAME": "ideatown.firefox.com",
+    "IDEATOWN_PREFIX": "ideatown.addon."
+  },
+  "dependencies": {
+    "xtend": "^4.0.1"
+  }
+}

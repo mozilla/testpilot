@@ -4,13 +4,13 @@
  * http://mozilla.org/MPL/2.0/.
 */
 
-const prefs = require('sdk/simple-prefs').prefs;
 const request = require('sdk/request').Request;
 const getCookiesFromHost = require('./cookie-manager');
 
-function pingServer(title, addon) {
-  getCookiesFromHost(prefs.HOSTNAME, function(cookies) {
-    const headers = {'Cookie': ''};
+function pingServer(config, title, data, addon) {
+  getCookiesFromHost(config.HOSTNAME, function(cookies) {
+    const headers = {'Cookie': '',
+                     'Content-Type': 'application/json'};
     cookies.forEach(function(c) {
       headers.Cookie += c.name + '=' + c.value + ';';
       if (c.name === 'csrftoken') {
@@ -18,15 +18,15 @@ function pingServer(title, addon) {
       }
     });
 
-    getMe(headers, function(response) {
+    getMe(headers, config.BASE_URL, function(response) {
       let id = '';
       if (response.json) {
         id = response.json.id;
       }
 
       request({
-        url: prefs.BASE_URL + '/api/metrics/?format=json',
-        content: formatEvent(title, id, addon),
+        url: config.BASE_URL + '/api/metrics/?format=json',
+        content: JSON.stringify(formatEvent(config.IDEATOWN_PREFIX, title, id, data, addon)),
         headers: headers,
         onComplete: function(resp) {
           console.error(resp);
@@ -36,23 +36,24 @@ function pingServer(title, addon) {
   });
 }
 
-function getMe(headers, cb) {
+function getMe(headers, BASE_URL, cb) {
   request({
-    url: prefs.BASE_URL + '/api/me?format=json',
+    url: BASE_URL + '/api/me?format=json',
     headers: headers,
     onComplete: cb
   }).get();
 }
 
-function formatEvent(title, id, addon) {
+function formatEvent(PREFIX, title, id, data, addon) {
   return {
-    'title': 'ideatown.addon.' + title,
+    'title': PREFIX + title,
     'user': id,
     'experiment': {
       'id': addon.id,
       'name': addon.name,
       'version': addon.version
-    }
+    },
+    'event-data': data
   };
 }
 
