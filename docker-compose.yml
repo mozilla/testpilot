@@ -1,6 +1,6 @@
 db:
   image: postgres:9.3
-frontend-watcher:
+frontend_watcher:
   extends:
     file: docker-compose-base.yml
     service: frontend-watcher
@@ -10,4 +10,4 @@ server:
     service: server
   links:
     - db
-    - frontend-watcher
+    - frontend_watcher

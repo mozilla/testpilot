@@ -6,7 +6,11 @@ rm -rf /app/node_modules
 
 # Be very specific about starting up a gulp process that uses modules from
 # /root/node_modules and restarts whenever gulpfile.js is changed
-while [ 1 ]; do
-    NODE_PATH=/root/node_modules/ /root/node_modules/gulp/bin/gulp.js
-    sleep 3
-done
+NODE_PATH=/root/node_modules/ \
+    /usr/local/bin/node \
+        /root/node_modules/gulp/bin/gulp.js lint
+
+cd addon
+npm install
+npm run lint
+npm run package

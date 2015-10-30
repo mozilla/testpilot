@@ -11,8 +11,6 @@ Idea Town is an opt-in platform that allows us to perform controlled tests of ne
 
 Idea Town is not intended to replace trains for most features, nor is it a test bed for concepts we do not believe have a strong chance of shipping in general release. Rather, it is reserved for features that require user feedback, testing, and tuning before they ship with the browser.
 
-[idea-town-addon](/addon)
-
 ## Repositories
 
 * **idea-town** - Idea Town server and front-end
@@ -23,7 +21,18 @@ Idea Town is not intended to replace trains for most features, nor is it a test 
 - Wiki: <https://wiki.mozilla.org/Idea_Town>
 - IRC: #ideatown on irc.mozilla.org
 
-## Development Setup
+## Development
+
+### Quickstart
+
+This project uses Docker in development. You'll get a lot of benefit
+by acquainting yourself [with Docker and its documentation][docker-docs]. 
+However, you can get started on Idea Town development with a minimum of Docker
+know-how:
+
+[docker-docs]: https://docs.docker.com/
+
+#### OS X hosts
 
 1. [Install Docker Toolbox](http://docs.docker.com/mac/started/)
 
@@ -39,125 +48,62 @@ Idea Town is not intended to replace trains for most features, nor is it a test 
 
   `docker-machine ip default`
 
-5. Add an entry for `ideatown.dev` in your `/etc/hosts` pointing to the Docker machine IP
+5. Use this IP address to add an entry for `ideatown.dev` in `/etc/hosts`:
 
   `192.168.99.100 ideatown.dev`
 
-  *This entry is necessary to support Firefox Accounts*
+  You can do this manually, or the [bin/update-ip.sh][update-ip] script can
+  take care of this for you.
 
-6. Create and setup the Docker containers:
+[update-ip]: https://github.com/mozilla/idea-town/blob/master/bin/update-ip.sh
+
+6. Create and setup the Docker containers (this will take some time):
 
   `docker-compose up`
 
-  *this may take some time*
+#### Ubuntu Linux hosts
 
-7. Visit the Django server:
+1. [Install Docker](http://docs.docker.com/linux/started/)
 
-  `open http://ideatown.dev:8000/`
+2. [Install Docker Compose](https://docs.docker.com/compose/install/)
 
-  *you can also use whatever IP was reported by `docker ip` with port 8000*
+3. Add an entry for `ideatown.dev` in `/etc/hosts`:
 
-### Notes
+  `127.0.0.1 ideatown.dev`
 
-* To shell into one of the containers, e.g. to run Django commands:
+  You can do this manually, or the [bin/update-ip.sh][update-ip] script can
+  take care of this for you.
 
-  `docker exec -t -i ideatown_server_1 bash`
+4. Create and setup the Docker containers (this will take some time):
 
-* If you change `package.json` to add dependencies for `gulpfile.js`, you must rebuild `client_build`:
+  `sudo docker-compose up`
 
-  `docker-compose build client_build`
+#### Windows hosts
 
-* If you change `requirements.txt` to add dependencies for Django, you must rebuild `server`:
+* **Help wanted**: Getting things working on Windows may be similar to OS X,
+  but the team has little experience with that environment.
 
-  `docker-compose build server`
+### Next Steps
 
-* Sometimes the database container hasn't fully started when the Django container wants to connect to it. If this happens:
+* Start editing files - changes should be picked up automatically.
 
-  * `docker ps` to get the name of the Django container (something like `ideatown_server_1`)
-  * `docker restart ideatown_server_1` to restart the Django container
+* Visit the Django server, using the hostname you added to `/etc/hosts`:
 
-* Sometimes `docker-compose build` seems to hang while building the `client_build` image. If this happens:
+  `http://ideatown.dev:8000/`
 
-  * `docker rmi $(docker images -f dangling=true -q)` to remove any dangling images
-  * `npm install` (it's not clear why this has an effect, but it seems to)
-  * `docker-compose build`
+* Visit Django admin, login with username `admin` and password `admin`:
 
-[dc-bug]: https://github.com/docker/compose/issues/374
+  `http://ideatown.dev:8000/admin/`
 
-* If the client build container reports "app crashed waiting for file
-  changes before starting", but never starts again - try this:
+* For further reading:
 
-  `docker exec -t -i ideatown_client_build_1 touch gulpfile.js`
+  * [`README-DOCKER.md`](./README-DOCKER.md) - for more hints & tips on Docker in
+    development, including how to set up custom configurations and run common
+    tests & checks.
 
-* Want to run Python linting and Django tests on file changes? Try this:
-  ```bash
-    sudo gem install kicker
-    kicker -c -e'docker exec -t -i ideatown_server_1 flake8 ./idea_town && docker exec -t -i ideatown_server_1 ./manage.py test -v2' ./idea_town`
-  ```
+  * [`tox.ini`](./tox.ini) - to see what checks are run automatically in Travis
+    CI, which you should ensure pass locally before submitting a Pull Request on
+    GitHub
 
-* You can customize settings for special development cases. For example, to
-  switch to using S3 for media uploads:
-  ```bash
-    cp docker-compose-s3.yml-dist docker-compose-s3.yml
-    # Edit docker-compose-s3.yml to include your AWS credentials
-    docker-compose -f docker-compose-s3.yml build
-    docker-compose -f docker-compose-s3.yml up
-  ```
-
-* If you'd like to run Gulp on your host computer because there are issues
-  running it in a Docker container, try this:
-  ```
-  docker-compose -f docker-compose-only-server.yml build
-  docker-compose -f docker-compose-only-server.yml up
-  ```
-  Then, in a second terminal, you can run Gulp like this (assuming you have
-  node.js installed locally):
-  ```
-  npm install
-  gulp
-  ```
-
-Testing
--------------
-
-There's a sample test in `idea_town/base/tests.py` for your convenience, that
-you can run using the following command:
-
-    python manage.py test
-
-If you want to run the full suite, with flake8 and coverage, you may use
-[tox](https://testrun.org/tox/latest/). This will run the tests the same way
-they are run by [travis](https://travis-ci.org)):
-
-    pip install tox
-    tox
-
-The `.travis.yml` file will also run [coveralls](https://coveralls.io) by
-default.
-
-Docker for deploying to production
------------------------------------
-
-1. Add your project in [Docker Registry](https://registry.hub.docker.com/) as [Automated Build](http://docs.docker.com/docker-hub/builds/)
-2. Prepare a 'env' file with all the variables needed by dev, stage or production.
-3. Run the image:
-
-    docker run --env-file env -p 80:8000 mozilla/idea-town
-
-Heroku
-------
-1. heroku create
-2. heroku config:set DEBUG=False ALLOWED_HOSTS=<foobar>.herokuapp.com, SECRET_KEY=something_secret
-   DATABASE_URL gets populated by heroku once you setup a database.
-3. git push heroku master
-
-NewRelic Monitoring
--------------------
-
-A newrelic.ini file is already included. To enable NewRelic monitoring
-add two enviroment variables:
-
- - NEW_RELIC_LICENSE_KEY
- - NEW_RELIC_APP_NAME
-
-See the [full list of supported environment variables](https://docs.newrelic.com/docs/agents/python-agent/installation-configuration/python-agent-configuration#environment-variables).
+  * [`addon/README.md`](./addon/README.md) - for more details on the addon this
+    site uses to enable advanced features.

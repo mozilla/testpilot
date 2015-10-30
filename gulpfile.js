@@ -84,7 +84,7 @@ gulp.task('vendor', function vendorTask(done) {
 
 // based on https://github.com/gulpjs/gulp/blob/master/docs/recipes/browserify-with-globs.md,
 // except we use the Promise returned by globby, instead of passing it a callback
-gulp.task('scripts', function scriptsTask() {
+gulp.task('scripts', ['lint'], function scriptsTask() {
   const bundledStream = through();
 
   // this part runs second
