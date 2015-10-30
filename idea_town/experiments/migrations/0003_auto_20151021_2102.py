@@ -49,4 +49,14 @@ class Migration(migrations.Migration):
             name='measurements_markup_type',
             field=models.CharField(choices=[('', '--'), ('html', 'HTML'), ('plain', 'Plain'), ('markdown', 'Markdown'), ('restructuredtext', 'Restructured Text')], max_length=30, default='plain', blank=True),
         ),
+        migrations.AddField(
+            model_name='experiment',
+            name='addon_id',
+            field=models.CharField(max_length=500),
+        ),
+        migrations.AlterField(
+            model_name='userinstallation',
+            name='rating',
+            field=models.FloatField(blank=True, null=True),
+        ),
     ]
