@@ -20,7 +20,7 @@ env:
     - TOX_ENV=flake8
     - TOX_ENV=docs
     - TOX_ENV=tests
-    - TOX_ENV=eslint
+    - TOX_ENV=frontend
     - TOX_ENV=addon
 script:
   - tox -e $TOX_ENV
