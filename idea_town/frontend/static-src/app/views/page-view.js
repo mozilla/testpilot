@@ -1,5 +1,6 @@
 import BaseView from './base-view';
 import HeaderView from './header-view';
+import FooterView from './footer-view';
 
 export default BaseView.extend({
   // override _template with a mustache template
@@ -10,6 +11,14 @@ export default BaseView.extend({
         return new HeaderView({
           el: el,
           headerScroll: this.headerScroll
+        });
+      }
+    },
+    footer: {
+      selector: '[data-hook=main-footer]',
+      prepareView: function prepareFooterView(el) {
+        return new FooterView({
+          el: el
         });
       }
     }

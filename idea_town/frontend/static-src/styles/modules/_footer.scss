@@ -1,6 +1,6 @@
 #main-footer {
   flex: 1 1;
-  padding: 60px 0 20px;
+  padding: 3.2rem 0 2rem;
 
   &.wash {
     @include color-scheme($default, $wash);

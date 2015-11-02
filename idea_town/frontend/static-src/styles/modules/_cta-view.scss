@@ -1,4 +1,5 @@
 #cta {
+  animation: fade-in 200ms;
 
   &.sign-up {
     @include color-scheme-special(true);
@@ -11,20 +12,24 @@
   .firefox-logo {
     @include hidpi-background-image('firefox-logo', 141px 146px);
     height: 146px;
-    margin: 6rem 0 2rem;
+    margin: 5rem 0 2rem;
     width: 141px;
+  }
+
+  #tabzilla {
+    margin-top: -5rem;
   }
 
   h1 {
     font-size: 8rem;
-    line-height: 8rem;
+    line-height: 7.2rem;
     margin-bottom: 3rem;
   }
 
   h2 {
     font-size: 3rem;
-    line-height: 4.5rem;
-    margin-bottom: 4rem;
+    line-height: 4.2rem;
+    margin-bottom: 3.2rem;
   }
 }
 
@@ -43,14 +48,18 @@
     .fxa-alternate {
       color: $white;
       display: block;
-      font-size: 2rem;
+      font-size: 1.6rem;
       font-weight: 400;
-      padding: 12px 0 30px;
+      margin: 1.2rem 0 2.4rem;
     }
 
     .cta-legal {
       font-size: 14px;
       margin: 0 24px 0 0;
+    }
+
+    a {
+      color: $white;
     }
   }
 
@@ -61,5 +70,15 @@
     position: relative;
     top: 18px;
     width: 657px;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
