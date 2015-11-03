@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     # Project specific apps
     'idea_town.base',
     'idea_town.frontend',
-    'idea_town.accounts',
     'idea_town.users',
     'idea_town.experiments',
 
@@ -61,7 +60,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'idea_town.accounts.providers.fxa',
+    'idea_town.users.providers.fxa',
 
     # Django apps
     'django.contrib.admin',
