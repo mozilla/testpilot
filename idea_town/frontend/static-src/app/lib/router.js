@@ -11,6 +11,7 @@ export default Router.extend({
     '(/)': 'landing',
     'home(/)': 'home',
     'experiments/:experiment(/)': 'experimentDetail',
+    'accounts/inactive(/)': 'accountInactive',
     '404': 'notFound',
     'error': 'error',
     '(*path)': 'notFound'
@@ -50,6 +51,10 @@ export default Router.extend({
     }
   },
 
+  accountInactive() {
+    app.trigger('router:new-page', {page: 'accountInactive'});
+  },
+
   notFound() {
     app.trigger('router:new-page', {page: 'notFound'});
   },
@@ -57,5 +62,4 @@ export default Router.extend({
   error() {
     app.trigger('router:new-page', {page: 'error'});
   }
-
 });
