@@ -4,10 +4,10 @@ python:
   - "3.4"
 addons:
   postgresql: "9.3"
+  hosts:
+    - db
 services:
   - docker
-before_script:
-  - createdb idea_town_db
 install:
   - pip install tox coveralls
   - nvm install 0.12
