@@ -17,6 +17,10 @@ import logging
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+ROOT_URLCONF = 'idea_town.urls'
+
+WSGI_APPLICATION = 'idea_town.wsgi.application'
+
 SITE_ID = 1
 
 ADDON_URL = config(
@@ -130,9 +134,10 @@ ACCOUNT_EMAIL_VERIFICATION = False
 
 ACCOUNT_INVITE_ONLY_MODE = config('ACCOUNT_INVITE_ONLY_MODE', default=True, cast=bool)
 
-ROOT_URLCONF = 'idea_town.urls'
+MOZILLIANS_API_KEY = config('MOZILLIANS_API_KEY', default=None)
 
-WSGI_APPLICATION = 'idea_town.wsgi.application'
+MOZILLIANS_API_BASE_URL = config('MOZILLIANS_API_BASE_URL',
+                                 default='https://mozillians.org/api/v2')
 
 DATADOG_KEYS = {
     'api_key': config('DATADOG_API_KEY', default=None),

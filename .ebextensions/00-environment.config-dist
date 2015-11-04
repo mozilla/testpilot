@@ -62,3 +62,7 @@ option_settings:
   # Invite-only mode?
   - option_name: ACCOUNT_INVITE_ONLY_MODE
     value: True
+
+  # Mozillians API settings
+  - option_name: MOZILLIANS_API_KEY
+    value: API KEY GOES HERE
