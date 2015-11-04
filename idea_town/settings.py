@@ -128,6 +128,8 @@ SOCIALACCOUNT_EMAIL_VERIFICATION = False
 
 ACCOUNT_EMAIL_VERIFICATION = False
 
+ACCOUNT_INVITE_ONLY_MODE = config('ACCOUNT_INVITE_ONLY_MODE', default=True, cast=bool)
+
 ROOT_URLCONF = 'idea_town.urls'
 
 WSGI_APPLICATION = 'idea_town.wsgi.application'

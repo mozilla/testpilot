@@ -58,3 +58,7 @@ option_settings:
     value: CLIENT ID GOES HERE
   - option_name: FXA_SECRET_KEY
     value: FXA SECRET KEY GOES HERE
+
+  # Invite-only mode?
+  - option_name: ACCOUNT_INVITE_ONLY_MODE
+    value: True

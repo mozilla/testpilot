@@ -1,9 +1,14 @@
 from django.conf import settings
 from django.core.urlresolvers import reverse
-from django.test import TestCase
-from django.test import Client
+from django.test import TestCase, Client
+from django.test.utils import override_settings
 from django.contrib.auth.models import User
+
 from rest_framework import fields
+
+from allauth.account.signals import user_signed_up
+from allauth.socialaccount.signals import pre_social_login
+from allauth.socialaccount.models import SocialLogin
 
 from .models import UserProfile
 from ..experiments.models import (Experiment, UserInstallation)
@@ -18,18 +23,17 @@ class UserProfileTests(TestCase):
 
     maxDiff = None
 
-    @classmethod
-    def setUpTestData(cls):
-        cls.username = 'johndoe2'
-        cls.password = 'trustno1'
-        cls.email = '%s@example.com' % cls.username
+    def setUp(self):
+        self.username = 'johndoe2'
+        self.password = 'trustno1'
+        self.email = '%s@example.com' % self.username
 
-        cls.user = User.objects.create_user(
-            username=cls.username,
-            email=cls.email,
-            password=cls.password)
+        self.user = User.objects.create_user(
+            username=self.username,
+            email=self.email,
+            password=self.password)
 
-        UserProfile.objects.filter(user=cls.user).delete()
+        UserProfile.objects.filter(user=self.user).delete()
 
     def test_get_profile_nonexistent(self):
         """Profile should be created on first attempt to get"""
@@ -149,3 +153,95 @@ class MeViewSetTests(TestCase):
                 ]
             }
         )
+
+
+class InviteOnlyModeTests(TestCase):
+
+    def setUp(self):
+        self.username = 'newuserdoe2'
+        self.password = 'trustno1'
+        self.email = '%s@example.com' % self.username
+
+        self.user = User.objects.create_user(
+            username=self.username,
+            email=self.email,
+            password=self.password)
+
+        UserProfile.objects.filter(user=self.user).delete()
+
+    @override_settings(ACCOUNT_INVITE_ONLY_MODE=True)
+    def test_invite_only_signup(self):
+        """User.is_active should be False on signup with invite mode"""
+        self.user.is_active = True
+        user_signed_up.send(sender=self.user.__class__,
+                            request=None,
+                            user=self.user)
+
+        self.assertEqual(False, self.user.is_active)
+
+        profile = UserProfile.objects.get_profile(self.user)
+        self.assertEqual(True, profile.invite_pending)
+
+    @override_settings(ACCOUNT_INVITE_ONLY_MODE=True)
+    def test_invite_only_mozillacom_autoactivation(self):
+        """Users with @mozilla.com email addresses should be auto-activated"""
+        self.user.is_active = True
+        self.user.email = 'someone@mozilla.com'
+
+        user_signed_up.send(sender=self.user.__class__,
+                            request=None,
+                            user=self.user)
+
+        self.assertEqual(True, self.user.is_active)
+
+        profile = UserProfile.objects.get_profile(self.user)
+        self.assertEqual(False, profile.invite_pending)
+
+    @override_settings(ACCOUNT_INVITE_ONLY_MODE=False)
+    def test_open_signup(self):
+        """User.is_active should be True on signup without invite mode"""
+        self.user.is_active = True
+        user_signed_up.send(sender=self.user.__class__,
+                            request=None,
+                            user=self.user)
+        self.assertEqual(True, self.user.is_active)
+
+        profile = UserProfile.objects.get_profile(self.user)
+        self.assertEqual(False, profile.invite_pending)
+
+
+    def test_auto_activate_after_settings_change(self):
+        """Pending invitations should be auto-activated on sign-in after invite mode turned off"""
+        sociallogin = SocialLogin(user=self.user)
+
+        with self.settings(ACCOUNT_INVITE_ONLY_MODE=True):
+
+            self.user.is_active = True
+            user_signed_up.send(sender=self.user.__class__,
+                                request=None,
+                                user=self.user)
+
+            self.assertEqual(False, self.user.is_active)
+
+            profile = UserProfile.objects.get_profile(self.user)
+            self.assertEqual(True, profile.invite_pending)
+
+            pre_social_login.send(sender=SocialLogin,
+                                  request=None,
+                                  sociallogin=sociallogin)
+
+            self.assertEqual(False, self.user.is_active)
+
+            profile = UserProfile.objects.get_profile(self.user)
+            self.assertEqual(True, profile.invite_pending)
+
+        with self.settings(ACCOUNT_INVITE_ONLY_MODE=False):
+
+            pre_social_login.send(sender=SocialLogin,
+                                  request=None,
+                                  sociallogin=sociallogin)
+
+            self.assertEqual(True, self.user.is_active)
+
+            profile = UserProfile.objects.get_profile(self.user)
+            self.assertEqual(False, profile.invite_pending)
