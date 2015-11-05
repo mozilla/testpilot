@@ -6,6 +6,7 @@ from django.test import Client
 from django.contrib.auth.models import User
 from rest_framework import fields
 
+from ..utils import gravatar_url
 from ..users.models import UserProfile
 from .models import (Experiment)  # , ExperimentDetail, UserInstallation)
 
@@ -114,4 +115,5 @@ class ExperimentViewTests(TestCase):
             self.assertEqual(contributor['username'], user.username)
             self.assertEqual(contributor['display_name'], profile.display_name)
             self.assertEqual(contributor['title'], profile.title)
-            self.assertEqual(contributor['avatar'], None)
+
+            self.assertEqual(contributor['avatar'], gravatar_url(user.email))
