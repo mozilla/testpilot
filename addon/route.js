@@ -3,6 +3,12 @@
  * version 2.0 (the "License"). You can obtain a copy of the License at
  * http://mozilla.org/MPL/2.0/.
  */
+const prefs = require('sdk/simple-prefs').prefs;
+const IdeaTown = require('idea-town');
+const ideaTown = new IdeaTown({
+  'BASE_URL': prefs['BASE_URL'], // eslint-disable-line dot-notation
+  'IDEATOWN_PREFIX': prefs['IDEATOWN_PREFIX'] // eslint-disable-line dot-notation
+});
 
 function Router(mod) {
   this.mod = mod;
@@ -19,10 +25,11 @@ Router.prototype.on = function(name, f) {
 };
 
 Router.prototype.send = function(name, data, addon) {
-  this.mod.port.emit('from-addon-to-web', {type: name, data: data});
   if (addon) {
-    require('./ping-server')(name, addon);
+    data.tags = ['main-addon'];
+    ideaTown.metric(name, data, addon);
   }
+  this.mod.port.emit('from-addon-to-web', {type: name, data: data});
   return this;
 };
 
