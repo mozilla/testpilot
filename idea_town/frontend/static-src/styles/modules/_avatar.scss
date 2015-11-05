@@ -5,10 +5,14 @@
   flex: 0 0 48px;
   height: 48px;
   z-index: 2;
-  
+
   .default-avatar {
     @include hidpi-background-image('default-avatar', 41px 41px);
     flex: 0 0 41px;
     height: 41px;
   }
+}
+
+img.avatar {
+  border-radius: 50%;
 }

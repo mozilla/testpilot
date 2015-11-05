@@ -35,7 +35,7 @@ export default `
               <ul class="contributors">
                 {{#model.contributors}}
                 <li>
-                  <img src="{{avatar}}" width="56" height="56">
+                  <img class="avatar" src="{{avatar}}" width="56" height="56">
                   <div class="contributor">
                     <p class="name">{{display_name}}</span>
                     <p class="title">{{title}}</span>

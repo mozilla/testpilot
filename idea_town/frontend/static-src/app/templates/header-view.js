@@ -10,7 +10,12 @@ export default `
           </header>
           <div class="town-background"></div>
           <div id="avatar-wrapper">
-            <span class="default-avatar" data-hook="logout"></span>
+            {{#avatar}}
+              <img class="avatar" src="{{avatar}}" width="41" height="41" data-hook="logout">
+            {{/avatar}}
+            {{^avatar}}
+              <span class="default-avatar" data-hook="logout"></span>
+            {{/avatar}}
           </div>
         </div>
       </div>
