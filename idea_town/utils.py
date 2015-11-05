@@ -66,6 +66,31 @@ def show_image(field_name, height="50"):
     return show_image_display
 
 
+def gravatar_url(email, size="64"):
+    email_hash = hashlib.md5(bytes(email, 'utf-8')).hexdigest()
+    return '//www.gravatar.com/avatar/%s?s=%s' % (email_hash, size)
+
+
+def show_avatar(field_name, height="50"):
+    """Helper to show images in admin changelist views"""
+
+    def show_avatar_display(obj):
+        if not hasattr(obj, field_name):
+            return 'None'
+        avatar_path = getattr(obj, field_name)
+        if avatar_path:
+            img_url = "%s%s" % (settings.MEDIA_URL, avatar_path)
+        elif hasattr(obj, 'user'):
+            img_url = gravatar_url(obj.user.email)
+        return ('<a href="%s" target="_new"><img src="%s" height="%s" /></a>' %
+                (img_url, img_url, height))
+
+    show_avatar_display.allow_tags = True
+    show_avatar_display.short_description = field_name
+
+    return show_avatar_display
+
+
 def parent_link(field_name):
     """Helper to link to parent model in admin changelists"""
 

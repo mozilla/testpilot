@@ -1,5 +1,7 @@
 from rest_framework import serializers
 
+from ..utils import gravatar_url
+
 from .models import UserProfile
 
 
@@ -27,5 +29,7 @@ class UserProfileSerializer(serializers.HyperlinkedModelSerializer):
         if obj.avatar:
             request = self.context['request']
             return request.build_absolute_uri(obj.avatar.url)
+        elif obj.user.email:
+            return gravatar_url(obj.user.email)
         else:
             return None
