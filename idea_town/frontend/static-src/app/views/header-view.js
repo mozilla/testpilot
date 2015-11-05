@@ -41,6 +41,7 @@ export default BaseView.extend({
 
     // an active user has an addon and a session
     this.activeUser = !!this.session && app.me.hasAddon;
+    this.avatar = !!this.session && app.me.user.profile.avatar;
 
     if (this.model) {
       this.title = this.model.title;

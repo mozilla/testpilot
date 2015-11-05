@@ -8,7 +8,12 @@ export default `
         </header>
         {{^scrolled}}
           <div id="avatar-wrapper">
-            <span class="default-avatar" data-hook="logout"></span>
+            {{#avatar}}
+              <img class="avatar" src="{{avatar}}" width="41" height="41" data-hook="logout">
+            {{/avatar}}
+            {{^avatar}}
+              <span class="default-avatar" data-hook="logout"></span>
+            {{/avatar}}
           </div>
         {{/scrolled}}
         {{#scrolled}}

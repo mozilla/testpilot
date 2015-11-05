@@ -1,11 +1,11 @@
 from django.contrib import admin
 
 from .models import UserProfile
-from ..utils import show_image, parent_link
+from ..utils import show_avatar, parent_link
 
 
 class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ('id', parent_link('user'), show_image('avatar'),
+    list_display = ('id', parent_link('user'), show_avatar('avatar'),
                     'display_name', 'title', 'invite_pending',
                     'created', 'modified',)
     list_filter = ('invite_pending',)

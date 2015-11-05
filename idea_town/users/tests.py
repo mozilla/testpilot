@@ -1,6 +1,7 @@
 from unittest.mock import patch, Mock
 
 import requests
+import json
 
 from django.conf import settings
 from django.core.urlresolvers import reverse
@@ -14,12 +15,11 @@ from allauth.account.signals import user_signed_up
 from allauth.socialaccount.signals import pre_social_login
 from allauth.socialaccount.models import SocialLogin
 
+from ..utils import gravatar_url
 from ..experiments.models import (Experiment, UserInstallation)
 
 from .models import UserProfile
 from .signals import is_vouched_on_mozillians_org
-
-import json
 
 import logging
 logger = logging.getLogger(__name__)
@@ -114,6 +114,12 @@ class MeViewSetTests(TestCase):
             str(resp.content, encoding='utf8'),
             {
                 'id': self.email,
+                'profile': {
+                    'avatar': gravatar_url(self.email),
+                    'display_name': 'johndoe',
+                    'title': '',
+                    'username': 'johndoe'
+                },
                 'addon': self.addonData,
                 'installed': []
             }
@@ -126,37 +132,32 @@ class MeViewSetTests(TestCase):
             user=self.user
         )
 
-        resp = self.client.get(self.url)
         # HACK: Use a rest framework field to format dates as expected
         date_field = fields.DateTimeField()
-        self.assertJSONEqual(
-            str(resp.content, encoding='utf8'),
+
+        resp = self.client.get(self.url)
+        result_data = json.loads(str(resp.content, 'utf-8'))
+
+        self.assertEqual(len(result_data['installed']), 1)
+        self.assertDictEqual(
+            result_data['installed'][0],
             {
-                'id': self.email,
-                'addon': self.addonData,
-                'installed': [
-                    {
-                        'id': experiment.pk,
-                        'url': 'http://testserver/api/experiments/%s' %
-                               experiment.pk,
-                        'slug': experiment.slug,
-                        'title': experiment.title,
-                        'description': experiment.description,
-                        'measurements': experiment.measurements.rendered,
-                        'version': experiment.version,
-                        'changelog_url': experiment.changelog_url,
-                        'contribute_url': experiment.contribute_url,
-                        'thumbnail': None,
-                        'xpi_url': experiment.xpi_url,
-                        'addon_id': experiment.addon_id,
-                        'details': [],
-                        'contributors': [],
-                        'created': date_field.to_representation(
-                            experiment.created),
-                        'modified': date_field.to_representation(
-                            experiment.modified),
-                    }
-                ]
+                'id': experiment.pk,
+                'url': 'http://testserver/api/experiments/%s' % experiment.pk,
+                'slug': experiment.slug,
+                'title': experiment.title,
+                'description': experiment.description,
+                'measurements': experiment.measurements.rendered,
+                'version': experiment.version,
+                'changelog_url': experiment.changelog_url,
+                'contribute_url': experiment.contribute_url,
+                'thumbnail': None,
+                'xpi_url': experiment.xpi_url,
+                'addon_id': experiment.addon_id,
+                'details': [],
+                'contributors': [],
+                'created': date_field.to_representation(experiment.created),
+                'modified': date_field.to_representation(experiment.modified),
             }
         )
 
