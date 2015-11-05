@@ -14,12 +14,13 @@ users_views.register_views(router)
 
 urlpatterns = patterns(
     '',
-    url(r'^accounts/', include('idea_town.accounts.urls')),
+    # users app is special, because it handles /accounts and /users
+    url(r'', include('idea_town.users.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api-auth/', include('rest_framework.urls',
                                namespace='rest_framework')),
-    url(r'^api/', include(router.urls)),
     url(r'^api/metrics/', metrics_view.MetricsView.as_view(), name='metrics'),
+    url(r'^api/', include(router.urls)),
     # Catch-all fallback to frontend client view
     url(r'', include('idea_town.frontend.urls')),
 )

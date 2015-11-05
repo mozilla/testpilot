@@ -23,5 +23,8 @@ class UserProfile(models.Model):
     display_name = models.CharField(max_length=256, blank=True)
     title = models.CharField(max_length=256, blank=True)
     avatar = models.ImageField(upload_to=avatar_upload_to, blank=True)
+
+    invite_pending = models.BooleanField(default=False)
+
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)

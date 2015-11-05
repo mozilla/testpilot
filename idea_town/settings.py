@@ -17,6 +17,10 @@ import logging
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+ROOT_URLCONF = 'idea_town.urls'
+
+WSGI_APPLICATION = 'idea_town.wsgi.application'
+
 SITE_ID = 1
 
 ADDON_URL = config(
@@ -45,7 +49,6 @@ INSTALLED_APPS = [
     # Project specific apps
     'idea_town.base',
     'idea_town.frontend',
-    'idea_town.accounts',
     'idea_town.users',
     'idea_town.experiments',
 
@@ -61,7 +64,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'idea_town.accounts.providers.fxa',
+    'idea_town.users.providers.fxa',
 
     # Django apps
     'django.contrib.admin',
@@ -129,9 +132,12 @@ SOCIALACCOUNT_EMAIL_VERIFICATION = False
 
 ACCOUNT_EMAIL_VERIFICATION = False
 
-ROOT_URLCONF = 'idea_town.urls'
+ACCOUNT_INVITE_ONLY_MODE = config('ACCOUNT_INVITE_ONLY_MODE', default=True, cast=bool)
 
-WSGI_APPLICATION = 'idea_town.wsgi.application'
+MOZILLIANS_API_KEY = config('MOZILLIANS_API_KEY', default=None)
+
+MOZILLIANS_API_BASE_URL = config('MOZILLIANS_API_BASE_URL',
+                                 default='https://mozillians.org/api/v2')
 
 DATADOG_KEYS = {
     'api_key': config('DATADOG_API_KEY', default=None),

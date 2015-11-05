@@ -3,7 +3,7 @@ from django.core.management.base import BaseCommand
 from django.conf import settings
 from django.contrib.sites.models import Site
 from allauth.socialaccount.models import SocialApp
-from idea_town.accounts.providers.fxa.provider import FirefoxAccountsProvider
+from idea_town.users.providers.fxa.provider import FirefoxAccountsProvider
 
 
 FXA_PROVIDER_ID = FirefoxAccountsProvider.id

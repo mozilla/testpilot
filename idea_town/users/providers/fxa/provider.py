@@ -16,7 +16,7 @@ class FirefoxAccountsAccount(ProviderAccount):
 class FirefoxAccountsProvider(OAuth2Provider):
     id = 'fxa'
     name = 'Firefox Accounts (for Idea Town)'
-    package = 'idea_town.accounts.providers.fxa'
+    package = 'idea_town.users.providers.fxa'
     account_class = FirefoxAccountsAccount
 
     def get_default_scope(self):
