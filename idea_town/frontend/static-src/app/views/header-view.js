@@ -53,12 +53,12 @@ export default BaseView.extend({
   },
 
   initialize(opts) {
-    // this.model = new HeaderModel();
     if (opts.headerScroll) {
       const chunkedUrl = location.pathname.split('/');
       if (chunkedUrl.length < 2) {
         return;
       }
+
       this.template = scrollTemplate;
       this.experiment = app.experiments.get(chunkedUrl[2], 'slug').toJSON();
       this.didScroll = false;
@@ -96,9 +96,9 @@ export default BaseView.extend({
   onScroll() {
     const sy = window.pageYOffset || document.documentElement.scrollTop;
     if (sy >= changeHeaderOn) {
-      this.scrolled = true;
+      this.model.scrolled = true;
     } else {
-      this.scrolled = false;
+      this.model.scrolled = false;
     }
     this.didScroll = false;
   },

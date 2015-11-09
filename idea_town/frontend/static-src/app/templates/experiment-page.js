@@ -15,6 +15,7 @@ export default `
           </div>
         </div>
 
+<<<<<<< 0d128b25819f5b81942370723cfe7869b5049702
         <div data-hook="details">
           <div class="details-content">
             <div class="details-overview">
@@ -54,6 +55,10 @@ export default `
           </div>
         </div>
 
+=======
+        <div class="details-contain"></div>
+
+>>>>>>> Fixing templates in experiment view
       </div>
     </section>
     <div data-hook="main-footer"></div>
