@@ -1,32 +1,17 @@
 export default `
   <section class="navbar fixed-header">
-    <div id="condensed-branding" class="{{#scrolled}}detail-header{{/scrolled}}">
+    <div id="condensed-branding" data-hook="scroll-wrap">
       <div class="wrapper">
-        <header>
-         {{^scrolled}}<h1>Idea Town</h1>{{/scrolled}}
-         {{#scrolled}}<h1>{{title}}</h1>{{/scrolled}}
-        </header>
-        {{^scrolled}}
-          <div id="avatar-wrapper">
-            {{#avatar}}
-              <img class="avatar" src="{{avatar}}" width="41" height="41" data-hook="logout">
-            {{/avatar}}
-            {{^avatar}}
-              <span class="default-avatar" data-hook="logout"></span>
-            {{/avatar}}
-          </div>
-        {{/scrolled}}
-        {{#scrolled}}
-          <div class="idea-controls">
-            {{#isInstalled}}
-              <button data-hook="install" class="button primary">Enable {{title}}</button>
-            {{/isInstalled}}
-            {{^isInstalled}}
-              <button data-hook="uninstall" class="button primary">Disable {{title}}</button>
-            {{/isInstalled}}
-            <div class="user-count">7,654,321</div>
-          </div>
-        {{/scrolled}}
+        <header><h1 data-hook="title"></h1></header>
+        <div data-hook="no-scroll" id="avatar-wrapper">
+          <img class="avatar" width="41" height="41" data-hook="logout">
+          <span class="default-avatar" data-hook="logout"></span>
+        </div>
+
+        <div data-hook="scroll" class="idea-controls">
+          <button data-hook="install" class="button primary">Enable <span data-hook="title"></span></button>
+          <button data-hook="uninstall" class="button primary">Disable <span data-hook="title"></span></button>
+        </div>
       </div>
     </div>
   </section>
