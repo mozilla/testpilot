@@ -50,6 +50,9 @@ app.extend({
 
     if (!app.router.history.started()) {
       app.router.history.start();
+      // HACK for Issue #124 - sometimes popstate doesn't fire on navigation,
+      // but pageshow does. But, we just want to know if the URL changed.
+      addEventListener('pageshow', app.router.history.checkUrl, false);
     }
 
     app.me.on('change:hasAddon', () => {
