@@ -1,10 +1,16 @@
 #main-footer {
+  @include color-scheme($dark, $wash);
+  border-top: 1px solid $default-dark;
   flex: 1 1;
-  padding: 3.2rem 0 2rem;
+  padding: 6rem 0 1.6rem;
+  position: relative;
+  z-index: -1;
 
-  &.wash {
-    @include color-scheme($default, $wash);
-    border-top: 2px solid $black;
+  .add-on &,
+  .sign-up & {
+
+    margin-top: -18px;
+
   }
 
   &.light {

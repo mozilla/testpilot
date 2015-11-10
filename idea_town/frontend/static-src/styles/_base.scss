@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.6rem;
-  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 h1,
@@ -29,7 +29,7 @@ p {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 5.4rem;
 }
 
 h2 {
@@ -44,6 +44,11 @@ a {
   color: $default;
 }
 
+// override the 
+#tabzilla a {
+  z-index: inherit;
+}
+
 // RECYCLABLE LITTLE BITS THAT
 // PROBABLY DON'T REQUIRE STAND ALONE
 // MODULES
@@ -52,11 +57,20 @@ a {
 
 .wrapper {
   @include flex-container(default, space-between, top, nowrap, true);
+  position: relative;
 }
 
 .main-content {
   @include wrapper;
-  flex: 1;
+  animation: fade-in 500ms;
+  position: relative;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 // TEXT FORMATTING

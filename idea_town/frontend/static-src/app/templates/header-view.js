@@ -4,9 +4,9 @@ export default `
       <div id="expanded-branding">
         <div class="wrapper">
           <header>
-            <a class="base" href="/home"><h1>Idea Town</h1></a>
-            <p class="subtitle"> A place where ideas come to ideas
-            and also ideas are ideas etc.</p>
+            <div class="firefox-logo"></div>
+            <h1>Idea Town</h1>
+            <p class="subtitle">The innovative community where new Ideas for Firefox are tested.</p>
           </header>
           <div class="town-background"></div>
           <div id="avatar-wrapper">

@@ -1,0 +1,50 @@
+#beta-notice-modal {
+  @include color-scheme($default, rgba($white, 1));
+  border-radius: 10px;
+  font-weight: 400;
+  padding: 15px;
+  position: absolute;
+  right: 75px;
+  text-align: center;
+  top: -250px;
+  width: 260px;
+  z-index: 999;
+
+  &:after {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid rgba($white, 1);
+    bottom: -15px;
+    content: '';
+    height: 0;
+    left: 194px;
+    position: absolute;
+    width: 0;
+  }
+}
+
+.modal-controls {
+  @include flex-container(default, space-between, center);
+  margin-top: 16px;
+  width: 100%;
+
+  a {
+    display: flex;
+    flex: 1;
+    text-decoration: none;
+
+    .button {
+      flex: 1;
+    }
+  }
+}
+
+#modal-screen {
+  background: rgba($white, .6);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}

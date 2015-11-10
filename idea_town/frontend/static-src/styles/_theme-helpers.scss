@@ -1,10 +1,12 @@
 $black: #000;
 $white: #fff;
 $default: #0c99d5;
+$default-dark: #005a98;
 $primary: #6fbe4a;
 $wash: #e2eaed;
-$dark: #56565a;
-$light: #f3f3f3;
+$baby-blue: #bee1f5;
+$dark: #2c2c2c;
+$light: #f2f2f2;
 $transparent-white: rgba($white, .6);
 $transparent-black: rgba($black, .3);
 $trasparent-wash: rgba($wash, .96);
@@ -13,7 +15,7 @@ $transparent-stick: rgba($white, .96);
 
 // Color Management
 @mixin color-scheme-special ($border-top: false) {
-  @include hidpi-background-image('grad-background', 1200px 1100px);
+  @include hidpi-background-image('grad-background', 1200px 984px);
   background-position: center top;
   background-repeat: no-repeat;
   background-color: $default;
@@ -21,6 +23,22 @@ $transparent-stick: rgba($white, .96);
     border-top: 6px solid $white;
   }
   color: $white;
+}
+
+@mixin color-scheme-special-inverse($border-top: false) {
+  @include hidpi-background-image('grad-background', 1200px 984px);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: $white;
+  @if($border-top) {
+    border-top: 6px solid $default;
+  }
+  color: $dark;
+}
+
+@mixin color-scheme($color, $background) {
+  color: $color;
+  background: $background; 
 }
 
 // Font Management
@@ -31,21 +49,6 @@ $transparent-stick: rgba($white, .96);
                1px 1px 0 $outline;
 }
 
-@mixin color-scheme-special-inverse($border-top: false) {
-  @include hidpi-background-image('grad-background', 1200px 1100px);
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-color: $white;
-  @if($border-top) {
-    border-top: 6px solid $default;
-  }
-  color: $black;
-}
-
-@mixin color-scheme($color, $background) {
-  color: $color;
-  background: $background; 
-}
 
 //Image Manangement
 @mixin hidpi-background-image($filename, $background-size: 'mixed', $extension: png) {
