@@ -6,6 +6,10 @@ import template from '../templates/landing-page';
 export default PageView.extend({
   _template: template,
 
+  events: {
+    'click [data-hook=show-beta-notice]': '_showBetaNotice'
+  },
+
   render() {
     const isLoggedIn = !!app.me.user.id;
     this.loggedIn = isLoggedIn;
@@ -20,7 +24,6 @@ export default PageView.extend({
     // save the old ID, if there was one
     document.body._id = document.body.id;
     document.body.id = 'cta';
-
     PageView.prototype.render.apply(this, arguments);
   },
 
@@ -30,5 +33,19 @@ export default PageView.extend({
     document.body.id = document.body._id;
 
     PageView.prototype.remove.apply(this, arguments);
+  },
+
+  _showBetaNotice(evt) {
+    evt.preventDefault();
+    const betaNotice = document.getElementById('beta-notice-modal');
+    const copter = document.getElementById('copter');
+    const modalScreen = document.getElementById('modal-screen');
+    betaNotice.classList.remove('hidden');
+    betaNotice.classList.add('delayed-fade-in');
+    copter.classList.remove('hover');
+    copter.classList.add('fly-up');
+    modalScreen.classList.remove('no-display');
+    modalScreen.classList.add('fade-in');
   }
+
 });

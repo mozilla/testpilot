@@ -1,5 +1,5 @@
 export default `
-  <div id="main-footer" class="wash">
+  <div id="main-footer">
     <div class="wrapper">
       <a href="https://www.mozilla.org" class="moz-logo"></a>
       <a href="https://www.mozilla.org/about/legal/terms/services/" class="boilerplate">Legal</a>

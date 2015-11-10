@@ -5,42 +5,68 @@
 #expanded-branding {
   @include color-scheme-special(false);
   background-size: cover;
-  border-bottom: 2px solid $black;
-  height: 206px;
+  border-bottom: 1px solid $default-dark;
+  height: 210px;
+  overflow: hidden;
+  position: relative;
 
   header {
-    @include hidpi-background-image('small-firefox-logo', 57px 59px);
+    animation: fade-in 500ms;
     background-repeat: no-repeat;
+    display: flex;
     flex: 0 0 250px;
-    margin-top: 20px;
-    padding-top: 50px;
+    flex-direction: column;
+    height: 210px;
+    justify-content: center;
   }
+
+  .firefox-logo {
+    @include hidpi-background-image('small-firefox-logo', 57px 59px);
+    height: 59px;
+    width: 57px;
+  }
+
 
   #avatar-wrapper {
     margin-top: 20px;
+    position: absolute;
+    right: 20px;
+  }
+
+  h1 {
+    line-height: 5.4rem;
+    margin: .5rem 0;
+    position: relative;
   }
 
   .town-background {
     @include hidpi-background-image('town2', 855px 374px);
-    background-position: -40px -102px;
+    animation: slide-up 500ms forwards ease-out;
+    background-position: -20px 0;
     background-repeat: no-repeat;
-    border-bottom: 2px solid $black;
-    height: 206px;
-    left: 70px;
-    margin-left: -70px;
+    flex: 0 0 766px;
+    height: 374px;
     position: relative;
-    width: 744px;
+    top: -101px;
     z-index: 0;
+  }
+}
+
+@keyframes slide-over {
+  0% {
+    opacity: 0;
+    left: 40px;
+  }
+
+  100% { 
+    opacity: 1;
+    left: 0;
   }
 }
 
 #idea-card-list {
   @include wrapper;
-  border-bottom: 2px solid $light;
-  flex: 1;
-  margin-bottom: 20px;
-  margin-top: 60px;
-  padding-bottom: 50px;
+  margin: 6rem 0;
 
   @include respond-to('big') {
     @include flex-container(default, space-between, top, wrap, true);
@@ -58,23 +84,27 @@
   cursor: pointer;
   flex: 0 0 310px;
   height: 330px;
-  padding: 30px 10px;
+  padding: 30px;
   text-align: center;
   text-decoration: none;
-  transition: border 100ms;
+  transition: background 100ms;
   width: 310px;
    
-  h3 {
+  h2 {
+    font-size: 24px;
+    font-weight: 400;
     margin-top: 20px;
   }
 
   &:hover,
   &:focus {
-    border: 3px solid $light;
+    //border: 3px solid $light;
+    background: $light;
   }
 }
 
 .idea-preview-image {
+  background-size: 172px 172px; 
   border-radius: 50%;
   flex: 0 0 172px;
   height: 172px;

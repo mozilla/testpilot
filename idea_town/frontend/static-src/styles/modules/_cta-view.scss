@@ -1,35 +1,54 @@
 #cta {
-  animation: fade-in 200ms;
+  margin-bottom: -6px;
 
   &.sign-up {
     @include color-scheme-special(true);
+
+    h2 {
+      font-size: 6.6rem;
+      line-height: 7.8rem;
+      margin-bottom: 3rem;
+    }
+
+    .button {
+      font-size: 1.9rem;
+    }
   }
 
   &.add-on {
     @include color-scheme-special-inverse(true);
+
+    h1 {
+      color: rgba($dark, .8);
+    }
+
+    h2 {
+      font-size: 5.4rem;
+      line-height: 6.2rem;
+      margin-bottom: 3rem;
+    }
+
+    .button {
+      font-size: 2.4rem;
+    }
+
+    #tabzilla a {
+      @include hidpi-background-image('tabzilla-blue', 147px 37px);
+    }
+
   }
 
   .firefox-logo {
     @include hidpi-background-image('firefox-logo', 141px 146px);
     height: 146px;
-    margin: 5rem 0 2rem;
+    margin: 3rem 0 2rem;
     width: 141px;
   }
 
-  #tabzilla {
-    margin-top: -5rem;
-  }
-
   h1 {
-    font-size: 8rem;
-    line-height: 7.2rem;
-    margin-bottom: 3rem;
-  }
-
-  h2 {
-    font-size: 3rem;
-    line-height: 4.2rem;
-    margin-bottom: 3.2rem;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 1rem;
   }
 }
 
@@ -46,16 +65,15 @@
     }
 
     .fxa-alternate {
-      color: $white;
       display: block;
-      font-size: 1.6rem;
-      font-weight: 400;
-      margin: 1.2rem 0 2.4rem;
+      margin: 2rem 0;
+      width: 110%;
     }
 
     .cta-legal {
-      font-size: 14px;
-      margin: 0 24px 0 0;
+      font-size: 12px;
+      font-weight: 400;
+      width: 70%;
     }
 
     a {
@@ -64,21 +82,21 @@
   }
 
   .town {
-    @include hidpi-background-image('town', 657px 322px); 
-    flex: 0 1 657px;
+    @include hidpi-background-image('town', 655px 322px); 
+    flex: 0 1 655px;
     height: 322px;
     position: relative;
-    top: 18px;
-    width: 657px;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
+    top: 0;
+    width: 655px;
   }
 
-  100% {
-    opacity: 1;
+  #copter {
+    @include hidpi-background-image('copter', 105px 81px); 
+    height: 81px;
+    left: 480px;
+    position: relative;
+    top: 44px;
+    width: 105px; 
+    z-index: 999;
   }
 }

@@ -1,18 +1,32 @@
 .button {
   border: 0;
   border-radius: 4px;
-  font-weight: 500;
+  font-weight: 200;
   height: 36px;
   padding: 0 16px;
   text-align: center;
   text-decoration: none;
-  transition: background 50ms;
+  transition: background 100ms;
 
   &.large {
     border-radius: 8px;
-    box-shadow: 0 -4px 0 rgba($black, .2) inset;
-    font-size: 2.4rem;
-    height: 64px;
+    font-size: 2rem;
+    height: 6rem;
+    padding: 0 2px 2px;
+  }
+
+  &.secondary {
+    border: 1px solid darken($light, 20);
+    color: $dark;
+
+    &:hover,
+    &:focus {
+      background: darken($light, 10);
+    }
+  }
+
+  &.default {
+    @include color-scheme($white, $black);
   }
 
   &.primary {
@@ -20,11 +34,25 @@
 
     &:hover,
     &:focus {
-      background: darken($primary, 4);
+      background: darken($primary, 8);
+      color: rgba($white, .7);
     }
 
     &:active {
-      background: darken($primary, 9);
+      background: darken($primary, 12);
+    }
+  }
+
+  &.dark {
+    @include color-scheme($white, $default-dark);
+
+    &:hover,
+    &:focus {
+      background: lighten($default-dark, 3);
+    }
+
+    &:active {
+      background: darken($default-dark, 3);
     }
   }
 
