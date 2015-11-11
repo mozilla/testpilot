@@ -89,14 +89,4 @@
     top: 0;
     width: 655px;
   }
-
-  #copter {
-    @include hidpi-background-image('copter', 105px 81px); 
-    height: 81px;
-    left: 480px;
-    position: relative;
-    top: 44px;
-    width: 105px; 
-    z-index: 999;
-  }
 }

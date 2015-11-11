@@ -1,11 +1,16 @@
 export default `
-  <div class="page">
-    <section class="page main-content" data-hook="account-inactive-page">
-      <header data-hook="main-header"></header>
-      <h1>Account Inactive</h1>
-      <h2>We're not quite ready for you yet!<br>
-          Please come back in a few weeks.</h2>
+  <div class="page" id="full-page-notice">
+    <section class="main-content" data-hook="account-inactive-page">
+      <div class="vertical-centering-container">
+        <div id="beta-notice-modal" class="delayed-fade-in">
+          <h1>Thanks for signing up!</h1>
+          <h2>We'll let you know as soon as Idea Town is ready.</h2>
+          <div class="modal-controls">
+            <a href="/"><button class="button primary">Home</button></a>
+          </div>
+        </div>
+        <div class="copter fly-up-fade-in"></div>
+      </div>
     </section>
-    <div data-hook="main-footer"></div>
   </div>
 `;
