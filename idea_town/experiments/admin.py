@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from .models import (Experiment, ExperimentDetail, UserInstallation)
+from .models import (Experiment, ExperimentDetail, UserInstallation,
+                     UserFeedback)
 from ..utils import (show_image, parent_link, related_changelist_link)
 
 
@@ -10,10 +11,12 @@ class ExperimentDetailInline(admin.TabularInline):
 
 class ExperimentAdmin(admin.ModelAdmin):
 
-    list_display = ('id', 'title', 'version', 'xpi_url',
+    list_display = ('id',
                     show_image('thumbnail'),
+                    'title', 'version', 'addon_id',
                     related_changelist_link('details'),
                     related_changelist_link('users'),
+                    related_changelist_link('feedbacks'),
                     'created', 'modified',)
 
     prepopulated_fields = {"slug": ("title",)}
@@ -35,7 +38,17 @@ class UserInstallationAdmin(admin.ModelAdmin):
                     'created', 'modified',)
 
 
+class UserFeedbackAdmin(admin.ModelAdmin):
+
+    list_display = ('id', parent_link('experiment'), parent_link('user'),
+                    'question', 'answer',
+                    'created', 'modified',)
+
+    list_filter = ('experiment', 'question',)
+
+
 for x in ((Experiment, ExperimentAdmin),
           (ExperimentDetail, ExperimentDetailAdmin),
+          (UserFeedback, UserFeedbackAdmin),
           (UserInstallation, UserInstallationAdmin),):
     admin.site.register(*x)

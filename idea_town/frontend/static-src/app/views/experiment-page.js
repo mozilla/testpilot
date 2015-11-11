@@ -6,6 +6,7 @@ import PageView from './page-view';
 import DetailView from './detail-view';
 import ContributorView from './contributor-view';
 import template from '../templates/experiment-page';
+import FeedbackView from './feedback-view';
 
 const CollectionExtended = Collection.extend({
   model: Model.extend({
@@ -20,19 +21,27 @@ export default PageView.extend({
 
   events: {
     'click [data-hook=install]': 'install',
-    'click [data-hook=uninstall]': 'uninstall'
+    'click [data-hook=uninstall]': 'uninstall',
+    'click [data-hook=feedback]': 'feedback'
   },
 
   bindings: {
+
     'model.title': {
       type: 'text',
       hook: 'title'
     },
-    'model.enabled': {
+
+    'model.enabled': [{
       type: 'toggle',
       yes: '[data-hook=uninstall]',
       no: '[data-hook=install]'
     },
+    {
+      type: 'toggle',
+      hook: 'feedback'
+    }],
+
     'model.modified_date': {
       type: (el, value) => new Date(value),
       hook: 'modified-date'
@@ -131,5 +140,33 @@ export default PageView.extend({
   uninstall(evt) {
     evt.preventDefault();
     this._updateAddon(false);
+    // TODO: Hardcoded survey, for now. Populate via API later?
+    this.renderSubview(new FeedbackView({
+      id: 'disabled-feedback',
+      experiment: this.model.url,
+      title: 'Why are you stopping?',
+      questions: [
+        { value: 'broken', title: 'This thing is broken!' },
+        { value: 'dislike', title: 'I don\'t like this feature.' },
+        { value: 'notuseful', title: 'This isn\'t useful for me.' },
+        { value: 'other', title: 'Something else.' }
+      ]
+    }), 'body');
+  },
+
+  feedback(evt) {
+    evt.preventDefault();
+    // TODO: Hardcoded survey, for now. Populate via API later?
+    this.renderSubview(new FeedbackView({
+      id: 'enabled-feedback',
+      experiment: this.model.url,
+      title: 'Tell us what you think',
+      questions: [
+        { value: 'broken', title: 'Something seems broken.' },
+        { value: 'feature', title: 'Request a feature.' },
+        { value: 'cool', title: 'This is cool!' },
+        { value: 'other', title: 'Something else.' }
+      ]
+    }), 'body');
   }
 });

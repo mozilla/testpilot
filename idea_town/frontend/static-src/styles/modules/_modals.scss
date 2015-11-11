@@ -46,5 +46,87 @@
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 0;
+  z-index: 100;
+}
+
+#modal-screen.dark {
+  background: rgba($black, .6);
+}
+
+.feedback-modal {
+  $feedback-modal-width: 300px;
+  $feedback-modal-border-radius: 5px;
+
+  z-index: 200;
+  width: $feedback-modal-width;
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  margin-left: -($feedback-modal-width/2);
+  background-color: #fff;
+  border-radius: $feedback-modal-border-radius;
+
+  h3.title {
+    background-color: $default;
+    font-size: 2.4rem;
+    color: #fff;
+    margin: 0;
+    padding: 10px;
+    border-top-left-radius: $feedback-modal-border-radius;
+    border-top-right-radius: $feedback-modal-border-radius;
+    text-align: center;
+  }
+  section.main {
+    padding: 0 25px;
+    ul {
+      list-style-type: none;
+      padding: 20px 0 0 0;
+      margin: 0;
+      li {
+        padding: 0;
+        margin: 0 0 0.25em 0;
+        input {
+          padding: 0;
+          margin: 0 0.25em 0 0;
+        }
+        label {
+          font-size: 1.8rem;
+          font-weight: 200;
+        }
+      }
+    }
+    section.extra, section.controls {
+      text-align: center;
+      p {
+        font-size: 1rem;
+        padding: 0;
+        margin: 10px 0 4px 0;
+        color: #bbb;
+      }
+      textarea {
+        display: block;
+        width: 100%;
+        height: 8em;
+        font-size: 1.1rem;
+        padding: 5px;
+        border: 1px solid #bbb;
+      }
+    }
+    section.controls {
+      text-align: center;
+      margin: 20px 0 20px 0;
+      button.submit {
+        display: block;
+        width: 100%;
+        font-weight: 400;
+        font-size: 1.8rem;
+      }
+      a.cancel {
+        display: block;
+        margin: 10px 0 10px 0;
+        text-decoration: none;
+        font-size: 1.1rem;
+      }
+    }
+  }
 }
