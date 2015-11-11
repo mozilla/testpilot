@@ -2,13 +2,30 @@
   @include color-scheme($default, rgba($white, 1));
   border-radius: 10px;
   font-weight: 400;
-  padding: 15px;
-  position: absolute;
-  right: 75px;
+  padding: 24px;
+  position: relative;
   text-align: center;
-  top: -250px;
-  width: 260px;
   z-index: 999;
+
+  h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+    margin-bottom: 1.2rem;
+    margin-top: -.4rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .town & {
+    padding: 15px;
+    position: absolute;
+    right: 75px;
+    top: -250px;
+    width: 260px;
+  }
 
   &:after {
     border-left: 15px solid transparent;
@@ -17,24 +34,34 @@
     bottom: -15px;
     content: '';
     height: 0;
-    left: 194px;
     position: absolute;
     width: 0;
+
+    .town & {
+      left: 194px;
+    }
+
+    .vertical-centering-container & {
+      right: 40px;
+    }
   }
 }
 
 .modal-controls {
-  @include flex-container(default, space-between, center);
+  @include flex-container(row, center, center);
   margin-top: 16px;
-  width: 100%;
+
 
   a {
+    @include flex-container(row, center, center);
     display: flex;
     flex: 1;
     text-decoration: none;
+    width: 100%; 
+
 
     .button {
-      flex: 1;
+      flex: 0 1 230px;
     }
   }
 }
