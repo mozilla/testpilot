@@ -11,9 +11,9 @@
 }
 
 .delayed-fade-in {
-  opacity: 0;
   animation: fade-in 500ms forwards;
   animation-delay: 1000ms;
+  opacity: 0;
 }
 
 .hover {
@@ -22,6 +22,10 @@
 
 .fly-up {
   animation: fly-up 1000ms forwards ease-out;
+}
+
+.fly-up-fade-in {
+  animation: fly-up-fade-in 1000ms forwards ease-out;
 }
 
 @keyframes fade-in {
@@ -33,7 +37,6 @@
     opacity: 1;
   }
 }
-
 
 @keyframes hover {
   0% {
@@ -48,5 +51,17 @@
 @keyframes fly-up {
   100% {
     transform: translate(0, -120px);
+  }
+}
+
+@keyframes fly-up-fade-in {
+  0% {
+    opacity: 0;
+    transform: translate(0, 400px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
   }
 }

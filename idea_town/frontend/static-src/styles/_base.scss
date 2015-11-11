@@ -73,6 +73,10 @@ a {
   flex-direction: column;
 }
 
+.vertical-centering-container {
+  @include flex-container(column, center, center);
+}
+
 // TEXT FORMATTING
 
 .subtitle {
