@@ -8,10 +8,7 @@ export default `
             <p class="subtitle">The innovative community where new Ideas for Firefox are tested.</p>
           </header>
           <div class="town-background"></div>
-          <div id="avatar-wrapper">
-            <img class="avatar" width="41" height="41" data-hook="logout">
-            <span class="default-avatar" data-hook="logout"></span>
-          </div>
+          <div data-hook="settings"></div>
         </div>
       </div>
       <div data-hook="inactive-user" id="tabzilla">

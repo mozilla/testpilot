@@ -12,7 +12,6 @@ $transparent-black: rgba($black, .3);
 $trasparent-wash: rgba($wash, .96);
 $transparent-stick: rgba($white, .96);
 
-
 // Color Management
 @mixin color-scheme-special ($border-top: false) {
   @include hidpi-background-image('grad-background', 1200px 984px);

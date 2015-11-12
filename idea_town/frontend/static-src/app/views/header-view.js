@@ -1,12 +1,20 @@
 import app from 'ampersand-app';
 import BaseView from './base-view';
 
+import SettingsMenuView from './settings-menu-view';
 import template from '../templates/header-view';
 import scrollTemplate from '../templates/scroll-header-view';
 const changeHeaderOn = 100;
 
 export default BaseView.extend({
   template: template,
+
+  subviews: {
+    'settings-menu': {
+      hook: 'settings',
+      constructor: SettingsMenuView
+    }
+  },
 
   props: {
     avatar: 'string',
@@ -92,6 +100,8 @@ export default BaseView.extend({
       this.title = this.experiment.title;
       this.isInstalled = !!this.experiment.isInstalled;
     }
+
+    return this;
   },
 
   onScroll() {
