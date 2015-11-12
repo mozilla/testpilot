@@ -14,7 +14,7 @@
   "scripts": {
     "start": "st -nc .",
     "lint": "eslint .",
-    "package": "jpm xpi && mv @idea-town-addon-0.0.1.xpi dist/idea-town-addon-0.0.1.xpi"
+    "package": "jpm xpi && mv @idea-town-addon-$npm_package_version.xpi dist/idea-town-addon-$npm_package_version.xpi"
   },
   "license": "MPL-2.0",
   "dependencies": {
