@@ -1,5 +1,6 @@
 import app from 'ampersand-app';
 import BaseView from './base-view';
+import SettingsMenuView from './settings-menu-view';
 
 import template from '../templates/header-view';
 import scrollTemplate from '../templates/scroll-header-view';
@@ -8,8 +9,14 @@ const changeHeaderOn = 100;
 export default BaseView.extend({
   template: template,
 
+  subviews: {
+    'settings-menu': {
+      hook: 'settings',
+      constructor: SettingsMenuView
+    }
+  },
+
   props: {
-    avatar: 'string',
     scrolled: {type: 'boolean', default: false},
     title: {type: 'string', default: 'Idea Town'},
     isInstalled: {type: 'boolean', default: false},
@@ -36,15 +43,6 @@ export default BaseView.extend({
       type: 'booleanClass',
       hook: 'scroll-wrap',
       name: 'detail-header'
-    }],
-    'avatar': [{
-      type: 'attribute',
-      name: 'src',
-      selector: '.avatar'
-    }, {
-      type: 'toggle',
-      yes: '.avatar',
-      no: '.default-avatar'
     }]
   },
 
@@ -83,9 +81,6 @@ export default BaseView.extend({
 
     // an active user has an addon and a session
     this.activeUser = !!this.session && app.me.hasAddon;
-    if (!!this.session && app.me.user.profile.avatar) {
-      this.avatar = app.me.user.profile.avatar;
-    }
 
     if (this.experiment) {
       this.title = this.experiment.title;
