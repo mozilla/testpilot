@@ -6,20 +6,61 @@ import scrollTemplate from '../templates/scroll-header-view';
 const changeHeaderOn = 100;
 
 export default BaseView.extend({
-  _template: template,
+  template: template,
+
+  props: {
+    avatar: 'string',
+    scrolled: {type: 'boolean', default: false},
+    title: {type: 'string', default: 'Idea Town'},
+    isInstalled: {type: 'boolean', default: false},
+    activeUser: {type: 'boolean', required: true, default: false}
+  },
+
+  bindings: {
+    'title': '[data-hook=title]',
+    'activeUser': {
+      type: 'toggle',
+      yes: '[data-hook=active-user]',
+      no: '[data-hook=inactive-user]'
+    },
+    'isInstalled': {
+      type: 'toggle',
+      yes: '[data-hook=uninstall]',
+      no: '[data-hook=install]'
+    },
+    'scrolled': [{
+      type: 'toggle',
+      yes: '[data-hook=scroll]',
+      no: '[data-hook=no-scroll]'
+    }, {
+      type: 'booleanClass',
+      hook: 'scroll-wrap',
+      name: 'detail-header'
+    }],
+    'avatar': [{
+      type: 'attribute',
+      name: 'src',
+      selector: '.avatar'
+    }, {
+      type: 'toggle',
+      yes: '.avatar',
+      no: '.default-avatar'
+    }]
+  },
 
   events: {
     'click [data-hook=logout]': 'logout'
   },
 
   initialize(opts) {
+    // this.model = new HeaderModel();
     if (opts.headerScroll) {
       const chunkedUrl = location.pathname.split('/');
       if (chunkedUrl.length < 2) {
         return;
       }
-      this._template = scrollTemplate;
-      this.model = app.experiments.get(chunkedUrl[2], 'slug');
+      this.template = scrollTemplate;
+      this.experiment = app.experiments.get(chunkedUrl[2], 'slug').toJSON();
       this.didScroll = false;
 
       window.addEventListener('scroll', function scrollListener() {
@@ -34,21 +75,22 @@ export default BaseView.extend({
     // regular page load cycle, and those changes alter the header's
     // appearance
     app.me.on('change:hasAddon', this.render, this);
+    BaseView.prototype.initialize.apply(this, arguments);
   },
 
-  render() {
+  beforeRender() {
     this.session = app.me.user.id;
 
     // an active user has an addon and a session
     this.activeUser = !!this.session && app.me.hasAddon;
-    this.avatar = !!this.session && app.me.user.profile.avatar;
-
-    if (this.model) {
-      this.title = this.model.title;
-      this.isInstalled = !!this.model.isInstalled;
+    if (!!this.session && app.me.user.profile.avatar) {
+      this.avatar = app.me.user.profile.avatar;
     }
 
-    BaseView.prototype.render.apply(this, arguments);
+    if (this.experiment) {
+      this.title = this.experiment.title;
+      this.isInstalled = !!this.experiment.isInstalled;
+    }
   },
 
   onScroll() {
@@ -58,7 +100,6 @@ export default BaseView.extend({
     } else {
       this.scrolled = false;
     }
-    this.render();
     this.didScroll = false;
   },
 

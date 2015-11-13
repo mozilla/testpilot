@@ -1,7 +1,6 @@
 export default `
   <section class="navbar">
-    {{#activeUser}}
-      <div id="expanded-branding">
+      <div data-hook="active-user" id="expanded-branding">
         <div class="wrapper">
           <header>
             <div class="firefox-logo"></div>
@@ -10,20 +9,13 @@ export default `
           </header>
           <div class="town-background"></div>
           <div id="avatar-wrapper">
-            {{#avatar}}
-              <img class="avatar" src="{{avatar}}" width="41" height="41" data-hook="logout">
-            {{/avatar}}
-            {{^avatar}}
-              <span class="default-avatar" data-hook="logout"></span>
-            {{/avatar}}
+            <img class="avatar" width="41" height="41" data-hook="logout">
+            <span class="default-avatar" data-hook="logout"></span>
           </div>
         </div>
       </div>
-    {{/activeUser}}
-    {{^activeUser}}
-      <div id="tabzilla">
+      <div data-hook="inactive-user" id="tabzilla">
         <a href="https://www.mozilla.org/">Mozilla</a>
       </div>
-    {{/activeUser}}
   </section>
 `;
