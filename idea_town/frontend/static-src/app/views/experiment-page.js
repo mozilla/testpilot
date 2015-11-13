@@ -5,6 +5,7 @@ import Collection from 'ampersand-collection';
 import PageView from './page-view';
 import DetailView from './detail-view';
 import ContributorView from './contributor-view';
+
 import template from '../templates/experiment-page';
 
 const CollectionExtended = Collection.extend({

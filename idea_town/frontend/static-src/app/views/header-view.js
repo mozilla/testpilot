@@ -1,12 +1,20 @@
 import app from 'ampersand-app';
 import BaseView from './base-view';
 
+import SettingsMenuView from './settings-menu-view';
 import template from '../templates/header-view';
 import scrollTemplate from '../templates/scroll-header-view';
 const changeHeaderOn = 100;
 
 export default BaseView.extend({
   template: template,
+
+  subviews: {
+    'settings-menu': {
+      hook: 'settings',
+      constructor: SettingsMenuView
+    }
+  },
 
   props: {
     avatar: 'string',
@@ -53,12 +61,12 @@ export default BaseView.extend({
   },
 
   initialize(opts) {
-    // this.model = new HeaderModel();
     if (opts.headerScroll) {
       const chunkedUrl = location.pathname.split('/');
       if (chunkedUrl.length < 2) {
         return;
       }
+
       this.template = scrollTemplate;
       this.experiment = app.experiments.get(chunkedUrl[2], 'slug').toJSON();
       this.didScroll = false;
@@ -83,6 +91,7 @@ export default BaseView.extend({
 
     // an active user has an addon and a session
     this.activeUser = !!this.session && app.me.hasAddon;
+
     if (!!this.session && app.me.user.profile.avatar) {
       this.avatar = app.me.user.profile.avatar;
     }
@@ -91,14 +100,16 @@ export default BaseView.extend({
       this.title = this.experiment.title;
       this.isInstalled = !!this.experiment.isInstalled;
     }
+
+    return this;
   },
 
   onScroll() {
     const sy = window.pageYOffset || document.documentElement.scrollTop;
     if (sy >= changeHeaderOn) {
-      this.scrolled = true;
+      this.model.scrolled = true;
     } else {
-      this.scrolled = false;
+      this.model.scrolled = false;
     }
     this.didScroll = false;
   },

@@ -1,0 +1,62 @@
+.arrow-up {
+    width: 22px;
+    height: 12px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #FFF;
+    position: absolute;
+    top: -13px;
+    left: 126px;   
+}
+
+.settings-button {
+    width: 60px;
+    border-radius: 7px;
+    background: #82cbeb;
+    height: 30px;
+    text-align: center;
+    line-height: 150%;
+    cursor: pointer;
+
+    span {
+        background: white;
+        width: 10px;
+        height: 10px;
+        margin-left: 2px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+}
+
+.settings-contain {
+    position: relative;
+    margin-top: 20px;
+}
+
+.settings-menu {
+    position: absolute;
+    top: 45px;
+    left: -100px;
+    background: white;
+    border: 1px solid black;
+    border-top: 1px solid white;
+    border-bottom: 2px solid black;
+    width: 160px;
+
+    a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    ul {
+        padding-left: 10px;
+    }
+
+    li {
+        list-style: none;
+    }
+}
+
+.hidden {
+    display: none;
+}
