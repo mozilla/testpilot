@@ -38,7 +38,7 @@ export default `
         </div>
       {{/loggedIn}}
     </section>
-    <div data-hook="main-footer"></div>
+    <div data-hook="main-footer" class="vertical-flex-container"></div>
     <div id="modal-screen" class="no-display"></div>
   </div>
 `;
