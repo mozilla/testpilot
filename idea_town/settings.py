@@ -194,8 +194,8 @@ DEFAULT_FILE_STORAGE = config(
     default='django.core.files.storage.FileSystemStorage')
 
 if DEFAULT_FILE_STORAGE == 'storages.backends.s3boto.S3BotoStorage':
-    AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+    AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID', default=None)
+    AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY', default=None)
     AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
     MEDIA_URL = config('MEDIA_URL')
 else:
