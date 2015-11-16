@@ -2,7 +2,7 @@
   margin-bottom: -6px;
 
   &.sign-up {
-    @include color-scheme-special(true);
+    @include color-scheme-special;
 
     h2 {
       font-size: 6.6rem;
@@ -13,10 +13,14 @@
     .button {
       font-size: 1.9rem;
     }
+
+    .page {
+      border-top: 6px solid $white;
+    }
   }
 
   &.add-on {
-    @include color-scheme-special-inverse(true);
+    @include color-scheme-special-inverse;
 
     h1 {
       color: rgba($dark, .8);
@@ -36,6 +40,9 @@
       @include hidpi-background-image('tabzilla-blue', 147px 37px);
     }
 
+    .page {
+      border-top: 6px solid $default;
+    }
   }
 
   .firefox-logo {
@@ -86,7 +93,7 @@
     flex: 0 1 655px;
     height: 322px;
     position: relative;
-    top: 0;
+    top: 18px;
     width: 655px;
   }
 

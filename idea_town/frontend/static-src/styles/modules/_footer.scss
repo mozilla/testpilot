@@ -2,16 +2,9 @@
   @include color-scheme($dark, $wash);
   border-top: 1px solid $default-dark;
   flex: 1 1;
-  padding: 6rem 0 1.6rem;
-  position: relative;
-  z-index: -1;
+  height: 100%;
+  padding: 4rem 0 1rem;
 
-  .add-on &,
-  .sign-up & {
-
-    margin-top: -18px;
-
-  }
 
   &.light {
     @include color-scheme($black, $light);
