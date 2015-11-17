@@ -12,11 +12,6 @@ export default AmpersandView.extend({
     return mustache.render(this._template, ctx);
   },
 
-  remove() {
-    const parent = this.el.parentNode;
-    if (parent) parent.removeChild(this.el);
-  },
-
   render() {
     this.beforeRender();
     AmpersandView.prototype.render.apply(this, arguments);

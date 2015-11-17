@@ -1,3 +1,4 @@
+import json
 import hashlib
 import random
 import os
@@ -7,7 +8,10 @@ from django.conf import settings
 from django.utils.deconstruct import deconstructible
 from django.core.urlresolvers import reverse
 
-from rest_framework import serializers
+import django.test
+
+from rest_framework import serializers, filters
+from rest_framework.test import APIClient
 
 import logging
 logger = logging.getLogger(__name__)
@@ -28,6 +32,11 @@ class MarkupField(serializers.Field):
 
     def to_representation(self, value):
         return value.rendered
+
+
+class IsRequestUserBackend(filters.BaseFilterBackend):
+    def filter_queryset(self, request, queryset, view):
+        return queryset.filter(user=request.user)
 
 
 @deconstructible
@@ -150,3 +159,14 @@ def related_changelist_link(field_name):
     build_link.short_description = field_name
 
     return build_link
+
+
+class TestCase(django.test.TestCase):
+
+    def setUp(self):
+        self.client = APIClient()
+
+    def jsonGet(self, url_name, **kwargs):
+        url = reverse(url_name, kwargs=kwargs)
+        resp = self.client.get(url)
+        return json.loads(str(resp.content, encoding='utf8'))

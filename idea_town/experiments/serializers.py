@@ -3,7 +3,7 @@ from django.core.urlresolvers import reverse
 
 from ..users.models import UserProfile
 from ..users.serializers import UserProfileSerializer
-from .models import (Experiment, ExperimentDetail)
+from .models import (Experiment, ExperimentDetail, UserFeedback)
 from ..utils import MarkupField
 
 
@@ -41,3 +41,11 @@ class ExperimentSerializer(serializers.HyperlinkedModelSerializer):
                                   context={'request': request}).data
             for user in obj.contributors.all()
         ]
+
+
+class UserFeedbackSerializer(serializers.HyperlinkedModelSerializer):
+
+    class Meta:
+        model = UserFeedback
+        fields = ('url', 'experiment', 'question', 'answer', 'extra',
+                  'created', 'modified')
