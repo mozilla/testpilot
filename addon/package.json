@@ -1,7 +1,7 @@
 {
   "title": "Idea Town Addon",
   "name": "idea-town-addon",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "description": "The addon where ideas come to idea",
   "repository": "mozilla/idea-town-addon",
@@ -12,8 +12,8 @@
     "fennec": ">=38.0a1"
   },
   "scripts": {
-    "start": "st -nc .",
     "lint": "eslint .",
+    "start": "jpm run -b /usr/bin/firefox --prefs dev-prefs.json",
     "package": "jpm xpi && mv @idea-town-addon-$npm_package_version.xpi dist/idea-town-addon-$npm_package_version.xpi"
   },
   "license": "MPL-2.0",
@@ -30,15 +30,15 @@
   "preferences": [
     {
       "name": "BASE_URL",
-      "title": "Ideatown protocall",
-      "description": "protocall",
+      "title": "Idea town protocol",
+      "description": "protocol",
       "type": "string",
-      "value": "http://ideatown.dev:8000"
+      "value": "https://ideatown.firefox.com"
     },
     {
       "name": "BADGE_COLOR",
-      "title": "Ideatown Badge Color",
-      "description": "Color of the ideatown badge hex",
+      "title": "Idea town Badge Color",
+      "description": "Hex color of the ideatown badge",
       "type": "string",
       "value": "#00AAAA"
     },
@@ -47,12 +47,12 @@
       "title": "Allowed origins for addon",
       "description": "Allowed origins for addon",
       "type": "string",
-      "value": "http://ideatown.dev:8000/*,https://ideatown.firefox.com/*"
+      "value": "https://ideatown.firefox.com/*"
     },
     {
       "name": "IDEATOWN_PREFIX",
-      "title": "Ideatown namespace",
-      "description": "Ideatown namespace for metric events",
+      "title": "Idea town namespace",
+      "description": "Idea town namespace for metric events",
       "type": "string",
       "value": "ideatown.addon.MAIN."
     }

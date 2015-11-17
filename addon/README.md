@@ -1,4 +1,4 @@
-#Idea Town
+# Idea Town
 The addon where ideas come to idea
 
 ## installation
@@ -7,12 +7,16 @@ The addon where ideas come to idea
 
 ## configuration
 
-check the `CONFIG` property in `package.json`
+prod: check the `CONFIG` property in `package.json`
+dev: [dev-prefs.json](dev-prefs.json)
 
 ## running
 
 * `npm start`
-* `jpm run -b /usr/bin/firefox`
+
+You may need to set both `xpinstall.signatures.required` and
+`xpinstall.whitelist.required` flags to false in `about:config`
+if the addon has not yet been signed.
 
 ## packaging
 
