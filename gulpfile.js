@@ -117,10 +117,12 @@ gulp.task('scripts', ['lint'], function scriptsTask() {
 
 gulp.task('styles', function stylesTask() {
   return gulp.src(SRC_PATH + 'styles/**/*.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: normalize.includePaths
     }).on('error', sass.logError))
     .pipe(autoprefixer('last 2 versions'))
+    .pipe(sourcemaps.write({sourceRoot: SRC_PATH + 'styles'}))
     .pipe(gulp.dest(DEST_PATH + 'styles'))
       // don't minify in development
       .pipe(gulpif(!IS_DEBUG, rename({ suffix: '.min' })))

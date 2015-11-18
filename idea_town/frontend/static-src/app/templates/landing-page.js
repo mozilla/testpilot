@@ -21,7 +21,7 @@ export default `
                 <a href="/accounts/login/?next=/home"><button class="button primary">Sign me up!</button></a>
               </div>
             </div>
-            <div id="copter" class="hover"></div>
+            <div id="copter" class="copter hover"></div>
           </div>
         </div>
       {{/loggedIn}}
@@ -33,7 +33,7 @@ export default `
             <a href="{{ downloadUrl }}"><button class="button large primary">Install the Add-on</button></a>
           </div>
           <div class="town">
-            <div id="copter" class="hover"></div>
+            <div class="copter"></div>
           </div>
         </div>
       {{/loggedIn}}

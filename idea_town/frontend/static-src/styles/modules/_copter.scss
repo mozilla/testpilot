@@ -1,0 +1,17 @@
+.copter {
+  @include hidpi-background-image('copter', 105px 81px); 
+  height: 81px;
+  position: relative;
+  width: 105px; 
+  z-index: 999;
+
+  .town & {
+    left: 480px;
+    top: 44px;
+  }
+
+  .vertical-centering-container & {
+    left: 168px;
+    margin-top: 25px;
+  }
+}
