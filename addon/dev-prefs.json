@@ -1,4 +1,4 @@
 {
-  "BASE_URL": "http://ideatown.dev:8000"
-  "ALLOWED_ORIGINS": "http://ideatown.dev:8000/*, https://ideatown.firefox.com/*, http://idea-town-dev.elasticbeanstalk.com/*",
+  "BASE_URL": "http://ideatown.dev:8000",
+  "ALLOWED_ORIGINS": "http://ideatown.dev:8000/*, https://ideatown.firefox.com/*, http://idea-town-dev.elasticbeanstalk.com/*"
 }
