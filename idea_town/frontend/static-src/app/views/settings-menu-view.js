@@ -10,8 +10,7 @@ export default BaseView.extend({
                  <span></span>
                </div>
 
-               <div class="settings-menu hidden">
-                 <div class="arrow-up"></div>
+               <div class="settings-menu no-display">
                  <ul>
                    <li><a data-hook="launch-tour">Tour Idea Town</a></li>
                    <li><a href="https://wiki.mozilla.org/Idea-Town">Idea Town Wiki</a></li>
@@ -28,10 +27,13 @@ export default BaseView.extend({
 
   toggleSettings() {
     const setEl = this.query('.settings-menu');
-    if (setEl.classList.contains('hidden')) {
-      setEl.classList.remove('hidden');
+    const buttonEl = this.query('.settings-button');
+    if (setEl.classList.contains('no-display')) {
+      setEl.classList.remove('no-display');
+      buttonEl.classList.add('active');
     } else {
-      setEl.classList.add('hidden');
+      setEl.classList.add('no-display');
+      buttonEl.classList.remove('active');
     }
   },
 
