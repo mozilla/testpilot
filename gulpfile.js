@@ -16,6 +16,7 @@ const normalize = require('node-normalize-scss');
 const rename = require('gulp-rename');
 const runSequence = require('run-sequence');
 const sass = require('gulp-sass');
+const sassLint = require('gulp-sass-lint');
 const source = require('vinyl-source-stream');
 const sourcemaps = require('gulp-sourcemaps');
 const through = require('through2');
@@ -125,6 +126,13 @@ gulp.task('styles', function stylesTask() {
       .pipe(gulpif(!IS_DEBUG, rename({ suffix: '.min' })))
       .pipe(gulpif(!IS_DEBUG, minifycss()))
     .pipe(gulp.dest(DEST_PATH + 'styles'));
+});
+
+gulp.task('sass-lint', function sassLintTask() {
+  return gulp.src(SRC_PATH + '/styles/**/*.scss')
+    .pipe(sassLint())
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError());
 });
 
 gulp.task('images', function imagesTask() {
