@@ -19,7 +19,7 @@ option_settings:
 
   # Expected hostname(s) for the site
   - option_name: ALLOWED_HOSTS
-    value: ideatown.mozilla.com
+    value: ideatown.firefox.com
 
   # URL to the current version of the Idea Town addon
   - option_name: ADDON_URL
