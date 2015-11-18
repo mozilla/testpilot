@@ -10,11 +10,11 @@ html {
 }
 
 body {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.6rem;
-  box-sizing: border-box;
 }
 
 h1,

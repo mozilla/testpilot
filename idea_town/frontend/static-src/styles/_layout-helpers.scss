@@ -1,4 +1,4 @@
-@mixin wrapper() {
+@mixin wrapper {
   clear: both;
   margin-left: auto;
   margin-right: auto;
@@ -8,11 +8,11 @@
 }
 
 @mixin flex-container($direction, $justification, $alignment, $wrap: nowrap, $wrapper: false) {
+  align-items: $alignment;
   display: flex;
   flex-direction: $direction;
-  justify-content: $justification;
-  align-items: $alignment;
   flex-wrap: $wrap;
+  justify-content: $justification;
   @if ($wrapper) {
     @include wrapper;
   }
