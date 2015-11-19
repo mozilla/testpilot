@@ -53,19 +53,18 @@
 
 @keyframes slide-over {
   0% {
-    opacity: 0;
     left: 40px;
+    opacity: 0;
   }
 
   100% { 
-    opacity: 1;
     left: 0;
+    opacity: 1;
   }
 }
 
 #idea-card-list {
   @include wrapper;
-  margin: 6rem 0;
 
   @include respond-to('big') {
     @include flex-container(default, space-between, top, wrap, true);
@@ -74,6 +73,8 @@
   @include respond-to('medium') {
     @include flex-container(default, space-around, top, wrap, true);
   }
+
+  margin: 6rem 0;
 }
 
 .idea-card {
@@ -88,7 +89,7 @@
   text-decoration: none;
   transition: background 100ms;
   width: 310px;
-   
+
   h2 {
     font-size: 24px;
     font-weight: 400;

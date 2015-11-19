@@ -1,5 +1,10 @@
 rules:
+  clean-import-paths: 0
   force-attribute-nesting: 0
   force-element-nesting: 0
   force-pseudo-nesting: 0
+  nesting-depth: [2, max-depth: 4]
   no-ids: 0
+  no-mergeable-selectors: 0
+  no-qualifying-elements: 0
+  no-warn: 0
