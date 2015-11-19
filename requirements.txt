@@ -109,13 +109,8 @@ django-jinja==1.4.1
 # sha256: zVUdWlGLdFQHY1u4URbrgTgY7K8YLnc8NbNiOfw_JHg
 defusedxml==0.4.1
 
-# TODO: Re-install django-allauth from official sources once this PR is resolved:
-# https://github.com/pennersr/django-allauth/pull/1099
-# sha256: 67kjSmrxku6ahiO8lapstSNVdj0E_u2xmoiM2kC7NGY
-# django-allauth==0.23.0
-
-# sha256: ncGZzRVGv3eOrOdB8TKHKHyzmxffD99JmIFxL7f2Bx4
-https://github.com/lmorchard/django-allauth/archive/oauth2-get-access-token-scope-fix.zip#egg=django-allauth
+# sha256: IppqWmP_VfnrRtTa44Y7p3VzW_YL_Ba_TiBC8hTxjh0
+django-allauth==0.24.1
 
 # sha256: 70v-RmPKO5eplYYMAXO5Z-vZgDPQLzjJ4bLLtsGR2a0
 oauthlib==1.0.3
