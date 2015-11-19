@@ -1,13 +1,17 @@
 #!/bin/bash
 
-SERVER_NAME=${1:-docker.io/lmorchard/idea-town:latest}
+TAG=${1:-latest}
+SERVER_NAME=${2:-docker.io/lmorchard/idea-town}:$TAG
 FRONTEND_BUILD_NAME=idea-town-frontend-build
+COMMIT=$(git rev-parse HEAD)
 
 # Build a container to run the frontend build tools
 docker build -f Dockerfile-frontend-build -t $FRONTEND_BUILD_NAME .
 
 # Run the frontend build tools
 docker run -v $(pwd):/app $FRONTEND_BUILD_NAME
+
+echo $COMMIT > static/revision.txt
 
 # Build the server image including the built frontend
 docker build -t $SERVER_NAME .
@@ -33,4 +37,4 @@ EOF
 
 # Prepare an app bundle for Elastic Beanstalk
 mkdir -p build
-zip -r build/eb-app-latest.zip Dockerrun.aws.json .ebextensions/*.config
+zip -r build/eb-app-$TAG.zip Dockerrun.aws.json .ebextensions/*.config
