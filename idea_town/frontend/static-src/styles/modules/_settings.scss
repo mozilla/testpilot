@@ -1,62 +1,91 @@
-.arrow-up {
-    width: 22px;
-    height: 12px;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #FFF;
-    position: absolute;
-    top: -13px;
-    left: 126px;
-}
 
 .settings-button {
-    width: 45px;
-    border-radius: 7px;
-    background: #82cbeb;
-    height: 30px;
-    text-align: center;
-    line-height: 150%;
-    cursor: pointer;
+  @include flex-container(row, space-between, center);
+  background: rgba($white,.2);
+  border-radius: 7px;
+  border: 1px solid rgba($white, .3);
+  cursor: pointer;
+  height: 30px;
+  line-height: 150%;
+  padding: 0 6px;
+  transition: background 100ms;
+  text-align: center;
+  width: 46px;
 
-    span {
-        background: white;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        display: inline-block;
+  &.active,
+  &:hover {
+    background: rgba($white,.4);
+  }
+
+  span {
+    background: $white;
+    border-radius: 50%;
+    display: inline-block;
+    flex: 0 0 8px;
+    height: 8px;
+  }
+
+  &:hover:not(.active) {
+    
+    :nth-child(1) {
+      animation: pop 200ms;
     }
 
+    :nth-child(2) {
+      animation: pop 200ms;
+      animation-delay: 50ms;
+    }
+    
+    :nth-child(3) {
+      animation: pop 200ms;
+      animation-delay: 100ms;
+    }
+  }
 }
 
 .settings-contain {
-    position: relative;
-    margin-top: 20px;
+  margin-top: 20px;
+  position: relative;
 }
 
 .settings-menu {
+  background: $white;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px 1px rgba($black, .2);
+  left: -114px;
+  position: absolute;
+  top: 45px;
+  width: 160px;
+  z-index: 999;
+
+  &:after {
+    content: '';
+    border-bottom: 10px solid $white;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    left: 126px;
     position: absolute;
-    top: 45px;
-    left: -114px;
-    background: white;
-    width: 160px;
-    border-top: 1px solid white;
+    top: -10px;
+  }
 
-    box-shadow: 1px 1px 3px 1px #878787;
+  a {
+    text-decoration: none;
+    cursor: pointer;
 
-    a {
-        text-decoration: none;
-        cursor: pointer;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
     }
 
-    ul {
-        padding-left: 10px;
-    }
 
-    li {
-        list-style: none;
-    }
-}
+  ul {
+    margin: 0;
+    padding: 15px;
+  }
 
-.hidden {
-    display: none;
+  li {
+    line-height: 2.6rem;
+    list-style: none;
+  }
 }
