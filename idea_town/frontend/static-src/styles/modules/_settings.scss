@@ -69,6 +69,8 @@
   a {
     cursor: pointer;
     text-decoration: none;
+    display: block;
+    line-height: 2.6rem;
 
     &:hover,
     &:focus {
@@ -82,7 +84,6 @@
   }
 
   li {
-    line-height: 2.6rem;
     list-style: none;
   }
 }
