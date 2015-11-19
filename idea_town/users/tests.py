@@ -84,7 +84,8 @@ class MeViewSetTests(TestCase):
             Experiment.objects.get_or_create(
                 slug="test-%s" % idx, defaults=dict(
                     title="Test %s" % idx,
-                    description="This is a test"
+                    description="This is a test",
+                    addon_id="addon-%s@example.com" % idx
                 )) for idx in range(1, 4)))
 
         cls.addonData = {
@@ -126,11 +127,10 @@ class MeViewSetTests(TestCase):
         )
 
         experiment = self.experiments['test-1']
+        client_id = '8675309'
 
-        UserInstallation.objects.create(
-            experiment=experiment,
-            user=self.user
-        )
+        installation = UserInstallation.objects.create(
+            experiment=experiment, user=self.user, client_id=client_id)
 
         # HACK: Use a rest framework field to format dates as expected
         date_field = fields.DateTimeField()
@@ -142,22 +142,14 @@ class MeViewSetTests(TestCase):
         self.assertDictEqual(
             result_data['installed'][0],
             {
-                'id': experiment.pk,
-                'url': 'http://testserver/api/experiments/%s' % experiment.pk,
-                'slug': experiment.slug,
-                'title': experiment.title,
-                'description': experiment.description,
-                'measurements': experiment.measurements.rendered,
-                'version': experiment.version,
-                'changelog_url': experiment.changelog_url,
-                'contribute_url': experiment.contribute_url,
-                'thumbnail': None,
-                'xpi_url': experiment.xpi_url,
-                'addon_id': experiment.addon_id,
-                'details': [],
-                'contributors': [],
-                'created': date_field.to_representation(experiment.created),
-                'modified': date_field.to_representation(experiment.modified),
+                'experiment': 'http://testserver/api/experiments/%s' % experiment.pk,
+                'addon_id': 'addon-1@example.com',
+                'client_id': client_id,
+                'url':
+                    'http://testserver/api/experiments/%s/installations/%s' %
+                    (experiment.pk, client_id),
+                'created': date_field.to_representation(installation.created),
+                'modified': date_field.to_representation(installation.modified),
             }
         )
 
