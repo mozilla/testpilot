@@ -42,13 +42,32 @@ export default PageView.extend({
       hook: 'feedback'
     }],
 
-    'model.modified_date': {
-      type: (el, value) => new Date(value),
+    'model.modified': {
+      type: (el, value) => {
+        const d = new Date(value);
+
+        // check for invalid date
+        if (isNaN(d)) {
+          el.style.display = 'none';
+          return;
+        }
+
+        let formatted = '';
+
+        // safari is the new IE :(
+        try {
+          formatted = d.toLocaleDateString();
+        } catch (e) {
+          formatted = `${d.getMonth() + 1} / ${d.getDate()} / ${d.getFullYear()}`;
+        }
+
+        el.innerHTML = formatted;
+      },
       hook: 'modified-date'
     },
 
-    'model.description': {
-      hook: 'modified-date'
+    'model.version': {
+      hook: 'version'
     },
 
     'model.contribute_url': [{
@@ -69,11 +88,16 @@ export default PageView.extend({
       hook: 'measurements-container'
     }],
 
-    'model.changelog_url': {
+    'model.changelog_url': [{
+      type: 'toggle',
+      hook: 'changelog-url',
+      mode: 'visibility'
+    },
+    {
       type: 'attribute',
       name: 'href',
       hook: 'changelog-url'
-    },
+    }],
 
     'model.thumbnail': {
       type: 'attribute',
