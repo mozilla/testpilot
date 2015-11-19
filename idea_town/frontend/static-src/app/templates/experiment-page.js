@@ -19,7 +19,7 @@ export default `
         <div data-hook="details">
           <div class="details-content">
             <div class="details-overview">
-              <img data-hook="thumbnail" src="" width="260">
+              <img data-hook="thumbnail" src="" width="260" height="260">
               <section data-hook="measurements-container" class="measurement">
                 <h3>Measurements</h3>
                 <p class="disclaimer">All data is collected anonymously and used only to help us improve this test.</p>
@@ -45,7 +45,7 @@ export default `
                   </tr>
                   <tr>
                     <td>Contribute</td>
-                    <td><a data-hook="contribute-url"><a></td>
+                    <td><a data-hook="contribute-url"></a></td>
                   </tr>
                 </table>
               </section>
@@ -58,6 +58,6 @@ export default `
       </div>
     </section>
     <div data-hook="main-footer"></div>
-  <div>
+  </div>
 `;
 
