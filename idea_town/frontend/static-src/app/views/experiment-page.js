@@ -7,6 +7,7 @@ import DetailView from './detail-view';
 import ContributorView from './contributor-view';
 import template from '../templates/experiment-page';
 import FeedbackView from './feedback-view';
+import SettingsMenuView from './settings-menu-view';
 
 const CollectionExtended = Collection.extend({
   model: Model.extend({
@@ -17,7 +18,12 @@ const CollectionExtended = Collection.extend({
 export default PageView.extend({
   template: template,
 
-  headerScroll: true,
+  subviews: {
+    'settings-menu': {
+      hook: 'settings',
+      constructor: SettingsMenuView
+    }
+  },
 
   events: {
     'click [data-hook=install]': 'install',

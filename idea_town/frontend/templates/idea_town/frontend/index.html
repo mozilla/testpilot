@@ -10,5 +10,27 @@
 
   <script src="{{ static('app/app.js') }}"></script>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      setTimeout(function() {
+        const detailsWrapper = $('.details-header-wrapper');
+        const detailsHeaderOffset = detailsWrapper.offset().top;
+        checkScroll();
+        $(window).scroll(function(){
+          checkScroll();
+        });
+
+        function checkScroll() {
+          if ($(window).scrollTop() > detailsHeaderOffset && !detailsWrapper.hasClass('stick')) {
+            detailsWrapper.addClass('stick');
+          } else if ($(window).scrollTop() < detailsHeaderOffset && detailsWrapper.hasClass('stick')) {
+            detailsWrapper.removeClass('stick');
+          }
+        }
+      }, 150)
+    });
+  </script>
+
 </body>
 </html>
