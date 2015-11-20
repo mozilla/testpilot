@@ -115,7 +115,7 @@ gulp.task('scripts', ['lint'], function scriptsTask() {
   return bundledStream;
 });
 
-gulp.task('styles', ['sass-lint'], function stylesTask() {
+gulp.task('styles', function stylesTask() {
   return gulp.src(SRC_PATH + 'styles/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({

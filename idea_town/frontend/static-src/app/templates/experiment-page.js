@@ -1,7 +1,12 @@
 export default `
   <div class="page">
-    <section id="details" data-hook="experiment-page">
-      <header data-hook="main-header"></header>
+    <section data-hook="experiment-page">
+      <div id="condensed-branding">
+      <div class="row">
+        <header><h2>Idea Town</h2></header>
+        <div data-hook="settings"></div>
+      </div>
+    </div>
       <div id="details">
         <div class="details-sticker"></div>
 
