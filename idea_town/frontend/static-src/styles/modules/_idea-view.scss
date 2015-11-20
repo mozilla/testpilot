@@ -36,6 +36,15 @@
 
 .details-header-wrapper {
 
+
+  h1 {
+    transition: font-size 200ms;
+  }
+
+  &:not(.stick) {
+    height: 89px;
+  }
+
   &.stick {
     background: $transparent-stick;
     box-shadow: 0 0 5px $transparent-black;
@@ -43,9 +52,12 @@
     top: 0;
     width: 100%;
 
+    + div {
+      margin-top: 120px;
+    }
+
     h1 {
       font-size: 40px;
-      transition: font-size 200ms;
     }
 
     .details-content {
