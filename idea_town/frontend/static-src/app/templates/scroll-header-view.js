@@ -1,10 +1,10 @@
 export default `
   <section class="navbar">
     <div id="condensed-branding">
-      <div class="wrapper">
+      <div class="row">
         <header>
           <div class="firefox-logo"></div>
-          <h1>Idea Town</h1>
+          <h2>Idea Town</h2>
         </header>
         <div data-hook="settings"></div>
       </div>

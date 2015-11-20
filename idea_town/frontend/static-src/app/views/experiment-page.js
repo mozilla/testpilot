@@ -7,7 +7,7 @@ import DetailView from './detail-view';
 import ContributorView from './contributor-view';
 import template from '../templates/experiment-page';
 import FeedbackView from './feedback-view';
-const changeHeaderOn = 74;
+const changeHeaderOn = 120;
 
 const CollectionExtended = Collection.extend({
   model: Model.extend({
@@ -91,7 +91,7 @@ export default PageView.extend({
     window.addEventListener('scroll', function scrollListener() {
       if (!this.didScroll) {
         this.didScroll = true;
-        setTimeout(this.onScroll.bind(this), 200);
+        setTimeout(this.onScroll.bind(this), 50);
       }
     }.bind(this));
   },
@@ -169,9 +169,7 @@ export default PageView.extend({
 
     if (sy > changeHeaderOn) {
       this.query('.details-header-wrapper').classList.add('stick');
-      this.query('#details').style.marginTop = '74px';
     } else {
-      this.query('#details').style.marginTop = '0';
       this.query('.details-header-wrapper').classList.remove('stick');
     }
 
