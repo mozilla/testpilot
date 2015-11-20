@@ -21,6 +21,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const through = require('through2');
 const tabzilla = require('mozilla-tabzilla');
 const uglify = require('gulp-uglify');
+const tryRequire = require('try-require');
 
 const IS_DEBUG = (process.env.NODE_ENV === 'development');
 
@@ -32,6 +33,15 @@ const DEST_PATH = './idea_town/frontend/static/';
 const NODE_MODULES_PATH = ('NODE_PATH' in process.env) ?
     process.env.NODE_PATH.split(':')[0] :
     './node_modules/';
+
+const config = tryRequire('./debug-config.json') || {
+  'sass-lint': true,
+  'js-lint': true
+};
+
+function shouldLint(opt, task) {
+  return config[opt] ? [task] : [];
+}
 
 function lintTask() {
   return gulp.src(['*.js', SRC_PATH + 'app/**/*.js'])
@@ -67,8 +77,8 @@ gulp.task('vendor', function vendorTask(done) {
 });
 
 // based on https://github.com/gulpjs/gulp/blob/master/docs/recipes/browserify-with-globs.md,
-// except we use the Promise returned by globby, instead of passing it a callback
-gulp.task('scripts', ['lint'], function scriptsTask() {
+// except we use the Promise returned by globby, instead of passing it a callback.
+gulp.task('scripts', shouldLint('js-lint', 'lint'), function scriptsTask() {
   const bundledStream = through();
 
   // this part runs second
@@ -99,8 +109,8 @@ gulp.task('scripts', ['lint'], function scriptsTask() {
   return bundledStream;
 });
 
-gulp.task('styles', ['sass-lint'], function stylesTask() {
-  return gulp.src(SRC_PATH + 'styles/main.scss')
+gulp.task('styles', shouldLint('sass-lint', 'sass-lint'), function stylesTask() {
+  return gulp.src(SRC_PATH + 'styles/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: [
