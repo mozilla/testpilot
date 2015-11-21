@@ -20,6 +20,7 @@ const sassLint = require('gulp-sass-lint');
 const source = require('vinyl-source-stream');
 const sourcemaps = require('gulp-sourcemaps');
 const through = require('through2');
+const tabzilla = require('mozilla-tabzilla');
 const uglify = require('gulp-uglify');
 
 // TODO: ENV VAR to check prod/dev?
@@ -61,25 +62,9 @@ gulp.task('npm:tabzilla:img', function npmTabzillaImgTask() {
     .pipe(gulp.dest(DEST_PATH + 'media/'));
 });
 
-// Copy the tabzilla assets into the src dir for inclusion in minimization
-gulp.task('npm:tabzilla:css', function npmTabzillaCssTask() {
-  return gulp.src(NODE_MODULES_PATH + 'mozilla-tabzilla/css/tabzilla.css')
-    .pipe(rename('mozilla-tabzilla/css/tabzilla.scss'))
-    .pipe(gulp.dest(SRC_PATH + 'vendor/'));
-});
-
-// Copy the normalize assets into the src dir for inclusion in minimization
-gulp.task('npm:normalize', function npmNormalizeTask() {
-  return gulp.src(NODE_MODULES_PATH + 'normalize.css/normalize.css')
-    .pipe(rename('normalize.css/normalize.scss'))
-    .pipe(gulp.dest(SRC_PATH + 'vendor/'));
-});
-
 gulp.task('vendor', function vendorTask(done) {
   return runSequence([
-    'npm:tabzilla:img',
-    'npm:tabzilla:css',
-    'npm:normalize'
+    'npm:tabzilla:img'
   ], done);
 });
 
@@ -119,7 +104,10 @@ gulp.task('styles', ['sass-lint'], function stylesTask() {
   return gulp.src(SRC_PATH + 'styles/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
-      includePaths: normalize.includePaths
+      includePaths: [
+        normalize.includePaths,
+        tabzilla.includePaths
+      ]
     }).on('error', sass.logError))
     .pipe(autoprefixer('last 2 versions'))
     .pipe(sourcemaps.write({sourceRoot: SRC_PATH + 'styles'}))
