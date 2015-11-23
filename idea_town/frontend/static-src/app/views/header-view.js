@@ -4,7 +4,6 @@ import SettingsMenuView from './settings-menu-view';
 
 import template from '../templates/header-view';
 import scrollTemplate from '../templates/scroll-header-view';
-const changeHeaderOn = 100;
 
 export default BaseView.extend({
   template: template,
@@ -17,7 +16,6 @@ export default BaseView.extend({
   },
 
   props: {
-    scrolled: {type: 'boolean', default: false},
     title: {type: 'string', default: 'Idea Town'},
     isInstalled: {type: 'boolean', default: false},
     activeUser: {type: 'boolean', required: true, default: false}
@@ -34,16 +32,7 @@ export default BaseView.extend({
       type: 'toggle',
       yes: '[data-hook=uninstall]',
       no: '[data-hook=install]'
-    },
-    'scrolled': [{
-      type: 'toggle',
-      yes: '[data-hook=scroll]',
-      no: '[data-hook=no-scroll]'
-    }, {
-      type: 'booleanClass',
-      hook: 'scroll-wrap',
-      name: 'detail-header'
-    }]
+    }
   },
 
   events: {
@@ -59,14 +48,6 @@ export default BaseView.extend({
       }
       this.template = scrollTemplate;
       this.experiment = app.experiments.get(chunkedUrl[2], 'slug').toJSON();
-      this.didScroll = false;
-
-      window.addEventListener('scroll', function scrollListener() {
-        if (!this.didScroll) {
-          this.didScroll = true;
-          setTimeout(this.onScroll.bind(this), 200);
-        }
-      }.bind(this));
     }
 
     // addon changes may be broadcast by the idea-town addon outside the
@@ -86,16 +67,6 @@ export default BaseView.extend({
       this.title = this.experiment.title;
       this.isInstalled = !!this.experiment.isInstalled;
     }
-  },
-
-  onScroll() {
-    const sy = window.pageYOffset || document.documentElement.scrollTop;
-    if (sy >= changeHeaderOn) {
-      this.scrolled = true;
-    } else {
-      this.scrolled = false;
-    }
-    this.didScroll = false;
   },
 
   // TODO: actually manage state without refreshing the page. for now, just refresh

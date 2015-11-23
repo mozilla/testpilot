@@ -5,6 +5,7 @@
 
 #condensed-branding {
   @include color-scheme-special(false);
+  margin-bottom: 40px;
 
   &.detail-header {
     @include color-scheme-special-inverse(false);
@@ -13,6 +14,10 @@
   .row {
     @include flex-container(default, space-between, center, nowrap, true);
     height: 80px;
+  }
+
+  .settings-contain {
+    margin: 0;
   }
 
   h2 {
@@ -27,10 +32,18 @@
 
 #details {
   flex: 1;
-  margin: 60px 0;
 }
 
 .details-header-wrapper {
+
+
+  h1 {
+    transition: font-size 200ms;
+  }
+
+  &:not(.stick) {
+    height: 89px;
+  }
 
   &.stick {
     background: $transparent-stick;
@@ -39,12 +52,15 @@
     top: 0;
     width: 100%;
 
-    h1 {
-      font-size: 40px;
-      transition: font-size 200ms;
+    + div {
+      margin-top: 120px;
     }
 
-    + .details-content {
+    h1 {
+      font-size: 40px;
+    }
+
+    .details-content {
       margin-top: 66px;
     }
 

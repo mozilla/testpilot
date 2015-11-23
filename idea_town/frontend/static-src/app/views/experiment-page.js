@@ -7,6 +7,7 @@ import DetailView from './detail-view';
 import ContributorView from './contributor-view';
 import template from '../templates/experiment-page';
 import FeedbackView from './feedback-view';
+const changeHeaderOn = 120;
 
 const CollectionExtended = Collection.extend({
   model: Model.extend({
@@ -108,6 +109,15 @@ export default PageView.extend({
 
   initialize(opts) {
     this.model = app.experiments.get(opts.slug, 'slug');
+
+    this.didScroll = false;
+
+    window.addEventListener('scroll', function scrollListener() {
+      if (!this.didScroll) {
+        this.didScroll = true;
+        setTimeout(this.onScroll.bind(this), 50);
+      }
+    }.bind(this));
   },
 
   render() {
@@ -176,6 +186,18 @@ export default PageView.extend({
         { value: 'other', title: 'Something else.' }
       ]
     }), 'body');
+  },
+
+  onScroll() {
+    const sy = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (sy > changeHeaderOn) {
+      this.query('.details-header-wrapper').classList.add('stick');
+    } else {
+      this.query('.details-header-wrapper').classList.remove('stick');
+    }
+
+    this.didScroll = false;
   },
 
   feedback(evt) {
