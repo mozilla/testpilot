@@ -4,7 +4,7 @@ export default `
       <div class="row">
         <header>
           <div class="firefox-logo"></div>
-          <h2>Idea Town</h2>
+          <a href="/home"><h2>Idea Town</h2></a>
         </header>
         <div data-hook="settings"></div>
       </div>
