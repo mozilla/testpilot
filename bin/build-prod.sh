@@ -27,6 +27,7 @@ cat > Dockerrun.aws.json << EOF
     "Name": "$SERVER_NAME",
     "Update": "true"
   },
+  "Logging": "/var/log/django",
   "Ports": [
     {
       "ContainerPort": "8000"
