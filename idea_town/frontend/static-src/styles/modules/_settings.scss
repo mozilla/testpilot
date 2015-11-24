@@ -1,7 +1,7 @@
 .settings-button {
   @include flex-container(row, space-between, center);
-  background: rgba($white, .2);
-  border: 1px solid rgba($white, .3);
+  background: transparency($white, .2);
+  border: 1px solid transparency($white, .3);
   border-radius: 7px;
   cursor: pointer;
   height: 30px;
@@ -13,7 +13,7 @@
 
   &.active,
   &:hover {
-    background: rgba($white, .4);
+    background: transparency($white, .4);
   }
 
   span {
@@ -49,7 +49,7 @@
 .settings-menu {
   background: $white;
   border-radius: 3px;
-  box-shadow: 1px 1px 3px 1px rgba($black, .2);
+  box-shadow: 1px 1px 3px 1px transparency($black, .2);
   left: -114px;
   position: absolute;
   top: 45px;
@@ -68,9 +68,9 @@
 
   a {
     cursor: pointer;
-    text-decoration: none;
     display: block;
     line-height: 2.6rem;
+    text-decoration: none;
 
     &:hover,
     &:focus {

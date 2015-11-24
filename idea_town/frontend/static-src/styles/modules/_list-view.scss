@@ -51,18 +51,6 @@
   }
 }
 
-@keyframes slide-over {
-  0% {
-    left: 40px;
-    opacity: 0;
-  }
-
-  100% { 
-    left: 0;
-    opacity: 1;
-  }
-}
-
 #idea-card-list {
   @include wrapper;
 
@@ -99,7 +87,7 @@
   &:hover,
   &:focus {
     //border: 3px solid $light;
-    background: $light;
+    background: transparency($black, .05);
   }
 }
 
@@ -109,7 +97,6 @@
   flex: 0 0 172px;
   height: 172px;
   position: relative;
-  transition: all 200ms;
   width: 172px;
   z-index: 0;
 
@@ -121,7 +108,7 @@
 
   &:before {
     @include outline-text;
-    background: $transparent-white;
+    background: transparency($white, .6);
     border-radius: 50%;
     content: 'Get Started';
     font-size: 24px;
@@ -134,7 +121,7 @@
     position: absolute;
     text-align: center;
     top: 11px;
-    transition: opacity 100ms;
+    transition: opacity 500ms;
     width: 150px;
     z-index: 1;
   }

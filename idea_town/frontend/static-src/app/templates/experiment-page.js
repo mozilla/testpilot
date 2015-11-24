@@ -2,13 +2,12 @@ export default `
   <div class="page">
     <section id="details" data-hook="experiment-page">
       <header data-hook="main-header"></header>
-
       <div class="details-header-wrapper">
         <div class="details-header">
           <h1 data-hook="title"></h1>
           <div class="idea-controls">
             <button data-hook="feedback" class="button primary">Give Feedback</button>
-            <button data-hook="uninstall" class="button">Disable <span data-hook="title"></span></button>
+            <button data-hook="uninstall" class="button neutral">Disable <span data-hook="title"></span></button>
             <button data-hook="install" class="button primary">Enable <span data-hook="title"></span></button>
           </div>
         </div>
