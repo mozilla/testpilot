@@ -45,8 +45,8 @@
   }
 
   &.stick {
-    background: $transparent-stick;
-    box-shadow: 0 0 5px $transparent-black;
+    background: transparency($white, .96);
+    box-shadow: 0 0 5px transparency($black, .3);
     position: fixed;
     top: 0;
     width: 100%;
@@ -102,8 +102,7 @@
   flex: 0 0 260px;
 
   > img:first-child {
-    background: $black;
-    border: 2px solid $black;
+    border: 1px solid transparency($black, 1);
     border-radius: 50%;
   }
 }

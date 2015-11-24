@@ -1,22 +1,10 @@
 #main-footer {
   @include color-scheme($dark, $wash);
-  @include flex-container(column, flex-end,  flex-start);
+  @include flex-container(column, flex-end, flex-start);
   border-top: 1px solid $default-dark;
   flex: 1 1;
   height: 100%;
   padding: 4rem 0 2rem;
-
-  &.light {
-    @include color-scheme($black, $light);
-  }
-
-  &.fixed {
-    background: linear-gradient(to bottom, $transparent-white 0%, $wash 100%);
-    bottom: 0;
-    padding-top: 20px;
-    position: fixed;
-    width: 100%;
-  }
 
   .wrapper {
     @include flex-container(default, flex-start, flex-end, nowrap, false);

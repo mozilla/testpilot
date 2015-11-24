@@ -18,7 +18,7 @@ export default `
             <div id="beta-notice-modal" class="hidden">
               We're still building Idea Town! Sign up now and we'll let you know when it's ready to go!
               <div class="modal-controls">
-                <a href="/accounts/login/?next=/home"><button class="button primary">Sign me up!</button></a>
+                <a href="/accounts/login/?next=/home" class="button primary">Sign me up!</a>
               </div>
             </div>
             <div id="copter" class="copter hover"></div>
@@ -30,7 +30,7 @@ export default `
         <h2>Install the Idea Town Add-on <br> and you're good to go!</h2>
         <div id="cta-layout-wrapper">
           <div class="cta-layout">
-            <a href="{{ downloadUrl }}"><button class="button large primary">Install the Add-on</button></a>
+            <a href="{{ downloadUrl }}" class="button link large primary"><span>Install the Add-on</span></a>
           </div>
           <div class="town">
             <div class="copter"></div>

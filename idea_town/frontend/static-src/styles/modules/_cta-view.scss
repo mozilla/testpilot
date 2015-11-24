@@ -23,7 +23,7 @@
     @include color-scheme-special-inverse;
 
     h1 {
-      color: rgba($dark, .8);
+      color: transparency($dark, .8);
     }
 
     h2 {

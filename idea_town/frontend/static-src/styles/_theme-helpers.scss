@@ -7,10 +7,7 @@ $wash: #e2eaed;
 $baby-blue: #bee1f5;
 $dark: #2c2c2c;
 $light: #f2f2f2;
-$transparent-white: rgba($white, .6);
-$transparent-black: rgba($black, .3);
-$trasparent-wash: rgba($wash, .96);
-$transparent-stick: rgba($white, .96);
+$feedback-modal-grey: #bbb;
 
 $feedback-modal-width: 300px;
 $feedback-modal-border-radius: 5px;
@@ -43,16 +40,18 @@ $feedback-modal-border-radius: 5px;
   color: $color;
 }
 
+@function transparency($color, $alpha) {
+  @return rgba($color, $alpha);
+}
+
 // Font Management
 @mixin outline-text($outline: $white) {
-  text-shadow: -1px -1px 0 $outline,
-               1px -1px 0 $outline,
-               -1px 1px 0 $outline,
-               1px 1px 0 $outline;
+  text-shadow: -1px -1px 0 $outline, 1px -1px 0 $outline, -1px 1px 0 $outline, 1px 1px 0 $outline;
 }
 
 
-//Image Manangement
+// Image Manangement
+
 @mixin hidpi-background-image($filename, $background-size: 'mixed', $extension: png) {
   background-image: url('../images/#{$filename}.#{$extension}');
   @if ($background-size != 'mixed') {

@@ -1,5 +1,5 @@
 #beta-notice-modal {
-  @include color-scheme($default, rgba($white, 1));
+  @include color-scheme($default, transparency($white, 1));
   border-radius: 10px;
   font-weight: 400;
   padding: 24px;
@@ -31,7 +31,7 @@
   &:after {
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-top: 15px solid rgba($white, 1);
+    border-top: 15px solid $white;
     bottom: -15px;
     content: '';
     height: 0;
@@ -68,7 +68,7 @@
 }
 
 #modal-screen {
-  background: rgba($white, .6);
+  background: transparency($white, .6);
   bottom: 0;
   left: 0;
   position: fixed;
@@ -78,7 +78,7 @@
 }
 
 #modal-screen.dark {
-  background: rgba($black, .6);
+  background: transparency($black, .6);
 }
 
 .feedback-modal {
@@ -131,18 +131,19 @@
       text-align: center;
 
       p {
-        color: #bbb;
-        font-size: 1rem;
+        color: $feedback-modal-grey;
+        font-size: 1.2rem;
         margin: 10px 0 4px;
         padding: 0;
       }
 
       textarea {
-        border: 1px solid #bbb;
+        border: 1px solid $feedback-modal-grey;
         display: block;
-        font-size: 1.1rem;
+        font-size: 1.4rem;
         height: 8em;
         padding: 5px;
+        resize: none;
         width: 100%;
       }
     }
@@ -160,7 +161,7 @@
 
       a.cancel {
         display: block;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         margin: 10px 0;
         text-decoration: none;
       }
