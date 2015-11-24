@@ -1,6 +1,7 @@
 .git/*
 tmp/*
 .env/*
+*.log
 *.sw?
 *.pyc
 .DS_Store

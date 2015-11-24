@@ -12,7 +12,6 @@ import os
 
 import dj_database_url
 from decouple import Csv, config
-import logging
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -278,30 +277,72 @@ CSP_STYLE_SRC = (
     'https://*.mozilla.net',
 )
 
-if DEBUG:
-
-    LOG_LEVEL = logging.DEBUG
-
-    LOGGING = {
-        'version': 1,
-        'disable_existing_loggers': False,
-        'handlers': {
-            'console': {
-                'level': 'DEBUG',
-                'class': 'logging.StreamHandler',
-                'formatter': 'verbose'
-            },
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
         },
-        'formatters': {
-            'verbose': {
-                'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
-            },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
         },
-        'loggers': {
-            'idea_town': {
-                'handlers': ['console'],
-                'propagate': True,
-                'level': logging.DEBUG,
-            },
+    },
+    'formatters': {
+        'simple': {
+            'format': '[%(asctime)s] %(levelname)s %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S'
+        },
+        'verbose': {
+            'format': '[%(asctime)s] %(levelname)s [%(name)s.%(funcName)s:%(lineno)d] %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S'
+        },
+    },
+    'handlers': {
+        'null': {
+            'class': 'logging.NullHandler',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'logfile': {
+            'class': 'logging.handlers.RotatingFileHandler',
+            'level': 'DEBUG',
+            'maxBytes': config('DJANGO_LOG_MAXBYTES', default=16 * 1024 * 1024, cast=int),
+            'backupCount': config('DJANGO_LOG_BACKUP_COUNT', default=2, cast=int),
+            'filename': config('DJANGO_LOG_FILENAME', default='./django.log'),
+            'formatter': config('DJANGO_LOG_FORMATTER', default='verbose')
+        },
+    },
+    'loggers': {
+        'idea_town': {
+            'handlers': ['console', 'logfile'],
+            'level': config('DJANGO_LOG_LEVEL', default='INFO'),
+            'propagate': True,
+        },
+        'django': {
+            'handlers': ['console', 'logfile'],
+        },
+        'django.request': {
+            'handlers': ['mail_admins', 'console', 'logfile'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.security': {
+            'handlers': ['mail_admins', 'console', 'logfile'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'py.warnings': {
+            'handlers': ['console', 'logfile'],
         },
     }
+}
