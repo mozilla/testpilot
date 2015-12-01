@@ -21,9 +21,9 @@ export default PageView.extend({
   headerScroll: true,
 
   events: {
-    'click [data-hook=install]': 'install',
-    'click [data-hook=uninstall]': 'uninstall',
-    'click [data-hook=feedback]': 'feedback'
+    'click #install-button': 'install',
+    'click #uninstall-button': 'renderUninstallSurvey',
+    'click #feedback-button': 'feedback'
   },
 
   bindings: {
@@ -148,7 +148,7 @@ export default PageView.extend({
   },
 
   // isInstall is a boolean: true if we are installing, false if uninstalling
-  _updateAddon(isInstall) {
+  updateAddon(isInstall, model) {
     let eventType = 'install-experiment';
 
     if (!isInstall) {
@@ -156,24 +156,43 @@ export default PageView.extend({
     }
 
     app.webChannel.sendMessage(eventType, {
-      addon_id: this.model.addon_id,
-      xpi_url: this.model.xpi_url
+      addon_id: model.addon_id,
+      xpi_url: model.xpi_url
     });
-
-    // TODO:(DJ) need to setup some databinding and progress ui Since
-    // the addon can fail on install.
-    // https://github.com/mozilla/idea-town/issues/199
-    this.model.enabled = !this.model.enabled;
   },
 
   install(evt) {
     evt.preventDefault();
-    this._updateAddon(true);
+    const width = evt.target.offsetWidth;
+    evt.target.style.width = width + 'px';
+    evt.target.classList.add('state-change');
+
+    this.updateAddon(true, this.model);
+    app.on('webChannel:addon-install:install-ended', () => {
+      this.model.enabled = !this.model.enabled;
+      evt.target.classList.remove('state-change');
+    });
   },
 
-  uninstall(evt) {
+  uninstall(cb, model) {
+    const uninstallButton = document.getElementById('uninstall-button');
+    const feedbackButton = document.getElementById('feedback-button');
+    const width = uninstallButton.offsetWidth;
+    uninstallButton.style.width = width + 'px';
+    uninstallButton.classList.add('state-change');
+    feedbackButton.style.display = 'none';
+
+    cb(false, model);
+
+    app.on('webChannel:addon-uninstall:uninstall-ended', () => {
+      model.enabled = !model.enabled;
+      uninstallButton.classList.remove('state-change');
+      feedbackButton.style.display = 'initial';
+    });
+  },
+
+  renderUninstallSurvey(evt) {
     evt.preventDefault();
-    this._updateAddon(false);
     // TODO: Hardcoded survey, for now. Populate via API later?
     this.renderSubview(new FeedbackView({
       id: 'disabled-feedback',
@@ -184,7 +203,10 @@ export default PageView.extend({
         { value: 'dislike', title: 'I don\'t like this feature.' },
         { value: 'notuseful', title: 'This isn\'t useful for me.' },
         { value: 'other', title: 'Something else.' }
-      ]
+      ],
+      cb: () => {
+        this.uninstall(this.updateAddon, this.model);
+      }
     }), 'body');
   },
 

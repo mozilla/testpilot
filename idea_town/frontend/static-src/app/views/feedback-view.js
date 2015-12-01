@@ -33,6 +33,10 @@ export default BaseView.extend({
     </div>
   `,
 
+  initialize(opts) {
+    this.parentCb = opts.cb;
+  },
+
   props: {
     'id': 'string',
     'title': 'string',
@@ -56,9 +60,9 @@ export default BaseView.extend({
     // Hide the feedback form right away & let the submission happen in the
     // background - user probably doesn't care about progress or confirmation
     this.animateRemove();
+    this.parentCb();
     e.preventDefault();
     e.stopPropagation();
-
     const checked = this.el.querySelector('input:checked');
     const value = checked ? checked.getAttribute('value') : '';
     const extra = this.el.querySelector('section.extra textarea').value;

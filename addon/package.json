@@ -1,7 +1,7 @@
 {
   "title": "Idea Town Addon",
   "name": "idea-town-addon",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "private": true,
   "description": "The addon where ideas come to idea",
   "repository": "mozilla/idea-town-addon",
@@ -18,7 +18,8 @@
   },
   "license": "MPL-2.0",
   "dependencies": {
-    "idea-town": "^0.3.0"
+    "idea-town": "^0.3.0",
+    "xtend": "^4.0.1"
   },
   "devDependencies": {
     "babel-eslint": "^4.1.0",
@@ -48,6 +49,13 @@
       "description": "Allowed origins for addon",
       "type": "string",
       "value": "https://ideatown.firefox.com/*"
+    },
+    {
+      "name": "HOSTNAME",
+      "title": "Idea town Hostname",
+      "description": "hostname",
+      "type": "string",
+      "value": "ideatown.firefox.com"
     },
     {
       "name": "IDEATOWN_PREFIX",
