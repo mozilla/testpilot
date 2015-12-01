@@ -4,6 +4,18 @@ option_settings:
   - option_name: DEBUG
     value: True
 
+  # Logging setup
+  - option_name: DJANGO_LOG_LEVEL
+    value: ERROR
+  - option_name: DJANGO_LOG_MAXBYTES
+    value: 16777216
+  - option_name: DJANGO_LOG_BACKUP_COUNT
+    value: 3
+  - option_name: DJANGO_LOG_FILENAME
+    value: /var/log/django/app.log
+  - option_name: DJANGO_LOG_FORMATTER
+    value: verbose
+
   # Credentials used to create the initial superuser. Ignored if at least one
   # superuser is already available.
   - option_name: INITIAL_ADMIN_USERNAME
