@@ -7,6 +7,7 @@ const prefs = require('sdk/simple-prefs').prefs;
 const IdeaTown = require('idea-town');
 const ideaTown = new IdeaTown({
   'BASE_URL': prefs['BASE_URL'], // eslint-disable-line dot-notation
+  'HOSTNAME': prefs['HOSTNAME'], // eslint-disable-line dot-notation
   'IDEATOWN_PREFIX': prefs['IDEATOWN_PREFIX'] // eslint-disable-line dot-notation
 });
 

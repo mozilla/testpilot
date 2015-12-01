@@ -7,3 +7,4 @@
 !/package.json
 !/route.js
 !/node_modules/idea-town/**
+!/node_modules/xtend/**

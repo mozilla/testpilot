@@ -18,6 +18,10 @@ You may need to set both `xpinstall.signatures.required` and
 `xpinstall.whitelist.required` flags to false in `about:config`
 if the addon has not yet been signed.
 
+If you want to install the xpi locally for dev, you will need to
+set your preferences in `about:addons`. You'll want to use the preferences
+from [dev-prefs.json](./dev-prefs.json).
+
 ## packaging
 
 `npm run package`

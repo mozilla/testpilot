@@ -34,9 +34,7 @@ export default BaseView.extend({
   `,
 
   initialize(opts) {
-    this.parentUninstall = opts.uninstall;
-    this.parentUpdateAddon = opts.updateAddon;
-    this.parentModel = opts.model;
+    this.parentCb = opts.cb;
   },
 
   props: {
@@ -62,7 +60,7 @@ export default BaseView.extend({
     // Hide the feedback form right away & let the submission happen in the
     // background - user probably doesn't care about progress or confirmation
     this.animateRemove();
-    this.parentUninstall(this.parentUpdateAddon, this.parentModel);
+    this.parentCb();
     e.preventDefault();
     e.stopPropagation();
     const checked = this.el.querySelector('input:checked');

@@ -159,11 +159,6 @@ export default PageView.extend({
       addon_id: model.addon_id,
       xpi_url: model.xpi_url
     });
-
-    // TODO:(DJ) need to setup some databinding and progress ui Since
-    // the addon can fail on install.
-    // https://github.com/mozilla/idea-town/issues/199
-    model.enabled = !model.enabled;
   },
 
   install(evt) {
@@ -171,24 +166,29 @@ export default PageView.extend({
     const width = evt.target.offsetWidth;
     evt.target.style.width = width + 'px';
     evt.target.classList.add('state-change');
-    setTimeout(() => {
+
+    this.updateAddon(true, this.model);
+    app.on('webChannel:addon-install:install-ended', () => {
+      this.model.enabled = !this.model.enabled;
       evt.target.classList.remove('state-change');
-      this.updateAddon(true, this.model);
-    }, 2000);
+    });
   },
 
-  uninstall(callback, model) {
+  uninstall(cb, model) {
     const uninstallButton = document.getElementById('uninstall-button');
     const feedbackButton = document.getElementById('feedback-button');
     const width = uninstallButton.offsetWidth;
     uninstallButton.style.width = width + 'px';
     uninstallButton.classList.add('state-change');
     feedbackButton.style.display = 'none';
-    setTimeout(() => {
+
+    cb(false, model);
+
+    app.on('webChannel:addon-uninstall:uninstall-ended', () => {
+      model.enabled = !model.enabled;
       uninstallButton.classList.remove('state-change');
       feedbackButton.style.display = 'initial';
-      callback(false, model);
-    }, 2000);
+    });
   },
 
   renderUninstallSurvey(evt) {
@@ -204,9 +204,9 @@ export default PageView.extend({
         { value: 'notuseful', title: 'This isn\'t useful for me.' },
         { value: 'other', title: 'Something else.' }
       ],
-      uninstall: this.uninstall,
-      updateAddon: this.updateAddon,
-      model: this.model
+      cb: () => {
+        this.uninstall(this.updateAddon, this.model);
+      }
     }), 'body');
   },
 
