@@ -33,6 +33,10 @@ export default BaseView.extend({
     </div>
   `,
 
+  initialize(opts) {
+    this.parentOnSubmit = opts.onSubmit;
+  },
+
   props: {
     'id': 'string',
     'title': 'string',
@@ -56,6 +60,9 @@ export default BaseView.extend({
     // Hide the feedback form right away & let the submission happen in the
     // background - user probably doesn't care about progress or confirmation
     this.animateRemove();
+    if (this.parentOnSubmit) {
+      this.parentOnSubmit();
+    }
     e.preventDefault();
     e.stopPropagation();
 

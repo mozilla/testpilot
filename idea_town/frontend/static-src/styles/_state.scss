@@ -79,3 +79,12 @@
     transform: scale(1);
   }
 }
+
+@keyframes barberpole {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100px 50px;
+  }
+}

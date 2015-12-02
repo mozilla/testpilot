@@ -3,12 +3,11 @@
  * version 2.0 (the "License"). You can obtain a copy of the License at
  * http://mozilla.org/MPL/2.0/.
  */
-const xtend = require('xtend');
 let defaultConf = require('./package.json').CONFIG;
 
 function ideaTown(config) {
   if (config) {
-    defaultConf = xtend(defaultConf, config);
+    defaultConf = Object.assign(defaultConf, config);
   }
 
   this.config = defaultConf;
