@@ -51,6 +51,7 @@ export default Model.extend({
   },
 
   updateEnabledExperiments(experiments) {
+    if (!this.installed) { return; }
     experiments.forEach(experiment => {
       experiment.enabled = !!this.installed[experiment.addon_id];
     });
