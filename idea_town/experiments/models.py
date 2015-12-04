@@ -55,11 +55,13 @@ class UserInstallation(models.Model):
 
     experiment = models.ForeignKey(Experiment)
     user = models.ForeignKey(User)
-
-    rating = models.FloatField(null=True, blank=True)
+    client_id = models.CharField(blank=True, max_length=128)
 
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        unique_together = ('experiment', 'user', 'client_id',)
 
 
 class UserFeedback(models.Model):

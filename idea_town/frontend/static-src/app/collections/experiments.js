@@ -28,6 +28,15 @@ export default Collection.extend({
     });
   },
 
+  fetch(optionsIn) {
+    return new Promise((resolve, reject) => {
+      const options = optionsIn || {};
+      options.success = resolve;
+      options.error = reject;
+      Collection.prototype.fetch.call(this, options);
+    });
+  },
+
   // django-rest-framework returns the actual models under 'results'
   parse(response) {
     return response.results;

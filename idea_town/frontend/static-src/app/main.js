@@ -16,22 +16,28 @@ app.extend({
 
   initialize() {
     app.webChannel = webChannel;
+    app.me = new Me();
+    app.experiments = new ExperimentsCollection();
 
-    fetch('/api/me?format=json', {
-      credentials: 'same-origin'
-    }).then((response) => response.json()).then((userData) => {
-      app.me = new Me({
-        user: userData,
-        hasAddon: Boolean(window.navigator.ideatownAddon)
+    Promise.all([
+      app.me.fetch(),
+      app.experiments.fetch()
+    ]).then(() => {
+      app.me.updateEnabledExperiments(app.experiments);
+
+      app.pageManager = new PageManager({
+        pageContainer: document.querySelector('[data-hook=page-container]')
       });
 
-      app.experiments = new ExperimentsCollection();
-      app.experiments.fetch({
-        success: app.blastOff,
-        error: (err) => {
-          console && console.error(err); // eslint-disable-line no-console
-          app.blastoff();
-        }
+      if (!app.router.history.started()) {
+        app.router.history.start();
+        // HACK for Issue #124 - sometimes popstate doesn't fire on navigation,
+        // but pageshow does. But, we just want to know if the URL changed.
+        addEventListener('pageshow', app.router.history.checkUrl, false);
+      }
+
+      app.me.on('change:hasAddon', () => {
+        app.router.reload();
       });
     }).catch((err) => {
       // for now, log the error in the console & do nothing in the UI
@@ -39,24 +45,15 @@ app.extend({
     });
   },
 
-  blastOff(exp) {
-    if (exp && exp.models) {
-      app.experiments.set(exp.models);
-    }
-
-    app.pageManager = new PageManager({
-      pageContainer: document.querySelector('[data-hook=page-container]')
-    });
-
-    if (!app.router.history.started()) {
-      app.router.history.start();
-      // HACK for Issue #124 - sometimes popstate doesn't fire on navigation,
-      // but pageshow does. But, we just want to know if the URL changed.
-      addEventListener('pageshow', app.router.history.checkUrl, false);
-    }
-
-    app.me.on('change:hasAddon', () => {
-      app.router.reload();
+  // Send webChannel message to addon, use a Promise to wait for the answer.
+  waitForMessage(type, data, timeout = 1000) {
+    return new Promise((resolve, reject) => {
+      const rejectTimer = setTimeout(reject, timeout);
+      this.once('webChannel:' + type + '-result', (result) => {
+        clearTimeout(rejectTimer);
+        resolve(result);
+      });
+      this.webChannel.sendMessage(type, data);
     });
   }
 

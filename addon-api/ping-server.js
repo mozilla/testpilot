@@ -10,6 +10,7 @@ const getCookiesFromHost = require('./cookie-manager');
 function pingServer(config, title, data, addon) {
   getCookiesFromHost(config.HOSTNAME, function(cookies) {
     const headers = {'Cookie': '',
+                     'Accept': 'application/json',
                      'Content-Type': 'application/json'};
     cookies.forEach(function(c) {
       headers.Cookie += c.name + '=' + c.value + ';';
@@ -29,7 +30,7 @@ function pingServer(config, title, data, addon) {
         content: JSON.stringify(formatEvent(config.IDEATOWN_PREFIX, title, id, data, addon)),
         headers: headers,
         onComplete: function(resp) {
-          console.error(resp);
+          // console.error(resp);
         }
       }).post();
     });

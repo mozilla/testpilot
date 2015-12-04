@@ -35,7 +35,10 @@ class ExperimentDetailAdmin(admin.ModelAdmin):
 class UserInstallationAdmin(admin.ModelAdmin):
 
     list_display = ('id', parent_link('experiment'), parent_link('user'),
+                    'client_id',
                     'created', 'modified',)
+
+    list_filter = ('experiment',)
 
 
 class UserFeedbackAdmin(admin.ModelAdmin):

@@ -7,7 +7,7 @@ from rest_framework import fields
 
 from ..utils import gravatar_url, TestCase
 from ..users.models import UserProfile
-from .models import (Experiment, UserFeedback)
+from .models import (Experiment, UserFeedback, UserInstallation)
 
 import logging
 logger = logging.getLogger(__name__)
@@ -40,7 +40,8 @@ class BaseTestCase(TestCase):
             Experiment.objects.get_or_create(
                 slug="test-%s" % idx, defaults=dict(
                     title="Test %s" % idx,
-                    description="This is a test"
+                    description="This is a test",
+                    addon_id="addon-%s@example.com" % idx
                 )) for idx in range(1, 4)))
 
 
@@ -79,7 +80,10 @@ class ExperimentViewTests(BaseTestCase):
                             experiment.modified),
                         "xpi_url": "",
                         "details": [],
-                        "contributors": []
+                        "contributors": [],
+                        "installations_url":
+                            "http://testserver/api/experiments/%s/installations/" %
+                            experiment.pk,
                     } for (slug, experiment) in self.experiments.items()),
                     key=lambda x: x['id'])
             }
@@ -126,6 +130,76 @@ class ExperimentViewTests(BaseTestCase):
             self.assertEqual(contributor['title'], profile.title)
 
             self.assertEqual(contributor['avatar'], gravatar_url(user.email))
+
+    def test_installations(self):
+        """Experiments should support an /installations/ psuedo-collection"""
+        user = self.user
+        experiment = self.experiments['test-1']
+        client_id = '8675309'
+
+        # Ensure list GET without authentication is a 403
+        url = reverse('experiment-installation-list',
+                      args=(experiment.pk,))
+        resp = self.client.get(url)
+        self.assertEqual(403, resp.status_code)
+
+        self.client.login(username=self.username,
+                          password=self.password)
+
+        # Ensure the installation to be created is initially 404
+        url = reverse('experiment-installation-detail',
+                      args=(experiment.pk, client_id))
+        resp = self.client.get(url)
+        self.assertEqual(404, resp.status_code)
+
+        # Create the first installation of interest
+        UserInstallation.objects.create(
+            experiment=experiment, user=user, client_id=client_id)
+
+        # Also create a few installations that shouldn't appear in results
+        UserInstallation.objects.create(
+            experiment=self.experiments['test-2'], user=user,
+            client_id=client_id)
+
+        UserInstallation.objects.create(
+            experiment=experiment, user=self.users['experimenttest-1'],
+            client_id='someotherclient')
+
+        # Ensure that the desired installation appears in the API list result
+        data = self.jsonGet('experiment-installation-list',
+                            experiment_pk=experiment.pk)
+        self.assertEqual(1, len(data))
+        self.assertEqual(client_id, data[0]['client_id'])
+
+        # Ensure that the desired installation is found at its URL
+        url = reverse('experiment-installation-detail',
+                      args=(experiment.pk, client_id))
+        resp = self.client.get(url)
+        self.assertEqual(200, resp.status_code)
+
+        # Create another client installation via PUT
+        client_id_2 = '123456789'
+        url = reverse('experiment-installation-detail',
+                      args=(experiment.pk, client_id_2))
+        resp = self.client.put(url, {})
+        self.assertEqual(200, resp.status_code)
+
+        # Ensure that the API list result reflects the addition
+        data = self.jsonGet('experiment-installation-list',
+                            experiment_pk=experiment.pk)
+        self.assertEqual(2, len(data))
+
+        # Delete the new client installation with DELETE
+        client_id_2 = '123456789'
+        url = reverse('experiment-installation-detail',
+                      args=(experiment.pk, client_id_2))
+        resp = self.client.delete(url)
+        self.assertEqual(410, resp.status_code)
+
+        # Ensure that the API list result reflects the deletion
+        data = self.jsonGet('experiment-installation-list',
+                            experiment_pk=experiment.pk)
+        self.assertEqual(1, len(data))
 
 
 class UserFeedbackTests(BaseTestCase):

@@ -1,12 +1,17 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.decorators import detail_route
 from rest_framework.response import Response
+from rest_framework.decorators import (detail_route, permission_classes,
+                                       api_view)
 
-from .models import (Experiment, ExperimentDetail, UserFeedback)
+from django.shortcuts import get_object_or_404
+
+from .models import (Experiment, ExperimentDetail, UserFeedback,
+                     UserInstallation)
 from .serializers import (ExperimentSerializer,
                           ExperimentDetailSerializer,
-                          UserFeedbackSerializer)
+                          UserFeedbackSerializer,
+                          UserInstallationSerializer)
 from ..utils import IsRequestUserBackend
 
 import logging
@@ -36,6 +41,38 @@ class ExperimentViewSet(viewsets.ModelViewSet):
             queryset, many=True,
             context=self.get_serializer_context())
         return Response(serializer.data)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def installation_list(request, experiment_pk):
+    experiment = get_object_or_404(Experiment, pk=experiment_pk)
+    queryset = UserInstallation.objects.filter(
+        user=request.user, experiment=experiment)
+    return Response(UserInstallationSerializer(
+        queryset, many=True, context={'request': request}).data)
+
+
+@api_view(['GET', 'PUT', 'DELETE'])
+@permission_classes([IsAuthenticated])
+def installation_detail(request, experiment_pk, client_id):
+    experiment = get_object_or_404(Experiment, pk=experiment_pk)
+
+    if 'PUT' == request.method:
+        installation, created = UserInstallation.objects.get_or_create(
+            user=request.user, experiment=experiment, client_id=client_id)
+        installation.save()
+    else:
+        installation = get_object_or_404(
+            UserInstallation,
+            user=request.user, experiment=experiment, client_id=client_id)
+
+    if 'DELETE' == request.method:
+        installation.delete()
+        return Response({}, status=status.HTTP_410_GONE)
+
+    return Response(UserInstallationSerializer(
+        installation, context={'request': request}).data)
 
 
 class ExperimentDetailViewSet(viewsets.ModelViewSet):

@@ -3,8 +3,8 @@ from django.conf import settings
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 
-from ..experiments.models import (UserInstallation)
-from ..experiments.serializers import ExperimentSerializer
+from ..experiments.models import UserInstallation
+from ..experiments.serializers import UserInstallationSerializer
 from .models import UserProfile
 from .serializers import UserProfileSerializer
 
@@ -25,17 +25,16 @@ class MeViewSet(ViewSet):
 
         return Response({
             "id": user.email,
-            "profile": UserProfileSerializer(profile,
-                                             context={'request': request}).data,
+            "profile": UserProfileSerializer(
+                profile,
+                context={'request': request}).data,
             "addon": {
                 "name": "Idea Town",
                 "url": settings.ADDON_URL
             },
-            "installed": [
-                ExperimentSerializer(x.experiment,
-                                     context={'request': request}).data
-                for x in UserInstallation.objects.filter(user=user)
-            ]
+            "installed": UserInstallationSerializer(
+                UserInstallation.objects.filter(user=user), many=True,
+                context={'request': request}).data
         })
 
 

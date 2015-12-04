@@ -20,6 +20,7 @@ urlpatterns = patterns(
     url(r'^api-auth/', include('rest_framework.urls',
                                namespace='rest_framework')),
     url(r'^api/metrics/', metrics_view.MetricsView.as_view(), name='metrics'),
+    url(r'^api/experiments/', include('idea_town.experiments.urls')),
     url(r'^api/', include(router.urls)),
     # Catch-all fallback to frontend client view
     url(r'', include('idea_town.frontend.urls')),
