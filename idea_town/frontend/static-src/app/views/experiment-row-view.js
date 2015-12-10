@@ -11,12 +11,11 @@ export default BaseView.extend({
   },
 
   initialize() {
-    this.model.on('change:isInstalled', this.renderButton, this);
-
+    this.model.on('change:enabled', this.renderButton, this);
     this.title = this.model.title;
     this.description = this.model.description;
     this.thumbnail = this.model.thumbnail;
-    this.isInstalled = this.model.isInstalled;
+    this.enabled = this.model.enabled;
   },
 
   openDetailPage(evt) {
