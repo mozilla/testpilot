@@ -211,7 +211,7 @@ TEMPLATES = [
         'BACKEND': 'django_jinja.backend.Jinja2',
         'APP_DIRS': True,
         'OPTIONS': {
-            'match_regex': r'^(?!(admin|rest_framework)/.*)',
+            'match_regex': r'^(?!(admin|registration|rest_framework)/.*)',
             'match_extension': '.html',
             'newstyle_gettext': True,
             'context_processors': [
