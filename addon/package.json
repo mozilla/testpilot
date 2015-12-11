@@ -1,7 +1,7 @@
 {
   "title": "Idea Town Addon",
   "name": "idea-town-addon",
-  "version": "0.2.1",
+  "version": "0.3.1",
   "private": true,
   "description": "The addon where ideas come to idea",
   "repository": "mozilla/idea-town-addon",
@@ -29,39 +29,17 @@
   },
   "preferences": [
     {
-      "name": "BASE_URL",
-      "title": "Idea town protocol",
-      "description": "protocol",
-      "type": "string",
-      "value": "https://ideatown.firefox.com"
-    },
-    {
-      "name": "HOSTNAME",
-      "title": "Idea town Hostname",
-      "description": "hostname",
-      "type": "string",
-      "value": "ideatown.firefox.com"
-    },
-    {
-      "name": "BADGE_COLOR",
-      "title": "Idea town Badge Color",
-      "description": "Hex color of the ideatown badge",
-      "type": "string",
-      "value": "#00AAAA"
-    },
-    {
-      "name": "ALLOWED_ORIGINS",
-      "title": "Allowed origins for addon",
-      "description": "Allowed origins for addon",
-      "type": "string",
-      "value": "https://ideatown.firefox.com/*"
-    },
-    {
-      "name": "IDEATOWN_PREFIX",
-      "title": "Idea town namespace",
-      "description": "Idea town namespace for metric events",
-      "type": "string",
-      "value": "ideatown.addon.MAIN."
+      "name": "SERVER_ENVIRONMENT",
+      "title": "Environment",
+      "description": "Which Idea Town server environment to use?",
+      "type": "menulist",
+      "value": "production",
+      "options": [
+        { "value": "local", "label": "Local (ideatown.dev)" },
+        { "value": "development", "label": "Development (idea-town-dev.elasticbeanstalk.com)" },
+        { "value": "stage", "label": "Staging (ideatown.stage.mozaws.net)" },
+        { "value": "production", "label": "Production (ideatown.firefox.com)" }
+      ]
     }
   ]
 }

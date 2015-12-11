@@ -4,7 +4,35 @@
  * http://mozilla.org/MPL/2.0/.
  */
 
+const settings = {};
+
+let ideaTownAddonAPI;
+let currentPageMod;
 let app;
+
+// Canned selectable server environment configs
+const SERVER_ENVIRONMENTS = {
+  local: {
+    BASE_URL: 'http://ideatown.dev:8000',
+    IDEATOWN_PREFIX: 'ideatown.addon.LOCAL.',
+    BADGE_COLOR: '#AA00AA'
+  },
+  development: {
+    BASE_URL: 'http://idea-town-dev.elasticbeanstalk.com',
+    IDEATOWN_PREFIX: 'ideatown.addon.DEVELOPMENT.',
+    BADGE_COLOR: '#AAAA00'
+  },
+  stage: {
+    BASE_URL: 'https://ideatown.stage.mozaws.net',
+    IDEATOWN_PREFIX: 'ideatown.addon.STAGE.',
+    BADGE_COLOR: '#A0AAA0'
+  },
+  production: {
+    BASE_URL: 'https://ideatown.firefox.com',
+    IDEATOWN_PREFIX: 'ideatown.addon.MAIN.',
+    BADGE_COLOR: '#00AAAA'
+  }
+};
 
 const store = require('sdk/simple-storage').storage;
 const {Cc, Ci, Cu} = require('chrome');
@@ -14,36 +42,47 @@ const {PageMod} = require('sdk/page-mod');
 const {ActionButton} = require('sdk/ui/button/action');
 const request = require('sdk/request').Request;
 const AddonManager = Cu.import('resource://gre/modules/AddonManager.jsm').AddonManager;
-const prefs = require('sdk/simple-prefs').prefs;
+const simplePrefs = require('sdk/simple-prefs');
 const URL = require('sdk/url').URL;
-const Router = require('./route');
+const IdeaTown = require('idea-town');
 const cookieManager2 = Cc['@mozilla.org/cookiemanager;1']
                        .getService(Ci.nsICookieManager2);
 
-const mod = new PageMod({
-  include: prefs.ALLOWED_ORIGINS.split(','),
-  contentScriptFile: self.data.url('message-bridge.js'),
-  contentScriptWhen: 'start',
-  attachTo: ['top', 'existing'],
-  onAttach: setupApp
-});
+function updatePrefs() {
+  // Select the environment, with production as a default.
+  const envName = simplePrefs.prefs.SERVER_ENVIRONMENT;
+  const env = (envName in SERVER_ENVIRONMENTS) ?
+    SERVER_ENVIRONMENTS[envName] : SERVER_ENVIRONMENTS.production;
+
+  // Update the settings from selected environment
+  Object.assign(settings, {
+    BASE_URL: env.BASE_URL,
+    ALLOWED_ORIGINS: env.BASE_URL + '/*',
+    HOSTNAME: URL(env.BASE_URL).hostname, // eslint-disable-line new-cap
+    IDEATOWN_PREFIX: env.IDEATOWN_PREFIX
+  });
+
+  // Ensure we have a properly configured metrics client.
+  ideaTownAddonAPI = new IdeaTown(settings);
+
+  // Set up new PageMod, destroying any previously existing one.
+  if (currentPageMod) { currentPageMod.destroy(); }
+  currentPageMod = new PageMod({
+    include: settings.ALLOWED_ORIGINS.split(','),
+    contentScriptFile: self.data.url('message-bridge.js'),
+    contentScriptWhen: 'start',
+    attachTo: ['top', 'existing'],
+    onAttach: setupApp
+  });
+}
+
+// Register handler to reconfigure on pref change, kick off initial setup
+simplePrefs.on('SERVER_ENVIRONMENT', updatePrefs);
+updatePrefs();
 
 if (!store.clientUUID) {
   store.clientUUID = generateUUID();
 }
-
-require('sdk/system/unload').when(function(reason) {
-  if (reason === 'uninstall') {
-    app.send('addon-self:uninstalled');
-    if (store.installedAddons) {
-      for (let id of store.installedAddons) { // eslint-disable-line prefer-const
-        uninstallExperiment({addon_id: id});
-      }
-      delete store.installedAddons;
-    }
-    delete store.availableExperiments;
-  }
-});
 
 ActionButton({ // eslint-disable-line new-cap
   id: 'idea-town-link',
@@ -54,13 +93,13 @@ ActionButton({ // eslint-disable-line new-cap
     '64': './icon-64.png'
   },
   onClick: function() {
-    tabs.open({ url: prefs.BASE_URL });
+    tabs.open({ url: settings.BASE_URL });
   }
 });
 
 function setupApp() {
   updateExperiments().then(() => {
-    app = new Router(mod);
+    app = new Router(currentPageMod);
 
     app.on('install-experiment', installExperiment);
 
@@ -91,10 +130,33 @@ function setupApp() {
   });
 }
 
+function Router(mod) {
+  this.mod = mod;
+  this._events = {};
+  this.mod.port.on('from-web-to-addon', function(evt) {
+    if (this._events[evt.type]) this._events[evt.type](evt.data);
+  }.bind(this));
+  return this;
+}
+
+Router.prototype.on = function(name, f) {
+  this._events[name] = f;
+  return this;
+};
+
+Router.prototype.send = function(name, data, addon) {
+  if (addon) {
+    data.tags = ['main-addon'];
+    ideaTownAddonAPI.metric(name, data, addon);
+  }
+  this.mod.port.emit('from-addon-to-web', {type: name, data: data});
+  return this;
+};
+
 function updateExperiments() {
   // Fetch the list of available experiments
   return requestAPI({
-    url: prefs.BASE_URL + '/api/experiments'
+    url: settings.BASE_URL + '/api/experiments'
   }).then(res => {
     // Index the available experiments by addon ID
     store.availableExperiments = {};
@@ -193,7 +255,7 @@ function requestAPI(opts) {
     'Cookie': ''
   };
 
-  const hostname = URL(prefs.BASE_URL).hostname; // eslint-disable-line new-cap
+  const hostname = settings.HOSTNAME;
   const cookieEnumerator = cookieManager2.getCookiesFromHost(hostname);
   while (cookieEnumerator.hasMoreElements()) {
     const c = cookieEnumerator.getNext().QueryInterface(Ci.nsICookie); // eslint-disable-line new-cap
@@ -222,6 +284,19 @@ function generateUUID() {
     return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
   });
 }
+
+require('sdk/system/unload').when(function(reason) {
+  if (reason === 'uninstall') {
+    app.send('addon-self:uninstalled');
+    if (store.installedAddons) {
+      for (let id of store.installedAddons) { // eslint-disable-line prefer-const
+        uninstallExperiment({addon_id: id});
+      }
+      delete store.installedAddons;
+    }
+    delete store.availableExperiments;
+  }
+});
 
 AddonManager.addAddonListener({
   onUninstalling: function(addon) {
