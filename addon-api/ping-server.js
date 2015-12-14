@@ -4,45 +4,47 @@
  * http://mozilla.org/MPL/2.0/.
 */
 
-const request = require('sdk/request').Request;
+const {Cu} = require('chrome');
+const request = Cu.import('resource://gre/modules/Http.jsm').httpRequest;
 const getCookiesFromHost = require('./cookie-manager');
 
 function pingServer(config, title, data, addon) {
   getCookiesFromHost(config.HOSTNAME, function(cookies) {
-    const headers = {'Cookie': '',
-                     'Accept': 'application/json',
-                     'Content-Type': 'application/json'};
+    let cookie = '';
+    const headers = [['Accept', 'application/json'],
+                     ['Content-Type', 'application/json']];
     cookies.forEach(function(c) {
-      headers.Cookie += c.name + '=' + c.value + ';';
+      cookie += c.name + '=' + c.value + ';';
       if (c.name === 'csrftoken') {
-        headers['X-CSRFToken'] = c.value;
+        headers.push(['X-CSRFToken', c.value]);
       }
     });
 
-    getMe(headers, config.BASE_URL, function(response) {
+    headers.push(['Cookie', cookie]);
+
+    getMe(headers, config.BASE_URL, function(responseText) {
+      const response = JSON.parse(responseText);
       let id = '';
       if (response.json) {
         id = response.json.id;
       }
 
-      request({
-        url: config.BASE_URL + '/api/metrics/?format=json',
-        content: JSON.stringify(formatEvent(config.IDEATOWN_PREFIX, title, id, data, addon)),
+      request(config.BASE_URL + '/api/metrics/?format=json', {
+        postData: JSON.stringify(formatEvent(config.IDEATOWN_PREFIX, title, id, data, addon)),
         headers: headers,
-        onComplete: function(resp) {
+        onLoad: function() {
           // console.error(resp);
         }
-      }).post();
+      });
     });
   });
 }
 
 function getMe(headers, BASE_URL, cb) {
-  request({
-    url: BASE_URL + '/api/me?format=json',
+  request(BASE_URL + '/api/me?format=json', {
     headers: headers,
-    onComplete: cb
-  }).get();
+    onLoad: cb
+  });
 }
 
 function formatEvent(PREFIX, title, id, data, addon) {
