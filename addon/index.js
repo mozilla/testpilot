@@ -42,6 +42,7 @@ const {PageMod} = require('sdk/page-mod');
 const {ActionButton} = require('sdk/ui/button/action');
 const request = require('sdk/request').Request;
 const AddonManager = Cu.import('resource://gre/modules/AddonManager.jsm').AddonManager;
+const Prefs = Cu.import('resource://gre/modules/Preferences.jsm').Preferences;
 const simplePrefs = require('sdk/simple-prefs');
 const URL = require('sdk/url').URL;
 const IdeaTown = require('idea-town');
@@ -80,22 +81,33 @@ function updatePrefs() {
 simplePrefs.on('SERVER_ENVIRONMENT', updatePrefs);
 updatePrefs();
 
+// update the our icon for devtools themes
+Prefs.observe('devtools.theme', pref => {
+  setActionButton(pref === 'dark');
+});
+
+setActionButton(Prefs.get('devtools.theme') === 'dark');
+
 if (!store.clientUUID) {
   store.clientUUID = generateUUID();
 }
 
-ActionButton({ // eslint-disable-line new-cap
-  id: 'idea-town-link',
-  label: 'Idea Town',
-  icon: {
-    '16': './icon-16.png',
-    '32': './icon-32.png',
-    '64': './icon-64.png'
-  },
-  onClick: function() {
-    tabs.open({ url: settings.BASE_URL });
-  }
-});
+function setActionButton(dark) {
+  const iconPrefix = dark ? './icon-inverted' : './icon';
+
+  ActionButton({ // eslint-disable-line new-cap
+    id: 'idea-town-link',
+    label: 'Idea Town',
+    icon: {
+      '16': iconPrefix + '-16.png',
+      '32': iconPrefix + '-32.png',
+      '64': iconPrefix + '-64.png'
+    },
+    onClick: function() {
+      tabs.open({ url: settings.BASE_URL });
+    }
+  });
+}
 
 function setupApp() {
   updateExperiments().then(() => {
