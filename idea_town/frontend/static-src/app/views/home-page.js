@@ -6,6 +6,7 @@ import template from '../templates/home-page';
 
 export default PageView.extend({
   _template: template,
+  pageTitle: 'Home',
 
   render() {
     // TODO: this is not awesome
