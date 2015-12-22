@@ -21,6 +21,8 @@ export default `
               <h3>Measurements</h3>
               <p class="disclaimer">All data is collected anonymously and used only to help us improve this test.</p>
               <div data-hook="measurements-html"></div>
+              <a data-hook="privacy-notice-url">
+              <span data-hook="title"></span> Privacy Notice</a>
             </section>
             <section>
               <h3>Brought to you by</h3>

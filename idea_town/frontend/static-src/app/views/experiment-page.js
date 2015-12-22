@@ -89,6 +89,17 @@ export default PageView.extend({
       hook: 'measurements-container'
     }],
 
+    'model.privacy_notice_url': [{
+      type: 'toggle',
+      hook: 'privacy-notice-url',
+      mode: 'visibility'
+    },
+    {
+      type: 'attribute',
+      name: 'href',
+      hook: 'privacy-notice-url'
+    }],
+
     'model.changelog_url': [{
       type: 'toggle',
       hook: 'changelog-url',
