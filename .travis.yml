@@ -11,6 +11,10 @@ services:
 install:
   - pip install tox coveralls
   - nvm install 0.12
+cache:
+  - pip
+  directories:
+    - node_modules
 env:
   global:
     - DOCKER_EMAIL=me@lmorchard.com
