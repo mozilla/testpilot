@@ -40,15 +40,19 @@ know-how:
 
   `docker-machine create -driver virtualbox default`
 
-3. Make sure your shell can see the default Docker machine:
+3. Make sure the default machine is running:
+
+  `docker-machine start default`
+
+4. Make sure your shell can see the default Docker machine:
 
   `eval "$(docker-machine env default)"`
 
-4. Check the IP address of the default Docker machine:
+5. Check the IP address of the default Docker machine:
 
   `docker-machine ip default`
 
-5. Use this IP address to add an entry for `ideatown.dev` in `/etc/hosts`:
+6. Use this IP address to add an entry for `ideatown.dev` in `/etc/hosts`:
 
   `192.168.99.100 ideatown.dev`
 
@@ -57,7 +61,7 @@ know-how:
 
 [update-ip]: https://github.com/mozilla/idea-town/blob/master/bin/update-ip.sh
 
-6. Create and setup the Docker containers (this will take some time):
+7. Create and setup the Docker containers (this will take some time):
 
   `docker-compose up`
 
