@@ -9,6 +9,8 @@ export default `
             <button data-hook="feedback" id="feedback-button" class="button primary">Give Feedback</button>
             <button data-hook="uninstall" id="uninstall-button" class="button neutral"><span class="state-change-inner"></span><span class="transition-text">Disabling...</span><span class="default-text">Disable <span data-hook="title"></span></span></button>
             <button data-hook="install" id="install-button" class="button primary"><span class="state-change-inner"></span><span class="transition-text">Enabling...</span><span class="default-text">Enable <span data-hook="title"></span></span></button>
+            <span class="user-count"></span>
+            <span data-hook="install-count"></span>
           </div>
         </div>
       </div>

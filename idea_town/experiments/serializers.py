@@ -3,7 +3,8 @@ from django.core.urlresolvers import reverse
 
 from ..users.models import UserProfile
 from ..users.serializers import UserProfileSerializer
-from .models import (Experiment, ExperimentDetail, UserFeedback, UserInstallation)
+from .models import (Experiment, ExperimentDetail, UserFeedback,
+                     UserInstallation)
 from ..utils import MarkupField
 
 
@@ -34,7 +35,7 @@ class ExperimentSerializer(serializers.HyperlinkedModelSerializer):
                   'version', 'changelog_url', 'contribute_url',
                   'privacy_notice_url', 'measurements',
                   'xpi_url', 'addon_id', 'details', 'contributors',
-                  'installations_url',
+                  'installations_url', 'installation_count',
                   'created', 'modified', 'order',)
 
     def get_contributors(self, obj):
