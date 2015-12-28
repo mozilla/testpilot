@@ -22,6 +22,7 @@ class Experiment(models.Model):
     version = models.CharField(blank=True, max_length=128)
     changelog_url = models.URLField(blank=True)
     contribute_url = models.URLField(blank=True)
+    privacy_notice_url = models.URLField(blank=True)
     addon_id = models.CharField(max_length=500, blank=False,)
 
     users = models.ManyToManyField(User, through='UserInstallation')
