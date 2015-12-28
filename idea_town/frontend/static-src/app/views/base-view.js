@@ -1,6 +1,6 @@
 import AmpersandView from 'ampersand-view';
-import flatten from 'lodash/array/flatten';
-import invoke from 'lodash/collection/invoke';
+import flatten from 'lodash.flatten';
+import invoke from 'lodash.invoke';
 import mustache from 'mustache';
 // BaseView just abstracts out stuff we seem to use in all the views
 

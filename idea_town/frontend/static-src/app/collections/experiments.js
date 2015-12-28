@@ -1,6 +1,6 @@
 import app from 'ampersand-app';
 import Collection from 'ampersand-rest-collection';
-import includes from 'lodash/collection/includes';
+import includes from 'lodash.includes';
 
 import Experiment from '../models/experiment';
 
