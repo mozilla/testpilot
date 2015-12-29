@@ -1,7 +1,7 @@
 {
   "title": "Idea Town Addon API",
   "name": "idea-town",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "interact with the main ideatown server from your experiment",
   "main": "index.js",
   "repository": "mozilla/idea-town",
@@ -37,5 +37,8 @@
     "BASE_URL": "https://ideatown.firefox.com",
     "HOSTNAME": "ideatown.firefox.com",
     "IDEATOWN_PREFIX": "ideatown.addon."
+  },
+  "dependencies": {
+    "eslint-config-idea-town": "^1.2.0"
   }
 }

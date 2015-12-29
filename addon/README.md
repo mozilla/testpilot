@@ -32,11 +32,10 @@ Accepted:
 * `install-experiment`
 * `uninstall-experiment`
 * `uninstall-all`
-* `loaded`
+* `sync-installed`
 
 Emitted:
-* `addon-available`
-* `addon-updates`
+* `sync-installed-result`
 * `addon-install:install-started`
 * `addon-install:install-new`
 * `addon-install:install-cancelled`
@@ -52,6 +51,7 @@ Emitted:
 * `addon-self:installed`
 * `addon-self:enabled`
 * `addon-self:upgraded`
+* `addon-self:uninstalled`
 
 Any emitted events prefixed with `addon-install:` will have an associated object
 which will be structured as such:
@@ -110,8 +110,8 @@ window.addEventListener("from-addon-to-web", function (event) {
   if (!event.detail || !event.detail.type) { return; }
   statusUpdate(event.detail.type, event.detail);
   switch (event.detail.type) {
-    case 'addon-available':
-      handleWhenAddonAvailable(event.detail);
+    case 'sync-installed':
+      syncInstalledAddons(event.detail);
       break;
     default:
       console.log('WEB RECEIVED FROM ADDON', JSON.stringify(event.detail, null, ' '));
