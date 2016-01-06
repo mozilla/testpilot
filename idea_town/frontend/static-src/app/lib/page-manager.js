@@ -27,7 +27,13 @@ export default class PageManager {
       'error': ErrorPage
     };
 
-    this._viewSwitcher = new AmpersandViewSwitcher(opts.pageContainer);
+    this._viewSwitcher = new AmpersandViewSwitcher(opts.pageContainer, {
+      show: (view) => {
+        document.title = 'Idea Town - ' + view.pageTitle || 'Idea Town';
+        document.body.scrollTop = 0;
+      }
+    });
+
     app.on('router:new-page', this.onNewPage.bind(this));
   }
 

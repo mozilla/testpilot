@@ -129,6 +129,8 @@ export default PageView.extend({
         setTimeout(this.onScroll.bind(this), 50);
       }
     }.bind(this));
+
+    this.pageTitle = this.model.title;
   },
 
   render() {
