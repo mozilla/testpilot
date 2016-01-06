@@ -1,0 +1,304 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "is_active": true,
+    "date_joined": "2015-10-29T15:46:24.985Z",
+    "password": "-",
+    "email": "lorchard@example.com",
+    "first_name": "",
+    "username": "lorchard-demo",
+    "user_permissions": [],
+    "last_login": "2015-12-10T21:25:55.674Z",
+    "is_superuser": false,
+    "last_name": "",
+    "groups": [],
+    "is_staff": false
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "is_active": true,
+    "date_joined": "2015-10-29T20:20:25Z",
+    "password": "-",
+    "email": "torgeir@example.com",
+    "first_name": "",
+    "username": "torgeir-demo",
+    "user_permissions": [],
+    "last_login": "2015-10-29T20:20:25Z",
+    "is_superuser": false,
+    "last_name": "",
+    "groups": [],
+    "is_staff": false
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "is_active": true,
+    "date_joined": "2015-11-02T23:48:55Z",
+    "password": "-",
+    "email": "nchapman@example.com",
+    "first_name": "",
+    "username": "nchapman-demo",
+    "user_permissions": [],
+    "last_login": "2015-11-02T23:48:55Z",
+    "is_superuser": false,
+    "last_name": "",
+    "groups": [],
+    "is_staff": false
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "is_active": true,
+    "date_joined": "2015-11-12T00:02:03Z",
+    "password": "-",
+    "email": "pdehaan@example.com",
+    "first_name": "",
+    "username": "pdehaan-demo",
+    "user_permissions": [],
+    "last_login": "2015-12-10T16:24:01Z",
+    "is_superuser": false,
+    "last_name": "",
+    "groups": [],
+    "is_staff": false
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "is_active": true,
+    "date_joined": "2015-11-20T10:08:02Z",
+    "password": "-",
+    "email": "jgruen@example.com",
+    "first_name": "",
+    "username": "jgruen-demo",
+    "user_permissions": [],
+    "last_login": "2015-12-18T18:32:08.642Z",
+    "is_superuser": false,
+    "last_name": "",
+    "groups": [],
+    "is_staff": false
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "is_active": true,
+    "date_joined": "2015-12-10T18:05:39Z",
+    "password": "-",
+    "email": "charmston@example.com",
+    "first_name": "",
+    "username": "charmston-demo",
+    "user_permissions": [],
+    "last_login": "2015-12-11T18:28:19.935Z",
+    "is_superuser": false,
+    "last_name": "",
+    "groups": [],
+    "is_staff": false
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "is_active": true,
+    "date_joined": "2015-12-10T21:59:38Z",
+    "password": "-",
+    "email": "jhirsch@example.com",
+    "first_name": "Jared",
+    "username": "jhirsch-demo",
+    "user_permissions": [],
+    "last_login": "2015-12-10T21:59:38Z",
+    "is_superuser": false,
+    "last_name": "Hirsch",
+    "groups": [],
+    "is_staff": false
+  }
+},
+{
+  "model": "experiments.experiment",
+  "fields": {
+    "measurements": "- Uses per session\r\n- Index selected\r\n- Percentage of searches\r\n",
+    "version": "5.1.4",
+    "privacy_notice_url": "",
+    "contribute_url": "https://github.com/mozilla/universal-search-addon/blob/master/CONTRIBUTING.md",
+    "title": "Universal Search",
+    "measurements_markup_type": "markdown",
+    "_measurements_rendered": "<ul>\n<li>Uses per session</li>\n<li>Index selected</li>\n<li>Percentage of searches</li>\n</ul>",
+    "thumbnail": "demo/experiments_experiment/a/8/a8182b008f6434ba702ab177232625e2_thumbnail_1449675941_0564.png",
+    "description": "Search your bookmarks, history and the web from a single place",
+    "addon_id": "universal-search-addon@mozilla.com",
+    "created": "2015-12-09T15:45:42.395Z",
+    "contributors": [ [ "jhirsch-demo" ], [ "charmston-demo" ], [ "jgruen-demo" ], [ "lorchard-demo" ] ],
+    "slug": "universal-search",
+    "xpi_url": "https://people.mozilla.org/~jhirsch/universal-search-addon/addon.xpi",
+    "modified": "2015-12-10T22:10:11.640Z",
+    "changelog_url": "https://github.com/mozilla/universal-search-addon/commits/master"
+  }
+},
+{
+  "model": "experiments.experiment",
+  "fields": {
+    "measurements": "",
+    "version": "",
+    "privacy_notice_url": "",
+    "contribute_url": "",
+    "title": "Tab Cinema",
+    "measurements_markup_type": "plain",
+    "_measurements_rendered": "<p></p>",
+    "thumbnail": "demo/experiments_experiment/7/f/7fb027cc91d81bfe14d0c7daf2ada413_thumbnail_1449676075_0620.png",
+    "description": "A visual history of your tabs in slideshow form",
+    "addon_id": "tab-cinema-addon@example.com",
+    "created": "2015-12-09T15:47:56.050Z",
+    "contributors": [ [ "nchapman-demo" ], [ "torgeir-demo" ] ],
+    "slug": "mozvr",
+    "xpi_url": "http://example.com",
+    "modified": "2015-12-10T22:00:31.398Z",
+    "changelog_url": ""
+  }
+},
+{
+  "model": "experiments.experiment",
+  "fields": {
+    "measurements": "",
+    "version": "",
+    "privacy_notice_url": "",
+    "contribute_url": "",
+    "title": "Activity Stream",
+    "measurements_markup_type": "plain",
+    "_measurements_rendered": "<p></p>",
+    "thumbnail": "demo/experiments_experiment/e/1/e19739ea25188c866b654d3aa2616b27_thumbnail_1449778314_0632.png",
+    "description": "Find everything you've ever found, no matter what",
+    "addon_id": "activity-stream-addon@mozilla.com",
+    "created": "2015-12-10T20:11:55.207Z",
+    "contributors": [ [ "charmston-demo" ], [ "nchapman-demo" ], [ "lorchard-demo" ], [ "pdehaan-demo" ] ],
+    "slug": "activity-stream",
+    "xpi_url": "http://example.com",
+    "modified": "2015-12-10T22:00:58.944Z",
+    "changelog_url": ""
+  }
+},
+{
+  "model": "experiments.experimentdetail",
+  "fields": {
+    "experiment": [ "universal-search" ],
+    "headline": "Discover",
+    "image": "demo/experiments_experimentdetail/c/f/cf8ec31677b2e3a198cc7550242b7b35_image_1449783090_0930.png",
+    "copy": "Universal Search puts all of the best search features of Firefox in one easy place.",
+    "order": 0,
+    "created": "2015-12-09T15:45:42.678Z",
+    "modified": "2015-12-10T21:55:50.899Z"
+  }
+},
+{
+  "model": "experiments.experimentdetail",
+  "fields": {
+    "experiment": [ "mozvr" ],
+    "headline": "Explore",
+    "image": "demo/experiments_experimentdetail/6/a/6a99c575ab87f8c7d1ed1e52e7e349ce_image_1449676076_0047.jpg",
+    "copy": "Do the dishes in a virtual world",
+    "order": 0,
+    "created": "2015-12-09T15:47:56.275Z",
+    "modified": "2015-12-09T15:47:56.275Z"
+  }
+},
+{
+  "model": "experiments.experimentdetail",
+  "fields": {
+    "experiment": [ "activity-stream" ],
+    "headline": "Stream",
+    "image": "demo/experiments_experimentdetail/6/a/6a99c575ab87f8c7d1ed1e52e7e349ce_image_1449778315_0766.jpg",
+    "copy": "Stream your dreams",
+    "order": 0,
+    "created": "2015-12-10T20:11:55.456Z",
+    "modified": "2015-12-10T20:11:55.456Z"
+  }
+},
+{
+  "model": "experiments.experimentdetail",
+  "fields": {
+    "experiment": [ "universal-search" ],
+    "headline": "History and Bookmarks",
+    "image": "demo/experiments_experimentdetail/d/f/dfed7362e904f7f4da22918e19ae95f6_image_1449783172_0008.png",
+    "copy": "We've added some smarts to help you sort through everything you've ever found before. Looking for that old recipe? Just search.",
+    "order": 0,
+    "created": "2015-12-10T21:32:53.244Z",
+    "modified": "2015-12-10T21:55:50.903Z"
+  }
+},
+{
+  "model": "experiments.experimentdetail",
+  "fields": {
+    "experiment": [ "universal-search" ],
+    "headline": "Search The World",
+    "image": "demo/experiments_experimentdetail/1/7/17105f0bb1546d756e4b02b13a566e73_image_1449783173_0422.png",
+    "copy": "Search with whatever engine you like. We'll find what you're looking for.",
+    "order": 0,
+    "created": "2015-12-10T21:32:53.872Z",
+    "modified": "2015-12-10T21:55:50.907Z"
+  }
+},
+{
+  "model": "users.userprofile",
+  "fields": {
+    "avatar": "demo/users_userprofile/3/4/34d9e0344ef6a177f0767cd7fc707153_avatar_1446220382_0957.png",
+    "invite_pending": false,
+    "display_name": "Les Orchard",
+    "user": [ "lorchard-demo" ],
+    "title": "{web,mad,computer} scientist",
+    "created": "2015-10-29T17:55:01.300Z",
+    "modified": "2015-10-30T15:53:02.879Z"
+  }
+},
+{
+  "model": "users.userprofile",
+  "fields": {
+    "avatar": "demo/users_userprofile/7/2/72b302bf297a228a75730123efef7c41_avatar_1447803448_0037.gif",
+    "invite_pending": true,
+    "display_name": "",
+    "user": [ "pdehaan-demo" ],
+    "title": "QA type person",
+    "created": "2015-11-09T19:03:55.043Z",
+    "modified": "2015-11-17T23:37:29.284Z"
+  }
+},
+{
+  "model": "users.userprofile",
+  "fields": {
+    "avatar": "",
+    "invite_pending": false,
+    "display_name": "John Gruen",
+    "user": [ "jgruen-demo" ],
+    "title": "Designer",
+    "created": "2015-11-20T10:08:03.723Z",
+    "modified": "2015-12-10T22:07:29.614Z"
+  }
+},
+{
+  "model": "users.userprofile",
+  "fields": {
+    "avatar": "",
+    "invite_pending": false,
+    "display_name": "Chuck Harmston",
+    "user": [ "charmston-demo" ],
+    "title": "Engineer",
+    "created": "2015-12-10T18:05:39.889Z",
+    "modified": "2015-12-10T22:07:16.390Z"
+  }
+},
+{
+  "model": "users.userprofile",
+  "fields": {
+    "avatar": "",
+    "invite_pending": false,
+    "display_name": "Jared HIrsch",
+    "user": [ "jhirsch-demo" ],
+    "title": "Engineer",
+    "created": "2015-12-10T21:59:39.278Z",
+    "modified": "2015-12-10T22:07:29.017Z"
+  }
+}
+]

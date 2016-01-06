@@ -14,6 +14,10 @@ class UserProfileManager(models.Manager):
         (profile, created) = self.get_or_create(user=user)
         return profile
 
+    def get_by_natural_key(self, username):
+        user = User.objects.get_by_natural_key(username)
+        return self.get_profile(user)
+
 
 class UserProfile(models.Model):
     """Profile model for additional user details"""
@@ -28,3 +32,8 @@ class UserProfile(models.Model):
 
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
+
+    def natural_key(self):
+        return self.user.natural_key()
+
+    natural_key.dependencies = ['auth.user']

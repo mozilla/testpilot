@@ -10,7 +10,14 @@ experiment_thumbnail_upload_to = HashedUploadTo('thumbnail')
 experimentdetail_image_upload_to = HashedUploadTo('image')
 
 
+class ExperimentManager(models.Manager):
+
+    def get_by_natural_key(self, slug):
+        return self.get(slug=slug)
+
+
 class Experiment(models.Model):
+    objects = ExperimentManager()
 
     class Meta:
         ordering = ['order']
@@ -38,8 +45,19 @@ class Experiment(models.Model):
     def __str__(self):
         return self.title
 
+    def natural_key(self):
+        return (self.slug,)
+
+
+class ExperimentDetailManager(models.Manager):
+
+    def get_by_natural_key(self, experiment_slug, headline):
+        experiment = Experiment.objects.get_by_natural_key(experiment_slug)
+        return self.get(experiment=experiment, headline=headline)
+
 
 class ExperimentDetail(models.Model):
+    objects = ExperimentDetailManager()
 
     experiment = models.ForeignKey('Experiment', related_name='details',
                                    db_index=True)
@@ -54,6 +72,11 @@ class ExperimentDetail(models.Model):
 
     class Meta:
         ordering = ('experiment', 'order', 'modified',)
+
+    def natural_key(self):
+        return self.experiment.natural_key() + (self.headline,)
+
+    natural_key.dependencies = ['experiments.experiment']
 
 
 class UserInstallation(models.Model):
