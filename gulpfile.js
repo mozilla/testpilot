@@ -11,7 +11,7 @@ const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const gutil = require('gulp-util');
 const imagemin = require('gulp-imagemin');
-const minifycss = require('gulp-minify-css');
+const minifycss = require('gulp-cssnano');
 const normalize = require('node-normalize-scss');
 const rename = require('gulp-rename');
 const runSequence = require('run-sequence');
@@ -101,7 +101,7 @@ gulp.task('scripts', ['lint'], function scriptsTask() {
 });
 
 gulp.task('styles', ['sass-lint'], function stylesTask() {
-  return gulp.src(SRC_PATH + 'styles/**/*.scss')
+  return gulp.src(SRC_PATH + 'styles/main.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: [
@@ -110,11 +110,10 @@ gulp.task('styles', ['sass-lint'], function stylesTask() {
       ]
     }).on('error', sass.logError))
     .pipe(autoprefixer('last 2 versions'))
-    .pipe(sourcemaps.write({sourceRoot: SRC_PATH + 'styles'}))
-    .pipe(gulp.dest(DEST_PATH + 'styles'))
       // don't minify in development
       .pipe(gulpif(!IS_DEBUG, rename({ suffix: '.min' })))
       .pipe(gulpif(!IS_DEBUG, minifycss()))
+      .pipe(gulpif(!IS_DEBUG, sourcemaps.write('.')))
     .pipe(gulp.dest(DEST_PATH + 'styles'));
 });
 

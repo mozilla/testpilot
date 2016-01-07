@@ -85,7 +85,7 @@
   background-color: $white;
   border-radius: $feedback-modal-border-radius;
   left: 50%;
-  margin-left: -($feedback-modal-width / 2);
+  margin-left: ($feedback-modal-width / - 2);
   position: fixed;
   top: 60px;
   width: $feedback-modal-width;
