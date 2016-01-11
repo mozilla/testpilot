@@ -65,6 +65,7 @@ class ExperimentViewTests(BaseTestCase):
                         "url": "http://testserver/api/experiments/%s" %
                                experiment.pk,
                         "title": experiment.title,
+                        "order": experiment.order,
                         "slug": experiment.slug,
                         "thumbnail": None,
                         "description": experiment.description,

@@ -35,7 +35,7 @@ class ExperimentSerializer(serializers.HyperlinkedModelSerializer):
                   'privacy_notice_url', 'measurements',
                   'xpi_url', 'addon_id', 'details', 'contributors',
                   'installations_url',
-                  'created', 'modified',)
+                  'created', 'modified', 'order',)
 
     def get_contributors(self, obj):
         request = self.context['request']

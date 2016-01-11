@@ -12,6 +12,9 @@ experimentdetail_image_upload_to = HashedUploadTo('image')
 
 class Experiment(models.Model):
 
+    class Meta:
+        ordering = ['order']
+
     title = models.CharField(max_length=128)
     slug = models.SlugField(max_length=128, unique=True, db_index=True)
     thumbnail = models.ImageField(upload_to=experiment_thumbnail_upload_to)
@@ -20,6 +23,7 @@ class Experiment(models.Model):
                                default_markup_type='plain')
     xpi_url = models.URLField()
     version = models.CharField(blank=True, max_length=128)
+    order = models.IntegerField(default=0)
     changelog_url = models.URLField(blank=True)
     contribute_url = models.URLField(blank=True)
     privacy_notice_url = models.URLField(blank=True)

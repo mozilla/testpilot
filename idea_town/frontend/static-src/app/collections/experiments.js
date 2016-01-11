@@ -7,6 +7,7 @@ export default Collection.extend({
   model: Experiment,
   indexes: ['slug'],
   url: '/api/experiments',
+  comparator: 'order',
 
   // Ampersand.sync doesn't seem to pass correct Accept headers by default.
   // This supposedly is fixed by https://github.com/AmpersandJS/ampersand-sync/pull/24
