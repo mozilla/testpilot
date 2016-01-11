@@ -11,6 +11,12 @@ lists some hints & tips we've accumulated through the course of daily work.
 
   This is necessary for running Django commands, among other things.
 
+* To load some sample demo content into your Docker dev environment:
+
+  `mkdir -p media`
+  `cp -r fixtures/media/demo media/demo`
+  `docker exec ideatown_server_1 ./manage.py loaddata fixtures/demo_data.json`
+
 * Syntax & unit tests must pass for Pull Requests to be accepted on GitHub.
 
     * To run server checks:
