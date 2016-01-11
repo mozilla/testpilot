@@ -83,6 +83,9 @@ class ExperimentViewTests(BaseTestCase):
                         "xpi_url": "",
                         "details": [],
                         "contributors": [],
+                        "installation_count": UserInstallation.objects
+                        .distinct('user').filter(experiment=experiment)
+                        .count(),
                         "installations_url":
                             "http://testserver/api/experiments/%s/installations/" %
                             experiment.pk,

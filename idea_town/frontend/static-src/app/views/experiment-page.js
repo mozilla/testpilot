@@ -71,6 +71,10 @@ export default PageView.extend({
       hook: 'version'
     },
 
+    'model.installation_count': {
+      hook: 'install-count'
+    },
+
     'model.contribute_url': [{
       hook: 'contribute-url'
     },
@@ -185,6 +189,8 @@ export default PageView.extend({
     app.on('webChannel:addon-install:install-ended', () => {
       this.model.enabled = !this.model.enabled;
       evt.target.classList.remove('state-change');
+      this.model.set('installation_count', this.model.installation_count + 1);
+      this.model.fetch();
     });
   },
 
@@ -198,7 +204,11 @@ export default PageView.extend({
 
     app.on('webChannel:addon-uninstall:uninstall-ended', () => {
       model.enabled = !model.enabled;
+      if (model.installation_count) {
+        model.set('installation_count', model.installation_count - 1);
+      }
       uninstallButton.classList.remove('state-change');
+      model.fetch();
     });
   },
 
