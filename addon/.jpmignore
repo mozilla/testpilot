@@ -1,6 +1,7 @@
 .*
 *
 !/data/**
+!/lib/**
 !/index.js
 !/install.rdf
 !/bootstrap.js
