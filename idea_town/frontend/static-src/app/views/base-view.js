@@ -34,6 +34,7 @@ export default AmpersandView.extend({
     // HACK: Slap the same data-l10n-args data on every localized node, because
     // the most common case is they all need the same model data.
     const nodes = this.queryAll('[data-l10n-id]');
+
     for (const node of nodes) {
       node.setAttribute('data-l10n-args', argsJSON);
     }

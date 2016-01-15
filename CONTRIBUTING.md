@@ -28,6 +28,13 @@ the Mozilla [wiki][wiki] has instructions.
 
 We use the same process for community members and paid staff.
 
+#### Tests
+Tests should be written for new code contributed.
+* [server tests example](idea_town/experiments/tests.py)
+* [client tests example](idea_town/frontend/static-src/test/)
+
+[Further docs on testing](./TESTING.md).
+
 #### Branches
 
 Fork the project and create one branch per bug on your personal repo.
@@ -69,9 +76,8 @@ Reviewers will run through roughly the following checklist:
 - Are class, function, event, and variable names descriptive? Do they match the existing style?
 - Are boundary cases considered?
 - Are error cases handled?
-
-(Once we have some tests, the reviewer will check that all the tests are passing,
-and that any new tests cover the changed code paths / cases adequately.)
+- All tests and linting pass on travisci?
+- Are there tests for new/changed code?
 
 #### Merging
 
