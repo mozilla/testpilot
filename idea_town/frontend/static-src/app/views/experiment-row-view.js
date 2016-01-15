@@ -1,21 +1,37 @@
 import app from 'ampersand-app';
 
 import BaseView from './base-view';
-import template from '../templates/experiment-row-view';
 
 export default BaseView.extend({
-  _template: template,
+  template: `<li data-hook="show-detail" class="idea-card">
+               <div class="idea-preview-image" data-hook="thumbnail"></div>
+               <h2 data-hook="title"></h2>
+               <p data-hook="description"></p>
+             </li>`,
+
+  bindings: {
+    'model.title': {
+      hook: 'title'
+    },
+    'model.description': {
+      hook: 'description'
+    },
+    'model.thumbnail': {
+      type: function setBgThumb(el, value) {
+        el.setAttribute('style', `background-image: url(${value});`);
+        return el;
+      },
+      hook: 'thumbnail'
+    },
+    'model.enabled': {
+      type: 'booleanClass',
+      hook: 'show-detail',
+      name: 'active'
+    }
+  },
 
   events: {
     'click [data-hook=show-detail]': 'openDetailPage'
-  },
-
-  initialize() {
-    this.model.on('change:enabled', this.renderButton, this);
-    this.title = this.model.title;
-    this.description = this.model.description;
-    this.thumbnail = this.model.thumbnail;
-    this.enabled = this.model.enabled;
   },
 
   openDetailPage(evt) {

@@ -8,8 +8,6 @@ export default BaseView.extend({
       headerScroll: this.headerScroll
     }), '[data-hook="main-header"]');
 
-    this.renderSubview(new FooterView({
-      model: this.model
-    }), '[data-hook="main-footer"]');
+    this.renderSubview(new FooterView(), '[data-hook="main-footer"]');
   }
 });

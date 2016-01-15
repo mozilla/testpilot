@@ -40,7 +40,6 @@ export default BaseView.extend({
   },
 
   initialize(opts) {
-    // this.model = new HeaderModel();
     if (opts.headerScroll) {
       const chunkedUrl = location.pathname.split('/');
       if (chunkedUrl.length < 2) {
