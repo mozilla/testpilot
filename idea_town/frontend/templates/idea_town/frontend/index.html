@@ -4,11 +4,18 @@
     <title>Idea Town</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300">
     <link rel="stylesheet" href="{{ static('styles/main.css') }}">
+
+    <meta name="defaultLanguage" content="en-US">
+    <meta name="availableLanguages" content="en-US">
+    <link rel="localization" href="{{ static('locales/{locale}/app.l20n') }}">
+
 </head>
 <body>
+
   <div data-hook="page-container"></div>
 
   <script src="{{ static('app/app.js') }}"></script>
+  <script src="https://pontoon.mozilla.org/pontoon.js"></script>
 
 </body>
 </html>

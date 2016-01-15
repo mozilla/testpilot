@@ -1,0 +1,68 @@
+<siteName "Idea Town">
+
+<headerSubtitle "The innovative community where new Ideas for Firefox are tested.">
+
+<footerLinkContribute "Contribute">
+<footerLinkCookies "Cookies">
+<footerLinkPrivacy "Privacy">
+<footerLinkLegal "Legal">
+
+<home "Home">
+
+<menuTour "Tour Idea Town">
+<menuWiki "Idea Town Wiki">
+<menuFileIssue "File an Issue">
+<menuLogout "Logout">
+
+<landingWelcome "Welcome to Idea Town">
+<landingIntro "Test new features.<br> Give us feedback.<br> Help build Firefox.">
+<landingFxaGetStartedButton "Get started with your Firefox Account">
+<landingFxaAlternateButton "Don't have an account? Sign up.">
+<landingCtaLegal "By proceeding, you agree to the <a>Terms of Service</a> and <a>Privacy Notice</a> of Idea Town.">
+<landingBetaNotice "We're still building Idea Town! Sign up now and we'll let you know when it's ready to go!">
+<landingBetaSignup "Sign me up!">
+<landingInstallHeader "Install the Idea Town Add-on <br> and you're good to go!">
+<landingInstallButton "Install the Add-on">
+
+<errorHeading "Whoops!">
+<errorMessage "Looks like we broke something. Maybe try again later">
+
+<notFoundHeader "Four Oh Four!">
+
+<signUpThanks "Thanks for signing up!">
+<signUpEmailWhenReady "We'll email you when Idea Town is ready.">
+
+<giveFeedback "Give Feedback">
+
+<disableExperiment "Disable {{title}}">
+<disableExperimentTransition "Disabling...">
+<enableExperiment "Enable {{title}}">
+<enableExperimentTransition "Enabling...">
+
+<feedbackTitle "Tell us what you think">
+<feedbackAnswerBroken "Something seems broken.">
+<feedbackAnswerFeature "Request a feature.">
+<feedbackAnswerCool "This is cool!">
+<feedbackAnswerOther "Something else.">
+
+<feedbackExtraCaption "Do you have any additional feedback?">
+<feedbackExtraTextarea
+    placeholder: "what's on your mind...">
+<feedbackSubmitButton "Submit Feedback">
+<feedbackCancelButton "Cancel">
+
+<feedbackUninstallTitle "Why are you stopping?">
+<feedbackUninstallAnswerBroken "This thing is broken!">
+<feedbackUninstallAnswerDislike "I don't like this feature.">
+<feedbackUninstallAnswerNotUseful "This isn't useful for me.">
+<feedbackUninstallAnswerOther "Something else.">
+
+<measurements "Measurements">
+<measurementsDisclaimer "All data is collected anonymously and used only to help us improve this test.">
+<experimentPrivacyNotice "{{title}} Privacy Notice">
+<contributorsHeading "Brought to you by">
+<detailsHeading "Details">
+<version "Version">
+<changelog "changelog">
+<lastUpdate "Last Update">
+<contribute "Contribute">

@@ -12,10 +12,10 @@ export default BaseView.extend({
 
                <div class="settings-menu no-display">
                  <ul>
-                   <li><a data-hook="launch-tour">Tour Idea Town</a></li>
-                   <li><a href="https://wiki.mozilla.org/Idea-Town" target="_blank">Idea Town Wiki</a></li>
-                   <li><a href="https://github.com/mozilla/idea-town/issues/new" target="_blank">File an Issue</a></li>
-                   <li><a data-hook="logout">Logout</a></li>
+                   <li><a data-l10n-id="menuTour" data-hook="launch-tour">Tour Idea Town</a></li>
+                   <li><a data-l10n-id="menuWiki" href="https://wiki.mozilla.org/Idea-Town" target="_blank">Idea Town Wiki</a></li>
+                   <li><a data-l10n-id="menuFileIssue" href="https://github.com/mozilla/idea-town/issues/new" target="_blank">File an Issue</a></li>
+                   <li><a data-l10n-id="menuLogout" data-hook="logout">Logout</a></li>
                  </ul>
                </div>
              </div>`,

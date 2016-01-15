@@ -4,15 +4,15 @@ export default `
         <div class="wrapper">
           <header>
             <div class="firefox-logo"></div>
-            <h1>Idea Town</h1>
-            <p class="subtitle">The innovative community where new Ideas for Firefox are tested.</p>
+            <h1 data-l10n-id="siteName">Idea Town</h1>
+            <p data-l10n-id="headerSubtitle" class="subtitle">The innovative community where new Ideas for Firefox are tested.</p>
           </header>
           <div class="town-background"></div>
           <div data-hook="settings"></div>
         </div>
       </div>
       <div data-hook="inactive-user" id="tabzilla">
-        <a href="https://www.mozilla.org/">Mozilla</a>
+        <a data-l10n-id="mozilla" href="https://www.mozilla.org/">Mozilla</a>
       </div>
   </section>
 `;
