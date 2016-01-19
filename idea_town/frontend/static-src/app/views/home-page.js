@@ -2,11 +2,16 @@ import app from 'ampersand-app';
 import ExperimentRowView from './experiment-row-view';
 
 import PageView from './page-view';
-import template from '../templates/home-page';
 
 export default PageView.extend({
-  _template: template,
   pageTitle: 'Home',
+  template: `<div class="page" >
+               <section data-hook="home-page">
+                 <header data-hook="main-header"></header>
+                 <ul id="idea-card-list" class="experiments"></ul>
+               </section>
+               <div data-hook="main-footer" class="vertical-flex-container"></div>
+             </div>`,
 
   render() {
     // TODO: this is not awesome

@@ -1,6 +1,4 @@
 import AmpersandView from 'ampersand-view';
-import flatten from 'lodash.flatten';
-import invoke from 'lodash.invoke';
 import mustache from 'mustache';
 // BaseView just abstracts out stuff we seem to use in all the views
 
@@ -20,12 +18,5 @@ export default AmpersandView.extend({
 
   // implement in subclasses
   beforeRender() {},
-  afterRender() {},
-
-  removeSubviews() {
-    if (this._subviews) {
-      invoke(flatten(this._subviews), 'remove');
-    }
-  }
-
+  afterRender() {}
 });
