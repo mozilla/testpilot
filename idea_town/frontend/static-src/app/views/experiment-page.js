@@ -7,6 +7,7 @@ import DetailView from './detail-view';
 import ContributorView from './contributor-view';
 import template from '../templates/experiment-page';
 import FeedbackView from './feedback-view';
+
 const changeHeaderOn = 120;
 
 const CollectionExtended = Collection.extend({
@@ -214,16 +215,15 @@ export default PageView.extend({
 
   renderUninstallSurvey(evt) {
     evt.preventDefault();
-    // TODO: Hardcoded survey, for now. Populate via API later?
     this.renderSubview(new FeedbackView({
       id: 'disabled-feedback',
       experiment: this.model.url,
-      title: 'Why are you stopping?',
+      title: 'feedbackUninstallTitle',
       questions: [
-        { value: 'broken', title: 'This thing is broken!' },
-        { value: 'dislike', title: 'I don\'t like this feature.' },
-        { value: 'notuseful', title: 'This isn\'t useful for me.' },
-        { value: 'other', title: 'Something else.' }
+        { value: 'broken', title: 'feedbackUninstallAnswerBroken' },
+        { value: 'dislike', title: 'feedbackUninstallAnswerDislike' },
+        { value: 'notuseful', title: 'feedbackUninstallAnswerNotUseful' },
+        { value: 'other', title: 'feedbackUninstallAnswerOther' }
       ],
       onSubmit: () => {
         this.uninstall(this.updateAddon, this.model);
@@ -245,16 +245,15 @@ export default PageView.extend({
 
   feedback(evt) {
     evt.preventDefault();
-    // TODO: Hardcoded survey, for now. Populate via API later?
     this.renderSubview(new FeedbackView({
       id: 'enabled-feedback',
       experiment: this.model.url,
-      title: 'Tell us what you think',
+      title: 'feedbackTitle',
       questions: [
-        { value: 'broken', title: 'Something seems broken.' },
-        { value: 'feature', title: 'Request a feature.' },
-        { value: 'cool', title: 'This is cool!' },
-        { value: 'other', title: 'Something else.' }
+        { value: 'broken', title: 'feedbackAnswerBroken' },
+        { value: 'feature', title: 'feedbackAnswerFeature' },
+        { value: 'cool', title: 'feedbackAnswerCool' },
+        { value: 'other', title: 'feedbackAnswerOther' }
       ]
     }), 'body');
   }

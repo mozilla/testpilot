@@ -6,7 +6,7 @@ export default BaseView.extend({
   _template: `
     <div id="modal-screen" class="dark">
       <div id="{{id}}-modal" class="feedback-modal">
-        <h3 class="title">{{title}}</h3>
+        <h3 class="title" data-l10n-id="{{title}}"></h3>
         <section class="main">
           <ul class="questions">
             {{#questions}}
@@ -16,17 +16,19 @@ export default BaseView.extend({
                 id="{{id}}-question-{{value}}"
                 value="{{value}}">
               <label data-hook="title"
-                for="{{id}}-question-{{value}}">{{title}}</label>
+                for="{{id}}-question-{{value}}"
+                data-l10n-id="{{title}}"></label>
             </li>
             {{/questions}}
           </ul>
           <section class="extra">
-            <p>Do you have any additional feedback?</p>
-            <textarea placeholder="what's on your mind..."></textarea>
+            <p data-l10n-id="feedbackExtraCaption">Do you have any additional feedback?</p>
+            <textarea data-l10n-id="feedbackExtraTextarea"
+              placeholder="what's on your mind..."></textarea>
           </section>
           <section class="controls">
-            <button class="submit button primary">Submit Feedback</button>
-            <a class="cancel" href="">Cancel</a>
+            <button data-l10n-id="feedbackSubmitButton" class="submit button primary">Submit Feedback</button>
+            <a data-l10n-id="feedbackCancelButton" class="cancel" href="">Cancel</a>
           </section>
         </section>
       </div>

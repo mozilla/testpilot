@@ -14,6 +14,29 @@ export default AmpersandView.extend({
     this.beforeRender();
     AmpersandView.prototype.render.apply(this, arguments);
     this.afterRender();
+
+    this.localizeRendered();
+    if (this.model) {
+      this.model.on('change', () => this.localizeRendered);
+    }
+  },
+
+  getL10nArgs() {
+    // Most common case for l10n args comes from the current model - e.g. on
+    // experiment detail page.
+    return this.model ? this.model.toJSON() : {};
+  },
+
+  localizeRendered() {
+    const args = this.getL10nArgs();
+    const argsJSON = JSON.stringify(args);
+
+    // HACK: Slap the same data-l10n-args data on every localized node, because
+    // the most common case is they all need the same model data.
+    const nodes = this.el.querySelectorAll('[data-l10n-id]');
+    for (const node of nodes) {
+      node.setAttribute('data-l10n-args', argsJSON);
+    }
   },
 
   // implement in subclasses

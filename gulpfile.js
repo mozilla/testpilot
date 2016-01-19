@@ -130,6 +130,11 @@ gulp.task('images', function imagesTask() {
     .pipe(gulp.dest(DEST_PATH + 'images'));
 });
 
+gulp.task('locales', function localesTask() {
+  return gulp.src('./locales/**/*')
+    .pipe(gulp.dest(DEST_PATH + 'locales'));
+});
+
 gulp.task('build', function buildTask(done) {
   runSequence(
     'clean',
@@ -137,6 +142,7 @@ gulp.task('build', function buildTask(done) {
     'scripts',
     'styles',
     'images',
+    'locales',
     done
   );
 });
@@ -145,6 +151,7 @@ gulp.task('watch', ['build'], function watchTask() {
   gulp.watch(SRC_PATH + 'styles/**/*', ['styles']);
   gulp.watch(SRC_PATH + 'images/**/*', ['images']);
   gulp.watch(SRC_PATH + 'app/**/*.js', ['scripts']);
+  gulp.watch('./locales/**/*', ['locales']);
 });
 
 // Set up a webserver for the static assets
