@@ -29,7 +29,7 @@ function pingServer(config, title, data, addon) {
         url: config.BASE_URL + '/api/metrics/?format=json',
         content: JSON.stringify(formatEvent(config.IDEATOWN_PREFIX, title, id, data, addon)),
         headers: headers,
-        onComplete: function(resp) {
+        onComplete: function(resp) { // eslint-disable-line no-unused-vars
           // console.error(resp);
         }
       }).post();

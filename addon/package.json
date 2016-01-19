@@ -17,9 +17,6 @@
     "package": "jpm xpi && mv @idea-town-addon-$npm_package_version.xpi dist/idea-town-addon-$npm_package_version.xpi"
   },
   "license": "MPL-2.0",
-  "dependencies": {
-    "idea-town": "^0.3.1"
-  },
   "devDependencies": {
     "babel-eslint": "^4.1.0",
     "eslint": "^1.2.1",
