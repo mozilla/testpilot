@@ -111,5 +111,3 @@ know-how:
 
   * [`addon/README.md`](./addon/README.md) - for more details on the addon this
     site uses to enable advanced features.
-
-  * [`addon-api/README.md`](./addon-api/README.md) - for details of the npm package.

@@ -4,7 +4,11 @@
   "version": "0.3.2",
   "private": true,
   "description": "The addon where ideas come to idea",
-  "repository": "mozilla/idea-town-addon",
+  "repository": "mozilla/idea-town",
+  "homepage": "https://github.com/mozilla/idea-town/tree/master/addon",
+  "bugs": {
+    "url": "https://github.com/mozilla/idea-town/issues"
+  },
   "main": "index.js",
   "author": "Mozilla (https://mozilla.org/)",
   "engines": {
