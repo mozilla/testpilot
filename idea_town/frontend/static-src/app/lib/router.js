@@ -11,6 +11,7 @@ export default Router.extend({
     '(/)': 'landing',
     'home(/)': 'home',
     'experiments/:experiment(/)': 'experimentDetail',
+    'experiments(/)': 'experiments',
     'accounts/inactive(/)': 'accountInactive',
     '404': 'notFound',
     'error': 'error',
@@ -19,17 +20,17 @@ export default Router.extend({
 
   landing() {
     if (app.me.user.id && app.me.hasAddon) {
-      this.redirectTo('home');
+      this.redirectTo('experiments');
     } else {
       app.trigger('router:new-page', {page: 'landing'});
     }
   },
 
-  home() {
+  experiments() {
     if (!app.me.user.id || !app.me.hasAddon) {
       this.redirectTo('');
     } else {
-      app.trigger('router:new-page', {page: 'home'});
+      app.trigger('router:new-page', {page: 'experiments'});
     }
   },
 
@@ -49,6 +50,10 @@ export default Router.extend({
         this.redirectTo('404');
       }
     }
+  },
+
+  home() {
+    this.redirectTo('experiments');
   },
 
   accountInactive() {
