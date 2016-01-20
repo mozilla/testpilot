@@ -205,6 +205,7 @@ Router.prototype.on = function(name, f) {
 };
 
 Router.prototype.send = function(name, data, addon) {
+  this.mod.port.emit('from-addon-to-web', {type: name, data: data});
   if (addon) {
     data.tags = ['main-addon'];
     const packet = JSON.stringify({
@@ -212,9 +213,8 @@ Router.prototype.send = function(name, data, addon) {
       value: data,
       addonName: addon
     });
-    Services.obs.notifyObserver(null, EVENT_SEND_METRIC, packet);
+    Services.obs.notifyObservers(null, EVENT_SEND_METRIC, packet);
   }
-  this.mod.port.emit('from-addon-to-web', {type: name, data: data});
   return this;
 };
 
@@ -261,7 +261,9 @@ function syncAllAddonInstallations(serverInstalled) {
 
 function uninstallExperiment(experiment) {
   if (isIdeatownAddonID(experiment.addon_id)) {
-    AddonManager.getAddonByID(experiment.addon_id, a => a.uninstall());
+    AddonManager.getAddonByID(experiment.addon_id, a => {
+      if (a) { a.uninstall(); }
+    });
   }
 }
 
@@ -350,21 +352,7 @@ function generateUUID() {
   });
 }
 
-require('sdk/system/unload').when(function(reason) {
-  metrics.destroy();
-  if (reason === 'uninstall') {
-    app.send('addon-self:uninstalled');
-    if (store.installedAddons) {
-      for (let id of store.installedAddons) { // eslint-disable-line prefer-const
-        uninstallExperiment({addon_id: id});
-      }
-      delete store.installedAddons;
-    }
-    delete store.availableExperiments;
-  }
-});
-
-AddonManager.addAddonListener({
+const addonListener = {
   onUninstalling: function(addon) {
     if (isIdeatownAddonID(addon.id)) {
       app.send('addon-uninstall:uninstall-started', {
@@ -388,9 +376,10 @@ AddonManager.addAddonListener({
       }
     }
   }
-});
+};
+AddonManager.addAddonListener(addonListener);
 
-AddonManager.addInstallListener({
+const installListener = {
   onInstallEnded: function(install, addon) {
     if (!isIdeatownAddonID(addon.id)) { return; }
     store.installedAddons[addon.id] = addon;
@@ -425,5 +414,22 @@ AddonManager.addInstallListener({
   },
   onDownloadFailed: function(install) {
     app.send('addon-install:download-failed', formatInstallData(install));
+  }
+};
+AddonManager.addInstallListener(installListener);
+
+require('sdk/system/unload').when(function(reason) {
+  AddonManager.removeAddonListener(addonListener);
+  AddonManager.removeInstallListener(installListener);
+  metrics.destroy();
+  if (reason === 'uninstall') {
+    app.send('addon-self:uninstalled');
+    if (store.installedAddons) {
+      for (let id of store.installedAddons) { // eslint-disable-line prefer-const
+        uninstallExperiment({addon_id: id});
+      }
+      delete store.installedAddons;
+    }
+    delete store.availableExperiments;
   }
 });

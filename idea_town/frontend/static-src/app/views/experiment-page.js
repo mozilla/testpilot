@@ -186,32 +186,32 @@ export default PageView.extend({
     evt.target.style.width = width + 'px';
     evt.target.classList.add('state-change');
 
-    this.updateAddon(true, this.model);
-
-    app.on('webChannel:addon-install:install-ended', () => {
-      this.model.enabled = !this.model.enabled;
+    // TODO: Should this maybe be an event listener at a global level?
+    app.once('webChannel:addon-install:install-ended', () => {
+      this.model.enabled = true;
       evt.target.classList.remove('state-change');
       this.model.set('installation_count', this.model.installation_count + 1);
       this.model.fetch();
     });
+    this.updateAddon(true, this.model);
   },
 
-  uninstall(cb, model) {
-    const uninstallButton = document.getElementById('uninstall-button');
-    const width = uninstallButton.offsetWidth;
-    uninstallButton.style.width = width + 'px';
-    uninstallButton.classList.add('state-change');
+  uninstall(evt) {
+    evt.preventDefault();
+    const width = evt.target.offsetWidth;
+    evt.target.style.width = width + 'px';
+    evt.target.classList.add('state-change');
 
-    cb(false, model);
-
-    app.on('webChannel:addon-uninstall:uninstall-ended', () => {
-      model.enabled = !model.enabled;
-      if (model.installation_count) {
-        model.set('installation_count', model.installation_count - 1);
+    // TODO: Should this maybe be an event listener at a global level?
+    app.once('webChannel:addon-uninstall:uninstall-ended', () => {
+      this.model.enabled = false;
+      evt.target.classList.remove('state-change');
+      if (this.model.installation_count > 0) {
+        this.model.set('installation_count', this.model.installation_count - 1);
       }
-      uninstallButton.classList.remove('state-change');
-      model.fetch();
+      this.model.fetch();
     });
+    this.updateAddon(false, this.model);
   },
 
   renderUninstallSurvey(evt) {
@@ -226,9 +226,7 @@ export default PageView.extend({
         { value: 'notuseful', title: 'feedbackUninstallAnswerNotUseful' },
         { value: 'other', title: 'feedbackUninstallAnswerOther' }
       ],
-      onSubmit: () => {
-        this.uninstall(this.updateAddon, this.model);
-      }
+      onSubmit: () => this.uninstall(evt)
     }), 'body');
   },
 
