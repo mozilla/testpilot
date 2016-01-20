@@ -11,14 +11,14 @@ export default `
         <div id="cta-layout-wrapper">
           <div class="cta-layout">
             <button data-l10n-id="landingFxaGetStartedButton" data-hook='show-beta-notice' class="button large dark">Get started with your Firefox Account</button>
-            <a data-l10n-id="landingFxaAlternateButton" data-hook='show-beta-notice' href="/accounts/login/?next=/home" class="fxa-alternate">Don't have an account? Sign up.</a>
+            <a data-l10n-id="landingFxaAlternateButton" data-hook='show-beta-notice' href="/accounts/login/?next=/" class="fxa-alternate">Don't have an account? Sign up.</a>
             <p data-l10n-id="landingCtaLegal" class="cta-legal">By proceeding, you agree to the <a href="https://www.mozilla.org/about/legal/terms/services/">Terms of Service</a> and <a href="https://www.mozilla.org/privacy/firefox-cloud/">Privacy Notice</a> of Idea Town.</p>
           </div>
           <div class="town">
             <div id="beta-notice-modal" class="hidden">
               <span data-l10n-id="landingBetaNotice">We're still building Idea Town! Sign up now and we'll let you know when it's ready to go!</span>
               <div class="modal-controls">
-                <a data-l10n-id="landingBetaSignup" href="/accounts/login/?next=/home" class="button primary">Sign me up!</a>
+                <a data-l10n-id="landingBetaSignup" href="/accounts/login/?next=/" class="button primary">Sign me up!</a>
               </div>
             </div>
             <div id="copter" class="copter hover"></div>
