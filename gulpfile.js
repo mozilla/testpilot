@@ -23,8 +23,7 @@ const through = require('through2');
 const tabzilla = require('mozilla-tabzilla');
 const uglify = require('gulp-uglify');
 
-// TODO: ENV VAR to check prod/dev?
-const IS_DEBUG = true;
+const IS_DEBUG = (process.env.NODE_ENV === 'development');
 
 const SRC_PATH = './idea_town/frontend/static-src/';
 const DEST_PATH = './idea_town/frontend/static/';
@@ -77,11 +76,11 @@ gulp.task('scripts', ['lint'], function scriptsTask() {
   bundledStream
     .pipe(source('app.js'))
     .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(gulpif(IS_DEBUG, sourcemaps.init({loadMaps: true})))
      // don't uglify in development. eases build chain debugging
     .pipe(gulpif(!IS_DEBUG, uglify()))
     .on('error', gutil.log)
-    .pipe(sourcemaps.write('./'))
+    .pipe(gulpif(IS_DEBUG, sourcemaps.write('./')))
     .pipe(gulp.dest(DEST_PATH + 'app/'));
 
   // this part runs first, then pipes to bundledStream
@@ -89,6 +88,7 @@ gulp.task('scripts', ['lint'], function scriptsTask() {
     const b = browserify({
       entries: entries,
       debug: IS_DEBUG,
+      fullPaths: IS_DEBUG,
       transform: [babelify]
     });
     b.bundle()
