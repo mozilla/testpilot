@@ -11,6 +11,27 @@ const settings = {};
 let currentPageMod;
 let app;
 
+const store = require('sdk/simple-storage').storage;
+const {Cc, Ci, Cu} = require('chrome');
+Cu.import('resource://gre/modules/Services.jsm');
+const self = require('sdk/self');
+const tabs = require('sdk/tabs');
+const {PageMod} = require('sdk/page-mod');
+const {ActionButton} = require('sdk/ui/button/action');
+const request = require('sdk/request').Request;
+const AddonManager = Cu.import('resource://gre/modules/AddonManager.jsm').AddonManager;
+const Prefs = Cu.import('resource://gre/modules/Preferences.jsm').Preferences;
+const simplePrefs = require('sdk/simple-prefs');
+const URL = require('sdk/url').URL;
+const cookieManager2 = Cc['@mozilla.org/cookiemanager;1']
+                       .getService(Ci.nsICookieManager2);
+const pingServer = require('./lib/ping-server');
+
+// Generate a UUID for this client, if we don't have one yet.
+if (!store.clientUUID) {
+  store.clientUUID = generateUUID();
+}
+
 // Canned selectable server environment configs
 const SERVER_ENVIRONMENTS = {
   local: {
@@ -35,22 +56,6 @@ const SERVER_ENVIRONMENTS = {
   }
 };
 
-const store = require('sdk/simple-storage').storage;
-const {Cc, Ci, Cu} = require('chrome');
-Cu.import('resource://gre/modules/Services.jsm');
-const self = require('sdk/self');
-const tabs = require('sdk/tabs');
-const {PageMod} = require('sdk/page-mod');
-const {ActionButton} = require('sdk/ui/button/action');
-const request = require('sdk/request').Request;
-const AddonManager = Cu.import('resource://gre/modules/AddonManager.jsm').AddonManager;
-const Prefs = Cu.import('resource://gre/modules/Preferences.jsm').Preferences;
-const simplePrefs = require('sdk/simple-prefs');
-const URL = require('sdk/url').URL;
-const cookieManager2 = Cc['@mozilla.org/cookiemanager;1']
-                       .getService(Ci.nsICookieManager2);
-const pingServer = require('./lib/ping-server');
-
 function updatePrefs() {
   // Select the environment, with production as a default.
   const envName = simplePrefs.prefs.SERVER_ENVIRONMENT;
@@ -73,6 +78,68 @@ function updatePrefs() {
     contentScriptWhen: 'start',
     attachTo: ['top', 'existing'],
     onAttach: setupApp
+  });
+}
+
+// Register handler to reconfigure on pref change, kick off initial
+// prefs-dependent setup
+simplePrefs.on('SERVER_ENVIRONMENT', updatePrefs);
+updatePrefs();
+
+function setupApp() {
+  updateExperiments().then(() => {
+    app = new Router(currentPageMod);
+
+    app.on('install-experiment', installExperiment);
+
+    app.on('uninstall-experiment', uninstallExperiment);
+
+    app.on('uninstall-all', function() {
+      for (let id of store.installedAddons) { // eslint-disable-line prefer-const
+        uninstallExperiment({addon_id: id});
+      }
+    });
+
+    app.on('sync-installed', serverInstalled => {
+      syncAllAddonInstallations(serverInstalled).then(() => {
+        app.send('sync-installed-result', {
+          clientUUID: store.clientUUID,
+          installed: store.installedAddons
+        });
+      });
+    });
+
+    if (self.loadReason === 'install') {
+      app.send('addon-self:installed');
+    } else if (self.loadReason === 'enable') {
+      app.send('addon-self:enabled');
+    } else if (self.loadReason === 'upgrade') {
+      app.send('addon-self:upgraded');
+    }
+  });
+}
+
+// update the our icon for devtools themes
+Prefs.observe('devtools.theme', pref => {
+  setActionButton(pref === 'dark');
+});
+
+setActionButton(Prefs.get('devtools.theme') === 'dark');
+
+function setActionButton(dark) {
+  const iconPrefix = dark ? './icon-inverted' : './icon';
+
+  ActionButton({ // eslint-disable-line new-cap
+    id: 'idea-town-link',
+    label: 'Idea Town',
+    icon: {
+      '16': iconPrefix + '-16.png',
+      '32': iconPrefix + '-32.png',
+      '64': iconPrefix + '-64.png'
+    },
+    onClick: function() {
+      tabs.open({ url: settings.BASE_URL });
+    }
   });
 }
 
@@ -124,71 +191,6 @@ const metrics = {
   }
 };
 metrics.init();
-
-// Register handler to reconfigure on pref change, kick off initial setup
-simplePrefs.on('SERVER_ENVIRONMENT', updatePrefs);
-updatePrefs();
-
-// update the our icon for devtools themes
-Prefs.observe('devtools.theme', pref => {
-  setActionButton(pref === 'dark');
-});
-
-setActionButton(Prefs.get('devtools.theme') === 'dark');
-
-if (!store.clientUUID) {
-  store.clientUUID = generateUUID();
-}
-
-function setActionButton(dark) {
-  const iconPrefix = dark ? './icon-inverted' : './icon';
-
-  ActionButton({ // eslint-disable-line new-cap
-    id: 'idea-town-link',
-    label: 'Idea Town',
-    icon: {
-      '16': iconPrefix + '-16.png',
-      '32': iconPrefix + '-32.png',
-      '64': iconPrefix + '-64.png'
-    },
-    onClick: function() {
-      tabs.open({ url: settings.BASE_URL });
-    }
-  });
-}
-
-function setupApp() {
-  updateExperiments().then(() => {
-    app = new Router(currentPageMod);
-
-    app.on('install-experiment', installExperiment);
-
-    app.on('uninstall-experiment', uninstallExperiment);
-
-    app.on('uninstall-all', function() {
-      for (let id of store.installedAddons) { // eslint-disable-line prefer-const
-        uninstallExperiment({addon_id: id});
-      }
-    });
-
-    app.on('sync-installed', serverInstalled => {
-      syncAllAddonInstallations(serverInstalled).then(() => {
-        app.send('sync-installed-result', {
-          clientUUID: store.clientUUID,
-          installed: store.installedAddons
-        });
-      });
-    });
-
-    if (self.loadReason === 'install') {
-      app.send('addon-self:installed');
-    } else if (self.loadReason === 'enable') {
-      app.send('addon-self:enabled');
-    } else if (self.loadReason === 'upgrade') {
-      app.send('addon-self:upgraded');
-    }
-  });
-}
 
 function Router(mod) {
   this.mod = mod;
