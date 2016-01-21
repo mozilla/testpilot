@@ -92,7 +92,7 @@
 }
 
 .idea-preview-image {
-  background-size: 172px 172px; 
+  background-size: 172px 172px;
   border-radius: 50%;
   flex: 0 0 172px;
   height: 172px;
@@ -106,7 +106,7 @@
     box-shadow: 0 0 0 3px $white, 0 0 0 6px $primary;
   }
 
-  &:before {
+  .hover-state {
     @include outline-text;
     background: transparency($white, .6);
     border-radius: 50%;
@@ -126,9 +126,15 @@
     z-index: 1;
   }
 
-  .active &:before {
-    content: 'View Details';
-  }
+  .hover-state.show-when-active { display: none; }
+
+  .hover-state.show-when-inactive { display: block; }
+
+  .active & .hover-state.show-when-active { display: block; }
+
+  .active & .hover-state.show-when-inactive { display: none; }
+
+  .idea-card:hover & .hover-state { opacity: 1; }
 
   .active &:after {
     @include hidpi-background-image('check', 36px 27px);
@@ -144,11 +150,6 @@
     top: 0;
     width: 56px;
     z-index: 2;
-  }
-
-  .idea-card:hover &:before,
-  .idea-card:active &:before {
-    opacity: 1;
   }
 }
 

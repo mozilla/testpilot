@@ -4,7 +4,12 @@ import BaseView from './base-view';
 
 export default BaseView.extend({
   template: `<li data-hook="show-detail" class="idea-card">
-               <div class="idea-preview-image" data-hook="thumbnail"></div>
+               <div class="idea-preview-image" data-hook="thumbnail">
+                 <div data-l10n-id="experimentListInactiveHover"
+                      class="hover-state show-when-inactive">Get Started</div>
+                 <div data-l10n-id="experimentListActiveHover"
+                      class="hover-state show-when-active">View Details</div>
+               </div>
                <h2 data-hook="title"></h2>
                <p data-hook="description"></p>
              </li>`,
