@@ -29,8 +29,12 @@ export default class PageManager {
 
     this._viewSwitcher = new AmpersandViewSwitcher(opts.pageContainer, {
       show: (view) => {
-        document.title = 'Idea Town - ' + view.pageTitle || 'Idea Town';
+        document.title = view.pageTitle;
         document.body.scrollTop = 0;
+        const title = document.querySelector('head title');
+        const args = JSON.stringify(view.getL10nArgs());
+        title.setAttribute('data-l10n-args', args);
+        title.setAttribute('data-l10n-id', view.pageTitleL10nID);
       }
     });
 

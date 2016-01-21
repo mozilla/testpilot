@@ -1,5 +1,10 @@
 <siteName "Idea Town">
 
+<pageTitleDefault "Test Pilot">
+<pageTitleLandingPage "Test Pilot - Help build Firefox">
+<pageTitleExperimentListPage "Test Pilot - Experiments">
+<pageTitleExperiment "Test Pilot - {{title}}">
+
 <headerSubtitle "The innovative community where new Ideas for Firefox are tested.">
 
 <footerLinkContribute "Contribute">

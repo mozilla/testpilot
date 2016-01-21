@@ -4,7 +4,8 @@ import ExperimentRowView from './experiment-row-view';
 import PageView from './page-view';
 
 export default PageView.extend({
-  pageTitle: 'Experiments',
+  pageTitle: 'Idea Town - Experiments',
+  pageTitleL10nID: 'pageTitleExperimentListPage',
   template: `<div class="page" >
                <section data-hook="experiment-list-page">
                  <header data-hook="main-header"></header>
