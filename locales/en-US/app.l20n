@@ -37,6 +37,9 @@
 <signUpThanks "Thanks for signing up!">
 <signUpEmailWhenReady "We'll email you when Idea Town is ready.">
 
+<experimentListInactiveHover "Get Started">
+<experimentListActiveHover "View Details">
+
 <giveFeedback "Give Feedback">
 
 <disableExperiment "Disable {{title}}">
