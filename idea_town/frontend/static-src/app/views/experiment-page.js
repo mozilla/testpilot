@@ -135,7 +135,8 @@ export default PageView.extend({
       }
     }.bind(this));
 
-    this.pageTitle = this.model.title;
+    this.pageTitle = 'Idea Town - ' + this.model.title;
+    this.pageTitleL10nID = 'pageTitleExperiment';
   },
 
   render() {

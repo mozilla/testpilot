@@ -6,7 +6,8 @@ import template from '../templates/landing-page';
 export default PageView.extend({
   _template: template,
 
-  pageTitle: 'Help build Firefox',
+  pageTitle: 'Idea Town - Help build Firefox',
+  pageTitleL10nID: 'pageTitleLandingPage',
 
   events: {
     'click [data-hook=show-beta-notice]': '_showBetaNotice'
