@@ -15,8 +15,11 @@ export default BaseView.extend({
              </li>`,
 
   bindings: {
-    'model.title': {
-      hook: 'title'
+    'model': {
+      hook: 'title',
+      type: function shortTitleWithFallback(el, model) {
+        el.innerHTML = model.short_title || model.title;
+      }
     },
     'model.description': {
       hook: 'description'

@@ -13,7 +13,7 @@ class ExperimentAdmin(admin.ModelAdmin):
 
     list_display = ('id',
                     show_image('thumbnail'),
-                    'title', 'version', 'addon_id',
+                    'title', 'short_title', 'version', 'addon_id',
                     related_changelist_link('details'),
                     related_changelist_link('users'),
                     related_changelist_link('feedbacks'),

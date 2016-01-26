@@ -31,7 +31,8 @@ class ExperimentSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Experiment
-        fields = ('id', 'url', 'title', 'slug', 'thumbnail', 'description',
+        fields = ('id', 'url', 'title', 'short_title', 'slug',
+                  'thumbnail', 'description',
                   'version', 'changelog_url', 'contribute_url',
                   'privacy_notice_url', 'measurements',
                   'xpi_url', 'addon_id', 'details', 'contributors',
