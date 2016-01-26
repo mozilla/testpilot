@@ -1,7 +1,7 @@
 {
   "title": "Idea Town Addon",
   "name": "idea-town-addon",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "private": true,
   "description": "The addon where ideas come to idea",
   "repository": "mozilla/idea-town",
