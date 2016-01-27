@@ -39,7 +39,8 @@ class BaseTestCase(TestCase):
         self.experiments = dict((obj.slug, obj) for (obj, created) in (
             Experiment.objects.get_or_create(
                 slug="test-%s" % idx, defaults=dict(
-                    title="Test %s" % idx,
+                    title="Longer Test Title %s" % idx,
+                    short_title="Test %s" % idx,
                     description="This is a test",
                     addon_id="addon-%s@example.com" % idx
                 )) for idx in range(1, 4)))
@@ -65,6 +66,7 @@ class ExperimentViewTests(BaseTestCase):
                         "url": "http://testserver/api/experiments/%s" %
                                experiment.pk,
                         "title": experiment.title,
+                        "short_title": experiment.short_title,
                         "order": experiment.order,
                         "slug": experiment.slug,
                         "thumbnail": None,

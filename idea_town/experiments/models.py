@@ -24,6 +24,7 @@ class Experiment(models.Model):
         ordering = ['order']
 
     title = models.CharField(max_length=128)
+    short_title = models.CharField(max_length=60, blank=True, default='')
     slug = models.SlugField(max_length=128, unique=True, db_index=True)
     thumbnail = models.ImageField(upload_to=experiment_thumbnail_upload_to)
     description = models.TextField()
