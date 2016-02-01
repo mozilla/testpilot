@@ -32,6 +32,10 @@ know-how:
 
 [docker-docs]: https://docs.docker.com/
 
+By default `js-lint` and `sass-lint` watch options are set to true. If you would like
+to override these, you can do so in [debug-config.json](./debug-config.json).
+if you'd like to run linters on `pre-commit` you can use this [pre-commit-hook](https://gist.github.com/meandavejustice/39f7edc046f3458aa076).
+
 #### OS X hosts
 
 1. [Install Docker Toolbox](http://docs.docker.com/mac/started/)
