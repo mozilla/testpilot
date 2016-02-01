@@ -4,6 +4,9 @@ from django.utils.functional import cached_property
 
 from markupfield.fields import MarkupField
 
+from hvad.models import TranslatableModel, TranslatedFields
+from hvad.manager import TranslationManager
+
 from ..utils import HashedUploadTo
 
 
@@ -11,25 +14,28 @@ experiment_thumbnail_upload_to = HashedUploadTo('thumbnail')
 experimentdetail_image_upload_to = HashedUploadTo('image')
 
 
-class ExperimentManager(models.Manager):
+class ExperimentManager(TranslationManager):
 
     def get_by_natural_key(self, slug):
         return self.get(slug=slug)
 
 
-class Experiment(models.Model):
+class Experiment(TranslatableModel):
     objects = ExperimentManager()
 
     class Meta:
         ordering = ['order']
 
-    title = models.CharField(max_length=128)
-    short_title = models.CharField(max_length=60, blank=True, default='')
+    translations = TranslatedFields(
+        title=models.CharField(max_length=128),
+        short_title=models.CharField(max_length=60, blank=True, default=''),
+        description=models.TextField(),
+        measurements=MarkupField(blank=True, default='',
+                                 default_markup_type='plain'),
+    )
+
     slug = models.SlugField(max_length=128, unique=True, db_index=True)
     thumbnail = models.ImageField(upload_to=experiment_thumbnail_upload_to)
-    description = models.TextField()
-    measurements = MarkupField(blank=True, default='',
-                               default_markup_type='plain')
     xpi_url = models.URLField()
     version = models.CharField(blank=True, max_length=128)
     order = models.IntegerField(default=0)
@@ -56,34 +62,24 @@ class Experiment(models.Model):
         return (self.slug,)
 
 
-class ExperimentDetailManager(models.Manager):
-
-    def get_by_natural_key(self, experiment_slug, headline):
-        experiment = Experiment.objects.get_by_natural_key(experiment_slug)
-        return self.get(experiment=experiment, headline=headline)
-
-
-class ExperimentDetail(models.Model):
-    objects = ExperimentDetailManager()
-
+class ExperimentDetail(TranslatableModel):
     experiment = models.ForeignKey('Experiment', related_name='details',
                                    db_index=True)
 
     order = models.IntegerField(default=0)
-    headline = models.CharField(max_length=256)
+
+    translations = TranslatedFields(
+        headline=models.CharField(max_length=256),
+        copy=models.TextField()
+    )
+
     image = models.ImageField(upload_to=experimentdetail_image_upload_to)
-    copy = models.TextField()
 
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ('experiment', 'order', 'modified',)
-
-    def natural_key(self):
-        return self.experiment.natural_key() + (self.headline,)
-
-    natural_key.dependencies = ['experiments.experiment']
 
 
 class UserInstallation(models.Model):

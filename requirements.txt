@@ -153,3 +153,9 @@ django-storages-redux==1.3
 
 # sha256: Wce1-qdV928OJHIHUNTPCheKWQoZ-NhRLTW7Pmtbhkc
 django-markupfield==1.3.5
+
+# sha256: mqltx0gWvpK1MlIcAI5NrBZ6M9uxOda_KyoURvebZDM
+django-hvad==1.4.0
+
+# sha256: M63XBGg6XX-f9JwD5ApNjFAIglia7pcNXtga0Rx651w
+django-mozilla-product-details==0.10.0
