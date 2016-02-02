@@ -9,15 +9,16 @@
 const settings = {};
 
 let currentPageMod;
+let button;
 let app;
 
 const store = require('sdk/simple-storage').storage;
 const {Cc, Ci, Cu} = require('chrome');
 Cu.import('resource://gre/modules/Services.jsm');
 const self = require('sdk/self');
-const tabs = require('sdk/tabs');
+const {Panel} = require('sdk/panel');
 const {PageMod} = require('sdk/page-mod');
-const {ActionButton} = require('sdk/ui/button/action');
+const {ToggleButton} = require('sdk/ui/button/toggle');
 const request = require('sdk/request').Request;
 const AddonManager = Cu.import('resource://gre/modules/AddonManager.jsm').AddonManager;
 const Prefs = Cu.import('resource://gre/modules/Preferences.jsm').Preferences;
@@ -25,7 +26,19 @@ const simplePrefs = require('sdk/simple-prefs');
 const URL = require('sdk/url').URL;
 const cookieManager2 = Cc['@mozilla.org/cookiemanager;1']
                        .getService(Ci.nsICookieManager2);
-const pingServer = require('./lib/ping-server');
+const authRequest = require('./lib/auth-request');
+const Mustache = require('mustache');
+
+const templates = require('./lib/templates');
+Mustache.parse(templates.feedback);
+Mustache.parse(templates.experimentList);
+
+const PANEL_WIDTH = 400;
+const EXPERIMENT_HEIGHT = 95;
+const FOOTER_HEIGHT = 60;
+const PANEL_HEIGHT = (Object.keys(store.availableExperiments).length
+  * EXPERIMENT_HEIGHT)
+  + FOOTER_HEIGHT;
 
 // Generate a UUID for this client, if we don't have one yet.
 if (!store.clientUUID) {
@@ -69,7 +82,7 @@ function updatePrefs() {
   if (currentPageMod) { currentPageMod.destroy(); }
   currentPageMod = new PageMod({
     include: settings.ALLOWED_ORIGINS.split(','),
-    contentScriptFile: self.data.url('message-bridge.js'),
+    contentScriptFile: './message-bridge.js',
     contentScriptWhen: 'start',
     attachTo: ['top', 'existing'],
     onAttach: setupApp
@@ -116,15 +129,66 @@ function setupApp() {
 
 // update the our icon for devtools themes
 Prefs.observe('devtools.theme', pref => {
-  setActionButton(pref === 'dark');
+  setToggleButton(pref === 'dark');
 });
 
-setActionButton(Prefs.get('devtools.theme') === 'dark');
+const panel = Panel({ // eslint-disable-line new-cap
+  width: PANEL_WIDTH,
+  height: PANEL_HEIGHT,
+  contentURL: './feedback.html',
+  contentScriptFile: './panel.js',
+  onHide: () => {
+    button.state('window', {checked: false});
+  }
+});
 
-function setActionButton(dark) {
+panel.on('show', showExperimentList);
+panel.port.on('back', showExperimentList);
+
+function showExperimentList() {
+  panel.port.emit('show', getExperimentList(store.availableExperiments,
+                                            store.installedAddons));
+}
+
+panel.port.on('link', url => {
+  require('sdk/tabs').open(url);
+  panel.hide();
+});
+
+panel.port.on('launch-feedback', id => {
+  panel.port.emit('show', getFeedbackForm(id));
+});
+
+panel.port.on('feedback-submit', dataStr => {
+  const data = JSON.parse(dataStr);
+  data.tags = ['main-addon'];
+  authRequest.sendMetric(settings, 'user-feedback', data,
+                         store.availableExperiments[data.addon_id]);
+  panel.hide();
+});
+
+function getFeedbackForm(id) {
+  return Mustache.render(templates.feedback, {
+    experiment: store.availableExperiments[id]
+  });
+}
+
+function getExperimentList(availableExperiments, installedAddons) {
+  return Mustache.render(templates.experimentList, {
+    base_url: settings.BASE_URL,
+    experiments: Object.keys(availableExperiments).map(k => {
+      availableExperiments[k].active = Boolean(installedAddons[k]);
+      return availableExperiments[k];
+    })
+  });
+}
+
+setToggleButton(Prefs.get('devtools.theme') === 'dark');
+
+function setToggleButton(dark) {
   const iconPrefix = dark ? './icon-inverted' : './icon';
 
-  ActionButton({ // eslint-disable-line new-cap
+  button = ToggleButton({ // eslint-disable-line new-cap
     id: 'testpilot-link',
     label: 'Test Pilot',
     icon: {
@@ -132,13 +196,19 @@ function setActionButton(dark) {
       '32': iconPrefix + '-32.png',
       '64': iconPrefix + '-64.png'
     },
-    onClick: function() {
-      tabs.open({ url: settings.BASE_URL });
-    }
+    onChange: handleChange
   });
 }
 
 const EVENT_SEND_METRIC = 'testpilot::send-metric';
+
+function handleChange(state) {
+  if (state.checked) {
+    panel.show({
+      position: button
+    });
+  }
+}
 
 // Listen for metrics events from experiments.
 const metrics = {
@@ -176,7 +246,7 @@ const metrics = {
     }
 
     if (d && 'key' in d && 'value' in d && 'addonName' in d) {
-      pingServer(settings, d.key, d.value, d.addonName);
+      authRequest.sendMetric(settings, d.key, d.value, d.addonName);
     } else {
       const clientErrorMessage = 'Test Pilot metrics error: event objects ' +
         'must have key, value, and addonName properties. Object received was ';
@@ -418,7 +488,10 @@ AddonManager.addInstallListener(installListener);
 require('sdk/system/unload').when(function(reason) {
   AddonManager.removeAddonListener(addonListener);
   AddonManager.removeInstallListener(installListener);
+  panel.destroy();
+  button.destroy();
   metrics.destroy();
+  currentPageMod.destroy();
   if (reason === 'uninstall') {
     app.send('addon-self:uninstalled');
     if (store.installedAddons) {

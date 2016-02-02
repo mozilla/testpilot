@@ -14,7 +14,7 @@ lists some hints & tips we've accumulated through the course of daily work.
 * To load some sample demo content into your Docker dev environment:
 
   `mkdir -p media`
-  `cp -r fixtures/media/demo media/demo`
+  `cp -r fixtures/media/demo media`
   `docker exec testpilot_server_1 ./manage.py loaddata fixtures/demo_data.json`
 
 * Syntax & unit tests must pass for Pull Requests to be accepted on GitHub.
