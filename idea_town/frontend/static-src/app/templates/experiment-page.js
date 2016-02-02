@@ -5,6 +5,7 @@ export default `
       <div class="details-header-wrapper">
         <div class="details-header">
           <h1 data-hook="title"></h1>
+          <span class="now-active" data-hook="now-active" data-l10n-id="nowActive">Now Active</span>
           <div class="idea-controls">
             <button data-l10n-id="giveFeedback" data-hook="feedback" id="feedback-button" class="button primary">Give Feedback</button>
             <button data-hook="uninstall" id="uninstall-button" class="button neutral"><span class="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" class="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" class="default-text">Disable <span data-hook="title"></span></span></button>

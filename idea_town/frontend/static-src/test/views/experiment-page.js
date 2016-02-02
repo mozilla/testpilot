@@ -59,6 +59,18 @@ test('afterRender attaches detailView and contributorView', t => {
   t.ok(myView.query('.contributors'));
 });
 
+test('now active indicator shows when experiment is enabled', t => {
+  t.plan(2);
+
+  const myView = new MyView({headerScroll: false, slug: 'slsk'});
+  myView.render();
+
+  t.ok(myView.query('.now-active'));
+  const model = app.experiments.get('slsk', 'slug');
+  model.enabled = false;
+  t.equal(myView.query('.now-active').style.display, 'none');
+});
+
 test('updateAddon tests', t => {
   t.plan(3);
 
