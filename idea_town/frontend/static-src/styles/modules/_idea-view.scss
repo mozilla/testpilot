@@ -71,6 +71,7 @@
 
 .details-header {
   @include flex-container(default, space-between, center, nowrap, true);
+  position: relative;
 }
 
 .idea-controls {
@@ -175,5 +176,24 @@
     border-radius: 6px;
     height: 400px;
     width: 100%;
+  }
+}
+
+.now-active {
+  color: $primary;
+  display: block;
+  font-weight: bold;
+  left: 15px;
+  position: absolute;
+  top: -20px;
+
+  &:before {
+    background: $primary;
+    border-radius: 50%;
+    content: '';
+    display: inline-block;
+    height: 15px;
+    margin-right: 5px;
+    width: 15px;
   }
 }

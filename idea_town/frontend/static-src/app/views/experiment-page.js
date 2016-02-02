@@ -42,6 +42,10 @@ export default PageView.extend({
     {
       type: 'toggle',
       hook: 'feedback'
+    },
+    {
+      type: 'toggle',
+      hook: 'now-active'
     }],
 
     'model.modified': {
