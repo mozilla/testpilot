@@ -35,23 +35,23 @@ if (!store.clientUUID) {
 // Canned selectable server environment configs
 const SERVER_ENVIRONMENTS = {
   local: {
-    BASE_URL: 'http://ideatown.dev:8000',
-    IDEATOWN_PREFIX: 'ideatown.addon.LOCAL.',
+    BASE_URL: 'http://testpilot.dev:8000',
+    TESTPILOT_PREFIX: 'testpilot.addon.LOCAL.',
     BADGE_COLOR: '#AA00AA'
   },
   development: {
-    BASE_URL: 'http://idea-town-dev.elasticbeanstalk.com',
-    IDEATOWN_PREFIX: 'ideatown.addon.DEVELOPMENT.',
+    BASE_URL: 'http://testpilot-dev.elasticbeanstalk.com',
+    TESTPILOT_PREFIX: 'testpilot.addon.DEVELOPMENT.',
     BADGE_COLOR: '#AAAA00'
   },
   stage: {
-    BASE_URL: 'https://ideatown.stage.mozaws.net',
-    IDEATOWN_PREFIX: 'ideatown.addon.STAGE.',
+    BASE_URL: 'https://testpilot.stage.mozaws.net',
+    TESTPILOT_PREFIX: 'testpilot.addon.STAGE.',
     BADGE_COLOR: '#A0AAA0'
   },
   production: {
-    BASE_URL: 'https://ideatown.firefox.com',
-    IDEATOWN_PREFIX: 'ideatown.addon.MAIN.',
+    BASE_URL: 'https://testpilot.firefox.com',
+    TESTPILOT_PREFIX: 'testpilot.addon.MAIN.',
     BADGE_COLOR: '#00AAAA'
   }
 };
@@ -67,7 +67,7 @@ function updatePrefs() {
     BASE_URL: env.BASE_URL,
     ALLOWED_ORIGINS: env.BASE_URL + '/*',
     HOSTNAME: URL(env.BASE_URL).hostname, // eslint-disable-line new-cap
-    IDEATOWN_PREFIX: env.IDEATOWN_PREFIX
+    TESTPILOT_PREFIX: env.TESTPILOT_PREFIX
   });
 
   // Set up new PageMod, destroying any previously existing one.
@@ -130,8 +130,8 @@ function setActionButton(dark) {
   const iconPrefix = dark ? './icon-inverted' : './icon';
 
   ActionButton({ // eslint-disable-line new-cap
-    id: 'idea-town-link',
-    label: 'Idea Town',
+    id: 'testpilot-link',
+    label: 'Test Pilot',
     icon: {
       '16': iconPrefix + '-16.png',
       '32': iconPrefix + '-32.png',
@@ -143,7 +143,7 @@ function setActionButton(dark) {
   });
 }
 
-const EVENT_SEND_METRIC = 'idea-town::send-metric';
+const EVENT_SEND_METRIC = 'testpilot::send-metric';
 
 // Listen for metrics events from experiments.
 const metrics = {
@@ -174,7 +174,7 @@ const metrics = {
     try {
       d = JSON.parse(data);
     } catch (ex) {
-      const parseErrorMessage = 'Idea Town metrics error: cannot process ' +
+      const parseErrorMessage = 'Test Pilot metrics error: cannot process ' +
         'event, JSON.parse failed: ';
       console.error(parseErrorMessage, ex); // eslint-disable-line no-console
       return;
@@ -183,7 +183,7 @@ const metrics = {
     if (d && 'key' in d && 'value' in d && 'addonName' in d) {
       pingServer(settings, d.key, d.value, d.addonName);
     } else {
-      const clientErrorMessage = 'Idea Town metrics error: event objects ' +
+      const clientErrorMessage = 'Test Pilot metrics error: event objects ' +
         'must have key, value, and addonName properties. Object received was ';
       console.error(clientErrorMessage, d); // eslint-disable-line no-console
       return;
@@ -236,7 +236,7 @@ function updateExperiments() {
   }).then(addons => {
     // Filter addons by known experiments, index by ID
     store.installedAddons = {};
-    addons.filter(addon => isIdeatownAddonID(addon.id))
+    addons.filter(addon => isTestPilotAddonID(addon.id))
           .forEach(addon => store.installedAddons[addon.id] = addon);
     return store.installedAddons;
   });
@@ -262,7 +262,7 @@ function syncAllAddonInstallations(serverInstalled) {
 }
 
 function uninstallExperiment(experiment) {
-  if (isIdeatownAddonID(experiment.addon_id)) {
+  if (isTestpilotAddonID(experiment.addon_id)) {
     AddonManager.getAddonByID(experiment.addon_id, a => {
       if (a) { a.uninstall(); }
     });
@@ -270,7 +270,7 @@ function uninstallExperiment(experiment) {
 }
 
 function installExperiment(experiment) {
-  if (isIdeatownAddonID(experiment.addon_id)) {
+  if (isTestpilotAddonID(experiment.addon_id)) {
     AddonManager.getInstallForURL(experiment.xpi_url, install => {
       install.install();
     }, 'application/x-xpinstall');
@@ -302,7 +302,7 @@ function formatInstallData(install, addon) {
   return formatted;
 }
 
-function isIdeatownAddonID(id) {
+function isTestpilotAddonID(id) {
   return id in store.availableExperiments;
 }
 
@@ -356,7 +356,7 @@ function generateUUID() {
 
 const addonListener = {
   onUninstalling: function(addon) {
-    if (isIdeatownAddonID(addon.id)) {
+    if (isTestpilotAddonID(addon.id)) {
       app.send('addon-uninstall:uninstall-started', {
         id: addon.id,
         name: addon.name,
@@ -365,7 +365,7 @@ const addonListener = {
     }
   },
   onUninstalled: function(addon) {
-    if (isIdeatownAddonID(addon.id)) {
+    if (isTestpilotAddonID(addon.id)) {
       app.send('addon-uninstall:uninstall-ended', {
         id: addon.id,
         name: addon.name,
@@ -383,7 +383,7 @@ AddonManager.addAddonListener(addonListener);
 
 const installListener = {
   onInstallEnded: function(install, addon) {
-    if (!isIdeatownAddonID(addon.id)) { return; }
+    if (!isTestpilotAddonID(addon.id)) { return; }
     store.installedAddons[addon.id] = addon;
     syncAddonInstallation(addon.id).then(() => {
       app.send('addon-install:install-ended',

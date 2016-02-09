@@ -1,10 +1,10 @@
 {
-  "name": "idea-town",
+  "name": "testpilot",
   "description": "A place where ideas come to idea",
   "version": "1.0.0",
   "author": "Mozilla (https://mozilla.org/)",
   "bugs": {
-    "url": "https://github.com/mozilla/idea-town/issues"
+    "url": "https://github.com/mozilla/testpilot/issues"
   },
   "dependencies": {
     "ampersand-app": "^1.0.4",
@@ -35,7 +35,7 @@
     "budo": "^7.1.0",
     "del": "2.0.2",
     "eslint-config-airbnb": "0.0.8",
-    "eslint-config-idea-town": "1.2.0",
+    "eslint-config-testpilot": "1.0.0",
     "faucet": "0.0.1",
     "globby": "^3.0.0",
     "gulp": "^3.9.0",
@@ -66,21 +66,21 @@
   "directories": {
     "doc": "docs"
   },
-  "homepage": "https://github.com/mozilla/idea-town#readme",
+  "homepage": "https://github.com/mozilla/testpilot#readme",
   "license": "MPL-2.0",
   "private": "true",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mozilla/idea-town.git"
+    "url": "git+https://github.com/mozilla/testpilot.git"
   },
   "scripts": {
     "build": "gulp build",
     "lint": "gulp lint sass-lint",
     "test": "npm run test:general && npm run test:client",
-    "test:general": "tape idea_town/frontend/static-src/test/general.js | faucet",
-    "test:client": "browserify -t babelify idea_town/frontend/static-src/test/**/*.js | testling | faucet",
-    "test:browser": "budo idea_town/frontend/static-src/test/browser.js:bundle.js --verbose -- -t babelify -t require-globify",
-    "test:browser:live": "budo idea_town/frontend/static-src/test/browser.js:bundle.js --verbose --live -- -t babelify -t require-globify",
-    "test:cov": "browserify -t babelify -t coverify idea_town/frontend/static-src/test/**/*.js | node | coverify"
+    "test:general": "tape testpilot/frontend/static-src/test/general.js | faucet",
+    "test:client": "browserify -t babelify testpilot/frontend/static-src/test/**/*.js | testling | faucet",
+    "test:browser": "budo testpilot/frontend/static-src/test/browser.js:bundle.js --verbose -- -t babelify -t require-globify",
+    "test:browser:live": "budo testpilot/frontend/static-src/test/browser.js:bundle.js --verbose --live -- -t babelify -t require-globify",
+    "test:cov": "browserify -t babelify -t coverify testpilot/frontend/static-src/test/**/*.js | node | coverify"
   }
 }

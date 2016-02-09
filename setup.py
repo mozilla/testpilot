@@ -2,9 +2,9 @@
 
 from distutils.core import setup
 
-setup(name='idea_town',
+setup(name='testpilot',
       version='0.1dev',
-      description='This is https://github.com/mozilla/idea_town',
+      description='This is https://github.com/mozilla/testpilot',
       author='Mozilla Foundation',
       author_email='',
-      url='https://github.com/mozilla/idea_town')
+      url='https://github.com/mozilla/testpilot')

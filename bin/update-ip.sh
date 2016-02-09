@@ -7,7 +7,7 @@
 if [ -e docker-machine ]; then
     NEWIP=`docker-machine ip default`
 else
-    NEWIP=`docker inspect -f '{{ .NetworkSettings.IPAddress }}' ideatown_server_1`
+    NEWIP=`docker inspect -f '{{ .NetworkSettings.IPAddress }}' testpilot_server_1`
 fi
 
-sed -i.bak 's/.* ideatown\.dev/'$NEWIP' ideatown.dev/g' /etc/hosts
+sed -i.bak 's/.* testpilot\.dev/'$NEWIP' testpilot.dev/g' /etc/hosts

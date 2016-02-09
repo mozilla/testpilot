@@ -27,7 +27,7 @@ function pingServer(config, title, data, addon) {
 
       request({
         url: config.BASE_URL + '/api/metrics/?format=json',
-        content: JSON.stringify(formatEvent(config.IDEATOWN_PREFIX, title, id, data, addon)),
+        content: JSON.stringify(formatEvent(config.TESTPILOT_PREFIX, title, id, data, addon)),
         headers: headers,
         onComplete: function(resp) { // eslint-disable-line no-unused-vars
           // console.error(resp);

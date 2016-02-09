@@ -1,4 +1,4 @@
-extends: idea-town
+extends: testpilot
 
 rules:
   func-names: 0
