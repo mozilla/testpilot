@@ -1,13 +1,13 @@
 {
-  "title": "Idea Town Addon",
-  "name": "idea-town-addon",
+  "title": "Test Pilot Addon",
+  "name": "testpilot-addon",
   "version": "0.3.3",
   "private": true,
   "description": "The addon where ideas come to idea",
-  "repository": "mozilla/idea-town",
-  "homepage": "https://github.com/mozilla/idea-town/tree/master/addon",
+  "repository": "mozilla/testpilot",
+  "homepage": "https://github.com/mozilla/testpilot/tree/master/addon",
   "bugs": {
-    "url": "https://github.com/mozilla/idea-town/issues"
+    "url": "https://github.com/mozilla/testpilot/issues"
   },
   "main": "index.js",
   "author": "Mozilla (https://mozilla.org/)",
@@ -18,28 +18,28 @@
   "scripts": {
     "lint": "eslint .",
     "start": "jpm run -b /usr/bin/firefox --prefs dev-prefs.json",
-    "package": "jpm xpi && mv @idea-town-addon-$npm_package_version.xpi dist/idea-town-addon-$npm_package_version.xpi"
+    "package": "jpm xpi && mv @testpilot-addon-$npm_package_version.xpi dist/testpilot-addon-$npm_package_version.xpi"
   },
   "license": "MPL-2.0",
   "devDependencies": {
     "babel-eslint": "^4.1.0",
     "eslint": "^1.2.1",
     "eslint-config-airbnb": "^0.0.8",
-    "eslint-config-idea-town": "^1.2.0",
+    "eslint-config-testpilot": "1.0.0",
     "jpm": "^1.0.1"
   },
   "preferences": [
     {
       "name": "SERVER_ENVIRONMENT",
       "title": "Environment",
-      "description": "Which Idea Town server environment to use?",
+      "description": "Which Test Pilot server environment to use?",
       "type": "menulist",
       "value": "production",
       "options": [
-        { "value": "local", "label": "Local (ideatown.dev)" },
-        { "value": "development", "label": "Development (idea-town-dev.elasticbeanstalk.com)" },
-        { "value": "stage", "label": "Staging (ideatown.stage.mozaws.net)" },
-        { "value": "production", "label": "Production (ideatown.firefox.com)" }
+        { "value": "local", "label": "Local (testpilot.dev)" },
+        { "value": "development", "label": "Development (testpilot-dev.elasticbeanstalk.com)" },
+        { "value": "stage", "label": "Staging (testpilot.stage.mozaws.net)" },
+        { "value": "production", "label": "Production (testpilot.firefox.com)" }
       ]
     }
   ]

@@ -1,4 +1,4 @@
-<siteName "Idea Town">
+<siteName "Test Pilot">
 
 <pageTitleDefault "Test Pilot">
 <pageTitleLandingPage "Test Pilot - Help build Firefox">
@@ -14,19 +14,19 @@
 
 <home "Home">
 
-<menuTour "Tour Idea Town">
-<menuWiki "Idea Town Wiki">
+<menuTour "Tour Test Pilot">
+<menuWiki "Test Pilot Wiki">
 <menuFileIssue "File an Issue">
 <menuLogout "Logout">
 
-<landingWelcome "Welcome to Idea Town">
+<landingWelcome "Welcome to Test Pilot">
 <landingIntro "Test new features.<br> Give us feedback.<br> Help build Firefox.">
 <landingFxaGetStartedButton "Get started with your Firefox Account">
 <landingFxaAlternateButton "Don't have an account? Sign up.">
-<landingCtaLegal "By proceeding, you agree to the <a>Terms of Service</a> and <a>Privacy Notice</a> of Idea Town.">
-<landingBetaNotice "We're still building Idea Town! Sign up now and we'll let you know when it's ready to go!">
+<landingCtaLegal "By proceeding, you agree to the <a>Terms of Service</a> and <a>Privacy Notice</a> of Test Pilot.">
+<landingBetaNotice "We're still building Test Pilot! Sign up now and we'll let you know when it's ready to go!">
 <landingBetaSignup "Sign me up!">
-<landingInstallHeader "Install the Idea Town Add-on <br> and you're good to go!">
+<landingInstallHeader "Install the Test Pilot Add-on <br> and you're good to go!">
 <landingInstallButton "Install the Add-on">
 
 <errorHeading "Whoops!">
@@ -35,7 +35,7 @@
 <notFoundHeader "Four Oh Four!">
 
 <signUpThanks "Thanks for signing up!">
-<signUpEmailWhenReady "We'll email you when Idea Town is ready.">
+<signUpEmailWhenReady "We'll email you when Test Pilot is ready.">
 
 <experimentListInactiveHover "Get Started">
 <experimentListActiveHover "View Details">

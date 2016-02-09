@@ -1,33 +1,33 @@
-Idea Town
+Test Pilot
 ==========
 
-![Idea Town Rainbow Logo](https://wiki.mozilla.org/images/thumb/7/7a/IdeaTownSticker.png/400px-IdeaTownSticker.png)
+![Test Pilot Rainbow Logo](https://wiki.mozilla.org/images/thumb/7/7a/IdeaTownSticker.png/400px-IdeaTownSticker.png)
 
-[![Build Status](https://img.shields.io/travis/mozilla/idea-town/master.svg)](https://travis-ci.org/mozilla/idea-town)
+[![Build Status](https://img.shields.io/travis/mozilla/testpilot/master.svg)](https://travis-ci.org/mozilla/testpilot)
 
-[![Coverage status](https://img.shields.io/coveralls/mozilla/idea-town/master.svg)](https://coveralls.io/r/mozilla/idea-town)
+[![Coverage status](https://img.shields.io/coveralls/mozilla/testpilot/master.svg)](https://coveralls.io/r/mozilla/testpilot)
 
-Idea Town is an opt-in platform that allows us to perform controlled tests of new high-visibility product concepts in the general release channel of Firefox.
+Test Pilot is an opt-in platform that allows us to perform controlled tests of new high-visibility product concepts in the general release channel of Firefox.
 
-Idea Town is not intended to replace trains for most features, nor is it a test bed for concepts we do not believe have a strong chance of shipping in general release. Rather, it is reserved for features that require user feedback, testing, and tuning before they ship with the browser.
+Test Pilot is not intended to replace trains for most features, nor is it a test bed for concepts we do not believe have a strong chance of shipping in general release. Rather, it is reserved for features that require user feedback, testing, and tuning before they ship with the browser.
 
 ## Repositories
 
-* **idea-town** - Idea Town server and front-end
-* [idea-town-splash](https://github.com/mozilla/idea-town-splash/) - Teaser site for collecting emails
+* **testpilot** - Test Pilot server and front-end
+* [testpilot-splash](https://github.com/mozilla/testpilot-splash/) - Teaser site for collecting emails
 
 ## More Information
 
-- Wiki: <https://wiki.mozilla.org/Idea_Town>
-- IRC: #ideatown on irc.mozilla.org
+- Wiki: <https://wiki.mozilla.org/Test_Pilot
+- IRC: #testpilot on irc.mozilla.org
 
 ## Development
 
 ### Quickstart
 
 This project uses Docker in development. You'll get a lot of benefit
-by acquainting yourself [with Docker and its documentation][docker-docs]. 
-However, you can get started on Idea Town development with a minimum of Docker
+by acquainting yourself [with Docker and its documentation][docker-docs].
+However, you can get started on Test Pilot development with a minimum of Docker
 know-how:
 
 [docker-docs]: https://docs.docker.com/
@@ -56,14 +56,14 @@ if you'd like to run linters on `pre-commit` you can use this [pre-commit-hook](
 
   `docker-machine ip default`
 
-6. Use this IP address to add an entry for `ideatown.dev` in `/etc/hosts`:
+6. Use this IP address to add an entry for `testpilot.dev` in `/etc/hosts`:
 
-  `192.168.99.100 ideatown.dev`
+  `192.168.99.100 testpilot.dev`
 
   You can do this manually, or the [bin/update-ip.sh][update-ip] script can
   take care of this for you.
 
-[update-ip]: https://github.com/mozilla/idea-town/blob/master/bin/update-ip.sh
+[update-ip]: https://github.com/mozilla/testpilot/blob/master/bin/update-ip.sh
 
 7. Create and setup the Docker containers (this will take some time):
 
@@ -75,9 +75,9 @@ if you'd like to run linters on `pre-commit` you can use this [pre-commit-hook](
 
 2. [Install Docker Compose](https://docs.docker.com/compose/install/)
 
-3. Add an entry for `ideatown.dev` in `/etc/hosts`:
+3. Add an entry for `testpilot.dev` in `/etc/hosts`:
 
-  `127.0.0.1 ideatown.dev`
+  `127.0.0.1 testpilot.dev`
 
   You can do this manually, or the [bin/update-ip.sh][update-ip] script can
   take care of this for you.
@@ -97,11 +97,11 @@ if you'd like to run linters on `pre-commit` you can use this [pre-commit-hook](
 
 * Visit the Django server, using the hostname you added to `/etc/hosts`:
 
-  `http://ideatown.dev:8000/`
+  `http://testpilot.dev:8000/`
 
 * Visit Django admin, login with username `admin` and password `admin`:
 
-  `http://ideatown.dev:8000/admin/`
+  `http://testpilot.dev:8000/admin/`
 
 * For further reading:
 

@@ -9,8 +9,8 @@ rigid or confusing. If you'd like to contribute and don't understand something
 here, reach out on IRC, and we'll be happy to offer solutions.
 
 [mozcoc]: https://www.mozilla.org/en-US/about/governance/policies/participation
-[coc]: https://github.com/mozilla/idea-town/blob/master/CODE_OF_CONDUCT.md
-[dev setup]: https://github.com/mozilla/idea-town#development
+[coc]: https://github.com/mozilla/testpilot/blob/master/CODE_OF_CONDUCT.md
+[dev setup]: https://github.com/mozilla/testpilot#development
 
 ### Saying Hello
 
@@ -19,7 +19,7 @@ by finding issues that are a good fit for your skills/interests, and ensuring
 you have a contact person to guide you through the bug fixing process, answer
 any questions, and help if you get stuck.
 
-Find us in #ideatown on Mozilla IRC. If you need help with IRC setup,
+Find us in #testpilot IRC. If you need help with IRC setup,
 the Mozilla [wiki][wiki] has instructions.
 
 [wiki]: https://wiki.mozilla.org/IRC
@@ -30,8 +30,8 @@ We use the same process for community members and paid staff.
 
 #### Tests
 Tests should be written for new code contributed.
-* [server tests example](idea_town/experiments/tests.py)
-* [client tests example](idea_town/frontend/static-src/test/)
+* [server tests example](testpilot/experiments/tests.py)
+* [client tests example](testpilot/frontend/static-src/test/)
 
 [Further docs on testing](./TESTING.md).
 

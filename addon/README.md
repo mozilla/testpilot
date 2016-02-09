@@ -1,4 +1,4 @@
-# Idea Town
+# Test Pilot
 The addon where ideas come to idea
 
 ## installation
