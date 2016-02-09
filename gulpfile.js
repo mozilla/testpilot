@@ -25,8 +25,8 @@ const tryRequire = require('try-require');
 
 const IS_DEBUG = (process.env.NODE_ENV === 'development');
 
-const SRC_PATH = './idea_town/frontend/static-src/';
-const DEST_PATH = './idea_town/frontend/static/';
+const SRC_PATH = './testpilot/frontend/static-src/';
+const DEST_PATH = './testpilot/frontend/static/';
 
 // HACK: Under Docker, the node_modules install has been moved.
 // So, look for the vendor assets there. Otherwise, look in current dir

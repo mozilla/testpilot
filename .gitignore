@@ -13,9 +13,9 @@ node_modules/
 media/
 static/
 venv/
-idea_town/frontend/static/
-idea_town/frontend/static-src/vendor/
-idea_town/frontend/static-src/styles/vendor/
+testpilot/frontend/static/
+testpilot/frontend/static-src/vendor/
+testpilot/frontend/static-src/styles/vendor/
 docker-compose-s3.yml
 
 # Elastic Beanstalk Files

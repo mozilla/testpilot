@@ -1,8 +1,8 @@
 [
   {
     "fields": {
-      "name": "Idea Town Dev",
-      "domain": "ideatown.dev"
+      "name": "Test Pilot Dev",
+      "domain": "testpilot.dev"
     },
     "model": "sites.site",
     "pk": 1

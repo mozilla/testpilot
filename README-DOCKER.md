@@ -1,4 +1,4 @@
-Idea Town Docker Dev Notes
+Test Pilot Docker Dev Notes
 ==========================
 
 Using Docker in development helps produce a consistent environment that's close
@@ -7,7 +7,7 @@ lists some hints & tips we've accumulated through the course of daily work.
 
 * To shell into one of the containers:
 
-  `docker exec -t -i ideatown_server_1 bash`
+  `docker exec -t -i testpilot_server_1 bash`
 
   This is necessary for running Django commands, among other things.
 
@@ -15,24 +15,24 @@ lists some hints & tips we've accumulated through the course of daily work.
 
   `mkdir -p media`
   `cp -r fixtures/media/demo media/demo`
-  `docker exec ideatown_server_1 ./manage.py loaddata fixtures/demo_data.json`
+  `docker exec testpilot_server_1 ./manage.py loaddata fixtures/demo_data.json`
 
 * Syntax & unit tests must pass for Pull Requests to be accepted on GitHub.
 
     * To run server checks:
 
-      `docker exec -t -i ideatown_server_1 ./bin/run-dev-tests.sh`
+      `docker exec -t -i testpilot_server_1 ./bin/run-dev-tests.sh`
 
     * To run frontend & addon checks:
 
-      `docker exec -t -i ideatown_frontend_watcher_1 ./bin/run-frontend-tests.sh`
+      `docker exec -t -i testpilot_frontend_watcher_1 ./bin/run-frontend-tests.sh`
 
     * On OS X, the [`kicker`](https://github.com/alloy/kicker) utility might be
       handy for running these checks on local file changes:
       ```bash
         sudo gem install kicker
-        kicker -c -e'docker exec -t -i ideatown_server_1 ./bin/run-dev-tests.sh' ./idea_town
-        kicker -c -e'docker exec -t -i ideatown_frontend_watcher_1 ./bin/run-frontend-tests.sh' ./idea_town/frontend/static-src ./addon
+        kicker -c -e'docker exec -t -i testpilot_server_1 ./bin/run-dev-tests.sh' ./testpilot
+        kicker -c -e'docker exec -t -i testpilot_frontend_watcher_1 ./bin/run-frontend-tests.sh' ./testpilot/frontend/static-src ./addon
       ```
 
 * If you change `requirements.txt` to add dependencies for Django, you must rebuild `server`:
@@ -45,10 +45,10 @@ lists some hints & tips we've accumulated through the course of daily work.
 
 * Sometimes the database container hasn't fully started when the Django container wants to connect to it. If this happens:
 
-  * `docker ps` to get the name of the Django container (something like `ideatown_server_1`)
-  * `docker restart ideatown_server_1` to restart the Django container
+  * `docker ps` to get the name of the Django container (something like `testpilot_server_1`)
+  * `docker restart testpilot_server_1` to restart the Django container
 
-* [Issue #74](https://github.com/mozilla/idea-town/issues/74): Sometimes `docker-compose build` seems to hang while building the
+* [Issue #74](https://github.com/mozilla/testpilot/issues/74): Sometimes `docker-compose build` seems to hang while building the
   `frontend_watcher` image. If this happens:
 
   * `docker rmi $(docker images -f dangling=true -q)` to remove any dangling images

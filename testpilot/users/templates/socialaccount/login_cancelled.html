@@ -1,0 +1,11 @@
+{% extends "testpilot/base.html" %}
+
+{% block page_title %}{{ _('Login Cancelled') }}{% endblock %}
+
+{% block content %}
+
+<h1>{{ _("Login Cancelled") }}</h1>
+
+<p>{% trans %}You decided to cancel logging in to our site using one of your existing accounts. If this was a mistake, please proceed to <a href="{{url('account_login')}}">sign in</a>.{% endtrans %}</p>
+
+{% endblock %}

@@ -1,2 +1,2 @@
 #!/bin/sh
-flake8 ./idea_town && ./manage.py test -v2
+flake8 ./testpilot && ./manage.py test -v2

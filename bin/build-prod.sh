@@ -1,8 +1,8 @@
 #!/bin/bash
 
 TAG=${1:-latest}
-SERVER_NAME=${2:-docker.io/lmorchard/idea-town}:$TAG
-FRONTEND_BUILD_NAME=idea-town-frontend-build
+SERVER_NAME=${2:-docker.io/lmorchard/testpilot}:$TAG
+FRONTEND_BUILD_NAME=testpilot-frontend-build
 COMMIT=$(git rev-parse HEAD)
 
 # Build a container to run the frontend build tools
