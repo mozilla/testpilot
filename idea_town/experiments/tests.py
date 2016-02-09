@@ -39,6 +39,7 @@ class BaseTestCase(TestCase):
         self.experiments = dict((obj.slug, obj) for (obj, created) in (
             Experiment.objects.get_or_create(
                 slug="test-%s" % idx, defaults=dict(
+                    order=idx,
                     title="Longer Test Title %s" % idx,
                     short_title="Test %s" % idx,
                     description="This is a test",

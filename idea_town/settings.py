@@ -12,9 +12,21 @@ import os
 
 import dj_database_url
 from decouple import Csv, config
+from os.path import abspath
+from django.utils.functional import lazy
+from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+# ROOT path of the project. A pathlib.Path object.
+ROOT_PATH = Path(__file__).resolve().parents[1]
+ROOT = str(ROOT_PATH)
+
+
+def path(*args):
+    return abspath(str(ROOT_PATH.joinpath(*args)))
+
 
 ROOT_URLCONF = 'idea_town.urls'
 
@@ -34,6 +46,8 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
+DEV = config('DEV', cast=bool, default=DEBUG)
+PROD = config('PROD', cast=bool, default=not DEBUG)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
@@ -58,6 +72,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'storages',
     'markupfield',
+    'product_details',
+    'hvad',
 
     # FxA auth handling
     'allauth',
@@ -80,6 +96,7 @@ for app in config('EXTRA_APPS', default='', cast=Csv()):
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -182,10 +199,93 @@ USE_L10N = config('USE_L10N', default=True, cast=bool)
 
 USE_TZ = config('USE_TZ', default=True, cast=bool)
 
+# Tells the product_details module where to find our local JSON files.
+# This ultimately controls how LANGUAGES are constructed.
+# PROD_DETAILS_CACHE_NAME = 'product-details'
+# PROD_DETAILS_CACHE_TIMEOUT = 60 * 15  # 15 min
+default_pdstorage = 'PDFileStorage'  # 'PDDatabaseStorage' if PROD else 'PDFileStorage'
+PROD_DETAILS_STORAGE = config('PROD_DETAILS_STORAGE',
+                              default='product_details.storage.' + default_pdstorage)
+
+# Accepted locales
+PROD_LANGUAGES = ('ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'be', 'bg',
+                  'bn-BD', 'bn-IN', 'br', 'brx', 'bs', 'ca', 'cak', 'cs',
+                  'cy', 'da', 'de', 'dsb', 'ee', 'el', 'en-GB', 'en-US',
+                  'en-ZA', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'et',
+                  'eu', 'fa', 'ff', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd',
+                  'gl', 'gu-IN', 'ha', 'he', 'hi-IN', 'hr', 'hsb', 'hu',
+                  'hy-AM', 'id', 'ig', 'is', 'it', 'ja', 'ja-JP-mac',
+                  'ka', 'kk', 'km', 'kn', 'ko', 'lij', 'ln', 'lt', 'lv',
+                  'mai', 'mk', 'ml', 'mr', 'ms', 'my', 'nb-NO', 'nl',
+                  'nn-NO', 'oc', 'or', 'pa-IN', 'pl', 'pt-BR', 'pt-PT',
+                  'rm', 'ro', 'ru', 'sat', 'si', 'sk', 'sl', 'son', 'sq',
+                  'sr', 'sv-SE', 'sw', 'ta', 'te', 'th', 'tr', 'uk', 'ur',
+                  'uz', 'vi', 'wo', 'xh', 'yo', 'zh-CN', 'zh-TW', 'zu')
+
+LOCALES_PATH = ROOT_PATH / 'locales'
+
+LOCALE_PATHS = (
+    str(LOCALES_PATH),
+)
+
+
+def get_dev_languages():
+    try:
+        return [lang.name for lang in LOCALES_PATH.iterdir()
+                if lang.is_dir() and lang.name != 'templates']
+    except OSError:
+        # no locale dir
+        return list(PROD_LANGUAGES)
+
+
+DEV_LANGUAGES = get_dev_languages()
+if 'en-US' not in DEV_LANGUAGES:
+    DEV_LANGUAGES.append('en-US')
+
+# Map short locale names to long, preferred locale names. This
+# will be used in urlresolvers to determine the
+# best-matching locale from the user's Accept-Language header.
+CANONICAL_LOCALES = {
+    'en': 'en-US',
+    'es': 'es-ES',
+    'ja-jp-mac': 'ja',
+    'no': 'nb-NO',
+    'pt': 'pt-BR',
+    'sv': 'sv-SE',
+}
+
+# Unlocalized pages are usually redirected to the English (en-US) equivalent,
+# but sometimes it would be better to offer another locale as fallback. This map
+# specifies such cases.
+FALLBACK_LOCALES = {
+    'es-AR': 'es-ES',
+    'es-CL': 'es-ES',
+    'es-MX': 'es-ES',
+}
+
+
+def lazy_lang_url_map():
+    from django.conf import settings
+
+    langs = settings.DEV_LANGUAGES if settings.DEV else settings.PROD_LANGUAGES
+    return {i.lower(): i for i in langs}
+
+
+# Override Django's built-in with our native names
+def lazy_langs():
+    from django.conf import settings
+    from product_details import product_details
+
+    langs = DEV_LANGUAGES if settings.DEV else settings.PROD_LANGUAGES
+    return [(lang.lower(), product_details.languages[lang]['native'])
+            for lang in langs if lang in product_details.languages]
+
+
+LANGUAGE_URL_MAP = lazy(lazy_lang_url_map, dict)()
+LANGUAGES = lazy(lazy_langs, list)()
+
 STATIC_ROOT = config('STATIC_ROOT', default=os.path.join(BASE_DIR, 'static'))
 STATIC_URL = config('STATIC_URL', '/static/')
-STATICFILES_DIRS = [
-]
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 DEFAULT_FILE_STORAGE = config(

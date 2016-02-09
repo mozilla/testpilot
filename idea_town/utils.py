@@ -10,7 +10,7 @@ from django.core.urlresolvers import reverse
 
 import django.test
 
-from rest_framework import serializers, filters
+from rest_framework import serializers, filters, permissions
 from rest_framework.test import APIClient
 
 import logging
@@ -37,6 +37,15 @@ class MarkupField(serializers.Field):
 class IsRequestUserBackend(filters.BaseFilterBackend):
     def filter_queryset(self, request, queryset, view):
         return queryset.filter(user=request.user)
+
+
+class IsAccountAdminOrReadOnly(permissions.BasePermission):
+    def has_permission(self, request, view):
+        if (request.method in permissions.SAFE_METHODS or
+                request.user and
+                request.user.is_staff):
+            return True
+        return False
 
 
 @deconstructible
@@ -159,6 +168,18 @@ def related_changelist_link(field_name):
     build_link.short_description = field_name
 
     return build_link
+
+
+def translated(field_name):
+    """Helper to include translated fields in admin list_display"""
+    # HACK: This just accesses the field with getattr, which mainly serves as a
+    # way to shortcircuit Django admin startup validation that doesn't play
+    # well with django-hvad. Mainly means we won't get warnings at startup if
+    # we spell a field name wrong
+    def get_translated(obj):
+        return getattr(obj, field_name)
+    get_translated.short_description = field_name
+    return get_translated
 
 
 class TestCase(django.test.TestCase):

@@ -12,7 +12,7 @@ from .serializers import (ExperimentSerializer,
                           ExperimentDetailSerializer,
                           UserFeedbackSerializer,
                           UserInstallationSerializer)
-from ..utils import IsRequestUserBackend
+from ..utils import IsRequestUserBackend, IsAccountAdminOrReadOnly
 
 import logging
 logger = logging.getLogger(__name__)
@@ -22,8 +22,11 @@ class ExperimentViewSet(viewsets.ModelViewSet):
     """
     Returns a list of all Experiments in the system.
     """
-    queryset = Experiment.objects.all()
     serializer_class = ExperimentSerializer
+    permission_classes = (IsAccountAdminOrReadOnly,)
+
+    def get_queryset(self):
+        return Experiment.objects.language().fallbacks('en')
 
     def retrieve(self, request, *args, **kwargs):
         """Use the deep serializer for individual retrieval, which includes
@@ -76,8 +79,11 @@ def installation_detail(request, experiment_pk, client_id):
 
 
 class ExperimentDetailViewSet(viewsets.ModelViewSet):
-    queryset = ExperimentDetail.objects.all()
     serializer_class = ExperimentDetailSerializer
+    permission_classes = (IsAccountAdminOrReadOnly,)
+
+    def get_queryset(self):
+        return ExperimentDetail.objects.language().fallbacks('en')
 
 
 class UserFeedbackViewSet(viewsets.ModelViewSet):
@@ -94,6 +100,6 @@ class UserFeedbackViewSet(viewsets.ModelViewSet):
 
 
 def register_views(router):
-    router.register(r'experiments', ExperimentViewSet)
-    router.register(r'details', ExperimentDetailViewSet)
+    router.register(r'experiments', ExperimentViewSet, base_name='experiment')
+    router.register(r'details', ExperimentDetailViewSet, base_name='experimentdetail')
     router.register(r'feedback', UserFeedbackViewSet, base_name='userfeedback')

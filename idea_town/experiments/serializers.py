@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from hvad.contrib.restframework import HyperlinkedTranslatableModelSerializer
 from django.core.urlresolvers import reverse
 
 from ..users.models import UserProfile
@@ -8,7 +9,7 @@ from .models import (Experiment, ExperimentDetail, UserFeedback,
 from ..utils import MarkupField
 
 
-class ExperimentDetailSerializer(serializers.HyperlinkedModelSerializer):
+class ExperimentDetailSerializer(HyperlinkedTranslatableModelSerializer):
     experiment_url = serializers.SerializerMethodField()
 
     class Meta:
@@ -22,7 +23,7 @@ class ExperimentDetailSerializer(serializers.HyperlinkedModelSerializer):
         return request.build_absolute_uri(path)
 
 
-class ExperimentSerializer(serializers.HyperlinkedModelSerializer):
+class ExperimentSerializer(HyperlinkedTranslatableModelSerializer):
     """Experiment serializer that includes ExperimentDetails"""
     details = ExperimentDetailSerializer(many=True, read_only=True)
     contributors = serializers.SerializerMethodField()
