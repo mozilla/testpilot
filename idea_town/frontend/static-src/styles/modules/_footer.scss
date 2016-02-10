@@ -7,7 +7,7 @@
   padding: 4rem 0 2rem;
 
   .wrapper {
-    @include flex-container(default, flex-start, flex-end, nowrap, false);
+    @include flex-container(row, flex-start, flex-end, nowrap, false);
   }
 
   .moz-logo {

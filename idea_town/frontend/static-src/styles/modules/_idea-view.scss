@@ -12,7 +12,7 @@
   }
 
   .row {
-    @include flex-container(default, space-between, center, nowrap, true);
+    @include flex-container(row, space-between, center, nowrap, true);
     height: 80px;
   }
 
@@ -70,12 +70,12 @@
 }
 
 .details-header {
-  @include flex-container(default, space-between, center, nowrap, true);
+  @include flex-container(row, space-between, center, nowrap, true);
   position: relative;
 }
 
 .idea-controls {
-  @include flex-container(default, space-between, center, nowrap, false);
+  @include flex-container(row, space-between, center, nowrap, false);
 
   > * {
     margin-left: 20px;
@@ -91,7 +91,7 @@
 }
 
 .details-content {
-  @include flex-container(default, space-between, top, nowrap, true);
+  @include flex-container(row, space-between, top, nowrap, true);
   padding-top: 30px;
 
   h3 {
@@ -136,7 +136,7 @@
   padding: 0;
 
   li {
-    @include flex-container(default, left, center, nowrap, false);
+    @include flex-container(row, left, center, nowrap, false);
     padding-bottom: 10px;
    }
 

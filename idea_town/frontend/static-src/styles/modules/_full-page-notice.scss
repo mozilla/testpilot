@@ -2,7 +2,7 @@
   @include color-scheme-special(false);
 
   .main-content {
-    @include flex-container(default, center, center);
+    @include flex-container(row, center, center);
     height: 100vh;
   }
 }
