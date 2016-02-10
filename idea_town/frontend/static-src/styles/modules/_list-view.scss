@@ -55,11 +55,11 @@
   @include wrapper;
 
   @include respond-to('big') {
-    @include flex-container(default, space-between, top, wrap, true);
+    @include flex-container(row, space-between, top, wrap, true);
   }
 
   @include respond-to('medium') {
-    @include flex-container(default, space-around, top, wrap, true);
+    @include flex-container(row, space-around, top, wrap, true);
   }
 
   margin: 6rem 0;

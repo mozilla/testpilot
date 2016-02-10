@@ -51,7 +51,7 @@ a {
 // LAYOUT
 
 .wrapper {
-  @include flex-container(default, space-between, top, nowrap, true);
+  @include flex-container(row, space-between, top, nowrap, true);
   position: relative;
 }
 
