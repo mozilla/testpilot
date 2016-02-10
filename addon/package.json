@@ -22,6 +22,7 @@
   },
   "license": "MPL-2.0",
   "devDependencies": {
+    "babel-eslint": "4.1.8",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^0.0.8",
     "jpm": "^1.0.1"
