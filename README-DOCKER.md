@@ -19,16 +19,22 @@ lists some hints & tips we've accumulated through the course of daily work.
 
 * Syntax & unit tests must pass for Pull Requests to be accepted on GitHub.
 
-    * To run server checks:
+    * To run server linting & tests:
 
-      `docker exec -t -i testpilot_server_1 ./bin/run-dev-tests.sh`
+      `docker exec testpilot_server_1 ./bin/run-dev-tests.sh`
 
-    * To run frontend & addon checks:
+    * To run frontend & addon code linting:
 
-      `docker exec -t -i testpilot_frontend_watcher_1 ./bin/run-frontend-tests.sh`
+      `docker exec testpilot_frontend_watcher_1 ./bin/run-frontend-lint.sh`
+
+    * To start a file watcher for frontend tests:
+
+      `docker exec testpilot_frontend_watcher_1 ./bin/run-frontend-tests-watch.sh`
+
+      Then, open http://testpilot.dev:9966/ in a browser to see test results.
 
     * On OS X, the [`kicker`](https://github.com/alloy/kicker) utility might be
-      handy for running these checks on local file changes:
+      handy for running checks on local file changes:
       ```bash
         sudo gem install kicker
         kicker -c -e'docker exec -t -i testpilot_server_1 ./bin/run-dev-tests.sh' ./testpilot

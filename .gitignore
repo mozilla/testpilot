@@ -24,3 +24,5 @@ docker-compose-s3.yml
 !.elasticbeanstalk/*.global.yml
 .ebextensions/00-environment.config
 Dockerrun.aws.json
+
+debug-config.json
