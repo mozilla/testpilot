@@ -1,1 +1,9 @@
-extends: testpilot
+extends:
+  - eslint:recommended
+  - airbnb/base
+
+rules:
+  comma-dangle: [2, never]
+  indent: [2, 2, {SwitchCase: 1}]
+  no-console: 1
+  no-use-before-define: [2, nofunc]

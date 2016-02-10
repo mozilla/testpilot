@@ -22,10 +22,8 @@
   },
   "license": "MPL-2.0",
   "devDependencies": {
-    "babel-eslint": "^4.1.0",
-    "eslint": "^1.2.1",
+    "eslint": "^1.10.3",
     "eslint-config-airbnb": "^0.0.8",
-    "eslint-config-testpilot": "1.0.0",
     "jpm": "^1.0.1"
   },
   "preferences": [
@@ -36,10 +34,22 @@
       "type": "menulist",
       "value": "production",
       "options": [
-        { "value": "local", "label": "Local (testpilot.dev)" },
-        { "value": "development", "label": "Development (testpilot-dev.elasticbeanstalk.com)" },
-        { "value": "stage", "label": "Staging (testpilot.stage.mozaws.net)" },
-        { "value": "production", "label": "Production (testpilot.firefox.com)" }
+        {
+          "value": "local",
+          "label": "Local (testpilot.dev)"
+        },
+        {
+          "value": "development",
+          "label": "Development (testpilot-dev.elasticbeanstalk.com)"
+        },
+        {
+          "value": "stage",
+          "label": "Staging (testpilot.stage.mozaws.net)"
+        },
+        {
+          "value": "production",
+          "label": "Production (testpilot.firefox.com)"
+        }
       ]
     }
   ]
