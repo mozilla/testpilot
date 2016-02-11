@@ -12,10 +12,6 @@ install:
   - pip install tox coveralls
   - nvm install 0.12
 env:
-  global:
-    - DOCKER_EMAIL=me@lmorchard.com
-    - DOCKER_USERNAME=lmorchard
-    - secure: "YtyLa9U9O4YT5/RMc265iadx1XadQ0wAEjTptppnx1ioJbKe5L1Oj3II3f4QqRS5Bkdl6/OdjuOz/HfQVnBDb5N/gsVRGnB9RVAzjO+uQVCTDdJNApeJLKACFqpz/lpbfBTmDvevnivVaUPlfpA4m+qBahNck5v8pAKnp0TKH4FLUjMaYQOcc9/maiw7IxBt1ore5Q74FP4w1CooDE2hse/PBsoLRNeHkC9Mjnmez0etLyasChLnFYOz67Z9EoMewPnIr2tlkgaeR+2GxtfvGAdVYNQNgN/Fh5YNJZC9o5Lfkz/bc5dZx1zgxIKRbUPYn76KaSxa74agvpqY5beQyE0g09g8mXwzIThgC+71IT67458YCqCRyynuwOuuKNmXTnpc0a0RuTmfFwJn1GUUqdLTONsMf8umNMEBIR6lXn7ShgmULl/GDVq+y4Bh2c88fMX6xSLAeRle20uDfprGdmwHoemv3QMhwjWgSMIjkLSdJemAMT1+QbuO4ZT8J5O8emBLyJJZ0kcdbiUwK1gb9AHcTEDUXhAIew+YS8EfHrSzUsQJ6oAwuopENcBdllXcJh+eeBgDTp6Kh1plsk8GQ5fuhg3NptnWyE/puzmKgI1jHjx1JcO1nOwCLwP7A6FA8b1SeB1Oo3uJbunWQgFHnqE55+oalo19Z7O5mciCIQE="
   matrix:
     - TOX_ENV=flake8
     - TOX_ENV=docs
@@ -26,23 +22,3 @@ script:
   - tox -e $TOX_ENV
 after_success:
   - coveralls
-before_deploy:
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - bin/build-prod.sh
-deploy:
-  provider: elasticbeanstalk
-  on:
-    repo: mozilla/idea-town
-    branch: master
-    condition: $TOX_ENV = tests
-  skip_cleanup: true
-  zip-file: build/eb-app-latest.zip
-  app: idea-town-lorchard
-  env: idea-town-dev
-  region: us-west-2
-  bucket_name: elasticbeanstalk-us-west-2-927034868273
-  bucket_path: idea-town-lorchard/
-  access-key-id:
-    secure: "itEK2FdnjTKwc664GVKSekV3bwHxT2BR3PHg6eVp58rtdok/tlhOQC9FxYuby7CrG8fjW0M+zd1zX7rjNQQ8vcaRkfKAJEibP9RxhfLDOUkkW6ujl94nCrsDZ9F/C0na38g77oCAYMFVqpa/cVcuROzb5NRGUzNnavA+Iq6erlMx9RJvmBtEpTjki03xXZEK1zQb1u9+SBM1288LF6oIZKSNXpEtIweMWg6PKBR8JRqpJBoLVaVYqFJe4hvHl37CahDrNKSBPA0ovtquzWf40LMBCZjsZXmqSfsVcPSHPzYC9qzabS92b/uxR/RtJYs/Odh2SJ8dBk74EhM8NhQfpQwNavWRsvzdGJoH//SbWSQKvzakacq9cbFFEIoJoQ/OiPwX/lsADJuWjera7zeBqvHdTc57uAmE1DqqDPu2Ff/QY69b6Tr+xT/ckrF+SNHN/I+XEmSrjMrb4/iMKtomtu7xKH5oZl+eW4QTVLZpnBVhez75srt9K7+eCjOZq+NzUMoN8seqxxvP2peQodkvN9v09ROAOe0ybfuzZBl9TPA35OIzl4oJjBatibbbbcfFjX5h4bEsyYGsbfWFZSlOHnwtcuMouasRuBgZP06CMwmBmkQeN4l+HNXFi4KvrlUz4ZJKoAelncEXlI2Lr9dVrcVx5gWr5cS3sMM1KyDJZ3c="
-  secret-access-key:
-    secure: "n/+6zYg21oGjuMewrJO/NRvMEOlAAPkNzJH6CYR0ezV7sOhBMag8wmX6VvCzCKJLEQaW3PZvH98euEylqlXxzH0PlWelbAChq1gCKvj38g5vfiV+4DriOJhd4JzNkWsVa57u+8Z5rKmBdQQN9m/9gYANC759g5eQShxVR3VNMoAW7Ueq9THj8FBrAwRKWnNRGhKK2FavCpy3003hLWaHmo50HNOG7zT+6x4lL9awsRH40X9LuPiWuBNYQ3RLxdt43EVao6mheYdAZLe6wdJEtTY1QRq1NoYpld89h73QE3lJRIb12AhtMLZv+jq09GGdruE3Y2LbogLvuLFd9uwzwaIstDqUxKZPLxG5Pgf+6c5yk1w+zBafjhXYK3gkQe4JEujKIieB2ZN6qg2RkdJb4+yudJwzNzPYPE0eN90i4aT+Yy7ZxN36SoT5bJmWZ4V1nEJB1vmpaHYy0hdQ4/70tT73RFLYg/VZgZqJekbZTGysqeNDSBYEWmkf2kNiENZt9M+a7Lr0RysPCPSVK+ckJpeGSBzHxbYv/xQhi5tV82blEerW0ws/qoxrrvFgdT8iujs+csaVQ0P4/NsQyasAUkimKyoQTyPRUakgKciw5P0zKfYUMjOs34EblbR0E8iJqC4Mc29lCUCIMLld0cNjPzfd7alHMx3pUPoH3VlIFxU="

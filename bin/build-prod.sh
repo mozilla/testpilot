@@ -18,24 +18,3 @@ docker build -t $SERVER_NAME .
 
 # Push the images to the hub
 docker push $SERVER_NAME
-
-# Ensure the Dockerrun file has the correct SERVER_NAME
-cat > Dockerrun.aws.json << EOF
-{
-  "AWSEBDockerrunVersion": "1",
-  "Image": {
-    "Name": "$SERVER_NAME",
-    "Update": "true"
-  },
-  "Logging": "/var/log/django",
-  "Ports": [
-    {
-      "ContainerPort": "8000"
-    }
-  ]
-}
-EOF
-
-# Prepare an app bundle for Elastic Beanstalk
-mkdir -p build
-zip -r build/eb-app-$TAG.zip Dockerrun.aws.json .ebextensions/*.config
