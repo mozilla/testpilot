@@ -78,6 +78,16 @@ def installation_detail(request, experiment_pk, client_id):
         installation, context={'request': request}).data)
 
 
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def features_list(request, experiment_pk, client_id):
+    experiment = get_object_or_404(Experiment, pk=experiment_pk)
+    installation = get_object_or_404(
+        UserInstallation,
+        user=request.user, experiment=experiment, client_id=client_id)
+    return Response(installation.features)
+
+
 class ExperimentDetailViewSet(viewsets.ModelViewSet):
     serializer_class = ExperimentDetailSerializer
     permission_classes = (IsAccountAdminOrReadOnly,)
