@@ -31,8 +31,8 @@ server:
     - FXA_ACCESS_TOKEN_URL=https://oauth-stable.dev.lcip.org/v1/token
     - FXA_AUTHORIZE_URL=https://oauth-stable.dev.lcip.org/v1/authorization
     - FXA_PROFILE_URL=https://stable.dev.lcip.org/profile/v1/profile
-    - FXA_CLIENT_ID=2e13dbd92f77f7df
-    - FXA_SECRET_KEY=a93644d71fa684da464fd2dba4d687c14cb21e1dd740af83895e70ede82f54cc
+    - FXA_CLIENT_ID=4636d485f6f0c761
+    - FXA_SECRET_KEY=c19cca573b94fc195377c577d29f460ab638bec9c8e2b42b1296bd6b22319778
     - DATADOG_API_KEY=4f3b967bbf13c7769ac4fa89efda0fae
     - DATADOG_APP_KEY=ddd45a7b3a3cb90ff1baf20ae8cfab04d1937038
     - ACCOUNT_INVITE_ONLY_MODE=True
