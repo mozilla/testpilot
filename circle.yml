@@ -1,0 +1,65 @@
+# These environment variables must be set in CircleCI UI
+#
+# DOCKERHUB_REPO - docker hub repo, format: <username>/<repo>
+# DOCKER_EMAIL   - login info for docker hub
+# DOCKER_USER
+# DOCKER_PASS
+#
+machine:
+  services:
+    - docker
+
+dependencies:
+
+  # make sure to keep the docker cache dir
+  cache_directories:
+    - "~/docker"
+
+  override:
+    - docker info
+
+    # build the container, use circleci's docker cache workaround
+    # only use 1 image per day to keep the cache size from getting
+    # too big and slowing down the build
+    - I="image-$(date +%j).tar"; if [[ -e ~/docker/$I ]]; then echo "Loading $I"; docker load -i ~/docker/$I; fi
+
+    # create a version.json
+    - printf '{"commit":"%s","version":"%s","source":"https://github.com/%s/%s"}\n' "$CIRCLE_SHA1" "$CIRCLE_TAG" "$CIRCLE_PROJECT_USERNAME" "$CIRCLE_PROJECT_REPONAME" > version.json
+
+    # build static assets
+    - docker build -f Dockerfile-frontend-build -t app:static_asset_builder .
+    - "docker run -it --rm -v $(pwd):/app app:static_asset_builder"
+
+    # build the actual deployment container
+    - docker build -t app:build .
+
+    # Clean up any old images and save the new one
+    - I="image-$(date +%j).tar"; mkdir -p ~/docker; rm ~/docker/*; docker save app:build > ~/docker/$I; ls -l ~/docker
+
+test:
+  override:
+    - docker run app:build tox -e flake8
+    - docker run app:build tox -e docs
+    - docker run app:build tox -e tests
+    - docker run app:build tox -e frontend
+    - docker run app:build tox -e addon
+
+# appropriately tag and push the container to dockerhub
+deployment:
+  hub_latest:
+    branch: "master"
+    commands:
+      - "[ ! -z $DOCKERHUB_REPO ]"
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - "docker tag app:build ${DOCKERHUB_REPO}:latest"
+      - "docker push ${DOCKERHUB_REPO}:latest"
+
+  hub_releases:
+    # push all tags
+    tag: /.*/
+    commands:
+      - "[ ! -z $DOCKERHUB_REPO ]"
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - "docker tag app:build ${DOCKERHUB_REPO}:${CIRCLE_TAG}"
+      - "docker images"
+      - "docker push ${DOCKERHUB_REPO}:${CIRCLE_TAG}"
