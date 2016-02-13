@@ -10,6 +10,7 @@ machine:
     - docker
 
 dependencies:
+
   # make sure to keep the docker cache dir
   cache_directories:
     - "~/docker"
@@ -24,6 +25,7 @@ dependencies:
 
     # create a version.json
     - printf '{"commit":"%s","version":"%s","source":"https://github.com/%s/%s"}\n' "$CIRCLE_SHA1" "$CIRCLE_TAG" "$CIRCLE_PROJECT_USERNAME" "$CIRCLE_PROJECT_REPONAME" > version.json
+
     # build static assets
     - docker build -f Dockerfile-frontend-build -t app:static_asset_builder .
     - "docker run -it --rm -v $(pwd):/app app:static_asset_builder"
