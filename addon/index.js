@@ -39,11 +39,6 @@ const SERVER_ENVIRONMENTS = {
     TESTPILOT_PREFIX: 'testpilot.addon.LOCAL.',
     BADGE_COLOR: '#AA00AA'
   },
-  development: {
-    BASE_URL: 'http://testpilot-dev.elasticbeanstalk.com',
-    TESTPILOT_PREFIX: 'testpilot.addon.DEVELOPMENT.',
-    BADGE_COLOR: '#AAAA00'
-  },
   stage: {
     BASE_URL: 'https://testpilot.stage.mozaws.net',
     TESTPILOT_PREFIX: 'testpilot.addon.STAGE.',

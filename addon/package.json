@@ -1,7 +1,7 @@
 {
   "title": "Test Pilot Addon",
   "name": "testpilot-addon",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "private": true,
   "description": "The addon where ideas come to idea",
   "repository": "mozilla/testpilot",
@@ -38,10 +38,6 @@
         {
           "value": "local",
           "label": "Local (testpilot.dev)"
-        },
-        {
-          "value": "development",
-          "label": "Development (testpilot-dev.elasticbeanstalk.com)"
         },
         {
           "value": "stage",
