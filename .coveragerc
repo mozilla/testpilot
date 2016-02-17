@@ -1,5 +1,5 @@
 [run]
-source = idea_town
+source = testpilot
 
 [report]
 omit = */migrations/*
