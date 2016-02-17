@@ -143,6 +143,11 @@ gulp.task('locales', function localesTask() {
     .pipe(gulp.dest(DEST_PATH + 'locales'));
 });
 
+gulp.task('addon', function localesTask() {
+  return gulp.src(SRC_PATH + 'addon/**/*')
+    .pipe(gulp.dest(DEST_PATH + 'addon'));
+});
+
 gulp.task('build', function buildTask(done) {
   runSequence(
     'clean',
@@ -151,6 +156,7 @@ gulp.task('build', function buildTask(done) {
     'styles',
     'images',
     'locales',
+    'addon',
     done
   );
 });
