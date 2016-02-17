@@ -1,7 +1,7 @@
 {
   "title": "Test Pilot Addon",
   "name": "testpilot-addon",
-  "version": "0.3.4",
+  "version": "0.4.9",
   "private": true,
   "description": "The addon where ideas come to idea",
   "repository": "mozilla/testpilot",
@@ -15,10 +15,12 @@
     "firefox": ">=38.0a1",
     "fennec": ">=38.0a1"
   },
+  "updateURL": "https://testpilot.firefox.com/static/addon/update.rdf",
+  "updateLink": "https://testpilot.firefox.com/static/addon/addon.xpi",
   "scripts": {
     "lint": "eslint .",
+    "sign": "./sign",
     "start": "jpm run -b /usr/bin/firefox --prefs dev-prefs.json",
-    "package": "jpm xpi && mv @testpilot-addon-$npm_package_version.xpi dist/testpilot-addon-$npm_package_version.xpi",
     "watch": "jpm watchpost --post-url http://localhost:8888"
   },
   "license": "MPL-2.0",
@@ -26,7 +28,9 @@
     "babel-eslint": "4.1.8",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^0.0.8",
-    "jpm": "^1.0.1"
+    "jpm": "1.0.6",
+    "jsonwebtoken": "5.7.0",
+    "request": "2.69.0"
   },
   "preferences": [
     {

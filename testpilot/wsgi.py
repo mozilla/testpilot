@@ -7,6 +7,7 @@ For more information on this file, see
 https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/
 """
 import os
+import fnmatch
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'testpilot.settings')  # NOQA
 
 from django.conf import settings
@@ -17,8 +18,15 @@ from decouple import config
 from whitenoise.django import DjangoWhiteNoise
 
 
+class OurWhiteNoise(DjangoWhiteNoise):
+    def add_extra_headers(self, headers, path, url):
+        if fnmatch.fnmatch(url, '*.xpi'):
+            headers['Content-Type'] = 'application/x-xpinstall'
+        if fnmatch.fnmatch(url, '*.rdf'):
+            headers['Content-Type'] = 'text/rdf'
+
 application = get_wsgi_application()
-application = DjangoWhiteNoise(application)
+application = OurWhiteNoise(application)
 
 # Add media files
 if settings.MEDIA_ROOT and settings.MEDIA_URL:

@@ -16,6 +16,10 @@ venv/
 testpilot/frontend/static/
 testpilot/frontend/static-src/vendor/
 testpilot/frontend/static-src/styles/vendor/
+testpilot/frontend/static-src/addon/*.xpi
+testpilot/frontend/static-src/addon/*.rdf
 docker-compose-s3.yml
 debug-config.json
 version.json
+addon/*.xpi
+addon/*.rdf
