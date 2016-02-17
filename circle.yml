@@ -9,7 +9,11 @@ machine:
   services:
     - docker
 
+  node:
+    version: 0.12.10
+
 dependencies:
+
   # make sure to keep the docker cache dir
   cache_directories:
     - "~/docker"
@@ -24,9 +28,10 @@ dependencies:
 
     # create a version.json
     - printf '{"commit":"%s","version":"%s","source":"https://github.com/%s/%s"}\n' "$CIRCLE_SHA1" "$CIRCLE_TAG" "$CIRCLE_PROJECT_USERNAME" "$CIRCLE_PROJECT_REPONAME" > version.json
+
     # build static assets
-    - docker build -f Dockerfile-frontend-build -t app:static_asset_builder .
-    - "docker run -it --rm -v $(pwd):/app app:static_asset_builder"
+    - npm install
+    - ./node_modules/gulp/bin/gulp.js build
 
     # build the actual deployment container
     - docker build -t app:build .
@@ -36,11 +41,8 @@ dependencies:
 
 test:
   override:
-    - docker run app:build tox -e flake8
-    - docker run app:build tox -e docs
-    - docker run app:build tox -e tests
-    - docker run app:build tox -e frontend
-    - docker run app:build tox -e addon
+    - docker run -it --rm app:build flake8 idea_town
+    - docker run -it --rm --net=host -e 'DEBUG=False' -e 'SECRET_KEY=Foo' -e 'ALLOWED_HOSTS=localhost' -e 'DATABASE_URL=postgres://ubuntu@localhost/circle_test' --user root app:build sh -c 'pip install coverage && coverage run manage.py test -v2'
 
 # appropriately tag and push the container to dockerhub
 deployment:
