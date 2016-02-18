@@ -44,7 +44,7 @@ dependencies:
 test:
   override:
     - >
-        docker run -it --rm --net=host 
+        docker run --net=host
         -e 'DEBUG=False' 
         -e 'SECRET_KEY=Foo' 
         -e 'ALLOWED_HOSTS=localhost' 
