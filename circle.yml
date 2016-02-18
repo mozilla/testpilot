@@ -33,9 +33,7 @@ dependencies:
     - npm install
     - npm run lint
     - npm run build
-    # seems to be unstable on circle, commenting out
-    # until we can investigate more
-    #- npm test
+    - npm test
 
     # build the actual deployment container
     - docker build -t app:build .
