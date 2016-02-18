@@ -1,5 +1,5 @@
 {
   "BASE_URL": "http://testpilot.dev:8000",
   "HOSTNAME": "testpilot.dev",
-  "ALLOWED_ORIGINS": "http://testpilot.dev:8000/*,https://testpilot.firefox.com/*,http://testpilot-dev.elasticbeanstalk.com/*"
+  "ALLOWED_ORIGINS": "http://testpilot.dev:8000/*,https://testpilot.firefox.com/*"
 }
