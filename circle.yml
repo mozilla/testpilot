@@ -24,6 +24,11 @@ dependencies:
 
   override:
     - docker info
+    - node --version
+    - npm --version
+
+    # used by npm test for frontend testing
+    - google-chrome --version
 
     # build the container, use circleci's docker cache workaround
     # only use 1 image per day to keep the cache size from getting
