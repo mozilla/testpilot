@@ -18,6 +18,10 @@ dependencies:
   cache_directories:
     - "~/docker"
 
+  pre:
+    # https://discuss.circleci.com/t/nvm-commands-are-not-evaluated/943
+    - nvm use 0.12.10 && nvm alias default 0.12.10
+
   override:
     - docker info
 
