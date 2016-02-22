@@ -43,7 +43,7 @@ See some of our [Tips and Tricks](docs/README-DOCKER.md).
 
 2. Make sure you have a default Docker machine:
 
-  `docker-machine create -driver virtualbox default`
+  `docker-machine create --driver virtualbox default`
 
 3. Make sure the default machine is running:
 
@@ -106,7 +106,7 @@ See some of our [Tips and Tricks](docs/README-DOCKER.md).
 
 * For further reading:
 
-  * [`README-DOCKER.md`](./README-DOCKER.md) - for more hints & tips on Docker in
+  * [`README-DOCKER.md`](./docs/README-DOCKER.md) - for more hints & tips on Docker in
     development, including how to set up custom configurations and run common
     tests & checks.
 
