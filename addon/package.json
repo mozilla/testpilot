@@ -18,7 +18,8 @@
   "scripts": {
     "lint": "eslint .",
     "start": "jpm run -b /usr/bin/firefox --prefs dev-prefs.json",
-    "package": "jpm xpi && mv @testpilot-addon-$npm_package_version.xpi dist/testpilot-addon-$npm_package_version.xpi"
+    "package": "jpm xpi && mv @testpilot-addon-$npm_package_version.xpi dist/testpilot-addon-$npm_package_version.xpi",
+    "watch": "jpm watchpost --post-url http://localhost:8888"
   },
   "license": "MPL-2.0",
   "devDependencies": {
