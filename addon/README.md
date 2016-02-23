@@ -129,3 +129,10 @@ sendToAddon({type: 'install-experiment', detail: {xpi_url: 'https://people.mozil
 
 * Dave Justice <djustice@mozilla.com
 * Les Orchard <lorchard@mozilla.com>
+
+## Attribution
+
+Arrow Icon made by
+[Appzgear](http://www.flaticon.com/authors/appzgear) from
+[www.flaticon.com](http://www.flaticon.com) is licensed by
+[CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)

@@ -49,5 +49,8 @@
         }
       ]
     }
-  ]
+  ],
+  "dependencies": {
+    "mustache": "2.2.1"
+  }
 }

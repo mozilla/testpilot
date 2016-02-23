@@ -7,4 +7,4 @@
 !/bootstrap.js
 !/package.json
 !/route.js
-!/node_modules/testpilot/**
+!/node_modules/mustache/**
