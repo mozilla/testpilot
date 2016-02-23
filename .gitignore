@@ -18,3 +18,4 @@ testpilot/frontend/static-src/vendor/
 testpilot/frontend/static-src/styles/vendor/
 docker-compose-s3.yml
 debug-config.json
+version.json

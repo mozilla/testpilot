@@ -15,6 +15,7 @@ users_views.register_views(router)
 urlpatterns = patterns(
     '',
     # users app is special, because it handles /accounts and /users
+    url(r'', include('testpilot.base.urls')),
     url(r'', include('testpilot.users.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api-auth/', include('rest_framework.urls',
