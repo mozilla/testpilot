@@ -147,3 +147,9 @@ django-hvad==1.4.0
 
 # sha256: M63XBGg6XX-f9JwD5ApNjFAIglia7pcNXtga0Rx651w
 django-mozilla-product-details==0.10.0
+
+# sha256: drDDMYkCeP_JzsN-81wskNMHF1oOaVRHfiEDc3nijTM
+testfixtures==4.9.1
+
+# sha256: ceezvPn8pAi8tlu2CJLzddOr3S5PKW7uuP4Lu_zeWY4
+jsonschema==2.5.1

@@ -397,6 +397,10 @@ LOGGING = {
             'format': '[%(asctime)s] %(levelname)s [%(name)s.%(funcName)s:%(lineno)d] %(message)s',
             'datefmt': '%Y-%m-%d %H:%M:%S'
         },
+        'json': {
+            '()': 'testpilot.base.logging.JsonLogFormatter',
+            'logger_name': 'TestPilot'
+        }
     },
     'handlers': {
         'null': {
@@ -406,7 +410,7 @@ LOGGING = {
             'level': 'DEBUG',
             'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
-            'formatter': 'verbose'
+            'formatter': config('DJANGO_LOG_FORMAT', default='json')
         },
     },
     'loggers': {
