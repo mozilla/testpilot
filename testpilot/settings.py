@@ -408,41 +408,28 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'verbose'
         },
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
-        },
-        'logfile': {
-            'class': 'logging.handlers.RotatingFileHandler',
-            'level': 'DEBUG',
-            'maxBytes': config('DJANGO_LOG_MAXBYTES', default=16 * 1024 * 1024, cast=int),
-            'backupCount': config('DJANGO_LOG_BACKUP_COUNT', default=2, cast=int),
-            'filename': config('DJANGO_LOG_FILENAME', default='./django.log'),
-            'formatter': config('DJANGO_LOG_FORMATTER', default='verbose')
-        },
     },
     'loggers': {
         'testpilot': {
-            'handlers': ['console', 'logfile'],
+            'handlers': ['console'],
             'level': config('DJANGO_LOG_LEVEL', default='INFO'),
             'propagate': True,
         },
         'django': {
-            'handlers': ['console', 'logfile'],
+            'handlers': ['console'],
         },
         'django.request': {
-            'handlers': ['mail_admins', 'console', 'logfile'],
+            'handlers': ['console'],
             'level': 'ERROR',
             'propagate': False,
         },
         'django.security': {
-            'handlers': ['mail_admins', 'console', 'logfile'],
+            'handlers': ['console'],
             'level': 'ERROR',
             'propagate': False,
         },
         'py.warnings': {
-            'handlers': ['console', 'logfile'],
+            'handlers': ['console'],
         },
     }
 }

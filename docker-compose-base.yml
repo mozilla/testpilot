@@ -14,6 +14,9 @@ server:
   dockerfile: Dockerfile
   ports:
     - "8000:8000"
+  # HACK: escalate to root user in dev, because we need to be able to write
+  # file uploads to /app/media. Production will use Amazon S3
+  user: root
   volumes:
     - .:/app
   command:
