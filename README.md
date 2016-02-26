@@ -4,10 +4,9 @@ Test Pilot
 ![Test Pilot Rainbow Logo](https://wiki.mozilla.org/images/thumb/7/7a/IdeaTownSticker.png/400px-IdeaTownSticker.png)
 
 [![Build Status](https://img.shields.io/travis/mozilla/testpilot/master.svg)](https://travis-ci.org/mozilla/testpilot)
-
+[![Circle CI](https://circleci.com/gh/mozilla/testpilot/tree/master.svg?style=svg&circle-token=88ea3e1a6d9b7558092b75358c6ab9251739b9b5)](https://circleci.com/gh/mozilla/testpilot/tree/master)
 [![Coverage status](https://img.shields.io/coveralls/mozilla/testpilot/master.svg)](https://coveralls.io/r/mozilla/testpilot)
-
-Docker build: [![Circle CI](https://circleci.com/gh/mozilla/testpilot/tree/master.svg?style=svg&circle-token=88ea3e1a6d9b7558092b75358c6ab9251739b9b5)](https://circleci.com/gh/mozilla/testpilot/tree/master)
+[![Requirements Status](https://requires.io/github/mozilla/testpilot/requirements.svg?branch=master)](https://requires.io/github/mozilla/testpilot/requirements/?branch=master)
 
 
 Test Pilot is an opt-in platform that allows us to perform controlled tests of new high-visibility product concepts in the general release channel of Firefox.
