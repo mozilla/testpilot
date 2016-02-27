@@ -1,8 +1,9 @@
-import os.path
 import json
+import os.path
 
 from django.conf import settings
-from django.http import HttpResponse, JsonResponse, HttpResponseServerError
+from django.http import HttpResponse, HttpResponseServerError, JsonResponse
+from django.views import static
 
 from ..experiments.models import Experiment
 
@@ -32,3 +33,7 @@ def ops_version(request):
             "commit": "dev"
         }
     return JsonResponse(data)
+
+
+def contribute_json(request):
+    return static.serve(request, 'contribute.json', document_root=settings.ROOT)

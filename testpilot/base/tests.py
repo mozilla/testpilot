@@ -67,3 +67,19 @@ class OpsEndpointTests(TestCase):
                 mock_open.return_value = io.StringIO(json.dumps(expected))
                 result = self.jsonGet('ops-version')
                 self.assertEqual(expected, result)
+
+
+class ContributeJsonTests(TestCase):
+
+    def setUp(self):
+        super(ContributeJsonTests, self).setUp()
+        self.url = reverse('contribute-json')
+
+    def test_success(self):
+        resp = self.client.get(self.url)
+        self.assertEqual(200, resp.status_code)
+
+    def test_schema(self):
+        resp = self.client.get(self.url)
+        data = json.loads(resp.getvalue().decode('utf-8'))
+        assert set(['name', 'description', 'repository']).issubset(data.keys())
