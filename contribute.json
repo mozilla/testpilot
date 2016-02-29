@@ -1,0 +1,29 @@
+{
+    "name": "Test Pilot",
+    "description": "Test Pilot is a platform for performing controlled tests of new product concepts in Firefox.",
+    "repository": {
+        "url": "https://github.com/mozilla/testpilot",
+        "license": "MPL2",
+        "tests": "https://travis-ci.org/mozilla/testpilot"
+    },
+    "participate": {
+        "home": "https://wiki.mozilla.org/Test_Pilot",
+        "docs": "https://github.com/mozilla/testpilot/blob/master/README.md",
+        "irc": "irc://irc.mozilla.org/#testpilot",
+        "mailing-list": "https://mail.mozilla.org/listinfo/testpilot-dev"
+    },
+    "bugs": {
+        "list": "https://github.com/mozilla/testpilot/issues",
+        "report": "https://github.com/mozilla/testpilot/issues/new"
+    },
+    "keywords": [
+        "css",
+        "django",
+        "docker",
+        "javascript",
+        "jinja2",
+        "postgresql",
+        "python",
+        "redis"
+    ]
+}
