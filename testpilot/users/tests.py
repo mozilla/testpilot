@@ -145,6 +145,7 @@ class MeViewSetTests(TestCase):
                 'experiment': 'http://testserver/api/experiments/%s' % experiment.pk,
                 'addon_id': 'addon-1@example.com',
                 'client_id': client_id,
+                'features': {},
                 'url':
                     'http://testserver/api/experiments/%s/installations/%s' %
                     (experiment.pk, client_id),
