@@ -185,23 +185,46 @@ class InviteOnlyModeTests(TestCase):
         self.assertEqual(True, profile.invite_pending)
 
     @patch('testpilot.users.signals.is_vouched_on_mozillians_org')
-    @override_settings(ACCOUNT_INVITE_ONLY_MODE=True)
-    def test_invite_only_mozillacom_autoactivation(self, mock_vouched):
-        """Users with @mozilla.com email addresses should be auto-activated"""
+    @override_settings(ACCOUNT_INVITE_ONLY_MODE=True,
+                       ACCOUNT_AUTOACTIVATION_DOMAINS=('mozilla.com', 'hy.fr'))
+    def test_invite_only_account_autoactivation_domains(self, mock_vouched):
+        """Users with valid email address domains should be auto-activated"""
         mock_vouched.return_value = False
         self.user.is_active = True
-        self.user.email = 'someone@mozilla.com'
 
-        user_signed_up.send(sender=self.user.__class__,
-                            request=None,
-                            user=self.user)
+        for email in ['someone@mozilla.com', 'someone@hy.fr']:
 
-        self.assertEqual(True, self.user.is_active)
+            self.user.email = email
 
-        profile = UserProfile.objects.get_profile(self.user)
-        self.assertEqual(False, profile.invite_pending)
+            user_signed_up.send(sender=self.user.__class__,
+                                request=None,
+                                user=self.user)
 
-        mock_vouched.assert_not_called()
+            self.assertEqual(True, self.user.is_active)
+
+            profile = UserProfile.objects.get_profile(self.user)
+            self.assertEqual(False, profile.invite_pending,
+                             'Invite not expected for {0}'.format(email))
+
+            mock_vouched.assert_not_called()
+            mock_vouched.reset_mock()
+
+        for email in ['someone@aol.com', 'someone@mozilla.com@aol.com']:
+
+            self.user.email = email
+
+            user_signed_up.send(sender=self.user.__class__,
+                                request=None,
+                                user=self.user)
+
+            self.assertEqual(False, self.user.is_active)
+
+            profile = UserProfile.objects.get_profile(self.user)
+            self.assertEqual(True, profile.invite_pending,
+                             'Invite expected for {0}'.format(email))
+
+            mock_vouched.assert_called_once_with(self.user)
+            mock_vouched.reset_mock()
 
     @patch('testpilot.users.signals.is_vouched_on_mozillians_org')
     @override_settings(ACCOUNT_INVITE_ONLY_MODE=True)

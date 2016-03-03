@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 
 def is_qualified_for_autoactivation(user):
     """Check if this user is qualified to be auto-activated"""
-    if user.email.endswith('@mozilla.com'):
+    if user.email.endswith(settings.ACCOUNT_AUTOACTIVATION_DOMAINS):
         return True
     if is_vouched_on_mozillians_org(user):
         return True
