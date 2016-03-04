@@ -9,7 +9,7 @@ addons:
 services:
   - docker
 install:
-  - pip install tox coveralls
+  - pip install tox
   - nvm install 0.12
 env:
   matrix:
@@ -19,5 +19,3 @@ env:
     - TOX_ENV=addon
 script:
   - tox -e $TOX_ENV
-after_success:
-  - coveralls
