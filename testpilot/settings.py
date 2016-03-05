@@ -36,7 +36,7 @@ SITE_ID = 1
 
 ADDON_URL = config(
     'ADDON_URL',
-    default='https://example.com/configure-your-addon-url')
+    default='/static/addon/addon.xpi')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -50,6 +50,11 @@ DEV = config('DEV', cast=bool, default=DEBUG)
 PROD = config('PROD', cast=bool, default=not DEBUG)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
+if DEBUG:
+    import mimetypes
+    mimetypes.add_type("application/x-xpinstall", ".xpi", True)
+    mimetypes.add_type("text/rdf", ".rdf", True)
 
 # Credentials used to create the initial superuser account
 INITIAL_ADMIN_USERNAME = config('INITIAL_ADMIN_USERNAME', default=None)

@@ -24,7 +24,14 @@ from [dev-prefs.json](./dev-prefs.json).
 
 ## packaging
 
-`npm run package`
+`npm run sign`
+
+## distributing
+
+We serve the addon from the `/static/addon/` directory. We will need
+to get the addon signed via [AMO](http://addons.mozilla.org/) and move
+it into the correct directory. This is all packaged into a script,
+`npm run sign` in the [package.json](./package.json).
 
 ## Events
 
@@ -127,7 +134,7 @@ sendToAddon({type: 'install-experiment', detail: {xpi_url: 'https://people.mozil
 
 ## Maintainers
 
-* Dave Justice <djustice@mozilla.com
+* Dave Justice <djustice@mozilla.com>
 * Les Orchard <lorchard@mozilla.com>
 
 ## Attribution
