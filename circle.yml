@@ -1,10 +1,12 @@
 # These environment variables must be set in CircleCI UI
 #
+# AMO_USER       - api user from addons.mozilla.com
+# AMO_SECRET     - api key secret from addons.mozilla.com
 # DOCKERHUB_REPO - docker hub repo, format: <username>/<repo>
 # DOCKER_EMAIL   - login info for docker hub
 # DOCKER_USER
 # DOCKER_PASS
-#
+
 machine:
   services:
     - docker
@@ -37,6 +39,13 @@ dependencies:
 
     # create a version.json
     - printf '{"commit":"%s","version":"%s","source":"https://github.com/%s/%s"}\n' "$CIRCLE_SHA1" "$CIRCLE_TAG" "$CIRCLE_PROJECT_USERNAME" "$CIRCLE_PROJECT_REPONAME" > version.json
+
+    # build addon
+    - cd addon/ &&
+      npm config set spin false &&
+      npm install &&
+      npm run lint &&
+      npm run sign
 
     # build static assets
     - npm install
