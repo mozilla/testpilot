@@ -8,8 +8,8 @@ peep==2.4.1
 # sha256: m7S7kSEJqteivOjiKGp9mgnrzKrv5Br4VYZrZgcVkGA
 peepin==0.11
 
-# sha256: I3bD2MX0lbMCsRLXIyyEdhEwxDDhhAwFoqArKPF91ZY
-Django==1.8.4
+# sha256: VL6dbqtswOLaVYwSrqbP99WgEkyKRw4f9hE0up7TfyA
+Django==1.8.11
 
 # sha256: 8uJz7TSsu1YJYtXPEpF5NtjfAil98JvTCJuFRtRYQTg
 # sha256: ygF2j97N4TQwHzFwdDIm9g7f9cOTXxJDc3jr2RFQY1M
@@ -112,8 +112,9 @@ requests==2.7.0
 # sha256: x9LubC6MWKD9YMLX0hzpPI0rIuep8jLUv5FTJq-0ea8
 requests_oauthlib==0.5.0
 
-# sha256: DxedfnXnyDtjQblZXKHzlN5wgUhKnjUq1m1VOhw9qik
-Pillow==2.9.0
+# sha256: mZLY9LStU0Z-p25reWwY4i7JSNzuBkvgf7Q8FVRy4dc
+# sha256: SG9Mzd7glCnLHGPqVsAolK7PnWms3K8AbFODXfJUn_8
+Pillow==3.1.1
 
 # sha256: R7yJ6jHs9gbi9FPg5MXWNAgs9dsWC48vszi1HCXmeRo
 django-cleanup==0.3.1
