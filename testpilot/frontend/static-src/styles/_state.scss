@@ -1,13 +1,9 @@
-.hidden {
-  opacity: 0;
-}
-
 .no-display {
   display: none;
 }
 
 .fade-in {
-  animation: fade-in 200ms forwards;
+  animation: fade-in 500ms forwards;
 }
 
 .delayed-fade-in {
@@ -16,16 +12,24 @@
   opacity: 0;
 }
 
-.hover {
-  animation: hover 1000ms infinite alternate ease-in-out;
+.spin {
+  animation: spin 1000ms;
+}
+
+.fly-down {
+  animation: fly-down 500ms forwards ease-out;
+}
+
+.fly-out {
+  animation: fly-out 500ms forwards ease-in;
 }
 
 .fly-up {
-  animation: fly-up 1000ms forwards ease-out;
+  animation: fly-up 500ms forwards ease-out;
 }
 
-.fly-up-fade-in {
-  animation: fly-up-fade-in 1000ms forwards ease-out;
+.quick-pop {
+  animation: pop 200ms;
 }
 
 @keyframes fade-in {
@@ -38,30 +42,22 @@
   }
 }
 
-@keyframes hover {
+@keyframes fly-down {
   0% {
-    transform: translate(0, 0);
+    transform: translate(0, -130px);
   }
 
   100% {
-    transform: translate(0, 15px);
+    transform: translate(0, 0);
   }
 }
 
 @keyframes fly-up {
-  100% {
-    transform: translate(0, -120px);
-  }
-}
-
-@keyframes fly-up-fade-in {
   0% {
-    opacity: 0;
-    transform: translate(0, 400px);
+    transform: translate(0, 130px);
   }
 
   100% {
-    opacity: 1;
     transform: translate(0, 0);
   }
 }
@@ -72,7 +68,7 @@
   }
 
   50% {
-    transform: scale(1.4);
+    transform: scale(1.1);
   }
 
   100% {
@@ -80,12 +76,22 @@
   }
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes barberpole {
-  from {
+  0% {
     background-position: 0 0;
   }
 
-  to {
+  100% {
     background-position: 100px 50px;
   }
 }
