@@ -10,17 +10,17 @@ from ..utils import (show_image, parent_link, related_changelist_link,
 
 class ExperimentDetailInline(TranslatableTabularInline):
     model = ExperimentDetail
-    extra = 1
+    extra = 0
 
 
 class FeatureInline(admin.TabularInline):
     model = Feature
-    extra = 1
+    extra = 0
 
 
 class FeatureConditionInline(admin.TabularInline):
     model = FeatureCondition
-    extra = 1
+    extra = 0
 
     def formfield_for_choice_field(self, db_field, request, **kwargs):
         if db_field.name == 'operator':
