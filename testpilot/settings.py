@@ -306,6 +306,7 @@ if DEFAULT_FILE_STORAGE == 'storages.backends.s3boto.S3BotoStorage':
     AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID', default=None)
     AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY', default=None)
     AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+    AWS_QUERYSTRING_AUTH = False
     MEDIA_URL = config('MEDIA_URL')
 else:
     MEDIA_ROOT = config('MEDIA_ROOT', default=os.path.join(BASE_DIR, 'media'))
