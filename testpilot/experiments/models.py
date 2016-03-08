@@ -166,7 +166,7 @@ class FeatureCondition(models.Model):
                                    db_index=True)
     operator = models.CharField(max_length=256, choices=[('', 'None'), ])
     argument = models.TextField()
-    comment = models.TextField()
+    comment = models.TextField(blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
