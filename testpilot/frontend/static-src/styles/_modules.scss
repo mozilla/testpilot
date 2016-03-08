@@ -1,17 +1,10 @@
 @import 'modules/avatar';
 @import 'modules/buttons';
+@import 'modules/centered-banner';
+@import 'modules/copter';
+@import 'modules/experiment-details';
+@import 'modules/experiment-list';
 @import 'modules/footer';
+@import 'modules/main-header';
 @import 'modules/modals';
 @import 'modules/settings';
-@import 'modules/sticky-header';
-@import 'modules/full-page-notice';
-@import 'modules/copter';
-
-// View modules contain all styles directly related
-// to an individual page.
-// The names of each corresponds to an ID on
-// the body of each tag.
-
-@import 'modules/cta-view';
-@import 'modules/idea-view';
-@import 'modules/list-view';

@@ -1,0 +1,135 @@
+#experiment-list {
+  @include flex-container(row, space-between, stretch, wrap);
+  margin: 40px auto;
+
+  > header {
+    flex: 0 0 100%;
+  }
+}
+
+.experiment-list-header {
+  font-style: italic;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.experiment-summary {
+
+  @include flex-container(column, stretch, stretch);
+
+  @include respond-to('big') {
+    flex: 0 0 310px;
+  }
+
+  @include respond-to('medium') {
+    flex: 0 0 48%;
+  }
+
+  @include respond-to('small') {
+    flex: 0 1 96%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+  }
+
+  border: 1px solid $transparent-black-1;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 0 $transparent-black-1;
+  color: $black;
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 1;
+
+  .experiment-information {
+    flex: 1;
+    padding: 20px;
+  }
+
+  header {
+    @include flex-container(row, space-between, center);
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    line-height: 2.3rem;
+    margin: 0;
+  }
+
+  &.logged-in {
+    cursor: pointer;
+
+    &.active {
+      box-shadow: 0 0 0 3px $white, 0 0 0 6px $primary;
+
+      &:hover {
+        box-shadow: 0 0 0 3px $white, 0 0 0 8px $primary;
+      }
+
+      &:after {
+        @include hidpi-background-image('check', 36px 27px);
+        background-color: $primary;
+        background-position: center center;
+        background-repeat: no-repeat;
+        border: 3px solid $white;
+        border-radius: 50%;
+        content: '';
+        height: 56px;
+        position: absolute;
+        right: -26px;
+        top: -26px;
+        width: 56px;
+        z-index: 2;
+      }
+    }
+  }
+
+  &.logged-in:hover {
+    box-shadow: 0 1px 0 0 $transparent-black-1, 0 0 0 5px $transparent-black-1;
+    transition: box-shadow 150ms;
+
+    h3 {
+      color: $default;
+      transition: color 150ms;
+    }
+  }
+}
+
+.experiment-actions {
+  padding: 0 20px 20px;
+
+  .button {
+    display: none;
+    text-align: center;
+    width: 100%;
+
+    .active &.show-when-active {
+      display: block;
+    }
+
+    .logged-in:not(.active) &.show-when-inactive {
+      display: block;
+    }
+  }
+}
+
+.experiment-icon-wrapper {
+  @include flex-container(row, center, center);
+  background: $transparent-black-2;
+  border-radius: 2px 2px 0 0;
+  box-shadow: 0 -2px 2px $transparent-white-3;
+  height: 120px; 
+}
+
+.experiment-icon {
+  background-repeat: no-repeat;
+  background-size: $grid-unit * 4 $grid-unit * 4;
+  filter: drop-shadow(0 1px 0 $transparent-black-1);
+  flex: 0 0 $grid-unit * 4;
+  height: $grid-unit * 4;
+  opacity: .9;
+}

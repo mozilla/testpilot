@@ -6,5 +6,5 @@ test(`Running Tests for ${__filename}`, a => a.end());
 test('Footer view renders', t => {
   t.plan(1);
   const view = new View().render();
-  t.ok(view.query('#main-footer'));
+  t.ok(view.query('#footer-links'));
 });

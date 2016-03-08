@@ -3,7 +3,6 @@ import AmpersandViewSwitcher from 'ampersand-view-switcher';
 
 import ErrorPage from '../views/error-page';
 import ExperimentPage from '../views/experiment-page';
-import AccountInactivePage from '../views/account-inactive-page';
 import ExperimentListPage from '../views/experiment-list-page';
 import LandingPage from '../views/landing-page';
 import NotFoundPage from '../views/not-found-page';
@@ -22,7 +21,6 @@ export default class PageManager {
       'landing': LandingPage,
       'experiments': ExperimentListPage,
       'experimentDetail': ExperimentPage,
-      'accountInactive': AccountInactivePage,
       'notFound': NotFoundPage,
       'error': ErrorPage
     };
