@@ -18,6 +18,7 @@ Test Pilot is not intended to replace trains for most features, nor is it a test
 
 - Wiki: https://wiki.mozilla.org/Test_Pilot
 - IRC: #testpilot on irc.mozilla.org
+- [Test Pilot Metrics](docs/README-METRICS.md)
 
 ## Development
 
