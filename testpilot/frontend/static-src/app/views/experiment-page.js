@@ -144,10 +144,6 @@ export default PageView.extend({
   },
 
   render() {
-    // TODO: let's not mess with body, if possible
-    document.body._id = document.body.id;
-    document.body.id = 'idea-view';
-
     PageView.prototype.render.apply(this, arguments);
 
     return this;
@@ -166,7 +162,6 @@ export default PageView.extend({
   },
 
   remove() {
-    document.body.id = document.body._id;
     PageView.prototype.remove.apply(this, arguments);
   },
 

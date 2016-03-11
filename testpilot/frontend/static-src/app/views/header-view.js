@@ -3,7 +3,6 @@ import BaseView from './base-view';
 import SettingsMenuView from './settings-menu-view';
 
 import template from '../templates/header-view';
-import scrollTemplate from '../templates/scroll-header-view';
 
 export default BaseView.extend({
   template: template,
@@ -16,7 +15,7 @@ export default BaseView.extend({
   },
 
   props: {
-    title: {type: 'string', default: 'Test Pilot'},
+    title: {type: 'string', default: 'Firefox Test Pilot'},
     isInstalled: {type: 'boolean', default: false},
     activeUser: {type: 'boolean', required: true, default: false}
   },
@@ -45,7 +44,7 @@ export default BaseView.extend({
       if (chunkedUrl.length < 2) {
         return;
       }
-      this.template = scrollTemplate;
+
       this.experiment = app.experiments.get(chunkedUrl[2], 'slug').toJSON();
     }
 
@@ -63,7 +62,6 @@ export default BaseView.extend({
     this.activeUser = !!this.session && app.me.hasAddon;
 
     if (this.experiment) {
-      this.title = this.experiment.title;
       this.isInstalled = !!this.experiment.isInstalled;
     }
   },

@@ -1,9 +1,9 @@
-<siteName "Test Pilot">
+<siteName "Firefox Test Pilot">
 
-<pageTitleDefault "Test Pilot">
-<pageTitleLandingPage "Test Pilot - Help build Firefox">
-<pageTitleExperimentListPage "Test Pilot - Experiments">
-<pageTitleExperiment "Test Pilot - {{title}}">
+<pageTitleDefault "Firefox Test Pilot">
+<pageTitleLandingPage "Firefox Test Pilot">
+<pageTitleExperimentListPage "Firefox Test Pilot - Experiments">
+<pageTitleExperiment "Firefox Test Pilot - {{title}}">
 
 <headerSubtitle "The innovative community where new Ideas for Firefox are tested.">
 
@@ -19,14 +19,17 @@
 <menuFileIssue "File an Issue">
 <menuLogout "Logout">
 
-<landingWelcome "Welcome to Test Pilot">
-<landingIntro "Test new features.<br> Give us feedback.<br> Help build Firefox.">
-<landingFxaGetStartedButton "Get started with your Firefox Account">
-<landingFxaAlternateButton "Don't have an account? Sign up.">
-<landingCtaLegal "By proceeding, you agree to the <a>Terms of Service</a> and <a>Privacy Notice</a> of Test Pilot.">
-<landingBetaNotice "We're still building Test Pilot! Sign up now and we'll let you know when it's ready to go!">
-<landingBetaSignup "Sign me up!">
-<landingInstallHeader "Install the Test Pilot Add-on <br> and you're good to go!">
+
+
+<landingFxaAlternateButton "Sign in">
+<landingIntroOne "Test out new features.">
+<landingIntroTwo "Give us feedback.">
+<landingIntroThree "Help build Firefox.">
+<landingFxaGetStartedButton "Get started with a Firefox Account">
+<landingLegalNotice "By proceeding, you agree to the <a>Terms of Service</a> and <a>Privacy Notice</a> of Test Pilot.">
+<landingPageFooterCopy "More tests coming soon!">
+<landingInstallHeaderOne "Install the Test Pilot Add-on">
+<landingInstallHeaderTwo "and you're good to go!">
 <landingInstallButton "Install the Add-on">
 
 <errorHeading "Whoops!">
@@ -34,11 +37,11 @@
 
 <notFoundHeader "Four Oh Four!">
 
-<signUpThanks "Thanks for signing up!">
-<signUpEmailWhenReady "We'll email you when Test Pilot is ready.">
+<experimentListPageHeader "Welcome to Firefox Test Pilot!">
+<experimentListPageSubHeader  "We're always trying out new features in Firefox. <br> Pick any of the tests below to see what we're working on!">
 
 <experimentListInactiveHover "Get Started">
-<experimentListActiveHover "View Details">
+<experimentListActiveHover "Manage">
 
 <giveFeedback "Give Feedback">
 

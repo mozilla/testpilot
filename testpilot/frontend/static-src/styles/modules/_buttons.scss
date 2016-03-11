@@ -1,55 +1,64 @@
 .button {
-  border: 0;
-  border-radius: 4px;
-  font-weight: 200;
-  height: 36px;
-  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  display: inline-block;
+  height: 34px;
+  line-height: 34px;
+  outline: none;
+  padding: 0 20px;
   position: relative;
-  text-align: center;
   text-decoration: none;
   transition: background 100ms;
 
-  &.large {
-    border-radius: 8px;
-    font-size: 2rem;
-    height: 6rem;
-    padding: 0 2px 2px;
-  }
-
-  &.link {
-    @include flex-container(row, center, center);
-  }
-
-  &.secondary {
-    border: 1px solid darken($light, 20);
-    color: $dark;
-
-    &:hover,
-    &:focus {
-      background: darken($light, 10);
-    }
-  }
-
-  &.neutral {
-    border: 1px solid transparency($black, .1);
-  }
-
-  &.default {
-    @include color-scheme($white, $black);
+  &.outline {
+    background: none;
+    border-color: $white;
+    color: $white;
+    opacity: .6;
   }
 
   &.primary {
-    @include color-scheme($white, $primary);
+    background: $primary;
+    border: 1px solid $primary-dark;
+    color: $white;
 
     &:hover,
     &:focus {
-      background: darken($primary, 8);
-      color: transparency($white, .7);
+      background: $primary-dark;
+      border: 1px solid $primary-darker;
     }
 
     &:active {
-      background: darken($primary, 12);
+      background: $primary-darker;
+      border: 1px solid $primary-darkest;
     }
+  }
+
+  &.secondary {
+    background: $secondary-button-background;
+    border: 1px solid $secondary-button-border;
+  }
+
+  &.default {
+    background: $default;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background: darken($default, 4);
+    }
+
+    &:active {
+      background: darken($default, 6);
+    }
+  }
+
+  &.large {
+    font-size: 20px;
+    font-weight: 300;
+    height: 52px;
+    line-height: 52px;
+    min-width: 320px;
   }
 
   // Loading animation concept comes from
@@ -58,11 +67,11 @@
     animation: barberpole 1000ms infinite linear;
     background-image: linear-gradient(
       45deg,
-      transparency($white, .1) 25%,
+      $transparent-white-1 25%,
       transparent 25%,
       transparent 50%,
-      transparency($white, .1) 50%,
-      transparency($white, .1) 75%,
+      $transparent-white-1 50%,
+      $transparent-white-1 75%,
       transparent 75%,
       transparent
     );
@@ -88,47 +97,4 @@
     opacity: 1;
   }
 
-  &.neutral.state-change,
-  &.primary.state-change,
-  &.dark {
-    @include color-scheme($white, $default-dark);
-
-    &:hover,
-    &:focus {
-      background: lighten($default-dark, 3);
-    }
-
-    &:active {
-      background: darken($default-dark, 3);
-    }
-  }
-
-  &.icon {
-    border: 2px solid $black;
-    flex: 0 0 36px;
-    height: 36px;
-  }
-
-  &.special {
-    background: none;
-    border-radius: 6px;
-    color: $default;
-    display: block;
-    font-size: 20px;
-    font-weight: 200;
-    height: 60px;
-    line-height: 60px;
-    margin: 0 auto 20px;
-    text-align: center;
-    width: 200px;
-
-    &:hover,
-    &:focus {
-      background: $wash;
-    }
-
-    &:active {
-      background: darken($wash, 4);
-    }
-  }
 }

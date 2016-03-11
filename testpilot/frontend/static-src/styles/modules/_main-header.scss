@@ -1,0 +1,18 @@
+#main-header {
+  @include flex-container(row, space-between, center);
+
+  h1 {
+    @include flex-container(row, flex-start, center);
+    font-size: 26px;
+    font-weight: 700;
+    margin: 10px 0;
+
+    .firefox-logo {
+      @include hidpi-background-image('small-firefox-logo', 57px 59px);
+      background-repeat: no-repeat;
+      height: 57px;
+      padding-left: 60px;
+      transform: scale(.8);
+    }
+  }
+}

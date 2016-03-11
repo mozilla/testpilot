@@ -1,62 +1,22 @@
-#idea-view {
-  @include color-scheme-special-inverse(false);
-  color: $black;
-}
-
-#condensed-branding {
-  @include color-scheme-special(false);
-  margin-bottom: 40px;
-
-  &.detail-header {
-    @include color-scheme-special-inverse(false);
-  }
-
-  .row {
-    @include flex-container(row, space-between, center, nowrap, true);
-    height: 80px;
-  }
-
-  .settings-contain {
-    margin: 0;
-  }
-
-  h2 {
-    @include hidpi-background-image('small-firefox-logo', 57px 59px);
-    background-repeat: no-repeat;
-    color: $white;
-    height: 57px;
-    line-height: 57px;
-    padding-left: 72px;
-  }
-}
-
-#details {
-  flex: 1;
-}
-
 .details-header-wrapper {
 
-  h1 {
-    transition: font-size 200ms;
-  }
-
-  &:not(.stick) {
-    height: 89px;
-  }
-
   &.stick {
-    background: transparency($white, .96);
-    box-shadow: 0 0 5px transparency($black, .3);
+    background: $transparent-white-96;
+    box-shadow: 0 0 5px $transparent-black-5;
+    left: 0;
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 999;
 
     + div {
-      margin-top: 120px;
+      margin-top: 80px;
     }
 
     h1 {
-      font-size: 40px;
+      flex: 1;
+      font-size: 38px;
+
     }
 
     .details-content {
@@ -64,34 +24,49 @@
     }
 
     .details-header {
-      height: 66px;
+      margin-top: 0;
+    }
+  }
+}
+
+.experiment-controls {
+  @include flex-container(row, flex-end, center);
+  flex: 1;
+
+  .button {
+    margin-right: 20px;
+
+    span {
+      text-wrap: nowrap;
     }
   }
 }
 
 .details-header {
-  @include flex-container(row, space-between, center, nowrap, true);
+  @include flex-container(row, space-between, center);
+  height: 80px;
   position: relative;
-}
 
-.idea-controls {
-  @include flex-container(row, space-between, center, nowrap, false);
-
-  > * {
-    margin-left: 20px;
+  h1 {
+    display: flex;
+    flex: 1;
+    font-size: 36px;
+    margin: 0;
+    transition: font-size 200ms;
   }
 }
 
 .user-count {
   @include hidpi-background-image('count-avatar', 24px 30px);
   background-repeat: no-repeat;
+  display: inline-block;
+  flex: 0 0 24px;
   height: 30px;
-  line-height: 30px;
-  padding-left: 32px;
+  margin-left: 10px;
 }
 
 .details-content {
-  @include flex-container(row, space-between, top, nowrap, true);
+  @include flex-container(row, space-between, flex-start);
   padding-top: 30px;
 
   h3 {
@@ -101,19 +76,16 @@
 
 .details-overview {
   flex: 0 0 260px;
-
-  > img:first-child {
-    border: 1px solid transparency($black, 1);
-    border-radius: 50%;
-  }
 }
 
 .details-description {
   flex: 0 0 680px;
 }
 
-.disclaimer {
+.disclaimer,
+.privacy-policy {
   font-size: 12px;
+  line-height: 18px;
   margin-bottom: 18px;
 }
 
@@ -136,9 +108,9 @@
   padding: 0;
 
   li {
-    @include flex-container(row, left, center, nowrap, false);
+    @include flex-container(row, flex-start, center);
     padding-bottom: 10px;
-   }
+  }
 
   .title {
     font-size: 10px;
@@ -147,7 +119,6 @@
   .contributor {
     padding-left: 10px;
   }
-
 }
 
 .stats {
@@ -170,12 +141,19 @@
 .details-image {
   margin-bottom: 32px;
 
-  img {
+  .image {
     background: $light;
     border: 1px solid darken($light, 6);
     border-radius: 6px;
-    height: 400px;
+    height: 460px;
     width: 100%;
+  }
+
+  .caption {
+    color: $transparent-black-7;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 0 6px;
   }
 }
 
@@ -183,17 +161,24 @@
   color: $primary;
   display: block;
   font-weight: bold;
-  left: 15px;
+  left: 4px;
   position: absolute;
   top: -20px;
 
+  .stick & {
+    display: none;
+  }
+
   &:before {
+    animation: pop 2000ms infinite alternate ease-in-out;
     background: $primary;
     border-radius: 50%;
     content: '';
     display: inline-block;
-    height: 15px;
-    margin-right: 5px;
-    width: 15px;
+    height: 20px;
+    margin-right: 8px;
+    position: relative;
+    top: 3px;
+    width: 20px;
   }
 }
