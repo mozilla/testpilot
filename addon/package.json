@@ -18,10 +18,12 @@
   "updateURL": "https://testpilot.firefox.com/static/addon/update.rdf",
   "updateLink": "https://testpilot.firefox.com/static/addon/addon.xpi",
   "scripts": {
+    "start": "npm run watch",
+    "once": "jpm run -b beta --prefs dev-prefs.json",
+    "package": "jpm xpi",
+    "watch": "jpm watchpost --post-url http://localhost:8888",
     "lint": "eslint .",
-    "sign": "./sign",
-    "start": "jpm run -b /usr/bin/firefox --prefs dev-prefs.json",
-    "watch": "jpm watchpost --post-url http://localhost:8888"
+    "sign": "./sign"
   },
   "license": "MPL-2.0",
   "devDependencies": {
