@@ -1,5 +1,5 @@
 # Test Pilot
-The addon where ideas come to idea
+The add-on where ideas come to idea
 
 ## installation
 
@@ -51,8 +51,8 @@ with the add-on installed.
 
 ## distributing
 
-We serve the addon from the `/static/addon/` directory. We will need
-to get the addon signed via [AMO](http://addons.mozilla.org/) and move
+We serve the add-on from the `/static/addon/` directory. We will need
+to get the add-on signed via [AMO](http://addons.mozilla.org/) and move
 it into the correct directory. This is all packaged into a script,
 `npm run sign` in the [package.json](./package.json).
 
@@ -117,9 +117,9 @@ The event `addon-install:install-ended` will include some extra properties:
 }
 ```
 
-#### Talking to the addon
+#### Talking to the add-on
 
-You will need to setup the following function (or an equivalent) to send messages to the addon.
+You will need to setup the following function (or an equivalent) to send messages to the add-on.
 
 ``` javascript
 function sendToAddon (data) {

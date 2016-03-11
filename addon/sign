@@ -6,7 +6,7 @@
  */
 /*
  * This script is for signing, packaging, and distributing the testpilot
- * addon. If the current package version has already been signed, we generate
+ * add-on. If the current package version has already been signed, we generate
  * an update.rdf, download the signed xpi from amo, and move the files into
  * the testpilot project.
  * If the package version has not been signed, we build the xpi and update.rdf,
@@ -49,13 +49,13 @@ function signCb(err, resp, body) {
   } else distAddon();
 }
 
-// if we need to sign and distribute our addon, we want to use this method
+// if we need to sign and distribute our add-on, we want to use this method
 function distAddon() {
   // generate our xpi and update.rdf
   packageAddon(function(err) {
     if (err) return console.error(err);
 
-    // sign our addon
+    // sign our add-on
     var generatedXpi = '@testpilot-addon-' + version + '.xpi';
 
     signAddon(generatedXpi, function(err, signedXpiPath) {
@@ -80,17 +80,17 @@ function distAddon() {
   });
 }
 
-// if we download our signed addon we want to use this method of distribution
+// if we download our signed add-on we want to use this method of distribution
 function distAddonSigned() {
   // generate our xpi and update.rdf
   packageAddon(function(err) {
     if (err) return console.error(err);
-    console.log('addon packaged.');
+    console.log('add-on packaged.');
 
     // move generated files into /dist directory
     var updateFile = '@testpilot-addon-' + version + '.update.rdf';
 
-    // remove generated addon file, since we already downloaded a
+    // remove generated add-on file, since we already downloaded a
     // signed version
     removeGeneratedXpi();
 
