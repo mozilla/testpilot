@@ -10,17 +10,40 @@ The addon where ideas come to idea
 prod: check the `CONFIG` property in `package.json`
 dev: [dev-prefs.json](dev-prefs.json)
 
-## running
+## development
 
-* `npm start`
+A relatively easy path for working on this addon involves the following steps:
 
-You may need to set both `xpinstall.signatures.required` and
-`xpinstall.whitelist.required` flags to false in `about:config`
-if the addon has not yet been signed.
+1. Install [Firefox Developer Edition][devedition].
 
-If you want to install the xpi locally for dev, you will need to
-set your preferences in `about:addons`. You'll want to use the preferences
-from [dev-prefs.json](./dev-prefs.json).
+2. [Disable add-on signature checks.][sigchecks] TL;DR: Enter `about:config` in
+   the URL bar. Set `xpinstall.signatures.required` and
+   `xpinstall.whitelist.required` flags to false.
+
+3. Install the [Extension Auto-Installer][autoinstaller] Add-on in Firefox
+   Developer Edition.
+
+4. Run `npm start` to fire up a watcher that will build the Test Pilot add-on
+   whenever files change and auto-update the installed version in Firefox.
+
+5. Read all about [setting up an extension development
+   environment][extensiondev] on MDN.
+
+[devedition]: https://www.mozilla.org/en-US/firefox/developer/
+[sigchecks]: https://wiki.mozilla.org/Add-ons/Extension_Signing#FAQ
+[autoinstaller]: https://addons.mozilla.org/en-US/firefox/addon/autoinstaller/
+[extensiondev]: https://developer.mozilla.org/en-US/Add-ons/Setting_up_extension_development_environment
+
+## running once for testing
+
+* Install [Firefox Beta][fxbeta]
+
+* `npm run once`
+
+This should package the add-on and fire up Firefox Beta using a fresh profile
+with the add-on installed.
+
+[fxbeta]: https://www.mozilla.org/en-US/firefox/channel/#beta
 
 ## packaging
 

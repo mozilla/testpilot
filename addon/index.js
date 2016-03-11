@@ -36,9 +36,6 @@ Mustache.parse(templates.experimentList);
 const PANEL_WIDTH = 400;
 const EXPERIMENT_HEIGHT = 95;
 const FOOTER_HEIGHT = 60;
-const PANEL_HEIGHT = (Object.keys(store.availableExperiments).length
-  * EXPERIMENT_HEIGHT)
-  + FOOTER_HEIGHT;
 
 // Generate a UUID for this client, if we don't have one yet.
 if (!store.clientUUID) {
@@ -133,8 +130,6 @@ Prefs.observe('devtools.theme', pref => {
 });
 
 const panel = Panel({ // eslint-disable-line new-cap
-  width: PANEL_WIDTH,
-  height: PANEL_HEIGHT,
   contentURL: './feedback.html',
   contentScriptFile: './panel.js',
   onHide: () => {
@@ -196,21 +191,23 @@ function setToggleButton(dark) {
       '32': iconPrefix + '-32.png',
       '64': iconPrefix + '-64.png'
     },
-    onChange: handleChange
+    onChange: handleToolbarButtonChange
   });
 }
 
-const EVENT_SEND_METRIC = 'testpilot::send-metric';
-
-function handleChange(state) {
-  if (state.checked) {
-    panel.show({
-      position: button
-    });
-  }
+function handleToolbarButtonChange(state) {
+  if (!state.checked) { return; }
+  const experimentCount = ('availableExperiments' in store) ?
+    Object.keys(store.availableExperiments).length : 0;
+  panel.show({
+    width: PANEL_WIDTH,
+    height: (experimentCount * EXPERIMENT_HEIGHT) + FOOTER_HEIGHT,
+    position: button
+  });
 }
 
 // Listen for metrics events from experiments.
+const EVENT_SEND_METRIC = 'testpilot::send-metric';
 const metrics = {
   isInitialized: false,
   init: function() {
