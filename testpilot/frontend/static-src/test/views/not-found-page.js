@@ -7,5 +7,5 @@ test('Not Found Page view renders', t => {
   t.plan(1);
   const view = new View();
   view.render();
-  t.ok(view.query('#full-page-notice'));
+  t.ok(view.query('#full-page-wrapper'));
 });

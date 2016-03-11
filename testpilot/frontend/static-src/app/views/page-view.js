@@ -3,14 +3,14 @@ import HeaderView from './header-view';
 import FooterView from './footer-view';
 
 export default BaseView.extend({
-  pageTitle: 'Test Pilot',
+  pageTitle: 'Firefox Test Pilot',
   pageTitleL10nID: 'pageTitleDefault',
 
   afterRender() {
     this.renderSubview(new HeaderView({
       headerScroll: this.headerScroll
-    }), '[data-hook="main-header"]');
+    }), '[data-hook="header-view"]');
 
-    this.renderSubview(new FooterView(), '[data-hook="main-footer"]');
+    this.renderSubview(new FooterView(), '[data-hook="footer-view"]');
   }
 });

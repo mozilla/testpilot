@@ -1,0 +1,30 @@
+body {
+  background: $white;
+  color: $black;
+}
+
+a {
+  color: $default;
+  text-decoration: none;
+}
+
+.blue {
+  background-image: radial-gradient(circle $default 70%, $default-dark 100%, $default-darker 110%);
+  color: $white;
+
+  a {
+    color: $white;
+  }
+}
+
+.mozilla-logo {
+  @include hidpi-background-image('mozilla-blue', 77px 20px);
+  height: 20px;
+  position: relative;
+  top: -3px;
+  width: 77px;
+
+  .blue & {
+    @include hidpi-background-image('mozilla', 77px 20px);
+  }
+}

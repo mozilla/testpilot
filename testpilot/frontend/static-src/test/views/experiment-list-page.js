@@ -24,7 +24,7 @@ test('Experiment List Page view renders', t => {
   app.experiments = new Experiments();
   const view = new View({headerScroll: false});
   view.render();
-  t.ok(view.query('#idea-card-list'));
+  t.ok(view.query('.intro-text'));
 });
 
 test('Experiment List view is present after render', t => {
@@ -37,5 +37,5 @@ test('Experiment List view is present after render', t => {
 
   const view = new View({headerScroll: false});
   view.render();
-  t.ok(view.query('#idea-card-list li'));
+  t.ok(view.query('.content-wrapper li'));
 });
