@@ -3,16 +3,25 @@ import app from 'ampersand-app';
 import BaseView from './base-view';
 
 export default BaseView.extend({
-  template: `<li data-hook="show-detail" class="idea-card">
-               <div class="idea-preview-image" data-hook="thumbnail">
-                 <div data-l10n-id="experimentListInactiveHover"
-                      class="hover-state show-when-inactive">Get Started</div>
-                 <div data-l10n-id="experimentListActiveHover"
-                      class="hover-state show-when-active">View Details</div>
+  template: `<div data-hook="show-detail" class="experiment-summary">
+              <div class="experiment-icon-wrapper">
+                <div class="experiment-icon" data-hook="thumbnail"></div>
+              </div>
+              <div class="experiment-information">
+                <header>
+                  <h3 data-hook="title"></h3>
+                </header>
+                <p data-hook="description"></p>
+              </div>
+               <div class="experiment-actions">
+                  <button data-l10n-id="experimentListInactiveHover" class="button default show-when-inactive">Get Started</button>
+                  <button data-l10n-id="experimentListActiveHover" class="button secondary show-when-active">Manage</button>
                </div>
-               <h2 data-hook="title"></h2>
-               <p data-hook="description"></p>
-             </li>`,
+             </div>`,
+
+  props: {
+    loggedIn: {type: 'boolean', default: 'false'}
+  },
 
   bindings: {
     'model': {
@@ -35,11 +44,20 @@ export default BaseView.extend({
       type: 'booleanClass',
       hook: 'show-detail',
       name: 'active'
+    },
+    'loggedIn': {
+      type: 'booleanClass',
+      hook: 'show-detail',
+      name: 'logged-in'
     }
   },
 
   events: {
-    'click [data-hook=show-detail]': 'openDetailPage'
+    'click [data-hook=show-detail].logged-in': 'openDetailPage'
+  },
+
+  initialize(opts) {
+    this.loggedIn = opts.loggedIn;
   },
 
   openDetailPage(evt) {

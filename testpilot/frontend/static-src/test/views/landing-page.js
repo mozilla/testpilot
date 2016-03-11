@@ -26,7 +26,7 @@ test('Landing Page view renders', t => {
   const view = new View();
   view.render();
 
-  t.ok(view.query('#cta-layout-wrapper'));
+  t.ok(view.query('#main-header'));
 });
 
 test('Properly checks loggedIn state', t => {

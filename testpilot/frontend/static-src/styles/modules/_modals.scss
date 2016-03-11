@@ -1,50 +1,38 @@
-#beta-notice-modal {
-  @include color-scheme($default, transparency($white, 1));
-  border-radius: 10px;
-  font-weight: 400;
-  padding: 24px;
+#four-oh-four {
+  background: $white;
+  border-radius: 3px;
+  color: $black;
+  max-width: 320px;
+  padding: 10px;
   position: relative;
   text-align: center;
-  width: 442px;
   z-index: 999;
 
   h1 {
-    font-size: 4rem;
-    line-height: 4rem;
-    margin-bottom: 1.2rem;
-    margin-top: -.4rem;
+    margin-top: 0;
   }
 
-  h2 {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-  }
-
-  .town & {
-    padding: 15px;
-    position: absolute;
-    right: 75px;
-    top: -250px;
-    width: 260px;
+  .button {
+    display: block;
   }
 
   &:after {
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     border-top: 15px solid $white;
-    bottom: -15px;
+    bottom: -14px;
     content: '';
     height: 0;
+    left: 50%;
+    margin-left: -13px;
     position: absolute;
     width: 0;
+  }
 
-    .town & {
-      left: 194px;
-    }
-
-    .vertical-centering-container & {
-      right: 40px;
-    }
+  + .copter {
+    left: 5px;
+    margin: 0 auto;
+    top: 30px;
   }
 }
 
@@ -68,7 +56,7 @@
 }
 
 #modal-screen {
-  background: transparency($white, .6);
+  background: $transparent-white-6;
   bottom: 0;
   left: 0;
   position: fixed;
@@ -78,7 +66,7 @@
 }
 
 #modal-screen.dark {
-  background: transparency($black, .6);
+  background: $transparent-black-6;
 }
 
 .feedback-modal {
@@ -102,7 +90,7 @@
     text-align: center;
   }
 
-  section.main {
+  .main {
     padding: 0 25px;
 
     ul {
@@ -121,13 +109,12 @@
 
         label {
           font-size: 1.8rem;
-          font-weight: 200;
         }
       }
     }
 
-    section.extra,
-    section.controls {
+    .extra,
+    .controls {
       text-align: center;
 
       p {
@@ -148,11 +135,11 @@
       }
     }
 
-    section.controls {
+    .controls {
       margin: 20px 0;
       text-align: center;
 
-      button.submit {
+      .submit {
         display: block;
         font-size: 1.8rem;
         font-weight: 400;

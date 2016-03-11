@@ -24,7 +24,7 @@ test('header view renders', t => {
   t.plan(1);
   const view = new View({headerScroll: false});
   view.render();
-  t.ok(view.query('.navbar'));
+  t.ok(view.query('#main-header'));
 });
 
 test('Settings menu subview renders', t => {

@@ -11,7 +11,7 @@ test('Experiment row view renders', t => {
     title: 'test'
   });
   const view = new View({model: model}).render();
-  t.ok(view.query('.idea-card'));
+  t.ok(view.query('.experiment-summary'));
 });
 
 test('Experiment row displays title when short_title is blank', t => {
@@ -23,7 +23,7 @@ test('Experiment row displays title when short_title is blank', t => {
     title: expectedTitle
   });
   const view = new View({model: model}).render();
-  t.equal(view.query('.idea-card h2').innerHTML, expectedTitle);
+  t.equal(view.query('.experiment-summary h3').innerHTML, expectedTitle);
 });
 
 test('Experiment row displays short_title', t => {
@@ -35,5 +35,5 @@ test('Experiment row displays short_title', t => {
     title: 'long long long title'
   });
   const view = new View({model: model}).render();
-  t.equal(view.query('.idea-card h2').innerHTML, expectedTitle);
+  t.equal(view.query('.experiment-summary h3').innerHTML, expectedTitle);
 });

@@ -37,12 +37,12 @@ test('header is present', t => {
   t.plan(1);
   const view = new MyView({headerScroll: true});
   view.render();
-  t.ok(view.query('.navbar'));
+  t.ok(view.query('#main-header'));
 });
 
 test('footer is present', t => {
   t.plan(1);
   const view = new MyView({headerScroll: true});
   view.render();
-  t.ok(view.query('#main-footer'));
+  t.ok(view.query('#footer-links'));
 });

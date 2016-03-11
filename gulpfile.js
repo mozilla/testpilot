@@ -19,7 +19,6 @@ const sassLint = require('gulp-sass-lint');
 const source = require('vinyl-source-stream');
 const sourcemaps = require('gulp-sourcemaps');
 const through = require('through2');
-const tabzilla = require('mozilla-tabzilla');
 const uglify = require('gulp-uglify');
 const tryRequire = require('try-require');
 
@@ -27,12 +26,6 @@ const IS_DEBUG = (process.env.NODE_ENV === 'development');
 
 const SRC_PATH = './testpilot/frontend/static-src/';
 const DEST_PATH = './testpilot/frontend/static/';
-
-// HACK: Under Docker, the node_modules install has been moved.
-// So, look for the vendor assets there. Otherwise, look in current dir
-const NODE_MODULES_PATH = ('NODE_PATH' in process.env) ?
-    process.env.NODE_PATH.split(':')[0] :
-    './node_modules/';
 
 const config = tryRequire('./debug-config.json') || {
   'sass-lint': true,
@@ -62,18 +55,6 @@ gulp.task('clean', function cleanTask() {
   return del([
     DEST_PATH
   ]);
-});
-
-gulp.task('npm:tabzilla:img', function npmTabzillaImgTask() {
-  return gulp.src(NODE_MODULES_PATH + 'mozilla-tabzilla/media/**')
-    // the tabzilla css looks for images in "../media/img/" :-(
-    .pipe(gulp.dest(DEST_PATH + 'media/'));
-});
-
-gulp.task('vendor', function vendorTask(done) {
-  return runSequence([
-    'npm:tabzilla:img'
-  ], done);
 });
 
 // based on https://github.com/gulpjs/gulp/blob/master/docs/recipes/browserify-with-globs.md,
@@ -114,8 +95,7 @@ gulp.task('styles', shouldLint('sass-lint', 'sass-lint'), function stylesTask() 
     .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: [
-        normalize.includePaths,
-        tabzilla.includePaths
+        normalize.includePaths
       ]
     }).on('error', sass.logError))
     .pipe(autoprefixer('last 2 versions'))
@@ -125,8 +105,15 @@ gulp.task('styles', shouldLint('sass-lint', 'sass-lint'), function stylesTask() 
     .pipe(gulp.dest(DEST_PATH + 'styles'));
 });
 
+// the globbing pattern here should be cleaned up
+// when node-sass supports inline ignores
+// see the note in the _hidpi-mixin for details
 gulp.task('sass-lint', function sassLintTask() {
-  return gulp.src(SRC_PATH + '/styles/**/*.scss')
+  const files = [
+    SRC_PATH + '/styles/**/*.scss',
+    '!' + SRC_PATH + '/styles/_hidpi-mixin.scss'
+  ];
+  return gulp.src(files)
     .pipe(sassLint())
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError());
@@ -151,7 +138,6 @@ gulp.task('addon', function localesTask() {
 gulp.task('build', function buildTask(done) {
   runSequence(
     'clean',
-    'vendor',
     'scripts',
     'styles',
     'images',
