@@ -3,7 +3,6 @@ Test Pilot
 
 ![Test Pilot Rainbow Logo](https://wiki.mozilla.org/images/thumb/7/7a/IdeaTownSticker.png/400px-IdeaTownSticker.png)
 
-[![Build Status](https://img.shields.io/travis/mozilla/testpilot/master.svg)](https://travis-ci.org/mozilla/testpilot)
 [![Circle CI](https://circleci.com/gh/mozilla/testpilot/tree/master.svg?style=svg&circle-token=88ea3e1a6d9b7558092b75358c6ab9251739b9b5)](https://circleci.com/gh/mozilla/testpilot/tree/master)
 [![Coverage status](https://img.shields.io/coveralls/mozilla/testpilot/master.svg)](https://coveralls.io/r/mozilla/testpilot)
 [![Requirements Status](https://requires.io/github/mozilla/testpilot/requirements.svg?branch=master)](https://requires.io/github/mozilla/testpilot/requirements/?branch=master)
@@ -110,7 +109,7 @@ See some of our [Tips and Tricks](docs/README-DOCKER.md).
     development, including how to set up custom configurations and run common
     tests & checks.
 
-  * [`tox.ini`](./tox.ini) - to see what checks are run automatically in Travis
+  * [`circle.yml`](./circle.yml) - to see what checks are run automatically in Circle
     CI, which you should ensure pass locally before submitting a Pull Request on
     GitHub
 
