@@ -16,9 +16,10 @@ machine:
 
 dependencies:
 
-  # make sure to keep the docker cache dir
+  # Keep docker dir and addon dependencies
   cache_directories:
     - "~/docker"
+    - "addon/node_modules"
 
   pre:
     # https://discuss.circleci.com/t/nvm-commands-are-not-evaluated/943
