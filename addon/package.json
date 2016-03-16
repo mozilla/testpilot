@@ -20,10 +20,10 @@
   "scripts": {
     "start": "npm run watch",
     "once": "jpm run -b beta --prefs dev-prefs.json",
-    "package": "jpm xpi",
     "watch": "jpm watchpost --post-url http://localhost:8888",
     "lint": "eslint .",
-    "sign": "./sign"
+    "sign": "./bin/update-version && ./bin/sign",
+    "package": "jpm xpi && mv @testpilot-addon-$npm_package_version.xpi ../testpilot/frontend/static-src/addon/addon.xpi && mv @testpilot-addon-$npm_package_version.update.rdf ../testpilot/frontend/static-src/addon/update.rdf"
   },
   "license": "MPL-2.0",
   "devDependencies": {

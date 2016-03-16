@@ -17,7 +17,9 @@ var fs = require('fs');
 var path = require('path');
 var request = require('request');
 var jwt = require('jsonwebtoken');
-var manifest = require('./package.json');
+
+var manifestFilename = __dirname + '/../package.json';
+var manifest = require(manifestFilename);
 var version = manifest.version;
 var apiKey = process.env['AMO_USER'];
 var apiSecret = process.env['AMO_SECRET'];
