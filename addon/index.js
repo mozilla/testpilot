@@ -8,7 +8,8 @@
 
 const settings = {};
 
-let currentPageMod;
+let setInstalledFlagPageMod;
+let messageBridgePageMod;
 let button;
 let app;
 
@@ -47,16 +48,19 @@ const SERVER_ENVIRONMENTS = {
   local: {
     BASE_URL: 'http://testpilot.dev:8000',
     TESTPILOT_PREFIX: 'testpilot.addon.LOCAL.',
+    WHITELIST_URLS: 'https://www.mozilla.org/*,about:home',
     BADGE_COLOR: '#AA00AA'
   },
   stage: {
     BASE_URL: 'https://testpilot.stage.mozaws.net',
     TESTPILOT_PREFIX: 'testpilot.addon.STAGE.',
+    WHITELIST_URLS: 'https://www.mozilla.org/*,about:home',
     BADGE_COLOR: '#A0AAA0'
   },
   production: {
     BASE_URL: 'https://testpilot.firefox.com',
     TESTPILOT_PREFIX: 'testpilot.addon.MAIN.',
+    WHITELIST_URLS: 'https://www.mozilla.org/*,about:home',
     BADGE_COLOR: '#00AAAA'
   }
 };
@@ -71,13 +75,25 @@ function updatePrefs() {
   Object.assign(settings, {
     BASE_URL: env.BASE_URL,
     ALLOWED_ORIGINS: env.BASE_URL + '/*',
+    ALLOWED_ORIGINS_VIEWINSTALLEDFLAG: env.BASE_URL + '/*,' + env.WHITELIST_URLS,
     HOSTNAME: URL(env.BASE_URL).hostname, // eslint-disable-line new-cap
     TESTPILOT_PREFIX: env.TESTPILOT_PREFIX
   });
 
-  // Set up new PageMod, destroying any previously existing one.
-  if (currentPageMod) { currentPageMod.destroy(); }
-  currentPageMod = new PageMod({
+  // Destroy previously existing PageMods
+  if (setInstalledFlagPageMod) { setInstalledFlagPageMod.destroy(); }
+  if (messageBridgePageMod) { messageBridgePageMod.destroy(); }
+
+  // Set up new PageMod for read access to detect Test Pilot installation.
+  setInstalledFlagPageMod = new PageMod({
+    include: settings.ALLOWED_ORIGINS_VIEWINSTALLEDFLAG.split(','),
+    contentScriptFile: './set-installed-flag.js',
+    contentScriptWhen: 'start',
+    attachTo: ['top', 'existing']
+  });
+
+  // Set up new PageMod for ability to install/remove add-ons.
+  messageBridgePageMod = new PageMod({
     include: settings.ALLOWED_ORIGINS.split(','),
     contentScriptFile: './message-bridge.js',
     contentScriptWhen: 'start',
@@ -93,7 +109,7 @@ updatePrefs();
 
 function setupApp() {
   updateExperiments().then(() => {
-    app = new Router(currentPageMod);
+    app = new Router(messageBridgePageMod);
 
     app.on('install-experiment', installExperiment);
 
@@ -488,7 +504,8 @@ require('sdk/system/unload').when(function(reason) {
   panel.destroy();
   button.destroy();
   metrics.destroy();
-  currentPageMod.destroy();
+  setInstalledFlagPageMod.destroy();
+  messageBridgePageMod.destroy();
   if (reason === 'uninstall') {
     app.send('addon-self:uninstalled');
     if (store.installedAddons) {
