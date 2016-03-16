@@ -74,6 +74,7 @@ INSTALLED_APPS = [
     'django_jinja',
     'django_cleanup',
 
+    'colorfield',
     'rest_framework',
     'storages',
     'markupfield',

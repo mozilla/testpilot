@@ -36,7 +36,8 @@ class ExperimentSerializer(HyperlinkedTranslatableModelSerializer):
                   'thumbnail', 'description',
                   'version', 'changelog_url', 'contribute_url',
                   'privacy_notice_url', 'measurements',
-                  'xpi_url', 'addon_id', 'details', 'contributors',
+                  'xpi_url', 'addon_id', 'gradient_start',
+                  'gradient_stop', 'details', 'contributors',
                   'installations_url', 'installation_count',
                   'created', 'modified', 'order',)
 

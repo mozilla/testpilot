@@ -81,6 +81,8 @@ class ExperimentViewTests(BaseTestCase):
                         "contribute_url": experiment.contribute_url,
                         "privacy_notice_url": experiment.privacy_notice_url,
                         "addon_id": experiment.addon_id,
+                        "gradient_start": experiment.gradient_start,
+                        "gradient_stop": experiment.gradient_stop,
 
                         "created": date_field.to_representation(
                             experiment.created),

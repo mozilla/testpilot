@@ -20,7 +20,7 @@ export default `
     <div data-hook="details">
         <div class="details-content content-wrapper">
           <div class="details-overview">
-            <div class="experiment-icon-wrapper">
+            <div class="experiment-icon-wrapper" data-hook="bg">
               <img class="experiment-icon" data-hook="thumbnail"></img>
             </div>
             <div class="details-sections">

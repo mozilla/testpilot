@@ -29,6 +29,15 @@ export default PageView.extend({
 
   bindings: {
 
+    'model': {
+      hook: 'bg',
+      type: function setGradientBg(el, model) {
+        el.setAttribute('style', `background: linear-gradient(135deg, ${model.gradient_start},
+                                                                     ${model.gradient_stop}`);
+        return el;
+      }
+    },
+
     'model.title': {
       type: 'text',
       hook: 'title'

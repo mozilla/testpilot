@@ -154,3 +154,6 @@ testfixtures==4.9.1
 
 # sha256: ceezvPn8pAi8tlu2CJLzddOr3S5PKW7uuP4Lu_zeWY4
 jsonschema==2.5.1
+
+# sha256: 2jgtD0CR_QWvc0NNXdXZA1hnZB5sUMcEtTLes4JAf-M
+django-colorfield==0.1.10

@@ -5,6 +5,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.functional import cached_property
 
+from colorfield.fields import ColorField
 from markupfield.fields import MarkupField
 
 from hvad.models import TranslatableModel, TranslatedFields
@@ -46,6 +47,8 @@ class Experiment(TranslatableModel):
     contribute_url = models.URLField(blank=True)
     privacy_notice_url = models.URLField(blank=True)
     addon_id = models.CharField(max_length=500, blank=False,)
+    gradient_start = ColorField(default='#e07634')
+    gradient_stop = ColorField(default='#4cffa8')
 
     users = models.ManyToManyField(User, through='UserInstallation')
     contributors = models.ManyToManyField(User, related_name='contributor')
