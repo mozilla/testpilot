@@ -4,7 +4,7 @@
  * http://mozilla.org/MPL/2.0/.
  */
 
-/* global Services */
+/* global TelemetryController */
 
 const settings = {};
 
@@ -13,23 +13,27 @@ let messageBridgePageMod;
 let button;
 let app;
 
-const store = require('sdk/simple-storage').storage;
 const {Cc, Ci, Cu} = require('chrome');
-Cu.import('resource://gre/modules/Services.jsm');
+
+Cu.import('resource://gre/modules/TelemetryController.jsm');
+
+const AddonManager = Cu.import('resource://gre/modules/AddonManager.jsm').AddonManager;
+const Prefs = Cu.import('resource://gre/modules/Preferences.jsm').Preferences;
+const cookieManager2 = Cc['@mozilla.org/cookiemanager;1']
+                       .getService(Ci.nsICookieManager2);
+
 const self = require('sdk/self');
+const store = require('sdk/simple-storage').storage;
 const {Panel} = require('sdk/panel');
 const {PageMod} = require('sdk/page-mod');
 const {ToggleButton} = require('sdk/ui/button/toggle');
 const request = require('sdk/request').Request;
-const AddonManager = Cu.import('resource://gre/modules/AddonManager.jsm').AddonManager;
-const Prefs = Cu.import('resource://gre/modules/Preferences.jsm').Preferences;
 const simplePrefs = require('sdk/simple-prefs');
 const URL = require('sdk/url').URL;
-const cookieManager2 = Cc['@mozilla.org/cookiemanager;1']
-                       .getService(Ci.nsICookieManager2);
-const authRequest = require('./lib/auth-request');
-const Mustache = require('mustache');
 
+const Events = require('sdk/system/events');
+
+const Mustache = require('mustache');
 const templates = require('./lib/templates');
 Mustache.parse(templates.feedback);
 Mustache.parse(templates.experimentList);
@@ -146,11 +150,6 @@ function setupApp() {
   });
 }
 
-// update the our icon for devtools themes
-Prefs.observe('devtools.theme', pref => {
-  setToggleButton(pref === 'dark');
-});
-
 const panel = Panel({ // eslint-disable-line new-cap
   contentURL: './feedback.html',
   contentScriptFile: './panel.js',
@@ -179,8 +178,6 @@ panel.port.on('launch-feedback', id => {
 panel.port.on('feedback-submit', dataStr => {
   const data = JSON.parse(dataStr);
   data.tags = ['main-addon'];
-  authRequest.sendMetric(settings, 'user-feedback', data,
-                         store.availableExperiments[data.addon_id]);
   panel.hide();
 });
 
@@ -200,6 +197,10 @@ function getExperimentList(availableExperiments, installedAddons) {
   });
 }
 
+// update the our icon for devtools themes
+Prefs.observe('devtools.theme', pref => {
+  setToggleButton(pref === 'dark');
+});
 setToggleButton(Prefs.get('devtools.theme') === 'dark');
 
 function setToggleButton(dark) {
@@ -228,53 +229,27 @@ function handleToolbarButtonChange(state) {
   });
 }
 
-// Listen for metrics events from experiments.
 const EVENT_SEND_METRIC = 'testpilot::send-metric';
-const metrics = {
-  isInitialized: false,
-  init: function() {
-    if (this.isInitialized) {
-      return;
-    }
-    this.isInitialized = true;
-    // Note: the observer service holds a strong reference to this observer,
-    // so we must detach it on shutdown / uninstall by calling destroy().
-    Services.obs.addObserver(metrics, EVENT_SEND_METRIC, false);
-  },
-  destroy: function() {
-    Services.obs.removeObserver(metrics, EVENT_SEND_METRIC, false);
-    this.isInitialized = false;
-  },
-  // The metrics object format is { key, value, addonName }, where
-  //   'key' is the name of the event,
-  //   'value' is the value of the event (can be any JSON-serializable object),
-  //   'addonName' is the name of the experiment sending the data.
-  observe: function() {
-    // The nsIObserverService sends non-useful positional arguments; the third
-    // is the only one we need.
-    const data = arguments[2];
 
-    let d;
-    try {
-      d = JSON.parse(data);
-    } catch (ex) {
-      const parseErrorMessage = 'Test Pilot metrics error: cannot process ' +
-        'event, JSON.parse failed: ';
-      console.error(parseErrorMessage, ex); // eslint-disable-line no-console
-      return;
-    }
+function onMetricsPing(ev) {
+  const { subject, data } = ev;
+  const dataParsed = JSON.parse(data);
 
-    if (d && 'key' in d && 'value' in d && 'addonName' in d) {
-      authRequest.sendMetric(settings, d.key, d.value, d.addonName);
-    } else {
-      const clientErrorMessage = 'Test Pilot metrics error: event objects ' +
-        'must have key, value, and addonName properties. Object received was ';
-      console.error(clientErrorMessage, d); // eslint-disable-line no-console
-      return;
-    }
-  }
-};
-metrics.init();
+  // TODO: The subject is add-on ID, could map to ping types as needed.
+  const pingType = 'testpilottest';
+
+  const payload = {
+    version: 1,
+    test: subject,
+    payload: dataParsed
+  };
+
+  TelemetryController.submitExternalPing(pingType, payload, {
+    addClientId: true,
+    addEnvironment: true
+  });
+}
+Events.on(EVENT_SEND_METRIC, onMetricsPing);
 
 function Router(mod) {
   this.mod = mod;
@@ -290,17 +265,8 @@ Router.prototype.on = function(name, f) {
   return this;
 };
 
-Router.prototype.send = function(name, data, addon) {
+Router.prototype.send = function(name, data) {
   this.mod.port.emit('from-addon-to-web', {type: name, data: data});
-  if (addon) {
-    data.tags = ['main-addon'];
-    const packet = JSON.stringify({
-      key: name,
-      value: data,
-      addonName: addon
-    });
-    Services.obs.notifyObservers(null, EVENT_SEND_METRIC, packet);
-  }
   return this;
 };
 
@@ -387,7 +353,7 @@ function formatInstallData(install, addon) {
 }
 
 function isTestpilotAddonID(id) {
-  return id in store.availableExperiments;
+  return 'availableExperiments' in store && id in store.availableExperiments;
 }
 
 function syncAddonInstallation(addonID) {
@@ -504,12 +470,12 @@ const installListener = {
 };
 AddonManager.addInstallListener(installListener);
 
-require('sdk/system/unload').when(function(reason) {
+exports.onUnload = function(reason) {
   AddonManager.removeAddonListener(addonListener);
   AddonManager.removeInstallListener(installListener);
   panel.destroy();
   button.destroy();
-  metrics.destroy();
+  Events.off(EVENT_SEND_METRIC, onMetricsPing);
   setInstalledFlagPageMod.destroy();
   messageBridgePageMod.destroy();
   if (reason === 'uninstall') {
@@ -522,4 +488,4 @@ require('sdk/system/unload').when(function(reason) {
     }
     delete store.availableExperiments;
   }
-});
+};
