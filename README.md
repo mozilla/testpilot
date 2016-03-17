@@ -12,6 +12,19 @@ Test Pilot is an opt-in platform that allows us to perform controlled tests of n
 
 Test Pilot is not intended to replace trains for most features, nor is it a test bed for concepts we do not believe have a strong chance of shipping in general release. Rather, it is reserved for features that require user feedback, testing, and tuning before they ship with the browser.
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [More Information](#more-information)
+- [Development](#development)
+  - [Quickstart](#quickstart)
+    - [OS X hosts](#os-x-hosts)
+    - [Ubuntu Linux hosts](#ubuntu-linux-hosts)
+    - [Windows hosts](#windows-hosts)
+  - [Next Steps](#next-steps)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## More Information
 

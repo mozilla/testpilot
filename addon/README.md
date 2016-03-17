@@ -1,6 +1,23 @@
 # Test Pilot
 The add-on where ideas come to idea
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [installation](#installation)
+- [configuration](#configuration)
+- [development](#development)
+- [running once for testing](#running-once-for-testing)
+- [packaging](#packaging)
+- [distributing](#distributing)
+- [Events](#events)
+    - [Talking to the addon](#talking-to-the-addon)
+- [Maintainers](#maintainers)
+- [Attribution](#attribution)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## installation
 
 `npm install`
