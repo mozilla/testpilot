@@ -4,7 +4,7 @@ import BaseView from './base-view';
 
 export default BaseView.extend({
   template: `<div data-hook="show-detail" class="experiment-summary">
-              <div class="experiment-icon-wrapper">
+              <div class="experiment-icon-wrapper" data-hook="bg">
                 <div class="experiment-icon" data-hook="thumbnail"></div>
               </div>
               <div class="experiment-information">
@@ -24,12 +24,20 @@ export default BaseView.extend({
   },
 
   bindings: {
-    'model': {
+    'model': [{
       hook: 'title',
       type: function shortTitleWithFallback(el, model) {
         el.innerHTML = model.short_title || model.title;
       }
     },
+    {
+      hook: 'bg',
+      type: function setGradientBg(el, model) {
+        el.setAttribute('style', `background: linear-gradient(135deg, ${model.gradient_start},
+                                                                     ${model.gradient_stop}`);
+        return el;
+      }
+    }],
     'model.description': {
       hook: 'description'
     },
