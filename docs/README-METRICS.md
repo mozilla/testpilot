@@ -1,10 +1,6 @@
 2016 Test Pilot KPIs
 ====================
 
-*This document is about metrics about Test Pilot, not metrics about
-tests within Test Pilot.  If you're looking for more information about
-measuring tests themselves please [read the wiki][1].*
-
 # Overview
 
 In 2016, Test Pilot's success will be defined by building a community which
@@ -119,19 +115,23 @@ which has a [submitExternalPing() function][6].  This function will allow us to
 submit arbitrary payloads to the Telemetry pipeline which are then scrubbed and
 put into an appropriate Redshift cluster with all our server log data.  The
 client pings will adhere to the [common ping format][7], will include the
-clientId and [environment][8], and will have as a payload:
+clientId and [environment][8].  There will be two Telemetry ping types,
+`testpilot` and `testpilottest`.
 
-* A periodic (every 24 hours) ping which includes:
-  * For each test:
-    * enabled/disabled state with timestamp of last toggle
-    * feature switch status
-  * User Agent
-  * Test Pilot User ID
+The `testpilot` type will be a periodic (every 24 hours) ping which includes a
+payload of:
+
+* For each test:
+  * enabled/disabled state with timestamp of last toggle
+  * feature switch status
+* User Agent
+* Test Pilot User ID
+* A version
 
 An example payload (within the full ping) would look like:
 ```js
 {"tests":
-  {"universal_search":
+  {"universal_search":               // The em:id field from the add-on
     {"last_enabled": 1457462200,
      "last_disabled": 1457461100,
      "features": {}
@@ -145,6 +145,30 @@ An example payload (within the full ping) would look like:
  "agent": "User Agent String",
  "uid": 1000,   // The Test Pilot UID
  "version": 1  // Just in case we need to drastically change the format later
+}
+```
+
+The `testpilottest` type has a light wrapper around a second payload which is
+defined by each individual test.  The second payload's schema will be defined
+by each test and needs to remain flexible for rapid changes.  The
+`testpilottest` type will be submitted to Telemetry whenever the test calls it
+(not necessarily periodically, although it could be).  The light wrapper
+includes:
+
+* The test ID
+* User Agent
+* Test Pilot User ID
+* Version
+* The test payload
+
+An example payload (within the full ping) would look like:
+```js
+{
+ "test": "universalsearch@mozilla",  // The em:id field from the add-on
+ "agent": "User Agent String",
+ "uid": 1000,   // The Test Pilot UID
+ "version": 1,  // Just in case we need to drastically change the format later
+ "payload": { ... }
 }
 ```
 
