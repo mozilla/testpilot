@@ -6,6 +6,7 @@
   "bugs": {
     "url": "https://github.com/mozilla/testpilot/issues"
   },
+  "engines" : { "node" : ">=4.4.0" },
   "dependencies": {
     "ampersand-app": "^1.0.4",
     "ampersand-collection": "^1.4.5",

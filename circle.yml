@@ -12,7 +12,7 @@ machine:
     - docker
 
   node:
-    version: 0.12.10
+    version: 4.4.0
 
 dependencies:
 
@@ -23,7 +23,7 @@ dependencies:
 
   pre:
     # https://discuss.circleci.com/t/nvm-commands-are-not-evaluated/943
-    - nvm use 0.12.10 && nvm alias default 0.12.10
+    - nvm use 4.4.0 && nvm alias default 4.4.0
 
   override:
     - docker info
