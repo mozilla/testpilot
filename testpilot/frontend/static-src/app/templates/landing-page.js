@@ -5,7 +5,9 @@ export default `
       <header id="main-header" class="content-wrapper">
         <h1>
           <span class="firefox-logo"></span>
-          <span data-l10n-id="siteName">Firefox Test Pilot</span>
+          <a href="/accounts/login/?next=/">
+            <span data-l10n-id="siteName">Firefox Test Pilot</span>
+          </a>
         </h1>
         <a data-l10n-id="landingFxaAlternateButton" href="/accounts/login/?next=/" class="button outline">Sign in</a>
       </header>
