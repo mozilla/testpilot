@@ -7,8 +7,6 @@ export default Model.extend({
   props: {
     enabled: {type: 'boolean', default: false}
   },
-  // This shouldn't be necessary; see comments in collections/experiments.js
-  ajaxConfig: { headers: { 'Accept': 'application/json' }},
 
   // TODO(DJ): this will be removed when we start tracking
   // install state through the User Installation model.

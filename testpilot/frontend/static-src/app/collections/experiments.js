@@ -9,12 +9,6 @@ export default Collection.extend({
   url: '/api/experiments',
   comparator: 'order',
 
-  // Ampersand.sync doesn't seem to pass correct Accept headers by default.
-  // This supposedly is fixed by https://github.com/AmpersandJS/ampersand-sync/pull/24
-  // but still seems busted. Maybe the deps of the dependents haven't been
-  // updated yet? TODO: investigate
-  ajaxConfig: { headers: { 'Accept': 'application/json' }},
-
   initialize() {
     app.on('webChannel:addon-self:uninstalled', () => {
       this.models.forEach(m => m.enabled = false);
