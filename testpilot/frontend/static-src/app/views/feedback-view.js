@@ -4,10 +4,10 @@ import BaseView from './base-view';
 export default BaseView.extend({
 
   _template: `
-    <div id="modal-screen" class="dark">
-      <div id="{{id}}-modal" class="feedback-modal">
+    <div class="modal-container">
+      <div id="{{id}}-modal" class="modal feedback-modal modal-bounce-in">
         <h3 class="title" data-l10n-id="{{title}}"></h3>
-        <section class="main">
+        <form class="modal-content modal-form">
           <ul class="questions">
             {{#questions}}
             <li>
@@ -21,16 +21,16 @@ export default BaseView.extend({
             </li>
             {{/questions}}
           </ul>
-          <section class="extra">
-            <p data-l10n-id="feedbackExtraCaption">Do you have any additional feedback?</p>
+          <div class="additional-feedback">
+            <p data-l10n-id="feedbackExtraCaption" class="text-area-label">Do you have any additional feedback?</p>
             <textarea data-l10n-id="feedbackExtraTextarea"
               placeholder="what's on your mind..."></textarea>
-          </section>
-          <section class="controls">
-            <button data-l10n-id="feedbackSubmitButton" class="submit button primary">Submit Feedback</button>
-            <a data-l10n-id="feedbackCancelButton" class="cancel" href="">Cancel</a>
-          </section>
-        </section>
+          </div>
+        </form>
+        <div class="modal-actions">
+          <button data-l10n-id="feedbackSubmitButton" class="submit button default large">Submit Feedback</button>
+          <a data-l10n-id="feedbackCancelButton" class="cancel" href="">Cancel</a>
+        </div>
       </div>
     </div>
   `,
@@ -70,7 +70,7 @@ export default BaseView.extend({
 
     const checked = this.el.querySelector('input:checked');
     const value = checked ? checked.getAttribute('value') : '';
-    const extra = this.el.querySelector('section.extra textarea').value;
+    const extra = this.el.querySelector('.additional-feedback textarea').value;
 
     if (!value && !extra) {
       // TODO: Could message some form validation here, but instead just skip

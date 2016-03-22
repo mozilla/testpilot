@@ -1,21 +1,4 @@
 #four-oh-four {
-  background: $white;
-  border-radius: 3px;
-  color: $black;
-  max-width: 320px;
-  padding: 10px;
-  position: relative;
-  text-align: center;
-  z-index: 999;
-
-  h1 {
-    margin-top: 0;
-  }
-
-  .button {
-    display: block;
-  }
-
   &:after {
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
@@ -36,122 +19,128 @@
   }
 }
 
-.modal-controls {
+.modal-container {
   @include flex-container(row, center, center);
-  margin-top: 16px;
-
-
-  a {
-    @include flex-container(row, center, center);
-    display: flex;
-    flex: 1;
-    text-decoration: none;
-    width: 100%; 
-
-
-    .button {
-      flex: 0 1 230px;
-    }
-  }
-}
-
-#modal-screen {
-  background: $transparent-white-6;
+  animation: fade-in 500ms forwards;
+  background: $transparent-black-7;
   bottom: 0;
   left: 0;
+  overflow: hidden;
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 100;
+  z-index: 999;
 }
 
-#modal-screen.dark {
-  background: $transparent-black-6;
-}
+.modal {
+  background: $white;
+  border-radius: 5px;
+  box-shadow: 0 4px 20px $transparent-black-5;
+  color: $black;
+  position: relative;
+  width: 420px;
 
-.feedback-modal {
-  background-color: $white;
-  border-radius: $feedback-modal-border-radius;
-  left: 50%;
-  margin-left: ($feedback-modal-width / - 2);
-  position: fixed;
-  top: 60px;
-  width: $feedback-modal-width;
-  z-index: 200;
-
-  h3.title {
+  .title {
     background-color: $default;
     border-top-left-radius: $feedback-modal-border-radius;
     border-top-right-radius: $feedback-modal-border-radius;
     color: $white;
-    font-size: 2.4rem;
+    font-size: 30px;
+    font-weight: 700;
     margin: 0;
+    padding: 18px 0 14px;
+    text-align: center;
+
+    .blue &,
+    .onboarding & {
+      background-color: $white;
+      color: $black;
+      padding: 20px 0 0;
+    }
+
+    &.warning {
+      background: $warning-red-light;
+    }
+  }
+
+  .modal-content {
+    padding: 20px 30px;
+  }
+
+  .modal-actions {
+    @include flex-container(column, space-between, center);
+    padding: 0 30px 30px;
+
+    .button {
+      width: 100%;
+    }
+  }
+
+  .cancel {
+    margin: 10px 0 0;
+  }
+}
+
+.modal-form {
+  @include flex-container(column, center, stretch);
+  padding: 20px 0;
+
+  ul {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+  }
+
+  li {
+    margin: 0 0 12px;
+    padding: 0;
+  }
+
+  input {
+    margin: 0 .25em;
+    padding: 0;
+  }
+
+  label {
+    font-size: 1.8rem;
+    margin-left: 5px;
+    position: relative;
+    top: 2px;
+  }
+
+  .additional-feedback {
+    background: $transparent-black-05;
+    border: 1px solid $transparent-black-1;
+    border-radius: 2px;
+    margin: 20px 0 0;
     padding: 10px;
+  }
+
+  .text-area-label {
+    font-size: 14px;
+    margin: 0;
+    padding: 6px;
     text-align: center;
   }
 
-  .main {
-    padding: 0 25px;
+  .form-notification {
+    animation: scale-in 100ms;
+    background: $transparent-warning-lightest-5;
+    border: 1px solid $warning-red-lightest;
+    border-radius: 3px;
+    display: block;
+    margin: 0 0 10px;
+    padding: 6px;
+    text-align: center;
+  }
 
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 20px 0 0;
-
-      li {
-        margin: 0 0 .25em;
-        padding: 0;
-
-        input {
-          margin: 0 .25em;
-          padding: 0;
-        }
-
-        label {
-          font-size: 1.8rem;
-        }
-      }
-    }
-
-    .extra,
-    .controls {
-      text-align: center;
-
-      p {
-        color: $feedback-modal-grey;
-        font-size: 1.2rem;
-        margin: 10px 0 4px;
-        padding: 0;
-      }
-
-      textarea {
-        border: 1px solid $feedback-modal-grey;
-        display: block;
-        font-size: 1.4rem;
-        height: 8em;
-        padding: 5px;
-        resize: none;
-        width: 100%;
-      }
-    }
-
-    .controls {
-      margin: 20px 0;
-      text-align: center;
-
-      .submit {
-        display: block;
-        font-size: 1.8rem;
-        font-weight: 400;
-        width: 100%;
-      }
-
-      a.cancel {
-        display: block;
-        font-size: 1.2rem;
-        margin: 10px 0;
-        text-decoration: none;
-      }
-    }
+  textarea {
+    border: 1px solid $feedback-modal-grey;
+    display: block;
+    font-size: 1.4rem;
+    height: 8em;
+    padding: 5px;
+    resize: none;
+    width: 100%;
   }
 }
