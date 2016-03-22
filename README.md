@@ -49,6 +49,13 @@ if you'd like to run linters on `pre-commit` you can use this [pre-commit-hook](
 
 See some of our [Tips and Tricks](docs/README-DOCKER.md).
 
+
+#### First Thing's First
+
+Make sure you clone the Test Pilot repo: 
+
+  `git clone https://github.com/mozilla/testpilot.git`
+
 #### OS X hosts
 
 1. [Install Docker Toolbox](http://docs.docker.com/mac/started/)
@@ -78,7 +85,11 @@ See some of our [Tips and Tricks](docs/README-DOCKER.md).
 
 [update-ip]: https://github.com/mozilla/testpilot/blob/master/bin/update-ip.sh
 
-7. Create and setup the Docker containers (this will take some time):
+7. Don't forget to cd into your Test Pilot directory:
+
+  `cd testpilot`
+
+8. Create and setup the Docker containers (this will take some time):
 
   `docker-compose up`
 
@@ -95,7 +106,11 @@ See some of our [Tips and Tricks](docs/README-DOCKER.md).
   You can do this manually, or the [bin/update-ip.sh][update-ip] script can
   take care of this for you.
 
-4. Create and setup the Docker containers (this will take some time):
+4. Don't forget to cd into your Test Pilot directory:
+
+  `cd testpilot`
+
+5. Create and setup the Docker containers (this will take some time):
 
   `sudo docker-compose up`
 
