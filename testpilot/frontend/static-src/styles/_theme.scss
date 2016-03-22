@@ -9,7 +9,7 @@ a {
 }
 
 .blue {
-  background-image: radial-gradient(circle $default 70%, $default-dark 100%, $default-darker 110%);
+  background-image: radial-gradient(circle, $default 70%, $default-dark 100%, $default-darker 110%);
   color: $white;
 
   a {

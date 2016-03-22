@@ -31,6 +31,9 @@
 <landingInstallHeaderOne "Install the Test Pilot Add-on">
 <landingInstallHeaderTwo "and you're good to go!">
 <landingInstallButton "Install the Add-on">
+<landingDownloadFirefoxDesc "(of course, you'll need Firefox to use Test Pilot)">
+<landingDownloadFirefoxTitle "Firefox">
+<landingDownloadFirefoxSubTitle "Free Download">
 
 <errorHeading "Whoops!">
 <errorMessage "Looks like we broke something. Maybe try again later">

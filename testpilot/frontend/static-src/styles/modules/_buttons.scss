@@ -96,5 +96,73 @@
   &.state-change .state-change-inner {
     opacity: 1;
   }
-
 }
+
+.download-firefox {
+  @include flex-container(row, center, center);
+  color: $white;
+  cursor: default;
+  display: flex;
+  flex-direction: row;
+  font-weight: 500;
+  height: 92px;
+  margin: 30px auto 0;
+  padding: 8px;
+  transition-duration: 250ms;
+  transition-property: box-shadow, border;
+  user-select: none;
+  width: 240px;
+
+  .button-icon-badge {
+    @include hidpi-background-image('download-icon', 16px 16px);
+    background-color: $white;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    border-radius: 50%;
+    bottom: 4px;
+    box-shadow: 0 2px 0 $transparent-black-2;
+    height: 16px;
+    padding: 14px;
+    position: absolute;
+    right: 2px;
+    transition-duration: 150ms;
+    width: 16px;
+  }
+
+  .button-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1em;
+    margin-bottom: .25em;
+  }
+
+  .button-description {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1em;
+  }
+
+  .button-copy {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .button-icon {
+    @include hidpi-background-image('small-firefox-logo', 57px 59px);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 57px 59px;
+    height: 59px;
+    margin-right: 16px;
+    position: relative;
+    width: 57px;
+  }
+  
+  &:hover .button-icon-badge {
+    bottom: 0;
+  }
+}
+

@@ -9,7 +9,12 @@ export default `
             <span data-l10n-id="siteName">Firefox Test Pilot</span>
           </a>
         </h1>
-        <a data-l10n-id="landingFxaAlternateButton" href="/accounts/login/?next=/" class="button outline">Sign in</a>
+        {{^isFirefox}}
+          <span/>
+        {{/isFirefox}}
+        {{#isFirefox}}
+          <a data-l10n-id="landingFxaAlternateButton" href="/accounts/login/?next=/" class="button outline">Sign in</a>
+        {{/isFirefox}}
       </header>
       <div class="centered-banner">
         <div class="copter-wrapper">
@@ -20,7 +25,21 @@ export default `
           <span data-l10n-id="landingIntroTwo">Give us feedback.</span>
           <span data-l10n-id="landingIntroThree">Help build Firefox.</span>
         </h2>
+        {{^isFirefox}}
+          <span data-l10n-id="landingDownloadFirefoxDesc" class="parens">(of course, you'll need Firefox to use Test Pilot)</span>
+          <a href="https://www.mozilla.org/en-US/firefox" class="button primary download-firefox">
+            <div class="button-icon">
+              <div class="button-icon-badge"></div>
+            </div>
+            <div class="button-copy">
+              <div data-l10n-id="landingDownloadFirefoxTitle" class="button-title">Firefox</div>
+              <div data-l10n-id="landingDownloadFirefoxSubTitle" class="button-description">Free Download</div>
+            </div>
+          </a>
+        {{/isFirefox}}
+        {{#isFirefox}}
         <a data-l10n-id="landingFxaGetStartedButton" href="/accounts/login/?next=/" class="button large primary">Get started with a Firefox Account</a>
+        {{/isFirefox}}
       </div>
       <p data-l10n-id="landingLegalNotice" class="legal-information">By proceeding, you agree to the <a href="https://www.mozilla.org/about/legal/terms/services/">Terms of Service</a> and <a href="https://www.mozilla.org/privacy/firefox-cloud/">Privacy Notice</a> of Test Pilot</p>
     </div>
@@ -35,7 +54,21 @@ export default `
             <div class="copter"></div>
           </div>
           <h2 data-l10n-id="landingPageFooterCopy">More tests coming soon!</h2>
+          {{^isFirefox}}
+            <span data-l10n-id="landingDownloadFirefoxDesc" class="parens">(of course, you'll need Firefox to use Test Pilot)</span>
+            <a href="https://www.mozilla.org/en-US/firefox" class="button primary download-firefox">
+              <div class="button-icon">
+                <div class="button-icon-badge"></div>
+              </div>
+              <div class="button-copy">
+                <div data-l10n-id="landingDownloadFirefoxTitle" class="button-title">Firefox</div>
+                <div data-l10n-id="landingDownloadFirefoxSubTitle" class="button-description">Free Download</div>
+              </div>
+            </a>
+          {{/isFirefox}}
+          {{#isFirefox}}
           <a data-l10n-id="landingFxaGetStartedButton" href="/accounts/login/?next=/" class="button large primary">Get started with a Firefox Account</a>
+          {{/isFirefox}}
         </div>
         <div data-hook="footer-view"></div>
       </footer>
