@@ -151,6 +151,7 @@ gulp.task('watch', ['build'], function watchTask() {
   gulp.watch(SRC_PATH + 'styles/**/*', ['styles']);
   gulp.watch(SRC_PATH + 'images/**/*', ['images']);
   gulp.watch(SRC_PATH + 'app/**/*.js', ['scripts']);
+  gulp.watch(SRC_PATH + 'addon/**/*', ['addon']);
   gulp.watch('./locales/**/*', ['locales']);
 });
 

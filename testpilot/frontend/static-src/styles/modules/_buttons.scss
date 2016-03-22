@@ -10,6 +10,10 @@
   text-decoration: none;
   transition: background 150ms;
 
+  &.no-display {
+    display: none;
+  }
+
   &.outline {
     background: none;
     border-color: $white;

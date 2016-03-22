@@ -41,10 +41,6 @@ app.extend({
         // but pageshow does. But, we just want to know if the URL changed.
         addEventListener('pageshow', app.router.history.checkUrl, false);
       }
-
-      app.me.on('change:hasAddon', () => {
-        app.router.reload();
-      });
     }).catch((err) => {
       // for now, log the error in the console & do nothing in the UI
       console && console.error(err); // eslint-disable-line no-console

@@ -22,6 +22,7 @@ const self = require('sdk/self');
 const store = require('sdk/simple-storage').storage;
 const {Panel} = require('sdk/panel');
 const {PageMod} = require('sdk/page-mod');
+const tabs = require('sdk/tabs');
 const {ToggleButton} = require('sdk/ui/button/toggle');
 const request = require('sdk/request').Request;
 const simplePrefs = require('sdk/simple-prefs');
@@ -29,14 +30,19 @@ const URL = require('sdk/url').URL;
 
 const Mustache = require('mustache');
 const templates = require('./lib/templates');
+Mustache.parse(templates.base);
+Mustache.parse(templates.installed);
 Mustache.parse(templates.feedback);
 Mustache.parse(templates.experimentList);
 
 const Metrics = require('./lib/metrics');
 
+// constants for panel dimensions
 const PANEL_WIDTH = 400;
-const EXPERIMENT_HEIGHT = 95;
 const FOOTER_HEIGHT = 60;
+const EXPERIMENT_HEIGHT = 95;
+const INSTALLED_PANEL_WIDTH = 300;
+const INSTALLED_PANEL_HEIGHT = 370;
 
 // Canned selectable server environment configs
 const SERVER_ENVIRONMENTS = {
@@ -131,6 +137,49 @@ function setupApp() {
       });
     });
 
+    app.on('show-installed-panel', () => {
+      const installMsgPanel = Panel({ // eslint-disable-line new-cap
+        contentURL: './base.html',
+        contentScriptFile: './link-catch.js',
+        onShow: () => {
+          installMsgPanel.port.emit('show', Mustache.render(templates.installed, {
+            base_url: settings.BASE_URL
+          }));
+        }
+      });
+
+      installMsgPanel.on('hide', () => {
+        app.send('addon-self:install-panel-dismissed');
+      });
+
+      installMsgPanel.port.on('link', (url) => {
+        let tabExists = false;
+
+        // reload the testpilot tab now that we are logged in with the
+        // addon installed
+        let tab;
+        for (tab of tabs) {
+          if (tab.url.includes(settings.BASE_URL)) {
+            tabExists = true;
+            tab.reload();
+          }
+        }
+
+        // If we cannot find an open testpilot tab, just open one
+        if (!tabExists) tabs.open(url);
+        installMsgPanel.destroy();
+      });
+
+      installMsgPanel.show({width: INSTALLED_PANEL_WIDTH,
+                            height: INSTALLED_PANEL_HEIGHT,
+                            position: button});
+
+      // allow us to hide the panel from a landing page interaction
+      app.on('hide-installed-panel', () => {
+        installMsgPanel.destroy();
+      });
+    });
+
     if (self.loadReason === 'install') {
       app.send('addon-self:installed');
     } else if (self.loadReason === 'enable') {
@@ -142,7 +191,7 @@ function setupApp() {
 }
 
 const panel = Panel({ // eslint-disable-line new-cap
-  contentURL: './feedback.html',
+  contentURL: './base.html',
   contentScriptFile: './panel.js',
   onHide: () => {
     button.state('window', {checked: false});
@@ -158,7 +207,7 @@ function showExperimentList() {
 }
 
 panel.port.on('link', url => {
-  require('sdk/tabs').open(url);
+  tabs.open(url);
   panel.hide();
 });
 

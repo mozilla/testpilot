@@ -105,18 +105,26 @@ export default `
           </h1>
         </header>
         <div class="centered-banner">
-          <div class="copter-wrapper">
-            <div class="copter fly-down"></div>
+          <div data-hook="installed-message" class="no-display">
+            <h2 data-l10n-id="landingInstallMessage" class="emphasis">Test Pilot installed!</h2>
+            <a href="/" data-l10n-id="landingInstalledButton" class="button large default quick-pop no-display">Let's Go</a>
           </div>
-          <h2>
-            <span data-l10n-id="landingInstallHeaderOne">Install the Test Pilot Add-on</span>
-            <span data-l10n-id="landingInstallHeaderTwo">and you're good to go!</span>
-          </h2>
-          <a href="{{ downloadUrl }}" class="button large default">
-            <span data-l10n-id="landingInstallButton">Install the Add-on</span>
-            <div class="state-change-inner no-display"></div>
-          </a>
+          <div data-hook="default-message">
+            <div class="copter-wrapper">
+              <div class="copter fly-down"></div>
+            </div>
+            <h2>
+              <span data-l10n-id="landingInstallHeaderOne">Install the Test Pilot Add-on</span>
+              <span data-l10n-id="landingInstallHeaderTwo">and you're good to go!</span>
+            </h2>
+            <a href="{{ downloadUrl }}" data-hook="install" class="button large default">
+              <span class="default-btn-msg" data-l10n-id="landingInstallButton">Install the Add-on</span>
+              <span class="no-display progress-btn-msg" data-l10n-id="landingInstallingButton">Installing Test Pilot...</span>
+              <div class="state-change-inner"></div>
+            </a>
+          </div>
         </div>
+
         <footer id="main-footer" class="content-wrapper">
           <div data-hook="footer-view"></div>
         </footer>

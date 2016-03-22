@@ -71,3 +71,25 @@ module.exports.feedback = `
   </div>
   <div class="clear"></div>
 </div>`;
+
+module.exports.installed = `
+<div id="browser-doorhanger">
+  <div class="copter-wrapper">
+    <div class="copter fly-down"></div>
+  </div>
+  <p>Test Pilot lets you test out experimental features in Firefox. Ready for takeoff?</p>
+  <a href="{{base_url}}/home" class="button default quick-pop">Let's go</a>
+</div>`;
+
+module.exports.base = `
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="panel.css" type="text/css" media="screen" />
+  </head>
+  <body>
+    <div id="content">{{content}}</div>
+  </body>
+</html>`
+;
