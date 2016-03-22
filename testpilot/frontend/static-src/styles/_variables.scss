@@ -12,6 +12,15 @@ $primary-dark: #40a624;
 $primary-darker: #399320;
 $primary-darkest: #2e761a;
 
+$warning-red-darkest: #881606;
+$warning-red-darker: #aa1b08;
+$warning-red-dark: #c21f09;
+$warning-red-default: #d92215;
+$warning-red-light: #ee4b36;
+$warning-red-lighter: #f67964;
+$warning-red-lightest: #ffa792;
+
+$transparent-warning-lightest-5: rgba($warning-red-lightest, .5);
 
 $dark: #2c2c2c;
 $light: #f2f2f2;
@@ -24,6 +33,7 @@ $secondary-button-border: #ccc;
 $fb-blue: #3b5998;
 $twitter-blue: #4099ff;
 
+$transparent-black-05: rgba($black, .05);
 $transparent-black-1: rgba($black, .1);
 $transparent-black-2: rgba($black, .2);
 $transparent-black-3: rgba($black, .3);
