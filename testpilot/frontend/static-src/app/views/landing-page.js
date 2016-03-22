@@ -14,11 +14,15 @@ export default PageView.extend({
     const isLoggedIn = !!app.me.user.id;
     this.loggedIn = isLoggedIn;
     this.downloadUrl = isLoggedIn && app.me.user.addon.url;
+    this.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
     PageView.prototype.render.apply(this, arguments);
 
     if (!this.loggedIn) {
-      this.renderSubview(new ExperimentListView({loggedIn: this.loggedIn}),
+      this.renderSubview(new ExperimentListView({
+        loggedIn: this.loggedIn,
+        isFirefox: this.isFirefox
+      }),
         '[data-hook="experiment-list"]');
     }
   },
@@ -26,5 +30,4 @@ export default PageView.extend({
   remove() {
     PageView.prototype.remove.apply(this, arguments);
   }
-
 });
