@@ -14,12 +14,9 @@
 
 <home "Home">
 
-<menuTour "Tour Test Pilot">
 <menuWiki "Test Pilot Wiki">
 <menuFileIssue "File an Issue">
 <menuLogout "Logout">
-
-
 
 <landingFxaAlternateButton "Sign in">
 <landingIntroOne "Test out new features.">
