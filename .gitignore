@@ -19,6 +19,15 @@ testpilot/frontend/static-src/styles/vendor/
 testpilot/frontend/static-src/addon/*.xpi
 testpilot/frontend/static-src/addon/*.rdf
 docker-compose-s3.yml
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+.ebextensions/00-environment.config
+*-Dockerrun.aws.json
+Dockerrun.aws.json
+
 debug-config.json
 version.json
 addon/*.xpi
