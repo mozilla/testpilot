@@ -2,6 +2,10 @@
   display: none;
 }
 
+.hidden {
+  opacity: 0;
+}
+
 .fade-in {
   animation: fade-in 500ms forwards;
 }
@@ -103,6 +107,16 @@
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(1, 0);
+  }
+
+  100% {
+    transform: scale(1, 1);
   }
 }
 

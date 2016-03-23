@@ -8,7 +8,7 @@
   padding: 0 20px;
   position: relative;
   text-decoration: none;
-  transition: background 100ms;
+  transition: background 150ms;
 
   &.outline {
     background: none;
@@ -51,6 +51,13 @@
     &:active {
       background: darken($default, 6);
     }
+  }
+
+  &.disabled,
+  &.disabled:hover,
+  &.disabled:active,
+  &.disabled:focus {
+    background-color: $disabled-grey;
   }
 
   &.large {
@@ -160,7 +167,7 @@
     position: relative;
     width: 57px;
   }
-  
+
   &:hover .button-icon-badge {
     bottom: 0;
   }
