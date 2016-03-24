@@ -48,6 +48,10 @@
           "label": "Local (testpilot.dev)"
         },
         {
+          "value": "dev",
+          "label": "Dev (testpilot-dev.us-east-1.elasticbeanstalk.com)"
+        },
+        {
           "value": "stage",
           "label": "Staging (testpilot.stage.mozaws.net)"
         },

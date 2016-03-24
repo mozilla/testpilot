@@ -76,6 +76,7 @@ test:
 
 # appropriately tag and push the container to dockerhub
 deployment:
+
   hub_latest:
     branch: "master"
     commands:
@@ -83,6 +84,7 @@ deployment:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - "docker tag app:build ${DOCKERHUB_REPO}:latest"
       - "docker push ${DOCKERHUB_REPO}:latest"
+      - ./bin/deploy-dev.sh $CIRCLE_SHA1
 
   hub_releases:
     # push all tags

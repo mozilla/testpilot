@@ -1,0 +1,13 @@
+{
+  "AWSEBDockerrunVersion": "1",
+    "Image": {
+      "Name": "docker.io/mozilla/testpilot:latest",
+      "Update": "true"
+    },
+    "Logging": "/var/log/django",
+    "Ports": [
+    {
+      "ContainerPort": "8000"
+    }
+  ]
+}

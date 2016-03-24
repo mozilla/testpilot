@@ -51,6 +51,12 @@ const SERVER_ENVIRONMENTS = {
     WHITELIST_URLS: 'https://www.mozilla.org/*,about:home',
     BADGE_COLOR: '#AA00AA'
   },
+  dev: {
+    BASE_URL: 'http://testpilot-dev.us-east-1.elasticbeanstalk.com',
+    TESTPILOT_PREFIX: 'testpilot.addon.DEV.',
+    WHITELIST_URLS: 'https://www.mozilla.org/*,about:home',
+    BADGE_COLOR: '#AAAA00'
+  },
   stage: {
     BASE_URL: 'https://testpilot.stage.mozaws.net',
     TESTPILOT_PREFIX: 'testpilot.addon.STAGE.',
