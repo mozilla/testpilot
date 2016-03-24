@@ -125,7 +125,6 @@ payload of:
   * enabled/disabled state with timestamp of last toggle
   * feature switch status
 * User Agent
-* Test Pilot User ID
 * A version
 
 An example payload (within the full ping) would look like:
@@ -143,7 +142,6 @@ An example payload (within the full ping) would look like:
     }
   },
  "agent": "User Agent String",
- "uid": 1000,   // The Test Pilot UID
  "version": 1  // Just in case we need to drastically change the format later
 }
 ```
@@ -157,7 +155,6 @@ includes:
 
 * The test ID
 * User Agent
-* Test Pilot User ID
 * Version
 * The test payload
 
@@ -166,7 +163,6 @@ An example payload (within the full ping) would look like:
 {
  "test": "universalsearch@mozilla",  // The em:id field from the add-on
  "agent": "User Agent String",
- "uid": 1000,   // The Test Pilot UID
  "version": 1,  // Just in case we need to drastically change the format later
  "payload": { ... }
 }
@@ -178,6 +174,13 @@ that the Basic Telemetry system is enabled (which is on by default in Firefox).
 In addition to the above, we will also instrument the site with Google
 Analytics to collect standard browsing behavior, analytics information, and
 funnel tracking.
+
+A quick unofficial word on privacy (read the privacy policy for the official
+word): Our goal is to collect as little information as possible in order to
+make the reports we need.  Server side logging will log Firefox Account ID and
+client side logging will specifically *not* log that ID (instead, using the
+Telemetry ID).  This means that we will *not* be able to associate client-side
+reports with specific users.
 
 [1]: https://wiki.mozilla.org/Test_Pilot/Metrics
 [2]: https://bugzilla.mozilla.org/show_bug.cgi?id=1240849
