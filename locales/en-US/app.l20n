@@ -56,7 +56,8 @@
 <feedbackAnswerCool "This is cool!">
 <feedbackAnswerOther "Something else.">
 
-<feedbackExtraCaption "Do you have any additional feedback?">
+<feedbackErrorMessage "Please choose an option.">
+<feedbackExtraCaption "Do you have any additional feedback? (optional)">
 <feedbackExtraTextarea
     placeholder: "what's on your mind...">
 <feedbackSubmitButton "Submit Feedback">
