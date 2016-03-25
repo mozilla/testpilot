@@ -4,8 +4,6 @@
  * http://mozilla.org/MPL/2.0/.
  */
 
-/* global TelemetryController */
-
 const settings = {};
 
 let setInstalledFlagPageMod;
@@ -14,8 +12,6 @@ let button;
 let app;
 
 const {Cc, Ci, Cu} = require('chrome');
-
-Cu.import('resource://gre/modules/TelemetryController.jsm');
 
 const AddonManager = Cu.import('resource://gre/modules/AddonManager.jsm').AddonManager;
 const Prefs = Cu.import('resource://gre/modules/Preferences.jsm').Preferences;
@@ -31,21 +27,16 @@ const request = require('sdk/request').Request;
 const simplePrefs = require('sdk/simple-prefs');
 const URL = require('sdk/url').URL;
 
-const Events = require('sdk/system/events');
-
 const Mustache = require('mustache');
 const templates = require('./lib/templates');
 Mustache.parse(templates.feedback);
 Mustache.parse(templates.experimentList);
 
+const Metrics = require('./lib/metrics');
+
 const PANEL_WIDTH = 400;
 const EXPERIMENT_HEIGHT = 95;
 const FOOTER_HEIGHT = 60;
-
-// Generate a UUID for this client, if we don't have one yet.
-if (!store.clientUUID) {
-  store.clientUUID = generateUUID();
-}
 
 // Canned selectable server environment configs
 const SERVER_ENVIRONMENTS = {
@@ -229,28 +220,6 @@ function handleToolbarButtonChange(state) {
   });
 }
 
-const EVENT_SEND_METRIC = 'testpilot::send-metric';
-
-function onMetricsPing(ev) {
-  const { subject, data } = ev;
-  const dataParsed = JSON.parse(data);
-
-  // TODO: The subject is add-on ID, could map to ping types as needed.
-  const pingType = 'testpilottest';
-
-  const payload = {
-    version: 1,
-    test: subject,
-    payload: dataParsed
-  };
-
-  TelemetryController.submitExternalPing(pingType, payload, {
-    addClientId: true,
-    addEnvironment: true
-  });
-}
-Events.on(EVENT_SEND_METRIC, onMetricsPing);
-
 function Router(mod) {
   this.mod = mod;
   this._events = {};
@@ -394,16 +363,6 @@ function requestAPI(opts) {
   });
 }
 
-// source: http://jsfiddle.net/briguy37/2mvfd/
-function generateUUID() {
-  let d = new Date().getTime();
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-    const r = (d + Math.random() * 16) % 16 | 0;
-    d = Math.floor(d / 16);
-    return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-  });
-}
-
 const addonListener = {
   onUninstalling: function(addon) {
     if (isTestpilotAddonID(addon.id)) {
@@ -426,6 +385,8 @@ const addonListener = {
         delete store.installedAddons[addon.id];
         syncAddonInstallation(addon.id);
       }
+
+      Metrics.experimentDisabled(addon.id);
     }
   }
 };
@@ -439,6 +400,7 @@ const installListener = {
       app.send('addon-install:install-ended',
                formatInstallData(install, addon), addon);
     });
+    Metrics.experimentEnabled(addon.id);
   },
   onInstallFailed: function(install) {
     app.send('addon-install:install-failed', formatInstallData(install));
@@ -470,12 +432,21 @@ const installListener = {
 };
 AddonManager.addInstallListener(installListener);
 
+exports.main = function() {
+  if (!store.clientUUID) {
+    // Generate a UUID for this client, so we can manage experiment
+    // installations for multiple browsers per user. DO NOT USE IN METRICS.
+    store.clientUUID = require('sdk/util/uuid').uuid();
+  }
+  Metrics.init();
+};
+
 exports.onUnload = function(reason) {
   AddonManager.removeAddonListener(addonListener);
   AddonManager.removeInstallListener(installListener);
   panel.destroy();
   button.destroy();
-  Events.off(EVENT_SEND_METRIC, onMetricsPing);
+  Metrics.destroy();
   setInstalledFlagPageMod.destroy();
   messageBridgePageMod.destroy();
   if (reason === 'uninstall') {
