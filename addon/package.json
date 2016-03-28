@@ -49,7 +49,7 @@
         },
         {
           "value": "dev",
-          "label": "Dev (testpilot-dev.us-east-1.elasticbeanstalk.com)"
+          "label": "Dev (testpilot.dev.mozaws.net)"
         },
         {
           "value": "stage",

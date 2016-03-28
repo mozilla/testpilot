@@ -52,7 +52,7 @@ const SERVER_ENVIRONMENTS = {
     BADGE_COLOR: '#AA00AA'
   },
   dev: {
-    BASE_URL: 'http://testpilot-dev.us-east-1.elasticbeanstalk.com',
+    BASE_URL: 'http://testpilot.dev.mozaws.net',
     TESTPILOT_PREFIX: 'testpilot.addon.DEV.',
     WHITELIST_URLS: 'https://www.mozilla.org/*,about:home',
     BADGE_COLOR: '#AAAA00'
