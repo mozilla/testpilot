@@ -7,6 +7,8 @@ In 2016, Test Pilot's success will be defined by building a community which
 actively participates in testing ideas in Firefox.  Key metrics are documented
 below, however other metrics are recorded and analyzed.
 
+![Metrics flows](metrics-flows.png)
+
 ## Engagement Ratio
 
 As of this writing, Mozilla has not settled on a final formula for calculating
