@@ -107,6 +107,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'testpilot.base.middleware.RequestSummaryLogger',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -430,8 +431,13 @@ LOGGING = {
             'level': config('DJANGO_LOG_LEVEL', default='INFO'),
             'propagate': True,
         },
+        'request.summary': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        },
         'django': {
             'handlers': ['console'],
+            'level': 'ERROR',
         },
         'django.request': {
             'handlers': ['console'],
