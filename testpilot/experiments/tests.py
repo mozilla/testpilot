@@ -46,6 +46,7 @@ class BaseTestCase(TestCase):
                     title="Longer Test Title %s" % idx,
                     short_title="Test %s" % idx,
                     description="This is a test",
+                    introduction="<h1>Hello, Test!</h1>",
                     addon_id="addon-%s@example.com" % idx
                 )) for idx in range(1, 4)))
 
@@ -75,6 +76,7 @@ class ExperimentViewTests(BaseTestCase):
                         "slug": experiment.slug,
                         "thumbnail": None,
                         "description": experiment.description,
+                        "introduction": experiment.introduction.rendered,
                         "measurements": experiment.measurements.rendered,
                         "version": experiment.version,
                         "changelog_url": experiment.changelog_url,

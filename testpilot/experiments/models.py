@@ -36,6 +36,8 @@ class Experiment(TranslatableModel):
         description=models.TextField(),
         measurements=MarkupField(blank=True, default='',
                                  default_markup_type='plain'),
+        introduction=MarkupField(blank=True, default='',
+                                 default_markup_type='markdown'),
     )
 
     slug = models.SlugField(max_length=128, unique=True, db_index=True)

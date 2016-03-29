@@ -29,11 +29,12 @@ class ExperimentSerializer(HyperlinkedTranslatableModelSerializer):
     contributors = serializers.SerializerMethodField()
     installations_url = serializers.SerializerMethodField()
     measurements = MarkupField()
+    introduction = MarkupField()
 
     class Meta:
         model = Experiment
         fields = ('id', 'url', 'title', 'short_title', 'slug',
-                  'thumbnail', 'description',
+                  'thumbnail', 'description', 'introduction',
                   'version', 'changelog_url', 'contribute_url',
                   'privacy_notice_url', 'measurements',
                   'xpi_url', 'addon_id', 'gradient_start',
