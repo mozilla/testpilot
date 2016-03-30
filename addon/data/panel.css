@@ -31,9 +31,26 @@ h2 {
     font-weight: 400;
 }
 
-.thumbnail {
+.experiment-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    background-image: url("dh-arrow.png");
+    background-position: 96% center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+}
+
+.icon-wrapper {
     margin: 15px 10px;
     border-radius: 50%;
+    box-shadow: 0 0 0 2px #fff;
+    display: block;
+    float: left;
+    width: 50px;
+    height: 50px;
+     /* transition: background 100ms; */
+}
+
+.thumbnail {
     height: 45px;
     width: 45px;
 }
@@ -44,11 +61,6 @@ h2 {
 
 .col {
     float: left;
-}
-
-.col-r {
-    float: right;
-    padding: 25px 10px;
 }
 
 li {

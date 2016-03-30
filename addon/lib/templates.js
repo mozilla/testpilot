@@ -7,18 +7,18 @@
 module.exports.experimentList = `
 <ul>
   {{#experiments}}
-  <li>
+  <li class="experiment-item">
     <a href="{{base_url}}/experiments/{{slug}}">
       <div class="col {{#active}}active{{/active}}">
-        <img class="thumbnail" src="{{thumbnail}}"/>
+        <div class="icon-wrapper"
+             style="background: linear-gradient(300deg, {{gradient_start}}, {{gradient_stop}})">
+          <img class="thumbnail" src="{{thumbnail}}"/>
+        </div>
       </div>
       <div class="col">
         <h2 class="title">{{title}}</h2>
         {{#active}}<p class="active-indicator">active</p>{{/active}}
         {{^active}}<p class="description">{{description}}</p>{{/active}}
-      </div>
-      <div class="col-r">
-        <img src="arrow.png"/>
       </div>
       <button data-addon-id="{{addon_id}}" class="survey">Survey</button>
       <div class="clear"></div>
@@ -34,14 +34,14 @@ module.exports.feedback = `
     <li>
       <div>
         <div class="col {{#experiment.active}}active{{/experiment.active}}">
-          <img class="thumbnail" src="{{experiment.thumbnail}}"/>
+          <div class="icon-wrapper"
+               style="background: linear-gradient(300deg, {{experiment.gradient_start}}, {{experiment.gradient_stop}})">
+            <img class="thumbnail" src="{{thumbnail}}"/>
+          </div>
         </div>
         <div class="col">
           <h2 class="title">{{experiment.title}}</h2>
           <p>Survey</p>
-        </div>
-        <div class="col-r">
-          <span class="arrow">&#x3009;</span>
         </div>
         <div class="clear"></div>
       </div>
