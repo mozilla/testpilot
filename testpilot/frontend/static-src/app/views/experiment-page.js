@@ -98,6 +98,16 @@ export default PageView.extend({
       hook: 'contribute-url'
     }],
 
+    'model.introduction': [{
+      type: 'innerHTML',
+      hook: 'introduction-html'
+    },
+    {
+      type: 'toggle',
+      hook: 'introduction-container',
+      mode: 'visibility'
+    }],
+
     'model.measurements': [{
       type: 'innerHTML',
       hook: 'measurements-html'
@@ -161,7 +171,7 @@ export default PageView.extend({
   afterRender() {
     this.renderCollection(new CollectionExtended(this.model.details),
                           DetailView,
-                          this.query('.details-description'));
+                          this.query('.details-list'));
 
     this.renderCollection(new CollectionExtended(this.model.contributors),
                           ContributorView,

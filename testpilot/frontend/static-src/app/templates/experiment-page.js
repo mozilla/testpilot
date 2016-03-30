@@ -57,7 +57,12 @@ export default `
             </div>
           </div>
 
-          <div class="details-description"></div>
+          <div class="details-description">
+            <section data-hook="introduction-container" class="introduction">
+              <div data-hook="introduction-html"></div>
+            </section>
+            <div class="details-list"></div>
+          </div>
         </div>
       </div>
       <footer id="main-footer" class="content-wrapper">

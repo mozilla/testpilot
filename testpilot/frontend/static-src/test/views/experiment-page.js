@@ -24,6 +24,7 @@ const test = around(tape)
         xpi_url: 'http://goog1e.net/cybernetix.xpi',
         url: '/slsk',
         enabled: true,
+        introduction: '<h1>Hello introduction!</h1>',
         details: [{
           image: 'img/fail.png',
           copy: 'blah',
@@ -69,6 +70,29 @@ test('now active indicator shows when experiment is enabled', t => {
   const model = app.experiments.get('slsk', 'slug');
   model.enabled = false;
   t.equal(myView.query('.now-active').style.display, 'none');
+});
+
+test('introduction appears in view', t => {
+  t.plan(3);
+
+  const myView = new MyView({headerScroll: false, slug: 'slsk'});
+  const myModel = app.experiments.models[0];
+
+  myView.render();
+  const innerHTML = myView.query('[data-hook=introduction-html]').innerHTML;
+  const styleWhenNotEmpty = myView
+    .query('[data-hook=introduction-container]').style;
+  t.ok(innerHTML === myModel.introduction,
+       'innerHTML matches model');
+  t.ok(styleWhenNotEmpty.visibility !== 'hidden',
+       'introduction is visible when model has content');
+
+  myModel.introduction = '';
+  myView.render();
+  const styleWhenEmpty = myView
+    .query('[data-hook=introduction-container]').style;
+  t.ok(styleWhenEmpty.visibility === 'hidden',
+       'introduction is hidden when model has no content');
 });
 
 test('updateAddon tests', t => {
