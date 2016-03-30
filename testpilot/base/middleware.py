@@ -19,7 +19,7 @@ class RequestSummaryLogger(object):
 
     def _build_extra_meta(self, request):
         td = datetime.datetime.utcnow() - request._logging_start_dt
-        t = td.total_seconds() * 10**6
+        t = int(td.total_seconds() * 10**6)
         return {
             "errno": 0,
             "agent": request.META.get('HTTP_USER_AGENT', ''),
@@ -38,6 +38,6 @@ class RequestSummaryLogger(object):
 
     def process_exception(self, request, exception):
         extra = self._build_extra_meta(request)
-        extra.update({"errno": 500, "msg": str(exception)})
-        self.logger.error('', extra=extra)
+        extra['errno'] = 500
+        self.logger.error(str(exception), extra=extra)
         return None
