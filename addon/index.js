@@ -4,8 +4,6 @@
  * http://mozilla.org/MPL/2.0/.
  */
 
-/* global Services */
-
 const settings = {};
 
 let setInstalledFlagPageMod;
@@ -13,35 +11,32 @@ let messageBridgePageMod;
 let button;
 let app;
 
-const store = require('sdk/simple-storage').storage;
 const {Cc, Ci, Cu} = require('chrome');
-Cu.import('resource://gre/modules/Services.jsm');
+
+const AddonManager = Cu.import('resource://gre/modules/AddonManager.jsm').AddonManager;
+const Prefs = Cu.import('resource://gre/modules/Preferences.jsm').Preferences;
+const cookieManager2 = Cc['@mozilla.org/cookiemanager;1']
+                       .getService(Ci.nsICookieManager2);
+
 const self = require('sdk/self');
+const store = require('sdk/simple-storage').storage;
 const {Panel} = require('sdk/panel');
 const {PageMod} = require('sdk/page-mod');
 const {ToggleButton} = require('sdk/ui/button/toggle');
 const request = require('sdk/request').Request;
-const AddonManager = Cu.import('resource://gre/modules/AddonManager.jsm').AddonManager;
-const Prefs = Cu.import('resource://gre/modules/Preferences.jsm').Preferences;
 const simplePrefs = require('sdk/simple-prefs');
 const URL = require('sdk/url').URL;
-const cookieManager2 = Cc['@mozilla.org/cookiemanager;1']
-                       .getService(Ci.nsICookieManager2);
-const authRequest = require('./lib/auth-request');
-const Mustache = require('mustache');
 
+const Mustache = require('mustache');
 const templates = require('./lib/templates');
 Mustache.parse(templates.feedback);
 Mustache.parse(templates.experimentList);
 
+const Metrics = require('./lib/metrics');
+
 const PANEL_WIDTH = 400;
 const EXPERIMENT_HEIGHT = 95;
 const FOOTER_HEIGHT = 60;
-
-// Generate a UUID for this client, if we don't have one yet.
-if (!store.clientUUID) {
-  store.clientUUID = generateUUID();
-}
 
 // Canned selectable server environment configs
 const SERVER_ENVIRONMENTS = {
@@ -146,11 +141,6 @@ function setupApp() {
   });
 }
 
-// update the our icon for devtools themes
-Prefs.observe('devtools.theme', pref => {
-  setToggleButton(pref === 'dark');
-});
-
 const panel = Panel({ // eslint-disable-line new-cap
   contentURL: './feedback.html',
   contentScriptFile: './panel.js',
@@ -179,8 +169,6 @@ panel.port.on('launch-feedback', id => {
 panel.port.on('feedback-submit', dataStr => {
   const data = JSON.parse(dataStr);
   data.tags = ['main-addon'];
-  authRequest.sendMetric(settings, 'user-feedback', data,
-                         store.availableExperiments[data.addon_id]);
   panel.hide();
 });
 
@@ -200,6 +188,10 @@ function getExperimentList(availableExperiments, installedAddons) {
   });
 }
 
+// update the our icon for devtools themes
+Prefs.observe('devtools.theme', pref => {
+  setToggleButton(pref === 'dark');
+});
 setToggleButton(Prefs.get('devtools.theme') === 'dark');
 
 function setToggleButton(dark) {
@@ -228,54 +220,6 @@ function handleToolbarButtonChange(state) {
   });
 }
 
-// Listen for metrics events from experiments.
-const EVENT_SEND_METRIC = 'testpilot::send-metric';
-const metrics = {
-  isInitialized: false,
-  init: function() {
-    if (this.isInitialized) {
-      return;
-    }
-    this.isInitialized = true;
-    // Note: the observer service holds a strong reference to this observer,
-    // so we must detach it on shutdown / uninstall by calling destroy().
-    Services.obs.addObserver(metrics, EVENT_SEND_METRIC, false);
-  },
-  destroy: function() {
-    Services.obs.removeObserver(metrics, EVENT_SEND_METRIC, false);
-    this.isInitialized = false;
-  },
-  // The metrics object format is { key, value, addonName }, where
-  //   'key' is the name of the event,
-  //   'value' is the value of the event (can be any JSON-serializable object),
-  //   'addonName' is the name of the experiment sending the data.
-  observe: function() {
-    // The nsIObserverService sends non-useful positional arguments; the third
-    // is the only one we need.
-    const data = arguments[2];
-
-    let d;
-    try {
-      d = JSON.parse(data);
-    } catch (ex) {
-      const parseErrorMessage = 'Test Pilot metrics error: cannot process ' +
-        'event, JSON.parse failed: ';
-      console.error(parseErrorMessage, ex); // eslint-disable-line no-console
-      return;
-    }
-
-    if (d && 'key' in d && 'value' in d && 'addonName' in d) {
-      authRequest.sendMetric(settings, d.key, d.value, d.addonName);
-    } else {
-      const clientErrorMessage = 'Test Pilot metrics error: event objects ' +
-        'must have key, value, and addonName properties. Object received was ';
-      console.error(clientErrorMessage, d); // eslint-disable-line no-console
-      return;
-    }
-  }
-};
-metrics.init();
-
 function Router(mod) {
   this.mod = mod;
   this._events = {};
@@ -290,17 +234,8 @@ Router.prototype.on = function(name, f) {
   return this;
 };
 
-Router.prototype.send = function(name, data, addon) {
+Router.prototype.send = function(name, data) {
   this.mod.port.emit('from-addon-to-web', {type: name, data: data});
-  if (addon) {
-    data.tags = ['main-addon'];
-    const packet = JSON.stringify({
-      key: name,
-      value: data,
-      addonName: addon
-    });
-    Services.obs.notifyObservers(null, EVENT_SEND_METRIC, packet);
-  }
   return this;
 };
 
@@ -387,7 +322,7 @@ function formatInstallData(install, addon) {
 }
 
 function isTestpilotAddonID(id) {
-  return id in store.availableExperiments;
+  return 'availableExperiments' in store && id in store.availableExperiments;
 }
 
 function syncAddonInstallation(addonID) {
@@ -428,16 +363,6 @@ function requestAPI(opts) {
   });
 }
 
-// source: http://jsfiddle.net/briguy37/2mvfd/
-function generateUUID() {
-  let d = new Date().getTime();
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-    const r = (d + Math.random() * 16) % 16 | 0;
-    d = Math.floor(d / 16);
-    return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-  });
-}
-
 const addonListener = {
   onUninstalling: function(addon) {
     if (isTestpilotAddonID(addon.id)) {
@@ -460,6 +385,8 @@ const addonListener = {
         delete store.installedAddons[addon.id];
         syncAddonInstallation(addon.id);
       }
+
+      Metrics.experimentDisabled(addon.id);
     }
   }
 };
@@ -473,6 +400,7 @@ const installListener = {
       app.send('addon-install:install-ended',
                formatInstallData(install, addon), addon);
     });
+    Metrics.experimentEnabled(addon.id);
   },
   onInstallFailed: function(install) {
     app.send('addon-install:install-failed', formatInstallData(install));
@@ -504,12 +432,21 @@ const installListener = {
 };
 AddonManager.addInstallListener(installListener);
 
-require('sdk/system/unload').when(function(reason) {
+exports.main = function() {
+  if (!store.clientUUID) {
+    // Generate a UUID for this client, so we can manage experiment
+    // installations for multiple browsers per user. DO NOT USE IN METRICS.
+    store.clientUUID = require('sdk/util/uuid').uuid();
+  }
+  Metrics.init();
+};
+
+exports.onUnload = function(reason) {
   AddonManager.removeAddonListener(addonListener);
   AddonManager.removeInstallListener(installListener);
   panel.destroy();
   button.destroy();
-  metrics.destroy();
+  Metrics.destroy();
   setInstalledFlagPageMod.destroy();
   messageBridgePageMod.destroy();
   if (reason === 'uninstall') {
@@ -522,4 +459,4 @@ require('sdk/system/unload').when(function(reason) {
     }
     delete store.availableExperiments;
   }
-});
+};
