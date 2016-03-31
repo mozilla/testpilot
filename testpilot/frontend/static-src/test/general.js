@@ -12,6 +12,10 @@ test('Each image in images directory has a retina version', function(t) {
   fs.readdir(path.resolve(__dirname, '../images'), function(err, files) {
     if (err) t.fail('fs.readdir call failed, check your paths');
 
+    files = files.filter(function(f) {
+      return (!~f.indexOf('favicon.ico')); // exclude favicon
+    });
+
     const retinaFiles = files.filter(function(f) {
       return !!~f.indexOf('@2x');
     });
