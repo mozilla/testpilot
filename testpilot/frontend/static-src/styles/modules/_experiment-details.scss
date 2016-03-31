@@ -175,6 +175,7 @@
     border-radius: 50%;
     content: '';
     display: inline-block;
+    filter: blur(.1px);
     height: 20px;
     margin-right: 8px;
     position: relative;
