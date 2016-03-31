@@ -5,10 +5,11 @@
   height: 34px;
   line-height: 34px;
   outline: none;
-  padding: 0 20px;
+  padding: 0 10px;
   position: relative;
   text-decoration: none;
   transition: background 150ms;
+  white-space: nowrap;
 
   &.outline {
     background: none;
