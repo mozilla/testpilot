@@ -11,6 +11,10 @@
   transition: background 150ms;
   white-space: nowrap;
 
+  &.no-display {
+    display: none;
+  }
+
   &.outline {
     background: none;
     border-color: $white;

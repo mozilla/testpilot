@@ -12,10 +12,13 @@
     display: block;
   }
 
+  span.no-display {
+    display: none;
+  }
+
   p {
     font-size: 20px;
     line-height: 32px;
     margin: 0;
   }
 }
-
