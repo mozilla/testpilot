@@ -181,9 +181,9 @@
 {
   "model": "experiments.experiment",
   "fields": {
-    "addon_id": "universal-search-addon@mozilla.com",
-    "version": "5.1.4",
-    "changelog_url": "https://github.com/mozilla/universal-search-addon/commits/master",
+    "addon_id": "universal-search@mozilla.com",
+    "version": "1.0.0b2",
+    "changelog_url": "https://github.com/mozilla/universal-search/commits/master",
     "privacy_notice_url": "",
     "contributors": [ [ "lorchard-demo" ], [ "jgruen-demo" ], [ "charmston-demo" ], [ "jhirsch-demo" ] ],
     "order": 0,
@@ -191,8 +191,8 @@
     "thumbnail": "demo/experiments_experiment/a/8/a8182b008f6434ba702ab177232625e2_thumbnail_1449675941_0564.png",
     "created": "2015-12-09T15:45:42.395Z",
     "slug": "universal-search",
-    "xpi_url": "https://people.mozilla.org/~jhirsch/universal-search-addon/addon.xpi",
-    "contribute_url": "https://github.com/mozilla/universal-search-addon/blob/master/CONTRIBUTING.md"
+    "xpi_url": "https://s3-us-west-2.amazonaws.com/universal-search/universal-search-1.0.0b1.xpi",
+    "contribute_url": "https://github.com/mozilla/universal-search/blob/master/README.md"
   }
 },
 {
