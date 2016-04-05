@@ -191,7 +191,7 @@
     "thumbnail": "demo/experiments_experiment/a/8/a8182b008f6434ba702ab177232625e2_thumbnail_1449675941_0564.png",
     "created": "2015-12-09T15:45:42.395Z",
     "slug": "universal-search",
-    "xpi_url": "https://s3-us-west-2.amazonaws.com/universal-search/universal-search-1.0.0b1.xpi",
+    "xpi_url": "https://s3-us-west-2.amazonaws.com/universal-search/universal-search.xpi",
     "contribute_url": "https://github.com/mozilla/universal-search/blob/master/README.md"
   }
 },
