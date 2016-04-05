@@ -184,6 +184,8 @@ client side logging will specifically *not* log that ID (instead, using the
 Telemetry ID).  This means that we will *not* be able to associate client-side
 reports with specific users.
 
+All data is kept, by default, for 180 days.
+
 [1]: https://wiki.mozilla.org/Test_Pilot/Metrics
 [2]: https://bugzilla.mozilla.org/show_bug.cgi?id=1240849
 [3]: https://mana.mozilla.org/wiki/display/SVCOPS/Telemetry+-+Data+Pipeline+Architecture
