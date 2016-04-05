@@ -30,18 +30,14 @@ const URL = require('sdk/url').URL;
 
 const Mustache = require('mustache');
 const templates = require('./lib/templates');
-Mustache.parse(templates.base);
 Mustache.parse(templates.installed);
-Mustache.parse(templates.feedback);
 Mustache.parse(templates.experimentList);
 
 const Metrics = require('./lib/metrics');
 
-// constants for panel dimensions
-const PANEL_WIDTH = 400;
-const FOOTER_HEIGHT = 60;
-const EXPERIMENT_HEIGHT = 95;
-const INSTALLED_PANEL_WIDTH = 300;
+const PANEL_WIDTH = 300;
+const FOOTER_HEIGHT = 50;
+const EXPERIMENT_HEIGHT = 80;
 const INSTALLED_PANEL_HEIGHT = 370;
 
 // Canned selectable server environment configs
@@ -140,7 +136,7 @@ function setupApp() {
     app.on('show-installed-panel', () => {
       const installMsgPanel = Panel({ // eslint-disable-line new-cap
         contentURL: './base.html',
-        contentScriptFile: './link-catch.js',
+        contentScriptFile: './panel.js',
         onShow: () => {
           installMsgPanel.port.emit('show', Mustache.render(templates.installed, {
             base_url: settings.BASE_URL
@@ -170,7 +166,7 @@ function setupApp() {
         installMsgPanel.destroy();
       });
 
-      installMsgPanel.show({width: INSTALLED_PANEL_WIDTH,
+      installMsgPanel.show({width: PANEL_WIDTH,
                             height: INSTALLED_PANEL_HEIGHT,
                             position: button});
 
@@ -211,22 +207,6 @@ panel.port.on('link', url => {
   panel.hide();
 });
 
-panel.port.on('launch-feedback', id => {
-  panel.port.emit('show', getFeedbackForm(id));
-});
-
-panel.port.on('feedback-submit', dataStr => {
-  const data = JSON.parse(dataStr);
-  data.tags = ['main-addon'];
-  panel.hide();
-});
-
-function getFeedbackForm(id) {
-  return Mustache.render(templates.feedback, {
-    experiment: store.availableExperiments[id]
-  });
-}
-
 function getExperimentList(availableExperiments, installedAddons) {
   return Mustache.render(templates.experimentList, {
     base_url: settings.BASE_URL,
@@ -265,7 +245,7 @@ function handleToolbarButtonChange(state) {
   panel.show({
     width: PANEL_WIDTH,
     height: (experimentCount * EXPERIMENT_HEIGHT) + FOOTER_HEIGHT,
-    position: button
+    position: {top: 2, right: 2}
   });
 }
 
