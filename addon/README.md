@@ -51,6 +51,8 @@ A relatively easy path for working on this addon involves the following steps:
 [autoinstaller]: https://addons.mozilla.org/en-US/firefox/addon/autoinstaller/
 [extensiondev]: https://developer.mozilla.org/en-US/Add-ons/Setting_up_extension_development_environment
 
+For UI hacking you can run `npm run watch-ui` to easily debug `lib/templates.js` and `data/panel.css`
+
 ## running once for testing
 
 * Install [Firefox Beta][fxbeta]
