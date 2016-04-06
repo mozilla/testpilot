@@ -2,34 +2,21 @@
   display: none;
 }
 
-.hidden {
+.delayed-fade-in-up {
+  animation: fade-in-up 500ms forwards ease-out;
+  animation-delay: 400ms;
   opacity: 0;
-}
-
-.fade-in {
-  animation: fade-in 500ms forwards;
-}
-
-.delayed-fade-in {
-  animation: fade-in 500ms forwards;
-  animation-delay: 500ms;
-  opacity: 0;
-}
-
-.spin {
-  animation: spin 1000ms;
+  position: relative;
 }
 
 .fly-down {
   animation: fly-down 500ms forwards ease-out;
-}
-
-.fly-out {
-  animation: fly-out 500ms forwards ease-in;
+  transform: translate(0, -130px);
 }
 
 .fly-up {
-  animation: fly-up 500ms forwards ease-out;
+  animation: bounceInUp 1200ms ease-out forwards;
+  transform: translate3d(3000px, 0, 0);
 }
 
 .quick-pop {
@@ -44,48 +31,42 @@
   animation: fade-in-fly-up 500ms;
 }
 
-@keyframes fade-in {
+@keyframes fade-in-up {
   0% {
     opacity: 0;
+    transform: translate3d(0, 120px, 0);
   }
 
   100% {
     opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes fly-down {
   0% {
-    transform: translate(0, -130px);
+    transform: translate3d(0, -130px, 0);
   }
 
   100% {
-    transform: translate(0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
-@keyframes fly-up {
-  0% {
-    transform: translate(0, 130px);
-  }
-
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
+// Used on error and 404 pages
 @keyframes fade-in-fly-up {
   0% {
     opacity: 0;
-    transform: translate(0, 130px);
+    transform: translate3d(0, 130px, 0);
   }
 
   100% {
     opacity: 1;
-    transform: translate(0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
+// Used on settings dots and now active trobber
 @keyframes pop {
   0% {
     transform: scale(1);
@@ -100,26 +81,7 @@
   }
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes scale-in {
-  0% {
-    transform: scale(1, 0);
-  }
-
-  100% {
-    transform: scale(1, 1);
-  }
-}
-
+// Used for the loader abuttons
 @keyframes barberpole {
   0% {
     background-position: 0 0;
@@ -130,6 +92,18 @@
   }
 }
 
+// Used to hover the copter
+@keyframes hover {
+  0% {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+// Used to bring in feedback forms
 // this comes from here:
 // https://github.com/daneden/animate.css/blob/master/source/bouncing_entrances/bounceInUp.css
 
@@ -144,7 +118,7 @@
 
   from {
     opacity: 0;
-    transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 600px, 0);
   }
 
   60% {
@@ -164,3 +138,4 @@
     transform: translate3d(0, 0, 0);
   }
 }
+

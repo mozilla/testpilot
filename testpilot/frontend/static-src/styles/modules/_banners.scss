@@ -1,0 +1,115 @@
+.banner {
+  @include respond-to('big') {
+    font-size: 3.8 * $font-unit;
+    line-height: 4 * $line-unit;
+  }
+
+  @include respond-to('medium') {
+    font-size: 2.5 * $font-unit;
+    line-height: 2.5 * $line-unit;
+  }
+
+  @include respond-to('small') {
+    font-size: 2.6 * $font-unit;
+    line-height: 2.6 * $line-unit;
+  }
+
+  font-weight: 300;
+}
+
+.centered-banner,
+.reverse-split-banner,
+.split-banner {
+  @include respond-to('not-small') {
+    margin-bottom: $grid-unit * 1.5;
+    margin-top: $grid-unit * 1.5;
+  }
+
+  @include respond-to('small') {
+    margin-bottom: $grid-unit;
+    margin-top: $grid-unit;
+  }
+
+  .intro-text {
+    @include respond-to('small') {
+      text-align: center;
+    }
+
+    p {
+      @include respond-to('big') {
+        font-size: $font-unit * 1.8;
+        line-height: $line-unit * 2;
+        max-width: $grid-unit * 25;
+      }
+
+      @include respond-to('medium') {
+        font-size: $font-unit * 1.5;
+        line-height: $line-unit * 1.5;
+        max-width: $grid-unit * 19.5;
+      }
+
+      margin: 0;
+    }
+  }
+}
+
+.reverse-split-banner,
+.split-banner {
+  padding-bottom: $grid-unit * 2;
+  padding-top: $grid-unit * 2;
+}
+
+
+.centered-banner {
+  text-align: center;
+
+  h2 {
+    @include respond-to('not-small') {
+      margin: $grid-unit * 1.5 0;
+    }
+
+    @include respond-to('small') {
+      margin: $grid-unit * .75 0;
+    }
+
+    text-align: center;
+  }
+
+  span.no-display {
+    display: none;
+  }
+}
+
+.reverse-split-banner {
+  @include respond-to('not-small') {
+    @include flex-container(row-reverse, space-between, center);
+  }
+  
+  @include respond-to('small') {
+    @include flex-container(column, center, center);
+  }
+}
+
+.split-banner {
+  @include respond-to('not-small') {
+    @include flex-container(row, center, center);
+  }
+
+  @include respond-to('small') {
+    @include flex-container(column, center, center);
+  }
+
+  > :last-child {
+    @include respond-to('medium') {
+      margin-right: $grid-unit * 2;
+    }
+
+    @include respond-to('medium') {
+      margin-right: $grid-unit;
+    }
+
+    @include respond-to('small') {
+      margin: 0;
+    }
+  }
+}

@@ -38,5 +38,5 @@ test('Experiment List view is present after render', t => {
 
   const view = new View({headerScroll: false});
   view.render();
-  t.ok(view.query('.content-wrapper li'));
+  t.ok(view.query('.responsive-content-wrapper li'));
 });

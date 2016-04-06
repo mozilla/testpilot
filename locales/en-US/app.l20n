@@ -37,12 +37,12 @@
 <landingDownloadFirefoxSubTitle "Free Download">
 
 <errorHeading "Whoops!">
-<errorMessage "Looks like we broke something. Maybe try again later">
+<errorMessage "Looks like we broke something. <br> Maybe try again later.">
 
 <notFoundHeader "Four Oh Four!">
 
 <experimentListPageHeader "Welcome to Firefox Test Pilot!">
-<experimentListPageSubHeader  "We're always trying out new features in Firefox. <br> Pick any of the tests below to see what we're working on!">
+<experimentListPageSubHeader  "We're always trying out new features in Firefox. Pick any of the tests below to see what we're working on!">
 
 <experimentListInactiveHover "Get Started">
 <experimentListActiveHover "Manage">

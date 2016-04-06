@@ -7,6 +7,7 @@
   outline: none;
   padding: 0 10px;
   position: relative;
+  text-align: center;
   text-decoration: none;
   transition: background 150ms;
   white-space: nowrap;
@@ -70,7 +71,7 @@
     font-weight: 300;
     height: 52px;
     line-height: 52px;
-    min-width: 320px;
+    min-width: 300px;
   }
 
   // Loading animation concept comes from
@@ -118,7 +119,7 @@
   flex-direction: row;
   font-weight: 500;
   height: 92px;
-  margin: 30px auto 0;
+  margin: $grid-unit auto 0;
   padding: 8px;
   transition-duration: 250ms;
   transition-property: box-shadow, border;

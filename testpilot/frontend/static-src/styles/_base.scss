@@ -18,21 +18,27 @@ body {
 }
 
 h2 {
-  font-size: 36px;
-  line-height: 48px;
+  @include respond-to('small') {
+    margin-bottom: $grid-unit * .5;
+    margin-top: $grid-unit * .5;
+  }
+
+  font-size: 3 * $font-unit;
+  line-height: 3 * $line-unit;
 }
 
 h3 {
-  font-size: 22px;
+  font-size: 1.875 * $font-unit;
   font-weight: 400;
 }
 
 p {
-  line-height: 2.5rem;
+  line-height: 1.5 * $line-unit;
 }
 
 .parens {
-  margin-bottom: 2rem;
+  font-size: $font-unit;
+  margin-bottom: $grid-unit * .5;
 }
 
 .emphasis {

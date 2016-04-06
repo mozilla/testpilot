@@ -16,9 +16,12 @@
 
 // Breakpoint controls
 $breakpoints: (
-  big: '(min-width: 1060px)',
-  medium: '(max-width: 1059px) and (min-width: 769px)',
-  small: '(max-width: 768px)'
+  big: '(min-width: 1020px)',
+  medium: '(max-width: 1019px)',
+  small: '(max-width: 768px)',
+  not-small: '(min-width: 769px)',
+  mobile: '(max-width: 520px)'
+
 );
 
 @mixin respond-to($breakpoint) {

@@ -1,14 +1,34 @@
 #main-footer {
-  padding: 60px 0 0;
+  @include respond-to('not-small') {
+    padding: $grid-unit * 3 0 0;
+  }
+
+  @include respond-to('small') {
+    padding: $grid-unit * 2 0 0;
+  }
+
+  position: relative;
 }
 
 #footer-links {
   @include flex-container(row, flex-start, flex-end);
-  margin-top: 20px;
-  padding-bottom: 10px;
+
+  @include respond-to('small') {
+    justify-content: space-between;
+    padding-top: $grid-unit;
+  }
+
+  font-size: $font-unit;
+  margin-top: $grid-unit;
+  padding-bottom: $grid-unit * .5;
 
   > * {
-    font-size: 14px;
-    margin-right: 32px;
+    @include respond-to('not-small') {
+      margin-right: $grid-unit * 1.5;
+    }
+
+    @include respond-to('small') {
+      margin-right: 0;
+    }
   }
 }

@@ -12,30 +12,42 @@
   }
 }
 
-.content-wrapper {
+%content-wrapper {
   @include respond-to('big') {
-    width: 1000px;
+    padding: 0 $grid-unit * .5;
+    width: $grid-unit * 50;
   }
 
   @include respond-to('medium') {
-    width: 768px;
+    padding: 0 $grid-unit * .5;
+    width: $grid-unit * 38.4;
   }
 
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
   transition: width 500ms;
 }
 
-.spacer {
-  height: 50px;
+.content-wrapper {
+  @extend %content-wrapper;
 }
 
-.legal-information {
-  font-size: 12px;
-  margin: 0;
-  padding: 0 0 10px;
-  text-align: center;
+.responsive-content-wrapper {
+  @extend %content-wrapper;
 
-  a {
-    text-decoration: underline;
+  @include respond-to('small') {
+    margin-left: 4%;
+    margin-right: 4%;
+    padding: 0;
+    width: 92%;
   }
+ }
+
+.spacer {
+  height: $grid-unit * 2.5;
+}
+
+.block {
+  display: block;
 }
