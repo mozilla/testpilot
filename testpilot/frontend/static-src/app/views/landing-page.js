@@ -13,7 +13,9 @@ export default PageView.extend({
   pageTitleL10nID: 'pageTitleLandingPage',
 
   events: {
-    'click .centered-banner': 'installClicked'
+    'click [data-hook=install]': 'installClicked',
+    'click [data-hook=get-started-with-account]': 'getStarted',
+    'click [data-hook=signin]': 'signin'
   },
 
   render() {
@@ -22,7 +24,6 @@ export default PageView.extend({
     this.isMoz = query.hasOwnProperty('butimspecial');
     this.loggedIn = isLoggedIn;
     this.addonInstalled = app.me.hasAddon;
-    this.downloadUrl = isLoggedIn && app.me.user.addon.url;
     this.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
     PageView.prototype.render.apply(this, arguments);
@@ -33,13 +34,24 @@ export default PageView.extend({
         isFirefox: this.isFirefox
       }), '[data-hook="experiment-list"]');
     }
+
+    app.sendToGA('pageview', {
+      'dimension1': this.loggedIn
+    });
   },
 
   installClicked() {
-    const btn = this.query('[data-hook=install]');
-    btn.classList.add('state-change');
+    const isLoggedIn = !!app.me.user.id;
+    const downloadUrl = isLoggedIn && app.me.user.addon.url;
+    this.query('[data-hook=install]').classList.add('state-change');
     this.query('.default-btn-msg').classList.add('no-display');
     this.query('.progress-btn-msg').classList.remove('no-display');
+    app.sendToGA('event', {
+      eventCategory: 'HomePage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'Install the Add-on',
+      outboundURL: downloadUrl
+    });
 
     const interval = setInterval(() => {
       if (window.navigator.testpilotAddon) {
@@ -61,6 +73,26 @@ export default PageView.extend({
         });
       }
     }, 1000);
+  },
+
+  getStarted(evt) {
+    evt.preventDefault();
+    app.sendToGA('event', {
+      eventCategory: 'HomePage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'Get started with a Firefox Account',
+      outboundURL: '/accounts/login/?next=/'
+    });
+  },
+
+  signin(evt) {
+    evt.preventDefault();
+    app.sendToGA('event', {
+      eventCategory: 'HomePage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'Sign in',
+      outboundURL: '/accounts/login/?next=/'
+    });
   },
 
   remove() {

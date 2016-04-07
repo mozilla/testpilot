@@ -37,6 +37,11 @@ export default BaseView.extend({
 
   toggleSettings(ev) {
     ev.stopPropagation();
+    app.sendToGA('event', {
+      eventCategory: 'Menu Interactions',
+      eventAction: 'drop-down menu',
+      eventLabel: 'Toggle Menu'
+    });
     const setEl = this.query('.settings-menu');
     if (setEl.classList.contains('no-display')) {
       setEl.classList.remove('no-display');
@@ -47,6 +52,11 @@ export default BaseView.extend({
   },
 
   logout() {
+    app.sendToGA('event', {
+      eventCategory: 'Menu Interactions',
+      eventAction: 'drop-down menu',
+      eventLabel: 'Logout'
+    });
     fetch('/accounts/logout/', {
       method: 'POST',
       credentials: 'same-origin',

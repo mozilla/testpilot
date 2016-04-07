@@ -70,6 +70,19 @@ export default BaseView.extend({
 
   openDetailPage(evt) {
     evt.preventDefault();
+    if (this.model.enabled) {
+      app.sendToGA('event', {
+        eventCategory: 'ExperimentsPage Interactions',
+        eventAction: 'Manage experiment button',
+        eventLabel: this.model.title
+      });
+    } else {
+      app.sendToGA('event', {
+        eventCategory: 'ExperimentsPage Interactions',
+        eventAction: 'Get Started experiment button',
+        eventLabel: this.model.title
+      });
+    }
     app.router.navigate('experiments/' + this.model.slug);
   }
 });

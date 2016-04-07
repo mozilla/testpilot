@@ -164,7 +164,11 @@ export default PageView.extend({
 
   render() {
     PageView.prototype.render.apply(this, arguments);
-
+    app.sendToGA('pageview', {
+      'dimension4': this.model.enabled,
+      'dimension5': this.model.title,
+      'dimension6': this.model.installation_count
+    });
     return this;
   },
 
@@ -212,6 +216,11 @@ export default PageView.extend({
       this.model.fetch();
     });
     this.updateAddon(true, this.model);
+    app.sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'Enable Experiment'
+    });
   },
 
   uninstall(evt) {
@@ -234,6 +243,11 @@ export default PageView.extend({
 
   renderUninstallSurvey(evt) {
     evt.preventDefault();
+    app.sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'Disable Experiment'
+    });
     this.renderSubview(new FeedbackView({
       id: 'disabled-feedback',
       experiment: this.model.url,
@@ -273,5 +287,10 @@ export default PageView.extend({
         { value: 'other', title: 'feedbackAnswerOther' }
       ]
     }), 'body');
+    app.sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'Give Feedback'
+    });
   }
 });
