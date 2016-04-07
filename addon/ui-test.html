@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Fira Sans', sans-serif;
+        font-size: 1.6rem;
+
+        background: #fff;
+        color: #000;
+      }
+
+     #browser-doorhanger-wrapper {
+       bottom: 0;
+       left: 0;
+       position: absolute;
+       right: 0;
+       top: 0;
+     }
+
+     #full-page-wrapper.space-between {
+       display: flex;
+       align-items: center;
+       flex-direction: column;
+       justify-content: space-between;
+     }
+
+     #full-page-wrapper {
+       -webkit-flex: 1;
+       -ms-flex: 1;
+       flex: 1;
+       min-height: 100vh;
+       width: 100%;
+     }
+
+     .blue {
+       background-image: radial-gradient(circle, #0996f8 70%, #0675d3 100%, #0568ba 110%);
+       color: #fff;
+     }
+
+     .help-button {
+       display: flex;
+       align-items: center;
+       justify-content: flex-end;
+       z-index: 9999999;
+       position: fixed !important;
+       bottom: 0;
+       padding: 20px;
+       width: 100%;
+       background: rgba(255, 255, 255, 0.9);
+       border-top: 1px solid rgba(0, 0, 0, 0.5);
+     }
+
+     .help-button > * {
+       margin-left: 20px;
+     }
+
+     #browser-doorhanger {
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       background: #fff;
+       border-radius: 5px;
+       box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), 0 4px 10px rgba(0, 0, 0, 0.3);
+       position: absolute;
+       right: 2px;
+       text-align: center;
+       top: 2px;
+       width: 300px;
+       z-index: 2;
+     }
+    </style>
+    <link rel="stylesheet" href="data/panel.css" type="text/css" media="screen" />
+  </head>
+  <body>
+    <div id="browser-doorhanger-wrapper" class="main">
+      <div id="browser-doorhanger"></div>
+    </div>
+    <div id="full-page-wrapper" class="space-between blue"></div>
+    <div class="help-button"><span>Helpers: </span>
+      <button class="button default" id="render-experiment-list">Render Experiment List</button>
+      <button class="button default" id="render-installed">Render Installed Message</button>
+      <button class="button default" id="toggle-active">Show/Hide Active</button>
+    </div>
+
+    <script src="ui-test.js"></script>
+  </body>
+</html>
