@@ -245,7 +245,7 @@ function handleToolbarButtonChange(state) {
   panel.show({
     width: PANEL_WIDTH,
     height: (experimentCount * EXPERIMENT_HEIGHT) + FOOTER_HEIGHT,
-    position: {top: 2, right: 2}
+    position: button
   });
 }
 
