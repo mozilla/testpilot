@@ -27,6 +27,7 @@ const {ToggleButton} = require('sdk/ui/button/toggle');
 const request = require('sdk/request').Request;
 const simplePrefs = require('sdk/simple-prefs');
 const URL = require('sdk/url').URL;
+const history = require('sdk/places/history');
 
 const Mustache = require('mustache');
 const templates = require('./lib/templates');
@@ -105,10 +106,43 @@ function updatePrefs() {
   });
 }
 
-// Register handler to reconfigure on pref change, kick off initial
-// prefs-dependent setup
-simplePrefs.on('SERVER_ENVIRONMENT', updatePrefs);
-updatePrefs();
+function initServerEnvironmentPreference() {
+  // Search recent browser history for visits to known server environments.
+  // HACK: Docs say that multiple queries get OR'ed together, but that doesn't
+  // seem to work. So, let's use Promise.all() to fire off multiple queries and
+  // collate them ourselves.
+  const envNames = Object.keys(SERVER_ENVIRONMENTS);
+  Promise.all(envNames.map(name => new Promise(resolve => {
+    history.search(
+      {url: SERVER_ENVIRONMENTS[name].BASE_URL + '/*'},
+      {count: 1, sort: 'date', descending: true}
+    ).on('end', results => {
+      // Map the history search into the name of the environment and the time
+      // of the last visit, using null if there was no visit found.
+      return resolve({
+        name: name,
+        time: results.length ? results[0].time : null
+      });
+    });
+  }))).then(resultsRaw => {
+    // Filter out non-results and sort in descending time order.
+    const results = resultsRaw.filter(item => item.time !== null);
+    results.sort((a, b) => b.time - a.time);
+
+    // First result is the last visited environment.
+    const lastVisitedName = results.length > 0 ? results[0].name : null;
+    const currName = simplePrefs.prefs.SERVER_ENVIRONMENT;
+
+    if (lastVisitedName && lastVisitedName !== currName) {
+      // Switch to the last visited environment.
+      simplePrefs.prefs.SERVER_ENVIRONMENT = lastVisitedName;
+    }
+
+    // Finally, watch for pref changes, kick off the env setup.
+    simplePrefs.on('SERVER_ENVIRONMENT', updatePrefs);
+    updatePrefs();
+  });
+}
 
 function setupApp() {
   updateExperiments().then(() => {
@@ -467,6 +501,7 @@ exports.main = function() {
     // installations for multiple browsers per user. DO NOT USE IN METRICS.
     store.clientUUID = require('sdk/util/uuid').uuid().toString().slice(1, -1);
   }
+  initServerEnvironmentPreference();
   Metrics.init();
 };
 
