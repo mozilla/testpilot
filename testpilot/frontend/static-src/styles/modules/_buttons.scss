@@ -113,7 +113,7 @@
 .download-firefox {
   @include flex-container(row, center, center);
   color: $white;
-  cursor: default;
+  cursor: auto;
   display: flex;
   flex-direction: row;
   font-weight: 500;
