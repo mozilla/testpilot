@@ -12,8 +12,8 @@ export default `
           <button data-l10n-id="giveFeedback" data-hook="feedback" id="feedback-button" class="button primary">Give Feedback</button>
           <button data-hook="uninstall" id="uninstall-button" class="button secondary"><span class="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" class="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" class="default-text">Disable <span data-hook="title"></span></span></button>
           <button data-hook="install" id="install-button" class="button default"><span class="state-change-inner"></span><span data-l10n-id="enableExperimentTransition" class="transition-text">Enabling...</span><span data-l10n-id="enableExperiment" class="default-text">Enable <span data-hook="title"></span></span></button>
-          <span data-hook="install-count"></span>
-          <span class="user-count"></span>
+          <span data-l10n-id="userCount" data-hook="install-count"></span>
+          <span data-l10n-id="userCount" class="user-count"></span>
         </div>
       </div>
     </div>
