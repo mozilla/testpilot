@@ -20,7 +20,7 @@ const test = around(tape)
 
 test('Error page view renders', t => {
   t.plan(1);
-  const view = new View({headerScroll:false});
+  const view = new View({headerScroll: false});
   view.render();
   t.ok(view.query('#full-page-wrapper'));
 });

@@ -6,7 +6,7 @@ let afterCalled = false;
 
 test(`Running Tests for ${__filename}`, a => a.end());
 
-const myView = view.extend({
+const MyView = view.extend({
   template: '<div></div>',
   beforeRender: () => {
     beforeCalled = true;
@@ -19,14 +19,14 @@ const myView = view.extend({
 test('Base view renders', t => {
   t.plan(1);
 
-  const el = new myView().render().el;
+  const el = new MyView().render().el;
   t.ok(el);
 });
 
 test('beforeRender is called', t => {
   t.plan(1);
 
-  new myView().render();
+  new MyView().render();
 
   t.ok(beforeCalled);
 });
@@ -34,7 +34,7 @@ test('beforeRender is called', t => {
 test('afterRender is called', t => {
   t.plan(1);
 
-  new myView().render()
+  new MyView().render();
 
   t.ok(afterCalled);
 });

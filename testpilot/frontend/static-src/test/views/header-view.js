@@ -40,7 +40,7 @@ test('render called on `change:hasAddon` event', t => {
   let renderCalled = 0;
   const MyView = View.extend({
     render() {
-      renderCalled++
+      renderCalled++;
       View.prototype.render.apply(this, arguments);
     }
   });
