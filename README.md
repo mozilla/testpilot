@@ -49,6 +49,8 @@ if you'd like to run linters on `pre-commit` you can use this [pre-commit-hook](
 
 See some of our [Tips and Tricks](docs/README-DOCKER.md).
 
+More details on how we create, triage and assign work can be found [here](docs/WORK.md).
+
 
 #### First Thing's First
 
