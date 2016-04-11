@@ -14,6 +14,10 @@ export default PageView.extend({
     PageView.prototype.render.apply(this, arguments);
     this.renderSubview(new ExperimentListView({loggedIn: this.loggedIn}),
       '[data-hook="experiment-list"]');
+
+    app.sendToGA('pageview', {
+      'dimension1test': this.loggedIn
+    });
   },
 
   remove() {

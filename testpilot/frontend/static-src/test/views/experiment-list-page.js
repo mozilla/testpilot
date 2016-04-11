@@ -12,6 +12,7 @@ const test = around(tape)
       app.me = new Me({
         user: {id: 'PattiSmith'}
       });
+      app.sendToGA = () => {};
       t.end();
     })
     .after(t => {

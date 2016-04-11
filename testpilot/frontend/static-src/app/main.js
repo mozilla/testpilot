@@ -16,6 +16,8 @@ import PageManager from './lib/page-manager';
 import Router from './lib/router';
 import domReady from 'domready';
 
+/* global ga*/
+
 app.extend({
   router: new Router(),
 
@@ -57,6 +59,17 @@ app.extend({
       });
       this.webChannel.sendMessage(type, data);
     });
+  },
+
+  // Send to GA
+  sendToGA(type, data) {
+    if (typeof(ga) !== 'undefined') {
+      data.hitType = type;
+      if (data.outboundURL) {
+        data.hitCallback = () => document.location = data.outboundURL;
+      }
+      ga('send', data);
+    }
   }
 
 });
