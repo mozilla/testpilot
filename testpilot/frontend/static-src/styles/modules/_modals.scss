@@ -1,8 +1,11 @@
 #four-oh-four {
+  position: relative;
+  top: 40px;
+
   &:after {
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 15px solid $white;
+    border-left: $grid-unit * .75 solid transparent;
+    border-right: $grid-unit * .75 solid transparent;
+    border-top: $grid-unit * .75 solid $white;
     bottom: -14px;
     content: '';
     height: 0;
@@ -10,12 +13,6 @@
     margin-left: -13px;
     position: absolute;
     width: 0;
-  }
-
-  + .copter {
-    left: 5px;
-    margin: 0 auto;
-    top: 30px;
   }
 }
 
@@ -34,28 +31,28 @@
 
 .modal {
   background: $white;
-  border-radius: 5px;
-  box-shadow: 0 4px 20px $transparent-black-5;
+  border-radius: $large-border-radius;
+  box-shadow: 0 4px $grid-unit $transparent-black-5;
   color: $black;
   position: relative;
-  width: 420px;
+  width: $grid-unit * 21;
 
   .title {
     background-color: $default;
-    border-top-left-radius: $feedback-modal-border-radius;
-    border-top-right-radius: $feedback-modal-border-radius;
+    border-top-left-radius: $large-border-radius;
+    border-top-right-radius: $large-border-radius;
     color: $white;
-    font-size: 30px;
+    font-size: $font-unit * 2.5;
     font-weight: 700;
     margin: 0;
-    padding: 18px 0 14px;
+    padding: ($grid-unit - 2) 0 ($grid-unit - 6);
     text-align: center;
 
     .blue &,
     .onboarding & {
       background-color: $white;
       color: $black;
-      padding: 20px 0 0;
+      padding: $grid-unit 0 0;
     }
 
     &.warning {
@@ -64,13 +61,13 @@
   }
 
   .modal-content {
-    padding: 20px 30px;
+    padding: $grid-unit $grid-unit * 1.5;
     position: relative;
   }
 
   .modal-actions {
     @include flex-container(column, space-between, center);
-    padding: 0 30px 30px;
+    padding: 0 $grid-unit * 1.5 $grid-unit * 1.5;
 
     .button {
       width: 100%;
@@ -78,49 +75,49 @@
   }
 
   .cancel {
-    margin: 10px 0 0;
+    margin: $grid-unit * .5 0 0;
   }
 }
 
 .modal-form {
   @include flex-container(column, center, stretch);
-  padding: 20px 0;
+  padding: $grid-unit 0;
 
   ul {
     list-style: none;
-    margin: 20px 0 0;
+    margin: $grid-unit 0 0;
     padding: 0;
   }
 
   li {
-    margin: 0 0 12px;
+    margin: 0 0 $grid-unit * .6;
     padding: 0;
   }
 
   input {
-    margin: 0 .25em;
+    margin: 0 $grid-unit * .25;
     padding: 0;
   }
 
   label {
-    font-size: 1.8rem;
-    margin-left: 5px;
+    font-size: $font-unit + 4;
+    margin-left: $grid-unit * .25;
     position: relative;
-    top: 2px;
+    top: $grid-unit * .1;
   }
 
   .additional-feedback {
     background: $transparent-black-02;
     border: 1px solid $transparent-black-1;
-    border-radius: 2px;
-    margin: 20px 0 0;
-    padding: 10px;
+    border-radius: $small-border-radius;
+    margin: $grid-unit 0 0;
+    padding: $grid-unit * .5;
   }
 
   .text-area-label {
-    font-size: 14px;
+    font-size: $font-unit + 2;
     margin: 0;
-    padding: 6px;
+    padding: $grid-unit * .25;
     text-align: center;
   }
 
@@ -128,8 +125,8 @@
     background: $transparent-warning-lightest-5;
     border-bottom: 1px solid $warning-red-lightest;
     display: block;
-    margin: 0 -30px;
-    padding: 4px;
+    margin: 0 (-$grid-unit * 1.5);
+    padding: $grid-unit * .25;
     position: absolute;
     text-align: center;
     top: 0;
@@ -144,9 +141,9 @@
   textarea {
     border: 1px solid $feedback-modal-grey;
     display: block;
-    font-size: 1.4rem;
-    height: 8em;
-    padding: 5px;
+    font-size: $font-unit + 2;
+    height: $font-unit * 8;
+    padding: $grid-unit * .25;
     resize: none;
     width: 100%;
   }

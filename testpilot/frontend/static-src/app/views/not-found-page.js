@@ -3,6 +3,7 @@ import PageView from './page-view';
 export default PageView.extend({
   template: `
 <div class="blue">
+  <div class="stars"></div>
   <div id="full-page-wrapper" class="centered" data-hook="no-found-page">
     <div class="centered-banner">
       <div id="four-oh-four" class="modal delayed-fade-in">
@@ -12,7 +13,9 @@ export default PageView.extend({
           <a data-l10n-id="home" class="button default large" href="/">Home</a>
         </div>
       </div>
-      <div class="copter fade-in-fly-up"></div>
+      <div class="copter-wrapper">
+        <div class="copter fade-in-fly-up"></div>
+      </div>
     </div>
   </div>
 </div>

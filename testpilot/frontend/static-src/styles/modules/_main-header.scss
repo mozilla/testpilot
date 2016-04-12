@@ -3,9 +3,9 @@
 
   h1 {
     @include flex-container(row, flex-start, center);
-    font-size: 26px;
+    font-size: ($font-unit * 2) + 2;
     font-weight: 700;
-    margin: 10px 0;
+    margin: $grid-unit * .5 0;
 
     .firefox-logo {
       @include hidpi-background-image('small-firefox-logo', 57px 59px);

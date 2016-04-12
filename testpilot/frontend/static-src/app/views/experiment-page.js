@@ -8,7 +8,7 @@ import ContributorView from './contributor-view';
 import template from '../templates/experiment-page';
 import FeedbackView from './feedback-view';
 
-const changeHeaderOn = 120;
+const changeHeaderOn = 127;
 
 const CollectionExtended = Collection.extend({
   model: Model.extend({

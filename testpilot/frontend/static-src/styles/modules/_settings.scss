@@ -2,14 +2,14 @@
   @include flex-container(row, space-between, center);
   background: $transparent-white-2;
   border: 1px solid $transparent-white-3;
-  border-radius: 7px;
+  border-radius: $large-border-radius;
   cursor: pointer;
-  height: 30px;
-  line-height: 150%;
-  padding: 0 6px;
+  height: $grid-unit * 1.5;
+  line-height: $line-unit * 1.5;
+  padding: 0 $grid-unit * .25;
   text-align: center;
   transition: background 100ms;
-  width: 46px;
+  width: $grid-unit * 2.3;
 
   &.active,
   &:hover {
@@ -18,7 +18,7 @@
 
   span {
     background: $white;
-    border-radius: 50%;
+    border-radius: $circle-border-radius;
     display: inline-block;
     flex: 0 0 8px;
     height: 8px;
@@ -47,29 +47,29 @@
 
 .settings-menu {
   background: $white;
-  border-radius: 3px;
+  border-radius: $small-border-radius;
   box-shadow: 1px 1px 3px 1px $transparent-black-2;
-  left: -114px;
+  left: -$grid-unit * 5.7;
   position: absolute;
-  top: 45px;
-  width: 160px;
+  top: $grid-unit * 2.25;
+  width: $grid-unit * 8;
   z-index: 999;
 
   &:after {
-    border-bottom: 10px solid $white;
-    border-left: 11px solid transparent;
-    border-right: 11px solid transparent;
+    border-bottom: $grid-unit * .5 solid $white;
+    border-left: ($grid-unit * .5) + 1 solid transparent;
+    border-right: ($grid-unit * .5) + 1 solid transparent;
     content: '';
     left: 126px;
     position: absolute;
-    top: -10px;
+    top: -($grid-unit * .5);
   }
 
   a {
     color: $default;
     cursor: pointer;
     display: block;
-    line-height: 2.6rem;
+    line-height: $line-unit * 1.5;
     text-decoration: none;
 
     &:hover,
@@ -80,7 +80,7 @@
 
   ul {
     margin: 0;
-    padding: 10px 15px;
+    padding: $grid-unit * .5;
   }
 
   li {

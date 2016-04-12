@@ -1,6 +1,7 @@
 export default `
   <section id="details" data-hook="experiment-page">
-    <div class="blue">
+    <div class="flat-blue">
+      <div class="stars"></div>
       <header data-hook="header-view"></header>
     </div>
     <div class="spacer"></div>
@@ -9,7 +10,7 @@ export default `
         <h1 data-hook="title"></h1>
         <span class="now-active" data-hook="now-active" data-l10n-id="nowActive">Now Active</span>
         <div class="experiment-controls">
-          <button data-l10n-id="giveFeedback" data-hook="feedback" id="feedback-button" class="button primary">Give Feedback</button>
+          <button data-l10n-id="giveFeedback" data-hook="feedback" id="feedback-button" class="button default">Give Feedback</button>
           <button data-hook="uninstall" id="uninstall-button" class="button secondary"><span class="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" class="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" class="default-text">Disable <span data-hook="title"></span></span></button>
           <button data-hook="install" id="install-button" class="button default"><span class="state-change-inner"></span><span data-l10n-id="enableExperimentTransition" class="transition-text">Enabling...</span><span data-l10n-id="enableExperiment" class="default-text">Enable <span data-hook="title"></span></span></button>
           <span data-l10n-id="userCount" data-hook="install-count"></span>

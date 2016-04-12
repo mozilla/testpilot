@@ -1,14 +1,23 @@
 #experiment-list {
   @include flex-container(row, space-between, stretch, wrap);
-  margin: 40px auto;
+
+  @include respond-to('medium') {
+    justify-content: center;
+  }
+
+  margin: $grid-unit * 2 auto;
 
   > header {
     flex: 0 0 100%;
   }
+
+  .blue & {
+    border-top: 1px solid $transparent-white-1;
+    padding-top: $grid-unit * 3;
+  }
 }
 
 .experiment-list-header {
-  font-style: italic;
   margin: 40px 0;
   text-align: center;
 }
@@ -18,36 +27,41 @@
   @include flex-container(column, stretch, stretch);
 
   @include respond-to('big') {
-    flex: 0 0 310px;
+    flex: 0 0 300px;
   }
 
   @include respond-to('medium') {
-    flex: 0 0 48%;
+    flex: 0 0 46%;
+    margin: 0 2% $grid-unit * 2;
   }
 
   @include respond-to('small') {
     flex: 0 1 96%;
     margin-left: auto;
     margin-right: auto;
-    max-width: 400px;
+    max-width: $grid-unit * 20;
   }
 
-  border: 1px solid $transparent-black-1;
-  border-radius: 3px;
-  box-shadow: 0 1px 0 0 $transparent-black-1;
+  background-color: $white;
+  border-radius: $small-border-radius;
+  box-shadow: 0 0 0 1px $transparent-black-1, 0 1px 0 1px $transparent-black-1;
   color: $black;
-  margin-bottom: 36px;
+  margin-bottom: $grid-unit * 1.75;
   position: relative;
   z-index: 1;
 
+  .blue & {
+    background: $transparent-white-96;
+  }
+
   .experiment-information {
     flex: 1;
-    padding: 20px;
+    padding: $grid-unit;
   }
 
   header {
     @include flex-container(row, space-between, center);
-    margin-bottom: 16px;
+    margin-bottom: $grid-unit * .75;
     width: 100%;
   }
 
@@ -56,7 +70,7 @@
   }
 
   p {
-    line-height: 2.3rem;
+    line-height: 1.4 * $line-unit;
     margin: 0;
   }
 
@@ -76,7 +90,7 @@
         background-position: center center;
         background-repeat: no-repeat;
         border: 3px solid $white;
-        border-radius: 50%;
+        border-radius: $circle-border-radius;
         content: '';
         height: 56px;
         position: absolute;
@@ -89,7 +103,7 @@
   }
 
   &.logged-in:hover {
-    box-shadow: 0 1px 0 0 $transparent-black-1, 0 0 0 5px $transparent-black-1;
+    box-shadow: 0 1px 0 0 $transparent-white-2, 0 0 0 5px $transparent-white-2;
     transition: box-shadow 150ms;
 
     h3 {
@@ -100,7 +114,7 @@
 }
 
 .experiment-actions {
-  padding: 0 20px 20px;
+  padding: 0 $grid-unit $grid-unit;
 
   .button {
     display: none;
@@ -120,9 +134,23 @@
 .experiment-icon-wrapper {
   @include flex-container(row, center, center);
   background: $transparent-black-2;
-  border-radius: 2px 2px 0 0;
-  box-shadow: 0 -2px 2px $transparent-white-3;
-  height: 120px; 
+  border-radius: $small-border-radius $small-border-radius 0 0;
+  box-shadow: 0 -2px 2px $transparent-white-1 inset;
+  height: $grid-unit * 6; 
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    background: $transparent-white-05;
+    content: '';
+    height: $grid-unit * 15;
+    left: -$grid-unit * 7.5;
+    position: absolute;
+    top: -$grid-unit * 7.5;
+    transform: rotate(45deg);
+    width: $grid-unit * 15;
+    z-index: 2;
+  }
 }
 
 .experiment-icon {

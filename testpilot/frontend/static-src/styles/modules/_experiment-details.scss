@@ -10,17 +10,12 @@
     z-index: 999;
 
     + div {
-      margin-top: 80px;
+      margin-top: $grid-unit * 4.8;
     }
 
     h1 {
       flex: 1;
-      font-size: 38px;
-
-    }
-
-    .details-content {
-      margin-top: 66px;
+      font-size: $font-unit * 3.2;
     }
 
     .details-header {
@@ -34,7 +29,7 @@
   flex: 1;
 
   .button {
-    margin-right: 20px;
+    margin-right: $grid-unit;
 
     span {
       text-wrap: nowrap;
@@ -44,13 +39,13 @@
 
 .details-header {
   @include flex-container(row, space-between, center);
-  height: 80px;
+  height: $grid-unit * 4;
   position: relative;
 
   h1 {
     display: flex;
     flex: 1;
-    font-size: 36px;
+    font-size: $font-unit * 3;
     margin: 0;
     transition: font-size 200ms;
   }
@@ -60,33 +55,65 @@
   @include hidpi-background-image('count-avatar', 24px 30px);
   background-repeat: no-repeat;
   display: inline-block;
-  flex: 0 0 24px;
-  height: 30px;
-  margin-left: 10px;
+  flex: 0 0 $grid-unit * 1.25;
+  height: $grid-unit * 1.5;
+  margin-left: $grid-unit * .5;
 }
 
 .details-content {
   @include flex-container(row, space-between, flex-start);
-  padding-top: 30px;
+  margin-top: $grid-unit * .5;
 
   h3 {
-    margin: 24px 0 12px;
+    margin: $grid-unit 0 $grid-unit * .5;
   }
 }
 
 .details-overview {
-  flex: 0 0 260px;
+  @include respond-to('big') {
+    flex: 0 0 $grid-unit * 13;
+  }
+
+  @include respond-to('medium') {
+    flex: 0 0 $grid-unit * 10;
+  }
 }
 
 .details-description {
-  flex: 0 0 680px;
+  @include respond-to('big') {
+    flex: 0 0 $grid-unit * 34;
+
+    img {
+      height: auto;
+      width: $grid-unit * 34;
+    }
+
+  }
+
+  @include respond-to('medium') {
+    flex: 0 0 $grid-unit * 25;
+
+    img {
+      height: auto;
+      width: $grid-unit * 25;
+    }
+  }
+
+  :first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .introduction {
+    margin-bottom: $grid-unit * 2;
+  }
 }
 
 .disclaimer,
 .privacy-policy {
-  font-size: 12px;
-  line-height: 18px;
-  margin-bottom: 18px;
+  font-size: $font-unit;
+  line-height: $line-unit;
+  margin-bottom: $line-unit;
 }
 
 .measurement ul {
@@ -95,10 +122,10 @@
   padding: 0;
 
   li {
-    background: $light;
-    border-left: 2px solid $primary;
-    margin-bottom: 2px;
-    padding: 8px;
+    background: $transparent-black-1;
+    border-left: 2px $grid-unit * .1 solid $primary;
+    margin-bottom: $grid-unit * .1;
+    padding: $grid-unit * .4;
   }
 }
 
@@ -109,25 +136,30 @@
 
   li {
     @include flex-container(row, flex-start, center);
-    padding-bottom: 10px;
+    padding-bottom: $grid-unit;
   }
 
   .title {
-    font-size: 10px;
+    font-size: $font-unit * .8;
+    margin: 0;
+  }
+
+  .name {
+    margin: 0;
   }
 
   .contributor {
-    padding-left: 10px;
+    padding-left: $grid-unit * .5;
   }
 }
 
 .stats {
-  font-size: 12px;
-  margin-bottom: 50px;
+  font-size: $font-unit;
+  margin-bottom: $grid-unit * 2.5;
   width: 100%;
 
   td {
-    padding-bottom: 5px;
+    padding-bottom: $grid-unit * .25;
     vertical-align: top;
     width: 65%;
   }
@@ -139,21 +171,18 @@
 }
 
 .details-image {
-  margin-bottom: 32px;
+  margin-bottom: $grid-unit * 1.5;
 
-  .image {
-    background: $light;
-    border: 1px solid darken($light, 6);
-    border-radius: 6px;
-    height: 460px;
-    width: 100%;
+  img {
+    border-radius: 3px;
+    overflow: hidden;
   }
 
   .caption {
     color: $transparent-black-7;
-    font-size: 14px;
-    margin-top: 10px;
-    padding: 0 6px;
+    font-size: $font-unit;
+    margin-top: $grid-unit * .5;
+    padding: 0 $grid-unit * .25;
   }
 }
 
@@ -161,9 +190,9 @@
   color: $primary;
   display: block;
   font-weight: bold;
-  left: 4px;
+  left: $grid-unit * .75;
   position: absolute;
-  top: -20px;
+  top: -$grid-unit;
 
   .stick & {
     display: none;
@@ -176,10 +205,10 @@
     content: '';
     display: inline-block;
     filter: blur(.1px);
-    height: 20px;
-    margin-right: 8px;
+    height: $grid-unit;
+    margin-right: $grid-unit * .4;
     position: relative;
-    top: 3px;
-    width: 20px;
+    top: $grid-unit * .125;
+    width: $grid-unit;
   }
 }
