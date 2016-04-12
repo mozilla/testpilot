@@ -1,6 +1,6 @@
 #four-oh-four {
+  margin-bottom: $grid-unit * 1.5;
   position: relative;
-  top: 40px;
 
   &:after {
     border-left: $grid-unit * .75 solid transparent;
@@ -36,6 +36,13 @@
   color: $black;
   position: relative;
   width: $grid-unit * 21;
+
+  :not(.content-wrapper) & {
+    @include respond-to('small') {
+      margin: 0 4%;
+      width: 92%;
+    }
+  }
 
   .title {
     background-color: $default;

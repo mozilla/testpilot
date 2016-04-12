@@ -177,27 +177,15 @@ a {
 }
 
 .copter-wrapper {
-    align-items: center;
-    background-color: rgba(9, 150, 248, 0.1);
-    background-position: center center;
-    background-repeat: no-repeat;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    height: 170px;
-    justify-content: center;
-    margin: 0 auto;
-    overflow: hidden;
-    width: 170px;
+    margin: 10px auto -10px;
 }
 
 .copter {
     background-image: url("copter.png");
-    background-size: 105px 81px;
-    height: 81px;
+    background-size: 172px 132px;
+    height: 132px;
     position: relative;
-    width: 105px;
+    width: 172px;
 }
 
 @media (min--moz-device-pixel-ratio: 1.3),
