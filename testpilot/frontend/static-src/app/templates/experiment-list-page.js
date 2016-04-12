@@ -1,6 +1,6 @@
 export default `
     <div>
-      <div class="blue">
+      <div class="blue full-page-wrapper">
         <div class="stars"></div>
         <header data-hook="header-view"></header>
         <div class="responsive-content-wrapper reverse-split-banner ">

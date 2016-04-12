@@ -4,7 +4,7 @@ export default PageView.extend({
   template: `
     <div class="blue">
       <div class="stars"></div>
-      <div id="full-page-wrapper" class="space-between">
+      <div class="full-page-wrapper space-between">
         <header data-hook="header-view"></header>
         <div class="centered-banner">
           <div id="four-oh-four" class="modal delayed-fade-in">
@@ -24,5 +24,4 @@ export default PageView.extend({
     </div>
   `
 });
-
 

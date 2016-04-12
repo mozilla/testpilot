@@ -4,7 +4,7 @@ export default PageView.extend({
   template: `
 <div class="blue">
   <div class="stars"></div>
-  <div id="full-page-wrapper" class="centered" data-hook="no-found-page">
+  <div class="full-page-wrapper centered" data-hook="no-found-page">
     <div class="centered-banner">
       <div id="four-oh-four" class="modal delayed-fade-in">
         <h1 data-l10n-id="notFoundHeader" class="title">Four Oh Four!</h1>

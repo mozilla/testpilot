@@ -4,7 +4,7 @@ export default `
         {{^isMoz}}
           <div class="blue">
             <div class="stars"></div>
-            <div id="full-page-wrapper" class="space-between">
+            <div class="full-page-wrapper space-between">
               <header id="main-header" class="responsive-content-wrapper">
                 <h1>
                   <span class="firefox-logo"></span>
@@ -105,37 +105,39 @@ export default `
       {{/isMoz}}
     {{/loggedIn}}
     {{#loggedIn}}
-      <div id="full-page-wrapper" class="space-between">
-        <header id="main-header" class="responsive-content-wrapper">
-          <h1>
-            <span class="firefox-logo"></span>
-            <span data-l10n-id="siteName">Firefox Test Pilot</span>
-          </h1>
-        </header>
-        <div class="centered-banner responsive-content-wrapper">
-          <div data-hook="installed-message" class="no-display">
-            <h2 data-l10n-id="landingInstallMessage" class="emphasis">Test Pilot installed!</h2>
-            <a href="/" data-l10n-id="landingInstalledButton" class="button large default quick-pop no-display">Let's Go</a>
-          </div>
-          <div data-hook="default-message">
-            <div class="copter-wrapper fly-down">
-              <div class="copter"></div>
+      <div class="blue">
+        <div class="stars"></div>
+        <div class="full-page-wrapper space-between">
+          <header id="main-header" class="responsive-content-wrapper">
+            <h1>
+              <span class="firefox-logo"></span>
+              <span data-l10n-id="siteName">Firefox Test Pilot</span>
+            </h1>
+          </header>
+          <div class="centered-banner responsive-content-wrapper">
+            <div data-hook="installed-message" class="no-display">
+              <h2 data-l10n-id="landingInstallMessage" class="emphasis">Test Pilot installed!</h2>
+              <a href="/" data-l10n-id="landingInstalledButton" class="button large primary quick-pop no-display">Let's Go</a>
             </div>
-            <h2 class="banner">
-              <span data-l10n-id="landingInstallHeaderOne" class="block">Install the Test Pilot Add-on</span>
-              <span data-l10n-id="landingInstallHeaderTwo" class="block">and you're good to go!</span>
-            </h2>
-            <button data-hook="install" class="button large default">
-              <span class="default-btn-msg" data-l10n-id="landingInstallButton">Install the Add-on</span>
-              <span class="no-display progress-btn-msg" data-l10n-id="landingInstallingButton">Installing Test Pilot...</span>
-              <div class="state-change-inner"></div>
-            </button>
+            <div data-hook="default-message">
+              <div class="copter-wrapper fly-down">
+                <div class="copter"></div>
+              </div>
+              <h2 class="banner">
+                <span data-l10n-id="landingInstallHeaderOne" class="block">Install the Test Pilot Add-on</span>
+                <span data-l10n-id="landingInstallHeaderTwo" class="block">and you're good to go!</span>
+              </h2>
+              <button data-hook="install" class="button large primary">
+                <span class="default-btn-msg" data-l10n-id="landingInstallButton">Install the Add-on</span>
+                <span class="no-display progress-btn-msg" data-l10n-id="landingInstallingButton">Installing Test Pilot...</span>
+                <div class="state-change-inner"></div>
+              </button>
+            </div>
           </div>
+          <footer id="main-footer" class="responsive-content-wrapper">
+            <div data-hook="footer-view"></div>
+          </footer>
         </div>
-
-        <footer id="main-footer" class="responsive-content-wrapper">
-          <div data-hook="footer-view"></div>
-        </footer>
       </div>
     {{/loggedIn}}
 </section>
