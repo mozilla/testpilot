@@ -1,6 +1,7 @@
 import app from 'ampersand-app';
 
 import BaseView from './base-view';
+import RetireDialogView from './retire-dialog-view';
 
 export default BaseView.extend({
   template: `<div class="settings-contain">
@@ -15,12 +16,15 @@ export default BaseView.extend({
                    <li><a data-l10n-id="menuWiki" href="https://wiki.mozilla.org/Test_Pilot" target="_blank">Test Pilot Wiki</a></li>
                    <li><a data-l10n-id="menuFileIssue" href="https://github.com/mozilla/testpilot/issues/new" target="_blank">File an Issue</a></li>
                    <li><a data-l10n-id="menuLogout" data-hook="logout">Logout</a></li>
+                   <li><hr></li>
+                   <li><a data-l10n-id="menuRetire" data-hook="retire">Retire</a></li>
                  </ul>
                </div>
              </div>`,
 
   events: {
     'click [data-hook=logout]': 'logout',
+    'click [data-hook=retire]': 'retire',
     'click [data-hook=settings-button]': 'toggleSettings'
   },
 
@@ -67,5 +71,15 @@ export default BaseView.extend({
       // for now, log the error in the console & do nothing in the UI
       console && console.error(err); // eslint-disable-line no-console
     });
+  },
+
+  retire(evt) {
+    evt.preventDefault();
+    this.renderSubview(new RetireDialogView({
+      id: 'retire-dialog',
+      onSubmit: () => {
+        app.trigger('router:new-page', {page: 'retire'});
+      }
+    }), 'body');
   }
 });

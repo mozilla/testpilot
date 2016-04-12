@@ -35,7 +35,7 @@ export default Model.extend({
     return fetch(this.url, {
       headers: { 'Accept': 'application/json' },
       credentials: 'same-origin'
-    }).then((response) => response.json()).then((userData) => {
+    }).then(response => response.json()).then(userData => {
       this.user = userData;
       if (!this.user.profile) { return false; }
 

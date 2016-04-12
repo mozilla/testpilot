@@ -12,8 +12,12 @@ from django.contrib.auth.models import User
 from rest_framework import fields
 
 from allauth.account.signals import user_signed_up
+from allauth.account.models import EmailAddress
 from allauth.socialaccount.signals import pre_social_login
-from allauth.socialaccount.models import SocialLogin
+from allauth.socialaccount.models import (SocialLogin, SocialApp,
+                                          SocialAccount, SocialToken)
+
+from .providers.fxa.provider import FirefoxAccountsProvider
 
 from ..utils import gravatar_url
 from ..experiments.models import (Experiment, UserInstallation)
@@ -405,3 +409,76 @@ class InviteOnlyModeTests(TestCase):
 
             profile = UserProfile.objects.get_profile(self.user)
             self.assertEqual(False, profile.invite_pending)
+
+
+class UserRetirementTests(TestCase):
+
+    @classmethod
+    def setUpTestData(cls):
+        """Set up a full set of user-owned resources"""
+        cls.username = 'johndoe'
+        cls.password = 'top_secret'
+        cls.email = '%s@example.com' % cls.username
+        cls.user = User.objects.create_user(
+            username=cls.username,
+            email=cls.email,
+            password=cls.password)
+
+        cls.addonData = {
+            'name': 'Test Pilot',
+            'url': settings.ADDON_URL
+        }
+
+        (cls.experiment, created) = Experiment.objects.get_or_create(
+            slug="test-1", defaults=dict(
+                title="Test 1",
+                description="This is a test",
+                addon_id="addon-1@example.com"
+            ))
+
+        cls.client_id = '8675309'
+
+        cls.installation = UserInstallation.objects.create(
+            experiment=cls.experiment, user=cls.user, client_id=cls.client_id)
+
+        cls.profile = UserProfile.objects.get_profile(cls.user)
+
+        cls.email_address = EmailAddress.objects.create(
+            user=cls.user, email=cls.email, verified=True, primary=True)
+
+        cls.social_app = SocialApp.objects.create(
+            provider=FirefoxAccountsProvider.id, name='test',
+            client_id='123123123', secret='asdasdasd', key='cvbnvcbncvbn')
+
+        cls.social_account = SocialAccount.objects.create(
+            user=cls.user, provider=FirefoxAccountsProvider.id, uid='8675309')
+
+        cls.social_token = SocialToken.objects.create(
+            app=cls.social_app, account=cls.social_account, token='1234567890')
+
+    def test_retire_request(self):
+        """POST to /users/retire should delete the authenticated user"""
+        self.assertEqual(1, User.objects.filter(username=self.username).count())
+        self.assertEqual(1, UserProfile.objects.filter(user=self.user).count())
+        self.assertEqual(1, UserInstallation.objects.filter(user=self.user).count())
+        self.assertEqual(1, EmailAddress.objects.filter(user=self.user).count())
+        self.assertEqual(1, SocialAccount.objects.filter(user=self.user).count())
+        self.assertEqual(1, SocialToken.objects
+                                       .filter(account=self.social_account).count())
+
+        client = Client()
+        client.login(username=self.username, password=self.password)
+
+        url = reverse('user_retire')
+        resp = client.post(url)
+        self.assertEqual(200, resp.status_code)
+        data = json.loads(str(resp.content, encoding='utf8'))
+        self.assertEqual(self.username, data['username'])
+
+        self.assertEqual(0, User.objects.filter(username=self.username).count())
+        self.assertEqual(0, UserProfile.objects.filter(user=self.user).count())
+        self.assertEqual(0, UserInstallation.objects.filter(user=self.user).count())
+        self.assertEqual(0, EmailAddress.objects.filter(user=self.user).count())
+        self.assertEqual(0, SocialAccount.objects.filter(user=self.user).count())
+        self.assertEqual(0, SocialToken.objects
+                                       .filter(account=self.social_account).count())

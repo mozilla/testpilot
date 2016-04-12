@@ -148,15 +148,11 @@ function setupApp() {
   updateExperiments().then(() => {
     app = new Router(messageBridgePageMod);
 
+    app.on('uninstall-self', uninstallSelf);
+
     app.on('install-experiment', installExperiment);
 
     app.on('uninstall-experiment', uninstallExperiment);
-
-    app.on('uninstall-all', function() {
-      for (let id of store.installedAddons) { // eslint-disable-line prefer-const
-        uninstallExperiment({addon_id: id});
-      }
-    });
 
     app.on('sync-installed', serverInstalled => {
       syncAllAddonInstallations(serverInstalled).then(() => {
@@ -357,6 +353,15 @@ function installExperiment(experiment) {
       install.install();
     }, 'application/x-xpinstall');
   }
+}
+
+function uninstallSelf() {
+  // First, kick out all the experiment add-ons
+  Object.keys(store.installedAddons).forEach(id => {
+    uninstallExperiment({addon_id: id});
+  });
+  // Then, uninstall ourselves
+  AddonManager.getAddonByID(self.id, a => a.uninstall());
 }
 
 function formatInstallData(install, addon) {

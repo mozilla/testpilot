@@ -80,7 +80,7 @@ it into the correct directory. This is all packaged into a script,
 Accepted:
 * `install-experiment`
 * `uninstall-experiment`
-* `uninstall-all`
+* `uninstall-self`
 * `sync-installed`
 
 Emitted:
