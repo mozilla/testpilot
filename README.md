@@ -1,7 +1,7 @@
 Test Pilot
 ==========
 
-![Test Pilot Rainbow Logo](https://wiki.mozilla.org/images/thumb/7/7a/IdeaTownSticker.png/400px-IdeaTownSticker.png)
+![Test Pilot Logo](/testpilot/frontend/static-src/images/copter.png)
 
 [![Circle CI](https://circleci.com/gh/mozilla/testpilot/tree/master.svg?style=svg&circle-token=88ea3e1a6d9b7558092b75358c6ab9251739b9b5)](https://circleci.com/gh/mozilla/testpilot/tree/master)
 [![Coverage status](https://img.shields.io/coveralls/mozilla/testpilot/master.svg)](https://coveralls.io/r/mozilla/testpilot)
