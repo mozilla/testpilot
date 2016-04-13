@@ -18,12 +18,29 @@ export default PageView.extend({
     'click [data-hook=signin]': 'signin'
   },
 
+  props: {
+    loginUrl: {type: 'string', default: '/accounts/login/?next=/'}
+  },
+
+  bindings: {
+    'loginUrl': [{
+      type: 'attribute',
+      name: 'href',
+      hook: 'signin'
+    }, {
+      type: 'attribute',
+      name: 'href',
+      hook: 'get-started-with-account'
+    }]
+  },
+
   render() {
     const isLoggedIn = !!app.me.user.id;
     const query = queryString.parse(location.search);
     this.isMoz = query.hasOwnProperty('butimspecial') || query.hasOwnProperty('butimspecial/');
     this.loggedIn = isLoggedIn;
     this.addonInstalled = app.me.hasAddon;
+    this.downloadUrl = isLoggedIn && app.me.user.addon.url;
     this.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
     PageView.prototype.render.apply(this, arguments);
@@ -41,8 +58,6 @@ export default PageView.extend({
   },
 
   installClicked() {
-    const isLoggedIn = !!app.me.user.id;
-    const downloadUrl = isLoggedIn && app.me.user.addon.url;
     this.query('[data-hook=install]').classList.add('state-change');
     this.query('.default-btn-msg').classList.add('no-display');
     this.query('.progress-btn-msg').classList.remove('no-display');
@@ -50,14 +65,14 @@ export default PageView.extend({
       eventCategory: 'HomePage Interactions',
       eventAction: 'button click',
       eventLabel: 'Install the Add-on',
-      outboundURL: downloadUrl
+      outboundURL: this.downloadUrl
     });
 
     const interval = setInterval(() => {
       if (window.navigator.testpilotAddon) {
         clearInterval(interval);
         app.webChannel.sendMessage('show-installed-panel', {});
-        document.querySelector('.button.default').classList.remove('state-change');
+        this.query('.button.large.primary').classList.remove('state-change');
 
         const msg = this.query('[data-hook=installed-message]');
         msg.classList.remove('no-display');
@@ -75,23 +90,21 @@ export default PageView.extend({
     }, 1000);
   },
 
-  getStarted(evt) {
-    evt.preventDefault();
+  getStarted() {
     app.sendToGA('event', {
       eventCategory: 'HomePage Interactions',
       eventAction: 'button click',
       eventLabel: 'Get started with a Firefox Account',
-      outboundURL: '/accounts/login/?next=/'
+      outboundURL: this.loginUrl
     });
   },
 
-  signin(evt) {
-    evt.preventDefault();
+  signin() {
     app.sendToGA('event', {
       eventCategory: 'HomePage Interactions',
       eventAction: 'button click',
       eventLabel: 'Sign in',
-      outboundURL: '/accounts/login/?next=/'
+      outboundURL: this.loginUrl
     });
   },
 
