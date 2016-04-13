@@ -37,7 +37,7 @@ function shouldLint(opt, task) {
 }
 
 function lintTask() {
-  return gulp.src(['*.js', SRC_PATH + 'app/**/*.js'])
+  return gulp.src(['*.js', SRC_PATH + '{app,test}/**/*.js'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failOnError());
