@@ -63,15 +63,18 @@ app.extend({
 
   // Send to GA
   sendToGA(type, data) {
-    if (typeof(ga) !== 'undefined') {
+    if (window.ga && ga.loaded) {
       data.hitType = type;
       if (data.outboundURL) {
         data.hitCallback = () => document.location = data.outboundURL;
       }
       ga('send', data);
+    } else {
+      if (data.outboundURL) {
+        document.location = data.outboundURL;
+      }
     }
   }
-
 });
 
 domReady(app.initialize);
