@@ -38,7 +38,7 @@ export default `
                 <span/>
               {{/isFirefox}}
               {{#isFirefox}}
-                <button data-l10n-id="landingFxaAlternateButton" class="button outline" data-hook="signin">Sign in</button>
+                <a data-l10n-id="landingFxaAlternateButton" class="button outline" data-hook="signin">Sign in</a>
               {{/isFirefox}}
             </header>
             <div class="split-banner responsive-content-wrapper">
@@ -67,7 +67,7 @@ export default `
                 </a>
               {{/isFirefox}}
               {{#isFirefox}}
-              <button data-l10n-id="landingFxaGetStartedButton" class="button large primary" data-hook="get-started-with-account">Get started with a Firefox Account</button>
+              <a data-l10n-id="landingFxaGetStartedButton" class="button large primary" data-hook="get-started-with-account">Get started with a Firefox Account</a>
               {{/isFirefox}}
             </div>
             <p data-l10n-id="landingLegalNotice" class="legal-information delayed-fade-in-up">By proceeding, you agree to the <a href="https://www.mozilla.org/about/legal/terms/services/">Terms of Service</a> and <a href="https://www.mozilla.org/privacy/firefox-cloud/">Privacy Notice</a> of Test Pilot</p>
@@ -96,7 +96,7 @@ export default `
                   </a>
                 {{/isFirefox}}
                 {{#isFirefox}}
-                <button data-l10n-id="landingFxaGetStartedButton" class="button large primary" data-hook="get-started-with-account">Get started with a Firefox Account</button>
+                <a data-l10n-id="landingFxaGetStartedButton" class="button large primary" data-hook="get-started-with-account">Get started with a Firefox Account</a>
                 {{/isFirefox}}
               </div>
               <div data-hook="footer-view"></div>
@@ -127,11 +127,12 @@ export default `
                 <span data-l10n-id="landingInstallHeaderOne" class="block">Install the Test Pilot Add-on</span>
                 <span data-l10n-id="landingInstallHeaderTwo" class="block">and you're good to go!</span>
               </h2>
-              <button data-hook="install" class="button large primary">
+
+              <a data-hook="install" href="{{downloadUrl}}" class="button large primary">
                 <span class="default-btn-msg" data-l10n-id="landingInstallButton">Install the Add-on</span>
                 <span class="no-display progress-btn-msg" data-l10n-id="landingInstallingButton">Installing Test Pilot...</span>
                 <div class="state-change-inner"></div>
-              </button>
+              </a>
             </div>
           </div>
           <footer id="main-footer" class="responsive-content-wrapper">
