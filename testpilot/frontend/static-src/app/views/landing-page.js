@@ -21,7 +21,7 @@ export default PageView.extend({
   render() {
     const isLoggedIn = !!app.me.user.id;
     const query = queryString.parse(location.search);
-    this.isMoz = query.hasOwnProperty('butimspecial');
+    this.isMoz = query.hasOwnProperty('butimspecial') || query.hasOwnProperty('butimspecial/');
     this.loggedIn = isLoggedIn;
     this.addonInstalled = app.me.hasAddon;
     this.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
