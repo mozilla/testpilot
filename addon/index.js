@@ -14,6 +14,7 @@ let app;
 const {Cc, Ci, Cu} = require('chrome');
 
 const AddonManager = Cu.import('resource://gre/modules/AddonManager.jsm').AddonManager;
+
 const Prefs = Cu.import('resource://gre/modules/Preferences.jsm').Preferences;
 const cookieManager2 = Cc['@mozilla.org/cookiemanager;1']
                        .getService(Ci.nsICookieManager2);
@@ -35,6 +36,7 @@ Mustache.parse(templates.installed);
 Mustache.parse(templates.experimentList);
 
 const Metrics = require('./lib/metrics');
+const survey = require('./lib/survey');
 
 const PANEL_WIDTH = 300;
 const FOOTER_HEIGHT = 50;
@@ -83,6 +85,9 @@ function updatePrefs() {
     HOSTNAME: URL(env.BASE_URL).hostname, // eslint-disable-line new-cap
     TESTPILOT_PREFIX: env.TESTPILOT_PREFIX
   });
+
+  // kickoff our random experiment surveys
+  survey.init();
 
   // Destroy previously existing PageMods
   if (setInstalledFlagPageMod) { setInstalledFlagPageMod.destroy(); }
@@ -315,7 +320,11 @@ function updateExperiments() {
     // Filter addons by known experiments, index by ID
     store.installedAddons = {};
     addons.filter(addon => isTestpilotAddonID(addon.id))
-          .forEach(addon => store.installedAddons[addon.id] = addon);
+          .forEach(addon => {
+            store.installedAddons[addon.id] = Object.assign({
+              installDate: addon.installDate
+            }, store.availableExperiments[addon.id]);
+          });
     return store.installedAddons;
   });
 }
@@ -516,6 +525,7 @@ exports.onUnload = function(reason) {
   panel.destroy();
   button.destroy();
   Metrics.destroy();
+  survey.destroy();
   setInstalledFlagPageMod.destroy();
   messageBridgePageMod.destroy();
   if (reason === 'uninstall') {

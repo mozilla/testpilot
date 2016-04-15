@@ -24,7 +24,8 @@
         "headline": "Discover",
         "image": "http:\/\/testpilot.dev:8000\/media\/demo\/experiments_experimentdetail\/c\/f\/cf8ec31677b2e3a198cc7550242b7b35_image_1449783090_0930.png",
         "copy": "Universal Search puts all of the best search features of Firefox in one easy place.",
-        "experiment_url": "http:\/\/testpilot.dev:8000\/api\/experiments\/1"
+        "experiment_url": "http:\/\/testpilot.dev:8000\/api\/experiments\/1",
+        "survey_url": "http://meandave.com/fake_survey/"
       },
       {
         "url": "http:\/\/testpilot.dev:8000\/api\/details\/4",
@@ -32,7 +33,8 @@
         "headline": "History and Bookmarks",
         "image": "http:\/\/testpilot.dev:8000\/media\/demo\/experiments_experimentdetail\/d\/f\/dfed7362e904f7f4da22918e19ae95f6_image_1449783172_0008.png",
         "copy": "We've added some smarts to help you sort through everything you've ever found before. Looking for that old recipe? Just search.",
-        "experiment_url": "http:\/\/testpilot.dev:8000\/api\/experiments\/1"
+        "experiment_url": "http:\/\/testpilot.dev:8000\/api\/experiments\/1",
+        "survey_url": "http://meandave.com/fake_survey/"
       },
       {
         "url": "http:\/\/testpilot.dev:8000\/api\/details\/5",
@@ -40,7 +42,8 @@
         "headline": "Search The World",
         "image": "http:\/\/testpilot.dev:8000\/media\/demo\/experiments_experimentdetail\/1\/7\/17105f0bb1546d756e4b02b13a566e73_image_1449783173_0422.png",
         "copy": "Search with whatever engine you like. We'll find what you're looking for.",
-        "experiment_url": "http:\/\/testpilot.dev:8000\/api\/experiments\/1"
+        "experiment_url": "http:\/\/testpilot.dev:8000\/api\/experiments\/1",
+        "survey_url": "http://meandave.com/fake_survey/"
       }
     ],
     "contributors": [

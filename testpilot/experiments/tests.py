@@ -94,6 +94,8 @@ class ExperimentViewTests(BaseTestCase):
                         "tour_steps": [],
                         "details": [],
                         "contributors": [],
+                        "survey_url": "https://qsurvey.mozilla.com/s3/%s" %
+                        experiment.slug,
                         "installation_count": UserInstallation.objects
                         .distinct('user').filter(experiment=experiment)
                         .count(),
