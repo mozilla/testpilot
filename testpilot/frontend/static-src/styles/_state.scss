@@ -6,6 +6,10 @@
   visibility: hidden;
 }
 
+.centered {
+  text-align: center;
+}
+
 .delayed-fade-in-up {
   animation: fade-in-up 500ms forwards ease-out;
   animation-delay: 400ms;
