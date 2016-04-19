@@ -14,17 +14,16 @@ a {
 }
 
 .blue {
-  background: radial-gradient(ellipse 250% 100% at center 140%, $light-blue-step 0%, $dark-blue-step 73%);
+  background: radial-gradient(ellipse 250% 100% at center 140%, $light-blue-step 12%, $dark-blue-step 50%, $darkest-blue-step 100%);
   color: $white;
   overflow: hidden;
   position: relative;
 }
 
-.stars {
-  @include hidpi-background-image('stars', 1200px 600px);
-  background-position: center top;
-  background-repeat: no-repeat;
-  bottom: 0;
+.noise {
+  @include hidpi-background-image('noise', 400px 800px);
+  background-repeat: repeat-x;
+  bottom: 400px;
   left: 0;
   position: fixed;
   right: 0;
@@ -32,8 +31,39 @@ a {
   z-index: 0;
 }
 
+%stars {
+  @include hidpi-background-image('stars', 1180px 346px);
+  background-position: center top;
+  background-repeat: no-repeat;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 0;
+}
+
+.stars {
+  @extend %stars;
+  top: $grid-unit * 1.75;
+}
+
+.shifted-stars {
+  @extend %stars;
+  top: -$grid-unit * .5;
+}
+
+.default-background {
+  background: $body-background;
+  position: relative;
+}
+
+.translucent {
+  background: $transparent-white-96;
+  color: $black;
+}
+
 .flat-blue {
-  background: $dark-blue-step;
+  background: $darkest-blue-step;
   color: $white;
 }
 
