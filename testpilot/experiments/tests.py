@@ -9,8 +9,8 @@ from rest_framework import fields
 
 from ..utils import gravatar_url, TestCase
 from ..users.models import UserProfile
-from .models import (Experiment, UserFeedback, UserInstallation, Feature,
-                     FeatureState, FeatureCondition)
+from .models import (Experiment, UserInstallation,
+                     Feature, FeatureState, FeatureCondition)
 
 import logging
 logger = logging.getLogger(__name__)
@@ -215,131 +215,6 @@ class ExperimentViewTests(BaseTestCase):
         data = self.jsonGet('experiment-installation-list',
                             experiment_pk=experiment.pk)
         self.assertEqual(1, len(data))
-
-
-class UserFeedbackTests(BaseTestCase):
-
-    # TODO: user should only be able to see own feedback items
-    def setUp(self):
-        super(UserFeedbackTests, self).setUp()
-
-        self.experiment = self.experiments['test-1']
-
-        self.expected = dict(
-            user=self.user,
-            experiment=self.experiment,
-            question='Test Question',
-            answer='Test Answer',
-            extra='Test Extra'
-        )
-
-    def test_require_authentication(self):
-        """User feedback API should require authentication"""
-        url = reverse('userfeedback-list')
-        resp = self.client.get(url)
-        self.assertEqual(403, resp.status_code)
-
-    def test_list_and_get(self):
-        """User feedback API should list feedback records"""
-        self.client.login(username=self.username,
-                          password=self.password)
-
-        # First, ensure there's no feedback record yet
-        data = self.jsonGet('userfeedback-list')
-        self.assertEqual(0, len(data['results']))
-
-        # Create a feedback record and ensure it exists now
-        feedback = UserFeedback(**self.expected)
-        feedback.save()
-
-        data = self.jsonGet('userfeedback-list')
-        self.assertEqual(1, len(data['results']))
-
-        # Ensure the API list result matches expected feedback data
-        result = data['results'][0]
-        self.assertTrue('user' not in result)
-        self.assertEqual('http://testserver/api/experiments/%s' %
-                         self.experiments['test-1'].pk,
-                         result['experiment'])
-        for k in ('question', 'answer', 'extra'):
-            self.assertEqual(self.expected[k], result[k])
-
-        # Try fetching an individual detail URL and checking expected data
-        result = self.jsonGet('userfeedback-detail', pk=feedback.pk)
-        for k in ('question', 'answer', 'extra'):
-            self.assertEqual(self.expected[k], result[k])
-
-    def test_create(self):
-        """User feedback API should accept POSTed feedback"""
-
-        self.client.login(username=self.username,
-                          password=self.password)
-
-        # First, POST the feedback data
-        url = reverse('userfeedback-list')
-        resp = self.client.post(url, dict(
-            experiment='http://testserver/api/experiments/%s' %
-                       self.experiment.pk,
-            question=self.expected['question'],
-            answer=self.expected['answer'],
-            extra=self.expected['extra']
-        ), format='json')
-
-        # Ensure the response to the POST details the new feedback record
-        data = json.loads(str(resp.content, encoding='utf8'))
-        self.assertEqual('http://testserver/api/experiments/%s' %
-                         self.experiment.pk,
-                         data['experiment'])
-        for k in ('question', 'answer', 'extra'):
-            self.assertEqual(self.expected[k], data[k])
-
-        # The response to the POST should contain a URL that identifies an
-        # existing UserFeedback model with expected attributes.
-        feedback = UserFeedback.objects.get(pk=data['url'].split('/').pop())
-        self.assertEqual(self.user.pk,
-                         feedback.user.pk)
-        self.assertEqual(self.experiment.pk,
-                         feedback.experiment.pk)
-        for k in ('question', 'answer', 'extra'):
-            self.assertEqual(self.expected[k], getattr(feedback, k))
-
-        # The new feedback record should appear in the list.
-        data = self.jsonGet('userfeedback-list')
-        self.assertEqual(1, len(data['results']))
-        result = data['results'][0]
-        self.assertTrue('user' not in result)
-        self.assertEqual('http://testserver/api/experiments/%s' %
-                         self.experiment.pk,
-                         result['experiment'])
-        for k in ('question', 'answer', 'extra'):
-            self.assertEqual(self.expected[k], result[k])
-
-    def test_feedback_privacy(self):
-        """User feedback API should disallow users from seeing each other's submissions"""
-        self.client.login(username=self.username,
-                          password=self.password)
-
-        url = reverse('userfeedback-list')
-        resp = self.client.post(url, dict(
-            experiment='http://testserver/api/experiments/%s' %
-                       self.experiment.pk,
-            question=self.expected['question'],
-            answer=self.expected['answer'],
-            extra=self.expected['extra']
-        ), format='json')
-        data = json.loads(str(resp.content, encoding='utf8'))
-
-        feedback_url = data['url']
-
-        self.client.login(username=self.username,
-                          password=self.password)
-        resp = self.client.get(feedback_url)
-        self.assertEqual(200, resp.status_code)
-
-        self.client.login(username=self.users['experimenttest-2'],
-                          password='trustno2')
-        resp = self.client.get(feedback_url)
-        self.assertEqual(404, resp.status_code)
 
 
 class FeaturesBasicTests(BaseTestCase):

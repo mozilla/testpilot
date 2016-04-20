@@ -4,8 +4,7 @@ from django.core.urlresolvers import reverse
 
 from ..users.models import UserProfile
 from ..users.serializers import UserProfileSerializer
-from .models import (Experiment, ExperimentDetail, UserFeedback,
-                     UserInstallation)
+from .models import (Experiment, ExperimentDetail, UserInstallation)
 from ..utils import MarkupField
 
 
@@ -55,14 +54,6 @@ class ExperimentSerializer(HyperlinkedTranslatableModelSerializer):
         path = reverse('experiment-installation-list',
                        args=(obj.pk,))
         return request.build_absolute_uri(path)
-
-
-class UserFeedbackSerializer(serializers.HyperlinkedModelSerializer):
-
-    class Meta:
-        model = UserFeedback
-        fields = ('url', 'experiment', 'question', 'answer', 'extra',
-                  'created', 'modified')
 
 
 class UserInstallationSerializer(serializers.HyperlinkedModelSerializer):
