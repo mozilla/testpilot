@@ -6,6 +6,7 @@ import ExperimentPage from '../views/experiment-page';
 import ExperimentListPage from '../views/experiment-list-page';
 import LandingPage from '../views/landing-page';
 import NotFoundPage from '../views/not-found-page';
+import RetirePage from '../views/retire-page';
 
 // PageManager is an ampersand-view-switcher wrapper
 //
@@ -22,7 +23,8 @@ export default class PageManager {
       'experiments': ExperimentListPage,
       'experimentDetail': ExperimentPage,
       'notFound': NotFoundPage,
-      'error': ErrorPage
+      'error': ErrorPage,
+      'retire': RetirePage
     };
 
     this._viewSwitcher = new AmpersandViewSwitcher(opts.pageContainer, {

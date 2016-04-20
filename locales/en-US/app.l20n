@@ -17,6 +17,7 @@
 <menuWiki "Test Pilot Wiki">
 <menuFileIssue "File an Issue">
 <menuLogout "Logout">
+<menuRetire "Retire">
 
 <landingFxaAlternateButton "Sign in">
 <landingIntroOne "Test out new features.">
@@ -72,6 +73,17 @@
 <feedbackUninstallAnswerDislike "I don't like this feature.">
 <feedbackUninstallAnswerNotUseful "This isn't useful for me.">
 <feedbackUninstallAnswerOther "Something else.">
+
+<retireDialogTitle "Retire from Test Pilot?">
+<retireMessage "If you retire from Test Pilot, we will disable any active tests, uninstall the Test Pilot add-on, remove your account information from our servers, and generally just leave you alone.">
+<retireSubmitButton "Retire">
+<retireCancelButton "Cancel">
+
+<pageTitleRetirePage "Firefox Test Pilot - Retire from Test Pilot">
+<retirePageProgressMessage "Shutting down Test Pilot...">
+<retirePageHeadline "Thanks Again!">
+<retirePageMessage "Before you go, we want to thank you for contributing to Test Pilot.<br>You're welcome back any time!">
+<retirePageSurveyButton "Take a quick survey">
 
 <measurements "Measurements">
 <measurementsDisclaimer "All data is collected anonymously and used only to help us improve this test.">

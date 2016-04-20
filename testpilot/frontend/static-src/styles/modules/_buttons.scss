@@ -59,6 +59,12 @@
     }
   }
 
+  &.warning {
+    background: #ee4b36;
+    border: 1px solid #d92215;
+    color: #fff;
+  }
+
   &.disabled,
   &.disabled:hover,
   &.disabled:active,
