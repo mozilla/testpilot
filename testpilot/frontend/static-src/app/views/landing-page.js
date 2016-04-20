@@ -57,7 +57,7 @@ export default PageView.extend({
       if (window.navigator.testpilotAddon) {
         clearInterval(interval);
         app.webChannel.sendMessage('show-installed-panel', {});
-        document.querySelector('.button.default').classList.remove('state-change');
+        document.querySelector('.button.primary').classList.remove('state-change');
 
         const msg = this.query('[data-hook=installed-message]');
         msg.classList.remove('no-display');
