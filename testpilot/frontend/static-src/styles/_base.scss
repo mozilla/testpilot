@@ -18,6 +18,12 @@ body {
 }
 
 h2 {
+
+  @include respond-to('not-small') {
+    margin-bottom: $grid-unit * .75;
+    margin-top: $grid-unit * .75;
+  }
+
   @include respond-to('small') {
     margin-bottom: $grid-unit * .5;
     margin-top: $grid-unit * .5;

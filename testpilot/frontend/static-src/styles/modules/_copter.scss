@@ -20,7 +20,7 @@
 }
 
 .copter {
-  @include hidpi-background-image('copter', 345px 265px);
+  @include hidpi-background-image('copter', 328px 265px);
   @include respond-to ('big') {
     height: 265px;
     width: 345px;
@@ -38,9 +38,9 @@
     width: 260px;
   }
   
-  animation: hover 1000ms ease-in-out infinite;
-  animation-direction: alternate;
+  animation: hover 1000ms ease-in-out infinite alternate;
+  background-position: center center;
+  background-repeat: no-repeat;
   position: relative;
-  top: -5px;
-
+  top: 0;
 }

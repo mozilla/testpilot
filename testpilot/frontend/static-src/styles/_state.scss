@@ -95,11 +95,11 @@
 // Used to hover the copter
 @keyframes hover {
   0% {
-    transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, 0, 0);
   }
 
   100% {
-    transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 10px, 0);
   }
 }
 

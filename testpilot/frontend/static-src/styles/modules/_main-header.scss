@@ -2,17 +2,15 @@
   @include flex-container(row, space-between, center);
 
   h1 {
-    @include flex-container(row, flex-start, center);
-    font-size: ($font-unit * 2) + 2;
-    font-weight: 700;
-    margin: $grid-unit * .5 0;
+    margin: $grid-unit * .75 0 $grid-unit * .75 -$grid-unit * .25;
+    text-indent: -9999px;
 
-    .firefox-logo {
-      @include hidpi-background-image('small-firefox-logo', 57px 59px);
-      background-repeat: no-repeat;
-      height: 57px;
-      padding-left: 60px;
-      transform: scale(.8);
+    .wordmark {
+      @include hidpi-background-image('wordmark', 296px 64px);
+      display: block;
+      height: 64px;
+      position: relative;
+      width: 296px;
     }
   }
 }

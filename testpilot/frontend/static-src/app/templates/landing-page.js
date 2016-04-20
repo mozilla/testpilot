@@ -3,14 +3,13 @@ export default `
     {{^loggedIn}}
         {{^isMoz}}
           <div class="blue">
+            <div class="noise"></div>
             <div class="stars"></div>
             <div class="full-page-wrapper space-between">
               <header id="main-header" class="responsive-content-wrapper">
                 <h1>
-                  <span class="firefox-logo"></span>
-                  <span data-l10n-id="siteName">Firefox Test Pilot</span>
+                  <a href="/" class="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
                 </h1>
-                <span/>
               </header>
               <div class="centered-banner responsive-content-wrapper">
                 <div class="copter-wrapper fly-in">
@@ -26,13 +25,11 @@ export default `
         {{/isMoz}}
         {{#isMoz}}
           <div class="blue">
+            <div class="noise"></div>
             <div class="stars"></div>
             <header id="main-header" class="responsive-content-wrapper">
               <h1>
-                <span class="firefox-logo"></span>
-                <a href="/accounts/login/?next=/">
-                  <span data-l10n-id="siteName">Firefox Test Pilot</span>
-                </a>
+                <a href="/" class="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
               </h1>
               {{^isFirefox}}
                 <span/>
@@ -106,12 +103,12 @@ export default `
     {{/loggedIn}}
     {{#loggedIn}}
       <div class="blue">
+        <div class="noise"></div>
         <div class="stars"></div>
         <div class="full-page-wrapper space-between">
           <header id="main-header" class="responsive-content-wrapper">
             <h1>
-              <span class="firefox-logo"></span>
-              <span data-l10n-id="siteName">Firefox Test Pilot</span>
+              <a href="/" class="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
             </h1>
           </header>
           <div class="centered-banner responsive-content-wrapper">

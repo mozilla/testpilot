@@ -3,6 +3,7 @@ import PageView from './page-view';
 export default PageView.extend({
   template: `
 <div class="blue">
+  <div class="noise"></div>
   <div class="stars"></div>
   <div class="full-page-wrapper centered" data-hook="no-found-page">
     <div class="centered-banner">
