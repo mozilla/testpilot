@@ -6,13 +6,11 @@ from rest_framework.decorators import (detail_route, permission_classes,
 
 from django.shortcuts import get_object_or_404
 
-from .models import (Experiment, ExperimentDetail, UserFeedback,
-                     UserInstallation)
+from .models import (Experiment, ExperimentDetail, UserInstallation)
 from .serializers import (ExperimentSerializer,
                           ExperimentDetailSerializer,
-                          UserFeedbackSerializer,
                           UserInstallationSerializer)
-from ..utils import IsRequestUserBackend, IsAccountAdminOrReadOnly
+from ..utils import IsAccountAdminOrReadOnly
 
 import logging
 logger = logging.getLogger(__name__)
@@ -96,20 +94,6 @@ class ExperimentDetailViewSet(viewsets.ModelViewSet):
         return ExperimentDetail.objects.language().fallbacks('en')
 
 
-class UserFeedbackViewSet(viewsets.ModelViewSet):
-    queryset = UserFeedback.objects.all()
-    serializer_class = UserFeedbackSerializer
-    filter_backends = (IsRequestUserBackend,)
-    permission_classes = (IsAuthenticated,)
-
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
-
-    def perform_update(self, serializer):
-        serializer.save(user=self.request.user)
-
-
 def register_views(router):
     router.register(r'experiments', ExperimentViewSet, base_name='experiment')
     router.register(r'details', ExperimentDetailViewSet, base_name='experimentdetail')
-    router.register(r'feedback', UserFeedbackViewSet, base_name='userfeedback')

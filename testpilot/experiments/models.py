@@ -107,23 +107,6 @@ class UserInstallation(models.Model):
         return FeatureState.objects.get_for_installation(self)
 
 
-class UserFeedback(models.Model):
-
-    experiment = models.ForeignKey('Experiment', related_name='feedbacks',
-                                   db_index=True)
-
-    # User should be optional for if/when we have UX to submit anonymous
-    # feedback, or we anonymize a user's feedback post-submission
-    user = models.ForeignKey(User, blank=True, null=True)
-
-    question = models.CharField(max_length=256)
-    answer = models.CharField(max_length=256, blank=True)
-    extra = models.TextField(blank=True)
-
-    created = models.DateTimeField(auto_now_add=True)
-    modified = models.DateTimeField(auto_now=True)
-
-
 class Feature(models.Model):
     experiment = models.ForeignKey(Experiment, related_name='features',
                                    db_index=True)
