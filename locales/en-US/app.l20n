@@ -36,6 +36,14 @@
 <landingDownloadFirefoxDesc "(of course, you'll need Firefox to use Test Pilot)">
 <landingDownloadFirefoxTitle "Firefox">
 <landingDownloadFirefoxSubTitle "Free Download">
+<landingExperimentsTitle "Try these features today with Test Pilot">
+<landingCardListTitle "Get started in 3 easy steps">
+<landingStepOne "Step one">
+<landingStepTwo "Step two">
+<landingStepThree "Step three">
+<landingCardOne "Create a Firefox Account or sign in.">
+<landingCardTwo "Get the Test Pilot add-on.">
+<landingCardThree "Enable experimental features!">
 
 <errorHeading "Whoops!">
 <errorMessage "Looks like we broke something. <br> Maybe try again later.">

@@ -1,27 +1,3 @@
-#experiment-list {
-  @include flex-container(row, space-between, stretch, wrap);
-
-  @include respond-to('medium') {
-    justify-content: center;
-  }
-
-  margin: $grid-unit * 2 auto;
-
-  > header {
-    flex: 0 0 100%;
-  }
-
-  .blue & {
-    border-top: 1px solid $transparent-white-1;
-    padding-top: $grid-unit * 3;
-  }
-}
-
-.experiment-list-header {
-  margin: 40px 0;
-  text-align: center;
-}
-
 .experiment-summary {
 
   @include flex-container(column, stretch, stretch);

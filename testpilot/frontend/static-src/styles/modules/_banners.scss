@@ -1,7 +1,7 @@
 .banner {
   @include respond-to('big') {
-    font-size: 3.8 * $font-unit;
-    line-height: 3.6 * $line-unit;
+    font-size: 4 * $font-unit;
+    line-height: 3.8 * $line-unit;
   }
 
   @include respond-to('medium') {
@@ -15,6 +15,7 @@
   }
 
   font-weight: 300;
+  text-shadow: 0 2px 0 $transparent-black-3;
 }
 
 .centered-banner,

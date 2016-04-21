@@ -57,9 +57,10 @@ a {
   position: relative;
 }
 
-.translucent {
-  background: $transparent-white-96;
-  color: $black;
+.transparent-container {
+  background: $transparent-white-1;
+  color: $white;
+  padding: $grid-unit * .25 0;
 }
 
 .flat-blue {
@@ -79,4 +80,18 @@ a {
   .blue & {
     @include hidpi-background-image('mozilla', 77px 20px);
   }
+}
+
+.firefox-icon {
+  background: url('../images/fox.svg');
+}
+
+.add-on-icon {
+  background: url('../images/add-on.svg');
+  left: 9px;
+  top: -2px;
+}
+
+.test-pilot-icon {
+  background: url('../images/testpilot.svg');
 }

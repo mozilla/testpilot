@@ -1,6 +1,6 @@
 #main-footer {
   @include respond-to('not-small') {
-    padding: $grid-unit * 3 0 0;
+    padding: $grid-unit * 4 0 0;
   }
 
   @include respond-to('small') {

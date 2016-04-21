@@ -1,4 +1,5 @@
-#four-oh-four, #retire {
+#four-oh-four,
+#retire {
   margin-bottom: $grid-unit * 1.5;
   position: relative;
 
@@ -93,10 +94,10 @@
 }
 
 .loading-pill {
-  padding: 10px;
-  position: relative;
   border: 1px solid $transparent-white-3;
-  border-radius: 4px;
+  border-radius: $small-border-radius;
+  padding: $grid-unit * .5;
+  position: relative;
 
   > * {
     margin: 0;
@@ -104,9 +105,8 @@
 }
 
 .state-change-inner {
-  -webkit-animation: barberpole 1000ms infinite linear;
   animation: barberpole 1000ms infinite linear;
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, $transparent-white-1 25%, transparent 25%, transparent 50%, $transparent-white-1 50%, $transparent-white-1 75%, transparent 75%, transparent);
   background-size: 50px 50px;
   bottom: 0;
   left: 0;

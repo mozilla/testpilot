@@ -1,0 +1,54 @@
+.card-list {
+
+  > :nth-child(2):not(.experiment-summary) {
+    @include respond-to('not-small') {
+      border-left: 1px solid $transparent-white-3;
+      border-right: 1px solid $transparent-white-3;
+    }
+
+    @include respond-to('small') {
+      border-bottom: 1px solid $transparent-white-3;
+      border-top: 1px solid $transparent-white-3;
+    }
+  }
+}
+
+.card {
+  @include flex-container (column, center, center);
+
+  @include respond-to('not-small') {
+    flex: 0 0 32%;
+    margin: 0 .5%;
+  }
+
+  @include respond-to('small') {
+    flex: 0 0 90%;
+  }
+
+  padding: $grid-unit;
+  position: relative;
+
+  .card-icon {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: $grid-unit * 3.2 $grid-unit * 3.2;
+    filter: drop-shadow(0 2px 0 $transparent-black-2);
+    height: $grid-unit * 3.2;
+    margin: $grid-unit auto;
+    opacity: .9;
+    position: relative;
+    width: $grid-unit * 3.2;
+  }
+
+  .card-title {
+    font-size: $font-unit * 2;
+    margin: $grid-unit * .5 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .card-copy {
+    font-size: $font-unit * 1.4;
+    text-align: center;
+  }
+}
