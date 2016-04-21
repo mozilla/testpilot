@@ -9,7 +9,7 @@ from rest_framework import fields
 
 from ..utils import gravatar_url, TestCase
 from ..users.models import UserProfile
-from .models import (Experiment, UserInstallation,
+from .models import (Experiment, ExperimentTourStep, UserInstallation,
                      Feature, FeatureState, FeatureCondition)
 
 import logging
@@ -91,6 +91,7 @@ class ExperimentViewTests(BaseTestCase):
                         "modified": date_field.to_representation(
                             experiment.modified),
                         "xpi_url": "",
+                        "tour_steps": [],
                         "details": [],
                         "contributors": [],
                         "installation_count": UserInstallation.objects
@@ -103,6 +104,24 @@ class ExperimentViewTests(BaseTestCase):
                     key=lambda x: x['id'])
             }
         )
+
+    def test_tour_steps(self):
+        # lang = 'en-US'
+        experiment = self.experiments['test-1']
+        steps = [ExperimentTourStep.objects.create(
+            experiment=experiment, order=idx, copy='Caption %s' % idx
+        ) for idx in range(1, 4)]
+
+        url = reverse('experiment-detail', args=(experiment.pk,))
+        resp = self.client.get(url)
+        data = json.loads(str(resp.content, encoding='utf8'))
+
+        self.assertEqual(len(steps), len(data['tour_steps']))
+        for idx in range(0, len(steps)):
+            step = steps[idx]
+            result = data['tour_steps'][idx]
+            self.assertEqual(step.copy.rendered, result['copy'])
+            self.assertEqual(step.order, result['order'])
 
     def test_contributors(self):
         """Experiment detail API resource should list contributor profiles"""

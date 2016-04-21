@@ -7,6 +7,7 @@ import DetailView from './detail-view';
 import ContributorView from './contributor-view';
 import template from '../templates/experiment-page';
 import FeedbackView from './feedback-view';
+import ExperimentTourDialogView from './experiment-tour-dialog-view';
 
 const changeHeaderOn = 127;
 
@@ -204,6 +205,7 @@ export default PageView.extend({
 
   install(evt) {
     evt.preventDefault();
+
     const width = evt.target.offsetWidth;
     evt.target.style.width = width + 'px';
     evt.target.classList.add('state-change');
@@ -214,6 +216,9 @@ export default PageView.extend({
       evt.target.classList.remove('state-change');
       this.model.set('installation_count', this.model.installation_count + 1);
       this.model.fetch();
+      this.renderSubview(new ExperimentTourDialogView({
+        model: this.model
+      }), 'body');
     });
     this.updateAddon(true, this.model);
     app.sendToGA('event', {

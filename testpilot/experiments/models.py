@@ -16,6 +16,7 @@ from ..utils import HashedUploadTo
 
 experiment_thumbnail_upload_to = HashedUploadTo('thumbnail')
 experimentdetail_image_upload_to = HashedUploadTo('image')
+experimenttourstep_image_upload_to = HashedUploadTo('image')
 
 
 class ExperimentManager(TranslationManager):
@@ -83,6 +84,22 @@ class ExperimentDetail(TranslatableModel):
 
     image = models.ImageField(upload_to=experimentdetail_image_upload_to)
 
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ('experiment', 'order', 'modified',)
+
+
+class ExperimentTourStep(TranslatableModel):
+    experiment = models.ForeignKey('Experiment', related_name='tour_steps',
+                                   db_index=True)
+    order = models.IntegerField(default=0)
+    image = models.ImageField(upload_to=experimenttourstep_image_upload_to)
+    translations = TranslatedFields(
+        copy=MarkupField(blank=True, default='',
+                         default_markup_type='markdown'),
+    )
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 

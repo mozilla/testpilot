@@ -2,6 +2,10 @@
   display: none;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .delayed-fade-in-up {
   animation: fade-in-up 500ms forwards ease-out;
   animation-delay: 400ms;
@@ -109,9 +113,9 @@
 
 @keyframes bounceInUp {
   from,
-  60%, 
-  75%, 
-  90%, 
+  60%,
+  75%,
+  90%,
   to {
     animation-timing-function: cubic-bezier(.215, .61, .355, 1);
   }

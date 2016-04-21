@@ -375,5 +375,71 @@
     "headline": "Search The World",
     "language_code": "en-us"
   }
+},
+{
+  "pk": 1,
+  "model": "experiments.experimenttourstep",
+  "fields": {
+    "experiment": [ "universal-search" ],
+    "modified": "2016-04-21T21:13:11.660Z",
+    "created": "2016-04-21T19:51:18.953Z",
+    "image": "demo/experiments_experimenttourstep/2/c/2cf249d013d1036bf2d2b23f4a182150_image_1461273191_0987.png",
+    "order": 0
+  }
+},
+{
+  "pk": 2,
+  "model": "experiments.experimenttourstep",
+  "fields": {
+    "experiment": [ "universal-search" ],
+    "modified": "2016-04-21T21:13:11.676Z",
+    "created": "2016-04-21T19:51:18.982Z",
+    "image": "demo/experiments_experimenttourstep/4/2/42da9cbe696562b852c58f80ce12557e_image_1461273191_0404.jpg",
+    "order": 1
+  }
+},
+{
+  "pk": 3,
+  "model": "experiments.experimenttourstep",
+  "fields": {
+    "experiment": [ "universal-search" ],
+    "modified": "2016-04-21T21:13:11.689Z",
+    "created": "2016-04-21T19:51:18.999Z",
+    "image": "demo/experiments_experimenttourstep/8/d/8d18f7d9423371c548855b604638451d_image_1461273191_0297.gif",
+    "order": 2
+  }
+},
+{
+  "pk": 1,
+  "model": "experiments.experimenttoursteptranslation",
+  "fields": {
+    "_copy_rendered": "<p>This is a test</p>",
+    "master": 1,
+    "copy": "This is a test",
+    "language_code": "en-us",
+    "copy_markup_type": "markdown"
+  }
+},
+{
+  "pk": 2,
+  "model": "experiments.experimenttoursteptranslation",
+  "fields": {
+    "_copy_rendered": "<p>Another test goes here</p>",
+    "master": 2,
+    "copy": "Another test goes here",
+    "language_code": "en-us",
+    "copy_markup_type": "markdown"
+  }
+},
+{
+  "pk": 3,
+  "model": "experiments.experimenttoursteptranslation",
+  "fields": {
+    "_copy_rendered": "",
+    "master": 3,
+    "copy": "",
+    "language_code": "en-us",
+    "copy_markup_type": "markdown"
+  }
 }
 ]
