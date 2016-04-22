@@ -71,7 +71,11 @@ app.extend({
       ga('send', data);
     } else {
       if (data.outboundURL) {
-        document.location = data.outboundURL;
+        if (data.newTab) {
+          window.open(data.outboundURL, '_blank').focus();
+        } else {
+          document.location = data.outboundURL;
+        }
       }
     }
   }

@@ -91,6 +91,13 @@
   .cancel {
     margin: $grid-unit * .5 0 0;
   }
+
+  .copter {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 220px auto;
+    height: 180px;
+  }
 }
 
 .loading-pill {
@@ -115,74 +122,4 @@
   right: 0;
   top: 0;
   transition: opacity .1s ease;
-}
-
-.modal-form {
-  @include flex-container(column, center, stretch);
-  padding: $grid-unit 0;
-
-  ul {
-    list-style: none;
-    margin: $grid-unit 0 0;
-    padding: 0;
-  }
-
-  li {
-    margin: 0 0 $grid-unit * .6;
-    padding: 0;
-  }
-
-  input {
-    margin: 0 $grid-unit * .25;
-    padding: 0;
-  }
-
-  label {
-    font-size: $font-unit + 4;
-    margin-left: $grid-unit * .25;
-    position: relative;
-    top: $grid-unit * .1;
-  }
-
-  .additional-feedback {
-    background: $transparent-black-02;
-    border: 1px solid $transparent-black-1;
-    border-radius: $small-border-radius;
-    margin: $grid-unit 0 0;
-    padding: $grid-unit * .5;
-  }
-
-  .text-area-label {
-    font-size: $font-unit + 2;
-    margin: 0;
-    padding: $grid-unit * .25;
-    text-align: center;
-  }
-
-  .form-notification {
-    background: $transparent-warning-lightest-5;
-    border-bottom: 1px solid $warning-red-lightest;
-    display: block;
-    margin: 0 (-$grid-unit * 1.5);
-    padding: $grid-unit * .25;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    transition: opacity 100ms;
-    width: 100%;
-
-    &.hidden {
-      opacity: 0;
-    }
-  }
-
-  textarea {
-    border: 1px solid $feedback-modal-grey;
-    display: block;
-    font-size: $font-unit + 2;
-    height: $font-unit * 8;
-    padding: $grid-unit * .25;
-    resize: none;
-    width: 100%;
-  }
 }

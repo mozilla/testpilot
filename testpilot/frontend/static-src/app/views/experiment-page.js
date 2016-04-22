@@ -1,12 +1,13 @@
 import app from 'ampersand-app';
 import Model from 'ampersand-model';
 import Collection from 'ampersand-collection';
+import querystring from 'querystring';
 
 import PageView from './page-view';
 import DetailView from './detail-view';
 import ContributorView from './contributor-view';
 import template from '../templates/experiment-page';
-import FeedbackView from './feedback-view';
+import DisableDialogView from './disable-dialog-view';
 
 const changeHeaderOn = 127;
 
@@ -244,21 +245,20 @@ export default PageView.extend({
 
   renderUninstallSurvey(evt) {
     evt.preventDefault();
+
     app.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
       eventLabel: 'Disable Experiment'
     });
-    this.renderSubview(new FeedbackView({
+
+    const queryParams = querystring.stringify({ref: 'disable', experiment: this.model.title});
+
+    this.renderSubview(new DisableDialogView({
       id: 'disabled-feedback',
       experiment: this.model.url,
       title: 'feedbackUninstallTitle',
-      questions: [
-        { value: 'broken', title: 'feedbackUninstallAnswerBroken' },
-        { value: 'dislike', title: 'feedbackUninstallAnswerDislike' },
-        { value: 'notuseful', title: 'feedbackUninstallAnswerNotUseful' },
-        { value: 'other', title: 'feedbackUninstallAnswerOther' }
-      ],
+      surveyUrl: `${this.model.survey_url}?${queryParams}`,
       onSubmit: () => this.uninstall(evt)
     }), 'body');
   },
@@ -277,21 +277,15 @@ export default PageView.extend({
 
   feedback(evt) {
     evt.preventDefault();
-    this.renderSubview(new FeedbackView({
-      id: 'enabled-feedback',
-      experiment: this.model.url,
-      title: 'feedbackTitle',
-      questions: [
-        { value: 'broken', title: 'feedbackAnswerBroken' },
-        { value: 'feature', title: 'feedbackAnswerFeature' },
-        { value: 'cool', title: 'feedbackAnswerCool' },
-        { value: 'other', title: 'feedbackAnswerOther' }
-      ]
-    }), 'body');
+
+    const queryParams = querystring.stringify({ref: 'givefeedback', experiment: this.model.title});
+
     app.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
-      eventLabel: 'Give Feedback'
+      eventLabel: 'Give Feedback',
+      newTab: true,
+      outboundURL: `${this.model.survey_url}?${queryParams}`
     });
   }
 });
