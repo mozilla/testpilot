@@ -14,7 +14,8 @@ a {
 }
 
 .blue {
-  background: radial-gradient(ellipse 250% 100% at center 140%, $light-blue-step 12%, $dark-blue-step 50%, $darkest-blue-step 100%);
+  background-color: $darkest-blue-step;
+  background-image: radial-gradient(ellipse 250% 100% at center 140%, $light-blue-step 12%, $dark-blue-step 50%, $darkest-blue-step 100%);
   color: $white;
   overflow: hidden;
   position: relative;

@@ -32,8 +32,9 @@ export default PageView.extend({
     'model': {
       hook: 'bg',
       type: function setGradientBg(el, model) {
-        el.setAttribute('style', `background: linear-gradient(135deg, ${model.gradient_start},
-                                                                     ${model.gradient_stop}`);
+        el.setAttribute('style',
+          `background-color: ${model.gradient_start};
+          background-image: linear-gradient(135deg, ${model.gradient_start}, ${model.gradient_stop}`);
         return el;
       }
     },
