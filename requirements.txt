@@ -113,6 +113,8 @@ requests==2.7.0
 requests_oauthlib==0.5.0
 
 # sha256: ZLCgVyEMSArqmUBsk5EYDNhm_A_Y8LUzZ-OvIbGVeEo
+# sha256: zETFS0MrJ8WePQvASKWnWBsTlEwUxWyUY0z-jV6rreU
+# sha256: jAWHyFID5jTMtfnBFa86dnkjvC8HodKa8soFwgklEKI
 Pillow==3.2.0
 
 # sha256: R7yJ6jHs9gbi9FPg5MXWNAgs9dsWC48vszi1HCXmeRo
