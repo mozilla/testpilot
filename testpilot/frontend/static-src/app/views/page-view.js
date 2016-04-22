@@ -7,6 +7,7 @@ export default BaseView.extend({
   pageTitleL10nID: 'pageTitleDefault',
 
   afterRender() {
+    window.scrollTo(0, 0);
     this.renderSubview(new HeaderView({
       headerScroll: this.headerScroll
     }), '[data-hook="header-view"]');
