@@ -9,7 +9,7 @@ module.exports.experimentList = `
   {{#experiments}}
     <a class="experiment-item {{#active}}active{{/active}}" href="{{base_url}}/experiments/{{slug}}">
       <div class="icon-wrapper"
-           style="background: linear-gradient(300deg, {{gradient_start}}, {{gradient_stop}})">
+           style="background-color:{{gradient_start}}; background-image: linear-gradient(300deg, {{gradient_start}}, {{gradient_stop}})">
         <div class="icon" style="background-image:url('{{thumbnail}}');"></div>
       </div>
       <div class="experiment-title">{{title}}
