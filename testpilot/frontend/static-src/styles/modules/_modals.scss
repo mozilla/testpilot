@@ -196,11 +196,12 @@
   }
 
   .tour-text {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
     background: $transparent-white-5;
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+
     p {
       margin: 0;
       padding: 20px;
@@ -209,9 +210,10 @@
 
   .tour-image {
     @include flex-container(row, center, center);
-    height: 315px;
     background: $transparent-black-1;
+    height: 315px;
     overflow: hidden;
+
     img {
       height: 315px;
     }
@@ -220,14 +222,14 @@
   .tour-actions {
     @include flex-container(row, space-between, center);
     height: 92px;
-    padding: 20px;
     opacity: .8;
+    padding: 20px;
   }
 
   .tour-next,
   .tour-back {
-    width: 40px;
     height: 40px;
+    width: 40px;
   }
 
   .tour-back {

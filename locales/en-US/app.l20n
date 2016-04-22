@@ -93,9 +93,8 @@
 <retirePageMessage "Before you go, we want to thank you for contributing to Test Pilot.<br>You're welcome back any time!">
 <retirePageSurveyButton "Take a quick survey">
 
-<measurements "Measurements">
-<measurementsDisclaimer "All data is collected anonymously and used only to help us improve this test.">
-<experimentPrivacyNotice "{{title}} Privacy Notice">
+<measurements "Measurements &amp; Privacy">
+<experimentPrivacyNotice "You can learn more about the data collection for {{title}} here.">
 <contributorsHeading "Brought to you by">
 <detailsHeading "Details">
 <version "Version">
@@ -104,8 +103,9 @@
 <contribute "Contribute">
 <nowActive "Now Active">
 <userCount title:"Active Users of this Experiment">
-
 <tourOnboardingTitle "{{title}} enabled!">
 <tourStartButton "Take the Tour">
 <tourCancelButton "Skip">
 <tourDoneButton "Done">
+<userCountContainer "There are <span class=\"bold\">{{installation_count}}</span> people trying {{title}} right now!">
+<highlightPrivacy "Your privacy">

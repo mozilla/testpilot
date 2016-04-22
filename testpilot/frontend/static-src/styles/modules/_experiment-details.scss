@@ -12,90 +12,85 @@
     + div {
       margin-top: $grid-unit * 4.8;
     }
-
-    h1 {
-      flex: 1;
-      font-size: $font-unit * 3.2;
-    }
-
-    .details-header {
-      margin-top: 0;
-    }
   }
 }
 
 .experiment-controls {
   @include flex-container(row, flex-end, center);
   flex: 1;
+  position: relative;
+  transition: top 200ms;
+  width: 100%;
 
   .button {
-    margin-right: $grid-unit;
+    font-size: $grid-unit * .9;
+    height: $grid-unit * 2;
+    margin-left: $grid-unit;
+    padding: 0 $grid-unit * .75;
+  }
 
-    span {
-      text-wrap: nowrap;
-    }
+  .highlight-privacy {
+    cursor: pointer;
+  }
+
+  span {
+    text-wrap: nowrap;
   }
 }
 
 .details-header {
   @include flex-container(row, space-between, center);
-  height: $grid-unit * 4;
+  height: $grid-unit * 4.5;
   position: relative;
 
   h1 {
     display: flex;
     flex: 1;
-    font-size: $font-unit * 3;
+    font-size: $font-unit * 4;
+    font-weight: 300;
+    line-height: $font-unit * 4;
     margin: 0;
     transition: font-size 200ms;
   }
 }
 
-.user-count {
-  @include hidpi-background-image('count-avatar', 24px 30px);
-  background-repeat: no-repeat;
-  display: inline-block;
-  flex: 0 0 $grid-unit * 1.25;
-  height: $grid-unit * 1.5;
-  margin-left: $grid-unit * .5;
+.install-count {
+  margin-left: $grid-unit;
 }
+
 
 .details-content {
   @include flex-container(row, space-between, flex-start);
-  margin-top: $grid-unit * .5;
-
-  h3 {
-    margin: $grid-unit 0 $grid-unit * .5;
-  }
+  margin-top: $grid-unit;
 }
 
 .details-overview {
   @include respond-to('big') {
-    flex: 0 0 $grid-unit * 13;
+    flex: 0 0 $grid-unit * 15;
   }
 
   @include respond-to('medium') {
-    flex: 0 0 $grid-unit * 10;
+    flex: 0 0 $grid-unit * 14;
   }
 }
 
 .details-description {
   @include respond-to('big') {
-    flex: 0 0 $grid-unit * 34;
+    flex: 0 0 $grid-unit * 32;
 
     img {
       height: auto;
-      width: $grid-unit * 34;
+      width: $grid-unit * 32;
     }
 
   }
 
   @include respond-to('medium') {
-    flex: 0 0 $grid-unit * 25;
+    flex: 0 0 $grid-unit * 22;
 
     img {
       height: auto;
-      width: $grid-unit * 25;
+      width: $grid-unit * 22;
     }
   }
 
@@ -106,27 +101,73 @@
 
   .introduction {
     margin-bottom: $grid-unit * 2;
+
+    h3 {
+      font-size: $font-unit * 2.5;
+      margin: $grid-unit * .5 0;
+    }
   }
+}
+
+.details-sections {
+
+  section {
+    margin-bottom: $grid-unit;
+    padding-bottom: $grid-unit;
+
+    + section {
+      border-bottom: 1px solid $transparent-black-1;
+    }
+
+    h3 {
+      font-size: $font-unit * 1.5;
+      margin: 0 0 $grid-unit;
+    }
+  }
+}
+
+.user-count {
+  background: $transparent-black-05;
+  padding: $grid-unit;
+  text-align: center;
 }
 
 .disclaimer,
-.privacy-policy {
-  font-size: $font-unit;
-  line-height: $line-unit;
-  margin-bottom: $line-unit;
+.measurement,
+.measurement p {
+  font-size: $font-unit + 2;
+  line-height: $line-unit + 4;
 }
 
-.measurement ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.measurements {
+  border-radius: $small-border-radius;
+  box-shadow: 0 0 0 $grid-unit * .5 transparent;
+}
 
-  li {
-    background: $transparent-black-1;
-    border-left: 2px $grid-unit * .1 solid $primary;
-    margin-bottom: $grid-unit * .1;
-    padding: $grid-unit * .4;
+.measurement {
+  position: relative;
+
+  ul {
+    background: $transparent-black-05;
+    border-radius: $small-border-radius;
+    margin: 0;
+    padding: $grid-unit $grid-unit $grid-unit $grid-unit * 1.5;
+
+    li {
+      margin-bottom: $grid-unit * .5;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
   }
+}
+
+.privacy-policy {
+  display: block;
+  font-size: $font-unit;
+  line-height: $line-unit - 2;
+  padding: $grid-unit * .25 $grid-unit * .25 0;
 }
 
 .contributors {
@@ -137,29 +178,36 @@
   li {
     @include flex-container(row, flex-start, center);
     padding-bottom: $grid-unit;
+    text-align: left;
   }
 
-  .title {
-    font-size: $font-unit * .8;
-    margin: 0;
+  >:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   .name {
     margin: 0;
   }
 
+  .title {
+    font-size: $font-unit * .8;
+    line-height: $font-unit;
+    margin: 0;
+  }
+
   .contributor {
+    line-height: $font-unit;
     padding-left: $grid-unit * .5;
   }
 }
 
 .stats {
   font-size: $font-unit;
-  margin-bottom: $grid-unit * 2.5;
   width: 100%;
 
   td {
-    padding-bottom: $grid-unit * .25;
+    padding: $grid-unit * .25;
     vertical-align: top;
     width: 65%;
   }
