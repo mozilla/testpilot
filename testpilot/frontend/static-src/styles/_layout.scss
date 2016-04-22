@@ -44,8 +44,37 @@
   }
  }
 
+.card-list {
+  @include flex-container(row, space-between, stretch, wrap);
+
+  @include respond-to('medium') {
+    justify-content: center;
+  }
+
+  margin: $grid-unit * 2 auto;
+
+  > header {
+    flex: 0 0 100%;
+  }
+
+  .blue :not(#how-to)& {
+    border-top: 1px solid $transparent-white-1;
+    padding-top: $grid-unit * 3;
+  }
+}
+
+.card-list-header {
+  margin: 40px 0;
+  text-align: center;
+}
+
+
 .spacer {
   height: $grid-unit * 2.5;
+}
+
+.small-spacer {
+  height: $grid-unit;
 }
 
 .block {

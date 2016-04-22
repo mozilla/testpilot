@@ -50,6 +50,7 @@ export default `
                 </h2>
               </div>
             </div>
+
             <div class="centered-banner responsive-content-wrapper delayed-fade-in-up">
               {{^isFirefox}}
                 <span data-l10n-id="landingDownloadFirefoxDesc" class="parens">(of course, you'll need Firefox to use Test Pilot)</span>
@@ -64,24 +65,39 @@ export default `
                 </a>
               {{/isFirefox}}
               {{#isFirefox}}
-              <button data-l10n-id="landingFxaGetStartedButton" class="button large primary" data-hook="get-started-with-account">Get started with a Firefox Account</button>
+              <div class="small-spacer"></div>
+              <button data-l10n-id="landingFxaGetStartedButton" class="button extra-large primary" data-hook="get-started-with-account">Get started with a Firefox Account</button>
               {{/isFirefox}}
             </div>
             <p data-l10n-id="landingLegalNotice" class="legal-information delayed-fade-in-up">By proceeding, you agree to the <a href="https://www.mozilla.org/about/legal/terms/services/">Terms of Service</a> and <a href="https://www.mozilla.org/privacy/firefox-cloud/">Privacy Notice</a> of Test Pilot</p>
-          </div>
-          <div class="responsive-content-wrapper">
-              <h2 class="experiment-list-header">Try these features today with Test Pilot</h2>
-              <div data-hook='experiment-list'></div>
-          </div>
-          <div class="blue">
-            <footer id="main-footer" class="responsive-content-wrapper">
-              <div class="centered-banner">
-                <div class="copter-wrapper">
-                  <div class="copter"></div>
+            <div class="transparent-container">
+              <div class="responsive-content-wrapper delayed-fade-in">
+                  <h2 class="card-list-header" data-l10n-id="landingExperimentsTitle">Try these features today with Test Pilot</h2>
+                  <div data-hook='experiment-list'></div>
+              </div>
+            </div>
+            <div class="responsive-content-wrapper delayed-fade-in">
+              <h2 class="card-list-header" data-l10n-id="landingCardListTitle">Get started in 3 easy steps</h2>
+              <div id="how-to" class="card-list">
+                <div class="card">
+                  <div class="card-icon firefox-icon"></div>
+                  <h3 class="card-title" data-l10n-id="landingStepOne">Step one</h3>
+                  <div class="card-copy" data-l10n-id="landingCardOne">Create a Firefox Account or sign in.</div>
                 </div>
-                <h2 data-l10n-id="landingPageFooterCopy">More tests coming soon!</h2>
+                <div class="card">
+                  <div class="card-icon add-on-icon"></div>
+                  <h3 class="card-title" data-l10n-id="landingStepTwo">Step two</h3>
+                  <div class="card-copy" data-l10n-id="landingCardTwo">Get the Test Pilot add-on.</div>
+                </div>
+                <div class="card">
+                  <div class="card-icon test-pilot-icon"></div>
+                  <h3 class="card-title" data-l10n-id="landingStepThree">Step three</h3>
+                  <div class="card-copy data-l10n-id="landingCardThree">Enable experimental features!</div>
+                </div>
+              </div>
+              <div class="centered-banner">
                 {{^isFirefox}}
-                  <span data-l10n-id="landingDownloadFirefoxDesc" class="parens">Firefox Test Pilot is for Firefox! Get it!</span>
+                  <span data-l10n-id="landingDownloadFirefoxDesc" class="parens">(of course, you'll need Firefox to use Test Pilot)</span>
                   <a href="https://www.mozilla.org/en-US/firefox" class="button primary download-firefox">
                     <div class="button-icon">
                       <div class="button-icon-badge"></div>
@@ -93,9 +109,13 @@ export default `
                   </a>
                 {{/isFirefox}}
                 {{#isFirefox}}
-                <button data-l10n-id="landingFxaGetStartedButton" class="button large primary" data-hook="get-started-with-account">Get started with a Firefox Account</button>
+                <div class="small-spacer"></div>
+                <button data-l10n-id="landingFxaGetStartedButton" class="button extra-large primary" data-hook="get-started-with-account">Get started with a Firefox Account</button>
                 {{/isFirefox}}
               </div>
+              <p data-l10n-id="landingLegalNotice" class="legal-information delayed-fade-in-up">By proceeding, you agree to the <a href="https://www.mozilla.org/about/legal/terms/services/">Terms of Service</a> and <a href="https://www.mozilla.org/privacy/firefox-cloud/">Privacy Notice</a> of Test Pilot</p>
+            </div>
+            <footer id="main-footer" class="responsive-content-wrapper">
               <div data-hook="footer-view"></div>
             </footer>
           </div>

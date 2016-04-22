@@ -4,7 +4,7 @@ import ExperimentRowView from './experiment-row-view';
 
 
 export default BaseView.extend({
-  template: `<div id="experiment-list" class="experiments"></div>`,
+  template: `<div class="card-list experiments"></div>`,
 
   props: {
     loggedIn: 'boolean'

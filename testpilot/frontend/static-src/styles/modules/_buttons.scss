@@ -60,9 +60,9 @@
   }
 
   &.warning {
-    background: #ee4b36;
-    border: 1px solid #d92215;
-    color: #fff;
+    background: $warning-red-light;
+    border: 1px solid $warning-red-default;
+    color: $white;
   }
 
   &.disabled,
@@ -72,7 +72,8 @@
     background-color: $disabled-grey;
   }
 
-  &.large {
+  &.large,
+  &.extra-large {
     font-size: 20px;
     font-weight: 300;
     height: 52px;
@@ -80,6 +81,18 @@
     min-width: 300px;
     padding: 0 20px;
   }
+
+  &.extra-large {
+
+    @include respond-to('not-small') {
+      font-size: $font-unit * 2;
+      height: $grid-unit * 3;
+      padding: 0 $grid-unit * 1.5;
+    }
+    box-shadow: 0 2px 0 0 $transparent-black-2;
+  }
+
+
 
   // Loading animation concept comes from
   // https://css-tricks.com/uniqlo-stripe-hovers/

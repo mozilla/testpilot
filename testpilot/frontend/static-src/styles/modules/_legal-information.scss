@@ -1,8 +1,7 @@
 .legal-information {
   font-size: $font-unit;
   line-height: $line-unit;
-  margin: 0;
-  opacity: .9;
+  margin: $grid-unit 0;
   padding: 0 $grid-unit * .5 $grid-unit * .5;
   text-align: center;
 

@@ -13,7 +13,7 @@ test('Each image in images directory has a retina version', (t) => {
     if (err) t.fail('fs.readdir call failed, check your paths');
 
     const origFiles = files.filter((f) => {
-      return (!~f.indexOf('favicon.ico')); // exclude favicon
+      return (!~f.indexOf('favicon.ico') && !~f.indexOf('svg')); // exclude favicon and svg
     });
 
     const retinaFiles = files.filter((f) => {
