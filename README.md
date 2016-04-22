@@ -49,8 +49,6 @@ if you'd like to run linters on `pre-commit` you can use this [pre-commit-hook](
 
 See some of our [Tips and Tricks](docs/README-DOCKER.md).
 
-For more information on how we create, triage and assign work, [click here](docs/WORK.md).
-
 #### First Thing's First
 
 Make sure you clone the Test Pilot repo: 
@@ -144,3 +142,7 @@ Make sure you clone the Test Pilot repo:
 
   * [`addon/README.md`](./addon/README.md) - for more details on the addon this
     site uses to enable advanced features.
+
+  * [`docs/WORK.md`](./docs/WORK.md) - information on how we create, triage and assign work.
+
+  * [`docs/DEPLOYMENT.md`](./docs/DEPLOYMENT.md) - process for deploying Test Pilot to stage and production.
