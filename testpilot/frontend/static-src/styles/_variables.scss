@@ -4,6 +4,7 @@ $white: #fff;
 
 //These are handy trasparencies
 $transparent-black-02: rgba($black, .02);
+$transparent-black-05: rgba($black, .05);
 $transparent-black-1: rgba($black, .1);
 $transparent-black-2: rgba($black, .2);
 $transparent-black-3: rgba($black, .3);
@@ -30,6 +31,7 @@ $default: #0996f8;
 $default-dark: #0675d3;
 $default-darker: #0568ba;
 $default-light: #2ea3ff;
+$transparent-default: rgba($default, .2);
 
 $primary: #57bd35;
 $primary-light: #e2fddc;

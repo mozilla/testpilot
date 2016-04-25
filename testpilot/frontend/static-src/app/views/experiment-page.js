@@ -26,7 +26,8 @@ export default PageView.extend({
   events: {
     'click [data-hook=install]': 'install',
     'click [data-hook=uninstall]': 'renderUninstallSurvey',
-    'click [data-hook=feedback]': 'feedback'
+    'click [data-hook=feedback]': 'feedback',
+    'click [data-hook=highlight-privacy]': 'highlightPrivacy'
   },
 
   bindings: {
@@ -58,6 +59,11 @@ export default PageView.extend({
     {
       type: 'toggle',
       hook: 'now-active'
+    },
+    {
+      type: 'toggle',
+      hook: 'highlight-privacy',
+      invert: true
     }],
 
     'model.modified': {
@@ -267,6 +273,20 @@ export default PageView.extend({
       onSubmit: () => this.uninstall(evt)
     }), 'body');
   },
+
+  highlightPrivacy(evt) {
+    evt.preventDefault();
+    const measurementPanel = this.query('.measurements');
+    const windowHeader = this.query('.details-header-wrapper');
+
+    window.scrollTo(0, measurementPanel.offsetTop + changeHeaderOn);
+    windowHeader.classList.add('stick');
+    measurementPanel.classList.add('highlight');
+    setTimeout(() => {
+      measurementPanel.classList.remove('highlight');
+    }, 5000);
+  },
+
 
   onScroll() {
     const sy = window.pageYOffset || document.documentElement.scrollTop;

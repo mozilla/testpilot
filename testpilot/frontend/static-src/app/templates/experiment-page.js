@@ -12,11 +12,10 @@ export default `
           <h1 data-hook="title"></h1>
           <span class="now-active" data-hook="now-active" data-l10n-id="nowActive">Now Active</span>
           <div class="experiment-controls">
+            <a data-hook="highlight-privacy" class="highlight-privacy" data-l10n-id=highlightPrivacy>Your privacy</a>
             <button data-l10n-id="giveFeedback" data-hook="feedback" id="feedback-button" class="button default">Give Feedback</button>
             <button data-hook="uninstall" id="uninstall-button" class="button secondary"><span class="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" class="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" class="default-text">Disable <span data-hook="title"></span></span></button>
             <button data-hook="install" id="install-button" class="button default"><span class="state-change-inner"></span><span data-l10n-id="enableExperimentTransition" class="transition-text">Enabling...</span><span data-l10n-id="enableExperiment" class="default-text">Enable <span data-hook="title"></span></span></button>
-            <span data-l10n-id="userCount" data-hook="install-count"></span>
-            <span data-l10n-id="userCount" class="user-count"></span>
           </div>
         </div>
       </div>
@@ -28,15 +27,18 @@ export default `
                 <img class="experiment-icon" data-hook="thumbnail"></img>
               </div>
               <div class="details-sections">
-                <section data-hook="measurements-container" class="measurement">
-                  <h3 data-l10n-id="measurements">Measurements</h3>
-                  <p data-l10n-id="measurementsDisclaimer" class="disclaimer">All data is collected anonymously and used only to help us improve this test.</p>
-                  <div data-hook="measurements-html"></div>
-                  <a class="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-hook="privacy-notice-url"><span data-hook="title"></span> Privacy Notice</a>
+                <section class="user-count">
+                  <span data-l10n-id="userCountContainer">There are <span data-l10n-id="userCount" class="bold" data-hook="install-count"></span>
+                  people trying <span data-hook="title"></span> right now!</span>
                 </section>
-                <section>
+                <section class="contributors-section">
                   <h3 data-l10n-id="contributorsHeading">Brought to you by</h3>
                   <ul class="contributors"></ul>
+                </section>
+                <section data-hook="measurements-container" class="measurements">
+                  <h3 data-l10n-id="measurements">Measurements &amp; Privacy</h3>
+                  <div data-hook="measurements-html" class="measurement"></div>
+                  <a class="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-hook="privacy-notice-url">You can learn more about the data collection for <span data-hook="title"></span> here.</a>
                 </section>
                 <section>
                   <h3 data-l10n-id="detailsHeading">Details</h3>

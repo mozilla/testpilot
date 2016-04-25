@@ -46,6 +46,10 @@
   animation: fade-in-fly-up 500ms;
 }
 
+.highlight {
+  animation: highlight 5000ms;
+}
+
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -128,6 +132,18 @@
   }
 }
 
+// Used to highlight legal copy
+@keyframes highlight {
+  from,
+  to {
+    box-shadow: 0 0 0 $grid-unit * .5 transparent;
+  }
+
+  5% {
+    box-shadow: 0 0 0 $grid-unit * .25 $white, 0 0 0 $grid-unit * .5 $transparent-default;
+  }
+}
+
 // Used to bring in feedback forms
 // this comes from here:
 // https://github.com/daneden/animate.css/blob/master/source/bouncing_entrances/bounceInUp.css
@@ -163,4 +179,3 @@
     transform: translate3d(0, 0, 0);
   }
 }
-
