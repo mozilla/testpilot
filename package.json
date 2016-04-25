@@ -49,6 +49,8 @@
     "gulp-eslint": "^1.0.0",
     "gulp-if": "^1.2.5",
     "gulp-imagemin": "^2.3.0",
+    "node-sass": "3.4.2",
+    "sass-lint": "1.5.1",
     "gulp-sass": "^2.0.4",
     "gulp-sass-lint": "^1.1.0",
     "gulp-sourcemaps": "^1.5.2",
