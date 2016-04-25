@@ -22,9 +22,23 @@ class ExperimentDetailSerializer(HyperlinkedTranslatableModelSerializer):
         return request.build_absolute_uri(path)
 
 
+class ExperimentTourStepSerializer(HyperlinkedTranslatableModelSerializer):
+    experiment_url = serializers.SerializerMethodField()
+
+    class Meta:
+        model = ExperimentDetail
+        fields = ('url', 'order', 'image', 'copy', 'experiment_url')
+
+    def get_experiment_url(self, obj):
+        request = self.context['request']
+        path = reverse('experiment-detail', args=(obj.experiment.pk,))
+        return request.build_absolute_uri(path)
+
+
 class ExperimentSerializer(HyperlinkedTranslatableModelSerializer):
     """Experiment serializer that includes ExperimentDetails"""
     details = ExperimentDetailSerializer(many=True, read_only=True)
+    tour_steps = ExperimentTourStepSerializer(many=True, read_only=True)
     contributors = serializers.SerializerMethodField()
     installations_url = serializers.SerializerMethodField()
     measurements = MarkupField()
@@ -37,7 +51,7 @@ class ExperimentSerializer(HyperlinkedTranslatableModelSerializer):
                   'version', 'changelog_url', 'contribute_url',
                   'privacy_notice_url', 'measurements',
                   'xpi_url', 'addon_id', 'gradient_start',
-                  'gradient_stop', 'details', 'contributors',
+                  'gradient_stop', 'details', 'tour_steps', 'contributors',
                   'installations_url', 'installation_count',
                   'created', 'modified', 'order',)
 

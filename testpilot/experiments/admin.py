@@ -2,14 +2,19 @@ from django.contrib import admin
 
 from hvad.admin import TranslatableAdmin, TranslatableTabularInline
 
-from .models import (Experiment, ExperimentDetail, UserInstallation,
-                     Feature, FeatureCondition)
+from .models import (Experiment, ExperimentDetail, ExperimentTourStep,
+                     UserInstallation, Feature, FeatureCondition)
 from ..utils import (show_image, parent_link, related_changelist_link,
                      translated)
 
 
 class ExperimentDetailInline(TranslatableTabularInline):
     model = ExperimentDetail
+    extra = 0
+
+
+class ExperimentTourStepInline(TranslatableTabularInline):
+    model = ExperimentTourStep
     extra = 0
 
 
@@ -41,7 +46,8 @@ class ExperimentAdmin(TranslatableAdmin):
 
     raw_id_fields = ('contributors',)
 
-    inlines = (ExperimentDetailInline, FeatureInline, FeatureConditionInline, )
+    inlines = (ExperimentTourStepInline, ExperimentDetailInline,
+               FeatureInline, FeatureConditionInline, )
 
     # Workaround for prepopulated_fields and fieldsets from here:
     # https://github.com/KristianOellegaard/django-hvad/issues/10#issuecomment-5572524
@@ -56,6 +62,12 @@ class ExperimentDetailAdmin(TranslatableAdmin):
                     show_image('image'), 'created', 'modified',)
 
 
+class ExperimentTourStepAdmin(TranslatableAdmin):
+    list_display = ('id', parent_link('experiment'), 'order',
+                    show_image('image'), translated('copy'),
+                    'created', 'modified',)
+
+
 class UserInstallationAdmin(admin.ModelAdmin):
 
     list_display = ('id', parent_link('experiment'), parent_link('user'),
@@ -67,5 +79,6 @@ class UserInstallationAdmin(admin.ModelAdmin):
 
 for x in ((Experiment, ExperimentAdmin),
           (ExperimentDetail, ExperimentDetailAdmin),
+          (ExperimentTourStep, ExperimentTourStepAdmin),
           (UserInstallation, UserInstallationAdmin),):
     admin.site.register(*x)

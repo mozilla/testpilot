@@ -104,3 +104,8 @@
 <contribute "Contribute">
 <nowActive "Now Active">
 <userCount title:"Active Users of this Experiment">
+
+<tourOnboardingTitle "{{title}} enabled!">
+<tourStartButton "Take the Tour">
+<tourCancelButton "Skip">
+<tourDoneButton "Done">

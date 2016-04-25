@@ -20,6 +20,7 @@ export default `
           </div>
         </div>
       </div>
+
       <div data-hook="details">
           <div class="details-content content-wrapper">
             <div class="details-overview">
