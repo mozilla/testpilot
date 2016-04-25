@@ -41,6 +41,7 @@ class ExperimentSerializer(HyperlinkedTranslatableModelSerializer):
     tour_steps = ExperimentTourStepSerializer(many=True, read_only=True)
     contributors = serializers.SerializerMethodField()
     installations_url = serializers.SerializerMethodField()
+    survey_url = serializers.SerializerMethodField()
     measurements = MarkupField()
     introduction = MarkupField()
 
@@ -49,11 +50,11 @@ class ExperimentSerializer(HyperlinkedTranslatableModelSerializer):
         fields = ('id', 'url', 'title', 'short_title', 'slug',
                   'thumbnail', 'description', 'introduction',
                   'version', 'changelog_url', 'contribute_url',
-                  'privacy_notice_url', 'measurements',
-                  'xpi_url', 'addon_id', 'gradient_start',
-                  'gradient_stop', 'details', 'tour_steps', 'contributors',
-                  'installations_url', 'installation_count',
-                  'created', 'modified', 'order',)
+                  'privacy_notice_url', 'measurements', 'xpi_url',
+                  'addon_id', 'gradient_start', 'gradient_stop',
+                  'details', 'tour_steps', 'contributors',
+                  'survey_url', 'installations_url',
+                  'installation_count', 'created', 'modified', 'order',)
 
     def get_contributors(self, obj):
         request = self.context['request']
@@ -68,6 +69,9 @@ class ExperimentSerializer(HyperlinkedTranslatableModelSerializer):
         path = reverse('experiment-installation-list',
                        args=(obj.pk,))
         return request.build_absolute_uri(path)
+
+    def get_survey_url(self, obj):
+        return 'https://qsurvey.mozilla.com/s3/%s' % obj.slug
 
 
 class UserInstallationSerializer(serializers.HyperlinkedModelSerializer):
