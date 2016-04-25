@@ -63,24 +63,11 @@
 <enableExperiment "Enable {{title}}">
 <enableExperimentTransition "Enabling...">
 
-<feedbackTitle "Tell us what you think">
-<feedbackAnswerBroken "Something seems broken.">
-<feedbackAnswerFeature "Request a feature.">
-<feedbackAnswerCool "This is cool!">
-<feedbackAnswerOther "Something else.">
+<feedbackSubmitButton "Take a quick survey">
+<feedbackCancelButton "Close">
 
-<feedbackErrorMessage "Please choose an option.">
-<feedbackExtraCaption "Do you have any additional feedback? (optional)">
-<feedbackExtraTextarea
-    placeholder: "what's on your mind...">
-<feedbackSubmitButton "Submit Feedback">
-<feedbackCancelButton "Cancel">
-
-<feedbackUninstallTitle "Why are you stopping?">
-<feedbackUninstallAnswerBroken "This thing is broken!">
-<feedbackUninstallAnswerDislike "I don't like this feature.">
-<feedbackUninstallAnswerNotUseful "This isn't useful for me.">
-<feedbackUninstallAnswerOther "Something else.">
+<feedbackUninstallTitle "Thank You!">
+<feedbackUninstallCopy "Your participation in Firefox Test Pilot means a lot! Please check out our other experiments, and stay tuned for more to come!">
 
 <retireDialogTitle "Retire from Test Pilot?">
 <retireMessage "If you retire from Test Pilot, we will disable any active tests, uninstall the Test Pilot add-on, remove your account information from our servers, and generally just leave you alone.">

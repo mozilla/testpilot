@@ -91,6 +91,13 @@
   .cancel {
     margin: $grid-unit * .5 0 0;
   }
+
+  .copter {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 220px auto;
+    height: 180px;
+  }
 }
 
 .loading-pill {
