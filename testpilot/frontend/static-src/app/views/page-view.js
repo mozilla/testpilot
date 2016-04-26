@@ -8,9 +8,14 @@ export default BaseView.extend({
 
   afterRender() {
     window.scrollTo(0, 0);
-    this.renderSubview(new HeaderView({
-      headerScroll: this.headerScroll
-    }), '[data-hook="header-view"]');
+
+    // skip header rendering on the landing page
+    // because we don't need it
+    if (!this.skipHeader) {
+      this.renderSubview(new HeaderView({
+        headerScroll: this.headerScroll
+      }), '[data-hook="header-view"]');
+    }
 
     this.renderSubview(new FooterView(), '[data-hook="footer-view"]');
   }
