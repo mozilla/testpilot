@@ -265,12 +265,13 @@ export default PageView.extend({
 
     const queryParams = querystring.stringify({ref: 'disable', experiment: this.model.title});
 
+    this.uninstall(evt);
+
     this.renderSubview(new DisableDialogView({
       id: 'disabled-feedback',
       experiment: this.model.url,
       title: 'feedbackUninstallTitle',
-      surveyUrl: `${this.model.survey_url}?${queryParams}`,
-      onSubmit: () => this.uninstall(evt)
+      surveyUrl: `${this.model.survey_url}?${queryParams}`
     }), 'body');
   },
 
