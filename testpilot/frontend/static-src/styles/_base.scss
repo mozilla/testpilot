@@ -45,7 +45,8 @@ p {
 }
 
 .parens {
-  font-size: $font-unit;
+  color: $transparent-white-8;
+  font-size: $font-unit * 1.2;
   margin-bottom: $grid-unit * .5;
 }
 
