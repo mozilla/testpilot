@@ -31,7 +31,8 @@ export default PageView.extend({
     if (!this.loggedIn && this.isMoz) {
       this.renderSubview(new ExperimentListView({
         loggedIn: this.loggedIn,
-        isFirefox: this.isFirefox
+        isFirefox: this.isFirefox,
+        skipHeader: true
       }), '[data-hook="experiment-list"]');
     }
 
