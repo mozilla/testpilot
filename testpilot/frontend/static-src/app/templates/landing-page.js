@@ -69,7 +69,7 @@ export default `
               <button data-l10n-id="landingFxaGetStartedButton" class="button extra-large primary" data-hook="get-started-with-account">Get started with a Firefox Account</button>
               {{/isFirefox}}
             </div>
-            <p data-l10n-id="landingLegalNotice" class="legal-information delayed-fade-in-up">By proceeding, you agree to the <a href="https://www.mozilla.org/about/legal/terms/services/">Terms of Service</a> and <a href="https://www.mozilla.org/privacy/firefox-cloud/">Privacy Notice</a> of Test Pilot</p>
+            {{#isFirefox}}<p data-l10n-id="landingLegalNotice" class="legal-information delayed-fade-in-up">By proceeding, you agree to the <a href="https://www.mozilla.org/about/legal/terms/services/">Terms of Service</a> and <a href="https://www.mozilla.org/privacy/firefox-cloud/">Privacy Notice</a> of Test Pilot</p>{{/isFirefox}}
             <div class="transparent-container">
               <div class="responsive-content-wrapper delayed-fade-in">
                   <h2 class="card-list-header" data-l10n-id="landingExperimentsTitle">Try these features today with Test Pilot</h2>
@@ -113,7 +113,7 @@ export default `
                 <button data-l10n-id="landingFxaGetStartedButton" class="button extra-large primary" data-hook="get-started-with-account">Get started with a Firefox Account</button>
                 {{/isFirefox}}
               </div>
-              <p data-l10n-id="landingLegalNotice" class="legal-information delayed-fade-in-up">By proceeding, you agree to the <a href="https://www.mozilla.org/about/legal/terms/services/">Terms of Service</a> and <a href="https://www.mozilla.org/privacy/firefox-cloud/">Privacy Notice</a> of Test Pilot</p>
+            {{#isFirefox}}<p data-l10n-id="landingLegalNotice" class="legal-information delayed-fade-in-up">By proceeding, you agree to the <a href="https://www.mozilla.org/about/legal/terms/services/">Terms of Service</a> and <a href="https://www.mozilla.org/privacy/firefox-cloud/">Privacy Notice</a> of Test Pilot</p>{{/isFirefox}}
             </div>
             <footer id="main-footer" class="responsive-content-wrapper">
               <div data-hook="footer-view"></div>
