@@ -66,12 +66,6 @@ export default PageView.extend({
         msg.querySelector('.button').onclick = () => {
           app.webChannel.sendMessage('hide-installed-panel', {});
         };
-
-        // Show the "Let's go" button if the installed-panel is
-        // dismissed.
-        app.once('webChannel:addon-self:install-panel-dismissed', () => {
-          msg.querySelector('.button').classList.remove('no-display');
-        });
       }
     }, 1000);
   },
