@@ -415,7 +415,11 @@ function syncAddonInstallation(addonID) {
 }
 
 function requestAPI(opts) {
+  const reqUrl = new URL(opts.url);
+
   const headers = {
+    // HACK: Use the API origin as Referer to make CSRF checking happy on SSL
+    'Referer': reqUrl.origin,
     'Accept': 'application/json',
     'Cookie': ''
   };
