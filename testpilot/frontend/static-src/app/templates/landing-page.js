@@ -134,7 +134,7 @@ export default `
           <div class="centered-banner responsive-content-wrapper">
             <div data-hook="installed-message" class="no-display">
               <h2 data-l10n-id="landingInstallMessage" class="emphasis">Test Pilot installed!</h2>
-              <a href="/" data-l10n-id="landingInstalledButton" class="button large primary quick-pop no-display">Let's Go</a>
+              <a href="/" data-l10n-id="landingInstalledButton" class="button large primary">Let's Go</a>
             </div>
             <div data-hook="default-message">
               <div class="copter-wrapper fly-down">
