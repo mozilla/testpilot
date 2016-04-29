@@ -39,7 +39,14 @@ dependencies:
     - I="image-$(date +%j).tgz"; if [[ -e ~/docker/$I ]]; then echo "Loading $I"; gunzip -c ~/docker/$I | docker load; fi
 
     # create a version.json
-    - printf '{"commit":"%s","version":"%s","source":"https://github.com/%s/%s"}\n' "$CIRCLE_SHA1" "$CIRCLE_TAG" "$CIRCLE_PROJECT_USERNAME" "$CIRCLE_PROJECT_REPONAME" > version.json
+    - >
+        printf '{"commit":"%s","version":"%s","source":"https://github.com/%s/%s","build":"%s"}\n' 
+        "$CIRCLE_SHA1" 
+        "$CIRCLE_TAG" 
+        "$CIRCLE_PROJECT_USERNAME" 
+        "$CIRCLE_PROJECT_REPONAME" 
+        "$CIRCLE_BUILD_URL"
+        > version.json
 
     # build addon - only sign when on master branch or a tag
     - cd addon/ &&
@@ -60,6 +67,7 @@ dependencies:
 
     # build the actual deployment container
     - docker build -t app:build .
+    - docker images --no-trunc | awk '/^app/ {print $3}' | tee $CIRCLE_ARTIFACTS/docker-image-shasum256.txt
 
     # Clean up any old images and save the new one
     - I="image-$(date +%j).tgz"; mkdir -p ~/docker; rm ~/docker/*; docker save app:build | gzip -c > ~/docker/$I; ls -l ~/docker
