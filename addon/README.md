@@ -97,6 +97,8 @@ Emitted:
 * `addon-install:download-failed`
 * `addon-uninstall:uninstall-started`
 * `addon-uninstall:uninstall-ended`
+* `addon-manage:enabled`
+* `addon-manage:disabled`
 * `addon-self:installed`
 * `addon-self:enabled`
 * `addon-self:upgraded`
