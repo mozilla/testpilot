@@ -63,13 +63,7 @@ app.extend({
 
   // Send to GA
   sendToGA(type, data) {
-    if (window.ga && ga.loaded) {
-      data.hitType = type;
-      if (data.outboundURL) {
-        data.hitCallback = () => document.location = data.outboundURL;
-      }
-      ga('send', data);
-    } else {
+    const hitCallback = () => {
       if (data.outboundURL) {
         if (data.newTab) {
           window.open(data.outboundURL, '_blank').focus();
@@ -77,6 +71,13 @@ app.extend({
           document.location = data.outboundURL;
         }
       }
+    };
+    if (window.ga && ga.loaded) {
+      data.hitType = type;
+      data.hitCallback = hitCallback;
+      ga('send', data);
+    } else {
+      hitCallback();
     }
   }
 });
