@@ -246,7 +246,9 @@ function getExperimentList(availableExperiments, installedAddons) {
   return Mustache.render(templates.experimentList, {
     base_url: settings.BASE_URL,
     experiments: Object.keys(availableExperiments).map(k => {
-      availableExperiments[k].active = Boolean(installedAddons[k]);
+      if (installedAddons[k]) {
+        availableExperiments[k].active = installedAddons[k].active;
+      }
       return availableExperiments[k];
     })
   });
@@ -322,6 +324,7 @@ function updateExperiments() {
     addons.filter(addon => isTestpilotAddonID(addon.id))
           .forEach(addon => {
             store.installedAddons[addon.id] = Object.assign({
+              active: addon.isActive,
               installDate: addon.installDate
             }, store.availableExperiments[addon.id]);
           });
@@ -445,6 +448,28 @@ function requestAPI(opts) {
 }
 
 const addonListener = {
+  onEnabled: function(addon) {
+    if (isTestpilotAddonID(addon.id)) {
+      store.installedAddons[addon.id] = addon;
+      app.send('addon-manage:enabled', {
+        id: addon.id,
+        name: addon.name,
+        version: addon.version
+      });
+      Metrics.experimentEnabled(addon.id);
+    }
+  },
+  onDisabled: function(addon) {
+    if (isTestpilotAddonID(addon.id)) {
+      store.installedAddons[addon.id] = addon;
+      app.send('addon-manage:disabled', {
+        id: addon.id,
+        name: addon.name,
+        version: addon.version
+      });
+      Metrics.experimentDisabled(addon.id);
+    }
+  },
   onUninstalling: function(addon) {
     if (isTestpilotAddonID(addon.id)) {
       app.send('addon-uninstall:uninstall-started', {
