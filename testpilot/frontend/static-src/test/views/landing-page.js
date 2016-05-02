@@ -11,7 +11,8 @@ const test = around(tape)
     app.me = new Me({
       user: {
         addon: {url: '/bleh'}
-      }
+      },
+      installed: []
     });
     t.end();
   })

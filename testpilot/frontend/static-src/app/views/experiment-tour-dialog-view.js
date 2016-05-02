@@ -1,3 +1,4 @@
+import app from 'ampersand-app';
 import BaseView from './base-view';
 
 export default BaseView.extend({
@@ -81,19 +82,41 @@ export default BaseView.extend({
 
   cancel() {
     this.animateRemove();
+
+    app.sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'cancel tour'
+    });
   },
 
   takeTour() {
     this.currentStep = 0;
+
+    app.sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'take tour'
+    });
   },
 
   tourBack() {
     this.currentStep = Math.max(this.currentStep - 1, 0);
+    app.sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: `back to step ${this.currentStep}`
+    });
   },
 
   tourNext() {
     this.currentStep = Math.min(this.currentStep + 1,
                                 this.model.tour_steps.length - 1);
+    app.sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: `forward to step ${this.currentStep}`
+    });
   }
 
 });

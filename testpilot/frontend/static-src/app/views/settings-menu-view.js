@@ -13,8 +13,8 @@ export default BaseView.extend({
 
                <div class="settings-menu no-display">
                  <ul>
-                   <li><a data-l10n-id="menuWiki" href="https://wiki.mozilla.org/Test_Pilot" target="_blank">Test Pilot Wiki</a></li>
-                   <li><a data-l10n-id="menuFileIssue" href="https://github.com/mozilla/testpilot/issues/new" target="_blank">File an Issue</a></li>
+                   <li><a data-l10n-id="menuWiki" data-hook="wiki" href="https://wiki.mozilla.org/Test_Pilot" target="_blank">Test Pilot Wiki</a></li>
+                   <li><a data-l10n-id="menuFileIssue" data-hook="issue" href="https://github.com/mozilla/testpilot/issues/new" target="_blank">File an Issue</a></li>
                    <li><a data-l10n-id="menuLogout" data-hook="logout">Logout</a></li>
                    <li><hr></li>
                    <li><a data-l10n-id="menuRetire" data-hook="retire">Retire</a></li>
@@ -24,6 +24,8 @@ export default BaseView.extend({
 
   events: {
     'click [data-hook=logout]': 'logout',
+    'click [data-hook=wiki]': 'wiki',
+    'click [data-hook=issue]': 'fileIssue',
     'click [data-hook=retire]': 'retire',
     'click [data-hook=settings-button]': 'toggleSettings'
   },
@@ -81,5 +83,27 @@ export default BaseView.extend({
         app.trigger('router:new-page', {page: 'retire'});
       }
     }), 'body');
+  },
+
+  wiki(ev) {
+    ev.preventDefault();
+    app.sendToGA('event', {
+      eventCategory: 'Menu Interactions',
+      eventAction: 'drop-down menu',
+      eventLabel: 'wiki',
+      newTab: true,
+      outboundURL: ev.target.getAttribute('href')
+    });
+  },
+
+  fileIssue(ev) {
+    ev.preventDefault();
+    app.sendToGA('event', {
+      eventCategory: 'Menu Interactions',
+      eventAction: 'drop-down menu',
+      eventLabel: 'file issue',
+      newTab: true,
+      outboundURL: ev.target.getAttribute('href')
+    });
   }
 });

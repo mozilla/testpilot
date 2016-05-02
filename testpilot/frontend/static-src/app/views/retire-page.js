@@ -18,7 +18,10 @@ export default PageView.extend({
             <div class="modal-content">
               <p data-l10n-id="retirePageMessage">Before you go, we want to thank you for contributing to Test Pilot. <br> You're welcome back any time!</p>
             </div>
-            <div class="modal-actions"><a data-l10n-id="retirePageSurveyButton" href="external-survey.html" class="button default large">Take a quick survey</a><a data-l10n-id="home" href="/" class="modal-escape">Home</a></div>
+            <div class="modal-actions">
+              <a data-l10n-id="retirePageSurveyButton" data-hook="take-survey" href="external-survey.html" class="button default large">Take a quick survey</a>
+              <a data-l10n-id="home" href="/" class="modal-escape">Home</a>
+            </div>
           </div>
           <div class="copter-wrapper">
             <div class="copter no-display"></div>
@@ -32,6 +35,10 @@ export default PageView.extend({
     'retireUrl': { type: 'string', default: '/users/retire/' }
   },
 
+  events: {
+    'click [data-hook=take-survey]': 'takeSurvey'
+  },
+
   render() {
     PageView.prototype.render.apply(this, arguments);
 
@@ -40,7 +47,7 @@ export default PageView.extend({
     this.retireUserAccount()
       .then(() => app.me.fetch())
       .then(() => this.clearProgressMessage())
-      .catch(err => console.log(err));
+      .catch(err => console.log(err)); // eslint-disable-line no-console
   },
 
   uninstallAddon() {
@@ -68,6 +75,17 @@ export default PageView.extend({
       this.query('.modal').classList.remove('no-display');
       this.query('.modal').classList.add('fade-in');
     }, 500);
+  },
+
+  takeSurvey(ev) {
+    ev.preventDefault();
+    app.sendToGA('event', {
+      eventCategory: 'RetirePage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'take survey',
+      newTab: true,
+      outboundURL: ev.target.getAttribute('href')
+    });
   },
 
   // override page afterRender() to skip rendering header & footer

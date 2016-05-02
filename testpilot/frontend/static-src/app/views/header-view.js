@@ -34,10 +34,6 @@ export default BaseView.extend({
     }
   },
 
-  events: {
-    'click [data-hook=logout]': 'logout'
-  },
-
   initialize(opts) {
     if (opts.headerScroll) {
       const chunkedUrl = location.pathname.split('/');
@@ -64,20 +60,5 @@ export default BaseView.extend({
     if (this.experiment) {
       this.isInstalled = !!this.experiment.isInstalled;
     }
-  },
-
-  // TODO: actually manage state without refreshing the page. for now, just refresh
-  //       to pick up csrftoken cookie changes.
-  logout() {
-    fetch('/accounts/logout/', {
-      method: 'POST',
-      credentials: 'same-origin',
-      headers: { 'X-CSRFTOKEN': app.me.csrfToken }
-    }).then(() => {
-      window.location.reload();
-    }).catch((err) => {
-      // for now, log the error in the console & do nothing in the UI
-      console && console.error(err); // eslint-disable-line no-console
-    });
   }
 });
