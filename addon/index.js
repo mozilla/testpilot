@@ -538,12 +538,19 @@ const installListener = {
 };
 AddonManager.addInstallListener(installListener);
 
-exports.main = function() {
+exports.main = function(options) {
+  const reason = options.loadReason;
+
   if (!store.clientUUID) {
     // Generate a UUID for this client, so we can manage experiment
     // installations for multiple browsers per user. DO NOT USE IN METRICS.
     store.clientUUID = require('sdk/util/uuid').uuid().toString().slice(1, -1);
   }
+
+  if (reason === 'install' || reason === 'enable') {
+    Metrics.onEnable();
+  }
+
   initServerEnvironmentPreference();
   Metrics.init();
 };
@@ -555,6 +562,11 @@ exports.onUnload = function(reason) {
   button.destroy();
   Metrics.destroy();
   survey.destroy();
+
+  if (reason === 'uninstall' || reason === 'disable') {
+    Metrics.onDisable();
+  }
+
   if (reason === 'uninstall') {
     if (store.installedAddons) {
       Object.keys(store.installedAddons).forEach(id => {
