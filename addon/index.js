@@ -530,16 +530,18 @@ exports.onUnload = function(reason) {
   button.destroy();
   Metrics.destroy();
   survey.destroy();
-  setInstalledFlagPageMod.destroy();
-  messageBridgePageMod.destroy();
   if (reason === 'uninstall') {
-    app.send('addon-self:uninstalled');
     if (store.installedAddons) {
-      for (let id of store.installedAddons) { // eslint-disable-line prefer-const
+      Object.keys(store.installedAddons).forEach(id => {
         uninstallExperiment({addon_id: id});
-      }
+      });
       delete store.installedAddons;
     }
     delete store.availableExperiments;
+
+    if (app) app.send('addon-self:uninstalled');
   }
+
+  setInstalledFlagPageMod.destroy();
+  messageBridgePageMod.destroy();
 };
