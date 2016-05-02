@@ -197,32 +197,33 @@
 .tour-modal {
   animation: none;
   padding: 0;
+  width: 640px;
 
   .tour-content {
     position: relative;
   }
 
   .tour-text {
-    background: $transparent-white-5;
-    bottom: 0;
-    position: absolute;
+    background: $transparent-black-05;
     text-align: center;
     width: 100%;
 
     p {
       margin: 0;
-      padding: 20px;
+      padding: $grid-unit * .5;
     }
   }
 
   .tour-image {
     @include flex-container(row, center, center);
     background: $transparent-black-1;
-    height: 315px;
+    border-radius: $small-border-radius $small-border-radius 0 0;
+    height: 360px;
     overflow: hidden;
+    width: 640px;
 
     img {
-      height: 315px;
+      height: 360px;
     }
   }
 

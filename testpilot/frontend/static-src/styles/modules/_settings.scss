@@ -25,18 +25,20 @@
   }
 
   &:hover:not(.active) {
-    :nth-child(1) {
-      animation: pop 200ms;
-    }
+    @media (min-resolution: 1.3dppx) {
+      :nth-child(1) {
+        animation: pop 200ms;
+      }
 
-    :nth-child(2) {
-      animation: pop 200ms;
-      animation-delay: 50ms;
-    }
+      :nth-child(2) {
+        animation: pop 200ms;
+        animation-delay: 50ms;
+      }
 
-    :nth-child(3) {
-      animation: pop 200ms;
-      animation-delay: 100ms;
+      :nth-child(3) {
+        animation: pop 200ms;
+        animation-delay: 100ms;
+      }
     }
   }
 }

@@ -43,6 +43,17 @@
   &.secondary {
     background: $secondary-button-background;
     border: 1px solid $secondary-button-border;
+
+    &:hover,
+    &:focus {
+      background: darken($secondary-button-background, 4);
+      border: 1px solid darken($secondary-button-border, 4);
+    }
+
+    &:active {
+      background: darken($secondary-button-background, 8);
+      border: 1px solid darken($secondary-button-border, 8);
+    }
   }
 
   &.default {

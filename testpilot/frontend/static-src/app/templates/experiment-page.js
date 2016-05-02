@@ -1,7 +1,6 @@
 export default `
   <section id="details" data-hook="experiment-page">
     <div class="flat-blue">
-      <div class="noise"></div>
       <div class="shifted-stars"></div>
       <header data-hook="header-view"></header>
     </div>

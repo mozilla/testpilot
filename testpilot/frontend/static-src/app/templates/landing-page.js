@@ -3,7 +3,6 @@ export default `
     {{^loggedIn}}
         {{^isMoz}}
           <div class="blue">
-            <div class="noise"></div>
             <div class="stars"></div>
             <div class="full-page-wrapper space-between">
               <header id="main-header" class="responsive-content-wrapper">
@@ -25,7 +24,6 @@ export default `
         {{/isMoz}}
         {{#isMoz}}
           <div class="blue">
-            <div class="noise"></div>
             <div class="stars"></div>
             <header id="main-header" class="responsive-content-wrapper">
               <h1>
@@ -123,7 +121,6 @@ export default `
     {{/loggedIn}}
     {{#loggedIn}}
       <div class="blue">
-        <div class="noise"></div>
         <div class="stars"></div>
         <div class="full-page-wrapper space-between">
           <header id="main-header" class="responsive-content-wrapper">

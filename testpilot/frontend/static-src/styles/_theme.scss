@@ -21,17 +21,6 @@ a {
   position: relative;
 }
 
-.noise {
-  @include hidpi-background-image('noise', 400px 800px);
-  background-repeat: repeat-x;
-  bottom: 400px;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 0;
-}
-
 %stars {
   @include hidpi-background-image('stars', 1180px 346px);
   background-position: center top;

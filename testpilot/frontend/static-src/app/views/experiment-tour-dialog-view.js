@@ -4,7 +4,7 @@ export default BaseView.extend({
 
   _template: `
     <div class="modal-container">
-      <div class="modal onboarding-modal">
+      <div class="modal onboarding-modal modal-bounce-in">
         <header>
           <h3 class="title onboarding" data-l10n-id="tourOnboardingTitle">{{model.title}} enabled!</h3>
         </header>

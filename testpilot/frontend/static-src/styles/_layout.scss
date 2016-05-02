@@ -80,3 +80,9 @@
 .block {
   display: block;
 }
+
+.pinstripe {
+  border-bottom: 1px solid $transparent-white-1;
+  margin-bottom: $grid-unit * 3;
+  padding-bottom: $grid-unit;
+}
