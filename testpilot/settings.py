@@ -149,6 +149,14 @@ FXA_CLIENT_ID = config('FXA_CLIENT_ID', default=None)
 
 FXA_SECRET_KEY = config('FXA_SECRET_KEY', default=None)
 
+BASKET_API_KEY = config('BASKET_API_KEY', default=None)
+
+BASKET_LOOKUP_USER_URL = 'https://basket.mozilla.org/news/lookup-user/'
+
+BASKET_UNSUBSCRIBE_URL = 'https://basket.mozilla.org/news/unsubscribe/'
+
+BASKET_SUBSCRIBE_URL = 'https://basket.mozilla.org/news/subscribe/'
+
 SOCIALACCOUNT_AUTO_SIGNUP = True
 
 SOCIALACCOUNT_EMAIL_VERIFICATION = False

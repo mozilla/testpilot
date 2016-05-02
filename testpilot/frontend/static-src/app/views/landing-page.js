@@ -47,11 +47,13 @@ export default PageView.extend({
     this.query('[data-hook=install]').classList.add('state-change');
     this.query('.default-btn-msg').classList.add('no-display');
     this.query('.progress-btn-msg').classList.remove('no-display');
-    app.sendToGA('event', {
-      eventCategory: 'HomePage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'Install the Add-on',
-      outboundURL: downloadUrl
+    app.subscribeToBasket(app.me.user.id, () => {
+      app.sendToGA('event', {
+        eventCategory: 'HomePage Interactions',
+        eventAction: 'button click',
+        eventLabel: 'Install the Add-on',
+        outboundURL: downloadUrl
+      });
     });
 
     const interval = setInterval(() => {

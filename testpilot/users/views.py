@@ -47,7 +47,8 @@ class MeViewSet(ViewSet):
 @permission_classes([IsAuthenticated])
 def user_retire(request):
     user = request.user
-    result = {"id": user.id, "username": user.username}
+    profile = UserProfile.objects.get_profile(user)
+    result = {'id': user.id, 'username': user.username, 'unsubscribe': profile.unsubscribe()}
     logout(request)
     user.delete()
     return Response(result, status=status.HTTP_200_OK)
