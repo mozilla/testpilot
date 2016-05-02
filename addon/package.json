@@ -6,7 +6,7 @@
   "description": "Test Pilot is a privacy-sensitive user research program focused on getting new features into Firefox faster.",
   "repository": "mozilla/testpilot",
   "homepage": "https://testpilot.firefox.com/",
-  "icon": "resource://@testpilot-addon/data/icon-32.png",
+  "icon": "resource://@testpilot-addon/data/icon-96.png",
   "bugs": {
     "url": "https://github.com/mozilla/testpilot/issues"
   },
