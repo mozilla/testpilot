@@ -41,7 +41,7 @@ const survey = require('./lib/survey');
 const PANEL_WIDTH = 300;
 const FOOTER_HEIGHT = 50;
 const EXPERIMENT_HEIGHT = 80;
-const INSTALLED_PANEL_HEIGHT = 370;
+const INSTALLED_PANEL_HEIGHT = 300;
 
 // Canned selectable server environment configs
 const SERVER_ENVIRONMENTS = {
@@ -172,11 +172,7 @@ function setupApp() {
       const installMsgPanel = Panel({ // eslint-disable-line new-cap
         contentURL: './base.html',
         contentScriptFile: './panel.js',
-        onShow: () => {
-          installMsgPanel.port.emit('show', Mustache.render(templates.installed, {
-            base_url: settings.BASE_URL
-          }));
-        }
+        onShow: () => installMsgPanel.port.emit('show', templates.installed)
       });
 
       installMsgPanel.on('hide', () => {
