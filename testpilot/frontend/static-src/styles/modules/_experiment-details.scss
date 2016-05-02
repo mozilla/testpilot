@@ -44,11 +44,19 @@
   position: relative;
 
   h1 {
+    @include respond-to('not-small') {
+      font-size: $font-unit * 4;
+      line-height: $font-unit * 4;
+    }
+
+    @include respond-to('small') {
+      font-size: $font-unit * 3.5;
+      line-height: $font-unit * 3.5;
+    }
+
     display: flex;
     flex: 1;
-    font-size: $font-unit * 4;
     font-weight: 300;
-    line-height: $font-unit * 4;
     margin: 0;
     transition: font-size 200ms;
   }
@@ -247,7 +255,11 @@
   }
 
   &:before {
-    animation: pop 2000ms infinite alternate ease-in-out;
+
+    @media (min-resolution: 1.3dppx) {
+      animation: pop 2000ms infinite alternate ease-in-out;
+    }
+
     background: $primary;
     border-radius: 50%;
     content: '';
