@@ -26,5 +26,4 @@ module.exports.installed = `
     <div class="copter fly-down"></div>
   </div>
   <p>Test Pilot lets you test out experimental features in Firefox. Ready for takeoff?</p>
-  <a href="{{base_url}}/home" class="button default quick-pop">Let's go</a>
 </div>`;
