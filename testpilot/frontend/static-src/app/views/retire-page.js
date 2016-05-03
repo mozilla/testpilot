@@ -40,7 +40,7 @@ export default PageView.extend({
     this.retireUserAccount()
       .then(() => app.me.fetch())
       .then(() => this.clearProgressMessage())
-      .catch(err => console.log(err));
+      .catch(err => console.log(err)); // eslint-disable-line no-console
   },
 
   uninstallAddon() {
@@ -56,6 +56,12 @@ export default PageView.extend({
         'X-CSRFTOKEN': app.me.csrfToken
       },
       body: ''
+    }).then(() => {
+      app.sendToGA('event', {
+        eventCategory: 'HomePage Interactions',
+        eventAction: 'button click',
+        eventLabel: 'Retire'
+      });
     });
   },
 

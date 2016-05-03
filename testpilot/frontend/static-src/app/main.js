@@ -79,6 +79,22 @@ app.extend({
     } else {
       hitCallback();
     }
+  },
+
+  // Subscribe to basket
+  subscribeToBasket(email, callback) {
+    const url = 'https://basket.mozilla.org/news/subscribe/';
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: 'newsletters=test-pilot&email=' + email
+    }).then(callback)
+    .catch(err => {
+      // for now, log the error in the console & do nothing in the UI
+      console && console.error(err); // eslint-disable-line no-console
+    });
   }
 });
 
