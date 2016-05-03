@@ -13,6 +13,7 @@ Cu.import('resource://gre/modules/TelemetryController.jsm');
 const { setTimeout } = require('sdk/timers');
 const Events = require('sdk/system/events');
 const store = require('sdk/simple-storage').storage;
+const PrefsService = require('sdk/preferences/service');
 
 // Event type for receiving pings from experiments
 const EVENT_SEND_METRIC = 'testpilot::send-metric';
@@ -23,6 +24,12 @@ const PING_INTERVAL = 24 * 60 * 60 * 1000;
 // Interval between Telemetry ping time checks, more frequent than the actual
 // ping so we can play catch-up if the computer was asleep at the ping time.
 const PING_CHECK_INTERVAL = 10 * 60 * 1000;
+
+// List of preferences we'll override on install & restore on uninstall
+const PREFERENCE_OVERRIDES = {
+  'toolkit.telemetry.enabled': true,
+  'datareporting.healthreport.uploadEnabled': true
+};
 
 module.exports = {
 
@@ -38,6 +45,24 @@ module.exports = {
     this.maybePingTelemetry();
 
     Events.on(EVENT_SEND_METRIC, this.onExperimentPing);
+  },
+
+  onEnable: function() {
+    // Backup existing preference settings and then override.
+    store.metricsPrefsBackup = {};
+    Object.keys(PREFERENCE_OVERRIDES).forEach(name => {
+      store.metricsPrefsBackup[name] = PrefsService.get(name);
+      PrefsService.set(name, PREFERENCE_OVERRIDES[name]);
+    });
+  },
+
+  onDisable: function() {
+    // Restore previous preference settings before override.
+    if (store.metricsPrefsBackup) {
+      Object.keys(PREFERENCE_OVERRIDES).forEach(name => {
+        PrefsService.set(name, store.metricsPrefsBackup[name]);
+      });
+    }
   },
 
   destroy: function() {
