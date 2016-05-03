@@ -8,8 +8,8 @@ export default `
             <div class="copter"></div>
           </div>
           <div class="intro-text">
-            <h2 data-l10n-id="experimentListPageHeader" class="banner">Welcome to Firefox Test Pilot!</h2>
-            <p data-l10n-id="experimentListPageSubHeader">We're always trying out new features in Firefox. <br> Pick any of the tests below to see what we're working on!</p>
+            <h2 data-l10n-id="experimentListPageHeader" class="banner">Now testing!</h2>
+            <p data-l10n-id="experimentListPageSubHeader">Pick the features you want to try. <br> Check back soon for more experiments.</p>
           </div>
         </div>
 

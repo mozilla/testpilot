@@ -25,5 +25,5 @@ module.exports.installed = `
   <div class="copter-wrapper">
     <div class="copter fly-down"></div>
   </div>
-  <p>Test Pilot lets you test out experimental features in Firefox. Ready for takeoff?</p>
+  <p>You’re always just a click away from the latest experiments.</p>
 </div>`;
