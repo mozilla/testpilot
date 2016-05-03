@@ -27,21 +27,21 @@ from that discussion:
 > `MEAN(DAU(d) for E - 7 < d <= E) / MAU(E)`
 
 A daily active user will be defined as any user, using their browser that day,
-with at least one test currently enabled in their browser.  This means only
+with at least one experiment currently enabled in their browser.  This means only
 having the Test Pilot extension installed will *not* count as an active user.
 
 ![](metrics-engagement-ratio.png)
 
 ## Engagement Breakdown
 
-Within the above Engagement Ratio of a user having at least one test enabled,
-it is interesting to see how many users have how many tests enabled, including
-the negative space of users with Test Pilot installed but with no tests
-enabled.
+Within the above Engagement Ratio of a user having at least one experiment
+enabled, it is interesting to see how many users have how many experiments
+enabled, including the negative space of users with Test Pilot installed but
+with no experiments enabled.
 
 Total Users here is defined as a Participating User: a user with the Test Pilot
 add-on installed and has run Firefox that day.  They may or may not have any
-tests enabled.
+experiments enabled.
 
 Below is a mockup of what that could look like.
 
@@ -50,9 +50,9 @@ Below is a mockup of what that could look like.
 ## Service Health
 
 Test Pilot has two critical functions:  firstly to be the broker enabling and
-disabling tests, and secondly, to collect user feedback.  Our main system
-health measures will be the number of tests installed over time and the count
-of user feedback recorded over time.  These will allow us to quickly see
+disabling experiments, and secondly, to collect user feedback.  Our main system
+health measures will be the number of experiments installed over time and the
+count of user feedback recorded over time.  These will allow us to quickly see
 disruptions in service regardless of cause.
 
 ![](metrics-feedback-recorded.png)
@@ -98,7 +98,7 @@ Using the [standard format][4] an example object will look like:
     "errno": 0,
     "lang": "en-US",
     "uid": 1000,  // This is the Test Pilot UID
-    "service": "universal_search@mozilla",  // If the ping comes from a test within the program, the identifier goes here
+    "service": "universal_search@mozilla",  // If the ping comes from an experiment within the program, the identifier goes here
     "context": "",
     "msg": "New Test Installed: Universal Search",
     "remoteAddressChain": ["1.2.3.4", "4.3.2.1"],
@@ -108,6 +108,35 @@ Using the [standard format][4] an example object will look like:
     "feature_switches": "",
     "campaign": ""
   }
+}
+```
+
+and the schema we'll be using in RedShift will omit a couple of fields:
+
+```js
+local schema = {
+--   column name                   field type   length  attributes   field name
+    {"timestamp",                  "TIMESTAMP", nil,    "SORTKEY",   "Timestamp"},
+    {"uuid",                       "VARCHAR",   36,      nil,         get_uuid},
+    {"type",                       "VARCHAR",   255,     nil,         "type"},
+    {"logger",                     "VARCHAR",   255,     nil,         "logger"},
+    {"Hostname",                   "VARCHAR",   255,     nil,         "Hostname"},
+    {"Severity",                   "INTEGER",   nil,     nil,         "Severity"},
+    {"agent",                      "VARCHAR",   45,      nil,         "Fields[agent]"},
+    {"path",                       "VARCHAR",   56,      nil,         "Fields[path]"},
+    {"method",                     "VARCHAR",   200,     nil,         "Fields[method]"},
+    {"code",                       "VARCHAR",   255,     nil,         "Fields[code]"},
+    {"errno",                      "VARCHAR",   255,     nil,         "Fields[errno]"},
+    {"lang",                       "VARCHAR",   36,      nil,         "Fields[lang]"},
+    {"uid",                        "INTEGER",   nil,     nil,         "Fields[uid]"},
+    {"service",                    "VARCHAR",   255,     nil,         "Fields[service]"},
+    {"context",                    "VARCHAR",   255,     nil,         "Fields[context]"},
+    {"msg",                        "VARCHAR",   1000,    nil,         "Fields[msg]"},
+    {"remoteAddressChain",         "VARCHAR",   255,     nil,         "Fields[remoteAddressChain]"},
+    {"rid",                        "VARCHAR",   255,     nil,         "Fields[rid]"},
+    {"t",                          "VARCHAR",   36,      nil,         "Fields[t]"},
+    {"feature_switches",           "VARCHAR",   255,     nil,         "Fields[feature_switches]"},
+    {"campaign",                   "VARCHAR",   255,     nil,         "Fields[campaign]"}
 }
 ```
 
@@ -123,7 +152,7 @@ clientId and [environment][8].  There will be two Telemetry ping types,
 The `testpilot` type will be a periodic (every 24 hours) ping which includes a
 payload of:
 
-* For each test:
+* For each experiment:
   * enabled/disabled state with timestamp of last toggle
   * feature switch status
 * User Agent
@@ -149,16 +178,16 @@ An example payload (within the full ping) would look like:
 ```
 
 The `testpilottest` type has a light wrapper around a second payload which is
-defined by each individual test.  The second payload's schema will be defined
-by each test and needs to remain flexible for rapid changes.  The
-`testpilottest` type will be submitted to Telemetry whenever the test calls it
-(not necessarily periodically, although it could be).  The light wrapper
-includes:
+defined by each individual experiment.  The second payload's schema will be
+defined by each experiment and needs to remain flexible for rapid changes.  The
+`testpilottest` type will be submitted to Telemetry whenever the experiment
+calls it (not necessarily periodically, although it could be).  The light
+wrapper includes:
 
-* The test ID
+* The experiment ID
 * User Agent
 * Version
-* The test payload
+* The experiment payload
 
 An example payload (within the full ping) would look like:
 ```js
@@ -169,6 +198,9 @@ An example payload (within the full ping) would look like:
  "payload": { ... }
 }
 ```
+
+Please note that each experiment will need to define its payload schema before
+being able to record data.
 
 To ensure that the client can submit data the Test Pilot add-on will require
 that the Basic Telemetry system is enabled (which is on by default in Firefox).
