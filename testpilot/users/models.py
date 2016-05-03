@@ -38,8 +38,11 @@ class UserProfile(models.Model):
     def natural_key(self):
         return self.user.natural_key()
 
+    natural_key.dependencies = ['auth.user']
+
     def unsubscribe(self):
-        """Unsubscribe this email from basket. Lookup-user call for token, then the unsubscribe"""
+        """Unsubscribe this email from basket. Lookup-user call for token, then
+        perform the unsubscribe"""
         try:
             if settings.BASKET_API_KEY is None:
                 return 'API Key not found'
@@ -51,7 +54,7 @@ class UserProfile(models.Model):
             resp = r.json()
 
             if 'token' not in resp:
-                return'email not found in basket'
+                return 'email not found in basket'
             user_token = resp['token']
 
             url = settings.BASKET_UNSUBSCRIBE_URL + user_token + '/'
@@ -62,5 +65,3 @@ class UserProfile(models.Model):
             return resp
         except Exception as e:
             return e
-
-    natural_key.dependencies = ['auth.user']
