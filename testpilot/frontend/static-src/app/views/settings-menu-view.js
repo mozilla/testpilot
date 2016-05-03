@@ -75,6 +75,11 @@ export default BaseView.extend({
 
   retire(evt) {
     evt.preventDefault();
+    app.sendToGA('event', {
+      eventCategory: 'Menu Interactions',
+      eventAction: 'drop-down menu',
+      eventLabel: 'Retire'
+    });
     this.renderSubview(new RetireDialogView({
       id: 'retire-dialog',
       onSubmit: () => {
