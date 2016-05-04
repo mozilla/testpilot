@@ -67,7 +67,7 @@ export default `
               <button data-l10n-id="landingFxaGetStartedButton" class="button extra-large primary" data-hook="get-started-with-account">Get started with a Firefox Account</button>
               {{/isFirefox}}
             </div>
-            {{#isFirefox}}<p data-l10n-id="landingLegalNotice" class="legal-information delayed-fade-in-up">By proceeding, you agree to the <a href="https://www.mozilla.org/about/legal/terms/services/">Terms of Service</a> and <a href="https://www.mozilla.org/privacy/firefox-cloud/">Privacy Notice</a> of Test Pilot</p>{{/isFirefox}}
+            {{#isFirefox}}<p data-l10n-id="landingLegalNotice" class="legal-information delayed-fade-in-up">By proceeding, you agree to the <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Notice</a> of Test Pilot</p>{{/isFirefox}}
             <div class="transparent-container">
               <div class="responsive-content-wrapper delayed-fade-in">
                   <h2 class="card-list-header" data-l10n-id="landingExperimentsTitle">Test these features and share your feedback</h2>
@@ -111,7 +111,7 @@ export default `
                 <button data-l10n-id="landingFxaGetStartedButton" class="button extra-large primary" data-hook="get-started-with-account">Get started with a Firefox Account</button>
                 {{/isFirefox}}
               </div>
-            {{#isFirefox}}<p data-l10n-id="landingLegalNotice" class="legal-information delayed-fade-in-up">By proceeding, you agree to the <a href="https://www.mozilla.org/about/legal/terms/services/">Terms of Service</a> and <a href="https://www.mozilla.org/privacy/firefox-cloud/">Privacy Notice</a> of Test Pilot</p>{{/isFirefox}}
+            {{#isFirefox}}<p data-l10n-id="landingLegalNotice" class="legal-information delayed-fade-in-up">By proceeding, you agree to the <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Notice</a> of Test Pilot</p>{{/isFirefox}}
             </div>
             <footer id="main-footer" class="responsive-content-wrapper">
               <div data-hook="footer-view"></div>
@@ -155,5 +155,3 @@ export default `
     {{/loggedIn}}
 </section>
 `;
-
-
