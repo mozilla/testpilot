@@ -13,7 +13,7 @@ export default Model.extend({
   props: {
     user: 'object',
     clientUUID: 'string',
-    installed: {type: 'object', default: () => {}},
+    installed: {type: 'object', default: () => []},
     hasAddon: {type: 'boolean', required: true, default: false},
     addonTimeout: {type: 'number', default: 1000}
   },
