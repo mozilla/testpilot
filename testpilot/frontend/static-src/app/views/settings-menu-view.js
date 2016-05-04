@@ -17,7 +17,7 @@ export default BaseView.extend({
                    <li><a data-l10n-id="menuFileIssue" href="https://github.com/mozilla/testpilot/issues/new" target="_blank">File an Issue</a></li>
                    <li><a data-l10n-id="menuLogout" data-hook="logout">Logout</a></li>
                    <li><hr></li>
-                   <li><a data-l10n-id="menuRetire" data-hook="retire">Retire</a></li>
+                   <li><a data-l10n-id="menuRetire" data-hook="retire">Leave Test Pilot</a></li>
                  </ul>
                </div>
              </div>`,

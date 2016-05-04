@@ -1,21 +1,27 @@
 .banner {
   @include respond-to('big') {
-    font-size: 4 * $font-unit;
-    line-height: 3.8 * $line-unit;
+    font-size: 4.4 * $font-unit;
+    line-height: 4.1 * $line-unit;
   }
 
   @include respond-to('medium') {
-    font-size: 2.5 * $font-unit;
-    line-height: 2.5 * $line-unit;
+    font-size: 3.5 * $font-unit;
+    line-height: 3.5 * $line-unit;
   }
 
   @include respond-to('small') {
-    font-size: 2.6 * $font-unit;
-    line-height: 2.6 * $line-unit;
+    font-size: 3 * $font-unit;
+    line-height: 3 * $line-unit;
   }
 
   font-weight: 300;
   text-shadow: 0 2px 0 $transparent-black-3;
+
+  .lead-in {
+    font-size: 2.7 * $font-unit;
+    font-weight: 500;
+    line-height: 2.7 * $line-unit;
+  }
 }
 
 .centered-banner,
@@ -38,18 +44,19 @@
 
     p {
       @include respond-to('big') {
-        font-size: $font-unit * 1.8;
-        line-height: $line-unit * 2;
+        font-size: $font-unit * 2.3;
+        line-height: $line-unit * 2.3;
         max-width: $grid-unit * 25;
       }
 
       @include respond-to('medium') {
-        font-size: $font-unit * 1.5;
-        line-height: $line-unit * 1.5;
+        font-size: $font-unit * 1.6;
+        line-height: $line-unit * 1.6;
         max-width: $grid-unit * 19.5;
       }
 
       margin: 0;
+      position: relative;
     }
   }
 }
@@ -100,13 +107,15 @@
     @include flex-container(column, center, center);
   }
 
-  > :last-child {
-    @include respond-to('medium') {
+  .intro-text {
+    @include respond-to('big') {
       margin-right: $grid-unit * 2;
+      top: -4px;
     }
 
     @include respond-to('medium') {
       margin-right: $grid-unit;
+      top: -4px;
     }
 
     @include respond-to('small') {

@@ -42,7 +42,8 @@ export default `
               </div>
               <div class="intro-text delayed-fade-in-up">
                 <h2 class="banner">
-                  <span data-l10n-id="landingIntroOne" class="block">Test out new features.</span>
+                  <span data-l10n-id="landingIntroLead" class="block lead-in">Go beyond...</span>
+                  <span data-l10n-id="landingIntroOne" class="block">Test new features.</span>
                   <span data-l10n-id="landingIntroTwo" class="block">Give us feedback.</span>
                   <span data-l10n-id="landingIntroThree" class="block">Help build Firefox.</span>
                 </h2>
@@ -51,7 +52,7 @@ export default `
 
             <div class="centered-banner responsive-content-wrapper delayed-fade-in-up">
               {{^isFirefox}}
-                <span data-l10n-id="landingDownloadFirefoxDesc" class="parens">(of course, you'll need Firefox to use Test Pilot)</span>
+                <span data-l10n-id="landingDownloadFirefoxDesc" class="parens">(Test Pilot is available for Firefox on Windows, OS X and Linux)</span>
                 <a href="https://www.mozilla.org/en-US/firefox" class="button primary download-firefox">
                   <div class="button-icon">
                     <div class="button-icon-badge"></div>
@@ -63,14 +64,13 @@ export default `
                 </a>
               {{/isFirefox}}
               {{#isFirefox}}
-              <div class="small-spacer"></div>
               <button data-l10n-id="landingFxaGetStartedButton" class="button extra-large primary" data-hook="get-started-with-account">Get started with a Firefox Account</button>
               {{/isFirefox}}
             </div>
             {{#isFirefox}}<p data-l10n-id="landingLegalNotice" class="legal-information delayed-fade-in-up">By proceeding, you agree to the <a href="https://www.mozilla.org/about/legal/terms/services/">Terms of Service</a> and <a href="https://www.mozilla.org/privacy/firefox-cloud/">Privacy Notice</a> of Test Pilot</p>{{/isFirefox}}
             <div class="transparent-container">
               <div class="responsive-content-wrapper delayed-fade-in">
-                  <h2 class="card-list-header" data-l10n-id="landingExperimentsTitle">Try these features today with Test Pilot</h2>
+                  <h2 class="card-list-header" data-l10n-id="landingExperimentsTitle">Test these features and share your feedback</h2>
                   <div data-hook='experiment-list'></div>
               </div>
             </div>
@@ -95,7 +95,7 @@ export default `
               </div>
               <div class="centered-banner">
                 {{^isFirefox}}
-                  <span data-l10n-id="landingDownloadFirefoxDesc" class="parens">(of course, you'll need Firefox to use Test Pilot)</span>
+                  <span data-l10n-id="landingDownloadFirefoxDesc" class="parens">(Test Pilot is available for Firefox on Windows, OS X and Linux)</span>
                   <a href="https://www.mozilla.org/en-US/firefox" class="button primary download-firefox">
                     <div class="button-icon">
                       <div class="button-icon-badge"></div>
@@ -130,19 +130,18 @@ export default `
           </header>
           <div class="centered-banner responsive-content-wrapper">
             <div data-hook="installed-message" class="no-display">
-              <h2 data-l10n-id="landingInstallMessage" class="emphasis">Test Pilot installed!</h2>
-              <a href="/" data-l10n-id="landingInstalledButton" class="button large primary">Let's Go</a>
+              <h2 data-l10n-id="landingInstallMessage" class="emphasis banner">Test Pilot installed!</h2>
+              <a href="/" data-l10n-id="landingInstalledButton" class="button extra-large primary">Choose your features</a>
             </div>
             <div data-hook="default-message">
               <div class="copter-wrapper fly-down">
                 <div class="copter"></div>
               </div>
               <h2 class="banner">
-                <span data-l10n-id="landingInstallHeaderOne" class="block">Install the Test Pilot Add-on</span>
-                <span data-l10n-id="landingInstallHeaderTwo" class="block">and you're good to go!</span>
+                <span data-l10n-id="landingInstallHeader" class="block">Get the add-on to get going!</span>
               </h2>
-              <button data-hook="install" class="button large primary">
-                <span class="default-btn-msg" data-l10n-id="landingInstallButton">Install the Add-on</span>
+              <button data-hook="install" class="button extra-large primary">
+                <span class="default-btn-msg" data-l10n-id="landingInstallButton">Install Test Pilot</span>
                 <span class="no-display progress-btn-msg" data-l10n-id="landingInstallingButton">Installing Test Pilot...</span>
                 <div class="state-change-inner"></div>
               </button>

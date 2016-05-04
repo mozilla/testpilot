@@ -2,6 +2,7 @@
   border: 1px solid transparent;
   border-radius: 3px;
   display: inline-block;
+  font-weight: 400;
   height: 34px;
   line-height: 34px;
   outline: none;
@@ -86,7 +87,6 @@
   &.large,
   &.extra-large {
     font-size: 20px;
-    font-weight: 300;
     height: 52px;
     line-height: 52px;
     min-width: 300px;
@@ -100,6 +100,7 @@
       height: $grid-unit * 3;
       padding: 0 $grid-unit * 1.5;
     }
+    
     box-shadow: 0 2px 0 0 $transparent-black-2;
   }
 

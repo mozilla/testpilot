@@ -56,11 +56,6 @@
   > header {
     flex: 0 0 100%;
   }
-
-  .blue :not(#how-to)& {
-    border-top: 1px solid $transparent-white-1;
-    padding-top: $grid-unit * 3;
-  }
 }
 
 .card-list-header {

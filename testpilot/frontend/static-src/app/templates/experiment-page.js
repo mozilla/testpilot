@@ -9,7 +9,7 @@ export default `
       <div class="details-header-wrapper">
         <div class="details-header content-wrapper">
           <h1 data-hook="title"></h1>
-          <span class="now-active" data-hook="now-active" data-l10n-id="nowActive">Now Active</span>
+          <span class="now-active" data-hook="now-active" data-l10n-id="nowActive">Active</span>
           <div class="experiment-controls">
             <a data-hook="highlight-privacy" class="highlight-privacy" data-l10n-id=highlightPrivacy>Your privacy</a>
             <button data-l10n-id="giveFeedback" data-hook="feedback" id="feedback-button" class="button default">Give Feedback</button>
@@ -35,7 +35,7 @@ export default `
                   <ul class="contributors"></ul>
                 </section>
                 <section data-hook="measurements-container" class="measurements">
-                  <h3 data-l10n-id="measurements">Measurements &amp; Privacy</h3>
+                  <h3 data-l10n-id="measurements">Your privacy</h3>
                   <div data-hook="measurements-html" class="measurement"></div>
                   <a class="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-hook="privacy-notice-url">You can learn more about the data collection for <span data-hook="title"></span> here.</a>
                 </section>

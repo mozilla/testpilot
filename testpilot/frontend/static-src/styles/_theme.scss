@@ -50,6 +50,7 @@ a {
 .transparent-container {
   background: $transparent-white-1;
   color: $white;
+  margin: $grid-unit * 2 0;
   padding: $grid-unit * .25 0;
 }
 

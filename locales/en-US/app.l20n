@@ -5,8 +5,6 @@
 <pageTitleExperimentListPage "Firefox Test Pilot - Experiments">
 <pageTitleExperiment "Firefox Test Pilot - {{title}}">
 
-<headerSubtitle "The innovative community where new Ideas for Firefox are tested.">
-
 <footerLinkContribute "Contribute">
 <footerLinkCookies "Cookies">
 <footerLinkPrivacy "Privacy">
@@ -16,27 +14,27 @@
 
 <menuWiki "Test Pilot Wiki">
 <menuFileIssue "File an Issue">
-<menuLogout "Logout">
-<menuRetire "Retire">
+<menuLogout "Sign out">
+<menuRetire "Leave Test Pilot">
 
 <landingFxaAlternateButton "Sign in">
-<landingIntroOne "Test out new features.">
+<landingIntroLead "Go beyond...">
+<landingIntroOne "Test new features.">
 <landingIntroTwo "Give us feedback.">
 <landingIntroThree "Help build Firefox.">
 <landingFxaGetStartedButton "Get started with a Firefox Account">
 <landingLegalNotice "By proceeding, you agree to the <a>Terms of Service</a> and <a>Privacy Notice</a> of Test Pilot.">
-<landingPageFooterCopy "More tests coming soon!">
-<landingInstallHeaderOne "Install the Test Pilot Add-on">
-<landingInstallHeaderTwo "and you're good to go!">
-<landingInstallButton "Install the Add-on">
+
+<landingInstallHeader "Get the add-on to get going!">
+<landingInstallButton "Install Test Pilot">
 <landingInstallingButton "Installing Test Pilot...">
 <landingInstallMessage "Test Pilot installed!">
-<landingInstalledButton "Let's Go">
+<landingInstalledButton "Choose your features">
 
-<landingDownloadFirefoxDesc "(of course, you'll need Firefox to use Test Pilot)">
+<landingDownloadFirefoxDesc "(Test Pilot is available for Firefox on Windows, OS X and Linux)">
 <landingDownloadFirefoxTitle "Firefox">
 <landingDownloadFirefoxSubTitle "Free Download">
-<landingExperimentsTitle "Try these features today with Test Pilot">
+<landingExperimentsTitle "Test these features and share your feedback">
 <landingCardListTitle "Get started in 3 easy steps">
 <landingStepOne "Step one">
 <landingStepTwo "Step two">
@@ -50,8 +48,8 @@
 
 <notFoundHeader "Four Oh Four!">
 
-<experimentListPageHeader "Welcome to Firefox Test Pilot!">
-<experimentListPageSubHeader  "We're always trying out new features in Firefox. Pick any of the tests below to see what we're working on!">
+<experimentListPageHeader "Now testing!">
+<experimentListPageSubHeader  "Pick the features you want to try. <br> Check back soon for more experiments.">
 
 <experimentListInactiveHover "Get Started">
 <experimentListActiveHover "Manage">
@@ -69,18 +67,18 @@
 <feedbackUninstallTitle "Thank You!">
 <feedbackUninstallCopy "Your participation in Firefox Test Pilot means a lot! Please check out our other experiments, and stay tuned for more to come!">
 
-<retireDialogTitle "Retire from Test Pilot?">
-<retireMessage "If you retire from Test Pilot, we will disable any active tests, uninstall the Test Pilot add-on, remove your account information from our servers, and generally just leave you alone.">
-<retireSubmitButton "Retire">
+<retireDialogTitle "Leave Test Pilot?">
+<retireMessage "As you wish. This will disable any active tests, uninstall the add-on and remove your account info from our servers.">
+<retireSubmitButton "Proceed">
 <retireCancelButton "Cancel">
 
-<pageTitleRetirePage "Firefox Test Pilot - Retire from Test Pilot">
-<retirePageProgressMessage "Shutting down Test Pilot...">
-<retirePageHeadline "Thanks Again!">
-<retirePageMessage "Before you go, we want to thank you for contributing to Test Pilot.<br>You're welcome back any time!">
+<pageTitleRetirePage "Firefox Test Pilot - Leave Test Pilot">
+<retirePageProgressMessage "Shutting down...">
+<retirePageHeadline "Thanks for flying!">
+<retirePageMessage "Hope you had fun experimenting with us. <br> Come back any time.">
 <retirePageSurveyButton "Take a quick survey">
 
-<measurements "Measurements &amp; Privacy">
+<measurements "Your privacy">
 <experimentPrivacyNotice "You can learn more about the data collection for {{title}} here.">
 <contributorsHeading "Brought to you by">
 <detailsHeading "Details">
@@ -88,7 +86,7 @@
 <changelog "changelog">
 <lastUpdate "Last Update">
 <contribute "Contribute">
-<nowActive "Now Active">
+<nowActive "Active">
 <userCount title:"Active Users of this Experiment">
 <tourOnboardingTitle "{{title}} enabled!">
 <tourStartButton "Take the Tour">

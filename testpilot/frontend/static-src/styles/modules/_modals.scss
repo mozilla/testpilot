@@ -15,6 +15,11 @@
     position: absolute;
     width: 0;
   }
+
+  p {
+    font-size: $font-unit * 1.6;
+    margin: 0;
+  }
 }
 
 .modal-container {
@@ -65,7 +70,7 @@
     .onboarding & {
       background-color: $white;
       color: $black;
-      padding: $grid-unit 0 0;
+      padding: $grid-unit 0;
     }
 
     &.warning {

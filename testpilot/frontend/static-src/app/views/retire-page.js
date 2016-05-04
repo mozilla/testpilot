@@ -10,13 +10,13 @@ export default PageView.extend({
       <div class="full-page-wrapper centered">
         <div class="centered-banner">
           <div disabled class="loading-pill">
-            <h1 class="emphasis" data-l10n-id="retirePageProgressMessage">Shutting down Test Pilot...</h1>
+            <h1 class="emphasis" data-l10n-id="retirePageProgressMessage">Shutting down...</h1>
             <div style="opacity: 1" class="state-change-inner"></div>
           </div>
           <div id="retire" class="modal no-display">
             <h1 data-l10n-id="retirePageHeadline" class="title">Thanks Again!</h1>
             <div class="modal-content">
-              <p data-l10n-id="retirePageMessage">Before you go, we want to thank you for contributing to Test Pilot. <br> You're welcome back any time!</p>
+              <p data-l10n-id="retirePageMessage">Hope you had fun experimenting with us. <br> Come back any time.</p>
             </div>
             <div class="modal-actions"><a data-l10n-id="retirePageSurveyButton" href="external-survey.html" class="button default large">Take a quick survey</a><a data-l10n-id="home" href="/" class="modal-escape">Home</a></div>
           </div>
