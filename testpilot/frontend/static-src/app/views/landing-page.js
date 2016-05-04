@@ -37,9 +37,7 @@ export default PageView.extend({
     }
 
     app.sendToGA('pageview', {
-      'dimension1': this.loggedIn,
-      'dimension2': this.loggedIn ? Boolean(app.me.installed.length) : null,
-      'dimension3': this.loggedIn ? app.me.installed.length : null
+      'dimension1': this.loggedIn
     });
   },
 
