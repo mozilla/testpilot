@@ -1,3 +1,4 @@
+import app from 'ampersand-app';
 import BaseView from './base-view';
 
 export default BaseView.extend({
@@ -16,7 +17,7 @@ export default BaseView.extend({
           </p>
 
           <div class="modal-actions">
-            <a data-l10n-id="feedbackSubmitButton" target="_blank" href="{{surveyUrl}}" class="submit button default large quit">Take a quick survey</a>
+            <a data-l10n-id="feedbackSubmitButton" data-hook="submit-feedback" href="{{surveyUrl}}" class="submit button default large quit">Take a quick survey</a>
             <a data-l10n-id="feedbackCancelButton" class="cancel" href="">Close</a>
           </div>
         </div>
@@ -47,8 +48,16 @@ export default BaseView.extend({
     e.stopPropagation();
   },
 
-  submit() {
+  submit(ev) {
+    ev.preventDefault();
     this.animateRemove();
+    app.sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'exit survey disabled',
+      newTab: true,
+      outboundURL: ev.target.getAttribute('href')
+    });
     if (this.parentOnSubmit) this.parentOnSubmit();
   }
 });
