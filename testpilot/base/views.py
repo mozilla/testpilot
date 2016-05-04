@@ -37,3 +37,11 @@ def ops_version(request):
 
 def contribute_json(request):
     return static.serve(request, 'contribute.json', document_root=settings.ROOT)
+
+
+def privacy(request):
+    return static.serve(request, 'legal-copy/privacy-notice.html', document_root=settings.ROOT)
+
+
+def terms(request):
+    return static.serve(request, 'legal-copy/terms-of-use.html', document_root=settings.ROOT)

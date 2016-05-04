@@ -21,6 +21,8 @@ const sourcemaps = require('gulp-sourcemaps');
 const through = require('through2');
 const uglify = require('gulp-uglify');
 const tryRequire = require('try-require');
+const Remarkable = require('remarkable');
+const md = new Remarkable();
 
 const IS_DEBUG = (process.env.NODE_ENV === 'development');
 
@@ -55,6 +57,25 @@ gulp.task('clean', function cleanTask() {
   return del([
     DEST_PATH
   ]);
+});
+
+const legalTemplates = require('./legal-copy/legal-templates');
+
+function convertToLegalPage() {
+  return through.obj(function(file, encoding, callback) {
+    file.contents = new Buffer(`${legalTemplates.templateBegin}
+                                ${md.render(file.contents.toString())}
+                                ${legalTemplates.templateEnd}`);
+    file.path = gutil.replaceExtension(file.path, '.html');
+    this.push(file);
+    callback();
+  });
+}
+
+gulp.task('legal', function legalTask() {
+  return gulp.src('./legal-copy/*.md')
+             .pipe(convertToLegalPage())
+             .pipe(gulp.dest('./legal-copy/'));
 });
 
 // based on https://github.com/gulpjs/gulp/blob/master/docs/recipes/browserify-with-globs.md,
@@ -143,6 +164,7 @@ gulp.task('build', function buildTask(done) {
     'images',
     'locales',
     'addon',
+    'legal',
     done
   );
 });
@@ -152,6 +174,7 @@ gulp.task('watch', ['build'], function watchTask() {
   gulp.watch(SRC_PATH + 'images/**/*', ['images']);
   gulp.watch(SRC_PATH + 'app/**/*.js', ['scripts']);
   gulp.watch(SRC_PATH + 'addon/**/*', ['addon']);
+  gulp.watch(['./legal-copy/*.md', './legal-copy/*.js'], ['legal']);
   gulp.watch('./locales/**/*', ['locales']);
 });
 
