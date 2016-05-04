@@ -36,10 +36,14 @@ export default PageView.extend({
       }), '[data-hook="experiment-list"]');
     }
 
+    const installedCount = (!this.loggedIn) ? null :
+      (app.me.installed || []).length;
+    const anyInstalled = (!this.loggedIn) ? null :
+      (installedCount > 0);
     app.sendToGA('pageview', {
       'dimension1': this.loggedIn,
-      'dimension2': this.loggedIn ? Boolean(app.me.installed.length) : null,
-      'dimension3': this.loggedIn ? app.me.installed.length : null
+      'dimension2': anyInstalled,
+      'dimension3': installedCount
     });
   },
 
