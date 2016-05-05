@@ -149,7 +149,8 @@ function getRatingUI(win, notifyBox, box, messageText, addonId,
     notifyBox.removeNotification(box);
     const params = querystring.stringify({id: addonId,
                                           rating: rating,
-                                          interval: interval});
+                                          interval: interval,
+                                          installed: Object.keys(store.installedAddons)});
     tabs.open(`${surveyUrl}?${params}`);
   }
 
