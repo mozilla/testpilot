@@ -5,7 +5,7 @@ May 3, 2016
     “Test Pilot” is Mozilla’s platform to share the next generation of Firefox features (“Test Pilot Experiments”) with volunteers interested in testing, providing feedback, and possibly contributing to code.  Please read this entire document (“Terms”) carefully because it explains your rights and responsibilities when you use Test Pilot or any individual Test Pilot Experiment. By accessing the Test Pilot website, the Test Pilot Add-On, or any Test Pilot Experiment, you agree to be bound by these Terms.
 
 0. ## Account
-    You'll need to have a Firefox Account to participate in Test Pilot. If you sign up for a Firefox Account, you agree to its Terms of Service and Privacy Notice.
+    You'll need to have a Firefox Account to participate in Test Pilot. If you sign up for a Firefox Account, you agree to its [Terms of Service](https://www.mozilla.org/en-US/about/legal/terms/services) and [Privacy Notice](https://www.mozilla.org/privacy/firefox-cloud).
 
 0. ## Features & Feedback
     To participate, you’ll be asked to install an Add-On (“Test Pilot Add-on”).  An icon will then be added to your Firefox toolbar so you can easily access the Test Pilot site.  From this site, you can learn more about available and upcoming Test Pilot Experiments.  Once you start a Test Pilot Experiment it will display as “active” until (a) the Test Pilot Experiment automatically ends or (b) you choose to end the Test Pilot Experiment by selecting “stop”.
@@ -15,7 +15,7 @@ May 3, 2016
     Any feedback you share with us will only be made publicly accessible in an aggregated format without identifying you.
 
 0. ## Privacy
-    The Test Pilot Privacy Notice describes, generally, what data we receive from your participation in any Test Pilot Experiment. We use the information we receive through Test Pilot as described in our Mozilla Privacy Policy.
+    [The Test Pilot Privacy Notice](https://testpilot.firefox.com/privacy) describes, generally, what data we receive from your participation in any Test Pilot Experiment. We use the information we receive through Test Pilot as described in our [Mozilla Privacy Policy](https://www.mozilla.org/privacy/).
 
 0. ## Termination
     These Terms will continue to apply until ended by either you or Mozilla. You can choose to end them at any time for any reason by deactivating your Test Pilot account and  discontinuing your use of Test Pilot and all Test Pilot Experiments. If at any time, you decide you no longer wish to participate in Test Pilot, you may deactivate your Test Pilot account by visiting https://testpilot.firefox.com, signing in using your Firefox Account, clicking the "Settings" button, and clicking "Leave Test Pilot".

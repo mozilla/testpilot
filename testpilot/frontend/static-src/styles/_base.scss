@@ -32,7 +32,10 @@ h2 {
   font-size: 3 * $font-unit;
   font-weight: 300;
   line-height: 3 * $line-unit;
-  text-shadow: 0 2px 0 $transparent-black-2;
+
+  .blue & {
+    text-shadow: 0 2px 0 $transparent-black-2;
+  }
 }
 
 h3 {

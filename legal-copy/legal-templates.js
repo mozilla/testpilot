@@ -15,7 +15,7 @@ module.exports.templateBegin = `
 
 </head>
 <body>
-  <div data-hook="page-container">
+  <div data-hook="page-container" class="legal-container">
     <div class="flat-blue">
       <div class="shifted-stars"></div>
       <header id="main-header" class="responsive-content-wrapper">

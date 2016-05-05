@@ -9,3 +9,9 @@
     text-decoration: underline;
   }
 }
+
+.legal-container h1 {
+  font-size: $font-unit * 3.5;
+  font-weight: 300;
+  margin-top: $grid-unit * 2;
+}
