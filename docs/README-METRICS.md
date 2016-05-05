@@ -118,11 +118,16 @@ local schema = {
 --   column name                   field type   length  attributes   field name
     {"timestamp",                  "TIMESTAMP", nil,    "SORTKEY",   "Timestamp"},
     {"uuid",                       "VARCHAR",   36,      nil,         get_uuid},
-    {"type",                       "VARCHAR",   255,     nil,         "type"},
-    {"logger",                     "VARCHAR",   255,     nil,         "logger"},
-    {"Hostname",                   "VARCHAR",   255,     nil,         "Hostname"},
-    {"Severity",                   "INTEGER",   nil,     nil,         "Severity"},
-    {"agent",                      "VARCHAR",   45,      nil,         "Fields[agent]"},
+    {"type",                       "VARCHAR",   255,     nil,         "Type"},
+    {"logger",                     "VARCHAR",   255,     nil,         "Logger"},
+    {"hostname",                   "VARCHAR",   255,     nil,         "Hostname"},
+    {"severity",                   "INTEGER",   nil,     nil,         "Severity"},
+
+    -- Parsed automatically from the `agent` field
+    {"user_agent_browser",         "VARCHAR",   255,     nil,         "Fields[user_agent_browser]"},
+    {"user_agent_os",              "VARCHAR",   255,     nil,         "Fields[user_agent_os]"},
+    {"user_agent_version",         "VARCHAR",   255,     nil,         "Fields[user_agent_version]"},
+    
     {"path",                       "VARCHAR",   56,      nil,         "Fields[path]"},
     {"method",                     "VARCHAR",   200,     nil,         "Fields[method]"},
     {"code",                       "VARCHAR",   255,     nil,         "Fields[code]"},
