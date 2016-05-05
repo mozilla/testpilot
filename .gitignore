@@ -12,6 +12,7 @@ MANIFEST
 node_modules/
 media/
 static/
+legal-copy/*html
 venv/
 testpilot/frontend/static/
 testpilot/frontend/static-src/vendor/
