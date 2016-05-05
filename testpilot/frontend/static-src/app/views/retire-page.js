@@ -19,7 +19,7 @@ export default PageView.extend({
               <p data-l10n-id="retirePageMessage">Hope you had fun experimenting with us. <br> Come back any time.</p>
             </div>
             <div class="modal-actions">
-              <a data-l10n-id="retirePageSurveyButton" data-hook="take-survey" href="external-survey.html" class="button default large">Take a quick survey</a>
+              <a data-l10n-id="retirePageSurveyButton" data-hook="take-survey" href="https://qsurvey.mozilla.com/s3/test-pilot" class="button default large">Take a quick survey</a>
               <a data-l10n-id="home" href="/" class="modal-escape">Home</a>
             </div>
           </div>
