@@ -15,6 +15,7 @@ from decouple import Csv, config
 from os.path import abspath
 from django.utils.functional import lazy
 from pathlib import Path
+from django_jinja.builtins import DEFAULT_EXTENSIONS as DJANGO_JINJA_DEFAULT_EXTENSIONS
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -80,6 +81,9 @@ INSTALLED_APPS = [
     'markupfield',
     'product_details',
     'hvad',
+    'waffle',
+    'constance.backends.database',
+    'constance',
 
     # FxA auth handling
     'allauth',
@@ -107,6 +111,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'waffle.middleware.WaffleMiddleware',
     'testpilot.base.middleware.RequestSummaryLogger',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -326,6 +331,9 @@ TEMPLATES = [
             'match_regex': r'^(?!(admin|registration|rest_framework)/.*)',
             'match_extension': '.html',
             'newstyle_gettext': True,
+            'extensions': DJANGO_JINJA_DEFAULT_EXTENSIONS + [
+                'waffle.jinja.WaffleExtension',
+            ],
             'context_processors': [
                 'testpilot.base.context_processors.settings',
                 'testpilot.base.context_processors.i18n',
@@ -453,4 +461,8 @@ LOGGING = {
             'handlers': ['console'],
         },
     }
+}
+
+CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
+CONSTANCE_CONFIG = {
 }
