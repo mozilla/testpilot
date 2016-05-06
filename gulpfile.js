@@ -62,7 +62,7 @@ gulp.task('clean', function cleanTask() {
 const legalTemplates = require('./legal-copy/legal-templates');
 
 function convertToLegalPage() {
-  return through.obj(function(file, encoding, callback) {
+  return through.obj(function legalConvert(file, encoding, callback) {
     file.contents = new Buffer(`${legalTemplates.templateBegin}
                                 ${md.render(file.contents.toString())}
                                 ${legalTemplates.templateEnd}`);

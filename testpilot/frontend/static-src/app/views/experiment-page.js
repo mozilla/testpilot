@@ -152,6 +152,12 @@ export default PageView.extend({
       type: 'attribute',
       name: 'src',
       hook: 'thumbnail'
+    },
+
+    'model.survey_url': {
+      type: 'attribute',
+      name: 'href',
+      hook: 'feedback'
     }
   },
 
@@ -169,6 +175,10 @@ export default PageView.extend({
 
     this.pageTitle = 'Test Pilot - ' + this.model.title;
     this.pageTitleL10nID = 'pageTitleExperiment';
+
+    const queryParams = querystring.stringify({ref: 'givefeedback', experiment: this.model.title});
+    const completeSurveyURL = `${this.model.survey_url}?${queryParams}`;
+    this.model.set('survey_url', completeSurveyURL);
   },
 
   render() {
@@ -301,17 +311,12 @@ export default PageView.extend({
     this.didScroll = false;
   },
 
-  feedback(evt) {
-    evt.preventDefault();
-
-    const queryParams = querystring.stringify({ref: 'givefeedback', experiment: this.model.title});
-
+  feedback() {
+    // Survey link is opened via href link in the template
     app.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
-      eventLabel: 'Give Feedback',
-      newTab: true,
-      outboundURL: `${this.model.survey_url}?${queryParams}`
+      eventLabel: 'Give Feedback'
     });
   }
 });
