@@ -90,25 +90,19 @@ export default BaseView.extend({
     }), 'body');
   },
 
-  wiki(ev) {
-    ev.preventDefault();
+  wiki() {
     app.sendToGA('event', {
       eventCategory: 'Menu Interactions',
       eventAction: 'drop-down menu',
-      eventLabel: 'wiki',
-      newTab: true,
-      outboundURL: ev.target.getAttribute('href')
+      eventLabel: 'wiki'
     });
   },
 
-  fileIssue(ev) {
-    ev.preventDefault();
+  fileIssue() {
     app.sendToGA('event', {
       eventCategory: 'Menu Interactions',
       eventAction: 'drop-down menu',
-      eventLabel: 'file issue',
-      newTab: true,
-      outboundURL: ev.target.getAttribute('href')
+      eventLabel: 'file issue'
     });
   }
 });

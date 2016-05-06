@@ -65,11 +65,7 @@ app.extend({
   sendToGA(type, data) {
     const hitCallback = () => {
       if (data.outboundURL) {
-        if (data.newTab) {
-          window.open(data.outboundURL, '_blank').focus();
-        } else {
-          document.location = data.outboundURL;
-        }
+        document.location = data.outboundURL;
       }
     };
     if (window.ga && ga.loaded) {
