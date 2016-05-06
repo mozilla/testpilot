@@ -5,7 +5,7 @@ Mozilla cares about your Privacy.  The [Mozilla Privacy Policy](https://www.mozi
 
 ## Things you should know
 
-Firefox sends Mozilla data when Test Pilot is installed; and also if a Test Pilot Experiment is enabled.  This includes data on Firefox and user interactions with Firefox.  We use this data to build better Firefox features. <a>Learn More.</a>
+Firefox sends Mozilla data when Test Pilot is installed; and also if a Test Pilot Experiment is enabled.  This includes data on Firefox and user interactions with Firefox.  We use this data to build better Firefox features.
 
 - **General Data Collection:** Firefox starts sending Mozilla data once the Test Pilot Add-On is installed.  In addition, Mozilla receives data from enabled Test Pilot Experiments.  Before enabling a Test Pilot Experiment, you can review the specific data collection by checking the “Your Privacy” section of the Experiment’s information page.
 
@@ -17,13 +17,13 @@ Firefox sends Mozilla data when Test Pilot is installed; and also if a Test Pilo
 
 - **Choice, Control, Minimization:**  We try to balance your privacy with our need for data to improve Firefox.  Test Pilot, and each Test Pilot Experiment, are optional.  We minimize data collection to only what is needed.  We also try to separate personal information (such as your Firefox Account email) from browser, usage, and referral data; this allows us to better understand user engagement without identifying your behavior specifically.
 
-We connect with Test Pilot participants using email, Firefox, and on the Test Pilot website.  To better understand user engagement with Test Pilot, we also use cookies, analytics, and non-Mozilla services.  <a>Learn More.</a>
+We connect with Test Pilot participants using email, Firefox, and on the Test Pilot website.  To better understand user engagement with Test Pilot, we also use cookies, analytics, and non-Mozilla services.
 
 - **Server Logs:** Your interaction with the Test Pilot website, including the installation of the Test Pilot Add-On and any Experiments, is collected as part of a standard server log. This server log data will be associated with your IP address and Firefox Account ID, and will be routinely destroyed in accordance with our Privacy Policies.
 
 - **Communications:** When Test Pilot is enabled, we use your Firefox Account email address or Firefox, to obtain feedback and notify you of new Test Pilot Experiments.  If you disable a specific Test Pilot Experiment, we may contact you to learn more about your experience.  You can opt-out from email communications using the “unsubscribe” link or by uninstalling the Test Pilot Add-On.
 
-- **Cookies and Analytics:** We use cookies, clear GIFs, and analytics in our communications and on our webpages.  For example, cookies are used to remember your Firefox Account information and analytics are used to measure engagement with our emails and webpages. Learn more about our privacy practices in connection with websites, communications, and cookies [here](https://www.mozilla.org/en-US/privacy/websites/).
+- **Cookies and Analytics:** We use cookies, clear GIFs, and analytics in our communications and on our webpages.  For example, cookies are used to remember your Firefox Account information and analytics are used to measure engagement with our emails and webpages. Learn more about our privacy practices in connection with websites, communications, and cookies [here](https://www.mozilla.org/privacy/websites/).
 
 - **Referral Data:** We collect information about the source that referred you to Test Pilot (e.g., Firefox snippet, email, webpage link, etc.).
 
