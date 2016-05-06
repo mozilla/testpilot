@@ -41,9 +41,9 @@ function destroy() {
 }
 
 function getRandomExperiment() {
-  const keys = Object.keys(store.installedAddons);
-  const randomIndex = Math.floor(Math.random() * keys.length);
-  return store.installedAddons[keys[randomIndex]];
+  const installedKeys = Object.keys(store.installedAddons);
+  const randomIndex = Math.floor(Math.random() * installedKeys.length);
+  return store.installedAddons[installedKeys[randomIndex]];
 }
 
 function showRandomSurvey(experiment) {
