@@ -1,12 +1,16 @@
 {% extends "testpilot/base.html" %}
 
+{% block head %}
+    {{ super() }}
+    <meta http-equiv="refresh" content="1;URL=/">
+{% endblock %}
+
 {% block page_title %}{{ _('Social Network Login Failure') }}{% endblock %}
 
 {% block content %}
-<h1>{{ _('Social Network Login Failure') }}</h1>
-
-<p>{% trans %}
-An error occurred while attempting to login via your social network account.
-Please try again later.
-{% endtrans %}</p>
+    <h1>{{ _('Social Network Login Failure') }}</h1>
+    <p>{% trans %}
+        An error occurred while attempting to login via your social network account.
+    {% endtrans %}</p>
+    <p><a href="/">{% trans %}Return to the home page{% endtrans %}</a></p>
 {% endblock %}

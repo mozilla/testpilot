@@ -141,7 +141,10 @@ SOCIALACCOUNT_PROVIDERS = {
         PROFILE_URL=config(
             'FXA_PROFILE_URL',
             default='https://profile.accounts.firefox.com/v1/profile'),
-        SCOPE=["profile"]
+        SCOPE=["profile"],
+        AUTH_PARAMS={
+            "verification_redirect": "always"
+        }
     )
 }
 
