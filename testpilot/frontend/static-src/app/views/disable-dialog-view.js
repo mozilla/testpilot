@@ -15,11 +15,10 @@ export default BaseView.extend({
             Your participation in Firefox Test Pilot means a lot!
             Please check out our other experiments, and stay tuned for more to come!
           </p>
-
-          <div class="modal-actions">
-            <a data-l10n-id="feedbackSubmitButton" data-hook="submit-feedback" href="{{surveyUrl}}" target="_blank" class="submit button default large quit">Take a quick survey</a>
-            <a data-l10n-id="feedbackCancelButton" class="cancel" href="">Close</a>
-          </div>
+        </div>
+        <div class="modal-actions">
+          <a data-l10n-id="feedbackSubmitButton" data-hook="submit-feedback" href="{{surveyUrl}}" target="_blank" class="submit button default large quit">Take a quick survey</a>
+          <a data-l10n-id="feedbackCancelButton" class="cancel" href="">Close</a>
         </div>
       </div>
     </div>
