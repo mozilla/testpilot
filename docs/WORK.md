@@ -27,6 +27,12 @@ This label is applied when all UX (`needs UX`), product and other discussions (`
 
 This is linked to the `Ready` column on our waffle board.
 
+- `status:planned`
+
+This label is applied to work we have identified in our planning meeting as targeting our current milestone.
+
+This is linked to the `Current Milestone` column on our waffle board.
+
 - `status:in progress`
 
 This label is applied when the assignee begins *active development or design* on the issue.
@@ -34,8 +40,8 @@ This label is applied when the assignee begins *active development or design* on
 This is linked to the `In Progress` column on our waffle board.
 
 Other notes:
-- An issue should never be both `status:ready` and `status:in progress`.
-- Everything packed in the current milestone should have either `status:ready` or `status:in progress` labels.
+- An issue only have a single `status:*` label.
+- Everything packed in the current milestone should have the `status:planned` label.
 
 # Assignees
 
