@@ -1,6 +1,7 @@
 .button {
   border: 1px solid transparent;
   border-radius: 3px;
+  cursor: pointer;
   display: inline-block;
   font-weight: 400;
   height: $grid-unit * 2;
