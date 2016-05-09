@@ -3,8 +3,8 @@
   border-radius: 3px;
   display: inline-block;
   font-weight: 400;
-  height: 34px;
-  line-height: 34px;
+  height: $grid-unit * 2;
+  line-height: $grid-unit * 2;
   outline: none;
   padding: 0 10px;
   position: relative;
