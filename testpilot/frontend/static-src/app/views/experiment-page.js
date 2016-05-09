@@ -152,12 +152,6 @@ export default PageView.extend({
       type: 'attribute',
       name: 'src',
       hook: 'thumbnail'
-    },
-
-    'model.survey_url': {
-      type: 'attribute',
-      name: 'href',
-      hook: 'feedback'
     }
   },
 
@@ -273,7 +267,10 @@ export default PageView.extend({
       eventLabel: 'Disable Experiment'
     });
 
-    const queryParams = querystring.stringify({ref: 'disable', experiment: this.model.title});
+    const installed = Object.keys(app.me.installed);
+    const queryParams = querystring.stringify({ref: 'disable',
+                                               experiment: this.model.title,
+                                               installed: installed});
 
     this.uninstall(evt);
 
@@ -311,12 +308,18 @@ export default PageView.extend({
     this.didScroll = false;
   },
 
-  feedback() {
-    // Survey link is opened via href link in the template
+  feedback(evt) {
+    evt.preventDefault();
+    const installed = Object.keys(app.me.installed);
+    const queryParams = querystring.stringify({ref: 'givefeedback',
+                                               experiment: this.model.title,
+                                               installed: installed});
+
     app.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
-      eventLabel: 'Give Feedback'
+      eventLabel: 'Give Feedback',
+      outboundURL: `${this.model.survey_url}?${queryParams}`
     });
   }
 });
