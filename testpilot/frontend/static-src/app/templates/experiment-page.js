@@ -30,17 +30,7 @@ export default `
                   <span data-l10n-id="userCountContainer">There are <span data-l10n-id="userCount" class="bold" data-hook="install-count"></span>
                   people trying <span data-hook="title"></span> right now!</span>
                 </section>
-                <section class="contributors-section">
-                  <h3 data-l10n-id="contributorsHeading">Brought to you by</h3>
-                  <ul class="contributors"></ul>
-                </section>
-                <section data-hook="measurements-container" class="measurements">
-                  <h3 data-l10n-id="measurements">Your privacy</h3>
-                  <div data-hook="measurements-html" class="measurement"></div>
-                  <a class="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-hook="privacy-notice-url">You can learn more about the data collection for <span data-hook="title"></span> here.</a>
-                </section>
                 <section>
-                  <h3 data-l10n-id="detailsHeading">Details</h3>
                   <table class="stats">
                     <tr data-hook="version-container">
                       <td data-l10n-id="version">Version</td>
@@ -58,6 +48,15 @@ export default `
                       <td><a data-hook="contribute-url"></a></td>
                     </tr>
                   </table>
+                </section>
+                <section class="contributors-section">
+                  <h3 data-l10n-id="contributorsHeading">Brought to you by</h3>
+                  <ul class="contributors"></ul>
+                </section>
+                <section data-hook="measurements-container" class="measurements">
+                  <h3 data-l10n-id="measurements">Your privacy</h3>
+                  <div data-hook="measurements-html" class="measurement"></div>
+                  <a class="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-hook="privacy-notice-url">You can learn more about the data collection for <span data-hook="title"></span> here.</a>
                 </section>
               </div>
             </div>
