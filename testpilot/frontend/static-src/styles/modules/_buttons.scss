@@ -99,9 +99,10 @@
     @include respond-to('not-small') {
       font-size: $font-unit * 2;
       height: $grid-unit * 3;
+      line-height: $grid-unit * 3;
       padding: 0 $grid-unit * 1.5;
     }
-    
+
     box-shadow: 0 2px 0 0 $transparent-black-2;
   }
 
