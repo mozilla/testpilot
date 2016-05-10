@@ -16,9 +16,11 @@ const test = around(tape)
           id: 'gary@busey.net'
         }
       });
+      app.sendToGA = () => {};
 
       app.webChannel = webChannel;
       app.experiments = new Experiments([{
+        title: 'SLSK',
         slug: 'slsk',
         addon_id: 'slsk@goog1e.net',
         xpi_url: 'http://goog1e.net/cybernetix.xpi',
@@ -114,4 +116,29 @@ test('updateAddon tests', t => {
   });
 
   myView.updateAddon(true, myModel);
+});
+
+// Issue #748
+test('feedback button uses the expected survey URL', t => {
+  t.plan(1);
+
+  const myView = new MyView({headerScroll: false, slug: 'slsk'});
+
+  const myModel = app.experiments.models[0];
+  myModel.survey_url = 'https://qsurvey.mozilla.com/s3/slsk';
+
+  const expectedURL = myModel.survey_url +
+    '?ref=givefeedback' +
+    '&experiment=SLSK' +
+    '&installed=slsk%40google.net' +
+    '&installed=wheee%40mozilla.org';
+
+  app.me.installed = {
+    'slsk@google.net': {},
+    'wheee@mozilla.org': {}
+  };
+
+  myView.render();
+
+  t.ok(myView.query('[data-hook=feedback]').href === expectedURL);
 });

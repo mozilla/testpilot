@@ -1,7 +1,6 @@
 import app from 'ampersand-app';
 import Model from 'ampersand-model';
 import Collection from 'ampersand-collection';
-import querystring from 'querystring';
 
 import PageView from './page-view';
 import DetailView from './detail-view';
@@ -152,6 +151,13 @@ export default PageView.extend({
       type: 'attribute',
       name: 'src',
       hook: 'thumbnail'
+    },
+
+    'model.survey_url': {
+      hook: 'feedback',
+      type: function feedbackSurveyUrl(el) {
+        el.href = this.model.buildSurveyURL('givefeedback');
+      }
     }
   },
 
@@ -169,10 +175,6 @@ export default PageView.extend({
 
     this.pageTitle = 'Test Pilot - ' + this.model.title;
     this.pageTitleL10nID = 'pageTitleExperiment';
-
-    const queryParams = querystring.stringify({ref: 'givefeedback', experiment: this.model.title});
-    const completeSurveyURL = `${this.model.survey_url}?${queryParams}`;
-    this.model.set('survey_url', completeSurveyURL);
   },
 
   render() {
@@ -267,18 +269,13 @@ export default PageView.extend({
       eventLabel: 'Disable Experiment'
     });
 
-    const installed = Object.keys(app.me.installed);
-    const queryParams = querystring.stringify({ref: 'disable',
-                                               experiment: this.model.title,
-                                               installed: installed});
-
     this.uninstall(evt);
 
     this.renderSubview(new DisableDialogView({
       id: 'disabled-feedback',
       experiment: this.model.url,
       title: 'feedbackUninstallTitle',
-      surveyUrl: `${this.model.survey_url}?${queryParams}`
+      surveyUrl: this.model.buildSurveyURL('disable')
     }), 'body');
   },
 
@@ -308,18 +305,12 @@ export default PageView.extend({
     this.didScroll = false;
   },
 
-  feedback(evt) {
-    evt.preventDefault();
-    const installed = Object.keys(app.me.installed);
-    const queryParams = querystring.stringify({ref: 'givefeedback',
-                                               experiment: this.model.title,
-                                               installed: installed});
-
+  feedback() {
+    // Survey link is opened via href link in the template
     app.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
-      eventLabel: 'Give Feedback',
-      outboundURL: `${this.model.survey_url}?${queryParams}`
+      eventLabel: 'Give Feedback'
     });
   }
 });

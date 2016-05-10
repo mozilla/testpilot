@@ -1,6 +1,8 @@
 import app from 'ampersand-app';
 import Model from 'ampersand-model';
 
+import querystring from 'querystring';
+
 export default Model.extend({
   urlRoot: '/api/experiments',
   extraProperties: 'allow',
@@ -25,5 +27,15 @@ export default Model.extend({
         this.enabled = false;
       }
     });
+  },
+
+  buildSurveyURL(ref) {
+    const installed = Object.keys(app.me.installed);
+    const queryParams = querystring.stringify({
+      ref: ref,
+      experiment: this.title,
+      installed: installed
+    });
+    return `${this.survey_url}?${queryParams}`;
   }
 });
