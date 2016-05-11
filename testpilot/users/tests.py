@@ -1,6 +1,5 @@
 from unittest.mock import patch, Mock
 
-import requests
 from requests.exceptions import Timeout
 import json
 
@@ -12,11 +11,8 @@ from django.contrib.auth.models import User
 
 from rest_framework import fields
 
-from allauth.account.signals import user_signed_up
 from allauth.account.models import EmailAddress
-from allauth.socialaccount.signals import pre_social_login
-from allauth.socialaccount.models import (SocialLogin, SocialApp,
-                                          SocialAccount, SocialToken)
+from allauth.socialaccount.models import SocialAccount, SocialApp, SocialToken
 
 from .providers.fxa.provider import FirefoxAccountsProvider
 
@@ -24,7 +20,6 @@ from ..utils import gravatar_url
 from ..experiments.models import (Experiment, UserInstallation)
 
 from .models import UserProfile
-from .signals import is_vouched_on_mozillians_org
 
 import logging
 logger = logging.getLogger(__name__)
@@ -297,258 +292,6 @@ class MeViewSetTests(TestCase):
                 'modified': date_field.to_representation(installation.modified),
             }
         )
-
-
-class InviteOnlyModeTests(TestCase):
-
-    def setUp(self):
-        self.username = 'newuserdoe2'
-        self.password = 'trustno1'
-        self.email = '%s@example.com' % self.username
-
-        self.user = User.objects.create_user(
-            username=self.username,
-            email=self.email,
-            password=self.password)
-
-        UserProfile.objects.filter(user=self.user).delete()
-
-    @patch('testpilot.users.signals.is_vouched_on_mozillians_org')
-    @override_settings(ACCOUNT_INVITE_ONLY_MODE=True)
-    def test_invite_only_signup(self, mock_vouched):
-        """User.is_active should be False on signup with invite mode"""
-        mock_vouched.return_value = False
-        self.user.is_active = True
-        user_signed_up.send(sender=self.user.__class__,
-                            request=None,
-                            user=self.user)
-
-        self.assertEqual(False, self.user.is_active)
-
-        profile = UserProfile.objects.get_profile(self.user)
-        self.assertEqual(True, profile.invite_pending)
-
-    @patch('testpilot.users.signals.is_vouched_on_mozillians_org')
-    @override_settings(ACCOUNT_INVITE_ONLY_MODE=True,
-                       ACCOUNT_AUTOACTIVATION_DOMAINS=('mozilla.com', 'hy.fr'))
-    def test_invite_only_account_autoactivation_domains(self, mock_vouched):
-        """Users with valid email address domains should be auto-activated"""
-        mock_vouched.return_value = False
-        self.user.is_active = True
-
-        for email in ['someone@mozilla.com', 'someone@hy.fr']:
-
-            self.user.email = email
-
-            user_signed_up.send(sender=self.user.__class__,
-                                request=None,
-                                user=self.user)
-
-            self.assertEqual(True, self.user.is_active)
-
-            profile = UserProfile.objects.get_profile(self.user)
-            self.assertEqual(False, profile.invite_pending,
-                             'Invite not expected for {0}'.format(email))
-
-            mock_vouched.assert_not_called()
-            mock_vouched.reset_mock()
-
-        for email in ['someone@aol.com', 'someone@mozilla.com@aol.com']:
-
-            self.user.email = email
-
-            user_signed_up.send(sender=self.user.__class__,
-                                request=None,
-                                user=self.user)
-
-            self.assertEqual(False, self.user.is_active)
-
-            profile = UserProfile.objects.get_profile(self.user)
-            self.assertEqual(True, profile.invite_pending,
-                             'Invite expected for {0}'.format(email))
-
-            mock_vouched.assert_called_once_with(self.user)
-            mock_vouched.reset_mock()
-
-    @patch('testpilot.users.signals.is_vouched_on_mozillians_org')
-    @override_settings(ACCOUNT_INVITE_ONLY_MODE=True)
-    def test_invite_only_mozillians_autoactivation(self, mock_vouched):
-        """Users vouched on mozillians.org should be auto-activated"""
-        mock_vouched.return_value = True
-        self.user.is_active = True
-        self.user.email = 'job@bluth.com'
-
-        user_signed_up.send(sender=self.user.__class__,
-                            request=None,
-                            user=self.user)
-
-        self.assertEqual(True, self.user.is_active)
-
-        profile = UserProfile.objects.get_profile(self.user)
-        self.assertEqual(False, profile.invite_pending)
-
-    @patch('testpilot.users.signals.is_vouched_on_mozillians_org')
-    @override_settings(ACCOUNT_INVITE_ONLY_MODE=False)
-    def test_open_signup(self, mock_vouched):
-        """User.is_active should be True on signup without invite mode"""
-        self.user.is_active = True
-        user_signed_up.send(sender=self.user.__class__,
-                            request=None,
-                            user=self.user)
-        self.assertEqual(True, self.user.is_active)
-
-        profile = UserProfile.objects.get_profile(self.user)
-        self.assertEqual(False, profile.invite_pending)
-
-        mock_vouched.assert_not_called()
-
-    @patch('requests.get')
-    @override_settings(MOZILLIANS_API_KEY='8675309',
-                       MOZILLIANS_API_BASE_URL='https://example.com')
-    def test_is_vouched_on_mozillians_org_exception(self, mock_requests_get):
-        """Check for vouched Mozillian membership should yield False on HTTP error"""
-        email = 'bob@loblaw.com'
-        mock_requests_get.side_effect = requests.exceptions.RequestException()
-        result_vouched = is_vouched_on_mozillians_org(User(email=email))
-        self.assertEqual(False, result_vouched)
-
-    def test_is_vouched_on_mozillians_org(self):
-        """Check for vouched Mozillian membership should use the API"""
-        for (email, expected_vouched) in (('user1@exmaple.com', False),
-                                          ('user2@example.com', True)):
-            self._assert_is_vouched_on_mozillians(
-                expected_vouched,
-                email,
-                {
-                    'count': 1,
-                    'next': None,
-                    'previous': None,
-                    'results': [
-                        {
-                            '_url': 'https://mozillians.org/api/v2/users/12345/',
-                            'is_vouched': expected_vouched,
-                            'username': 'user'
-                        }
-                    ]
-                }
-            )
-
-    def test_is_vouched_on_mozillians_org_unknown_user(self):
-        """Check for vouched Mozillian membership should properly handle unknown user"""
-        self._assert_is_vouched_on_mozillians(
-            False,
-            'user3@example.com',
-            {'count': 0, 'next': None, 'previous': None, 'results': []}
-        )
-
-    @patch('requests.get')
-    @override_settings(MOZILLIANS_API_KEY='8675309',
-                       MOZILLIANS_API_BASE_URL='https://example.com')
-    def _assert_is_vouched_on_mozillians(self, expected_vouched, email,
-                                         mock_api_data, mock_requests_get):
-
-        expected_api_url = '%(base_url)s/users/?api-key=%(api_key)s&email=%(email)s' % dict(
-            base_url='https://example.com',
-            api_key='8675309',
-            email=email
-        )
-
-        mock_json = Mock(return_value={
-            'count': 1,
-            'next': None,
-            'previous': None,
-            'results': [
-                {
-                    '_url': 'https://mozillians.org/api/v2/users/12345/',
-                    'is_vouched': expected_vouched,
-                    'username': 'user'
-                }
-            ]
-        })
-
-        mock_response = Mock()
-        mock_response.json = mock_json
-
-        mock_requests_get.return_value = mock_response
-
-        result_vouched = is_vouched_on_mozillians_org(User(email=email))
-        self.assertEqual(expected_vouched, result_vouched)
-
-        mock_json.assert_called_with()
-        mock_requests_get.assert_called_with(expected_api_url)
-
-    @patch('testpilot.users.signals.is_vouched_on_mozillians_org')
-    @override_settings(ACCOUNT_INVITE_ONLY_MODE=True)
-    def test_auto_activiate_if_qualified_after_signup(self, mock_vouched):
-        """Users qualified after sign-up should be auto-activated on sign-in"""
-        mock_vouched.return_value = False
-
-        sociallogin = SocialLogin(user=self.user)
-
-        self.user.is_active = True
-        user_signed_up.send(sender=self.user.__class__,
-                            request=None,
-                            user=self.user)
-
-        self.assertEqual(False, self.user.is_active)
-
-        pre_social_login.send(sender=SocialLogin,
-                              request=None,
-                              sociallogin=sociallogin)
-
-        self.assertEqual(False, self.user.is_active)
-
-        profile = UserProfile.objects.get_profile(self.user)
-        self.assertEqual(True, profile.invite_pending)
-
-        mock_vouched.return_value = True
-
-        pre_social_login.send(sender=SocialLogin,
-                              request=None,
-                              sociallogin=sociallogin)
-
-        self.assertEqual(True, self.user.is_active)
-
-        profile = UserProfile.objects.get_profile(self.user)
-        self.assertEqual(False, profile.invite_pending)
-
-    @patch('testpilot.users.signals.is_vouched_on_mozillians_org')
-    def test_auto_activate_after_settings_change(self, mock_vouched):
-        """Pending invitations should be auto-activated on sign-in after invite mode turned off"""
-        mock_vouched.return_value = False
-        sociallogin = SocialLogin(user=self.user)
-
-        with self.settings(ACCOUNT_INVITE_ONLY_MODE=True):
-
-            self.user.is_active = True
-            user_signed_up.send(sender=self.user.__class__,
-                                request=None,
-                                user=self.user)
-
-            self.assertEqual(False, self.user.is_active)
-
-            profile = UserProfile.objects.get_profile(self.user)
-            self.assertEqual(True, profile.invite_pending)
-
-            pre_social_login.send(sender=SocialLogin,
-                                  request=None,
-                                  sociallogin=sociallogin)
-
-            self.assertEqual(False, self.user.is_active)
-
-            profile = UserProfile.objects.get_profile(self.user)
-            self.assertEqual(True, profile.invite_pending)
-
-        with self.settings(ACCOUNT_INVITE_ONLY_MODE=False):
-
-            pre_social_login.send(sender=SocialLogin,
-                                  request=None,
-                                  sociallogin=sociallogin)
-
-            self.assertEqual(True, self.user.is_active)
-
-            profile = UserProfile.objects.get_profile(self.user)
-            self.assertEqual(False, profile.invite_pending)
 
 
 class UserRetirementTests(TestCase):

@@ -166,17 +166,6 @@ SOCIALACCOUNT_EMAIL_VERIFICATION = False
 
 ACCOUNT_EMAIL_VERIFICATION = False
 
-ACCOUNT_INVITE_ONLY_MODE = config('ACCOUNT_INVITE_ONLY_MODE', default=True, cast=bool)
-
-ACCOUNT_AUTOACTIVATION_DOMAINS = config(
-    'ACCOUNT_AUTOACTIVATION_DOMAINS', default='mozilla.com',
-    cast=lambda domains: tuple('@{0}'.format(s.strip()) for s in domains.split(',')))
-
-
-MOZILLIANS_API_KEY = config('MOZILLIANS_API_KEY', default=None)
-
-MOZILLIANS_API_BASE_URL = config('MOZILLIANS_API_BASE_URL',
-                                 default='https://mozillians.org/api/v2')
 
 DATADOG_KEYS = {
     'api_key': config('DATADOG_API_KEY', default=None),
