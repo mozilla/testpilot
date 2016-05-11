@@ -1,7 +1,7 @@
 {
   "title": "Test Pilot",
   "name": "testpilot-addon",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "private": true,
   "description": "Test Pilot is a privacy-sensitive user research program focused on getting new features into Firefox faster.",
   "repository": "mozilla/testpilot",
