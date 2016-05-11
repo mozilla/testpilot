@@ -22,5 +22,6 @@ urlpatterns = patterns(
     url(r'^api/experiments/', include('testpilot.experiments.urls')),
     url(r'^api/', include(router.urls)),
     # Catch-all fallback to frontend client view
+    url(r'^', include('waffle.urls')),
     url(r'', include('testpilot.frontend.urls')),
 )

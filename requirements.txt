@@ -158,3 +158,12 @@ jsonschema==2.5.1
 
 # sha256: 2jgtD0CR_QWvc0NNXdXZA1hnZB5sUMcEtTLes4JAf-M
 django-colorfield==0.1.10
+
+# sha256: kUtLh0-mJQoIl7wwtn4CA02SpyNatyqRv22km3F1HeQ
+django-waffle==0.11
+
+# sha256: VIn-8WTeQ3JSQtVuZeAWE3098NGgBnK9py2Af1srDZk
+django-picklefield==0.3.2
+
+# sha256: jtumjPR776LS5tnrqY_3TcmIHghr_KwDN_6BmNXt_78
+django-constance==1.1.2
