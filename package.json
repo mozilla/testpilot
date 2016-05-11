@@ -63,7 +63,6 @@
     "tape-catch": "1.0.4",
     "tape-dom": "0.0.10",
     "testling": "^1.7.1",
-    "through2": "^2.0.0",
     "try-require": "1.2.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
