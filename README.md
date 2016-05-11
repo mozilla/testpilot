@@ -146,3 +146,5 @@ Make sure you clone the Test Pilot repo:
   * [`docs/WORK.md`](./docs/WORK.md) - information on how we create, triage and assign work.
 
   * [`docs/DEPLOYMENT.md`](./docs/DEPLOYMENT.md) - process for deploying Test Pilot to stage and production.
+
+  * [`docs/FAQs.md`](./docs/FAQs.md) - frequently asked questions.
