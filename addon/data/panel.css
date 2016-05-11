@@ -169,13 +169,11 @@ a {
 }
 
 .installed-message p {
-    font-size: 1.2rem;
+    font-size: 16px;
+    line-height: 26px;
     margin-bottom: 0;
 }
 
-.installed-message .button {
-    font-size: 16px;
-}
 
 .copter-wrapper {
     margin: 10px auto -10px;
@@ -183,10 +181,10 @@ a {
 
 .copter {
     background-image: url("copter.png");
-    background-size: 172px 139px;
-    height: 139px;
+    background-size: 164px 133px;
+    height: 133px;
     position: relative;
-    width: 172px;
+    width: 164px;
 }
 
 @media (min--moz-device-pixel-ratio: 1.3),
