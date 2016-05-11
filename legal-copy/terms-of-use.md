@@ -5,7 +5,7 @@ May 3, 2016
     “Test Pilot” is Mozilla’s platform to share the next generation of Firefox features (“Test Pilot Experiments”) with volunteers interested in testing, providing feedback, and possibly contributing to code.  Please read this entire document (“Terms”) carefully because it explains your rights and responsibilities when you use Test Pilot or any individual Test Pilot Experiment. By accessing the Test Pilot website, the Test Pilot Add-On, or any Test Pilot Experiment, you agree to be bound by these Terms.
 
 0. ## Account
-    You'll need to have a Firefox Account to participate in Test Pilot. If you sign up for a Firefox Account, you agree to its [Terms of Service](https://www.mozilla.org/en-US/about/legal/terms/services) and [Privacy Notice](https://www.mozilla.org/privacy/firefox-cloud).
+    You'll need to have a Firefox Account to participate in Test Pilot. If you sign up for a Firefox Account, you agree to its [Terms of Service](https://www.mozilla.org/about/legal/terms/services) and [Privacy Notice](https://www.mozilla.org/privacy/firefox-cloud).
 
 0. ## Features & Feedback
     To participate, you’ll be asked to install an Add-On (“Test Pilot Add-on”).  An icon will then be added to your Firefox toolbar so you can easily access the Test Pilot site.  From this site, you can learn more about available and upcoming Test Pilot Experiments.  Once you start a Test Pilot Experiment it will display as “active” until (a) the Test Pilot Experiment automatically ends or (b) you choose to end the Test Pilot Experiment by selecting “stop”.
