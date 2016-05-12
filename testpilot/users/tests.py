@@ -267,7 +267,7 @@ class MeViewSetTests(TestCase):
                     'username': 'johndoe'
                 },
                 'addon': self.addonData,
-                'installed': []
+                'installed': {}
             }
         )
 
@@ -285,17 +285,19 @@ class MeViewSetTests(TestCase):
 
         self.assertEqual(len(result_data['installed']), 1)
         self.assertDictEqual(
-            result_data['installed'][0],
+            result_data['installed'],
             {
-                'experiment': 'http://testserver/api/experiments/%s' % experiment.pk,
-                'addon_id': 'addon-1@example.com',
-                'client_id': client_id,
-                'features': {},
-                'url':
+                'addon-1@example.com': {
+                    'experiment': 'http://testserver/api/experiments/%s' % experiment.pk,
+                    'addon_id': 'addon-1@example.com',
+                    'client_id': client_id,
+                    'features': {},
+                    'url':
                     'http://testserver/api/experiments/%s/installations/%s' %
                     (experiment.pk, client_id),
-                'created': date_field.to_representation(installation.created),
-                'modified': date_field.to_representation(installation.modified),
+                    'created': date_field.to_representation(installation.created),
+                    'modified': date_field.to_representation(installation.modified),
+                }
             }
         )
 

@@ -308,7 +308,7 @@ class FeaturesBasicTests(BaseTestCase):
     def test_me_list(self):
         """/api/me installation listing should include feature flags"""
         result = self.jsonGet('me-list')
-        self.assertEqual(result['installed'][0]['features'], {
+        self.assertEqual(list(result['installed'].values())[0]['features'], {
             self.feature1_title: True,
             self.feature2_title: True
         })
