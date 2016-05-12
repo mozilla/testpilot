@@ -192,7 +192,8 @@
     "created": "2015-12-09T15:45:42.395Z",
     "slug": "universal-search",
     "xpi_url": "https://s3-us-west-2.amazonaws.com/universal-search/universal-search.xpi",
-    "contribute_url": "https://github.com/mozilla/universal-search/blob/master/README.md"
+    "contribute_url": "https://github.com/mozilla/universal-search/blob/master/README.md",
+    "bug_report_url": "https://github.com/mozilla/universal-search/issues"
   }
 },
 {
@@ -209,7 +210,8 @@
     "created": "2015-12-09T15:47:56.050Z",
     "slug": "mozvr",
     "xpi_url": "http://example.com",
-    "contribute_url": ""
+    "contribute_url": "https://github.com/bwinton/VerticalTabs",
+    "bug_report_url": "https://github.com/bwinton/VerticalTabs/issues"
   }
 },
 {
@@ -226,7 +228,8 @@
     "created": "2015-12-10T20:11:55.207Z",
     "slug": "activity-stream",
     "xpi_url": "http://example.com",
-    "contribute_url": ""
+    "contribute_url": "https://github.com/mozilla/activity-stream",
+    "bug_report_url": "https://github.com/mozilla/activity-stream/issues"
   }
 },
 {

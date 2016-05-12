@@ -106,6 +106,15 @@ export default PageView.extend({
       hook: 'contribute-url'
     }],
 
+    'model.bug_report_url': [{
+      hook: 'bug-report-url'
+    },
+    {
+      type: 'attribute',
+      name: 'href',
+      hook: 'bug-report-url'
+    }],
+
     'model.introduction': [{
       type: 'innerHTML',
       hook: 'introduction-html'
