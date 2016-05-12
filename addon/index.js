@@ -27,6 +27,7 @@ const tabs = require('sdk/tabs');
 const {ToggleButton} = require('sdk/ui/button/toggle');
 const request = require('sdk/request').Request;
 const simplePrefs = require('sdk/simple-prefs');
+const querystring = require('sdk/querystring');
 const URL = require('sdk/url').URL;
 const history = require('sdk/places/history');
 
@@ -238,13 +239,24 @@ panel.port.on('link', url => {
   panel.hide();
 });
 
+function getParams(title) {
+  return querystring.stringify({
+    utm_source: 'testpilot-addon',
+    utm_medium: 'firefox-browser',
+    utm_campaign: 'testpilot-doorhanger',
+    utm_content: title
+  });
+}
+
 function getExperimentList(availableExperiments, installedAddons) {
   return Mustache.render(templates.experimentList, {
     base_url: settings.BASE_URL,
+    view_all_params: getParams('view-all-experiments'),
     experiments: Object.keys(availableExperiments).map(k => {
       if (installedAddons[k]) {
         availableExperiments[k].active = installedAddons[k].active;
       }
+      availableExperiments[k].params = getParams(availableExperiments[k].title);
       return availableExperiments[k];
     })
   });

@@ -7,7 +7,7 @@
 module.exports.experimentList = `
 <div class="experiment-list">
   {{#experiments}}
-    <a class="experiment-item {{#active}}active{{/active}}" href="{{base_url}}/experiments/{{slug}}">
+    <a class="experiment-item {{#active}}active{{/active}}" href="{{base_url}}/experiments/{{slug}}?{{params}}">
       <div class="icon-wrapper"
            style="background-color:{{gradient_start}}; background-image: linear-gradient(300deg, {{gradient_start}}, {{gradient_stop}})">
         <div class="icon" style="background-image:url('{{thumbnail}}');"></div>
@@ -18,7 +18,7 @@ module.exports.experimentList = `
     </a>
   {{/experiments}}
 </div>
-<a class="view-all" href="{{base_url}}">View all experiments</a>`;
+<a class="view-all" href="{{base_url}}/experiments?{{view_all_params}}">View all experiments</a>`;
 
 module.exports.installed = `
 <div class="installed-message">
