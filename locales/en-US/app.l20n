@@ -86,6 +86,7 @@
 <changelog "changelog">
 <lastUpdate "Last Update">
 <contribute "Contribute">
+<bugReports "Bug Reports">
 <nowActive "Active">
 <userCount title:"Active Users of this Experiment">
 <tourOnboardingTitle "{{title}} enabled!">

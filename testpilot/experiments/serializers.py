@@ -50,8 +50,8 @@ class ExperimentSerializer(HyperlinkedTranslatableModelSerializer):
         fields = ('id', 'url', 'title', 'short_title', 'slug',
                   'thumbnail', 'description', 'introduction',
                   'version', 'changelog_url', 'contribute_url',
-                  'privacy_notice_url', 'measurements', 'xpi_url',
-                  'addon_id', 'gradient_start', 'gradient_stop',
+                  'bug_report_url', 'privacy_notice_url', 'measurements',
+                  'xpi_url', 'addon_id', 'gradient_start', 'gradient_stop',
                   'details', 'tour_steps', 'contributors',
                   'survey_url', 'installations_url',
                   'installation_count', 'created', 'modified', 'order',)

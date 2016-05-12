@@ -81,6 +81,7 @@ class ExperimentViewTests(BaseTestCase):
                         "version": experiment.version,
                         "changelog_url": experiment.changelog_url,
                         "contribute_url": experiment.contribute_url,
+                        "bug_report_url": experiment.bug_report_url,
                         "privacy_notice_url": experiment.privacy_notice_url,
                         "addon_id": experiment.addon_id,
                         "gradient_start": experiment.gradient_start,
