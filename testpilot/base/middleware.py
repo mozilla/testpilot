@@ -19,7 +19,7 @@ class RequestSummaryLogger(object):
 
     def _build_extra_meta(self, request):
         td = datetime.datetime.utcnow() - request._logging_start_dt
-        t = int(td.total_seconds() * 10**6)
+        t = int(td.total_seconds() * 1000)  # in ms
         return {
             "errno": 0,
             "agent": request.META.get('HTTP_USER_AGENT', ''),
