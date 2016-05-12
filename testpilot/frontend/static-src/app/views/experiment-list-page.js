@@ -16,7 +16,7 @@ export default PageView.extend({
       '[data-hook="experiment-list"]');
 
     app.sendToGA('pageview', {
-      'dimension1test': this.loggedIn
+      'dimension1': this.loggedIn
     });
   },
 
