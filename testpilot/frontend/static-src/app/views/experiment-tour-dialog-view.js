@@ -75,7 +75,7 @@ export default BaseView.extend({
   events: {
     'click button[data-hook=start-tour]': 'takeTour',
     'click [data-hook=cancel-modal]': 'cancel',
-    'click [data-hook=cancel-modal-done]': 'cancel',
+    'click [data-hook=cancel-modal-done]': 'complete',
     'click .tour-back': 'tourBack',
     'click .tour-next': 'tourNext'
   },
@@ -87,6 +87,16 @@ export default BaseView.extend({
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
       eventLabel: 'cancel tour'
+    });
+  },
+
+  complete() {
+    this.animateRemove();
+
+    app.sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'complete tour'
     });
   },
 
