@@ -13,6 +13,7 @@ export default BaseView.extend({
 
                <div class="settings-menu no-display">
                  <ul>
+                   <li class="user-name" data-hook='user-name'></li>
                    <li><a data-l10n-id="menuWiki" data-hook="wiki" href="https://wiki.mozilla.org/Test_Pilot" target="_blank">Test Pilot Wiki</a></li>
                    <li><a data-l10n-id="menuFileIssue" data-hook="issue" href="https://github.com/mozilla/testpilot/issues/new" target="_blank">File an Issue</a></li>
                    <li><a data-l10n-id="menuLogout" data-hook="logout">Logout</a></li>
@@ -28,6 +29,16 @@ export default BaseView.extend({
     'click [data-hook=issue]': 'fileIssue',
     'click [data-hook=retire]': 'retire',
     'click [data-hook=settings-button]': 'toggleSettings'
+  },
+
+  props: {
+    'userName': {
+      'type': 'string'
+    }
+  },
+
+  bindings: {
+    'userName': '[data-hook=user-name]'
   },
 
   afterRender() {

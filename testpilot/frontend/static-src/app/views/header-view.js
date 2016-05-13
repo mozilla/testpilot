@@ -7,13 +7,6 @@ import template from '../templates/header-view';
 export default BaseView.extend({
   template: template,
 
-  subviews: {
-    'settings-menu': {
-      hook: 'settings',
-      constructor: SettingsMenuView
-    }
-  },
-
   props: {
     title: {type: 'string', default: 'Firefox Test Pilot'},
     isInstalled: {type: 'boolean', default: false},
@@ -60,5 +53,11 @@ export default BaseView.extend({
     if (this.experiment) {
       this.isInstalled = !!this.experiment.isInstalled;
     }
+  },
+
+  afterRender() {
+    this.renderSubview(new SettingsMenuView({
+      userName: this.session
+    }), '[data-hook=install]');
   }
 });
