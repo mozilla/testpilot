@@ -51,18 +51,26 @@
   background: $white;
   border-radius: $small-border-radius;
   box-shadow: 1px 1px 3px 1px $transparent-black-2;
-  left: -$grid-unit * 5.7;
+  left: -$grid-unit * 6.7;
   position: absolute;
   top: $grid-unit * 2.25;
-  width: $grid-unit * 8;
+  width: $grid-unit * 9;
   z-index: 999;
+
+  .user-name {
+    color: $black;
+    font-size: $font-unit;
+    margin-bottom: $grid-unit * .25;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
   &:after {
     border-bottom: $grid-unit * .5 solid $white;
     border-left: ($grid-unit * .5) + 1 solid transparent;
     border-right: ($grid-unit * .5) + 1 solid transparent;
     content: '';
-    left: 126px;
+    left: 146px;
     position: absolute;
     top: -($grid-unit * .5);
   }
@@ -87,5 +95,9 @@
 
   li {
     list-style: none;
+  }
+
+  hr {
+    color: $transparent-black-2;
   }
 }
