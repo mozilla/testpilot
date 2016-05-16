@@ -180,32 +180,30 @@ function setupApp() {
         app.send('addon-self:install-panel-dismissed');
       });
 
-      installMsgPanel.port.on('link', (url) => {
-        let tabExists = false;
-
-        // reload the testpilot tab now that we are logged in with the
-        // addon installed
-        let tab;
-        for (tab of tabs) {
-          if (tab.url.includes(settings.BASE_URL)) {
-            tabExists = true;
-            tab.reload();
-          }
+      function destroyInstallPanel() {
+        if (installMsgPanel) {
+          installMsgPanel.destroy();
         }
+      }
 
-        // If we cannot find an open testpilot tab, just open one
-        if (!tabExists) tabs.open(url);
-        installMsgPanel.destroy();
-      });
+      // get the test pilot tab and listen for deactivate or
+      // close events, so we can hide the 'installed' panel.
+      // BUG(DJ): deactivate event won't fire first time through
+      // https://bugzilla.mozilla.org/show_bug.cgi?id=1230816
+      let tab;
+      for (tab of tabs) {
+        if (tab.url.includes(settings.BASE_URL)) {
+          tab.on('close', destroyInstallPanel);
+          tab.on('deactivate', destroyInstallPanel);
+        }
+      }
 
       installMsgPanel.show({width: PANEL_WIDTH,
                             height: INSTALLED_PANEL_HEIGHT,
                             position: button});
 
       // allow us to hide the panel from a landing page interaction
-      app.on('hide-installed-panel', () => {
-        installMsgPanel.destroy();
-      });
+      app.on('hide-installed-panel', destroyInstallPanel);
     });
 
     if (self.loadReason === 'install') {
