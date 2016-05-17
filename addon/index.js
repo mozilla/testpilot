@@ -24,7 +24,7 @@ const store = require('sdk/simple-storage').storage;
 const {Panel} = require('sdk/panel');
 const {PageMod} = require('sdk/page-mod');
 const tabs = require('sdk/tabs');
-const {ToggleButton} = require('sdk/ui/button/toggle');
+const {ActionButton} = require('sdk/ui/button/action');
 const request = require('sdk/request').Request;
 const simplePrefs = require('sdk/simple-prefs');
 const querystring = require('sdk/querystring');
@@ -216,6 +216,7 @@ function setupApp() {
   });
 }
 
+let collapsed = true; // collapsed state for panel
 const panel = Panel({ // eslint-disable-line new-cap
   contentURL: './base.html',
   contentScriptFile: './panel.js',
@@ -224,6 +225,7 @@ const panel = Panel({ // eslint-disable-line new-cap
   }
 });
 
+panel.on('hide', () => collapsed = true);
 panel.on('show', showExperimentList);
 panel.port.on('back', showExperimentList);
 
@@ -262,14 +264,14 @@ function getExperimentList(availableExperiments, installedAddons) {
 
 // update the our icon for devtools themes
 Prefs.observe('devtools.theme', pref => {
-  setToggleButton(pref === 'dark');
+  setActionButton(pref === 'dark');
 });
-setToggleButton(Prefs.get('devtools.theme') === 'dark');
+setActionButton(Prefs.get('devtools.theme') === 'dark');
 
-function setToggleButton(dark) {
+function setActionButton(dark) {
   const iconPrefix = dark ? './icon-inverted' : './icon';
 
-  button = ToggleButton({ // eslint-disable-line new-cap
+  button = ActionButton({ // eslint-disable-line new-cap
     id: 'testpilot-link',
     label: 'Test Pilot',
     icon: {
@@ -277,12 +279,15 @@ function setToggleButton(dark) {
       '32': iconPrefix + '-32.png',
       '64': iconPrefix + '-64.png'
     },
-    onChange: handleToolbarButtonChange
+    onClick: handleToolbarButtonClick
   });
 }
 
-function handleToolbarButtonChange(state) {
-  if (!state.checked) { return; }
+function handleToolbarButtonClick() {
+  collapsed = !collapsed;
+  if (panel) panel.hide();
+  if (collapsed) return;
+
   const experimentCount = ('availableExperiments' in store) ?
     Object.keys(store.availableExperiments).length : 0;
   panel.show({
