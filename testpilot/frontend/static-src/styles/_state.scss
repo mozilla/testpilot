@@ -10,13 +10,6 @@
   text-align: center;
 }
 
-.delayed-fade-in-up {
-  animation: fade-in-up 500ms forwards ease-out;
-  animation-delay: 400ms;
-  opacity: 0;
-  position: relative;
-}
-
 .delayed-fade-in {
   animation: fade-in 750ms forwards ease-out;
   animation-delay: 750ms;
@@ -25,8 +18,8 @@
 }
 
 .fly-down {
-  animation: fly-down 500ms forwards ease-out;
-  transform: translate(0, -130px);
+  animation: bounceInDown 1200ms forwards;
+  transform: translate3d(0, -1200px, 0);
 }
 
 .fly-up {
@@ -34,16 +27,12 @@
   transform: translate3d(3000px, 0, 0);
 }
 
-.quick-pop {
-  animation: pop 200ms;
+.fade-in-fly-up {
+  animation: fade-in-fly-up 500ms;
 }
 
 .modal-bounce-in {
-  animation: bounceInUp 750ms;
-}
-
-.fade-in-fly-up {
-  animation: fade-in-fly-up 500ms;
+  animation: bounceInUp 1000ms ease-out;
 }
 
 .highlight {
@@ -57,28 +46,6 @@
 
   100% {
     opacity: 1;
-  }
-}
-
-@keyframes fade-in-up {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 120px, 0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes fly-down {
-  0% {
-    transform: translate3d(0, -130px, 0);
-  }
-
-  100% {
-    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -102,7 +69,7 @@
   }
 
   50% {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
 
   100% {
@@ -118,17 +85,6 @@
 
   100% {
     background-position: 100px 50px;
-  }
-}
-
-// Used to hover the copter
-@keyframes hover {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(0, 10px, 0);
   }
 }
 
@@ -173,6 +129,46 @@
 
   90% {
     transform: translate3d(0, -5px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceInDown {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+  }
+
+  from {
+    opacity: 0;
+    transform: translate3d(0, -600px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 30px, 0);
+  }
+
+  70% {
+    transform: translate3d(0, -20px, 0);
+  }
+
+  80% {
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -5px, 0); 
+  }
+
+  95% {
+    transform: translate3d(0, 2px, 0);
   }
 
   to {

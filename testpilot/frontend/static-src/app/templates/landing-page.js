@@ -18,7 +18,7 @@ export default `
           <div class="copter-wrapper fly-up">
             <div class="copter"></div>
           </div>
-          <div class="intro-text delayed-fade-in-up">
+          <div class="intro-text">
             <h2 class="banner">
               <span data-l10n-id="landingIntroLead" class="block lead-in">Go beyond...</span>
               <span data-l10n-id="landingIntroOne" class="block">Test new features.</span>
@@ -27,7 +27,7 @@ export default `
             </h2>
           </div>
         </div>
-        <div class="centered-banner responsive-content-wrapper delayed-fade-in-up">
+        <div class="centered-banner responsive-content-wrapper">
           {{^isFirefox}}
             <span data-l10n-id="landingDownloadFirefoxDesc" class="parens">(Test Pilot is available for Firefox on Windows, OS X and Linux)</span>
             <a href="https://www.mozilla.org/en-US/firefox" class="button primary download-firefox">
@@ -44,7 +44,7 @@ export default `
           <button data-l10n-id="landingFxaGetStartedButton" class="button extra-large primary" data-hook="get-started-with-account">Get started with a Firefox Account</button>
           {{/isFirefox}}
         </div>
-        {{#isFirefox}}<p data-l10n-id="landingLegalNotice" class="legal-information delayed-fade-in-up">By proceeding, you agree to the <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Notice</a> of Test Pilot</p>{{/isFirefox}}
+        {{#isFirefox}}<p data-l10n-id="landingLegalNotice" class="legal-information">By proceeding, you agree to the <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Notice</a> of Test Pilot</p>{{/isFirefox}}
         <div class="transparent-container">
           <div class="responsive-content-wrapper delayed-fade-in">
               <h2 class="card-list-header" data-l10n-id="landingExperimentsTitle">Test these features and share your feedback</h2>
@@ -88,7 +88,7 @@ export default `
             <button data-l10n-id="landingFxaGetStartedButton" class="button extra-large primary" data-hook="get-started-with-account">Get started with a Firefox Account</button>
             {{/isFirefox}}
           </div>
-        {{#isFirefox}}<p data-l10n-id="landingLegalNotice" class="legal-information delayed-fade-in-up">By proceeding, you agree to the <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Notice</a> of Test Pilot</p>{{/isFirefox}}
+        {{#isFirefox}}<p data-l10n-id="landingLegalNotice" class="legal-information">By proceeding, you agree to the <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Notice</a> of Test Pilot</p>{{/isFirefox}}
         </div>
         <footer id="main-footer" class="responsive-content-wrapper">
           <div data-hook="footer-view"></div>

@@ -117,19 +117,6 @@
   }
 }
 
-.state-change-inner {
-  animation: barberpole 1000ms infinite linear;
-  background-image: linear-gradient(45deg, $transparent-white-1 25%, transparent 25%, transparent 50%, $transparent-white-1 50%, $transparent-white-1 75%, transparent 75%, transparent);
-  background-size: 50px 50px;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: opacity .1s ease;
-}
-
 .modal-form {
   @include flex-container(column, center, stretch);
   padding: $grid-unit 0;
@@ -211,6 +198,7 @@
 
   .tour-text {
     background: $transparent-black-05;
+    border-top: 1px solid $transparent-black-1;
     text-align: center;
     width: 100%;
 
@@ -236,16 +224,22 @@
   .tour-actions {
     @include flex-container(row, space-between, center);
     height: 92px;
-    opacity: .8;
     padding: 20px;
   }
 
   .tour-next,
-  .tour-back {
+  .tour-back { 
     cursor: pointer;
     height: 40px;
+    opacity: .7;
+    transform: opacity 150ms;
     width: 40px;
+
+    &:hover {
+      opacity: 1;
+    }
   }
+
 
   .tour-back {
     @include hidpi-background-image('back', 40px 40px);
