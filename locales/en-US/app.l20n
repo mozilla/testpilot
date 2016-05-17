@@ -95,3 +95,11 @@
 <tourDoneButton "Done">
 <userCountContainer "There are <span class=\"bold\">{{installation_count}}</span> people trying {{title}} right now!">
 <highlightPrivacy "Your privacy">
+
+/* TODO: these strings are not currently localized.
+   They are served by the python static dir
+   and will need python-l20n implementation for coverage */
+
+<noScriptHeading "Uh oh...">
+<noScriptMessage "Test Pilot requires JavaScript.<br>Sorry about that.">
+<noScriptLink "Find out why">
