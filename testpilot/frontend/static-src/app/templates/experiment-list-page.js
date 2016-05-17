@@ -4,7 +4,7 @@ export default `
         <div class="stars"></div>
         <header data-hook="header-view"></header>
         <div class="responsive-content-wrapper reverse-split-banner ">
-          <div class="copter-wrapper">
+          <div class="copter-wrapper fly-down">
             <div class="copter"></div>
           </div>
           <div class="intro-text">

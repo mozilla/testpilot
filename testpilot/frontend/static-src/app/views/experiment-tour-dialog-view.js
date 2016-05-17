@@ -10,7 +10,7 @@ export default BaseView.extend({
           <h3 class="title onboarding" data-l10n-id="tourOnboardingTitle">{{model.title}} enabled!</h3>
         </header>
         <div class="modal-content">
-          <div class="copter-wrapper fly-down">
+          <div class="copter-wrapper">
             <div class="copter"></div>
           </div>
         </div>

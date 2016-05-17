@@ -8,7 +8,7 @@ export default BaseView.extend({
       <div id="{{id}}-modal" class="modal feedback-modal modal-bounce-in">
         <h3 class="title" data-l10n-id="{{title}}"></h3>
         <div class="modal-content">
-          <div class="copter-wrapper fly-down">
+          <div class="copter-wrapper">
             <div class="copter"></div>
           </div>
           <p class="centered" data-l10n-id="feedbackUninstallCopy">
