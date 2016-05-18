@@ -430,7 +430,6 @@ LOGGING = {
         },
         'console': {
             'level': 'DEBUG',
-            'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
             'formatter': config('DJANGO_LOG_FORMAT', default='json')
         },
