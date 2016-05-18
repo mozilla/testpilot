@@ -63,6 +63,10 @@ def installation_detail(request, experiment_pk, client_id):
         installation, created = UserInstallation.objects.get_or_create(
             user=request.user, experiment=experiment, client_id=client_id)
         installation.save()
+        logging.getLogger('testpilot.test-install').info('', extra={
+            'uid': request.user.id,
+            'context': experiment.title
+        })
     else:
         installation = get_object_or_404(
             UserInstallation,

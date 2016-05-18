@@ -69,8 +69,6 @@ Events recorded in the logs will include:
 
 * request.summary (a generic event fired for each visit)
 * testpilot.newuser
-* testpilot.newfeedback
-* testpilot.main-install
 * testpilot.test-install
 
 Data recorded by the log files will include standard system logging (in the

@@ -7,6 +7,9 @@ from django.contrib.auth.models import User
 
 from rest_framework import fields
 
+from testfixtures import LogCapture
+
+from ..base.logging import JsonLogFormatter
 from ..utils import gravatar_url, TestCase
 from ..users.models import UserProfile
 from .models import (Experiment, ExperimentTourStep, UserInstallation,
@@ -22,6 +25,8 @@ class BaseTestCase(TestCase):
 
     def setUp(self):
         super(BaseTestCase, self).setUp()
+
+        self.handler = LogCapture()
 
         self.username = 'johndoe2'
         self.password = 'trustno1'
@@ -49,6 +54,9 @@ class BaseTestCase(TestCase):
                     introduction="<h1>Hello, Test!</h1>",
                     addon_id="addon-%s@example.com" % idx
                 )) for idx in range(1, 4)))
+
+    def tearDown(self):
+        self.handler.uninstall()
 
 
 class ExperimentViewTests(BaseTestCase):
@@ -215,11 +223,22 @@ class ExperimentViewTests(BaseTestCase):
         self.assertEqual(200, resp.status_code)
 
         # Create another client installation via PUT
+        self.handler.records = []
         client_id_2 = '123456789'
         url = reverse('experiment-installation-detail',
                       args=(experiment.pk, client_id_2))
         resp = self.client.put(url, {})
         self.assertEqual(200, resp.status_code)
+
+        # Ensure that a testpilot.test-install log event was emitted
+        record = self.handler.records[0]
+        formatter = JsonLogFormatter(logger_name='testpilot.test-install')
+        details = json.loads(formatter.format(record))
+        fields = details['Fields']
+
+        self.assertEqual('testpilot.test-install', record.name)
+        self.assertEqual(fields['uid'], user.id)
+        self.assertEqual(fields['context'], experiment.title)
 
         # Ensure that the API list result reflects the addition
         data = self.jsonGet('experiment-installation-list',
