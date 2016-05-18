@@ -94,6 +94,9 @@ export default PageView.extend({
     },
 
     'model.installation_count': {
+      type: (el, value) => {
+        el.innerHTML = value.toLocaleString();
+      },
       hook: 'install-count'
     },
 
