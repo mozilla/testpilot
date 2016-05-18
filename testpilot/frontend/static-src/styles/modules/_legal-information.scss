@@ -3,6 +3,7 @@
   line-height: $line-unit;
   margin: $grid-unit 0;
   padding: 0 $grid-unit * .5 $grid-unit * .5;
+  position: relative;
   text-align: center;
 
   a {
