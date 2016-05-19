@@ -27,6 +27,7 @@ const test = around(tape)
         url: '/slsk',
         enabled: true,
         introduction: '<h1>Hello introduction!</h1>',
+        installation_count: 123456,
         details: [{
           image: 'img/fail.png',
           copy: 'blah',
@@ -116,6 +117,16 @@ test('updateAddon tests', t => {
   });
 
   myView.updateAddon(true, myModel);
+});
+
+test('installation count gets commafied', t => {
+  t.plan(1);
+
+  const myView = new MyView({headerScroll: false, slug: 'slsk'});
+
+  myView.render();
+  const installCount = myView.query('[data-hook=install-count]').textContent;
+  t.ok(installCount.indexOf(',') > -1);
 });
 
 // Issue #748

@@ -257,7 +257,8 @@
   &:before {
 
     @media (min-resolution: 1.3dppx) {
-      animation: pop 2000ms infinite alternate ease-in-out;
+      animation: pop 2000ms alternate ease-in-out;
+      animation-iteration-count: 5;
     }
 
     background: $primary;
@@ -268,7 +269,7 @@
     height: $grid-unit;
     margin-right: $grid-unit * .4;
     position: relative;
-    top: $grid-unit * .125;
+    top: $grid-unit * .2;
     width: $grid-unit;
   }
 }
