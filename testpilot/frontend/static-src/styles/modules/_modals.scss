@@ -74,13 +74,6 @@
     padding: ($grid-unit - 2) 0 ($grid-unit - 6);
     text-align: center;
 
-    .blue &,
-    .onboarding & {
-      background-color: $white;
-      color: $black;
-      padding: $grid-unit 0;
-    }
-
     &.warning {
       background: $warning-red-light;
       color: $white;

@@ -2,6 +2,7 @@ import app from 'ampersand-app';
 
 import BaseView from './base-view';
 import RetireDialogView from './retire-dialog-view';
+import DiscussNotifyView from './discuss-notification-view';
 
 export default BaseView.extend({
   template: `<div class="settings-contain">
@@ -15,6 +16,7 @@ export default BaseView.extend({
                  <ul>
                    <li class="user-name" data-hook='user-name'></li>
                    <li><a data-l10n-id="menuWiki" data-hook="wiki" href="https://wiki.mozilla.org/Test_Pilot" target="_blank">Test Pilot Wiki</a></li>
+                   <li><a data-l10n-id="menuDiscuss" data-hook="discuss" href="https://discourse.mozilla-community.org/c/test-pilot" target="_blank">Discuss Test Pilot</a></li>
                    <li><a data-l10n-id="menuFileIssue" data-hook="issue" href="https://github.com/mozilla/testpilot/issues/new" target="_blank">File an Issue</a></li>
                    <li><a data-l10n-id="menuLogout" data-hook="logout">Logout</a></li>
                    <li><hr></li>
@@ -26,6 +28,7 @@ export default BaseView.extend({
   events: {
     'click [data-hook=logout]': 'logout',
     'click [data-hook=wiki]': 'wiki',
+    'click [data-hook=discuss]': 'discuss',
     'click [data-hook=issue]': 'fileIssue',
     'click [data-hook=retire]': 'retire',
     'click [data-hook=settings-button]': 'toggleSettings'
@@ -97,6 +100,22 @@ export default BaseView.extend({
       id: 'retire-dialog',
       onSubmit: () => {
         app.trigger('router:new-page', {page: 'retire'});
+      }
+    }), 'body');
+  },
+
+  discuss(evt) {
+    evt.preventDefault();
+    app.sendToGA('event', {
+      eventCategory: 'Menu Interactions',
+      eventAction: 'drop-down menu',
+      eventLabel: 'Discuss'
+    });
+
+    this.renderSubview(new DiscussNotifyView({
+      id: 'discuss-dialog',
+      onSubmit: () => {
+        window.location = evt.target.getAttribute('href');
       }
     }), 'body');
   },
