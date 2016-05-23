@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
 <head>
-    <title>Test Pilot</title>
     <link rel="shortcut icon" href="{{ static('images/favicon.ico') }}">
     <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
     <link rel="stylesheet" href="{{ static('styles/main.css') }}">
@@ -11,6 +10,26 @@
     <meta name="viewport" content="width=device-width">
     <link rel="localization" href="{{ settings.STATIC_URL }}locales/{locale}/app.l20n">
 
+    {% set meta_title = "Firefox Test Pilot" %}
+    {% set meta_description = "Test new Features. Give us feedback. Help build Firefox." %}
+    {% set meta_url = request.build_absolute_uri() %}
+
+    <title>{{ meta_title }}</title>
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ meta_title }}" />
+    <meta property="twitter:title" content="{{ meta_title }}" />
+    <meta name="description" content="{{ meta_description }}" />
+    <meta property="og:description" content="{{ meta_description }}" />
+    <meta property="twitter:description" content="{{ meta_description }}" />
+    <link rel="canonical" href="{{ meta_url }}">
+    <meta property="og:url" content="{{ meta_url }}" />
+    <meta property="twitter:url" content="{{ meta_url }}" />
+
+    <meta property="og:image"
+        content="{{ request.build_absolute_uri(static('images/thumbnail-facebook.png')) }}" />
+    <meta property="twitter:image"
+        content="{{ request.build_absolute_uri(static('images/thumbnail-twitter.png')) }}" />
 </head>
 <body>
 
