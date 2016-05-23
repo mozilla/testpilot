@@ -6,7 +6,6 @@ const buffer = require('vinyl-buffer');
 const connect = require('gulp-connect');
 const del = require('del');
 const eslint = require('gulp-eslint');
-const globby = require('globby');
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const gutil = require('gulp-util');
@@ -23,6 +22,9 @@ const uglify = require('gulp-uglify');
 const tryRequire = require('try-require');
 const Remarkable = require('remarkable');
 const md = new Remarkable();
+
+const packageJSON = require('./package.json');
+const vendorModules = Object.keys(packageJSON.dependencies);
 
 const IS_DEBUG = (process.env.NODE_ENV === 'development');
 
@@ -78,14 +80,25 @@ gulp.task('legal', function legalTask() {
              .pipe(gulp.dest('./legal-copy/'));
 });
 
-// based on https://github.com/gulpjs/gulp/blob/master/docs/recipes/browserify-with-globs.md,
-// except we use the Promise returned by globby, instead of passing it a callback.
-gulp.task('scripts', shouldLint('js-lint', 'lint'), function scriptsTask() {
-  const bundledStream = through();
+gulp.task('app-main', shouldLint('js-lint', 'lint'), function appMainTask() {
+  return commonBrowserify('app.js', browserify({
+    entries: [SRC_PATH + 'app/main.js'],
+    debug: IS_DEBUG,
+    fullPaths: IS_DEBUG,
+    transform: [babelify]
+  }).external(vendorModules));
+});
 
-  // this part runs second
-  bundledStream
-    .pipe(source('app.js'))
+gulp.task('app-vendor', function appVendorTask() {
+  return commonBrowserify('vendor.js', browserify({
+    debug: IS_DEBUG
+  }).require(vendorModules));
+});
+
+function commonBrowserify(sourceName, b) {
+  return b
+    .bundle()
+    .pipe(source(sourceName))
     .pipe(buffer())
     .pipe(gulpif(IS_DEBUG, sourcemaps.init({loadMaps: true})))
      // don't uglify in development. eases build chain debugging
@@ -93,23 +106,7 @@ gulp.task('scripts', shouldLint('js-lint', 'lint'), function scriptsTask() {
     .on('error', gutil.log)
     .pipe(gulpif(IS_DEBUG, sourcemaps.write('./')))
     .pipe(gulp.dest(DEST_PATH + 'app/'));
-
-  // this part runs first, then pipes to bundledStream
-  globby([SRC_PATH + 'app/**/*.js']).then(function gatherFiles(entries) {
-    const b = browserify({
-      entries: entries,
-      debug: IS_DEBUG,
-      fullPaths: IS_DEBUG,
-      transform: [babelify]
-    });
-    b.bundle()
-      .pipe(bundledStream);
-  }, function onGlobbyError(err) {
-    return bundledStream.emit('error', err);
-  });
-
-  return bundledStream;
-});
+}
 
 gulp.task('styles', shouldLint('sass-lint', 'sass-lint'), function stylesTask() {
   return gulp.src(SRC_PATH + 'styles/**/*.scss')
@@ -167,7 +164,8 @@ gulp.task('static-script-copy', function staticScriptCopyTask() {
 gulp.task('build', function buildTask(done) {
   runSequence(
     'clean',
-    'scripts',
+    'app-vendor',
+    'app-main',
     'styles',
     'images',
     'locales',
@@ -181,7 +179,8 @@ gulp.task('build', function buildTask(done) {
 gulp.task('watch', ['build'], function watchTask() {
   gulp.watch(SRC_PATH + 'styles/**/*', ['styles']);
   gulp.watch(SRC_PATH + 'images/**/*', ['images']);
-  gulp.watch(SRC_PATH + 'app/**/*.js', ['scripts']);
+  gulp.watch(SRC_PATH + 'app/**/*.js', ['app-main']);
+  gulp.watch('./package.json', ['app-vendor']);
   gulp.watch(SRC_PATH + 'addon/**/*', ['addon']);
   gulp.watch(['./legal-copy/*.md', './legal-copy/*.js'], ['legal']);
   gulp.watch('./locales/**/*', ['locales']);
