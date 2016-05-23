@@ -15,9 +15,11 @@ Please add a size to all new issues.
 
 Estimation is an imperfect science, so please just give your best guess. If you're completely unsure of sizing, apply the `needs:size` label.
 
-# Milestones
+# Current Milestone
 
-A milestone is created every 2 weeks, and coincides with the Friday before bi-weekly planning sessions. Planning sessions happen every 2nd Monday.
+The current milestone is packed every 2 weeks, and coincides with the Friday before bi-weekly planning sessions. Planning sessions happen every 2nd Monday.
+
+The milestones are planned in [waffle.io](https://waffle.io/mozilla/testpilot/), and a linked label is added in GitHub: [status:planned](https://github.com/mozilla/testpilot/issues?q=is%3Aissue+is%3Aopen+label%3A%22status%3A+planned%22).
 
 # Status
 
