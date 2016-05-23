@@ -14,6 +14,7 @@
 <home "Home">
 
 <menuWiki "Test Pilot Wiki">
+<menuDiscuss "Discuss Test Pilot">
 <menuFileIssue "File an Issue">
 <menuLogout "Sign out">
 <menuRetire "Leave Test Pilot">
@@ -66,7 +67,22 @@
 <feedbackCancelButton "Close">
 
 <feedbackUninstallTitle "Thank You!">
-<feedbackUninstallCopy "Your participation in Firefox Test Pilot means a lot! Please check out our other experiments, and stay tuned for more to come!">
+<feedbackUninstallCopy "Your participation in Firefox Test Pilot means
+                        a lot! Please check out our other experiments,
+                        and stay tuned for more to come!">
+
+<discussNotifyTitle "Just one second...">
+<discussNotifyMessage "<p>In the spirit of experimentation, we're using a forum service
+                          that requires an account different from the one you
+                          created for Test Pilot. We are working hard to change this
+                          and make the forum experience smoother.</p>
+                       <p>If you don't want to create another account, you can
+                          always leave feedback through Test Pilot.
+                          <br>
+                          (We really do read this stuff)
+                       </p>">
+<discussNotifySubmitButton "Take me to the forum">
+<discussNotifyCancelButton "Cancel">
 
 <retireDialogTitle "Leave Test Pilot?">
 <retireMessage "As you wish. This will disable any active tests, uninstall the add-on and remove your account info from our servers.">
