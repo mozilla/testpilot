@@ -88,9 +88,6 @@ gulp.task('scripts', shouldLint('js-lint', 'lint'), function scriptsTask() {
     .pipe(source('app.js'))
     .pipe(buffer())
     .pipe(gulpif(IS_DEBUG, sourcemaps.init({loadMaps: true})))
-     // don't uglify in development. eases build chain debugging
-    .pipe(gulpif(!IS_DEBUG, uglify()))
-    .on('error', gutil.log)
     .pipe(gulpif(IS_DEBUG, sourcemaps.write('./')))
     .pipe(gulp.dest(DEST_PATH + 'app/'));
 
