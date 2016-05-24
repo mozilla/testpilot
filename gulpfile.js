@@ -2,7 +2,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const babelify = require('babelify');
 const browserify = require('browserify');
 const buffer = require('vinyl-buffer');
-const cache = require('gulp-cache');
+// const cache = require('gulp-cache');
 const connect = require('gulp-connect');
 const del = require('del');
 const eslint = require('gulp-eslint');
@@ -10,7 +10,7 @@ const globby = require('globby');
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const gutil = require('gulp-util');
-const imagemin = require('gulp-imagemin');
+// const imagemin = require('gulp-imagemin');
 const minifycss = require('gulp-cssnano');
 const normalize = require('node-normalize-scss');
 const runSequence = require('run-sequence');
@@ -142,7 +142,9 @@ gulp.task('sass-lint', function sassLintTask() {
 
 gulp.task('images', function imagesTask() {
   return gulp.src(SRC_PATH + 'images/**/*')
-    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+    // imagemin skips files https://github.com/sindresorhus/gulp-imagemin/issues/183
+    // files have been optimized and rechecked into the repo
+    // .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest(DEST_PATH + 'images'));
 });
 
