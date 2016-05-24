@@ -25,6 +25,7 @@ dependencies:
     # https://discuss.circleci.com/t/nvm-commands-are-not-evaluated/943
     - nvm use 4.4.0 && nvm alias default 4.4.0
     - echo "hello world"
+    - python --version
 
   override:
     - docker info
