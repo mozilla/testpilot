@@ -9,6 +9,8 @@ export default PageView.extend({
   pageTitle: 'Firefox Test Pilot - Help build Firefox',
   pageTitleL10nID: 'pageTitleLandingPage',
 
+  skipHeader: true,
+
   events: {
     'click [data-hook=install]': 'installClicked',
     'click [data-hook=get-started-with-account]': 'getStarted',
@@ -26,8 +28,7 @@ export default PageView.extend({
     if (!this.loggedIn) {
       this.renderSubview(new ExperimentListView({
         loggedIn: this.loggedIn,
-        isFirefox: this.isFirefox,
-        skipHeader: true
+        isFirefox: this.isFirefox
       }), '[data-hook="experiment-list"]');
     }
 
