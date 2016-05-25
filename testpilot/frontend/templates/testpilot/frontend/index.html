@@ -16,21 +16,24 @@
     {% set meta_url = request.build_absolute_uri() %}
 
     <title>{{ meta_title }}</title>
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ meta_title }}" />
-    <meta property="twitter:title" content="{{ meta_title }}" />
-    <meta name="description" content="{{ meta_description }}" />
-    <meta property="og:description" content="{{ meta_description }}" />
-    <meta property="twitter:description" content="{{ meta_description }}" />
-    <link rel="canonical" href="{{ meta_url }}">
-    <meta property="og:url" content="{{ meta_url }}" />
-    <meta property="twitter:url" content="{{ meta_url }}" />
 
-    <meta property="og:image"
-        content="{{ request.build_absolute_uri(static('images/thumbnail-facebook.png')) }}" />
-    <meta property="twitter:image"
-        content="{{ request.build_absolute_uri(static('images/thumbnail-twitter.png')) }}" />
+    <link rel="canonical" href="{{ meta_url }}">
+    <meta name="description" content="{{ meta_description }}" />
+
+    <meta property="og:description" content="{{ meta_description }}" />
+    <meta property="og:image" content="{{ request.build_absolute_uri(static('images/thumbnail-facebook.png')) }}" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="{{ meta_title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ meta_url }}" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="{{ meta_description }}" />
+    <meta name="twitter:image" content="{{ request.build_absolute_uri(static('images/thumbnail-twitter.png')) }}" />
+    <meta name="twitter:site" content="@FxTestPilot" />
+    <meta name="twitter:title" content="{{ meta_title }}" />
+
+
 </head>
 <body>
 
