@@ -48,7 +48,7 @@ function getRandomExperiment() {
 
 function showRandomSurvey(experiment) {
   launchSurvey({
-    label: 'Please Rate ' + experiment.title,
+    label: 'Please Rate the Test Pilot experiment ' + experiment.title,
     image: experiment.thumbnail,
     addonId: experiment.addon_id,
     surveyUrl: experiment.survey_url,
@@ -124,6 +124,7 @@ function launchSurvey(options) {
   box.persistence = persistence;
   messageImage.classList.add('heartbeat', 'pulse-onshow');
   messageText.classList.add('heartbeat');
+  messageImage.setAttribute('style', 'filter: invert(80%)');
 
   // End the survey if the user hasn't responded before expiration.
   if (!options.privateWindowsOnly) {
@@ -141,6 +142,7 @@ function getRatingUI(win, notifyBox, box, messageText, addonId,
   // Build the star rating.
   const ratingContainer = win.document.createElement('hbox');
   ratingContainer.id = 'star-rating-container';
+  ratingContainer.setAttribute('style', 'margin-bottom: 2px');
 
   function ratingListener(evt) {
     const rating = Number(evt.target.getAttribute('data-score'), 10);
