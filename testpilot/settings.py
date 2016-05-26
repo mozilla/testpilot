@@ -112,7 +112,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'waffle.middleware.WaffleMiddleware',
-    'testpilot.base.middleware.RequestSummaryLogger',
+    'mozilla_cloud_services_logger.django.middleware.RequestSummaryLogger',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -420,7 +420,7 @@ LOGGING = {
             'datefmt': '%Y-%m-%d %H:%M:%S'
         },
         'json': {
-            '()': 'testpilot.base.logging.JsonLogFormatter',
+            '()': 'mozilla_cloud_services_logger.formatters.JsonLogFormatter',
             'logger_name': 'TestPilot'
         }
     },

@@ -9,7 +9,8 @@ from rest_framework import fields
 
 from testfixtures import LogCapture
 
-from ..base.logging import JsonLogFormatter
+from mozilla_cloud_services_logger.formatters import JsonLogFormatter
+
 from ..utils import gravatar_url, TestCase
 from ..users.models import UserProfile
 from .models import (Experiment, ExperimentTourStep, UserInstallation,

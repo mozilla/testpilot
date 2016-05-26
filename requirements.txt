@@ -153,9 +153,6 @@ django-mozilla-product-details==0.10.0
 # sha256: drDDMYkCeP_JzsN-81wskNMHF1oOaVRHfiEDc3nijTM
 testfixtures==4.9.1
 
-# sha256: ceezvPn8pAi8tlu2CJLzddOr3S5PKW7uuP4Lu_zeWY4
-jsonschema==2.5.1
-
 # sha256: 2jgtD0CR_QWvc0NNXdXZA1hnZB5sUMcEtTLes4JAf-M
 django-colorfield==0.1.10
 
@@ -167,3 +164,6 @@ django-picklefield==0.3.2
 
 # sha256: jtumjPR776LS5tnrqY_3TcmIHghr_KwDN_6BmNXt_78
 django-constance==1.1.2
+
+# sha256: KipST50FvFyKbz0TooywY4awcgzuALpY4ist5oCJxuQ
+mozilla-cloud-services-logger==1.0.1
