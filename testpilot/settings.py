@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     'django_jinja',
     'django_cleanup',
 
+    'csp',
     'colorfield',
     'rest_framework',
     'storages',
@@ -111,6 +112,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'csp.middleware.CSPMiddleware',
     'waffle.middleware.WaffleMiddleware',
     'mozilla_cloud_services_logger.django.middleware.RequestSummaryLogger',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -369,8 +371,19 @@ TEMPLATES = [
 ]
 
 # Django-CSP
+if DEBUG:
+    CSP_REPORT_URI = '/__cspreport__'
+
+CSP_REPORT_ONLY = False
 CSP_DEFAULT_SRC = (
     "'self'",
+)
+CSP_CONNECT_SRC = (
+    "'self'",
+    'http://*.mozilla.net',
+    'https://*.mozilla.net',
+    'http://*.mozilla.org',
+    'https://*.mozilla.org',
 )
 CSP_FONT_SRC = (
     "'self'",
@@ -385,6 +398,11 @@ CSP_IMG_SRC = (
     'https://*.mozilla.net',
     'http://*.mozilla.org',
     'https://*.mozilla.org',
+    'http://*.gravatar.com',
+    'https://*.gravatar.com',
+    'http://*.google-analytics.com',
+    'https://*.google-analytics.com',
+    'https://ssl.gstatic.com/',
 )
 CSP_SCRIPT_SRC = (
     "'self'",
@@ -392,6 +410,9 @@ CSP_SCRIPT_SRC = (
     'https://*.mozilla.org',
     'http://*.mozilla.net',
     'https://*.mozilla.net',
+    'http://*.google-analytics.com',
+    'https://*.google-analytics.com',
+    'https://apis.google.com',
 )
 CSP_STYLE_SRC = (
     "'self'",

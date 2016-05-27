@@ -108,6 +108,14 @@ function commonBrowserify(sourceName, b) {
     .pipe(gulp.dest(DEST_PATH + 'app/'));
 }
 
+gulp.task('scripts', shouldLint('js-lint', 'lint'), function extraScriptsTask() {
+  return gulp.src(SRC_PATH + 'scripts/**/*')
+    .pipe(gulpif(IS_DEBUG, sourcemaps.init({loadMaps: true})))
+    .pipe(gulpif(!IS_DEBUG, uglify()))
+    .pipe(gulpif(IS_DEBUG, sourcemaps.write('./')))
+    .pipe(gulp.dest(DEST_PATH + 'scripts'));
+});
+
 gulp.task('styles', shouldLint('sass-lint', 'sass-lint'), function stylesTask() {
   return gulp.src(SRC_PATH + 'styles/**/*.scss')
     .pipe(sourcemaps.init())
@@ -155,23 +163,17 @@ gulp.task('addon', function localesTask() {
     .pipe(gulp.dest(DEST_PATH + 'addon'));
 });
 
-// Copy the static legal.js file to dest
-gulp.task('static-script-copy', function staticScriptCopyTask() {
-  return gulp.src(SRC_PATH + 'scripts/**/*')
-    .pipe(gulp.dest(DEST_PATH + 'scripts'));
-});
-
 gulp.task('build', function buildTask(done) {
   runSequence(
     'clean',
     'app-vendor',
     'app-main',
+    'scripts',
     'styles',
     'images',
     'locales',
     'addon',
     'legal',
-    'static-script-copy',
     done
   );
 });
@@ -181,6 +183,7 @@ gulp.task('watch', ['build'], function watchTask() {
   gulp.watch(SRC_PATH + 'images/**/*', ['images']);
   gulp.watch(SRC_PATH + 'app/**/*.js', ['app-main']);
   gulp.watch('./package.json', ['app-vendor']);
+  gulp.watch(SRC_PATH + 'scripts/**/*.js', ['scripts']);
   gulp.watch(SRC_PATH + 'addon/**/*', ['addon']);
   gulp.watch(['./legal-copy/*.md', './legal-copy/*.js'], ['legal']);
   gulp.watch('./locales/**/*', ['locales']);
