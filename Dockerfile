@@ -1,19 +1,25 @@
-FROM python:3
+FROM python:3-alpine
 
 EXPOSE 8000
-CMD ["./bin/run-prod.sh"]
 
+CMD ["./bin/run-prod.sh"]
 WORKDIR /app
 
-RUN groupadd --gid 10001 app && \
-    useradd --uid 10001 --gid 10001 --shell /usr/sbin/nologin app
+RUN addgroup -g 10001 app && \
+    adduser -D -u 10001 -G app -h /app -s /sbin/nologin app
+
+# required to build on alpine
+# https://github.com/python-pillow/Pillow/issues/1763#issuecomment-204252397
+ENV LIBRARY_PATH=/lib:/usr/lib
 
 # Install & cache dependencies for Django/Python using peep with a supported
 # pinned version of pip
 COPY requirements.txt /app/requirements.txt
 COPY bin/peep.py /app/bin/peep.py
-RUN pip install pip==6.0.0 && \
-    ./bin/peep.py install -r requirements.txt
+RUN apk --no-cache add ca-certificates postgresql-dev build-base libjpeg-turbo-dev zlib-dev && \
+    pip install pip==6.0.0 && \
+    ./bin/peep.py install -r requirements.txt && \
+    apk del --purge build-base gcc
 
 # Copy in the whole app after dependencies have been installed & cached
 COPY . /app

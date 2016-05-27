@@ -36,7 +36,7 @@ dependencies:
     # build the container, use circleci's docker cache workaround
     # only use 1 image per day to keep the cache size from getting
     # too big and slowing down the build
-    - I="image-$(date +%j).tgz"; if [[ -e ~/docker/$I ]]; then echo "Loading $I"; gunzip -c ~/docker/$I | docker load; fi
+    - I="image-$(date +%j).tgz"; if [[ -e ~/docker/$I ]]; then echo "Loading $I"; pigz -d -c ~/docker/$I | docker load; fi
 
     # create a version.json
     - >
@@ -70,7 +70,7 @@ dependencies:
     - docker images --no-trunc | awk '/^app/ {print $3}' | tee $CIRCLE_ARTIFACTS/docker-image-shasum256.txt
 
     # Clean up any old images and save the new one
-    - I="image-$(date +%j).tgz"; mkdir -p ~/docker; rm ~/docker/*; docker save app:build | gzip -c > ~/docker/$I; ls -l ~/docker
+    - I="image-$(date +%j).tgz"; mkdir -p ~/docker; rm ~/docker/*; docker save app:build | pigz --fast -c > ~/docker/$I; ls -l ~/docker
 
 test:
   override:
