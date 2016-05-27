@@ -18,9 +18,10 @@ from allauth.account.models import EmailAddress
 from allauth.socialaccount.models import (SocialApp, SocialAccount,
                                           SocialToken)
 
+from mozilla_cloud_services_logger.formatters import JsonLogFormatter
+
 from .providers.fxa.provider import FirefoxAccountsProvider
 
-from ..base.logging import JsonLogFormatter
 from ..utils import gravatar_url
 from ..experiments.models import (Experiment, UserInstallation)
 
