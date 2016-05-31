@@ -167,3 +167,6 @@ django-constance==1.1.2
 
 # sha256: KipST50FvFyKbz0TooywY4awcgzuALpY4ist5oCJxuQ
 mozilla-cloud-services-logger==1.0.1
+
+# sha256: _30ZPZ33AqjnGjEegIpOhaH0TkqcN5Nh1dNUuq7rvgI
+semver==2.5.0

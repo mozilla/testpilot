@@ -99,7 +99,10 @@ function updatePrefs() {
     include: settings.ALLOWED_ORIGINS_VIEWINSTALLEDFLAG.split(','),
     contentScriptFile: './set-installed-flag.js',
     contentScriptWhen: 'start',
-    attachTo: ['top', 'existing']
+    attachTo: ['top', 'existing'],
+    contentScriptOptions: {
+      version: self.version
+    }
   });
 
   // Set up new PageMod for ability to install/remove add-ons.
