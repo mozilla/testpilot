@@ -42,7 +42,7 @@ const survey = require('./lib/survey');
 const PANEL_WIDTH = 300;
 const FOOTER_HEIGHT = 50;
 const EXPERIMENT_HEIGHT = 80;
-const INSTALLED_PANEL_HEIGHT = 300;
+const INSTALLED_PANEL_HEIGHT = 250;
 
 // Canned selectable server environment configs
 const SERVER_ENVIRONMENTS = {
