@@ -9,3 +9,4 @@
 // Allow friendly clients to know that Test Pilot is installed.
 
 unsafeWindow.navigator.testpilotAddon = true;
+unsafeWindow.navigator.testpilotAddonVersion = self.options.version;
