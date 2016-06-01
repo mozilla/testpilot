@@ -13,7 +13,7 @@ export default Model.extend({
   props: {
     user: 'object',
     clientUUID: 'string',
-    installed: {type: 'object', default: () => []},
+    installed: {type: 'object', default: () => {}},
     hasAddon: {type: 'boolean', required: true, default: false},
     addonTimeout: {type: 'number', default: 1000}
   },
@@ -42,10 +42,29 @@ export default Model.extend({
       this.hasAddon = Boolean(window.navigator.testpilotAddon);
       if (!this.hasAddon) { return false; }
 
-      return app.waitForMessage('sync-installed', userData.installed)
+      let installedData;
+      if (!window.navigator.testpilotAddonVersion) {
+        // Previous add-ons didn't expose version info, so assume
+        // old API data
+        installedData = [];
+        for (let k in userData.installed) { // eslint-disable-line prefer-const
+          if (userData.installed.hasOwnProperty(k)) {
+            installedData.push(userData.installed[k]);
+          }
+        }
+      } else {
+        // TODO: Need a semver matching check here someday, but for
+        // now we can assume
+        // just the presence of a version means we're in the future.
+        installedData = userData.installed;
+      }
+
+      return app.waitForMessage('sync-installed', installedData)
         .then(result => {
           this.clientUUID = result.clientUUID;
           this.installed = result.installed;
+        }).catch((err) => {
+          console.error('sync-installed failed', err); // eslint-disable-line no-console
         });
     });
   },

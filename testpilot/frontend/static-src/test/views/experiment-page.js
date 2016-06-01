@@ -14,6 +14,10 @@ const test = around(tape)
       app.me = new Me({
         user: {
           id: 'gary@busey.net'
+        },
+        installed: {
+          'slsk@google.net': {},
+          'wheee@mozilla.org': {}
         }
       });
       app.sendToGA = () => {};
@@ -143,11 +147,6 @@ test('feedback button uses the expected survey URL', t => {
     '&experiment=SLSK' +
     '&installed=slsk%40google.net' +
     '&installed=wheee%40mozilla.org';
-
-  app.me.installed = {
-    'slsk@google.net': {},
-    'wheee@mozilla.org': {}
-  };
 
   myView.render();
 

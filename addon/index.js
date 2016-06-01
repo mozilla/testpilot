@@ -349,9 +349,13 @@ function updateExperiments() {
 function syncAllAddonInstallations(serverInstalled) {
   const availableIDs = Object.keys(store.availableExperiments);
   const clientIDs = Object.keys(store.installedAddons);
-  const serverIDs = serverInstalled
-    .filter(item => item.client_id === store.clientUUID)
-    .map(item => item.addon_id);
+  const serverIDs = [];
+
+  for (let key in serverInstalled) { // eslint-disable-line prefer-const
+    if (serverInstalled[key].client_id === store.clientUUID) {
+      serverIDs.push(key);
+    }
+  }
 
   return Promise.all(availableIDs.filter(id => {
     const cidx = clientIDs.indexOf(id);

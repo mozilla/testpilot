@@ -80,8 +80,8 @@ class UserInstallationSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = UserInstallation
-        fields = ('url', 'experiment', 'client_id', 'addon_id', 'features',
-                  'created', 'modified')
+        fields = ('url', 'experiment', 'client_id', 'addon_id',
+                  'features', 'created', 'modified')
 
     def get_url(self, obj):
         request = self.context['request']
