@@ -10,7 +10,7 @@ const {Cu} = require('chrome');
 
 Cu.import('resource://gre/modules/TelemetryController.jsm');
 
-const { setTimeout } = require('sdk/timers');
+const { setTimeout, clearTimeout } = require('sdk/timers');
 const Events = require('sdk/system/events');
 const store = require('sdk/simple-storage').storage;
 const PrefsService = require('sdk/preferences/service');
@@ -31,11 +31,13 @@ const PREFERENCE_OVERRIDES = {
   'datareporting.healthreport.uploadEnabled': true
 };
 
+let pingTimer = null;
+
 module.exports = {
 
   init: function() {
-    if (!store.telemetryPing) {
-      store.lastTelemetryPingTimestamp = Date.now();
+    if (!store.telemetryPingPayload) {
+      store.lastTelemetryPingTimestamp = false;
       store.telemetryPingPayload = {
         version: 1,
         tests: {}
@@ -66,25 +68,37 @@ module.exports = {
   },
 
   destroy: function() {
+    // Stop the ping timer, if any
+    if (pingTimer) {
+      clearTimeout(pingTimer);
+    }
     Events.off(EVENT_SEND_METRIC, this.onExperimentPing);
   },
 
   maybePingTelemetry: function() {
     const now = Date.now();
-    const elapsed = now - store.lastTelemetryPingTimestamp;
+    const shouldPing =
+      // Fresh install, no timestamp. Ping immediately.
+      (!store.lastTelemetryPingTimestamp) ||
+      // Subsequent pings should go out after PING_INTERVAL
+      (now - store.lastTelemetryPingTimestamp > PING_INTERVAL);
 
-    if (elapsed > PING_INTERVAL) {
+    if (shouldPing) {
       store.lastTelemetryPingTimestamp = now;
-      TelemetryController.submitExternalPing(
-        'testpilot',
-        store.telemetryPingPayload,
-        { addClientId: true, addEnvironment: true }
-      );
+      this.pingTelemetry();
     }
 
-    this.pingTimer = setTimeout(
+    pingTimer = setTimeout(
       () => this.maybePingTelemetry(),
       PING_CHECK_INTERVAL
+    );
+  },
+
+  pingTelemetry: function() {
+    TelemetryController.submitExternalPing(
+      'testpilot',
+      store.telemetryPingPayload,
+      { addClientId: true, addEnvironment: true }
     );
   },
 

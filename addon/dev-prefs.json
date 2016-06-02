@@ -1,5 +1,4 @@
 {
-  "BASE_URL": "http://testpilot.dev:8000",
-  "HOSTNAME": "testpilot.dev",
-  "ALLOWED_ORIGINS": "http://testpilot.dev:8000/*,https://testpilot.firefox.com/*"
+  "toolkit.telemetry.server": "http://127.0.0.1/",
+  "extensions.@testpilot-addon.SERVER_ENVIRONMENT": "local"
 }
