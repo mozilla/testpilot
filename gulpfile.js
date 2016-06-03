@@ -158,6 +158,12 @@ gulp.task('addon', function localesTask() {
     .pipe(gulp.dest(DEST_PATH + 'addon'));
 });
 
+// Copy the static legal.js file to dest
+gulp.task('static-script-copy', function staticScriptCopyTask() {
+  return gulp.src(SRC_PATH + 'scripts/**/*')
+    .pipe(gulp.dest(DEST_PATH + 'scripts'));
+});
+
 gulp.task('build', function buildTask(done) {
   runSequence(
     'clean',
@@ -167,6 +173,7 @@ gulp.task('build', function buildTask(done) {
     'locales',
     'addon',
     'legal',
+    'static-script-copy',
     done
   );
 });
