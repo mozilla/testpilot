@@ -33,6 +33,8 @@ def staticintegrity(context, name):
         path = finders.find(name)
     else:
         # Otherwise, we can just look in the static root
+        if hasattr(staticfiles_storage, 'hashed_files'):
+            name = staticfiles_storage.hashed_files.get(name, name)
         path = staticfiles_storage.path(name)
 
     key = 'staticintegrity-%s' % path
