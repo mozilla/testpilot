@@ -16,7 +16,7 @@ const querystring = require('sdk/querystring');
 const store = require('sdk/simple-storage').storage;
 
 const NUM_STARS = 5; // Number of survey stars
-const FIVE_MINUTES = 60 * 1000 * 5;
+const TEN_MINUTES = 60 * 1000 * 10;
 
 module.exports = {init: init, destroy: destroy};
 
@@ -27,13 +27,13 @@ if (store.surveyChecks === undefined) store.surveyChecks = {};
 });
 
 function init() {
-  // wait about 5 minutes before prompting user for survey
+  // wait about 10 minutes before prompting user for survey
   setTimeout(() => {
     // Only check/ask for survey if the user has addons installed.
     if (store.installedAddons && Object.keys(store.installedAddons).length) {
       showRandomSurvey(getRandomExperiment());
     }
-  }, FIVE_MINUTES);
+  }, TEN_MINUTES);
 }
 
 function destroy() {
@@ -62,7 +62,7 @@ function getAnonEl(win, box, attrName) {
 
 // check if the addon is due for a survey at the current interval
 function checkInstallDate(installDate, addonId) {
-  const dateDiff = new Date().getDate() - new Date(installDate).getDate();
+  const dateDiff = Math.round((new Date() - new Date(installDate)) / (1000 * 60 * 60 * 24));
 
   if (!(addonId in store.surveyChecks.twoDaysSent) && dateDiff >= 2) {
     store.surveyChecks.twoDaysSent[addonId] = true;
