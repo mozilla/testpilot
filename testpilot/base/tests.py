@@ -1,12 +1,16 @@
-from unittest.mock import patch
+from unittest.mock import patch, Mock
 
 import io
 import json
 
+from django.test import override_settings
 from django.core.urlresolvers import reverse
 from django.db import OperationalError
 
+from constance.test import override_config
+
 from ..utils import TestCase
+from .jinja import _hash_content, waffleintegrity, TestPilotExtension
 
 import logging
 logger = logging.getLogger(__name__)
@@ -83,3 +87,76 @@ class ContributeJsonTests(TestCase):
         resp = self.client.get(self.url)
         data = json.loads(resp.getvalue().decode('utf-8'))
         assert set(['name', 'description', 'repository']).issubset(data.keys())
+
+
+class _MockJinjaEnvironment(object):
+    def __init__(self):
+        self.globals = {}
+
+
+MockStorageInstance = Mock()
+MockStorageInstance.path = Mock(return_value='foo')
+MockStorage = Mock(return_value=MockStorageInstance)
+
+
+class TestPilotJinjaExtensionTests(TestCase):
+
+    def setUp(self):
+        self.environment = _MockJinjaEnvironment()
+        self.extension = TestPilotExtension(self.environment)
+
+    def test_hash_content(self):
+        content = """
+            Beard irony cold-pressed, venmo chicharrones PBR&B banh mi
+            meditation. Forage street art meh artisan, tattooed
+            gochujang pinterest fixie skateboard kombucha crucifix viral.
+        """
+        self.assertEqual(
+            _hash_content(content.encode()),
+            'sha384-1hLxRtQHxIHoyvc9LOFMWEOGa2gsPIK+4e5++etpYBwkHjxWe9MQOXp/9e4zYqHm'
+        )
+
+    @override_settings(DEBUG=True)
+    @patch('django.contrib.staticfiles.finders')
+    @patch('builtins.open')
+    def test_staticintegrity_debug(self, mock_open, mock_finders):
+        content = 'debug file'
+        expected_hash = _hash_content(content.encode())
+        mock_finders.find = Mock(return_value='foo')
+        mock_open.return_value = io.BytesIO(content.encode('utf-8'))
+        result = self.environment.globals['staticintegrity'](None, 'foo')
+        self.assertEqual(result, expected_hash)
+
+    @override_settings(DEBUG=False)
+    @override_settings(STATICFILES_STORAGE='testpilot.base.tests.MockStorage')
+    @patch('builtins.open')
+    def test_staticintegrity_prod(self, mock_open):
+        content = 'prod file'
+        expected_hash = _hash_content(content.encode())
+        mock_open.return_value = io.BytesIO(content.encode('utf-8'))
+        result = self.environment.globals['staticintegrity'](None, 'foo')
+        self.assertEqual(result, expected_hash)
+
+    def test_urlintegrity(self):
+        expected_url = 'http://example.com'
+        expected_hash = '8675309'
+        with self.settings(URL_INTEGRITY_HASHES={expected_url: expected_hash}):
+            result = self.environment.globals['urlintegrity'](None, expected_url)
+            self.assertEqual(result, expected_hash)
+
+    def test_urlintegrity_override(self):
+        expected_url = 'http://example.com'
+        expected_hash = '8675309'
+        overrides = json.dumps({expected_url: expected_hash})
+        with self.settings(URL_INTEGRITY_HASHES={expected_url: 'override me'}):
+            with override_config(URL_INTEGRITY_HASHES_OVERRIDES=overrides):
+                result = self.environment.globals['urlintegrity'](None, expected_url)
+                self.assertEqual(result, expected_hash)
+
+    @patch('waffle.views._generate_waffle_js')
+    def test_waffleintegrity(self, mock_generate):
+        expected_content = 'foobarbaz waffle'
+        expected_hash = _hash_content(expected_content.encode())
+        mock_generate.return_value = expected_content
+        result = waffleintegrity(None, None)
+        self.assertEqual(result, expected_hash)

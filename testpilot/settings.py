@@ -337,6 +337,7 @@ TEMPLATES = [
             'newstyle_gettext': True,
             'extensions': DJANGO_JINJA_DEFAULT_EXTENSIONS + [
                 'waffle.jinja.WaffleExtension',
+                'testpilot.base.jinja.TestPilotExtension',
             ],
             'context_processors': [
                 'testpilot.base.context_processors.settings',
@@ -466,6 +467,34 @@ LOGGING = {
     }
 }
 
+# Subresource integrity hashes used by urlintegrity() in templates
+#
+# NOTE: These need to be updated manually whenever these remote resources
+# change, ideally along with at least some review of what changed. The hashes
+# can be generated at https://www.srihash.org/ or with a command like:
+#
+# curl -s https://pontoon.mozilla.org/pontoon.js \
+#     | openssl dgst -sha384 -binary \
+#     | openssl base64 -A
+#
+# See also:
+#   https://hacks.mozilla.org/2015/09/subresource-integrity-in-firefox-43/
+#
+# TODO: Management command to help update hashes for all listed resources?
+URL_INTEGRITY_HASHES = {
+    "https://pontoon.mozilla.org/pontoon.js":
+        "sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb",
+    "https://code.cdn.mozilla.net/fonts/fira.css":
+        "sha384-APhs/OUouhH+ZbBANL3+7a5J1sVSYyfUhGxTWiDMkTuEIO5fXWZonzNEj+CagDB7",
+}
+
 CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
 CONSTANCE_CONFIG = {
+    'URL_INTEGRITY_HASHES_OVERRIDES': (
+        '{}',
+        'JSON map of URLs to subresource integrity hashes, overrides '
+        'URL_INTEGRITY_HASHES in settings.py. Useful for updates in 3rd party '
+        'resources between deployment windows - '
+        '{"https://example.com/foo.js": "sha384-yaddayadda"}'
+    ),
 }

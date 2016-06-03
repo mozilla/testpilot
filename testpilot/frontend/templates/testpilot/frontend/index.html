@@ -3,8 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="{{ static('images/favicon.ico') }}">
-    <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
-    <link rel="stylesheet" href="{{ static('styles/main.css') }}">
+    <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css"
+                           crossorigin="anonymous"
+                           integrity="{{ urlintegrity('https://code.cdn.mozilla.net/fonts/fira.css') }}">
+    <link rel="stylesheet" href="{{ static('styles/main.css') }}"
+                           integrity="{{ staticintegrity('styles/main.css') }}">
 
     <meta name="defaultLanguage" content="en-US">
     <meta name="availableLanguages" content="en-US">
@@ -63,9 +66,14 @@
 
   </div>
 
-  <script src="{{ url('wafflejs') }}"></script>
-  <script src="{{ static('app/app.js') }}"></script>
-  <script src="https://pontoon.mozilla.org/pontoon.js"></script>
+  <script src="{{ url('wafflejs') }}"
+          integrity="{{ waffleintegrity(request) }}"></script>
+  <script src="{{ static('app/app.js') }}"
+          integrity="{{ staticintegrity('app/app.js') }}"></script>
+  <script src="https://pontoon.mozilla.org/pontoon.js"
+          crossorigin="anonymous"
+          integrity="{{ urlintegrity('https://pontoon.mozilla.org/pontoon.js') }}"></script>
+
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)
