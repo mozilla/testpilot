@@ -96,6 +96,7 @@ class _MockJinjaEnvironment(object):
 
 MockStorageInstance = Mock()
 MockStorageInstance.path = Mock(return_value='foo')
+MockStorageInstance.hashed_files = {"foo": "bar"}
 MockStorage = Mock(return_value=MockStorageInstance)
 
 
@@ -135,6 +136,7 @@ class TestPilotJinjaExtensionTests(TestCase):
         expected_hash = _hash_content(content.encode())
         mock_open.return_value = io.BytesIO(content.encode('utf-8'))
         result = self.environment.globals['staticintegrity'](None, 'foo')
+        MockStorageInstance.path.assert_called_with('bar')
         self.assertEqual(result, expected_hash)
 
     def test_urlintegrity(self):
