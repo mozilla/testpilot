@@ -473,9 +473,7 @@ LOGGING = {
 # change, ideally along with at least some review of what changed. The hashes
 # can be generated at https://www.srihash.org/ or with a command like:
 #
-# curl -s https://pontoon.mozilla.org/pontoon.js \
-#     | openssl dgst -sha384 -binary \
-#     | openssl base64 -A
+# curl -s https://pontoon.mozilla.org/pontoon.js | openssl dgst -sha384 -binary | openssl base64 -A
 #
 # See also:
 #   https://hacks.mozilla.org/2015/09/subresource-integrity-in-firefox-43/
@@ -483,7 +481,7 @@ LOGGING = {
 # TODO: Management command to help update hashes for all listed resources?
 URL_INTEGRITY_HASHES = {
     "https://pontoon.mozilla.org/pontoon.js":
-        "sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb",
+        "sha384-Wrfqhq3/nkU9KwCpKD8b55Aq0xMbUGEd7tETkuiRGhApLJ0QvusEhLBwta1OYdwi",
     "https://code.cdn.mozilla.net/fonts/fira.css":
         "sha384-APhs/OUouhH+ZbBANL3+7a5J1sVSYyfUhGxTWiDMkTuEIO5fXWZonzNEj+CagDB7",
 }
