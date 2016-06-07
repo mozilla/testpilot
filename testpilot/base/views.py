@@ -1,9 +1,12 @@
 import json
 import os.path
 
+import logging
+
 from django.conf import settings
 from django.http import HttpResponse, HttpResponseServerError, JsonResponse
 from django.views import static
+from django.views.decorators.csrf import csrf_exempt
 
 from ..experiments.models import Experiment
 
@@ -33,6 +36,13 @@ def ops_version(request):
             "commit": "dev"
         }
     return JsonResponse(data)
+
+
+@csrf_exempt
+def csp_report(request):
+    logger = logging.getLogger('testpilot.csp')
+    logger.info('', extra=json.loads(request.body.decode("utf-8")))
+    return HttpResponse('ok')
 
 
 def contribute_json(request):
