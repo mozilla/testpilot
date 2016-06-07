@@ -403,6 +403,9 @@ CSP_IMG_SRC = (
     'http://*.google-analytics.com',
     'https://*.google-analytics.com',
     'https://ssl.gstatic.com/',
+    'https://testpilot-dev-media.s3.amazonaws.com',
+    'https://testpilot-stage.s3.amazonaws.com',
+    'https://testpilot-prod.s3.amazonaws.com',
 )
 CSP_SCRIPT_SRC = (
     "'self'",
