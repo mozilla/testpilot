@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     'testpilot.base',
     'testpilot.frontend',
     'testpilot.users',
+    'testpilot.metrics',
     'testpilot.experiments',
 
     # Third party apps
@@ -76,6 +77,7 @@ INSTALLED_APPS = [
     'django_cleanup',
 
     'csp',
+    'corsheaders',
     'colorfield',
     'rest_framework',
     'storages',
@@ -108,6 +110,7 @@ for app in config('EXTRA_APPS', default='', cast=Csv()):
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -423,6 +426,9 @@ CSP_STYLE_SRC = (
     'https://*.mozilla.net',
 )
 
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_URLS_REGEX = r'^/api/.*$'
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -462,6 +468,11 @@ LOGGING = {
         'testpilot': {
             'handlers': ['console'],
             'level': config('DJANGO_LOG_LEVEL', default='INFO'),
+            'propagate': True,
+        },
+        'testpilottest': {
+            'handlers': ['console'],
+            'level': 'INFO',
             'propagate': True,
         },
         'request.summary': {

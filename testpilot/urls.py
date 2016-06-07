@@ -19,6 +19,7 @@ urlpatterns = patterns(
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api-auth/', include('rest_framework.urls',
                                namespace='rest_framework')),
+    url(r'^api/metrics/', include('testpilot.metrics.urls')),
     url(r'^api/experiments/', include('testpilot.experiments.urls')),
     url(r'^api/', include(router.urls)),
     # Catch-all fallback to frontend client view
