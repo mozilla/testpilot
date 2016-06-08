@@ -11,7 +11,7 @@ module.exports.templateBegin = `
     <meta name="defaultLanguage" content="en-US">
     <meta name="availableLanguages" content="en-US">
     <meta name="viewport" content="width=device-width">
-    <link rel="localization" href="/static/locales/{locale}/app.l20n'">
+    <link rel="localization" href="/static/locales/{locale}/app.l20n">
 
 </head>
 <body>
@@ -41,6 +41,6 @@ module.exports.templateEnd = `
       </footer>
     </div>
   </div>
-  <script src="/static/scripts/legal.js"></scripts>
+  <script src="/static/scripts/legal.js"></script>
 </body>
 </html>`;
