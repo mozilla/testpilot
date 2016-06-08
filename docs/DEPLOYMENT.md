@@ -34,6 +34,8 @@ Send out an email notification to `testpilot-dev@mozilla.com` to please test the
 
 We have a [list of steps for basic functionality](https://docs.google.com/document/d/1cYelgp7dPwHD1eQIs4POgFqF2NOzxmVpKP4rnPR-RDA/edit), but new features should also be tested.
 
+Follow the steps in the ["Test Pilot Deployment Verification Test Plan" doc](DEPLOYMENT-VERIFICATION.md) to verify that the site works as expected.
+
 ## Approve Production ##
 
 Once we are comfortable that the site has been tested, update the bug with approval to move to our *production environment*: [http://testpilot.firefox.com](http://testpilot.firefox.com).
