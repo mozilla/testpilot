@@ -30,11 +30,10 @@ export default Model.extend({
   },
 
   buildSurveyURL(ref) {
-    const installed = Object.keys(app.me.installed);
     const queryParams = querystring.stringify({
       ref: ref,
       experiment: this.title,
-      installed: installed
+      installed: app.me.installed ? Object.keys(app.me.installed) : []
     });
     return `${this.survey_url}?${queryParams}`;
   }
