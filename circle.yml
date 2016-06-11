@@ -57,11 +57,11 @@ dependencies:
         npm run sign;
       else
         npm run package;
-      fi
+      fi &&
+      npm run lint-addon
 
     # build static assets
     - npm install
-    - npm run lint
     - npm run build
     - npm test
 

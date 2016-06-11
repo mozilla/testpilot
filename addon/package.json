@@ -25,10 +25,12 @@
     "watch-ui": "watchify-server ui-test.js --index ui-test.html",
     "lint": "eslint .",
     "sign": "./bin/update-version && ./bin/sign",
-    "package": "jpm xpi && mv @testpilot-addon-$npm_package_version.xpi ../testpilot/frontend/static-src/addon/addon.xpi && mv @testpilot-addon-$npm_package_version.update.rdf ../testpilot/frontend/static-src/addon/update.rdf"
+    "package": "jpm xpi && mv @testpilot-addon-$npm_package_version.xpi ../testpilot/frontend/static-src/addon/addon.xpi && mv @testpilot-addon-$npm_package_version.update.rdf ../testpilot/frontend/static-src/addon/update.rdf",
+    "lint-addon": "addons-linter ../testpilot/frontend/static-src/addon/addon.xpi -o text"
   },
   "license": "MPL-2.0",
   "devDependencies": {
+    "addons-linter": "^0.11.1",
     "babel-eslint": "4.1.8",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^0.0.8",
