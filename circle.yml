@@ -40,11 +40,11 @@ dependencies:
 
     # create a version.json
     - >
-        printf '{"commit":"%s","version":"%s","source":"https://github.com/%s/%s","build":"%s"}\n' 
-        "$CIRCLE_SHA1" 
-        "$CIRCLE_TAG" 
-        "$CIRCLE_PROJECT_USERNAME" 
-        "$CIRCLE_PROJECT_REPONAME" 
+        printf '{"commit":"%s","version":"%s","source":"https://github.com/%s/%s","build":"%s"}\n'
+        "$CIRCLE_SHA1"
+        "$CIRCLE_TAG"
+        "$CIRCLE_PROJECT_USERNAME"
+        "$CIRCLE_PROJECT_REPONAME"
         "$CIRCLE_BUILD_URL"
         > version.json
 
@@ -67,7 +67,6 @@ dependencies:
 
     # build the actual deployment container
     - docker build -t app:build .
-    - docker images --no-trunc | awk '/^app/ {print $3}' | tee $CIRCLE_ARTIFACTS/docker-image-shasum256.txt
 
     # Clean up any old images and save the new one
     - I="image-$(date +%j).tgz"; mkdir -p ~/docker; rm ~/docker/*; docker save app:build | pigz --fast -c > ~/docker/$I; ls -l ~/docker
