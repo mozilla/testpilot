@@ -80,7 +80,7 @@ gulp.task('legal', function legalTask() {
              .pipe(gulp.dest('./legal-copy/'));
 });
 
-gulp.task('app-main', shouldLint('js-lint', 'lint'), function appMainTask() {
+gulp.task('app-main', function appMainTask() {
   return commonBrowserify('app.js', browserify({
     entries: [SRC_PATH + 'app/main.js'],
     debug: IS_DEBUG,

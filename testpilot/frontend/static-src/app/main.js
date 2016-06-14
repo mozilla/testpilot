@@ -29,7 +29,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 if (typeof(ga) !== 'undefined') {
   ga('create', 'UA-49796218-34', 'auto');
 } else {
-  console.warn(
+  console.warn( // eslint-disable-line no-console
     'You have google analytics blocked. We understand. Take a ' +
     'look at our privacy policy to see how we handle your data.'
   );
