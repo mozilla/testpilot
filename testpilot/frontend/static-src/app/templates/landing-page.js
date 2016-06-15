@@ -30,7 +30,7 @@ export default `
         <div class="centered-banner responsive-content-wrapper">
           {{^isFirefox}}
             <span data-l10n-id="landingDownloadFirefoxDesc" class="parens">(Test Pilot is available for Firefox on Windows, OS X and Linux)</span>
-            <a href="https://www.mozilla.org/en-US/firefox" class="button primary download-firefox">
+            <a href="https://www.mozilla.org/firefox" class="button primary download-firefox">
               <div class="button-icon">
                 <div class="button-icon-badge"></div>
               </div>
@@ -67,13 +67,13 @@ export default `
             <div class="card">
               <div class="card-icon test-pilot-icon"></div>
               <h3 class="card-title" data-l10n-id="landingStepThree">Step three</h3>
-              <div class="card-copy data-l10n-id="landingCardThree">Enable experimental features!</div>
+              <div class="card-copy" data-l10n-id="landingCardThree">Enable experimental features!</div>
             </div>
           </div>
           <div class="centered-banner">
             {{^isFirefox}}
               <span data-l10n-id="landingDownloadFirefoxDesc" class="parens">(Test Pilot is available for Firefox on Windows, OS X and Linux)</span>
-              <a href="https://www.mozilla.org/en-US/firefox" class="button primary download-firefox">
+              <a href="https://www.mozilla.org/firefox" class="button primary download-firefox">
                 <div class="button-icon">
                   <div class="button-icon-badge"></div>
                 </div>
