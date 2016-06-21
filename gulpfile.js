@@ -118,6 +118,12 @@ gulp.task('scripts', shouldLint('js-lint', 'lint'), function extraScriptsTask() 
     .pipe(gulp.dest(DEST_PATH + 'scripts'));
 });
 
+gulp.task('vendor', shouldLint('js-lint', 'lint'), function extraVendorTask() {
+  return gulp.src(SRC_PATH + 'vendor/**/*')
+    .pipe(gulpif(!IS_DEBUG, uglify()))
+    .pipe(gulp.dest(DEST_PATH + 'vendor'));
+});
+
 gulp.task('styles', shouldLint('sass-lint', 'sass-lint'), function stylesTask() {
   return gulp.src(SRC_PATH + 'styles/**/*.scss')
     .pipe(sourcemaps.init())
@@ -171,6 +177,7 @@ gulp.task('build', function buildTask(done) {
     'app-vendor',
     'app-main',
     'scripts',
+    'vendor',
     'styles',
     'images',
     'locales',
@@ -186,6 +193,7 @@ gulp.task('watch', ['build'], function watchTask() {
   gulp.watch(SRC_PATH + 'app/**/*.js', ['app-main']);
   gulp.watch('./package.json', ['app-vendor']);
   gulp.watch(SRC_PATH + 'scripts/**/*.js', ['scripts']);
+  gulp.watch(SRC_PATH + 'vendor/**/*.js', ['vendor']);
   gulp.watch(SRC_PATH + 'addon/**/*', ['addon']);
   gulp.watch(['./legal-copy/*.md', './legal-copy/*.js'], ['legal']);
   gulp.watch('./locales/**/*', ['locales']);

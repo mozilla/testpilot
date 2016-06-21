@@ -167,6 +167,15 @@ module.exports = {
     });
   },
 
+  onPostmessageProxyFramePings: function(ev) {
+    const pings = JSON.parse(ev);
+    pings.forEach(ping => this.onExperimentPing({
+      subject: ping.subject,
+      // HACK: Re-encode data because onExperimentPing expects a string
+      data: JSON.stringify(ping.data)
+    }));
+  },
+
   onExperimentPing: function(ev) {
     const { subject, data } = ev;
     const dataParsed = JSON.parse(data);

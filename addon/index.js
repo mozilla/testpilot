@@ -37,6 +37,7 @@ Mustache.parse(templates.installed);
 Mustache.parse(templates.experimentList);
 
 const Metrics = require('./lib/metrics');
+const PostmessageProxy = require('./lib/postmessage-proxy');
 const survey = require('./lib/survey');
 
 const PANEL_WIDTH = 300;
@@ -571,6 +572,7 @@ exports.main = function(options) {
 
   initServerEnvironmentPreference();
   Metrics.init();
+  PostmessageProxy.init();
 };
 
 exports.onUnload = function(reason) {
@@ -579,6 +581,7 @@ exports.onUnload = function(reason) {
   panel.destroy();
   button.destroy();
   Metrics.destroy();
+  PostmessageProxy.destroy();
   survey.destroy();
 
   if (reason === 'uninstall' || reason === 'disable') {
