@@ -38,6 +38,7 @@ Mustache.parse(templates.experimentList);
 
 const Metrics = require('./lib/metrics');
 const survey = require('./lib/survey');
+const WebExtensionChannels = require('./lib/webextension-channels');
 
 const PANEL_WIDTH = 300;
 const FOOTER_HEIGHT = 50;
@@ -233,8 +234,8 @@ panel.on('show', showExperimentList);
 panel.port.on('back', showExperimentList);
 
 function showExperimentList() {
-  panel.port.emit('show', getExperimentList(store.availableExperiments,
-                                            store.installedAddons));
+  panel.port.emit('show', getExperimentList(store.availableExperiments || {},
+                                            store.installedAddons || {}));
 }
 
 panel.port.on('link', url => {
@@ -475,6 +476,7 @@ const addonListener = {
         version: addon.version
       });
       Metrics.experimentEnabled(addon.id);
+      WebExtensionChannels.updateExperimentChannels();
     }
   },
   onDisabled: function(addon) {
@@ -486,6 +488,7 @@ const addonListener = {
         version: addon.version
       });
       Metrics.experimentDisabled(addon.id);
+      WebExtensionChannels.updateExperimentChannels();
     }
   },
   onUninstalling: function(addon) {
@@ -511,6 +514,7 @@ const addonListener = {
       }
 
       Metrics.experimentDisabled(addon.id);
+      WebExtensionChannels.updateExperimentChannels();
     }
   }
 };
@@ -525,6 +529,7 @@ const installListener = {
                formatInstallData(install, addon), addon);
     });
     Metrics.experimentEnabled(addon.id);
+    WebExtensionChannels.updateExperimentChannels();
   },
   onInstallFailed: function(install) {
     app.send('addon-install:install-failed', formatInstallData(install));
@@ -571,6 +576,7 @@ exports.main = function(options) {
 
   initServerEnvironmentPreference();
   Metrics.init();
+  WebExtensionChannels.init();
 };
 
 exports.onUnload = function(reason) {
@@ -579,6 +585,7 @@ exports.onUnload = function(reason) {
   panel.destroy();
   button.destroy();
   Metrics.destroy();
+  WebExtensionChannels.destroy();
 
   if (reason === 'uninstall' || reason === 'disable') {
     Metrics.onDisable();
