@@ -12,11 +12,16 @@ Cu.import('resource://gre/modules/TelemetryController.jsm');
 
 const { setTimeout, clearTimeout } = require('sdk/timers');
 const Events = require('sdk/system/events');
-const store = require('sdk/simple-storage').storage;
 const PrefsService = require('sdk/preferences/service');
+const self = require('sdk/self');
+const store = require('sdk/simple-storage').storage;
+
+const seedrandom = require('seedrandom');
 
 // Event type for receiving pings from experiments
 const EVENT_SEND_METRIC = 'testpilot::send-metric';
+const EVENT_RECEIVE_VARIANT_DEFS = 'testpilot::register-variants';
+const EVENT_SEND_VARIANTS = 'testpilot::receive-variants';
 
 // Minimum interval of time between main Telemetry pings in ms
 const PING_INTERVAL = 24 * 60 * 60 * 1000;
@@ -33,6 +38,30 @@ const PREFERENCE_OVERRIDES = {
 
 let pingTimer = null;
 
+const variantMaker = {
+  makeTest: function(test) {
+    let summedWeight = 0;
+    const variants = [];
+    test.variants.forEach(variant => {
+      summedWeight += variant.weight;
+      for (let i = 0; i < variant.weight; i++) {
+        variants.push(variant.value);
+      }
+    });
+    const seed = `${test.name}_${store.clientUUID}`;
+    return variants[Math.floor(seedrandom(seed)() * summedWeight)];
+  },
+
+  parseTests: function(tests) {
+    const results = {};
+    Object.keys(tests).forEach(key => {
+      results[key] = this.makeTest(tests[key]);
+    });
+    return results;
+  }
+};
+
+
 module.exports = {
 
   init: function() {
@@ -47,6 +76,7 @@ module.exports = {
     this.maybePingTelemetry();
 
     Events.on(EVENT_SEND_METRIC, this.onExperimentPing);
+    Events.on(EVENT_RECEIVE_VARIANT_DEFS, this.onReceiveVariantDefs);
   },
 
   onEnable: function() {
@@ -103,8 +133,10 @@ module.exports = {
   },
 
   updateExperiment: function(addonId, data) {
+    const features = (addonId in store.experimentVariants ?
+                      store.experimentVariants[addonId] : {});
     store.telemetryPingPayload.tests[addonId] = Object.assign(
-      store.telemetryPingPayload.tests[addonId] || {features: {}},
+      store.telemetryPingPayload.tests[addonId] || {features: features},
       data
     );
   },
@@ -121,12 +153,31 @@ module.exports = {
     this.updateExperiment(addonId, {features: features});
   },
 
+  onReceiveVariantDefs: function(ev) {
+    if (!store.experimentVariants) {
+      store.experimentVariants = {};
+    }
+
+    const { subject, data } = ev;
+    const dataParsed = variantMaker.parseTests(JSON.parse(data));
+
+    store.experimentVariants[subject] = dataParsed;
+    Events.emit(EVENT_SEND_VARIANTS, {
+      data: JSON.stringify(dataParsed),
+      subject: self.id
+    });
+  },
+
   onExperimentPing: function(ev) {
     const { subject, data } = ev;
     const dataParsed = JSON.parse(data);
 
     // TODO: Map add-on ID (subject) to other pingTypes as necessary
     const pingType = 'testpilottest';
+
+    if (subject in store.experimentVariants) {
+      dataParsed.variants = store.experimentVariants[subject];
+    }
 
     const payload = {
       version: 1,

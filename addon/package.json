@@ -67,6 +67,7 @@
     }
   ],
   "dependencies": {
-    "mustache": "2.2.1"
+    "mustache": "2.2.1",
+    "seedrandom": "^2.4.2"
   }
 }

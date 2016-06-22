@@ -8,3 +8,4 @@
 !/package.json
 !/route.js
 !/node_modules/mustache/**
+!/node_modules/seedrandom/**
