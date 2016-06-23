@@ -11,8 +11,15 @@
   }
 }
 
-.legal-container h1 {
-  font-size: $font-unit * 3.5;
-  font-weight: 300;
-  margin-top: $grid-unit * 2;
+.legal-container {
+  .legal {
+    background-color: $legal-background;
+    padding: 1em;
+  }
+
+  h1 {
+    font-size: $font-unit * 3.5;
+    font-weight: 300;
+    margin-top: $grid-unit * 2;
+  }
 }
