@@ -18,7 +18,7 @@ May 3, 2016
     [The Test Pilot Privacy Notice](/privacy) describes, generally, what data we receive from your participation in any Test Pilot Experiment. We use the information we receive through Test Pilot as described in our [Mozilla Privacy Policy](https://www.mozilla.org/privacy/).
 
 0. ## Termination
-    These Terms will continue to apply until ended by either you or Mozilla. You can choose to end them at any time for any reason by deactivating your Test Pilot account and  discontinuing your use of Test Pilot and all Test Pilot Experiments. If at any time, you decide you no longer wish to participate in Test Pilot, you may deactivate your Test Pilot account by visiting <https://testpilot.firefox.com>, signing in using your Firefox Account, clicking the "Settings" button, and clicking "Leave Test Pilot".
+    These Terms will continue to apply until ended by either you or Mozilla. You can choose to end them at any time for any reason by deactivating your Test Pilot account and  discontinuing your use of Test Pilot and all Test Pilot Experiments. If at any time, you decide you no longer wish to participate in Test Pilot, you may deactivate your Test Pilot account by visiting <https://testpilot.firefox.com>, signing in using your Firefox Account, clicking the "Settings" button, and clicking "Uninstall Test Pilot".
 
     We may suspend or terminate your access to Test Pilot at any time for any reason, or no reason at all, including, but not limited to, if we reasonably believe: (i) you have violated these Terms; (ii) you create risk or possible legal exposure for us; or (iii) our provision of Test Pilot to you is no longer commercially viable.
 

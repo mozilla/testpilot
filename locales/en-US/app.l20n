@@ -17,7 +17,7 @@
 <menuDiscuss "Discuss Test Pilot">
 <menuFileIssue "File an Issue">
 <menuLogout "Sign out">
-<menuRetire "Leave Test Pilot">
+<menuRetire "Uninstall Test Pilot">
 
 <landingFxaAlternateButton "Sign in">
 <landingIntroLead "Go beyond...">
@@ -84,12 +84,12 @@
 <discussNotifySubmitButton "Take me to the forum">
 <discussNotifyCancelButton "Cancel">
 
-<retireDialogTitle "Leave Test Pilot?">
+<retireDialogTitle "Uninstall Test Pilot?">
 <retireMessage "As you wish. This will disable any active tests, uninstall the add-on and remove your account info from our servers.">
 <retireSubmitButton "Proceed">
 <retireCancelButton "Cancel">
 
-<pageTitleRetirePage "Firefox Test Pilot - Leave Test Pilot">
+<pageTitleRetirePage "Firefox Test Pilot - Uninstall Test Pilot">
 <retirePageProgressMessage "Shutting down...">
 <retirePageHeadline "Thanks for flying!">
 <retirePageMessage "Hope you had fun experimenting with us. <br> Come back any time.">
