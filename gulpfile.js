@@ -21,7 +21,9 @@ const through = require('through2');
 const uglify = require('gulp-uglify');
 const tryRequire = require('try-require');
 const Remarkable = require('remarkable');
-const md = new Remarkable();
+const md = new Remarkable({
+  html: true
+});
 
 const packageJSON = require('./package.json');
 const vendorModules = Object.keys(packageJSON.dependencies);
