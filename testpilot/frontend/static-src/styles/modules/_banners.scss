@@ -92,7 +92,7 @@
   @include respond-to('not-small') {
     @include flex-container(row-reverse, space-between, center);
   }
-  
+
   @include respond-to('small') {
     @include flex-container(column, center, center);
   }

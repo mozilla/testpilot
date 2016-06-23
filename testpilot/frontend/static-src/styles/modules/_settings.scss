@@ -65,7 +65,7 @@
     text-overflow: ellipsis;
   }
 
-  &:after {
+  &::after {
     border-bottom: $grid-unit * .5 solid $white;
     border-left: ($grid-unit * .5) + 1 solid transparent;
     border-right: ($grid-unit * .5) + 1 solid transparent;

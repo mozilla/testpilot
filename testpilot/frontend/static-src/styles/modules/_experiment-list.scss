@@ -60,7 +60,7 @@
         box-shadow: 0 0 0 3px $white, 0 0 0 8px $primary;
       }
 
-      &:after {
+      &::after {
         @include hidpi-background-image('check', 36px 27px);
         background-color: $primary;
         background-position: center center;
@@ -112,11 +112,11 @@
   background: $transparent-black-2;
   border-radius: $small-border-radius $small-border-radius 0 0;
   box-shadow: 0 -2px 2px $transparent-white-1 inset;
-  height: $grid-unit * 8; 
+  height: $grid-unit * 8;
   overflow: hidden;
   position: relative;
 
-  &:after {
+  &::after {
     background: $transparent-white-05;
     content: '';
     height: $grid-unit * 15;

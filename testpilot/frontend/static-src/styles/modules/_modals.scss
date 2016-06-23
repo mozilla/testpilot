@@ -3,7 +3,7 @@
   margin-bottom: $grid-unit * 1.5;
   position: relative;
 
-  &:after {
+  &::after {
     border-left: $grid-unit * .75 solid transparent;
     border-right: $grid-unit * .75 solid transparent;
     border-top: $grid-unit * .75 solid $white;
@@ -230,7 +230,7 @@
   }
 
   .tour-next,
-  .tour-back { 
+  .tour-back {
     cursor: pointer;
     height: 40px;
     opacity: .7;

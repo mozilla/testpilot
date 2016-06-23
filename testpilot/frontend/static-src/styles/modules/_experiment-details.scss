@@ -254,8 +254,7 @@
     display: none;
   }
 
-  &:before {
-
+  &::before {
     @media (min-resolution: 1.3dppx) {
       animation: pop 2000ms alternate ease-in-out;
       animation-iteration-count: 5;
