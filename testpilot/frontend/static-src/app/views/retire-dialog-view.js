@@ -6,7 +6,7 @@ export default BaseView.extend({
     <div class="modal-container">
       <div id="{{id}}-modal" class="modal feedback-modal modal-bounce-in">
         <header>
-          <h3 class="title warning" data-l10n-id="retireDialogTitle">Leave Test Pilot?</h3>
+          <h3 class="title warning" data-l10n-id="retireDialogTitle">Uninstall Test Pilot?</h3>
         </header>
         <form>
 

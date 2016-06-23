@@ -97,9 +97,9 @@
 
 15. Click on any of the active experiments (ie: Activity Stream) and verify you are taken to the experiment details page.
 
-16. Click the **[...]** button at the top of the page and verify that your current logged in account is displayed, and click each of the three links at the top (**"Test Pilot Wiki"**, **"Discuss Test Pilot"**, and **"File an Issue"**) open the expected URLs. Clicking the **"Sign out"** with unsurprisingly sign you out of your session, and clicking the **"Leave Test Pilot"** link will bring up a confirmation dialog asking you if you want to leave Test Pilot and uninstall all your active experiments.
+16. Click the **[...]** button at the top of the page and verify that your current logged in account is displayed, and click each of the three links at the top (**"Test Pilot Wiki"**, **"Discuss Test Pilot"**, and **"File an Issue"**) open the expected URLs. Clicking the **"Sign out"** with unsurprisingly sign you out of your session, and clicking the **"Uninstall Test Pilot"** link will bring up a confirmation dialog asking you if you want to uninstall Test Pilot and uninstall all your active experiments.
 
-17. Click the **"Leave Test Pilot"** button in the drop down menu and confirm the text. Click the **"Cancel"** link at the bottom to dismiss the dialog without removing the Test Pilot add-on and all your active experiments (we'll verify this below).
+17. Click the **"Uninstall Test Pilot"** button in the drop down menu and confirm the text. Click the **"Cancel"** link at the bottom to dismiss the dialog without removing the Test Pilot add-on and all your active experiments (we'll verify this below).
 
 18. Quickly verify that the data looks right-ish. Note that each environment (dev, stage, prod) has different content and descriptions, versions, contributors may all be wildly different between server environments.
 
@@ -152,9 +152,9 @@
 
 40. Click the **[...]** button in the header area.
 
-41. Click the **"Leave Test Pilot"** link in the pop-up menu.
+41. Click the **"Uninstall Test Pilot"** link in the pop-up menu.
 
-42. Verify that you're prompted to leave test pilot and given the option of proceeding (a big, scary red button), or cancelling (a non-threatening blue link). Clicking the Cancel button takes you back to safetly. Clicking the scary red button will uninstall the Test Pilot add-on and any experiments you have currently installed.
+42. Verify that you're prompted to uninstall test pilot and given the option of proceeding (a big, scary red button), or cancelling (a non-threatening blue link). Clicking the Cancel button takes you back to safetly. Clicking the scary red button will uninstall the Test Pilot add-on and any experiments you have currently installed.
 
 43. Click the red **"Proceed"** button to leave the Test Pilot program. You should see a **"Shutting down"** spinner and then a **"Thanks for flying!"** modal dialog thanking you for your participaction and prompting you to **"Take a quick survey"** or returning to the Home page.
 
