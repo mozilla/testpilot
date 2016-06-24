@@ -57,7 +57,7 @@ Make sure you clone the Test Pilot repo:
 
 #### OS X hosts
 
-1. [Install Docker Toolbox](http://docs.docker.com/mac/started/)
+1. [Install Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_mac/)
 
 2. Make sure you have a default Docker machine:
 
