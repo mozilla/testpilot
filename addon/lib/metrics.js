@@ -133,10 +133,8 @@ module.exports = {
   },
 
   updateExperiment: function(addonId, data) {
-    const features = (addonId in store.experimentVariants ?
-                      store.experimentVariants[addonId] : {});
     store.telemetryPingPayload.tests[addonId] = Object.assign(
-      store.telemetryPingPayload.tests[addonId] || {features: features},
+      store.telemetryPingPayload.tests[addonId] || {},
       data
     );
   },
@@ -162,6 +160,7 @@ module.exports = {
     const dataParsed = variantMaker.parseTests(JSON.parse(data));
 
     store.experimentVariants[subject] = dataParsed;
+    this.experimentFeaturesChanged(subject, dataParsed);
     Events.emit(EVENT_SEND_VARIANTS, {
       data: JSON.stringify(dataParsed),
       subject: self.id
