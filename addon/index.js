@@ -579,13 +579,14 @@ exports.onUnload = function(reason) {
   panel.destroy();
   button.destroy();
   Metrics.destroy();
-  survey.destroy();
 
   if (reason === 'uninstall' || reason === 'disable') {
     Metrics.onDisable();
   }
 
   if (reason === 'uninstall') {
+    survey.destroy();
+
     if (store.installedAddons) {
       Object.keys(store.installedAddons).forEach(id => {
         uninstallExperiment({addon_id: id});
