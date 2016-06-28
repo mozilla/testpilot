@@ -62,6 +62,8 @@ disruptions in service regardless of cause.
 
 There are two sources for metrics data - the server and the client.
 
+## Server-side events
+
 **The server** will use server logs to store metric data which will be picked
 up by the measurement team ([some docs][3]), parsed and transformed if
 necessary, and pushed into ElasticSearch (as scale permits), S3, and Redshift.
@@ -143,6 +145,8 @@ local schema = {
 }
 ```
 
+## Client-side Telemetry
+
 The second source, **the client**, will use the existing Telemetry system (the
 system we use for measuring all kinds of things in Firefox, [see examples][5])
 which has a [submitExternalPing() function][6].  This function will allow us to
@@ -151,6 +155,8 @@ put into an appropriate Redshift cluster with all our server log data.  The
 client pings will adhere to the [common ping format][7], will include the
 clientId and [environment][8].  There will be two Telemetry ping types,
 `testpilot` and `testpilottest`.
+
+### `testpilot` summary ping
 
 The `testpilot` type will be a periodic (every 24 hours) ping which includes a
 payload of:
@@ -179,6 +185,8 @@ An example payload (within the full ping) would look like:
  "version": 1  // Just in case we need to drastically change the format later
 }
 ```
+
+### Per-experiment `testpilottest` ping
 
 The `testpilottest` type has a light wrapper around a second payload which is
 defined by each individual experiment.  The second payload's schema will be
