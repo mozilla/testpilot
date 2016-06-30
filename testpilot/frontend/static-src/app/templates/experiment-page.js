@@ -52,6 +52,11 @@ export default `
                       <td data-l10n-id="bugReports">Bug Reports</td>
                       <td><a data-hook="bug-report-url"></a></td>
                     </tr>
+
+                    <tr>
+                      <td data-l10n-id="discourse">Discourse</td>
+                      <td><a data-hook="discourse-url"></a></td>
+                    </tr>
                   </table>
                 </section>
                 <section class="contributors-section">

@@ -49,6 +49,7 @@ class Experiment(TranslatableModel):
     changelog_url = models.URLField(blank=True)
     contribute_url = models.URLField(blank=True)
     bug_report_url = models.URLField(blank=True)
+    discourse_url = models.URLField(blank=True)
     privacy_notice_url = models.URLField(blank=True)
     addon_id = models.CharField(max_length=500, blank=False,)
     gradient_start = ColorField(default='#e07634')

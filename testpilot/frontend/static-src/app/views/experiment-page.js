@@ -118,6 +118,15 @@ export default PageView.extend({
       hook: 'bug-report-url'
     }],
 
+    'model.discourse_url': [{
+      hook: 'discourse-url'
+    },
+    {
+      type: 'attribute',
+      name: 'href',
+      hook: 'discourse-url'
+    }],
+
     'model.introduction': [{
       type: 'innerHTML',
       hook: 'introduction-html'

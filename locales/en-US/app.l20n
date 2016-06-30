@@ -103,6 +103,7 @@
 <lastUpdate "Last Update">
 <contribute "Contribute">
 <bugReports "Bug Reports">
+<discourse "Discourse">
 <nowActive "Active">
 <userCount title:"Active Users of this Experiment">
 <tourOnboardingTitle "{{title}} enabled!">
