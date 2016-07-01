@@ -25,9 +25,6 @@ const md = new Remarkable({
   html: true
 });
 
-const packageJSON = require('./package.json');
-const vendorModules = Object.keys(packageJSON.dependencies);
-
 const IS_DEBUG = (process.env.NODE_ENV === 'development');
 
 const SRC_PATH = './testpilot/frontend/static-src/';
@@ -37,6 +34,19 @@ const config = tryRequire('./debug-config.json') || {
   'sass-lint': true,
   'js-lint': true
 };
+
+const excludeVendorModules = [
+  'babel-polyfill',
+  'l20n'
+];
+const includeVendorModules = [
+  'babel-polyfill/browser',
+  'l20n/dist/compat/web/l20n'
+];
+const packageJSON = require('./package.json');
+const vendorModules = Object.keys(packageJSON.dependencies)
+  .filter(name => excludeVendorModules.indexOf(name) < 0)
+  .concat(includeVendorModules);
 
 function shouldLint(opt, task) {
   return config[opt] ? [task] : [];
@@ -189,6 +199,7 @@ gulp.task('watch', ['build'], function watchTask() {
   gulp.watch(SRC_PATH + 'addon/**/*', ['addon']);
   gulp.watch(['./legal-copy/*.md', './legal-copy/*.js'], ['legal']);
   gulp.watch('./locales/**/*', ['locales']);
+  gulp.watch('gulpfile.js', () => process.exit());
 });
 
 // Set up a webserver for the static assets
