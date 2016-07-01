@@ -8,7 +8,7 @@ export default `
             <div class="copter"></div>
           </div>
           <div class="intro-text">
-            <h2 data-l10n-id="experimentListPageHeader" class="banner">Now testing!</h2>
+            <h2 data-l10n-id="experimentListPageHeader" class="banner">Ready for Takeoff!</h2>
             <p data-l10n-id="experimentListPageSubHeader">Pick the features you want to try. <br> Check back soon for more experiments.</p>
           </div>
         </div>
