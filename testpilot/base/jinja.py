@@ -16,6 +16,8 @@ from jinja2.ext import Extension
 
 DEFAULT_CHUNK_SIZE = 64 * 2 ** 10
 
+STATICINTEGRITY_CACHE_TTL = getattr(settings, 'STATICINTEGRITY_CACHE_TTL', 30)
+
 
 def _hash_content(content):
     """Build a sha384 hash for subresource integrity use"""
@@ -43,7 +45,7 @@ def staticintegrity(context, name):
     if out is None:
         with open(path, 'rb') as content_file:
             out = _hash_content(content_file.read())
-        cache.set(key, out)
+        cache.set(key, out, STATICINTEGRITY_CACHE_TTL)
 
     return out
 

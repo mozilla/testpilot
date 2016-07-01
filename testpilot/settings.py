@@ -509,6 +509,7 @@ URL_INTEGRITY_HASHES = {
     "https://code.cdn.mozilla.net/fonts/fira.css":
         "sha384-APhs/OUouhH+ZbBANL3+7a5J1sVSYyfUhGxTWiDMkTuEIO5fXWZonzNEj+CagDB7",
 }
+STATICINTEGRITY_CACHE_TTL = 30
 
 CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
 CONSTANCE_CONFIG = {
