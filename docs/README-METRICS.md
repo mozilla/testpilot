@@ -127,7 +127,7 @@ local schema = {
     {"user_agent_browser",         "VARCHAR",   255,     nil,         "Fields[user_agent_browser]"},
     {"user_agent_os",              "VARCHAR",   255,     nil,         "Fields[user_agent_os]"},
     {"user_agent_version",         "VARCHAR",   255,     nil,         "Fields[user_agent_version]"},
-    
+
     {"path",                       "VARCHAR",   56,      nil,         "Fields[path]"},
     {"method",                     "VARCHAR",   200,     nil,         "Fields[method]"},
     {"code",                       "VARCHAR",   255,     nil,         "Fields[code]"},
@@ -158,31 +158,36 @@ clientId and [environment][8].  There will be two Telemetry ping types,
 
 ### `testpilot` summary ping
 
-The `testpilot` type will be a periodic (every 24 hours) ping which includes a
-payload of:
+The `testpilot` ping type is an event-driven ping (meaning, it fires when an
+event happens).  The format allows for batching of events submitted
+periodically but currently pings are sent for every event.  The `testpilot`
+payload consists of:
 
-* For each experiment:
-  * enabled/disabled state with timestamp of last toggle
-  * feature switch status
-* User Agent
-* A version
+* a timestamp of when the ping is submitted in seconds since the browser was
+  started
+* a test name set to the `em:id` of the add-on with the event.  For Test Pilot
+  that is `@testpilot-addon`.
+* an `events` array with each object consisting of:
+  * a timestamp of when the event happened in seconds since the browser was
+    started
+  * a string field called `object` which is what the event is affecting (for
+    example, "toolbar_button_1")
+  * a string field called "event" which is what happened.  Examples include
+    include: activate, click, install
 
 An example payload (within the full ping) would look like:
 ```js
-{"tests":
-  {"universal_search":               // The em:id field from the add-on
-    {"last_enabled": 1457462200,
-     "last_disabled": 1457461100,
-     "features": {}
-    },
-   "page_shot":
-    {"last_enabled": 1457462200,
-     "last_disabled": 1457461100,
-     "features": {}
+{
+  "timestamp": 1500,
+  "test": "@testpilot-addon", // The em:id field from the add-on
+  "version": "1.2-beta2",     // The version field from the add-on
+  "events": [
+    {
+      "timestamp": 1100,
+      "object": "toolbar_button_1",
+      "event": "clicked"
     }
-  },
- "agent": "User Agent String",
- "version": 1  // Just in case we need to drastically change the format later
+  ]
 }
 ```
 
@@ -190,28 +195,36 @@ An example payload (within the full ping) would look like:
 
 The `testpilottest` type has a light wrapper around a second payload which is
 defined by each individual experiment.  The second payload's schema will be
-defined by each experiment and needs to remain flexible for rapid changes.  The
-`testpilottest` type will be submitted to Telemetry whenever the experiment
-calls it (not necessarily periodically, although it could be).  The light
-wrapper includes:
+defined by each experiment and needs to remain flexible for rapid changes.
+We suggest each experiment send pings in an event-driven model (meaning, ping
+for each event).  However, the Test Pilot add-on reserves the ability to batch
+events and submit them periodically.
 
-* The experiment ID
-* User Agent
-* Version
-* The experiment payload
+The `testpilottest` ping type consists of the following fields:
 
-An example payload (within the full ping) would look like:
+* The experiment ID (the `em:id` field of the add-on)
+* The version of the experiment (the `version` field of the add-on)
+* A timestamp of when the event happened in seconds since the browser was
+  started
+* A variants object with details of any [variants](experiments/variants.md) which are running
+* The data payload
+
+An example ping would look like:
 ```js
 {
  "test": "universalsearch@mozilla",  // The em:id field from the add-on
- "agent": "User Agent String",
- "version": 1,  // Just in case we need to drastically change the format later
+ "version": "1.2-testing",  // The version field from the add-on
+ "timestamp": 1299,
+ "variants": '{"someTest": "b", "someOtherTest: true}',
  "payload": { ... }
 }
 ```
 
-Please note that each experiment will need to define its payload schema before
-being able to record data.
+**Please note that each experiment will need to define its payload schema before
+being able to record data.**
+
+[Example add-ons][9] are available to look at the code when writing your own
+add-ons.
 
 To ensure that the client can submit data the Test Pilot add-on will require
 that the Basic Telemetry system is enabled (which is on by default in Firefox).
@@ -219,13 +232,6 @@ that the Basic Telemetry system is enabled (which is on by default in Firefox).
 In addition to the above, we will also instrument the site with Google
 Analytics to collect standard browsing behavior, analytics information, and
 funnel tracking.
-
-A quick unofficial word on privacy (read the privacy policy for the official
-word): Our goal is to collect as little information as possible in order to
-make the reports we need.  Server side logging will log Firefox Account ID and
-client side logging will specifically *not* log that ID (instead, using the
-Telemetry ID).  This means that we will *not* be able to associate client-side
-reports with specific users.
 
 All data is kept, by default, for 180 days.
 
@@ -237,3 +243,4 @@ All data is kept, by default, for 180 days.
 [6]: https://dxr.mozilla.org/mozilla-central/source/toolkit/components/telemetry/TelemetryController.jsm#192
 [7]: https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/common-ping.html
 [8]: https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/environment.html
+[9]: https://github.com/mozilla/testpilot/tree/master/docs/examples
