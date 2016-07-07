@@ -52,7 +52,6 @@ class Experiment(TranslatableModel):
     gradient_start = ColorField(default='#e07634')
     gradient_stop = ColorField(default='#4cffa8')
 
-    users = models.ManyToManyField(User, through='UserInstallation')
     contributors = models.ManyToManyField(User, related_name='contributor')
 
     created = models.DateTimeField(auto_now_add=True)
@@ -60,8 +59,7 @@ class Experiment(TranslatableModel):
 
     @cached_property
     def installation_count(self):
-        return UserInstallation.objects.distinct('user').filter(
-            experiment=self).count()
+        return UserInstallation.objects.filter(experiment=self).count()
 
     def __str__(self):
         return self.title
@@ -109,11 +107,10 @@ class ExperimentTourStep(TranslatableModel):
 class UserInstallation(models.Model):
 
     experiment = models.ForeignKey(Experiment)
-    user = models.ForeignKey(User)
     client_id = models.CharField(blank=True, max_length=128)
 
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
     class Meta:
-        unique_together = ('experiment', 'user', 'client_id',)
+        unique_together = ('experiment', 'client_id',)

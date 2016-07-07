@@ -105,8 +105,7 @@ class ExperimentViewTests(BaseTestCase):
                         "survey_url": "https://qsurvey.mozilla.com/s3/%s" %
                         experiment.slug,
                         "installation_count": UserInstallation.objects
-                        .distinct('user').filter(experiment=experiment)
-                        .count(),
+                        .filter(experiment=experiment).count(),
                         "installations_url":
                             "http://testserver/api/experiments/%s/installations/" %
                             experiment.pk,
@@ -177,18 +176,8 @@ class ExperimentViewTests(BaseTestCase):
 
     def test_installations(self):
         """Experiments should support an /installations/ psuedo-collection"""
-        user = self.user
         experiment = self.experiments['test-1']
         client_id = '8675309'
-
-        # Ensure list GET without authentication is a 403
-        url = reverse('experiment-installation-list',
-                      args=(experiment.pk,))
-        resp = self.client.get(url)
-        self.assertEqual(403, resp.status_code)
-
-        self.client.login(username=self.username,
-                          password=self.password)
 
         # Ensure the installation to be created is initially 404
         url = reverse('experiment-installation-detail',
@@ -198,28 +187,25 @@ class ExperimentViewTests(BaseTestCase):
 
         # Create the first installation of interest
         UserInstallation.objects.create(
-            experiment=experiment, user=user, client_id=client_id)
+            experiment=experiment, client_id=client_id)
 
         # Also create a few installations that shouldn't appear in results
         UserInstallation.objects.create(
-            experiment=self.experiments['test-2'], user=user,
+            experiment=self.experiments['test-2'],
             client_id=client_id)
 
         UserInstallation.objects.create(
-            experiment=experiment, user=self.users['experimenttest-1'],
+            experiment=experiment,
             client_id='someotherclient')
-
-        # Ensure that the desired installation appears in the API list result
-        data = self.jsonGet('experiment-installation-list',
-                            experiment_pk=experiment.pk)
-        self.assertEqual(1, len(data))
-        self.assertEqual(client_id, data[0]['client_id'])
 
         # Ensure that the desired installation is found at its URL
         url = reverse('experiment-installation-detail',
                       args=(experiment.pk, client_id))
         resp = self.client.get(url)
         self.assertEqual(200, resp.status_code)
+
+        self.assertEqual(2, (UserInstallation.objects
+                             .filter(experiment=experiment).count()))
 
         # Create another client installation via PUT
         self.handler.records = []
@@ -229,6 +215,10 @@ class ExperimentViewTests(BaseTestCase):
         resp = self.client.put(url, {})
         self.assertEqual(200, resp.status_code)
 
+        # Ensure that the API list result reflects the addition
+        self.assertEqual(3, (UserInstallation.objects
+                             .filter(experiment=experiment).count()))
+
         # Ensure that a testpilot.test-install log event was emitted
         record = self.handler.records[0]
         formatter = JsonLogFormatter(logger_name='testpilot.test-install')
@@ -236,13 +226,7 @@ class ExperimentViewTests(BaseTestCase):
         fields = details['Fields']
 
         self.assertEqual('testpilot.test-install', record.name)
-        self.assertEqual(fields['uid'], user.id)
         self.assertEqual(fields['context'], experiment.title)
-
-        # Ensure that the API list result reflects the addition
-        data = self.jsonGet('experiment-installation-list',
-                            experiment_pk=experiment.pk)
-        self.assertEqual(2, len(data))
 
         # Delete the new client installation with DELETE
         client_id_2 = '123456789'
@@ -252,6 +236,5 @@ class ExperimentViewTests(BaseTestCase):
         self.assertEqual(410, resp.status_code)
 
         # Ensure that the API list result reflects the deletion
-        data = self.jsonGet('experiment-installation-list',
-                            experiment_pk=experiment.pk)
-        self.assertEqual(1, len(data))
+        self.assertEqual(2, (UserInstallation.objects
+                             .filter(experiment=experiment).count()))

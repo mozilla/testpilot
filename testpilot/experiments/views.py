@@ -1,5 +1,5 @@
 from rest_framework import viewsets, status
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.decorators import (detail_route, permission_classes,
                                        api_view)
@@ -44,24 +44,14 @@ class ExperimentViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
 
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
-def installation_list(request, experiment_pk):
-    experiment = get_object_or_404(Experiment, pk=experiment_pk)
-    queryset = UserInstallation.objects.filter(
-        user=request.user, experiment=experiment)
-    return Response(UserInstallationSerializer(
-        queryset, many=True, context={'request': request}).data)
-
-
 @api_view(['GET', 'PUT', 'DELETE'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def installation_detail(request, experiment_pk, client_id):
     experiment = get_object_or_404(Experiment, pk=experiment_pk)
 
     if 'PUT' == request.method:
         installation, created = UserInstallation.objects.get_or_create(
-            user=request.user, experiment=experiment, client_id=client_id)
+            experiment=experiment, client_id=client_id)
         installation.save()
         logging.getLogger('testpilot.test-install').info('', extra={
             'uid': request.user.id,
@@ -70,7 +60,7 @@ def installation_detail(request, experiment_pk, client_id):
     else:
         installation = get_object_or_404(
             UserInstallation,
-            user=request.user, experiment=experiment, client_id=client_id)
+            experiment=experiment, client_id=client_id)
 
     if 'DELETE' == request.method:
         installation.delete()

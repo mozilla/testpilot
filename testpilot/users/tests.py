@@ -9,8 +9,6 @@ from django.test import TestCase, Client
 from django.test.utils import override_settings
 from django.contrib.auth.models import User
 
-from rest_framework import fields
-
 from testfixtures import LogCapture
 
 from allauth.account.signals import user_signed_up
@@ -18,7 +16,7 @@ from allauth.account.signals import user_signed_up
 from mozilla_cloud_services_logger.formatters import JsonLogFormatter
 
 from ..utils import gravatar_url
-from ..experiments.models import (Experiment, UserInstallation)
+from ..experiments.models import (Experiment)
 
 from .models import UserProfile
 
@@ -262,36 +260,6 @@ class MeViewSetTests(TestCase):
                     'username': 'johndoe'
                 },
                 'addon': self.addonData,
-                'installed': {}
-            }
-        )
-
-        experiment = self.experiments['test-1']
-        client_id = '8675309'
-
-        installation = UserInstallation.objects.create(
-            experiment=experiment, user=self.user, client_id=client_id)
-
-        # HACK: Use a rest framework field to format dates as expected
-        date_field = fields.DateTimeField()
-
-        resp = self.client.get(self.url)
-        result_data = json.loads(str(resp.content, 'utf-8'))
-
-        self.assertEqual(len(result_data['installed']), 1)
-        self.assertDictEqual(
-            result_data['installed'],
-            {
-                'addon-1@example.com': {
-                    'experiment': 'http://testserver/api/experiments/%s' % experiment.pk,
-                    'addon_id': 'addon-1@example.com',
-                    'client_id': client_id,
-                    'url':
-                    'http://testserver/api/experiments/%s/installations/%s' %
-                    (experiment.pk, client_id),
-                    'created': date_field.to_representation(installation.created),
-                    'modified': date_field.to_representation(installation.modified),
-                }
             }
         )
 
