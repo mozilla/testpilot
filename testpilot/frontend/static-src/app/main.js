@@ -1,11 +1,10 @@
+import 'babel-polyfill/browser';
+import 'l20n/dist/compat/web/l20n';
+
 import es6Promise from 'es6-promise';
 es6Promise.polyfill();
 
 import 'isomorphic-fetch';
-
-// TODO: Switch back to L20N official release when Bug 1240192 is resolved
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1240192
-import '../vendor/l20n';
 
 import app from 'ampersand-app';
 
@@ -45,8 +44,7 @@ app.extend({
 
     Promise.all([
       app.me.fetch(),
-      app.experiments.fetch(),
-      document.l10n.ready
+      app.experiments.fetch()
     ]).then(() => {
       app.me.updateEnabledExperiments(app.experiments);
 
