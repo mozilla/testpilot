@@ -3,7 +3,7 @@ from django.contrib import admin
 from hvad.admin import TranslatableAdmin, TranslatableTabularInline
 
 from .models import (Experiment, ExperimentDetail, ExperimentTourStep,
-                     UserInstallation, Feature, FeatureCondition)
+                     UserInstallation)
 from ..utils import (show_image, parent_link, related_changelist_link,
                      translated)
 
@@ -18,22 +18,6 @@ class ExperimentTourStepInline(TranslatableTabularInline):
     extra = 0
 
 
-class FeatureInline(admin.TabularInline):
-    model = Feature
-    extra = 0
-
-
-class FeatureConditionInline(admin.TabularInline):
-    model = FeatureCondition
-    extra = 0
-
-    def formfield_for_choice_field(self, db_field, request, **kwargs):
-        if db_field.name == 'operator':
-            kwargs['choices'] = FeatureCondition.objects.get_operator_choices()
-        return (super(FeatureConditionInline, self)
-                .formfield_for_choice_field(db_field, request, **kwargs))
-
-
 class ExperimentAdmin(TranslatableAdmin):
 
     list_display = ('id',
@@ -46,8 +30,7 @@ class ExperimentAdmin(TranslatableAdmin):
 
     raw_id_fields = ('contributors',)
 
-    inlines = (ExperimentTourStepInline, ExperimentDetailInline,
-               FeatureInline, FeatureConditionInline, )
+    inlines = (ExperimentTourStepInline, ExperimentDetailInline,)
 
     # Workaround for prepopulated_fields and fieldsets from here:
     # https://github.com/KristianOellegaard/django-hvad/issues/10#issuecomment-5572524

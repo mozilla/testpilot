@@ -1,5 +1,3 @@
-from unittest.mock import patch
-
 import json
 
 from django.core.urlresolvers import reverse
@@ -13,8 +11,7 @@ from mozilla_cloud_services_logger.formatters import JsonLogFormatter
 
 from ..utils import gravatar_url, TestCase
 from ..users.models import UserProfile
-from .models import (Experiment, ExperimentTourStep, UserInstallation,
-                     Feature, FeatureState, FeatureCondition)
+from .models import (Experiment, ExperimentTourStep, UserInstallation)
 
 import logging
 logger = logging.getLogger(__name__)
@@ -258,129 +255,3 @@ class ExperimentViewTests(BaseTestCase):
         data = self.jsonGet('experiment-installation-list',
                             experiment_pk=experiment.pk)
         self.assertEqual(1, len(data))
-
-
-class FeaturesBasicTests(BaseTestCase):
-
-    def setUp(self):
-        super(FeaturesBasicTests, self).setUp()
-
-        self.client.login(username=self.username,
-                          password=self.password)
-
-        self.experiment = self.experiments['test-1']
-        self.client_id = '8675309'
-
-        self.installation = UserInstallation.objects.create(
-            user=self.user, experiment=self.experiment,
-            client_id=self.client_id)
-
-        self.feature1_title = 'frobulation'
-        feature1 = Feature.objects.create(
-            experiment=self.experiment, slug=self.feature1_title,
-            title=self.feature1_title, default_active=False)
-
-        FeatureState.objects.create(
-            installation=self.installation, feature=feature1, active=True)
-
-        self.feature2_title = 'reticulation'
-        Feature.objects.create(
-            experiment=self.experiment, slug=self.feature2_title,
-            title=self.feature2_title, default_active=True)
-
-    def test_get_features_utility(self):
-        """get_features_for_installation utility should yield feature flags"""
-        result = self.installation.features
-        self.assertEqual(result, {
-            self.feature1_title: True,
-            self.feature2_title: True
-        })
-
-    def test_features_list(self):
-        """Features list for installation should be an accessible resource"""
-        result = self.jsonGet('features-list',
-                              experiment_pk=self.experiment.pk,
-                              client_id=self.client_id)
-        self.assertEqual(result, {
-            self.feature1_title: True,
-            self.feature2_title: True
-        })
-
-    def test_me_list(self):
-        """/api/me installation listing should include feature flags"""
-        result = self.jsonGet('me-list')
-        self.assertEqual(list(result['installed'].values())[0]['features'], {
-            self.feature1_title: True,
-            self.feature2_title: True
-        })
-
-
-class FeatureConditionTests(BaseTestCase):
-
-    def setUp(self):
-        super(FeatureConditionTests, self).setUp()
-
-        self.experiment = self.experiments['test-1']
-
-        self.user1 = self.users['experimenttest-0']
-        self.user2 = self.users['experimenttest-1']
-        self.user3 = self.users['experimenttest-2']
-
-        self.installation1 = UserInstallation.objects.create(
-            experiment=self.experiment, user=self.user1,
-            client_id='8675309-0')
-
-        self.installation2 = UserInstallation.objects.create(
-            experiment=self.experiment, user=self.user2,
-            client_id='8675309-1')
-
-        self.installation3 = UserInstallation.objects.create(
-            experiment=self.experiment, user=self.user3,
-            client_id='8675309-2')
-
-        self.feature1 = Feature.objects.create(
-            experiment=self.experiment, slug='frobulation',
-            title='frobulation', default_active=False)
-
-        self.feature2 = Feature.objects.create(
-            experiment=self.experiment, slug='reticulation',
-            title='reticulation', default_active=False)
-
-        self.feature3 = Feature.objects.create(
-            experiment=self.experiment, slug='encabulation',
-            title='encabulation', default_active=False)
-
-    def test_random_bucket(self):
-
-        FeatureCondition.objects.create(
-            experiment=self.experiment,
-            operator='random_bucket',
-            argument=json.dumps([
-                self.feature1.slug,
-                self.feature2.slug,
-                self.feature3.slug
-            ])
-        )
-
-        with patch('random.choice') as mock_choice:
-
-            mock_choice.return_value = self.feature1.slug
-            self.assertEqual(self.installation1.features, {
-                self.feature1.slug: True,
-                self.feature2.slug: False,
-                self.feature3.slug: False,
-            })
-
-            mock_choice.return_value = self.feature2.slug
-            self.assertEqual(self.installation2.features, {
-                self.feature1.slug: False,
-                self.feature2.slug: True,
-                self.feature3.slug: False,
-            })
-
-            mock_choice.return_value = self.feature3.slug
-            self.assertEqual(self.installation3.features, {
-                self.feature1.slug: False,
-                self.feature2.slug: False,
-                self.feature3.slug: True,
-            })
