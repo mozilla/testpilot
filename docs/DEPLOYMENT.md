@@ -28,7 +28,7 @@ This will happen on Friday at the end of sprint.
 4. Click `Publish`
 5. Wait for CircleCI to confirm that the release has passed ([tags uploaded to container](https://hub.docker.com/r/mozilla/testpilot/tags/)).
 
-Please be as detailed as possible in the release notes.
+Please be as detailed as possible in the release notes. Examples - [2016-07-05](https://github.com/mozilla/testpilot/releases/tag/2016-07-05), [2016-06-06](https://github.com/mozilla/testpilot/releases/tag/2016-06-06)
 
 ## Request Deployment ##
 
