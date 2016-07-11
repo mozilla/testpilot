@@ -100,7 +100,7 @@ app.extend({
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      body: 'newsletters=test-pilot&email=' + email
+      body: 'newsletters=test-pilot&email=' + encodeURIComponent(email)
     }).then(callback)
     .catch(err => {
       // for now, log the error in the console & do nothing in the UI
