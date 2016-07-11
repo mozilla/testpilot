@@ -43,33 +43,17 @@ export default PageView.extend({
     PageView.prototype.render.apply(this, arguments);
 
     this.uninstallAddon();
+    this.clearProgressMessage();
 
-    this.retireUserAccount()
-      .then(() => app.me.fetch())
-      .then(() => this.clearProgressMessage())
-      .catch(err => console.log(err)); // eslint-disable-line no-console
+    app.sendToGA('event', {
+      eventCategory: 'HomePage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'Retire'
+    });
   },
 
   uninstallAddon() {
     app.webChannel.sendMessage('uninstall-self');
-  },
-
-  retireUserAccount() {
-    return fetch(this.retireUrl, {
-      method: 'POST',
-      credentials: 'same-origin',
-      headers: {
-        'Accept': 'application/json',
-        'X-CSRFTOKEN': app.me.csrfToken
-      },
-      body: ''
-    }).then(() => {
-      app.sendToGA('event', {
-        eventCategory: 'HomePage Interactions',
-        eventAction: 'button click',
-        eventLabel: 'Retire'
-      });
-    });
   },
 
   clearProgressMessage() {
@@ -94,4 +78,3 @@ export default PageView.extend({
   // override page afterRender() to skip rendering header & footer
   afterRender() {}
 });
-

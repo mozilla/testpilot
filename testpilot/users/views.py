@@ -1,12 +1,7 @@
 from django.conf import settings
 
-from django.contrib.auth import logout
-
-from rest_framework import status
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.decorators import api_view, permission_classes
 
 from ..experiments.serializers import UserInstallationSerializer
 from ..experiments.models import UserInstallation
@@ -45,17 +40,6 @@ class MeViewSet(ViewSet):
                 for obj in UserInstallation.objects.filter(user=user)
             )
         })
-
-
-@api_view(['POST'])
-@permission_classes([IsAuthenticated])
-def user_retire(request):
-    user = request.user
-    profile = UserProfile.objects.get_profile(user)
-    result = {'id': user.id, 'username': user.username, 'unsubscribe': profile.unsubscribe()}
-    logout(request)
-    user.delete()
-    return Response(result, status=status.HTTP_200_OK)
 
 
 def register_views(router):

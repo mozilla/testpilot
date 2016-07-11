@@ -4,7 +4,6 @@ from allauth.account import views as account_views
 from allauth.socialaccount import views as socialaccount_views
 from .providers.fxa import views as fxa_views
 from ..frontend import views as frontend_views
-from . import views as users_views
 
 urlpatterns = patterns(
     '',
@@ -16,7 +15,4 @@ urlpatterns = patterns(
         # Let the frontend handle the inactive account page.
         url(r"^inactive/$", frontend_views.index, name="account_inactive"),
     ])),
-    url(r'^users/', include([
-        url(r"^retire/$", users_views.user_retire, name="user_retire"),
-    ]))
 )
