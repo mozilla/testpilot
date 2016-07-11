@@ -66,8 +66,7 @@ class ExperimentSerializer(HyperlinkedTranslatableModelSerializer):
 
     def get_installations_url(self, obj):
         request = self.context['request']
-        path = reverse('experiment-installation-list',
-                       args=(obj.pk,))
+        path = '%s/installations/' % reverse('experiment-detail', args=(obj.pk,))
         return request.build_absolute_uri(path)
 
     def get_survey_url(self, obj):

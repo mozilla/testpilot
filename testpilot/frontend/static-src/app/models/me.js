@@ -32,40 +32,35 @@ export default Model.extend({
   },
 
   fetch() {
+    return Promise.all([
+      this.fetchInstalledExperiments(),
+      this.fetchMeResource()
+    ]);
+  },
+
+  fetchInstalledExperiments() {
+    this.hasAddon = Boolean(window.navigator.testpilotAddon);
+    if (!this.hasAddon) { return false; }
+
+    // HACK: Previous versions of the add-on expected installation data from
+    // the server, but that's no longer available. So, let's fake it, with an
+    // empty data structure as appropriate to the addon version (or lack of one
+    // exposed)
+    const installedData = window.navigator.testpilotAddonVersion ? {} : [];
+
+    return app.waitForMessage('sync-installed', installedData).then(result => {
+      this.clientUUID = result.clientUUID;
+      this.installed = result.installed;
+    });
+  },
+
+  fetchMeResource() {
     return fetch(this.url, {
       headers: { 'Accept': 'application/json' },
       credentials: 'same-origin'
     }).then(response => response.json()).then(userData => {
       this.user = userData;
       if (!this.user.profile) { return false; }
-
-      this.hasAddon = Boolean(window.navigator.testpilotAddon);
-      if (!this.hasAddon) { return false; }
-
-      let installedData;
-      if (!window.navigator.testpilotAddonVersion) {
-        // Previous add-ons didn't expose version info, so assume
-        // old API data
-        installedData = [];
-        for (let k in userData.installed) { // eslint-disable-line prefer-const
-          if (userData.installed.hasOwnProperty(k)) {
-            installedData.push(userData.installed[k]);
-          }
-        }
-      } else {
-        // TODO: Need a semver matching check here someday, but for
-        // now we can assume
-        // just the presence of a version means we're in the future.
-        installedData = userData.installed;
-      }
-
-      return app.waitForMessage('sync-installed', installedData)
-        .then(result => {
-          this.clientUUID = result.clientUUID;
-          this.installed = result.installed;
-        }).catch((err) => {
-          console.error('sync-installed failed', err); // eslint-disable-line no-console
-        });
     });
   },
 

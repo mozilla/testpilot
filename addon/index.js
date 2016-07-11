@@ -164,12 +164,10 @@ function setupApp() {
 
     app.on('uninstall-experiment', uninstallExperiment);
 
-    app.on('sync-installed', serverInstalled => {
-      syncAllAddonInstallations(serverInstalled).then(() => {
-        app.send('sync-installed-result', {
-          clientUUID: store.clientUUID,
-          installed: store.installedAddons
-        });
+    app.on('sync-installed', () => {
+      app.send('sync-installed-result', {
+        clientUUID: store.clientUUID,
+        installed: store.installedAddons
       });
     });
 
@@ -345,29 +343,6 @@ function updateExperiments() {
           });
     return store.installedAddons;
   });
-}
-
-function syncAllAddonInstallations(serverInstalled) {
-  const availableIDs = Object.keys(store.availableExperiments);
-  const clientIDs = Object.keys(store.installedAddons);
-  const serverIDs = [];
-
-  for (let key in serverInstalled) { // eslint-disable-line prefer-const
-    if (serverInstalled[key].client_id === store.clientUUID) {
-      serverIDs.push(key);
-    }
-  }
-
-  return Promise.all(availableIDs.filter(id => {
-    const cidx = clientIDs.indexOf(id);
-    const sidx = serverIDs.indexOf(id);
-    // Both missing? Okay.
-    if (cidx === -1 && sidx === -1) { return false; }
-    // Both found? Okay.
-    if (cidx !== -1 && sidx !== -1) { return false; }
-    // One found, one not? Better sync.
-    return true;
-  }).map(syncAddonInstallation));
 }
 
 function uninstallExperiment(experiment) {
