@@ -33,7 +33,7 @@ Tests should be written for new code contributed.
 * [server tests example](testpilot/experiments/tests.py)
 * [client tests example](testpilot/frontend/static-src/test/)
 
-[Further docs on testing](./TESTING.md).
+[Further docs on testing](./docs/TESTING.md).
 
 #### Branches
 
