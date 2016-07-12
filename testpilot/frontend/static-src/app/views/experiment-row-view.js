@@ -20,7 +20,7 @@ export default BaseView.extend({
              </div>`,
 
   props: {
-    loggedIn: {type: 'boolean', default: 'false'}
+    hasAddon: {type: 'boolean', default: 'false'}
   },
 
   bindings: {
@@ -54,10 +54,10 @@ export default BaseView.extend({
       hook: 'show-detail',
       name: 'active'
     },
-    'loggedIn': {
+    'hasAddon': {
       type: 'booleanClass',
       hook: 'show-detail',
-      name: 'logged-in'
+      name: 'has-addon'
     }
   },
 
@@ -66,7 +66,7 @@ export default BaseView.extend({
   },
 
   initialize(opts) {
-    this.loggedIn = opts.loggedIn;
+    this.hasAddon = !!opts.hasAddon;
   },
 
   openDetailPage(evt) {

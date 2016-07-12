@@ -30,24 +30,24 @@ test('Landing Page view renders', t => {
   t.ok(view.query('#main-header'));
 });
 
-test('Properly checks loggedIn state', t => {
+test('Properly checks hasAddon state', t => {
   t.plan(2);
 
   const view = new View();
   view.render();
 
-  t.notOk(view.loggedIn);
+  t.notOk(view.hasAddon);
 
-  app.me.user.id = 'gary@busey.net';
+  app.me.hasAddon = true;
   view.render();
 
-  t.ok(view.loggedIn);
+  t.ok(view.hasAddon);
 });
 
-test('Expected sendToGA call made when logged out', t => {
+test('Expected sendToGA call made with no add-on', t => {
   t.plan(3);
   app.sendToGA = (name, data) => {
-    t.ok(data.dimension1 === false, 'is not logged in');
+    t.ok(data.dimension1 === false, 'does not have add-on');
     t.ok(data.dimension2 === null, 'null dimension2');
     t.ok(data.dimension3 === null, 'null dimension3');
   };
@@ -57,9 +57,9 @@ test('Expected sendToGA call made when logged out', t => {
 
 test('Expected sendToGA call made with no experiments', t => {
   t.plan(3);
-  app.me.user.id = 'gary@busey.net';
+  app.me.hasAddon = true;
   app.sendToGA = (name, data) => {
-    t.ok(data.dimension1 === true, 'is logged in');
+    t.ok(data.dimension1 === true, 'has add-on');
     t.ok(data.dimension2 === false, 'no experiments installed');
     t.ok(data.dimension3 === 0, '0 experiment count');
   };
@@ -69,13 +69,13 @@ test('Expected sendToGA call made with no experiments', t => {
 
 test('Expected sendToGA call made with installed experiments', t => {
   t.plan(3);
-  app.me.user.id = 'gary@busey.net';
-  app.me.installed = [
-    {'addon_id': '@experiment1'},
-    {'addon_id': '@experiment2'}
-  ];
+  app.me.hasAddon = true;
+  app.me.installed = {
+    '@experiment1': {},
+    '@experiment2': {}
+  };
   app.sendToGA = (name, data) => {
-    t.ok(data.dimension1 === true, 'is logged in');
+    t.ok(data.dimension1 === true, 'has add-on');
     t.ok(data.dimension2 === true, 'experiments are installed');
     t.ok(data.dimension3 === 2, '2 experiments are installed');
   };
@@ -86,10 +86,10 @@ test('Expected sendToGA call made with installed experiments', t => {
 // Issue #703
 test('No error when sendToGA called and app.me.installed is undefined', t => {
   t.plan(4);
-  app.me.user.id = 'gary@busey.net';
+  app.me.hasAddon = true;
   delete app.me.installed;
   app.sendToGA = (name, data) => {
-    t.ok(data.dimension1 === true, 'is logged in');
+    t.ok(data.dimension1 === true, 'does not have add-on');
     t.ok(data.dimension2 === false, 'no experiments installed');
     t.ok(data.dimension3 === 0, '0 experiment count');
   };

@@ -8,8 +8,6 @@ import Model from 'ampersand-model';
 //       some kind of session-check API that sends over the user model
 //       (email, name, avatar, addon status) if the user's logged in.
 export default Model.extend({
-  url: '/api/me',
-
   props: {
     user: 'object',
     clientUUID: 'string',
@@ -32,13 +30,6 @@ export default Model.extend({
   },
 
   fetch() {
-    return Promise.all([
-      this.fetchInstalledExperiments(),
-      this.fetchMeResource()
-    ]);
-  },
-
-  fetchInstalledExperiments() {
     this.hasAddon = Boolean(window.navigator.testpilotAddon);
     if (!this.hasAddon) { return false; }
 
@@ -47,20 +38,9 @@ export default Model.extend({
     // empty data structure as appropriate to the addon version (or lack of one
     // exposed)
     const installedData = window.navigator.testpilotAddonVersion ? {} : [];
-
     return app.waitForMessage('sync-installed', installedData).then(result => {
       this.clientUUID = result.clientUUID;
       this.installed = result.installed;
-    });
-  },
-
-  fetchMeResource() {
-    return fetch(this.url, {
-      headers: { 'Accept': 'application/json' },
-      credentials: 'same-origin'
-    }).then(response => response.json()).then(userData => {
-      this.user = userData;
-      if (!this.user.profile) { return false; }
     });
   },
 

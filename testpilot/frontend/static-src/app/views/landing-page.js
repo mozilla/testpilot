@@ -12,86 +12,57 @@ export default PageView.extend({
   skipHeader: true,
 
   events: {
-    'click [data-hook=install]': 'installClicked',
-    'click [data-hook=get-started-with-account]': 'getStarted',
-    'click [data-hook=signin]': 'signin'
+    'click [data-hook=install]': 'installClicked'
   },
 
   render() {
-    const isLoggedIn = !!app.me.user.id;
-    this.loggedIn = isLoggedIn;
-    this.addonInstalled = app.me.hasAddon;
+    this.hasAddon = app.me.hasAddon;
     this.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
     PageView.prototype.render.apply(this, arguments);
 
-    if (!this.loggedIn) {
+    if (!this.hasAddon) {
       this.renderSubview(new ExperimentListView({
-        loggedIn: this.loggedIn,
+        hasAddon: this.hasAddon,
         isFirefox: this.isFirefox
       }), '[data-hook="experiment-list"]');
     }
 
-    const installedCount = (!this.loggedIn) ? null :
-      (app.me.installed || []).length;
-    const anyInstalled = (!this.loggedIn) ? null :
+    const installedCount = (!this.hasAddon) ? null :
+      Object.keys(app.me.installed || {}).length;
+    const anyInstalled = (!this.hasAddon) ? null :
       (installedCount > 0);
     app.sendToGA('pageview', {
-      'dimension1': this.loggedIn,
+      'dimension1': this.hasAddon,
       'dimension2': anyInstalled,
       'dimension3': installedCount
     });
   },
 
   installClicked() {
-    const isLoggedIn = !!app.me.user.id;
-    const downloadUrl = isLoggedIn && app.me.user.addon.url;
+    const downloadUrl = '/static/addon/addon.xpi';
+
     this.query('[data-hook=install]').classList.add('state-change');
     this.query('.default-btn-msg').classList.add('no-display');
     this.query('.progress-btn-msg').classList.remove('no-display');
-    app.subscribeToBasket(app.me.user.id, () => {
-      app.sendToGA('event', {
-        eventCategory: 'HomePage Interactions',
-        eventAction: 'button click',
-        eventLabel: 'Install the Add-on',
-        outboundURL: downloadUrl
-      });
+    app.sendToGA('event', {
+      eventCategory: 'HomePage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'Install the Add-on',
+      outboundURL: downloadUrl
     });
 
+    // Wait for the add-on to be installed.
+    // TODO: Should we have a timeout here, give up after a few intervals? If
+    // user cancels add-on install, this will never stop spinning.
     const interval = setInterval(() => {
-      if (window.navigator.testpilotAddon) {
-        clearInterval(interval);
+      if (!window.navigator.testpilotAddon) { return; }
+      clearInterval(interval);
+      app.me.fetch().then(() => {
         app.webChannel.sendMessage('show-installed-panel', {});
-        document.querySelector('.button.primary').classList.remove('state-change');
-
-        const msg = this.query('[data-hook=installed-message]');
-        msg.classList.remove('no-display');
-        this.query('[data-hook=default-message]').classList.add('no-display');
-        msg.querySelector('.button').onclick = () => {
-          app.webChannel.sendMessage('hide-installed-panel', {});
-        };
-      }
+        app.router.redirectTo('experiments');
+      });
     }, 1000);
-  },
-
-  getStarted(evt) {
-    evt.preventDefault();
-    app.sendToGA('event', {
-      eventCategory: 'HomePage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'Get started with a Firefox Account',
-      outboundURL: '/accounts/login/?next=/'
-    });
-  },
-
-  signin(evt) {
-    evt.preventDefault();
-    app.sendToGA('event', {
-      eventCategory: 'HomePage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'Sign in',
-      outboundURL: '/accounts/login/?next=/'
-    });
   },
 
   remove() {

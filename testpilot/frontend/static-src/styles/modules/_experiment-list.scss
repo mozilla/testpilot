@@ -50,7 +50,7 @@
     margin: 0;
   }
 
-  &.logged-in {
+  &.has-addon {
     cursor: pointer;
 
     &.active {
@@ -78,7 +78,7 @@
     }
   }
 
-  &.logged-in:hover {
+  &.has-addon:hover {
     box-shadow: 0 1px 0 0 $transparent-white-2, 0 0 0 5px $transparent-white-2;
     transition: box-shadow 150ms;
 
@@ -101,7 +101,7 @@
       display: block;
     }
 
-    .logged-in:not(.active) &.show-when-inactive {
+    .has-addon:not(.active) &.show-when-inactive {
       display: block;
     }
   }

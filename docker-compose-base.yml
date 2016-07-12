@@ -3,6 +3,7 @@ frontend-watcher:
   dockerfile: Dockerfile-frontend-build
   ports:
     - "9966:9966"
+    - "35729:35729"
   volumes:
     - .:/app
   environment:

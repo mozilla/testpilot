@@ -10,13 +10,13 @@ export default PageView.extend({
   template: template,
 
   render() {
-    this.loggedIn = !!app.me.user.id;
+    this.hasAddon = app.me.hasAddon;
     PageView.prototype.render.apply(this, arguments);
-    this.renderSubview(new ExperimentListView({loggedIn: this.loggedIn}),
+    this.renderSubview(new ExperimentListView({hasAddon: this.hasAddon}),
       '[data-hook="experiment-list"]');
 
     app.sendToGA('pageview', {
-      'dimension1': this.loggedIn
+      'dimension1': this.hasAddon
     });
   },
 
