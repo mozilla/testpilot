@@ -57,7 +57,7 @@ export default PageView.extend({
     },
     {
       type: 'toggle',
-      hook: 'now-active'
+      hook: 'is-enabled',
     },
     {
       type: 'toggle',
