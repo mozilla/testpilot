@@ -13,6 +13,7 @@ footerLinkLegal = Legal
 
 home = Home
 
+menuTitle = Settings
 menuWiki = Test Pilot Wiki
 menuDiscuss = Discuss Test Pilot
 menuFileIssue = File an Issue
