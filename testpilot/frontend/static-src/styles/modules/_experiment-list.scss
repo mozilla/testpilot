@@ -53,33 +53,20 @@
   &.logged-in {
     cursor: pointer;
 
-    &.active {
-      box-shadow: 0 0 0 3px $white, 0 0 0 6px $primary;
+    &:hover {
+      box-shadow: 0 0 0 3px $transparent-white-1;
+    }
+
+    &.enabled {
+      box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-green;
 
       &:hover {
-        box-shadow: 0 0 0 3px $white, 0 0 0 8px $primary;
-      }
-
-      &::after {
-        @include hidpi-background-image('check', 36px 27px);
-        background-color: $primary;
-        background-position: center center;
-        background-repeat: no-repeat;
-        border: 3px solid $white;
-        border-radius: $circle-border-radius;
-        content: '';
-        height: 56px;
-        position: absolute;
-        right: -26px;
-        top: -26px;
-        width: 56px;
-        z-index: 2;
+        box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-green, 0 0 0 9px $transparent-white-1;
       }
     }
   }
 
   &.logged-in:hover {
-    box-shadow: 0 1px 0 0 $transparent-white-2, 0 0 0 5px $transparent-white-2;
     transition: box-shadow 150ms;
 
     h3 {
@@ -90,19 +77,34 @@
 }
 
 .experiment-actions {
-  padding: 0 $grid-unit $grid-unit;
+  .tab {
 
-  .button {
-    display: none;
-    text-align: center;
-    width: 100%;
-
-    .active &.show-when-active {
-      display: block;
-    }
-
-    .logged-in:not(.active) &.show-when-inactive {
-      display: block;
+    .logged-in &.show-when-enabled {
+      background: $bright-green;
+      border-bottom-color: $white;
+      border-bottom-right-radius: 5px;
+      border-bottom-width: 3px;
+      border-left-width: 0;
+      border-right-color: $white;
+      border-right-width: 3px;
+      border-style: solid;
+      border-top-left-radius: 6px;
+      border-top-width: 0;
+      color: $white;
+      display: inline-block;
+      font-weight: 300;
+      height: $grid-unit * 1.5;
+      left: -3px;
+      line-height: $grid-unit * 1.5;
+      outline: none;
+      padding: 0 20px;
+      position: absolute;
+      text-align: center;
+      text-decoration: none;
+      top: -3px;
+      transition: background 150ms;
+      white-space: nowrap;
+      z-index: 99999;
     }
   }
 }
@@ -134,6 +136,6 @@
   background-size: $grid-unit * 4 $grid-unit * 4;
   filter: drop-shadow(0 1px 0 $transparent-black-1);
   flex: 0 0 $grid-unit * 4;
-  height: $grid-unit * 4;
+  height: $grid-unit * 5;
   opacity: .9;
 }

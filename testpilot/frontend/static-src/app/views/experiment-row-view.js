@@ -4,6 +4,9 @@ import BaseView from './base-view';
 
 export default BaseView.extend({
   template: `<div data-hook="show-detail" class="experiment-summary">
+                <div class="experiment-actions">
+                  <div data-l10n-id="experimentListEnabled" data-hook="enabled-tab" class="tab show-when-enabled"></div>
+                </div>
               <div class="experiment-icon-wrapper" data-hook="bg">
                 <div class="experiment-icon" data-hook="thumbnail"></div>
               </div>
@@ -13,10 +16,6 @@ export default BaseView.extend({
                 </header>
                 <p data-hook="description"></p>
               </div>
-               <div class="experiment-actions">
-                  <button data-l10n-id="experimentListInactiveHover" class="button default show-when-inactive">Get Started</button>
-                  <button data-l10n-id="experimentListActiveHover" class="button secondary show-when-active">Manage</button>
-               </div>
              </div>`,
 
   props: {
@@ -49,11 +48,15 @@ export default BaseView.extend({
       },
       hook: 'thumbnail'
     },
-    'model.enabled': {
+    'model.enabled': [{
       type: 'booleanClass',
       hook: 'show-detail',
-      name: 'active'
+      name: 'enabled'
     },
+    {
+      type: 'toggle',
+      hook: 'enabled-tab'
+    }],
     'loggedIn': {
       type: 'booleanClass',
       hook: 'show-detail',
