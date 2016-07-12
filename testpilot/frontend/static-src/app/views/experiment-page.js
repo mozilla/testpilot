@@ -56,8 +56,9 @@ export default PageView.extend({
       hook: 'feedback'
     },
     {
-      type: 'toggle',
-      hook: 'now-active'
+      type: 'booleanClass',
+      hook: 'is-enabled',
+      name: 'is-enabled'
     },
     {
       type: 'toggle',

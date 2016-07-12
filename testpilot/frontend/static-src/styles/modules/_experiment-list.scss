@@ -47,33 +47,27 @@
 
   p {
     line-height: 1.4 * $line-unit;
+    margin-bottom: $grid-unit * .5;
+  }
+
+  span {
+    color: $transparent-black-4;
+    font-size: 1.1 * $font-unit;
     margin: 0;
   }
 
   &.has-addon {
     cursor: pointer;
 
-    &.active {
-      box-shadow: 0 0 0 3px $white, 0 0 0 6px $primary;
+    &:hover {
+      box-shadow: 0 0 0 3px $transparent-white-1;
+    }
+
+    &.enabled {
+      box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-green;
 
       &:hover {
-        box-shadow: 0 0 0 3px $white, 0 0 0 8px $primary;
-      }
-
-      &::after {
-        @include hidpi-background-image('check', 36px 27px);
-        background-color: $primary;
-        background-position: center center;
-        background-repeat: no-repeat;
-        border: 3px solid $white;
-        border-radius: $circle-border-radius;
-        content: '';
-        height: 56px;
-        position: absolute;
-        right: -26px;
-        top: -26px;
-        width: 56px;
-        z-index: 2;
+        box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-green, 0 0 0 9px $transparent-white-1;
       }
     }
   }
@@ -90,20 +84,39 @@
 }
 
 .experiment-actions {
-  padding: 0 $grid-unit $grid-unit;
+  .has-addon:not(.active) &.show-when-inactive {
+    display: block;
+  }
 
-  .button {
-    display: none;
+  .tab {
+    border-bottom-right-radius: 5px;
+    border-bottom-width: 3px;
+    border-left-width: 0;
+    border-right-color: $white;
+    border-right-width: 3px;
+    border-style: solid;
+    border-top-left-radius: 6px;
+    border-top-width: 0;
+    display: inline-block;
+    font-weight: 300;
+    height: $grid-unit * 1.5;
+    left: -3px;
+    line-height: $grid-unit * 1.5;
+    outline: none;
+    padding: 0 20px;
+    position: absolute;
     text-align: center;
-    width: 100%;
+    text-decoration: none;
+    top: -3px;
+    transition: background 150ms;
+    white-space: nowrap;
+    z-index: 99999;
+  }
 
-    .active &.show-when-active {
-      display: block;
-    }
-
-    .has-addon:not(.active) &.show-when-inactive {
-      display: block;
-    }
+  .enabled-tab {
+    background: $bright-green;
+    border-bottom-color: $white;
+    color: $white;
   }
 }
 
@@ -134,6 +147,6 @@
   background-size: $grid-unit * 4 $grid-unit * 4;
   filter: drop-shadow(0 1px 0 $transparent-black-1);
   flex: 0 0 $grid-unit * 4;
-  height: $grid-unit * 4;
+  height: $grid-unit * 5;
   opacity: .9;
 }

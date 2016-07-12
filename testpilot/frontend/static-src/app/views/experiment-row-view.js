@@ -4,6 +4,9 @@ import BaseView from './base-view';
 
 export default BaseView.extend({
   template: `<div data-hook="show-detail" class="experiment-summary">
+                <div class="experiment-actions">
+                  <div data-l10n-id="experimentListEnabledTab" data-hook="enabled-tab" class="tab enabled-tab"></div>
+                </div>
               <div class="experiment-icon-wrapper" data-hook="bg">
                 <div class="experiment-icon" data-hook="thumbnail"></div>
               </div>
@@ -12,11 +15,8 @@ export default BaseView.extend({
                   <h3 data-hook="title"></h3>
                 </header>
                 <p data-hook="description"></p>
+                <span class="participant-count" data-l10n-id="participantCount"</span>
               </div>
-               <div class="experiment-actions">
-                  <button data-l10n-id="experimentListInactiveHover" class="button default show-when-inactive">Get Started</button>
-                  <button data-l10n-id="experimentListActiveHover" class="button secondary show-when-active">Manage</button>
-               </div>
              </div>`,
 
   props: {
@@ -49,11 +49,15 @@ export default BaseView.extend({
       },
       hook: 'thumbnail'
     },
-    'model.enabled': {
+    'model.enabled': [{
       type: 'booleanClass',
       hook: 'show-detail',
-      name: 'active'
+      name: 'enabled'
     },
+    {
+      type: 'toggle',
+      hook: 'enabled-tab'
+    }],
     'hasAddon': {
       type: 'booleanClass',
       hook: 'show-detail',
@@ -62,7 +66,7 @@ export default BaseView.extend({
   },
 
   events: {
-    'click [data-hook=show-detail].logged-in': 'openDetailPage'
+    'click [data-hook=show-detail].has-addon': 'openDetailPage'
   },
 
   initialize(opts) {
@@ -71,19 +75,11 @@ export default BaseView.extend({
 
   openDetailPage(evt) {
     evt.preventDefault();
-    if (this.model.enabled) {
-      app.sendToGA('event', {
-        eventCategory: 'ExperimentsPage Interactions',
-        eventAction: 'Manage experiment button',
-        eventLabel: this.model.title
-      });
-    } else {
-      app.sendToGA('event', {
-        eventCategory: 'ExperimentsPage Interactions',
-        eventAction: 'Get Started experiment button',
-        eventLabel: this.model.title
-      });
-    }
+    app.sendToGA('event', {
+      eventCategory: 'ExperimentsPage Interactions',
+      eventAction: 'Open detail page',
+      eventLabel: this.model.title
+    });
     app.router.navigate('experiments/' + this.model.slug);
   }
 });
