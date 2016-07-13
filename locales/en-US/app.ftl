@@ -89,6 +89,7 @@ discussNotifyCancelButton = Cancel
 
 retireDialogTitle = Uninstall Test Pilot?
 retireMessage = As you wish. This will disable any active tests, uninstall the add-on and remove your account info from our servers.
+retireEmailMessage = To opt out of email updates, simply click the <em>unsubscribe</em> link on any Test Pilot email.
 retireSubmitButton = Proceed
 retireCancelButton = Cancel
 

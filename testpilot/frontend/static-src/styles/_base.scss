@@ -45,6 +45,13 @@ h3 {
 
 p {
   line-height: 1.5 * $line-unit;
+
+  &.small {
+    font-size: $font-unit;
+    line-height: $line-unit;
+    margin: 0;
+    opacity: .8;
+  }
 }
 
 .parens {

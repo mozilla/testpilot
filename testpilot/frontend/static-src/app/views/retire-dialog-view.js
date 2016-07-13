@@ -12,6 +12,7 @@ export default BaseView.extend({
 
           <div class="modal-content modal-form">
             <p data-l10n-id="retireMessage" class="centered">As you wish. This will disable any active tests, uninstall the Test Pilot add-on, and remove your account information from our servers.</p>
+            <p data-l10n-id="retireEmailMessage" class="centered small">To opt out of email updates, simply click the <em>unsubscribe</em> link on any Test Pilot email.</p>
           </div>
           <div class="modal-actions">
             <button data-hook="submit-feedback" data-l10n-id="retireSubmitButton" class="submit button warning large">Proceed</button>
