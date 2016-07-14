@@ -7,7 +7,7 @@ export default BaseView.extend({
   template: `<div class="card-list experiments"></div>`,
 
   props: {
-    loggedIn: 'boolean'
+    hasAddon: 'boolean'
   },
 
   render() {
@@ -17,7 +17,7 @@ export default BaseView.extend({
       ExperimentRowView,
       this.query('.experiments'), {
         viewOptions: {
-          loggedIn: this.loggedIn
+          hasAddon: this.hasAddon
         }
       }
     );

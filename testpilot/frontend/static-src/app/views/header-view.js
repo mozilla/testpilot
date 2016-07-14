@@ -45,10 +45,8 @@ export default BaseView.extend({
   },
 
   beforeRender() {
-    this.session = app.me.user.id;
-
-    // an active user has an addon and a session
-    this.activeUser = !!this.session && app.me.hasAddon;
+    // an active user has an addon
+    this.activeUser = app.me.hasAddon;
 
     if (this.experiment) {
       this.isInstalled = !!this.experiment.isInstalled;
@@ -57,7 +55,6 @@ export default BaseView.extend({
 
   afterRender() {
     this.renderSubview(new SettingsMenuView({
-      userName: this.session
     }), '[data-hook=install]');
   }
 });

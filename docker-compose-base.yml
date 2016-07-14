@@ -3,6 +3,7 @@ frontend-watcher:
   dockerfile: Dockerfile-frontend-build
   ports:
     - "9966:9966"
+    - "35729:35729"
   volumes:
     - .:/app
   environment:
@@ -26,6 +27,7 @@ server:
     - PYTHONDONTWRITEBYTECODE=1
     - DATABASE_URL=postgres://postgres@db/postgres
     - DEBUG=True
+    - STATICINTEGRITY_CACHE_TTL=1
     - INITIAL_ADMIN_USERNAME=admin
     - INITIAL_ADMIN_PASSWORD=admin
     - INITIAL_ADMIN_EMAIL=admin@example.com
