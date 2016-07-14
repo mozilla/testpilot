@@ -5,11 +5,10 @@ export default `
       <header data-hook="header-view"></header>
     </div>
     <div class="default-background">
-      <div class="spacer"></div>
       <div class="details-header-wrapper">
+        <div class="status-bar is-enabled" data-hook="is-enabled" data-l10n-id="isEnabled"><span data-hook="title"></span> is enabled.</div>
         <div class="details-header content-wrapper">
           <h1 data-hook="title"></h1>
-          <span class="now-active" data-hook="now-active" data-l10n-id="nowActive">Active</span>
           <div class="experiment-controls">
             <a data-hook="highlight-privacy" class="highlight-privacy" data-l10n-id=highlightPrivacy>Your privacy</a>
             <a data-l10n-id="giveFeedback" data-hook="feedback" id="feedback-button" class="button default" target="_blank">Give Feedback</a>

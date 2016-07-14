@@ -53,9 +53,9 @@ notFoundHeader = Four Oh Four!
 
 experimentListPageHeader = Ready for Takeoff!
 experimentListPageSubHeader  = Pick the features you want to try. <br> Check back soon for more experiments.
-
-experimentListInactiveHover = Get Started
-experimentListActiveHover = Manage
+experimentListEnabledTab = Enabled
+isEnabled = {$title} is enabled.
+participantCount = <span>{$installation_count}</span> participants
 
 giveFeedback = Give Feedback
 
