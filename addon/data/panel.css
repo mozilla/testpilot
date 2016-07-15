@@ -164,14 +164,16 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 }
 
 .installed-message p {
-    font-size: 16px;
-    line-height: 26px;
-    margin-bottom: 0;
+    font: message-box;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
+    text-align: left;
 }
 
 

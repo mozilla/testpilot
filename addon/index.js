@@ -43,7 +43,8 @@ const WebExtensionChannels = require('./lib/webextension-channels');
 const PANEL_WIDTH = 300;
 const FOOTER_HEIGHT = 50;
 const EXPERIMENT_HEIGHT = 80;
-const INSTALLED_PANEL_HEIGHT = 250;
+const INSTALLED_PANEL_WIDTH = 250;
+const INSTALLED_PANEL_HEIGHT = 56;
 
 // Canned selectable server environment configs
 const SERVER_ENVIRONMENTS = {
@@ -200,7 +201,7 @@ function setupApp() {
         }
       }
 
-      installMsgPanel.show({width: PANEL_WIDTH,
+      installMsgPanel.show({width: INSTALLED_PANEL_WIDTH,
                             height: INSTALLED_PANEL_HEIGHT,
                             position: button});
 

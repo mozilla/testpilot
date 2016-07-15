@@ -38,6 +38,13 @@
     opacity: .9;
     position: relative;
     width: $grid-unit * 3.2;
+
+    &.large {
+      background-size: $grid-unit * 4.8 $grid-unit * 4.8;
+      height: $grid-unit * 4.8;
+      margin-bottom: $grid-unit * 2;
+      width: $grid-unit * 4.8;
+    }
   }
 
   .card-title {
@@ -50,5 +57,9 @@
   .card-copy {
     font-size: $font-unit * 1.4;
     text-align: center;
+
+    &.large {
+      font-size: $font-unit * 1.66;
+    }
   }
 }

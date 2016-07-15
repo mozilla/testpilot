@@ -73,13 +73,17 @@
 
 1. Click both the legal buttons (**"Terms of Use"**, and **"Privacy Notice"**) and verify they render correctly.
 
+1. Scroll to the middle of the page and ensure each experiment description contains an **"{{n}} participants"** field at the bottom.
+
+1. Hover experiment description, you should see no change to the UI in this state.
+
 1. Scroll to the bottom of the page and verify you see the same green button and legal disclaimer as at the top of the page.
 
 1. Click the green **"Install the Test Pilot Add-on"** button. (You may get a door-hanger saying **"Firefox prevented this site from asking you to install software on your computer."** dialog. Click the **"Allow"** button.)
 
 1. Click the **"Install"** button in the door-hanger.
 
-1. Verify that you see a Test Pilot door-hanger on the right side of the browser, as well as a Test Pilot spaceship logo in the main toolbar. You should also see a **"Test Pilot installed!"** page with a green button saying **"Choose your features"**.
+1. Verify that you redirect to /experiments and that a toolbar icon and doorhanger appear to alert the user that the button has been placed in the toolbar.
 
 1. Click the Test Pilot icon in the toolbar and verify the door-hanger appears and lists the available experiments (none of which should be enabled if you're testing on a clean profile).
 
@@ -91,7 +95,7 @@
 
 1. Click on any of the active experiments (ie: Activity Stream) and verify you are taken to the experiment details page.
 
-1. Click the **[...]** button at the top of the page and verify that your current logged in account is displayed, and click each of the three links at the top (**"Test Pilot Wiki"**, **"Discuss Test Pilot"**, and **"File an Issue"**) open the expected URLs. Clicking the **"Sign out"** with unsurprisingly sign you out of your session, and clicking the **"Uninstall Test Pilot"** link will bring up a confirmation dialog asking you if you want to uninstall Test Pilot and uninstall all your active experiments.
+1. Click the **Settings** button and click each of the three links at the top (**"Test Pilot Wiki"**, **"Discuss Test Pilot"**, and **"File an Issue"**) open the expected URLs. Clicking the **"Uninstall Test Pilot"** link will bring up a confirmation dialog asking you if you want to uninstall Test Pilot and uninstall all your active experiments.
 
 1. Click the **"Uninstall Test Pilot"** button in the drop down menu and confirm the text. Click the **"Cancel"** link at the bottom to dismiss the dialog without removing the Test Pilot add-on and all your active experiments (we'll verify this below).
 
@@ -112,17 +116,17 @@
 
 1. After the experiment is successsfully installed, verify that a dialog box appears saying **"{Experiment name} enabled!"**. Click the **"Take the Tour"** button and verify the tour works and closes as expected. Confirm that after installing the experiment, the number of active users increases by 1.
 
-1. After enabling an experiment, the header area should now say **"Active"** in green (Note that the Active will not be visible if your header area is currently "sticky").
+1. After enabling an experiment, the header area should now say **"{Experiment name} is enabled."** in green.
 
 1. Make sure clicking the blue **"Give Feedback"** button takes you to a Survey Gizmo page which asks you to rate the experiment and give some feedback (in a new tab). Leave some feedback or close the tab and return to Test Pilot.
 
-1. Click the Test Pilot icon in the toolbar and verify that the currently active experiment is listed as **"Now Active"** and has a green checkbox.
+1. Click the Test Pilot icon in the toolbar and verify that the currently active experiment is listed as **"{Experiment name} is enabled."** and has a green checkbox.
 
 1. Click the **"View all experiments"** button in the Test Pilot doorhanger and verify that you're taken to the http://testpilot.dev.mozaws.net/experiments page and your currently active experiments have a green outline (with a checkbox), and the button at the bottom of the experiment card has a gray **"Manage"** button instead of a blue **"Get Started"** button.
 
 1. Select a new (non-active) experiment from the Test Pilot toolbar doorhanger, and click the blue **"Enable {experiment name}"** button from the experiment details page.
 
-1. Click the Test Pilot icon in the toolbar and verify that both active experiments are listed as **"Now Active"**.
+1. Click the Test Pilot icon in the toolbar and verify that both active experiments are listed as **"{Experiment name} is enabled."**.
 
 1. Go back to the original Test Pilot exeriment details page and click the gray **"Disable {experiment name}"** button. Verify that the number of active experiment users decreases by 1.
 
@@ -136,15 +140,7 @@
 
 1. Return to the recently deactivated experiment details page and verify that the experiment is no longer enabled and you see a blue **"Enable {experiment name}"** button, and clicking the Test Pilot button in the toolbar no longer lists the experiment as active.
 
-1. Make sure you have at least ONE active experiment and click the **[...]** button in the header area.
-
-1. Click the **"Sign out"** link and verify you're redirected back to http://testpilot.dev.mozaws.net/ and you're prompted to **"Get started with a Firefox Account"** again. Note that you won't be asked to confirm if you want to sign out and you'll be signed out immediately.
-
-1. Go to **about:addons** and verify that your Test Pilot add-on is still installed+active, as well as any experiments you had previously installed. If you had Tab Center previously installed, it should still be active and working, even though you're no longer signed in to the Test Pilot website.
-
-1. Sign back in to Test Pilot using the same account as you were using previously.
-
-1. Click the **[...]** button in the header area.
+1. Make sure you have at least ONE active experiment and click the **Settings** button in the header area.
 
 1. Click the **"Uninstall Test Pilot"** link in the pop-up menu.
 
