@@ -61,6 +61,10 @@ export default PageView.extend({
       app.me.fetch().then(() => {
         app.webChannel.sendMessage('show-installed-panel', {});
         app.router.redirectTo('experiments');
+      }).catch(() => {
+        // HACK (for Issue #1075): Timed out while waiting for the initial sync
+        // message, so just reload the page to stop waiting.
+        window.location.reload();
       });
     }, 1000);
   },
