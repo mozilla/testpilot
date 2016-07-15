@@ -38,9 +38,9 @@ Once we've confirmed our release passed CircleCI, and we've confirmed that it is
 
 This is done via a deployment bug.
 
-Example: https://bugzilla.mozilla.org/show_bug.cgi?id=1263682
+Example: https://bugzilla.mozilla.org/show_bug.cgi?id=1287228 ([click here to clone](https://bugzilla.mozilla.org/enter_bug.cgi?product=Cloud%20Services&cloned_bug_id=1287228&format=__default__))
 
-Include Softvision in the CC:
+Be sure to keep the same folks on the CC list as in the example bug.
 
 ## Deployed Stage ##
 
