@@ -65,7 +65,7 @@ app.extend({
   },
 
   // Send webChannel message to addon, use a Promise to wait for the answer.
-  waitForMessage(type, data, timeout = 5000) {
+  waitForMessage(type, data, timeout = 10000) {
     return new Promise((resolve, reject) => {
       const rejectTimer = setTimeout(() => {
         reject('waitForMessage timeout: ' + type);
