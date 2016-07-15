@@ -13,9 +13,9 @@ export default `
       </div>
       <div class="intro-text">
         <h2 class="banner">
-          <span data-l10n-id="landingIntroLead" class="block lead-in">Go beyond...</span>
+          <span data-l10n-id="landingIntroLead" class="block lead-in">Go beyond . . . </span>
           <span data-l10n-id="landingIntroOne" class="block">Test new features.</span>
-          <span data-l10n-id="landingIntroTwo" class="block">Give us feedback.</span>
+          <span data-l10n-id="landingIntroTwo" class="block">Give your feedback.</span>
           <span data-l10n-id="landingIntroThree" class="block">Help build Firefox.</span>
         </h2>
       </div>
@@ -52,19 +52,16 @@ export default `
       <h2 class="card-list-header" data-l10n-id="landingCardListTitle">Get started in 3 easy steps</h2>
       <div id="how-to" class="card-list">
         <div class="card">
-          <div class="card-icon add-on-icon"></div>
-          <h3 class="card-title" data-l10n-id="landingStepOne">Step one</h3>
-          <div class="card-copy" data-l10n-id="landingCardOne">Get the Test Pilot add-on</div>
+          <div class="card-icon add-on-icon large"></div>
+          <div class="card-copy large" data-l10n-id="landingCardOne">Get the Test Pilot add-on</div>
         </div>
         <div class="card">
-          <div class="card-icon test-pilot-icon"></div>
-          <h3 class="card-title" data-l10n-id="landingStepTwo">Step two</h3>
-          <div class="card-copy" data-l10n-id="landingCardTwo">Enable experimental features</div>
+          <div class="card-icon test-pilot-icon large"></div>
+          <div class="card-copy large" data-l10n-id="landingCardTwo">Enable experimental features</div>
         </div>
         <div class="card">
-          <div class="card-icon chat-icon"></div>
-          <h3 class="card-title" data-l10n-id="landingStepThree">Step three</h3>
-          <div class="card-copy" data-l10n-id="landingCardThree">Tell us what you think</div>
+          <div class="card-icon chat-icon large"></div>
+          <div class="card-copy large" data-l10n-id="landingCardThree">Tell us what you think</div>
         </div>
       </div>
       <div class="centered-banner">
