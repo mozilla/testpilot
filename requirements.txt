@@ -79,19 +79,9 @@ django-jinja==1.4.1 \
 defusedxml==0.4.1 \
     --hash=sha256:cd551d5a518b745407635bb85116eb813818ecaf182e773c35b36239fc3f2478 \
     --hash=sha256:1f7e2f6546caba6a52bcd6a6087df60c1cc63cdbc0d9ca3e5d517adcb5823d0c
-django-allauth==0.24.1 \
-    --hash=sha256:229a6a5a63ff55f9eb46d4dae3863ba775735bf60bfc16bf4e2042f214f18e1d
-oauthlib==1.0.3 \
-    --hash=sha256:ef4bfe4663ca3b97a995860c0173b967ebd98033d02f38c9e1b2cbb6c191d9ad
-python3-openid==3.0.6 \
-    --hash=sha256:833086e554515d58fe39f9326eae5c929ff448f0fce6350d45f622c9cc1591c6 \
-    --hash=sha256:8b82c6e8ac590b0433988138bf63d934dbf5cdcbad1643ec7e25cc0ce90ca50a
 requests==2.7.0 \
     --hash=sha256:20f976cdce02a42b69ce80e9e03897a51814b36d448b37288546086ebc473146 \
     --hash=sha256:398a3db6d61899d25fd4a06c6ca12051b0ce171d705decd7ed5511517b4bb93d
-requests_oauthlib==0.5.0 \
-    --hash=sha256:658d9aba85338be8c1d1532c9fb5807b381dc7166e469ff0f62fcaa4240d9eb8 \
-    --hash=sha256:c7d2ee6c2e8c58a0fd60c2d7d21ce93c8d2b22e7a9f232d4bf915326afb479af
 Pillow==3.2.0 \
     --hash=sha256:f6e89c3b024a13060de19732e82d1dfd657cdf46b15d647c0f0f5aaa07a6a419 \
     --hash=sha256:46cbc1d1487a9c590708e9e135530ac94af8373bf1e8ef0c7acf6cc46c84d3c4 \
