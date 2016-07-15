@@ -86,12 +86,6 @@ INSTALLED_APPS = [
     'constance.backends.database',
     'constance',
 
-    # FxA auth handling
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'testpilot.users.providers.fxa',
-
     # Django apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -121,11 +115,7 @@ MIDDLEWARE_CLASSES = (
 
 
 AUTHENTICATION_BACKENDS = (
-    # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
-
-    # `allauth` specific authentication methods, such as login by e-mail
-    'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 REST_FRAMEWORK = {
@@ -138,40 +128,6 @@ REST_FRAMEWORK = {
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.AcceptHeaderVersioning',
     'DEFAULT_VERSION': '1.0.0'
 }
-
-SOCIALACCOUNT_PROVIDERS = {
-    'fxa': dict(
-        ACCESS_TOKEN_URL=config(
-            'FXA_ACCESS_TOKEN_URL',
-            default='https://oauth.accounts.firefox.com/v1/token'),
-        AUTHORIZE_URL=config(
-            'FXA_AUTHORIZE_URL',
-            default='https://oauth.accounts.firefox.com/v1/authorization'),
-        PROFILE_URL=config(
-            'FXA_PROFILE_URL',
-            default='https://profile.accounts.firefox.com/v1/profile'),
-        SCOPE=["profile"],
-        AUTH_PARAMS={
-            "verification_redirect": "always"
-        }
-    )
-}
-
-FXA_CLIENT_ID = config('FXA_CLIENT_ID', default=None)
-
-FXA_SECRET_KEY = config('FXA_SECRET_KEY', default=None)
-
-BASKET_API_KEY = config('BASKET_API_KEY', default=None)
-
-BASKET_LOOKUP_USER_URL = 'https://basket.mozilla.org/news/lookup-user/'
-
-BASKET_UNSUBSCRIBE_URL = 'https://basket.mozilla.org/news/unsubscribe/'
-
-BASKET_SUBSCRIBE_URL = 'https://basket.mozilla.org/news/subscribe/'
-
-SOCIALACCOUNT_AUTO_SIGNUP = True
-
-SOCIALACCOUNT_EMAIL_VERIFICATION = False
 
 ACCOUNT_EMAIL_VERIFICATION = False
 
@@ -361,10 +317,7 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.template.context_processors.request',
                 'django.contrib.messages.context_processors.messages',
-
-                # `allauth` needs this from django
                 'django.template.context_processors.request',
-
             ],
         }
     },
