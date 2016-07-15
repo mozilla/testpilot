@@ -67,16 +67,22 @@ test('afterRender attaches detailView and contributorView', t => {
   t.ok(myView.query('.contributors'));
 });
 
-test('now active indicator shows when experiment is enabled', t => {
+test('indicator bar shows when experiment is enabled', t => {
   t.plan(2);
 
   const myView = new MyView({headerScroll: false, slug: 'slsk'});
   myView.render();
 
-  t.ok(myView.query('.now-active'));
   const model = app.experiments.get('slsk', 'slug');
+
+  model.enabled = true;
+  t.ok(myView.query('.is-enabled'));
+
   model.enabled = false;
-  t.equal(myView.query('.now-active').style.display, 'none');
+  // since the display logic is in CSS,
+  // check for the selector pattern that would
+  // show the notification
+  t.equal(myView.query('.is-enabled .enabled'), undefined);
 });
 
 test('introduction appears in view', t => {
