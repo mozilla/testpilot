@@ -13,7 +13,7 @@ module.exports.experimentList = `
         <div class="icon" style="background-image:url('{{thumbnail}}');"></div>
       </div>
       <div class="experiment-title">{{title}}
-        <span class="active-span {{#active}}visible{{/active}}">Now Active</span>
+        <span class="active-span {{#active}}visible{{/active}}">Enabled</span>
       </div>
     </a>
   {{/experiments}}
