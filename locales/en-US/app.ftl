@@ -71,12 +71,11 @@ feedbackUninstallCopy =
     | and stay tuned for more to come!
 
 discussNotifyTitle = Just one second...
-discussNotifyMessage =
-    | <p>In the spirit of experimentation, we're using a forum service
-    | that requires an account different from the one you
-    | created for Test Pilot. We are working hard to change this
-    | and make the forum experience smoother.</p>
-    | <p>If you don't want to create another account, you can
+discussNotifyMessageAccountless =
+    | <p>In the spirit of experimentation, we are using an external forum service.
+    | You will need to create an account if you
+    | wish to participate on the forums.</p>
+    | <p>If you don't want to create an account, you can
     | always leave feedback through Test Pilot.
     | <br>
     | (We really do read this stuff)</p>
