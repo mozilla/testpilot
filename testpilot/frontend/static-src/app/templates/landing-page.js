@@ -44,7 +44,7 @@ export default `
     {{#isFirefox}}<p data-l10n-id="landingLegalNotice" class="legal-information">By proceeding, you agree to the <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Notice</a> of Test Pilot</p>{{/isFirefox}}
     <div class="transparent-container">
       <div class="responsive-content-wrapper delayed-fade-in">
-          <h2 class="card-list-header" data-l10n-id="landingExperimentsTitle">Test these features and share your feedback</h2>
+          <h2 class="card-list-header" data-l10n-id="landingExperimentsTitle">Try out the latest experimental features</h2>
           <div data-hook='experiment-list'></div>
       </div>
     </div>
