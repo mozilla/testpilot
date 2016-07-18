@@ -11,11 +11,8 @@ export default BaseView.extend({
         <form>
 
           <div class="modal-content modal-form">
-            <div data-l10n-id="discussNotifyMessage" class="centered">
-              <p>In the spirit of experimentation, we're using a forum service
-                 that requires an account different from the one you
-                 created for Test Pilot. We are working hard to change this
-                 and make the forum experience smoother.</p>
+            <div data-l10n-id="discussNotifyMessageAccountless" class="centered">
+              <p>In the spirit of experimentation, we are using an external forum service. You will need to create an account if you wish to participate on the forums.</p>
               <p>If you don't feel like creating another account, you can
                  always leave feedback through Test Pilot.
               <br>
