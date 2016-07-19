@@ -21,6 +21,7 @@
     "ampersand-view": "10.0.0",
     "ampersand-view-switcher": "^2.0.0",
     "babel-polyfill": "^6.9.1",
+    "clipboard": "^1.5.12",
     "domready": "^1.0.8",
     "es6-promise": "^3.0.2",
     "isomorphic-fetch": "^2.1.1",

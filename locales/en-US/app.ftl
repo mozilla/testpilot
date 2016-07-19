@@ -114,6 +114,11 @@ tourDoneButton = Done
 userCountContainer = There are <span>{$installation_count}</span> people trying {$title} right now!
 highlightPrivacy = Your privacy
 
+sharePrimary = Love Test Pilot? Help us find some new recruits.
+shareSecondary = or just copy and paste this link...
+shareEmail = E-mail
+shareCopy = Copy
+
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage
