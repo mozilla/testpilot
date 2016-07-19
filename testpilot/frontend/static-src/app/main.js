@@ -42,39 +42,62 @@ app.extend({
     app.me = new Me();
     app.experiments = new ExperimentsCollection();
 
-    Promise.all([
-      app.me.fetch(),
-      app.experiments.fetch()
-    ]).then(() => {
+    app.pageManager = new PageManager({
+      pageContainer: document.querySelector('[data-hook=page-container]')
+    });
+
+    if (!app.router.history.started()) {
+      app.router.history.start();
+      // HACK for Issue #124 - sometimes popstate doesn't fire on navigation,
+      // but pageshow does. But, we just want to know if the URL changed.
+      addEventListener('pageshow', app.router.history.checkUrl, false);
+    }
+
+    app.experiments.fetch().then(() => app.me.fetch()).then(() => {
       app.me.updateEnabledExperiments(app.experiments);
-
-      app.pageManager = new PageManager({
-        pageContainer: document.querySelector('[data-hook=page-container]')
-      });
-
-      if (!app.router.history.started()) {
-        app.router.history.start();
-        // HACK for Issue #124 - sometimes popstate doesn't fire on navigation,
-        // but pageshow does. But, we just want to know if the URL changed.
-        addEventListener('pageshow', app.router.history.checkUrl, false);
-      }
     }).catch((err) => {
-      // for now, log the error in the console & do nothing in the UI
       console && console.error(err); // eslint-disable-line no-console
+      app.router.redirectTo('error');
     });
   },
 
   // Send webChannel message to addon, use a Promise to wait for the answer.
-  waitForMessage(type, data, timeout = 10000) {
+  waitForMessage(type, data, timeout = 5000, retries = 3) {
     return new Promise((resolve, reject) => {
-      const rejectTimer = setTimeout(() => {
-        reject('waitForMessage timeout: ' + type);
-      }, timeout);
-      this.once('webChannel:' + type + '-result', (result) => {
-        clearTimeout(rejectTimer);
+      let attempts = 0;
+      let retryTimer;
+
+      // On timeout, try again or reject with an error if out of retries.
+      const timeoutHandler = () => {
+        if (attempts++ < retries) {
+          attemptFn(); // eslint-disable-line no-use-before-define
+        } else {
+          reject('waitForMessage timeout: ' + type);
+        }
+      };
+
+      // On message response, resolve the promise with the result.
+      const resultHandler = (result) => {
+        clearTimeout(retryTimer);
         resolve(result);
-      });
-      this.webChannel.sendMessage(type, data);
+      };
+
+      const attemptFn = () => {
+        // Un-register the event handler before registering it, in case this is
+        // a retry. We don't want to accidentally handle it multiple times.
+        const resultMessageName = 'webChannel:' + type + '-result';
+        this.off(resultMessageName, resultHandler);
+        this.once(resultMessageName, resultHandler);
+
+        // Try sending the message.
+        this.webChannel.sendMessage(type, data);
+
+        // Set up a timer to trigger retry / reject
+        retryTimer = setTimeout(timeoutHandler, timeout);
+      };
+
+      // Finally, kick off our first attempt.
+      attemptFn();
     });
   },
 
