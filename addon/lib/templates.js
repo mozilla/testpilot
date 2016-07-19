@@ -22,5 +22,5 @@ module.exports.experimentList = `
 
 module.exports.installed = `
 <div class="installed-message">
-  <p><strong>FYI:</strong> We put an button in your toolbar <br> so you can always find Test Pilot.</p>
+  <p><strong>FYI:</strong> We put a button in your toolbar <br> so you can always find Test Pilot.</p>
 </div>`;
