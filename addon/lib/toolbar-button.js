@@ -14,6 +14,8 @@ Mustache.parse(templates.experimentList);
 const PANEL_WIDTH = 300;
 const FOOTER_HEIGHT = 50;
 const EXPERIMENT_HEIGHT = 80;
+const NEW_BADGE_LABEL = 'New';
+const NEW_BADGE_COLOR = '#1996F7';
 
 let settings;
 let button;
@@ -33,6 +35,8 @@ function setActionButton(dark) {
     },
     onClick: handleToolbarButtonClick
   });
+
+  ToolbarButton.updateButtonBadge(); // eslint-disable-line no-use-before-define
 }
 
 function getExperimentList(availableExperiments, installedAddons) {
@@ -68,6 +72,9 @@ function handleToolbarButtonClick() {
   if (panel) panel.hide();
   if (collapsed) return;
 
+  store.toolbarButtonLastClicked = Date.now();
+  ToolbarButton.updateButtonBadge(); // eslint-disable-line no-use-before-define
+
   const experimentCount = ('availableExperiments' in store) ?
     Object.keys(store.availableExperiments).length : 0;
   panel.show({
@@ -79,7 +86,7 @@ function handleToolbarButtonClick() {
   // TODO: Record metrics event here, along with badge context
 }
 
-module.exports = {
+const ToolbarButton = module.exports = {
 
   init: function(settingsIn) {
     settings = settingsIn;
@@ -113,6 +120,40 @@ module.exports = {
   destroy: function() {
     panel.destroy();
     button.destroy();
+  },
+
+  updateButtonBadge: function() {
+    // Bail if we haven't initialized the button yet.
+    if (!button) { return; }
+
+    // Initialize the last button click timestamp if necessary.
+    if (!('toolbarButtonLastClicked' in store)) {
+      // HACK: Set this to 1 so there's a value, but one that will initially be
+      // less than the current time.
+      store.toolbarButtonLastClicked = 1;
+    }
+
+    // Look through available experiments for anything newer than the last
+    // toolbar button click.
+    let hasNew = false;
+    if (store.availableExperiments) {
+      Object.keys(store.availableExperiments).forEach(id => {
+        const experiment = store.availableExperiments[id];
+        const created = new Date(experiment.created);
+        if (created.getTime() > store.toolbarButtonLastClicked) {
+          hasNew = true;
+        }
+      });
+    }
+
+    // Show the button badge if there were new experiments found.
+    if (hasNew) {
+      // TODO: Needs l10n?
+      button.badge = NEW_BADGE_LABEL;
+      button.badgeColor = NEW_BADGE_COLOR;
+    } else {
+      button.badge = null;
+    }
   },
 
   get button() {

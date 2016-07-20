@@ -9,6 +9,7 @@ const settings = {};
 let setInstalledFlagPageMod;
 let messageBridgePageMod;
 let app;
+let experimentsUpdateTimer = null;
 
 const {Cc, Ci, Cu} = require('chrome');
 
@@ -26,6 +27,7 @@ const request = require('sdk/request').Request;
 const simplePrefs = require('sdk/simple-prefs');
 const URL = require('sdk/url').URL;
 const history = require('sdk/places/history');
+const { setTimeout, clearTimeout } = require('sdk/timers');
 
 const Mustache = require('mustache');
 const templates = require('./lib/templates');
@@ -39,6 +41,8 @@ const ToolbarButton = require('./lib/toolbar-button');
 
 const INSTALLED_PANEL_WIDTH = 250;
 const INSTALLED_PANEL_HEIGHT = 56;
+
+const EXPERIMENT_UPDATE_INTERVAL = 24 * 60 * 60 * 1000; // 1 day
 
 // Canned selectable server environment configs
 const SERVER_ENVIRONMENTS = {
@@ -85,6 +89,9 @@ function updatePrefs() {
 
   // kickoff our random experiment surveys
   survey.init();
+
+  // Fire off an experiment data update for this environment
+  updateExperiments();
 
   // Destroy previously existing PageMods
   if (setInstalledFlagPageMod) { setInstalledFlagPageMod.destroy(); }
@@ -242,6 +249,7 @@ function updateExperiments() {
     res.json.results.forEach(exp => {
       store.availableExperiments[exp.addon_id] = exp;
     });
+    ToolbarButton.updateButtonBadge();
 
     // Query all installed addons
     return new Promise(resolve => AddonManager.getAllAddons(resolve));
@@ -467,6 +475,9 @@ exports.main = function(options) {
   Metrics.init();
   WebExtensionChannels.init();
   ToolbarButton.init(settings);
+
+  // Set up a timer to update experiments data periodically.
+  experimentsUpdateTimer = setTimeout(updateExperiments, EXPERIMENT_UPDATE_INTERVAL);
 };
 
 exports.onUnload = function(reason) {
@@ -496,4 +507,8 @@ exports.onUnload = function(reason) {
 
   setInstalledFlagPageMod.destroy();
   messageBridgePageMod.destroy();
+
+  if (experimentsUpdateTimer) {
+    clearTimeout(experimentsUpdateTimer);
+  }
 };
