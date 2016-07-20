@@ -8,14 +8,12 @@ const settings = {};
 
 let setInstalledFlagPageMod;
 let messageBridgePageMod;
-let button;
 let app;
 
 const {Cc, Ci, Cu} = require('chrome');
 
 const AddonManager = Cu.import('resource://gre/modules/AddonManager.jsm').AddonManager;
 
-const Prefs = Cu.import('resource://gre/modules/Preferences.jsm').Preferences;
 const cookieManager2 = Cc['@mozilla.org/cookiemanager;1']
                        .getService(Ci.nsICookieManager2);
 
@@ -24,10 +22,8 @@ const store = require('sdk/simple-storage').storage;
 const {Panel} = require('sdk/panel');
 const {PageMod} = require('sdk/page-mod');
 const tabs = require('sdk/tabs');
-const {ActionButton} = require('sdk/ui/button/action');
 const request = require('sdk/request').Request;
 const simplePrefs = require('sdk/simple-prefs');
-const querystring = require('sdk/querystring');
 const URL = require('sdk/url').URL;
 const history = require('sdk/places/history');
 
@@ -39,10 +35,8 @@ Mustache.parse(templates.experimentList);
 const Metrics = require('./lib/metrics');
 const survey = require('./lib/survey');
 const WebExtensionChannels = require('./lib/webextension-channels');
+const ToolbarButton = require('./lib/toolbar-button');
 
-const PANEL_WIDTH = 300;
-const FOOTER_HEIGHT = 50;
-const EXPERIMENT_HEIGHT = 80;
 const INSTALLED_PANEL_WIDTH = 250;
 const INSTALLED_PANEL_HEIGHT = 56;
 
@@ -203,7 +197,7 @@ function setupApp() {
 
       installMsgPanel.show({width: INSTALLED_PANEL_WIDTH,
                             height: INSTALLED_PANEL_HEIGHT,
-                            position: button});
+                            position: ToolbarButton.button});
 
       // allow us to hide the panel from a landing page interaction
       app.on('hide-installed-panel', destroyInstallPanel);
@@ -216,87 +210,6 @@ function setupApp() {
     } else if (self.loadReason === 'upgrade') {
       app.send('addon-self:upgraded');
     }
-  });
-}
-
-let collapsed = true; // collapsed state for panel
-const panel = Panel({ // eslint-disable-line new-cap
-  contentURL: './base.html',
-  contentScriptFile: './panel.js',
-  onHide: () => {
-    button.state('window', {checked: false});
-  }
-});
-
-panel.on('hide', () => collapsed = true);
-panel.on('show', showExperimentList);
-panel.port.on('back', showExperimentList);
-
-function showExperimentList() {
-  panel.port.emit('show', getExperimentList(store.availableExperiments || {},
-                                            store.installedAddons || {}));
-}
-
-panel.port.on('link', url => {
-  tabs.open(url);
-  panel.hide();
-});
-
-function getParams(title) {
-  return querystring.stringify({
-    utm_source: 'testpilot-addon',
-    utm_medium: 'firefox-browser',
-    utm_campaign: 'testpilot-doorhanger',
-    utm_content: title
-  });
-}
-
-function getExperimentList(availableExperiments, installedAddons) {
-  return Mustache.render(templates.experimentList, {
-    base_url: settings.BASE_URL,
-    view_all_params: getParams('view-all-experiments'),
-    experiments: Object.keys(availableExperiments).map(k => {
-      if (installedAddons[k]) {
-        availableExperiments[k].active = installedAddons[k].active;
-      }
-      availableExperiments[k].params = getParams(availableExperiments[k].title);
-      return availableExperiments[k];
-    })
-  });
-}
-
-// update the our icon for devtools themes
-Prefs.observe('devtools.theme', pref => {
-  setActionButton(pref === 'dark');
-});
-setActionButton(Prefs.get('devtools.theme') === 'dark');
-
-function setActionButton(dark) {
-  const iconPrefix = dark ? './icon-inverted' : './icon';
-
-  button = ActionButton({ // eslint-disable-line new-cap
-    id: 'testpilot-link',
-    label: 'Test Pilot',
-    icon: {
-      '16': iconPrefix + '-16.png',
-      '32': iconPrefix + '-32.png',
-      '64': iconPrefix + '-64.png'
-    },
-    onClick: handleToolbarButtonClick
-  });
-}
-
-function handleToolbarButtonClick() {
-  collapsed = !collapsed;
-  if (panel) panel.hide();
-  if (collapsed) return;
-
-  const experimentCount = ('availableExperiments' in store) ?
-    Object.keys(store.availableExperiments).length : 0;
-  panel.show({
-    width: PANEL_WIDTH,
-    height: (experimentCount * EXPERIMENT_HEIGHT) + FOOTER_HEIGHT,
-    position: button
   });
 }
 
@@ -553,15 +466,15 @@ exports.main = function(options) {
   initServerEnvironmentPreference();
   Metrics.init();
   WebExtensionChannels.init();
+  ToolbarButton.init(settings);
 };
 
 exports.onUnload = function(reason) {
   AddonManager.removeAddonListener(addonListener);
   AddonManager.removeInstallListener(installListener);
-  panel.destroy();
-  button.destroy();
   Metrics.destroy();
   WebExtensionChannels.destroy();
+  ToolbarButton.destroy();
 
   if (reason === 'uninstall' || reason === 'disable') {
     Metrics.onDisable();
