@@ -5,6 +5,7 @@ import ErrorPage from '../views/error-page';
 import ExperimentPage from '../views/experiment-page';
 import ExperimentListPage from '../views/experiment-list-page';
 import LandingPage from '../views/landing-page';
+import LegacyPage from '../views/legacy-page';
 import NotFoundPage from '../views/not-found-page';
 import OnboardingPage from '../views/onboarding-page';
 import RetirePage from '../views/retire-page';
@@ -24,6 +25,7 @@ export default class PageManager {
       'landing': LandingPage,
       'experiments': ExperimentListPage,
       'experimentDetail': ExperimentPage,
+      'legacy': LegacyPage,
       'share': SharePage,
       'notFound': NotFoundPage,
       'onboarding': OnboardingPage,

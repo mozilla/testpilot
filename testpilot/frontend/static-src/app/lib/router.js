@@ -12,6 +12,7 @@ export default Router.extend({
     'home(/)': 'home',
     'experiments/:experiment(/)': 'experimentDetail',
     'experiments(/)': 'experiments',
+    'legacy(/)': 'legacy',
     '404': 'notFound',
     'share(/)': 'share',
     'error': 'error',
@@ -63,6 +64,10 @@ export default Router.extend({
 
   onboarding() {
     app.trigger('router:new-page', {page: 'onboarding'});
+  },
+
+  legacy() {
+    app.trigger('router:new-page', {page: 'legacy'});
   },
 
   notFound() {
