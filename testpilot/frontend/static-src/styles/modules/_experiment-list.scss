@@ -146,9 +146,9 @@
 
 .experiment-icon {
   background-repeat: no-repeat;
-  background-size: $grid-unit * 4 $grid-unit * 4;
+  background-size: $grid-unit * 4.8 $grid-unit * 4.8;
   filter: drop-shadow(0 1px 0 $transparent-black-1);
-  flex: 0 0 $grid-unit * 4;
-  height: $grid-unit * 5;
+  flex: 0 0 $grid-unit * 4.8;
+  height: $grid-unit * 4.8;
   opacity: .9;
 }
