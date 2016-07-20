@@ -44,11 +44,12 @@ July 19, 2016
 0. ## Contact
     Legal questions can be directed to:
 
-    Legal-notices at mozilla.com  
-    Telephone: 650-903-0800  
-    Fax: 650-903-0875  
-    Mail: Mozilla Corporation  
-      &nbsp; Attn: Mozilla – Legal Notices  
-      &nbsp; 331 E. Evelyn Ave.,  
-      &nbsp; Mountain View, CA 94041  
-      &nbsp; USA  
+    **Email:** Legal-notices at mozilla.com  
+    **Telephone:** 650-903-0800  
+    **Fax:** 650-903-0875  
+    **Mail:**  
+    Mozilla Corporation  
+    Attn: Mozilla – Legal Notices  
+    331 E. Evelyn Ave.,  
+    Mountain View, CA 94041  
+    USA  
