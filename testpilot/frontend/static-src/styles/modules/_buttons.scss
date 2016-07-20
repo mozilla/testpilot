@@ -12,6 +12,7 @@
   text-align: center;
   text-decoration: none;
   transition: background 150ms;
+  user-select: none;
   white-space: nowrap;
 
   &.no-display {

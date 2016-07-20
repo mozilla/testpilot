@@ -26,6 +26,17 @@ export default BaseView.extend({
     'click [data-hook=settings-button]': 'toggleSettings'
   },
 
+  afterRender() {
+    document.body.addEventListener('click', this.close.bind(this));
+  },
+
+  close(ev) {
+    if (!ev.target.parentElement.classList.contains('settings-menu')) {
+      this.query('.settings-menu').classList.add('no-display');
+      this.query('.settings-button').classList.remove('active');
+    }
+  },
+
   toggleSettings(ev) {
     ev.stopPropagation();
     app.sendToGA('event', {
@@ -39,8 +50,7 @@ export default BaseView.extend({
       setEl.classList.remove('no-display');
       buttonEl.classList.add('active');
     } else {
-      setEl.classList.add('no-display');
-      buttonEl.classList.remove('active');
+      this.close(ev);
     }
   },
 
