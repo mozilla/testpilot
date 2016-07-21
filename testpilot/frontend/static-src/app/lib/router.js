@@ -13,6 +13,7 @@ export default Router.extend({
     'experiments/:experiment(/)': 'experimentDetail',
     'experiments(/)': 'experiments',
     '404': 'notFound',
+    'share(/)': 'share',
     'error': 'error',
     '(*path)': 'notFound'
   },
@@ -53,6 +54,10 @@ export default Router.extend({
 
   home() {
     this.redirectTo('experiments');
+  },
+
+  share() {
+    app.trigger('router:new-page', {page: 'share'});
   },
 
   notFound() {

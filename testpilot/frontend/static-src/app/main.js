@@ -7,6 +7,7 @@ es6Promise.polyfill();
 import 'isomorphic-fetch';
 
 import app from 'ampersand-app';
+import Clipboard from 'clipboard';
 
 import webChannel from './lib/web-channel';
 import ExperimentsCollection from './collections/experiments';
@@ -40,6 +41,7 @@ app.extend({
   initialize() {
     app.webChannel = webChannel;
     app.me = new Me();
+    app.clipboard = new Clipboard('button');
     app.experiments = new ExperimentsCollection();
 
     app.pageManager = new PageManager({

@@ -1,5 +1,6 @@
 #four-oh-four,
-#retire {
+#retire,
+#share {
   margin-bottom: $grid-unit * 1.5;
   position: relative;
 
@@ -28,6 +29,14 @@
     background: $transparent-black-05;
     border-bottom: 1px solid $transparent-black-1;
     color: $black;
+  }
+}
+
+#share {
+  margin-top: 115px;
+
+  .modal-content {
+    padding: 20px 20px 30px;
   }
 }
 
@@ -254,5 +263,68 @@
 
   .button {
     margin: 0 auto;
+  }
+}
+
+.share-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: $grid-unit 0;
+  padding: 0;
+
+  li {
+    margin-right: $grid-unit;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: inline-block;
+    height: 60px;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 60px;
+  }
+
+  .share-facebook a {
+    background-image: url('../images/share-facebook.svg');
+  }
+
+  .share-twitter a {
+    background-image: url('../images/share-twitter.svg');
+  }
+
+  .share-email a {
+    background-image: url('../images/share-email.svg');
+  }
+}
+
+.share-url {
+  border-color: $transparent-black-8;
+  border-radius: $small-border-radius;
+  display: flex;
+  justify-content: space-between;
+  margin-top: $grid-unit;
+  padding: 1px;
+
+  input {
+    border-width: 0;
+    font-size: $font-unit * 1.6;
+    line-height: 1;
+    padding: $grid-unit * .5;
+    width: 85%;
+  }
+
+  button {
+    background: transparent;
+    border-width: 0;
+    color: $default-light;
+    text-transform: lowercase;
+    width: 15%;
   }
 }
