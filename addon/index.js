@@ -27,7 +27,7 @@ const request = require('sdk/request').Request;
 const simplePrefs = require('sdk/simple-prefs');
 const URL = require('sdk/url').URL;
 const history = require('sdk/places/history');
-const { setTimeout, clearTimeout } = require('sdk/timers');
+const {setInterval, clearInterval} = require('sdk/timers');
 
 const Mustache = require('mustache');
 const templates = require('./lib/templates');
@@ -477,7 +477,7 @@ exports.main = function(options) {
   ToolbarButton.init(settings);
 
   // Set up a timer to update experiments data periodically.
-  experimentsUpdateTimer = setTimeout(updateExperiments, EXPERIMENT_UPDATE_INTERVAL);
+  experimentsUpdateTimer = setInterval(updateExperiments, EXPERIMENT_UPDATE_INTERVAL);
 };
 
 exports.onUnload = function(reason) {
@@ -509,6 +509,6 @@ exports.onUnload = function(reason) {
   messageBridgePageMod.destroy();
 
   if (experimentsUpdateTimer) {
-    clearTimeout(experimentsUpdateTimer);
+    clearInterval(experimentsUpdateTimer);
   }
 };
