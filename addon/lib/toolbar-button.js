@@ -47,7 +47,7 @@ function getExperimentList(availableExperiments, installedAddons) {
       if (installedAddons[k]) {
         availableExperiments[k].active = installedAddons[k].active;
       }
-      availableExperiments[k].params = getParams(availableExperiments[k].title);
+      availableExperiments[k].params = getParams();
       return availableExperiments[k];
     })
   });
@@ -56,14 +56,19 @@ function getExperimentList(availableExperiments, installedAddons) {
 function showExperimentList() {
   panel.port.emit('show', getExperimentList(store.availableExperiments || {},
                                             store.installedAddons || {}));
+
+  // HACK: Record toolbar button click here, so that badging state is
+  // unchanged until after rendering the panel's instrumented links.
+  store.toolbarButtonLastClicked = Date.now();
+  ToolbarButton.updateButtonBadge(); // eslint-disable-line no-use-before-define
 }
 
-function getParams(title) {
+function getParams() {
   return querystring.stringify({
     utm_source: 'testpilot-addon',
     utm_medium: 'firefox-browser',
     utm_campaign: 'testpilot-doorhanger',
-    utm_content: title
+    utm_content: (!!button.badge) ? 'badged' : 'not badged'
   });
 }
 
@@ -72,9 +77,6 @@ function handleToolbarButtonClick() {
   if (panel) panel.hide();
   if (collapsed) return;
 
-  store.toolbarButtonLastClicked = Date.now();
-  ToolbarButton.updateButtonBadge(); // eslint-disable-line no-use-before-define
-
   const experimentCount = ('availableExperiments' in store) ?
     Object.keys(store.availableExperiments).length : 0;
   panel.show({
@@ -82,8 +84,6 @@ function handleToolbarButtonClick() {
     height: (experimentCount * EXPERIMENT_HEIGHT) + FOOTER_HEIGHT,
     position: button
   });
-
-  // TODO: Record metrics event here, along with badge context
 }
 
 const ToolbarButton = module.exports = {
