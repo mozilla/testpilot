@@ -7,8 +7,10 @@ export default Model.extend({
   urlRoot: '/api/experiments',
   extraProperties: 'allow',
   props: {
-    enabled: {type: 'boolean', default: false}
+    enabled: {type: 'boolean', default: false},
+    lastSeen: {type: 'number', default: 0}
   },
+
   // This shouldn't be necessary; see comments in collections/experiments.js
   ajaxConfig: { headers: { 'Accept': 'application/json' }},
 
@@ -27,6 +29,8 @@ export default Model.extend({
         this.enabled = false;
       }
     });
+
+    this.lastSeen = this.getWhenLastSeen();
   },
 
   buildSurveyURL(ref) {
@@ -36,5 +40,15 @@ export default Model.extend({
       installed: app.me.installed ? Object.keys(app.me.installed) : []
     });
     return `${this.survey_url}?${queryParams}`;
+  },
+
+  getWhenLastSeen() {
+    const key = `experiment-last-seen-${this.id}`;
+    return parseInt(localStorage.getItem(key), 10);
+  },
+
+  updateWhenLastSeen() {
+    const key = `experiment-last-seen-${this.id}`;
+    return localStorage.setItem(key, this.lastSeen = Date.now());
   }
 });

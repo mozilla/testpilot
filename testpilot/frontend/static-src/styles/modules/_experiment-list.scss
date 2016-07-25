@@ -72,6 +72,22 @@
         box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-green, 0 0 0 9px $transparent-white-1;
       }
     }
+
+    &.just-launched {
+      box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-blue;
+
+      &:hover {
+        box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-blue, 0 0 0 9px $transparent-white-1;
+      }
+    }
+
+    &.just-updated {
+      box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-blue;
+
+      &:hover {
+        box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-blue, 0 0 0 9px $transparent-white-1;
+      }
+    }
   }
 
   &.has-addon:hover {
@@ -117,6 +133,18 @@
 
   .enabled-tab {
     background: $bright-green;
+    border-bottom-color: $white;
+    color: $white;
+  }
+
+  .just-launched-tab {
+    background: $bright-blue;
+    border-bottom-color: $white;
+    color: $white;
+  }
+
+  .just-updated-tab {
+    background: $bright-blue;
     border-bottom-color: $white;
     color: $white;
   }

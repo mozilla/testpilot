@@ -2,10 +2,15 @@ import app from 'ampersand-app';
 
 import BaseView from './base-view';
 
+const MAX_JUST_LAUNCHED_PERIOD = 14 * 24 * 60 * 60 * 1000; // 2 weeks
+const MAX_JUST_UPDATED_PERIOD = 14 * 24 * 60 * 60 * 1000; // 2 weeks
+
 export default BaseView.extend({
   template: `<div data-hook="show-detail" class="experiment-summary">
                 <div class="experiment-actions">
                   <div data-l10n-id="experimentListEnabledTab" data-hook="enabled-tab" class="tab enabled-tab"></div>
+                  <div data-l10n-id="experimentListJustLaunchedTab" data-hook="just-launched-tab" class="tab just-launched-tab"></div>
+                  <div data-l10n-id="experimentListJustUpdatedTab" data-hook="just-updated-tab" class="tab just-updated-tab"></div>
                 </div>
               <div class="experiment-icon-wrapper" data-hook="bg">
                 <div class="experiment-icon" data-hook="thumbnail"></div>
@@ -21,6 +26,44 @@ export default BaseView.extend({
 
   props: {
     hasAddon: {type: 'boolean', default: 'false'}
+  },
+  derived: {
+    justUpdated: {
+      deps: ['model.enabled', 'model.modified', 'model.lastSeen'],
+      fn: function() {
+        // Enabled trumps launched.
+        if (this.model.enabled) { return false; }
+
+        // If modified awhile ago, don't consider it "just" updated.
+        const now = Date.now();
+        const modified = (new Date(this.model.modified)).getTime();
+        if ((now - modified) > MAX_JUST_UPDATED_PERIOD) { return false; }
+
+        // If modified since the last time seen, *do* consider it updated.
+        if (modified > this.model.lastSeen) { return true; }
+
+        // All else fails, don't consider it updated.
+        return false;
+      }
+    },
+    justLaunched: {
+      deps: ['model.enabled', 'model.created', 'model.lastSeen'],
+      fn: function() {
+        // Enabled & updated trumps launched.
+        if (this.model.enabled || this.justUpdated) { return false; }
+
+        // If created awhile ago, don't consider it "just" launched.
+        const now = Date.now();
+        const created = (new Date(this.model.created)).getTime();
+        if ((now - created) > MAX_JUST_LAUNCHED_PERIOD) { return false; }
+
+        // If never seen, *do* consider it "just" launched.
+        if (!this.model.lastSeen) { return true; }
+
+        // All else fails, don't consider it launched.
+        return false;
+      }
+    }
   },
 
   bindings: {
@@ -57,6 +100,24 @@ export default BaseView.extend({
     {
       type: 'toggle',
       hook: 'enabled-tab'
+    }],
+    'justLaunched': [{
+      type: 'booleanClass',
+      hook: 'show-detail',
+      name: 'just-launched'
+    },
+    {
+      type: 'toggle',
+      hook: 'just-launched-tab'
+    }],
+    'justUpdated': [{
+      type: 'booleanClass',
+      hook: 'show-detail',
+      name: 'just-updated'
+    },
+    {
+      type: 'toggle',
+      hook: 'just-updated-tab'
     }],
     'hasAddon': {
       type: 'booleanClass',
