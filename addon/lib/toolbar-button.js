@@ -17,6 +17,8 @@ const EXPERIMENT_HEIGHT = 80;
 const NEW_BADGE_LABEL = 'New';
 const NEW_BADGE_COLOR = '#1996F7';
 
+const NEW_EXPERIMENT_PERIOD = 14 * 24 * 60 * 60 * 1000; // 2 weeks
+
 let settings;
 let button;
 let panel;
@@ -40,16 +42,31 @@ function setActionButton(dark) {
 }
 
 function getExperimentList(availableExperiments, installedAddons) {
+  const now = Date.now();
+
+  const experiments = Object.keys(availableExperiments).map(k => {
+    const experiment = availableExperiments[k];
+    if (installedAddons[k]) {
+      experiment.active = installedAddons[k].active;
+    } else {
+      const created = (new Date(experiment.created)).getTime();
+      experiment.isNew = (now - created) < NEW_EXPERIMENT_PERIOD;
+    }
+    experiment.params = getParams();
+    return experiment;
+  });
+
+  // Sort new experiments to the top, otherwise sort by reverse-chronological
+  experiments.sort((a, b) => {
+    if (a.isNew && !b.isNew) { return -1; }
+    if (!a.isNew && b.isNew) { return 1; }
+    return b.modified - a.modified;
+  });
+
   return Mustache.render(templates.experimentList, {
     base_url: settings.BASE_URL,
     view_all_params: getParams('view-all-experiments'),
-    experiments: Object.keys(availableExperiments).map(k => {
-      if (installedAddons[k]) {
-        availableExperiments[k].active = installedAddons[k].active;
-      }
-      availableExperiments[k].params = getParams();
-      return availableExperiments[k];
-    })
+    experiments
   });
 }
 
