@@ -7,13 +7,14 @@
 module.exports.experimentList = `
 <div class="experiment-list">
   {{#experiments}}
-    <a class="experiment-item {{#active}}active{{/active}}" href="{{base_url}}/experiments/{{slug}}?{{params}}">
+    <a class="experiment-item {{#active}}active{{/active}} {{#isNew}}is-new{{/isNew}}" href="{{base_url}}/experiments/{{slug}}?{{params}}">
       <div class="icon-wrapper"
            style="background-color:{{gradient_start}}; background-image: linear-gradient(300deg, {{gradient_start}}, {{gradient_stop}})">
         <div class="icon" style="background-image:url('{{thumbnail}}');"></div>
       </div>
       <div class="experiment-title">{{title}}
         <span class="active-span {{#active}}visible{{/active}}">Enabled</span>
+        <span class="is-new-span {{#isNew}}visible{{/isNew}}">New Experiment</span>
       </div>
     </a>
   {{/experiments}}
