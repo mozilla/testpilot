@@ -174,7 +174,7 @@ module.exports = {
     // TODO: Map add-on ID (subject) to other pingTypes as necessary
     const pingType = 'testpilottest';
 
-    if (subject in store.experimentVariants) {
+    if (store.experimentVariants && subject in store.experimentVariants) {
       dataParsed.variants = store.experimentVariants[subject];
     }
 
