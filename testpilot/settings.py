@@ -458,7 +458,7 @@ LOGGING = {
 # TODO: Management command to help update hashes for all listed resources?
 URL_INTEGRITY_HASHES = {
     "https://pontoon.mozilla.org/pontoon.js":
-        "sha384-9wVUbSIrAcmtmml7yD1gwWDunLY1joKMG9zV6wBaWv9Ao5UKgVT6o2vvYEf2RHVS",
+        "sha384-TnmHICWgojHUDa7wQSgli6kFbAepdEVBworafwho3bjFOOsuarpeLbaKRv54R7Q6",
     "https://code.cdn.mozilla.net/fonts/fira.css":
         "sha384-APhs/OUouhH+ZbBANL3+7a5J1sVSYyfUhGxTWiDMkTuEIO5fXWZonzNEj+CagDB7",
 }
