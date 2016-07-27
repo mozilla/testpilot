@@ -9,11 +9,38 @@ from django.db import OperationalError
 
 from constance.test import override_config
 
+from testfixtures import LogCapture
+
 from ..utils import TestCase
 from .jinja import _hash_content, waffleintegrity, TestPilotExtension
 
 import logging
 logger = logging.getLogger(__name__)
+
+
+class RequestSummaryLoggingTests(TestCase):
+
+    def setUp(self):
+        super(RequestSummaryLoggingTests, self).setUp()
+        self.handler = LogCapture()
+
+    def tearDown(self):
+        self.handler.uninstall()
+
+    def test_unblackisted_are_logged(self):
+        self.handler.records = []
+        url = '/__version__'
+        resp = self.client.get(url)
+        self.assertEqual(200, resp.status_code)
+        record = self.handler.records[0]
+        self.assertEqual(url, record.path)
+
+    def test_blacklisted_are_not_logged(self):
+        self.handler.records = []
+        url = '/__heartbeat__'
+        resp = self.client.get(url)
+        self.assertEqual(200, resp.status_code)
+        self.assertEqual(0, len(self.handler.records))
 
 
 class OpsEndpointTests(TestCase):
