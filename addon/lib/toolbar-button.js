@@ -17,6 +17,8 @@ const EXPERIMENT_HEIGHT = 80;
 const NEW_BADGE_LABEL = 'New';
 const NEW_BADGE_COLOR = '#1996F7';
 
+const NEW_EXPERIMENT_PERIOD = 14 * 24 * 60 * 60 * 1000; // 2 weeks
+
 let settings;
 let button;
 let panel;
@@ -40,30 +42,50 @@ function setActionButton(dark) {
 }
 
 function getExperimentList(availableExperiments, installedAddons) {
+  const now = Date.now();
+
+  const experiments = Object.keys(availableExperiments).map(k => {
+    const experiment = availableExperiments[k];
+    if (installedAddons[k]) {
+      experiment.active = installedAddons[k].active;
+    } else {
+      const created = (new Date(experiment.created)).getTime();
+      experiment.isNew = (now - created) < NEW_EXPERIMENT_PERIOD;
+    }
+    experiment.params = getParams();
+    return experiment;
+  });
+
+  // Sort new experiments to the top, otherwise sort by reverse-chronological
+  experiments.sort((a, b) => {
+    if (a.isNew && !b.isNew) { return -1; }
+    if (!a.isNew && b.isNew) { return 1; }
+    return b.modified - a.modified;
+  });
+
   return Mustache.render(templates.experimentList, {
     base_url: settings.BASE_URL,
     view_all_params: getParams('view-all-experiments'),
-    experiments: Object.keys(availableExperiments).map(k => {
-      if (installedAddons[k]) {
-        availableExperiments[k].active = installedAddons[k].active;
-      }
-      availableExperiments[k].params = getParams(availableExperiments[k].title);
-      return availableExperiments[k];
-    })
+    experiments
   });
 }
 
 function showExperimentList() {
   panel.port.emit('show', getExperimentList(store.availableExperiments || {},
                                             store.installedAddons || {}));
+
+  // HACK: Record toolbar button click here, so that badging state is
+  // unchanged until after rendering the panel's instrumented links.
+  store.toolbarButtonLastClicked = Date.now();
+  ToolbarButton.updateButtonBadge(); // eslint-disable-line no-use-before-define
 }
 
-function getParams(title) {
+function getParams() {
   return querystring.stringify({
     utm_source: 'testpilot-addon',
     utm_medium: 'firefox-browser',
     utm_campaign: 'testpilot-doorhanger',
-    utm_content: title
+    utm_content: (!!button.badge) ? 'badged' : 'not badged'
   });
 }
 
@@ -72,9 +94,6 @@ function handleToolbarButtonClick() {
   if (panel) panel.hide();
   if (collapsed) return;
 
-  store.toolbarButtonLastClicked = Date.now();
-  ToolbarButton.updateButtonBadge(); // eslint-disable-line no-use-before-define
-
   const experimentCount = ('availableExperiments' in store) ?
     Object.keys(store.availableExperiments).length : 0;
   panel.show({
@@ -82,8 +101,6 @@ function handleToolbarButtonClick() {
     height: (experimentCount * EXPERIMENT_HEIGHT) + FOOTER_HEIGHT,
     position: button
   });
-
-  // TODO: Record metrics event here, along with badge context
 }
 
 const ToolbarButton = module.exports = {

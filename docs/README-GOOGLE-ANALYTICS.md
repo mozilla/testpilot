@@ -123,5 +123,5 @@ We should maintain a consistent convention when using campaign parameters.
 
 | Description                                                   | utm_source      | utm_medium      | utm_campaign         | utm_content        |
 |---------------------------------------------------------------|-----------------|-----------------|----------------------|--------------------|
-| Clicking on an experiment (or "view all") from the doorhanger | testpilot-addon | firefox-browser | testpilot-doorhanger | {experiment title} |
+| Clicking on an experiment (or "view all") from the doorhanger | testpilot-addon | firefox-browser | testpilot-doorhanger | 'badged' or 'not badged' depending on presence of 'New' badge on add-on toolbar button |
 | Clicking on an experiment from the in-product messaging       | testpilot-addon | firefox-browser | push notification    | {messageID}        |

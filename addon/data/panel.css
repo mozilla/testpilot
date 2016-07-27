@@ -159,6 +159,16 @@ a {
     font-size: 14px;
 }
 
+.is-new-span {
+    display: none;
+}
+
+.is-new .is-new-span {
+    display: block;
+    color: #0996f8;
+    font-size: 14px;
+}
+
 .installed-message {
     background: #fff;
     display: flex;
