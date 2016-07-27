@@ -2,7 +2,8 @@ from django.contrib import admin
 
 from hvad.admin import TranslatableAdmin, TranslatableTabularInline
 
-from .models import (Experiment, ExperimentDetail, ExperimentTourStep)
+from .models import (Experiment, ExperimentDetail, ExperimentTourStep,
+                     ExperimentNotification)
 from ..utils import (show_image, parent_link, related_changelist_link,
                      translated)
 
@@ -17,6 +18,11 @@ class ExperimentTourStepInline(TranslatableTabularInline):
     extra = 0
 
 
+class ExperimentNotificationInline(TranslatableTabularInline):
+    model = ExperimentNotification
+    extra = 0
+
+
 class ExperimentAdmin(TranslatableAdmin):
 
     list_display = ('id',
@@ -28,7 +34,9 @@ class ExperimentAdmin(TranslatableAdmin):
 
     raw_id_fields = ('contributors',)
 
-    inlines = (ExperimentTourStepInline, ExperimentDetailInline,)
+    inlines = (ExperimentDetailInline,
+               ExperimentTourStepInline,
+               ExperimentNotificationInline)
 
     # Workaround for prepopulated_fields and fieldsets from here:
     # https://github.com/KristianOellegaard/django-hvad/issues/10#issuecomment-5572524

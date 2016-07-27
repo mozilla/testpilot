@@ -48,19 +48,23 @@ app.extend({
       pageContainer: document.querySelector('[data-hook=page-container]')
     });
 
+    app.experiments.fetch().then(() => app.me.fetch()).then(() => {
+      app.me.updateEnabledExperiments(app.experiments);
+      app.startRouter();
+    }).catch((err) => {
+      console && console.error(err); // eslint-disable-line no-console
+      app.startRouter();
+      app.router.redirectTo('error');
+    });
+  },
+
+  startRouter() {
     if (!app.router.history.started()) {
       app.router.history.start();
       // HACK for Issue #124 - sometimes popstate doesn't fire on navigation,
       // but pageshow does. But, we just want to know if the URL changed.
       addEventListener('pageshow', app.router.history.checkUrl, false);
     }
-
-    app.experiments.fetch().then(() => app.me.fetch()).then(() => {
-      app.me.updateEnabledExperiments(app.experiments);
-    }).catch((err) => {
-      console && console.error(err); // eslint-disable-line no-console
-      app.router.redirectTo('error');
-    });
   },
 
   // Send webChannel message to addon, use a Promise to wait for the answer.

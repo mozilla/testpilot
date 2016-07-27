@@ -1,4 +1,5 @@
 import json
+import datetime
 
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
@@ -11,7 +12,8 @@ from mozilla_cloud_services_logger.formatters import JsonLogFormatter
 
 from ..utils import gravatar_url, TestCase
 from ..users.models import UserProfile
-from .models import (Experiment, ExperimentTourStep, UserInstallation)
+from .models import (Experiment, ExperimentTourStep, ExperimentNotification,
+                     UserInstallation)
 
 import logging
 logger = logging.getLogger(__name__)
@@ -76,6 +78,8 @@ class ExperimentViewTests(BaseTestCase):
                         "id": experiment.pk,
                         "url": "http://testserver/api/experiments/%s" %
                                experiment.pk,
+                        "html_url": "http://testserver/experiments/%s" %
+                               experiment.slug,
                         "title": experiment.title,
                         "short_title": experiment.short_title,
                         "order": experiment.order,
@@ -101,6 +105,7 @@ class ExperimentViewTests(BaseTestCase):
                         "xpi_url": "",
                         "tour_steps": [],
                         "details": [],
+                        "notifications": [],
                         "contributors": [],
                         "survey_url": "https://qsurvey.mozilla.com/s3/%s" %
                         experiment.slug,
@@ -131,6 +136,29 @@ class ExperimentViewTests(BaseTestCase):
             result = data['tour_steps'][idx]
             self.assertEqual(step.copy.rendered, result['copy'])
             self.assertEqual(step.order, result['order'])
+
+    def test_notifications(self):
+        experiment = self.experiments['test-1']
+        steps = [ExperimentNotification.objects.create(
+            experiment=experiment,
+            title='title %s' % idx,
+            text='text %s' % idx,
+            notify_after=datetime.datetime.utcnow()
+        ) for idx in range(1, 4)]
+
+        url = reverse('experiment-detail', args=(experiment.pk,))
+        resp = self.client.get(url)
+        data = json.loads(str(resp.content, encoding='utf8'))
+
+        date_field = fields.DateTimeField()
+        self.assertEqual(len(steps), len(data['notifications']))
+        for idx in range(0, len(steps)):
+            step = steps[idx]
+            result = data['notifications'][idx]
+            self.assertEqual(step.title, result['title'])
+            self.assertEqual(step.text, result['text'])
+            self.assertEqual('%sZ' % date_field.to_representation(step.notify_after),
+                             result['notify_after'])
 
     def test_contributors(self):
         """Experiment detail API resource should list contributor profiles"""
