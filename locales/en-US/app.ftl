@@ -51,6 +51,8 @@ notFoundHeader = Four Oh Four!
 experimentListPageHeader = Ready for Takeoff!
 experimentListPageSubHeader  = Pick the features you want to try. <br> Check back soon for more experiments.
 experimentListEnabledTab = Enabled
+experimentListJustLaunchedTab = Just Launched
+experimentListJustUpdatedTab = Just Updated
 isEnabledStatusMessage = {$title} is enabled.
 participantCount = <span>{$installation_count}</span> participants
 

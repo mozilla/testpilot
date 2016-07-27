@@ -206,6 +206,7 @@ export default PageView.extend({
       'dimension5': this.model.title,
       'dimension6': this.model.installation_count
     });
+    this.model.updateWhenLastSeen();
     return this;
   },
 
