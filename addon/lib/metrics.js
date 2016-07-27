@@ -62,7 +62,7 @@ const variantMaker = {
 };
 
 
-module.exports = {
+const Metrics = module.exports = {
 
   init: function() {
     if (!store.telemetryPingPayload) {
@@ -73,10 +73,10 @@ module.exports = {
       };
     }
 
-    this.maybePingTelemetry();
+    Metrics.maybePingTelemetry();
 
-    Events.on(EVENT_SEND_METRIC, this.onExperimentPing);
-    Events.on(EVENT_RECEIVE_VARIANT_DEFS, this.onReceiveVariantDefs);
+    Events.on(EVENT_SEND_METRIC, Metrics.onExperimentPing);
+    Events.on(EVENT_RECEIVE_VARIANT_DEFS, Metrics.onReceiveVariantDefs);
   },
 
   onEnable: function() {
@@ -102,7 +102,7 @@ module.exports = {
     if (pingTimer) {
       clearTimeout(pingTimer);
     }
-    Events.off(EVENT_SEND_METRIC, this.onExperimentPing);
+    Events.off(EVENT_SEND_METRIC, Metrics.onExperimentPing);
   },
 
   maybePingTelemetry: function() {
@@ -115,11 +115,11 @@ module.exports = {
 
     if (shouldPing) {
       store.lastTelemetryPingTimestamp = now;
-      this.pingTelemetry();
+      Metrics.pingTelemetry();
     }
 
     pingTimer = setTimeout(
-      () => this.maybePingTelemetry(),
+      Metrics.maybePingTelemetry,
       PING_CHECK_INTERVAL
     );
   },
@@ -140,15 +140,15 @@ module.exports = {
   },
 
   experimentEnabled: function(addonId) {
-    this.updateExperiment(addonId, {last_enabled: Date.now()});
+    Metrics.updateExperiment(addonId, {last_enabled: Date.now()});
   },
 
   experimentDisabled: function(addonId) {
-    this.updateExperiment(addonId, {last_disabled: Date.now()});
+    Metrics.updateExperiment(addonId, {last_disabled: Date.now()});
   },
 
   experimentFeaturesChanged: function(addonId, features) {
-    this.updateExperiment(addonId, {features: features});
+    Metrics.updateExperiment(addonId, {features: features});
   },
 
   onReceiveVariantDefs: function(ev) {
@@ -160,7 +160,7 @@ module.exports = {
     const dataParsed = variantMaker.parseTests(JSON.parse(data));
 
     store.experimentVariants[subject] = dataParsed;
-    this.experimentFeaturesChanged(subject, dataParsed);
+    Metrics.experimentFeaturesChanged(subject, dataParsed);
     Events.emit(EVENT_SEND_VARIANTS, {
       data: JSON.stringify(dataParsed),
       subject: self.id
