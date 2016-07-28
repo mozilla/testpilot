@@ -379,6 +379,19 @@ CSP_STYLE_SRC = (
     'https://*.mozilla.net',
 )
 
+LOG_PATH_BLACKLIST = (
+    '/favicon.ico',
+    '/__heartbeat__',
+    '/__lbheartbeat__',
+    '/nginx_status',
+    '/robots.txt'
+)
+
+
+def skip_logging_blacklisted_paths(record):
+    return not (record.path and record.path in LOG_PATH_BLACKLIST)
+
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -388,6 +401,10 @@ LOGGING = {
         },
         'require_debug_true': {
             '()': 'django.utils.log.RequireDebugTrue',
+        },
+        'log_path_blacklist': {
+            '()': 'django.utils.log.CallbackFilter',
+            'callback': skip_logging_blacklisted_paths
         },
     },
     'formatters': {
@@ -423,6 +440,7 @@ LOGGING = {
         'request.summary': {
             'handlers': ['console'],
             'level': 'INFO',
+            'filters': ['log_path_blacklist'],
         },
         'django': {
             'handlers': ['console'],
