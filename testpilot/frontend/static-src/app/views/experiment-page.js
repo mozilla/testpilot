@@ -31,7 +31,7 @@ export default PageView.extend({
 
   bindings: {
 
-    'model': {
+    'model': [{
       hook: 'bg',
       type: function setGradientBg(el, model) {
         el.setAttribute('style',
@@ -40,6 +40,13 @@ export default PageView.extend({
         return el;
       }
     },
+    // TODO: #1138 Replace this highly hackly hook so that the subtitle comes from the model
+    {
+      hook: 'subtitle',
+      type: function removeSubtitle(el, model) {
+        (model.title === 'No More 404s') ? el.textContent = 'Powered by the Wayback Machine' : '';
+      }
+    }],
 
     'model.title': {
       type: 'text',

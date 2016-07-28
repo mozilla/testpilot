@@ -8,7 +8,12 @@ export default `
       <div class="details-header-wrapper" data-hook="is-enabled">
         <div class="status-bar enabled" data-l10n-id="isEnabledStatusMessage"><span data-hook="title"></span> is enabled.</div>
         <div class="details-header content-wrapper">
-          <h1 data-hook="title"></h1> <div class="experiment-controls">
+          <header>
+            <h1 data-hook="title"></h1>
+            <h4 data-hook="subtitle" class="subtitle"></h4>
+          </header>
+            <div class="experiment-controls">
+
             <a data-hook="highlight-privacy" class="highlight-privacy" data-l10n-id=highlightPrivacy>Your privacy</a>
             <a data-l10n-id="giveFeedback" data-hook="feedback" id="feedback-button" class="button default" target="_blank">Give Feedback</a>
             <button data-hook="uninstall" id="uninstall-button" class="button secondary"><span class="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" class="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" class="default-text">Disable <span data-hook="title"></span></span></button>

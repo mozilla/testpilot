@@ -139,6 +139,26 @@ test('installation count gets commafied', t => {
   t.ok(installCount.indexOf(',') > -1);
 });
 
+// TODO: #1138 Fix hacky test for Wayback machine subtitle rendering
+test('subtitle renders correctly', t => {
+  t.plan(2);
+
+  const myView = new MyView({headerScroll: false, slug: 'slsk'});
+  const model = app.experiments.get('slsk', 'slug');
+
+  myView.render();
+
+  let subtitle = myView.query('[data-hook=subtitle]').textContent;
+
+  t.ok(subtitle === '');
+
+
+  model.title = 'No More 404s';
+  myView.render();
+  subtitle = myView.query('[data-hook=subtitle]').textContent;
+  t.ok(subtitle === 'Powered by the Wayback Machine');
+});
+
 // Issue #748
 test('feedback button uses the expected survey URL', t => {
   t.plan(1);

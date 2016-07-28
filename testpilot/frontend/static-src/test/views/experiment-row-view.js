@@ -43,6 +43,27 @@ test('Experiment row displays short_title', t => {
   t.equal(view.query('.experiment-summary h3').innerHTML, expectedTitle);
 });
 
+// TODO: #1138 Fix hacky test for Wayback machine subtitle rendering
+test('subtitle on cards renders correctly', t => {
+  t.plan(2);
+
+  const model = new Experiment({
+    slug: 'test',
+    short_title: '',
+    title: 'long long long title'
+  });
+  const view = new View({model: model}).render();
+  let subtitle = view.query('[data-hook=subtitle]').textContent;
+
+  t.ok(subtitle === '');
+
+  model.title = 'No More 404s';
+  view.render();
+  subtitle = view.query('[data-hook=subtitle]').textContent;
+
+  t.ok(subtitle === 'Powered by the Wayback Machine');
+});
+
 test('Experiment row card displays "Just Launched" when experiment is new & unseen', t => {
   t.plan(4);
   const model = new Experiment({

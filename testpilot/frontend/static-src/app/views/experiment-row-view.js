@@ -18,6 +18,7 @@ export default BaseView.extend({
               <div class="experiment-information">
                 <header>
                   <h3 data-hook="title"></h3>
+                  <h4 data-hook="subtitle" class="subtitle"></h4>
                 </header>
                 <p data-hook="description"></p>
                 <span class="participant-count" data-l10n-id="participantCount"</span>
@@ -71,6 +72,13 @@ export default BaseView.extend({
       hook: 'title',
       type: function shortTitleWithFallback(el, model) {
         el.innerHTML = model.short_title || model.title;
+      }
+    },
+    // TODO: #1138 Replace this highly hackly hook so that the subtitle comes from the model
+    {
+      hook: 'subtitle',
+      type: function removeSubtitle(el, model) {
+        (model.title === 'No More 404s') ? el.textContent = 'Powered by the Wayback Machine' : '';
       }
     },
     {
