@@ -19,7 +19,7 @@
   }
 
   background-color: $white;
-  border-radius: $small-border-radius;
+  border-radius: $small-border-radius + 1;
   box-shadow: 0 0 0 1px $transparent-black-1, 0 1px 0 1px $transparent-black-1;
   color: $black;
   margin-bottom: $grid-unit * 1.75;
@@ -74,6 +74,16 @@
     }
   }
 
+  &.has-addon:hover {
+    box-shadow: 0 1px 0 0 $transparent-white-2, 0 0 0 5px $transparent-white-2;
+    transition: box-shadow 150ms;
+
+    h3 {
+      color: $default;
+      transition: color 150ms;
+    }
+  }
+
   &.just-launched {
     box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-blue;
 
@@ -89,16 +99,6 @@
       box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-blue, 0 0 0 9px $transparent-white-1;
     }
   }
-
-  &.has-addon:hover {
-    box-shadow: 0 1px 0 0 $transparent-white-2, 0 0 0 5px $transparent-white-2;
-    transition: box-shadow 150ms;
-
-    h3 {
-      color: $default;
-      transition: color 150ms;
-    }
-  }
 }
 
 .experiment-actions {
@@ -107,13 +107,13 @@
   }
 
   .tab {
-    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: $large-border-radius;
     border-bottom-width: 3px;
     border-left-width: 0;
     border-right-color: $white;
     border-right-width: 3px;
     border-style: solid;
-    border-top-left-radius: 6px;
+    border-top-left-radius: $small-border-radius;
     border-top-width: 0;
     display: inline-block;
     font-weight: 300;
