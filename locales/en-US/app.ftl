@@ -43,6 +43,8 @@ landingCardOne = Get the Test Pilot add-on
 landingCardTwo = Enable experimental features
 landingCardThree = Tell us what you think
 
+onboardingMessage = We put an icon in your toolbar so you can always find Test Pilot.
+
 errorHeading = Whoops!
 errorMessage = Looks like we broke something. <br> Maybe try again later.
 

@@ -62,7 +62,6 @@ export default PageView.extend({
       if (!window.navigator.testpilotAddon) { return; }
       clearInterval(interval);
       app.me.fetch().then(() => {
-        app.webChannel.sendMessage('show-installed-panel', {});
         app.router.redirectTo('experiments');
       }).catch(() => {
         // HACK (for Issue #1075): Timed out while waiting for the initial sync

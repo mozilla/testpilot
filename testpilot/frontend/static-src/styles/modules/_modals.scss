@@ -1,6 +1,7 @@
 #four-oh-four,
 #retire,
-#share {
+#share,
+#onboarding {
   margin-bottom: $grid-unit * 1.5;
   position: relative;
 
@@ -337,7 +338,14 @@
 
 .envelope {
   @include hidpi-background-image('envelope', 150px 130px);
-  width: 150px;
   height: 130px;
   margin: auto;
+  width: 150px;
+}
+
+.toolbar-button-onboarding {
+  @include hidpi-background-image('toolbar-button-onboarding', 382px 182px);
+  height: 182px;
+  margin: auto auto $grid-unit -10px;
+  width: 382px;
 }
