@@ -37,7 +37,7 @@
   }
 
   header {
-    @include flex-container(row, space-between, center);
+    @include flex-container(column, space-between, flex-start);
     margin-bottom: $grid-unit * .75;
     width: 100%;
   }
@@ -46,10 +46,14 @@
     margin: 0;
   }
 
+  h4 {
+    margin: 0;
+  }
+
   p {
     flex: 1;
     line-height: 1.4 * $line-unit;
-    margin-bottom: $grid-unit * .5;
+    margin: $grid-unit * .5 0;
   }
 
   span {
@@ -78,7 +82,8 @@
     box-shadow: 0 1px 0 0 $transparent-white-2, 0 0 0 5px $transparent-white-2;
     transition: box-shadow 150ms;
 
-    h3 {
+    h3,
+    h4 {
       color: $default;
       transition: color 150ms;
     }
