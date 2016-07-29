@@ -4,7 +4,8 @@ from django.core.urlresolvers import reverse
 
 from ..users.models import UserProfile
 from ..users.serializers import UserProfileSerializer
-from .models import (Experiment, ExperimentDetail, UserInstallation)
+from .models import (Experiment, ExperimentDetail, ExperimentTourStep,
+                     ExperimentNotification, UserInstallation)
 from ..utils import MarkupField
 
 
@@ -26,8 +27,8 @@ class ExperimentTourStepSerializer(HyperlinkedTranslatableModelSerializer):
     experiment_url = serializers.SerializerMethodField()
 
     class Meta:
-        model = ExperimentDetail
-        fields = ('url', 'order', 'image', 'copy', 'experiment_url')
+        model = ExperimentTourStep
+        fields = ('order', 'image', 'copy', 'experiment_url')
 
     def get_experiment_url(self, obj):
         request = self.context['request']
@@ -35,11 +36,19 @@ class ExperimentTourStepSerializer(HyperlinkedTranslatableModelSerializer):
         return request.build_absolute_uri(path)
 
 
+class ExperimentNotificationSerializer(HyperlinkedTranslatableModelSerializer):
+    class Meta:
+        model = ExperimentNotification
+        fields = ('id', 'title', 'text', 'notify_after')
+
+
 class ExperimentSerializer(HyperlinkedTranslatableModelSerializer):
     """Experiment serializer that includes ExperimentDetails"""
     details = ExperimentDetailSerializer(many=True, read_only=True)
     tour_steps = ExperimentTourStepSerializer(many=True, read_only=True)
+    notifications = ExperimentNotificationSerializer(many=True, read_only=True)
     contributors = serializers.SerializerMethodField()
+    html_url = serializers.SerializerMethodField()
     installations_url = serializers.SerializerMethodField()
     survey_url = serializers.SerializerMethodField()
     measurements = MarkupField()
@@ -49,12 +58,17 @@ class ExperimentSerializer(HyperlinkedTranslatableModelSerializer):
         model = Experiment
         fields = ('id', 'url', 'title', 'short_title', 'slug',
                   'thumbnail', 'description', 'introduction',
-                  'version', 'changelog_url', 'contribute_url',
+                  'version', 'html_url', 'changelog_url', 'contribute_url',
                   'bug_report_url', 'discourse_url', 'privacy_notice_url', 'measurements',
                   'xpi_url', 'addon_id', 'gradient_start', 'gradient_stop',
-                  'details', 'tour_steps', 'contributors',
+                  'details', 'tour_steps', 'notifications', 'contributors',
                   'survey_url', 'installations_url',
                   'installation_count', 'created', 'modified', 'order',)
+
+    def get_html_url(self, obj):
+        request = self.context['request']
+        path = '/experiments/%s' % obj.slug
+        return request.build_absolute_uri(path)
 
     def get_contributors(self, obj):
         request = self.context['request']

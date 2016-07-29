@@ -114,3 +114,21 @@ class UserInstallation(models.Model):
 
     class Meta:
         unique_together = ('experiment', 'client_id',)
+
+
+class ExperimentNotification(TranslatableModel):
+    experiment = models.ForeignKey('Experiment', related_name='notifications',
+                                   db_index=True)
+
+    translations = TranslatedFields(
+        title=models.CharField(max_length=128),
+        text=models.CharField(max_length=256)
+    )
+
+    notify_after = models.DateTimeField(null=True, blank=True, default=None)
+
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ('experiment', 'modified',)

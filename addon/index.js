@@ -4,6 +4,11 @@
  * http://mozilla.org/MPL/2.0/.
  */
 
+const INSTALLED_PANEL_WIDTH = 250;
+const INSTALLED_PANEL_HEIGHT = 56;
+
+const EXPERIMENT_UPDATE_INTERVAL = 12 * 60 * 60 * 1000; // 12 hours
+
 const settings = {};
 
 let setInstalledFlagPageMod;
@@ -38,11 +43,7 @@ const Metrics = require('./lib/metrics');
 const survey = require('./lib/survey');
 const WebExtensionChannels = require('./lib/webextension-channels');
 const ToolbarButton = require('./lib/toolbar-button');
-
-const INSTALLED_PANEL_WIDTH = 250;
-const INSTALLED_PANEL_HEIGHT = 56;
-
-const EXPERIMENT_UPDATE_INTERVAL = 24 * 60 * 60 * 1000; // 1 day
+const ExperimentNotifications = require('./lib/experiment-notifications');
 
 // Canned selectable server environment configs
 const SERVER_ENVIRONMENTS = {
@@ -249,6 +250,9 @@ function updateExperiments() {
     res.json.results.forEach(exp => {
       store.availableExperiments[exp.addon_id] = exp;
     });
+
+    // Update UI since we just updated experiments.
+    ExperimentNotifications.maybeSendNotifications();
     ToolbarButton.updateButtonBadge();
 
     // Query all installed addons
@@ -475,6 +479,7 @@ exports.main = function(options) {
   Metrics.init();
   WebExtensionChannels.init();
   ToolbarButton.init(settings);
+  ExperimentNotifications.init();
 
   // Set up a timer to update experiments data periodically.
   experimentsUpdateTimer = setInterval(updateExperiments, EXPERIMENT_UPDATE_INTERVAL);
@@ -486,6 +491,7 @@ exports.onUnload = function(reason) {
   Metrics.destroy();
   WebExtensionChannels.destroy();
   ToolbarButton.destroy();
+  ExperimentNotifications.destroy();
 
   if (reason === 'uninstall' || reason === 'disable') {
     Metrics.onDisable();
@@ -493,6 +499,7 @@ exports.onUnload = function(reason) {
 
   if (reason === 'uninstall') {
     survey.destroy();
+    ExperimentNotifications.uninstall();
 
     if (store.installedAddons) {
       Object.keys(store.installedAddons).forEach(id => {
