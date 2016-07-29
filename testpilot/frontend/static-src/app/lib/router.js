@@ -15,6 +15,7 @@ export default Router.extend({
     '404': 'notFound',
     'share(/)': 'share',
     'error': 'error',
+    'onboarding': 'onboarding',
     '(*path)': 'notFound'
   },
 
@@ -58,6 +59,10 @@ export default Router.extend({
 
   share() {
     app.trigger('router:new-page', {page: 'share'});
+  },
+
+  onboarding() {
+    app.trigger('router:new-page', {page: 'onboarding'});
   },
 
   notFound() {

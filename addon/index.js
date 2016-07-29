@@ -4,9 +4,6 @@
  * http://mozilla.org/MPL/2.0/.
  */
 
-const INSTALLED_PANEL_WIDTH = 250;
-const INSTALLED_PANEL_HEIGHT = 56;
-
 const EXPERIMENT_UPDATE_INTERVAL = 12 * 60 * 60 * 1000; // 12 hours
 
 const settings = {};
@@ -25,7 +22,6 @@ const cookieManager2 = Cc['@mozilla.org/cookiemanager;1']
 
 const self = require('sdk/self');
 const store = require('sdk/simple-storage').storage;
-const {Panel} = require('sdk/panel');
 const {PageMod} = require('sdk/page-mod');
 const tabs = require('sdk/tabs');
 const request = require('sdk/request').Request;
@@ -157,6 +153,15 @@ function initServerEnvironmentPreference() {
   });
 }
 
+function openOnboardingTab() {
+  // TODO: Settings is populated async, so we need a global afterSettingsReady
+  // promise that this function can wait on.
+  tabs.open({
+    url: SERVER_ENVIRONMENTS.production.BASE_URL + '/onboarding',
+    inBackground: true
+  });
+}
+
 function setupApp() {
   updateExperiments().then(() => {
     app = new Router(messageBridgePageMod);
@@ -172,43 +177,6 @@ function setupApp() {
         clientUUID: store.clientUUID,
         installed: store.installedAddons
       });
-    });
-
-    app.on('show-installed-panel', () => {
-      const installMsgPanel = Panel({ // eslint-disable-line new-cap
-        contentURL: './base.html',
-        contentScriptFile: './panel.js',
-        onShow: () => installMsgPanel.port.emit('show', templates.installed)
-      });
-
-      installMsgPanel.on('hide', () => {
-        app.send('addon-self:install-panel-dismissed');
-      });
-
-      function destroyInstallPanel() {
-        if (installMsgPanel) {
-          installMsgPanel.destroy();
-        }
-      }
-
-      // get the test pilot tab and listen for deactivate or
-      // close events, so we can hide the 'installed' panel.
-      // BUG(DJ): deactivate event won't fire first time through
-      // https://bugzilla.mozilla.org/show_bug.cgi?id=1230816
-      let tab;
-      for (tab of tabs) {
-        if (tab.url.includes(settings.BASE_URL)) {
-          tab.on('close', destroyInstallPanel);
-          tab.on('deactivate', destroyInstallPanel);
-        }
-      }
-
-      installMsgPanel.show({width: INSTALLED_PANEL_WIDTH,
-                            height: INSTALLED_PANEL_HEIGHT,
-                            position: ToolbarButton.button});
-
-      // allow us to hide the panel from a landing page interaction
-      app.on('hide-installed-panel', destroyInstallPanel);
     });
 
     if (self.loadReason === 'install') {
@@ -480,6 +448,12 @@ exports.main = function(options) {
   WebExtensionChannels.init();
   ToolbarButton.init(settings);
   ExperimentNotifications.init();
+
+  // Wait until server env has been defined, then open onboarding page in
+  // a background tab.
+  if (reason === 'install') {
+    openOnboardingTab();
+  }
 
   // Set up a timer to update experiments data periodically.
   experimentsUpdateTimer = setInterval(updateExperiments, EXPERIMENT_UPDATE_INTERVAL);
