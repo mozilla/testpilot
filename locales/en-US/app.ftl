@@ -48,6 +48,18 @@ errorMessage = Looks like we broke something. <br> Maybe try again later.
 
 notFoundHeader = Four Oh Four!
 
+emailOptInDialogTitle = Welcome to Test Pilot!
+emailOptInMessage = Find out about new experiments and see test results for experiments you've tried.
+emailValidationError = Please use a valid email address!
+# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput =
+  [html/placeholder] email goes here :)
+emailOptInButton = Sign me up
+emailOptInSkip = Skip
+emailOptInConfirmationTitle = Email Sent
+emailOptInSuccessMessage = When you get a chance, head over to your inbox to verify your email address. Thank you!
+emailOptInConfirmationClose = On to the experiments...
+
 experimentListPageHeader = Ready for Takeoff!
 experimentListPageSubHeader  = Pick the features you want to try. <br> Check back soon for more experiments.
 experimentListEnabledTab = Enabled

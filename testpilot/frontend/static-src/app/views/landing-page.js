@@ -1,4 +1,5 @@
 import app from 'ampersand-app';
+import cookies from 'js-cookie';
 import PageView from './page-view';
 import template from '../templates/landing-page';
 import ExperimentListView from './experiment-list-view';
@@ -51,6 +52,8 @@ export default PageView.extend({
       eventLabel: 'Install the Add-on',
       outboundURL: downloadUrl
     });
+
+    cookies.set('first-run', 'true');
 
     // Wait for the add-on to be installed.
     // TODO: Should we have a timeout here, give up after a few intervals? If

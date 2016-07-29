@@ -170,9 +170,15 @@
     text-align: center;
   }
 
+  .error {
+    background: $transparent-warning-lightest-5;
+    border: 1px solid $warning-red-light;
+    color: $warning-red-default;
+  }
+
   .form-notification {
     background: $transparent-warning-lightest-5;
-    border-bottom: 1px solid $warning-red-lightest;
+    border-bottom: 1px solid $warning-red-light;
     display: block;
     margin: 0 (-$grid-unit * 1.5);
     padding: $grid-unit * .25;
@@ -327,4 +333,11 @@
     text-transform: lowercase;
     width: 15%;
   }
+}
+
+.envelope {
+  @include hidpi-background-image('envelope', 150px 130px);
+  width: 150px;
+  height: 130px;
+  margin: auto;
 }
