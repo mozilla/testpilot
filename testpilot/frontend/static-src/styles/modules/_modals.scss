@@ -145,8 +145,15 @@
   }
 
   input {
-    margin: 0 $grid-unit * .25;
-    padding: 0;
+    border: 1px solid $transparent-black-5;
+    border-radius: $small-border-radius;
+    margin: 0;
+    padding: 7px 6px 6px;
+    transition: border 150ms;
+
+    &:focus {
+      border: 1px solid $default;
+    }
   }
 
   label {
@@ -174,14 +181,16 @@
   .error {
     background: $transparent-warning-lightest-5;
     border: 1px solid $warning-red-light;
+    border-radius: $small-border-radius;
     color: $warning-red-default;
   }
 
   .form-notification {
     background: $transparent-warning-lightest-5;
     border-bottom: 1px solid $warning-red-light;
+    border-radius: $small-border-radius;
     display: block;
-    margin: 0 (-$grid-unit * 1.5);
+    margin: 0  0 (-$grid-unit * 1.5);
     padding: $grid-unit * .25;
     position: absolute;
     text-align: center;
