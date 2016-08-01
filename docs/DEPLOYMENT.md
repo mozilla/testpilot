@@ -4,7 +4,9 @@ This document details the process we use to deploy Test Pilot to our stage and p
 
 (you can read more below)
 
-- Friday at 2-4pm PST we tag and push stage, and send email out.
+- Thursday at 1pm PST the train is cut, all code is in.
+- Thursday at 4pm PST we tag and push stage, and send email out.
+- Friday is a buffer day.
 - Monday at regular stand-up we review anything that Softvision found and fix it.
 - Tuesday at 8am PST we push and Softvision verifies.
 
@@ -20,7 +22,7 @@ Note: we auto deploy the master branch to our *development environment*: [http:/
 
 ## Tag Release ##
 
-This will happen on Friday at the end of sprint.
+This will happen on Thursday at the end of sprint.
 
 1. https://github.com/mozilla/testpilot/releases/new
 2. Tag Version: YYYY-MM-DD (append -N if more than one release is tagged on a given day: 2016-04-08-1)
@@ -32,7 +34,7 @@ Please be as detailed as possible in the release notes. Examples - [2016-07-05](
 
 ## Request Deployment ##
 
-This will happen on Friday at the end of sprint.
+This will happen on Thursday at the end of sprint.
 
 Once we've confirmed our release passed CircleCI, and we've confirmed that it is uploaded into the container, we need to request for Ops to deploy to stage.
 
@@ -44,13 +46,13 @@ Be sure to keep the same folks on the CC list as in the example bug.
 
 ## Deployed Stage ##
 
-This will happen on Friday at the end of sprint.
+This will happen on Thursday at the end of sprint.
 
 Ops will inform us once we are deployed to our *staging environment*: [http://testpilot.stage.mozaws.net](http://testpilot.stage.mozaws.net).
 
 ## Test Stage ##
 
-This will happen on Friday at the end of sprint.
+This will happen on Thursday at the end of sprint.
 
 Send out an email notification to `testpilot-dev@mozilla.com` to please test the staging environment. [Example](https://mail.mozilla.org/pipermail/testpilot-dev/2016-July/000198.html).
 
