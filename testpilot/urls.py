@@ -18,4 +18,5 @@ urlpatterns = patterns(
     # Catch-all fallback to frontend client view
     url(r'^', include('waffle.urls')),
     url(r'', include('testpilot.frontend.urls')),
+    # /files/ is proxied on the server side to our CDN. See bug 1291357
 )
