@@ -1,6 +1,9 @@
-const {Cu} = require('chrome');
-const Prefs = Cu.import('resource://gre/modules/Preferences.jsm').Preferences;
-const {ActionButton} = require('sdk/ui/button/action');
+const windows = require('sdk/windows').browserWindows;
+const {viewFor} = require('sdk/view/core');
+const {setTimeout} = require('sdk/timers');
+const {PrefsTarget} = require('sdk/preferences/event-target');
+const {ToggleButton} = require('sdk/ui/button/toggle');
+const events = require('sdk/system/events');
 const {Panel} = require('sdk/panel');
 const querystring = require('sdk/querystring');
 const store = require('sdk/simple-storage').storage;
@@ -23,11 +26,22 @@ let settings;
 let button;
 let panel;
 let collapsed;
+let prefs;
 
-function setActionButton(dark) {
-  const iconPrefix = dark ? './icon-inverted' : './icon';
+function themeChanged() {
+  setTimeout(setButton);
+}
 
-  button = ActionButton({ // eslint-disable-line new-cap
+function isLightTheme() {
+  const chromeWindow = viewFor(windows.activeWindow);
+  return !chromeWindow.document.getElementById('nav-bar').matches('[brighttext]');
+}
+
+function setButton() {
+  const iconPrefix = isLightTheme() ? './icon' : './icon-inverted';
+  if (button) { button.destroy(); }
+
+  button = ToggleButton({ // eslint-disable-line new-cap
     id: 'testpilot-link',
     label: 'Test Pilot',
     icon: {
@@ -108,11 +122,10 @@ const ToolbarButton = module.exports = {
   init: function(settingsIn) {
     settings = settingsIn;
 
-    // update the our icon for devtools themes
-    Prefs.observe('devtools.theme', pref => {
-      setActionButton(pref === 'dark');
-    });
-    setActionButton(Prefs.get('devtools.theme') === 'dark');
+    prefs = PrefsTarget(); // eslint-disable-line new-cap
+    prefs.on('devtools.theme', themeChanged);
+    events.on('lightweight-theme-styling-update', themeChanged);
+    setButton();
 
     collapsed = true; // collapsed state for panel
     panel = Panel({ // eslint-disable-line new-cap
@@ -135,6 +148,8 @@ const ToolbarButton = module.exports = {
   },
 
   destroy: function() {
+    prefs.off('devtools.theme', themeChanged);
+    events.off('lightweight-theme-styling-update', themeChanged);
     panel.destroy();
     button.destroy();
   },
