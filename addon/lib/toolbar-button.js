@@ -145,9 +145,7 @@ const ToolbarButton = module.exports = {
 
     // Initialize the last button click timestamp if necessary.
     if (!('toolbarButtonLastClicked' in store)) {
-      // HACK: Set this to 1 so there's a value, but one that will initially be
-      // less than the current time.
-      store.toolbarButtonLastClicked = 1;
+      store.toolbarButtonLastClicked = Date.now();
     }
 
     // Look through available experiments for anything newer than the last
