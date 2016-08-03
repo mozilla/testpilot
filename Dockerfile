@@ -12,12 +12,16 @@ RUN addgroup -g 10001 app && \
 # https://github.com/python-pillow/Pillow/issues/1763#issuecomment-204252397
 ENV LIBRARY_PATH=/lib:/usr/lib
 
+# Install & cache packages for alpine
+RUN apk --no-cache add ca-certificates postgresql-dev build-base libjpeg-turbo-dev zlib-dev
+
 # Install & cache dependencies for Django/Python using pip8
 COPY requirements.txt /app/requirements.txt
-RUN apk --no-cache add ca-certificates postgresql-dev build-base libjpeg-turbo-dev zlib-dev && \
-    pip install pip==8.1.2 && \
-    pip install --require-hashes -r requirements.txt && \
-    apk del --purge build-base gcc
+RUN pip install pip==8.1.2 && \
+    pip install --require-hashes -r requirements.txt
+
+# Clean up some build packages after we're done with Python
+RUN apk del --purge build-base gcc
 
 # Copy in the whole app after dependencies have been installed & cached
 COPY . /app

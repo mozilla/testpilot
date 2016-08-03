@@ -1,6 +1,10 @@
 frontend-watcher:
   build: .
+
+  # DEV: Uncomment image & comment out dockerfile to skip building from scratch
+  # image: lmorchard/testpilot_frontend_watcher:latest
   dockerfile: Dockerfile-frontend-build
+
   ports:
     - "9966:9966"
     - "35729:35729"
@@ -12,7 +16,11 @@ frontend-watcher:
     ./bin/run-frontend-watch.sh
 server:
   build: .
+
+  # DEV: Uncomment image & comment out dockerfile to skip building from scratch
+  # image: mozilla/testpilot:latest
   dockerfile: Dockerfile
+
   ports:
     - "8000:8000"
   # HACK: escalate to root user in dev, because we need to be able to write
