@@ -348,11 +348,11 @@ exports.main = function(options) {
     store.clientUUID = require('sdk/util/uuid').uuid().toString().slice(1, -1);
   }
 
+  Metrics.init();
   if (reason === 'install' || reason === 'enable') {
     Metrics.onEnable();
   }
 
-  Metrics.init();
   WebExtensionChannels.init();
   ToolbarButton.init(settings);
   ExperimentNotifications.init();
