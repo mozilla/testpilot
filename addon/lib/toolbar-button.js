@@ -28,30 +28,31 @@ let panel;
 let collapsed;
 let prefs;
 
-function themeChanged() {
-  setTimeout(setButton);
+function backgroundChanged() {
+  setTimeout(setButtonIcon);
 }
 
-function isLightTheme() {
-  const chromeWindow = viewFor(windows.activeWindow);
-  return !chromeWindow.document.getElementById('nav-bar').matches('[brighttext]');
+function isLightBackground() {
+  const w = viewFor(windows.activeWindow);
+  let el = w.document.getElementById('toggle-button--testpilot-addon-testpilot-link');
+  if (!el) { return true; }
+
+  while (el.parentNode) {
+    if (el.matches('[brighttext]')) {
+      return false;
+    }
+    el = el.parentNode;
+  }
+  return true;
 }
 
-function setButton() {
-  const iconPrefix = isLightTheme() ? './icon' : './icon-inverted';
-  if (button) { button.destroy(); }
-
-  button = ToggleButton({ // eslint-disable-line new-cap
-    id: 'testpilot-link',
-    label: 'Test Pilot',
-    icon: {
-      '16': iconPrefix + '-16.png',
-      '32': iconPrefix + '-32.png',
-      '64': iconPrefix + '-64.png'
-    },
-    onClick: handleToolbarButtonClick
-  });
-
+function setButtonIcon() {
+  const iconPrefix = isLightBackground() ? './icon' : './icon-inverted';
+  button.icon = {
+    '16': iconPrefix + '-16.png',
+    '32': iconPrefix + '-32.png',
+    '64': iconPrefix + '-64.png'
+  };
   ToolbarButton.updateButtonBadge(); // eslint-disable-line no-use-before-define
 }
 
@@ -122,10 +123,22 @@ const ToolbarButton = module.exports = {
   init: function(settingsIn) {
     settings = settingsIn;
 
+    button = ToggleButton({ // eslint-disable-line new-cap
+      id: 'testpilot-link',
+      label: 'Test Pilot',
+      icon: {
+        '16': './icon-16.png',
+        '32': './icon-32.png',
+        '64': './icon-64.png'
+      },
+      onClick: handleToolbarButtonClick
+    });
+
     prefs = PrefsTarget(); // eslint-disable-line new-cap
-    prefs.on('devtools.theme', themeChanged);
-    events.on('lightweight-theme-styling-update', themeChanged);
-    setButton();
+    prefs.on('devtools.theme', backgroundChanged);
+    prefs.on('browser.uiCustomization.state', backgroundChanged);
+    events.on('lightweight-theme-styling-update', backgroundChanged);
+    setTimeout(setButtonIcon);
 
     collapsed = true; // collapsed state for panel
     panel = Panel({ // eslint-disable-line new-cap
@@ -148,8 +161,9 @@ const ToolbarButton = module.exports = {
   },
 
   destroy: function() {
-    prefs.off('devtools.theme', themeChanged);
-    events.off('lightweight-theme-styling-update', themeChanged);
+    prefs.off('devtools.theme', backgroundChanged);
+    prefs.off('browser.uiCustomization.state', backgroundChanged);
+    events.off('lightweight-theme-styling-update', backgroundChanged);
     panel.destroy();
     button.destroy();
   },
