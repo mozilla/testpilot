@@ -8,8 +8,12 @@ export default PageView.extend({
   template: `
 <div class="blue">
   <div class="stars"></div>
-  <header data-hook="header-view"></header>
   <div class="full-page-wrapper space-between">
+    <header id="main-header" class="responsive-content-wrapper">
+      <h1>
+        <a href="/" class="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
+      </h1>
+    </header>
     <div class="centered-banner">
       <div id="legacy-modal" class="modal delayed-fade-in">
         <div class="modal-content">
@@ -32,5 +36,5 @@ export default PageView.extend({
   </div>
 </div>
   `,
-  skipHeader: false
+  skipHeader: true
 });
