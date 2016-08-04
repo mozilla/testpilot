@@ -49,46 +49,28 @@ if you'd like to run linters on `pre-commit` you can use this [pre-commit-hook](
 
 See some of our [Tips and Tricks](docs/README-DOCKER.md).
 
-#### First Thing's First
+#### First Things First
 
-Make sure you clone the Test Pilot repo: 
+Make sure you clone the Test Pilot repo:
 
   `git clone https://github.com/mozilla/testpilot.git`
 
 #### OS X hosts
 
-1. [Install Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_mac/)
+1. [Install Docker for Mac](https://docs.docker.com/engine/installation/mac/)
 
-2. Make sure you have a default Docker machine:
+  Note: Docker for Mac is pretty new.  If you used to use the Docker
+  Toolkit read [the transition notes](https://docs.docker.com/docker-for-mac/docker-toolbox/).
 
-  `docker-machine create --driver virtualbox default`
+2. Add an entry for `testpilot.dev` in `/etc/hosts`:
 
-3. Make sure the default machine is running:
+  `127.0.0.1 testpilot.dev`
 
-  `docker-machine start default`
-
-4. Make sure your shell can see the default Docker machine:
-
-  `eval "$(docker-machine env default)"`
-
-5. Check the IP address of the default Docker machine:
-
-  `docker-machine ip default`
-
-6. Use this IP address to add an entry for `testpilot.dev` in `/etc/hosts`:
-
-  `192.168.99.100 testpilot.dev`
-
-  You can do this manually, or the [bin/update-ip.sh][update-ip] script can
-  take care of this for you.
-
-[update-ip]: https://github.com/mozilla/testpilot/blob/master/bin/update-ip.sh
-
-7. Don't forget to cd into your Test Pilot directory:
+3. Don't forget to cd into your Test Pilot directory:
 
   `cd testpilot`
 
-8. Create and setup the Docker containers (this will take some time):
+4. Create and setup the Docker containers (this will take some time):
 
   `docker-compose up`
 
