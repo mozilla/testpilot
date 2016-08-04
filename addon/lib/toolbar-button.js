@@ -1,6 +1,9 @@
-const {Cu} = require('chrome');
-const Prefs = Cu.import('resource://gre/modules/Preferences.jsm').Preferences;
-const {ActionButton} = require('sdk/ui/button/action');
+const windows = require('sdk/windows').browserWindows;
+const {viewFor} = require('sdk/view/core');
+const {setTimeout} = require('sdk/timers');
+const {PrefsTarget} = require('sdk/preferences/event-target');
+const {ToggleButton} = require('sdk/ui/button/toggle');
+const events = require('sdk/system/events');
 const {Panel} = require('sdk/panel');
 const querystring = require('sdk/querystring');
 const store = require('sdk/simple-storage').storage;
@@ -23,21 +26,33 @@ let settings;
 let button;
 let panel;
 let collapsed;
+let prefs;
 
-function setActionButton(dark) {
-  const iconPrefix = dark ? './icon-inverted' : './icon';
+function backgroundChanged() {
+  setTimeout(setButtonIcon);
+}
 
-  button = ActionButton({ // eslint-disable-line new-cap
-    id: 'testpilot-link',
-    label: 'Test Pilot',
-    icon: {
-      '16': iconPrefix + '-16.png',
-      '32': iconPrefix + '-32.png',
-      '64': iconPrefix + '-64.png'
-    },
-    onClick: handleToolbarButtonClick
-  });
+function isLightBackground() {
+  const w = viewFor(windows.activeWindow);
+  let el = w.document.getElementById('toggle-button--testpilot-addon-testpilot-link');
+  if (!el) { return true; }
 
+  while (el.parentNode) {
+    if (el.matches('[brighttext]')) {
+      return false;
+    }
+    el = el.parentNode;
+  }
+  return true;
+}
+
+function setButtonIcon() {
+  const iconPrefix = isLightBackground() ? './icon' : './icon-inverted';
+  button.icon = {
+    '16': iconPrefix + '-16.png',
+    '32': iconPrefix + '-32.png',
+    '64': iconPrefix + '-64.png'
+  };
   ToolbarButton.updateButtonBadge(); // eslint-disable-line no-use-before-define
 }
 
@@ -108,11 +123,22 @@ const ToolbarButton = module.exports = {
   init: function(settingsIn) {
     settings = settingsIn;
 
-    // update the our icon for devtools themes
-    Prefs.observe('devtools.theme', pref => {
-      setActionButton(pref === 'dark');
+    button = ToggleButton({ // eslint-disable-line new-cap
+      id: 'testpilot-link',
+      label: 'Test Pilot',
+      icon: {
+        '16': './icon-16.png',
+        '32': './icon-32.png',
+        '64': './icon-64.png'
+      },
+      onClick: handleToolbarButtonClick
     });
-    setActionButton(Prefs.get('devtools.theme') === 'dark');
+
+    prefs = PrefsTarget(); // eslint-disable-line new-cap
+    prefs.on('devtools.theme', backgroundChanged);
+    prefs.on('browser.uiCustomization.state', backgroundChanged);
+    events.on('lightweight-theme-styling-update', backgroundChanged);
+    setTimeout(setButtonIcon);
 
     collapsed = true; // collapsed state for panel
     panel = Panel({ // eslint-disable-line new-cap
@@ -135,6 +161,9 @@ const ToolbarButton = module.exports = {
   },
 
   destroy: function() {
+    prefs.off('devtools.theme', backgroundChanged);
+    prefs.off('browser.uiCustomization.state', backgroundChanged);
+    events.off('lightweight-theme-styling-update', backgroundChanged);
     panel.destroy();
     button.destroy();
   },
