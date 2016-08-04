@@ -103,6 +103,7 @@ const Metrics = module.exports = {
 
   destroy: function() {
     Events.off(EVENT_SEND_METRIC, Metrics.onExperimentPing);
+    Events.off(EVENT_RECEIVE_VARIANT_DEFS, Metrics.onReceiveVariantDefs);
   },
 
   pingTelemetry: function(object, eventName, eventTimestamp) {
