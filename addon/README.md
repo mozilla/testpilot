@@ -33,9 +33,9 @@ A relatively easy path for working on this addon involves the following steps:
 
 1. Install [Firefox Developer Edition][devedition].
 
-2. [Disable add-on signature checks.][sigchecks] TL;DR: Enter `about:config` in
-   the URL bar. Set `xpinstall.signatures.required` and
-   `xpinstall.whitelist.required` flags to false.
+2. Install the [DevPrefs][devprefs] Add-on, which sets a number of preferences
+   necessary for Add-on development, importantly `xpinstall.signatures.required`
+   and `xpinstall.whitelist.required`.
 
 3. Install the [Extension Auto-Installer][autoinstaller] Add-on in Firefox
    Developer Edition.
@@ -47,7 +47,7 @@ A relatively easy path for working on this addon involves the following steps:
    environment][extensiondev] on MDN.
 
 [devedition]: https://www.mozilla.org/en-US/firefox/developer/
-[sigchecks]: https://wiki.mozilla.org/Add-ons/Extension_Signing#FAQ
+[devprefs]: https://addons.mozilla.org/en-US/firefox/addon/devprefs/
 [autoinstaller]: https://addons.mozilla.org/en-US/firefox/addon/autoinstaller/
 [extensiondev]: https://developer.mozilla.org/en-US/Add-ons/Setting_up_extension_development_environment
 
