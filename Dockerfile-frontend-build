@@ -1,8 +1,10 @@
-FROM node:4.4.0
+FROM alpine:3.4
 
 CMD ["./bin/run-frontend-build.sh"]
 
 WORKDIR /app
 
+RUN apk --no-cache add nodejs=6.2.0-r0 python=2.7.12-r0 ca-certificates build-base
 COPY package.json /root/package.json
 RUN cd /root && npm install
+RUN apk del --purge build-base gcc

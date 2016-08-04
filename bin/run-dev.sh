@@ -1,4 +1,9 @@
 #!/bin/sh
+
+# HACK: Wait a while before starting up, to let postgres warm up and
+# frontend_watcher to finish its first build
+/bin/sleep 15
+
 ./bin/run-common.sh
 ./manage.py loaddata fixtures/initial_data_dev.json
 
