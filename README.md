@@ -76,7 +76,7 @@ Make sure you clone the Test Pilot repo:
 
 #### Ubuntu Linux hosts
 
-1. [Install Docker](http://docs.docker.com/linux/started/)
+1. [Install Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/)
 
 2. [Install Docker Compose](https://docs.docker.com/compose/install/)
 
