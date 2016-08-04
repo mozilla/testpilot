@@ -242,7 +242,9 @@ function updateExperiments() {
 function uninstallExperiment(experiment) {
   if (isTestpilotAddonID(experiment.addon_id)) {
     AddonManager.getAddonByID(experiment.addon_id, a => {
-      if (a) { a.uninstall(); }
+      if (!a) { return; }
+      a.uninstall();
+      updateExperiments();
     });
   }
 }
@@ -251,6 +253,7 @@ function installExperiment(experiment) {
   if (isTestpilotAddonID(experiment.addon_id)) {
     AddonManager.getInstallForURL(experiment.xpi_url, install => {
       install.install();
+      updateExperiments();
     }, 'application/x-xpinstall');
   }
 }
