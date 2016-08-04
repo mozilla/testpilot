@@ -1,10 +1,10 @@
 #main-footer {
   @include respond-to('not-small') {
-    padding: $grid-unit * 4 0 0;
+    padding: $grid-unit * 2 0 0;
   }
 
   @include respond-to('small') {
-    padding: $grid-unit * 2 0 0;
+    padding: $grid-unit * 1 0 0;
   }
 
   position: relative;

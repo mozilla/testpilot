@@ -1,6 +1,7 @@
 #four-oh-four,
 #retire,
 #share,
+#legacy-modal,
 #onboarding {
   margin-bottom: $grid-unit * 1.5;
   position: relative;
@@ -39,6 +40,20 @@
   .modal-content {
     padding: 20px 20px 30px;
   }
+}
+
+#legacy-modal {
+
+  p {
+    font-size: $font-unit * 1.5;
+    margin: 0 $grid-unit * -.5 $grid-unit;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+
 }
 
 .modal-container {
