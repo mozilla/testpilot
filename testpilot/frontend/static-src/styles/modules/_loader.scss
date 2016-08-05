@@ -1,0 +1,30 @@
+// ht @lukehaas http://projects.lukehaas.me/css-loaders/
+
+.loader {
+  animation: loader 1.6s infinite cubic-bezier(0, .5, .5, 0);
+  border-bottom: $grid-unit * .2 solid $transparent-white-2;
+  border-left: $grid-unit * .2 solid $white;
+  border-right: $grid-unit * .2 solid $transparent-white-2;
+  border-top: $grid-unit * .2 solid $transparent-white-2;
+  font-size: $font-unit;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+}
+
+.loader,
+.loader::after {
+  border-radius: $circle-border-radius;
+  height: $grid-unit * 4;
+  width: $grid-unit * 4;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

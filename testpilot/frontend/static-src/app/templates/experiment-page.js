@@ -1,7 +1,6 @@
 export default `
   <section id="details" data-hook="experiment-page">
-    <div class="flat-blue">
-      <div class="shifted-stars"></div>
+    <div class="shifted-stars">
       <header data-hook="header-view"></header>
     </div>
     <div class="default-background">
@@ -82,9 +81,9 @@ export default `
             </div>
           </div>
         </div>
+        <footer id="main-footer" class="content-wrapper">
+          <div data-hook="footer-view"></div>
+        </footer>
       </div>
-      <footer id="main-footer" class="content-wrapper">
-        <div data-hook="footer-view"></div>
-      </footer>
   </section>
 `;
