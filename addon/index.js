@@ -6,41 +6,27 @@
 
 const EXPERIMENT_UPDATE_INTERVAL = 12 * 60 * 60 * 1000; // 12 hours
 
-const settings = {};
-
-let setInstalledFlagPageMod;
-let messageBridgePageMod;
-let app;
-let experimentsUpdateTimer = null;
-
-const {Cc, Ci, Cu} = require('chrome');
-
+const { Cc, Ci, Cu } = require('chrome');
 const AddonManager = Cu.import('resource://gre/modules/AddonManager.jsm').AddonManager;
-
 const cookieManager2 = Cc['@mozilla.org/cookiemanager;1']
                        .getService(Ci.nsICookieManager2);
 
 const self = require('sdk/self');
 const store = require('sdk/simple-storage').storage;
-const {PageMod} = require('sdk/page-mod');
 const tabs = require('sdk/tabs');
 const request = require('sdk/request').Request;
 const simplePrefs = require('sdk/simple-prefs');
 const URL = require('sdk/url').URL;
 const history = require('sdk/places/history');
-const {setInterval, clearInterval} = require('sdk/timers');
-
-const Mustache = require('mustache');
-const templates = require('./lib/templates');
-Mustache.parse(templates.installed);
-Mustache.parse(templates.experimentList);
-
 const Metrics = require('./lib/metrics');
 const survey = require('./lib/survey');
 const WebExtensionChannels = require('./lib/webextension-channels');
 const ToolbarButton = require('./lib/toolbar-button');
 const ExperimentNotifications = require('./lib/experiment-notifications');
+const { App } = require('./lib/app');
 
+const settings = {};
+let app;
 // Canned selectable server environment configs
 const SERVER_ENVIRONMENTS = {
   local: {
@@ -69,6 +55,33 @@ const SERVER_ENVIRONMENTS = {
   }
 };
 
+function changeApp(env) {
+  if (app) {
+    app.destroy();
+  }
+
+  app = new App({
+    baseUrl: env.BASE_URL,
+    badgeColor: env.BADGE_COLOR,
+    whitelist: env.WHITELIST_URLS,
+    addonVersion: self.version,
+    reloadInterval: EXPERIMENT_UPDATE_INTERVAL
+  });
+  app.on('loaded', experimentsLoaded)
+    .on('uninstall-self', uninstallSelf)
+    .on('install-experiment', installExperiment)
+    .on('uninstall-experiment', uninstallExperiment)
+    .on('sync-installed', () => {
+      app.send(
+        'sync-installed-result',
+        {
+          clientUUID: store.clientUUID,
+          installed: store.installedAddons
+        }
+      );
+    });
+}
+
 function updatePrefs() {
   // Select the environment, with production as a default.
   const envName = simplePrefs.prefs.SERVER_ENVIRONMENT;
@@ -87,32 +100,15 @@ function updatePrefs() {
   // kickoff our random experiment surveys
   survey.init();
 
-  // Fire off an experiment data update for this environment
-  updateExperiments();
+  changeApp(env);
 
-  // Destroy previously existing PageMods
-  if (setInstalledFlagPageMod) { setInstalledFlagPageMod.destroy(); }
-  if (messageBridgePageMod) { messageBridgePageMod.destroy(); }
-
-  // Set up new PageMod for read access to detect Test Pilot installation.
-  setInstalledFlagPageMod = new PageMod({
-    include: settings.ALLOWED_ORIGINS_VIEWINSTALLEDFLAG.split(','),
-    contentScriptFile: './set-installed-flag.js',
-    contentScriptWhen: 'start',
-    attachTo: ['top', 'existing'],
-    contentScriptOptions: {
-      version: self.version
-    }
-  });
-
-  // Set up new PageMod for ability to install/remove add-ons.
-  messageBridgePageMod = new PageMod({
-    include: settings.ALLOWED_ORIGINS.split(','),
-    contentScriptFile: './message-bridge.js',
-    contentScriptWhen: 'start',
-    attachTo: ['top', 'existing'],
-    onAttach: setupApp
-  });
+  if (self.loadReason === 'install') {
+    app.send('addon-self:installed');
+  } else if (self.loadReason === 'enable') {
+    app.send('addon-self:enabled');
+  } else if (self.loadReason === 'upgrade') {
+    app.send('addon-self:upgraded');
+  }
 }
 
 function initServerEnvironmentPreference() {
@@ -145,106 +141,50 @@ function initServerEnvironmentPreference() {
     if (lastVisitedName && lastVisitedName !== currName) {
       // Switch to the last visited environment.
       simplePrefs.prefs.SERVER_ENVIRONMENT = lastVisitedName;
+      updatePrefs();
+    }
+
+    if (self.loadReason === 'install') {
+      openOnboardingTab();
     }
 
     // Finally, watch for pref changes, kick off the env setup.
     simplePrefs.on('SERVER_ENVIRONMENT', updatePrefs);
-    updatePrefs();
   });
 }
 
 function openOnboardingTab() {
-  // TODO: Settings is populated async, so we need a global afterSettingsReady
-  // promise that this function can wait on.
   tabs.open({
-    url: SERVER_ENVIRONMENTS.production.BASE_URL + '/onboarding',
+    url: settings.BASE_URL + '/onboarding',
     inBackground: true
   });
 }
 
-function setupApp() {
-  updateExperiments().then(() => {
-    app = new Router(messageBridgePageMod);
-
-    app.on('uninstall-self', uninstallSelf);
-
-    app.on('install-experiment', installExperiment);
-
-    app.on('uninstall-experiment', uninstallExperiment);
-
-    app.on('sync-installed', () => {
-      app.send('sync-installed-result', {
-        clientUUID: store.clientUUID,
-        installed: store.installedAddons
-      });
-    });
-
-    if (self.loadReason === 'install') {
-      app.send('addon-self:installed');
-    } else if (self.loadReason === 'enable') {
-      app.send('addon-self:enabled');
-    } else if (self.loadReason === 'upgrade') {
-      app.send('addon-self:upgraded');
-    }
-  });
-}
-
-function Router(mod) {
-  this.mod = mod;
-  this._events = {};
-  this.mod.port.on('from-web-to-addon', function(evt) {
-    if (this._events[evt.type]) this._events[evt.type](evt.data);
-  }.bind(this));
-  return this;
-}
-
-Router.prototype.on = function(name, f) {
-  this._events[name] = f;
-  return this;
-};
-
-Router.prototype.send = function(name, data) {
-  this.mod.port.emit('from-addon-to-web', {type: name, data: data});
-  return this;
-};
-
-function updateExperiments() {
-  // Fetch the list of available experiments
-  return requestAPI({
-    url: settings.BASE_URL + '/api/experiments'
-  }).then(res => {
-    // Index the available experiments by addon ID
-    store.availableExperiments = {};
-    res.json.results.forEach(exp => {
-      store.availableExperiments[exp.addon_id] = exp;
-    });
-
-    // Update UI since we just updated experiments.
-    ExperimentNotifications.maybeSendNotifications();
-    ToolbarButton.updateButtonBadge();
-
-    // Query all installed addons
-    return new Promise(resolve => AddonManager.getAllAddons(resolve));
-  }).then(addons => {
+function experimentsLoaded(experiments) {
+  store.availableExperiments = experiments;
+  ExperimentNotifications.maybeSendNotifications();
+  ToolbarButton.updateButtonBadge();
+  AddonManager.getAllAddons(addons => {
     // Filter addons by known experiments, index by ID
     store.installedAddons = {};
     addons.filter(addon => isTestpilotAddonID(addon.id))
-          .forEach(addon => {
-            store.installedAddons[addon.id] = Object.assign({
-              active: addon.isActive,
-              installDate: addon.installDate
-            }, store.availableExperiments[addon.id]);
-          });
-    return store.installedAddons;
+          .forEach(setAddonActiveState);
   });
+}
+
+function setAddonActiveState(addon) {
+  const xp = store.availableExperiments[addon.id];
+  if (xp) { delete xp.active; }
+  store.installedAddons[addon.id] = Object.assign({
+    active: addon.isActive,
+    installDate: addon.installDate
+  }, store.availableExperiments[addon.id]);
 }
 
 function uninstallExperiment(experiment) {
   if (isTestpilotAddonID(experiment.addon_id)) {
     AddonManager.getAddonByID(experiment.addon_id, a => {
-      if (!a) { return; }
-      a.uninstall();
-      updateExperiments();
+      if (a) { a.uninstall(); }
     });
   }
 }
@@ -253,7 +193,6 @@ function installExperiment(experiment) {
   if (isTestpilotAddonID(experiment.addon_id)) {
     AddonManager.getInstallForURL(experiment.xpi_url, install => {
       install.install();
-      updateExperiments();
     }, 'application/x-xpinstall');
   }
 }
@@ -293,7 +232,7 @@ function formatInstallData(install, addon) {
 }
 
 function isTestpilotAddonID(id) {
-  return 'availableExperiments' in store && id in store.availableExperiments;
+  return app.hasAddonID(id);
 }
 
 function syncAddonInstallation(addonID) {
@@ -341,7 +280,7 @@ function requestAPI(opts) {
 const addonListener = {
   onEnabled: function(addon) {
     if (isTestpilotAddonID(addon.id)) {
-      store.installedAddons[addon.id] = addon;
+      setAddonActiveState(addon);
       app.send('addon-manage:enabled', {
         id: addon.id,
         name: addon.name,
@@ -353,7 +292,7 @@ const addonListener = {
   },
   onDisabled: function(addon) {
     if (isTestpilotAddonID(addon.id)) {
-      store.installedAddons[addon.id] = addon;
+      setAddonActiveState(addon);
       app.send('addon-manage:disabled', {
         id: addon.id,
         name: addon.name,
@@ -380,10 +319,9 @@ const addonListener = {
         version: addon.version
       }, addon);
 
-      if (store.installedAddons[addon.id]) {
-        delete store.installedAddons[addon.id];
-        syncAddonInstallation(addon.id);
-      }
+      setAddonActiveState(addon);
+      delete store.installedAddons[addon.id];
+      syncAddonInstallation(addon.id);
 
       Metrics.experimentDisabled(addon.id);
       WebExtensionChannels.updateExperimentChannels();
@@ -395,7 +333,7 @@ AddonManager.addAddonListener(addonListener);
 const installListener = {
   onInstallEnded: function(install, addon) {
     if (!isTestpilotAddonID(addon.id)) { return; }
-    store.installedAddons[addon.id] = addon;
+    setAddonActiveState(addon);
     syncAddonInstallation(addon.id).then(() => {
       app.send('addon-install:install-ended',
                formatInstallData(install, addon), addon);
@@ -445,21 +383,12 @@ exports.main = function(options) {
   if (reason === 'install' || reason === 'enable') {
     Metrics.onEnable();
   }
-
+  updatePrefs();
   initServerEnvironmentPreference();
   Metrics.init();
   WebExtensionChannels.init();
   ToolbarButton.init(settings);
   ExperimentNotifications.init();
-
-  // Wait until server env has been defined, then open onboarding page in
-  // a background tab.
-  if (reason === 'install') {
-    openOnboardingTab();
-  }
-
-  // Set up a timer to update experiments data periodically.
-  experimentsUpdateTimer = setInterval(updateExperiments, EXPERIMENT_UPDATE_INTERVAL);
 };
 
 exports.onUnload = function(reason) {
@@ -486,13 +415,7 @@ exports.onUnload = function(reason) {
     }
     delete store.availableExperiments;
 
-    if (app) app.send('addon-self:uninstalled');
+    app.send('addon-self:uninstalled');
   }
-
-  setInstalledFlagPageMod.destroy();
-  messageBridgePageMod.destroy();
-
-  if (experimentsUpdateTimer) {
-    clearInterval(experimentsUpdateTimer);
-  }
+  app.destroy();
 };
