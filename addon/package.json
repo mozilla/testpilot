@@ -39,33 +39,6 @@
     "request": "2.69.0",
     "watchify-server": "1.0.2"
   },
-  "preferences": [
-    {
-      "name": "SERVER_ENVIRONMENT",
-      "title": "Environment",
-      "description": "Which Test Pilot server environment to use?",
-      "type": "menulist",
-      "value": "production",
-      "options": [
-        {
-          "value": "local",
-          "label": "Local (testpilot.dev)"
-        },
-        {
-          "value": "dev",
-          "label": "Dev (testpilot.dev.mozaws.net)"
-        },
-        {
-          "value": "stage",
-          "label": "Staging (testpilot.stage.mozaws.net)"
-        },
-        {
-          "value": "production",
-          "label": "Production (testpilot.firefox.com)"
-        }
-      ]
-    }
-  ],
   "dependencies": {
     "mustache": "2.2.1",
     "seedrandom": "^2.4.2"
