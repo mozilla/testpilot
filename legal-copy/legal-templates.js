@@ -14,8 +14,7 @@ module.exports.templateBegin = `<!doctype html>
 </head>
 <body>
   <div data-hook="page-container" class="legal-container">
-    <div class="flat-blue">
-      <div class="shifted-stars"></div>
+    <div class="shifted-stars">
       <header id="main-header" class="responsive-content-wrapper">
           <h1>
             <a href="/" class="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>

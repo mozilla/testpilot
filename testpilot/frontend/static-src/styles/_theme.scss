@@ -1,6 +1,7 @@
 body {
   background: $body-background;
   color: $black;
+  min-height: 100vh;
 }
 
 a {
@@ -10,6 +11,10 @@ a {
   .blue &,
   .flat-blue & {
     color: $white;
+  }
+
+  .default-background & {
+    color: $default;
   }
 }
 
@@ -21,7 +26,7 @@ a {
   position: relative;
 }
 
-%stars {
+.stars {
   @include hidpi-background-image('stars', 1180px 346px);
   background-position: center top;
   background-repeat: no-repeat;
@@ -29,21 +34,20 @@ a {
   left: 0;
   position: fixed;
   right: 0;
+  top: $grid-unit * 1.75;
   z-index: 0;
 }
 
-.stars {
-  @extend %stars;
-  top: $grid-unit * 1.75;
-}
-
 .shifted-stars {
-  @extend %stars;
-  top: -$grid-unit * .5;
+  @include hidpi-background-image('stars', 1180px 346px);
+  background-color: $darkest-blue-step;
+  background-position: center top;
+  position: relative;
 }
 
 .default-background {
   background: $body-background;
+  color: $black;
   position: relative;
 }
 
@@ -70,6 +74,10 @@ a {
 
   .blue & {
     @include hidpi-background-image('mozilla', 77px 20px);
+  }
+
+  .default-background & {
+    @include hidpi-background-image('mozilla-blue', 77px 20px);
   }
 }
 

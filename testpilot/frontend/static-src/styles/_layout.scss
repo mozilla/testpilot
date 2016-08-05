@@ -10,6 +10,10 @@
   &.centered {
     @include flex-container(column, center, center);
   }
+
+  noscript + &  {
+    display: none;
+  }
 }
 
 %content-wrapper {

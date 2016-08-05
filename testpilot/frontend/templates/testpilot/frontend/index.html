@@ -36,33 +36,34 @@
 
 
 </head>
-<body>
-
+<body class="blue">
+  <div class="stars"></div>
   <div data-hook="page-container">
-
     <noscript>
-      <div class="blue">
-        <div class="stars"></div>
-        <div class="full-page-wrapper centered">
-          <div class="centered-banner">
-            <div id="four-oh-four" class="modal delayed-fade-in">
-              <h1 data-l10n-id="noScriptHeading" class="title">Uh oh...</h1>
-              <div class="modal-content">
-                <p data-l10n-id="noScriptMessage">Test Pilot requires JavaScript.<br>Sorry about that.</p>
-              </div>
-              <div class="modal-actions">
-                <a data-l10n-id="noScriptLink" class="button default large" href="https://github.com/mozilla/testpilot/blob/master/docs/FAQs.md">Find out why</a>
-              </div>
+      <div class="full-page-wrapper centered">
+        <div class="centered-banner">
+          <div id="four-oh-four" class="modal delayed-fade-in">
+            <h1 data-l10n-id="noScriptHeading" class="title">Uh oh...</h1>
+            <div class="modal-content">
+              <p data-l10n-id="noScriptMessage">Test Pilot requires JavaScript.<br>Sorry about that.</p>
             </div>
-            <div class="copter-wrapper">
-              <div class="copter fade-in-fly-up"></div>
+            <div class="modal-actions">
+              <a data-l10n-id="noScriptLink" class="button default large" href="https://github.com/mozilla/testpilot/blob/master/docs/FAQs.md">Find out why</a>
             </div>
+          </div>
+          <div class="copter-wrapper">
+            <div class="copter fade-in-fly-up"></div>
           </div>
         </div>
       </div>
     </noscript>
 
+    <div class="full-page-wrapper centered">
+      <div class='loader'>Loading...</div>
+    </div>
+
   </div>
+
   <script src="{{ url('wafflejs') }}"
           integrity="{{ waffleintegrity(request) }}"></script>
   <script src="{{ static('app/vendor.js') }}"

@@ -60,6 +60,7 @@ app.extend({
 
   startRouter() {
     if (!app.router.history.started()) {
+      app.pageManager._viewSwitcher.el.innerHTML = '';
       app.router.history.start();
       // HACK for Issue #124 - sometimes popstate doesn't fire on navigation,
       // but pageshow does. But, we just want to know if the URL changed.
