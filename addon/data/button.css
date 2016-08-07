@@ -1,3 +1,55 @@
+/*
+ * This Source Code is subject to the terms of the Mozilla Public License
+ * version 2.0 (the 'License'). You can obtain a copy of the License at
+ * http://mozilla.org/MPL/2.0/.
+ */
+
+#toggle-button--testpilot-addon-testpilot-link {
+  list-style-image: none !important;
+  background-image: url('resource://testpilot-addon/data/icon-16.png') !important;
+  background-size: 16px 16px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+#toggle-button--testpilot-addon-testpilot-link.toolbarbutton-1:-moz-window-inactive:not(:hover) {
+  opacity: 0.5;
+}
+
+#toggle-button--testpilot-addon-testpilot-link[cui-areatype="menu-panel"] {
+  background-image: url('resource://testpilot-addon/data/icon-32.png') !important;
+  background-size: 32px 32px !important;
+  background-position: 50% 15% !important;
+}
+
+toolbarpaletteitem[place="palette"] > #toggle-button--testpilot-addon-testpilot-link {
+  background-image: url('resource://testpilot-addon/data/icon-32.png') !important;
+  background-size: 32px 32px !important;
+  background-position: center !important
+}
+
+toolbar[brighttext] #toggle-button--testpilot-addon-testpilot-link {
+  background-image: url('resource://testpilot-addon/data/icon-inverted-16.png') !important;
+}
+
 #toggle-button--testpilot-addon-testpilot-link .toolbarbutton-badge {
   background-color: #1996F7 !important;
+}
+
+@media (min-resolution: 1.1dppx) {
+  #toggle-button--testpilot-addon-testpilot-link {
+    background-image: url('resource://testpilot-addon/data/icon-32.png') !important;
+  }
+
+  #toggle-button--testpilot-addon-testpilot-link[cui-areatype="menu-panel"] {
+    background-image: url('resource://testpilot-addon/data/icon-64.png') !important;
+  }
+
+  toolbarpaletteitem[place="palette"] > #toggle-button--testpilot-addon-testpilot-link {
+    background-image: url('resource://testpilot-addon/data/icon-64.png') !important;
+  }
+
+  toolbar[brighttext] #toggle-button--testpilot-addon-testpilot-link {
+    background-image: url('resource://testpilot-addon/data/icon-inverted-32.png') !important;
+  }
 }
