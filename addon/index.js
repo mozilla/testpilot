@@ -11,13 +11,13 @@ const AddonManager = Cu.import('resource://gre/modules/AddonManager.jsm').AddonM
 const cookieManager2 = Cc['@mozilla.org/cookiemanager;1']
                        .getService(Ci.nsICookieManager2);
 
+const aboutConfig = require('sdk/preferences/service');
 const self = require('sdk/self');
 const store = require('sdk/simple-storage').storage;
 const tabs = require('sdk/tabs');
 const request = require('sdk/request').Request;
-const simplePrefs = require('sdk/simple-prefs');
+const { PrefsTarget } = require('sdk/preferences/event-target');
 const URL = require('sdk/url').URL;
-const history = require('sdk/places/history');
 const Metrics = require('./lib/metrics');
 const survey = require('./lib/survey');
 const WebExtensionChannels = require('./lib/webextension-channels');
@@ -26,6 +26,7 @@ const ExperimentNotifications = require('./lib/experiment-notifications');
 const { App } = require('./lib/app');
 
 const settings = {};
+let prefs;
 let app;
 // Canned selectable server environment configs
 const SERVER_ENVIRONMENTS = {
@@ -82,11 +83,10 @@ function changeApp(env) {
     });
 }
 
-function updatePrefs() {
+function updatePrefs(environment) {
   // Select the environment, with production as a default.
-  const envName = simplePrefs.prefs.SERVER_ENVIRONMENT;
-  const env = (envName in SERVER_ENVIRONMENTS) ?
-    SERVER_ENVIRONMENTS[envName] : SERVER_ENVIRONMENTS.production;
+  const env = (environment in SERVER_ENVIRONMENTS) ?
+    SERVER_ENVIRONMENTS[environment] : SERVER_ENVIRONMENTS.production;
 
   // Update the settings from selected environment
   Object.assign(settings, {
@@ -109,48 +109,6 @@ function updatePrefs() {
   } else if (self.loadReason === 'upgrade') {
     app.send('addon-self:upgraded');
   }
-}
-
-function initServerEnvironmentPreference() {
-  // Search recent browser history for visits to known server environments.
-  // HACK: Docs say that multiple queries get OR'ed together, but that doesn't
-  // seem to work. So, let's use Promise.all() to fire off multiple queries and
-  // collate them ourselves.
-  const envNames = Object.keys(SERVER_ENVIRONMENTS);
-  Promise.all(envNames.map(name => new Promise(resolve => {
-    history.search(
-      {url: SERVER_ENVIRONMENTS[name].BASE_URL + '/*'},
-      {count: 1, sort: 'date', descending: true}
-    ).on('end', results => {
-      // Map the history search into the name of the environment and the time
-      // of the last visit, using null if there was no visit found.
-      return resolve({
-        name: name,
-        time: results.length ? results[0].time : null
-      });
-    });
-  }))).then(resultsRaw => {
-    // Filter out non-results and sort in descending time order.
-    const results = resultsRaw.filter(item => item.time !== null);
-    results.sort((a, b) => b.time - a.time);
-
-    // First result is the last visited environment.
-    const lastVisitedName = results.length > 0 ? results[0].name : null;
-    const currName = simplePrefs.prefs.SERVER_ENVIRONMENT;
-
-    if (lastVisitedName && lastVisitedName !== currName) {
-      // Switch to the last visited environment.
-      simplePrefs.prefs.SERVER_ENVIRONMENT = lastVisitedName;
-      updatePrefs();
-    }
-
-    if (self.loadReason === 'install') {
-      openOnboardingTab();
-    }
-
-    // Finally, watch for pref changes, kick off the env setup.
-    simplePrefs.on('SERVER_ENVIRONMENT', updatePrefs);
-  });
 }
 
 function openOnboardingTab() {
@@ -374,6 +332,16 @@ AddonManager.addInstallListener(installListener);
 exports.main = function(options) {
   const reason = options.loadReason;
 
+  const env = aboutConfig.get('testpilot.env', 'production');
+  if (!aboutConfig.has('testpilot.env')) {
+    aboutConfig.set('testpilot.env', env);
+  }
+  prefs = PrefsTarget(); // eslint-disable-line new-cap
+  prefs.on('testpilot.env', () => {
+    updatePrefs(prefs.prefs['testpilot.env']);
+  });
+  updatePrefs(env);
+
   if (!store.clientUUID) {
     // Generate a UUID for this client, so we can manage experiment
     // installations for multiple browsers per user. DO NOT USE IN METRICS.
@@ -383,15 +351,19 @@ exports.main = function(options) {
   if (reason === 'install' || reason === 'enable') {
     Metrics.onEnable();
   }
-  updatePrefs();
-  initServerEnvironmentPreference();
+
   Metrics.init();
   WebExtensionChannels.init();
   ToolbarButton.init(settings);
   ExperimentNotifications.init();
+
+  if (reason === 'install') {
+    openOnboardingTab();
+  }
 };
 
 exports.onUnload = function(reason) {
+  prefs.off();
   AddonManager.removeAddonListener(addonListener);
   AddonManager.removeInstallListener(installListener);
   Metrics.destroy();
