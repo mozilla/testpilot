@@ -102,3 +102,10 @@ deployment:
       - "docker tag app:build ${DOCKERHUB_REPO}:${CIRCLE_TAG}"
       - "docker images"
       - "docker push ${DOCKERHUB_REPO}:${CIRCLE_TAG}"
+
+# Only notify of builds on master branch.
+experimental:
+  notify:
+    branches:
+      only:
+        - master
