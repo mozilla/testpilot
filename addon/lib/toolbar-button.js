@@ -1,10 +1,5 @@
-const windows = require('sdk/windows').browserWindows;
-const {viewFor} = require('sdk/view/core');
-const {setTimeout} = require('sdk/timers');
-const {PrefsTarget} = require('sdk/preferences/event-target');
-const {ToggleButton} = require('sdk/ui/button/toggle');
-const events = require('sdk/system/events');
-const {Panel} = require('sdk/panel');
+const { ToggleButton } = require('sdk/ui/button/toggle');
+const { Panel } = require('sdk/panel');
 const querystring = require('sdk/querystring');
 const store = require('sdk/simple-storage').storage;
 const tabs = require('sdk/tabs');
@@ -28,36 +23,6 @@ const NEW_EXPERIMENT_PERIOD = 14 * 24 * 60 * 60 * 1000; // 2 weeks
 let settings;
 let button;
 let panel;
-let collapsed;
-let prefs;
-
-function backgroundChanged() {
-  setTimeout(setButtonIcon);
-}
-
-function isLightBackground() {
-  const w = viewFor(windows.activeWindow);
-  let el = w.document.getElementById('toggle-button--testpilot-addon-testpilot-link');
-  if (!el) { return true; }
-
-  while (el.parentNode) {
-    if (el.matches('[brighttext]')) {
-      return false;
-    }
-    el = el.parentNode;
-  }
-  return true;
-}
-
-function setButtonIcon() {
-  const iconPrefix = isLightBackground() ? './icon' : './icon-inverted';
-  button.icon = {
-    '16': iconPrefix + '-16.png',
-    '32': iconPrefix + '-32.png',
-    '64': iconPrefix + '-64.png'
-  };
-  ToolbarButton.updateButtonBadge(); // eslint-disable-line no-use-before-define
-}
 
 function getExperimentList(availableExperiments, installedAddons) {
   const now = Date.now();
@@ -107,18 +72,16 @@ function getParams() {
   });
 }
 
-function handleToolbarButtonClick() {
-  collapsed = !collapsed;
-  if (panel) panel.hide();
-  if (collapsed) return;
-
-  const experimentCount = ('availableExperiments' in store) ?
-    Object.keys(store.availableExperiments).length : 0;
-  panel.show({
-    width: PANEL_WIDTH,
-    height: (experimentCount * EXPERIMENT_HEIGHT) + FOOTER_HEIGHT,
-    position: button
-  });
+function handleButtonChange(state) {
+  if (state.checked) {
+    const experimentCount = ('availableExperiments' in store) ?
+      Object.keys(store.availableExperiments).length : 0;
+    panel.show({
+      width: PANEL_WIDTH,
+      height: (experimentCount * EXPERIMENT_HEIGHT) + FOOTER_HEIGHT,
+      position: button
+    });
+  }
 }
 
 const ToolbarButton = module.exports = {
@@ -129,21 +92,10 @@ const ToolbarButton = module.exports = {
     button = ToggleButton({ // eslint-disable-line new-cap
       id: 'testpilot-link',
       label: 'Test Pilot',
-      icon: {
-        '16': './icon-16.png',
-        '32': './icon-32.png',
-        '64': './icon-64.png'
-      },
-      onClick: handleToolbarButtonClick
+      icon: './transparent-16.png',
+      onChange: handleButtonChange
     });
 
-    prefs = PrefsTarget(); // eslint-disable-line new-cap
-    prefs.on('devtools.theme', backgroundChanged);
-    prefs.on('browser.uiCustomization.state', backgroundChanged);
-    events.on('lightweight-theme-styling-update', backgroundChanged);
-    setTimeout(setButtonIcon);
-
-    collapsed = true; // collapsed state for panel
     panel = Panel({ // eslint-disable-line new-cap
       contentURL: './base.html',
       contentScriptFile: './panel.js',
@@ -152,10 +104,8 @@ const ToolbarButton = module.exports = {
       }
     });
 
-    panel.on('hide', () => collapsed = true);
     panel.on('show', showExperimentList);
     panel.port.on('back', showExperimentList);
-
     panel.port.on('link', url => {
       // TODO: Record metrics event here, along with badge context
       tabs.open(url);
@@ -164,17 +114,11 @@ const ToolbarButton = module.exports = {
   },
 
   destroy: function() {
-    prefs.off('devtools.theme', backgroundChanged);
-    prefs.off('browser.uiCustomization.state', backgroundChanged);
-    events.off('lightweight-theme-styling-update', backgroundChanged);
     panel.destroy();
     button.destroy();
   },
 
   updateButtonBadge: function() {
-    // Bail if we haven't initialized the button yet.
-    if (!button) { return; }
-
     // Initialize the last button click timestamp if necessary.
     if (!('toolbarButtonLastClicked' in store)) {
       store.toolbarButtonLastClicked = Date.now();
