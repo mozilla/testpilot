@@ -8,17 +8,20 @@ const {Panel} = require('sdk/panel');
 const querystring = require('sdk/querystring');
 const store = require('sdk/simple-storage').storage;
 const tabs = require('sdk/tabs');
+const self = require('sdk/self');
 
 const Mustache = require('mustache');
 const templates = require('./templates');
 Mustache.parse(templates.installed);
 Mustache.parse(templates.experimentList);
 
+const xulcss = require('./xulcss');
+xulcss.addXULStylesheet(self.data.url('button.css'));
+
 const PANEL_WIDTH = 300;
 const FOOTER_HEIGHT = 50;
 const EXPERIMENT_HEIGHT = 80;
 const NEW_BADGE_LABEL = 'New';
-const NEW_BADGE_COLOR = '#1996F7';
 
 const NEW_EXPERIMENT_PERIOD = 14 * 24 * 60 * 60 * 1000; // 2 weeks
 
@@ -194,7 +197,6 @@ const ToolbarButton = module.exports = {
     if (hasNew) {
       // TODO: Needs l10n?
       button.badge = NEW_BADGE_LABEL;
-      button.badgeColor = NEW_BADGE_COLOR;
     } else {
       button.badge = null;
     }
