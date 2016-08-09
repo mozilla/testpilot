@@ -27,6 +27,8 @@ The add-on where ideas come to idea
 prod: check the `CONFIG` property in `package.json`
 dev: [dev-prefs.json](dev-prefs.json)
 
+see [`../docs/ADDON-ENVIRONMENT.md`](../docs/ADDON-ENVIRONMENT.md) to configure which server environment the addon connects to.
+
 ## development
 
 A relatively easy path for working on this addon involves the following steps:

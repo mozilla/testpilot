@@ -125,6 +125,8 @@ Make sure you clone the Test Pilot repo:
   * [`addon/README.md`](./addon/README.md) - for more details on the addon this
     site uses to enable advanced features.
 
+  * [`docs/ADDON-ENVIRONMENT.md`](./docs/ADDON-ENVIRONMENT.md) - to configure which server environment the addon connects to.
+
   * [`docs/WORK.md`](./docs/WORK.md) - information on how we create, triage and assign work.
 
   * [`docs/DEPLOYMENT.md`](./docs/DEPLOYMENT.md) - process for deploying Test Pilot to stage and production.
