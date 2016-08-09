@@ -4,10 +4,11 @@
  * http://mozilla.org/MPL/2.0/.
  */
 
-/* global TelemetryController */
+/* global TelemetryController, Services */
 
 const {Cu} = require('chrome');
 
+Cu.import('resource://gre/modules/Services.jsm');
 Cu.import('resource://gre/modules/TelemetryController.jsm');
 
 const { AddonManager } = require('resource://gre/modules/AddonManager.jsm');
@@ -59,14 +60,13 @@ const variantMaker = {
 
 function makeTimestamp(time) {
   const timestamp = typeof time !== 'undefined' ?  time : Date.now();
-  return Math.round((timestamp - store.browserLoadedTimestamp) / 1000);
+  return Math.round((timestamp - Services.startup.getStartupInfo().process) / 1000);
 }
 
 
 const Metrics = module.exports = {
 
   init: function() {
-    store.browserLoadedTimestamp = Date.now();
     Events.on(EVENT_SEND_METRIC, Metrics.onExperimentPing);
     Events.on(EVENT_RECEIVE_VARIANT_DEFS, Metrics.onReceiveVariantDefs);
   },
