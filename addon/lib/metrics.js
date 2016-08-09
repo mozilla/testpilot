@@ -10,7 +10,7 @@ const {Cu} = require('chrome');
 
 Cu.import('resource://gre/modules/TelemetryController.jsm');
 
-const { setTimeout, clearTimeout } = require('sdk/timers');
+const { AddonManager } = require('resource://gre/modules/AddonManager.jsm');
 const Events = require('sdk/system/events');
 const PrefsService = require('sdk/preferences/service');
 const self = require('sdk/self');
@@ -23,20 +23,15 @@ const EVENT_SEND_METRIC = 'testpilot::send-metric';
 const EVENT_RECEIVE_VARIANT_DEFS = 'testpilot::register-variants';
 const EVENT_SEND_VARIANTS = 'testpilot::receive-variants';
 
-// Minimum interval of time between main Telemetry pings in ms
-const PING_INTERVAL = 24 * 60 * 60 * 1000;
-
-// Interval between Telemetry ping time checks, more frequent than the actual
-// ping so we can play catch-up if the computer was asleep at the ping time.
-const PING_CHECK_INTERVAL = 10 * 60 * 1000;
-
 // List of preferences we'll override on install & restore on uninstall
 const PREFERENCE_OVERRIDES = {
   'toolkit.telemetry.enabled': true,
   'datareporting.healthreport.uploadEnabled': true
 };
 
-let pingTimer = null;
+// nsIObserver message subjects.
+const TELEMETRY_TESTPILOT = 'testpilot';
+const TELEMETRY_EXPERIMENT = 'testpilottest';
 
 const variantMaker = {
   makeTest: function(test) {
@@ -62,93 +57,81 @@ const variantMaker = {
 };
 
 
+function makeTimestamp(time) {
+  const timestamp = typeof time !== 'undefined' ?  time : Date.now();
+  return Math.round((timestamp - store.browserLoadedTimestamp) / 1000);
+}
+
+
 const Metrics = module.exports = {
 
   init: function() {
-    if (!store.telemetryPingPayload) {
-      store.lastTelemetryPingTimestamp = false;
-      store.telemetryPingPayload = {
-        version: 1,
-        tests: {}
-      };
-    }
-
-    Metrics.maybePingTelemetry();
-
+    store.browserLoadedTimestamp = Date.now();
     Events.on(EVENT_SEND_METRIC, Metrics.onExperimentPing);
     Events.on(EVENT_RECEIVE_VARIANT_DEFS, Metrics.onReceiveVariantDefs);
   },
 
   onEnable: function() {
-    // Backup existing preference settings and then override.
-    store.metricsPrefsBackup = {};
-    Object.keys(PREFERENCE_OVERRIDES).forEach(name => {
-      store.metricsPrefsBackup[name] = PrefsService.get(name);
-      PrefsService.set(name, PREFERENCE_OVERRIDES[name]);
-    });
+    Metrics.pingTelemetry(self.id, 'enabled', Date.now());
+    Metrics.prefs.backup();
   },
 
   onDisable: function() {
-    // Restore previous preference settings before override.
-    if (store.metricsPrefsBackup) {
+    Metrics.pingTelemetry(self.id, 'disabled', Date.now());
+    Metrics.prefs.restore();
+  },
+
+  prefs: {
+    // Backup existing preference settings and then override.
+    backup: function() {
+      store.metricsPrefsBackup = {};
       Object.keys(PREFERENCE_OVERRIDES).forEach(name => {
-        PrefsService.set(name, store.metricsPrefsBackup[name]);
+        store.metricsPrefsBackup[name] = PrefsService.get(name);
+        PrefsService.set(name, PREFERENCE_OVERRIDES[name]);
       });
+    },
+
+    // Restore previous preference settings before override.
+    restore: function() {
+      if (store.metricsPrefsBackup) {
+        Object.keys(PREFERENCE_OVERRIDES).forEach(name => {
+          PrefsService.set(name, store.metricsPrefsBackup[name]);
+        });
+      }
     }
   },
 
   destroy: function() {
-    // Stop the ping timer, if any
-    if (pingTimer) {
-      clearTimeout(pingTimer);
-    }
     Events.off(EVENT_SEND_METRIC, Metrics.onExperimentPing);
+    Events.off(EVENT_RECEIVE_VARIANT_DEFS, Metrics.onReceiveVariantDefs);
   },
 
-  maybePingTelemetry: function() {
-    const now = Date.now();
-    const shouldPing =
-      // Fresh install, no timestamp. Ping immediately.
-      (!store.lastTelemetryPingTimestamp) ||
-      // Subsequent pings should go out after PING_INTERVAL
-      (now - store.lastTelemetryPingTimestamp > PING_INTERVAL);
-
-    if (shouldPing) {
-      store.lastTelemetryPingTimestamp = now;
-      Metrics.pingTelemetry();
-    }
-
-    pingTimer = setTimeout(
-      Metrics.maybePingTelemetry,
-      PING_CHECK_INTERVAL
-    );
-  },
-
-  pingTelemetry: function() {
+  pingTelemetry: function(object, eventName, eventTimestamp) {
+    const payload = {
+      timestamp: makeTimestamp(),
+      test: self.id,
+      version: self.version,
+      events: [
+        {
+          timestamp: makeTimestamp(eventTimestamp),
+          event: eventName,
+          object: object
+        }
+      ]
+    };
     TelemetryController.submitExternalPing(
-      'testpilot',
-      store.telemetryPingPayload,
+      TELEMETRY_TESTPILOT,
+      payload,
       { addClientId: true, addEnvironment: true }
     );
   },
 
-  updateExperiment: function(addonId, data) {
-    store.telemetryPingPayload.tests[addonId] = Object.assign(
-      store.telemetryPingPayload.tests[addonId] || {},
-      data
-    );
-  },
-
   experimentEnabled: function(addonId) {
-    Metrics.updateExperiment(addonId, {last_enabled: Date.now()});
+    Metrics.pingTelemetry(addonId, 'enabled', Date.now());
   },
 
   experimentDisabled: function(addonId) {
-    Metrics.updateExperiment(addonId, {last_disabled: Date.now()});
-  },
-
-  experimentFeaturesChanged: function(addonId, features) {
-    Metrics.updateExperiment(addonId, {features: features});
+    Metrics.pingTelemetry(addonId, 'disabled', Date.now());
   },
 
   onReceiveVariantDefs: function(ev) {
@@ -160,7 +143,6 @@ const Metrics = module.exports = {
     const dataParsed = variantMaker.parseTests(JSON.parse(data));
 
     store.experimentVariants[subject] = dataParsed;
-    Metrics.experimentFeaturesChanged(subject, dataParsed);
     Events.emit(EVENT_SEND_VARIANTS, {
       data: JSON.stringify(dataParsed),
       subject: self.id
@@ -168,26 +150,24 @@ const Metrics = module.exports = {
   },
 
   onExperimentPing: function(ev) {
+    const timestamp = Date.now();
     const { subject, data } = ev;
-    const dataParsed = JSON.parse(data);
 
-    // TODO: Map add-on ID (subject) to other pingTypes as necessary
-    const pingType = 'testpilottest';
-
-    if (store.experimentVariants && subject in store.experimentVariants) {
-      dataParsed.variants = store.experimentVariants[subject];
-    }
-
-    const payload = {
-      version: 1,
-      test: subject,
-      payload: dataParsed
-    };
-
-    TelemetryController.submitExternalPing(
-      pingType, payload,
-      { addClientId: true, addEnvironment: true }
-    );
+    AddonManager.getAddonByID(subject, addon => {
+      const payload = {
+        test: subject,
+        version: addon.version,
+        timestamp: makeTimestamp(timestamp),
+        variants: (
+          (store.experimentVariants && subject in store.experimentVariants) ?
+          store.experimentVariants[subject] : null
+        ),
+        payload: JSON.parse(data)
+      };
+      TelemetryController.submitExternalPing(
+        TELEMETRY_EXPERIMENT, payload,
+        { addClientId: true, addEnvironment: true }
+      );
+    });
   }
-
 };

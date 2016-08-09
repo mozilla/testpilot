@@ -10,6 +10,7 @@ const templates = require('./templates');
 Mustache.parse(templates.installed);
 Mustache.parse(templates.experimentList);
 
+const Metrics = require('./metrics');
 const xulcss = require('./xulcss');
 xulcss.addXULStylesheet(self.data.url('button.css'));
 
@@ -74,6 +75,7 @@ function getParams() {
 
 function handleButtonChange(state) {
   if (state.checked) {
+    Metrics.pingTelemetry('txp_toolbar_menu_1', 'clicked', Date.now());
     const experimentCount = ('availableExperiments' in store) ?
       Object.keys(store.availableExperiments).length : 0;
     panel.show({
