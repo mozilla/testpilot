@@ -4,7 +4,7 @@
  * http://mozilla.org/MPL/2.0/.
  */
 
-#toggle-button--testpilot-addon-testpilot-link {
+#toggle-button--testpilot-addon-testpilot-link > .toolbarbutton-badge-stack > .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url('resource://testpilot-addon/data/icon-16.png') !important;
   background-size: 16px 16px !important;
@@ -12,44 +12,39 @@
   background-repeat: no-repeat !important;
 }
 
-#toggle-button--testpilot-addon-testpilot-link.toolbarbutton-1:-moz-window-inactive:not(:hover) {
-  opacity: 0.5;
-}
-
-#toggle-button--testpilot-addon-testpilot-link[cui-areatype="menu-panel"] {
+#toggle-button--testpilot-addon-testpilot-link[cui-areatype="menu-panel"] > .toolbarbutton-badge-stack > .toolbarbutton-icon {
   background-image: url('resource://testpilot-addon/data/icon-32.png') !important;
   background-size: 32px 32px !important;
-  background-position: 50% 15% !important;
 }
 
-toolbarpaletteitem[place="palette"] > #toggle-button--testpilot-addon-testpilot-link {
+toolbarpaletteitem[place="palette"] > #toggle-button--testpilot-addon-testpilot-link > .toolbarbutton-badge-stack > .toolbarbutton-icon {
   background-image: url('resource://testpilot-addon/data/icon-32.png') !important;
   background-size: 32px 32px !important;
-  background-position: center !important
 }
 
-toolbar[brighttext] #toggle-button--testpilot-addon-testpilot-link {
+toolbar[brighttext] #toggle-button--testpilot-addon-testpilot-link > .toolbarbutton-badge-stack > .toolbarbutton-icon {
   background-image: url('resource://testpilot-addon/data/icon-inverted-16.png') !important;
 }
 
 #toggle-button--testpilot-addon-testpilot-link .toolbarbutton-badge {
   background-color: #1996F7 !important;
+  text-shadow: none;
 }
 
 @media (min-resolution: 1.1dppx) {
-  #toggle-button--testpilot-addon-testpilot-link {
+  #toggle-button--testpilot-addon-testpilot-link > .toolbarbutton-badge-stack > .toolbarbutton-icon {
     background-image: url('resource://testpilot-addon/data/icon-32.png') !important;
   }
 
-  #toggle-button--testpilot-addon-testpilot-link[cui-areatype="menu-panel"] {
+  #toggle-button--testpilot-addon-testpilot-link[cui-areatype="menu-panel"] > .toolbarbutton-badge-stack > .toolbarbutton-icon {
     background-image: url('resource://testpilot-addon/data/icon-64.png') !important;
   }
 
-  toolbarpaletteitem[place="palette"] > #toggle-button--testpilot-addon-testpilot-link {
+  toolbarpaletteitem[place="palette"] > #toggle-button--testpilot-addon-testpilot-link > .toolbarbutton-badge-stack > .toolbarbutton-icon {
     background-image: url('resource://testpilot-addon/data/icon-64.png') !important;
   }
 
-  toolbar[brighttext] #toggle-button--testpilot-addon-testpilot-link {
+  toolbar[brighttext] #toggle-button--testpilot-addon-testpilot-link > .toolbarbutton-badge-stack > .toolbarbutton-icon {
     background-image: url('resource://testpilot-addon/data/icon-inverted-32.png') !important;
   }
 }
