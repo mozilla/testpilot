@@ -13,11 +13,14 @@ lists some hints & tips we've accumulated through the course of daily work.
 This is necessary for running Django commands, among other things.
 
 ### To load some sample demo content into your Docker dev environment:
+
 ```
 mkdir -p media
 cp -r fixtures/media/demo media
 docker exec testpilot_server_1 ./manage.py loaddata fixtures/demo_data.json
 ```
+
+Then restart your server.
 
 ### Syntax & unit tests for Pull Requests to be accepted on GitHub.
 
