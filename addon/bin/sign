@@ -58,7 +58,7 @@ function distAddon() {
     if (err) return console.error(err);
 
     // sign our add-on
-    var generatedXpi = '@testpilot-addon-' + version + '.xpi';
+    var generatedXpi = 'testpilot-addon.xpi';
 
     signAddon(generatedXpi, function(err, signedXpiPath) {
       if (err) return console.error(err);

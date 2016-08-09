@@ -8,78 +8,42 @@
 # DOCKER_PASS
 
 machine:
+  hosts:
+    testpilot.dev: 127.0.0.1
   services:
     - docker
 
   node:
-    version: 4.4.0
+    version: 6.2.0
 
 dependencies:
 
   # Keep docker dir and addon dependencies
   cache_directories:
     - "~/docker"
+    - "~/virtualenvs/venv-system"
     - "addon/node_modules"
+    - "node_modules"
 
   pre:
     # https://discuss.circleci.com/t/nvm-commands-are-not-evaluated/943
-    - nvm use 4.4.0 && nvm alias default 4.4.0
+    - nvm use 6.2.0 && nvm alias default 6.2.0
 
   override:
     - docker info
     - node --version
     - npm --version
-
-    # used by npm test for frontend testing
     - google-chrome --version
-
-    # build the container, use circleci's docker cache workaround
-    # only use 1 image per day to keep the cache size from getting
-    # too big and slowing down the build
-    - I="image-$(date +%j).tgz"; if [[ -e ~/docker/$I ]]; then echo "Loading $I"; pigz -d -c ~/docker/$I | docker load; fi
-
-    # create a version.json
-    - >
-        printf '{"commit":"%s","version":"%s","source":"https://github.com/%s/%s","build":"%s"}\n'
-        "$CIRCLE_SHA1"
-        "$CIRCLE_TAG"
-        "$CIRCLE_PROJECT_USERNAME"
-        "$CIRCLE_PROJECT_REPONAME"
-        "$CIRCLE_BUILD_URL"
-        > version.json
-
-    # build addon - only sign when on master branch or a tag
-    - cd addon/ &&
-      npm config set spin false &&
-      npm install &&
-      npm run lint &&
-      if [[ $CIRCLE_BRANCH == 'master' || $CIRCLE_TAG != '' ]]; then
-        npm run sign;
-      else
-        npm run package;
-      fi &&
-      npm run lint-addon
-
-    # build static assets
-    - npm install
-    - npm run build
-    - npm test
-
-    # build the actual deployment container
-    - docker build -t app:build .
-
-    # Clean up any old images and save the new one
-    - I="image-$(date +%j).tgz"; mkdir -p ~/docker; rm ~/docker/*; docker save app:build | pigz --fast -c > ~/docker/$I; ls -l ~/docker
+    - ./bin/circleci/build-version-json.sh
+    - ./bin/circleci/build-addon.sh
+    - ./bin/circleci/build-frontend.sh
+    - ./bin/circleci/build-server.sh
+    - ./bin/circleci/setup-integration-tests.sh
 
 test:
   override:
-    - >
-        docker run --net=host
-        -e 'DEBUG=False'
-        -e 'SECRET_KEY=Foo'
-        -e 'ALLOWED_HOSTS=localhost'
-        -e 'DATABASE_URL=postgres://ubuntu@localhost/circle_test'
-        --user root app:build sh -c 'flake8 testpilot && ./manage.py test -v2 testpilot'
+    - ./bin/circleci/run-server-unit-tests.sh
+    - ./bin/circleci/run-integration-tests.sh
 
 # appropriately tag and push the container to dockerhub
 deployment:
