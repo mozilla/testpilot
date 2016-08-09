@@ -9,6 +9,7 @@ Below are the environments for the website:
 
 | ENVIRONMENT | URL |
 |:------------|:----|
+| Local       | http://testpilot.dev:8000/
 | Development | http://testpilot.dev.mozaws.net/
 | Stage       | https://testpilot.stage.mozaws.net/
 | Production  | https://testpilot.firefox.com/
@@ -17,12 +18,25 @@ Since the website talks to the add-on, it's important that the two environments 
 
 #How to change your add-on environment
 
-Step 1: Go to `about:addons`
-![about:addons](https://d3vv6lp55qjaqc.cloudfront.net/items/2i191e3i1W3N0a3x1R2J/Image%202016-08-02%20at%2012.17.55%20PM.png?v=ed3f9d5d)
-Step 2: Find the Test Pilot add-on under `Extensions` and click `Preferences`
-![Preferences](https://d3vv6lp55qjaqc.cloudfront.net/items/0s1W1U081x1d2b0w1T3O/Image%202016-08-02%20at%2012.17.55%20PM.png?v=559c11a6)
-Step 3: Click on the dropdown box next to `Environment`, and select the appropriate value
-![Environment](https://d3vv6lp55qjaqc.cloudfront.net/items/0v2J113l2D411J1t0n2G/Image%202016-08-02%20at%2012.25.15%20PM.png?v=14a4f2e4)
-![Values](https://d3vv6lp55qjaqc.cloudfront.net/items/3N0s0m0M3B0a1y04332D/Image%202016-08-02%20at%2012.26.32%20PM.png?v=04e02604)
+## about:config Method
 
-That's it! Once you move focus from the dropdown, your environment will be updated.
+1. Go to `about:config`
+2. Edit the preference `testpilot.env` to one of these values
+  - `production`
+  - `stage`
+  - `dev`
+  - `local`
+
+## Fast Switcher Addon (Ground Control) Method
+
+1. Ensure you've completed the installation and development steps from [`addon/README.md`](../addon/README.md)
+2. Ensure you have the [Extension Auto-Installer](https://addons.mozilla.org/en-US/firefox/addon/autoinstaller/) add-on enabled.
+3. In a terminal go to the `groundcontrol/` directory
+4. Run `npm install` and `npm start`
+5. You should now see a new button on your Firefox toolbar
+6. Click the toolbar button and select a new icon to change the environment
+  - from top to bottom they are: production, stage, dev, local
+
+---
+
+That's it! Now, click the Test Pilot add-on's toolbar button and you should see experiments from that environment
