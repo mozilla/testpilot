@@ -135,7 +135,7 @@ export default BaseView.extend({
   },
 
   events: {
-    'click [data-hook=show-detail].has-addon': 'openDetailPage'
+    'click [data-hook=show-detail]': 'openDetailPage'
   },
 
   initialize(opts) {

@@ -5,7 +5,7 @@ import RetireDialogView from './retire-dialog-view';
 import DiscussNotifyView from './discuss-notification-view';
 
 export default BaseView.extend({
-  template: `<div class="settings-contain">
+  template: `<div class="settings-contain" data-hook="active-user">
                <div class="button outline settings-button" data-hook="settings-button" data-l10n-id="menuTitle">Settings</div>
                <div class="settings-menu no-display">
                  <ul>
@@ -24,6 +24,27 @@ export default BaseView.extend({
     'click [data-hook=issue]': 'fileIssue',
     'click [data-hook=retire]': 'retire',
     'click [data-hook=settings-button]': 'toggleSettings'
+  },
+
+  props: {
+    activeUser: {type: 'boolean', required: true, default: false}
+  },
+
+  bindings: {
+    'activeUser': {
+      type: 'toggle',
+      yes: '[data-hook=active-user]',
+      no: '[data-hook=inactive-user]'
+    }
+  },
+
+  initialize() {
+    app.me.on('change:hasAddon', this.render, this);
+    BaseView.prototype.initialize.apply(this, arguments);
+  },
+
+  beforeRender() {
+    this.activeUser = app.me.hasAddon;
   },
 
   afterRender() {

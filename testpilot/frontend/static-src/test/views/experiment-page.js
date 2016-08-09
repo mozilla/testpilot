@@ -51,10 +51,17 @@ const test = around(tape)
     });
 
 test('Experiment Page view renders', t => {
-  t.plan(1);
+  t.plan(2);
   const myView = new MyView({headerScroll: false, slug: 'slsk'});
+
+  app.me.hasAddon = true;
   myView.render();
-  t.ok(myView.query('.details-header'));
+  t.ok(myView.query('.details-header'), 'Page renders when user has add-on');
+
+  app.me.hasAddon = false;
+  myView.render();
+  t.ok(myView.query('.details-header'),
+       'Page renders when user does not have add-on');
 });
 
 test('afterRender attaches detailView and contributorView', t => {
@@ -110,27 +117,118 @@ test('indicator bar shows when an error occurred', t => {
   t.equal(myView.query('.status-bar.error'), undefined);
 });
 
-test('introduction appears in view', t => {
-  t.plan(3);
+test('introduction in sidebar for users without add-on', t => {
+  t.plan(2);
 
-  const myView = new MyView({headerScroll: false, slug: 'slsk'});
-  const myModel = app.experiments.models[0];
+  const view = new MyView({headerScroll: false, slug: 'slsk'});
+  const model = app.experiments.models[0];
+  app.me.hasAddon = false;
+  const container = '.details-sections [data-hook="introduction-container"]';
+  const html = '.details-sections [data-hook="introduction-html"]';
 
-  myView.render();
-  const innerHTML = myView.query('[data-hook=introduction-html]').innerHTML;
-  const styleWhenNotEmpty = myView
-    .query('[data-hook=introduction-container]').style;
-  t.ok(innerHTML === myModel.introduction,
-       'innerHTML matches model');
-  t.ok(styleWhenNotEmpty.visibility !== 'hidden',
-       'introduction is visible when model has content');
+  view.render();
+  t.ok(view.query(html).innerHTML === model.introduction,
+       'Introduction present in DOM when truthy.');
 
-  myModel.introduction = '';
-  myView.render();
-  const styleWhenEmpty = myView
-    .query('[data-hook=introduction-container]').style;
-  t.ok(styleWhenEmpty.visibility === 'hidden',
-       'introduction is hidden when model has no content');
+  model.introduction = '';
+  view.render();
+  t.ok(view.query(container).style.visibility === 'hidden',
+       'Introduction is not visible when falsy.');
+});
+
+test('introduction in main content for users with add-on', t => {
+  t.plan(2);
+
+  const view = new MyView({headerScroll: false, slug: 'slsk'});
+  const model = app.experiments.models[0];
+  const container = '.details-content [data-hook="introduction-container"]';
+  const html = '.details-content [data-hook="introduction-html"]';
+
+  view.render();
+  t.ok(view.query(html).innerHTML === model.introduction,
+       'Introduction present in DOM when truthy.');
+
+  model.introduction = '';
+  view.render();
+  t.ok(view.query(container).style.visibility === 'hidden',
+       'Introduction is not visible when falsy.');
+});
+
+test('stats only shown to users with add-on', t => {
+  t.plan(2);
+
+  const view = new MyView({headerScroll: false, slug: 'slsk'});
+  const stats = '.stats';
+
+  app.me.hasAddon = true;
+  view.render();
+  t.notOk('style' in view.query(stats).parentNode.attributes,
+          'Stats are not hidden when add-on is installed.');
+
+  app.me.hasAddon = false;
+  view.render();
+  t.ok(view.query(stats).parentNode.style.display === 'none',
+       'Stats are hidden when add-on is not installed.');
+});
+
+test('measurements and privacy policy only shown to users with add-on', t => {
+  t.plan(2);
+
+  const view = new MyView({headerScroll: false, slug: 'slsk'});
+  const measurements = '[data-hook="measurements-container"]';
+
+  app.me.hasAddon = true;
+  view.render();
+  t.notOk('style' in view.query(measurements).parentNode.attributes,
+          'Measurements are not hidden when add-on is installed.');
+
+  app.me.hasAddon = false;
+  view.render();
+  t.ok(view.query(measurements).parentNode.style.display === 'none',
+       'Measurements are hidden when add-on is not installed.');
+});
+
+test('Test Pilot promo only shown to users without add-on', t => {
+  t.plan(2);
+
+  const view = new MyView({headerScroll: false, slug: 'slsk'});
+  const promo = '[data-hook="testpilot-promo"]';
+
+  app.me.hasAddon = false;
+  view.render();
+  t.ok(view.query(promo).childNodes.length === 1,
+       'Promo shown when add-on is not installed.');
+
+  app.me.hasAddon = true;
+  view.render();
+  t.ok(view.query(promo).childNodes.length === 0,
+       'Promo not shown when add-on is installed.');
+});
+
+test('experiment list only shown to users without add-on', t => {
+  t.plan(2);
+
+  const view = new MyView({headerScroll: false, slug: 'slsk'});
+  const experimentList = '[data-hook="experiment-list"]';
+
+  app.me.hasAddon = false;
+  view.render();
+  t.notOk('style' in view.query(experimentList).parentNode.attributes,
+          'Experiment list not hidden when add-on is not installed.');
+
+  app.me.hasAddon = true;
+  view.render();
+  t.ok(view.query(experimentList).parentNode.style.display === 'none',
+       'Experiment list hidden when add-on is installed.');
+});
+
+test('experiment list excludes current experiment', t => {
+  t.plan(1);
+  const view = new MyView({headerScroll: false, slug: 'slsk'});
+  app.me.hasAddon = false;
+  view.render();
+  t.ok(view.queryAll('.experiment-summary').length === 0,
+       'Current experiment excluded from experiment list.');
 });
 
 test('updateAddon tests', t => {

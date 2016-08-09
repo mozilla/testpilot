@@ -9,17 +9,11 @@ export default BaseView.extend({
 
   props: {
     title: {type: 'string', default: 'Firefox Test Pilot'},
-    isInstalled: {type: 'boolean', default: false},
-    activeUser: {type: 'boolean', required: true, default: false}
+    isInstalled: {type: 'boolean', default: false}
   },
 
   bindings: {
     'title': '[data-hook=title]',
-    'activeUser': {
-      type: 'toggle',
-      yes: '[data-hook=active-user]',
-      no: '[data-hook=inactive-user]'
-    },
     'isInstalled': {
       type: 'toggle',
       yes: '[data-hook=uninstall]',
@@ -45,9 +39,6 @@ export default BaseView.extend({
   },
 
   beforeRender() {
-    // an active user has an addon
-    this.activeUser = app.me.hasAddon;
-
     if (this.experiment) {
       this.isInstalled = !!this.experiment.isInstalled;
     }
