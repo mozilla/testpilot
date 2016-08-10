@@ -84,16 +84,13 @@ Make sure you clone the Test Pilot repo:
 
   `127.0.0.1 testpilot.dev`
 
-  You can do this manually, or the [bin/update-ip.sh][update-ip] script can
-  take care of this for you.
-
 4. Don't forget to cd into your Test Pilot directory:
 
   `cd testpilot`
 
 5. Create and setup the Docker containers (this will take some time):
 
-  `sudo docker-compose up`
+  `docker-compose up`
 
 #### Windows hosts
 
