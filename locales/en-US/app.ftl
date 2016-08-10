@@ -68,6 +68,7 @@ experimentListEnabledTab = Enabled
 experimentListJustLaunchedTab = Just Launched
 experimentListJustUpdatedTab = Just Updated
 isEnabledStatusMessage = {$title} is enabled.
+installErrorMessage = Uh oh. {$title} could not be enabled. Try again later.
 participantCount = <span>{$installation_count}</span> participants
 
 giveFeedback = Give Feedback

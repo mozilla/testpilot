@@ -63,14 +63,26 @@ export default PageView.extend({
       hook: 'feedback'
     },
     {
-      type: 'booleanClass',
-      hook: 'is-enabled',
-      name: 'is-enabled'
-    },
-    {
       type: 'toggle',
       hook: 'highlight-privacy',
       invert: true
+    }],
+
+    'model.statusType': [{
+      type: 'booleanClass',
+      hook: 'has-status',
+      name: 'has-status'
+    },
+    {
+      type: 'class',
+      hook: 'status-type'
+    },
+    {
+      type: 'switch',
+      cases: {
+        enabled: '[data-hook=enabled-msg]',
+        error: '[data-hook=error-msg]'
+      }
     }],
 
     'model.modified': {
@@ -253,9 +265,28 @@ export default PageView.extend({
     const width = evt.target.offsetWidth;
     evt.target.style.width = width + 'px';
     evt.target.classList.add('state-change');
+    this.model.error = false;
+
+    app.once('webChannel:addon-install:install-failed', () => {
+      this.model.error = true;
+      this.model.enabled = false;
+      evt.target.classList.remove('state-change');
+      app.off('webChannel:addon-install:download-failed');
+      app.off('webChannel:addon-install:install-ended');
+    });
+
+    app.once('webChannel:addon-install:download-failed', () => {
+      this.model.error = true;
+      this.model.enabled = false;
+      evt.target.classList.remove('state-change');
+      app.off('webChannel:addon-install:install-failed');
+      app.off('webChannel:addon-install:install-ended');
+    });
 
     // TODO: Should this maybe be an event listener at a global level?
     app.once('webChannel:addon-install:install-ended', () => {
+      app.off('webChannel:addon-install:install-failed');
+      app.off('webChannel:addon-install:download-failed');
       this.model.enabled = true;
       evt.target.classList.remove('state-change');
       this.model.set('installation_count', this.model.installation_count + 1);

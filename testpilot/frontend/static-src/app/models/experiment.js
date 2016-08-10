@@ -7,8 +7,19 @@ export default Model.extend({
   urlRoot: '/api/experiments',
   extraProperties: 'allow',
   props: {
+    error: {type: 'boolean', default: false},
     enabled: {type: 'boolean', default: false},
     lastSeen: {type: 'number', default: 0}
+  },
+  derived: {
+    statusType: {
+      deps: ['error', 'enabled'],
+      fn: function statusType() {
+        if (this.error) { return 'error'; }
+        if (this.enabled) { return 'enabled'; }
+        return null;
+      }
+    }
   },
 
   // This shouldn't be necessary; see comments in collections/experiments.js

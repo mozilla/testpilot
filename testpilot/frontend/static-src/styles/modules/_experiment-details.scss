@@ -1,9 +1,9 @@
 .details-header-wrapper {
 
-  &:not(.is-enabled) {
+  &:not(.has-status) {
     padding-top: $grid-unit * 1.8;
 
-    .enabled {
+    .status-bar {
       display: none;
     }
   }
@@ -37,6 +37,11 @@
     background: $green;
     border-bottom: 1px solid $dark-green;
     color: $white;
+  }
+
+  &.error {
+    background: $error-red-background;
+    border-bottom: 1px solid $error-red-border;
   }
 
   .stick & {
