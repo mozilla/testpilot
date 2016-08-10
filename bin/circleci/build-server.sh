@@ -15,7 +15,7 @@ fi
 docker build -t app:build .
 
 # Clean up any old images and save the new one
+rm -rf ~/docker
 mkdir -p ~/docker
-rm ~/docker/*
 docker save app:build | pigz --fast -c > ~/docker/$I
 ls -l ~/docker
