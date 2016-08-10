@@ -49,11 +49,7 @@
  }
 
 .card-list {
-  @include flex-container(row, space-between, stretch, wrap);
-
-  @include respond-to('medium') {
-    justify-content: center;
-  }
+  @include flex-container(row, center, stretch, wrap);
 
   margin: $grid-unit * 2 auto;
 
