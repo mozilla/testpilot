@@ -4,6 +4,10 @@
 
   @include respond-to('big') {
     flex: 0 0 300px;
+
+    &:nth-child(3n+1) {
+      margin-left: 0;
+    }
   }
 
   @include respond-to('medium') {
@@ -22,7 +26,7 @@
   border-radius: $small-border-radius + 1;
   box-shadow: 0 0 0 1px $transparent-black-1, 0 1px 0 1px $transparent-black-1;
   color: $black;
-  margin-bottom: $grid-unit * 1.75;
+  margin: 0 0 ($grid-unit * 1.75) ($grid-unit * 2);
   position: relative;
   z-index: 1;
 
