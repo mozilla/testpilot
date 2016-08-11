@@ -262,33 +262,38 @@ export default PageView.extend({
   install(evt) {
     evt.preventDefault();
 
+    if (evt.target.disabled) { return; }
+    evt.target.disabled = true;
+
     const width = evt.target.offsetWidth;
     evt.target.style.width = width + 'px';
     evt.target.classList.add('state-change');
     this.model.error = false;
 
+    function cleanup() {
+      evt.target.disabled = false;
+      evt.target.classList.remove('state-change');
+      app.off('webChannel:addon-install:download-failed');
+      app.off('webChannel:addon-install:install-failed');
+      app.off('webChannel:addon-install:install-ended');
+    }
+
     app.once('webChannel:addon-install:install-failed', () => {
       this.model.error = true;
       this.model.enabled = false;
-      evt.target.classList.remove('state-change');
-      app.off('webChannel:addon-install:download-failed');
-      app.off('webChannel:addon-install:install-ended');
+      cleanup();
     });
 
     app.once('webChannel:addon-install:download-failed', () => {
       this.model.error = true;
       this.model.enabled = false;
-      evt.target.classList.remove('state-change');
-      app.off('webChannel:addon-install:install-failed');
-      app.off('webChannel:addon-install:install-ended');
+      cleanup();
     });
 
     // TODO: Should this maybe be an event listener at a global level?
     app.once('webChannel:addon-install:install-ended', () => {
-      app.off('webChannel:addon-install:install-failed');
-      app.off('webChannel:addon-install:download-failed');
       this.model.enabled = true;
-      evt.target.classList.remove('state-change');
+      cleanup();
       this.model.set('installation_count', this.model.installation_count + 1);
       this.model.fetch();
       this.renderSubview(new ExperimentTourDialogView({
