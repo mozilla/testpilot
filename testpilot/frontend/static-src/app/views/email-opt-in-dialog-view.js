@@ -70,7 +70,6 @@ export default BaseView.extend({
     // TODO: should we log the number of email validity failures? worth tracking?
     const email = this.query('input[data-hook=email]').value;
     if (!this.validate(email)) {
-      console.log('email is invalid.');
       this.set('isValidEmail', false);
       return;
     }
