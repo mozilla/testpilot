@@ -42,10 +42,17 @@ export default PageView.extend({
 
   installClicked() {
     const downloadUrl = '/static/addon/addon.xpi';
+    const installButton = document.getElementsByClassName('install');
+    const defaultMessage = document.getElementsByClassName('default-btn-msg');
+    const progressMessage = document.getElementsByClassName('progress-btn-msg');
 
-    this.query('[data-hook=install]').classList.add('state-change');
-    this.query('.default-btn-msg').classList.add('no-display');
-    this.query('.progress-btn-msg').classList.remove('no-display');
+    for (let i = 0; i < installButton.length; i++) {
+      installButton[i].classList.add('state-change');
+      installButton[i].setAttribute('disabled', 'true');
+      defaultMessage[i].classList.add('no-display');
+      progressMessage[i].classList.remove('no-display');
+    }
+
     app.sendToGA('event', {
       eventCategory: 'HomePage Interactions',
       eventAction: 'button click',

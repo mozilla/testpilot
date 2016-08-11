@@ -32,7 +32,7 @@ export default `
       </a>
     {{/isFirefox}}
     {{#isFirefox}}
-    <button data-hook="install" class="button extra-large primary">
+    <button data-hook="install" class="button extra-large primary install">
       <span class="default-btn-msg" data-l10n-id="landingInstallButton">Install the Test Pilot Add-on</span>
       <span class="no-display progress-btn-msg" data-l10n-id="landingInstallingButton">Installing...</span>
       <div class="state-change-inner"></div>
@@ -76,12 +76,12 @@ export default `
         </a>
       {{/isFirefox}}
       {{#isFirefox}}
-      <div class="small-spacer"></div>
-      <button data-hook="install" class="button extra-large primary">
-        <span class="default-btn-msg" data-l10n-id="landingInstallButton">Install the Test Pilot Add-on</span>
-        <span class="no-display progress-btn-msg" data-l10n-id="landingInstallingButton">Installing...</span>
-        <div class="state-change-inner"></div>
-      </button>
+        <div class="small-spacer"></div>
+        <button data-hook="install" class="button extra-large primary install">
+          <span class="default-btn-msg" data-l10n-id="landingInstallButton">Install the Test Pilot Add-on</span>
+          <span class="no-display progress-btn-msg" data-l10n-id="landingInstallingButton">Installing...</span>
+          <div class="state-change-inner"></div>
+        </button>
       {{/isFirefox}}
     </div>
   {{#isFirefox}}<p data-l10n-id="landingLegalNotice" class="legal-information">By proceeding, you agree to the <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Notice</a> of Test Pilot</p>{{/isFirefox}}

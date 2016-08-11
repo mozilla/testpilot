@@ -41,20 +41,23 @@
     }
   }
 
+
   &.primary {
     background: $primary;
     border: 1px solid $primary-dark;
     color: $white;
 
-    &:hover,
-    &:focus {
-      background: $primary-dark;
-      border: 1px solid $primary-darker;
-    }
+    &:not([disabled='true']) {
+      &:hover,
+      &:focus {
+        background: $primary-dark;
+        border: 1px solid $primary-darker;
+      }
 
-    &:active {
-      background: $primary-darker;
-      border: 1px solid $primary-darkest;
+      &:active {
+        background: $primary-darker;
+        border: 1px solid $primary-darkest;
+      }
     }
   }
 
