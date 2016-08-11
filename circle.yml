@@ -23,7 +23,6 @@ dependencies:
     - "~/docker"
     - "~/virtualenvs/venv-system"
     - "addon/node_modules"
-    - "node_modules"
 
   pre:
     # https://discuss.circleci.com/t/nvm-commands-are-not-evaluated/943
