@@ -1,30 +1,44 @@
-// ht @lukehaas http://projects.lukehaas.me/css-loaders/
+// HT: https://www.pexels.com/blog/css-only-loaders/
 
 .loader {
-  animation: loader 1.6s infinite cubic-bezier(0, .5, .5, 0);
-  border-bottom: $grid-unit * .2 solid $transparent-white-2;
-  border-left: $grid-unit * .2 solid $white;
-  border-right: $grid-unit * .2 solid $transparent-white-2;
-  border-top: $grid-unit * .2 solid $transparent-white-2;
-  font-size: $font-unit;
-  position: relative;
-  text-indent: -9999em;
-  transform: translateZ(0);
+  @include flex-container(row, space-between, center);
+  width: $grid-unit * 1.6;
 }
 
-.loader,
-.loader::after {
-  border-radius: $circle-border-radius;
-  height: $grid-unit * 4;
-  width: $grid-unit * 4;
+.loader-bar {
+  animation: loader 1s ease-in-out infinite alternate;
+  background-color: $transparent-white-5;
+  border-radius: $small-border-radius;
+  height: $grid-unit * 2;
+  width: $grid-unit * .2;
+}
+
+.loader-bar:nth-child(1) {
+  animation-delay: 0;
+}
+
+.loader-bar:nth-child(2) {
+  animation-delay: .09s;
+}
+
+.loader-bar:nth-child(3) {
+  animation-delay: .18s;
+}
+
+.loader-bar:nth-child(4) {
+  animation-delay: .27s;
 }
 
 @keyframes loader {
   0% {
-    transform: rotate(0);
+    transform: scale(1);
   }
 
-  100% {
-    transform: rotate(360deg);
+  20% {
+    transform: scale(1, 2);
+  }
+
+  40% {
+    transform: scale(1);
   }
 }
