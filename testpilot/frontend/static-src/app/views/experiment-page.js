@@ -63,14 +63,26 @@ export default PageView.extend({
       hook: 'feedback'
     },
     {
-      type: 'booleanClass',
-      hook: 'is-enabled',
-      name: 'is-enabled'
-    },
-    {
       type: 'toggle',
       hook: 'highlight-privacy',
       invert: true
+    }],
+
+    'model.statusType': [{
+      type: 'booleanClass',
+      hook: 'has-status',
+      name: 'has-status'
+    },
+    {
+      type: 'class',
+      hook: 'status-type'
+    },
+    {
+      type: 'switch',
+      cases: {
+        enabled: '[data-hook=enabled-msg]',
+        error: '[data-hook=error-msg]'
+      }
     }],
 
     'model.modified': {
@@ -250,14 +262,38 @@ export default PageView.extend({
   install(evt) {
     evt.preventDefault();
 
+    if (evt.target.disabled) { return; }
+    evt.target.disabled = true;
+
     const width = evt.target.offsetWidth;
     evt.target.style.width = width + 'px';
     evt.target.classList.add('state-change');
+    this.model.error = false;
+
+    function cleanup() {
+      evt.target.disabled = false;
+      evt.target.classList.remove('state-change');
+      app.off('webChannel:addon-install:download-failed');
+      app.off('webChannel:addon-install:install-failed');
+      app.off('webChannel:addon-install:install-ended');
+    }
+
+    app.once('webChannel:addon-install:install-failed', () => {
+      this.model.error = true;
+      this.model.enabled = false;
+      cleanup();
+    });
+
+    app.once('webChannel:addon-install:download-failed', () => {
+      this.model.error = true;
+      this.model.enabled = false;
+      cleanup();
+    });
 
     // TODO: Should this maybe be an event listener at a global level?
     app.once('webChannel:addon-install:install-ended', () => {
       this.model.enabled = true;
-      evt.target.classList.remove('state-change');
+      cleanup();
       this.model.set('installation_count', this.model.installation_count + 1);
       this.model.fetch();
       this.renderSubview(new ExperimentTourDialogView({

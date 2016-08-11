@@ -68,7 +68,7 @@ test('afterRender attaches detailView and contributorView', t => {
 });
 
 test('indicator bar shows when experiment is enabled', t => {
-  t.plan(2);
+  t.plan(4);
 
   const myView = new MyView({headerScroll: false, slug: 'slsk'});
   myView.render();
@@ -76,13 +76,38 @@ test('indicator bar shows when experiment is enabled', t => {
   const model = app.experiments.get('slsk', 'slug');
 
   model.enabled = true;
-  t.ok(myView.query('.is-enabled'));
+
+  t.ok(myView.query('.details-header-wrapper.has-status'));
+  t.ok(myView.query('.status-bar.enabled'));
 
   model.enabled = false;
   // since the display logic is in CSS,
   // check for the selector pattern that would
   // show the notification
-  t.equal(myView.query('.is-enabled .enabled'), undefined);
+  t.equal(myView.query('.details-header-wrapper.has-status'), undefined);
+  t.equal(myView.query('.status-bar.enabled'), undefined);
+});
+
+test('indicator bar shows when an error occurred', t => {
+  t.plan(4);
+
+  const myView = new MyView({headerScroll: false, slug: 'slsk'});
+  myView.render();
+
+  const model = app.experiments.get('slsk', 'slug');
+  model.enabled = false;
+
+  model.error = true;
+
+  t.ok(myView.query('.details-header-wrapper.has-status'));
+  t.ok(myView.query('.status-bar.error'));
+
+  model.error = false;
+  // since the display logic is in CSS,
+  // check for the selector pattern that would
+  // show the notification
+  t.equal(myView.query('.details-header-wrapper.has-status'), undefined);
+  t.equal(myView.query('.status-bar.error'), undefined);
 });
 
 test('introduction appears in view', t => {

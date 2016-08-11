@@ -4,8 +4,11 @@ export default `
       <header data-hook="header-view"></header>
     </div>
     <div class="default-background">
-      <div class="details-header-wrapper" data-hook="is-enabled">
-        <div class="status-bar enabled" data-l10n-id="isEnabledStatusMessage"><span data-hook="title"></span> is enabled.</div>
+      <div class="details-header-wrapper" data-hook="has-status">
+        <div class="status-bar" data-hook="status-type">
+          <span data-hook="enabled-msg" data-l10n-id="isEnabledStatusMessage"><span data-hook="title"></span> is enabled.</span>
+          <span data-hook="error-msg" data-l10n-id="installErrorMessage">Uh oh. <span data-hook="title"></span> could not be enabled. Try again later.</span>
+        </div>
         <div class="details-header content-wrapper">
           <header>
             <h1 data-hook="title"></h1>
