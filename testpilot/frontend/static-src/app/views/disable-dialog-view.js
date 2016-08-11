@@ -18,7 +18,7 @@ export default BaseView.extend({
         </div>
         <div class="modal-actions">
           <a data-l10n-id="feedbackSubmitButton" data-hook="submit-feedback" href="{{surveyUrl}}" target="_blank" class="submit button default large quit">Take a quick survey</a>
-          <a data-l10n-id="feedbackCancelButton" class="cancel" href="">Close</a>
+          <a data-l10n-id="feedbackCancelButton" class="cancel modal-escape" href="">Close</a>
         </div>
       </div>
     </div>
