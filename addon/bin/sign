@@ -111,7 +111,7 @@ function distAddonSigned() {
 }
 
 function removeGeneratedXpi() {
-  var generatedXpi = '@testpilot-addon-' + version + '.xpi';
+  var generatedXpi = 'testpilot-addon.xpi';
 
   fs.unlink(generatedXpi, function(err) {
     if (err) console.error(err);
