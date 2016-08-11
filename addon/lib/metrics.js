@@ -4,14 +4,9 @@
  * http://mozilla.org/MPL/2.0/.
  */
 
-/* global TelemetryController, Services */
-
-const {Cu} = require('chrome');
-
-Cu.import('resource://gre/modules/Services.jsm');
-Cu.import('resource://gre/modules/TelemetryController.jsm');
-
 const { AddonManager } = require('resource://gre/modules/AddonManager.jsm');
+const { Services } = require('resource://gre/modules/Services.jsm');
+const { TelemetryController } = require('resource://gre/modules/TelemetryController.jsm');
 const Events = require('sdk/system/events');
 const PrefsService = require('sdk/preferences/service');
 const self = require('sdk/self');

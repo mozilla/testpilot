@@ -60,6 +60,19 @@ or
 
 `npm install -g slimerjs`
 
+## Add-on tests
+
+Unit tests for the add-on are run via `jpm` as an `npm` script in the `addon`
+directory:
+
+```
+cd addon
+npm install
+npm test -- --binary=/Applications/Nightly.app/Contents/MacOS/firefox-bin
+```
+
+Look in the `addon/test` directory for examples of tests.
+
 ## Integration tests
 
 Integration tests that exercise the entire stack consisting of the server, web

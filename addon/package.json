@@ -19,6 +19,7 @@
   "updateURL": "https://testpilot.firefox.com/static/addon/update.rdf",
   "updateLink": "https://testpilot.firefox.com/static/addon/addon.xpi",
   "scripts": {
+    "test": "./node_modules/.bin/jpm test --verbose",
     "start": "npm run watch",
     "once": "jpm run -b beta --prefs dev-prefs.json",
     "watch": "jpm watchpost --post-url http://127.0.0.1:8888",

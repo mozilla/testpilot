@@ -33,11 +33,11 @@ dependencies:
     - node --version
     - npm --version
     - google-chrome --version
+    - ./bin/circleci/setup-test-dependencies.sh
     - ./bin/circleci/build-version-json.sh
     - ./bin/circleci/build-addon.sh
     - ./bin/circleci/build-frontend.sh
     - ./bin/circleci/build-server.sh
-    - ./bin/circleci/setup-integration-tests.sh
 
 test:
   override:
