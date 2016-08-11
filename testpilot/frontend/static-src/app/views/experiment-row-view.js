@@ -31,7 +31,7 @@ export default BaseView.extend({
   derived: {
     justUpdated: {
       deps: ['model.enabled', 'model.modified', 'model.lastSeen'],
-      fn: function() {
+      fn: function justUpdated() {
         // Enabled trumps launched.
         if (this.model.enabled) { return false; }
 
@@ -49,7 +49,7 @@ export default BaseView.extend({
     },
     justLaunched: {
       deps: ['model.enabled', 'model.created', 'model.lastSeen'],
-      fn: function() {
+      fn: function justLaunched() {
         // Enabled & updated trumps launched.
         if (this.model.enabled || this.justUpdated) { return false; }
 
