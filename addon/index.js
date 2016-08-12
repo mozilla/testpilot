@@ -56,6 +56,20 @@ const SERVER_ENVIRONMENTS = {
   }
 };
 
+function loadEnvironment() {
+  const env = aboutConfig.get('testpilot.env', 'production');
+  if (!aboutConfig.has('testpilot.env')) {
+    aboutConfig.set('testpilot.env', env);
+  }
+  prefs = PrefsTarget(); // eslint-disable-line new-cap
+  prefs.on('testpilot.env', () => {
+    const newEnv = prefs.prefs['testpilot.env'];
+    aboutConfig.set('extensions.webapi.testing', newEnv !== 'production');
+    updatePrefs(newEnv);
+  });
+  updatePrefs(env);
+}
+
 function changeApp(env) {
   if (app) {
     app.destroy();
@@ -332,15 +346,7 @@ AddonManager.addInstallListener(installListener);
 exports.main = function(options) {
   const reason = options.loadReason;
 
-  const env = aboutConfig.get('testpilot.env', 'production');
-  if (!aboutConfig.has('testpilot.env')) {
-    aboutConfig.set('testpilot.env', env);
-  }
-  prefs = PrefsTarget(); // eslint-disable-line new-cap
-  prefs.on('testpilot.env', () => {
-    updatePrefs(prefs.prefs['testpilot.env']);
-  });
-  updatePrefs(env);
+  loadEnvironment();
 
   if (!store.clientUUID) {
     // Generate a UUID for this client, so we can manage experiment
