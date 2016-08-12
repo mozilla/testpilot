@@ -32,10 +32,9 @@ function getExperimentList(availableExperiments, installedAddons) {
     const experiment = availableExperiments[k];
     if (installedAddons[k]) {
       experiment.active = installedAddons[k].active;
-    } else {
-      const created = (new Date(experiment.created)).getTime();
-      experiment.isNew = (now - created) < NEW_EXPERIMENT_PERIOD;
     }
+    const created = (new Date(experiment.created)).getTime();
+    experiment.isNew = (now - created) < NEW_EXPERIMENT_PERIOD && !experiment.active;
     experiment.params = getParams();
     return experiment;
   });
