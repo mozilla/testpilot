@@ -6,11 +6,7 @@
 
 const EXPERIMENT_UPDATE_INTERVAL = 12 * 60 * 60 * 1000; // 12 hours
 
-const { Cc, Ci, Cu } = require('chrome');
-const AddonManager = Cu.import('resource://gre/modules/AddonManager.jsm').AddonManager;
-const cookieManager2 = Cc['@mozilla.org/cookiemanager;1']
-                       .getService(Ci.nsICookieManager2);
-
+const { AddonManager } = require('resource://gre/modules/AddonManager.jsm');
 const aboutConfig = require('sdk/preferences/service');
 const self = require('sdk/self');
 const store = require('sdk/simple-storage').storage;
@@ -206,29 +202,10 @@ function syncAddonInstallation(addonID) {
 }
 
 function requestAPI(opts) {
-  const reqUrl = new URL(opts.url);
-
-  const headers = {
-    // HACK: Use the API origin as Referer to make CSRF checking happy on SSL
-    'Referer': reqUrl.origin,
-    'Accept': 'application/json',
-    'Cookie': ''
-  };
-
-  const hostname = settings.HOSTNAME;
-  const cookieEnumerator = cookieManager2.getCookiesFromHost(hostname);
-  while (cookieEnumerator.hasMoreElements()) {
-    const c = cookieEnumerator.getNext().QueryInterface(Ci.nsICookie); // eslint-disable-line new-cap
-    headers.Cookie += c.name + '=' + c.value + ';';
-    if (c.name === 'csrftoken') {
-      headers['X-CSRFToken'] = c.value;
-    }
-  }
-
   return new Promise((resolve, reject) => {
     request({
       url: opts.url,
-      headers: Object.assign(headers, opts.headers || {}),
+      headers: { 'Accept': 'application/json' },
       contentType: 'application/json',
       onComplete: res => (res.status < 400) ? resolve(res) : reject(res)
     })[opts.method || 'get']();
