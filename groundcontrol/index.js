@@ -34,6 +34,7 @@
 
  panel.port.on('env', newEnv => {
    aboutConfig.set('testpilot.env', newEnv);
+   aboutConfig.set('extensions.webapi.testing', newEnv !== 'production');
    panel.hide();
  });
 
