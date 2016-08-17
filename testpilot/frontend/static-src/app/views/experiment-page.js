@@ -252,6 +252,7 @@ export default PageView.extend({
     }
 
     app.sendToGA('pageview', {
+      'dimension1': this.activeUser,
       'dimension4': this.model.enabled,
       'dimension5': this.model.title,
       'dimension6': this.model.installation_count

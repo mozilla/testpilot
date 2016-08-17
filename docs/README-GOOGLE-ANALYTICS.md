@@ -98,14 +98,14 @@ We use custom dimensions to refine our pageviews on Test Pilot ([docs from Googl
 
 Here is a list of dimensions we are currently using
 
-| Page                   | Description                                       | dimension | values |
-|------------------------|---------------------------------------------------|-----------|--------|
-| Home Page              | Does the user have the add-on installed           | 1         | {0,1}  |
-| Home Page              | Does the user have any experiments installed      | 2         | {0,1}  |
-| Home Page              | How many experiments does the user have installed | 3         | {n}    |
-| Experiment Detail Page | Is the experiment enabled                         | 4         | {0,1}  |
-| Experiment Detail Page | Experiment title                                  | 5         | "xyz"  |
-| Experiment Detail Page | Installation count                                | 6         | {n}    |
+| Page                              | Description                                       | dimension | values |
+|-----------------------------------|---------------------------------------------------|-----------|--------|
+| Home Page, Experiment Detail Page | Does the user have the add-on installed           | 1         | {0,1}  |
+| Home Page                         | Does the user have any experiments installed      | 2         | {0,1}  |
+| Home Page                         | How many experiments does the user have installed | 3         | {n}    |
+| Experiment Detail Page            | Is the experiment enabled                         | 4         | {0,1}  |
+| Experiment Detail Page            | Experiment title                                  | 5         | "xyz"  |
+| Experiment Detail Page            | Installation count                                | 6         | {n}    |
 
 # Tagged Links
 
