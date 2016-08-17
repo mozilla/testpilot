@@ -27,7 +27,8 @@ export default PageView.extend({
     if (!this.hasAddon) {
       this.renderSubview(new ExperimentListView({
         hasAddon: this.hasAddon,
-        isFirefox: this.isFirefox
+        isFirefox: this.isFirefox,
+        eventCategory: 'HomePage Interactions'
       }), '[data-hook="experiment-list"]');
     }
 

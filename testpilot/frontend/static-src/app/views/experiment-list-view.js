@@ -8,7 +8,8 @@ export default BaseView.extend({
 
   props: {
     hasAddon: 'boolean',
-    except: { type: 'string', required: false }
+    except: { type: 'string', required: false },
+    eventCategory: 'string'
   },
 
   render() {
@@ -29,7 +30,8 @@ export default BaseView.extend({
       ExperimentRowView,
       this.query('.experiments'), {
         viewOptions: {
-          hasAddon: this.hasAddon
+          hasAddon: this.hasAddon,
+          eventCategory: this.eventCategory
         }
       }
     );

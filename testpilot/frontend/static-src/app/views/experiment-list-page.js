@@ -14,8 +14,10 @@ export default PageView.extend({
   render() {
     this.hasAddon = app.me.hasAddon;
     PageView.prototype.render.apply(this, arguments);
-    this.renderSubview(new ExperimentListView({hasAddon: this.hasAddon}),
-      '[data-hook="experiment-list"]');
+    this.renderSubview(new ExperimentListView({
+      hasAddon: this.hasAddon,
+      eventCategory: 'ExperimentsPage Interactions'
+    }), '[data-hook="experiment-list"]');
 
     if (cookies.get('first-run')) {
       cookies.remove('first-run');

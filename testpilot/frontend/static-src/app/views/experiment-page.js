@@ -247,7 +247,7 @@ export default PageView.extend({
         hasAddon: this.activeUser,
         isFirefox: this.isFirefox,
         except: this.model.slug,
-        title: true
+        eventCategory: 'ExperimentsDetailPage Interactions'
       }), '[data-hook="experiment-list"]');
     }
 
