@@ -28,8 +28,8 @@ export default PageView.extend({
   headerScroll: true,
 
   events: {
-    'click [data-hook=install]': 'install',
-    'click [data-hook=uninstall]': 'renderUninstallSurvey',
+    'click [data-hook=install-experiment]': 'installExperiment',
+    'click [data-hook=uninstall-experiment]': 'renderUninstallSurvey',
     'click [data-hook=feedback]': 'feedback',
     'click [data-hook=highlight-privacy]': 'highlightPrivacy'
   },
@@ -64,8 +64,8 @@ export default PageView.extend({
 
     'model.enabled': [{
       type: 'toggle',
-      yes: '[data-hook=uninstall]',
-      no: '[data-hook=install]'
+      yes: '[data-hook=uninstall-experiment]',
+      no: '[data-hook=install-experiment]'
     },
     {
       type: 'toggle',
@@ -239,7 +239,8 @@ export default PageView.extend({
 
     if (!this.activeUser) {
       this.renderSubview(new TestpilotPromoView({
-        isFirefox: this.isFirefox
+        isFirefox: this.isFirefox,
+        parentView: this
       }), '[data-hook="testpilot-promo"]');
 
       this.renderSubview(new ExperimentListView({
@@ -282,19 +283,14 @@ export default PageView.extend({
 
   // isInstall is a boolean: true if we are installing, false if uninstalling
   updateAddon(isInstall, model) {
-    let eventType = 'install-experiment';
-
-    if (!isInstall) {
-      eventType = 'uninstall-experiment';
-    }
-
-    app.webChannel.sendMessage(eventType, {
+    const evtType = isInstall ? 'install-experiment' : 'uninstall-experiment';
+    app.webChannel.sendMessage(evtType, {
       addon_id: model.addon_id,
       xpi_url: model.xpi_url
     });
   },
 
-  install(evt) {
+  installExperiment(evt) {
     evt.preventDefault();
 
     if (evt.target.disabled) { return; }
@@ -343,7 +339,7 @@ export default PageView.extend({
     });
   },
 
-  uninstall(evt) {
+  uninstallExperiment(evt) {
     evt.preventDefault();
     const width = evt.target.offsetWidth;
     evt.target.style.width = width + 'px';
@@ -370,7 +366,7 @@ export default PageView.extend({
       eventLabel: 'Disable Experiment'
     });
 
-    this.uninstall(evt);
+    this.uninstallExperiment(evt);
 
     this.renderSubview(new DisableDialogView({
       id: 'disabled-feedback',

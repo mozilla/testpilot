@@ -49,25 +49,26 @@ app.sendToGA('event', {
 
 Here are the current events on the website as of this writing
 
-| Description                           | eventCategory                      | eventAction       | eventLabel           |
-|---------------------------------------|------------------------------------|-------------------|----------------------|
-| Toggle settings menu                  | Menu Interactions                  | drop-down menu    | Toggle Menu          |
-| Click Leave from settings             | Menu Interactions                  | drop-down menu    | Retire               |
-| Click Discuss from settings           | Menu Interactions                  | drop-down menu    | Discuss              |
-| Click Wiki from settings              | Menu Interactions                  | drop-down menu    | wiki                 |
-| Click File Issue from settings        | Menu Interactions                  | drop-down menu    | File Issue           |
-| Click on experiment from landing page | ExperimentsPage Interactions       | Open details page | `{experiment title}` |
-| Click Enable Experiment               | ExperimentDetailsPage Interactions | button click      | Enable Experiment    |
-| Click Disable Experiment              | ExperimentDetailsPage Interactions | button click      | Disable Experiment   |
-| Click Give Feedback for experiment    | ExperimentDetailsPage Interactions | button click      | Give Feedback        |
-| Click Take Survey after disable       | ExperimentDetailsPage Interactions | button click      | exit survey disabled |
-| Click Cancel on tour dialogue         | ExperimentDetailsPage Interactions | button click      | cancel tour          |
-| Complete the tour                     | ExperimentDetailsPage Interactions | button click      | complete tour        |
-| Click Take Tour on tour dialogue      | ExperimentDetailsPage Interactions | button click      | take tour            |
-| Click next during Tour                | ExperimentDetailsPage Interactions | button click      | forward to step `n`  |
-| Click back during Tour                | ExperimentDetailsPage Interactions | button click      | back to step `n`     |
-| Click on Install from landing page    | HomePage Interactions              | button click      | Install the Add-on   |
-| Click take survey after Leave         | RetirePage Interactions            | button click      | take survey          |
+| Description                                   | eventCategory                      | eventAction       | eventLabel           |
+|-----------------------------------------------|------------------------------------|-------------------|----------------------|
+| Toggle settings menu                          | Menu Interactions                  | drop-down menu    | Toggle Menu          |
+| Click Leave from settings                     | Menu Interactions                  | drop-down menu    | Retire               |
+| Click Discuss from settings                   | Menu Interactions                  | drop-down menu    | Discuss              |
+| Click Wiki from settings                      | Menu Interactions                  | drop-down menu    | wiki                 |
+| Click File Issue from settings                | Menu Interactions                  | drop-down menu    | File Issue           |
+| Click on experiment from landing page         | ExperimentsPage Interactions       | Open details page | `{experiment title}` |
+| Click on Install from experiment details page | ExperimentDetailsPage Interactions | button click | Install the Add-on |
+| Click Enable Experiment                       | ExperimentDetailsPage Interactions | button click      | Enable Experiment    |
+| Click Disable Experiment                      | ExperimentDetailsPage Interactions | button click      | Disable Experiment   |
+| Click Give Feedback for experiment            | ExperimentDetailsPage Interactions | button click      | Give Feedback        |
+| Click Take Survey after disable               | ExperimentDetailsPage Interactions | button click      | exit survey disabled |
+| Click Cancel on tour dialogue                 | ExperimentDetailsPage Interactions | button click      | cancel tour          |
+| Complete the tour                             | ExperimentDetailsPage Interactions | button click      | complete tour        |
+| Click Take Tour on tour dialogue              | ExperimentDetailsPage Interactions | button click      | take tour            |
+| Click next during Tour                        | ExperimentDetailsPage Interactions | button click      | forward to step `n`  |
+| Click back during Tour                        | ExperimentDetailsPage Interactions | button click      | back to step `n`     |
+| Click on Install from landing page            | HomePage Interactions              | button click      | Install the Add-on   |
+| Click take survey after Leave                 | RetirePage Interactions            | button click      | take survey          |
 
 # Pageviews
 

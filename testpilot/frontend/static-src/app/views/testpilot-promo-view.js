@@ -1,4 +1,5 @@
 import BaseView from './base-view';
+import installAddon from '../lib/install-addon';
 
 
 export default BaseView.extend({
@@ -38,7 +39,18 @@ export default BaseView.extend({
     </div>
   `,
 
+  events: {
+    'click [data-hook=install]': 'installClicked'
+  },
+
   props: {
-    isFirefox: 'boolean'
+    isFirefox: 'boolean',
+    parentView: 'object'
+  },
+
+  installClicked() {
+    installAddon(this, 'ExperimentDetailsPage Interactions', () => {
+      this.parentView.render();
+    });
   }
 });
