@@ -38,19 +38,15 @@ export default Router.extend({
 
   // 'experiment' is a URL slug: for example, 'universal-search'
   experimentDetail(experiment) {
-    if (!app.me.hasAddon) {
-      this.redirectTo('');
+    if (app.experiments.get(experiment, 'slug')) {
+      app.trigger('router:new-page', {
+        page: 'experimentDetail',
+        opts: {
+          slug: experiment
+        }
+      });
     } else {
-      if (app.experiments.get(experiment, 'slug')) {
-        app.trigger('router:new-page', {
-          page: 'experimentDetail',
-          opts: {
-            slug: experiment
-          }
-        });
-      } else {
-        this.redirectTo('404');
-      }
+      this.redirectTo('404');
     }
   },
 

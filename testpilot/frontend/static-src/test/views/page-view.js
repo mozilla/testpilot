@@ -34,10 +34,16 @@ test('Page view renders', t => {
 });
 
 test('header is present', t => {
-  t.plan(1);
+  t.plan(2);
   const view = new MyView({headerScroll: true});
+
+  app.me.hasAddon = true;
   view.render();
-  t.ok(view.query('#main-header'));
+  t.ok(view.query('#main-header'), 'Header present for user with add-on.');
+
+  app.me.hasAddon = false;
+  view.render();
+  t.ok(view.query('#main-header'), 'Header present for user without add-on.');
 });
 
 test('footer is present', t => {

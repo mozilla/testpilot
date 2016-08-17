@@ -1,8 +1,10 @@
 import app from 'ampersand-app';
-import cookies from 'js-cookie';
-import PageView from './page-view';
-import template from '../templates/landing-page';
+
 import ExperimentListView from './experiment-list-view';
+import installAddon from '../lib/install-addon';
+import template from '../templates/landing-page';
+import PageView from './page-view';
+
 
 export default PageView.extend({
   _template: template,
@@ -25,7 +27,8 @@ export default PageView.extend({
     if (!this.hasAddon) {
       this.renderSubview(new ExperimentListView({
         hasAddon: this.hasAddon,
-        isFirefox: this.isFirefox
+        isFirefox: this.isFirefox,
+        eventCategory: 'HomePage Interactions'
       }), '[data-hook="experiment-list"]');
     }
 
@@ -41,41 +44,9 @@ export default PageView.extend({
   },
 
   installClicked() {
-    const downloadUrl = '/static/addon/addon.xpi';
-    const installButton = document.getElementsByClassName('install');
-    const defaultMessage = document.getElementsByClassName('default-btn-msg');
-    const progressMessage = document.getElementsByClassName('progress-btn-msg');
-
-    for (let i = 0; i < installButton.length; i++) {
-      installButton[i].classList.add('state-change');
-      installButton[i].setAttribute('disabled', 'true');
-      defaultMessage[i].classList.add('no-display');
-      progressMessage[i].classList.remove('no-display');
-    }
-
-    app.sendToGA('event', {
-      eventCategory: 'HomePage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'Install the Add-on',
-      outboundURL: downloadUrl
+    installAddon(this, 'HomePage Interactions', () => {
+      app.router.redirectTo('experiments');
     });
-
-    cookies.set('first-run', 'true');
-
-    // Wait for the add-on to be installed.
-    // TODO: Should we have a timeout here, give up after a few intervals? If
-    // user cancels add-on install, this will never stop spinning.
-    const interval = setInterval(() => {
-      if (!window.navigator.testpilotAddon) { return; }
-      clearInterval(interval);
-      app.me.fetch().then(() => {
-        app.router.redirectTo('experiments');
-      }).catch(() => {
-        // HACK (for Issue #1075): Timed out while waiting for the initial sync
-        // message, so just reload the page to stop waiting.
-        window.location.reload();
-      });
-    }, 1000);
   },
 
   remove() {

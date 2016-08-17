@@ -1,0 +1,35 @@
+.experiment-promo {
+
+  .intro-text {
+
+    .button.extra-large {
+      margin-top: $grid-unit * 1.5;
+    }
+
+    .parens {
+      display: inline-block;
+      margin-top: $grid-unit;
+    }
+
+    .download-firefox {
+      @include respond-to(not-small) {
+        margin-left: 0;
+      }
+
+      margin-bottom: $grid-unit * 1.5;
+    }
+
+    .legal-information {
+      @include respond-to(small) {
+        text-align: center;
+      }
+
+      @include respond-to(not-small) {
+        text-align: left;
+      }
+
+      margin-top: $grid-unit * 1.5;
+      padding: 0;
+    }
+  }
+}

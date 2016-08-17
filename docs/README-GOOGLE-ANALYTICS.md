@@ -49,25 +49,28 @@ app.sendToGA('event', {
 
 Here are the current events on the website as of this writing
 
-| Description                           | eventCategory                      | eventAction       | eventLabel           |
-|---------------------------------------|------------------------------------|-------------------|----------------------|
-| Toggle settings menu                  | Menu Interactions                  | drop-down menu    | Toggle Menu          |
-| Click Leave from settings             | Menu Interactions                  | drop-down menu    | Retire               |
-| Click Discuss from settings           | Menu Interactions                  | drop-down menu    | Discuss              |
-| Click Wiki from settings              | Menu Interactions                  | drop-down menu    | wiki                 |
-| Click File Issue from settings        | Menu Interactions                  | drop-down menu    | File Issue           |
-| Click on experiment from landing page | ExperimentsPage Interactions       | Open details page | `{experiment title}` |
-| Click Enable Experiment               | ExperimentDetailsPage Interactions | button click      | Enable Experiment    |
-| Click Disable Experiment              | ExperimentDetailsPage Interactions | button click      | Disable Experiment   |
-| Click Give Feedback for experiment    | ExperimentDetailsPage Interactions | button click      | Give Feedback        |
-| Click Take Survey after disable       | ExperimentDetailsPage Interactions | button click      | exit survey disabled |
-| Click Cancel on tour dialogue         | ExperimentDetailsPage Interactions | button click      | cancel tour          |
-| Complete the tour                     | ExperimentDetailsPage Interactions | button click      | complete tour        |
-| Click Take Tour on tour dialogue      | ExperimentDetailsPage Interactions | button click      | take tour            |
-| Click next during Tour                | ExperimentDetailsPage Interactions | button click      | forward to step `n`  |
-| Click back during Tour                | ExperimentDetailsPage Interactions | button click      | back to step `n`     |
-| Click on Install from landing page    | HomePage Interactions              | button click      | Install the Add-on   |
-| Click take survey after Leave         | RetirePage Interactions            | button click      | take survey          |
+| Description                                              | eventCategory                      | eventAction       | eventLabel                   |
+|----------------------------------------------------------|------------------------------------|-------------------|------------------------------|
+| Toggle settings menu                                     | Menu Interactions                  | drop-down menu    | Toggle Menu                  |
+| Click Leave from settings                                | Menu Interactions                  | drop-down menu    | Retire                       |
+| Click Discuss from settings                              | Menu Interactions                  | drop-down menu    | Discuss                      |
+| Click Wiki from settings                                 | Menu Interactions                  | drop-down menu    | wiki                         |
+| Click File Issue from settings                           | Menu Interactions                  | drop-down menu    | File Issue                   |
+| Click on experiment from landing page                    | ExperimentsPage Interactions       | Open details page | `{experiment title}`         |
+| Click on Install from experiment details page            | ExperimentDetailsPage Interactions | button click | Install the Add-on                |
+| Click on the "Try out these experiments as well" section | ExperimentsDetailPage Interactions | Open details page | try out `{experiment title}` |
+| Click Enable Experiment                                  | ExperimentDetailsPage Interactions | button click      | Enable Experiment            |
+| Click Disable Experiment                                 | ExperimentDetailsPage Interactions | button click      | Disable Experiment           |
+| Click Give Feedback for experiment                       | ExperimentDetailsPage Interactions | button click      | Give Feedback                |
+| Click Take Survey after disable                          | ExperimentDetailsPage Interactions | button click      | exit survey disabled         |
+| Click Cancel on tour dialogue                            | ExperimentDetailsPage Interactions | button click      | cancel tour                  |
+| Complete the tour                                        | ExperimentDetailsPage Interactions | button click      | complete tour                |
+| Click Take Tour on tour dialogue                         | ExperimentDetailsPage Interactions | button click      | take tour                    |
+| Click next during Tour                                   | ExperimentDetailsPage Interactions | button click      | forward to step `n`          |
+| Click back during Tour                                   | ExperimentDetailsPage Interactions | button click      | back to step `n`             |
+| Click on Install from landing page                       | HomePage Interactions              | button click      | Install the Add-on           |
+| Click on experiment from landing page                    | HomePage Interactions              | Open details page | `{experiment title}`         |
+| Click take survey after Leave                            | RetirePage Interactions            | button click      | take survey                  |
 
 # Pageviews
 
@@ -97,14 +100,14 @@ We use custom dimensions to refine our pageviews on Test Pilot ([docs from Googl
 
 Here is a list of dimensions we are currently using
 
-| Page                   | Description                                       | dimension | values |
-|------------------------|---------------------------------------------------|-----------|--------|
-| Home Page              | Does the user have the add-on installed           | 1         | {0,1}  |
-| Home Page              | Does the user have any experiments installed      | 2         | {0,1}  |
-| Home Page              | How many experiments does the user have installed | 3         | {n}    |
-| Experiment Detail Page | Is the experiment enabled                         | 4         | {0,1}  |
-| Experiment Detail Page | Experiment title                                  | 5         | "xyz"  |
-| Experiment Detail Page | Installation count                                | 6         | {n}    |
+| Page                              | Description                                       | dimension | values |
+|-----------------------------------|---------------------------------------------------|-----------|--------|
+| Home Page, Experiment Detail Page | Does the user have the add-on installed           | 1         | {0,1}  |
+| Home Page                         | Does the user have any experiments installed      | 2         | {0,1}  |
+| Home Page                         | How many experiments does the user have installed | 3         | {n}    |
+| Experiment Detail Page            | Is the experiment enabled                         | 4         | {0,1}  |
+| Experiment Detail Page            | Experiment title                                  | 5         | "xyz"  |
+| Experiment Detail Page            | Installation count                                | 6         | {n}    |
 
 # Tagged Links
 

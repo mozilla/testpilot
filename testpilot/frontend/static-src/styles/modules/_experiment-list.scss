@@ -26,6 +26,7 @@
   border-radius: $small-border-radius + 1;
   box-shadow: 0 0 0 1px $transparent-black-1, 0 1px 0 1px $transparent-black-1;
   color: $black;
+  cursor: pointer;
   margin: 0 0 ($grid-unit * 1.75) ($grid-unit * 2);
   position: relative;
   z-index: 1;
@@ -66,23 +67,15 @@
     margin: 0;
   }
 
-  &.has-addon {
-    cursor: pointer;
+  &.enabled {
+    box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-green;
 
     &:hover {
-      box-shadow: 0 0 0 3px $transparent-white-1;
-    }
-
-    &.enabled {
-      box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-green;
-
-      &:hover {
-        box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-green, 0 0 0 9px $transparent-white-1;
-      }
+      box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-green, 0 0 0 9px $transparent-white-1;
     }
   }
 
-  &.has-addon:hover {
+  &:hover {
     box-shadow: 0 1px 0 0 $transparent-white-2, 0 0 0 5px $transparent-white-2;
     transition: box-shadow 150ms;
 

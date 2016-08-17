@@ -7,9 +7,14 @@ import DetailView from './detail-view';
 import ContributorView from './contributor-view';
 import template from '../templates/experiment-page';
 import DisableDialogView from './disable-dialog-view';
+import ExperimentListView from './experiment-list-view';
 import ExperimentTourDialogView from './experiment-tour-dialog-view';
+import TestpilotPromoView from './testpilot-promo-view';
 
-const changeHeaderOn = 127;
+function changeHeaderOn() {
+  const mainHeader = document.getElementById('main-header');
+  return mainHeader.clientHeight;
+}
 
 const CollectionExtended = Collection.extend({
   model: Model.extend({
@@ -23,10 +28,14 @@ export default PageView.extend({
   headerScroll: true,
 
   events: {
-    'click [data-hook=install]': 'install',
-    'click [data-hook=uninstall]': 'renderUninstallSurvey',
+    'click [data-hook=install-experiment]': 'installExperiment',
+    'click [data-hook=uninstall-experiment]': 'renderUninstallSurvey',
     'click [data-hook=feedback]': 'feedback',
     'click [data-hook=highlight-privacy]': 'highlightPrivacy'
+  },
+
+  props: {
+    activeUser: {type: 'boolean', required: true, default: false}
   },
 
   bindings: {
@@ -55,8 +64,8 @@ export default PageView.extend({
 
     'model.enabled': [{
       type: 'toggle',
-      yes: '[data-hook=uninstall]',
-      no: '[data-hook=install]'
+      yes: '[data-hook=uninstall-experiment]',
+      no: '[data-hook=install-experiment]'
     },
     {
       type: 'toggle',
@@ -199,6 +208,12 @@ export default PageView.extend({
       type: function feedbackSurveyUrl(el) {
         el.href = this.model.buildSurveyURL('givefeedback');
       }
+    },
+
+    'activeUser': {
+      type: 'toggle',
+      yes: '[data-hook=active-user]',
+      no: '[data-hook=inactive-user]'
     }
   },
 
@@ -206,9 +221,8 @@ export default PageView.extend({
     this.model = app.experiments.get(opts.slug, 'slug');
 
     this.didScroll = false;
-
     window.addEventListener('scroll', function scrollListener() {
-      if (!this.didScroll) {
+      if (!this.didScroll && this.activeUser) {
         this.didScroll = true;
         setTimeout(this.onScroll.bind(this), 50);
       }
@@ -216,17 +230,40 @@ export default PageView.extend({
 
     this.pageTitle = 'Test Pilot - ' + this.model.title;
     this.pageTitleL10nID = 'pageTitleExperiment';
+
+    app.me.on('change:hasAddon', this.render, this);
   },
 
   render() {
     PageView.prototype.render.apply(this, arguments);
+
+    if (!this.activeUser) {
+      this.renderSubview(new TestpilotPromoView({
+        isFirefox: this.isFirefox,
+        parentView: this
+      }), '[data-hook="testpilot-promo"]');
+
+      this.renderSubview(new ExperimentListView({
+        hasAddon: this.activeUser,
+        isFirefox: this.isFirefox,
+        except: this.model.slug,
+        eventCategory: 'ExperimentsDetailPage Interactions'
+      }), '[data-hook="experiment-list"]');
+    }
+
     app.sendToGA('pageview', {
+      'dimension1': this.activeUser,
       'dimension4': this.model.enabled,
       'dimension5': this.model.title,
       'dimension6': this.model.installation_count
     });
     this.model.updateWhenLastSeen();
     return this;
+  },
+
+  beforeRender() {
+    this.activeUser = app.me.hasAddon;
+    this.isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
   },
 
   afterRender() {
@@ -247,19 +284,14 @@ export default PageView.extend({
 
   // isInstall is a boolean: true if we are installing, false if uninstalling
   updateAddon(isInstall, model) {
-    let eventType = 'install-experiment';
-
-    if (!isInstall) {
-      eventType = 'uninstall-experiment';
-    }
-
-    app.webChannel.sendMessage(eventType, {
+    const evtType = isInstall ? 'install-experiment' : 'uninstall-experiment';
+    app.webChannel.sendMessage(evtType, {
       addon_id: model.addon_id,
       xpi_url: model.xpi_url
     });
   },
 
-  install(evt) {
+  installExperiment(evt) {
     evt.preventDefault();
 
     if (evt.target.disabled) { return; }
@@ -308,7 +340,7 @@ export default PageView.extend({
     });
   },
 
-  uninstall(evt) {
+  uninstallExperiment(evt) {
     evt.preventDefault();
     const width = evt.target.offsetWidth;
     evt.target.style.width = width + 'px';
@@ -335,7 +367,7 @@ export default PageView.extend({
       eventLabel: 'Disable Experiment'
     });
 
-    this.uninstall(evt);
+    this.uninstallExperiment(evt);
 
     this.renderSubview(new DisableDialogView({
       id: 'disabled-feedback',
@@ -350,7 +382,7 @@ export default PageView.extend({
     const measurementPanel = this.query('.measurements');
     const windowHeader = this.query('.details-header-wrapper');
 
-    window.scrollTo(0, measurementPanel.offsetTop + changeHeaderOn);
+    window.scrollTo(0, measurementPanel.offsetTop + changeHeaderOn());
     windowHeader.classList.add('stick');
     measurementPanel.classList.add('highlight');
     setTimeout(() => {
@@ -362,10 +394,13 @@ export default PageView.extend({
   onScroll() {
     const sy = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (sy > changeHeaderOn) {
-      this.query('.details-header-wrapper').classList.add('stick');
+    if (sy > changeHeaderOn() - 1) {
+      const header = this.query('.details-header-wrapper');
+      header.classList.add('stick');
+      this.query('.sticky-header-sibling').style.height = `${header.clientHeight}px`;
     } else {
       this.query('.details-header-wrapper').classList.remove('stick');
+      this.query('.sticky-header-sibling').style.height = '0px';
     }
 
     this.didScroll = false;

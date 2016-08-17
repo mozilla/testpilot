@@ -26,12 +26,13 @@ export default BaseView.extend({
              </div>`,
 
   props: {
-    hasAddon: {type: 'boolean', default: 'false'}
+    hasAddon: {type: 'boolean', default: 'false'},
+    eventCategory: 'string'
   },
   derived: {
     justUpdated: {
       deps: ['model.enabled', 'model.modified', 'model.lastSeen'],
-      fn: function justUpdated() {
+      fn: function() {
         // Enabled trumps launched.
         if (this.model.enabled) { return false; }
 
@@ -49,7 +50,7 @@ export default BaseView.extend({
     },
     justLaunched: {
       deps: ['model.enabled', 'model.created', 'model.lastSeen'],
-      fn: function justLaunched() {
+      fn: function() {
         // Enabled & updated trumps launched.
         if (this.model.enabled || this.justUpdated) { return false; }
 
@@ -135,7 +136,7 @@ export default BaseView.extend({
   },
 
   events: {
-    'click [data-hook=show-detail].has-addon': 'openDetailPage'
+    'click [data-hook=show-detail]': 'openDetailPage'
   },
 
   initialize(opts) {
@@ -145,7 +146,7 @@ export default BaseView.extend({
   openDetailPage(evt) {
     evt.preventDefault();
     app.sendToGA('event', {
-      eventCategory: 'ExperimentsPage Interactions',
+      eventCategory: this.eventCategory,
       eventAction: 'Open detail page',
       eventLabel: this.model.title
     });

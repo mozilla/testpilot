@@ -17,10 +17,6 @@
     top: 0;
     width: 100%;
     z-index: 999;
-
-    + div {
-      margin-top: $grid-unit * 4.8;
-    }
   }
 }
 
@@ -107,7 +103,6 @@
 
 .details-content {
   @include flex-container(row, space-between, flex-start);
-  margin-top: $grid-unit;
 }
 
 .details-overview {
@@ -118,6 +113,8 @@
   @include respond-to('medium') {
     flex: 0 0 $grid-unit * 14;
   }
+
+  padding-top: $grid-unit * .5;
 }
 
 .details-description {
@@ -128,7 +125,6 @@
       height: auto;
       width: $grid-unit * 32;
     }
-
   }
 
   @include respond-to('medium') {
@@ -139,6 +135,8 @@
       width: $grid-unit * 22;
     }
   }
+
+  padding-top: $grid-unit * .5;
 
   :first-child {
     margin-top: 0;
