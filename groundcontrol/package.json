@@ -15,7 +15,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "jpm watchpost --post-url http://127.0.0.1:8888",
+    "start": "jpm post --post-url http://127.0.0.1:8888",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mozilla (https://mozilla.org/)",

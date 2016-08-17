@@ -8,6 +8,14 @@
  const { PrefsTarget } = require('sdk/preferences/event-target');
  const { ToggleButton } = require('sdk/ui/button/toggle');
  const { Panel } = require('sdk/panel');
+ const tabs = require('sdk/tabs');
+
+ const environments = {
+   local: 'http://testpilot.dev:8000',
+   dev: 'http://testpilot.dev.mozaws.net',
+   stage: 'https://testpilot.stage.mozaws.net',
+   production: 'https://testpilot.firefox.com'
+ }
 
  const env = aboutConfig.get('testpilot.env', 'production');
  if (!aboutConfig.has('testpilot.env')) {
@@ -36,6 +44,7 @@
    aboutConfig.set('testpilot.env', newEnv);
    aboutConfig.set('extensions.webapi.testing', newEnv !== 'production');
    panel.hide();
+   tabs.open(environments[newEnv]);
  });
 
  const button = ToggleButton({
