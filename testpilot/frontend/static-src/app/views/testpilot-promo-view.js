@@ -49,8 +49,6 @@ export default BaseView.extend({
   },
 
   installClicked() {
-    installAddon(this, 'ExperimentDetailsPage Interactions', () => {
-      this.parentView.render();
-    });
+    installAddon(this, 'ExperimentDetailsPage Interactions', () => {});
   }
 });

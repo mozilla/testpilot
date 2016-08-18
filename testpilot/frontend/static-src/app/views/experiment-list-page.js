@@ -1,9 +1,8 @@
 import app from 'ampersand-app';
-import cookies from 'js-cookie';
 import ExperimentListView from './experiment-list-view';
-import EmailDialogView from './email-opt-in-dialog-view';
 import PageView from './page-view';
 
+import { postInstallModal } from '../lib/install-addon';
 import template from '../templates/experiment-list-page';
 
 export default PageView.extend({
@@ -19,10 +18,7 @@ export default PageView.extend({
       eventCategory: 'ExperimentsPage Interactions'
     }), '[data-hook="experiment-list"]');
 
-    if (cookies.get('first-run')) {
-      cookies.remove('first-run');
-      this.renderSubview(new EmailDialogView({}), 'body');
-    }
+    postInstallModal(this);
 
     app.sendToGA('pageview', {
       'dimension1': this.hasAddon

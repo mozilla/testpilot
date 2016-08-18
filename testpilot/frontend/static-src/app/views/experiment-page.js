@@ -2,6 +2,8 @@ import app from 'ampersand-app';
 import Model from 'ampersand-model';
 import Collection from 'ampersand-collection';
 
+import { postInstallModal } from '../lib/install-addon';
+
 import PageView from './page-view';
 import DetailView from './detail-view';
 import ContributorView from './contributor-view';
@@ -250,6 +252,8 @@ export default PageView.extend({
         eventCategory: 'ExperimentsDetailPage Interactions'
       }), '[data-hook="experiment-list"]');
     }
+
+    postInstallModal(this);
 
     app.sendToGA('pageview', {
       'dimension1': this.activeUser,
