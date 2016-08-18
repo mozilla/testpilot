@@ -65,7 +65,6 @@ a {
 .mozilla-logo {
   @include hidpi-background-image('mozilla-blue', 77px 20px);
   background-repeat: no-repeat;
-  flex: 0 0 77px;
   height: 20px;
   position: relative;
   top: -3px;

@@ -28,12 +28,17 @@ module.exports.templateEnd = `
       </div>
       <footer id="main-footer" class="responsive-content-wrapper">
         <div id="footer-links">
-          <a href="https://www.mozilla.org" class="mozilla-logo"></a>
-          <a data-l10n-id="footerLinkLegal" href="https://www.mozilla.org/about/legal/" class="boilerplate">Legal</a>
-<a data-l10n-id="footerLinkPrivacy" href="/privacy" class="boilerplate">Privacy</a>
-<a data-l10n-id="footerLinkTerms" href="/terms" class="boilerplate">Terms</a>
-          <a data-l10n-id="footerLinkCookies" href="https://www.mozilla.org/privacy/websites/#cookies" class="boilerplate">Cookies</a>
-          <a data-l10n-id="footerLinkContribute" href="https://www.mozilla.org/contribute/signup/" class="boilerplate">Contribute</a>
+          <div class="legal-links">
+            <a href="https://www.mozilla.org" class="mozilla-logo"></a>
+            <a data-l10n-id="footerLinkLegal" href="https://www.mozilla.org/about/legal/" class="boilerplate">Legal</a>
+            <a data-l10n-id="footerLinkPrivacy" href="/privacy" class="boilerplate">Privacy</a>
+            <a data-l10n-id="footerLinkTerms" href="/terms" class="boilerplate">Terms</a>
+            <a data-l10n-id="footerLinkCookies" href="https://www.mozilla.org/privacy/websites/#cookies" class="boilerplate">Cookies</a>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/mozilla/testpilot" target="_blank" title="GitHub" class="link-icon github"></a>
+            <a href="https://twitter.com/FxTestPilot" target="_blank" title="Twitter" class="link-icon twitter"></a>
+          </div>
         </div>
       </footer>
     </div>
