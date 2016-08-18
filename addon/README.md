@@ -55,6 +55,16 @@ A relatively easy path for working on this addon involves the following steps:
 
 For UI hacking you can run `npm run watch-ui` to easily debug `lib/templates.js` and `data/panel.css`
 
+## tests
+
+Unit tests for the add-on are run via `jpm` as an `npm` script:
+
+```
+npm test -- --binary=/Applications/Nightly.app/Contents/MacOS/firefox-bin
+```
+
+Look in the `test` directory for examples of tests.
+
 ## running once for testing
 
 * Install [Firefox Beta][fxbeta]
