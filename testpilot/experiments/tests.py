@@ -10,6 +10,7 @@ from testfixtures import LogCapture
 
 from mozilla_cloud_services_logger.formatters import JsonLogFormatter
 
+from ..social.models import SocialMetadata
 from ..utils import gravatar_url, TestCase
 from ..users.models import UserProfile
 from .models import (Experiment, ExperimentTourStep, ExperimentNotification,
@@ -54,6 +55,15 @@ class BaseTestCase(TestCase):
                     introduction="<h1>Hello, Test!</h1>",
                     addon_id="addon-%s@example.com" % idx
                 )) for idx in range(1, 4)))
+
+        self.metadata = dict((obj.url, obj) for (obj, created) in (
+            SocialMetadata.objects.get_or_create(
+                url="/experiments/%s/" % exp.slug, defaults=dict(
+                    image_twitter="/twitter/%s.png" % exp.pk,
+                    image_facebook="/facebook/%s.png" % exp.pk,
+                    title=exp.title,
+                    description=exp.description
+                )) for exp in self.experiments.values()))
 
     def tearDown(self):
         self.handler.uninstall()

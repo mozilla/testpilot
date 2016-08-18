@@ -12,28 +12,48 @@
     <meta name="viewport" content="width=device-width">
     <link rel="localization" href="{{ settings.STATIC_URL }}locales/{locale}/app.ftl">
 
-    {% set meta_title = "Firefox Test Pilot" %}
-    {% set meta_description = "Test new Features. Give us feedback. Help build Firefox." %}
+    {% if social %}
+
+      <title>{{ social.title }}</title>
+      <meta name="description" content="{{ social.description }}" />
+
+      <meta property="og:description" content="{{ social.description }}" />
+      <meta property="og:image" content="{{ request.build_absolute_uri(social.image_facebook.url) }}" />
+      <meta property="og:title" content="{{ social.title }}" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:description" content="{{ social.description }}" />
+      <meta name="twitter:image" content="{{ request.build_absolute_uri(social.image_twitter.url) }}" />
+      <meta name="twitter:title" content="{{ social.title }}" />
+
+    {% else %}
+
+      {% set meta_title = "Firefox Test Pilot" %}
+      {% set meta_description = "Test new Features. Give us feedback. Help build Firefox." %}
+
+      <title>{{ meta_title }}</title>
+      <meta name="description" content="{{ meta_description }}" />
+
+      <meta property="og:description" content="{{ meta_description }}" />
+      <meta property="og:image" content="{{ request.build_absolute_uri(static('images/thumbnail-facebook.png')) }}" />
+      <meta property="og:title" content="{{ meta_title }}" />
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:description" content="{{ meta_description }}" />
+      <meta name="twitter:image" content="{{ request.build_absolute_uri(static('images/thumbnail-twitter.png')) }}" />
+      <meta name="twitter:title" content="{{ meta_title }}" />
+
+    {% endif %}
+
     {% set meta_url = request.build_absolute_uri() %}
 
-    <title>{{ meta_title }}</title>
-
     <link rel="canonical" href="{{ meta_url }}">
-    <meta name="description" content="{{ meta_description }}" />
 
-    <meta property="og:description" content="{{ meta_description }}" />
-    <meta property="og:image" content="{{ request.build_absolute_uri(static('images/thumbnail-facebook.png')) }}" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="{{ meta_title }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ meta_url }}" />
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:description" content="{{ meta_description }}" />
-    <meta name="twitter:image" content="{{ request.build_absolute_uri(static('images/thumbnail-twitter.png')) }}" />
     <meta name="twitter:site" content="@FxTestPilot" />
-    <meta name="twitter:title" content="{{ meta_title }}" />
-
 
 </head>
 <body class="blue">

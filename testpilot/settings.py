@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     'testpilot.frontend',
     'testpilot.users',
     'testpilot.experiments',
+    'testpilot.social',
 
     # Third party apps
     'django_jinja',
