@@ -1,8 +1,9 @@
 import app from 'ampersand-app';
 import cookies from 'js-cookie';
+import EmailDialogView from '../views/email-opt-in-dialog-view';
 
 
-export default function installAddon(view, eventCategory, callback) {
+function installAddon(view, eventCategory, callback) {
   const downloadUrl = '/static/addon/addon.xpi';
 
   view.query('[data-hook=install]').classList.add('state-change');
@@ -33,3 +34,13 @@ export default function installAddon(view, eventCategory, callback) {
     });
   }, 1000);
 }
+
+
+function postInstallModal(view) {
+  if (cookies.get('first-run')) {
+    cookies.remove('first-run');
+    view.renderSubview(new EmailDialogView({}), 'body');
+  }
+}
+
+export { installAddon as default, postInstallModal };
