@@ -670,5 +670,68 @@
     "language_code": "en-us",
     "copy_markup_type": "markdown"
   }
+},
+{
+  "pk": 1,
+  "model": "social.socialmetadatatranslation",
+  "fields": {
+    "title": "Activity Stream - Firefox Test Pilot",
+    "description": "Get back to browsing without losing your stream of thought. Activity Stream keeps your top sites, bookmarks and recent history close at hand in each new tab. And the new timeline view gives you a birds-eye view of your browsing.",
+    "language_code": "en-us",
+    "master": 1
+  }
+},
+{
+  "pk": 2,
+  "model": "social.socialmetadatatranslation",
+  "fields": {
+    "title": "Tab Center - Firefox Test Pilot",
+    "description": "Take your tabs from in the way to tucked away. Tab Center moves your tabs to the side of your browser window so they're out of sight when you don't need them, and easy to expand and grab when you do.",
+    "language_code": "en-us",
+    "master": 2
+  }
+},
+{
+  "pk": 3,
+  "model": "social.socialmetadatatranslation",
+  "fields": {
+    "title": "Universal Search - Firefox Test Pilot",
+    "description": "Get to the best of the Web faster with Universal Search. Just type a few characters into your Awesome Bar, and the most popular sites, people and Wikipedia articles will appear for your browsing pleasure.",
+    "language_code": "en-us",
+    "master": 3
+  }
+},
+{
+  "pk": 1,
+  "model": "social.socialmetadata",
+  "fields": {
+    "image_twitter": "demo/social_socialmetadata/9/a/9a70dacadbe5694245e18f28d2a90dd6_image_1471525869_0873.png",
+    "image_facebook": "demo/social_socialmetadata/f/d/fd3a727d067c2f73852321f63c052dff_image_1471525869_0686.png",
+    "modified": "2016-08-18T13:39:14.939Z",
+    "url": "/experiments/activity-stream",
+    "created": "2016-08-18T13:11:09.449Z"
+  }
+},
+{
+  "pk": 2,
+  "model": "social.socialmetadata",
+  "fields": {
+    "image_twitter": "demo/social_socialmetadata/4/3/43f36e9324f0e0efee9b2e9ef3b6ccad_image_1471527545_0795.jpg",
+    "image_facebook": "demo/social_socialmetadata/3/3/3353b0cb88ba74da49cd6116401f3316_image_1471527545_0962.jpg",
+    "modified": "2016-08-18T13:39:05.463Z",
+    "url": "/experiments/tab-center",
+    "created": "2016-08-18T13:39:05.462Z"
+  }
+},
+{
+  "pk": 3,
+  "model": "social.socialmetadata",
+  "fields": {
+    "image_twitter": "demo/social_socialmetadata/b/f/bfe323fb38ef23dc7e675ba57db05021_image_1471527770_0717.jpg",
+    "image_facebook": "demo/social_socialmetadata/e/4/e4daadc3e9dc3bc77ce9dc6a789b6c29_image_1471527770_0694.jpg",
+    "modified": "2016-08-18T13:42:50.221Z",
+    "url": "/experiments/universal-search",
+    "created": "2016-08-18T13:42:50.220Z"
+  }
 }
 ]
