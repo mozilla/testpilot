@@ -54,7 +54,7 @@ const App = Class({ // eslint-disable-line new-cap
   loadExperimentList: function() {
     const r = new Request({
       headers: { 'Accept': 'application/json' },
-      url: this.baseUrl + '/api/experiments',
+      url: this.baseUrl + '/api/experiments.json',
       contentType: 'application/json'
     });
     r.on(
@@ -63,7 +63,7 @@ const App = Class({ // eslint-disable-line new-cap
         if (res.status === 200) {
           this.experiments = {};
           for (let xp of res.json.results) { // eslint-disable-line prefer-const
-            this.experiments[xp.addon_id] = xp;
+            this.experiments[xp.addon_id] = this.preprocessExperiment(xp);
           }
           emit(this, 'loaded', this.experiments);
         } else {
@@ -72,6 +72,25 @@ const App = Class({ // eslint-disable-line new-cap
       }
     );
     r.get();
+  },
+  preprocessExperiment: function(experiment) {
+    const baseUrl = this.baseUrl;
+    const urlFields = {
+      '': ['thumbnail', 'url', 'html_url', 'installations_url', 'survey_url'],
+      details: ['image'],
+      tour_steps: ['image'],
+      contributors: ['avatar']
+    };
+    Object.keys(urlFields).forEach(key => {
+      const items = (key === '') ? [experiment] : experiment[key];
+      items.forEach(item => urlFields[key].forEach(field => {
+        // If the URL is not absolute, prepend the environment's base URL.
+        if (item[field].substr(0, 1) === '/') {
+          item[field] = baseUrl + item[field];
+        }
+      }));
+    });
+    return experiment;
   },
   hasAddonID: function(id) {
     return !!this.experiments[id];

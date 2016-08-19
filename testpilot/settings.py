@@ -56,6 +56,7 @@ if DEBUG:
     import mimetypes
     mimetypes.add_type("application/x-xpinstall", ".xpi", True)
     mimetypes.add_type("text/rdf", ".rdf", True)
+    mimetypes.add_type("application/json", ".json", True)
 
 # Credentials used to create the initial superuser account
 INITIAL_ADMIN_USERNAME = config('INITIAL_ADMIN_USERNAME', default=None)

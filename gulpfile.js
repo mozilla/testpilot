@@ -1,3 +1,6 @@
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
+
 const autoprefixer = require('gulp-autoprefixer');
 const babelify = require('babelify');
 const browserify = require('browserify');
@@ -24,11 +27,19 @@ const Remarkable = require('remarkable');
 const md = new Remarkable({
   html: true
 });
+const YAML = require('yamljs');
+const fs = require('fs');
+const mkdirp = require('mkdirp');
 
 const IS_DEBUG = (process.env.NODE_ENV === 'development');
 
 const SRC_PATH = './testpilot/frontend/static-src/';
 const DEST_PATH = './testpilot/frontend/static/';
+
+const CONTENT_SRC_PATH = 'content-src/experiments';
+const PRODUCTION_EXPERIMENTS_URL = 'https://testpilot.firefox.com/api/experiments';
+const IMAGE_NEW_BASE_PATH = 'testpilot/frontend/static-src/images/experiments/';
+const IMAGE_NEW_BASE_URL = '/static/images/experiments/';
 
 const config = tryRequire('./debug-config.json') || {
   'sass-lint': true,
@@ -175,6 +186,132 @@ gulp.task('addon', function localesTask() {
     .pipe(gulp.dest(DEST_PATH + 'addon'));
 });
 
+gulp.task('import-api-content', function importContentTask(done) {
+  fetch(PRODUCTION_EXPERIMENTS_URL)
+    .then(response => response.json())
+    .then(data => Promise.all(data.results.map(processImportedExperiment)))
+    .then(() => done())
+    .catch(done);
+});
+
+function processImportedExperiment(experiment) {
+  // Clean up auto-generated and unused model fields.
+  const fieldsToDelete = {
+    '': ['url', 'html_url', 'installations_url', 'survey_url'],
+    details: ['order', 'url', 'experiment_url'],
+    tour_steps: ['order', 'experiment_url'],
+    contributors: ['username']
+  };
+  Object.keys(fieldsToDelete).forEach(key => {
+    const items = (key === '') ? [experiment] : experiment[key];
+    const fields = fieldsToDelete[key];
+    items.forEach(item => fields.forEach(field => delete item[field]));
+  });
+
+  // Download all the images associated with the experiment.
+  const imageFields = {
+    '': ['thumbnail'],
+    details: ['image'],
+    tour_steps: ['image'],
+    contributors: ['avatar']
+  };
+  const toDownload = [];
+  Object.keys(imageFields).forEach(key => {
+    const items = (key === '') ? [experiment] : experiment[key];
+    const fields = imageFields[key];
+    items.forEach(item => fields.forEach(field => {
+      // Grab the original image URL
+      const origURL = item[field];
+
+      // Chop off the protocol & domain, convert gravatar param to .jpg
+      const path = origURL.split('/').slice(3).join('/').replace('?s=64', '.jpg');
+
+      // Now build a new file path and URL for the image
+      const newPath = `${IMAGE_NEW_BASE_PATH}${experiment.slug}/${path}`;
+      const newURL = `${IMAGE_NEW_BASE_URL}${experiment.slug}/${path}`;
+
+      // Replace the old URL with new static URL
+      item[field] = newURL;
+
+      // Schedule the old URL for download at the new path.
+      toDownload.push({url: origURL, path: newPath});
+    }));
+  });
+
+  // Download all the images, then write the YAML.
+  return Promise.all(toDownload.map(downloadURL))
+    .then(() => writeExperimentYAML(experiment));
+}
+
+// Write file contents after first ensuring the parent directory exists.
+function writeFile(path, content) {
+  const parentDir = path.split('/').slice(0, -1).join('/');
+  return new Promise((resolve, reject) => {
+    mkdirp(parentDir, dirErr => {
+      if (dirErr) { return reject(dirErr); }
+      fs.writeFile(path, content, err => err ? reject(err) : resolve(path));
+    });
+  });
+}
+
+function downloadURL(item) {
+  const {url, path} = item;
+  return fetch(url)
+    .then(res => res.buffer())
+    .then(resBuffer => writeFile(path, resBuffer))
+    .then(() => {
+      if (IS_DEBUG) { console.log('Downloaded', url, 'to', path); }
+    });
+}
+
+function writeExperimentYAML(experiment) {
+  const out = YAML.stringify(experiment, 4, 2);
+  const path = `${CONTENT_SRC_PATH}/${experiment.slug}.yaml`;
+  if (IS_DEBUG) { console.log(`Generated ${path}`); }
+  return writeFile(path, out);
+}
+
+gulp.task('experiments-json', function generateStaticAPITask() {
+  return gulp.src(CONTENT_SRC_PATH + '/*.yaml')
+    .pipe(buildExperimentsJSON('experiments'))
+    .pipe(gulp.dest(DEST_PATH + 'api'));
+});
+
+function buildExperimentsJSON(path) {
+  const index = {results: []};
+
+  function collectEntry(file, enc, cb) {
+    const yamlData = file.contents.toString();
+    const experiment = YAML.parse(yamlData);
+
+    // Auto-generate some derivative API values expected by the frontend.
+    Object.assign(experiment, {
+      url: `/api/experiments/${experiment.id}.json`,
+      html_url: `/experiments/${experiment.slug}`,
+      installations_url: `/api/experiments/${experiment.id}/installations/`,
+      survey_url: `https://qsurvey.mozilla.com/s3/${experiment.slug}`
+    });
+
+    this.push(new gutil.File({
+      path: `${path}/${experiment.id}.json`,
+      contents: new Buffer(JSON.stringify(experiment, null, 2))
+    }));
+
+    index.results.push(experiment);
+    cb();
+  }
+
+  function endStream(cb) {
+    this.push(new gutil.File({
+      path: `${path}.json`,
+      contents: new Buffer(JSON.stringify(index, null, 2))
+    }));
+    cb();
+  }
+
+  return through.obj(collectEntry, endStream);
+}
+
 gulp.task('build', function buildTask(done) {
   runSequence(
     'clean',
@@ -186,6 +323,7 @@ gulp.task('build', function buildTask(done) {
     'locales',
     'addon',
     'legal',
+    'experiments-json',
     done
   );
 });
@@ -199,6 +337,7 @@ gulp.task('watch', ['build'], function watchTask() {
   gulp.watch(SRC_PATH + 'addon/**/*', ['addon']);
   gulp.watch(['./legal-copy/*.md', './legal-copy/*.js'], ['legal']);
   gulp.watch('./locales/**/*', ['locales']);
+  gulp.watch(CONTENT_SRC_PATH + '/*.yaml', ['experiments-json']);
   gulp.watch('gulpfile.js', () => process.exit());
 });
 

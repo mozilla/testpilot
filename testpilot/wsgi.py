@@ -24,6 +24,8 @@ class OurWhiteNoise(DjangoWhiteNoise):
             headers['Content-Type'] = 'application/x-xpinstall'
         if fnmatch.fnmatch(url, '*.rdf'):
             headers['Content-Type'] = 'text/rdf'
+        if fnmatch.fnmatch(url, '*.json'):
+            headers['Content-Type'] = 'application/json'
 
 application = get_wsgi_application()
 application = OurWhiteNoise(application)

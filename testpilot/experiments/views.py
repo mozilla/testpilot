@@ -5,6 +5,9 @@ from rest_framework.decorators import (detail_route, permission_classes,
                                        api_view)
 
 from django.shortcuts import get_object_or_404
+from django.contrib.staticfiles.views import serve
+
+import waffle
 
 from .models import (Experiment, ExperimentDetail, UserInstallation)
 from .serializers import (ExperimentSerializer,
@@ -26,9 +29,22 @@ class ExperimentViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         return Experiment.objects.language().fallbacks('en')
 
+    def list(self, request, *args, **kwargs):
+        # Switch between static experiments JSON or dynamic API data based on
+        # waffle flag static_experiments_json
+        if waffle.flag_is_active(request, 'static_experiments_json'):
+            return serve(request, path='api/experiments.json')
+
+        return super(ExperimentViewSet, self).list(request, *args, **kwargs)
+
     def retrieve(self, request, *args, **kwargs):
         """Use the deep serializer for individual retrieval, which includes
         ExperimentDetail items"""
+        # Switch between static experiments JSON or dynamic API data based on
+        # waffle flag static_experiments_json
+        if waffle.flag_is_active(request, 'static_experiments_json'):
+            return serve(request, path='api/experiments/%s.json' % kwargs['pk'])
+
         instance = self.get_object()
         serializer = ExperimentSerializer(
             instance, context=self.get_serializer_context())

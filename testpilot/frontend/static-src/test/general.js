@@ -15,12 +15,14 @@ test('Each image in images directory has a retina version', (t) => {
     const origFiles = files.filter((f) => {
       return (!~f.indexOf('favicon.ico') &&
               !~f.indexOf('svg') &&
+              f !== 'experiments' &&
               f !== 'thumbnail-facebook.png' &&
               f !== 'thumbnail-twitter.png');
     });
 
     const retinaFiles = files.filter((f) => {
-      return !!~f.indexOf('@2x');
+      return !!~f.indexOf('@2x') &&
+             f !== 'experiments';
     });
 
     t.same(retinaFiles.length, origFiles.length / 2);
