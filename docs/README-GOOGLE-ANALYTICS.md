@@ -71,6 +71,8 @@ Here are the current events on the website as of this writing
 | Click on Install from landing page                       | HomePage Interactions              | button click      | Install the Add-on           |
 | Click on experiment from landing page                    | HomePage Interactions              | Open details page | `{experiment title}`         |
 | Click take survey after Leave                            | RetirePage Interactions            | button click      | take survey                  |
+| Click on Twitter link in footer                          | FooterView Interactions            | social link clicked      | Twitter       |
+| Click on GitHub link in footer                           | FooterView Interactions            | social link clicked      | GitHub        |
 
 # Pageviews
 
