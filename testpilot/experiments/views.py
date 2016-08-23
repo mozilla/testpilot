@@ -1,11 +1,14 @@
+import json
+
 from rest_framework import viewsets, status
-from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-from rest_framework.decorators import (detail_route, permission_classes,
-                                       api_view)
+from rest_framework.decorators import detail_route
 
 from django.shortcuts import get_object_or_404
 from django.contrib.staticfiles.views import serve
+
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 import waffle
 
@@ -60,8 +63,7 @@ class ExperimentViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
 
-@api_view(['GET', 'PUT', 'DELETE'])
-@permission_classes([AllowAny])
+@csrf_exempt
 def installation_detail(request, experiment_pk, client_id):
     experiment = get_object_or_404(Experiment, pk=experiment_pk)
 
@@ -80,10 +82,10 @@ def installation_detail(request, experiment_pk, client_id):
 
     if 'DELETE' == request.method:
         installation.delete()
-        return Response({}, status=status.HTTP_410_GONE)
+        return HttpResponse('{}', status=status.HTTP_410_GONE)
 
-    return Response(UserInstallationSerializer(
-        installation, context={'request': request}).data)
+    return HttpResponse(json.dumps(UserInstallationSerializer(
+        installation, context={'request': request}).data))
 
 
 class ExperimentDetailViewSet(viewsets.ModelViewSet):
