@@ -1,4 +1,9 @@
 .settings-contain {
+  @include respond-to('not-small') {
+    display: block;
+  }
+
+  display: none;
   position: relative;
 }
 

@@ -49,16 +49,15 @@
     }
 
     p {
-      @include respond-to('big') {
+      @include respond-to('not-small') {
         font-size: $font-unit * 2.3;
         line-height: $line-unit * 2.3;
         max-width: $grid-unit * 25;
       }
 
-      @include respond-to('medium') {
+      @include respond-to('small') {
         font-size: $font-unit * 1.6;
         line-height: $line-unit * 1.6;
-        max-width: $grid-unit * 19.5;
       }
 
       margin: 0;

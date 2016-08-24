@@ -8,15 +8,23 @@
     }
   }
 
-  &.stick {
-    background: $transparent-white-96;
-    box-shadow: 0 0 5px $transparent-black-5;
-    left: 0;
-    padding-top: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 999;
+  @include respond-to('not-small') {
+    &.stick {
+      background: $transparent-white-96;
+      box-shadow: 0 0 5px $transparent-black-5;
+      left: 0;
+      padding-top: 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+    }
+  }
+}
+
+@include respond-to('small') {
+  .sticky-header-sibling {
+    display: none;
   }
 }
 
@@ -46,7 +54,11 @@
 }
 
 .experiment-controls {
-  @include flex-container(row, flex-end, center);
+  @include respond-to('not-small') {
+    @include flex-container(row, flex-end, center);
+  }
+
+  display: none;
   flex: 1;
   position: relative;
   transition: top 200ms;
@@ -69,8 +81,12 @@
 }
 
 .details-header {
+  @include respond-to('not-small') {
+    height: $grid-unit * 4.5;
+    margin-bottom: 0;
+  }
   @include flex-container(row, space-between, center);
-  height: $grid-unit * 4.5;
+  margin-bottom: $grid-unit;
   position: relative;
 
   h1 {
@@ -102,7 +118,11 @@
 
 
 .details-content {
-  @include flex-container(row, space-between, flex-start);
+  @include flex-container(column, space-between, stretch);
+
+  @include respond-to('not-small') {
+    flex-direction: row;
+  }
 }
 
 .details-overview {
@@ -124,15 +144,6 @@
     img {
       height: auto;
       width: $grid-unit * 32;
-    }
-  }
-
-  @include respond-to('medium') {
-    flex: 0 0 $grid-unit * 22;
-
-    img {
-      height: auto;
-      width: $grid-unit * 22;
     }
   }
 
@@ -266,14 +277,52 @@
   margin-bottom: $grid-unit * 1.5;
 
   img {
+    @include respond-to('not-small') {
+      max-width: auto;
+    }
+
     border-radius: 3px;
+    max-width: 100%;
     overflow: hidden;
   }
 
   .caption {
     color: $transparent-black-7;
     font-size: $font-unit;
+    line-height: $font-unit * 1.5;
     margin-top: $grid-unit * .5;
     padding: 0 $grid-unit * .25;
+  }
+}
+
+.contributors-section,
+.stats-section,
+.measurements {
+  @include respond-to('not-small') {
+    display: block;
+  }
+
+  display: none;
+}
+
+@include respond-to('small') {
+  [data-hook='experiment-page'] {
+    .card-list {
+      margin: 0 0 $grid-unit;
+    }
+
+    .experiment-summary:last-child {
+      margin-bottom: 0;
+    }
+
+    .card-list-header {
+      font-size: $font-unit * 1.5;
+      line-height: $font-unit * 2;
+      margin: ($grid-unit * 1.5) 0;
+    }
+
+    #footer-links {
+      padding-top: 0;
+    }
   }
 }
