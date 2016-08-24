@@ -17,14 +17,13 @@ function installAddon(view, eventCategory, callback) {
     outboundURL: downloadUrl
   });
 
-  cookies.set('first-run', 'true');
-
   // Wait for the add-on to be installed.
   // TODO: Should we have a timeout here, give up after a few intervals? If
   // user cancels add-on install, this will never stop spinning.
   const interval = setInterval(() => {
     if (!window.navigator.testpilotAddon) { return; }
     clearInterval(interval);
+    cookies.set('first-run', 'true');
     app.me.fetch().then(() => {
       callback();
     }).catch(() => {
