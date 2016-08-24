@@ -1,0 +1,87 @@
+id: 2
+title: 'Activity Stream'
+short_title: ""
+slug: activity-stream
+thumbnail: /static/images/experiments/activity-stream/experiments_experiment/e/1/e19739ea25188c866b654d3aa2616b27_thumbnail_1461817294_0590.png
+description: 'A rich visual history feed and a reimagined home page make it easier than ever to find exactly what you''re looking for in Firefox.'
+introduction: '<p>Get back to browsing without losing your stream of thought. Activity Stream keeps your top sites, bookmarks and recent history close at hand in each new tab. And the new timeline view gives you a birds-eye view of your browsing.</p>'
+version: 1.1.1
+changelog_url: 'https://github.com/mozilla/activity-stream/blob/master/CHANGELOG.md'
+contribute_url: 'https://github.com/mozilla/activity-stream'
+bug_report_url: 'https://github.com/mozilla/activity-stream/issues'
+discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/activity-stream'
+privacy_notice_url: 'https://github.com/mozilla/activity-stream/blob/master/data_dictionary.md'
+measurements: "<p>In addition to the <a href=\"/privacy\">data</a> collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use Activity Stream:</p>\n<ul>\n<li>We collect basic usage data regarding how you interact with experimental new tab and timeline pages, such as the types of elements that you click and their position on the page. </li>\n<li>We also collect basic information about your browser profile that affect Activity Stream, such as the number of bookmarks and history items.</li>\n<li>To provide Activity Stream, we fetch metadata about websites you have visited, such as images and icons, using a service called <a href=\"http://embed.ly/\">Embedly</a>. We send these requests to Embedly through Mozilla’s servers, so they will not be associated with you.</li>\n</ul>"
+xpi_url: 'https://moz-activity-streams.s3.amazonaws.com/dist/activity-streams-latest.xpi'
+addon_id: '@activity-streams'
+gradient_start: '#0996F8'
+gradient_stop: '#0675D3'
+details:
+  -
+    headline: ' '
+    image: /static/images/experiments/activity-stream/experiments_experimentdetail/1/6/16f2bfb82c63c38573005923f4e08457_image_1462827231_0751.png
+    copy: 'Click on a new tab, and your favorite sites are only one more click away.'
+  -
+    headline: ' '
+    image: /static/images/experiments/activity-stream/experiments_experimentdetail/6/7/67858740793232e7a71f86b4ef272b67_image_1462827231_0657.png
+    copy: 'See where you''ve been, so you can get on to where you''re going.'
+tour_steps:
+  -
+    image: /static/images/experiments/activity-stream/experiments_experimenttourstep/b/d/bd3d603ab46949ccb2f98c77f16d9be3_image_1462827230_0789.jpg
+    copy: '<p>Find your top sites, recent history, and bookmarks when you open a new tab.</p>'
+  -
+    image: /static/images/experiments/activity-stream/experiments_experimenttourstep/5/7/57b8ba146994300a54ba1528efc30bf5_image_1462827230_0948.jpg
+    copy: '<p>Visit the new timeline view to visually browse all your history and bookmarks.</p>'
+  -
+    image: /static/images/experiments/activity-stream/experiments_experimenttourstep/1/d/1d414ba2fc88a188b6f74ea79de908e9_image_1462827231_0841.jpg
+    copy: '<p>You can always give us feedback or disable Activity Stream from Test Pilot.</p>'
+notifications: []
+contributors:
+  -
+    display_name: 'Kate Hudson'
+    title: 'Software Engineer'
+    avatar: /static/images/experiments/activity-stream/avatar/30c0f54f30fc6a201e3f5ddaa5bc5974.jpg
+  -
+    display_name: 'Ricky Rosario'
+    title: 'Web Engineer'
+    avatar: /static/images/experiments/activity-stream/avatar/00e30f0c3219349c80f3ff7aacc9d34a.jpg
+  -
+    display_name: 'Nan Jiang'
+    title: 'Software Developer'
+    avatar: /static/images/experiments/activity-stream/users_userprofile/c/e/ce9c9213860579b1dbcf04bf257ebaa9_avatar_1462469423_0340.jpg
+  -
+    display_name: 'Ursula Sarracini'
+    title: 'Desktop Firefox Engineer'
+    avatar: /static/images/experiments/activity-stream/users_userprofile/5/6/56b1ee60e94e3442cf46f203a0085a7d_avatar_1462906182_0496.jpg
+  -
+    display_name: 'Marina Samuel'
+    title: 'Software Engineer'
+    avatar: /static/images/experiments/activity-stream/users_userprofile/9/f/9f2e4e613ab07edbb5bd056e8e74b8c7_avatar_1462906230_0044.jpg
+  -
+    display_name: 'Edwin Wong'
+    title: 'Technical Program Manager'
+    avatar: /static/images/experiments/activity-stream/avatar/0a68a9039e9ddfcc53515773bf307c79.jpg
+  -
+    display_name: 'Jared Kerim'
+    title: 'Cloud Services Engineer'
+    avatar: /static/images/experiments/activity-stream/avatar/e391802eca863fd5e39e5f6b1cd58782.jpg
+  -
+    display_name: 'Nick Chapman'
+    title: 'Product Manager'
+    avatar: /static/images/experiments/activity-stream/avatar/ac5c05c838da3586f9eda1c7712dde9a.jpg
+  -
+    display_name: 'Tim Spurway'
+    title: 'Engineering Manager'
+    avatar: /static/images/experiments/activity-stream/users_userprofile/e/d/ed09636a6ea24a292460866afdd7a89a_avatar_1462468431_0037.jpg
+  -
+    display_name: 'Olivier Yiptong'
+    title: 'Software Engineer'
+    avatar: /static/images/experiments/activity-stream/users_userprofile/2/8/28ffb6f4b3eb69a177f36fc765f29fc1_avatar_1462469208_0403.jpeg
+  -
+    display_name: 'Bryan Bell'
+    title: 'Senior UX Designer'
+    avatar: /static/images/experiments/activity-stream/avatar/4aed85ee04a60538bbbfba66a5b59396.jpg
+installation_count: 41706
+created: '2016-03-11T21:05:59.363520Z'
+modified: '2016-08-03T17:26:52.921717Z'
+order: 1
