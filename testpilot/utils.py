@@ -191,3 +191,14 @@ class TestCase(django.test.TestCase):
         url = reverse(url_name, kwargs=kwargs)
         resp = self.client.get(url)
         return json.loads(str(resp.content, encoding='utf8'))
+
+
+def cleanup_nonstaff_users(User, experiments):
+    # First, ensure all experiment contributors are marked as staff
+    for experiment in experiments:
+        for user in experiment.contributors.all():
+            user.is_staff = True
+            user.save()
+
+    # Now, delete all users who aren't staff or superusers
+    User.objects.exclude(is_staff=True).exclude(is_superuser=True).delete()
