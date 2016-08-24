@@ -1,13 +1,13 @@
-2016 Test Pilot KPIs
-====================
+[👈 Back to README](../../README.md)
 
-# Overview
+# 2016 Test Pilot KPIs
 
 In 2016, Test Pilot's success will be defined by building a community which
 actively participates in testing ideas in Firefox.  Key metrics are documented
 below, however other metrics are recorded and analyzed.
 
-![Metrics flows](metrics-flows.png)
+![Metrics flows](../img/metrics-flows.png)
+
 
 ## Engagement Ratio
 
@@ -30,7 +30,8 @@ A daily active user will be defined as any user, using their browser that day,
 with at least one experiment currently enabled in their browser.  This means only
 having the Test Pilot extension installed will *not* count as an active user.
 
-![](metrics-engagement-ratio.png)
+![](../img/metrics-engagement-ratio.png)
+
 
 ## Engagement Breakdown
 
@@ -45,7 +46,8 @@ experiments enabled.
 
 Below is a mockup of what that could look like.
 
-![](metrics-engagement-breakdown.png)
+![](../img/metrics-engagement-breakdown.png)
+
 
 ## Service Health
 
@@ -55,14 +57,16 @@ health measures will be the number of experiments installed over time and the
 count of user feedback recorded over time.  These will allow us to quickly see
 disruptions in service regardless of cause.
 
-![](metrics-feedback-recorded.png)
-![](metrics-total-installs.png)
+![](../img/metrics-feedback-recorded.png)
+![](../img/metrics-total-installs.png)
 
-# Data Collection Details
+
+## Data Collection Details
 
 There are two sources for metrics data - the server and the client.
 
-## Server-side events
+
+### Server-side events
 
 **The server** will use server logs to store metric data which will be picked
 up by the measurement team ([some docs][3]), parsed and transformed if
@@ -145,7 +149,7 @@ local schema = {
 }
 ```
 
-## Client-side Telemetry
+### Client-side Telemetry
 
 The second source, **the client**, will use the existing Telemetry system (the
 system we use for measuring all kinds of things in Firefox, [see examples][5])
@@ -156,7 +160,7 @@ client pings will adhere to the [common ping format][7], will include the
 clientId and [environment][8].  There will be two Telemetry ping types,
 `testpilot` and `testpilottest`.
 
-### `testpilot` summary ping
+#### `testpilot` summary ping
 
 The `testpilot` ping type is an event-driven ping (meaning, it fires when an
 event happens).  The format allows for batching of events submitted
@@ -191,7 +195,7 @@ An example payload (within the full ping) would look like:
 }
 ```
 
-### Per-experiment `testpilottest` ping
+#### Per-experiment `testpilottest` ping
 
 The `testpilottest` type has a light wrapper around a second payload which is
 defined by each individual experiment.  The second payload's schema will be

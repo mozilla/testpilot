@@ -1,14 +1,12 @@
-# Overview
+[👈 Back to README](../../README.md)
 
-This document tracks everything needed for new feature measurements.
-
-# Features
+# Measuring new features
 
 Our features are tracked in a Test Pilot Trello board [ https://trello.com/b/TjEN1biU/test-pilot ].
 
 Each card represents a feature along with UX and acceptance criteria.
 
-# Formulate the question
+## Formulate the question
 
 The feature card must include a metrics question or questions we are attempting to answer based on the acceptance criteria
 
@@ -17,7 +15,7 @@ Example from https://trello.com/c/4PNAwpwQ/3-new-experiment-add-on-ui
 - It should measure the engagement rate of the badged vs. unbadged toolbar icon
 - it should measure experiment enables from clicks on the new experiment UI in the add-on doorhanger
 
-# Create (a) measurement issue(s) for the feature that's part of the milestone.
+## Create (a) measurement issue(s) for the feature that's part of the milestone.
 
 - Are we using Telemetry or GA or a combination of both?
 - See below for specifications on requesting Telemetry and GA.
@@ -25,13 +23,13 @@ Example from https://trello.com/c/4PNAwpwQ/3-new-experiment-add-on-ui
 - Should we just create an issue for this right away?
 - Do we need a new dashboard/report for results? This is re:dash or GA.
 
-# Telemetry
+## Telemetry
 
 All measurements from within the add-on are done with Telemetry.
 
 Example: TODO: come up with an example.
 
-# Google Analytics
+## Google Analytics
 
 https://github.com/mozilla/testpilot/blob/master/docs/README-GOOGLE-ANALYTICS.md
 
@@ -50,6 +48,6 @@ After push to production, notify Gareth when it goes live so he can confirm it i
 
 An aside, but if you want to put GA inside of an add-on, Google Analytics in Firefox addons would use this: https://developers.google.com/analytics/devguides/collection/protocol/v1/
 
-# Dashboarding
+## Dashboarding
 
 Dashboarding is done in re:dash or Google Analytics custom reports.
