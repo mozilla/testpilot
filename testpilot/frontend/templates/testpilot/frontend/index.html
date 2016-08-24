@@ -12,29 +12,41 @@
     <meta name="viewport" content="width=device-width">
     <link rel="localization" href="{{ settings.STATIC_URL }}locales/{locale}/app.ftl">
 
-    {% set meta_title = "Firefox Test Pilot" %}
-    {% set meta_description = "Test new Features. Give us feedback. Help build Firefox." %}
     {% set meta_url = request.build_absolute_uri() %}
-
-    <title>{{ meta_title }}</title>
-
     <link rel="canonical" href="{{ meta_url }}">
-    <meta name="description" content="{{ meta_description }}" />
 
-    <meta property="og:description" content="{{ meta_description }}" />
-    <meta property="og:image" content="{{ request.build_absolute_uri(static('images/thumbnail-facebook.png')) }}" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="{{ meta_title }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ meta_url }}" />
+    {% if experiment %}
+        {% set prefix = "Firefox Test Pilot - " %}
+        <title>{{ prefix }}{{ experiment.title }}</title>
+        <meta property="og:title" content="{{ prefix }}{{ experiment.title }}" />
+        <meta name="twitter:title" content="{{ prefix }}{{ experiment.title }}" />
+        <meta name="description" content="{{ experiment.description }}" />
+        <meta property="og:description" content="{{ experiment.description }}" />
+        <meta name="twitter:description" content="{{ experiment.description }}" />
+        <meta name="twitter:card" content="summary_large_image" />
+    {% else %}
+        {% set meta_title = "Firefox Test Pilot" %}
+        {% set meta_description = "Test new Features. Give us feedback. Help build Firefox." %}
+        <title>{{ meta_title }}</title>
+        <meta property="og:title" content="{{ meta_title }}" />
+        <meta name="twitter:title" content="{{ meta_title }}" />
+        <meta name="description" content="{{ meta_description }}" />
+        <meta property="og:description" content="{{ meta_description }}" />
+        <meta name="twitter:description" content="{{ meta_description }}" />
+        <meta name="twitter:card" content="summary" />
+    {% endif %}
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:description" content="{{ meta_description }}" />
-    <meta name="twitter:image" content="{{ request.build_absolute_uri(static('images/thumbnail-twitter.png')) }}" />
-    <meta name="twitter:site" content="@FxTestPilot" />
-    <meta name="twitter:title" content="{{ meta_title }}" />
+    {% if experiment.image_facebook %}
+        <meta property="og:image" content="{{ request.build_absolute_uri(experiment.image_facebook.url) }}" />
+    {% else %}
+        <meta property="og:image" content="{{ request.build_absolute_uri(static('images/thumbnail-facebook.png')) }}" />
+    {% endif %}
 
-
+    {% if experiment.image_twitter %}
+        <meta name="twitter:image" content="{{ request.build_absolute_uri(experiment.image_twitter.url) }}" />
+    {% else %}
+        <meta name="twitter:image" content="{{ request.build_absolute_uri(static('images/thumbnail-twitter.png')) }}" />
+    {% endif %}
 </head>
 <body class="blue">
   <div class="stars"></div>

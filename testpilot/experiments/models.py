@@ -1,3 +1,5 @@
+import re
+
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.functional import cached_property
@@ -11,7 +13,9 @@ from hvad.manager import TranslationManager
 from ..utils import HashedUploadTo
 
 
+experiment_facebook_upload_to = HashedUploadTo('image')
 experiment_thumbnail_upload_to = HashedUploadTo('thumbnail')
+experiment_twitter_upload_to = HashedUploadTo('image')
 experimentdetail_image_upload_to = HashedUploadTo('image')
 experimenttourstep_image_upload_to = HashedUploadTo('image')
 
@@ -20,6 +24,20 @@ class ExperimentManager(TranslationManager):
 
     def get_by_natural_key(self, slug):
         return self.get(slug=slug)
+
+    def for_request(self, request):
+        """
+        Return a model instance for the object corresponding to the passed
+        request object's path, with stripped trailing slashes. Returns None if
+        no object is found.
+        """
+        match = re.match(r'\/experiments\/([^\/]+)', request.path)
+        if match:
+            try:
+                return self.get(slug=match.groups()[0])
+            except self.model.DoesNotExist:
+                return None
+        return None
 
 
 class Experiment(TranslatableModel):
@@ -53,6 +71,12 @@ class Experiment(TranslatableModel):
     gradient_stop = ColorField(default='#4cffa8')
 
     contributors = models.ManyToManyField(User, related_name='contributor')
+
+    image_twitter = models.ImageField(upload_to=experiment_twitter_upload_to,
+                                      help_text='560x300', null=True)
+    image_facebook = models.ImageField(upload_to=experiment_facebook_upload_to,
+                                       help_text='1200x1200, crop to 1200x630',
+                                       null=True)
 
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
