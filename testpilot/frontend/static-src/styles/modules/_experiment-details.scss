@@ -153,6 +153,14 @@
   }
 }
 
+.eol-block {
+  padding: 10px !important;
+  border-radius: 3px;
+  background: $eol-light-orange;
+  border: 1px solid $eol-orange;
+  margin-bottom: 20px;
+}
+
 .details-sections {
 
   section {

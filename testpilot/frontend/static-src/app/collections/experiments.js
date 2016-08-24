@@ -6,7 +6,7 @@ import Experiment from '../models/experiment';
 export default Collection.extend({
   model: Experiment,
   indexes: ['slug'],
-  url: '/api/experiments',
+  url: '/api/experiments.json',
   comparator: 'order',
 
   // Ampersand.sync doesn't seem to pass correct Accept headers by default.

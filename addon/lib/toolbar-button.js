@@ -19,7 +19,9 @@ const FOOTER_HEIGHT = 50;
 const EXPERIMENT_HEIGHT = 80;
 const NEW_BADGE_LABEL = 'New';
 
-const NEW_EXPERIMENT_PERIOD = 14 * 24 * 60 * 60 * 1000; // 2 weeks
+const ONE_DAY = 24 * 60 * 60 * 1000;
+const ONE_WEEK = 7 * ONE_DAY;
+const NEW_EXPERIMENT_PERIOD = 2 * ONE_WEEK;
 
 let settings;
 let button;
@@ -36,6 +38,22 @@ function getExperimentList(availableExperiments, installedAddons) {
     const created = (new Date(experiment.created)).getTime();
     experiment.isNew = (now - created) < NEW_EXPERIMENT_PERIOD && !experiment.active;
     experiment.params = getParams();
+
+    if (experiment.completed) {
+      const completed = (new Date(experiment.completed)).getTime();
+      const delta = completed - Date.now();
+      if (delta < 0) {
+        experiment.eolMessage = 'Experiment Complete';
+      } else if (delta < ONE_DAY) {
+        experiment.eolMessage = 'Ending Tomorrow';
+      } else if (delta < ONE_WEEK) {
+        experiment.eolMessage = 'Ending Soon';
+      }
+      if (experiment.eolMessage) {
+        experiment.showEol = true;
+        experiment.hideActive = true;
+      }
+    }
     return experiment;
   });
 

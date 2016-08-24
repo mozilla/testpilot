@@ -12,6 +12,7 @@ import DisableDialogView from './disable-dialog-view';
 import ExperimentListView from './experiment-list-view';
 import ExperimentTourDialogView from './experiment-tour-dialog-view';
 import TestpilotPromoView from './testpilot-promo-view';
+import EolView from './eol-view';
 
 function changeHeaderOn() {
   const mainHeader = document.getElementById('main-header');
@@ -251,6 +252,13 @@ export default PageView.extend({
         except: this.model.slug,
         eventCategory: 'ExperimentsDetailPage Interactions'
       }), '[data-hook="experiment-list"]');
+    }
+
+    if (this.model.completed) {
+      this.renderSubview(new EolView({
+        completedDate: new Date(this.model.completed).toLocaleDateString(),
+        title: this.model.title
+      }), '[data-hook="eol-message"]');
     }
 
     postInstallModal(this);

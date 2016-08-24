@@ -2,8 +2,10 @@ import app from 'ampersand-app';
 
 import BaseView from './base-view';
 
-const MAX_JUST_LAUNCHED_PERIOD = 14 * 24 * 60 * 60 * 1000; // 2 weeks
-const MAX_JUST_UPDATED_PERIOD = 14 * 24 * 60 * 60 * 1000; // 2 weeks
+const ONE_DAY = 24 * 60 * 60 * 1000;
+const ONE_WEEK = 7 * ONE_DAY;
+const MAX_JUST_LAUNCHED_PERIOD = 2 * ONE_WEEK;
+const MAX_JUST_UPDATED_PERIOD = 2 * ONE_WEEK;
 
 export default BaseView.extend({
   template: `<div data-hook="show-detail" class="experiment-summary">
@@ -19,6 +21,7 @@ export default BaseView.extend({
                 <header>
                   <h3 data-hook="title"></h3>
                   <h4 data-hook="subtitle" class="subtitle"></h4>
+                  <h4 data-hook="status-msg" class="eol-message"></h4>
                 </header>
                 <p data-hook="description"></p>
                 <span class="participant-count" data-l10n-id="participantCount"</span>
@@ -64,6 +67,22 @@ export default BaseView.extend({
 
         // All else fails, don't consider it launched.
         return false;
+      }
+    },
+    statusMsg: {
+      deps: ['model.completed'],
+      fn: function() {
+        if (this.model.completed) {
+          const delta = (new Date(this.model.completed)).getTime() - Date.now();
+          if (delta < 0) {
+            return '';
+          } else if (delta < ONE_DAY) {
+            return 'Ending Tomorrow';
+          } else if (delta < ONE_WEEK) {
+            return 'Ending Soon';
+          }
+        }
+        return '';
       }
     }
   },
@@ -128,6 +147,10 @@ export default BaseView.extend({
       type: 'toggle',
       hook: 'just-updated-tab'
     }],
+    'statusMsg': {
+      type: 'text',
+      hook: 'status-msg'
+    },
     'hasAddon': {
       type: 'booleanClass',
       hook: 'show-detail',

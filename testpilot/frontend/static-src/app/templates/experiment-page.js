@@ -84,6 +84,7 @@ export default `
             </div>
 
             <div class="details-description">
+              <div data-hook="eol-message"></div>
               <div data-hook="active-user">
                 <section data-hook="introduction-container" class="introduction">
                   <div data-hook="introduction-html"></div>

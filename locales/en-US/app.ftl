@@ -141,6 +141,8 @@ shareSecondary = or just copy and paste this link...
 shareEmail = E-mail
 shareCopy = Copy
 
+eolMessage = <strong>This experiment is ending on {$completedDate}</strong>.<br/><br/>After then you will still be able to use {$title} but we will no longer be providing updates or support.
+
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage
