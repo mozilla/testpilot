@@ -13,8 +13,9 @@ module.exports.experimentList = `
         <div class="icon" style="background-image:url('{{thumbnail}}');"></div>
       </div>
       <div class="experiment-title">{{title}}
-        <span class="active-span {{#active}}visible{{/active}}">Enabled</span>
-        <span class="is-new-span {{#isNew}}visible{{/isNew}}">New Experiment</span>
+        <span class="active-span" style="{{#hideActive}}display:none;{{/hideActive}}">Enabled</span>
+        <span class="is-new-span">New Experiment</span>
+        <span class="eol-span {{#showEol}}visible{{/showEol}}">{{eolMessage}}</span>
       </div>
     </a>
   {{/experiments}}

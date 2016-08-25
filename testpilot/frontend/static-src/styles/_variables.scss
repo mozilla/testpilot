@@ -82,4 +82,9 @@ $error-red-background: #f3bcb8;
 $error-red-border: #f5570e;
 
 // "Just {Launched,Updated}" blue
-$bright-blue: #1e98f5
+$bright-blue: #1e98f5;
+
+// End-of-life (eol) oranges
+$eol-dark-orange: #f46323;
+$eol-orange: #ff9300;
+$eol-light-orange: rgba($eol-orange, .25);

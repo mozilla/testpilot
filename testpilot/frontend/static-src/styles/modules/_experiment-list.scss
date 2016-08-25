@@ -103,6 +103,10 @@
   }
 }
 
+.eol-message {
+  color: $eol-dark-orange;
+}
+
 .experiment-actions {
   .has-addon:not(.active) &.show-when-inactive {
     display: block;
