@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 
 from .models import UserProfile
 
+from testpilot.utils import cleanup_nonstaff_users
+from testpilot.experiments.models import Experiment
+
 import logging
 logger = logging.getLogger(__name__)
 
@@ -46,3 +49,33 @@ class UserProfileTests(TestCase):
         result_profile = UserProfile.objects.get_profile(user=self.user)
         self.assertIsNotNone(result_profile)
         self.assertEqual(expected_title, result_profile.title)
+
+
+class UserDataCleanupMigrationTests(TestCase):
+
+    def setUp(self):
+        User.objects.all().delete()
+
+        self.super_user = User.objects.create_user(username="admin")
+        self.super_user.is_superuser = True
+        self.super_user.save()
+
+        self.staff_user = User.objects.create_user(username="staffuser")
+        self.staff_user.is_staff = True
+        self.staff_user.save()
+
+        self.contributor_user = User.objects.create_user(username="contributor")
+        self.random_user = User.objects.create_user(username="random1")
+
+        (self.experiment, created) = (Experiment.objects.language().fallbacks('en')
+                                      .get_or_create(slug='foo', title='foo'))
+        self.experiment.contributors.add(self.contributor_user)
+
+    def test_nonstaff_user_cleanup(self):
+        cleanup_nonstaff_users(User, Experiment.objects.language().fallbacks('en').all())
+        self.assertEqual(0, User.objects.filter(is_staff=False,
+                                                is_superuser=False).count())
+        self.assertEqual(1, User.objects.filter(pk=self.super_user.pk).count())
+        self.assertEqual(1, User.objects.filter(pk=self.staff_user.pk).count())
+        self.assertEqual(1, User.objects.filter(pk=self.contributor_user.pk).count())
+        self.assertEqual(0, User.objects.filter(pk=self.random_user.pk).count())
