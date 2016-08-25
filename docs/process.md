@@ -1,10 +1,12 @@
-This document outlines how work is submitted, tagged, estimated and assigned in Test Pilot.
+[👈 Back to README](../README.md)
 
-# New Work
+# Process
+
+This document outlines how work is submitted, tagged, estimated and assigned in Test Pilot.
 
 New work is proposed via [Issues](https://github.com/mozilla/testpilot/issues/new).
 
-# Estimation
+## Estimation
 
 Please add a size to all new issues.
 
@@ -15,13 +17,13 @@ Please add a size to all new issues.
 
 Estimation is an imperfect science, so please just give your best guess. If you're completely unsure of sizing, apply the `needs:size` label.
 
-# Current Milestone
+## Current Milestone
 
 The current milestone is packed every 2 weeks, and coincides with the Friday before bi-weekly planning sessions. Planning sessions happen every 2nd Monday.
 
 The milestones are planned in [waffle.io](https://waffle.io/mozilla/testpilot/), and a linked label is added in GitHub: [status:planned](https://github.com/mozilla/testpilot/issues?q=is%3Aissue+is%3Aopen+label%3A%22status%3A+planned%22).
 
-# Status
+## Status
 
 - `status:ready`
 
@@ -45,14 +47,14 @@ Other notes:
 - An issue only have a single `status:*` label.
 - Everything packed in the current milestone should have the `status:planned` label.
 
-# Assignees
+## Assignees
 
 Generally, an issue will have an assignee if that person is *working on the bug*, or plans to begin work in the next *day or two*.
 
-# Things to work on?
+## Things to work on?
 
 A good way to find bugs that are available for work is to search for bugs which are `status:ready` and do not have an assignee. Or, if there is an assignee, [send a ping out to him or her](https://github.com/mozilla/testpilot/blob/master/CONTRIBUTING.md#saying-hello) to see if it's available for work.
 
-# Waffle
+## Waffle
 
 As noted above, this repository is thinly integrated with our [waffle.io board](https://waffle.io/mozilla/testpilot). This board is mostly used for program management, and sprint planning.

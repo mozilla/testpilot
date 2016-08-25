@@ -1,7 +1,8 @@
-Frequently Asked Questions
-==========
+[👈 Back to README](../README.md)
 
-### Why does Test Pilot require JavaScript?
+# FAQ
+
+## Why does Test Pilot require JavaScript?
 
 - We use JavaScript to render the user interface of Test Pilot.
 - We use JavaScript to manage experiment installations.

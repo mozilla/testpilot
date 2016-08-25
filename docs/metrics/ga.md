@@ -1,19 +1,19 @@
-Test Pilot Google Analytics Specifications
-==========================
+[👈 Back to README](../../README.md)
 
-# Overview
+# Google Analytics
 
 Google Analytics is implemented on the website with the primary goal of analyzing flows, and identifying areas of improvement for the user.
 
 Every event and pageview must include an invocation of [`sendToGA()`](https://github.com/mozilla/testpilot/blob/4eed50449a03207c49035ba605eda9db79224529/testpilot/frontend/static-src/app/main.js#L107).
 
-# Events
+
+## Events
 
 Events are used to track interactions with the user. Mostly button or link clicks.
 
 [Reference from Google](https://developers.google.com/analytics/devguides/collection/analyticsjs/events).
 
-## Event structure
+### Event structure
 
 The structure for the events include 3 parts
 
@@ -21,7 +21,7 @@ The structure for the events include 3 parts
 - `eventAction`: A string that is uniquely paired with each category, and commonly used to define the type of user interaction for the web object.
 - `eventLabel`: An optional string to provide additional dimensions to the event data.
 
-## Samples of event structures
+### Samples of event structures
 
 - [Install Test Pilot](https://github.com/mozilla/testpilot/blob/7b72e0102e100cdedfc8e02787688aed3d59a36a/testpilot/frontend/static-src/app/views/landing-page.js#L48)
 
@@ -45,7 +45,7 @@ app.sendToGA('event', {
 });
 ```
 
-## Table of events
+### Table of events
 
 Here are the current events on the website as of this writing
 
@@ -74,13 +74,13 @@ Here are the current events on the website as of this writing
 | Click on Twitter link in footer                          | FooterView Interactions            | social link clicked      | Twitter       |
 | Click on GitHub link in footer                           | FooterView Interactions            | social link clicked      | GitHub        |
 
-# Pageviews
+## Pageviews
 
 testpilot.firefox.com is a single page application. This means that instead of just placing our JS snippet at the top of the page and registering every pageview on load, we have to manually trigger a pageview on every view.
 
 TODO: issue [#839](https://github.com/mozilla/testpilot/issues/839#issuecomment-220110711) - this manually sets the page URL as well which makes pageview tracking for SPA more reliable.
 
-## Pageview structure
+### Pageview structure
 
 The `pageview` send also uses `sendToGA`, but with slightly different parameters.
 
@@ -96,7 +96,7 @@ app.sendToGA('pageview', {
 
 The URL does not need to be sent here. As seen in the above example, you can also include `Custom Dimensions` with the pageview calls.
 
-## Custom Dimensions
+### Custom Dimensions
 
 We use custom dimensions to refine our pageviews on Test Pilot ([docs from Google](https://developers.google.com/analytics/devguides/collection/analyticsjs/custom-dims-mets)). Dimensions are unique to an application.
 
@@ -111,7 +111,7 @@ Here is a list of dimensions we are currently using
 | Experiment Detail Page            | Experiment title                                  | 5         | "xyz"  |
 | Experiment Detail Page            | Installation count                                | 6         | {n}    |
 
-# Tagged Links
+### Tagged Links
 
 Whenever we are referring users to the Test Pilot website (either from an external website, or the add-on itself via a doorhanger/notification), we should include `utm_*` paramaters to allow us to properly measure conversion rates of the channel.
 
@@ -122,7 +122,7 @@ Here is a description of the different utm tags ([URL builder tool from Google](
 - `utm_campaign`: The individual campaign name, slogan, promo code, etc. for a product.
 - `utm_content`: Used to differentiate similar content, or links within the same ad. For example, if you have two call-to-action links within the same email message, you can use utm_content and set different values for each so you can tell which version is more effective.
 
-## Table of tags
+### Table of tags
 
 We should maintain a consistent convention when using campaign parameters.
 
