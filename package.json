@@ -48,11 +48,15 @@
     "gulp-cssnano": "2.1.0",
     "gulp-eslint": "^1.0.0",
     "gulp-if": "^1.2.5",
+    "gulp-multi-dest": "0.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev-all": "^0.8.24",
     "gulp-sass": "^2.0.4",
     "gulp-sass-lint": "^1.1.0",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.6",
+    "merge-stream": "^1.0.0",
     "node-normalize-scss": "1.1.1",
     "node-sass": "3.4.2",
     "remarkable": "1.6.2",
@@ -81,6 +85,7 @@
     "url": "git+https://github.com/mozilla/testpilot.git"
   },
   "scripts": {
+    "start": "gulp server",
     "build": "gulp build",
     "docs": "doctoc README.md && doctoc addon/README.md",
     "lint": "gulp lint sass-lint",
