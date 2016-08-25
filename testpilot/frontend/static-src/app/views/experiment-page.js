@@ -317,6 +317,7 @@ export default PageView.extend({
     function cleanup() {
       evt.target.disabled = false;
       evt.target.classList.remove('state-change');
+      evt.target.style.width = '';
       app.off('webChannel:addon-install:download-failed');
       app.off('webChannel:addon-install:install-failed');
       app.off('webChannel:addon-install:install-ended');
@@ -362,6 +363,7 @@ export default PageView.extend({
     app.once('webChannel:addon-uninstall:uninstall-ended', () => {
       this.model.enabled = false;
       evt.target.classList.remove('state-change');
+      evt.target.style.width = '';
       if (this.model.installation_count > 0) {
         this.model.set('installation_count', this.model.installation_count - 1);
       }
