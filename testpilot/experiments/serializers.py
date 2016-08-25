@@ -58,6 +58,7 @@ class ExperimentSerializer(HyperlinkedTranslatableModelSerializer):
         model = Experiment
         fields = ('id', 'url', 'title', 'short_title', 'slug',
                   'thumbnail', 'description', 'introduction',
+                  'image_twitter', 'image_facebook',
                   'version', 'html_url', 'changelog_url', 'contribute_url',
                   'bug_report_url', 'discourse_url', 'privacy_notice_url', 'measurements',
                   'xpi_url', 'addon_id', 'gradient_start', 'gradient_stop',

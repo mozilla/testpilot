@@ -85,6 +85,8 @@ class ExperimentViewTests(BaseTestCase):
                         "order": experiment.order,
                         "slug": experiment.slug,
                         "thumbnail": None,
+                        "image_facebook": None,
+                        "image_twitter": None,
                         "description": experiment.description,
                         "introduction": experiment.introduction.rendered,
                         "measurements": experiment.measurements.rendered,

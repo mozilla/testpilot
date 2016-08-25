@@ -210,7 +210,7 @@ function processImportedExperiment(experiment) {
 
   // Download all the images associated with the experiment.
   const imageFields = {
-    '': ['thumbnail'],
+    '': ['thumbnail', 'image_twitter', 'image_facebook'],
     details: ['image'],
     tour_steps: ['image'],
     contributors: ['avatar']
@@ -220,8 +220,9 @@ function processImportedExperiment(experiment) {
     const items = (key === '') ? [experiment] : experiment[key];
     const fields = imageFields[key];
     items.forEach(item => fields.forEach(field => {
-      // Grab the original image URL
+      // Grab the original image URL, bail if it's not available
       const origURL = item[field];
+      if (!origURL) { return; }
 
       // Chop off the protocol & domain, convert gravatar param to .jpg
       const path = origURL.split('/').slice(3).join('/').replace('?s=64', '.jpg');
