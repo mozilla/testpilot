@@ -7,6 +7,9 @@ import Me from '../../app/models/me';
 import Experiments from '../../app/collections/experiments';
 const MyView = View.extend({headerScroll: false});
 
+const NOW = Date.now();
+const THREE_DAYS = 3 * 24 * 60 * 60 * 1000;
+
 tape(`Running Tests for ${__filename}`, a => a.end());
 
 const test = around(tape)
@@ -300,4 +303,17 @@ test('feedback button uses the expected survey URL', t => {
   myView.render();
 
   t.ok(myView.query('[data-hook=feedback]').href === expectedURL);
+});
+
+test('eol-block only shows when the experiment has a completed date', t => {
+  t.plan(2);
+  const myView = new MyView({headerScroll: false, slug: 'slsk'});
+  const model = app.experiments.get('slsk', 'slug');
+
+  myView.render();
+  t.ok(!myView.query('.eol-block'));
+
+  model.completed = NOW + THREE_DAYS;
+  myView.render();
+  t.ok(myView.query('.eol-block'));
 });

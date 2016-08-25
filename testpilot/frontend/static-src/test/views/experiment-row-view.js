@@ -126,3 +126,33 @@ test('Experiment row card displays "Just Updated" when experiment is updated sin
   t.ok(!view.query('.experiment-summary.just-updated'),
        'should not appear when too old');
 });
+
+test('Experiment card shows "Ending Soon" when experiment is nearly completed', t => {
+  t.plan(2);
+  const model = new Experiment({
+    slug: 'test',
+    title: 'just a test',
+    created: NOW - THREE_DAYS,
+    completed: NOW + THREE_DAYS
+  });
+
+  const view = new View({model: model});
+  view.render();
+  t.equal(view.query('.eol-message').innerHTML, 'Ending Soon');
+
+  model.completed = NOW + ONE_DAY;
+  view.render();
+  t.equal(view.query('.eol-message').innerHTML, 'Ending Tomorrow');
+});
+
+test('Experiment card does not show an EOL message with no completed date', t => {
+  t.plan(1);
+  const model = new Experiment({
+    slug: 'test',
+    title: 'just a test',
+    created: NOW - THREE_DAYS
+  });
+
+  const view = new View({model: model}).render();
+  t.equal(view.query('.eol-message').innerHTML, '');
+});
