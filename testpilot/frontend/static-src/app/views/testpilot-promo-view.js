@@ -5,7 +5,7 @@ import installAddon from '../lib/install-addon';
 export default BaseView.extend({
   _template: `
     <div class="experiment-promo">
-      <div class="reverse-split-banner responsive-git content-wrapper">
+      <div class="reverse-split-banner responsive-content-wrapper">
         <div class="copter-wrapper fly-up">
           <div class="copter"></div>
         </div>

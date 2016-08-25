@@ -6,11 +6,16 @@
     text-indent: -9999px;
 
     .wordmark {
-      @include hidpi-background-image('wordmark', 296px 64px);
+      @include respond-to('not-small') {
+        @include hidpi-background-image('wordmark', 296px 64px);
+        height: 64px;
+        width: 296px;
+      }
+      @include hidpi-background-image('wordmark', 190px 41px);
       display: block;
-      height: 64px;
+      height: 41px;
       position: relative;
-      width: 296px;
+      width: 190px;
     }
   }
 }

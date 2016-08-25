@@ -8,7 +8,7 @@ export default `
           <span data-hook="enabled-msg" data-l10n-id="isEnabledStatusMessage"><span data-hook="title"></span> is enabled.</span>
           <span data-hook="error-msg" data-l10n-id="installErrorMessage">Uh oh. <span data-hook="title"></span> could not be enabled. Try again later.</span>
         </div>
-        <div class="details-header content-wrapper">
+        <div class="details-header responsive-content-wrapper">
           <header>
             <h1 data-hook="title"></h1>
             <h4 data-hook="subtitle" class="subtitle"></h4>
@@ -25,7 +25,7 @@ export default `
       <div class="sticky-header-sibling"></div>
 
       <div data-hook="details">
-          <div class="details-content content-wrapper">
+          <div class="details-content responsive-content-wrapper">
             <div class="details-overview">
               <div class="experiment-icon-wrapper" data-hook="bg">
                 <img class="experiment-icon" data-hook="thumbnail"></img>
@@ -40,7 +40,7 @@ export default `
                     <div data-hook="introduction-html"></div>
                   </section>
                 </div>
-                <section data-hook="active-user">
+                <section class="stats-section" data-hook="active-user">
                   <table class="stats">
                     <tr data-hook="version-container">
                       <td data-l10n-id="version">Version</td>
@@ -98,7 +98,7 @@ export default `
         <h2 class="card-list-header" data-l10n-id="otherExperiments">Try out these experiments as well</h2>
         <div class="responsive-content-wrapper delayed-fade-in" data-hook="experiment-list"></div>
       </div>
-      <footer id="main-footer" class="content-wrapper">
+      <footer id="main-footer" class="responsive-content-wrapper">
         <div data-hook="footer-view"></div>
       </footer>
   </section>
