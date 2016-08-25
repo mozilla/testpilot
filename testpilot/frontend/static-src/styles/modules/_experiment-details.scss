@@ -20,9 +20,31 @@
       z-index: 999;
     }
   }
+
 }
 
 @include respond-to('small') {
+
+  .details-header.responsive-content-wrapper {
+    @include flex-container(column, flex-start, flex-start);
+    margin-bottom: $grid-unit * .5;
+    padding-top: $grid-unit * .75;
+  }
+
+  .experiment-controls {
+    @include flex-container (column, center, stretch);
+
+    .button {
+      flex: 1 0 100%;
+      margin: $grid-unit * .5 0;
+    }
+  }
+
+  .highlight-privacy {
+    display: none;
+  }
+
+
   .sticky-header-sibling {
     display: none;
   }
@@ -58,16 +80,18 @@
     @include flex-container(row, flex-end, center);
   }
 
-  display: none;
   flex: 1;
   position: relative;
   transition: top 200ms;
   width: 100%;
 
   .button {
+    @include respond-to('not-small') {
+      margin-left: $grid-unit;
+    }
+
     font-size: $grid-unit * .9;
     height: $grid-unit * 2;
-    margin-left: $grid-unit;
     padding: 0 $grid-unit * .75;
   }
 
@@ -98,6 +122,11 @@
     @include respond-to('medium') {
       font-size: $font-unit * 3.5;
       line-height: $font-unit * 3.5;
+    }
+
+    @include respond-to('small') {
+      font-size: $font-unit * 3.2;
+      line-height: $font-unit * 3.2;
     }
 
     display: flex;
@@ -134,7 +163,17 @@
     flex: 0 0 $grid-unit * 14;
   }
 
+  @include respond-to('small') {
+    flex: 0 1 100%;
+  }
+
   padding-top: $grid-unit * .5;
+
+  .contributors-section,
+  .stats-section,
+  .measurements {
+    @include hide-on-small;
+  }
 }
 
 .details-description {
@@ -147,29 +186,57 @@
     }
   }
 
+  @include respond-to('medium') {
+    flex: 0 0 $grid-unit * 22;
+
+    img {
+      height: auto;
+      width: $grid-unit * 22;
+    }
+  }
+
+  @include respond-to('small') {
+    flex: 0 0 100%;
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+
   padding-top: $grid-unit * .5;
 
-  :first-child {
+  > :first-child {
     margin-top: 0;
     padding-top: 0;
   }
 
   .introduction {
-    margin-bottom: $grid-unit * 2;
+    @include respond-to('not-small') {
+      margin-bottom: $grid-unit * 2;
+    }
+
+    @include respond-to('small') {
+      margin-bottom: $grid-unit;
+    }
 
     h3 {
       font-size: $font-unit * 2.5;
       margin: $grid-unit * .5 0;
     }
   }
+
+  .measurements {
+    @include show-on-small;
+  }
 }
 
 .eol-block {
-  padding: 10px !important;
-  border-radius: 3px;
   background: $eol-light-orange;
   border: 1px solid $eol-orange;
+  border-radius: 3px;
   margin-bottom: 20px;
+  padding: 10px !important;
 }
 
 .details-sections {
@@ -205,6 +272,14 @@
 .measurements {
   border-radius: $small-border-radius;
   box-shadow: 0 0 0 $grid-unit * .5 transparent;
+
+  h3 {
+    @include respond-to('small') {
+      border-top: 1px solid $transparent-black-1;
+      margin-top: $grid-unit;
+      padding-top: $grid-unit;
+    }
+  }
 }
 
 .measurement {
@@ -282,13 +357,15 @@
 }
 
 .details-image {
-  margin-bottom: $grid-unit * 1.5;
+  @include respond-to ('not-small') {
+    margin-bottom: $grid-unit * 1.5;
+  }
+
+  @include respond-to ('small') {
+    margin-bottom: $grid-unit * .75;
+  }
 
   img {
-    @include respond-to('not-small') {
-      max-width: auto;
-    }
-
     border-radius: 3px;
     max-width: 100%;
     overflow: hidden;
@@ -301,16 +378,6 @@
     margin-top: $grid-unit * .5;
     padding: 0 $grid-unit * .25;
   }
-}
-
-.contributors-section,
-.stats-section,
-.measurements {
-  @include respond-to('not-small') {
-    display: block;
-  }
-
-  display: none;
 }
 
 @include respond-to('small') {

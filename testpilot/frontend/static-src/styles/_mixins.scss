@@ -34,3 +34,23 @@ $breakpoints: (
     + 'Please make sure it is defined in `$breakpoints` map.';
   }
 }
+
+@mixin show-on-small($display: block) {
+  @include respond-to('not-small') {
+    display: none;
+  }
+
+  @include respond-to('small') {
+    display: $display;
+  }
+}
+
+@mixin hide-on-small($display: block) {
+  @include respond-to('not-small') {
+    display: $display;
+  }
+
+  @include respond-to('small') {
+    display: none;
+  }
+}
