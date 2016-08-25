@@ -424,16 +424,27 @@ gulp.task('watch', function watchTask() {
   gulp.watch('gulpfile.js', () => process.exit());
 });
 
+let serverPort = 8000;
+
 // Set up a webserver for the static assets
 gulp.task('connect', function connectTask() {
   connect.server({
     root: DIST_PATH,
     livereload: false,
-    port: 8000
+    port: serverPort
   });
 });
 
 gulp.task('server', function() {
+  serverPort = 9988;
+  return runSequence(
+    'static',
+    'connect',
+    'watch'
+  );
+});
+
+gulp.task('static-only-server', function() {
   return runSequence(
     'static',
     'connect',

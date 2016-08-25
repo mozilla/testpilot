@@ -85,7 +85,7 @@
     "url": "git+https://github.com/mozilla/testpilot.git"
   },
   "scripts": {
-    "start": "gulp server",
+    "start": "gulp static-only-server",
     "build": "gulp build",
     "docs": "doctoc README.md && doctoc addon/README.md",
     "lint": "gulp lint sass-lint",
