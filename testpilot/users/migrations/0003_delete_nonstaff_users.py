@@ -18,13 +18,13 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(delete_nonstaff_users_forwards),
-
         # Clean up tables left over from FxA removal...
-        migrations.RunSQL('DROP TABLE IF EXISTS account_emailaddress'),
         migrations.RunSQL('DROP TABLE IF EXISTS account_emailconfirmation'),
-        migrations.RunSQL('DROP TABLE IF EXISTS socialaccount_socialaccount'),
-        migrations.RunSQL('DROP TABLE IF EXISTS socialaccount_socialapp'),
+        migrations.RunSQL('DROP TABLE IF EXISTS account_emailaddress'),
+        migrations.RunSQL('DROP TABLE IF EXISTS socialaccount_socialtoken'),
         migrations.RunSQL('DROP TABLE IF EXISTS socialaccount_socialapp_sites'),
-        migrations.RunSQL('DROP TABLE IF EXISTS socialaccount_socialtoken')
+        migrations.RunSQL('DROP TABLE IF EXISTS socialaccount_socialapp'),
+        migrations.RunSQL('DROP TABLE IF EXISTS socialaccount_socialaccount'),
+
+        migrations.RunPython(delete_nonstaff_users_forwards)
     ]
