@@ -4,7 +4,7 @@
     "repository": {
         "url": "https://github.com/mozilla/testpilot",
         "license": "MPL2",
-        "tests": "https://travis-ci.org/mozilla/testpilot"
+        "tests": "https://circleci.com/gh/mozilla/testpilot"
     },
     "participate": {
         "home": "https://wiki.mozilla.org/Test_Pilot",
@@ -15,6 +15,11 @@
     "bugs": {
         "list": "https://github.com/mozilla/testpilot/issues",
         "report": "https://github.com/mozilla/testpilot/issues/new"
+    },
+    "urls": {
+        "prod": "https://testpilot.firefox.com",
+        "stage": "https://testpilot.stage.mozaws.net",
+        "dev": "http://testpilot.dev.mozaws.net"
     },
     "keywords": [
         "css",
