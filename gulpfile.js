@@ -13,8 +13,12 @@ const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const gutil = require('gulp-util');
 // const imagemin = require('gulp-imagemin');
+const merge = require('merge-stream');
 const minifycss = require('gulp-cssnano');
+const multiDest = require('gulp-multi-dest');
 const normalize = require('node-normalize-scss');
+const rename = require('gulp-rename');
+const RevAll = require('gulp-rev-all');
 const runSequence = require('run-sequence');
 const sass = require('gulp-sass');
 const sassLint = require('gulp-sass-lint');
@@ -35,8 +39,10 @@ const IS_DEBUG = (process.env.NODE_ENV === 'development');
 
 const SRC_PATH = './testpilot/frontend/static-src/';
 const DEST_PATH = './testpilot/frontend/static/';
+const STAGE_PATH = './stage/';
+const DIST_PATH = './dist/';
 
-const CONTENT_SRC_PATH = 'content-src/experiments';
+const CONTENT_SRC_PATH = 'content-src/';
 const PRODUCTION_EXPERIMENTS_URL = 'https://testpilot.firefox.com/api/experiments';
 const IMAGE_NEW_BASE_PATH = 'testpilot/frontend/static-src/images/experiments/';
 const IMAGE_NEW_BASE_URL = '/static/images/experiments/';
@@ -80,7 +86,9 @@ gulp.task('selfie', function selfieTask() {
 
 gulp.task('clean', function cleanTask() {
   return del([
-    DEST_PATH
+    DEST_PATH,
+    STAGE_PATH,
+    DIST_PATH
   ]);
 });
 
@@ -267,13 +275,13 @@ function downloadURL(item) {
 
 function writeExperimentYAML(experiment) {
   const out = YAML.stringify(experiment, 4, 2);
-  const path = `${CONTENT_SRC_PATH}/${experiment.slug}.yaml`;
+  const path = `${CONTENT_SRC_PATH}experiments/${experiment.slug}.yaml`;
   if (IS_DEBUG) { console.log(`Generated ${path}`); }
   return writeFile(path, out);
 }
 
 gulp.task('experiments-json', function generateStaticAPITask() {
-  return gulp.src(CONTENT_SRC_PATH + '/*.yaml')
+  return gulp.src(CONTENT_SRC_PATH + 'experiments/*.yaml')
     .pipe(buildExperimentsJSON('experiments'))
     .pipe(gulp.dest(DEST_PATH + 'api'));
 });
@@ -313,8 +321,82 @@ function buildExperimentsJSON(path) {
   return through.obj(collectEntry, endStream);
 }
 
+gulp.task('stage-assets', function() {
+  return gulp.src(DEST_PATH + '**')
+      .pipe(gulp.dest(STAGE_PATH + 'static'));
+});
+
+gulp.task('move-api', function() {
+  return new Promise((resolve, reject) => {
+    gulp.src(STAGE_PATH + 'static/api/**', { base: STAGE_PATH + 'static' })
+    .pipe(gulp.dest(STAGE_PATH))
+    .on('end', () => {
+      del(STAGE_PATH + 'static/api').then(resolve).catch(reject);
+    });
+  });
+});
+
+gulp.task('copy-html', function() {
+  const paths = fs.readdirSync(CONTENT_SRC_PATH + 'experiments')
+    .map(f => `${STAGE_PATH}experiments/${f.replace('.yaml', '')}`)
+    .concat([
+      STAGE_PATH,
+      STAGE_PATH + 'experiments',
+      STAGE_PATH + 'onboarding',
+      STAGE_PATH + 'home',
+      STAGE_PATH + 'share',
+      STAGE_PATH + 'legacy',
+      STAGE_PATH + 'error'
+    ]);
+  return merge(
+    gulp.src(SRC_PATH + 'index.html')
+      .pipe(multiDest(paths)),
+    gulp.src('./legal-copy/privacy-notice.html')
+      .pipe(rename('index.html'))
+      .pipe(gulp.dest(STAGE_PATH + '/privacy')),
+    gulp.src('./legal-copy/terms-of-use.html')
+      .pipe(rename('index.html'))
+      .pipe(gulp.dest(STAGE_PATH + '/terms'))
+  );
+});
+
+gulp.task('rev-assets', function() {
+  const revAll = new RevAll({
+    dontRenameFile: [
+      '.json',
+      'favicon.ico',
+      /static\/addon\/*/,
+      /static\/locales\/*/,
+      '.html'
+    ],
+    dontUpdateReference: [
+      /.*\.json/,
+      'favicon.ico'
+    ]
+  });
+  return gulp.src(STAGE_PATH + '**')
+    .pipe(revAll.revision())
+    .pipe(gulp.dest(DIST_PATH));
+});
+
+gulp.task('clean-stage', function() {
+  return del(STAGE_PATH);
+});
+
+gulp.task('static', function staticTask(done) {
+  return runSequence(
+    'build',
+    'stage-assets',
+    'move-api',
+    'copy-html',
+    'rev-assets',
+    'clean-stage',
+    done
+  );
+});
+
 gulp.task('build', function buildTask(done) {
-  runSequence(
+  return runSequence(
     'clean',
     'app-vendor',
     'app-main',
@@ -329,7 +411,7 @@ gulp.task('build', function buildTask(done) {
   );
 });
 
-gulp.task('watch', ['build'], function watchTask() {
+gulp.task('watch', function watchTask() {
   gulp.watch(SRC_PATH + 'styles/**/*', ['styles']);
   gulp.watch(SRC_PATH + 'images/**/*', ['images']);
   gulp.watch(SRC_PATH + 'app/**/*.js', ['app-main']);
@@ -342,15 +424,32 @@ gulp.task('watch', ['build'], function watchTask() {
   gulp.watch('gulpfile.js', () => process.exit());
 });
 
+let serverPort = 8000;
+
 // Set up a webserver for the static assets
 gulp.task('connect', function connectTask() {
   connect.server({
-    root: DEST_PATH,
+    root: DIST_PATH,
     livereload: false,
-    port: 9988
+    port: serverPort
   });
 });
 
-gulp.task('server', ['build', 'connect', 'watch']);
+gulp.task('server', function() {
+  serverPort = 9988;
+  return runSequence(
+    'static',
+    'connect',
+    'watch'
+  );
+});
+
+gulp.task('static-only-server', function() {
+  return runSequence(
+    'static',
+    'connect',
+    'watch'
+  );
+});
 
 gulp.task('default', ['build', 'watch']);
