@@ -2,7 +2,7 @@ import json
 
 from rest_framework import viewsets, status
 from rest_framework.response import Response
-from rest_framework.decorators import detail_route
+from rest_framework.decorators import detail_route, list_route
 
 from django.shortcuts import get_object_or_404
 from django.contrib.staticfiles.views import serve
@@ -61,6 +61,13 @@ class ExperimentViewSet(viewsets.ModelViewSet):
             queryset, many=True,
             context=self.get_serializer_context())
         return Response(serializer.data)
+
+    @list_route()
+    def usage_counts(self, request, *args, **kwargs):
+        return Response(dict(
+            (x.addon_id, x.installation_count)
+            for x in self.get_queryset()
+        ))
 
 
 @csrf_exempt
