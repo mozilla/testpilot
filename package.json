@@ -86,6 +86,7 @@
   },
   "scripts": {
     "start": "gulp static-only-server",
+    "static": "gulp static",
     "build": "gulp build",
     "docs": "doctoc README.md && doctoc addon/README.md",
     "lint": "gulp lint sass-lint",
