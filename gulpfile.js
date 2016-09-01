@@ -282,12 +282,13 @@ function writeExperimentYAML(experiment) {
 
 gulp.task('experiments-json', function generateStaticAPITask() {
   return gulp.src(CONTENT_SRC_PATH + 'experiments/*.yaml')
-    .pipe(buildExperimentsJSON('experiments'))
+    .pipe(buildExperimentsJSON())
     .pipe(gulp.dest(DEST_PATH + 'api'));
 });
 
-function buildExperimentsJSON(path) {
+function buildExperimentsJSON() {
   const index = {results: []};
+  const counts = {};
 
   function collectEntry(file, enc, cb) {
     const yamlData = file.contents.toString();
@@ -301,19 +302,27 @@ function buildExperimentsJSON(path) {
       survey_url: `https://qsurvey.mozilla.com/s3/${experiment.slug}`
     });
 
+    counts[experiment.addon_id] = experiment.installation_count;
+    delete experiment.installation_count;
+
     this.push(new gutil.File({
-      path: `${path}/${experiment.id}.json`,
+      path: `experiments/${experiment.id}.json`,
       contents: new Buffer(JSON.stringify(experiment, null, 2))
     }));
 
     index.results.push(experiment);
+
     cb();
   }
 
   function endStream(cb) {
     this.push(new gutil.File({
-      path: `${path}.json`,
+      path: 'experiments.json',
       contents: new Buffer(JSON.stringify(index, null, 2))
+    }));
+    this.push(new gutil.File({
+      path: 'experiments/usage_counts.json',
+      contents: new Buffer(JSON.stringify(counts, null, 2))
     }));
     cb();
   }
