@@ -121,6 +121,15 @@ class ExperimentViewTests(BaseTestCase):
             }
         )
 
+    def test_usage_counts(self):
+        expected = dict(
+            (x.addon_id, x.installation_count)
+            for x in self.experiments.values()
+        )
+        url = reverse('experiment-usage-counts')
+        resp = self.client.get(url)
+        self.assertJSONEqual(str(resp.content, encoding='utf8'), expected)
+
     def test_tour_steps(self):
         # lang = 'en-US'
         experiment = self.experiments['test-1']

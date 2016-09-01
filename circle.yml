@@ -12,9 +12,10 @@ machine:
     testpilot.dev: 127.0.0.1
   services:
     - docker
-
   node:
     version: 6.2.0
+  environment:
+    TESTPILOT_STATIC_BRANCHES: development-static 1305-static-deploy
 
 dependencies:
 
@@ -37,11 +38,11 @@ dependencies:
     - ./bin/circleci/build-version-json.sh
     - ./bin/circleci/build-addon.sh
     - ./bin/circleci/build-frontend.sh
-    - ./bin/circleci/build-server.sh
+    - '[[ " $TESTPILOT_STATIC_BRANCHES " =~ " $CIRCLE_BRANCH " ]] || ./bin/circleci/build-server.sh'
 
 test:
   override:
-    - ./bin/circleci/run-server-unit-tests.sh
+    - '[[ " $TESTPILOT_STATIC_BRANCHES " =~ " $CIRCLE_BRANCH " ]] || ./bin/circleci/run-server-unit-tests.sh'
     - ./bin/circleci/run-integration-tests.sh
 
 # appropriately tag and push the container to dockerhub
@@ -65,6 +66,18 @@ deployment:
       - "docker tag app:build ${DOCKERHUB_REPO}:${CIRCLE_TAG}"
       - "docker images"
       - "docker push ${DOCKERHUB_REPO}:${CIRCLE_TAG}"
+
+  static_development:
+    branch:
+      - development-static
+    commands:
+      - aws s3 sync dist s3://testpilot-static.dev.mozaws.net --delete --acl public-read
+
+  static_development_lorchard:
+    branch:
+      - 1305-static-deploy
+    commands:
+      - aws s3 sync dist s3://testpilot-static.lorchard.mozaws.net --delete --acl public-read
 
 # Only notify of builds on master branch.
 experimental:

@@ -1,5 +1,9 @@
 #!/bin/bash
 set -ex
 npm install
-npm run build
+if [[ " $TESTPILOT_STATIC_BRANCHES " =~ " $CIRCLE_BRANCH " ]]; then
+    npm run static
+else
+    npm run build
+fi
 npm test

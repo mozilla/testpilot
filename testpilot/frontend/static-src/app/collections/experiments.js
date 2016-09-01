@@ -7,6 +7,7 @@ export default Collection.extend({
   model: Experiment,
   indexes: ['slug'],
   url: '/api/experiments.json',
+  usageCountsUrl: '/api/experiments/usage_counts.json',
   comparator: 'order',
 
   // Ampersand.sync doesn't seem to pass correct Accept headers by default.
@@ -21,13 +22,13 @@ export default Collection.extend({
     });
   },
 
-  fetch(optionsIn) {
-    return new Promise((resolve, reject) => {
-      const options = optionsIn || {};
-      options.success = resolve;
-      options.error = reject;
-      Collection.prototype.fetch.call(this, options);
-    });
+  fetch(options) {
+    return new Promise((success, error) =>
+        Collection.prototype.fetch.call(this, Object.assign({success, error}, options || {})))
+      .then(() => fetch(this.usageCountsUrl))
+      .then(response => response.json())
+      .then(counts => this.forEach(item =>
+        item.set('installation_count', counts[item.addon_id] || 0)));
   },
 
   // django-rest-framework returns the actual models under 'results'
