@@ -26,8 +26,8 @@
     "watch-ui": "watchify-server ui-test.js --index ui-test.html",
     "lint": "eslint .",
     "sign": "./bin/update-version && ./bin/sign",
-    "package": "jpm xpi && mv testpilot-addon.xpi ../testpilot/frontend/static-src/addon/addon.xpi && mv @testpilot-addon-$npm_package_version.update.rdf ../testpilot/frontend/static-src/addon/update.rdf",
-    "lint-addon": "addons-linter ../testpilot/frontend/static-src/addon/addon.xpi -o text"
+    "package": "jpm xpi && mv testpilot-addon.xpi addon.xpi && mv @testpilot-addon-$npm_package_version.update.rdf update.rdf",
+    "lint-addon": "addons-linter addon.xpi -o text"
   },
   "license": "MPL-2.0",
   "devDependencies": {
