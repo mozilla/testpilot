@@ -196,6 +196,10 @@ function formatInstallData(install, addon) {
     'maxProgress': install.maxProgress
   };
 
+  if ('sourceURI' in install) {
+    formatted.sourceURI = install.sourceURI.prePath + install.sourceURI.path;
+  }
+
   if (addon) {
     Object.assign(formatted, {
       'id': addon.id,

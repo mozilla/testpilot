@@ -1,76 +1,61 @@
-import app from 'ampersand-app';
-import Router from 'ampersand-router';
+import React from 'react';
+import { Router, Route } from 'react-router';
+import { push as routerPush } from 'react-router-redux';
+import { connect } from 'react-redux';
 
-// publishes the 'router:new-page' event
-// packet format: { page, opts }
-// - page: string, the name of the requested page
-// - opts: object (not array) of variables passed as URL slugs
+import LandingPage from '../containers/LandingPage';
+import ExperimentsListPage from '../containers/ExperimentsListPage';
+import ExperimentPage from '../containers/ExperimentPage';
+import RetirePage from '../containers/RetirePage';
 
-export default Router.extend({
-  routes: {
-    '(/)': 'landing',
-    'home(/)': 'home',
-    'experiments/:experiment(/)': 'experimentDetail',
-    'experiments(/)': 'experiments',
-    'legacy(/)': 'legacy',
-    '404': 'notFound',
-    'share(/)': 'share',
-    'error': 'error',
-    'onboarding': 'onboarding',
-    '(*path)': 'notFound'
-  },
+import LegacyPage from '../components/LegacyPage';
+import NotFoundPage from '../components/NotFoundPage';
+import SharePage from '../components/SharePage';
+import ErrorPage from '../components/ErrorPage';
+import OnboardingPage from '../components/OnboardingPage';
 
-  landing() {
-    if (app.me.hasAddon) {
-      this.redirectTo('experiments');
-    } else {
-      app.trigger('router:new-page', {page: 'landing'});
+const AppRouter = ({ history }) => (
+  <Router history={history}>
+    <Route path="/" component={LandingPage} />
+    <Route path="/experiments/" component={ExperimentsListPage} />
+    <Route path="/experiments/:slug" component={ExperimentPage} />
+    <Route path="/legacy" component={LegacyPage} />
+    <Route path="/404" component={NotFoundPage} />
+    <Route path="/share" component={SharePage} />
+    <Route path="/error" component={ErrorPage} />
+    <Route path="/onboarding" component={OnboardingPage} />
+    <Route path="/retire" component={RetirePage} />
+    <Route path="*" component={NotFoundPage} />
+  </Router>
+);
+
+// Wrapper for <Router> that handles state-based redirection logic
+class BaseAppRedirector extends React.Component {
+
+  performRedirects() {
+    const { dispatch, routing, hasAddon, isFirefox } = this.props;
+    const location = routing.locationBeforeTransitions;
+    if (location.pathname === '/' && (hasAddon && isFirefox)) {
+      dispatch(routerPush('/experiments/'));
     }
-  },
-
-  experiments() {
-    if (!app.me.hasAddon) {
-      this.redirectTo('');
-    } else {
-      app.trigger('router:new-page', {page: 'experiments'});
+    if (location.pathname === 'experiments/' && (!hasAddon || !isFirefox)) {
+      dispatch(routerPush('/'));
     }
-  },
-
-  // 'experiment' is a URL slug: for example, 'universal-search'
-  experimentDetail(experiment) {
-    if (app.experiments.get(experiment, 'slug')) {
-      app.trigger('router:new-page', {
-        page: 'experimentDetail',
-        opts: {
-          slug: experiment
-        }
-      });
-    } else {
-      this.redirectTo('404');
-    }
-  },
-
-  home() {
-    this.redirectTo('experiments');
-  },
-
-  share() {
-    app.trigger('router:new-page', {page: 'share'});
-  },
-
-  onboarding() {
-    app.trigger('router:new-page', {page: 'onboarding'});
-  },
-
-  legacy() {
-    app.trigger('router:new-page', {page: 'legacy'});
-  },
-
-  notFound() {
-    app.trigger('router:new-page', {page: 'notFound'});
-  },
-
-  error() {
-    app.trigger('router:new-page', {page: 'error'});
   }
-});
+
+  constructor(props) {
+    super(props);
+    // Static router created at construction, because it does not accept prop updates.
+    this.router = <AppRouter history={props.history} />;
+  }
+  render() { return this.router; }
+  componentDidUpdate() { this.performRedirects(); }
+}
+
+export default connect(
+  state => ({
+    routing: state.routing,
+    isFirefox: state.browser.isFirefox,
+    hasAddon: state.addon.hasAddon
+  })
+)((props) => <BaseAppRedirector {...props} />);

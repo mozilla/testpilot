@@ -31,7 +31,7 @@ function shouldLint(opt, task) {
 }
 
 gulp.task('scripts-lint', () => {
-  return gulp.src([config.SRC_PATH + '*.js', config.SRC_PATH + '{app,test}/**/*.js'])
+  return gulp.src([config.SRC_PATH + '*.js', config.SRC_PATH + '{app,tests}/**/*.js'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failOnError());
@@ -41,7 +41,7 @@ gulp.task('scripts-clean', () => {
 });
 
 gulp.task('scripts-watch', () => {
-  gulp.watch([config.SRC_PATH + 'index.js', config.SRC_PATH + 'app/**/*.js'], ['scripts-app-main']);
+  gulp.watch([config.SRC_PATH + 'app/**/*.js'], ['scripts-app-main']);
   gulp.watch('../../package.json', ['scripts-app-vendor']);
   gulp.watch(config.SRC_PATH + 'scripts/**/*.js', ['scripts-misc']);
 });
@@ -56,7 +56,7 @@ gulp.task('scripts-misc', () => {
 
 gulp.task('scripts-app-main', () => {
   return commonBrowserify('app.js', browserify({
-    entries: [config.SRC_PATH + 'app/main.js'],
+    entries: [config.SRC_PATH + 'app/index.js'],
     debug: config.IS_DEBUG,
     fullPaths: config.IS_DEBUG,
     transform: [babelify]

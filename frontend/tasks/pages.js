@@ -26,7 +26,7 @@ gulp.task('pages-misc', () => {
   return gulp.src(config.SRC_PATH + 'templates/index.mustache')
     .pipe(buildLandingPage())
     .pipe(multiDest([
-      '', 'experiments', 'onboarding', 'home', 'share', 'legacy', 'error'
+      '', 'experiments', 'onboarding', 'home', 'share', 'legacy', 'error', 'retire'
     ].map(path => config.DEST_PATH + path)))
 });
 
