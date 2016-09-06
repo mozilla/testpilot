@@ -4,6 +4,7 @@ const querystring = require('sdk/querystring');
 const store = require('sdk/simple-storage').storage;
 const tabs = require('sdk/tabs');
 const self = require('sdk/self');
+const { URL } = require('sdk/url');
 
 const Mustache = require('mustache');
 const templates = require('./templates');
@@ -38,12 +39,21 @@ function getExperimentList(availableExperiments, installedAddons) {
     const created = (new Date(experiment.created)).getTime();
     experiment.isNew = (now - created) < NEW_EXPERIMENT_PERIOD && !experiment.active;
     experiment.params = getParams();
+    experiment.link = experiment.html_url;
 
     if (experiment.completed) {
       const completed = (new Date(experiment.completed)).getTime();
       const delta = completed - Date.now();
       if (delta < 0) {
         experiment.eolMessage = 'Experiment Complete';
+        if (experiment.active &&
+          !(experiment.addon_id in store.surveyChecks.eol)) {
+          experiment.link = experiment.survey_url;
+          experiment.params = querystring.stringify({
+            id: experiment.addon_id,
+            interval: 'eol',
+            installed: Object.keys(store.installedAddons)});
+        }
       } else if (delta < ONE_DAY) {
         experiment.eolMessage = 'Ending Tomorrow';
       } else if (delta < ONE_WEEK) {
@@ -55,7 +65,8 @@ function getExperimentList(availableExperiments, installedAddons) {
       }
     }
     return experiment;
-  });
+  })
+  .filter(x => x.active || !x.completed); // remove inactive, completed experiments
 
   // Sort new experiments to the top, otherwise sort by reverse-chronological
   experiments.sort((a, b) => {
@@ -64,6 +75,10 @@ function getExperimentList(availableExperiments, installedAddons) {
     return b.modified - a.modified;
   });
 
+  return experiments;
+}
+
+function render(experiments) {
   return Mustache.render(templates.experimentList, {
     base_url: settings.BASE_URL,
     view_all_params: getParams('view-all-experiments'),
@@ -72,8 +87,7 @@ function getExperimentList(availableExperiments, installedAddons) {
 }
 
 function showExperimentList() {
-  panel.port.emit('show', getExperimentList(store.availableExperiments || {},
-                                            store.installedAddons || {}));
+  panel.port.emit('show', render(panel.experiments));
 
   // HACK: Record toolbar button click here, so that badging state is
   // unchanged until after rendering the panel's instrumented links.
@@ -93,13 +107,23 @@ function getParams() {
 function handleButtonChange(state) {
   if (state.checked) {
     Metrics.pingTelemetry('txp_toolbar_menu_1', 'clicked', Date.now());
-    const experimentCount = ('availableExperiments' in store) ?
-      Object.keys(store.availableExperiments).length : 0;
+    panel.experiments = getExperimentList(
+      store.availableExperiments || {},
+      store.installedAddons || {});
+
     panel.show({
       width: PANEL_WIDTH,
-      height: (experimentCount * EXPERIMENT_HEIGHT) + FOOTER_HEIGHT,
+      height: (panel.experiments.length * EXPERIMENT_HEIGHT) + FOOTER_HEIGHT,
       position: button
     });
+  }
+}
+
+function checkSurvey(url) {
+  // HACK an id field is currently unique to survey_urls
+  const addonId = querystring.parse(URL(url).search.substring(1)).id; // eslint-disable-line new-cap
+  if (addonId) {
+    store.surveyChecks.eol[addonId] = true;
   }
 }
 
@@ -127,6 +151,10 @@ const ToolbarButton = module.exports = {
     panel.port.on('back', showExperimentList);
     panel.port.on('link', url => {
       // TODO: Record metrics event here, along with badge context
+
+      // if survey_url note survey as taken
+      checkSurvey(url);
+
       tabs.open(url);
       panel.hide();
     });

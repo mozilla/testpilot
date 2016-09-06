@@ -23,7 +23,7 @@ module.exports = {init, destroy, launchSurvey};
 
 // set timecheck flags for initial run.
 if (store.surveyChecks === undefined) store.surveyChecks = {};
-['twoDaysSent', 'oneWeekSent', 'threeWeeksSent', 'monthAndAHalfSent'].forEach(k => {
+['twoDaysSent', 'oneWeekSent', 'threeWeeksSent', 'monthAndAHalfSent', 'eol'].forEach(k => {
   if (store.surveyChecks[k] === undefined) store.surveyChecks[k] = {};
 });
 
