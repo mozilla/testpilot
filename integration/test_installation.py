@@ -66,7 +66,9 @@ class TestAddonInstallation(FirefoxTestCase):
 
         # And the add-on should open up an onboarding tab...
         Wait(m).until(lambda m: len(b.tabbar.tabs) > 1)
-        self.assertTrue(b.tabbar.tabs[1].location.endswith('/onboarding'))
+        next_tab_loc = b.tabbar.tabs[1].location
+        self.assertTrue(next_tab_loc.endswith('/onboarding') or
+                        next_tab_loc.endswith('/onboarding/'))
         b.tabbar.close_tab(b.tabbar.tabs[1])
 
         # The frontend should redirect to /experiments after it contacts the add-on

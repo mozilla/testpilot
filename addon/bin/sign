@@ -36,8 +36,6 @@ var signedOpts = {
   }
 };
 
-var staticProjectPath = path.resolve('../testpilot/frontend/static-src/addon/');
-
 request(signedOpts, signCb);
 
 function signCb(err, resp, body) {
@@ -68,15 +66,15 @@ function distAddon() {
 
       // move our signed xpi and rdf into the testpilot static
       // directory and exit
-      checkExistsAndMv(signedXpiPath, staticProjectPath + '/addon.xpi', function(err) {
+      checkExistsAndMv(signedXpiPath, 'addon.xpi', function(err) {
         if (err) return console.error(err);
-        console.log('addon.xpi written to ' + staticProjectPath + '/addon.xpi');
+        console.log('addon.xpi written to addon.xpi');
       });
 
       var generatedRdf = '@testpilot-addon-' + version + '.update.rdf';
-      checkExistsAndMv(generatedRdf, staticProjectPath + '/update.rdf', function(err) {
+      checkExistsAndMv(generatedRdf, 'update.rdf', function(err) {
         if (err) return console.error(err);
-        console.log('update.rdf written to ' + staticProjectPath + '/update.rdf');
+        console.log('update.rdf written to update.rdf');
       });
     });
   });
@@ -98,14 +96,14 @@ function distAddonSigned() {
 
     // move our signed xpi and rdf into the testpilot static
     // directory and exit
-    checkExistsAndMv('addon.xpi', staticProjectPath + '/addon.xpi', function(err) {
+    checkExistsAndMv('addon.xpi', 'addon.xpi', function(err) {
       if (err) return console.error(err);
-      console.log('addon.xpi written to ' + staticProjectPath + '/addon.xpi');
+      console.log('addon.xpi written to addon.xpi');
     });
 
-    checkExistsAndMv(updateFile, staticProjectPath + '/update.rdf', function(err) {
+    checkExistsAndMv(updateFile, 'update.rdf', function(err) {
       if (err) return console.error(err);
-      console.log('update.rdf written to ' + staticProjectPath + '/update.rdf');
+      console.log('update.rdf written to update.rdf');
     });
   });
 }
