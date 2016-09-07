@@ -28,6 +28,7 @@ if (store.surveyChecks === undefined) store.surveyChecks = {};
 });
 
 function init() {
+  if (checkForCompletedExperiments()) { return; }
   // wait about 10 minutes before prompting user for survey
   setTimeout(() => {
     // Only check/ask for survey if the user has addons installed.
@@ -38,6 +39,38 @@ function init() {
       launchSurvey(experiment, interval);
     }
   }, TEN_MINUTES);
+}
+
+function checkForCompletedExperiments() {
+  if (store.installedAddons) {
+    const now = Date.now();
+    const ids = Object.keys(store.installedAddons);
+    const eolSurveys = [];
+    for (let id of ids) { // eslint-disable-line prefer-const
+      let x = store.installedAddons[id]; // eslint-disable-line prefer-const
+      if (x.active &&
+          (new Date(x.completed)).getTime() < now &&
+          !(id in store.surveyChecks.eol)) {
+        eolSurveys.push(x);
+      }
+    }
+    const experiment = eolSurveys[Math.floor(Math.random() * eolSurveys.length)];
+    if (experiment) {
+      tabs.once('open', tab => { // eslint-disable-line no-unused-vars
+        setTimeout(() =>
+          launchSurvey({
+            experiment,
+            interval: 'eol',
+            label: `The ${experiment.title} experiment has ended. What did you think?`,
+            persistence: 10
+          }),
+          1000
+        );
+      });
+      return true;
+    }
+  }
+  return false;
 }
 
 function destroy() {
@@ -75,13 +108,14 @@ function checkInstallDate(installDate, addonId) {
   return false;
 }
 
-function launchSurvey(experiment, interval) {
-  showRating({ experiment })
+function launchSurvey(options) {
+  const { experiment, interval } = options;
+  showRating(options)
     .then(
       rating => {
         if (!rating) { return Promise.resolve(); }
         // TODO: add telemetry ping for rating
-        return showSurveyButton({ experiment })
+        return showSurveyButton(options)
           .then(clicked => {
             if (clicked) {
               const urlParams = {
@@ -180,12 +214,15 @@ function showRating(options) {
     let experimentRating = null;
 
     const { notifyBox, box } = createNotificationBox({
-      label: `Please rate ${experiment.title}`,
+      label: options.label || `Please rate ${experiment.title}`,
       image: experiment.thumbnail,
       child: win => createRatingUI(win, uiClosed),
       persistence: options.persistence,
       pulse: true,
       callback: () => {
+        if (options.interval === 'eol' && experimentRating === null) {
+          store.surveyChecks.eol[experiment.addon_id] = true;
+        }
         clearTimeout(uiTimeout);
         resolve(experimentRating);
       }
