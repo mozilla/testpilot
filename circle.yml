@@ -15,7 +15,7 @@ machine:
   node:
     version: 6.2.0
   environment:
-    TESTPILOT_STATIC_BRANCHES: development-static 1305-revamped-static
+    TESTPILOT_STATIC_BRANCHES: development-static
 
 dependencies:
 
@@ -72,12 +72,6 @@ deployment:
       - development-static
     commands:
       - aws s3 sync dist s3://testpilot-static.dev.mozaws.net --delete --acl public-read
-
-  static_development_lorchard:
-    branch:
-      - 1305-revamped-static
-    commands:
-      - aws s3 sync dist s3://testpilot-static.lorchard.mozaws.net --delete --acl public-read
 
 # Only notify of builds on master branch.
 experimental:
