@@ -17,10 +17,12 @@ require('./frontend/tasks/assets');
 require('./frontend/tasks/pages');
 require('./frontend/tasks/server');
 require('./frontend/tasks/dist');
+require('./frontend/tasks/django');
 
 gulp.task('clean', () => del([
   config.DEST_PATH,
-  config.DIST_PATH
+  config.DIST_PATH,
+  config.DJANGO_OLD_STATIC
 ]));
 
 gulp.task('build', [
@@ -42,12 +44,29 @@ gulp.task('watch', [
   'pages-watch'
 ]);
 
-gulp.task('default', () => runSequence(
+gulp.task('default', done => runSequence(
   'self-lint',
   'clean',
   'build',
   'watch',
-  'server'
+  'server',
+  done
+));
+
+gulp.task('django-default', done => runSequence(
+  'self-lint',
+  'clean',
+  'build',
+  'django-api-copy',
+  'watch',
+  'django-api-watch',
+  done
+));
+
+gulp.task('django-build', done => runSequence(
+  'build',
+  'django-api-copy',
+  done
 ));
 
 // Exit if the gulpfile changes so we can self-reload with a wrapper script.

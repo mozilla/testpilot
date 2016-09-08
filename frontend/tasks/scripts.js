@@ -10,6 +10,7 @@ const eslint = require('gulp-eslint');
 const source = require('vinyl-source-stream');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
+const runSequence = require('run-sequence');
 
 const packageJSON = require('../../package.json');
 
@@ -39,20 +40,13 @@ gulp.task('scripts-lint', () => {
 gulp.task('scripts-clean', () => {
 });
 
-gulp.task('scripts-build', [
-  'scripts-clean',
-  'scripts-misc',
-  'scripts-app-main',
-  'scripts-app-vendor',
-]);
-
 gulp.task('scripts-watch', () => {
-  gulp.watch([config.SRC_PATH + 'index.js', config.SRC_PATH + 'lib/**/*.js'], ['scripts-app-main']);
+  gulp.watch([config.SRC_PATH + 'index.js', config.SRC_PATH + 'app/**/*.js'], ['scripts-app-main']);
   gulp.watch('../../package.json', ['scripts-app-vendor']);
   gulp.watch(config.SRC_PATH + 'scripts/**/*.js', ['scripts-misc']);
 });
 
-gulp.task('scripts-misc', shouldLint('js-lint', 'scripts-lint'), () => {
+gulp.task('scripts-misc', () => {
   return gulp.src(config.SRC_PATH + 'scripts/**/*')
     .pipe(gulpif(config.IS_DEBUG, sourcemaps.init({loadMaps: true})))
     .pipe(gulpif(!config.IS_DEBUG, uglify()))
@@ -60,7 +54,7 @@ gulp.task('scripts-misc', shouldLint('js-lint', 'scripts-lint'), () => {
     .pipe(gulp.dest(config.DEST_PATH + 'static/scripts'));
 });
 
-gulp.task('scripts-app-main', ['scripts-lint'], () => {
+gulp.task('scripts-app-main', () => {
   return commonBrowserify('app.js', browserify({
     entries: [config.SRC_PATH + 'app/main.js'],
     debug: config.IS_DEBUG,
@@ -74,6 +68,15 @@ gulp.task('scripts-app-vendor', () => {
     debug: config.IS_DEBUG
   }).require(vendorModules));
 });
+
+gulp.task('scripts-build', done => runSequence(
+  'scripts-clean',
+  'scripts-lint',
+  'scripts-misc',
+  'scripts-app-main',
+  'scripts-app-vendor',
+  done
+));
 
 function commonBrowserify(sourceName, b) {
   return b

@@ -8,7 +8,7 @@ module.exports = {
   SRC_PATH: './frontend/src/',
   DEST_PATH: './frontend/build/',
   DIST_PATH: './dist/',
-  DJANGO_DIST_PATH: './testpilot/frontend/static/',
+  DJANGO_OLD_STATIC:  './testpilot/frontend/static/',
   CONTENT_SRC_PATH: './content-src/',
 
   PRODUCTION_EXPERIMENTS_URL: 'https://testpilot.firefox.com/api/experiments',

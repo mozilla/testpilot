@@ -88,7 +88,7 @@
     "start": "gulp",
     "server": "gulp server",
     "static": "gulp dist-build",
-    "build": "gulp dist-django-build",
+    "build": "gulp django-build",
     "docs": "doctoc README.md && doctoc addon/README.md",
     "lint": "gulp scripts-lint styles-lint",
     "test": "npm run test:general && npm run test:client",

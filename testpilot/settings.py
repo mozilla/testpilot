@@ -265,6 +265,9 @@ LANGUAGES = lazy(lazy_langs, list)()
 STATIC_ROOT = config('STATIC_ROOT', default=os.path.join(BASE_DIR, 'static'))
 STATIC_URL = config('STATIC_URL', '/static/')
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "frontend/build/static")
+]
 
 DEFAULT_FILE_STORAGE = config(
     'DEFAULT_FILE_STORAGE',
