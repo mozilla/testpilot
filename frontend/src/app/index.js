@@ -13,6 +13,7 @@ import { Provider } from 'react-redux';
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 
 import createLogger from 'redux-logger';
+import thunk from 'redux-thunk';
 import promise from 'redux-promise';
 
 import './lib/ga-snippet';
@@ -30,14 +31,6 @@ import AppRouter from './lib/router';
 
 es6Promise.polyfill();
 
-/*
-const initialState = {
-  experiments: { experiments: [], lastFetched: null },
-  browser: { isFirefox: false },
-  addon: { hasAddon: false, installed: [] }
-};
-*/
-
 const browserHistory = useRouterHistory(createHistory)({ basename: '/' });
 
 const store = createStore(
@@ -47,9 +40,9 @@ const store = createStore(
     browser: browserReducer,
     addon: addonReducer
   }),
-  // initialState,
   {},
   applyMiddleware(
+    thunk,
     promise,
     routerMiddleware(browserHistory),
     createLogger()
