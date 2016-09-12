@@ -72,7 +72,8 @@ class TestAddonInstallation(FirefoxTestCase):
         b.tabbar.close_tab(b.tabbar.tabs[1])
 
         # The frontend should redirect to /experiments after it contacts the add-on
-        Wait(m).until(lambda m: b.tabbar.tabs[0].location.endswith('/experiments'))
+        Wait(m).until(lambda m: b.tabbar.tabs[0].location.endswith('/experiments') or
+                                b.tabbar.tabs[0].location.endswith('/experiments/'))
 
         # Clean up by uninstalling the add-on
         Addons(m).uninstall('@testpilot-addon')
