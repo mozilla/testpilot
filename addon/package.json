@@ -24,7 +24,7 @@
     "once": "jpm run -b beta --prefs dev-prefs.json",
     "watch": "jpm watchpost --post-url http://127.0.0.1:8888",
     "watch-ui": "watchify-server ui-test.js --index ui-test.html",
-    "lint": "eslint .",
+    "lint": "eslint --no-eslintrc -c ./.eslintrc .",
     "sign": "./bin/update-version && ./bin/sign",
     "package": "jpm xpi && mv testpilot-addon.xpi addon.xpi && mv @testpilot-addon-$npm_package_version.update.rdf update.rdf",
     "lint-addon": "addons-linter addon.xpi -o text"
