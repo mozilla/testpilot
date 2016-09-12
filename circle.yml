@@ -72,6 +72,8 @@ deployment:
       - development-static
     commands:
       - aws s3 sync dist s3://testpilot-static.dev.mozaws.net --delete --acl public-read
+      - aws configure set preview.cloudfront true
+      - aws cloudfront create-invalidation --distribution-id E1QEK63O4YIKFV --paths '/*'
 
 # Only notify of builds on master branch.
 experimental:
