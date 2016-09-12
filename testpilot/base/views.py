@@ -50,8 +50,8 @@ def contribute_json(request):
 
 
 def privacy(request):
-    return static.serve(request, 'legal-copy/privacy-notice.html', document_root=settings.ROOT)
+    return static.serve(request, 'frontend/build/privacy/index.html', document_root=settings.ROOT)
 
 
 def terms(request):
-    return static.serve(request, 'legal-copy/terms-of-use.html', document_root=settings.ROOT)
+    return static.serve(request, 'frontend/build/terms/index.html', document_root=settings.ROOT)
