@@ -8,14 +8,49 @@ import { getExperimentByID, getExperimentByURL, getExperimentInProgress } from '
 
 const INSTALL_STATE_WATCH_PERIOD = 2000;
 
-export function installAddon(eventCategory) {
-  const downloadUrl = '/static/addon/addon.xpi';
-  sendToGA('event', {
-    eventCategory,
-    eventAction: 'button click',
-    eventLabel: 'Install the Add-on',
-    outboundURL: downloadUrl
+const MOZADDONMANAGER_ALLOWED_HOSTNAMES = [
+  'testpilot.firefox.com',
+  'testpilot.stage.mozaws.net',
+  'testpilot.dev.mozaws.net'
+];
+
+function mozAddonManagerInstall(url) {
+  return navigator.mozAddonManager.createInstall({ url }).then(install => {
+    return new Promise((resolve, reject) => {
+      install.addEventListener('onInstallEnded', () => resolve());
+      install.addEventListener('onInstallFailed', () => reject());
+      install.install();
+    });
   });
+}
+
+export function installAddon(eventCategory) {
+  const { protocol, hostname, port } = window.location;
+  const path = '/static/addon/addon.xpi';
+  const downloadUrl = `${protocol}//${hostname}${port ? ':' + port : ''}${path}`;
+
+  const useMozAddonManager = (
+    navigator.mozAddonManager &&
+    protocol === 'https:' &&
+    MOZADDONMANAGER_ALLOWED_HOSTNAMES.includes(hostname)
+  );
+
+  const gaEvent = {
+    eventCategory: eventCategory,
+    eventAction: 'button click',
+    eventLabel: 'Install the Add-on'
+  };
+
+  if (useMozAddonManager) {
+    sendToGA('event', gaEvent);
+    mozAddonManagerInstall(downloadUrl).then(() => {
+      console.log('Installed extension via mozAddonManager');
+    });
+  } else {
+    gaEvent.outboundURL = downloadUrl;
+    sendToGA('event', gaEvent);
+  }
+
   cookies.set('first-run', 'true');
 }
 

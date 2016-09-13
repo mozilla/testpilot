@@ -25,6 +25,8 @@ rules:
   "react/prop-types": [0]
   arrow-body-style: [0]
   camelcase: [0]
+  prefer-template: [0]
+  object-shorthand: [0]
   comma-dangle: [2, never]
   indent: [2, 2, {SwitchCase: 1}]
   max-len: [0]
