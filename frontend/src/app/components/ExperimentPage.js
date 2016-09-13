@@ -93,16 +93,22 @@ export default class ExperimentPage extends React.Component {
             showDisableDialog, showTourDialog, isEnabling, isDisabling,
             progressButtonWidth } = this.state;
 
-    const { title, version, statusType, contribute_url,
-            bug_report_url, discourse_url, introduction, measurements,
-            privacy_notice_url, changelog_url, thumbnail, survey_url,
-            contributors, details } = experiment;
+    const { title, version, contribute_url, bug_report_url, discourse_url,
+            introduction, measurements, privacy_notice_url, changelog_url,
+            thumbnail, survey_url, contributors, details } = experiment;
 
     const subtitle = (title === 'No More 404s') ? 'Powered by the Wayback Machine' : '';
     const installation_count = experiment.installation_count.toLocaleString();
     const surveyURL = buildSurveyURL('givefeedback', title, installed, survey_url);
     const modified = formatDate(experiment.modified);
     const completedDate = experiment.completed ? formatDate(experiment.completed) : null;
+
+    let statusType = null;
+    if (experiment.error) {
+      statusType = 'error';
+    } else if (enabled) {
+      statusType = 'enabled';
+    }
 
     return (
       <section id="details" data-hook="experiment-page">
