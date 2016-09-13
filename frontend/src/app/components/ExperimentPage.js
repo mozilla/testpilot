@@ -124,7 +124,7 @@ export default class ExperimentPage extends React.Component {
             onCancel={() => this.setState({ showTourDialog: false })}
             onComplete={() => this.setState({ showTourDialog: false })} />}
 
-        <Header />
+        <Header hasAddon={hasAddon}/>
 
         {!hasAddon && <section data-hook="testpilot-promo">
           <div className="experiment-promo">

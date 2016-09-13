@@ -11,8 +11,8 @@ import DiscussDialog from './DiscussDialog';
 
 export default class Header extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.closeTimer = null;
     this.close = this.close.bind(this);
     this.state = {
@@ -24,6 +24,7 @@ export default class Header extends React.Component {
 
   render() {
     const { showSettings, showRetireDialog, showDiscussDialog } = this.state;
+    const { hasAddon } = this.props;
 
     return (
       <header id="main-header" className="responsive-content-wrapper">
@@ -39,6 +40,7 @@ export default class Header extends React.Component {
         <h1>
           <Link to="/" className="wordmark" data-l10n-id="siteName">Firefox Test Pilot</Link>
         </h1>
+        {hasAddon &&
         <div data-hook="settings">
           <div className="settings-contain" data-hook="active-user">
              <div className={classnames(['button', 'outline', 'settings-button'], { active: showSettings })}
@@ -57,7 +59,7 @@ export default class Header extends React.Component {
                </ul>
              </div>}
           </div>
-        </div>
+        </div>}
       </header>
     );
   }
@@ -140,5 +142,8 @@ export default class Header extends React.Component {
     });
     this.close();
   }
-
 }
+
+Header.propTypes = {
+  hasAddon: React.PropTypes.bool
+};

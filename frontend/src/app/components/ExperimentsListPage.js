@@ -33,7 +33,7 @@ export default class ExperimentsListPage extends React.Component {
           {showEmailDialog &&
             <EmailDialog onDismiss={() => this.setState({ showEmailDialog: false })} />}
 
-          <Header />
+          <Header hasAddon={hasAddon}/>
           <div className="responsive-content-wrapper reverse-split-banner ">
             <div className="copter-wrapper fly-down">
               <div className="copter"></div>
