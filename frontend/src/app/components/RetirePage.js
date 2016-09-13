@@ -42,7 +42,7 @@ export default class RetirePage extends React.Component {
             </div>}
             {uninstalled && <div>
               <div id="retire" className="modal fade-in">
-                <h1 data-l10n-id="retirePageHeadline" className="title">Thanks Again!</h1>
+                <h1 data-l10n-id="retirePageHeadline" className="title">Thanks for flying!</h1>
                 <div className="modal-content">
                   <p data-l10n-id="retirePageMessage">Hope you had fun experimenting with us. <br /> Come back any time.</p>
                 </div>

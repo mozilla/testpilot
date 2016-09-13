@@ -54,6 +54,10 @@ export function installAddon(eventCategory) {
   cookies.set('first-run', 'true');
 }
 
+export function uninstallAddon() {
+  sendMessage('uninstall-self');
+}
+
 export function setupAddonConnection(store) {
   store.dispatch(addonActions.setInstalled());
   watchForAddonInstallStateChange(store);

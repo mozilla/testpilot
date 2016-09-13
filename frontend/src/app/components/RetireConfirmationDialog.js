@@ -1,4 +1,5 @@
 import React from 'react';
+import { uninstallAddon } from '../lib/addon';
 
 export default class RetireConfirmationDialog extends React.Component {
   render() {
@@ -15,7 +16,7 @@ export default class RetireConfirmationDialog extends React.Component {
               <p data-l10n-id="retireEmailMessage" className="centered small">To opt out of email updates, simply click the <em>unsubscribe</em> link on any Test Pilot email.</p>
             </div>
             <div className="modal-actions">
-              <button data-hook="submit-feedback" data-l10n-id="retireSubmitButton" className="submit button warning large">Proceed</button>
+              <button onClick={e => this.proceed(e)} data-hook="submit-feedback" data-l10n-id="retireSubmitButton" className="submit button warning large">Proceed</button>
               <a onClick={e => this.cancel(e)} data-l10n-id="retireCancelButton" className="cancel modal-escape" href="">Cancel</a>
             </div>
           </form>
@@ -26,7 +27,8 @@ export default class RetireConfirmationDialog extends React.Component {
 
   proceed(e) {
     e.preventDefault();
-    this.props.onDismiss();
+    uninstallAddon();
+    this.props.navigateTo('/retire');
   }
 
   cancel(e) {
