@@ -109,6 +109,7 @@ export default class Header extends React.Component {
       eventLabel: 'Retire'
     });
     this.setState({ showRetireDialog: true });
+    this.close();
   }
 
   discuss(evt) {
@@ -119,6 +120,7 @@ export default class Header extends React.Component {
       eventLabel: 'Discuss'
     });
     this.setState({ showDiscussDialog: true });
+    this.close();
   }
 
   wiki() {
@@ -127,6 +129,7 @@ export default class Header extends React.Component {
       eventAction: 'drop-down menu',
       eventLabel: 'wiki'
     });
+    this.close();
   }
 
   fileIssue() {
@@ -135,6 +138,7 @@ export default class Header extends React.Component {
       eventAction: 'drop-down menu',
       eventLabel: 'file issue'
     });
+    this.close();
   }
 
 }
