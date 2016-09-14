@@ -35,7 +35,6 @@
 }
 
 #share {
-  margin-top: 115px;
 
   .modal-content {
     padding: 20px 20px 30px;
@@ -335,28 +334,46 @@
   }
 }
 
+.share-url-wrapper {
+  border: 0;
+  margin: $grid-unit 0 0;
+  padding: 0;
+}
+
 .share-url {
-  border-color: $transparent-black-8;
+  @include flex-container(row, space-between, stretch);
+  border: 1px solid $transparent-black-8;
   border-radius: $small-border-radius;
-  display: flex;
-  justify-content: space-between;
-  margin-top: $grid-unit;
-  padding: 1px;
+  padding: 0;
 
   input {
+    background: transparent;
     border-width: 0;
+    flex: 0 0 80%;
     font-size: $font-unit * 1.6;
-    line-height: 1;
-    padding: $grid-unit * .5;
-    width: 85%;
+    line-height: $font-unit * 1.6;
+    padding: $grid-unit * .6;
   }
 
   button {
     background: transparent;
+    border-radius: 0 $small-border-radius $small-border-radius 0;
     border-width: 0;
     color: $default-light;
+    flex: 0 0 20%;
+    line-height: $font-unit * 1.6;
+    padding: $grid-unit * .7 $grid-unit * .8;
     text-transform: lowercase;
-    width: 15%;
+    transition: background 150ms;
+
+    &:hover,
+    &:focus {
+      background-color: $transparent-black-1;
+    }
+
+    &:active {
+      animation: pop 50ms;
+    }
   }
 }
 

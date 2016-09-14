@@ -24,9 +24,11 @@ export default function SharePage() {
               <li className="share-email"><a href="mailto:?body=https%3A//testpilot.firefox.com" data-l10n-id="shareEmail">E-mail</a></li>
             </ul>
             <p data-l10n-id="shareSecondary">or just copy and paste this link...</p>
-            <fieldset className="share-url">
-              <input type="text" readOnly value="https://testpilot.firefox.com" />
-              <button data-l10n-id="shareCopy" data-clipboard-target=".share-url input">Copy</button>
+            <fieldset className="share-url-wrapper">
+              <div className="share-url">
+                <input type="text" readOnly value="https://testpilot.firefox.com" />
+                <button data-l10n-id="shareCopy" data-clipboard-target=".share-url input">Copy</button>
+              </div>
             </fieldset>
           </div>
         </div>
