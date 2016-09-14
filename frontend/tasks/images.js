@@ -13,5 +13,5 @@ gulp.task('images-build', () => {
 });
 
 gulp.task('images-watch', () => {
-  gulp.watch(config.SRC_PATH + 'images/**/*', ['assets-images']);
+  gulp.watch(config.SRC_PATH + 'images/**/*', ['images-build']);
 });

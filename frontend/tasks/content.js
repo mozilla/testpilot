@@ -10,7 +10,7 @@ const YAML = require('yamljs');
 gulp.task('content-build', ['content-experiments-json']);
 
 gulp.task('content-watch', () => {
-  gulp.watch(config.CONTENT_SRC_PATH + '/*.yaml', ['content-experiments-json']);
+  gulp.watch(config.CONTENT_SRC_PATH + '/**/*.yaml', ['content-experiments-json']);
 });
 
 gulp.task('content-experiments-json', function generateStaticAPITask() {

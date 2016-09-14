@@ -12,7 +12,7 @@ module.exports = {
   CONTENT_SRC_PATH: './content-src/',
 
   PRODUCTION_EXPERIMENTS_URL: 'https://testpilot.firefox.com/api/experiments',
-  IMAGE_NEW_BASE_PATH: 'images/experiments/',
+  IMAGE_NEW_BASE_PATH: 'frontend/src/images/experiments/',
   IMAGE_NEW_BASE_URL: '/static/images/experiments/',
 
   'sass-lint': true,
