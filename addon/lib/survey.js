@@ -9,8 +9,9 @@
  *   https://github.com/lmorchard/fireriver/blob/master/lib/main.js#L369
  *   & https://dxr.mozilla.org/mozilla-central/source/browser/components/uitour/UITour.jsm
  */
-const {Cc, Ci} = require('chrome');
-const {setTimeout} = require('sdk/timers');
+
+const { Services } = require('resource://gre/modules/Services.jsm');
+const { setTimeout, clearTimeout } = require('sdk/timers');
 const tabs = require('sdk/tabs');
 const querystring = require('sdk/querystring');
 const store = require('sdk/simple-storage').storage;
@@ -18,7 +19,7 @@ const store = require('sdk/simple-storage').storage;
 const NUM_STARS = 5; // Number of survey stars
 const TEN_MINUTES = 60 * 1000 * 10;
 
-module.exports = {init: init, destroy: destroy};
+module.exports = {init, destroy, launchSurvey};
 
 // set timecheck flags for initial run.
 if (store.surveyChecks === undefined) store.surveyChecks = {};
@@ -31,7 +32,10 @@ function init() {
   setTimeout(() => {
     // Only check/ask for survey if the user has addons installed.
     if (store.installedAddons && Object.keys(store.installedAddons).length) {
-      showRandomSurvey(getRandomExperiment());
+      const experiment = getRandomExperiment();
+      const interval = checkInstallDate(experiment.installDate, experiment.addon_id);
+      if (!interval) return;
+      launchSurvey(experiment, interval);
     }
   }, TEN_MINUTES);
 }
@@ -44,16 +48,6 @@ function getRandomExperiment() {
   const installedKeys = Object.keys(store.installedAddons);
   const randomIndex = Math.floor(Math.random() * installedKeys.length);
   return store.installedAddons[installedKeys[randomIndex]];
-}
-
-function showRandomSurvey(experiment) {
-  launchSurvey({
-    label: 'Please Rate the Test Pilot experiment ' + experiment.title,
-    image: experiment.thumbnail,
-    addonId: experiment.addon_id,
-    surveyUrl: experiment.survey_url,
-    installDate: experiment.installDate
-  });
 }
 
 function getAnonEl(win, box, attrName) {
@@ -81,61 +75,31 @@ function checkInstallDate(installDate, addonId) {
   return false;
 }
 
-function launchSurvey(options) {
-  const interval = checkInstallDate(options.installDate, options.addonId);
-  if (typeof interval !== 'number') return;
-
-  const WM = Cc['@mozilla.org/appshell/window-mediator;1'].
-                        getService(Ci.nsIWindowMediator);
-  const win = WM.getMostRecentWindow('navigator:browser');
-  const browser = win.gBrowser;
-  const notifyBox = browser.getNotificationBox();
-
-  const addonId     = options.addonId || 'default_id';
-  const duration    = options.duration || 60; // default is 1 minute.
-  const surveyUrl   = options.surveyUrl || '';
-  const persistence = options.persistence || 0;
-
-  const box = notifyBox.appendNotification(
-    options.label    || 'Default label',
-    options.value    || 'Default Value',
-    options.image    || 'invalid.png',
-    options.priority || notifyBox.PRIORITY_INFO_LOW,
-    options.buttons  || []);
-
-  const messageText = getAnonEl(win, box, 'messageText');
-  const messageImage = getAnonEl(win, box, 'messageImage');
-
-  const ratingFragment = getRatingUI(win, notifyBox, box, messageText,
-                                     addonId, interval, surveyUrl);
-
-  // Make sure the stars are not pushed to the right by the spacer.
-  const rightSpacer = win.document.createElement('spacer');
-  rightSpacer.flex = 20;
-  ratingFragment.appendChild(rightSpacer);
-
-  messageText.flex = 0; // Collapse the space before the stars.
-  const leftSpacer = messageText.nextSibling;
-  leftSpacer.flex = 0;
-
-  box.appendChild(ratingFragment);
-
-  box.classList.add('heartbeat');
-  box.persistence = persistence;
-  messageImage.classList.add('heartbeat', 'pulse-onshow');
-  messageText.classList.add('heartbeat');
-  messageImage.setAttribute('style', 'filter: invert(80%)');
-
-  // End the survey if the user hasn't responded before expiration.
-  if (!options.privateWindowsOnly) {
-    setTimeout(() => {
-      notifyBox.removeNotification(box);
-    }, 1000 * duration);
-  }
+function launchSurvey(experiment, interval) {
+  showRating({ experiment })
+    .then(
+      rating => {
+        if (!rating) { return Promise.resolve(); }
+        // TODO: add telemetry ping for rating
+        return showSurveyButton({ experiment })
+          .then(clicked => {
+            if (clicked) {
+              const urlParams = {
+                id: experiment.addon_id,
+                installed: Object.keys(store.installedAddons),
+                rating,
+                interval
+              };
+              const url = `${experiment.survey_url}?${querystring.stringify(urlParams)}`;
+              tabs.open(url);
+            }
+          });
+      }
+    )
+    .catch(() => {});
 }
 
-function getRatingUI(win, notifyBox, box, messageText, addonId,
-                     interval, surveyUrl) {
+function createRatingUI(win, cb) {
   // Create the fragment holding the rating UI.
   const frag = win.document.createDocumentFragment();
 
@@ -145,15 +109,7 @@ function getRatingUI(win, notifyBox, box, messageText, addonId,
   ratingContainer.setAttribute('style', 'margin-bottom: 2px');
 
   function ratingListener(evt) {
-    const rating = Number(evt.target.getAttribute('data-score'), 10);
-
-    // send data to SurveyGizmo via querystrings
-    notifyBox.removeNotification(box);
-    const params = querystring.stringify({id: addonId,
-                                          rating: rating,
-                                          interval: interval,
-                                          installed: Object.keys(store.installedAddons)});
-    tabs.open(`${surveyUrl}?${params}`);
+    cb(Number(evt.target.getAttribute('data-score'), 10));
   }
 
   for (let i = 0; i < NUM_STARS; i++) {
@@ -176,4 +132,95 @@ function getRatingUI(win, notifyBox, box, messageText, addonId,
   frag.appendChild(ratingContainer);
 
   return frag;
+}
+
+function createNotificationBox(options) {
+  const win = Services.wm.getMostRecentWindow('navigator:browser');
+  const notifyBox = win.gBrowser.getNotificationBox();
+  const box = notifyBox.appendNotification(
+    options.label,
+    options.value || '',
+    options.image,
+    notifyBox.PRIORITY_INFO_LOW,
+    options.buttons || [],
+    options.callback
+  );
+  const messageText = getAnonEl(win, box, 'messageText');
+  const messageImage = getAnonEl(win, box, 'messageImage');
+
+  if (options.child) {
+    const child = options.child(win);
+    // Make sure the child is not pushed to the right by the spacer.
+    const rightSpacer = win.document.createElement('spacer');
+    rightSpacer.flex = 20;
+    child.appendChild(rightSpacer);
+    box.appendChild(child);
+  }
+  messageText.flex = 0; // Collapse the space before the stars/button.
+  const leftSpacer = messageText.nextSibling;
+  leftSpacer.flex = 0;
+  box.classList.add('heartbeat');
+  messageImage.classList.add('heartbeat');
+  if (options.pulse) {
+    messageImage.classList.add('pulse-onshow');
+  }
+  messageText.classList.add('heartbeat');
+  messageImage.setAttribute('style', 'filter: invert(80%)');
+  box.persistence = options.persistence || 0;
+  return {
+    notifyBox,
+    box
+  };
+}
+
+function showRating(options) {
+  return new Promise((resolve) => {
+    const experiment = options.experiment;
+    const uiTimeout = setTimeout(uiClosed, options.duration || 60000);
+    let experimentRating = null;
+
+    const { notifyBox, box } = createNotificationBox({
+      label: `Please rate ${experiment.title}`,
+      image: experiment.thumbnail,
+      child: win => createRatingUI(win, uiClosed),
+      persistence: options.persistence,
+      pulse: true,
+      callback: () => {
+        clearTimeout(uiTimeout);
+        resolve(experimentRating);
+      }
+    });
+
+    function uiClosed(rating) {
+      experimentRating = rating;
+      notifyBox.removeNotification(box);
+    }
+  });
+}
+
+function showSurveyButton(options) {
+  return new Promise((resolve) => {
+    let clicked = false;
+    const { experiment, duration } = options;
+    const uiTimeout = setTimeout(uiClosed, duration || 60000);
+    const { notifyBox, box } = createNotificationBox({
+      label: `Thank you for rating ${experiment.title}.`,
+      image: experiment.thumbnail,
+      buttons: [{
+        label: 'Take a Quick Survey',
+        callback: () => { clicked = true; }
+      }],
+      callback: () => {
+        clearTimeout(uiTimeout);
+        resolve(clicked);
+      }
+    });
+    function uiClosed() {
+      notifyBox.removeNotification(box);
+    }
+    const button = box.getElementsByClassName('notification-button')[0];
+    if (button) {
+      button.setAttribute('style', 'background: #0095dd; color: #fff; height: 30px; font-size: 13px; border-radius: 2px; border: 0px; text-shadow: 0 0px; box-shadow: 0 0px;');
+    }
+  });
 }
