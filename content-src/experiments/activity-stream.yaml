@@ -5,7 +5,9 @@ slug: activity-stream
 thumbnail: /static/images/experiments/activity-stream/experiments_experiment/e/1/e19739ea25188c866b654d3aa2616b27_thumbnail_1461817294_0590.png
 description: 'A rich visual history feed and a reimagined home page make it easier than ever to find exactly what you''re looking for in Firefox.'
 introduction: '<p>Get back to browsing without losing your stream of thought. Activity Stream keeps your top sites, bookmarks and recent history close at hand in each new tab. And the new timeline view gives you a birds-eye view of your browsing.</p>'
-version: 1.1.1
+image_twitter: /static/images/experiments/activity-stream/experiments_experiment/e/1/e19739ea25188c866b654d3aa2616b27_image_1473186642_0579.png
+image_facebook: /static/images/experiments/activity-stream/experiments_experiment/e/1/e19739ea25188c866b654d3aa2616b27_image_1473186642_0826.png
+version: 1.1.3
 changelog_url: 'https://github.com/mozilla/activity-stream/blob/master/CHANGELOG.md'
 contribute_url: 'https://github.com/mozilla/activity-stream'
 bug_report_url: 'https://github.com/mozilla/activity-stream/issues'
@@ -81,7 +83,7 @@ contributors:
     display_name: 'Bryan Bell'
     title: 'Senior UX Designer'
     avatar: /static/images/experiments/activity-stream/avatar/4aed85ee04a60538bbbfba66a5b59396.jpg
-installation_count: 41706
+installation_count: 46732
 created: '2016-03-11T21:05:59.363520Z'
-modified: '2016-08-03T17:26:52.921717Z'
+modified: '2016-09-06T18:30:42.286466Z'
 order: 1

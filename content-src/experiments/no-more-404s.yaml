@@ -5,14 +5,16 @@ slug: no-more-404s
 thumbnail: /static/images/experiments/no-more-404s/experiments_experiment/a/9/a9e6dc66c6a22851721715ae4d0641fb_thumbnail_1470245154_0349.png
 description: "Tired of dead ends on the web? We'll let you know when there's a saved version of what you're looking for on the Internet Archive's Wayback Machine.\r\n"
 introduction: "<p>This one is simple. If you hit a 404 page while browsing the web, we will let you know if the content you're looking for is archived on the Internet Archive's Wayback Machine.</p>\r\n\r\n<div style=\"padding: 10px; border-radius: 3px; background: rgba(255,147,0,.25); border: 1px solid #FF9300; font-size: 16px; margin-top: 20px;\">No More 404s requires Firefox 48 or later. <br><a href=\"https://support.mozilla.org/lt/kb/find-what-version-firefox-you-are-using\" target=\"_blank\">Make sure you're up to date.</a></div>\r\n"
-version: 1.5.5
+image_twitter: /static/images/experiments/no-more-404s/experiments_experiment/a/9/a9e6dc66c6a22851721715ae4d0641fb_image_1472573814_0582.png
+image_facebook: /static/images/experiments/no-more-404s/experiments_experiment/a/9/a9e6dc66c6a22851721715ae4d0641fb_image_1472573814_0278.png
+version: 1.5.6
 changelog_url: 'https://github.com/internetarchive/FirefoxNoMore404s/blob/master/Changelog.md'
 contribute_url: 'https://github.com/internetarchive/FirefoxNoMore404s'
 bug_report_url: 'https://github.com/internetarchive/FirefoxNoMore404s/issues/new'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/nomore404s'
 privacy_notice_url: 'https://github.com/internetarchive/FirefoxNoMore404s/blob/master/docs/metrics.md'
 measurements: "In addition to the <a href=\"https://testpilot.firefox.com/privacy\" target=\"_blank\">data</a> collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use No More 404s:\r\n<ul>\r\n<li>We collect basic usage on how many times you encounter a Page Not Found error (code 404), how many times a cached version of that page exists from Archive.org, and how many times you choose to view the cached version.</li>\r\n<li>To provide cached versions of pages, we send 404 error page URLs to Archive.org. <a href=\"https://archive.org/\" target=_blank\">Archive.org</a> discloses its privacy policy <a href=\"https://archive.org/about/terms.php\" target=\"blank\">here</a>.</li>\r\n<li>We do not  collect  URLs of the pages you request or the URLs we send to Archive.org.</li>\r\n<li>We may share survey results you submit to us and aggregated telemetry data related to this experiment with the Internet Archive.</li>\r\n</ul>"
-xpi_url: 'https://testpilot.cdn.mozilla.net/nomore404s/wayback_machine-1.5.5-an%2Bfx.xpi'
+xpi_url: 'https://testpilot.cdn.mozilla.net/nomore404s/wayback_machine-1.5.6-fx%2Ban.xpi'
 addon_id: wayback_machine@mozilla.org
 gradient_start: '#111111'
 gradient_stop: '#222222'
@@ -55,7 +57,7 @@ contributors:
     display_name: 'Adam Miller'
     title: 'Senior Crawl Engineer, Internet Archive'
     avatar: /static/images/experiments/no-more-404s/users_userprofile/1/d/1d7c2923c1684726dc23d2901c4d8157_avatar_1470244584_0355.jpg
-installation_count: 15045
+installation_count: 20377
 created: '2016-08-03T17:25:54.612365Z'
-modified: '2016-08-22T20:16:40.528537Z'
+modified: '2016-08-30T21:59:49.015500Z'
 order: 0

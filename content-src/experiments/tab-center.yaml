@@ -5,6 +5,8 @@ slug: tab-center
 thumbnail: /static/images/experiments/tab-center/experiments_experiment/6/9/69333a5f98edf04bbb52085d20e6303e_thumbnail_1461802048_0012.png
 description: 'What would it be like to move tabs from the top of the browser to the side? We wanted to find out!'
 introduction: '<p>Take your tabs from in the way to tucked away. Tab Center moves your tabs to the side of your browser window so they''re out of sight when you don''t need them, and easy to expand and grab when you do.</p>'
+image_twitter: null
+image_facebook: null
 version: '1.24'
 changelog_url: 'https://github.com/bwinton/TabCenter/releases/latest'
 contribute_url: 'https://github.com/bwinton/TabCenter#readme'
@@ -60,7 +62,7 @@ contributors:
     display_name: 'Philipp S'
     title: 'Firefox UX'
     avatar: /static/images/experiments/tab-center/avatar/9dbb3500db7ab04e6861fad17b9369b1.jpg
-installation_count: 27595
+installation_count: 29870
 created: '2016-04-28T00:07:28.847430Z'
 modified: '2016-08-19T16:51:12.188781Z'
 order: 2
