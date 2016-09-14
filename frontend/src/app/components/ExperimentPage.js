@@ -45,8 +45,20 @@ export default class ExperimentPage extends React.Component {
   componentWillReceiveProps(nextProps) {
     const { shouldShowTourDialog, enabled: prevEnabled } = this.state;
     const { isExperimentEnabled } = nextProps;
+
+    const prevExperiment = this.findCurrentExperiment(this.props);
+    const prevInProgress = prevExperiment && prevExperiment.inProgress;
+
     const nextExperiment = this.findCurrentExperiment(nextProps);
+    const nextInProgress = nextExperiment && nextExperiment.inProgress;
     const nextEnabled = nextExperiment && isExperimentEnabled(nextExperiment);
+
+    if (!nextInProgress && prevInProgress !== nextInProgress) {
+      this.setState({
+        isEnabling: false,
+        isDisabling: false
+      });
+    }
 
     this.setState({
       experiment: nextExperiment,
@@ -60,8 +72,6 @@ export default class ExperimentPage extends React.Component {
                              nextExperiment &&
                              !nextExperiment.error;
       this.setState({
-        isEnabling: false,
-        isDisabling: false,
         shouldShowTourDialog: false,
         showTourDialog
       });
