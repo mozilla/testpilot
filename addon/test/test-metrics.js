@@ -28,12 +28,18 @@ const mocks = {
     Events: ['on', 'off', 'emit'],
     TelemetryController: ['submitExternalPing'],
     AddonManager: ['getAddonByID'],
+    request: ['post'],
     PrefsService: ['set', 'get']
   })
 };
 
 const mockLoader = MockUtils.loader(module, './lib/metrics.js', {
   './node_modules/seedrandom/index.js': mocks.callbacks.seedrandom.seedrandom,
+  'sdk/request': {
+    Request: function() {
+      return mocks.callbacks.request;
+    }
+  },
   'sdk/simple-storage': {storage: mocks.store},
   'sdk/system/events': mocks.callbacks.Events,
   'sdk/preferences/service': mocks.callbacks.PrefsService,
