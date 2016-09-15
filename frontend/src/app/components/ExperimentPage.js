@@ -9,10 +9,10 @@ import NotFoundPage from './NotFoundPage';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import ExperimentRowCard from '../components/ExperimentRowCard';
 import ExperimentDisableDialog from '../components/ExperimentDisableDialog';
 import ExperimentTourDialog from '../components/ExperimentTourDialog';
 import MainInstallButton from '../components/MainInstallButton';
+import ExperimentCardList from '../components/ExperimentCardList';
 
 const CHANGE_HEADER_ON = 105;
 
@@ -81,7 +81,8 @@ export default class ExperimentPage extends React.Component {
   }
 
   render() {
-    const { navigateTo, experiments, installed, hasAddon, isFirefox } = this.props;
+    const { navigateTo, isExperimentEnabled, experiments, installed, hasAddon,
+            isFirefox } = this.props;
 
     // Show the loading animation if experiments haven't been loaded yet.
     if (experiments.length === 0) { return <LoadingPage />; }
@@ -280,14 +281,10 @@ export default class ExperimentPage extends React.Component {
           {!hasAddon && <div data-hook="inactive-user">
             <h2 className="card-list-header" data-l10n-id="otherExperiments">Try out these experiments as well</h2>
             <div className="responsive-content-wrapper delayed-fade-in" data-hook="experiment-list">
-              <div className="card-list experiments">
-                { experiments.map((listExperiment, key) =>
-                    (listExperiment.slug !== experiment.slug) &&
-                      <ExperimentRowCard key={key} navigateTo={navigateTo}
-                                         experiment={listExperiment} enabled={false}
-                                         hasAddon={hasAddon}
-                                         eventCategory="ExperimentsDetailPage Interactions" />) }
-              </div>
+              <ExperimentCardList navigateTo={navigateTo} hasAddon={hasAddon}
+                                  experiments={experiments} except={experiment}
+                                  isExperimentEnabled={isExperimentEnabled}
+                                  eventCategory="ExperimentsDetailPage Interactions" />
             </div>
           </div>}
           <footer id="main-footer" className="responsive-content-wrapper">

@@ -1,13 +1,13 @@
 import React from 'react';
 
 import Footer from '../components/Footer';
-import ExperimentRowCard from '../components/ExperimentRowCard';
 import MainInstallButton from '../components/MainInstallButton';
+import ExperimentCardList from '../components/ExperimentCardList';
 
 export default class LandingPage extends React.Component {
 
   render() {
-    const { navigateTo, experiments, hasAddon, isFirefox } = this.props;
+    const { navigateTo, isExperimentEnabled, experiments, hasAddon, isFirefox } = this.props;
 
     return (
       <section data-hook="landing-page">
@@ -39,13 +39,10 @@ export default class LandingPage extends React.Component {
           <div className="responsive-content-wrapper delayed-fade-in">
               <h2 className="card-list-header" data-l10n-id="landingExperimentsTitle">Try out the latest experimental features</h2>
               <div data-hook="experiment-list">
-                <div className="card-list experiments">
-                  { experiments.map((experiment, key) =>
-                      <ExperimentRowCard key={key} navigateTo={navigateTo}
-                                         experiment={experiment} enabled={false}
-                                         hasAddon={hasAddon}
-                                         eventCategory="HomePage Interactions" />) }
-                </div>
+                <ExperimentCardList navigateTo={navigateTo} hasAddon={hasAddon}
+                                    isExperimentEnabled={isExperimentEnabled}
+                                    experiments={experiments}
+                                    eventCategory="HomePage Interactions" />
               </div>
           </div>
         </div>

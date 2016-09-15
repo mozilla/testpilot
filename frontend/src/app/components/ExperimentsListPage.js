@@ -3,9 +3,8 @@ import cookies from 'js-cookie';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Loading from '../components/Loading';
-import ExperimentRowCard from '../components/ExperimentRowCard';
 import EmailDialog from '../components/EmailDialog';
+import ExperimentCardList from '../components/ExperimentCardList';
 
 export default class ExperimentsListPage extends React.Component {
 
@@ -48,13 +47,10 @@ export default class ExperimentsListPage extends React.Component {
           <div className="responsive-content-wrapper">
             <div data-hook="experiment-list">
               <div className="card-list experiments">
-                {(experiments.length === 0) ?
-                  <Loading /> :
-                  experiments.map((experiment, key) =>
-                    <ExperimentRowCard key={key} navigateTo={navigateTo}
-                                       hasAddon={hasAddon} experiment={experiment}
-                                       enabled={isExperimentEnabled(experiment)}
-                                       eventCategory="HomePage Interactions" />)}
+                <ExperimentCardList navigateTo={navigateTo} hasAddon={hasAddon}
+                                    isExperimentEnabled={isExperimentEnabled}
+                                    experiments={experiments}
+                                    eventCategory="HomePage Interactions" />
               </div>
             </div>
           </div>
