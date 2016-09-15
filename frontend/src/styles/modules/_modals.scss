@@ -65,7 +65,7 @@
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 999;
+  z-index: 9999;
 }
 
 .modal {
@@ -229,17 +229,60 @@
 }
 
 .tour-modal {
-  animation: none;
-  padding: 0;
-  width: 640px;
+  animation: fade-in-fly-up 500ms forwards;
+  animation-delay: 250ms;
+  max-width: 644px;
+  opacity: 0;
+  padding: 2px;
+  position: relative;
+  width: 644px;
+
+  .tour-header-wrapper {
+    @include flex-container(row, center, center);
+    background-color: $default;
+    border-radius: 4px 4px 0 0;
+    height: 54px;
+    margin: 0 0 2px;
+  }
+
+  .tour-header {
+    color: $white;
+    font-size: $font-unit * 2;
+    font-weight: bold;
+    margin: 0;
+    padding: $grid-unit * .6;
+    text-align: center;
+  }
+
+  .tour-cancel {
+    background-image: url('../images/close-icon.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    border-radius: $small-border-radius;
+    cursor: pointer;
+    height: 24px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 24px;
+    z-index: 1;
+
+    &:hover,
+    &:active {
+      background-color: $default-dark;
+      box-shadow: 0 -2px 0 $transparent-black-1 inset;
+    }
+  }
 
   .tour-content {
+    overflow: hidden;
     position: relative;
   }
 
   .tour-text {
-    background: $transparent-black-05;
-    border-top: 1px solid $transparent-black-1;
+    background: $white;
+    font-weight: bold;
     text-align: center;
     width: 100%;
 
@@ -249,45 +292,118 @@
     }
   }
 
+  .dot-row {
+    @include flex-container(row, center, center);
+    background: transparent;
+    bottom: 5px;
+    height: 12px;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .dot {
+    background: $secondary-button-background;
+    border: 1px solid $secondary-button-border;
+    border-radius: $circle-border-radius;
+    cursor: pointer;
+    flex: 0 0 12px;
+    height: 12px;
+    margin: 0 3px;
+
+    &.current {
+      background: $default;
+      border: 0;
+    }
+  }
+
   .tour-image {
     @include flex-container(row, center, center);
     background: $transparent-black-1;
-    border-radius: $small-border-radius $small-border-radius 0 0;
     height: 360px;
     overflow: hidden;
+    position: relative;
     width: 640px;
 
     img {
       height: 360px;
+    }
+
+    .fade {
+      background: linear-gradient(transparent, $white);
+      bottom: 0;
+      content: '';
+      height: 120px;
+      left: 0;
+      position: absolute;
+      width: 100%;
     }
   }
 
   .tour-actions {
     @include flex-container(row, space-between, center);
     height: 92px;
+    left: -7.8%;
     padding: 20px;
+    position: absolute;
+    top: 40%;
+    width: 115.6%;
+  }
+
+  .tour-next,
+  .tour-back,
+  .tour-done {
+    @include flex-container(row, center, center);
+    border-radius: $circle-border-radius;
+    box-shadow: 0 0 5px 1px $transparent-black-2, 0 0 0 1px $transparent-black-3;
+    cursor: pointer;
+    height: $grid-unit * 3;
+    transition: background-color 150ms;
+    width: $grid-unit * 3;
+
+    &.no-display {
+      display: none;
+    }
+  }
+
+  .tour-next {
+    animation: pop 150ms ease-in;
+    animation-delay: 700ms;
   }
 
   .tour-next,
   .tour-back {
-    cursor: pointer;
-    height: 40px;
-    opacity: .7;
-    transform: opacity 150ms;
-    width: 40px;
+    background: $white;
+
+    & > div {
+      background-position: center center;
+      background-repeat: no-repeat;
+      height: $grid-unit * 2;
+      opacity: .8;
+      width: $grid-unit * 2;
+    }
 
     &:hover {
-      opacity: 1;
+      background-color: $secondary-button-background;
     }
   }
 
+  .tour-done {
+    background-color: $white;
+    color: $primary;
+    font-weight: bold;
 
-  .tour-back {
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+
+  .tour-back > div {
     @include hidpi-background-image('back', 40px 40px);
   }
 
-
-  .tour-next {
+  .tour-next > div {
     @include hidpi-background-image('next', 40px 40px);
   }
 
