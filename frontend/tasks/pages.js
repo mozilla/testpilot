@@ -61,6 +61,7 @@ function buildLandingPage() {
       meta_description: 'Test new Features. Give us feedback. Help build Firefox.',
       image_facebook: THUMBNAIL_FACEBOOK,
       image_twitter: THUMBNAIL_TWITTER,
+      enable_pontoon: config.ENABLE_PONTOON
     });
     this.push(new gutil.File({
       path: 'index.html',
@@ -79,6 +80,7 @@ function buildExperimentPage() {
       meta_description: experiment.description,
       image_facebook: experiment.image_facebook || THUMBNAIL_FACEBOOK,
       image_twitter: experiment.image_twitter || THUMBNAIL_TWITTER,
+      enable_pontoon: config.ENABLE_PONTOON
     });
     this.push(new gutil.File({
       path: experiment.slug + '/index.html',
