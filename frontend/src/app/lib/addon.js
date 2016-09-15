@@ -139,8 +139,8 @@ function messageReceived(store, evt) {
     case 'addon-install:install-failed':
       store.dispatch(addonActions.disableExperiment(experiment));
       store.dispatch(experimentActions.updateExperiment(
-        experiment.addon_id, { inProgress: false, error: true
-      }));
+        experiment.addon_id, { inProgress: false, error: true }
+      ));
       break;
     case 'addon-install:install-ended':
       store.dispatch(addonActions.enableExperiment(experiment));
