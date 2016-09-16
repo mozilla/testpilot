@@ -11,7 +11,6 @@ const aboutConfig = require('sdk/preferences/service');
 const self = require('sdk/self');
 const store = require('sdk/simple-storage').storage;
 const tabs = require('sdk/tabs');
-const request = require('sdk/request').Request;
 const { PrefsTarget } = require('sdk/preferences/event-target');
 const URL = require('sdk/url').URL;
 
@@ -222,29 +221,6 @@ function isTestpilotAddonID(id) {
   return app.hasAddonID(id);
 }
 
-function syncAddonInstallation(addonID) {
-  const experiment = store.availableExperiments[addonID];
-  const method = (addonID in store.installedAddons) ? 'put' : 'delete';
-  // HACK: Use the same "done" handler for 2xx & 4xx responses -
-  // 200 = PUT success, 410 = DELETE success, 404 = DELETE redundant
-  const done = (res) => [addonID, method, res.status];
-  return requestAPI({
-    method: method,
-    url: experiment.installations_url + store.clientUUID
-  }).then(done, done);
-}
-
-function requestAPI(opts) {
-  return new Promise((resolve, reject) => {
-    request({
-      url: opts.url,
-      headers: { 'Accept': 'application/json' },
-      contentType: 'application/json',
-      onComplete: res => (res.status < 400) ? resolve(res) : reject(res)
-    })[opts.method || 'get']();
-  });
-}
-
 const addonListener = {
   onEnabled: function(addon) {
     if (isTestpilotAddonID(addon.id)) {
@@ -289,7 +265,6 @@ const addonListener = {
 
       setAddonActiveState(addon);
       delete store.installedAddons[addon.id];
-      syncAddonInstallation(addon.id);
 
       Metrics.experimentDisabled(addon.id);
       WebExtensionChannels.updateExperimentChannels();
@@ -302,10 +277,8 @@ const installListener = {
   onInstallEnded: function(install, addon) {
     if (!isTestpilotAddonID(addon.id)) { return; }
     setAddonActiveState(addon);
-    syncAddonInstallation(addon.id).then(() => {
-      app.send('addon-install:install-ended',
-               formatInstallData(install, addon), addon);
-    });
+    app.send('addon-install:install-ended',
+             formatInstallData(install, addon), addon);
     Metrics.experimentEnabled(addon.id);
     WebExtensionChannels.updateExperimentChannels();
   },
