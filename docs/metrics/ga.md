@@ -73,6 +73,7 @@ Here are the current events on the website as of this writing
 | Click take survey after Leave                            | RetirePage Interactions            | button click      | take survey                  |
 | Click on Twitter link in footer                          | FooterView Interactions            | social link clicked      | Twitter       |
 | Click on GitHub link in footer                           | FooterView Interactions            | social link clicked      | GitHub        |
+| Click on a button in the Share section                   | ShareView Interactions             | button click             | {facebook,twitter,email,copy} |
 
 ## Pageviews
 
@@ -104,12 +105,12 @@ Here is a list of dimensions we are currently using
 
 | Page                              | Description                                       | dimension | values |
 |-----------------------------------|---------------------------------------------------|-----------|--------|
-| Home Page, Experiment Detail Page | Does the user have the add-on installed           | 1         | {0,1}  |
-| Home Page                         | Does the user have any experiments installed      | 2         | {0,1}  |
-| Home Page                         | How many experiments does the user have installed | 3         | {n}    |
-| Experiment Detail Page            | Is the experiment enabled                         | 4         | {0,1}  |
-| Experiment Detail Page            | Experiment title                                  | 5         | "xyz"  |
-| Experiment Detail Page            | Installation count                                | 6         | {n}    |
+| Home Page, Experiment Detail Page, Share Page | Does the user have the add-on installed           | 1         | {0,1}  |
+| Home Page, Share Page                         | Does the user have any experiments installed      | 2         | {0,1}  |
+| Home Page, Share Page                         | How many experiments does the user have installed | 3         | {n}    |
+| Experiment Detail Page                        | Is the experiment enabled                         | 4         | {0,1}  |
+| Experiment Detail Page                        | Experiment title                                  | 5         | "xyz"  |
+| Experiment Detail Page                        | Installation count                                | 6         | {n}    |
 
 ### Tagged Links
 
@@ -128,5 +129,7 @@ We should maintain a consistent convention when using campaign parameters.
 
 | Description                                                   | utm_source      | utm_medium      | utm_campaign         | utm_content        |
 |---------------------------------------------------------------|-----------------|-----------------|----------------------|--------------------|
-| Clicking on an experiment (or "view all") from the doorhanger | testpilot-addon | firefox-browser | testpilot-doorhanger | 'badged' or 'not badged' depending on presence of 'New' badge on add-on toolbar button |
-| Clicking on an experiment from the in-product messaging       | testpilot-addon | firefox-browser | push notification    | {messageID}        |
+| Clicking on an experiment (or "view all") from the doorhanger   | testpilot-addon               | firefox-browser | testpilot-doorhanger | 'badged' or 'not badged' depending on presence of 'New' badge on add-on toolbar button |
+| Clicking on an experiment from the in-product messaging         | testpilot-addon               | firefox-browser | push notification      | {messageID}        |
+| Tab opens after user has tried an experiment for n days (#1292) | testpilot-addon               | firefox-browser | share-page             | |
+| Links that get shared from /share                               | {facebook,twitter,email,copy} | social          | share-page             | |

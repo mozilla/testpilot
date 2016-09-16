@@ -14,12 +14,14 @@ const tabs = require('sdk/tabs');
 const request = require('sdk/request').Request;
 const { PrefsTarget } = require('sdk/preferences/event-target');
 const URL = require('sdk/url').URL;
-const Metrics = require('./lib/metrics');
-const survey = require('./lib/survey');
-const WebExtensionChannels = require('./lib/webextension-channels');
-const ToolbarButton = require('./lib/toolbar-button');
-const ExperimentNotifications = require('./lib/experiment-notifications');
+
 const { App } = require('./lib/app');
+const ExperimentNotifications = require('./lib/experiment-notifications');
+const Metrics = require('./lib/metrics');
+const SharePrompt = require('./lib/share-prompt');
+const survey = require('./lib/survey');
+const ToolbarButton = require('./lib/toolbar-button');
+const WebExtensionChannels = require('./lib/webextension-channels');
 
 const settings = {};
 let prefs;
@@ -355,6 +357,7 @@ exports.main = function(options) {
   WebExtensionChannels.init();
   ToolbarButton.init(settings);
   ExperimentNotifications.init();
+  SharePrompt.init(settings);
 
   if (reason === 'install') {
     openOnboardingTab();
@@ -369,6 +372,7 @@ exports.onUnload = function(reason) {
   WebExtensionChannels.destroy();
   ToolbarButton.destroy();
   ExperimentNotifications.destroy();
+  SharePrompt.destroy(reason);
 
   if (reason === 'uninstall' || reason === 'disable') {
     Metrics.onDisable();
