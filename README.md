@@ -6,7 +6,7 @@ Test Pilot is an opt-in platform that allows us to perform controlled tests of n
 
 Test Pilot is not intended to replace trains for most features, nor is it a test bed for concepts we do not believe have a strong chance of shipping in general release. Rather, it is reserved for features that require user feedback, testing, and tuning before they ship with the browser.
 
-[![Build](https://img.shields.io/circleci/project/mozilla/testpilot.svg?maxAge=2592000)](https://circleci.com/gh/mozilla/testpilot/) [![Coverage](https://img.shields.io/coveralls/mozilla/testpilot.svg?maxAge=2592000)](https://coveralls.io/r/mozilla/testpilot) [![Requirements](https://img.shields.io/requires/github/mozilla/testpilot.svg?maxAge=2592000)](https://requires.io/github/mozilla/testpilot/requirements/?branch=master)
+[![Build](https://img.shields.io/circleci/project/mozilla/testpilot.svg?maxAge=2592000)](https://circleci.com/gh/mozilla/testpilot/)
 
 
 ## Table of Contents
@@ -14,7 +14,6 @@ Test Pilot is not intended to replace trains for most features, nor is it a test
 - Developing Test Pilot
     - [Quickstart](docs/development/quickstart.md) - Get your development environment working.
     - [Add-on](addon/README.md) - Working on the Test Pilot add-on.
-    - [Docker](docs/development/docker.md) - Docker tips and tricks.
     - [Testing](docs/development/testing.md) - Automated testing.
     - [Deployment](docs/development/deployment.md) - Deploying Test Pilot to staging and production
     - [Verifying deployments](docs/development/verification.md) - Verifying Test Pilot deployments.
