@@ -90,3 +90,29 @@ In all cases, engineering will have the final approval on the roll back.
 
 Ideally, we should "roll forward" with `git revert` to undo problematic commits and push a new release. Of course, that's also problematic if we don't know what commits caused a problem. Or if the problematic commits also included the database migrations - in which case, we also need to pair the `git revert` with a commit that undoes the migration.
 
+## Producing a Static Build ##
+
+From a fresh check-out, producing a static build can be done like so:
+
+```
+git clone https://github.com/mozilla/testpilot.git
+cd addon
+npm install
+npm run sign  # Requires AMO credentials in AMO_USER and AMO_SECRET env vars
+npm run package  # No AMO credentials required, but the add-on is unsigned
+cd ..
+npm install
+NODE_ENV=production ENABLE_PONTOON=0 npm run static
+```
+
+After all the above commands, you should have an optimized static build of the
+site in the `dist` directory.
+
+The `NODE_ENV` variable in the last command can be set to `development` to
+produce a build that's easier to debug, at the expense of JS bundle size and
+performance.
+
+The `ENABLE_PONTOON` variable can be set to `1` if you want to include a
+`<script>` tag that loads JS from [the Pontoon localization
+service](https://pontoon.mozilla.org/) - something we generally do not want to
+do in production environments (see [#1356](https://github.com/mozilla/testpilot/issues/1356)).
