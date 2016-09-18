@@ -12,16 +12,18 @@ export default class MainInstallButton extends React.Component {
     };
   }
 
-  install() {
+  install(evt, experimentTitle) {
     const { eventCategory, hasAddon } = this.props;
     if (hasAddon) { return; }
     this.setState({ isInstalling: true });
-    installAddon(this.context.store, eventCategory);
+    installAddon(this.context.store, eventCategory, experimentTitle);
   }
 
   render() {
     const { isFirefox, hasAddon } = this.props;
     const isInstalling = this.state.isInstalling && !hasAddon;
+    const experimentTitle = ('experimentTitle' in this.props &&
+                             this.props.experimentTitle);
 
     return (
       <div>
@@ -40,7 +42,7 @@ export default class MainInstallButton extends React.Component {
           </div>
         ) : (
           <div>
-            <button onClick={e => this.install(e)} data-hook="install"
+            <button onClick={e => this.install(e, experimentTitle)} data-hook="install"
                     className={classnames('button extra-large primary install', { 'state-change': isInstalling })}>
               {hasAddon && <span className="progress-btn-msg" data-l10n-id="landingInstallingButton">Installed</span>}
               {!hasAddon && !isInstalling &&

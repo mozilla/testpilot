@@ -19,7 +19,15 @@ const disableExperiment = (state, { payload: experiment }) => {
   return { ...state, installed: newInstalled };
 };
 
-const requireRestart = state => ({ ...state, restartRequired: true });
+const requireRestart = (state, { payload: experimentTitle }) => {
+  return {
+    ...state,
+    restart: {
+      isRequired: true,
+      forExperiment: experimentTitle || null
+    }
+  };
+};
 
 export const getInstalled = (state) => state.installed;
 
@@ -37,5 +45,8 @@ export default handleActions({
   hasAddon: false,
   installed: {},
   clientUUID: '',
-  restartRequired: false
+  restart: {
+    isRequired: false,
+    forExperiment: null
+  }
 });

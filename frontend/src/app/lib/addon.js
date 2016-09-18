@@ -28,7 +28,7 @@ function mozAddonManagerInstall(url) {
   });
 }
 
-export function installAddon(store, eventCategory) {
+export function installAddon(store, eventCategory, experimentTitle) {
   const { protocol, hostname, port } = window.location;
   const path = '/static/addon/addon.xpi';
   const downloadUrl = `${protocol}//${hostname}${port ? ':' + port : ''}${path}`;
@@ -48,9 +48,8 @@ export function installAddon(store, eventCategory) {
   if (useMozAddonManager) {
     sendToGA('event', gaEvent);
     mozAddonManagerInstall(downloadUrl).then(() => {
-      console.log('Installed extension via mozAddonManager');
       if (RESTART_NEEDED) {
-        store.dispatch(addonActions.requireRestart());
+        store.dispatch(addonActions.requireRestart(experimentTitle));
       }
     });
   } else {
@@ -93,7 +92,6 @@ function watchForAddonInstallStateChange(store) {
 }
 
 export function sendMessage(type, data) {
-  console.log('TO ADDON', type, data);
   document.documentElement.dispatchEvent(new CustomEvent('from-web-to-addon', {
     bubbles: true,
     detail: { type, data }
@@ -112,8 +110,6 @@ export function disableExperiment(dispatch, experiment) {
 
 function messageReceived(store, evt) {
   const { type, data } = evt.detail;
-
-  console.log('FROM ADDON', type, data);
 
   const experimentsState = store.getState().experiments;
 

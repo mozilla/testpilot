@@ -7,6 +7,7 @@ import LandingPage from '../containers/LandingPage';
 import ExperimentsListPage from '../containers/ExperimentsListPage';
 import ExperimentPage from '../containers/ExperimentPage';
 import RetirePage from '../containers/RetirePage';
+import Restart from '../containers/Restart';
 
 import App from '../components/App';
 import LegacyPage from '../components/LegacyPage';
@@ -24,6 +25,7 @@ const AppRouter = ({ history }) => (
       <Route path="/legacy" component={LegacyPage} />
       <Route path="/404" component={NotFoundPage} />
       <Route path="/share" component={SharePage} />
+      <Route path="/restart" component={Restart} />
       <Route path="/error" component={ErrorPage} />
       <Route path="/onboarding" component={OnboardingPage} />
       <Route path="/retire" component={RetirePage} />
