@@ -10,7 +10,7 @@ import { createHistory } from 'history';
 import { useRouterHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer, routerMiddleware } from 'react-router-redux';
 import { Provider } from 'react-redux';
-import { combineReducers, createStore, applyMiddleware } from 'redux';
+import { compose, combineReducers, createStore, applyMiddleware } from 'redux';
 
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
@@ -41,11 +41,14 @@ const store = createStore(
     addon: addonReducer
   }),
   {},
-  applyMiddleware(
-    thunk,
-    promise,
-    routerMiddleware(browserHistory),
-    createLogger()
+  compose(
+    applyMiddleware(
+      thunk,
+      promise,
+      routerMiddleware(browserHistory),
+      createLogger()
+    ),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 );
 
