@@ -7,15 +7,19 @@ import experimentActions from '../actions/experiments';
 import { getExperimentByID, getExperimentByURL, getExperimentInProgress } from '../reducers/experiments';
 
 const INSTALL_STATE_WATCH_PERIOD = 2000;
-
 const MOZADDONMANAGER_ALLOWED_HOSTNAMES = [
   'testpilot.firefox.com',
   'testpilot.stage.mozaws.net',
   'testpilot.dev.mozaws.net'
 ];
 
+let RESTART_NEEDED;
+
 function mozAddonManagerInstall(url) {
   return navigator.mozAddonManager.createInstall({ url }).then(install => {
+    navigator.mozAddonManager.addEventListener('onInstalling', data => {
+      RESTART_NEEDED = data.needsRestart;
+    });
     return new Promise((resolve, reject) => {
       install.addEventListener('onInstallEnded', () => resolve());
       install.addEventListener('onInstallFailed', () => reject());
@@ -24,7 +28,7 @@ function mozAddonManagerInstall(url) {
   });
 }
 
-export function installAddon(eventCategory) {
+export function installAddon(store, eventCategory) {
   const { protocol, hostname, port } = window.location;
   const path = '/static/addon/addon.xpi';
   const downloadUrl = `${protocol}//${hostname}${port ? ':' + port : ''}${path}`;
@@ -45,6 +49,9 @@ export function installAddon(eventCategory) {
     sendToGA('event', gaEvent);
     mozAddonManagerInstall(downloadUrl).then(() => {
       console.log('Installed extension via mozAddonManager');
+      if (RESTART_NEEDED) {
+        store.dispatch(addonActions.requireRestart());
+      }
     });
   } else {
     gaEvent.outboundURL = downloadUrl;

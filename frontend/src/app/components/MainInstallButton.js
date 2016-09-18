@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
 import { installAddon } from '../lib/addon';
@@ -10,6 +10,13 @@ export default class MainInstallButton extends React.Component {
     this.state = {
       isInstalling: false
     };
+  }
+
+  install() {
+    const { eventCategory, hasAddon } = this.props;
+    if (hasAddon) { return; }
+    this.setState({ isInstalling: true });
+    installAddon(this.context.store, eventCategory);
   }
 
   render() {
@@ -49,11 +56,8 @@ export default class MainInstallButton extends React.Component {
       </div>
     );
   }
-
-  install() {
-    const { eventCategory, hasAddon } = this.props;
-    if (hasAddon) { return; }
-    this.setState({ isInstalling: true });
-    installAddon(eventCategory);
-  }
 }
+
+MainInstallButton.contextTypes = {
+  store: PropTypes.object.isRequired
+};
