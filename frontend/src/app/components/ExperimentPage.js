@@ -90,6 +90,11 @@ export default class ExperimentPage extends React.Component {
     return currentExperiment[0];
   }
 
+  isValidVersion(min) {
+    const version = parseInt(navigator.userAgent.split('/').pop(), 10);
+    return typeof min === 'undefined' || version >= min;
+  }
+
   render() {
     const { navigateTo, isExperimentEnabled, experiments, installed, hasAddon,
             isFirefox } = this.props;
@@ -106,13 +111,14 @@ export default class ExperimentPage extends React.Component {
 
     const { title, version, contribute_url, bug_report_url, discourse_url,
             introduction, measurements, privacy_notice_url, changelog_url,
-            thumbnail, survey_url, contributors, details } = experiment;
+            thumbnail, survey_url, contributors, details, min_release } = experiment;
 
     const subtitle = (title === 'No More 404s') ? 'Powered by the Wayback Machine' : '';
     const installation_count = experiment.installation_count.toLocaleString();
     const surveyURL = buildSurveyURL('givefeedback', title, installed, survey_url);
     const modified = formatDate(experiment.modified);
     const completedDate = experiment.completed ? formatDate(experiment.completed) : null;
+    const validVersion = this.isValidVersion(min_release);
 
     let statusType = null;
     if (experiment.error) {
@@ -170,12 +176,13 @@ export default class ExperimentPage extends React.Component {
                 <h1 data-hook="title">{title}</h1>
                 <h4 data-hook="subtitle" className="subtitle">{subtitle}</h4>
               </header>
-              {hasAddon && <div className="experiment-controls" data-hook="active-user">
+              {hasAddon && validVersion && <div className="experiment-controls" data-hook="active-user">
                 {!enabled && <a onClick={e => this.highlightPrivacy(e)} data-hook="highlight-privacy" className="highlight-privacy" data-l10n-id="highlightPrivacy">Your privacy</a>}
                 {enabled && <a onClick={e => this.feedback(e)} data-l10n-id="giveFeedback" data-hook="feedback" id="feedback-button" className="button default" target="_blank" href={surveyURL}>Give Feedback</a>}
                 {enabled && <button onClick={e => this.renderUninstallSurvey(e)} style={{ width: progressButtonWidth }} data-hook="uninstall-experiment" id="uninstall-button" className={classnames(['button', 'secondary'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Disable <span data-hook="title">{title}</span></span></button>}
                 {!enabled && <button onClick={e => this.installExperiment(e)} style={{ width: progressButtonWidth }} data-hook="install-experiment" id="install-button"  className={classnames(['button', 'default'], { 'state-change': isEnabling })}><span className="state-change-inner"></span><span data-l10n-id="enableExperimentTransition" className="transition-text">Enabling...</span><span data-l10n-id="enableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Enable <span data-hook="title">{title}</span></span></button>}
               </div>}
+              { this.renderMinimumVersionNotice(title, hasAddon, min_release) }
             </div>
           </div>
           <div className="sticky-header-sibling"></div>
@@ -325,6 +332,18 @@ export default class ExperimentPage extends React.Component {
     this.didScroll = false;
   }
 
+  renderMinimumVersionNotice(title, hasAddon, min_release) {
+    if (hasAddon && !this.isValidVersion(min_release)) {
+      return (
+        <div className="upgrade-notice">
+          <div data-l10n-id="upgradeNoticeTitle" data-l10n-args={JSON.stringify({ title, min_release })}>{title} requires Firefox {min_release} or later.</div>
+          <a onClick={e => this.clickUpgradeNotice(e)} data-l10n-id="upgradeNoticeLink" href="https://support.mozilla.org/kb/find-what-version-firefox-you-are-using" target="_blank">How to update Firefox.</a>
+        </div>
+      );
+    }
+    return null;
+  }
+
   highlightPrivacy(evt) {
     evt.preventDefault();
     const measurementPanel = document.querySelector('.measurements');
@@ -336,6 +355,15 @@ export default class ExperimentPage extends React.Component {
     setTimeout(() => {
       this.setState({ highlightMeasurementPanel: false });
     }, 5000);
+  }
+
+  clickUpgradeNotice() {
+    // If a user goes to the upgrade SUMO
+    sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'Upgrade Notice'
+    });
   }
 
   feedback() {

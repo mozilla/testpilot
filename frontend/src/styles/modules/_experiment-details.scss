@@ -139,6 +139,15 @@
   h4 {
     margin: 0;
   }
+
+  .upgrade-notice {
+    background: $error-red-background;
+    border: 1px solid $error-red-border;
+    border-radius: $small-border-radius;
+    line-height: 1.6em;
+    padding: $grid-unit * .5;
+    text-align: right;
+  }
 }
 
 .install-count {
