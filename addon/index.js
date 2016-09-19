@@ -17,6 +17,7 @@ const URL = require('sdk/url').URL;
 
 const { App } = require('./lib/app');
 const ExperimentNotifications = require('./lib/experiment-notifications');
+const FirstRun = require('./lib/first-run');
 const Metrics = require('./lib/metrics');
 const SharePrompt = require('./lib/share-prompt');
 const survey = require('./lib/survey');
@@ -358,6 +359,7 @@ exports.main = function(options) {
   ToolbarButton.init(settings);
   ExperimentNotifications.init();
   SharePrompt.init(settings);
+  FirstRun.setup(options.reason, settings);
 
   if (reason === 'install') {
     openOnboardingTab();
@@ -373,6 +375,7 @@ exports.onUnload = function(reason) {
   ToolbarButton.destroy();
   ExperimentNotifications.destroy();
   SharePrompt.destroy(reason);
+  FirstRun.teardown(reason, settings);
 
   if (reason === 'uninstall' || reason === 'disable') {
     Metrics.onDisable();
