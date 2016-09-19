@@ -3,7 +3,18 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
+import { sendToGA } from '../lib/utils';
+
+
 export default class Restart extends React.Component {
+  componentWillMount() {
+    sendToGA('event', {
+      eventCategory: 'PostInstall Interactions',
+      eventAction: 'view modal',
+      eventLabel: 'restart required'
+    });
+  }
+
   renderSubtitle() {
     const { experimentTitle } = this.props;
     if (experimentTitle) {
