@@ -149,7 +149,8 @@ export default class ExperimentPage extends React.Component {
                 </h2>
                 <p data-l10n-id="experimentPromoSubheader">We're building next-generation features for Firefox. Install Test Pilot to try them!</p>
                 <MainInstallButton hasAddon={hasAddon} isFirefox={isFirefox}
-                                   eventCategory="HomePage Interactions" />
+                                   eventCategory="HomePage Interactions"
+                                   experimentTitle={title} />
               </div>
             </div>
           </div>

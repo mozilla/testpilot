@@ -22,8 +22,15 @@ export default class Header extends React.Component {
     };
   }
 
+  showSettings() {
+    if (this.props.forceHideSettings === false) {
+      return true;
+    }
+    return this.state.showSettings;
+  }
+
   render() {
-    const { showSettings, showRetireDialog, showDiscussDialog } = this.state;
+    const { showRetireDialog, showDiscussDialog } = this.state;
     const { hasAddon } = this.props;
 
     return (
@@ -43,10 +50,10 @@ export default class Header extends React.Component {
         {hasAddon &&
         <div data-hook="settings">
           <div className="settings-contain" data-hook="active-user">
-             <div className={classnames(['button', 'outline', 'settings-button'], { active: showSettings })}
+             <div className={classnames(['button', 'outline', 'settings-button'], { active: this.showSettings() })}
                   onClick={e => this.toggleSettings(e)}
                   data-hook="settings-button" data-l10n-id="menuTitle">Settings</div>
-               {showSettings && <div className="settings-menu" onClick={e => this.settingsClick(e)}>
+               {this.showSettings() && <div className="settings-menu" onClick={e => this.settingsClick(e)}>
                <ul>
                  <li><a onClickCapture={e => this.wiki(e)} data-l10n-id="menuWiki" data-hook="wiki"
                     href="https://wiki.mozilla.org/Test_Pilot" target="_blank">Test Pilot Wiki</a></li>
@@ -145,5 +152,6 @@ export default class Header extends React.Component {
 }
 
 Header.propTypes = {
-  hasAddon: React.PropTypes.bool
+  hasAddon: React.PropTypes.bool,
+  forceHideSettings: React.PropTypes.bool
 };

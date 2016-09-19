@@ -133,3 +133,23 @@
     }
   }
 }
+
+.restart-message {
+  h2 {
+    @include respond-to('not-small') {
+      font-size: $font-unit * 4;
+      margin-bottom: $grid-unit * .5;
+    }
+
+    font-style: italic;
+    margin: 0;
+  }
+
+  p {
+    @include respond-to('not-small') {
+      font-size: $font-unit * 1.75;
+    }
+
+    margin: 0;
+  }
+}
