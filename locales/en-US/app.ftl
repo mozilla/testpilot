@@ -135,6 +135,8 @@ tourCancelButton = Skip
 tourDoneButton = Done
 userCountContainer = There are <span>{$installation_count}</span> people trying {$title} right now!
 highlightPrivacy = Your privacy
+upgradeNoticeTitle = {$title} requires Firefox {$min_release} or later.
+upgradeNoticeLink = How to update Firefox.
 
 sharePrimary = Love Test Pilot? Help us find some new recruits.
 shareSecondary = or just copy and paste this link...
