@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import EmailDialog from '../components/EmailDialog';
 import ExperimentCardList from '../components/ExperimentCardList';
+import LoadingPage from './LoadingPage';
 
 export default class ExperimentsListPage extends React.Component {
 
@@ -25,6 +26,8 @@ export default class ExperimentsListPage extends React.Component {
   render() {
     const { navigateTo, experiments, isExperimentEnabled, hasAddon } = this.props;
     const { showEmailDialog } = this.state;
+
+    if (experiments.length === 0) { return <LoadingPage />; }
 
     return (
       <div>
