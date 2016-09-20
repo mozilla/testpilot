@@ -1,4 +1,4 @@
-![Test Pilot Logo](testpilot/frontend/static-src/images/copter.png)
+![Test Pilot Logo](testpilot/frontend/src/images/copter.png)
 
 # Test Pilot
 
