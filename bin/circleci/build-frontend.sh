@@ -10,5 +10,4 @@ if [[ " $TESTPILOT_STATIC_BRANCHES " =~ " $CIRCLE_BRANCH " ]]; then
 else
     npm run build
 fi
-# TODO: Re-enable when we have working tests again
-# npm test
+npm test
