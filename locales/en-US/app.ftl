@@ -143,9 +143,9 @@ shareCopy = Copy
 
 eolMessage = <strong>This experiment is ending on {$completedDate}</strong>.<br/><br/>After then you will still be able to use {$title} but we will no longer be providing updates or support.
 
-restartRequiredHeader = Test Pilot Installed!
-restartRequiredFromLanding = Restart Firefox to choose your features.
-restartRequiredFromExperiment = Restart Firefox to enable {$experimentTitle}.
+restartRequiredSubHeader = Almost done . . .
+restartRequiredFromLanding = Please restart Firefox <br/> to choose your features.
+restartRequiredFromExperiment = Please restart Firefox <br/> to enable {$experimentTitle}.
 
 # TODO: these strings are not currently localized.
 # They are served by the python static dir

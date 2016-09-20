@@ -138,6 +138,7 @@
   h2 {
     @include respond-to('not-small') {
       font-size: $font-unit * 4;
+      line-height: $font-unit * 4.9;
       margin-bottom: $grid-unit * .5;
     }
 
@@ -147,9 +148,17 @@
 
   p {
     @include respond-to('not-small') {
-      font-size: $font-unit * 1.75;
+      font-size: $font-unit * 2;
+      margin-bottom: $grid-unit * .5;
     }
 
-    margin: 0;
+    @include respond-to('small') {
+      font-size: $font-unit * 1.75;
+      margin-bottom: $grid-unit * .25;
+    }
+
+    font-weight: bold;
   }
+  
+  margin: $grid-unit * -2 auto 0 auto;
 }

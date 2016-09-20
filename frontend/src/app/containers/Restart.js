@@ -19,16 +19,16 @@ export default class Restart extends React.Component {
     const { experimentTitle } = this.props;
     if (experimentTitle) {
       return (
-        <p data-l10n-id="restartRequiredFromExperiment">
+        <h2 data-l10n-id="restartRequiredFromExperiment">
            data-l10n-args={JSON.stringify({ experimentTitle })}
-          Restart Firefox to enable { experimentTitle }.
-        </p>
+          Please restart Firefox <br/> to enable { experimentTitle }.
+        </h2>
       );
     }
     return (
-      <p data-l10n-id="restartRequiredFromLanding">
-        Restart Firefox to choose your features.
-      </p>
+      <h2 data-l10n-id="restartRequiredFromLanding">
+        Please restart Firefox <br/> to choose your features.
+      </h2>
     );
   }
 
@@ -37,7 +37,7 @@ export default class Restart extends React.Component {
       <div className="full-page-wrapper space-between">
         <Header forceHideSettings={ false } />
         <div className="centered-banner restart-message">
-          <h2 data-l10n-id="restartRequiredHeader">Test Pilot Installed!</h2>
+          <p data-l10n-id="restartRequiredSubHeader">Almost done . . .</p>
           { this.renderSubtitle() }
         </div>
         <footer id="main-footer" className="content-wrapper">
