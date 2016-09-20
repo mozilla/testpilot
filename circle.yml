@@ -16,6 +16,7 @@ machine:
     version: 6.2.0
   environment:
     TESTPILOT_STATIC_BRANCHES: development-static
+    TESTPILOT_ENABLE_PONTOON_BRANCHES: development-static
 
 dependencies:
 

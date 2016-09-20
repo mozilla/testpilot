@@ -1,6 +1,7 @@
 module.exports = {
   SERVER_PORT: 8000,
   IS_DEBUG: (process.env.NODE_ENV === 'development'),
+  ENABLE_PONTOON: (process.env.ENABLE_PONTOON === '1'),
 
   // TODO: Move addon build to a better path
   ADDON_SRC_PATH: './addon/',
