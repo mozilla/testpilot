@@ -10,7 +10,8 @@ const INSTALL_STATE_WATCH_PERIOD = 2000;
 const MOZADDONMANAGER_ALLOWED_HOSTNAMES = [
   'testpilot.firefox.com',
   'testpilot.stage.mozaws.net',
-  'testpilot.dev.mozaws.net'
+  'testpilot.dev.mozaws.net',
+  'example.com'
 ];
 
 let RESTART_NEEDED;
