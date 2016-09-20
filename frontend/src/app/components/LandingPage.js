@@ -3,11 +3,14 @@ import React from 'react';
 import Footer from '../components/Footer';
 import MainInstallButton from '../components/MainInstallButton';
 import ExperimentCardList from '../components/ExperimentCardList';
+import LoadingPage from './LoadingPage';
 
 export default class LandingPage extends React.Component {
 
   render() {
     const { navigateTo, isExperimentEnabled, experiments, hasAddon, isFirefox } = this.props;
+
+    if (experiments.length === 0) { return <LoadingPage />; }
 
     return (
       <section data-hook="landing-page">
