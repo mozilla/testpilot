@@ -69,3 +69,18 @@ installation_count: 29870
 created: '2016-04-28T00:07:28.847430Z'
 modified: '2016-08-19T16:51:12.188781Z'
 order: 5
+incompatible:
+  'TooManyTabs@visibotech.com': 'Too Many Tabs'
+  'firebug@software.joehewitt.com': 'Firebug'
+  'hidecaptionplus-dp@dummy.addons.mozilla.org': 'Hide Caption Titlebar Plus'
+  'tabgroups@quicksaver': 'Tab Groups'
+  'tabgroupshelper@kevinallasso.org': 'Tab Groups Helper'
+  'treestyletab@piro.sakura.ne.jp': 'Tree-Style Tab'
+  '{097d3191-e6fa-4728-9826-b533d755359d}': 'All-In-One Sidebar'
+  '{c6448328-31f7-4b12-a2e0-5c39d0290307}': 'HTitle'
+  '{dc572301-7619-498c-a57d-39143191b318}': 'Tab Mix Plus'
+  'multipletab@piro.sakura.ne.jp': 'Multiple Tab Handler'
+  'tabscope@xuldev.org': 'Tab Scope'
+  'bug566510@vovcacik.addons.mozilla.org': 'Allow multiselect operations on tabs'
+  'jid1-rOGUyxs2TvBBuA@jetpack': 'Previous tab highlighting'
+  '{fc2b8f80-d9a5-4f51-8076-7c7ce3c67ee3}': 'Diigo Toolbar'

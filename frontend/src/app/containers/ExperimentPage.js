@@ -17,6 +17,7 @@ export default connect(
     installed: getInstalled(state.addon),
     getExperimentBySlug: slug =>
       getExperimentBySlug(state.experiments, slug),
+    installedAddons: state.addon.installedAddons,
     isExperimentEnabled: experiment =>
       isExperimentEnabled(state.addon, experiment)
   }),

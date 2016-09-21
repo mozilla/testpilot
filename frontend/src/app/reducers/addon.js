@@ -5,6 +5,9 @@ const setHasAddon = (state, { payload: hasAddon }) => ({ ...state, hasAddon });
 const setInstalled = (state, { payload: { installed, installedLoaded } }) =>
   ({ ...state, installed, installedLoaded });
 
+const setInstalledAddons = (state, { payload: installedAddons }) =>
+  ({ ...state, installedAddons: (installedAddons || []) });
+
 const setClientUuid = (state, { payload: clientUUID }) => ({ ...state, clientUUID });
 
 const enableExperiment = (state, { payload: experiment }) => {
@@ -39,6 +42,7 @@ export const isInstalledLoaded = (state) => state.installedLoaded;
 export default handleActions({
   setHasAddon,
   setInstalled,
+  setInstalledAddons,
   setClientUuid,
   enableExperiment,
   disableExperiment,
@@ -47,6 +51,7 @@ export default handleActions({
   hasAddon: false,
   installed: {},
   installedLoaded: false,
+  installedAddons: [],
   clientUUID: '',
   restart: {
     isRequired: false,

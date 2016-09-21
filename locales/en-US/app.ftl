@@ -155,6 +155,9 @@ restartRequiredSubHeader = Almost done . . .
 restartRequiredFromLanding = Please restart Firefox <br/> to choose your features.
 restartRequiredFromExperiment = Please restart Firefox <br/> to enable {$experimentTitle}.
 
+incompatibleHeader = This experiment may not be compatible with add-ons you have installed.
+incompatibleSubheader = We recommend <a href="{$url}">disabling these add-ons</a> before activating this experiment:
+
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage

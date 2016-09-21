@@ -87,6 +87,42 @@ export default class ExperimentPage extends React.Component {
     return typeof min === 'undefined' || version >= min;
   }
 
+  getIncompatibleInstalled(incompatible) {
+    if (!incompatible || !this.props.installedAddons.length) {
+      return null;
+    }
+    return Object.keys(incompatible).filter(guid => (
+      this.props.installedAddons.indexOf(guid) !== -1
+    ));
+  }
+
+  renderIncompatibleAddons() {
+    const { incompatible } = this.state.experiment;
+    if (!incompatible) return null;
+    const installed = this.getIncompatibleInstalled(incompatible);
+    if (!installed || installed.length === 0) return null;
+
+    const helpUrl = 'https://support.mozilla.org/kb/disable-or-remove-add-ons';
+
+    return (
+      <section className="incompatible-addons">
+        <header>
+          <h3 data-l10n-id="incompatibleHeader">
+            This experiment may not be compatible with add-ons you have installed.
+          </h3>
+          <p data-l10n-id="incompatibleSubheader" data-l10n-args={JSON.stringify({ url: helpUrl })}>
+            We recommend <a href={helpUrl}>disabling these add-ons</a> before activating this experiment:
+          </p>
+        </header>
+        <ul>
+          {installed.map(guid => (
+            <li key={guid}>{incompatible[guid]}</li>
+          ))}
+        </ul>
+      </section>
+    );
+  }
+
   render() {
     const { navigateTo, isExperimentEnabled, experiments, installed, isDev, hasAddon,
             isFirefox, isMinFirefox } = this.props;
@@ -266,6 +302,7 @@ export default class ExperimentPage extends React.Component {
                 </div>
 
                 <div className="details-description">
+                  {this.renderIncompatibleAddons()}
                   {completedDate && <div data-hook="eol-message">
                     <div className="eol-block"><div data-hook="ending-soon" data-l10n-id="eolMessage" data-l10n-args={JSON.stringify({ title, completedDate })}>
                         <strong>This experiment is ending on <span data-hook="completedDate">{completedDate}</span></strong>.<br/><br/>
