@@ -49,32 +49,32 @@ app.sendToGA('event', {
 
 Here are the current events on the website as of this writing
 
-| Description                                              | eventCategory                      | eventAction              | eventLabel                    | eventValue |
-|----------------------------------------------------------|------------------------------------|--------------------------|-------------------------------|------------|
-| Toggle settings menu                                     | Menu Interactions                  | drop-down menu           | Toggle Menu                   |            |
-| Click Leave from settings                                | Menu Interactions                  | drop-down menu           | Retire                        |            |
-| Click Discuss from settings                              | Menu Interactions                  | drop-down menu           | Discuss                       |            |
-| Click Wiki from settings                                 | Menu Interactions                  | drop-down menu           | wiki                          |            |
-| Click File Issue from settings                           | Menu Interactions                  | drop-down menu           | File Issue                    |            |
-| Click on experiment from landing page                    | ExperimentsPage Interactions       | Open details page        | `{experiment title}`          |            |
-| Click on Install from experiment details page            | ExperimentDetailsPage Interactions | button click             | Install the Add-on            | {0,1}\*    |
-| Click on the "Try out these experiments as well" section | ExperimentsDetailPage Interactions | Open details page        | try out `{experiment title}`  |            |
-| Click Enable Experiment                                  | ExperimentDetailsPage Interactions | button click             | Enable Experiment             |            |
-| Click Disable Experiment                                 | ExperimentDetailsPage Interactions | button click             | Disable Experiment            |            |
-| Click Give Feedback for experiment                       | ExperimentDetailsPage Interactions | button click             | Give Feedback                 |            |
-| Click Take Survey after disable                          | ExperimentDetailsPage Interactions | button click             | exit survey disabled          |            |
-| Click Cancel on tour dialogue                            | ExperimentDetailsPage Interactions | button click             | cancel tour                   |            |
-| Complete the tour                                        | ExperimentDetailsPage Interactions | button click             | complete tour                 |            |
-| Click Take Tour on tour dialogue                         | ExperimentDetailsPage Interactions | button click             | take tour                     |            |
-| Click next during Tour                                   | ExperimentDetailsPage Interactions | button click             | forward to step `n`           |            |
-| Click back during Tour                                   | ExperimentDetailsPage Interactions | button click             | back to step `n`              |            |
-| Click on Install from landing page                       | HomePage Interactions              | button click             | Install the Add-on            | {0,1}\*    |
-| Click on experiment from landing page                    | HomePage Interactions              | Open details page        | `{experiment title}`          |            |
-| Click take survey after Leave                            | RetirePage Interactions            | button click             | take survey                   |            |
-| Click on Twitter link in footer                          | FooterView Interactions            | social link clicked      | Twitter                       |            |
-| Click on GitHub link in footer                           | FooterView Interactions            | social link clicked      | GitHub                        |            |
-| Click on a button in the Share section                   | ShareView Interactions             | button click             | {facebook,twitter,email,copy} |            |
-| Prompted to restart the browser                          | PostInstall Interactions           | view modal               | restart required              |            |
+| Description                                              | eventCategory                      | eventAction              | eventLabel                    |
+|----------------------------------------------------------|------------------------------------|--------------------------|-------------------------------|
+| Toggle settings menu                                     | Menu Interactions                  | drop-down menu           | Toggle Menu                   |            
+| Click Leave from settings                                | Menu Interactions                  | drop-down menu           | Retire                        |            
+| Click Discuss from settings                              | Menu Interactions                  | drop-down menu           | Discuss                       |            
+| Click Wiki from settings                                 | Menu Interactions                  | drop-down menu           | wiki                          |            
+| Click File Issue from settings                           | Menu Interactions                  | drop-down menu           | File Issue                    |            
+| Click on experiment from landing page                    | ExperimentsPage Interactions       | Open details page        | `{experiment title}`          |            
+| Click on Install from experiment details page            | ExperimentDetailsPage Interactions | button click             | Install the Add-on            |
+| Click on the "Try out these experiments as well" section | ExperimentsDetailPage Interactions | Open details page        | try out `{experiment title}`  |            
+| Click Enable Experiment                                  | ExperimentDetailsPage Interactions | button click             | Enable Experiment             |            
+| Click Disable Experiment                                 | ExperimentDetailsPage Interactions | button click             | Disable Experiment            |            
+| Click Give Feedback for experiment                       | ExperimentDetailsPage Interactions | button click             | Give Feedback                 |            
+| Click Take Survey after disable                          | ExperimentDetailsPage Interactions | button click             | exit survey disabled          |            
+| Click Cancel on tour dialogue                            | ExperimentDetailsPage Interactions | button click             | cancel tour                   |            
+| Complete the tour                                        | ExperimentDetailsPage Interactions | button click             | complete tour                 |            
+| Click Take Tour on tour dialogue                         | ExperimentDetailsPage Interactions | button click             | take tour                     |           
+| Click next during Tour                                   | ExperimentDetailsPage Interactions | button click             | forward to step `n`           |            
+| Click back during Tour                                   | ExperimentDetailsPage Interactions | button click             | back to step `n`              |            
+| Click on Install from landing page                       | HomePage Interactions              | button click             | Install the Add-on            |
+| Click on experiment from landing page                    | HomePage Interactions              | Open details page        | `{experiment title}`          |            
+| Click take survey after Leave                            | RetirePage Interactions            | button click             | take survey                   |            
+| Click on Twitter link in footer                          | FooterView Interactions            | social link clicked      | Twitter                       |            
+| Click on GitHub link in footer                           | FooterView Interactions            | social link clicked      | GitHub                        |            
+| Click on a button in the Share section                   | ShareView Interactions             | button click             | {facebook,twitter,email,copy} |           
+| Prompted to restart the browser                          | PostInstall Interactions           | view modal               | restart required              |            
 
 * Indicates whether or not a restart is required.
 
@@ -114,6 +114,7 @@ Here is a list of dimensions we are currently using
 | Experiment Detail Page                        | Is the experiment enabled                         | 4         | {0,1}  |
 | Experiment Detail Page                        | Experiment title                                  | 5         | "xyz"  |
 | Experiment Detail Page                        | Installation count                                | 6         | {n}    |
+| Home Page, Experiment Detail Page             | Determine if installation will require a restart  | 7         | {'no restart','restart required'}   |
 
 ### Tagged Links
 

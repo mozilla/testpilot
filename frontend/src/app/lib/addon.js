@@ -47,7 +47,7 @@ export function installAddon(store, eventCategory, experimentTitle) {
 
   if (useMozAddonManager) {
     mozAddonManagerInstall(downloadUrl).then(() => {
-      gaEvent.eventValue = RESTART_NEEDED ? 1 : 0;
+      gaEvent.dimension7 = RESTART_NEEDED ? 'restart required' : 'no restart';
       sendToGA('event', gaEvent);
       if (RESTART_NEEDED) {
         store.dispatch(addonActions.requireRestart(experimentTitle));
