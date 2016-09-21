@@ -15,6 +15,7 @@ export default createActions({
       .then(response => response.json())
       .then(counts => ({
         lastFetched: Date.now(),
+        experimentsLoaded: true,
         experiments: experiments.map(experiment => ({
           ...experiment,
           installation_count: counts[experiment.addon_id]

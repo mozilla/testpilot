@@ -1,5 +1,6 @@
 import React from 'react';
 import { uninstallAddon } from '../lib/addon';
+import { sendToGA } from '../lib/utils';
 
 export default class RetireConfirmationDialog extends React.Component {
   render() {
@@ -28,6 +29,11 @@ export default class RetireConfirmationDialog extends React.Component {
   proceed(e) {
     e.preventDefault();
     uninstallAddon();
+    sendToGA('event', {
+      eventCategory: 'HomePage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'Retire'
+    });
     this.props.navigateTo('/retire');
   }
 

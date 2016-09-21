@@ -21,8 +21,8 @@ export default class ExperimentPage extends React.Component {
   constructor(props) {
     super(props);
 
-    const { isExperimentEnabled } = this.props;
-    const experiment = this.findCurrentExperiment(props);
+    const { isExperimentEnabled, getExperimentBySlug } = this.props;
+    const experiment = getExperimentBySlug(this.props.params.slug);
 
     this.state = {
       experiment,
@@ -44,12 +44,12 @@ export default class ExperimentPage extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const { shouldShowTourDialog, enabled: prevEnabled } = this.state;
-    const { isExperimentEnabled } = nextProps;
+    const { isExperimentEnabled, getExperimentBySlug } = nextProps;
 
-    const prevExperiment = this.findCurrentExperiment(this.props);
+    const prevExperiment = getExperimentBySlug(this.props.params.slug);
     const prevInProgress = prevExperiment && prevExperiment.inProgress;
 
-    const nextExperiment = this.findCurrentExperiment(nextProps);
+    const nextExperiment = getExperimentBySlug(nextProps.params.slug);
     const nextInProgress = nextExperiment && nextExperiment.inProgress;
     const nextEnabled = nextExperiment && isExperimentEnabled(nextExperiment);
 
@@ -76,18 +76,6 @@ export default class ExperimentPage extends React.Component {
         showTourDialog
       });
     }
-  }
-
-  findCurrentExperiment(props) {
-    const { params, experiments } = props;
-
-    if (experiments.length === 0) { return null; }
-
-    const currentExperiment = experiments
-      .filter(experiment => experiment.slug === params.slug);
-
-    // Grab the matched experiment.
-    return currentExperiment[0];
   }
 
   isValidVersion(min) {

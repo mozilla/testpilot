@@ -76,7 +76,7 @@ export function setupAddonConnection(store) {
 // Periodically check window.navigator.testpilotAddon and keep store in sync
 let installStateWatcherTimer = null;
 function watchForAddonInstallStateChange(store) {
-  store.dispatch(addonActions.setHasAddon(window.navigator.testpilotAddon));
+  store.dispatch(addonActions.setHasAddon(!!window.navigator.testpilotAddon));
 
   if (installStateWatcherTimer) {
     clearInterval(installStateWatcherTimer);

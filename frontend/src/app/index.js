@@ -39,7 +39,18 @@ const store = createStore(
     browser: browserReducer,
     addon: addonReducer
   }),
-  {},
+  {
+    addon: {
+      hasAddon: !!window.navigator.testpilotAddon,
+      installed: {},
+      installedLoaded: false,
+      clientUUID: '',
+      restart: {
+        isRequired: false,
+        forExperiment: null
+      }
+    }
+  },
   compose(
     applyMiddleware(
       thunk,
