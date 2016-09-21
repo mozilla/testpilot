@@ -1,11 +1,16 @@
+import os
+import posixpath
 import json
+
+from django.contrib.staticfiles import finders
+from django.utils.six.moves.urllib.parse import unquote
+from django.views import static
 
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import detail_route, list_route
 
 from django.shortcuts import get_object_or_404
-from django.contrib.staticfiles.views import serve
 
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -20,6 +25,15 @@ from ..utils import IsAccountAdminOrReadOnly
 
 import logging
 logger = logging.getLogger(__name__)
+
+
+# HACK: This is a copy of serve() from django/contrib/staticfiles/views.py
+# without path checking and the bit enforcing settings.DEBUG with a 404.
+def serve(request, path, insecure=False, **kwargs):
+    normalized_path = posixpath.normpath(unquote(path)).lstrip('/')
+    absolute_path = finders.find(normalized_path)
+    document_root, path = os.path.split(absolute_path)
+    return static.serve(request, path, document_root=document_root, **kwargs)
 
 
 class ExperimentViewSet(viewsets.ModelViewSet):
