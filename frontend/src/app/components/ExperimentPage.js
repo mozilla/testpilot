@@ -97,7 +97,7 @@ export default class ExperimentPage extends React.Component {
 
   render() {
     const { navigateTo, isExperimentEnabled, experiments, installed, hasAddon,
-            isFirefox } = this.props;
+            isFirefox, isMinFirefox } = this.props;
 
     // Show the loading animation if experiments haven't been loaded yet.
     if (experiments.length === 0) { return <LoadingPage />; }
@@ -154,7 +154,7 @@ export default class ExperimentPage extends React.Component {
                   <span data-l10n-id="experimentPromoHeader" className="block">Ready for Takeoff?</span>
                 </h2>
                 <p data-l10n-id="experimentPromoSubheader">We're building next-generation features for Firefox. Install Test Pilot to try them!</p>
-                <MainInstallButton hasAddon={hasAddon} isFirefox={isFirefox}
+                <MainInstallButton hasAddon={hasAddon} isFirefox={isFirefox} isMinFirefox={isMinFirefox}
                                    eventCategory="HomePage Interactions"
                                    experimentTitle={title} />
               </div>

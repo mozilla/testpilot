@@ -23,7 +23,6 @@ import config from './config';
 
 import experimentsActions from './actions/experiments';
 import experimentsReducer from './reducers/experiments';
-import browserActions from './actions/browser';
 import browserReducer from './reducers/browser';
 import addonReducer from './reducers/addon';
 
@@ -68,8 +67,5 @@ window.store = store;
 
 store.dispatch(experimentsActions.fetchExperiments(config.experimentsURL,
                                                    config.usageCountsURL));
-
-const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-store.dispatch(browserActions.setIsFirefox(isFirefox));
 
 setupAddonConnection(store);

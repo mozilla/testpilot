@@ -139,7 +139,7 @@
   transition-duration: 250ms;
   transition-property: box-shadow, border;
   user-select: none;
-  width: 240px;
+  width: 300px;
 
   .button-icon-badge {
     @include hidpi-background-image('download-icon', 16px 16px);

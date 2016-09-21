@@ -60,3 +60,8 @@ export function subscribeToBasket(email, callback) {
     console && console.error(err); // eslint-disable-line no-console
   });
 }
+
+export function isMinFirefoxVersion(isFirefox, ua, minVersion) {
+  if (!isFirefox) return false;
+  return parseInt(ua.split('/').pop(), 10) >= minVersion;
+}

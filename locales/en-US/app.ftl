@@ -35,7 +35,9 @@ landingInstallMessage = Test Pilot installed!
 landingInstalledButton = Choose your features
 
 landingDownloadFirefoxDesc = (Test Pilot is available for Firefox on Windows, OS X and Linux)
+landingUpgradeDesc = Test Pilot requires Firefox 45 or higher.
 landingDownloadFirefoxTitle = Firefox
+landingUpgradeFirefoxTitle = Upgrade Firefox
 landingDownloadFirefoxSubTitle = Free Download
 landingExperimentsTitle = Try out the latest experimental features
 landingCardListTitle = Get started in 3, 2, 1
