@@ -89,16 +89,6 @@ export default class ExperimentTourDialog extends React.Component {
     if (this.props.onComplete) { this.props.onComplete(e); }
   }
 
-  takeTour() {
-    this.setState({ currentStep: 0 });
-
-    sendToGA('event', {
-      eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'take tour'
-    });
-  }
-
   tourToDot(e, index) {
     e.preventDefault();
     this.setState({ currentStep: index });

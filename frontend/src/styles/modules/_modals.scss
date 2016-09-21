@@ -282,13 +282,19 @@
 
   .tour-text {
     background: $white;
+    display: block;
     font-weight: bold;
+    padding: 0 0 ($grid-unit * .25);
     text-align: center;
     width: 100%;
 
     p {
       margin: 0;
       padding: $grid-unit * .5;
+    }
+
+    a {
+      color: $default;
     }
   }
 

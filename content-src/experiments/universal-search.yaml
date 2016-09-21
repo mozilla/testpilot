@@ -18,6 +18,9 @@ xpi_url: 'https://s3-us-west-2.amazonaws.com/universal-search/universal-search.x
 addon_id: universal-search@mozilla.com
 gradient_start: '#01BDAD'
 gradient_stop: '#01A39D'
+min_release:
+pre_feedback_image:
+pre_feedback_copy:
 details:
   -
     headline: ' '
