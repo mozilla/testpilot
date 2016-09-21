@@ -337,6 +337,14 @@ exports.main = function(options) {
   if (reason === 'install') {
     openOnboardingTab();
   }
+
+  const installedCount = (store.installedAddons) ? Object.keys(store.installedAddons).length : 0;
+  Metrics.sendGAEvent({
+    t: 'event',
+    ec: 'add-on Interactions',
+    ea: 'browser startup',
+    el: installedCount
+  });
 };
 
 exports.onUnload = function(reason) {

@@ -11,6 +11,7 @@ const Events = require('sdk/system/events');
 const PrefsService = require('sdk/preferences/service');
 const self = require('sdk/self');
 const store = require('sdk/simple-storage').storage;
+const request = require('sdk/request').Request;
 
 const seedrandom = require('seedrandom');
 
@@ -119,6 +120,13 @@ const Metrics = module.exports = {
       payload,
       { addClientId: true, addEnvironment: true }
     );
+
+    Metrics.sendGAEvent({
+      t: 'event',
+      ec: 'add-on Interactions',
+      ea: object,
+      el: eventName
+    });
   },
 
   experimentEnabled: function(addonId) {
@@ -142,6 +150,17 @@ const Metrics = module.exports = {
       data: JSON.stringify(dataParsed),
       subject: self.id
     });
+  },
+
+  sendGAEvent: function(data) {
+    data.v = 1; // Version -- https://developers.google.com/analytics/devguides/collection/protocol/v1/
+    data.tid = 'UA-49796218-47';
+    data.cid = store.clientUUID;
+    const req = request({
+      url: 'http://www.google-analytics.com/collect',
+      content: data
+    });
+    req.post();
   },
 
   onExperimentPing: function(ev) {
