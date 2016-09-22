@@ -11,6 +11,7 @@ export default connect(
   state => ({
     experiments: getExperiments(state.experiments),
     isFirefox: state.browser.isFirefox,
+    isDev: state.browser.isDev,
     hasAddon: state.addon.hasAddon,
     installed: getInstalled(state.addon),
     isExperimentEnabled: experiment =>
