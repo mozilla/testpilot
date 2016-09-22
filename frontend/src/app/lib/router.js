@@ -20,7 +20,7 @@ const AppRouter = ({ history }) => (
   <Router history={history}>
     <Route path="/" component={App}>
       <IndexRoute component={LandingPage} />
-      <Route path="/experiments/" component={ExperimentsListPage} />
+      <Route path="/experiments(/)" component={ExperimentsListPage} />
       <Route path="/experiments/:slug" component={ExperimentPage} />
       <Route path="/legacy" component={LegacyPage} />
       <Route path="/404" component={NotFoundPage} />
