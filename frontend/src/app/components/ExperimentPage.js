@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 import classnames from 'classnames';
 
@@ -96,7 +97,7 @@ export default class ExperimentPage extends React.Component {
   }
 
   render() {
-    const { navigateTo, isExperimentEnabled, experiments, installed, hasAddon,
+    const { navigateTo, isExperimentEnabled, experiments, installed, isDev, hasAddon,
             isFirefox, isMinFirefox } = this.props;
 
     // Show the loading animation if experiments haven't been loaded yet.
@@ -119,12 +120,20 @@ export default class ExperimentPage extends React.Component {
     const modified = formatDate(experiment.modified);
     const completedDate = experiment.completed ? formatDate(experiment.completed) : null;
     const validVersion = this.isValidVersion(min_release);
+    const utcNow = moment.utc();
 
     let statusType = null;
     if (experiment.error) {
       statusType = 'error';
     } else if (enabled) {
       statusType = 'enabled';
+    }
+
+    if (moment(utcNow).isBefore(experiment.launch_date)
+        && typeof experiment.launch_date !== 'undefined'
+        && !isDev) {
+      navigateTo('/not-found');
+      return '';
     }
 
     return (

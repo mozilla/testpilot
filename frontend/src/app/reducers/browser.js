@@ -8,5 +8,6 @@ const isUserAgentMinFirefox = isMinFirefoxVersion(isUserAgentFirefox, userAgent,
 
 export default handleActions({}, {
   isFirefox: isUserAgentFirefox,
-  isMinFirefox: isUserAgentMinFirefox
+  isMinFirefox: isUserAgentMinFirefox,
+  isDev: config.isDev
 });
