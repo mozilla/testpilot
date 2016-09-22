@@ -14,7 +14,8 @@ export default class ExperimentRowCard extends React.Component {
   render() {
     const { hasAddon, experiment, enabled } = this.props;
 
-    const { description, thumbnail, installation_count } = experiment;
+    const { description, thumbnail } = experiment;
+    const installation_count = (experiment.installation_count) ? experiment.installation_count : 0;
     const title = experiment.short_title || experiment.title;
 
     // TODO: #1138 Replace this highly hackly hook so that the subtitle comes from the model
