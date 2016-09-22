@@ -9,8 +9,8 @@ export default function ExperimentCardList({
   const experimentsSorted = [].concat(experiments);
 
   experimentsSorted.sort((a, b) => {
-    if (a.id > b.id) { return 1; }
-    if (a.id < b.id) { return -1; }
+    if (a.order > b.order) { return 1; }
+    if (a.order < b.order) { return -1; }
     return 0;
   });
 

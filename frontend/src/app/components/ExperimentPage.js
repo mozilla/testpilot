@@ -115,7 +115,7 @@ export default class ExperimentPage extends React.Component {
             thumbnail, survey_url, contributors, details, min_release } = experiment;
 
     const subtitle = (title === 'No More 404s') ? 'Powered by the Wayback Machine' : '';
-    const installation_count = experiment.installation_count.toLocaleString();
+    const installation_count = (experiment.installation_count) ? experiment.installation_count.toLocaleString() : '0';
     const surveyURL = buildSurveyURL('givefeedback', title, installed, survey_url);
     const modified = formatDate(experiment.modified);
     const completedDate = experiment.completed ? formatDate(experiment.completed) : null;

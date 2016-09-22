@@ -1,0 +1,50 @@
+id: 7
+title: 'Tracking Protection'
+short_title: ""
+slug: tracking-protection
+thumbnail: /static/images/experiments/tracking-protection/experiments_experiment/thumbnail.png
+description: 'We need your help. This experiment enables Tracking Protection as you browse the web. Help us understand how this affects the websites you visit.'
+introduction: '<p>Firefox uses Tracking Protection by default in Private Browsing mode. This experiment enables Tracking Protection all the time! We’re trying to understand where this breaks the web. As you browse, you can disable Tracking Protection on a site-by-site basis, or send us a message letting us know if a site looks broken with tracking protection enabled. Our goal with this experiment is to understand where Tracking Protection breaks the web so that we can improve Private Browsing for all Firefox users. </p>'
+image_twitter: null
+image_facebook: null
+version: '1.0.1'
+changelog_url: ' https://github.com/mozilla/blok/'
+contribute_url: 'https://github.com/mozilla/blok/'
+bug_report_url: 'https://github.com/mozilla/blok/issues'
+discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/tracking-protection'
+privacy_notice_url: 'https://github.com/mozilla/blok/blob/master/docs/metrics.md'
+measurements: "<p>In addition to the <a href=\"/privacy\">data</a> collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use Tracking Protection:</p>\n<ul>\n<li>Tracking Protection will prompt you for feedback when it blocks a tracker. We collect basic usage data when you engage with this prompt, such as when you enable or disable the trackers on the page or report a problem.</li>\n<li>When you engage with a prompt, we also collect information about the page you are on and the tracking domain that is being blocked. This helps us understand when and why you are experiencing a problem.</li>\n<li>Other than the domain, we don’t collect any further information from the tracker, such as data about unique IDs that are used or cookies that are set.</li>\n<li>To identify trackers, we use a list provided by our partner Disconnect. You can read more about the standards Disconnect applies <a href=\"https://disconnect.me/trackerprotection\">here</a>.</li>\n</ul>"
+xpi_url: 'https://testpilot.firefox.com/files/blok/blok-1.0.1.xpi'
+addon_id: blok@mozilla.org
+gradient_start: '#591C56'
+gradient_stop: '#8725A7'
+details:
+  -
+    headline: ' '
+    image: /static/images/experiments/tracking-protection/experiments_experimentdetail/detail1.jpg
+    copy: 'Lorem ipsum.'
+  -
+    headline: ' '
+    image: /static/images/experiments/tracking-protection/experiments_experimentdetail/detail2.jpg
+    copy: 'Lorem ipsum.'
+    copy: 'Lorem ipsum.'
+tour_steps:
+  -
+    image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour1.png
+    copy: '<p>Lorem ipsum.</p>'
+  -
+    image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour2.png
+    copy: '<p>Lorem ipsum.</p>'
+  -
+    image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour3.png
+    copy: '<p>Lorem ipsum.</p>'
+notifications: []
+contributors:
+  -
+    display_name: 'Luke Crouch'
+    title: 'Software Engineer'
+    avatar: /static/images/experiments/avatars/generic-profile.png
+installation_count: 1
+created: '2016-09-22T00:07:28.847430Z'
+modified: '2016-09-22T16:51:12.188781Z'
+order: 3
