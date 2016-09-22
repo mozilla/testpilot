@@ -7,4 +7,6 @@ describe('app/config', () => {
     expect(config).to.have.property('experimentsURL'));
   it('should have usageCountsURL', () =>
     expect(config).to.have.property('usageCountsURL'));
+  it('should specify a minimum Firefox version', () =>
+    expect(config).to.have.property('minFirefoxVersion'));
 });

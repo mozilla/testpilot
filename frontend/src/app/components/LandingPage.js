@@ -8,7 +8,7 @@ import LoadingPage from './LoadingPage';
 export default class LandingPage extends React.Component {
 
   render() {
-    const { navigateTo, isExperimentEnabled, experiments, hasAddon, isFirefox } = this.props;
+    const { navigateTo, isExperimentEnabled, experiments, hasAddon, isFirefox, isMinFirefox } = this.props;
 
     if (experiments.length === 0) { return <LoadingPage />; }
 
@@ -34,7 +34,7 @@ export default class LandingPage extends React.Component {
         </div>
 
         <div className="centered-banner responsive-content-wrapper">
-          <MainInstallButton hasAddon={hasAddon} isFirefox={isFirefox}
+          <MainInstallButton hasAddon={hasAddon} isFirefox={isFirefox} isMinFirefox={isMinFirefox}
                              eventCategory="HomePage Interactions" />
         </div>
 
@@ -67,7 +67,7 @@ export default class LandingPage extends React.Component {
           </div>
 
           <div className="centered-banner responsive-content-wrapper">
-            <MainInstallButton hasAddon={hasAddon} isFirefox={isFirefox}
+            <MainInstallButton hasAddon={hasAddon} isFirefox={isFirefox} isMinFirefox={isMinFirefox}
                                eventCategory="HomePage Interactions" />
           </div>
 
