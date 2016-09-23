@@ -33,16 +33,16 @@ details:
     copy: 'Lorem ipsum.'
 tour_steps:
   -
-    image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour1.png
+    image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour1.jpg
     copy: '<p>Lorem ipsum.</p>'
   -
-    image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour2.png
+    image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour2.jpg
     copy: '<p>Lorem ipsum.</p>'
   -
-    image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour3.png
+    image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour3.jpg
     copy: '<p>Lorem ipsum.</p>'
   -
-    image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour4.png
+    image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour4.jpg
     copy: '<p>Lorem ipsum.</p>'
 notifications: []
 contributors:
