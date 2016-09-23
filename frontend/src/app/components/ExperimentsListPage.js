@@ -49,12 +49,10 @@ export default class ExperimentsListPage extends React.Component {
           <div className="pinstripe responsive-content-wrapper"></div>
           <div className="responsive-content-wrapper">
             <div data-hook="experiment-list">
-              <div className="card-list experiments">
-                <ExperimentCardList navigateTo={navigateTo} hasAddon={hasAddon}
-                                    isExperimentEnabled={isExperimentEnabled}
-                                    experiments={experiments}
-                                    eventCategory="HomePage Interactions" />
-              </div>
+              <ExperimentCardList navigateTo={navigateTo} hasAddon={hasAddon}
+                                  isExperimentEnabled={isExperimentEnabled}
+                                  experiments={experiments}
+                                  eventCategory="HomePage Interactions" />
             </div>
           </div>
           <footer id="main-footer" className="responsive-content-wrapper">
