@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="localization" href="/static/locales/{locale}/app.ftl">
 
-    <link rel="canonical" href="https://testpilot.firefox.com/">
+    <link rel="canonical" href="https://testpilot.firefox.com/{{{ canonical_path }}}">
 
     <title>{{ meta_title }}</title>
     <meta property="og:title" content="{{ meta_title }}" />
@@ -20,8 +20,8 @@
     <meta property="og:description" content="{{ meta_description }}" />
     <meta name="twitter:description" content="{{ meta_description }}" />
     <meta name="twitter:card" content="summary" />
-    <meta property="og:image" content="{{ image_facebook }}" />
-    <meta name="twitter:image" content="{{ image_twitter }}" />
+    <meta property="og:image" content="{{{ image_facebook }}}" />
+    <meta name="twitter:image" content="{{{ image_twitter }}}" />
 </head>
 <body class="blue">
   <div class="stars"></div>

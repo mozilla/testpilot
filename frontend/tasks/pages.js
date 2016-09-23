@@ -59,6 +59,7 @@ function buildLandingPage() {
     const pageContent = Mustache.render(template, {
       meta_title: 'Firefox Test Pilot',
       meta_description: 'Test new Features. Give us feedback. Help build Firefox.',
+      canonical_path: '',
       image_facebook: THUMBNAIL_FACEBOOK,
       image_twitter: THUMBNAIL_TWITTER,
       enable_pontoon: config.ENABLE_PONTOON
@@ -78,6 +79,7 @@ function buildExperimentPage() {
     const pageContent = Mustache.render(indexTemplate, {
       meta_title: 'Firefox Test Pilot - ' + experiment.title,
       meta_description: experiment.description,
+      canonical_path: 'experiments/' + experiment.slug + '/',
       image_facebook: experiment.image_facebook || THUMBNAIL_FACEBOOK,
       image_twitter: experiment.image_twitter || THUMBNAIL_TWITTER,
       enable_pontoon: config.ENABLE_PONTOON
