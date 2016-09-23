@@ -16,8 +16,9 @@ const xulcss = require('./xulcss');
 xulcss.addXULStylesheet(self.data.url('button.css'));
 
 const PANEL_WIDTH = 300;
-const FOOTER_HEIGHT = 50;
+const FOOTER_HEIGHT = 53;
 const EXPERIMENT_HEIGHT = 80;
+const MAX_HEIGHT = (EXPERIMENT_HEIGHT * 4) + 56 + FOOTER_HEIGHT;
 const NEW_BADGE_LABEL = 'New';
 
 const ONE_DAY = 24 * 60 * 60 * 1000;
@@ -110,10 +111,13 @@ function handleButtonChange(state) {
     panel.experiments = getExperimentList(
       store.availableExperiments || {},
       store.installedAddons || {});
-
+    const height = Math.min(
+      (panel.experiments.length * EXPERIMENT_HEIGHT) + FOOTER_HEIGHT,
+      MAX_HEIGHT
+    );
     panel.show({
+      height,
       width: PANEL_WIDTH,
-      height: (panel.experiments.length * EXPERIMENT_HEIGHT) + FOOTER_HEIGHT,
       position: button
     });
   }
