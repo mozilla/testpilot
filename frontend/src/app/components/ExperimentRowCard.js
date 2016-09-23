@@ -52,11 +52,22 @@ export default class ExperimentRowCard extends React.Component {
           <h4 className="eol-message">{this.statusMsg()}</h4>
         </header>
         <p>{description}</p>
-        <span className="participant-count"
-              data-l10n-id="participantCount"
-              data-l10n-args={JSON.stringify({ installation_count })}>{installation_count}</span>
+        { this.renderInstallationCount(installation_count) }
       </div>
      </div>
+    );
+  }
+
+  // this is set to 100, to accomodate Tracking Protection
+  // which has been sending telemetry pings via installs from dev
+  // TODO: figure out a non-hack way to toggle user counts when we have
+  // telemetry data coming in from prod
+  renderInstallationCount(installation_count) {
+    if (installation_count <= 100) return '';
+    return (
+      <span className="participant-count"
+            data-l10n-id="participantCount"
+            data-l10n-args={JSON.stringify({ installation_count })}>{installation_count}</span>
     );
   }
 

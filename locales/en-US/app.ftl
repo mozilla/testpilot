@@ -136,6 +136,7 @@ tourStartButton = Take the Tour
 tourCancelButton = Skip
 tourDoneButton = Done
 userCountContainer = There are <span>{$installation_count}</span> people trying {$title} right now!
+userCountContainerAlt = Just launched!
 highlightPrivacy = Your privacy
 upgradeNoticeTitle = {$title} requires Firefox {$min_release} or later.
 upgradeNoticeLink = How to update Firefox.
