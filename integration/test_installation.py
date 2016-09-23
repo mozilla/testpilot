@@ -46,7 +46,7 @@ class TestAddonInstallation(FirefoxTestCase):
                                              'button[data-hook=install].state-change'))
 
         # Click through the blocked notification
-        b.wait_for_notification(AddOnInstallBlockedNotification)
+        b.wait_for_notification(AddOnInstallBlockedNotification, timeout=60)
         # HACK: Things seem to fail intermittently here if we don't wait a tick
         time.sleep(0.5)
         b.notification.allow_button.click()
