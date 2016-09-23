@@ -4,7 +4,7 @@ short_title: ""
 slug: min-vid
 thumbnail: /static/images/experiments/min-vid/experiments_experiment/thumbnail.png
 description: 'Keep videos front and center. Min Vid lets you display YouTube and Vimeo videos in a small frame that stays in the foreground as you browse the web.'
-introduction: '<p>Take your videos with you.</p><p><ul><li>Convenience feature for multitasking (videos as you browse)</li><li>Drag the video wherever you want</li><li>User control</li></ul></p>'
+introduction: '<p>Love watching video? Love getting things done while you watch video? Try Min Vid. It’s like picture-in-picture where one picture is a video and the other is the entire Web.</p><ul><li><strong>Click and go:</strong> Pop up the Min Vid frame to keep videos playing in the foreground while you browse.</li><li><strong>Put it where you want it:</strong> Min Vid lets you drag the video frame anywhere in the browser window.</li><li><strong>Controls where you need them:</strong> Min Vid includes controls to let you pause/play, scrub, and adjust volume right in the frame.</li></ul>'
 image_twitter: null
 image_facebook: null
 version: '0.1.9'
@@ -22,28 +22,28 @@ details:
   -
     headline: ' '
     image: /static/images/experiments/min-vid/experiments_experimentdetail/detail1.jpg
-    copy: 'Lorem ipsum.'
+    copy: 'Access Min Vid from YouTube and Vimeo video players.'
   -
     headline: ' '
     image: /static/images/experiments/min-vid/experiments_experimentdetail/detail2.jpg
-    copy: 'Lorem ipsum.'
+    copy: 'Watch video in the foreground while you do other things on the Web.'
   -
     headline: ' '
     image: /static/images/experiments/min-vid/experiments_experimentdetail/detail3.jpg
-    copy: 'Lorem ipsum.'
+    copy: 'Right click on links to video to find Min Vid in the in-context controls.'
 tour_steps:
   -
     image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour1.jpg
-    copy: '<p>Lorem ipsum.</p>'
+    copy: '<p>Select the icon to start using Min Vid.'
   -
     image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour2.jpg
-    copy: '<p>Lorem ipsum.</p>'
+    copy: '<p>Play video in the foreground while you continue to browse.</p>'
   -
     image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour3.jpg
-    copy: '<p>Lorem ipsum.</p>'
+    copy: 'Access controls in the frame to adjust volume, play, pause and move the video.</p>'
   -
     image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour4.jpg
-    copy: '<p>Lorem ipsum.</p>'
+    copy: '<p>You can always give us feedback or disable Min Vid from Test Pilot.</p>'
 notifications: []
 contributors:
   -
