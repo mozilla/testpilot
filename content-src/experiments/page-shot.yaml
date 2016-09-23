@@ -16,8 +16,8 @@ privacy_notice_url: 'https://github.com/mozilla-services/pageshot/blob/master/do
 measurements: "<p>In addition to the <a href=\"/privacy\">data</a> collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use Page Shot:</p>\n<ul>\n<li>We store your shots on Mozilla\’s servers and will have access to those shots. However, we will only access your shots when reasonably necessary for the operation of the service, such as when someone sends us the link to a shot using our \“flag\” feature, or to diagnose any problems. We will also analyze all shots in the aggregate to help improve Page Shot, for example, by identifying the average size and number of shots taken by users. </li>\n<li>We collect usage data to help us understand your interactions with the product, such as the number of times you click the shots button, save an image, or encounter an error saving an image.</li>\n<li>To prevent abuse of this service, we do basic security monitoring. For example, we collect and retain IP addresses to detect and block individuals who are scanning the service to find private pages.</li>\n<li>For all visits to the Page Shot website, the data we collect is described in our <a target=_blank href=\"https://www.mozilla.org/en-US/privacy/websites/\">Websites, Communications & Cookies Privacy Notice</a>.</li>\n</ul>"
 xpi_url: 'https://testpilot.firefox.com/files/pageshot/pageshot-0.1.201609222137.xpi'
 addon_id: jid1-NeEaf3sAHdKHPA@jetpack
-gradient_start: '#278FFF'
-gradient_stop: '#7AF3F2'
+gradient_start: '#02BDAD'
+gradient_stop: '#035295'
 details:
   -
     headline: ' '
@@ -37,19 +37,19 @@ details:
     copy: 'Lorem ipsum.'
 tour_steps:
   -
-    image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour1.png
+    image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour1.jpg
     copy: '<p>Lorem ipsum.</p>'
   -
-    image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour2.png
+    image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour2.jpg
     copy: '<p>Lorem ipsum.</p>'
   -
-    image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour3.png
+    image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour3.jpg
     copy: '<p>Lorem ipsum.</p>'
   -
-    image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour4.png
+    image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour4.jpg
     copy: '<p>Lorem ipsum.</p>'
   -
-    image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour5.png
+    image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour5.jpg
     copy: '<p>Lorem ipsum.</p>'
 notifications: []
 contributors:
@@ -64,4 +64,4 @@ contributors:
 installation_count: 1
 created: '2016-09-22T00:07:28.847430Z'
 modified: '2016-09-22T16:51:12.188781Z'
-order: 2
+order: 0
