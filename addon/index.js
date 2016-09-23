@@ -15,6 +15,7 @@ const { PrefsTarget } = require('sdk/preferences/event-target');
 const URL = require('sdk/url').URL;
 
 const { App } = require('./lib/app');
+const ExperimentHacks = require('./lib/experiment-hacks');
 const ExperimentNotifications = require('./lib/experiment-notifications');
 const FirstRun = require('./lib/first-run');
 const Metrics = require('./lib/metrics');
@@ -157,6 +158,11 @@ function experimentsLoaded(experiments) {
 function setAddonActiveState(addon) {
   const xp = store.availableExperiments[addon.id];
   if (xp) { delete xp.active; }
+  if (addon.isActive) {
+    ExperimentHacks.enabled(addon.id);
+  } else {
+    ExperimentHacks.disabled(addon.id);
+  }
   store.installedAddons[addon.id] = Object.assign({
     active: addon.isActive,
     installDate: addon.installDate
@@ -180,11 +186,6 @@ function installExperiment(experiment) {
 }
 
 function uninstallSelf() {
-  // First, kick out all the experiment add-ons
-  Object.keys(store.installedAddons).forEach(id => {
-    uninstallExperiment({addon_id: id});
-  });
-  // Then, uninstall ourselves
   AddonManager.getAddonByID(self.id, a => a.uninstall());
 }
 
@@ -253,6 +254,7 @@ const addonListener = {
         name: addon.name,
         version: addon.version
       });
+      ExperimentHacks.uninstalling(addon.id);
     }
   },
   onUninstalled: function(addon) {
@@ -369,6 +371,7 @@ exports.onUnload = function(reason) {
     if (store.installedAddons) {
       Object.keys(store.installedAddons).forEach(id => {
         uninstallExperiment({addon_id: id});
+        ExperimentHacks.uninstalled(id);
       });
       delete store.installedAddons;
     }
