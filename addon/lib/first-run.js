@@ -39,7 +39,7 @@ module.exports = {
 
   openTestPilot(settings) {
     tabs.open({
-      url: `${settings.BASE_URL}?${this.utm}`
+      url: `${settings.BASE_URL}/experiments/?${this.utm}`
     });
   },
 

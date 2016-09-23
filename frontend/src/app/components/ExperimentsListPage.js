@@ -13,7 +13,8 @@ export default class ExperimentsListPage extends React.Component {
     super(props);
 
     let showEmailDialog = false;
-    if (cookies.get('first-run')) {
+    if (cookies.get('first-run') ||
+        window.location.search.indexOf('utm_campaign=restart-required') > -1) {
       cookies.remove('first-run');
       showEmailDialog = true;
     }
