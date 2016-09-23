@@ -42,8 +42,16 @@ notifications: []
 contributors:
   -
     display_name: 'Luke Crouch'
-    title: 'Software Engineer'
-    avatar: /static/images/experiments/avatars/generic-profile.png
+    title: 'Web Developer'
+    avatar: /static/images/experiments/avatars/luke-crouch.jpg
+  -
+    display_name: 'Aislinn Grigas'
+    title: 'Senior UX Designer'
+    avatar: /static/images/experiments/avatars/aislinn-grigas.jpg
+  -
+    display_name: 'Rebecca Billings'
+    title: 'Senior QA Engineer'
+    avatar: /static/images/experiments/avatars/rebecca-billings.jpg
 installation_count: 1
 created: '2016-09-22T00:07:28.847430Z'
 modified: '2016-09-22T16:51:12.188781Z'
