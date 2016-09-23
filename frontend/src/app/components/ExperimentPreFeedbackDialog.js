@@ -30,7 +30,7 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
               <div className="tour-text">
                 <a data-l10n-id="experimentPreFeedbackLinkCopy"
                    data-l10n-args={l10nArgs} onClick={e => this.feedback(e)}
-                   href={surveyURL}>Give general feedback about {experiment.title}</a>.
+                   href={surveyURL}>Give feedback about the {experiment.title} experiment</a>
               </div>
             </div>
         </div>

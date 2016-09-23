@@ -19,7 +19,7 @@ addon_id: blok@mozilla.org
 gradient_start: '#8725A7'
 gradient_stop: '#591C56'
 min_release: 48
-pre_feedback_copy: 'To report a site that doesn’t work with Tracking Protection, select the shield icon in the bar that displays the URL of the site.'
+pre_feedback_copy: '<p>To report a site that doesn’t work with Tracking Protection, select the shield icon in the bar that displays the URL of the site.</p>'
 pre_feedback_image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour2.jpg
 details:
   -
