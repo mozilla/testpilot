@@ -73,6 +73,9 @@ isEnabledStatusMessage = {$title} is enabled.
 installErrorMessage = Uh oh. {$title} could not be enabled. Try again later.
 participantCount = <span>{$installation_count}</span> participants
 
+experimentPreFeedbackTitle = {$title} feedback
+experimentPreFeedbackLinkCopy = Give general feedback about {$title}
+
 experimentPromoHeader = Ready for Takeoff?
 experimentPromoSubheader = We're building next-generation features for Firefox. Install Test Pilot to try them!
 

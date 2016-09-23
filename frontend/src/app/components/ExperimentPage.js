@@ -14,6 +14,7 @@ import ExperimentDisableDialog from '../components/ExperimentDisableDialog';
 import ExperimentTourDialog from '../components/ExperimentTourDialog';
 import MainInstallButton from '../components/MainInstallButton';
 import ExperimentCardList from '../components/ExperimentCardList';
+import ExperimentPreFeedbackDialog from '../components/ExperimentPreFeedbackDialog';
 
 const CHANGE_HEADER_ON = 105;
 
@@ -25,6 +26,7 @@ export default class ExperimentPage extends React.Component {
     const { isExperimentEnabled } = this.props;
     const experiment = this.findCurrentExperiment(props);
 
+    // TODO: Clean this up per #1367
     this.state = {
       experiment,
       enabled: isExperimentEnabled(experiment),
@@ -35,7 +37,8 @@ export default class ExperimentPage extends React.Component {
       progressButtonWidth: null,
       showDisableDialog: false,
       shouldShowTourDialog: false,
-      showTourDialog: false
+      showTourDialog: false,
+      showPreFeedbackDialog: false
     };
 
     // HACK: Set this as a plain object property, so we don't trigger crazy
@@ -108,7 +111,7 @@ export default class ExperimentPage extends React.Component {
 
     const { experiment, enabled, useStickyHeader, highlightMeasurementPanel,
             showDisableDialog, showTourDialog, isEnabling, isDisabling,
-            progressButtonWidth } = this.state;
+            progressButtonWidth, showPreFeedbackDialog } = this.state;
 
     const { title, version, contribute_url, bug_report_url, discourse_url,
             introduction, measurements, privacy_notice_url, changelog_url,
@@ -150,6 +153,10 @@ export default class ExperimentPage extends React.Component {
             onCancel={() => this.setState({ showTourDialog: false })}
             onComplete={() => this.setState({ showTourDialog: false })} />}
 
+        {showPreFeedbackDialog &&
+          <ExperimentPreFeedbackDialog experiment={experiment} surveyURL={surveyURL}
+            onCancel={() => this.setState({ showPreFeedbackDialog: false })} />}
+
         <Header hasAddon={hasAddon}/>
 
         {!hasAddon && <section data-hook="testpilot-promo">
@@ -187,7 +194,7 @@ export default class ExperimentPage extends React.Component {
               </header>
               {hasAddon && validVersion && <div className="experiment-controls" data-hook="active-user">
                 {!enabled && <a onClick={e => this.highlightPrivacy(e)} data-hook="highlight-privacy" className="highlight-privacy" data-l10n-id="highlightPrivacy">Your privacy</a>}
-                {enabled && <a onClick={e => this.feedback(e)} data-l10n-id="giveFeedback" data-hook="feedback" id="feedback-button" className="button default" target="_blank" href={surveyURL}>Give Feedback</a>}
+                {enabled && <a onClick={e => this.handleFeedback(e)} data-l10n-id="giveFeedback" data-hook="feedback" id="feedback-button" className="button default" href={surveyURL}>Give Feedback</a>}
                 {enabled && <button onClick={e => this.renderUninstallSurvey(e)} style={{ width: progressButtonWidth }} data-hook="uninstall-experiment" id="uninstall-button" className={classnames(['button', 'secondary'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Disable <span data-hook="title">{title}</span></span></button>}
                 {!enabled && <button onClick={e => this.installExperiment(e)} style={{ width: progressButtonWidth }} data-hook="install-experiment" id="install-button"  className={classnames(['button', 'default'], { 'state-change': isEnabling })}><span className="state-change-inner"></span><span data-l10n-id="enableExperimentTransition" className="transition-text">Enabling...</span><span data-l10n-id="enableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Enable <span data-hook="title">{title}</span></span></button>}
               </div>}
@@ -391,13 +398,29 @@ export default class ExperimentPage extends React.Component {
     });
   }
 
-  feedback() {
-    // Survey link is opened via href link in the template
+  feedback(evt) {
     sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
-      eventLabel: 'Give Feedback'
+      eventLabel: 'Give Feedback',
+      outboundURL: evt.target.getAttribute('href')
     });
+  }
+
+  showPreFeedbackDialog() {
+    this.setState({
+      showPreFeedbackDialog: true
+    });
+  }
+
+  handleFeedback(evt) {
+    evt.preventDefault();
+    const { pre_feedback_copy } = this.state.experiment;
+    if (pre_feedback_copy === null || !pre_feedback_copy) {
+      this.feedback(evt);
+    } else {
+      this.showPreFeedbackDialog();
+    }
   }
 
   installExperiment(evt) {

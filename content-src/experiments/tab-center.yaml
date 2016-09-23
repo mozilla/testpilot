@@ -18,6 +18,9 @@ xpi_url: 'https://people.mozilla.org/~bwinton/TabCenter/tab-center.xpi'
 addon_id: tabcentertest1@mozilla.com
 gradient_start: '#F25820'
 gradient_stop: '#D74012'
+min_release:
+pre_feedback_image:
+pre_feedback_copy:
 details:
   -
     headline: ' '
