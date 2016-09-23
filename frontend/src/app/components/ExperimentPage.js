@@ -208,8 +208,7 @@ export default class ExperimentPage extends React.Component {
                   </div>
                   <div className="details-sections">
                     <section className="user-count">
-                      <span data-l10n-id="userCountContainer" data-l10n-args={JSON.stringify({ installation_count, title })}>There are <span data-l10n-id="userCount" className="bold" data-hook="install-count">{installation_count}</span>
-                      people trying <span data-hook="title">{title}</span> right now!</span>
+                      { this.renderInstallationCount(installation_count, title) }
                     </section>
                     {!hasAddon && <div data-hook="inactive-user">
                       {!!introduction && <section className="introduction" data-hook="introduction-container">
@@ -339,6 +338,23 @@ export default class ExperimentPage extends React.Component {
     const sy = window.pageYOffset || document.documentElement.scrollTop;
     this.setState({ useStickyHeader: sy > CHANGE_HEADER_ON });
     this.didScroll = false;
+  }
+
+  // this is set to 100, to accomodate Tracking Protection
+  // which has been sending telemetry pings via installs from dev
+  // TODO: figure out a non-hack way to toggle user counts when we have
+  // telemetry data coming in from prod
+  renderInstallationCount(installation_count, title) {
+    if (installation_count <= 100) {
+      return (
+        <span data-l10n-id="userCountContainerAlt" className="bold" data-l10n-args={JSON.stringify({ title })}>
+        Just launched!</span>
+      );
+    }
+    return (
+      <span data-l10n-id="userCountContainer" data-l10n-args={JSON.stringify({ installation_count, title })}>There are <span data-l10n-id="userCount" className="bold" data-hook="install-count">{installation_count}</span>
+      people trying <span data-hook="title">{title}</span> right now!</span>
+    );
   }
 
   renderMinimumVersionNotice(title, hasAddon, min_release) {
