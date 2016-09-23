@@ -56,11 +56,15 @@ contributors:
   -
     display_name: 'Ian Bicking'
     title: 'Engineering Manager'
-    avatar: /static/images/experiments/avatars/generic-profile.png
+    avatar: /static/images/experiments/avatars/ian-bicking.jpg
   -
     display_name: 'Donovan Preston'
     title: 'Software Engineer'
-    avatar: /static/images/experiments/avatars/generic-profile.png
+    avatar: /static/images/experiments/avatars/donovan-preston.jpg
+  -
+    display_name: 'Bram Pitoyo'
+    title: 'UX Designer'
+    avatar: /static/images/experiments/avatars/bram-pitoyo.jpg
 installation_count: 1
 created: '2016-09-22T00:07:28.847430Z'
 modified: '2016-09-22T16:51:12.188781Z'
