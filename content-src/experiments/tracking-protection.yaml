@@ -18,6 +18,9 @@ xpi_url: 'https://testpilot.firefox.com/files/blok/blok-1.0.1.xpi'
 addon_id: blok@mozilla.org
 gradient_start: '#8725A7'
 gradient_stop: '#591C56'
+min_release: 48
+pre_feedback_copy: 'Tracking Protection records feedback on a per site basis. If a site seems broken, you can click on the shield icon in your URL bar from the offending site.'
+pre_feedback_image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour2.jpg
 details:
   -
     headline: ' '
