@@ -66,11 +66,9 @@ a {
 }
 
 .experiment-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
     position: relative;
+    overflow-y: auto;
+    max-height: 376px;
 }
 
 .experiment-item {
