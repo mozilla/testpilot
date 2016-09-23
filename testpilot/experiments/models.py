@@ -1,8 +1,13 @@
+import os
 import re
 
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.functional import cached_property
+
+import waffle
+import yaml
 
 from colorfield.fields import ColorField
 from markupfield.fields import MarkupField
@@ -33,6 +38,22 @@ class ExperimentManager(TranslationManager):
         """
         match = re.match(r'\/experiments\/([^\/]+)', request.path)
         if match:
+            if waffle.flag_is_active(request, 'static_experiments_json'):
+                try:
+                    # HACK: Let's duck-type our way to a "model" object
+                    path = os.path.join(settings.BASE_DIR, 'content-src', 'experiments',
+                                        '%s.yaml' % match.groups()[0])
+                    data = yaml.load(open(path, 'r').read())
+                    return type('obj', (object,), dict(
+                        title=data['title'],
+                        description=data['description'],
+                        image_facebook=type('obj', (object,),
+                                            dict(url=data['image_facebook'])),
+                        image_twitter=type('obj', (object,),
+                                           dict(url=data['image_twitter'])),
+                    ))
+                except:
+                    return None
             try:
                 return self.get(slug=match.groups()[0])
             except self.model.DoesNotExist:
