@@ -3,8 +3,8 @@ title: 'Tracking Protection'
 short_title: ""
 slug: tracking-protection
 thumbnail: /static/images/experiments/tracking-protection/experiments_experiment/thumbnail.png
-description: 'We need your help. This experiment enables Tracking Protection as you browse the web. Help us understand how this affects the websites you visit.'
-introduction: '<p>Firefox uses Tracking Protection by default in Private Browsing mode. This experiment enables Tracking Protection all the time! We’re trying to understand where this breaks the web. As you browse, you can disable Tracking Protection on a site-by-site basis, or send us a message letting us know if a site looks broken with tracking protection enabled. Our goal with this experiment is to understand where Tracking Protection breaks the web so that we can improve Private Browsing for all Firefox users. </p>'
+description: 'Will you help us make Tracking Protection better? This experiment turns on Tracking Protection for all browsing and offers a quick way to report any issues you see as you browse.'
+introduction: '<p>Until now, Tracking Protection in Firefox was only available in Private Browsing mode. This experiment enables Tracking Protection all the time! (Of course, you can disable it on a site-by-site basis whenever you want.)</p><p>This experiment lets you help us understand where Tracking Protection breaks the Web so that we can improve it for all Firefox users. As you browse, use the convenient notification bar at the top of the page to tell us which sites work well with Tracking Protection and which don’t.</p>'
 image_twitter: null
 image_facebook: null
 version: '1.0.1'
@@ -19,28 +19,27 @@ addon_id: blok@mozilla.org
 gradient_start: '#8725A7'
 gradient_stop: '#591C56'
 min_release: 48
-pre_feedback_copy: 'Tracking Protection records feedback on a per site basis. If a site seems broken, you can click on the shield icon in your URL bar from the offending site.'
+pre_feedback_copy: 'To report a site that doesn’t work with Tracking Protection, select the shield icon in the bar that displays the URL of the site.'
 pre_feedback_image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour2.jpg
 details:
   -
     headline: ' '
     image: /static/images/experiments/tracking-protection/experiments_experimentdetail/detail1.jpg
-    copy: 'Lorem ipsum.'
+    copy: 'Access all Tracking Protection features in the address bar.'
   -
     headline: ' '
     image: /static/images/experiments/tracking-protection/experiments_experimentdetail/detail2.jpg
-    copy: 'Lorem ipsum.'
-    copy: 'Lorem ipsum.'
+    copy: 'Report a problem and help us troubleshoot.'
 tour_steps:
   -
     image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour1.jpg
-    copy: '<p>Lorem ipsum.</p>'
+    copy: '<p>The shield indicates Tracking Protection is on. With a slash, it’s off.</p>'
   -
     image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour2.jpg
-    copy: '<p>Lorem ipsum.</p>'
+    copy: '<p>Tell us when things work and when they don’t.</p>'
   -
     image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour3.jpg
-    copy: '<p>Lorem ipsum.</p>'
+    copy: '<p>You can always disable Tracking Protection from Test Pilot.</p>'
 notifications: []
 contributors:
   -
