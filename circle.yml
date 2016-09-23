@@ -44,7 +44,7 @@ dependencies:
 test:
   override:
     - '[[ " $TESTPILOT_STATIC_BRANCHES " =~ " $CIRCLE_BRANCH " ]] || ./bin/circleci/run-server-unit-tests.sh'
-    - ./bin/circleci/run-integration-tests.sh
+    # - ./bin/circleci/run-integration-tests.sh
 
 # appropriately tag and push the container to dockerhub
 deployment:
