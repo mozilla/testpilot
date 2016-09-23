@@ -31,10 +31,6 @@ details:
     headline: ' '
     image: /static/images/experiments/page-shot/experiments_experimentdetail/detail3.jpg
     copy: 'Lorem ipsum.'
-  -
-    headline: ' '
-    image: /static/images/experiments/page-shot/experiments_experimentdetail/detail4.jpg
-    copy: 'Lorem ipsum.'
 tour_steps:
   -
     image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour1.jpg
