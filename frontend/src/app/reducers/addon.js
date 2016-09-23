@@ -2,8 +2,8 @@ import { handleActions } from 'redux-actions';
 
 const setHasAddon = (state, { payload: hasAddon }) => ({ ...state, hasAddon });
 
-const setInstalled = (state, { payload: installed }) =>
-  ({ ...state, installed: (installed || {}) });
+const setInstalled = (state, { payload: { installed, installedLoaded } }) =>
+  ({ ...state, installed, installedLoaded });
 
 const setClientUuid = (state, { payload: clientUUID }) => ({ ...state, clientUUID });
 
@@ -32,7 +32,9 @@ const requireRestart = (state, { payload: experimentTitle }) => {
 export const getInstalled = (state) => state.installed;
 
 export const isExperimentEnabled = (state, experiment) =>
-  (experiment && experiment.addon_id in state.installed);
+  !!(experiment && experiment.addon_id in state.installed);
+
+export const isInstalledLoaded = (state) => state.installedLoaded;
 
 export default handleActions({
   setHasAddon,
@@ -44,6 +46,7 @@ export default handleActions({
 }, {
   hasAddon: false,
   installed: {},
+  installedLoaded: false,
   clientUUID: '',
   restart: {
     isRequired: false,
