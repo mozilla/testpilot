@@ -54,11 +54,10 @@ export function installAddon(store, eventCategory, experimentTitle) {
       }
     });
   } else {
+    cookies.set('first-run', 'true');
     gaEvent.outboundURL = downloadUrl;
     sendToGA('event', gaEvent);
   }
-
-  cookies.set('first-run', 'true');
 }
 
 export function uninstallAddon() {

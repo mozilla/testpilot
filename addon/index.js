@@ -334,11 +334,11 @@ exports.main = function(options) {
   ToolbarButton.init(settings);
   ExperimentNotifications.init();
   SharePrompt.init(settings);
-  FirstRun.setup(options.reason, settings);
 
-  if (reason === 'install') {
+  if (reason === 'install' || (reason === 'startup' && FirstRun.isFirstRun())) {
     openOnboardingTab();
   }
+  FirstRun.setup(options.reason, settings);
 
   const installedCount = (store.installedAddons) ? Object.keys(store.installedAddons).length : 0;
   Metrics.sendGAEvent({
