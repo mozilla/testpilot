@@ -422,6 +422,7 @@ export default class ExperimentPage extends React.Component {
 
     this.setState({
       isEnabling: true,
+      isDisabling: false,
       shouldShowTourDialog: true,
       progressButtonWidth: evt.target.offsetWidth
     });
@@ -445,6 +446,7 @@ export default class ExperimentPage extends React.Component {
     if (isDisabling) { return; }
 
     this.setState({
+      isEnabling: false,
       isDisabling: true,
       progressButtonWidth: evt.target.offsetWidth
     });
