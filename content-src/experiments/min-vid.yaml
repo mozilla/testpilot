@@ -7,7 +7,7 @@ description: 'Keep videos front and center. Min Vid lets you display YouTube and
 introduction: '<p>Love watching video? Love getting things done while you watch video? Try Min Vid. It’s like picture-in-picture where one picture is a video and the other is the entire Web.</p><ul><li><strong>Click and go:</strong> Pop up the Min Vid frame to keep videos playing in the foreground while you browse.</li><li><strong>Put it where you want it:</strong> Min Vid lets you drag the video frame anywhere in the browser window.</li><li><strong>Controls where you need them:</strong> Min Vid includes controls to let you pause/play, scrub, and adjust volume right in the frame.</li></ul>'
 image_twitter: /static/images/experiments/min-vid/social/mv-twitter.jpg
 image_facebook: /static/images/experiments/min-vid/social/mv-facebook.jpg
-version: '0.2.0'
+version: '0.3.0'
 changelog_url: 'https://github.com/meandavejustice/min-vid'
 contribute_url: 'https://github.com/meandavejustice/min-vid'
 bug_report_url: 'https://github.com/meandavejustice/min-vid/issues'
