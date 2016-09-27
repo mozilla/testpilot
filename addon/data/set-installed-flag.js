@@ -10,3 +10,8 @@
 
 unsafeWindow.navigator.testpilotAddon = true;
 unsafeWindow.navigator.testpilotAddonVersion = self.options.version;
+
+self.port.on('detach', function() {
+  delete unsafeWindow.navigator.testpilotAddon;
+  delete unsafeWindow.navigator.testpilotAddonVersion;
+});

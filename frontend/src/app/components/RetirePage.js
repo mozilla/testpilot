@@ -20,6 +20,7 @@ export default class RetirePage extends React.Component {
   componentDidMount() {
     this.fakeUninstallTimer = setTimeout(() => {
       this.setState({ fakeUninstalled: true });
+      window.navigator.testpilotAddon = false;
     }, FAKE_UNINSTALL_DELAY);
   }
 
@@ -32,6 +33,9 @@ export default class RetirePage extends React.Component {
     const { fakeUninstalled } = this.state;
 
     const uninstalled = !hasAddon || fakeUninstalled;
+    if (uninstalled) {
+      clearTimeout(this.fakeUninstallTimer);
+    }
 
     return (
       <div className="full-page-wrapper centered">
