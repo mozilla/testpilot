@@ -31,15 +31,15 @@ exports['test check when first run and Test Pilot open'] = assert => {
   FirstRun.check([{ url: mockSettings.BASE_URL }], mockSettings);
   assert.equal(0, mocks.callbacks.Tabs.open.calls().length,
     'Test Pilot not opened.');
-  assert.equal(mocks.store.firstRun, true, 'First run recorded');
+  assert.equal(typeof mocks.store.firstRun, 'undefined');
 };
 
 
 exports['test check when first run and Test Pilot not open'] = assert => {
   FirstRun.check([], mockSettings);
-  assert.equal(1, mocks.callbacks.Tabs.open.calls().length,
+  assert.equal(0, mocks.callbacks.Tabs.open.calls().length,
     'Test Pilot opened.');
-  assert.equal(mocks.store.firstRun, true, 'First run recorded.');
+  assert.equal(typeof mocks.store.firstRun, 'undefined');
 };
 
 
@@ -65,7 +65,7 @@ exports['test isFirstRun'] = assert => {
     'When not the first run.');
 
   delete mocks.store.firstRun;
-  assert.equal(FirstRun.isFirstRun(), true,
+  assert.equal(FirstRun.isFirstRun(), false,
     'When it is the first run.');
 };
 
