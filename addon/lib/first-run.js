@@ -25,7 +25,7 @@ module.exports = {
   },
 
   isFirstRun() {
-    return typeof store.firstRun === 'undefined';
+    return false;
   },
 
   isTestPilotOpen(tabList, settings) {
