@@ -16,7 +16,7 @@ export default createActions({
       .then(counts => ({
         lastFetched: Date.now(),
         experimentsLoaded: true,
-        experiments: experiments.map(experiment => ({
+        data: experiments.map(experiment => ({
           ...experiment,
           installation_count: counts[experiment.addon_id]
         }))

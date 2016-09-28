@@ -4,11 +4,12 @@ import { push as routerPush } from 'react-router-redux';
 import ExperimentsListPage from '../components/ExperimentsListPage';
 
 import { getInstalled, isExperimentEnabled } from '../reducers/addon';
-import { getExperiments } from '../reducers/experiments';
+import experimentSelector from '../selectors/experiment';
+
 
 export default connect(
   state => ({
-    experiments: getExperiments(state.experiments),
+    experiments: experimentSelector(state),
     isFirefox: state.browser.isFirefox,
     hasAddon: state.addon.hasAddon,
     installed: getInstalled(state.addon.installed),

@@ -1,46 +1,44 @@
 import React from 'react';
-import moment from 'moment';
+
+import { isExperimentEnabled } from '../reducers/addon';
+
 import ExperimentRowCard from './ExperimentRowCard';
 import Loading from './Loading';
 
-export default function ExperimentCardList({
-  navigateTo, isExperimentEnabled, hasAddon, isDev, experiments, except, eventCategory
-}) {
-  const experimentsSorted = [].concat(experiments);
-
-  experimentsSorted.sort((a, b) => {
-    if (a.order > b.order) { return 1; }
-    if (a.order < b.order) { return -1; }
-    return 0;
-  });
-
-  const experimentsReduced = setCurrentExperiments(isDev, experimentsSorted);
-
-  return (
-    <div className="card-list experiments">
-      {(experiments.length === 0) ?
-        <Loading /> :
-        experimentsReduced.map((experiment, key) =>
-          (!except || except.slug !== experiment.slug) &&
-            <ExperimentRowCard key={key}
-                               navigateTo={navigateTo}
-                               experiment={experiment}
-                               enabled={isExperimentEnabled(experiment)}
-                               hasAddon={hasAddon}
-                               eventCategory={eventCategory} />) }
-    </div>
-  );
-}
-
-function setCurrentExperiments(isDev, allExperiments) {
-  const currentExperiments = [];
-  const utcNow = moment.utc();
-  if (isDev) return allExperiments;
-  allExperiments.forEach((experiment) => {
-    if (moment(utcNow).isAfter(experiment.launch_date) || typeof experiment.launch_date === 'undefined') {
-      currentExperiments.push(experiment);
+export default class ExperimentCardList extends React.Component {
+  getExperiments() {
+    if (!this.props.except) {
+      return this.props.experiments;
     }
-  });
-  return currentExperiments;
-}
+    return this.props.experiments.filter(experiment => (
+      experiment.slug !== this.props.except
+    ));
+  }
 
+  renderLoading() {
+    return (
+      <div className="card-list experiments">
+        <Loading />
+      </div>
+    );
+  }
+
+  renderExperiments() {
+    return (
+      <div className="card-list experiments">
+        {this.getExperiments().map((experiment, key) => (
+          <ExperimentRowCard experiment={experiment}
+                             enabled={isExperimentEnabled(experiment)}
+                             key={key} {...this.props} />
+        ))}
+      </div>
+    );
+  }
+
+  render() {
+    if (this.props.experiments.length === 0) {
+      return this.renderLoading();
+    }
+    return this.renderExperiments();
+  }
+}
