@@ -15,6 +15,7 @@ MockUtils.setDebug(true);
 const mocks = {
   store: {},
   callbacks: MockUtils.callbacks({
+    Metrics: ['pingTelemetry'],
     Request: ['get'],
     timers: ['setTimeout', 'clearTimeout'],
     Tabs: ['open']
@@ -28,7 +29,8 @@ const mockLoader = MockUtils.loader(module, './lib/survey.js', {
   'sdk/simple-storage': {storage: mocks.store},
   'sdk/request': {Request},
   'sdk/tabs': mocks.callbacks.Tabs,
-  'sdk/timers': mocks.callbacks.timers
+  'sdk/timers': mocks.callbacks.timers,
+  './lib/metrics.js': mocks.callbacks.Metrics
 });
 
 const Survey = mockLoader.require('../lib/survey');

@@ -10,6 +10,7 @@
  *   & https://dxr.mozilla.org/mozilla-central/source/browser/components/uitour/UITour.jsm
  */
 
+const Metrics = require('./metrics');
 const { Services } = require('resource://gre/modules/Services.jsm');
 const { setTimeout, clearTimeout } = require('sdk/timers');
 const tabs = require('sdk/tabs');
@@ -114,7 +115,7 @@ function launchSurvey(options) {
     .then(
       rating => {
         if (!rating) { return Promise.resolve(); }
-        // TODO: add telemetry ping for rating
+        Metrics.pingTelemetry(experiment.addon_id, `rated_${rating}`);
         return showSurveyButton(options)
           .then(clicked => {
             if (clicked) {
