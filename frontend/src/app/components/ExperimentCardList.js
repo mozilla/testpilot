@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { isExperimentEnabled } from '../reducers/addon';
-
 import ExperimentRowCard from './ExperimentRowCard';
 import Loading from './Loading';
 
@@ -24,6 +22,8 @@ export default class ExperimentCardList extends React.Component {
   }
 
   renderExperiments() {
+    const { isExperimentEnabled } = this.props;
+
     return (
       <div className="card-list experiments">
         {this.getExperiments().map((experiment, key) => (

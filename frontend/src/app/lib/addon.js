@@ -1,7 +1,6 @@
 /* global CustomEvent */
 import cookies from 'js-cookie';
 
-import { sendToGA } from './utils';
 import addonActions from '../actions/addon';
 import experimentActions from '../actions/experiments';
 import { getExperimentByID, getExperimentByURL, getExperimentInProgress } from '../reducers/experiments';
@@ -29,7 +28,7 @@ function mozAddonManagerInstall(url) {
   });
 }
 
-export function installAddon(store, eventCategory, experimentTitle) {
+export function installAddon(store, sendToGA, eventCategory, experimentTitle) {
   const { protocol, hostname, port } = window.location;
   const path = '/static/addon/addon.xpi';
   const downloadUrl = `${protocol}//${hostname}${port ? ':' + port : ''}${path}`;

@@ -1,19 +1,19 @@
+/* global ga */
 import React from 'react';
 import { Router, Route, IndexRoute } from 'react-router';
 import { push as routerPush } from 'react-router-redux';
 import { connect } from 'react-redux';
 
-import { sendToGA } from '../lib/utils';
 import { getInstalled, isExperimentEnabled, isInstalledLoaded } from '../reducers/addon';
 import { getExperimentBySlug, isExperimentsLoaded } from '../reducers/experiments';
 
-import LandingPage from '../containers/LandingPage';
-import ExperimentsListPage from '../containers/ExperimentsListPage';
-import ExperimentPage from '../containers/ExperimentPage';
-import RetirePage from '../containers/RetirePage';
-import Restart from '../containers/Restart';
+import App from '../containers/App';
 
-import App from '../components/App';
+import LandingPage from '../components/LandingPage';
+import ExperimentsListPage from '../components/ExperimentsListPage';
+import ExperimentPage from '../components/ExperimentPage';
+import RetirePage from '../components/RetirePage';
+import Restart from '../components/Restart';
 import LegacyPage from '../components/LegacyPage';
 import NotFoundPage from '../components/NotFoundPage';
 import SharePage from '../components/SharePage';
@@ -39,6 +39,7 @@ const AppRouter = ({ history }) => (
 );
 
 // Wrapper for <Router> that handles state-based redirection logic
+// TODO: Move all of this into the App container?
 class BaseAppRedirector extends React.Component {
 
   performRedirects() {
@@ -89,10 +90,14 @@ class BaseAppRedirector extends React.Component {
     }
   }
 
-  debounceSendToGA(pathname, type, data) {
+  debounceSendToGA(pathname, type, dataIn) {
     if (this.lastPingPathname === pathname) { return; }
     this.lastPingPathname = pathname;
-    sendToGA(type, data);
+    if (window.ga && ga.loaded) {
+      const data = dataIn || {};
+      data.hitType = type;
+      ga('send', data);
+    }
   }
 
   constructor(props) {

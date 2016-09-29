@@ -1,8 +1,6 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
-import { installAddon } from '../lib/addon';
-
 export default class MainInstallButton extends React.Component {
 
   constructor(props) {
@@ -13,10 +11,10 @@ export default class MainInstallButton extends React.Component {
   }
 
   install(evt, experimentTitle) {
-    const { eventCategory, hasAddon } = this.props;
+    const { sendToGA, eventCategory, hasAddon, installAddon } = this.props;
     if (hasAddon) { return; }
     this.setState({ isInstalling: true });
-    installAddon(this.context.store, eventCategory, experimentTitle);
+    installAddon(this.context.store, sendToGA, eventCategory, experimentTitle);
   }
 
   render() {

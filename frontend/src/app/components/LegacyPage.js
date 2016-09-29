@@ -28,7 +28,7 @@ export default class LegacyPage extends React.Component {
           </div>
         </div>
         <footer id="main-footer" className="content-wrapper">
-          <Footer />
+          <Footer {...this.props} />
         </footer>
       </div>
     );

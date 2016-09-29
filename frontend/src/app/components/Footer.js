@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { sendToGA } from '../lib/utils';
-
 export default class Footer extends React.Component {
 
   render() {
@@ -26,7 +24,7 @@ export default class Footer extends React.Component {
 
   eventToGA(e) {
     const label = e.target.getAttribute('title');
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'FooterView Interactions',
       eventAction: 'social link clicked',
       eventLabel: label

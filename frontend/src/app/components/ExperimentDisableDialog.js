@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { sendToGA, buildSurveyURL } from '../lib/utils';
+import { buildSurveyURL } from '../lib/utils';
 
 export default class ExperimentDisableDialog extends React.Component {
   render() {
@@ -37,7 +37,7 @@ export default class ExperimentDisableDialog extends React.Component {
   }
 
   submit(e) {
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
       eventLabel: 'exit survey disabled'
