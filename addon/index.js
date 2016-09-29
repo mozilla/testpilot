@@ -35,6 +35,12 @@ const SERVER_ENVIRONMENTS = {
     WHITELIST_URLS: 'https://www.mozilla.org/*,about:home',
     BADGE_COLOR: '#AA00AA'
   },
+  example: {
+    BASE_URL: 'https://example.com:8000',
+    TESTPILOT_PREFIX: 'testpilot.addon.LOCAL.',
+    WHITELIST_URLS: 'https://www.mozilla.org/*,about:home',
+    BADGE_COLOR: '#AA00AA'
+  },
   dev: {
     BASE_URL: 'http://testpilot.dev.mozaws.net',
     TESTPILOT_PREFIX: 'testpilot.addon.DEV.',
