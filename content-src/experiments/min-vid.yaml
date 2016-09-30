@@ -34,13 +34,13 @@ details:
 tour_steps:
   -
     image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour1.jpg
-    copy: '<p>Select the icon to start using Min Vid.'
+    copy: '<p>Select the icon to start using Min Vid.</p>'
   -
     image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour2.jpg
     copy: '<p>Play video in the foreground while you continue to browse.</p>'
   -
     image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour3.jpg
-    copy: 'Access controls in the frame to adjust volume, play, pause and move the video.</p>'
+    copy: '<p>Access controls in the frame to adjust volume, play, pause and move the video.</p>'
   -
     image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour4.jpg
     copy: '<p>You can always give us feedback or disable Min Vid from Test Pilot.</p>'
