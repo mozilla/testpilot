@@ -1,10 +1,12 @@
 id: 3
 title: 'Tab Center'
-short_title: ""
+short_title: ''
 slug: tab-center
 thumbnail: /static/images/experiments/tab-center/experiments_experiment/6/9/69333a5f98edf04bbb52085d20e6303e_thumbnail_1461802048_0012.png
-description: 'What would it be like to move tabs from the top of the browser to the side? We wanted to find out!'
-introduction: '<p>Take your tabs from in the way to tucked away. Tab Center moves your tabs to the side of your browser window so they''re out of sight when you don''t need them, and easy to expand and grab when you do.</p>'
+description: >
+  What would it be like to move tabs from the top of the browser to the side? We wanted to find out!
+introduction: >
+  <p>Take your tabs from in the way to tucked away. Tab Center moves your tabs to the side of your browser window so they're out of sight when you don't need them, and easy to expand and grab when you do.</p>
 image_twitter: null
 image_facebook: null
 version: '1.24'
@@ -13,7 +15,13 @@ contribute_url: 'https://github.com/bwinton/TabCenter#readme'
 bug_report_url: 'https://github.com/bwinton/TabCenter/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/tab-center'
 privacy_notice_url: 'https://github.com/bwinton/TabCenter/blob/master/docs/metrics.md'
-measurements: "<p>In addition to the <a href=\"/privacy\">data</a> collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use Tab Center:</p>\n<ul>\n<li>We collect usage data regarding how you interact with the Tab Center, such as how often you maximize or pin Tab Center.</li>\n<li>We also collect information about the way you use tabs, such as the number of tabs you keep open at a time, and length of time you keep tabs open.</li>\n<li>Tab Center does not collect any information about sites you visit or the content of tabs.</li>\n</ul>"
+measurements: >
+  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use Tab Center:</p>
+  <ul>
+    <li>We collect usage data regarding how you interact with the Tab Center, such as how often you maximize or pin Tab Center.</li>
+    <li>We also collect information about the way you use tabs, such as the number of tabs you keep open at a time, and length of time you keep tabs open.</li>
+    <li>Tab Center does not collect any information about sites you visit or the content of tabs.</li>
+  </ul>
 xpi_url: 'https://people.mozilla.org/~bwinton/TabCenter/tab-center.xpi'
 addon_id: tabcentertest1@mozilla.com
 gradient_start: '#F25820'
@@ -25,28 +33,35 @@ details:
   -
     headline: ' '
     image: /static/images/experiments/tab-center/experiments_experimentdetail/3/0/30c1166dd2476cb66ec57fc3049303e6_image_1462827296_0000.jpg
-    copy: 'Tuck away those tabs until you need them.'
+    copy: >
+      Tuck away those tabs until you need them.
   -
     headline: ' '
     image: /static/images/experiments/tab-center/experiments_experimentdetail/7/5/753e2ad9494cc093289630bf2be9e74b_image_1462827296_0963.jpg
-    copy: 'Pin Tab Center to see everything you''ve got open.'
+    copy: >
+      Pin Tab Center to see everything you've got open.
   -
     headline: ' '
     image: /static/images/experiments/tab-center/experiments_experimentdetail/6/9/694fde9c47365314d576e85fdb16ba4f_image_1462827297_0901.jpg
-    copy: 'Redecorate and move the furniture! Tab Center works with your favorite Firefox themes.'
+    copy: >
+      Redecorate and move the furniture! Tab Center works with your favorite Firefox themes.
 tour_steps:
   -
     image: /static/images/experiments/tab-center/experiments_experimenttourstep/9/0/904efde3b0a7a9d3b69606b1a34b42a9_image_1462827296_0842.jpg
-    copy: '<p>First things first, all your tabs are on the side now.</p>'
+    copy: >
+      <p>First things first, all your tabs are on the side now.</p>
   -
     image: /static/images/experiments/tab-center/experiments_experimenttourstep/2/b/2ba4e15b0c868007754cb8c31d0cbc15_image_1462827296_0454.jpg
-    copy: '<p>Move your mouse over them to get an expanded view.</p>'
+    copy: >
+      <p>Move your mouse over them to get an expanded view.</p>
   -
     image: /static/images/experiments/tab-center/experiments_experimenttourstep/e/7/e737e191692bd072df5186a2ed97a368_image_1462827296_0026.jpg
-    copy: '<p>You can pin Tab Center open to keep it expanded.</p>'
+    copy: >
+      <p>You can pin Tab Center open to keep it expanded.</p>
   -
     image: /static/images/experiments/tab-center/experiments_experimenttourstep/a/1/a1d3b653f9c27838168951fccf9b0fc1_image_1462827296_0826.jpg
-    copy: '<p>You can always give us feedback or disable Tab Center from Test Pilot.</p>'
+    copy: >
+      <p>You can always give us feedback or disable Tab Center from Test Pilot.</p>
 notifications: []
 contributors:
   -
