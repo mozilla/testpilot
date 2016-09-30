@@ -4,13 +4,17 @@ short_title: ''
 slug: page-shot
 thumbnail: /static/images/experiments/page-shot/experiments_experiment/thumbnail.png
 description: >
-  Intuitive screenshots baked right into the browser. Capture, save and share screenshots as you browse the Web using Firefox.
+  Intuitive screenshots baked right into the browser. Capture, save and share
+  screenshots as you browse the Web using Firefox.
 introduction: >
-  <p>Page Shot lets you take, share, and retrieve screenshots - without leaving Firefox.</p>
+  <p>Page Shot lets you take, share, and retrieve screenshots - without leaving
+    Firefox.</p>
   <ul>
     <li><strong>Grid view:</strong> Browse thumbnails of saved screenshots</li>
-    <li><strong>Smart search:</strong> Find the screenshot you're looking for with just a keyword. Page Shot indexes page titles and text in screenshots</li>
-    <li><strong>One-step sharing:</strong> Post your screenshot to social media or copy the shareable link right from the top of your browser window.</li>
+    <li><strong>Smart search:</strong> Find the screenshot you're looking for
+      with just a keyword. Page Shot indexes page titles and text in screenshots</li>
+    <li><strong>One-step sharing:</strong> Post your screenshot to social media
+      or copy the shareable link right from the top of your browser window.</li>
   </ul>
 image_twitter: /static/images/experiments/page-shot/social/ps-twitter.jpg
 image_facebook: /static/images/experiments/page-shot/social/ps-facebook.jpg
@@ -21,12 +25,26 @@ bug_report_url: 'https://github.com/mozilla-services/pageshot/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/page-shot'
 privacy_notice_url: 'https://github.com/mozilla-services/pageshot/blob/master/docs/METRICS.md'
 measurements: >
-  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use Page Shot:</p>
+  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot
+    experiments, here are the key things you should know about what is happening
+    when you use Page Shot:</p>
   <ul>
-    <li>We store your shots on Mozilla’s servers and will have access to those shots. However, we will only access your shots when reasonably necessary for the operation of the service, such as when someone sends us the link to a shot using our “flag” feature, or to diagnose any problems. We will also analyze all shots in the aggregate to help improve Page Shot, for example, by identifying the average size and number of shots taken by users.</li>
-    <li>We collect usage data to help us understand your interactions with the product, such as the number of times you click the shots button, save an image, or encounter an error saving an image.</li>
-    <li>To prevent abuse of this service, we do basic security monitoring. For example, we collect and retain IP addresses to detect and block individuals who are scanning the service to find private pages.</li>
-    <li>For all visits to the Page Shot website, the data we collect is described in our <a target="_blank" href="https://www.mozilla.org/en-US/privacy/websites/">Websites, Communications & Cookies Privacy Notice</a>.</li>
+    <li>We store your shots on Mozilla's servers and will have access to those
+      shots. However, we will only access your shots when reasonably necessary
+      for the operation of the service, such as when someone sends us the link
+      to a shot using our "flag" feature, or to diagnose any problems. We will
+      also analyze all shots in the aggregate to help improve Page Shot, for
+      example, by identifying the average size and number of shots taken by
+      users.</li>
+    <li>We collect usage data to help us understand your interactions with the
+      product, such as the number of times you click the shots button, save an
+      image, or encounter an error saving an image.</li>
+    <li>To prevent abuse of this service, we do basic security monitoring. For
+      example, we collect and retain IP addresses to detect and block individuals
+      who are scanning the service to find private pages.</li>
+    <li>For all visits to the Page Shot website, the data we collect is described
+      in our <a href="https://www.mozilla.org/privacy/websites/"
+      target="_blank">Websites, Communications & Cookies Privacy Notice</a>.</li>
   </ul>
 xpi_url: 'https://testpilot.firefox.com/files/pageshot/pageshot-0.1.201609272025.xpi'
 addon_id: jid1-NeEaf3sAHdKHPA@jetpack
@@ -37,12 +55,14 @@ details:
     headline: ' '
     image: /static/images/experiments/page-shot/experiments_experimentdetail/detail1.jpg
     copy: >
-      Select the image area and save if you like what you see, cancel without saving if you don’t.
+      Select the image area and save if you like what you see, cancel without
+      saving if you don’t.
   -
     headline: ' '
     image: /static/images/experiments/page-shot/experiments_experimentdetail/detail2.jpg
     copy: >
-      Share links to images via social or email, without having to download and attach a file.
+      Share links to images via social or email, without having to download and
+      attach a file.
   -
     headline: ' '
     image: /static/images/experiments/page-shot/experiments_experimentdetail/detail3.jpg

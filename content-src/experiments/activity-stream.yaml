@@ -4,9 +4,12 @@ short_title: ''
 slug: activity-stream
 thumbnail: /static/images/experiments/activity-stream/experiments_experiment/e/1/e19739ea25188c866b654d3aa2616b27_thumbnail_1461817294_0590.png
 description: >
-  A rich visual history feed and a reimagined home page make it easier than ever to find exactly what you're looking for in Firefox.
+  A rich visual history feed and a reimagined home page make it easier than ever
+  to find exactly what you're looking for in Firefox.
 introduction: >
-  <p>Get back to browsing without losing your stream of thought. Activity Stream keeps your top sites, bookmarks and recent history close at hand in each new tab. And the new timeline view gives you a birds-eye view of your browsing.</p>
+  <p>Get back to browsing without losing your stream of thought. Activity Stream
+    keeps your top sites, bookmarks and recent history close at hand in each new
+    tab. And the new timeline view gives you a birds-eye view of your browsing.</p>
 image_twitter: /static/images/experiments/activity-stream/experiments_experiment/e/1/e19739ea25188c866b654d3aa2616b27_image_1473186642_0579.png
 image_facebook: /static/images/experiments/activity-stream/experiments_experiment/e/1/e19739ea25188c866b654d3aa2616b27_image_1473186642_0826.png
 version: 1.1.3
@@ -16,11 +19,20 @@ bug_report_url: 'https://github.com/mozilla/activity-stream/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/activity-stream'
 privacy_notice_url: 'https://github.com/mozilla/activity-stream/blob/master/data_dictionary.md'
 measurements: >
-  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use Activity Stream:</p>
+  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot
+    experiments, here are the key things you should know about what is happening
+    when you use Activity Stream:</p>
   <ul>
-    <li>We collect basic usage data regarding how you interact with experimental new tab and timeline pages, such as the types of elements that you click and their position on the page.</li>
-    <li>We also collect basic information about your browser profile that affect Activity Stream, such as the number of bookmarks and history items.</li>
-    <li>To provide Activity Stream, we fetch metadata about websites you have visited, such as images and icons, using a service called <a href="http://embed.ly/">Embedly</a>. We send these requests to Embedly through Mozilla’s servers, so they will not be associated with you.</li>
+    <li>We collect basic usage data regarding how you interact with experimental
+      new tab and timeline pages, such as the types of elements that you click
+      and their position on the page.</li>
+    <li>We also collect basic information about your browser profile that affect
+      Activity Stream, such as the number of bookmarks and history items.</li>
+    <li>To provide Activity Stream, we fetch metadata about websites you have
+      visited, such as images and icons, using a service called <a
+      href="http://embed.ly/" target="_blank">Embedly</a>. We send these requests
+      to Embedly through Mozilla's servers, so they will not be associated with
+      you.</li>
   </ul>
 xpi_url: 'https://moz-activity-streams.s3.amazonaws.com/dist/activity-streams-latest.xpi'
 addon_id: '@activity-streams'

@@ -4,13 +4,19 @@ short_title: ''
 slug: min-vid
 thumbnail: /static/images/experiments/min-vid/experiments_experiment/thumbnail.png
 description: >
-  Keep videos front and center. Min Vid lets you display YouTube and Vimeo videos in a small frame that stays in the foreground as you browse the web.
+  Keep videos front and center. Min Vid lets you display YouTube and Vimeo
+  videos in a small frame that stays in the foreground as you browse the web.
 introduction: >
-  <p>Love watching video? Love getting things done while you watch video? Try Min Vid. It’s like picture-in-picture where one picture is a video and the other is the entire Web.</p>
+  <p>Love watching video? Love getting things done while you watch video? Try
+    Min Vid. It’s like picture-in-picture where one picture is a video and the
+    other is the entire Web.</p>
   <ul>
-    <li><strong>Click and go:</strong> Pop up the Min Vid frame to keep videos playing in the foreground while you browse.</li>
-    <li><strong>Put it where you want it:</strong> Min Vid lets you drag the video frame anywhere in the browser window.</li>
-    <li><strong>Controls where you need them:</strong> Min Vid includes controls to let you pause/play, scrub, and adjust volume right in the frame.</li>
+    <li><strong>Click and go:</strong> Pop up the Min Vid frame to keep videos
+      playing in the foreground while you browse.</li>
+    <li><strong>Put it where you want it:</strong> Min Vid lets you drag the
+      video frame anywhere in the browser window.</li>
+    <li><strong>Controls where you need them:</strong> Min Vid includes controls
+      to let you pause/play, scrub, and adjust volume right in the frame.</li>
   </ul>
 image_twitter: /static/images/experiments/min-vid/social/mv-twitter.jpg
 image_facebook: /static/images/experiments/min-vid/social/mv-facebook.jpg
@@ -21,10 +27,16 @@ bug_report_url: 'https://github.com/meandavejustice/min-vid/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/min-vid'
 privacy_notice_url: 'https://github.com/meandavejustice/min-vid/blob/master/docs/metrics.md'
 measurements: >
-  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use Min Vid:</p>
+  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot
+    experiments, here are the key things you should know about what is happening
+    when you use Min Vid:</p>
   <ul>
-    <li>We collect usage data when you engage with the context menu, experiment icon and player controls.</li>
-    <li>We also collect data on the number of times you encounter a playable video, the number of times you played the video and the video service that provided the video. This helps us understand how useful our users are finding the experiment.</li>
+    <li>We collect usage data when you engage with the context menu, experiment
+      icon and player controls.</li>
+    <li>We also collect data on the number of times you encounter a playable
+      video, the number of times you played the video and the video service that
+      provided the video. This helps us understand how useful our users are
+      finding the experiment.</li>
     <li>We do not collect information about the specific videos you encounter.</li>
   </ul>
 xpi_url: 'https://testpilot.firefox.com/files/min-vid/min-vid-0.3.0-fx.xpi'
