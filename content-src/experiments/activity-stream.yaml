@@ -45,47 +45,55 @@ contributors:
   -
     display_name: 'Kate Hudson'
     title: 'Software Engineer'
-    avatar: /static/images/experiments/activity-stream/avatar/30c0f54f30fc6a201e3f5ddaa5bc5974.jpg
+    avatar: /static/images/experiments/activity-stream/avatars/kate-hudson.jpg
   -
     display_name: 'Ricky Rosario'
     title: 'Web Engineer'
-    avatar: /static/images/experiments/activity-stream/avatar/00e30f0c3219349c80f3ff7aacc9d34a.jpg
+    avatar: /static/images/experiments/activity-stream/avatars/ricky-rosario.jpg
   -
     display_name: 'Nan Jiang'
     title: 'Software Developer'
-    avatar: /static/images/experiments/activity-stream/users_userprofile/c/e/ce9c9213860579b1dbcf04bf257ebaa9_avatar_1462469423_0340.jpg
+    avatar: /static/images/experiments/activity-stream/avatars/nan-jiang.jpg
   -
     display_name: 'Ursula Sarracini'
     title: 'Desktop Firefox Engineer'
-    avatar: /static/images/experiments/activity-stream/users_userprofile/5/6/56b1ee60e94e3442cf46f203a0085a7d_avatar_1462906182_0496.jpg
+    avatar: /static/images/experiments/activity-stream/avatars/ursula-sarracini.jpg
   -
     display_name: 'Marina Samuel'
     title: 'Software Engineer'
-    avatar: /static/images/experiments/activity-stream/users_userprofile/9/f/9f2e4e613ab07edbb5bd056e8e74b8c7_avatar_1462906230_0044.jpg
+    avatar: /static/images/experiments/activity-stream/avatars/marina-samuel.jpg
   -
     display_name: 'Edwin Wong'
     title: 'Technical Program Manager'
-    avatar: /static/images/experiments/activity-stream/avatar/0a68a9039e9ddfcc53515773bf307c79.jpg
+    avatar: /static/images/experiments/activity-stream/avatars/edwin-wong.jpg
   -
     display_name: 'Jared Kerim'
     title: 'Cloud Services Engineer'
-    avatar: /static/images/experiments/activity-stream/avatar/e391802eca863fd5e39e5f6b1cd58782.jpg
+    avatar: /static/images/experiments/activity-stream/avatars/jared-kerim.jpg
+  -
+    display_name: 'Andrei Oprea'
+    title: 'Engineering Intern'
+    avatar: /static/images/experiments/activity-stream/avatars/andrei-oprea.jpg
+  -
+    display_name: 'Bernardo Rittmeyer'
+    title: 'Engineering Intern'
+    avatar: /static/images/experiments/activity-stream/avatars/bernardo-rittmeyer.jpg
   -
     display_name: 'Nick Chapman'
     title: 'Product Manager'
-    avatar: /static/images/experiments/activity-stream/avatar/ac5c05c838da3586f9eda1c7712dde9a.jpg
+    avatar: /static/images/experiments/activity-stream/avatars/nick-chapman.jpg
   -
     display_name: 'Tim Spurway'
     title: 'Engineering Manager'
-    avatar: /static/images/experiments/activity-stream/users_userprofile/e/d/ed09636a6ea24a292460866afdd7a89a_avatar_1462468431_0037.jpg
+    avatar: /static/images/experiments/activity-stream/avatars/tim-spurway.jpg
   -
     display_name: 'Olivier Yiptong'
     title: 'Software Engineer'
-    avatar: /static/images/experiments/activity-stream/users_userprofile/2/8/28ffb6f4b3eb69a177f36fc765f29fc1_avatar_1462469208_0403.jpeg
+    avatar: /static/images/experiments/activity-stream/avatars/olivier-yiptong.jpg
   -
     display_name: 'Bryan Bell'
     title: 'Senior UX Designer'
-    avatar: /static/images/experiments/activity-stream/avatar/4aed85ee04a60538bbbfba66a5b59396.jpg
+    avatar: /static/images/experiments/activity-stream/avatars/bryan-bell.jpg
 installation_count: 46732
 created: '2016-03-11T21:05:59.363520Z'
 modified: '2016-09-06T18:30:42.286466Z'

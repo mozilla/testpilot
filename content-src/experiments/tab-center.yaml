@@ -52,19 +52,19 @@ contributors:
   -
     display_name: 'Blake W'
     title: 'Firefox UX'
-    avatar: /static/images/experiments/tab-center/avatar/0c08be956c1a81bb352392601f775c04.jpg
+    avatar: /static/images/experiments/tab-center/avatars/blake-w.jpg
   -
     display_name: 'John G'
     title: 'Firefox UX'
-    avatar: /static/images/experiments/tab-center/avatar/d2079ea737dae225f261224882b65e0a.jpg
+    avatar: /static/images/experiments/tab-center/avatars/john-g.jpg
   -
     display_name: 'Erica Wright'
     title: 'Firefox UX'
-    avatar: /static/images/experiments/tab-center/users_userprofile/b/8/b811cf74196f63fa41dc1692b58d2918_avatar_1468532410_0022.png
+    avatar: /static/images/experiments/tab-center/avatars/erica-wright.png
   -
     display_name: 'Philipp S'
     title: 'Firefox UX'
-    avatar: /static/images/experiments/tab-center/avatar/9dbb3500db7ab04e6861fad17b9369b1.jpg
+    avatar: /static/images/experiments/tab-center/avatars/philipp-s.jpg
 installation_count: 29870
 created: '2016-04-28T00:07:28.847430Z'
 modified: '2016-08-19T16:51:12.188781Z'
