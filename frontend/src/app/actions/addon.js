@@ -7,7 +7,7 @@ export default createActions(
       installedLoaded: !!installed
     })
   },
-  'setHasAddon', 'setClientUuid',
+  'setHasAddon', 'setClientUuid', 'setInstalledAddons',
   'enableExperiment', 'disableExperiment',
   'requireRestart'
 );

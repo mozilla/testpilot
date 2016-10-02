@@ -111,6 +111,7 @@ function changeApp(env) {
           installed: store.installedAddons
         }
       );
+      syncInstalled();
     });
 }
 
@@ -228,8 +229,20 @@ function isTestpilotAddonID(id) {
   return app.hasAddonID(id);
 }
 
+function syncInstalled() {
+  AddonManager.getAllAddons(addons => {
+    const activeAddons = addons.filter(addon => (
+      addon.isActive && !addon.appDisabled && !addon.userDisabled
+    ));
+    app.send('sync-installed-addons', {
+      installedAddons: activeAddons.map(addon => addon.id)
+    });
+  });
+}
+
 const addonListener = {
   onEnabled: function(addon) {
+    syncInstalled();
     if (isTestpilotAddonID(addon.id)) {
       setAddonActiveState(addon);
       app.send('addon-manage:enabled', {
@@ -242,6 +255,7 @@ const addonListener = {
     }
   },
   onDisabled: function(addon) {
+    syncInstalled();
     if (isTestpilotAddonID(addon.id)) {
       setAddonActiveState(addon);
       app.send('addon-manage:disabled', {
@@ -254,6 +268,7 @@ const addonListener = {
     }
   },
   onUninstalling: function(addon) {
+    syncInstalled();
     if (isTestpilotAddonID(addon.id)) {
       app.send('addon-uninstall:uninstall-started', {
         id: addon.id,
@@ -277,7 +292,9 @@ const addonListener = {
       Metrics.experimentDisabled(addon.id);
       WebExtensionChannels.updateExperimentChannels();
     }
-  }
+  },
+  onInstalled: syncInstalled,
+  onOperationCancelled: syncInstalled
 };
 AddonManager.addAddonListener(addonListener);
 
