@@ -7,7 +7,7 @@ description: 'What would it be like to move tabs from the top of the browser to 
 introduction: '<p>Take your tabs from in the way to tucked away. Tab Center moves your tabs to the side of your browser window so they''re out of sight when you don''t need them, and easy to expand and grab when you do.</p>'
 image_twitter: null
 image_facebook: null
-version: '1.24'
+version: '1.25'
 changelog_url: 'https://github.com/bwinton/TabCenter/releases/latest'
 contribute_url: 'https://github.com/bwinton/TabCenter#readme'
 bug_report_url: 'https://github.com/bwinton/TabCenter/issues'
