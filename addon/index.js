@@ -17,7 +17,6 @@ const URL = require('sdk/url').URL;
 const { App } = require('./lib/app');
 const ExperimentHacks = require('./lib/experiment-hacks');
 const ExperimentNotifications = require('./lib/experiment-notifications');
-const FirstRun = require('./lib/first-run');
 const Metrics = require('./lib/metrics');
 const SharePrompt = require('./lib/share-prompt');
 const survey = require('./lib/survey');
@@ -358,10 +357,9 @@ exports.main = function(options) {
   ExperimentNotifications.init();
   SharePrompt.init(settings);
 
-  if (reason === 'install' || (reason === 'startup' && FirstRun.isFirstRun())) {
+  if (reason === 'install') {
     openOnboardingTab();
   }
-  FirstRun.setup(options.reason, settings);
 
   const installedCount = (store.installedAddons) ? Object.keys(store.installedAddons).length : 0;
   Metrics.sendGAEvent({
@@ -381,7 +379,6 @@ exports.onUnload = function(reason) {
   ToolbarButton.destroy();
   ExperimentNotifications.destroy();
   SharePrompt.destroy(reason);
-  FirstRun.teardown(reason, settings);
 
   if (reason === 'uninstall' || reason === 'disable') {
     Metrics.onDisable();
