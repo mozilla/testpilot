@@ -18,7 +18,7 @@ introduction: >
 image_twitter: /static/images/experiments/tracking-protection/social/tp-twitter.jpg
 image_facebook: /static/images/experiments/tracking-protection/social/tp-facebook.jpg
 version: '1.0.1'
-changelog_url: ' https://github.com/mozilla/blok/'
+changelog_url: 'https://github.com/mozilla/blok/'
 contribute_url: 'https://github.com/mozilla/blok/'
 bug_report_url: 'https://github.com/mozilla/blok/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/tracking-protection'
