@@ -49,15 +49,15 @@ contributors:
   -
     display_name: 'Dave Justice'
     title: 'Engineer'
-    avatar: /static/images/experiments/avatars/dave-justice.jpg
+    avatar: /static/images/experiments/min-vid/avatars/dave-justice.jpg
   -
     display_name: 'Jared Hirsch'
     title: 'Staff Engineer'
-    avatar: /static/images/experiments/avatars/jared-hirsch.jpg
+    avatar: /static/images/experiments/min-vid/avatars/jared-hirsch.jpg
   -
     display_name: 'Jen Kagan'
     title: 'Engineering Intern'
-    avatar: /static/images/experiments/avatars/jen-kagan.jpg
+    avatar: /static/images/experiments/min-vid/avatars/jen-kagan.jpg
 installation_count: 1
 created: '2016-09-22T00:07:28.847430Z'
 modified: '2016-09-22T16:51:12.188781Z'

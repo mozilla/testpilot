@@ -45,19 +45,19 @@ contributors:
   -
     display_name: 'Nick Chapman'
     title: 'Product Manager'
-    avatar: /static/images/experiments/universal-search/avatar/ac5c05c838da3586f9eda1c7712dde9a.jpg
+    avatar: /static/images/experiments/universal-search/avatars/nick-chapman.jpg
   -
     display_name: 'Bryan Bell'
     title: 'Senior UX Designer'
-    avatar: /static/images/experiments/universal-search/avatar/4aed85ee04a60538bbbfba66a5b59396.jpg
+    avatar: /static/images/experiments/universal-search/avatars/bryan-bell.jpg
   -
     display_name: 'Jared Hirsch'
     title: 'Senior Engineer'
-    avatar: /static/images/experiments/universal-search/avatar/f84ab731f790f2272cc19d9f187fd3f5.jpg
+    avatar: /static/images/experiments/universal-search/avatars/jared-hirsch.jpg
   -
     display_name: 'Chuck Harmston'
     title: 'Senior Engineer'
-    avatar: /static/images/experiments/universal-search/avatar/9990aabee70a9af19c16da86bb6eab55.jpg
+    avatar: /static/images/experiments/universal-search/avatars/chuck-harmston.jpg
 installation_count: 39943
 created: '2016-04-28T03:57:32.270681Z'
 modified: '2016-07-20T15:42:28.873321Z'
