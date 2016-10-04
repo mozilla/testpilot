@@ -17,7 +17,7 @@ module.exports = {
   QS: 'utm_source=testpilot-addon&utm_medium=firefox-browser&utm_campaign=share-page',
 
   makeUrl: function() {
-    return `${SETTINGS.BASE_URL}/${this.path}?${this.qs}`;
+    return `${SETTINGS.BASE_URL}/${this.PATH}?${this.QS}`;
   },
 
   hasExperimentInstalled: function() {

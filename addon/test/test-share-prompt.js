@@ -26,6 +26,12 @@ const mockSettings = {
 };
 
 
+exports['test makeUrl'] = assert => {
+  assert.ok(SharePrompt.makeUrl().indexOf('undefined') === -1,
+    'All variables used to construct the URL of the prompt are defined.');
+};
+
+
 exports['test hasExperimentInstalled'] = assert => {
   // If store.installedAddons is not defined.
   assert.equal(SharePrompt.hasExperimentInstalled(), false,
