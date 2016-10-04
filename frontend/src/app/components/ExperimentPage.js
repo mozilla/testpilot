@@ -3,7 +3,7 @@ import moment from 'moment';
 
 import classnames from 'classnames';
 
-import { sendToGA, buildSurveyURL, formatDate, createMarkup } from '../lib/utils';
+import { buildSurveyURL, formatDate, createMarkup } from '../lib/utils';
 
 import LoadingPage from './LoadingPage';
 import NotFoundPage from './NotFoundPage';
@@ -124,8 +124,7 @@ export default class ExperimentPage extends React.Component {
   }
 
   render() {
-    const { navigateTo, isExperimentEnabled, experiments, installed, isDev, hasAddon,
-            isFirefox, isMinFirefox } = this.props;
+    const { navigateTo, experiments, installed, isDev, hasAddon } = this.props;
 
     // Show the loading animation if experiments haven't been loaded yet.
     if (experiments.length === 0) { return <LoadingPage />; }
@@ -181,7 +180,7 @@ export default class ExperimentPage extends React.Component {
           <ExperimentPreFeedbackDialog experiment={experiment} surveyURL={surveyURL}
             onCancel={() => this.setState({ showPreFeedbackDialog: false })} />}
 
-        <Header hasAddon={hasAddon}/>
+        <Header {...this.props} />
 
         {!hasAddon && <section data-hook="testpilot-promo">
           <div className="experiment-promo">
@@ -194,7 +193,7 @@ export default class ExperimentPage extends React.Component {
                   <span data-l10n-id="experimentPromoHeader" className="block">Ready for Takeoff?</span>
                 </h2>
                 <p data-l10n-id="experimentPromoSubheader">We're building next-generation features for Firefox. Install Test Pilot to try them!</p>
-                <MainInstallButton hasAddon={hasAddon} isFirefox={isFirefox} isMinFirefox={isMinFirefox}
+                <MainInstallButton {...this.props}
                                    eventCategory="HomePage Interactions"
                                    experimentTitle={title} />
               </div>
@@ -339,15 +338,13 @@ export default class ExperimentPage extends React.Component {
           {!hasAddon && <div data-hook="inactive-user">
             <h2 className="card-list-header" data-l10n-id="otherExperiments">Try out these experiments as well</h2>
             <div className="responsive-content-wrapper delayed-fade-in" data-hook="experiment-list">
-              <ExperimentCardList navigateTo={navigateTo} hasAddon={hasAddon}
-                                  experiments={experiments}
+              <ExperimentCardList {...this.props}
                                   except={experiment.slug}
-                                  isExperimentEnabled={isExperimentEnabled}
                                   eventCategory="ExperimentsDetailPage Interactions" />
             </div>
           </div>}
           <footer id="main-footer" className="responsive-content-wrapper">
-            <Footer />
+            <Footer {...this.props} />
           </footer>
       </section>
     );
@@ -417,7 +414,7 @@ export default class ExperimentPage extends React.Component {
 
   clickUpgradeNotice() {
     // If a user goes to the upgrade SUMO
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
       eventLabel: 'Upgrade Notice'
@@ -425,7 +422,7 @@ export default class ExperimentPage extends React.Component {
   }
 
   feedback(evt) {
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
       eventLabel: 'Give Feedback',
@@ -450,7 +447,7 @@ export default class ExperimentPage extends React.Component {
   }
 
   installExperiment(evt) {
-    const { enableExperiment } = this.props;
+    const { enableExperiment, sendToGA } = this.props;
     const { experiment, isEnabling } = this.state;
 
     evt.preventDefault();
@@ -495,7 +492,7 @@ export default class ExperimentPage extends React.Component {
   renderUninstallSurvey(evt) {
     evt.preventDefault();
 
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
       eventLabel: 'Disable Experiment'

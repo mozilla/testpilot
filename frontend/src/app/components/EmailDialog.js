@@ -1,6 +1,5 @@
 import React from 'react';
 import emailValidator from 'micro-email-validator';
-import { sendToGA, subscribeToBasket } from '../lib/utils';
 
 export default class EmailDialog extends React.Component {
 
@@ -55,6 +54,7 @@ export default class EmailDialog extends React.Component {
   }
 
   submit(e) {
+    const { sendToGA, subscribeToBasket } = this.props;
     e.preventDefault();
 
     // TODO: should we log the number of email validity failures? worth tracking?
@@ -88,6 +88,8 @@ export default class EmailDialog extends React.Component {
   }
 
   skip(e) {
+    const { sendToGA } = this.props;
+
     e.preventDefault();
     e.stopPropagation();
 
@@ -103,6 +105,8 @@ export default class EmailDialog extends React.Component {
   }
 
   continue(e) {
+    const { sendToGA } = this.props;
+
     e.preventDefault();
 
     sendToGA('event', {
