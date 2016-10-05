@@ -3,10 +3,7 @@ import { Link } from 'react-router';
 
 import classnames from 'classnames';
 
-// import { sendMessage } from '../lib/addon';
-import { sendToGA } from '../lib/utils';
-
-import RetireConfirmationDialog from '../containers/RetireConfirmationDialog';
+import RetireConfirmationDialog from './RetireConfirmationDialog';
 import DiscussDialog from './DiscussDialog';
 
 export default class Header extends React.Component {
@@ -31,43 +28,47 @@ export default class Header extends React.Component {
 
   render() {
     const { showRetireDialog, showDiscussDialog } = this.state;
-    const { hasAddon } = this.props;
+    const { openWindow, hasAddon } = this.props;
 
     return (
-      <header id="main-header" className="responsive-content-wrapper">
-
+      <div>
         {showRetireDialog &&
-          <RetireConfirmationDialog onDismiss={() => this.setState({ showRetireDialog: false })} />}
+          <RetireConfirmationDialog {...this.props}
+            onDismiss={() => this.setState({ showRetireDialog: false })} />}
 
         {showDiscussDialog &&
-          <DiscussDialog
+          <DiscussDialog {...this.props}
             href="https://discourse.mozilla-community.org/c/test-pilot"
+            openWindow={openWindow}
             onDismiss={() => this.setState({ showDiscussDialog: false })} />}
 
-        <h1>
-          <Link to="/" className="wordmark" data-l10n-id="siteName">Firefox Test Pilot</Link>
-        </h1>
-        {hasAddon &&
-        <div data-hook="settings">
-          <div className="settings-contain" data-hook="active-user">
-             <div className={classnames(['button', 'outline', 'settings-button'], { active: this.showSettings() })}
-                  onClick={e => this.toggleSettings(e)}
-                  data-hook="settings-button" data-l10n-id="menuTitle">Settings</div>
-               {this.showSettings() && <div className="settings-menu" onClick={e => this.settingsClick(e)}>
-               <ul>
-                 <li><a onClickCapture={e => this.wiki(e)} data-l10n-id="menuWiki" data-hook="wiki"
-                    href="https://wiki.mozilla.org/Test_Pilot" target="_blank">Test Pilot Wiki</a></li>
-                 <li><a onClickCapture={e => this.discuss(e)} data-l10n-id="menuDiscuss" data-hook="discuss"
-                    href="https://discourse.mozilla-community.org/c/test-pilot" target="_blank">Discuss Test Pilot</a></li>
-                 <li><a onClickCapture={e => this.fileIssue(e)} data-l10n-id="menuFileIssue" data-hook="issue"
-                    href="https://github.com/mozilla/testpilot/issues/new" target="_blank">File an Issue</a></li>
-                 <li><hr /></li>
-                 <li><a onClickCapture={e => this.retire(e)} data-l10n-id="menuRetire" data-hook="retire">Uninstall Test Pilot</a></li>
-               </ul>
-             </div>}
-          </div>
-        </div>}
-      </header>
+        <header id="main-header" className="responsive-content-wrapper">
+
+          <h1>
+            <Link to="/" className="wordmark" data-l10n-id="siteName">Firefox Test Pilot</Link>
+          </h1>
+          {hasAddon &&
+          <div data-hook="settings">
+            <div className="settings-contain" data-hook="active-user">
+               <div className={classnames(['button', 'outline', 'settings-button'], { active: this.showSettings() })}
+                    onClick={e => this.toggleSettings(e)}
+                    data-hook="settings-button" data-l10n-id="menuTitle">Settings</div>
+                 {this.showSettings() && <div className="settings-menu" onClick={e => this.settingsClick(e)}>
+                 <ul>
+                   <li><a onClick={e => this.wiki(e)} data-l10n-id="menuWiki" data-hook="wiki"
+                      href="https://wiki.mozilla.org/Test_Pilot" target="_blank">Test Pilot Wiki</a></li>
+                   <li><a onClick={e => this.discuss(e)} data-l10n-id="menuDiscuss" data-hook="discuss"
+                      href="https://discourse.mozilla-community.org/c/test-pilot" target="_blank">Discuss Test Pilot</a></li>
+                   <li><a onClick={e => this.fileIssue(e)} data-l10n-id="menuFileIssue" data-hook="issue"
+                      href="https://github.com/mozilla/testpilot/issues/new" target="_blank">File an Issue</a></li>
+                   <li><hr /></li>
+                   <li><a onClick={e => this.retire(e)} data-l10n-id="menuRetire" data-hook="retire">Uninstall Test Pilot</a></li>
+                 </ul>
+               </div>}
+            </div>
+          </div>}
+        </header>
+      </div>
     );
   }
 
@@ -98,7 +99,7 @@ export default class Header extends React.Component {
 
   toggleSettings(ev) {
     ev.stopPropagation();
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'Menu Interactions',
       eventAction: 'drop-down menu',
       eventLabel: 'Toggle Menu'
@@ -112,7 +113,7 @@ export default class Header extends React.Component {
 
   retire(evt) {
     evt.preventDefault();
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'Menu Interactions',
       eventAction: 'drop-down menu',
       eventLabel: 'Retire'
@@ -123,7 +124,7 @@ export default class Header extends React.Component {
 
   discuss(evt) {
     evt.preventDefault();
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'Menu Interactions',
       eventAction: 'drop-down menu',
       eventLabel: 'Discuss'
@@ -133,7 +134,7 @@ export default class Header extends React.Component {
   }
 
   wiki() {
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'Menu Interactions',
       eventAction: 'drop-down menu',
       eventLabel: 'wiki'
@@ -142,7 +143,7 @@ export default class Header extends React.Component {
   }
 
   fileIssue() {
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'Menu Interactions',
       eventAction: 'drop-down menu',
       eventLabel: 'file issue'
@@ -152,6 +153,8 @@ export default class Header extends React.Component {
 }
 
 Header.propTypes = {
+  sendToGA: React.PropTypes.func.isRequired,
+  openWindow: React.PropTypes.func.isRequired,
   hasAddon: React.PropTypes.bool,
   forceHideSettings: React.PropTypes.bool
 };

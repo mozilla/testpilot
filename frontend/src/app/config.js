@@ -5,7 +5,7 @@ const defaultConfig = {
   usageCountsURL: 'https://analysis-output.telemetry.mozilla.org/testpilot/data/installation-counts/latest.json'
 };
 
-const hostname = (typeof window === 'undefined') ?  '' : window.location.hostname;
+const hostname = (typeof window === 'undefined') ? '' : window.location.hostname;
 
 const hostConfig = {
   'testpilot.firefox.com': { isDev: false },

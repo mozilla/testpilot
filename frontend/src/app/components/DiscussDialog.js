@@ -31,10 +31,10 @@ export default class DiscussDialog extends React.Component {
   }
 
   submit(e) {
+    const { onDismiss, openWindow, href } = this.props;
     e.preventDefault();
-    // HACK: this should really open a new tab!
-    window.location = this.props.href;
-    this.props.onDismiss();
+    openWindow(href, 'testpilotdiscuss');
+    onDismiss();
   }
 
   cancel(e) {
@@ -43,3 +43,9 @@ export default class DiscussDialog extends React.Component {
   }
 
 }
+
+DiscussDialog.propTypes = {
+  onDismiss: React.PropTypes.func.isRequired,
+  openWindow: React.PropTypes.func.isRequired,
+  href: React.PropTypes.string.isRequired
+};

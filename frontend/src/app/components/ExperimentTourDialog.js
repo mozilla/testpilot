@@ -1,8 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import { sendToGA } from '../lib/utils';
-
 export default class ExperimentTourDialog extends React.Component {
   constructor(props) {
     super(props);
@@ -62,8 +60,8 @@ export default class ExperimentTourDialog extends React.Component {
 
   renderDots(tourSteps, currentStep) {
     const dots = tourSteps.map((el, index) => {
-      if (currentStep === index) return (<div className="current dot"></div>);
-      return (<div className="dot" onClick={e => this.tourToDot(e, index)} ></div>);
+      if (currentStep === index) return (<div key={index} className="current dot"></div>);
+      return (<div key={index} className="dot" onClick={e => this.tourToDot(e, index)} ></div>);
     });
 
     return dots;
@@ -71,7 +69,7 @@ export default class ExperimentTourDialog extends React.Component {
 
   cancel(e) {
     e.preventDefault();
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
       eventLabel: 'cancel tour'
@@ -81,7 +79,7 @@ export default class ExperimentTourDialog extends React.Component {
 
   complete(e) {
     e.preventDefault();
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
       eventLabel: 'complete tour'
@@ -93,7 +91,7 @@ export default class ExperimentTourDialog extends React.Component {
     e.preventDefault();
     this.setState({ currentStep: index });
 
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
       eventLabel: `dot to step ${this.currentStep}`
@@ -106,7 +104,7 @@ export default class ExperimentTourDialog extends React.Component {
     const newStep = Math.max(currentStep - 1, 0);
     this.setState({ currentStep: newStep });
 
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
       eventLabel: `back to step ${this.currentStep}`
@@ -114,7 +112,7 @@ export default class ExperimentTourDialog extends React.Component {
   }
 
   tourNext() {
-    const { experiment } = this.props;
+    const { experiment, sendToGA } = this.props;
     const { currentStep } = this.state;
 
     const newStep = Math.min(currentStep + 1,

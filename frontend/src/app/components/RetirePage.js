@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 import classnames from 'classnames';
 
-import { sendToGA } from '../lib/utils';
-
 // HACK: Older add-on versions give no reliable signal of having been
 // uninstalled, so let's fake it.
 const FAKE_UNINSTALL_DELAY = 5000;
@@ -65,7 +63,7 @@ export default class RetirePage extends React.Component {
   }
 
   takeSurvey() {
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'RetirePage Interactions',
       eventAction: 'button click',
       eventLabel: 'take survey'

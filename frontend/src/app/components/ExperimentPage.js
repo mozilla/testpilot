@@ -3,7 +3,7 @@ import moment from 'moment';
 
 import classnames from 'classnames';
 
-import { sendToGA, buildSurveyURL, formatDate, createMarkup } from '../lib/utils';
+import { buildSurveyURL, formatDate, createMarkup } from '../lib/utils';
 
 import LoadingPage from './LoadingPage';
 import NotFoundPage from './NotFoundPage';
@@ -48,14 +48,15 @@ export default class ExperimentPage extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const { shouldShowTourDialog, enabled: prevEnabled } = this.state;
-    const { isExperimentEnabled, getExperimentBySlug } = nextProps;
 
-    const prevExperiment = getExperimentBySlug(this.props.params.slug);
+    const prevExperiment = this.props.getExperimentBySlug(this.props.params.slug);
     const prevInProgress = prevExperiment && prevExperiment.inProgress;
 
-    const nextExperiment = getExperimentBySlug(nextProps.params.slug);
+    const { isExperimentEnabled: nextIsExperimentEnabled,
+            getExperimentBySlug: nextGetExperimentBySlug } = nextProps;
+    const nextExperiment = nextGetExperimentBySlug(nextProps.params.slug);
     const nextInProgress = nextExperiment && nextExperiment.inProgress;
-    const nextEnabled = nextExperiment && isExperimentEnabled(nextExperiment);
+    const nextEnabled = nextExperiment && nextIsExperimentEnabled(nextExperiment);
 
     if (!nextInProgress && prevInProgress !== nextInProgress) {
       this.setState({
@@ -83,7 +84,7 @@ export default class ExperimentPage extends React.Component {
   }
 
   isValidVersion(min) {
-    const version = parseInt(navigator.userAgent.split('/').pop(), 10);
+    const version = parseInt(this.props.userAgent.split('/').pop(), 10);
     return typeof min === 'undefined' || version >= min;
   }
 
@@ -124,14 +125,21 @@ export default class ExperimentPage extends React.Component {
   }
 
   render() {
-    const { navigateTo, isExperimentEnabled, experiments, installed, isDev, hasAddon,
-            isFirefox, isMinFirefox } = this.props;
+    const { experiments, installed, isDev, hasAddon } = this.props;
 
     // Show the loading animation if experiments haven't been loaded yet.
     if (experiments.length === 0) { return <LoadingPage />; }
 
     // Show a 404 page if an experiment for this slug wasn't found.
     if (!this.state.experiment) { return <NotFoundPage />; }
+
+    // Show a 404 page if an experiment is not ready for launch yet
+    const utcNow = moment.utc();
+    if (moment(utcNow).isBefore(this.state.experiment.launch_date)
+        && typeof this.state.experiment.launch_date !== 'undefined'
+        && !isDev) {
+      return <NotFoundPage />;
+    }
 
     const { experiment, enabled, useStickyHeader, highlightMeasurementPanel,
             showDisableDialog, showTourDialog, isEnabling, isDisabling,
@@ -141,13 +149,13 @@ export default class ExperimentPage extends React.Component {
             introduction, measurements, privacy_notice_url, changelog_url,
             thumbnail, survey_url, contributors, details, min_release } = experiment;
 
+    // TODO: #1138 - add optional subtitles the right way
     const subtitle = (title === 'No More 404s') ? 'Powered by the Wayback Machine' : '';
     const installation_count = (experiment.installation_count) ? experiment.installation_count.toLocaleString() : '0';
     const surveyURL = buildSurveyURL('givefeedback', title, installed, survey_url);
     const modified = formatDate(experiment.modified);
     const completedDate = experiment.completed ? formatDate(experiment.completed) : null;
     const validVersion = this.isValidVersion(min_release);
-    const utcNow = moment.utc();
 
     let statusType = null;
     if (experiment.error) {
@@ -156,32 +164,26 @@ export default class ExperimentPage extends React.Component {
       statusType = 'enabled';
     }
 
-    if (moment(utcNow).isBefore(experiment.launch_date)
-        && typeof experiment.launch_date !== 'undefined'
-        && !isDev) {
-      navigateTo('/not-found');
-      return '';
-    }
-
     return (
       <section id="details" data-hook="experiment-page">
 
         {showDisableDialog &&
-          <ExperimentDisableDialog experiment={experiment}
-            installed={installed}
+          <ExperimentDisableDialog {...this.props}
+            experiment={experiment} installed={installed}
             onCancel={() => this.setState({ showDisableDialog: false })}
             onSubmit={() => this.setState({ showDisableDialog: false })} />}
 
         {showTourDialog &&
-          <ExperimentTourDialog experiment={experiment}
+          <ExperimentTourDialog {...this.props} experiment={experiment}
             onCancel={() => this.setState({ showTourDialog: false })}
             onComplete={() => this.setState({ showTourDialog: false })} />}
 
         {showPreFeedbackDialog &&
-          <ExperimentPreFeedbackDialog experiment={experiment} surveyURL={surveyURL}
+          <ExperimentPreFeedbackDialog {...this.props}
+            experiment={experiment} surveyURL={surveyURL}
             onCancel={() => this.setState({ showPreFeedbackDialog: false })} />}
 
-        <Header hasAddon={hasAddon}/>
+        <Header {...this.props} />
 
         {!hasAddon && <section data-hook="testpilot-promo">
           <div className="experiment-promo">
@@ -194,7 +196,7 @@ export default class ExperimentPage extends React.Component {
                   <span data-l10n-id="experimentPromoHeader" className="block">Ready for Takeoff?</span>
                 </h2>
                 <p data-l10n-id="experimentPromoSubheader">We're building next-generation features for Firefox. Install Test Pilot to try them!</p>
-                <MainInstallButton hasAddon={hasAddon} isFirefox={isFirefox} isMinFirefox={isMinFirefox}
+                <MainInstallButton {...this.props}
                                    eventCategory="HomePage Interactions"
                                    experimentTitle={title} />
               </div>
@@ -339,15 +341,13 @@ export default class ExperimentPage extends React.Component {
           {!hasAddon && <div data-hook="inactive-user">
             <h2 className="card-list-header" data-l10n-id="otherExperiments">Try out these experiments as well</h2>
             <div className="responsive-content-wrapper delayed-fade-in" data-hook="experiment-list">
-              <ExperimentCardList navigateTo={navigateTo} hasAddon={hasAddon}
-                                  experiments={experiments}
+              <ExperimentCardList {...this.props}
                                   except={experiment.slug}
-                                  isExperimentEnabled={isExperimentEnabled}
                                   eventCategory="ExperimentsDetailPage Interactions" />
             </div>
           </div>}
           <footer id="main-footer" className="responsive-content-wrapper">
-            <Footer />
+            <Footer {...this.props} />
           </footer>
       </section>
     );
@@ -360,15 +360,15 @@ export default class ExperimentPage extends React.Component {
         setTimeout(this.onScroll.bind(this), 1);
       }
     };
-    window.addEventListener('scroll', this.scrollListener);
+    this.props.addScrollListener(this.scrollListener);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.scrollListener);
+    this.props.removeScrollListener(this.scrollListener);
   }
 
   onScroll() {
-    const sy = window.pageYOffset || document.documentElement.scrollTop;
+    const sy = this.props.getScrollY();
     this.setState({ useStickyHeader: sy > CHANGE_HEADER_ON });
     this.didScroll = false;
   }
@@ -403,9 +403,9 @@ export default class ExperimentPage extends React.Component {
   }
 
   highlightPrivacy(evt) {
+    const { getElementY, setScrollY } = this.props;
     evt.preventDefault();
-    const measurementPanel = document.querySelector('.measurements');
-    window.scrollTo(0, measurementPanel.offsetTop - CHANGE_HEADER_ON);
+    setScrollY(getElementY('.measurements') - CHANGE_HEADER_ON);
     this.setState({
       useStickyHeader: true,
       highlightMeasurementPanel: true
@@ -417,7 +417,7 @@ export default class ExperimentPage extends React.Component {
 
   clickUpgradeNotice() {
     // If a user goes to the upgrade SUMO
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
       eventLabel: 'Upgrade Notice'
@@ -425,7 +425,7 @@ export default class ExperimentPage extends React.Component {
   }
 
   feedback(evt) {
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
       eventLabel: 'Give Feedback',
@@ -450,7 +450,7 @@ export default class ExperimentPage extends React.Component {
   }
 
   installExperiment(evt) {
-    const { enableExperiment } = this.props;
+    const { enableExperiment, sendToGA } = this.props;
     const { experiment, isEnabling } = this.state;
 
     evt.preventDefault();
@@ -495,7 +495,7 @@ export default class ExperimentPage extends React.Component {
   renderUninstallSurvey(evt) {
     evt.preventDefault();
 
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
       eventLabel: 'Disable Experiment'
@@ -507,3 +507,26 @@ export default class ExperimentPage extends React.Component {
   }
 
 }
+
+ExperimentPage.propTypes = {
+  params: React.PropTypes.object,
+  userAgent: React.PropTypes.string,
+  isDev: React.PropTypes.bool,
+  hasAddon: React.PropTypes.bool,
+  experiments: React.PropTypes.array,
+  installed: React.PropTypes.object,
+  installedAddons: React.PropTypes.array,
+  navigateTo: React.PropTypes.func,
+  isExperimentEnabled: React.PropTypes.func,
+  getExperimentBySlug: React.PropTypes.func,
+  requireRestart: React.PropTypes.func,
+  sendToGA: React.PropTypes.func,
+  openWindow: React.PropTypes.func,
+  enableExperiment: React.PropTypes.func,
+  disableExperiment: React.PropTypes.func,
+  addScrollListener: React.PropTypes.func,
+  removeScrollListener: React.PropTypes.func,
+  getScrollY: React.PropTypes.func,
+  setScrollY: React.PropTypes.func,
+  getElementY: React.PropTypes.func
+};
