@@ -1,10 +1,14 @@
 id: 4
 title: 'Universal Search'
-short_title: ""
+short_title: ''
 slug: universal-search
 thumbnail: /static/images/experiments/universal-search/experiments_experiment/a/8/a8182b008f6434ba702ab177232625e2_thumbnail_1461818424_0011.png
-description: 'Get recommendations for the best sites on the web as you type in the Awesome Bar.'
-introduction: '<p>Get to the best of the Web faster with Universal Search. Just type a few characters into your Awesome Bar, and the most popular sites, people and Wikipedia articles will appear for your browsing pleasure. </p>'
+description: >
+  Get recommendations for the best sites on the web as you type in the Awesome Bar.
+introduction: >
+  <p>Get to the best of the Web faster with Universal Search. Just type a few
+    characters into your Awesome Bar, and the most popular sites, people and
+    Wikipedia articles will appear for your browsing pleasure.</p>
 image_twitter: null
 image_facebook: null
 version: 1.0.6
@@ -13,7 +17,33 @@ contribute_url: 'https://github.com/mozilla/universal-search'
 bug_report_url: 'https://github.com/mozilla/universal-search/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/universal-search'
 privacy_notice_url: 'https://github.com/mozilla/universal-search/blob/master/docs/metrics.md'
-measurements: "<p>In addition to the <a href=\"/privacy\">data</a> collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use Universal Search:</p>\n<ul>\n<li>We collect basic usage data regarding how you interact with the Awesome Bar (address bar), such as the number of characters typed, the types of results that you click, and their position in the results list.</li>\n<li>If you previously configured Firefox to display search suggestions in the Search Bar, installing Universal Search will enable <a href=\"https://www.mozilla.org/privacy/firefox/#searchsuggestions\">search suggestions</a> in the Awesome Bar.</li>\n<li>When you use the Awesome Bar, we send the terms you type to our recommendation engine. We keep anonymous logs of popular searches to improve the quality of our recommendations.</li>\n<li>To provide Universal Search, we use a few third-party services. We use <a href=\"http://www.bing.com/developers/s/APIBasics.html\">Bing</a> and <a href=\"https://developer.yahoo.com/boss/search/\">Yahoo</a> to provide recommendations, and <a href=\"http://docs.embed.ly/docs/\">Embedly</a> and <a href=\"https://clearbit.com/logo\">Clearbit</a> to provide additional data (such as images or icons) about those recommendations. To display the recommendations in the Awesome Bar, Universal Search may download those images directly from Embedly and Clearbit, which may allow those services to see your IP address and the image requested.</li>\n</ul>"
+measurements: >
+  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot
+    experiments, here are the key things you should know about what is happening
+    when you use Universal Search:</p>
+  <ul>
+    <li>We collect basic usage data regarding how you interact with the Awesome
+      Bar (address bar), such as the number of characters typed, the types of
+      results that you click, and their position in the results list.</li>
+    <li>If you previously configured Firefox to display search suggestions in
+      the Search Bar, installing Universal Search will enable <a
+      href="https://www.mozilla.org/privacy/firefox/#searchsuggestions"
+      target="_blank">search suggestions</a> in the Awesome Bar.</li>
+    <li>When you use the Awesome Bar, we send the terms you type to our
+      recommendation engine. We keep anonymous logs of popular searches to
+      improve the quality of our recommendations.</li>
+    <li>To provide Universal Search, we use a few third-party services. We use
+      <a href="http://www.bing.com/developers/s/APIBasics.html"
+      target="_blank">Bing</a> and <a
+      href="https://developer.yahoo.com/boss/search/" target="_blank">Yahoo</a>
+      to provide recommendations, and <a href="http://docs.embed.ly/docs/"
+      target="_blank">Embedly</a> and <a href="https://clearbit.com/logo"
+      target="_blank">Clearbit</a> to provide additional data (such as images or
+      icons) about those recommendations. To display the recommendations in the
+      Awesome Bar, Universal Search may download those images directly from
+      Embedly and Clearbit, which may allow those services to see your IP address
+      and the image requested.</li>
+  </ul>
 xpi_url: 'https://s3-us-west-2.amazonaws.com/universal-search/universal-search.xpi'
 addon_id: universal-search@mozilla.com
 gradient_start: '#01BDAD'
@@ -25,7 +55,8 @@ details:
   -
     headline: ' '
     image: /static/images/experiments/universal-search/experiments_experimentdetail/6/d/6d0ff50eff9223f0d0cc58c5aa5d0c81_image_1462827811_0995.jpg
-    copy: 'Popular sites, people and Wikipedia articles appear as you type.'
+    copy: >
+      Popular sites, people and Wikipedia articles appear as you type.
   -
     headline: ' '
     image: /static/images/experiments/universal-search/experiments_experimentdetail/8/6/8675c7bf31054abdaf58b47850a1365d_image_1462827811_0451.jpg
@@ -33,13 +64,16 @@ details:
 tour_steps:
   -
     image: /static/images/experiments/universal-search/experiments_experimenttourstep/e/b/eb1a0c8bbb18c79f63d0df45d165eb7a_image_1462826805_0035.jpg
-    copy: '<p>You can now search and navigate in one place.</p>'
+    copy: >
+      <p>You can now search and navigate in one place.</p>
   -
     image: /static/images/experiments/universal-search/experiments_experimenttourstep/5/2/5218821d5851bef5ad979da5830f68b2_image_1462826805_0031.jpg
-    copy: '<p>Recommendations for popular sites and Wikipedia articles will appear as you type.</p>'
+    copy: >
+      <p>Recommendations for popular sites and Wikipedia articles will appear as you type.</p>
   -
     image: /static/images/experiments/universal-search/experiments_experimenttourstep/1/d/1d414ba2fc88a188b6f74ea79de908e9_image_1462826805_0789.jpg
-    copy: '<p>You can always give us feedback or disable Universal Search from Test Pilot.</p>'
+    copy: >
+      <p>You can always give us feedback or disable Universal Search from Test Pilot.</p>
 notifications: []
 contributors:
   -
@@ -52,7 +86,7 @@ contributors:
     avatar: /static/images/experiments/universal-search/avatars/bryan-bell.jpg
   -
     display_name: 'Jared Hirsch'
-    title: 'Senior Engineer'
+    title: 'Staff Engineer'
     avatar: /static/images/experiments/universal-search/avatars/jared-hirsch.jpg
   -
     display_name: 'Chuck Harmston'

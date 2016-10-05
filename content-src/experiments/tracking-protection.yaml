@@ -1,45 +1,80 @@
 id: 7
 title: 'Tracking Protection'
-short_title: ""
+short_title: ''
 slug: tracking-protection
 thumbnail: /static/images/experiments/tracking-protection/experiments_experiment/thumbnail.png
-description: 'Will you help us make Tracking Protection better? This experiment turns on Tracking Protection for all browsing and offers a quick way to report any issues you see as you browse.'
-introduction: '<p>Until now, Tracking Protection in Firefox was only available in Private Browsing mode. This experiment enables Tracking Protection all the time! (Of course, you can disable it on a site-by-site basis whenever you want.)</p><p>This experiment lets you help us understand where Tracking Protection breaks the Web so that we can improve it for all Firefox users. As you browse, use the convenient notification bar at the top of the page to tell us which sites work well with Tracking Protection and which don’t.</p>'
+description: >
+  Will you help us make Tracking Protection better? This experiment turns on
+  Tracking Protection for all browsing and offers a quick way to report any
+  issues you see as you browse.
+introduction: >
+  <p>Until now, Tracking Protection in Firefox was only available in Private
+    Browsing mode. This experiment enables Tracking Protection all the time!
+    (Of course, you can disable it on a site-by-site basis whenever you want.)</p>
+  <p>This experiment lets you help us understand where Tracking Protection breaks
+    the Web so that we can improve it for all Firefox users. As you browse, use
+    the convenient notification bar at the top of the page to tell us which
+    sites work well with Tracking Protection and which don't.</p>
 image_twitter: /static/images/experiments/tracking-protection/social/tp-twitter.jpg
 image_facebook: /static/images/experiments/tracking-protection/social/tp-facebook.jpg
 version: '1.0.1'
-changelog_url: ' https://github.com/mozilla/blok/'
+changelog_url: 'https://github.com/mozilla/blok/'
 contribute_url: 'https://github.com/mozilla/blok/'
 bug_report_url: 'https://github.com/mozilla/blok/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/tracking-protection'
 privacy_notice_url: 'https://github.com/mozilla/blok/blob/master/docs/metrics.md'
-measurements: "<p>In addition to the <a href=\"/privacy\">data</a> collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use Tracking Protection:</p>\n<ul>\n<li>Tracking Protection will prompt you for feedback when it blocks a tracker. We collect basic usage data when you engage with this prompt, such as when you enable or disable the trackers on the page or report a problem.</li>\n<li>When you engage with a prompt, we also collect information about the page you are on and the tracking domain that is being blocked. This helps us understand when and why you are experiencing a problem.</li>\n<li>Other than the domain, we don’t collect any further information from the tracker, such as data about unique IDs that are used or cookies that are set.</li>\n<li>To identify trackers, we use a list provided by our partner Disconnect. You can read more about the standards Disconnect applies <a href=\"https://disconnect.me/trackerprotection\">here</a>.</li>\n</ul>"
+measurements: >
+  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot
+    experiments, here are the key things you should know about what is happening
+    when you use Tracking Protection:</p>
+  <ul>
+    <li>Tracking Protection will prompt you for feedback when it blocks a
+      tracker. We collect basic usage data when you engage with this prompt,
+      such as when you enable or disable the trackers on the page or report a
+      problem.</li>
+    <li>When you engage with a prompt, we also collect information about the
+      page you are on and the tracking domain that is being blocked. This helps
+      us understand when and why you are experiencing a problem.</li>
+    <li>Other than the domain, we don't collect any further information from the
+      tracker, such as data about unique IDs that are used or cookies that are
+      set.</li>
+    <li>To identify trackers, we use a list provided by our partner Disconnect.
+      You can read more about the standards Disconnect applies <a
+      href="https://disconnect.me/trackerprotection" target="_blank">here</a>.</li>
+  </ul>
 xpi_url: 'https://testpilot.firefox.com/files/blok/blok-1.0.1.xpi'
 addon_id: blok@mozilla.org
 gradient_start: '#8725A7'
 gradient_stop: '#591C56'
 min_release: 48
-pre_feedback_copy: '<p>To report a site that doesn’t work with Tracking Protection, select the shield icon in the bar that displays the URL of the site.</p>'
+pre_feedback_copy: >
+  <p>To report a site that doesn't work with Tracking Protection, select the
+    shield icon in the bar that displays the URL of the site.</p>
 pre_feedback_image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour2.jpg
 details:
   -
     headline: ' '
     image: /static/images/experiments/tracking-protection/experiments_experimentdetail/detail1.jpg
-    copy: 'Access all Tracking Protection features in the address bar.'
+    copy: >
+      Access all Tracking Protection features in the address bar.
   -
     headline: ' '
     image: /static/images/experiments/tracking-protection/experiments_experimentdetail/detail2.jpg
-    copy: 'Report a problem and help us troubleshoot.'
+    copy: >
+      Report a problem and help us troubleshoot.
 tour_steps:
   -
     image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour1.jpg
-    copy: '<p>The shield indicates Tracking Protection is on. With a slash, it’s off.</p>'
+    copy: >
+      <p>The shield indicates Tracking Protection is on. With a slash, it's off.</p>
   -
     image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour2.jpg
-    copy: '<p>Tell us when things work and when they don’t.</p>'
+    copy: >
+      <p>Tell us when things work and when they don't.</p>
   -
     image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour3.jpg
-    copy: '<p>You can always disable Tracking Protection from Test Pilot.</p>'
+    copy: >
+      <p>You can always disable Tracking Protection from Test Pilot.</p>
 notifications: []
 contributors:
   -

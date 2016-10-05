@@ -3,8 +3,13 @@ title: 'No More 404s'
 short_title: 'No More 404s'
 slug: no-more-404s
 thumbnail: /static/images/experiments/no-more-404s/experiments_experiment/a/9/a9e6dc66c6a22851721715ae4d0641fb_thumbnail_1470245154_0349.png
-description: "Tired of dead ends on the web? We'll let you know when there's a saved version of what you're looking for on the Internet Archive's Wayback Machine.\r\n"
-introduction: "<p>This one is simple. If you hit a 404 page while browsing the web, we will let you know if the content you're looking for is archived on the Internet Archive's Wayback Machine.</p>"
+description: >
+  Tired of dead ends on the web? We'll let you know when there's a saved version
+  of what you're looking for on the Internet Archive's Wayback Machine.
+introduction: >
+  <p>This one is simple. If you hit a 404 page while browsing the web, we will
+    let you know if the content you're looking for is archived on the Internet
+    Archive's Wayback Machine.</p>
 image_twitter: /static/images/experiments/no-more-404s/experiments_experiment/a/9/a9e6dc66c6a22851721715ae4d0641fb_image_1472573814_0582.png
 image_facebook: /static/images/experiments/no-more-404s/experiments_experiment/a/9/a9e6dc66c6a22851721715ae4d0641fb_image_1472573814_0278.png
 version: 1.5.6
@@ -13,7 +18,23 @@ contribute_url: 'https://github.com/internetarchive/FirefoxNoMore404s'
 bug_report_url: 'https://github.com/internetarchive/FirefoxNoMore404s/issues/new'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/nomore404s'
 privacy_notice_url: 'https://github.com/internetarchive/FirefoxNoMore404s/blob/master/docs/metrics.md'
-measurements: "In addition to the <a href=\"/privacy\" target=\"_blank\">data</a> collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use No More 404s:\r\n<ul>\r\n<li>We collect basic usage on how many times you encounter a Page Not Found error (code 404), how many times a cached version of that page exists from Archive.org, and how many times you choose to view the cached version.</li>\r\n<li>To provide cached versions of pages, we send 404 error page URLs to Archive.org. <a href=\"https://archive.org/\" target=_blank\">Archive.org</a> discloses its privacy policy <a href=\"https://archive.org/about/terms.php\" target=\"_blank\">here</a>.</li>\r\n<li>We do not  collect  URLs of the pages you request or the URLs we send to Archive.org.</li>\r\n<li>We may share survey results you submit to us and aggregated telemetry data related to this experiment with the Internet Archive.</li>\r\n</ul>"
+measurements: >
+  <p>In addition to the <a href="/privacy" target="_blank">data</a> collected by
+    all Test Pilot experiments, here are the key things you should know about
+    what is happening when you use No More 404s:</p>
+  <ul>
+    <li>We collect basic usage on how many times you encounter a Page Not Found
+      error (code 404), how many times a cached version of that page exists from
+      Archive.org, and how many times you choose to view the cached version.</li>
+    <li>To provide cached versions of pages, we send 404 error page URLs to
+      Archive.org. <a href="https://archive.org/" target="_blank">Archive.org</a>
+      discloses its privacy policy <a href="https://archive.org/about/terms.php"
+      target="_blank">here</a>.</li>
+    <li>We do not  collect  URLs of the pages you request or the URLs we send to
+      Archive.org.</li>
+    <li>We may share survey results you submit to us and aggregated telemetry
+      data related to this experiment with the Internet Archive.</li>
+  </ul>
 xpi_url: 'https://testpilot.cdn.mozilla.net/nomore404s/wayback_machine-1.5.6-fx%2Ban.xpi'
 addon_id: wayback_machine@mozilla.org
 gradient_start: '#111111'
@@ -25,18 +46,24 @@ details:
   -
     headline: ' '
     image: /static/images/experiments/no-more-404s/experiments_experimentdetail/2/4/24ddd4335aca6b96cca9106a6f3411d2_image_1470245154_0440.jpg
-    copy: 'Reduce 404 dead ends with the Wayback Machine.'
+    copy: >
+      Reduce 404 dead ends with the Wayback Machine.
   -
     headline: ' '
     image: /static/images/experiments/no-more-404s/experiments_experimentdetail/c/d/cdb624363e0e87af81125c39bc69c933_image_1470245154_0280.jpg
-    copy: 'Brought to you by our friends at the Internet Archive.'
+    copy: >
+      Brought to you by our friends at the Internet Archive.
 tour_steps:
   -
     image: /static/images/experiments/no-more-404s/experiments_experimenttourstep/d/a/dafca30f93dadf7f13cc48d389e08f84_image_1470245154_0851.jpg
-    copy: '<p>Just browse the web as you normally do. If you encounter a 404 page, we will let you know if an archived version is a available on the Wayback Machine.</p>'
+    copy: >
+      <p>Just browse the web as you normally do. If you encounter a 404 page,
+        we will let you know if an archived version is a available on the Wayback
+        Machine.</p>
   -
     image: /static/images/experiments/no-more-404s/experiments_experimenttourstep/c/3/c3f0175791c0cf8271658ae01eaf3d94_image_1470245154_0949.jpg
-    copy: '<p>You can always give us feedback or disable No More 404s from Test Pilot.</p>'
+    copy: >
+      <p>You can always give us feedback or disable No More 404s from Test Pilot.</p>
 notifications:
   -
     id: 1
