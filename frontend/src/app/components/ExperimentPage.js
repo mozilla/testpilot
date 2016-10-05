@@ -88,19 +88,19 @@ export default class ExperimentPage extends React.Component {
   }
 
   getIncompatibleInstalled(incompatible) {
-    if (!incompatible || !this.props.installedAddons.length) {
-      return null;
+    if (!incompatible) {
+      return [];
     }
+    const installed = this.props.installedAddons || [];
     return Object.keys(incompatible).filter(guid => (
-      this.props.installedAddons.indexOf(guid) !== -1
+      installed.indexOf(guid) !== -1
     ));
   }
 
   renderIncompatibleAddons() {
     const { incompatible } = this.state.experiment;
-    if (!incompatible) return null;
     const installed = this.getIncompatibleInstalled(incompatible);
-    if (!installed || installed.length === 0) return null;
+    if (installed.length === 0) return null;
 
     const helpUrl = 'https://support.mozilla.org/kb/disable-or-remove-add-ons';
 
