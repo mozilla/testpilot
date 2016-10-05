@@ -251,13 +251,13 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
           .to.equal(mockClickEvent.target.offsetWidth);
         expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
           eventCategory: 'ExperimentDetailsPage Interactions',
-          eventAction: 'button click',
-          eventLabel: 'Enable Experiment'
+          eventAction: 'Enable Experiment',
+          eventLabel: experiment.title
         }]);
       });
 
       it('should display a warning only if userAgent does not meet minimum version', () => {
-        setExperiment({ ...mockExperiment, min_release: 50 });
+        const experiment = setExperiment({ ...mockExperiment, min_release: 50 });
 
         const userAgentPre = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:51.0) Gecko/20100101 Firefox/';
 
@@ -268,8 +268,8 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
         findByL10nID('upgradeNoticeLink').simulate('click', mockClickEvent);
         expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
           eventCategory: 'ExperimentDetailsPage Interactions',
-          eventAction: 'button click',
-          eventLabel: 'Upgrade Notice'
+          eventAction: 'Upgrade Notice',
+          eventLabel: experiment.title
         }]);
 
         subject.setProps({ userAgent: `${userAgentPre}50.0` });
@@ -375,8 +375,8 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
             .to.equal(mockClickEvent.target.offsetWidth);
           expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
             eventCategory: 'ExperimentDetailsPage Interactions',
-            eventAction: 'button click',
-            eventLabel: 'Disable Experiment'
+            eventAction: 'Disable Experiment',
+            eventLabel: experiment.title
           }]);
         });
 
@@ -388,6 +388,7 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
         });
 
         it('should navigate to survey URL when "Give Feedback" clicked', () => {
+          const experiment = setExperiment(mockExperiment);
           const button = subject.find('#feedback-button');
           const expectedHref = button.prop('href');
           mockClickEvent.target.getAttribute = name => expectedHref;
@@ -395,8 +396,8 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
 
           expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
             eventCategory: 'ExperimentDetailsPage Interactions',
-            eventAction: 'button click',
-            eventLabel: 'Give Feedback',
+            eventAction: 'Give Feedback',
+            eventLabel: experiment.title,
             outboundURL: expectedHref
           }]);
         });
