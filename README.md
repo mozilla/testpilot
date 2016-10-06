@@ -19,6 +19,7 @@ Test Pilot is not intended to replace trains for most features, nor is it a test
     - [Verifying deployments](docs/development/verification.md) - Verifying Test Pilot deployments.
     - [Add-on environment](docs/development/environment.md) - Configuring to which server the add-on connects.
 - Developing experiments
+    - [Add an experiment] (docs/experiments/experiment-content/getting_started.md) - Building new experiment UI.
     - [Variant testing](docs/experiments/variants.md) - Creating variant (e.g. A/B) tests in experiments.
     - [Example experiments](docs/experiments/)
 - Metrics
