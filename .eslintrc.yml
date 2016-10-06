@@ -1,0 +1,43 @@
+extends:
+  - eslint:recommended
+  - plugin:react/recommended
+  - airbnb-base
+
+plugins:
+  - react
+
+globals:
+  document: true
+  fetch: true
+  navigator: true
+  Promise: true
+  window: true
+
+parserOptions:
+  ecmaVersion: 6
+  sourceType: module
+  ecmaFeatures:
+    jsx: true
+    experimentalObjectRestSpread: true
+
+rules:
+  import/prefer-default-export: off
+
+  react/prop-types: off
+
+  arrow-body-style: off
+  arrow-parens: off
+  camelcase: off
+  class-methods-use-this: off
+  comma-dangle: [error, never]
+  indent: [error, 2, {SwitchCase: 1}]
+  max-len: off
+  no-console: warn
+  no-multi-spaces: off
+  no-param-reassign: off
+  no-return-assign: off
+  no-unused-expressions: off
+  no-use-before-define: [error, nofunc]
+  object-shorthand: off
+  prefer-template: off
+  yoda: off
