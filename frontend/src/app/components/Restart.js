@@ -33,7 +33,7 @@ export default class Restart extends React.Component {
   render() {
     return (
       <div className="full-page-wrapper space-between">
-        <Header {...this.props} />
+        <Header {...this.props} forceHideSettings={ false } />
         <div className="centered-banner restart-message">
           <p data-l10n-id="restartRequiredSubHeader">Almost done . . .</p>
           { this.renderSubtitle() }
