@@ -2,8 +2,6 @@ import React from 'react';
 
 import classnames from 'classnames';
 
-import { sendToGA } from '../lib/utils';
-
 const ONE_DAY = 24 * 60 * 60 * 1000;
 const ONE_WEEK = 7 * ONE_DAY;
 const MAX_JUST_LAUNCHED_PERIOD = 2 * ONE_WEEK;
@@ -124,7 +122,7 @@ export default class ExperimentRowCard extends React.Component {
   }
 
   openDetailPage(evt) {
-    const { navigateTo, eventCategory, experiment } = this.props;
+    const { navigateTo, eventCategory, experiment, sendToGA } = this.props;
     const { title } = experiment;
 
     evt.preventDefault();

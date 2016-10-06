@@ -8,7 +8,7 @@ import LoadingPage from './LoadingPage';
 export default class LandingPage extends React.Component {
 
   render() {
-    const { navigateTo, isExperimentEnabled, experiments, hasAddon, isFirefox, isMinFirefox } = this.props;
+    const { experiments } = this.props;
 
     if (experiments.length === 0) { return <LoadingPage />; }
 
@@ -34,17 +34,14 @@ export default class LandingPage extends React.Component {
         </div>
 
         <div className="centered-banner responsive-content-wrapper">
-          <MainInstallButton hasAddon={hasAddon} isFirefox={isFirefox} isMinFirefox={isMinFirefox}
-                             eventCategory="HomePage Interactions" />
+          <MainInstallButton {...this.props} eventCategory="HomePage Interactions" />
         </div>
 
         <div className="transparent-container">
           <div className="responsive-content-wrapper delayed-fade-in">
               <h2 className="card-list-header" data-l10n-id="landingExperimentsTitle">Try out the latest experimental features</h2>
               <div data-hook="experiment-list">
-                <ExperimentCardList navigateTo={navigateTo} hasAddon={hasAddon}
-                                    isExperimentEnabled={isExperimentEnabled}
-                                    experiments={experiments}
+                <ExperimentCardList {...this.props}
                                     eventCategory="HomePage Interactions" />
               </div>
           </div>
@@ -67,13 +64,12 @@ export default class LandingPage extends React.Component {
           </div>
 
           <div className="centered-banner responsive-content-wrapper">
-            <MainInstallButton hasAddon={hasAddon} isFirefox={isFirefox} isMinFirefox={isMinFirefox}
-                               eventCategory="HomePage Interactions" />
+            <MainInstallButton {...this.props} eventCategory="HomePage Interactions" />
           </div>
 
         </div>
         <footer id="main-footer" className="responsive-content-wrapper">
-          <Footer />
+          <Footer {...this.props} />
         </footer>
       </section>
     );

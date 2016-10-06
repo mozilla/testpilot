@@ -1,8 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import { sendToGA } from '../lib/utils';
-
 export default class ExperimentPreFeedbackDialog extends React.Component {
 
   render() {
@@ -41,7 +39,7 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
   feedback(e) {
     e.preventDefault();
 
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
       eventLabel: 'give feedback',
@@ -51,15 +49,18 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
 
   cancel(e) {
     e.preventDefault();
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
       eventLabel: 'cancel feedback'
     });
-    if (this.props.onCancel) { this.props.onCancel(e); }
-  }
-
-  proceed(e) {
-    e.preventDefault();
+    this.props.onCancel(e);
   }
 }
+
+ExperimentPreFeedbackDialog.propTypes = {
+  experiment: React.PropTypes.object.isRequired,
+  surveyURL: React.PropTypes.string.isRequired,
+  onCancel: React.PropTypes.func.isRequired,
+  sendToGA: React.PropTypes.func.isRequired
+};

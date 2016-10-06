@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { sendToGA, buildSurveyURL } from '../lib/utils';
+import { buildSurveyURL } from '../lib/utils';
 
 export default class ExperimentDisableDialog extends React.Component {
   render() {
@@ -37,16 +37,24 @@ export default class ExperimentDisableDialog extends React.Component {
   }
 
   submit(e) {
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
       eventLabel: 'exit survey disabled'
     });
-    if (this.props.onSubmit) { this.props.onSubmit(e); }
+    this.props.onSubmit(e);
   }
 
   cancel(e) {
     e.preventDefault();
-    if (this.props.onCancel) { this.props.onCancel(e); }
+    this.props.onCancel(e);
   }
 }
+
+ExperimentDisableDialog.propTypes = {
+  experiment: React.PropTypes.object.isRequired,
+  installed: React.PropTypes.object.isRequired,
+  onCancel: React.PropTypes.func.isRequired,
+  onSubmit: React.PropTypes.func.isRequired,
+  sendToGA: React.PropTypes.func.isRequired
+};

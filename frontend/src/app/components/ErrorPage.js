@@ -7,7 +7,7 @@ export default class ErrorPage extends React.Component {
   render() {
     return (
       <div className="full-page-wrapper space-between">
-        <Header />
+        <Header {...this.props} />
         <div className="centered-banner">
           <div id="four-oh-four" className="modal delayed-fade-in">
             <h1 data-l10n-id="errorHeading" className="title">Whoops!</h1>
@@ -20,9 +20,15 @@ export default class ErrorPage extends React.Component {
           </div>
         </div>
         <footer id="main-footer" className="content-wrapper">
-          <Footer />
+          <Footer {...this.props} />
         </footer>
       </div>
     );
   }
 }
+
+ErrorPage.propTypes = {
+  uninstallAddon: React.PropTypes.func,
+  sendToGA: React.PropTypes.func,
+  openWindow: React.PropTypes.func
+};

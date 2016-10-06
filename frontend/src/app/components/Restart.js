@@ -3,12 +3,10 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-import { sendToGA } from '../lib/utils';
-
 
 export default class Restart extends React.Component {
   componentWillMount() {
-    sendToGA('event', {
+    this.props.sendToGA('event', {
       eventCategory: 'PostInstall Interactions',
       eventAction: 'view modal',
       eventLabel: 'restart required'
@@ -35,15 +33,23 @@ export default class Restart extends React.Component {
   render() {
     return (
       <div className="full-page-wrapper space-between">
-        <Header forceHideSettings={ false } />
+        <Header {...this.props} forceHideSettings={ false } />
         <div className="centered-banner restart-message">
           <p data-l10n-id="restartRequiredSubHeader">Almost done . . .</p>
           { this.renderSubtitle() }
         </div>
         <footer id="main-footer" className="content-wrapper">
-          <Footer />
+          <Footer {...this.props} />
         </footer>
       </div>
     );
   }
 }
+
+Restart.propTypes = {
+  experimentTitle: React.PropTypes.string,
+  hasAddon: React.PropTypes.bool,
+  uninstallAddon: React.PropTypes.func,
+  sendToGA: React.PropTypes.func,
+  openWindow: React.PropTypes.func
+};
