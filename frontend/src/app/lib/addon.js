@@ -127,9 +127,7 @@ function messageReceived(store, evt) {
     case 'sync-installed-result':
       store.dispatch(addonActions.setClientUuid(data.clientUUID));
       store.dispatch(addonActions.setInstalled(data.installed));
-      break;
-    case 'sync-installed-addons':
-      store.dispatch(addonActions.setInstalledAddons(data.installedAddons));
+      store.dispatch(addonActions.setInstalledAddons(data.active));
       break;
     case 'addon-self:uninstalled':
       store.dispatch(addonActions.setHasAddon(false));
