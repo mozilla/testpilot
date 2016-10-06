@@ -102,16 +102,7 @@ function changeApp(env) {
     .on('uninstall-self', uninstallSelf)
     .on('install-experiment', installExperiment)
     .on('uninstall-experiment', uninstallExperiment)
-    .on('sync-installed', () => {
-      app.send(
-        'sync-installed-result',
-        {
-          clientUUID: store.clientUUID,
-          installed: store.installedAddons
-        }
-      );
-      syncInstalled();
-    });
+    .on('sync-installed', syncInstalled);
 }
 
 function updatePrefs(environment) {
@@ -230,12 +221,18 @@ function isTestpilotAddonID(id) {
 
 function syncInstalled() {
   AddonManager.getAllAddons(addons => {
-    const activeAddons = addons.filter(addon => (
-      addon.isActive && !addon.appDisabled && !addon.userDisabled
-    ));
-    app.send('sync-installed-addons', {
-      installedAddons: activeAddons.map(addon => addon.id)
-    });
+    const activeAddonIds = addons
+      .filter(a => (a.isActive && !a.appDisabled && !a.userDisabled))
+      .map(a => a.id);
+
+    app.send(
+      'sync-installed-result',
+      {
+        clientUUID: store.clientUUID,
+        installed: store.installedAddons,
+        active: activeAddonIds
+      }
+    );
   });
 }
 
