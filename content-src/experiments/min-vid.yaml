@@ -14,9 +14,9 @@ introduction: >
     <li><strong>Click and go:</strong> Pop up the Min Vid frame to keep videos
       playing in the foreground while you browse.</li>
     <li><strong>Put it where you want it:</strong> Min Vid lets you drag the
-      video frame anywhere in the browser window.</li>
+      video frame anywhere on your desktop.</li>
     <li><strong>Controls where you need them:</strong> Min Vid includes controls
-      to let you pause/play, scrub, and adjust volume right in the frame.</li>
+      to let you pause/play, scrub, drag, minimize, and adjust volume right in the frame.</li>
   </ul>
 image_twitter: /static/images/experiments/min-vid/social/mv-twitter.jpg
 image_facebook: /static/images/experiments/min-vid/social/mv-facebook.jpg
