@@ -10,7 +10,7 @@ import Clipboard from 'clipboard';
 import { getInstalled, isExperimentEnabled } from '../reducers/addon';
 import { getExperimentBySlug } from '../reducers/experiments';
 import experimentSelector from '../selectors/experiment';
-import { installAddon, enableExperiment, disableExperiment } from '../lib/addon';
+import { uninstallAddon, installAddon, enableExperiment, disableExperiment } from '../lib/addon';
 import addonActions from '../actions/addon';
 
 import Restart from '../components/Restart';
@@ -82,6 +82,7 @@ export default connect(
   }),
   (stateProps, dispatchProps, ownProps) => Object.assign({
     installAddon,
+    uninstallAddon,
     sendToGA,
     subscribeToBasket,
     clipboard,

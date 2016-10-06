@@ -1,5 +1,4 @@
 import React from 'react';
-import { uninstallAddon } from '../lib/addon';
 
 export default class RetireConfirmationDialog extends React.Component {
   render() {
@@ -26,7 +25,7 @@ export default class RetireConfirmationDialog extends React.Component {
   }
 
   proceed(e) {
-    const { sendToGA, navigateTo } = this.props;
+    const { sendToGA, navigateTo, uninstallAddon } = this.props;
     e.preventDefault();
     uninstallAddon();
     sendToGA('event', {
@@ -42,3 +41,10 @@ export default class RetireConfirmationDialog extends React.Component {
     this.props.onDismiss();
   }
 }
+
+RetireConfirmationDialog.propTypes = {
+  uninstallAddon: React.PropTypes.func,
+  onDismiss: React.PropTypes.func,
+  sendToGA: React.PropTypes.func,
+  navigateTo: React.PropTypes.func
+};
