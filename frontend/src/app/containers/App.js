@@ -99,6 +99,7 @@ export default connect(
       return el ? el.offsetTop : 0;
     },
     getCookie: name => cookies.get(name),
-    removeCookie: name => cookies.remove(name)
+    removeCookie: name => cookies.remove(name),
+    setNavigatorTestpilotAddon: value => window.navigator.testpilotAddon = value
   }, ownProps, stateProps, dispatchProps)
 )(App);

@@ -2,10 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 import classnames from 'classnames';
 
-// HACK: Older add-on versions give no reliable signal of having been
-// uninstalled, so let's fake it.
-const FAKE_UNINSTALL_DELAY = 5000;
-
 export default class RetirePage extends React.Component {
 
   constructor(props) {
@@ -16,10 +12,12 @@ export default class RetirePage extends React.Component {
   }
 
   componentDidMount() {
+    // HACK: Older add-on versions give no reliable signal of having been
+    // uninstalled, so let's fake it.
     this.fakeUninstallTimer = setTimeout(() => {
       this.setState({ fakeUninstalled: true });
-      window.navigator.testpilotAddon = false;
-    }, FAKE_UNINSTALL_DELAY);
+      this.props.setNavigatorTestpilotAddon(false);
+    }, this.props.fakeUninstallDelay);
   }
 
   componentWillUnmount() {
@@ -70,3 +68,12 @@ export default class RetirePage extends React.Component {
     });
   }
 }
+
+RetirePage.propTypes = {
+  setNavigatorTestpilotAddon: React.PropTypes.func,
+  fakeUninstallDelay: React.PropTypes.number
+};
+
+RetirePage.defaultProps = {
+  fakeUninstallDelay: 5000
+};
