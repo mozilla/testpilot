@@ -153,6 +153,7 @@ export default class Header extends React.Component {
 }
 
 Header.propTypes = {
+  uninstallAddon: React.PropTypes.func.isRequired,
   sendToGA: React.PropTypes.func.isRequired,
   openWindow: React.PropTypes.func.isRequired,
   hasAddon: React.PropTypes.bool,

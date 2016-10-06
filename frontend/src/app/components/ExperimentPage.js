@@ -520,6 +520,7 @@ ExperimentPage.propTypes = {
   requireRestart: React.PropTypes.func,
   sendToGA: React.PropTypes.func,
   openWindow: React.PropTypes.func,
+  uninstallAddon: React.PropTypes.func,
   enableExperiment: React.PropTypes.func,
   disableExperiment: React.PropTypes.func,
   addScrollListener: React.PropTypes.func,
