@@ -11,6 +11,7 @@ describe('app/components/ExperimentsListPage', () => {
     props = {
       experiments: [ { title: 'foo' }, { title: 'bar' } ],
       hasAddon: true,
+      uninstallAddon: sinon.spy(),
       navigateTo: sinon.spy(),
       isExperimentEnabled: sinon.spy(),
       getCookie: sinon.spy(),

@@ -12,6 +12,7 @@ describe('app/components/LandingPage', () => {
       experiments: [],
       hasAddon: false,
       isFirefox: false,
+      uninstallAddon: sinon.spy(),
       sendToGA: sinon.spy(),
     };
     subject = shallow(<LandingPage {...props} />);

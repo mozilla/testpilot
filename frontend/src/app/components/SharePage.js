@@ -53,6 +53,7 @@ export default class SharePage extends React.Component {
 
 SharePage.propTypes = {
   hasAddon: React.PropTypes.bool,
+  uninstallAddon: React.PropTypes.func,
   sendToGA: React.PropTypes.func,
   openWindow: React.PropTypes.func
 };

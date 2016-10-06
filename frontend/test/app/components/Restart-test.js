@@ -11,6 +11,7 @@ describe('app/components/Restart', () => {
     props = {
       experimentTitle: null,
       hasAddon: false,
+      uninstallAddon: sinon.spy(),
       sendToGA: sinon.spy(),
       openWindow: sinon.spy()
     };

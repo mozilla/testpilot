@@ -12,6 +12,7 @@ describe('app/components/SharePage', () => {
   beforeEach(function() {
     props = {
       hasAddon: false,
+      uninstallAddon: sinon.spy(),
       sendToGA: sinon.spy(),
       openWindow: sinon.spy()
     };

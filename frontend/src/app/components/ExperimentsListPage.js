@@ -63,6 +63,7 @@ ExperimentsListPage.propTypes = {
   getCookie: React.PropTypes.func,
   removeCookie: React.PropTypes.func,
   getWindowLocation: React.PropTypes.func,
+  uninstallAddon: React.PropTypes.func,
   sendToGA: React.PropTypes.func,
   openWindow: React.PropTypes.func
 };

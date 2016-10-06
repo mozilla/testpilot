@@ -49,6 +49,7 @@ export default class Restart extends React.Component {
 Restart.propTypes = {
   experimentTitle: React.PropTypes.string,
   hasAddon: React.PropTypes.bool,
+  uninstallAddon: React.PropTypes.func,
   sendToGA: React.PropTypes.func,
   openWindow: React.PropTypes.func
 };

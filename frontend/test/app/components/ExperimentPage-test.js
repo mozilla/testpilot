@@ -47,6 +47,7 @@ describe('app/components/ExperimentPage', () => {
       experiments: [],
       installed: {},
       installedAddons: [],
+      uninstallAddon: sinon.spy(),
       navigateTo: sinon.spy(),
       isExperimentEnabled: sinon.spy(),
       getExperimentBySlug: sinon.spy(),

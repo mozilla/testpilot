@@ -7,18 +7,21 @@ import Header from '../../../src/app/components/Header';
 
 describe('app/components/Header', () => {
 
-  let preventDefault, stopPropagation, mockClickEvent, sendToGA, openWindow, subject;
+  let preventDefault, stopPropagation, mockClickEvent, props, subject;
   beforeEach(() => {
     preventDefault = sinon.spy();
     stopPropagation = sinon.spy();
     mockClickEvent = { preventDefault, stopPropagation };
-    sendToGA = sinon.spy();
-    openWindow = sinon.spy();
-    subject = shallow(<Header sendToGA={sendToGA} openWindow={openWindow} />);
+    props = {
+      uninstallAddon: sinon.spy(),
+      sendToGA: sinon.spy(),
+      openWindow: sinon.spy()
+    }
+    subject = shallow(<Header {...props} />);
   });
 
   const expectMenuGA = label => {
-    expect(sendToGA.lastCall.args).to.deep.equal(['event', {
+    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
       eventCategory: 'Menu Interactions',
       eventAction: 'drop-down menu',
       eventLabel: label

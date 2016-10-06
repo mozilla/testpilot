@@ -28,6 +28,7 @@ export default class ErrorPage extends React.Component {
 }
 
 ErrorPage.propTypes = {
-  sendToGA: React.PropTypes.func.isRequired,
-  openWindow: React.PropTypes.func.isRequired
+  uninstallAddon: React.PropTypes.func,
+  sendToGA: React.PropTypes.func,
+  openWindow: React.PropTypes.func
 };
