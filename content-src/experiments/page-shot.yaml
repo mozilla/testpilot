@@ -107,3 +107,5 @@ installation_count: 1
 created: '2016-09-22T00:07:28.847430Z'
 modified: '2016-09-22T16:51:12.188781Z'
 order: 0
+incompatible:
+    '@no-resource-uri-leak': 'No Resource URI Leak'
