@@ -10,8 +10,8 @@ introduction: >
   <p>Take your tabs from in the way to tucked away. Tab Center moves your tabs
     to the side of your browser window so they're out of sight when you don't
     need them, and easy to expand and grab when you do.</p>
-image_twitter: null
-image_facebook: null
+image_twitter: /static/images/experiments/tab-center/social/tc-twitter.jpg
+image_facebook: /static/images/experiments/tab-center/social/tc-facebook.jpg
 version: '1.25'
 changelog_url: 'https://github.com/bwinton/TabCenter/releases/latest'
 contribute_url: 'https://github.com/bwinton/TabCenter#readme'
@@ -41,34 +41,38 @@ pre_feedback_copy:
 details:
   -
     headline: ' '
-    image: /static/images/experiments/tab-center/experiments_experimentdetail/3/0/30c1166dd2476cb66ec57fc3049303e6_image_1462827296_0000.jpg
+    image: /static/images/experiments/tab-center/details/tab-center-1.jpg
+    copy: >
+      Take your tabs on the side.
+  -
+    headline: ' '
+    image: /static/images/experiments/tab-center/details/tab-center-2.jpg
     copy: >
       Tuck away those tabs until you need them.
   -
     headline: ' '
-    image: /static/images/experiments/tab-center/experiments_experimentdetail/7/5/753e2ad9494cc093289630bf2be9e74b_image_1462827296_0963.jpg
-    copy: >
-      Pin Tab Center to see everything you've got open.
-  -
-    headline: ' '
-    image: /static/images/experiments/tab-center/experiments_experimentdetail/6/9/694fde9c47365314d576e85fdb16ba4f_image_1462827297_0901.jpg
+    image: /static/images/experiments/tab-center/details/tab-center-3.jpg
     copy: >
       Redecorate and move the furniture! Tab Center works with your favorite Firefox themes.
 tour_steps:
   -
-    image: /static/images/experiments/tab-center/experiments_experimenttourstep/9/0/904efde3b0a7a9d3b69606b1a34b42a9_image_1462827296_0842.jpg
+    image: /static/images/experiments/tab-center/tour/tc-tour-1.jpg
     copy: >
       <p>First things first, all your tabs are on the side now.</p>
   -
-    image: /static/images/experiments/tab-center/experiments_experimenttourstep/2/b/2ba4e15b0c868007754cb8c31d0cbc15_image_1462827296_0454.jpg
+    image: /static/images/experiments/tab-center/tour/tc-tour-2.jpg
     copy: >
-      <p>Move your mouse over them to get an expanded view.</p>
+      <p>Lots and lots of tabs? Tab Center lets you search them.</p>
   -
-    image: /static/images/experiments/tab-center/experiments_experimenttourstep/e/7/e737e191692bd072df5186a2ed97a368_image_1462827296_0026.jpg
+    image: /static/images/experiments/tab-center/tour/tc-tour-3.jpg
     copy: >
-      <p>You can pin Tab Center open to keep it expanded.</p>
+      <p>You can drag the edge of Tab Center to make it as narrow or wide as you like.</p>
   -
-    image: /static/images/experiments/tab-center/experiments_experimenttourstep/a/1/a1d3b653f9c27838168951fccf9b0fc1_image_1462827296_0826.jpg
+    image: /static/images/experiments/tab-center/tour/tc-tour-4.jpg
+    copy: >
+      <p>Hit the switch to tuck Tab Center out of the way.</p>
+  -
+    image: /static/images/experiments/tab-center/tour/tc-tour-5.jpg
     copy: >
       <p>You can always give us feedback or disable Tab Center from Test Pilot.</p>
 notifications: []
@@ -78,10 +82,6 @@ contributors:
     title: 'Firefox UX'
     avatar: /static/images/experiments/tab-center/avatars/blake-w.jpg
   -
-    display_name: 'John G'
-    title: 'Firefox UX'
-    avatar: /static/images/experiments/tab-center/avatars/john-g.jpg
-  -
     display_name: 'Erica Wright'
     title: 'Firefox UX'
     avatar: /static/images/experiments/tab-center/avatars/erica-wright.png
@@ -89,6 +89,10 @@ contributors:
     display_name: 'Philipp S'
     title: 'Firefox UX'
     avatar: /static/images/experiments/tab-center/avatars/philipp-s.jpg
+  -
+    display_name: 'John G'
+    title: 'Firefox UX'
+    avatar: /static/images/experiments/tab-center/avatars/john-g.jpg
 installation_count: 29870
 created: '2016-04-28T00:07:28.847430Z'
 modified: '2016-08-19T16:51:12.188781Z'
