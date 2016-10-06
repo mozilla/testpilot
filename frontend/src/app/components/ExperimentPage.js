@@ -52,11 +52,9 @@ export default class ExperimentPage extends React.Component {
     const prevExperiment = this.props.getExperimentBySlug(this.props.params.slug);
     const prevInProgress = prevExperiment && prevExperiment.inProgress;
 
-    const { isExperimentEnabled: nextIsExperimentEnabled,
-            getExperimentBySlug: nextGetExperimentBySlug } = nextProps;
-    const nextExperiment = nextGetExperimentBySlug(nextProps.params.slug);
+    const nextExperiment = nextProps.getExperimentBySlug(nextProps.params.slug);
     const nextInProgress = nextExperiment && nextExperiment.inProgress;
-    const nextEnabled = nextExperiment && nextIsExperimentEnabled(nextExperiment);
+    const nextEnabled = nextExperiment && nextProps.isExperimentEnabled(nextExperiment);
 
     if (!nextInProgress && prevInProgress !== nextInProgress) {
       this.setState({
