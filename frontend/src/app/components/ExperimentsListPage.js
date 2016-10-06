@@ -59,7 +59,10 @@ export default class ExperimentsListPage extends React.Component {
 }
 
 ExperimentsListPage.propTypes = {
+  hasAddon: React.PropTypes.bool,
   getCookie: React.PropTypes.func,
   removeCookie: React.PropTypes.func,
-  getWindowLocation: React.PropTypes.func
+  getWindowLocation: React.PropTypes.func,
+  sendToGA: React.PropTypes.func,
+  openWindow: React.PropTypes.func
 };
