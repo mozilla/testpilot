@@ -12,7 +12,7 @@ introduction: >
     need them, and easy to expand and grab when you do.</p>
 image_twitter: /static/images/experiments/tab-center/social/tc-twitter.jpg
 image_facebook: /static/images/experiments/tab-center/social/tc-facebook.jpg
-version: '1.25'
+version: '1.26'
 changelog_url: 'https://github.com/bwinton/TabCenter/releases/latest'
 contribute_url: 'https://github.com/bwinton/TabCenter#readme'
 bug_report_url: 'https://github.com/bwinton/TabCenter/issues'
@@ -82,7 +82,7 @@ contributors:
     title: 'Firefox UX'
     avatar: /static/images/experiments/tab-center/avatars/blake-w.jpg
   -
-    display_name: 'Erica Wright'
+    display_name: 'Erica W'
     title: 'Firefox UX'
     avatar: /static/images/experiments/tab-center/avatars/erica-wright.png
   -
