@@ -41,7 +41,6 @@ describe('app/components/ExperimentPage', () => {
     };
 
     props = {
-      params: { slug: 'testing' },
       isDev: false,
       hasAddon: false,
       experiments: [],
@@ -50,7 +49,6 @@ describe('app/components/ExperimentPage', () => {
       uninstallAddon: sinon.spy(),
       navigateTo: sinon.spy(),
       isExperimentEnabled: sinon.spy(),
-      getExperimentBySlug: sinon.spy(),
       requireRestart: sinon.spy(),
       sendToGA: sinon.spy(),
       openWindow: sinon.spy(),
@@ -71,8 +69,8 @@ describe('app/components/ExperimentPage', () => {
 
   const setExperiment = experiment => {
     subject.setProps({
-      experiments: [ experiment ],
-      getExperimentBySlug: slug => experiment
+      experiment,
+      experiments: [ experiment ]
     });
     return experiment;
   };
@@ -81,15 +79,12 @@ describe('app/components/ExperimentPage', () => {
     expect(subject.find('LoadingPage')).to.have.property('length', 1);
   });
 
-  it('should render a 404 page if slug does not match any experiments', () => {
+  it('should render a 404 page if experiment is undefined', () => {
     props = { ...props,
-      params: { slug: 'nofindme' },
-      getExperimentBySlug: sinon.spy(slug => null),
+      experiment: undefined,
       experiments: [ { ...mockExperiment, slug: 'notit' } ]
     };
     subject.setProps(props);
-    expect(props.getExperimentBySlug.lastCall.args)
-      .to.deep.equal([props.params.slug]);
     expect(subject.find('NotFoundPage'))
       .to.have.property('length', 1);
   });
@@ -124,9 +119,9 @@ describe('app/components/ExperimentPage', () => {
       const prevExperiment = { ...mockExperiment, inProgress: true };
       const nextExperiment = { ...mockExperiment, inProgress: false };
 
-      subject.setProps({ getExperimentBySlug: slug => prevExperiment });
+      subject.setProps({ experiment: prevExperiment });
       subject.setState({ isEnabling: true, isDisabling: true });
-      subject.setProps({ getExperimentBySlug: slug => nextExperiment });
+      subject.setProps({ experiment: nextExperiment });
 
       expect(subject.state('isEnabling')).to.be.false;
       expect(subject.state('isDisabling')).to.be.false;
@@ -154,7 +149,7 @@ describe('app/components/ExperimentPage', () => {
       expect(subject.find('.incompatible-addons')).to.have.property('length', 0);
 
       const experiment = { ...mockExperiment, incompatible: { foo: 1, bar: 2 } };
-      subject.setProps({ getExperimentBySlug: slug => experiment });
+      subject.setProps({ experiment });
 
       subject.setProps({ installedAddons: [ 'baz' ] });
       expect(subject.find('.incompatible-addons')).to.have.property('length', 0);
@@ -272,7 +267,7 @@ describe('app/components/ExperimentPage', () => {
           hasAddon: true,
           getScrollY: () => scrollY,
           experiments: [ mockExperiment ],
-          getExperimentBySlug: slug => mockExperiment
+          experiment: mockExperiment
         };
         const mountedSubject = mount(<ExperimentPage {...mountedProps} />);
 
