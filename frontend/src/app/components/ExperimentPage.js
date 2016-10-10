@@ -23,12 +23,10 @@ export default class ExperimentPage extends React.Component {
   constructor(props) {
     super(props);
 
-    const { isExperimentEnabled, getExperimentBySlug } = this.props;
-    const experiment = getExperimentBySlug(this.props.params.slug);
+    const { isExperimentEnabled, experiment } = this.props;
 
     // TODO: Clean this up per #1367
     this.state = {
-      experiment,
       enabled: isExperimentEnabled(experiment),
       useStickyHeader: false,
       highlightMeasurementPanel: false,
@@ -49,10 +47,10 @@ export default class ExperimentPage extends React.Component {
   componentWillReceiveProps(nextProps) {
     const { shouldShowTourDialog, enabled: prevEnabled } = this.state;
 
-    const prevExperiment = this.props.getExperimentBySlug(this.props.params.slug);
+    const prevExperiment = this.props.experiment;
     const prevInProgress = prevExperiment && prevExperiment.inProgress;
 
-    const nextExperiment = nextProps.getExperimentBySlug(nextProps.params.slug);
+    const nextExperiment = nextProps.experiment;
     const nextInProgress = nextExperiment && nextExperiment.inProgress;
     const nextEnabled = nextExperiment && nextProps.isExperimentEnabled(nextExperiment);
 
@@ -64,7 +62,6 @@ export default class ExperimentPage extends React.Component {
     }
 
     this.setState({
-      experiment: nextExperiment,
       enabled: nextEnabled
     });
 
@@ -97,7 +94,7 @@ export default class ExperimentPage extends React.Component {
   }
 
   renderIncompatibleAddons() {
-    const { incompatible } = this.state.experiment;
+    const { incompatible } = this.props.experiment;
     const installed = this.getIncompatibleInstalled(incompatible);
     if (installed.length === 0) return null;
 
@@ -123,23 +120,23 @@ export default class ExperimentPage extends React.Component {
   }
 
   render() {
-    const { experiments, installed, isDev, hasAddon } = this.props;
+    const { experiment, experiments, installed, isDev, hasAddon } = this.props;
 
     // Show the loading animation if experiments haven't been loaded yet.
     if (experiments.length === 0) { return <LoadingPage />; }
 
     // Show a 404 page if an experiment for this slug wasn't found.
-    if (!this.state.experiment) { return <NotFoundPage />; }
+    if (!experiment) { return <NotFoundPage />; }
 
     // Show a 404 page if an experiment is not ready for launch yet
     const utcNow = moment.utc();
-    if (moment(utcNow).isBefore(this.state.experiment.launch_date)
-        && typeof this.state.experiment.launch_date !== 'undefined'
+    if (moment(utcNow).isBefore(experiment.launch_date)
+        && typeof experiment.launch_date !== 'undefined'
         && !isDev) {
       return <NotFoundPage />;
     }
 
-    const { experiment, enabled, useStickyHeader, highlightMeasurementPanel,
+    const { enabled, useStickyHeader, highlightMeasurementPanel,
             showDisableDialog, showTourDialog, isEnabling, isDisabling,
             progressButtonWidth, showPreFeedbackDialog } = this.state;
 
@@ -167,18 +164,18 @@ export default class ExperimentPage extends React.Component {
 
         {showDisableDialog &&
           <ExperimentDisableDialog {...this.props}
-            experiment={experiment} installed={installed}
+            installed={installed}
             onCancel={() => this.setState({ showDisableDialog: false })}
             onSubmit={() => this.setState({ showDisableDialog: false })} />}
 
         {showTourDialog &&
-          <ExperimentTourDialog {...this.props} experiment={experiment}
+          <ExperimentTourDialog {...this.props}
             onCancel={() => this.setState({ showTourDialog: false })}
             onComplete={() => this.setState({ showTourDialog: false })} />}
 
         {showPreFeedbackDialog &&
           <ExperimentPreFeedbackDialog {...this.props}
-            experiment={experiment} surveyURL={surveyURL}
+            surveyURL={surveyURL}
             onCancel={() => this.setState({ showPreFeedbackDialog: false })} />}
 
         <Header {...this.props} />
@@ -439,7 +436,7 @@ export default class ExperimentPage extends React.Component {
 
   handleFeedback(evt) {
     evt.preventDefault();
-    const { pre_feedback_copy } = this.state.experiment;
+    const { pre_feedback_copy } = this.props.experiment;
     if (pre_feedback_copy === null || !pre_feedback_copy) {
       this.feedback(evt);
     } else {
@@ -448,8 +445,8 @@ export default class ExperimentPage extends React.Component {
   }
 
   installExperiment(evt) {
-    const { enableExperiment, sendToGA } = this.props;
-    const { experiment, isEnabling } = this.state;
+    const { experiment, enableExperiment, sendToGA } = this.props;
+    const { isEnabling } = this.state;
 
     evt.preventDefault();
 
@@ -473,8 +470,8 @@ export default class ExperimentPage extends React.Component {
   }
 
   uninstallExperiment(evt) {
-    const { disableExperiment } = this.props;
-    const { experiment, isDisabling } = this.state;
+    const { experiment, disableExperiment } = this.props;
+    const { isDisabling } = this.state;
 
     evt.preventDefault();
 
@@ -507,7 +504,6 @@ export default class ExperimentPage extends React.Component {
 }
 
 ExperimentPage.propTypes = {
-  params: React.PropTypes.object,
   userAgent: React.PropTypes.string,
   isDev: React.PropTypes.bool,
   hasAddon: React.PropTypes.bool,
@@ -516,7 +512,6 @@ ExperimentPage.propTypes = {
   installedAddons: React.PropTypes.array,
   navigateTo: React.PropTypes.func,
   isExperimentEnabled: React.PropTypes.func,
-  getExperimentBySlug: React.PropTypes.func,
   requireRestart: React.PropTypes.func,
   sendToGA: React.PropTypes.func,
   openWindow: React.PropTypes.func,

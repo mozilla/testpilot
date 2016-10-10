@@ -25,7 +25,7 @@ const AppRouter = ({ history }) => (
     <Route path="/" component={App}>
       <IndexRoute component={LandingPage} />
       <Route path="/experiments(/)" component={ExperimentsListPage} />
-      <Route path="/experiments/:slug" component={ExperimentPage} />
+      <Route path="/experiments/:slug" component={props => <ExperimentPage {...props} experiment={props.getExperimentBySlug(props.params.slug)} />} />
       <Route path="/legacy" component={LegacyPage} />
       <Route path="/404" component={NotFoundPage} />
       <Route path="/share" component={SharePage} />

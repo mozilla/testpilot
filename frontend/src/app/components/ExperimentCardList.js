@@ -27,9 +27,10 @@ export default class ExperimentCardList extends React.Component {
     return (
       <div className="card-list experiments">
         {this.getExperiments().map((experiment, key) => (
-          <ExperimentRowCard experiment={experiment}
+          <ExperimentRowCard {...this.props}
+                             experiment={experiment}
                              enabled={isExperimentEnabled(experiment)}
-                             key={key} {...this.props} />
+                             key={key} />
         ))}
       </div>
     );
