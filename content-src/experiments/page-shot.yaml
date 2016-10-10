@@ -46,7 +46,7 @@ measurements: >
       in our <a href="https://www.mozilla.org/privacy/websites/"
       target="_blank">Websites, Communications & Cookies Privacy Notice</a>.</li>
   </ul>
-xpi_url: 'https://testpilot.firefox.com/files/pageshot/pageshot-0.1.201609272025.xpi'
+xpi_url: 'https://testpilot.firefox.com/files/pageshot/latest'
 addon_id: jid1-NeEaf3sAHdKHPA@jetpack
 gradient_start: '#02BDAD'
 gradient_stop: '#035295'

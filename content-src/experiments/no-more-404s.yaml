@@ -35,7 +35,7 @@ measurements: >
     <li>We may share survey results you submit to us and aggregated telemetry
       data related to this experiment with the Internet Archive.</li>
   </ul>
-xpi_url: 'https://testpilot.cdn.mozilla.net/nomore404s/wayback_machine-1.5.6-fx%2Ban.xpi'
+xpi_url: 'https://testpilot.cdn.mozilla.net/nomore404s/latest'
 addon_id: wayback_machine@mozilla.org
 gradient_start: '#111111'
 gradient_stop: '#222222'
