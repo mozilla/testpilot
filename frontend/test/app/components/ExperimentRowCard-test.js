@@ -26,7 +26,8 @@ describe('app/components/ExperimentRowCard', () => {
       eventCategory: 'test category',
       navigateTo: sinon.spy(),
       sendToGA: sinon.spy(),
-      getExperimentLastSeen: sinon.spy()
+      getExperimentLastSeen: sinon.spy(),
+      isExperimentCompleted: sinon.spy()
     };
     subject = shallow(<ExperimentRowCard {...props} />);
   });
@@ -156,6 +157,18 @@ describe('app/components/ExperimentRowCard', () => {
       completed: moment().add(6, 'days').utc()
     }});
     expect(findByL10nID('experimentListEndingSoon')).to.have.property('length', 1);
+  });
+
+  it('should have a "Learn More" button if the experiment is completed', () => {
+    expect(findByL10nID('experimentCardLearnMore')).to.have.property('length', 0);
+    subject.setProps({
+      experiment: { ...mockExperiment,
+        completed: moment().subtract(1, 'days').utc()
+      },
+      isExperimentCompleted: () => true
+    });
+    expect(findByL10nID('experimentCardLearnMore')).to.have.property('length', 1);
+    expect(findByL10nID('participantCount')).to.have.property('length', 0);
   });
 
   it('should ping GA and open the detail page when clicked', () => {

@@ -7,7 +7,7 @@ import { push as routerPush } from 'react-router-redux';
 import cookies from 'js-cookie';
 import Clipboard from 'clipboard';
 
-import { getInstalled, isExperimentEnabled, isInstalledLoaded } from '../reducers/addon';
+import { getInstalled, isExperimentEnabled, isExperimentCompleted, isInstalledLoaded } from '../reducers/addon';
 import { getExperimentBySlug, isExperimentsLoaded } from '../reducers/experiments';
 import experimentSelector from '../selectors/experiment';
 import { uninstallAddon, installAddon, enableExperiment, disableExperiment, pollAddon } from '../lib/addon';
@@ -132,6 +132,7 @@ export default connect(
     isDev: state.browser.isDev,
     isExperimentEnabled: experiment =>
       isExperimentEnabled(state.addon, experiment),
+    isExperimentCompleted,
     isFirefox: state.browser.isFirefox,
     isMinFirefox: state.browser.isMinFirefox,
     routing: state.routing
