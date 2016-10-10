@@ -75,6 +75,16 @@ aws s3 sync \
   --acl "public-read" \
   dist/ s3://${TESTPILOT_BUCKET}/
 
+# SVG; cache forever, assign correct content-type
+aws s3 sync \
+  --content-type "image/svg+xml" \
+  --exclude "*" \
+  --include "*.svg" \
+  --metadata "{${HPKP}, ${HSTS}}" \
+  --metadata-directive "REPLACE" \
+  --acl "public-read" \
+  dist/ s3://${TESTPILOT_BUCKET}/
+
 # Everything else; cache forever, because it has hashes in the filenames
 aws s3 sync \
   --delete \
