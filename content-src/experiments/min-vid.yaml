@@ -39,7 +39,7 @@ measurements: >
       finding the experiment.</li>
     <li>We do not collect information about the specific videos you encounter.</li>
   </ul>
-xpi_url: 'https://testpilot.firefox.com/files/min-vid/min-vid-latest.xpi'
+xpi_url: 'https://testpilot.firefox.com/files/min-vid/latest'
 addon_id: '@min-vid'
 gradient_start: '#FED66F'
 gradient_stop: '#FD667B'

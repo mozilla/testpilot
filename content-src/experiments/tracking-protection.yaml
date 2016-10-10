@@ -42,7 +42,7 @@ measurements: >
       You can read more about the standards Disconnect applies <a
       href="https://disconnect.me/trackerprotection" target="_blank">here</a>.</li>
   </ul>
-xpi_url: 'https://testpilot.firefox.com/files/blok/blok-1.0.1.xpi'
+xpi_url: 'https://testpilot.firefox.com/files/blok/latest'
 addon_id: blok@mozilla.org
 gradient_start: '#8725A7'
 gradient_stop: '#591C56'
