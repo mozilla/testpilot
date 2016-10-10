@@ -17,12 +17,14 @@ const mocks = {
     PrefsService: ['get', 'set']
   })
 };
-const TP_PREFS = [
-  'privacy.trackingprotection.enabled',
-  'privacy.trackingprotection.pbmode.enabled',
-  'services.sync.prefs.sync.privacy.trackingprotection.enabled',
-  'services.sync.prefs.sync.privacy.trackingprotection.pbmode.enabled'
-];
+const TP_PREFS = {
+  'privacy.trackingprotection.enabled': false,
+  'privacy.trackingprotection.pbmode.enabled': true,
+  'services.sync.prefs.sync.privacy.trackingprotection.enabled': false,
+  'services.sync.prefs.sync.privacy.trackingprotection.pbmode.enabled': false
+};
+
+const PREFNAMES = Object.keys(TP_PREFS);
 
 const mockLoader = MockUtils.loader(module, './lib/experiment-hacks.js', {
   'sdk/simple-storage': { storage: mocks.store },
@@ -32,7 +34,7 @@ const mockLoader = MockUtils.loader(module, './lib/experiment-hacks.js', {
 const hacks = mockLoader.require('../lib/experiment-hacks');
 
 exports['test fresh enabled with blok id'] = assert => {
-  const expected = TP_PREFS.map(p => [p, true]);
+  const expected = PREFNAMES.map(p => [p, true]);
   mocks.callbacks.PrefsService.get.implement(() => true);
 
   hacks.enabled(BLOK_ID);
@@ -41,15 +43,15 @@ exports['test fresh enabled with blok id'] = assert => {
   const sets = mocks.callbacks.PrefsService.set.calls();
   assert.equal(gets.length, 4, 'got original prefs');
   assert.equal(sets.length, 4, 'set prefs');
-  sets.forEach((set, i) => {
-    assert.equal(set[0], TP_PREFS[i]);
-    assert.equal(set[1], false, `${set[0]} set to false`);
+  sets.forEach(set => {
+    assert.ok(PREFNAMES.includes(set[0]));
+    assert.equal(set[1], TP_PREFS[set[0]], `${set[0]} set ok`);
   });
   assert.deepEqual(mocks.store.tpPrefs, expected, 'prefs set as expected');
 };
 
 exports['test enabled with blok id when already set'] = assert => {
-  const expected = TP_PREFS.map(p => [p, true]);
+  const expected = PREFNAMES.map(p => [p, true]);
   mocks.callbacks.PrefsService.get.implement(() => true);
   // once to set
   hacks.enabled(BLOK_ID);
@@ -60,9 +62,9 @@ exports['test enabled with blok id when already set'] = assert => {
   const sets = mocks.callbacks.PrefsService.set.calls();
   assert.equal(gets.length, 0, 'no gets called');
   assert.equal(sets.length, 4, 'set prefs');
-  sets.forEach((set, i) => {
-    assert.equal(set[0], TP_PREFS[i]);
-    assert.equal(set[1], false, `${set[0]} set to false`);
+  sets.forEach(set => {
+    assert.ok(PREFNAMES.includes(set[0]));
+    assert.equal(set[1], TP_PREFS[set[0]], `${set[0]} set ok`);
   });
   assert.deepEqual(mocks.store.tpPrefs, expected, 'prefs set as expected');
 };
@@ -86,8 +88,8 @@ exports['test disabled after enabled with blok id'] = assert => {
 
   const sets = mocks.callbacks.PrefsService.set.calls();
   assert.equal(sets.length, 4, 'set prefs');
-  sets.forEach((set, i) => {
-    assert.equal(set[0], TP_PREFS[i]);
+  sets.forEach(set => {
+    assert.ok(PREFNAMES.includes(set[0]));
     assert.equal(set[1], true, `${set[0]} set to true`);
   });
   assert.equal(mocks.store.tpPrefs, undefined, 'tpPrefs was cleared');
@@ -102,7 +104,7 @@ exports['test disabled without enabled'] = assert => {
 };
 
 exports['test disabled non-blok id'] = assert => {
-  const expected = TP_PREFS.map(p => [p, true]);
+  const expected = PREFNAMES.map(p => [p, true]);
   mocks.callbacks.PrefsService.get.implement(() => true);
 
   hacks.enabled(BLOK_ID);
