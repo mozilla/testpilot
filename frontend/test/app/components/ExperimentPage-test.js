@@ -233,6 +233,13 @@ describe('app/components/ExperimentPage', () => {
         }]);
       });
 
+      it('should show the tour dialog when the "tour" link is clicked', () => {
+        subject.setState({ showTourDialog: false });
+        subject.find('a.showTour').simulate('click', mockClickEvent);
+        expect(subject.state('showTourDialog')).to.be.true;
+        expect(subject.find('ExperimentTourDialog')).to.have.property('length', 1);
+      });
+
       it('should display a warning only if userAgent does not meet minimum version', () => {
         setExperiment({ ...mockExperiment, min_release: 50 });
 

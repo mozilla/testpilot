@@ -252,8 +252,9 @@ export default class ExperimentPage extends React.Component {
                           <td data-l10n-id="version">Version</td>
                           <td>
                             <span data-hook="version">{version}</span>
+                            {changelog_url && <span>&nbsp;<a data-l10n-id="changelog" data-hook="changelog-url" href={changelog_url}>changelog</a>,</span>}
                             &nbsp;
-                            {changelog_url && <a data-l10n-id="changelog" data-hook="changelog-url" href={changelog_url}>changelog</a>}
+                            <a className="showTour" data-l10n-id="tourLink" onClick={e => this.showTour(e)} href="#">tour</a>
                           </td>
                         </tr>
                         <tr>
@@ -502,6 +503,11 @@ export default class ExperimentPage extends React.Component {
     this.uninstallExperiment(evt);
 
     this.setState({ showDisableDialog: true });
+  }
+
+  showTour(e) {
+    e.preventDefault();
+    this.setState({ showTourDialog: true });
   }
 
 }

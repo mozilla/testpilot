@@ -127,6 +127,7 @@ experimentPrivacyNotice = You can learn more about the data collection for {$tit
 contributorsHeading = Brought to you by
 version = Version
 changelog = changelog
+tourLink = tour
 lastUpdate = Last Update
 contribute = Contribute
 bugReports = Bug Reports
