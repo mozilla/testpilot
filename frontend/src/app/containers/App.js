@@ -168,6 +168,10 @@ export default connect(
     },
     getCookie: name => cookies.get(name),
     removeCookie: name => cookies.remove(name),
-    setNavigatorTestpilotAddon: value => window.navigator.testpilotAddon = value
+    setNavigatorTestpilotAddon: value => window.navigator.testpilotAddon = value,
+    getExperimentLastSeen: experiment =>
+      parseInt(window.localStorage.getItem(`experiment-last-seen-${experiment.id}`), 10),
+    setExperimentLastSeen: (experiment, value) =>
+      window.localStorage.setItem(`experiment-last-seen-${experiment.id}`, value || Date.now())
   }, ownProps, stateProps, dispatchProps)
 )(App);

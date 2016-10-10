@@ -138,7 +138,7 @@ export class ExperimentDetail extends React.Component {
   }
 
   render() {
-    const { experiment, experiments, installed, isDev, hasAddon } = this.props;
+    const { experiment, experiments, installed, isDev, hasAddon, setExperimentLastSeen } = this.props;
 
     // Show the loading animation if experiments haven't been loaded yet.
     if (experiments.length === 0) { return <LoadingPage />; }
@@ -161,6 +161,10 @@ export class ExperimentDetail extends React.Component {
     const { title, version, contribute_url, bug_report_url, discourse_url,
             introduction, measurements, privacy_notice_url, changelog_url,
             thumbnail, survey_url, contributors, details, min_release } = experiment;
+
+    // Set the timestamp for when this experiment was last seen (for
+    // ExperimentRowCard updated/launched banner logic)
+    setExperimentLastSeen(experiment);
 
     // TODO: #1138 - add optional subtitles the right way
     const subtitle = (title === 'No More 404s') ? 'Powered by the Wayback Machine' : '';
@@ -600,5 +604,6 @@ ExperimentDetail.propTypes = {
   getScrollY: React.PropTypes.func,
   setScrollY: React.PropTypes.func,
   getElementY: React.PropTypes.func,
-  getElementOffsetHeight: React.PropTypes.func
+  getElementOffsetHeight: React.PropTypes.func,
+  setExperimentLastSeen: React.PropTypes.func
 };

@@ -82,7 +82,7 @@ export default class ExperimentRowCard extends React.Component {
   }
 
   justUpdated() {
-    const { experiment, enabled } = this.props;
+    const { experiment, enabled, getExperimentLastSeen } = this.props;
 
     // Enabled trumps launched.
     if (enabled) { return false; }
@@ -93,14 +93,14 @@ export default class ExperimentRowCard extends React.Component {
     if ((now - modified) > MAX_JUST_UPDATED_PERIOD) { return false; }
 
     // If modified since the last time seen, *do* consider it updated.
-    if (modified > experiment.lastSeen) { return true; }
+    if (modified > getExperimentLastSeen(experiment)) { return true; }
 
     // All else fails, don't consider it updated.
     return false;
   }
 
   justLaunched() {
-    const { experiment, enabled } = this.props;
+    const { experiment, enabled, getExperimentLastSeen } = this.props;
 
     // Enabled & updated trumps launched.
     if (enabled || this.justUpdated()) { return false; }
@@ -111,7 +111,7 @@ export default class ExperimentRowCard extends React.Component {
     if ((now - created) > MAX_JUST_LAUNCHED_PERIOD) { return false; }
 
     // If never seen, *do* consider it "just" launched.
-    if (!experiment.lastSeen) { return true; }
+    if (!getExperimentLastSeen(experiment)) { return true; }
 
     // All else fails, don't consider it launched.
     return false;
@@ -125,9 +125,9 @@ export default class ExperimentRowCard extends React.Component {
       if (delta < 0) {
         return '';
       } else if (delta < ONE_DAY) {
-        return 'Ending Tomorrow';
+        return <span data-l10n-id="experimentListEndingTomorrow">Ending Tomorrow</span>;
       } else if (delta < ONE_WEEK) {
-        return 'Ending Soon';
+        return <span data-l10n-id="experimentListEndingSoon">Ending Soon</span>;
       }
     }
     return '';
@@ -149,7 +149,11 @@ export default class ExperimentRowCard extends React.Component {
 }
 
 ExperimentRowCard.propTypes = {
-  experiment: React.PropTypes.object,
-  hasAddon: React.PropTypes.bool,
-  eventCategory: React.PropTypes.string
+  experiment: React.PropTypes.object.isRequired,
+  hasAddon: React.PropTypes.bool.isRequired,
+  enabled: React.PropTypes.bool.isRequired,
+  eventCategory: React.PropTypes.string.isRequired,
+  getExperimentLastSeen: React.PropTypes.func.isRequired,
+  sendToGA: React.PropTypes.func.isRequired,
+  navigateTo: React.PropTypes.func.isRequired
 };

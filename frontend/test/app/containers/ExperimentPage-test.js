@@ -88,6 +88,7 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
       setScrollY: sinon.spy(),
       getElementY: sinon.spy(),
       getElementOffsetHeight: sinon.spy(),
+      setExperimentLastSeen: sinon.spy(),
       userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:51.0) Gecko/20100101 Firefox/51.0'
     };
 
@@ -142,6 +143,10 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
       setExperiment({ ...mockExperiment, launch_date: moment().add(1, 'days').utc() });
       subject.setProps({ isDev: true });
       expect(subject.find('NotFoundPage')).to.have.property('length', 0);
+    });
+
+    it('should set last seen timestamp for experiment when rendered', () => {
+      expect(props.setExperimentLastSeen.called).to.be.true;
     });
 
     it('should clear both enabling & disabling state if experiment.inProgress changes', () => {
@@ -341,7 +346,7 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
         const elementY = 400;
         const genericElementHeight = 125;
 
-        subject.setProps({ 
+        subject.setProps({
           getElementY: sel => elementY,
           getElementOffsetHeight: () => genericElementHeight
         });
