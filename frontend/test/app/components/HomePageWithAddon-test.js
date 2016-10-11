@@ -3,9 +3,9 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
 
-import ExperimentsListPage from '../../../src/app/components/ExperimentsListPage';
+import HomePageWithAddon from '../../../src/app/components/HomePageWithAddon';
 
-describe('app/components/ExperimentsListPage', () => {
+describe('app/components/HomePageWithAddon', () => {
   let props, experiments, subject;
   beforeEach(function() {
     props = {
@@ -21,7 +21,7 @@ describe('app/components/ExperimentsListPage', () => {
       sendToGA: sinon.spy(),
       openWindow: sinon.spy()
     };
-    subject = shallow(<ExperimentsListPage {...props} />);
+    subject = shallow(<HomePageWithAddon {...props} />);
   });
 
   it('should render expected content', () => {

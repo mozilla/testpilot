@@ -3,9 +3,9 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
 
-import LandingPage from '../../../src/app/components/LandingPage';
+import HomePageNoAddon from '../../../src/app/components/HomePageNoAddon';
 
-describe('app/components/LandingPage', () => {
+describe('app/components/HomePageNoAddon', () => {
   let props, subject, experiments;
   beforeEach(function() {
     props = {
@@ -15,7 +15,7 @@ describe('app/components/LandingPage', () => {
       uninstallAddon: sinon.spy(),
       sendToGA: sinon.spy(),
     };
-    subject = shallow(<LandingPage {...props} />);
+    subject = shallow(<HomePageNoAddon {...props} />);
   });
 
   const findByL10nID = (id) => subject.findWhere(el => id === el.props()['data-l10n-id']);

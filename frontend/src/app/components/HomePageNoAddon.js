@@ -5,7 +5,8 @@ import MainInstallButton from '../components/MainInstallButton';
 import ExperimentCardList from '../components/ExperimentCardList';
 import LoadingPage from './LoadingPage';
 
-export default class LandingPage extends React.Component {
+
+export default class HomePageNoAddon extends React.Component {
 
   render() {
     const { experiments } = this.props;
@@ -19,6 +20,7 @@ export default class LandingPage extends React.Component {
             <a href="/" className="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
           </h1>
         </header>
+
         <div className="split-banner responsive-content-wrapper">
           <div className="copter-wrapper fly-up">
             <div className="copter"></div>
@@ -39,13 +41,13 @@ export default class LandingPage extends React.Component {
 
         <div className="transparent-container">
           <div className="responsive-content-wrapper delayed-fade-in">
-              <h2 className="card-list-header" data-l10n-id="landingExperimentsTitle">Try out the latest experimental features</h2>
-              <div data-hook="experiment-list">
-                <ExperimentCardList {...this.props}
-                                    eventCategory="HomePage Interactions" />
-              </div>
+            <h2 className="card-list-header" data-l10n-id="landingExperimentsTitle">Try out the latest experimental features</h2>
+            <div data-hook="experiment-list">
+              <ExperimentCardList {...this.props} eventCategory="HomePage Interactions" />
+            </div>
           </div>
         </div>
+
         <div className="responsive-content-wrapper delayed-fade-in">
           <h2 className="card-list-header" data-l10n-id="landingCardListTitle">Get started in 3 easy steps</h2>
           <div id="how-to" className="card-list">
@@ -77,8 +79,9 @@ export default class LandingPage extends React.Component {
 
 }
 
-LandingPage.propTypes = {
+HomePageNoAddon.propTypes = {
   hasAddon: React.PropTypes.bool,
   isFirefox: React.PropTypes.bool,
   experiments: React.PropTypes.array
 };
+
