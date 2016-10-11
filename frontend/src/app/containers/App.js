@@ -7,8 +7,8 @@ import { push as routerPush } from 'react-router-redux';
 import cookies from 'js-cookie';
 import Clipboard from 'clipboard';
 
-import { getInstalled, isExperimentEnabled } from '../reducers/addon';
-import { getExperimentBySlug } from '../reducers/experiments';
+import { getInstalled, isExperimentEnabled, isInstalledLoaded } from '../reducers/addon';
+import { getExperimentBySlug, isExperimentsLoaded } from '../reducers/experiments';
 import experimentSelector from '../selectors/experiment';
 import { uninstallAddon, installAddon, enableExperiment, disableExperiment } from '../lib/addon';
 import addonActions from '../actions/addon';
@@ -18,6 +18,62 @@ import Restart from '../components/Restart';
 const clipboard = new Clipboard('button');
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.lastPingPathname = null;
+  }
+
+  measurePageview() {
+    const { routing, hasAddon, installed, installedLoaded, experimentsLoaded } = this.props;
+
+    // Wait until experiments are loaded
+    if (!experimentsLoaded) { return; }
+
+    // If we have an addon, wait until the installed experiments are loaded
+    if (hasAddon && !installedLoaded) { return; }
+
+    const { pathname } = routing.locationBeforeTransitions;
+
+    const experimentsPath = 'experiments/';
+
+    if (pathname === '/') {
+      const installedCount = Object.keys(installed).length;
+      const anyInstalled = installedCount > 0;
+      this.debounceSendToGA(pathname, 'pageview', {
+        dimension1: hasAddon,
+        dimension2: anyInstalled,
+        dimension3: installedCount
+      });
+    } else if (pathname === experimentsPath) {
+      this.debounceSendToGA(pathname, 'pageview', {
+        dimension1: hasAddon
+      });
+    } else if (pathname.indexOf(experimentsPath) === 0) {
+      const slug = pathname.substring(experimentsPath.length);
+      const experiment = this.props.getExperimentBySlug(slug);
+      this.debounceSendToGA(pathname, 'pageview', {
+        dimension1: hasAddon,
+        dimension4: isExperimentEnabled(experiment),
+        dimension5: experiment.title,
+        dimension6: experiment.installation_count
+      });
+    }
+  }
+
+  debounceSendToGA(pathname, type, dataIn) {
+    if (this.lastPingPathname === pathname) { return; }
+    this.lastPingPathname = pathname;
+    if (window.ga && ga.loaded) {
+      const data = dataIn || {};
+      data.hitType = type;
+      ga('send', data);
+    }
+  }
+
+  componentDidUpdate() {
+    this.measurePageview();
+  }
+
   render() {
     const { restart } = this.props.addon;
     if (restart.isRequired) {
@@ -62,16 +118,19 @@ export default connect(
   state => ({
     addon: state.addon,
     experiments: experimentSelector(state),
-    isFirefox: state.browser.isFirefox,
-    isMinFirefox: state.browser.isMinFirefox,
-    isDev: state.browser.isDev,
+    experimentsLoaded: isExperimentsLoaded(state.experiments),
+    getExperimentBySlug: slug =>
+      getExperimentBySlug(state.experiments, slug),
     hasAddon: state.addon.hasAddon,
     installed: getInstalled(state.addon),
     installedAddons: state.addon.installedAddons,
-    getExperimentBySlug: slug =>
-      getExperimentBySlug(state.experiments, slug),
+    installedLoaded: isInstalledLoaded(state.addon),
+    isDev: state.browser.isDev,
     isExperimentEnabled: experiment =>
-      isExperimentEnabled(state.addon, experiment)
+      isExperimentEnabled(state.addon, experiment),
+    isFirefox: state.browser.isFirefox,
+    isMinFirefox: state.browser.isMinFirefox,
+    routing: state.routing
   }),
   dispatch => ({
     navigateTo: path => dispatch(routerPush(path)),

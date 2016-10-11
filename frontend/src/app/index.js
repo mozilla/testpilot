@@ -22,11 +22,11 @@ import { setupAddonConnection } from './lib/addon';
 import config from './config';
 
 import experimentsActions from './actions/experiments';
+import Routes from './components/Routes';
 import experimentsReducer from './reducers/experiments';
 import browserReducer from './reducers/browser';
 import addonReducer from './reducers/addon';
 
-import AppRouter from './lib/router';
 
 es6Promise.polyfill();
 
@@ -68,7 +68,7 @@ history.listen(() => window.scroll(0, 0));
 
 ReactDOM.render(
   <Provider store={store}>
-    <AppRouter history={history} />
+    <Routes history={history} />
   </Provider>,
   document.querySelector('div[data-hook=page-container]')
 );

@@ -18,7 +18,25 @@ import ExperimentPreFeedbackDialog from '../components/ExperimentPreFeedbackDial
 
 const CHANGE_HEADER_ON = 105;
 
+
 export default class ExperimentPage extends React.Component {
+  render() {
+    const { getExperimentBySlug, params } = this.props;
+    const experiment = getExperimentBySlug(params.slug);
+    return <ExperimentDetail experiment={experiment} {...this.props} />;
+  }
+}
+
+
+ExperimentPage.propTypes = {
+  getExperimentBySlug: React.PropTypes.func,
+  params: React.PropTypes.shape({
+    slug: React.PropTypes.string
+  })
+};
+
+
+export class ExperimentDetail extends React.Component {
 
   constructor(props) {
     super(props);
@@ -503,7 +521,7 @@ export default class ExperimentPage extends React.Component {
 
 }
 
-ExperimentPage.propTypes = {
+ExperimentDetail.propTypes = {
   userAgent: React.PropTypes.string,
   isDev: React.PropTypes.bool,
   hasAddon: React.PropTypes.bool,
