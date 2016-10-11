@@ -49,7 +49,11 @@ class App extends Component {
         dimension1: hasAddon
       });
     } else if (pathname.indexOf(experimentsPath) === 0) {
-      const slug = pathname.substring(experimentsPath.length);
+      let slug = pathname.substring(experimentsPath.length);
+      // Trim trailing slash, if necessary
+      if (slug.charAt(slug.length - 1) === '/') {
+        slug = slug.substring(0, slug.length - 1);
+      }
       const experiment = this.props.getExperimentBySlug(slug);
       this.debounceSendToGA(pathname, 'pageview', {
         dimension1: hasAddon,
