@@ -134,16 +134,54 @@
   }
 }
 
+.restart-image {
+  @include respond-to('big') {
+    background-color: $white;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: $small-border-radius;
+    height: 313px;
+    margin-right: $grid-unit * 4;
+    padding: $grid-unit;
+    width: 248px;
+  }
+
+  @include respond-to('medium') {
+    display: none;
+  }
+
+  @include respond-to('small') {
+    display: none;
+  }
+}
+
 .restart-message {
-  h2 {
+
+  ol {
+    list-style-type: decimal;
+    margin: 0;
+  }
+
+  li {
     @include respond-to('not-small') {
-      font-size: $font-unit * 4;
-      line-height: $font-unit * 4.9;
+      font-size: $font-unit * 3.6;
+      line-height: $font-unit * 5.8;
       margin-bottom: $grid-unit * .5;
     }
 
-    font-style: italic;
+    @include respond-to('small') {
+      text-align: left;
+    }
+
     margin: 0;
+  }
+
+  .lead-in {
+    @include respond-to('small') {
+      text-align: left;
+    }
+
+    font-size: $font-unit * 2;
   }
 
   p {

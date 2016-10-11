@@ -28,7 +28,7 @@ function mozAddonManagerInstall(url) {
   });
 }
 
-export function installAddon(requireRestart, sendToGA, eventCategory, experimentTitle) {
+export function installAddon(requireRestart, sendToGA, eventCategory) {
   const { protocol, hostname, port } = window.location;
   const path = '/static/addon/addon.xpi';
   const downloadUrl = `${protocol}//${hostname}${port ? ':' + port : ''}${path}`;
@@ -50,7 +50,7 @@ export function installAddon(requireRestart, sendToGA, eventCategory, experiment
       gaEvent.dimension7 = RESTART_NEEDED ? 'restart required' : 'no restart';
       sendToGA('event', gaEvent);
       if (RESTART_NEEDED) {
-        requireRestart(experimentTitle);
+        requireRestart();
       }
     });
   } else {

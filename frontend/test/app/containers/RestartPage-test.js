@@ -10,7 +10,6 @@ describe('app/containers/RestartPage', () => {
   let props, subject;
   beforeEach(function() {
     props = {
-      experimentTitle: null,
       hasAddon: false,
       uninstallAddon: sinon.spy(),
       sendToGA: sinon.spy(),
@@ -31,19 +30,10 @@ describe('app/containers/RestartPage', () => {
     }]);
   });
 
-  it('should display expected content without experiment title', () => {
-    expect(findByL10nID('restartRequiredSubHeader')).to.have.property('length', 1);
-    expect(findByL10nID('restartRequiredFromLanding')).to.have.property('length', 1);
-    expect(findByL10nID('restartRequiredFromExperiment')).to.have.property('length', 0);
+  it('should display restart instructions', () => {
+    expect(findByL10nID('restartIntroLead')).to.have.property('length', 1);
+    expect(findByL10nID('restartIntroOne')).to.have.property('length', 1);
+    expect(findByL10nID('restartIntroTwo')).to.have.property('length', 1);
+    expect(findByL10nID('restartIntroThree')).to.have.property('length', 1);
   });
-
-  it('should display expected content with experiment title', () => {
-    const experimentTitle = 'foo bar baz';
-    subject.setProps({ experimentTitle });
-
-    expect(findByL10nID('restartRequiredSubHeader')).to.have.property('length', 1);
-    expect(findByL10nID('restartRequiredFromLanding')).to.have.property('length', 0);
-    expect(findByL10nID('restartRequiredFromExperiment')).to.have.property('length', 1);
-  });
-
 });

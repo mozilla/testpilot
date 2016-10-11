@@ -22,12 +22,11 @@ const disableExperiment = (state, { payload: experiment }) => {
   return { ...state, installed: newInstalled };
 };
 
-const requireRestart = (state, { payload: experimentTitle }) => {
+const requireRestart = state => {
   return {
     ...state,
     restart: {
-      isRequired: true,
-      forExperiment: experimentTitle || null
+      isRequired: true
     }
   };
 };
