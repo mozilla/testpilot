@@ -4,11 +4,37 @@ import sinon from 'sinon';
 import { shallow, mount } from 'enzyme';
 import moment from 'moment';
 
-import ExperimentPage from '../../../src/app/components/ExperimentPage';
+import ExperimentPage, { ExperimentDetail } from '../../../src/app/components/ExperimentPage';
 
 const CHANGE_HEADER_ON = 105;
 
+
 describe('app/components/ExperimentPage', () => {
+
+  const mockExperiment = {
+    slug: 'testing',
+    foo: 'bar'
+  };
+  const mockExperiments = [ mockExperiment ];
+  const mockParams = { slug: mockExperiment.slug };
+  const mockProps = {
+    experiments: [ mockExperiment ],
+    getExperimentBySlug: slug => {
+      return slug === mockExperiment.slug ? mockExperiment : null;
+    },
+    params: { slug: mockExperiment.slug }
+  };
+
+  it('should pass the correct experiment to children', () => {
+    const wrapper = shallow(<ExperimentPage {...mockProps} />);
+    const child = wrapper.find(ExperimentDetail);
+    expect(child.props().experiment).to.equal(mockExperiment);
+  });
+
+});
+
+
+describe('app/components/ExperimentPage:ExperimentDetail', () => {
 
   let mockExperiment, mockClickEvent, props, subject;
   beforeEach(() => {
@@ -46,6 +72,7 @@ describe('app/components/ExperimentPage', () => {
       experiments: [],
       installed: {},
       installedAddons: [],
+      params: {},
       uninstallAddon: sinon.spy(),
       navigateTo: sinon.spy(),
       isExperimentEnabled: sinon.spy(),
@@ -54,6 +81,7 @@ describe('app/components/ExperimentPage', () => {
       openWindow: sinon.spy(),
       enableExperiment: sinon.spy(),
       disableExperiment: sinon.spy(),
+      getExperimentBySlug: sinon.spy(),
       addScrollListener: sinon.spy(),
       removeScrollListener: sinon.spy(),
       getScrollY: sinon.spy(),
@@ -62,7 +90,7 @@ describe('app/components/ExperimentPage', () => {
       userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:51.0) Gecko/20100101 Firefox/51.0'
     };
 
-    subject = shallow(<ExperimentPage {...props} />);
+    subject = shallow(<ExperimentDetail {...props} />);
   });
 
   const findByL10nID = id => subject.findWhere(el => id === el.props()['data-l10n-id']);
@@ -269,7 +297,7 @@ describe('app/components/ExperimentPage', () => {
           experiments: [ mockExperiment ],
           experiment: mockExperiment
         };
-        const mountedSubject = mount(<ExperimentPage {...mountedProps} />);
+        const mountedSubject = mount(<ExperimentDetail {...mountedProps} />);
 
         expect(props.addScrollListener.called).to.be.true;
         expect(mountedSubject.state('useStickyHeader')).to.be.false;
