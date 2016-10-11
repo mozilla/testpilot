@@ -43,11 +43,12 @@
 
   header {
     @include flex-container(column, space-between, flex-start);
-    margin-bottom: $grid-unit * .75;
+    margin-bottom: $grid-unit * .5;
     width: 100%;
   }
 
   h3 {
+    font-size: 20px;
     margin: 0;
   }
 
@@ -57,14 +58,15 @@
 
   p {
     flex: 1;
+    font-size: $font-unit + 4;
     line-height: 1.4 * $line-unit;
-    margin: $grid-unit * .5 0;
+    margin: 0 0 $grid-unit * .5;
   }
 
   span {
-    color: $transparent-black-4;
-    font-size: 1.1 * $font-unit;
-    margin: 0;
+    color: $transparent-black-5;
+    font-size: 1.2 * $font-unit;
+    margin: 0 0 ($grid-unit * .5);
   }
 
   &.enabled {
@@ -161,7 +163,7 @@
   background: $transparent-black-2;
   border-radius: $small-border-radius $small-border-radius 0 0;
   box-shadow: 0 -2px 2px $transparent-white-1 inset;
-  height: $grid-unit * 8;
+  height: $grid-unit * 7;
   overflow: hidden;
   position: relative;
 
@@ -180,9 +182,9 @@
 
 .experiment-icon {
   background-repeat: no-repeat;
-  background-size: $grid-unit * 4.8 $grid-unit * 4.8;
+  background-size: $grid-unit * 4 $grid-unit * 4;
   filter: drop-shadow(0 1px 0 $transparent-black-1);
-  flex: 0 0 $grid-unit * 4.8;
-  height: $grid-unit * 4.8;
+  flex: 0 0 $grid-unit * 4;
+  height: $grid-unit * 4;
   opacity: .9;
 }

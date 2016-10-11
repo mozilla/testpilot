@@ -72,6 +72,8 @@ experimentListJustUpdatedTab = Just Updated
 isEnabledStatusMessage = {$title} is enabled.
 installErrorMessage = Uh oh. {$title} could not be enabled. Try again later.
 participantCount = <span>{$installation_count}</span> participants
+experimentCardManage = Manage
+experimentCardGetStarted = Get Started
 
 experimentPreFeedbackTitle = {$title} feedback
 experimentPreFeedbackLinkCopy = Give feedback about the {$title} experiment
