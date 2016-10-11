@@ -8,19 +8,20 @@ const PrefsService = require('sdk/preferences/service');
 const store = require('sdk/simple-storage').storage;
 
 const BLOK_ID = 'blok@mozilla.org';
-const TP_PREFS = [
-  'privacy.trackingprotection.enabled',
-  'privacy.trackingprotection.pbmode.enabled',
-  'services.sync.prefs.sync.privacy.trackingprotection.enabled',
-  'services.sync.prefs.sync.privacy.trackingprotection.pbmode.enabled'
-];
+const TP_PREFS = {
+  'privacy.trackingprotection.enabled': false,
+  'privacy.trackingprotection.pbmode.enabled': true,
+  'services.sync.prefs.sync.privacy.trackingprotection.enabled': false,
+  'services.sync.prefs.sync.privacy.trackingprotection.pbmode.enabled': false
+};
 
 function enableBlok(id) {
   if (id !== BLOK_ID) { return; }
+  const prefnames = Object.keys(TP_PREFS);
   if (!store.tpPrefs) {
-    store.tpPrefs = TP_PREFS.map(name => [name, PrefsService.get(name)]);
+    store.tpPrefs = prefnames.map(name => [name, PrefsService.get(name)]);
   }
-  TP_PREFS.forEach(name => { PrefsService.set(name, false); });
+  prefnames.forEach(name => { PrefsService.set(name, TP_PREFS[name]); });
 }
 
 function disableBlok(id) {
