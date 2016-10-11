@@ -6,7 +6,8 @@ import EmailDialog from '../components/EmailDialog';
 import ExperimentCardList from '../components/ExperimentCardList';
 import LoadingPage from './LoadingPage';
 
-export default class ExperimentsListPage extends React.Component {
+
+export default class HomePageWithAddon extends React.Component {
 
   constructor(props) {
     super(props);
@@ -58,7 +59,7 @@ export default class ExperimentsListPage extends React.Component {
   }
 }
 
-ExperimentsListPage.propTypes = {
+HomePageWithAddon.propTypes = {
   hasAddon: React.PropTypes.bool,
   getCookie: React.PropTypes.func,
   removeCookie: React.PropTypes.func,

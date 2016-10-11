@@ -1,6 +1,6 @@
 /* global ga */
 import React from 'react';
-import { Router, Route, IndexRoute } from 'react-router';
+import { IndexRoute, Redirect, Route, Router } from 'react-router';
 import { push as routerPush } from 'react-router-redux';
 import { connect } from 'react-redux';
 
@@ -9,22 +9,22 @@ import { getExperimentBySlug, isExperimentsLoaded } from '../reducers/experiment
 
 import App from '../containers/App';
 
-import LandingPage from '../components/LandingPage';
-import ExperimentsListPage from '../components/ExperimentsListPage';
+import ErrorPage from '../components/ErrorPage';
 import ExperimentPage from '../components/ExperimentPage';
-import RetirePage from '../components/RetirePage';
-import Restart from '../components/Restart';
+import HomePage from '../components/HomePage';
 import LegacyPage from '../components/LegacyPage';
 import NotFoundPage from '../components/NotFoundPage';
-import SharePage from '../components/SharePage';
-import ErrorPage from '../components/ErrorPage';
 import OnboardingPage from '../components/OnboardingPage';
+import Restart from '../components/Restart';
+import RetirePage from '../components/RetirePage';
+import SharePage from '../components/SharePage';
+
 
 const AppRouter = ({ history }) => (
   <Router history={history}>
     <Route path="/" component={App}>
-      <IndexRoute component={LandingPage} />
-      <Route path="/experiments(/)" component={ExperimentsListPage} />
+      <IndexRoute component={HomePage} />
+      <Redirect from="/experiments(/)" to="/" />
       <Route path="/experiments/:slug" component={props => <ExperimentPage {...props} experiment={props.getExperimentBySlug(props.params.slug)} />} />
       <Route path="/legacy" component={LegacyPage} />
       <Route path="/404" component={NotFoundPage} />
@@ -41,17 +41,6 @@ const AppRouter = ({ history }) => (
 // Wrapper for <Router> that handles state-based redirection logic
 // TODO: Move all of this into the App container?
 class BaseAppRedirector extends React.Component {
-
-  performRedirects() {
-    const { routing, hasAddon, isFirefox, navigateTo } = this.props;
-    const location = routing.locationBeforeTransitions;
-    if (location.pathname === '/' && (hasAddon && isFirefox)) {
-      navigateTo('/experiments/');
-    }
-    if (location.pathname === 'experiments/' && (!hasAddon || !isFirefox)) {
-      navigateTo('/');
-    }
-  }
 
   measurePageview() {
     const { routing, hasAddon, installed, installedLoaded, experimentsLoaded } = this.props;
@@ -110,7 +99,6 @@ class BaseAppRedirector extends React.Component {
   render() { return this.router; }
 
   componentDidUpdate() {
-    this.performRedirects();
     this.measurePageview();
   }
 }
