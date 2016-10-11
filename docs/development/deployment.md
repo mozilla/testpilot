@@ -34,23 +34,15 @@ This will happen on Thursday at the end of sprint.
 
 Please be as detailed as possible in the release notes. Examples - [2016-07-05](https://github.com/mozilla/testpilot/releases/tag/2016-07-05), [2016-06-06](https://github.com/mozilla/testpilot/releases/tag/2016-06-06)
 
-## Request Deployment ##
+## Push to Stage ##
 
 This will happen on Thursday at the end of sprint.
 
-Once we've confirmed our release passed CircleCI, and we've confirmed that it is uploaded into the container, we need to request for Ops to deploy to stage.
+1. `git checkout stage-static`
+2. `git reset --hard YYYY-MM-DD`  # whatever your tag name is
+3. `git push mozilla stage-static -f`  # Replace `mozilla` with whatever you name your upstream.  The `-f` is only necessary if we cherry-picked patches when we pushed last time.
 
-This is done via a deployment bug.
-
-Example: https://bugzilla.mozilla.org/show_bug.cgi?id=1287228 ([click here to clone](https://bugzilla.mozilla.org/enter_bug.cgi?product=Cloud%20Services&cloned_bug_id=1287228&format=__default__))
-
-Be sure to keep the same folks on the CC list as in the example bug.
-
-## Deployed Stage ##
-
-This will happen on Thursday at the end of sprint.
-
-Ops will inform us once we are deployed to our *staging environment*: [http://testpilot.stage.mozaws.net](http://testpilot.stage.mozaws.net).
+Notifications of successful deployment will appear on IRC.
 
 ## Test Stage ##
 
@@ -72,9 +64,15 @@ If no issues are found, Softvision will note in the bug.
 
 On the following Monday, during our checkin, Softvision will give us an update on status of stage.
 
-## Approve Production ##
+## Deploy Production ##
 
-Once we are comfortable that the site has been tested, update the bug with approval to move to our *production environment*: [http://testpilot.firefox.com](http://testpilot.firefox.com).
+Once we are comfortable that the site has been tested:
+
+1. `git checkout production-static`
+2. `git reset --hard YYYY-MM-DD`  # whatever your tag name is
+3. `git push mozilla production-static -f`  # Replace `mozilla` with whatever you name your upstream.  The `-f` is only necessary if we cherry-picked patches when we pushed last time.
+
+Notifications of successful deployment will appear on IRC.
 
 We'll target Tuesday 8AM PST for deployment.
 
