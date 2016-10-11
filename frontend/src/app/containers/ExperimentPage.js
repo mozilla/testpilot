@@ -9,6 +9,7 @@ import LoadingPage from './LoadingPage';
 import NotFoundPage from './NotFoundPage';
 
 import ExperimentDisableDialog from '../components/ExperimentDisableDialog';
+import ExperimentEolDialog from '../components/ExperimentEolDialog';
 import ExperimentTourDialog from '../components/ExperimentTourDialog';
 import MainInstallButton from '../components/MainInstallButton';
 import ExperimentCardList from '../components/ExperimentCardList';
@@ -54,7 +55,8 @@ export class ExperimentDetail extends React.Component {
       showPreFeedbackDialog: false,
       changeHeaderOn: 125,
       stickyHeaderSiblingHeight: 0,
-      privacyScrollOffset: 15
+      privacyScrollOffset: 15,
+      showEolDialog: false
     };
 
     // HACK: Set this as a plain object property, so we don't trigger crazy
@@ -155,8 +157,9 @@ export class ExperimentDetail extends React.Component {
     }
 
     const { enabled, useStickyHeader, highlightMeasurementPanel,
-            showDisableDialog, showTourDialog, isEnabling, isDisabling,
-            progressButtonWidth, showPreFeedbackDialog, stickyHeaderSiblingHeight } = this.state;
+            showDisableDialog, showTourDialog,
+            showPreFeedbackDialog, showEolDialog,
+            stickyHeaderSiblingHeight } = this.state;
 
     const { title, version, contribute_url, bug_report_url, discourse_url,
             introduction, measurements, privacy_notice_url, changelog_url,
@@ -168,11 +171,8 @@ export class ExperimentDetail extends React.Component {
 
     // TODO: #1138 - add optional subtitles the right way
     const subtitle = (title === 'No More 404s') ? 'Powered by the Wayback Machine' : '';
-    const installation_count = (experiment.installation_count) ? experiment.installation_count.toLocaleString() : '0';
     const surveyURL = buildSurveyURL('givefeedback', title, installed, survey_url);
     const modified = formatDate(experiment.modified);
-    const completedDate = experiment.completed ? formatDate(experiment.completed) : null;
-    const validVersion = this.isValidVersion(min_release);
 
     let statusType = null;
     if (experiment.error) {
@@ -199,6 +199,15 @@ export class ExperimentDetail extends React.Component {
           <ExperimentPreFeedbackDialog {...this.props}
             surveyURL={surveyURL}
             onCancel={() => this.setState({ showPreFeedbackDialog: false })} />}
+
+        {showEolDialog &&
+          <ExperimentEolDialog
+            title={title}
+            onCancel={() => this.setState({ showEolDialog: false })}
+            onSubmit={e => {
+              this.setState({ showEolDialog: false });
+              this.renderUninstallSurvey(e);
+            }} />}
 
         <View {...this.props}>
 
@@ -235,12 +244,7 @@ export class ExperimentDetail extends React.Component {
                 <h1 data-hook="title">{title}</h1>
                 <h4 data-hook="subtitle" className="subtitle">{subtitle}</h4>
               </header>
-              {hasAddon && validVersion && <div className="experiment-controls" data-hook="active-user">
-                {!enabled && <a onClick={e => this.highlightPrivacy(e)} data-hook="highlight-privacy" className="highlight-privacy" data-l10n-id="highlightPrivacy">Your privacy</a>}
-                {enabled && <a onClick={e => this.handleFeedback(e)} data-l10n-id="giveFeedback" data-hook="feedback" id="feedback-button" className="button default" href={surveyURL}>Give Feedback</a>}
-                {enabled && <button onClick={e => this.renderUninstallSurvey(e)} style={{ width: progressButtonWidth }} data-hook="uninstall-experiment" id="uninstall-button" className={classnames(['button', 'secondary'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Disable <span data-hook="title">{title}</span></span></button>}
-                {!enabled && <button onClick={e => this.installExperiment(e)} style={{ width: progressButtonWidth }} data-hook="install-experiment" id="install-button"  className={classnames(['button', 'default'], { 'state-change': isEnabling })}><span className="state-change-inner"></span><span data-l10n-id="enableExperimentTransition" className="transition-text">Enabling...</span><span data-l10n-id="enableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Enable <span data-hook="title">{title}</span></span></button>}
-              </div>}
+              { this.renderExperimentControls() }
               { this.renderMinimumVersionNotice(title, hasAddon, min_release) }
             </div>
           </div>
@@ -258,7 +262,7 @@ export class ExperimentDetail extends React.Component {
                   </div>
                   <div className="details-sections">
                     <section className="user-count">
-                      { this.renderInstallationCount(installation_count, title) }
+                      { this.renderInstallationCount() }
                     </section>
                     {!hasAddon && <div data-hook="inactive-user">
                       {!!introduction && <section className="introduction" data-hook="introduction-container">
@@ -323,12 +327,7 @@ export class ExperimentDetail extends React.Component {
 
                 <div className="details-description">
                   {this.renderIncompatibleAddons()}
-                  {completedDate && <div data-hook="eol-message">
-                    <div className="eol-block"><div data-hook="ending-soon" data-l10n-id="eolMessage" data-l10n-args={JSON.stringify({ title, completedDate })}>
-                        <strong>This experiment is ending on <span data-hook="completedDate">{completedDate}</span></strong>.<br/><br/>
-                        After then you will still be able to use <span data-hook="title">{title}</span> but we will no longer be providing updates or support.</div>
-                    </div>
-                  </div>}
+                  {this.renderEolBlock()}
                   {hasAddon && <div data-hook="active-user">
                     {!!introduction && <section className="introduction" data-hook="introduction-container">
                       <div data-hook="introduction-html" dangerouslySetInnerHTML={createMarkup(introduction)}></div>
@@ -438,16 +437,26 @@ export class ExperimentDetail extends React.Component {
   // which has been sending telemetry pings via installs from dev
   // TODO: figure out a non-hack way to toggle user counts when we have
   // telemetry data coming in from prod
-  renderInstallationCount(installation_count, title) {
-    if (installation_count <= 100) {
+  renderInstallationCount() {
+    const { experiment } = this.props;
+    const { completed, title, installation_count } = experiment;
+    const eol = completed && (new Date(completed)).getTime() < Date.now();
+    if (eol) {
+      const completedDate = formatDate(completed);
+      return (
+        <span data-l10n-id="completedDateLabel" data-l10n-args={JSON.stringify({ completedDate })}>Experiment End Date: {completedDate}</span>
+      );
+    }
+    if (!installation_count || installation_count <= 100) {
       return (
         <span data-l10n-id="userCountContainerAlt" className="bold" data-l10n-args={JSON.stringify({ title })}>
         Just launched!</span>
       );
     }
+    const installCount = installation_count.toLocaleString();
     return (
-      <span data-l10n-id="userCountContainer" data-l10n-args={JSON.stringify({ installation_count, title })}>There are <span data-l10n-id="userCount" className="bold" data-hook="install-count">{installation_count}</span>
-      people trying <span data-hook="title">{title}</span> right now!</span>
+      <span data-l10n-id="userCountContainer" data-l10n-args={JSON.stringify({ installation_count: installCount, title })}>There are <span data-l10n-id="userCount" className="bold">{installCount}</span>
+      people trying {title} right now!</span>
     );
   }
 
@@ -461,6 +470,72 @@ export class ExperimentDetail extends React.Component {
       );
     }
     return null;
+  }
+
+  renderExperimentControls() {
+    const { enabled, isEnabling, isDisabling, progressButtonWidth } = this.state;
+    const { experiment, installed, hasAddon } = this.props;
+    const { completed, title, min_release, survey_url } = experiment;
+    const validVersion = this.isValidVersion(min_release);
+    const surveyURL = buildSurveyURL('givefeedback', title, installed, survey_url);
+    const eol = completed && (new Date(completed)).getTime() < Date.now();
+
+    if (!hasAddon || !validVersion) {
+      return null;
+    }
+    if (eol) {
+      if (enabled) {
+        return (
+          <div className="experiment-controls">
+            <button onClick={e => { e.preventDefault(); this.setState({ showEolDialog: true }); }} style={{ width: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'secondary', 'warning'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Disable {title}</span></button>
+          </div>
+        );
+      }
+      return null;
+    }
+    if (enabled) {
+      return (
+        <div className="experiment-controls">
+          <a onClick={e => this.handleFeedback(e)} data-l10n-id="giveFeedback" id="feedback-button" className="button default" href={surveyURL}>Give Feedback</a>
+          <button onClick={e => this.renderUninstallSurvey(e)} style={{ width: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'secondary'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Disable {title}</span></button>
+        </div>
+      );
+    }
+    return (
+      <div className="experiment-controls">
+        <a onClick={e => this.highlightPrivacy(e)} className="highlight-privacy" data-l10n-id="highlightPrivacy">Your privacy</a>
+        <button onClick={e => this.installExperiment(e)} style={{ width: progressButtonWidth }} id="install-button"  className={classnames(['button', 'default'], { 'state-change': isEnabling })}><span className="state-change-inner"></span><span data-l10n-id="enableExperimentTransition" className="transition-text">Enabling...</span><span data-l10n-id="enableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Enable {title}</span></button>
+      </div>
+    );
+  }
+
+  renderEolBlock() {
+    const { experiment } = this.props;
+    if (!experiment.completed) { return null; }
+
+    const title = experiment.title;
+    const completedDate = formatDate(experiment.completed);
+    const eol = (new Date(experiment.completed)).getTime() < Date.now();
+
+    if (eol) {
+      return (
+        <div>
+          <section className="completed-block">
+            <h3 data-l10n-id="completedHeading">This experiment has been retired and is no longer supported.</h3>
+            {this.state.enabled && <p data-l10n-id="completedMessage" data-l10n-args={JSON.stringify({ title })}>You are still able to use {title} but we will no longer be providing updates or support.</p>}
+          </section>
+        </div>
+      );
+    }
+
+    return (
+      <div className="eol-block">
+        <div data-l10n-id="eolMessage" data-l10n-args={JSON.stringify({ title, completedDate })}>
+          <strong>This experiment is ending on {completedDate}</strong>.<br/><br/>
+          <span>After then you will still be able to use {title} but we will no longer be providing updates or support.</span>
+        </div>
+      </div>
+    );
   }
 
   // scrollOffset lets us scroll to the top of the highlight box shadow animation
