@@ -19,6 +19,10 @@
     display: none;
   }
 
+  &.card-control {
+    width: 100%;
+  }
+
   &.outline {
     background: none;
     border-color: $white;

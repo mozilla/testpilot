@@ -51,6 +51,7 @@ export default class ExperimentRowCard extends React.Component {
         </header>
         <p>{description}</p>
         { this.renderInstallationCount(installation_count) }
+        { this.renderManageButton(enabled, hasAddon) }
       </div>
      </div>
     );
@@ -66,6 +67,17 @@ export default class ExperimentRowCard extends React.Component {
       <span className="participant-count"
             data-l10n-id="participantCount"
             data-l10n-args={JSON.stringify({ installation_count })}>{installation_count}</span>
+    );
+  }
+
+  renderManageButton(enabled, hasAddon) {
+    if (enabled && hasAddon) {
+      return (
+        <div className="button card-control secondary" data-l10n-id="experimentCardManage">Manage</div>
+      );
+    }
+    return (
+      <div className="button card-control default" data-l10n-id="experimentCardGetStarted">Get Started</div>
     );
   }
 
