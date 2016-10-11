@@ -24,7 +24,7 @@ fi
 # For short-lived assets; in seconds
 MAX_AGE="600"
 
-HPKP="\"public-key-pins\": \"max-age=300;pin-sha256='WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=';pin-sha256='r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E='\""
+HPKP="\"public-key-pins\": \"max-age=300;pin-sha256=\\\"WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=\\\";pin-sha256=\\\"r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E=\\\"\""
 CSP="\"content-security-policy\": \"default-src 'self'; connect-src 'self' analysis-output.telemetry.mozilla.org; font-src 'self' code.cdn.mozilla.net; form-action 'none'; object-src 'none'; script-src 'self' www.google-analytics.com; style-src 'self' code.cdn.mozilla.net; report-uri /__cspreport__;\""
 HSTS="\"strict-transport-security\": \"max-age=31536000; includeSubDomains; preload\""
 TYPE="\"x-content-type-options\": \"nosniff\""
