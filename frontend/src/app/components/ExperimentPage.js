@@ -16,8 +16,6 @@ import MainInstallButton from '../components/MainInstallButton';
 import ExperimentCardList from '../components/ExperimentCardList';
 import ExperimentPreFeedbackDialog from '../components/ExperimentPreFeedbackDialog';
 
-const CHANGE_HEADER_ON = 105;
-
 
 export default class ExperimentPage extends React.Component {
   render() {
@@ -54,7 +52,10 @@ export class ExperimentDetail extends React.Component {
       showDisableDialog: false,
       shouldShowTourDialog: false,
       showTourDialog: false,
-      showPreFeedbackDialog: false
+      showPreFeedbackDialog: false,
+      changeHeaderOn: 125,
+      stickyHeaderSiblingHeight: 0,
+      privacyScrollOffset: 15
     };
 
     // HACK: Set this as a plain object property, so we don't trigger crazy
@@ -156,7 +157,7 @@ export class ExperimentDetail extends React.Component {
 
     const { enabled, useStickyHeader, highlightMeasurementPanel,
             showDisableDialog, showTourDialog, isEnabling, isDisabling,
-            progressButtonWidth, showPreFeedbackDialog } = this.state;
+            progressButtonWidth, showPreFeedbackDialog, stickyHeaderSiblingHeight } = this.state;
 
     const { title, version, contribute_url, bug_report_url, discourse_url,
             introduction, measurements, privacy_notice_url, changelog_url,
@@ -240,7 +241,7 @@ export class ExperimentDetail extends React.Component {
               { this.renderMinimumVersionNotice(title, hasAddon, min_release) }
             </div>
           </div>
-          <div className="sticky-header-sibling"></div>
+          <div className="sticky-header-sibling" style={{ height: `${stickyHeaderSiblingHeight}px` }} ></div>
 
           <div data-hook="details">
               <div className="details-content responsive-content-wrapper">
@@ -382,9 +383,54 @@ export class ExperimentDetail extends React.Component {
   }
 
   onScroll() {
-    const sy = this.props.getScrollY();
-    this.setState({ useStickyHeader: sy > CHANGE_HEADER_ON });
+    const { getElementOffsetHeight, getScrollY } = this.props;
+    const sy = getScrollY();
+    const detailsHeaderWrapperHeight = getElementOffsetHeight('.details-header-wrapper');
+    const changeHeaderOn = this.setChangeHeaderOn(detailsHeaderWrapperHeight);
+    const useStickyHeader = sy > changeHeaderOn;
+    const stickyHeaderSiblingHeight = this.setStickyHeaderSiblingHeight(detailsHeaderWrapperHeight, useStickyHeader);
+
+    this.setState({
+      changeHeaderOn,
+      useStickyHeader,
+      stickyHeaderSiblingHeight });
     this.didScroll = false;
+  }
+
+  // if there is no content in the .status-bar
+  // adjust the initial snap position and the header isn't yet sticky, adjust
+  // changeHeaderOn to the top of the .details-header
+  // instead of the bottom of the #main-header
+  setChangeHeaderOn(detailsHeaderWrapperHeight) {
+    const { getElementOffsetHeight, experiment } = this.props;
+    const statusBar = experiment.error || this.state.enabled;
+    const detailsHeaderHeight = getElementOffsetHeight('.details-header');
+    let changeHeaderOn = getElementOffsetHeight('#main-header');
+
+    if (!statusBar) {
+      if (this.state.useStickyHeader) {
+        changeHeaderOn = this.state.stickyHeaderSiblingHeight;
+      } else {
+        changeHeaderOn += (detailsHeaderWrapperHeight - detailsHeaderHeight);
+      }
+    }
+
+    return changeHeaderOn;
+  }
+
+  // modify the height of the .sticky-header-sibling if useStickyHeader.
+  // Since the height of the details header changes height depending on
+  // whether there is a visible status, always set the state to whatever
+  // is tallest
+  setStickyHeaderSiblingHeight(detailsHeaderWrapperHeight, useStickyHeader) {
+    let stickyHeaderSiblingHeight = 0;
+
+    if (useStickyHeader) {
+      stickyHeaderSiblingHeight = Math.max(
+        detailsHeaderWrapperHeight, this.state.stickyHeaderSiblingHeight);
+    }
+
+    return stickyHeaderSiblingHeight;
   }
 
   // this is set to 100, to accomodate Tracking Protection
@@ -416,11 +462,18 @@ export class ExperimentDetail extends React.Component {
     return null;
   }
 
+  // scrollOffset lets us scroll to the top of the highlight box shadow animation
   highlightPrivacy(evt) {
-    const { getElementY, setScrollY } = this.props;
+    const { getElementOffsetHeight, getElementY, setScrollY } = this.props;
+    const { privacyScrollOffset } = this.state;
+    const detailsHeaderWrapperHeight = getElementOffsetHeight('.details-header-wrapper');
+    const changeHeaderOn = this.setChangeHeaderOn(detailsHeaderWrapperHeight);
+    const stickyHeaderSiblingHeight = this.setStickyHeaderSiblingHeight(detailsHeaderWrapperHeight, true);
     evt.preventDefault();
-    setScrollY(getElementY('.measurements') - CHANGE_HEADER_ON);
+    setScrollY(getElementY('.measurements') + (stickyHeaderSiblingHeight - privacyScrollOffset));
     this.setState({
+      changeHeaderOn,
+      stickyHeaderSiblingHeight,
       useStickyHeader: true,
       highlightMeasurementPanel: true
     });
@@ -546,5 +599,6 @@ ExperimentDetail.propTypes = {
   removeScrollListener: React.PropTypes.func,
   getScrollY: React.PropTypes.func,
   setScrollY: React.PropTypes.func,
-  getElementY: React.PropTypes.func
+  getElementY: React.PropTypes.func,
+  getElementOffsetHeight: React.PropTypes.func
 };

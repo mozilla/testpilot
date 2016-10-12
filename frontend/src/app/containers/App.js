@@ -162,6 +162,10 @@ export default connect(
       const el = document.querySelector(sel);
       return el ? el.offsetTop : 0;
     },
+    getElementOffsetHeight: sel => {
+      const el = document.querySelector(sel);
+      return el ? el.offsetHeight : 0;
+    },
     getCookie: name => cookies.get(name),
     removeCookie: name => cookies.remove(name),
     setNavigatorTestpilotAddon: value => window.navigator.testpilotAddon = value

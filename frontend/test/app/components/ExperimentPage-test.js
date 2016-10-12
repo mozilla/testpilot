@@ -87,6 +87,7 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
       getScrollY: sinon.spy(),
       setScrollY: sinon.spy(),
       getElementY: sinon.spy(),
+      getElementOffsetHeight: sinon.spy(),
       userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:51.0) Gecko/20100101 Firefox/51.0'
     };
 
@@ -298,9 +299,11 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
       it('should make the page header sticky on page scrolling', (done) => {
         // Switch to mounted component to exercise componentDidMount
         let scrollY = 0;
+        const genericElementHeight = 125;
         const mountedProps = { ...props,
           hasAddon: true,
           getScrollY: () => scrollY,
+          getElementOffsetHeight: () => genericElementHeight,
           experiments: [ mockExperiment ],
           experiment: mockExperiment
         };
@@ -336,11 +339,16 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
 
       it('should scroll down to measurements block when "Your privacy" clicked', (done) => {
         const elementY = 400;
-        subject.setProps({ getElementY: sel => elementY });
+        const genericElementHeight = 125;
+
+        subject.setProps({ 
+          getElementY: sel => elementY,
+          getElementOffsetHeight: () => genericElementHeight
+        });
 
         subject.find('.highlight-privacy').simulate('click', mockClickEvent);
-
-        expect(props.setScrollY.lastCall.args[0]).to.equal(elementY - CHANGE_HEADER_ON);
+        expect(props.setScrollY.lastCall.args[0]).to.equal(
+          elementY + (genericElementHeight - subject.state('privacyScrollOffset')));
         expect(subject.state('useStickyHeader')).to.be.true;
         expect(subject.state('highlightMeasurementPanel')).to.be.true;
 
