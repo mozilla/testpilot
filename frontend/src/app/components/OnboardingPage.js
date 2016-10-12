@@ -1,13 +1,12 @@
 import React from 'react';
 
-import Header from './Header';
-import Footer from './Footer';
+import View from './View';
+
 
 export default class OnboardingPage extends React.Component {
   render() {
     return (
-      <div className="full-page-wrapper space-between">
-        <Header {...this.props} />
+      <View spaceBetween={true} {...this.props}>
         <div className="centered-banner">
           <div id="onboarding" className="modal">
             <div className="modal-content centered">
@@ -19,10 +18,7 @@ export default class OnboardingPage extends React.Component {
             <div className="copter fade-in-fly-up"></div>
           </div>
         </div>
-        <footer id="main-footer" className="content-wrapper">
-          <Footer {...this.props} />
-        </footer>
-      </div>
+      </View>
     );
   }
 }

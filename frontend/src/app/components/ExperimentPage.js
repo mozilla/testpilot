@@ -8,13 +8,12 @@ import { buildSurveyURL, formatDate, createMarkup } from '../lib/utils';
 import LoadingPage from './LoadingPage';
 import NotFoundPage from './NotFoundPage';
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import ExperimentDisableDialog from '../components/ExperimentDisableDialog';
 import ExperimentTourDialog from '../components/ExperimentTourDialog';
 import MainInstallButton from '../components/MainInstallButton';
 import ExperimentCardList from '../components/ExperimentCardList';
 import ExperimentPreFeedbackDialog from '../components/ExperimentPreFeedbackDialog';
+import View from '../components/View';
 
 
 export default class ExperimentPage extends React.Component {
@@ -197,7 +196,7 @@ export class ExperimentDetail extends React.Component {
             surveyURL={surveyURL}
             onCancel={() => this.setState({ showPreFeedbackDialog: false })} />}
 
-        <Header {...this.props} />
+        <View {...this.props}>
 
         {!hasAddon && <section data-hook="testpilot-promo">
           <div className="experiment-promo">
@@ -361,9 +360,7 @@ export class ExperimentDetail extends React.Component {
                                   eventCategory="ExperimentsDetailPage Interactions" />
             </div>
           </div>}
-          <footer id="main-footer" className="responsive-content-wrapper">
-            <Footer {...this.props} />
-          </footer>
+        </View>
       </section>
     );
   }

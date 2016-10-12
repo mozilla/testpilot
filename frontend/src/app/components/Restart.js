@@ -1,7 +1,6 @@
 import React from 'react';
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import View from '../components/View';
 
 
 export default class Restart extends React.Component {
@@ -32,16 +31,12 @@ export default class Restart extends React.Component {
 
   render() {
     return (
-      <div className="full-page-wrapper space-between">
-        <Header {...this.props} forceHideSettings={ false } />
+      <View spaceBetween={true} {...this.props}>
         <div className="centered-banner restart-message">
           <p data-l10n-id="restartRequiredSubHeader">Almost done . . .</p>
           { this.renderSubtitle() }
         </div>
-        <footer id="main-footer" className="content-wrapper">
-          <Footer {...this.props} />
-        </footer>
-      </div>
+      </View>
     );
   }
 }

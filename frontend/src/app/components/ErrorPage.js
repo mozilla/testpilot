@@ -1,13 +1,12 @@
 import React from 'react';
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import View from '../components/View';
+
 
 export default class ErrorPage extends React.Component {
   render() {
     return (
-      <div className="full-page-wrapper space-between">
-        <Header {...this.props} />
+      <View spaceBetween={true} {...this.props}>
         <div className="centered-banner">
           <div id="four-oh-four" className="modal delayed-fade-in">
             <h1 data-l10n-id="errorHeading" className="title">Whoops!</h1>
@@ -19,10 +18,7 @@ export default class ErrorPage extends React.Component {
             <div className="copter fade-in-fly-up"></div>
           </div>
         </div>
-        <footer id="main-footer" className="content-wrapper">
-          <Footer {...this.props} />
-        </footer>
-      </div>
+      </View>
     );
   }
 }
