@@ -3,9 +3,10 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
 
-import OnboardingPage from '../../../src/app/components/OnboardingPage';
+import OnboardingPage from '../../../src/app/containers/OnboardingPage';
 
-describe('app/components/OnboardingPage', () => {
+
+describe('app/containers/OnboardingPage', () => {
   it('should render onboarding page', () => {
     const props = {
       navigateTo: sinon.spy(),

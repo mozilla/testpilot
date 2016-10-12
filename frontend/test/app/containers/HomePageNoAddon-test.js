@@ -3,9 +3,10 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
 
-import HomePageNoAddon from '../../../src/app/components/HomePageNoAddon';
+import HomePageNoAddon from '../../../src/app/containers/HomePageNoAddon';
 
-describe('app/components/HomePageNoAddon', () => {
+
+describe('app/containers/HomePageNoAddon', () => {
   let props, subject, experiments;
   beforeEach(function() {
     props = {

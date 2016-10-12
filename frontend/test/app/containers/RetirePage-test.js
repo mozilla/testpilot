@@ -3,9 +3,10 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow, mount } from 'enzyme';
 
-import RetirePage from '../../../src/app/components/RetirePage';
+import RetirePage from '../../../src/app/containers/RetirePage';
 
-describe('app/components/RetirePage', () => {
+
+describe('app/containers/RetirePage', () => {
   let props, subject;
   beforeEach(function() {
     props = {

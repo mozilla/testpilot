@@ -1,6 +1,7 @@
 import React from 'react';
 
-import View from './View';
+import View from '../components/View';
+
 
 export default class LegacyPage extends React.Component {
   render() {

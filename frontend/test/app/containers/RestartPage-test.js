@@ -3,9 +3,10 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow, mount } from 'enzyme';
 
-import Restart from '../../../src/app/components/Restart';
+import Restart from '../../../src/app/containers/RestartPage';
 
-describe('app/components/Restart', () => {
+
+describe('app/containers/RestartPage', () => {
   let props, subject;
   beforeEach(function() {
     props = {

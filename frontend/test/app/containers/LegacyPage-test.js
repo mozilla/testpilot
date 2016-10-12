@@ -3,9 +3,10 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
 
-import LegacyPage from '../../../src/app/components/LegacyPage';
+import LegacyPage from '../../../src/app/containers/LegacyPage';
 
-describe('app/components/LegacyPage', () => {
+
+describe('app/containers/LegacyPage', () => {
   it('should render legacy modal', () => {
     const props = {
       sendToGA: sinon.spy()
