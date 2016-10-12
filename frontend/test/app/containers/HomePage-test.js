@@ -3,10 +3,10 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
 
-import HomePage from '../../../src/app/components/HomePage';
+import HomePage from '../../../src/app/containers/HomePage';
 
 
-describe('app/components/HomePage', () => {
+describe('app/containers/HomePage', () => {
   it('should show experiment list if the add-on is installed', () => {
     const wrapper = shallow(<HomePage hasAddon={true} />);
     expect(wrapper.find('HomePageNoAddon')).to.have.property('length', 0);

@@ -4,12 +4,12 @@ import sinon from 'sinon';
 import { shallow, mount } from 'enzyme';
 import moment from 'moment';
 
-import ExperimentPage, { ExperimentDetail } from '../../../src/app/components/ExperimentPage';
+import ExperimentPage, { ExperimentDetail } from '../../../src/app/containers/ExperimentPage';
 
 const CHANGE_HEADER_ON = 105;
 
 
-describe('app/components/ExperimentPage', () => {
+describe('app/containers/ExperimentPage', () => {
 
   const mockExperiment = {
     slug: 'testing',

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import classnames from 'classnames';
 
-import View from './View';
+import View from '../components/View';
 
 
 export default class RetirePage extends React.Component {

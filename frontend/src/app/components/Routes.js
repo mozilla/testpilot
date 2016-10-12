@@ -2,16 +2,15 @@ import React from 'react';
 import { IndexRoute, Redirect, Route, Router } from 'react-router';
 
 import App from '../containers/App';
-
-import ErrorPage from '../components/ErrorPage';
-import ExperimentPage from '../components/ExperimentPage';
-import HomePage from '../components/HomePage';
-import LegacyPage from '../components/LegacyPage';
-import NotFoundPage from '../components/NotFoundPage';
-import OnboardingPage from '../components/OnboardingPage';
-import Restart from '../components/Restart';
-import RetirePage from '../components/RetirePage';
-import SharePage from '../components/SharePage';
+import ErrorPage from '../containers/ErrorPage';
+import ExperimentPage from '../containers/ExperimentPage';
+import HomePage from '../containers/HomePage';
+import LegacyPage from '../containers/LegacyPage';
+import NotFoundPage from '../containers/NotFoundPage';
+import OnboardingPage from '../containers/OnboardingPage';
+import RestartPage from '../containers/RestartPage';
+import RetirePage from '../containers/RetirePage';
+import SharePage from '../containers/SharePage';
 
 
 export default class Routes extends React.Component {
@@ -25,7 +24,7 @@ export default class Routes extends React.Component {
           <Route path="/legacy" component={LegacyPage} />
           <Route path="/404" component={NotFoundPage} />
           <Route path="/share" component={SharePage} />
-          <Route path="/restart" component={Restart} />
+          <Route path="/restart" component={RestartPage} />
           <Route path="/error" component={ErrorPage} />
           <Route path="/onboarding" component={OnboardingPage} />
           <Route path="/retire" component={RetirePage} />

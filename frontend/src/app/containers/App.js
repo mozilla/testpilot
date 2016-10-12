@@ -12,8 +12,7 @@ import { getExperimentBySlug, isExperimentsLoaded } from '../reducers/experiment
 import experimentSelector from '../selectors/experiment';
 import { uninstallAddon, installAddon, enableExperiment, disableExperiment } from '../lib/addon';
 import addonActions from '../actions/addon';
-
-import Restart from '../components/Restart';
+import RestartPage from '../containers/RestartPage';
 
 const clipboard = new Clipboard('button');
 
@@ -82,7 +81,7 @@ class App extends Component {
   render() {
     const { restart } = this.props.addon;
     if (restart.isRequired) {
-      return <Restart experimentTitle={ restart.forExperiment } {...this.props}/>;
+      return <RestartPage experimentTitle={ restart.forExperiment } {...this.props}/>;
     }
     return React.cloneElement(this.props.children, this.props);
   }

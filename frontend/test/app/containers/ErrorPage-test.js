@@ -2,9 +2,10 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import ErrorPage from '../../../src/app/components/ErrorPage';
+import ErrorPage from '../../../src/app/containers/ErrorPage';
 
-describe('app/components/ErrorPage', () => {
+
+describe('app/containers/ErrorPage', () => {
   const noop = () => {};
   it('should render errorMessage string', () => {
     const props = {
