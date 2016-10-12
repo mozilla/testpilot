@@ -92,3 +92,18 @@ aws s3 sync \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
   dist/ s3://${TESTPILOT_BUCKET}/
+
+# HTML - `path/index.html` to `path` resources; 10 minute cache
+for fn in $(find dist -name 'index.html' -not -path 'dist/index.html'); do
+  s3path=${fn#dist/}
+  s3path=${s3path%/index.html}
+  aws s3 cp \
+    --cache-control "max-age=${MAX_AGE}" \
+    --content-type "text/html" \
+    --exclude "*" \
+    --include "*.html" \
+    --metadata "{${HPKP}, ${CSP}, ${HSTS}, ${TYPE}, ${FRAME}, ${XSS}}" \
+    --metadata-directive "REPLACE" \
+    --acl "public-read" \
+    $fn s3://${TESTPILOT_BUCKET}/${s3path}
+done
