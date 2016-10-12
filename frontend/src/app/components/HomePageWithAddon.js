@@ -1,10 +1,9 @@
 import React from 'react';
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import EmailDialog from '../components/EmailDialog';
 import ExperimentCardList from '../components/ExperimentCardList';
 import LoadingPage from './LoadingPage';
+import View from '../components/View';
 
 
 export default class HomePageWithAddon extends React.Component {
@@ -28,9 +27,7 @@ export default class HomePageWithAddon extends React.Component {
     }
 
     return (
-      <div>
-        <Header {...this.props} />
-
+      <View {...this.props}>
         {showEmailDialog &&
           <EmailDialog {...this.props}
             onDismiss={() => this.setState({ hideEmailDialog: true })} />}
@@ -51,10 +48,7 @@ export default class HomePageWithAddon extends React.Component {
             <ExperimentCardList {...this.props} eventCategory="HomePage Interactions" />
           </div>
         </div>
-        <footer id="main-footer" className="responsive-content-wrapper">
-          <Footer {...this.props} />
-        </footer>
-      </div>
+      </View>
     );
   }
 }

@@ -1,16 +1,11 @@
 import React from 'react';
 
-import Footer from '../components/Footer';
+import View from './View';
 
 export default class LegacyPage extends React.Component {
   render() {
     return (
-      <div className="full-page-wrapper space-between">
-        <header id="main-header" className="responsive-content-wrapper">
-          <h1>
-            <a href="/" className="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
-          </h1>
-        </header>
+      <View spaceBetween={true} {...this.props}>
         <div className="centered-banner">
           <div id="legacy-modal" className="modal delayed-fade-in">
             <div className="modal-content">
@@ -27,10 +22,7 @@ export default class LegacyPage extends React.Component {
             <div className="copter fade-in-fly-up"></div>
           </div>
         </div>
-        <footer id="main-footer" className="content-wrapper">
-          <Footer {...this.props} />
-        </footer>
-      </div>
+      </View>
     );
   }
 }

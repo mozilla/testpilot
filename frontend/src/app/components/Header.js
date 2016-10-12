@@ -12,61 +12,96 @@ export default class Header extends React.Component {
     super(props);
     this.closeTimer = null;
     this.close = this.close.bind(this);
+    this.dismissRetireDialog = this.dismissRetireDialog.bind(this);
+    this.dismissDiscussDialog = this.dismissDiscussDialog.bind(this);
     this.state = {
-      showSettings: false,
       showDiscussDialog: false,
       showRetireDialog: false
     };
   }
 
-  showSettings() {
-    if (this.props.forceHideSettings === false) {
-      return true;
-    }
+  shouldRenderSettingsMenu() {
+    return this.props.hasAddon;
+  }
+
+  showSettingsMenu() {
     return this.state.showSettings;
   }
 
-  render() {
-    const { showRetireDialog, showDiscussDialog } = this.state;
-    const { openWindow, hasAddon } = this.props;
+  renderSettingsMenu() {
+    if (this.shouldRenderSettingsMenu()) {
+      return (
+        <div data-hook="settings">
+          <div className="settings-contain" data-hook="active-user">
+             <div className={classnames(['button', 'outline', 'settings-button'], { active: this.showSettingsMenu() })}
+                  onClick={e => this.toggleSettings(e)}
+                  data-hook="settings-button" data-l10n-id="menuTitle">Settings</div>
+               {this.showSettingsMenu() && <div className="settings-menu" onClick={e => this.settingsClick(e)}>
+               <ul>
+                 <li><a onClick={e => this.wiki(e)} data-l10n-id="menuWiki" data-hook="wiki"
+                    href="https://wiki.mozilla.org/Test_Pilot" target="_blank">Test Pilot Wiki</a></li>
+                 <li><a onClick={e => this.discuss(e)} data-l10n-id="menuDiscuss" data-hook="discuss"
+                    href="https://discourse.mozilla-community.org/c/test-pilot" target="_blank">Discuss Test Pilot</a></li>
+                 <li><a onClick={e => this.fileIssue(e)} data-l10n-id="menuFileIssue" data-hook="issue"
+                    href="https://github.com/mozilla/testpilot/issues/new" target="_blank">File an Issue</a></li>
+                 <li><hr /></li>
+                 <li><a onClick={e => this.retire(e)} data-l10n-id="menuRetire" data-hook="retire">Uninstall Test Pilot</a></li>
+               </ul>
+             </div>}
+          </div>
+        </div>
+      );
+    }
+    return null;
+  }
 
+  dismissRetireDialog() {
+    this.setState({
+      showRetireDialog: false
+    });
+  }
+
+  renderRetireDialog() {
+    if (this.state.showRetireDialog) {
+      return (
+        <RetireConfirmationDialog
+          onDismiss={this.dismissRetireDialog}
+          {...this.props}
+        />
+      );
+    }
+    return null;
+  }
+
+  dismissDiscussDialog() {
+    this.setState({
+      showDiscussDialog: false
+    });
+  }
+
+  renderDiscussDialog() {
+    if (this.state.showDiscussDialog) {
+      return (
+        <DiscussDialog {...this.props}
+          href="https://discourse.mozilla-community.org/c/test-pilot"
+          openWindow={this.props.openWindow}
+          onDismiss={this.dismissDiscussDialog}
+        />
+      );
+    }
+    return null;
+  }
+
+  render() {
     return (
       <div>
-        {showRetireDialog &&
-          <RetireConfirmationDialog {...this.props}
-            onDismiss={() => this.setState({ showRetireDialog: false })} />}
-
-        {showDiscussDialog &&
-          <DiscussDialog {...this.props}
-            href="https://discourse.mozilla-community.org/c/test-pilot"
-            openWindow={openWindow}
-            onDismiss={() => this.setState({ showDiscussDialog: false })} />}
-
+        {this.renderRetireDialog()}
+        {this.renderDiscussDialog()}
         <header id="main-header" className="responsive-content-wrapper">
-
           <h1>
             <Link to="/" className="wordmark" data-l10n-id="siteName">Firefox Test Pilot</Link>
           </h1>
-          {hasAddon &&
-          <div data-hook="settings">
-            <div className="settings-contain" data-hook="active-user">
-               <div className={classnames(['button', 'outline', 'settings-button'], { active: this.showSettings() })}
-                    onClick={e => this.toggleSettings(e)}
-                    data-hook="settings-button" data-l10n-id="menuTitle">Settings</div>
-                 {this.showSettings() && <div className="settings-menu" onClick={e => this.settingsClick(e)}>
-                 <ul>
-                   <li><a onClick={e => this.wiki(e)} data-l10n-id="menuWiki" data-hook="wiki"
-                      href="https://wiki.mozilla.org/Test_Pilot" target="_blank">Test Pilot Wiki</a></li>
-                   <li><a onClick={e => this.discuss(e)} data-l10n-id="menuDiscuss" data-hook="discuss"
-                      href="https://discourse.mozilla-community.org/c/test-pilot" target="_blank">Discuss Test Pilot</a></li>
-                   <li><a onClick={e => this.fileIssue(e)} data-l10n-id="menuFileIssue" data-hook="issue"
-                      href="https://github.com/mozilla/testpilot/issues/new" target="_blank">File an Issue</a></li>
-                   <li><hr /></li>
-                   <li><a onClick={e => this.retire(e)} data-l10n-id="menuRetire" data-hook="retire">Uninstall Test Pilot</a></li>
-                 </ul>
-               </div>}
-            </div>
-          </div>}
+          {this.renderSettingsMenu()}
         </header>
       </div>
     );
