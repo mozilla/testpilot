@@ -94,7 +94,7 @@ export default class ExperimentTourDialog extends React.Component {
     this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
-      eventLabel: `dot to step ${this.currentStep}`
+      eventLabel: `dot to step ${index}`
     });
   }
 
@@ -107,7 +107,7 @@ export default class ExperimentTourDialog extends React.Component {
     this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
-      eventLabel: `back to step ${this.currentStep}`
+      eventLabel: `back to step ${newStep}`
     });
   }
 
@@ -122,7 +122,14 @@ export default class ExperimentTourDialog extends React.Component {
     sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
-      eventLabel: `forward to step ${this.currentStep}`
+      eventLabel: `forward to step ${newStep}`
     });
   }
 }
+
+ExperimentTourDialog.propTypes = {
+  experiment: React.PropTypes.object.isRequired,
+  onCancel: React.PropTypes.func.isRequired,
+  onComplete: React.PropTypes.func.isRequired,
+  sendToGA: React.PropTypes.func.isRequired
+};
