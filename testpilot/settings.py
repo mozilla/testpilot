@@ -341,6 +341,8 @@ CSP_CONNECT_SRC = (
     'https://*.mozilla.net',
     'http://*.mozilla.org',
     'https://*.mozilla.org',
+    'https://www.google-analytics.com',
+    'https://ssl.google-analytics.com',
 )
 CSP_FONT_SRC = (
     "'self'",
@@ -357,8 +359,8 @@ CSP_IMG_SRC = (
     'https://*.mozilla.org',
     'http://*.gravatar.com',
     'https://*.gravatar.com',
-    'http://*.google-analytics.com',
-    'https://*.google-analytics.com',
+    'https://www.google-analytics.com',
+    'https://ssl.google-analytics.com',
     'https://ssl.gstatic.com/',
     'https://testpilot-dev-media.s3.amazonaws.com',
     'https://testpilot-stage.s3.amazonaws.com',
@@ -370,8 +372,7 @@ CSP_SCRIPT_SRC = (
     'https://*.mozilla.org',
     'http://*.mozilla.net',
     'https://*.mozilla.net',
-    'http://*.google-analytics.com',
-    'https://*.google-analytics.com',
+    'https://ssl.google-analytics.com',
     'https://apis.google.com',
 )
 CSP_STYLE_SRC = (
