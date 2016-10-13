@@ -15,15 +15,12 @@ machine:
   node:
     version: 6.2.0
   environment:
-    TESTPILOT_STATIC_BRANCHES: development-static
     TESTPILOT_ENABLE_PONTOON_BRANCHES: development-static
 
 dependencies:
 
   # Keep docker dir and addon dependencies
   cache_directories:
-    - "~/docker"
-    - "~/virtualenvs/venv-system"
     - "addon/node_modules"
 
   pre:
@@ -39,38 +36,19 @@ dependencies:
     - ./bin/circleci/build-version-json.sh
     - ./bin/circleci/build-addon.sh
     - ./bin/circleci/build-frontend.sh
-    - '[[ " $TESTPILOT_STATIC_BRANCHES " =~ " $CIRCLE_BRANCH " ]] || ./bin/circleci/build-server.sh'
 
 test:
   override:
-    - '[[ " $TESTPILOT_STATIC_BRANCHES " =~ " $CIRCLE_BRANCH " ]] || ./bin/circleci/run-server-unit-tests.sh'
+    - echo "Skipping integration tests."
     # - ./bin/circleci/run-integration-tests.sh
 
 # appropriately tag and push the container to dockerhub
 deployment:
 
-  hub_latest:
-    branch: "master"
-    commands:
-      - "[ ! -z $DOCKERHUB_REPO ]"
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - "docker tag app:build ${DOCKERHUB_REPO}:latest"
-      - "docker push ${DOCKERHUB_REPO}:latest"
-      - ./bin/deploy-dev.sh $CIRCLE_SHA1
-
-  hub_releases:
-    # push all tags
-    tag: /.*/
-    commands:
-      - "[ ! -z $DOCKERHUB_REPO ]"
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - "docker tag app:build ${DOCKERHUB_REPO}:${CIRCLE_TAG}"
-      - "docker images"
-      - "docker push ${DOCKERHUB_REPO}:${CIRCLE_TAG}"
-
   static_development:
     branch:
       - development-static
+      - master
     commands:
       - aws s3 sync dist s3://testpilot-static.dev.mozaws.net --delete --acl public-read
       - aws configure set preview.cloudfront true

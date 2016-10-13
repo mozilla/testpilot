@@ -23,12 +23,9 @@
     },
     "keywords": [
         "css",
-        "django",
-        "docker",
         "javascript",
-        "jinja2",
-        "postgresql",
-        "python",
-        "redis"
+        "react",
+        "redux",
+        "sass"
     ]
 }
