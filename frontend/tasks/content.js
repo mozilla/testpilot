@@ -57,6 +57,9 @@ function buildExperimentsJSON() {
   }
 
   function endStream(cb) {
+    // These files are being consumed by 3rd parties (at a minimum, the Mozilla
+    // Measurements Team).  Before changing them, please consult with the
+    // appropriate folks!
     this.push(new gutil.File({
       path: 'experiments.json',
       contents: new Buffer(JSON.stringify(index, null, 2))
