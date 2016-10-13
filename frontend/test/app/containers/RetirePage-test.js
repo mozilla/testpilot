@@ -28,7 +28,7 @@ describe('app/containers/RetirePage', () => {
     // Switch to mounted component to exercise componentDidMount
     const mountedProps = { ...props,
       fakeUninstallDelay: 10,
-      setNavigatorTestpilotAddon: sinon.spy()
+      setHasAddon: sinon.spy()
     };
     const mountedSubject = mount(<RetirePage {...mountedProps} />);
 
@@ -38,7 +38,7 @@ describe('app/containers/RetirePage', () => {
     setTimeout(() => {
       expect(mountedSubject.state('fakeUninstalled')).to.be.true;
       expect(findByL10nID('retirePageMessage', mountedSubject)).to.have.property('length', 1);
-      expect(mountedProps.setNavigatorTestpilotAddon.called).to.be.true;
+      expect(mountedProps.setHasAddon.called).to.be.true;
       done();
     }, 20);
   });

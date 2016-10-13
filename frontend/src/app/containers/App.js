@@ -10,7 +10,7 @@ import Clipboard from 'clipboard';
 import { getInstalled, isExperimentEnabled, isInstalledLoaded } from '../reducers/addon';
 import { getExperimentBySlug, isExperimentsLoaded } from '../reducers/experiments';
 import experimentSelector from '../selectors/experiment';
-import { uninstallAddon, installAddon, enableExperiment, disableExperiment } from '../lib/addon';
+import { uninstallAddon, installAddon, enableExperiment, disableExperiment, pollAddon } from '../lib/addon';
 import addonActions from '../actions/addon';
 import RestartPage from '../containers/RestartPage';
 
@@ -141,7 +141,11 @@ export default connect(
     enableExperiment: experiment => enableExperiment(dispatch, experiment),
     disableExperiment: experiment => disableExperiment(dispatch, experiment),
     requireRestart: experimentTitle =>
-      dispatch(addonActions.requireRestart(experimentTitle))
+      dispatch(addonActions.requireRestart(experimentTitle)),
+    setHasAddon: installed => {
+      dispatch(addonActions.setHasAddon(installed));
+      if (!installed) { pollAddon(); }
+    }
   }),
   (stateProps, dispatchProps, ownProps) => Object.assign({
     installAddon,
@@ -168,7 +172,6 @@ export default connect(
     },
     getCookie: name => cookies.get(name),
     removeCookie: name => cookies.remove(name),
-    setNavigatorTestpilotAddon: value => window.navigator.testpilotAddon = value,
     getExperimentLastSeen: experiment =>
       parseInt(window.localStorage.getItem(`experiment-last-seen-${experiment.id}`), 10),
     setExperimentLastSeen: (experiment, value) =>

@@ -19,7 +19,7 @@ export default class RetirePage extends React.Component {
     // uninstalled, so let's fake it.
     this.fakeUninstallTimer = setTimeout(() => {
       this.setState({ fakeUninstalled: true });
-      this.props.setNavigatorTestpilotAddon(false);
+      this.props.setHasAddon(false);
     }, this.props.fakeUninstallDelay);
   }
 
@@ -73,7 +73,7 @@ export default class RetirePage extends React.Component {
 }
 
 RetirePage.propTypes = {
-  setNavigatorTestpilotAddon: React.PropTypes.func,
+  setHasAddon: React.PropTypes.func,
   fakeUninstallDelay: React.PropTypes.number
 };
 
