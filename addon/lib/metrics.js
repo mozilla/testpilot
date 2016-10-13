@@ -157,7 +157,7 @@ const Metrics = module.exports = {
     data.tid = 'UA-49796218-47';
     data.cid = store.clientUUID;
     const req = request({
-      url: 'http://www.google-analytics.com/collect',
+      url: 'https://ssl.google-analytics.com/collect',
       content: data
     });
     req.post();
