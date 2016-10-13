@@ -430,19 +430,21 @@ export class ExperimentDetail extends React.Component {
   }
 
   clickUpgradeNotice() {
+    const { experiment } = this.props;
     // If a user goes to the upgrade SUMO
     this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'Upgrade Notice'
+      eventAction: 'Upgrade Notice',
+      eventLabel: experiment.title
     });
   }
 
   feedback(evt) {
+    const { experiment } = this.props;
     this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'Give Feedback',
+      eventAction: 'Give Feedback',
+      eventLabel: experiment.title,
       outboundURL: evt.target.getAttribute('href')
     });
   }
@@ -483,8 +485,8 @@ export class ExperimentDetail extends React.Component {
 
     sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'Enable Experiment'
+      eventAction: 'Enable Experiment',
+      eventLabel: experiment.title
     });
   }
 
@@ -507,12 +509,13 @@ export class ExperimentDetail extends React.Component {
   }
 
   renderUninstallSurvey(evt) {
+    const { experiment } = this.props;
     evt.preventDefault();
 
     this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'Disable Experiment'
+      eventAction: 'Disable Experiment',
+      eventLabel: experiment.title
     });
 
     this.uninstallExperiment(evt);

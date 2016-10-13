@@ -59,9 +59,10 @@ Here are the current events on the website as of this writing
 | Click on experiment from landing page                    | ExperimentsPage Interactions       | Open details page        | `{experiment title}`          |            
 | Click on Install from experiment details page            | ExperimentDetailsPage Interactions | button click             | Install the Add-on            |
 | Click on the "Try out these experiments as well" section | ExperimentsDetailPage Interactions | Open details page        | try out `{experiment title}`  |            
-| Click Enable Experiment                                  | ExperimentDetailsPage Interactions | button click             | Enable Experiment             |            
-| Click Disable Experiment                                 | ExperimentDetailsPage Interactions | button click             | Disable Experiment            |            
-| Click Give Feedback for experiment                       | ExperimentDetailsPage Interactions | button click             | Give Feedback                 |            
+| Click Enable Experiment                                  | ExperimentDetailsPage Interactions | Enable Experiment        | `{experiment title}`          |            
+| Click Disable Experiment                                 | ExperimentDetailsPage Interactions | Disable Experiment       | `{experiment title}`          |            
+| Click Give Feedback for experiment                       | ExperimentDetailsPage Interactions | Give Feedback            | `{experiment title}`          |
+| Click upgrade notice                                     | ExperimentDetailsPage Interactions | Upgrade Notice           | `{experiment title}`          |             
 | Click Take Survey after disable                          | ExperimentDetailsPage Interactions | button click             | exit survey disabled          |            
 | Click Cancel on tour dialogue                            | ExperimentDetailsPage Interactions | button click             | cancel tour                   |            
 | Complete the tour                                        | ExperimentDetailsPage Interactions | button click             | complete tour                 |            
@@ -133,7 +134,7 @@ We should maintain a consistent convention when using campaign parameters.
 
 | Description                                                            | utm_source                    | utm_medium      | utm_campaign         | utm_content            |
 |------------------------------------------------------------------------|-------------------------------|-----------------|----------------------|------------------------|
-| Clicking on an experiment (or "view all") from the doorhanger          | testpilot-addon               | firefox-browser | testpilot-doorhanger | {badged|not badged} \* |
+| Clicking on an experiment (or "view all") from the doorhanger          | testpilot-addon               | firefox-browser | testpilot-doorhanger | {'badged','not badged'}|
 | Clicking on an experiment from the in-product messaging                | testpilot-addon               | firefox-browser | push notification    | {messageID}            |
 | Tab opens after user has tried an experiment for n days (#1292)        | testpilot-addon               | firefox-browser | share-page           |                        |
 | Links that get shared from /share                                      | {facebook,twitter,email,copy} | social          | share-page           |                        |
