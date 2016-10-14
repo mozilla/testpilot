@@ -48,7 +48,7 @@ aws s3 sync \
   --content-type "application/json" \
   --exclude "*" \
   --include "*.json" \
-  --metadata "{${HPKP}, ${HSTS}}" \
+  --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
   dist/ s3://${TESTPILOT_BUCKET}/
@@ -59,7 +59,7 @@ aws s3 sync \
   --content-type "application/x-xpinstall" \
   --exclude "*" \
   --include "*.xpi" \
-  --metadata "{${HPKP}, ${HSTS}}" \
+  --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
   dist/ s3://${TESTPILOT_BUCKET}/
@@ -70,7 +70,7 @@ aws s3 sync \
   --content-type "text/rdf" \
   --exclude "*" \
   --include "*.rdf" \
-  --metadata "{${HPKP}, ${HSTS}}" \
+  --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
   dist/ s3://${TESTPILOT_BUCKET}/
@@ -80,7 +80,7 @@ aws s3 sync \
   --content-type "image/svg+xml" \
   --exclude "*" \
   --include "*.svg" \
-  --metadata "{${HPKP}, ${HSTS}}" \
+  --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
   dist/ s3://${TESTPILOT_BUCKET}/
@@ -88,7 +88,7 @@ aws s3 sync \
 # Everything else; cache forever, because it has hashes in the filenames
 aws s3 sync \
   --delete \
-  --metadata "{${HPKP}, ${HSTS}}" \
+  --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
   dist/ s3://${TESTPILOT_BUCKET}/
