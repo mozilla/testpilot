@@ -61,7 +61,7 @@ emailOptInInput =
 emailOptInButton = Sign me up
 emailOptInSkip = Skip
 emailOptInConfirmationTitle = Email Sent
-emailOptInSuccessMessage = Thank you!
+emailOptInSuccessMessage2 = Thank you!
 emailOptInConfirmationClose = On to the experiments...
 
 experimentListPageHeader = Ready for Takeoff!
