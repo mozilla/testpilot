@@ -1,34 +1,41 @@
 import React from 'react';
 import { assert, expect } from 'chai';
-import { shallow, mount, render } from 'enzyme';
+import sinon from 'sinon';
+import { shallow } from 'enzyme';
 
 import ExperimentCardList from '../../../src/app/components/ExperimentCardList';
-import ExperimentRowCard from '../../../src/app/components/ExperimentRowCard';
-import Loading from '../../../src/app/components/Loading';
 
-
-const _exp = [
-  { slug: 'foo' },
-  { slug: 'bat' }
-];
-
-const noop = () => {};
 
 describe('app/components/ExperimentCardList', () => {
-  it('renders a loading screen of no experiments are available', () => {
-    const wrapper = shallow(<ExperimentCardList isExperimentEnabled={noop} experiments={[]} />);
-    expect(wrapper.contains(<Loading />)).to.equal(true);
+  let props, subject;
+  beforeEach(() => {
+    props = {
+      experiments: [
+        { slug: 'foo' },
+        { slug: 'bat' }
+      ],
+      isExperimentEnabled: sinon.spy(() => false),
+      // required by ExperimentRowCard {...this.props}
+      hasAddon: true,
+      eventCategory: 'test category',
+      getExperimentLastSeen: sinon.spy(),
+      sendToGA: sinon.spy(),
+      navigateTo: sinon.spy()
+    };
+    subject = shallow(<ExperimentCardList {...props} />);
+  });
+
+  it('renders a loading screen if no experiments are available', () => {
+    subject.setProps({ experiments: [] });
+    expect(subject.find('Loading')).to.have.property('length', 1);
   });
 
   it('renders ExperimentRowCards for each experiment', () => {
-    const wrapper = shallow(<ExperimentCardList isExperimentEnabled={noop} experiments={_exp} />);
-    expect(wrapper.find(ExperimentRowCard)).to.have.length(_exp.length);
+    expect(subject.find('ExperimentRowCard')).to.have.length(props.experiments.length);
   });
 
   it('respects an exception if specified', () => {
-    const wrapper = shallow(<ExperimentCardList isExperimentEnabled={noop}
-                                                experiments={_exp}
-                                                except={_exp[0].slug} />);
-    expect(wrapper.find(ExperimentRowCard)).to.have.length(_exp.length - 1);
+    subject.setProps({ except: props.experiments[0].slug });
+    expect(subject.find('ExperimentRowCard')).to.have.length(props.experiments.length - 1);
   });
 });
