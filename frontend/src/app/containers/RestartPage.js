@@ -14,7 +14,7 @@ export default class Restart extends React.Component {
 
   render() {
     return (
-      <View spaceBetween={true} {...this.props}>
+      <View spaceBetween={true} showNewsletterFooter={false} {...this.props}>
         <div className="split-banner restart-message responsive-content-wrapper">
           <div className="restart-image">
             <img src="/static/images/restart-graphic@2x.jpg" width="208" height="273"/>

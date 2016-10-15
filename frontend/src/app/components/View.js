@@ -3,6 +3,7 @@ import React, { PropTypes } from 'react';
 import ReactDOMFactories from 'react/lib/ReactDOMFactories';
 import Symbol from 'es-symbol';
 
+import NewsletterFooter from '../components/NewsletterFooter';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -63,6 +64,13 @@ export default class View extends React.Component {
     });
   }
 
+  renderNewsletterFooter() {
+    if (this.props.showNewsletterFooter) {
+      return <NewsletterFooter {...this.props} />;
+    }
+    return null;
+  }
+
   renderFooter() {
     if (this.props.showFooter) {
       return <Footer {...this.props} />;
@@ -89,6 +97,7 @@ export default class View extends React.Component {
       <section className={this.makeClassNames()}>
         {this.renderHeader()}
         {this.renderChildren()}
+        {this.renderNewsletterFooter()}
         {this.renderFooter()}
       </section>
     );
@@ -102,6 +111,12 @@ View.propTypes = {
    * If true, adds the `centered` class to the wrapper. Default: `false`.
    */
   centered: PropTypes.bool.isRequired,
+
+  /**
+   * If true, renders a newsletter subscription form above the footer
+   * component. Default: `true`.
+   */
+  showNewsletterFooter: PropTypes.bool.isRequired,
 
   /**
    * If true, renders the `<Footer>` component. Default: `true`.
@@ -123,6 +138,7 @@ View.propTypes = {
 
 View.defaultProps = {
   centered: false,
+  showNewsletterFooter: true,
   showFooter: true,
   showHeader: true,
   spaceBetween: false

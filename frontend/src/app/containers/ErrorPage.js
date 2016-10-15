@@ -6,7 +6,7 @@ import View from '../components/View';
 export default class ErrorPage extends React.Component {
   render() {
     return (
-      <View spaceBetween={true} {...this.props}>
+      <View spaceBetween={true} showNewsletterFooter={false} {...this.props}>
         <div className="centered-banner">
           <div id="four-oh-four" className="modal delayed-fade-in">
             <h1 data-l10n-id="errorHeading" className="title">Whoops!</h1>

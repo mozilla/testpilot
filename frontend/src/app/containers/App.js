@@ -12,6 +12,7 @@ import { getExperimentBySlug, isExperimentsLoaded } from '../reducers/experiment
 import experimentSelector from '../selectors/experiment';
 import { uninstallAddon, installAddon, enableExperiment, disableExperiment, pollAddon } from '../lib/addon';
 import addonActions from '../actions/addon';
+import newsletterFormActions from '../actions/newsletter-form';
 import RestartPage from '../containers/RestartPage';
 
 const clipboard = new Clipboard('button');
@@ -118,36 +119,52 @@ function subscribeToBasket(email, callback) {
   });
 }
 
-export default connect(
-  state => ({
-    addon: state.addon,
-    experiments: experimentSelector(state),
-    experimentsLoaded: isExperimentsLoaded(state.experiments),
-    getExperimentBySlug: slug =>
-      getExperimentBySlug(state.experiments, slug),
-    hasAddon: state.addon.hasAddon,
-    installed: getInstalled(state.addon),
-    installedAddons: state.addon.installedAddons,
-    installedLoaded: isInstalledLoaded(state.addon),
-    isDev: state.browser.isDev,
-    isExperimentEnabled: experiment =>
-      isExperimentEnabled(state.addon, experiment),
-    isAfterCompletedDate,
-    isFirefox: state.browser.isFirefox,
-    isMinFirefox: state.browser.isMinFirefox,
-    routing: state.routing
-  }),
-  dispatch => ({
-    navigateTo: path => dispatch(routerPush(path)),
-    enableExperiment: experiment => enableExperiment(dispatch, experiment),
-    disableExperiment: experiment => disableExperiment(dispatch, experiment),
-    requireRestart: () => dispatch(addonActions.requireRestart()),
-    setHasAddon: installed => {
-      dispatch(addonActions.setHasAddon(installed));
-      if (!installed) { pollAddon(); }
-    }
-  }),
-  (stateProps, dispatchProps, ownProps) => Object.assign({
+
+const mapStateToProps = state => ({
+  addon: state.addon,
+  experiments: experimentSelector(state),
+  experimentsLoaded: isExperimentsLoaded(state.experiments),
+  getExperimentBySlug: slug =>
+    getExperimentBySlug(state.experiments, slug),
+  hasAddon: state.addon.hasAddon,
+  installed: getInstalled(state.addon),
+  installedAddons: state.addon.installedAddons,
+  installedLoaded: isInstalledLoaded(state.addon),
+  isDev: state.browser.isDev,
+  isExperimentEnabled: experiment =>
+    isExperimentEnabled(state.addon, experiment),
+  isAfterCompletedDate,
+  isFirefox: state.browser.isFirefox,
+  isMinFirefox: state.browser.isMinFirefox,
+  newsletterForm: state.newsletterForm,
+  routing: state.routing
+});
+
+
+const mapDispatchToProps = dispatch => ({
+  navigateTo: path => dispatch(routerPush(path)),
+  enableExperiment: experiment => enableExperiment(dispatch, experiment),
+  disableExperiment: experiment => disableExperiment(dispatch, experiment),
+  requireRestart: () => dispatch(addonActions.requireRestart()),
+  setHasAddon: installed => {
+    dispatch(addonActions.setHasAddon(installed));
+    if (!installed) { pollAddon(); }
+  },
+  newsletterForm: {
+    setEmail: email =>
+      dispatch(newsletterFormActions.newsletterFormSetEmail(email)),
+    setPrivacy: privacy =>
+      dispatch(newsletterFormActions.newsletterFormSetPrivacy(privacy)),
+    subscribe: email =>
+      dispatch(newsletterFormActions.newsletterFormSubscribe(dispatch, email))
+  }
+});
+
+
+const mergeProps = (stateProps, dispatchProps, ownProps) => {
+  const newsletterForm = Object.assign({},
+    stateProps.newsletterForm, dispatchProps.newsletterForm);
+  return Object.assign({
     installAddon,
     uninstallAddon,
     sendToGA,
@@ -176,5 +193,10 @@ export default connect(
       parseInt(window.localStorage.getItem(`experiment-last-seen-${experiment.id}`), 10),
     setExperimentLastSeen: (experiment, value) =>
       window.localStorage.setItem(`experiment-last-seen-${experiment.id}`, value || Date.now())
-  }, ownProps, stateProps, dispatchProps)
-)(App);
+  }, ownProps, stateProps, dispatchProps, {
+    newsletterForm
+  });
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(App);

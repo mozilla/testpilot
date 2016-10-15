@@ -6,7 +6,7 @@ import View from '../components/View';
 export default class OnboardingPage extends React.Component {
   render() {
     return (
-      <View spaceBetween={true} {...this.props}>
+      <View spaceBetween={true} showNewsletterFooter={false} {...this.props}>
         <div className="centered-banner">
           <div id="onboarding" className="modal">
             <div className="modal-content centered">

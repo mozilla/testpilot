@@ -37,7 +37,7 @@ export default class RetirePage extends React.Component {
     }
 
     return (
-      <View centered={true} showHeader={false} showFooter={false} {...this.props}>
+      <View centered={true} showHeader={false} showFooter={false} showNewsletterFooter={false} {...this.props}>
         <div className="centered-banner">
           {!uninstalled && <div disabled className={classnames('loading-pill')}>
             <h1 className="emphasis" data-l10n-id="retirePageProgressMessage">Shutting down...</h1>

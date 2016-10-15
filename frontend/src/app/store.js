@@ -1,20 +1,20 @@
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
-import { reducer as formReducer } from 'redux-form';
 import createLogger from 'redux-logger';
 import promise from 'redux-promise';
 import thunk from 'redux-thunk';
 
 import addonReducer from './reducers/addon';
-import experimentsReducer from './reducers/experiments';
 import browserReducer from './reducers/browser';
+import experimentsReducer from './reducers/experiments';
+import newsletterFormReducer from './reducers/newsletter-form';
 
 
 export const reducers = combineReducers({
   addon: addonReducer,
   browser: browserReducer,
   experiments: experimentsReducer,
-  form: formReducer,
+  newsletterForm: newsletterFormReducer,
   routing: routerReducer
 });
 

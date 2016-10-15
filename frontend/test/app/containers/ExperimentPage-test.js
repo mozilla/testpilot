@@ -5,9 +5,10 @@ import { shallow, mount } from 'enzyme';
 import moment from 'moment';
 
 import ExperimentPage, { ExperimentDetail } from '../../../src/app/containers/ExperimentPage';
+import { initialState as newsletterState } from '../../../src/app/reducers/newsletter-form';
+
 
 const CHANGE_HEADER_ON = 105;
-
 
 describe('app/containers/ExperimentPage', () => {
 
@@ -90,7 +91,8 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
       getElementY: sinon.spy(),
       getElementOffsetHeight: sinon.spy(),
       setExperimentLastSeen: sinon.spy(),
-      userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:51.0) Gecko/20100101 Firefox/51.0'
+      userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:51.0) Gecko/20100101 Firefox/51.0',
+      newsletterForm: newsletterState
     };
 
     subject = shallow(<ExperimentDetail {...props} />);
