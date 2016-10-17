@@ -107,3 +107,12 @@ for fn in $(find dist -name 'index.html' -not -path 'dist/index.html'); do
     --acl "public-read" \
     $fn s3://${TESTPILOT_BUCKET}/${s3path}
 done
+
+# __version__ JSON; 10 minute cache
+aws s3 cp \
+  --cache-control "max-age=${MAX_AGE}" \
+  --content-type "application/json" \
+  --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
+  --metadata-directive "REPLACE" \
+  --acl "public-read" \
+  version.json s3://${TESTPILOT_BUCKET}/__version__

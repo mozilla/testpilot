@@ -41,26 +41,14 @@ const SERVER_ENVIRONMENTS = {
     BADGE_COLOR: '#AA00AA'
   },
   dev: {
-    BASE_URL: 'http://testpilot.dev.mozaws.net',
+    BASE_URL: 'https://testpilot.dev.mozaws.net',
     TESTPILOT_PREFIX: 'testpilot.addon.DEV.',
-    WHITELIST_URLS: 'https://www.mozilla.org/*,about:home',
-    BADGE_COLOR: '#AAAA00'
-  },
-  'static-dev': {
-    BASE_URL: 'https://testpilot-static.dev.mozaws.net',
-    TESTPILOT_PREFIX: 'testpilot.addon.STATIC_DEV.',
     WHITELIST_URLS: 'https://www.mozilla.org/*,about:home',
     BADGE_COLOR: '#AAAA00'
   },
   stage: {
     BASE_URL: 'https://testpilot.stage.mozaws.net',
     TESTPILOT_PREFIX: 'testpilot.addon.STAGE.',
-    WHITELIST_URLS: 'https://www.mozilla.org/*,about:home',
-    BADGE_COLOR: '#A0AAA0'
-  },
-  'static-stage': {
-    BASE_URL: 'https://testpilot-static.stage.mozaws.net',
-    TESTPILOT_PREFIX: 'testpilot.addon.STATIC_STAGE.',
     WHITELIST_URLS: 'https://www.mozilla.org/*,about:home',
     BADGE_COLOR: '#A0AAA0'
   },
