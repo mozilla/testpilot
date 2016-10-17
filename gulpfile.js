@@ -17,7 +17,6 @@ require('./frontend/tasks/assets');
 require('./frontend/tasks/pages');
 require('./frontend/tasks/server');
 require('./frontend/tasks/dist');
-require('./frontend/tasks/django');
 
 gulp.task('clean', () => del([
   config.DEST_PATH,
@@ -50,22 +49,6 @@ gulp.task('default', done => runSequence(
   'build',
   'watch',
   'server',
-  done
-));
-
-gulp.task('django-default', done => runSequence(
-  'self-lint',
-  'clean',
-  'build',
-  'django-api-copy',
-  'watch',
-  'django-api-watch',
-  done
-));
-
-gulp.task('django-build', done => runSequence(
-  'build',
-  'django-api-copy',
   done
 ));
 
