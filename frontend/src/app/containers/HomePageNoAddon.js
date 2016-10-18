@@ -9,9 +9,11 @@ import View from '../components/View';
 export default class HomePageNoAddon extends React.Component {
 
   render() {
-    const { experiments } = this.props;
+    const { experiments, isExperimentCompleted } = this.props;
 
     if (experiments.length === 0) { return <LoadingPage />; }
+
+    const currentExperiments = experiments.filter(x => !isExperimentCompleted(x));
 
     return (
       <section data-hook="landing-page">
@@ -38,7 +40,7 @@ export default class HomePageNoAddon extends React.Component {
             <div className="responsive-content-wrapper delayed-fade-in">
               <h2 className="card-list-header" data-l10n-id="landingExperimentsTitle">Try out the latest experimental features</h2>
               <div data-hook="experiment-list">
-                <ExperimentCardList {...this.props} eventCategory="HomePage Interactions" />
+                <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
               </div>
             </div>
           </div>
@@ -75,6 +77,6 @@ export default class HomePageNoAddon extends React.Component {
 HomePageNoAddon.propTypes = {
   hasAddon: React.PropTypes.bool,
   isFirefox: React.PropTypes.bool,
-  experiments: React.PropTypes.array
+  experiments: React.PropTypes.array,
+  isExperimentCompleted: React.PropTypes.func
 };
-

@@ -10,11 +10,12 @@ const MAX_JUST_UPDATED_PERIOD = 2 * ONE_WEEK;
 export default class ExperimentRowCard extends React.Component {
 
   render() {
-    const { hasAddon, experiment, enabled } = this.props;
+    const { hasAddon, experiment, enabled, isExperimentCompleted } = this.props;
 
     const { description, thumbnail } = experiment;
     const installation_count = (experiment.installation_count) ? experiment.installation_count : 0;
     const title = experiment.short_title || experiment.title;
+    const isCompleted = isExperimentCompleted(experiment);
 
     // TODO: #1138 Replace this highly hackly hook so that the subtitle comes from the model
     const subtitle = (experiment.title === 'No More 404s') ?
@@ -50,8 +51,8 @@ export default class ExperimentRowCard extends React.Component {
           <h4 className="eol-message">{this.statusMsg()}</h4>
         </header>
         <p>{description}</p>
-        { this.renderInstallationCount(installation_count) }
-        { this.renderManageButton(enabled, hasAddon) }
+        { this.renderInstallationCount(installation_count, isCompleted) }
+        { this.renderManageButton(enabled, hasAddon, isCompleted) }
       </div>
      </div>
     );
@@ -61,8 +62,8 @@ export default class ExperimentRowCard extends React.Component {
   // which has been sending telemetry pings via installs from dev
   // TODO: figure out a non-hack way to toggle user counts when we have
   // telemetry data coming in from prod
-  renderInstallationCount(installation_count) {
-    if (installation_count <= 100) return '';
+  renderInstallationCount(installation_count, isCompleted) {
+    if (installation_count <= 100 || isCompleted) return '';
     return (
       <span className="participant-count"
             data-l10n-id="participantCount"
@@ -70,10 +71,14 @@ export default class ExperimentRowCard extends React.Component {
     );
   }
 
-  renderManageButton(enabled, hasAddon) {
+  renderManageButton(enabled, hasAddon, isCompleted) {
     if (enabled && hasAddon) {
       return (
         <div className="button card-control secondary" data-l10n-id="experimentCardManage">Manage</div>
+      );
+    } else if (isCompleted) {
+      return (
+        <div className="button card-control secondary" data-l10n-id="experimentCardLearnMore">Learn More</div>
       );
     }
     return (
@@ -155,5 +160,6 @@ ExperimentRowCard.propTypes = {
   eventCategory: React.PropTypes.string.isRequired,
   getExperimentLastSeen: React.PropTypes.func.isRequired,
   sendToGA: React.PropTypes.func.isRequired,
-  navigateTo: React.PropTypes.func.isRequired
+  navigateTo: React.PropTypes.func.isRequired,
+  isExperimentCompleted: React.PropTypes.func
 };

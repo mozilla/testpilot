@@ -76,6 +76,7 @@ installErrorMessage = Uh oh. {$title} could not be enabled. Try again later.
 participantCount = <span>{$installation_count}</span> participants
 experimentCardManage = Manage
 experimentCardGetStarted = Get Started
+experimentCardLearnMore = Learn More
 
 experimentPreFeedbackTitle = {$title} feedback
 experimentPreFeedbackLinkCopy = Give feedback about the {$title} experiment
@@ -170,3 +171,6 @@ incompatibleSubheader = We recommend <a href="{$url}">disabling these add-ons</a
 noScriptHeading = Uh oh...
 noScriptMessage = Test Pilot requires JavaScript.<br>Sorry about that.
 noScriptLink = Find out why
+
+viewPastExperiments = View Past Experiments
+hidePastExperiments = Hide Past Experiments

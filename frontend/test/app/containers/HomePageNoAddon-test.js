@@ -15,6 +15,7 @@ describe('app/containers/HomePageNoAddon', () => {
       isFirefox: false,
       uninstallAddon: sinon.spy(),
       sendToGA: sinon.spy(),
+      isExperimentCompleted: sinon.spy(x => !!x.completed)
     };
     subject = shallow(<HomePageNoAddon {...props} />);
   });
@@ -31,6 +32,14 @@ describe('app/containers/HomePageNoAddon', () => {
     subject.setProps({ experiments });
     expect(findByL10nID('landingIntroLead')).to.have.property('length', 1);
     expect(subject.find('ExperimentCardList')).to.have.property('length', 1);
+  });
+
+  it('should not display completed experiments', () => {
+    const experiments = [ { title: 'foo' }, { title: 'bar', completed: '2016-10-01' } ];
+    subject.setProps({ experiments });
+    const xs = subject.find('ExperimentCardList').prop('experiments');
+    expect(xs.length).to.equal(1);
+    expect(xs[0].title).to.equal('foo');
   });
 
 });
