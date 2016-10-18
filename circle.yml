@@ -2,37 +2,30 @@
 #
 # AMO_USER       - api user from addons.mozilla.com
 # AMO_SECRET     - api key secret from addons.mozilla.com
-# DOCKERHUB_REPO - docker hub repo, format: <username>/<repo>
-# DOCKER_EMAIL   - login info for docker hub
-# DOCKER_USER
-# DOCKER_PASS
 
 machine:
   hosts:
     testpilot.dev: 127.0.0.1
-  services:
-    - docker
   node:
     version: 6.2.0
   environment:
-    TESTPILOT_ENABLE_PONTOON_BRANCHES: development-static
+    TESTPILOT_ENABLE_PONTOON_BRANCHES: master
 
 dependencies:
 
-  # Keep docker dir and addon dependencies
   cache_directories:
     - "addon/node_modules"
+    - "node_modules"
 
   pre:
     # https://discuss.circleci.com/t/nvm-commands-are-not-evaluated/943
     - nvm use 6.2.0 && nvm alias default 6.2.0
 
   override:
-    - docker info
     - node --version
     - npm --version
     - google-chrome --version
-    # - ./bin/circleci/setup-test-dependencies.sh
+    - ./bin/circleci/setup-test-dependencies.sh
     - ./bin/circleci/build-version-json.sh
     - ./bin/circleci/build-addon.sh
     - ./bin/circleci/build-frontend.sh
@@ -42,17 +35,15 @@ test:
     - echo "Skipping integration tests."
     # - ./bin/circleci/run-integration-tests.sh
 
-# appropriately tag and push the container to dockerhub
 deployment:
 
   static_development:
     branch:
-      - development-static
       - master
     commands:
-      - aws s3 sync dist s3://testpilot-static.dev.mozaws.net --delete --acl public-read
+      - TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/deploy.sh
       - aws configure set preview.cloudfront true
-      - aws cloudfront create-invalidation --distribution-id E1QEK63O4YIKFV --paths '/*'
+      - aws cloudfront create-invalidation --distribution-id E2ERG47PHCWD0Z --paths '/*'
 
 # Only notify of builds on master branch.
 experimental:
