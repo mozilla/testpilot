@@ -18,3 +18,15 @@ self.port.on('from-addon-to-web', function(data) {
     'from-addon-to-web', { bubbles: true, detail: clonedData }
   ));
 });
+
+/*
+  Emit a ping event every second to tell the webapp that the addon
+  is still alive. The webapp can use the abscence of these pings
+  to detect when the addon gets disabled or uninstalled.
+*/
+setInterval(function() {
+  const detail = cloneInto({ type: 'ping' }, document.defaultView);
+  document.documentElement.dispatchEvent(new CustomEvent(
+    'from-addon-to-web', { bubbles: true, detail }
+  ));
+}, 1000);
