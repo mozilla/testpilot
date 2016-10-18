@@ -6,6 +6,7 @@ import experimentActions from '../actions/experiments';
 import { getExperimentByID, getExperimentByURL, getExperimentInProgress } from '../reducers/experiments';
 
 const INSTALL_STATE_WATCH_PERIOD = 2000;
+const DISCONNECT_TIMEOUT = 3333;
 const MOZADDONMANAGER_ALLOWED_HOSTNAMES = [
   'testpilot.firefox.com',
   'testpilot.stage.mozaws.net',
@@ -74,6 +75,12 @@ export function setupAddonConnection(store) {
   pollAddon();
 }
 
+let disconnectTimer = 0;
+function addonDisconnected(store) {
+  store.dispatch(addonActions.setHasAddon(false));
+  pollAddon();
+}
+
 let pollTimer = 0;
 export function pollAddon() {
   sendMessage('sync-installed');
@@ -102,6 +109,8 @@ function messageReceived(store, evt) {
     clearTimeout(pollTimer);
     pollTimer = 0;
   }
+  clearTimeout(disconnectTimer);
+  disconnectTimer = setTimeout(addonDisconnected.bind(null, store), DISCONNECT_TIMEOUT);
 
   const { type, data } = evt.detail;
   const { experiments, addon } = store.getState();
