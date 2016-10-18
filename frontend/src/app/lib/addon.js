@@ -65,30 +65,19 @@ export function uninstallAddon() {
 }
 
 export function setupAddonConnection(store) {
+  window.addEventListener(
+    'from-addon-to-web',
+    evt => messageReceived(store, evt)
+  );
+
   store.dispatch(addonActions.setInstalled());
-  watchForAddonInstallStateChange(store);
-  window.addEventListener('from-addon-to-web',
-                          evt => messageReceived(store, evt));
-  sendMessage('sync-installed');
+  pollAddon();
 }
 
-// Periodically check window.navigator.testpilotAddon and keep store in sync
-let installStateWatcherTimer = null;
-function watchForAddonInstallStateChange(store) {
-  store.dispatch(addonActions.setHasAddon(!!window.navigator.testpilotAddon));
-
-  if (installStateWatcherTimer) {
-    clearInterval(installStateWatcherTimer);
-  }
-
-  installStateWatcherTimer = setInterval(() => {
-    const previousState = store.getState().addon.hasAddon;
-    const currentState = !!window.navigator.testpilotAddon;
-    if (previousState !== currentState) {
-      store.dispatch(addonActions.setHasAddon(currentState));
-      sendMessage('sync-installed');
-    }
-  }, INSTALL_STATE_WATCH_PERIOD);
+let pollTimer = 0;
+export function pollAddon() {
+  sendMessage('sync-installed');
+  pollTimer = setTimeout(pollAddon, INSTALL_STATE_WATCH_PERIOD);
 }
 
 export function sendMessage(type, data) {
@@ -109,18 +98,26 @@ export function disableExperiment(dispatch, experiment) {
 }
 
 function messageReceived(store, evt) {
-  const { type, data } = evt.detail;
+  if (pollTimer) {
+    clearTimeout(pollTimer);
+    pollTimer = 0;
+  }
 
-  const experimentsState = store.getState().experiments;
+  const { type, data } = evt.detail;
+  const { experiments, addon } = store.getState();
+
+  if (!addon.hasAddon) {
+    store.dispatch(addonActions.setHasAddon(true));
+  }
 
   let experiment;
   if (data && 'id' in data) {
-    experiment = getExperimentByID(experimentsState, data.id);
+    experiment = getExperimentByID(experiments, data.id);
   } else if (data && 'sourceURI' in data) {
-    experiment = getExperimentByURL(experimentsState, data.sourceURI);
+    experiment = getExperimentByURL(experiments, data.sourceURI);
   } else {
     // Last ditch effort to find experiment in progress if data is missing addon ID
-    experiment = getExperimentInProgress(experimentsState);
+    experiment = getExperimentInProgress(experiments);
   }
 
   switch (type) {
@@ -131,8 +128,7 @@ function messageReceived(store, evt) {
       break;
     case 'addon-self:uninstalled':
       store.dispatch(addonActions.setHasAddon(false));
-      // HACK: The add-on should do this, but early versions do not.
-      window.navigator.testpilotAddon = null;
+      pollAddon();
       break;
     case 'addon-install:download-failed':
       store.dispatch(addonActions.disableExperiment(experiment));
