@@ -10,12 +10,12 @@ const MAX_JUST_UPDATED_PERIOD = 2 * ONE_WEEK;
 export default class ExperimentRowCard extends React.Component {
 
   render() {
-    const { hasAddon, experiment, enabled, isExperimentCompleted } = this.props;
+    const { hasAddon, experiment, enabled, isAfterCompletedDate } = this.props;
 
     const { description, thumbnail } = experiment;
     const installation_count = (experiment.installation_count) ? experiment.installation_count : 0;
     const title = experiment.short_title || experiment.title;
-    const isCompleted = isExperimentCompleted(experiment);
+    const isCompleted = isAfterCompletedDate(experiment);
 
     // TODO: #1138 Replace this highly hackly hook so that the subtitle comes from the model
     const subtitle = (experiment.title === 'No More 404s') ?
@@ -161,5 +161,5 @@ ExperimentRowCard.propTypes = {
   getExperimentLastSeen: React.PropTypes.func.isRequired,
   sendToGA: React.PropTypes.func.isRequired,
   navigateTo: React.PropTypes.func.isRequired,
-  isExperimentCompleted: React.PropTypes.func
+  isAfterCompletedDate: React.PropTypes.func
 };

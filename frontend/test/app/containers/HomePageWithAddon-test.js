@@ -20,7 +20,7 @@ describe('app/containers/HomePageWithAddon', () => {
       subscribeToBasket: sinon.spy(),
       sendToGA: sinon.spy(),
       openWindow: sinon.spy(),
-      isExperimentCompleted: sinon.spy(x => !!x.completed)
+      isAfterCompletedDate: sinon.spy(x => !!x.completed)
     };
     subject = shallow(<HomePageWithAddon {...props} />);
   });

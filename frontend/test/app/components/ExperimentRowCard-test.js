@@ -27,7 +27,7 @@ describe('app/components/ExperimentRowCard', () => {
       navigateTo: sinon.spy(),
       sendToGA: sinon.spy(),
       getExperimentLastSeen: sinon.spy(),
-      isExperimentCompleted: sinon.spy()
+      isAfterCompletedDate: sinon.spy()
     };
     subject = shallow(<ExperimentRowCard {...props} />);
   });
@@ -165,7 +165,7 @@ describe('app/components/ExperimentRowCard', () => {
       experiment: { ...mockExperiment,
         completed: moment().subtract(1, 'days').utc()
       },
-      isExperimentCompleted: () => true
+      isAfterCompletedDate: () => true
     });
     expect(findByL10nID('experimentCardLearnMore')).to.have.property('length', 1);
     expect(findByL10nID('participantCount')).to.have.property('length', 0);

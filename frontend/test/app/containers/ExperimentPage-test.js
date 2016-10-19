@@ -75,6 +75,7 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
       params: {},
       uninstallAddon: sinon.spy(),
       navigateTo: sinon.spy(),
+      isAfterCompletedDate: sinon.stub().returns(false),
       isExperimentEnabled: sinon.spy(),
       requireRestart: sinon.spy(),
       sendToGA: sinon.spy(),
@@ -445,6 +446,42 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
 
       });
 
+      describe('with a completed experiment', () => {
+        beforeEach(() => {
+          subject.setProps({
+            experiment: Object.assign({}, mockExperiment, { completed: '2016-10-01' }),
+            isAfterCompletedDate: sinon.stub().returns(true)
+          });
+        });
+
+        it('does not render controls', () => {
+          expect(subject.find('.experiment-controls').length).to.equal(0);
+        });
+
+        it('displays the end date instead of install count', () => {
+          expect(findByL10nID('completedDateLabel').length).to.equal(1);
+          expect(findByL10nID('userCountContainer').length).to.equal(0);
+          expect(findByL10nID('userCountContainerAlt').length).to.equal(0);
+        });
+
+        describe('with experiment enabled', () => {
+          beforeEach(() => {
+            subject.setProps({ isExperimentEnabled: experiment => true });
+          });
+
+          it('only renders the disable button control', () => {
+            expect(findByL10nID('giveFeedback').length).to.equal(0);
+            expect(findByL10nID('disableExperiment').length).to.equal(1);
+            expect(subject.find('#uninstall-button').hasClass('warning')).to.equal(true);
+          });
+
+          it('shows a modal dialog when the disable button is clicked', () => {
+            expect(subject.state('showEolDialog')).to.equal(false);
+            subject.find('#uninstall-button').simulate('click', mockClickEvent);
+            expect(subject.state('showEolDialog')).to.equal(true);
+          });
+        });
+      });
     });
 
   });

@@ -246,6 +246,29 @@
   padding: 10px;
 }
 
+.completed-block {
+  background: $error-red-background;
+  border: 1px solid $error-red-border;
+  border-radius: 3px;
+  margin-bottom: $grid-unit;
+  padding: $grid-unit;
+
+  h3,
+  p {
+    font-size: $font-unit * (7 / 6);
+    margin: 0;
+  }
+
+  h3 {
+    font-weight: bold;
+  }
+
+  p {
+    line-height: $line-unit;
+    padding-top: 10px;
+  }
+}
+
 .details-sections {
 
   section {
