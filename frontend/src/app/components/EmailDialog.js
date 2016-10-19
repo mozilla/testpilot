@@ -41,7 +41,7 @@ export default class EmailDialog extends React.Component {
           </header>
           <div className="modal-content centered">
             <div className="envelope"></div>
-            <p data-l10n-id="emailOptInSuccessMessage">When you get a chance, head over to your inbox to verify your email address. Thank you!</p>
+            <p data-l10n-id="emailOptInSuccessMessage2">Thank you!</p>
             <button onClick={e => this.continue(e)} className="button default" data-hook="continue" data-l10n-id="emailOptInConfirmationClose">On to the experiments...</button>
           </div>
         </div>}

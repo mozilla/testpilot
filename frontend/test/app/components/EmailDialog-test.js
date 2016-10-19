@@ -77,7 +77,7 @@ describe('app/components/EmailDialog', () => {
   it('should dismiss when continue button is clicked after subscribe', () => {
     subject.setState({ isValidEmail: true, isFirstPage: false });
 
-    const message = subject.findWhere(el => 'emailOptInSuccessMessage' === el.props()['data-l10n-id']);
+    const message = subject.findWhere(el => 'emailOptInSuccessMessage2' === el.props()['data-l10n-id']);
     expect(message).to.have.length(1);
 
     const button = subject.findWhere(el => 'continue' === el.props()['data-hook']);
