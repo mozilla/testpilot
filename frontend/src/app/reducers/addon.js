@@ -37,7 +37,7 @@ export const getInstalled = (state) => state.installed;
 export const isExperimentEnabled = (state, experiment) =>
   !!(experiment && experiment.addon_id in state.installed);
 
-export const isExperimentCompleted = (experiment) =>
+export const isAfterCompletedDate = (experiment) =>
   ((new Date(experiment.completed)).getTime() < Date.now());
 
 export const isInstalledLoaded = (state) => state.installedLoaded;

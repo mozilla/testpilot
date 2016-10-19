@@ -438,10 +438,10 @@ export class ExperimentDetail extends React.Component {
   // TODO: figure out a non-hack way to toggle user counts when we have
   // telemetry data coming in from prod
   renderInstallationCount() {
-    const { experiment } = this.props;
+    const { experiment, isAfterCompletedDate } = this.props;
     const { completed, title, installation_count } = experiment;
-    const eol = completed && (new Date(completed)).getTime() < Date.now();
-    if (eol) {
+
+    if (isAfterCompletedDate(experiment)) {
       const completedDate = formatDate(completed);
       return (
         <span data-l10n-id="completedDateLabel" data-l10n-args={JSON.stringify({ completedDate })}>Experiment End Date: {completedDate}</span>
@@ -474,16 +474,15 @@ export class ExperimentDetail extends React.Component {
 
   renderExperimentControls() {
     const { enabled, isEnabling, isDisabling, progressButtonWidth } = this.state;
-    const { experiment, installed, hasAddon } = this.props;
-    const { completed, title, min_release, survey_url } = experiment;
+    const { experiment, installed, isAfterCompletedDate, hasAddon } = this.props;
+    const { title, min_release, survey_url } = experiment;
     const validVersion = this.isValidVersion(min_release);
     const surveyURL = buildSurveyURL('givefeedback', title, installed, survey_url);
-    const eol = completed && (new Date(completed)).getTime() < Date.now();
 
     if (!hasAddon || !validVersion) {
       return null;
     }
-    if (eol) {
+    if (isAfterCompletedDate(experiment)) {
       if (enabled) {
         return (
           <div className="experiment-controls">
@@ -510,23 +509,11 @@ export class ExperimentDetail extends React.Component {
   }
 
   renderEolBlock() {
-    const { experiment } = this.props;
-    if (!experiment.completed) { return null; }
+    const { experiment, isAfterCompletedDate } = this.props;
+    if (!experiment.completed || isAfterCompletedDate(experiment)) { return null; }
 
     const title = experiment.title;
     const completedDate = formatDate(experiment.completed);
-    const eol = (new Date(experiment.completed)).getTime() < Date.now();
-
-    if (eol) {
-      return (
-        <div>
-          <section className="completed-block">
-            <h3 data-l10n-id="completedHeading">This experiment has been retired and is no longer supported.</h3>
-            {this.state.enabled && <p data-l10n-id="completedMessage" data-l10n-args={JSON.stringify({ title })}>You are still able to use {title} but we will no longer be providing updates or support.</p>}
-          </section>
-        </div>
-      );
-    }
 
     return (
       <div className="eol-block">
@@ -667,6 +654,7 @@ ExperimentDetail.propTypes = {
   installed: React.PropTypes.object,
   installedAddons: React.PropTypes.array,
   navigateTo: React.PropTypes.func,
+  isAfterCompletedDate: React.PropTypes.func,
   isExperimentEnabled: React.PropTypes.func,
   requireRestart: React.PropTypes.func,
   sendToGA: React.PropTypes.func,

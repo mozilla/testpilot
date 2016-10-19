@@ -75,6 +75,7 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
       params: {},
       uninstallAddon: sinon.spy(),
       navigateTo: sinon.spy(),
+      isAfterCompletedDate: sinon.stub().returns(false),
       isExperimentEnabled: sinon.spy(),
       requireRestart: sinon.spy(),
       sendToGA: sinon.spy(),
@@ -447,17 +448,14 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
 
       describe('with a completed experiment', () => {
         beforeEach(() => {
-          subject.setProps({ experiment: Object.assign({}, mockExperiment, { completed: '2016-10-01' }) });
+          subject.setProps({
+            experiment: Object.assign({}, mockExperiment, { completed: '2016-10-01' }),
+            isAfterCompletedDate: sinon.stub().returns(true)
+          });
         });
 
         it('does not render controls', () => {
           expect(subject.find('.experiment-controls').length).to.equal(0);
-        });
-
-        it('displays a retired message box', () => {
-          expect(subject.find('.completed-block').length).to.equal(1);
-          expect(findByL10nID('completedHeading').length).to.equal(1);
-          expect(findByL10nID('eolMessage').length).to.equal(0);
         });
 
         it('displays the end date instead of install count', () => {

@@ -18,7 +18,7 @@ export default class HomePageWithAddon extends React.Component {
   }
 
   render() {
-    const { experiments, getCookie, removeCookie, getWindowLocation, isExperimentCompleted } = this.props;
+    const { experiments, getCookie, removeCookie, getWindowLocation, isAfterCompletedDate } = this.props;
 
     if (experiments.length === 0) { return <LoadingPage />; }
 
@@ -30,8 +30,8 @@ export default class HomePageWithAddon extends React.Component {
       showEmailDialog = true;
     }
     const { showPastExperiments } = this.state;
-    const currentExperiments = experiments.filter(x => !isExperimentCompleted(x));
-    const pastExperiments = experiments.filter(isExperimentCompleted);
+    const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
+    const pastExperiments = experiments.filter(isAfterCompletedDate);
 
     return (
       <View {...this.props}>
@@ -79,5 +79,5 @@ HomePageWithAddon.propTypes = {
   uninstallAddon: React.PropTypes.func,
   sendToGA: React.PropTypes.func,
   openWindow: React.PropTypes.func,
-  isExperimentCompleted: React.PropTypes.func
+  isAfterCompletedDate: React.PropTypes.func
 };

@@ -15,7 +15,7 @@ describe('app/containers/HomePageNoAddon', () => {
       isFirefox: false,
       uninstallAddon: sinon.spy(),
       sendToGA: sinon.spy(),
-      isExperimentCompleted: sinon.spy(x => !!x.completed)
+      isAfterCompletedDate: sinon.spy(x => !!x.completed)
     };
     subject = shallow(<HomePageNoAddon {...props} />);
   });

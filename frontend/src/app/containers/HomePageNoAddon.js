@@ -9,11 +9,11 @@ import View from '../components/View';
 export default class HomePageNoAddon extends React.Component {
 
   render() {
-    const { experiments, isExperimentCompleted } = this.props;
+    const { experiments, isAfterCompletedDate } = this.props;
 
     if (experiments.length === 0) { return <LoadingPage />; }
 
-    const currentExperiments = experiments.filter(x => !isExperimentCompleted(x));
+    const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
 
     return (
       <section data-hook="landing-page">
@@ -78,5 +78,5 @@ HomePageNoAddon.propTypes = {
   hasAddon: React.PropTypes.bool,
   isFirefox: React.PropTypes.bool,
   experiments: React.PropTypes.array,
-  isExperimentCompleted: React.PropTypes.func
+  isAfterCompletedDate: React.PropTypes.func
 };

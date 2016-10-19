@@ -158,8 +158,6 @@ shareCopy = Copy
 
 eolMessage = <strong>This experiment is ending on {$completedDate}</strong>.<br/><br/>After then you will still be able to use {$title} but we will no longer be providing updates or support.
 eolDisableMessage = The {$title} experiment has ended. Once you uninstall it you won't be able to re-install it through Test Pilot again.
-completedHeading = This experiment has been retired and is no longer supported.
-completedMessage = You are still able to use {$title} but we will no longer be providing updates or support.
 completedDateLabel = Experiment End Date: {$completedDate}
 
 restartRequiredSubHeader = Almost done . . .
