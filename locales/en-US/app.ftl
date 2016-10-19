@@ -127,6 +127,11 @@ retirePageHeadline = Thanks for flying!
 retirePageMessage = Hope you had fun experimenting with us. <br> Come back any time.
 retirePageSurveyButton = Take a quick survey
 
+restartIntroLead = Preflight checklist
+restartIntroOne = Restart your browser
+restartIntroTwo = Locate the Test Pilot add-on
+restartIntroThree = Select your experiments
+
 measurements = Your privacy
 experimentPrivacyNotice = You can learn more about the data collection for {$title} here.
 contributorsHeading = Brought to you by
@@ -156,10 +161,6 @@ shareEmail = E-mail
 shareCopy = Copy
 
 eolMessage = <strong>This experiment is ending on {$completedDate}</strong>.<br/><br/>After then you will still be able to use {$title} but we will no longer be providing updates or support.
-
-restartRequiredSubHeader = Almost done . . .
-restartRequiredFromLanding = Please restart Firefox <br/> to choose your features.
-restartRequiredFromExperiment = Please restart Firefox <br/> to enable {$experimentTitle}.
 
 incompatibleHeader = This experiment may not be compatible with add-ons you have installed.
 incompatibleSubheader = We recommend <a href="{$url}">disabling these add-ons</a> before activating this experiment:

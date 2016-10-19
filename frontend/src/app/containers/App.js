@@ -81,7 +81,7 @@ class App extends Component {
   render() {
     const { restart } = this.props.addon;
     if (restart.isRequired) {
-      return <RestartPage experimentTitle={ restart.forExperiment } {...this.props}/>;
+      return <RestartPage {...this.props}/>;
     }
     return React.cloneElement(this.props.children, this.props);
   }
@@ -141,8 +141,7 @@ export default connect(
     navigateTo: path => dispatch(routerPush(path)),
     enableExperiment: experiment => enableExperiment(dispatch, experiment),
     disableExperiment: experiment => disableExperiment(dispatch, experiment),
-    requireRestart: experimentTitle =>
-      dispatch(addonActions.requireRestart(experimentTitle)),
+    requireRestart: () => dispatch(addonActions.requireRestart()),
     setHasAddon: installed => {
       dispatch(addonActions.setHasAddon(installed));
       if (!installed) { pollAddon(); }

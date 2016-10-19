@@ -10,32 +10,30 @@ export default class MainInstallButton extends React.Component {
     };
   }
 
-  install(evt, experimentTitle) {
+  install() {
     const { requireRestart, sendToGA, eventCategory, hasAddon, installAddon } = this.props;
     if (hasAddon) { return; }
     this.setState({ isInstalling: true });
-    installAddon(requireRestart, sendToGA, eventCategory, experimentTitle);
+    installAddon(requireRestart, sendToGA, eventCategory);
   }
 
   render() {
     const { isFirefox, isMinFirefox, hasAddon } = this.props;
     const isInstalling = this.state.isInstalling && !hasAddon;
-    const experimentTitle = ('experimentTitle' in this.props &&
-                             this.props.experimentTitle);
 
     return (
       <div>
-        {(isMinFirefox) ? this.renderInstallButton(experimentTitle, isInstalling, hasAddon) : this.renderAltButton(isFirefox) }
+        {(isMinFirefox) ? this.renderInstallButton(isInstalling, hasAddon) : this.renderAltButton(isFirefox) }
         {isMinFirefox && <p data-l10n-id="landingLegalNotice" className="legal-information">By proceeding,
           you agree to the <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Notice</a> of Test Pilot</p>}
       </div>
     );
   }
 
-  renderInstallButton(experimentTitle, isInstalling, hasAddon) {
+  renderInstallButton(isInstalling, hasAddon) {
     return (
       <div>
-        <button onClick={e => this.install(e, experimentTitle)} data-hook="install"
+        <button onClick={e => this.install(e)} data-hook="install"
                 className={classnames('button extra-large primary install', { 'state-change': isInstalling })}>
           {hasAddon && <span className="progress-btn-msg" data-l10n-id="landingInstallingButton">Installed</span>}
           {!hasAddon && !isInstalling &&
