@@ -3,6 +3,7 @@ import { assert, expect } from 'chai';
 import sinon from 'sinon';
 import { shallow, mount, render } from 'enzyme';
 
+import { initialState as newsletterState } from '../../../src/app/reducers/newsletter-form';
 import View from '../../../src/app/components/View';
 
 
@@ -15,7 +16,8 @@ const FooComponent = React.createClass({
 const mockRequiredProps = {
   uninstallAddon: sinon.spy(),
   sendToGA: sinon.spy(),
-  openWindow: sinon.spy()
+  openWindow: sinon.spy(),
+  newsletterForm: newsletterState
 };
 
 

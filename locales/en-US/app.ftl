@@ -168,6 +168,19 @@ completedDateLabel = Experiment End Date: {$completedDate}
 incompatibleHeader = This experiment may not be compatible with add-ons you have installed.
 incompatibleSubheader = We recommend <a href="{$url}">disabling these add-ons</a> before activating this experiment:
 
+newsletterFormEmailPlaceholder =
+    [html/placeholder] Your email here
+newsletterFormDisclaimer = We will only send you Test Pilot-related information.
+newsletterFormPrivacyNotice = I'm okay with Mozilla handling by info as explained in <a href="{$url}">this privacy notice</a>.
+newsletterFormSubmitButton = Sign Up Now
+newsletterFormSubmitButtonSubmitting = Submitting...
+
+newsletterFooterError = There was an error submitting your email address. Try again?
+newsletterFooterHeader = Stay Informed
+newsletterFooterBody = Find out about new experiments and see test results for experiments you've tried.
+newsletterFooterSuccessHeader = Thanks!
+newsletterFooterSuccessBody = If you haven't previously confirmed a subscription to a Mozilla-related newsletter you may have to do so. Please check your inbox or your spam filter for an email from us.
+
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage

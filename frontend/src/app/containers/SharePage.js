@@ -6,7 +6,7 @@ import View from '../components/View';
 export default class SharePage extends React.Component {
   render() {
     return (
-      <View spaceBetween={true} {...this.props}>
+      <View spaceBetween={true} showNewsletterFooter={false} {...this.props}>
         <div className="centered-banner">
           <div id="share" className="modal delayed-fade-in">
             <div className="modal-content">

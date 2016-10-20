@@ -1,0 +1,56 @@
+.newsletter-form {
+  @include flex-container(column, center, flex-start);
+
+  input[type='email'],
+  button {
+    border-radius: $small-border-radius;
+    box-shadow: none;
+    line-height: 1;
+    margin-bottom: $grid-unit * .5;
+    padding: ($grid-unit * .75) ($grid-unit * .5);
+    width: 100%;
+  }
+
+  input[type='email'] {
+    border: 0;
+    color: $black;
+
+    &::placeholder {
+      color: $transparent-black-7;
+      text-transform: uppercase;
+    }
+  }
+
+  input[type='checkbox'] {
+    margin-right: $grid-unit * .25;
+  }
+
+  button {
+    background: transparent;
+    border: 1px solid $white;
+    font-size: $font-unit * 1.75;
+  }
+
+  label {
+    font-size: $font-unit;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  p {
+    font-size: $font-unit;
+  }
+
+  .revealed-field {
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+
+    &.reveal {
+      height: auto;
+      margin-bottom: $grid-unit * .5;
+    }
+  }
+}

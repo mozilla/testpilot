@@ -6,7 +6,8 @@ import View from '../components/View';
 export default class NotFoundPage extends React.Component {
   render() {
     return (
-      <View centered={true} showFooter={false} showHeader={false} {...this.props}>
+      <View centered={true} showNewsletterFooter={false} showFooter={false} showHeader={false}
+            {...this.props}>
         <div data-hook="no-found-page">
           <div className="centered-banner">
             <div id="four-oh-four" className="modal delayed-fade-in">
