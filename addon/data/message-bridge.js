@@ -18,3 +18,10 @@ self.port.on('from-addon-to-web', function(data) {
     'from-addon-to-web', { bubbles: true, detail: clonedData }
   ));
 });
+
+setInterval(function() {
+  const detail = cloneInto({ type: 'ping' }, document.defaultView);
+  document.documentElement.dispatchEvent(new CustomEvent(
+    'from-addon-to-web', { bubbles: true, detail }
+  ));
+}, 1000);
