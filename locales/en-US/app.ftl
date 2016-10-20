@@ -10,6 +10,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Privacy
 footerLinkTerms = Terms
 footerLinkLegal = Legal
+footerLinkAbout = About Test Pilot
 
 home = Home
 

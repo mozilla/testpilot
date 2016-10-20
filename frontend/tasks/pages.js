@@ -9,12 +9,13 @@ const through = require('through2');
 const Mustache = require('mustache');
 const YAML = require('yamljs');
 
-const md = new Remarkable({html: true});
+const md = new Remarkable({ html: true });
 
 const indexTemplate = fs.readFileSync(config.SRC_PATH + 'templates/index.mustache').toString();
-const legalTemplates = require('../../legal-copy/legal-templates');
+const compiledTemplates = require('../../compiled-templates/compiled-templates');
 
-const legalPagePaths = {
+const compiledPagePaths = {
+  'about.md': 'about/index.html',
   'privacy-notice.md': 'privacy/index.html',
   'terms-of-use.md': 'terms/index.html'
 };
@@ -27,7 +28,7 @@ gulp.task('pages-misc', () => {
     .pipe(buildLandingPage())
     .pipe(multiDest([
       '', 'experiments', 'onboarding', 'home', 'share', 'legacy', 'error', 'retire'
-    ].map(path => config.DEST_PATH + path)))
+    ].map(path => config.DEST_PATH + path)));
 });
 
 gulp.task('pages-experiments', () => {
@@ -36,21 +37,21 @@ gulp.task('pages-experiments', () => {
     .pipe(gulp.dest(config.DEST_PATH + 'experiments'));
 });
 
-gulp.task('pages-legal', () => {
-  return gulp.src('./legal-copy/*.md')
-             .pipe(convertToLegalPage())
+gulp.task('pages-compiled', () => {
+  return gulp.src('./compiled-templates/*.md')
+             .pipe(convertToCompiledPage())
              .pipe(gulp.dest(config.DEST_PATH));
 });
 
 gulp.task('pages-build', [
   'pages-misc',
   'pages-experiments',
-  'pages-legal'
+  'pages-compiled'
 ]);
 
 gulp.task('pages-watch', () => {
   gulp.watch(config.SRC_PATH + 'index.html', ['pages-generate']);
-  gulp.watch(['./legal-copy/*.md', './legal-copy/*.js'], ['pages-legal']);
+  gulp.watch(['./compiled-templates/*.md', './compiled-templates/*.js'], ['pages-compiled']);
 });
 
 function buildLandingPage() {
@@ -92,14 +93,14 @@ function buildExperimentPage() {
   });
 }
 
-function convertToLegalPage() {
-  return through.obj(function legalConvert(file, encoding, callback) {
+function convertToCompiledPage() {
+  return through.obj(function compiledConvert(file, encoding, callback) {
     const filename = file.path.split('/').pop();
     this.push(new gutil.File({
-      path: legalPagePaths[filename],
-      contents: new Buffer(`${legalTemplates.templateBegin}
+      path: compiledPagePaths[filename],
+      contents: new Buffer(`${compiledTemplates.templateBegin}
                             ${md.render(file.contents.toString())}
-                            ${legalTemplates.templateEnd}`)
+                            ${compiledTemplates.templateEnd}`)
     }));
     callback();
   });

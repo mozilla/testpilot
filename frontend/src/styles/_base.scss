@@ -46,6 +46,11 @@ h3 {
 h4 {
   font-size: 1.2 * $font-unit;
   font-weight: 500;
+
+  .static-page-content & {
+    font-size: 1.66 * $font-unit;
+    font-weight: 400;
+  }
 }
 
 p {
