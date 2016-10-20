@@ -25,7 +25,7 @@ es6Promise.polyfill();
 
 const browserHistory = useRouterHistory(createHistory)({ basename: '/' });
 
-const store = createStore();
+const store = createStore(browserHistory);
 const history = syncHistoryWithStore(browserHistory, store);
 // HACK: On history change, scroll to the top.
 history.listen(() => window.scroll(0, 0));
