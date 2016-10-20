@@ -16,6 +16,10 @@ a {
   .default-background & {
     color: $default;
   }
+
+  .static-page-content & {
+    text-decoration: underline;
+  }
 }
 
 .blue {
@@ -23,6 +27,11 @@ a {
   background-image: radial-gradient(ellipse 250% 100% at center 140%, $light-blue-step 12%, $dark-blue-step 50%, $darkest-blue-step 100%);
   color: $white;
   position: relative;
+
+  hr {
+    border: 0;
+    border-bottom: 1px solid $transparent-white-2;
+  }
 }
 
 .stars {

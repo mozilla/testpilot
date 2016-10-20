@@ -1,4 +1,4 @@
-# Test Pilot Privacy Notice
+## Test Pilot Privacy Notice
 July 19, 2016
 
 Mozilla cares about your Privacy.  The [Mozilla Privacy Policy](https://www.mozilla.org/privacy/) describes how we handle information that we receive from you in connection with Test Pilot.

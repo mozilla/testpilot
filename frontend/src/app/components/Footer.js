@@ -9,6 +9,7 @@ export default class Footer extends React.Component {
           <div className="legal-links">
             <a href="https://www.mozilla.org" className="mozilla-logo"></a>
             <a data-l10n-id="footerLinkLegal" href="https://www.mozilla.org/about/legal/" className="boilerplate">Legal</a>
+            <a data-l10n-id="footerLinkAbout" href="/about" className="boilerplate">About Test Pilot</a>
             <a data-l10n-id="footerLinkPrivacy" href="/privacy" className="boilerplate">Privacy</a>
             <a data-l10n-id="footerLinkTerms" href="/terms" className="boilerplate">Terms</a>
             <a data-l10n-id="footerLinkCookies" href="https://www.mozilla.org/privacy/websites/#cookies" className="boilerplate">Cookies</a>
