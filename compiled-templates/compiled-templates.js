@@ -29,34 +29,36 @@ module.exports.templateBegin = `
 </head>
 <body class="blue">
   <div class="stars"></div>
- <header id="main-header" class="responsive-content-wrapper">
-    <h1>
-      <a href="/" class="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
-    </h1>
-  </header>
-  <div data-hook="page-container">
-    <div class="responsive-content-wrapper static-page-content">`;
+  <div class="full-page-wrapper space-between"/>
+   <header id="main-header" class="responsive-content-wrapper">
+      <h1>
+        <a href="/" class="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
+      </h1>
+    </header>
+    <div data-hook="page-container">
+      <div class="responsive-content-wrapper static-page-content">`;
 
 module.exports.templateEnd = `
     </div>
   </div>
-  
-  <footer id="main-footer" class="responsive-content-wrapper">
-    <div id="footer-links">
-      <div class="legal-links">
-        <a href="https://www.mozilla.org" class="mozilla-logo"></a>
-        <a data-l10n-id="footerLinkLegal" href="https://www.mozilla.org/about/legal/" class="boilerplate">Legal</a>
-        <a data-l10n-id="footerLinkAbout" href="/about" className="boilerplate">About Test Pilot</a>
-        <a data-l10n-id="footerLinkPrivacy" href="/privacy" class="boilerplate">Privacy</a>
-        <a data-l10n-id="footerLinkTerms" href="/terms" class="boilerplate">Terms</a>
-        <a data-l10n-id="footerLinkCookies" href="https://www.mozilla.org/privacy/websites/#cookies" class="boilerplate">Cookies</a>
+
+    <footer id="main-footer" class="responsive-content-wrapper">
+      <div id="footer-links">
+        <div class="legal-links">
+          <a href="https://www.mozilla.org" class="mozilla-logo"></a>
+          <a data-l10n-id="footerLinkLegal" href="https://www.mozilla.org/about/legal/" class="boilerplate">Legal</a>
+          <a data-l10n-id="footerLinkAbout" href="/about" className="boilerplate">About Test Pilot</a>
+          <a data-l10n-id="footerLinkPrivacy" href="/privacy" class="boilerplate">Privacy</a>
+          <a data-l10n-id="footerLinkTerms" href="/terms" class="boilerplate">Terms</a>
+          <a data-l10n-id="footerLinkCookies" href="https://www.mozilla.org/privacy/websites/#cookies" class="boilerplate">Cookies</a>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/mozilla/testpilot" target="_blank" title="GitHub" class="link-icon github"></a>
+          <a href="https://twitter.com/FxTestPilot" target="_blank" title="Twitter" class="link-icon twitter"></a>
+        </div>
       </div>
-      <div class="social-links">
-        <a href="https://github.com/mozilla/testpilot" target="_blank" title="GitHub" class="link-icon github"></a>
-        <a href="https://twitter.com/FxTestPilot" target="_blank" title="Twitter" class="link-icon twitter"></a>
-      </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
   <script src="/static/scripts/legal.js"></script>
 </body>
 </html>`;
