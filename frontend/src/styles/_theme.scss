@@ -27,11 +27,6 @@ a {
   background-image: radial-gradient(ellipse 250% 100% at center 140%, $light-blue-step 12%, $dark-blue-step 50%, $darkest-blue-step 100%);
   color: $white;
   position: relative;
-
-  hr {
-    border: 0;
-    border-bottom: 1px solid $transparent-white-2;
-  }
 }
 
 .stars {
@@ -104,4 +99,13 @@ a {
 
 .chat-icon {
   background: url('../images/chat-icon.svg');
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid $transparent-black-3;
+
+  .static-page-content & {
+    border-bottom: 1px solid $transparent-white-2;
+  }
 }
