@@ -111,11 +111,13 @@ done
 # build version.json
 $(dirname $0)/build-version-json.sh
 
-# __version__ JSON; 10 minute cache
-aws s3 cp \
-  --cache-control "max-age=${MAX_AGE}" \
-  --content-type "application/json" \
-  --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
-  --metadata-directive "REPLACE" \
-  --acl "public-read" \
-  version.json s3://${TESTPILOT_BUCKET}/__version__
+if [ -e version.json ]; then
+    # __version__ JSON; 10 minute cache
+    aws s3 cp \
+      --cache-control "max-age=${MAX_AGE}" \
+      --content-type "application/json" \
+      --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
+      --metadata-directive "REPLACE" \
+      --acl "public-read" \
+      version.json s3://${TESTPILOT_BUCKET}/__version__
+fi
