@@ -21,7 +21,13 @@ const subscribeActions = createActions({
       },
       body: `newsletters=test-pilot&email=${encodeURIComponent(email)}`
     })
-      .then(() => dispatch(actions.newsletterFormSetSucceeded()))
+      .then(response => {
+        if (response.ok) {
+          dispatch(actions.newsletterFormSetSucceeded());
+        } else {
+          dispatch(actions.newsletterFormSetFailed());
+        }
+      })
       .catch(() => dispatch(actions.newsletterFormSetFailed()));
   }
 });
