@@ -20,7 +20,7 @@ const compiledPagePaths = {
   'terms-of-use.md': 'terms/index.html'
 };
 
-const THUMBNAIL_FACEBOOK = 'https://testpilot.firefox.com/static/images/thumbnail-facebok.png';
+const THUMBNAIL_FACEBOOK = 'https://testpilot.firefox.com/static/images/thumbnail-facebook.png';
 const THUMBNAIL_TWITTER = 'https://testpilot.firefox.com/static/images/thumbnail-twitter.png';
 
 gulp.task('pages-misc', () => {
