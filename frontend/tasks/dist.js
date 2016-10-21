@@ -25,8 +25,13 @@ gulp.task('dist-rev-assets', function() {
     .pipe(gulp.dest(config.DIST_PATH));
 });
 
+gulp.task('dist-thumbnail-images', () => {
+  gulp.src(config.DEST_PATH + 'static/images/thumbnail-*.png')
+    .pipe(gulp.dest(config.DIST_PATH + 'static/images'));
+});
+
 gulp.task('dist-build', done =>
-  runSequence('clean', 'build', 'dist-rev-assets', done));
+  runSequence('clean', 'build', 'dist-rev-assets', 'dist-thumbnail-images', done));
 
 gulp.task('dist-watch', ['watch'], () =>
   gulp.watch(config.DEST_PATH + '**/*', ['dist-rev-assets']));
