@@ -3,7 +3,7 @@ July 19, 2016
 
 Mozilla cares about your Privacy.  The [Mozilla Privacy Policy](https://www.mozilla.org/privacy/) describes how we handle information that we receive from you in connection with Test Pilot.
 
-## Things you should know
+### Things you should know
 
 Firefox sends Mozilla data when Test Pilot is installed; and also if a Test Pilot Experiment is enabled. This includes data on Firefox and user interactions with Firefox. We use this data to build better Firefox features.
 

@@ -21,8 +21,8 @@ window.addEventListener('DOMContentLoaded', function (event) {
   'use strict';
 
   // Add an accordion to the Privacy Notice page
-  if (location.pathname === '/privacy') {
-    var ps = document.querySelectorAll('h2 ~ p');
+  if (location.pathname === '/privacy' || location.pathname === '/privacy/index.html') {
+    var ps = document.querySelectorAll('h3 ~ p');
     var tablist = ps[0].parentElement;
 
     tablist.setAttribute('role', 'tablist');
