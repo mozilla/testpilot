@@ -31,8 +31,8 @@ TYPE="\"x-content-type-options\": \"nosniff\""
 FRAME="\"x-frame-options\": \"DENY\""
 XSS="\"x-xss-protection\": \"1; mode=block\""
 
-# build version.json
-$(dirname $0)/build-version-json.sh
+# build version.json if it isn't provided
+[ -e version.json ] || $(dirname $0)/build-version-json.sh
 
 if [ -e version.json ]; then
     mv version.json dist/__version__
