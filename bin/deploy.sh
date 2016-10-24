@@ -31,6 +31,21 @@ TYPE="\"x-content-type-options\": \"nosniff\""
 FRAME="\"x-frame-options\": \"DENY\""
 XSS="\"x-xss-protection\": \"1; mode=block\""
 
+# build version.json
+$(dirname $0)/build-version-json.sh
+
+if [ -e version.json ]; then
+    mv version.json dist/__version__
+    # __version__ JSON; 10 minute cache
+    aws s3 cp \
+      --cache-control "max-age=${MAX_AGE}" \
+      --content-type "application/json" \
+      --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
+      --metadata-directive "REPLACE" \
+      --acl "public-read" \
+      dist/__version__ s3://${TESTPILOT_BUCKET}/__version__
+fi
+
 # HTML; 10 minute cache
 aws s3 sync \
   --cache-control "max-age=${MAX_AGE}" \
@@ -107,17 +122,3 @@ for fn in $(find dist -name 'index.html' -not -path 'dist/index.html'); do
     --acl "public-read" \
     $fn s3://${TESTPILOT_BUCKET}/${s3path}
 done
-
-# build version.json
-$(dirname $0)/build-version-json.sh
-
-if [ -e version.json ]; then
-    # __version__ JSON; 10 minute cache
-    aws s3 cp \
-      --cache-control "max-age=${MAX_AGE}" \
-      --content-type "application/json" \
-      --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
-      --metadata-directive "REPLACE" \
-      --acl "public-read" \
-      version.json s3://${TESTPILOT_BUCKET}/__version__
-fi
