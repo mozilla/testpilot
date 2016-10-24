@@ -88,4 +88,14 @@ describe('app/components/View', () => {
     const wrapper = shallow(<View showHeader={false} {...mockRequiredProps}><FooComponent /></View>);
     expect(wrapper.find('Header')).to.have.length(0);
   });
+
+  it('should render the newsletter footer by default', () => {
+    const wrapper = shallow(<View {...mockRequiredProps}><FooComponent /></View>);
+    expect(wrapper.find('NewsletterFooter')).to.have.length(1);
+  });
+
+  it('should not render the newsletter footer when requested', () => {
+    const wrapper = shallow(<View showNewsletterFooter={false} {...mockRequiredProps}><FooComponent /></View>);
+    expect(wrapper.find('NewsletterFooter')).to.have.length(0);
+  });
 });

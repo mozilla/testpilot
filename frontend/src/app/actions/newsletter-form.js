@@ -1,4 +1,7 @@
 import { createActions } from 'redux-actions';
+import 'isomorphic-fetch';
+
+export const basketUrl = 'https://basket.mozilla.org/news/subscribe/';
 
 const actions = createActions(
   {
@@ -12,9 +15,8 @@ const actions = createActions(
 
 const subscribeActions = createActions({
   newsletterFormSubscribe: (dispatch, email) => {
-    const url = 'https://basket.mozilla.org/news/subscribe/';
     dispatch(actions.newsletterFormSetSubmitting());
-    fetch(url, {
+    fetch(basketUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
