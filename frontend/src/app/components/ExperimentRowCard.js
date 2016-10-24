@@ -12,14 +12,10 @@ export default class ExperimentRowCard extends React.Component {
   render() {
     const { hasAddon, experiment, enabled, isAfterCompletedDate } = this.props;
 
-    const { description, thumbnail } = experiment;
+    const { description, thumbnail, subtitle } = experiment;
     const installation_count = (experiment.installation_count) ? experiment.installation_count : 0;
     const title = experiment.short_title || experiment.title;
     const isCompleted = isAfterCompletedDate(experiment);
-
-    // TODO: #1138 Replace this highly hackly hook so that the subtitle comes from the model
-    const subtitle = (experiment.title === 'No More 404s') ?
-      'Powered by the Wayback Machine' : '';
 
     return (
       <div data-hook="show-detail"

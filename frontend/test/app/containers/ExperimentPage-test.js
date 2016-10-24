@@ -195,12 +195,6 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
       expect(subject.find('.incompatible-addons')).to.have.property('length', 1);
     });
 
-    // TODO #1138: Special sub-title case for No More 404s
-    it('(TODO #1138) should add a hardcoded subtitle for No More 404s', () => {
-      setExperiment({ ...mockExperiment, title: 'No More 404s' });
-      expect(subject.find('.subtitle').text()).to.equal('Powered by the Wayback Machine');
-    });
-
     it('should display installation count if over 100', () => {
       const experiment = setExperiment({ ...mockExperiment, installation_count: '101' });
       const el = findByL10nID('userCountContainer');

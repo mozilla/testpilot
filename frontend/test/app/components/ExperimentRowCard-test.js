@@ -53,11 +53,6 @@ describe('app/components/ExperimentRowCard', () => {
     expect(subject.find('.experiment-information header h3').text()).to.equal(expectedTitle);
   });
 
-  it('(TODO #1138) should add a hardcoded subtitle for No More 404s', () => {
-    subject.setProps({ experiment: { ...mockExperiment, title: 'No More 404s' }});
-    expect(subject.find('.subtitle').text()).to.equal('Powered by the Wayback Machine');
-  });
-
   it('should display installation count if over 100', () => {
     const expectedCount = '101';
     subject.setProps({ experiment: { ...mockExperiment, installation_count: expectedCount }});

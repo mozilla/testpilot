@@ -163,14 +163,13 @@ export class ExperimentDetail extends React.Component {
 
     const { title, version, contribute_url, bug_report_url, discourse_url,
             introduction, measurements, privacy_notice_url, changelog_url,
-            thumbnail, survey_url, contributors, details, min_release } = experiment;
+            thumbnail, subtitle, survey_url, contributors, details,
+            min_release } = experiment;
 
     // Set the timestamp for when this experiment was last seen (for
     // ExperimentRowCard updated/launched banner logic)
     setExperimentLastSeen(experiment);
 
-    // TODO: #1138 - add optional subtitles the right way
-    const subtitle = (title === 'No More 404s') ? 'Powered by the Wayback Machine' : '';
     const surveyURL = buildSurveyURL('givefeedback', title, installed, survey_url);
     const modified = formatDate(experiment.modified);
 
