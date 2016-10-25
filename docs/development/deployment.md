@@ -18,7 +18,7 @@ Softvision is our embedded QA team. Their main functions are to write test plans
 
 ## Team Notification ##
 
-During the checkin before the end of the [current milestone](https://github.com/mozilla/testpilot/milestones), an email will be sent to our distribution list (`testpilot-dev@mozilla.com`) informing the team that we will be building a release against `master`.
+During the checkin before the end of the [current milestone](https://github.com/mozilla/testpilot/milestones), we will inform the team that we will be building a release against `master`.
 
 Note: we auto deploy the master branch to our *development environment*: [http://testpilot.dev.mozaws.net](http://testpilot.dev.mozaws.net)
 
@@ -30,7 +30,6 @@ This will happen on Thursday at the end of sprint.
 2. Tag Version: YYYY-MM-DD (append -N if more than one release is tagged on a given day: 2016-04-08-1)
 3. Release Title: YYYY-MM-DD
 4. Click `Publish`
-5. Wait for CircleCI to confirm that the release has passed ([tags uploaded to container](https://hub.docker.com/r/mozilla/testpilot/tags/)).
 
 Please be as detailed as possible in the release notes. Examples - [2016-07-05](https://github.com/mozilla/testpilot/releases/tag/2016-07-05), [2016-06-06](https://github.com/mozilla/testpilot/releases/tag/2016-06-06)
 
@@ -46,13 +45,15 @@ Notifications of successful deployment will appear on IRC.
 
 ## Test Stage ##
 
-This will happen on Thursday at the end of sprint.
+This will happen on Thursday at the end of sprint after we've pushed to stage.
 
-Send out an email notification to `testpilot-dev@mozilla.com` to please test the staging environment. [Example](https://mail.mozilla.org/pipermail/testpilot-dev/2016-July/000198.html).
+Create a deployment issue to track status and potential blockers. [Example](https://github.com/mozilla/testpilot/issues/1643). Give it a `needs:qa` label.
 
-Include Softvision and the bug link in the email notification.
+Send out an email notification to `testpilot-dev@mozilla.com` to please test the staging environment. [Example](https://mail.mozilla.org/pipermail/testpilot-dev/2016-October/000306.html).
 
-Follow the steps in the ["Test Pilot Deployment Verification Test Plan" doc](DEPLOYMENT-VERIFICATION.md) to verify that the site works as expected.
+Include Softvision and the issue link in the email notification.
+
+Follow the steps in the ["Test Pilot Deployment Verification Test Plan" doc](DEPLOYMENT-VERIFICATION.md) to verify that the site works as expected. Along with testing any major features in the release.
 
 ## Report Issues & Status ##
 
@@ -79,6 +80,10 @@ We'll target Tuesday 8AM PST for deployment.
 ## Verify Production ##
 
 Softvision will verify production for us, and report any bugs on Tuesday.
+
+Once we have verified production, update the "testpilot.firefox.com (production)" GA account with an annotation including sprint information. Example: "Sprint-12 Pushed to Prod" Oct. 25th.
+
+Close deployment issue, and give it a `qa:verified` label.
 
 ## Rolling Back/Forward Process ##
 
