@@ -38,6 +38,7 @@
   "devDependencies": {
     "babel-core": "^6.14.0",
     "babel-eslint": "^6.1.2",
+    "babel-plugin-istanbul": "^2.0.3",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
@@ -75,6 +76,7 @@
     "mocha": "^3.0.2",
     "node-normalize-scss": "1.1.1",
     "node-sass": "^3.9.3",
+    "nyc": "^8.3.2",
     "react-addons-test-utils": "^15.3.1",
     "remarkable": "1.6.2",
     "require-globify": "^1.3.0",
@@ -103,7 +105,8 @@
     "static": "gulp dist-build",
     "docs": "doctoc README.md && doctoc addon/README.md",
     "lint": "gulp scripts-lint styles-lint",
-    "test": "cd frontend && mocha --require test-setup.js --recursive",
-    "test:watch": "npm test -- --watch"
+    "test": "cd frontend && mocha --require babel-register --require test-setup.js --recursive",
+    "test:watch": "npm test -- --watch",
+    "coverage": "NODE_ENV=test nyc mocha --recursive --require frontend/test-setup.js frontend/test"
   }
 }
