@@ -1,8 +1,5 @@
 // Global setup for all tests
 
-// We're going to babelify everything as it loads.
-require('babel-register')();
-
 // We need jsdom for enzyme mount()'ed components - mainly the sticky header
 // scroll handler stuff on the experiments page.
 

@@ -8,7 +8,8 @@ tmp/
 .DS_Store
 docs/_build
 MANIFEST
-.coverage
+coverage
+.nyc_output
 node_modules/
 media/
 static/
