@@ -1,6 +1,8 @@
 import classnames from 'classnames';
 import React, { PropTypes } from 'react';
 
+import { initialState } from '../reducers/newsletter-form';
+
 
 export default class NewsletterForm extends React.Component {
   constructor(props) {
@@ -67,7 +69,7 @@ export default class NewsletterForm extends React.Component {
 
   renderDisclaimer() {
     return (
-      <p className={this.makeRevealedClassNames()}
+      <p className={`disclaimer ${this.makeRevealedClassNames()}`}
          data-l10n-id='newsletterFormDisclaimer'>
         We will only send you Test Pilot-related information.
       </p>
@@ -91,10 +93,11 @@ export default class NewsletterForm extends React.Component {
   }
 }
 
+NewsletterForm.defaultProps = initialState;
 NewsletterForm.propTypes = {
   email: PropTypes.string.isRequired,
   privacy: PropTypes.bool.isRequired,
-  subscribe: PropTypes.func.isRequired,
-  setEmail: PropTypes.func.isRequired,
-  setPrivacy: PropTypes.func.isRequired
+  subscribe: PropTypes.func,
+  setEmail: PropTypes.func,
+  setPrivacy: PropTypes.func
 };

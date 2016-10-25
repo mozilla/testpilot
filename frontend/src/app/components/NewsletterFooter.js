@@ -18,7 +18,7 @@ export default class NewsletterFooter extends React.Component {
 
   renderSuccess() {
     return (
-      <header>
+      <header className="success-header">
         <h2 data-l10n-id="newsletterFooterSuccessHeader">Thanks!</h2>
         <p data-l10n-id="newsletterFooterSuccessBody">
           If you haven't previously confirmed a subscription to a Mozilla-related

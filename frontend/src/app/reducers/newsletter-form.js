@@ -1,31 +1,31 @@
 import { handleActions } from 'redux-actions';
 
 
-const newsletterFormSetEmail = (state, { payload: email }) => ({
+export const newsletterFormSetEmail = (state, { payload: email }) => ({
   ...state,
   email
 });
 
-const newsletterFormSetPrivacy = (state, { payload: privacy }) => ({
+export const newsletterFormSetPrivacy = (state, { payload: privacy }) => ({
   ...state,
   privacy
 });
 
-const newsletterFormSetSubmitting = state => ({
+export const newsletterFormSetSubmitting = state => ({
   ...state,
   failed: false,
   submitting: true,
   succeeded: false
 });
 
-const newsletterFormSetFailed = state => ({
+export const newsletterFormSetFailed = state => ({
   ...state,
   failed: true,
   submitting: false,
   succeeded: false
 });
 
-const newsletterFormSetSucceeded = state => ({
+export const newsletterFormSetSucceeded = state => ({
   ...state,
   failed: false,
   submitting: false,
