@@ -2,7 +2,7 @@
 
 # Development Quickstart
 
-Test Pilot uses Node.js v6.2.0 for development. You may be able to get by using
+Test Pilot uses Node.js [v6.x LTS](https://nodejs.org/dist/latest-v6.x/) for development. You may be able to get by using
 [the most current release](https://nodejs.org/en/download/current/), but
 earlier versions will definitely result in error messages and problems. [Node
 Version Manager](https://github.com/creationix/nvm/blob/master/README.markdown)
@@ -47,9 +47,9 @@ you should be on your way:
 1. Install the [DevPrefs][] add-on in Firefox Developer Edition.
 
 1. Configure your browser to use your local Test Pilot server:
-   
+
    1. Type `about:config` in the URL bar, acknowledge the warning that appears.
-   
+
    1. Right click the list of preferences to summon a menu, pick New > String
       to create a new preference.
 
@@ -65,7 +65,7 @@ you should be on your way:
 The Test Pilot add-on is a key component of this project - among other things,
 it communicates with the site and grants the ability to enable & disable
 experiments. Setting up your browser with the steps above should make it easier
-for you to get it working. 
+for you to get it working.
 
 ## Windows hosts
 
