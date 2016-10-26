@@ -1,5 +1,6 @@
 ![Test Pilot Logo](frontend/src/images/copter.png)
 
+
 # Test Pilot
 
 Test Pilot is an opt-in platform that allows us to perform controlled tests of new high-visibility product concepts in the general release channel of Firefox.
