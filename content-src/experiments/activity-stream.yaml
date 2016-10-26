@@ -34,7 +34,7 @@ measurements: >
       to Embedly through Mozilla's servers, so they will not be associated with
       you.</li>
   </ul>
-xpi_url: 'https://moz-activity-streams.s3.amazonaws.com/dist/activity-streams-latest.xpi'
+xpi_url: 'https://testpilot.firefox.com/files/activitystream/latest'
 addon_id: '@activity-streams'
 gradient_start: '#0996F8'
 gradient_stop: '#0675D3'
