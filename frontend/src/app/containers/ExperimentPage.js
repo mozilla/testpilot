@@ -15,6 +15,7 @@ import MainInstallButton from '../components/MainInstallButton';
 import ExperimentCardList from '../components/ExperimentCardList';
 import ExperimentPreFeedbackDialog from '../components/ExperimentPreFeedbackDialog';
 import View from '../components/View';
+import Warning from '../components/Warning';
 
 
 export default class ExperimentPage extends React.Component {
@@ -130,13 +131,28 @@ export class ExperimentDetail extends React.Component {
             We recommend <a href={helpUrl}>disabling these add-ons</a> before activating this experiment:
           </p>
         </header>
-        <ul>
-          {installed.map(guid => (
-            <li key={guid}>{incompatible[guid]}</li>
-          ))}
-        </ul>
+        <main>
+          <ul>
+            {installed.map(guid => (
+              <li key={guid}>{incompatible[guid]}</li>
+            ))}
+          </ul>
+        </main>
       </section>
     );
+  }
+
+  renderLocaleWarning() {
+    const { experiment, locale } = this.props;
+    if (experiment.locales && locale && !experiment.locales.includes(locale)) {
+      return (
+        <Warning titleL10nId="localeWarningTitle"
+                 title="This experiment is only available in English."
+                 subtitleL10nId="localeWarningSubtitle"
+                 subtitle="You can still install it if you like." />
+      );
+    }
+    return null;
   }
 
   render() {
@@ -326,6 +342,7 @@ export class ExperimentDetail extends React.Component {
 
                 <div className="details-description">
                   {this.renderIncompatibleAddons()}
+                  {this.renderLocaleWarning()}
                   {this.renderEolBlock()}
                   {hasAddon && <div data-hook="active-user">
                     {!!introduction && <section className="introduction" data-hook="introduction-container">
