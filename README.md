@@ -1,4 +1,4 @@
-![Test Pilot Logo](testpilot/frontend/src/images/copter.png)
+![Test Pilot Logo](frontend/src/images/copter.png)
 
 # Test Pilot
 
@@ -6,8 +6,8 @@ Test Pilot is an opt-in platform that allows us to perform controlled tests of n
 
 Test Pilot is not intended to replace trains for most features, nor is it a test bed for concepts we do not believe have a strong chance of shipping in general release. Rather, it is reserved for features that require user feedback, testing, and tuning before they ship with the browser.
 
-[![Build](https://img.shields.io/circleci/project/mozilla/testpilot.svg?maxAge=2592000)](https://circleci.com/gh/mozilla/testpilot/)
-
+[![Build](https://img.shields.io/circleci/project/mozilla/testpilot.svg)](https://circleci.com/gh/mozilla/testpilot/)
+[![codecov](https://codecov.io/gh/mozilla/testpilot/branch/master/graph/badge.svg)](https://codecov.io/gh/mozilla/testpilot)
 
 ## Table of Contents
 

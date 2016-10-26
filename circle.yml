@@ -7,7 +7,7 @@ machine:
   hosts:
     testpilot.dev: 127.0.0.1
   node:
-    version: 6.2.0
+    version: 6.9.1
   environment:
     TESTPILOT_ENABLE_PONTOON_BRANCHES: master
 
@@ -15,32 +15,32 @@ dependencies:
 
   cache_directories:
     - "addon/node_modules"
-    - "node_modules"
-
-  pre:
-    # https://discuss.circleci.com/t/nvm-commands-are-not-evaluated/943
-    - nvm use 6.2.0 && nvm alias default 6.2.0
+    # node_modules is included by default
 
   override:
-    - node --version
-    - npm --version
     - google-chrome --version
+    - ./bin/circleci/install-node-dependencies.sh
     - ./bin/circleci/setup-test-dependencies.sh
-    - ./bin/circleci/build-version-json.sh
     - ./bin/circleci/build-addon.sh
-    - ./bin/circleci/build-frontend.sh
 
 test:
   override:
+    - ./bin/circleci/test-addon.sh
+    - ./bin/circleci/test-frontend.sh
     - echo "Skipping integration tests."
     # - ./bin/circleci/run-integration-tests.sh
+  post:
+    - bash <(curl -s https://codecov.io/bash)
 
 deployment:
 
   static_development:
+    owner: mozilla
     branch:
       - master
     commands:
+      - ./bin/circleci/build-version-json.sh
+      - ./bin/circleci/build-frontend.sh
       - TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/deploy.sh
       - aws configure set preview.cloudfront true
       - aws cloudfront create-invalidation --distribution-id E2ERG47PHCWD0Z --paths '/*'
