@@ -12,8 +12,8 @@ introduction: >
     Browsing mode. This experiment enables Tracking Protection all the time!
     (Of course, you can disable it on a site-by-site basis whenever you want.)</p>
   <p>This experiment lets you help us understand where Tracking Protection breaks
-    the Web so that we can improve it for all Firefox users. As you browse, use
-    the convenient notification bar at the top of the page to tell us which
+    the Web so that we can improve it for all Firefox users. As you browse, click
+    the purple shield icon in the URL bar at the top of the page to tell us which
     sites work well with Tracking Protection and which don't.</p>
 image_twitter: /static/images/experiments/tracking-protection/social/tp-twitter.jpg
 image_facebook: /static/images/experiments/tracking-protection/social/tp-facebook.jpg
