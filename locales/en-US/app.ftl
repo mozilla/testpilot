@@ -182,6 +182,9 @@ newsletterFooterBody = Find out about new experiments and see test results for e
 newsletterFooterSuccessHeader = Thanks!
 newsletterFooterSuccessBody = If you haven't previously confirmed a subscription to a Mozilla-related newsletter you may have to do so. Please check your inbox or your spam filter for an email from us.
 
+localeWarningTitle = This experiment is only available in English.
+localeWarningSubtitle = You can still enable it if you like.
+
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage

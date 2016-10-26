@@ -136,6 +136,7 @@ const mapStateToProps = state => ({
   isAfterCompletedDate,
   isFirefox: state.browser.isFirefox,
   isMinFirefox: state.browser.isMinFirefox,
+  locale: state.browser.locale,
   newsletterForm: state.newsletterForm,
   routing: state.routing
 });

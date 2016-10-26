@@ -431,36 +431,3 @@
     }
   }
 }
-
-.incompatible-addons {
-  background: $eol-light-orange;
-  border: 1px solid $eol-orange;
-  border-radius: 3px;
-  margin-bottom: $grid-unit;
-  padding: $grid-unit;
-
-  header {
-    background: url('../images/warning.svg') no-repeat left;
-    background-size: ($grid-unit * 2) auto;
-    margin: $grid-unit 0 ($grid-unit / 2);
-    min-height: $grid-unit * 2;
-    padding-left: $grid-unit * 3;
-  }
-
-  h3,
-  p,
-  ul,
-  li {
-    font-size: $font-unit * (7 / 6);
-    margin: 0;
-  }
-
-  h3 {
-    font-weight: bold;
-  }
-
-  ul {
-    list-style: inside;
-    padding: 0;
-  }
-}
