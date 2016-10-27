@@ -127,6 +127,7 @@ const mapStateToProps = state => ({
   getExperimentBySlug: slug =>
     getExperimentBySlug(state.experiments, slug),
   hasAddon: state.addon.hasAddon,
+  clientUUID: state.addon.clientUUID,
   installed: getInstalled(state.addon),
   installedAddons: state.addon.installedAddons,
   installedLoaded: isInstalledLoaded(state.addon),

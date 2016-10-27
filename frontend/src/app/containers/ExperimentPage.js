@@ -156,7 +156,7 @@ export class ExperimentDetail extends React.Component {
   }
 
   render() {
-    const { experiment, experiments, installed, isDev, hasAddon, setExperimentLastSeen } = this.props;
+    const { experiment, experiments, installed, isDev, hasAddon, setExperimentLastSeen, clientUUID } = this.props;
 
     // Show the loading animation if experiments haven't been loaded yet.
     if (experiments.length === 0) { return <LoadingPage />; }
@@ -186,7 +186,7 @@ export class ExperimentDetail extends React.Component {
     // ExperimentRowCard updated/launched banner logic)
     setExperimentLastSeen(experiment);
 
-    const surveyURL = buildSurveyURL('givefeedback', title, installed, survey_url);
+    const surveyURL = buildSurveyURL('givefeedback', title, installed, clientUUID, survey_url);
     const modified = formatDate(experiment.modified);
 
     let statusType = null;
@@ -490,10 +490,10 @@ export class ExperimentDetail extends React.Component {
 
   renderExperimentControls() {
     const { enabled, isEnabling, isDisabling, progressButtonWidth } = this.state;
-    const { experiment, installed, isAfterCompletedDate, hasAddon } = this.props;
+    const { experiment, installed, isAfterCompletedDate, hasAddon, clientUUID } = this.props;
     const { title, min_release, survey_url } = experiment;
     const validVersion = this.isValidVersion(min_release);
-    const surveyURL = buildSurveyURL('givefeedback', title, installed, survey_url);
+    const surveyURL = buildSurveyURL('givefeedback', title, installed, clientUUID, survey_url);
 
     if (!hasAddon || !validVersion) {
       return null;
@@ -664,6 +664,7 @@ export class ExperimentDetail extends React.Component {
 
 ExperimentDetail.propTypes = {
   userAgent: React.PropTypes.string,
+  clientUUID: React.PropTypes.string,
   isDev: React.PropTypes.bool,
   hasAddon: React.PropTypes.bool,
   experiments: React.PropTypes.array,

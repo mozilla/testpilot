@@ -16,10 +16,11 @@ export function formatDate(date) {
   return out;
 }
 
-export function buildSurveyURL(ref, title, installed, survey_url) {
+export function buildSurveyURL(ref, title, installed, clientUUID, survey_url) {
   const queryParams = querystring.stringify({
     ref,
     experiment: title,
+    cid: clientUUID,
     installed: installed ? Object.keys(installed) : []
   });
   return `${survey_url}?${queryParams}`;

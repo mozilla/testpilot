@@ -398,9 +398,9 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
         });
 
         it('should have the expected survey URL on the "Give Feedback" button', () => {
-          subject.setProps({ installed: { foo: true, bar: true } });
+          subject.setProps({ installed: { foo: true, bar: true }, clientUUID: '38c51b84-9586-499f-ac52-94626e2b29cf' });
           const button = subject.find('#feedback-button');
-          const expectedHref = 'https://example.com/survey?ref=givefeedback&experiment=Testing&installed=foo&installed=bar';
+          const expectedHref = 'https://example.com/survey?ref=givefeedback&experiment=Testing&cid=38c51b84-9586-499f-ac52-94626e2b29cf&installed=foo&installed=bar';
           expect(button.prop('href')).to.equal(expectedHref);
         });
 

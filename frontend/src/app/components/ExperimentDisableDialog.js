@@ -4,10 +4,10 @@ import { buildSurveyURL } from '../lib/utils';
 
 export default class ExperimentDisableDialog extends React.Component {
   render() {
-    const { experiment, installed } = this.props;
+    const { experiment, installed, clientUUID } = this.props;
     const { title, survey_url } = experiment;
 
-    const surveyURL = buildSurveyURL('disable', title, installed, survey_url);
+    const surveyURL = buildSurveyURL('disable', title, installed, clientUUID, survey_url);
 
     return (
       <div className="modal-container">
