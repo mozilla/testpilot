@@ -24,7 +24,7 @@ export default class ExperimentRowCard extends React.Component {
         'just-updated': this.justUpdated(),
         'has-addon': hasAddon
       })}>
-        <Link className='overlap-block' to={`/experiments/${slug}`} onClick={() => this.sendToAnalytics()} />
+        <Link className='overlap-block' to={`/experiments/${slug}`} onClick={(evt) => this.openDetailPage(evt)} />
         <div className="experiment-actions">
           {enabled && <div data-l10n-id="experimentListEnabledTab" className="tab enabled-tab"></div>}
           {this.justLaunched() && <div data-l10n-id="experimentListJustLaunchedTab" className="tab just-launched-tab"></div>}
@@ -133,15 +133,18 @@ export default class ExperimentRowCard extends React.Component {
     return '';
   }
 
-  sendToAnalytics() {
-    const { eventCategory, experiment, sendToGA } = this.props;
+  openDetailPage(evt) {
+    const { navigateTo, eventCategory, experiment, sendToGA } = this.props;
     const { title } = experiment;
+
+    evt.preventDefault();
 
     sendToGA('event', {
       eventCategory,
       eventAction: 'Open detail page',
       eventLabel: title
     });
+    navigateTo(`/experiments/${experiment.slug}`);
   }
 
 }

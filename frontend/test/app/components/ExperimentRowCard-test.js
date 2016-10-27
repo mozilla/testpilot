@@ -167,7 +167,7 @@ describe('app/components/ExperimentRowCard', () => {
   });
 
   it('should ping GA and open the detail page when clicked', () => {
-    subject.find('.experiment-summary').simulate('click', mockClickEvent);
+    subject.find('.overlap-block').simulate('click', mockClickEvent);
 
     expect(mockClickEvent.preventDefault.called).to.be.true;
     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
