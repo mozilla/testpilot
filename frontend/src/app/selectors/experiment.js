@@ -16,7 +16,7 @@ export const allExperimentSelector = createSelector(
 
 
 // Return launched experiments from the store, sorted.
-export const launchedExperimentSelector = createSelector(
+export const onlyLaunchedExperimentSelector = createSelector(
   allExperimentSelector,
   experiments => experiments.filter(experiment => (
     moment(moment.utc()).isAfter(experiment.launch_date) ||
@@ -25,6 +25,31 @@ export const launchedExperimentSelector = createSelector(
 );
 
 
-export default store => (
-  store.browser.isDev ? allExperimentSelector(store) : launchedExperimentSelector(store)
+// If not in a dev environment, filters to only include launched experiments.
+export const launchedExperimentSelector = store => (
+  store.browser.isDev ? allExperimentSelector(store) :
+                        onlyLaunchedExperimentSelector(store)
+);
+
+
+// Return the user's primary language subtag.
+export const localeSelector = store => store.browser.locale;
+
+
+// Passed a locale and set of experiments, filters out the experiments that are
+// blockedlisted in that locale, or grantlisted and not available in that locale.
+export const l10nSelector = (locale, experiments) => experiments.filter(exp => {
+  if ('locale_blocklist' in exp) {
+    return !exp.locale_blocklist.includes(locale);
+  }
+  if ('locale_grantlist' in exp) {
+    return exp.locale_grantlist.includes(locale);
+  }
+  return true;
+});
+
+
+export default createSelector(
+  [localeSelector, launchedExperimentSelector],
+  l10nSelector
 );

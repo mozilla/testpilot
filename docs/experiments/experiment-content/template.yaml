@@ -69,3 +69,7 @@ launch_date: '' #UTM time stamp, this will hide the experiment on production ser
 order: 0 # where your experiment will appear in the list...lower numbers appear higher
 incompatible: # if your experiment has incompatible add ons, repeat the following syntax, otherwise delete this field
   # 'add-on ID': 'Add-on Name'
+locale_blocklist: [] # Prevent the experiment from being shown to users of these locales
+  # - 'de'
+locale_grantlist: [] # Only allow the experiment to be shown to users of these locales
+  # - 'de'
