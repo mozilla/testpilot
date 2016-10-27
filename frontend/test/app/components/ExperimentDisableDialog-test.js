@@ -8,6 +8,7 @@ import ExperimentDisableDialog from '../../../src/app/components/ExperimentDisab
 describe('app/components/ExperimentDisableDialog', () => {
   const experiment = { title: 'foobar', survey_url: 'https://example.com' };
   const installed = { ex1: true, ex2: true };
+  const clientUUID = '38c51b84-9586-499f-ac52-94626e2b29cf';
 
   let onSubmit, onCancel, sendToGA, preventDefault, mockClickEvent, subject;
   beforeEach(function() {
@@ -20,7 +21,7 @@ describe('app/components/ExperimentDisableDialog', () => {
       <ExperimentDisableDialog
         experiment={experiment} installed={installed}
         onSubmit={onSubmit} onCancel={onCancel}
-        sendToGA={sendToGA} />
+        clientUUID={clientUUID} sendToGA={sendToGA} />
     );
   });
 
@@ -38,7 +39,7 @@ describe('app/components/ExperimentDisableDialog', () => {
 
   it('should launch a survey when submit button clicked', () => {
     const submitLink = subject.find('.modal-actions a.submit');
-    const expectedHref = 'https://example.com?ref=disable&experiment=foobar&installed=ex1&installed=ex2';
+    const expectedHref = 'https://example.com?ref=disable&experiment=foobar&cid=38c51b84-9586-499f-ac52-94626e2b29cf&installed=ex1&installed=ex2';
 
     expect(submitLink.props().href).to.equal(expectedHref);
 

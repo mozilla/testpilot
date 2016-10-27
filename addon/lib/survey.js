@@ -121,6 +121,7 @@ function launchSurvey(options) {
             if (clicked) {
               const urlParams = {
                 id: experiment.addon_id,
+                cid: store.clientUUID,
                 installed: Object.keys(store.installedAddons),
                 rating,
                 interval
