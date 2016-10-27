@@ -3,7 +3,7 @@ import moment from 'moment';
 
 import classnames from 'classnames';
 
-import { buildSurveyURL, formatDate, createMarkup } from '../lib/utils';
+import { buildSurveyURL, createMarkup, experimentL10nId, formatDate } from '../lib/utils';
 
 import LoadingPage from './LoadingPage';
 import NotFoundPage from './NotFoundPage';
@@ -63,6 +63,10 @@ export class ExperimentDetail extends React.Component {
     // HACK: Set this as a plain object property, so we don't trigger crazy
     // state changes on scrolling events.
     this.didScroll = false;
+  }
+
+  l10nId(pieces, path = null) {
+    return experimentL10nId(this.props.experiment, pieces, path);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -256,8 +260,8 @@ export class ExperimentDetail extends React.Component {
             </div>
             <div className="details-header responsive-content-wrapper">
               <header>
-                <h1 data-hook="title">{title}</h1>
-                <h4 data-hook="subtitle" className="subtitle">{subtitle}</h4>
+                <h1 data-hook="title" data-l10n-id={this.l10nId('title')}>{title}</h1>
+                <h4 data-hook="subtitle" className="subtitle" data-l10n-id={this.l10nId('subtitle')}>{subtitle}</h4>
               </header>
               { this.renderExperimentControls() }
               { this.renderMinimumVersionNotice(title, hasAddon, min_release) }
@@ -281,7 +285,7 @@ export class ExperimentDetail extends React.Component {
                     </section>
                     {!hasAddon && <div data-hook="inactive-user">
                       {!!introduction && <section className="introduction" data-hook="introduction-container">
-                        <div data-hook="introduction-html" dangerouslySetInnerHTML={createMarkup(introduction)}></div>
+                        <div data-l10n-id={this.l10nId('introduction')} data-hook="introduction-html" dangerouslySetInnerHTML={createMarkup(introduction)}></div>
                       </section>}
                     </div>}
                     {hasAddon && <section className="stats-section" data-hook="active-user">
@@ -323,7 +327,7 @@ export class ExperimentDetail extends React.Component {
                             <img className="avatar" data-hook="avatar" width="56" height="56" src={contributor.avatar} />
                             <div className="contributor">
                               <p data-hook="name" className="name">{contributor.display_name}</p>
-                              <p data-hook="title" className="title">{contributor.title}</p>
+                              <p data-hook="title" className="title" data-l10n-id={this.l10nId(['contributor', 'title', contributor.display_name], `contributors.${idx}.title`)}>{contributor.title}</p>
                             </div>
                           </li>
                         ))}
@@ -333,7 +337,7 @@ export class ExperimentDetail extends React.Component {
                       {measurements && <section data-hook="measurements-container"
                           className={classnames('measurements', { highlight: highlightMeasurementPanel })}>
                         <h3 data-l10n-id="measurements">Your privacy</h3>
-                        <div data-hook="measurements-html" className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
+                        <div data-hook="measurements-html" data-l10n-id={this.l10nId('measurements')} className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
                         {privacy_notice_url && <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-l10n-args={JSON.stringify({ title })} data-hook="privacy-notice-url" href={privacy_notice_url}>You can learn more about the data collection for <span data-hook="title">{title}</span> here.</a>}
                       </section>}
                     </div>}
@@ -346,7 +350,7 @@ export class ExperimentDetail extends React.Component {
                   {this.renderEolBlock()}
                   {hasAddon && <div data-hook="active-user">
                     {!!introduction && <section className="introduction" data-hook="introduction-container">
-                      <div data-hook="introduction-html" dangerouslySetInnerHTML={createMarkup(introduction)}></div>
+                      <div data-hook="introduction-html" data-l10n-id={this.l10nId('description')} dangerouslySetInnerHTML={createMarkup(introduction)}></div>
                     </section>}
                   </div>}
                   <div className="details-list">
@@ -354,7 +358,10 @@ export class ExperimentDetail extends React.Component {
                      <div key={idx}>
                        <div data-hook="details" className="details-image">
                          <img data-hook="detail-image" width="680" src={detail.image} />
-                         <p className="caption"><strong data-hook="detail-headline">{detail.headline}</strong> <span data-hook="detail-copy" dangerouslySetInnerHTML={createMarkup(detail.copy)}></span></p>
+                         <p className="caption">
+                           <strong data-hook="detail-headline" data-l10n-id={this.l10nId(['detail', idx, 'headline'], `details.${idx}.headline`)}>{detail.headline}</strong>
+                           <span data-hook="detail-copy" data-l10n-id={this.l10nId(['detail', idx, 'copy'], `details.${idx}.copy`)} dangerouslySetInnerHTML={createMarkup(detail.copy)}></span>
+                         </p>
                        </div>
                      </div>
                     ))}

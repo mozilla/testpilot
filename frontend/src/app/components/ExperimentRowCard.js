@@ -2,12 +2,17 @@ import React from 'react';
 
 import classnames from 'classnames';
 
+import { experimentL10nId } from '../lib/utils';
+
 const ONE_DAY = 24 * 60 * 60 * 1000;
 const ONE_WEEK = 7 * ONE_DAY;
 const MAX_JUST_LAUNCHED_PERIOD = 2 * ONE_WEEK;
 const MAX_JUST_UPDATED_PERIOD = 2 * ONE_WEEK;
 
 export default class ExperimentRowCard extends React.Component {
+  l10nId(pieces, path = null) {
+    return experimentL10nId(this.props.experiment, pieces, path);
+  }
 
   render() {
     const { hasAddon, experiment, enabled, isAfterCompletedDate } = this.props;
@@ -42,11 +47,11 @@ export default class ExperimentRowCard extends React.Component {
       </div>
       <div className="experiment-information">
         <header>
-          <h3>{title}</h3>
-          <h4 className="subtitle">{subtitle}</h4>
+          <h3 data-l10n-id={this.l10nId('title')}>{title}</h3>
+          <h4 data-l10n-id={this.l10nId('subtitle')} className="subtitle">{subtitle}</h4>
           <h4 className="eol-message">{this.statusMsg()}</h4>
         </header>
-        <p>{description}</p>
+        <p data-l10n-id={this.l10nId('description')}>{description}</p>
         { this.renderInstallationCount(installation_count, isCompleted) }
         { this.renderManageButton(enabled, hasAddon, isCompleted) }
       </div>

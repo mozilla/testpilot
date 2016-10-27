@@ -42,10 +42,13 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
     mockExperiment = {
       slug: 'testing',
       title: 'Testing',
+      title_l10nid: 'foo',
+      subtitle: 'Testing',
       version: '1.0',
       thumbnail: '/thumbnail.png',
       introduction: '<p class="test-introduction">Introduction!</p>',
       measurements: '<p class="test-measurements">Measurements</p>',
+      description: 'Description',
       pre_feedback_copy: null,
       contribute_url: 'https://example.com/contribute',
       bug_report_url: 'https://example.com/bugs',
@@ -53,8 +56,20 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
       privacy_notice_url: 'https://example.com/privacy',
       changelog_url: 'https://example.com/changelog',
       survey_url: 'https://example.com/survey',
-      contributors: [ ],
-      details: [ ],
+      contributors: [
+        {
+          display_name: 'Jorge Soler',
+          title: 'Right Fielder',
+          avatar: '/soler.jpg'
+        }
+      ],
+      details: [
+        {
+          headline: ' ',
+          image: '/img.jpg',
+          copy: 'Testing'
+        }
+      ],
       min_release: 48.0,
       error: false
     };
@@ -107,6 +122,21 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
     });
     return experiment;
   };
+
+  it('should have the correct l10n IDs', () => {
+    setExperiment(mockExperiment);
+    expect(findByL10nID('testingTitleFoo')).to.have.property('length', 1);
+    expect(findByL10nID('testingSubtitle')).to.have.property('length', 1);
+    expect(findByL10nID('testingIntroduction')).to.have.property('length', 1);
+    expect(findByL10nID('testingContributorTitleJorgesoler')).to.have.property('length', 1);
+    expect(findByL10nID('testingDetail0Headline')).to.have.property('length', 1);
+    expect(findByL10nID('testingDetail0Copy')).to.have.property('length', 1);
+
+    // Fields only available when the add-on is installed.
+    subject.setProps({ hasAddon: true });
+    expect(findByL10nID('testingMeasurements')).to.have.property('length', 1);
+    expect(findByL10nID('testingDescription')).to.have.property('length', 1);
+  });
 
   it('should render a loading page if no experiments are available', () => {
     expect(subject.find('LoadingPage')).to.have.property('length', 1);
