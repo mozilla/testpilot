@@ -82,7 +82,7 @@ export default class ExperimentRowCard extends React.Component {
       );
     }
     return (
-      <div className="button card-control default" data-l10n-id="experimentCardGetStarted">Get Started</div>
+      <div className="button card-control default" onClick={(evt) => this.openDetailPage(evt)} data-l10n-id="experimentCardGetStarted">Get Started</div>
     );
   }
 
