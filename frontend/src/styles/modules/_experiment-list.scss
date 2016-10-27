@@ -103,6 +103,19 @@
       box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-blue, 0 0 0 9px $transparent-white-1;
     }
   }
+
+  a.overlap-block {
+    background-color: $white;
+    filter: alpha(opacity=1);
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    text-decoration: none;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
 }
 
 .eol-message {

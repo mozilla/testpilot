@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router';
 import classnames from 'classnames';
 
 const ONE_DAY = 24 * 60 * 60 * 1000;
@@ -12,34 +12,33 @@ export default class ExperimentRowCard extends React.Component {
   render() {
     const { hasAddon, experiment, enabled, isAfterCompletedDate } = this.props;
 
-    const { description, thumbnail, subtitle } = experiment;
+    const { description, thumbnail, subtitle, slug } = experiment;
     const installation_count = (experiment.installation_count) ? experiment.installation_count : 0;
     const title = experiment.short_title || experiment.title;
     const isCompleted = isAfterCompletedDate(experiment);
 
     return (
-      <div data-hook="show-detail"
-        className={classnames('experiment-summary', {
-          enabled,
-          'just-launched': this.justLaunched(),
-          'just-updated': this.justUpdated(),
-          'has-addon': hasAddon
-        })}
-        onClick={(evt) => this.openDetailPage(evt)}>
+      <div data-hook="show-detail" className={classnames('experiment-summary', {
+        enabled,
+        'just-launched': this.justLaunched(),
+        'just-updated': this.justUpdated(),
+        'has-addon': hasAddon
+      })}>
+        <Link className='overlap-block' to={`/experiments/${slug}`} onClick={() => this.sendToAnalytics()} />
         <div className="experiment-actions">
           {enabled && <div data-l10n-id="experimentListEnabledTab" className="tab enabled-tab"></div>}
           {this.justLaunched() && <div data-l10n-id="experimentListJustLaunchedTab" className="tab just-launched-tab"></div>}
           {this.justUpdated() && <div data-l10n-id="experimentListJustUpdatedTab" className="tab just-updated-tab"></div>}
         </div>
-      <div className="experiment-icon-wrapper" data-hook="bg"
-        style={{
-          backgroundColor: experiment.gradient_start,
-          backgroundImage: `linear-gradient(135deg, ${experiment.gradient_start}, ${experiment.gradient_stop}`
-        }}>
-        <div className="experiment-icon" style={{
-          backgroundImage: `url(${thumbnail})`
-        }}></div>
-      </div>
+        <div className="experiment-icon-wrapper" data-hook="bg"
+          style={{
+            backgroundColor: experiment.gradient_start,
+            backgroundImage: `linear-gradient(135deg, ${experiment.gradient_start}, ${experiment.gradient_stop}`
+          }}>
+          <div className="experiment-icon" style={{
+            backgroundImage: `url(${thumbnail})`
+          }}></div>
+        </div>
       <div className="experiment-information">
         <header>
           <h3>{title}</h3>
@@ -50,7 +49,7 @@ export default class ExperimentRowCard extends React.Component {
         { this.renderInstallationCount(installation_count, isCompleted) }
         { this.renderManageButton(enabled, hasAddon, isCompleted) }
       </div>
-     </div>
+    </div>
     );
   }
 
@@ -134,17 +133,15 @@ export default class ExperimentRowCard extends React.Component {
     return '';
   }
 
-  openDetailPage(evt) {
-    const { navigateTo, eventCategory, experiment, sendToGA } = this.props;
+  sendToAnalytics() {
+    const { eventCategory, experiment, sendToGA } = this.props;
     const { title } = experiment;
 
-    evt.preventDefault();
     sendToGA('event', {
       eventCategory,
       eventAction: 'Open detail page',
       eventLabel: title
     });
-    navigateTo(`/experiments/${experiment.slug}`);
   }
 
 }
