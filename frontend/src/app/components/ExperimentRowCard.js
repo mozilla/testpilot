@@ -74,11 +74,11 @@ export default class ExperimentRowCard extends React.Component {
   renderManageButton(enabled, hasAddon, isCompleted) {
     if (enabled && hasAddon) {
       return (
-        <div className="button card-control secondary" data-l10n-id="experimentCardManage">Manage</div>
+        <div className="button card-control secondary" onClick={(evt) => this.openDetailPage(evt)} data-l10n-id="experimentCardManage">Manage</div>
       );
     } else if (isCompleted) {
       return (
-        <div className="button card-control secondary" data-l10n-id="experimentCardLearnMore">Learn More</div>
+        <div className="button card-control secondary" onClick={(evt) => this.openDetailPage(evt)} data-l10n-id="experimentCardLearnMore">Learn More</div>
       );
     }
     return (
