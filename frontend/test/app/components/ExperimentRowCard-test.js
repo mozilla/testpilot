@@ -166,6 +166,15 @@ describe('app/components/ExperimentRowCard', () => {
     expect(findByL10nID('participantCount')).to.have.property('length', 0);
   });
 
+  it('should have a "Manage" button if the experiment is enabled and has an addon', () => {
+    expect(findByL10nID('experimentCardManage')).to.have.property('length', 0);
+    subject.setProps({
+      enabled: true,
+      hasAddon: true
+    });
+    expect(findByL10nID('experimentCardManage')).to.have.property('length', 1);
+  })
+
   it('should ping GA and open the detail page when clicked', () => {
     subject.find('.overlap-block').simulate('click', mockClickEvent);
 
@@ -175,6 +184,36 @@ describe('app/components/ExperimentRowCard', () => {
       eventAction: 'Open detail page',
       eventLabel: mockExperiment.title
     }]);
+    expect(props.navigateTo.lastCall.args[0])
+      .to.equal(`/experiments/${mockExperiment.slug}`);
+  });
+
+  it('Get Started button should open the detail page when clicked', () => {
+    findByL10nID('experimentCardGetStarted').simulate('click', mockClickEvent);
+
+    expect(mockClickEvent.preventDefault.called).to.be.true;
+    expect(props.navigateTo.lastCall.args[0])
+      .to.equal(`/experiments/${mockExperiment.slug}`);
+  });
+
+  it('Manage button should open the detail page when clicked', () => {
+    // Set props so manage button is in DOM.
+    subject.setProps({
+      enabled: true,
+      hasAddon: true
+    });
+
+    findByL10nID('experimentCardManage').simulate('click', mockClickEvent);
+
+    expect(mockClickEvent.preventDefault.called).to.be.true;
+    expect(props.navigateTo.lastCall.args[0])
+      .to.equal(`/experiments/${mockExperiment.slug}`);
+  });
+
+  it('Learn More button should open the detail page when clicked', () => {
+    findByL10nID('experimentCardGetStarted').simulate('click', mockClickEvent);
+
+    expect(mockClickEvent.preventDefault.called).to.be.true;
     expect(props.navigateTo.lastCall.args[0])
       .to.equal(`/experiments/${mockExperiment.slug}`);
   });
