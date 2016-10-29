@@ -18,13 +18,14 @@ export default class ExperimentRowCard extends React.Component {
     const isCompleted = isAfterCompletedDate(experiment);
 
     return (
-      <div data-hook="show-detail" className={classnames('experiment-summary', {
-        enabled,
-        'just-launched': this.justLaunched(),
-        'just-updated': this.justUpdated(),
-        'has-addon': hasAddon
-      })}>
-        <Link className='overlap-block' to={`/experiments/${slug}`} onClick={(evt) => this.openDetailPage(evt)} />
+      <Link data-hook="show-detail" to={`/experiments/${slug}`} onClick={(evt) => this.openDetailPage(evt)}
+        className={classnames('experiment-summary', {
+          enabled,
+          'just-launched': this.justLaunched(),
+          'just-updated': this.justUpdated(),
+          'has-addon': hasAddon
+        })}
+      >
         <div className="experiment-actions">
           {enabled && <div data-l10n-id="experimentListEnabledTab" className="tab enabled-tab"></div>}
           {this.justLaunched() && <div data-l10n-id="experimentListJustLaunchedTab" className="tab just-launched-tab"></div>}
@@ -49,7 +50,7 @@ export default class ExperimentRowCard extends React.Component {
         { this.renderInstallationCount(installation_count, isCompleted) }
         { this.renderManageButton(enabled, hasAddon, isCompleted) }
       </div>
-    </div>
+    </Link>
     );
   }
 
@@ -69,15 +70,15 @@ export default class ExperimentRowCard extends React.Component {
   renderManageButton(enabled, hasAddon, isCompleted) {
     if (enabled && hasAddon) {
       return (
-        <div className="button card-control secondary" onClick={(evt) => this.openDetailPage(evt)} data-l10n-id="experimentCardManage">Manage</div>
+        <div className="button card-control secondary" data-l10n-id="experimentCardManage">Manage</div>
       );
     } else if (isCompleted) {
       return (
-        <div className="button card-control secondary" onClick={(evt) => this.openDetailPage(evt)} data-l10n-id="experimentCardLearnMore">Learn More</div>
+        <div className="button card-control secondary" data-l10n-id="experimentCardLearnMore">Learn More</div>
       );
     }
     return (
-      <div className="button card-control default" onClick={(evt) => this.openDetailPage(evt)} data-l10n-id="experimentCardGetStarted">Get Started</div>
+      <div className="button card-control default" data-l10n-id="experimentCardGetStarted">Get Started</div>
     );
   }
 
