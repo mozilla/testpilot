@@ -186,7 +186,7 @@ describe('app/components/ExperimentRowCard', () => {
   })
 
   it('should ping GA and open the detail page when clicked', () => {
-    subject.find('.overlap-block').simulate('click', mockClickEvent);
+    subject.find('.experiment-summary').simulate('click', mockClickEvent);
 
     expect(mockClickEvent.preventDefault.called).to.be.true;
     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
@@ -194,36 +194,6 @@ describe('app/components/ExperimentRowCard', () => {
       eventAction: 'Open detail page',
       eventLabel: mockExperiment.title
     }]);
-    expect(props.navigateTo.lastCall.args[0])
-      .to.equal(`/experiments/${mockExperiment.slug}`);
-  });
-
-  it('Get Started button should open the detail page when clicked', () => {
-    findByL10nID('experimentCardGetStarted').simulate('click', mockClickEvent);
-
-    expect(mockClickEvent.preventDefault.called).to.be.true;
-    expect(props.navigateTo.lastCall.args[0])
-      .to.equal(`/experiments/${mockExperiment.slug}`);
-  });
-
-  it('Manage button should open the detail page when clicked', () => {
-    // Set props so manage button is in DOM.
-    subject.setProps({
-      enabled: true,
-      hasAddon: true
-    });
-
-    findByL10nID('experimentCardManage').simulate('click', mockClickEvent);
-
-    expect(mockClickEvent.preventDefault.called).to.be.true;
-    expect(props.navigateTo.lastCall.args[0])
-      .to.equal(`/experiments/${mockExperiment.slug}`);
-  });
-
-  it('Learn More button should open the detail page when clicked', () => {
-    findByL10nID('experimentCardGetStarted').simulate('click', mockClickEvent);
-
-    expect(mockClickEvent.preventDefault.called).to.be.true;
     expect(props.navigateTo.lastCall.args[0])
       .to.equal(`/experiments/${mockExperiment.slug}`);
   });
