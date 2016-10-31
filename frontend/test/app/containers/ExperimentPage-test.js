@@ -19,6 +19,8 @@ describe('app/containers/ExperimentPage', () => {
   const mockExperiments = [ mockExperiment ];
   const mockParams = { slug: mockExperiment.slug };
   const mockProps = {
+    getCookie: sinon.spy(),
+    removeCookie: sinon.spy(),
     experiments: [ mockExperiment ],
     getExperimentBySlug: slug => {
       return slug === mockExperiment.slug ? mockExperiment : null;
@@ -106,6 +108,8 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
       getElementY: sinon.spy(),
       getElementOffsetHeight: sinon.spy(),
       setExperimentLastSeen: sinon.spy(),
+      getCookie: sinon.spy(),
+      removeCookie: sinon.spy(),
       userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:51.0) Gecko/20100101 Firefox/51.0',
       newsletterForm: newsletterState
     };
@@ -260,6 +264,20 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
       it('should not display a call-to-action to install Test Pilot', () => {
         expect(subject.find('.experiment-promo')).to.have.property('length', 0);
         expect(subject.find('MainInstallButton')).to.have.property('length', 0);
+      });
+
+      it('should show an email dialog if the first-run cookie is set', () => {
+        const getCookie = sinon.spy(name => 1);
+        const removeCookie = sinon.spy();
+        props = { ...props, hasAddon: true, getCookie, removeCookie }
+        subject = shallow(<ExperimentDetail {...props} />);
+        setExperiment(mockExperiment);
+
+        expect(subject.find('EmailDialog')).to.have.property('length', 1);
+        expect(removeCookie.called).to.be.true;
+
+        subject.setState({ showEmailDialog: false });
+        expect(subject.find('EmailDialog')).to.have.property('length', 0);
       });
 
       it('should not show a "Disable" button', () =>

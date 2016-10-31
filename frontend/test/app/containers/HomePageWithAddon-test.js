@@ -26,7 +26,7 @@ describe('app/containers/HomePageWithAddon', () => {
   });
 
   it('should render expected content', () => {
-    expect(subject.state('hideEmailDialog')).to.be.false;
+    expect(subject.state('showEmailDialog')).to.be.false;
     expect(subject.find('ExperimentCardList')).to.have.property('length', 1);
     expect(subject.find('EmailDialog')).to.have.property('length', 0);
   });
@@ -39,19 +39,22 @@ describe('app/containers/HomePageWithAddon', () => {
   it('should show an email dialog if the URL contains utm_campaign=restart-required',  () => {
     const getWindowLocation = sinon.spy(() =>
       ({ search: 'utm_campaign=restart-required' }));
-    subject.setProps({ getWindowLocation });
+    props = { ...props, getWindowLocation }
+    subject = shallow(<HomePageWithAddon {...props} />);
     expect(subject.find('EmailDialog')).to.have.property('length', 1);
 
-    subject.setState({ hideEmailDialog: true });
+    subject.setState({ showEmailDialog: false });
     expect(subject.find('EmailDialog')).to.have.property('length', 0);
   });
 
   it('should show an email dialog if the first-run cookie is set', () => {
     const getCookie = sinon.spy(name => 1);
-    subject.setProps({ getCookie });
+    props = { ...props, getCookie }
+    subject = shallow(<HomePageWithAddon {...props} />);
     expect(subject.find('EmailDialog')).to.have.property('length', 1);
+    expect(props.removeCookie.called).to.be.true;
 
-    subject.setState({ hideEmailDialog: true });
+    subject.setState({ showEmailDialog: false });
     expect(subject.find('EmailDialog')).to.have.property('length', 0);
   });
 

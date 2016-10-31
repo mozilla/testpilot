@@ -8,6 +8,7 @@ import { buildSurveyURL, createMarkup, experimentL10nId, formatDate } from '../l
 import LoadingPage from './LoadingPage';
 import NotFoundPage from './NotFoundPage';
 
+import EmailDialog from '../components/EmailDialog';
 import ExperimentDisableDialog from '../components/ExperimentDisableDialog';
 import ExperimentEolDialog from '../components/ExperimentEolDialog';
 import ExperimentTourDialog from '../components/ExperimentTourDialog';
@@ -40,7 +41,14 @@ export class ExperimentDetail extends React.Component {
   constructor(props) {
     super(props);
 
-    const { isExperimentEnabled, experiment } = this.props;
+    const { isExperimentEnabled, experiment,
+            getCookie, removeCookie } = this.props;
+
+    let showEmailDialog = false;
+    if (getCookie('first-run')) {
+      removeCookie('first-run');
+      showEmailDialog = true;
+    }
 
     // TODO: Clean this up per #1367
     this.state = {
@@ -50,6 +58,7 @@ export class ExperimentDetail extends React.Component {
       isEnabling: false,
       isDisabling: false,
       progressButtonWidth: null,
+      showEmailDialog,
       showDisableDialog: false,
       shouldShowTourDialog: false,
       showTourDialog: false,
@@ -177,7 +186,7 @@ export class ExperimentDetail extends React.Component {
     }
 
     const { enabled, useStickyHeader, highlightMeasurementPanel,
-            showDisableDialog, showTourDialog,
+            showEmailDialog, showDisableDialog, showTourDialog,
             showPreFeedbackDialog, showEolDialog,
             stickyHeaderSiblingHeight } = this.state;
 
@@ -202,6 +211,10 @@ export class ExperimentDetail extends React.Component {
 
     return (
       <section id="details" data-hook="experiment-page">
+
+        {showEmailDialog &&
+          <EmailDialog {...this.props}
+            onDismiss={() => this.setState({ showEmailDialog: false })} />}
 
         {showDisableDialog &&
           <ExperimentDisableDialog {...this.props}
