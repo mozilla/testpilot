@@ -3,7 +3,12 @@
 # This file is used to deploy Test Pilot to an S3 bucket.  It expects to be run
 # from the root of the Test Pilot directory and you'll need your S3 bucket name
 # in an environment variable $TESTPILOT_BUCKET
-
+#
+# It takes a single argument:  If you're deploying to a dev instance, pass in
+# "dev" and it will tweak the rules slightly:
+#
+#   ./deploy.sh dev
+#
 # Questions?  Hit up #testpilot on IRC
 
 if [ ! -d "dist" ]; then
@@ -16,6 +21,10 @@ if [ -z "$TESTPILOT_BUCKET" ]; then
     exit 1
 fi
 
+if [ "$1" = "dev" ]; then
+    DEST="dev"
+fi
+
 
 # The basic strategy is to sync all the files that need special attention
 # first, and then sync everything else which will get defaults
@@ -25,18 +34,26 @@ fi
 MAX_AGE="600"
 
 HPKP="\"public-key-pins\": \"max-age=300;pin-sha256=\\\"WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=\\\";pin-sha256=\\\"r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E=\\\"\""
-CSP="\"content-security-policy\": \"default-src 'self'; connect-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com https://basket.mozilla.org https://analysis-output.telemetry.mozilla.org; font-src 'self' code.cdn.mozilla.net; form-action 'none'; frame-src 'self' https://pontoon.mozilla.org; img-src 'self' https://pontoon.mozilla.org https://ssl.google-analytics.com https://www.google-analytics.com; object-src 'none'; script-src 'self' https://pontoon.mozilla.org https://ssl.google-analytics.com; style-src 'self' https://pontoon.mozilla.org code.cdn.mozilla.net; report-uri /__cspreport__;\""
+CSP="\"content-security-policy\": \"default-src 'self'; connect-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com https://basket.mozilla.org https://analysis-output.telemetry.mozilla.org; font-src 'self' code.cdn.mozilla.net; form-action 'none'; img-src 'self' https://ssl.google-analytics.com https://www.google-analytics.com; object-src 'none'; script-src 'self' https://ssl.google-analytics.com; style-src 'self' code.cdn.mozilla.net; report-uri /__cspreport__;\""
 HSTS="\"strict-transport-security\": \"max-age=31536000; includeSubDomains; preload\""
 TYPE="\"x-content-type-options\": \"nosniff\""
-FRAME="\"x-frame-options\": \"ALLOW-FROM https://pontoon.mozilla.org/\""
+FRAME="\"x-frame-options\": \"DENY\""
 XSS="\"x-xss-protection\": \"1; mode=block\""
+
+# Our dev server has a couple different rules to allow easier debugging and
+# enable localization.  Also expires more often.
+if ["$DEST" = "dev"]; then
+    MAX_AGE="15"
+    CSP="\"content-security-policy\": \"default-src 'self'; connect-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com https://basket.mozilla.org https://analysis-output.telemetry.mozilla.org; font-src 'self' code.cdn.mozilla.net; form-action 'none'; frame-src 'self' https://pontoon.mozilla.org; img-src 'self' https://pontoon.mozilla.org https://ssl.google-analytics.com https://www.google-analytics.com; object-src 'none'; script-src 'self' https://pontoon.mozilla.org https://ssl.google-analytics.com; style-src 'self' https://pontoon.mozilla.org code.cdn.mozilla.net; report-uri /__cspreport__;\""
+    FRAME="\"x-frame-options\": \"ALLOW-FROM https://pontoon.mozilla.org/\""
+fi
 
 # build version.json if it isn't provided
 [ -e version.json ] || $(dirname $0)/build-version-json.sh
 
 if [ -e version.json ]; then
     mv version.json dist/__version__
-    # __version__ JSON; 10 minute cache
+    # __version__ JSON; short cache
     aws s3 cp \
       --cache-control "max-age=${MAX_AGE}" \
       --content-type "application/json" \
@@ -46,7 +63,7 @@ if [ -e version.json ]; then
       dist/__version__ s3://${TESTPILOT_BUCKET}/__version__
 fi
 
-# HTML; 10 minute cache
+# HTML; short cache
 aws s3 sync \
   --cache-control "max-age=${MAX_AGE}" \
   --content-type "text/html" \
@@ -57,7 +74,7 @@ aws s3 sync \
   --acl "public-read" \
   dist/ s3://${TESTPILOT_BUCKET}/
 
-# JSON; 10 minute cache
+# JSON; short cache
 aws s3 sync \
   --cache-control "max-age=${MAX_AGE}" \
   --content-type "application/json" \
@@ -68,7 +85,7 @@ aws s3 sync \
   --acl "public-read" \
   dist/ s3://${TESTPILOT_BUCKET}/
 
-# XPI; 10 minute cache; amazon won't detect the content-type correctly
+# XPI; short cache; amazon won't detect the content-type correctly
 aws s3 sync \
   --cache-control "max-age=${MAX_AGE}" \
   --content-type "application/x-xpinstall" \
@@ -79,7 +96,7 @@ aws s3 sync \
   --acl "public-read" \
   dist/ s3://${TESTPILOT_BUCKET}/
 
-# RDF; 10 minute cache; amazon won't detect the content-type correctly
+# RDF; short cache; amazon won't detect the content-type correctly
 aws s3 sync \
   --cache-control "max-age=${MAX_AGE}" \
   --content-type "text/rdf" \
@@ -108,7 +125,7 @@ aws s3 sync \
   --acl "public-read" \
   dist/ s3://${TESTPILOT_BUCKET}/
 
-# HTML - `path/index.html` to `path` resources; 10 minute cache
+# HTML - `path/index.html` to `path` resources; short cache
 for fn in $(find dist -name 'index.html' -not -path 'dist/index.html'); do
   s3path=${fn#dist/}
   s3path=${s3path%/index.html}
