@@ -50,7 +50,7 @@ gulp.task('pages-build', [
 ]);
 
 gulp.task('pages-watch', () => {
-  gulp.watch(config.SRC_PATH + 'index.html', ['pages-build']);
+  gulp.watch(config.SRC_PATH + 'templates/index.mustache', ['pages-build']);
   gulp.watch(['./compiled-templates/*.md', './compiled-templates/*.js'], ['pages-compiled']);
 });
 
