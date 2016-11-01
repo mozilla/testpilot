@@ -52,19 +52,16 @@ gradient_start: '#02BDAD'
 gradient_stop: '#035295'
 details:
   -
-    headline: ' '
     image: /static/images/experiments/page-shot/experiments_experimentdetail/detail1.jpg
     copy: >
       Select the image area and save if you like what you see, cancel without
       saving if you don’t.
   -
-    headline: ' '
     image: /static/images/experiments/page-shot/experiments_experimentdetail/detail2.jpg
     copy: >
       Share links to images via social or email, without having to download and
       attach a file.
   -
-    headline: ' '
     image: /static/images/experiments/page-shot/experiments_experimentdetail/detail3.jpg
     copy: >
       Find saved screenshots easily. Browse thumbnails in grid view or search by keyword.

@@ -10,8 +10,8 @@ const MAX_JUST_LAUNCHED_PERIOD = 2 * ONE_WEEK;
 const MAX_JUST_UPDATED_PERIOD = 2 * ONE_WEEK;
 
 export default class ExperimentRowCard extends React.Component {
-  l10nId(pieces, path = null) {
-    return experimentL10nId(this.props.experiment, pieces, path);
+  l10nId(pieces) {
+    return experimentL10nId(this.props.experiment, pieces);
   }
 
   render() {
@@ -48,7 +48,7 @@ export default class ExperimentRowCard extends React.Component {
       <div className="experiment-information">
         <header>
           <h3 data-l10n-id={this.l10nId('title')}>{title}</h3>
-          <h4 data-l10n-id={this.l10nId('subtitle')} className="subtitle">{subtitle}</h4>
+          {subtitle && <h4 data-l10n-id={this.l10nId('subtitle')} className="subtitle">{subtitle}</h4>}
           <h4 className="eol-message">{this.statusMsg()}</h4>
         </header>
         <p data-l10n-id={this.l10nId('description')}>{description}</p>

@@ -2,21 +2,24 @@ const gulp = require('gulp');
 const config = require('../config.js');
 
 const fs = require('fs');
+const isArray = require('util').isArray;
 const mkdirp = require('mkdirp');
 const through = require('through2');
 const gutil = require('gulp-util');
 const YAML = require('yamljs');
 
-gulp.task('content-build', ['content-experiments-json']);
+const util = require('./util');
+
+gulp.task('content-build', ['content-experiments-data']);
 
 gulp.task('content-watch', () => {
-  gulp.watch(config.CONTENT_SRC_PATH + '/**/*.yaml', ['content-experiments-json']);
+  gulp.watch(config.CONTENT_SRC_PATH + '/**/*.yaml', ['content-experiments-data']);
 });
 
-gulp.task('content-experiments-json', function generateStaticAPITask() {
+gulp.task('content-experiments-data', function generateStaticAPITask() {
   return gulp.src(config.CONTENT_SRC_PATH + 'experiments/*.yaml')
-    .pipe(buildExperimentsJSON())
-    .pipe(gulp.dest(config.DEST_PATH + 'api'));
+    .pipe(buildExperimentsData())
+    .pipe(gulp.dest(config.DEST_PATH));
 });
 
 gulp.task('import-api-content', (done) => {
@@ -27,9 +30,37 @@ gulp.task('import-api-content', (done) => {
     .catch(done);
 });
 
-function buildExperimentsJSON() {
+function buildExperimentsData() {
   const index = {results: []};
+  const strings = [];
   const counts = {};
+
+  function findLocalizableStrings(obj, pieces = [], experiment = null) {
+    if (!experiment) {
+      experiment = obj;
+    }
+    if (isArray(obj)) {
+      obj.forEach((item, index) => {
+        findLocalizableStrings(item, [].concat(pieces, index), experiment);
+      });
+    } else if (typeof obj === 'object') {
+      for (var key in obj) {
+        findLocalizableStrings(obj[key], [].concat(pieces, key), experiment);
+      }
+    } else if (obj && typeof obj === 'string' && util.isLocalizableField(pieces)) {
+      strings.push({
+        key: util.experimentL10nId(experiment, pieces, pieces.join('.')),
+        value: obj
+      });
+    }
+  }
+
+  function generateFTL() {
+    return strings.reduce((a, b) => {
+      const value = b.value.replace(/\r?\n|\r/g, '').replace(/\s+/g, ' ');
+      return `${a}\n${b.key} = ${value}`;
+    }, '');
+  }
 
   function collectEntry(file, enc, cb) {
     const yamlData = file.contents.toString();
@@ -52,20 +83,25 @@ function buildExperimentsJSON() {
     }));
 
     index.results.push(experiment);
+    findLocalizableStrings(experiment);
 
     cb();
   }
 
   function endStream(cb) {
+    this.push(new gutil.File({
+      path: 'static/locales/en-US/experiments.ftl',
+      contents: new Buffer(generateFTL())
+    }));
     // These files are being consumed by 3rd parties (at a minimum, the Mozilla
     // Measurements Team).  Before changing them, please consult with the
     // appropriate folks!
     this.push(new gutil.File({
-      path: 'experiments.json',
+      path: 'api/experiments.json',
       contents: new Buffer(JSON.stringify(index, null, 2))
     }));
     this.push(new gutil.File({
-      path: 'experiments/usage_counts.json',
+      path: 'api/experiments/usage_counts.json',
       contents: new Buffer(JSON.stringify(counts, null, 2))
     }));
     cb();

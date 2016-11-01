@@ -9,8 +9,8 @@ export default class ExperimentTourDialog extends React.Component {
     this.state = { currentStep: 0 };
   }
 
-  l10nId(pieces, path = null) {
-    return experimentL10nId(this.props.experiment, pieces, path);
+  l10nId(pieces) {
+    return experimentL10nId(this.props.experiment, pieces);
   }
 
   render() {
@@ -47,7 +47,7 @@ export default class ExperimentTourDialog extends React.Component {
               </div>
               {step.copy &&
                 <div className="tour-text"
-                     data-l10n-id={this.l10nId(['tourstep', idx], `tour_steps.${idx}.copy`)}
+                     data-l10n-id={this.l10nId(['tour_steps', idx, 'copy'])}
                      dangerouslySetInnerHTML={{ __html: step.copy }}></div>}
             </div>
           ))}

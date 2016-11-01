@@ -12,7 +12,7 @@ describe('app/components/ExperimentRowCard', () => {
     mockExperiment = {
       slug: 'testing',
       title: 'Testing Experiment',
-      title_l10nid: 'foo',
+      title_l10nsuffix: 'foo',
       subtitle: 'This is a subtitle.',
       description: 'This is a description.',
       created: moment().subtract(2, 'months').utc(),

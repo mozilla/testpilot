@@ -65,8 +65,8 @@ export class ExperimentDetail extends React.Component {
     this.didScroll = false;
   }
 
-  l10nId(pieces, path = null) {
-    return experimentL10nId(this.props.experiment, pieces, path);
+  l10nId(pieces) {
+    return experimentL10nId(this.props.experiment, pieces);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -261,7 +261,7 @@ export class ExperimentDetail extends React.Component {
             <div className="details-header responsive-content-wrapper">
               <header>
                 <h1 data-hook="title" data-l10n-id={this.l10nId('title')}>{title}</h1>
-                <h4 data-hook="subtitle" className="subtitle" data-l10n-id={this.l10nId('subtitle')}>{subtitle}</h4>
+                {subtitle && <h4 data-hook="subtitle" className="subtitle" data-l10n-id={this.l10nId('subtitle')}>{subtitle}</h4>}
               </header>
               { this.renderExperimentControls() }
               { this.renderMinimumVersionNotice(title, hasAddon, min_release) }
@@ -327,7 +327,7 @@ export class ExperimentDetail extends React.Component {
                             <img className="avatar" data-hook="avatar" width="56" height="56" src={contributor.avatar} />
                             <div className="contributor">
                               <p data-hook="name" className="name">{contributor.display_name}</p>
-                              <p data-hook="title" className="title" data-l10n-id={this.l10nId(['contributor', 'title', contributor.display_name], `contributors.${idx}.title`)}>{contributor.title}</p>
+                              {contributor.title && <p data-hook="title" className="title" data-l10n-id={this.l10nId(['contributors', idx, 'title'])}>{contributor.title}</p>}
                             </div>
                           </li>
                         ))}
@@ -359,8 +359,8 @@ export class ExperimentDetail extends React.Component {
                        <div data-hook="details" className="details-image">
                          <img data-hook="detail-image" width="680" src={detail.image} />
                          <p className="caption">
-                           <strong data-hook="detail-headline" data-l10n-id={this.l10nId(['detail', idx, 'headline'], `details.${idx}.headline`)}>{detail.headline}</strong>
-                           <span data-hook="detail-copy" data-l10n-id={this.l10nId(['detail', idx, 'copy'], `details.${idx}.copy`)} dangerouslySetInnerHTML={createMarkup(detail.copy)}></span>
+                           {detail.headline && <strong data-hook="detail-headline" data-l10n-id={this.l10nId(['details', idx, 'headline'])}>{detail.headline}</strong>}
+                           {detail.copy && <span data-hook="detail-copy" data-l10n-id={this.l10nId(['details', idx, 'copy'])} dangerouslySetInnerHTML={createMarkup(detail.copy)}></span>}
                          </p>
                        </div>
                      </div>

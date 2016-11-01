@@ -15,7 +15,7 @@ describe('app/components/ExperimentTourDialog', () => {
         title: 'Test Experiment',
         slug: 'test',
         tour_steps: [
-          { image: '/example1.png', copy: '<p class="example1">Example 1</p>', copy_l10nid: 'foo' },
+          { image: '/example1.png', copy: '<p class="example1">Example 1</p>', copy_l10nsuffix: 'foo' },
           { image: '/example2.png', copy: '<p class="example2">Example 2</p>' },
           { image: '/example3.png', copy: '<p class="example3">Example 3</p>' },
         ]
@@ -42,7 +42,7 @@ describe('app/components/ExperimentTourDialog', () => {
   });
 
   it('should have the correct l10n IDs', () => {
-    expect(subject.find('.tour-text').prop('data-l10n-id')).to.equal('testTourstep0Foo');
+    expect(subject.find('.tour-text').prop('data-l10n-id')).to.equal('testToursteps0CopyFoo');
   });
 
   it('should advance one step and ping GA when the next button is clicked', () => {
