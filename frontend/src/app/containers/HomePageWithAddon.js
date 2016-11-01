@@ -11,25 +11,27 @@ export default class HomePageWithAddon extends React.Component {
 
   constructor(props) {
     super(props);
+    const { getCookie, removeCookie, getWindowLocation } = this.props;
+
+    let showEmailDialog = false;
+    if (getCookie('first-run') ||
+      getWindowLocation().search.indexOf('utm_campaign=restart-required') > -1) {
+      removeCookie('first-run');
+      showEmailDialog = true;
+    }
+
     this.state = {
-      hideEmailDialog: false,
+      showEmailDialog,
       showPastExperiments: false
     };
   }
 
   render() {
-    const { experiments, getCookie, removeCookie, getWindowLocation, isAfterCompletedDate } = this.props;
+    const { experiments, isAfterCompletedDate } = this.props;
 
     if (experiments.length === 0) { return <LoadingPage />; }
 
-    let showEmailDialog = false;
-    if (!this.state.hideEmailDialog &&
-        (getCookie('first-run') ||
-         getWindowLocation().search.indexOf('utm_campaign=restart-required') > -1)) {
-      removeCookie('first-run');
-      showEmailDialog = true;
-    }
-    const { showPastExperiments } = this.state;
+    const { showEmailDialog, showPastExperiments } = this.state;
     const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
     const pastExperiments = experiments.filter(isAfterCompletedDate);
 
@@ -37,7 +39,7 @@ export default class HomePageWithAddon extends React.Component {
       <View {...this.props}>
         {showEmailDialog &&
           <EmailDialog {...this.props}
-            onDismiss={() => this.setState({ hideEmailDialog: true })} />}
+            onDismiss={() => this.setState({ showEmailDialog: false })} />}
 
         <div className="responsive-content-wrapper reverse-split-banner ">
           <div className="copter-wrapper fly-down">
