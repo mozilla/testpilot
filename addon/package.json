@@ -27,6 +27,7 @@
     "lint": "eslint --no-eslintrc -c ./.eslintrc .",
     "sign": "./bin/update-version && ./bin/sign",
     "package": "jpm xpi && mv testpilot-addon.xpi addon.xpi && mv @testpilot-addon-$npm_package_version.update.rdf update.rdf",
+    "package-win": "jpm xpi && move testpilot-addon.xpi addon.xpi && move @testpilot-addon-%npm_package_version%.update.rdf update.rdf",
     "lint-addon": "addons-linter addon.xpi -o text"
   },
   "license": "MPL-2.0",

@@ -37,3 +37,4 @@ rules:
   no-unused-expressions: [0]
   no-use-before-define: [2, nofunc]
   yoda: [0]
+  linebreak-style: [0]
