@@ -42,7 +42,7 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
     mockExperiment = {
       slug: 'testing',
       title: 'Testing',
-      title_l10nid: 'foo',
+      title_l10nsuffix: 'foo',
       subtitle: 'Testing',
       version: '1.0',
       thumbnail: '/thumbnail.png',
@@ -128,9 +128,9 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
     expect(findByL10nID('testingTitleFoo')).to.have.property('length', 1);
     expect(findByL10nID('testingSubtitle')).to.have.property('length', 1);
     expect(findByL10nID('testingIntroduction')).to.have.property('length', 1);
-    expect(findByL10nID('testingContributorTitleJorgesoler')).to.have.property('length', 1);
-    expect(findByL10nID('testingDetail0Headline')).to.have.property('length', 1);
-    expect(findByL10nID('testingDetail0Copy')).to.have.property('length', 1);
+    expect(findByL10nID('testingContributors0Title')).to.have.property('length', 1);
+    expect(findByL10nID('testingDetails0Headline')).to.have.property('length', 1);
+    expect(findByL10nID('testingDetails0Copy')).to.have.property('length', 1);
 
     // Fields only available when the add-on is installed.
     subject.setProps({ hasAddon: true });

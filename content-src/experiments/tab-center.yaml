@@ -40,17 +40,14 @@ pre_feedback_image:
 pre_feedback_copy:
 details:
   -
-    headline: ' '
     image: /static/images/experiments/tab-center/details/tab-center-1.jpg
     copy: >
       Take your tabs on the side.
   -
-    headline: ' '
     image: /static/images/experiments/tab-center/details/tab-center-2.jpg
     copy: >
       Tuck away those tabs until you need them.
   -
-    headline: ' '
     image: /static/images/experiments/tab-center/details/tab-center-3.jpg
     copy: >
       Redecorate and move the furniture! Tab Center works with your favorite Firefox themes.

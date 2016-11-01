@@ -35,11 +35,11 @@ describe('app/lib/utils', () => {
     array: [
       {
         x: 'y',
-        x_l10nid: 'z'
+        x_l10nsuffix: 'z'
       }
     ],
     string2: 'h',
-    string2_l10nid: 'i'
+    string2_l10nsuffix: 'i'
   };
 
   describe('lookup', () => {
@@ -60,15 +60,11 @@ describe('app/lib/utils', () => {
     const mockExperiment = Object.assign({slug: 'foo'}, mockLookup);
 
     it('should generate the correct l10n ID', () => {
-      expect(experimentL10nId(mockExperiment, ['string'], 'string')).to.equal('fooString');
-    });
-
-    it('should respect _l10nid suffices', () => {
-      expect(experimentL10nId(mockExperiment, ['string2'], 'string2')).to.equal('fooString2I');
-    });
-
-    it('handles missing paths by using the first piece', () => {
       expect(experimentL10nId(mockExperiment, ['string'])).to.equal('fooString');
+    });
+
+    it('should respect _l10nsuffix suffices', () => {
+      expect(experimentL10nId(mockExperiment, ['string2'])).to.equal('fooString2I');
     });
 
     it('handles a string piece by turning it into an array', () => {
@@ -76,11 +72,11 @@ describe('app/lib/utils', () => {
     });
 
     it('looks up object properties', () => {
-      expect(experimentL10nId(mockExperiment, ['object', 'b'], 'object.b')).to.equal('fooObjectB');
+      expect(experimentL10nId(mockExperiment, ['object', 'b'])).to.equal('fooObjectB');
     });
 
     it('looks up array items', () => {
-      expect(experimentL10nId(mockExperiment, ['array', '0', 'x'], 'object.b')).to.equal('fooArray0X');
+      expect(experimentL10nId(mockExperiment, ['array', '0', 'x'])).to.equal('fooArray0XZ');
     });
   });
 

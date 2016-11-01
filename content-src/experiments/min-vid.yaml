@@ -45,17 +45,14 @@ gradient_start: '#FED66F'
 gradient_stop: '#FD667B'
 details:
   -
-    headline: ' '
     image: /static/images/experiments/min-vid/experiments_experimentdetail/detail1.jpg
     copy: >
       Access Min Vid from YouTube and Vimeo video players.
   -
-    headline: ' '
     image: /static/images/experiments/min-vid/experiments_experimentdetail/detail2.jpg
     copy: >
       Watch video in the foreground while you do other things on the Web.
   -
-    headline: ' '
     image: /static/images/experiments/min-vid/experiments_experimentdetail/detail3.jpg
     copy: >
       Right click on links to video to find Min Vid in the in-context controls.
