@@ -27,8 +27,7 @@ test:
   override:
     - ./bin/circleci/test-addon.sh
     - ./bin/circleci/test-frontend.sh
-    - echo "Skipping integration tests."
-    # - ./bin/circleci/run-integration-tests.sh
+    - ./bin/circleci/run-integration-tests.sh
   post:
     - bash <(curl -s https://codecov.io/bash)
 

@@ -9,5 +9,5 @@ wget -qO $HOME/fx-release.tar.bz2 $FIREFOX_URL
 tar -C $HOME -jxf $HOME/fx-release.tar.bz2
 $HOME/firefox/firefox-bin --version
 
-# cd integration
-# pip install -r requirements.txt
+cd integration
+pip install -r requirements.txt

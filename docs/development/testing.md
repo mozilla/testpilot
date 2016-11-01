@@ -87,7 +87,7 @@ Once you've got that whole stack available, you can run the tests like so:
 pip install -r integration/requirements.txt
 python integration/runtests.py \
     --binary=/Applications/Nightly.app/Contents/MacOS/firefox-bin \
-    --verbose integration
+    --verbose integration/test_installation.py
 ```
 
 The first line installs the requires Python modules. The second line starts an

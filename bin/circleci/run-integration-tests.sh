@@ -1,6 +1,6 @@
 #!/bin/bash
 
-npm run server &
+npm start &
 STATIC_SERVER_PID=$!
 
 # Wait until the server is available...
@@ -12,7 +12,7 @@ done
 python integration/runtests.py \
     --binary=$HOME/firefox/firefox-bin \
     --verbose \
-    integration
+    integration/test_installation.py
 TEST_STATUS=$?
 
 kill $STATIC_SERVER_PID
