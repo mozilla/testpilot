@@ -77,8 +77,10 @@ export function setupAddonConnection(store) {
 
 let disconnectTimer = 0;
 function addonDisconnected(store) {
-  store.dispatch(addonActions.setHasAddon(false));
-  pollAddon();
+  if (parseFloat(window.navigator.testpilotAddonVersion) > 0.8) {
+    store.dispatch(addonActions.setHasAddon(false));
+    pollAddon();
+  }
 }
 
 let pollTimer = 0;
