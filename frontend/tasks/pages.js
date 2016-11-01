@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const config = require('../config.js');
-
+const path = require('path');
 const Remarkable = require('remarkable');
 const fs = require('fs');
 const gutil = require('gulp-util');
@@ -50,7 +50,7 @@ gulp.task('pages-build', [
 ]);
 
 gulp.task('pages-watch', () => {
-  gulp.watch(config.SRC_PATH + 'index.html', ['pages-build']);
+  gulp.watch(config.SRC_PATH + 'templates/index.mustache', ['pages-build']);
   gulp.watch(['./compiled-templates/*.md', './compiled-templates/*.js'], ['pages-compiled']);
 });
 
@@ -95,7 +95,7 @@ function buildExperimentPage() {
 
 function convertToCompiledPage() {
   return through.obj(function compiledConvert(file, encoding, callback) {
-    const filename = file.path.split('/').pop();
+    const filename = path.basename(file.path);
     this.push(new gutil.File({
       path: compiledPagePaths[filename],
       contents: new Buffer(`${compiledTemplates.templateBegin}

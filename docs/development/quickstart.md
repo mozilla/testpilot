@@ -67,7 +67,32 @@ it communicates with the site and grants the ability to enable & disable
 experiments. Setting up your browser with the steps above should make it easier
 for you to get it working.
 
-## Windows hosts
+## For Windows hosts
 
-**Help wanted**: Getting things working on Windows may be similar to OS X,
-but the team has little experience with that environment.
+After installing Node.js for Windows, run these commands to get started: 
+
+```cmd
+:: Set up add-on environment and build an unsigned package
+cd addon
+npm install
+npm run package-win
+
+:: Set up frontend web site environment
+cd ..
+npm install
+```
+
+Now, open a second command prompt window, this time with admin privileges and run this:
+
+```cmd
+:: Add hostname alias to /etc/hosts and start up dev webserver
+echo 127.0.0.1 testpilot.dev >> %WINDIR%\System32\Drivers\Etc\Hosts
+```
+
+Go back to the previous command prompt window and run
+
+```cmd
+npm start
+```
+
+Follow the remaining instructions from **Linux & OS X** section and you're all set.
