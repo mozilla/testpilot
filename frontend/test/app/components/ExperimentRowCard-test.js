@@ -12,6 +12,9 @@ describe('app/components/ExperimentRowCard', () => {
     mockExperiment = {
       slug: 'testing',
       title: 'Testing Experiment',
+      title_l10nsuffix: 'foo',
+      subtitle: 'This is a subtitle.',
+      description: 'This is a description.',
       created: moment().subtract(2, 'months').utc(),
       modified: moment().subtract(2, 'months').utc()
     };
@@ -36,6 +39,12 @@ describe('app/components/ExperimentRowCard', () => {
 
   it('should render expected content', () => {
     expect(subject.find('.experiment-information header h3').text()).to.equal(mockExperiment.title);
+  });
+
+  it('should have the expected l10n ID', () => {
+    expect(findByL10nID('testingTitleFoo')).to.have.property('length', 1);
+    expect(findByL10nID('testingSubtitle')).to.have.property('length', 1);
+    expect(findByL10nID('testingDescription')).to.have.property('length', 1);
   });
 
   it('should change style based on hasAddon', () => {

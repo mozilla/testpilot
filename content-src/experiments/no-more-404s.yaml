@@ -45,12 +45,10 @@ pre_feedback_image:
 pre_feedback_copy:
 details:
   -
-    headline: ' '
     image: /static/images/experiments/no-more-404s/experiments_experimentdetail/2/4/24ddd4335aca6b96cca9106a6f3411d2_image_1470245154_0440.jpg
     copy: >
       Reduce 404 dead ends with the Wayback Machine.
   -
-    headline: ' '
     image: /static/images/experiments/no-more-404s/experiments_experimentdetail/c/d/cdb624363e0e87af81125c39bc69c933_image_1470245154_0280.jpg
     copy: >
       Brought to you by our friends at the Internet Archive.
@@ -74,7 +72,6 @@ notifications:
 contributors:
   -
     display_name: 'The Internet Archive'
-    title: ""
     avatar: /static/images/experiments/no-more-404s/avatars/the-internet-archive.png
   -
     display_name: 'Richard Caceres'

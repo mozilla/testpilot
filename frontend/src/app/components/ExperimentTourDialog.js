@@ -1,10 +1,16 @@
 import React from 'react';
 import classnames from 'classnames';
 
+import { experimentL10nId } from '../lib/utils';
+
 export default class ExperimentTourDialog extends React.Component {
   constructor(props) {
     super(props);
     this.state = { currentStep: 0 };
+  }
+
+  l10nId(pieces) {
+    return experimentL10nId(this.props.experiment, pieces);
   }
 
   render() {
@@ -41,6 +47,7 @@ export default class ExperimentTourDialog extends React.Component {
               </div>
               {step.copy &&
                 <div className="tour-text"
+                     data-l10n-id={this.l10nId(['tour_steps', idx, 'copy'])}
                      dangerouslySetInnerHTML={{ __html: step.copy }}></div>}
             </div>
           ))}

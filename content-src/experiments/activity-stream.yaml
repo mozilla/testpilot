@@ -43,12 +43,10 @@ pre_feedback_image:
 pre_feedback_copy:
 details:
   -
-    headline: ' '
     image: /static/images/experiments/activity-stream/experiments_experimentdetail/1/6/16f2bfb82c63c38573005923f4e08457_image_1462827231_0751.png
     copy: >
       Click on a new tab, and your favorite sites are only one more click away.
   -
-    headline: ' '
     image: /static/images/experiments/activity-stream/experiments_experimentdetail/6/7/67858740793232e7a71f86b4ef272b67_image_1462827231_0657.png
     copy: >
       See where you've been, so you can get on to where you're going.

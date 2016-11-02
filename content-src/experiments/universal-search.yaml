@@ -53,14 +53,11 @@ pre_feedback_image:
 pre_feedback_copy:
 details:
   -
-    headline: ' '
     image: /static/images/experiments/universal-search/experiments_experimentdetail/6/d/6d0ff50eff9223f0d0cc58c5aa5d0c81_image_1462827811_0995.jpg
     copy: >
       Popular sites, people and Wikipedia articles appear as you type.
   -
-    headline: ' '
     image: /static/images/experiments/universal-search/experiments_experimentdetail/8/6/8675c7bf31054abdaf58b47850a1365d_image_1462827811_0451.jpg
-    copy: ' '
 tour_steps:
   -
     image: /static/images/experiments/universal-search/experiments_experimenttourstep/e/b/eb1a0c8bbb18c79f63d0df45d165eb7a_image_1462826805_0035.jpg

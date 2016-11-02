@@ -53,12 +53,10 @@ pre_feedback_copy: >
 pre_feedback_image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour2.jpg
 details:
   -
-    headline: ' '
     image: /static/images/experiments/tracking-protection/experiments_experimentdetail/detail1.jpg
     copy: >
       Access all Tracking Protection features in the address bar.
   -
-    headline: ' '
     image: /static/images/experiments/tracking-protection/experiments_experimentdetail/detail2.jpg
     copy: >
       Report a problem and help us troubleshoot.

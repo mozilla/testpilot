@@ -6,6 +6,7 @@ import experimentActions from '../actions/experiments';
 import { getExperimentByID, getExperimentByURL, getExperimentInProgress } from '../reducers/experiments';
 
 const INSTALL_STATE_WATCH_PERIOD = 2000;
+const DISCONNECT_TIMEOUT = 3333;
 const MOZADDONMANAGER_ALLOWED_HOSTNAMES = [
   'testpilot.firefox.com',
   'testpilot.stage.mozaws.net',
@@ -45,6 +46,8 @@ export function installAddon(requireRestart, sendToGA, eventCategory) {
     eventLabel: 'Install the Add-on'
   };
 
+  cookies.set('first-run', 'true');
+
   if (useMozAddonManager) {
     mozAddonManagerInstall(downloadUrl).then(() => {
       gaEvent.dimension7 = RESTART_NEEDED ? 'restart required' : 'no restart';
@@ -54,7 +57,6 @@ export function installAddon(requireRestart, sendToGA, eventCategory) {
       }
     });
   } else {
-    cookies.set('first-run', 'true');
     gaEvent.outboundURL = downloadUrl;
     sendToGA('event', gaEvent);
   }
@@ -72,6 +74,14 @@ export function setupAddonConnection(store) {
 
   store.dispatch(addonActions.setInstalled());
   pollAddon();
+}
+
+let disconnectTimer = 0;
+function addonDisconnected(store) {
+  if (parseFloat(window.navigator.testpilotAddonVersion) > 0.8) {
+    store.dispatch(addonActions.setHasAddon(false));
+    pollAddon();
+  }
 }
 
 let pollTimer = 0;
@@ -102,6 +112,8 @@ function messageReceived(store, evt) {
     clearTimeout(pollTimer);
     pollTimer = 0;
   }
+  clearTimeout(disconnectTimer);
+  disconnectTimer = setTimeout(addonDisconnected.bind(null, store), DISCONNECT_TIMEOUT);
 
   const { type, data } = evt.detail;
   const { experiments, addon } = store.getState();

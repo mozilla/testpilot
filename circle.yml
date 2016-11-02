@@ -41,7 +41,7 @@ deployment:
     commands:
       - ./bin/circleci/build-version-json.sh
       - ./bin/circleci/build-frontend.sh
-      - TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/deploy.sh
+      - TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/deploy.sh dev
       - aws configure set preview.cloudfront true
       - aws cloudfront create-invalidation --distribution-id E2ERG47PHCWD0Z --paths '/*'
 
