@@ -6,6 +6,8 @@
 machine:
   hosts:
     testpilot.dev: 127.0.0.1
+  services:
+    - docker
   node:
     version: 6.9.1
   environment:
@@ -44,6 +46,8 @@ deployment:
       - TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/deploy.sh dev
       - aws configure set preview.cloudfront true
       - aws cloudfront create-invalidation --distribution-id E2ERG47PHCWD0Z --paths '/*'
+      - docker pull owasp/zap2docker-weekly
+      - timeout 300 docker run -t owasp/zap2docker-weekly zap-baseline.py -t https://testpilot.dev.mozaws.net/
 
 # Only notify of builds on master branch.
 experimental:
