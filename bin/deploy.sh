@@ -103,6 +103,7 @@ aws s3 sync \
 # Everything else; cache forever, because it has hashes in the filenames
 aws s3 sync \
   --delete \
+  --cache-control "max-age=31536000" \
   --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
