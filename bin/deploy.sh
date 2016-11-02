@@ -42,7 +42,7 @@ XSS="\"x-xss-protection\": \"1; mode=block\""
 
 # Our dev server has a couple different rules to allow easier debugging and
 # enable localization.  Also expires more often.
-if [["$DEST" = "dev"]]; then
+if [ "$DEST" = "dev" ]; then
     MAX_AGE="15"
     CSP="\"content-security-policy\": \"default-src 'self'; connect-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com https://basket.mozilla.org https://analysis-output.telemetry.mozilla.org; font-src 'self' code.cdn.mozilla.net; form-action 'none'; frame-src 'self' https://pontoon.mozilla.org; img-src 'self' https://pontoon.mozilla.org https://ssl.google-analytics.com https://www.google-analytics.com; object-src 'none'; script-src 'self' https://pontoon.mozilla.org https://ssl.google-analytics.com; style-src 'self' https://pontoon.mozilla.org code.cdn.mozilla.net; report-uri /__cspreport__;\""
     FRAME="\"x-frame-options\": \"ALLOW-FROM https://pontoon.mozilla.org/\""
