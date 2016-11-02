@@ -18,13 +18,13 @@ export default class MainInstallButton extends React.Component {
   }
 
   render() {
-    const { isFirefox, isMinFirefox, hasAddon } = this.props;
+    const { isFirefox, isMinFirefox, isMobile, hasAddon } = this.props;
     const isInstalling = this.state.isInstalling && !hasAddon;
 
     return (
       <div>
-        {(isMinFirefox) ? this.renderInstallButton(isInstalling, hasAddon) : this.renderAltButton(isFirefox) }
-        {isMinFirefox && <p data-l10n-id="landingLegalNotice" className="legal-information">By proceeding,
+        {(isMinFirefox && !isMobile) ? this.renderInstallButton(isInstalling, hasAddon) : this.renderAltButton(isFirefox, isMobile) }
+        {isMinFirefox && !isMobile && <p data-l10n-id="landingLegalNotice" className="legal-information">By proceeding,
           you agree to the <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Notice</a> of Test Pilot</p>}
       </div>
     );
@@ -33,9 +33,9 @@ export default class MainInstallButton extends React.Component {
   renderInstallButton(isInstalling, hasAddon) {
     return (
       <div>
-        <button onClick={e => this.install(e)} data-hook="install"
+        <button onClick={e => this.install(e)}
                 className={classnames('button extra-large primary install', { 'state-change': isInstalling })}>
-          {hasAddon && <span className="progress-btn-msg" data-l10n-id="landingInstallingButton">Installed</span>}
+          {hasAddon && <span className="progress-btn-msg" data-l10n-id="landingInstalledButton">Installed</span>}
           {!hasAddon && !isInstalling &&
             <span className="default-btn-msg" data-l10n-id="landingInstallButton">Install the Test Pilot Add-on</span>}
           {!hasAddon && isInstalling &&
@@ -47,16 +47,23 @@ export default class MainInstallButton extends React.Component {
   }
 
 
-  renderAltButton(isFirefox) {
+  renderAltButton(isFirefox, isMobile) {
+    if (isFirefox && isMobile) {
+      return (
+        <div>
+          <span data-l10n-id="landingRequiresDesktop">Test Pilot requires Firefox for Desktop on Windows, Mac or Linux</span>
+        </div>
+      );
+    }
     return (
       <div>
-          {(!isFirefox) ? (
+          {!isFirefox ? (
               <span data-l10n-id="landingDownloadFirefoxDesc" className="parens">(Test Pilot is available for Firefox on Windows, OS X and Linux)</span>
             ) : (
               <span className="parens" data-l10n-id="landingUpgradeDesc">Test Pilot requires Firefox 45 or higher.</span>
             )
           }
-          <a href="https://www.mozilla.org/firefox" className="button primary download-firefox">
+          {!isMobile && <a href="https://www.mozilla.org/firefox" className="button primary download-firefox">
             <div className="button-icon">
               <div className="button-icon-badge"></div>
             </div>
@@ -69,7 +76,7 @@ export default class MainInstallButton extends React.Component {
               }
               <div data-l10n-id="landingDownloadFirefoxSubTitle" className="button-description">Free Download</div>
             </div>
-          </a>
+          </a>}
       </div>
     );
   }
