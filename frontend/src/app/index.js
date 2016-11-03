@@ -14,6 +14,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { Provider } from 'react-redux';
 
 import './lib/ga-snippet';
+import './lib/optimizely-snippet';
 
 import { setupAddonConnection } from './lib/addon';
 import createStore from './store';
@@ -21,7 +22,6 @@ import config from './config';
 
 import experimentsActions from './actions/experiments';
 import Routes from './components/Routes';
-
 
 es6Promise.polyfill();
 
