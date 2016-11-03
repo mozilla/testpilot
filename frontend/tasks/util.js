@@ -1,5 +1,4 @@
 const LOCALIZABLE_FIELDS = [
-  'title',
   'subtitle',
   'description',
   'introduction',
