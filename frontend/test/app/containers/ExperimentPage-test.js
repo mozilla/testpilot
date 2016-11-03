@@ -42,8 +42,8 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
     mockExperiment = {
       slug: 'testing',
       title: 'Testing',
-      title_l10nsuffix: 'foo',
       subtitle: 'Testing',
+      subtitle_l10nsuffix: 'foo',
       version: '1.0',
       thumbnail: '/thumbnail.png',
       introduction: '<p class="test-introduction">Introduction!</p>',
@@ -125,8 +125,9 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
 
   it('should have the correct l10n IDs', () => {
     setExperiment(mockExperiment);
-    expect(findByL10nID('testingTitleFoo')).to.have.property('length', 1);
-    expect(findByL10nID('testingSubtitle')).to.have.property('length', 1);
+    // Title field not localized; see #1732.
+    expect(findByL10nID('testingTitle')).to.have.property('length', 0);
+    expect(findByL10nID('testingSubtitleFoo')).to.have.property('length', 1);
     expect(findByL10nID('testingIntroduction')).to.have.property('length', 1);
     expect(findByL10nID('testingContributors0Title')).to.have.property('length', 1);
     expect(findByL10nID('testingDetails0Headline')).to.have.property('length', 1);
