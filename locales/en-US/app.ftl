@@ -172,7 +172,7 @@ incompatibleSubheader = We recommend <a>disabling these add-ons</a> before activ
 newsletterFormEmailPlaceholder =
     [html/placeholder] Your email here
 newsletterFormDisclaimer = We will only send you Test Pilot-related information.
-newsletterFormPrivacyNotice = I'm okay with Mozilla handling by info as explained in <a>this privacy notice</a>.
+newsletterFormPrivacyNotice = I'm okay with Mozilla handling my info as explained in <a>this privacy notice</a>.
 newsletterFormSubmitButton = Sign Up Now
 newsletterFormSubmitButtonSubmitting = Submitting...
 
