@@ -140,7 +140,7 @@ export class ExperimentDetail extends React.Component {
           <h3 data-l10n-id="incompatibleHeader">
             This experiment may not be compatible with add-ons you have installed.
           </h3>
-          <p data-l10n-id="incompatibleSubheader" data-l10n-args={JSON.stringify({ url: helpUrl })}>
+          <p data-l10n-id="incompatibleSubheader">
             We recommend <a href={helpUrl}>disabling these add-ons</a> before activating this experiment:
           </p>
         </header>
