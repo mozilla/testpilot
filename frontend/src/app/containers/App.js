@@ -70,7 +70,7 @@ class App extends Component {
     if (window.ga && ga.loaded) {
       const data = dataIn || {};
       data.hitType = type;
-      data.page = (pathname === '/') ? pathname : '/' + pathname;
+      data.location = window.location;
       ga('send', data);
     }
   }
