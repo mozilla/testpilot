@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 import Warning from '../../../src/app/components/Warning';
 
 
-describe('app/compomnents/Warning', () => {
+describe('app/components/Warning', () => {
 
   it('should omit the <header> when a title isn\'t passed', () => {
     const subject = shallow(<Warning/>);

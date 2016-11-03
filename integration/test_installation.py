@@ -40,10 +40,10 @@ class TestAddonInstallation(FirefoxTestCase):
         with m.using_context(m.CONTEXT_CONTENT):
             m.navigate(SITE_URL)
             m.find_element(By.CSS_SELECTOR,
-                           'button[data-hook=install]').click()
+                           'button.install').click()
             w = Wait(m, ignored_exceptions=NoSuchElementException)
             w.until(lambda m: m.find_element(By.CSS_SELECTOR,
-                                             'button[data-hook=install].state-change'))
+                                             'button.install.state-change'))
 
         # Click through the blocked notification
         b.wait_for_notification(AddOnInstallBlockedNotification, timeout=60)
@@ -71,9 +71,10 @@ class TestAddonInstallation(FirefoxTestCase):
                         next_tab_loc.endswith('/onboarding/'))
         b.tabbar.close_tab(b.tabbar.tabs[1])
 
-        # The frontend should redirect to /experiments after it contacts the add-on
-        Wait(m).until(lambda m: b.tabbar.tabs[0].location.endswith('/experiments') or
-                                b.tabbar.tabs[0].location.endswith('/experiments/'))
+        # The frontend should show a list of experiments after it contacts the add-on
+        with m.using_context(m.CONTEXT_CONTENT):
+            w = Wait(m, ignored_exceptions=NoSuchElementException)
+            w.until(lambda m: m.find_element(By.CSS_SELECTOR, 'div.experiments'))
 
         # Clean up by uninstalling the add-on
         Addons(m).uninstall('@testpilot-addon')

@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 
 import Loading from '../../../src/app/components/Loading';
 
-describe('app/compomnents/Loading', () => {
+describe('app/components/Loading', () => {
   it('should render <div class="loader">', () =>
     expect(shallow(<Loading />).find('.loader')).to.have.length(1));
   it('should render 4 loader-bars', () =>
