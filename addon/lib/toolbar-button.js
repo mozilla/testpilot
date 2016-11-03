@@ -5,6 +5,7 @@ const store = require('sdk/simple-storage').storage;
 const tabs = require('sdk/tabs');
 const self = require('sdk/self');
 const { URL } = require('sdk/url');
+const _ = require('sdk/l10n').get;
 
 const Mustache = require('mustache');
 const templates = require('./templates');
@@ -46,7 +47,7 @@ function getExperimentList(availableExperiments, installedAddons) {
       const completed = (new Date(experiment.completed)).getTime();
       const delta = completed - Date.now();
       if (delta < 0) {
-        experiment.eolMessage = 'Experiment Complete';
+        experiment.eolMessage = _('experiment_eol_complete_message');
         if (experiment.active &&
           !(experiment.addon_id in store.surveyChecks.eol)) {
           experiment.link = experiment.survey_url;
@@ -56,9 +57,9 @@ function getExperimentList(availableExperiments, installedAddons) {
             installed: Object.keys(store.installedAddons)});
         }
       } else if (delta < ONE_DAY) {
-        experiment.eolMessage = 'Ending Tomorrow';
+        experiment.eolMessage = _('experiment_eol_tomorrow_message');
       } else if (delta < ONE_WEEK) {
-        experiment.eolMessage = 'Ending Soon';
+        experiment.eolMessage = _('experiment_eol_soon_message');
       }
       if (experiment.eolMessage) {
         experiment.showEol = true;

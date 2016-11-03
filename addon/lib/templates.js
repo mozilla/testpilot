@@ -3,6 +3,7 @@
  * version 2.0 (the 'License'). You can obtain a copy of the License at
  * http://mozilla.org/MPL/2.0/.
  */
+const _ = require('sdk/l10n').get;
 
 module.exports.experimentList = `
 <div class="experiment-list">
@@ -13,16 +14,16 @@ module.exports.experimentList = `
         <div class="icon" style="background-image:url('{{thumbnail}}');"></div>
       </div>
       <div class="experiment-title">{{title}}
-        <span class="active-span" style="{{#hideActive}}display:none;{{/hideActive}}">Enabled</span>
-        <span class="is-new-span">New Experiment</span>
+        <span class="active-span" style="{{#hideActive}}display:none;{{/hideActive}}">${_('experiment_list_enabled')}</span>
+        <span class="is-new-span">${_('experiment_list_new_experiment')}</span>
         <span class="eol-span {{#showEol}}visible{{/showEol}}">{{eolMessage}}</span>
       </div>
     </a>
   {{/experiments}}
 </div>
-<a class="view-all" href="{{base_url}}/experiments?{{view_all_params}}">View all experiments</a>`;
+<a class="view-all" href="{{base_url}}/experiments?{{view_all_params}}">${_('experiment_list_view_all')}</a>`;
 
 module.exports.installed = `
 <div class="installed-message">
-  <p><strong>FYI:</strong> We put a button in your toolbar <br> so you can always find Test Pilot.</p>
+  <p>${_('installed_message')}</p>
 </div>`;
