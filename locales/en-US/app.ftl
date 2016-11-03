@@ -35,6 +35,7 @@ landingInstallingButton = Installing...
 landingInstallMessage = Test Pilot installed!
 landingInstalledButton = Choose your features
 
+landingRequiresDesktop = Test Pilot requires Firefox for Desktop on Windows, Mac or Linux
 landingDownloadFirefoxDesc = (Test Pilot is available for Firefox on Windows, OS X and Linux)
 landingUpgradeDesc = Test Pilot requires Firefox 45 or higher.
 landingDownloadFirefoxTitle = Firefox
