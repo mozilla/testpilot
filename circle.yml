@@ -8,6 +8,8 @@ machine:
     testpilot.dev: 127.0.0.1
   node:
     version: 6.9.1
+  python:
+    version: 2.7.11
   environment:
     TESTPILOT_ENABLE_PONTOON_BRANCHES: master
 
