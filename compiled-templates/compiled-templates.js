@@ -35,12 +35,10 @@ module.exports.templateBegin = `
         <a href="/" class="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
       </h1>
     </header>
-    <div data-hook="page-container">
-      <div class="responsive-content-wrapper static-page-content">`;
+    <div class="responsive-content-wrapper static-page-content">`;
 
 module.exports.templateEnd = `
     </div>
-  </div>
 
     <footer id="main-footer" class="responsive-content-wrapper">
       <div id="footer-links">
