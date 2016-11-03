@@ -330,6 +330,9 @@ exports.main = function(options) {
     // Generate a UUID for this client, so we can manage experiment
     // installations for multiple browsers per user. DO NOT USE IN METRICS.
     store.clientUUID = require('sdk/util/uuid').uuid().toString().slice(1, -1);
+    store.firstRun = true;
+  } else {
+    store.firstRun = false;
   }
 
   Metrics.init();
