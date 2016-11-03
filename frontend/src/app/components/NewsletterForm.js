@@ -41,13 +41,12 @@ export default class NewsletterForm extends React.Component {
   renderPrivacyField() {
     const fieldName = 'privacy';
     const url = '/privacy';
-    const l10nArgs = JSON.stringify({ url });
 
     return (
       <label className={this.makeRevealedClassNames()} htmlFor={fieldName}>
         <input name={fieldName} type="checkbox" checked={this.props.privacy} required
                onClick={this.handlePrivacyClick} />
-        <span data-l10n-id="newsletterFormPrivacyNotice" data-l10n-args={l10nArgs}>
+        <span data-l10n-id="newsletterFormPrivacyNotice">
           I'm okay with Mozilla handling by info as explained in
           <a href={url}>this Privacy Notice</a>.
         </span>

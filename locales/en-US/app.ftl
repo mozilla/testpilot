@@ -167,12 +167,12 @@ eolDisableMessage = The {$title} experiment has ended. Once you uninstall it you
 completedDateLabel = Experiment End Date: {$completedDate}
 
 incompatibleHeader = This experiment may not be compatible with add-ons you have installed.
-incompatibleSubheader = We recommend <a href="{$url}">disabling these add-ons</a> before activating this experiment:
+incompatibleSubheader = We recommend <a>disabling these add-ons</a> before activating this experiment:
 
 newsletterFormEmailPlaceholder =
     [html/placeholder] Your email here
 newsletterFormDisclaimer = We will only send you Test Pilot-related information.
-newsletterFormPrivacyNotice = I'm okay with Mozilla handling by info as explained in <a href="{$url}">this privacy notice</a>.
+newsletterFormPrivacyNotice = I'm okay with Mozilla handling my info as explained in <a>this privacy notice</a>.
 newsletterFormSubmitButton = Sign Up Now
 newsletterFormSubmitButtonSubmitting = Submitting...
 
