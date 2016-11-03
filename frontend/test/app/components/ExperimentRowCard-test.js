@@ -12,8 +12,8 @@ describe('app/components/ExperimentRowCard', () => {
     mockExperiment = {
       slug: 'testing',
       title: 'Testing Experiment',
-      title_l10nsuffix: 'foo',
       subtitle: 'This is a subtitle.',
+      subtitle_l10nsuffix: 'foo',
       description: 'This is a description.',
       created: moment().subtract(2, 'months').utc(),
       modified: moment().subtract(2, 'months').utc()
@@ -42,8 +42,9 @@ describe('app/components/ExperimentRowCard', () => {
   });
 
   it('should have the expected l10n ID', () => {
-    expect(findByL10nID('testingTitleFoo')).to.have.property('length', 1);
-    expect(findByL10nID('testingSubtitle')).to.have.property('length', 1);
+    // Title field not localized; see #1732.
+    expect(findByL10nID('testingTitle')).to.have.property('length', 0);
+    expect(findByL10nID('testingSubtitleFoo')).to.have.property('length', 1);
     expect(findByL10nID('testingDescription')).to.have.property('length', 1);
   });
 

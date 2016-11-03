@@ -273,7 +273,7 @@ export class ExperimentDetail extends React.Component {
             </div>
             <div className="details-header responsive-content-wrapper">
               <header>
-                <h1 data-hook="title" data-l10n-id={this.l10nId('title')}>{title}</h1>
+                <h1 data-hook="title">{title}</h1>
                 {subtitle && <h4 data-hook="subtitle" className="subtitle" data-l10n-id={this.l10nId('subtitle')}>{subtitle}</h4>}
               </header>
               { this.renderExperimentControls() }

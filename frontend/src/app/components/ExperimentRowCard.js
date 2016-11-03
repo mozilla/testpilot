@@ -47,7 +47,7 @@ export default class ExperimentRowCard extends React.Component {
       </div>
       <div className="experiment-information">
         <header>
-          <h3 data-l10n-id={this.l10nId('title')}>{title}</h3>
+          <h3>{title}</h3>
           {subtitle && <h4 data-l10n-id={this.l10nId('subtitle')} className="subtitle">{subtitle}</h4>}
           <h4 className="eol-message">{this.statusMsg()}</h4>
         </header>
