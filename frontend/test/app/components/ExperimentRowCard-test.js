@@ -187,4 +187,14 @@ describe('app/components/ExperimentRowCard', () => {
     expect(props.navigateTo.lastCall.args[0])
       .to.equal(`/experiments/${mockExperiment.slug}`);
   });
+
+  it('should have a Link component with the right properties', () => {
+    const link = subject.find('Link');
+    expect(link).to.not.be.a('null');
+    expect(link.props()).to.contain.all({
+      'data-hook': 'show-detail',
+      to: `/experiments/${mockExperiment.slug}`,
+      className: 'experiment-summary'
+    });
+  });
 });
