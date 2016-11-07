@@ -85,6 +85,7 @@ notifications:
     text: 'Would you like to talk to Saria?'
     notify_after: '2016-01-01T00:00:00Z'
 
+eol_warning: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
 min_release: 99
 incompatible:
   '@fake-incompatible': 'Fake Incompatible Add-on Name'

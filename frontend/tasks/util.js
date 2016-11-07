@@ -3,6 +3,7 @@ const LOCALIZABLE_FIELDS = [
   'description',
   'introduction',
   'measurements',
+  'eol_warning',
   'pre_feedback_copy',
   'details.copy',
   'tour_steps.copy',

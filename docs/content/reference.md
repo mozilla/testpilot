@@ -447,6 +447,17 @@ notifications:
 
 ![Example notification on macOS](img/notifications.png)
 
+## `eol_warning`
+
+When your experiement is ending, add this field to idicate to users what will happen next. 
+
+Localized, required when you add a `completed` field.
+
+```yaml
+eol_warning: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+```
+
+![EOL Warning](img/eol_warning.png)
 
 ## `min_release`
 
