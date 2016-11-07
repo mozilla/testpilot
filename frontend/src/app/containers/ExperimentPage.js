@@ -524,7 +524,7 @@ export class ExperimentDetail extends React.Component {
       if (enabled) {
         return (
           <div className="experiment-controls">
-            <button onClick={e => { e.preventDefault(); this.setState({ showEolDialog: true }); }} style={{ width: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'secondary', 'warning'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Disable {title}</span></button>
+            <button onClick={e => { e.preventDefault(); this.setState({ showEolDialog: true }); }} style={{ width: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'warning'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Disable {title}</span></button>
           </div>
         );
       }
