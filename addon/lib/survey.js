@@ -16,6 +16,7 @@ const { setTimeout, clearTimeout } = require('sdk/timers');
 const tabs = require('sdk/tabs');
 const querystring = require('sdk/querystring');
 const store = require('sdk/simple-storage').storage;
+const _ = require('sdk/l10n').get;
 
 const NUM_STARS = 5; // Number of survey stars
 const TEN_MINUTES = 60 * 1000 * 10;
@@ -62,7 +63,7 @@ function checkForCompletedExperiments() {
           launchSurvey({
             experiment,
             interval: 'eol',
-            label: `The ${experiment.title} experiment has ended. What did you think?`,
+            label: _('survey_launch_survey_label', experiment.title),
             persistence: 10
           }),
           1000
@@ -216,7 +217,7 @@ function showRating(options) {
     let experimentRating = null;
 
     const { notifyBox, box } = createNotificationBox({
-      label: options.label || `Please rate ${experiment.title}`,
+      label: options.label || _('survey_show_rating_label', experiment.title),
       image: experiment.thumbnail,
       child: win => createRatingUI(win, uiClosed),
       persistence: options.persistence,
@@ -243,10 +244,10 @@ function showSurveyButton(options) {
     const { experiment, duration } = options;
     const uiTimeout = setTimeout(uiClosed, duration || 60000);
     const { notifyBox, box } = createNotificationBox({
-      label: `Thank you for rating ${experiment.title}.`,
+      label: _('survey_rating_thank_you', experiment.title),
       image: experiment.thumbnail,
       buttons: [{
-        label: 'Take a Quick Survey',
+        label: _('survey_rating_survey_button'),
         callback: () => { clicked = true; }
       }],
       callback: () => {

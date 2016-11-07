@@ -1,6 +1,7 @@
 .*
 *
 !/data/**
+!/locale/**
 !/lib/**
 !/index.js
 !/install.rdf

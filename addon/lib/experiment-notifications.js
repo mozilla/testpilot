@@ -2,14 +2,23 @@ const Notifications = require('sdk/notifications');
 const querystring = require('sdk/querystring');
 const store = require('sdk/simple-storage').storage;
 const tabs = require('sdk/tabs');
+const URL = require('sdk/url').URL;
+
+const _ = require('sdk/l10n').get;
 
 // Maximum period within which to consider an experiment recently created or
 // updated for notification purposes.
 const MAX_NOTIFICATION_DELAY_PERIOD = 14 * 24 * 60 * 60 * 1000; // 2 weeks
 
+let envHost = '';
+
 module.exports = {
 
-  init() {
+  init(settings) {
+    // Grab the host from BASE_URL for the "via testpilot.firefox.com" bit of
+    // notification text.
+    envHost = URL(settings.BASE_URL).host; // eslint-disable-line new-cap
+
     // Initialize last-checked timestamp to now
     if (!('notificationsLastChecked' in store)) {
       store.notificationsLastChecked = Date.now();
@@ -109,7 +118,7 @@ function sendNotificationForExperiment(experiment, notification) {
   Notifications.notify({
     title: notification.title,
     // HACK: Simulate a web push notification by injecting 'via' here
-    text: 'via testpilot.firefox.com\n' + notification.text,
+    text: `${_('notification_via', envHost)}\n${notification.text}`,
     iconURL: './notification-icon.png',
     onClick: () => {
       const url = experiment.html_url + '?' + querystring.stringify({

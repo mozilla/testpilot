@@ -342,7 +342,7 @@ exports.main = function(options) {
 
   WebExtensionChannels.init();
   ToolbarButton.init(settings);
-  ExperimentNotifications.init();
+  ExperimentNotifications.init(settings);
   SharePrompt.init(settings);
 
   if (reason === 'install') {
