@@ -56,13 +56,13 @@ export default class HomePageWithAddon extends React.Component {
           <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
           {pastExperiments.length > 0 && !showPastExperiments &&
           <div className={classnames(['button', 'outline'])}
-              style={{ margin: '0 auto', display: 'table' }}
+              style={{ margin: '0 auto 40px', display: 'table' }}
               onClick={() => this.setState({ showPastExperiments: true })}
               data-l10n-id="viewPastExperiments">View Past Experiments</div>}
           {showPastExperiments &&
           <div>
             <div className={classnames(['button', 'outline'])}
-                style={{ margin: '0 auto', display: 'table' }}
+                style={{ margin: '0 auto 40px', display: 'table' }}
                 onClick={() => this.setState({ showPastExperiments: false })}
                 data-l10n-id="hidePastExperiments">Hide Past Experiments</div>
             <ExperimentCardList {...this.props} experiments={pastExperiments} eventCategory="HomePage Interactions" />
