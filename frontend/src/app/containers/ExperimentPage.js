@@ -238,7 +238,7 @@ export class ExperimentDetail extends React.Component {
             onCancel={() => this.setState({ showEolDialog: false })}
             onSubmit={e => {
               this.setState({ showEolDialog: false });
-              this.renderUninstallSurvey(e);
+              this.uninstallExperiment(e);
             }} />}
 
         <View {...this.props}>
@@ -653,6 +653,12 @@ export class ExperimentDetail extends React.Component {
     // Ignore subsequen clicks if already in progress
     if (isDisabling) { return; }
 
+    this.props.sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'Disable Experiment',
+      eventLabel: experiment.title
+    });
+
     this.setState({
       isEnabling: false,
       isDisabling: true,
@@ -663,14 +669,7 @@ export class ExperimentDetail extends React.Component {
   }
 
   renderUninstallSurvey(evt) {
-    const { experiment } = this.props;
     evt.preventDefault();
-
-    this.props.sendToGA('event', {
-      eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'Disable Experiment',
-      eventLabel: experiment.title
-    });
 
     this.uninstallExperiment(evt);
 
