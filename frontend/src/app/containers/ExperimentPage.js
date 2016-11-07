@@ -480,7 +480,7 @@ export class ExperimentDetail extends React.Component {
     if (isAfterCompletedDate(experiment)) {
       const completedDate = formatDate(completed);
       return (
-        <span data-l10n-id="completedDateLabel" data-l10n-args={JSON.stringify({ completedDate })}>Experiment End Date: {completedDate}</span>
+        <span data-l10n-id="completedDateLabel" data-l10n-args={JSON.stringify({ completedDate })}>Experiment End Date: <b>{completedDate}</b></span>
       );
     }
     if (!installation_count || installation_count <= 100) {
