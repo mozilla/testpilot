@@ -37,23 +37,29 @@ A relatively easy path for working on this addon involves the following steps:
 
 1. Install [Firefox Developer Edition][devedition].
 
-2. Install the [DevPrefs][devprefs] Add-on, which sets a number of preferences
+1. Install the [DevPrefs][devprefs] Add-on, which sets a number of preferences
    necessary for Add-on development, importantly `xpinstall.signatures.required`
    and `xpinstall.whitelist.required`.
 
-3. Install the [Extension Auto-Installer][autoinstaller] Add-on in Firefox
+1. Install the [Extension Auto-Installer][autoinstaller] Add-on in Firefox
    Developer Edition.
 
-4. Run `npm start` to fire up a watcher that will build the Test Pilot add-on
-   whenever files change and auto-update the installed version in Firefox.
+1. In the top-level directory, run `npm run addon:locales` to copy over
+   translated string resources into the add-on project. [If you have the frontend
+   web server running][quickstart], this should be automatically handled by gulp.
 
-5. Read all about [setting up an extension development
+1. In the `addon/` directory, run `npm start` to fire up a watcher that will
+   build the Test Pilot add-on whenever files change and auto-update the
+   installed version in Firefox.
+
+1. Read all about [setting up an extension development
    environment][extensiondev] on MDN.
 
 [devedition]: https://www.mozilla.org/en-US/firefox/developer/
 [devprefs]: https://addons.mozilla.org/en-US/firefox/addon/devprefs/
 [autoinstaller]: https://addons.mozilla.org/en-US/firefox/addon/autoinstaller/
 [extensiondev]: https://developer.mozilla.org/en-US/Add-ons/Setting_up_extension_development_environment
+[quickstart]: ../docs/development/quickstart.md
 
 For UI hacking you can run `npm run watch-ui` to easily debug `lib/templates.js` and `data/panel.css`
 
