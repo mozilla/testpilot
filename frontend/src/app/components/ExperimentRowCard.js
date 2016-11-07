@@ -49,7 +49,7 @@ export default class ExperimentRowCard extends React.Component {
         <header>
           <h3>{title}</h3>
           {subtitle && <h4 data-l10n-id={this.l10nId('subtitle')} className="subtitle">{subtitle}</h4>}
-          <h4 className="eol-message">{this.statusMsg()}</h4>
+          <h4>{this.statusMsg()}</h4>
         </header>
         <p data-l10n-id={this.l10nId('description')}>{description}</p>
         { this.renderInstallationCount(installation_count, isCompleted) }
@@ -131,9 +131,9 @@ export default class ExperimentRowCard extends React.Component {
       if (delta < 0) {
         return '';
       } else if (delta < ONE_DAY) {
-        return <span data-l10n-id="experimentListEndingTomorrow">Ending Tomorrow</span>;
+        return <span className="eol-message" data-l10n-id="experimentListEndingTomorrow">Ending Tomorrow</span>;
       } else if (delta < ONE_WEEK) {
-        return <span data-l10n-id="experimentListEndingSoon">Ending Soon</span>;
+        return <span className="eol-message" data-l10n-id="experimentListEndingSoon">Ending Soon</span>;
       }
     }
     return '';
