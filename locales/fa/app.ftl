@@ -117,6 +117,7 @@ tourOnboardingTitle = { $title } فعال شد!
 tourStartButton = گرفتن تور
 tourCancelButton = پرش
 tourDoneButton = انجام شد
+userCountContainer = تعداد <span>{ $installation_count }</span> نفر در حال حاضر از { $title } استفاده می‌کنند!
 userCountContainerAlt = هم‌اکنون منتشر شد!
 highlightPrivacy = حریم‌خصوصی شما
 upgradeNoticeTitle = { $title } نیاز به فایرفاکس با حداقل نسخه { $min_release } یا بیشتر را دارد.
@@ -125,6 +126,8 @@ sharePrimary = عاشق خلبان آزمایشی شدید؟ به ما در پی
 shareSecondary = یا فقط این پیوند را رونوشت و جای‌گذاری کنید…
 shareEmail = رایانامه
 shareCopy = رونوشت
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] رایانامه شما اینجا قرار می‌گیرد
 newsletterFormDisclaimer = ما فقط اطلاعات مرتبط با خلبان آزمایشی را برای شما ارسال خواهیم کرد.
 newsletterFormPrivacyNotice = با اینکه موزیلا اطلاعات من را به شکل توضیح داده شده در <a>این نکات حریم‌خصوصی</a> مدیریت کند مشکلی ندارم.
 newsletterFormSubmitButton = همین حالا ثبت‌نام کنید
