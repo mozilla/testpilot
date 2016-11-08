@@ -18,6 +18,7 @@ activitystreamContributors10Title = 工程经理
 activitystreamContributors11Title = 软件工程师
 activitystreamContributors12Title = 高级UX设计师
 minvidDescription = 使视频保持在画面上。Min Vid 让您可以用一个小窗口来显示 YouTube 和 Vimeo 的视频，不影响您同时浏览网页。
+minvidMeasurements = <p>除所有 Test Pilot 实验所收集的<a href="/privacy">数据</a>，您在使用 Min Vid 时还应了解：<p><ul> <li>在您与上下文菜单、实验图标和播放器控件交互时，我们会收集这个使用情况。</li> <li>我们还会收集的是：您遇到可播放视频的次数，您播放视频的次数，以及提供视频的视频服务。这有助于我们了解实验用户对本实验的使用频率。</li> <li>我们不会收集您遇到的具体的视频信息。</li></ul>
 minvidDetails0Copy = 在 YouTube 和 Vimeo 的视频播放器上访问 Min Vid。
 minvidDetails1Copy = 在前台观看视频，且不影响您浏览网页。
 minvidDetails2Copy = 右击视频链接，在右键菜单中也能找到 Min Vid。
@@ -31,6 +32,7 @@ minvidContributors2Title = 实习工程师
 nomore404sSubtitle = 信息提供方 Wayback Machine
 nomore404sDescription = 厌倦了遇到网页失效？如果您查看的页面有“互联网档案馆”（Wayback Machine）的已保存副本，我们可以通知您。
 nomore404sIntroduction = <p>这个实验如下所示。如果您在浏览时遇到了一个 404 页面，我们将会通知您，如果该内容在互联网档案馆的 Wayback Machine 有存档版本可用。</p>
+nomore404sMeasurements = <p>除所有 Test Pilot 实验所收集的<a href="/privacy">数据</a>，您在使用 No More 404s 时还应了解：</p><ul> <li>我们会收集您遇到了多少次“页面未找到”错误（代码404），该页面存在于 Archive.org 的次数，以及您有多少次选择了查看缓存的版本。</li> <li>为提供页面的缓存版本，我们会将404错误的页面网址发送至 Archive.org。<a href="https://archive.org/" target="_blank">Archive.org</a>已在<a href="https://archive.org/about/terms.php" target="_blank">此处</a>披露其隐私政策。</li> <li>我们不会收集您所访问的页面网址，也不会收集发送到 Archive.org 的网址。</li> <li>我们可能会与 Internet Archive 分享与此试验相关的您提交给我们的调查问卷结果，以及汇总的遥测数据。</li></ul>
 nomore404sDetails0Copy = 使用 Wayback Machine 工具，减少404带来的挫折。
 nomore404sDetails1Copy = 所有信息由互联网档案馆（Internet Archive）存档提供。
 nomore404sToursteps0Copy = <p>只需按日常的方式浏览网页。如果您遇到了404页面，并且 Wayback Machine 有可用的存档版本提供，我们会通知您。</p>
