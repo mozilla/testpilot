@@ -84,6 +84,7 @@ feedbackCancelButton = بستن
 feedbackUninstallTitle = متشکریم!
 feedbackUninstallCopy = مشارکت شما در خلبان آزمایشی فایرفاکس معنای زیادی برای ما دارد! لطفا سایر آزمایش‌های ما را هم بررسی کنید، و برای آزمایش‌های بیشتر سر بزنید!
 discussNotifyTitle = فقط یک ثانیه…
+discussNotifyMessageAccountless = <p>در بعضی از آزمایش‌ها ما از سرویس‌های انجمن‌های خارجی استفاده می‌کنیم. اگر تمایل دارید در این انجمن‌ها مشارکت کنید باید برای خود حساب بسازید.</p>
 discussNotifySubmitButton = من رو به انجمن ببر
 discussNotifyCancelButton = لغو
 retireDialogTitle = حذف خلبان آزمایشی؟
@@ -126,6 +127,11 @@ sharePrimary = عاشق خلبان آزمایشی شدید؟ به ما در پی
 shareSecondary = یا فقط این پیوند را رونوشت و جای‌گذاری کنید…
 shareEmail = رایانامه
 shareCopy = رونوشت
+eolMessage = <strong>آزمایش در تاریخ { $completedDate } تمام می‌شود</strong>.<br/><br/>پس از آن شما می‌توانید از { $title } استفاده کنید ولی ما پشتیبانی یا بروزرسانی‌ای فراهم نخواهیم کرد.
+eolDisableMessage = آزمایش { $title } تمام شده است. زمانی که حذف‌اش کنید، دیگر قادر به نصب آن از طریق خلبان آزمایشی نخواهید بود.
+completedDateLabel = تاریخ پایان آزمایش: { $completedDate }
+incompatibleHeader = این آزمایش ممکن است با افزودنی‌هایی که نصب دارید سازگار نباشد.
+incompatibleSubheader = ما پیشنهاد می‌کنیم <a>این افزونه‌ها را</a> قبل از فعال کردن این آزمایش غیرفعال کنید:
 newsletterFormEmailPlaceholder = 
   [html/placeholder] رایانامه شما اینجا قرار می‌گیرد
 newsletterFormDisclaimer = ما فقط اطلاعات مرتبط با خلبان آزمایشی را برای شما ارسال خواهیم کرد.
@@ -136,6 +142,7 @@ newsletterFooterError = یک خطا هنگام ثبت رایانامه شما ر
 newsletterFooterHeader = با خبر باشید
 newsletterFooterBody = در مورد آزمایش‌های جدید مطلع شوید و نتایج آزمایش‌هایی که امتحانشان کرده‌اید را ببینید.
 newsletterFooterSuccessHeader = ممنون!
+newsletterFooterSuccessBody = اگر شما قبلا مشترک یکی از خبرنامه‌های موزیلا نشده‌اید ممکن است لازم باشد اینکار را بکنید. لطفا صندوق‌پستی یا اسپم‌های خود را برای یک رایانامه از طرف ما بررسی کنید.
 localeWarningTitle = این آزمایش تنها به زبان انگلیسی موجود است.
 localeWarningSubtitle = اگر تمایل دارید، هنوز می‌توانید فعالش کنید.
 # TODO: these strings are not currently localized.
