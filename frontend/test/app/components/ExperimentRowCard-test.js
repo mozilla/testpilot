@@ -54,15 +54,6 @@ describe('app/components/ExperimentRowCard', () => {
     expect(subject.find('.experiment-summary').hasClass('has-addon')).to.be.true;
   });
 
-  it('should render short_title if available instead of title', () => {
-    const expectedTitle = 'This is shorter';
-    subject.setProps({ experiment: { ...mockExperiment,
-      title: 'Foo bar baz extra long thing look at it go',
-      short_title: expectedTitle
-    }});
-    expect(subject.find('.experiment-information header h3').text()).to.equal(expectedTitle);
-  });
-
   it('should display installation count if over 100', () => {
     const expectedCount = '101';
     subject.setProps({ experiment: { ...mockExperiment, installation_count: expectedCount }});

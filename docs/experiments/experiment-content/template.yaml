@@ -1,7 +1,6 @@
 id: # Unique numeric ID, we've been going sequentially here, so check other experiments
 title: 'Experiment Name'
 subtitle: '' #Optionally add a subtitle to the experiment
-short_title: '' #Optional
 slug: experiment-name #should match title
 thumbnail: /static/images/experiments/ #followed by path to experiment-name/icon/experiment-name.png
 description: > # Appears in the experiment card, NO HTML WRAPPER
