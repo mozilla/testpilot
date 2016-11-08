@@ -132,7 +132,8 @@ eolDisableMessage = Das Experiment „{ $title }“ ist zu Ende. Wenn Sie es dei
 completedDateLabel = Experiment endet am: { $completedDate }
 incompatibleHeader = Dieses Experiment ist möglicherweise nicht kompatibel mit einigen Ihrer Add-ons.
 incompatibleSubheader = Wir empfehlen die <a>Deaktivierung dieser Add-ons</a>, bevor Sie das Experiment aktivieren:
-newsletterFormEmailPlaceholder = [html/placeholder] E-Mail-Adresse eintragen
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] E-Mail-Adresse eintragen
 newsletterFormDisclaimer = Wir schicken Ihnen nur Informationen mit Bezug zu Test Pilot.
 newsletterFormPrivacyNotice = Ich bin einverstanden, dass Mozilla meine Daten wie in <a>diesem Datenschutzhinweis</a> beschrieben verwendet.
 newsletterFormSubmitButton = Jetzt abonnieren
