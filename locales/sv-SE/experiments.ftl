@@ -1,0 +1,12 @@
+activitystreamContributors0Title = Mjukvaruingenjör
+activitystreamContributors2Title = Programutvecklare
+activitystreamContributors4Title = Mjukvaruingenjör
+activitystreamContributors9Title = Produktchef
+activitystreamContributors10Title = Teknisk chef
+activitystreamContributors11Title = Mjukvaruingenjör
+tabcenterContributors0Title = Firefox UX
+tabcenterContributors1Title = Firefox UX
+tabcenterContributors2Title = Firefox UX
+tabcenterContributors3Title = Firefox UX
+trackingprotectionContributors0Title = Webbutvecklare
+universalsearchContributors0Title = Produktchef
