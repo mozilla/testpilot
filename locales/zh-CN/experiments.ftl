@@ -53,7 +53,7 @@ pageshotContributors0Title = 工程经理
 pageshotContributors1Title = 软件工程师
 pageshotContributors2Title = UX设计师
 tabcenterDescription = 将标签栏从顶部放到侧边是何种体验？我们与你都想知道！
-tabcenterIntroduction = <p>把您的标签页卷起来。Tab Center 将您的标签页转移您的浏览器窗口的侧边，使它们在您不需要的时候不可见，而在您需要时，又可以轻松的展开和拿到它们。</p>
+tabcenterIntroduction = <p>把您的标签页卷起来。Tab Center 使标签页转移到浏览器窗口的侧边，让它们在您不需要的时候不可见，而在您需要时，又可以轻松的展开和拿到它们。</p>
 tabcenterMeasurements = <p>除所有 Test Pilot 实验所收集的<a href="/privacy">数据</a>，您在使用 Tab Center 时还应了解：</p><ul> <li>我们会收集您与 Tab Center 互动的使用数据，诸如您最大化或固定 Tab Center 的频率。</li> <li>我们还收集有关您如何使用标签页的信息，诸如您同时打开的标签页的数量，以及保留标签页多久时间。</li> <li>Tab Center 不会收集您访问的网站或标签页内容相关的任何信息。</li></ul>
 tabcenterDetails0Copy = 把标签页放在侧边。
 tabcenterDetails1Copy = 收起标签页，只在你需要时显示。
