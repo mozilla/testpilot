@@ -1,3 +1,4 @@
+footerLinkCookies = Piškotki
 newsletterFooterHeader = Ostanite v stiku
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
