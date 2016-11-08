@@ -1,3 +1,4 @@
+siteName = Firefox Test Pilot
 footerLinkCookies = Piškotki
 newsletterFooterHeader = Ostanite v stiku
 # TODO: these strings are not currently localized.
