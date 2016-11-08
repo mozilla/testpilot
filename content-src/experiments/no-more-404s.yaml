@@ -56,13 +56,13 @@ tour_steps:
   -
     image: /static/images/experiments/no-more-404s/experiments_experimenttourstep/d/a/dafca30f93dadf7f13cc48d389e08f84_image_1470245154_0851.jpg
     copy: >
-      <p>Just browse the web as you normally do. If you encounter a 404 page,
-        we will let you know if an archived version is a available on the Wayback
-        Machine.</p>
+      Just browse the web as you normally do. If you encounter a 404 page,
+      we will let you know if an archived version is a available on the Wayback
+      Machine.
   -
     image: /static/images/experiments/no-more-404s/experiments_experimenttourstep/c/3/c3f0175791c0cf8271658ae01eaf3d94_image_1470245154_0949.jpg
     copy: >
-      <p>You can always give us feedback or disable No More 404s from Test Pilot.</p>
+      You can always give us feedback or disable No More 404s from Test Pilot.
 notifications:
   -
     id: 1

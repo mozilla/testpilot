@@ -15,9 +15,9 @@ describe('app/components/ExperimentTourDialog', () => {
         title: 'Test Experiment',
         slug: 'test',
         tour_steps: [
-          { image: '/example1.png', copy: '<p class="example1">Example 1</p>', copy_l10nsuffix: 'foo' },
-          { image: '/example2.png', copy: '<p class="example2">Example 2</p>' },
-          { image: '/example3.png', copy: '<p class="example3">Example 3</p>' },
+          { image: '/example1.png', copy: 'Example 1', copy_l10nsuffix: 'foo' },
+          { image: '/example2.png', copy: 'Example 2' },
+          { image: '/example3.png', copy: 'Example 3' },
         ]
       },
       sendToGA: sinon.spy(),
@@ -37,7 +37,7 @@ describe('app/components/ExperimentTourDialog', () => {
     const expectedTourStep = props.experiment.tour_steps[0];
     expect(subject.find('.tour-image > img').prop('src'))
       .to.equal(expectedTourStep.image);
-    expect(subject.find('.tour-text').html())
+    expect(subject.find('.tour-text > p').html())
       .to.include(expectedTourStep.copy);
   });
 
