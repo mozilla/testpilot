@@ -1,4 +1,5 @@
 activitystreamDescription = 视觉丰富的历史记录，重新构想的首页体验，希望您可以更容易地找到想在 Firefox 中看到的东西。
+activitystreamMeasurements = <p>除所有 Test Pilot 实验所收集的<a href="/privacy">数据</a>，您在使用 Activity Stream 时还应了解：</p><ul> <li>我们会收集有关您如何与实验性新标签页和时间线页面进行交互的基本使用数据，诸如您单击的元素类型，以及它在页面上的位置。</li> <li>我们还收集有关  Activity Stream 所在的您的浏览器配置的基本信息，诸如书签和历史记录的数量。</li> <li>为提供 Activity Stream，我们会使用名为 <a href="http://embed.ly/" target="_blank">Embedly</a> 的服务获取您所访问网站的元数据，例如图像和图标。我们通过 Mozilla 的服务器发送这些请求至 Embedly，以免它与您个人关联。</li></ul>
 activitystreamDetails0Copy = 新建一个标签页，你喜欢的网站一键可达。
 activitystreamDetails1Copy = 看到你去过哪里，然后你可以回到那里。
 activitystreamToursteps0Copy = <p>打开一个新标签页，看到您的常用网站，以及最近的历史记录和书签。</p>
@@ -18,7 +19,8 @@ activitystreamContributors10Title = 工程经理
 activitystreamContributors11Title = 软件工程师
 activitystreamContributors12Title = 高级UX设计师
 minvidDescription = 使视频保持在画面上。Min Vid 让您可以用一个小窗口来显示 YouTube 和 Vimeo 的视频，不影响您同时浏览网页。
-minvidMeasurements = <p>除所有 Test Pilot 实验所收集的<a href="/privacy">数据</a>，您在使用 Min Vid 时还应了解：<p><ul> <li>在您与上下文菜单、实验图标和播放器控件交互时，我们会收集这个使用情况。</li> <li>我们还会收集的是：您遇到可播放视频的次数，您播放视频的次数，以及提供视频的视频服务。这有助于我们了解实验用户对本实验的使用频率。</li> <li>我们不会收集您遇到的具体的视频信息。</li></ul>
+minvidIntroduction = <p>很喜欢看视频？想在看视频时还做点别的？试试 Min Vid 吧。它为您提供的功能就像画中画，一个画面是视频，另一个画面是整个互联网。</p><ul> <li><strong>点击即到：</strong>弹出 Min Vid 框架以保持视频在前台播放，不影响您浏览网页。</li> <li><strong>随处可放：</strong> Min Vid 允许您拖放视频框架到您的桌面上的任何地方。</li> <li><strong>灵活可控：</strong> Min Vid 的视频框架包括几个控件，允许您暂停/播放、消除、拖动、最小化，以及调整音量。</li></ul>
+minvidMeasurements = <p>除所有 Test Pilot 实验所收集的<a href="/privacy">数据</a>，您在使用 Min Vid 时还应了解：</p><ul> <li>在您与上下文菜单、实验图标和播放器控件交互时，我们会收集这个使用情况。</li> <li>我们还会收集的是：您遇到可播放视频的次数，您播放视频的次数，以及提供视频的视频服务。这有助于我们了解实验用户对本实验的使用频率。</li> <li>我们不会收集您遇到的具体的视频信息。</li></ul>
 minvidDetails0Copy = 在 YouTube 和 Vimeo 的视频播放器上访问 Min Vid。
 minvidDetails1Copy = 在前台观看视频，且不影响您浏览网页。
 minvidDetails2Copy = 右击视频链接，在右键菜单中也能找到 Min Vid。
@@ -69,6 +71,7 @@ tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
 trackingprotectionDescription = 想帮我们改进跟踪保护吗？此实验会为所有浏览启用跟踪保护功能，并为您提供了一个方法，以快速报告浏览遇到了问题。
 trackingprotectionIntroduction = <p>截至目前，Firefox 中的跟踪保护只能在隐私浏览模式下使用。此实验则是为所有浏览行为启用跟踪保护！（当然，您随时可以根据需要，对各个网站禁用它。）</p><p>通过此实验，您可以帮助我们了解跟踪保护影响了哪些网站、网页的功能，以便我们为所有 Firefox 用户改进它。在您浏览时，只需单击网页上面的地址栏中的紫色盾牌图标，就可以告诉我们，这个网站在跟踪保护启用时是否正常。</p>
+trackingprotectionMeasurements = <p>除所有 Test Pilot 实验所收集的<a href="/privacy">数据</a>，您在使用 Tracking Protection 时还应了解：</p><ul> <li>Tracking Protection 在阻挡一个跟踪器时将提示您反馈。我们会因此提示而收集基本的使用数据，例如您为此跟踪器而对此页面启用或禁用，或者报告问题。</li> <li>在您遇到此提示时，我们还会收集有关此页面的信息，以及您遇到的被阻止的跟踪器的域名。这有助于我们了解您遇到问题的时间和原因。</li> <li>除了域名，我们不会收集有关跟踪器的更详细信息，例如唯一性ID或 Cookie 数据。</li> <li>为识别跟踪器，我们使用了合作伙伴 Disconnect 提供的列表。您可以阅读 Disconnect 采用的<a href="https://disconnect.me/trackerprotection" target="_blank">标准</a>了解更多信息。</li></ul>
 trackingprotectionPrefeedbackcopy = <p>要报告一个网站与跟踪保护不兼容，请点击地址栏中的盾牌图标。</p>
 trackingprotectionDetails0Copy = 在地址栏与跟踪保护的所有功能交互。
 trackingprotectionDetails1Copy = 报告问题及帮助我们排除故障。
@@ -80,6 +83,7 @@ trackingprotectionContributors1Title = 高级UX设计师
 trackingprotectionContributors2Title = 高级QA工程师
 universalsearchDescription = 在智能地址栏输入时，显示最佳的信息推荐。
 universalsearchIntroduction = <p>使用 Universal Search，快速获得网络上最佳的结果。只需在地址栏输入几个字符，我们就会提供相关的热门网站、人物和维基百科条目。</p>
+universalsearchMeasurements = <p>除所有 Test Pilot 实验所收集的<a href="/privacy">数据</a>，您在使用 Universal Search 时还应了解：</p><ul> <li>我们会收集您与智能地址栏交互的基本使用信息，例如输入的字符数量，您点击的结果类型，以及它们在结果列表中的位置。</li> <li>如果您以前已配置 Firefox 在搜索栏中显示搜索建议，安装 Universal Search 将启用智能地址栏中的<a href="https://www.mozilla.org/privacy/firefox/#searchsuggestions" target="_blank">搜索建议</a>。</li> <li>在您使用智能地址栏时，我们会将您输入的词语发送到推荐引擎。我们保留热门搜索的匿名日志，以提高我们建议的质量。</li> <li>为提供 Universal Search，我们会使用几个第三方服务。我们使用 <a href="http://www.bing.com/developers/s/APIBasics.html" target="_blank">Bing</a> 和 <a href="https://developer.yahoo.com/boss/search/" target="_blank">Yahoo</a> 提供推荐列表，<a href="http://docs.embed.ly/docs/" target="_blank">Embedly</a> 和 <a href="https://clearbit.com/logo" target="_blank">Clearbit</a> 提供这些推荐相关的额外数据（例如图像和图标）。为在智能地址栏中显示这些推荐，Universal Search 可能会直接从 Embedly 和 Clearbit 下载这些图像，这可能使这些服务能获知您的 IP 地址和所请求图像。</li></ul>
 universalsearchDetails0Copy = 在您输入时，将会显示热门网站、人物和维基百科条目。
 universalsearchToursteps0Copy = <p>只需一处，搜索和导航兼备。</p>
 universalsearchToursteps1Copy = <p>在您输入时，将会显示热门网站、人物和维基百科条目。</p>
