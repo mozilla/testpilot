@@ -54,24 +54,21 @@ details:
 tour_steps:
   -
     image: /static/images/experiments/tab-center/tour/tc-tour-1.jpg
-    copy: >
-      <p>First things first, all your tabs are on the side now.</p>
+    copy: First things first, all your tabs are on the side now.
   -
     image: /static/images/experiments/tab-center/tour/tc-tour-2.jpg
-    copy: >
-      <p>Lots and lots of tabs? Tab Center lets you search them.</p>
+    copy: Lots and lots of tabs? Tab Center lets you search them.
   -
     image: /static/images/experiments/tab-center/tour/tc-tour-3.jpg
     copy: >
-      <p>You can drag the edge of Tab Center to make it as narrow or wide as you like.</p>
+      You can drag the edge of Tab Center to make it as narrow or wide as you
+      like.
   -
     image: /static/images/experiments/tab-center/tour/tc-tour-4.jpg
-    copy: >
-      <p>Hit the switch to tuck Tab Center out of the way.</p>
+    copy: Hit the switch to tuck Tab Center out of the way.
   -
     image: /static/images/experiments/tab-center/tour/tc-tour-5.jpg
-    copy: >
-      <p>You can always give us feedback or disable Tab Center from Test Pilot.</p>
+    copy: You can always give us feedback or disable Tab Center from Test Pilot.
 notifications: []
 contributors:
   -

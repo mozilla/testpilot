@@ -68,24 +68,19 @@ details:
 tour_steps:
   -
     image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour1.jpg
-    copy: >
-      <p>Select the icon to start using Page Shot.</p>
+    copy: Select the icon to start using Page Shot.
   -
     image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour2.jpg
-    copy: >
-      <p>Highlight the area you want to capture.</p>
+    copy: Highlight the area you want to capture.
   -
     image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour3.jpg
-    copy: >
-      <p>Share, save or delete from the browser.</p>
+    copy: Share, save or delete from the browser.
   -
     image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour4.jpg
-    copy: >
-      <p>Search or browse to find saved screenshots.</p>
+    copy: Search or browse to find saved screenshots.
   -
     image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour5.jpg
-    copy: >
-      <p>You can always give us feedback or disable Page Shot from Test Pilot.</p>
+    copy: You can always give us feedback or disable Page Shot from Test Pilot.
 notifications: []
 contributors:
   -
