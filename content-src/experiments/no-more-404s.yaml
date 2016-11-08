@@ -20,22 +20,21 @@ bug_report_url: 'https://github.com/internetarchive/FirefoxNoMore404s/issues/new
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/nomore404s'
 privacy_notice_url: 'https://github.com/internetarchive/FirefoxNoMore404s/blob/master/docs/metrics.md'
 measurements: >
-  <p>In addition to the <a href="/privacy" target="_blank">data</a> collected by
-    all Test Pilot experiments, here are the key things you should know about
-    what is happening when you use No More 404s:</p>
-  <ul>
-    <li>We collect basic usage on how many times you encounter a Page Not Found
-      error (code 404), how many times a cached version of that page exists from
-      Archive.org, and how many times you choose to view the cached version.</li>
-    <li>To provide cached versions of pages, we send 404 error page URLs to
-      Archive.org. <a href="https://archive.org/" target="_blank">Archive.org</a>
-      discloses its privacy policy <a href="https://archive.org/about/terms.php"
-      target="_blank">here</a>.</li>
-    <li>We do not  collect  URLs of the pages you request or the URLs we send to
-      Archive.org.</li>
-    <li>We may share survey results you submit to us and aggregated telemetry
-      data related to this experiment with the Internet Archive.</li>
-  </ul>
+  - >
+    We collect basic usage on how many times you encounter a Page Not Found
+    error (code 404), how many times a cached version of that page exists from
+    Archive.org, and how many times you choose to view the cached version.
+  - >
+    To provide cached versions of pages, we send 404 error page URLs to
+    Archive.org. <a href="https://archive.org/" target="_blank">Archive.org</a>
+    discloses its privacy policy <a href="https://archive.org/about/terms.php"
+    target="_blank">here</a>.
+  - >
+    We do not collect URLs of the pages you request or the URLs we send to
+    Archive.org.
+  - >
+    We may share survey results you submit to us and aggregated telemetry
+    data related to this experiment with the Internet Archive.
 xpi_url: 'https://testpilot.firefox.com/files/nomore404s/latest'
 addon_id: wayback_machine@mozilla.org
 gradient_start: '#111111'

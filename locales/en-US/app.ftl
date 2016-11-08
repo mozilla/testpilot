@@ -80,6 +80,8 @@ experimentCardManage = Manage
 experimentCardGetStarted = Get Started
 experimentCardLearnMore = Learn More
 
+experimentMeasurementIntro = In addition to the <a>data</a> collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use { $experimentTitle }:
+
 experimentPreFeedbackTitle = {$title} feedback
 experimentPreFeedbackLinkCopy = Give feedback about the {$title} experiment
 

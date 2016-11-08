@@ -18,22 +18,20 @@ contribute_url: 'https://github.com/mozilla/activity-stream'
 bug_report_url: 'https://github.com/mozilla/activity-stream/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/activity-stream'
 privacy_notice_url: 'https://github.com/mozilla/activity-stream/blob/master/data_dictionary.md'
-measurements: >
-  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot
-    experiments, here are the key things you should know about what is happening
-    when you use Activity Stream:</p>
-  <ul>
-    <li>We collect basic usage data regarding how you interact with experimental
-      new tab and timeline pages, such as the types of elements that you click
-      and their position on the page.</li>
-    <li>We also collect basic information about your browser profile that affect
-      Activity Stream, such as the number of bookmarks and history items.</li>
-    <li>To provide Activity Stream, we fetch metadata about websites you have
-      visited, such as images and icons, using a service called <a
-      href="http://embed.ly/" target="_blank">Embedly</a>. We send these requests
-      to Embedly through Mozilla's servers, so they will not be associated with
-      you.</li>
-  </ul>
+measurements:
+  - >
+    We collect basic usage data regarding how you interact with experimental
+    new tab and timeline pages, such as the types of elements that you click
+    and their position on the page.
+  - >
+    We also collect basic information about your browser profile that affect
+    Activity Stream, such as the number of bookmarks and history items.
+  - >
+    To provide Activity Stream, we fetch metadata about websites you have
+    visited, such as images and icons, using a service called <a
+    href="http://embed.ly/" target="_blank">Embedly</a>. We send these requests
+    to Embedly through Mozilla's servers, so they will not be associated with
+    you.
 xpi_url: 'https://testpilot.firefox.com/files/activitystream/latest'
 addon_id: '@activity-streams'
 gradient_start: '#0996F8'

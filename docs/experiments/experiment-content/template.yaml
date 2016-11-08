@@ -18,18 +18,15 @@ contribute_url: ''  # link to github root
 bug_report_url: ''  # link to github new issue
 discourse_url: ''  # link to discourse URL
 privacy_notice_url: '' #link to metrics doc
-measurements: > # Measurements formatted as HTML , boilerplate is left in place. Add the experiment name to the intro paragraph
-  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot
-    experiments, here are the key things you should know about what is happening
-    when you use EXPERIMENT NAME:</p>
-  <ul>
-    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
-      suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
-      cupiditate vitae praesentium eveniet unde totam, architecto molestiae?</li>
-    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
-      suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
-      cupiditate vitae praesentium eveniet unde totam, architecto molestiae?</li>
-  </ul>
+measurements: # Measurements, each added to an unordered list. Links allowed.
+  - >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
+    suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
+    cupiditate vitae praesentium eveniet unde totam, architecto molestiae?
+  - >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
+    suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
+    cupiditate vitae praesentium eveniet unde totam, architecto molestiae?
 xpi_url: '' #XPI URL
 addon_id: # XPI ID (no quotes)
 gradient_start: '#FF00FF' # primary color
