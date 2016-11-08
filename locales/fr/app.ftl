@@ -66,6 +66,7 @@ version = Version
 lastUpdate = Dernière mise à jour
 tourDoneButton = Terminé
 shareCopy = Copier
+newsletterFormDisclaimer = Nous ne vous enverrons que des informations liées au programme Test Pilot.
 newsletterFormPrivacyNotice = J’accepte que Mozilla utilise mes informations conformément à <a>cette politique de confidentialité</a>.
 newsletterFooterHeader = Restez au courant
 newsletterFooterSuccessHeader = Merci&nbsp;!
