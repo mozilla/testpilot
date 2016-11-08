@@ -238,7 +238,7 @@ export class ExperimentDetail extends React.Component {
             onCancel={() => this.setState({ showEolDialog: false })}
             onSubmit={e => {
               this.setState({ showEolDialog: false });
-              this.renderUninstallSurvey(e);
+              this.uninstallExperiment(e);
             }} />}
 
         <View {...this.props}>
@@ -480,7 +480,7 @@ export class ExperimentDetail extends React.Component {
     if (isAfterCompletedDate(experiment)) {
       const completedDate = formatDate(completed);
       return (
-        <span data-l10n-id="completedDateLabel" data-l10n-args={JSON.stringify({ completedDate })}>Experiment End Date: {completedDate}</span>
+        <span data-l10n-id="completedDateLabel" data-l10n-args={JSON.stringify({ completedDate })}>Experiment End Date: <b>{completedDate}</b></span>
       );
     }
     if (!installation_count || installation_count <= 100) {
@@ -524,7 +524,7 @@ export class ExperimentDetail extends React.Component {
       if (enabled) {
         return (
           <div className="experiment-controls">
-            <button onClick={e => { e.preventDefault(); this.setState({ showEolDialog: true }); }} style={{ width: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'secondary', 'warning'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Disable {title}</span></button>
+            <button onClick={e => { e.preventDefault(); this.setState({ showEolDialog: true }); }} style={{ width: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'warning'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Disable {title}</span></button>
           </div>
         );
       }
@@ -653,6 +653,12 @@ export class ExperimentDetail extends React.Component {
     // Ignore subsequen clicks if already in progress
     if (isDisabling) { return; }
 
+    this.props.sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'Disable Experiment',
+      eventLabel: experiment.title
+    });
+
     this.setState({
       isEnabling: false,
       isDisabling: true,
@@ -663,14 +669,7 @@ export class ExperimentDetail extends React.Component {
   }
 
   renderUninstallSurvey(evt) {
-    const { experiment } = this.props;
     evt.preventDefault();
-
-    this.props.sendToGA('event', {
-      eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'Disable Experiment',
-      eventLabel: experiment.title
-    });
 
     this.uninstallExperiment(evt);
 

@@ -165,7 +165,7 @@ shareCopy = Copy
 
 eolMessage = <strong>This experiment is ending on {$completedDate}</strong>.<br/><br/>After then you will still be able to use {$title} but we will no longer be providing updates or support.
 eolDisableMessage = The {$title} experiment has ended. Once you uninstall it you won't be able to re-install it through Test Pilot again.
-completedDateLabel = Experiment End Date: {$completedDate}
+completedDateLabel = Experiment End Date: <b>{$completedDate}</b>
 
 incompatibleHeader = This experiment may not be compatible with add-ons you have installed.
 incompatibleSubheader = We recommend <a>disabling these add-ons</a> before activating this experiment:
