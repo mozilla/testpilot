@@ -1,0 +1,80 @@
+siteName = Firefox Test Pilot
+pageTitleDefault = Firefox Test Pilot
+pageTitleLandingPage = Firefox Test Pilot
+pageTitleExperimentListPage = Firefox Test Pilot - Expériences
+pageTitleExperiment = Firefox Test Pilot - { $title }
+footerLinkContribute = Contribuer
+footerLinkCookies = Cookies
+footerLinkPrivacy = Confidentialité
+footerLinkTerms = Conditions
+footerLinkLegal = Mentions légales
+footerLinkAbout = À propos de Test Pilot
+home = Accueil
+menuTitle = Paramètres
+menuWiki = Wiki de Test Pilot
+menuFileIssue = Signalez un problème
+menuLogout = Déconnexion
+menuRetire = Désinstaller Test Pilot
+landingFxaAlternateButton = Connexion
+landingIntroLead = Allez plus loin…
+landingIntroOne = Testez les nouveautés.
+landingIntroTwo = Racontez-nous vos découvertes.
+landingIntroThree = Aidez Firefox à aller plus loin.
+landingFxaGetStartedButton = Pour commencer il suffit d'un compte Firefox
+landingLegalNotice = En continuant, vous acceptez implicitement les  <a>Conditions d'utilisation</a> et la <a>Politique de confidentialité</a> de Test Pilot.
+landingInstallButton = Installez le module Test Pilot
+landingInstallingButton = Installation…
+landingRequiresDesktop = Pour utilisez Test Pilot il vous faut Firefox pour ordinateur sur Windows, Mac ou Linux
+landingDownloadFirefoxTitle = Firefox
+landingUpgradeFirefoxTitle = Mettez Firefox à jour
+landingDownloadFirefoxSubTitle = Téléchargement gratuit
+landingExperimentsTitle = Essayez les nouveautés qui sortent du labo…
+landingCardListTitle = Décollage imminent : 3, 2, 1…
+landingCardOne = Téléchargez <br>le module
+landingCardTwo = Activez les fonctionnalités expérimentales
+landingCardThree = Donnez-nous <br> votre avis
+onboardingMessage = Une icône dans la barre d'outils vous permet d'accéder à Test Pilot.
+errorHeading = Oups&nbsp;!
+errorMessage = On dirait qu'il y a une panne quelque part. <br> Revenez demain peut-être.
+notFoundHeader = Zut… quatre cent quatre !
+emailOptInDialogTitle = Bienvenue dans Test Pilot.
+emailOptInMessage = Obtenez les résultats des tests de vos expériences et découvrez-en de nouvelles.
+emailValidationError = Veuillez utiliser une adresse électronique valide.
+
+# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput = 
+  [html/placeholder] adresse électronique :)
+emailOptInButton = M'inscrire
+emailOptInSkip = Ignorer
+emailOptInConfirmationTitle = Courriel envoyé
+emailOptInSuccessMessage2 = Merci&nbsp;!
+experimentListPageHeader = Prêt à décoller !
+experimentListPageSubHeader = Choisissez les fonctionnalités nouvelles que vous voulez tester.<br> Revenez bientôt pour en essayer d'autres.
+experimentListEnabledTab = Activé
+isEnabledStatusMessage = { $title } est activé.
+installErrorMessage = Hum… { $title } n’a pas pu être activé. Réessayez plus tard.
+participantCount = Déjà <span>{ $installation_count }</span> participants
+experimentCardManage = Gérer
+experimentCardGetStarted = Pour commencer
+experimentCardLearnMore = En savoir plus
+experimentPreFeedbackLinkCopy = Donnez votre avis sur votre expérience avec { $title }
+experimentPromoHeader = Prêt⋅e au décollage ?
+feedbackCancelButton = Fermer
+discussNotifyCancelButton = Annuler
+retireCancelButton = Annuler
+version = Version
+lastUpdate = Dernière mise à jour
+tourDoneButton = Terminé
+shareCopy = Copier
+newsletterFormPrivacyNotice = Je suis d'accord pour que Mozilla traite mes informations personnelles comme indiqué dans <a>cette politique de confidentialité</a>.
+newsletterFooterHeader = Restez au courant
+newsletterFooterSuccessHeader = Merci&nbsp;!
+# TODO: these strings are not currently localized.
+# They are served by the python static dir
+# and will need python-l20n implementation for coverage
+
+noScriptHeading = Oh oh…
+noScriptMessage = Test Pilot a besoin de JavaScript.<br>Nous en sommes désolés.
+noScriptLink = Découvrez pour quelle raison
+viewPastExperiments = Montrer les expériences déjà accomplies
+hidePastExperiments = Masquer les expériences passées
