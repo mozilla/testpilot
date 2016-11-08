@@ -66,7 +66,7 @@ version = Version
 lastUpdate = Dernière mise à jour
 tourDoneButton = Terminé
 shareCopy = Copier
-newsletterFormPrivacyNotice = Je suis d'accord pour que Mozilla traite mes informations personnelles comme indiqué dans <a>cette politique de confidentialité</a>.
+newsletterFormPrivacyNotice = J’accepte que Mozilla utilise mes informations conformément à <a>cette politique de confidentialité</a>.
 newsletterFooterHeader = Restez au courant
 newsletterFooterSuccessHeader = Merci&nbsp;!
 # TODO: these strings are not currently localized.
