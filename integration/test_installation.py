@@ -45,6 +45,10 @@ class TestAddonInstallation(FirefoxTestCase):
             w.until(lambda m: m.find_element(By.CSS_SELECTOR,
                                              'button.install.state-change'))
 
+        # HACK: Checking _visibility_ of chrome elements, like notifications,
+        # is known to be buggy. Padding the wait_for_notification call with
+        # sleeps is the current workaround. See https://bugzil.la/1094246#c17
+        time.sleep(5)
         # Click through the blocked notification
         b.wait_for_notification(AddOnInstallBlockedNotification, timeout=60)
         # HACK: Things seem to fail intermittently here if we don't wait a tick
