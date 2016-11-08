@@ -17,9 +17,8 @@ export default class ExperimentRowCard extends React.Component {
   render() {
     const { hasAddon, experiment, enabled, isAfterCompletedDate } = this.props;
 
-    const { description, thumbnail, subtitle, slug } = experiment;
+    const { description, title, thumbnail, subtitle, slug } = experiment;
     const installation_count = (experiment.installation_count) ? experiment.installation_count : 0;
-    const title = experiment.short_title || experiment.title;
     const isCompleted = isAfterCompletedDate(experiment);
 
     return (
