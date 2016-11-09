@@ -53,15 +53,18 @@ tour_steps:
   -
     image: /static/images/experiments/activity-stream/experiments_experimenttourstep/b/d/bd3d603ab46949ccb2f98c77f16d9be3_image_1462827230_0789.jpg
     copy: >
-      <p>Find your top sites, recent history, and bookmarks when you open a new tab.</p>
+      Find your top sites, recent history, and bookmarks when you open a new
+      tab.
   -
     image: /static/images/experiments/activity-stream/experiments_experimenttourstep/5/7/57b8ba146994300a54ba1528efc30bf5_image_1462827230_0948.jpg
     copy: >
-      <p>Visit the new timeline view to visually browse all your history and bookmarks.</p>
+      Visit the new timeline view to visually browse all your history and
+      bookmarks.
   -
     image: /static/images/experiments/activity-stream/experiments_experimenttourstep/1/d/1d414ba2fc88a188b6f74ea79de908e9_image_1462827231_0841.jpg
     copy: >
-      <p>You can always give us feedback or disable Activity Stream from Test Pilot.</p>
+      You can always give us feedback or disable Activity Stream from Test
+      Pilot.
 notifications: []
 contributors:
   -

@@ -48,8 +48,7 @@ details: # this is a repeater field for detail images, copy and paste to loop
 tour_steps: #this is a repeater field for tour images, copy and paste to loop
   -
     image: /static/images/experiments/ #followed by path to experiment-name/details/experiment-tour-1.jpg
-    copy: > # Caption copy wrapped in a <p> tag
-      <p>Lorem ipsum dolor sit amet.</p>
+    copy: Lorem ipsum dolor sit amet. # Caption copy
 notifications: [] # generally should be an empty array, notification syntax commented below
   # -
     # id: 1

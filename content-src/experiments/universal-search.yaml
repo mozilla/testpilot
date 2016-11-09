@@ -60,16 +60,17 @@ details:
 tour_steps:
   -
     image: /static/images/experiments/universal-search/experiments_experimenttourstep/e/b/eb1a0c8bbb18c79f63d0df45d165eb7a_image_1462826805_0035.jpg
-    copy: >
-      <p>You can now search and navigate in one place.</p>
+    copy: You can now search and navigate in one place.
   -
     image: /static/images/experiments/universal-search/experiments_experimenttourstep/5/2/5218821d5851bef5ad979da5830f68b2_image_1462826805_0031.jpg
     copy: >
-      <p>Recommendations for popular sites and Wikipedia articles will appear as you type.</p>
+      Recommendations for popular sites and Wikipedia articles will appear as
+      you type.
   -
     image: /static/images/experiments/universal-search/experiments_experimenttourstep/1/d/1d414ba2fc88a188b6f74ea79de908e9_image_1462826805_0789.jpg
     copy: >
-      <p>You can always give us feedback or disable Universal Search from Test Pilot.</p>
+      You can always give us feedback or disable Universal Search from Test
+      Pilot.
 notifications: []
 contributors:
   -
