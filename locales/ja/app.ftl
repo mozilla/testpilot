@@ -82,10 +82,23 @@ enableExperimentTransition = 有効化しています...
 feedbackSubmitButton = 簡単なアンケートに答える
 feedbackCancelButton = 閉じる
 feedbackUninstallTitle = ありがとうございます！
+feedbackUninstallCopy = 
+  | あなたの Firefox Test Pilot への参加は多くの
+  | 意味を持ちます！ 他の実験についてもチェックし、
+  | 今後追加される実験を楽しみにしてください！
 discussNotifyTitle = 少々お待ちください...
+discussNotifyMessageAccountless = 
+  | <p>実験精神の一環として、私たちは外部のフォーラムサービスを使用しています。
+  | フォーラムでの議論に参加したい場合は
+  | アカウントを作成する必要があります。</p>
+  | <p>アカウントを作成したくない場合は、いつでも
+  | Test Pilot を通じてフィードバックを提供できます。
+  | <br>
+  | (送られた内容にはしっかり目を通しています)</p>
 discussNotifySubmitButton = フォーラムへ移動
 discussNotifyCancelButton = キャンセル
 retireDialogTitle = Test Pilot を削除しますか？
+retireMessage = 了解しました。これにより、アクティブなテストはすべて無効化され、アドオンは削除され、サーバーからあなたのアカウント情報は削除されます。
 retireEmailMessage = メールによる最新情報の配信を停止するには、Test Pilot に関するメール内の <em>購読中止</em> リンクをクリックしてください。
 retireSubmitButton = 続ける
 retireCancelButton = キャンセル
@@ -124,7 +137,11 @@ sharePrimary = Test Pilot を気に入ってもらえましたか？ 新人を�
 shareSecondary = あるいは単純にこのリンクをコピー＆ペーストしてください...
 shareEmail = メール
 shareCopy = コピー
+eolMessage = <strong>この実験は { $completedDate } に終了します</strong>。<br/><br/>その後も引き続き { $title } を使うことはできますが、更新やサポートの提供は行われません。
+eolDisableMessage = { $title } の実験は終了しました。一度削除すると Test Pilot を通じて再度インストールすることはできません。
 completedDateLabel = 実験終了日: <b>{ $completedDate }</b>
+incompatibleHeader = この実験はあなたがインストールしているアドオンと互換性がないようです。
+incompatibleSubheader = この実験に参加する前に <a>これらのアドオンを無効化</a> することをお勧めします:
 newsletterFormEmailPlaceholder = 
   [html/placeholder] あなたのメールアドレスがここに入ります
 newsletterFormDisclaimer = Test Pilot 関連の情報のみお送りします。
@@ -133,7 +150,9 @@ newsletterFormSubmitButton = 今すぐ登録
 newsletterFormSubmitButtonSubmitting = 送信中...
 newsletterFooterError = メールアドレスの送信中に問題が発生しました。再度試しますか？
 newsletterFooterHeader = 今後も情報を受け取る
+newsletterFooterBody = 新しい実験について知り、あなたが試した実験のテスト結果を見てみましょう。
 newsletterFooterSuccessHeader = ありがとうございます！
+newsletterFooterSuccessBody = これまでに Mozilla 関連のニュースレターを購読したことがない場合、購読開始の確認が必要となります。お送りした確認メールを受信トレイもしくは迷惑メールフィルタから探してください。
 localeWarningTitle = この実験は英語のみで利用可能です。
 localeWarningSubtitle = お望みなら引き続き有効にしておくこともできます。
 # TODO: these strings are not currently localized.
