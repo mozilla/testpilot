@@ -48,6 +48,12 @@ describe('app/components/ExperimentRowCard', () => {
     expect(findByL10nID('testingDescription')).to.have.property('length', 1);
   });
 
+  it('should not have l10n IDs if the experiment is dev-only', () => {
+    subject.setProps({ experiment: { dev: true, ...props.experiment } });
+    expect(findByL10nID('testingSubtitleFoo')).to.have.property('length', 0);
+    expect(findByL10nID('testingDescription')).to.have.property('length', 0);
+  });
+
   it('should change style based on hasAddon', () => {
     expect(subject.find('.experiment-summary').hasClass('has-addon')).to.be.false;
     subject.setProps({ hasAddon: true });

@@ -10,8 +10,6 @@ machine:
     version: 6.9.1
   python:
     version: 2.7.11
-  environment:
-    TESTPILOT_ENABLE_PONTOON_BRANCHES: master
 
 dependencies:
 

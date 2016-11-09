@@ -22,7 +22,8 @@ describe('app/selectors/experiment', () => {
     const _exp = [
       { name: 'foo', order: 1 },
       { name: 'baz', order: 3, launch_date: moment.utc() + 99999 },
-      { name: 'bat', order: 2, launch_date: moment.utc() - 99999 }
+      { name: 'bat', order: 2, launch_date: moment.utc() - 99999 },
+      { name: 'xyzzy', order: 4, dev: true }
     ];
 
     describe('allExperimentSelector', () => {
@@ -38,7 +39,7 @@ describe('app/selectors/experiment', () => {
         const store = _store(_exp);
         assert.deepEqual(
           allExperimentSelector(store),
-          [_exp[0], _exp[2], _exp[1]]
+          [_exp[0], _exp[2], _exp[1], _exp[3]]
         );
       });
     });
@@ -68,6 +69,18 @@ describe('app/selectors/experiment', () => {
           onlyLaunchedExperimentSelector(store),
           launchedExperimentSelector(store)
         );
+      });
+
+      it('should contain no experiments marked for dev if not dev', () => {
+        const store = _store(_exp, false);
+        const result = launchedExperimentSelector(store);
+        assert.equal(0, result.filter(exp => exp.dev).length);
+      });
+
+      it('should contain experiments marked for dev if dev', () => {
+        const store = _store(_exp, true);
+        const result = launchedExperimentSelector(store);
+        assert.equal(1, result.filter(exp => exp.dev).length);
       });
     });
 

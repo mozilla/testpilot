@@ -1,10 +1,11 @@
 id: # Unique numeric ID, we've been going sequentially here, so check other experiments
+dev: false # When true. this experiment will only appear on local or dev environments - i.e. for testing
 title: 'Experiment Name'
 subtitle: '' #Optionally add a subtitle to the experiment
 slug: experiment-name #should match title
 thumbnail: /static/images/experiments/ #followed by path to experiment-name/icon/experiment-name.png
 description: > # Appears in the experiment card, NO HTML WRAPPER
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum cum ad deserunt 
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum cum ad deserunt
   iusto possimus. Fugiat odit corrupti cumque.
 introduction: > # Introduction on the details page, should be formatted as html indented
   <p> Lorem ipsum dolor sit amet. </p>
@@ -43,7 +44,7 @@ details: # this is a repeater field for detail images, copy and paste to loop
     headline: '' # Bold caption text, can be blank
     image: /static/images/experiments/ #followed by path to experiment-name/details/experiment-detail-1.jpg
     copy: > # Caption copy NO HTML WRAPPER
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum cum ad deserunt 
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum cum ad deserunt
       iusto possimus. Fugiat odit corrupti cumque.
 tour_steps: #this is a repeater field for tour images, copy and paste to loop
   -
