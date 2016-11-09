@@ -6,6 +6,7 @@
 
 # Files to ignore in the base directory
 coverage
+.coverage
 debug-config.json
 .env
 MANIFEST
@@ -25,4 +26,5 @@ tmp/
 # Files to ignore within specific directories
 addon/*.rdf
 addon/*.xpi
+addon/locale/
 legal-copy/*html
