@@ -82,7 +82,13 @@ feedbackUninstallTitle = Tige tank!
 discussNotifyCancelButton = Annulearje
 retireSubmitButton = Fierdergean
 retireCancelButton = Annulearje
+retirePageSurveyButton = Doch in flugge enkête
+restartIntroLead = Checklist foar de start
+restartIntroOne = Start jo browser opnij
+restartIntroTwo = Fyn de add-on ‘Test Pilot’
+restartIntroThree = Selektearje jo eksperiminten
 measurements = Jo privacy
+contributorsHeading = Oanbean troch
 version = Ferzje
 changelog = lochboek
 tourLink = toer
@@ -93,12 +99,27 @@ discourse = Discourse
 nowActive = Aktyf
 userCount = 
   [html/title] Aktive brûkers eksperimint op dit stuit
+tourOnboardingTitle = { $title } ynskeakele!
 tourCancelButton = Oerslaan
 tourDoneButton = Dien
+userCountContainer = <span>{ $installation_count }</span> minsken brûke op dit stuit { $title }!
+userCountContainerAlt = Krekt start!
+highlightPrivacy = Jo privacy
+upgradeNoticeTitle = { $title } fereasket Firefox { $min_release } of heger.
+upgradeNoticeLink = Hoe't jo Firefox fernije kinne.
+sharePrimary = Meie jo wol oer Test Pilot? Help ús mear testers te finen.
+shareSecondary = of kopiearje ienfâldichwei dizze keppeling…
+shareEmail = E-mailadres
+shareCopy = Kopiearje
 newsletterFormDisclaimer = Wy sille jo allinnich Test Pilot-relatearre ynformaasje stjoere.
 newsletterFormPrivacyNotice = Ik gean akkoard mei hoe't Mozilla omgiet mei myn ynformaasje as útlein yn <a>dit Privacybelied</a>.
 newsletterFormSubmitButton = No ynskriuwe
+newsletterFormSubmitButtonSubmitting = Yntsjinje…
+newsletterFooterError = Der is in flater bard wylst it yntsjinjenfan jo e-mailadres. Opnij probearje?
 newsletterFooterHeader = Bliuw op de hichte
+newsletterFooterSuccessHeader = Tank!
+localeWarningTitle = Dit eksperimint is allinnich yn it Ingelsk beskikber.
+localeWarningSubtitle = Jo kinne it dochs ynskeakelje as jo wolle.
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage
