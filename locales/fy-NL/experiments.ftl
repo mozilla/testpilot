@@ -17,6 +17,7 @@ minvidContributors0Title = Yngenieur
 minvidContributors1Title = Haadyngenieur
 minvidContributors2Title = Stazjêre yngenieur
 nomore404sSubtitle = Oandreaun troch de Wayback Machine
+nomore404sDescription = Wurch fan dea spoaren op it web? Wy litte jo witte as der in bewarre ferzje bestiet dêr't jo nei sochten op it ynternetargyf fan Wayback Machine.
 pageshotContributors0Title = Stazjêre yngenieur
 pageshotContributors1Title = Software-yngenieur
 pageshotContributors2Title = UX-ûntwerper
