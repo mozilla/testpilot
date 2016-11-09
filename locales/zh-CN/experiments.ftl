@@ -1,4 +1,5 @@
 activitystreamDescription = 视觉丰富的历史记录，重新构想的首页体验，希望您可以更容易地找到想在 Firefox 中看到的东西。
+activitystreamIntroduction = <p>返回浏览，而免于忘记正在想的东西。活动流功能将您最常访问的网站、书签和最近的历史记录都放到新标签页里随手就能点到的地方。新的时间线视图能让您轻易查看自己的浏览足迹。</p>
 activitystreamMeasurements = <p>除所有 Test Pilot 实验所收集的<a href="/privacy">数据</a>，您在使用 Activity Stream 时还应了解：</p><ul> <li>我们会收集有关您如何与实验性新标签页和时间线页面进行交互的基本使用数据，诸如您单击的元素类型，以及它在页面上的位置。</li> <li>我们还收集有关  Activity Stream 所在的您的浏览器配置的基本信息，诸如书签和历史记录的数量。</li> <li>为提供 Activity Stream，我们会使用名为 <a href="http://embed.ly/" target="_blank">Embedly</a> 的服务获取您所访问网站的元数据，例如图像和图标。我们通过 Mozilla 的服务器发送这些请求至 Embedly，以免它与您个人关联。</li></ul>
 activitystreamDetails0Copy = 新建一个标签页，你喜欢的网站一键可达。
 activitystreamDetails1Copy = 看到你去过哪里，然后你可以回到那里。
@@ -18,7 +19,7 @@ activitystreamContributors9Title = 产品经理
 activitystreamContributors10Title = 工程经理
 activitystreamContributors11Title = 软件工程师
 activitystreamContributors12Title = 高级UX设计师
-minvidDescription = 使视频保持在画面上。Min Vid 让您可以用一个小窗口来显示 YouTube 和 Vimeo 的视频，不影响您同时浏览网页。
+minvidDescription = 让视频始终显示在屏幕上。Min Vid 让您可以用一个小窗口来显示 YouTube 和 Vimeo 的视频，让您在浏览其他网页时也不必中断。
 minvidIntroduction = <p>很喜欢看视频？想在看视频时还做点别的？试试 Min Vid 吧。它为您提供的功能就像画中画，一个画面是视频，另一个画面是整个互联网。</p><ul> <li><strong>点击即到：</strong>弹出 Min Vid 框架以保持视频在前台播放，不影响您浏览网页。</li> <li><strong>随处可放：</strong> Min Vid 允许您拖放视频框架到您的桌面上的任何地方。</li> <li><strong>灵活可控：</strong> Min Vid 的视频框架包括几个控件，允许您暂停/播放、消除、拖动、最小化，以及调整音量。</li></ul>
 minvidMeasurements = <p>除所有 Test Pilot 实验所收集的<a href="/privacy">数据</a>，您在使用 Min Vid 时还应了解：</p><ul> <li>在您与上下文菜单、实验图标和播放器控件交互时，我们会收集这个使用情况。</li> <li>我们还会收集的是：您遇到可播放视频的次数，您播放视频的次数，以及提供视频的视频服务。这有助于我们了解实验用户对本实验的使用频率。</li> <li>我们不会收集您遇到的具体的视频信息。</li></ul>
 minvidDetails0Copy = 在 YouTube 和 Vimeo 的视频播放器上访问 Min Vid。
@@ -61,9 +62,11 @@ tabcenterIntroduction = <p>把您的标签页卷起来。Tab Center 使标签页
 tabcenterMeasurements = <p>除所有 Test Pilot 实验所收集的<a href="/privacy">数据</a>，您在使用 Tab Center 时还应了解：</p><ul> <li>我们会收集您与 Tab Center 互动的使用数据，诸如您最大化或固定 Tab Center 的频率。</li> <li>我们还收集有关您如何使用标签页的信息，诸如您同时打开的标签页的数量，以及保留标签页多久时间。</li> <li>Tab Center 不会收集您访问的网站或标签页内容相关的任何信息。</li></ul>
 tabcenterDetails0Copy = 把标签页放在侧边。
 tabcenterDetails1Copy = 收起标签页，只在你需要时显示。
+tabcenterDetails2Copy = 体验全新的浏览器布局吧！标签页中心能与您的主题很好地兼容。
 tabcenterToursteps0Copy = <p>首先，您的所有标签页都放在侧边了。</p>
 tabcenterToursteps1Copy = <p>有很多很多标签页？Tab Center 允许您搜索它们。</p>
 tabcenterToursteps2Copy = <p>您可以拖动 Tab Center 的边缘以调整它的宽窄。</p>
+tabcenterToursteps3Copy = <p>点一下就能让标签页中心收起来。</p>
 tabcenterToursteps4Copy = <p>您随时可以提供反馈，或者从 Test Pilot 禁用 Tab Center。</p>
 tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
