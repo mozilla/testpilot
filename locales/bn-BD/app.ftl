@@ -36,6 +36,7 @@ landingCardListTitle = শুরু করুন 3, 2, 1
 landingCardOne = Test Pilot অ্যাড-অন ডাউনলোড করুন
 landingCardTwo = পরীক্ষামূলক ফিচার সক্রিয় করুন
 landingCardThree = আপনার কি মনে হয় আমাদের জানান
+errorMessage = মনে হচ্ছে আমরা কিছু ভেঙ্গেছি। <br> পরে আবার চেষ্টা করুন।
 emailOptInDialogTitle = Test Pilot এ আপনাকে স্বাগতম!
 emailOptInButton = আমাকে সাইন আপ করুন
 participantCount = <span>{ $installation_count }</span> অংশগ্রহণকারী
