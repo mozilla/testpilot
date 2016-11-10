@@ -63,7 +63,8 @@ function buildLandingPage() {
       canonical_path: '',
       image_facebook: THUMBNAIL_FACEBOOK,
       image_twitter: THUMBNAIL_TWITTER,
-      enable_pontoon: config.ENABLE_PONTOON
+      enable_pontoon: config.ENABLE_PONTOON,
+      available_locales: config.AVAILABLE_LOCALES
     });
     this.push(new gutil.File({
       path: 'index.html',
@@ -83,7 +84,8 @@ function buildExperimentPage() {
       canonical_path: 'experiments/' + experiment.slug + '/',
       image_facebook: experiment.image_facebook || THUMBNAIL_FACEBOOK,
       image_twitter: experiment.image_twitter || THUMBNAIL_TWITTER,
-      enable_pontoon: config.ENABLE_PONTOON
+      enable_pontoon: config.ENABLE_PONTOON,
+      available_locales: config.AVAILABLE_LOCALES
     });
     this.push(new gutil.File({
       path: experiment.slug + '/index.html',

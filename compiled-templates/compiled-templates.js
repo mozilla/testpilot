@@ -1,3 +1,5 @@
+const config = require('../frontend/config.js');
+
 module.exports.templateBegin = `
 <!doctype html>
 <html>
@@ -7,7 +9,7 @@ module.exports.templateBegin = `
     <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
     <link rel="stylesheet" href="/static/styles/main.css">
     <meta name="defaultLanguage" content="en-US">
-    <meta name="availableLanguages" content="en-US">
+    <meta name="availableLanguages" content="${config.AVAILABLE_LOCALES}">
     <meta name="viewport" content="width=device-width">
     <link rel="localization" href="/static/locales/{locale}/app.ftl">
 
