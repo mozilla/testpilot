@@ -18,6 +18,7 @@ const { App } = require('./lib/app');
 const ExperimentHacks = require('./lib/experiment-hacks');
 const ExperimentNotifications = require('./lib/experiment-notifications');
 const Metrics = require('./lib/metrics');
+const NoExperiments = require('./lib/no-experiments');
 const SharePrompt = require('./lib/share-prompt');
 const survey = require('./lib/survey');
 const ToolbarButton = require('./lib/toolbar-button');
@@ -344,6 +345,7 @@ exports.main = function(options) {
   ToolbarButton.init(settings);
   ExperimentNotifications.init(settings);
   SharePrompt.init(settings);
+  NoExperiments.init(settings);
 
   if (reason === 'install') {
     openOnboardingTab();
@@ -367,6 +369,7 @@ exports.onUnload = function(reason) {
   ToolbarButton.destroy();
   ExperimentNotifications.destroy();
   SharePrompt.destroy(reason);
+  NoExperiments.destroy(reason);
 
   if (reason === 'uninstall' || reason === 'disable') {
     Metrics.onDisable();

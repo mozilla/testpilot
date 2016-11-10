@@ -62,6 +62,16 @@
 
       margin: 0;
       position: relative;
+
+      &.cta {
+        font-size: $font-unit * 1.33;
+        line-height: $line-unit * 1.33;
+        margin-top: $grid-unit;
+
+        a {
+          color: $eol-orange;
+        }
+      }
     }
 
     .legal-information {
