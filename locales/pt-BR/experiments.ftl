@@ -1,1 +1,11 @@
 activitystreamDescription = Um visual impressionante do histórico e uma página inicial reimaginada tornam mais fácil do que nunca encontrar exatamente o que está procurando no Firefox.
+activitystreamContributors0Title = Engenheiro de software
+activitystreamContributors1Title = Engenheiro Web
+activitystreamContributors2Title = Desenvolvedor de software
+activitystreamContributors4Title = Engenheiro de software
+activitystreamContributors9Title = Gerente de produto
+activitystreamContributors10Title = Gerente de engenharia
+activitystreamContributors11Title = Engenheiro de software
+activitystreamContributors12Title = Designer UX sênior
+pageshotContributors1Title = Engenheiro de software
+universalsearchDescription = Obtenha recomendações para os melhores sites da web enquanto digita na barra de endereço.
