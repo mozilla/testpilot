@@ -142,6 +142,7 @@ newsletterFooterError = Der is in flater bard wylst it yntsjinjenfan jo e-mailad
 newsletterFooterHeader = Bliuw op de hichte
 newsletterFooterBody = Untdek mear oer nije eksperiminten en besjoch testresultaten foar eksperiminten dy't jo probearre hawwe.
 newsletterFooterSuccessHeader = Tank!
+newsletterFooterSuccessBody = As jo yn it ferline noch gjin oanmelding befêstige hawwe foar in Mozilla-relatearre nijsbrief, dan is dat miskien noch nedich. Kontrolearje jo Postfek YN of net-winske-map foar in e-mail fan ús. 
 localeWarningTitle = Dit eksperimint is allinnich yn it Ingelsk beskikber.
 localeWarningSubtitle = Jo kinne it dochs ynskeakelje as jo wolle.
 # TODO: these strings are not currently localized.
