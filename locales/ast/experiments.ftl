@@ -1,4 +1,12 @@
 activitystreamDescription = Un feed d'historial visual ricu y una páxina d'aniciu reimaxinada faen más cenciello qu'enxamás alcontrar exautamente lo que tas guetando en Firefox.
+activitystreamMeasurements = <p>Amás de los <a href="/privacy">datos</a> recoyíos por tolos esperimentos de Test Pilot, equí tán les coses principales que deberíes saber tocante a lo que ta asocediendo cuando uses el Fluxu d'Actividaes:</p><ul><li>Recoyemos datos básicos d'usu vecenyaos a cómo interactues coles páxines esperimentales de Llingüeta nueva y Llinia temporal, viendo nes tribes d'elementos que primes y la so posición na páxina.</li><li>Tamién recoyemos información básica tocante al perfil del to restolador qu'afeuta al Fluxu d'Actividaes, viendo'l númberu de marcadores y elementos del historial.</li><li>Pa fornir Fluxu d'Actividaes, vamos en cata de datos meta tocante a sitios web que visitares, imáxenes ya iconos, usando un serviciu llamáu <a href="http://embed.ly/" target="_blank">Embedly</a>. Unviamos estes solicitúes a Embedly pente los sirvidores de Mozilla, pa qu'asina nun t'asocien con naide.</li></ul>
+activitystreamContributors0Title = Inxenieru/a de software
+activitystreamContributors1Title = Inxenieru/a web
+activitystreamContributors2Title = Desendolcador/a de software
+activitystreamContributors3Title = Inxenieru/a de Firefox pa escritoriu
+activitystreamContributors4Title = Inxenieru/a de software
+activitystreamContributors6Title = Inxenieru/a de servicios na ñube
+activitystreamContributors11Title = Inxenieru/a de software
 minvidDescription = Caltén los videos nel frente y centru. Min Vid déxate amosar vídeos de YouTube y Vimeo nun ventanu que se caltién penriba al restolar la web.
 nomore404sSubtitle = Cola potencia de The Wayback Machine
 pageshotDescription = Captures de pantalla intuitives feches direutamente col restolador. Captura, guarda y comparti captures de pantalla al restolar la web usando Firefox.
