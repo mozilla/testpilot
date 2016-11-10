@@ -82,6 +82,7 @@ enableExperimentTransition = Ynskeakelje…
 feedbackSubmitButton = Doch in flugge enkête
 feedbackCancelButton = Slute
 feedbackUninstallTitle = Tige tank!
+feedbackUninstallCopy = Jo dielnimming oan Firefox Test Pilot betsjut in protte! Sjoch ris nei ús oare eksperiminten en kom gau werom foar mear!
 discussNotifyTitle = In amerijke…
 discussNotifySubmitButton = Nei it foarum gean
 discussNotifyCancelButton = Annulearje
