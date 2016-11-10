@@ -31,6 +31,7 @@ emailOptInSuccessMessage2 = Tack!
 experimentListEnabledTab = Aktivera
 participantCount = <span>{ $installation_count }</span> deltagare
 experimentCardManage = Hantera
+experimentCardGetStarted = Komma igång
 experimentCardLearnMore = Läs mer
 enableExperiment = Aktivera { $title }
 enableExperimentTransition = Aktiverar...
