@@ -80,9 +80,43 @@ retirePageHeadline = Дякуємо за політ!
 restartIntroOne = Перезапустіть ваш браузер
 restartIntroThree = Оберіть ваші експерименти
 measurements = Ваша приватність
+experimentPrivacyNotice = Ви можете дізнатися більше про збір даних для { $title } тут.
+contributorsHeading = Для вас від
+version = Версія
+changelog = журнал змін
+lastUpdate = Останнє оновлення
+bugReports = Повідомлення про помилки
+nowActive = Активно
+userCount = 
+  [html/title] Активних користувачів цього експерименту
+tourOnboardingTitle = { $title } увімкнено!
+tourCancelButton = Пропустити
+tourDoneButton = Готово
+userCountContainerAlt = Щойно запущено!
+highlightPrivacy = Ваша приватність
+upgradeNoticeTitle = { $title } потребує Firefox { $min_release } чи новішої.
+upgradeNoticeLink = Як оновити Firefox.
+shareEmail = Ел. пошта
+shareCopy = Копіювати
+eolDisableMessage = Експеримент { $title } завершився. Щойно ви видалите його, ви не зможете його перевстановити через Test Pilot ще раз.
+completedDateLabel = Дата закінчення експерименту: <b>{ $completedDate }</b>
+incompatibleHeader = Цей експеримент може бути несумісним із додатками, які у вас встановлені.
+incompatibleSubheader = Ми радимо <a>вимкнути ці додатки</a> перед активацією цього експерименту:
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Ваша е-пошта тут
 newsletterFormDisclaimer = Ми будемо надсилати вам лише інформацію, яка стосується Test Pilot.
 newsletterFormPrivacyNotice = Я погоджуюсь з тим, як Mozilla поводиться з моїми даними згідно з <a>цим повідомленням про приватність</a>.
+newsletterFormSubmitButtonSubmitting = Надсилаємо...
+newsletterFooterHeader = Залишатися в курсі
+newsletterFooterSuccessHeader = Дякуємо!
+newsletterFooterSuccessBody = Якщо ви досі не підтвердили підписку на новини про Mozilla, ви ще можете це зробити. Перевірте свою пошту або теку спаму на наявність листа від нас.
+localeWarningTitle = Цей експеримент доступний лише англійською мовою.
+localeWarningSubtitle = Ви все одно можете увімкнути його, якщо хочете.
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage
 
+noScriptHeading = Ой ой...
+noScriptLink = Дізнатися, чому
+viewPastExperiments = Переглянути минулі експерименти
+hidePastExperiments = Приховати минулі експерименти
