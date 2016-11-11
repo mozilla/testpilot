@@ -4,6 +4,7 @@ activitystreamContributors4Title = Mjukvaruingenjör
 activitystreamContributors9Title = Produktchef
 activitystreamContributors10Title = Teknisk chef
 activitystreamContributors11Title = Mjukvaruingenjör
+pageshotContributors1Title = Mjukvaruingenjör
 tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
