@@ -1,3 +1,4 @@
+activitystreamDescription = 有視覺化的瀏覽紀錄資訊，以及重新設計過的開始頁面，讓您可以比以往更簡單就在 Firefox 找到您想尋找的東西。
 activitystreamContributors0Title = 軟體工程師
 activitystreamContributors1Title = Web 工程師
 activitystreamContributors2Title = 軟體開發者
@@ -11,10 +12,12 @@ activitystreamContributors9Title = 產品經理
 activitystreamContributors10Title = 工程經理
 activitystreamContributors11Title = 軟體工程師
 activitystreamContributors12Title = 資深 UX 設計師
+minvidDescription = 把影片放在畫面正中間。Min Vid 讓您可以將 YouTube 和 Vimeo 的影片放到前景的一個小方塊，瀏覽網頁時可以保持在前景播放。
 minvidContributors0Title = 工程師
 minvidContributors1Title = 工程師主管
 minvidContributors2Title = 實習工程師
 nomore404sSubtitle = Powered by the Wayback Machine
+nomore404sDescription = 對網頁上的死路感到厭倦了嗎？我們會在您尋找的網頁找不到，而 Internet Archive's Wayback Machine 當中有已儲存的版本時讓您知道。
 pageshotContributors0Title = 工程師經理
 pageshotContributors1Title = 軟體工程師
 pageshotContributors2Title = UX 設計師
