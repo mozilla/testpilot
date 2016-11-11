@@ -21,6 +21,7 @@ landingIntroLead = Diendo p'acullá...
 landingIntroOne = Prueba carauterístiques nueves.
 landingIntroTwo = Da'l to feedback.
 landingIntroThree = Ayuda a ameyorar Firefox.
+landingFxaGetStartedButton = Entama con una cuenta de Firefox
 landingLegalNotice = Siguiendo, tas acordies colos <a>Términos d'Usu</a> y l'<a>Anuncia de Privacidá</a> de Test Pilot.
 landingInstallHeader = ¡Consigui l'add-on pa entamar!
 landingInstallButton = Instalar l'add-on de Test Pilot
@@ -75,6 +76,7 @@ disableExperiment = Deshabilitar { $title }
 disableExperimentTransition = Deshabilitando...
 enableExperiment = Habilitar { $title }
 enableExperimentTransition = Habilitando...
+feedbackSubmitButton = Facer encuesta rápida
 feedbackCancelButton = Zarrar
 feedbackUninstallTitle = ¡Gracies!
 feedbackUninstallCopy = 
@@ -82,24 +84,40 @@ feedbackUninstallCopy =
   | muncho! Comprueba los otros esperimientos
   | de nueso y tate informáu de lo que vien.
 discussNotifyTitle = Un segundín...
+discussNotifyMessageAccountless = 
+  | <p>Nel espíritu de la esperimentación, tamos usando un serviciu esternu de foros.
+  | Precisarás crear una cuenta si desees
+  | participar nos foros.</p>
+  | <p>Si nun quies creala, siempres pues
+  | dexar feedback pente Test Pilot.
+  | <br>
+  | (Lleemos los comentarios, daveres)</p>
+discussNotifySubmitButton = Lleváime al foru
 discussNotifyCancelButton = Encaboxar
 retireDialogTitle = ¿Desinstalar Test Pilot?
 retireMessage = Como desees. Esto deshabilitará cualesquier prueba activa, desinstalará l'add-on y desaniciará la to información de cuenta de los nuesos sirvidores.
+retireEmailMessage = Pa dexar de recibir anovamientos per corréu, namái primi l'enllaz de <em>desoscribise</em> en cualesquier corréu de Test Pilot.
 retireSubmitButton = Siguir
 retireCancelButton = Encaboxar
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar Test Pilot
 retirePageProgressMessage = Apagando...
 retirePageHeadline = ¡Gracies por volar!
 retirePageMessage = Esperamos qu'esfrutes esperimentando con nós.<br>Volvi cuando quieras.
+retirePageSurveyButton = Facer encuesta rápida
+restartIntroLead = Comprobaciones previes
 restartIntroOne = Reanicia'l to restolador
+restartIntroTwo = Alluga l'add-on de Test Pilot
+restartIntroThree = Esbillar los tos esperimentos
 measurements = La to privacidá
 experimentPrivacyNotice = Equí pues deprender más tocante a la recoyida de datos de { $title }.
+contributorsHeading = Esti esperimentu úfrentelu
 version = Versión
 changelog = rexistru de cambeos
 tourLink = percorríu
 lastUpdate = Caberu anovamientu
 contribute = Collaborar
 bugReports = Informes de fallos
+discourse = Discourse
 userCount = 
   [html/title] Usuarios activos d'esti esperimentu
 tourOnboardingTitle = ¡Habilitóse { $title }!
