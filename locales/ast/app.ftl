@@ -22,6 +22,7 @@ landingIntroOne = Prueba carauterístiques nueves.
 landingIntroTwo = Da'l to feedback.
 landingIntroThree = Ayuda a ameyorar Firefox.
 landingLegalNotice = Siguiendo, tas acordies colos <a>Términos d'Usu</a> y l'<a>Anuncia de Privacidá</a> de Test Pilot.
+landingInstallHeader = ¡Consigui l'add-on pa entamar!
 landingInstallButton = Instalar l'add-on de Test Pilot
 landingInstallingButton = Instalando...
 landingInstallMessage = ¡Instalóse Test Pilot!
@@ -66,6 +67,7 @@ experimentCardManage = Xestionar
 experimentCardGetStarted = Entamar
 experimentCardLearnMore = Depriendi más
 experimentPromoHeader = ¿Preparáu pa despegar?
+experimentPromoSubheader = Tamos construyendo les carauterístiques de nueva xeneración pa Firefox. ¡Instala Test Pilot pa probales!
 otherExperiments = Prueba tamién estos esperimentos
 giveFeedback = Dar feedback
 disableHeader = ¿Deshabilitar esperimentu?
@@ -75,6 +77,10 @@ enableExperiment = Habilitar { $title }
 enableExperimentTransition = Habilitando...
 feedbackCancelButton = Zarrar
 feedbackUninstallTitle = ¡Gracies!
+feedbackUninstallCopy = 
+  | ¡La to participación en Test Pilot significa
+  | muncho! Comprueba los otros esperimientos
+  | de nueso y tate informáu de lo que vien.
 discussNotifyTitle = Un segundín...
 discussNotifyCancelButton = Encaboxar
 retireDialogTitle = ¿Desinstalar Test Pilot?
