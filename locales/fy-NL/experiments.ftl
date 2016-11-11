@@ -22,6 +22,7 @@ pageshotDescription = Yntuïtive skermôfdrukken streekrjocht ynbakt yn de brows
 pageshotContributors0Title = Stazjêre yngenieur
 pageshotContributors1Title = Software-yngenieur
 pageshotContributors2Title = UX-ûntwerper
+tabcenterDescription = Hoe soe it wêze, as ljepblêden net mear oan de boppekant, mar oan de sydkant stiene? Wy woene dat graach witte!
 tabcenterDetails0Copy = Bring jo ljepblêden nei de kant.
 tabcenterDetails1Copy = Ferstopje de ljepblêden oant jo se nedich hawwe.
 tabcenterContributors0Title = Firefox-UX
