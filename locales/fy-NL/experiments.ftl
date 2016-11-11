@@ -1,4 +1,5 @@
 activitystreamDescription = In rike fisuele skiednisfeed en in opnij opsette startside meitsje it makliker as ea om yn Firefox presys dat te finen wat jo sykje.
+activitystreamIntroduction = <p>Sneup fierder sûnder ûnderbrekking. Activity Stream hâld jo topsites, blêdwizers en resinte skiednis tichteby yn elk nij ljepblêd. En de nije tiidline jout jo yn fûgelflecht in byld fan jo sneupjen.</p>
 activitystreamContributors0Title = Software-yngenieur
 activitystreamContributors1Title = Web-yngenieur
 activitystreamContributors2Title = Software-ûntwikkeler
@@ -29,9 +30,11 @@ tabcenterContributors0Title = Firefox-UX
 tabcenterContributors1Title = Firefox-UX
 tabcenterContributors2Title = Firefox-UX
 tabcenterContributors3Title = Firefox-UX
+trackingprotectionDescription = Helpe jo ús Tracking Protection better te meitsjen? Dit eksperimint skeakelet Tracking Protection yn foar al jo sneupjen en biedt in flugge manier om problemen te rapportearjen as jo dy tsjinkomme.
 trackingprotectionContributors0Title = Web-ûntwikkeler
 trackingprotectionContributors1Title = Senior-UX-ûntwerper
 trackingprotectionContributors2Title = Senior-QA-yngenieur
+universalsearchDescription = Krij rekommandaasjes foar de bêste websites op it web as jo type yn de Awesome Bar (Lokaasjebalke).
 universalsearchContributors0Title = Produktmanager
 universalsearchContributors1Title = Senior-UX-ûntwerper
 universalsearchContributors2Title = Haadyngenieur
