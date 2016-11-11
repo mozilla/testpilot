@@ -1,5 +1,8 @@
+activitystreamDescription = 視覚的な履歴フィードと再考されたホームページによって、あなたがまさに Firefox の中で探しているものをかつてなく見つけやすくします。
 activitystreamDetails0Copy = 新しいタブをクリックすれば、お気に入りのサイトはもう一度クリックするだけで開けます。
+activitystreamDetails1Copy = あなたがこれまでに訪れたサイトが表示されるので、次に行く場所へすぐに進めます。
 activitystreamToursteps0Copy = <p>新しいタブを開いたときに、よく開くサイト、最近の履歴、ブックマークが表示されます。</p>
+activitystreamToursteps1Copy = <p>新しいタイムラインビューを訪れて、すべての履歴とブックマークを視覚的に閲覧できます。</p>
 activitystreamToursteps2Copy = <p>Test Pilot の Activity Stream は、いつでもフィードバックを送ったり、無効化したりできます。</p>
 activitystreamContributors0Title = ソフトウェアエンジニア
 activitystreamContributors1Title = Web エンジニア
