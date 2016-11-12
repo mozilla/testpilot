@@ -22,6 +22,7 @@ tabcenterContributors3Title = Firefox UX
 trackingprotectionDescription = ¿Ayudarásmos a ameyorar la Proteición de Rastrexu? Esti esperimentu habilita siempres la proteición de rastrexu y ufre un mou rápidu d'informar cualesquier fallu que veas al restolar.
 trackingprotectionContributors0Title = Desendolcador web
 universalsearchDescription = Consigui recomendaciones pa los meyores sitios de la web al teclexar na Barra Ablucante.
+universalsearchIntroduction = <p>Consigui lo meyor de la web más rápida cola Gueta Universal. Namái teclexa dellos caráuteres na Barra Ablucante y la mayoría de sitios populares, xente y artículos de Wikipedia apaecerán pa la to comodidá de restolar.</p>
 universalsearchDetails0Copy = Los sitios populares, xente y artículos de Wikipedia apaecerán cuando teclexes.
 universalsearchToursteps0Copy = <p>Agora pues guetar y navegar nun llugar.</p>
 universalsearchToursteps1Copy = <p>Les recomendaciones pa sitios populares y artículos apaecerán cuando teclexes.</p>
