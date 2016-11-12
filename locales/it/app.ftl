@@ -84,9 +84,12 @@ feedbackCancelButton = Chiudi
 feedbackUninstallTitle = Grazie!
 feedbackUninstallCopy = La tua partecipazione a Test Pilot è molto importante. Dai un’occhiata agli altri esperimenti e rimani in contatto per tutte le novità in arrivo.
 discussNotifyTitle = Un attimo…
+discussNotifyMessageAccountless = <p>Nello spirito di sperimentazione che caratterizza il progetto, utilizziamo un servizio di forum esterno. Dovrai creare un account per partecipare alle discussioni.</p>
 discussNotifySubmitButton = Apri il forum
 discussNotifyCancelButton = Annulla
 retireDialogTitle = Disinstallare Test Pilot?
+retireMessage = Come desideri. Gli esperimenti attivi verranno disattivati, il componente aggiuntivo sarà rimosso e le informazioni sul tuo account verranno eliminate dal server.
+retireEmailMessage = Per non ricevere più aggiornamenti via email, fai clic sul link <em>annulla iscrizione</em> in qualunque email di Test Pilot.
 retireSubmitButton = Continua
 retireCancelButton = Annulla
 pageTitleRetirePage = Firefox Test Pilot - Disinstallazione di Test Pilot
@@ -115,6 +118,7 @@ tourOnboardingTitle = { $title } attivato.
 tourStartButton = Avvia la visita guidata
 tourCancelButton = Ignora
 tourDoneButton = Fatto
+userCountContainer = Ci sono <span>{ $installation_count }</span> persone che stanno provando { $title } in questo preciso istante.
 userCountContainerAlt = Appena lanciato
 highlightPrivacy = La tua privacy
 upgradeNoticeTitle = { $title } è compatibile con Firefox { $min_release } o versione successiva.
@@ -123,6 +127,8 @@ sharePrimary = Ti è piaciuto Test Pilot? Aiutaci a trovare altre persone intere
 shareSecondary = oppure copia e incolla questo link…
 shareEmail = Email
 shareCopy = Copia
+eolMessage = <strong>Questo esperimento si concluderà il { $completedDate }</strong>.<br/><br/>Dopo questa data sarà possibile continuare a utilizzare { $title } ma non verranno più forniti aggiornamenti né supporto.
+eolDisableMessage = L’esperimento { $title } si è concluso. Una volta disinstallato non sarà più possibile reinstallarlo tramite Test Pilot.
 completedDateLabel = Data di scadenza dell’esperimento: <b>{ $completedDate }</b>
 incompatibleHeader = Questo esperimento potrebbe non essere compatibili con alcune estensioni installate.
 incompatibleSubheader = Consigliamo di <a>disattivare queste estensioni</a> prima di attivare questo esperimento:
@@ -137,7 +143,14 @@ newsletterFooterHeader = Rimani aggiornato
 newsletterFooterBody = Scopri nuovi esperimenti e i risultati degli esperimenti che hai provato personalmente.
 newsletterFooterSuccessHeader = Grazie
 newsletterFooterSuccessBody = Se non hai mai confermato prima d’ora l’iscrizione a una newsletter Mozilla, dovrai farlo adesso per completare l’iscrizione. Controlla se hai ricevuto un nuovo messaggio da parte di Mozilla, potrebbe anche essere finita per sbaglio nella cartella dello spam.
+localeWarningTitle = Questo esperimento è disponibile solo in inglese.
+localeWarningSubtitle = Se lo desideri è comunque possibile attivarlo.
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage
 
+noScriptHeading = Oops…
+noScriptMessage = Test Pilot richiede JavaScript.<br> Siamo spiacenti.
+noScriptLink = Scopri perché
+viewPastExperiments = Visualizza gli esperimenti già conclusi
+hidePastExperiments = Nascondi gli esperimenti già conclusi
