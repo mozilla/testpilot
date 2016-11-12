@@ -87,6 +87,43 @@ feedbackUninstallCopy =
   | jelent! Nézze meg a többi kísérletünket is,
   | és kövesse figyelemmel a később érkezőket!
 discussNotifyTitle = Csak egy pillanat…
+discussNotifyMessageAccountless = 
+  | <p>A kísérletezés szellemében egy külső fórumszolgáltatást használunk.
+  | Létre kell hoznia egy fiókot, ha részt
+  | szeretne venni a fórumokon.</p>
+  | <p>Ha nem akar fiókot létrehozni, akkor
+  | hagyhat visszajelzést a Tesztpilótán keresztül.
+  | <br>
+  | (Tényleg elolvassuk ezeket)</p>
+discussNotifySubmitButton = Vigyen a fórumhoz
+discussNotifyCancelButton = Mégse
+retireDialogTitle = Eltávolítja a Tesztpilótát?
+retireMessage = Ahogy kívánja. Ez kikapcsol minden aktív tesztet, eltávolítja a kiegészítőt és eltávolítja a fiókinformációit a kiszolgálóinkról.
+retireEmailMessage = Hogy kiszálljon az e-mail értesítésekből, egyszerűen kattintson a <em>leiratkozás</em> hivatkozásra bármelyik Tesztpilóta e-mailben.
+retireSubmitButton = Folytatás
+retireCancelButton = Mégse
+pageTitleRetirePage = Firefox Tesztpilóta – A Tesztpilóta eltávolítása
+retirePageProgressMessage = Leállás…
+retirePageHeadline = Köszönjük a repülést!
+retirePageMessage = Reméljük élvezte a közös kísérletezést. <br> Jöjjön vissza bármikor.
+retirePageSurveyButton = Vegyen rész egy gyors felmérésben
+restartIntroLead = Repülés előtti ellenőrzőlista
+restartIntroOne = Indítsa újra a böngészőt
+restartIntroTwo = Keresse meg a Tesztpilóta kiegészítőt
+restartIntroThree = Válassza ki a kísérleteket
+measurements = Magánszféra
+experimentPrivacyNotice = Itt többet tudhat meg a(z) { $title } adatgyűjtéséről.
+contributorsHeading = Nekik köszönhetően:
+version = Verzió
+changelog = változások listája
+tourLink = kalauz
+lastUpdate = Legutóbbi frissítés
+contribute = Közreműködés
+bugReports = Hibajelentések
+discourse = Discourse
+nowActive = Aktív
+userCount = 
+  [html/title] A kísérlet aktív felhasználói
 newsletterFormDisclaimer = Csak a Tesztpilótával kapcsolatos információt fogunk küldeni.
 newsletterFormPrivacyNotice = Elfogadom, hogy a Mozilla <a>ennek az Adatvédelmi nyilatkozatnak</a> megfelelően kezelje az adataimat.
 newsletterFormSubmitButton = Feliratkozás most
