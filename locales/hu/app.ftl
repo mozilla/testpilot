@@ -41,8 +41,52 @@ landingCardTwo = Engedélyezze a kísérleti funkciókat
 landingCardThree = Mondja el nekünk mit gondol
 onboardingMessage = Egy ikont teszünk az eszköztárra, hogy mindig megtalálja a Tesztpilótát.
 errorHeading = Hoppá!
+errorMessage = Úgy néz ki valami elromlott. <br> Próbálkozzon később.
+notFoundHeader = Négy nulla négy!
+emailOptInDialogTitle = Üdvözli a Tesztpilóta!
+emailOptInMessage = Tudjon az új kísérletekről, és lássa a kipróbált kísérletek teszteredményeit.
+emailValidationError = Használjon egy érvényes e-mail címet!
+
+# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput = 
+  [html/placeholder] az e-mail cím ide kerül :)
+emailOptInButton = Feliratkozás
+emailOptInSkip = Kihagyás
+emailOptInConfirmationTitle = E-mail elküldve
+emailOptInSuccessMessage2 = Köszönjük!
+emailOptInConfirmationClose = Tovább a kísérletekhez…
+experimentListPageHeader = Felszállásra kész!
+experimentListPageSubHeader = Válassza ki a funkciókat, melyeket ki akar próbálni. <br> Nézzen vissza később további kísérletekért.
+experimentListEnabledTab = Bekapcsolva
+experimentListJustLaunchedTab = Épp most indult
+experimentListJustUpdatedTab = Épp most frissült
+experimentListEndingTomorrow = Holnap véget ér
+experimentListEndingSoon = Hamarosan véget ér
+isEnabledStatusMessage = { $title } bekapcsolva.
+installErrorMessage = O-ó. A(z) { $title } nem kapcsolható be. Próbálkozzon később.
 participantCount = <span>{ $installation_count }</span> résztvevő
+experimentCardManage = Kezelés
 experimentCardGetStarted = Kezdő lépések
+experimentCardLearnMore = Tudjon meg többet
+experimentPreFeedbackTitle = { $title } visszajezés
+experimentPreFeedbackLinkCopy = Adjon visszajelzést a(z) { $title } kísérletről
+experimentPromoHeader = Kész a felszállásra?
+experimentPromoSubheader = A Firefox következő generációs funkcióit készítjük. Telepítse a Tesztpilótát a kipróbálásukhoz!
+otherExperiments = Próbálja ki ezeket a kísérleteket is
+giveFeedback = Adjon visszajelzést
+disableHeader = Kikapcsolja a kísérletet?
+disableExperiment = { $title } kikapcsolása
+disableExperimentTransition = Kikapcsolás…
+enableExperiment = { $title } bekapcsolása
+enableExperimentTransition = Bekapcsolás…
+feedbackSubmitButton = Vegyen rész egy gyors felmérésben
+feedbackCancelButton = Bezárás
+feedbackUninstallTitle = Köszönjük!
+feedbackUninstallCopy = 
+  | A részvétele a Firefox Tesztpilótában sokat
+  | jelent! Nézze meg a többi kísérletünket is,
+  | és kövesse figyelemmel a később érkezőket!
+discussNotifyTitle = Csak egy pillanat…
 newsletterFormDisclaimer = Csak a Tesztpilótával kapcsolatos információt fogunk küldeni.
 newsletterFormPrivacyNotice = Elfogadom, hogy a Mozilla <a>ennek az Adatvédelmi nyilatkozatnak</a> megfelelően kezelje az adataimat.
 newsletterFormSubmitButton = Feliratkozás most
