@@ -125,6 +125,7 @@ nowActive = Aktív
 userCount = 
   [html/title] A kísérlet aktív felhasználói
 tourOnboardingTitle = { $title } bekapcsolva!
+tourStartButton = Kalauz megtekintése
 tourCancelButton = Kihagyás
 tourDoneButton = Kész
 userCountContainer = Jelenleg <span>{ $installation_count }</span> ember próbálja ezt ki: { $title }.
@@ -133,12 +134,33 @@ highlightPrivacy = Magánszféra
 upgradeNoticeTitle = A(z) { $title } Firefox { $min_release } vagy újabb verziót igényel.
 upgradeNoticeLink = Hogyan frissítse a Firefoxot.
 sharePrimary = Szereti a Tesztpilótát? Segítsen nekünk néhány újoncot találni.
+shareSecondary = vagy csak másolja és illessze be ezt a hivatkozást…
+shareEmail = E-mail
+shareCopy = Másolás
+eolMessage = <strong>Ez a kísérlet ekkor befejeződik: { $completedDate }</strong>. <br/><br/>Utána is fogja tudni használni ezt: { $title }, de nem fogunk további frissítéseket és támogatást adni.
+eolDisableMessage = A(z) { $title } kísérlet véget ért. Ha eltávolítja, akkor többé nem fogja tudni újra telepíteni a Tesztpilótán keresztül.
+completedDateLabel = Kísérlet záródátuma: <b>{ $completedDate }</b>
+incompatibleHeader = Ez a kísérlet lehet hogy nem kompatibilis a telepített kiegészítőivel.
+incompatibleSubheader = Azt javasoljuk, hogy <a>tiltsa le ezeket a kiegészítőket</a> mielőtt aktiválja ezt a kísérletet:
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Itt adja meg az e-mail címét
 newsletterFormDisclaimer = Csak a Tesztpilótával kapcsolatos információt fogunk küldeni.
 newsletterFormPrivacyNotice = Elfogadom, hogy a Mozilla <a>ennek az Adatvédelmi nyilatkozatnak</a> megfelelően kezelje az adataimat.
 newsletterFormSubmitButton = Feliratkozás most
+newsletterFormSubmitButtonSubmitting = Beküldés…
+newsletterFooterError = Hiba történt az e-mail cím elküldésekor. Újra megpróbálja?
 newsletterFooterHeader = Legyen tájékozott
 newsletterFooterBody = Tudjon az új kísérletekről, és lássa a kipróbált kísérletek teszteredményeit.
+newsletterFooterSuccessHeader = Köszönjük!
+newsletterFooterSuccessBody = Ha korábban nem erősítette meg a Mozillához kapcsolódó hírlevél feliratkozását, akkor lehet hogy meg kell tennie. Ellenőrizze a Beérkezett üzenetek mappáját vagy a spam-szűrőjét az e-mailünk után.
+localeWarningTitle = Ez a kísérlet csak angolul érhető el.
+localeWarningSubtitle = Attól még bekapcsolhatja, ha szeretné.
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage
 
+noScriptHeading = Hoppá…
+noScriptMessage = A Tesztpilótához JavaScript szükséges.<br>Sajnáljuk.
+noScriptLink = Tudja meg, mi az oka
+viewPastExperiments = Múltbeli kísérletek megtekintése
+hidePastExperiments = Múltbeli kísérletek elrejtése
