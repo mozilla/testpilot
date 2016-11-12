@@ -124,6 +124,15 @@ discourse = Discourse
 nowActive = Aktív
 userCount = 
   [html/title] A kísérlet aktív felhasználói
+tourOnboardingTitle = { $title } bekapcsolva!
+tourCancelButton = Kihagyás
+tourDoneButton = Kész
+userCountContainer = Jelenleg <span>{ $installation_count }</span> ember próbálja ezt ki: { $title }.
+userCountContainerAlt = Épp most indult!
+highlightPrivacy = Magánszféra
+upgradeNoticeTitle = A(z) { $title } Firefox { $min_release } vagy újabb verziót igényel.
+upgradeNoticeLink = Hogyan frissítse a Firefoxot.
+sharePrimary = Szereti a Tesztpilótát? Segítsen nekünk néhány újoncot találni.
 newsletterFormDisclaimer = Csak a Tesztpilótával kapcsolatos információt fogunk küldeni.
 newsletterFormPrivacyNotice = Elfogadom, hogy a Mozilla <a>ennek az Adatvédelmi nyilatkozatnak</a> megfelelően kezelje az adataimat.
 newsletterFormSubmitButton = Feliratkozás most
