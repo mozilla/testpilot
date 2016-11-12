@@ -14,6 +14,7 @@ landingCardOne = Nainštalujte si doplnok Test Pilot
 landingCardTwo = Povoľte experimentálne funkcie
 landingCardThree = Povedzte nám váš názor
 participantCount = <span>{ $installation_count }</span> používateľov
+newsletterFormDisclaimer = Budeme vám posielať len informácie súvisiace s programom Test Pilot.
 newsletterFormPrivacyNotice = Súhlasím s tým, aby Mozilla zaobchádzala s informáciami o mne tak, ako je to popísané v <a>zásadách ochrany súkromia</a>.
 newsletterFooterHeader = Zostaňte v obraze
 newsletterFooterBody = Dozviete sa informácie o nových experimentoch a uvidíte výsledky testov doplnkov, ktoré ste skúšali.
