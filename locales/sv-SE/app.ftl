@@ -50,6 +50,7 @@ enableExperiment = Aktivera { $title }
 enableExperimentTransition = Aktiverar...
 feedbackCancelButton = Stäng
 feedbackUninstallTitle = Tack!
+discussNotifySubmitButton = Ta mig till forumet
 discussNotifyCancelButton = Avbryt
 retireDialogTitle = Avinstallera Test Pilot?
 retireSubmitButton = Fortsätt
