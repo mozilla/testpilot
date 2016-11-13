@@ -64,6 +64,28 @@ enableExperimentTransition = Activando...
 feedbackSubmitButton = Participa en una encuesta rápida
 feedbackCancelButton = Cerrar
 feedbackUninstallTitle = ¡Gracias!
+feedbackUninstallCopy = Tu participación en Firefox Test Pilot significa mucho para nosotros. ¡Échale un vistazo a otros experimentos y no te pierdas las próximas novedades!
+discussNotifyTitle = Un momento...
+discussNotifyCancelButton = Cancelar
+retireDialogTitle = ¿Desinstalamos Test Pilot?
+retireMessage = Como quieras. Se desactivarán los tests activos, se desinstalará el complemento y se eliminará la información de tu cuenta de nuestros servidores.
+retireEmailMessage = Para no recibir actualizaciones por correo, haz clic en el enlace <em>cancelar suscripción</em> de cualquier correo de Test Pilot.
+retireSubmitButton = Continuar
+retireCancelButton = Cancelar
+retirePageHeadline = ¡Gracias por volar con nosotros!
+retirePageMessage = Esperamos que te haya gustado experimentar con nosotros. <br> Vuelve cuando quieras.
+retirePageSurveyButton = Participa en una encuesta rápida
+restartIntroLead = Comprobación preliminar
+restartIntroThree = Selecciona tus experimentos
+measurements = Tu privacidad
+contributorsHeading = Diseñado por
+version = Versión
+changelog = registro de cambios
+tourLink = visita virtual
+lastUpdate = Última actualización
+contribute = Colabora
+bugReports = Informes de fallos
+discourse = Discourse
 newsletterFormDisclaimer = Solo te enviaremos información relacionada con Test Pilot.
 newsletterFormPrivacyNotice = Me parece bien que Mozilla gestione mi información según se indica en <a>este aviso sobre privacidad</a>.
 newsletterFormSubmitButton = Suscríbete ya
@@ -73,3 +95,4 @@ newsletterFooterBody = Descubre los nuevos experimentos y échale un vistazo a l
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage
 
+noScriptLink = Descubre por qué
