@@ -1,4 +1,5 @@
 activitystreamDescription = 有視覺化的瀏覽紀錄資訊，以及重新設計過的開始頁面，讓您可以比以往更簡單就在 Firefox 找到您想尋找的東西。
+activitystreamIntroduction = <p>回到瀏覽的同時，也會保留您的意識流。Activity Stream 會保留您最常造訪的網站、書籤以及近期的瀏覽紀錄，並且放到新分頁中最明顯的地方。全新的時間軸畫面可讓您直接鳥瞰您的瀏覽紀錄。</p>
 activitystreamMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy">資料</a> 外，以下是您使用 Activity Stream 時應該知道的事情:</p><ul><li>我們會收集關於您如何與實驗性新分頁、時間軸頁面互動等基本使用資料，例如您點擊了什麼類型的網頁元素，以及該元素在網頁中的位置。</li><li>我們也會收集關於您的瀏覽器設定檔當中，與 Activity Stream 相關的基本資訊，包含書籤數量、瀏覽紀錄項目等。</li><li>為了提供 Activity Stream 功能，我們會透過 <a href="http://embed.ly/" target="_blank">Embedly</a> 取得您造訪過的網站的後設資料（metadata），例如圖片與圖示等。這些資料會透過 Mozilla 伺服器發出請求，所以不會與您有任何關聯。</li></ul>
 activitystreamDetails0Copy = 開啟新分頁，您最愛的網站就在一步之遙。
 activitystreamDetails1Copy = 看看您去過哪裡，這樣您就可以快速前往想去的地方。
@@ -22,10 +23,10 @@ minvidDescription = 把影片放在畫面正中間。Min Vid 讓您可以將 You
 minvidMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy">資料</a> 外，以下是您使用 Min Vid 時應該知道的事情:</p><ul><li>我們會收集您使用滑鼠右鍵選單、實驗圖示及播放器控制元件的使用資料</li><li>我們也會收集您遇到的可播放影片的次數、您播放影片的次數，以及提供該影片的供應商。這些資訊可幫助我們了解此實驗對使用者來說有多有用。</li><li>我們不會收集您遇到的影片的個別資訊。</li></ul>
 minvidDetails0Copy = 在 YouTube 與 Vimeo 視訊播放器中使用 Min Vid。
 minvidDetails1Copy = 讓您在網路上作別的事情時，同時能在前景播放影片。
-minvidDetails2Copy = 對影片鏈結按右鍵，也可以在選單中找到 Min Vid。
+minvidDetails2Copy = 對影片鏈結按右鍵，即可在選單中找到 Min Vid。
 minvidToursteps0Copy = <p>選擇圖示開始使用。</p>
 minvidToursteps1Copy = <p>一邊看影片一邊繼續上網。</p>
-minvidToursteps2Copy = <p>在小方塊中使用音量調整、播放、暫停、移動影片等控制元件。</p>
+minvidToursteps2Copy = <p>使用影片方塊中的控制元件來調整音量、播放、暫停、移動影片。</p>
 minvidToursteps3Copy = <p>您可以隨時從 Test Pilot 提供意見，或停用 Min Vid。</p>
 minvidContributors0Title = 工程師
 minvidContributors1Title = 工程師主管
@@ -34,6 +35,7 @@ nomore404sSubtitle = Powered by the Wayback Machine
 nomore404sDescription = 對網頁上的死路感到厭倦了嗎？我們會在您尋找的網頁找不到，而 Internet Archive's Wayback Machine 當中有已儲存的版本時讓您知道。
 nomore404sIntroduction = <p>這個實驗很簡單，如果您遇到 404 找不到網頁的錯誤，我們會讓您知道這個網頁在 Internet Archive 的 Wayback Machine 中有沒有存檔的版本可用。</p>
 nomore404sDetails0Copy = 使用 Wayback Machine，減少遇到 404 時的死路。
+nomore404sDetails1Copy = 由我們在 Internet Archive 的好朋友們為您帶來。
 nomore404sToursteps1Copy = <p>您可以隨時從 Test Pilot 提供意見，或停用 No More 404s。</p>
 nomore404sContributors1Title = The Internet Archive 的 Wayback Machine 開發者
 nomore404sContributors2Title = The Internet Archive 的 Wayback Machine 總監
@@ -58,6 +60,10 @@ tabcenterMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/pri
 tabcenterDetails0Copy = 把分頁丟到邊邊去。
 tabcenterDetails1Copy = 把分頁丟到一邊去，需要的時候再拿出來。
 tabcenterDetails2Copy = 重新裝潢、移動家具！Tab Center 可與您最愛的 Firefox 佈景主題相容。
+tabcenterToursteps0Copy = <p>首先，我們把您的標籤放到畫面側邊了。</p>
+tabcenterToursteps1Copy = <p>有很多很多標籤嗎？Tab Center 可讓您搜尋這些分頁。</p>
+tabcenterToursteps2Copy = <p>您可以拖曳 Tab Center 的邊緣，調整寬度。</p>
+tabcenterToursteps3Copy = <p>點一下即可收起 Tab Center。</p>
 tabcenterToursteps4Copy = <p>您可以隨時從 Test Pilot 提供意見，或停用 Tab Center。</p>
 tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
