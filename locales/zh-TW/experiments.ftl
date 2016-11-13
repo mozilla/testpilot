@@ -1,4 +1,5 @@
 activitystreamDescription = 有視覺化的瀏覽紀錄資訊，以及重新設計過的開始頁面，讓您可以比以往更簡單就在 Firefox 找到您想尋找的東西。
+activitystreamMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy">資料</a> 外，以下是您使用 Activity Stream 時應該知道的事情:</p><ul><li>我們會收集關於您如何與實驗性新分頁、時間軸頁面互動等基本使用資料，例如您點擊了什麼類型的網頁元素，以及該元素在網頁中的位置。</li><li>我們也會收集關於您的瀏覽器設定檔當中，與 Activity Stream 相關的基本資訊，包含書籤數量、瀏覽紀錄項目等。</li><li>為了提供 Activity Stream 功能，我們會透過 <a href="http://embed.ly/" target="_blank">Embedly</a> 取得您造訪過的網站的後設資料（metadata），例如圖片與圖示等。這些資料會透過 Mozilla 伺服器發出請求，所以不會與您有任何關聯。</li></ul>
 activitystreamDetails0Copy = 開啟新分頁，您最愛的網站就在一步之遙。
 activitystreamDetails1Copy = 看看您去過哪裡，這樣您就可以快速前往想去的地方。
 activitystreamToursteps0Copy = <p>開啟新分頁之後即可直接找到最常造訪的網站、近期瀏覽紀錄與書籤。</p>
@@ -18,6 +19,7 @@ activitystreamContributors10Title = 工程經理
 activitystreamContributors11Title = 軟體工程師
 activitystreamContributors12Title = 資深 UX 設計師
 minvidDescription = 把影片放在畫面正中間。Min Vid 讓您可以將 YouTube 和 Vimeo 的影片放到前景的一個小方塊，瀏覽網頁時可以保持在前景播放。
+minvidMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy">資料</a> 外，以下是您使用 Min Vid 時應該知道的事情:</p><ul><li>我們會收集您使用滑鼠右鍵選單、實驗圖示及播放器控制元件的使用資料</li><li>我們也會收集您遇到的可播放影片的次數、您播放影片的次數，以及提供該影片的供應商。這些資訊可幫助我們了解此實驗對使用者來說有多有用。</li><li>我們不會收集您遇到的影片的個別資訊。</li></ul>
 minvidDetails0Copy = 在 YouTube 與 Vimeo 視訊播放器中使用 Min Vid。
 minvidDetails1Copy = 讓您在網路上作別的事情時，同時能在前景播放影片。
 minvidToursteps3Copy = <p>您可以隨時從 Test Pilot 提供意見，或停用 Min Vid。</p>
@@ -33,7 +35,7 @@ nomore404sContributors2Title = The Internet Archive 的 Wayback Machine 總監
 nomore404sContributors3Title = The Internet Archive 資深爬蟲工程師
 pageshotDescription = 在瀏覽器中直接加入直覺式的畫面擷圖功能。在您使用 Firefox 時，隨時都能拍照、儲存、分享擷圖。
 pageshotIntroduction = <p>Page Shot 可讓您不用離開 Firefox 就拍攝、分享、取得網頁的畫面擷圖。</p><ul><li><strong>格狀檢視: </strong>瀏覽儲存的擷取圖˙的縮圖</li><li><strong>智慧搜尋:</strong>Page Shot 會索引擷取圖片時的網頁標題與內容文字，讓您可使用關鍵字快速尋找想要的擷圖。</li><li><strong>一鍵分享:</strong>直接在瀏覽器視窗中將您拍下來的擷圖貼到社交網路，或分享圖片鏈結。</li></ul>
-pageshotMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy">資料</a> 外，以下是您使用 Page Shot 時應該知道的事情:</p><ul><li>我們會將您拍攝的圖片儲存於 Mozilla 的伺服器上，且可存取這些圖片，然而我們只會因服務維運的需求（例如有人透過「標示」的功能回報圖片鏈結給我們，或是為了找出任何服務當中的問題）而合理存取您的照片。我們也會將所有圖片加總起來進行分析，以幫助改善 Page Shot，例如找出使用者所拍的擷圖的平均大小與數量。</li><li>為了了解使用情況，我們也會收集您點擊拍照按鈕、儲存圖片、儲存圖片時遇到問題的次數等使用資料。</li><li>為了防止濫用本服務，我們會進行基本的安全監控，例如我們會收集與保存 IP 地址以偵測並封鎖想掃描本服務，找出私人頁面的使用者。</li><li>我們針對所有造訪 Page Shot 網站的使用者所收集的資料，列於我們的 <a href="https://www.mozilla.org/privacy/websites/" target="_blank">網站、通訊及 Cookies 隱私權公告</a> 當中。</li></ul>
+pageshotMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy">資料</a> 外，以下是您使用 Page Shot 時應該知道的事情:</p><ul><li>我們會將您拍攝的圖片儲存於 Mozilla 的伺服器上，且可存取這些圖片，然而我們只會因服務維運的需求（例如有人透過「標示」功能回報圖片鏈結給我們，或是為了找出任何服務當中的問題）而合理存取您的照片。我們也會將所有圖片加總起來進行分析，以幫助改善 Page Shot，例如找出使用者所拍的擷圖的平均大小與數量。</li><li>為了了解使用情況，我們也會收集您點擊拍照按鈕、儲存圖片、儲存圖片時遇到問題的次數等使用資料。</li><li>為了防止濫用本服務，我們會進行基本的安全監控，例如我們會收集與保存 IP 地址以偵測並封鎖想掃描本服務，找出私人頁面的使用者。</li><li>我們針對所有造訪 Page Shot 網站的使用者所收集的資料，列於我們的 <a href="https://www.mozilla.org/privacy/websites/" target="_blank">網站、通訊及 Cookies 隱私權公告</a> 當中。</li></ul>
 pageshotDetails0Copy = 如果只要一部分的話，可選擇要儲存的圖片範圍，或是直接取消不存。
 pageshotDetails1Copy = 可透過社交網路或電子郵件直接分享圖片鏈結，而不需要下載後重新附加到郵件中。
 pageshotDetails2Copy = 很簡單就能找到儲存的擷圖，並用關鍵字搜尋或在方格畫面中瀏覽。
@@ -57,6 +59,7 @@ tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
 trackingprotectionDescription = 您願意協助我們改善追蹤保護功能嗎？此實驗會在所有瀏覽時開啟追蹤保護功能，並在上網遇到問題時，提供快速能回報的方式。
+trackingprotectionMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy">資料</a> 外，以下是您使用追蹤保護功能時應該知道的事情:</p><ul><li>追蹤保護功能會在封鎖了追蹤器時提示您提供意見。我們會透過這個提示收集您開啟或關閉了頁面中的追蹤器，或回報問題等基本使用資料。</li><li>當您見到提示時，我們也會收集您所在的頁面、被封鎖的追蹤器網域等資訊，這些資訊可幫助我們了解您何時會遇到問題，以及問題的原因。</li><li>除了追蹤器的網域之外，我們不會收集追蹤器的其他資訊，例如使用的獨特 ID 或設定的 Cookie 等。</li><li>為了找出有哪些追蹤器，我們使用由我們的夥伴 Disconnect 所提供的追蹤器清單，您可在 <a href="https://disconnect.me/trackerprotection" target="_blank">此處</a> 了解 Disconnect 的判斷標準。</li></ul>
 trackingprotectionPrefeedbackcopy = <p>選擇網址列中的盾牌圖示，即可回報網站與追蹤保護功能不相容。</p>
 trackingprotectionDetails0Copy = 在網址列使用所有追蹤保護功能。
 trackingprotectionDetails1Copy = 回報問題並幫助我們排除問題。
