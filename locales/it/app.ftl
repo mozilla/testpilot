@@ -41,7 +41,7 @@ landingCardTwo = Attiva gli esperimenti
 landingCardThree = Condividi la tua opinione
 onboardingMessage = Abbiamo aggiunto un’icona alla barra degli strumenti. In questo modo sarà sempre facile trovare Test Pilot.
 errorHeading = Oops.
-errorMessage = Sembra che qualcosa si sia rotto.<br> Riprova più tardi.
+errorMessage = Sembra che qualcosa sia andato storto.<br> Riprova più tardi.
 notFoundHeader = Quattro zero quattro
 emailOptInDialogTitle = Benvenuto in Test Pilot
 emailOptInMessage = Scopri nuovi esperimenti e consulta i risultati degli esperimenti che hai provato personalmente.
@@ -49,14 +49,14 @@ emailValidationError = Inserisci un indirizzo email valido.
 
 # LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
 emailOptInInput = 
-  [html/placeholder] inserisci qui la tua email :)
+  [html/placeholder] Inserisci qui la tua email :)
 emailOptInButton = Iscrivimi
 emailOptInSkip = Ignora
 emailOptInConfirmationTitle = Email inviata
 emailOptInSuccessMessage2 = Grazie!
 emailOptInConfirmationClose = A proposito degli esperimenti…
 experimentListPageHeader = Pronto per il decollo
-experimentListPageSubHeader = Scegli la funzione che ti interessa provare.<br> Torna a trovarci per scoprire nuovi esperimenti.
+experimentListPageSubHeader = Scegli la funzione che vuoi provare.<br> Torna a trovarci per scoprire nuovi esperimenti.
 experimentListEnabledTab = Attivo
 experimentListJustLaunchedTab = Appena lanciato
 experimentListJustUpdatedTab = Appena aggiornato
@@ -150,7 +150,7 @@ localeWarningSubtitle = Se lo desideri è comunque possibile attivarlo.
 # and will need python-l20n implementation for coverage
 
 noScriptHeading = Oops…
-noScriptMessage = Test Pilot richiede JavaScript.<br> Siamo spiacenti.
+noScriptMessage = Siamo spiacenti, Test Pilot richiede JavaScript.
 noScriptLink = Scopri perché
 viewPastExperiments = Visualizza gli esperimenti già conclusi
 hidePastExperiments = Nascondi gli esperimenti già conclusi
