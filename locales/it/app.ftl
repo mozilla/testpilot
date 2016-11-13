@@ -129,7 +129,7 @@ shareEmail = Email
 shareCopy = Copia
 eolMessage = <strong>Questo esperimento si concluderà il { $completedDate }</strong>.<br/><br/>Dopo questa data sarà possibile continuare a utilizzare { $title } ma non verranno più forniti aggiornamenti né supporto.
 eolDisableMessage = L’esperimento { $title } si è concluso. Una volta disinstallato non sarà più possibile reinstallarlo tramite Test Pilot.
-completedDateLabel = Data di scadenza dell’esperimento: <b>{ $completedDate }</b>
+completedDateLabel = Data di fine esperimento: <b>{ $completedDate }</b>
 incompatibleHeader = Questo esperimento potrebbe non essere compatibile con alcune estensioni installate.
 incompatibleSubheader = Consigliamo di <a>disattivare queste estensioni</a> prima di attivare l’esperimento:
 newsletterFormEmailPlaceholder = 
@@ -142,7 +142,7 @@ newsletterFooterError = Si è verificato un errore durante l’invio dell’indi
 newsletterFooterHeader = Rimani aggiornato
 newsletterFooterBody = Scopri nuovi esperimenti e consulta i risultati di quelli a cui hai partecipato.
 newsletterFooterSuccessHeader = Grazie
-newsletterFooterSuccessBody = Se non hai mai confermato prima d’ora l’iscrizione a una newsletter Mozilla, dovrai farlo adesso per completare l’iscrizione. Controlla se hai ricevuto un nuovo messaggio da parte di Mozilla, potrebbe anche essere finita per sbaglio nella cartella dello spam.
+newsletterFooterSuccessBody = Se non hai mai confermato prima d’ora l’iscrizione a una newsletter Mozilla, dovrai farlo adesso per completare l’iscrizione. Controlla se hai ricevuto un nuovo messaggio da parte di Mozilla, potrebbe anche essere finito per sbaglio nella cartella dello spam.
 localeWarningTitle = Questo esperimento è disponibile solo in inglese.
 localeWarningSubtitle = Se lo desideri è comunque possibile attivarlo.
 # TODO: these strings are not currently localized.
