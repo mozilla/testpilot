@@ -26,6 +26,7 @@ nomore404sContributors2Title = The Internet Archive 的 Wayback Machine 總監
 nomore404sContributors3Title = The Internet Archive 資深爬蟲工程師
 pageshotDescription = 在瀏覽器中直接加入直覺式的畫面擷圖功能。在您使用 Firefox 時，隨時都能拍照、儲存、分享擷圖。
 pageshotIntroduction = <p>Page Shot 可讓您不用離開 Firefox 就拍攝、分享、取得網頁的畫面擷圖。</p><ul><li><strong>格狀檢視: </strong>瀏覽儲存的擷取圖˙的縮圖</li><li><strong>智慧搜尋:</strong>Page Shot 會索引擷取圖片時的網頁標題與內容文字，讓您可使用關鍵字快速尋找想要的擷圖。</li><li><strong>一鍵分享:</strong>直接在瀏覽器視窗中將您拍下來的擷圖貼到社交網路，或分享圖片鏈結。</li></ul>
+pageshotMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy">資料</a> 外，以下是您使用 Page Shot 時應該知道的事情:</p><ul><li>我們會將您拍攝的圖片儲存於 Mozilla 的伺服器上，且可存取這些圖片，然而我們只會因服務維運的需求（例如有人透過「標示」的功能回報圖片鏈結給我們，或是為了找出任何服務當中的問題）而合理存取您的照片。我們也會將所有圖片加總起來進行分析，以幫助改善 Page Shot，例如找出使用者所拍的擷圖的平均大小與數量。</li><li>為了了解使用情況，我們也會收集您點擊拍照按鈕、儲存圖片、儲存圖片時遇到問題的次數等使用資料。</li><li>為了防止濫用本服務，我們會進行基本的安全監控，例如我們會收集與保存 IP 地址以偵測並封鎖想掃描本服務，找出私人頁面的使用者。</li><li>我們針對所有造訪 Page Shot 網站的使用者所收集的資料，列於我們的 <a href="https://www.mozilla.org/privacy/websites/" target="_blank">網站、通訊及 Cookies 隱私權公告</a> 當中。</li></ul>
 pageshotContributors0Title = 工程師經理
 pageshotContributors1Title = 軟體工程師
 pageshotContributors2Title = UX 設計師
