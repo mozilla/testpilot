@@ -1,4 +1,4 @@
-activitystreamDescription = 有視覺化的瀏覽紀錄資訊，以及重新設計過的開始頁面，讓您可以比以往更簡單就在 Firefox 找到您想尋找的東西。
+activitystreamDescription = 視覺化的瀏覽紀錄資訊，以及重新設計過的開始頁面，讓您可比以往更簡單就在 Firefox 找到想尋找的東西。
 activitystreamIntroduction = <p>回到瀏覽的同時，也會保留您的意識流。Activity Stream 會保留您最常造訪的網站、書籤以及近期的瀏覽紀錄，並且放到新分頁中最明顯的地方。全新的時間軸畫面可讓您直接鳥瞰您的瀏覽紀錄。</p>
 activitystreamMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy">資料</a> 外，以下是您使用 Activity Stream 時應該知道的事情:</p><ul><li>我們會收集關於您如何與實驗性新分頁、時間軸頁面互動等基本使用資料，例如您點擊了什麼類型的網頁元素，以及該元素在網頁中的位置。</li><li>我們也會收集關於您的瀏覽器設定檔當中，與 Activity Stream 相關的基本資訊，包含書籤數量、瀏覽紀錄項目等。</li><li>為了提供 Activity Stream 功能，我們會透過 <a href="http://embed.ly/" target="_blank">Embedly</a> 取得您造訪過的網站的後設資料（metadata），例如圖片與圖示等。這些資料會透過 Mozilla 伺服器發出請求，所以不會與您有任何關聯。</li></ul>
 activitystreamDetails0Copy = 開啟新分頁，您最愛的網站就在一步之遙。
@@ -44,7 +44,7 @@ nomore404sContributors1Title = The Internet Archive 的 Wayback Machine 開發�
 nomore404sContributors2Title = The Internet Archive 的 Wayback Machine 總監
 nomore404sContributors3Title = The Internet Archive 資深爬蟲工程師
 pageshotDescription = 在瀏覽器中直接加入直覺式的畫面擷圖功能。在您使用 Firefox 時，隨時都能拍照、儲存、分享擷圖。
-pageshotIntroduction = <p>Page Shot 可讓您不用離開 Firefox 就拍攝、分享、取得網頁的畫面擷圖。</p><ul><li><strong>格狀檢視: </strong>瀏覽儲存的擷取圖˙的縮圖</li><li><strong>智慧搜尋:</strong>Page Shot 會索引擷取圖片時的網頁標題與內容文字，讓您可使用關鍵字快速尋找想要的擷圖。</li><li><strong>一鍵分享:</strong>直接在瀏覽器視窗中將您拍下來的擷圖貼到社交網路，或分享圖片鏈結。</li></ul>
+pageshotIntroduction = <p>Page Shot 可讓您不用離開 Firefox 就拍攝、分享、取得網頁的畫面擷圖。</p><ul><li><strong>格狀檢視: </strong>瀏覽儲存的擷取圖˙的縮圖</li><li><strong>智慧搜尋:</strong> Page Shot 會索引擷取圖片時的網頁標題與內容文字，讓您可使用關鍵字快速尋找想要的擷圖。</li><li><strong>一鍵分享:</strong> 直接在瀏覽器視窗中將您拍下來的擷圖貼到社交網路，或分享圖片鏈結。</li></ul>
 pageshotMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy">資料</a> 外，以下是您使用 Page Shot 時應該知道的事情:</p><ul><li>我們會將您拍攝的圖片儲存於 Mozilla 的伺服器上，且可存取這些圖片，然而我們只會因服務維運的需求（例如有人透過「標示」功能回報圖片鏈結給我們，或是為了找出任何服務當中的問題）而合理存取您的照片。我們也會將所有圖片加總起來進行分析，以幫助改善 Page Shot，例如找出使用者所拍的擷圖的平均大小與數量。</li><li>為了了解使用情況，我們也會收集您點擊拍照按鈕、儲存圖片、儲存圖片時遇到問題的次數等使用資料。</li><li>為了防止濫用本服務，我們會進行基本的安全監控，例如我們會收集與保存 IP 地址以偵測並封鎖想掃描本服務，找出私人頁面的使用者。</li><li>我們針對所有造訪 Page Shot 網站的使用者所收集的資料，列於我們的 <a href="https://www.mozilla.org/privacy/websites/" target="_blank">網站、通訊及 Cookies 隱私權公告</a> 當中。</li></ul>
 pageshotDetails0Copy = 如果只要一部分的話，可選擇要儲存的圖片範圍，或是直接取消不存。
 pageshotDetails1Copy = 可透過社交網路或電子郵件直接分享圖片鏈結，而不需要下載後重新附加到郵件中。
@@ -54,7 +54,7 @@ pageshotToursteps1Copy = <p>選擇您想要拍攝擷取圖的範圍。</p>
 pageshotToursteps2Copy = <p>直接從瀏覽器分享、儲存或刪除圖片。</p>
 pageshotToursteps3Copy = <p>透過搜尋或瀏覽來尋找儲存的圖片。</p>
 pageshotToursteps4Copy = <p>您可以隨時從 Test Pilot 提供意見，或停用 Page Shot。</p>
-pageshotContributors0Title = 工程師經理
+pageshotContributors0Title = 工程經理
 pageshotContributors1Title = 軟體工程師
 pageshotContributors2Title = UX 設計師
 tabcenterDescription = 如果把分頁列從瀏覽器頂端移到旁邊去會怎樣呢？我們想知道！
