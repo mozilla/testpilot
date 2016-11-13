@@ -42,6 +42,12 @@ errorHeading = 喔喔！
 errorMessage = 看來我們把某些東西改壞了。<br>請稍候再試試。
 notFoundHeader = 找不到！
 emailOptInDialogTitle = 歡迎使用 Test Pilot！
+emailOptInMessage = 看看有什麼新實驗，以及您參與過的實驗測試結果。
+emailValidationError = 請使用有效的電子郵件地址！
+
+# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput = 
+  [html/placeholder] 電子郵件會寄到這裡 :)
 emailOptInButton = 我要訂閱
 emailOptInSkip = 略過
 emailOptInConfirmationTitle = 已寄出郵件
@@ -60,6 +66,7 @@ experimentCardLearnMore = 了解更多
 experimentPreFeedbackTitle = { $title } 意見回饋
 experimentPreFeedbackLinkCopy = 提供關於 { $title } 實驗的意見回饋
 experimentPromoHeader = 準備好要起飛了嗎？
+otherExperiments = 也試試這些實驗
 giveFeedback = 提供意見回饋
 disableHeader = 要關閉實驗嗎？
 disableExperiment = 停用 { $title }
@@ -89,6 +96,11 @@ lastUpdate = 最後更新
 contribute = 貢獻
 bugReports = 錯誤回報
 discourse = Discourse
+nowActive = 已開啟
+userCount = 
+  [html/title] 參與此實驗的使用者數
+tourOnboardingTitle = 已開啟 { $title }！
+tourStartButton = 參加導覽
 tourCancelButton = 略過
 tourDoneButton = 完成
 highlightPrivacy = 您的隱私權
