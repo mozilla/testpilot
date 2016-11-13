@@ -1,5 +1,6 @@
 activitystreamDescription = Una visualizzazione della cronologia ricca di informazioni e una pagina iniziale completamente ripensata rendono ancora più semplice trovare tutte ciò che serve in Firefox.
 activitystreamIntroduction = <p>Torna a navigare senza perdere il flusso dei tuoi pensieri. Con Activity Stream i tuoi siti preferiti, segnalibri e cronologia recente saranno sempre a portata di mano. E la nuova sequenza temporale ti offre una vista d’insieme della tua navigazione.</p>
+activitystreamMeasurements = <p>In aggiunta ai <a href="/privacy">dati</a> raccolti in tutti gli esperimenti Test Pilot, ecco alcune informazioni utili su quello che accade quando utilizzi Activity Stream:</p><ul> <li>Raccogliamo alcuni dati relativi al modo in cui interagisci con la pagina Nuova scheda e la sequenza temporale, come il tipo di elemento che selezioni e la posizione nella pagina.</li> <li>Raccogliamo alcune informazioni di base che influenzano Activity Stream, come il numero di segnalibri ed elementi nella cronologia.</li> <li>Per il funzionamento di Activity Stream, raccogliamo metadata sui siti che hai visitato, come immagini e icone, utilizzando un servizio chiamato <a href="http://embed.ly/" target="_blank">Embedly</a>. Inviamo queste richieste attraverso i server Mozilla, in modo che non siano riconducibili a te.</li></ul>
 activitystreamDetails0Copy = Apri una nuova scheda: i tuoi siti preferiti saranno disponibili in un clic.
 activitystreamDetails1Copy = Tieni sotto controllo dove sei stato, senza rischiare di perdere di vista la tua destinazione.
 activitystreamToursteps0Copy = <p>I tuoi siti preferiti, la cronologia recente e i segnalibri a tua disposizione quando apri una nuova scheda.</p>
@@ -19,6 +20,7 @@ activitystreamContributors10Title = Engineering Manager
 activitystreamContributors11Title = Software Engineer
 activitystreamContributors12Title = Senior UX Designer
 minvidDescription = Non perdere di vista i tuoi video. Min Vid permette di guardare video su YouTube e Vimeo in una piccola cornice che rimane sempre in primo piano mentre navighi sul web.
+minvidMeasurements = <p>In aggiunta ai <a href="/privacy">dati</a> raccolti in tutti gli esperimenti Test Pilot, ecco alcune informazioni utili su quello che accade quando utilizzi Min Vid:</p><ul> <li>Raccogliamo dati di utilizzo quando interagisci con il menu contestuale, l’icona e i controlli di riproduzione.</li> <li>Raccogliamo dati sul numero di volte che incontri un video riproducibile, il numero di riproduzioni e il fornitore del video. Questo ci aiuta a determinare l’utilità dell’esperimento per i nostri utenti.</li> <li>Non raccogliamo informazioni sugli specifici video che incontri.</li></ul>
 minvidDetails0Copy = Accedi a Min Vid direttamente nelle pagina di YouTube e Vimeo.
 minvidDetails1Copy = Guarda i tuoi video in primo piano mentre fai altre cose sul web.
 minvidDetails2Copy = Fai clic con il tasto destro su un video per accedere ai comandi contestuali di Min Vid.
@@ -32,6 +34,7 @@ minvidContributors2Title = Engineering Intern
 nomore404sSubtitle = Basato su tecnologia Wayback Machine
 nomore404sDescription = Sei stanco di ritrovarti in strade senza uscita sul Web? Ti avviseremo se esiste una versione della pagina che stavi cercando salvata nella Wayback Machine di Internet Archive.
 nomore404sIntroduction = <p>Questo esperimento è semplicissimo. Se raggiungi una pagina 404 (”Pagina non disponibile”) durante la navigazione, ti avviseremo se il contenuto che stavi cercando è archiviato nella Wayback Machine gestita da Internet Archive.</p>
+nomore404sMeasurements = <p>In aggiunta ai <a href="/privacy" target="_blank">dati</a> raccolti in tutti gli esperimenti Test Pilot, ecco alcune informazioni utili su quello che accade quando utilizzi No More 404s:</p><ul> <li>Raccogliamo dati sul numero di volte che incontri una pagina di errore 404 (pagina non disponibile), quante volte è disponibile una versione salvata in Archive.org e quante volte scegli di visualizzarla.</li> <li>Per fornire le versioni archiviate della pagina inviamo l’indirizzo della pagina a Archive.org. <a href="https://archive.org/" target="_blank">Archive.org</a> fornisce la propria informativa sulla privacy in <a href="https://archive.org/about/terms.php" target="_blank">questa pagina</a>.</li> <li>Non raccogliamo gli indirizzi delle pagine che richiedi o gli indirizzi inviati a Archive.org.</li> <li>Potremmo condividere i risultati dei sondaggi e dati aggregati di telemetria relativi a questo esperimento con Internet Archive.</li></ul>
 nomore404sDetails0Copy = Elimina le strade senza uscita con Wayback Machine.
 nomore404sDetails1Copy = Offerto dagli amici di Internet Archive.
 nomore404sToursteps0Copy = <p>Continua a navigare come hai sempre fatto. Se incontri una pagina non disponibile (404), ti avviseremo se ne esiste una versione archiviata nella Wayback Machine.</p>
@@ -53,6 +56,8 @@ pageshotContributors0Title = Engineering Manager
 pageshotContributors1Title = Software Engineer
 pageshotContributors2Title = UX Designer
 tabcenterDescription = Ti sei mai chiesto come sarebbe il browser con le schede sul lato? Abbiamo deciso di scoprirlo.
+tabcenterIntroduction = <p>Togli di mezzo le tue schede e recupera spazio. Tab Center sposta le tue schede sul lato della finestra del browser, in modo che non siano d’intralcio mentre navighi, e allo stesso tempo facili da raggiungere quando ti servono.</p>
+tabcenterMeasurements = <p>In aggiunta ai <a href="/privacy">dati</a> raccolti in tutti gli esperimenti Test Pilot, ecco alcune informazioni utili su quello che accade quando utilizzi Tab Center:</p><ul> <li>Raccogliamo dati relativi all’interazione con Tab Center, come ad esempio la frequenza con cui ingrandisci o blocchi la barra.</li> <li>Raccogliamo dati sull’utilizzo delle schede, come ad esempio il numero di schede aperte contemporaneamente, e per quanto tempo rimangono aperte.</li> <li>Tab Center non raccoglie alcuna informazione sui siti visitati o il contenuto delle schede.</li></ul>
 tabcenterDetails0Copy = Metti le tue schede in un angolo.
 tabcenterDetails1Copy = Nascondi quelle schede mentre non ti servono.
 tabcenterDetails2Copy = È tempo di ridecorare e spostare i mobili! Tab Center è compatibile con i tuoi temi preferiti per Firefox.
@@ -66,6 +71,7 @@ tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
 trackingprotectionDescription = Vuoi aiutarci a migliorare la protezione antitracciamento? Questo esperimento attiva l’antitracciamento durante la normale navigazione e offre un sistema rapido per segnalarci i problemi riscontrati.
+trackingprotectionIntroduction = <p>Attualmente la protezione antitracciamento è disponibile in Firefox solo in modalità navigazione anonima. Questo esperimento attiva la protezione antitracciamento durante tutta la navigazione. Ovviamente, puoi disattivarla per un sito specifico in qualunque momento.</p><p>Con questo esperimento ci aiuti a capire quando il Web non funziona come dovrebbe con la funzione attivata, migliorando la protezione antitracciamento per tutti gli utenti di Firefox. Durante la navigazione fai clic sullo scudo viola nella barra degli indirizzi per segnalarci quali siti funzionano e quali no.</p>
 trackingprotectionPrefeedbackcopy = <p>Per segnalare un sito non funzionante quando la protezione antitracciamento è attiva, selezionare l’icona dello scudo nella barra degli indirizzi.</p>
 trackingprotectionDetails0Copy = Accedi alle funzioni antitracciamento direttamente dalla barra degli indirizzi.
 trackingprotectionDetails1Copy = Segnala un problema e aiutaci a risolverlo.
