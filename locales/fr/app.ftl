@@ -49,8 +49,8 @@ emailValidationError = Veuillez utiliser une adresse électronique valide.
 
 # LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
 emailOptInInput = 
-  [html/placeholder] adresse électronique :)
-emailOptInButton = M’inscrire
+  [html/placeholder] Adresse électronique :)
+emailOptInButton = Je m’inscris
 emailOptInSkip = Ignorer
 emailOptInConfirmationTitle = Courriel envoyé
 emailOptInSuccessMessage2 = Merci&nbsp;!
