@@ -20,6 +20,7 @@ activitystreamContributors10Title = 工程經理
 activitystreamContributors11Title = 軟體工程師
 activitystreamContributors12Title = 資深 UX 設計師
 minvidDescription = 把影片放在畫面正中間。Min Vid 讓您可以將 YouTube 和 Vimeo 的影片放到前景的一個小方塊，瀏覽網頁時可以保持在前景播放。
+minvidIntroduction = <p>喜歡看影片嗎？喜歡一邊看影片一邊作事情嗎？快試試 Min Vid。這個實驗就跟電視一樣，可提供網頁內容與影片的子母畫面。</p><ul><li><strong>隨點即用:</strong> 在您上網時可將 Mid Vid 影片框彈出到前景。</li><li><strong>隨處可放:</strong> 您可將 Min Vid 的影片框拖曳到桌面上任何地方。</li><li><strong>控制功能:</strong> Min Vid 影片框當中有暫停、播放、快轉、拖曳、最小化、調整音量等功能。</li></ul>
 minvidMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy">資料</a> 外，以下是您使用 Min Vid 時應該知道的事情:</p><ul><li>我們會收集您使用滑鼠右鍵選單、實驗圖示及播放器控制元件的使用資料</li><li>我們也會收集您遇到的可播放影片的次數、您播放影片的次數，以及提供該影片的供應商。這些資訊可幫助我們了解此實驗對使用者來說有多有用。</li><li>我們不會收集您遇到的影片的個別資訊。</li></ul>
 minvidDetails0Copy = 在 YouTube 與 Vimeo 視訊播放器中使用 Min Vid。
 minvidDetails1Copy = 讓您在網路上作別的事情時，同時能在前景播放影片。
@@ -34,8 +35,10 @@ minvidContributors2Title = 實習工程師
 nomore404sSubtitle = Powered by the Wayback Machine
 nomore404sDescription = 對網頁上的死路感到厭倦了嗎？我們會在您尋找的網頁找不到，而 Internet Archive's Wayback Machine 當中有已儲存的版本時讓您知道。
 nomore404sIntroduction = <p>這個實驗很簡單，如果您遇到 404 找不到網頁的錯誤，我們會讓您知道這個網頁在 Internet Archive 的 Wayback Machine 中有沒有存檔的版本可用。</p>
+nomore404sMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy" target="_blank">資料</a> 外，以下是您使用 No More 404s 時應該知道的事情:</p><ul><li>我們會收集您遇到「找不到網頁」（代碼 404）錯誤、該頁面在 Archive.org 上已有存檔、以及您選擇檢視該存檔版本的次數。</li><li>為了提供頁面的快取版本，我們會將找不到的網頁網址傳送到 Archive.org。<a href="https://archive.org/" target="_blank">Archive.org</a> 在 <a href="https://archive.org/about/terms.php" target="_blank">這裡</a> 揭露了他們的隱私權保護政策。<li>我們不會收集您想瀏覽的網頁網址，以及送到 Archive.org 查詢的網址。</li><li>我們可能會將與此實驗相關，您送出給我們的問卷內容、以及加總過的 Telemetry 資料分享給 Internet Archive。</li></ul>
 nomore404sDetails0Copy = 使用 Wayback Machine，減少遇到 404 時的死路。
 nomore404sDetails1Copy = 由我們在 Internet Archive 的好朋友們為您帶來。
+nomore404sToursteps0Copy = <p>如日常一般上網即可。若您遇到 404 錯誤頁面，我們就會讓您知道 Wayback Machine 上是否有存檔版本。</p>
 nomore404sToursteps1Copy = <p>您可以隨時從 Test Pilot 提供意見，或停用 No More 404s。</p>
 nomore404sContributors1Title = The Internet Archive 的 Wayback Machine 開發者
 nomore404sContributors2Title = The Internet Archive 的 Wayback Machine 總監
