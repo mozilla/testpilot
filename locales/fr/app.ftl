@@ -21,8 +21,8 @@ landingIntroLead = Allez plus loin…
 landingIntroOne = Testez les nouveautés.
 landingIntroTwo = Racontez-nous vos découvertes.
 landingIntroThree = Aidez Firefox à aller plus loin.
-landingFxaGetStartedButton = Pour commencer il suffit d'un compte Firefox
-landingLegalNotice = En continuant, vous acceptez implicitement les  <a>Conditions d'utilisation</a> et la <a>Politique de confidentialité</a> de Test Pilot.
+landingFxaGetStartedButton = Pour commencer il suffit d’un compte Firefox
+landingLegalNotice = En continuant, vous acceptez implicitement les  <a>Conditions d’utilisation</a> et la <a>Politique de confidentialité</a> de Test Pilot.
 landingInstallHeader = Téléchargez le module et lancez-le !
 landingInstallButton = Installez le module Test Pilot
 landingInstallingButton = Installation…
@@ -39,9 +39,9 @@ landingCardListTitle = Décollage imminent : 3, 2, 1…
 landingCardOne = Téléchargez <br>le module
 landingCardTwo = Activez les fonctionnalités expérimentales
 landingCardThree = Donnez-nous <br> votre avis
-onboardingMessage = Une icône dans la barre d'outils vous permet d'accéder à Test Pilot.
+onboardingMessage = Une icône dans la barre d’outils vous permet d’accéder à Test Pilot.
 errorHeading = Oups&nbsp;!
-errorMessage = On dirait qu'il y a une panne quelque part. <br> Revenez demain peut-être.
+errorMessage = On dirait qu’il y a une panne quelque part. <br> Revenez demain peut-être.
 notFoundHeader = Zut… quatre cent quatre !
 emailOptInDialogTitle = Bienvenue dans Test Pilot.
 emailOptInMessage = Obtenez les résultats des tests de vos expériences et découvrez-en de nouvelles.
@@ -50,12 +50,12 @@ emailValidationError = Veuillez utiliser une adresse électronique valide.
 # LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
 emailOptInInput = 
   [html/placeholder] adresse électronique :)
-emailOptInButton = M'inscrire
+emailOptInButton = M’inscrire
 emailOptInSkip = Ignorer
 emailOptInConfirmationTitle = Courriel envoyé
 emailOptInSuccessMessage2 = Merci&nbsp;!
 experimentListPageHeader = Prêt à décoller !
-experimentListPageSubHeader = Choisissez les fonctionnalités nouvelles que vous voulez tester.<br> Revenez bientôt pour en essayer d'autres.
+experimentListPageSubHeader = Choisissez les fonctionnalités nouvelles que vous voulez tester.<br> Revenez bientôt pour en essayer d’autres.
 experimentListEnabledTab = Activé
 experimentListJustLaunchedTab = Lancé récemment
 experimentListJustUpdatedTab = Mis à jour récemment
@@ -137,7 +137,7 @@ newsletterFooterBody = Découvrez de nouvelles expériences et recevez les résu
 newsletterFooterSuccessHeader = Merci&nbsp;!
 newsletterFooterSuccessBody = Si vous n’avez jamais confirmé d’abonnement à une lettre d’information liée à Mozilla, vous devrez peut-être le faire. Veuillez vérifier votre boîte de réception ou vos courriers indésirables et recherchez un message de notre part.
 localeWarningTitle = Cette expérience est uniquement disponible en anglais.
-localeWarningSubtitle = Vous pourrez toujours l'activer ensuite si vous le souhaitez.
+localeWarningSubtitle = Vous pourrez toujours l’activer ensuite si vous le souhaitez.
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage
