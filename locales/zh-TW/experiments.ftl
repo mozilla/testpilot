@@ -73,6 +73,7 @@ tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
 trackingprotectionDescription = 您願意協助我們改善追蹤保護功能嗎？此實驗會在所有瀏覽時開啟追蹤保護功能，並在上網遇到問題時，提供快速能回報的方式。
+trackingprotectionIntroduction = <p>目前為止，Firefox 的追蹤保護功能僅在隱私瀏覽模式中可以使用。此實驗會完全開啟追蹤保護！（當然，您也可以隨時自行選擇要對某個網站關閉此功能。）</p><p>此實驗讓您可幫助我們了解追蹤保護是否會讓網頁壞掉，我們就可以為所有的 Firefox 使用者改善此功能。當您瀏覽時，可以點擊頁面頂端網址列中的紫色盾牌圖示，告訴我們哪些網站在開啟追蹤保護後可以正常使用，哪些不行。</p>
 trackingprotectionMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy">資料</a> 外，以下是您使用追蹤保護功能時應該知道的事情:</p><ul><li>追蹤保護功能會在封鎖了追蹤器時提示您提供意見。我們會透過這個提示收集您開啟或關閉了頁面中的追蹤器，或回報問題等基本使用資料。</li><li>當您見到提示時，我們也會收集您所在的頁面、被封鎖的追蹤器網域等資訊，這些資訊可幫助我們了解您何時會遇到問題，以及問題的原因。</li><li>除了追蹤器的網域之外，我們不會收集追蹤器的其他資訊，例如使用的獨特 ID 或設定的 Cookie 等。</li><li>為了找出有哪些追蹤器，我們使用由我們的夥伴 Disconnect 所提供的追蹤器清單，您可在 <a href="https://disconnect.me/trackerprotection" target="_blank">此處</a> 了解 Disconnect 的判斷標準。</li></ul>
 trackingprotectionPrefeedbackcopy = <p>選擇網址列中的盾牌圖示，即可回報網站與追蹤保護功能不相容。</p>
 trackingprotectionDetails0Copy = 在網址列使用所有追蹤保護功能。
@@ -84,6 +85,7 @@ trackingprotectionContributors0Title = Web 開發者
 trackingprotectionContributors1Title = 資深 UX 設計師
 trackingprotectionContributors2Title = 資深 QA 工程師
 universalsearchDescription = 當您在 Awesome Bar 智慧位置列輸入時，立即取得最佳網站的推薦。
+universalsearchIntroduction = <p>使用 Universal Search 快速前往想要的網頁。只要在 Awesome Bar 智慧網址列打幾個字，最熱門的網站、人物與維基百科條目就會出現在您的眼前。</p>
 universalsearchMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy">資料</a> 外，以下是您使用 Universal Search 時應該知道的事情:</p><ul><li>我們會收集您如何與 Awesome Bar 智慧網址列互動，包含打過多少字元、點擊結果的類型、以及這些結果在清單中的位置等基本使用資料。</li><li>若您先前設定過 Firefox，要在搜尋列中顯示搜尋建議，安裝 Universal Search 後也將會開啟 <a href="https://www.mozilla.org/privacy/firefox/#searchsuggestions" target="_blank">搜尋建議</a>。<li>當您使用 Awesome Bar 時，我們會傳送您輸入的字詞到我們推薦的搜尋引擎中，我們會匿名地保留常見的搜尋以改善我們的建議品質。</li><li>我們使用了幾個第三方服務來提供 Universal Search。包含 <a href="http://www.bing.com/developers/s/APIBasics.html" target="_blank">Bing</a> 及 <a href="https://developer.yahoo.com/boss/search/" target="_blank">Yahoo</a> 來提供搜尋建議，以及 <a href="http://docs.embed.ly/docs/" target="_blank">Embedly</a> 和 <a href="https://clearbit.com/logo" target="_blank">Clearbit</a> 來提供這些建議的更多資料（如圖片或圖示）。為了在 Awesome Bar 顯示這些建議，Universal Search 可能會直接從 Embedly 和 Clearbit 直接下載圖片，可能會讓這些服務知道您的 IP 地址，以及您要求了哪些圖片。</li></ul>
 universalsearchDetails0Copy = 您打字時，就會跳出知名網站、名人、維基百科條目。
 universalsearchToursteps0Copy = <p>現在可以在同一個地方搜尋與導航。</p>

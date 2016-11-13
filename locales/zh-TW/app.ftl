@@ -22,6 +22,7 @@ landingIntroTwo = 提供意見回饋
 landingIntroThree = 幫助開發 Firefox
 landingFxaGetStartedButton = 登入 Firefox Account 開始使用
 landingLegalNotice = 若繼續，代表您同意 Test Pilot 的 <a>使用條款</a> 及 <a>隱私權公告</a>。
+landingInstallHeader = 安裝附加元件開始挑選！
 landingInstallButton = 安裝 Test Pilot 附加元件
 landingInstallingButton = 安裝中…
 landingInstallMessage = 已安裝 Test Pilot！
