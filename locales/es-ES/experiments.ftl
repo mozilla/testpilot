@@ -1,0 +1,17 @@
+activitystreamContributors0Title = Ingeniero de software
+activitystreamContributors1Title = Ingeniero web
+activitystreamContributors2Title = Desarrollador de software
+activitystreamContributors3Title = Ingeniero de Firefox para escritorio
+activitystreamContributors4Title = Ingeniero de software
+activitystreamContributors5Title = Director de programas técnicos
+activitystreamContributors6Title = Ingeniero de servicios en la nube
+activitystreamContributors7Title = Ingeniero becario
+activitystreamContributors8Title = Ingeniero becario
+activitystreamContributors9Title = Director de producto
+activitystreamContributors11Title = Ingeniero de software
+minvidDetails0Copy = Accede a Min Vid desde YouTube y reproductores de vídeo Vimeo.
+minvidDetails1Copy = Ve vídeos en primer plano mientras haces otras cosas en la Web.
+minvidToursteps1Copy = <p>Reproduce vídeos en primer plano mientras navegas.</p>
+minvidContributors0Title = Ingeniero
+minvidContributors2Title = Ingeniero becario
+pageshotContributors1Title = Ingeniero de software
