@@ -60,7 +60,7 @@ experimentListJustUpdatedTab = 剛更新
 experimentListEndingTomorrow = 明天結束
 experimentListEndingSoon = 快要結束
 isEnabledStatusMessage = 已開啟 { $title }。
-installErrorMessage = 喔喔，無法開啟 { $title }。請稍候再試試看。
+installErrorMessage = 唉呀，無法開啟 { $title }。請稍候再試試看。
 participantCount = <span>{ $installation_count }</span> 位參與者
 experimentCardManage = 管理
 experimentCardGetStarted = 開始使用
@@ -125,17 +125,24 @@ shareSecondary = 或分享這個鏈結…
 shareEmail = E-mail
 shareCopy = 複製
 eolMessage = <strong>此實驗將於 { $completedDate } 結束。</strong><br/><br/>在那之後您仍可以使用 { $title } 但我們不會再提供更新或技術支援。
+completedDateLabel = 實驗結束日期: <b>{ $completedDate }</b>
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] 在此輸入您的電子郵件地址
 newsletterFormDisclaimer = 我們只會傳送與 Test Pilot 相關的資訊給您。
 newsletterFormPrivacyNotice = 我同意 Mozilla 依照 <a>此隱私公告</a> 當中描述的方式處理我的資訊。
 newsletterFormSubmitButton = 立即訂閱
 newsletterFormSubmitButtonSubmitting = 送出中…
+newsletterFooterError = 送出您的電子郵件地址時遇到問題，要再試一次嗎？
 newsletterFooterHeader = 取得最新資訊
 newsletterFooterBody = 接收最新實驗，以及您試用過功能的測試結果的最新資訊。
 newsletterFooterSuccessHeader = 多謝！
+localeWarningTitle = 此實驗僅有英文版。
+localeWarningSubtitle = 您想要的話還是可以安裝。
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage
 
+noScriptHeading = 唉呀…
 noScriptLink = 找出原因
 viewPastExperiments = 檢視先前的實驗
 hidePastExperiments = 隱藏先前的實驗
