@@ -22,12 +22,17 @@ minvidDescription = 把影片放在畫面正中間。Min Vid 讓您可以將 You
 minvidMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy">資料</a> 外，以下是您使用 Min Vid 時應該知道的事情:</p><ul><li>我們會收集您使用滑鼠右鍵選單、實驗圖示及播放器控制元件的使用資料</li><li>我們也會收集您遇到的可播放影片的次數、您播放影片的次數，以及提供該影片的供應商。這些資訊可幫助我們了解此實驗對使用者來說有多有用。</li><li>我們不會收集您遇到的影片的個別資訊。</li></ul>
 minvidDetails0Copy = 在 YouTube 與 Vimeo 視訊播放器中使用 Min Vid。
 minvidDetails1Copy = 讓您在網路上作別的事情時，同時能在前景播放影片。
+minvidDetails2Copy = 對影片鏈結按右鍵，也可以在選單中找到 Min Vid。
+minvidToursteps0Copy = <p>選擇圖示開始使用。</p>
+minvidToursteps1Copy = <p>一邊看影片一邊繼續上網。</p>
+minvidToursteps2Copy = <p>在小方塊中使用音量調整、播放、暫停、移動影片等控制元件。</p>
 minvidToursteps3Copy = <p>您可以隨時從 Test Pilot 提供意見，或停用 Min Vid。</p>
 minvidContributors0Title = 工程師
 minvidContributors1Title = 工程師主管
 minvidContributors2Title = 實習工程師
 nomore404sSubtitle = Powered by the Wayback Machine
 nomore404sDescription = 對網頁上的死路感到厭倦了嗎？我們會在您尋找的網頁找不到，而 Internet Archive's Wayback Machine 當中有已儲存的版本時讓您知道。
+nomore404sIntroduction = <p>這個實驗很簡單，如果您遇到 404 找不到網頁的錯誤，我們會讓您知道這個網頁在 Internet Archive 的 Wayback Machine 中有沒有存檔的版本可用。</p>
 nomore404sDetails0Copy = 使用 Wayback Machine，減少遇到 404 時的死路。
 nomore404sToursteps1Copy = <p>您可以隨時從 Test Pilot 提供意見，或停用 No More 404s。</p>
 nomore404sContributors1Title = The Internet Archive 的 Wayback Machine 開發者
