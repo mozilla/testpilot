@@ -125,7 +125,10 @@ shareSecondary = 或分享這個鏈結…
 shareEmail = E-mail
 shareCopy = 複製
 eolMessage = <strong>此實驗將於 { $completedDate } 結束。</strong><br/><br/>在那之後您仍可以使用 { $title } 但我們不會再提供更新或技術支援。
+eolDisableMessage = { $title } 實驗已結束，您移除後就無法透過 Test Pilot 再次安裝。
 completedDateLabel = 實驗結束日期: <b>{ $completedDate }</b>
+incompatibleHeader = 此實驗可能無法與您已安裝的附加元件相容。
+incompatibleSubheader = 我們建議您開啟此實驗前 <a>停用下列附加元件</a>:
 newsletterFormEmailPlaceholder = 
   [html/placeholder] 在此輸入您的電子郵件地址
 newsletterFormDisclaimer = 我們只會傳送與 Test Pilot 相關的資訊給您。
@@ -136,6 +139,7 @@ newsletterFooterError = 送出您的電子郵件地址時遇到問題，要再�
 newsletterFooterHeader = 取得最新資訊
 newsletterFooterBody = 接收最新實驗，以及您試用過功能的測試結果的最新資訊。
 newsletterFooterSuccessHeader = 多謝！
+newsletterFooterSuccessBody = 若您先前沒有確認訂閱任何 Mozilla 電子報，您可能會需要進行確認。請檢查信件匣或垃圾信件匣當中是否有來自我們的電子郵件。
 localeWarningTitle = 此實驗僅有英文版。
 localeWarningSubtitle = 您想要的話還是可以安裝。
 # TODO: these strings are not currently localized.
@@ -143,6 +147,7 @@ localeWarningSubtitle = 您想要的話還是可以安裝。
 # and will need python-l20n implementation for coverage
 
 noScriptHeading = 唉呀…
+noScriptMessage = 抱歉，<br>Test Pilot 需要 JavaScript 才能使用。
 noScriptLink = 找出原因
 viewPastExperiments = 檢視先前的實驗
 hidePastExperiments = 隱藏先前的實驗

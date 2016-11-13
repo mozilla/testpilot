@@ -70,6 +70,7 @@ trackingprotectionContributors0Title = Web 開發者
 trackingprotectionContributors1Title = 資深 UX 設計師
 trackingprotectionContributors2Title = 資深 QA 工程師
 universalsearchDescription = 當您在 Awesome Bar 智慧位置列輸入時，立即取得最佳網站的推薦。
+universalsearchMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy">資料</a> 外，以下是您使用 Universal Search 時應該知道的事情:</p><ul><li>我們會收集您如何與 Awesome Bar 智慧網址列互動，包含打過多少字元、點擊結果的類型、以及這些結果在清單中的位置等基本使用資料。</li><li>若您先前設定過 Firefox，要在搜尋列中顯示搜尋建議，安裝 Universal Search 後也將會開啟 <a href="https://www.mozilla.org/privacy/firefox/#searchsuggestions" target="_blank">搜尋建議</a>。<li>當您使用 Awesome Bar 時，我們會傳送您輸入的字詞到我們推薦的搜尋引擎中，我們會匿名地保留常見的搜尋以改善我們的建議品質。</li><li>我們使用了幾個第三方服務來提供 Universal Search。包含 <a href="http://www.bing.com/developers/s/APIBasics.html" target="_blank">Bing</a> 及 <a href="https://developer.yahoo.com/boss/search/" target="_blank">Yahoo</a> 來提供搜尋建議，以及 <a href="http://docs.embed.ly/docs/" target="_blank">Embedly</a> 和 <a href="https://clearbit.com/logo" target="_blank">Clearbit</a> 來提供這些建議的更多資料（如圖片或圖示）。為了在 Awesome Bar 顯示這些建議，Universal Search 可能會直接從 Embedly 和 Clearbit 直接下載圖片，可能會讓這些服務知道您的 IP 地址，以及您要求了哪些圖片。</li></ul>
 universalsearchDetails0Copy = 您打字時，就會跳出知名網站、名人、維基百科條目。
 universalsearchToursteps0Copy = <p>現在可以在同一個地方搜尋與導航。</p>
 universalsearchToursteps1Copy = <p>您打字時，就會出現知名網站的推薦與維基百科條目。</p>
