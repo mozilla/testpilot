@@ -36,8 +36,8 @@ nomore404sSubtitle = Powered by the Wayback Machine
 nomore404sDescription = 對網頁上的死路感到厭倦了嗎？我們會在您尋找的網頁找不到，而 Internet Archive's Wayback Machine 當中有已儲存的版本時讓您知道。
 nomore404sIntroduction = <p>這個實驗很簡單，如果您遇到 404 找不到網頁的錯誤，我們會讓您知道這個網頁在 Internet Archive 的 Wayback Machine 中有沒有存檔的版本可用。</p>
 nomore404sMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy" target="_blank">資料</a> 外，以下是您使用 No More 404s 時應該知道的事情:</p><ul><li>我們會收集您遇到「找不到網頁」（代碼 404）錯誤、該頁面在 Archive.org 上已有存檔、以及您選擇檢視該存檔版本的次數。</li><li>為了提供頁面的快取版本，我們會將找不到的網頁網址傳送到 Archive.org。<a href="https://archive.org/" target="_blank">Archive.org</a> 在 <a href="https://archive.org/about/terms.php" target="_blank">這裡</a> 揭露了他們的隱私權保護政策。<li>我們不會收集您想瀏覽的網頁網址，以及送到 Archive.org 查詢的網址。</li><li>我們可能會將與此實驗相關，您送出給我們的問卷內容、以及加總過的 Telemetry 資料分享給 Internet Archive。</li></ul>
-nomore404sDetails0Copy = 使用 Wayback Machine，減少遇到 404 時的死路。
-nomore404sDetails1Copy = 由我們在 Internet Archive 的好朋友們為您帶來。
+nomore404sDetails0Copy = 使用 Wayback Machine，減少遇到 404 錯誤時的死路。
+nomore404sDetails1Copy = 由我們在 Internet Archive 的好朋友們為您提供。
 nomore404sToursteps0Copy = <p>如日常一般上網即可。若您遇到 404 錯誤頁面，我們就會讓您知道 Wayback Machine 上是否有存檔版本。</p>
 nomore404sToursteps1Copy = <p>您可以隨時從 Test Pilot 提供意見，或停用 No More 404s。</p>
 nomore404sContributors1Title = The Internet Archive 的 Wayback Machine 開發者
@@ -61,7 +61,7 @@ tabcenterDescription = 如果把分頁列從瀏覽器頂端移到旁邊去會怎
 tabcenterIntroduction = <p>Tab Center 可將您的分頁移到瀏覽器的邊邊，暫時藏起來，這樣不需要的時候就不會占用您的畫面空間，需要時也可簡單地展開使用。</p>
 tabcenterMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy">資料</a> 外，以下是您使用 Tab Center 時應該知道的事情:</p><ul><li>為了了解使用情況，我們會收集您多常最大化或釘選 Tab Center 等使用資訊。</li><li>我們也會收集您如何使用分頁，諸如您保持開啟的分頁數量、分頁開啟多久等資訊。</li><li>Tab Center 並不會收集您去過哪些網站，或是分頁內容等資訊。</li></ul>
 tabcenterDetails0Copy = 把分頁丟到邊邊去。
-tabcenterDetails1Copy = 把分頁丟到一邊去，需要的時候再拿出來。
+tabcenterDetails1Copy = 把分頁丟到一邊去，需要的時候再展開來。
 tabcenterDetails2Copy = 重新裝潢、移動家具！Tab Center 可與您最愛的 Firefox 佈景主題相容。
 tabcenterToursteps0Copy = <p>首先，我們把您的標籤放到畫面側邊了。</p>
 tabcenterToursteps1Copy = <p>有很多很多標籤嗎？Tab Center 可讓您搜尋這些分頁。</p>
@@ -77,7 +77,7 @@ trackingprotectionIntroduction = <p>目前為止，Firefox 的追蹤保護功能
 trackingprotectionMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy">資料</a> 外，以下是您使用追蹤保護功能時應該知道的事情:</p><ul><li>追蹤保護功能會在封鎖了追蹤器時提示您提供意見。我們會透過這個提示收集您開啟或關閉了頁面中的追蹤器，或回報問題等基本使用資料。</li><li>當您見到提示時，我們也會收集您所在的頁面、被封鎖的追蹤器網域等資訊，這些資訊可幫助我們了解您何時會遇到問題，以及問題的原因。</li><li>除了追蹤器的網域之外，我們不會收集追蹤器的其他資訊，例如使用的獨特 ID 或設定的 Cookie 等。</li><li>為了找出有哪些追蹤器，我們使用由我們的夥伴 Disconnect 所提供的追蹤器清單，您可在 <a href="https://disconnect.me/trackerprotection" target="_blank">此處</a> 了解 Disconnect 的判斷標準。</li></ul>
 trackingprotectionPrefeedbackcopy = <p>選擇網址列中的盾牌圖示，即可回報網站與追蹤保護功能不相容。</p>
 trackingprotectionDetails0Copy = 在網址列使用所有追蹤保護功能。
-trackingprotectionDetails1Copy = 回報問題並幫助我們排除問題。
+trackingprotectionDetails1Copy = 回報問題並幫助我們排除。
 trackingprotectionToursteps0Copy = <p>這個盾牌表示已開啟追蹤保護，若有斜線就代表已經關閉。</p>
 trackingprotectionToursteps1Copy = <p>告訴我們什麼東西正常，什麼東西不正常。</p>
 trackingprotectionToursteps2Copy = <p>您可以隨時從 Test Pilot 停用追蹤保護。</p>
