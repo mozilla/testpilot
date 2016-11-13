@@ -1,5 +1,5 @@
 activitystreamDescription = Una visualizzazione della cronologia ricca di informazioni e una pagina iniziale completamente ripensata rendono ancora più semplice trovare tutto ciò che serve in Firefox.
-activitystreamIntroduction = <p>Continua a navigare senza perdere il flusso dei tuoi pensieri. Con Activity Stream i tuoi siti preferiti, segnalibri e cronologia recente saranno sempre a portata di mano, mentre la nuova sequenza temporale ti offre una vista d’insieme della tua navigazione.</p>
+activitystreamIntroduction = <p>Continua a navigare senza perdere il filo dei tuoi pensieri. Con Activity Stream i tuoi siti preferiti, segnalibri e cronologia recente saranno sempre a portata di mano, mentre la nuova sequenza temporale ti offre una vista d’insieme della tua navigazione.</p>
 activitystreamMeasurements = <p>In aggiunta ai <a href="/privacy">dati</a> raccolti in tutti gli esperimenti Test Pilot, ecco alcune informazioni utili su quello che accade quando utilizzi Activity Stream:</p><ul> <li>Raccogliamo alcuni dati relativi al modo in cui interagisci con la pagina Nuova scheda e la sequenza temporale, ad esempio il tipo di elemento che selezioni e la sua posizione nella pagina.</li> <li>Raccogliamo alcune informazioni di base che influenzano il funzionamento di Activity Stream, come il numero di segnalibri ed elementi nella cronologia.</li> <li>Per il funzionamento di Activity Stream, raccogliamo metadati sui siti che hai visitato, come immagini e icone, appoggiandoci a un servizio chiamato <a href="http://embed.ly/" target="_blank">Embedly</a>. Inviamo queste richieste attraverso i server Mozilla, in modo che non siano riconducibili a te.</li></ul>
 activitystreamDetails0Copy = Apri una nuova scheda: i tuoi siti preferiti saranno disponibili in un clic.
 activitystreamDetails1Copy = Tieni sotto controllo dove sei stato, senza rischiare di perdere di vista la tua destinazione.
@@ -34,11 +34,11 @@ minvidContributors1Title = Staff Engineer
 minvidContributors2Title = Engineering Intern
 nomore404sSubtitle = Basato su tecnologia Wayback Machine
 nomore404sDescription = Sei stanco di ritrovarti in vicoli ciechi sul Web? Ti avviseremo se esiste una versione della pagina che stavi cercando salvata nella Wayback Machine di Internet Archive.
-nomore404sIntroduction = <p>Questo esperimento è davvero semplice. Se durante la navigazione raggiungi una pagina di errore 404 (pagina non trovata), ti avviseremo se la pagina che stavi cercando è disponibile nella Wayback Machine gestita da Internet Archive.</p>
+nomore404sIntroduction = <p>Questo esperimento è davvero semplice: se durante la navigazione raggiungi una pagina di errore 404 (pagina non trovata), ti avviseremo se la pagina che stavi cercando è disponibile nella Wayback Machine gestita da Internet Archive.</p>
 nomore404sMeasurements = <p>In aggiunta ai <a href="/privacy" target="_blank">dati</a> raccolti in tutti gli esperimenti Test Pilot, ecco alcune informazioni utili su quello che accade quando utilizzi No More 404s:</p><ul> <li>Raccogliamo dati sul numero di volte che incontri una pagina di errore 404 (pagina non trovata), quante volte è disponibile una versione della pagina salvata in Archive.org e quante volte scegli di visualizzarla.</li> <li>Per fornire le versioni archiviate della pagina inviamo l’indirizzo ad Archive.org. <a href="https://archive.org/" target="_blank">Archive.org</a> fornisce la propria informativa sulla privacy in <a href="https://archive.org/about/terms.php" target="_blank">questa pagina</a>.</li> <li>Non raccogliamo gli indirizzi delle pagine che richiedi o gli indirizzi inviati ad Archive.org.</li> <li>Potremmo condividere i risultati dei sondaggi e dati aggregati di telemetria relativi a questo esperimento con Internet Archive.</li></ul>
-nomore404sDetails0Copy = Elimina i vicoli ciechi con Wayback Machine.
+nomore404sDetails0Copy = Basta vicoli ciechi con Wayback Machine.
 nomore404sDetails1Copy = Offerto dagli amici di Internet Archive.
-nomore404sToursteps0Copy = <p>Continua a navigare come hai sempre fatto. Se incontri una pagina di errore 404 (pagina non trovata), ti avviseremo se esiste una versione archiviata della pagina nella Wayback Machine.</p>
+nomore404sToursteps0Copy = <p>Continua a navigare come hai sempre fatto. Quando incontri una pagina di errore 404 (pagina non trovata), ti avviseremo se esiste una versione archiviata della pagina nella Wayback Machine.</p>
 nomore404sToursteps1Copy = <p>Puoi darci la tua opinione in qualunque momento o disattivare No More 404s in Test Pilot.</p>
 nomore404sContributors1Title = Developer, Wayback Machine, The Internet Archive
 nomore404sContributors2Title = Director, Wayback Machine, The Internet Archive
@@ -57,7 +57,7 @@ pageshotToursteps4Copy = <p>Puoi darci la tua opinione in qualunque momento o di
 pageshotContributors0Title = Engineering Manager
 pageshotContributors1Title = Software Engineer
 pageshotContributors2Title = UX Designer
-tabcenterDescription = Ti sei mai chiesto come sarebbe il browser con le schede sul lato? Abbiamo deciso di scoprirlo.
+tabcenterDescription = Ti sei mai chiesto come sarebbe la tua navigazione se il browser disponesse le schede sul lato? Abbiamo deciso di scoprirlo.
 tabcenterIntroduction = <p>Togli di mezzo le tue schede e recupera spazio. Tab Center sposta le tue schede sul lato della finestra del browser, in modo che non siano d’intralcio mentre navighi e allo stesso tempo siano sempre facili da raggiungere quando servono.</p>
 tabcenterMeasurements = <p>In aggiunta ai <a href="/privacy">dati</a> raccolti in tutti gli esperimenti Test Pilot, ecco alcune informazioni utili su quello che accade quando utilizzi Tab Center:</p><ul> <li>Raccogliamo dati relativi all’interazione con Tab Center, come ad esempio la frequenza con cui ingrandisci o blocchi la barra.</li> <li>Raccogliamo dati sull’utilizzo delle schede, come ad esempio il numero di schede aperte contemporaneamente e per quanto tempo rimangono aperte.</li> <li>Tab Center non raccoglie alcuna informazione sui siti visitati o il contenuto delle schede.</li></ul>
 tabcenterDetails0Copy = Metti le tue schede in un angolo.
