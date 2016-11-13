@@ -110,5 +110,6 @@ newsletterFooterSuccessHeader = Tack!
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage
 
+noScriptHeading = Ojdå...
 viewPastExperiments = Visa tidigare experiment
 hidePastExperiments = Dölj tidigare experiment
