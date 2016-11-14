@@ -66,6 +66,11 @@ function buildExperimentsData() {
     const yamlData = file.contents.toString();
     const experiment = YAML.parse(yamlData);
 
+    if (experiment.dev && !config.ENABLE_DEV_CONTENT) {
+      // Exclude dev content if it's not enabled in config
+      return cb();
+    }
+
     // Auto-generate some derivative API values expected by the frontend.
     Object.assign(experiment, {
       url: `/api/experiments/${experiment.id}.json`,
@@ -83,7 +88,9 @@ function buildExperimentsData() {
     }));
 
     index.results.push(experiment);
-    findLocalizableStrings(experiment);
+    if (!experiment.dev) {  // Don't collect strings for dev-only experiments
+      findLocalizableStrings(experiment);
+    }
 
     cb();
   }

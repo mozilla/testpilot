@@ -143,6 +143,15 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
     expect(findByL10nID('testingDescription')).to.have.property('length', 1);
   });
 
+  it('should omit l10n IDs for dev-only content', () => {
+    setExperiment({ dev: true, ...mockExperiment });
+    expect(findByL10nID('testingSubtitleFoo')).to.have.property('length', 0);
+    expect(findByL10nID('testingIntroduction')).to.have.property('length', 0);
+    expect(findByL10nID('testingContributors0Title')).to.have.property('length', 0);
+    expect(findByL10nID('testingDetails0Headline')).to.have.property('length', 0);
+    expect(findByL10nID('testingDetails0Copy')).to.have.property('length', 0);
+  });
+
   it('should render a loading page if no experiments are available', () => {
     expect(subject.find('LoadingPage')).to.have.property('length', 1);
   });

@@ -3,6 +3,7 @@ module.exports = {
   IS_DEBUG: (process.env.NODE_ENV === 'development'),
   USE_HTTPS: (process.env.USE_HTTPS == 1),
   ENABLE_PONTOON: (process.env.ENABLE_PONTOON === '1'),
+  ENABLE_DEV_CONTENT: (process.env.ENABLE_DEV_CONTENT === '1'),
   AVAILABLE_LOCALES: (process.env.ENABLE_DEV_LOCALES === '1') ?
     // All locales on Pontoon for local & dev
     'en-US,ast,bn-BD,cs,de,es-ES,fa,fr,fy-NL,hu,it,ja,kab,pt-BR,ru,sk,sl,sv-SE,tr,uk,zh-CN,zh-TW' :

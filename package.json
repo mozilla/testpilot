@@ -102,7 +102,7 @@
     "url": "git+https://github.com/mozilla/testpilot.git"
   },
   "scripts": {
-    "start": "NODE_ENV=development ENABLE_DEV_LOCALES=1 gulp",
+    "start": "NODE_ENV=development ENABLE_DEV_LOCALES=1 ENABLE_DEV_CONTENT=1 gulp",
     "server": "gulp server",
     "static": "gulp dist-build",
     "docs": "doctoc README.md && doctoc addon/README.md",

@@ -39,6 +39,9 @@ function lookup(obj, path) {
 }
 
 function experimentL10nId(experiment, pieces) {
+  if (experiment.dev) { // For dev-only experiments, data-l10n-id=null is omitted from the DOM
+    return null;
+  }
   if (typeof pieces === 'string') {
     pieces = [pieces];
   }

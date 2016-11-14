@@ -19,8 +19,10 @@ export const allExperimentSelector = createSelector(
 export const onlyLaunchedExperimentSelector = createSelector(
   allExperimentSelector,
   experiments => experiments.filter(experiment => (
-    moment(moment.utc()).isAfter(experiment.launch_date) ||
-    typeof experiment.launch_date === 'undefined'
+    (!experiment.dev)
+    &&
+    (moment(moment.utc()).isAfter(experiment.launch_date) ||
+     typeof experiment.launch_date === 'undefined')
   ))
 );
 
@@ -34,7 +36,6 @@ export const launchedExperimentSelector = store => (
 
 // Return the user's primary language subtag.
 export const localeSelector = store => store.browser.locale;
-
 
 // Passed a locale and set of experiments, filters out the experiments that are
 // blockedlisted in that locale, or grantlisted and not available in that locale.

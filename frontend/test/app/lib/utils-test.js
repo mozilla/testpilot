@@ -78,6 +78,10 @@ describe('app/lib/utils', () => {
     it('looks up array items', () => {
       expect(experimentL10nId(mockExperiment, ['array', '0', 'x'])).to.equal('fooArray0XZ');
     });
+
+    it('should return null for a dev-only experiment', () => {
+      expect(experimentL10nId({ dev: true, ...mockExperiment }, ['string'])).to.equal(null);
+    });
   });
 
 });
