@@ -1,4 +1,5 @@
 activitystreamDescription = A látványos előzménylista és az újragondolt kezdőoldal még könnyebbé teszi, mint valaha, hogy megtalálja amit keres a Firefoxban.
+activitystreamIntroduction = <p>Térjen vissza a böngészéshez anélkül, hogy elfelejtené a gondolatmenetét. Az Activity Stream karnyújtásnyira tartja a legtöbbet látogatott oldalakat, a könyvjelzőket és az előzményeket, minden egyes lapon. Az új idővonal nézet segítségével pedig madártávlatból láthatja a böngészését.</p>
 activitystreamContributors0Title = Szoftverfejlesztő mérnök
 activitystreamContributors1Title = Webfejlesztő mérnök
 activitystreamContributors2Title = Szoftverfejlesztő
