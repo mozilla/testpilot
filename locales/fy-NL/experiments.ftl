@@ -1,5 +1,6 @@
 activitystreamDescription = In rike fisuele skiednisfeed en in opnij opsette startside meitsje it makliker as ea om yn Firefox presys dat te finen wat jo sykje.
 activitystreamIntroduction = <p>Sneup fierder sûnder ûnderbrekking. Activity Stream hâld jo topsites, blêdwizers en resinte skiednis tichteby yn elk nij ljepblêd. En de nije tiidline jout jo yn fûgelflecht in byld fan jo sneupjen.</p>
+activitystreamMeasurements = <p>Neist de <a href="/privacy">gegevens</a> dy't sammele wurde troch alle eksperiminten fan Test Pilot, is it folgjende fan belang as jo Activity Stream brûke:</p><ul> <li>Wy sammelje basis gegevensgebrûk oer hoe't jo omgean mei eksperimintele nij ljepblêd- en tiidlinesiden, lykas hokker eleminten dy't jo oanklikke en de posysje op de side.</li> <li>Wy sammelje ek basisynformaasje oer jo browserprofyl dy't effekt hawwe op Activity Stream, lykas it tal blêdwizers en skiednisitems.</li> <li>Om Activity Stream te leverjen, brûke wy metadata oer websites dy't jo besocht hawwe, bygelyks ôfbyldingen en ikoantjses mei in tsjinst neamd <a href="http://embed.ly/" target="_blank">Embedly</a>. Wy stjoere dizze fersiken troch nei Embedly fia servers fan Mozilla, dus se wurde net mei jo assosjearre.</li></ul>
 activitystreamDetails0Copy = Klik op in nij ljepblêd en jo favorite websites binne noch mar ien klik fierder.
 activitystreamDetails1Copy = Sjoch wêr't jo west binne, sadat jo komme dêr't jo hinne wolle.
 activitystreamToursteps0Copy = <p>Fyn jo topsites, resinte skiednis en blêdwizers as jo in nij ljepblêd iepenje.</p>
@@ -19,6 +20,7 @@ activitystreamContributors10Title = Yngenieurmanager
 activitystreamContributors11Title = Software-yngenieur
 activitystreamContributors12Title = Senior-UX-ûntwerper
 minvidDescription = Hâld fideo's foarop en yn it midden. Min Vid lit jo fideo's fan YouTube en Vimeo yn in lyts finster toane dat op de foargrûn bliuwt as jo sneupe op it web.
+minvidIntroduction = <p>Besjogge jo graach fideo's? En wolle jo ûndertusken graach trochwurkje wylst jo de fideo besjogge? Probearje Min Vid. It is as picture-in-picture wêr ien ôfbylding in fideo is en de oare it folsleine web is.</p><ul> <li><strong>Klik en gean:</strong> Pop up it Min Vid-frame om fideo's op de foargrûn ôf te spyljen wylst jo sneupe.</li> <li><strong>Pleats it wêr't jo it wolle:</strong> Min Vid lit jo it fideoframe oeral hinne op jo desktop fersleepje.</li> <li><strong>Betsjinning wêr't jo se nedich hawwe:</strong> Min Vid befettet betsjinningen om te pauzearjen/ôfspyljen, scrub, sleepje, minimalisearje, en it folume oanpasse yn it frame.</li></ul>
 minvidDetails0Copy = Brûk Min Vid yn fideospilers fan YouTube en Vimeo.
 minvidDetails1Copy = Besjoch fideo op de foargrûn wylst jo oare saken dogge op it web.
 minvidDetails2Copy = Klik rjochts op keppelingen nei video's en fyn dêr Min Vid yn it kontekstmenu.
