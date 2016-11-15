@@ -41,6 +41,7 @@ landingCardTwo = Deneysel özellikleri etkinleştirin
 landingCardThree = Ne düşündüğünüzü bize anlatın
 onboardingMessage = Test Pilotu'nu her zaman bulabilmeniz için araç çubuğunuza bir simge ekledik.
 errorHeading = Hata oluştu!
+errorMessage = Bozuldu galiba bu. <br> Siz daha sonra yeniden gelin.
 notFoundHeader = Dört yüz dört!
 emailOptInDialogTitle = Test Pilotu'na hoş geldiniz!
 emailOptInMessage = Yeni deneyleri öğrenin ve denediğiniz deneylerin test sonuçlarını görün.
@@ -68,6 +69,7 @@ experimentCardManage = Yönet
 experimentCardGetStarted = Bunu deneyin
 experimentCardLearnMore = Daha fazla bilgi al
 experimentPreFeedbackTitle = { $title } geri bildirimi
+experimentPreFeedbackLinkCopy = { $title } deneyi hakkında yorum yapın
 experimentPromoHeader = Kalkışa hazır mısınız?
 experimentPromoSubheader = Firefox'un yeni nesil özelliklerini inşa ediyoruz. Onları denemek için Test Pilotu'nu yükleyin!
 otherExperiments = Bu deneyleri de deneyin
@@ -89,8 +91,14 @@ retireCancelButton = Vazçgeçtim
 pageTitleRetirePage = Firefox Test Pilotu - Test Pilotu'nu kaldır
 retirePageProgressMessage = Kapatılıyor...
 retirePageHeadline = Bizimle uçtuğunuz için teşekkürler!
+retirePageMessage = Umarız deneylerimizden memnun kalmışsınızdır. <br>Yine bekleriz.
+retirePageSurveyButton = Küçük anketimize katılın
+restartIntroLead = Uçuş öncesi kontroller
+restartIntroOne = Tarayıcınızı yeniden başlatın
+restartIntroTwo = Test Pilotu eklentisini bulun
 restartIntroThree = Deneylerinizi seçin
 measurements = Gizliliğiniz
+experimentPrivacyNotice = Buradan { $title } deneyinin topladığı veriler hakkında daha fazla bilgi alabilirsiniz.
 contributorsHeading = Geliştirenler
 version = Sürüm
 changelog = değişiklik günlüğü
@@ -115,7 +123,23 @@ newsletterFormSubmitButton = Kaydol
 newsletterFooterHeader = Haberdar olun
 newsletterFooterBody = Yeni deneylerden haberdar olun ve denediğiniz deneylerin test sonuçlarını görün.
 newsletterFooterSuccessHeader = Teşekkürler!
+localeWarningTitle = Bu deney yalnızca İngilizce olarak kullanılabilir.
+localeWarningSubtitle = İsterseniz yine de etkinleştirebilirsiniz.
+
+# Alternate splash page header for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledHeader = Ayaklarınızı yerden kesme vakti!
+
+# Alternate splash page subheader for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledSubheader = Yeni bir Test Pilotu deneyine hazır mısınız? Birini seçip etkinleştirin, deneyin, ne düşündüğünüzü bize de söyleyin.
+
+# Call to action on the alternate splash page for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledCTA = İlginizi çekmedi mi? <a>Nedenini bize de söyleyin</a>.
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage
 
+noScriptHeading = Haydaa...
+noScriptMessage = Test Pilotu için JavaScript şarttır.<br>Kusura bakmayın.
+noScriptLink = Nedenini öğrenin
+viewPastExperiments = Geçmiş deneyleri göster
+hidePastExperiments = Geçmiş deneyleri gizle
