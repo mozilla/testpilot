@@ -33,7 +33,7 @@ minvidContributors0Title = 工程師
 minvidContributors1Title = 工程師主管
 minvidContributors2Title = 實習工程師
 nomore404sSubtitle = Powered by the Wayback Machine
-nomore404sDescription = 對網頁上的死路感到厭倦了嗎？我們會在您尋找的網頁找不到，而 Internet Archive's Wayback Machine 當中有已儲存的版本時讓您知道。
+nomore404sDescription = 對網頁上的死路感到厭倦了嗎？我們會在您尋找的網頁找不到，而 Internet Archive 的 Wayback Machine 當中有已儲存的版本時讓您知道。
 nomore404sIntroduction = <p>這個實驗很簡單，如果您遇到 404 找不到網頁的錯誤，我們會讓您知道這個網頁在 Internet Archive 的 Wayback Machine 中有沒有存檔的版本可用。</p>
 nomore404sMeasurements = <p>除了所有 Test Pilot 都會收集的 <a href="/privacy" target="_blank">資料</a> 外，以下是您使用 No More 404s 時應該知道的事情:</p><ul><li>我們會收集您遇到「找不到網頁」（代碼 404）錯誤、該頁面在 Archive.org 上已有存檔、以及您選擇檢視該存檔版本的次數。</li><li>為了提供頁面的快取版本，我們會將找不到的網頁網址傳送到 Archive.org。<a href="https://archive.org/" target="_blank">Archive.org</a> 在 <a href="https://archive.org/about/terms.php" target="_blank">這裡</a> 揭露了他們的隱私權保護政策。<li>我們不會收集您想瀏覽的網頁網址，以及送到 Archive.org 查詢的網址。</li><li>我們可能會將與此實驗相關，您送出給我們的問卷內容、以及加總過的 Telemetry 資料分享給 Internet Archive。</li></ul>
 nomore404sDetails0Copy = 使用 Wayback Machine，減少遇到 404 錯誤時的死路。
