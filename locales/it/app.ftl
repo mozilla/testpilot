@@ -145,6 +145,15 @@ newsletterFooterSuccessHeader = Grazie
 newsletterFooterSuccessBody = Se non hai mai confermato prima d’ora l’iscrizione a una newsletter Mozilla, dovrai farlo adesso per completare l’iscrizione. Controlla se hai ricevuto un nuovo messaggio da parte di Mozilla, potrebbe anche essere finito per sbaglio nella cartella dello spam.
 localeWarningTitle = Questo esperimento è disponibile solo in inglese.
 localeWarningSubtitle = Se lo desideri è comunque possibile attivarlo.
+
+# Alternate splash page header for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledHeader = È ora di far decollare questa astronave
+
+# Alternate splash page subheader for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledSubheader = Sei pronto per provare uno degli esperimenti di Test Pilot? Selezionane uno per attivarlo, fai un giro di prova e facci sapere che cosa ne pensi.
+
+# Call to action on the alternate splash page for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledCTA = Non sei interessato? <a>Dicci perché</a>.
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage

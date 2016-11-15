@@ -57,7 +57,7 @@ pageshotToursteps4Copy = <p>Puoi inviare la tua opinione in qualunque momento o 
 pageshotContributors0Title = Engineering Manager
 pageshotContributors1Title = Software Engineer
 pageshotContributors2Title = UX Designer
-tabcenterDescription = Ti sei mai chiesto come sarebbe la tua navigazione se il browser disponesse le schede sul lato? Abbiamo deciso di scoprirlo.
+tabcenterDescription = Ti sei mai chiesto come sarebbe la tua navigazione se il browser visualizzasse le schede sul lato? Abbiamo deciso di scoprirlo.
 tabcenterIntroduction = <p>Togli di mezzo le tue schede e recupera spazio. Tab Center sposta le tue schede sul lato della finestra del browser, in modo che non siano d’intralcio mentre navighi e allo stesso tempo siano sempre facili da raggiungere quando servono.</p>
 tabcenterMeasurements = <p>In aggiunta ai <a href="/privacy">dati</a> raccolti in tutti gli esperimenti Test Pilot, ecco alcune informazioni utili su quello che accade quando utilizzi Tab Center:</p><ul> <li>Raccogliamo dati relativi all’interazione con Tab Center, come ad esempio la frequenza con cui ingrandisci o blocchi la barra.</li> <li>Raccogliamo dati sull’utilizzo delle schede, come ad esempio il numero di schede aperte contemporaneamente e per quanto tempo rimangono aperte.</li> <li>Tab Center non raccoglie alcuna informazione sui siti visitati o il contenuto delle schede.</li></ul>
 tabcenterDetails0Copy = Metti le tue schede in un angolo.
