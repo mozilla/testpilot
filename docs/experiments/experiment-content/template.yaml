@@ -65,6 +65,7 @@ contributors: # repeater field for experiment contribs. copy and paste to loop
 installation_count: 1 # legacy, this is now supplied by telemetry
 created: '2016-09-22T00:07:28.847430Z' # UTM time stamp of experiment launch
 modified: '2016-09-22T16:51:12.188781Z' #UTM time stamp of experiment modification
+completed: '2017-09-22T16:51:12Z' #UTM time stamp of when the experiment will end
 launch_date: '' #UTM time stamp, this will hide the experiment on production servers until after the time stamp.
 order: 0 # where your experiment will appear in the list...lower numbers appear higher
 incompatible: # if your experiment has incompatible add ons, repeat the following syntax, otherwise delete this field
