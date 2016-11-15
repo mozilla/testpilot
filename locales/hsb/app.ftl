@@ -129,12 +129,37 @@ shareEmail = E-mejl
 shareCopy = Kopěrować
 eolMessage = <strong>Tutón eksperiment so { $completedDate }</strong> skónči.<br/><br/>Potom móžeće { $title } wužiwać, ale njeposkićimy wjace aktualizacije abo pomoc.
 eolDisableMessage = Eksperiment { $title } je so skónčił. Hdyž jón wotinstalujeće, njemóžeće wjace jón hišće raz přez Test Pilot instalować.
+completedDateLabel = Kónčny datum eksperimenta: <b>{ $completedDate }</b>
+incompatibleHeader = Tutón eksperiment snano z přidatkami kompatibelny njeje, kotrež sće instalował.
+incompatibleSubheader = Poručamy <a>tute přidatki znjemóžnić</a>, prjedy hač tutón eksperiment zmóžniće:
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Wašu e-mejlowu adresu tu zapisać
 newsletterFormDisclaimer = Sćelemy wam jenož informacije nastupajo Test Pilot.
 newsletterFormPrivacyNotice = Sym přezjedny, zo Mozilla moje daty tak wužiwa, kaž je w <a>tutym pokazu priwatnosće</a> wopisane.
 newsletterFormSubmitButton = Nětko registrować
+newsletterFormSubmitButtonSubmitting = Wotpósćele so...
+newsletterFooterError = Při słanju wašeje e-mejloweje adresy je zmylk wustupił. Hišće raz spytać?
 newsletterFooterHeader = Wostańće na běžnym
 newsletterFooterBody = Zhońće wjace wo nowych eksperimentach a wobhladajće sej testowe wuslědki za eksperimenty, na kotrychž sće so wobdźělił.
+newsletterFooterSuccessHeader = Wulki dźak!
+newsletterFooterSuccessBody = Jeli hišće njejsće abonement powěsćoweho lista Mozilla wobkrućił, dyrbiće to nětko činić. Prošu hladajće do dochadneje e-mejle abo spamoweho filtra za e-mejlku wot nas.
+localeWarningTitle = Tutón eksperiment je jenož w jendźelskej rěči k dispoziciji.
+localeWarningSubtitle = Móžeće jón najebać to zmóžnić, jeli chceće.
+
+# Alternate splash page header for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledHeader = Započńmy nětk!
+
+# Alternate splash page subheader for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledSubheader = Sće hotowy za nowy eksperiment Test Pilot? Wubjerće jedyn, zo byšće jón zmóžnił, testujće jón a zdźělće nam swoje měnjenje.
+
+# Call to action on the alternate splash page for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledCTA = Njejsće zajimowany? <a>Zdźělće nam čehodla nic</a>.
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage
 
+noScriptHeading = Ow, ow...
+noScriptMessage = Test Pilot sej JavaScript wužaduje.<br>To je nam žel.
+noScriptLink = Zhońće čehodla
+viewPastExperiments = Zańdźene eksperimenty sej wobhladać
+hidePastExperiments = Zańdźene eksperimenty schować
