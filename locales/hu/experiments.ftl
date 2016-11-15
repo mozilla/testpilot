@@ -4,6 +4,7 @@ activitystreamDetails0Copy = Kattintson egy új lapra, és a kedvenc oldalai csa
 activitystreamDetails1Copy = Lássa hol volt, hogy eljusson oda, ahová tart.
 activitystreamToursteps0Copy = <p>Találja meg a legtöbbet látogatott oldalait, előzményeit és a könyvjelzőit, amikor új lapot nyit.</p>
 activitystreamToursteps1Copy = <p>Keresse fel az új idővonal nézetet, hogy látványosan böngéssze az előzményeit és a könyvjelzőit.</p>
+activitystreamToursteps2Copy = <p>Bármikor adhat nekünk visszajelzést, vagy kikapcsolhatja az Activity Streamet a Tisztpilótában.</p>
 activitystreamContributors0Title = Szoftverfejlesztő mérnök
 activitystreamContributors1Title = Webfejlesztő mérnök
 activitystreamContributors2Title = Szoftverfejlesztő
