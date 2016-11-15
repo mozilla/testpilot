@@ -186,6 +186,13 @@ newsletterFooterSuccessBody = If you haven't previously confirmed a subscription
 localeWarningTitle = This experiment is only available in English.
 localeWarningSubtitle = You can still enable it if you like.
 
+# Alternate splash page header for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledHeader = Let's get this baby off the ground!
+# Alternate splash page subheader for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledSubheader = Ready to try a new Test Pilot experiment? Select one to enable, take it for a spin, and let us know what you think.
+# Call to action on the alternate splash page for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledCTA = Not interested? <a>Let us know why</a>.
+
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage
