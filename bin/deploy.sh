@@ -34,7 +34,7 @@ fi
 MAX_AGE="600"
 
 HPKP="\"public-key-pins\": \"max-age=300;pin-sha256=\\\"WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=\\\";pin-sha256=\\\"r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E=\\\"\""
-CSP="\"content-security-policy\": \"default-src 'self'; connect-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com https://basket.mozilla.org https://analysis-output.telemetry.mozilla.org; font-src 'self' code.cdn.mozilla.net; form-action 'none'; frame-ancestors 'self'; img-src 'self' https://ssl.google-analytics.com https://www.google-analytics.com; object-src 'none'; script-src 'self' https://ssl.google-analytics.com; style-src 'self' code.cdn.mozilla.net; report-uri /__cspreport__;\""
+CSP="\"content-security-policy\": \"default-src 'self'; connect-src 'self' https://sentry.prod.mozaws.net https://www.google-analytics.com https://ssl.google-analytics.com https://basket.mozilla.org https://analysis-output.telemetry.mozilla.org; font-src 'self' code.cdn.mozilla.net; form-action 'none'; frame-ancestors 'self'; img-src 'self' https://ssl.google-analytics.com https://www.google-analytics.com; object-src 'none'; script-src 'self' https://ssl.google-analytics.com; style-src 'self' code.cdn.mozilla.net; report-uri /__cspreport__;\""
 HSTS="\"strict-transport-security\": \"max-age=31536000; includeSubDomains; preload\""
 TYPE="\"x-content-type-options\": \"nosniff\""
 XSS="\"x-xss-protection\": \"1; mode=block\""
@@ -43,7 +43,7 @@ XSS="\"x-xss-protection\": \"1; mode=block\""
 # enable localization.  Also expires more often.
 if [ "$DEST" = "dev" ]; then
     MAX_AGE="15"
-    CSP="\"content-security-policy\": \"default-src 'self'; connect-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com https://basket.mozilla.org https://analysis-output.telemetry.mozilla.org https://cdn.optimizely.com; font-src 'self' code.cdn.mozilla.net; form-action 'none'; frame-ancestors 'self' https://pontoon.mozilla.org https://app.optimizely.com; img-src 'self' https://pontoon.mozilla.org https://ssl.google-analytics.com https://www.google-analytics.com; object-src 'none'; script-src 'self' https://pontoon.mozilla.org https://ssl.google-analytics.com https://cdn.optimizely.com https://app.optimizely.com; style-src 'self' 'unsafe-inline' https://pontoon.mozilla.org code.cdn.mozilla.net; report-uri /__cspreport__;\""
+    CSP="\"content-security-policy\": \"default-src 'self'; connect-src 'self' https://sentry.prod.mozaws.net https://www.google-analytics.com https://ssl.google-analytics.com https://basket.mozilla.org https://analysis-output.telemetry.mozilla.org https://cdn.optimizely.com; font-src 'self' code.cdn.mozilla.net; form-action 'none'; frame-ancestors 'self' https://pontoon.mozilla.org https://app.optimizely.com; img-src 'self' https://pontoon.mozilla.org https://ssl.google-analytics.com https://www.google-analytics.com; object-src 'none'; script-src 'self' https://pontoon.mozilla.org https://ssl.google-analytics.com https://cdn.optimizely.com https://app.optimizely.com; style-src 'self' 'unsafe-inline' https://pontoon.mozilla.org code.cdn.mozilla.net; report-uri /__cspreport__;\""
 fi
 
 # build version.json if it isn't provided
