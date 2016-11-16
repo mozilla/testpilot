@@ -96,6 +96,7 @@ measurements = Din sekretesspolicy
 version = Version
 lastUpdate = Senast uppdaterad
 contribute = Bidra
+discourse = Discourse
 tourCancelButton = Hoppa över
 tourDoneButton = Klar
 shareEmail = E-post
