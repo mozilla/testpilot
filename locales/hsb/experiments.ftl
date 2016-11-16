@@ -1,3 +1,4 @@
+activitystreamDescription = Grafiski přehlad wašeje historije a nowo wuhotowana startowa strona wosnadnjujetej bóle hač hdy prjedy namakać, za kotrymž w Firefox pytaće.
 activitystreamContributors0Title = Wuwiwar softwary
 activitystreamContributors1Title = Webwuwiwar
 activitystreamContributors2Title = Wuwiwar softwary
