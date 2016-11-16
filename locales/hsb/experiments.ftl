@@ -38,10 +38,13 @@ nomore404sIntroduction = <p>To je lochke. Jeli na 404-stronu storčiće, mjeztym
 nomore404sMeasurements = <p>Nimo <a href="/privacy" target="_blank">datow</a>, kotrež so přez wšě eksperimenty Test Pilot hromadźa, su hišće někotre wěcy, kotrež wy měł wo tym wědźeć, štož so stawa, hdyž No More 404s wužiwaće:</p><ul> <li>Hromadźimy zakładne wužiwanske daty wo tym, kak husto na zmylkowu zdźělenku „Strona njeje so namakała“ (kod 404) storčiće, kak husto pufrowana wersija teje strony na Archive.org eksistuje, a kak husto rozsudźeće, sej pufrowanu wersiju wobhladać.</li> <li>Zo bychmy wam pufrowane wersije stronow k dispoziciji stajili, sćelemy internetne adresy zmylkowych stronow 404 na Archive.org. <a href="https://archive.org/" target="_blank">Archive.org</a> pokazuje swoje prawidła priwatnosće <a href="https://archive.org/about/terms.php" target="_blank">tu</a>.</li><li>Njehromadźimy internetne adresy stronow, kotrež sće wopytał, ani internetne adresy, kotrež na Archive.org sćelemy.</li><li>Móžemy naprašowanske wuslědki, kotrež nam sćeleće a nahromadźene telemetrijowe daty wo tutym eskperimenće z Internet Archive dźělić.</li></ul>
 nomore404sDetails0Copy = Redukujće slepe hasy 404 z Wayback Machine.
 nomore404sDetails1Copy = Słužba našich přećelow pola Internet Archive.
+nomore404sToursteps0Copy = <p>Přehladujće prosće web kaž přeco. Jeli na stronu 404 storčiće, budźemy was informować, hač archiwowana wersija je na Wayback Machine k dispoziciji.</p>
+nomore404sToursteps1Copy = <p>Móžeće nam přeco swoje měnjenje prajić abo More 404s w Test Pilot znjemóžnić.</p>
 nomore404sContributors1Title = Wuwiwar, Wayback Machine, The Internet Archive
 nomore404sContributors2Title = Nawjedowar, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Senior Crawl Engineer, The Internet Archive
 pageshotDescription = Intuitiwne fota wobrazowki direktne z wobhladowaka. Móžeće fota wobrazowki činić, składować a dźělić, mjeztym zo z pomocu Firefox web přehladujeće.
+pageshotIntroduction = <p>Z Page Shot móžeće fota wobrazowki činić, dźělić a wotwołać - bjez toho zo, byšće Firefox wopušćił.</p><ul><li><strong>Lěsyčny napohlad:</strong> Přepytujće miniaturki składowanych fotow wobrazowki</li><li><strong>Inteligentne pytanje:</strong> Pytajće požadane foto wobrazowki z klučnym słowom. Page Shot indikuje titule stronow a tekst we fotach wobrazowki</li> <li><strong>Dźělenje w jednym kroku:</strong> Sćelće swoje foto wobrazowki na socialne medije abo kopěrujće dźělomny wotkaz direktnje horjeka z wokna wobhladowaka.</li></ul>
 pageshotToursteps0Copy = <p>Wubjerće symbol, zo byšće Page Shot wužiwał.</p>
 pageshotContributors0Title = Wuwiwanski manager
 pageshotContributors1Title = Wuwiwar softwary
