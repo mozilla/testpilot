@@ -82,7 +82,21 @@ enableExperimentTransition = Etkinleştiriliyor...
 feedbackSubmitButton = Küçük anketimize katılın
 feedbackCancelButton = Kapat
 feedbackUninstallTitle = Teşekkürler!
+feedbackUninstallCopy = 
+  | Firefox Test Pilotu'na katılımınız bizim için çok 
+  | anlamlı. Lütfen deneylerimizi inceleyin ve yeni 
+  | deneyler için beklemede kalın!
 discussNotifyTitle = Bir saniye...
+discussNotifyMessageAccountless = 
+  | <p>Deneysel bir ruhla yola çıktığımız için harici bir forum servisi kullanıyoruz.
+  | Forumlara katılmak isterseniz ayrı bir 
+  | hesap açmanız gerekecek.</p>
+  | <p>Hesap açmak istemezseniz de her zaman Test 
+  | Pilotu üzerinden geri bildiriminizi paylaşabilirsiniz.
+  | <br>
+  | (Geri bildirimleri gerçekten okuyoruz.)</p>
+discussNotifySubmitButton = Foruma gidelim
+discussNotifyCancelButton = İptal
 retireDialogTitle = Test Pilotu kaldırılsın mı?
 retireMessage = Bu işlem tüm aktif testleri kapatacak, eklentiyi kaldıracak ve hesabınızı sunucularımızdan silecektir.
 retireEmailMessage = E-posta bültenlerinden çıkmak için herhangi bir Test Pilotu e-postasının altındaki <em>abonelikten ayrıl</em> linkine tıklamalısınız.
@@ -108,6 +122,8 @@ contribute = Katkıda bulunun
 bugReports = Hata raporları
 discourse = Discourse
 nowActive = Etkin
+userCount = 
+  [html/title] Bu Deneyin Aktif Kullanıcıları
 tourOnboardingTitle = { $title } etkinleştirildi!
 tourStartButton = Tura katılın
 tourCancelButton = Geç
@@ -117,12 +133,26 @@ userCountContainerAlt = Yeni çıktı!
 highlightPrivacy = Gizliliğiniz
 upgradeNoticeTitle = { $title } için Firefox { $min_release } veya üstü gerekir.
 upgradeNoticeLink = Firefox nasıl güncellenir?
+sharePrimary = Test Pilotu'nu sevdiniz mi? Yeni pilotlar bulmamıza yardım edin.
+shareSecondary = veya bu linki kopyalayıp yapıştırın...
+shareEmail = E-postayla paylaş
+shareCopy = Kopyala
+eolMessage = <strong>Bu deney { $completedDate } tarihinde bitiyor</strong>.<br/><br/>Bu tarihten sonra da { $title } eklentisini kullanabileceksiniz ama artık güncelleme ve destek sunulmayacak.
+eolDisableMessage = { $title } deneyi sonra erdi. Onu kaldırdıktan sonra Test Pilotu üzerinden yeniden yükleme şansınız olmayacak.
+completedDateLabel = Deney bitiş tarihi: <b>{ $completedDate }</b>
+incompatibleHeader = Bu deney, yüklü eklentilerinizle uyumlu olmayabilir.
+incompatibleSubheader = Bu deneyi etkinleştirmeden önce şu eklentileri <a>devre dışı bırakmanızı</a> öneriyoruz:
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] E-posta adresiniz
 newsletterFormDisclaimer = Yalnızca Test Pilotu ile ilgili bilgiler göndereceğiz.
 newsletterFormPrivacyNotice = Bilgilerimi <a>bu gizlilik bildiriminde</a> açıklandığı şekilde Mozilla ile paylaşmayı kabul ediyorum.
 newsletterFormSubmitButton = Kaydol
+newsletterFormSubmitButtonSubmitting = Gönderiliyor...
+newsletterFooterError = E-posta adresiniz gönderilirken bir hata oluştu. Yeniden deneyelim mi?
 newsletterFooterHeader = Haberdar olun
 newsletterFooterBody = Yeni deneylerden haberdar olun ve denediğiniz deneylerin test sonuçlarını görün.
 newsletterFooterSuccessHeader = Teşekkürler!
+newsletterFooterSuccessBody = Daha önce Mozilla ile ilgili bir bültene aboneliğinizi onaylamadıysanız şimdi onaylamanız gerekebilir. Lütfen gelen kutunuzu veya spam filtrenizi kontrol edin.
 localeWarningTitle = Bu deney yalnızca İngilizce olarak kullanılabilir.
 localeWarningSubtitle = İsterseniz yine de etkinleştirebilirsiniz.
 
