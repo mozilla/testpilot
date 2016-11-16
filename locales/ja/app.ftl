@@ -155,6 +155,15 @@ newsletterFooterSuccessHeader = ありがとうございます！
 newsletterFooterSuccessBody = これまでに Mozilla 関連のニュースレターを購読したことがない場合、購読開始の確認が必要となります。お送りした確認メールを受信トレイもしくは迷惑メールフィルタから探してください。
 localeWarningTitle = この実験は英語のみで利用可能です。
 localeWarningSubtitle = お望みなら引き続き有効にしておくこともできます。
+
+# Alternate splash page header for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledHeader = この機能を離陸させ軌道に乗せましょう！
+
+# Alternate splash page subheader for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledSubheader = 新しい Test Pilot の実験を試す準備ができましたか？ どれか選んで有効にし、実際に試してみて、感想を聞かせてください。
+
+# Call to action on the alternate splash page for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledCTA = 興味が湧きませんか？ <a>理由を聞かせてください</a>。
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage
