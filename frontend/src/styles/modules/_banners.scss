@@ -5,8 +5,8 @@
   }
 
   @include respond-to('medium') {
-    font-size: 3.5 * $font-unit;
-    line-height: 3.5 * $line-unit;
+    font-size: 3.3 * $font-unit;
+    line-height: 3.3 * $line-unit;
   }
 
   @include respond-to('small') {
@@ -16,6 +16,31 @@
 
   font-weight: 300;
   text-shadow: 0 2px 0 $transparent-black-3;
+
+  // TODO: font size should probably not be language specific,
+  // but this should go away once we move to a single click install/enable flow
+  // and german is particularly verbose
+  html[lang='de'] & {
+    @include respond-to('big') {
+      font-size: 3.2 * $font-unit;
+      line-height: 3.2 * $line-unit;
+    }
+
+    @include respond-to('medium') {
+      font-size: 2.4 * $font-unit;
+      line-height: 2.5 * $line-unit;
+    }
+
+    @include respond-to('small') {
+      font-size: 2.6 * $font-unit;
+      line-height: 2.6 * $line-unit;
+    }
+
+    .lead-in {
+      font-size: 2.2 * $font-unit;
+      line-height: 2.2 * $line-unit;
+    }
+  }
 
   .lead-in {
     font-size: 2.7 * $font-unit;
@@ -129,12 +154,12 @@
 
   .intro-text {
     @include respond-to('big') {
-      margin-right: $grid-unit * 2;
+      margin: 0 $grid-unit * 2;
       top: -4px;
     }
 
     @include respond-to('medium') {
-      margin-right: $grid-unit;
+      margin: 0 $grid-unit;
       top: -4px;
     }
 
