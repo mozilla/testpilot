@@ -149,6 +149,15 @@ newsletterFooterSuccessHeader = 谢谢！
 newsletterFooterSuccessBody = 如果您以前没有确认过订阅 Mozilla 相关的新闻邮件，您可能需要完成它。请检查您的收件箱或垃圾邮件箱，找到我们发给您的电子邮件。
 localeWarningTitle = 此实验仅提供英语版本。
 localeWarningSubtitle = 您仍可以再启用它，随您心意。
+
+# Alternate splash page header for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledHeader = 让我们飞上蓝天吧！
+
+# Alternate splash page subheader for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledSubheader = 准备好参与新的 Test Pilot 实验了吗？选择一项启用它，之后让我们了解您的看法。
+
+# Call to action on the alternate splash page for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledCTA = 不感兴趣？也请<a>跟我们聊聊看法</a>。
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage
