@@ -3,6 +3,9 @@ activitystreamIntroduction = <p>Přehladujće zaso bjez přetorhnjenja. Z Activi
 activitystreamMeasurements = <p>Nimo <a href="/privacy">datow</a>, kotrež so přez wšě eksperimenty Test Pilot hromadźa, su hišće někotare wěcy, kotrež wy měł wo tym wědźeć, štož so stawa, hdyž Activity Stream wužiwaće:</p><ul> <li>Hromadźimy zakładne wužiwanske daty wo tym, kak z eksperimentelnymi stronam za nowe rajtarki a časowu lajstu wobchadźeće. na kotre elementy kliknjeće a hdźež su na stronje.</li> <li>Hromadźimy tež zakładne informacije wo wašim profilu wobhladowaka, kotrež Activity Stream nastupaja. kaž na přikład ličbu zapołožkow a zapiski historije.</li> <li>Zo bychmy Activity Stream poskićili, wotwołujemy metadaty wo websydłach, kotrež sće wopytał, na př. wobrazy a symbole, z pomocu słužby z mjenom <a href="http://embed.ly/" target="_blank">Embedly</a>. Sćelemy tute naprašowanja na Embedly přez serwery Mozilla, zo njebychu z wami zwjazane.</li></ul>
 activitystreamDetails0Copy = Klikńće na nowy rajtark a waše najlubše websydła su jenož jedne kliknjenje zdalene.
 activitystreamDetails1Copy = Hladajće, hdźež sće był, zo byšće tam dóšoł, hdźež so podawaće.
+activitystreamToursteps0Copy = <p>Namakajće swoje najwažniše websydła, najnowšu historiju a zapołožki, hdyž nowy rajtark wočinjeće.</p>
+activitystreamToursteps1Copy = <p>Wopytajće nowy napohlad časoweje lajsty, zo byšće swoju historiju a swoje zapołožki wizuelnje přehladował.</p>
+activitystreamToursteps2Copy = <p>Móžeće přeco swoje měnjenje prajić abo Activity Stream w Test Pilot znjemóžnić.</p>
 activitystreamContributors0Title = Wuwiwar softwary
 activitystreamContributors1Title = Webwuwiwar
 activitystreamContributors2Title = Wuwiwar softwary
