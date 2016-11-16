@@ -70,6 +70,7 @@ tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
 trackingprotectionDescription = Chceće nam při polěpšowanju slědowanskeho škita pomhać? Tutón eksperiment zmóžnja slědowanski škit za přehladowanje dohromady a skići spěšnu móžnosć, problemy při přehladowanju zdźělić.
+trackingprotectionPrefeedbackcopy = <p>Zo byšće websydło zdźělił, hdźež slědowanski škit njefunguje, wubjerće tarčowy symbol w lajsće, kotraž URL websydła pokazuje.</p>
 trackingprotectionDetails0Copy = Mějće přistup na wšě funkcije slědowanskeho škita w adresowym polu.
 trackingprotectionDetails1Copy = Zdźělće problem a pomhajće nam jón rozrisać.
 trackingprotectionToursteps0Copy = <p>Taflička podawa, zo slědowanski škit je zapinjeny. Přešmórnjena taflička rěka, zo je wupinjeny.</p>
