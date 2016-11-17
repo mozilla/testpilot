@@ -1,39 +1,87 @@
 siteName = Firefox Test Pilot
+
+
+# Page titles, put in the <title> HTML tag.
+[[ pageTitle ]]
+
 pageTitleDefault = Firefox Test Pilot
 pageTitleLandingPage = Firefox Test Pilot
 pageTitleExperimentListPage = Firefox Test Pilot - Експерименти
 pageTitleExperiment = Firefox Test Pilot - { $title }
-footerLinkContribute = Допомогти
+
+
+
+# Links in the footer.
+[[ footerLink ]]
+
 footerLinkCookies = Куки
 footerLinkPrivacy = Приватність
 footerLinkTerms = Умови
 footerLinkLegal = Права
 footerLinkAbout = Про Test Pilot
+
+
+
+# Items in the menu.
+[[ menu ]]
+
 home = Домівка
 menuTitle = Налаштування
 menuWiki = Вікі Test Plot
 menuDiscuss = Обговорити Test Pilot
-menuLogout = Вийти
 menuRetire = Видалити Test Pilot
-landingFxaAlternateButton = Увійти
+
+
+
+# The splash on the homepage.
+[[ landing ]]
+
 landingIntroLead = Перейдіть по той бік . . .
 landingIntroOne = Тестуйте нові функції.
-landingFxaGetStartedButton = Розпочніть із обліковим записом Firefox
+landingExperimentsTitle = Спробуйте найновіші експериментальні функції
+
+
+
+# Related to the installation of the Test Pilot add-on.
+[[ landingInstall ]]
+
 landingInstallButton = Встановити додаток Test Pilot
 landingInstallingButton = Встановлення...
-landingInstallMessage = Test Pilot встановлено!
 landingInstalledButton = Оберіть ваші функції
+
+
+
+# Homepage messaging for users not on Firefox or with an old version of Firefox.
+[[ landingFirefox ]]
+
 landingDownloadFirefoxDesc = (Test Pilot доступний для Firefox на Windows, OS X та Linux)
 landingUpgradeDesc = Test Pilot потребує Firefox 45 або вище.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Оновити Firefox
 landingDownloadFirefoxSubTitle = Безкоштовне завантаження
-landingExperimentsTitle = Спробуйте найновіші експериментальні функції
+
+
+
+# A section of the homepage explaining how Test Pilot works.
+[[ landingCard ]]
+
 landingCardListTitle = Розпочніть за 3, 2, 1
 landingCardOne = Отримайте додаток Test Pilot
 landingCardTwo = Увімкніть експериментальні функції
 landingCardThree = Розкажіть нам, що ви думаєте
+
+
+
+# Error message pages.
+[[ error ]]
+
 notFoundHeader = Чотири Нуль Чотири!
+
+
+
+# A modal prompt to sign up for the Test Pilot newsletter.
+[[ emailOptIn ]]
+
 emailOptInDialogTitle = Вітаємо у Test Pilot!
 emailOptInMessage = Дізнайтеся про нові експерименти та перегляньте результати експериментів, якими ви користувалися.
 emailValidationError = Будь ласка, введіть дійсну адресу електронної пошти!
@@ -42,6 +90,12 @@ emailOptInSkip = Пропустити
 emailOptInConfirmationTitle = Повідомлення надіслано
 emailOptInSuccessMessage2 = Дякуємо!
 emailOptInConfirmationClose = Вперед до експериментів...
+
+
+
+# A listing of all Test Pilot experiments.
+[[ experimentsList ]]
+
 experimentListPageHeader = Готові до запуску!
 experimentListPageSubHeader = Оберіть функції, які ви хочете спробувати. <br> Повертайтеся швидше для нових експериментів.
 experimentListEnabledTab = Увімкнено
@@ -49,19 +103,21 @@ experimentListJustLaunchedTab = Щойно запущено
 experimentListJustUpdatedTab = Щойно оновлено
 experimentListEndingTomorrow = Закінчується завтра
 experimentListEndingSoon = Скоро закінчується
-isEnabledStatusMessage = { $title } увімкнено.
-participantCount = <span>{ $installation_count }</span> учасників
+
+
+
+# An individual experiment in the listing of all Test Pilot experiments.
+[[ experimentCard ]]
+
 experimentCardManage = Керувати
 experimentCardGetStarted = Розпочати
 experimentCardLearnMore = Докладніше
-experimentPromoHeader = Готові до запуску?
-otherExperiments = Також спробуйте ці експерименти
-giveFeedback = Залишити відгук
-disableHeader = Вимкнути експеримент?
-disableExperiment = Вимкнути { $title }
-disableExperimentTransition = Вимикаємо...
-enableExperiment = Увімкнути { $title }
-enableExperimentTransition = Вмикаємо...
+
+
+
+# A modal prompt shown when a user disables an experiment.
+[[ feedback ]]
+
 feedbackSubmitButton = Взяти участь в невеличкому опитуванні
 feedbackCancelButton = Закрити
 feedbackUninstallTitle = Дякуємо!
@@ -69,16 +125,36 @@ feedbackUninstallCopy =
   | Ваша участь у Firefox Test Pilot багато
   | значить! Будь ласка, перегляньте наші інші експерименти,
   | та слідкуйте за оновленнями, бо скоро буде більше!
+
+
+
+# A modal prompt telling a user that they are about to go to an external forum for discussion.
+[[ discussNotify ]]
+
 discussNotifySubmitButton = Перейти до форуму
 discussNotifyCancelButton = Скасувати
-retireDialogTitle = Видалити Test Pilot?
-retireSubmitButton = Продовжити
-retireCancelButton = Скасувати
-pageTitleRetirePage = Firefox Test Pilot - Видалити Test Pilot
-retirePageProgressMessage = Вимкнення...
-retirePageHeadline = Дякуємо за політ!
-restartIntroOne = Перезапустіть ваш браузер
-restartIntroThree = Оберіть ваші експерименти
+
+
+
+# A splash shown on top of the experiment page when Test Pilot is not installed.
+[[ experimentPromo ]]
+
+experimentPromoHeader = Готові до запуску?
+
+
+
+# The experiment detail page. 
+[[ experimentPage ]]
+
+isEnabledStatusMessage = { $title } увімкнено.
+participantCount = <span>{ $installation_count }</span> учасників
+otherExperiments = Також спробуйте ці експерименти
+giveFeedback = Залишити відгук
+disableHeader = Вимкнути експеримент?
+disableExperiment = Вимкнути { $title }
+disableExperimentTransition = Вимикаємо...
+enableExperiment = Увімкнути { $title }
+enableExperimentTransition = Вмикаємо...
 measurements = Ваша приватність
 experimentPrivacyNotice = Ви можете дізнатися більше про збір даних для { $title } тут.
 contributorsHeading = Для вас від
@@ -86,37 +162,104 @@ version = Версія
 changelog = журнал змін
 lastUpdate = Останнє оновлення
 bugReports = Повідомлення про помилки
-nowActive = Активно
-userCount = 
-  [html/title] Активних користувачів цього експерименту
 tourOnboardingTitle = { $title } увімкнено!
-tourCancelButton = Пропустити
 tourDoneButton = Готово
 userCountContainerAlt = Щойно запущено!
 highlightPrivacy = Ваша приватність
+
+
+
+# Shown when an experiment requires a version of Firefox newer than the user's.
+[[ upgradeNotice ]]
+
 upgradeNoticeTitle = { $title } потребує Firefox { $min_release } чи новішої.
 upgradeNoticeLink = Як оновити Firefox.
+
+
+
+# Shown while uninstalling Test Pilot.
+[[ uninstall ]]
+
+retireDialogTitle = Видалити Test Pilot?
+retireSubmitButton = Продовжити
+retireCancelButton = Скасувати
+pageTitleRetirePage = Firefox Test Pilot - Видалити Test Pilot
+retirePageProgressMessage = Вимкнення...
+retirePageHeadline = Дякуємо за політ!
+
+
+
+# Shown to users after installing Test Pilot if a restart is required.
+[[ restartIntro ]]
+
+restartIntroOne = Перезапустіть ваш браузер
+restartIntroThree = Оберіть ваші експерименти
+
+
+
+# Shown on a page presented to users three days after installing their first experiment.
+[[ share ]]
+
 shareEmail = Ел. пошта
 shareCopy = Копіювати
+
+
+
+# Shown on pages of retired experiments.
+[[ eol ]]
+
 eolDisableMessage = Експеримент { $title } завершився. Щойно ви видалите його, ви не зможете його перевстановити через Test Pilot ще раз.
 completedDateLabel = Дата закінчення експерименту: <b>{ $completedDate }</b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
 incompatibleHeader = Цей експеримент може бути несумісним із додатками, які у вас встановлені.
 incompatibleSubheader = Ми радимо <a>вимкнути ці додатки</a> перед активацією цього експерименту:
+
+
+
+# A form prompting the user to sign up for the Test Pilot Newsletter.
+[[ newsletterForm ]]
+
 newsletterFormEmailPlaceholder = 
   [html/placeholder] Ваша е-пошта тут
 newsletterFormDisclaimer = Ми будемо надсилати вам лише інформацію, яка стосується Test Pilot.
 newsletterFormPrivacyNotice = Я погоджуюсь з тим, як Mozilla поводиться з моїми даними згідно з <a>цим повідомленням про приватність</a>.
 newsletterFormSubmitButtonSubmitting = Надсилаємо...
+
+
+
+# A section of the footer containing a newsletter signup form.
+[[ newsletterFooter ]]
+
 newsletterFooterHeader = Залишатися в курсі
 newsletterFooterSuccessHeader = Дякуємо!
 newsletterFooterSuccessBody = Якщо ви досі не підтвердили підписку на новини про Mozilla, ви ще можете це зробити. Перевірте свою пошту або теку спаму на наявність листа від нас.
+
+
+
+# A warning shown to users viewing an experiment that is only available in English.
+[[ localeWarning ]]
+
 localeWarningTitle = Цей експеримент доступний лише англійською мовою.
 localeWarningSubtitle = Ви все одно можете увімкнути його, якщо хочете.
-# TODO: these strings are not currently localized.
-# They are served by the python static dir
-# and will need python-l20n implementation for coverage
+
+
+
+# Shown to users who do not have JavaScript enabled.
+[[ noscript ]]
 
 noScriptHeading = Ой ой...
 noScriptLink = Дізнатися, чому
+
+
+
+# Text of a button to toggle visibility of a list of past experiments.
+[[ pastExperiments ]]
+
 viewPastExperiments = Переглянути минулі експерименти
 hidePastExperiments = Приховати минулі експерименти
+
