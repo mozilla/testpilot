@@ -251,6 +251,10 @@ sharePrimary = Test Pilot を気に入ってもらえましたか？ 新人を�
 shareSecondary = あるいは単純にこのリンクをコピー＆ペーストしてください...
 shareEmail = メール
 shareCopy = コピー
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } は { $completedDate } に終了します
+eolNoticeLink = 詳細
 eolDisableMessage = { $title } の実験は終了しました。一度削除すると Test Pilot を通じて再度インストールすることはできません。
 completedDateLabel = 実験終了日: <b>{ $completedDate }</b>
 
