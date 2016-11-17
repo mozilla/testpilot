@@ -241,13 +241,6 @@ sharePrimary = Meie jo wol oer Test Pilot? Help ús mear testers te finen.
 shareSecondary = of kopiearje ienfâldichwei dizze keppeling…
 shareEmail = E-mailadres
 shareCopy = Kopiearje
-
-
-
-# Shown on pages of retired experiments.
-[[ eol ]]
-
-eolMessage = <strong>Dit eksperimint einiget op { $completedDate }</strong>.<br/><br/>Dêrnei kinne jo jo noch hieltyd { $title } brûke, mar wy leverje net langer fernijingen of stipe.
 eolDisableMessage = It eksperimint{ $title } is einige. As jo it de-ynstallearje, kinne jo it net wer ynstallearje fia Test Pilot.
 completedDateLabel = Eindatum eksperimint: <b>{ $completedDate }</b>
 
