@@ -251,13 +251,6 @@ sharePrimary = Szereti a Tesztpilótát? Segítsen nekünk néhány újoncot tal
 shareSecondary = vagy csak másolja és illessze be ezt a hivatkozást…
 shareEmail = E-mail
 shareCopy = Másolás
-
-
-
-# Shown on pages of retired experiments.
-[[ eol ]]
-
-eolMessage = <strong>Ez a kísérlet ekkor befejeződik: { $completedDate }</strong>. <br/><br/>Utána is fogja tudni használni ezt: { $title }, de nem fogunk további frissítéseket és támogatást adni.
 eolDisableMessage = A(z) { $title } kísérlet véget ért. Ha eltávolítja, akkor többé nem fogja tudni újra telepíteni a Tesztpilótán keresztül.
 completedDateLabel = Kísérlet záródátuma: <b>{ $completedDate }</b>
 
