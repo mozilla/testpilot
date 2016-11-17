@@ -242,13 +242,6 @@ sharePrimary = ¿Préstate Test Pilot? Ayúdamos a alcontrar xente nuevo.
 shareSecondary = o namái copia y apiega esti enllaz...
 shareEmail = Corréu
 shareCopy = Copiar
-
-
-
-# Shown on pages of retired experiments.
-[[ eol ]]
-
-eolMessage = <strong>Esti esperimentu va finar el { $completedDate }</strong>.<br/><br/>Dempués entá sedrás a usar { $title } pero nun forniremos anovamientos o sofitu.
 eolDisableMessage = Finó l'esperimentu de { $title }. Namái lu desinstales, nun sedrás a reinstalalu de nueves pente Test Pilot.
 completedDateLabel = Data fin d'esperimentu: <b>{ $completedDate }</b>
 
