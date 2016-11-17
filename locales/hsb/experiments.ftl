@@ -83,6 +83,7 @@ trackingprotectionContributors0Title = Webwuwiwar
 trackingprotectionContributors1Title = Seniorski designer UX
 trackingprotectionContributors2Title = Seniorski wuwiwar kwalitneho zawěsćenja
 universalsearchDescription = Dostańće poručenja za najlěpše websydła, mjeztym zo do inteligentneho adresoweho pola zapisujeće.
+universalsearchIntroduction = <p>Wućehńće spěšnišo najlěpše z weba z pomocu Universal Search. Zapisajće prosće někotre znamješka do swojeho inteligentneho adresoweho pola a najbóle woblubowane websydła, wosoby a nastawki Wikipedije dadźa so za waše přehladowanske wjeselo wotwołać.</p>
 universalsearchDetails0Copy = Woblubowane sydła, wosoby a nastawki Wikipedije so při zapisowanju jewja.
 universalsearchToursteps0Copy = <p>Móžeće nětko pytać a na městnje nawigować.</p>
 universalsearchToursteps1Copy = <p>Poručenja za woblubowane websydła a nastawki Wikipedije so při zapisowanju jewja.</p>
