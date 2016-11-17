@@ -14,7 +14,6 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { Provider } from 'react-redux';
 
 import './lib/ga-snippet';
-import './lib/optimizely-snippet';
 
 import { setupAddonConnection } from './lib/addon';
 import createStore from './store';
