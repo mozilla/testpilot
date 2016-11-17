@@ -322,36 +322,38 @@ export class ExperimentDetail extends React.Component {
                       }
                       </section>}
                     </div>}
-                    {hasAddon && <section className="stats-section" data-hook="active-user">
-                      <table className="stats"><tbody>
-                        <tr data-hook="version-container">
-                          <td data-l10n-id="version">Version</td>
-                          <td>
-                            <span data-hook="version">{version}</span>
-                            {changelog_url && <span>&nbsp;<a data-l10n-id="changelog" data-hook="changelog-url" href={changelog_url}>changelog</a>, </span>}
-                            <a className="showTour" data-l10n-id="tourLink" onClick={e => this.showTour(e)} href="#">tour</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td data-l10n-id="lastUpdate">Last Update</td>
-                          <td data-hook="modified-date">{modified}</td>
-                        </tr>
-                        <tr>
-                          <td data-l10n-id="contribute">Contribute</td>
-                          <td><a data-hook="contribute-url" href={contribute_url}>{contribute_url}</a></td>
-                        </tr>
+                    {!graduated && <div>
+                      {hasAddon && <section className="stats-section" data-hook="active-user">
+                        <table className="stats"><tbody>
+                          <tr data-hook="version-container">
+                            <td data-l10n-id="version">Version</td>
+                            <td>
+                              <span data-hook="version">{version}</span>
+                              {changelog_url && <span>&nbsp;<a data-l10n-id="changelog" data-hook="changelog-url" href={changelog_url}>changelog</a>, </span>}
+                              <a className="showTour" data-l10n-id="tourLink" onClick={e => this.showTour(e)} href="#">tour</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-l10n-id="lastUpdate">Last Update</td>
+                            <td data-hook="modified-date">{modified}</td>
+                          </tr>
+                          <tr>
+                            <td data-l10n-id="contribute">Contribute</td>
+                            <td><a data-hook="contribute-url" href={contribute_url}>{contribute_url}</a></td>
+                          </tr>
 
-                        <tr>
-                          <td data-l10n-id="bugReports">Bug Reports</td>
-                          <td><a data-hook="bug-report-url" href={bug_report_url}>{bug_report_url}</a></td>
-                        </tr>
+                          <tr>
+                            <td data-l10n-id="bugReports">Bug Reports</td>
+                            <td><a data-hook="bug-report-url" href={bug_report_url}>{bug_report_url}</a></td>
+                          </tr>
 
-                        <tr>
-                          <td data-l10n-id="discourse">Discourse</td>
-                          <td><a data-hook="discourse-url" href={discourse_url}>{discourse_url}</a></td>
-                        </tr>
-                      </tbody></table>
-                    </section>}
+                          <tr>
+                            <td data-l10n-id="discourse">Discourse</td>
+                            <td><a data-hook="discourse-url" href={discourse_url}>{discourse_url}</a></td>
+                          </tr>
+                        </tbody></table>
+                      </section>}
+                    </div>}
                     <section className="contributors-section">
                       <h3 data-l10n-id="contributorsHeading">Brought to you by</h3>
                       <ul className="contributors">
@@ -366,13 +368,15 @@ export class ExperimentDetail extends React.Component {
                         ))}
                       </ul>
                     </section>
-                    {hasAddon && <div data-hook="active-user">
-                      {measurements && <section data-hook="measurements-container"
-                          className={classnames('measurements', { highlight: highlightMeasurementPanel })}>
-                        <h3 data-l10n-id="measurements">Your privacy</h3>
-                        <div data-hook="measurements-html" data-l10n-id={this.l10nId('measurements')} className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
-                        {privacy_notice_url && <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-l10n-args={JSON.stringify({ title })} data-hook="privacy-notice-url" href={privacy_notice_url}>You can learn more about the data collection for <span data-hook="title">{title}</span> here.</a>}
-                      </section>}
+                    {!graduated && <div>
+                      {hasAddon && <div data-hook="active-user">
+                        {measurements && <section data-hook="measurements-container"
+                            className={classnames('measurements', { highlight: highlightMeasurementPanel })}>
+                          <h3 data-l10n-id="measurements">Your privacy</h3>
+                          <div data-hook="measurements-html" data-l10n-id={this.l10nId('measurements')} className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
+                          {privacy_notice_url && <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-l10n-args={JSON.stringify({ title })} data-hook="privacy-notice-url" href={privacy_notice_url}>You can learn more about the data collection for <span data-hook="title">{title}</span> here.</a>}
+                        </section>}
+                      </div>}
                     </div>}
                   </div>
                 </div>

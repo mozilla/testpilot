@@ -91,6 +91,69 @@ contributors:
 installation_count: 39943
 created: '2016-04-28T03:57:32.270681Z'
 modified: '2016-07-20T15:42:28.873321Z'
+completed: '2016-11-30T16:00:00.000000Z'
+eol_warning: We will automatically disable the Universal Search experiment and report the results when it ends.
+graduation_report: >
+  <img src="/static/images/experiments/universal-search/experiments_experimentdetail/6/d/6d0ff50eff9223f0d0cc58c5aa5d0c81_image_1462827811_0995.jpg" alt="universal search preview" />
+  <p>Universal Search was one of the three inaugural experiments that launched 
+  with Test Pilot in May 2016. We wanted to learn if users would click on results 
+  directly in the Awesome Bar. The short answer is: yes! When results were relevant, 
+  users would click, and they told us the interaction was valuable.</p>
+  <img src="/static/images/experiments/universal-search/experiments_experimentdetail/8/6/8675c7bf31054abdaf58b47850a1365d_image_1462827811_0451.jpg" alt="universal search preview" />
+  <p>The Universal Search add-on turned on search suggestions in the Awesome Bar 
+  and removed the standalone search bar. Most importantly, Universal Search inserted 
+  a single search result directly into the top spot in the Awesome Bar for many user 
+  searches. At launch, we served two types of results: top-level domains 
+  (such as Facebook.com, Amazon.com, Youtube.com, etc), and specific Wikipedia article 
+  pages pertaining to a user query.</p>
+  <p>For the first two months, we showed users a result approximately 20% of the
+  time they typed in the Awesome Bar, and users clicked on a displayed result
+  about 10% of the time. In mid-July, we made a significant change to exclude
+  showing a search result if the destination page was already in the user’s
+  history. We expected this to dramatically reduce the frequency of results
+  shown, and it did. Results displayed fell approximately 2/3, from 20% to 7%.
+  What we didn’t expect was that the percentage of results clicked would also
+  fall: we showed fewer results, and our click-through rate was worse.
+  Intuitively this made sense. The duplicates we removed would include many
+  sites that users revisit habitually, so our previously higher click-through
+  rate included many clicks stolen from history navigation.</p>
+  <p>In October 2016, we added a third result type, rich movie cards, which we
+  hypothesized would be shown less often but clicked more frequently than the
+  other types. A breakdown of clicks by result type showed that Wikipedia pages
+  were shown most and clicked least. Top-level domains were the most consistent
+  performer. Movie Cards had the least amount of test data, but outperformed
+  Wikipedia pages. In aggregate, our click-through-rate for search results
+  settled around 7% by the end of the experiment. In the graphs below, we have a
+  data gap from July through the first week of August where we upgraded Test
+  Pilot Telemetry.</p>
+  <p>Besides Telemetry data, we also collected user sentiment via surveys. Users
+  who left the experiment early spoke to a few themes. Some mentioned
+  performance or stability issues, and we made some early fixes. Many users who
+  left told us they wanted separate search and Awesome Bars: their learned
+  habits were hard to overcome. Many who left also cited poor result quality.
+  Search isn’t easy. Our better relevancy on top-level domains (even after de-
+  duping) probably indicated we were short-cutting users to sites they already
+  knew they wanted to visit.</p>
+  <p>However, some of the most telling, representative survey feedback came from
+  users who stayed. Universal Search had a high retention rate, and of the users
+  who remained:</p>
+  <ul>
+  <li>65% agreed that Universal Search results were meaningful, and</li>
+  <li>60% agreed that Universal Search helped them complete tasks faster.</li>
+  </ul>
+  <p>In conclusion, Universal Search outperformed our expectations. We asked a
+  simple question: would users click on results in the Awesome Bar. We had
+  surprisingly high click-through rate for serving a mere three results types,
+  and user sentiment was quite positive. The prototype we built was not a
+  complete product experience, but it was enough to meet our learning goals, and
+  we will now retire the experiment. If we tried a similar experiment again,
+  we’d pursue better result relevancy and more diverse result types. As part of
+  this first experiment, we did not test alternate UX treatments to see if we
+  could affect interaction with results, or improve user acceptance of the
+  combined Awesome Bar for those users who preferred separate bars. These are
+  questions we may examine in future experiments.</p>
+  <div class="float-right"><strong>-Javaun Moradi, Product Manager</strong></div>
+
 order: 7
 locales:
   - 'en'
