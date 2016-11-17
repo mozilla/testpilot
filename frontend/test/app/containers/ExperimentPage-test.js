@@ -50,6 +50,7 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
       thumbnail: '/thumbnail.png',
       introduction: '<p class="test-introduction">Introduction!</p>',
       measurements: '<p class="test-measurements">Measurements</p>',
+      graduation_report: '<p class="test-graduation">Off to college!</p>',
       description: 'Description',
       pre_feedback_copy: null,
       contribute_url: 'https://example.com/contribute',
@@ -516,6 +517,10 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
           expect(findByL10nID('completedDateLabel').length).to.equal(1);
           expect(findByL10nID('userCountContainer').length).to.equal(0);
           expect(findByL10nID('userCountContainerAlt').length).to.equal(0);
+        });
+
+        it('displays the graduation report', () => {
+          expect(subject.find('.graduation-report').length).to.equal(1);
         });
 
         describe('with experiment enabled', () => {

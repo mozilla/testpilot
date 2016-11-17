@@ -118,7 +118,7 @@ description: >
 
 ## `introduction`
 
-A short introductioni of the experiment, displayed on top of the experiment detail page. Required, localized, HTML required.
+A short introduction of the experiment, displayed on top of the experiment detail page. Required, localized, HTML required.
 
 ```yaml
 introduction: >
@@ -233,7 +233,7 @@ modified: '2016-01-01T00:00:00.000000Z'
 
 ## `completed`
 
-UTM-formatted date indicating the time the experiment will be retired. Used to calculate labels like "Ending Soon". Optional.
+UTM-formatted date indicating the time the experiment will be retired. Used to calculate labels like "Ending Soon". Optional. Note: should include timezone to ensure experiment completes at the same time everywhere.
 
 ```yaml
 completed: '2016-01-01T00:00:00.000000Z'
@@ -407,6 +407,24 @@ pre_feedback_copy: >
 ```
 
 ![Example pre-feedback prompt](img/pre-feedback.png)
+
+## `graduation_report`
+
+When an experiment graduates, the following replaces the introduction and detail images sections on the experiment details page.
+
+Should be wrapped in html tags. [While not yet localized, we may retain a l10n agency to localize as needed](https://github.com/mozilla/testpilot/issues/1829).
+Generally optional, but required before the experiment graduates.
+
+```yaml
+graduation_report: >
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
+    suscipit, nam commodi excepturi error modi.</p>
+    <ul>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
+      suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
+      cupiditate vitae praesentium eveniet unde totam, architecto molestiae?</li>
+  </ul>
+```
 
 
 ## `notifications`

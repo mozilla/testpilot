@@ -169,7 +169,7 @@ export class ExperimentDetail extends React.Component {
   }
 
   render() {
-    const { experiment, experiments, installed, isDev, hasAddon, setExperimentLastSeen, clientUUID } = this.props;
+    const { experiment, experiments, installed, isAfterCompletedDate, isDev, hasAddon, setExperimentLastSeen, clientUUID } = this.props;
 
     // Show the loading animation if experiments haven't been loaded yet.
     if (experiments.length === 0) { return <LoadingPage />; }
@@ -193,7 +193,7 @@ export class ExperimentDetail extends React.Component {
     const { title, version, contribute_url, bug_report_url, discourse_url,
             introduction, measurements, privacy_notice_url, changelog_url,
             thumbnail, subtitle, survey_url, contributors, details,
-            min_release } = experiment;
+            min_release, graduation_report } = experiment;
 
     // Set the timestamp for when this experiment was last seen (for
     // ExperimentRowCard updated/launched banner logic)
@@ -201,6 +201,7 @@ export class ExperimentDetail extends React.Component {
 
     const surveyURL = buildSurveyURL('givefeedback', title, installed, clientUUID, survey_url);
     const modified = formatDate(experiment.modified);
+    const graduated = isAfterCompletedDate(experiment);
 
     let statusType = null;
     if (experiment.error) {
@@ -298,7 +299,9 @@ export class ExperimentDetail extends React.Component {
                     </section>
                     {!hasAddon && <div data-hook="inactive-user">
                       {!!introduction && <section className="introduction" data-hook="introduction-container">
+                      {!graduated &&
                         <div data-l10n-id={this.l10nId('introduction')} data-hook="introduction-html" dangerouslySetInnerHTML={createMarkup(introduction)}></div>
+                      }
                       </section>}
                     </div>}
                     {hasAddon && <section className="stats-section" data-hook="active-user">
@@ -355,8 +358,8 @@ export class ExperimentDetail extends React.Component {
                     </div>}
                   </div>
                 </div>
-
-                <div className="details-description">
+                {!graduated &&
+                  <div className="details-description">
                   {this.renderIncompatibleAddons()}
                   {this.renderLocaleWarning()}
                   {this.renderEolBlock()}
@@ -386,7 +389,11 @@ export class ExperimentDetail extends React.Component {
                       <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-hook="privacy-notice-url">You can learn more about the data collection for <span data-hook="title">{title}</span> here.</a>
                     </section>}
                   </div>}
-                </div>
+                  </div>}
+                {graduated &&
+                  <div className="details-description">
+                    <section className="graduation-report" dangerouslySetInnerHTML={createMarkup(graduation_report)}/>
+                  </div>}
               </div>
             </div>
           </div>
