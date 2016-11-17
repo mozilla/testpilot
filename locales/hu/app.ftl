@@ -155,6 +155,15 @@ newsletterFooterSuccessHeader = Köszönjük!
 newsletterFooterSuccessBody = Ha korábban nem erősítette meg a Mozillához kapcsolódó hírlevél feliratkozását, akkor lehet hogy meg kell tennie. Ellenőrizze a Beérkezett üzenetek mappáját vagy a spam-szűrőjét az e-mailünk után.
 localeWarningTitle = Ez a kísérlet csak angolul érhető el.
 localeWarningSubtitle = Attól még bekapcsolhatja, ha szeretné.
+
+# Alternate splash page header for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledHeader = Emeljük fel a kicsikét a földről!
+
+# Alternate splash page subheader for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledSubheader = Kész kipróbálni a legújabb Tesztpilóta kísérletet? Válasszon egyet a bekapcsoláshoz, vigye el egy körre, és tudassa velünk mit gondol.
+
+# Call to action on the alternate splash page for users who have installed Test Pilot, but no experiments.
+experimentsListNoneInstalledCTA = Nem érdekli? <a>Tudassa miért</a>.
 # TODO: these strings are not currently localized.
 # They are served by the python static dir
 # and will need python-l20n implementation for coverage
