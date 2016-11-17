@@ -57,6 +57,7 @@ pageshotContributors0Title = Wuwiwanski manager
 pageshotContributors1Title = Wuwiwar softwary
 pageshotContributors2Title = UX-designer
 tabcenterDescription = Kak by było, hdy njebychu rajtarki horjeka, ale na boku wobhladowaka byli? My smy to spytali!
+tabcenterIntroduction = <p>Přesuńće swoje rajtarki z puća. Tab Center suwa waše rajtarki na bok wokna wašeho wobhladowaka, zo njebyšće widźomne byli, hdyž je njetrjebaće, ale z druheje strony dadźa so lochko pokazać, hdyž je trjebaće.</p>
 tabcenterDetails0Copy = Suńće swoje rajtarki nabok.
 tabcenterDetails1Copy = Schowajće te rajtarki, doniž je njetrjebaće.
 tabcenterDetails2Copy = Přesuńće meble a wuhotujće je nowo! Tab Center dźěła z wašimi najlubšimi drastami Firefox.
