@@ -36,10 +36,6 @@ class App extends Component {
 
     const experimentsPath = 'experiments/';
 
-    // These are used to expose page state for Optimizely, testing, etc.
-    window.testPilotPathname = pathname;
-    window.testPilotHasAddon = hasAddon;
-
     if (pathname === '/') {
       const installedCount = Object.keys(installed).length;
       const anyInstalled = installedCount > 0;
@@ -99,19 +95,12 @@ function sendToGA(type, dataIn) {
       document.location = data.outboundURL;
     }
   };
-  sendToOptimizely(data.eventCategory + '/' + data.eventAction + '/' + data.eventLabel);
   if (window.ga && ga.loaded) {
     data.hitType = type;
     data.hitCallback = hitCallback;
     ga('send', data);
   } else {
     hitCallback();
-  }
-}
-
-function sendToOptimizely(evt) {
-  if (window.optimizely) {
-    window.optimizely.push(['trackEvent', evt]);
   }
 }
 
