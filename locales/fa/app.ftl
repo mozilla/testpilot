@@ -241,13 +241,6 @@ sharePrimary = عاشق خلبان آزمایشی شدید؟ به ما در پی
 shareSecondary = یا فقط این پیوند را رونوشت و جای‌گذاری کنید…
 shareEmail = رایانامه
 shareCopy = رونوشت
-
-
-
-# Shown on pages of retired experiments.
-[[ eol ]]
-
-eolMessage = <strong>آزمایش در تاریخ { $completedDate } تمام می‌شود</strong>.<br/><br/>پس از آن شما می‌توانید از { $title } استفاده کنید ولی ما پشتیبانی یا بروزرسانی‌ای فراهم نخواهیم کرد.
 eolDisableMessage = آزمایش { $title } تمام شده است. زمانی که حذف‌اش کنید، دیگر قادر به نصب آن از طریق خلبان آزمایشی نخواهید بود.
 completedDateLabel = تاریخ پایان آزمایش: { $completedDate }
 
