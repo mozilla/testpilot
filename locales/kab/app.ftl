@@ -1,60 +1,134 @@
 siteName = Firefox Test Pilot
+
+
+# Page titles, put in the <title> HTML tag.
+[[ pageTitle ]]
+
 pageTitleDefault = Firefox Test Pilot
 pageTitleLandingPage = Firefox Test Pilot
 pageTitleExperiment = Firefox Test Pilot - { $title }
-footerLinkContribute = Ttekki
+
+
+
+# Links in the footer.
+[[ footerLink ]]
+
 footerLinkCookies = Inagan n tuqqna
 footerLinkPrivacy = Tabaḍnit
 footerLinkTerms = Tiwtilin
 footerLinkLegal = Usḍif
 footerLinkAbout = Ɣef Test Pilot
+
+
+
+# Items in the menu.
+[[ menu ]]
+
 home = Asebter agejdan
 menuTitle = Iɣewwaṛen
 menuWiki = Awiki Test Pilot
 menuDiscuss = Mmeskay ɣef Test Pilot
 menuFileIssue = Azen ugur
-menuLogout = Ffeɣ
 menuRetire = Kkes Test Pilot
-landingFxaAlternateButton = Kcem
+
+
+
+# The splash on the homepage.
+[[ landing ]]
+
 landingIntroLead = Wali ugar…
 landingIntroOne = Sekyed timahilin timaynutin.
 landingIntroTwo = Ḥku-yaɣ-d ayen d-ufiḍ.
 landingIntroThree = Mudd afus i Firefox akken ad yaẓ ar zdat.
-landingFxaGetStartedButton = Bdu s umiḍan Firefox
 landingLegalNotice = Ma tkemleḍ, ad tqebleḍ s wudem usrid  <a>Tiwtilin n useqdec</a> akked <a>Tsertit tabaḍnit</a> n Test Pilot.
-landingInstallHeader = Sider azegrir sakin senker-it!
+landingExperimentsTitle = Sekyed amaynut i d-yeffɣen seg ulabo
+
+
+
+# Related to the installation of the Test Pilot add-on.
+[[ landingInstall ]]
+
 landingInstallButton = Sebded azegrir Test Pilot
 landingInstallingButton = Asebded...
-landingInstallMessage = Test Pilot yebded!
 landingInstalledButton = Fren timahilin inek
+
+
+
+# Homepage messaging for users not on Firefox or with an old version of Firefox.
+[[ landingFirefox ]]
+
 landingRequiresDesktop = Akken ad tesqedceḍ Test Pilot yessefk ad tesbeddeḍ Firefox ɣef uselkim inek Windows, Mac ou Linux
 landingDownloadFirefoxDesc = (Test Pilot yella kan i Firefox Windows, OS X akked Linux)
 landingUpgradeDesc = Test Pilot yesra Firefox 45 neɣ ugar.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Leqqem Firefox
 landingDownloadFirefoxSubTitle = Asider baṭel
-landingExperimentsTitle = Sekyed amaynut i d-yeffɣen seg ulabo
+
+
+
+# A section of the homepage explaining how Test Pilot works.
+[[ landingCard ]]
+
 landingCardListTitle = Bdu di 3, 2, 1
 landingCardOne = Awi azegrir Test Pilot
 landingCardTwo = Rmed timahilin tirmitanin
 landingCardThree = Ini-yaɣ-d ayen tettxemmimeḍ
+
+
+
+# A modal prompt to sign up for the Test Pilot newsletter.
+[[ emailOptIn ]]
+
 emailOptInDialogTitle = Ansuf ɣeṛ Test Pilot!
 emailOptInSkip = Suref
 emailOptInConfirmationTitle = Imayl ittwaciyeɛ
 emailOptInSuccessMessage2 = Tanemirt-ik
+
+
+
+# A listing of all Test Pilot experiments.
+[[ experimentsList ]]
+
 experimentListEnabledTab = Irmed
 experimentListJustLaunchedTab = Ikker tura akka
 experimentListJustUpdatedTab = Ittwalqem tura akka
-isEnabledStatusMessage = { $title } ittwarmed.
-participantCount = <span>{ $installation_count }</span> imttekkiyen
+
+
+
+# An individual experiment in the listing of all Test Pilot experiments.
+[[ experimentCard ]]
+
 experimentCardManage = Sefrek
 experimentCardGetStarted = Bdu
 experimentCardLearnMore = Issin ugar
+
+
+
+# A modal prompt shown before the feedback survey for some experiments.
+[[ experimentPreFeedback ]]
+
 experimentPreFeedbackLinkCopy = Fk-ed  tuɣalin n usuddem ɣef urmitan { $title }
+
+
+
+# The experiment detail page. 
+[[ experimentPage ]]
+
+isEnabledStatusMessage = { $title } ittwarmed.
+participantCount = <span>{ $installation_count }</span> imttekkiyen
+
+
+
+# A form prompting the user to sign up for the Test Pilot Newsletter.
+[[ newsletterForm ]]
+
 newsletterFormDisclaimer = Ak-d-nazen talɣut icudden ar Test Pilot.
 newsletterFormSubmitButton = Jerred tura
+
+
+
+# A section of the footer containing a newsletter signup form.
+[[ newsletterFooter ]]
+
 newsletterFooterHeader = Qqim akked umaynut
-# TODO: these strings are not currently localized.
-# They are served by the python static dir
-# and will need python-l20n implementation for coverage
 
