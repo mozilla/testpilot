@@ -168,6 +168,24 @@ export class ExperimentDetail extends React.Component {
     return null;
   }
 
+  renderEolBlock() {
+    const { experiment, isAfterCompletedDate } = this.props;
+    if (!experiment.completed || isAfterCompletedDate(experiment)) { return null; }
+
+    const completedDate = formatDate(experiment.completed);
+    const title = `${experiment.title} is ending on ${completedDate}`;
+
+    return (
+      <Warning titleL10nId="eolIntroMessage"
+               titleL10nArgs={ JSON.stringify({ title: experiment.title, completedDate }) }
+               title={ title }>
+        { experiment.eol_warning }
+        <div className="small-spacer" />
+        <a href="/about" data-l10n-id="eolNoticeLink" target="_blank">Learn more</a>
+      </Warning>
+    );
+  }
+
   render() {
     const { experiment, experiments, installed, isAfterCompletedDate, isDev, hasAddon, setExperimentLastSeen, clientUUID } = this.props;
 
@@ -360,9 +378,9 @@ export class ExperimentDetail extends React.Component {
                 </div>
                 {!graduated &&
                   <div className="details-description">
+                  {this.renderEolBlock()}
                   {this.renderIncompatibleAddons()}
                   {this.renderLocaleWarning()}
-                  {this.renderEolBlock()}
                   {hasAddon && <div data-hook="active-user">
                     {!!introduction && <section className="introduction" data-hook="introduction-container">
                       <div data-hook="introduction-html" data-l10n-id={this.l10nId('description')} dangerouslySetInnerHTML={createMarkup(introduction)}></div>
@@ -548,23 +566,6 @@ export class ExperimentDetail extends React.Component {
       <div className="experiment-controls">
         <a onClick={e => this.highlightPrivacy(e)} className="highlight-privacy" data-l10n-id="highlightPrivacy">Your privacy</a>
         <button onClick={e => this.installExperiment(e)} style={{ minWidth: progressButtonWidth }} id="install-button"  className={classnames(['button', 'default'], { 'state-change': isEnabling })}><span className="state-change-inner"></span><span data-l10n-id="enableExperimentTransition" className="transition-text">Enabling...</span><span data-l10n-id="enableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Enable {title}</span></button>
-      </div>
-    );
-  }
-
-  renderEolBlock() {
-    const { experiment, isAfterCompletedDate } = this.props;
-    if (!experiment.completed || isAfterCompletedDate(experiment)) { return null; }
-
-    const title = experiment.title;
-    const completedDate = formatDate(experiment.completed);
-
-    return (
-      <div className="eol-block">
-        <div data-l10n-id="eolMessage" data-l10n-args={JSON.stringify({ title, completedDate })}>
-          <strong>This experiment is ending on {completedDate}</strong>.<br/><br/>
-          <span>After then you will still be able to use {title} but we will no longer be providing updates or support.</span>
-        </div>
       </div>
     );
   }

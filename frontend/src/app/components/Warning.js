@@ -4,7 +4,7 @@ export default class Warning extends React.Component {
   renderSubtitle() {
     if (this.props.subtitle) {
       return (
-        <p data-l10n-id={this.props.subtitleL10nId}>{this.props.subtitle}</p>
+        <p data-l10n-id={this.props.subtitleL10nId} data-l10n-args={this.props.subtitleL10nArgs}>{this.props.subtitle}</p>
       );
     }
     return null;
@@ -14,7 +14,7 @@ export default class Warning extends React.Component {
     if (this.props.title) {
       return (
         <header>
-          <h3 data-l10n-id={this.props.titleL10nId}>{this.props.title}</h3>
+          <h3 data-l10n-id={this.props.titleL10nId} data-l10n-args={this.props.titleL10nArgs}>{this.props.title}</h3>
           {this.renderSubtitle()}
         </header>
       );

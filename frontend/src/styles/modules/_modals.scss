@@ -106,6 +106,8 @@
 
     &.warning {
       background: $warning-red-light;
+      border: 0;
+      border-radius: $small-border-radius $small-border-radius 0 0;
       color: $white;
     }
   }

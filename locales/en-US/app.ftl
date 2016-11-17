@@ -189,9 +189,9 @@ shareSecondary = or just copy and paste this link...
 shareEmail = E-mail
 shareCopy = Copy
 
-# Shown on pages of retired experiments.
-[[eol]]
-eolMessage = <strong>This experiment is ending on {$completedDate}</strong>.<br/><br/>After then you will still be able to use {$title} but we will no longer be providing updates or support.
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = {$title} is ending on {$completedDate}
+eolNoticeLink = Learn more
 eolDisableMessage = The {$title} experiment has ended. Once you uninstall it you won't be able to re-install it through Test Pilot again.
 completedDateLabel = Experiment End Date: <b>{$completedDate}</b>
 
