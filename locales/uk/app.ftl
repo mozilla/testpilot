@@ -202,12 +202,6 @@ restartIntroThree = Оберіть ваші експерименти
 
 shareEmail = Ел. пошта
 shareCopy = Копіювати
-
-
-
-# Shown on pages of retired experiments.
-[[ eol ]]
-
 eolDisableMessage = Експеримент { $title } завершився. Щойно ви видалите його, ви не зможете його перевстановити через Test Pilot ще раз.
 completedDateLabel = Дата закінчення експерименту: <b>{ $completedDate }</b>
 
