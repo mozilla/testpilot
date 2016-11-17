@@ -16,33 +16,32 @@ contribute_url: 'https://github.com/mozilla/universal-search'
 bug_report_url: 'https://github.com/mozilla/universal-search/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/universal-search'
 privacy_notice_url: 'https://github.com/mozilla/universal-search/blob/master/docs/metrics.md'
-measurements: >
-  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot
-    experiments, here are the key things you should know about what is happening
-    when you use Universal Search:</p>
-  <ul>
-    <li>We collect basic usage data regarding how you interact with the Awesome
-      Bar (address bar), such as the number of characters typed, the types of
-      results that you click, and their position in the results list.</li>
-    <li>If you previously configured Firefox to display search suggestions in
-      the Search Bar, installing Universal Search will enable <a
-      href="https://www.mozilla.org/privacy/firefox/#searchsuggestions"
-      target="_blank">search suggestions</a> in the Awesome Bar.</li>
-    <li>When you use the Awesome Bar, we send the terms you type to our
-      recommendation engine. We keep anonymous logs of popular searches to
-      improve the quality of our recommendations.</li>
-    <li>To provide Universal Search, we use a few third-party services. We use
-      <a href="http://www.bing.com/developers/s/APIBasics.html"
-      target="_blank">Bing</a> and <a
-      href="https://developer.yahoo.com/boss/search/" target="_blank">Yahoo</a>
-      to provide recommendations, and <a href="http://docs.embed.ly/docs/"
-      target="_blank">Embedly</a> and <a href="https://clearbit.com/logo"
-      target="_blank">Clearbit</a> to provide additional data (such as images or
-      icons) about those recommendations. To display the recommendations in the
-      Awesome Bar, Universal Search may download those images directly from
-      Embedly and Clearbit, which may allow those services to see your IP address
-      and the image requested.</li>
-  </ul>
+measurements:
+  - >
+    We collect basic usage data regarding how you interact with the Awesome
+    Bar (address bar), such as the number of characters typed, the types of
+    results that you click, and their position in the results list.
+  - >
+    If you previously configured Firefox to display search suggestions in
+    the Search Bar, installing Universal Search will enable <a
+    href="https://www.mozilla.org/privacy/firefox/#searchsuggestions"
+    target="_blank">search suggestions</a> in the Awesome Bar.</li>
+  - >
+    When you use the Awesome Bar, we send the terms you type to our
+    recommendation engine. We keep anonymous logs of popular searches to
+    improve the quality of our recommendations.
+  - >
+    To provide Universal Search, we use a few third-party services. We use
+    <a href="http://www.bing.com/developers/s/APIBasics.html"
+    target="_blank">Bing</a> and <a
+    href="https://developer.yahoo.com/boss/search/" target="_blank">Yahoo</a>
+    to provide recommendations, and <a href="http://docs.embed.ly/docs/"
+    target="_blank">Embedly</a> and <a href="https://clearbit.com/logo"
+    target="_blank">Clearbit</a> to provide additional data (such as images or
+    icons) about those recommendations. To display the recommendations in the
+    Awesome Bar, Universal Search may download those images directly from
+    Embedly and Clearbit, which may allow those services to see your IP address
+    and the image requested.
 xpi_url: 'https://s3-us-west-2.amazonaws.com/universal-search/universal-search.xpi'
 addon_id: universal-search@mozilla.com
 gradient_start: '#01BDAD'

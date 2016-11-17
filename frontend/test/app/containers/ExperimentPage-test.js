@@ -49,7 +49,9 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
       version: '1.0',
       thumbnail: '/thumbnail.png',
       introduction: '<p class="test-introduction">Introduction!</p>',
-      measurements: '<p class="test-measurements">Measurements</p>',
+      measurements: [
+        'Measurement 0'
+      ],
       description: 'Description',
       pre_feedback_copy: null,
       contribute_url: 'https://example.com/contribute',
@@ -138,8 +140,10 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
     expect(findByL10nID('testingDetails0Copy')).to.have.property('length', 1);
 
     // Fields only available when the add-on is installed.
-    subject.setProps({ hasAddon: true });
-    expect(findByL10nID('testingMeasurements')).to.have.property('length', 1);
+      subject.setProps({ hasAddon: true });
+
+    // The measurements section is rendered twice, for responsiveness reasons.
+    expect(findByL10nID('testingMeasurements0')).to.have.property('length', 2);
     expect(findByL10nID('testingDescription')).to.have.property('length', 1);
   });
 

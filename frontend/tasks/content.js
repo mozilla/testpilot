@@ -55,6 +55,7 @@ function buildExperimentsData() {
     }
   }
 
+
   function generateFTL() {
     return strings.reduce((a, b) => {
       const value = b.value.replace(/\r?\n|\r/g, '').replace(/\s+/g, ' ');

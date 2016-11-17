@@ -25,19 +25,16 @@ contribute_url: 'https://github.com/meandavejustice/min-vid'
 bug_report_url: 'https://github.com/meandavejustice/min-vid/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/min-vid'
 privacy_notice_url: 'https://github.com/meandavejustice/min-vid/blob/master/docs/metrics.md'
-measurements: >
-  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot
-    experiments, here are the key things you should know about what is happening
-    when you use Min Vid:</p>
-  <ul>
-    <li>We collect usage data when you engage with the context menu, experiment
-      icon and player controls.</li>
-    <li>We also collect data on the number of times you encounter a playable
-      video, the number of times you played the video and the video service that
-      provided the video. This helps us understand how useful our users are
-      finding the experiment.</li>
-    <li>We do not collect information about the specific videos you encounter.</li>
-  </ul>
+measurements:
+  - >
+    We collect usage data when you engage with the context menu, experiment
+    icon and player controls.
+  - >
+    We also collect data on the number of times you encounter a playable
+    video, the number of times you played the video and the video service that
+    provided the video. This helps us understand how useful our users are
+    finding the experiment.
+  - We do not collect information about the specific videos you encounter.
 xpi_url: 'https://testpilot.firefox.com/files/min-vid/latest'
 addon_id: '@min-vid'
 gradient_start: '#FED66F'
