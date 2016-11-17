@@ -171,12 +171,6 @@ restartIntroThree = Vyberte si svoje experimenty
 [[ share ]]
 
 sharePrimary = Páči sa vám Test Pilot? Povedzte o ňom ďalším ľuďom.
-
-
-
-# Shown on pages of retired experiments.
-[[ eol ]]
-
 completedDateLabel = Dátum ukončenia experimentu: <b>{ $completedDate }</b>
 
 
