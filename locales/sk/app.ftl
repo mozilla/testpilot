@@ -93,6 +93,7 @@ errorHeading = Upps!
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = Víta vás Test Pilot!
+emailOptInMessage = Dozviete sa informácie o nových experimentoch a uvidíte výsledky testov doplnkov, ktoré ste skúšali.
 emailValidationError = Zadajte, prosím, platnú e-mailovú adresu!
 
 # LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
@@ -136,6 +137,7 @@ feedbackUninstallTitle = Ďakujeme!
 # A modal prompt telling a user that they are about to go to an external forum for discussion.
 [[ discussNotify ]]
 
+discussNotifyTitle = Ešte sekundu...
 discussNotifySubmitButton = Prejsť na fórum
 discussNotifyCancelButton = Zrušiť
 
@@ -145,6 +147,7 @@ discussNotifyCancelButton = Zrušiť
 [[ experimentPreFeedback ]]
 
 experimentPreFeedbackTitle = { $title } - spätná väzba
+experimentPreFeedbackLinkCopy = Poskytnite nám spätnú väzbu o experimente { $title }.
 
 
 
@@ -152,6 +155,7 @@ experimentPreFeedbackTitle = { $title } - spätná väzba
 [[ experimentPage ]]
 
 isEnabledStatusMessage = Experiment { $title } je aktivovaný!
+installErrorMessage = Ojoj. Experiment { $title } nemohol byť aktivovaný. Skúste to znova neskôr.
 participantCount = <span>{ $installation_count }</span> používateľov
 otherExperiments = Vyskúšajte aj tieto experimenty
 giveFeedback = Poskytnúť spätnú väzbu
@@ -185,6 +189,7 @@ upgradeNoticeLink = Ako aktualizovať Firefox.
 # Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
+retireDialogTitle = Odinštalovať Test Pilot?
 retireSubmitButton = Pokračovať
 retireCancelButton = Zrušiť
 pageTitleRetirePage = Firefox Test Pilot - Odinštalovanie
@@ -259,6 +264,8 @@ experimentsListNoneInstalledCTA = Nemáte záujem? <a>Povedzte nám prečo</a>.
 [[ noscript ]]
 
 noScriptHeading = Hups...
+noScriptMessage = Test Pilot vyžaduje JavaScript.<br>Ospravedlňujeme sa za problémy.
+noScriptLink = Zistite prečo
 
 
 
