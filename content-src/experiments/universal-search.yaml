@@ -106,6 +106,10 @@ graduation_report: >
   searches. At launch, we served two types of results: top-level domains 
   (such as Facebook.com, Amazon.com, Youtube.com, etc), and specific Wikipedia article 
   pages pertaining to a user query.</p>
+  <figure>
+  <img src="/static/images/experiments/universal-search/graduation/results_1.png" />
+  <figcaption>Percentage of featured cards shown and taken during the experiment.</figcaption>
+  </figure>
   <p>For the first two months, we showed users a result approximately 20% of the
   time they typed in the Awesome Bar, and users clicked on a displayed result
   about 10% of the time. In mid-July, we made a significant change to exclude
@@ -117,6 +121,9 @@ graduation_report: >
   Intuitively this made sense. The duplicates we removed would include many
   sites that users revisit habitually, so our previously higher click-through
   rate included many clicks stolen from history navigation.</p>
+  <img src="/static/images/experiments/universal-search/graduation/results_2.png" />
+  <figcaption>Card types shown and selected. We added movie cards in early October.</figcaption>
+  </figure>
   <p>In October 2016, we added a third result type, rich movie cards, which we
   hypothesized would be shown less often but clicked more frequently than the
   other types. A breakdown of clicks by result type showed that Wikipedia pages
@@ -126,6 +133,9 @@ graduation_report: >
   settled around 7% by the end of the experiment. In the graphs below, we have a
   data gap from July through the first week of August where we upgraded Test
   Pilot Telemetry.</p>
+  <img src="/static/images/experiments/universal-search/graduation/results_3.png" />
+  <figcaption>Results from one of our feedbck surveys.</figcaption>
+  </figure>
   <p>Besides Telemetry data, we also collected user sentiment via surveys. Users
   who left the experiment early spoke to a few themes. Some mentioned
   performance or stability issues, and we made some early fixes. Many users who
