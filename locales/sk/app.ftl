@@ -75,6 +75,13 @@ landingCardThree = Povedzte nám váš názor
 
 
 
+# Shown after the user installs the Test Pilot add-on.
+[[ onboarding ]]
+
+onboardingMessage = Do vášho panela nástrojov sme umiestnili ikonu, aby ste mali Test Pilot vždy po ruke.
+
+
+
 # Error message pages.
 [[ error ]]
 
@@ -101,6 +108,7 @@ emailOptInSuccessMessage2 = Ďakujeme!
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
+experimentListEnabledTab = Aktivovaný
 experimentListJustLaunchedTab = Práve spustený
 experimentListJustUpdatedTab = Práve aktualizovaný
 experimentListEndingTomorrow = Zajtra končí
@@ -147,6 +155,9 @@ isEnabledStatusMessage = Experiment { $title } je aktivovaný!
 participantCount = <span>{ $installation_count }</span> používateľov
 otherExperiments = Vyskúšajte aj tieto experimenty
 giveFeedback = Poskytnúť spätnú väzbu
+disableHeader = Ukončiť experiment?
+disableExperiment = Ukončiť experiment { $title }
+disableExperimentTransition = Ukončovanie...
 enableExperiment = Aktivovať { $title }
 enableExperimentTransition = Aktivácia...
 measurements = Vaše súkromie
@@ -158,6 +169,7 @@ tourLink = prehliadka
 lastUpdate = Posledná aktualizácia
 tourOnboardingTitle = Experiment { $title } je aktivovaný!
 tourDoneButton = Hotovo
+userCountContainerAlt = Práve spustený!
 highlightPrivacy = Vaše súkromie
 
 
@@ -177,6 +189,7 @@ retireSubmitButton = Pokračovať
 retireCancelButton = Zrušiť
 pageTitleRetirePage = Firefox Test Pilot - Odinštalovanie
 retirePageProgressMessage = Ukončovanie experimentov...
+retirePageHeadline = Vďaka za let!
 retirePageMessage = Dúfame, že vás experimentovanie bavilo. <br> Radi vás opäť uvidíme.
 retirePageSurveyButton = Vyplniť krátky dotazník
 
@@ -225,6 +238,27 @@ newsletterFormSubmitButtonSubmitting = Odosiela sa...
 newsletterFooterHeader = Zostaňte v obraze
 newsletterFooterBody = Dozviete sa informácie o nových experimentoch a uvidíte výsledky testov doplnkov, ktoré ste skúšali.
 newsletterFooterSuccessHeader = Ďakujeme!
+
+
+
+# A warning shown to users viewing an experiment that is only available in English.
+[[ localeWarning ]]
+
+localeWarningTitle = Tento experiment je k dispozícii iba v angličtine.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledCTA = Nemáte záujem? <a>Povedzte nám prečo</a>.
+
+
+
+# Shown to users who do not have JavaScript enabled.
+[[ noscript ]]
+
+noScriptHeading = Hups...
 
 
 
