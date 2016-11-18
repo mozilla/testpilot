@@ -242,6 +242,15 @@
     > :first-child {
       margin-top: 0;
     }
+
+    figure {
+      margin: $grid-unit 0;
+    }
+
+    figcaption {
+      color: $transparent-black-7;
+      font-size: $font-unit;
+    }
   }
 }
 
