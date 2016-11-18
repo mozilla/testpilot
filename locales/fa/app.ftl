@@ -289,6 +289,15 @@ localeWarningSubtitle = اگر تمایل دارید، هنوز می‌توان�
 
 
 
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledHeader = بیاید این خلبان را از زمین بلند کنیم!
+experimentsListNoneInstalledSubheader = آیا آماده انجام یک تجربه خلبان آزمایشی جدید هستید؟ یک مورد را برای فعال‌سازی انتخاب کنید، دوری باهاش بزنید، و به ما بگویید که در موردش چه فکری می‌کنید.
+experimentsListNoneInstalledCTA = برایتان جالب نیست؟ <a>به ما بگویید چرا</a>.
+
+
+
 # Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
