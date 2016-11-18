@@ -33,6 +33,7 @@ minvidToursteps3Copy = <p>You can always give us feedback or disable Min Vid fro
 minvidContributors0Title = Engineer
 minvidContributors1Title = Staff Engineer
 minvidContributors2Title = Engineering Intern
+minvidContributors3Title = Engineering Contributor
 nomore404sSubtitle = Powered by the Wayback Machine
 nomore404sDescription = Tired of dead ends on the web? We'll let you know when there's a saved version of what you're looking for on the Internet Archive's Wayback Machine.
 nomore404sIntroduction = <p>This one is simple. If you hit a 404 page while browsing the web, we will let you know if the content you're looking for is archived on the Internet Archive's Wayback Machine.</p>
