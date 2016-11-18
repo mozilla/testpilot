@@ -122,13 +122,33 @@ participantCount = <span>{ $installation_count }</span> imttekkiyen
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Imayl inek dagi
 newsletterFormDisclaimer = Ak-d-nazen talɣut icudden ar Test Pilot.
 newsletterFormSubmitButton = Jerred tura
+newsletterFormSubmitButtonSubmitting = Tuzna...
 
 
 
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = Teḍra-d tuccḍa di tuzna n yimayl inek. Ɛreḍ tikelt nniḍen? 
 newsletterFooterHeader = Qqim akked umaynut
+newsletterFooterSuccessHeader = Tanemmirt!
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledCTA = Ur k-d-yehwi ara? <a>Eǧǧ-aq ad nzeṛ acuɣer</a>.
+
+
+
+# Shown to users who do not have JavaScript enabled.
+[[ noscript ]]
+
+noScriptHeading = Ihuh...
+noScriptMessage = Test Pilot yesra JavaScript.<br>Suref-aɣ.
 
