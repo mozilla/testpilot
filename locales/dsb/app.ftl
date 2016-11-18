@@ -1,3 +1,4 @@
+siteName = Firefox Test Pilot
 
 
 # Page titles, put in the <title> HTML tag.
@@ -7,6 +8,17 @@ pageTitleDefault = Firefox Test Pilot
 pageTitleLandingPage = Firefox Test Pilot
 pageTitleExperimentListPage = Firefox Test Pilot - Eksperimenty
 pageTitleExperiment = Firefox Test Pilot - { $title }
+
+
+
+# Links in the footer.
+[[ footerLink ]]
+
+footerLinkCookies = Cookieje
+footerLinkPrivacy = Priwatnosć
+footerLinkTerms = Wužywarske wuměnjenja
+footerLinkLegal = Pšawniske
+footerLinkAbout = Wó Test Pilot
 
 
 
@@ -25,7 +37,12 @@ menuRetire = Test Pilot wótinstalěrowaś
 # The splash on the homepage.
 [[ landing ]]
 
+landingIntroLead = Glědajśo za kulise . . .
+landingIntroOne = Testujśo nowe funkcije.
+landingIntroTwo = Grońśo swójo měnjenje.
+landingIntroThree = Pomagajśo Firefox wuwijaś.
 landingLegalNotice = Gaž pókšacujośo, zwolijośo do <a>wužywarskich wuměnjenjow</a> a <a>pokaza priwatnosći</a> Test Pilot.
+landingExperimentsTitle = Wopytajśo nejnowše eksperimentelne funkcije
 
 
 
@@ -43,7 +60,10 @@ landingInstalledButton = Wubjeŕśo swóje funkcije
 
 landingRequiresDesktop = Test Pilot pomina se Firefox za desktop na Windows, Mac abo Linux
 landingDownloadFirefoxDesc = (Test Pilot jo za Firefox na Windows, OS X a Linux k dispoziciji)
+landingUpgradeDesc = Test Pilot pomina se Firefox 45 abo nowšy.
 landingDownloadFirefoxTitle = Firefox
+landingUpgradeFirefoxTitle = Firefox aktualizěrowaś
+landingDownloadFirefoxSubTitle = Dermotne ześěgnjenje
 
 
 
@@ -180,19 +200,98 @@ upgradeNoticeLink = Kak móžośo Firefox aktualizěrowaś.
 [[ uninstall ]]
 
 retireDialogTitle = Test Pilot wótinstalěrowaś?
+retireSubmitButton = Dalej
+retireCancelButton = Pśetergnuś
+pageTitleRetirePage = Firefox Test Pilot - Test Pilot wótinstalěrowaś
+retirePageProgressMessage = Wušaltujo se...
+retirePageHeadline = Źěkujomy se za lět!
+retirePageMessage = Naźijamy se, až eksperiment jo was wjaselił. <br> Móžośo kuždy cas zasej pśiś.
+retirePageSurveyButton = Wobźělśo se na krotkem napšašowanju
+
+
+
+# Shown to users after installing Test Pilot if a restart is required.
+[[ restartIntro ]]
+
+restartIntroLead = Kontrolna lisćina pśed startom
+restartIntroOne = Startujśo swój wobglědowak znowego
+restartIntroTwo = Pytajśo za dodankom Test Pilot
+restartIntroThree = Wubjeŕśo swóje eksperimenty
+
+
+
+# Shown on a page presented to users three days after installing their first experiment.
+[[ share ]]
+
+sharePrimary = Test Pilot se wam spódoba? Pomagajśo nam, dalšnych wobźělnikow namakaś.
+shareSecondary = abo kopěrujśo jadnorje toś ten wótkaz...
+shareEmail = E-mail
+shareCopy = Kopěrowaś
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } kóńcy se { $completedDate }
+eolNoticeLink = Dalšne informacije
+eolDisableMessage = Eksperiment { $title } jo se dokóńcył. Gaž jen wótinstalěrujośo, njamóžośo wěcej jen hyšći raz pśez Test Pilot instalěrowaś.
+completedDateLabel = Kóńcny datum eksperimenta: <b>{ $completedDate }</b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
+incompatibleHeader = Tutón eksperiment njejo snaź kompatibelny z dodankami, kótarež sćo zainstalěrował.
+incompatibleSubheader = Pśiraźujomy <a>toś te dodanki znjemóžniś</a>, nježli až zmóžnijośo toś ten eksperiment:
 
 
 
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Wašu e-mailowu adresu how zapisaś
 newsletterFormSubmitButton = Něnto registrěrowaś
+newsletterFormSubmitButtonSubmitting = Wótpósćeła se...
 
 
 
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = Pśi słanju wašeje e-mailoweje adrese jo zmólka nastała. Hyšći raz wopytaś?
 newsletterFooterHeader = Wóstańśo na běžnem
 newsletterFooterBody = Zgóńśo wěcej wó nowych eksperimentach a woglědajśo se testowe wuslědki za eksperimenty, na kótarychž sćo se wobźělił.
+newsletterFooterSuccessHeader = Wjeliki źěk!
+
+
+
+# A warning shown to users viewing an experiment that is only available in English.
+[[ localeWarning ]]
+
+localeWarningTitle = Toś ten eksperiment jo jano w engelskej rěcy k dispoziciji.
+localeWarningSubtitle = Móžośo jen weto zmóžniś, jolic cośo.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledHeader = Zachopmy něnto!
+experimentsListNoneInstalledCTA = Njejsćo zajmowany? <a>Dajśo nam k wěsći cogodla nic</a>.
+
+
+
+# Shown to users who do not have JavaScript enabled.
+[[ noscript ]]
+
+noScriptHeading = Ow, ow...
+noScriptMessage = Test Pilot pomina se JavaScript.<br>To jo nam luto.
+noScriptLink = Zgóńśo cogodla
+
+
+
+# Text of a button to toggle visibility of a list of past experiments.
+[[ pastExperiments ]]
+
+viewPastExperiments = Zachadne eksperimenty se woglědaś
+hidePastExperiments = Zachadne eksperimenty schowaś
 
