@@ -28,6 +28,7 @@ footerLinkAbout = O projekte Test Pilot
 home = Domov
 menuTitle = Nastavenia
 menuWiki = Test Pilot Wiki
+menuDiscuss = Diskusia o Test Pilote
 menuFileIssue = Nahlásiť chybu
 menuRetire = Odinštalovať Test Pilot
 
@@ -69,8 +70,15 @@ landingDownloadFirefoxSubTitle = Prevziať zadarmo
 [[ landingCard ]]
 
 landingCardOne = Nainštalujte si doplnok Test Pilot
-landingCardTwo = Povoľte experimentálne funkcie
+landingCardTwo = Aktivujte experimentálne funkcie
 landingCardThree = Povedzte nám váš názor
+
+
+
+# Error message pages.
+[[ error ]]
+
+errorHeading = Upps!
 
 
 
@@ -121,6 +129,13 @@ feedbackUninstallTitle = Ďakujeme!
 [[ discussNotify ]]
 
 discussNotifyCancelButton = Zrušiť
+
+
+
+# A modal prompt shown before the feedback survey for some experiments.
+[[ experimentPreFeedback ]]
+
+experimentPreFeedbackTitle = { $title } - spätná väzba
 
 
 
