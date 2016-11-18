@@ -73,6 +73,7 @@ tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
 trackingprotectionDescription = Chceće nam při polěpšowanju slědowanskeho škita pomhać? Tutón eksperiment zmóžnja slědowanski škit za přehladowanje dohromady a skići spěšnu móžnosć, problemy při přehladowanju zdźělić.
+trackingprotectionIntroduction = <p>Dotal je slědowanski škit jenož w priwatnym modusu k dispoziciji był. Tutón eksperiment slědowanski škit za cyły čas zmóžnja! (Wězo móžeće jón sydło po sydle znjemóžnić, hdyžkuli chceće.)</p><p>Tutón eksperiment nam pomha rozumić, hdźež slědowanski škit web myli, zo bychmy jón za wšěch wužiwarjow Firefox polěpšili. Klikńće, mjeztym zo přehladujeće, na purpurny tarčowy symbol w adresowym lajsće horjeka na stronje, zo byšće nam zdźělił, za kotre sydła slědowanski škit derje funguje a za kotre nic.</p>
 trackingprotectionPrefeedbackcopy = <p>Zo byšće websydło zdźělił, hdźež slědowanski škit njefunguje, wubjerće tarčowy symbol w lajsće, kotraž URL websydła pokazuje.</p>
 trackingprotectionDetails0Copy = Mějće přistup na wšě funkcije slědowanskeho škita w adresowym polu.
 trackingprotectionDetails1Copy = Zdźělće problem a pomhajće nam jón rozrisać.

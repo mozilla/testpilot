@@ -241,6 +241,10 @@ sharePrimary = Test Pilot so wam spodoba? Pomhajće nam, dalšich wobdźělnikow
 shareSecondary = abo kopěrujće prosće tutón wotkaz...
 shareEmail = E-mejl
 shareCopy = Kopěrować
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } so { $completedDate } kónči
+eolNoticeLink = Dalše informacije
 eolDisableMessage = Eksperiment { $title } je so skónčił. Hdyž jón wotinstalujeće, njemóžeće wjace jón hišće raz přez Test Pilot instalować.
 completedDateLabel = Kónčny datum eksperimenta: <b>{ $completedDate }</b>
 
