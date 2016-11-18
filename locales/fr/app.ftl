@@ -39,8 +39,8 @@ menuRetire = Désinstaller Test Pilot
 
 landingIntroLead = Allez plus loin…
 landingIntroOne = Testez les nouveautés.
-landingIntroTwo = Donnez-nous votre avis.
-landingIntroThree = Faites progresser Firefox.
+landingIntroTwo = Donnez votre avis.
+landingIntroThree = Faites avancer Firefox.
 landingLegalNotice = En continuant, vous acceptez implicitement les  <a>Conditions d’utilisation</a> et la <a>Politique de confidentialité</a> de Test Pilot.
 landingExperimentsTitle = Essayez les nouveautés qui sortent du labo…
 
