@@ -128,6 +128,7 @@ feedbackUninstallTitle = Ďakujeme!
 # A modal prompt telling a user that they are about to go to an external forum for discussion.
 [[ discussNotify ]]
 
+discussNotifySubmitButton = Prejsť na fórum
 discussNotifyCancelButton = Zrušiť
 
 
@@ -142,14 +143,20 @@ experimentPreFeedbackTitle = { $title } - spätná väzba
 # The experiment detail page. 
 [[ experimentPage ]]
 
+isEnabledStatusMessage = Experiment { $title } je aktivovaný!
 participantCount = <span>{ $installation_count }</span> používateľov
+otherExperiments = Vyskúšajte aj tieto experimenty
 giveFeedback = Poskytnúť spätnú väzbu
+enableExperiment = Aktivovať { $title }
+enableExperimentTransition = Aktivácia...
 measurements = Vaše súkromie
 experimentPrivacyNotice = Viac sa o zbieraní údajov pre { $title } dozviete tu.
+contributorsHeading = Tento experiment vám priniesli
 version = Verzia
 changelog = zoznam zmien
 tourLink = prehliadka
 lastUpdate = Posledná aktualizácia
+tourOnboardingTitle = Experiment { $title } je aktivovaný!
 tourDoneButton = Hotovo
 highlightPrivacy = Vaše súkromie
 
@@ -170,6 +177,7 @@ retireSubmitButton = Pokračovať
 retireCancelButton = Zrušiť
 pageTitleRetirePage = Firefox Test Pilot - Odinštalovanie
 retirePageProgressMessage = Ukončovanie experimentov...
+retirePageMessage = Dúfame, že vás experimentovanie bavilo. <br> Radi vás opäť uvidíme.
 retirePageSurveyButton = Vyplniť krátky dotazník
 
 
@@ -186,6 +194,7 @@ restartIntroThree = Vyberte si svoje experimenty
 [[ share ]]
 
 sharePrimary = Páči sa vám Test Pilot? Povedzte o ňom ďalším ľuďom.
+eolNoticeLink = Ďalšie informácie
 completedDateLabel = Dátum ukončenia experimentu: <b>{ $completedDate }</b>
 
 
