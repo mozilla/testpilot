@@ -241,6 +241,10 @@ sharePrimary = Meie jo wol oer Test Pilot? Help ús mear testers te finen.
 shareSecondary = of kopiearje ienfâldichwei dizze keppeling…
 shareEmail = E-mailadres
 shareCopy = Kopiearje
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } einiget op { $completedDate }
+eolNoticeLink = Mear ynfo
 eolDisableMessage = It eksperimint{ $title } is einige. As jo it de-ynstallearje, kinne jo it net wer ynstallearje fia Test Pilot.
 completedDateLabel = Eindatum eksperimint: <b>{ $completedDate }</b>
 
@@ -282,6 +286,15 @@ newsletterFooterSuccessBody = As jo yn it ferline noch gjin oanmelding befêstig
 
 localeWarningTitle = Dit eksperimint is allinnich yn it Ingelsk beskikber.
 localeWarningSubtitle = Jo kinne it dochs ynskeakelje as jo wolle.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledHeader = En no giet it oan!
+experimentsListNoneInstalledSubheader = Ree om nije Test Pilot-eksperiminten te probearjen? Selektearje ien om yn te skeakeljen, probearje wat en lit ús witte wat jo derfan fine.
+experimentsListNoneInstalledCTA = Net ynteressearre? <a>Lit ús witte wêrom</a>.
 
 
 
