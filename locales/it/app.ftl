@@ -241,6 +241,10 @@ sharePrimary = Ti è piaciuto Test Pilot? Aiutaci a trovare altre persone intere
 shareSecondary = oppure copia e incolla questo link…
 shareEmail = Email
 shareCopy = Copia
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } si concluderà il { $completedDate }
+eolNoticeLink = Ulteriori informazioni
 eolDisableMessage = L’esperimento { $title } si è concluso. Una volta disinstallato non sarà più possibile reinstallarlo tramite Test Pilot.
 completedDateLabel = Data di fine esperimento: <b>{ $completedDate }</b>
 
