@@ -67,6 +67,16 @@ landingDownloadFirefoxSubTitle = Dermotne ześěgnjenje
 
 
 
+# A section of the homepage explaining how Test Pilot works.
+[[ landingCard ]]
+
+landingCardListTitle = 3, 2, 1, start
+landingCardOne = Wobstarajśo se dodank Test Pilot
+landingCardTwo = Eksperimentelne funkcije zmóžniś
+landingCardThree = Grońśo nam swójo měnjenje
+
+
+
 # Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
@@ -118,6 +128,7 @@ experimentListEndingSoon = Skóńcyjo se skóro
 [[ experimentCard ]]
 
 experimentCardManage = Zastojaś
+experimentCardGetStarted = Start
 experimentCardLearnMore = Dalšne informacije
 
 
@@ -163,6 +174,7 @@ experimentPromoSubheader = Wuwijamy funkcije pśiduceje generacije za Firefox. I
 
 isEnabledStatusMessage = { $title } jo zmóžnjony.
 installErrorMessage = Ow, ow. { $title } njedajo se zmóžniś. Wopytajśo pózdźej hyšći raz.
+participantCount = <span>{ $installation_count }</span> wobźělnikow
 otherExperiments = Woglědajśo se teke slědujuce eksperimenty
 giveFeedback = Grońśo swójo měnjenje
 disableHeader = Eksperiment znjemóžniś?
@@ -200,6 +212,7 @@ upgradeNoticeLink = Kak móžośo Firefox aktualizěrowaś.
 [[ uninstall ]]
 
 retireDialogTitle = Test Pilot wótinstalěrowaś?
+retireEmailMessage = Klikniśo jadnorje na wótkaz <em>Wótskazaś</em> w mejlce Test Pilot, až njeby wy žedne nowosći wěcej dostał.
 retireSubmitButton = Dalej
 retireCancelButton = Pśetergnuś
 pageTitleRetirePage = Firefox Test Pilot - Test Pilot wótinstalěrowaś
@@ -249,6 +262,8 @@ incompatibleSubheader = Pśiraźujomy <a>toś te dodanki znjemóžniś</a>, nje�
 
 newsletterFormEmailPlaceholder = 
   [html/placeholder] Wašu e-mailowu adresu how zapisaś
+newsletterFormDisclaimer = Sćelomy wam jano informacije nastupajucy Test Pilot.
+newsletterFormPrivacyNotice = Som wobjadny, až Mozilla wužywa móje daty tak, ako jo wopisane w <a>toś tom pokazu priwatnosći</a>.
 newsletterFormSubmitButton = Něnto registrěrowaś
 newsletterFormSubmitButtonSubmitting = Wótpósćeła se...
 
@@ -276,6 +291,7 @@ localeWarningSubtitle = Móžośo jen weto zmóžniś, jolic cośo.
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = Zachopmy něnto!
+experimentsListNoneInstalledSubheader = Sćo gótowy za nowy eksperiment Test Pilot? Wubjeŕśo jaden, aby jen zmóžnił, testujśo jen a dajśo nam swójo měnjenje k wěsći.
 experimentsListNoneInstalledCTA = Njejsćo zajmowany? <a>Dajśo nam k wěsći cogodla nic</a>.
 
 
