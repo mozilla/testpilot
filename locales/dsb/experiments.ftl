@@ -5,6 +5,7 @@ activitystreamToursteps0Copy = <p>Namakajśo swóje nejwažnjejše websedła, ne
 activitystreamToursteps1Copy = <p>Woglědajśo se nowy naglěd casoweje rědki, aby swóju historiju a swóje cytańske znamjenja wizuelnje pśeglědował.</p>
 activitystreamToursteps2Copy = <p>Móžośo pśecej swójo měnjenje groniś abo Activity Stream w Test Pilot znjemóžniś.</p>
 minvidDescription = Staja fokus na wideo. Min Vid wam zmóžnja, wideo YouTube a Vimeo w małem wobłuku pokazaś, kótaryž w prědku wóstanjo, mjaztym až pśeglědujośo web.
+minvidIntroduction = <p>Woglědujośo se rady wideo? Cyniśo rady swójo źěło, mjaztym až se wideo woglědujośo? Wopytajśo Min Vid. Bitujo wobraz we wobrazu, źož jaden wobraz jo wideo a drugi wobraz ceły web.</p><ul> <li><strong>Kliknuś a start:</strong> Wócyńśo wobłuk Min Vid, aby wideo na prědku wótgrał, mjaztym až pśeglědujośo.</li> <li><strong>Pśesuńśo jen, źož cośo:</strong> Min Vid wam zmóžnja, wideowy wobłuk něźi na wašim desktopje śěgnuś.</li><li><strong>Wóźi na pšawem městnje:</strong> Min Vid ma wóźeńske elementy, kótarež wam zmóžnjaju, wideo direktnje we wobłuku pawzěrowaś, wótgraś, pśewóźiś, śěgnuś, miniměrowaś a głosnosć změniś.</li></ul>
 nomore404sSubtitle = Bazěrujo na technologiji Wayback Machine
 nomore404sDescription = Maśo nos połny slěpych gasow w interneśe? Gronijomy wam, gaž jo wopśimjeśe skłaźone pśez Wayback Machine w Internet Archive.
 pageshotDescription = Intuitiwne fota wobrazowki direktne z wobglědowaka. Móžośo fota wobrazowki cyniś, składowaś a źěliś, mjaztym až pśeglědujośo web z pomocu Firefox.
