@@ -58,7 +58,7 @@ pageshotContributors0Title = Wuwiwanski manager
 pageshotContributors1Title = Wuwiwar softwary
 pageshotContributors2Title = UX-designer
 tabcenterDescription = Kak by było, hdy njebychu rajtarki horjeka, ale na boku wobhladowaka byli? My smy to spytali!
-tabcenterIntroduction = <p>Přesuńće swoje rajtarki z puća. Tab Center suwa waše rajtarki na bok wokna wašeho wobhladowaka, zo njebyšće widźomne byli, hdyž je njetrjebaće, ale z druheje strony dadźa so lochko pokazać, hdyž je trjebaće.</p>
+tabcenterIntroduction = <p>Přesuńće swoje rajtarki z puća. Tab Center suwa waše rajtarki na bok wokna wašeho wobhladowaka, zo njebychu widźomne byli, hdyž je njetrjebaće, ale z druheje strony dadźa so lochko pokazać, hdyž je trjebaće.</p>
 tabcenterMeasurements = <p>Nimo <a href="/privacy">datow</a>, kotrež so přez wšě eksperimenty Test Pilot hromadźa, su hišće někotre wěcy, kotrež wy měł wo tym wědźeć, štož so stawa, hdyž Tab Center wužiwaće:</p><ul> <li>Hromadźimy zakładne wužiwanske daty wo tym, kak z Tab Center wobchadźeće, kak husto na přikład Tab Center maksiměrujeće abo připinaće.</li> <li>Hromadźimy tež informacije wo tym, kak rajtarki wužiwaće, na přikład ličbu rajtarkow, kotrež runočasnje wočinjene dźeržiće a traće, kak dołho rajtarki wočinjene dźeržiće.</li> <li>Tab Center njehromadźi informacije wo sydłach, kotrež wopytujeće abo wobsah rajtarkow.</li></ul>
 tabcenterDetails0Copy = Suńće swoje rajtarki nabok.
 tabcenterDetails1Copy = Schowajće te rajtarki, doniž je njetrjebaće.
