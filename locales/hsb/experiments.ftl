@@ -78,7 +78,7 @@ trackingprotectionMeasurements = <p>Nimo <a href="/privacy">datow</a>, kotrež s
 trackingprotectionPrefeedbackcopy = <p>Zo byšće websydło zdźělił, hdźež slědowanski škit njefunguje, wubjerće tarčowy symbol w lajsće, kotraž URL websydła pokazuje.</p>
 trackingprotectionDetails0Copy = Mějće přistup na wšě funkcije slědowanskeho škita w adresowym polu.
 trackingprotectionDetails1Copy = Zdźělće problem a pomhajće nam jón rozrisać.
-trackingprotectionToursteps0Copy = <p>Taflička podawa, zo slědowanski škit je zapinjeny. Přešmórnjena taflička rěka, zo je wupinjeny.</p>
+trackingprotectionToursteps0Copy = <p>Tarč podawa, zo slědowanski škit je zapinjeny. Přešmórnjeny tarč woznamjenja, zo je wupinjeny.</p>
 trackingprotectionToursteps1Copy = <p>Zdźělće nam, hdy wěcy funguja a hdy njefunguja.</p>
 trackingprotectionToursteps2Copy = <p>Móžeće přeco Tracking Protection w Test Pilot znjemóžnić.</p>
 trackingprotectionContributors0Title = Webwuwiwar
