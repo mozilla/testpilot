@@ -1,9 +1,24 @@
 activitystreamDescription = Grafiski pśeglěd wašeje historije a nowo wugótowany startowy bok wólažcujotej wěcej ako do togo namakaś, za kótarymž pytaśo w Firefox.
 activitystreamIntroduction = <p>Pśeglědujśo zasej bźez pśetergnjenja. Z Activity Stream su waše nejwažnjejše websedła, cytańske znamjenja a nejnowša historija w kuždem nowem rejtarku pśi ruce. A nowa casowa rědka dajo wam pśeglěd wó swójom pśeglědowanju z ptaškoweje perspektiwy.</p>
 activitystreamMeasurements = <p>Mimo <a href="/privacy">datow</a>, kótarež gromaźe se pśez wšykne eksperimenty Test Pilot, su hyšći někotare wěcy, kótarež wy měł wó tom wěźeś, což se stawa, gaž Activity Stream wužywaśo:</p><ul> <li>Gromaźimy zakładne wužywańske daty wó tom, kak wobchadaśo z eksperimentelnymi bokami za nowe rejtarki a casowu rědku, na kótare elementy kliknjośo a źož su na boku.</li> <li>Gromaźimy teke zakładne informacije wó wašom profilu wobglědowaka, kótarež nastupaju Activity, ako na pśikład licbu cytańskich znamjenjow a zapiski historije.</li> <li>Aby my Activity Stream póbitowali, wótwołujomy metadaty wó websedłach, kótarež sćo se woglědał, na pś. wobraze a symbole, z pomocu słužby z mjenim <a href="http://embed.ly/" target="_blank">Embedly</a>. Sćelomy toś te napšašowanja na Embedly pśez serwery Mozilla, až njeby z wami zwězane.</li></ul>
+activitystreamDetails0Copy = Klikniśo na nowy rejtark a waše nejlubše websedła su jano jadno kliknjenje zdalone.
+activitystreamDetails1Copy = Glědajśo, źož sćo był, aby se tam dostał, źož dojźośo.
 activitystreamToursteps0Copy = <p>Namakajśo swóje nejwažnjejše websedła, nejnowšu historiju a cytańske znamjenja, gaž nowy rejtark wócynjaśo.</p>
 activitystreamToursteps1Copy = <p>Woglědajśo se nowy naglěd casoweje rědki, aby swóju historiju a swóje cytańske znamjenja wizuelnje pśeglědował.</p>
 activitystreamToursteps2Copy = <p>Móžośo pśecej swójo měnjenje groniś abo Activity Stream w Test Pilot znjemóžniś.</p>
+activitystreamContributors0Title = Wuwijaŕ softwary
+activitystreamContributors1Title = Webwuwijaŕ
+activitystreamContributors2Title = Wuwijaŕ softwary
+activitystreamContributors3Title = Wuwijaŕ Firefox za desktop
+activitystreamContributors4Title = Wuwijaŕ softwary
+activitystreamContributors5Title = Manager za techniske programy
+activitystreamContributors6Title = Wuwijaŕ za mrokowe słužby
+activitystreamContributors7Title = Wuwijarski praktikant
+activitystreamContributors8Title = Wuwijarski praktikant
+activitystreamContributors9Title = Produktowy manager
+activitystreamContributors10Title = Wuwijański manager
+activitystreamContributors11Title = Wuwijaŕ softwary
+activitystreamContributors12Title = Seniorski designer UX
 minvidDescription = Staja fokus na wideo. Min Vid wam zmóžnja, wideo YouTube a Vimeo w małem wobłuku pokazaś, kótaryž w prědku wóstanjo, mjaztym až pśeglědujośo web.
 minvidIntroduction = <p>Woglědujośo se rady wideo? Cyniśo rady swójo źěło, mjaztym až se wideo woglědujośo? Wopytajśo Min Vid. Bitujo wobraz we wobrazu, źož jaden wobraz jo wideo a drugi wobraz ceły web.</p><ul> <li><strong>Kliknuś a start:</strong> Wócyńśo wobłuk Min Vid, aby wideo na prědku wótgrał, mjaztym až pśeglědujośo.</li> <li><strong>Pśesuńśo jen, źož cośo:</strong> Min Vid wam zmóžnja, wideowy wobłuk něźi na wašim desktopje śěgnuś.</li><li><strong>Wóźi na pšawem městnje:</strong> Min Vid ma wóźeńske elementy, kótarež wam zmóžnjaju, wideo direktnje we wobłuku pawzěrowaś, wótgraś, pśewóźiś, śěgnuś, miniměrowaś a głosnosć změniś.</li></ul>
 nomore404sSubtitle = Bazěrujo na technologiji Wayback Machine
