@@ -59,6 +59,7 @@ pageshotContributors1Title = Wuwijaŕ softwary
 pageshotContributors2Title = UX-designer
 tabcenterDescription = Kak by było, gaž njeby rejtarki górjejce, ale na boku wobglědowaka byli? My smy to wopytali!
 tabcenterIntroduction = <p>Pśesuńśo swóje rejtarki z drogi. Tab Center suwa waše rejtarki na bok wokna wašogo wobglědowaka, až njeby widobne byli, gaž je njetrjebaśo, ale na drugem boce daju se lažko pokazaś, gaž je trjebaśo.</p>
+tabcenterMeasurements = <p>Mimo <a href="/privacy">datow</a>, kótarež gromaźe se pśez wšykne eksperimenty Test Pilot, su hyšći někotare wěcy, kótarež wy měł wó tom wěźeś, což se stawa, gaž Tab Center wužywaśo:</p><ul> <li>Gromaźimy zakładne wužywańske daty wó tom, kak z Tab Center wobchadaśo, kak cesto na pśikład Tab Center maksiměrujośo abo pśipinaśo.</li> <li>Gromaźimy teke informacije wó tom, kak rejtarki wužywaśo, na pśikład licbu rejtarkow, kótarež źaržiśo rownocasnje wócynjone a cas, kak dłujko źaržiśo rejtarki wócynjone.</li> <li>Tab Center njegromaźi informacije wó sedłach, kótarež woglědujośo se abo wopśimjeśe rejtarkow.</li></ul>
 tabcenterDetails0Copy = Suńśo swóje rejtarki na bok.
 tabcenterDetails1Copy = Schowajśo te rejtarki, daniž je njetrjebaśo.
 tabcenterDetails2Copy = Pśesuńśo meble a wugótujśo je nowo! Tab Center źěła z wašymi nejlubšymi drastwami Firefox.
@@ -72,6 +73,7 @@ tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
 trackingprotectionDescription = Cośo nam pśi pólěpšowanju slědowańskego šćita pomagaś? Toś ten eksperiment zmóžnja slědowański šćit za pśeglědowanje dogromady a bitujo malsnu móžnosć, problemy pśi pśeglědowanju k wěsći daś.
+trackingprotectionIntroduction = <p>Dotychměst jo slědowański šćit jano w priwatnem modusu k dispoziciji był. Toś ten eksperiment zmóžnja slědowański šcit za ceły cas! (Zawěsće móžośo jen sedło pó sedle znjemóžniś, gažkuli cośo.)</p><p>Toś ten eksperiment pomaga nam rozměś, źož slědowański šcit móli web, aby my jen za wšych wužiwarjow Firefox pólěpšyli. Klikniśo, mjaztym až pśeglědujośo, na purpurny šćitkowy symbol w adresowem pólu górjejce na bokue, aby nam k wěsći dał, za kótare sedła slědowański šcit derje funkcioněrujo a za kótare nic.</p>
 trackingprotectionPrefeedbackcopy = <p>Aby websedło k wěsći dał, źož slědowański šćit njefunkcioněrujo, wubjeŕśo šćitowy symbol w rědce, kótaraž pokazujo URL websedła.</p>
 trackingprotectionDetails0Copy = Mějśo pśistup na wšykne funkcije slědowańskego šćita w adresowem pólu.
 trackingprotectionDetails1Copy = Dajśo problem k wěsći a pomagajśo nam jen rozwězaś.
