@@ -212,6 +212,7 @@ upgradeNoticeLink = Kak móžośo Firefox aktualizěrowaś.
 [[ uninstall ]]
 
 retireDialogTitle = Test Pilot wótinstalěrowaś?
+retireMessage = Cele kaž sebje žycyśo. To znjemóžnijo aktiwne testy, wótinstalěrujo dodank a wótwónoźijo waše kontowe informacije z našych serwerow.
 retireEmailMessage = Klikniśo jadnorje na wótkaz <em>Wótskazaś</em> w mejlce Test Pilot, až njeby wy žedne nowosći wěcej dostał.
 retireSubmitButton = Dalej
 retireCancelButton = Pśetergnuś
@@ -276,6 +277,7 @@ newsletterFooterError = Pśi słanju wašeje e-mailoweje adrese jo zmólka nasta
 newsletterFooterHeader = Wóstańśo na běžnem
 newsletterFooterBody = Zgóńśo wěcej wó nowych eksperimentach a woglědajśo se testowe wuslědki za eksperimenty, na kótarychž sćo se wobźělił.
 newsletterFooterSuccessHeader = Wjeliki źěk!
+newsletterFooterSuccessBody = Jolic hyšći njejsćo abonement powěsćowego lista Mozilla wobkšuśił, musyśo to něnto cyniś. Pšosym glědajśo do dojźoneje e-maile abo spamowego filtra za mejlku wót nas.
 
 
 
