@@ -1,0 +1,9 @@
+activitystreamContributors0Title = Ajenyuṛ n useɣẓan
+activitystreamContributors1Title = Ajenyuṛ n web
+activitystreamContributors2Title = Aneflau n useɣẓan
+activitystreamContributors3Title = Ajenyuṛ n Firefox n ufellaru
+activitystreamContributors4Title = Ajenyuṛ n useɣẓan
+activitystreamContributors5Title = Anedbal n wahil atiknikan
+activitystreamContributors6Title = Ajenyuṛ n tinfawin n usigna
+trackingprotectionContributors0Title = Aneflay n Web
+universalsearchContributors0Title = Anedbal n usenfar
