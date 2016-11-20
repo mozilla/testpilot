@@ -139,6 +139,10 @@ experimentCardLearnMore = Läs mer
 feedbackSubmitButton = Gör en snabb undersökning
 feedbackCancelButton = Stäng
 feedbackUninstallTitle = Tack!
+feedbackUninstallCopy = 
+  | Ditt deltagande i Firefox Test Pilot innebär
+  | mycket! Kolla in våra andra experiment,
+  | och håll ögonen öppna för mer framöver!
 
 
 
