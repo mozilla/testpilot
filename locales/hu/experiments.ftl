@@ -21,6 +21,7 @@ activitystreamContributors11Title = Szoftverfejlesztő mérnök
 activitystreamContributors12Title = Senior UX dizájner
 minvidDescription = Tartsa szem előtt a videókat. A Min Vid segítségével a YouTube és Vimeo videókat megjelenítheti egy kis keretben, amely az előtérben marad, miközben böngészi a webet.
 minvidIntroduction = <p>Imád videókat nézni? Szereti elvégezni a dolgait videónézés közben? Próbálja ki a Min Videt. Olyan mint „kép a képben”, ahol az egyik kép a videó, a másik pedig a Web egésze.</p><ul><li><strong>Kattintson és menjen:</strong> kapcsolja be a Min Vid keretet és tartsa a videókat az előtérben, miközben böngész.</li><li><strong>Tegye ahová szeretné:</strong> a Min Viddel oda húzhatja a képkeretet az asztalán, amerre csak szeretné.</li><li><strong>Vezérlők ahol kell:</strong> a Min Vid vezérlőket is tartalmaz, amellyel elindíthat/szüneteltethet, húzhat, minimalizálhat, és állíthatja a hangerőt, közvetlenül a keretben.</li></ul>
+minvidMeasurements = <p>Az összes Tesztpilóta kísérlet által összegyűjtött <a href="/privacy">adat</a> mellett, itt van néhány kulcsfontosságú dolog, amelyekről érdemes tudnia, ha a Min Videt használja:</p><ul><li>Használati adatokat gyűjtünk amikor a környezeti menüt, a kísérleti ikont és a vezérlőelemeket használja.</li> <li>Azt is gyűjtjük hogy hányszor találkozik lejátszható videóval, hányszor játszik le egy videót, és hogy melyik videószolgáltatás volt a forrás. Ez segít nekünk megérteni hogy mennyire hasznos a kísérlet a felhasználóink számára.</li> <li>Arról nem gyűjtünk információt, hogy pontosan mely videókkal találkozott.</li></ul>
 minvidDetails0Copy = Érje el a Min Videt a YouTube és a Vimeo videolejátszókból.
 minvidDetails1Copy = Nézzen videót az előtérben, míg más dolgokat csinál a Weben.
 minvidDetails2Copy = Kattintson jobb gombbal a videohivatkozásokon, hogy megtalálja a Min Videt a környezeti menüben.
@@ -33,12 +34,15 @@ minvidContributors1Title = Vezető mérnök
 minvidContributors2Title = Mérnökgyakornok
 nomore404sSubtitle = A Wayback Machine támogatásával
 nomore404sDescription = Elege van a zsákutcákkal a weben? Tudatni fogjuk Önnel, hogy van-e az oldalnak mentett verziója az Internet Archive Wayback Machine oldalán.
+nomore404sIntroduction = <p>Ez egyszerű. Ha egy 404-es oldalt talál böngészés közben, akkor tudatni fogjuk Önnel, hogy archiválásra került-e a tartalom az Internet Archive Wayback Machine oldalán.</p>
+nomore404sMeasurements = <p>Az összes Tesztpilóta kísérlet által összegyűjtött <a href="/privacy">adat</a> mellett, itt van néhány kulcsfontosságú dolog, amelyekről érdemes tudnia, ha a Nincs több 404-et használja:</p><ul><li>Alapvető használati adatokat gyűjtünk arról, hogy hányszor találkozik „Oldal nem található” hibával (404-es kód), hányszor létezik gyorsítótárazott változata az Archive.org oldalon, és hányszor választotta annak a megnyitását.</li> <li>Az oldalak gyorsítótárazott változatainak biztosításához a 404-es hibaoldalak URL-ét elküldjük az Archive.org-nak. Az <a href="https://archive.org/" target="_blank">Archive.org</a> <a href="https://archive.org/about/terms.php" target="_blank">itt</a> osztja meg az adatvédelmi irányelveit.</li> <li>Nem gyűjtjük azokat a lap URL-eket amelyeket Ön kért, és továbbítottunk az Archive.org-nak.</li> <li>Lehet hogy megosztjuk az Ön által kitöltött kérdőívek eredményeit, és a kísérlettel kapcsolatos, összegzett telemetriát az Internet Archive-val.</li></ul>
 nomore404sDetails0Copy = Csökkentse a 404-es zsákutcák számát a Wayback Machine-nel.
-nomore404sDetails1Copy = A barátaink az Internet Archive-tól hozzák el Önnek.
+nomore404sDetails1Copy = Az Internet Archive-os barátaink hozzák el Önnek.
 nomore404sToursteps0Copy = <p>Csak böngéssze a webet, ahogy szokta. Ha 404-es oldalt talál, mi tudatni fogjuk Önnel, ha létezik archivált változata a Wayback Machine-en.</p>
 nomore404sToursteps1Copy = <p>Bármikor adhat visszajelzést vagy letilthatja a Nincs több 404-et a Tesztpilótából.</p>
 nomore404sContributors1Title = Fejlesztő, Wayback Machine, The Internet Archive
 nomore404sContributors2Title = Igazgató, Wayback Machine, The Internet Archive
+nomore404sContributors3Title = Senior crawler mérnök, The Internet Archive
 pageshotDescription = Intuitív képernyőképek közvetlenül a böngészőjében. Készítsen, mentsen és osszon meg képernyőképeket, miközben böngészi a Webet a Firefoxszal.
 pageshotContributors0Title = Műszaki menedzser
 pageshotContributors1Title = Szoftverfejlesztő mérnök
