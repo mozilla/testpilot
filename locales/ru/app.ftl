@@ -252,20 +252,74 @@ shareSecondary = или просто скопируйте и вставьте э
 shareEmail = Эл. почта
 shareCopy = Копировать
 
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } заканчивается { $completedDate }
+eolNoticeLink = Подробнее
+eolDisableMessage = Эксперимент { $title } закончен. Если вы удалите его, то больше не сможете установить его снова через расширение лётчика-испытателя.
+completedDateLabel = Дата окончания эксперимента: <b>{ $completedDate }</b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
+incompatibleHeader = Этот эксперимент может быть несовместим с дополнениями, которые вы установили.
+incompatibleSubheader = Мы рекомендуем <a>отключить эти дополнения</a> перед активацией этого эксперимента:
+
 
 
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Ваша эл. почта
 newsletterFormDisclaimer = Мы будем отправлять вам информацию, относящуюся только к лётчику-испытателям.
 newsletterFormPrivacyNotice = Я согласен с тем, как Mozilla обращается с моей информацией, согласно этой <a>Политике приватности</a>.
 newsletterFormSubmitButton = Подписаться сейчас
+newsletterFormSubmitButtonSubmitting = Отправляем...
 
 
 
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = Произошла ошибка при отправке на ваш адрес эл. почты. Попробовать снова?
 newsletterFooterHeader = Будьте в курсе
 newsletterFooterBody = Узнавайте о новых экспериментах и смотрите результаты тех, в которых вы участвовали.
+newsletterFooterSuccessHeader = Спасибо!
+newsletterFooterSuccessBody = Если вы ранее не подтверждали подписку на новостные рассылки Mozilla, то вам может понадобится сделать это. Пожалуйста, проверьте вашу папку "Входящие" или "Спам" на наличие письма от нас.
+
+
+
+# A warning shown to users viewing an experiment that is only available in English.
+[[ localeWarning ]]
+
+localeWarningTitle = Этот эксперимент доступен только на английском.
+localeWarningSubtitle = Вы всё ещё можете включить его, если хотите.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledHeader = Давайте поднимем это в небо!
+experimentsListNoneInstalledSubheader = Готовы попробовать новый эксперимент лётчика-испытателя? Выберите его, чтобы включить, опробуйте в работе, и дайте нам знать, что вы думаете.
+experimentsListNoneInstalledCTA = Не интересно? <a>Дайте нам знать, почему</a>.
+
+
+
+# Shown to users who do not have JavaScript enabled.
+[[ noscript ]]
+
+noScriptHeading = Ой, ой...
+noScriptMessage = Лётчику-испытателю требуется JavaScript.<br>Извините.
+noScriptLink = Узнать почему
+
+
+
+# Text of a button to toggle visibility of a list of past experiments.
+[[ pastExperiments ]]
+
+viewPastExperiments = Посмотреть старые эксперименты
+hidePastExperiments = Скрыть старые эксперименты
 
