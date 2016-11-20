@@ -6,6 +6,7 @@ siteName = Firefox Test Pilot
 
 pageTitleDefault = Firefox Test Pilot
 pageTitleLandingPage = Firefox Test Pilot
+pageTitleExperimentListPage = Firefox Test Pilot - tirmitanin
 pageTitleExperiment = Firefox Test Pilot - { $title }
 
 
