@@ -84,6 +84,13 @@ onboardingMessage = Ad nger tignit deg ufeggag n tunigin i wakken ad tzemreḍ a
 
 
 
+# Error message pages.
+[[ error ]]
+
+errorHeading = Ayhu!
+
+
+
 # A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
@@ -196,6 +203,7 @@ newsletterFooterSuccessHeader = Tanemmirt!
 # An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledSubheader = Twejḍeḍ i wakken ad tɛarḍeḍ armitan amaynut n Test Pilot? fren yiwen i wakken ad tremdeḍ, sqedc-it, ini-yaɣ-d d acu-tt tmuɣli-inek.
 experimentsListNoneInstalledCTA = Ur k-d-yehwi ara? <a>Eǧǧ-aq ad nzeṛ acuɣer</a>.
 
 
@@ -205,4 +213,13 @@ experimentsListNoneInstalledCTA = Ur k-d-yehwi ara? <a>Eǧǧ-aq ad nzeṛ acuɣe
 
 noScriptHeading = Ihuh...
 noScriptMessage = Test Pilot yesra JavaScript.<br>Suref-aɣ.
+noScriptLink = Af ayen
+
+
+
+# Text of a button to toggle visibility of a list of past experiments.
+[[ pastExperiments ]]
+
+viewPastExperiments = Sken tirmitanin izrin
+hidePastExperiments = Ffer tirmitanin izrin
 
