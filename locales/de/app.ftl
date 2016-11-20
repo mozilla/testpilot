@@ -80,7 +80,7 @@ landingCardThree = Sagen Sie uns Ihre Meinung
 # Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
-onboardingMessage = Wir haben ein Symbol in Ihrer Symbolleiste platziert, damit Sie Test Pilot immer wieder finden.
+onboardingMessage = Wir haben ein Symbol in Ihrer Symbolleiste platziert, damit Sie Test Pilot immer wiederfinden.
 
 
 
@@ -165,7 +165,7 @@ experimentPreFeedbackLinkCopy = Sagen Sie Ihre Meinung zum Experiment „{ $titl
 [[ experimentPromo ]]
 
 experimentPromoHeader = Startklar?
-experimentPromoSubheader = Wir entwickelt für Firefox die Funktionen der nächsten Generation. Mit Test Pilot können Sie diese ausprobieren!
+experimentPromoSubheader = Wir entwickeln für Firefox die Funktionen der nächsten Generation. Mit Test Pilot können Sie diese ausprobieren!
 
 
 
