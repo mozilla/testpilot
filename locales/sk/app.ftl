@@ -171,8 +171,10 @@ version = Verzia
 changelog = zoznam zmien
 tourLink = prehliadka
 lastUpdate = Posledná aktualizácia
+discourse = Discourse
 tourOnboardingTitle = Experiment { $title } je aktivovaný!
 tourDoneButton = Hotovo
+userCountContainer = Experiment { $title } práve testuje <span>{ $installation_count }</span> ľudí!
 userCountContainerAlt = Práve spustený!
 highlightPrivacy = Vaše súkromie
 
@@ -191,6 +193,7 @@ upgradeNoticeLink = Ako aktualizovať Firefox.
 
 retireDialogTitle = Odinštalovať Test Pilot?
 retireMessage = Ako si želáte. Všetky vaše aktívne testy budú ukončené, doplnok sa odinštaluje a údaje o vašom účte sa budú odstránené z našich serverov.
+retireEmailMessage = Ak chcete e-mailové správy od nás vypnúť, stačí ak kliknete na odkaz <em>unsubscribe</em> v ktoromkoľvek e-maile z projektu Test Pilot.
 retireSubmitButton = Pokračovať
 retireCancelButton = Zrušiť
 pageTitleRetirePage = Firefox Test Pilot - Odinštalovanie
