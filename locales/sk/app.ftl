@@ -212,7 +212,11 @@ restartIntroThree = Vyberte si svoje experimenty
 [[ share ]]
 
 sharePrimary = Páči sa vám Test Pilot? Povedzte o ňom ďalším ľuďom.
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = Experiment { $title } končí { $completedDate }
 eolNoticeLink = Ďalšie informácie
+eolDisableMessage = Experiment { $title } sa skončil. Ak ho odinštalujete, nebudete ho môcť opäť nainštalovať cez Test Pilot.
 completedDateLabel = Dátum ukončenia experimentu: <b>{ $completedDate }</b>
 
 
@@ -240,9 +244,11 @@ newsletterFormSubmitButtonSubmitting = Odosiela sa...
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = Pri odosielaní vašej e-mailovej adresy sa vyskytla chyba. Chcete to skúsiť znova?
 newsletterFooterHeader = Zostaňte v obraze
 newsletterFooterBody = Dozviete sa informácie o nových experimentoch a uvidíte výsledky testov doplnkov, ktoré ste skúšali.
 newsletterFooterSuccessHeader = Ďakujeme!
+newsletterFooterSuccessBody = Ak ste v minulosti nepotvrdili odber noviniek Mozilly, budete to musieť urobiť teraz. Pozrite sa, prosím, do vašej e-mailovej schránky, prípadne i do priečinku s nevyžiadanou poštou, či sa tam nenachádza e-mail od nás.
 
 
 
