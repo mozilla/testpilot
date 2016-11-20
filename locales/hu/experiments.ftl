@@ -1,10 +1,11 @@
 activitystreamDescription = A látványos előzménylista és az újragondolt kezdőoldal még könnyebbé teszi, mint valaha, hogy megtalálja amit keres a Firefoxban.
-activitystreamIntroduction = <p>Térjen vissza a böngészéshez anélkül, hogy elfelejtené a gondolatmenetét. Az Activity Stream karnyújtásnyira tartja a legtöbbet látogatott oldalakat, a könyvjelzőket és az előzményeket, minden egyes lapon. Az új idővonal nézet segítségével pedig madártávlatból láthatja a böngészését.</p>
+activitystreamIntroduction = <p>Térjen vissza a böngészéshez anélkül, hogy elfelejtené a gondolatmenetét. A Tevékenységfolyam karnyújtásnyira tartja a legtöbbet látogatott oldalakat, a könyvjelzőket és az előzményeket, minden egyes lapon. Az új idővonal nézet segítségével pedig madártávlatból láthatja a böngészését.</p>
+activitystreamMeasurements = <p>Az összes Tesztpilóta kísérlet által összegyűjtött <a href="/privacy">adat</a> mellett, itt van néhány kulcsfontosságú dolog, amelyekről érdemes tudnia, ha a Tevékenységfolyamot használja:</p><ul><li>Alapvető használati adatokat gyűjtünk arról, hogyan használja a kísérleti új lap és idővonal oldalakat, mint a rákattintott elemek típusa és a helyzetük az oldalon.</li><li>Olyan alapvető információkat is gyűjtünk a böngészőprofiljából is, amely befolyásolja a Tevékenységfolyamot, mint a könyvjelzői és előzményei száma.</li><li>A Tevékenységfolyamhoz metaadatokat töltünk le a meglátogatott weboldalaktól, mint képek és ikonok, az <a href="http://embed.ly/" target="_blank">Embedly</a> szolgáltatást használva. Ezeket a kéréseket az Embedly felé a Mozilla kiszolgálóin keresztül küldjük, így nem lesznek Önhöz köthetőek.</li></ul>
 activitystreamDetails0Copy = Kattintson egy új lapra, és a kedvenc oldalai csak egy kattintásra vannak.
 activitystreamDetails1Copy = Lássa hol volt, hogy eljusson oda, ahová tart.
 activitystreamToursteps0Copy = <p>Találja meg a legtöbbet látogatott oldalait, előzményeit és a könyvjelzőit, amikor új lapot nyit.</p>
 activitystreamToursteps1Copy = <p>Keresse fel az új idővonal nézetet, hogy látványosan böngéssze az előzményeit és a könyvjelzőit.</p>
-activitystreamToursteps2Copy = <p>Bármikor adhat nekünk visszajelzést, vagy kikapcsolhatja az Activity Streamet a Tisztpilótában.</p>
+activitystreamToursteps2Copy = <p>Bármikor adhat nekünk visszajelzést, vagy kikapcsolhatja a Tevékenységfolyamot a Tisztpilótában.</p>
 activitystreamContributors0Title = Szoftverfejlesztő mérnök
 activitystreamContributors1Title = Webfejlesztő mérnök
 activitystreamContributors2Title = Szoftverfejlesztő
