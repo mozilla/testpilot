@@ -190,6 +190,7 @@ upgradeNoticeLink = Ako aktualizovať Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Odinštalovať Test Pilot?
+retireMessage = Ako si želáte. Všetky vaše aktívne testy budú ukončené, doplnok sa odinštaluje a údaje o vašom účte sa budú odstránené z našich serverov.
 retireSubmitButton = Pokračovať
 retireCancelButton = Zrušiť
 pageTitleRetirePage = Firefox Test Pilot - Odinštalovanie
