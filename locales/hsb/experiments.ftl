@@ -32,6 +32,7 @@ minvidToursteps3Copy = <p>Móžeće nam přeco swoje měnjenje prajić abo Min V
 minvidContributors0Title = Wuwiwar
 minvidContributors1Title = Personalny inženjer
 minvidContributors2Title = Wuwiwarski praktikant
+minvidContributors3Title = Techniski sobudźěłaćer
 nomore404sSubtitle = Bazuje na technologiji Wayback Machine
 nomore404sDescription = Maće nós połny slepych hasow w interneće? Prajimy wam, hdyž je wobsah składowany přez Wayback Machine w Internet Archive.
 nomore404sIntroduction = <p>To je lochke. Jeli na 404-stronu storčiće, mjeztym zo web přehladujeće, informujemy was, hač wobsah, za kotrymž pytaće, je na Wayback Machine w Internet Archive archiwowany.</p>
