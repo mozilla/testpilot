@@ -117,6 +117,7 @@ feedbackUninstallTitle = Tanemirt!
 # A modal prompt telling a user that they are about to go to an external forum for discussion.
 [[ discussNotify ]]
 
+discussNotifyTitle = Rǧǧu kan yiwet tasint...
 discussNotifyCancelButton = Sefsex
 
 
@@ -124,6 +125,7 @@ discussNotifyCancelButton = Sefsex
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
+experimentPreFeedbackTitle = { $title }  tuɣalin n usuddem
 experimentPreFeedbackLinkCopy = Fk-ed  tuɣalin n usuddem ɣef urmitan { $title }
 
 
@@ -133,6 +135,8 @@ experimentPreFeedbackLinkCopy = Fk-ed  tuɣalin n usuddem ɣef urmitan { $title 
 
 isEnabledStatusMessage = { $title } ittwarmed.
 participantCount = <span>{ $installation_count }</span> imttekkiyen
+giveFeedback = Awi-d  tuɣalin n usuddem
+version = Alqem
 lastUpdate = Alqem aneggaru
 tourDoneButton = Tefra
 
