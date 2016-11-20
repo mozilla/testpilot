@@ -69,6 +69,7 @@ landingDownloadFirefoxSubTitle = Prevziať zadarmo
 # A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
+landingCardListTitle = Poďme na to
 landingCardOne = Nainštalujte si doplnok Test Pilot
 landingCardTwo = Aktivujte experimentálne funkcie
 landingCardThree = Povedzte nám váš názor
@@ -121,6 +122,7 @@ experimentListEndingSoon = Čoskoro končí
 [[ experimentCard ]]
 
 experimentCardManage = Spravovať
+experimentCardGetStarted = Aktivovať
 experimentCardLearnMore = Ďalšie informácie
 
 
@@ -171,6 +173,7 @@ version = Verzia
 changelog = zoznam zmien
 tourLink = prehliadka
 lastUpdate = Posledná aktualizácia
+contribute = Zapojte sa
 discourse = Discourse
 tourOnboardingTitle = Experiment { $title } je aktivovaný!
 tourDoneButton = Hotovo
