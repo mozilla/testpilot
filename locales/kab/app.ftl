@@ -116,6 +116,15 @@ experimentPreFeedbackLinkCopy = Fk-ed  tuɣalin n usuddem ɣef urmitan { $title 
 
 isEnabledStatusMessage = { $title } ittwarmed.
 participantCount = <span>{ $installation_count }</span> imttekkiyen
+lastUpdate = Alqem aneggaru
+tourDoneButton = Tefra
+
+
+
+# Shown while uninstalling Test Pilot.
+[[ uninstall ]]
+
+retireCancelButton = Sefsex
 
 
 
