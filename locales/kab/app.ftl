@@ -106,6 +106,21 @@ experimentCardLearnMore = Issin ugar
 
 
 
+# A modal prompt shown when a user disables an experiment.
+[[ feedback ]]
+
+feedbackCancelButton = Mdel
+feedbackUninstallTitle = Tanemirt!
+
+
+
+# A modal prompt telling a user that they are about to go to an external forum for discussion.
+[[ discussNotify ]]
+
+discussNotifyCancelButton = Sefsex
+
+
+
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
