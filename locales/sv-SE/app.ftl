@@ -150,6 +150,14 @@ feedbackUninstallCopy =
 [[ discussNotify ]]
 
 discussNotifyTitle = Bara en sekund...
+discussNotifyMessageAccountless = 
+  | <p>I andan av experiment använder vi en extern forumtjänst.
+  | Du måste skapa ett konto om du
+  | önskar delta på forumet.</p>
+  | <p>Om du inte vill skapa ett konto, kan du
+  | alltid lämna återkoppling genom Test Pilot.
+  | <br>
+  | (Vi läser verkligen detta)</p>
 discussNotifySubmitButton = Ta mig till forumet
 discussNotifyCancelButton = Avbryt
 
@@ -185,11 +193,28 @@ disableExperimentTransition = Inaktiverar...
 enableExperiment = Aktivera { $title }
 enableExperimentTransition = Aktiverar...
 measurements = Din sekretesspolicy
+experimentPrivacyNotice = Du kan läsa mer om datainsamlingen för { $title } här.
+contributorsHeading = Presenteras av
 version = Version
+changelog = ändringslogg
+tourLink = guidad visning
 lastUpdate = Senast uppdaterad
 contribute = Bidra
+bugReports = Felrapporter
 discourse = Diskutera
+tourOnboardingTitle = { $title } är aktiverad!
 tourDoneButton = Klar
+userCountContainer = Det finns <span>{ $installation_count }</span> personer som provar { $title } just nu!
+userCountContainerAlt = Nyligen startad!
+highlightPrivacy = Din sekretesspolicy
+
+
+
+# Shown when an experiment requires a version of Firefox newer than the user's.
+[[ upgradeNotice ]]
+
+upgradeNoticeTitle = { $title } kräver Firefox { $min_release } eller senare.
+upgradeNoticeLink = Hur du uppdaterar Firefox.
 
 
 
@@ -197,9 +222,13 @@ tourDoneButton = Klar
 [[ uninstall ]]
 
 retireDialogTitle = Avinstallera Test Pilot?
+retireMessage = Som du önskar. Detta kommer att inaktivera alla aktiva tester, avinstallera tillägget och ta bort din kontoinformation från våra servrar.
+retireEmailMessage = För att välja bort e-postuppdateringar, klicka på länken <em>avbryt prenumeration</em> på någon Test Pilot e-post.
 retireSubmitButton = Fortsätt
 retireCancelButton = Avbryt
+pageTitleRetirePage = Firefox Test Pilot - Avinstallera Test Pilot
 retirePageProgressMessage = Avslutar...
+retirePageMessage = Hoppas du hade kul att experimentera med oss. <br> Komma gärna tillbaks någon gång.
 retirePageSurveyButton = Gör en snabb undersökning
 
 
@@ -217,24 +246,38 @@ restartIntroThree = Välj dina experiment
 
 shareEmail = E-post
 shareCopy = Kopiera
+eolNoticeLink = Läs mer
 
 
 
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Din e-post
 newsletterFormDisclaimer = Vi skickar endast Test Pilot relaterad information.
 newsletterFormPrivacyNotice = Jag är okej med Mozilla hantering min information som beskrivs i <a>denna sekretesspolicy</a>.
 newsletterFormSubmitButton = Registrera dig nu
+newsletterFormSubmitButtonSubmitting = Skickar...
 
 
 
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = Det uppstod ett fel när din e-postadress skickades in. Försök igen?
 newsletterFooterHeader = Håll dig informerad
 newsletterFooterBody = Få reda på mer om nya experiment och se testresultat för experiment som du har testat.
 newsletterFooterSuccessHeader = Tack!
+newsletterFooterSuccessBody = Om du tidigare inte har bekräftat en prenumeration på en Mozilla-relaterat nyhetsbrev kan du behöva göra det. Kontrollera din inkorg eller ditt spamfilter för ett e-postmeddelande från oss.
+
+
+
+# A warning shown to users viewing an experiment that is only available in English.
+[[ localeWarning ]]
+
+localeWarningTitle = Detta experiment är endast tillgängligt på engelska.
+localeWarningSubtitle = Du kan fortfarande aktivera det om du vill.
 
 
 
@@ -242,6 +285,7 @@ newsletterFooterSuccessHeader = Tack!
 [[ noscript ]]
 
 noScriptHeading = Ojdå...
+noScriptLink = Ta reda på varför
 
 
 
