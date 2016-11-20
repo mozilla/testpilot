@@ -92,6 +92,8 @@ emailOptInSuccessMessage2 = Tanemirt-ik
 experimentListEnabledTab = Irmed
 experimentListJustLaunchedTab = Ikker tura akka
 experimentListJustUpdatedTab = Ittwalqem tura akka
+experimentListEndingTomorrow = Ad ifak azekka
+experimentListEndingSoon = Ad ifak ticki
 
 
 
