@@ -32,6 +32,7 @@ minvidToursteps3Copy = <p>Móžośo nam pśecej swójo měnjenje groniś abo Min
 minvidContributors0Title = Wuwijaŕ
 minvidContributors1Title = Personalny inženjer
 minvidContributors2Title = Wuwijarski praktikant
+minvidContributors3Title = Techniski sobuźěłaśer
 nomore404sSubtitle = Bazěrujo na technologiji Wayback Machine
 nomore404sDescription = Maśo nos połny slěpych gasow w interneśe? Gronijomy wam, gaž jo wopśimjeśe skłaźone pśez Wayback Machine w Internet Archive.
 nomore404sIntroduction = <p>To jo lažko. Jolic starcyjośo na 404-bok, mjaztym až web pśeglědujośo, informěrujomy was, lěc wopśimjeśe, za kótarymž pytaśo, jo na Wayback Machine w Internet Archive archiwěrowany.</p>
