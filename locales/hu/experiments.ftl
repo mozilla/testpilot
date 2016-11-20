@@ -20,6 +20,7 @@ activitystreamContributors10Title = Műszaki menedzser
 activitystreamContributors11Title = Szoftverfejlesztő mérnök
 activitystreamContributors12Title = Senior UX dizájner
 minvidDescription = Tartsa szem előtt a videókat. A Min Vid segítségével a YouTube és Vimeo videókat megjelenítheti egy kis keretben, amely az előtérben marad, miközben böngészi a webet.
+minvidIntroduction = <p>Imád videókat nézni? Szereti elvégezni a dolgait videónézés közben? Próbálja ki a Min Videt. Olyan mint „kép a képben”, ahol az egyik kép a videó, a másik pedig a Web egésze.</p><ul><li><strong>Kattintson és menjen:</strong> kapcsolja be a Min Vid keretet és tartsa a videókat az előtérben, miközben böngész.</li><li><strong>Tegye ahová szeretné:</strong> a Min Viddel oda húzhatja a képkeretet az asztalán, amerre csak szeretné.</li><li><strong>Vezérlők ahol kell:</strong> a Min Vid vezérlőket is tartalmaz, amellyel elindíthat/szüneteltethet, húzhat, minimalizálhat, és állíthatja a hangerőt, közvetlenül a keretben.</li></ul>
 minvidDetails0Copy = Érje el a Min Videt a YouTube és a Vimeo videolejátszókból.
 minvidDetails1Copy = Nézzen videót az előtérben, míg más dolgokat csinál a Weben.
 minvidDetails2Copy = Kattintson jobb gombbal a videohivatkozásokon, hogy megtalálja a Min Videt a környezeti menüben.
