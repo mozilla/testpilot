@@ -228,6 +228,7 @@ retireSubmitButton = Fortsätt
 retireCancelButton = Avbryt
 pageTitleRetirePage = Firefox Test Pilot - Avinstallera Test Pilot
 retirePageProgressMessage = Avslutar...
+retirePageHeadline = Tack för att du testar!
 retirePageMessage = Hoppas du hade kul att experimentera med oss. <br> Komma gärna tillbaks någon gång.
 retirePageSurveyButton = Gör en snabb undersökning
 
@@ -236,7 +237,9 @@ retirePageSurveyButton = Gör en snabb undersökning
 # Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = Checklista före start
 restartIntroOne = Starta om webbläsaren
+restartIntroTwo = Hitta tillägget Test Pilot
 restartIntroThree = Välj dina experiment
 
 
@@ -244,9 +247,24 @@ restartIntroThree = Välj dina experiment
 # Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
+sharePrimary = Gillar du Test Pilot? Hjälp oss att hitta några nya medlemmar.
+shareSecondary = eller kopiera och klistra in den här länken...
 shareEmail = E-post
 shareCopy = Kopiera
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } slutar den { $completedDate }
 eolNoticeLink = Läs mer
+eolDisableMessage = Experimentet { $title } har avslutats. När du avinstallerar det kommer du inte att kunna återinstallera det genom Test Pilot igen.
+completedDateLabel = Slutdatum för experiment: <b>{ $completedDate }</b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
+incompatibleHeader = Detta experiment kanske inte är kompatibelt med tillägg som du har installerat.
+incompatibleSubheader = Vi rekommenderar att du <a>inaktiverar dessa tillägg</a> innan du aktiverar det här experimentet:
 
 
 
@@ -281,10 +299,20 @@ localeWarningSubtitle = Du kan fortfarande aktivera det om du vill.
 
 
 
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledHeader = Låt oss komma igång!
+experimentsListNoneInstalledSubheader = Redo att prova en nytt experiment från Test Pilot? Välj en för att aktivera, ta det på en provtur och låt oss veta vad du tycker.
+experimentsListNoneInstalledCTA = Inte intresserad? <a>Låt oss veta varför</a>.
+
+
+
 # Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
 noScriptHeading = Ojdå...
+noScriptMessage = Test Pilot kräver JavaScript.<br>Ledsen för det.
 noScriptLink = Ta reda på varför
 
 
