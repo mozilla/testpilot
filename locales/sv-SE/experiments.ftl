@@ -1,4 +1,5 @@
 activitystreamDescription = En grafisk översikt över din historik och en ny hemsida som gör det möjligt att hitta önskat innehåll i Firefox ännu bättre.
+activitystreamDetails0Copy = Klicka på en ny flik och dina favoritwebbplatser är bara ett klick borta.
 activitystreamContributors0Title = Software Engineer
 activitystreamContributors1Title = Web Engineer
 activitystreamContributors2Title = Software Developer
