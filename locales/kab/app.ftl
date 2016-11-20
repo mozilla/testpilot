@@ -143,15 +143,24 @@ enableExperiment = Rmed { $title }
 enableExperimentTransition = Armed...
 measurements = Tabaḍnit-inek
 experimentPrivacyNotice = Tzemreḍ ad tisineḍ ugar ɣef ulqwaḍ n isefka i { $title } dagi.
+contributorsHeading = Iwwi-yak-tt-id 
 version = Alqem
 lastUpdate = Alqem aneggaru
 tourDoneButton = Tefra
 
 
 
+# Shown when an experiment requires a version of Firefox newer than the user's.
+[[ upgradeNotice ]]
+
+upgradeNoticeLink = Amek ad tleqmeḍ Firefox.
+
+
+
 # Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
+retireDialogTitle = Kkes Test Pilot?
 retireCancelButton = Sefsex
 
 
