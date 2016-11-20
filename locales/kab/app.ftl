@@ -77,6 +77,13 @@ landingCardThree = Ini-yaɣ-d ayen tettxemmimeḍ
 
 
 
+# Shown after the user installs the Test Pilot add-on.
+[[ onboarding ]]
+
+onboardingMessage = Ad nger tignit deg ufeggag n tunigin i wakken ad tzemreḍ ad tafeḍ Test Pilote di yal tikkelt.
+
+
+
 # A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
