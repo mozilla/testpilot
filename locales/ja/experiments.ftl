@@ -1,4 +1,5 @@
 activitystreamDescription = 視覚的な履歴フィードと再考されたホームページによって、あなたがまさに Firefox の中で探しているものをかつてなく見つけやすくします。
+activitystreamIntroduction = <p>思考の流れを失うことなくブラウジングに戻りましょう。Activity Stream は、トップサイト、ブックマーク、最近の履歴を、新しいタブの中のすぐに手が届くところに用意しておきます。また、新たなタイムラインビューが、あなたのブラウジングの鳥瞰図を見せてくれます。</p>
 activitystreamDetails0Copy = 新しいタブをクリックすれば、お気に入りのサイトはもう一度クリックするだけで開けます。
 activitystreamDetails1Copy = あなたがこれまでに訪れたサイトが表示されるので、次に行く場所へすぐに進めます。
 activitystreamToursteps0Copy = <p>新しいタブを開いたときに、よく開くサイト、最近の履歴、ブックマークが表示されます。</p>
@@ -26,6 +27,7 @@ minvidToursteps3Copy = <p>Test Pilot の Min Vid は、いつでもフィード�
 minvidContributors0Title = エンジニア
 minvidContributors1Title = スタッフエンジニア
 minvidContributors2Title = エンジニアリングインターン
+minvidContributors3Title = エンジニアリング貢献者
 nomore404sSubtitle = 協力: Wayback Machine
 nomore404sDetails0Copy = Wayback Machine で 404 の行き止まりを減らしましょう。
 nomore404sDetails1Copy = Internet Archive の友人が皆さんにお届けします。
