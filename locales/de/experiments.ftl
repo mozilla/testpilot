@@ -32,6 +32,7 @@ minvidToursteps3Copy = <p>Sie können uns jederzeit Ihre Meinung sagen oder Min 
 minvidContributors0Title = Entwickler
 minvidContributors1Title = Entwickler
 minvidContributors2Title = Entwicklerpraktikant
+minvidContributors3Title = Entwicklungsmitarbeiter
 nomore404sSubtitle = Nutzt den Dienst der Wayback Machine
 nomore404sDescription = Keine Lust mehr auf Sackgassen im Internet? Wir sagen Ihnen, wenn es über die Wayback Machine des Internet Archive gespeicherte Inhalte gibt.
 nomore404sIntroduction = <p>Das ist ganz einfach. Wenn Sie beim Surfen auf eine 404-Seite stoßen, sagen wir Ihnen, ob die gesuchten Inhalte über die Wayback Machine des Internet Archive archiviert wurden.</p>
