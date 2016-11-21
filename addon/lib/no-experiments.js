@@ -14,7 +14,7 @@ let SETTINGS;
 
 
 module.exports = {
-  DELAY: 1000,
+  DELAY: 24 * 60 * 60 * 1000,  // 1 day
   QS: 'utm_source=testpilot-addon&utm_medium=firefox-browser&utm_campaign=testpilot-notification&utm_content=no-experiments-installed',
 
   makeUrl() {
