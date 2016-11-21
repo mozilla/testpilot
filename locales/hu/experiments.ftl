@@ -32,6 +32,7 @@ minvidToursteps3Copy = <p>Bármikor adhat visszajelzést vagy letilthatja a Min 
 minvidContributors0Title = Mérnök
 minvidContributors1Title = Vezető mérnök
 minvidContributors2Title = Mérnökgyakornok
+minvidContributors3Title = Mérnöki közreműködő
 nomore404sSubtitle = A Wayback Machine támogatásával
 nomore404sDescription = Elege van a zsákutcákkal a weben? Tudatni fogjuk Önnel, hogy van-e az oldalnak mentett verziója az Internet Archive Wayback Machine oldalán.
 nomore404sIntroduction = <p>Ez egyszerű. Ha egy 404-es oldalt talál böngészés közben, akkor tudatni fogjuk Önnel, hogy archiválásra került-e a tartalom az Internet Archive Wayback Machine oldalán.</p>
