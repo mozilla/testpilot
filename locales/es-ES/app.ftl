@@ -240,6 +240,10 @@ sharePrimary = ¿Te encanta Test Pilot? Ayúdanos a atraer a la gente.
 shareSecondary = o copia y pega este enlace...
 shareEmail = Correo
 shareCopy = Copiar
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } termina el { $completedDate }
+eolNoticeLink = Descubre más
 eolDisableMessage = El experimento { $title } ha finalizado. Cuando lo desinstales, no podrás volver a instalarlo a través de Test Pilot.
 completedDateLabel = Fecha de finalización: <b>{ $completedDate }</b>
 
@@ -280,6 +284,14 @@ newsletterFooterSuccessBody = Tienes que confirmar la suscripción a un boletín
 
 localeWarningTitle = Este experimento solo está disponible en inglés.
 localeWarningSubtitle = Si quieres, todavía puedes activarlo.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledSubheader = ¿Preparado para probar un nuevo experimento Test Pilot? Selecciona uno para activarlo, pruébalo y danos tu opinión.
+experimentsListNoneInstalledCTA = ¿No te interesa? <a>Dinos por qué</a>.
 
 
 
