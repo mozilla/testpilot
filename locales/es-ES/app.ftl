@@ -101,7 +101,8 @@ emailOptInMessage = Descubre nuevos experimentos y mira los resultados de los ex
 emailValidationError = ¡Usa una dirección de correo válida!
 
 # LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput = [html/placeholder] el correo va aquí :)
+emailOptInInput = 
+  [html/placeholder] el correo va aquí :)
 emailOptInButton = Suscribirme
 emailOptInSkip = Saltar
 emailOptInConfirmationTitle = Email enviado
@@ -260,7 +261,8 @@ incompatibleSubheader = Te recomendamos <a>desactivar estos complementos</a> ant
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
-newsletterFormEmailPlaceholder = [html/placeholder] Tu correo aquí
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Tu correo aquí
 newsletterFormDisclaimer = Solo te enviaremos información relacionada con Test Pilot.
 newsletterFormPrivacyNotice = Me parece bien que Mozilla gestione mi información según se indica en <a>este aviso sobre privacidad</a>.
 newsletterFormSubmitButton = Suscríbete ya
