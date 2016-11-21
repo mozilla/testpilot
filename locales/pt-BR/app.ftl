@@ -70,7 +70,7 @@ landingDownloadFirefoxSubTitle = Baixe gratuitamente
 landingCardListTitle = Começar em 3, 2, 1
 landingCardOne = Instale a extensão Test Pilot
 landingCardTwo = Habilite recursos experimentais
-landingCardThree = Diga-nos o que pensa
+landingCardThree = Diga-nos o que você achou
 
 
 
@@ -131,14 +131,47 @@ disableExperiment = Desabilitar { $title }
 disableExperimentTransition = Desabilitando…
 enableExperiment = Habilitar { $title }
 enableExperimentTransition = Habilitando…
+version = Versão
+changelog = registro de alterações
+lastUpdate = Última atualização
+contribute = Contribua
+tourOnboardingTitle = { $title } habilitado!
+tourDoneButton = Pronto
+highlightPrivacy = Sua privacidade
+
+
+
+# Shown when an experiment requires a version of Firefox newer than the user's.
+[[ upgradeNotice ]]
+
+upgradeNoticeLink = Como atualizar o Firefox.
 
 
 
 # Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
+retireSubmitButton = Prosseguir
+retireCancelButton = Cancelar
+pageTitleRetirePage = Firefox Test Pilot - Desinstalar o Test Pilot
 retirePageProgressMessage = Desligando...
 retirePageHeadline = Obrigador por voar!
+
+
+
+# Shown to users after installing Test Pilot if a restart is required.
+[[ restartIntro ]]
+
+restartIntroOne = Reinicie o navegador
+
+
+
+# Shown on a page presented to users three days after installing their first experiment.
+[[ share ]]
+
+shareEmail = E-mail
+shareCopy = Copiar
+eolNoticeLink = Saiba mais
 
 
 

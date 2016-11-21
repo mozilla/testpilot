@@ -10,6 +10,7 @@ activitystreamContributors10Title = Gerente de engenharia
 activitystreamContributors11Title = Engenheiro de software
 activitystreamContributors12Title = Designer UX sênior
 minvidDescription = Mantém os vídeos em um lugar privilegiado. Min Vid permite reproduzir vídeos do YouTube e Vimeo em um pequeno quadro que fica visível enquanto você navega na web.
+minvidToursteps0Copy = <p>Selecione o ícone para começar a usar o Min Vid.</p>
 minvidContributors0Title = Engenheiro
 minvidContributors2Title = Estagiário de engenharia
 nomore404sSubtitle = Oferecido por Wayback Machine
