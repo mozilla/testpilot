@@ -1,3 +1,4 @@
+activitystreamDescription = Ulac asuddem n umazaray neq asebter agejdan amaynut, d ayen fessusen akken ad tafeḍ ayen tebɣiḍ s Firefox.
 activitystreamContributors0Title = Ajenyuṛ n useɣẓan
 activitystreamContributors1Title = Ajenyuṛ n web
 activitystreamContributors2Title = Aneflau n useɣẓan
@@ -5,5 +6,7 @@ activitystreamContributors3Title = Ajenyuṛ n Firefox n ufellaru
 activitystreamContributors4Title = Ajenyuṛ n useɣẓan
 activitystreamContributors5Title = Anedbal n wahil atiknikan
 activitystreamContributors6Title = Ajenyuṛ n tinfawin n usigna
+minvidToursteps0Copy = <p>Fren tignit akken ad tesenkreḍ aseqdec n Min Vid.</p>
+minvidContributors0Title = Ajenyuṛ
 trackingprotectionContributors0Title = Aneflay n Web
 universalsearchContributors0Title = Anedbal n usenfar

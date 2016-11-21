@@ -161,7 +161,10 @@ experimentPrivacyNotice = Tzemreḍ ad tisineḍ ugar ɣef ulqwaḍ n isefka i {
 contributorsHeading = Iwwi-yak-tt-id 
 version = Alqem
 lastUpdate = Alqem aneggaru
+tourOnboardingTitle = { $title } ittwarmed!
 tourDoneButton = Tefra
+userCountContainerAlt = Ikker tura akka!
+highlightPrivacy = Tabaḍnit inek
 
 
 
@@ -176,7 +179,22 @@ upgradeNoticeLink = Amek ad tleqmeḍ Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Kkes Test Pilot?
+retireSubmitButton = Kemmel
 retireCancelButton = Sefsex
+pageTitleRetirePage = Firefox Test Pilot - Kkes Test Pilot
+retirePageProgressMessage = Asexsi...
+
+
+
+# Shown on a page presented to users three days after installing their first experiment.
+[[ share ]]
+
+shareEmail = Imayl
+shareCopy = Nɣel
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } add ifak di { $completedDate }
+eolNoticeLink = Issin ugar
 
 
 
@@ -197,6 +215,14 @@ newsletterFormSubmitButtonSubmitting = Tuzna...
 newsletterFooterError = Teḍra-d tuccḍa di tuzna n yimayl inek. Ɛreḍ tikelt nniḍen? 
 newsletterFooterHeader = Qqim akked umaynut
 newsletterFooterSuccessHeader = Tanemmirt!
+
+
+
+# A warning shown to users viewing an experiment that is only available in English.
+[[ localeWarning ]]
+
+localeWarningTitle = Tarmit-agi tella kan s teglizit.
+localeWarningSubtitle = Tzemreḍ ad tremdeḍ akka tura ma yella tebɣiḍ.
 
 
 
