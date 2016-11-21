@@ -38,17 +38,8 @@ module.exports = {
     );
   },
 
-  applyCSS: function(notif) {
-    if (notif && notif.box) {
-      const button = notif.box.getElementsByClassName('notification-button')[0];
-      if (button) {
-        button.setAttribute('style', 'background: #0095dd; color: #fff; cursor: pointer; height: 30px; font-size: 12px; border-radius: 2px; border: 0px; text-shadow: 0 0px; box-shadow: 0 0px;');
-      }
-    }
-  },
-
   showNotification: function() {
-    const notif = notify.createNotificationBox({
+    notify.createNotificationBox({
       label: _('no_experiment_message'),
       image: 'resource://@testpilot-addon/data/icon-96.png',
       persistence: -1,
@@ -66,7 +57,6 @@ module.exports = {
         }
       }]
     });
-    this.applyCSS(notif);
 
     Metrics.sendGAEvent({
       t: 'event',
