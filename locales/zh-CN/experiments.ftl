@@ -32,6 +32,7 @@ minvidToursteps3Copy = <p>您随时可以提供反馈，或者从 Test Pilot 禁
 minvidContributors0Title = 工程师
 minvidContributors1Title = 受雇工程师
 minvidContributors2Title = 实习工程师
+minvidContributors3Title = 工程贡献者
 nomore404sSubtitle = 信息提供方 Wayback Machine
 nomore404sDescription = 厌倦了遇到网页失效？如果您查看的页面有“互联网档案馆”（Wayback Machine）的已保存副本，我们可以通知您。
 nomore404sIntroduction = <p>这个实验如下所示。如果您在浏览时遇到了一个 404 页面，我们将会通知您，如果该内容在互联网档案馆的 Wayback Machine 有存档版本可用。</p>
