@@ -32,6 +32,7 @@ minvidToursteps3Copy = <p>Puoi inviare la tua opinione in qualunque momento o di
 minvidContributors0Title = Engineer
 minvidContributors1Title = Staff Engineer
 minvidContributors2Title = Engineering Intern
+minvidContributors3Title = Engineering Contributor
 nomore404sSubtitle = Basato su tecnologia Wayback Machine
 nomore404sDescription = Sei stanco di ritrovarti in vicoli ciechi sul Web? Ti mostreremo un avviso se una versione della pagina che stavi cercando è stata salvata nella Wayback Machine di Internet Archive.
 nomore404sIntroduction = <p>Questo esperimento è davvero semplice: se durante la navigazione raggiungi una pagina di errore 404 (pagina non trovata), quando disponibile ti mostreremo un link alla versione della pagina che stavi cercando salvata nella Wayback Machine di Internet Archive.</p>
