@@ -49,7 +49,7 @@ landingExperimentsTitle = Wopytajśo nejnowše eksperimentelne funkcije
 # Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
-landingInstallButton = Ddoank Test Pilot instalěrowaś
+landingInstallButton = Dodank Test Pilot instalěrowaś
 landingInstallingButton = Instalěrujo se...
 landingInstalledButton = Wubjeŕśo swóje funkcije
 
