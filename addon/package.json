@@ -1,7 +1,7 @@
 {
   "title": "Test Pilot",
   "name": "testpilot-addon",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "private": true,
   "description": "Test Pilot is a privacy-sensitive user research program focused on getting new features into Firefox faster.",
   "repository": "mozilla/testpilot",
@@ -25,7 +25,7 @@
     "watch": "jpm watchpost --post-url http://127.0.0.1:8888",
     "watch-ui": "watchify-server ui-test.js --index ui-test.html",
     "lint": "eslint --no-eslintrc -c ./.eslintrc .",
-    "sign": "./bin/update-version && ./bin/sign",
+    "sign": "cd .. && npm run addon:locales && cd addon && ./bin/update-version && ./bin/sign",
     "package": "jpm xpi && mv testpilot-addon.xpi addon.xpi && mv @testpilot-addon-$npm_package_version.update.rdf update.rdf",
     "package-win": "jpm xpi && move testpilot-addon.xpi addon.xpi && move @testpilot-addon-%npm_package_version%.update.rdf update.rdf",
     "lint-addon": "addons-linter addon.xpi -o text"
