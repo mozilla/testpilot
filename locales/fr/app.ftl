@@ -252,7 +252,8 @@ incompatibleSubheader = Nous recommandons de <a>désactiver ces modules</a> avan
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
-newsletterFormEmailPlaceholder = [html/placeholder] Votre adresse électronique
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Votre adresse électronique
 newsletterFormDisclaimer = Nous ne vous enverrons que des informations liées au programme Test Pilot.
 newsletterFormPrivacyNotice = J’accepte que Mozilla utilise mes informations conformément à <a>cette politique de confidentialité</a>.
 newsletterFormSubmitButton = Inscrivez-vous maintenant
