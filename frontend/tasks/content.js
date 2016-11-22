@@ -75,7 +75,6 @@ function buildExperimentsData() {
     Object.assign(experiment, {
       url: `/api/experiments/${experiment.id}.json`,
       html_url: `/experiments/${experiment.slug}`,
-      installations_url: `/api/experiments/${experiment.id}/installations/`,
       survey_url: `https://qsurvey.mozilla.com/s3/${experiment.slug}`
     });
 
@@ -120,7 +119,7 @@ function buildExperimentsData() {
 function processImportedExperiment(experiment) {
   // Clean up auto-generated and unused model fields.
   const fieldsToDelete = {
-    '': ['url', 'html_url', 'installations_url', 'survey_url'],
+    '': ['url', 'html_url', 'survey_url'],
     details: ['order', 'url', 'experiment_url'],
     tour_steps: ['order', 'experiment_url'],
     contributors: ['username']
