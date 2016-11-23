@@ -94,74 +94,111 @@ modified: '2016-07-20T15:42:28.873321Z'
 completed: '2016-11-30T16:00:00.000000Z'
 eol_warning: We will automatically disable the Universal Search experiment and report the results when it ends.
 graduation_report: >
-  <img src="/static/images/experiments/universal-search/experiments_experimentdetail/6/d/6d0ff50eff9223f0d0cc58c5aa5d0c81_image_1462827811_0995.jpg" alt="universal search preview" />
-  <p>Universal Search was one of the three inaugural experiments that launched 
-  with Test Pilot in May 2016. We wanted to learn if users would click on results 
-  directly in the Awesome Bar. The short answer is: yes! When results were relevant, 
-  users would click, and they told us the interaction was valuable.</p>
-  <img src="/static/images/experiments/universal-search/experiments_experimentdetail/8/6/8675c7bf31054abdaf58b47850a1365d_image_1462827811_0451.jpg" alt="universal search preview" />
-  <p>The Universal Search add-on turned on search suggestions in the Awesome Bar 
-  and removed the standalone search bar. Most importantly, Universal Search inserted 
-  a single search result directly into the top spot in the Awesome Bar for many user 
-  searches. At launch, we served two types of results: top-level domains 
-  (such as Facebook.com, Amazon.com, Youtube.com, etc), and specific Wikipedia article 
-  pages pertaining to a user query.</p>
+  <h3>Test Pilot Universal Search Retirement Report</h3>
+  <p>Universal Search launched with Test Pilot in May 2016 and is the first experiment 
+  we’ve formally retired. We designed it to get you to the best things on the Web faster, 
+  by adding search suggestions and site recommendations into Awesome Bar results. We 
+  think it did that. We also learned a lot in the process. That’s why we’re calling 
+  Universal Search a success.</p>
+  <p>Our basic question was “Would Firefox users find enough value in the recommended 
+  sites to click on them in the Awesome Bar?” and we tested this and gathered feedback 
+  in a few ways during the course of the experiment.</p>
+  <p><strong>Here’s how it went down</strong></p>
+  <p>At launch, we showed participants two types of recommendations based on their 
+  queries: top-level domains (such as Facebook.com, Amazon.com, Youtube.com, etc), 
+  and Wikipedia article pages.</p>
   <figure>
-  <img src="/static/images/experiments/universal-search/graduation/results_1.png" />
-  <figcaption>Percentage of featured cards shown and taken during the experiment.</figcaption>
+  <img src="/static/images/experiments/universal-search/experiments_experimentdetail/6/d/6d0ff50eff9223f0d0cc58c5aa5d0c81_image_1462827811_0995.jpg" alt="universal search preview" />
+  <figcaption>Result displaying top-level domain.</figcaption>
   </figure>
-  <p>For the first two months, we showed users a result approximately 20% of the
-  time they typed in the Awesome Bar, and users clicked on a displayed result
-  about 10% of the time. In mid-July, we made a significant change to exclude
-  showing a search result if the destination page was already in the user’s
-  history. We expected this to dramatically reduce the frequency of results
-  shown, and it did. Results displayed fell approximately 2/3, from 20% to 7%.
-  What we didn’t expect was that the percentage of results clicked would also
-  fall: we showed fewer results, and our click-through rate was worse.
-  Intuitively this made sense. The duplicates we removed would include many
-  sites that users revisit habitually, so our previously higher click-through
-  rate included many clicks stolen from history navigation.</p>
-  <img src="/static/images/experiments/universal-search/graduation/results_2.png" />
-  <figcaption>Card types shown and selected. We added movie cards in early October.</figcaption>
+  <figure>
+  <img src="/static/images/experiments/universal-search/experiments_experimentdetail/8/6/8675c7bf31054abdaf58b47850a1365d_image_1462827811_0451.jpg" alt="universal search preview" />
+  <figcaption>Result displaying Wikipedia article.</figcaption>
   </figure>
-  <p>In October 2016, we added a third result type, rich movie cards, which we
-  hypothesized would be shown less often but clicked more frequently than the
-  other types. A breakdown of clicks by result type showed that Wikipedia pages
-  were shown most and clicked least. Top-level domains were the most consistent
-  performer. Movie Cards had the least amount of test data, but outperformed
-  Wikipedia pages. In aggregate, our click-through-rate for search results
-  settled around 7% by the end of the experiment. In the graphs below, we have a
-  data gap from July through the first week of August where we upgraded Test
-  Pilot Telemetry.</p>
-  <img src="/static/images/experiments/universal-search/graduation/results_3.png" />
-  <figcaption>Results from one of our feedbck surveys.</figcaption>
+  <p>For the first two months, we showed recommendations when we thought they 
+  would be relevant, about 20 percent of the time. During this period, we saw 
+  that participants clicked on a displayed result about 10 percent of the time 
+  (we call this a click-thru rate, or CTR).</p>
+  <p>In July, we changed the experiment so that we didn’t display a recommendation 
+  if the site was already in a participant’s browsing history.  We expected 
+  this to dramatically reduce the frequency of results shown, and it did. 
+  Results displayed fell from 20 percent to 7 percent. We were surprised to see 
+  that our CTR fell, too.  From this, we hypothesized that duplicates we removed 
+  included many sites that users visit habitually, so our initial CTR included many 
+  clicks “stolen” from history navigation.<p>
+  <p>In October 2016, we added a third result type, rich movie cards. We predicted 
+  these would have a higher CTR than the other types, but discovered that while 
+  rich movie cards outperformed Wikipedia, they did not outperform top-level domains.</p>
+  <p><strong>Here’s what we learned</strong></p>
+  <p>When we evaluate an experiment we look at usage data as well as what 
+  participants tell us in post-experiment surveys. By both measures, Universal Search 
+  was a success. In fact, it outperformed our expectations. We had surprisingly 
+  high CTR for showing only three result types and overall user sentiment was quite positive.</p>
+  <p><strong>Results from telemetry data</strong></p>
+  <p>The data showed a final average CTR of 7 percent, and indicated a clear preference 
+  for top-level domain results. A breakdown of clicks by result type showed that 
+  Wikipedia pages were shown most and clicked least. Top-level domains were the 
+  most consistent performer: our better relevancy on top-level domains (even 
+  after de-duping) probably indicated we were short-cutting users to sites 
+  they already knew they wanted to visit. Movie Cards had the least amount of test data, 
+  but outperformed Wikipedia pages.</p>
+  <p>Search Results Displayed and Clicked</p>
+  <figure>
+  <img src="/static/images/experiments/universal-search/graduation/graph1.png" />
+  <figcaption>
+  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph1_key1.png" /> Displayed<br />
+  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph1_key2.png" /> Clicked
+  </figcaption>
   </figure>
-  <p>Besides Telemetry data, we also collected user sentiment via surveys. Users
-  who left the experiment early spoke to a few themes. Some mentioned
-  performance or stability issues, and we made some early fixes. Many users who
-  left told us they wanted separate search and Awesome Bars: their learned
-  habits were hard to overcome. Many who left also cited poor result quality.
-  Search isn’t easy. Our better relevancy on top-level domains (even after de-
-  duping) probably indicated we were short-cutting users to sites they already
-  knew they wanted to visit.</p>
-  <p>However, some of the most telling, representative survey feedback came from
-  users who stayed. Universal Search had a high retention rate, and of the users
-  who remained:</p>
-  <ul>
-  <li>65% agreed that Universal Search results were meaningful, and</li>
-  <li>60% agreed that Universal Search helped them complete tasks faster.</li>
-  </ul>
-  <p>In conclusion, Universal Search outperformed our expectations. We asked a
-  simple question: would users click on results in the Awesome Bar. We had
-  surprisingly high click-through rate for serving a mere three results types,
-  and user sentiment was quite positive. The prototype we built was not a
-  complete product experience, but it was enough to meet our learning goals, and
-  we will now retire the experiment. If we tried a similar experiment again,
-  we’d pursue better result relevancy and more diverse result types. As part of
-  this first experiment, we did not test alternate UX treatments to see if we
-  could affect interaction with results, or improve user acceptance of the
-  combined Awesome Bar for those users who preferred separate bars. These are
-  questions we may examine in future experiments.</p>
+  <p><figcaption>User data showing percentage of time recommendations were displayed and 
+  percentage of time participants clicked on recommendations.</figcaption></p>
+  <p>Key events to note in the graph<br />
+  <ul><li>May to July -  Top-level domain and Wikipedia results displayed </li>
+  <li>Mid-July to Mid-August - No data collected during telemetry system upgrade</li>
+  <li>Mid-August to September - Top-level domain (de-duped) and Wikipedia results displayed</li>
+  <li>October to November - Rich movie card, top-level domain (de-duped) and Wikipedia results displayed</li></ul></p>
+  <p>Weekly Performance by Result Type</p>
+  <figure>
+  <img src="/static/images/experiments/universal-search/graduation/graph2.png" />
+  <figcaption>
+  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key1.png" /> Top-Level Domains: Displayed<br />
+  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key2.png" /> Top-Level Domains: Clicked<br />
+  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key3.png" /> Wikipedia: Displayed<br />
+  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key4.png" /> Wikipedia: Clicked<br />
+  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key5.png" /> Movie Cards: Displayed<br />
+  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key6.png" /> Movie Cards: Clicked<br />
+  </figcaption>
+  </figure>
+  <p><figcaption>Percentage of results displayed and clicked by type.</figcaption></p>
+  <p><strong>Results from participant feedback</strong></p>
+  <p>The great thing about collecting feedback from participants is that we can learn 
+  as much from our failures as our successes, and even a successful experiment is 
+  not successful for everyone.</p>
+  <p>Some participants who left the experiment in the first weeks mentioned performance 
+  issues. Others told us they preferred separate search and Awesome Bars: their learned 
+  habits were hard to overcome. Many who left also cited poor result quality: search 
+  isn’t easy to get right, especially with a limited data set.</p>
+  <p>However, some of the most telling, representative survey feedback came from users 
+  who stayed. Universal Search had a high retention rate, and of the users who remained:
+  <ul><li>65% agreed that Universal Search results were meaningful, and</li>
+  <li>60% agreed that Universal Search helped them complete tasks faster.</li></ul></p>
+  <figure>
+  <img src="/static/images/experiments/universal-search/graduation/graph3.png" alt="participant feedback" />
+  <figcaption>Participant feedback survey results.</figcaption>
+  </figure>
+  <p><strong>Here’s what happens next</strong></p>
+  <p>What’s next for Universal Search? Now that we’ve announced retirement plans 
+  for this add-on, we will no longer maintain it.  If you have Universal Search enabled, 
+  you don’t need to do anything. We’ll automatically uninstall it in the coming weeks.</p>
+  <p>The experiment we built was not a complete product experience, but it was 
+  enough to meet our learning goals. If we tried a similar experiment again, we’d 
+  pursue better result relevancy and more diverse result types. We would also likely 
+  test alternate UX treatments to see if we could affect interaction with results, or 
+  improve user acceptance of the combined Awesome Bar for those users who preferred 
+  separate URL and search bars. These are questions we may examine in future experiments.</p>
+  <p>Thank you to all the Test Pilots who installed Universal Search, used it, and told 
+  us what they thought!  We are grateful for your participation.</p>
+  <p>Want to try a new experiment? Visit <a href="https://testpilot.firefox.com">https://testpilot.firefox.com</a>.</p>
   <div class="float-right"><strong>-Javaun Moradi, Product Manager</strong></div>
 
 order: 7
