@@ -144,32 +144,32 @@ graduation_report: >
   but outperformed Wikipedia pages.</p>
   <p>Search Results Displayed and Clicked</p>
   <figure>
-  <img src="/static/images/experiments/universal-search/graduation/graph1.png" />
+  <img src="/static/images/experiments/universal-search/graduation/graph1.png" alt="Search Results Displayed and Clicked" />
   <figcaption>
-  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph1_key1.png" /> Displayed<br />
-  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph1_key2.png" /> Clicked
+  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph1_key1.png" alt="Displayed" /> Displayed<br />
+  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph1_key2.png" alt="Clicked" /> Clicked<br /><br />
+  User data showing percentage of time recommendations were displayed and 
+  percentage of time participants clicked on recommendations.
   </figcaption>
   </figure>
-  <p><figcaption>User data showing percentage of time recommendations were displayed and 
-  percentage of time participants clicked on recommendations.</figcaption></p>
-  <p>Key events to note in the graph<br />
+  <p>Key events to note in the graph<p>
   <ul><li>May to July -  Top-level domain and Wikipedia results displayed </li>
   <li>Mid-July to Mid-August - No data collected during telemetry system upgrade</li>
   <li>Mid-August to September - Top-level domain (de-duped) and Wikipedia results displayed</li>
-  <li>October to November - Rich movie card, top-level domain (de-duped) and Wikipedia results displayed</li></ul></p>
+  <li>October to November - Rich movie card, top-level domain (de-duped) and Wikipedia results displayed</li></ul>
   <p>Weekly Performance by Result Type</p>
   <figure>
-  <img src="/static/images/experiments/universal-search/graduation/graph2.png" />
+  <img src="/static/images/experiments/universal-search/graduation/graph2.png" alt="Weekly Performance by Result Type" />
   <figcaption>
-  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key1.png" /> Top-Level Domains: Displayed<br />
-  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key2.png" /> Top-Level Domains: Clicked<br />
-  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key3.png" /> Wikipedia: Displayed<br />
-  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key4.png" /> Wikipedia: Clicked<br />
-  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key5.png" /> Movie Cards: Displayed<br />
-  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key6.png" /> Movie Cards: Clicked<br />
+  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key1.png" alt="Top-Level Domains: Displayed" /> Top-Level Domains: Displayed<br />
+  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key2.png" alt="Top-Level Domains: Clicked" /> Top-Level Domains: Clicked<br />
+  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key3.png" alt="Wikipedia: Displayed" /> Wikipedia: Displayed<br />
+  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key4.png" alt="Wikipedia: Clicked" /> Wikipedia: Clicked<br />
+  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key5.png" alt="Movie Cards: Displayed" /> Movie Cards: Displayed<br />
+  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key6.png" alt="Movie Cards: Clicked" /> Movie Cards: Clicked<br /><br />
+  Percentage of results displayed and clicked by type.
   </figcaption>
   </figure>
-  <p><figcaption>Percentage of results displayed and clicked by type.</figcaption></p>
   <p><strong>Results from participant feedback</strong></p>
   <p>The great thing about collecting feedback from participants is that we can learn 
   as much from our failures as our successes, and even a successful experiment is 
@@ -179,11 +179,11 @@ graduation_report: >
   habits were hard to overcome. Many who left also cited poor result quality: search 
   isn’t easy to get right, especially with a limited data set.</p>
   <p>However, some of the most telling, representative survey feedback came from users 
-  who stayed. Universal Search had a high retention rate, and of the users who remained:
+  who stayed. Universal Search had a high retention rate, and of the users who remained:</p>
   <ul><li>65% agreed that Universal Search results were meaningful, and</li>
-  <li>60% agreed that Universal Search helped them complete tasks faster.</li></ul></p>
+  <li>60% agreed that Universal Search helped them complete tasks faster.</li></ul>
   <figure>
-  <img src="/static/images/experiments/universal-search/graduation/graph3.png" alt="participant feedback" />
+  <img src="/static/images/experiments/universal-search/graduation/graph3.png" alt="Results from participant feedback" />
   <figcaption>Participant feedback survey results.</figcaption>
   </figure>
   <p><strong>Here’s what happens next</strong></p>
