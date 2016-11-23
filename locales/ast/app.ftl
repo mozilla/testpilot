@@ -128,7 +128,7 @@ experimentListEndingSoon = Fina ceo
 
 experimentCardManage = Xestionar
 experimentCardGetStarted = Entamar
-experimentCardLearnMore = Depriendi más
+experimentCardLearnMore = Deprendi más
 
 
 
