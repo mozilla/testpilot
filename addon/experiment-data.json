@@ -71,7 +71,6 @@
         "avatar": "\/\/www.gravatar.com\/avatar\/abe193c513e181a8a3ee40980928af39?s=64"
       }
     ],
-    "installations_url": "http:\/\/testpilot.dev:8000\/api\/experiments\/1\/installations\/",
     "installation_count": 1,
     "created": "2015-12-09T15:45:42.395000Z",
     "modified": "2015-12-10T22:10:11.640000Z",
@@ -118,7 +117,6 @@
         "avatar": "\/\/www.gravatar.com\/avatar\/ea746ee95136a9a98aff32026954edb0?s=64"
       }
     ],
-    "installations_url": "http:\/\/testpilot.dev:8000\/api\/experiments\/2\/installations\/",
     "installation_count": 0,
     "created": "2015-12-09T15:47:56.050000Z",
     "modified": "2015-12-10T22:00:31.398000Z",
@@ -177,7 +175,6 @@
         "avatar": "\/\/www.gravatar.com\/avatar\/c569400fd10c6ed0e7e0194155273d1e?s=64"
       }
     ],
-    "installations_url": "http:\/\/testpilot.dev:8000\/api\/experiments\/3\/installations\/",
     "installation_count": 0,
     "created": "2015-12-10T20:11:55.207000Z",
     "modified": "2015-12-10T22:00:58.944000Z",
