@@ -70,6 +70,7 @@ tabcenterContributors1Title = Firefox-UX
 tabcenterContributors2Title = Firefox-UX
 tabcenterContributors3Title = Firefox-UX
 trackingprotectionDescription = Helpe jo ús Tracking Protection better te meitsjen? Dit eksperimint skeakelet Tracking Protection yn foar al jo sneupjen en biedt in flugge manier om problemen te rapportearjen as jo dy tsjinkomme.
+trackingprotectionIntroduction = <p>Oant no ta wie Tracking Protection allinnich beskikber yn Priveesneupmodus yn Firefox. Dit eksperimint skeakelet Tracking Protection altyd yn! (Jo kinne it natuerlik per website útskeakelje.)</p><p>Dit eksperimint lit jo ús helpe wêr't Tracking Protection it web skansearret, sadat wy dat ferbetterje kinne foar alle Firefox-brûkers. Wylst jo sneupe, klik op it pears skyld yn de navigaasjebalke boppe oan de side om ús te fertellen hokker websites goed wurkje mei Tracking Protection en hokker net.</p>
 trackingprotectionPrefeedbackcopy = <p>Om in side te rapportearjen dy't net wurket mei Tracking Protection, selektearje it skyldikoantsje yn de balke mei de URL fan de website.</p>
 trackingprotectionDetails0Copy = Tagong ta alle Tracking Protection-funksjes yn de navigaaasjebalke.
 trackingprotectionDetails1Copy = Rapportearje in probleem en help ús nei in oplossing te sykjen.
