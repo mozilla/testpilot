@@ -29,6 +29,7 @@ home = Домівка
 menuTitle = Налаштування
 menuWiki = Вікі Test Plot
 menuDiscuss = Обговорити Test Pilot
+menuFileIssue = Повідомити про помилку
 menuRetire = Видалити Test Pilot
 
 
@@ -38,6 +39,9 @@ menuRetire = Видалити Test Pilot
 
 landingIntroLead = Перейдіть по той бік . . .
 landingIntroOne = Тестуйте нові функції.
+landingIntroTwo = Дайте свій відгук.
+landingIntroThree = Допоможіть збудувати Firefox.
+landingLegalNotice = Продовжуючи, ви погоджуєтеся з <a>Правилами використання</a> та <a>Політикою приватності</a> Test Pilot.
 landingExperimentsTitle = Спробуйте найновіші експериментальні функції
 
 
@@ -54,6 +58,7 @@ landingInstalledButton = Оберіть ваші функції
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
+landingRequiresDesktop = Test Pilot потребує Firefox на Windows, Mac чи Linux
 landingDownloadFirefoxDesc = (Test Pilot доступний для Firefox на Windows, OS X та Linux)
 landingUpgradeDesc = Test Pilot потребує Firefox 45 або вище.
 landingDownloadFirefoxTitle = Firefox
@@ -65,17 +70,26 @@ landingDownloadFirefoxSubTitle = Безкоштовне завантаження
 # A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
-landingCardListTitle = Розпочніть за 3, 2, 1
+landingCardListTitle = Почніть на 3, 2, 1
 landingCardOne = Отримайте додаток Test Pilot
 landingCardTwo = Увімкніть експериментальні функції
 landingCardThree = Розкажіть нам, що ви думаєте
 
 
 
+# Shown after the user installs the Test Pilot add-on.
+[[ onboarding ]]
+
+onboardingMessage = Ми додали значок на вашу панель інструментів, аби ви завжди змогли знайти Test Pilot.
+
+
+
 # Error message pages.
 [[ error ]]
 
-notFoundHeader = Чотири Нуль Чотири!
+errorHeading = Отакої!
+errorMessage = Здається, ми щось зламали. <br> Можливо спробуйте ще раз пізніше.
+notFoundHeader = Чотириста чотири!
 
 
 
@@ -85,6 +99,10 @@ notFoundHeader = Чотири Нуль Чотири!
 emailOptInDialogTitle = Вітаємо у Test Pilot!
 emailOptInMessage = Дізнайтеся про нові експерименти та перегляньте результати експериментів, якими ви користувалися.
 emailValidationError = Будь ласка, введіть дійсну адресу електронної пошти!
+
+# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput = 
+  [html/placeholder] адреса ел. пошти :)
 emailOptInButton = Підписатись
 emailOptInSkip = Пропустити
 emailOptInConfirmationTitle = Повідомлення надіслано
@@ -131,8 +149,25 @@ feedbackUninstallCopy =
 # A modal prompt telling a user that they are about to go to an external forum for discussion.
 [[ discussNotify ]]
 
+discussNotifyTitle = Одну секундочку...
+discussNotifyMessageAccountless = 
+  | <p>В дусі експерименту ми використовуємо зовнішній сервіс форуму.
+  | Вам потрібно буде створити обліковий запис, якщо ви
+  | бажаєте брати участь на форумах.</p>
+  | <p>Якщо ви не хочете створювати обліковий запис, ви можете
+  | завжди залишити відгук через Test Pilot.
+  | <br>
+  | (Ми справді це читаємо)</p>
 discussNotifySubmitButton = Перейти до форуму
 discussNotifyCancelButton = Скасувати
+
+
+
+# A modal prompt shown before the feedback survey for some experiments.
+[[ experimentPreFeedback ]]
+
+experimentPreFeedbackTitle = { $title } зворотній зв'язок
+experimentPreFeedbackLinkCopy = Відгукніться про експеримент { $title }
 
 
 
@@ -140,6 +175,7 @@ discussNotifyCancelButton = Скасувати
 [[ experimentPromo ]]
 
 experimentPromoHeader = Готові до запуску?
+experimentPromoSubheader = Ми будуємо функції наступного покоління для Firefox. Встановіть Test Pilot, щоб спробувати їх!
 
 
 
@@ -147,8 +183,9 @@ experimentPromoHeader = Готові до запуску?
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } увімкнено.
+installErrorMessage = Ой-ой. { $title } не вдалося активувати. Повторіть спробу пізніше.
 participantCount = <span>{ $installation_count }</span> учасників
-otherExperiments = Також спробуйте ці експерименти
+otherExperiments = Спробуйте ці експерименти також
 giveFeedback = Залишити відгук
 disableHeader = Вимкнути експеримент?
 disableExperiment = Вимкнути { $title }
@@ -160,10 +197,14 @@ experimentPrivacyNotice = Ви можете дізнатися більше пр
 contributorsHeading = Для вас від
 version = Версія
 changelog = журнал змін
+tourLink = тур
 lastUpdate = Останнє оновлення
+contribute = Зробити внесок
 bugReports = Повідомлення про помилки
+discourse = Обговорення
 tourOnboardingTitle = { $title } увімкнено!
 tourDoneButton = Готово
+userCountContainer = <span>{ $installation_count }</span> людей пробують { $title } прямо зараз!
 userCountContainerAlt = Щойно запущено!
 highlightPrivacy = Ваша приватність
 
@@ -181,6 +222,7 @@ upgradeNoticeLink = Як оновити Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Видалити Test Pilot?
+retireMessage = Як забажаєте. Це вимкне будь які активні тести, видалить додаток та вилучить вашу інформацію про обліковий запис з наших серверів.
 retireSubmitButton = Продовжити
 retireCancelButton = Скасувати
 pageTitleRetirePage = Firefox Test Pilot - Видалити Test Pilot
@@ -222,6 +264,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] Ваша е-пошта тут
 newsletterFormDisclaimer = Ми будемо надсилати вам лише інформацію, яка стосується Test Pilot.
 newsletterFormPrivacyNotice = Я погоджуюсь з тим, як Mozilla поводиться з моїми даними згідно з <a>цим повідомленням про приватність</a>.
+newsletterFormSubmitButton = Підписатися зараз
 newsletterFormSubmitButtonSubmitting = Надсилаємо...
 
 
@@ -230,6 +273,7 @@ newsletterFormSubmitButtonSubmitting = Надсилаємо...
 [[ newsletterFooter ]]
 
 newsletterFooterHeader = Залишатися в курсі
+newsletterFooterBody = Дізнайтеся про нові експерименти і перегляньте результати експериментів, які ви пробували.
 newsletterFooterSuccessHeader = Дякуємо!
 newsletterFooterSuccessBody = Якщо ви досі не підтвердили підписку на новини про Mozilla, ви ще можете це зробити. Перевірте свою пошту або теку спаму на наявність листа від нас.
 
