@@ -43,6 +43,7 @@ nomore404sContributors1Title = Untwikkeler, Wayback Machine, The Internet Archiv
 nomore404sContributors2Title = Direkteur, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Senior Crawl Engineer, The Internet Archive
 pageshotDescription = Yntuïtive skermôfdrukken streekrjocht ynbakt yn de browser. Wylst jo sneupe oer it web mei Firefox, kinne jo skermôfdrukken meitsje, bewarje en diele.
+pageshotIntroduction = <p>Page Shot lit jo skermôfdrukken nimme, diele en weromsjen – sûnder Firefox te ferlitten.</p><ul> <li><strong>Rasterbyld:</strong> Besjoch foarbylden fan bewarre skermôfdrukken</li> <li><strong>Tûk sykje:</strong> Fyn de skermôfdruk dêr't jo nei sykje mei mar ien kaaiwurd. Page Shot yndeksearret titels en tekst yn skermôfdrukken</li> <li><strong>Ien-stap diele:</strong> Pleats jo skermôfdrukken op sosjale media of kopiearje de dielbere keppeling daliks fan de boppekant fan jo browserkerm út.</li></ul>
 pageshotDetails0Copy = Selektearje it ôfbyldingsgebiet en bewarje as it jo befalt wat jo sjogge, annulearje sûnder te bewarjen as dat net sa is.
 pageshotDetails1Copy = Diel keppelingen nei ôfbyldingen fia sosjale media of e-mail, sûnder de need om te downloaden of it bestân as bylage ta te foegjen.
 pageshotDetails2Copy = Bewarre skermôfdrukken maklik weromfine. Besjoch foarbylden yn in raster of sykje op kaaiwurd.
