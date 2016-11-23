@@ -32,6 +32,7 @@ minvidToursteps3Copy = <p>您可以隨時從 Test Pilot 提供意見，或停用
 minvidContributors0Title = 工程師
 minvidContributors1Title = 工程師主管
 minvidContributors2Title = 實習工程師
+minvidContributors3Title = 工程貢獻者
 nomore404sSubtitle = Powered by the Wayback Machine
 nomore404sDescription = 對網頁上的死路感到厭倦了嗎？我們會在您尋找的網頁找不到，而 Internet Archive 的 Wayback Machine 當中有已儲存的版本時讓您知道。
 nomore404sIntroduction = <p>這個實驗很簡單，如果您遇到 404 找不到網頁的錯誤，我們會讓您知道這個網頁在 Internet Archive 的 Wayback Machine 中有沒有存檔的版本可用。</p>
