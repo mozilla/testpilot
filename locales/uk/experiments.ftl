@@ -1,0 +1,6 @@
+tabcenterContributors0Title = Дизайнер інтерфейсу Firefox
+tabcenterContributors1Title = Дизайнер інтерфейсу Firefox
+tabcenterContributors2Title = Дизайнер інтерфейсу Firefox
+tabcenterContributors3Title = Дизайнер інтерфейсу Firefox
+trackingprotectionContributors0Title = Веб-розробник
+trackingprotectionContributors1Title = Старший дизайнер інтерфейсів

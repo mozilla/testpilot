@@ -223,18 +223,23 @@ upgradeNoticeLink = Як оновити Firefox.
 
 retireDialogTitle = Видалити Test Pilot?
 retireMessage = Як забажаєте. Це вимкне будь які активні тести, видалить додаток та вилучить вашу інформацію про обліковий запис з наших серверів.
+retireEmailMessage = Аби відписатися від оновлень на електронну пошту, просто натисніть посилання <em>відписатися</em> у будь-якому повідомленні Test Pilot.
 retireSubmitButton = Продовжити
 retireCancelButton = Скасувати
 pageTitleRetirePage = Firefox Test Pilot - Видалити Test Pilot
 retirePageProgressMessage = Вимкнення...
 retirePageHeadline = Дякуємо за політ!
+retirePageMessage = Сподіваємося, вам було весело експериментувати з нами. <br> Повертайтеся у будь-який час.
+retirePageSurveyButton = Взяти участь в невеличкому опитуванні
 
 
 
 # Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = Передполітний контрольний перелік
 restartIntroOne = Перезапустіть ваш браузер
+restartIntroTwo = Знайдіть додаток Test Pilot
 restartIntroThree = Оберіть ваші експерименти
 
 
@@ -242,8 +247,14 @@ restartIntroThree = Оберіть ваші експерименти
 # Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
+sharePrimary = Подобається Test Pilot? Допоможіть нам знайти нових учасників.
+shareSecondary = або просто скопіюйте і вставте це посилання...
 shareEmail = Ел. пошта
 shareCopy = Копіювати
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } закінчується { $completedDate }
+eolNoticeLink = Докладніше
 eolDisableMessage = Експеримент { $title } завершився. Щойно ви видалите його, ви не зможете його перевстановити через Test Pilot ще раз.
 completedDateLabel = Дата закінчення експерименту: <b>{ $completedDate }</b>
 
@@ -272,6 +283,7 @@ newsletterFormSubmitButtonSubmitting = Надсилаємо...
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = Сталася помилка під час надсилання вашої е-пошти. Спробувати знову?
 newsletterFooterHeader = Залишатися в курсі
 newsletterFooterBody = Дізнайтеся про нові експерименти і перегляньте результати експериментів, які ви пробували.
 newsletterFooterSuccessHeader = Дякуємо!
@@ -287,10 +299,20 @@ localeWarningSubtitle = Ви все одно можете увімкнути й�
 
 
 
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledHeader = Давайте запустимо цю крихітку в небо!
+experimentsListNoneInstalledSubheader = Готові спробувати новий експеримент Test Pilot? Виберіть його, щоб увімкнути, випробуйте, і дайте нам знати вашу думку.
+experimentsListNoneInstalledCTA = Не цікаво? <a>Розкажіть чому</a>.
+
+
+
 # Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
 noScriptHeading = Ой ой...
+noScriptMessage = Test Pilot потребує JavaScript.<br>Пробачте за це.
 noScriptLink = Дізнатися, чому
 
 
