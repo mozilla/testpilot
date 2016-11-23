@@ -88,6 +88,8 @@ onboardingMessage = Do vášho panela nástrojov sme umiestnili ikonu, aby ste m
 [[ error ]]
 
 errorHeading = Upps!
+errorMessage = Zdá sa, že sa niečo pokazilo. <br> Skúste to neskôr.
+notFoundHeader = 404!
 
 
 
@@ -105,6 +107,7 @@ emailOptInButton = Prihlásiť sa na odber
 emailOptInSkip = Preskočiť
 emailOptInConfirmationTitle = E-mail bol odoslaný
 emailOptInSuccessMessage2 = Ďakujeme!
+emailOptInConfirmationClose = Prejsť na experimenty...
 
 
 
@@ -151,6 +154,14 @@ discussNotifyCancelButton = Zrušiť
 
 experimentPreFeedbackTitle = { $title } - spätná väzba
 experimentPreFeedbackLinkCopy = Poskytnite nám spätnú väzbu o experimente { $title }.
+
+
+
+# A splash shown on top of the experiment page when Test Pilot is not installed.
+[[ experimentPromo ]]
+
+experimentPromoHeader = Ste pripravení na vzlet?
+experimentPromoSubheader = Tvoríme funkcie novej generácie pre Firefox. Nainštalujte si Test Pilot a vyskúšajte ich!
 
 
 
@@ -211,7 +222,9 @@ retirePageSurveyButton = Vyplniť krátky dotazník
 # Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = Predletová kontrola
 restartIntroOne = Reštartujte svoj prehliadač
+restartIntroTwo = Nájdite doplnok Test Pilot
 restartIntroThree = Vyberte si svoje experimenty
 
 
@@ -264,12 +277,15 @@ newsletterFooterSuccessBody = Ak ste v minulosti nepotvrdili odber noviniek Mozi
 [[ localeWarning ]]
 
 localeWarningTitle = Tento experiment je k dispozícii iba v angličtine.
+localeWarningSubtitle = To vám však nebráni ho aktivovať.
 
 
 
 # An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledHeader = Poďme na to!
+experimentsListNoneInstalledSubheader = Ste pripravení na nový experiment? Zvoľte si jeden z ponuky, vyskúšajte ho a povedzte nám, čo si o ňom myslíte.
 experimentsListNoneInstalledCTA = Nemáte záujem? <a>Povedzte nám prečo</a>.
 
 
