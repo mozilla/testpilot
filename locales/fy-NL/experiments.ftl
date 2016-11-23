@@ -79,6 +79,7 @@ trackingprotectionContributors0Title = Web-ûntwikkeler
 trackingprotectionContributors1Title = Senior-UX-ûntwerper
 trackingprotectionContributors2Title = Senior-QA-yngenieur
 universalsearchDescription = Krij rekommandaasjes foar de bêste websites op it web as jo type yn de Awesome Bar (Lokaasjebalke).
+universalsearchIntroduction = <p>Berik it bêste fan it web flugger mei Universal Search. Typ gewoanwei in pear karakters yn jo Awesome Bar en de meast populêre websites, minsken en Wikipedia-artikelen sille ferskine foar jo sneupwille.</p>
 universalsearchDetails0Copy = Populêre websites, minsken en Wikipedia-artikelen ferskine wylst jo type.
 universalsearchToursteps0Copy = <p>Jo kinne no sykje en navigearje op ien plak.</p>
 universalsearchToursteps1Copy = <p>Oanrekommandaasjes foar populêre websites en Wikipedia-artikelen sille ferskine as jo type.</p>
