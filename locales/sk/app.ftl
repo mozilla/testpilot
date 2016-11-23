@@ -137,6 +137,10 @@ experimentCardLearnMore = Ďalšie informácie
 feedbackSubmitButton = Vyplniť krátky dotazník
 feedbackCancelButton = Zavrieť
 feedbackUninstallTitle = Ďakujeme!
+feedbackUninstallCopy = 
+  | Vaša účasť v programe Firefox Test Pilot pre nás 
+  | znamená veľmi veľa! Určite si pozrite aj naše ďalšie 
+  | experimenty, ku ktorým sa čoskoro pridajú nové!
 
 
 
