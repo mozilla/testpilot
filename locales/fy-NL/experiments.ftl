@@ -60,6 +60,7 @@ pageshotContributors1Title = Software-yngenieur
 pageshotContributors2Title = UX-ûntwerper
 tabcenterDescription = Hoe soe it wêze, as ljepblêden net mear oan de boppekant, mar oan de sydkant stiene? Wy woene dat graach witte!
 tabcenterIntroduction = <p>Nim jo ljepblêden fan yn it paad nei ferstoppe. Tab Center ferpleatst jo ljepblêden nei de sydkant fan jo browserskerm, sa dat se út it sicht binne as jo se net nedich hawwe en maklik út te klappen as jo se nedich hawwe.</p>
+tabcenterMeasurements = <p>Neist de <a href="/privacy">gegevens</a> dy't sammele wurde troch alle eksperiminten fan Test Pilot, is it folgjende fan belang as jo Tab Center brûke:</p><ul> <li>Wy sammelje gegevensgebrûk oer hoe't jo omgean mei Tab Center, lyka hoe faak jo Tab Center maksimalisearje of fêstsette.</li> <li> Wy sammelje ek ynformaasje oer de manier hoe't jo ljepblêden brûke, lykas it tal tagelyk iepen ljepblêden en de tiid dat jo ljepblêden iepen hawwe.</li> <li>Tab Center sammelet gjin ynformaasje oer websites dy't jo besykje of de ynhâld fan de ljepblêden.</li></ul>
 tabcenterDetails0Copy = Bring jo ljepblêden nei de kant.
 tabcenterDetails1Copy = Ferstopje de ljepblêden oant jo se nedich hawwe.
 tabcenterDetails2Copy = Ferpleats meubels en ferfarskje it ynterieur! Tab Center wurket mei jo favorite Firefox-tema's.
