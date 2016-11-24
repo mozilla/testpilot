@@ -292,6 +292,7 @@ localeWarningSubtitle = Si quieres, todavía puedes activarlo.
 # An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledHeader = ¡Es hora de hacer despegar esta nave!
 experimentsListNoneInstalledSubheader = ¿Preparado para probar un nuevo experimento Test Pilot? Selecciona uno para activarlo, pruébalo y danos tu opinión.
 experimentsListNoneInstalledCTA = ¿No te interesa? <a>Dinos por qué</a>.
 
