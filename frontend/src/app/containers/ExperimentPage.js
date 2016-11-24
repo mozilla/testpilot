@@ -407,7 +407,7 @@ export class ExperimentDetail extends React.Component {
                     {measurements && <section data-hook="measurements-container"
                           className={classnames('measurements', { highlight: highlightMeasurementPanel })}>
                       <h3 data-l10n-id="measurements">Your privacy</h3>
-                      <div data-hook="measurements-html" className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
+                      <div data-hook="measurements-html" data-l10n-id={this.l10nId('measurements')} className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
                       <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-hook="privacy-notice-url">You can learn more about the data collection for <span data-hook="title">{title}</span> here.</a>
                     </section>}
                   </div>}
