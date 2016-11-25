@@ -242,6 +242,7 @@ sharePrimary = ¿Préstate Test Pilot? Ayúdamos a alcontrar xente nuevo.
 shareSecondary = o namái copia y apiega esti enllaz...
 shareEmail = Corréu
 shareCopy = Copiar
+eolNoticeLink = Deprendi más
 eolDisableMessage = Finó l'esperimentu de { $title }. Namái lu desinstales, nun sedrás a reinstalalu de nueves pente Test Pilot.
 completedDateLabel = Data fin d'esperimentu: <b>{ $completedDate }</b>
 
@@ -283,6 +284,14 @@ newsletterFooterSuccessBody = Si enantes nun confirmesti una soscripción al bol
 
 localeWarningTitle = Esti esperimentu namái ta disponible n'inglés.
 localeWarningSubtitle = Entá pues habilitalu si te presta.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledSubheader = ¿Preparáu pa probar un esperimentu nuevu de Test Pilot? Esbilla ún p'habilitalu, pruébalu y dimos qué pienses.
+experimentsListNoneInstalledCTA = ¿Nun tas interesáu? <a>Dimos porqué</a>.
 
 
 

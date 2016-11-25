@@ -15,6 +15,7 @@ nomore404sToursteps1Copy = <p>Siempres pues damos feedback o deshabilitar No Mor
 pageshotDescription = Captures de pantalla intuitives feches direutamente col restolador. Captura, guarda y comparti captures de pantalla al restolar la web usando Firefox.
 pageshotContributors2Title = Diseñador/a d'UX
 tabcenterDescription = ¿Cómo sedría mover les llingüetes dende lo cimero'l restolador a un llau? ¡Queremos sabelo!
+tabcenterToursteps1Copy = <p>¿Milenta llingüetes? Tab Center déxate guetales.</p>
 tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
