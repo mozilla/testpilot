@@ -107,6 +107,7 @@ emailOptInButton = Je m’inscris
 emailOptInSkip = Ignorer
 emailOptInConfirmationTitle = Courriel envoyé
 emailOptInSuccessMessage2 = Merci&nbsp;!
+emailOptInConfirmationClose = À propos d’expériences…
 
 
 
@@ -146,6 +147,7 @@ feedbackUninstallCopy = Votre participation à Firefox Test Pilot est très impo
 [[ discussNotify ]]
 
 discussNotifyTitle = Avez-vous une seconde&nbsp;?
+discussNotifySubmitButton = Consulter le forum
 discussNotifyCancelButton = Annuler
 
 
@@ -214,6 +216,7 @@ retireEmailMessage = Pour ne plus recevoir les annonces, cliquez simplement sur 
 retireSubmitButton = Continuer
 retireCancelButton = Annuler
 pageTitleRetirePage = Firefox Test Pilot - Désinstaller Test Pilot
+retirePageProgressMessage = Retour au sol…
 retirePageHeadline = Merci pour votre implication !
 retirePageMessage = Nous espérons que vous avez passé un agréable moment à expérimenter avec nous. <br> Revenez quand vous voulez.
 retirePageSurveyButton = Répondre à un court sondage
@@ -223,6 +226,7 @@ retirePageSurveyButton = Répondre à un court sondage
 # Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = Vérifications avant de décoller
 restartIntroOne = Redémarrez votre navigateur
 restartIntroTwo = Localisez le module Test Pilot
 restartIntroThree = Sélectionnez vos expériences
@@ -236,6 +240,10 @@ sharePrimary = Vous appréciez Test Pilot&nbsp;? Aidez-nous à trouver de nouvea
 shareSecondary = ou copiez et collez simplement  ce lien…
 shareEmail = Adresse électronique
 shareCopy = Copier
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } se termine le { $completedDate }
+eolNoticeLink = En savoir plus
 eolDisableMessage = L’expérience { $title } est terminée. Une fois que vous l’aurez désinstallée, vous ne pourrez plus la réinstaller depuis Test Pilot.
 completedDateLabel = Échéance de l’expérience : <b>{ $completedDate }</b>
 
@@ -277,6 +285,15 @@ newsletterFooterSuccessBody = Si vous n’avez jamais confirmé d’abonnement �
 
 localeWarningTitle = Cette expérience est uniquement disponible en anglais.
 localeWarningSubtitle = Vous pourrez toujours l’activer ensuite si vous le souhaitez.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledHeader = Un dernier effort avant le décollage
+experimentsListNoneInstalledSubheader = Prêt·e à essayer une nouvelle expérience Test Pilot ? Activez-en un, testez-le, puis faites-nous savoir ce que vous en pensez.
+experimentsListNoneInstalledCTA = Si cela ne vous intéresse pas, <a>faites-nous savoir pourquoi</a>.
 
 
 
