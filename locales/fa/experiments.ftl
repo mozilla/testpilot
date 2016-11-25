@@ -1,4 +1,5 @@
 activitystreamDescription = یک فهرست غنی و بصری و یک صفحه خانگی باز طراحی شده که پیدا کردن چیزی که به دنبال آن در فایرفاکس هستید را از هر زمانی ساده‌تر می‌کند.
+activitystreamIntroduction = <p>بدون از دست دادن رشته افکار خود به مرور وب بپردازید. Activity Stream سایت‌های پُر بازدید، نشانک‌ها و تاریخچهٔ فعالیت‌های اخیر را در هر زبانهٔ جدید در دسترس شما قرار می‌دهد. و نمای جدید timeline به شما یک نمای کلی از مرور شما را ارائه می‌دهد.</p>
 activitystreamContributors0Title = مهندس نرم‌افزار
 activitystreamContributors1Title = مهندس وب
 activitystreamContributors2Title = توسعه‌دهنده نرم‌افزار
