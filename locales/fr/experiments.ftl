@@ -19,6 +19,7 @@ activitystreamContributors10Title = Responsable de l’ingénierie
 activitystreamContributors11Title = Développeur logiciel
 activitystreamContributors12Title = Ergonome confirmé
 minvidDescription = Les vidéos restent sous vos yeux. Min Vid affiche pour vous les vidéos de YouTube et Vimeo dans une petite fenêtre qui reste toujours au premier plan pendant votre navigation sur le Web.
+minvidMeasurements = <p>Outre les <a href="/privacy">données</a> collectées par toutes les expériences de Test Pilot, voici les principales choses que vous devez savoir sur ce qui se passe lorsque vous utilisez Min Vid :</p><ul><li>Nous collectons des données d’utilisation lorsque vous interagissez avec le menu contextuel, l’icône de l’expérience et les contrôles du lecteur.</li> <li>Nous collectons également des données telles que le nombre de fois où vous rencontrez une vidéo lisible, le nombre de fois où vous avez lu une vidéo, ainsi que le service ayant fourni la vidéo. Ces informations nous aident à comprendre à quel point les utilisateurs trouvent cette expérience utile.</li><li>Nous ne collectons aucune information sur les vidéos que vous visionnez.</li></ul>
 minvidDetails0Copy = Accédez à Min Vid depuis les lecteurs vidéo de YouTube et Vimeo.
 minvidDetails1Copy = Gardez un œil sur la vidéo au premier plan tout en faisant autre chose sur le Web.
 minvidDetails2Copy = Faites un clic droit sur le lien d’une vidéo pour retrouver Min Vid dans les contrôles contextuels.
@@ -26,6 +27,8 @@ minvidToursteps0Copy = <p>Cliquez sur l’icône pour commencer à utiliser Min 
 minvidToursteps1Copy = <p>Lancez une vidéo au premier plan tout en poursuivant votre navigation.</p>
 minvidToursteps2Copy = <p>Accédez aux contrôles intégrés pour changer le volume, lancer la lecture, mettre en pause et naviguer dans la vidéo.</p>
 minvidToursteps3Copy = <p>Vous pourrez toujours nous envoyer vos observations ou désactiver Min Vid du programme Test Pilot.</p>
+minvidContributors0Title = Développeur
+minvidContributors1Title = Développeur confirmé
 minvidContributors2Title = Stagiaire en développement
 nomore404sSubtitle = Avec l’appui technique de the Wayback Machine
 nomore404sDescription = Marre des impasses sur le Web ? Nous vous informons lorsqu’il existe une version sauvegardée de ce que vous cherchez dans la <em>Wayback Machine</em> d’Internet Archive.
