@@ -289,7 +289,7 @@ newsletterFooterSuccessBody = 如果您以前没有确认过订阅 Mozilla 相�
 [[ localeWarning ]]
 
 localeWarningTitle = 此实验仅提供英语版本。
-localeWarningSubtitle = 您仍可以再启用它，随您心意。
+localeWarningSubtitle = 如果您不介意，无妨启用它。
 
 
 
