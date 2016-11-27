@@ -36,6 +36,14 @@ minvidContributors3Title = Engineering Contributor
 nomore404sSubtitle = Drivs av Wayback Machine
 nomore404sDescription = Trött på återvändsgränder på webben? Vi informerar dig om det finns innehåll som lagrats på Wayback Machine internetarkiv.
 nomore404sIntroduction = <p>Den här är enkel. Om du träffar på en 404-sida medan du surfar på nätet, kommer vi att låta dig veta om det innehåll du letar efter är arkiverat i internetarkivet Wayback Machine.</p>
+nomore404sMeasurements = <p>Förutom de <a href="/privacy" target="_blank">uppgifter</a> som samlats in av alla Test Pilot experiment, här är de viktigaste sakerna du bör veta om vad som händer när du använder No More 404s:</p><ul> <li>Vi samlar grundläggande användning i hur många gånger du stöter på en sida med felkoden 404, hur många gånger en cachad version av den sidan finns på Archive.org och hur många gånger du väljer att visa den cachade versionen.</li> <li> För att förse cachade versioner av sidor, skickar vi webbadressen för en 404-felsida till Archive.org. <a href="https://archive.org/" target="_blank">Archive.org</a> avslöjar sin sekretesspolicy <a href="https://archive.org/about/terms.php" target="_blank">här</a>.</li> <li>Vi samlar inte in webbadresser till sidor som du begär eller webbadresser som vi skickar till Archive.org.</li> <li>Vi kan dela enkätresultat som du skickar till oss och aggregerade telemetriuppgifter om detta experiment med Internet Archive.</li></ul>
+nomore404sDetails0Copy = Minska 404 återvändsgränder med Wayback Machine.
+nomore404sDetails1Copy = Presenteras av våra vänner på Internet Archive.
+nomore404sToursteps0Copy = <p>Surfa normalt på webben. Om du stöter på en 404-sida, kommer vi att låta dig veta om en arkiverad version är tillgänglig på Wayback Machine.</p>
+nomore404sToursteps1Copy = <p>Du kan alltid ge oss återkoppling eller inaktivera No More 404s från Test Pilot.</p>
+nomore404sContributors1Title = Developer, Wayback Machine, The Internet Archive
+nomore404sContributors2Title = Director, Wayback Machine, The Internet Archive
+nomore404sContributors3Title = Senior Crawl Engineer, The Internet Archive
 pageshotDescription = Intuitiva skärmbilder direkt från webbläsaren. Fånga, spara och dela skärmbilder när du surfar på webben med hjälp av Firefox.
 pageshotContributors0Title = Engineering Manager
 pageshotContributors1Title = Software Engineer
