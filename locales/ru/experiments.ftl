@@ -1,3 +1,4 @@
+activitystreamDescription = Расширенная визуальная картина истории и обновленный вид стартовой страницы позволяют очень просто найти именно то, что вы ищете в Firefox.
 activitystreamToursteps2Copy = <p>Вы всегда можете оставить нам свой отзыв или отключить Activity Stream в расширении лётчика-испытателя.</p>
 activitystreamContributors0Title = Инженер ПО
 activitystreamContributors1Title = Веб-инженер
