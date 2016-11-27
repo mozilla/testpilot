@@ -44,6 +44,7 @@ tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
+trackingprotectionIntroduction = <p>Até o momento, a Proteção contra rastreamento só estava disponível na Navegação privativa do Firefox. Esse experimento habilita a proteção contra rastreamento o tempo todo! (Claro, você pode desabilitar quando quiser site-por-site.)</p><p>Esse experimento irá ajudar você a entender onde a Proteção contra rastreamento quebra a Web, assim podemos melhorá-lo para todos os usuários do Firefox. Enquanto você navega, clique no ícone do escudo na barra de endereços na parte superior da página para nos informar quais sites funcionam bem com a Proteção contra navegação e quais não.</p>
 trackingprotectionDetails1Copy = Relate um problema e nos ajude a solucionar problemas.
 trackingprotectionToursteps2Copy = <p>Você pode sempre nos enviar sua opinião ou desabilitar o Tracking Protection do Test Pilot.</p>
 trackingprotectionContributors0Title = Desenvolvedor web
