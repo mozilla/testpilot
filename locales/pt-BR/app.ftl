@@ -133,6 +133,7 @@ enableExperiment = Habilitar { $title }
 enableExperimentTransition = Habilitando…
 measurements = Sua privacidade
 experimentPrivacyNotice = Você pode saber mais sobre a coleção de dados de { $title } aqui.
+contributorsHeading = Oferecido por
 version = Versão
 changelog = registro de alterações
 lastUpdate = Última atualização
