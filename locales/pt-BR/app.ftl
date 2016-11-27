@@ -192,24 +192,38 @@ shareCopy = Copiar
 eolIntroMessage = { $title } terminará em { $completedDate }
 eolNoticeLink = Saiba mais
 eolDisableMessage = O tempo para experimentar o { $title } terminou. Se você remover não será mais possível reinstalar pelo Test Pilot.
+completedDateLabel = Término do experimento: <b>{ $completedDate }</b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
+incompatibleHeader = Esse experimento pode ser incompatível com as extensões que você tem instaladas.
+incompatibleSubheader = Recomendamos <a>desabilitar essas extensões</a> antes de ativar o experimento:
 
 
 
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Informe seu e-mail
 newsletterFormDisclaimer = Somente enviaremos informações relacionadas ao Test Pilot.
 newsletterFormPrivacyNotice = Eu aceito que a Mozilla manuseie minhas informações como explicado <a>neste Termo de Privacidade</a>.
 newsletterFormSubmitButton = Inscreva-se Agora
+newsletterFormSubmitButtonSubmitting = Enviando...
 
 
 
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = Houve um erro ao enviar seu endereço de e-mail. Tentar novamente?
 newsletterFooterHeader = Mantenha-se informado
 newsletterFooterBody = Descubra sobre novas experiências e veja os resultados dos testes que você participou.
 newsletterFooterSuccessHeader = Obrigado!
+newsletterFooterSuccessBody = Se ainda não confirmou a inscrição no boletim de notícias da Mozilla, talvez precise disso. Por favor, verifique sua caixa de entrada ou seu filtro de spam por um e-mail nosso.
 
 
 
@@ -218,6 +232,14 @@ newsletterFooterSuccessHeader = Obrigado!
 
 localeWarningTitle = Essa experiência só está disponível em Inglês.
 localeWarningSubtitle = Você ainda pode habilitá-lo se quiser.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledHeader = Vamos tirar essa belezinha do chão!
+experimentsListNoneInstalledSubheader = Pronto para um novo experimento do Test Pilot? Selecione um para habilitar, dê uma volta, e nos diga o que achou.
 
 
 
