@@ -20,6 +20,8 @@ activitystreamContributors10Title = Engineering Manager
 activitystreamContributors11Title = Software Engineer
 activitystreamContributors12Title = Senior UX Designer
 minvidDescription = Fokus på videoklipp. Min Vid visar filmer från YouTube och Vimeo i en liten ram som stannar i förgrunden medan du surfar.
+minvidIntroduction = <p>Gillar du att titta på video? Gillar du att få saker gjorda medan du tittar på video? Prova Min Vid. Det är som bild-i-bild där en bild är en video och den andra är hela webben.</p><ul> <li><strong>Klicka och börja:</strong> Öppna ramen för Min Vid för att spela videon i förgrunden medan du surfar.</li> <li><strong>Placera den där du vill:</strong> Min Vid låter dig dra videorutan var som helst på skrivbordet.</li> <li><strong>Kontroller där du behöver dem:</strong> Min Vid innehåller kontroller för att låta dig pausa/spela, skippa, dra, minimera och justera volymen direkt i ramen.</li></ul>
+minvidMeasurements = <p>Förutom de <a href="/privacy">uppgifter</a> som samlats in av alla Test Pilot experiment, här är de viktigaste sakerna du bör veta om vad som händer när du använder Min Vid:</p><ul> <li>Vi samlar användningsdata när du deltar med snabbmenyn, experimentikonen och spelarkontrollerna.</li> <li>Vi samlar också uppgifter om hur många gånger du stöter på en spelbar video, hur många gånger du spelat videon och videotjänsten som tillhandahåller videon. Detta hjälper oss att förstå hur användbar våra användare tycker att experimentet är.</li> <li>Vi samlar inte in information om de specifika videoklipp som du stöter på.</li></ul>
 minvidDetails0Copy = Få tillgång till Min Vid från YouTube och Vimeo videospelare.
 minvidDetails1Copy = Titta på video i förgrunden medan du gör andra saker på webben.
 minvidDetails2Copy = Högerklicka på länkar till video för att hitta Min Vid i snabbmenyn.
@@ -33,6 +35,7 @@ minvidContributors2Title = Engineering Intern
 minvidContributors3Title = Engineering Contributor
 nomore404sSubtitle = Drivs av Wayback Machine
 nomore404sDescription = Trött på återvändsgränder på webben? Vi informerar dig om det finns innehåll som lagrats på Wayback Machine internetarkiv.
+nomore404sIntroduction = <p>Den här är enkel. Om du träffar på en 404-sida medan du surfar på nätet, kommer vi att låta dig veta om det innehåll du letar efter är arkiverat i internetarkivet Wayback Machine.</p>
 pageshotDescription = Intuitiva skärmbilder direkt från webbläsaren. Fånga, spara och dela skärmbilder när du surfar på webben med hjälp av Firefox.
 pageshotContributors0Title = Engineering Manager
 pageshotContributors1Title = Software Engineer
