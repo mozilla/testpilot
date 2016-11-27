@@ -1,5 +1,10 @@
 activitystreamDescription = En grafisk översikt över din historik och en ny hemsida som gör det möjligt att hitta önskat innehåll i Firefox ännu bättre.
+activitystreamIntroduction = <p>Nu kan du surfa utan att förlora din ström av tankar. Activity Stream håller dina toppsidor, bokmärken och senaste historik nära till hands i varje ny flik. Den nya tidslinjevyn ger dig ett fågelperspektiv på din surfning.</p>
 activitystreamDetails0Copy = Klicka på en ny flik och dina favoritwebbplatser är bara ett klick borta.
+activitystreamDetails1Copy = Se var du har varit, så att du kan gå vidare till vart du ska.
+activitystreamToursteps0Copy = <p>Hitta dina favoritwebbplatser, senaste historik och bokmärken när du öppnar en ny flik.</p>
+activitystreamToursteps1Copy = <p>Besök den nya tidslinjen för att visuellt bläddra bland historik och bokmärken.</p>
+activitystreamToursteps2Copy = <p>Du kan alltid ge oss återkoppling eller inaktivera Activity Stream från Test Pilot.</p>
 activitystreamContributors0Title = Software Engineer
 activitystreamContributors1Title = Web Engineer
 activitystreamContributors2Title = Software Developer
