@@ -28,6 +28,13 @@ pageshotContributors0Title = Gerente de engenharia
 pageshotContributors1Title = Engenheiro de software
 pageshotContributors2Title = UX Designer
 tabcenterIntroduction = <p>Tire suas abas do caminho. O Tab Center muda suas abas para a lateral do seu navegador, assim elas ficam escondidas quando você não precisa delas, e torna fácil para expandir e usar quando precisar.</p>
+tabcenterMeasurements = <p>Além dos <a href="/privacy" target="_blank">dados</a> coletados por todos os experimentos do Test Pilot, isso é o que você precisa saber sobre o que está acontecendo quando você usa o Tab Center:</p><ul> <li>Coletamos dados sobre o uso de como você interage com o Tab Center, como a frequência que você maximiza ou fixa o Tab Center.</li> <li>Também coletamos informações sobre a forma como você usa as abas, como o número de abas que mantém aberta por vez, e o tempo que você mantém as abas abertas.</li> <li>O Tab Center não coleta nenhuma informação sobre os sites que você visita ou o conteúdo das abas.</li></ul>
+tabcenterDetails0Copy = Coloque suas abas de lado.
+tabcenterDetails1Copy = Esconder suas abas até que você precise.
+tabcenterDetails2Copy = Redecore e mude a mobília! O Tab Center se adequa ao seu tema do Firefox favorito.
+tabcenterToursteps0Copy = <p>Uma coisa de cada vez, todas as suas abas estão na lateral agora.</p>
+tabcenterToursteps1Copy = <p>Muitas abas? Tab Center deixa você procurar por elas.</p>
+tabcenterToursteps2Copy = <p>Você pode arrastar a borda do Tab Center para deixá-lo mais estreito ou mais largo.</p>
 tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
