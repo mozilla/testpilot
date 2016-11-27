@@ -14,6 +14,7 @@ minvidToursteps0Copy = <p>Selecione o ícone para começar a usar o Min Vid.</p>
 minvidContributors0Title = Engenheiro
 minvidContributors2Title = Estagiário de engenharia
 nomore404sSubtitle = Oferecido por Wayback Machine
+pageshotIntroduction = <p>Page Shot deixa você capturar, compartilhar e recuperar telas - sem sair do Firefox.</p><ul><li><strong>Modo grade:</strong> Visualize as miniaturas das capturas de tela salvas</li> <li><strong>Pesquisa inteligente:</strong> Encontre a captura de tela que você está procurando através de palavra-chave. O Page Shot lista os títulos das páginas e o texto das capturas de tela</li> <li><strong> Compartilhamento rápido:</strong> Compartilhe suas capturas de tela nas mídias sociais ou copie o link público na parte superior do seu navegador.</li></ul>
 pageshotContributors1Title = Engenheiro de software
 tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
