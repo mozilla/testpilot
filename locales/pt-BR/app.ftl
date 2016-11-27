@@ -136,10 +136,15 @@ experimentPrivacyNotice = Você pode saber mais sobre a coleção de dados de { 
 contributorsHeading = Oferecido por
 version = Versão
 changelog = registro de alterações
+tourLink = tour
 lastUpdate = Última atualização
 contribute = Contribua
+bugReports = Relatório de falhas
+discourse = Discourse
 tourOnboardingTitle = { $title } habilitado!
 tourDoneButton = Pronto
+userCountContainer = <span>{ $installation_count }</span> estão experimentando o { $title } agora!
+userCountContainerAlt = Lançado!
 highlightPrivacy = Sua privacidade
 
 
@@ -147,6 +152,7 @@ highlightPrivacy = Sua privacidade
 # Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
+upgradeNoticeTitle = { $title } requer o Firefox { $min_release } ou mais recente.
 upgradeNoticeLink = Como atualizar o Firefox.
 
 
@@ -159,19 +165,26 @@ retireCancelButton = Cancelar
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar o Test Pilot
 retirePageProgressMessage = Desligando...
 retirePageHeadline = Obrigador por voar!
+retirePageMessage = Esperamos que tenha se divertido fazendo os experimentos. <br> Volte quando quiser.
+retirePageSurveyButton = Responder à pesquisa
 
 
 
 # Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = Lista de requisitos de vôo
 restartIntroOne = Reinicie o navegador
+restartIntroTwo = Instale a extensão do Test Pilot
+restartIntroThree = Selecione seus experimentos
 
 
 
 # Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
+sharePrimary = Gostou do Test Pilot? Ajude a encontrar novos recrutas.
+shareSecondary = basta copiar e colar esse link...
 shareEmail = E-mail
 shareCopy = Copiar
 eolNoticeLink = Saiba mais
