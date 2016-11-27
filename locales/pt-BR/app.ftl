@@ -240,6 +240,7 @@ localeWarningSubtitle = Você ainda pode habilitá-lo se quiser.
 
 experimentsListNoneInstalledHeader = Vamos tirar essa belezinha do chão!
 experimentsListNoneInstalledSubheader = Pronto para um novo experimento do Test Pilot? Selecione um para habilitar, dê uma volta, e nos diga o que achou.
+experimentsListNoneInstalledCTA = Não tem interesse? <a>Conte por quê</a>.
 
 
 
@@ -247,4 +248,14 @@ experimentsListNoneInstalledSubheader = Pronto para um novo experimento do Test 
 [[ noscript ]]
 
 noScriptHeading = Uh oh...
+noScriptMessage = Test Pilot requer JavaScript.<br>Desculpe por isso.
+noScriptLink = Descubra por quê
+
+
+
+# Text of a button to toggle visibility of a list of past experiments.
+[[ pastExperiments ]]
+
+viewPastExperiments = Ver experimentos antigos
+hidePastExperiments = Esconder experimentos antigos
 
