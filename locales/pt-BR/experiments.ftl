@@ -27,6 +27,7 @@ pageshotToursteps4Copy = <p>Você pode sempre nos enviar sua opinião ou desabil
 pageshotContributors0Title = Gerente de engenharia
 pageshotContributors1Title = Engenheiro de software
 pageshotContributors2Title = UX Designer
+tabcenterIntroduction = <p>Tire suas abas do caminho. O Tab Center muda suas abas para a lateral do seu navegador, assim elas ficam escondidas quando você não precisa delas, e torna fácil para expandir e usar quando precisar.</p>
 tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
