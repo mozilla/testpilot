@@ -36,7 +36,7 @@ minvidContributors3Title = 工程贡献者
 nomore404sSubtitle = 信息提供方 Wayback Machine
 nomore404sDescription = 厌倦了遇到网页失效？如果您查看的页面有“互联网档案馆”（Wayback Machine）的已保存副本，我们可以通知您。
 nomore404sIntroduction = <p>这个实验如下所示。如果您在浏览时遇到了一个 404 页面，我们将会通知您，如果该内容在互联网档案馆的 Wayback Machine 有存档版本可用。</p>
-nomore404sMeasurements = <p>除所有 Test Pilot 实验所收集的<a href="/privacy">数据</a>，您在使用 No More 404s 时还应了解：</p><ul> <li>我们会收集您遇到了多少次“页面未找到”错误（代码404），该页面存在于 Archive.org 的次数，以及您有多少次选择了查看缓存的版本。</li> <li>为提供页面的缓存版本，我们会将404错误的页面网址发送至 Archive.org。<a href="https://archive.org/" target="_blank">Archive.org</a>已在<a href="https://archive.org/about/terms.php" target="_blank">此处</a>披露其隐私政策。</li> <li>我们不会收集您所访问的页面网址，也不会收集发送到 Archive.org 的网址。</li> <li>我们可能会与 Internet Archive 分享与此试验相关的您提交给我们的调查问卷结果，以及汇总的遥测数据。</li></ul>
+nomore404sMeasurements = <p>除所有 Test Pilot 实验所收集的<a href="/privacy" target="_blank">数据</a>，您在使用 No More 404s 时还应了解：</p><ul> <li>我们会收集您遇到了多少次“页面未找到”错误（代码404），该页面存在于 Archive.org 的次数，以及您有多少次选择了查看缓存的版本。</li> <li>为提供页面的缓存版本，我们会将404错误的页面网址发送至 Archive.org。<a href="https://archive.org/" target="_blank">Archive.org</a>已在<a href="https://archive.org/about/terms.php" target="_blank">此处</a>披露其隐私政策。</li> <li>我们不会收集您所访问的页面网址，也不会收集发送到 Archive.org 的网址。</li> <li>我们可能会与 Internet Archive 分享与此实验相关的您提交给我们的调查问卷结果，以及汇总的遥测数据。</li></ul>
 nomore404sDetails0Copy = 使用 Wayback Machine 工具，减少404带来的挫折。
 nomore404sDetails1Copy = 所有信息由互联网档案馆（Internet Archive）存档提供。
 nomore404sToursteps0Copy = <p>只需按日常的方式浏览网页。如果您遇到了404页面，并且 Wayback Machine 有可用的存档版本提供，我们会通知您。</p>
