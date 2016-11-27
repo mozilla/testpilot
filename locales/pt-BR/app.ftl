@@ -187,7 +187,11 @@ sharePrimary = Gostou do Test Pilot? Ajude a encontrar novos recrutas.
 shareSecondary = basta copiar e colar esse link...
 shareEmail = E-mail
 shareCopy = Copiar
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } terminará em { $completedDate }
 eolNoticeLink = Saiba mais
+eolDisableMessage = O tempo para experimentar o { $title } terminou. Se você remover não será mais possível reinstalar pelo Test Pilot.
 
 
 
