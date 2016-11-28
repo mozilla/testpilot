@@ -29,6 +29,7 @@ home = Domů
 menuTitle = Nastavení
 menuWiki = Wiki Test Pilot
 menuDiscuss = Diskutovat o Test Pilot
+menuFileIssue = Nahlásit chybu
 menuRetire = Odinstalovat Test Pilot
 
 
@@ -36,9 +37,11 @@ menuRetire = Odinstalovat Test Pilot
 # The splash on the homepage.
 [[ landing ]]
 
+landingIntroLead = Rozšiřte své obzory . . .
 landingIntroOne = Vyzkoušejte nové funkce.
 landingIntroTwo = Pošlete nám zpětnou vazbu.
 landingIntroThree = Pomozte tvořit Firefox.
+landingLegalNotice = Pokračováním souhlasíte s <a>podmínkami používání</a> a <a>zásadami ochrany osobních údajů</a> projektu Test Pilot.
 landingExperimentsTitle = Vyzkoušejte nejnovější experimentální funkce
 
 
@@ -74,11 +77,19 @@ landingCardThree = Sdělte nám svůj názor
 
 
 
+# Shown after the user installs the Test Pilot add-on.
+[[ onboarding ]]
+
+onboardingMessage = Na vaši lištu jsme přidali ikonu Test Pilot, takže ho vždy najdete.
+
+
+
 # Error message pages.
 [[ error ]]
 
 errorHeading = Jejda!
 errorMessage = Vypadá to, že jsme něco rozbili. <br> Zkuste to později.
+notFoundHeader = Čtyři sta čtyři!
 
 
 
@@ -86,17 +97,24 @@ errorMessage = Vypadá to, že jsme něco rozbili. <br> Zkuste to později.
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = Vítá vás Test Pilot!
+emailOptInMessage = Nechce si posílat informace o nových experimentech a výsledky experimentů, které jste sami vyzkoušeli.
 emailValidationError = Použijte prosím platnou e-mailovou adresu!
+
+# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput = 
+  [html/placeholder] sem napište e-mailovou adresu :)
 emailOptInButton = Přihlásit se
 emailOptInSkip = Přeskočit
 emailOptInConfirmationTitle = E-mail odeslán
 emailOptInSuccessMessage2 = Děkujeme!
+emailOptInConfirmationClose = Podívat se na experimenty...
 
 
 
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
+experimentListPageHeader = Připravit k odletu!
 experimentListEnabledTab = Povoleno
 experimentListJustLaunchedTab = Právě spuštěno
 experimentListJustUpdatedTab = Právě aktualizováno
@@ -132,6 +150,20 @@ discussNotifyCancelButton = Zrušit
 
 
 
+# A modal prompt shown before the feedback survey for some experiments.
+[[ experimentPreFeedback ]]
+
+experimentPreFeedbackTitle = Zpětná vazba pro { $title }
+
+
+
+# A splash shown on top of the experiment page when Test Pilot is not installed.
+[[ experimentPromo ]]
+
+experimentPromoHeader = Připraveni k odletu?
+
+
+
 # The experiment detail page. 
 [[ experimentPage ]]
 
@@ -156,6 +188,7 @@ bugReports = Hlášení chyb
 discourse = Discourse
 tourOnboardingTitle = { $title } povolen!
 tourDoneButton = Dokončit
+userCountContainerAlt = Právě spuštěno!
 highlightPrivacy = Vaše soukromí
 
 
@@ -163,6 +196,7 @@ highlightPrivacy = Vaše soukromí
 # Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
+upgradeNoticeTitle = { $title } vyžaduje Firefox { $min_release } nebo novější.
 upgradeNoticeLink = Jak aktualizovat Firefox.
 
 
@@ -176,14 +210,18 @@ retireSubmitButton = Pokračovat
 retireCancelButton = Zrušit
 pageTitleRetirePage = Firefox Test Pilot - Odinstalovat Test Pilot
 retirePageProgressMessage = Vypínání...
+retirePageHeadline = Děkujeme, že jste se zúčastnili našeho letu!
+retirePageSurveyButton = Zúčastnit se rychlého průzkumu
 
 
 
 # Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = Předletová kontrola
 restartIntroOne = Restartujte prohlížeč
 restartIntroTwo = Vyhledejte doplněk Test Pilot
+restartIntroThree = Vyberte své experimenty
 
 
 
@@ -192,6 +230,10 @@ restartIntroTwo = Vyhledejte doplněk Test Pilot
 
 shareEmail = E-mail
 shareCopy = Kopírovat
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } končí { $completedDate }
+eolNoticeLink = Zjistit více
 completedDateLabel = Datum ukončení experimentu: <b> { $completedDate } </b>
 
 
@@ -199,6 +241,8 @@ completedDateLabel = Datum ukončení experimentu: <b> { $completedDate } </b>
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] místo pro e-mailovou adresu
 newsletterFormDisclaimer = Budeme vám zasílat pouze informace související s Test Pilotem.
 newsletterFormPrivacyNotice = Souhlasím s tím, aby Mozilla zpracovávala mé informace tak, jak je popsáno v <a>těchto Zásadách ochrany soukromí</a>.
 newsletterFormSubmitButton = Přihlásit se
@@ -211,7 +255,9 @@ newsletterFormSubmitButtonSubmitting = Odesílání...
 
 newsletterFooterError = Při ukládání vaší e-mailové adresy nastala chyba. Chcete to zkusit znovu?
 newsletterFooterHeader = Nechte se informovat
+newsletterFooterBody = Nechce si posílat informace o nových experimentech a výsledky experimentů, které jste sami vyzkoušeli.
 newsletterFooterSuccessHeader = Děkujeme!
+newsletterFooterSuccessBody = Pokud jste dříve nepotvrdili odběr zpravodaje Mozilly, budete tak muset učinit nyní. Podívejte se prosím do vaší e-mailové schránky a případně i nevyžádané pošty, jestli tam není e-mail od nás.
 
 
 
@@ -219,6 +265,13 @@ newsletterFooterSuccessHeader = Děkujeme!
 [[ localeWarning ]]
 
 localeWarningTitle = Tento experiment je dostupný jenom v angličtině.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledHeader = Jdeme se proletět!
 
 
 
