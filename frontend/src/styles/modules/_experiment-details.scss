@@ -250,6 +250,10 @@
     figcaption {
       color: $transparent-black-7;
       font-size: $font-unit;
+
+      img {
+        width: auto;
+      }
     }
   }
 }
