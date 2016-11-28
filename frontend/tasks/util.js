@@ -7,7 +7,8 @@ const LOCALIZABLE_FIELDS = [
   'pre_feedback_copy',
   'details.copy',
   'tour_steps.copy',
-  'contributors.title'
+  'contributors.title',
+  'contributors_extra'
 ];
 
 function isLocalizableField(pieces) {
