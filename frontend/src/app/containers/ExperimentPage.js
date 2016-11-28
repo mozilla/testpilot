@@ -210,7 +210,7 @@ export class ExperimentDetail extends React.Component {
 
     const { title, version, contribute_url, bug_report_url, discourse_url,
             introduction, measurements, privacy_notice_url, changelog_url,
-            thumbnail, subtitle, survey_url, contributors, details,
+            thumbnail, subtitle, survey_url, contributors, contributors_extra, contributors_extra_url, details,
             min_release, graduation_report } = experiment;
 
     // Set the timestamp for when this experiment was last seen (for
@@ -367,6 +367,11 @@ export class ExperimentDetail extends React.Component {
                           </li>
                         ))}
                       </ul>
+                    {contributors_extra && <p className="disclaimer"
+                        dangerouslySetInnerHTML={createMarkup(contributors_extra)}
+                        data-l10n-id={this.l10nId('contributors_extra')}
+                        target="_blank"
+                        href={contributors_extra_url} />}
                     </section>
                     {!graduated && <div>
                       {hasAddon && <div data-hook="active-user">

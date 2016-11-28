@@ -47,7 +47,10 @@ contributors:
     display_name: 'Tom Pizza'
     title: 'Taco Engineer'
     avatar: /static/images/experiments/experiment-name/burrito.png
-
+contributors_extra: >
+    This experiment was also made possible by a generous grant from 
+    the <a>Institute for RoboCop Studies.</a>
+contributors_extra_url: https://robocop.org
 tour_steps:
   -
     image: /static/images/experiments/experiment-name/tour-1.jpg
