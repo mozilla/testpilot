@@ -88,6 +88,8 @@ onboardingMessage = Ad nger tignit deg ufeggag n tunigin i wakken ad tzemreḍ a
 [[ error ]]
 
 errorHeading = Ayhu!
+errorMessage = Yettban am akken yell wayen ixuṣṣen. <br> Uɣal-d ahat azekka.
+notFoundHeader = Ihuh… 404 !
 
 
 
@@ -95,6 +97,13 @@ errorHeading = Ayhu!
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = Ansuf ɣeṛ Test Pilot!
+emailOptInMessage = Awi-d igmaḍ n ikayaden n tirmitin inek udiɣ wali amaynut.
+emailValidationError = Ma ulac aɣilif seqdec tansa imayl tameɣtut!
+
+# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput = 
+  [html/placeholder] tansa imayl :)
+emailOptInButton = Ad jerdeɣ iman-iw
 emailOptInSkip = Suref
 emailOptInConfirmationTitle = Imayl ittwaciyeɛ
 emailOptInSuccessMessage2 = Tanemirt-ik
