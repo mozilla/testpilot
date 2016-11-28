@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 module.exports = {
   SERVER_PORT: 8000,
   IS_DEBUG: (process.env.NODE_ENV === 'development'),
@@ -6,7 +8,7 @@ module.exports = {
   ENABLE_DEV_CONTENT: (process.env.ENABLE_DEV_CONTENT === '1'),
   AVAILABLE_LOCALES: (process.env.ENABLE_DEV_LOCALES === '1') ?
     // All locales on Pontoon for local & dev
-    'en-US,ar,ast,bn-BD,bs,cs,de,dsb,es-CL,es-ES,fa,fr,fy-NL,hsb,hu,it,ja,kab,pt-BR,ru,sk,sl,sv-SE,te,tr,uk,zh-CN,zh-TW' :
+    fs.readdirSync('./locales').join(',') :
     // Enabled locales for stage & production - update as they reach 100%
     'en-US,de,dsb,hsb,hu,it,zh-CN,zh-TW',
 
