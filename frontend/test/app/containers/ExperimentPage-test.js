@@ -37,7 +37,7 @@ describe('app/containers/ExperimentPage', () => {
 });
 
 
-describe('app/components/ExperimentPage:ExperimentDetail', () => {
+describe('app/containers/ExperimentPage:ExperimentDetail', () => {
 
   let mockExperiment, mockClickEvent, props, subject;
   beforeEach(() => {
@@ -112,7 +112,8 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
       getCookie: sinon.spy(),
       removeCookie: sinon.spy(),
       userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:51.0) Gecko/20100101 Firefox/51.0',
-      newsletterForm: newsletterState
+      newsletterForm: newsletterState,
+      setPageTitleL10N: sinon.spy()
     };
 
     subject = shallow(<ExperimentDetail {...props} />);
@@ -173,6 +174,13 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
       subject.setProps({
         isExperimentEnabled: experiment => false
       });
+    });
+
+    it('should localize the page title', () => {
+      expect(props.setPageTitleL10N.called).to.be.true;
+      expect(props.setPageTitleL10N.lastCall.args).to.deep.equal([
+        'pageTitleExperiment', mockExperiment
+      ]);
     });
 
     it('should render a 404 page if not on dev and launch date has not yet passed', () => {
