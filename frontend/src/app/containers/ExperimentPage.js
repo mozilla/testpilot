@@ -187,13 +187,17 @@ export class ExperimentDetail extends React.Component {
   }
 
   render() {
-    const { experiment, experiments, installed, isAfterCompletedDate, isDev, hasAddon, setExperimentLastSeen, clientUUID } = this.props;
+    const { experiment, experiments, installed, isAfterCompletedDate, isDev,
+            hasAddon, setExperimentLastSeen, clientUUID,
+            setPageTitleL10N } = this.props;
 
     // Show the loading animation if experiments haven't been loaded yet.
     if (experiments.length === 0) { return <LoadingPage />; }
 
     // Show a 404 page if an experiment for this slug wasn't found.
     if (!experiment) { return <NotFoundPage />; }
+
+    setPageTitleL10N('pageTitleExperiment', experiment);
 
     // Show a 404 page if an experiment is not ready for launch yet
     const utcNow = moment.utc();

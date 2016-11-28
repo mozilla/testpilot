@@ -174,6 +174,11 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     subscribeToBasket,
     clipboard,
     userAgent: navigator.userAgent,
+    setPageTitleL10N: (id, args) => {
+      const title = document.querySelector('head title');
+      title.setAttribute('data-l10n-id', id);
+      title.setAttribute('data-l10n-args', JSON.stringify(args));
+    },
     openWindow: (href, name) => window.open(href, name),
     getWindowLocation: () => window.location,
     addScrollListener: listener =>
