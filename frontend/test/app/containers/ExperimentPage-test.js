@@ -140,7 +140,7 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
 
     // Fields only available when the add-on is installed.
     subject.setProps({ hasAddon: true });
-    expect(findByL10nID('testingMeasurements')).to.have.property('length', 1);
+    expect(findByL10nID('testingMeasurements')).to.have.property('length', 2);
     expect(findByL10nID('testingDescription')).to.have.property('length', 1);
   });
 
