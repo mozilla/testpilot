@@ -344,6 +344,25 @@ contributors:
 ![Example contributor](img/contributors.png)
 
 
+## `contributors_extra`
+
+If your experiment non-enumerable legacy contributions, use this field to call them out. Optional. Localized.
+
+```yaml
+contributors_extra: >
+    This experiment is based on Firefox Tracking Protection technology built by Mozilla employees
+    and contributors over the past several years. Learn more about <a>Firefox Tracking Protection</a>.
+```
+![Example Contrib Extra](img/contrib_extra.png)
+
+## `contributors_extra_url`
+
+If your experiment contains a `contributors_extra` section, you'll need to pass in a URL.
+
+```yaml
+contributors_extra: 'https://example.com'
+```
+
 ## `tour_steps`
 
 An array of one or more steps to a tour presented to users after instsalling the experiment. Each one should contain:
