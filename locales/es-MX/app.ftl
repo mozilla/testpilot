@@ -150,4 +150,29 @@ feedbackUninstallCopy =
 [[ discussNotify ]]
 
 discussNotifyTitle = Un momento...
+discussNotifyMessageAccountless = 
+  | <p>Para poder experimentar mejor, estamos usando un foro externo.
+  | Tendrás que crear una cuenta si quieres
+  | participar en los foros.</p>
+  | <p>Si no quieres crearte la cuenta,
+  | siempre puedes dejar comentarios a través de Test Pilot.
+  | <br>
+  | (Aunque no lo creas, si lo leemos.)</p>
+discussNotifySubmitButton = Llévame al foro
+discussNotifyCancelButton = Cancelar
+
+
+
+# A modal prompt shown before the feedback survey for some experiments.
+[[ experimentPreFeedback ]]
+
+experimentPreFeedbackTitle = Opinión de { $title }
+experimentPreFeedbackLinkCopy = Cuéntanos tu opinión sobre el experimento { $title }
+
+
+
+# A splash shown on top of the experiment page when Test Pilot is not installed.
+[[ experimentPromo ]]
+
+experimentPromoHeader = ¿Listo para despegar?
 
