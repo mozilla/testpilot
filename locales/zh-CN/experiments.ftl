@@ -85,6 +85,7 @@ trackingprotectionToursteps2Copy = <p>您随时可以从 Test Pilot 禁用 Track
 trackingprotectionContributors0Title = Web 开发者
 trackingprotectionContributors1Title = 高级UX设计师
 trackingprotectionContributors2Title = 高级QA工程师
+trackingprotectionContributorsextra = 此实验基于 Mozilla 员工及贡献者在过去几年建立的 Firefox 跟踪保护功能。
 universalsearchDescription = 在智能地址栏输入时，显示最佳的信息推荐。
 universalsearchIntroduction = <p>使用 Universal Search，快速获得网络上最佳的结果。只需在地址栏输入几个字符，我们就会提供相关的热门网站、人物和维基百科条目。</p>
 universalsearchMeasurements = <p>除所有 Test Pilot 实验所收集的<a href="/privacy">数据</a>，您在使用 Universal Search 时还应了解：</p><ul> <li>我们会收集您与智能地址栏交互的基本使用信息，例如输入的字符数量，您点击的结果类型，以及它们在结果列表中的位置。</li> <li>如果您以前已配置 Firefox 在搜索栏中显示搜索建议，安装 Universal Search 将启用智能地址栏中的<a href="https://www.mozilla.org/privacy/firefox/#searchsuggestions" target="_blank">搜索建议</a>。</li> <li>在您使用智能地址栏时，我们会将您输入的词语发送到推荐引擎。我们保留热门搜索的匿名日志，以提高我们建议的质量。</li> <li>为提供 Universal Search，我们会使用几个第三方服务。我们使用 <a href="http://www.bing.com/developers/s/APIBasics.html" target="_blank">Bing</a> 和 <a href="https://developer.yahoo.com/boss/search/" target="_blank">Yahoo</a> 提供推荐列表，<a href="http://docs.embed.ly/docs/" target="_blank">Embedly</a> 和 <a href="https://clearbit.com/logo" target="_blank">Clearbit</a> 提供这些推荐相关的额外数据（例如图像和图标）。为在智能地址栏中显示这些推荐，Universal Search 可能会直接从 Embedly 和 Clearbit 下载这些图像，这可能使这些服务能获知您的 IP 地址和所请求图像。</li></ul>
@@ -96,3 +97,4 @@ universalsearchContributors0Title = 产品经理
 universalsearchContributors1Title = 高级UX设计师
 universalsearchContributors2Title = 受雇工程师
 universalsearchContributors3Title = 高级工程师
+universalsearchEolwarning = 我们将在它结束时自动禁用 Universal Search 实验并报告结果。

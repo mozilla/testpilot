@@ -189,6 +189,7 @@ enableExperimentTransition = 正在启用...
 measurements = 您的隐私
 experimentPrivacyNotice = 您在这里可以更详细地了解 { $title } 的数据收集情况。
 contributorsHeading = 创作者
+contributorsExtraLearnMore = 详细了解
 version = 版本
 changelog = 更新日志
 tourLink = 导览
