@@ -185,6 +185,7 @@ enableExperimentTransition = Wird aktiviert…
 measurements = Ihre Privatsphäre
 experimentPrivacyNotice = Hier erfahren Sie mehr über die Datenerfassung von { $title }.
 contributorsHeading = Präsentiert von
+contributorsExtraLearnMore = Mehr erfahren
 version = Version
 changelog = Änderungsprotokoll
 tourLink = Rundgang
