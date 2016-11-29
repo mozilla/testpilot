@@ -251,6 +251,10 @@ sharePrimary = Test Pilotu'nu sevdiniz mi? Yeni pilotlar bulmamıza yardım edin
 shareSecondary = veya bu linki kopyalayıp yapıştırın...
 shareEmail = E-postayla paylaş
 shareCopy = Kopyala
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } { $completedDate } tarihinde sona eriyor
+eolNoticeLink = Daha fazlası...
 eolDisableMessage = { $title } deneyi sonra erdi. Onu kaldırdıktan sonra Test Pilotu üzerinden yeniden yükleme şansınız olmayacak.
 completedDateLabel = Deney bitiş tarihi: <b>{ $completedDate }</b>
 
