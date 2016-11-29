@@ -195,6 +195,7 @@ enableExperimentTransition = Bekapcsolás…
 measurements = Magánszféra
 experimentPrivacyNotice = Itt többet tudhat meg a(z) { $title } adatgyűjtéséről.
 contributorsHeading = Nekik köszönhetően:
+contributorsExtraLearnMore = Tudjon meg többet
 version = Verzió
 changelog = változások listája
 tourLink = kalauz
