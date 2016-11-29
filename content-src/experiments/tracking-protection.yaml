@@ -88,7 +88,7 @@ contributors:
     avatar: /static/images/experiments/tracking-protection/avatars/rebecca-billings.jpg
 contributors_extra: >
     This experiment is based on Firefox Tracking Protection technology built by Mozilla employees
-    and contributors over the past several years. Learn more about <a>Firefox Tracking Protection</a>.
+    and contributors over the past several years.
 contributors_extra_url: 'https://mzl.la/2fYneDq'
 installation_count: 1
 created: '2016-09-22T00:07:28.847430Z'

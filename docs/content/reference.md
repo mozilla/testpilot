@@ -351,13 +351,13 @@ If your experiment non-enumerable legacy contributions, use this field to call t
 ```yaml
 contributors_extra: >
     This experiment is based on Firefox Tracking Protection technology built by Mozilla employees
-    and contributors over the past several years. Learn more about <a>Firefox Tracking Protection</a>.
+    and contributors over the past several years.
 ```
 ![Example Contrib Extra](img/contrib_extra.png)
 
 ## `contributors_extra_url`
 
-If your experiment contains a `contributors_extra` section, you'll need to pass in a URL.
+If your experiment contains a `contributors_extra` section, you can optionally pass in a URL for a **learn more** link.
 
 ```yaml
 contributors_extra: 'https://example.com'

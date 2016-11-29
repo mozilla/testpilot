@@ -144,6 +144,7 @@ enableExperimentTransition = Enabling...
 measurements = Your privacy
 experimentPrivacyNotice = You can learn more about the data collection for {$title} here.
 contributorsHeading = Brought to you by
+contributorsExtraLearnMore = Learn more
 version = Version
 changelog = changelog
 tourLink = tour
