@@ -185,6 +185,7 @@ enableExperimentTransition = Zmóžnja so...
 measurements = Waša priwatnosć
 experimentPrivacyNotice = Móžeće tu wjace wo zběranju datow za { $title } zhonić.
 contributorsHeading = Prezentowany wot
+contributorsExtraLearnMore = Dalše informacije
 version = Wersija
 changelog = protokol změnow
 tourLink = tura
