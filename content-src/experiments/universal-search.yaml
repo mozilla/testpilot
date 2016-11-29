@@ -125,7 +125,7 @@ graduation_report: >
   Results displayed fell from 20 percent to 7 percent. We were surprised to see 
   that our CTR fell, too.  From this, we hypothesized that duplicates we removed 
   included many sites that users visit habitually, so our initial CTR included many 
-  clicks “stolen” from history navigation.<p>
+  clicks “stolen” from history navigation.</p>
   <p>In October 2016, we added a third result type, rich movie cards. We predicted 
   these would have a higher CTR than the other types, but discovered that while 
   rich movie cards outperformed Wikipedia, they did not outperform top-level domains.</p>
@@ -152,7 +152,7 @@ graduation_report: >
   percentage of time participants clicked on recommendations.
   </figcaption>
   </figure>
-  <p>Key events to note in the graph<p>
+  <p>Key events to note in the graph</p>
   <ul><li>May to July -  Top-level domain and Wikipedia results displayed </li>
   <li>Mid-July to Mid-August - No data collected during telemetry system upgrade</li>
   <li>Mid-August to September - Top-level domain (de-duped) and Wikipedia results displayed</li>
