@@ -195,6 +195,7 @@ enableExperimentTransition = Aktiverar...
 measurements = Din sekretesspolicy
 experimentPrivacyNotice = Du kan läsa mer om datainsamlingen för { $title } här.
 contributorsHeading = Presenteras av
+contributorsExtraLearnMore = Läs mer
 version = Version
 changelog = ändringslogg
 tourLink = guidad visning

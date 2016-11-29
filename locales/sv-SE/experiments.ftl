@@ -65,3 +65,4 @@ universalsearchContributors0Title = Product Manager
 universalsearchContributors1Title = Senior UX Designer
 universalsearchContributors2Title = Staff Engineer
 universalsearchContributors3Title = Senior Engineer
+universalsearchEolwarning = Vi kommer att automatiskt inaktivera experimentet Universal Search och rapportera resultaten när det slutar.
