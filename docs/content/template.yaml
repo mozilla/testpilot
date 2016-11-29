@@ -49,7 +49,7 @@ contributors:
     avatar: /static/images/experiments/experiment-name/burrito.png
 contributors_extra: >
     This experiment was also made possible by a generous grant from 
-    the <a>Institute for RoboCop Studies.</a>
+    the Institute for RoboCop Studies.
 contributors_extra_url: https://robocop.org
 tour_steps:
   -

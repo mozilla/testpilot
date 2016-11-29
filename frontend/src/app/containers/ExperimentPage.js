@@ -367,11 +367,13 @@ export class ExperimentDetail extends React.Component {
                           </li>
                         ))}
                       </ul>
-                    {contributors_extra && <p className="disclaimer"
-                        dangerouslySetInnerHTML={createMarkup(contributors_extra)}
-                        data-l10n-id={this.l10nId('contributors_extra')}
-                        target="_blank"
-                        href={contributors_extra_url} />}
+                    {contributors_extra && <p className="disclaimer">
+                        <span data-l10n-id={this.l10nId('contributors_extra')}>{contributors_extra}</span>
+                        {contributors_extra_url && <span>&nbsp;
+                          <a data-l10n-id="contributorsExtraLearnMore" href={contributors_extra_url} target="_blank">Learn more</a>.</span>
+                        }
+                      </p>
+                    }
                     </section>
                     {!graduated && <div>
                       {hasAddon && <div data-hook="active-user">
