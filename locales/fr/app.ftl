@@ -185,6 +185,7 @@ enableExperimentTransition = Activation…
 measurements = Confidentialité
 experimentPrivacyNotice = Vous pouvez en apprendre davantage sur la collecte de données pour { $title } ici.
 contributorsHeading = Conçu et réalisé par
+contributorsExtraLearnMore = En savoir plus
 version = Version
 changelog = notes de version
 tourLink = visite guidée
