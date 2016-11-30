@@ -185,6 +185,7 @@ enableExperimentTransition = 啟用中…
 measurements = 您的隱私權
 experimentPrivacyNotice = 您可在這裡了解 { $title } 會收集哪些資料。
 contributorsHeading = 開發者
+contributorsExtraLearnMore = 了解更多
 version = 版本
 changelog = 更新紀錄
 tourLink = 導覽
