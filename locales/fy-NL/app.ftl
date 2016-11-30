@@ -185,6 +185,7 @@ enableExperimentTransition = Ynskeakelje…
 measurements = Jo privacy
 experimentPrivacyNotice = Jo kinne hjir mear leare oer de gegevenssamling foar { $title }.
 contributorsHeading = Oanbean troch
+contributorsExtraLearnMore = Lês mear
 version = Ferzje
 changelog = lochboek
 tourLink = toer
