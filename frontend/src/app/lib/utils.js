@@ -11,7 +11,7 @@ export function formatDate(date) {
   } else {
     // safari is the new IE :(
     try {
-      out = d.toLocaleDateString();
+      out = d.toLocaleDateString(navigator.language);
     } catch (e) {
       out = `${d.getMonth() + 1} / ${d.getDate()} / ${d.getFullYear()}`;
     }
