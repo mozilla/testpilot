@@ -45,6 +45,7 @@ nomore404sContributors1Title = Developer, Wayback Machine, The Internet Archive
 nomore404sContributors2Title = Director, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Senior Crawl Engineer, The Internet Archive
 pageshotDescription = Intuitiva skärmbilder direkt från webbläsaren. Fånga, spara och dela skärmbilder när du surfar på webben med hjälp av Firefox.
+pageshotIntroduction = <p>Page Shot låter dig ta, dela och hämta skärmdumpar - utan att lämna Firefox.</p><ul> <li><strong>Rutnätsvy:</strong> Bläddra bland miniatyrer av sparade skärmdumpar</li> <li><strong>Smart sökning:</strong> Hitta skärmdumpen du letar efter med bara ett nyckelord. Page Shot indexerar sidtitlar och text i skärmdumpar</li> <li><strong>Ett-stegs-delning:</strong> Lägg upp dina skärmdumpar på sociala medier eller kopiera den delningsbara länken direkt från webbläsaren.</li></ul>
 pageshotDetails1Copy = Dela länkar till bilder via social media eller e-post , utan att behöva ladda ner eller bifoga en fil.
 pageshotToursteps0Copy = <p>Klicka på ikonen för att börja använda Page Shot.</p>
 pageshotToursteps2Copy = <p>Dela, spara eller ta bort från webbläsaren.</p>
