@@ -17,7 +17,7 @@ introduction: >
   </ul>
 image_twitter: /static/images/experiments/page-shot/social/ps-twitter.jpg
 image_facebook: /static/images/experiments/page-shot/social/ps-facebook.jpg
-version: '2.6.0'
+version: '3.3.0'
 changelog_url: 'https://github.com/mozilla-services/pageshot/blob/master/CHANGELOG.md'
 contribute_url: 'https://github.com/mozilla-services/pageshot/'
 bug_report_url: 'https://github.com/mozilla-services/pageshot/issues'
@@ -89,7 +89,7 @@ notifications: []
 contributors:
   -
     display_name: 'Ian Bicking'
-    title: 'Engineering Manager'
+    title: 'Software Engineer'
     avatar: /static/images/experiments/page-shot/avatars/ian-bicking.jpg
   -
     display_name: 'Donovan Preston'
