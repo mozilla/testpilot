@@ -55,7 +55,6 @@ pageshotToursteps1Copy = <p>選擇您想要拍攝擷取圖的範圍。</p>
 pageshotToursteps2Copy = <p>直接從瀏覽器分享、儲存或刪除圖片。</p>
 pageshotToursteps3Copy = <p>透過搜尋或瀏覽來尋找儲存的圖片。</p>
 pageshotToursteps4Copy = <p>您可以隨時從 Test Pilot 提供意見，或停用 Page Shot。</p>
-pageshotContributors0Title = 工程經理
 pageshotContributors1Title = 軟體工程師
 pageshotContributors2Title = UX 設計師
 tabcenterDescription = 如果把分頁列從瀏覽器頂端移到旁邊去會怎樣呢？我們想知道！
