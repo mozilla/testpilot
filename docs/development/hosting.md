@@ -28,10 +28,10 @@ will:
    are done.  If not, you must write an `addon.env` file in the current working
    directory which contains those values in a bash-sourcable format.  An
    example `addon.env` file:
-
-   > TESTPILOT_ADDON_ID=experiment@mozila
-   > TESTPILOT_ADDON_VERSION=1.2
-
+```
+   TESTPILOT_ADDON_ID=experiment@mozila
+   TESTPILOT_ADDON_VERSION=1.2
+```
 Note the lack of quotes.  These values are validated against `/^TESTPILOT_ADDON_(ID=[a-z0-9@-]+|VERSION=[0-9.]+)$/`.
 
 
