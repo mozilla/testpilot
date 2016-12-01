@@ -55,7 +55,6 @@ pageshotToursteps1Copy = <p>Markieren Sie den Bereich, den Sie aufnehmen möchte
 pageshotToursteps2Copy = <p>Teilen, speichern oder löschen Sie ihn, direkt aus dem Browser.</p>
 pageshotToursteps3Copy = <p>Suchen oder blättern Sie, um gespeicherte Screenshots zu finden.</p>
 pageshotToursteps4Copy = <p>Sie können uns jederzeit Ihre Meinung sagen oder Page Shot in Test Pilot deaktivieren.</p>
-pageshotContributors0Title = Entwicklungs-Manager
 pageshotContributors1Title = Software-Entwickler
 pageshotContributors2Title = UX-Designer
 tabcenterDescription = Wie wäre es, wenn Tabs nicht mehr oben sondern an der Seite des Browsers wären? Wir probieren es!
