@@ -50,7 +50,6 @@ pageshotToursteps1Copy = <p>Выберите область, которую вы
 pageshotToursteps2Copy = <p>Делитесь, сохраняйте и удаляйте скриншоты в браузере.</p>
 pageshotToursteps3Copy = <p>Ищите или перебирайте сохранённые скриншоты.</p>
 pageshotToursteps4Copy = <p>Вы всегда можете оставить нам свой отзыв или выключить Page Shot в расширении лётчика-испытателя.</p>
-pageshotContributors0Title = Технический руководитель
 pageshotContributors1Title = Инженер ПО
 pageshotContributors2Title = Дизайнер интерфейсов
 tabcenterDescription = Что будет если переместить вкладки из верхней части браузера в сторону? Мы бы хотели разобраться!
