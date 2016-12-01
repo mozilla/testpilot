@@ -53,7 +53,6 @@ pageshotToursteps1Copy = <p>تسليط الضوء على المنطقة التي
 pageshotToursteps2Copy = <p>شارك، احفظ أو احذف من المتصفح.</p>
 pageshotToursteps3Copy = <p>البحث أو الاستعراض للبحث عن الصور المحفوظة.</p>
 pageshotToursteps4Copy = <p>يمكنك ان تعطي لنا دائما رأيك أو تعطل أخذ لقطة من الاختبار التجريبي</p>
-pageshotContributors0Title = مدير الشؤون الهندسية
 pageshotContributors1Title = مهندس برمجيات
 pageshotContributors2Title = مصمم تجربة المستخدم
 tabcenterDescription = ما هو الشعور وراء رغبتك في نقل علامات التبويب من أعلى المتصفح إلى الجانب؟ أردنا أكتشاف ذلك!
