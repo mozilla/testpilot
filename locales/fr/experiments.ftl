@@ -52,7 +52,6 @@ pageshotToursteps1Copy = <p>Indiquez la zone que vous souhaitez capturer.</p>
 pageshotToursteps2Copy = <p>Partagez, enregistrez ou supprimez directement depuis le navigateur.</p>
 pageshotToursteps3Copy = <p>Effectuez une recherche parmi les captures enregistrées ou parcourrez-les.</p>
 pageshotToursteps4Copy = <p>Vous pourrez toujours nous envoyer vos observations ou désactiver Page Shot du programme Test Pilot.</p>
-pageshotContributors0Title = Responsable de l’ingénierie
 pageshotContributors1Title = Développeur logiciel
 pageshotContributors2Title = Ergonome
 tabcenterDescription = Nous nous sommes demandé ce que ça donnerait si on déplaçait les onglets vers le côté.
