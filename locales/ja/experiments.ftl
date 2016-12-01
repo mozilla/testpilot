@@ -45,7 +45,6 @@ pageshotToursteps1Copy = <p>キャプチャーしたい範囲を選択します�
 pageshotToursteps2Copy = <p>ブラウザから共有、保存、削除できます。</p>
 pageshotToursteps3Copy = <p>保存したスクリーンショットを検索、閲覧できます。</p>
 pageshotToursteps4Copy = <p>Test Pilot の Page Shot は、いつでもフィードバックを送ったり、無効化したりできます。</p>
-pageshotContributors0Title = エンジニアリングマネージャー
 pageshotContributors1Title = ソフトウェアエンジニア
 pageshotContributors2Title = UX デザイナー
 tabcenterDetails0Copy = タブを画面横に配置してみましょう。
