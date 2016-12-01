@@ -27,7 +27,6 @@ pageshotToursteps1Copy = <p>Destaque a área que deseja capturar.</p>
 pageshotToursteps2Copy = <p>Compartilhe, salve ou remova a partir do navegador.</p>
 pageshotToursteps3Copy = <p>Pesquise ou navegue por captura de telas salvas.</p>
 pageshotToursteps4Copy = <p>Você pode sempre nos enviar sua opinião ou desabilitar o Page Shot no Test Pilot.</p>
-pageshotContributors0Title = Gerente de engenharia
 pageshotContributors1Title = Engenheiro de software
 pageshotContributors2Title = UX Designer
 tabcenterIntroduction = <p>Tire suas abas do caminho. O Tab Center muda suas abas para a lateral do seu navegador, assim elas ficam escondidas quando você não precisa delas, e torna fácil para expandir e usar quando precisar.</p>
