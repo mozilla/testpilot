@@ -528,12 +528,11 @@ export class ExperimentDetail extends React.Component {
         Just launched!</span>
       );
     }
-    const installCount = installation_count.toLocaleString();
     return (
       // Note: this doesn't include the text content because of a conflict
       // in how l20n and react modify the dom.
       // https://github.com/mozilla/testpilot/pull/1712
-      <span data-l10n-id="userCountContainer" data-l10n-args={JSON.stringify({ installation_count: installCount, title })}><span className="bold"></span></span>
+      <span data-l10n-id="userCountContainer" data-l10n-args={JSON.stringify({ installation_count: installation_count, title })}><span className="bold"></span></span>
     );
   }
 
