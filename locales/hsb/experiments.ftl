@@ -55,6 +55,7 @@ pageshotToursteps1Copy = <p>Markěrujće wobłuk, kotryž chceće fotować.</p>
 pageshotToursteps2Copy = <p>Dźělće, składujće abo zhašejće z wobhladowaka.</p>
 pageshotToursteps3Copy = <p>Pytajće abo přehladujće, zo byšće składowane fota wobrazowki namakał.</p>
 pageshotToursteps4Copy = <p>Móžeće nam přeco swoje měnjenje prajić abo Page Shot w Test Pilot znjemóžnić.</p>
+pageshotContributors0TitleEngineer = Wuwiwar softwary
 pageshotContributors1Title = Wuwiwar softwary
 pageshotContributors2Title = UX-designer
 tabcenterDescription = Kak by było, hdy njebychu rajtarki horjeka, ale na boku wobhladowaka byli? My smy to spytali!
