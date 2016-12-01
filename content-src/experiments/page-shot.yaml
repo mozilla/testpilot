@@ -90,6 +90,7 @@ contributors:
   -
     display_name: 'Ian Bicking'
     title: 'Software Engineer'
+    title_l10nsuffix: 'engineer'
     avatar: /static/images/experiments/page-shot/avatars/ian-bicking.jpg
   -
     display_name: 'Donovan Preston'
