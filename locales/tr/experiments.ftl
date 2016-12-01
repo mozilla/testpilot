@@ -25,7 +25,6 @@ minvidContributors2Title = Mühendislik Stajyeri
 nomore404sSubtitle = Wayback Machine desteğiyle
 nomore404sDescription = Web'deki çıkmak sokaklardan bıktınız mı? Aradığınız sayfa açılmıyorsa ve Internet Archive'ın Wayback Machine'inde kayıtlı bir sürümü varsa size söyleyeceğiz.
 pageshotDescription = Tarayıcınızın içine gömülmüş, sezgisel bir ekran görüntüsü aracı. Firefox'la web'de gezinirken sayfaların ekran görüntülerini alın, kaydedin ve paylaşın.
-pageshotContributors0Title = Mühendislik Müdürü
 pageshotContributors1Title = Yazılım Mühendisi
 pageshotContributors2Title = UX Tasarımcısı
 tabcenterDescription = Sekmeler tarayıcınızın tepesi yerine kenarında dursa nasıl olurdu? Merak ettik, yaptık!
