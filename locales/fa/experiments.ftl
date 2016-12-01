@@ -20,7 +20,6 @@ minvidContributors2Title = کارآموز مهندسی
 minvidContributors3Title = مهندس مشارکتی
 nomore404sSubtitle = قدرت گرفته از Wayback Machine
 nomore404sDescription = از بن‌بست‌ها در وب خسته شده‌اید. هر زمان که نسخهٔ ذخیره شده‌ای از یک صفحه در آرشیو اینترنتی Wayback Machine موجود باشد به شما اطلاع می‌دهیم.
-pageshotContributors0Title = مدیر مهندسی
 pageshotContributors1Title = مهندس نرم‌افزار
 pageshotContributors2Title = طراح UX
 tabcenterContributors0Title = تجربه‌کاربری فایرفاکس
