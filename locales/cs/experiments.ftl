@@ -22,7 +22,6 @@ nomore404sContributors2Title = Ředitel, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Vedoucí inženýr, The Internet Archive
 pageshotDescription = Intuitivní snímky obrazovky zabudované přímo v prohlížeči. Zachyťte, uložte a sdílejte snímky z procházení webových stránek přímo ve Firefoxu.
 pageshotToursteps1Copy = <p>Označte oblast, kterou chcete zachytit.</p>
-pageshotContributors0Title = Vedoucí inženýr
 pageshotContributors1Title = Softwarový inženýr
 pageshotContributors2Title = UX designér
 tabcenterContributors0Title = Firefox UX
