@@ -52,7 +52,6 @@ pageshotToursteps0Copy = <p>Klicka på ikonen för att börja använda Page Shot
 pageshotToursteps2Copy = <p>Dela, spara eller ta bort från webbläsaren.</p>
 pageshotToursteps3Copy = <p>Sök eller bläddra för att hitta sparade skärmdumpar.</p>
 pageshotToursteps4Copy = <p>Du kan alltid ge oss återkoppling eller inaktivera Page Shot från Test Pilot.</p>
-pageshotContributors0Title = Engineering Manager
 pageshotContributors1Title = Software Engineer
 pageshotContributors2Title = UX Designer
 tabcenterDescription = Hur skulle det vara att kunna flytta flikar från toppen av webbläsaren till sidan? Vi ville testa det!
