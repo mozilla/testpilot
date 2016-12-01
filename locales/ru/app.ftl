@@ -119,8 +119,8 @@ experimentListPageSubHeader = Выберите функции, которые в
 experimentListEnabledTab = Включено
 experimentListJustLaunchedTab = Только что запущен
 experimentListJustUpdatedTab = Только что обновлён
-experimentListEndingTomorrow = Заканчивается завтра
-experimentListEndingSoon = Скоро заканчивается
+experimentListEndingTomorrow = Заканчиваются завтра
+experimentListEndingSoon = Скоро заканчиваются
 
 
 
@@ -195,6 +195,7 @@ enableExperimentTransition = Включение...
 measurements = Ваша приватность
 experimentPrivacyNotice = Вы можете узнать больше о сборе данных для { $title } здесь.
 contributorsHeading = Создано:
+contributorsExtraLearnMore = Подробнее
 version = Версия
 changelog = список изменений
 tourLink = тур
