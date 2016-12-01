@@ -55,7 +55,6 @@ pageshotToursteps1Copy = <p>Markěrujśo wobłuk, kótaryž cośo wótmólowaś.
 pageshotToursteps2Copy = <p>Źělśo, składujśo abo wulašujśo z wobglědowaka.</p>
 pageshotToursteps3Copy = <p>Pytajśo abo pśeglědujśo, aby skłaźone fota wobrazowki namakał.</p>
 pageshotToursteps4Copy = <p>Móžośo nam pśecej swójo měnjenje groniś abo Page Shot w Test Pilot znjemóžniś.</p>
-pageshotContributors0Title = Wuwijański manager
 pageshotContributors1Title = Wuwijaŕ softwary
 pageshotContributors2Title = UX-designer
 tabcenterDescription = Kak by było, gaž njeby rejtarki górjejce, ale na boku wobglědowaka byli? My smy to wopytali!
