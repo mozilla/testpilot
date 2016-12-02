@@ -30,7 +30,7 @@ measurements: >
     <li>Tab Center does not collect any information about sites you visit or the
       content of tabs.</li>
   </ul>
-xpi_url: 'https://people.mozilla.org/~bwinton/TabCenter/tab-center.xpi'
+xpi_url: 'https://testpilot.firefox.com/files/tabcentertest1@mozilla.com/latest'
 addon_id: tabcentertest1@mozilla.com
 gradient_start: '#F25820'
 gradient_stop: '#D74012'
