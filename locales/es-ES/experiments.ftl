@@ -55,6 +55,7 @@ pageshotToursteps1Copy = <p>Resalta el área que quieras capturar.</p>
 pageshotToursteps2Copy = <p>Comparte, guarda o elimina desde el navegador.</p>
 pageshotToursteps3Copy = <p>Busca o navega para buscar capturas de pantallas guardadas.</p>
 pageshotToursteps4Copy = <p>Siempre puedes enviarnos comentarios o deshabilitar Page Shot desde Test Pilot.</p>
+pageshotContributors0TitleEngineer = Ingeniero de software
 pageshotContributors1Title = Ingeniero de software
 pageshotContributors2Title = Diseñador de UX
 tabcenterDescription = ¿Cómo sería mover las pestañas desde la parte superior del navegador a un lateral? ¡Lo queríamos descubrir!
