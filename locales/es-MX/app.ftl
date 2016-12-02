@@ -175,4 +175,5 @@ experimentPreFeedbackLinkCopy = Cuéntanos tu opinión sobre el experimento { $t
 [[ experimentPromo ]]
 
 experimentPromoHeader = ¿Listo para despegar?
+experimentPromoSubheader = Estamos creando la próxima generación de funciones de Firefox. ¡Instala Test Pilot para probarlas!
 
