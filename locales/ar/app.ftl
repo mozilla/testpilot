@@ -40,7 +40,7 @@ menuRetire = إزالة تثبيت الاختبار التجريبي
 landingIntroLead = اذهب أبعد من ذلك . . .
 landingIntroOne = جرب ميزات جديدة.
 landingIntroTwo = قدم ملاحظاتك.
-landingIntroThree = ساعد في بناء فيرفكس.
+landingIntroThree = ساعد في بناء فَيَرفُكس.
 landingLegalNotice = من خلال المتابعة، فإنك توافق على<a>شروط الاستخدام</a> و<a>الخصوصية</a> للاختبار التجريبي.
 landingExperimentsTitle = جرب أجدد المميزات التجريبية
 
