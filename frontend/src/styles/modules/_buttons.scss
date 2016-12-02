@@ -143,7 +143,7 @@
   transition-duration: 250ms;
   transition-property: box-shadow, border;
   user-select: none;
-  width: 300px;
+  width: 320px;
 
   .button-icon-badge {
     @include hidpi-background-image('download-icon', 16px 16px);
@@ -187,10 +187,10 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 57px 59px;
+    flex: 0 0 57px;
     height: 59px;
     margin-right: 16px;
     position: relative;
-    width: 57px;
   }
 
   &:hover .button-icon-badge {

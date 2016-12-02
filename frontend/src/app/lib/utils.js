@@ -11,7 +11,7 @@ export function formatDate(date) {
   } else {
     // safari is the new IE :(
     try {
-      out = d.toLocaleDateString();
+      out = d.toLocaleDateString(navigator.language);
     } catch (e) {
       out = `${d.getMonth() + 1} / ${d.getDate()} / ${d.getFullYear()}`;
     }
@@ -33,9 +33,16 @@ export function createMarkup(content) {
   return { __html: content };
 }
 
-export function isMinFirefoxVersion(isFirefox, ua, minVersion) {
-  if (!isFirefox) return false;
-  return parseInt(ua.split('/').pop(), 10) >= minVersion;
+export function isFirefox(ua) {
+  return ua.indexOf('firefox') > -1 || ua.indexOf('fxios') > -1;
+}
+
+export function isMinFirefoxVersion(ua, minVersion) {
+  return isFirefox(ua) && parseInt(ua.split('/').pop(), 10) >= minVersion;
+}
+
+export function isMobile(ua) {
+  return ua.indexOf('mobi') > -1 || ua.indexOf('tablet') > -1;
 }
 
 

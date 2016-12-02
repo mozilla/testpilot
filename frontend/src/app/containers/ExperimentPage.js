@@ -140,7 +140,7 @@ export class ExperimentDetail extends React.Component {
           <h3 data-l10n-id="incompatibleHeader">
             This experiment may not be compatible with add-ons you have installed.
           </h3>
-          <p data-l10n-id="incompatibleSubheader" data-l10n-args={JSON.stringify({ url: helpUrl })}>
+          <p data-l10n-id="incompatibleSubheader">
             We recommend <a href={helpUrl}>disabling these add-ons</a> before activating this experiment:
           </p>
         </header>
@@ -168,14 +168,36 @@ export class ExperimentDetail extends React.Component {
     return null;
   }
 
+  renderEolBlock() {
+    const { experiment, isAfterCompletedDate } = this.props;
+    if (!experiment.completed || isAfterCompletedDate(experiment)) { return null; }
+
+    const completedDate = formatDate(experiment.completed);
+    const title = `${experiment.title} is ending on ${completedDate}`;
+
+    return (
+      <Warning titleL10nId="eolIntroMessage"
+               titleL10nArgs={ JSON.stringify({ title: experiment.title, completedDate }) }
+               title={ title }>
+        { experiment.eol_warning }
+        <div className="small-spacer" />
+        <a href="/about" data-l10n-id="eolNoticeLink" target="_blank">Learn more</a>
+      </Warning>
+    );
+  }
+
   render() {
-    const { experiment, experiments, installed, isDev, hasAddon, setExperimentLastSeen, clientUUID } = this.props;
+    const { experiment, experiments, installed, isAfterCompletedDate, isDev,
+            hasAddon, setExperimentLastSeen, clientUUID,
+            setPageTitleL10N } = this.props;
 
     // Show the loading animation if experiments haven't been loaded yet.
     if (experiments.length === 0) { return <LoadingPage />; }
 
     // Show a 404 page if an experiment for this slug wasn't found.
     if (!experiment) { return <NotFoundPage />; }
+
+    setPageTitleL10N('pageTitleExperiment', experiment);
 
     // Show a 404 page if an experiment is not ready for launch yet
     const utcNow = moment.utc();
@@ -192,8 +214,8 @@ export class ExperimentDetail extends React.Component {
 
     const { title, version, contribute_url, bug_report_url, discourse_url,
             introduction, measurements, privacy_notice_url, changelog_url,
-            thumbnail, subtitle, survey_url, contributors, details,
-            min_release } = experiment;
+            thumbnail, subtitle, survey_url, contributors, contributors_extra, contributors_extra_url, details,
+            min_release, graduation_report } = experiment;
 
     // Set the timestamp for when this experiment was last seen (for
     // ExperimentRowCard updated/launched banner logic)
@@ -201,6 +223,7 @@ export class ExperimentDetail extends React.Component {
 
     const surveyURL = buildSurveyURL('givefeedback', title, installed, clientUUID, survey_url);
     const modified = formatDate(experiment.modified);
+    const graduated = isAfterCompletedDate(experiment);
 
     let statusType = null;
     if (experiment.error) {
@@ -238,7 +261,7 @@ export class ExperimentDetail extends React.Component {
             onCancel={() => this.setState({ showEolDialog: false })}
             onSubmit={e => {
               this.setState({ showEolDialog: false });
-              this.renderUninstallSurvey(e);
+              this.uninstallExperiment(e);
             }} />}
 
         <View {...this.props}>
@@ -273,7 +296,7 @@ export class ExperimentDetail extends React.Component {
             </div>
             <div className="details-header responsive-content-wrapper">
               <header>
-                <h1 data-hook="title" data-l10n-id={this.l10nId('title')}>{title}</h1>
+                <h1 data-hook="title">{title}</h1>
                 {subtitle && <h4 data-hook="subtitle" className="subtitle" data-l10n-id={this.l10nId('subtitle')}>{subtitle}</h4>}
               </header>
               { this.renderExperimentControls() }
@@ -298,40 +321,43 @@ export class ExperimentDetail extends React.Component {
                     </section>
                     {!hasAddon && <div data-hook="inactive-user">
                       {!!introduction && <section className="introduction" data-hook="introduction-container">
+                      {!graduated &&
                         <div data-l10n-id={this.l10nId('introduction')} data-hook="introduction-html" dangerouslySetInnerHTML={createMarkup(introduction)}></div>
+                      }
                       </section>}
                     </div>}
-                    {hasAddon && <section className="stats-section" data-hook="active-user">
-                      <table className="stats"><tbody>
-                        <tr data-hook="version-container">
-                          <td data-l10n-id="version">Version</td>
-                          <td>
-                            <span data-hook="version">{version}</span>
-                            {changelog_url && <span>&nbsp;<a data-l10n-id="changelog" data-hook="changelog-url" href={changelog_url}>changelog</a>,</span>}
-                            &nbsp;
-                            <a className="showTour" data-l10n-id="tourLink" onClick={e => this.showTour(e)} href="#">tour</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td data-l10n-id="lastUpdate">Last Update</td>
-                          <td data-hook="modified-date">{modified}</td>
-                        </tr>
-                        <tr>
-                          <td data-l10n-id="contribute">Contribute</td>
-                          <td><a data-hook="contribute-url" href={contribute_url}>{contribute_url}</a></td>
-                        </tr>
+                    {!graduated && <div>
+                      {hasAddon && <section className="stats-section" data-hook="active-user">
+                        <table className="stats"><tbody>
+                          <tr data-hook="version-container">
+                            <td data-l10n-id="version">Version</td>
+                            <td>
+                              <span data-hook="version">{version}</span>
+                              {changelog_url && <span>&nbsp;<a data-l10n-id="changelog" data-hook="changelog-url" href={changelog_url}>changelog</a>, </span>}
+                              <a className="showTour" data-l10n-id="tourLink" onClick={e => this.showTour(e)} href="#">tour</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-l10n-id="lastUpdate">Last Update</td>
+                            <td data-hook="modified-date">{modified}</td>
+                          </tr>
+                          <tr>
+                            <td data-l10n-id="contribute">Contribute</td>
+                            <td><a data-hook="contribute-url" href={contribute_url}>{contribute_url}</a></td>
+                          </tr>
 
-                        <tr>
-                          <td data-l10n-id="bugReports">Bug Reports</td>
-                          <td><a data-hook="bug-report-url" href={bug_report_url}>{bug_report_url}</a></td>
-                        </tr>
+                          <tr>
+                            <td data-l10n-id="bugReports">Bug Reports</td>
+                            <td><a data-hook="bug-report-url" href={bug_report_url}>{bug_report_url}</a></td>
+                          </tr>
 
-                        <tr>
-                          <td data-l10n-id="discourse">Discourse</td>
-                          <td><a data-hook="discourse-url" href={discourse_url}>{discourse_url}</a></td>
-                        </tr>
-                      </tbody></table>
-                    </section>}
+                          <tr>
+                            <td data-l10n-id="discourse">Discourse</td>
+                            <td><a data-hook="discourse-url" href={discourse_url}>{discourse_url}</a></td>
+                          </tr>
+                        </tbody></table>
+                      </section>}
+                    </div>}
                     <section className="contributors-section">
                       <h3 data-l10n-id="contributorsHeading">Brought to you by</h3>
                       <ul className="contributors">
@@ -345,22 +371,31 @@ export class ExperimentDetail extends React.Component {
                           </li>
                         ))}
                       </ul>
+                    {contributors_extra && <p className="disclaimer">
+                        <span data-l10n-id={this.l10nId('contributors_extra')}>{contributors_extra}</span>
+                        {contributors_extra_url && <span>&nbsp;
+                          <a data-l10n-id="contributorsExtraLearnMore" href={contributors_extra_url} target="_blank">Learn more</a>.</span>
+                        }
+                      </p>
+                    }
                     </section>
-                    {hasAddon && <div data-hook="active-user">
-                      {measurements && <section data-hook="measurements-container"
-                          className={classnames('measurements', { highlight: highlightMeasurementPanel })}>
-                        <h3 data-l10n-id="measurements">Your privacy</h3>
-                        <div data-hook="measurements-html" data-l10n-id={this.l10nId('measurements')} className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
-                        {privacy_notice_url && <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-l10n-args={JSON.stringify({ title })} data-hook="privacy-notice-url" href={privacy_notice_url}>You can learn more about the data collection for <span data-hook="title">{title}</span> here.</a>}
-                      </section>}
+                    {!graduated && <div>
+                      {hasAddon && <div data-hook="active-user">
+                        {measurements && <section data-hook="measurements-container"
+                            className={classnames('measurements', { highlight: highlightMeasurementPanel })}>
+                          <h3 data-l10n-id="measurements">Your privacy</h3>
+                          <div data-hook="measurements-html" data-l10n-id={this.l10nId('measurements')} className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
+                          {privacy_notice_url && <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-l10n-args={JSON.stringify({ title })} data-hook="privacy-notice-url" href={privacy_notice_url}>You can learn more about the data collection for <span data-hook="title">{title}</span> here.</a>}
+                        </section>}
+                      </div>}
                     </div>}
                   </div>
                 </div>
-
-                <div className="details-description">
+                {!graduated &&
+                  <div className="details-description">
+                  {this.renderEolBlock()}
                   {this.renderIncompatibleAddons()}
                   {this.renderLocaleWarning()}
-                  {this.renderEolBlock()}
                   {hasAddon && <div data-hook="active-user">
                     {!!introduction && <section className="introduction" data-hook="introduction-container">
                       <div data-hook="introduction-html" data-l10n-id={this.l10nId('description')} dangerouslySetInnerHTML={createMarkup(introduction)}></div>
@@ -383,11 +418,15 @@ export class ExperimentDetail extends React.Component {
                     {measurements && <section data-hook="measurements-container"
                           className={classnames('measurements', { highlight: highlightMeasurementPanel })}>
                       <h3 data-l10n-id="measurements">Your privacy</h3>
-                      <div data-hook="measurements-html" className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
+                      <div data-hook="measurements-html" data-l10n-id={this.l10nId('measurements')} className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
                       <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-hook="privacy-notice-url">You can learn more about the data collection for <span data-hook="title">{title}</span> here.</a>
                     </section>}
                   </div>}
-                </div>
+                  </div>}
+                {graduated &&
+                  <div className="details-description">
+                    <section className="graduation-report" dangerouslySetInnerHTML={createMarkup(graduation_report)}/>
+                  </div>}
               </div>
             </div>
           </div>
@@ -480,7 +519,7 @@ export class ExperimentDetail extends React.Component {
     if (isAfterCompletedDate(experiment)) {
       const completedDate = formatDate(completed);
       return (
-        <span data-l10n-id="completedDateLabel" data-l10n-args={JSON.stringify({ completedDate })}>Experiment End Date: {completedDate}</span>
+        <span data-l10n-id="completedDateLabel" data-l10n-args={JSON.stringify({ completedDate })}>Experiment End Date: <b>{completedDate}</b></span>
       );
     }
     if (!installation_count || installation_count <= 100) {
@@ -489,12 +528,11 @@ export class ExperimentDetail extends React.Component {
         Just launched!</span>
       );
     }
-    const installCount = installation_count.toLocaleString();
     return (
       // Note: this doesn't include the text content because of a conflict
       // in how l20n and react modify the dom.
       // https://github.com/mozilla/testpilot/pull/1712
-      <span data-l10n-id="userCountContainer" data-l10n-args={JSON.stringify({ installation_count: installCount, title })}><span className="bold"></span></span>
+      <span data-l10n-id="userCountContainer" data-l10n-args={JSON.stringify({ installation_count: installation_count, title })}><span className="bold"></span></span>
     );
   }
 
@@ -524,7 +562,7 @@ export class ExperimentDetail extends React.Component {
       if (enabled) {
         return (
           <div className="experiment-controls">
-            <button onClick={e => { e.preventDefault(); this.setState({ showEolDialog: true }); }} style={{ width: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'secondary', 'warning'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Disable {title}</span></button>
+            <button onClick={e => { e.preventDefault(); this.setState({ showEolDialog: true }); }} style={{ minWidth: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'warning'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Disable {title}</span></button>
           </div>
         );
       }
@@ -534,31 +572,14 @@ export class ExperimentDetail extends React.Component {
       return (
         <div className="experiment-controls">
           <a onClick={e => this.handleFeedback(e)} data-l10n-id="giveFeedback" id="feedback-button" className="button default" href={surveyURL}>Give Feedback</a>
-          <button onClick={e => this.renderUninstallSurvey(e)} style={{ width: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'secondary'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Disable {title}</span></button>
+          <button onClick={e => this.renderUninstallSurvey(e)} style={{ minWidth: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'secondary'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Disable {title}</span></button>
         </div>
       );
     }
     return (
       <div className="experiment-controls">
         <a onClick={e => this.highlightPrivacy(e)} className="highlight-privacy" data-l10n-id="highlightPrivacy">Your privacy</a>
-        <button onClick={e => this.installExperiment(e)} style={{ width: progressButtonWidth }} id="install-button"  className={classnames(['button', 'default'], { 'state-change': isEnabling })}><span className="state-change-inner"></span><span data-l10n-id="enableExperimentTransition" className="transition-text">Enabling...</span><span data-l10n-id="enableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Enable {title}</span></button>
-      </div>
-    );
-  }
-
-  renderEolBlock() {
-    const { experiment, isAfterCompletedDate } = this.props;
-    if (!experiment.completed || isAfterCompletedDate(experiment)) { return null; }
-
-    const title = experiment.title;
-    const completedDate = formatDate(experiment.completed);
-
-    return (
-      <div className="eol-block">
-        <div data-l10n-id="eolMessage" data-l10n-args={JSON.stringify({ title, completedDate })}>
-          <strong>This experiment is ending on {completedDate}</strong>.<br/><br/>
-          <span>After then you will still be able to use {title} but we will no longer be providing updates or support.</span>
-        </div>
+        <button onClick={e => this.installExperiment(e)} style={{ minWidth: progressButtonWidth }} id="install-button"  className={classnames(['button', 'default'], { 'state-change': isEnabling })}><span className="state-change-inner"></span><span data-l10n-id="enableExperimentTransition" className="transition-text">Enabling...</span><span data-l10n-id="enableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Enable {title}</span></button>
       </div>
     );
   }
@@ -653,6 +674,12 @@ export class ExperimentDetail extends React.Component {
     // Ignore subsequen clicks if already in progress
     if (isDisabling) { return; }
 
+    this.props.sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'Disable Experiment',
+      eventLabel: experiment.title
+    });
+
     this.setState({
       isEnabling: false,
       isDisabling: true,
@@ -663,14 +690,7 @@ export class ExperimentDetail extends React.Component {
   }
 
   renderUninstallSurvey(evt) {
-    const { experiment } = this.props;
     evt.preventDefault();
-
-    this.props.sendToGA('event', {
-      eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'Disable Experiment',
-      eventLabel: experiment.title
-    });
 
     this.uninstallExperiment(evt);
 

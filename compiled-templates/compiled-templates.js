@@ -1,4 +1,5 @@
-module.exports.templateBegin = `
+module.exports.render = function (options) {
+  return `
 <!doctype html>
 <html>
 <head>
@@ -6,8 +7,8 @@ module.exports.templateBegin = `
     <link rel="shortcut icon" href="/static/images/favicon.ico">
     <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
     <link rel="stylesheet" href="/static/styles/main.css">
-    <meta name="defaultLanguage" content="en-US">
-    <meta name="availableLanguages" content="en-US">
+    <meta name="defaultLanguage" content="${options.defaultLanguage}">
+    <meta name="availableLanguages" content="${options.availableLanguages}">
     <meta name="viewport" content="width=device-width">
     <link rel="localization" href="/static/locales/{locale}/app.ftl">
 
@@ -35,12 +36,9 @@ module.exports.templateBegin = `
         <a href="/" class="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
       </h1>
     </header>
-    <div data-hook="page-container">
-      <div class="responsive-content-wrapper static-page-content">`;
-
-module.exports.templateEnd = `
+    <div class="responsive-content-wrapper static-page-content">
+    ${options.body}
     </div>
-  </div>
 
     <footer id="main-footer" class="responsive-content-wrapper">
       <div id="footer-links">
@@ -59,6 +57,9 @@ module.exports.templateEnd = `
       </div>
     </footer>
   </div>
+  <script src="/static/app/vendor.js"></script>
+  <script src="/static/scripts/locale.js"></script>
   <script src="/static/scripts/legal.js"></script>
 </body>
 </html>`;
+}

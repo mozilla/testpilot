@@ -45,6 +45,11 @@ describe('app/components/ExperimentTourDialog', () => {
     expect(subject.find('.tour-text').prop('data-l10n-id')).to.equal('testToursteps0CopyFoo');
   });
 
+  it('should not have l10n IDs if the experiment is dev-only', () => {
+    subject.setProps({ experiment: { dev: true, ...props.experiment } });
+    expect(subject.find('.tour-text').prop('data-l10n-id')).to.equal(null);
+  });
+
   it('should advance one step and ping GA when the next button is clicked', () => {
     subject.find('.tour-next').simulate('click', mockClickEvent);
 

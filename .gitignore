@@ -1,21 +1,30 @@
-frontend/build/
-dist/
-build/
-tmp/
+# File types to ignore globally
+*.DS_Store
 *.log
-.env
+*.pyc
 *.sw?
-.DS_Store
-docs/_build
-MANIFEST
-coverage
-.nyc_output
-node_modules/
-media/
-static/
-legal-copy/*html
 
+# Files to ignore in the base directory
+coverage
+.coverage
 debug-config.json
+.env
+MANIFEST
+.nyc_output
 version.json
-addon/*.xpi
+
+# Directories to ignore
+build/
+dist/
+docs/_build
+frontend/build/
+media/
+node_modules/
+static/
+tmp/
+
+# Files to ignore within specific directories
 addon/*.rdf
+addon/*.xpi
+addon/locale/
+legal-copy/*html

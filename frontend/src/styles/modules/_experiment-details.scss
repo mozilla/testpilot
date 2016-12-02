@@ -20,7 +20,6 @@
       z-index: 999;
     }
   }
-
 }
 
 @include respond-to('small') {
@@ -235,6 +234,27 @@
 
   .measurements {
     @include show-on-small;
+  }
+
+  .graduation-report {
+    margin-bottom: $grid-unit * 4;
+
+    > :first-child {
+      margin-top: 0;
+    }
+
+    figure {
+      margin: $grid-unit 0;
+    }
+
+    figcaption {
+      color: $transparent-black-7;
+      font-size: $font-unit;
+
+      img {
+        width: auto;
+      }
+    }
   }
 }
 

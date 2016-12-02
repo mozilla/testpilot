@@ -74,7 +74,11 @@
   box-shadow: 0 4px $grid-unit $transparent-black-5;
   color: $black;
   position: relative;
-  width: $grid-unit * 21;
+  width: $grid-unit * 25;
+
+  &#onboarding {
+    width: $grid-unit * 21;
+  }
 
   :not(.content-wrapper) & {
     @include respond-to('small') {
@@ -102,6 +106,8 @@
 
     &.warning {
       background: $warning-red-light;
+      border: 0;
+      border-radius: $small-border-radius $small-border-radius 0 0;
       color: $white;
     }
   }
@@ -116,6 +122,8 @@
     padding: 0 $grid-unit * 1.5 $grid-unit * 1.5;
 
     .button {
+      font-size: $font-unit * 1.5;
+      padding: 0 ($grid-unit * .5);
       width: 100%;
     }
   }
@@ -471,7 +479,7 @@
   input {
     background: transparent;
     border-width: 0;
-    flex: 0 0 80%;
+    flex: 1 1 80%;
     font-size: $font-unit * 1.6;
     line-height: $font-unit * 1.6;
     padding: $grid-unit * .6;
@@ -482,7 +490,7 @@
     border-radius: 0 $small-border-radius $small-border-radius 0;
     border-width: 0;
     color: $default-light;
-    flex: 0 0 20%;
+    flex: 1 0 20%;
     line-height: $font-unit * 1.6;
     padding: $grid-unit * .7 $grid-unit * .8;
     text-transform: lowercase;

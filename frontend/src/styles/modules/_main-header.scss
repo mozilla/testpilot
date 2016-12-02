@@ -2,7 +2,7 @@
   @include flex-container(row, space-between, center);
 
   h1 {
-    margin: $grid-unit * .75 0 $grid-unit * .75 -$grid-unit * .25;
+    margin: $grid-unit * .75 0 $grid-unit * .75 - $grid-unit * .25;
     text-indent: -9999px;
 
     .wordmark {

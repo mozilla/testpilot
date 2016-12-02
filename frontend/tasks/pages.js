@@ -14,12 +14,6 @@ const md = new Remarkable({ html: true });
 const indexTemplate = fs.readFileSync(config.SRC_PATH + 'templates/index.mustache').toString();
 const compiledTemplates = require('../../compiled-templates/compiled-templates');
 
-const compiledPagePaths = {
-  'about.md': 'about/index.html',
-  'privacy-notice.md': 'privacy/index.html',
-  'terms-of-use.md': 'terms/index.html'
-};
-
 const THUMBNAIL_FACEBOOK = 'https://testpilot.firefox.com/static/images/thumbnail-facebook.png';
 const THUMBNAIL_TWITTER = 'https://testpilot.firefox.com/static/images/thumbnail-twitter.png';
 
@@ -38,7 +32,7 @@ gulp.task('pages-experiments', () => {
 });
 
 gulp.task('pages-compiled', () => {
-  return gulp.src('./compiled-templates/*.md')
+  return gulp.src('./compiled-templates/**/*.md')
              .pipe(convertToCompiledPage())
              .pipe(gulp.dest(config.DEST_PATH));
 });
@@ -63,7 +57,8 @@ function buildLandingPage() {
       canonical_path: '',
       image_facebook: THUMBNAIL_FACEBOOK,
       image_twitter: THUMBNAIL_TWITTER,
-      enable_pontoon: config.ENABLE_PONTOON
+      enable_pontoon: config.ENABLE_PONTOON,
+      available_locales: config.AVAILABLE_LOCALES
     });
     this.push(new gutil.File({
       path: 'index.html',
@@ -83,7 +78,8 @@ function buildExperimentPage() {
       canonical_path: 'experiments/' + experiment.slug + '/',
       image_facebook: experiment.image_facebook || THUMBNAIL_FACEBOOK,
       image_twitter: experiment.image_twitter || THUMBNAIL_TWITTER,
-      enable_pontoon: config.ENABLE_PONTOON
+      enable_pontoon: config.ENABLE_PONTOON,
+      available_locales: config.AVAILABLE_LOCALES
     });
     this.push(new gutil.File({
       path: experiment.slug + '/index.html',
@@ -93,14 +89,35 @@ function buildExperimentPage() {
   });
 }
 
+function availableLanguages(path) {
+  return fs.readdirSync(path)
+    .map(function (f) {
+      return f.split('.')[0]
+    })
+    .join(',')
+}
+
 function convertToCompiledPage() {
   return through.obj(function compiledConvert(file, encoding, callback) {
-    const filename = path.basename(file.path);
+    const p = path.parse(file.path);
+    const locale = p.name;
+    const page = path.basename(p.dir);
+    const contents = new Buffer(
+      compiledTemplates.render({
+        defaultLanguage: 'en-US',
+        availableLanguages: availableLanguages(p.dir),
+        body: md.render(file.contents.toString())
+      })
+    );
+    if (locale === 'en-US') {
+      this.push(new gutil.File({
+        path: path.join(page, 'index.html'),
+        contents
+      }));
+    }
     this.push(new gutil.File({
-      path: compiledPagePaths[filename],
-      contents: new Buffer(`${compiledTemplates.templateBegin}
-                            ${md.render(file.contents.toString())}
-                            ${compiledTemplates.templateEnd}`)
+      path: path.join(page, locale, 'index.html'),
+      contents
     }));
     callback();
   });

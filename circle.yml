@@ -8,8 +8,8 @@ machine:
     testpilot.dev: 127.0.0.1
   node:
     version: 6.9.1
-  environment:
-    TESTPILOT_ENABLE_PONTOON_BRANCHES: master
+  python:
+    version: 2.7.11
 
 dependencies:
 
@@ -27,8 +27,7 @@ test:
   override:
     - ./bin/circleci/test-addon.sh
     - ./bin/circleci/test-frontend.sh
-    - echo "Skipping integration tests."
-    # - ./bin/circleci/run-integration-tests.sh
+    - ./bin/circleci/run-integration-tests.sh
   post:
     - bash <(curl -s https://codecov.io/bash)
 

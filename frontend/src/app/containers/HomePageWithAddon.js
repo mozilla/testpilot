@@ -26,6 +26,48 @@ export default class HomePageWithAddon extends React.Component {
     };
   }
 
+  onNotInterestedSurveyClick() {
+    this.props.sendToGA('event', {
+      eventCategory: 'HomePage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'no experiments no thank you'
+    });
+  }
+
+  renderSplash() {
+    if (window.location.search.includes('utm_content=no-experiments-installed')) {
+      return (
+        <div className="intro-text">
+          <h2 data-l10n-id="experimentsListNoneInstalledHeader" className="banner">
+            Let's get this baby off the ground!
+          </h2>
+          <p data-l10n-id="experimentsListNoneInstalledSubheader">
+            Ready to try a new Test Pilot experiment? Select one to enable, take
+            it for a spin, and let us know what you think.
+          </p>
+          <p data-l10n-id="experimentsListNoneInstalledCTA" className="cta">
+            Not interested?
+           <a onClick={() => this.onNotInterestedSurveyClick()}
+              href="https://qsurvey.mozilla.com/s3/TxP-User" target="_blank">
+            Let us know why
+           </a>.
+          </p>
+        </div>
+      );
+    }
+    return (
+      <div className="intro-text">
+        <h2 data-l10n-id="experimentListPageHeader" className="banner">
+          Ready for Takeoff!
+        </h2>
+        <p data-l10n-id="experimentListPageSubHeader">
+          Pick the features you want to try.<br />
+          Check back soon for more experiments.
+        </p>
+      </div>
+    );
+  }
+
   render() {
     const { experiments, isAfterCompletedDate } = this.props;
 
@@ -45,10 +87,7 @@ export default class HomePageWithAddon extends React.Component {
           <div className="copter-wrapper fly-down">
             <div className="copter"></div>
           </div>
-          <div className="intro-text">
-            <h2 data-l10n-id="experimentListPageHeader" className="banner">Ready for Takeoff!</h2>
-            <p data-l10n-id="experimentListPageSubHeader">Pick the features you want to try. <br /> Check back soon for more experiments.</p>
-          </div>
+          {this.renderSplash()}
         </div>
 
         <div className="pinstripe responsive-content-wrapper"></div>
@@ -56,13 +95,13 @@ export default class HomePageWithAddon extends React.Component {
           <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
           {pastExperiments.length > 0 && !showPastExperiments &&
           <div className={classnames(['button', 'outline'])}
-              style={{ margin: '0 auto', display: 'table' }}
+              style={{ margin: '0 auto 40px', display: 'table' }}
               onClick={() => this.setState({ showPastExperiments: true })}
               data-l10n-id="viewPastExperiments">View Past Experiments</div>}
           {showPastExperiments &&
           <div>
             <div className={classnames(['button', 'outline'])}
-                style={{ margin: '0 auto', display: 'table' }}
+                style={{ margin: '0 auto 40px', display: 'table' }}
                 onClick={() => this.setState({ showPastExperiments: false })}
                 data-l10n-id="hidePastExperiments">Hide Past Experiments</div>
             <ExperimentCardList {...this.props} experiments={pastExperiments} eventCategory="HomePage Interactions" />

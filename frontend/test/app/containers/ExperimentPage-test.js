@@ -37,19 +37,20 @@ describe('app/containers/ExperimentPage', () => {
 });
 
 
-describe('app/components/ExperimentPage:ExperimentDetail', () => {
+describe('app/containers/ExperimentPage:ExperimentDetail', () => {
 
   let mockExperiment, mockClickEvent, props, subject;
   beforeEach(() => {
     mockExperiment = {
       slug: 'testing',
       title: 'Testing',
-      title_l10nsuffix: 'foo',
       subtitle: 'Testing',
+      subtitle_l10nsuffix: 'foo',
       version: '1.0',
       thumbnail: '/thumbnail.png',
       introduction: '<p class="test-introduction">Introduction!</p>',
       measurements: '<p class="test-measurements">Measurements</p>',
+      graduation_report: '<p class="test-graduation">Off to college!</p>',
       description: 'Description',
       pre_feedback_copy: null,
       contribute_url: 'https://example.com/contribute',
@@ -111,7 +112,8 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
       getCookie: sinon.spy(),
       removeCookie: sinon.spy(),
       userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:51.0) Gecko/20100101 Firefox/51.0',
-      newsletterForm: newsletterState
+      newsletterForm: newsletterState,
+      setPageTitleL10N: sinon.spy()
     };
 
     subject = shallow(<ExperimentDetail {...props} />);
@@ -129,8 +131,9 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
 
   it('should have the correct l10n IDs', () => {
     setExperiment(mockExperiment);
-    expect(findByL10nID('testingTitleFoo')).to.have.property('length', 1);
-    expect(findByL10nID('testingSubtitle')).to.have.property('length', 1);
+    // Title field not localized; see #1732.
+    expect(findByL10nID('testingTitle')).to.have.property('length', 0);
+    expect(findByL10nID('testingSubtitleFoo')).to.have.property('length', 1);
     expect(findByL10nID('testingIntroduction')).to.have.property('length', 1);
     expect(findByL10nID('testingContributors0Title')).to.have.property('length', 1);
     expect(findByL10nID('testingDetails0Headline')).to.have.property('length', 1);
@@ -138,8 +141,17 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
 
     // Fields only available when the add-on is installed.
     subject.setProps({ hasAddon: true });
-    expect(findByL10nID('testingMeasurements')).to.have.property('length', 1);
+    expect(findByL10nID('testingMeasurements')).to.have.property('length', 2);
     expect(findByL10nID('testingDescription')).to.have.property('length', 1);
+  });
+
+  it('should omit l10n IDs for dev-only content', () => {
+    setExperiment({ dev: true, ...mockExperiment });
+    expect(findByL10nID('testingSubtitleFoo')).to.have.property('length', 0);
+    expect(findByL10nID('testingIntroduction')).to.have.property('length', 0);
+    expect(findByL10nID('testingContributors0Title')).to.have.property('length', 0);
+    expect(findByL10nID('testingDetails0Headline')).to.have.property('length', 0);
+    expect(findByL10nID('testingDetails0Copy')).to.have.property('length', 0);
   });
 
   it('should render a loading page if no experiments are available', () => {
@@ -162,6 +174,13 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
       subject.setProps({
         isExperimentEnabled: experiment => false
       });
+    });
+
+    it('should localize the page title', () => {
+      expect(props.setPageTitleL10N.called).to.be.true;
+      expect(props.setPageTitleL10N.lastCall.args).to.deep.equal([
+        'pageTitleExperiment', mockExperiment
+      ]);
     });
 
     it('should render a 404 page if not on dev and launch date has not yet passed', () => {
@@ -506,6 +525,10 @@ describe('app/components/ExperimentPage:ExperimentDetail', () => {
           expect(findByL10nID('completedDateLabel').length).to.equal(1);
           expect(findByL10nID('userCountContainer').length).to.equal(0);
           expect(findByL10nID('userCountContainerAlt').length).to.equal(0);
+        });
+
+        it('displays the graduation report', () => {
+          expect(subject.find('.graduation-report').length).to.equal(1);
         });
 
         describe('with experiment enabled', () => {

@@ -3,7 +3,6 @@
     "id": 1,
     "url": "http:\/\/testpilot.dev:8000\/api\/experiments\/1",
     "title": "Universal Search",
-    "short_title": "",
     "slug": "universal-search",
     "thumbnail": "http:\/\/testpilot.dev:8000\/media\/demo\/experiments_experiment\/a\/8\/a8182b008f6434ba702ab177232625e2_thumbnail_1449675941_0564.png",
     "description": "Search your bookmarks, history and the web from a single place",
@@ -72,7 +71,6 @@
         "avatar": "\/\/www.gravatar.com\/avatar\/abe193c513e181a8a3ee40980928af39?s=64"
       }
     ],
-    "installations_url": "http:\/\/testpilot.dev:8000\/api\/experiments\/1\/installations\/",
     "installation_count": 1,
     "created": "2015-12-09T15:45:42.395000Z",
     "modified": "2015-12-10T22:10:11.640000Z",
@@ -82,7 +80,6 @@
     "id": 2,
     "url": "http:\/\/testpilot.dev:8000\/api\/experiments\/2",
     "title": "Tab Cinema",
-    "short_title": "",
     "slug": "mozvr",
     "thumbnail": "http:\/\/testpilot.dev:8000\/media\/demo\/experiments_experiment\/7\/f\/7fb027cc91d81bfe14d0c7daf2ada413_thumbnail_1449676075_0620.png",
     "description": "A visual history of your tabs in slideshow form",
@@ -120,7 +117,6 @@
         "avatar": "\/\/www.gravatar.com\/avatar\/ea746ee95136a9a98aff32026954edb0?s=64"
       }
     ],
-    "installations_url": "http:\/\/testpilot.dev:8000\/api\/experiments\/2\/installations\/",
     "installation_count": 0,
     "created": "2015-12-09T15:47:56.050000Z",
     "modified": "2015-12-10T22:00:31.398000Z",
@@ -130,7 +126,6 @@
     "id": 3,
     "url": "http:\/\/testpilot.dev:8000\/api\/experiments\/3",
     "title": "Activity Stream",
-    "short_title": "",
     "slug": "activity-stream",
     "thumbnail": "http:\/\/testpilot.dev:8000\/media\/demo\/experiments_experiment\/e\/1\/e19739ea25188c866b654d3aa2616b27_thumbnail_1449778314_0632.png",
     "description": "Find everything you've ever found, no matter what",
@@ -180,7 +175,6 @@
         "avatar": "\/\/www.gravatar.com\/avatar\/c569400fd10c6ed0e7e0194155273d1e?s=64"
       }
     ],
-    "installations_url": "http:\/\/testpilot.dev:8000\/api\/experiments\/3\/installations\/",
     "installation_count": 0,
     "created": "2015-12-10T20:11:55.207000Z",
     "modified": "2015-12-10T22:00:58.944000Z",

@@ -12,8 +12,8 @@ describe('app/components/ExperimentRowCard', () => {
     mockExperiment = {
       slug: 'testing',
       title: 'Testing Experiment',
-      title_l10nsuffix: 'foo',
       subtitle: 'This is a subtitle.',
+      subtitle_l10nsuffix: 'foo',
       description: 'This is a description.',
       created: moment().subtract(2, 'months').utc(),
       modified: moment().subtract(2, 'months').utc()
@@ -42,24 +42,22 @@ describe('app/components/ExperimentRowCard', () => {
   });
 
   it('should have the expected l10n ID', () => {
-    expect(findByL10nID('testingTitleFoo')).to.have.property('length', 1);
-    expect(findByL10nID('testingSubtitle')).to.have.property('length', 1);
+    // Title field not localized; see #1732.
+    expect(findByL10nID('testingTitle')).to.have.property('length', 0);
+    expect(findByL10nID('testingSubtitleFoo')).to.have.property('length', 1);
     expect(findByL10nID('testingDescription')).to.have.property('length', 1);
+  });
+
+  it('should not have l10n IDs if the experiment is dev-only', () => {
+    subject.setProps({ experiment: { dev: true, ...props.experiment } });
+    expect(findByL10nID('testingSubtitleFoo')).to.have.property('length', 0);
+    expect(findByL10nID('testingDescription')).to.have.property('length', 0);
   });
 
   it('should change style based on hasAddon', () => {
     expect(subject.find('.experiment-summary').hasClass('has-addon')).to.be.false;
     subject.setProps({ hasAddon: true });
     expect(subject.find('.experiment-summary').hasClass('has-addon')).to.be.true;
-  });
-
-  it('should render short_title if available instead of title', () => {
-    const expectedTitle = 'This is shorter';
-    subject.setProps({ experiment: { ...mockExperiment,
-      title: 'Foo bar baz extra long thing look at it go',
-      short_title: expectedTitle
-    }});
-    expect(subject.find('.experiment-information header h3').text()).to.equal(expectedTitle);
   });
 
   it('should display installation count if over 100', () => {
@@ -175,6 +173,15 @@ describe('app/components/ExperimentRowCard', () => {
     expect(findByL10nID('participantCount')).to.have.property('length', 0);
   });
 
+  it('should have a "Manage" button if the experiment is enabled and has an addon', () => {
+    expect(findByL10nID('experimentCardManage')).to.have.property('length', 0);
+    subject.setProps({
+      enabled: true,
+      hasAddon: true
+    });
+    expect(findByL10nID('experimentCardManage')).to.have.property('length', 1);
+  })
+
   it('should ping GA and open the detail page when clicked', () => {
     subject.find('.experiment-summary').simulate('click', mockClickEvent);
 
@@ -186,5 +193,15 @@ describe('app/components/ExperimentRowCard', () => {
     }]);
     expect(props.navigateTo.lastCall.args[0])
       .to.equal(`/experiments/${mockExperiment.slug}`);
+  });
+
+  it('should have a Link component with the right properties', () => {
+    const link = subject.find('Link');
+    expect(link).to.not.be.a('null');
+    expect(link.props()).to.contain.all({
+      'data-hook': 'show-detail',
+      to: `/experiments/${mockExperiment.slug}`,
+      className: 'experiment-summary'
+    });
   });
 });

@@ -1,0 +1,103 @@
+id: 0
+slug: experiment-name
+title: 'Experiment Name'
+subtitle: 'Powered by a Yellow Submarine'
+order: 0
+
+description: >
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum cum ad deserunt
+  iusto possimus. Fugiat odit corrupti cumque.
+
+introduction: >
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Consectetur adipisicing elit.</p>
+
+image_twitter: /static/images/experiments/experiment-name-twitter.jpg
+image_facebook: /static/images/experiments/experiment-name-facebook.jpg
+
+thumbnail: /static/images/experiments/experiment-name.png
+gradient_start: '#FF00FF'
+gradient_stop: '#BB00BB'
+
+version: '0.x.y'
+xpi_url: 'https://testpilot.firefox.com/files/experiment-name/latest'
+addon_id: 'experiment-name@mozilla.com'
+
+created: '2016-01-01T00:00:00.000000Z'
+modified: '2016-01-01T00:00:00.000000Z'
+completed: '2016-01-01T00:00:00.000000Z'
+launch_date: '2016-01-01T00:00:00.000000Z'
+
+changelog_url: 'https://www.github.com/mozilla/experiment-name/blob/master/docs/changelog.md'
+contribute_url: 'https://www.github.com/mozilla/experiment-name'
+bug_report_url: 'https://www.github.com/mozilla/experiment-name/issues'
+discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/experiment-name'
+privacy_notice_url: 'https://www.github.com/mozilla/experiment-name/blob/master/docs/metrics.md'
+
+details:
+  -
+    headline: 'Lorem ipsum'
+    image: /static/images/experiments/experiment-name/details-1.jpg
+    copy: >
+      dolor sit amet, consectetur adipisicing elit. Ipsum cum ad deserunt
+      iusto possimus. Fugiat odit corrupti cumque.
+
+contributors:
+  -
+    display_name: 'Tom Pizza'
+    title: 'Taco Engineer'
+    avatar: /static/images/experiments/experiment-name/burrito.png
+contributors_extra: >
+    This experiment was also made possible by a generous grant from 
+    the Institute for RoboCop Studies.
+contributors_extra_url: https://robocop.org
+tour_steps:
+  -
+    image: /static/images/experiments/experiment-name/tour-1.jpg
+    copy: >
+      <p>Lorem ipsum dolor sit amet.</p>
+
+measurements: >
+  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot
+    experiments, here are the key things you should know about what is happening
+    when you use Experiment Name:</p>
+  <ul>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
+      suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
+      cupiditate vitae praesentium eveniet unde totam, architecto molestiae?</li>
+  </ul>
+
+pre_feedback_image: /static/images/experiments/experiment-name/pre-feedback.jpg
+pre_feedback_copy: >
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
+    suscipit, nam commodi excepturi error modi.</p>
+
+graduation_report: >
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
+    suscipit, nam commodi excepturi error modi.</p>
+    <ul>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
+      suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
+      cupiditate vitae praesentium eveniet unde totam, architecto molestiae?</li>
+  </ul>
+    
+notifications:
+  -
+    id: 1
+    title: 'Hey, listen!'
+    text: 'Would you like to talk to Saria?'
+    notify_after: '2016-01-01T00:00:00Z'
+
+eol_warning: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+min_release: 99
+incompatible:
+  '@fake-incompatible': 'Fake Incompatible Add-on Name'
+  
+locales:
+  - 'en'
+locale_blocklist:
+  - 'de'
+locale_grantlist:
+  - 'de'
+
+dev: false

@@ -11,11 +11,12 @@
  */
 
 const Metrics = require('./metrics');
-const { Services } = require('resource://gre/modules/Services.jsm');
+const notify = require('./notify');
 const { setTimeout, clearTimeout } = require('sdk/timers');
 const tabs = require('sdk/tabs');
 const querystring = require('sdk/querystring');
 const store = require('sdk/simple-storage').storage;
+const _ = require('sdk/l10n').get;
 
 const NUM_STARS = 5; // Number of survey stars
 const TEN_MINUTES = 60 * 1000 * 10;
@@ -62,7 +63,7 @@ function checkForCompletedExperiments() {
           launchSurvey({
             experiment,
             interval: 'eol',
-            label: `The ${experiment.title} experiment has ended. What did you think?`,
+            label: _('survey_launch_survey_label', experiment.title),
             persistence: 10
           }),
           1000
@@ -82,10 +83,6 @@ function getRandomExperiment() {
   const installedKeys = Object.keys(store.installedAddons);
   const randomIndex = Math.floor(Math.random() * installedKeys.length);
   return store.installedAddons[installedKeys[randomIndex]];
-}
-
-function getAnonEl(win, box, attrName) {
-  return win.document.getAnonymousElementByAttribute(box, 'anonid', attrName);
 }
 
 // check if the addon is due for a survey at the current interval
@@ -170,53 +167,14 @@ function createRatingUI(win, cb) {
   return frag;
 }
 
-function createNotificationBox(options) {
-  const win = Services.wm.getMostRecentWindow('navigator:browser');
-  const notifyBox = win.gBrowser.getNotificationBox();
-  const box = notifyBox.appendNotification(
-    options.label,
-    options.value || '',
-    options.image,
-    notifyBox.PRIORITY_INFO_LOW,
-    options.buttons || [],
-    options.callback
-  );
-  const messageText = getAnonEl(win, box, 'messageText');
-  const messageImage = getAnonEl(win, box, 'messageImage');
-
-  if (options.child) {
-    const child = options.child(win);
-    // Make sure the child is not pushed to the right by the spacer.
-    const rightSpacer = win.document.createElement('spacer');
-    rightSpacer.flex = 20;
-    child.appendChild(rightSpacer);
-    box.appendChild(child);
-  }
-  messageText.flex = 0; // Collapse the space before the stars/button.
-  const leftSpacer = messageText.nextSibling;
-  leftSpacer.flex = 0;
-  box.classList.add('heartbeat');
-  messageImage.classList.add('heartbeat');
-  if (options.pulse) {
-    messageImage.classList.add('pulse-onshow');
-  }
-  messageText.classList.add('heartbeat');
-  messageImage.setAttribute('style', 'filter: invert(80%)');
-  box.persistence = options.persistence || 0;
-  return {
-    notifyBox,
-    box
-  };
-}
-
 function showRating(options) {
   return new Promise((resolve) => {
     const experiment = options.experiment;
     const uiTimeout = setTimeout(uiClosed, options.duration || 60000);
     let experimentRating = null;
 
-    const { notifyBox, box } = createNotificationBox({
-      label: options.label || `Please rate ${experiment.title}`,
+    const { notifyBox, box } = notify.createNotificationBox({
+      label: options.label || _('survey_show_rating_label', experiment.title),
       image: experiment.thumbnail,
       child: win => createRatingUI(win, uiClosed),
       persistence: options.persistence,
@@ -242,11 +200,11 @@ function showSurveyButton(options) {
     let clicked = false;
     const { experiment, duration } = options;
     const uiTimeout = setTimeout(uiClosed, duration || 60000);
-    const { notifyBox, box } = createNotificationBox({
-      label: `Thank you for rating ${experiment.title}.`,
+    const { notifyBox, box } = notify.createNotificationBox({
+      label: _('survey_rating_thank_you', experiment.title),
       image: experiment.thumbnail,
       buttons: [{
-        label: 'Take a Quick Survey',
+        label: _('survey_rating_survey_button'),
         callback: () => { clicked = true; }
       }],
       callback: () => {

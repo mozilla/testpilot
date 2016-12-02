@@ -20,6 +20,10 @@ const mocks = {
   })
 };
 
+const mockSettings = {
+  BASE_URL: 'https://example.com'
+};
+
 const mockLoader = MockUtils.loader(module, './lib/experiment-notifications.js', {
   'sdk/simple-storage': {storage: mocks.store},
   'sdk/notifications': mocks.callbacks.Notifications,
@@ -28,13 +32,13 @@ const mockLoader = MockUtils.loader(module, './lib/experiment-notifications.js',
 
 const ExperimentNotifications = mockLoader.require('../lib/experiment-notifications');
 
-exports['test ExperimentNotifications.init()'] = assert => {
+exports['test ExperimentNotifications.init(mockSettings)'] = assert => {
   assert.ok(!('notificationsLastChecked' in mocks.store),
             'notificationsLastChecked should not initially be in store');
   assert.ok(!('notificationsProcessed' in mocks.store),
             'notificationsProcessed should not initially be in store');
 
-  ExperimentNotifications.init();
+  ExperimentNotifications.init(mockSettings);
 
   assert.ok('notificationsLastChecked' in mocks.store,
             'notificationsLastChecked should be in store after init');
@@ -110,6 +114,8 @@ exports['test single notification'] = assert => {
     }
   };
 
+  ExperimentNotifications.init(mockSettings);
+
   ExperimentNotifications.maybeSendNotifications();
 
   const notifyCalls = mocks.callbacks.Notifications.notify.calls();
@@ -118,7 +124,7 @@ exports['test single notification'] = assert => {
 
   const resultNotification = notifyCalls[0][0];
   assert.equal(expectedTitle, resultNotification.title);
-  assert.equal('via testpilot.firefox.com\n' + expectedText, resultNotification.text);
+  assert.equal('via example.com\n' + expectedText, resultNotification.text);
   resultNotification.onClick();
 
   const tabOpenCalls = mocks.callbacks.Tabs.open.calls();

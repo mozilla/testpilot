@@ -1,8 +1,16 @@
+const fs = require('fs');
+
 module.exports = {
   SERVER_PORT: 8000,
   IS_DEBUG: (process.env.NODE_ENV === 'development'),
   USE_HTTPS: (process.env.USE_HTTPS == 1),
   ENABLE_PONTOON: (process.env.ENABLE_PONTOON === '1'),
+  ENABLE_DEV_CONTENT: (process.env.ENABLE_DEV_CONTENT === '1'),
+  AVAILABLE_LOCALES: (process.env.ENABLE_DEV_LOCALES === '1') ?
+    // All locales on Pontoon for local & dev
+    fs.readdirSync('./locales').join(',') :
+    // Enabled locales for stage & production - update as they reach 100%
+    'en-US,de,dsb,hsb,hu,it,zh-CN,zh-TW',
 
   // TODO: Move addon build to a better path
   ADDON_SRC_PATH: './addon/',

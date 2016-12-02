@@ -1,13 +1,14 @@
 const LOCALIZABLE_FIELDS = [
-  'title',
   'subtitle',
   'description',
   'introduction',
   'measurements',
+  'eol_warning',
   'pre_feedback_copy',
   'details.copy',
   'tour_steps.copy',
-  'contributors.title'
+  'contributors.title',
+  'contributors_extra'
 ];
 
 function isLocalizableField(pieces) {
@@ -40,6 +41,9 @@ function lookup(obj, path) {
 }
 
 function experimentL10nId(experiment, pieces) {
+  if (experiment.dev) { // For dev-only experiments, data-l10n-id=null is omitted from the DOM
+    return null;
+  }
   if (typeof pieces === 'string') {
     pieces = [pieces];
   }

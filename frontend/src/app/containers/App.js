@@ -70,7 +70,7 @@ class App extends Component {
     if (window.ga && ga.loaded) {
       const data = dataIn || {};
       data.hitType = type;
-      data.page = (pathname === '/') ? pathname : '/' + pathname;
+      data.location = window.location;
       ga('send', data);
     }
   }
@@ -137,6 +137,7 @@ const mapStateToProps = state => ({
   isAfterCompletedDate,
   isFirefox: state.browser.isFirefox,
   isMinFirefox: state.browser.isMinFirefox,
+  isMobile: state.browser.isMobile,
   locale: state.browser.locale,
   newsletterForm: state.newsletterForm,
   routing: state.routing
@@ -173,6 +174,11 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     subscribeToBasket,
     clipboard,
     userAgent: navigator.userAgent,
+    setPageTitleL10N: (id, args) => {
+      const title = document.querySelector('head title');
+      title.setAttribute('data-l10n-id', id);
+      title.setAttribute('data-l10n-args', JSON.stringify(args));
+    },
     openWindow: (href, name) => window.open(href, name),
     getWindowLocation: () => window.location,
     addScrollListener: listener =>

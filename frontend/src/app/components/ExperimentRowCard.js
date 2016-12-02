@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router';
 import classnames from 'classnames';
 
 import { experimentL10nId } from '../lib/utils';
@@ -17,45 +17,44 @@ export default class ExperimentRowCard extends React.Component {
   render() {
     const { hasAddon, experiment, enabled, isAfterCompletedDate } = this.props;
 
-    const { description, thumbnail, subtitle } = experiment;
+    const { description, title, thumbnail, subtitle, slug } = experiment;
     const installation_count = (experiment.installation_count) ? experiment.installation_count : 0;
-    const title = experiment.short_title || experiment.title;
     const isCompleted = isAfterCompletedDate(experiment);
 
     return (
-      <div data-hook="show-detail"
+      <Link data-hook="show-detail" to={`/experiments/${slug}`} onClick={(evt) => this.openDetailPage(evt)}
         className={classnames('experiment-summary', {
           enabled,
           'just-launched': this.justLaunched(),
           'just-updated': this.justUpdated(),
           'has-addon': hasAddon
         })}
-        onClick={(evt) => this.openDetailPage(evt)}>
+      >
         <div className="experiment-actions">
           {enabled && <div data-l10n-id="experimentListEnabledTab" className="tab enabled-tab"></div>}
           {this.justLaunched() && <div data-l10n-id="experimentListJustLaunchedTab" className="tab just-launched-tab"></div>}
           {this.justUpdated() && <div data-l10n-id="experimentListJustUpdatedTab" className="tab just-updated-tab"></div>}
         </div>
-      <div className="experiment-icon-wrapper" data-hook="bg"
-        style={{
-          backgroundColor: experiment.gradient_start,
-          backgroundImage: `linear-gradient(135deg, ${experiment.gradient_start}, ${experiment.gradient_stop}`
-        }}>
-        <div className="experiment-icon" style={{
-          backgroundImage: `url(${thumbnail})`
-        }}></div>
-      </div>
+        <div className="experiment-icon-wrapper" data-hook="bg"
+          style={{
+            backgroundColor: experiment.gradient_start,
+            backgroundImage: `linear-gradient(135deg, ${experiment.gradient_start}, ${experiment.gradient_stop}`
+          }}>
+          <div className="experiment-icon" style={{
+            backgroundImage: `url(${thumbnail})`
+          }}></div>
+        </div>
       <div className="experiment-information">
         <header>
-          <h3 data-l10n-id={this.l10nId('title')}>{title}</h3>
+          <h3>{title}</h3>
           {subtitle && <h4 data-l10n-id={this.l10nId('subtitle')} className="subtitle">{subtitle}</h4>}
-          <h4 className="eol-message">{this.statusMsg()}</h4>
+          <h4>{this.statusMsg()}</h4>
         </header>
         <p data-l10n-id={this.l10nId('description')}>{description}</p>
         { this.renderInstallationCount(installation_count, isCompleted) }
         { this.renderManageButton(enabled, hasAddon, isCompleted) }
       </div>
-     </div>
+    </Link>
     );
   }
 
@@ -131,9 +130,9 @@ export default class ExperimentRowCard extends React.Component {
       if (delta < 0) {
         return '';
       } else if (delta < ONE_DAY) {
-        return <span data-l10n-id="experimentListEndingTomorrow">Ending Tomorrow</span>;
+        return <span className="eol-message" data-l10n-id="experimentListEndingTomorrow">Ending Tomorrow</span>;
       } else if (delta < ONE_WEEK) {
-        return <span data-l10n-id="experimentListEndingSoon">Ending Soon</span>;
+        return <span className="eol-message" data-l10n-id="experimentListEndingSoon">Ending Soon</span>;
       }
     }
     return '';
@@ -144,6 +143,7 @@ export default class ExperimentRowCard extends React.Component {
     const { title } = experiment;
 
     evt.preventDefault();
+
     sendToGA('event', {
       eventCategory,
       eventAction: 'Open detail page',

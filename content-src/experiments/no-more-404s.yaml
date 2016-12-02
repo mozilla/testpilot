@@ -1,7 +1,6 @@
 id: 5
 title: 'No More 404s'
 subtitle: 'Powered by the Wayback Machine'
-short_title: 'No More 404s'
 slug: no-more-404s
 thumbnail: /static/images/experiments/no-more-404s/experiments_experiment/a/9/a9e6dc66c6a22851721715ae4d0641fb_thumbnail_1470245154_0349.png
 description: >
@@ -13,7 +12,7 @@ introduction: >
     Archive's Wayback Machine.</p>
 image_twitter: /static/images/experiments/no-more-404s/experiments_experiment/a/9/a9e6dc66c6a22851721715ae4d0641fb_image_1472573814_0582.png
 image_facebook: /static/images/experiments/no-more-404s/experiments_experiment/a/9/a9e6dc66c6a22851721715ae4d0641fb_image_1472573814_0278.png
-version: 1.5.6
+version: 1.6.0
 changelog_url: 'https://github.com/internetarchive/FirefoxNoMore404s/blob/master/Changelog.md'
 contribute_url: 'https://github.com/internetarchive/FirefoxNoMore404s'
 bug_report_url: 'https://github.com/internetarchive/FirefoxNoMore404s/issues/new'

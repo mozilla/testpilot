@@ -33,19 +33,17 @@ fi
 # For short-lived assets; in seconds
 MAX_AGE="600"
 
-HPKP="\"public-key-pins\": \"max-age=300;pin-sha256=\\\"WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=\\\";pin-sha256=\\\"r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E=\\\"\""
-CSP="\"content-security-policy\": \"default-src 'self'; connect-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com https://basket.mozilla.org https://analysis-output.telemetry.mozilla.org; font-src 'self' code.cdn.mozilla.net; form-action 'none'; img-src 'self' https://ssl.google-analytics.com https://www.google-analytics.com; object-src 'none'; script-src 'self' https://ssl.google-analytics.com; style-src 'self' code.cdn.mozilla.net; report-uri /__cspreport__;\""
+HPKP="\"Public-Key-Pins\": \"max-age=300;pin-sha256=\\\"WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=\\\";pin-sha256=\\\"r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E=\\\";pin-sha256=\\\"YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg=\\\";pin-sha256=\\\"sRHdihwgkaib1P1gxX8HFszlD+7/gTfNvuAybgLPNis=\\\";\""
+CSP="\"content-security-policy\": \"default-src 'self'; connect-src 'self' https://sentry.prod.mozaws.net https://www.google-analytics.com https://ssl.google-analytics.com https://basket.mozilla.org https://analysis-output.telemetry.mozilla.org; font-src 'self' code.cdn.mozilla.net; form-action 'none'; frame-ancestors 'self'; img-src 'self' https://ssl.google-analytics.com https://www.google-analytics.com; object-src 'none'; script-src 'self' https://ssl.google-analytics.com; style-src 'self' code.cdn.mozilla.net; report-uri /__cspreport__;\""
 HSTS="\"strict-transport-security\": \"max-age=31536000; includeSubDomains; preload\""
 TYPE="\"x-content-type-options\": \"nosniff\""
-FRAME="\"x-frame-options\": \"DENY\""
 XSS="\"x-xss-protection\": \"1; mode=block\""
 
 # Our dev server has a couple different rules to allow easier debugging and
 # enable localization.  Also expires more often.
 if [ "$DEST" = "dev" ]; then
     MAX_AGE="15"
-    CSP="\"content-security-policy\": \"default-src 'self'; connect-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com https://basket.mozilla.org https://analysis-output.telemetry.mozilla.org; font-src 'self' code.cdn.mozilla.net; form-action 'none'; frame-src 'self' https://pontoon.mozilla.org; img-src 'self' https://pontoon.mozilla.org https://ssl.google-analytics.com https://www.google-analytics.com; object-src 'none'; script-src 'self' https://pontoon.mozilla.org https://ssl.google-analytics.com; style-src 'self' https://pontoon.mozilla.org code.cdn.mozilla.net; report-uri /__cspreport__;\""
-    FRAME="\"x-frame-options\": \"ALLOW-FROM https://pontoon.mozilla.org/\""
+    CSP="\"content-security-policy\": \"default-src 'self'; connect-src 'self' https://sentry.prod.mozaws.net https://www.google-analytics.com https://ssl.google-analytics.com https://basket.mozilla.org https://analysis-output.telemetry.mozilla.org; font-src 'self' code.cdn.mozilla.net; form-action 'none'; frame-ancestors 'self' https://pontoon.mozilla.org; img-src 'self' https://pontoon.mozilla.org https://ssl.google-analytics.com https://www.google-analytics.com; object-src 'none'; script-src 'self' https://pontoon.mozilla.org https://ssl.google-analytics.com; style-src 'self' https://pontoon.mozilla.org code.cdn.mozilla.net; report-uri /__cspreport__;\""
 fi
 
 # build version.json if it isn't provided
@@ -69,7 +67,7 @@ aws s3 sync \
   --content-type "text/html" \
   --exclude "*" \
   --include "*.html" \
-  --metadata "{${HPKP}, ${CSP}, ${HSTS}, ${TYPE}, ${FRAME}, ${XSS}}" \
+  --metadata "{${HPKP}, ${CSP}, ${HSTS}, ${TYPE}, ${XSS}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
   dist/ s3://${TESTPILOT_BUCKET}/
@@ -135,7 +133,7 @@ for fn in $(find dist -name 'index.html' -not -path 'dist/index.html'); do
     --content-type "text/html" \
     --exclude "*" \
     --include "*.html" \
-    --metadata "{${HPKP}, ${CSP}, ${HSTS}, ${TYPE}, ${FRAME}, ${XSS}}" \
+    --metadata "{${HPKP}, ${CSP}, ${HSTS}, ${TYPE}, ${XSS}}" \
     --metadata-directive "REPLACE" \
     --acl "public-read" \
     $fn s3://${TESTPILOT_BUCKET}/${s3path}

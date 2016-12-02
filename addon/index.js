@@ -18,6 +18,7 @@ const { App } = require('./lib/app');
 const ExperimentHacks = require('./lib/experiment-hacks');
 const ExperimentNotifications = require('./lib/experiment-notifications');
 const Metrics = require('./lib/metrics');
+const NoExperiments = require('./lib/no-experiments');
 const SharePrompt = require('./lib/share-prompt');
 const survey = require('./lib/survey');
 const ToolbarButton = require('./lib/toolbar-button');
@@ -330,6 +331,9 @@ exports.main = function(options) {
     // Generate a UUID for this client, so we can manage experiment
     // installations for multiple browsers per user. DO NOT USE IN METRICS.
     store.clientUUID = require('sdk/util/uuid').uuid().toString().slice(1, -1);
+    store.firstRun = true;
+  } else {
+    store.firstRun = false;
   }
 
   Metrics.init();
@@ -339,8 +343,9 @@ exports.main = function(options) {
 
   WebExtensionChannels.init();
   ToolbarButton.init(settings);
-  ExperimentNotifications.init();
+  ExperimentNotifications.init(settings);
   SharePrompt.init(settings);
+  NoExperiments.init(settings);
 
   if (reason === 'install') {
     openOnboardingTab();
@@ -364,6 +369,7 @@ exports.onUnload = function(reason) {
   ToolbarButton.destroy();
   ExperimentNotifications.destroy();
   SharePrompt.destroy(reason);
+  NoExperiments.destroy(reason);
 
   if (reason === 'uninstall' || reason === 'disable') {
     Metrics.onDisable();

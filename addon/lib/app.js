@@ -76,7 +76,7 @@ const App = Class({ // eslint-disable-line new-cap
   preprocessExperiment: function(experiment) {
     const baseUrl = this.baseUrl;
     const urlFields = {
-      '': ['thumbnail', 'url', 'html_url', 'installations_url', 'survey_url'],
+      '': ['thumbnail', 'url', 'html_url', 'survey_url'],
       details: ['image'],
       tour_steps: ['image'],
       contributors: ['avatar']

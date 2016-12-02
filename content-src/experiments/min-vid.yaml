@@ -1,6 +1,5 @@
 id: 8
 title: 'Min Vid'
-short_title: ''
 slug: min-vid
 thumbnail: /static/images/experiments/min-vid/experiments_experiment/thumbnail.png
 description: >
@@ -87,6 +86,10 @@ contributors:
     display_name: 'Jen Kagan'
     title: 'Engineering Intern'
     avatar: /static/images/experiments/min-vid/avatars/jen-kagan.jpg
+  -
+    display_name: 'Noitidart'
+    title: 'Engineering Contributor'
+    avatar: /static/images/experiments/min-vid/avatars/noitidart.jpg
 installation_count: 1
 created: '2016-09-22T00:07:28.847430Z'
 modified: '2016-10-06T22:19:14.129Z'

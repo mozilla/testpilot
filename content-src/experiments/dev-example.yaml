@@ -1,0 +1,90 @@
+dev: true
+id: 999
+title: 'Dev Example'
+slug: dev-example
+thumbnail: /static/images/check.png
+description: >
+  This is an example experiment that you should never see in production.
+introduction: >
+  <p>Do you like Test Pilot experiments? Well, this one should exercise all the
+  features of the site. You should never see it on production!</p>
+  <ul>
+    <li><strong>Markup in introduction:</strong> Look at this HTML list!</li>
+    <li><strong>Hidden from production:</strong> If you see this on production
+      or staging, something has gone horribly wrong!</li>
+    <li><strong>Lorem ipsum dolor sit amet:</strong> Etiam lacinia, turpis sit
+      amet sagittis viverra, est erat tincidunt mi, a cursus leo orci et
+      orci.</li>
+  </ul>
+image_twitter: /static/images/experiments/min-vid/social/mv-twitter.jpg
+image_facebook: /static/images/experiments/min-vid/social/mv-facebook.jpg
+version: '0.3.1'
+changelog_url: 'https://github.com/meandavejustice/min-vid/blob/master/CHANGELOG.md'
+contribute_url: 'https://github.com/meandavejustice/min-vid'
+bug_report_url: 'https://github.com/meandavejustice/min-vid/issues'
+discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/min-vid'
+privacy_notice_url: 'https://github.com/meandavejustice/min-vid/blob/master/docs/metrics.md'
+measurements: >
+  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot
+    experiments, here are the key things you should know about what is happening
+    when you use Example:</p>
+  <ul>
+    <li>Stumptown neutra mixtape, wayfarers hexagon ramps organic typewriter
+      mumblecore microdosing coloring book forage humblebrag.</li>
+    <li>Fam slow-carb snackwave cronut wayfarers. Mixtape put a bird on it
+      iPhone PBR&B subway tile, kale chips occupy af hexagon vaporware.</li>
+    <li>Franzen vinyl polaroid cold-pressed hashtag flexitarian.</li>
+  </ul>
+xpi_url: 'https://testpilot.firefox.com/files/min-vid/latest'
+addon_id: '@example-experiment'
+gradient_start: '#8725A7'
+gradient_stop: '#035295'
+details:
+  -
+    image: /static/images/experiments/min-vid/experiments_experimentdetail/detail1.jpg
+    copy: >
+      Access Min Vid from YouTube and Vimeo video players.
+  -
+    image: /static/images/experiments/min-vid/experiments_experimentdetail/detail2.jpg
+    copy: >
+      Watch video in the foreground while you do other things on the Web.
+  -
+    image: /static/images/experiments/min-vid/experiments_experimentdetail/detail3.jpg
+    copy: >
+      Right click on links to video to find Min Vid in the in-context controls.
+tour_steps:
+  -
+    image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour1.jpg
+    copy: >
+      <p>Select the icon to start using Min Vid.</p>
+  -
+    image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour2.jpg
+    copy: >
+      <p>Play video in the foreground while you continue to browse.</p>
+  -
+    image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour3.jpg
+    copy: >
+      <p>Access controls in the frame to adjust volume, play, pause and move the video.</p>
+  -
+    image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour4.jpg
+    copy: >
+      <p>You can always give us feedback or disable Min Vid from Test Pilot.</p>
+notifications: []
+contributors:
+  -
+    display_name: 'Dave Justice'
+    title: 'Engineer'
+    avatar: /static/images/experiments/min-vid/avatars/dave-justice.jpg
+  -
+    display_name: 'Jared Hirsch'
+    title: 'Staff Engineer'
+    avatar: /static/images/experiments/min-vid/avatars/jared-hirsch.jpg
+  -
+    display_name: 'Jen Kagan'
+    title: 'Engineering Intern'
+    avatar: /static/images/experiments/min-vid/avatars/jen-kagan.jpg
+installation_count: 1
+created: '2016-09-22T00:07:28.847430Z'
+modified: '2016-10-06T22:19:14.129Z'
+completed: '2016-11-16T20:15:00Z'
+order: 999

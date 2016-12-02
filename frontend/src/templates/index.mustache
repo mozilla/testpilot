@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="/static/styles/main.css">
 
     <meta name="defaultLanguage" content="en-US">
-    <meta name="availableLanguages" content="en-US">
+    <meta name="availableLanguages" content="{{{ available_locales }}}">
     <meta name="viewport" content="width=device-width">
     <link rel="localization" href="/static/locales/{locale}/app.ftl">
     <link rel="localization" href="/static/locales/{locale}/experiments.ftl">
 
     <link rel="canonical" href="https://testpilot.firefox.com/{{{ canonical_path }}}">
 
-    <title>{{ meta_title }}</title>
+    <title data-l10n-id="pageTitleDefault">{{ meta_title }}</title>
+
     <meta property="og:title" content="{{ meta_title }}" />
     <meta name="twitter:title" content="{{ meta_title }}" />
     <meta name="description" content="{{ meta_description }}" />

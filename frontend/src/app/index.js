@@ -3,6 +3,8 @@ import 'l20n/dist/compat/web/l20n';
 import es6Promise from 'es6-promise';
 import 'isomorphic-fetch';
 
+import Raven from 'raven-js';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -20,8 +22,9 @@ import config from './config';
 import experimentsActions from './actions/experiments';
 import Routes from './components/Routes';
 
-
 es6Promise.polyfill();
+
+Raven.config(config.ravenPublicDSN).install();
 
 const browserHistory = useRouterHistory(createHistory)({ basename: '/' });
 

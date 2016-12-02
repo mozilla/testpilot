@@ -1,6 +1,5 @@
 id: 6
 title: 'Page Shot'
-short_title: ''
 slug: page-shot
 thumbnail: /static/images/experiments/page-shot/experiments_experiment/thumbnail.png
 description: >
@@ -18,12 +17,12 @@ introduction: >
   </ul>
 image_twitter: /static/images/experiments/page-shot/social/ps-twitter.jpg
 image_facebook: /static/images/experiments/page-shot/social/ps-facebook.jpg
-version: '0.1.2'
-changelog_url: 'https://github.com/mozilla-services/pageshot/'
+version: '3.3.0'
+changelog_url: 'https://github.com/mozilla-services/pageshot/blob/master/CHANGELOG.md'
 contribute_url: 'https://github.com/mozilla-services/pageshot/'
 bug_report_url: 'https://github.com/mozilla-services/pageshot/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/page-shot'
-privacy_notice_url: 'https://github.com/mozilla-services/pageshot/blob/master/docs/METRICS.md'
+privacy_notice_url: 'https://pageshot.net/privacy'
 measurements: >
   <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot
     experiments, here are the key things you should know about what is happening
@@ -90,7 +89,8 @@ notifications: []
 contributors:
   -
     display_name: 'Ian Bicking'
-    title: 'Engineering Manager'
+    title: 'Software Engineer'
+    title_l10nsuffix: 'engineer'
     avatar: /static/images/experiments/page-shot/avatars/ian-bicking.jpg
   -
     display_name: 'Donovan Preston'
