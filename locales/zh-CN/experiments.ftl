@@ -55,6 +55,7 @@ pageshotToursteps1Copy = <p>高亮您想捕捉的区域。</p>
 pageshotToursteps2Copy = <p>在浏览器中分享、保存，或者删除。</p>
 pageshotToursteps3Copy = <p>搜索或浏览以找到已保存的截图。</p>
 pageshotToursteps4Copy = <p>您随时可以提供反馈，或者从 Test Pilot 禁用  Page Shot。</p>
+pageshotContributors0TitleEngineer = 软件工程师
 pageshotContributors1Title = 软件工程师
 pageshotContributors2Title = UX设计师
 tabcenterDescription = 将标签栏从顶部放到侧边是何种体验？我们与你都想知道！
