@@ -129,7 +129,7 @@ experimentListEndingSoon = ينتهي قريباً
 
 experimentCardManage = أدِر
 experimentCardGetStarted = ابدأ
-experimentCardLearnMore = مشاهدة المزيد
+experimentCardLearnMore = اعرف المزيد
 
 
 
@@ -185,6 +185,7 @@ enableExperimentTransition = جار التفعيل...
 measurements = خصوصيتك
 experimentPrivacyNotice = يمكنك معرفة المزيد عن جمع البيانات ل { $title } هنا.
 contributorsHeading = مقدم لك بواسطة
+contributorsExtraLearnMore = اعرف المزيد
 version = الإصدار
 changelog = سجل التغييرات
 tourLink = جولة
