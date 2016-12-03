@@ -80,6 +80,7 @@ trackingprotectionToursteps2Copy = <p>Vous pourrez toujours désactiver Tracking
 trackingprotectionContributors0Title = Développeur web
 trackingprotectionContributors1Title = Ergonome confirmé
 trackingprotectionContributors2Title = Ingénieur qualité confirmé
+trackingprotectionContributorsextra = Cette expérience repose sur la technologie de protection contre le pistage développée par Mozilla et ses contributeurs au cours des dernières années.
 universalsearchDescription = Des suggestions des meilleurs sites s’affichent quand vous écrivez dans la barre d’adresse intelligente.
 universalsearchIntroduction = <p>Accédez plus vite au meilleur du Web avec Universal Search. Quelques caractères saisis dans la barre intelligente et vous aurez le plaisir de naviguer parmi les sites les plus populaires, depuis ceux des célébrités jusqu’aux articles de Wikipédia.</p>
 universalsearchDetails0Copy = Des sites populaires, des personnes et des articles de Wikipédia s’affichent pendant la saisie.
