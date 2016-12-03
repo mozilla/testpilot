@@ -70,7 +70,7 @@ landingDownloadFirefoxSubTitle = تحميل مجاني
 # A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
-landingCardListTitle = ابدأ في 1,2,3
+landingCardListTitle = ابدأ في3،2،1
 landingCardOne = احصل على إضافة الاختبار التجريبي
 landingCardTwo = فعل الميزات التجريبية
 landingCardThree = قل لنا ما هو رأيك
