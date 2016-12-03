@@ -59,12 +59,15 @@ pageshotContributors0TitleEngineer = Software Engineer
 pageshotContributors1Title = Software Engineer
 pageshotContributors2Title = UX Designer
 tabcenterDescription = Hur skulle det vara att kunna flytta flikar från toppen av webbläsaren till sidan? Vi ville testa det!
+tabcenterIntroduction = <p>Tab Center flyttar dina flikar till sidan av webbläsarfönstret så att de är utom synhåll när du inte behöver dem och kan lätt utvidgas när du behöver dem igen.</p>
+tabcenterMeasurements = <p>Förutom de <a href="/privacy">uppgifter</a> som samlats in av alla Test Pilot experiment, här är de viktigaste sakerna du bör veta om vad som händer när du använder Tab Center:</p><ul> <li>Vi samlar användningsdata om hur du interagerar med Tab Center, till exempel hur ofta du maximerar eller nålar fast Tab Center</li> <li>Vi samlar också information om hur du använder flikar, såsom antal flikar du håller öppna samtidigt och hur länge du håller dem öppna.</li> <li>Tab Center samlar inte in någon information om webbplatser du besöker eller innehållet i flikar.</li></ul>
 tabcenterDetails0Copy = Skjut dina flikar åt sidan.
 tabcenterDetails1Copy = Stoppa undan dessa flikar tills du behöver dem.
 tabcenterDetails2Copy = Möblera om! Tab Center fungerar med dina favorit Firefox-teman.
 tabcenterToursteps0Copy = <p>Först och främst, alla flikar finns på sidan nu.</p>
 tabcenterToursteps1Copy = <p>Massor av flikar? Tab Center låter sig söka bland dem.</p>
 tabcenterToursteps2Copy = <p>Du kan dra i kanten av Tab Center för att göra den så smal eller bred som du vill.</p>
+tabcenterToursteps3Copy = <p>Tryck på omkopplaren för att stoppa undan Tab Center.</p>
 tabcenterToursteps4Copy = <p>Du kan alltid ge oss återkoppling eller inaktivera Tab Center från Test Pilot.</p>
 tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
