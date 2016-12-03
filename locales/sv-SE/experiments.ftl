@@ -76,6 +76,7 @@ tabcenterContributors3Title = Firefox UX
 trackingprotectionDescription = Kan du hjälpa oss att göra spårningsskydd bättre? Detta experiment sätter på spårningsskydd för all surfning och erbjuder ett snabbt sätt att rapportera eventuella problem du ser när du surfar.
 trackingprotectionDetails0Copy = Kom åt alla funktioner för Firefox spårningsskydd via adressfältet.
 trackingprotectionDetails1Copy = Rapportera problem och hjälp oss felsöka.
+trackingprotectionToursteps1Copy = <p>Berätta när saker och ting fungerar och när de inte gör det.</p>
 trackingprotectionToursteps2Copy = <p>Du kan alltid inaktivera Firefox spårningsskydd från Test Pilot.</p>
 trackingprotectionContributors0Title = Web Developer
 trackingprotectionContributors1Title = Senior UX Designer
