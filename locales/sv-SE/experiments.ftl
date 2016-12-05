@@ -74,6 +74,7 @@ tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
 trackingprotectionDescription = Kan du hjälpa oss att göra spårningsskydd bättre? Detta experiment sätter på spårningsskydd för all surfning och erbjuder ett snabbt sätt att rapportera eventuella problem du ser när du surfar.
+trackingprotectionIntroduction = <p>Fram tills nu har spårningsskydd i Firefox endast vart tillgänglig i privat surf läge. Detta experiment möjliggör spårningsskydd hela tiden! (Naturligtvis kan du inaktivera det på hemsidorna där du vill.)</p><p>Med detta experiment kan du hjälpa oss att förstå vart spårningsskydd inte fungerar på webben så att vi kan förbättra det för alla Firefox-användare. När du surfar, klicka på sköldikonen (lila) i URL-fältet överst på sidan för att berätta vilka hemsidor det fungerar bra med spårningsskydd och inte.</p>
 trackingprotectionPrefeedbackcopy = <p>För att rapportera en webbplats som inte fungerar med spårningsskydd, välj sköldikonen i fältet som visar adressen till webbplatsen.</p>
 trackingprotectionDetails0Copy = Kom åt alla funktioner för Firefox spårningsskydd via adressfältet.
 trackingprotectionDetails1Copy = Rapportera problem och hjälp oss felsöka.
