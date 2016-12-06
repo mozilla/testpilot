@@ -1,0 +1,27 @@
+activitystreamDescription = Een rijke visuele geschiedenisfeed en een opnieuw opgezette startpagina maken het makkelijker dan ooit om in Firefox precies dat te vinden wat u zoekt.
+activitystreamIntroduction = <p>Surf verder zonder onderbrekingen. Activity Stream houdt uw topwebsites, bladwijzers en recente geschiedenis in elk nieuw tabblad binnen handbereik. En de nieuwe tijdlijnweergave biedt een nauwkeurig beeld van uw surfactiviteit.</p>
+activitystreamMeasurements = <p>Naast de <a href="/privacy">gegevens</a> die door alle Test Pilot-experimenten worden verzameld, zijn dit de belangrijkste zaken die u dient te weten over wat er bij het gebruik van Activity Stream gebeurt:</p><ul> <li>We verzamelen basale gebruiksgegevens met betrekking tot hoe u met experimentele nieuwe tabblad- en tijdlijnpagina’s omgaat, zoals de soorten elementen waarop u klikt en hun positie op de pagina.</li> <li>Ook verzamelen we basale gegevens over uw browserprofiel die invloed hebben op Activity Stream, zoals het aantal bladwijzers en geschiedenisitems.</li> <li>Om Activity Stream te kunnen aanbieden, halen we metagegevens op over websites die u hebt bezocht, zoals afbeeldingen en pictogrammen, via een service met de naam <a href="http://embed.ly/" target="_blank">Embedly</a>. Deze aanvragen worden via Mozilla’s servers naar Embedly verzonden, zodat ze niet aan u worden gekoppeld.</li></ul>
+activitystreamDetails0Copy = Klik op een nieuw tabblad, en onze favoriete websites zijn via één klik bereikbaar.
+activitystreamDetails1Copy = Bekijk waar u bent geweest, zodat u kunt doorgaan naar waar u naartoe wilt.
+activitystreamToursteps0Copy = <p>Vind uw topwebsites, recente geschiedenis en bladwijzers bij het openen van een nieuw tabblad.</p>
+activitystreamToursteps1Copy = <p>Bezoek de nieuwe tijdlijnweergave om visueel door uw geschiedenis en bladwijzers te bladeren.</p>
+activitystreamToursteps2Copy = <p>U kunt ons altijd feedback geven of Activity Stream vanuit Test Pilot uitschakelen.</p>
+activitystreamContributors0Title = Software Engineer
+activitystreamContributors1Title = Web Engineer
+activitystreamContributors2Title = Software Developer
+activitystreamContributors3Title = Desktop Firefox Engineer
+activitystreamContributors4Title = Software Engineer
+activitystreamContributors5Title = Technical Program Manager
+activitystreamContributors6Title = Cloud Services Engineer
+activitystreamContributors7Title = Engineering Intern
+activitystreamContributors8Title = Engineering Intern
+activitystreamContributors9Title = Product Manager
+activitystreamContributors10Title = Engineering Manager
+activitystreamContributors11Title = Software Engineer
+activitystreamContributors12Title = Senior UX Designer
+minvidDescription = Houd video’s centraal. Met Min Vid kunt u YouTube- en Vimeo-video’s weergeven in een klein venster dat op de voorgrond blijft terwijl u op het web surft.
+nomore404sSubtitle = Mogelijk gemaakt door de Wayback Machine
+nomore404sDescription = Moe van doodlopende wegen op het web? Dan melden we of er een opgeslagen versie van wat u zocht bestaat op de Wayback Machine van het Internet Archive.
+pageshotDescription = Intuïtieve schermafbeeldingen, rechtstreeks in de browser. Terwijl u met Firefox op het web surft, kunt u schermafbeeldingen maken, opslaan en delen.
+tabcenterDescription = Hoe zou het zijn om tabbladen van de bovenkant naar de zijkant van de browser te verplaatsen? We wilden het weten!
+trackingprotectionDescription = Helpt u ons Bescherming tegen volgen te verbeteren? Dit experiment schakelt Bescherming tegen volgen in voor alle soorten navigatie en biedt een snelle manier om problemen te melden terwijl u surft.

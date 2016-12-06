@@ -202,4 +202,125 @@ tourLink = rondleiding
 lastUpdate = Laatste update
 contribute = Bijdragen
 bugReports = Bugrapporten
+discourse = Discourse
+tourOnboardingTitle = { $title } ingeschakeld!
+tourDoneButton = Gereed
+userCountContainer = <span>{ $installation_count }</span> mensen proberen { $title } op dit moment uit!
+userCountContainerAlt = Zojuist gestart!
+highlightPrivacy = Uw privacy
+
+
+
+# Shown when an experiment requires a version of Firefox newer than the user's.
+[[ upgradeNotice ]]
+
+upgradeNoticeTitle = { $title } vereist Firefox { $min_release } of hoger.
+upgradeNoticeLink = Hoe u Firefox kunt bijwerken.
+
+
+
+# Shown while uninstalling Test Pilot.
+[[ uninstall ]]
+
+retireDialogTitle = Test Pilot verwijderen?
+retireMessage = Zoals u wilt. Hierdoor worden alle actieve testes uitgeschakeld, de add-on gede-installeerd en uw accountgegevens van onze servers verwijderd.
+retireEmailMessage = Om u van updates per e-mail uit te schrijven, klikt u eenvoudig op de koppeling <em>uitschrijven</em> in een willekeurige Test Pilot-e-mail.
+retireSubmitButton = Doorgaan
+retireCancelButton = Annuleren
+pageTitleRetirePage = Firefox Test Pilot - Test Pilot de-installeren
+retirePageProgressMessage = Afsluiten...
+retirePageHeadline = Bedankt voor het vliegen!
+retirePageMessage = We hopen dat u plezier had met het experimenteren. <br> U kunt altijd terugkomen.
+retirePageSurveyButton = Een snelle enquête invullen
+
+
+
+# Shown to users after installing Test Pilot if a restart is required.
+[[ restartIntro ]]
+
+restartIntroLead = Checklist voor de start
+restartIntroOne = Herstart uw browser
+restartIntroTwo = Zoek de Test Pilot-add-on
+restartIntroThree = Selecteer uw experimenten
+
+
+
+# Shown on a page presented to users three days after installing their first experiment.
+[[ share ]]
+
+sharePrimary = Gek op Test Pilot? Help ons nieuwe deelnemers te vinden.
+shareSecondary = of kopieer en plak gewoon deze koppeling...
+shareEmail = E-mail
+shareCopy = Kopiëren
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } eindigt op { $completedDate }
+eolNoticeLink = Meer info
+eolDisableMessage = Het experiment { $title } is beëindigd. Zodra u het de-installeert, kunt u het niet meer opnieuw installeren via Test Pilot.
+completedDateLabel = Einddatum van experiment: <b>{ $completedDate }</b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
+incompatibleHeader = Dit experiment is mogelijk niet compatibel met add-ons die u hebt geïnstalleerd.
+incompatibleSubheader = We raden aan <a>deze add-ons uit te schakelen</a> voordat u dit experiment activeert:
+
+
+
+# A form prompting the user to sign up for the Test Pilot Newsletter.
+[[ newsletterForm ]]
+
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Typ hier uw e-mailadres
+newsletterFormDisclaimer = We sturen u alleen Test Pilot-gerelateerde informatie.
+newsletterFormPrivacyNotice = Ik ben het eens met hoe Mozilla met mijn gegevens omgaat, zoals uitgelegd in <a>deze privacyverklaring</a>.
+newsletterFormSubmitButton = Nu inschrijven
+newsletterFormSubmitButtonSubmitting = Verzenden...
+
+
+
+# A section of the footer containing a newsletter signup form.
+[[ newsletterFooter ]]
+
+newsletterFooterError = Er is een fout opgetreden bij het verzenden van uw e-mailadres. Opnieuw proberen?
+newsletterFooterHeader = Blijf geïnformeerd
+newsletterFooterBody = Ontdek nieuwe experimenten en bekijk testresultaten voor experimenten die u hebt geprobeerd.
+newsletterFooterSuccessHeader = Bedankt!
+newsletterFooterSuccessBody = Als u nog niet eerder een inschrijving voor een Mozilla-gerelateerde nieuwsbrief hebt bevestigd, dient u dit mogelijk te doen. Controleer uw Postvak IN of uw spamfilter op een e-mail van ons.
+
+
+
+# A warning shown to users viewing an experiment that is only available in English.
+[[ localeWarning ]]
+
+localeWarningTitle = Dit experiment is alleen in het Engels beschikbaar.
+localeWarningSubtitle = U kunt het echter inschakelen als u wilt.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledHeader = Tijd om wat te experimenteren!
+experimentsListNoneInstalledSubheader = Klaar om een nieuw Test Pilot-experiment te proberen? Selecteer er een om in te schakelen, probeer hem uit, en laat weten wat u ervan vindt.
+experimentsListNoneInstalledCTA = Niet geïnteresseerd? <a>Laat ons weten waarom</a>.
+
+
+
+# Shown to users who do not have JavaScript enabled.
+[[ noscript ]]
+
+noScriptHeading = O, o...
+noScriptMessage = Test Pilot vereist JavaScript.<br>Sorry daarvoor.
+noScriptLink = Lees waarom
+
+
+
+# Text of a button to toggle visibility of a list of past experiments.
+[[ pastExperiments ]]
+
+viewPastExperiments = Oude experimenten bekijken
+hidePastExperiments = Oude experimenten verbergen
 
