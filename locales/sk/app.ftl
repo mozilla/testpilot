@@ -114,6 +114,8 @@ emailOptInConfirmationClose = Prejsť na experimenty...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
+experimentListPageHeader = Pripraviť na vzlet!
+experimentListPageSubHeader = Vyberte si funkcie, ktoré chcete vyskúšať. <br> Čoskoro taktiež pribudnú nové experimenty.
 experimentListEnabledTab = Aktivovaný
 experimentListJustLaunchedTab = Práve spustený
 experimentListJustUpdatedTab = Práve aktualizovaný
@@ -239,6 +241,9 @@ restartIntroThree = Vyberte si svoje experimenty
 [[ share ]]
 
 sharePrimary = Páči sa vám Test Pilot? Povedzte o ňom ďalším ľuďom.
+shareSecondary = alebo skopírujte a vložte tento odkaz...
+shareEmail = E-mail
+shareCopy = Kopírovať
 
 # Shown on pages of retired or retiring experiments.
 eolIntroMessage = Experiment { $title } končí { $completedDate }
