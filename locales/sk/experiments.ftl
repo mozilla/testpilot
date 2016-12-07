@@ -1,9 +1,13 @@
 activitystreamDescription = Bohatý vizuálny výpis z histórie a upravená domovská stránka robia vyhľadávanie vo Firefoxe jednoduchšie než kedykoľvek predtým.
 activitystreamContributors0Title = Softvérový inžinier
 activitystreamContributors1Title = Webový inžinier
+activitystreamContributors2Title = Softvérový vývojár
 activitystreamContributors4Title = Softvérový inžinier
+activitystreamContributors7Title = Inžinier na stáži
+activitystreamContributors8Title = Inžinier na stáži
+minvidDescription = Majte videá na očiach. Min Vid vám umožňuje zobraziť videá z YouTube a Vimea v malom ráme, ktorý je vždy v popredí, nezávisle od stránky, na ktorej sa nachádzate.
 minvidContributors0Title = Inžinier
-nomore404sSubtitle = Službu sprostredkúva Wayback Machine
+nomore404sSubtitle = Služba využíva Wayback Machine
 pageshotDescription = Intuitívne snímky obrazovky zabudované priamo v prehliadači. Zachyťte, uložte a zdieľajte snímky z prehliadania webových stránok priamo vo Firefoxe.
 tabcenterDescription = Aké by to bolo, keby sme presunuli karty z hornej časti prehliadača na jeho bok? To sme sa snažili zistiť!
 trackingprotectionDescription = Pomôžete nám vylepšiť ochranu pred sledovaním? Tento experiment aktivuje ochranu pred sledovaním aj pre bežné prehliadanie a ponúka jednoduchú možnosť nahlásenia akýchkoľvek problémov pri jeho používaní.
