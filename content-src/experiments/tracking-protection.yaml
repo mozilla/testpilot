@@ -16,7 +16,6 @@ introduction: >
     sites work well with Tracking Protection and which don't.</p>
 image_twitter: /static/images/experiments/tracking-protection/social/tp-twitter.jpg
 image_facebook: /static/images/experiments/tracking-protection/social/tp-facebook.jpg
-version: '1.0.1'
 changelog_url: 'https://github.com/mozilla/blok/'
 contribute_url: 'https://github.com/mozilla/blok/'
 bug_report_url: 'https://github.com/mozilla/blok/issues'
@@ -92,5 +91,4 @@ contributors_extra: >
 contributors_extra_url: 'https://mzl.la/2fYneDq'
 installation_count: 1
 created: '2016-09-22T00:07:28.847430Z'
-modified: '2016-09-22T16:51:12.188781Z'
 order: 3

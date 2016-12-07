@@ -10,7 +10,6 @@ introduction: >
     Wikipedia articles will appear for your browsing pleasure.</p>
 image_twitter: null
 image_facebook: null
-version: 1.0.6
 changelog_url: 'https://github.com/mozilla/universal-search/blob/master/docs/changelog.md'
 contribute_url: 'https://github.com/mozilla/universal-search'
 bug_report_url: 'https://github.com/mozilla/universal-search/issues'
@@ -90,7 +89,6 @@ contributors:
     avatar: /static/images/experiments/universal-search/avatars/chuck-harmston.jpg
 installation_count: 39943
 created: '2016-04-28T03:57:32.270681Z'
-modified: '2016-07-20T15:42:28.873321Z'
 completed: '2016-11-30T16:00:00.000000Z'
 eol_warning: We will automatically disable the Universal Search experiment and report the results when it ends.
 graduation_report: >

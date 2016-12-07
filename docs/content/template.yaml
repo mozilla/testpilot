@@ -19,12 +19,10 @@ thumbnail: /static/images/experiments/experiment-name.png
 gradient_start: '#FF00FF'
 gradient_stop: '#BB00BB'
 
-version: '0.x.y'
 xpi_url: 'https://testpilot.firefox.com/files/experiment-name/latest'
 addon_id: 'experiment-name@mozilla.com'
 
 created: '2016-01-01T00:00:00.000000Z'
-modified: '2016-01-01T00:00:00.000000Z'
 completed: '2016-01-01T00:00:00.000000Z'
 launch_date: '2016-01-01T00:00:00.000000Z'
 

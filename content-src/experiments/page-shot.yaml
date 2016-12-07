@@ -17,7 +17,6 @@ introduction: >
   </ul>
 image_twitter: /static/images/experiments/page-shot/social/ps-twitter.jpg
 image_facebook: /static/images/experiments/page-shot/social/ps-facebook.jpg
-version: '3.3.0'
 changelog_url: 'https://github.com/mozilla-services/pageshot/blob/master/CHANGELOG.md'
 contribute_url: 'https://github.com/mozilla-services/pageshot/'
 bug_report_url: 'https://github.com/mozilla-services/pageshot/issues'
@@ -102,7 +101,6 @@ contributors:
     avatar: /static/images/experiments/page-shot/avatars/bram-pitoyo.jpg
 installation_count: 1
 created: '2016-09-22T00:07:28.847430Z'
-modified: '2016-09-22T16:51:12.188781Z'
 order: 0
 incompatible:
     '@no-resource-uri-leak': 'No Resource URI Leak'
