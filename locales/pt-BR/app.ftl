@@ -134,6 +134,7 @@ enableExperimentTransition = Habilitando…
 measurements = Sua privacidade
 experimentPrivacyNotice = Você pode saber mais sobre a coleção de dados de { $title } aqui.
 contributorsHeading = Oferecido por
+contributorsExtraLearnMore = Saiba mais
 version = Versão
 changelog = registro de alterações
 tourLink = tour

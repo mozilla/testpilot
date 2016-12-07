@@ -55,6 +55,7 @@ pageshotToursteps1Copy = <p>Evidenzia l’area che vuoi salvare.</p>
 pageshotToursteps2Copy = <p>Condividi, salva o elimina direttamente dal browser.</p>
 pageshotToursteps3Copy = <p>Cerca o sfoglia per trovare le schermate che hai salvato.</p>
 pageshotToursteps4Copy = <p>Puoi inviare la tua opinione in qualunque momento o disattivare Page Shot in Test Pilot.</p>
+pageshotContributors0TitleEngineer = Software Engineer
 pageshotContributors1Title = Software Engineer
 pageshotContributors2Title = UX Designer
 tabcenterDescription = Ti sei mai chiesto come sarebbe la tua navigazione se il browser visualizzasse le schede sul lato? Abbiamo deciso di scoprirlo.

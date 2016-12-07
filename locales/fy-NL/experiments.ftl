@@ -55,6 +55,7 @@ pageshotToursteps1Copy = <p>Selektearje it gebiet dat jo fêstlizze wolle.</p>
 pageshotToursteps2Copy = <p>Diel, bewarje of smyt fuort út de browser.</p>
 pageshotToursteps3Copy = <p>Sykje of browse om skermôfdrukken te finen.</p>
 pageshotToursteps4Copy = <p>Jo kinne ús altyd kommentaar leverje of Page Shot fan Test Pilot útskeakelje.</p>
+pageshotContributors0TitleEngineer = Software-yngenieur
 pageshotContributors1Title = Software-yngenieur
 pageshotContributors2Title = UX-ûntwerper
 tabcenterDescription = Hoe soe it wêze, as ljepblêden net mear oan de boppekant, mar oan de sydkant stiene? Wy woene dat graach witte!

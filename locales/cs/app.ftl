@@ -115,6 +115,7 @@ emailOptInConfirmationClose = Podívat se na experimenty...
 [[ experimentsList ]]
 
 experimentListPageHeader = Připravit k odletu!
+experimentListPageSubHeader = Vyberte si funkce, které chcete vyzkoušet. <br> Podívejte se také brzy znovu na nové experimenty.
 experimentListEnabledTab = Povoleno
 experimentListJustLaunchedTab = Právě spuštěno
 experimentListJustUpdatedTab = Právě aktualizováno
@@ -138,6 +139,10 @@ experimentCardLearnMore = Zjistit více
 feedbackSubmitButton = Zúčastnit se rychlého průzkumu
 feedbackCancelButton = Zavřít
 feedbackUninstallTitle = Děkujeme vám!
+feedbackUninstallCopy = 
+  | Vaše účast v programu Firefox Test Pilot znamená
+  | mnoho! Podívejte se prosím na další experimenty
+  | a těšte se na nové!
 
 
 
@@ -145,6 +150,14 @@ feedbackUninstallTitle = Děkujeme vám!
 [[ discussNotify ]]
 
 discussNotifyTitle = Malý moment...
+discussNotifyMessageAccountless = 
+  | <p>V duchu experimentů využíváme externí fórum.
+  | Pokud si přejete na fóru diskutovat,
+  | založte si účet.</p>
+  | <p>Pokud si nechcete žádný účet zakládat, můžete
+  | nám zpětnou vazbu zaslat přímo skrze Test Pilot.
+  | <br>
+  | (Opravdu vše čteme)</p>
 discussNotifySubmitButton = Přejít do fóra
 discussNotifyCancelButton = Zrušit
 
@@ -154,6 +167,7 @@ discussNotifyCancelButton = Zrušit
 [[ experimentPreFeedback ]]
 
 experimentPreFeedbackTitle = Zpětná vazba pro { $title }
+experimentPreFeedbackLinkCopy = Pošlete zpětnou vazbu k experimentu { $title }
 
 
 
@@ -161,6 +175,7 @@ experimentPreFeedbackTitle = Zpětná vazba pro { $title }
 [[ experimentPromo ]]
 
 experimentPromoHeader = Připraveni k odletu?
+experimentPromoSubheader = Vytváříme funkce pro Firefox nové generace. Nainstalujte si Test Pilot a vyzkoušejte je!
 
 
 
@@ -179,6 +194,8 @@ enableExperiment = Povolit { $title }
 enableExperimentTransition = Povolování...
 measurements = Vaše soukromí
 experimentPrivacyNotice = Další informace o shromažďování dat pro { $title } můžete najít zde.
+contributorsHeading = Tento experiment přináší
+contributorsExtraLearnMore = Zjistit více
 version = Verze
 changelog = seznam změn
 tourLink = prohlídka
@@ -188,6 +205,7 @@ bugReports = Hlášení chyb
 discourse = Discourse
 tourOnboardingTitle = { $title } povolen!
 tourDoneButton = Dokončit
+userCountContainer = Experiment { $title } zkouší <span>{ $installation_count }</span> lidí!
 userCountContainerAlt = Právě spuštěno!
 highlightPrivacy = Vaše soukromí
 
@@ -206,11 +224,13 @@ upgradeNoticeLink = Jak aktualizovat Firefox.
 
 retireDialogTitle = Odinstalovat Test Pilot?
 retireMessage = Jak si přejete. Toto zakáže všechny aktivní testy, odinstaluje doplněk a odstraní informace o vašem účtu z našich serverů.
+retireEmailMessage = Pro odhlášení ze zasílání informací klepněte na odkaz <em>unsubscribe</em> v kterémkoliv e-mailu zaslaném Test Pilotem.
 retireSubmitButton = Pokračovat
 retireCancelButton = Zrušit
 pageTitleRetirePage = Firefox Test Pilot - Odinstalovat Test Pilot
 retirePageProgressMessage = Vypínání...
 retirePageHeadline = Děkujeme, že jste se zúčastnili našeho letu!
+retirePageMessage = Doufáme, že jste si experimenty užili. <br> Rádi vás opět uvidíme.
 retirePageSurveyButton = Zúčastnit se rychlého průzkumu
 
 
@@ -228,13 +248,24 @@ restartIntroThree = Vyberte své experimenty
 # Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
+sharePrimary = Líbí se vám Test Pilot? Řekněte o něm dalším.
+shareSecondary = nebo zkopírujte a vložte tento odkaz...
 shareEmail = E-mail
 shareCopy = Kopírovat
 
 # Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } končí { $completedDate }
 eolNoticeLink = Zjistit více
+eolDisableMessage = Experiment { $title } byl ukončen. Po jeho odinstalaci už ho nepůjde znovu skrze Test Pilot nainstalovat.
 completedDateLabel = Datum ukončení experimentu: <b> { $completedDate } </b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
+incompatibleHeader = Tento experiment nemusí být kompatibilní s doplňky, které máte nainstalované.
+incompatibleSubheader = Před aktivací tohoto experimentu doporučujeme <a>zakázat tyto doplňky</a>:
 
 
 
@@ -265,6 +296,7 @@ newsletterFooterSuccessBody = Pokud jste dříve nepotvrdili odběr zpravodaje M
 [[ localeWarning ]]
 
 localeWarningTitle = Tento experiment je dostupný jenom v angličtině.
+localeWarningSubtitle = Můžete ale aktivaci zkusit i bez toho.
 
 
 
@@ -272,6 +304,8 @@ localeWarningTitle = Tento experiment je dostupný jenom v angličtině.
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = Jdeme se proletět!
+experimentsListNoneInstalledSubheader = Jste připraveni vyzkoušet nový experiment Test Pilot? Vyberte si jeden, aktivujte jej a povězte nám, co si o něm myslíte.
+experimentsListNoneInstalledCTA = Nemáte zájem? <a>Řekněte nám, proč</a>.
 
 
 

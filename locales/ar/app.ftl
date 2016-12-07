@@ -38,10 +38,10 @@ menuRetire = إزالة تثبيت الاختبار التجريبي
 [[ landing ]]
 
 landingIntroLead = اذهب أبعد من ذلك . . .
-landingIntroOne = جرب ميزات جديدة.
+landingIntroOne = أختبر ميزات جديدة.
 landingIntroTwo = قدم ملاحظاتك.
-landingIntroThree = ساعد في بناء فيرفكس.
-landingLegalNotice = من خلال المتابعة، فإنك توافق على<a>شروط الاستخدام</a> و<a>الخصوصية</a> للاختبار التجريبي.
+landingIntroThree = ساعد في بناء فَيَرفُكس.
+landingLegalNotice = من خلال المتابعة، فإنك توافق على <a>شروط الاستخدام</a> و<a>الخصوصية</a> للاختبار التجريبي.
 landingExperimentsTitle = جرب أجدد المميزات التجريبية
 
 
@@ -70,7 +70,7 @@ landingDownloadFirefoxSubTitle = تحميل مجاني
 # A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
-landingCardListTitle = ابدأ في 1,2,3
+landingCardListTitle = ابدأ في3،2،1
 landingCardOne = احصل على إضافة الاختبار التجريبي
 landingCardTwo = فعل الميزات التجريبية
 landingCardThree = قل لنا ما هو رأيك
@@ -129,7 +129,7 @@ experimentListEndingSoon = ينتهي قريباً
 
 experimentCardManage = أدِر
 experimentCardGetStarted = ابدأ
-experimentCardLearnMore = مشاهدة المزيد
+experimentCardLearnMore = اعرف المزيد
 
 
 
@@ -185,6 +185,7 @@ enableExperimentTransition = جار التفعيل...
 measurements = خصوصيتك
 experimentPrivacyNotice = يمكنك معرفة المزيد عن جمع البيانات ل { $title } هنا.
 contributorsHeading = مقدم لك بواسطة
+contributorsExtraLearnMore = اعرف المزيد
 version = الإصدار
 changelog = سجل التغييرات
 tourLink = جولة

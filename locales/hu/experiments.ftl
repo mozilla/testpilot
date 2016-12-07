@@ -55,6 +55,7 @@ pageshotToursteps1Copy = <p>Emelje ki a megörökítendő területet.</p>
 pageshotToursteps2Copy = <p>Ossza meg, mentse vagy törölje a böngészőből.</p>
 pageshotToursteps3Copy = <p>Keressen vagy böngésszen a mentett képernyőképek között.</p>
 pageshotToursteps4Copy = <p>Bármikor adhat visszajelzést vagy letilthatja a Lapképet a Tesztpilótából.</p>
+pageshotContributors0TitleEngineer = Szoftverfejlesztő mérnök
 pageshotContributors1Title = Szoftverfejlesztő mérnök
 pageshotContributors2Title = UX dizájner
 tabcenterDescription = Milyen lenne ha áttennénk a böngésző tetejéről a lapokat oldalra? Mi ki akartuk deríteni.
