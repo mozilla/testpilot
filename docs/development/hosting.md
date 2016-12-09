@@ -32,7 +32,7 @@ will:
    TESTPILOT_ADDON_ID=experiment@mozila
    TESTPILOT_ADDON_VERSION=1.2
 ```
-Note the lack of quotes.  These values are validated against `/^TESTPILOT_ADDON_(ID=[a-z0-9@-]+|VERSION=[0-9.]+)$/`.
+Note the lack of quotes.  These values are validated against `/^TESTPILOT_ADDON_(ID=[a-z0-9@-]+|VERSION=[0-9a-z.-]+)\$/`.
 
 
 ## The bigger picture
