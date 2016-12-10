@@ -1,4 +1,5 @@
 activitystreamDescription = Bohatý vizuální výpis historie a upravená domovská stránka dělají hledání přesně toho, co ve Firefox chcete, snazší, než kdy dříve.
+activitystreamIntroduction = <p>Vraťte se k prohlížení bez ztráty myšlenek. Activity Stream udržuje přehled o vašich top stránkách, záložkách a nedávné historii co nejblíže po ruce v každém novém panelu. Nové zobrazení v časové ose vám dá krásný přehled o vašem prohlížení.</p>
 activitystreamContributors0Title = Softwarový inženýr
 activitystreamContributors1Title = Webový inženýr
 activitystreamContributors2Title = Softwarový vývojář
