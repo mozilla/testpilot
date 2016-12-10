@@ -78,6 +78,8 @@ landingCardThree = Diga-nos o que você achou
 [[ error ]]
 
 errorHeading = Oopa!
+errorMessage = Parece que quebramos alguma coisa. <br> Talvez, tente novamente mais tarde.
+notFoundHeader = Não encontrado!
 
 
 
