@@ -74,9 +74,19 @@ landingCardThree = Diga-nos o que você achou
 
 
 
+# Error message pages.
+[[ error ]]
+
+errorHeading = Oopa!
+
+
+
 # A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
+emailOptInDialogTitle = Bem vindo ao Test Pilot!
+emailOptInMessage = Descubra novas experiência e veja os resultados dos testes que você participou.
+emailValidationError = Por favor, use um e-mail válido!
 emailOptInButton = Assinar
 emailOptInSkip = Pular
 emailOptInConfirmationTitle = E-mail enviado
@@ -87,6 +97,7 @@ emailOptInSuccessMessage2 = Obrigado!
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
+experimentListPageHeader = Pronto para decolar!
 experimentListEnabledTab = Habilitado
 experimentListEndingTomorrow = Termina amanhã
 experimentListEndingSoon = Terminando em breve
