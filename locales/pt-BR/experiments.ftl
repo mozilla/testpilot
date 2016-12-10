@@ -1,4 +1,5 @@
 activitystreamDescription = Um visual impressionante do histórico e uma pagina inicial reimaginada tornam mais fácil do que nunca encontrar exatamente o que está procurando no Firefox.
+activitystreamIntroduction = <p>Volte a navegar sem perder sua linha de pensamento. O Activity Stream mantém os sites mais visitados, favoritos e histórico recente ao alcance das mãos em cada nova aba. E a nova linha do tempo dá a você uma visão geral da sua navegação.</p>
 activitystreamToursteps2Copy = <p>Você pode sempre nos enviar sua opinião ou desabilitar o Activity Stream do Test Pilot.</p>
 activitystreamContributors0Title = Engenheiro de software
 activitystreamContributors1Title = Engenheiro Web
