@@ -49,15 +49,18 @@ landingExperimentsTitle = Teste nossos experimentos mais recentes
 # Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
-landingInstallButton = Instale o complemento do Test Pilot
+landingInstallButton = Instale a extensão do Test Pilot
 landingInstallingButton = Instalando...
+landingInstalledButton = Escolher os experimentos
 
 
 
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
+landingRequiresDesktop = O Test Pilot requer o Firefox para Windows, Mac ou Linux
 landingDownloadFirefoxDesc = (O Test Pilot está disponível para o Firefox no Windows, macOS e Linux)
+landingUpgradeDesc = O Test Pilot requer o Firefox 45 ou mais atual.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Atualize o Firefox
 landingDownloadFirefoxSubTitle = Baixe gratuitamente
@@ -71,6 +74,13 @@ landingCardListTitle = Começar em 3, 2, 1
 landingCardOne = Instale a extensão Test Pilot
 landingCardTwo = Habilite recursos experimentais
 landingCardThree = Diga-nos o que você achou
+
+
+
+# Shown after the user installs the Test Pilot add-on.
+[[ onboarding ]]
+
+onboardingMessage = Colocamos um ícone na sua barra de ferramentas, assim você sempre encontrará o Test Pilot.
 
 
 
@@ -89,10 +99,15 @@ notFoundHeader = Não encontrado!
 emailOptInDialogTitle = Bem vindo ao Test Pilot!
 emailOptInMessage = Descubra novas experiência e veja os resultados dos testes que você participou.
 emailValidationError = Por favor, use um e-mail válido!
+
+# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput = 
+  [html/placeholder] o e-mail vai aqui :)
 emailOptInButton = Assinar
 emailOptInSkip = Pular
 emailOptInConfirmationTitle = E-mail enviado
 emailOptInSuccessMessage2 = Obrigado!
+emailOptInConfirmationClose = Nos experimentos...
 
 
 
@@ -100,7 +115,10 @@ emailOptInSuccessMessage2 = Obrigado!
 [[ experimentsList ]]
 
 experimentListPageHeader = Pronto para decolar!
+experimentListPageSubHeader = Escolha os experimentos que você quer testar. <br> Volte em breve para mais.
 experimentListEnabledTab = Habilitado
+experimentListJustLaunchedTab = Recém lançados
+experimentListJustUpdatedTab = Última atualização
 experimentListEndingTomorrow = Termina amanhã
 experimentListEndingSoon = Terminando em breve
 
@@ -118,8 +136,13 @@ experimentCardLearnMore = Saiba mais
 # A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
+feedbackSubmitButton = Responda a uma pesquisa rápida
 feedbackCancelButton = Fechar
 feedbackUninstallTitle = Obrigado!
+feedbackUninstallCopy = 
+  | Sua participação no Firefox Test Pilot significa
+  | muito! Por favor, veja os outros experimentos, 
+  | e fique ligado nas novidades!
 
 
 
@@ -127,8 +150,32 @@ feedbackUninstallTitle = Obrigado!
 [[ discussNotify ]]
 
 discussNotifyTitle = Só um segundo…
+discussNotifyMessageAccountless = 
+  | <p>No espírito da experimentação, estamos usando um serviço de fórum externo.
+  | Você precisará criar uma conta se você 
+  | desejar participar nos fóruns.</p>
+  | <p>Se você não quiser criar uma conta, você pode 
+  | sempre deixar sua opinião pelo Test Pilot.
+  | <br>
+  | (Nós realmente lemos sua opinião)</p>
 discussNotifySubmitButton = Leve-me ao fórum
 discussNotifyCancelButton = Cancelar
+
+
+
+# A modal prompt shown before the feedback survey for some experiments.
+[[ experimentPreFeedback ]]
+
+experimentPreFeedbackTitle = { $title } opinião
+experimentPreFeedbackLinkCopy = Dê sua opinião sobre o experimento { $title }
+
+
+
+# A splash shown on top of the experiment page when Test Pilot is not installed.
+[[ experimentPromo ]]
+
+experimentPromoHeader = Pronto para decolar?
+experimentPromoSubheader = Estamos construindo novos recursos para o Firefox. Instale o Test Pilot para testá-los!
 
 
 
@@ -139,6 +186,7 @@ isEnabledStatusMessage = { $title } está habilitado.
 installErrorMessage = Oh, oh. { $title } não pode ser habilitado. Tente novamente mais tarde.
 participantCount = <span>{ $installation_count }</span> participantes
 otherExperiments = Teste este experimentos também
+giveFeedback = Dê sua opinião
 disableHeader = Desabilitar o experimento?
 disableExperiment = Desabilitar { $title }
 disableExperimentTransition = Desabilitando…
@@ -174,6 +222,9 @@ upgradeNoticeLink = Como atualizar o Firefox.
 # Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
+retireDialogTitle = Remover Test Pilot?
+retireMessage = Como quiser. Isso irá desabilitar qualquer experimento ativo, remover a extensão e excluir informações da sua conta nos nossos servidores.
+retireEmailMessage = Para deixar de receber atualizações por e-mail, basta clicar no link <em>cancelar inscrição</em> em qualquer e-mail do Test Pilot.
 retireSubmitButton = Prosseguir
 retireCancelButton = Cancelar
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar o Test Pilot
