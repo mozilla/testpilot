@@ -223,7 +223,7 @@ upgradeNoticeLink = Hoe u Firefox kunt bijwerken.
 [[ uninstall ]]
 
 retireDialogTitle = Test Pilot verwijderen?
-retireMessage = Zoals u wilt. Hierdoor worden alle actieve testes uitgeschakeld, de add-on gede-installeerd en uw accountgegevens van onze servers verwijderd.
+retireMessage = Zoals u wilt. Hierdoor worden alle actieve tests uitgeschakeld, de add-on gede-installeerd en uw accountgegevens van onze servers verwijderd.
 retireEmailMessage = Om u van updates per e-mail uit te schrijven, klikt u eenvoudig op de koppeling <em>uitschrijven</em> in een willekeurige Test Pilot-e-mail.
 retireSubmitButton = Doorgaan
 retireCancelButton = Annuleren
