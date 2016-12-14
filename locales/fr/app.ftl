@@ -129,7 +129,7 @@ experimentListEndingSoon = Se termine bientôt
 
 experimentCardManage = Gérer
 experimentCardGetStarted = Lancez-vous
-experimentCardLearnMore = En savoir plus
+experimentCardLearnMore = Apprenez-en davantage
 
 
 
