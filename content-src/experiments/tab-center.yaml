@@ -11,7 +11,6 @@ introduction: >
     need them, and easy to expand and grab when you do.</p>
 image_twitter: /static/images/experiments/tab-center/social/tc-twitter.jpg
 image_facebook: /static/images/experiments/tab-center/social/tc-facebook.jpg
-version: '1.26'
 changelog_url: 'https://github.com/bwinton/TabCenter/releases/latest'
 contribute_url: 'https://github.com/bwinton/TabCenter#readme'
 bug_report_url: 'https://github.com/bwinton/TabCenter/issues'
@@ -91,7 +90,6 @@ contributors:
     avatar: /static/images/experiments/tab-center/avatars/john-g.jpg
 installation_count: 29870
 created: '2016-04-28T00:07:28.847430Z'
-modified: '2016-08-19T16:51:12.188781Z'
 order: 5
 incompatible:
   'TooManyTabs@visibotech.com': 'Too Many Tabs'

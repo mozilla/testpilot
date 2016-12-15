@@ -46,7 +46,6 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       title: 'Testing',
       subtitle: 'Testing',
       subtitle_l10nsuffix: 'foo',
-      version: '1.0',
       thumbnail: '/thumbnail.png',
       introduction: '<p class="test-introduction">Introduction!</p>',
       measurements: '<p class="test-measurements">Measurements</p>',

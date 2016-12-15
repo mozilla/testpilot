@@ -12,7 +12,6 @@ introduction: >
     Archive's Wayback Machine.</p>
 image_twitter: /static/images/experiments/no-more-404s/experiments_experiment/a/9/a9e6dc66c6a22851721715ae4d0641fb_image_1472573814_0582.png
 image_facebook: /static/images/experiments/no-more-404s/experiments_experiment/a/9/a9e6dc66c6a22851721715ae4d0641fb_image_1472573814_0278.png
-version: 1.6.0
 changelog_url: 'https://github.com/internetarchive/FirefoxNoMore404s/blob/master/Changelog.md'
 contribute_url: 'https://github.com/internetarchive/FirefoxNoMore404s'
 bug_report_url: 'https://github.com/internetarchive/FirefoxNoMore404s/issues/new'
@@ -86,5 +85,4 @@ contributors:
     avatar: /static/images/experiments/no-more-404s/avatars/adam-miller.jpg
 installation_count: 20377
 created: '2016-08-03T17:25:54.612365Z'
-modified: '2016-08-30T21:59:49.015500Z'
 order: 6

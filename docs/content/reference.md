@@ -184,17 +184,6 @@ gradient_stop: '#222222'
 ![Example thumbnail](img/thumbnail.png)
 
 
-## `version`
-
-The latest version number of the add-on. Shown on the experiment detail page. Required.
-
-```yaml
-version: '0.x.y'
-```
-
-![Example usage of version](img/version.png)
-
-
 ## `xpi_url`
 
 The URL to the Test Pilot-hosted XPI file. Required.
@@ -219,15 +208,6 @@ UTM-formatted date indicating the official launch of the experiment. Used to cal
 
 ```yaml
 created: '2016-01-01T00:00:00.000000Z'
-```
-
-
-## `modified`
-
-UTM-formatted date indicating the last time the experiment was updated. Displayed on the experiment detail page and used to calculate labels like "Just Updated". Optional.
-
-```yaml
-modified: '2016-01-01T00:00:00.000000Z'
 ```
 
 
