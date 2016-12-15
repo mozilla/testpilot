@@ -197,6 +197,7 @@ experimentPrivacyNotice = Další informace o shromažďování dat pro { $title
 contributorsHeading = Tento experiment přináší
 contributorsExtraLearnMore = Zjistit více
 changelog = seznam změn
+tour = Průvodce
 tourLink = prohlídka
 contribute = Přispět
 bugReports = Hlášení chyb
