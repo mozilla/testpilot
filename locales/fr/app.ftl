@@ -187,6 +187,7 @@ experimentPrivacyNotice = Vous pouvez en apprendre davantage sur la collecte de 
 contributorsHeading = Conçu et réalisé par
 contributorsExtraLearnMore = En savoir plus
 changelog = notes de version
+tour = Visite guidée
 tourLink = visite guidée
 contribute = Participer
 bugReports = Rapports de bogues
