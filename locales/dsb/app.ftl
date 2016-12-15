@@ -187,6 +187,7 @@ experimentPrivacyNotice = Móžośo how wěcej wó zběranju datow za { $title }
 contributorsHeading = Prezentěrowany wót
 contributorsExtraLearnMore = Dalšne informacije
 changelog = protokol změnow
+tour = Tura
 tourLink = tura
 contribute = Sobu statkowaś
 bugReports = Rozpšawy wó programowych zmólkach
