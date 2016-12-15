@@ -197,6 +197,7 @@ experimentPrivacyNotice = Você pode saber mais sobre a coleção de dados de { 
 contributorsHeading = Oferecido por
 contributorsExtraLearnMore = Saiba mais
 changelog = registro de alterações
+tour = Tour
 tourLink = tour
 contribute = Contribua
 bugReports = Relatório de falhas
