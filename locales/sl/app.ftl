@@ -166,7 +166,6 @@ enableExperimentTransition = Omogočanje ...
 measurements = Vaša zasebnost
 experimentPrivacyNotice = O zbiranju podatkov lahko več izveste { $title } tukaj.
 contributorsHeading = Omogoča
-version = Različica
 changelog = dnevnik sprememb
 
 
