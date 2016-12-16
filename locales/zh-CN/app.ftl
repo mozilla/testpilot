@@ -191,6 +191,7 @@ experimentPrivacyNotice = 您在这里可以更详细地了解 { $title } 的数
 contributorsHeading = 创作者
 contributorsExtraLearnMore = 详细了解
 changelog = 更新日志
+tour = 导览
 tourLink = 导览
 contribute = 贡献
 bugReports = 缺陷报告
