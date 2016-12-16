@@ -197,6 +197,7 @@ experimentPrivacyNotice = Itt többet tudhat meg a(z) { $title } adatgyűjtésé
 contributorsHeading = Nekik köszönhetően:
 contributorsExtraLearnMore = Tudjon meg többet
 changelog = változások listája
+tour = Kalauz
 tourLink = kalauz
 contribute = Közreműködés
 bugReports = Hibajelentések
