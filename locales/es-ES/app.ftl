@@ -187,6 +187,7 @@ experimentPrivacyNotice = Descubre más sobre la recopilación de datos de { $ti
 contributorsHeading = Diseñado por
 contributorsExtraLearnMore = Descubre más
 changelog = registro de cambios
+tour = Visita guiada
 tourLink = visita virtual
 contribute = Colabora
 bugReports = Informes de fallos
