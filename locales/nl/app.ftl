@@ -197,6 +197,7 @@ experimentPrivacyNotice = Hier vindt u meer info over het verzamelen van gegeven
 contributorsHeading = Aangeboden door
 contributorsExtraLearnMore = Meer info
 changelog = changelog
+tour = Rondleiding
 tourLink = rondleiding
 contribute = Bijdragen
 bugReports = Bugrapporten
