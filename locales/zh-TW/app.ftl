@@ -187,6 +187,7 @@ experimentPrivacyNotice = 您可在這裡了解 { $title } 會收集哪些資料
 contributorsHeading = 開發者
 contributorsExtraLearnMore = 了解更多
 changelog = 更新紀錄
+tour = 導覽
 tourLink = 導覽
 contribute = 貢獻
 bugReports = 錯誤回報
