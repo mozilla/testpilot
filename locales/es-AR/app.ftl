@@ -146,6 +146,7 @@ eolNoticeLink = Conocer más
 [[ newsletterForm ]]
 
 newsletterFormDisclaimer = Solamente enviaremos información relacionada con Test Pilot.
+newsletterFormPrivacyNotice = Me parece bien que Mozilla administre mi información según se explica en <a>esta nota de privacidad</a>.
 newsletterFormSubmitButton = Registrate ahora
 newsletterFormSubmitButtonSubmitting = Enviando...
 
