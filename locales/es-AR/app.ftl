@@ -3,6 +3,7 @@
 # Links in the footer.
 [[ footerLink ]]
 
+footerLinkCookies = Cookies
 footerLinkPrivacy = Privacidad
 footerLinkAbout = Acerca de Test Pilot
 
@@ -34,9 +35,125 @@ landingDownloadFirefoxSubTitle = Descarga gratuita
 
 
 
+# A section of the homepage explaining how Test Pilot works.
+[[ landingCard ]]
+
+landingCardThree = Decinos que pensás
+
+
+
 # A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = ¡Bienvenido a Test Pilot!
 emailValidationError = ¡Usá una dirección de correo electrónico válida!
+emailOptInConfirmationTitle = Correo enviado
+emailOptInSuccessMessage2 = ¡Gracias!
+
+
+
+# A listing of all Test Pilot experiments.
+[[ experimentsList ]]
+
+experimentListEnabledTab = Habilitado
+experimentListEndingTomorrow = Finalizando mañana
+experimentListEndingSoon = Finalizando pronto
+
+
+
+# An individual experiment in the listing of all Test Pilot experiments.
+[[ experimentCard ]]
+
+experimentCardManage = Administrar
+experimentCardLearnMore = Concer más
+
+
+
+# A modal prompt shown when a user disables an experiment.
+[[ feedback ]]
+
+feedbackCancelButton = Cerrar
+feedbackUninstallTitle = ¡Gracias!
+
+
+
+# A modal prompt telling a user that they are about to go to an external forum for discussion.
+[[ discussNotify ]]
+
+discussNotifyCancelButton = Cancelar
+
+
+
+# The experiment detail page. 
+[[ experimentPage ]]
+
+disableHeader = ¿Deshabilitar experimentos?
+disableExperiment = Deshabilitar { $title }
+disableExperimentTransition = Deshabilitando...
+enableExperiment = Habilitar { $title }
+enableExperimentTransition = Habilitando...
+measurements = Tu privacidad
+contributorsExtraLearnMore = Concer más
+contribute = Contribuir
+discourse = Discourse
+tourOnboardingTitle = ¡{ $title } habilitado!
+highlightPrivacy = Tu privacidad
+
+
+
+# Shown when an experiment requires a version of Firefox newer than the user's.
+[[ upgradeNotice ]]
+
+upgradeNoticeTitle = { $title } requiere Firefox { $min_release } o superior.
+upgradeNoticeLink = Cómo actualizar Firefox.
+
+
+
+# Shown while uninstalling Test Pilot.
+[[ uninstall ]]
+
+retireDialogTitle = ¿Desinstalar Test Pilot?
+retireCancelButton = Cancelar
+retirePageHeadline = ¡Gracias por volar!
+
+
+
+# Shown to users after installing Test Pilot if a restart is required.
+[[ restartIntro ]]
+
+restartIntroOne = Reiniciar el navegador
+
+
+
+# Shown on a page presented to users three days after installing their first experiment.
+[[ share ]]
+
+shareEmail = Correo electrónico
+shareCopy = Copiar
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } está finalizando el { $completedDate }
+eolNoticeLink = Conocer más
+
+
+
+# A form prompting the user to sign up for the Test Pilot Newsletter.
+[[ newsletterForm ]]
+
+newsletterFormSubmitButtonSubmitting = Enviando...
+
+
+
+# A section of the footer containing a newsletter signup form.
+[[ newsletterFooter ]]
+
+newsletterFooterSuccessHeader = ¡Gracias!
+
+
+
+# Text of a button to toggle visibility of a list of past experiments.
+[[ pastExperiments ]]
+
+viewPastExperiments = Ver experimentos pasados
+hidePastExperiments = Ocultar experimentos pasados
 
