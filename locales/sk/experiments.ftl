@@ -1,6 +1,7 @@
 activitystreamDescription = Bohatý vizuálny výpis z histórie a upravená domovská stránka robia vyhľadávanie vo Firefoxe jednoduchšie než kedykoľvek predtým.
 activitystreamIntroduction = <p>Vráťte sa späť k prehliadaniu bez straty myšlienok. Activity Stream udržiava vaše top stránky, záložky a nedávnu históriu vždy poruke na každej novej karte. Nové zobrazenie na časovej osi vám poskytne jednoduchý prehľad o vašom prehliadaní.</p>
 activitystreamDetails0Copy = Kliknite na novú kartu a vaše obľúbené stránky budú hneď poruke.
+activitystreamToursteps0Copy = <p>Nájdite svoje top stránky, nedávnu históriu a záložky pri každom otvorení novej karty.</p>
 activitystreamToursteps2Copy = <p>Pomocou Test Pilotu nám môžete poskytnúť spätnú väzbu alebo Activity Stream deaktivovať.</p>
 activitystreamContributors0Title = Softvérový inžinier
 activitystreamContributors1Title = Webový inžinier
@@ -8,6 +9,7 @@ activitystreamContributors2Title = Softvérový vývojár
 activitystreamContributors4Title = Softvérový inžinier
 activitystreamContributors7Title = Inžinier na stáži
 activitystreamContributors8Title = Inžinier na stáži
+activitystreamContributors11Title = Softvérový inžinier
 minvidDescription = Majte videá na očiach. Min Vid vám umožňuje zobraziť videá z YouTube a Vimea v malom ráme, ktorý je vždy v popredí, nezávisle od stránky, na ktorej sa nachádzate.
 minvidIntroduction = <p>Radi pozeráte videá? Chcete pri pozeraní videí robiť aj niečo iné? Vyskúšajte Min Vid. Video sa vám zobrazí ako malý obrázok a web bude v popredí.</p><ul> <li><strong>Stačí jeden klik:</strong> Po kliknutí sa vám otvorí malý rám s videom, ktoré sa bude prehrávať v popredí a vy môžete pokračovať v prehliadaní.</li> <li><strong>Premiestnite ho kamkoľvek:</strong> Min Vid vám umožňuje premiestniť rám s videom kamkoľvek.</li> <li><strong>Jednoduché ovládanie:</strong> Min Vid obsahuje ovládanie pre prehrávanie/pauzu, zastavenie videa, presun minimalizovanie či úpravu hlasitosti.</li></ul>
 minvidToursteps3Copy = <p>Pomocou Test Pilotu nám môžete poskytnúť spätnú väzbu alebo Min Vid deaktivovať.</p>
