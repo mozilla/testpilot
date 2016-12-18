@@ -22,6 +22,8 @@ menuRetire = Desinstalar Test Pilot
 # The splash on the homepage.
 [[ landing ]]
 
+landingIntroOne = Probá nuevas características.
+landingIntroTwo = Danos tu opinión.
 landingExperimentsTitle = Probá las últimas características experimentales
 
 
@@ -37,6 +39,7 @@ landingInstallingButton = Instalando...
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
+landingDownloadFirefoxDesc = (Test Pilot está disponible para Firefox en Windows, OS X y Linux)
 landingUpgradeDesc = Test Pilot requiere Firefox 45 o superior.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Actualizar Firefox
