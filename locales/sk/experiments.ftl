@@ -25,6 +25,7 @@ nomore404sToursteps1Copy = <p>Pomocou Test Pilotu nám môžete poskytnúť spä
 nomore404sContributors1Title = Vývojár, Wayback Machine, The Internet Archive
 nomore404sContributors2Title = Riaditeľ, Wayback Machine, The Internet Archive
 pageshotDescription = Intuitívne snímky obrazovky zabudované priamo v prehliadači. Zachyťte, uložte a zdieľajte snímky z prehliadania webových stránok priamo vo Firefoxe.
+pageshotIntroduction = <p>Page Shot vám umožňuje vytvoriť, zdielať a ukladať snímky obrazovky - a to všetko priamo vo Firefoxe.</p><ul> <li><strong>Mriežkové zobrazenie:</strong> Prezerajte si náhľady uložených snímok.</li> <li><strong>Inteligentné vyhľadávanie:</strong> Nájdite snímku obrazovky podľa kľúčového slova. Page Shot indexuje nadpisy stránok a text na snímkach.</li> <li><strong>Jednoduché zdieľanie:</strong> Uverejnite svoju snímku obrazovky na sociálnych sieťach alebo skopírujte odkaz priamo z rohu okna vášho prehliadača.</li></ul>
 pageshotToursteps4Copy = <p>Pomocou Test Pilotu nám môžete poskytnúť spätnú väzbu alebo Page Shot deaktivovať.</p>
 pageshotContributors0TitleEngineer = Softvérový inžinier
 pageshotContributors1Title = Softvérový inžinier
