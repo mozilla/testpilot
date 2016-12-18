@@ -38,4 +38,5 @@ landingDownloadFirefoxSubTitle = Descarga gratuita
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = ¡Bienvenido a Test Pilot!
+emailValidationError = ¡Usá una dirección de correo electrónico válida!
 
