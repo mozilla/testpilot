@@ -197,6 +197,7 @@ experimentPrivacyNotice = Вы можете узнать больше о сбо�
 contributorsHeading = Создано:
 contributorsExtraLearnMore = Подробнее
 changelog = список изменений
+tour = Тур
 tourLink = тур
 contribute = Внести вклад
 bugReports = Сообщения об ошибках
