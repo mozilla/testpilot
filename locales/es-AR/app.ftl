@@ -29,6 +29,7 @@ landingInstallingButton = Instalando...
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
+landingUpgradeDesc = Test Pilot requiere Firefox 45 o superior.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Actualizar Firefox
 landingDownloadFirefoxSubTitle = Descarga gratuita
@@ -39,6 +40,8 @@ landingDownloadFirefoxSubTitle = Descarga gratuita
 [[ landingCard ]]
 
 landingCardListTitle = Empezar en 3, 2, 1
+landingCardOne = Conseguí el complemento Test Pilot
+landingCardTwo = Habilitá características experimentales
 landingCardThree = Decinos que pensás
 
 
@@ -142,6 +145,8 @@ eolNoticeLink = Conocer más
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormDisclaimer = Solamente enviaremos información relacionada con Test Pilot.
+newsletterFormSubmitButton = Registrate ahora
 newsletterFormSubmitButtonSubmitting = Enviando...
 
 
@@ -149,6 +154,7 @@ newsletterFormSubmitButtonSubmitting = Enviando...
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterHeader = Mantenete informado
 newsletterFooterSuccessHeader = ¡Gracias!
 
 
