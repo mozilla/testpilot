@@ -38,6 +38,7 @@ landingDownloadFirefoxSubTitle = Descarga gratuita
 # A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
+landingCardListTitle = Empezar en 3, 2, 1
 landingCardThree = Decinos que pensás
 
 
@@ -56,8 +57,8 @@ emailOptInSuccessMessage2 = ¡Gracias!
 [[ experimentsList ]]
 
 experimentListEnabledTab = Habilitado
-experimentListEndingTomorrow = Finalizando mañana
-experimentListEndingSoon = Finalizando pronto
+experimentListEndingTomorrow = Termina mañana
+experimentListEndingSoon = Termina pronto
 
 
 
@@ -87,6 +88,7 @@ discussNotifyCancelButton = Cancelar
 # The experiment detail page. 
 [[ experimentPage ]]
 
+participantCount = <span>{ $installation_count }</span> participantes
 disableHeader = ¿Deshabilitar experimentos?
 disableExperiment = Deshabilitar { $title }
 disableExperimentTransition = Deshabilitando...
@@ -132,7 +134,7 @@ shareEmail = Correo electrónico
 shareCopy = Copiar
 
 # Shown on pages of retired or retiring experiments.
-eolIntroMessage = { $title } está finalizando el { $completedDate }
+eolIntroMessage = { $title } está terminando el { $completedDate }
 eolNoticeLink = Conocer más
 
 
