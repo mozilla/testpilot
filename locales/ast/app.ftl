@@ -186,8 +186,10 @@ enableExperimentTransition = Habilitando...
 measurements = La to privacidá
 experimentPrivacyNotice = Equí pues deprender más tocante a la recoyida de datos de { $title }.
 contributorsHeading = Esti esperimentu úfrentelu
+contributorsExtraLearnMore = Deprendi más
 changelog = rexistru de cambeos
-tourLink = percorríu
+tour = Percorríu
+tourLink = Llanzar percorríu
 contribute = Collaborar
 bugReports = Informes de fallos
 discourse = Discourse
@@ -240,6 +242,9 @@ sharePrimary = ¿Préstate Test Pilot? Ayúdamos a alcontrar xente nuevo.
 shareSecondary = o namái copia y apiega esti enllaz...
 shareEmail = Corréu
 shareCopy = Copiar
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } fina'l { $completedDate }
 eolNoticeLink = Deprendi más
 eolDisableMessage = Finó l'esperimentu de { $title }. Namái lu desinstales, nun sedrás a reinstalalu de nueves pente Test Pilot.
 completedDateLabel = Data fin d'esperimentu: <b>{ $completedDate }</b>
@@ -288,6 +293,7 @@ localeWarningSubtitle = Entá pues habilitalu si te presta.
 # An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledHeader = ¡Dexemos qu'esta cosina despegue!
 experimentsListNoneInstalledSubheader = ¿Preparáu pa probar un esperimentu nuevu de Test Pilot? Esbilla ún p'habilitalu, pruébalu y dimos qué pienses.
 experimentsListNoneInstalledCTA = ¿Nun tas interesáu? <a>Dimos porqué</a>.
 
