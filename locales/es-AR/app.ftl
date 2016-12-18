@@ -5,6 +5,7 @@
 
 footerLinkCookies = Cookies
 footerLinkPrivacy = Privacidad
+footerLinkLegal = Legales
 footerLinkAbout = Acerca de Test Pilot
 
 
@@ -18,10 +19,17 @@ menuRetire = Desinstalar Test Pilot
 
 
 
+# The splash on the homepage.
+[[ landing ]]
+
+landingExperimentsTitle = Probá las últimas características experimentales
+
+
+
 # Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
-landingInstallButton = Instalar el complemento Test Pilot
+landingInstallButton = Instalá el complemento Test Pilot
 landingInstallingButton = Instalando...
 
 
@@ -156,6 +164,7 @@ newsletterFormSubmitButtonSubmitting = Enviando...
 [[ newsletterFooter ]]
 
 newsletterFooterHeader = Mantenete informado
+newsletterFooterBody = Descubrí nuevos experimentos y mirá los resultados para los experimentos que ya probaste.
 newsletterFooterSuccessHeader = ¡Gracias!
 
 
