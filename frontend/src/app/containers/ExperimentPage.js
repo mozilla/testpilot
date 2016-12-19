@@ -276,10 +276,11 @@ export class ExperimentDetail extends React.Component {
                 <h2 className="banner">
                   <span data-l10n-id="experimentPromoHeader" className="block">Ready for Takeoff?</span>
                 </h2>
-                <p data-l10n-id="experimentPromoSubheader">We're building next-generation features for Firefox. Install Test Pilot to try them!</p>
+                <p data-l10n-id="experimentPromoSubheader"></p>
                 <MainInstallButton {...this.props}
                                    eventCategory="HomePage Interactions"
-                                   experimentTitle={title} />
+                                   experimentTitle={title}
+                                   installCallback={ this.installExperiment.bind(this) } />
               </div>
             </div>
           </div>
@@ -648,20 +649,57 @@ export class ExperimentDetail extends React.Component {
     // Ignore subsequent clicks if already in progress
     if (isEnabling) { return; }
 
+    let installAddonPromise = null;
+    if (!this.props.hasAddon) {
+      const { installAddon, requireRestart, eventCategory } = this.props;
+
+      installAddonPromise = installAddon(
+        requireRestart,
+        sendToGA,
+        eventCategory);
+    }
+    let progressButtonWidth;
+    if (this.props.hasAddon) {
+      progressButtonWidth = evt.target.offsetWidth;
+    }
+
     this.setState({
       isEnabling: true,
       isDisabling: false,
       shouldShowTourDialog: true,
-      progressButtonWidth: evt.target.offsetWidth
+      progressButtonWidth
     });
 
-    enableExperiment(experiment);
+    function finishEnabling() {
+      enableExperiment(experiment);
 
-    sendToGA('event', {
-      eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'Enable Experiment',
-      eventLabel: experiment.title
-    });
+      sendToGA('event', {
+        eventCategory: 'ExperimentDetailsPage Interactions',
+        eventAction: 'Enable Experiment',
+        eventLabel: experiment.title
+      });
+    }
+
+    if (installAddonPromise === null) {
+      finishEnabling();
+      return;
+    }
+
+    installAddonPromise.then(() => {
+      return new Promise((resolve, reject) => {
+        let i = 0;
+        const interval = setInterval(() => {
+          i++;
+          if (window.navigator.testpilotAddon) {
+            clearInterval(interval);
+            resolve();
+          } else if (i > 100) {
+            clearInterval(interval);
+            reject(new Error('window.navigator.testpilotAddon still undefined after 10 seconds'));
+          }
+        }, 100);
+      });
+    }).then(finishEnabling);
   }
 
   uninstallExperiment(evt) {
