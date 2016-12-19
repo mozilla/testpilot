@@ -49,7 +49,7 @@ export function installAddon(requireRestart, sendToGA, eventCategory) {
   cookies.set('first-run', 'true');
 
   if (useMozAddonManager) {
-    mozAddonManagerInstall(downloadUrl).then(() => {
+    return mozAddonManagerInstall(downloadUrl).then(() => {
       gaEvent.dimension7 = RESTART_NEEDED ? 'restart required' : 'no restart';
       sendToGA('event', gaEvent);
       if (RESTART_NEEDED) {
@@ -59,6 +59,7 @@ export function installAddon(requireRestart, sendToGA, eventCategory) {
   } else {
     gaEvent.outboundURL = downloadUrl;
     sendToGA('event', gaEvent);
+    return Promise.resolve();
   }
 }
 
@@ -137,6 +138,9 @@ function messageReceived(store, evt) {
       store.dispatch(addonActions.setClientUuid(data.clientUUID));
       store.dispatch(addonActions.setInstalled(data.installed));
       store.dispatch(addonActions.setInstalledAddons(data.active));
+      break;
+    case 'addon-self:installed':
+      console.log("ADDON_SELF_INSTALLED");
       break;
     case 'addon-self:uninstalled':
       store.dispatch(addonActions.setHasAddon(false));

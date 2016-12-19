@@ -10,8 +10,12 @@ export default class MainInstallButton extends React.Component {
     };
   }
 
-  install() {
-    const { requireRestart, sendToGA, eventCategory, hasAddon, installAddon } = this.props;
+  install(e) {
+    const { requireRestart, sendToGA, eventCategory, hasAddon, installAddon, installCallback } = this.props;
+    if (installCallback) {
+      installCallback(e);
+      return;
+    }
     if (hasAddon) { return; }
     this.setState({ isInstalling: true });
     installAddon(requireRestart, sendToGA, eventCategory);
@@ -31,13 +35,16 @@ export default class MainInstallButton extends React.Component {
   }
 
   renderInstallButton(isInstalling, hasAddon) {
+    let { experimentTitle } = this.props;
     return (
       <div>
         <button onClick={e => this.install(e)}
                 className={classnames('button extra-large primary install', { 'state-change': isInstalling })}>
           {hasAddon && <span className="progress-btn-msg" data-l10n-id="landingInstalledButton">Installed</span>}
           {!hasAddon && !isInstalling &&
-            <span className="default-btn-msg" data-l10n-id="landingInstallButton">Install the Test Pilot Add-on</span>}
+            <span>
+              <span className="default-btn-msg"><span data-l10n-id="landingInstallButton">Install the Test Pilot Add-on</span> { experimentTitle && "+" } { experimentTitle }</span>
+            </span>}
           {!hasAddon && isInstalling &&
             <span className="progress-btn-msg" data-l10n-id="landingInstallingButton">Installing...</span>}
           <div className="state-change-inner"></div>

@@ -279,7 +279,8 @@ export class ExperimentDetail extends React.Component {
                 <p data-l10n-id="experimentPromoSubheader">We're building next-generation features for Firefox. Install Test Pilot to try them!</p>
                 <MainInstallButton {...this.props}
                                    eventCategory="HomePage Interactions"
-                                   experimentTitle={title} />
+                                   experimentTitle={title}
+                                   installCallback={ this.installExperiment.bind(this) } />
               </div>
             </div>
           </div>
@@ -649,19 +650,34 @@ export class ExperimentDetail extends React.Component {
     // Ignore subsequent clicks if already in progress
     if (isEnabling) { return; }
 
+    let installAddonPromise = Promise.resolve();
+    if (! this.props.hasAddon) {
+      let {installAddon, requireRestart, sendToGA, eventCategory} = this.props;
+
+      installAddonPromise = installAddon(
+        requireRestart,
+        sendToGA,
+        eventCategory);
+    }
+
     this.setState({
       isEnabling: true,
       isDisabling: false,
-      shouldShowTourDialog: true,
-      progressButtonWidth: evt.target.offsetWidth
+      shouldShowTourDialog: true
     });
 
-    enableExperiment(experiment);
+    installAddonPromise.then(() => {
+      // XXX installAddonPromise shouldn't resolve until the add-on is ready
+      // to accept messages, instead of using a racy setTimeout here.
+      setTimeout(() => {
+        enableExperiment(experiment);
 
-    sendToGA('event', {
-      eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'Enable Experiment',
-      eventLabel: experiment.title
+        sendToGA('event', {
+          eventCategory: 'ExperimentDetailsPage Interactions',
+          eventAction: 'Enable Experiment',
+          eventLabel: experiment.title
+        });
+      }, 2000);
     });
   }
 

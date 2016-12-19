@@ -347,9 +347,13 @@ exports.main = function(options) {
   SharePrompt.init(settings);
   NoExperiments.init(settings);
 
+/*
+  // XXX The onboarding tab gets opened in a background tab if an experiment was
+  // installed, and the experiment first run experience collides with it
   if (reason === 'install') {
     openOnboardingTab();
   }
+*/
 
   const installedCount = (store.installedAddons) ? Object.keys(store.installedAddons).length : 0;
   Metrics.sendGAEvent({
