@@ -187,6 +187,7 @@ experimentPrivacyNotice = Jo kinne hjir mear leare oer de gegevenssamling foar {
 contributorsHeading = Oanbean troch
 contributorsExtraLearnMore = Lês mear
 changelog = lochboek
+tour = Toer
 tourLink = toer
 contribute = Bydrage
 bugReports = Bugrapporten
