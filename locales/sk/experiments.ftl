@@ -33,6 +33,7 @@ pageshotDetails1Copy = Zdieľajte odkazy na obrázky cez sociálne siete alebo e
 pageshotDetails2Copy = Uložené snímky nájdete jednoducho. Ponúkame vám prehľadné náhľady a takisto možnosť vyhľadávania pomocou kľúčového slova.
 pageshotToursteps0Copy = <p>Najprv kliknite na ikonu Page Shot.</p>
 pageshotToursteps1Copy = <p>Označte oblasť, ktorú chcete zachytiť.</p>
+pageshotToursteps2Copy = <p>Zdieľajte, ukladajte a vymazávajte priamo z prehliadača.</p>
 pageshotToursteps4Copy = <p>Pomocou Test Pilotu nám môžete poskytnúť spätnú väzbu alebo Page Shot deaktivovať.</p>
 pageshotContributors0TitleEngineer = Softvérový inžinier
 pageshotContributors1Title = Softvérový inžinier
