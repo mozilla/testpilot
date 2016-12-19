@@ -187,6 +187,7 @@ experimentPrivacyNotice = Qui puoi scoprire ulteriori informazioni sui dati racc
 contributorsHeading = Realizzato da
 contributorsExtraLearnMore = Ulteriori informazioni
 changelog = Note di versione
+tour = Panoramica
 tourLink = Panoramica
 contribute = Collabora
 bugReports = Segnalazione bug
