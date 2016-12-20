@@ -107,12 +107,14 @@ emailOptInButton = Ad jerdeɣ iman-iw
 emailOptInSkip = Suref
 emailOptInConfirmationTitle = Imayl ittwaciyeɛ
 emailOptInSuccessMessage2 = Tanemirt-ik
+emailOptInConfirmationClose = Ɣef tirmitin…
 
 
 
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
+experimentListPageHeader = Theggaḍ ad tesrifgeḍ!
 experimentListEnabledTab = Irmed
 experimentListJustLaunchedTab = Ikker tura akka
 experimentListJustUpdatedTab = Ittwalqem tura akka
@@ -142,6 +144,7 @@ feedbackUninstallTitle = Tanemirt!
 [[ discussNotify ]]
 
 discussNotifyTitle = Rǧǧu kan yiwet tasint...
+discussNotifySubmitButton = Awi-yi ar unmager
 discussNotifyCancelButton = Sefsex
 
 
@@ -168,6 +171,12 @@ enableExperimentTransition = Armed...
 measurements = Tabaḍnit-inek
 experimentPrivacyNotice = Tzemreḍ ad tisineḍ ugar ɣef ulqwaḍ n isefka i { $title } dagi.
 contributorsHeading = Iwwi-yak-tt-id 
+contributorsExtraLearnMore = Issin ugar
+tour = Tirza fessusen
+tourLink = Senker tirza fessusen
+contribute = Ttekki
+bugReports = Ineqqisen n ibugen
+discourse = Discourse
 tourOnboardingTitle = { $title } ittwarmed!
 tourDoneButton = Tefra
 userCountContainerAlt = Ikker tura akka!
@@ -190,6 +199,7 @@ retireSubmitButton = Kemmel
 retireCancelButton = Sefsex
 pageTitleRetirePage = Firefox Test Pilot - Kkes Test Pilot
 retirePageProgressMessage = Asexsi...
+retirePageHeadline = Tanemmirt ɣef usrifeg!
 
 
 
