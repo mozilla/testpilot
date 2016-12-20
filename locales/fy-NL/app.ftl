@@ -41,7 +41,7 @@ landingIntroLead = Sjoch fierder…
 landingIntroOne = Test nije funksjes.
 landingIntroTwo = Leverje kommentaar.
 landingIntroThree = Help by de ûntwikkeling fan Firefox.
-landingLegalNotice = Troch fierder te gean gean jo akkoard mei de <a>Servicebetingsten</a> en <a>Privacyferklearring</a> fan Test Pilot.
+landingLegalNotice = Troch fierder te gean, gean jo akkoard mei de <a>Servicebetingsten</a> en <a>Privacyferklearring</a> fan Test Pilot.
 landingExperimentsTitle = Test de lêste eksperimintele funksjes
 
 
