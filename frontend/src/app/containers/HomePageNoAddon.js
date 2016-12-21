@@ -16,7 +16,7 @@ export default class HomePageNoAddon extends React.Component {
     const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
 
     return (
-      <section data-hook="landing-page">
+      <section id="landing-page">
         <View {...this.props}>
           <div className="split-banner responsive-content-wrapper">
             <div className="copter-wrapper fly-up">
@@ -39,7 +39,7 @@ export default class HomePageNoAddon extends React.Component {
           <div className="transparent-container">
             <div className="responsive-content-wrapper delayed-fade-in">
               <h2 className="card-list-header" data-l10n-id="landingExperimentsTitle">Try out the latest experimental features</h2>
-              <div data-hook="experiment-list">
+              <div>
                 <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
               </div>
             </div>

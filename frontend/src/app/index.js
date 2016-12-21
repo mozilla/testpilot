@@ -37,7 +37,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Routes history={history} />
   </Provider>,
-  document.querySelector('div[data-hook=page-container]')
+  document.querySelector('div#page-container')
 );
 
 // HACK: For debugging fun
