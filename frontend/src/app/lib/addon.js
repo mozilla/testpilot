@@ -139,9 +139,6 @@ function messageReceived(store, evt) {
       store.dispatch(addonActions.setInstalled(data.installed));
       store.dispatch(addonActions.setInstalledAddons(data.active));
       break;
-    case 'addon-self:installed':
-      console.log("ADDON_SELF_INSTALLED");
-      break;
     case 'addon-self:uninstalled':
       store.dispatch(addonActions.setHasAddon(false));
       pollAddon();

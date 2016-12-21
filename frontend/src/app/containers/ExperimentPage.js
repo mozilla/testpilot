@@ -651,7 +651,7 @@ export class ExperimentDetail extends React.Component {
     if (isEnabling) { return; }
 
     let installAddonPromise = Promise.resolve();
-    if (! this.props.hasAddon) {
+    if (!this.props.hasAddon) {
       let {installAddon, requireRestart, sendToGA, eventCategory} = this.props;
 
       installAddonPromise = installAddon(
