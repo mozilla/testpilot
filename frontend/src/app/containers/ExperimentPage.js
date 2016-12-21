@@ -223,6 +223,7 @@ export class ExperimentDetail extends React.Component {
 
     const surveyURL = buildSurveyURL('givefeedback', title, installed, clientUUID, survey_url);
     const graduated = isAfterCompletedDate(experiment);
+    const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
 
     let statusType = null;
     if (experiment.error) {
@@ -431,6 +432,7 @@ export class ExperimentDetail extends React.Component {
             <h2 className="card-list-header" data-l10n-id="otherExperiments">Try out these experiments as well</h2>
             <div className="responsive-content-wrapper delayed-fade-in" data-hook="experiment-list">
               <ExperimentCardList {...this.props}
+                                  experiments={currentExperiments}
                                   except={experiment.slug}
                                   eventCategory="ExperimentsDetailPage Interactions" />
             </div>
