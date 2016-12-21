@@ -21,7 +21,7 @@ export default class DiscussDialog extends React.Component {
               </div>
             </div>
             <div className="modal-actions">
-              <button onClick={e => this.submit(e)} data-hook="submit-feedback" data-l10n-id="discussNotifySubmitButton" className="submit button large default">Take me to the forum</button>
+              <button onClick={e => this.submit(e)} data-l10n-id="discussNotifySubmitButton" className="submit button large default">Take me to the forum</button>
               <a onClick={e => this.cancel(e)} data-l10n-id="discussNotifyCancelButton" className="cancel modal-escape" href="">Cancel</a>
             </div>
           </form>

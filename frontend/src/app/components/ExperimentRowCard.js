@@ -22,7 +22,7 @@ export default class ExperimentRowCard extends React.Component {
     const isCompleted = isAfterCompletedDate(experiment);
 
     return (
-      <Link data-hook="show-detail" to={`/experiments/${slug}`} onClick={(evt) => this.openDetailPage(evt)}
+      <Link to={`/experiments/${slug}`} onClick={(evt) => this.openDetailPage(evt)}
         className={classnames('experiment-summary', {
           enabled,
           'just-launched': this.justLaunched(),
@@ -35,7 +35,7 @@ export default class ExperimentRowCard extends React.Component {
           {this.justLaunched() && <div data-l10n-id="experimentListJustLaunchedTab" className="tab just-launched-tab"></div>}
           {this.justUpdated() && <div data-l10n-id="experimentListJustUpdatedTab" className="tab just-updated-tab"></div>}
         </div>
-        <div className="experiment-icon-wrapper" data-hook="bg"
+        <div className="experiment-icon-wrapper"
           style={{
             backgroundColor: experiment.gradient_start,
             backgroundImage: `linear-gradient(135deg, ${experiment.gradient_start}, ${experiment.gradient_stop}`

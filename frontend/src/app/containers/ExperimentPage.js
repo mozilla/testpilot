@@ -232,7 +232,7 @@ export class ExperimentDetail extends React.Component {
     }
 
     return (
-      <section id="details" data-hook="experiment-page">
+      <section id="experiment-page">
 
         {showEmailDialog &&
           <EmailDialog {...this.props}
@@ -265,7 +265,7 @@ export class ExperimentDetail extends React.Component {
 
         <View {...this.props}>
 
-        {!hasAddon && <section data-hook="testpilot-promo">
+        {!hasAddon && <section>
           <div className="experiment-promo">
             <div className="reverse-split-banner responsive-content-wrapper">
               <div className="copter-wrapper fly-up">
@@ -285,18 +285,18 @@ export class ExperimentDetail extends React.Component {
         </section>}
 
         <div className="default-background">
-          <div data-hook="has-status" className={classnames(
+          <div className={classnames(
               'details-header-wrapper',
               { 'has-status': !!statusType, stick: useStickyHeader })
             }>
-            <div data-hook="status-type" className={classnames('status-bar', statusType)}>
-              {(statusType === 'enabled') && <span data-hook="enabled-msg" data-l10n-id="isEnabledStatusMessage" data-l10n-args={JSON.stringify({ title })}><span data-hook="title">{title}</span> is enabled.</span>}
-              {(statusType === 'error') && <span data-hook="error-msg" data-l10n-id="installErrorMessage" data-l10n-args={JSON.stringify({ title })}>Uh oh. <span data-hook="title">{title}</span> could not be enabled. Try again later.</span>}
+            <div className={classnames('status-bar', statusType)}>
+              {(statusType === 'enabled') && <span data-l10n-id="isEnabledStatusMessage" data-l10n-args={JSON.stringify({ title })}><span>{title}</span> is enabled.</span>}
+              {(statusType === 'error') && <span data-l10n-id="installErrorMessage" data-l10n-args={JSON.stringify({ title })}>Uh oh. <span>{title}</span> could not be enabled. Try again later.</span>}
             </div>
             <div className="details-header responsive-content-wrapper">
               <header>
-                <h1 data-hook="title">{title}</h1>
-                {subtitle && <h4 data-hook="subtitle" className="subtitle" data-l10n-id={this.l10nId('subtitle')}>{subtitle}</h4>}
+                <h1>{title}</h1>
+                {subtitle && <h4 className="subtitle" data-l10n-id={this.l10nId('subtitle')}>{subtitle}</h4>}
               </header>
               { this.renderExperimentControls() }
               { this.renderMinimumVersionNotice(title, hasAddon, min_release) }
@@ -304,29 +304,29 @@ export class ExperimentDetail extends React.Component {
           </div>
           <div className="sticky-header-sibling" style={{ height: `${stickyHeaderSiblingHeight}px` }} ></div>
 
-          <div data-hook="details">
+          <div>
               <div className="details-content responsive-content-wrapper">
                 <div className="details-overview">
-                  <div className="experiment-icon-wrapper" data-hook="bg"
+                  <div className="experiment-icon-wrapper"
                        style={{
                          backgroundColor: `${experiment.gradient_start}`,
                          backgroundImage: `linear-gradient(135deg, ${experiment.gradient_start}, ${experiment.gradient_stop})`
                        }}>
-                    <img className="experiment-icon" data-hook="thumbnail" src={thumbnail}></img>
+                    <img className="experiment-icon" src={thumbnail}></img>
                   </div>
                   <div className="details-sections">
                     <section className="user-count">
                       { this.renderInstallationCount() }
                     </section>
-                    {!hasAddon && <div data-hook="inactive-user">
-                      {!!introduction && <section className="introduction" data-hook="introduction-container">
+                    {!hasAddon && <div>
+                      {!!introduction && <section className="introduction">
                       {!graduated &&
-                        <div data-l10n-id={this.l10nId('introduction')} data-hook="introduction-html" dangerouslySetInnerHTML={createMarkup(introduction)}></div>
+                        <div data-l10n-id={this.l10nId('introduction')} dangerouslySetInnerHTML={createMarkup(introduction)}></div>
                       }
                       </section>}
                     </div>}
                     {!graduated && <div>
-                      {hasAddon && <section className="stats-section" data-hook="active-user">
+                      {hasAddon && <section className="stats-section">
                         <table className="stats"><tbody>
                           <tr>
                             <td data-l10n-id="tour">Tour</td>
@@ -335,22 +335,22 @@ export class ExperimentDetail extends React.Component {
                           {changelog_url && <tr>
                             <td data-l10n-id="changelog">Changelog</td>
                             <td>
-                             {changelog_url && <a data-hook="changelog-url" href={changelog_url}>{changelog_url}</a>}
+                             {changelog_url && <a href={changelog_url}>{changelog_url}</a>}
                             </td>
                           </tr>}
                           <tr>
                             <td data-l10n-id="contribute">Contribute</td>
-                            <td><a data-hook="contribute-url" href={contribute_url}>{contribute_url}</a></td>
+                            <td><a href={contribute_url}>{contribute_url}</a></td>
                           </tr>
 
                           <tr>
                             <td data-l10n-id="bugReports">Bug Reports</td>
-                            <td><a data-hook="bug-report-url" href={bug_report_url}>{bug_report_url}</a></td>
+                            <td><a href={bug_report_url}>{bug_report_url}</a></td>
                           </tr>
 
                           <tr>
                             <td data-l10n-id="discourse">Discourse</td>
-                            <td><a data-hook="discourse-url" href={discourse_url}>{discourse_url}</a></td>
+                            <td><a href={discourse_url}>{discourse_url}</a></td>
                           </tr>
                         </tbody></table>
                       </section>}
@@ -360,10 +360,10 @@ export class ExperimentDetail extends React.Component {
                       <ul className="contributors">
                         {contributors.map((contributor, idx) => (
                           <li key={idx}>
-                            <img className="avatar" data-hook="avatar" width="56" height="56" src={contributor.avatar} />
+                            <img className="avatar" width="56" height="56" src={contributor.avatar} />
                             <div className="contributor">
-                              <p data-hook="name" className="name">{contributor.display_name}</p>
-                              {contributor.title && <p data-hook="title" className="title" data-l10n-id={this.l10nId(['contributors', idx, 'title'])}>{contributor.title}</p>}
+                              <p className="name">{contributor.display_name}</p>
+                              {contributor.title && <p className="title" data-l10n-id={this.l10nId(['contributors', idx, 'title'])}>{contributor.title}</p>}
                             </div>
                           </li>
                         ))}
@@ -377,12 +377,12 @@ export class ExperimentDetail extends React.Component {
                     }
                     </section>
                     {!graduated && <div>
-                      {hasAddon && <div data-hook="active-user">
-                        {measurements && <section data-hook="measurements-container"
+                      {hasAddon && <div>
+                        {measurements && <section
                             className={classnames('measurements', { highlight: highlightMeasurementPanel })}>
                           <h3 data-l10n-id="measurements">Your privacy</h3>
-                          <div data-hook="measurements-html" data-l10n-id={this.l10nId('measurements')} className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
-                          {privacy_notice_url && <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-l10n-args={JSON.stringify({ title })} data-hook="privacy-notice-url" href={privacy_notice_url}>You can learn more about the data collection for <span data-hook="title">{title}</span> here.</a>}
+                          <div data-l10n-id={this.l10nId('measurements')} className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
+                          {privacy_notice_url && <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-l10n-args={JSON.stringify({ title })} href={privacy_notice_url}>You can learn more about the data collection for <span>{title}</span> here.</a>}
                         </section>}
                       </div>}
                     </div>}
@@ -393,30 +393,30 @@ export class ExperimentDetail extends React.Component {
                   {this.renderEolBlock()}
                   {this.renderIncompatibleAddons()}
                   {this.renderLocaleWarning()}
-                  {hasAddon && <div data-hook="active-user">
-                    {!!introduction && <section className="introduction" data-hook="introduction-container">
-                      <div data-hook="introduction-html" data-l10n-id={this.l10nId('description')} dangerouslySetInnerHTML={createMarkup(introduction)}></div>
+                  {hasAddon && <div>
+                    {!!introduction && <section className="introduction">
+                      <div data-l10n-id={this.l10nId('description')} dangerouslySetInnerHTML={createMarkup(introduction)}></div>
                     </section>}
                   </div>}
                   <div className="details-list">
                     {details.map((detail, idx) => (
                      <div key={idx}>
-                       <div data-hook="details" className="details-image">
-                         <img data-hook="detail-image" width="680" src={detail.image} />
+                       <div className="details-image">
+                         <img width="680" src={detail.image} />
                          <p className="caption">
-                           {detail.headline && <strong data-hook="detail-headline" data-l10n-id={this.l10nId(['details', idx, 'headline'])}>{detail.headline}</strong>}
-                           {detail.copy && <span data-hook="detail-copy" data-l10n-id={this.l10nId(['details', idx, 'copy'])} dangerouslySetInnerHTML={createMarkup(detail.copy)}></span>}
+                           {detail.headline && <strong data-l10n-id={this.l10nId(['details', idx, 'headline'])}>{detail.headline}</strong>}
+                           {detail.copy && <span data-l10n-id={this.l10nId(['details', idx, 'copy'])} dangerouslySetInnerHTML={createMarkup(detail.copy)}></span>}
                          </p>
                        </div>
                      </div>
                     ))}
                   </div>
-                  {hasAddon && <div data-hook="active-user">
-                    {measurements && <section data-hook="measurements-container"
+                  {hasAddon && <div>
+                    {measurements && <section
                           className={classnames('measurements', { highlight: highlightMeasurementPanel })}>
                       <h3 data-l10n-id="measurements">Your privacy</h3>
-                      <div data-hook="measurements-html" data-l10n-id={this.l10nId('measurements')} className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
-                      <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-hook="privacy-notice-url">You can learn more about the data collection for <span data-hook="title">{title}</span> here.</a>
+                      <div data-l10n-id={this.l10nId('measurements')} className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
+                      <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice">You can learn more about the data collection for <span>{title}</span> here.</a>
                     </section>}
                   </div>}
                   </div>}
@@ -427,9 +427,9 @@ export class ExperimentDetail extends React.Component {
               </div>
             </div>
           </div>
-          {!hasAddon && <div data-hook="inactive-user">
+          {!hasAddon && <div>
             <h2 className="card-list-header" data-l10n-id="otherExperiments">Try out these experiments as well</h2>
-            <div className="responsive-content-wrapper delayed-fade-in" data-hook="experiment-list">
+            <div className="responsive-content-wrapper delayed-fade-in">
               <ExperimentCardList {...this.props}
                                   except={experiment.slug}
                                   eventCategory="ExperimentsDetailPage Interactions" />
