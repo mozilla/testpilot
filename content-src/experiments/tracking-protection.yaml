@@ -91,4 +91,6 @@ contributors_extra: >
 contributors_extra_url: 'https://mzl.la/2fYneDq'
 installation_count: 1
 created: '2016-09-22T00:07:28.847430Z'
+locale_blocklist: 
+  - 'de'
 order: 3
