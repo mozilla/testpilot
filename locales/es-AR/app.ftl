@@ -87,6 +87,8 @@ onboardingMessage = Ponemos un ícono en la barra de herramientas para que siemp
 [[ error ]]
 
 errorHeading = ¡Epa!
+errorMessage = Parece que algo no funciona bien. <br> Por favor volvé a probar más tarde.
+notFoundHeader = ¡Cuatro Cero Cuatro!
 
 
 
