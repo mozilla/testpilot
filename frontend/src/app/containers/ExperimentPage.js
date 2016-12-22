@@ -667,17 +667,30 @@ export class ExperimentDetail extends React.Component {
     });
 
     installAddonPromise.then(() => {
-      // XXX installAddonPromise shouldn't resolve until the add-on is ready
-      // to accept messages, instead of using a racy setTimeout here.
-      setTimeout(() => {
-        enableExperiment(experiment);
+      return new Promise((resolve, reject) => {
+        let i = 0;
+        const interval = setInterval(() => {
+          i++;
+          if (window.navigator.testpilotAddon) {
+            console.log("took x iterations", i);
+            clearInterval(interval);
+            resolve();
+          } else if (i > 100) {
+            clearInterval(interval);
+            reject(new Error("window.navigator.testpilotAddon still undefined after 10 seconds"));
+          };
+        }, 100);
+      });
+    }).then(() => {
+      enableExperiment(experiment);
 
-        sendToGA('event', {
-          eventCategory: 'ExperimentDetailsPage Interactions',
-          eventAction: 'Enable Experiment',
-          eventLabel: experiment.title
-        });
-      }, 2000);
+      sendToGA('event', {
+        eventCategory: 'ExperimentDetailsPage Interactions',
+        eventAction: 'Enable Experiment',
+        eventLabel: experiment.title
+      });
+    }).catch((e) => {
+      console.error(e);
     });
   }
 
