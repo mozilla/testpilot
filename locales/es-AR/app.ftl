@@ -57,6 +57,7 @@ landingInstalledButton = Elegí tus funciones
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
+landingRequiresDesktop = Test Pilot necesita Firefox para escritorio para Windows, Mac o Linux
 landingDownloadFirefoxDesc = (Test Pilot está disponible para Firefox en Windows, OS X y Linux)
 landingUpgradeDesc = Test Pilot requiere Firefox 45 o superior.
 landingDownloadFirefoxTitle = Firefox
@@ -72,6 +73,20 @@ landingCardListTitle = Empezar en 3, 2, 1
 landingCardOne = Conseguí el complemento Test Pilot
 landingCardTwo = Habilitá características experimentales
 landingCardThree = Decinos que pensás
+
+
+
+# Shown after the user installs the Test Pilot add-on.
+[[ onboarding ]]
+
+onboardingMessage = Ponemos un ícono en la barra de herramientas para que siempre sepas dónde está Test Pilot.
+
+
+
+# Error message pages.
+[[ error ]]
+
+errorHeading = ¡Epa!
 
 
 
