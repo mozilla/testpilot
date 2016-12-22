@@ -112,6 +112,8 @@ emailOptInConfirmationClose = Hacia los experimentos...
 experimentListPageHeader = ¡Preparado para despegar!
 experimentListPageSubHeader = Elegí las funciones que querés probar. <br> Volvé pronto para ver si hay más experimentos.
 experimentListEnabledTab = Habilitado
+experimentListJustLaunchedTab = Recién lanzado
+experimentListJustUpdatedTab = Recién actualizado
 experimentListEndingTomorrow = Termina mañana
 experimentListEndingSoon = Termina pronto
 
@@ -121,6 +123,7 @@ experimentListEndingSoon = Termina pronto
 [[ experimentCard ]]
 
 experimentCardManage = Administrar
+experimentCardGetStarted = Comenzá
 experimentCardLearnMore = Concer más
 
 
@@ -128,6 +131,7 @@ experimentCardLearnMore = Concer más
 # A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
+feedbackSubmitButton = Respondé una encuesta corta
 feedbackCancelButton = Cerrar
 feedbackUninstallTitle = ¡Gracias!
 
