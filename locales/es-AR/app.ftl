@@ -96,15 +96,21 @@ notFoundHeader = ¡Cuatro Cero Cuatro!
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = ¡Bienvenido a Test Pilot!
+emailOptInMessage = Descubrí los experimentos nuevos y mirá los resultados de los experimentos que probaste.
 emailValidationError = ¡Usá una dirección de correo electrónico válida!
+emailOptInButton = Inscribime
+emailOptInSkip = Saltear
 emailOptInConfirmationTitle = Correo enviado
 emailOptInSuccessMessage2 = ¡Gracias!
+emailOptInConfirmationClose = Hacia los experimentos...
 
 
 
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
+experimentListPageHeader = ¡Preparado para despegar!
+experimentListPageSubHeader = Elegí las funciones que querés probar. <br> Volvé pronto para ver si hay más experimentos.
 experimentListEnabledTab = Habilitado
 experimentListEndingTomorrow = Termina mañana
 experimentListEndingSoon = Termina pronto
