@@ -122,12 +122,14 @@ function updatePrefs(environment) {
   }
 }
 
+/*
 function openOnboardingTab() {
   tabs.open({
     url: settings.BASE_URL + '/onboarding',
     inBackground: true
   });
 }
+*/
 
 function experimentsLoaded(experiments) {
   store.availableExperiments = experiments;
