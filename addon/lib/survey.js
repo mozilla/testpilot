@@ -38,7 +38,7 @@ function init() {
       const experiment = getRandomExperiment();
       const interval = checkInstallDate(experiment.installDate, experiment.addon_id);
       if (!interval) return;
-      launchSurvey(experiment, interval);
+      launchSurvey({experiment, interval});
     }
   }, TEN_MINUTES);
 }
