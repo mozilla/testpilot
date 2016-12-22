@@ -1,3 +1,14 @@
+siteName = Test Pilot para Firefox
+
+
+# Page titles, put in the <title> HTML tag.
+[[ pageTitle ]]
+
+pageTitleDefault = Test Pilot para Firefox
+pageTitleLandingPage = Test Pilot para Firefox
+pageTitleExperimentListPage = Test Pilot para Firefox, experimentos
+pageTitleExperiment = Test Pilot para Firefox, { $title }
+
 
 
 # Links in the footer.
@@ -5,6 +16,7 @@
 
 footerLinkCookies = Cookies
 footerLinkPrivacy = Privacidad
+footerLinkTerms = Términos
 footerLinkLegal = Legales
 footerLinkAbout = Acerca de Test Pilot
 
@@ -14,7 +26,10 @@ footerLinkAbout = Acerca de Test Pilot
 [[ menu ]]
 
 home = Inicio
+menuTitle = Configuración
+menuWiki = Wiki de Test Pilot
 menuDiscuss = Discutir Test Pilot
+menuFileIssue = Informar sobre un problema
 menuRetire = Desinstalar Test Pilot
 
 
@@ -22,8 +37,10 @@ menuRetire = Desinstalar Test Pilot
 # The splash on the homepage.
 [[ landing ]]
 
+landingIntroLead = Y más allá...
 landingIntroOne = Probá nuevas características.
 landingIntroTwo = Danos tu opinión.
+landingIntroThree = Ayudá a construir Firefox.
 landingExperimentsTitle = Probá las últimas características experimentales
 
 
@@ -33,6 +50,7 @@ landingExperimentsTitle = Probá las últimas características experimentales
 
 landingInstallButton = Instalá el complemento Test Pilot
 landingInstallingButton = Instalando...
+landingInstalledButton = Elegí tus funciones
 
 
 
