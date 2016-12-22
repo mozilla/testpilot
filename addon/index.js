@@ -10,7 +10,7 @@ const { AddonManager } = require('resource://gre/modules/AddonManager.jsm');
 const aboutConfig = require('sdk/preferences/service');
 const self = require('sdk/self');
 const store = require('sdk/simple-storage').storage;
-const tabs = require('sdk/tabs');
+// const tabs = require('sdk/tabs');
 const { PrefsTarget } = require('sdk/preferences/event-target');
 const URL = require('sdk/url').URL;
 
