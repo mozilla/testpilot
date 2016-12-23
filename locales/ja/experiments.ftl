@@ -41,6 +41,7 @@ nomore404sContributors1Title = The Internet Archive の Wayback Machine 担当�
 nomore404sContributors2Title = The Internet Archive の Wayback Machine 担当ディレクター
 nomore404sContributors3Title = The Internet Archive の上級クロールエンジニア
 pageshotDetails1Copy = 画像へのリンクを、ファイルをダウンロードして添付することなく、ソーシャルネットワークやメールで共有しましょう。
+pageshotDetails2Copy = 保存したスクリーンショットは簡単に見つけられます。グリッドビューでサムネイルを閲覧したり、キーワードで検索したりできます。
 pageshotToursteps0Copy = <p>Page Shot を使い始めるにはアイコンを選択してください。</p>
 pageshotToursteps1Copy = <p>キャプチャーしたい範囲を選択します。</p>
 pageshotToursteps2Copy = <p>ブラウザから共有、保存、削除できます。</p>
