@@ -98,6 +98,10 @@ notFoundHeader = ¡Cuatro Cero Cuatro!
 emailOptInDialogTitle = ¡Bienvenido a Test Pilot!
 emailOptInMessage = Descubrí los experimentos nuevos y mirá los resultados de los experimentos que probaste.
 emailValidationError = ¡Usá una dirección de correo electrónico válida!
+
+# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput = 
+  [html/placeholder] el correo electrónico va acá :)
 emailOptInButton = Inscribime
 emailOptInSkip = Saltear
 emailOptInConfirmationTitle = Correo enviado
@@ -140,6 +144,8 @@ feedbackUninstallTitle = ¡Gracias!
 # A modal prompt telling a user that they are about to go to an external forum for discussion.
 [[ discussNotify ]]
 
+discussNotifyTitle = Esperá un segundo...
+discussNotifySubmitButton = Llévenme al foro
 discussNotifyCancelButton = Cancelar
 
 
@@ -147,6 +153,8 @@ discussNotifyCancelButton = Cancelar
 # The experiment detail page. 
 [[ experimentPage ]]
 
+isEnabledStatusMessage = { $title } está habilitado.
+installErrorMessage = Oh oh. { $title } no se pudo habilitar. Probá de nuevo más tarde.
 participantCount = <span>{ $installation_count }</span> participantes
 disableHeader = ¿Deshabilitar experimentos?
 disableExperiment = Deshabilitar { $title }
@@ -175,6 +183,7 @@ upgradeNoticeLink = Cómo actualizar Firefox.
 
 retireDialogTitle = ¿Desinstalar Test Pilot?
 retireCancelButton = Cancelar
+pageTitleRetirePage = Firefox Test Pilot - Desinstalar Test Pilot
 retirePageHeadline = ¡Gracias por volar!
 
 
@@ -183,6 +192,7 @@ retirePageHeadline = ¡Gracias por volar!
 [[ restartIntro ]]
 
 restartIntroOne = Reiniciar el navegador
+restartIntroThree = Elegí tus experimentos
 
 
 
@@ -195,12 +205,24 @@ shareCopy = Copiar
 # Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } está terminando el { $completedDate }
 eolNoticeLink = Conocer más
+eolDisableMessage = El experimento { $title } ha finalizado. Si se desinstala no se podrá reinstalar de nuevo mediante Test Pilot.
+completedDateLabel = Fecha de finalización del experimento: <b>{ $completedDate }</b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
+incompatibleHeader = Puede que el experimento no sea compatible con los complementos instalados.
+incompatibleSubheader = Recomendamos <a>deshabilitar estos complementos</a> antes de activar este experimento:
 
 
 
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Tu correo electrónico acá
 newsletterFormDisclaimer = Solamente enviaremos información relacionada con Test Pilot.
 newsletterFormPrivacyNotice = Me parece bien que Mozilla administre mi información según se explica en <a>esta nota de privacidad</a>.
 newsletterFormSubmitButton = Registrate ahora
@@ -214,6 +236,14 @@ newsletterFormSubmitButtonSubmitting = Enviando...
 newsletterFooterHeader = Mantenete informado
 newsletterFooterBody = Descubrí nuevos experimentos y mirá los resultados para los experimentos que ya probaste.
 newsletterFooterSuccessHeader = ¡Gracias!
+
+
+
+# Shown to users who do not have JavaScript enabled.
+[[ noscript ]]
+
+noScriptHeading = Oh oh...
+noScriptMessage = Test Pilot requiere JavaScript.<br>Perdón por eso.
 
 
 
