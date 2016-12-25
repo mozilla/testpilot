@@ -166,6 +166,7 @@ contributorsExtraLearnMore = Concer más
 contribute = Contribuir
 discourse = Discourse
 tourOnboardingTitle = ¡{ $title } habilitado!
+userCountContainer = ¡Hay <span>{ $installation_count }</span> personas probando { $title } ahora mismo!
 highlightPrivacy = Tu privacidad
 
 
