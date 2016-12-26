@@ -146,8 +146,8 @@ graduation_report: >
   <figure>
   <img src="/static/images/experiments/universal-search/graduation/graph1.png" alt="Search Results Displayed and Clicked" />
   <figcaption>
-  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph1_key1.png" alt="Displayed" /> Displayed<br />
-  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph1_key2.png" alt="Clicked" /> Clicked<br /><br />
+  <img src="/static/images/experiments/universal-search/graduation/graph1_key1.png" alt="Displayed" /> Displayed<br />
+  <img src="/static/images/experiments/universal-search/graduation/graph1_key2.png" alt="Clicked" /> Clicked<br /><br />
   User data showing percentage of time recommendations were displayed and 
   percentage of time participants clicked on recommendations.
   </figcaption>
@@ -161,12 +161,12 @@ graduation_report: >
   <figure>
   <img src="/static/images/experiments/universal-search/graduation/graph2.png" alt="Weekly Performance by Result Type" />
   <figcaption>
-  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key1.png" alt="Top-Level Domains: Displayed" /> Top-Level Domains: Displayed<br />
-  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key2.png" alt="Top-Level Domains: Clicked" /> Top-Level Domains: Clicked<br />
-  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key3.png" alt="Wikipedia: Displayed" /> Wikipedia: Displayed<br />
-  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key4.png" alt="Wikipedia: Clicked" /> Wikipedia: Clicked<br />
-  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key5.png" alt="Movie Cards: Displayed" /> Movie Cards: Displayed<br />
-  <img style="width:36px;" src="/static/images/experiments/universal-search/graduation/graph2_key6.png" alt="Movie Cards: Clicked" /> Movie Cards: Clicked<br /><br />
+  <img src="/static/images/experiments/universal-search/graduation/graph2_key1.png" alt="Top-Level Domains: Displayed" /> Top-Level Domains: Displayed<br />
+  <img src="/static/images/experiments/universal-search/graduation/graph2_key2.png" alt="Top-Level Domains: Clicked" /> Top-Level Domains: Clicked<br />
+  <img src="/static/images/experiments/universal-search/graduation/graph2_key3.png" alt="Wikipedia: Displayed" /> Wikipedia: Displayed<br />
+  <img src="/static/images/experiments/universal-search/graduation/graph2_key4.png" alt="Wikipedia: Clicked" /> Wikipedia: Clicked<br />
+  <img src="/static/images/experiments/universal-search/graduation/graph2_key5.png" alt="Movie Cards: Displayed" /> Movie Cards: Displayed<br />
+  <img src="/static/images/experiments/universal-search/graduation/graph2_key6.png" alt="Movie Cards: Clicked" /> Movie Cards: Clicked<br /><br />
   Percentage of results displayed and clicked by type.
   </figcaption>
   </figure>
