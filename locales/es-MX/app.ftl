@@ -177,3 +177,92 @@ experimentPreFeedbackLinkCopy = Cuéntanos tu opinión sobre el experimento { $t
 experimentPromoHeader = ¿Listo para despegar?
 experimentPromoSubheader = Estamos creando la próxima generación de funciones de Firefox. ¡Instala Test Pilot para probarlas!
 
+
+
+# The experiment detail page. 
+[[ experimentPage ]]
+
+isEnabledStatusMessage = { $title } está habilitado.
+installErrorMessage = Oh no. { $title } no pudo habilitarse. Intenta de nuevo después.
+participantCount = <span>{ $installation_count }</span> participantes
+otherExperiments = Prueba también estos experimentos
+giveFeedback = Enviar comentarios
+disableHeader = ¿Deshabilitar experimento?
+disableExperiment = Deshabilitar { $title }
+disableExperimentTransition = Deshabilitando...
+enableExperiment = Habilitar { $title }
+enableExperimentTransition = Habilitando...
+measurements = Tu privacidad
+experimentPrivacyNotice = Descubre más sobre la recopilación de datos de { $title } aquí.
+contributorsHeading = Diseñado por
+contributorsExtraLearnMore = Saber más
+changelog = Registro de cambios
+tour = Visita guiada
+tourLink = Visita virtual
+contribute = Contribuir
+bugReports = Informes de fallos
+discourse = Discourse
+tourOnboardingTitle = ¡{ $title } habilitado!
+tourDoneButton = Hecho
+userCountContainer = ¡Hay <span>{ $installation_count }</span> personas probando { $title } ahora mismo!
+userCountContainerAlt = ¡Recién iniciado!
+highlightPrivacy = Tu privacidad
+
+
+
+# Shown when an experiment requires a version of Firefox newer than the user's.
+[[ upgradeNotice ]]
+
+upgradeNoticeTitle = { $title } requiere Firefox { $min_release } o superior.
+upgradeNoticeLink = Cómo actualizar Firefox.
+
+
+
+# Shown while uninstalling Test Pilot.
+[[ uninstall ]]
+
+retireDialogTitle = ¿Desinstalar Test Pilot?
+retireMessage = Como quieras. Se desactivarán los tests activos, se desinstalará el complemento y se eliminará la información de tu cuenta de nuestros servidores.
+retireEmailMessage = Para no recibir actualizaciones por correo, haz clic en el enlace <em>cancelar suscripción</em> de cualquier correo de Test Pilot.
+retireSubmitButton = Continuar
+retireCancelButton = Cancelar
+pageTitleRetirePage = Firefox Test Pilot - Desinstalar Test Pilot
+retirePageProgressMessage = Apagando...
+retirePageHeadline = ¡Gracias por volar!
+retirePageMessage = Esperamos que te haya gustado experimentar con nosotros. <br> Vuelve cuando quieras.
+retirePageSurveyButton = Participa en una encuesta rápida
+
+
+
+# Shown to users after installing Test Pilot if a restart is required.
+[[ restartIntro ]]
+
+restartIntroLead = Comprobación preliminar
+restartIntroOne = Reiniciar tu navegador
+restartIntroTwo = Ubica el complemento Test Pilot
+restartIntroThree = Selecciona tus experimentos
+
+
+
+# Shown on a page presented to users three days after installing their first experiment.
+[[ share ]]
+
+sharePrimary = ¿Te encanta Test Pilot? Ayúdanos a atraer a la gente.
+shareSecondary = o sólo copia y pega este enlace...
+shareEmail = Correo electrónico
+shareCopy = Copiar
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } termina el { $completedDate }
+eolNoticeLink = Saber más
+eolDisableMessage = El experimento { $title } ha finalizado. Cuando lo desinstales, no podrás volver a instalarlo a través de Test Pilot.
+completedDateLabel = Fecha de finalización: <b>{ $completedDate }</b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
+incompatibleHeader = Puede que este experimento no sea compatible con otros complementos que tienes instalados.
+incompatibleSubheader = Te recomendamos <a>desactivar estos complementos</a> antes de activar el experimento:
+
