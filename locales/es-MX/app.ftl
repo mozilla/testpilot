@@ -266,3 +266,60 @@ completedDateLabel = Fecha de finalización: <b>{ $completedDate }</b>
 incompatibleHeader = Puede que este experimento no sea compatible con otros complementos que tienes instalados.
 incompatibleSubheader = Te recomendamos <a>desactivar estos complementos</a> antes de activar el experimento:
 
+
+
+# A form prompting the user to sign up for the Test Pilot Newsletter.
+[[ newsletterForm ]]
+
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Tu correo aquí
+newsletterFormDisclaimer = Solo te enviaremos información relacionada con Test Pilot.
+newsletterFormPrivacyNotice = Me parece bien que Mozilla gestione mi información según se indica en <a>este aviso sobre privacidad</a>.
+newsletterFormSubmitButton = Suscríbete ya
+newsletterFormSubmitButtonSubmitting = Enviando...
+
+
+
+# A section of the footer containing a newsletter signup form.
+[[ newsletterFooter ]]
+
+newsletterFooterError = Se produjo un error al enviar tu correo electrónico. ¿Reintentamos?
+newsletterFooterHeader = Mantente informado
+newsletterFooterBody = Descubre nuevos experimentos y mira los resultados de los experimentos en los que has participado.
+newsletterFooterSuccessHeader = ¡Gracias!
+newsletterFooterSuccessBody = Tienes que confirmar la suscripción a un boletín de noticias de Mozilla si no lo has hecho antes. Busca un correo nuestro en tu bandeja de entrada o en la carpeta de spam.
+
+
+
+# A warning shown to users viewing an experiment that is only available in English.
+[[ localeWarning ]]
+
+localeWarningTitle = Este experimento solo está disponible en inglés.
+localeWarningSubtitle = Si quieres, todavía puedes activarlo.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledHeader = ¡Es hora de hacer despegar esta nave!
+experimentsListNoneInstalledSubheader = ¿Preparado para probar un nuevo experimento Test Pilot? Selecciona uno para activarlo, pruébalo y danos tu opinión.
+experimentsListNoneInstalledCTA = ¿No te interesa? <a>Dinos por qué</a>.
+
+
+
+# Shown to users who do not have JavaScript enabled.
+[[ noscript ]]
+
+noScriptHeading = Oh, oh...
+noScriptMessage = Test Pilot necesita JavaScript.<br>Lo sentimos.
+noScriptLink = Descubre por qué
+
+
+
+# Text of a button to toggle visibility of a list of past experiments.
+[[ pastExperiments ]]
+
+viewPastExperiments = Ver experimentos pasados
+hidePastExperiments = Ocultar experimentos pasados
+
