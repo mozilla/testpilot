@@ -48,6 +48,7 @@ tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
 trackingprotectionDescription = Pomôžete nám vylepšiť ochranu pred sledovaním? Tento experiment aktivuje ochranu pred sledovaním aj pre bežné prehliadanie a ponúka jednoduchú možnosť nahlásenia akýchkoľvek problémov pri jeho používaní.
+trackingprotectionPrefeedbackcopy = <p>Pre nahlásenie stránky, ktorá so zapnutou ochranou pred sledovaním nefunguje, kliknite na ikonu štítu v paneli s adresou.</p>
 trackingprotectionDetails0Copy = Prístup ku všetkým funkciám ochrany pred sledovaním nájdete v paneli s adresou.
 trackingprotectionDetails1Copy = Nahláste problém a pomôžte nám ho vyriešiť.
 trackingprotectionToursteps0Copy = <p>Ikona štítu znamená, že je ochrana pred sledovaním zapnutá. Ak je štít preškrtnutý, je vypnutá.</p>
