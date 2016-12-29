@@ -101,6 +101,8 @@ contributors:
     avatar: /static/images/experiments/page-shot/avatars/bram-pitoyo.jpg
 installation_count: 1
 created: '2016-09-22T00:07:28.847430Z'
+locales:
+  - 'en'
 order: 0
 incompatible:
     '@no-resource-uri-leak': 'No Resource URI Leak'

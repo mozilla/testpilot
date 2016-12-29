@@ -117,4 +117,6 @@ contributors:
     avatar: /static/images/experiments/activity-stream/avatars/bryan-bell.jpg
 installation_count: 46732
 created: '2016-03-11T21:05:59.363520Z'
+locale_blocklist: 
+  - 'de'
 order: 4
