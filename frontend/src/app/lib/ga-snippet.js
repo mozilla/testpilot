@@ -7,7 +7,11 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://ssl.google-analytics.com/analytics.js','ga');
 
 if (typeof(ga) !== 'undefined') {
-  ga('create', 'UA-49796218-34', 'auto');
+  ga('create', {
+      trackingId: 'UA-49796218-34',
+      cookieDomain: 'auto',
+      siteSpeedSampleRate: '100'
+  });
 } else {
   console.warn( // eslint-disable-line no-console
     'You have google analytics blocked. We understand. Take a ' +
