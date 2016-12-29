@@ -48,6 +48,7 @@ tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
 trackingprotectionDescription = Pomôžete nám vylepšiť ochranu pred sledovaním? Tento experiment aktivuje ochranu pred sledovaním aj pre bežné prehliadanie a ponúka jednoduchú možnosť nahlásenia akýchkoľvek problémov pri jeho používaní.
+trackingprotectionIntroduction = <p>Doteraz bola ochrana pred sledovaním vo Firefoxe dostupná len v režime Súkromné prehliadanie. Vďaka tomuto experimentu máte ochranu pred sledovaním k dispozícii aj v bežnom prehliadaní. (Samozrejme ju môžete vypnúť pre akúkoľvek stránku.)</p><p>Tento experiment vám pomôže spoznať stránky, ktoré s ochranou pred sledovaním nefungujú - vďaka čomu nám môžete pomôcť vylepšiť ochranu pred sledovaním pre všetkých používateľov Firefoxu. Stačí kliknúť na ikonu fialového štítu v paneli s adresou a povedať nám, ktoré stránky pracujú správne a ktoré nie.</p>
 trackingprotectionPrefeedbackcopy = <p>Pre nahlásenie stránky, ktorá so zapnutou ochranou pred sledovaním nefunguje, kliknite na ikonu štítu v paneli s adresou.</p>
 trackingprotectionDetails0Copy = Prístup ku všetkým funkciám ochrany pred sledovaním nájdete v paneli s adresou.
 trackingprotectionDetails1Copy = Nahláste problém a pomôžte nám ho vyriešiť.
