@@ -158,11 +158,19 @@ experimentPreFeedbackLinkCopy = Fk-ed  tuɣalin n usuddem ɣef urmitan { $title 
 
 
 
+# A splash shown on top of the experiment page when Test Pilot is not installed.
+[[ experimentPromo ]]
+
+experimentPromoHeader = Theggaḍ ad tesrifgeḍ?
+
+
+
 # The experiment detail page. 
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } ittwarmed.
 participantCount = <span>{ $installation_count }</span> imttekkiyen
+otherExperiments = Ɛreḍ ula d tirmitin-agi nniḍen.
 giveFeedback = Awi-d  tuɣalin n usuddem
 disableHeader = Kkes armed i urmitan?
 disableExperiment = Kkes armed { $title }
@@ -210,6 +218,7 @@ retirePageHeadline = Tanemmirt ɣef usrifeg!
 # Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = Asenqed send asrifeg
 restartIntroOne = Ales tanekra n iminig inek
 restartIntroTwo = Af-d azegrir Test Pilot
 restartIntroThree = Fren tirmitin inek
@@ -226,6 +235,14 @@ shareCopy = Nɣel
 # Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } add ifak di { $completedDate }
 eolNoticeLink = Issin ugar
+completedDateLabel = Azemz n tagara n termit <b>{ $completedDate }</b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
+incompatibleHeader = Tarmit-agi ur temṣada ara akked izegrar i tesbedded.
 
 
 
