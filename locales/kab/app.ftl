@@ -219,6 +219,7 @@ restartIntroThree = Fren tirmitin inek
 # Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
+sharePrimary = Tḥemleḍ Test Pilot? Mudd-aɣ-d afus ad d-naf kra n isekyaden.
 shareEmail = Imayl
 shareCopy = Nɣel
 
