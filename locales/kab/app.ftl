@@ -115,6 +115,7 @@ emailOptInConfirmationClose = Ɣef tirmitin…
 [[ experimentsList ]]
 
 experimentListPageHeader = Theggaḍ ad tesrifgeḍ!
+experimentListPageSubHeader = Fren timahilin timaynutin i tebɣid ad tɛerḍeḍ.<br> Uɣal-d tikelt nniḍen akken ad tɛerḍeḍ tiyaḍ.
 experimentListEnabledTab = Irmed
 experimentListJustLaunchedTab = Ikker tura akka
 experimentListJustUpdatedTab = Ittwalqem tura akka
@@ -172,6 +173,7 @@ measurements = Tabaḍnit-inek
 experimentPrivacyNotice = Tzemreḍ ad tisineḍ ugar ɣef ulqwaḍ n isefka i { $title } dagi.
 contributorsHeading = Iwwi-yak-tt-id 
 contributorsExtraLearnMore = Issin ugar
+changelog = Tizmilin n lqem
 tour = Tirza fessusen
 tourLink = Senker tirza fessusen
 contribute = Ttekki
@@ -179,6 +181,7 @@ bugReports = Ineqqisen n ibugen
 discourse = Discourse
 tourOnboardingTitle = { $title } ittwarmed!
 tourDoneButton = Tefra
+userCountContainer = Llan <span>{ $installation_count }</span> n yemdanen ttaɣraḍen { $title } akka tura!
 userCountContainerAlt = Ikker tura akka!
 highlightPrivacy = Tabaḍnit inek
 
@@ -187,6 +190,7 @@ highlightPrivacy = Tabaḍnit inek
 # Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
+upgradeNoticeTitle = { $title } yesra Firefox { $min_release } neɣ ugar.
 upgradeNoticeLink = Amek ad tleqmeḍ Firefox.
 
 
@@ -200,6 +204,15 @@ retireCancelButton = Sefsex
 pageTitleRetirePage = Firefox Test Pilot - Kkes Test Pilot
 retirePageProgressMessage = Asexsi...
 retirePageHeadline = Tanemmirt ɣef usrifeg!
+
+
+
+# Shown to users after installing Test Pilot if a restart is required.
+[[ restartIntro ]]
+
+restartIntroOne = Ales tanekra n iminig inek
+restartIntroTwo = Af-d azegrir Test Pilot
+restartIntroThree = Fren tirmitin inek
 
 
 
