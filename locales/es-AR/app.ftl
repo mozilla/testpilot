@@ -41,6 +41,7 @@ landingIntroLead = Y más allá...
 landingIntroOne = Probá nuevas características.
 landingIntroTwo = Danos tu opinión.
 landingIntroThree = Ayudá a construir Firefox.
+landingLegalNotice = Al continuar, aceptás los <a>términos de uso</a> y la <a>nota de privacidad</a> de Test Pilot.
 landingExperimentsTitle = Probá las últimas características experimentales
 
 
@@ -167,6 +168,7 @@ contribute = Contribuir
 discourse = Discourse
 tourOnboardingTitle = ¡{ $title } habilitado!
 userCountContainer = ¡Hay <span>{ $installation_count }</span> personas probando { $title } ahora mismo!
+userCountContainerAlt = ¡Recién lanzado!
 highlightPrivacy = Tu privacidad
 
 
@@ -183,6 +185,7 @@ upgradeNoticeLink = Cómo actualizar Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = ¿Desinstalar Test Pilot?
+retireMessage = Como quieras. Se deshabilitarán los tests activos, se desinstalará el complemento y se eliminará la información de tu cuenta de nuestros servidores.
 retireCancelButton = Cancelar
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar Test Pilot
 retirePageHeadline = ¡Gracias por volar!
@@ -200,6 +203,8 @@ restartIntroThree = Elegí tus experimentos
 # Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
+sharePrimary = ¿Te gusta Test Pilot? Ayudanos a encontrar nuevos reclutas.
+shareSecondary = o copiá y pegá este enlace...
 shareEmail = Correo electrónico
 shareCopy = Copiar
 
