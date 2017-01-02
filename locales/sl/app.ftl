@@ -98,6 +98,10 @@ notFoundHeader = Štiristo štiri!
 emailOptInDialogTitle = Dobrodošli v programu Test Pilot!
 emailOptInMessage = Bodite obveščeni o novih poskusih in o rezultatih poskusov, ki ste jih preskusili.
 emailValidationError = Vnesite veljaven e-poštni naslov!
+
+# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput = 
+  [html/placeholder] sem vpišite e-poštni naslov :)
 emailOptInButton = Naroči me
 emailOptInSkip = Preskoči
 emailOptInConfirmationTitle = E-poštno sporočilo poslano
@@ -110,6 +114,7 @@ emailOptInConfirmationClose = Naprej na poskuse ...
 [[ experimentsList ]]
 
 experimentListPageHeader = Pripravljeni na vzlet!
+experimentListPageSubHeader = Izberite možnosti, ki jih želite preskusiti. <br> Več poskusov bo dodanih kmalu.
 experimentListEnabledTab = Omogočen
 experimentListJustLaunchedTab = Pravkar začet
 experimentListJustUpdatedTab = Pravkar posodobljen
@@ -148,6 +153,15 @@ discussNotifyCancelButton = Prekliči
 [[ experimentPreFeedback ]]
 
 experimentPreFeedbackTitle = Povratne informacije za { $title }
+experimentPreFeedbackLinkCopy = Pošljite povratne informacije o poskusu { $title }
+
+
+
+# A splash shown on top of the experiment page when Test Pilot is not installed.
+[[ experimentPromo ]]
+
+experimentPromoHeader = Pripravljeni na vzlet?
+experimentPromoSubheader = Ustvarjamo funkcije za Firefox nove generacije. Namestite dodatek Test Pilot, da jih preskusite!
 
 
 
@@ -157,6 +171,7 @@ experimentPreFeedbackTitle = Povratne informacije za { $title }
 isEnabledStatusMessage = { $title } je omogočen.
 installErrorMessage = Ojej. Poskusa { $title } ni mogoče omogočiti. Poskusite znova pozneje.
 participantCount = <span>{ $installation_count }</span> uporabnikov
+otherExperiments = Preskusite tudi te poskuse
 giveFeedback = Sporočite povratne informacije
 disableHeader = Onemogoči poskus?
 disableExperiment = Onemogoči { $title }
@@ -166,7 +181,26 @@ enableExperimentTransition = Omogočanje ...
 measurements = Vaša zasebnost
 experimentPrivacyNotice = O zbiranju podatkov lahko več izveste { $title } tukaj.
 contributorsHeading = Omogoča
+contributorsExtraLearnMore = Več o tem
 changelog = dnevnik sprememb
+tour = Predstavitev
+tourLink = Začnite predstavitev
+contribute = Prispevajte
+bugReports = Poročila o napakah
+discourse = Discourse
+tourOnboardingTitle = { $title } omogočen!
+tourDoneButton = Končano
+userCountContainer = { $title } v tem trenutku preskuša <span>{ $installation_count }</span> ljudi!
+userCountContainerAlt = Pravkar izdan!
+highlightPrivacy = Vaša zasebnost
+
+
+
+# Shown when an experiment requires a version of Firefox newer than the user's.
+[[ upgradeNotice ]]
+
+upgradeNoticeTitle = { $title } zahteva Firefox { $min_release } ali novejši.
+upgradeNoticeLink = Kako posodobim Firefox.
 
 
 
@@ -195,18 +229,79 @@ restartIntroThree = Izberite si poskuse
 
 
 
+# Shown on a page presented to users three days after installing their first experiment.
+[[ share ]]
+
+sharePrimary = Vam je Test Pilot všeč? Pomagajte nam najti nove preizkuševalce.
+shareSecondary = ali samo kopirajte in prilepite to povezavo ...
+shareEmail = E-pošta
+shareCopy = Kopiraj
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } se konča { $completedDate }
+eolNoticeLink = Več o tem
+eolDisableMessage = Poskus { $title } je končan. Ko ga odstranite, ga ne boste več mogli namestiti preko Test Pilota.
+completedDateLabel = Datum konca poskusa: <b>{ $completedDate }</b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
+incompatibleHeader = Ta poskus morda ni združljiv z dodatki, ki jih imate nameščene.
+incompatibleSubheader = Pred vključitvijo tega poskusa vam priporočamo, da <a>onemogočite naslednje dodatke</a>:
+
+
+
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Sem vpišite svoj e-poštni naslov
 newsletterFormDisclaimer = Pošiljali vam bomo samo informacije o programu Test Pilot.
 newsletterFormPrivacyNotice = Strinjam se, da Mozilla obdela te podatke, kot je razloženo v <a>obvestilu o zasebnosti</a>.
 newsletterFormSubmitButton = Naroči se zdaj
+newsletterFormSubmitButtonSubmitting = Pošiljanje ...
 
 
 
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = Pri naročanju vašega e-poštnega naslova je prišlo do napake. Želite poskusiti znova?
 newsletterFooterHeader = Ostanite v stiku
 newsletterFooterBody = Bodite obveščeni o novih poskusih in o rezultatih poskusov, ki ste jih preskusili.
+newsletterFooterSuccessHeader = Hvala!
+
+
+
+# A warning shown to users viewing an experiment that is only available in English.
+[[ localeWarning ]]
+
+localeWarningTitle = Ta poskus je na voljo samo v angleščini.
+localeWarningSubtitle = Če želite, ga lahko kljub temu omogočite.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledCTA = Vas ne zanima? <a>Povejte nam, zakaj</a>.
+
+
+
+# Shown to users who do not have JavaScript enabled.
+[[ noscript ]]
+
+noScriptHeading = Ojoj ...
+noScriptMessage = Test Pilot zahteva JavaScript.<br>Opravičujemo se za nevšečnosti.
+noScriptLink = Spoznajte, zakaj
+
+
+
+# Text of a button to toggle visibility of a list of past experiments.
+[[ pastExperiments ]]
+
+viewPastExperiments = Ogled končanih poskusov
+hidePastExperiments = Skrij končane poskuse
 
