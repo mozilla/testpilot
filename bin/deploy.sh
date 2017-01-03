@@ -31,18 +31,22 @@ fi
 
 
 # For short-lived assets; in seconds
-MAX_AGE="600"
+TEN_MINUTES="600"
+
+# For long-lived assets; in seconds
+ONE_YEAR="31536000"
 
 HPKP="\"Public-Key-Pins\": \"max-age=300;pin-sha256=\\\"WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=\\\";pin-sha256=\\\"r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E=\\\";pin-sha256=\\\"YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg=\\\";pin-sha256=\\\"sRHdihwgkaib1P1gxX8HFszlD+7/gTfNvuAybgLPNis=\\\";\""
 CSP="\"content-security-policy\": \"default-src 'self'; connect-src 'self' https://sentry.prod.mozaws.net https://www.google-analytics.com https://ssl.google-analytics.com https://basket.mozilla.org https://analysis-output.telemetry.mozilla.org; font-src 'self' code.cdn.mozilla.net; form-action 'none'; frame-ancestors 'self'; img-src 'self' https://ssl.google-analytics.com https://www.google-analytics.com; object-src 'none'; script-src 'self' https://ssl.google-analytics.com; style-src 'self' code.cdn.mozilla.net; report-uri /__cspreport__;\""
-HSTS="\"strict-transport-security\": \"max-age=31536000; includeSubDomains; preload\""
+HSTS="\"strict-transport-security\": \"max-age=${ONE_YEAR}; includeSubDomains; preload\""
 TYPE="\"x-content-type-options\": \"nosniff\""
 XSS="\"x-xss-protection\": \"1; mode=block\""
 
 # Our dev server has a couple different rules to allow easier debugging and
 # enable localization.  Also expires more often.
 if [ "$DEST" = "dev" ]; then
-    MAX_AGE="15"
+    TEN_MINUTES="15"
+    ONE_YEAR="15"
     CSP="\"content-security-policy\": \"default-src 'self'; connect-src 'self' https://sentry.prod.mozaws.net https://www.google-analytics.com https://ssl.google-analytics.com https://basket.mozilla.org https://analysis-output.telemetry.mozilla.org; font-src 'self' code.cdn.mozilla.net; form-action 'none'; frame-ancestors 'self' https://pontoon.mozilla.org; img-src 'self' https://pontoon.mozilla.org https://ssl.google-analytics.com https://www.google-analytics.com; object-src 'none'; script-src 'self' https://pontoon.mozilla.org https://ssl.google-analytics.com; style-src 'self' https://pontoon.mozilla.org code.cdn.mozilla.net; report-uri /__cspreport__;\""
 fi
 
@@ -53,7 +57,7 @@ if [ -e version.json ]; then
     mv version.json dist/__version__
     # __version__ JSON; short cache
     aws s3 cp \
-      --cache-control "max-age=${MAX_AGE}" \
+      --cache-control "max-age=${TEN_MINUTES}" \
       --content-type "application/json" \
       --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
       --metadata-directive "REPLACE" \
@@ -63,7 +67,7 @@ fi
 
 # HTML; short cache
 aws s3 sync \
-  --cache-control "max-age=${MAX_AGE}" \
+  --cache-control "max-age=${TEN_MINUTES}" \
   --content-type "text/html" \
   --exclude "*" \
   --include "*.html" \
@@ -74,7 +78,7 @@ aws s3 sync \
 
 # JSON; short cache
 aws s3 sync \
-  --cache-control "max-age=${MAX_AGE}" \
+  --cache-control "max-age=${TEN_MINUTES}" \
   --content-type "application/json" \
   --exclude "*" \
   --include "*.json" \
@@ -85,7 +89,7 @@ aws s3 sync \
 
 # XPI; short cache; amazon won't detect the content-type correctly
 aws s3 sync \
-  --cache-control "max-age=${MAX_AGE}" \
+  --cache-control "max-age=${TEN_MINUTES}" \
   --content-type "application/x-xpinstall" \
   --exclude "*" \
   --include "*.xpi" \
@@ -96,7 +100,7 @@ aws s3 sync \
 
 # RDF; short cache; amazon won't detect the content-type correctly
 aws s3 sync \
-  --cache-control "max-age=${MAX_AGE}" \
+  --cache-control "max-age=${TEN_MINUTES}" \
   --content-type "text/rdf" \
   --exclude "*" \
   --include "*.rdf" \
@@ -107,6 +111,7 @@ aws s3 sync \
 
 # SVG; cache forever, assign correct content-type
 aws s3 sync \
+  --cache-control "max-age=${ONE_YEAR}" \
   --content-type "image/svg+xml" \
   --exclude "*" \
   --include "*.svg" \
@@ -118,7 +123,7 @@ aws s3 sync \
 # Everything else; cache forever, because it has hashes in the filenames
 aws s3 sync \
   --delete \
-  --cache-control "max-age=31536000" \
+  --cache-control "max-age=${ONE_YEAR}" \
   --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
@@ -129,7 +134,7 @@ for fn in $(find dist -name 'index.html' -not -path 'dist/index.html'); do
   s3path=${fn#dist/}
   s3path=${s3path%/index.html}
   aws s3 cp \
-    --cache-control "max-age=${MAX_AGE}" \
+    --cache-control "max-age=${TEN_MINUTES}" \
     --content-type "text/html" \
     --exclude "*" \
     --include "*.html" \
