@@ -157,12 +157,13 @@ export class ExperimentDetail extends React.Component {
 
   renderLocaleWarning() {
     const { experiment, locale } = this.props;
-    if (experiment.locales && locale && !experiment.locales.includes(locale)) {
+    if (locale && ((experiment.locales && !experiment.locales.includes(locale)) || (experiment.locale_blocklist && experiment.locale_blocklist.includes(locale)))) {
       return (
-        <Warning titleL10nId="localeWarningTitle"
-                 title="This experiment is only available in English."
+        <Warning titleL10nId="localeUnavailableWarningTitle"
+                 titleL10nArgs={ JSON.stringify({ locale_code: locale }) }
+                 title="This experiment is not supported in your language (en)."
                  subtitleL10nId="localeWarningSubtitle"
-                 subtitle="You can still install it if you like." />
+                 subtitle="You can still enable it if you like." />
       );
     }
     return null;

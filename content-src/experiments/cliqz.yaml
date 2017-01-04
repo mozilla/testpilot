@@ -1,6 +1,8 @@
 id: 9
 title: 'Cliqz'
 slug: cliqz
+locales:
+  - 'de'
 incompatible:
   '@activity-streams': 'Activity Stream'
   'cliqz@cliqz.com': 'CLIQZ- search directly in your browser'
