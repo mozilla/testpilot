@@ -21,7 +21,7 @@ activitystreamContributors11Title = 軟體工程師
 activitystreamContributors12Title = 資深 UX 設計師
 cliqzDescription = 更快得到搜尋結果。當您在網址列打字時，Cliqz 會在下方顯示建議，同時仍然保有您的隱私。
 cliqzIntroduction = 直接從瀏覽器，更快得到搜尋結果。當您在網址列打字時，Cliqz 會在下方顯示從網路上取得的建議。Cliqz 會避免取得可識別出個人的資料或為使用者建立紀錄，您的搜尋行為更有隱私。
-cliqzMeasurements = <p>Cliqz Test Pilot 實驗是由 Cliqz GmbH 及 Mozilla 共同提供給您。Cliqz 是設計來保護您的隱私，同時避免取得能夠建立使用者偏好資料庫的敏感資料。然而要匿名化這樣的資料是困難的，還是有可能會被搜尋引擎識別出某些人。</p><p>除了所有 Test Pilot 會共同收集的 <a href="/privacy">資料</a> 外，以下是在安裝 Cliqz 前您應知道的重要事項:</p><p>Cliqz GmbH 會收集關於您的搜尋與上網行為的資料，包含: <ul><li>在網址列輸入的文字</li><li>您送到某些搜尋引擎的查詢</li><li>您在網頁上的互動行為，例如滑鼠移動、卷軸滾動、頁面停留時間</li></ul></p><p>Cliqz GmbH 會收集下列遙測統計資料: <ul><li>您與 Cliqz 中的某些欄位及按鈕的互動方式。此資料會與獨特識別編號相關聯，讓 Cliqz GmbH 能夠了解不同時間的效能表現</li></ul></p><p>Mozilla 也會收集下列遙測統計資料: <ul><li>前往搜尋引擎頁面的次數，以及使用的是哪套搜尋引擎。</li><li>Cliqz 的獨特識別編號，讓 Mozilla 可尋找 Firefox 及 Cliqz 遙測統計資料當中相關聯的部分</li></ul></p>
+cliqzMeasurements = <p>Cliqz Test Pilot 實驗是由 Cliqz GmbH 及 Mozilla 共同提供給您。Cliqz 是設計來保護您的隱私，同時避免取得能夠建立使用者偏好資料庫的敏感資料。然而要匿名化這樣的資料是困難的，還是有可能會被搜尋引擎識別出某些人。</p><p>除了所有 Test Pilot 都會收集的 <a href="/privacy">資料</a> 外，以下是您使用 Cliqz 時應該知道的事情:</p><p>Cliqz GmbH 會收集關於您的搜尋與上網行為的資料，包含: <ul><li>在網址列輸入的文字</li><li>您送到某些搜尋引擎的查詢</li><li>您在網頁上的互動行為，例如滑鼠移動、卷軸滾動、頁面停留時間</li></ul></p><p>Cliqz GmbH 會收集下列遙測統計資料: <ul><li>您與 Cliqz 中的某些欄位及按鈕的互動方式。此資料會與獨特識別編號相關聯，讓 Cliqz GmbH 能夠了解不同時間的效能表現</li></ul></p><p>Mozilla 也會收集下列遙測統計資料: <ul><li>前往搜尋引擎頁面的次數，以及使用的是哪套搜尋引擎。</li><li>Cliqz 的獨特識別編號，讓 Mozilla 可尋找 Firefox 及 Cliqz 遙測統計資料當中相關聯的部分</li></ul></p>
 cliqzDetails0Copy = 在網址列輸入想要搜尋的詞彙，看搜尋結果跟變魔術一樣出現。
 cliqzDetails1Copy = 在網址列下方即時檢視重要資訊，如天氣、電影上映時刻。
 cliqzDetails2Copy = 開啟新分頁時，只要滑鼠一點就可以回到您最愛的網站，您還可以調整您的最愛清單。
