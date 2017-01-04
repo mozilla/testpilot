@@ -1,6 +1,7 @@
 id: 9
 title: 'Cliqz'
 slug: cliqz
+launch_date: '2017-01-11T00:00:00.00Z'
 incompatible:
   '@activity-streams': 'Activity Stream'
   'cliqz@cliqz.com': 'CLIQZ- search directly in your browser'
