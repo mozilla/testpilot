@@ -284,7 +284,7 @@ newsletterFormSubmitButtonSubmitting = Verzenden...
 [[ newsletterFooter ]]
 
 newsletterFooterError = Er is een fout opgetreden bij het verzenden van uw e-mailadres. Opnieuw proberen?
-newsletterFooterHeader = Blijf geïnformeerd
+newsletterFooterHeader = Blijf op de hoogte
 newsletterFooterBody = Ontdek nieuwe experimenten en bekijk testresultaten voor experimenten die u hebt geprobeerd.
 newsletterFooterSuccessHeader = Bedankt!
 newsletterFooterSuccessBody = Als u nog niet eerder een inschrijving voor een Mozilla-gerelateerde nieuwsbrief hebt bevestigd, dient u dit mogelijk te doen. Controleer uw Postvak IN of uw spamfilter op een e-mail van ons.
