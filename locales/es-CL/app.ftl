@@ -4,6 +4,9 @@ siteName = Firefox Test Pilot
 # Page titles, put in the <title> HTML tag.
 [[ pageTitle ]]
 
+pageTitleDefault = Firefox Test Pilot
+pageTitleLandingPage = Firefox Test Pilot
+pageTitleExperimentListPage = Firefox Test Pilot - Experimentos
 pageTitleExperiment = Firefox Test Pilot - { $title }
 
 
@@ -34,7 +37,12 @@ menuRetire = Desinstalar Test Pilot
 # The splash on the homepage.
 [[ landing ]]
 
+landingIntroLead = Ve más allá . . .
+landingIntroOne = Prueba nuevas funciones.
+landingIntroTwo = Da tu opinión.
+landingIntroThree = Ayuda a construir Firefox.
 landingLegalNotice = Al proceder, aceptas los <a>Términos de uso</a> y el <a>Aviso de privacidad</a> de Test Pilot.
+landingExperimentsTitle = Prueba las últimas funciones experimentales
 
 
 
@@ -52,6 +60,7 @@ landingInstalledButton = Elige tus funciones
 
 landingRequiresDesktop = Test Pilot requiere Firefox para Escritorio en Windows, Mac o Linux
 landingDownloadFirefoxDesc = (Test Pilot esta disponible para Firefox en Windows, OS X y Linux)
+landingUpgradeDesc = Test Pilot requiere Firefox 45 o superior.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Actualiza Firefox
 landingDownloadFirefoxSubTitle = Bájalo gratis
@@ -98,6 +107,7 @@ emailOptInButton = Suscribirme
 emailOptInSkip = Saltar
 emailOptInConfirmationTitle = Correo enviado
 emailOptInSuccessMessage2 = ¡Gracias!
+emailOptInConfirmationClose = A los experimentos...
 
 
 
@@ -105,13 +115,49 @@ emailOptInSuccessMessage2 = ¡Gracias!
 [[ experimentsList ]]
 
 experimentListPageHeader = ¡Listos para despegar!
+experimentListPageSubHeader = Toma las funciones que quieres probar. <br> Regresa pronto para ver nuevos experimentos.
+experimentListEnabledTab = Activado
+experimentListJustLaunchedTab = Recién lanzado
+experimentListJustUpdatedTab = Recién actualizado
+experimentListEndingTomorrow = Termina mañana
+experimentListEndingSoon = Termina pronto
 
 
 
 # An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+experimentCardManage = Gestionar
 experimentCardGetStarted = Empezar
+experimentCardLearnMore = Aprender más
+
+
+
+# A modal prompt shown when a user disables an experiment.
+[[ feedback ]]
+
+feedbackSubmitButton = Responder una encuesta
+feedbackCancelButton = Cerrar
+feedbackUninstallTitle = ¡Gracias!
+feedbackUninstallCopy = 
+  | ¡Tu participación en Firefox Test Pilot significa
+  | mucho! Por favor, revisa estos otros experimentos,
+  | y mantente pendiente de los que vendrán!
+
+
+
+# A modal prompt telling a user that they are about to go to an external forum for discussion.
+[[ discussNotify ]]
+
+discussNotifyTitle = Solo un segundo...
+discussNotifyCancelButton = Cancelar
+
+
+
+# A modal prompt shown before the feedback survey for some experiments.
+[[ experimentPreFeedback ]]
+
+experimentPreFeedbackTitle = Comentarios de { $title }
 
 
 
@@ -124,6 +170,8 @@ disableExperimentTransition = Desactivando...
 enableExperiment = Activar { $title }
 enableExperimentTransition = Activando...
 measurements = Tu privacidad
+experimentPrivacyNotice = Puedes leer más sobre la recolección de datos para { $title } aquí.
+contributorsHeading = Traído a ti por
 contributorsExtraLearnMore = Aprender más
 changelog = Lista de cambios
 tour = Tur
@@ -133,6 +181,8 @@ bugReports = Reportes de errores
 discourse = Discourse
 tourOnboardingTitle = ¡{ $title } activado!
 tourDoneButton = Hecho
+userCountContainer = ¡Hay <span>{ $installation_count }</span> personas probando { $title } en este momento!
+userCountContainerAlt = ¡Recién lanzado!
 highlightPrivacy = Tu privacidad
 
 
@@ -152,12 +202,28 @@ retireDialogTitle = ¿Desinstalar Test Pilot?
 retireSubmitButton = Proceder
 retireCancelButton = Cancelar
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar Test Pilot
+retirePageProgressMessage = Apagando...
+retirePageHeadline = ¡Gracias por volar!
+retirePageMessage = Esperamos que te hayas divertido con nosotros. <br> ¡Regresa cuando quieras!
+retirePageSurveyButton = Responder una encuesta
+
+
+
+# Shown to users after installing Test Pilot if a restart is required.
+[[ restartIntro ]]
+
+restartIntroLead = Revisión previa al vuelo
+restartIntroOne = Reinicia tu navegador
+restartIntroTwo = Ubica el complemento de Test Pilot
+restartIntroThree = Selecciona tus experimentos
 
 
 
 # Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
+sharePrimary = ¿Te encantó Test Pilot? Ayúdanos a encontrar nuevos reclutas.
+shareSecondary = o simplemente copia y pega este enlace...
 shareEmail = Correo
 shareCopy = Copiar
 
@@ -173,12 +239,32 @@ eolNoticeLink = Aprender más
 newsletterFormDisclaimer = Solo te enviaremos información relacionada con Test Pilot.
 newsletterFormPrivacyNotice = Me parece bien que Mozilla gestione mi información según se indica en el <a>Aviso de privacidad</a>.
 newsletterFormSubmitButton = Suscríbete ahora
+newsletterFormSubmitButtonSubmitting = Enviando...
 
 
 
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = Hubo un error al enviar tu correo. ¿Volvemos a intentarlo?
 newsletterFooterHeader = Mantente informado
 newsletterFooterBody = Entérate de nuevos experimentos y mira los resultados de aquellos en los que has participado.
+newsletterFooterSuccessHeader = ¡Gracias!
+
+
+
+# Shown to users who do not have JavaScript enabled.
+[[ noscript ]]
+
+noScriptHeading = Chuta...
+noScriptMessage = Test Pilot requiere JavaScript.<br>Lo sentimos.
+noScriptLink = Descubre por qué
+
+
+
+# Text of a button to toggle visibility of a list of past experiments.
+[[ pastExperiments ]]
+
+viewPastExperiments = Ver experimentos anteriores
+hidePastExperiments = Ocultar experimentos anteriores
 
