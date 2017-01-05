@@ -150,6 +150,7 @@ feedbackUninstallCopy =
 [[ discussNotify ]]
 
 discussNotifyTitle = Solo un segundo...
+discussNotifySubmitButton = Ir al foro
 discussNotifyCancelButton = Cancelar
 
 
@@ -158,13 +159,27 @@ discussNotifyCancelButton = Cancelar
 [[ experimentPreFeedback ]]
 
 experimentPreFeedbackTitle = Comentarios de { $title }
+experimentPreFeedbackLinkCopy = Danos comentarios sobre el experimento { $title }
+
+
+
+# A splash shown on top of the experiment page when Test Pilot is not installed.
+[[ experimentPromo ]]
+
+experimentPromoHeader = ¿Listo para despegar?
+experimentPromoSubheader = Estamos preparando la siguiente generación de funciones para Firefox. ¡Instala Test Pilot para probarlas!
 
 
 
 # The experiment detail page. 
 [[ experimentPage ]]
 
+isEnabledStatusMessage = { $title } está activado.
+installErrorMessage = Chuta. { $title } no pudo ser activado. Vuelve a intentarlo más tarde.
 participantCount = <span>{ $installation_count }</span> participantes
+otherExperiments = Prueba también estos experimentos
+giveFeedback = Da tu opinión
+disableHeader = ¿Desactivar experimento?
 disableExperiment = Desactivar { $title }
 disableExperimentTransition = Desactivando...
 enableExperiment = Activar { $title }
@@ -199,6 +214,8 @@ upgradeNoticeLink = Cómo actualizar Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = ¿Desinstalar Test Pilot?
+retireMessage = Tal como lo deseas. Esto desactivara toda prueba activa, desinstalará el complemento y eliminará la información de tu cuenta de nuestros servidores.
+retireEmailMessage = Para salir del boletín por correo, simplemente aprieta el enlace <em>desuscribir</em> en cualquier correo de Test Pilot.
 retireSubmitButton = Proceder
 retireCancelButton = Cancelar
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar Test Pilot
@@ -230,12 +247,24 @@ shareCopy = Copiar
 # Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } se acaba el { $completedDate }
 eolNoticeLink = Aprender más
+eolDisableMessage = El experimento { $title } ha terminado. Una vez que lo desinstales no podrás reinstalarlo a través de Test Pilot. 
+completedDateLabel = Fecha de término: <b>{ $completedDate }</b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
+incompatibleHeader = Puede que este experimento no sea compatible con complementos que hayas instalado.
+incompatibleSubheader = Recomendamos <a>desactivar estos complementos</a> antes de activar este experimento:
 
 
 
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] tu correo va aquí
 newsletterFormDisclaimer = Solo te enviaremos información relacionada con Test Pilot.
 newsletterFormPrivacyNotice = Me parece bien que Mozilla gestione mi información según se indica en el <a>Aviso de privacidad</a>.
 newsletterFormSubmitButton = Suscríbete ahora
@@ -250,6 +279,21 @@ newsletterFooterError = Hubo un error al enviar tu correo. ¿Volvemos a intentar
 newsletterFooterHeader = Mantente informado
 newsletterFooterBody = Entérate de nuevos experimentos y mira los resultados de aquellos en los que has participado.
 newsletterFooterSuccessHeader = ¡Gracias!
+
+
+
+# A warning shown to users viewing an experiment that is only available in English.
+[[ localeWarning ]]
+
+localeWarningTitle = Este experimento está disponible solamente en inglés.
+localeWarningSubtitle = Todavía lo puedes activar si lo deseas.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledHeader = ¡Hagamos despegar este bebé!
 
 
 
