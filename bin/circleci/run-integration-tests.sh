@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# TODO XXX We should re-enable our integration tests!
+#  * flaky tests are worse than no tests
+#  * Jared is going to look at having the integration tests hit t.f.c/files/
+#    directly which would still test the install, but would bypass all of the
+#    hard-to-hit prompts (hopefully fixing the flakiness?)
+#  * disabling these now lets us land greenkeeper and update a lot of out of
+#    date libraries (~25)
+#  * r=_6a68 and r=clouserw.  Conveniently discussed over the holiday break ;)
+exit 0
+
 npm start &
 STATIC_SERVER_PID=$!
 

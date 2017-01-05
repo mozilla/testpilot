@@ -6,6 +6,7 @@ const tabs = require('sdk/tabs');
 const self = require('sdk/self');
 const { URL } = require('sdk/url');
 const _ = require('sdk/l10n').get;
+const { Services } = require('resource://gre/modules/Services.jsm');
 
 const Mustache = require('mustache');
 const templates = require('./templates');
@@ -32,6 +33,9 @@ let panel;
 
 function getExperimentList(availableExperiments, installedAddons) {
   const now = Date.now();
+  // In keeping with the approach of #1602, we ignore the region in the
+  // user's locale.
+  const userLocale = Services.appShell.hiddenDOMWindow.navigator.language.split('-')[0];
 
   const experiments = Object.keys(availableExperiments).map(k => {
     const experiment = availableExperiments[k];
@@ -68,9 +72,34 @@ function getExperimentList(availableExperiments, installedAddons) {
     }
     return experiment;
   })
-  .filter(x => x.active || !x.completed); // remove inactive, completed experiments
+  // Remove inactive, completed experiments.
+  .filter(x => x.active || !x.completed)
+  // Remove experiments with a locale_grantlist, unless the user's primary
+  // locale is in the grantlist. #1961
+  .filter(x => {
+    if (!('locale_grantlist' in x)) {
+      return true;
+    }
+    return x.locale_grantlist.includes(userLocale);
+  })
+  // Remove experiments with a locale_blocklist, if the user's primary locale
+  // is in the blocklist. #1967
+  .filter(x => {
+    if (!('locale_blocklist' in x)) {
+      return true;
+    }
+    return !(x.locale_blocklist.includes(userLocale));
+  })
+  // Remove experiments with a future launch date. #1966
+  .filter(x => {
+    if (!('launch_date' in x)) {
+      return true;
+    }
+    const launchTime = new Date(x.launch_date).getTime();
+    return launchTime > now;
+  });
 
-  // Sort new experiments to the top, otherwise sort by reverse-chronological
+  // Sort new experiments to the top, otherwise sort in reverse-chronological order.
   experiments.sort((a, b) => {
     if (a.isNew && !b.isNew) { return -1; }
     if (!a.isNew && b.isNew) { return 1; }

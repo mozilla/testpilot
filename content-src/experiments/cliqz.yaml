@@ -3,6 +3,7 @@ title: 'Cliqz'
 slug: cliqz
 locales:
   - 'de'
+launch_date: '2017-01-11T00:00:00.00Z'
 incompatible:
   '@activity-streams': 'Activity Stream'
   'cliqz@cliqz.com': 'CLIQZ- search directly in your browser'

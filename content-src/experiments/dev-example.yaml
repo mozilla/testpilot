@@ -34,8 +34,8 @@ measurements: >
       iPhone PBR&B subway tile, kale chips occupy af hexagon vaporware.</li>
     <li>Franzen vinyl polaroid cold-pressed hashtag flexitarian.</li>
   </ul>
-xpi_url: 'https://testpilot.firefox.com/files/min-vid/latest'
-addon_id: '@example-experiment'
+xpi_url: 'https://testpilot.firefox.com/files/@sloth/latest'
+addon_id: '@sloth'
 gradient_start: '#8725A7'
 gradient_stop: '#035295'
 details:
