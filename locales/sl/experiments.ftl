@@ -4,3 +4,4 @@ nomore404sSubtitle = omogoča Wayback Machine
 nomore404sDescription = Ste naveličani nedelujočih spletnih strani? Obvestili vas bomo, ali obstaja shranjena različica strani, ki jo želite obiskati, v storitvi Internet Archive Wayback Machine.
 pageshotDescription = Intuitivni posnetki zaslona kar v brskalniku. Med brskanjem po spletu lahko s Firefoxom ustvarite, shranite in delite posnetke zaslona.
 tabcenterDescription = Kako bi bilo, če bi lahko zavihke z vrha zaslona postavili ob strani? Želeli smo izvedeti!
+trackingprotectionDescription = Bi nam pomagali izboljšati zaščito pred sledenjem? Ta eksperiment vključi zaščito pred sledenjem za vsako brskanje in omogoča preprost način poročanja o težavah, na katere naletite med brskanjem.
