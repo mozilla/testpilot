@@ -539,7 +539,7 @@ export class ExperimentDetail extends React.Component {
     if (hasAddon && !this.isValidVersion(min_release)) {
       return (
         <div className="upgrade-notice">
-          <div data-l10n-id="upgradeNoticeTitle" data-l10n-args={JSON.stringify({ title, min_release })}>{title} requires Firefox {min_release} or later.</div>
+          <div data-l10n-id="upgradeNoticeTitle" data-l10n-args={JSON.stringify({ title, min_release })}></div>
           <a onClick={e => this.clickUpgradeNotice(e)} data-l10n-id="upgradeNoticeLink" href="https://support.mozilla.org/kb/find-what-version-firefox-you-are-using" target="_blank">How to update Firefox.</a>
         </div>
       );
@@ -561,7 +561,7 @@ export class ExperimentDetail extends React.Component {
       if (enabled) {
         return (
           <div className="experiment-controls">
-            <button onClick={e => { e.preventDefault(); this.setState({ showEolDialog: true }); }} style={{ minWidth: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'warning'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Disable {title}</span></button>
+            <button onClick={e => { e.preventDefault(); this.setState({ showEolDialog: true }); }} style={{ minWidth: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'warning'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text"></span></button>
           </div>
         );
       }
@@ -571,14 +571,14 @@ export class ExperimentDetail extends React.Component {
       return (
         <div className="experiment-controls">
           <a onClick={e => this.handleFeedback(e)} data-l10n-id="giveFeedback" id="feedback-button" className="button default" href={surveyURL}>Give Feedback</a>
-          <button onClick={e => this.renderUninstallSurvey(e)} style={{ minWidth: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'secondary'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Disable {title}</span></button>
+          <button onClick={e => this.renderUninstallSurvey(e)} style={{ minWidth: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'secondary'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text"></span></button>
         </div>
       );
     }
     return (
       <div className="experiment-controls">
         <a onClick={e => this.highlightPrivacy(e)} className="highlight-privacy" data-l10n-id="highlightPrivacy">Your privacy</a>
-        <button onClick={e => this.installExperiment(e)} style={{ minWidth: progressButtonWidth }} id="install-button"  className={classnames(['button', 'default'], { 'state-change': isEnabling })}><span className="state-change-inner"></span><span data-l10n-id="enableExperimentTransition" className="transition-text">Enabling...</span><span data-l10n-id="enableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text">Enable {title}</span></button>
+        <button onClick={e => this.installExperiment(e)} style={{ minWidth: progressButtonWidth }} id="install-button"  className={classnames(['button', 'default'], { 'state-change': isEnabling })}><span className="state-change-inner"></span><span data-l10n-id="enableExperimentTransition" className="transition-text">Enabling...</span><span data-l10n-id="enableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text"></span></button>
       </div>
     );
   }
