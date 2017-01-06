@@ -104,14 +104,14 @@ function sendToGA(type, dataIn) {
   }
 }
 
-function subscribeToBasket(email, callback) {
+function subscribeToBasket(email, locale, callback) {
   const url = 'https://basket.mozilla.org/news/subscribe/';
   fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: `newsletters=test-pilot&email=${encodeURIComponent(email)}`
+    body: `newsletters=test-pilot&lang=${encodeURIComponent(locale)}&email=${encodeURIComponent(email)}`
   }).then(callback)
   .catch(err => {
     // for now, log the error in the console & do nothing in the UI

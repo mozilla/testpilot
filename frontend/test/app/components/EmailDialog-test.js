@@ -47,7 +47,9 @@ describe('app/components/EmailDialog', () => {
 
   it('should subscribe to basket on valid email when submit clicked', () => {
     const expectedEmail = 'me@a.b.com';
+    const expectedLocale = 'en';
     subject.setState({ email: expectedEmail });
+    subject.setState({ locale: expectedLocale });
     subject.find('.modal-actions button.submit').simulate('click', mockClickEvent);
 
     expect(subject.state('isValidEmail')).to.be.true;
@@ -63,7 +65,7 @@ describe('app/components/EmailDialog', () => {
     }]);
 
     // Fake the callback from fetch()
-    const cb = subscribeToBasket.lastCall.args[1];
+    const cb = subscribeToBasket.lastCall.args[2];
     expect(cb).to.be.a('function');
     cb();
 
