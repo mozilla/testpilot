@@ -72,7 +72,7 @@ details:
   -
     image: /static/images/experiments/cliqz/details/detail2.jpg
     copy: >
-      See real time summary information - like weather and show times - right below the URL bar.
+      See real time summary information - like weather - right below the URL bar.
   -
     image: /static/images/experiments/cliqz/details/detail3.jpg
     copy: >
@@ -96,5 +96,5 @@ contributors:
     display_name: 'Cliqz GmbH'
     avatar: /static/images/experiments/cliqz/avatars/cliqz-avatar.jpg
 installation_count: 1
-created: '2017-01-11T00:06:00.00Z'
+created: '2016-12-01T00:06:00.00Z'
 order: 0
