@@ -206,17 +206,18 @@ const ToolbarButton = module.exports = {
     }
 
     // Look through available experiments for anything newer than the last
-    // toolbar button click.
-    let hasNew = false;
-    if (store.availableExperiments) {
-      Object.keys(store.availableExperiments).forEach(id => {
-        const experiment = store.availableExperiments[id];
-        const created = new Date(experiment.created);
-        if (created.getTime() > store.toolbarButtonLastClicked) {
-          hasNew = true;
-        }
-      });
-    }
+    // toolbar button click. The list of experiments is filtered based on
+    // the criteria used by `getExperimentList`.
+    const availableExperiments = getExperimentList(
+      store.availableExperiments || {},
+      store.installedAddons || {});
+    // If some experiment is new, show the new badge.
+    const hasNew = availableExperiments.some(experiment => {
+      const created = new Date(experiment.created);
+      const launched = experiment.launch_date && new Date(experiment.launch_date);
+      return (created.getTime() > store.toolbarButtonLastClicked) ||
+             (launched && launched.getTime() > store.toolbarButtonLastClicked);
+    });
 
     // Show the button badge if there were new experiments found.
     if (hasNew) {
