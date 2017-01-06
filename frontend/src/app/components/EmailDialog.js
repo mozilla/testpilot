@@ -54,7 +54,7 @@ export default class EmailDialog extends React.Component {
   }
 
   submit(e) {
-    const { sendToGA, subscribeToBasket } = this.props;
+    const { sendToGA, subscribeToBasket, locale } = this.props;
     e.preventDefault();
 
     // TODO: should we log the number of email validity failures? worth tracking?
@@ -72,7 +72,7 @@ export default class EmailDialog extends React.Component {
       eventLabel: 'Sign me up'
     });
 
-    subscribeToBasket(email, () => {
+    subscribeToBasket(email, locale, () => {
       // TODO: review question: basket failures are swallowed by the subscribeToBasket
       // function. Is it worth it to send a second GA ping to help us monitor the error
       // rate? If so, should I overload the button click interaction, as done below, or
