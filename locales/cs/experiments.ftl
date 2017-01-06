@@ -19,12 +19,16 @@ activitystreamContributors9Title = Vedoucí produktu
 activitystreamContributors10Title = Vedoucí inženýr
 activitystreamContributors11Title = Softwarový inženýr
 activitystreamContributors12Title = Senior UX designér
+cliqzDescription = Rychlejší výsledky vyhledávání. Cliqz zobrazuje návrhy už během psaní přímo pod adresním řádkem. Bez snížení nebo omezení vašeho soukromí.
+cliqzIntroduction = Rychlejší výsledky vyhledávání přímo v prohlížeči. Začněte psát a hned uvidíte návrhy výsledků přímo pod adresním řádkem. A protože Cliqz nesbírá osobní data, která by vás mohla identifikovat, ani nevytváří váš osobní profil, nijak neohrozí vaše soukromí.
 cliqzDetails0Copy = Výsledky vyhledávání se jako zázrakem objeví už během psaní přímo pod adresním řádkem.
 cliqzDetails1Copy = V reálném čase najde i souhrnné informace jako počasí nebo časy promítání filmů.
 cliqzDetails2Copy = Dostaňte se na své oblíbené stránky po otevření nového panelu jediným kliknutím. Oblíbené stránky si můžete nastavit, jak budete chtít.
+cliqzToursteps0Copy = <p>Začněte psát rovnou do adresního řádku a výsledky uvidíte hned pod ním.</p>
+cliqzToursteps1Copy = <p>Otevřete nový panel a přidejte své oblíbené stránky pro přístup jedním kliknutím.</p>
 cliqzToursteps2Copy = <p>Vždy nám můžete poslat zpětnou vazbu nebo Cliqz v Test Pilotu zase zakázat.</p>
 minvidDescription = Udržujte si video v popředí. Min Vid zobrazí videa ze serverů YouTube nebo Vimeo v malém rámu, který zůstane v popředí i při dalším prohlížení webu.
-minvidIntroduction = <p>Rádi se díváte na videa? Chcete při tom dělat i něco dalšího? Zkuste Min Vid. Video se vám zobrazé jako malý obrázek na pozadí celého webu.</p><ul> <li><strong>Klikněte a jdeme na to:</strong> Min Vid otevře malý rám a přehrává videa v popředí, zatímco si budete prohlížet jiné stránky.</li> <li><strong>Kdekoliv si budete přát:</strong> Min Vid vám umožní si rám s videem přesunout myší kamkoliv budete chtít.</li> <li><strong>Ovládání podle potřeby:</strong> Min Vid obsahuje ovládání pro přehrávání nebo jeho zastavení, přesun, zmenšení nebo úpravu hlasitosti přímo ve svém rámu.</li></ul>
+minvidIntroduction = <p>Rádi se díváte na videa? Chcete při tom dělat i něco dalšího? Zkuste Min Vid. Video se vám zobrazí jako malý obrázek na pozadí celého webu.</p><ul> <li><strong>Klikněte a jdeme na to:</strong> Min Vid otevře malý rám a přehrává videa v popředí, zatímco si budete prohlížet jiné stránky.</li> <li><strong>Kdekoliv si budete přát:</strong> Min Vid vám umožní si rám s videem přesunout myší kamkoliv budete chtít.</li> <li><strong>Ovládání podle potřeby:</strong> Min Vid obsahuje ovládání pro přehrávání nebo jeho zastavení, přesun, zmenšení nebo úpravu hlasitosti přímo ve svém rámu.</li></ul>
 minvidMeasurements = <p>Kromě <a href="/privacy">údajů</a> shromažďovaných experimenty programu Test Pilot byste měli o Min Vid také vědět:</p><ul> <li>Sbíráme základní údaje o používání místní nabídky, ikony experimentu a ovládání přehrávače.</li> <li>Sbíráme také údaje o počtu videí, která Min Vid umí přehrávat a která při svém prohlížení uvidíte a také jaké služby tato videa nabízí. Díky tomu poznáme, jak užitečný pro vás tento experiment skutečně je.</li> <li>O samotných videích, která potkáte nebo spustíte, žádné konkrétní informace nesbíráme.</li></ul>
 minvidDetails0Copy = Přístup k funkcím Min Vid je přímo v přehrávači videa YouTube i Vimeo.
 minvidDetails1Copy = Dívejte se na videa v popředí a zároveň dělejte na webu klidně i něco jiného.
