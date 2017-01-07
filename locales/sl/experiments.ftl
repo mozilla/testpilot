@@ -1,7 +1,9 @@
 activitystreamDescription = Bogat vizualni tok zgodovine in prenovljena domača stran naredita iskanje s Firefoxom preprostejše kot kadarkoli prej.
+cliqzDescription = Hitrejši predlogi iskanja. Medtem ko tipkate, Cliqz prikazuje predloge prav pod naslovno vrstico. Ne da bi ogrožal vašo zasebnost.
 minvidDescription = Obdržite si videoposnetke na očeh. Min Vid vam omogoča prikaz videoposnet- kov YouTube in Vimeo v okvirčku, ki je viden ves čas brskanja po spletu.
 nomore404sSubtitle = omogoča Wayback Machine
 nomore404sDescription = Ste naveličani nedelujočih spletnih strani? Obvestili vas bomo, ali obstaja shranjena različica strani, ki jo želite obiskati, v storitvi Internet Archive Wayback Machine.
+nomore404sIntroduction = <p>Ta je preprost. Če med brskanjem po spletu naletite na napako 404, bomo preverili, ali obstaja arhivska kopija strani na Internet Archive's Wayback Machine.</p>
 pageshotDescription = Intuitivni posnetki zaslona kar v brskalniku. Med brskanjem po spletu lahko s Firefoxom ustvarite, shranite in delite posnetke zaslona.
 tabcenterDescription = Kako bi bilo, če bi lahko zavihke z vrha zaslona postavili ob strani? Želeli smo izvedeti!
 trackingprotectionDescription = Bi nam pomagali izboljšati zaščito pred sledenjem? Ta eksperiment vključi zaščito pred sledenjem za vsako brskanje in omogoča preprost način poročanja o težavah, na katere naletite med brskanjem.
