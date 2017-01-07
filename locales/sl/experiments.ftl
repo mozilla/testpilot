@@ -12,3 +12,7 @@ trackingprotectionPrefeedbackcopy = <p>Za prijavo strani, ki zaradi zaščite pr
 trackingprotectionDetails0Copy = Do vseh možnosti zaščite pred sledenjem imate dostop iz naslovne vrstice.
 trackingprotectionDetails1Copy = Prijavite težavo in nam jo pomagajte odpraviti.
 trackingprotectionToursteps0Copy = <p>Ščit pomeni, da je zaščita pred sledenjem vklopljena. Če je prečrtan, je onemogočena.</p>
+trackingprotectionToursteps1Copy = <p>Sporočite nam, kdaj stvari delujejo in kdaj ne.</p>
+trackingprotectionToursteps2Copy = <p>Zaščito pred sledenjem lahko vedno popolnoma izklopite v Test Pilotu.</p>
+trackingprotectionContributors0Title = spletni razvijalec
+trackingprotectionContributorsextra = Ta poskus temelji na Firefoxovi zaščiti pred sledenjem, ki jo je v zadnjih letih razvila Mozilla in njeni sodelavci.
