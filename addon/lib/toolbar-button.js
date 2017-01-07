@@ -96,7 +96,7 @@ function getExperimentList(availableExperiments, installedAddons) {
       return true;
     }
     const launchTime = new Date(x.launch_date).getTime();
-    return launchTime > now;
+    return launchTime < now;
   });
 
   // Sort new experiments to the top, otherwise sort in reverse-chronological order.
