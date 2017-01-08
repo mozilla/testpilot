@@ -151,12 +151,20 @@ discussNotifyCancelButton = Cancelar
 
 
 
+# A splash shown on top of the experiment page when Test Pilot is not installed.
+[[ experimentPromo ]]
+
+experimentPromoHeader = ¿Listo para el despegue?
+
+
+
 # The experiment detail page. 
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } está habilitado.
 installErrorMessage = Oh oh. { $title } no se pudo habilitar. Probá de nuevo más tarde.
 participantCount = <span>{ $installation_count }</span> participantes
+otherExperiments = Probá también estos experimentos
 disableHeader = ¿Deshabilitar experimentos?
 disableExperiment = Deshabilitar { $title }
 disableExperimentTransition = Deshabilitando...
@@ -188,6 +196,7 @@ retireDialogTitle = ¿Desinstalar Test Pilot?
 retireMessage = Como quieras. Se deshabilitarán los tests activos, se desinstalará el complemento y se eliminará la información de tu cuenta de nuestros servidores.
 retireCancelButton = Cancelar
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar Test Pilot
+retirePageProgressMessage = Apagando...
 retirePageHeadline = ¡Gracias por volar!
 
 
@@ -239,9 +248,25 @@ newsletterFormSubmitButtonSubmitting = Enviando...
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = Hubo un erro enviando tu dirección de correo electrónico. ¿Probamos de nuevo?
 newsletterFooterHeader = Mantenete informado
 newsletterFooterBody = Descubrí nuevos experimentos y mirá los resultados para los experimentos que ya probaste.
 newsletterFooterSuccessHeader = ¡Gracias!
+
+
+
+# A warning shown to users viewing an experiment that is only available in English.
+[[ localeWarning ]]
+
+localeWarningTitle = Este experimento solamente está disponible en inglés.
+localeWarningSubtitle = Igual podés habilitarlo si querés.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledCTA = ¿No estás interesado? <a>Decinos por qué</a>.
 
 
 
