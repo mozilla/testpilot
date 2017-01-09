@@ -53,6 +53,7 @@ nomore404sToursteps1Copy = <p>Test Pilot の No More 404s は、いつでもフ�
 nomore404sContributors1Title = The Internet Archive の Wayback Machine 担当開発者
 nomore404sContributors2Title = The Internet Archive の Wayback Machine 担当ディレクター
 nomore404sContributors3Title = The Internet Archive の上級クロールエンジニア
+pageshotMeasurements = <p>すべての Test Pilot 実験によって収集される <a href="/privacy">データ</a> に加えて、Page Shot 使用時に何が起きているかについてあなたが知っておくべき主な事柄を以下にまとめました。</p><ul> <li>私達はあなたのスクリーンショットを Mozilla のサーバー上に保存しており、それらのショットにアクセスすることが可能です。しかし私達は、誰かが「フラグ」機能を使ってショットへのリンクを送ってきた場合や、何らかの問題が発生した場合の原因特定など、このサービスの運営にとって合理的に必要な場合に限ってあなたのショットにアクセスします。また、すべてのショットを集合的に解析し、例えばユーザーによって撮影されたショットの平均サイズや数などを特定することによって、Page Shot の改善に役立てます。</li> <li>私達は、あなたがショットボタンをクリックしたり、画像を保存したり、画像保存時にエラーに遭遇したりした回数など、あなたと製品のインタラクションの理解を深めるため、使用状況データを収集します。</li> <li>このサービスの不正利用を防ぐため、私達は基本的なセキュリティ監視を行います。例えば、個人的なページを見つけるためにサービスをスキャンしている個人を判別しブロックするため、IP アドレスを収集、保存します。</li> <li>Page Shot ウェブサイトへのすべての訪問については、私達が収集するデータは <a href="https://www.mozilla.org/privacy/websites/" target="_blank">ウェブサイト、コミュニケーション、Cookie に関するプライバシー通知</a> で説明しています。</li></ul>
 pageshotDetails1Copy = 画像へのリンクを、ファイルをダウンロードして添付することなく、ソーシャルネットワークやメールで共有しましょう。
 pageshotDetails2Copy = 保存したスクリーンショットは簡単に見つけられます。グリッドビューでサムネイルを閲覧したり、キーワードで検索したりできます。
 pageshotToursteps0Copy = <p>Page Shot を使い始めるにはアイコンを選択してください。</p>
@@ -63,6 +64,7 @@ pageshotToursteps4Copy = <p>Test Pilot の Page Shot は、いつでもフィー
 pageshotContributors0TitleEngineer = ソフトウェアエンジニア
 pageshotContributors1Title = ソフトウェアエンジニア
 pageshotContributors2Title = UX デザイナー
+tabcenterMeasurements = <p>すべての Test Pilot 実験によって収集される <a href="/privacy">データ</a> に加えて、Tab Center 使用時に何が起きているかについてあなたが知っておくべき主な事柄を以下にまとめました。</p><ul> <li>私達は、あなたがどのくらいの頻度で Tab Center を最大化したりピン留めしたりしているかなど、あなたと Tab Center のインタラクションに関する使用状況データを収集します。</li> <li>また、同時に開いたままにしているタブの数や、タブを開いたままにしている時間など、あなたのタブの使い方に関する情報も収集します。</li> <li>Tab Center は、あなたが訪れたサイトやタブの内容に関する情報は一切収集しません。</li></ul>
 tabcenterDetails0Copy = タブを画面横に配置してみましょう。
 tabcenterDetails1Copy = 必要になるまでタブを隠してしまいましょう。
 tabcenterToursteps0Copy = <p>何はさておき、あなたのタブはすべて横に移動しました。</p>
