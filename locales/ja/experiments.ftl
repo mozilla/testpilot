@@ -1,5 +1,6 @@
 activitystreamDescription = 視覚的な履歴フィードと再考されたホームページによって、あなたがまさに Firefox の中で探しているものをかつてなく見つけやすくします。
 activitystreamIntroduction = <p>思考の流れを失うことなくブラウジングに戻りましょう。Activity Stream は、トップサイト、ブックマーク、最近の履歴を、新しいタブの中のすぐに手が届くところに用意しておきます。また、新たなタイムラインビューが、あなたのブラウジングの鳥瞰図を見せてくれます。</p>
+activitystreamMeasurements = <p>すべての Test Pilot 実験によって収集される <a href="/privacy">データ</a> に加えて、Activity Stream 使用時に何が起きているかについてあなたが知っておくべき主な事柄を以下にまとめました。</p><ul> <li>私たちは、あなたが実験的な新しいタブやタイムラインページとどのように関わっているかについて、あなたがクリックした要素の種類や、そのページ上の位置など、基本的な使用状況データを収集します。</li> <li>また、ブックマークや履歴項目の数など、Activity Stream に影響を及ぼすブラウザープロファイルに関する基本的な情報も収集します。</li> <li>私たちは、Activity Stream を提供するため、<a href="http://embed.ly/" target="_blank">Embedly</a> というサービスを通じて、画像やアイコンなど、あなたが訪れたウェブサイトのメタデータを取得します。それらのリクエストは Mozilla のサーバーを通じて Embedly へ送信されるため、あなたと関連付けられることはありません。</li></ul>
 activitystreamDetails0Copy = 新しいタブをクリックすれば、お気に入りのサイトはもう一度クリックするだけで開けます。
 activitystreamDetails1Copy = あなたがこれまでに訪れたサイトが表示されるので、次に行く場所へすぐに進めます。
 activitystreamToursteps0Copy = <p>新しいタブを開いたときに、よく開くサイト、最近の履歴、ブックマークが表示されます。</p>
