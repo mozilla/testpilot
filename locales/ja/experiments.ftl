@@ -68,9 +68,11 @@ pageshotContributors0TitleEngineer = ソフトウェアエンジニア
 pageshotContributors1Title = ソフトウェアエンジニア
 pageshotContributors2Title = UX デザイナー
 tabcenterDescription = タブをブラウザーの上から横に移動したらどうなるでしょう？ 私達はそれを確かめてみたいと思いました。
+tabcenterIntroduction = <p>タブを目障りになるものから隠してしまうものへ。Tab Center はあなたのタブをブラウザーウィンドウの横へ移動して、必要のない場合は見えなくし、必要になったら簡単に拡大し選択できるようにします。</p>
 tabcenterMeasurements = <p>すべての Test Pilot 実験によって収集される <a href="/privacy">データ</a> に加えて、Tab Center 使用時に何が起きているかについてあなたが知っておくべき主な事柄を以下にまとめました。</p><ul> <li>私達は、あなたがどのくらいの頻度で Tab Center を最大化したりピン留めしたりしているかなど、あなたと Tab Center のインタラクションに関する使用状況データを収集します。</li> <li>また、同時に開いたままにしているタブの数や、タブを開いたままにしている時間など、あなたのタブの使い方に関する情報も収集します。</li> <li>Tab Center は、あなたが訪れたサイトやタブの内容に関する情報は一切収集しません。</li></ul>
 tabcenterDetails0Copy = タブを画面横に配置してみましょう。
 tabcenterDetails1Copy = 必要になるまでタブを隠してしまいましょう。
+tabcenterDetails2Copy = 家具を模様替えして移動しましょう！ Tab Center はあなたのお気に入りの Firefox テーマと併用できます。
 tabcenterToursteps0Copy = <p>何はさておき、あなたのタブはすべて横に移動しました。</p>
 tabcenterToursteps1Copy = <p>タブをたくさん開きすぎても、Tab Center で検索できます。</p>
 tabcenterToursteps2Copy = <p>Tab Center の端をドラッグすれば、自由に幅を広げたり縮めたりできます。</p>
@@ -80,7 +82,10 @@ tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
+trackingprotectionDescription = トラッキング保護機能の改善に協力いただけますか？ この実験はすべてのページでトラッキング保護機能を有効化し、ブラウジング中に何か問題に遭遇した場合は簡単に報告できる方法を提供します。
+trackingprotectionIntroduction = <p>これまで、Firefox のトラッキング保護機能はプライベートブラウジングモードのみで使用可能でした。この実験はトラッキング保護機能を常時有効化します。(もちろん、必要に応じてサイトごとに無効化することもできます)</p><p>この実験では、トラッキング保護機能によってウェブ上のどこがうまく動かなくなるか私達が理解を深めるための手助けを皆さんにしてもらい、すべての Firefox ユーザーのためにこの機能を改善することを目的としています。ブラウジング中に、ロケーションバー内の紫色の盾アイコンをクリックして、トラッキング保護機能が問題なく動作するサイトとそうでないサイトを報告してください。</p>
 trackingprotectionMeasurements = <p>すべての Test Pilot 実験によって収集される <a href="/privacy">データ</a> に加えて、Tracking Protection 使用時に何が起きているかについてあなたが知っておくべき主な事柄を以下にまとめました。</p><ul> <li>Tracking Protection は、トラッカーをブロックした際、あなたにフィードバックを求めます。あなたがいつページ上のトラッカーを有効化あるいは無効化したか、あるいは問題を報告したかなど、あなたがこのプロンプトを操作した際に基本的な使用状況データを収集します。</li> <li>あなたがプロンプトを操作した場合、あなたが開いていたページに関する情報や、ブロックされたトラッキングドメインに関する情報も収集します。これは、あなたが問題に遭遇した状況や理由について私達が理解を深めるために役立ちます。</li> <li>ドメイン以外に、使われた固有の ID や設定された Cookie に関するデータなど、何らかの情報をトラッカーから収集することはありません。</li> <li>トラッカーを特定するため、私達はパートナーの Disconnect から提供されるリストを使用します。Disconnect が適用する基準に関しては <a href="https://disconnect.me/trackerprotection" target="_blank">こちら</a> で参照できます。</li></ul>
+trackingprotectionPrefeedbackcopy = <p>トラッキング保護機能有効時にうまく動かないサイトを報告するには、そのサイトの URL を表示しているロケーションバー内の盾アイコンを選択してください。</p>
 trackingprotectionDetails0Copy = Tracking Protection の機能はすべてロケーションバーから使用できます。
 trackingprotectionDetails1Copy = 問題を報告し、私達にその解決を手伝わせてください。
 trackingprotectionToursteps0Copy = <p>盾のマークは Tracking Protection が有効であることを示します。斜線が入っているときは無効です。</p>
