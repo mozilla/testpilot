@@ -53,7 +53,10 @@ nomore404sToursteps1Copy = <p>Test Pilot の No More 404s は、いつでもフ�
 nomore404sContributors1Title = The Internet Archive の Wayback Machine 担当開発者
 nomore404sContributors2Title = The Internet Archive の Wayback Machine 担当ディレクター
 nomore404sContributors3Title = The Internet Archive の上級クロールエンジニア
+pageshotDescription = 直感的なスクリーンショットをブラウザー内に直接組み込みました。Firefox を使ってウェブをブラウジングしながら、スクリーンショットをキャプチャー、保存、共有できます。
+pageshotIntroduction = <p>Page Shot を使えば、Firefox を離れることなく、スクリーンショットを撮影、共有、検索できます。</p><ul> <li><strong>グリッド表示:</strong> 保存されたスクリーンショットのサムネイルを閲覧</li> <li><strong>スマート検索:</strong> 探しているスクリーンショットをキーワードで見つけ出せます。Page Shot はページタイトルやスクリーンショット内の文字をインデックスします</li> <li><strong>ワンステップ共有:</strong> ブラウザーウィンドウ上部から直接、スクリーンショットをソーシャルメディアへ投稿したり、共有可能なリンクをコピーしたりできます</li></ul>
 pageshotMeasurements = <p>すべての Test Pilot 実験によって収集される <a href="/privacy">データ</a> に加えて、Page Shot 使用時に何が起きているかについてあなたが知っておくべき主な事柄を以下にまとめました。</p><ul> <li>私達はあなたのスクリーンショットを Mozilla のサーバー上に保存しており、それらのショットにアクセスすることが可能です。しかし私達は、誰かが「フラグ」機能を使ってショットへのリンクを送ってきた場合や、何らかの問題が発生した場合の原因特定など、このサービスの運営にとって合理的に必要な場合に限ってあなたのショットにアクセスします。また、すべてのショットを集合的に解析し、例えばユーザーによって撮影されたショットの平均サイズや数などを特定することによって、Page Shot の改善に役立てます。</li> <li>私達は、あなたがショットボタンをクリックしたり、画像を保存したり、画像保存時にエラーに遭遇したりした回数など、あなたと製品のインタラクションの理解を深めるため、使用状況データを収集します。</li> <li>このサービスの不正利用を防ぐため、私達は基本的なセキュリティ監視を行います。例えば、個人的なページを見つけるためにサービスをスキャンしている個人を判別しブロックするため、IP アドレスを収集、保存します。</li> <li>Page Shot ウェブサイトへのすべての訪問については、私達が収集するデータは <a href="https://www.mozilla.org/privacy/websites/" target="_blank">ウェブサイト、コミュニケーション、Cookie に関するプライバシー通知</a> で説明しています。</li></ul>
+pageshotDetails0Copy = 画像範囲を選択し、その内容に満足したら保存、そうでなければ保存せずにキャンセルできます。
 pageshotDetails1Copy = 画像へのリンクを、ファイルをダウンロードして添付することなく、ソーシャルネットワークやメールで共有しましょう。
 pageshotDetails2Copy = 保存したスクリーンショットは簡単に見つけられます。グリッドビューでサムネイルを閲覧したり、キーワードで検索したりできます。
 pageshotToursteps0Copy = <p>Page Shot を使い始めるにはアイコンを選択してください。</p>
@@ -64,6 +67,7 @@ pageshotToursteps4Copy = <p>Test Pilot の Page Shot は、いつでもフィー
 pageshotContributors0TitleEngineer = ソフトウェアエンジニア
 pageshotContributors1Title = ソフトウェアエンジニア
 pageshotContributors2Title = UX デザイナー
+tabcenterDescription = タブをブラウザーの上から横に移動したらどうなるでしょう？ 私達はそれを確かめてみたいと思いました。
 tabcenterMeasurements = <p>すべての Test Pilot 実験によって収集される <a href="/privacy">データ</a> に加えて、Tab Center 使用時に何が起きているかについてあなたが知っておくべき主な事柄を以下にまとめました。</p><ul> <li>私達は、あなたがどのくらいの頻度で Tab Center を最大化したりピン留めしたりしているかなど、あなたと Tab Center のインタラクションに関する使用状況データを収集します。</li> <li>また、同時に開いたままにしているタブの数や、タブを開いたままにしている時間など、あなたのタブの使い方に関する情報も収集します。</li> <li>Tab Center は、あなたが訪れたサイトやタブの内容に関する情報は一切収集しません。</li></ul>
 tabcenterDetails0Copy = タブを画面横に配置してみましょう。
 tabcenterDetails1Copy = 必要になるまでタブを隠してしまいましょう。
@@ -77,15 +81,16 @@ tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
 trackingprotectionMeasurements = <p>すべての Test Pilot 実験によって収集される <a href="/privacy">データ</a> に加えて、Tracking Protection 使用時に何が起きているかについてあなたが知っておくべき主な事柄を以下にまとめました。</p><ul> <li>Tracking Protection は、トラッカーをブロックした際、あなたにフィードバックを求めます。あなたがいつページ上のトラッカーを有効化あるいは無効化したか、あるいは問題を報告したかなど、あなたがこのプロンプトを操作した際に基本的な使用状況データを収集します。</li> <li>あなたがプロンプトを操作した場合、あなたが開いていたページに関する情報や、ブロックされたトラッキングドメインに関する情報も収集します。これは、あなたが問題に遭遇した状況や理由について私達が理解を深めるために役立ちます。</li> <li>ドメイン以外に、使われた固有の ID や設定された Cookie に関するデータなど、何らかの情報をトラッカーから収集することはありません。</li> <li>トラッカーを特定するため、私達はパートナーの Disconnect から提供されるリストを使用します。Disconnect が適用する基準に関しては <a href="https://disconnect.me/trackerprotection" target="_blank">こちら</a> で参照できます。</li></ul>
-trackingprotectionDetails0Copy = トラッキング保護機能はすべてロケーションバーから使用できます。
+trackingprotectionDetails0Copy = Tracking Protection の機能はすべてロケーションバーから使用できます。
 trackingprotectionDetails1Copy = 問題を報告し、私達にその解決を手伝わせてください。
-trackingprotectionToursteps0Copy = <p>盾のマークはトラッキング保護が有効であることを示します。斜線が入っているときは無効です。</p>
+trackingprotectionToursteps0Copy = <p>盾のマークは Tracking Protection が有効であることを示します。斜線が入っているときは無効です。</p>
 trackingprotectionToursteps1Copy = <p>正常に動作しているときとしていないときをお知らせください。</p>
 trackingprotectionToursteps2Copy = <p>Test Pilot の Tracking Protection はいつでも無効化できます。</p>
 trackingprotectionContributors0Title = ウェブ開発者
 trackingprotectionContributors1Title = 上級 UX デザイナー
 trackingprotectionContributors2Title = 上級 QA エンジニア
 trackingprotectionContributorsextra = この実験は、Mozilla の従業員と貢献者により過去数年にわたって開発されてきた Firefox のトラッキング保護機能に基いています。
+universalsearchMeasurements = <p>すべての Test Pilot 実験によって収集される <a href="/privacy">データ</a> に加えて、Universal Search 使用時に何が起きているかについてあなたが知っておくべき主な事柄を以下にまとめました。</p><ul> <li>私達は、入力された文字の数、あなたがクリックした結果の種類、その結果リスト内の位置など、あなたとロケーションバーのインタラクションに関する基本的な使用状況データを収集します。</li> <li>あなたが検索バー内に検索候補を表示するよう過去に Firefox を設定していた場合、Universal Search をインストールすると、ロケーションバー内での <a href="https://www.mozilla.org/privacy/firefox/#searchsuggestions" target="_blank">検索候補表示</a> も有効となります。</li> <li>あなたがロケーションバーを使用する際、私達はあなたが入力した語句をリコメンデーションエンジンへ送信します。私達はリコメンデーションの品質を向上させるため、よく使用される検索語句について匿名のログを保存します。</li> <li>Universal Search を提供するため、私達はいくつかのサードパーティーサービスを使用します。私達は、リコメンデーションを提供するために <a href="http://www.bing.com/developers/s/APIBasics.html" target="_blank">Bing</a> と <a href="https://developer.yahoo.com/boss/search/" target="_blank">Yahoo</a> を、またそれらのリコメンデーションに関する追加情報 (画像やアイコンなど) を提供するために <a href="http://docs.embed.ly/docs/" target="_blank">Embedly</a> と <a href="https://clearbit.com/logo" target="_blank">Clearbit</a> を使用します。ロケーションバー内にリコメンデーションを表示するため、Universal Search はそれらの画像を直接 Embedly と Clearbit からダウンロードする場合があり、それによってそれらのサービスがあなたの IP アドレスとリクエストされた画像を把握できるようになる可能性があります。</li></ul>
 universalsearchDetails0Copy = 人気のサイトや人物、Wikipedia の記事が入力中に表示されます。
 universalsearchToursteps0Copy = <p>検索とページの移動を 1 か所で行なえます。</p>
 universalsearchToursteps1Copy = <p>検索語句を入力中に、人気サイトや Wikipedia 記事の候補一覧が表示されます。</p>
