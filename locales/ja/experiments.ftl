@@ -45,6 +45,7 @@ minvidContributors3Title = エンジニアリング貢献者
 nomore404sSubtitle = 協力: Wayback Machine
 nomore404sDescription = ウェブ上の行き止まりにうんざりしていませんか？ Internet Archive の Wayback Machine にあなたが探しているページの保存されたバージョンがあればお知らせします。
 nomore404sIntroduction = <p>これは単純なものです。ウェブブラウジング中に 404 ページに遭遇した場合に、Internet Archive の Wayback Machine にそのコンテンツがアーカイブされていればそのことをお知らせします。</p>
+nomore404sMeasurements = <p>すべての Test Pilot 実験によって収集される <a href="/privacy">データ</a> に加えて、No More 404s 使用時に何が起きているかについてあなたが知っておくべき主な事柄を以下にまとめました。</p><ul> <li>私達は、あなたが Page Not Found エラー (コード 404) に遭遇した回数、そのページのキャッシュ済みバージョンが Archive.org に存在した回数、あなたがそのキャッシュ済みバージョンを表示することを選択した回数について、基本的な使用状況データを収集します。</li> <li>ページのキャッシュ済みバージョンを提供するため、私達は 404 エラーページの URL を Archive.org へ送信します。<a href="https://archive.org/" target="_blank">Archive.org</a> はプライバシーポリシーを <a href="https://archive.org/about/terms.php" target="_blank">こちら</a> で公開しています。</li> <li>私達はあなたがリクエストしたページの URL や、私達が Archive.org へ送信した URL は収集しません。</li> <li>私達は、あなたが送信したアンケート結果や、この実験に関する集計的使用解析データを Internet Archive と共有する可能性があります。</li></ul>
 nomore404sDetails0Copy = Wayback Machine で 404 の行き止まりを減らしましょう。
 nomore404sDetails1Copy = Internet Archive の友人が皆さんにお届けします。
 nomore404sToursteps0Copy = <p>いつも通りウェブをブラウズしてください。404 ページに遭遇して、もし Wayback Machine にそのアーカイブされたバージョンがあればお知らせします。</p>
