@@ -10,6 +10,7 @@ const SUBMITTING = 'newsletterFormSetSubmitting';
 const SUCCEEDED = 'newsletterFormSetSucceeded';
 
 const MOCK_EMAIL = 'foo@bar.com';
+const MOCK_LOCALE = 'bz';
 
 const setUp = responseCode => {
   fetchMock.post(basketUrl, responseCode);
@@ -27,7 +28,7 @@ describe('app/actions/newsletter-form/subscribe', () => {
 
   describe('requests with', () => {
     const { dispatch, subscribe } = setUp(200);
-    subscribe(dispatch, MOCK_EMAIL);
+    subscribe(dispatch, MOCK_EMAIL, MOCK_LOCALE);
 
     const url = fetchMock.lastCall(basketUrl)[0];
     const request = fetchMock.lastCall(basketUrl)[1];
@@ -51,6 +52,10 @@ describe('app/actions/newsletter-form/subscribe', () => {
 
     it('the URLencoded email in the body', () => {
       expect(request.body).to.contain(`email=${encodeURIComponent(MOCK_EMAIL)}`);
+    });
+
+    it('the URLencoded locale in the body', () => {
+      expect(request.body).to.contain(`lang=${encodeURIComponent(MOCK_LOCALE)}`);
     });
 
     tearDown();

@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import NewsletterForm from './NewsletterForm';
 
@@ -57,9 +57,13 @@ export default class NewsletterFooter extends React.Component {
         <section className="responsive-content-wrapper">
           {this.renderError()}
           {this.renderHeader()}
-          <NewsletterForm {...this.props.newsletterForm} />
+          <NewsletterForm {...this.props.newsletterForm} locale={this.props.locale} />
         </section>
       </div>
     );
   }
 }
+
+NewsletterFooter.propTypes = {
+  locale: PropTypes.string.isRequired
+};
