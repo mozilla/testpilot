@@ -95,6 +95,8 @@ trackingprotectionContributors0Title = ウェブ開発者
 trackingprotectionContributors1Title = 上級 UX デザイナー
 trackingprotectionContributors2Title = 上級 QA エンジニア
 trackingprotectionContributorsextra = この実験は、Mozilla の従業員と貢献者により過去数年にわたって開発されてきた Firefox のトラッキング保護機能に基いています。
+universalsearchDescription = ロケーションバーで検索語句を入力中に、ウェブ上でお勧めの人気サイト一覧を見ることができます。
+universalsearchIntroduction = <p>Universal Search でウェブ上の人気サイトへより素早く移動できます。ロケーションバーに何文字か入力するだけで、最も人気のサイトや人物、Wikipedia の記事が表示されるので、快適にブラウジングを続けることができます。</p>
 universalsearchMeasurements = <p>すべての Test Pilot 実験によって収集される <a href="/privacy">データ</a> に加えて、Universal Search 使用時に何が起きているかについてあなたが知っておくべき主な事柄を以下にまとめました。</p><ul> <li>私達は、入力された文字の数、あなたがクリックした結果の種類、その結果リスト内の位置など、あなたとロケーションバーのインタラクションに関する基本的な使用状況データを収集します。</li> <li>あなたが検索バー内に検索候補を表示するよう過去に Firefox を設定していた場合、Universal Search をインストールすると、ロケーションバー内での <a href="https://www.mozilla.org/privacy/firefox/#searchsuggestions" target="_blank">検索候補表示</a> も有効となります。</li> <li>あなたがロケーションバーを使用する際、私達はあなたが入力した語句をリコメンデーションエンジンへ送信します。私達はリコメンデーションの品質を向上させるため、よく使用される検索語句について匿名のログを保存します。</li> <li>Universal Search を提供するため、私達はいくつかのサードパーティーサービスを使用します。私達は、リコメンデーションを提供するために <a href="http://www.bing.com/developers/s/APIBasics.html" target="_blank">Bing</a> と <a href="https://developer.yahoo.com/boss/search/" target="_blank">Yahoo</a> を、またそれらのリコメンデーションに関する追加情報 (画像やアイコンなど) を提供するために <a href="http://docs.embed.ly/docs/" target="_blank">Embedly</a> と <a href="https://clearbit.com/logo" target="_blank">Clearbit</a> を使用します。ロケーションバー内にリコメンデーションを表示するため、Universal Search はそれらの画像を直接 Embedly と Clearbit からダウンロードする場合があり、それによってそれらのサービスがあなたの IP アドレスとリクエストされた画像を把握できるようになる可能性があります。</li></ul>
 universalsearchDetails0Copy = 人気のサイトや人物、Wikipedia の記事が入力中に表示されます。
 universalsearchToursteps0Copy = <p>検索とページの移動を 1 か所で行なえます。</p>
