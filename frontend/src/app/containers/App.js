@@ -158,8 +158,8 @@ const mapDispatchToProps = dispatch => ({
       dispatch(newsletterFormActions.newsletterFormSetEmail(email)),
     setPrivacy: privacy =>
       dispatch(newsletterFormActions.newsletterFormSetPrivacy(privacy)),
-    subscribe: email =>
-      dispatch(newsletterFormActions.newsletterFormSubscribe(dispatch, email))
+    subscribe: (email, locale) =>
+      dispatch(newsletterFormActions.newsletterFormSubscribe(dispatch, email, locale))
   }
 });
 

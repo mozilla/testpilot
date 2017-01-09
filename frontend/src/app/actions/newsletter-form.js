@@ -14,14 +14,14 @@ const actions = createActions(
 );
 
 const subscribeActions = createActions({
-  newsletterFormSubscribe: (dispatch, email) => {
+  newsletterFormSubscribe: (dispatch, email, locale) => {
     dispatch(actions.newsletterFormSetSubmitting());
     fetch(basketUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      body: `newsletters=test-pilot&email=${encodeURIComponent(email)}`
+      body: `newsletters=test-pilot&email=${encodeURIComponent(email)}&lang=${encodeURIComponent(locale)}`
     })
       .then(response => {
         if (response.ok) {

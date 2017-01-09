@@ -77,7 +77,7 @@ export default class NewsletterForm extends React.Component {
 
   handleSubmit(evt) {
     evt.preventDefault();
-    this.props.subscribe(this.props.email);
+    this.props.subscribe(this.props.email, this.props.locale);
   }
 
   render() {
@@ -95,6 +95,7 @@ export default class NewsletterForm extends React.Component {
 NewsletterForm.defaultProps = initialState;
 NewsletterForm.propTypes = {
   email: PropTypes.string.isRequired,
+  locale: PropTypes.string.isRequired,
   privacy: PropTypes.bool.isRequired,
   subscribe: PropTypes.func,
   setEmail: PropTypes.func,
