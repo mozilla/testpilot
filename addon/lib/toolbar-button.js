@@ -17,10 +17,6 @@ const Metrics = require('./metrics');
 const xulcss = require('./xulcss');
 xulcss.addXULStylesheet(self.data.url('button.css'));
 
-const PANEL_WIDTH = 300;
-const FOOTER_HEIGHT = 53;
-const EXPERIMENT_HEIGHT = 80;
-const MAX_HEIGHT = (EXPERIMENT_HEIGHT * 4) + 56 + FOOTER_HEIGHT;
 const NEW_BADGE_LABEL = 'New';
 
 const ONE_DAY = 24 * 60 * 60 * 1000;
@@ -137,7 +133,7 @@ function getParams() {
 
 function handleButton() {
   Metrics.pingTelemetry('txp_toolbar_menu_1', 'clicked', Date.now());
-  tabs.open(settings.BASE_URL);
+  tabs.open(settings.BASE_URL + '?' + getParams());
   store.toolbarButtonLastClicked = Date.now();
   ToolbarButton.updateButtonBadge(); // eslint-disable-line no-use-before-define
 }
