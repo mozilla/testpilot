@@ -76,6 +76,7 @@ tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
+trackingprotectionMeasurements = <p>すべての Test Pilot 実験によって収集される <a href="/privacy">データ</a> に加えて、Tracking Protection 使用時に何が起きているかについてあなたが知っておくべき主な事柄を以下にまとめました。</p><ul> <li>Tracking Protection は、トラッカーをブロックした際、あなたにフィードバックを求めます。あなたがいつページ上のトラッカーを有効化あるいは無効化したか、あるいは問題を報告したかなど、あなたがこのプロンプトを操作した際に基本的な使用状況データを収集します。</li> <li>あなたがプロンプトを操作した場合、あなたが開いていたページに関する情報や、ブロックされたトラッキングドメインに関する情報も収集します。これは、あなたが問題に遭遇した状況や理由について私達が理解を深めるために役立ちます。</li> <li>ドメイン以外に、使われた固有の ID や設定された Cookie に関するデータなど、何らかの情報をトラッカーから収集することはありません。</li> <li>トラッカーを特定するため、私達はパートナーの Disconnect から提供されるリストを使用します。Disconnect が適用する基準に関しては <a href="https://disconnect.me/trackerprotection" target="_blank">こちら</a> で参照できます。</li></ul>
 trackingprotectionDetails0Copy = トラッキング保護機能はすべてロケーションバーから使用できます。
 trackingprotectionDetails1Copy = 問題を報告し、私達にその解決を手伝わせてください。
 trackingprotectionToursteps0Copy = <p>盾のマークはトラッキング保護が有効であることを示します。斜線が入っているときは無効です。</p>
