@@ -58,7 +58,7 @@ tour_steps:
     copy: >
       <p>Visit the new timeline view to visually browse all your history and bookmarks.</p>
   -
-    image: /static/images/experiments/activity-stream/experiments_experimenttourstep/1/d/1d414ba2fc88a188b6f74ea79de908e9_image_1462827231_0841.jpg
+    image: /static/images/experiments/shared/tour-final.jpg
     copy: >
       <p>You can always give us feedback or disable Activity Stream from Test Pilot.</p>
 notifications: []

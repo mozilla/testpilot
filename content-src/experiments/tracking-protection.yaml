@@ -68,7 +68,7 @@ tour_steps:
     copy: >
       <p>Tell us when things work and when they don't.</p>
   -
-    image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour3.jpg
+    image: /static/images/experiments/shared/tour-final.jpg
     copy: >
       <p>You can always disable Tracking Protection from Test Pilot.</p>
 notifications: []

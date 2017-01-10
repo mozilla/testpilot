@@ -67,7 +67,7 @@ tour_steps:
     copy: >
       <p>Hit the switch to tuck Tab Center out of the way.</p>
   -
-    image: /static/images/experiments/tab-center/tour/tc-tour-5.jpg
+    image: /static/images/experiments/shared/tour-final.jpg
     copy: >
       <p>You can always give us feedback or disable Tab Center from Test Pilot.</p>
 notifications: []

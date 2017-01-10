@@ -58,7 +58,7 @@ tour_steps:
         we will let you know if an archived version is a available on the Wayback
         Machine.</p>
   -
-    image: /static/images/experiments/no-more-404s/experiments_experimenttourstep/c/3/c3f0175791c0cf8271658ae01eaf3d94_image_1470245154_0949.jpg
+    image: /static/images/experiments/shared/tour-final.jpg
     copy: >
       <p>You can always give us feedback or disable No More 404s from Test Pilot.</p>
 notifications:
