@@ -81,7 +81,7 @@ tour_steps:
     copy: >
       <p>Search or browse to find saved screenshots.</p>
   -
-    image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour5.jpg
+    image: /static/images/experiments/shared/tour-final.jpg
     copy: >
       <p>You can always give us feedback or disable Page Shot from Test Pilot.</p>
 notifications: []

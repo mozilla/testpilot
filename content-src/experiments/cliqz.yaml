@@ -87,7 +87,7 @@ tour_steps:
     copy: >
       <p>Open a new tab and add your favorite websites for one-click access.</p>
   -
-    image: /static/images/experiments/cliqz/tour/tour3.jpg
+    image: /static/images/experiments/shared/tour-final.jpg
     copy: >
       <p>You can always give us feedback or disable Cliqz from Test Pilot.</p>
 notifications: []
