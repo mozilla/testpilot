@@ -31,21 +31,21 @@ export default class Header extends React.Component {
   renderSettingsMenu() {
     if (this.shouldRenderSettingsMenu()) {
       return (
-        <div data-hook="settings">
-          <div className="settings-contain" data-hook="active-user">
+        <div>
+          <div className="settings-contain">
              <div className={classnames(['button', 'outline', 'settings-button'], { active: this.showSettingsMenu() })}
                   onClick={e => this.toggleSettings(e)}
-                  data-hook="settings-button" data-l10n-id="menuTitle">Settings</div>
+                  data-l10n-id="menuTitle">Settings</div>
                {this.showSettingsMenu() && <div className="settings-menu" onClick={e => this.settingsClick(e)}>
                <ul>
-                 <li><a onClick={e => this.wiki(e)} data-l10n-id="menuWiki" data-hook="wiki"
+                 <li><a onClick={e => this.wiki(e)} data-l10n-id="menuWiki"
                     href="https://wiki.mozilla.org/Test_Pilot" target="_blank">Test Pilot Wiki</a></li>
-                 <li><a onClick={e => this.discuss(e)} data-l10n-id="menuDiscuss" data-hook="discuss"
+                 <li><a onClick={e => this.discuss(e)} data-l10n-id="menuDiscuss"
                     href="https://discourse.mozilla-community.org/c/test-pilot" target="_blank">Discuss Test Pilot</a></li>
-                 <li><a onClick={e => this.fileIssue(e)} data-l10n-id="menuFileIssue" data-hook="issue"
+                 <li><a onClick={e => this.fileIssue(e)} data-l10n-id="menuFileIssue"
                     href="https://github.com/mozilla/testpilot/issues/new" target="_blank">File an Issue</a></li>
                  <li><hr /></li>
-                 <li><a onClick={e => this.retire(e)} data-l10n-id="menuRetire" data-hook="retire">Uninstall Test Pilot</a></li>
+                 <li><a onClick={e => this.retire(e)} data-l10n-id="menuRetire">Uninstall Test Pilot</a></li>
                </ul>
              </div>}
           </div>

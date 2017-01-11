@@ -17,32 +17,32 @@ export default class EmailDialog extends React.Component {
 
     return (
       <div className="modal-container">
-        {isFirstPage && <div data-hook="first-page" className="modal feedback-modal modal-bounce-in">
+        {isFirstPage && <div className="modal feedback-modal modal-bounce-in">
           <header>
             <h3 className="title" data-l10n-id="emailOptInDialogTitle">Welcome to Test Pilot!</h3>
           </header>
           <form>
             <div className="modal-content modal-form centered">
               <p data-l10n-id="emailOptInMessage" className="">Find out about new experiments and see test results for experiments you've tried.</p>
-              {!isValidEmail && <p className="error" data-hook="invalid-email" data-l10n-id="emailValidationError" >Please use a valid email address!</p>}
-              <input data-hook="email" data-l10n-id="emailOptInInput" placeholder="email goes here :)"
+              {!isValidEmail && <p className="error" data-l10n-id="emailValidationError" >Please use a valid email address!</p>}
+              <input data-l10n-id="emailOptInInput" placeholder="email goes here :)"
                      onChange={e => this.handleEmailChange(e)}
                      value={this.state.email} />
             </div>
             <div className="modal-actions">
-              <button onClick={e => this.submit(e)} data-hook="submit-email" data-l10n-id="emailOptInButton" className="submit button large default">Sign me up</button>
-              <a onClick={e => this.skip(e)} data-hook="cancel-modal" data-l10n-id="emailOptInSkip" className="cancel modal-escape" href="">Skip</a>
+              <button onClick={e => this.submit(e)} data-l10n-id="emailOptInButton" className="submit button large default">Sign me up</button>
+              <a onClick={e => this.skip(e)} data-l10n-id="emailOptInSkip" className="cancel modal-escape" href="">Skip</a>
             </div>
           </form>
         </div>}
-        {!isFirstPage && <div data-hook="second-page" className="modal">
+        {!isFirstPage && <div className="modal">
           <header>
             <h3 className="title" data-l10n-id="emailOptInConfirmationTitle">Email Sent</h3>
           </header>
           <div className="modal-content centered">
             <div className="envelope"></div>
             <p data-l10n-id="emailOptInSuccessMessage2">Thank you!</p>
-            <button onClick={e => this.continue(e)} className="button default" data-hook="continue" data-l10n-id="emailOptInConfirmationClose">On to the experiments...</button>
+            <button onClick={e => this.continue(e)} className="button default" data-l10n-id="emailOptInConfirmationClose" data-hook="continue">On to the experiments...</button>
           </div>
         </div>}
       </div>
