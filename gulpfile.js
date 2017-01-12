@@ -26,20 +26,23 @@ gulp.task('clean', () => del([
   config.DJANGO_OLD_STATIC
 ]));
 
-gulp.task('build', [
-  'addon-copy-locales',
+gulp.task('build', done => runSequence(
   'content-build',
+  'content-build-en',
+  'addon-copy-locales',
   'scripts-build',
   'styles-build',
   'images-build',
   'assets-build',
-  'pages-build'
-]);
+  'pages-build',
+  done
+));
 
 gulp.task('watch', [
-  'addon-watch-locales',
   'self-watch',
   'content-watch',
+  'content-watch-en',
+  'addon-watch-locales',
   'scripts-watch',
   'styles-watch',
   'images-watch',
