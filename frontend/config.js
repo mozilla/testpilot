@@ -8,9 +8,10 @@ module.exports = {
   ENABLE_DEV_CONTENT: (process.env.ENABLE_DEV_CONTENT === '1'),
   AVAILABLE_LOCALES: (process.env.ENABLE_DEV_LOCALES === '1') ?
     // All locales on Pontoon for local & dev
-    fs.readdirSync('./locales').join(',') :
+    // en is copied from en-US at build time, so we have to add it special
+    'en,' + fs.readdirSync('./locales').join(',')  :
     // Enabled locales for stage & production - update as they reach 100%
-    'en-US,cs,de,dsb,es-ES,fr,fy-NL,hsb,hu,it,nl,pt-BR,ru,sv-SE,uk,zh-CN,zh-TW',
+    'en-US,en,cs,de,dsb,es-ES,fr,fy-NL,hsb,hu,it,nl,pt-BR,ru,sv-SE,uk,zh-CN,zh-TW',
 
   // TODO: Move addon build to a better path
   ADDON_SRC_PATH: './addon/',

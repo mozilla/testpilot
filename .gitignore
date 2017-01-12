@@ -22,6 +22,7 @@ media/
 node_modules/
 static/
 tmp/
+locales/en/
 
 # Files to ignore within specific directories
 addon/*.rdf
