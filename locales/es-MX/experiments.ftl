@@ -19,6 +19,7 @@ activitystreamContributors9Title = Director de producto
 activitystreamContributors10Title = Director de ingeniería
 activitystreamContributors11Title = Ingeniero de software
 activitystreamContributors12Title = Diseñador principal de UX
+cliqzDescription = Obtén resultados de búsqueda más rápidos. Cliqz muestra sugerencias debajo de la barra de direcciones cuando escribes. Todo eso manteniendo tu privacidad.
 minvidDescription = Mantén los vídeos en un lugar privilegiado. Min Vid te permite ver vídeos de YouTube y Vimeo en un pequeño marco que permanece en primer plano mientras navegas por la web.
 minvidIntroduction = <p>¿Te encanta ver vídeos? ¿Te encanta hacer tus tareas al mismo tiempo que ves un vídeo? Prueba Min Vid. Es como un cuadro dentro de un cuadro: uno es un vídeo y el otro, toda la Web.</p><ul> <li><strong>Haz clic e inicia:</strong> abre el marco de Mid Vid para que el vídeo se reproduzca en primer plano mientras navegas.</li> <li><strong>Colócalo donde quieras:</strong> Mid Vid te permite arrastrar el marco del vídeo a cualquier punto del escritorio.</li> <li><strong>Todos los controles donde los necesitas:</strong> Mid Vid incluye controles que te permiten pausar/reproducir, arrastrar el cabezal de reproducción, minimizar y ajustar el volumen.</li></ul>
 minvidMeasurements = <p>Además de la <a href="/privacy">información</a> que recopilan todos los experimentos de Test Pilot, te damos unos consejos para que sepas qué ocurre cuando usas Min Vid:</p><ul> <li>Recopilamos información de uso cuando accedes al menú contextual, al icono para experimentar y a los controles de usuario.</li> <li>También recopilamos información sobre el número de veces que te aparece un vídeo que se puede reproducir, las veces que lo reproduces y el servicio que lo proporcionó. Esto nos ayuda a entender la utilidad del experimento para los usuarios.</li> <li>No recopilamos información sobre los vídeos específicos que encuentres.</li></ul>
@@ -45,3 +46,5 @@ nomore404sContributors1Title = Desarrollador, Wayback Machine, The Internet Arch
 nomore404sContributors2Title = Director, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Senior Crawl Engineer, The Internet Archive
 pageshotDescription = Intuitivas capturas de pantalla directamente desde el navegador. Captura, guarda y comparte capturas de pantallas mientras navegas por la Web con Firefox.
+tabcenterDescription = ¿Cómo sería mover las pestañas desde la parte superior del navegador a un lateral? ¡Lo queríamos descubrir!
+trackingprotectionDescription = ¿Nos ayudas a mejorar la Protección contra rastreo? Este experimento activa la Protección contra rastreo y te facilita poder enviar informes de los problemas que veas mientras navegas.
