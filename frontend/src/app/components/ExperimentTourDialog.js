@@ -46,9 +46,9 @@ export default class ExperimentTourDialog extends React.Component {
                 </div>
               </div>
               {step.copy &&
-                <div className="tour-text"
-                     data-l10n-id={this.l10nId(['tour_steps', idx, 'copy'])}
-                     dangerouslySetInnerHTML={{ __html: step.copy }}></div>}
+                <div className="tour-text">
+                  <p data-l10n-id={this.l10nId(['tour_steps', idx, 'copy'])}>{step.copy}</p>
+                </div>}
             </div>
           ))}
           <div className="tour-actions">

@@ -54,20 +54,16 @@ details:
 tour_steps:
   -
     image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour1.jpg
-    copy: >
-      <p>Select the icon to start using Min Vid.</p>
+    copy: The first step (is the hardest)
   -
     image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour2.jpg
-    copy: >
-      <p>Play video in the foreground while you continue to browse.</p>
+    copy: The second step
   -
     image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour3.jpg
-    copy: >
-      <p>Access controls in the frame to adjust volume, play, pause and move the video.</p>
+    copy: The third step
   -
     image: /static/images/experiments/shared/tour-final.jpg
-    copy: >
-      <p>You can always give us feedback or disable Min Vid from Test Pilot.</p>
+    copy: The final step
 notifications: []
 contributors:
   -

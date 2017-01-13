@@ -62,15 +62,13 @@ tour_steps:
   -
     image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour1.jpg
     copy: >
-      <p>The shield indicates Tracking Protection is on. With a slash, it's off.</p>
+      The shield indicates Tracking Protection is on. With a slash, it's off.
   -
     image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour2.jpg
-    copy: >
-      <p>Tell us when things work and when they don't.</p>
+    copy: Tell us when things work and when they don't.
   -
     image: /static/images/experiments/shared/tour-final.jpg
-    copy: >
-      <p>You can always disable Tracking Protection from Test Pilot.</p>
+    copy: You can always disable Tracking Protection from Test Pilot.
 notifications: []
 contributors:
   -
@@ -91,6 +89,6 @@ contributors_extra: >
 contributors_extra_url: 'https://mzl.la/2fYneDq'
 installation_count: 1
 created: '2016-09-22T00:07:28.847430Z'
-locale_blocklist: 
+locale_blocklist:
   - 'de'
 order: 3

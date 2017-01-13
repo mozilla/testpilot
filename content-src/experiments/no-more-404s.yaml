@@ -54,13 +54,13 @@ tour_steps:
   -
     image: /static/images/experiments/no-more-404s/experiments_experimenttourstep/d/a/dafca30f93dadf7f13cc48d389e08f84_image_1470245154_0851.jpg
     copy: >
-      <p>Just browse the web as you normally do. If you encounter a 404 page,
-        we will let you know if an archived version is a available on the Wayback
-        Machine.</p>
+      Just browse the web as you normally do. If you encounter a 404 page,
+      we will let you know if an archived version is a available on the Wayback
+      Machine.
   -
     image: /static/images/experiments/shared/tour-final.jpg
     copy: >
-      <p>You can always give us feedback or disable No More 404s from Test Pilot.</p>
+      You can always give us feedback or disable No More 404s from Test Pilot.
 notifications:
   -
     id: 1
@@ -85,6 +85,6 @@ contributors:
     avatar: /static/images/experiments/no-more-404s/avatars/adam-miller.jpg
 installation_count: 20377
 created: '2016-08-03T17:25:54.612365Z'
-locale_blocklist: 
+locale_blocklist:
   - 'de'
 order: 6
