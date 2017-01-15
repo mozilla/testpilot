@@ -23,6 +23,7 @@ cliqzDescription = Obtenez des résultats de recherche plus rapidement. Cliqz af
 cliqzIntroduction = Obtenez des résultats de recherche plus rapidement, directement dans le navigateur. Commencez à saisir une requête et obtenez des suggestions en temps réel sous la barre d’adresse. Et parce que Cliqz évite de collecter des données personnelles identifiables ou de créer un profil des utilisateurs, vos résultats sont davantage privés.
 cliqzDetails0Copy = Regardez les résultats apparaître comme par magie pendant la saisie dans la barre d’adresse.
 cliqzDetails1Copy = Consultez des condensés d’information en temps réel (comme la météo) sous la barre d’adresse.
+cliqzDetails2Copy = Revenez à vos sites préférés en un clic lorsque vous ouvrez un nouvel onglet. Vous pouvez même personnaliser ceux que vous préférez.
 cliqzToursteps0Copy = <p>Commencez la saisie dans la barre d’adresse pour voir apparaître des résultats en temps réel.</p>
 cliqzToursteps1Copy = <p>Ouvrez un nouvel onglet pour ajouter vos sites web préférés et y accéder en un clic.</p>
 cliqzToursteps2Copy = <p>Vous pouvez nous faire part de votre avis à tout moment ou désactiver Cliqz de Test Pilot.</p>
