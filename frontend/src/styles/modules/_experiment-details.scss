@@ -431,7 +431,7 @@
 }
 
 @include respond-to('small') {
-  [data-hook='experiment-page'] {
+  #experiment-page {
     .card-list {
       margin: 0 0 $grid-unit;
     }

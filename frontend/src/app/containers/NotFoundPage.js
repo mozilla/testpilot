@@ -8,7 +8,7 @@ export default class NotFoundPage extends React.Component {
     return (
       <View centered={true} showNewsletterFooter={false} showFooter={false} showHeader={false}
             {...this.props}>
-        <div data-hook="no-found-page">
+        <div id="not-found-page">
           <div className="centered-banner">
             <div id="four-oh-four" className="modal delayed-fade-in">
               <h1 data-l10n-id="notFoundHeader" className="title">Four Oh Four!</h1>
