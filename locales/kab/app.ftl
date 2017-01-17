@@ -136,8 +136,13 @@ experimentCardLearnMore = Issin ugar
 # A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
+feedbackSubmitButton = Bdu aḥedqis fessusen
 feedbackCancelButton = Mdel
 feedbackUninstallTitle = Tanemirt!
+feedbackUninstallCopy = 
+  | Attekki yinek di Firefox Test Pilot yemmal-d
+  | aṭas! Ma ulac aɣilif senqed tirmitin nneɣ,
+  | udiɣ qim deg umaynut i wayen nniḍen ar zdat!
 
 
 
@@ -145,6 +150,14 @@ feedbackUninstallTitle = Tanemirt!
 [[ discussNotify ]]
 
 discussNotifyTitle = Rǧǧu kan yiwet tasint...
+discussNotifyMessageAccountless = 
+  | <p>Akken ad teqqimeḍ deg usekyed n termitin, nesseqdac ameẓlu n unmager azɣaray.
+  | Yessefk ad ternuḍ amiḍan ma tebɣiḍ
+  | ad tettekkiḍ deg unmager.</p>
+  | <p>Ma terniḍ amiḍan ad tizmireḍ
+  | ad tazneḍ tikti s useqdec n Test Pilot.
+  | <br>
+  | (S tidett neqqaṛ akk ayagi)</p>
 discussNotifySubmitButton = Awi-yi ar unmager
 discussNotifyCancelButton = Sefsex
 
@@ -162,6 +175,7 @@ experimentPreFeedbackLinkCopy = Fk-ed  tuɣalin n usuddem ɣef urmitan { $title 
 [[ experimentPromo ]]
 
 experimentPromoHeader = Theggaḍ ad tesrifgeḍ?
+experimentPromoSubheader = Nbennu timahilin n uzekka n i tsuta d-iteddun n Firefox. Sebded Test Pilot akken ad ten-tɛerḍeḍ!
 
 
 
@@ -169,6 +183,7 @@ experimentPromoHeader = Theggaḍ ad tesrifgeḍ?
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } ittwarmed.
+installErrorMessage = Ihuh… { $title } ur yermid ara. Ɛreḍ ticki.
 participantCount = <span>{ $installation_count }</span> imttekkiyen
 otherExperiments = Ɛreḍ ula d tirmitin-agi nniḍen.
 giveFeedback = Awi-d  tuɣalin n usuddem
@@ -207,11 +222,14 @@ upgradeNoticeLink = Amek ad tleqmeḍ Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Kkes Test Pilot?
+retireMessage = Akken teɣiḍ. Tigwat-agi ad tessens akk ikayaden urmiden, ad yekkes azegrir akked isefka n umiḍan inek ɣef iqeddacen nneɣ.
+retireEmailMessage = Akken ur tremseḍ ara isallen, sit ɣef useɣwen <em>ffeɣ seg ujerred</em> deg izen i d-yuzen Test pilot.
 retireSubmitButton = Kemmel
 retireCancelButton = Sefsex
 pageTitleRetirePage = Firefox Test Pilot - Kkes Test Pilot
 retirePageProgressMessage = Asexsi...
 retirePageHeadline = Tanemmirt ɣef usrifeg!
+retirePageSurveyButton = Bdu aḥedqis fessusen
 
 
 
@@ -229,6 +247,7 @@ restartIntroThree = Fren tirmitin inek
 [[ share ]]
 
 sharePrimary = Tḥemleḍ Test Pilot? Mudd-aɣ-d afus ad d-naf kra n isekyaden.
+shareSecondary = neɣ nɣel sakin senteḍ aseɣwen-agi...
 shareEmail = Imayl
 shareCopy = Nɣel
 
