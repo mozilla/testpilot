@@ -56,5 +56,15 @@ nomore404sContributors3Title = Senior Crawl Engineer, The Internet Archive
 pageshotDescription = Intuitivas capturas de pantalla directamente desde el navegador. Captura, guarda y comparte capturas de pantallas mientras navegas por la Web con Firefox.
 pageshotIntroduction = <p>Page Shot te permite tomar, compartir y recuperar capturas de pantalla sin tener que salirte de Firefox.</p><ul><li><strong>Vista en cuadrícula:</strong> Navega por las imágenes en miniatura de las capturas de pantalla que has guardado</li><li><strong>Búsqueda inteligente:</strong> Encuentra las capturas con solo una palabra clave. Page Shot hace un índice de los títulos y textos de las páginas en las capturas de pantalla</li><li><strong>Compartir en un solo paso:</strong> Publica tus capturas en las redes sociales o copia el enlace compartido desde la parte superior de la ventana de tu navegador.</li></ul>
 pageshotMeasurements = <p>Además de los <a href="/privacy">datos</a> recopilados por todos los experimentos de Test Pilot, aquí te decimos lo que ocurre cuando usas Page Shot: </p><ul><li>guardamos tus capturas en los servidores de Mozilla a cuales podrás acceder en cualquier momento. Accederemos a dichas capturas solo para asegurar el funcionamiento del servicio, o sea si alguién nos envía un enlace a una captura que lleva tu "marca", o para diagnosticar un problema. Analizaremos también todas las capturas para hacer mejoras a Page Shot, por ejempo si queremos identificar el tamaño y números de capturas promedio que toman los usuarios.</li><li>Recopilamos datos sobre el uso para saber cómo interactúas con el producto
+pageshotToursteps1Copy = Resalta el área que quieres capturar.
+pageshotContributors2Title = Diseñador de UX
 tabcenterDescription = ¿Cómo sería mover las pestañas desde la parte superior del navegador a un lateral? ¡Lo queríamos descubrir!
+tabcenterContributors0Title = Firefox UX
+tabcenterContributors1Title = Firefox UX
+tabcenterContributors2Title = Firefox UX
+tabcenterContributors3Title = Firefox UX
 trackingprotectionDescription = ¿Nos ayudas a mejorar la Protección contra rastreo? Este experimento activa la Protección contra rastreo y te facilita poder enviar informes de los problemas que veas mientras navegas.
+trackingprotectionContributors0Title = Desarrollador web
+trackingprotectionContributors1Title = Diseñador principal de UX
+trackingprotectionContributors2Title = Ingeniero principal de QA
+universalsearchContributors3Title = Ingeniero principal
