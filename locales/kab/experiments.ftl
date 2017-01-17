@@ -1,4 +1,6 @@
 activitystreamDescription = Ulac asuddem n umazaray neq asebter agejdan amaynut, d ayen fessusen akken ad tafeḍ ayen tebɣiḍ s Firefox.
+activitystreamDetails0Copy = Sit ɣe yiccer amaynut, sakin s yiwen usit ad tedduḍ ar ismal inek inuraf.
+activitystreamDetails1Copy = Wali ismal yettwarzan yakan akken ad tedduḍ deg ubrid-ik.
 activitystreamContributors0Title = Ajenyuṛ n useɣẓan
 activitystreamContributors1Title = Ajenyuṛ n web
 activitystreamContributors2Title = Aneflau n useɣẓan
@@ -12,6 +14,7 @@ activitystreamContributors9Title = Anedbal n ufaris
 activitystreamContributors10Title = Anebdal n iseɣẓanen
 activitystreamContributors11Title = Ajenyuṛ n tneflit
 activitystreamContributors12Title = Imcebbeḥ amusnaw
+cliqzToursteps0Copy = <p>Bdu aru deg ufeggag n tensa URL akken ad d-banen igmaḍ s wakud ilaw.</p>
 minvidDescription = Tividyutin ad qqiment gar wallen-ik. Min Vid ad d-yesken tividyutin n YouTube akked Vimeo deg usfaylu meẓẓiyen ara yeqqimen zdat-k ticki tettinigeḍ di Web.
 minvidToursteps0Copy = <p>Fren tignit akken ad tesenkreḍ aseqdec n Min Vid.</p>
 minvidContributors0Title = Ajenyuṛ

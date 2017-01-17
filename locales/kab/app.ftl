@@ -271,6 +271,7 @@ incompatibleHeader = Tarmit-agi ur temṣada ara akked izegrar i tesbedded.
 newsletterFormEmailPlaceholder = 
   [html/placeholder] Imayl inek dagi
 newsletterFormDisclaimer = Ak-d-nazen talɣut icudden ar Test Pilot.
+newsletterFormPrivacyNotice = Qebleq d akken Mozilla ad iseqdec iseka yinu akken tella di <a>tsertit-agi n tbaḍnit</a>.
 newsletterFormSubmitButton = Jerred tura
 newsletterFormSubmitButtonSubmitting = Tuzna...
 
@@ -281,6 +282,7 @@ newsletterFormSubmitButtonSubmitting = Tuzna...
 
 newsletterFooterError = Teḍra-d tuccḍa di tuzna n yimayl inek. Ɛreḍ tikelt nniḍen? 
 newsletterFooterHeader = Qqim akked umaynut
+newsletterFooterBody = Wali tirmitin timaynutin udiɣ rmes-d igmaḍ n tid i tɛerḍeḍ.
 newsletterFooterSuccessHeader = Tanemmirt!
 
 
