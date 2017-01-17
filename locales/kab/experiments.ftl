@@ -35,6 +35,7 @@ pageshotToursteps4Copy = <p>Tzemreḍ yal tikelt ad d-muddeḍ tiktiwin inek ne�
 pageshotContributors0TitleEngineer = Ajenyuṛ n tneflit
 pageshotContributors1Title = Ajenyuṛ n tneflit
 pageshotContributors2Title = Imcebbeḥ
+tabcenterDescription = Nenna-yas ahat helha limer ad nawi iccaren ar idis? Nebɣa ad nwali amek!
 tabcenterDetails0Copy = Awi iccaren inek ar idis.
 tabcenterToursteps0Copy = <p>Di tazwara, akk iccaren inek deg idis tura.</p>
 tabcenterToursteps1Copy = <p>Deqs n yiccaren? Tab Center ak yeǧǧ ad ten-tnadiḍ.</p>
