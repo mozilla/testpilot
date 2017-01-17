@@ -139,6 +139,10 @@ experimentCardLearnMore = Concer más
 feedbackSubmitButton = Respondé una encuesta corta
 feedbackCancelButton = Cerrar
 feedbackUninstallTitle = ¡Gracias!
+feedbackUninstallCopy = 
+  | ¡Tu participación en Firefox Test Pilot significa  
+  | mucho! ¡Mirá nuestros otros experimentos,
+  | y mantenete al tanto que habrá más!
 
 
 
@@ -194,6 +198,7 @@ upgradeNoticeLink = Cómo actualizar Firefox.
 
 retireDialogTitle = ¿Desinstalar Test Pilot?
 retireMessage = Como quieras. Se deshabilitarán los tests activos, se desinstalará el complemento y se eliminará la información de tu cuenta de nuestros servidores.
+retireSubmitButton = Continuar
 retireCancelButton = Cancelar
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar Test Pilot
 retirePageProgressMessage = Apagando...

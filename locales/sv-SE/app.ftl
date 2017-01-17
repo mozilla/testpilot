@@ -116,7 +116,7 @@ emailOptInConfirmationClose = Vidare till experimenten...
 
 experimentListPageHeader = Redo för start!
 experimentListPageSubHeader = Välj de funktioner du vill prova. <br> Kom tillbaka snart för fler experiment.
-experimentListEnabledTab = Aktivera
+experimentListEnabledTab = Aktiverad
 experimentListJustLaunchedTab = Nyligen startad
 experimentListJustUpdatedTab = Nyligen uppdaterad
 experimentListEndingTomorrow = Slutar imorgon
