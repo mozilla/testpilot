@@ -55,5 +55,6 @@ nomore404sContributors2Title = Director, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Senior Crawl Engineer, The Internet Archive
 pageshotDescription = Intuitivas capturas de pantalla directamente desde el navegador. Captura, guarda y comparte capturas de pantallas mientras navegas por la Web con Firefox.
 pageshotIntroduction = <p>Page Shot te permite tomar, compartir, recuperar capturas de pantalla, sin tener que salirte de Firefox.</p><ul><li><strong>
+pageshotMeasurements = <p>Además de los <a href="/privacy">datos</a> recopilados por todos los experimentos de Test Pilot, aquí te decimos lo que ocurre cuando usas Page Shot: </p><ul><li>guardamos tus capturas en los servidores de Mozilla que estarán disponibles para tu consulta. Accederemos a dichas capturas solo para asegurar el funcionamiento del servicio, o sea si alguién 
 tabcenterDescription = ¿Cómo sería mover las pestañas desde la parte superior del navegador a un lateral? ¡Lo queríamos descubrir!
 trackingprotectionDescription = ¿Nos ayudas a mejorar la Protección contra rastreo? Este experimento activa la Protección contra rastreo y te facilita poder enviar informes de los problemas que veas mientras navegas.
