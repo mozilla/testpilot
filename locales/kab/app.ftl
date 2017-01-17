@@ -229,6 +229,7 @@ retireCancelButton = Sefsex
 pageTitleRetirePage = Firefox Test Pilot - Kkes Test Pilot
 retirePageProgressMessage = Asexsi...
 retirePageHeadline = Tanemmirt ɣef usrifeg!
+retirePageMessage = NEssaram d akken tesɛeddaḍ akud igarrzen deg usekyed yid-neɣ. <br> Uɣal-d melmi tebɣiḍ.
 retirePageSurveyButton = Bdu aḥedqis fessusen
 
 
@@ -254,6 +255,7 @@ shareCopy = Nɣel
 # Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } add ifak di { $completedDate }
 eolNoticeLink = Issin ugar
+eolDisableMessage = Tarmit { $title } tfuk yakan. Ticki tettwakkes, ur tettizmireḍ ara ad tesbeddeḍ tikelt nniḍen si Test Pilot.
 completedDateLabel = Azemz n tagara n termit <b>{ $completedDate }</b>
 
 
@@ -262,6 +264,7 @@ completedDateLabel = Azemz n tagara n termit <b>{ $completedDate }</b>
 [[ incompatible ]]
 
 incompatibleHeader = Tarmit-agi ur temṣada ara akked izegrar i tesbedded.
+incompatibleSubheader = Ma ulac aɣilif <a>sens izegrar-agi</a> send ad tremdeḍ tarmit-agi:
 
 
 
@@ -271,7 +274,7 @@ incompatibleHeader = Tarmit-agi ur temṣada ara akked izegrar i tesbedded.
 newsletterFormEmailPlaceholder = 
   [html/placeholder] Imayl inek dagi
 newsletterFormDisclaimer = Ak-d-nazen talɣut icudden ar Test Pilot.
-newsletterFormPrivacyNotice = Qebleq d akken Mozilla ad iseqdec iseka yinu akken tella di <a>tsertit-agi n tbaḍnit</a>.
+newsletterFormPrivacyNotice = Qebleɣ d akken Mozilla ad iseqdec iseka yinu akken tella di <a>tsertit-agi n tbaḍnit</a>.
 newsletterFormSubmitButton = Jerred tura
 newsletterFormSubmitButtonSubmitting = Tuzna...
 
@@ -284,6 +287,7 @@ newsletterFooterError = Teḍra-d tuccḍa di tuzna n yimayl inek. Ɛreḍ tikel
 newsletterFooterHeader = Qqim akked umaynut
 newsletterFooterBody = Wali tirmitin timaynutin udiɣ rmes-d igmaḍ n tid i tɛerḍeḍ.
 newsletterFooterSuccessHeader = Tanemmirt!
+newsletterFooterSuccessBody = Ma yella ur tsentmeḍ ara ajerred inek ar tebratt n telɣut iciudden arMozilla, yessefk hata ad teggeḍ tura. Ma ulac aɣilif, senqed amiḍan inek imayl neq wali daɣen deg ispamen sakin nadi izen-nneɣ.
 
 
 
@@ -298,6 +302,7 @@ localeWarningSubtitle = Tzemreḍ ad tremdeḍ akka tura ma yella tebɣiḍ.
 # An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledHeader = Awal aneggaru send tanekra!
 experimentsListNoneInstalledSubheader = Twejḍeḍ i wakken ad tɛarḍeḍ armitan amaynut n Test Pilot? fren yiwen i wakken ad tremdeḍ, sqedc-it, ini-yaɣ-d d acu-tt tmuɣli-inek.
 experimentsListNoneInstalledCTA = Ur k-d-yehwi ara? <a>Eǧǧ-aq ad nzeṛ acuɣer</a>.
 
