@@ -36,6 +36,7 @@ pageshotContributors0TitleEngineer = Ajenyuṛ n tneflit
 pageshotContributors1Title = Ajenyuṛ n tneflit
 pageshotContributors2Title = Imcebbeḥ
 tabcenterDescription = Nenna-yas ahat helha limer ad nawi iccaren ar idis? Nebɣa ad nwali amek!
+tabcenterMeasurements = <p>S timerna ar <a href="/privacy">isefka</a> i d-yettwaleqḍen si tirmitin meṛṛa n Test Pilot, hatent aya tɣawsiwin tigejdanin i yessefk ad tissineḍ ɣef wayen iḍerrun ticki tseqdaceḍ Tab Center :</p><ul> <li>Nleqqeḍ-d isefka ɣef useqdec inek d wamek tessedduyeḍ Tab Center, am umḍan n ugnaẓ neɣ n tneflit n Tab Center.</li> <li>Nleqqed-d daɣen talɣut ɣef useqdec inek n yiccaren, am umḍan n wid teldiḍ deg iwen n tikelt akked wakud anda qqimen ldin.</li> <li>Tab Center ur d-ileqqed ara talɣut ɣef ismal tettwalid neɣ agbur n yiccaren.</li></ul>
 tabcenterDetails0Copy = Awi iccaren inek ar idis.
 tabcenterToursteps0Copy = <p>Di tazwara, akk iccaren inek deg idis tura.</p>
 tabcenterToursteps1Copy = <p>Deqs n yiccaren? Tab Center ak yeǧǧ ad ten-tnadiḍ.</p>
