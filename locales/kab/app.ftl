@@ -204,7 +204,7 @@ bugReports = Ineqqisen n ibugen
 discourse = Discourse
 tourOnboardingTitle = { $title } ittwarmed!
 tourDoneButton = Tefra
-userCountContainer = Llan <span>{ $installation_count }</span> n yemdanen ttaɣraḍen { $title } akka tura!
+userCountContainer = Llan <span>{ $installation_count }</span> n yemdanen ttaɛraḍen { $title } akka tura!
 userCountContainerAlt = Ikker tura akka!
 highlightPrivacy = Tabaḍnit inek
 
