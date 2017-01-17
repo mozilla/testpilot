@@ -24,7 +24,7 @@
   }
 
   &.outline {
-    background: none;
+    background-color: none;
     border-color: $white;
     color: $white;
     opacity: .6;
@@ -32,7 +32,7 @@
 
     &:hover,
     &:focus {
-      background: $transparent-white-1;
+      background-color: $transparent-white-1;
       opacity: .8;
     }
 
@@ -40,7 +40,7 @@
     &.active,
     &.active:hover,
     &.active:focus {
-      background: $transparent-white-1;
+      background-color: $transparent-white-1;
       opacity: 1;
     }
   }
