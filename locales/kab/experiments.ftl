@@ -20,6 +20,7 @@ activitystreamContributors10Title = Anebdal n iseɣẓanen
 activitystreamContributors11Title = Ajenyuṛ n tneflit
 activitystreamContributors12Title = Imcebbeḥ amusnaw
 cliqzDescription = Awi-d igmaḍ n unadi s zreb. Cliqz ad d-yesken isumar daw n ufeggag n tensa URL skud tettaruḍ. Ayagi akk s ummesten n tudert inek tusligt.
+cliqzIntroduction = Awi-d igmaḍ s zreb, srid deg iminig. Bdu aru sakin ad twaliḍ isumar s wakud ilaw daw n ufeggag n tensa URL. Imi Cliqz izeggel alqaḍ n isefka udmawanen yettwasnen neɣ ad yernu amaɣnu n iseqdacen, igmaḍ inek ad uɣalen d ibaḍniyen.
 cliqzDetails0Copy = Wali igmaḍ ttbanen-d amzun d tiḥḥerga ticki tettaruḍ deg ufeggag n tensa.
 cliqzDetails1Copy = Wali deqs n taɣult s wakud ilaw (am tegnawt) daw n ufeggag n tensa.
 cliqzDetails2Copy = Uɣal ar ismal inek i tḥemleḍ s yiwen n usiti ticki teldiḍ-d iccer maynut. Tzemreḍ daɣen ad sagneḍ wid tḥemled..
