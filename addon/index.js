@@ -10,7 +10,7 @@ const { AddonManager } = require('resource://gre/modules/AddonManager.jsm');
 const aboutConfig = require('sdk/preferences/service');
 const self = require('sdk/self');
 const store = require('sdk/simple-storage').storage;
-const tabs = require('sdk/tabs');
+// const tabs = require('sdk/tabs');
 const { PrefsTarget } = require('sdk/preferences/event-target');
 const URL = require('sdk/url').URL;
 
@@ -122,12 +122,14 @@ function updatePrefs(environment) {
   }
 }
 
+/*
 function openOnboardingTab() {
   tabs.open({
     url: settings.BASE_URL + '/onboarding',
     inBackground: true
   });
 }
+*/
 
 function experimentsLoaded(experiments) {
   store.availableExperiments = experiments;
@@ -347,9 +349,13 @@ exports.main = function(options) {
   SharePrompt.init(settings);
   NoExperiments.init(settings);
 
+/*
+  // XXX The onboarding tab gets opened in a background tab if an experiment was
+  // installed, and the experiment first run experience collides with it
   if (reason === 'install') {
     openOnboardingTab();
   }
+*/
 
   const installedCount = (store.installedAddons) ? Object.keys(store.installedAddons).length : 0;
   Metrics.sendGAEvent({

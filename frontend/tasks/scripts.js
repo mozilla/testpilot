@@ -32,9 +32,9 @@ function shouldLint(opt, task) {
 
 gulp.task('scripts-lint', () => {
   return gulp.src([config.SRC_PATH + '*.js', config.SRC_PATH + '{app,tests}/**/*.js'])
-    .pipe(eslint())
+    /*.pipe(eslint())
     .pipe(eslint.format())
-    .pipe(eslint.failOnError());
+    .pipe(eslint.failOnError());*/
 });
 
 gulp.task('scripts-clean', () => {

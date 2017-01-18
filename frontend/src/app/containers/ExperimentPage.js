@@ -279,7 +279,8 @@ export class ExperimentDetail extends React.Component {
                 <p data-l10n-id="experimentPromoSubheader">We're building next-generation features for Firefox. Install Test Pilot to try them!</p>
                 <MainInstallButton {...this.props}
                                    eventCategory="HomePage Interactions"
-                                   experimentTitle={title} />
+                                   experimentTitle={title}
+                                   installCallback={ this.installExperiment.bind(this) } />
               </div>
             </div>
           </div>
@@ -648,19 +649,47 @@ export class ExperimentDetail extends React.Component {
     // Ignore subsequent clicks if already in progress
     if (isEnabling) { return; }
 
+    let installAddonPromise = Promise.resolve();
+    if (!this.props.hasAddon) {
+      let {installAddon, requireRestart, sendToGA, eventCategory} = this.props;
+
+      installAddonPromise = installAddon(
+        requireRestart,
+        sendToGA,
+        eventCategory);
+    }
+
     this.setState({
       isEnabling: true,
       isDisabling: false,
-      shouldShowTourDialog: true,
-      progressButtonWidth: evt.target.offsetWidth
+      shouldShowTourDialog: true
     });
 
-    enableExperiment(experiment);
+    installAddonPromise.then(() => {
+      return new Promise((resolve, reject) => {
+        let i = 0;
+        const interval = setInterval(() => {
+          i++;
+          if (window.navigator.testpilotAddon) {
+            console.log("took x iterations", i);
+            clearInterval(interval);
+            resolve();
+          } else if (i > 100) {
+            clearInterval(interval);
+            reject(new Error("window.navigator.testpilotAddon still undefined after 10 seconds"));
+          };
+        }, 100);
+      });
+    }).then(() => {
+      enableExperiment(experiment);
 
-    sendToGA('event', {
-      eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'Enable Experiment',
-      eventLabel: experiment.title
+      sendToGA('event', {
+        eventCategory: 'ExperimentDetailsPage Interactions',
+        eventAction: 'Enable Experiment',
+        eventLabel: experiment.title
+      });
+    }).catch((e) => {
+      console.error(e);
     });
   }
 

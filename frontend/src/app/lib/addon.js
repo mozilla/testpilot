@@ -49,7 +49,7 @@ export function installAddon(requireRestart, sendToGA, eventCategory) {
   cookies.set('first-run', 'true');
 
   if (useMozAddonManager) {
-    mozAddonManagerInstall(downloadUrl).then(() => {
+    return mozAddonManagerInstall(downloadUrl).then(() => {
       gaEvent.dimension7 = RESTART_NEEDED ? 'restart required' : 'no restart';
       sendToGA('event', gaEvent);
       if (RESTART_NEEDED) {
@@ -59,6 +59,7 @@ export function installAddon(requireRestart, sendToGA, eventCategory) {
   } else {
     gaEvent.outboundURL = downloadUrl;
     sendToGA('event', gaEvent);
+    return Promise.resolve();
   }
 }
 
