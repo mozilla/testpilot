@@ -78,7 +78,7 @@
     "mocha-junit-reporter": "^1.12.1",
     "node-normalize-scss": "1.1.1",
     "node-sass": "^3.9.3",
-    "nyc": "^8.3.2",
+    "nyc": "^10.1.0",
     "react-addons-test-utils": "^15.3.1",
     "remarkable": "1.6.2",
     "require-globify": "^1.3.0",
