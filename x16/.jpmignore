@@ -1,0 +1,6 @@
+.*
+*
+!/data/**
+!/locale/**
+!/install.rdf
+!/package.json

@@ -1,0 +1,64 @@
+{
+  "title": "x16",
+  "name": "x16",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Test Pilot is a privacy-sensitive user research program focused on getting new features into Firefox faster.",
+  "repository": "mozilla/testpilot",
+  "homepage": "https://testpilot.firefox.com/",
+  "icon": "resource://@x16/data/icon-96.png",
+  "bugs": {
+    "url": "https://github.com/mozilla/testpilot/issues"
+  },
+  "main": "data/bundle.js",
+  "author": "Mozilla (https://mozilla.org/)",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "permissions": {
+    "multiprocess": true
+  },
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-istanbul": "^3.0.0",
+    "babel-plugin-transform-flow-strip-types": "^6.14.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-2": "^6.17.0",
+    "babel-register": "^6.16.3",
+    "cross-env": "^3.1.3",
+    "flow-bin": "^0.38.0",
+    "flow-coverage-report": "^0.2.0",
+    "flow-typed": "^2.0.0",
+    "jpm": "^1.2.2",
+    "mocha": "^3.1.2",
+    "nyc": "^10.0.0",
+    "prettier": "^0.11.0",
+    "proxyquire": "^1.7.10",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "sinon": "^1.17.6",
+    "webpack": "^2.2.0"
+  },
+  "dependencies": {
+    "lodash": "^4.15.0",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.6.1",
+    "seedrandom": "^2.4.2"
+  },
+  "scripts": {
+    "bash": "bash",
+    "start": "NODE_ENV=production npm run addon",
+    "format": "prettier --flow-parser --single-quote --write data/*.js tools/**/*.js test/*.js src/*.js src/**/*.js src/**/**/*.js",
+    "bundle": "cd src; webpack; cd ..;",
+    "addon": "npm run bundle && jpm post --post-url http://127.0.0.1:8888",
+    "package": "jpm xpi",
+    "tools": "cd tools/control-panel; webpack",
+    "slow-test": "flow --quiet && cross-env NODE_ENV=test nyc mocha --reporter min",
+    "test": "mocha --compilers js:babel-register --reporter min",
+    "coverage": "flow-coverage-report -i 'src/lib/**/*.js' -t html -o coverage/flow && npm run slow-test"
+  }
+}
