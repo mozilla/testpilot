@@ -57,10 +57,13 @@ pageshotDescription = Intuitivas capturas de pantalla directamente desde el nave
 pageshotIntroduction = <p>Page Shot te permite tomar, compartir y recuperar capturas de pantalla sin tener que salirte de Firefox.</p><ul><li><strong>Vista en cuadrícula:</strong> Navega por las imágenes en miniatura de las capturas de pantalla que has guardado</li><li><strong>Búsqueda inteligente:</strong> Encuentra las capturas con solo una palabra clave. Page Shot hace un índice de los títulos y textos de las páginas en las capturas de pantalla</li><li><strong>Compartir en un solo paso:</strong> Publica tus capturas en las redes sociales o copia el enlace compartido desde la parte superior de la ventana de tu navegador.</li></ul>
 pageshotMeasurements = <p>Además de los <a href="/privacy">datos</a> recopilados por todos los experimentos de Test Pilot, aquí te decimos lo que ocurre cuando usas Page Shot:</p><ul><li>guardamos tus capturas en los servidores de Mozilla y son accesibles en cualquier momento. Sin embargo, accederemos a dichas capturas solo para la gestión de este servicio, cuando, por ejemplo, alguien usa nuestra función de "marca" para enviarnos un enlace a una captura, o para diagnosticar un problema. Analizaremos también todas las capturas colectivas para hacer mejoras a Page Shot, al identificar el tamaño y número de capturas promedio que toman los usuarios.</li><li>Recopilamos datos sobre su uso para saber cómo interactúas con el producto, por ejemplo para saber cuántas veces utilizas el botón de captura, guardas una imagen, o encuentras un error al guardar una imagen.</li><li>Para evitar que se haga un mal uso de este servicio, hacemos un monitoreo básico de seguridad. Por ejemplo, recolectamos y conservamos direcciones IP para detectar y bloquear a los usuarios que escanean el servicio con el fin de encontrar páginas privadas.</li><li> La descripción de todos los datos que recolectamos de las visitas a la página web de Page Shot se encuentran nuestra <a href="https://www.mozilla.org/privacy/websites/" target="_blank">Política de privacidad de páginas web, comunicaciones y cookie</a>.</li></ul>
 pageshotDetails0Copy = Selecciona el área de la imagen y guárdala si te gusta; en caso contrario, cancela sin guardar.
-pageshotToursteps1Copy = Resalta el área que quieres capturar.
-pageshotToursteps2Copy = Comparte, guarda o elimina desde el navegador.
-pageshotToursteps3Copy = Busca o navega para buscar capturas de pantallas guardadas.
-pageshotToursteps4Copy = Siempre puedes enviarnos comentarios o deshabilitar Page Shot desde Test Pilot.
+pageshotDetails1Copy = Puedes compartir la imágenes en las redes sociales sin tener que descargar y adjuntar un documento.
+pageshotDetails2Copy = Encuentra las capturas de pantalla fácilmente. Navega por las miniaturas en la vista de cuadrícula o búscalas usando una palabra clave.
+pageshotToursteps0Copy = <p>Selecciona el ícono para empezar a usar Page Shot.</p>
+pageshotToursteps1Copy = <p>Resalta el área que quieres capturar.</p>
+pageshotToursteps2Copy = <p>Comparte, guarda o borra desde el navegador.</p>
+pageshotToursteps3Copy = <p>Busca o navega para encontrar las capturas que has guardado.</p>
+pageshotToursteps4Copy = <p>Siempre puedes darnos tu opinión o desactivar Page Shot desde Test Pilot.</p>
 pageshotContributors0TitleEngineer = Ingeniero de software
 pageshotContributors1Title = Ingeniero de software
 pageshotContributors2Title = Diseñador de UX
