@@ -68,6 +68,7 @@ pageshotContributors0TitleEngineer = Ingeniero de software
 pageshotContributors1Title = Ingeniero de software
 pageshotContributors2Title = Diseñador de UX
 tabcenterDescription = ¿Cómo sería mover las pestañas desde la parte superior del navegador a un lateral? ¡Lo queríamos descubrir!
+tabcenterIntroduction = <p>Esconde tus pestañas. Tab Center esconde tus pestañas al lado de la ventana de tu navegador cuando no las necesitas. Si las quieres ver, se pueden ampliar y tomar fácilmente.</p>
 tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
