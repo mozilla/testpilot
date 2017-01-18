@@ -69,6 +69,9 @@ pageshotContributors1Title = Ingeniero de software
 pageshotContributors2Title = Diseñador de UX
 tabcenterDescription = ¿Cómo sería mover las pestañas desde la parte superior del navegador a un lateral? ¡Lo queríamos descubrir!
 tabcenterIntroduction = <p>Esconde tus pestañas. Tab Center esconde tus pestañas al lado de la ventana de tu navegador cuando no las necesitas. Si las quieres ver, se pueden ampliar y tomar fácilmente.</p>
+tabcenterMeasurements = <p>Además de los <a href="/privacy">datos</a> recolectados por todos los experimentos de Test Pilot, aquí te decimos lo que ocurre cuando usas Tab Center:</p><ul> <li>recolectamos los datos sobre cómo interactúas con Tab Center, o sea cuantas veces amplías o fijas Tab Center.</li> <li>También recolectamos información sobre cómo utilizas las pestañas, o sea cuantas pestañas dejas abiertas al mismo tiempo y por cuanto tiempo las dejas abiertas.</li> <li>Tab Center no recolecta información sobre los sitios que visitas o el contenido de tus pestañas.</li></ul>
+tabcenterDetails0Copy = Mueve tus pestañas hacia un lado.
+tabcenterDetails1Copy = Esconde las pestañas hasta que las necesites.
 tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
