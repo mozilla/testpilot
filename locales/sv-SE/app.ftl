@@ -115,8 +115,6 @@ emailOptInConfirmationClose = Vidare till experimenten...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Redo för start!
-experimentListPageSubHeader = Välj de funktioner du vill prova. <br> Kom tillbaka snart för fler experiment.
 experimentListEnabledTab = Aktiverad
 experimentListJustLaunchedTab = Nyligen startad
 experimentListJustUpdatedTab = Nyligen uppdaterad
