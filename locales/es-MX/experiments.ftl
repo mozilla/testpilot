@@ -83,6 +83,7 @@ tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
 trackingprotectionDescription = ¿Nos ayudas a mejorar la Protección contra rastreo? Este experimento activa la Protección contra rastreo y te facilita poder enviar informes de los problemas que veas mientras navegas.
+trackingprotectionDetails1Copy = Reporta un problema y ayúdanos a resolverlo.
 trackingprotectionContributors0Title = Desarrollador web
 trackingprotectionContributors1Title = Diseñador principal de UX
 trackingprotectionContributors2Title = Ingeniero principal de QA
