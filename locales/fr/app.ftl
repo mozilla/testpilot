@@ -114,8 +114,6 @@ emailOptInConfirmationClose = À propos d’expériences…
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Prêt à décoller !
-experimentListPageSubHeader = Choisissez les fonctionnalités nouvelles que vous voulez tester.<br> Revenez bientôt pour en essayer d’autres.
 experimentListEnabledTab = Activé
 experimentListJustLaunchedTab = Lancé récemment
 experimentListJustUpdatedTab = Mis à jour récemment
@@ -169,7 +167,7 @@ experimentPromoSubheader = Nous élaborons les fonctionnalités de prochaine gé
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } est activé.
