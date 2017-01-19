@@ -114,8 +114,6 @@ emailOptInConfirmationClose = 关于此实验...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = 准备起飞！
-experimentListPageSubHeader = 选择您想尝试的功能。<br>随时回来看看有无更多实验。
 experimentListEnabledTab = 已启用
 experimentListJustLaunchedTab = 刚刚启动
 experimentListJustUpdatedTab = 刚刚更新
@@ -173,7 +171,7 @@ experimentPromoSubheader = 我们正在为下一代的 Firefox 打造新功能�
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } 已启用。
