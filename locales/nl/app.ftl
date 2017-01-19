@@ -114,8 +114,6 @@ emailOptInConfirmationClose = Door naar de experimenten...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Klaar voor de start!
-experimentListPageSubHeader = Kies de functies die u wilt proberen. <br> Kijk binnenkort nog eens voor meer experimenten.
 experimentListEnabledTab = Ingeschakeld
 experimentListJustLaunchedTab = Zojuist gestart
 experimentListJustUpdatedTab = Zojuist bijgewerkt
@@ -179,7 +177,7 @@ experimentPromoSubheader = We bouwen functies van de volgende generatie voor Fir
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } is ingeschakeld.
