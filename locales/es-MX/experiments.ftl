@@ -72,6 +72,11 @@ tabcenterIntroduction = <p>Esconde tus pestañas. Tab Center esconde tus pestañ
 tabcenterMeasurements = <p>Además de los <a href="/privacy">datos</a> recolectados por todos los experimentos de Test Pilot, aquí te decimos lo que ocurre cuando usas Tab Center:</p><ul> <li>recolectamos los datos sobre cómo interactúas con Tab Center, o sea cuantas veces amplías o fijas Tab Center.</li> <li>También recolectamos información sobre cómo utilizas las pestañas, o sea cuantas pestañas dejas abiertas al mismo tiempo y por cuanto tiempo las dejas abiertas.</li> <li>Tab Center no recolecta información sobre los sitios que visitas o el contenido de tus pestañas.</li></ul>
 tabcenterDetails0Copy = Mueve tus pestañas hacia un lado.
 tabcenterDetails1Copy = Esconde las pestañas hasta que las necesites.
+tabcenterDetails2Copy = Personaliza a tu gusto. Tab Center funciona con todos tus temas favoritos de Firefox.
+tabcenterToursteps0Copy = Primero lo primero: ahora todas tus pestaña están en un lado.
+tabcenterToursteps1Copy = ¿Tienes muchas pestañas? Tab Center te ayuda a buscarlas.
+tabcenterToursteps2Copy = Puedes arrastrar el borde de Tab Center para reducirlo o ampliarlo a tu gusto.
+tabcenterToursteps3Copy = Presiona el botón para esconder Tab Center.
 tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
