@@ -114,8 +114,6 @@ emailOptInConfirmationClose = Podívat se na experimenty...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Připravit k odletu!
-experimentListPageSubHeader = Vyberte si funkce, které chcete vyzkoušet. <br> Podívejte se také brzy znovu na nové experimenty.
 experimentListEnabledTab = Povoleno
 experimentListJustLaunchedTab = Právě spuštěno
 experimentListJustUpdatedTab = Právě aktualizováno
@@ -179,7 +177,7 @@ experimentPromoSubheader = Vytváříme funkce pro Firefox nové generace. Nains
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } je povolen.
