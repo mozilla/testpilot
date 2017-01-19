@@ -114,8 +114,6 @@ emailOptInConfirmationClose = Troch nei de eksperiminten…
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Ree!
-experimentListPageSubHeader = Kies de funksjes dy't jo probearje wolle.<br> Kom gau wer werom foar mear eksperiminten.
 experimentListEnabledTab = Ynskeakele
 experimentListJustLaunchedTab = Krekt lansearre
 experimentListJustUpdatedTab = Krekt bywurke
@@ -169,7 +167,7 @@ experimentPromoSubheader = Wy ûntwikkelje foar Firefox de funksjes fan de folgj
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } is ynskeakele.
