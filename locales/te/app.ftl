@@ -43,7 +43,7 @@ discussNotifyCancelButton = రద్దుచేయి
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 tourDoneButton = పూర్తయ్యింది
