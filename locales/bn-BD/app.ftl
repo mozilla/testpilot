@@ -114,8 +114,6 @@ emailOptInConfirmationClose = অন্যান্য পরীক্ষার 
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = আরম্ভের জন্য প্রস্তুত!
-experimentListPageSubHeader = আপনি যে ফিচার চান তা নির্বাচন করুন। <br> আরও পরীক্ষার জন্য পরে আবার দেখুন।
 experimentListEnabledTab = সক্রিয় হয়েছে
 experimentListJustLaunchedTab = নতুন শুরু হয়েছে
 experimentListJustUpdatedTab = এইমাত্র হালানাগাদকৃত
@@ -167,7 +165,7 @@ experimentPromoSubheader = আমরা Firefox এর পরবর্তী প
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } সক্রিয়।
