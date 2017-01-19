@@ -20,6 +20,11 @@ activitystreamContributors10Title = 工程经理
 activitystreamContributors11Title = 软件工程师
 activitystreamContributors12Title = 高级UX设计师
 cliqzDescription = 让搜索更迅捷。当您在地址栏输入时，Cliqz 会即时展示相关建议，同时仍然保有您的隐私。
+cliqzIntroduction = 让搜索更迅捷，不开网页就能搞定。在地址栏输入的同时，就能即时看到网上的相关建议。同时，由于 Cliqz 不会收集能识别您身份的信息，也不会建立用户档案，您的搜索行为将更加私密。
+cliqzDetails1Copy = 在地址栏下方快速查看天气等即时信息。
+cliqzToursteps0Copy = 在地址栏输入，即时看到结果。
+cliqzToursteps1Copy = 打开新标签页，为您最爱的网站添加一键进入的快捷方式。
+cliqzToursteps2Copy = 您可随时提供意见反馈，或在试飞员计划中禁用 Cliqz。
 minvidDescription = 让视频始终显示在屏幕上。Min Vid 让您可以用一个小窗口来显示 YouTube 和 Vimeo 的视频，让您在浏览其他网页时也不必中断。
 minvidIntroduction = <p>很喜欢看视频？想在看视频时还做点别的？试试 Min Vid 吧。它为您提供的功能就像画中画，一个画面是视频，另一个画面是整个互联网。</p><ul> <li><strong>点击即到：</strong>弹出 Min Vid 框架以保持视频在前台播放，不影响您浏览网页。</li> <li><strong>随处可放：</strong> Min Vid 允许您拖放视频框架到您的桌面上的任何地方。</li> <li><strong>灵活可控：</strong> Min Vid 的视频框架包括几个控件，允许您暂停/播放、消除、拖动、最小化，以及调整音量。</li></ul>
 minvidMeasurements = <p>除所有 Test Pilot 实验所收集的<a href="/privacy">数据</a>，您在使用 Min Vid 时还应了解：</p><ul> <li>在您与上下文菜单、实验图标和播放器控件交互时，我们会收集这个使用情况。</li> <li>我们还会收集的是：您遇到可播放视频的次数，您播放视频的次数，以及提供视频的视频服务。这有助于我们了解实验用户对本实验的使用频率。</li> <li>我们不会收集您遇到的具体的视频信息。</li></ul>
