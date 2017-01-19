@@ -114,8 +114,6 @@ emailOptInConfirmationClose = Deneylere geçelim...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Kalkışa hazırsınız!
-experimentListPageSubHeader = Denemek istediğiniz özellikleri seçin.<br>Yeni deneyler için daha sonra yine bakın.
 experimentListEnabledTab = Etkinleştirildi
 experimentListJustLaunchedTab = Yeni çıktı
 experimentListJustUpdatedTab = Yeni güncellendi
@@ -179,7 +177,7 @@ experimentPromoSubheader = Firefox'un yeni nesil özelliklerini inşa ediyoruz. 
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } etkinleştirildi.
