@@ -50,6 +50,7 @@ landingExperimentsTitle = Testa de senaste experimentella funktionerna
 [[ landingInstall ]]
 
 landingInstallButton = Installera tillägget Test Pilot
+landingInstallButtonOneClick = Installera Test Pilot och aktivera { $experimentTitle }
 landingInstallingButton = Installerar...
 landingInstalledButton = Välj dina funktioner
 
@@ -179,7 +180,7 @@ experimentPromoSubheader = Vi bygger nästa generations funktioner för Firefox.
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } är aktiverad.
