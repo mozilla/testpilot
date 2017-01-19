@@ -77,6 +77,7 @@ tabcenterToursteps0Copy = Primero lo primero: ahora todas tus pestaña están en
 tabcenterToursteps1Copy = ¿Tienes muchas pestañas? Tab Center te ayuda a buscarlas.
 tabcenterToursteps2Copy = Puedes arrastrar el borde de Tab Center para reducirlo o ampliarlo a tu gusto.
 tabcenterToursteps3Copy = Presiona el botón para esconder Tab Center.
+tabcenterToursteps4Copy = Siempre puedes darnos tu opinión o desactivar Tab Center desde Test Pilot.
 tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
