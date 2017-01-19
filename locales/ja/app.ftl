@@ -114,8 +114,6 @@ emailOptInConfirmationClose = 実験に進む...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = 離陸準備完了！
-experimentListPageSubHeader = 試してみたい機能を選んでください。<br>後日戻って新しい実験をチェックすることもお忘れなく。
 experimentListEnabledTab = 有効
 experimentListJustLaunchedTab = 最近公開
 experimentListJustUpdatedTab = 最近更新
@@ -179,7 +177,7 @@ experimentPromoSubheader = 私たちは Firefox の次世代機能を作って�
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } が有効化されました。
