@@ -115,8 +115,6 @@ emailOptInConfirmationClose = Dale k eksperimentam...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Za start hotowy!
-experimentListPageSubHeader = Wubjerće funkcije, kotrež chceće testować. <br> Přińdźće bórze zaso za dalše eksperimenty.
 experimentListEnabledTab = Zmóžnjeny
 experimentListJustLaunchedTab = Runje startowany
 experimentListJustUpdatedTab = Runje zaktualizowany
