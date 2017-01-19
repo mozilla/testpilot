@@ -50,6 +50,7 @@ landingExperimentsTitle = Wupruwujće najnowše eksperimentelne funkcije.
 [[ landingInstall ]]
 
 landingInstallButton = Přidatk Test Pilot instalować
+landingInstallButtonOneClick = Test Pilot instalować a { $experimentTitle } zmóžnić
 landingInstallingButton = Instaluje so...
 landingInstalledButton = Wubjerće swoje funkcije
 
@@ -169,7 +170,7 @@ experimentPromoSubheader = Wuwiwamy funkcije přichodneje generacije za Firefox.
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } je zmóžnjeny.
