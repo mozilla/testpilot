@@ -114,8 +114,6 @@ emailOptInConfirmationClose = Ɣef tirmitin…
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Theggaḍ ad tesrifgeḍ!
-experimentListPageSubHeader = Fren timahilin timaynutin i tebɣid ad tɛerḍeḍ.<br> Uɣal-d tikelt nniḍen akken ad tɛerḍeḍ tiyaḍ.
 experimentListEnabledTab = Irmed
 experimentListJustLaunchedTab = Ikker tura akka
 experimentListJustUpdatedTab = Ittwalqem tura akka
@@ -179,7 +177,7 @@ experimentPromoSubheader = Nbennu timahilin n uzekka n i tsuta d-iteddun n Firef
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } ittwarmed.
