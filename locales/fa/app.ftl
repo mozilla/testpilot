@@ -114,8 +114,6 @@ emailOptInConfirmationClose = به سوی تجربه‌ها…
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = آماده پرواز!
-experimentListPageSubHeader = لطفا امکاناتی را که می‌خواهید امتحان کنید را انتخاب کنید. <br> برای آزمایش‌های جدید دوباره سر بزنید.
 experimentListEnabledTab = فعال شد
 experimentListJustLaunchedTab = هم‌اکنون منتشر شد
 experimentListJustUpdatedTab = هم‌اکنون بروزرسانی شد
@@ -169,7 +167,7 @@ experimentPromoSubheader = ما در حال ساخت نسل بعدی امکان�
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } فعال است.
