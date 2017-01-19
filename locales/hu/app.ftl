@@ -114,8 +114,6 @@ emailOptInConfirmationClose = Tovább a kísérletekhez…
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Felszállásra kész!
-experimentListPageSubHeader = Válassza ki a funkciókat, melyeket ki akar próbálni. <br> Nézzen vissza később további kísérletekért.
 experimentListEnabledTab = Bekapcsolva
 experimentListJustLaunchedTab = Épp most indult
 experimentListJustUpdatedTab = Épp most frissült
@@ -179,7 +177,7 @@ experimentPromoSubheader = A Firefox következő generációs funkcióit készí
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } bekapcsolva.
