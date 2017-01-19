@@ -114,8 +114,6 @@ emailOptInConfirmationClose = Вперед до експериментів...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Готові до запуску!
-experimentListPageSubHeader = Оберіть функції, які ви хочете спробувати. <br> Повертайтеся швидше для нових експериментів.
 experimentListEnabledTab = Увімкнено
 experimentListJustLaunchedTab = Щойно запущено
 experimentListJustUpdatedTab = Щойно оновлено
@@ -179,7 +177,7 @@ experimentPromoSubheader = Ми будуємо функції наступног
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } увімкнено.
