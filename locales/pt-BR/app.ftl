@@ -114,8 +114,6 @@ emailOptInConfirmationClose = Nos experimentos...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Pronto para decolar!
-experimentListPageSubHeader = Escolha os experimentos que você quer testar. <br> Volte em breve para mais.
 experimentListEnabledTab = Habilitado
 experimentListJustLaunchedTab = Recém lançados
 experimentListJustUpdatedTab = Última atualização
@@ -179,7 +177,7 @@ experimentPromoSubheader = Estamos construindo novos recursos para o Firefox. In
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } está habilitado.
