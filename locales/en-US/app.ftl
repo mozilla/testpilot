@@ -36,6 +36,7 @@ landingExperimentsTitle = Try out the latest experimental features
 # Related to the installation of the Test Pilot add-on.
 [[landingInstall]]
 landingInstallButton = Install the Test Pilot Add-on
+landingInstallButtonOneClick = Install Test Pilot and Enable {$experimentTitle}
 landingInstallingButton = Installing...
 landingInstalledButton = Choose your features
 
@@ -129,7 +130,7 @@ experimentPreFeedbackLinkCopy = Give feedback about the {$title} experiment
 experimentPromoHeader = Ready for Takeoff?
 experimentPromoSubheader = We're building next-generation features for Firefox. Install Test Pilot to try them!
 
-# The experiment detail page. 
+# The experiment detail page.
 [[experimentPage]]
 isEnabledStatusMessage = {$title} is enabled.
 installErrorMessage = Uh oh. {$title} could not be enabled. Try again later.

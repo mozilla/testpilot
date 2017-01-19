@@ -10,7 +10,6 @@ const { AddonManager } = require('resource://gre/modules/AddonManager.jsm');
 const aboutConfig = require('sdk/preferences/service');
 const self = require('sdk/self');
 const store = require('sdk/simple-storage').storage;
-const tabs = require('sdk/tabs');
 const { PrefsTarget } = require('sdk/preferences/event-target');
 const URL = require('sdk/url').URL;
 
@@ -120,13 +119,6 @@ function updatePrefs(environment) {
   } else if (self.loadReason === 'upgrade') {
     app.send('addon-self:upgraded');
   }
-}
-
-function openOnboardingTab() {
-  tabs.open({
-    url: settings.BASE_URL + '/onboarding',
-    inBackground: true
-  });
 }
 
 function experimentsLoaded(experiments) {
@@ -346,10 +338,6 @@ exports.main = function(options) {
   ExperimentNotifications.init(settings);
   SharePrompt.init(settings);
   NoExperiments.init(settings);
-
-  if (reason === 'install') {
-    openOnboardingTab();
-  }
 
   const installedCount = (store.installedAddons) ? Object.keys(store.installedAddons).length : 0;
   Metrics.sendGAEvent({

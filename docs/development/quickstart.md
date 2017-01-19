@@ -2,7 +2,8 @@
 
 # Development Quickstart
 
-Test Pilot uses Node.js [v6.x LTS](https://nodejs.org/dist/latest-v6.x/) for development. You may be able to get by using
+Test Pilot uses Node.js [v6.x LTS](https://nodejs.org/dist/latest-v6.x/) for
+development. You may be able to get by using
 [the most current release](https://nodejs.org/en/download/current/), but
 earlier versions will definitely result in error messages and problems. [Node
 Version Manager](https://github.com/creationix/nvm/blob/master/README.markdown)
@@ -30,13 +31,14 @@ cd ..
 npm install
 
 # Add hostname alias to /etc/hosts and start up dev webserver
-echo '127.0.0.1 testpilot.dev' | sudo tee -a /etc/hosts
-npm start
+echo '127.0.0.1 example.com' | sudo tee -a /etc/hosts
+USE_HTTPS=1 npm start
 ```
 
 **Note:** While you *will* be able to see the web site locally via
-http://localhost:8000/ - the `testpilot.dev` hostname alias is important to
-several features of this site for local development.
+http://localhost:8000/ - the `example.com` hostname alias is important to
+several features of this site for local development. The domain `example.com`
+is whitelisted and allowed to use the mozAddonManager api to manage add-ons.
 
 These steps will give you a working development web server and file
 watcher that will rebuild site assets as you edit. Just a few more steps and
@@ -55,9 +57,23 @@ you should be on your way:
 
    1. Enter `testpilot.env` for the name.
 
-   1. Enter `local` for the value.
+   1. Enter `example` for the value.
 
-1. View your local site in Firefox Developer Edition at http://testpilot.dev:8000/
+   1. Right click the list of preferences to summon a menu, pick New > Boolean
+      to create a new preference.
+
+   1. Enter `extensions.install.requireBuiltInCerts` for the name.
+
+   1. Enter `false` for the value.
+
+   1. Right click the list of preferences to summon a menu, pick New > Boolean
+      to create a new preference.
+
+   1. Enter `xpinstall.signatures.required` for the name.
+
+   1. Enter `false` for the value.
+
+1. View your local site in Firefox Developer Edition at https://example.com:8000/
 
 [devedition]: https://www.mozilla.org/en-US/firefox/developer/
 [devprefs]: https://addons.mozilla.org/en-US/firefox/addon/devprefs/
@@ -69,7 +85,7 @@ for you to get it working.
 
 ## For Windows hosts
 
-After installing Node.js for Windows, run these commands to get started: 
+After installing Node.js for Windows, run these commands to get started:
 
 ```cmd
 :: Set up add-on environment and build an unsigned package
@@ -86,13 +102,13 @@ Now, open a second command prompt window, this time with admin privileges and ru
 
 ```cmd
 :: Add hostname alias to /etc/hosts and start up dev webserver
-echo 127.0.0.1 testpilot.dev >> %WINDIR%\System32\Drivers\Etc\Hosts
+echo 127.0.0.1 example.com >> %WINDIR%\System32\Drivers\Etc\Hosts
 ```
 
 Go back to the previous command prompt window and run
 
 ```cmd
-npm start
+USE_HTTPS=1 npm start
 ```
 
 Follow the remaining instructions from **Linux & OS X** section and you're all set.
