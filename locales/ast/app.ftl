@@ -113,8 +113,6 @@ emailOptInSuccessMessage2 = ¡Gracies!
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = ¡Preparáu pa despegar!
-experimentListPageSubHeader = Escueyi les carauterístiques que quies probar.<br>Volvi equí ceo pa más esperimentos.
 experimentListEnabledTab = Habilitóse
 experimentListJustLaunchedTab = Ta acabante llanzase
 experimentListJustUpdatedTab = Ta acabante d'anovase
@@ -170,7 +168,7 @@ experimentPromoSubheader = Tamos construyendo les carauterístiques de nueva xen
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } ta habilitáu.
