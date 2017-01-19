@@ -81,13 +81,12 @@ emailOptInConfirmationClose = On to the experiments...
 
 # A listing of all Test Pilot experiments.
 [[experimentsList]]
-experimentListPageHeader = Ready for Takeoff!
-experimentListPageSubHeader  = Pick the features you want to try. <br> Check back soon for more experiments.
 experimentListEnabledTab = Enabled
 experimentListJustLaunchedTab = Just Launched
 experimentListJustUpdatedTab = Just Updated
 experimentListEndingTomorrow = Ending Tomorrow
 experimentListEndingSoon = Ending Soon
+experimentsListCondensedHeader = Pick your experiments!
 
 # An individual experiment in the listing of all Test Pilot experiments.
 [[experimentCard]]
