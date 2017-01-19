@@ -50,6 +50,7 @@ landingExperimentsTitle = Teste nossos experimentos mais recentes
 [[ landingInstall ]]
 
 landingInstallButton = Instale a extensão do Test Pilot
+landingInstallButtonOneClick = Instalar o Test Pilot e habilite { $experimentTitle }
 landingInstallingButton = Instalando...
 landingInstalledButton = Escolher os experimentos
 
@@ -119,6 +120,7 @@ experimentListJustLaunchedTab = Recém lançados
 experimentListJustUpdatedTab = Última atualização
 experimentListEndingTomorrow = Termina amanhã
 experimentListEndingSoon = Terminando em breve
+experimentsListCondensedHeader = Escolha seus experimentos!
 
 
 
