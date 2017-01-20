@@ -50,6 +50,7 @@ landingExperimentsTitle = Próbálja ki a legújabb kísérleti funkciókat
 [[ landingInstall ]]
 
 landingInstallButton = A Tesztpilóta kiegészítő telepítése
+landingInstallButtonOneClick = A Tesztpilóta telepítése, és a(z) { $experimentTitle } engedélyezése
 landingInstallingButton = Telepítés…
 landingInstalledButton = Funkciók kiválasztása
 
@@ -119,6 +120,7 @@ experimentListJustLaunchedTab = Épp most indult
 experimentListJustUpdatedTab = Épp most frissült
 experimentListEndingTomorrow = Holnap véget ér
 experimentListEndingSoon = Hamarosan véget ér
+experimentsListCondensedHeader = Válasszon kísérleteket!
 
 
 
