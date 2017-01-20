@@ -50,6 +50,7 @@ landingExperimentsTitle = 試用最新的實驗功能
 [[ landingInstall ]]
 
 landingInstallButton = 安裝 Test Pilot 附加元件
+landingInstallButtonOneClick = 安裝 Test Pilot 並開啟 { $experimentTitle }
 landingInstallingButton = 安裝中…
 landingInstalledButton = 選擇您要的功能
 
@@ -119,6 +120,7 @@ experimentListJustLaunchedTab = 剛開始
 experimentListJustUpdatedTab = 剛更新
 experimentListEndingTomorrow = 明天結束
 experimentListEndingSoon = 快要結束
+experimentsListCondensedHeader = 挑選實驗！
 
 
 
