@@ -50,6 +50,7 @@ landingExperimentsTitle = Sekyed amaynut i d-yeffɣen seg ulabo
 [[ landingInstall ]]
 
 landingInstallButton = Sebded azegrir Test Pilot
+landingInstallButtonOneClick = Sebded Test Pilot sakin rmed { $experimentTitle }
 landingInstallingButton = Asebded...
 landingInstalledButton = Fren timahilin inek
 
@@ -119,6 +120,7 @@ experimentListJustLaunchedTab = Ikker tura akka
 experimentListJustUpdatedTab = Ittwalqem tura akka
 experimentListEndingTomorrow = Ad ifak azekka
 experimentListEndingSoon = Ad ifak ticki
+experimentsListCondensedHeader = Fren tirmitin inek!
 
 
 
