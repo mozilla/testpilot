@@ -120,6 +120,7 @@ experimentListJustLaunchedTab = Rowno startowany
 experimentListJustUpdatedTab = Rowno aktualizěrowany
 experimentListEndingTomorrow = Skóńcyjo se witśe
 experimentListEndingSoon = Skóńcyjo se skóro
+experimentsListCondensedHeader = Wubjeŕśo swóje eksperimenty!
 
 
 
