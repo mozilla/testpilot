@@ -50,6 +50,7 @@ landingExperimentsTitle = 最新の実験的機能を試す
 [[ landingInstall ]]
 
 landingInstallButton = Test Pilot アドオンをインストール
+landingInstallButtonOneClick = Test Pilot をインストールし { $experimentTitle } を有効化
 landingInstallingButton = インストール中...
 landingInstalledButton = 機能を選ぶ
 
@@ -119,6 +120,7 @@ experimentListJustLaunchedTab = 最近公開
 experimentListJustUpdatedTab = 最近更新
 experimentListEndingTomorrow = 明日終了
 experimentListEndingSoon = まもなく終了
+experimentsListCondensedHeader = 興味のある実験を選びましょう！
 
 
 
