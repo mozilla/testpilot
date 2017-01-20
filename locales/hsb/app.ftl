@@ -120,6 +120,7 @@ experimentListJustLaunchedTab = Runje startowany
 experimentListJustUpdatedTab = Runje zaktualizowany
 experimentListEndingTomorrow = Skónči so jutře
 experimentListEndingSoon = Skónči so bórze
+experimentsListCondensedHeader = Wubjerće swoje eksperimenty!
 
 
 
