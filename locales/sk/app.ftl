@@ -50,6 +50,7 @@ landingExperimentsTitle = Vyskúšajte najnovšie experimentálne funkcie
 [[ landingInstall ]]
 
 landingInstallButton = Nainštalovať doplnok Test Pilot
+landingInstallButtonOneClick = Nainštalovať Test Pilot a aktivovať { $experimentTitle }
 landingInstallingButton = Inštaluje sa...
 landingInstalledButton = Vyberte si svoje funkcie
 
@@ -119,6 +120,7 @@ experimentListJustLaunchedTab = Práve spustený
 experimentListJustUpdatedTab = Práve aktualizovaný
 experimentListEndingTomorrow = Zajtra končí
 experimentListEndingSoon = Čoskoro končí
+experimentsListCondensedHeader = Vyberte si experimenty!
 
 
 
