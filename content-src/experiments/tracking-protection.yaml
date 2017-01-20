@@ -21,25 +21,24 @@ contribute_url: 'https://github.com/mozilla/blok/'
 bug_report_url: 'https://github.com/mozilla/blok/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/tracking-protection'
 privacy_notice_url: 'https://github.com/mozilla/blok/blob/master/docs/metrics.md'
-measurements: >
-  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot
-    experiments, here are the key things you should know about what is happening
-    when you use Tracking Protection:</p>
-  <ul>
-    <li>Tracking Protection will prompt you for feedback when it blocks a
-      tracker. We collect basic usage data when you engage with this prompt,
-      such as when you enable or disable the trackers on the page or report a
-      problem.</li>
-    <li>When you engage with a prompt, we also collect information about the
-      page you are on and the tracking domain that is being blocked. This helps
-      us understand when and why you are experiencing a problem.</li>
-    <li>Other than the domain, we don't collect any further information from the
-      tracker, such as data about unique IDs that are used or cookies that are
-      set.</li>
-    <li>To identify trackers, we use a list provided by our partner Disconnect.
-      You can read more about the standards Disconnect applies <a
-      href="https://disconnect.me/trackerprotection" target="_blank">here</a>.</li>
-  </ul>
+measurements:
+  - >
+    Tracking Protection will prompt you for feedback when it blocks a
+    tracker. We collect basic usage data when you engage with this prompt,
+    such as when you enable or disable the trackers on the page or report a
+    problem.
+  - >
+    When you engage with a prompt, we also collect information about the
+    page you are on and the tracking domain that is being blocked. This helps
+    us understand when and why you are experiencing a problem.
+  - >
+    Other than the domain, we don't collect any further information from the
+    tracker, such as data about unique IDs that are used or cookies that are
+    set.
+  - >
+    To identify trackers, we use a list provided by our partner Disconnect.
+    You can read more about the standards Disconnect applies <a
+    href="https://disconnect.me/trackerprotection" target="_blank">here</a>.
 xpi_url: 'https://testpilot.firefox.com/files/blok/latest'
 addon_id: blok@mozilla.org
 gradient_start: '#8725A7'

@@ -23,17 +23,15 @@ contribute_url: 'https://github.com/meandavejustice/min-vid'
 bug_report_url: 'https://github.com/meandavejustice/min-vid/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/min-vid'
 privacy_notice_url: 'https://github.com/meandavejustice/min-vid/blob/master/docs/metrics.md'
-measurements: >
-  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot
-    experiments, here are the key things you should know about what is happening
-    when you use Example:</p>
-  <ul>
-    <li>Stumptown neutra mixtape, wayfarers hexagon ramps organic typewriter
-      mumblecore microdosing coloring book forage humblebrag.</li>
-    <li>Fam slow-carb snackwave cronut wayfarers. Mixtape put a bird on it
-      iPhone PBR&B subway tile, kale chips occupy af hexagon vaporware.</li>
-    <li>Franzen vinyl polaroid cold-pressed hashtag flexitarian.</li>
-  </ul>
+measurements:
+  - >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
+    suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
+    cupiditate vitae praesentium eveniet unde totam, architecto molestiae?
+  - >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
+    suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
+    cupiditate vitae praesentium eveniet unde totam, architecto molestiae?
 xpi_url: 'https://testpilot.firefox.com/files/@sloth/latest'
 addon_id: '@sloth'
 gradient_start: '#8725A7'

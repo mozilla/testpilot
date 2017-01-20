@@ -25,43 +25,27 @@ contribute_url: 'https://github.com/cliqz-oss/browser-core'
 bug_report_url: 'https://github.com/cliqz-oss/browser-core/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/cliqz'
 privacy_notice_url: 'https://github.com/cliqz-oss/browser-core/blob/test-pilot/metrics.md'
-measurements: >
-  <p>
-    The Cliqz Test Pilot experiment is brought to you through collaboration
-    between Cliqz GmbH, and Mozilla. Cliqz is designed to protect your privacy
-    and avoid collecting sensitive information that can be used to create user
-    profiles. However, anonymizing data like this is difficult, and it may
-    still be possible to identify specific individuals.
-  </p>
-  <p>
-    In addition to the <a href="/privacy">data</a> collected by all Test Pilot
-    experiments, here are the key things you should know about installing Cliqz:
-  </p>
-  <p>
-    Cliqz GmbH collects data about your search and browsing activity, including:
-    <ul>
-      <li>Text as you type in the URL bar</li>
-      <li>Queries you send to certain search engines</li>
-      <li>Data about your web page interactions, such as mouse movements, scrolls,
-      and time spent</li>
-    </ul>
-  </p>
-  <p>
-    Cliqz GmbH collects telemetry analytics, including:
-    <ul>
-      <li>Your interactions with specific fields and buttons in Cliqz. This data
-      is tied to a unique identifier allowing Cliqz GmbH to understand performance
-      over time</li>
-    </ul>
-  </p>
-  <p>
-    Mozilla collects telemetry analytics, including:
-    <ul>
-      <li>Counts of visits to search engine pages and which search engines you use</li>
-      <li>Cliqz’s unique identifier, which allows Mozilla to look for correlations
-      across Firefox and Cliqz telemetry systems</li>
-    </ul>
-  </p>
+privacy_preamble: >
+  The Cliqz Test Pilot experiment is brought to you through collaboration
+  between Cliqz GmbH, and Mozilla. Cliqz is designed to protect your privacy
+  and avoid collecting sensitive information that can be used to create user
+  profiles. However, anonymizing data like this is difficult, and it may
+  still be possible to identify specific individuals.
+measurements:
+  - >
+    Cliqz GmbH collects data about your search and browsing activity, including
+    text as you type in the URL bar, queries you send to certain search
+    engines, and data about your web page interactions, such as mouse
+    movements, scrolls, and time spent.
+  - >
+    Cliqz GmbH collects telemetry analytics, including your interactions with
+    specific fields and buttons in Cliqz. This data is tied to a unique
+    identifier allowing Cliqz GmbH to understand performance over time.
+  - >
+    Mozilla collects telemetry analytics, including counts of visits to search
+    engine pages and which search engines you use, and Cliqz’s unique
+    identifier, which allows Mozilla to look for correlations across Firefox
+    and Cliqz telemetry systems.
 xpi_url: 'https://testpilot.firefox.com/files/testpilot@cliqz.com/latest'
 addon_id: 'testpilot@cliqz.com'
 gradient_start: '#52E6E0'
