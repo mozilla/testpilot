@@ -50,6 +50,7 @@ landingExperimentsTitle = En yeni deneysel özellikleri deneyin
 [[ landingInstall ]]
 
 landingInstallButton = Test Pilotu eklentisini yükle
+landingInstallButtonOneClick = Test Pilotu'nu yükle ve { $experimentTitle } deneyimi etkinleştir
 landingInstallingButton = Yükleniyor...
 landingInstalledButton = Özelliklerinizi seçin
 
@@ -119,6 +120,7 @@ experimentListJustLaunchedTab = Yeni çıktı
 experimentListJustUpdatedTab = Yeni güncellendi
 experimentListEndingTomorrow = Yarın bitiyor
 experimentListEndingSoon = Yakında bitiyor
+experimentsListCondensedHeader = Deneylerinizi seçin!
 
 
 
@@ -193,7 +195,9 @@ enableExperimentTransition = Etkinleştiriliyor...
 measurements = Gizliliğiniz
 experimentPrivacyNotice = Buradan { $title } deneyinin topladığı veriler hakkında daha fazla bilgi alabilirsiniz.
 contributorsHeading = Geliştirenler
+contributorsExtraLearnMore = Daha fazla bilgi al
 changelog = değişiklik günlüğü
+tour = Tur
 tourLink = tur
 contribute = Katkıda bulunun
 bugReports = Hata raporları

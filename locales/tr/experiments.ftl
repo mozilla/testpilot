@@ -18,6 +18,7 @@ activitystreamContributors9Title = Ürün Müdürü
 activitystreamContributors10Title = Mühendislik Müdürü
 activitystreamContributors11Title = Yazılım Mühendisi
 activitystreamContributors12Title = Kıdemli UX Tasarımcısı
+cliqzToursteps2Copy = İstediğiniz zaman bize geri bildirimde bulunabilir veya Cliqz'i Test Pilotu üzerinden kapatabilirsiniz.
 minvidDescription = Videolar hep gözünüzün önünde olsun. Min Vid, siz web'de gezinirken YouTube and Vimeo videolarını daima ön planda küçük bir çerçeve içinde görüntüler.
 minvidContributors0Title = Mühendis
 minvidContributors1Title = Kadrolu Mühendis
