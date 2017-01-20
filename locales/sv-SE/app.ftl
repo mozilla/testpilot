@@ -120,6 +120,7 @@ experimentListJustLaunchedTab = Nyligen startad
 experimentListJustUpdatedTab = Nyligen uppdaterad
 experimentListEndingTomorrow = Slutar imorgon
 experimentListEndingSoon = Slutar snart
+experimentsListCondensedHeader = Välj dina experiment!
 
 
 
