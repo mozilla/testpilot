@@ -50,6 +50,7 @@ landingExperimentsTitle = Попробуйте последние экспери
 [[ landingInstall ]]
 
 landingInstallButton = Установить расширение лётчика-испытателя
+landingInstallButtonOneClick = Установите лётчика-испытателя и включите { $experimentTitle }
 landingInstallingButton = Установка...
 landingInstalledButton = Выберите возможности
 
@@ -119,6 +120,7 @@ experimentListJustLaunchedTab = Только что запущен
 experimentListJustUpdatedTab = Только что обновлён
 experimentListEndingTomorrow = Заканчиваются завтра
 experimentListEndingSoon = Скоро заканчиваются
+experimentsListCondensedHeader = Выберите ваши эксперименты!
 
 
 
