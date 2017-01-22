@@ -150,28 +150,176 @@ feedbackUninstallCopy =
 [[ discussNotify ]]
 
 discussNotifyTitle = Un moment...
+discussNotifyMessageAccountless = 
+  | <p>În spiritul experimentării noi folosim un serviciu de discuții extern (forum).
+  | Va trebui să creezi un cont dacă
+  | dorești să participi pe forum.</p>
+  | <p>Dacă nu dorești să-ți creezi un cont,
+  | ne mai poți trimite feedback direct prin Test Pilot.
+  | <br>
+  | (Noi chiar citim aceste mesaje)</p>
+discussNotifySubmitButton = Înapoi la forum
+discussNotifyCancelButton = Renunță
+
+
+
+# A modal prompt shown before the feedback survey for some experiments.
+[[ experimentPreFeedback ]]
+
+experimentPreFeedbackTitle = feedback { $title }
+experimentPreFeedbackLinkCopy = Oferă feedback despre experimentul { $title }
+
+
+
+# A splash shown on top of the experiment page when Test Pilot is not installed.
+[[ experimentPromo ]]
+
+experimentPromoHeader = Ești gata de decolare?
+experimentPromoSubheader = Noi construim funcțiile de viitor pentru Firefox. Instalează Test Pilot pentru a le încerca!
 
 
 
 # The experiment detail page.
 [[ experimentPage ]]
 
+isEnabledStatusMessage = { $title } este activat.
+installErrorMessage = Ups. { $title } nu a putut fi încărcat. Încearcă din nou mai târziu.
 participantCount = <span>{ $installation_count }</span> participanți
+otherExperiments = Încearcă și aceste experimente
+giveFeedback = Oferă feedback
+disableHeader = Dezactivează experimentul?
+disableExperiment = Dezactivează { $title }
+disableExperimentTransition = Se dezactivează...
+enableExperiment = Activează { $title }
+enableExperimentTransition = Se activează...
+measurements = Confidențialitatea ta
+experimentPrivacyNotice = Poți afla mai mult despre colectarea de date pentru { $title } aici.
+contributorsHeading = Produs de
+contributorsExtraLearnMore = Află mai multe
+changelog = Jurnal de schimbări
+tour = Tur
+tourLink = Lansează turul
+contribute = Contribuie
+bugReports = Rapoarte de defecte
+discourse = Discourse
+tourOnboardingTitle = { $title } activat!
+tourDoneButton = Gata
+userCountContainer = <span>{ $installation_count }</span> persoane încearcă { $title } chiar acum!
+userCountContainerAlt = Nou lansat!
+highlightPrivacy = Confidențialitatea ta
+
+
+
+# Shown when an experiment requires a version of Firefox newer than the user's.
+[[ upgradeNotice ]]
+
+upgradeNoticeTitle = { $title } necesită Firefox { $min_release } sau mai recent.
+upgradeNoticeLink = Cum să actualizezi Firefox.
+
+
+
+# Shown while uninstalling Test Pilot.
+[[ uninstall ]]
+
+retireDialogTitle = Dezinstalează Test Pilot?
+retireMessage = Cum dorești. Aceasta va dezactiva toate testele active, va dezinstala suplimentul și va șterge informațiile despre contul tău de pe serverele noastre.
+retireEmailMessage = Pentru a nu mai primi actualizări pe e-mail, clic pe linkul <em>dezabonare</em> (unsubscribe) din orice e-mail Test Pilot.
+retireSubmitButton = Continuă
+retireCancelButton = Renunță
+pageTitleRetirePage = Firefox Test Pilot - Dezinstalează Test Pilot
+retirePageProgressMessage = Se închide...
+retirePageHeadline = Mulțumim că ne-ai fost copilot!
+retirePageMessage = Sperăm că ți-au plăcut experimentele noastre. <br> Poți reveni oricând.
+retirePageSurveyButton = Participă la un sondaj scurt
+
+
+
+# Shown to users after installing Test Pilot if a restart is required.
+[[ restartIntro ]]
+
+restartIntroLead = Cerințe preliminare
+restartIntroOne = Repornește browserul
+restartIntroTwo = Găsește suplimentul Test Pilot
+restartIntroThree = Alege experimentele tale
+
+
+
+# Shown on a page presented to users three days after installing their first experiment.
+[[ share ]]
+
+sharePrimary = Îți place Test Pilot? Ajută-ne să găsim alte persoane cărora le-ar place.
+shareSecondary = sau doar oferă-le acest link...
+shareEmail = E-mail
+shareCopy = Copiază
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } se termină pe { $completedDate }
+eolNoticeLink = Află mai multe
+eolDisableMessage = Experimentul { $title } s-a terminat. După ce l-ai dezinstalat nu-l vei mai putea instala din nou prin Test Pilot.
+completedDateLabel = Data de sfârșit a experimentului: <b>{ $completedDate }</b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
+incompatibleHeader = Acest experiment ar putea să nu fie compatibil cu suplimentele deja instalate.
+incompatibleSubheader = Recomandăm <a>dezactivarea acestor suplimente</a> înainte de activarea acestui experiment:
 
 
 
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Adresa ta de e-mail aici
 newsletterFormDisclaimer = Vom trimite doar informații referitoare la Test Pilot.
 newsletterFormPrivacyNotice = Sunt de acord ca Mozilla să gestioneze informațiile mele așa cum este specificat în <a>nota privind confidențialitatea</a>.
 newsletterFormSubmitButton = Alătură-te acum
+newsletterFormSubmitButtonSubmitting = Se trimite...
 
 
 
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = S-a produs o eroare la trimiterea adresei tale de e-mail. Încearcă din nou?
 newsletterFooterHeader = Fii la curent
 newsletterFooterBody = Află despre noi experimente și vezi rezultatele de test pentru experimentele pe care le-ai încercat.
+newsletterFooterSuccessHeader = Mulțumim!
+newsletterFooterSuccessBody = Dacă nu ai mai confirmat o abonare la un buletin informativ Mozilla, s-ar putea să fie necesar. Te rugăm să verifici căsuța de primire sau dosarul de spam pentru e-mail-ul de la noi.
+
+
+
+# A warning shown to users viewing an experiment that is only available in English.
+[[ localeWarning ]]
+
+localeWarningTitle = Acest experiment este disponibil doar în engleză.
+localeWarningSubtitle = Dar poți să o activezi dacă dorești.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledHeader = Hai să pornim!
+experimentsListNoneInstalledSubheader = Ești gata să încerci un nou experiment Test Pilot? Alege unul pentru a-l activa, încerca, și apoi să ne spui ce părere ai.
+experimentsListNoneInstalledCTA = Nu ești interesat? <a>Spune-ne de ce</a>.
+
+
+
+# Shown to users who do not have JavaScript enabled.
+[[ noscript ]]
+
+noScriptHeading = Ups...
+noScriptMessage = Test Pilot are nevoie de JavaScript.<br>Ne pare rău.
+noScriptLink = Află de ce
+
+
+
+# Text of a button to toggle visibility of a list of past experiments.
+[[ pastExperiments ]]
+
+viewPastExperiments = Vezi experimentele trecute
+hidePastExperiments = Ascunde experimentele trecute
 
