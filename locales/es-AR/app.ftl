@@ -50,6 +50,7 @@ landingExperimentsTitle = Probá las últimas características experimentales
 [[ landingInstall ]]
 
 landingInstallButton = Instalá el complemento Test Pilot
+landingInstallButtonOneClick = Instalá Test Pilot y habilitá { $experimentTitle }
 landingInstallingButton = Instalando...
 landingInstalledButton = Elegí tus funciones
 
@@ -119,6 +120,7 @@ experimentListJustLaunchedTab = Recién lanzado
 experimentListJustUpdatedTab = Recién actualizado
 experimentListEndingTomorrow = Termina mañana
 experimentListEndingSoon = Termina pronto
+experimentsListCondensedHeader = ¡Elegí tus experimentos!
 
 
 
