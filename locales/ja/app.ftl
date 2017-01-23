@@ -201,7 +201,6 @@ tour = ツアー
 tourLink = ツアー
 contribute = 協力
 bugReports = バグ報告
-discourse = Discourse
 tourOnboardingTitle = { $title } が有効化されました！
 tourDoneButton = 完了
 userCountContainer = 今現在 <span>{ $installation_count }</span> 人のユーザーが { $title } を試しています！
