@@ -189,7 +189,6 @@ tour = Visita guiada
 tourLink = visita virtual
 contribute = Colabora
 bugReports = Informes de fallos
-discourse = Discourse
 tourOnboardingTitle = ¡{ $title } activado!
 tourDoneButton = Hecho
 userCountContainer = ¡Hay <span>{ $installation_count }</span> personas probando { $title } ahora mismo!
