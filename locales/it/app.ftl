@@ -191,7 +191,6 @@ tour = Panoramica
 tourLink = Panoramica
 contribute = Collabora
 bugReports = Segnalazione bug
-discourse = Discourse
 tourOnboardingTitle = { $title } attivato.
 tourDoneButton = Fatto
 userCountContainer = In questo momento <span>{ $installation_count }</span> persone stanno provando { $title }.
