@@ -201,7 +201,6 @@ tour = Тур
 tourLink = тур
 contribute = Внести вклад
 bugReports = Сообщения об ошибках
-discourse = Discourse
 tourOnboardingTitle = { $title } включено!
 tourDoneButton = Готово
 userCountContainer = Прямо сейчас <span>{ $installation_count }</span> людей пробуют { $title }!
