@@ -191,7 +191,6 @@ tour = Tur
 tourLink = Tur de lanzamiento
 contribute = Contribuir
 bugReports = Reportes de errores
-discourse = Discourse
 tourOnboardingTitle = ¡{ $title } activado!
 tourDoneButton = Hecho
 userCountContainer = ¡Hay <span>{ $installation_count }</span> personas probando { $title } en este momento!
