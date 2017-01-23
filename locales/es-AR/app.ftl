@@ -221,13 +221,17 @@ retireCancelButton = Cancelar
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar Test Pilot
 retirePageProgressMessage = Apagando...
 retirePageHeadline = ¡Gracias por volar!
+retirePageMessage = Esperamos que se haya divertido experimentando con nosotros. <br> Puede volver en cualquier momento.
+retirePageSurveyButton = Complete una encuesta rápida
 
 
 
 # Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = Lista de control previa al vuelo
 restartIntroOne = Reiniciar el navegador
+restartIntroTwo = Ubique el complemento Test Pilot
 restartIntroThree = Elegí tus experimentos
 
 
@@ -275,14 +279,15 @@ newsletterFooterError = Hubo un erro enviando tu dirección de correo electróni
 newsletterFooterHeader = Mantenete informado
 newsletterFooterBody = Descubrí nuevos experimentos y mirá los resultados para los experimentos que ya probaste.
 newsletterFooterSuccessHeader = ¡Gracias!
+newsletterFooterSuccessBody = Si no confirmó previamente una suscripción a algún boletín informativo relacionado con Mozilla, es posible que deba hacerlo. Por favor revise su bandeja de entrada o su filtro de spam por si hay un correo electrónico nuestro.
 
 
 
 # A warning shown to users viewing an experiment that is only available in English.
 [[ localeWarning ]]
 
-localeWarningTitle = Este experimento solamente está disponible en inglés.
-localeWarningSubtitle = Igual podés habilitarlo si querés.
+localeWarningTitle = Este experimento está disponible solamente en inglés.
+localeWarningSubtitle = Igual puede habilitarlo si quiere.
 
 
 
