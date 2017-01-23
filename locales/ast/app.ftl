@@ -190,7 +190,6 @@ tour = Percorríu
 tourLink = Llanzar percorríu
 contribute = Collaborar
 bugReports = Informes de fallos
-discourse = Discourse
 tourOnboardingTitle = ¡Habilitóse { $title }!
 tourDoneButton = Fecho
 userCountContainer = ¡Agora mesmo hai <span>{ $installation_count }</span> persones probando { $title }!
