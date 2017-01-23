@@ -50,6 +50,7 @@ landingExperimentsTitle = Test de lêste eksperimintele funksjes
 [[ landingInstall ]]
 
 landingInstallButton = Add-on ‘Test Pilot’ ynstallearje
+landingInstallButtonOneClick = Test Pilot ynstallearje en { $experimentTitle } ynskeakelje
 landingInstallingButton = Ynstallearje…
 landingInstalledButton = Kies jo funksjes
 
@@ -119,6 +120,7 @@ experimentListJustLaunchedTab = Krekt lansearre
 experimentListJustUpdatedTab = Krekt bywurke
 experimentListEndingTomorrow = Einiget moarn
 experimentListEndingSoon = Einiget ynkoarten
+experimentsListCondensedHeader = Kies jo eksperiminten!
 
 
 
