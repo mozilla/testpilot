@@ -69,13 +69,11 @@ a {
 .mozilla-logo {
   background-image: url('../images/mozilla.svg');
   background-repeat: no-repeat;
-  background-size: auto 36px;
-  height: 36px;
+  background-size: auto 32px;
+  height: 32px;
   opacity: .9;
-  position: relative;
-  top: -3px;
   transition: opacity 150ms;
-  width: 126px;
+  width: 112px;
 
   &:hover {
     opacity: 1;
