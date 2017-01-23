@@ -201,7 +201,6 @@ tour = Kalauz
 tourLink = kalauz
 contribute = Közreműködés
 bugReports = Hibajelentések
-discourse = Discourse
 tourOnboardingTitle = { $title } bekapcsolva!
 tourDoneButton = Kész
 userCountContainer = Jelenleg <span>{ $installation_count }</span> ember próbálja ezt ki: { $title }.
