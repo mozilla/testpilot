@@ -185,7 +185,6 @@ changelog = পরিবর্তনলগ
 tourLink = ভ্রমণ শুরু করুন
 contribute = অবদান রাখুন
 bugReports = বাগ রিপোর্ট
-discourse = আলোচনা
 tourOnboardingTitle = { $title } সক্রিয়!
 tourDoneButton = সম্পন্ন
 userCountContainer = { $title }<span>{ $installation_count }</span> জন ব্যবহারকারী বর্তমানে ব্যবহার করছেন!
