@@ -201,7 +201,6 @@ tour = Tur
 tourLink = Lansează turul
 contribute = Contribuie
 bugReports = Rapoarte de defecte
-discourse = Discourse
 tourOnboardingTitle = { $title } activat!
 tourDoneButton = Gata
 userCountContainer = <span>{ $installation_count }</span> persoane încearcă { $title } chiar acum!
