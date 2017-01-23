@@ -191,6 +191,7 @@ tour = Visite guidée
 tourLink = visite guidée
 contribute = Participer
 bugReports = Rapports de bogues
+discussExperiment = Discuter de { title }
 tourOnboardingTitle = { $title } a été activé !
 tourDoneButton = Terminé
 userCountContainer = <span>{ $installation_count }</span> personnes essaient { $title } en ce moment même&nbsp;!
