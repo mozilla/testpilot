@@ -188,7 +188,6 @@ changelog = سجل التغييرات
 tourLink = جولة
 contribute = ساهم
 bugReports = تقارير الأخطاء
-discourse = مساحة نقاش
 tourOnboardingTitle = { $title } مفعل!
 tourDoneButton = تمّ
 userCountContainer = هناك <span>{ $installation_count }</span> أشخاص يحاولون { $title } الآن!
