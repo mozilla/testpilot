@@ -201,7 +201,6 @@ tour = Tur
 tourLink = tur
 contribute = Katkıda bulunun
 bugReports = Hata raporları
-discourse = Discourse
 tourOnboardingTitle = { $title } etkinleştirildi!
 tourDoneButton = Bitti
 userCountContainer = Şu anda { $title } deneyini deneyen <span>{ $installation_count }</span> kişi var!
