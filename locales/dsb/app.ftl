@@ -191,7 +191,6 @@ tour = Tura
 tourLink = tura
 contribute = Sobu statkowaś
 bugReports = Rozpšawy wó programowych zmólkach
-discourse = Discourse
 tourOnboardingTitle = { $title } zmóžnjony!
 tourDoneButton = Gótowo
 userCountContainer = <span>{ $installation_count }</span> wósobow rowno { $title } testujo! 
