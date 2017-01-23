@@ -193,7 +193,6 @@ tour = Visita
 tourLink = Comenzar la visita
 contribute = Contribuir
 bugReports = Informes de fallos
-discourse = Discourse
 tourOnboardingTitle = ¡{ $title } habilitado!
 tourDoneButton = Hecho
 userCountContainer = ¡Hay <span>{ $installation_count }</span> personas probando { $title } ahora mismo!
@@ -294,6 +293,8 @@ localeWarningSubtitle = Igual puede habilitarlo si quiere.
 # An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledHeader = ¡Hagámoslo volar!
+experimentsListNoneInstalledSubheader = ¿Está listo para probar un experimento nuevo de Test Pilot? Habilite uno, pruébelo y coméntenos su opinión.
 experimentsListNoneInstalledCTA = ¿No estás interesado? <a>Decinos por qué</a>.
 
 
@@ -303,6 +304,7 @@ experimentsListNoneInstalledCTA = ¿No estás interesado? <a>Decinos por qué</a
 
 noScriptHeading = Oh oh...
 noScriptMessage = Test Pilot requiere JavaScript.<br>Perdón por eso.
+noScriptLink = Encuentre el motivo
 
 
 
