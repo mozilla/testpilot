@@ -199,7 +199,6 @@ tour = Průvodce
 tourLink = prohlídka
 contribute = Přispět
 bugReports = Hlášení chyb
-discourse = Discourse
 tourOnboardingTitle = { $title } povolen!
 tourDoneButton = Hotovo
 userCountContainer = Experiment { $title } zkouší <span>{ $installation_count }</span> lidí!
