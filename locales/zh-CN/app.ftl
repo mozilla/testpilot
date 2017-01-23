@@ -193,7 +193,6 @@ tour = 导览
 tourLink = 导览
 contribute = 贡献
 bugReports = 缺陷报告
-discourse = 讨论
 tourOnboardingTitle = { $title } 已启用！
 tourDoneButton = 完成
 userCountContainer = 已有 <span>{ $installation_count }</span> 人次尝试过 { $title } 它！
