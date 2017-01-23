@@ -191,6 +191,7 @@ tour = Rundgang
 tourLink = Rundgang starten
 contribute = Mitwirken
 bugReports = Fehlermeldungen
+discussExperiment = Über { title } diskutieren
 tourOnboardingTitle = { $title } aktiviert!
 tourDoneButton = Fertig
 userCountContainer = <span>{ $installation_count }</span> Personen probieren gerade { $title } aus!
