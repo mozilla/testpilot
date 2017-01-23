@@ -186,7 +186,6 @@ tour = Predstavitev
 tourLink = Začnite predstavitev
 contribute = Prispevajte
 bugReports = Poročila o napakah
-discourse = Discourse
 tourOnboardingTitle = { $title } omogočen!
 tourDoneButton = Končano
 userCountContainer = { $title } v tem trenutku preskuša <span>{ $installation_count }</span> ljudi!
