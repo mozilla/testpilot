@@ -201,7 +201,6 @@ tour = Tirza fessusen
 tourLink = Senker tirza fessusen
 contribute = Ttekki
 bugReports = Ineqqisen n ibugen
-discourse = Discourse
 tourOnboardingTitle = { $title } ittwarmed!
 tourDoneButton = Tefra
 userCountContainer = Llan <span>{ $installation_count }</span> n yemdanen ttaɛraḍen { $title } akka tura!
