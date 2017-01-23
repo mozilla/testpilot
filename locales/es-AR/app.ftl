@@ -150,8 +150,17 @@ feedbackUninstallCopy =
 [[ discussNotify ]]
 
 discussNotifyTitle = Esperá un segundo...
+discussNotifyMessageAccountless = <p> Jugando a experimentar, estamos usando un servicio externo de foros.
 discussNotifySubmitButton = Llévenme al foro
 discussNotifyCancelButton = Cancelar
+
+
+
+# A modal prompt shown before the feedback survey for some experiments.
+[[ experimentPreFeedback ]]
+
+experimentPreFeedbackTitle = { $title }opinión
+experimentPreFeedbackLinkCopy = Opine acerca del experimento { $title }
 
 
 
@@ -159,6 +168,7 @@ discussNotifyCancelButton = Cancelar
 [[ experimentPromo ]]
 
 experimentPromoHeader = ¿Listo para el despegue?
+experimentPromoSubheader = Estamos creando funciones de última generación para Firefox. ¡Instale Test Pilot para probarlas!
 
 
 
@@ -169,6 +179,7 @@ isEnabledStatusMessage = { $title } está habilitado.
 installErrorMessage = Oh oh. { $title } no se pudo habilitar. Probá de nuevo más tarde.
 participantCount = <span>{ $installation_count }</span> participantes
 otherExperiments = Probá también estos experimentos
+giveFeedback = Opine
 disableHeader = ¿Deshabilitar experimentos?
 disableExperiment = Deshabilitar { $title }
 disableExperimentTransition = Deshabilitando...
