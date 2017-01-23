@@ -201,7 +201,6 @@ tour = Prehliadka
 tourLink = prehliadka
 contribute = Zapojte sa
 bugReports = Hlásenie chýb
-discourse = Discourse
 tourOnboardingTitle = Experiment { $title } je aktivovaný!
 tourDoneButton = Hotovo
 userCountContainer = Experiment { $title } práve testuje <span>{ $installation_count }</span> ľudí!
