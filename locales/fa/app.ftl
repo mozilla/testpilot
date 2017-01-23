@@ -187,7 +187,6 @@ changelog = تغییرات
 tourLink = تور
 contribute = مشارکت
 bugReports = گزارش اشکال
-discourse = Discourse
 tourOnboardingTitle = { $title } فعال شد!
 tourDoneButton = انجام شد
 userCountContainer = تعداد <span>{ $installation_count }</span> نفر در حال حاضر از { $title } استفاده می‌کنند!
