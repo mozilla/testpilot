@@ -146,23 +146,6 @@ feedbackUninstallCopy =
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Eén moment...
-discussNotifyMessageAccountless = 
-  | <p>In de geest van experimenteren, gebruiken we een externe forumservice.
-  | U dient een account aan te maken als u
-  | aan de forums wilt deelnemen.</p>
-  | <p>Als u geen account wilt aanmaken, kunt u
-  | altijd feedback achterlaten via Test Pilot.
-  | <br>
-  | (We lezen het echt allemaal.)</p>
-discussNotifySubmitButton = Naar het forum
-discussNotifyCancelButton = Annuleren
-
-
-
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
