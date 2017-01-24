@@ -35,14 +35,6 @@ feedbackUninstallTitle = కృతజ్ఞతలు!
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = ఒక్క క్షణం...
-discussNotifyCancelButton = రద్దుచేయి
-
-
-
 # The experiment detail page.
 [[ experimentPage ]]
 
