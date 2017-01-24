@@ -184,6 +184,7 @@ tour = Rondleiding
 tourLink = Rondleiding starten
 contribute = Bijdragen
 bugReports = Bugrapporten
+discussExperiment = Discussiëren over { title }
 tourOnboardingTitle = { $title } ingeschakeld!
 tourDoneButton = Gereed
 userCountContainer = <span>{ $installation_count }</span> mensen proberen { $title } op dit moment uit!
