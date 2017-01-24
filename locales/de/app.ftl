@@ -143,16 +143,6 @@ feedbackUninstallCopy = Ihre Teilnahme an Firefox Test Pilot ist uns sehr wichti
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Einen Moment noch…
-discussNotifyMessageAccountless = <p>Ganz im Sinne von Experimenten nutzen wir ein externes Forum. Sie müssen ein Konto erstellen, wenn Sie an diesem Forum teilnehmen möchten.</p> <p>Wenn Sie kein Konto erstellen möchten, können Sie Ihre Meinung auch über Test Pilot sagen. <br> (Wir lesen das wirklich.)</p>
-discussNotifySubmitButton = Zum Forum gehen
-discussNotifyCancelButton = Abbrechen
-
-
-
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
