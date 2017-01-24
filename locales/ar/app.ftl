@@ -141,16 +141,6 @@ feedbackUninstallCopy = نقدر مشاركتكم في الاختبار التج
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = ثانية واحدة فقط...
-discussNotifyMessageAccountless = <p> في روح التجريب، نحن نستخدم خدمة ملف نقاش خارجي. وسوف تحتاج إلى إنشاء حساب إذا كنت ترغب في المشاركة في ملفات المناقشة. </p> <p> إذا كنت لا تريد إنشاء حساب، يمكنك دائما ترك رأيك من خلال الاختبار التجريبي. <br> (نحن حقا نقرأ هذه الأشياء) </p>
-discussNotifySubmitButton = خذني إلى صفحة النقاش
-discussNotifyCancelButton = إلغاء
-
-
-
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
