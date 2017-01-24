@@ -1,6 +1,10 @@
 import { handleActions } from 'redux-actions';
 
-const setHasAddon = (state, { payload: hasAddon }) => ({ ...state, hasAddon });
+const setHasAddon = (state, { payload: hasAddon }) => ({
+  ...state,
+  hasAddon,
+  installed: hasAddon ? state.installed : {}
+});
 
 const setInstalled = (state, { payload: { installed, installedLoaded } }) =>
   ({ ...state, installed, installedLoaded });
