@@ -146,23 +146,6 @@ feedbackUninstallCopy =
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Rǧǧu kan yiwet tasint...
-discussNotifyMessageAccountless = 
-  | <p>Akken ad teqqimeḍ deg usekyed n termitin, nesseqdac ameẓlu n unmager azɣaray.
-  | Yessefk ad ternuḍ amiḍan ma tebɣiḍ
-  | ad tettekkiḍ deg unmager.</p>
-  | <p>Ma terniḍ amiḍan ad tizmireḍ
-  | ad tazneḍ tikti s useqdec n Test Pilot.
-  | <br>
-  | (S tidett neqqaṛ akk ayagi)</p>
-discussNotifySubmitButton = Awi-yi ar unmager
-discussNotifyCancelButton = Sefsex
-
-
-
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
