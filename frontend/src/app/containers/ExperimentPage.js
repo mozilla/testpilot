@@ -42,12 +42,14 @@ export class ExperimentDetail extends React.Component {
     super(props);
 
     const { isExperimentEnabled, experiment,
-            getCookie, removeCookie } = this.props;
+            getCookie, removeCookie, hasAddon } = this.props;
 
     let showEmailDialog = false;
     if (getCookie('first-run')) {
       removeCookie('first-run');
-      showEmailDialog = true;
+      if (hasAddon) {
+        showEmailDialog = true;
+      }
     }
 
     // TODO: Clean this up per #1367
