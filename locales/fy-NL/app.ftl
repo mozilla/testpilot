@@ -143,16 +143,6 @@ feedbackUninstallCopy = Jo dielnimming oan Firefox Test Pilot betsjut in protte!
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = In amerijke…
-discussNotifyMessageAccountless = <p>Alhiel yn 'e geast fan eksperiminten, brûke wy in ekstern foarum. Jo moatte in account oanmeitsje as jo dielnimme wolle yn de foarums.</p>
-discussNotifySubmitButton = Nei it foarum gean
-discussNotifyCancelButton = Annulearje
-
-
-
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
