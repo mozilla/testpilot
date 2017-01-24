@@ -140,14 +140,6 @@ feedbackUninstallTitle = Hvala!
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Samo sekundo ...
-discussNotifyCancelButton = Prekliči
-
-
-
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
