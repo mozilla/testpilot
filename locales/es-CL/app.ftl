@@ -144,15 +144,6 @@ feedbackUninstallCopy =
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Solo un segundo...
-discussNotifySubmitButton = Ir al foro
-discussNotifyCancelButton = Cancelar
-
-
-
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
