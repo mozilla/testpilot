@@ -140,15 +140,6 @@ feedbackUninstallTitle = ধন্যবাদ!
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = এক সেকেন্ড অপেক্ষা করুন...
-discussNotifySubmitButton = আমাকে ফোরামে নিয়ে যাও
-discussNotifyCancelButton = বাতিল
-
-
-
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
