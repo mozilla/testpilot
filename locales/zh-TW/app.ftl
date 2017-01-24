@@ -191,6 +191,7 @@ tour = 導覽
 tourLink = 導覽
 contribute = 貢獻
 bugReports = 錯誤回報
+discussExperiment = 討論 { title }
 tourOnboardingTitle = 已開啟 { $title }！
 tourDoneButton = 完成
 userCountContainer = 已經有 <span>{ $installation_count }</span> 個人正在試用 { $title }！
