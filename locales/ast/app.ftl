@@ -143,23 +143,6 @@ feedbackUninstallCopy =
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Un segundín...
-discussNotifyMessageAccountless = 
-  | <p>Nel espíritu de la esperimentación, tamos usando un serviciu esternu de foros.
-  | Precisarás crear una cuenta si desees
-  | participar nos foros.</p>
-  | <p>Si nun quies creala, siempres pues
-  | dexar feedback pente Test Pilot.
-  | <br>
-  | (Lleemos los comentarios, daveres)</p>
-discussNotifySubmitButton = Lleváime al foru
-discussNotifyCancelButton = Encaboxar
-
-
-
 # A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
