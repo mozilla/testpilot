@@ -144,23 +144,6 @@ feedbackUninstallCopy =
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Malý moment...
-discussNotifyMessageAccountless = 
-  | <p>V duchu experimentů využíváme externí fórum.
-  | Pokud si přejete na fóru diskutovat,
-  | založte si účet.</p>
-  | <p>Pokud si nechcete žádný účet zakládat, můžete
-  | nám zpětnou vazbu zaslat přímo skrze Test Pilot.
-  | <br>
-  | (Opravdu vše čteme)</p>
-discussNotifySubmitButton = Přejít do fóra
-discussNotifyCancelButton = Zrušit
-
-
-
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
