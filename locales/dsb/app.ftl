@@ -143,16 +143,6 @@ feedbackUninstallCopy = Wašo wobźělenje na Firefox Test Pilot jo nam wjelgin 
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Hyšći wokognuśe...
-discussNotifyMessageAccountless = <p>Cele w zmysle eksperimentow wužywamy eksterny forum. Musyśo konto załožyś, jolic cośo se na toś tom forumje wobźěliś.</p> <p>Jolic njocośo konto załožyś, móžośo pśecej swójo měnjenje pśez Test Pilot zawóstajiś.<br>(Cytamy to napšawdu.)</p>
-discussNotifySubmitButton = K forumoju
-discussNotifyCancelButton = Pśetergnuś
-
-
-
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
