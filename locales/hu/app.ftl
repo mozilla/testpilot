@@ -146,23 +146,6 @@ feedbackUninstallCopy =
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Csak egy pillanat…
-discussNotifyMessageAccountless = 
-  | <p>A kísérletezés szellemében egy külső fórumszolgáltatást használunk.
-  | Létre kell hoznia egy fiókot, ha részt
-  | szeretne venni a fórumokon.</p>
-  | <p>Ha nem akar fiókot létrehozni, akkor
-  | hagyhat visszajelzést a Tesztpilótán keresztül.
-  | <br>
-  | (Tényleg elolvassuk ezeket)</p>
-discussNotifySubmitButton = Vigyen a fórumhoz
-discussNotifyCancelButton = Mégse
-
-
-
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
