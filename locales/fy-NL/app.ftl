@@ -191,6 +191,7 @@ tour = Toer
 tourLink = toer
 contribute = Bydrage
 bugReports = Bugrapporten
+discussExperiment = Oer { title } diskusjearje
 tourOnboardingTitle = { $title } ynskeakele!
 tourDoneButton = Dien
 userCountContainer = <span>{ $installation_count }</span> minsken brûke op dit stuit { $title }!
