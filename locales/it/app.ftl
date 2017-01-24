@@ -143,16 +143,6 @@ feedbackUninstallCopy = La tua partecipazione a Test Pilot è molto importante p
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Solo un attimo…
-discussNotifyMessageAccountless = <p>Nello spirito di sperimentazione che caratterizza il progetto, utilizziamo un servizio di forum esterno. Dovrai creare un account per partecipare alle discussioni.</p> <p>Se non vuoi creare un account, puoi inviarci i tuoi commenti direttamente attraverso Test Pilot.<br>Ti garantiamo che leggiamo tutti i messaggi.</p>
-discussNotifySubmitButton = Apri il forum
-discussNotifyCancelButton = Annulla
-
-
-
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
