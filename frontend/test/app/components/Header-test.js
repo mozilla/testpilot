@@ -72,11 +72,8 @@ describe('app/components/Header', () => {
         expectMenuGA('Retire');
       });
 
-      it('should ping GA and show discuss dialog on discuss item click', () => {
+      it('should ping GA and and close menu on discuss clicks', () => {
         clickItem('menuDiscuss');
-        expect(preventDefault.called).to.be.true;
-        expect(subject.state('showDiscussDialog')).to.be.true;
-        expect(subject.find('DiscussDialog')).to.have.property('length', 1);
         expectMenuGA('Discuss');
       });
 

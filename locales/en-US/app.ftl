@@ -105,20 +105,6 @@ feedbackUninstallCopy =
     | a lot! Please check out our other experiments,
     | and stay tuned for more to come!
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[discussNotify]]
-discussNotifyTitle = Just one second...
-discussNotifyMessageAccountless =
-    | <p>In the spirit of experimentation, we are using an external forum service.
-    | You will need to create an account if you
-    | wish to participate on the forums.</p>
-    | <p>If you don't want to create an account, you can
-    | always leave feedback through Test Pilot.
-    | <br>
-    | (We really do read this stuff)</p>
-discussNotifySubmitButton = Take me to the forum
-discussNotifyCancelButton = Cancel
-
 # A modal prompt shown before the feedback survey for some experiments.
 [[experimentPreFeedback]]
 experimentPreFeedbackTitle = {$title} feedback

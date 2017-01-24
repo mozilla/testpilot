@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 import classnames from 'classnames';
 
 import RetireConfirmationDialog from './RetireConfirmationDialog';
-import DiscussDialog from './DiscussDialog';
 
 export default class Header extends React.Component {
 
@@ -13,9 +12,7 @@ export default class Header extends React.Component {
     this.closeTimer = null;
     this.close = this.close.bind(this);
     this.dismissRetireDialog = this.dismissRetireDialog.bind(this);
-    this.dismissDiscussDialog = this.dismissDiscussDialog.bind(this);
     this.state = {
-      showDiscussDialog: false,
       showRetireDialog: false
     };
   }
@@ -40,7 +37,7 @@ export default class Header extends React.Component {
                <ul>
                  <li><a onClick={e => this.wiki(e)} data-l10n-id="menuWiki"
                     href="https://wiki.mozilla.org/Test_Pilot" target="_blank">Test Pilot Wiki</a></li>
-                 <li><a onClick={e => this.discuss(e)} data-l10n-id="menuDiscuss"
+                 <li><a onClick={() => this.discuss()} data-l10n-id="menuDiscuss"
                     href="https://discourse.mozilla-community.org/c/test-pilot" target="_blank">Discuss Test Pilot</a></li>
                  <li><a onClick={e => this.fileIssue(e)} data-l10n-id="menuFileIssue"
                     href="https://github.com/mozilla/testpilot/issues/new" target="_blank">File an Issue</a></li>
@@ -73,30 +70,10 @@ export default class Header extends React.Component {
     return null;
   }
 
-  dismissDiscussDialog() {
-    this.setState({
-      showDiscussDialog: false
-    });
-  }
-
-  renderDiscussDialog() {
-    if (this.state.showDiscussDialog) {
-      return (
-        <DiscussDialog {...this.props}
-          href="https://discourse.mozilla-community.org/c/test-pilot"
-          openWindow={this.props.openWindow}
-          onDismiss={this.dismissDiscussDialog}
-        />
-      );
-    }
-    return null;
-  }
-
   render() {
     return (
       <div>
         {this.renderRetireDialog()}
-        {this.renderDiscussDialog()}
         <header id="main-header" className="responsive-content-wrapper">
           <h1>
             <Link to="/" className="wordmark" data-l10n-id="siteName">Firefox Test Pilot</Link>
@@ -157,14 +134,12 @@ export default class Header extends React.Component {
     this.close();
   }
 
-  discuss(evt) {
-    evt.preventDefault();
+  discuss() {
     this.props.sendToGA('event', {
       eventCategory: 'Menu Interactions',
       eventAction: 'drop-down menu',
       eventLabel: 'Discuss'
     });
-    this.setState({ showDiscussDialog: true });
     this.close();
   }
 
