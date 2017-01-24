@@ -146,23 +146,6 @@ feedbackUninstallCopy =
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = 少々お待ちください...
-discussNotifyMessageAccountless = 
-  | <p>実験精神の一環として、私たちは外部のフォーラムサービスを使用しています。
-  | フォーラムでの議論に参加したい場合は
-  | アカウントを作成する必要があります。</p>
-  | <p>アカウントを作成したくない場合は、いつでも
-  | Test Pilot を通じてフィードバックを提供できます。
-  | <br>
-  | (送られた内容にはしっかり目を通しています)</p>
-discussNotifySubmitButton = フォーラムへ移動
-discussNotifyCancelButton = キャンセル
-
-
-
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
