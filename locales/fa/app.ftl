@@ -141,16 +141,6 @@ feedbackUninstallCopy = مشارکت شما در خلبان آزمایشی فا�
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = فقط یک ثانیه…
-discussNotifyMessageAccountless = <p>در بعضی از آزمایش‌ها ما از سرویس‌های انجمن‌های خارجی استفاده می‌کنیم. اگر تمایل دارید در این انجمن‌ها مشارکت کنید باید برای خود حساب بسازید.</p>
-discussNotifySubmitButton = من رو به انجمن ببر
-discussNotifyCancelButton = لغو
-
-
-
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
