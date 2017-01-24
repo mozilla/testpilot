@@ -146,23 +146,6 @@ feedbackUninstallCopy =
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Bir saniye...
-discussNotifyMessageAccountless = 
-  | <p>Deneysel bir ruhla yola çıktığımız için harici bir forum servisi kullanıyoruz.
-  | Forumlara katılmak isterseniz ayrı bir 
-  | hesap açmanız gerekecek.</p>
-  | <p>Hesap açmak istemezseniz de her zaman Test 
-  | Pilotu üzerinden geri bildiriminizi paylaşabilirsiniz.
-  | <br>
-  | (Geri bildirimleri gerçekten okuyoruz.)</p>
-discussNotifySubmitButton = Foruma gidelim
-discussNotifyCancelButton = İptal
-
-
-
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
