@@ -690,7 +690,7 @@ export class ExperimentDetail extends React.Component {
         let i = 0;
         const interval = setInterval(() => {
           i++;
-          if (window.navigator.testpilotAddon) {
+          if (this.props.hasAddon) {
             clearInterval(interval);
             resolve();
           } else if (i > 100) {
