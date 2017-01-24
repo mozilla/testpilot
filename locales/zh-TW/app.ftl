@@ -143,16 +143,6 @@ feedbackUninstallCopy = 您參與 Firefox 的 Test Pilot 計畫對我們有很�
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = 稍等一下…
-discussNotifyMessageAccountless = <p>由於實驗的精神，我們會使用外部的討論區進行討論。若您想參與的話將需要註冊帳號。</p><p>若您不想註冊帳號，還是可以透過 Test Pilot 留下意見回饋。<br>（我們真的會讀這些意見）</p>
-discussNotifySubmitButton = 帶我去討論區
-discussNotifyCancelButton = 取消
-
-
-
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
