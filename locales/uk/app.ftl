@@ -146,23 +146,6 @@ feedbackUninstallCopy =
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Одну секундочку...
-discussNotifyMessageAccountless = 
-  | <p>В дусі експерименту ми використовуємо зовнішній сервіс форуму.
-  | Вам потрібно буде створити обліковий запис, якщо ви
-  | бажаєте брати участь на форумах.</p>
-  | <p>Якщо ви не хочете створювати обліковий запис, ви можете
-  | завжди залишити відгук через Test Pilot.
-  | <br>
-  | (Ми справді це читаємо)</p>
-discussNotifySubmitButton = Перейти до форуму
-discussNotifyCancelButton = Скасувати
-
-
-
 # A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
