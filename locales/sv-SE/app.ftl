@@ -50,7 +50,6 @@ landingExperimentsTitle = Testa de senaste experimentella funktionerna
 [[ landingInstall ]]
 
 landingInstallButton = Installera tillägget Test Pilot
-landingInstallButtonOneClick = Installera Test Pilot och aktivera { $experimentTitle }
 landingInstallingButton = Installerar...
 landingInstalledButton = Välj dina funktioner
 
@@ -305,3 +304,4 @@ noScriptLink = Ta reda på varför
 
 viewPastExperiments = Visa tidigare experiment
 hidePastExperiments = Dölj tidigare experiment
+
