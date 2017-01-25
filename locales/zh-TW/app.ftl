@@ -50,7 +50,6 @@ landingExperimentsTitle = 試用最新的實驗功能
 [[ landingInstall ]]
 
 landingInstallButton = 安裝 Test Pilot 附加元件
-landingInstallButtonOneClick = 安裝 Test Pilot 並開啟 { $experimentTitle }
 landingInstallingButton = 安裝中…
 landingInstalledButton = 選擇您要的功能
 
@@ -302,3 +301,4 @@ noScriptLink = 找出原因
 
 viewPastExperiments = 檢視先前的實驗
 hidePastExperiments = 隱藏先前的實驗
+
