@@ -50,7 +50,6 @@ landingExperimentsTitle = Prueba las últimas características experimentales
 [[ landingInstall ]]
 
 landingInstallButton = Instalar el complemento Test Pilot
-landingInstallButtonOneClick = Instalar Test Pilot y activar { $experimentTitle }
 landingInstallingButton = Instalando...
 landingInstalledButton = Elige tus funciones
 
