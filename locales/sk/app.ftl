@@ -50,7 +50,6 @@ landingExperimentsTitle = Vyskúšajte najnovšie experimentálne funkcie
 [[ landingInstall ]]
 
 landingInstallButton = Nainštalovať doplnok Test Pilot
-landingInstallButtonOneClick = Nainštalovať Test Pilot a aktivovať { $experimentTitle }
 landingInstallingButton = Inštaluje sa...
 landingInstalledButton = Vyberte si svoje funkcie
 
