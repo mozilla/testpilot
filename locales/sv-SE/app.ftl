@@ -184,7 +184,7 @@ tour = Guidad visning
 tourLink = Starta guidad visning
 contribute = Bidra
 bugReports = Felrapporter
-discussExperiment = Diskutera { title }
+discussExperiment = Diskutera { $title }
 tourOnboardingTitle = { $title } är aktiverad!
 tourDoneButton = Klar
 userCountContainer = Det finns <span>{ $installation_count }</span> personer som provar { $title } just nu!
@@ -305,4 +305,3 @@ noScriptLink = Ta reda på varför
 
 viewPastExperiments = Visa tidigare experiment
 hidePastExperiments = Dölj tidigare experiment
-

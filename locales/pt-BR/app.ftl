@@ -184,7 +184,7 @@ tour = Tour
 tourLink = tour
 contribute = Contribua
 bugReports = Relatório de falhas
-discussExperiment = Debater sobre { title }
+discussExperiment = Debater sobre { $title }
 tourOnboardingTitle = { $title } habilitado!
 tourDoneButton = Pronto
 userCountContainer = <span>{ $installation_count }</span> estão experimentando o { $title } agora!
@@ -305,4 +305,3 @@ noScriptLink = Descubra por quê
 
 viewPastExperiments = Ver experimentos antigos
 hidePastExperiments = Esconder experimentos antigos
-

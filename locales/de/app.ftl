@@ -181,7 +181,7 @@ tour = Rundgang
 tourLink = Rundgang starten
 contribute = Mitwirken
 bugReports = Fehlermeldungen
-discussExperiment = Über { title } diskutieren
+discussExperiment = Über { $title } diskutieren
 tourOnboardingTitle = { $title } aktiviert!
 tourDoneButton = Fertig
 userCountContainer = <span>{ $installation_count }</span> Personen probieren gerade { $title } aus!
@@ -302,4 +302,3 @@ noScriptLink = Erfahren Sie den Grund
 
 viewPastExperiments = Vergangene Experimente ansehen
 hidePastExperiments = Vergangene Experimente ausblenden
-

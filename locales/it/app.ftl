@@ -181,7 +181,7 @@ tour = Panoramica
 tourLink = Panoramica
 contribute = Collabora
 bugReports = Segnalazione bug
-discussExperiment = Discuti di { title }
+discussExperiment = Discuti di { $title }
 tourOnboardingTitle = { $title } attivato.
 tourDoneButton = Fatto
 userCountContainer = In questo momento <span>{ $installation_count }</span> persone stanno provando { $title }.
@@ -302,4 +302,3 @@ noScriptLink = Scopri perché
 
 viewPastExperiments = Visualizza gli esperimenti già conclusi
 hidePastExperiments = Nascondi gli esperimenti già conclusi
-
