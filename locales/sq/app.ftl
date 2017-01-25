@@ -89,17 +89,26 @@ onboardingMessage = Vumë një ikonë te paneli juaj që të mund të gjeni Pilo
 [[ error ]]
 
 errorHeading = Oh!
+errorMessage = Duket se prishëm diçkla. <br> Ndoshta më mirë të riprovonit më vonë.
+notFoundHeader = Katër Zero Katër!
 
 
 
 # A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
+emailOptInDialogTitle = Mirë se vini te Pilot Testesh!
+emailOptInMessage = Mësoni rreth eksperimentesh të reja dhe shihni përfundime testesh për eksperimente që keni provuar.
 emailValidationError = Ju lutemi, përdorni një adresë email të vlefshme!
+
+# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput = 
+  [html/placeholder] këtu vendoset email-i :)
 emailOptInButton = Regjistromëni
 emailOptInSkip = Anashkaloje
 emailOptInConfirmationTitle = Email-i u Dërgua
 emailOptInSuccessMessage2 = Faleminderit!
+emailOptInConfirmationClose = Oburra te eksperimentet…
 
 
 
@@ -107,8 +116,11 @@ emailOptInSuccessMessage2 = Faleminderit!
 [[ experimentsList ]]
 
 experimentListEnabledTab = E aktivizuar
+experimentListJustLaunchedTab = Të sapohedhur Në Qarkullim
+experimentListJustUpdatedTab = Të sapopërditësuar
 experimentListEndingTomorrow = Përfundon Nesër
 experimentListEndingSoon = Përfundon Së Shpejti
+experimentsListCondensedHeader = Zgjidhni eksperimentet tuaja!
 
 
 
@@ -127,20 +139,53 @@ experimentCardLearnMore = Mësoni Më Tepër
 feedbackSubmitButton = Plotësoni një anketim të shpejtë
 feedbackCancelButton = Mbylle
 feedbackUninstallTitle = Faleminderit!
+feedbackUninstallCopy = 
+  | Pjesëmarrja juaj te Piloti i Testeve të Firefox-it
+  | ka shumë domethëniet! ju lutemi, shihni eksperimente
+  | tonat të tjera, dhe na ndiqni për më tepër në të ardhmen!
+
+
+
+# A modal prompt shown before the feedback survey for some experiments.
+[[ experimentPreFeedback ]]
+
+experimentPreFeedbackTitle = Përshtypje mbi { $title }
+experimentPreFeedbackLinkCopy = Jepni përshtypjet rreth eksperimentit { $title }
+
+
+
+# A splash shown on top of the experiment page when Test Pilot is not installed.
+[[ experimentPromo ]]
+
+experimentPromoHeader = Gati për Ngritje Në Fluturim?
+experimentPromoSubheader = Po krijojmë veçoritë e brezit të ardhshëm për Firefox-in. Instaloni Pilotin e Testeve që t’i provoni!
 
 
 
 # The experiment detail page.
 [[ experimentPage ]]
 
+isEnabledStatusMessage = { $title } është i aktivizuar.
+installErrorMessage = Hëm. { $title } s’u aktivizua dot. Riprovoni më vonë.
 participantCount = <span>{ $installation_count }</span> pjesëmarrës
+otherExperiments = Provoni edhe këto eksperimente
 giveFeedback = Jepni Përshtypjet
+disableHeader = Të çaktivizohet Eksperimenti?
+disableExperiment = Çaktivizoje { $title }
+disableExperimentTransition = Po çaktivizohet…
+enableExperiment = Aktivizoje { $title }
 enableExperimentTransition = Po aktivizohet…
 measurements = Privatësia juaj
+experimentPrivacyNotice = Më tepër rreth grumbullimit të të dhënave për { $title } mund të mësoni këtu.
+contributorsHeading = Sjellë për ju nga
 contributorsExtraLearnMore = Mësoni më tepër
 changelog = Regjistër ndryshimesh
 tour = Tur
+tourLink = Niseni Turin
 contribute = Kontribuoni
+bugReports = Njoftime të Metash
+discussExperiment = Diskutoni mbi { title }
+tourOnboardingTitle = { $title } u aktivizua!
 tourDoneButton = U bë
 highlightPrivacy = Privatësia juaj
 
