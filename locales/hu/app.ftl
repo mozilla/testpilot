@@ -50,7 +50,6 @@ landingExperimentsTitle = Próbálja ki a legújabb kísérleti funkciókat
 [[ landingInstall ]]
 
 landingInstallButton = A Tesztpilóta kiegészítő telepítése
-landingInstallButtonOneClick = A Tesztpilóta telepítése, és a(z) { $experimentTitle } engedélyezése
 landingInstallingButton = Telepítés…
 landingInstalledButton = Funkciók kiválasztása
 
@@ -305,3 +304,4 @@ noScriptLink = Tudja meg, mi az oka
 
 viewPastExperiments = Múltbeli kísérletek megtekintése
 hidePastExperiments = Múltbeli kísérletek elrejtése
+
