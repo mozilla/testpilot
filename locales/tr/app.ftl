@@ -50,7 +50,6 @@ landingExperimentsTitle = En yeni deneysel özellikleri deneyin
 [[ landingInstall ]]
 
 landingInstallButton = Test Pilotu eklentisini yükle
-landingInstallButtonOneClick = Test Pilotu'nu yükle ve { $experimentTitle } deneyimi etkinleştir
 landingInstallingButton = Yükleniyor...
 landingInstalledButton = Özelliklerinizi seçin
 
