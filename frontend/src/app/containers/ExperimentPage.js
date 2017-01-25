@@ -330,12 +330,12 @@ export class ExperimentDetail extends React.Component {
                       </section>}
                     </div>}
                     {!graduated && <div>
-                      {hasAddon && <section className="stats-section">
+                      <section className="stats-section">
                         <table className="stats"><tbody>
-                          <tr>
+                          {hasAddon && <tr>
                             <td data-l10n-id="tour">Tour</td>
                             <td><a className="showTour" data-l10n-id="tourLink" onClick={e => this.showTour(e)} href="#">Launch Tour</a></td>
-                          </tr>
+                          </tr>}
                           {changelog_url && <tr>
                             <td data-l10n-id="changelog">Changelog</td>
                             <td>
@@ -357,7 +357,7 @@ export class ExperimentDetail extends React.Component {
                             <td><a href={discourse_url}>{discourse_url}</a></td>
                           </tr>
                         </tbody></table>
-                      </section>}
+                      </section>
                     </div>}
                     <section className="contributors-section">
                       <h3 data-l10n-id="contributorsHeading">Brought to you by</h3>
@@ -381,14 +381,14 @@ export class ExperimentDetail extends React.Component {
                     }
                     </section>
                     {!graduated && <div>
-                      {hasAddon && <div>
+                      <div>
                         {measurements && <section
                               className={classnames('measurements', { highlight: highlightMeasurementPanel })}>
                           <h3 data-l10n-id="measurements">Your privacy</h3>
                           <div data-l10n-id={this.l10nId('measurements')} className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
                           {privacy_notice_url && <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-l10n-args={JSON.stringify({ title })} href={privacy_notice_url}>You can learn more about the data collection for <span>{title}</span> here.</a>}
                         </section>}
-                      </div>}
+                      </div>
                     </div>}
                   </div>
                 </div>
