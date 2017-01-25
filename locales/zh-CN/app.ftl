@@ -50,6 +50,7 @@ landingExperimentsTitle = 试用最新鲜的实验功能
 [[ landingInstall ]]
 
 landingInstallButton = 安装 Test Pilot 扩展
+landingInstallButtonOneClick = 安装 Test Pilot 并启用 { $experimentTitle }
 landingInstallingButton = 正在安装...
 landingInstalledButton = 选择您的功能
 
@@ -119,6 +120,7 @@ experimentListJustLaunchedTab = 刚刚启动
 experimentListJustUpdatedTab = 刚刚更新
 experimentListEndingTomorrow = 明天结束
 experimentListEndingSoon = 即将结束
+experimentsListCondensedHeader = 选择你的实验！
 
 
 
@@ -179,6 +181,7 @@ tour = 导览
 tourLink = 导览
 contribute = 贡献
 bugReports = 缺陷报告
+discussExperiment = 讨论 { $title }
 tourOnboardingTitle = { $title } 已启用！
 tourDoneButton = 完成
 userCountContainer = 已有 <span>{ $installation_count }</span> 人次尝试过 { $title } 它！
