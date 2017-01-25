@@ -50,7 +50,6 @@ landingExperimentsTitle = Sekyed amaynut i d-yeffɣen seg ulabo
 [[ landingInstall ]]
 
 landingInstallButton = Sebded azegrir Test Pilot
-landingInstallButtonOneClick = Sebded Test Pilot sakin rmed { $experimentTitle }
 landingInstallingButton = Asebded...
 landingInstalledButton = Fren timahilin inek
 
