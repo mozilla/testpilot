@@ -36,9 +36,13 @@ landingExperimentsTitle = Try out the latest experimental features
 # Related to the installation of the Test Pilot add-on.
 [[landingInstall]]
 landingInstallButton = Install the Test Pilot Add-on
-landingInstallButtonOneClick = Install Test Pilot and Enable {$experimentTitle}
 landingInstallingButton = Installing...
 landingInstalledButton = Choose your features
+
+# Related to a one click to install test pilot and an experiment.
+[[oneClickInstall]]
+oneClickInstallMinorCta = Install Test Pilot &amp;
+oneClickInstallMajorCta = Enable {$title}
 
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[landingFirefox]]

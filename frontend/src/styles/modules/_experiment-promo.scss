@@ -1,4 +1,5 @@
 .experiment-promo {
+  padding-bottom: $grid-unit * 1.5;
 
   .intro-text {
 
@@ -28,7 +29,7 @@
         text-align: left;
       }
 
-      margin-top: $grid-unit * 1.5;
+      margin-top: $grid-unit * 1;
       padding: 0;
     }
   }

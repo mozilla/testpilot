@@ -11,14 +11,15 @@ export default class MainInstallButton extends React.Component {
   }
 
   install(e) {
-    const { requireRestart, sendToGA, eventCategory, hasAddon, installAddon, installCallback } = this.props;
+    const { requireRestart, sendToGA, eventCategory, eventLabel, hasAddon, installAddon, installCallback } = this.props;
     if (installCallback) {
+      this.setState({ isInstalling: true });
       installCallback(e);
       return;
     }
     if (hasAddon) { return; }
     this.setState({ isInstalling: true });
-    installAddon(requireRestart, sendToGA, eventCategory);
+    installAddon(requireRestart, sendToGA, eventCategory, eventLabel);
   }
 
   render() {
@@ -34,12 +35,20 @@ export default class MainInstallButton extends React.Component {
     );
   }
 
+  renderOneClickInstallButton(title) {
+    return (
+      <div className="default-btn-msg one-click-text">
+        <span className="minor-cta" data-l10n-id="oneClickInstallMinorCta" >Install Test Pilot &amp;</span>
+        <span className="major-cta" data-l10n-id="oneClickInstallMajorCta" data-l10n-args={ JSON.stringify({ title: title }) }>Enable {title}</span>
+      </div>
+    );
+  }
+
   renderInstallButton(isInstalling, hasAddon) {
     const { experimentTitle } = this.props;
     let installButton = null;
     if (experimentTitle) {
-      installButton = <span className="default-btn-msg" data-l10n-id="landingInstallButtonOneClick" data-l10n-args={ JSON.stringify({ experimentTitle: experimentTitle }) }>
-      </span>;
+      installButton = this.renderOneClickInstallButton(experimentTitle);
     } else {
       installButton = <span className="default-btn-msg" data-l10n-id="landingInstallButton">
       </span>;
@@ -57,7 +66,6 @@ export default class MainInstallButton extends React.Component {
       </div>
     );
   }
-
 
   renderAltButton(isFirefox, isMobile) {
     if (isFirefox && isMobile) {
