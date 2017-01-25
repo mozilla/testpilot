@@ -14,9 +14,9 @@ unknown-unknowns when building rapid prototypes, and having real-time results
 is just gravy.  We use GA for all basic measuring, funnel tracking,
 click-through rates, and simple A/B testing.
 
-## Tiles Pipeline
+## Ping Centre
 
-The Tiles Pipeline is used by [Activity
+The Ping Centre (originally known as the Tiles Pipeline) is used by [Activity
 Stream](https://github.com/mozilla/activity-stream) and is something we're
 evaluating for collecting event based data.  We expect to trial it in addition
 to the other pipelines in the next couple of experiments to get a feel for
@@ -98,8 +98,12 @@ analysis.
 
 ## Sending Data
 
-The actual function to report event based data is called `testpilot.sendEvent()` and is
-provided by the `testpilot-metrics` node module. To use it:
+The actual function to report event based data is called `sendEvent()` and is
+provided by the [`testpilot-metrics` npm package](https://www.npmjs.com/package/testpilot-metrics).
+See the [`testpilot-metrics` docs](https://github.com/mozilla/testpilot#readme)
+for API docs and working SDK and WebExtension examples.
+
+Here is a quick overview:
 
 Add `testpilot-metrics` to your package.json file
 ```javascript
@@ -109,35 +113,49 @@ Add `testpilot-metrics` to your package.json file
 }
 ```
 
-Set up your Google Analytics credentials and enable your endpoints
+Call the Metrics constructor, passing in your add-on ID and version, a non-PII
+(non-personally identifiable) user ID, and your Google Analytics tracking
+ID (if you are using GA):
+
 ```javascript
-TODO: code here
+
+const Metrics = require('testpilot-metrics');
+
+const { sendEvent } = new Metrics({
+  id: '@my-addon',
+  version: '1.0.2',
+  uid: 'some-non-PII-user-ID',
+  tid: 'UA-XXXXXXXX-YY'
+});
+
 ```
 
 Call testpilot.sendEvent()
 ```javascript
-TODO: code here
+sendEvent({
+  object: 'webext-button',
+  method: 'click'
+});
 ```
 
 The testpilot.sendEvent() function accepts these parameters:
 
-* `event`: What is happening?  eg. `click`
 * `object`: What is being affected?  eg. `home-button-1`
+* `method`: What is happening?  eg. `click`
 * `category` (optional): If you want to add a category for easy reporting
   later. eg. `mainmenu`
-* `variant` (optional): An identifying string if you're running different
-  variants. eg. `cohort-A`
+* `variant` (optional): Name of the multivariate or A/B test group the user
+   belongs to. eg. `green-button`
+* `transform` (optional): A function used to alter the format of the object
+   sent to GA.
 
-These paramters will be combined with other data (like a timestamp and system
-information) in the sentEvent() function and the broker will send the data to
+These parameters will be combined with other data (like a timestamp and system
+information) in the sendEvent() function and the broker will send the data to
 the appropriate endpoints.
 
 > TODO:
 > * need to specify what "system information" is, if for no other reason than we
 > need a schema for it.  Includes add-on version, client id, locale, etc.
-> * testpilot.sendEvent() should be documented in the node module and we should
-> point to that from here
->
 
 If some of the data you need to collect doesn't fit an event/object model it's
 possible to ping the endpoints directly.  In that case, the custom pings will
