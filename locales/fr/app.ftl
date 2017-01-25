@@ -50,7 +50,6 @@ landingExperimentsTitle = Essayez les nouveautés qui sortent du labo…
 [[ landingInstall ]]
 
 landingInstallButton = Installez le module Test Pilot
-landingInstallButtonOneClick = Installer Test Pilot et activer { $experimentTitle }
 landingInstallingButton = Installation…
 landingInstalledButton = Choisissez vos fonctionnalités
 
