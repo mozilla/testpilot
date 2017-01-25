@@ -50,7 +50,6 @@ landingExperimentsTitle = Попробуйте последние экспери
 [[ landingInstall ]]
 
 landingInstallButton = Установить расширение лётчика-испытателя
-landingInstallButtonOneClick = Установите лётчика-испытателя и включите { $experimentTitle }
 landingInstallingButton = Установка...
 landingInstalledButton = Выберите возможности
 
@@ -305,3 +304,4 @@ noScriptLink = Узнать почему
 
 viewPastExperiments = Посмотреть старые эксперименты
 hidePastExperiments = Скрыть старые эксперименты
+
