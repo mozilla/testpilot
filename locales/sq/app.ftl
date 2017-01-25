@@ -50,7 +50,6 @@ landingExperimentsTitle = Provoni veçoritë tona më të reja eksperimentale
 [[ landingInstall ]]
 
 landingInstallButton = Instaloni shtesën Pilot Testesh
-landingInstallButtonOneClick = Instalojeni Pilotin e Testeve dhe Aktivizoni { $experimentTitle }
 landingInstallingButton = Po instalohet...
 landingInstalledButton = Zgjidhni veçoritë tuaja
 
