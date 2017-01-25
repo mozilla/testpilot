@@ -50,7 +50,6 @@ landingExperimentsTitle = Testen Sie die neuesten experimentellen Funktionen
 [[ landingInstall ]]
 
 landingInstallButton = Add-on „Test Pilot“ installieren
-landingInstallButtonOneClick = Test Pilot installieren und { $experimentTitle } aktivieren
 landingInstallingButton = Wird installiert…
 landingInstalledButton = Wählen Sie Ihre Funktionen
 
@@ -302,3 +301,4 @@ noScriptLink = Erfahren Sie den Grund
 
 viewPastExperiments = Vergangene Experimente ansehen
 hidePastExperiments = Vergangene Experimente ausblenden
+
