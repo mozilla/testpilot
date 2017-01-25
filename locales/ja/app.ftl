@@ -50,7 +50,6 @@ landingExperimentsTitle = 最新の実験的機能を試す
 [[ landingInstall ]]
 
 landingInstallButton = Test Pilot アドオンをインストール
-landingInstallButtonOneClick = Test Pilot をインストールし { $experimentTitle } を有効化
 landingInstallingButton = インストール中...
 landingInstalledButton = 機能を選ぶ
 
@@ -305,3 +304,4 @@ noScriptLink = 理由を確かめる
 
 viewPastExperiments = 過去の実験を見る
 hidePastExperiments = 過去の実験を隠す
+
