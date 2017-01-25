@@ -50,7 +50,6 @@ landingExperimentsTitle = Спробуйте найновіші експерим
 [[ landingInstall ]]
 
 landingInstallButton = Встановити додаток Test Pilot
-landingInstallButtonOneClick = Встановіть Test Pilot й активуйте { $experimentTitle }
 landingInstallingButton = Встановлення...
 landingInstalledButton = Оберіть ваші функції
 
