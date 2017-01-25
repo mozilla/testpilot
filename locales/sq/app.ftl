@@ -187,6 +187,7 @@ bugReports = Njoftime të Metash
 discussExperiment = Diskutoni mbi { $title }
 tourOnboardingTitle = { $title } u aktivizua!
 tourDoneButton = U bë
+userCountContainer = Ka <span>{ $installation_count }</span> vetë që po e provojnë { $title } tani!
 highlightPrivacy = Privatësia juaj
 
 
