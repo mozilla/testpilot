@@ -1,6 +1,16 @@
 siteName = Pilot Testesh Firefox
 
 
+# Page titles, put in the <title> HTML tag.
+[[ pageTitle ]]
+
+pageTitleDefault = Pilot Testesh Firefox
+pageTitleLandingPage = Pilot Testesh Firefox
+pageTitleExperimentListPage = Pilot Testesh Firefox - Eksperimente
+pageTitleExperiment = Pilot Testesh Firefox - { $title }
+
+
+
 # Links in the footer.
 [[ footerLink ]]
 
@@ -15,7 +25,12 @@ footerLinkAbout = Rreth Pilotit të Testeve
 # Items in the menu.
 [[ menu ]]
 
+home = Kreu
 menuTitle = Rregullime
+menuWiki = Wiki për Pilot Testesh
+menuDiscuss = Diskutojeni Pilotin e Testeve
+menuFileIssue = Njoftoni një Problem
+menuRetire = Çinstaloje Pilotin e Testeve
 
 
 
@@ -26,19 +41,27 @@ landingIntroLead = Shkoni larg…
 landingIntroOne = Testoni veçori të reja.
 landingIntroTwo = Jepni përshtypjet tuaja.
 landingIntroThree = Ndihmoni të ndërtohet Firefox-i.
+landingLegalNotice = Duke vazhduar më tutje, pajtoheni me <a>Kushtet e Përdorimit</a> dhe <a>Shënimin mbi Privatësinë</a> të Pilotit të testeve.
+landingExperimentsTitle = Provoni veçoritë tona më të reja eksperimentale
 
 
 
 # Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
+landingInstallButton = Instaloni shtesën Pilot Testesh
+landingInstallButtonOneClick = Instalojeni Pilotin e Testeve dhe Aktivizoni { $experimentTitle }
 landingInstallingButton = Po instalohet...
+landingInstalledButton = Zgjidhni veçoritë tuaja
 
 
 
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
+landingRequiresDesktop = Piloti i Testeve lyp Firefox për Desktop në Windows, Mac ose Linux
+landingDownloadFirefoxDesc = (Pilot i Testeve mund të përdoret te Firefox-i në Windows, OS X dhe Linux)
+landingUpgradeDesc = Piloti i testeve lyp Firefox 45 ose më të ri.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Përmirësojeni Firefox-in
 landingDownloadFirefoxSubTitle = Shkarkim Falas
@@ -52,6 +75,20 @@ landingCardListTitle = Fillojani për 3, 2, 1
 landingCardOne = Merrni shtesën Pilot Testesh
 landingCardTwo = Aktivizoni veçori eksperimentale
 landingCardThree = Tregonani si ju duket
+
+
+
+# Shown after the user installs the Test Pilot add-on.
+[[ onboarding ]]
+
+onboardingMessage = Vumë një ikonë te paneli juaj që të mund të gjeni Pilotin e Testeve.
+
+
+
+# Error message pages.
+[[ error ]]
+
+errorHeading = Oh!
 
 
 
@@ -145,6 +182,8 @@ newsletterFormSubmitButton = Regjistrohuni Tani
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterHeader = Jini përherë në dijeni
+newsletterFooterBody = Mësoni rreth eksperimentesh të reja dhe shihni përfundime testesh për eksperimente që keni provuar.
 newsletterFooterSuccessHeader = Faleminderit!
 
 
@@ -153,4 +192,30 @@ newsletterFooterSuccessHeader = Faleminderit!
 [[ localeWarning ]]
 
 localeWarningTitle = Ky eksperiment është i gatshëm vetëm në anglisht.
+localeWarningSubtitle = Mundeni ta aktivizoni, nëse doni.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledSubheader = Gati për të provuar një eksperiment të ri Piloti Testesh? Përzgjidhni një që të aktivizohet, merreni një xhiro, dhe tregonani se si ju duket.
+experimentsListNoneInstalledCTA = S’ju intereson? <a>Na thoni pse</a>.
+
+
+
+# Shown to users who do not have JavaScript enabled.
+[[ noscript ]]
+
+noScriptHeading = Hëm…
+noScriptMessage = Piloti i Testeve lyp JavaScript.<br>Na ndjeni.
+noScriptLink = Shihni pe
+
+
+
+# Text of a button to toggle visibility of a list of past experiments.
+[[ pastExperiments ]]
+
+viewPastExperiments = Shihni Eksperimente të Dikurshme
+hidePastExperiments = Fshihi Eksperimentet e Dikurshëm
 
