@@ -280,7 +280,6 @@ export class ExperimentDetail extends React.Component {
                 </h2>
                 <p data-l10n-id="experimentPromoSubheader"></p>
                 <MainInstallButton {...this.props}
-                                   eventCategory="HomePage Interactions"
                                    experimentTitle={title}
                                    installCallback={ this.installExperiment.bind(this) } />
               </div>
@@ -653,12 +652,14 @@ export class ExperimentDetail extends React.Component {
 
     let installAddonPromise = null;
     if (!this.props.hasAddon) {
-      const { installAddon, requireRestart, eventCategory } = this.props;
-
+      const { installAddon, requireRestart } = this.props;
+      const eventCategory = 'ExperimentDetailsPage Interactions';
+      const eventLabel = `Install the Add-on from ${experiment.title}`;
       installAddonPromise = installAddon(
         requireRestart,
         sendToGA,
-        eventCategory);
+        eventCategory,
+        eventLabel);
     }
     let progressButtonWidth;
     if (this.props.hasAddon) {
@@ -740,7 +741,6 @@ export class ExperimentDetail extends React.Component {
     e.preventDefault();
     this.setState({ showTourDialog: true });
   }
-
 }
 
 ExperimentDetail.propTypes = {

@@ -33,14 +33,14 @@ export default class HomePageNoAddon extends React.Component {
           </div>
 
           <div className="centered-banner responsive-content-wrapper">
-            <MainInstallButton {...this.props} eventCategory="HomePage Interactions" />
+            <MainInstallButton {...this.props} eventCategory="HomePage Interactions" eventLabel="Install the Add-on"/>
           </div>
 
           <div className="transparent-container">
             <div className="responsive-content-wrapper delayed-fade-in">
               <h2 className="card-list-header" data-l10n-id="landingExperimentsTitle">Try out the latest experimental features</h2>
               <div>
-                <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
+                <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions"/>
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@ export default class HomePageNoAddon extends React.Component {
             </div>
 
             <div className="centered-banner responsive-content-wrapper">
-              <MainInstallButton {...this.props} eventCategory="HomePage Interactions" />
+              <MainInstallButton {...this.props} eventCategory="HomePage Interactions" eventLabel="Install the Add-on"/>
             </div>
 
           </div>
