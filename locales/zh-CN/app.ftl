@@ -50,7 +50,6 @@ landingExperimentsTitle = 试用最新鲜的实验功能
 [[ landingInstall ]]
 
 landingInstallButton = 安装 Test Pilot 扩展
-landingInstallButtonOneClick = 安装 Test Pilot 并启用 { $experimentTitle }
 landingInstallingButton = 正在安装...
 landingInstalledButton = 选择您的功能
 
