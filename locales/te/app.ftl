@@ -1,3 +1,14 @@
+siteName = Firefox Test Pilot
+
+
+# Page titles, put in the <title> HTML tag.
+[[ pageTitle ]]
+
+pageTitleDefault = Firefox Test Pilot
+pageTitleLandingPage = Firefox Test Pilot
+pageTitleExperimentListPage = Firefox Test Pilot - ప్రయోగాలు
+pageTitleExperiment = Firefox Test Pilot - { $title }
+
 
 
 # Links in the footer.
@@ -6,6 +17,7 @@
 footerLinkCookies = కుకీలు
 footerLinkPrivacy = గోప్యత
 footerLinkTerms = నియమాలు
+footerLinkLegal = చట్టపరమైన
 footerLinkAbout = టెస్ట్ పైలట్ గురించి
 
 
@@ -16,6 +28,13 @@ footerLinkAbout = టెస్ట్ పైలట్ గురించి
 home = ముంగిలి
 menuTitle = అమరికలు
 menuWiki = టెస్ట్ పైలట్ వికీ
+
+
+
+# Homepage messaging for users not on Firefox or with an old version of Firefox.
+[[ landingFirefox ]]
+
+landingDownloadFirefoxTitle = Firefox
 
 
 
