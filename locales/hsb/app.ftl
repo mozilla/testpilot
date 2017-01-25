@@ -181,7 +181,7 @@ tour = Tura
 tourLink = tura
 contribute = Sobu skutkować
 bugReports = Rozprawy wo programowych zmylkach
-discussExperiment = Wo { title } diskutować
+discussExperiment = Wo { $title } diskutować
 tourOnboardingTitle = { $title } zmóžnjeny!
 tourDoneButton = Hotowo
 userCountContainer = <span>{ $installation_count }</span> wosobow runje { $title } wupruwuje! 
@@ -302,4 +302,3 @@ noScriptLink = Zhońće čehodla
 
 viewPastExperiments = Zańdźene eksperimenty sej wobhladać
 hidePastExperiments = Zańdźene eksperimenty schować
-

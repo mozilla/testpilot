@@ -184,7 +184,7 @@ tour = Kalauz
 tourLink = kalauz
 contribute = Közreműködés
 bugReports = Hibajelentések
-discussExperiment = A(z) { title } megvitatása
+discussExperiment = A(z) { $title } megvitatása
 tourOnboardingTitle = { $title } bekapcsolva!
 tourDoneButton = Kész
 userCountContainer = Jelenleg <span>{ $installation_count }</span> ember próbálja ezt ki: { $title }.
@@ -305,4 +305,3 @@ noScriptLink = Tudja meg, mi az oka
 
 viewPastExperiments = Múltbeli kísérletek megtekintése
 hidePastExperiments = Múltbeli kísérletek elrejtése
-
