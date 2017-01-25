@@ -1,9 +1,11 @@
+/* eslint-disable */
 import React from 'react';
 
 import classnames from 'classnames';
 import EmailDialog from '../components/EmailDialog';
 import CondensedHeader from '../components/CondensedHeader';
 import ExperimentCardList from '../components/ExperimentCardList';
+import PastExperiments from '../components/PastExperiments';
 import LoadingPage from './LoadingPage';
 import View from '../components/View';
 
@@ -22,8 +24,7 @@ export default class HomePageWithAddon extends React.Component {
     }
 
     this.state = {
-      showEmailDialog,
-      showPastExperiments: false
+      showEmailDialog
     };
   }
 
@@ -73,7 +74,7 @@ export default class HomePageWithAddon extends React.Component {
 
     if (experiments.length === 0) { return <LoadingPage />; }
 
-    const { showEmailDialog, showPastExperiments } = this.state;
+    const { showEmailDialog } = this.state;
     const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
     const pastExperiments = experiments.filter(isAfterCompletedDate);
 
@@ -84,23 +85,8 @@ export default class HomePageWithAddon extends React.Component {
             onDismiss={() => this.setState({ showEmailDialog: false })} />}
 
         {this.renderSplash()}
-
-        <div className="responsive-content-wrapper">
-          <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
-          {pastExperiments.length > 0 && !showPastExperiments &&
-          <div className={classnames(['button', 'outline'])}
-              style={{ margin: '0 auto 40px', display: 'table' }}
-              onClick={() => this.setState({ showPastExperiments: true })}
-              data-l10n-id="viewPastExperiments">View Past Experiments</div>}
-          {showPastExperiments &&
-          <div>
-            <div className={classnames(['button', 'outline'])}
-                style={{ margin: '0 auto 40px', display: 'table' }}
-                onClick={() => this.setState({ showPastExperiments: false })}
-                data-l10n-id="hidePastExperiments">Hide Past Experiments</div>
-            <ExperimentCardList {...this.props} experiments={pastExperiments} eventCategory="HomePage Interactions" />
-          </div>}
-        </div>
+        <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
+        <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
       </View>
     );
   }
