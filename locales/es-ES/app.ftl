@@ -50,6 +50,7 @@ landingExperimentsTitle = Prueba las últimas características experimentales
 [[ landingInstall ]]
 
 landingInstallButton = Instalar el complemento Test Pilot
+landingInstallButtonOneClick = Instalar Test Pilot y activar { $experimentTitle }
 landingInstallingButton = Instalando...
 landingInstalledButton = Elige tus funciones
 
@@ -119,6 +120,7 @@ experimentListJustLaunchedTab = Recién iniciados
 experimentListJustUpdatedTab = Recién actualizados
 experimentListEndingTomorrow = Finaliza mañana
 experimentListEndingSoon = Finaliza pronto
+experimentsListCondensedHeader = ¡Escoge tus experimentos!
 
 
 
@@ -179,6 +181,7 @@ tour = Visita guiada
 tourLink = visita virtual
 contribute = Colabora
 bugReports = Informes de fallos
+discussExperiment = Hablar sobre { $title }
 tourOnboardingTitle = ¡{ $title } activado!
 tourDoneButton = Hecho
 userCountContainer = ¡Hay <span>{ $installation_count }</span> personas probando { $title } ahora mismo!
