@@ -50,7 +50,6 @@ landingExperimentsTitle = Încearcă cele mai noi funcții experimentale
 [[ landingInstall ]]
 
 landingInstallButton = Instalează suplimentul Test Pilot
-landingInstallButtonOneClick = Instalează Test Pilot și activează { $experimentTitle }
 landingInstallingButton = Se instalează...
 landingInstalledButton = Alege funcțiile tale
 
