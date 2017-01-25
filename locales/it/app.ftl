@@ -50,7 +50,6 @@ landingExperimentsTitle = Prova gli esperimenti più recenti
 [[ landingInstall ]]
 
 landingInstallButton = Installa l’estensione Test Pilot
-landingInstallButtonOneClick = Installa Test Pilot e attiva { $experimentTitle }
 landingInstallingButton = Installazione in corso…
 landingInstalledButton = Scegli i tuoi esperimenti
 
@@ -302,3 +301,4 @@ noScriptLink = Scopri perché
 
 viewPastExperiments = Visualizza gli esperimenti già conclusi
 hidePastExperiments = Nascondi gli esperimenti già conclusi
+
