@@ -50,7 +50,6 @@ landingExperimentsTitle = Wopytajśo nejnowše eksperimentelne funkcije
 [[ landingInstall ]]
 
 landingInstallButton = Dodank Test Pilot instalěrowaś
-landingInstallButtonOneClick = Test Pilot instalěrowaś a { $experimentTitle } zmóžniś
 landingInstallingButton = Instalěrujo se...
 landingInstalledButton = Wubjeŕśo swóje funkcije
 
