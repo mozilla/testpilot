@@ -21,6 +21,7 @@ minvidDetails0Copy = Min Vid spustíte v prehrávačoch YouTube a Vimeo.
 minvidDetails1Copy = Pozerajte videá a pritom robte na webe aj niečo iné.
 minvidToursteps0Copy = Min Vid spustíte kliknutím na jeho ikonu.
 minvidToursteps1Copy = Prehrávajte video na popredí a pokračujte pri tom v práci.
+minvidToursteps2Copy = Ovládacie prvky nájdete priamo v ráme s videom.
 minvidToursteps3Copy = Pomocou Test Pilotu nám môžete poskytnúť spätnú väzbu alebo Min Vid deaktivovať.
 minvidContributors0Title = Inžinier
 minvidContributors2Title = Inžinier na stáži
