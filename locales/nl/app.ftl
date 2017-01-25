@@ -50,7 +50,6 @@ landingExperimentsTitle = Probeer de nieuwste experimentele functies
 [[ landingInstall ]]
 
 landingInstallButton = De Test Pilot-add-on installeren
-landingInstallButtonOneClick = Test Pilot installeren en { $experimentTitle } inschakelen
 landingInstallingButton = Installeren...
 landingInstalledButton = Kies uw functies
 
@@ -305,3 +304,4 @@ noScriptLink = Lees waarom
 
 viewPastExperiments = Oude experimenten bekijken
 hidePastExperiments = Oude experimenten verbergen
+
