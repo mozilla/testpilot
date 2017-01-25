@@ -50,7 +50,6 @@ landingExperimentsTitle = Wupruwujće najnowše eksperimentelne funkcije.
 [[ landingInstall ]]
 
 landingInstallButton = Přidatk Test Pilot instalować
-landingInstallButtonOneClick = Test Pilot instalować a { $experimentTitle } zmóžnić
 landingInstallingButton = Instaluje so...
 landingInstalledButton = Wubjerće swoje funkcije
 
@@ -302,3 +301,4 @@ noScriptLink = Zhońće čehodla
 
 viewPastExperiments = Zańdźene eksperimenty sej wobhladać
 hidePastExperiments = Zańdźene eksperimenty schować
+
