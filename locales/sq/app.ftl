@@ -188,13 +188,31 @@ discussExperiment = Diskutoni mbi { $title }
 tourOnboardingTitle = { $title } u aktivizua!
 tourDoneButton = U bë
 userCountContainer = Ka <span>{ $installation_count }</span> vetë që po e provojnë { $title } tani!
+userCountContainerAlt = Të sapohedhura në qarkullim!
 highlightPrivacy = Privatësia juaj
+
+
+
+# Shown when an experiment requires a version of Firefox newer than the user's.
+[[ upgradeNotice ]]
+
+upgradeNoticeTitle = { $title } lyp Firefox { $min_release } ose më të ri.
+upgradeNoticeLink = Si të përditësohet Firefox-i.
 
 
 
 # Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
+retireDialogTitle = Të çinstalohet Piloti i Testeve?
+retireMessage = Si të doni. Kjo do të çaktivizojë çfarëdo testi, do të çinstalojë shtojcën dhe do të heqë llogarinë tuaj nga shërbyesit tanë.
+retireEmailMessage = Që të zgjidhni mosmarrje përditësimesh me email, thjesht klikoni mbi lidhjen <em>shpajtomëni</em> te cilido email i ardhur nga Piloti i Testeve.
+retireSubmitButton = Vazhdoni
+retireCancelButton = Anuloje
+pageTitleRetirePage = Pilot Testesh Firefox - Çinstaloje Pilotin e Testeve
+retirePageProgressMessage = Po fiket…
+retirePageHeadline = Faleminderit për fluturimin!
+retirePageMessage = Shpresojmë të jeni zbavitur duke eksperimentuar me ne. <br> Ejani prapë, kur të doni.
 retirePageSurveyButton = Plotësoni një anketim të shpejtë
 
 
@@ -202,7 +220,9 @@ retirePageSurveyButton = Plotësoni një anketim të shpejtë
 # Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = Listë kontrollesh para fluturimit
 restartIntroOne = Rinisni shfletuesin tuaj
+restartIntroTwo = Lokalizoni shtesën Pilot Testesh
 restartIntroThree = Përzgjidhni eksperimentin tuaj
 
 
@@ -210,27 +230,47 @@ restartIntroThree = Përzgjidhni eksperimentin tuaj
 # Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
+sharePrimary = E doni Pilotin e Testeve? Ndihmonani të gjejmë ca rekrutë të rinj.
+shareSecondary = ose thjesht kopjojeni dhe hidhni te shfletuesi këtë lidhje…
 shareEmail = Email
 shareCopy = Kopjoje
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } përfundon më { $completedDate }
 eolNoticeLink = Mësoni më tepër
+eolDisableMessage = Eksperimenti { $title } përfundoi. Pasi ta çinstaloni, s’do të jeni në gjendje ta ri-instaloni përmes Pilotit të Testeve.
+completedDateLabel = Datë Përfundimi e Eksperimenteve: <b>{ $completedDate }</b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
+incompatibleHeader = Ky eksperiment mund të mos jetë i përputhshëm me shtesat që keni instaluar.
+incompatibleSubheader = Këshillojmë <a>çaktivizimin e këtyre shtesave</a> përpara se të aktivizoni këtë eksperiment:
 
 
 
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Këtu vini email-in tuaj
 newsletterFormDisclaimer = Do t’ju dërgojmë vetëm të dhëna që kanë lidhje Pilotin e Testeve.
 newsletterFormPrivacyNotice = Pajtohem me trajtimin që Mozilla u bën të dhënave të mia, ashtu si shpjegohet te <a>ky shënim mbi privatësinë</a>.
 newsletterFormSubmitButton = Regjistrohuni Tani
+newsletterFormSubmitButtonSubmitting = Po parashtrohet…
 
 
 
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = Pati një gabim me parashtrimin e adresës tuaj email. Të riprovohet?
 newsletterFooterHeader = Jini përherë në dijeni
 newsletterFooterBody = Mësoni rreth eksperimentesh të reja dhe shihni përfundime testesh për eksperimente që keni provuar.
 newsletterFooterSuccessHeader = Faleminderit!
+newsletterFooterSuccessBody = Nëse s’e keni ripohuar më parë pajtimin te një buletin i Mozilla-s, mund t’ju duhet ta bëni. Ju lutemi, kontrolloni email-et e marrë ose filtrin tuaj për mesazhe të padëshiruar për një email prej nesh.
 
 
 
@@ -245,6 +285,7 @@ localeWarningSubtitle = Mundeni ta aktivizoni, nëse doni.
 # An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledHeader = Le ta ngremë kët shpyrtin sipër truallit!
 experimentsListNoneInstalledSubheader = Gati për të provuar një eksperiment të ri Piloti Testesh? Përzgjidhni një që të aktivizohet, merreni një xhiro, dhe tregonani se si ju duket.
 experimentsListNoneInstalledCTA = S’ju intereson? <a>Na thoni pse</a>.
 
