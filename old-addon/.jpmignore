@@ -1,0 +1,12 @@
+.*
+*
+!/data/**
+!/locale/**
+!/lib/**
+!/index.js
+!/install.rdf
+!/bootstrap.js
+!/package.json
+!/route.js
+!/node_modules/mustache/**
+!/node_modules/seedrandom/**

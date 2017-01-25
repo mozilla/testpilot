@@ -20,7 +20,7 @@ export default class MainUI {
   constructor(store: ReduxStore) {
     this.store = store;
     this.button = new ActionButton({
-      id: 'x16',
+      id: 'main',
       label: 'Test Pilot',
       icon: `./transparent-16.png`,
       onClick: () => {

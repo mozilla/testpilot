@@ -4,9 +4,8 @@
  * http://mozilla.org/MPL/2.0/.
  */
 
-/* global cloneInto unsafeWindow */
+/* global unsafeWindow self */
 
 // Allow friendly clients to know that Test Pilot is installed.
-
 unsafeWindow.navigator.testpilotAddon = true;
 unsafeWindow.navigator.testpilotAddonVersion = self.options.version;
