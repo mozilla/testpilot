@@ -104,7 +104,6 @@ emailValidationError = Zadajte, prosím, platnú e-mailovú adresu!
 emailOptInInput = 
   [html/placeholder] sem zadajte svoju e-mailovú adresu :)
 emailOptInButton = Prihlásiť sa na odber
-emailOptInSkip = Preskočiť
 emailOptInConfirmationTitle = E-mail bol odoslaný
 emailOptInSuccessMessage2 = Ďakujeme!
 emailOptInConfirmationClose = Prejsť na experimenty...
@@ -136,7 +135,6 @@ experimentCardLearnMore = Ďalšie informácie
 [[ feedback ]]
 
 feedbackSubmitButton = Vyplniť krátky dotazník
-feedbackCancelButton = Zavrieť
 feedbackUninstallTitle = Ďakujeme!
 feedbackUninstallCopy = 
   | Vaša účasť v programe Firefox Test Pilot pre nás 
@@ -207,7 +205,6 @@ retireDialogTitle = Odinštalovať Test Pilot?
 retireMessage = Ako si želáte. Všetky vaše aktívne testy budú ukončené, doplnok sa odinštaluje a údaje o vašom účte sa budú odstránené z našich serverov.
 retireEmailMessage = Ak chcete e-mailové správy od nás vypnúť, stačí ak kliknete na odkaz <em>unsubscribe</em> v ktoromkoľvek e-maile z projektu Test Pilot.
 retireSubmitButton = Pokračovať
-retireCancelButton = Zrušiť
 pageTitleRetirePage = Firefox Test Pilot - Odinštalovanie
 retirePageProgressMessage = Ukončovanie experimentov...
 retirePageHeadline = Vďaka za let!
