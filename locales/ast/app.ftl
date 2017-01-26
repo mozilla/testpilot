@@ -104,7 +104,6 @@ emailValidationError = ¡Usa una direición de corréu válida, por favor!
 emailOptInInput = 
   [html/placeholder] equí va'l corréu :)
 emailOptInButton = Rexistráime
-emailOptInSkip = Saltar
 emailOptInConfirmationTitle = Unvióse'l corréu
 emailOptInSuccessMessage2 = ¡Gracies!
 
@@ -134,7 +133,6 @@ experimentCardLearnMore = Deprendi más
 [[ feedback ]]
 
 feedbackSubmitButton = Facer encuesta rápida
-feedbackCancelButton = Zarrar
 feedbackUninstallTitle = ¡Gracies!
 feedbackUninstallCopy = 
   | ¡La to participación en Test Pilot significa
@@ -196,7 +194,6 @@ retireDialogTitle = ¿Desinstalar Test Pilot?
 retireMessage = Como desees. Esto deshabilitará cualesquier prueba activa, desinstalará l'add-on y desaniciará la to información de cuenta de los nuesos sirvidores.
 retireEmailMessage = Pa dexar de recibir anovamientos per corréu, namái primi l'enllaz de <em>desoscribise</em> en cualesquier corréu de Test Pilot.
 retireSubmitButton = Siguir
-retireCancelButton = Encaboxar
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar Test Pilot
 retirePageProgressMessage = Apagando...
 retirePageHeadline = ¡Gracies por volar!
