@@ -267,10 +267,9 @@ newsletterFooterSuccessBody = إذا لم تكن قد أكدت في وقت سا�
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = هذه التجربة لا تتوفر إلا باللغة الإنجليزية.
 localeWarningSubtitle = ما زال بإمكانك تفعيله إذا أردت.
 
 
