@@ -271,10 +271,9 @@ newsletterFooterSuccessBody = Pokud jste dříve nepotvrdili odběr zpravodaje M
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Tento experiment je dostupný jenom v angličtině.
 localeWarningSubtitle = Můžete ale aktivaci zkusit i bez toho.
 
 
