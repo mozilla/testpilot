@@ -207,9 +207,9 @@ newsletterFooterBody = Find out about new experiments and see test results for e
 newsletterFooterSuccessHeader = Thanks!
 newsletterFooterSuccessBody = If you haven't previously confirmed a subscription to a Mozilla-related newsletter you may have to do so. Please check your inbox or your spam filter for an email from us.
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[localeWarning]]
-localeWarningTitle = This experiment is only available in English.
+localeUnavailableWarningTitle = This experiment is not supported in your language ({$locale_code}).
 localeWarningSubtitle = You can still enable it if you like.
 
 # An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
