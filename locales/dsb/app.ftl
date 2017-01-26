@@ -104,7 +104,6 @@ emailValidationError = Pšosym wužywajśo płaśiwu e-mailowu adresu!
 emailOptInInput = 
   [html/placeholder] how e-mailowu adresu zapisaś :)
 emailOptInButton = Registrěrowaś
-emailOptInSkip = Pśeskócyś
 emailOptInConfirmationTitle = Mejlka jo se pósłała
 emailOptInSuccessMessage2 = Wjeliki źěk!
 emailOptInConfirmationClose = Dalej k eksperimentam...
@@ -136,7 +135,6 @@ experimentCardLearnMore = Dalšne informacije
 [[ feedback ]]
 
 feedbackSubmitButton = Wobźělśo se na krotkem napšašowanju
-feedbackCancelButton = Zacyniś
 feedbackUninstallTitle = Wjeliki źěk!
 feedbackUninstallCopy = Wašo wobźělenje na Firefox Test Pilot jo nam wjelgin wažne! Pšosym woglědajśo se naše druge eksperimenty a pśiźćo zasej!
 
@@ -204,7 +202,6 @@ retireDialogTitle = Test Pilot wótinstalěrowaś?
 retireMessage = Cele kaž sebje žycyśo. To znjemóžnijo aktiwne testy, wótinstalěrujo dodank a wótwónoźijo waše kontowe informacije z našych serwerow.
 retireEmailMessage = Klikniśo jadnorje na wótkaz <em>Wótskazaś</em> w mejlce Test Pilot, až njeby wy žedne nowosći wěcej dostał.
 retireSubmitButton = Dalej
-retireCancelButton = Pśetergnuś
 pageTitleRetirePage = Firefox Test Pilot - Test Pilot wótinstalěrowaś
 retirePageProgressMessage = Wušaltujo se...
 retirePageHeadline = Źěkujomy se za lět!
