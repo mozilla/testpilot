@@ -55,6 +55,14 @@ landingInstalledButton = Wubjeŕśo swóje funkcije
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Test Pilot instalěrowaś &amp;
+oneClickInstallMajorCta = { $title } zmóžniś
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -270,6 +278,7 @@ newsletterFooterSuccessBody = Jolic hyšći njejsćo abonement powěsćowego lis
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Toś ten eksperiment njepódpěra se we wašej rěcy ({ $locale_code }).
 localeWarningSubtitle = Móžośo jen weto zmóžniś, jolic cośo.
 
 
