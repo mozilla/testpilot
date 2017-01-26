@@ -85,7 +85,9 @@ export default class HomePageWithAddon extends React.Component {
             onDismiss={() => this.setState({ showEmailDialog: false })} />}
 
         {this.renderSplash()}
-        <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
+        <div className="responsive-content-wrapper">
+          <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
+        </div>
         <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
       </View>
     );
