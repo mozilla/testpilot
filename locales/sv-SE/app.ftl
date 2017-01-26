@@ -112,7 +112,6 @@ emailValidationError = Var vänlig ange en giltig e-postadress!
 emailOptInInput = 
   [html/placeholder] ange din e-postadress :)
 emailOptInButton = Registrera mig
-emailOptInSkip = Hoppa över
 emailOptInConfirmationTitle = E-post har skickats
 emailOptInSuccessMessage2 = Tack!
 emailOptInConfirmationClose = Vidare till experimenten...
@@ -144,7 +143,6 @@ experimentCardLearnMore = Läs mer
 [[ feedback ]]
 
 feedbackSubmitButton = Gör en snabb undersökning
-feedbackCancelButton = Stäng
 feedbackUninstallTitle = Tack!
 feedbackUninstallCopy = 
   | Ditt deltagande i Firefox Test Pilot innebär
@@ -215,7 +213,6 @@ retireDialogTitle = Avinstallera Test Pilot?
 retireMessage = Som du önskar. Detta kommer att inaktivera alla aktiva tester, avinstallera tillägget och ta bort din kontoinformation från våra servrar.
 retireEmailMessage = För att välja bort e-postuppdateringar, klicka på länken <em>avbryt prenumeration</em> på någon Test Pilot e-post.
 retireSubmitButton = Fortsätt
-retireCancelButton = Avbryt
 pageTitleRetirePage = Firefox Test Pilot - Avinstallera Test Pilot
 retirePageProgressMessage = Avslutar...
 retirePageHeadline = Tack för att du testar!
