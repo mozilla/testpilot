@@ -104,7 +104,6 @@ emailValidationError = Ma ulac aɣilif seqdec tansa imayl tameɣtut!
 emailOptInInput = 
   [html/placeholder] tansa imayl :)
 emailOptInButton = Ad jerdeɣ iman-iw
-emailOptInSkip = Suref
 emailOptInConfirmationTitle = Imayl ittwaciyeɛ
 emailOptInSuccessMessage2 = Tanemirt-ik
 emailOptInConfirmationClose = Ɣef tirmitin…
@@ -136,7 +135,6 @@ experimentCardLearnMore = Issin ugar
 [[ feedback ]]
 
 feedbackSubmitButton = Bdu aḥedqis fessusen
-feedbackCancelButton = Mdel
 feedbackUninstallTitle = Tanemirt!
 feedbackUninstallCopy = 
   | Attekki yinek di Firefox Test Pilot yemmal-d
@@ -207,7 +205,6 @@ retireDialogTitle = Kkes Test Pilot?
 retireMessage = Akken teɣiḍ. Tigwat-agi ad tessens akk ikayaden urmiden, ad yekkes azegrir akked isefka n umiḍan inek ɣef iqeddacen nneɣ.
 retireEmailMessage = Akken ur tremseḍ ara isallen, sit ɣef useɣwen <em>ffeɣ seg ujerred</em> deg izen i d-yuzen Test pilot.
 retireSubmitButton = Kemmel
-retireCancelButton = Sefsex
 pageTitleRetirePage = Firefox Test Pilot - Kkes Test Pilot
 retirePageProgressMessage = Asexsi...
 retirePageHeadline = Tanemmirt ɣef usrifeg!
