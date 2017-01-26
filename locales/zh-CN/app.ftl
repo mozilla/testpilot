@@ -270,10 +270,9 @@ newsletterFooterSuccessBody = 如果您以前没有确认过订阅 Mozilla 相�
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = 此实验仅提供英语版本。
 localeWarningSubtitle = 如果您不介意，无妨启用它。
 
 
