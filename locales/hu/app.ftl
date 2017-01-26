@@ -55,6 +55,14 @@ landingInstalledButton = Funkciók kiválasztása
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Tesztpilóta telepítése és
+oneClickInstallMajorCta = { $title } bekapcsolása
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
