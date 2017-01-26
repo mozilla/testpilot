@@ -39,7 +39,7 @@ export default class MainInstallButton extends React.Component {
     return (
       <div className="default-btn-msg one-click-text">
         <span className="minor-cta" data-l10n-id="oneClickInstallMinorCta" >Install Test Pilot &amp;</span>
-        <span className="major-cta" data-l10n-id="oneClickInstallMajorCta" data-l10n-args={ JSON.stringify({ title: title }) }>Enable {title}</span>
+        <span className="major-cta" data-l10n-id="oneClickInstallMajorCta" data-l10n-args={ JSON.stringify({ title: title }) }></span>
       </div>
     );
   }
