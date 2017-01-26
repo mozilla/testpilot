@@ -272,10 +272,9 @@ newsletterFooterSuccessBody = Daha önce Mozilla ile ilgili bir bültene aboneli
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Bu deney yalnızca İngilizce olarak kullanılabilir.
 localeWarningSubtitle = İsterseniz yine de etkinleştirebilirsiniz.
 
 
