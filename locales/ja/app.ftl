@@ -281,10 +281,9 @@ newsletterFooterSuccessBody = これまでに Mozilla 関連のニュースレ�
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = この実験は英語のみで利用可能です。
 localeWarningSubtitle = お望みなら引き続き有効にしておくこともできます。
 
 
