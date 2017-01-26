@@ -27,12 +27,12 @@ describe('app/components/ExperimentDisableDialog', () => {
 
   it('should render a modal container', () => {
     expect(subject.find('.modal-container')).to.have.property('length', 1);
-    expect(subject.find('.title').props()['data-l10n-args'])
+    expect(subject.find('.modal-header').props()['data-l10n-args'])
       .to.equal(JSON.stringify({ title: experiment.title }));
   });
 
   it('should call onCancel when cancel button clicked', () => {
-    subject.find('.modal-actions a.cancel').simulate('click', mockClickEvent);
+    subject.find('.modal-cancel').simulate('click', mockClickEvent);
     expect(onCancel.called).to.be.true;
     expect(preventDefault.called).to.be.true;
   });

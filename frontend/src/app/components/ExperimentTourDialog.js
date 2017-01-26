@@ -29,11 +29,11 @@ export default class ExperimentTourDialog extends React.Component {
     return (
       <div className="modal-container">
         <div className={classnames('modal', 'tour-modal')}>
-          <header className="tour-header-wrapper">
-            <h3 className="tour-header"
+          <header className="modal-header-wrapper">
+            <h3 className="modal-header"
                 data-l10n-id="tourOnboardingTitle"
                 data-l10n-args={l10nArgs}>{experiment.title} enabled!</h3>
-                <div className="tour-cancel" onClick={e => this.cancel(e)}/>
+                <div className="modal-cancel" onClick={e => this.cancel(e)}/>
           </header>
           {tourSteps.map((step, idx) => (idx === currentStep) && (
             <div key={idx} className="tour-content">

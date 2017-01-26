@@ -109,7 +109,7 @@ describe('app/components/ExperimentTourDialog', () => {
   });
 
   it('should ping GA and call onCancel when cancel button clicked', () => {
-    subject.find('.tour-cancel').simulate('click', mockClickEvent);
+    subject.find('.modal-cancel').simulate('click', mockClickEvent);
 
     expect(props.onCancel.called).to.be.true;
 

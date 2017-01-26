@@ -13,11 +13,11 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
     return (
       <div className="modal-container">
         <div className={classnames('modal', 'tour-modal')}>
-          <header className="tour-header-wrapper">
-            <h3 className="tour-header"
+          <header className="modal-header-wrapper">
+            <h3 className="modal-header"
                 data-l10n-id="experimentPreFeedbackTitle"
                 data-l10n-args={l10nArgs}>{experiment.title} Feedback</h3>
-                <div className="tour-cancel" onClick={e => this.cancel(e)}/>
+                <div className="modal-cancel" onClick={e => this.cancel(e)}/>
           </header>
             <div className="tour-content">
               <div className="tour-image">

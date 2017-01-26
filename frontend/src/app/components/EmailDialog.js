@@ -18,8 +18,9 @@ export default class EmailDialog extends React.Component {
     return (
       <div className="modal-container">
         {isFirstPage && <div id="first-page" className="modal feedback-modal modal-bounce-in">
-          <header>
-            <h3 className="title" data-l10n-id="emailOptInDialogTitle">Welcome to Test Pilot!</h3>
+          <header className="modal-header-wrapper">
+            <h3 className="modal-header" data-l10n-id="emailOptInDialogTitle">Welcome to Test Pilot!</h3>
+            <div className="modal-cancel" onClick={e => this.skip(e)}/>
           </header>
           <form>
             <div className="modal-content modal-form centered">
@@ -31,18 +32,20 @@ export default class EmailDialog extends React.Component {
             </div>
             <div className="modal-actions">
               <button onClick={e => this.submit(e)} data-l10n-id="emailOptInButton" className="submit button large default">Sign me up</button>
-              <a onClick={e => this.skip(e)} data-l10n-id="emailOptInSkip" className="cancel modal-escape" href="">Skip</a>
             </div>
           </form>
         </div>}
         {!isFirstPage && <div id="second-page" className="modal">
-          <header>
-            <h3 className="title" data-l10n-id="emailOptInConfirmationTitle">Email Sent</h3>
+          <header className="modal-header-wrapper">
+            <h3 className="modal-header" data-l10n-id="emailOptInConfirmationTitle">Email Sent</h3>
+            <div className="modal-cancel" onClick={e => this.continue(e)} />
           </header>
           <div className="modal-content centered">
-            <div className="envelope"></div>
+            <div className="envelope" />
             <p data-l10n-id="emailOptInSuccessMessage2">Thank you!</p>
-            <button id="email-success-continue" onClick={e => this.continue(e)} className="button default" data-l10n-id="emailOptInConfirmationClose">On to the experiments...</button>
+          </div>
+          <div className="modal-actions">
+            <button id="email-success-continue" onClick={e => this.continue(e)} className="button default large" data-l10n-id="emailOptInConfirmationClose">On to the experiments...</button>
           </div>
         </div>}
       </div>
