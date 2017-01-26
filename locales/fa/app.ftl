@@ -266,10 +266,9 @@ newsletterFooterSuccessBody = اگر شما قبلا مشترک یکی از خب
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = این آزمایش تنها به زبان انگلیسی موجود است.
 localeWarningSubtitle = اگر تمایل دارید، هنوز می‌توانید فعالش کنید.
 
 
