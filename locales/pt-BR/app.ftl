@@ -281,10 +281,9 @@ newsletterFooterSuccessBody = Se ainda não confirmou a inscrição no boletim d
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Essa experiência só está disponível em Inglês.
 localeWarningSubtitle = Você ainda pode habilitá-lo se quiser.
 
 
