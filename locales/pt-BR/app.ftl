@@ -107,7 +107,7 @@ emailOptInButton = Assinar
 emailOptInSkip = Pular
 emailOptInConfirmationTitle = E-mail enviado
 emailOptInSuccessMessage2 = Obrigado!
-emailOptInConfirmationClose = Nos experimentos...
+emailOptInConfirmationClose = Vamos aos experimentos...
 
 
 
