@@ -262,10 +262,9 @@ newsletterFooterSuccessBody = Si enantes nun confirmesti una soscripción al bol
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Esti esperimentu namái ta disponible n'inglés.
 localeWarningSubtitle = Entá pues habilitalu si te presta.
 
 
