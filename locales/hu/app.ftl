@@ -112,7 +112,6 @@ emailValidationError = Használjon egy érvényes e-mail címet!
 emailOptInInput = 
   [html/placeholder] az e-mail cím ide kerül :)
 emailOptInButton = Feliratkozás
-emailOptInSkip = Kihagyás
 emailOptInConfirmationTitle = E-mail elküldve
 emailOptInSuccessMessage2 = Köszönjük!
 emailOptInConfirmationClose = Tovább a kísérletekhez…
@@ -144,7 +143,6 @@ experimentCardLearnMore = Tudjon meg többet
 [[ feedback ]]
 
 feedbackSubmitButton = Vegyen rész egy gyors felmérésben
-feedbackCancelButton = Bezárás
 feedbackUninstallTitle = Köszönjük!
 feedbackUninstallCopy = 
   | A részvétele a Firefox Tesztpilótában sokat
@@ -215,7 +213,6 @@ retireDialogTitle = Eltávolítja a Tesztpilótát?
 retireMessage = Ahogy kívánja. Ez kikapcsol minden aktív tesztet, eltávolítja a kiegészítőt és eltávolítja a fiókinformációit a kiszolgálóinkról.
 retireEmailMessage = Hogy kiszálljon az e-mail értesítésekből, egyszerűen kattintson a <em>leiratkozás</em> hivatkozásra bármelyik Tesztpilóta e-mailben.
 retireSubmitButton = Folytatás
-retireCancelButton = Mégse
 pageTitleRetirePage = Firefox Tesztpilóta – A Tesztpilóta eltávolítása
 retirePageProgressMessage = Leállás…
 retirePageHeadline = Köszönjük a repülést!
