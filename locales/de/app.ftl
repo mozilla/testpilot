@@ -112,7 +112,6 @@ emailValidationError = Bitte verwenden Sie eine gültige E-Mail-Adresse!
 emailOptInInput = 
   [html/placeholder] E-Mail-Adresse eintragen :)
 emailOptInButton = Abonnieren
-emailOptInSkip = Überspringen
 emailOptInConfirmationTitle = E-Mail gesendet
 emailOptInSuccessMessage2 = Vielen Dank!
 emailOptInConfirmationClose = Weiter zu den Experimenten…
@@ -144,7 +143,6 @@ experimentCardLearnMore = Mehr erfahren
 [[ feedback ]]
 
 feedbackSubmitButton = Nehmen Sie an einer kurzen Umfrage teil
-feedbackCancelButton = Schließen
 feedbackUninstallTitle = Vielen Dank!
 feedbackUninstallCopy = Ihre Teilnahme an Firefox Test Pilot ist uns sehr wichtig! Bitte sehen Sie sich unsere anderen Experimente an und schauen Sie wieder vorbei!
 
@@ -212,7 +210,6 @@ retireDialogTitle = Test Pilot deinstallieren?
 retireMessage = Wie Sie möchten. Dadurch werden aktive Test deaktiviert, das Add-on wird deinstalliert und Ihre Kontodaten werden von unserem Server entfernt.
 retireEmailMessage = Klicken Sie einfach auf den Link <em>Abonnement entfernen</em> in einer Test-Pilot-E-Mail, um keine E-Mail-Neuigkeiten mehr zu erhalten.
 retireSubmitButton = Fortfahren
-retireCancelButton = Abbrechen
 pageTitleRetirePage = Firefox Test Pilot – Test Pilot deinstallieren
 retirePageProgressMessage = Herunterfahren…
 retirePageHeadline = Danke für den Flug!
