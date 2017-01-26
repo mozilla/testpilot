@@ -281,10 +281,9 @@ newsletterFooterSuccessBody = Om du tidigare inte har bekräftat en prenumeratio
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Detta experiment är endast tillgängligt på engelska.
 localeWarningSubtitle = Du kan fortfarande aktivera det om du vill.
 
 
