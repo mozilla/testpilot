@@ -8,7 +8,11 @@ const isUserAgentMobile = isMobile(userAgent);
 const isUserAgentMinFirefox = isMinFirefoxVersion(userAgent, config.minFirefoxVersion);
 const locale = (navigator.language || '').split('-')[0];
 
-export default handleActions({}, {
+export const setState = (state) => state;
+
+export default handleActions({
+  setState
+}, {
   isFirefox: isUserAgentFirefox,
   isMinFirefox: isUserAgentMinFirefox,
   isMobile: isUserAgentMobile,
