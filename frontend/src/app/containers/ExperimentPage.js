@@ -352,7 +352,7 @@ export class ExperimentDetail extends React.Component {
                           </tr>
 
                           <tr>
-                            <td data-l10n-id="discussExperiment" data-l10n-args={JSON.stringify({ title })}>Discuss {title}</td>
+                            <td data-l10n-id="discussExperiment" data-l10n-args={JSON.stringify({ title })}></td>
                             <td><a href={discourse_url}>{discourse_url}</a></td>
                           </tr>
                         </tbody></table>
