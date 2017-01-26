@@ -104,7 +104,6 @@ emailValidationError = Vnesite veljaven e-poštni naslov!
 emailOptInInput = 
   [html/placeholder] sem vpišite e-poštni naslov :)
 emailOptInButton = Naroči me
-emailOptInSkip = Preskoči
 emailOptInConfirmationTitle = E-poštno sporočilo poslano
 emailOptInSuccessMessage2 = Hvala!
 emailOptInConfirmationClose = Naprej na poskuse ...
@@ -135,7 +134,6 @@ experimentCardLearnMore = Več o tem
 [[ feedback ]]
 
 feedbackSubmitButton = Izpolnite kratek vprašalnik
-feedbackCancelButton = Zapri
 feedbackUninstallTitle = Hvala!
 
 
@@ -201,7 +199,6 @@ retireDialogTitle = Želite odstraniti Test Pilot?
 retireMessage = Kot želite. S tem boste onemogočili vse aktivne poskuse, odstranili dodatek in izbrisali podatke računa z naših strežnikov.
 retireEmailMessage = Za odjavo od e-poštnih novic kliknite povezavo <em>Odjava</em> v kateremkoli od sporočil programa Test Pilot.
 retireSubmitButton = Nadaljuj
-retireCancelButton = Prekliči
 pageTitleRetirePage = Firefox Test Pilot - odstranjevanje
 retirePageProgressMessage = Zaustavljanje ...
 retirePageHeadline = Hvala, ker ste leteli z nami!
