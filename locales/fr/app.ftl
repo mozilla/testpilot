@@ -278,10 +278,9 @@ newsletterFooterSuccessBody = Si vous n’avez jamais confirmé d’abonnement �
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Cette expérience est uniquement disponible en anglais.
 localeWarningSubtitle = Vous pourrez toujours l’activer ensuite si vous le souhaitez.
 
 
