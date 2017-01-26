@@ -112,7 +112,6 @@ emailValidationError = Gebruik een geldig e-mailadres!
 emailOptInInput = 
   [html/placeholder] typ hier uw e-mailadres :)
 emailOptInButton = Inschrijven
-emailOptInSkip = Overslaan
 emailOptInConfirmationTitle = E-mail verzonden
 emailOptInSuccessMessage2 = Dank u!
 emailOptInConfirmationClose = Door naar de experimenten...
@@ -144,7 +143,6 @@ experimentCardLearnMore = Meer info
 [[ feedback ]]
 
 feedbackSubmitButton = Een snelle enquête invullen
-feedbackCancelButton = Sluiten
 feedbackUninstallTitle = Dank u!
 feedbackUninstallCopy = 
   | Uw deelname aan Firefox Test Pilot betekent
@@ -215,7 +213,6 @@ retireDialogTitle = Test Pilot verwijderen?
 retireMessage = Zoals u wilt. Hierdoor worden alle actieve tests uitgeschakeld, de add-on gede-installeerd en uw accountgegevens van onze servers verwijderd.
 retireEmailMessage = Om u van updates per e-mail uit te schrijven, klikt u eenvoudig op de koppeling <em>uitschrijven</em> in een willekeurige Test Pilot-e-mail.
 retireSubmitButton = Doorgaan
-retireCancelButton = Annuleren
 pageTitleRetirePage = Firefox Test Pilot - Test Pilot de-installeren
 retirePageProgressMessage = Afsluiten...
 retirePageHeadline = Bedankt voor het vliegen!
