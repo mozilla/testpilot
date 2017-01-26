@@ -281,6 +281,7 @@ newsletterFooterSuccessBody = Om du tidigare inte har bekräftat en prenumeratio
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Detta experiment stöds inte på ditt språk ({ $locale_code }).
 localeWarningSubtitle = Du kan fortfarande aktivera det om du vill.
 
 
