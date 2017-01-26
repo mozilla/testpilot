@@ -16,6 +16,7 @@ activitystreamContributors9Title = Përgjegjës Produkti
 activitystreamContributors10Title = Përgjegjës Inxhinierik
 activitystreamContributors11Title = Inxhinier Software-i
 cliqzDescription = Merrni përfundimet e kërkimit më shpejt. Cliqz shfaq sugjerimi drejt e nën shtyllën e URL-ve, ndërkohë që ju shtypni. Dhe krejt kjo pa cenuar privatësinë tuaj.
+cliqzIntroduction = Merrni përfundimet e kërkimit më shpejt, drejt e te shfletuesi. Filloni të shtypni për një kërkim dhe shihni sugjerime nga anembanë Web-it, aty për aty, drejt e nën shtyllën e URL-ve. Dhe meqë Cliqz e shmanga grumbullimin e të dhënave personale të identifikueshme, apo formimin e profileve të përdoruesve, përfundimet tuaja janë më private.
 minvidDescription = Vëreni videot në qendër të skenës. Min Vid ju lejon të shfaqni video YouTube dhe Vimeo në një kornizë të vockël që mbahet në para, ndërkohë që ju shfletoni në web.
 nomore404sSubtitle = Bazuar në Wayback Machine
 nomore404sDescription = Të lodhur nga rrugët pa krye në web? Do t’ju njoftojmë kur në Wayback Machine të Arkivit të Internetit të ketë një version të ruajtur të asaj që po kërkonit.
