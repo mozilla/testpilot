@@ -104,7 +104,6 @@ emailValidationError = Будь ласка, введіть дійсну адре
 emailOptInInput = 
   [html/placeholder] адреса ел. пошти :)
 emailOptInButton = Підписатись
-emailOptInSkip = Пропустити
 emailOptInConfirmationTitle = Повідомлення надіслано
 emailOptInSuccessMessage2 = Дякуємо!
 emailOptInConfirmationClose = Вперед до експериментів...
@@ -136,7 +135,6 @@ experimentCardLearnMore = Докладніше
 [[ feedback ]]
 
 feedbackSubmitButton = Взяти участь в невеличкому опитуванні
-feedbackCancelButton = Закрити
 feedbackUninstallTitle = Дякуємо!
 feedbackUninstallCopy = 
   | Ваша участь у Firefox Test Pilot багато
@@ -207,7 +205,6 @@ retireDialogTitle = Видалити Test Pilot?
 retireMessage = Як забажаєте. Це вимкне будь які активні тести, видалить додаток та вилучить вашу інформацію про обліковий запис з наших серверів.
 retireEmailMessage = Аби відписатися від оновлень на електронну пошту, просто натисніть посилання <em>відписатися</em> у будь-якому повідомленні Test Pilot.
 retireSubmitButton = Продовжити
-retireCancelButton = Скасувати
 pageTitleRetirePage = Firefox Test Pilot - Видалити Test Pilot
 retirePageProgressMessage = Вимкнення...
 retirePageHeadline = Дякуємо за політ!
