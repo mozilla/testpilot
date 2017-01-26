@@ -270,10 +270,9 @@ newsletterFooterSuccessBody = Jolic hyšći njejsćo abonement powěsćowego lis
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Toś ten eksperiment jo jano w engelskej rěcy k dispoziciji.
 localeWarningSubtitle = Móžośo jen weto zmóžniś, jolic cośo.
 
 
