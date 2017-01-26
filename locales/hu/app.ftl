@@ -281,10 +281,9 @@ newsletterFooterSuccessBody = Ha korábban nem erősítette meg a Mozillához ka
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Ez a kísérlet csak angolul érhető el.
 localeWarningSubtitle = Attól még bekapcsolhatja, ha szeretné.
 
 
