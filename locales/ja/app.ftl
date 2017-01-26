@@ -112,7 +112,6 @@ emailValidationError = 有効なメールアドレスを入力してください
 emailOptInInput = 
   [html/placeholder] メールアドレスがここに入ります :)
 emailOptInButton = ログイン
-emailOptInSkip = スキップ
 emailOptInConfirmationTitle = メールをお送りしました
 emailOptInSuccessMessage2 = ありがとうございます！
 emailOptInConfirmationClose = 実験に進む...
@@ -144,7 +143,6 @@ experimentCardLearnMore = 詳細
 [[ feedback ]]
 
 feedbackSubmitButton = 簡単なアンケートに答える
-feedbackCancelButton = 閉じる
 feedbackUninstallTitle = ありがとうございます！
 feedbackUninstallCopy = 
   | あなたの Firefox Test Pilot への参加は多くの
@@ -215,7 +213,6 @@ retireDialogTitle = Test Pilot を削除しますか？
 retireMessage = 了解しました。これにより、アクティブなテストはすべて無効化され、アドオンは削除され、サーバーからあなたのアカウント情報は削除されます。
 retireEmailMessage = メールによる最新情報の配信を停止するには、Test Pilot に関するメール内の <em>購読中止</em> リンクをクリックしてください。
 retireSubmitButton = 続ける
-retireCancelButton = キャンセル
 pageTitleRetirePage = Firefox Test Pilot - Test Pilot を削除
 retirePageProgressMessage = 終了中...
 retirePageHeadline = あなたのテスト飛行に感謝！
