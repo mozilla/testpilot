@@ -112,7 +112,6 @@ emailValidationError = Inserisci un indirizzo email valido.
 emailOptInInput = 
   [html/placeholder] Inserisci qui la tua email :)
 emailOptInButton = Iscrivimi
-emailOptInSkip = Ignora
 emailOptInConfirmationTitle = Email inviata
 emailOptInSuccessMessage2 = Grazie!
 emailOptInConfirmationClose = A proposito degli esperimenti…
@@ -144,7 +143,6 @@ experimentCardLearnMore = Ulteriori informazioni
 [[ feedback ]]
 
 feedbackSubmitButton = Rispondi a un breve sondaggio
-feedbackCancelButton = Chiudi
 feedbackUninstallTitle = Grazie!
 feedbackUninstallCopy = La tua partecipazione a Test Pilot è molto importante per Mozilla. Dai un’occhiata agli altri esperimenti e rimani in contatto per tutte le novità in arrivo.
 
@@ -212,7 +210,6 @@ retireDialogTitle = Disinstallare Test Pilot?
 retireMessage = Come desideri. Gli esperimenti attivi verranno disattivati, il componente aggiuntivo sarà rimosso e le informazioni sul tuo account verranno eliminate dal server.
 retireEmailMessage = Per non ricevere più aggiornamenti via email fai clic sul link <em>annulla iscrizione</em> presente in tutte le email inviate da Test Pilot.
 retireSubmitButton = Continua
-retireCancelButton = Annulla
 pageTitleRetirePage = Firefox Test Pilot - Disinstallazione di Test Pilot
 retirePageProgressMessage = Spegnimento motori…
 retirePageHeadline = Ti ringraziamo per aver volato con noi!
@@ -281,6 +278,7 @@ newsletterFooterSuccessBody = Se non hai mai confermato prima d’ora l’iscriz
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Questo esperimento non è disponibile nella tua lingua ({ $locale_code }).
 localeWarningSubtitle = Se lo desideri è comunque possibile attivarlo.
 
 
