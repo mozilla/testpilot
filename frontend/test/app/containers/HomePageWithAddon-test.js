@@ -57,20 +57,4 @@ describe('app/containers/HomePageWithAddon', () => {
     subject.setState({ showEmailDialog: false });
     expect(subject.find('EmailDialog')).to.have.property('length', 0);
   });
-
-  it('should hide completed experiments behind a button', () => {
-    const experiments = [ { title: 'foo' }, { title: 'bar', completed: '2016-10-01' } ];
-    subject.setProps({ experiments });
-    const current = subject.find('ExperimentCardList');
-    expect(current.length).to.equal(1);
-    expect(current.prop('experiments').length).to.equal(1);
-    expect(current.prop('experiments')[0].title).to.equal('foo');
-    subject.setState({ showPastExperiments: true });
-    const lists = subject.find('ExperimentCardList');
-    expect(lists.length).to.equal(2);
-    const past = lists.last();
-    expect(past.length).to.equal(1);
-    expect(past.prop('experiments').length).to.equal(1);
-    expect(past.prop('experiments')[0].title).to.equal('bar');
-  });
 });

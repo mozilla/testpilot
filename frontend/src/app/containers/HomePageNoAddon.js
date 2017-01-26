@@ -3,6 +3,7 @@ import React from 'react';
 import MainInstallButton from '../components/MainInstallButton';
 import ExperimentCardList from '../components/ExperimentCardList';
 import LoadingPage from './LoadingPage';
+import PastExperiments from '../components/PastExperiments';
 import View from '../components/View';
 
 
@@ -10,10 +11,10 @@ export default class HomePageNoAddon extends React.Component {
 
   render() {
     const { experiments, isAfterCompletedDate } = this.props;
+    const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
+    const pastExperiments = experiments.filter(isAfterCompletedDate);
 
     if (experiments.length === 0) { return <LoadingPage />; }
-
-    const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
 
     return (
       <section id="landing-page">
@@ -40,7 +41,8 @@ export default class HomePageNoAddon extends React.Component {
             <div className="responsive-content-wrapper delayed-fade-in">
               <h2 className="card-list-header" data-l10n-id="landingExperimentsTitle">Try out the latest experimental features</h2>
               <div>
-                <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions"/>
+                <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
+                <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
               </div>
             </div>
           </div>
