@@ -273,10 +273,9 @@ newsletterFooterSuccessBody = Ma yella ur tsentmeḍ ara ajerred inek ar tebratt
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Tarmit-agi tella kan s teglizit.
 localeWarningSubtitle = Tzemreḍ ad tremdeḍ akka tura ma yella tebɣiḍ.
 
 
