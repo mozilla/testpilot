@@ -59,6 +59,7 @@ landingInstalledButton = Elegí tus funciones
 [[ oneClickInstall ]]
 
 oneClickInstallMinorCta = Instalá Test Pilot &amp;
+oneClickInstallMajorCta = Habilitar { $title }
 
 
 
@@ -185,10 +186,12 @@ measurements = Tu privacidad
 experimentPrivacyNotice = Aquí { $title } puede aprender más acerca de la recolección de datos.
 contributorsHeading = Ofrecido por
 contributorsExtraLearnMore = Concer más
+changelog = Lista de cambios
 tour = Visita
 tourLink = Comenzar la visita
 contribute = Contribuir
 bugReports = Informes de fallos
+discussExperiment = Conversá { $title }
 tourOnboardingTitle = ¡{ $title } habilitado!
 tourDoneButton = Hecho
 userCountContainer = ¡Hay <span>{ $installation_count }</span> personas probando { $title } ahora mismo!
