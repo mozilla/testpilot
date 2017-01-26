@@ -270,10 +270,9 @@ newsletterFooterSuccessBody = As jo yn it ferline noch gjin oanmelding befêstig
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Dit eksperimint is allinnich yn it Ingelsk beskikber.
 localeWarningSubtitle = Jo kinne it dochs ynskeakelje as jo wolle.
 
 
