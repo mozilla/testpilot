@@ -104,7 +104,6 @@ emailValidationError = Ju lutemi, përdorni një adresë email të vlefshme!
 emailOptInInput = 
   [html/placeholder] këtu vendoset email-i :)
 emailOptInButton = Regjistromëni
-emailOptInSkip = Anashkaloje
 emailOptInConfirmationTitle = Email-i u Dërgua
 emailOptInSuccessMessage2 = Faleminderit!
 emailOptInConfirmationClose = Oburra te eksperimentet…
@@ -136,7 +135,6 @@ experimentCardLearnMore = Mësoni Më Tepër
 [[ feedback ]]
 
 feedbackSubmitButton = Plotësoni një anketim të shpejtë
-feedbackCancelButton = Mbylle
 feedbackUninstallTitle = Faleminderit!
 feedbackUninstallCopy = 
   | Pjesëmarrja juaj te Piloti i Testeve të Firefox-it
@@ -207,7 +205,6 @@ retireDialogTitle = Të çinstalohet Piloti i Testeve?
 retireMessage = Si të doni. Kjo do të çaktivizojë çfarëdo testi, do të çinstalojë shtojcën dhe do të heqë llogarinë tuaj nga shërbyesit tanë.
 retireEmailMessage = Që të zgjidhni mosmarrje përditësimesh me email, thjesht klikoni mbi lidhjen <em>shpajtomëni</em> te cilido email i ardhur nga Piloti i Testeve.
 retireSubmitButton = Vazhdoni
-retireCancelButton = Anuloje
 pageTitleRetirePage = Pilot Testesh Firefox - Çinstaloje Pilotin e Testeve
 retirePageProgressMessage = Po fiket…
 retirePageHeadline = Faleminderit për fluturimin!
