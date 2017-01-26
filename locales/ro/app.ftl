@@ -272,10 +272,9 @@ newsletterFooterSuccessBody = Dacă nu ai mai confirmat o abonare la un buletin 
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Acest experiment este disponibil doar în engleză.
 localeWarningSubtitle = Dar poți să o activezi dacă dorești.
 
 
