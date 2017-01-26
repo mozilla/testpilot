@@ -273,10 +273,9 @@ newsletterFooterSuccessBody = Ak ste v minulosti nepotvrdili odber noviniek Mozi
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Tento experiment je k dispozícii iba v angličtine.
 localeWarningSubtitle = To vám však nebráni ho aktivovať.
 
 
