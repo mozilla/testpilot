@@ -104,7 +104,6 @@ emailValidationError = Trebuie să folosești o adresă de e-mail validă!
 emailOptInInput = 
   [html/placeholder] e-mail-ul vine aici :)
 emailOptInButton = Înregistrează-mă
-emailOptInSkip = Omite
 emailOptInConfirmationTitle = E-mail trimis
 emailOptInSuccessMessage2 = Mulțumim!
 emailOptInConfirmationClose = Mai departe spre experimente...
@@ -136,7 +135,6 @@ experimentCardLearnMore = Află mai multe
 [[ feedback ]]
 
 feedbackSubmitButton = Participă la un scurt sondaj
-feedbackCancelButton = Închide
 feedbackUninstallTitle = Mulțumim!
 feedbackUninstallCopy = 
   | Participarea ta în Firefox Test Pilot înseamnă
@@ -206,7 +204,6 @@ retireDialogTitle = Dezinstalează Test Pilot?
 retireMessage = Cum dorești. Aceasta va dezactiva toate testele active, va dezinstala suplimentul și va șterge informațiile despre contul tău de pe serverele noastre.
 retireEmailMessage = Pentru a nu mai primi actualizări pe e-mail, clic pe linkul <em>dezabonare</em> (unsubscribe) din orice e-mail Test Pilot.
 retireSubmitButton = Continuă
-retireCancelButton = Renunță
 pageTitleRetirePage = Firefox Test Pilot - Dezinstalează Test Pilot
 retirePageProgressMessage = Se închide...
 retirePageHeadline = Mulțumim că ne-ai fost copilot!
