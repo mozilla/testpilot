@@ -104,7 +104,6 @@ emailValidationError = لطفا یک نشانی رایانامه معتبر وا
 emailOptInInput = 
   [html/placeholder] رایانامه اینجا قرار می‌گیرد :)
 emailOptInButton = من را ثبت‌نام کن
-emailOptInSkip = پرش
 emailOptInConfirmationTitle = رایانامه ارسال شد
 emailOptInSuccessMessage2 = ممنون!
 emailOptInConfirmationClose = به سوی تجربه‌ها…
@@ -135,7 +134,6 @@ experimentCardLearnMore = اطلاعات بیشتر
 [[ feedback ]]
 
 feedbackSubmitButton = یک نظرسنجی کوتاه پر کنید
-feedbackCancelButton = بستن
 feedbackUninstallTitle = متشکریم!
 feedbackUninstallCopy = مشارکت شما در خلبان آزمایشی فایرفاکس معنای زیادی برای ما دارد! لطفا سایر آزمایش‌های ما را هم بررسی کنید، و برای آزمایش‌های بیشتر سر بزنید!
 
@@ -200,7 +198,6 @@ retireDialogTitle = حذف خلبان آزمایشی؟
 retireMessage = هر جور دوست دارید. این همه تست‌های فعال را غیرفعال خواهد کرد، افزودنی را حذف و اطلاعات حساب شما را از روی سرورهای ما حذف خواهد کرد.
 retireEmailMessage = برای لغو اشتراک از رایانامه‌ها، به سادگی بر روی پیوند <em>لغو اشتراک</em> در هر کدام از رایانامه‌های خلبان آزمایشی کلیک کنید.
 retireSubmitButton = ادامه
-retireCancelButton = لغو
 pageTitleRetirePage = خلبان آزمایشی فایرفاکس - حذف خلبان آزمایشی
 retirePageProgressMessage = در حال خاموش کردن…
 retirePageHeadline = بابت پرواز ممنونیم!
