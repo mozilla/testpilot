@@ -627,8 +627,15 @@ export class ExperimentDetail extends React.Component {
   }
 
   showPreFeedbackDialog() {
+    const { experiment } = this.props;
     this.setState({
       showPreFeedbackDialog: true
+    });
+
+    this.props.sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'Give Feedback',
+      eventLabel: experiment.title
     });
   }
 

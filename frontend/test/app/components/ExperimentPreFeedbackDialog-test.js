@@ -56,8 +56,8 @@ describe('app/components/ExperimentPreFeedbackDialog', () => {
     expect(getAttribute.called).to.be.true;
     expect(sendToGA.lastCall.args).to.deep.equal(['event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'give feedback',
+      eventAction: 'PreFeedback Confirm',
+      eventLabel: 'foobar',
       outboundURL: surveyURL
     }]);
   });
