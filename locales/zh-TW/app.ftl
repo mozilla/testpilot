@@ -112,7 +112,6 @@ emailValidationError = 請使用有效的電子郵件地址！
 emailOptInInput = 
   [html/placeholder] 電子郵件會寄到這裡 :)
 emailOptInButton = 我要訂閱
-emailOptInSkip = 略過
 emailOptInConfirmationTitle = 已寄出郵件
 emailOptInSuccessMessage2 = 感謝您！
 emailOptInConfirmationClose = 繼續前往實驗內容…
@@ -144,7 +143,6 @@ experimentCardLearnMore = 了解更多
 [[ feedback ]]
 
 feedbackSubmitButton = 寫一份小問卷
-feedbackCancelButton = 關閉
 feedbackUninstallTitle = 感謝您！
 feedbackUninstallCopy = 您參與 Firefox 的 Test Pilot 計畫對我們有很重大的意義！也請試試其他的實驗，常常回來看看有沒有更多的新鮮事！
 
@@ -212,7 +210,6 @@ retireDialogTitle = 要移除 Test Pilot 嗎？
 retireMessage = 如您所願。將會停用所有進行中的測試、移除附加元件，並移除我們的伺服器上關於您的帳號資訊。
 retireEmailMessage = 要停止收到電子報，只要點擊每封信當中的 <em>取消訂閱</em> 鏈結。
 retireSubmitButton = 繼續
-retireCancelButton = 取消
 pageTitleRetirePage = Firefox Test Pilot - 移除 Test Pilot
 retirePageProgressMessage = 關閉中…
 retirePageHeadline = 感謝您跟我們一起飛！
