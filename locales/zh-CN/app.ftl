@@ -104,7 +104,6 @@ emailValidationError = 请使用有效的电子邮件地址！
 emailOptInInput = 
   [html/placeholder] 您的电子邮件地址 :)
 emailOptInButton = 我要注册
-emailOptInSkip = 跳过
 emailOptInConfirmationTitle = 电子邮件已发送
 emailOptInSuccessMessage2 = 谢谢！
 emailOptInConfirmationClose = 关于此实验...
@@ -136,7 +135,6 @@ experimentCardLearnMore = 详细了解
 [[ feedback ]]
 
 feedbackSubmitButton = 来份快速调查
-feedbackCancelButton = 关闭
 feedbackUninstallTitle = 谢谢您！
 feedbackUninstallCopy = 您参与的 Firefox Test Pilot 有着无限可能。希望您也查看我们的其他实验，并期待着无限的未来！
 
@@ -204,7 +202,6 @@ retireDialogTitle = 卸载 Test Pilot？
 retireMessage = 如您所愿。这将禁用所有已激活的测试，卸载该附加组件，以及从我们的服务器上移除您的账户信息。
 retireEmailMessage = 要停用电子邮件更新，只需点击任何 Test Pilot 邮件中的<em>退订</em>链接。
 retireSubmitButton = 继续
-retireCancelButton = 取消
 pageTitleRetirePage = Firefox Test Pilot - 卸载 Test Pilot
 retirePageProgressMessage = 正在关闭...
 retirePageHeadline = 感谢您的体验！
