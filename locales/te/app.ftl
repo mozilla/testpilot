@@ -49,7 +49,6 @@ experimentCardLearnMore = మరింత తెలుసుకోండి
 # A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
-feedbackCancelButton = మూసివేయి
 feedbackUninstallTitle = కృతజ్ఞతలు!
 
 
@@ -58,13 +57,6 @@ feedbackUninstallTitle = కృతజ్ఞతలు!
 [[ experimentPage ]]
 
 tourDoneButton = పూర్తయ్యింది
-
-
-
-# Shown while uninstalling Test Pilot.
-[[ uninstall ]]
-
-retireCancelButton = రద్దుచేయి
 
 
 
