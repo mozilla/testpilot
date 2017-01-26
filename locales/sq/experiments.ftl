@@ -1,4 +1,21 @@
-activitystreamIntroduction = <p>Rikthejuni shfletimit pa humbur ç’po bluanit në mendje. Activity Stream i mban gati sajtet tuaj kryesues, faqerojtësit dhe historikun e shfletimeve në çdo skedë të re. Dhe rrjedha e re kohore ju jep një pamje nga ajri mbi shfletimin tuaj.</p>
+activitystreamIntroduction = <p>Rikthejuni shfletimit pa humbur ç’po bluanit në mendje. Rrjedha e Veprimtarisë i mban gati sajtet tuaj kryesues, faqerojtësit dhe historikun e shfletimeve në çdo skedë të re. Dhe rrjedha e re kohore ju jep një pamje nga ajri mbi shfletimin tuaj.</p>
+activitystreamMeasurements = <p>Përveç <a href="/privacy">të dhënave</a> të grumbulluara nga të gjitha eksperimentet e Pilotit të Testeve, ja ku keni gjërat kyçe që duhet të dini se ç’ndodh kur përdorni Rrjedhën e Veprimtarisë:</p><ul> <li>Grumbullojmë të dhëna elementare lidhur me mënyrën si ndërveproni me skeda të reja eksperimentale dhe faqe rrjedhe kohore, të tilla si llojet e elementeve që klikoni dhe pozicioni i tyre në faqe.</li> <li>Grumbullojmë gjithashtu të dhëna elementare rreth profilit tuaj të shfletuesit që lidhen me Rrjedhën e Veprimtarisë, të tilla si numri i faqerojtësve dhe zërave të historikut.</li> <li>Që të furnizojmë Rrjedhën e Veprimtarisë, japim diku tejtëdhëna rreth sajteve që keni vizituar, të tilla si figura dhe ikona, përmes një shërbimi të quajtur <a href="http://embed.ly/" target="_blank">Embedly</a>. Këto kërkesa për Embedly-n i dërgojmë përmes shërbyesve të Mozilla-s, kështu që nuk do të ketë përshoqërim me ju.</li></ul>
+activitystreamDetails0Copy = Klikoni mbi një skedë të re, dhe sajtet tuaj të parapëlqyer i keni vetëm një klikim larg.
+activitystreamDetails1Copy = Shihni ku keni qenë, që të mund të shkoni atje ku jeni nisur.
+activitystreamToursteps0Copy = Gjeni sajtet tuaj kryesues, historikun e afërt, dhe faqerojtësit, kur hapni një skedë të re.
+activitystreamToursteps1Copy = Vizitoni pamjen e re për rrjedhën kohore që të shfletoni në mënyrë pamore krejt historikun dhe faqerojtësit tuaj.
+activitystreamToursteps2Copy = Mundeni përherë të na jepni përshtypjet ose ta çaktivizoni Rrjedhën e Veprimtarisë prej Pilotit të Testimeve.
+activitystreamContributors0Title = Inxhinier Software-i
+activitystreamContributors1Title = Inxhinier Web-i
+activitystreamContributors2Title = Zhvillues Software-i
+activitystreamContributors3Title = Inxhinier Firefox-i për Desktop
+activitystreamContributors4Title = Inxhinier Software-i
+activitystreamContributors5Title = Përgjegjës Teknik Programesh
+activitystreamContributors6Title = Inxhinier Shërbimesh Re
+activitystreamContributors9Title = Përgjegjës Produkti
+activitystreamContributors10Title = Përgjegjës Inxhinierik
+activitystreamContributors11Title = Inxhinier Software-i
+cliqzDescription = Merrni përfundimet e kërkimit më shpejt. Cliqz shfaq sugjerimi drejt e nën shtyllën e URL-ve, ndërkohë që ju shtypni. Dhe krejt kjo pa cenuar privatësinë tuaj.
 minvidDescription = Vëreni videot në qendër të skenës. Min Vid ju lejon të shfaqni video YouTube dhe Vimeo në një kornizë të vockël që mbahet në para, ndërkohë që ju shfletoni në web.
 nomore404sSubtitle = Bazuar në Wayback Machine
 nomore404sDescription = Të lodhur nga rrugët pa krye në web? Do t’ju njoftojmë kur në Wayback Machine të Arkivit të Internetit të ketë një version të ruajtur të asaj që po kërkonit.
