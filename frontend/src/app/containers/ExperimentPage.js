@@ -294,8 +294,8 @@ export class ExperimentDetail extends React.Component {
               { 'has-status': !!statusType, stick: useStickyHeader })
             }>
             <div className={classnames('status-bar', statusType)}>
-              {(statusType === 'enabled') && <span data-l10n-id="isEnabledStatusMessage" data-l10n-args={JSON.stringify({ title })}><span>{title}</span> is enabled.</span>}
-              {(statusType === 'error') && <span data-l10n-id="installErrorMessage" data-l10n-args={JSON.stringify({ title })}>Uh oh. <span>{title}</span> could not be enabled. Try again later.</span>}
+              {(statusType === 'enabled') && <span data-l10n-id="isEnabledStatusMessage" data-l10n-args={JSON.stringify({ title })}><span></span></span>}
+              {(statusType === 'error') && <span data-l10n-id="installErrorMessage" data-l10n-args={JSON.stringify({ title })}><span></span></span>}
             </div>
             <div className="details-header responsive-content-wrapper">
               <header>
@@ -386,7 +386,7 @@ export class ExperimentDetail extends React.Component {
                               className={classnames('measurements', { highlight: highlightMeasurementPanel })}>
                           <h3 data-l10n-id="measurements">Your privacy</h3>
                           <div data-l10n-id={this.l10nId('measurements')} className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
-                          {privacy_notice_url && <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-l10n-args={JSON.stringify({ title })} href={privacy_notice_url}>You can learn more about the data collection for <span>{title}</span> here.</a>}
+                          {privacy_notice_url && <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-l10n-args={JSON.stringify({ title })} href={privacy_notice_url}><span></span></a>}
                         </section>}
                       </div>
                     </div>}
@@ -420,7 +420,7 @@ export class ExperimentDetail extends React.Component {
                           className={classnames('measurements', { highlight: highlightMeasurementPanel })}>
                       <h3 data-l10n-id="measurements">Your privacy</h3>
                       <div data-l10n-id={this.l10nId('measurements')} className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
-                      {privacy_notice_url && <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-l10n-args={JSON.stringify({ title })} href={privacy_notice_url}>You can learn more about the data collection for <span data-hook="title">{title}</span> here.</a>}
+                      {privacy_notice_url && <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-l10n-args={JSON.stringify({ title })} href={privacy_notice_url}><span data-hook="title"></span></a>}
                     </section>}
                   </div>}
                   </div>}
@@ -521,13 +521,12 @@ export class ExperimentDetail extends React.Component {
     if (isAfterCompletedDate(experiment)) {
       const completedDate = formatDate(completed);
       return (
-        <span data-l10n-id="completedDateLabel" data-l10n-args={JSON.stringify({ completedDate })}>Experiment End Date: <b>{completedDate}</b></span>
+        <span data-l10n-id="completedDateLabel" data-l10n-args={JSON.stringify({ completedDate })}><b></b></span>
       );
     }
     if (!installation_count || installation_count <= 100) {
       return (
-        <span data-l10n-id="userCountContainerAlt" className="bold" data-l10n-args={JSON.stringify({ title })}>
-        Just launched!</span>
+        <span data-l10n-id="userCountContainerAlt" className="bold" data-l10n-args={JSON.stringify({ title })}></span>
       );
     }
     return (

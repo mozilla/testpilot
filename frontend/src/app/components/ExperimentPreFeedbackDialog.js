@@ -16,7 +16,7 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
           <header className="modal-header-wrapper">
             <h3 className="modal-header"
                 data-l10n-id="experimentPreFeedbackTitle"
-                data-l10n-args={l10nArgs}>{experiment.title} Feedback</h3>
+                data-l10n-args={l10nArgs}></h3>
                 <div className="modal-cancel" onClick={e => this.cancel(e)}/>
           </header>
             <div className="tour-content">
@@ -28,7 +28,7 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
               <div className="tour-text">
                 <a data-l10n-id="experimentPreFeedbackLinkCopy"
                    data-l10n-args={l10nArgs} onClick={e => this.feedback(e)}
-                   href={surveyURL}>Give feedback about the {experiment.title} experiment</a>
+                   href={surveyURL}></a>
               </div>
             </div>
         </div>

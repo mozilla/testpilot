@@ -13,10 +13,10 @@ export default class ExperimentEolDialog extends React.Component {
           <form>
 
             <div className="modal-content modal-form">
-              <p data-l10n-id="eolDisableMessage" data-l10n-args={JSON.stringify({ title })} className="centered">The {title} experiment has ended. Once you uninstall it you won't be able to re-install it through Test Pilot again.</p>
+              <p data-l10n-id="eolDisableMessage" data-l10n-args={JSON.stringify({ title })} className="centered"></p>
             </div>
             <div className="modal-actions">
-              <button onClick={e => this.proceed(e)} data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="submit button warning large">Disable {title}</button>
+              <button onClick={e => this.proceed(e)} data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="submit button warning large"></button>
               <a onClick={e => this.cancel(e)} data-l10n-id="retireCancelButton" className="cancel modal-escape" href="">Cancel</a>
             </div>
           </form>

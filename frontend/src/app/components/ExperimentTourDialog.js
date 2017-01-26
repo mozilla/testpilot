@@ -32,7 +32,7 @@ export default class ExperimentTourDialog extends React.Component {
           <header className="modal-header-wrapper">
             <h3 className="modal-header"
                 data-l10n-id="tourOnboardingTitle"
-                data-l10n-args={l10nArgs}>{experiment.title} enabled!</h3>
+                data-l10n-args={l10nArgs}></h3>
                 <div className="modal-cancel" onClick={e => this.cancel(e)}/>
           </header>
           {tourSteps.map((step, idx) => (idx === currentStep) && (
