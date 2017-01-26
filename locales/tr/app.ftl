@@ -104,7 +104,6 @@ emailValidationError = Lütfen geçerli bir e-posta adresi girin!
 emailOptInInput = 
   [html/placeholder] e-posta adresinizi buraya yazın :)
 emailOptInButton = Kaydol
-emailOptInSkip = Geç
 emailOptInConfirmationTitle = E-posta gönderildi
 emailOptInSuccessMessage2 = Teşekkürler!
 emailOptInConfirmationClose = Deneylere geçelim...
@@ -136,7 +135,6 @@ experimentCardLearnMore = Daha fazla bilgi al
 [[ feedback ]]
 
 feedbackSubmitButton = Küçük anketimize katılın
-feedbackCancelButton = Kapat
 feedbackUninstallTitle = Teşekkürler!
 feedbackUninstallCopy = 
   | Firefox Test Pilotu'na katılımınız bizim için çok 
@@ -206,7 +204,6 @@ retireDialogTitle = Test Pilotu kaldırılsın mı?
 retireMessage = Bu işlem tüm aktif testleri kapatacak, eklentiyi kaldıracak ve hesabınızı sunucularımızdan silecektir.
 retireEmailMessage = E-posta bültenlerinden çıkmak için herhangi bir Test Pilotu e-postasının altındaki <em>abonelikten ayrıl</em> linkine tıklamalısınız.
 retireSubmitButton = Devam et
-retireCancelButton = Vazçgeçtim
 pageTitleRetirePage = Firefox Test Pilotu - Test Pilotu'nu kaldır
 retirePageProgressMessage = Kapatılıyor...
 retirePageHeadline = Bizimle uçtuğunuz için teşekkürler!
