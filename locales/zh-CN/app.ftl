@@ -55,6 +55,14 @@ landingInstalledButton = 选择您的功能
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = 安装 Test Pilot &amp;
+oneClickInstallMajorCta = 启用 { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -270,6 +278,7 @@ newsletterFooterSuccessBody = 如果您以前没有确认过订阅 Mozilla 相�
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = 此实验在您的语言 ({ $locale_code }) 中不支持。
 localeWarningSubtitle = 如果您不介意，无妨启用它。
 
 
