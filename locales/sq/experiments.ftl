@@ -1,4 +1,11 @@
+activitystreamIntroduction = <p>Rikthejuni shfletimit pa humbur ç’po bluanit në mendje. Activity Stream i mban gati sajtet tuaj kryesues, faqerojtësit dhe historikun e shfletimeve në çdo skedë të re. Dhe rrjedha e re kohore ju jep një pamje nga ajri mbi shfletimin tuaj.</p>
+minvidDescription = Vëreni videot në qendër të skenës. Min Vid ju lejon të shfaqni video YouTube dhe Vimeo në një kornizë të vockël që mbahet në para, ndërkohë që ju shfletoni në web.
+nomore404sSubtitle = Bazuar në Wayback Machine
+nomore404sDescription = Të lodhur nga rrugët pa krye në web? Do t’ju njoftojmë kur në Wayback Machine të Arkivit të Internetit të ketë një version të ruajtur të asaj që po kërkonit.
+pageshotDescription = Foto intuitive ekrani të ruajtur mu në shfletues. Bëni, ruani dhe ndani me të tjerët foto ekrani teksa shfletoni në Web duke përdorur Firefox.
+tabcenterDescription = Si do të ishte të kaloje skedat nga kryet e shfletuesit në anë? Këtë donim të gjenim!
 tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
+trackingprotectionDescription = Do të na ndihmoni të përmirësojmë Mbrojtjen Nga Gjurmimet? Ky eksperiment e aktivizon Mbrojtjen Nga Gjurmimet për krejt shfletimet dhe ofron një rrugë të shpejtë për të raportuar çfarëdo problemesh që shihni teksa shfletoni.
