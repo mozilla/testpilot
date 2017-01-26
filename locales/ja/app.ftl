@@ -281,6 +281,7 @@ newsletterFooterSuccessBody = これまでに Mozilla 関連のニュースレ�
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = この実験はあなたの言語 ({ $locale_code }) には対応していません。
 localeWarningSubtitle = お望みなら引き続き有効にしておくこともできます。
 
 
