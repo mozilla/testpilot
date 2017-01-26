@@ -270,10 +270,9 @@ newsletterFooterSuccessBody = Jeli hišće njejsće abonement powěsćoweho list
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Tutón eksperiment je jenož w jendźelskej rěči k dispoziciji.
 localeWarningSubtitle = Móžeće jón najebać to zmóžnić, jeli chceće.
 
 
