@@ -79,7 +79,6 @@ emailValidationError = Please use a valid email address!
 emailOptInInput =
   [html/placeholder] email goes here :)
 emailOptInButton = Sign me up
-emailOptInSkip = Skip
 emailOptInConfirmationTitle = Email Sent
 emailOptInSuccessMessage2 = Thank you!
 emailOptInConfirmationClose = On to the experiments...
@@ -102,7 +101,6 @@ experimentCardLearnMore = Learn More
 # A modal prompt shown when a user disables an experiment.
 [[feedback]]
 feedbackSubmitButton = Take a quick survey
-feedbackCancelButton = Close
 feedbackUninstallTitle = Thank You!
 feedbackUninstallCopy =
     | Your participation in Firefox Test Pilot means
@@ -158,7 +156,6 @@ retireDialogTitle = Uninstall Test Pilot?
 retireMessage = As you wish. This will disable any active tests, uninstall the add-on and remove your account info from our servers.
 retireEmailMessage = To opt out of email updates, simply click the <em>unsubscribe</em> link on any Test Pilot email.
 retireSubmitButton = Proceed
-retireCancelButton = Cancel
 pageTitleRetirePage = Firefox Test Pilot - Uninstall Test Pilot
 retirePageProgressMessage = Shutting down...
 retirePageHeadline = Thanks for flying!

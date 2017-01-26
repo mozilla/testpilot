@@ -9,7 +9,9 @@ export default class ErrorPage extends React.Component {
       <View spaceBetween={true} showNewsletterFooter={false} {...this.props}>
         <div className="centered-banner">
           <div id="four-oh-four" className="modal delayed-fade-in">
-            <h1 data-l10n-id="errorHeading" className="title">Whoops!</h1>
+            <header className="modal-header-wrapper neutral-modal">
+              <h1 data-l10n-id="errorHeading" className="modal-header">Whoops!</h1>
+            </header>
             <div className="modal-content">
               <p data-l10n-id="errorMessage">Looks like we broke something. <br /> Maybe try again later.</p>
             </div>

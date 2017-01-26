@@ -25,22 +25,6 @@
   }
 }
 
-#four-oh-four,
-#retire {
-  .title {
-    background: $transparent-black-05;
-    border-bottom: 1px solid $transparent-black-1;
-    color: $black;
-  }
-}
-
-#share {
-
-  .modal-content {
-    padding: 20px 20px 30px;
-  }
-}
-
 #legacy-modal {
 
   p {
@@ -51,8 +35,18 @@
       margin-bottom: 0;
     }
   }
+}
 
 
+.loading-pill {
+  border: 1px solid $transparent-white-3;
+  border-radius: $small-border-radius;
+  padding: $grid-unit * .5;
+  position: relative;
+
+  > * {
+    margin: 0;
+  }
 }
 
 .modal-container {
@@ -69,16 +63,16 @@
 }
 
 .modal {
+  animation-delay: 250ms;
+  animation: fade-in-fly-up 300ms forwards;
   background: $white;
   border-radius: $large-border-radius;
   box-shadow: 0 4px $grid-unit $transparent-black-5;
   color: $black;
+  opacity: 0;
+  padding: 2px;
   position: relative;
   width: $grid-unit * 25;
-
-  &#onboarding {
-    width: $grid-unit * 21;
-  }
 
   :not(.content-wrapper) & {
     @include respond-to('small') {
@@ -87,182 +81,38 @@
     }
   }
 
-  .modal-escape {
-    color: $default;
-    cursor: pointer;
-    margin: 10px 0 0;
+  &#onboarding {
+    width: $grid-unit * 21;
   }
 
-  .title {
-    background-color: $default;
-    border-top-left-radius: $large-border-radius;
-    border-top-right-radius: $large-border-radius;
-    color: $white;
-    font-size: $font-unit * 2.5;
-    font-weight: 700;
-    margin: 0;
-    padding: ($grid-unit - 2) 0 ($grid-unit - 6);
-    text-align: center;
-
-    &.warning {
-      background: $warning-red-light;
-      border: 0;
-      border-radius: $small-border-radius $small-border-radius 0 0;
-      color: $white;
-    }
+  &.tour-modal {
+    max-width: 644px;
+    width: 644px;
   }
 
-  .modal-content {
-    padding: $grid-unit $grid-unit * 1.5;
-    position: relative;
-  }
-
-  .modal-actions {
-    @include flex-container(column, space-between, center);
-    padding: 0 $grid-unit * 1.5 $grid-unit * 1.5;
-
-    .button {
-      font-size: $font-unit * 1.5;
-      padding: 0 ($grid-unit * .5);
-      width: 100%;
-    }
-  }
-
-  .cancel {
-    margin: $grid-unit * .5 0 0;
-  }
-
-  .copter {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 220px auto;
-    height: 180px;
-  }
-}
-
-.loading-pill {
-  border: 1px solid $transparent-white-3;
-  border-radius: $small-border-radius;
-  padding: $grid-unit * .5;
-  position: relative;
-
-  > * {
-    margin: 0;
-  }
-}
-
-.modal-form {
-  @include flex-container(column, center, stretch);
-  padding: $grid-unit 0;
-
-  ul {
-    list-style: none;
-    margin: $grid-unit 0 0;
-    padding: 0;
-  }
-
-  li {
-    margin: 0 0 $grid-unit * .6;
-    padding: 0;
-  }
-
-  input {
-    border: 1px solid $transparent-black-5;
-    border-radius: $small-border-radius;
-    margin: 0;
-    padding: 7px 6px 6px;
-    transition: border 150ms;
-
-    &:focus {
-      border: 1px solid $default;
-    }
-  }
-
-  label {
-    font-size: $font-unit + 4;
-    margin-left: $grid-unit * .25;
-    position: relative;
-    top: $grid-unit * .1;
-  }
-
-  .additional-feedback {
-    background: $transparent-black-02;
-    border: 1px solid $transparent-black-1;
-    border-radius: $small-border-radius;
-    margin: $grid-unit 0 0;
-    padding: $grid-unit * .5;
-  }
-
-  .text-area-label {
-    font-size: $font-unit + 2;
-    margin: 0;
-    padding: $grid-unit * .25;
-    text-align: center;
-  }
-
-  .error {
-    background: $transparent-warning-lightest-5;
-    border: 1px solid $warning-red-light;
-    border-radius: $small-border-radius;
-    color: $warning-red-default;
-  }
-
-  .form-notification {
-    background: $transparent-warning-lightest-5;
-    border-bottom: 1px solid $warning-red-light;
-    border-radius: $small-border-radius;
-    display: block;
-    margin: 0  0 (-$grid-unit * 1.5);
-    padding: $grid-unit * .25;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    transition: opacity 100ms;
-    width: 100%;
-
-    &.hidden {
-      opacity: 0;
-    }
-  }
-
-  textarea {
-    border: 1px solid $feedback-modal-grey;
-    display: block;
-    font-size: $font-unit + 2;
-    height: $font-unit * 8;
-    padding: $grid-unit * .25;
-    resize: none;
-    width: 100%;
-  }
-}
-
-.tour-modal {
-  animation: fade-in-fly-up 500ms forwards;
-  animation-delay: 250ms;
-  max-width: 644px;
-  opacity: 0;
-  padding: 2px;
-  position: relative;
-  width: 644px;
-
-  .tour-header-wrapper {
+  .modal-header-wrapper {
     @include flex-container(row, center, center);
     background-color: $default;
     border-radius: 4px 4px 0 0;
     height: 54px;
     margin: 0 0 2px;
+
+    &.warning-modal {
+      background: $warning-red-light;
+    }
   }
 
-  .tour-header {
+  .modal-header {
     color: $white;
     font-size: $font-unit * 2;
     font-weight: bold;
     margin: 0;
     padding: $grid-unit * .6;
     text-align: center;
+
   }
 
-  .tour-cancel {
+  .modal-cancel {
     background-image: url('../images/close-icon.svg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -278,14 +128,133 @@
 
     &:hover,
     &:active {
-      background-color: $default-dark;
+      background-color: $transparent-black-2;
       box-shadow: 0 -2px 0 $transparent-black-1 inset;
     }
   }
 
-  .tour-content {
+  .modal-content {
+    font-size: $font-unit * 1.4;
     overflow: hidden;
+    padding: $grid-unit * 1.5;
     position: relative;
+
+    & >:first-child {
+      margin-top: 0;
+    }
+
+    & >:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .modal-form {
+    @include flex-container(column, center, stretch);
+
+    ul {
+      list-style: none;
+      margin: $grid-unit 0 0;
+      padding: 0;
+    }
+
+    li {
+      margin: 0 0 $grid-unit * .6;
+      padding: 0;
+    }
+
+    input {
+      border: 1px solid $transparent-black-5;
+      border-radius: $small-border-radius;
+      margin: 0;
+      padding: 7px 6px 6px;
+      transition: border 150ms;
+
+      &:focus {
+        border: 1px solid $default;
+      }
+    }
+
+    label {
+      font-size: $font-unit + 4;
+      margin-left: $grid-unit * .25;
+      position: relative;
+      top: $grid-unit * .1;
+    }
+
+    .additional-feedback {
+      background: $transparent-black-02;
+      border: 1px solid $transparent-black-1;
+      border-radius: $small-border-radius;
+      margin: $grid-unit 0 0;
+      padding: $grid-unit * .5;
+    }
+
+    .text-area-label {
+      font-size: $font-unit + 2;
+      margin: 0;
+      padding: $grid-unit * .25;
+      text-align: center;
+    }
+
+    .error {
+      background: $transparent-warning-lightest-5;
+      border: 1px solid $warning-red-light;
+      border-radius: $small-border-radius;
+      color: $warning-red-default;
+    }
+
+    .form-notification {
+      background: $transparent-warning-lightest-5;
+      border-bottom: 1px solid $warning-red-light;
+      border-radius: $small-border-radius;
+      display: block;
+      margin: 0  0 (-$grid-unit * 1.5);
+      padding: $grid-unit * .25;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      transition: opacity 100ms;
+      width: 100%;
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
+
+    textarea {
+      border: 1px solid $feedback-modal-grey;
+      display: block;
+      font-size: $font-unit + 2;
+      height: $font-unit * 8;
+      padding: $grid-unit * .25;
+      resize: none;
+      width: 100%;
+    }
+  }
+
+  .modal-actions {
+    @include flex-container(column, space-between, center);
+    padding: 0 $grid-unit * 1.5 $grid-unit * 1.5;
+
+    .button {
+      font-size: $font-unit * 1.5;
+      padding: 0 ($grid-unit * .5);
+      width: 100%;
+    }
+  }
+
+  .modal-escape {
+    color: $default;
+    position: relative;
+    top: 10px;
+  }
+
+  .copter {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 220px auto;
+    height: 180px;
+    margin: 0 auto;
   }
 
   .tour-text {

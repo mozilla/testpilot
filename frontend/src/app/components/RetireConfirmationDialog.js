@@ -5,8 +5,9 @@ export default class RetireConfirmationDialog extends React.Component {
     return (
       <div className="modal-container">
         <div id="retire-dialog-modal" className="modal feedback-modal modal-bounce-in">
-          <header>
-            <h3 className="title warning" data-l10n-id="retireDialogTitle">Uninstall Test Pilot?</h3>
+          <header className="modal-header-wrapper warning-modal">
+            <h3 className="title modal-header" data-l10n-id="retireDialogTitle">Uninstall Test Pilot?</h3>
+            <div className="modal-cancel" onClick={e => this.cancel(e)}/>
           </header>
           <form>
 
@@ -16,7 +17,6 @@ export default class RetireConfirmationDialog extends React.Component {
             </div>
             <div className="modal-actions">
               <button onClick={e => this.proceed(e)} data-l10n-id="retireSubmitButton" className="submit button warning large">Proceed</button>
-              <a onClick={e => this.cancel(e)} data-l10n-id="retireCancelButton" className="cancel modal-escape" href="">Cancel</a>
             </div>
           </form>
         </div>

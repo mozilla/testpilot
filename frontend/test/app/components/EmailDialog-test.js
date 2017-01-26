@@ -27,7 +27,7 @@ describe('app/components/EmailDialog', () => {
   });
 
   it('should dismiss when skip is clicked', () => {
-    subject.find('.modal-actions a.cancel').simulate('click', mockClickEvent);
+    subject.find('.modal-cancel').simulate('click', mockClickEvent);
 
     expect(onDismiss.called).to.be.true;
     expect(sendToGA.lastCall.args).to.deep.equal(['event', {

@@ -27,7 +27,7 @@ describe('app/components/RetireConfirmationDialog', () => {
   });
 
   it('should call onDismiss when the cancel button is clicked', () => {
-    subject.find('.modal-actions a.cancel').simulate('click', mockClickEvent);
+    subject.find('.modal-cancel').simulate('click', mockClickEvent);
     expect(props.onDismiss.called).to.be.true;
   });
 
