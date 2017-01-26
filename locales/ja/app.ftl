@@ -55,6 +55,14 @@ landingInstalledButton = 機能を選ぶ
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Test Pilot をインストール &amp;
+oneClickInstallMajorCta = { $title } を有効化
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
