@@ -51,6 +51,16 @@ nomore404sContributors2Title = Drejtor, Wayback Machine, The Internet Archive
 pageshotDescription = Foto intuitive ekrani të ruajtur mu në shfletues. Bëni, ruani dhe ndani me të tjerët foto ekrani teksa shfletoni në Web duke përdorur Firefox.
 pageshotIntroduction = <p>Foto Faqeje ju lejon të bëni, ndani me të tjerët dhe rimerrni foto ekrani- pa dalë nga Firefox-i.</p><ul> <li><strong>Pamja mozaik:</strong> Shfletoni miniatura të fotove të ekranit të ruajtura</li> <li><strong>Kërkim i mençur:</strong> Gjeni foton e ekranit që po kërkoni, përmes një fjalëkyçi të vetëm. Foto Faqeje krijon një tregues për tituj faqesh dhe tekst fotosh ekrani</li> <li><strong>Ndarje me të tjerët me vetëm një hap:</strong> Postojini fotot tuaja të ekranit në media shoqërore ose kopjoni lidhjen për ndarje, te kreu i dritares së shfletuesit tuaj.</li></ul>
 pageshotMeasurements = <p>Përveç <a href="/privacy">të dhënavedata</a> të mbledhura nga krejt eksperimentet për Pilot Testesh, ja gjërat që duhet të dini mbi se ç’ndodh kur përdorni Foto Faqeje:</p><ul> <li>I depozitojmë fotot tuaja në shërbyesit e Mozilla-s dhe kemi hyrje përdorimi në to. Por fotot tuaja do t’i përdorim vetëm kur e lyp nevoja për funksionimin e shërbimit, fjala vjen, kur dikush na dërgon lidhjen për te një foto duke përdorur veçorinë tonë "flag", ose për të diagnostikuar çfarëdo problemi. Fotot do t’i analizojmë gjithashtu në masë, për të ndihmuar përmirësimin e Foto Faqe-sh, për shembull, duke identifikuar madhësinë mesatare dhe numrin e fotove të bëra nga përdoruesit.</li> <li>Të dhënat e përdorimit i mbledhim që të na ndihmojnë të kuptojmë ndërveprimet tuaja me produktin, të tilla si sa herë keni klikuar mbi butonin për foto, keni ruajtur një figurë.</li> <li>Që të parandalohen abuzime me këtë shërbim, kryejmë mbikëqyrje elementare sigurie. Për shembull, grumbullojmë dhe mbajmë adresa IP për të zbuluar dhe bllokuar individë që kontrollojnë shërbimin për të gjetur mesazhe private.</li> <li>Për tërë vizitat te sajti Foto Faqeje, të dhënat që grumbullojmë përshkruhen te <a href="https://www.mozilla.org/privacy/websites/" target="_blank">Shënimi ynë mbi Privatësi Sajtesh, Komunikimesh & Cookie-sh</a>.</li></ul>
+pageshotDetails0Copy = Përzgjidhni fushën e figurës dhe ruajeni, nëse ju pëlqen ajo që shihni, ose anulojeni pa e ruajtur, nëse s’ju pëlqen.
+pageshotDetails1Copy = Ndani me të tjerët lidhje për te fotot, përmes shërbimesh shoqërore ose email-i, pa u dashur të shkarkoni dhe bashkëngjitni kartela.
+pageshotDetails2Copy = Gjeni lehtë foto ekrani të ruajtura. Shfletojini miniaturat si mozaik, ose kërkoni sipas fjalëkyçesh.
+pageshotToursteps0Copy = Përzgjidhni ikonën që të filloni të përdorni Foto Faqeje.
+pageshotToursteps1Copy = Përzgjidhni zonën që doni të fotografohet.
+pageshotToursteps2Copy = Ndajeni me të tjerët, ruajeni ose fshijeni që prej shfletuesit.
+pageshotToursteps3Copy = Kërkoni ose shfletoni që të gjeni foto ekrani të ruajtura.
+pageshotToursteps4Copy = Mundeni përherë të na jepni përshtypjet ose ta çaktivizoni Foto Faqesh prej Pilotit të Testimeve.
+pageshotContributors0TitleEngineer = Inxhinier Software-i
+pageshotContributors1Title = Inxhinier Software-i
 tabcenterDescription = Si do të ishte të kaloje skedat nga kryet e shfletuesit në anë? Këtë donim të gjenim!
 tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
