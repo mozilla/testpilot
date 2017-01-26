@@ -41,8 +41,8 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
 
     this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'give feedback',
+      eventAction: 'PreFeedback Confirm',
+      eventLabel: this.props.experiment.title,
       outboundURL: e.target.getAttribute('href')
     });
   }
