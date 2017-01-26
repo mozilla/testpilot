@@ -104,7 +104,6 @@ emailValidationError = অনুগ্রহ করে একটি কার্
 emailOptInInput = 
   [html/placeholder] ইমেইল এখানে যাবে :)
 emailOptInButton = আমাকে সাইন আপ করুন
-emailOptInSkip = এড়িয়ে যাও
 emailOptInConfirmationTitle = ইমেইল পাঠানো হয়েছে
 emailOptInSuccessMessage2 = ধন্যবাদ!
 emailOptInConfirmationClose = অন্যান্য পরীক্ষার উপরে...
@@ -135,7 +134,6 @@ experimentCardLearnMore = আরও জানুন
 [[ feedback ]]
 
 feedbackSubmitButton = জরীপে অংশ নিন
-feedbackCancelButton = বন্ধ
 feedbackUninstallTitle = ধন্যবাদ!
 
 
