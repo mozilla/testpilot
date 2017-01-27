@@ -281,6 +281,7 @@ newsletterFooterSuccessBody = Ha korábban nem erősítette meg a Mozillához ka
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Ez a kísérlet nem támogatott az Ön nyelvén ({ $locale_code }).
 localeWarningSubtitle = Attól még bekapcsolhatja, ha szeretné.
 
 
