@@ -111,6 +111,16 @@ trackingprotectionContributors1Title = Hartues UX Senior
 trackingprotectionContributors2Title = Inxhinier SC Senior
 trackingprotectionContributorsextra = Ky eksperiment bazohet te teknologjia e Firefox-it Mbrojtje Nga Gjurmimi, krijuar gjatë disa viteve të kaluara nga të punësuar dhe vullnetarë të Mozilla-s.
 universalsearchDescription = Merrni rekomandim për sajtet më të mirë në web, teksa shtypni te Shtylla e Mahnitshme.
+universalsearchIntroduction = <p>Përfitoni më të mirën prej Web-it më të shpejtë me Kërkimin Universal. Thjesht shtypni një dorë shenjash te Shtylla e Mahnitshme, dhe shumica e sajteve, personave dhe artikujve Wikipedia popullorë do të shfaqen për kënaqësinë tuaj në shfletim.</p>
+universalsearchMeasurements0 = Grumbullojmë të dhëna elementare përdorimi lidhur me se si ndërveproni me Shtyllën e Mahnitshme (shtylla e adresave), të tilla si numri i shenjave që keni shtypur, llojet e përfundimeve mbi të cilat klikoni, dhe pozicioni i tyre në listën e shërbimeve.
+universalsearchMeasurements1 = Nëse më parë e keni formësuar Firefox-in që të shfaqë sugjerime kërkimesh te Shtylla e Kërkimeve, instalimi i Kërkimit Universal do të aktivizojë <a href="https://www.mozilla.org/privacy/firefox/#searchsuggestions" target="_blank">sugjerime kërkimesh</a> te Shtylla e Mahnitshme.
+universalsearchMeasurements2 = Kur përdorni Shtyllën e Mahnitshme, termat që shtypni ne i dërgojmë te motori ynë i rekomandimeve. Që të përmirësojmë cilësinë e rekomandimeve tona, ne ruajmë regjistrime anonime të kërkimeve popullore.
+universalsearchMeasurements3 = Që të ofrojmë Kërkimin Universal, ne përdorim shërbime palësh të treta. Përdorim <a href="http://www.bing.com/developers/s/APIBasics.html" target="_blank">Bing-un</a> dhe <a href="https://developer.yahoo.com/boss/search/" target="_blank">Yahoo-n</a> që të furnizohen rekomandimet, dhe <a href="http://docs.embed.ly/docs/" target="_blank">Embedly</a> dhe <a href="https://clearbit.com/logo" target="_blank">Clearbit</a> që të furnizohen të dhëna shtesë (të tilla si figura apo ikona) rreth këtyre rekomandimesh. Që të shfaqen rekomandimet te Shtylla e Mahnitshme, Kërkimi Universal mund të shkarkojë figura drejt e nga Embedly apo Clearbit, gjë që mund t’u lejojë ktyre shërbimeve të shohin adresën tuaj IP dhe figurën e kërkuar.
+universalsearchDetails0Copy = Sajte, persona dhe artikuj Wikipedia popullorë do të shfaqen, teksa shtypni në tastierë.
+universalsearchToursteps0Copy = Tani e tutje mund të bëni kërkime dhe të lëvizni nëpër Internet që nga i njëjti vend.
+universalsearchToursteps1Copy = Teksa shtypni në tastierë, do të shfaqen rekomandime për sajte dhe artikuj Wikipedia popullorë.
 universalsearchToursteps2Copy = Mundeni përherë të na jepni përshtypjet ose ta çaktivizoni Kërkimin Universal prej Pilotit të Testimeve.
 universalsearchContributors0Title = Përgjegjës Produkti
+universalsearchContributors1Title = Hartues UX Senior
 universalsearchContributors2Title = Inxhinier Stafi
+universalsearchContributors3Title = Inxhinier Senior
