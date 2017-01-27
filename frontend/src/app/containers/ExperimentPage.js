@@ -269,7 +269,7 @@ export class ExperimentDetail extends React.Component {
 
         <View {...this.props}>
 
-        {!hasAddon && <section id="testpilot-promo">
+        {(!hasAddon && !graduated) && <section id="testpilot-promo">
           <div className="experiment-promo">
             <div className="reverse-split-banner responsive-content-wrapper">
               <div className="copter-wrapper fly-up">
