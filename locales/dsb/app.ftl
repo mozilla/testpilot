@@ -55,6 +55,14 @@ landingInstalledButton = Wubjeŕśo swóje funkcije
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Test Pilot instalěrowaś &amp;
+oneClickInstallMajorCta = { $title } zmóžniś
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -104,7 +112,6 @@ emailValidationError = Pšosym wužywajśo płaśiwu e-mailowu adresu!
 emailOptInInput = 
   [html/placeholder] how e-mailowu adresu zapisaś :)
 emailOptInButton = Registrěrowaś
-emailOptInSkip = Pśeskócyś
 emailOptInConfirmationTitle = Mejlka jo se pósłała
 emailOptInSuccessMessage2 = Wjeliki źěk!
 emailOptInConfirmationClose = Dalej k eksperimentam...
@@ -114,13 +121,12 @@ emailOptInConfirmationClose = Dalej k eksperimentam...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = K startoju gótowy!
-experimentListPageSubHeader = Wubjeŕśo funkcije, kótarež cośo testowaś. <br> Pśiźćo skóro zasej za dalšne eksperimenty.
 experimentListEnabledTab = Zmóžnjony
 experimentListJustLaunchedTab = Rowno startowany
 experimentListJustUpdatedTab = Rowno aktualizěrowany
 experimentListEndingTomorrow = Skóńcyjo se witśe
 experimentListEndingSoon = Skóńcyjo se skóro
+experimentsListCondensedHeader = Wubjeŕśo swóje eksperimenty!
 
 
 
@@ -137,19 +143,8 @@ experimentCardLearnMore = Dalšne informacije
 [[ feedback ]]
 
 feedbackSubmitButton = Wobźělśo se na krotkem napšašowanju
-feedbackCancelButton = Zacyniś
 feedbackUninstallTitle = Wjeliki źěk!
 feedbackUninstallCopy = Wašo wobźělenje na Firefox Test Pilot jo nam wjelgin wažne! Pšosym woglědajśo se naše druge eksperimenty a pśiźćo zasej!
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Hyšći wokognuśe...
-discussNotifyMessageAccountless = <p>Cele w zmysle eksperimentow wužywamy eksterny forum. Musyśo konto załožyś, jolic cośo se na toś tom forumje wobźěliś.</p> <p>Jolic njocośo konto załožyś, móžośo pśecej swójo měnjenje pśez Test Pilot zawóstajiś.<br>(Cytamy to napšawdu.)</p>
-discussNotifySubmitButton = K forumoju
-discussNotifyCancelButton = Pśetergnuś
 
 
 
@@ -169,7 +164,7 @@ experimentPromoSubheader = Wuwijamy funkcije pśiduceje generacije za Firefox. I
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } jo zmóžnjony.
@@ -191,7 +186,7 @@ tour = Tura
 tourLink = tura
 contribute = Sobu statkowaś
 bugReports = Rozpšawy wó programowych zmólkach
-discourse = Discourse
+discussExperiment = Wó { $title } diskutěrowaś
 tourOnboardingTitle = { $title } zmóžnjony!
 tourDoneButton = Gótowo
 userCountContainer = <span>{ $installation_count }</span> wósobow rowno { $title } testujo! 
@@ -215,7 +210,6 @@ retireDialogTitle = Test Pilot wótinstalěrowaś?
 retireMessage = Cele kaž sebje žycyśo. To znjemóžnijo aktiwne testy, wótinstalěrujo dodank a wótwónoźijo waše kontowe informacije z našych serwerow.
 retireEmailMessage = Klikniśo jadnorje na wótkaz <em>Wótskazaś</em> w mejlce Test Pilot, až njeby wy žedne nowosći wěcej dostał.
 retireSubmitButton = Dalej
-retireCancelButton = Pśetergnuś
 pageTitleRetirePage = Firefox Test Pilot - Test Pilot wótinstalěrowaś
 retirePageProgressMessage = Wušaltujo se...
 retirePageHeadline = Źěkujomy se za lět!
@@ -281,10 +275,10 @@ newsletterFooterSuccessBody = Jolic hyšći njejsćo abonement powěsćowego lis
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Toś ten eksperiment jo jano w engelskej rěcy k dispoziciji.
+localeUnavailableWarningTitle = Toś ten eksperiment njepódpěra se we wašej rěcy ({ $locale_code }).
 localeWarningSubtitle = Móžośo jen weto zmóžniś, jolic cośo.
 
 

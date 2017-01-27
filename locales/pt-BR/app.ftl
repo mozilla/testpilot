@@ -55,6 +55,14 @@ landingInstalledButton = Escolher os experimentos
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Instalar o Test Pilot &amp;
+oneClickInstallMajorCta = Habilitar { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -104,23 +112,21 @@ emailValidationError = Por favor, use um e-mail válido!
 emailOptInInput = 
   [html/placeholder] o e-mail vai aqui :)
 emailOptInButton = Assinar
-emailOptInSkip = Pular
 emailOptInConfirmationTitle = E-mail enviado
 emailOptInSuccessMessage2 = Obrigado!
-emailOptInConfirmationClose = Nos experimentos...
+emailOptInConfirmationClose = Vamos aos experimentos...
 
 
 
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Pronto para decolar!
-experimentListPageSubHeader = Escolha os experimentos que você quer testar. <br> Volte em breve para mais.
 experimentListEnabledTab = Habilitado
 experimentListJustLaunchedTab = Recém lançados
 experimentListJustUpdatedTab = Última atualização
 experimentListEndingTomorrow = Termina amanhã
 experimentListEndingSoon = Terminando em breve
+experimentsListCondensedHeader = Escolha seus experimentos!
 
 
 
@@ -137,29 +143,11 @@ experimentCardLearnMore = Saiba mais
 [[ feedback ]]
 
 feedbackSubmitButton = Responda a uma pesquisa rápida
-feedbackCancelButton = Fechar
 feedbackUninstallTitle = Obrigado!
 feedbackUninstallCopy = 
   | Sua participação no Firefox Test Pilot significa
   | muito! Por favor, veja os outros experimentos, 
   | e fique ligado nas novidades!
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Só um segundo…
-discussNotifyMessageAccountless = 
-  | <p>No espírito da experimentação, estamos usando um serviço de fórum externo.
-  | Você precisará criar uma conta se você 
-  | desejar participar nos fóruns.</p>
-  | <p>Se você não quiser criar uma conta, você pode 
-  | sempre deixar sua opinião pelo Test Pilot.
-  | <br>
-  | (Nós realmente lemos sua opinião)</p>
-discussNotifySubmitButton = Leve-me ao fórum
-discussNotifyCancelButton = Cancelar
 
 
 
@@ -179,7 +167,7 @@ experimentPromoSubheader = Estamos construindo novos recursos para o Firefox. In
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } está habilitado.
@@ -201,7 +189,7 @@ tour = Tour
 tourLink = tour
 contribute = Contribua
 bugReports = Relatório de falhas
-discourse = Discourse
+discussExperiment = Debater sobre { $title }
 tourOnboardingTitle = { $title } habilitado!
 tourDoneButton = Pronto
 userCountContainer = <span>{ $installation_count }</span> estão experimentando o { $title } agora!
@@ -225,7 +213,6 @@ retireDialogTitle = Remover Test Pilot?
 retireMessage = Como quiser. Isso irá desabilitar qualquer experimento ativo, remover a extensão e excluir informações da sua conta nos nossos servidores.
 retireEmailMessage = Para deixar de receber atualizações por e-mail, basta clicar no link <em>cancelar inscrição</em> em qualquer e-mail do Test Pilot.
 retireSubmitButton = Prosseguir
-retireCancelButton = Cancelar
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar o Test Pilot
 retirePageProgressMessage = Desligando...
 retirePageHeadline = Obrigador por voar!
@@ -291,10 +278,9 @@ newsletterFooterSuccessBody = Se ainda não confirmou a inscrição no boletim d
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Essa experiência só está disponível em Inglês.
 localeWarningSubtitle = Você ainda pode habilitá-lo se quiser.
 
 

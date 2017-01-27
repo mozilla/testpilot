@@ -55,6 +55,14 @@ landingInstalledButton = Kies uw functies
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Test Pilot installeren &amp;
+oneClickInstallMajorCta = { $title } inschakelen
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -104,7 +112,6 @@ emailValidationError = Gebruik een geldig e-mailadres!
 emailOptInInput = 
   [html/placeholder] typ hier uw e-mailadres :)
 emailOptInButton = Inschrijven
-emailOptInSkip = Overslaan
 emailOptInConfirmationTitle = E-mail verzonden
 emailOptInSuccessMessage2 = Dank u!
 emailOptInConfirmationClose = Door naar de experimenten...
@@ -114,13 +121,12 @@ emailOptInConfirmationClose = Door naar de experimenten...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Klaar voor de start!
-experimentListPageSubHeader = Kies de functies die u wilt proberen. <br> Kijk binnenkort nog eens voor meer experimenten.
 experimentListEnabledTab = Ingeschakeld
 experimentListJustLaunchedTab = Zojuist gestart
 experimentListJustUpdatedTab = Zojuist bijgewerkt
 experimentListEndingTomorrow = Eindigt morgen
 experimentListEndingSoon = Eindigt binnenkort
+experimentsListCondensedHeader = Kies uw experimenten!
 
 
 
@@ -137,29 +143,11 @@ experimentCardLearnMore = Meer info
 [[ feedback ]]
 
 feedbackSubmitButton = Een snelle enquête invullen
-feedbackCancelButton = Sluiten
 feedbackUninstallTitle = Dank u!
 feedbackUninstallCopy = 
   | Uw deelname aan Firefox Test Pilot betekent
   | veel! Bekijk ook onze andere experimenten,
   | en houd ons in de gaten voor meer volgende!
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Eén moment...
-discussNotifyMessageAccountless = 
-  | <p>In de geest van experimenteren, gebruiken we een externe forumservice.
-  | U dient een account aan te maken als u
-  | aan de forums wilt deelnemen.</p>
-  | <p>Als u geen account wilt aanmaken, kunt u
-  | altijd feedback achterlaten via Test Pilot.
-  | <br>
-  | (We lezen het echt allemaal.)</p>
-discussNotifySubmitButton = Naar het forum
-discussNotifyCancelButton = Annuleren
 
 
 
@@ -179,7 +167,7 @@ experimentPromoSubheader = We bouwen functies van de volgende generatie voor Fir
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } is ingeschakeld.
@@ -201,7 +189,7 @@ tour = Rondleiding
 tourLink = Rondleiding starten
 contribute = Bijdragen
 bugReports = Bugrapporten
-discourse = Discourse
+discussExperiment = Discussiëren over { $title }
 tourOnboardingTitle = { $title } ingeschakeld!
 tourDoneButton = Gereed
 userCountContainer = <span>{ $installation_count }</span> mensen proberen { $title } op dit moment uit!
@@ -225,7 +213,6 @@ retireDialogTitle = Test Pilot verwijderen?
 retireMessage = Zoals u wilt. Hierdoor worden alle actieve tests uitgeschakeld, de add-on gede-installeerd en uw accountgegevens van onze servers verwijderd.
 retireEmailMessage = Om u van updates per e-mail uit te schrijven, klikt u eenvoudig op de koppeling <em>uitschrijven</em> in een willekeurige Test Pilot-e-mail.
 retireSubmitButton = Doorgaan
-retireCancelButton = Annuleren
 pageTitleRetirePage = Firefox Test Pilot - Test Pilot de-installeren
 retirePageProgressMessage = Afsluiten...
 retirePageHeadline = Bedankt voor het vliegen!
@@ -291,10 +278,10 @@ newsletterFooterSuccessBody = Als u nog niet eerder een inschrijving voor een Mo
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Dit experiment is alleen in het Engels beschikbaar.
+localeUnavailableWarningTitle = Dit experiment wordt niet ondersteund in uw taal ({ $locale_code }).
 localeWarningSubtitle = U kunt het echter inschakelen als u wilt.
 
 

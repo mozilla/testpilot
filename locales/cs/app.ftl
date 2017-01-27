@@ -104,7 +104,6 @@ emailValidationError = Použijte prosím platnou e-mailovou adresu!
 emailOptInInput = 
   [html/placeholder] sem napište e-mailovou adresu :)
 emailOptInButton = Přihlásit se
-emailOptInSkip = Přeskočit
 emailOptInConfirmationTitle = E-mail odeslán
 emailOptInSuccessMessage2 = Děkujeme!
 emailOptInConfirmationClose = Podívat se na experimenty...
@@ -114,8 +113,6 @@ emailOptInConfirmationClose = Podívat se na experimenty...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Připravit k odletu!
-experimentListPageSubHeader = Vyberte si funkce, které chcete vyzkoušet. <br> Podívejte se také brzy znovu na nové experimenty.
 experimentListEnabledTab = Povoleno
 experimentListJustLaunchedTab = Právě spuštěno
 experimentListJustUpdatedTab = Právě aktualizováno
@@ -137,29 +134,11 @@ experimentCardLearnMore = Zjistit více
 [[ feedback ]]
 
 feedbackSubmitButton = Zúčastnit se rychlého průzkumu
-feedbackCancelButton = Zavřít
 feedbackUninstallTitle = Děkujeme vám!
 feedbackUninstallCopy = 
   | Vaše účast v programu Firefox Test Pilot znamená
   | mnoho! Podívejte se prosím na další experimenty
   | a těšte se na nové!
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Malý moment...
-discussNotifyMessageAccountless = 
-  | <p>V duchu experimentů využíváme externí fórum.
-  | Pokud si přejete na fóru diskutovat,
-  | založte si účet.</p>
-  | <p>Pokud si nechcete žádný účet zakládat, můžete
-  | nám zpětnou vazbu zaslat přímo skrze Test Pilot.
-  | <br>
-  | (Opravdu vše čteme)</p>
-discussNotifySubmitButton = Přejít do fóra
-discussNotifyCancelButton = Zrušit
 
 
 
@@ -179,7 +158,7 @@ experimentPromoSubheader = Vytváříme funkce pro Firefox nové generace. Nains
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } je povolen.
@@ -201,9 +180,8 @@ tour = Průvodce
 tourLink = prohlídka
 contribute = Přispět
 bugReports = Hlášení chyb
-discourse = Discourse
 tourOnboardingTitle = { $title } povolen!
-tourDoneButton = Dokončit
+tourDoneButton = Hotovo
 userCountContainer = Experiment { $title } zkouší <span>{ $installation_count }</span> lidí!
 userCountContainerAlt = Právě spuštěno!
 highlightPrivacy = Vaše soukromí
@@ -225,7 +203,6 @@ retireDialogTitle = Odinstalovat Test Pilot?
 retireMessage = Jak si přejete. Toto zakáže všechny aktivní testy, odinstaluje doplněk a odstraní informace o vašem účtu z našich serverů.
 retireEmailMessage = Pro odhlášení ze zasílání informací klepněte na odkaz <em>unsubscribe</em> v kterémkoliv e-mailu zaslaném Test Pilotem.
 retireSubmitButton = Pokračovat
-retireCancelButton = Zrušit
 pageTitleRetirePage = Firefox Test Pilot - Odinstalovat Test Pilot
 retirePageProgressMessage = Vypínání...
 retirePageHeadline = Děkujeme, že jste se zúčastnili našeho letu!
@@ -291,10 +268,9 @@ newsletterFooterSuccessBody = Pokud jste dříve nepotvrdili odběr zpravodaje M
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Tento experiment je dostupný jenom v angličtině.
 localeWarningSubtitle = Můžete ale aktivaci zkusit i bez toho.
 
 

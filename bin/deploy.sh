@@ -111,7 +111,7 @@ aws s3 sync \
 
 # SVG; cache forever, assign correct content-type
 aws s3 sync \
-  --cache-control "max-age=${ONE_YEAR}" \
+  --cache-control "max-age=${ONE_YEAR}, immutable" \
   --content-type "image/svg+xml" \
   --exclude "*" \
   --include "*.svg" \
@@ -123,7 +123,7 @@ aws s3 sync \
 # Everything else; cache forever, because it has hashes in the filenames
 aws s3 sync \
   --delete \
-  --cache-control "max-age=${ONE_YEAR}" \
+  --cache-control "max-age=${ONE_YEAR}, immutable" \
   --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \

@@ -55,6 +55,14 @@ landingInstalledButton = Choisissez vos fonctionnalités
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Installer Test Pilot et
+oneClickInstallMajorCta = activer { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -104,7 +112,6 @@ emailValidationError = Veuillez utiliser une adresse électronique valide.
 emailOptInInput = 
   [html/placeholder] Adresse électronique :)
 emailOptInButton = Je m’inscris
-emailOptInSkip = Ignorer
 emailOptInConfirmationTitle = Courriel envoyé
 emailOptInSuccessMessage2 = Merci&nbsp;!
 emailOptInConfirmationClose = À propos d’expériences…
@@ -114,13 +121,12 @@ emailOptInConfirmationClose = À propos d’expériences…
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Prêt à décoller !
-experimentListPageSubHeader = Choisissez les fonctionnalités nouvelles que vous voulez tester.<br> Revenez bientôt pour en essayer d’autres.
 experimentListEnabledTab = Activé
 experimentListJustLaunchedTab = Lancé récemment
 experimentListJustUpdatedTab = Mis à jour récemment
 experimentListEndingTomorrow = Se termine demain
 experimentListEndingSoon = Se termine bientôt
+experimentsListCondensedHeader = Choisissez des expériences !
 
 
 
@@ -137,19 +143,8 @@ experimentCardLearnMore = Apprenez-en davantage
 [[ feedback ]]
 
 feedbackSubmitButton = Répondre à un court sondage
-feedbackCancelButton = Fermer
 feedbackUninstallTitle = Merci&nbsp;!
 feedbackUninstallCopy = Votre participation à Firefox Test Pilot est très importante pour nous. Découvrez également nos autres expériences et restez à l’écoute des prochaines annonces&nbsp;!
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Avez-vous une seconde&nbsp;?
-discussNotifyMessageAccountless = <p>Afin de poursuivre sur notre lancée de l’expérimentation, nous avons recours à un forum externe. Vous devrez créer un compte si vous souhaitez participer au forum.</p> <p>Si vous ne souhaitez pas créer de compte, vous pouvez toujours nous faire part de votre avis via Test Pilot.<br>(Nous lisons vraiment tout ça)</p>
-discussNotifySubmitButton = Consulter le forum
-discussNotifyCancelButton = Annuler
 
 
 
@@ -169,7 +164,7 @@ experimentPromoSubheader = Nous élaborons les fonctionnalités de prochaine gé
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } est activé.
@@ -182,6 +177,7 @@ disableExperiment = Désactiver { $title }
 disableExperimentTransition = Désactivation…
 enableExperiment = Activer { $title }
 enableExperimentTransition = Activation…
+experimentMeasurementIntro = Outre les <a>données</a> collectées par toutes les expériences de Test Pilot, voici les principales choses que vous devez savoir sur ce qui se passe lorsque vous utilisez { $experimentTitle } :
 measurements = Confidentialité
 experimentPrivacyNotice = Vous pouvez en apprendre davantage sur la collecte de données pour { $title } ici.
 contributorsHeading = Conçu et réalisé par
@@ -191,7 +187,7 @@ tour = Visite guidée
 tourLink = visite guidée
 contribute = Participer
 bugReports = Rapports de bogues
-discourse = Discourse
+discussExperiment = Discuter de { $title }
 tourOnboardingTitle = { $title } a été activé !
 tourDoneButton = Terminé
 userCountContainer = <span>{ $installation_count }</span> personnes essaient { $title } en ce moment même&nbsp;!
@@ -215,7 +211,6 @@ retireDialogTitle = Désinstaller Test Pilot&nbsp;?
 retireMessage = Comme vous le souhaitez. Cette action désactivera l’ensemble des tests actifs, désinstallera le module et supprimera les données de votre compte sur nos serveurs.
 retireEmailMessage = Pour ne plus recevoir les annonces, cliquez simplement sur le lien de <em>désabonnement</em> dans n’importe quel courriel envoyé par Test pilot.
 retireSubmitButton = Continuer
-retireCancelButton = Annuler
 pageTitleRetirePage = Firefox Test Pilot - Désinstaller Test Pilot
 retirePageProgressMessage = Retour au sol…
 retirePageHeadline = Merci pour votre implication !
@@ -281,10 +276,10 @@ newsletterFooterSuccessBody = Si vous n’avez jamais confirmé d’abonnement �
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Cette expérience est uniquement disponible en anglais.
+localeUnavailableWarningTitle = Cette expérience n’est pas disponible dans votre langue ({ $locale_code }).
 localeWarningSubtitle = Vous pourrez toujours l’activer ensuite si vous le souhaitez.
 
 

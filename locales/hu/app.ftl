@@ -55,6 +55,14 @@ landingInstalledButton = Funkciók kiválasztása
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Tesztpilóta telepítése és
+oneClickInstallMajorCta = { $title } bekapcsolása
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -104,7 +112,6 @@ emailValidationError = Használjon egy érvényes e-mail címet!
 emailOptInInput = 
   [html/placeholder] az e-mail cím ide kerül :)
 emailOptInButton = Feliratkozás
-emailOptInSkip = Kihagyás
 emailOptInConfirmationTitle = E-mail elküldve
 emailOptInSuccessMessage2 = Köszönjük!
 emailOptInConfirmationClose = Tovább a kísérletekhez…
@@ -114,13 +121,12 @@ emailOptInConfirmationClose = Tovább a kísérletekhez…
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Felszállásra kész!
-experimentListPageSubHeader = Válassza ki a funkciókat, melyeket ki akar próbálni. <br> Nézzen vissza később további kísérletekért.
 experimentListEnabledTab = Bekapcsolva
 experimentListJustLaunchedTab = Épp most indult
 experimentListJustUpdatedTab = Épp most frissült
 experimentListEndingTomorrow = Holnap véget ér
 experimentListEndingSoon = Hamarosan véget ér
+experimentsListCondensedHeader = Válasszon kísérleteket!
 
 
 
@@ -137,29 +143,11 @@ experimentCardLearnMore = Tudjon meg többet
 [[ feedback ]]
 
 feedbackSubmitButton = Vegyen rész egy gyors felmérésben
-feedbackCancelButton = Bezárás
 feedbackUninstallTitle = Köszönjük!
 feedbackUninstallCopy = 
   | A részvétele a Firefox Tesztpilótában sokat
   | jelent! Nézze meg a többi kísérletünket is,
   | és kövesse figyelemmel a később érkezőket!
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Csak egy pillanat…
-discussNotifyMessageAccountless = 
-  | <p>A kísérletezés szellemében egy külső fórumszolgáltatást használunk.
-  | Létre kell hoznia egy fiókot, ha részt
-  | szeretne venni a fórumokon.</p>
-  | <p>Ha nem akar fiókot létrehozni, akkor
-  | hagyhat visszajelzést a Tesztpilótán keresztül.
-  | <br>
-  | (Tényleg elolvassuk ezeket)</p>
-discussNotifySubmitButton = Vigyen a fórumhoz
-discussNotifyCancelButton = Mégse
 
 
 
@@ -179,7 +167,7 @@ experimentPromoSubheader = A Firefox következő generációs funkcióit készí
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } bekapcsolva.
@@ -192,6 +180,7 @@ disableExperiment = { $title } kikapcsolása
 disableExperimentTransition = Kikapcsolás…
 enableExperiment = { $title } bekapcsolása
 enableExperimentTransition = Bekapcsolás…
+experimentMeasurementIntro = Az összes Tesztpilóta kísérlet során gyűjtött <a>adatok</a> mellett, ezekről a kulcsfontosságú dolgokról érdemes tudnia, ha a(z) { $experimentTitle } kísérletet használja:
 measurements = Magánszféra
 experimentPrivacyNotice = Itt többet tudhat meg a(z) { $title } adatgyűjtéséről.
 contributorsHeading = Nekik köszönhetően:
@@ -201,7 +190,7 @@ tour = Kalauz
 tourLink = kalauz
 contribute = Közreműködés
 bugReports = Hibajelentések
-discourse = Discourse
+discussExperiment = A(z) { $title } megvitatása
 tourOnboardingTitle = { $title } bekapcsolva!
 tourDoneButton = Kész
 userCountContainer = Jelenleg <span>{ $installation_count }</span> ember próbálja ezt ki: { $title }.
@@ -225,7 +214,6 @@ retireDialogTitle = Eltávolítja a Tesztpilótát?
 retireMessage = Ahogy kívánja. Ez kikapcsol minden aktív tesztet, eltávolítja a kiegészítőt és eltávolítja a fiókinformációit a kiszolgálóinkról.
 retireEmailMessage = Hogy kiszálljon az e-mail értesítésekből, egyszerűen kattintson a <em>leiratkozás</em> hivatkozásra bármelyik Tesztpilóta e-mailben.
 retireSubmitButton = Folytatás
-retireCancelButton = Mégse
 pageTitleRetirePage = Firefox Tesztpilóta – A Tesztpilóta eltávolítása
 retirePageProgressMessage = Leállás…
 retirePageHeadline = Köszönjük a repülést!
@@ -291,10 +279,10 @@ newsletterFooterSuccessBody = Ha korábban nem erősítette meg a Mozillához ka
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Ez a kísérlet csak angolul érhető el.
+localeUnavailableWarningTitle = Ez a kísérlet nem támogatott az Ön nyelvén ({ $locale_code }).
 localeWarningSubtitle = Attól még bekapcsolhatja, ha szeretné.
 
 

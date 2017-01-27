@@ -13,11 +13,11 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
     return (
       <div className="modal-container">
         <div className={classnames('modal', 'tour-modal')}>
-          <header className="tour-header-wrapper">
-            <h3 className="tour-header"
+          <header className="modal-header-wrapper">
+            <h3 className="modal-header"
                 data-l10n-id="experimentPreFeedbackTitle"
-                data-l10n-args={l10nArgs}>{experiment.title} Feedback</h3>
-                <div className="tour-cancel" onClick={e => this.cancel(e)}/>
+                data-l10n-args={l10nArgs}></h3>
+                <div className="modal-cancel" onClick={e => this.cancel(e)}/>
           </header>
             <div className="tour-content">
               <div className="tour-image">
@@ -28,7 +28,7 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
               <div className="tour-text">
                 <a data-l10n-id="experimentPreFeedbackLinkCopy"
                    data-l10n-args={l10nArgs} onClick={e => this.feedback(e)}
-                   href={surveyURL}>Give feedback about the {experiment.title} experiment</a>
+                   href={surveyURL}></a>
               </div>
             </div>
         </div>
@@ -41,8 +41,8 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
 
     this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'give feedback',
+      eventAction: 'PreFeedback Confirm',
+      eventLabel: this.props.experiment.title,
       outboundURL: e.target.getAttribute('href')
     });
   }

@@ -1,8 +1,11 @@
+/* eslint-disable */
 import React from 'react';
 
 import classnames from 'classnames';
 import EmailDialog from '../components/EmailDialog';
+import CondensedHeader from '../components/CondensedHeader';
 import ExperimentCardList from '../components/ExperimentCardList';
+import PastExperiments from '../components/PastExperiments';
 import LoadingPage from './LoadingPage';
 import View from '../components/View';
 
@@ -21,8 +24,7 @@ export default class HomePageWithAddon extends React.Component {
     }
 
     this.state = {
-      showEmailDialog,
-      showPastExperiments: false
+      showEmailDialog
     };
   }
 
@@ -37,34 +39,33 @@ export default class HomePageWithAddon extends React.Component {
   renderSplash() {
     if (window.location.search.includes('utm_content=no-experiments-installed')) {
       return (
-        <div className="intro-text">
-          <h2 data-l10n-id="experimentsListNoneInstalledHeader" className="banner">
-            Let's get this baby off the ground!
-          </h2>
-          <p data-l10n-id="experimentsListNoneInstalledSubheader">
-            Ready to try a new Test Pilot experiment? Select one to enable, take
-            it for a spin, and let us know what you think.
-          </p>
-          <p data-l10n-id="experimentsListNoneInstalledCTA" className="cta">
-            Not interested?
-           <a onClick={() => this.onNotInterestedSurveyClick()}
-              href="https://qsurvey.mozilla.com/s3/TxP-User" target="_blank">
-            Let us know why
-           </a>.
-          </p>
+        <div className="responsive-content-wrapper reverse-split-banner">
+          <div className="copter-wrapper fly-down">
+            <div className="copter"></div>
+          </div>
+          <div className="intro-text">
+            <h2 data-l10n-id="experimentsListNoneInstalledHeader" className="banner">
+              Let's get this baby off the ground!
+            </h2>
+            <p data-l10n-id="experimentsListNoneInstalledSubheader">
+              Ready to try a new Test Pilot experiment? Select one to enable, take
+              it for a spin, and let us know what you think.
+            </p>
+            <p data-l10n-id="experimentsListNoneInstalledCTA" className="cta">
+              Not interested?
+             <a onClick={() => this.onNotInterestedSurveyClick()}
+                href="https://qsurvey.mozilla.com/s3/TxP-User" target="_blank">
+              Let us know why
+             </a>.
+            </p>
+          </div>
         </div>
       );
     }
     return (
-      <div className="intro-text">
-        <h2 data-l10n-id="experimentListPageHeader" className="banner">
-          Ready for Takeoff!
-        </h2>
-        <p data-l10n-id="experimentListPageSubHeader">
-          Pick the features you want to try.<br />
-          Check back soon for more experiments.
-        </p>
-      </div>
+      <CondensedHeader dataL10nId="experimentsListCondensedHeader">
+        Pick your experiments!
+      </CondensedHeader>
     );
   }
 
@@ -73,7 +74,7 @@ export default class HomePageWithAddon extends React.Component {
 
     if (experiments.length === 0) { return <LoadingPage />; }
 
-    const { showEmailDialog, showPastExperiments } = this.state;
+    const { showEmailDialog } = this.state;
     const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
     const pastExperiments = experiments.filter(isAfterCompletedDate);
 
@@ -83,30 +84,11 @@ export default class HomePageWithAddon extends React.Component {
           <EmailDialog {...this.props}
             onDismiss={() => this.setState({ showEmailDialog: false })} />}
 
-        <div className="responsive-content-wrapper reverse-split-banner ">
-          <div className="copter-wrapper fly-down">
-            <div className="copter"></div>
-          </div>
-          {this.renderSplash()}
-        </div>
-
-        <div className="pinstripe responsive-content-wrapper"></div>
+        {this.renderSplash()}
         <div className="responsive-content-wrapper">
           <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
-          {pastExperiments.length > 0 && !showPastExperiments &&
-          <div className={classnames(['button', 'outline'])}
-              style={{ margin: '0 auto 40px', display: 'table' }}
-              onClick={() => this.setState({ showPastExperiments: true })}
-              data-l10n-id="viewPastExperiments">View Past Experiments</div>}
-          {showPastExperiments &&
-          <div>
-            <div className={classnames(['button', 'outline'])}
-                style={{ margin: '0 auto 40px', display: 'table' }}
-                onClick={() => this.setState({ showPastExperiments: false })}
-                data-l10n-id="hidePastExperiments">Hide Past Experiments</div>
-            <ExperimentCardList {...this.props} experiments={pastExperiments} eventCategory="HomePage Interactions" />
-          </div>}
         </div>
+        <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
       </View>
     );
   }

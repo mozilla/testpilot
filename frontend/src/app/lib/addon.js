@@ -29,11 +29,10 @@ function mozAddonManagerInstall(url) {
   });
 }
 
-export function installAddon(requireRestart, sendToGA, eventCategory) {
+export function installAddon(requireRestart, sendToGA, eventCategory, eventLabel) {
   const { protocol, hostname, port } = window.location;
   const path = '/static/addon/addon.xpi';
   const downloadUrl = `${protocol}//${hostname}${port ? ':' + port : ''}${path}`;
-
   const useMozAddonManager = (
     navigator.mozAddonManager &&
     protocol === 'https:' &&
@@ -42,14 +41,15 @@ export function installAddon(requireRestart, sendToGA, eventCategory) {
 
   const gaEvent = {
     eventCategory: eventCategory,
-    eventAction: 'button click',
-    eventLabel: 'Install the Add-on'
+    eventAction: 'install button click',
+    eventLabel: eventLabel
   };
 
   cookies.set('first-run', 'true');
 
+  let result;
   if (useMozAddonManager) {
-    mozAddonManagerInstall(downloadUrl).then(() => {
+    result = mozAddonManagerInstall(downloadUrl).then(() => {
       gaEvent.dimension7 = RESTART_NEEDED ? 'restart required' : 'no restart';
       sendToGA('event', gaEvent);
       if (RESTART_NEEDED) {
@@ -59,7 +59,9 @@ export function installAddon(requireRestart, sendToGA, eventCategory) {
   } else {
     gaEvent.outboundURL = downloadUrl;
     sendToGA('event', gaEvent);
+    result = Promise.resolve();
   }
+  return result;
 }
 
 export function uninstallAddon() {

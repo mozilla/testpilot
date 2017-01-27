@@ -34,6 +34,7 @@ will:
 ```
 Note the lack of quotes.  These values are validated against `/^TESTPILOT_ADDON_(ID=[a-z0-9@-]+|VERSION=[0-9a-z.-]+)\$/`.
 
+*There is a package which simplifies the signing and distributing process for jpm addons. [deploy-txp](https://github.com/meandavejustice/deploy-txp). For an example, you can see it's usage in [min-vid](https://github.com/meandavejustice/min-vid/)*
 
 ## The bigger picture
 

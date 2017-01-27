@@ -1,0 +1,50 @@
+/*
+ * This Source Code is subject to the terms of the Mozilla Public License
+ * version 2.0 (the 'License'). You can obtain a copy of the License at
+ * http://mozilla.org/MPL/2.0/.
+ */
+
+#action-button--x16-x16 > .toolbarbutton-badge-stack > .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url('resource://x16/data/icon-16.png') !important;
+  background-size: 16px 16px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+#action-button--x16-x16[cui-areatype="menu-panel"] > .toolbarbutton-badge-stack > .toolbarbutton-icon {
+  background-image: url('resource://x16/data/icon-32.png') !important;
+  background-size: 32px 32px !important;
+}
+
+toolbarpaletteitem[place="palette"] > #action-button--x16-x16 > .toolbarbutton-badge-stack > .toolbarbutton-icon {
+  background-image: url('resource://x16/data/icon-32.png') !important;
+  background-size: 32px 32px !important;
+}
+
+toolbar[brighttext] #action-button--x16-x16 > .toolbarbutton-badge-stack > .toolbarbutton-icon {
+  background-image: url('resource://x16/data/icon-inverted-16.png') !important;
+}
+
+#action-button--x16-x16 .toolbarbutton-badge {
+  background-color: #1996F7 !important;
+  text-shadow: none;
+}
+
+@media (min-resolution: 1.1dppx) {
+  #action-button--x16-x16 > .toolbarbutton-badge-stack > .toolbarbutton-icon {
+    background-image: url('resource://x16/data/icon-32.png') !important;
+  }
+
+  #action-button--x16-x16[cui-areatype="menu-panel"] > .toolbarbutton-badge-stack > .toolbarbutton-icon {
+    background-image: url('resource://x16/data/icon-64.png') !important;
+  }
+
+  toolbarpaletteitem[place="palette"] > #action-button--x16-x16 > .toolbarbutton-badge-stack > .toolbarbutton-icon {
+    background-image: url('resource://x16/data/icon-64.png') !important;
+  }
+
+  toolbar[brighttext] #action-button--x16-x16 > .toolbarbutton-badge-stack > .toolbarbutton-icon {
+    background-image: url('resource://x16/data/icon-inverted-32.png') !important;
+  }
+}

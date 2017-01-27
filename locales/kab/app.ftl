@@ -55,6 +55,14 @@ landingInstalledButton = Fren timahilin inek
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Sebded Test Pilot&amp;
+oneClickInstallMajorCta = Rmed { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -104,7 +112,6 @@ emailValidationError = Ma ulac aɣilif seqdec tansa imayl tameɣtut!
 emailOptInInput = 
   [html/placeholder] tansa imayl :)
 emailOptInButton = Ad jerdeɣ iman-iw
-emailOptInSkip = Suref
 emailOptInConfirmationTitle = Imayl ittwaciyeɛ
 emailOptInSuccessMessage2 = Tanemirt-ik
 emailOptInConfirmationClose = Ɣef tirmitin…
@@ -114,13 +121,12 @@ emailOptInConfirmationClose = Ɣef tirmitin…
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Theggaḍ ad tesrifgeḍ!
-experimentListPageSubHeader = Fren timahilin timaynutin i tebɣid ad tɛerḍeḍ.<br> Uɣal-d tikelt nniḍen akken ad tɛerḍeḍ tiyaḍ.
 experimentListEnabledTab = Irmed
 experimentListJustLaunchedTab = Ikker tura akka
 experimentListJustUpdatedTab = Ittwalqem tura akka
 experimentListEndingTomorrow = Ad ifak azekka
 experimentListEndingSoon = Ad ifak ticki
+experimentsListCondensedHeader = Fren tirmitin inek!
 
 
 
@@ -136,17 +142,12 @@ experimentCardLearnMore = Issin ugar
 # A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
-feedbackCancelButton = Mdel
+feedbackSubmitButton = Bdu aḥedqis fessusen
 feedbackUninstallTitle = Tanemirt!
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Rǧǧu kan yiwet tasint...
-discussNotifySubmitButton = Awi-yi ar unmager
-discussNotifyCancelButton = Sefsex
+feedbackUninstallCopy = 
+  | Attekki yinek di Firefox Test Pilot yemmal-d
+  | aṭas! Ma ulac aɣilif senqed tirmitin nneɣ,
+  | udiɣ qim deg umaynut i wayen nniḍen ar zdat!
 
 
 
@@ -162,13 +163,15 @@ experimentPreFeedbackLinkCopy = Fk-ed  tuɣalin n usuddem ɣef urmitan { $title 
 [[ experimentPromo ]]
 
 experimentPromoHeader = Theggaḍ ad tesrifgeḍ?
+experimentPromoSubheader = Nbennu timahilin n uzekka n i tsuta d-iteddun n Firefox. Sebded Test Pilot akken ad ten-tɛerḍeḍ!
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } ittwarmed.
+installErrorMessage = Ihuh… { $title } ur yermid ara. Ɛreḍ ticki.
 participantCount = <span>{ $installation_count }</span> imttekkiyen
 otherExperiments = Ɛreḍ ula d tirmitin-agi nniḍen.
 giveFeedback = Awi-d  tuɣalin n usuddem
@@ -177,6 +180,7 @@ disableExperiment = Kkes armed { $title }
 disableExperimentTransition = Tuksa n urmed...
 enableExperiment = Rmed { $title }
 enableExperimentTransition = Armed...
+experimentMeasurementIntro = Ar tama n <a>isefka</a>i d-yettwaleqḍen sɣur akk tirmitin n Test Pilot, hatent aya tsura i yessefk ad tissineḍ ɣef ayen iḍerrun ticki tseqdaceḍ { $experimentTitle }:
 measurements = Tabaḍnit-inek
 experimentPrivacyNotice = Tzemreḍ ad tisineḍ ugar ɣef ulqwaḍ n isefka i { $title } dagi.
 contributorsHeading = Iwwi-yak-tt-id 
@@ -186,10 +190,10 @@ tour = Tirza fessusen
 tourLink = Senker tirza fessusen
 contribute = Ttekki
 bugReports = Ineqqisen n ibugen
-discourse = Discourse
+discussExperiment = Sqeṛdec { $title }
 tourOnboardingTitle = { $title } ittwarmed!
 tourDoneButton = Tefra
-userCountContainer = Llan <span>{ $installation_count }</span> n yemdanen ttaɣraḍen { $title } akka tura!
+userCountContainer = Llan <span>{ $installation_count }</span> n yemdanen ttaɛraḍen { $title } akka tura!
 userCountContainerAlt = Ikker tura akka!
 highlightPrivacy = Tabaḍnit inek
 
@@ -207,11 +211,14 @@ upgradeNoticeLink = Amek ad tleqmeḍ Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Kkes Test Pilot?
+retireMessage = Akken teɣiḍ. Tigwat-agi ad tessens akk ikayaden urmiden, ad yekkes azegrir akked isefka n umiḍan inek ɣef iqeddacen nneɣ.
+retireEmailMessage = Akken ur tremseḍ ara isallen, sit ɣef useɣwen <em>ffeɣ seg ujerred</em> deg izen i d-yuzen Test pilot.
 retireSubmitButton = Kemmel
-retireCancelButton = Sefsex
 pageTitleRetirePage = Firefox Test Pilot - Kkes Test Pilot
 retirePageProgressMessage = Asexsi...
 retirePageHeadline = Tanemmirt ɣef usrifeg!
+retirePageMessage = NEssaram d akken tesɛeddaḍ akud igarrzen deg usekyed yid-neɣ. <br> Uɣal-d melmi tebɣiḍ.
+retirePageSurveyButton = Bdu aḥedqis fessusen
 
 
 
@@ -229,12 +236,14 @@ restartIntroThree = Fren tirmitin inek
 [[ share ]]
 
 sharePrimary = Tḥemleḍ Test Pilot? Mudd-aɣ-d afus ad d-naf kra n isekyaden.
+shareSecondary = neɣ nɣel sakin senteḍ aseɣwen-agi...
 shareEmail = Imayl
 shareCopy = Nɣel
 
 # Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } add ifak di { $completedDate }
 eolNoticeLink = Issin ugar
+eolDisableMessage = Tarmit { $title } tfuk yakan. Ticki tettwakkes, ur tettizmireḍ ara ad tesbeddeḍ tikelt nniḍen si Test Pilot.
 completedDateLabel = Azemz n tagara n termit <b>{ $completedDate }</b>
 
 
@@ -243,6 +252,7 @@ completedDateLabel = Azemz n tagara n termit <b>{ $completedDate }</b>
 [[ incompatible ]]
 
 incompatibleHeader = Tarmit-agi ur temṣada ara akked izegrar i tesbedded.
+incompatibleSubheader = Ma ulac aɣilif <a>sens izegrar-agi</a> send ad tremdeḍ tarmit-agi:
 
 
 
@@ -252,6 +262,7 @@ incompatibleHeader = Tarmit-agi ur temṣada ara akked izegrar i tesbedded.
 newsletterFormEmailPlaceholder = 
   [html/placeholder] Imayl inek dagi
 newsletterFormDisclaimer = Ak-d-nazen talɣut icudden ar Test Pilot.
+newsletterFormPrivacyNotice = Qebleɣ d akken Mozilla ad iseqdec iseka yinu akken tella di <a>tsertit-agi n tbaḍnit</a>.
 newsletterFormSubmitButton = Jerred tura
 newsletterFormSubmitButtonSubmitting = Tuzna...
 
@@ -262,14 +273,16 @@ newsletterFormSubmitButtonSubmitting = Tuzna...
 
 newsletterFooterError = Teḍra-d tuccḍa di tuzna n yimayl inek. Ɛreḍ tikelt nniḍen? 
 newsletterFooterHeader = Qqim akked umaynut
+newsletterFooterBody = Wali tirmitin timaynutin udiɣ rmes-d igmaḍ n tid i tɛerḍeḍ.
 newsletterFooterSuccessHeader = Tanemmirt!
+newsletterFooterSuccessBody = Ma yella ur tsentmeḍ ara ajerred inek ar tebratt n telɣut iciudden arMozilla, yessefk hata ad teggeḍ tura. Ma ulac aɣilif, senqed amiḍan inek imayl neq wali daɣen deg ispamen sakin nadi izen-nneɣ.
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Tarmit-agi tella kan s teglizit.
+localeUnavailableWarningTitle = Tarmit-agi ur tettusefrak ara s tutlayt inek ({ $locale_code }).
 localeWarningSubtitle = Tzemreḍ ad tremdeḍ akka tura ma yella tebɣiḍ.
 
 
@@ -277,6 +290,7 @@ localeWarningSubtitle = Tzemreḍ ad tremdeḍ akka tura ma yella tebɣiḍ.
 # An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledHeader = Awal aneggaru send tanekra!
 experimentsListNoneInstalledSubheader = Twejḍeḍ i wakken ad tɛarḍeḍ armitan amaynut n Test Pilot? fren yiwen i wakken ad tremdeḍ, sqedc-it, ini-yaɣ-d d acu-tt tmuɣli-inek.
 experimentsListNoneInstalledCTA = Ur k-d-yehwi ara? <a>Eǧǧ-aq ad nzeṛ acuɣer</a>.
 

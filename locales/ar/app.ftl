@@ -104,7 +104,6 @@ emailValidationError = الرجاء استخدام عنوان بريد إلكت�
 emailOptInInput = 
   [html/placeholder] رسائل البريد الإلكتروني تذهب هنا :)
 emailOptInButton = أشركني الآن
-emailOptInSkip = تخطّ
 emailOptInConfirmationTitle = تم إرسال البريد الإلكتروني
 emailOptInSuccessMessage2 = شكرًا لك!
 emailOptInConfirmationClose = إلى التجارب...
@@ -114,8 +113,6 @@ emailOptInConfirmationClose = إلى التجارب...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = جاهز للانطلاق!
-experimentListPageSubHeader = اختر الميزات التي تريد تجربتها. <br> تحقق مرة أخرى قريباً لمزيد من التجارب.
 experimentListEnabledTab = مُفعّل
 experimentListJustLaunchedTab = تم إطلاقه للتو
 experimentListJustUpdatedTab = المحدّثة مؤخرًا
@@ -137,19 +134,8 @@ experimentCardLearnMore = اعرف المزيد
 [[ feedback ]]
 
 feedbackSubmitButton = املأ هذا الاستبيان السريع
-feedbackCancelButton = أغلق
 feedbackUninstallTitle = شكرًا لك!
 feedbackUninstallCopy = نقدر مشاركتكم في الاختبار التجريبي لفيرفكس كثيراً! يرجى تفقد تجاربنا الأخرى، وترقبوا المزيد في المستقبل!
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = ثانية واحدة فقط...
-discussNotifyMessageAccountless = <p> في روح التجريب، نحن نستخدم خدمة ملف نقاش خارجي. وسوف تحتاج إلى إنشاء حساب إذا كنت ترغب في المشاركة في ملفات المناقشة. </p> <p> إذا كنت لا تريد إنشاء حساب، يمكنك دائما ترك رأيك من خلال الاختبار التجريبي. <br> (نحن حقا نقرأ هذه الأشياء) </p>
-discussNotifySubmitButton = خذني إلى صفحة النقاش
-discussNotifyCancelButton = إلغاء
 
 
 
@@ -169,7 +155,7 @@ experimentPromoSubheader = نحن نبني ميزات الجيل القادم ل
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } مفعّل.
@@ -190,7 +176,6 @@ changelog = سجل التغييرات
 tourLink = جولة
 contribute = ساهم
 bugReports = تقارير الأخطاء
-discourse = مساحة نقاش
 tourOnboardingTitle = { $title } مفعل!
 tourDoneButton = تمّ
 userCountContainer = هناك <span>{ $installation_count }</span> أشخاص يحاولون { $title } الآن!
@@ -214,7 +199,6 @@ retireDialogTitle = إلغاء تثبيت الاختبار التجريبي؟
 retireMessage = كما تشاء. هذا سيعطل أي اختبارات نشطة، إلغاء تثبيت الإضافة وإزالة معلومات الحساب الخاصة بك من أجهزة الخادم الخاصة بنا.
 retireEmailMessage = للخروج عن تحديثات البريد الإلكتروني، ببساطة انقر فوق رابط <em>إلغاء الاشتراك</em> في أي رابط للبريد الإلكتروني للاختبار التجريبي.
 retireSubmitButton = تابع
-retireCancelButton = إلغاء
 pageTitleRetirePage = الاختبار التجريبي لفيرفكس - إلغاء تثبيت الاختبار التجريبي
 retirePageProgressMessage = جار إيقاف التشغيل...
 retirePageHeadline = شكراً على التجربة!
@@ -280,10 +264,9 @@ newsletterFooterSuccessBody = إذا لم تكن قد أكدت في وقت سا�
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = هذه التجربة لا تتوفر إلا باللغة الإنجليزية.
 localeWarningSubtitle = ما زال بإمكانك تفعيله إذا أردت.
 
 

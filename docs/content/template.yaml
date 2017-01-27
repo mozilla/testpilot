@@ -46,7 +46,7 @@ contributors:
     title: 'Taco Engineer'
     avatar: /static/images/experiments/experiment-name/burrito.png
 contributors_extra: >
-    This experiment was also made possible by a generous grant from 
+    This experiment was also made possible by a generous grant from
     the Institute for RoboCop Studies.
 contributors_extra_url: https://robocop.org
 tour_steps:
@@ -55,15 +55,15 @@ tour_steps:
     copy: >
       <p>Lorem ipsum dolor sit amet.</p>
 
-measurements: >
-  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot
-    experiments, here are the key things you should know about what is happening
-    when you use Experiment Name:</p>
-  <ul>
-    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
-      suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
-      cupiditate vitae praesentium eveniet unde totam, architecto molestiae?</li>
-  </ul>
+measurements:
+  - >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
+    suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
+    cupiditate vitae praesentium eveniet unde totam, architecto molestiae?
+  - >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
+    suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
+    cupiditate vitae praesentium eveniet unde totam, architecto molestiae?
 
 pre_feedback_image: /static/images/experiments/experiment-name/pre-feedback.jpg
 pre_feedback_copy: >
@@ -78,7 +78,7 @@ graduation_report: >
       suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
       cupiditate vitae praesentium eveniet unde totam, architecto molestiae?</li>
   </ul>
-    
+
 notifications:
   -
     id: 1
@@ -90,7 +90,7 @@ eol_warning: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
 min_release: 99
 incompatible:
   '@fake-incompatible': 'Fake Incompatible Add-on Name'
-  
+
 locales:
   - 'en'
 locale_blocklist:

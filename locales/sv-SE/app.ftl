@@ -55,6 +55,14 @@ landingInstalledButton = Välj dina funktioner
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Installera Test Pilot &amp;
+oneClickInstallMajorCta = Aktivera { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -104,7 +112,6 @@ emailValidationError = Var vänlig ange en giltig e-postadress!
 emailOptInInput = 
   [html/placeholder] ange din e-postadress :)
 emailOptInButton = Registrera mig
-emailOptInSkip = Hoppa över
 emailOptInConfirmationTitle = E-post har skickats
 emailOptInSuccessMessage2 = Tack!
 emailOptInConfirmationClose = Vidare till experimenten...
@@ -114,13 +121,12 @@ emailOptInConfirmationClose = Vidare till experimenten...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Redo för start!
-experimentListPageSubHeader = Välj de funktioner du vill prova. <br> Kom tillbaka snart för fler experiment.
-experimentListEnabledTab = Aktivera
+experimentListEnabledTab = Aktiverad
 experimentListJustLaunchedTab = Nyligen startad
 experimentListJustUpdatedTab = Nyligen uppdaterad
 experimentListEndingTomorrow = Slutar imorgon
 experimentListEndingSoon = Slutar snart
+experimentsListCondensedHeader = Välj dina experiment!
 
 
 
@@ -137,29 +143,11 @@ experimentCardLearnMore = Läs mer
 [[ feedback ]]
 
 feedbackSubmitButton = Gör en snabb undersökning
-feedbackCancelButton = Stäng
 feedbackUninstallTitle = Tack!
 feedbackUninstallCopy = 
   | Ditt deltagande i Firefox Test Pilot innebär
   | mycket! Kolla in våra andra experiment,
   | och håll ögonen öppna för mer framöver!
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Bara en sekund...
-discussNotifyMessageAccountless = 
-  | <p>I andan av experiment använder vi en extern forumtjänst.
-  | Du måste skapa ett konto om du
-  | önskar delta på forumet.</p>
-  | <p>Om du inte vill skapa ett konto, kan du
-  | alltid lämna återkoppling genom Test Pilot.
-  | <br>
-  | (Vi läser verkligen detta)</p>
-discussNotifySubmitButton = Ta mig till forumet
-discussNotifyCancelButton = Avbryt
 
 
 
@@ -179,7 +167,7 @@ experimentPromoSubheader = Vi bygger nästa generations funktioner för Firefox.
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } är aktiverad.
@@ -192,6 +180,7 @@ disableExperiment = Inaktivera { $title }
 disableExperimentTransition = Inaktiverar...
 enableExperiment = Aktivera { $title }
 enableExperimentTransition = Aktiverar...
+experimentMeasurementIntro = Utöver de <a>uppgifter</a> som samlats in av alla Test Pilot experiment, här är de viktigaste sakerna du bör veta om vad som händer när du använder { $experimentTitle }:
 measurements = Din sekretesspolicy
 experimentPrivacyNotice = Du kan läsa mer om datainsamlingen för { $title } här.
 contributorsHeading = Presenteras av
@@ -201,7 +190,7 @@ tour = Guidad visning
 tourLink = Starta guidad visning
 contribute = Bidra
 bugReports = Felrapporter
-discourse = Diskutera
+discussExperiment = Diskutera { $title }
 tourOnboardingTitle = { $title } är aktiverad!
 tourDoneButton = Klar
 userCountContainer = Det finns <span>{ $installation_count }</span> personer som provar { $title } just nu!
@@ -225,7 +214,6 @@ retireDialogTitle = Avinstallera Test Pilot?
 retireMessage = Som du önskar. Detta kommer att inaktivera alla aktiva tester, avinstallera tillägget och ta bort din kontoinformation från våra servrar.
 retireEmailMessage = För att välja bort e-postuppdateringar, klicka på länken <em>avbryt prenumeration</em> på någon Test Pilot e-post.
 retireSubmitButton = Fortsätt
-retireCancelButton = Avbryt
 pageTitleRetirePage = Firefox Test Pilot - Avinstallera Test Pilot
 retirePageProgressMessage = Avslutar...
 retirePageHeadline = Tack för att du testar!
@@ -291,10 +279,10 @@ newsletterFooterSuccessBody = Om du tidigare inte har bekräftat en prenumeratio
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Detta experiment är endast tillgängligt på engelska.
+localeUnavailableWarningTitle = Detta experiment stöds inte på ditt språk ({ $locale_code }).
 localeWarningSubtitle = Du kan fortfarande aktivera det om du vill.
 
 

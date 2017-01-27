@@ -25,7 +25,7 @@ describe('app/components/ExperimentEolDialog', () => {
   });
 
   it('calls onCancel when the cancel button is clicked', () => {
-    subject.find('.modal-actions a.cancel').simulate('click', mockClickEvent);
+    subject.find('.modal-cancel').simulate('click', mockClickEvent);
     expect(props.onCancel.called).to.be.true;
   });
 

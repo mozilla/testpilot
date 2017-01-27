@@ -1,0 +1,7 @@
+[ignore]
+<PROJECT_ROOT>/node_modules/jetpack-validation/.*
+<PROJECT_ROOT>/node_modules/flow-coverage-report/.*
+<PROJECT_ROOT>/node_modules/fbjs/.*
+
+[libs]
+flow-typed

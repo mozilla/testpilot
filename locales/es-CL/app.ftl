@@ -104,7 +104,6 @@ emailValidationError = Por favor, ¡usa un correo válido!
 emailOptInInput = 
   [html/placeholder] el correo va aquí :)
 emailOptInButton = Suscribirme
-emailOptInSkip = Saltar
 emailOptInConfirmationTitle = Correo enviado
 emailOptInSuccessMessage2 = ¡Gracias!
 emailOptInConfirmationClose = A los experimentos...
@@ -114,8 +113,6 @@ emailOptInConfirmationClose = A los experimentos...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = ¡Listos para despegar!
-experimentListPageSubHeader = Toma las funciones que quieres probar. <br> Regresa pronto para ver nuevos experimentos.
 experimentListEnabledTab = Activado
 experimentListJustLaunchedTab = Recién lanzado
 experimentListJustUpdatedTab = Recién actualizado
@@ -137,21 +134,11 @@ experimentCardLearnMore = Aprender más
 [[ feedback ]]
 
 feedbackSubmitButton = Responder una encuesta
-feedbackCancelButton = Cerrar
 feedbackUninstallTitle = ¡Gracias!
 feedbackUninstallCopy = 
   | ¡Tu participación en Firefox Test Pilot significa
   | mucho! Por favor, revisa estos otros experimentos,
   | y mantente pendiente de los que vendrán!
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Solo un segundo...
-discussNotifySubmitButton = Ir al foro
-discussNotifyCancelButton = Cancelar
 
 
 
@@ -171,7 +158,7 @@ experimentPromoSubheader = Estamos preparando la siguiente generación de funcio
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } está activado.
@@ -193,7 +180,6 @@ tour = Tur
 tourLink = Tur de lanzamiento
 contribute = Contribuir
 bugReports = Reportes de errores
-discourse = Discourse
 tourOnboardingTitle = ¡{ $title } activado!
 tourDoneButton = Hecho
 userCountContainer = ¡Hay <span>{ $installation_count }</span> personas probando { $title } en este momento!
@@ -217,7 +203,6 @@ retireDialogTitle = ¿Desinstalar Test Pilot?
 retireMessage = Tal como lo deseas. Esto desactivara toda prueba activa, desinstalará el complemento y eliminará la información de tu cuenta de nuestros servidores.
 retireEmailMessage = Para salir del boletín por correo, simplemente aprieta el enlace <em>desuscribir</em> en cualquier correo de Test Pilot.
 retireSubmitButton = Proceder
-retireCancelButton = Cancelar
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar Test Pilot
 retirePageProgressMessage = Apagando...
 retirePageHeadline = ¡Gracias por volar!
@@ -282,10 +267,9 @@ newsletterFooterSuccessHeader = ¡Gracias!
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Este experimento está disponible solamente en inglés.
 localeWarningSubtitle = Todavía lo puedes activar si lo deseas.
 
 

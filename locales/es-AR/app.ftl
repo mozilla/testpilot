@@ -55,6 +55,14 @@ landingInstalledButton = Elegí tus funciones
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Instalá Test Pilot &amp;
+oneClickInstallMajorCta = Habilitar { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -104,7 +112,6 @@ emailValidationError = ¡Usá una dirección de correo electrónico válida!
 emailOptInInput = 
   [html/placeholder] el correo electrónico va acá :)
 emailOptInButton = Inscribime
-emailOptInSkip = Saltear
 emailOptInConfirmationTitle = Correo enviado
 emailOptInSuccessMessage2 = ¡Gracias!
 emailOptInConfirmationClose = Hacia los experimentos...
@@ -114,13 +121,12 @@ emailOptInConfirmationClose = Hacia los experimentos...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = ¡Preparado para despegar!
-experimentListPageSubHeader = Elegí las funciones que querés probar. <br> Volvé pronto para ver si hay más experimentos.
 experimentListEnabledTab = Habilitado
 experimentListJustLaunchedTab = Recién lanzado
 experimentListJustUpdatedTab = Recién actualizado
 experimentListEndingTomorrow = Termina mañana
 experimentListEndingSoon = Termina pronto
+experimentsListCondensedHeader = ¡Elegí tus experimentos!
 
 
 
@@ -137,17 +143,19 @@ experimentCardLearnMore = Concer más
 [[ feedback ]]
 
 feedbackSubmitButton = Respondé una encuesta corta
-feedbackCancelButton = Cerrar
 feedbackUninstallTitle = ¡Gracias!
+feedbackUninstallCopy = 
+  | ¡Tu participación en Firefox Test Pilot significa  
+  | mucho! ¡Mirá nuestros otros experimentos,
+  | y mantenete al tanto que habrá más!
 
 
 
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
+# A modal prompt shown before the feedback survey for some experiments.
+[[ experimentPreFeedback ]]
 
-discussNotifyTitle = Esperá un segundo...
-discussNotifySubmitButton = Llévenme al foro
-discussNotifyCancelButton = Cancelar
+experimentPreFeedbackTitle = { $title }opinión
+experimentPreFeedbackLinkCopy = Opine acerca del experimento { $title }
 
 
 
@@ -155,26 +163,35 @@ discussNotifyCancelButton = Cancelar
 [[ experimentPromo ]]
 
 experimentPromoHeader = ¿Listo para el despegue?
+experimentPromoSubheader = Estamos creando funciones de última generación para Firefox. ¡Instale Test Pilot para probarlas!
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } está habilitado.
 installErrorMessage = Oh oh. { $title } no se pudo habilitar. Probá de nuevo más tarde.
 participantCount = <span>{ $installation_count }</span> participantes
 otherExperiments = Probá también estos experimentos
+giveFeedback = Opine
 disableHeader = ¿Deshabilitar experimentos?
 disableExperiment = Deshabilitar { $title }
 disableExperimentTransition = Deshabilitando...
 enableExperiment = Habilitar { $title }
 enableExperimentTransition = Habilitando...
 measurements = Tu privacidad
+experimentPrivacyNotice = Aquí { $title } puede aprender más acerca de la recolección de datos.
+contributorsHeading = Ofrecido por
 contributorsExtraLearnMore = Concer más
+changelog = Lista de cambios
+tour = Visita
+tourLink = Comenzar la visita
 contribute = Contribuir
-discourse = Discourse
+bugReports = Informes de fallos
+discussExperiment = Conversá { $title }
 tourOnboardingTitle = ¡{ $title } habilitado!
+tourDoneButton = Hecho
 userCountContainer = ¡Hay <span>{ $installation_count }</span> personas probando { $title } ahora mismo!
 userCountContainerAlt = ¡Recién lanzado!
 highlightPrivacy = Tu privacidad
@@ -194,17 +211,22 @@ upgradeNoticeLink = Cómo actualizar Firefox.
 
 retireDialogTitle = ¿Desinstalar Test Pilot?
 retireMessage = Como quieras. Se deshabilitarán los tests activos, se desinstalará el complemento y se eliminará la información de tu cuenta de nuestros servidores.
-retireCancelButton = Cancelar
+retireEmailMessage = Para dejar de recibir actualizaciones por correo electrónico, solo haga clic en el enlace <em> darme de baja </em> en cualquier correo electrónico de Test Pilot.
+retireSubmitButton = Continuar
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar Test Pilot
 retirePageProgressMessage = Apagando...
 retirePageHeadline = ¡Gracias por volar!
+retirePageMessage = Esperamos que se haya divertido experimentando con nosotros. <br> Puede volver en cualquier momento.
+retirePageSurveyButton = Complete una encuesta rápida
 
 
 
 # Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = Lista de control previa al vuelo
 restartIntroOne = Reiniciar el navegador
+restartIntroTwo = Ubique el complemento Test Pilot
 restartIntroThree = Elegí tus experimentos
 
 
@@ -252,20 +274,22 @@ newsletterFooterError = Hubo un erro enviando tu dirección de correo electróni
 newsletterFooterHeader = Mantenete informado
 newsletterFooterBody = Descubrí nuevos experimentos y mirá los resultados para los experimentos que ya probaste.
 newsletterFooterSuccessHeader = ¡Gracias!
+newsletterFooterSuccessBody = Si no confirmó previamente una suscripción a algún boletín informativo relacionado con Mozilla, es posible que deba hacerlo. Por favor revise su bandeja de entrada o su filtro de spam por si hay un correo electrónico nuestro.
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Este experimento solamente está disponible en inglés.
-localeWarningSubtitle = Igual podés habilitarlo si querés.
+localeWarningSubtitle = Igual puede habilitarlo si quiere.
 
 
 
 # An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledHeader = ¡Hagámoslo volar!
+experimentsListNoneInstalledSubheader = ¿Está listo para probar un experimento nuevo de Test Pilot? Habilite uno, pruébelo y coméntenos su opinión.
 experimentsListNoneInstalledCTA = ¿No estás interesado? <a>Decinos por qué</a>.
 
 
@@ -275,6 +299,7 @@ experimentsListNoneInstalledCTA = ¿No estás interesado? <a>Decinos por qué</a
 
 noScriptHeading = Oh oh...
 noScriptMessage = Test Pilot requiere JavaScript.<br>Perdón por eso.
+noScriptLink = Encuentre el motivo
 
 
 

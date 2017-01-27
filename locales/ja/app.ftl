@@ -55,6 +55,14 @@ landingInstalledButton = 機能を選ぶ
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Test Pilot をインストール &amp;
+oneClickInstallMajorCta = { $title } を有効化
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -104,7 +112,6 @@ emailValidationError = 有効なメールアドレスを入力してください
 emailOptInInput = 
   [html/placeholder] メールアドレスがここに入ります :)
 emailOptInButton = ログイン
-emailOptInSkip = スキップ
 emailOptInConfirmationTitle = メールをお送りしました
 emailOptInSuccessMessage2 = ありがとうございます！
 emailOptInConfirmationClose = 実験に進む...
@@ -114,13 +121,12 @@ emailOptInConfirmationClose = 実験に進む...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = 離陸準備完了！
-experimentListPageSubHeader = 試してみたい機能を選んでください。<br>後日戻って新しい実験をチェックすることもお忘れなく。
 experimentListEnabledTab = 有効
 experimentListJustLaunchedTab = 最近公開
 experimentListJustUpdatedTab = 最近更新
 experimentListEndingTomorrow = 明日終了
 experimentListEndingSoon = まもなく終了
+experimentsListCondensedHeader = 興味のある実験を選びましょう！
 
 
 
@@ -137,29 +143,11 @@ experimentCardLearnMore = 詳細
 [[ feedback ]]
 
 feedbackSubmitButton = 簡単なアンケートに答える
-feedbackCancelButton = 閉じる
 feedbackUninstallTitle = ありがとうございます！
 feedbackUninstallCopy = 
   | あなたの Firefox Test Pilot への参加は多くの
   | 意味を持ちます！ 他の実験についてもチェックし、
   | 今後追加される実験を楽しみにしてください！
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = 少々お待ちください...
-discussNotifyMessageAccountless = 
-  | <p>実験精神の一環として、私たちは外部のフォーラムサービスを使用しています。
-  | フォーラムでの議論に参加したい場合は
-  | アカウントを作成する必要があります。</p>
-  | <p>アカウントを作成したくない場合は、いつでも
-  | Test Pilot を通じてフィードバックを提供できます。
-  | <br>
-  | (送られた内容にはしっかり目を通しています)</p>
-discussNotifySubmitButton = フォーラムへ移動
-discussNotifyCancelButton = キャンセル
 
 
 
@@ -179,7 +167,7 @@ experimentPromoSubheader = 私たちは Firefox の次世代機能を作って�
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } が有効化されました。
@@ -192,6 +180,7 @@ disableExperiment = { $title } を無効化
 disableExperimentTransition = 無効化しています...
 enableExperiment = { $title } を有効化
 enableExperimentTransition = 有効化しています...
+experimentMeasurementIntro = すべての Test Pilot 実験によって収集される <a>データ</a> に加えて、{ $experimentTitle } 使用時に何が起きているかについてあなたが知っておくべき主な事柄を以下にまとめました。
 measurements = プライバシー
 experimentPrivacyNotice = { $title } のデータ収集に関する詳細はこちらをご覧ください。
 contributorsHeading = 提供:
@@ -201,7 +190,7 @@ tour = ツアー
 tourLink = ツアー
 contribute = 協力
 bugReports = バグ報告
-discourse = Discourse
+discussExperiment = { $title } について議論する
 tourOnboardingTitle = { $title } が有効化されました！
 tourDoneButton = 完了
 userCountContainer = 今現在 <span>{ $installation_count }</span> 人のユーザーが { $title } を試しています！
@@ -225,7 +214,6 @@ retireDialogTitle = Test Pilot を削除しますか？
 retireMessage = 了解しました。これにより、アクティブなテストはすべて無効化され、アドオンは削除され、サーバーからあなたのアカウント情報は削除されます。
 retireEmailMessage = メールによる最新情報の配信を停止するには、Test Pilot に関するメール内の <em>購読中止</em> リンクをクリックしてください。
 retireSubmitButton = 続ける
-retireCancelButton = キャンセル
 pageTitleRetirePage = Firefox Test Pilot - Test Pilot を削除
 retirePageProgressMessage = 終了中...
 retirePageHeadline = あなたのテスト飛行に感謝！
@@ -291,10 +279,10 @@ newsletterFooterSuccessBody = これまでに Mozilla 関連のニュースレ�
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = この実験は英語のみで利用可能です。
+localeUnavailableWarningTitle = この実験はあなたの言語 ({ $locale_code }) には対応していません。
 localeWarningSubtitle = お望みなら引き続き有効にしておくこともできます。
 
 

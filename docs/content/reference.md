@@ -23,7 +23,7 @@ For new experiments, you must copy the build version from `frontend/build/static
 
 If the content of a string changes sufficiently that translations of it should be invalidated:
 
-1. Make sure that this change needs to be done. We rely on volunteer localizers, 
+1. Make sure that this change needs to be done. We rely on volunteer localizers,
 2. If at all possible, wait to make the change until the beginning of a sprint to give localizers time to translate the new string before the next deployment.
 3. Add a new field to the YAML titled `<fieldname>_l10nsuffix`, set to a short string contextualizing the change.
 
@@ -50,7 +50,7 @@ contributors:
       display_name: 'Jared Hirsch'
       title: 'Staff Engineer'
       title_l10nsuffix: 'staff'
-      
+
 ```
 
 
@@ -365,18 +365,18 @@ tour_steps:
 
 ## `measurements`
 
-A description of the measurements collected by the experiment. Displayed in the sidebar. Localized, required, HTML allowed.
+A description of the measurements collected by the experiment. Displayed in the sidebar in an unordered list. Localized, required, HTML allowed.
 
 ```yaml
-measurements: >
-  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot
-    experiments, here are the key things you should know about what is happening
-    when you use Experiment Name:</p>
-  <ul>
-    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
-      suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
-      cupiditate vitae praesentium eveniet unde totam, architecto molestiae?</li>
-  </ul>
+measurements:
+  - >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
+    suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
+    cupiditate vitae praesentium eveniet unde totam, architecto molestiae?
+  - >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
+    suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
+    cupiditate vitae praesentium eveniet unde totam, architecto molestiae?
 ```
 
 ![Example measurements section](img/measurements.png)
@@ -450,7 +450,7 @@ notifications:
 
 ## `eol_warning`
 
-When your experiement is ending, add this field to idicate to users what will happen next. 
+When your experiement is ending, add this field to idicate to users what will happen next.
 
 Localized, required when you add a `completed` field.
 
@@ -462,7 +462,7 @@ eol_warning: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
 
 ## `min_release`
 
-The minimum version of Firefox with which this experiment is compatible. If the user is browsing with a version lower than this number, an incompatibility notice is displayed. Optional. 
+The minimum version of Firefox with which this experiment is compatible. If the user is browsing with a version lower than this number, an incompatibility notice is displayed. Optional.
 
 ```yaml
 min_release: 99

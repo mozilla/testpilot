@@ -26,6 +26,7 @@ Note: we auto deploy the master branch to our *development environment*: [http:/
 
 This will happen on Thursday at the end of sprint.
 
+0. Did the add-on code change?  Double check that the version got bumped.  [example](https://github.com/mozilla/testpilot/commit/21564e46f244998bb5bf3f70b05734b7f1605592)
 1. https://github.com/mozilla/testpilot/releases/new
 2. Tag Version: YYYY-MM-DD (append -N if more than one release is tagged on a given day: 2016-04-08-1)
 3. Release Title: YYYY-MM-DD

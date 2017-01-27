@@ -1,11 +1,13 @@
 activitystreamDescription = En grafisk översikt över din historik och en ny hemsida som gör det möjligt att hitta önskat innehåll i Firefox ännu bättre.
 activitystreamIntroduction = <p>Nu kan du surfa utan att förlora din ström av tankar. Activity Stream håller dina toppsidor, bokmärken och senaste historik nära till hands i varje ny flik. Den nya tidslinjevyn ger dig ett fågelperspektiv på din surfning.</p>
-activitystreamMeasurements = <p>Förutom de <a href="/privacy">uppgifter</a> som samlats in av alla Test Pilot experiment, här är de viktigaste sakerna du bör veta om vad som händer när du använder Activity Stream:</p><ul> <li>Vi samlar grundläggande användningsdata om hur du interagerar med den nya experimentella fliken och tidslinjesidor, såsom typer av element som du klickar på och deras position på sidan. </li> <li>Vi samlar också in grundläggande information om webbläsarens profil som påverkar Activity Stream, såsom antalet bokmärken och historikposter.</li> <li>För att förse Activity Stream, hämtar vi metadata om webbplatser du har besökt, såsom bilder och ikoner, med hjälp av en tjänst som kallas <a href="http://embed.ly/" target="_blank">Embedly</a>. Vi skickar dessa begäranden till Embedly genom Mozillas servrar, så att de inte kommer att förknippas med dig.</li></ul>
+activitystreamMeasurements0 = Vi samlar grundläggande användningsdata om hur du interagerar med den nya experimentella fliken och tidslinjesidor, såsom typer av element som du klickar på och deras position på sidan.
+activitystreamMeasurements1 = Vi samlar också in grundläggande information om webbläsarens profil som påverkar Activity Stream, såsom antalet bokmärken och historikposter.
+activitystreamMeasurements2 = För att förse Activity Stream, hämtar vi metadata om webbplatser du har besökt, såsom bilder och ikoner, med hjälp av en tjänst som kallas <a href="http://embed.ly/" target="_blank">Embedly</a>. Vi skickar dessa begäranden till Embedly genom Mozillas servrar, så att de inte kommer att förknippas med dig.
 activitystreamDetails0Copy = Klicka på en ny flik och dina favoritwebbplatser är bara ett klick borta.
 activitystreamDetails1Copy = Se var du har varit, så att du kan gå vidare till vart du ska.
-activitystreamToursteps0Copy = <p>Hitta dina favoritwebbplatser, senaste historik och bokmärken när du öppnar en ny flik.</p>
-activitystreamToursteps1Copy = <p>Besök den nya tidslinjen för att visuellt bläddra bland historik och bokmärken.</p>
-activitystreamToursteps2Copy = <p>Du kan alltid ge oss återkoppling eller inaktivera Activity Stream från Test Pilot.</p>
+activitystreamToursteps0Copy = Hitta dina favoritwebbplatser, senaste historik och bokmärken när du öppnar en ny flik.
+activitystreamToursteps1Copy = Besök den nya tidslinjen för att visuellt bläddra bland historik och bokmärken.
+activitystreamToursteps2Copy = Du kan alltid ge oss återkoppling eller inaktivera Activity Stream från Test Pilot.
 activitystreamContributors0Title = Software Engineer
 activitystreamContributors1Title = Web Engineer
 activitystreamContributors2Title = Software Developer
@@ -21,23 +23,28 @@ activitystreamContributors11Title = Software Engineer
 activitystreamContributors12Title = Senior UX Designer
 cliqzDescription = Få sökresultat snabbare. Cliqz visar förslag precis nedanför adressfältet medan du skriver. Samtidigt behålls din integritet.
 cliqzIntroduction = Få sökresultat snabbare, direkt i webbläsaren. Börja skriva så visas förslag från webben i realtid, precis nedanför adressfältet. Och eftersom Cliqz undviker att samla in personlig identifierbar information eller bygga användarprofiler, är dina resultat mer privata.
-cliqzMeasurements = <p> Cliqz Test Pilot experimentet utvecklar genom samarbete mellan Cliqz GmbH och Mozilla. Cliqz är utformad för att skydda din integritet och undvika att samla in känslig information som kan användas för att skapa användarprofiler. Anonymisering av data som detta är svårt och det kan fortfarande vara möjligt att identifiera enskilda individer.</p> <p> Förutom de <a href="/privacy">data</a> som samlas in av alla Test Pilot experiment, är här de viktigaste sakerna du bör veta om att installera Cliqz:</p> <p>Cliqz GmbH samlar in data om din sök- och webbhistorik, inklusive: <ul> <li>Text som du skriver i adressfältet</li> <li>Frågor som du skickar till vissa sökmotorer</li> <li>Data om din interaktioner med webbsidor, såsom musrörelser, bläddring och tid</li> </ul></p> <p>Cliqz GmbH samlar in telemetridata, inklusive: <ul> <li>Din interaktion med specifika fält och knappar i Cliqz. Informationen är knuten till en unik identifierare så att Cliqz GmbH förstår prestanda över tiden</li> </ul></p> <p>Mozilla samlar in telemetridata, inklusive: <ul> <li>Antalet besök till sökmotor sidor och vilka sökmotorer du använder</li> <li>Cliqz unika identifierare, som gör att Mozilla kan leta efter korrelationer mellan Firefox och Cliqz telemetrisystem</li> </ul></p>
+cliqzPrivacypreamble = Cliqz Test Pilot experiment presenteras för dig genom samarbete mellan Cliqz GmbH och Mozilla. Cliqz är utformad för att skydda din integritet och undvika att samla in känslig information som kan användas för att skapa användarprofiler. Men anonymiserade uppgifter som detta är svårt och det kan fortfarande vara möjligt att identifiera enskilda individer.
+cliqzMeasurements0 = Cliqz GmbH samlar in data om sökningar och webbaktivitet, inklusive text som du skriver i adressfältet, frågar du skickar till vissa sökmotorer och data om dina interaktioner på webbsidor, såsom musrörelser, rullningar och tid.
+cliqzMeasurements1 = Cliqz GmbH samlar in telemetridata, inklusive dina interaktioner med särskilda områden och knappar i Cliqz. Dessa data är knuten till en unik identifierare som tillåter Cliqz GmbH att förstå prestanda över tiden.
+cliqzMeasurements2 = Mozilla samlar in telemetridata, inklusive fall av besök på sökmotorsidor och vilken sökmotorer som du använder och Cliqz unika identifierare som gör att Mozilla kan leta efter korrelationer över Firefox och Cliqz telemetrisystem.
 cliqzDetails0Copy = Se hur resultaten (som genom ett trollslag!) visas när du anger sökord i adressfältet.
 cliqzDetails1Copy = Se sammanfattande information - till exempel väder och flygtider - i realtid direkt under adressfältet.
 cliqzDetails2Copy = Återgå till dina favoritwebbplatser med ett enda klick när du öppnar en ny flik. Du kan även anpassa dina favoriter.
-cliqzToursteps0Copy = <p>Börja skriva i adressfältet för att se realtidsresultat.</p>
-cliqzToursteps1Copy = <p>Öppna en ny flik och lägg till dina favoritwebbplatser för snabb åtkomst med ett musklick.</p>
-cliqzToursteps2Copy = <p>Du kan alltid ge oss återkoppling eller inaktivera Cliqz från Test Pilot.</p>
+cliqzToursteps0Copy = Börja skriva i adressfältet för att se realtidsresultat.
+cliqzToursteps1Copy = Öppna en ny flik och lägg till dina favoritwebbplatser för snabb åtkomst med ett musklick.
+cliqzToursteps2Copy = Du kan alltid ge oss återkoppling eller inaktivera Cliqz från Test Pilot.
 minvidDescription = Fokus på videoklipp. Min Vid visar filmer från YouTube och Vimeo i en liten ram som stannar i förgrunden medan du surfar.
 minvidIntroduction = <p>Gillar du att titta på video? Gillar du att få saker gjorda medan du tittar på video? Prova Min Vid. Det är som bild-i-bild där en bild är en video och den andra är hela webben.</p><ul> <li><strong>Klicka och börja:</strong> Öppna ramen för Min Vid för att spela videon i förgrunden medan du surfar.</li> <li><strong>Placera den där du vill:</strong> Min Vid låter dig dra videorutan var som helst på skrivbordet.</li> <li><strong>Kontroller där du behöver dem:</strong> Min Vid innehåller kontroller för att låta dig pausa/spela, skippa, dra, minimera och justera volymen direkt i ramen.</li></ul>
-minvidMeasurements = <p>Förutom de <a href="/privacy">uppgifter</a> som samlats in av alla Test Pilot experiment, här är de viktigaste sakerna du bör veta om vad som händer när du använder Min Vid:</p><ul> <li>Vi samlar användningsdata när du deltar med snabbmenyn, experimentikonen och spelarkontrollerna.</li> <li>Vi samlar också uppgifter om hur många gånger du stöter på en spelbar video, hur många gånger du spelat videon och videotjänsten som tillhandahåller videon. Detta hjälper oss att förstå hur användbar våra användare tycker att experimentet är.</li> <li>Vi samlar inte in information om de specifika videoklipp som du stöter på.</li></ul>
+minvidMeasurements0 = Vi samlar användningsdata när du deltar med snabbmenyn, experimentikonen och spelarkontrollerna.
+minvidMeasurements1 = Vi samlar också uppgifter om hur många gånger du stöter på en spelbar video, hur många gånger du spelat videon och videotjänsten som tillhandahåller videon. Detta hjälper oss att förstå hur användbar våra användare tycker att experimentet är.
+minvidMeasurements2 = Vi samlar inte in information om de specifika videoklipp som du stöter på.
 minvidDetails0Copy = Få tillgång till Min Vid från YouTube och Vimeo videospelare.
 minvidDetails1Copy = Titta på video i förgrunden medan du gör andra saker på webben.
 minvidDetails2Copy = Högerklicka på länkar till video för att hitta Min Vid i snabbmenyn.
-minvidToursteps0Copy = <p>Klicka på ikonen för att börja använda Min Vid.</p>
-minvidToursteps1Copy = <p>Spela upp video i förgrunden medan du fortsätter att surfa.</p>
-minvidToursteps2Copy = <p>Åtkomstkontroller i ramen för att justera volym, spela upp, pausa och flytta video.</p>
-minvidToursteps3Copy = <p>Du kan alltid ge oss återkoppling eller inaktivera Min Vid från Test Pilot.</p>
+minvidToursteps0Copy = Klicka på ikonen för att börja använda Min Vid.
+minvidToursteps1Copy = Spela upp video i förgrunden medan du fortsätter att surfa.
+minvidToursteps2Copy = Åtkomstkontroller i ramen för att justera volym, spela upp, pausa och flytta video.
+minvidToursteps3Copy = Du kan alltid ge oss återkoppling eller inaktivera Min Vid från Test Pilot.
 minvidContributors0Title = Engineer
 minvidContributors1Title = Staff Engineer
 minvidContributors2Title = Engineering Intern
@@ -45,63 +52,77 @@ minvidContributors3Title = Engineering Contributor
 nomore404sSubtitle = Drivs av Wayback Machine
 nomore404sDescription = Trött på återvändsgränder på webben? Vi informerar dig om det finns innehåll som lagrats på Wayback Machine internetarkiv.
 nomore404sIntroduction = <p>Den här är enkel. Om du träffar på en 404-sida medan du surfar på nätet, kommer vi att låta dig veta om det innehåll du letar efter är arkiverat i internetarkivet Wayback Machine.</p>
-nomore404sMeasurements = <p>Förutom de <a href="/privacy" target="_blank">uppgifter</a> som samlats in av alla Test Pilot experiment, här är de viktigaste sakerna du bör veta om vad som händer när du använder No More 404s:</p><ul> <li>Vi samlar grundläggande användning i hur många gånger du stöter på en sida med felkoden 404, hur många gånger en cachad version av den sidan finns på Archive.org och hur många gånger du väljer att visa den cachade versionen.</li> <li> För att förse cachade versioner av sidor, skickar vi webbadressen för en 404-felsida till Archive.org. <a href="https://archive.org/" target="_blank">Archive.org</a> avslöjar sin sekretesspolicy <a href="https://archive.org/about/terms.php" target="_blank">här</a>.</li> <li>Vi samlar inte in webbadresser till sidor som du begär eller webbadresser som vi skickar till Archive.org.</li> <li>Vi kan dela enkätresultat som du skickar till oss och aggregerade telemetriuppgifter om detta experiment med Internet Archive.</li></ul>
+nomore404sMeasurements0 = Vi samlar grundläggande användning i hur många gånger du stöter på en sida med felkoden 404, hur många gånger en cachad version av den sidan finns på Archive.org och hur många gånger du väljer att visa den cachade versionen.
+nomore404sMeasurements1 = För att förse cachade versioner av sidor, skickar vi webbadressen för en 404-felsida till Archive.org. <a href="https://archive.org/" target="_blank">Archive.org</a> avslöjar sin sekretesspolicy <a href="https://archive.org/about/terms.php" target="_blank">här</a>.
+nomore404sMeasurements2 = Vi samlar inte in webbadresser till sidor som du begär eller webbadresser som vi skickar till Archive.org.
+nomore404sMeasurements3 = Vi kan dela enkätresultat som du skickar till oss och aggregerade telemetriuppgifter om detta experiment med Internet Archive.
 nomore404sDetails0Copy = Minska 404 återvändsgränder med Wayback Machine.
 nomore404sDetails1Copy = Presenteras av våra vänner på Internet Archive.
-nomore404sToursteps0Copy = <p>Surfa normalt på webben. Om du stöter på en 404-sida, kommer vi att låta dig veta om en arkiverad version är tillgänglig på Wayback Machine.</p>
-nomore404sToursteps1Copy = <p>Du kan alltid ge oss återkoppling eller inaktivera No More 404s från Test Pilot.</p>
+nomore404sToursteps0Copy = Surfa normalt på webben. Om du stöter på en 404-sida, kommer vi att låta dig veta om en arkiverad version är tillgänglig på Wayback Machine.
+nomore404sToursteps1Copy = Du kan alltid ge oss återkoppling eller inaktivera No More 404s från Test Pilot.
 nomore404sContributors1Title = Developer, Wayback Machine, The Internet Archive
 nomore404sContributors2Title = Director, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Senior Crawl Engineer, The Internet Archive
 pageshotDescription = Intuitiva skärmbilder direkt från webbläsaren. Fånga, spara och dela skärmbilder när du surfar på webben med hjälp av Firefox.
 pageshotIntroduction = <p>Page Shot låter dig ta, dela och hämta skärmdumpar - utan att lämna Firefox.</p><ul> <li><strong>Rutnätsvy:</strong> Bläddra bland miniatyrer av sparade skärmdumpar</li> <li><strong>Smart sökning:</strong> Hitta skärmdumpen du letar efter med bara ett nyckelord. Page Shot indexerar sidtitlar och text i skärmdumpar</li> <li><strong>Ett-stegs-delning:</strong> Lägg upp dina skärmdumpar på sociala medier eller kopiera den delningsbara länken direkt från webbläsaren.</li></ul>
-pageshotMeasurements = <p>Förutom de <a href="/privacy">uppgifter</a> som samlats in av alla Test Pilot experiment, här är de viktigaste sakerna du bör veta om vad som händer när du använder Page Shot:</p><ul> <li>Vi lagrar dina bilder på Mozillas servrar och kommer att ha tillgång till dessa bilder. Men vi kommer bara använda dina bilder när det är nödvändigt för driften av tjänsten, till exempel när någon skickar oss länken till en bild med hjälp av vår "flagg"-funktion eller att diagnostisera problem. Vi kommer också att analysera alla bilder för att förbättra Page Shot, till exempel genom att identifiera den genomsnittliga storleken och antalet bilder som tas av användare.</li> <li>Vi samlar användningsdata för att hjälpa oss att förstå dina interaktioner med produkten, till exempel hur många gånger du klickar på knappen att ta bilder, spara en bild eller stöter på problem med att spara en bild.</li> <li>För att förhindra missbruk av denna tjänst, gör vi grundläggande säkerhetsövervakning.  Till exempel, samlar vi in och behåller IP-adresser för att upptäcka och blockera personer som skannar tjänsten för att hitta privata sidor.</li> <li>För alla besök till Page Shot webbplats, de uppgifter vi samlar in beskrivs i våran <a href="https://www.mozilla.org/privacy/websites/" target="_blank">sekretesspolicy</a>.</li></ul>
+pageshotMeasurements0 = Vi lagrar dina bilder på Mozillas servrar och kommer att ha tillgång till dessa bilder. Men vi kommer bara använda dina bilder när det är nödvändigt för driften av tjänsten, till exempel när någon skickar oss länken till en bild med hjälp av vår "flagg"-funktion eller att diagnostisera problem. Vi kommer också att analysera alla bilder för att förbättra Page Shot, till exempel genom att identifiera den genomsnittliga storleken och antalet bilder som tas av användare.
+pageshotMeasurements1 = Vi samlar användningsdata för att hjälpa oss att förstå dina interaktioner med produkten, till exempel hur många gånger du klickar på knappen att ta bilder, spara en bild eller stöter på problem med att spara en bild.
+pageshotMeasurements2 = För att förhindra missbruk av denna tjänst, gör vi grundläggande säkerhetsövervakning.  Till exempel, samlar vi in och behåller IP-adresser för att upptäcka och blockera personer som skannar tjänsten för att hitta privata sidor.
+pageshotMeasurements3 = För alla besök till Page Shot webbplats, de uppgifter vi samlar in beskrivs i våran <a href="https://www.mozilla.org/privacy/websites/" target="_blank">sekretesspolicy</a>.
 pageshotDetails0Copy = Välj bildyta och spara om du gillar vad du ser, avbryta utan att spara om du inte gör det.
 pageshotDetails1Copy = Dela länkar till bilder via social media eller e-post , utan att behöva ladda ner eller bifoga en fil.
 pageshotDetails2Copy = Hitta sparade skärmdumpar lätt. Bläddra bland miniatyrer i rutnät eller sök efter nyckelord.
-pageshotToursteps0Copy = <p>Klicka på ikonen för att börja använda Page Shot.</p>
-pageshotToursteps1Copy = <p>Markera det område som du vill fånga.</p>
-pageshotToursteps2Copy = <p>Dela, spara eller ta bort från webbläsaren.</p>
-pageshotToursteps3Copy = <p>Sök eller bläddra för att hitta sparade skärmdumpar.</p>
-pageshotToursteps4Copy = <p>Du kan alltid ge oss återkoppling eller inaktivera Page Shot från Test Pilot.</p>
+pageshotToursteps0Copy = Klicka på ikonen för att börja använda Page Shot.
+pageshotToursteps1Copy = Markera det område som du vill fånga.
+pageshotToursteps2Copy = Dela, spara eller ta bort från webbläsaren.
+pageshotToursteps3Copy = Sök eller bläddra för att hitta sparade skärmdumpar.
+pageshotToursteps4Copy = Du kan alltid ge oss återkoppling eller inaktivera Page Shot från Test Pilot.
 pageshotContributors0TitleEngineer = Software Engineer
 pageshotContributors1Title = Software Engineer
 pageshotContributors2Title = UX Designer
 tabcenterDescription = Hur skulle det vara att kunna flytta flikar från toppen av webbläsaren till sidan? Vi ville testa det!
 tabcenterIntroduction = <p>Tab Center flyttar dina flikar till sidan av webbläsarfönstret så att de är utom synhåll när du inte behöver dem och kan lätt utvidgas när du behöver dem igen.</p>
-tabcenterMeasurements = <p>Förutom de <a href="/privacy">uppgifter</a> som samlats in av alla Test Pilot experiment, här är de viktigaste sakerna du bör veta om vad som händer när du använder Tab Center:</p><ul> <li>Vi samlar användningsdata om hur du interagerar med Tab Center, till exempel hur ofta du maximerar eller nålar fast Tab Center</li> <li>Vi samlar också information om hur du använder flikar, såsom antal flikar du håller öppna samtidigt och hur länge du håller dem öppna.</li> <li>Tab Center samlar inte in någon information om webbplatser du besöker eller innehållet i flikar.</li></ul>
+tabcenterMeasurements0 = Vi samlar användningsdata om hur du interagerar med Tab Center, till exempel hur ofta du maximerar eller nålar fast Tab Center
+tabcenterMeasurements1 = Vi samlar också information om hur du använder flikar, såsom antal flikar du håller öppna samtidigt och hur länge du håller dem öppna.
+tabcenterMeasurements2 = Tab Center samlar inte in någon information om webbplatser du besöker eller innehållet i flikar.
 tabcenterDetails0Copy = Skjut dina flikar åt sidan.
 tabcenterDetails1Copy = Stoppa undan dessa flikar tills du behöver dem.
 tabcenterDetails2Copy = Möblera om! Tab Center fungerar med dina favorit Firefox-teman.
-tabcenterToursteps0Copy = <p>Först och främst, alla flikar finns på sidan nu.</p>
-tabcenterToursteps1Copy = <p>Massor av flikar? Tab Center låter sig söka bland dem.</p>
-tabcenterToursteps2Copy = <p>Du kan dra i kanten av Tab Center för att göra den så smal eller bred som du vill.</p>
-tabcenterToursteps3Copy = <p>Tryck på omkopplaren för att stoppa undan Tab Center.</p>
-tabcenterToursteps4Copy = <p>Du kan alltid ge oss återkoppling eller inaktivera Tab Center från Test Pilot.</p>
+tabcenterToursteps0Copy = Först och främst, alla flikar finns på sidan nu.
+tabcenterToursteps1Copy = Massor av flikar? Tab Center låter sig söka bland dem.
+tabcenterToursteps2Copy = Du kan dra i kanten av Tab Center för att göra den så smal eller bred som du vill.
+tabcenterToursteps3Copy = Tryck på omkopplaren för att stoppa undan Tab Center.
+tabcenterToursteps4Copy = Du kan alltid ge oss återkoppling eller inaktivera Tab Center från Test Pilot.
 tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
 trackingprotectionDescription = Kan du hjälpa oss att göra spårningsskydd bättre? Detta experiment sätter på spårningsskydd för all surfning och erbjuder ett snabbt sätt att rapportera eventuella problem du ser när du surfar.
 trackingprotectionIntroduction = <p>Fram tills nu har spårningsskydd i Firefox endast vart tillgänglig i privat surfläge. Detta experiment möjliggör spårningsskydd hela tiden! (Naturligtvis kan du inaktivera det på webbplatser när du vill.)</p><p>Med detta experiment kan du hjälpa oss att förstå vart spårningsskydd inte fungerar på webben så att vi kan förbättra det för alla Firefox-användare. När du surfar, klicka på sköldikonen (lila) i URL-fältet överst på sidan för att berätta vilka webbplatser som fungerar bra med spårningsskydd eller inte.</p>
-trackingprotectionMeasurements = <p>Förutom de <a href="/privacy">uppgifter</a> som samlats in av alla Test Pilot experiment, här är de viktigaste sakerna du bör veta om vad som händer när du använder spårningsskydd:</p><ul> <li>Spårningsskydd kommer att be dig om återkoppling när det blockerar en spårare. Vi samlar in grundläggande användardata när du använder prompten, till exempel när du aktiverar eller inaktiverar spårning på sidan eller rapporterar ett problem.</li> <li>När du använder prompten, vi samlar även in information om sidan du befinner dig på och spårningsdomän som blir blockerad. Detta hjälper oss att förstå när och varför du upplever problem.</li> <li>Annat än domänen, samlar vi inte in någon ytterligare information från spåraren, såsom data om unika ID som används eller kakor som satts.</li> <li>För att identifiera spårare, använder vi en lista som tillhandahålls av vår partner Disconnect. Du kan läsa mer om standarderna som Disconnect tillämpar <a href="https://disconnect.me/trackerprotection" target="_blank">här</a>.</li></ul>
+trackingprotectionMeasurements0 = Spårningsskydd kommer att be dig om återkoppling när det blockerar en spårare. Vi samlar in grundläggande användardata när du använder prompten, till exempel när du aktiverar eller inaktiverar spårning på sidan eller rapporterar ett problem.
+trackingprotectionMeasurements1 = När du använder prompten, vi samlar även in information om sidan du befinner dig på och spårningsdomän som blir blockerad. Detta hjälper oss att förstå när och varför du upplever problem.
+trackingprotectionMeasurements2 = Annat än domänen, samlar vi inte in någon ytterligare information från spåraren, såsom data om unika ID som används eller kakor som satts.
+trackingprotectionMeasurements3 = För att identifiera spårare, använder vi en lista som tillhandahålls av vår partner Disconnect. Du kan läsa mer om standarderna som Disconnect tillämpar <a href="https://disconnect.me/trackerprotection" target="_blank">här</a>.
 trackingprotectionPrefeedbackcopy = <p>För att rapportera en webbplats som inte fungerar med spårningsskydd, välj sköldikonen i fältet som visar adressen till webbplatsen.</p>
 trackingprotectionDetails0Copy = Kom åt alla funktioner för Firefox spårningsskydd via adressfältet.
 trackingprotectionDetails1Copy = Rapportera problem och hjälp oss felsöka.
-trackingprotectionToursteps0Copy = <p>Skölden visar om spårningsskydd är på. Överstruken är den avstängd.</p>
-trackingprotectionToursteps1Copy = <p>Berätta när saker och ting fungerar och när de inte gör det.</p>
-trackingprotectionToursteps2Copy = <p>Du kan alltid inaktivera Firefox spårningsskydd från Test Pilot.</p>
+trackingprotectionToursteps0Copy = Skölden visar om spårningsskydd är på. Överstruken är den avstängd.
+trackingprotectionToursteps1Copy = Berätta när saker och ting fungerar och när de inte gör det.
+trackingprotectionToursteps2Copy = Du kan alltid inaktivera Firefox spårningsskydd från Test Pilot.
 trackingprotectionContributors0Title = Web Developer
 trackingprotectionContributors1Title = Senior UX Designer
 trackingprotectionContributors2Title = Senior QA Engineer
 trackingprotectionContributorsextra = Detta experiment bygger på Firefox spårningsskyddsteknik som byggts av Mozillas anställda och medarbetare under de senaste åren.
 universalsearchDescription = Få rekommendationer för de bästa platserna på webben när du skriver i det smarta adressfältet.
 universalsearchIntroduction = <p>Få det bästa av webben snabbare med Universal Search. Skriv bara in några tecken i ditt smarta adressfält och populära webbplatser, personer och Wikipedia-artiklar visas.</p>
-universalsearchMeasurements = <p>Förutom de <a href="/privacy">uppgifter</a> som samlats in av alla Test Pilot experiment, här är de viktigaste sakerna du bör veta om vad som händer när du använder Universal Search:</p><ul> <li>Vi samlar in de vanliga användaruppgifter som hur du interagerar med det smarta adressfältet, såsom antalet tecken som skrivs, vilka typer av resultat som du klickar på och deras placering i resultatlistan.</li> <li>Om du tidigare konfigurerat Firefox att visa sökförslag i sökfältet, att installera Universal Search aktiverar <a href="https://www.mozilla.org/privacy/firefox/#searchsuggestions" target="_blank">sökförslag</a> i smarta adressfältet.</li> <li>När du använder det smarta adressfältet , skickar vi de termer du skriver till vår rekommenderade motor. Vi håller anonyma loggar över populära sökningar för att förbättra kvaliteten på våra rekommendationer.</li> <li>Universal Search använder några tredjepartstjänster. Vi använder <a href="http://www.bing.com/developers/s/APIBasics.html" target="_blank">Bing</a> och <a href="https://developer.yahoo.com/boss/search/" target="_blank">Yahoo</a> för att ge rekommendationer och <a href="http://docs.embed.ly/docs/" target="_blank">Embedly</a> och <a href="https://clearbit.com/logo" target="_blank">Clearbit</a> för att tillhandahålla ytterligare data (så som bilder och ikoner) om dessa rekommendationer. För att visa rekommendationerna i det smarta adressfältet, kan Universal Search ladda ner dessa bilder direkt från Embedly och Clearbit, vilket kan ge dessa tjänster tillgång till din IP-adress och bilden som efterfrågas.</li></ul>
+universalsearchMeasurements0 = Vi samlar in de vanliga användaruppgifter som hur du interagerar med det smarta adressfältet, såsom antalet tecken som skrivs, vilka typer av resultat som du klickar på och deras placering i resultatlistan.
+universalsearchMeasurements1 = Om du tidigare konfigurerat Firefox att visa sökförslag i sökfältet, att installera Universal Search aktiverar <a href="https://www.mozilla.org/privacy/firefox/#searchsuggestions" target="_blank">sökförslag</a> i smarta adressfältet.
+universalsearchMeasurements2 = När du använder det smarta adressfältet , skickar vi de termer du skriver till vår rekommenderade motor. Vi håller anonyma loggar över populära sökningar för att förbättra kvaliteten på våra rekommendationer.
+universalsearchMeasurements3 = Universal Search använder några tredjepartstjänster. Vi använder <a href="http://www.bing.com/developers/s/APIBasics.html" target="_blank">Bing</a> och <a href="https://developer.yahoo.com/boss/search/" target="_blank">Yahoo</a> för att ge rekommendationer och <a href="http://docs.embed.ly/docs/" target="_blank">Embedly</a> och <a href="https://clearbit.com/logo" target="_blank">Clearbit</a> för att tillhandahålla ytterligare data (så som bilder och ikoner) om dessa rekommendationer. För att visa rekommendationerna i det smarta adressfältet, kan Universal Search ladda ner dessa bilder direkt från Embedly och Clearbit, vilket kan ge dessa tjänster tillgång till din IP-adress och bilden som efterfrågas.
 universalsearchDetails0Copy = Populära webbplatser, personer och Wikipedia-artiklar dyker upp medan du skriver.
-universalsearchToursteps0Copy = <p>Du kan nu söka och navigera på ett ställe.</p>
-universalsearchToursteps1Copy = <p>Rekommendationer för populära webbplatser och Wikipedia-artiklar dyker upp medan du skriver.</p>
-universalsearchToursteps2Copy = <p>Du kan alltid ge oss återkoppling eller inaktivera Universal Search från Test Pilot.</p>
+universalsearchToursteps0Copy = Du kan nu söka och navigera på ett ställe.
+universalsearchToursteps1Copy = Rekommendationer för populära webbplatser och Wikipedia-artiklar dyker upp medan du skriver.
+universalsearchToursteps2Copy = Du kan alltid ge oss återkoppling eller inaktivera Universal Search från Test Pilot.
 universalsearchContributors0Title = Product Manager
 universalsearchContributors1Title = Senior UX Designer
 universalsearchContributors2Title = Staff Engineer

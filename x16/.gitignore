@@ -1,0 +1,5 @@
+node_modules
+data/bundle.*
+tools/control-panel.js
+coverage
+.nyc_output
