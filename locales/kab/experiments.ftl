@@ -26,6 +26,7 @@ cliqzIntroduction = Awi-d igmaḍ s zreb, srid deg iminig. Bdu aru sakin ad twal
 cliqzPrivacypreamble = Tarmit Cliqz Test Pilot tusssa-d si leqdic lwaḥid gar Cliqz GmbH, akked Mozilla. Cliqz yettwafṣel akken ad immesten tabaḍnit inek udiɣ ad isewḥel alqaḍ n isefka udmawanen izemren ad tettwaseqdec i tmerna n imeɣna n useqdac. Acu kan, asedreg n isefka dayen iweɣren aṭas, akken yebɣu yeḍru, dima yella wamek ara tesuluḍ imdanen.
 cliqzMeasurements0 = Cliqz GmbH tleqqeḍ-d isefka ɣef inadiyen inek akked urmud n tunigin, ula d aḍris tettrud deg ufeggag n unadiy, tuttriwin i tettazneḍ i kra n imseddayen n unadi, isefka ɣef temyigawt akked isebtar web, am imussuten n tɣeṛdayt, adrurem akked tenzagin n tirza.
 cliqzMeasurements1 = Cliqz GmbH ileqqeḍ isefka n tilisɣelt, ula d tamyigawt d kra n wurtan akked kra n tqeffalin n Cliqz. Isefka-agi ttwacudden ar usulay asuf yettaǧǧan Cliqz GmbH ad yegzu anerni n tmellit seg imir itteddu wakud.
+cliqzMeasurements2 = Mozilla tleqqeḍ isefka n tilisɣelt, ula d amḍan n tirza ar isebtar web n imseddayen n unadi akked tebdart n imseddayen n unadi i tseqdaceḍ akked usulay asuf n Cliqz, ayen ara yeǧǧen Mozilla ad ttnadi assaɣ gar inagrawen n tilisɣelt n Firefox  akked Cliqz.
 cliqzDetails0Copy = Wali igmaḍ ttbanen-d amzun d tiḥḥerga ticki tettaruḍ deg ufeggag n tensa.
 cliqzDetails1Copy = Wali deqs n taɣult s wakud ilaw (am tegnawt) daw n ufeggag n tensa.
 cliqzDetails2Copy = Uɣal ar ismal inek i tḥemleḍ s yiwen n usiti ticki teldiḍ-d iccer maynut. Tzemreḍ daɣen ad sagneḍ wid tḥemled..
