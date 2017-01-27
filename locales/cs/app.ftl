@@ -55,6 +55,14 @@ landingInstalledButton = Vyberte si funkce
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Nainstalovat Test Pilot &amp;
+oneClickInstallMajorCta = Povolit { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -118,6 +126,7 @@ experimentListJustLaunchedTab = Právě spuštěno
 experimentListJustUpdatedTab = Právě aktualizováno
 experimentListEndingTomorrow = Zítra končí
 experimentListEndingSoon = Brzy končí
+experimentsListCondensedHeader = Vyberte si experimenty!
 
 
 
@@ -171,6 +180,7 @@ disableExperiment = Zakázat { $title }
 disableExperimentTransition = Zakazování...
 enableExperiment = Povolit { $title }
 enableExperimentTransition = Povolování...
+experimentMeasurementIntro = Kromě <a>dat</a>, která experimenty Test Pilotu shromažďují, je tu několik důležitých věcí, které se dějí, když používáte { $experimentTitle }:
 measurements = Vaše soukromí
 experimentPrivacyNotice = Další informace o shromažďování dat pro { $title } můžete najít zde.
 contributorsHeading = Tento experiment přináší
@@ -180,6 +190,7 @@ tour = Průvodce
 tourLink = prohlídka
 contribute = Přispět
 bugReports = Hlášení chyb
+discussExperiment = DIskutujte o experimentu { $title }
 tourOnboardingTitle = { $title } povolen!
 tourDoneButton = Hotovo
 userCountContainer = Experiment { $title } zkouší <span>{ $installation_count }</span> lidí!
@@ -271,6 +282,7 @@ newsletterFooterSuccessBody = Pokud jste dříve nepotvrdili odběr zpravodaje M
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Tento experiment není ve vašem jazyce podporován ({ $locale_code }).
 localeWarningSubtitle = Můžete ale aktivaci zkusit i bez toho.
 
 
