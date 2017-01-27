@@ -23,6 +23,7 @@ activitystreamContributors11Title = 軟體工程師
 activitystreamContributors12Title = 資深 UX 設計師
 cliqzDescription = 更快得到搜尋結果。當您在網址列打字時，Cliqz 會在下方顯示建議，同時仍然保有您的隱私。
 cliqzIntroduction = 直接從瀏覽器，更快得到搜尋結果。當您在網址列打字時，Cliqz 會在下方顯示從網路上取得的建議。Cliqz 會避免取得可識別出個人的資料或為使用者建立紀錄，您的搜尋行為更有隱私。
+cliqzPrivacypreamble = Cliqz Test Pilot 實驗是由 Mozilla 與 Cliqz GmbH 共同合作，提供給您的。Cliqz 是設計來保護您的隱私，避免個人的敏感資訊被收集來識別使用者。然而要匿名化此類資料相當困難，特定人士還是有可能會被識別出來。
 cliqzDetails0Copy = 在網址列輸入想要搜尋的詞彙，看搜尋結果跟變魔術一樣出現。
 cliqzDetails1Copy = 在網址列下方快速查看天氣等即時資訊。
 cliqzDetails2Copy = 開啟新分頁時，只要滑鼠一點就可以回到您最愛的網站，您還可以調整您的最愛清單。
