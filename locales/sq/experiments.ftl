@@ -52,6 +52,9 @@ nomore404sSubtitle = Bazuar në Wayback Machine
 nomore404sDescription = Të lodhur nga rrugët pa krye në web? Do t’ju njoftojmë kur në Wayback Machine të Arkivit të Internetit të ketë një version të ruajtur të asaj që po kërkonit.
 nomore404sIntroduction = <p>Ky këtu është i thjeshtë. Nëse hasni një faqe 404 teksa shfletoni në web, do t’jua bëjmë të ditur nëse lënda që po kërkoni është e arkivuar te Wayback Machine e Arkivit të Internetit.</p>
 nomore404sMeasurements0 = Ne mbledhim të dhëna elementare përdorimi mbi sa herë keni hasur një gabim Faqe Që Nuk Gjendet (kod 404), sa versione fshehtine ekzistojnë për atë faqe te Archive.org, dhe sa herë zgjodhët të shihnit versionin e fshehtinës.
+nomore404sMeasurements1 = Për të furnizuar versione fshehtine të faqeve, URL-të faqeve për gabime 404 i dërgojmë te Archive.org. <a href="https://archive.org/" target="_blank">Archive.org</a> rregullat e veta mbi privatësinë i ka të shpallura <a href="https://archive.org/about/terms.php" target="_blank">këtu</a>.
+nomore404sMeasurements2 = Nuk grumbullojmë URL faqesh që kërkoni apo URL-të që dërgojmë te Archive.org.
+nomore404sMeasurements3 = Mund të ndajmë me Arkivin Internet përfundime anketimesh që parashtroni te ne dhe të dhëna telemetrike përgjithësuese që lidhen me këtë eksperiment.
 nomore404sDetails0Copy = Reduktoni me Wayback Machine udhët pa krye 404.
 nomore404sDetails1Copy = Sjellë për ju nga miqtë tanë në Arkivin e Internetit.
 nomore404sToursteps0Copy = Thjesht shfletoni si zakonisht. Kur hasni një faqe 404, do t’ju njoftojmë po tani ndonjë version të arkivuar te Wayback Machine.
