@@ -30,7 +30,7 @@ describe('app/components/ExperimentPreFeedbackDialog', () => {
   it('should render expected content', () => {
     expect(subject.find('.modal-container'))
       .to.have.property('length', 1);
-    expect(subject.find('.tour-header').props()['data-l10n-args'])
+    expect(subject.find('.modal-header').props()['data-l10n-args'])
       .to.equal(JSON.stringify({ title: experiment.title }));
     expect(subject.find('.tour-text a').props()['data-l10n-args'])
       .to.equal(JSON.stringify({ title: experiment.title }));
@@ -41,7 +41,7 @@ describe('app/components/ExperimentPreFeedbackDialog', () => {
   });
 
   it('should call onCancel on cancel button click', () => {
-    subject.find('.tour-cancel').simulate('click', mockClickEvent);
+    subject.find('.modal-cancel').simulate('click', mockClickEvent);
     expect(onCancel.called).to.be.true;
     expect(sendToGA.lastCall.args).to.deep.equal(['event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
@@ -56,8 +56,8 @@ describe('app/components/ExperimentPreFeedbackDialog', () => {
     expect(getAttribute.called).to.be.true;
     expect(sendToGA.lastCall.args).to.deep.equal(['event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'give feedback',
+      eventAction: 'PreFeedback Confirm',
+      eventLabel: 'foobar',
       outboundURL: surveyURL
     }]);
   });

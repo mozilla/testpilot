@@ -37,7 +37,7 @@ a {
   left: 0;
   position: fixed;
   right: 0;
-  top: $grid-unit * 1.75;
+  top: $grid-unit * .5;
   z-index: 0;
 }
 
@@ -67,19 +67,16 @@ a {
 }
 
 .mozilla-logo {
-  @include hidpi-background-image('mozilla-blue', 77px 20px);
+  background-image: url('../images/mozilla.svg');
   background-repeat: no-repeat;
-  height: 20px;
-  position: relative;
-  top: -3px;
-  width: 77px;
+  background-size: auto 32px;
+  height: 32px;
+  opacity: .9;
+  transition: opacity 150ms;
+  width: 112px;
 
-  .blue & {
-    @include hidpi-background-image('mozilla', 77px 20px);
-  }
-
-  .default-background & {
-    @include hidpi-background-image('mozilla-blue', 77px 20px);
+  &:hover {
+    opacity: 1;
   }
 }
 

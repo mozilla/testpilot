@@ -58,15 +58,8 @@
 .centered-banner,
 .reverse-split-banner,
 .split-banner {
-  @include respond-to('not-small') {
-    margin-bottom: $grid-unit * 1.5;
-    margin-top: $grid-unit * 1.5;
-  }
-
-  @include respond-to('small') {
-    margin-bottom: $grid-unit;
-    margin-top: $grid-unit;
-  }
+  margin-bottom: $grid-unit;
+  margin-top: $grid-unit;
 
   .intro-text {
     @include respond-to('small') {

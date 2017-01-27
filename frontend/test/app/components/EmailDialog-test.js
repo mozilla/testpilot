@@ -27,7 +27,7 @@ describe('app/components/EmailDialog', () => {
   });
 
   it('should dismiss when skip is clicked', () => {
-    subject.find('.modal-actions a.cancel').simulate('click', mockClickEvent);
+    subject.find('.modal-cancel').simulate('click', mockClickEvent);
 
     expect(onDismiss.called).to.be.true;
     expect(sendToGA.lastCall.args).to.deep.equal(['event', {
@@ -82,7 +82,7 @@ describe('app/components/EmailDialog', () => {
     const message = subject.findWhere(el => 'emailOptInSuccessMessage2' === el.props()['data-l10n-id']);
     expect(message).to.have.length(1);
 
-    const button = subject.findWhere(el => 'continue' === el.props()['data-hook']);
+    const button = subject.findWhere(el => 'email-success-continue' === el.props()['id']);
     expect(button).to.have.length(1);
 
     button.simulate('click', mockClickEvent);

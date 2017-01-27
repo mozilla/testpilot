@@ -104,7 +104,6 @@ emailValidationError = لطفا یک نشانی رایانامه معتبر وا
 emailOptInInput = 
   [html/placeholder] رایانامه اینجا قرار می‌گیرد :)
 emailOptInButton = من را ثبت‌نام کن
-emailOptInSkip = پرش
 emailOptInConfirmationTitle = رایانامه ارسال شد
 emailOptInSuccessMessage2 = ممنون!
 emailOptInConfirmationClose = به سوی تجربه‌ها…
@@ -114,8 +113,6 @@ emailOptInConfirmationClose = به سوی تجربه‌ها…
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = آماده پرواز!
-experimentListPageSubHeader = لطفا امکاناتی را که می‌خواهید امتحان کنید را انتخاب کنید. <br> برای آزمایش‌های جدید دوباره سر بزنید.
 experimentListEnabledTab = فعال شد
 experimentListJustLaunchedTab = هم‌اکنون منتشر شد
 experimentListJustUpdatedTab = هم‌اکنون بروزرسانی شد
@@ -137,19 +134,8 @@ experimentCardLearnMore = اطلاعات بیشتر
 [[ feedback ]]
 
 feedbackSubmitButton = یک نظرسنجی کوتاه پر کنید
-feedbackCancelButton = بستن
 feedbackUninstallTitle = متشکریم!
 feedbackUninstallCopy = مشارکت شما در خلبان آزمایشی فایرفاکس معنای زیادی برای ما دارد! لطفا سایر آزمایش‌های ما را هم بررسی کنید، و برای آزمایش‌های بیشتر سر بزنید!
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = فقط یک ثانیه…
-discussNotifyMessageAccountless = <p>در بعضی از آزمایش‌ها ما از سرویس‌های انجمن‌های خارجی استفاده می‌کنیم. اگر تمایل دارید در این انجمن‌ها مشارکت کنید باید برای خود حساب بسازید.</p>
-discussNotifySubmitButton = من رو به انجمن ببر
-discussNotifyCancelButton = لغو
 
 
 
@@ -169,7 +155,7 @@ experimentPromoSubheader = ما در حال ساخت نسل بعدی امکان�
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } فعال است.
@@ -189,7 +175,6 @@ changelog = تغییرات
 tourLink = تور
 contribute = مشارکت
 bugReports = گزارش اشکال
-discourse = Discourse
 tourOnboardingTitle = { $title } فعال شد!
 tourDoneButton = انجام شد
 userCountContainer = تعداد <span>{ $installation_count }</span> نفر در حال حاضر از { $title } استفاده می‌کنند!
@@ -213,7 +198,6 @@ retireDialogTitle = حذف خلبان آزمایشی؟
 retireMessage = هر جور دوست دارید. این همه تست‌های فعال را غیرفعال خواهد کرد، افزودنی را حذف و اطلاعات حساب شما را از روی سرورهای ما حذف خواهد کرد.
 retireEmailMessage = برای لغو اشتراک از رایانامه‌ها، به سادگی بر روی پیوند <em>لغو اشتراک</em> در هر کدام از رایانامه‌های خلبان آزمایشی کلیک کنید.
 retireSubmitButton = ادامه
-retireCancelButton = لغو
 pageTitleRetirePage = خلبان آزمایشی فایرفاکس - حذف خلبان آزمایشی
 retirePageProgressMessage = در حال خاموش کردن…
 retirePageHeadline = بابت پرواز ممنونیم!
@@ -279,10 +263,9 @@ newsletterFooterSuccessBody = اگر شما قبلا مشترک یکی از خب
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = این آزمایش تنها به زبان انگلیسی موجود است.
 localeWarningSubtitle = اگر تمایل دارید، هنوز می‌توانید فعالش کنید.
 
 

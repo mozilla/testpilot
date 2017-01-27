@@ -104,7 +104,6 @@ emailValidationError = Пожалуйста, используйте коррек
 emailOptInInput = 
   [html/placeholder] адрес эл. почты :)
 emailOptInButton = Подписать меня
-emailOptInSkip = Пропустить
 emailOptInConfirmationTitle = Письмо отправлено
 emailOptInSuccessMessage2 = Спасибо!
 emailOptInConfirmationClose = Вперёд к экспериментам...
@@ -114,13 +113,12 @@ emailOptInConfirmationClose = Вперёд к экспериментам...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Готовы ко взлёту!
-experimentListPageSubHeader = Выберите функции, которые вы хотите попробовать. <br> Загляните попозже, чтобы увидеть ещё больше экспериментов.
 experimentListEnabledTab = Включено
 experimentListJustLaunchedTab = Только что запущен
 experimentListJustUpdatedTab = Только что обновлён
 experimentListEndingTomorrow = Заканчиваются завтра
 experimentListEndingSoon = Скоро заканчиваются
+experimentsListCondensedHeader = Выберите ваши эксперименты!
 
 
 
@@ -137,29 +135,11 @@ experimentCardLearnMore = Узнать больше
 [[ feedback ]]
 
 feedbackSubmitButton = Пройти быстрый опрос
-feedbackCancelButton = Закрыть
 feedbackUninstallTitle = Спасибо!
 feedbackUninstallCopy = 
   | Ваше участие в качестве лётчика-испытателя Firefox,
   | значит многое! Пожалуйста, посмотрите другие наши
   | эксперименты, и будьте на связи, дальше больше!
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Секундочку...
-discussNotifyMessageAccountless = 
-  | <p>В духе экспериментов, мы используем внешний сервис форумов.
-  | Вам понадобится создать аккаунт, если вы хотите
-  | принять участие в обсуждениях на форуме.</p>
-  | <p>Если вы не хотите создавать аккаунт, то вы всегда можете
-  | оставить отзыв через сайт лётчиков-испытателей.
-  | <br>
-  | (Мы действительно прочитаем его там)</p>
-discussNotifySubmitButton = Перейти на форум
-discussNotifyCancelButton = Отмена
 
 
 
@@ -179,7 +159,7 @@ experimentPromoSubheader = Мы создаём новое поколение в�
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } включено.
@@ -201,7 +181,7 @@ tour = Тур
 tourLink = тур
 contribute = Внести вклад
 bugReports = Сообщения об ошибках
-discourse = Discourse
+discussExperiment = Обсудить { $title }
 tourOnboardingTitle = { $title } включено!
 tourDoneButton = Готово
 userCountContainer = Прямо сейчас <span>{ $installation_count }</span> людей пробуют { $title }!
@@ -225,7 +205,6 @@ retireDialogTitle = Удалить дополнение лётчика-испы�
 retireMessage = Как вы пожелаете. Это действие отключит все активные тесты, удалит дополнение и информацию вашего аккаунта с наших серверов.
 retireEmailMessage = Чтобы отказаться от получения рассылки, просто щёлкните <em>отписаться</em> в любом письме для лётчиков-испытателей.
 retireSubmitButton = Продолжить
-retireCancelButton = Отмена
 pageTitleRetirePage = Лётчик-испытатель Firefox - Удалить расширение лётчика-испытателя
 retirePageProgressMessage = Выключение...
 retirePageHeadline = Спасибо за полёты!
@@ -291,10 +270,9 @@ newsletterFooterSuccessBody = Если вы ранее не подтвержда
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Этот эксперимент доступен только на английском.
 localeWarningSubtitle = Вы всё ещё можете включить его, если хотите.
 
 

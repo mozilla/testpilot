@@ -55,6 +55,14 @@ landingInstalledButton = 選擇您要的功能
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = 安裝 Test Pilot &amp;
+oneClickInstallMajorCta = 開啟 { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -104,7 +112,6 @@ emailValidationError = 請使用有效的電子郵件地址！
 emailOptInInput = 
   [html/placeholder] 電子郵件會寄到這裡 :)
 emailOptInButton = 我要訂閱
-emailOptInSkip = 略過
 emailOptInConfirmationTitle = 已寄出郵件
 emailOptInSuccessMessage2 = 感謝您！
 emailOptInConfirmationClose = 繼續前往實驗內容…
@@ -114,13 +121,12 @@ emailOptInConfirmationClose = 繼續前往實驗內容…
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = 準備好要起飛了！
-experimentListPageSubHeader = 挑選您想要試用的功能。<br>歡迎常回來看看有哪些新實驗推出。
 experimentListEnabledTab = 已開啟
 experimentListJustLaunchedTab = 剛開始
 experimentListJustUpdatedTab = 剛更新
 experimentListEndingTomorrow = 明天結束
 experimentListEndingSoon = 快要結束
+experimentsListCondensedHeader = 挑選實驗！
 
 
 
@@ -137,19 +143,8 @@ experimentCardLearnMore = 了解更多
 [[ feedback ]]
 
 feedbackSubmitButton = 寫一份小問卷
-feedbackCancelButton = 關閉
 feedbackUninstallTitle = 感謝您！
 feedbackUninstallCopy = 您參與 Firefox 的 Test Pilot 計畫對我們有很重大的意義！也請試試其他的實驗，常常回來看看有沒有更多的新鮮事！
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = 稍等一下…
-discussNotifyMessageAccountless = <p>由於實驗的精神，我們會使用外部的討論區進行討論。若您想參與的話將需要註冊帳號。</p><p>若您不想註冊帳號，還是可以透過 Test Pilot 留下意見回饋。<br>（我們真的會讀這些意見）</p>
-discussNotifySubmitButton = 帶我去討論區
-discussNotifyCancelButton = 取消
 
 
 
@@ -169,7 +164,7 @@ experimentPromoSubheader = 我們正在開發 Firefox 的下一代新功能，�
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = 已開啟 { $title }。
@@ -182,6 +177,7 @@ disableExperiment = 停用 { $title }
 disableExperimentTransition = 停用中…
 enableExperiment = 開啟 { $title }
 enableExperimentTransition = 啟用中…
+experimentMeasurementIntro = 除了所有 Test Pilot 實驗都會收集的 <a>資料</a> 外，以下是您使用 { $experimentTitle } 時應該知道的事情:
 measurements = 您的隱私權
 experimentPrivacyNotice = 您可在這裡了解 { $title } 會收集哪些資料。
 contributorsHeading = 開發者
@@ -191,7 +187,7 @@ tour = 導覽
 tourLink = 導覽
 contribute = 貢獻
 bugReports = 錯誤回報
-discourse = Discourse
+discussExperiment = 討論 { $title }
 tourOnboardingTitle = 已開啟 { $title }！
 tourDoneButton = 完成
 userCountContainer = 已經有 <span>{ $installation_count }</span> 個人正在試用 { $title }！
@@ -215,7 +211,6 @@ retireDialogTitle = 要移除 Test Pilot 嗎？
 retireMessage = 如您所願。將會停用所有進行中的測試、移除附加元件，並移除我們的伺服器上關於您的帳號資訊。
 retireEmailMessage = 要停止收到電子報，只要點擊每封信當中的 <em>取消訂閱</em> 鏈結。
 retireSubmitButton = 繼續
-retireCancelButton = 取消
 pageTitleRetirePage = Firefox Test Pilot - 移除 Test Pilot
 retirePageProgressMessage = 關閉中…
 retirePageHeadline = 感謝您跟我們一起飛！
@@ -281,10 +276,10 @@ newsletterFooterSuccessBody = 若您先前沒有確認訂閱任何 Mozilla 電�
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = 此實驗僅有英文版。
+localeUnavailableWarningTitle = 此實驗不支援您的語言（{ $locale_code }）。
 localeWarningSubtitle = 您想要的話還是可以安裝。
 
 

@@ -39,6 +39,11 @@ landingInstallButton = Install the Test Pilot Add-on
 landingInstallingButton = Installing...
 landingInstalledButton = Choose your features
 
+# Related to a one click to install test pilot and an experiment.
+[[oneClickInstall]]
+oneClickInstallMinorCta = Install Test Pilot &amp;
+oneClickInstallMajorCta = Enable {$title}
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[landingFirefox]]
 landingRequiresDesktop = Test Pilot requires Firefox for Desktop on Windows, Mac or Linux
@@ -74,20 +79,18 @@ emailValidationError = Please use a valid email address!
 emailOptInInput =
   [html/placeholder] email goes here :)
 emailOptInButton = Sign me up
-emailOptInSkip = Skip
 emailOptInConfirmationTitle = Email Sent
 emailOptInSuccessMessage2 = Thank you!
 emailOptInConfirmationClose = On to the experiments...
 
 # A listing of all Test Pilot experiments.
 [[experimentsList]]
-experimentListPageHeader = Ready for Takeoff!
-experimentListPageSubHeader  = Pick the features you want to try. <br> Check back soon for more experiments.
 experimentListEnabledTab = Enabled
 experimentListJustLaunchedTab = Just Launched
 experimentListJustUpdatedTab = Just Updated
 experimentListEndingTomorrow = Ending Tomorrow
 experimentListEndingSoon = Ending Soon
+experimentsListCondensedHeader = Pick your experiments!
 
 # An individual experiment in the listing of all Test Pilot experiments.
 [[experimentCard]]
@@ -98,26 +101,11 @@ experimentCardLearnMore = Learn More
 # A modal prompt shown when a user disables an experiment.
 [[feedback]]
 feedbackSubmitButton = Take a quick survey
-feedbackCancelButton = Close
 feedbackUninstallTitle = Thank You!
 feedbackUninstallCopy =
     | Your participation in Firefox Test Pilot means
     | a lot! Please check out our other experiments,
     | and stay tuned for more to come!
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[discussNotify]]
-discussNotifyTitle = Just one second...
-discussNotifyMessageAccountless =
-    | <p>In the spirit of experimentation, we are using an external forum service.
-    | You will need to create an account if you
-    | wish to participate on the forums.</p>
-    | <p>If you don't want to create an account, you can
-    | always leave feedback through Test Pilot.
-    | <br>
-    | (We really do read this stuff)</p>
-discussNotifySubmitButton = Take me to the forum
-discussNotifyCancelButton = Cancel
 
 # A modal prompt shown before the feedback survey for some experiments.
 [[experimentPreFeedback]]
@@ -129,7 +117,7 @@ experimentPreFeedbackLinkCopy = Give feedback about the {$title} experiment
 experimentPromoHeader = Ready for Takeoff?
 experimentPromoSubheader = We're building next-generation features for Firefox. Install Test Pilot to try them!
 
-# The experiment detail page. 
+# The experiment detail page.
 [[experimentPage]]
 isEnabledStatusMessage = {$title} is enabled.
 installErrorMessage = Uh oh. {$title} could not be enabled. Try again later.
@@ -141,6 +129,7 @@ disableExperiment = Disable {$title}
 disableExperimentTransition = Disabling...
 enableExperiment = Enable {$title}
 enableExperimentTransition = Enabling...
+experimentMeasurementIntro = In addition to the <a>data</a> collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use { $experimentTitle }:
 measurements = Your privacy
 experimentPrivacyNotice = You can learn more about the data collection for {$title} here.
 contributorsHeading = Brought to you by
@@ -150,7 +139,7 @@ tour = Tour
 tourLink = Launch Tour
 contribute = Contribute
 bugReports = Bug Reports
-discourse = Discourse
+discussExperiment = Discuss { $title }
 tourOnboardingTitle = {$title} enabled!
 tourDoneButton = Done
 userCountContainer = There are <span>{$installation_count}</span> people trying {$title} right now!
@@ -168,7 +157,6 @@ retireDialogTitle = Uninstall Test Pilot?
 retireMessage = As you wish. This will disable any active tests, uninstall the add-on and remove your account info from our servers.
 retireEmailMessage = To opt out of email updates, simply click the <em>unsubscribe</em> link on any Test Pilot email.
 retireSubmitButton = Proceed
-retireCancelButton = Cancel
 pageTitleRetirePage = Firefox Test Pilot - Uninstall Test Pilot
 retirePageProgressMessage = Shutting down...
 retirePageHeadline = Thanks for flying!
@@ -217,9 +205,9 @@ newsletterFooterBody = Find out about new experiments and see test results for e
 newsletterFooterSuccessHeader = Thanks!
 newsletterFooterSuccessBody = If you haven't previously confirmed a subscription to a Mozilla-related newsletter you may have to do so. Please check your inbox or your spam filter for an email from us.
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[localeWarning]]
-localeWarningTitle = This experiment is only available in English.
+localeUnavailableWarningTitle = This experiment is not supported in your language ({$locale_code}).
 localeWarningSubtitle = You can still enable it if you like.
 
 # An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.

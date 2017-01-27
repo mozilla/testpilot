@@ -45,17 +45,19 @@ export default class RetirePage extends React.Component {
           </div>}
           {uninstalled && <div>
             <div id="retire" className="modal fade-in">
-              <h1 data-l10n-id="retirePageHeadline" className="title">Thanks for flying!</h1>
+              <div className="modal-header-wrapper">
+                <h1 data-l10n-id="retirePageHeadline" className="modal-header">Thanks for flying!</h1>
+              </div>
               <div className="modal-content">
                 <p data-l10n-id="retirePageMessage">Hope you had fun experimenting with us. <br /> Come back any time.</p>
               </div>
               <div className="modal-actions">
-                <a onClick={() => this.takeSurvey()} data-l10n-id="retirePageSurveyButton" data-hook="take-survey" href="https://qsurvey.mozilla.com/s3/test-pilot" target="_blank" className="button default large">Take a quick survey</a>
+                <a onClick={() => this.takeSurvey()} data-l10n-id="retirePageSurveyButton" href="https://qsurvey.mozilla.com/s3/test-pilot" target="_blank" className="button default large">Take a quick survey</a>
                 <Link to="/"  data-l10n-id="home" className="modal-escape">Home</Link>
               </div>
             </div>
             <div className="copter-wrapper">
-              <div className="copter fade-in"></div>
+              <div className="copter fade-in-fly-up"></div>
             </div>
           </div>}
         </div>

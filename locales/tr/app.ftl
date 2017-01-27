@@ -104,7 +104,6 @@ emailValidationError = Lütfen geçerli bir e-posta adresi girin!
 emailOptInInput = 
   [html/placeholder] e-posta adresinizi buraya yazın :)
 emailOptInButton = Kaydol
-emailOptInSkip = Geç
 emailOptInConfirmationTitle = E-posta gönderildi
 emailOptInSuccessMessage2 = Teşekkürler!
 emailOptInConfirmationClose = Deneylere geçelim...
@@ -114,13 +113,12 @@ emailOptInConfirmationClose = Deneylere geçelim...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Kalkışa hazırsınız!
-experimentListPageSubHeader = Denemek istediğiniz özellikleri seçin.<br>Yeni deneyler için daha sonra yine bakın.
 experimentListEnabledTab = Etkinleştirildi
 experimentListJustLaunchedTab = Yeni çıktı
 experimentListJustUpdatedTab = Yeni güncellendi
 experimentListEndingTomorrow = Yarın bitiyor
 experimentListEndingSoon = Yakında bitiyor
+experimentsListCondensedHeader = Deneylerinizi seçin!
 
 
 
@@ -137,29 +135,11 @@ experimentCardLearnMore = Daha fazla bilgi al
 [[ feedback ]]
 
 feedbackSubmitButton = Küçük anketimize katılın
-feedbackCancelButton = Kapat
 feedbackUninstallTitle = Teşekkürler!
 feedbackUninstallCopy = 
   | Firefox Test Pilotu'na katılımınız bizim için çok 
   | anlamlı. Lütfen deneylerimizi inceleyin ve yeni 
   | deneyler için beklemede kalın!
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Bir saniye...
-discussNotifyMessageAccountless = 
-  | <p>Deneysel bir ruhla yola çıktığımız için harici bir forum servisi kullanıyoruz.
-  | Forumlara katılmak isterseniz ayrı bir 
-  | hesap açmanız gerekecek.</p>
-  | <p>Hesap açmak istemezseniz de her zaman Test 
-  | Pilotu üzerinden geri bildiriminizi paylaşabilirsiniz.
-  | <br>
-  | (Geri bildirimleri gerçekten okuyoruz.)</p>
-discussNotifySubmitButton = Foruma gidelim
-discussNotifyCancelButton = İptal
 
 
 
@@ -179,7 +159,7 @@ experimentPromoSubheader = Firefox'un yeni nesil özelliklerini inşa ediyoruz. 
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } etkinleştirildi.
@@ -195,11 +175,12 @@ enableExperimentTransition = Etkinleştiriliyor...
 measurements = Gizliliğiniz
 experimentPrivacyNotice = Buradan { $title } deneyinin topladığı veriler hakkında daha fazla bilgi alabilirsiniz.
 contributorsHeading = Geliştirenler
+contributorsExtraLearnMore = Daha fazla bilgi al
 changelog = değişiklik günlüğü
+tour = Tur
 tourLink = tur
 contribute = Katkıda bulunun
 bugReports = Hata raporları
-discourse = Discourse
 tourOnboardingTitle = { $title } etkinleştirildi!
 tourDoneButton = Bitti
 userCountContainer = Şu anda { $title } deneyini deneyen <span>{ $installation_count }</span> kişi var!
@@ -223,7 +204,6 @@ retireDialogTitle = Test Pilotu kaldırılsın mı?
 retireMessage = Bu işlem tüm aktif testleri kapatacak, eklentiyi kaldıracak ve hesabınızı sunucularımızdan silecektir.
 retireEmailMessage = E-posta bültenlerinden çıkmak için herhangi bir Test Pilotu e-postasının altındaki <em>abonelikten ayrıl</em> linkine tıklamalısınız.
 retireSubmitButton = Devam et
-retireCancelButton = Vazçgeçtim
 pageTitleRetirePage = Firefox Test Pilotu - Test Pilotu'nu kaldır
 retirePageProgressMessage = Kapatılıyor...
 retirePageHeadline = Bizimle uçtuğunuz için teşekkürler!
@@ -289,10 +269,9 @@ newsletterFooterSuccessBody = Daha önce Mozilla ile ilgili bir bültene aboneli
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Bu deney yalnızca İngilizce olarak kullanılabilir.
 localeWarningSubtitle = İsterseniz yine de etkinleştirebilirsiniz.
 
 

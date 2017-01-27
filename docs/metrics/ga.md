@@ -62,6 +62,7 @@ Here are the current events on the website as of this writing
 | Click Enable Experiment                                                        | ExperimentDetailsPage Interactions | Enable Experiment        | `{experiment title}`          |            
 | Click Disable Experiment                                                       | ExperimentDetailsPage Interactions | Disable Experiment       | `{experiment title}`          |            
 | Click Give Feedback for experiment                                             | ExperimentDetailsPage Interactions | Give Feedback            | `{experiment title}`          |
+| Click Give Feedback for experiment from PreFeedback                            | ExperimentDetailsPage Interactions | PreFeedback Confirm      | `{experiment title}`          |
 | Click upgrade notice                                                           | ExperimentDetailsPage Interactions | Upgrade Notice           | `{experiment title}`          |             
 | Click Take Survey after disable                                                | ExperimentDetailsPage Interactions | button click             | exit survey disabled          |            
 | Click Cancel on tour dialogue                                                  | ExperimentDetailsPage Interactions | button click             | cancel tour                   |            

@@ -55,6 +55,14 @@ landingInstalledButton = Vyberte si svoje funkcie
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Nainštalovať Test Pilot a
+oneClickInstallMajorCta = Aktivovať { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -104,7 +112,6 @@ emailValidationError = Zadajte, prosím, platnú e-mailovú adresu!
 emailOptInInput = 
   [html/placeholder] sem zadajte svoju e-mailovú adresu :)
 emailOptInButton = Prihlásiť sa na odber
-emailOptInSkip = Preskočiť
 emailOptInConfirmationTitle = E-mail bol odoslaný
 emailOptInSuccessMessage2 = Ďakujeme!
 emailOptInConfirmationClose = Prejsť na experimenty...
@@ -114,13 +121,12 @@ emailOptInConfirmationClose = Prejsť na experimenty...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Pripraviť na vzlet!
-experimentListPageSubHeader = Vyberte si funkcie, ktoré chcete vyskúšať. <br> Čoskoro taktiež pribudnú nové experimenty.
 experimentListEnabledTab = Aktivovaný
 experimentListJustLaunchedTab = Práve spustený
 experimentListJustUpdatedTab = Práve aktualizovaný
 experimentListEndingTomorrow = Zajtra končí
 experimentListEndingSoon = Čoskoro končí
+experimentsListCondensedHeader = Vyberte si experimenty!
 
 
 
@@ -137,29 +143,11 @@ experimentCardLearnMore = Ďalšie informácie
 [[ feedback ]]
 
 feedbackSubmitButton = Vyplniť krátky dotazník
-feedbackCancelButton = Zavrieť
 feedbackUninstallTitle = Ďakujeme!
 feedbackUninstallCopy = 
   | Vaša účasť v programe Firefox Test Pilot pre nás 
   | znamená veľmi veľa! Určite si pozrite aj naše ďalšie 
   | experimenty, ku ktorým sa čoskoro pridajú nové!
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Ešte sekundu...
-discussNotifyMessageAccountless = 
-  | <p>V duchu experimentovania využívame externé fórum.
-  | Ak budete chcieť na fóre diskutovať, budete si
-  | musieť založiť účet.</p>
-  | <p>Ak si nechcete zakladať žiadny účet, môžete 
-  | nám spätnú väzbu zaslať priamo cez Test Pilot.
-  | <br>
-  | (Naozaj si všetko čítame)</p>
-discussNotifySubmitButton = Prejsť na fórum
-discussNotifyCancelButton = Zrušiť
 
 
 
@@ -179,7 +167,7 @@ experimentPromoSubheader = Tvoríme funkcie novej generácie pre Firefox. Nainš
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = Experiment { $title } je aktivovaný!
@@ -196,12 +184,12 @@ measurements = Vaše súkromie
 experimentPrivacyNotice = Viac sa o zbieraní údajov pre { $title } dozviete tu.
 contributorsHeading = Tento experiment vám priniesli
 contributorsExtraLearnMore = Ďalšie informácie
-changelog = zoznam zmien
+changelog = Zoznam zmien
 tour = Prehliadka
 tourLink = prehliadka
 contribute = Zapojte sa
 bugReports = Hlásenie chýb
-discourse = Discourse
+discussExperiment = Diskutovať o { $title }
 tourOnboardingTitle = Experiment { $title } je aktivovaný!
 tourDoneButton = Hotovo
 userCountContainer = Experiment { $title } práve testuje <span>{ $installation_count }</span> ľudí!
@@ -225,7 +213,6 @@ retireDialogTitle = Odinštalovať Test Pilot?
 retireMessage = Ako si želáte. Všetky vaše aktívne testy budú ukončené, doplnok sa odinštaluje a údaje o vašom účte sa budú odstránené z našich serverov.
 retireEmailMessage = Ak chcete e-mailové správy od nás vypnúť, stačí ak kliknete na odkaz <em>unsubscribe</em> v ktoromkoľvek e-maile z projektu Test Pilot.
 retireSubmitButton = Pokračovať
-retireCancelButton = Zrušiť
 pageTitleRetirePage = Firefox Test Pilot - Odinštalovanie
 retirePageProgressMessage = Ukončovanie experimentov...
 retirePageHeadline = Vďaka za let!
@@ -291,10 +278,10 @@ newsletterFooterSuccessBody = Ak ste v minulosti nepotvrdili odber noviniek Mozi
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Tento experiment je k dispozícii iba v angličtine.
+localeUnavailableWarningTitle = Experiment nie je dostupný vo vašom jazyku ({ $locale_code }).
 localeWarningSubtitle = To vám však nebráni ho aktivovať.
 
 

@@ -55,6 +55,14 @@ landingInstalledButton = Kies jo funksjes
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Test Pilot ynstallearje &amp;
+oneClickInstallMajorCta = { $title } ynskeakelje
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -104,7 +112,6 @@ emailValidationError = Brûk in jildich e-mailadres!
 emailOptInInput = 
   [html/placeholder] e-mailadres ynfiere :)
 emailOptInButton = Registrearje
-emailOptInSkip = Oerslaan
 emailOptInConfirmationTitle = E-mailberjocht ferstjoerd
 emailOptInSuccessMessage2 = Tige tank!
 emailOptInConfirmationClose = Troch nei de eksperiminten…
@@ -114,13 +121,12 @@ emailOptInConfirmationClose = Troch nei de eksperiminten…
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Ree!
-experimentListPageSubHeader = Kies de funksjes dy't jo probearje wolle.<br> Kom gau wer werom foar mear eksperiminten.
 experimentListEnabledTab = Ynskeakele
 experimentListJustLaunchedTab = Krekt lansearre
 experimentListJustUpdatedTab = Krekt bywurke
 experimentListEndingTomorrow = Einiget moarn
 experimentListEndingSoon = Einiget ynkoarten
+experimentsListCondensedHeader = Kies jo eksperiminten!
 
 
 
@@ -137,19 +143,8 @@ experimentCardLearnMore = Mear ynfo
 [[ feedback ]]
 
 feedbackSubmitButton = Doch in flugge enkête
-feedbackCancelButton = Slute
 feedbackUninstallTitle = Tige tank!
 feedbackUninstallCopy = Jo dielnimming oan Firefox Test Pilot betsjut in protte! Sjoch ris nei ús oare eksperiminten en kom gau werom foar mear!
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = In amerijke…
-discussNotifyMessageAccountless = <p>Alhiel yn 'e geast fan eksperiminten, brûke wy in ekstern foarum. Jo moatte in account oanmeitsje as jo dielnimme wolle yn de foarums.</p>
-discussNotifySubmitButton = Nei it foarum gean
-discussNotifyCancelButton = Annulearje
 
 
 
@@ -169,7 +164,7 @@ experimentPromoSubheader = Wy ûntwikkelje foar Firefox de funksjes fan de folgj
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } is ynskeakele.
@@ -182,6 +177,7 @@ disableExperiment = { $title } útskeakelje
 disableExperimentTransition = Utskeakelje…
 enableExperiment = { $title } ynskeakelje
 enableExperimentTransition = Ynskeakelje…
+experimentMeasurementIntro = Neist de <a>gegevens</a>, dy't alle Test-Pilot-eksperiminten sammelje, moatte jo it folgjende witte oer it gebrûk fan { $experimentTitle }:
 measurements = Jo privacy
 experimentPrivacyNotice = Jo kinne hjir mear leare oer de gegevenssamling foar { $title }.
 contributorsHeading = Oanbean troch
@@ -191,7 +187,7 @@ tour = Toer
 tourLink = toer
 contribute = Bydrage
 bugReports = Bugrapporten
-discourse = Discourse
+discussExperiment = Oer { $title } diskusjearje
 tourOnboardingTitle = { $title } ynskeakele!
 tourDoneButton = Dien
 userCountContainer = <span>{ $installation_count }</span> minsken brûke op dit stuit { $title }!
@@ -215,7 +211,6 @@ retireDialogTitle = Test Pilot de-ynstallearje?
 retireMessage = Sa as jo winske. Dit sil elke aktive test útskeakelje, de add-on de-ynstallearje en jo account fuortsmite fan ús servers.
 retireEmailMessage = Klik ienfâldichwei op de keppeling <em>ôfmelde</em> yn in e-mail fan Test Pilot, om gjin e-mailfernijingen mear te ûntfangen.
 retireSubmitButton = Fierdergean
-retireCancelButton = Annulearje
 pageTitleRetirePage = Firefox Test Pilot - Test Pilot de-ynstallearje
 retirePageProgressMessage = Ofslute…
 retirePageHeadline = Tank foar it fleanen!
@@ -281,10 +276,10 @@ newsletterFooterSuccessBody = As jo yn it ferline noch gjin oanmelding befêstig
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Dit eksperimint is allinnich yn it Ingelsk beskikber.
+localeUnavailableWarningTitle = Dit eksperimint wurdt net stipe yn jo taal ({ $locale_code }).
 localeWarningSubtitle = Jo kinne it dochs ynskeakelje as jo wolle.
 
 

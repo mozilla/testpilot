@@ -104,7 +104,6 @@ emailValidationError = ¡Usa una direición de corréu válida, por favor!
 emailOptInInput = 
   [html/placeholder] equí va'l corréu :)
 emailOptInButton = Rexistráime
-emailOptInSkip = Saltar
 emailOptInConfirmationTitle = Unvióse'l corréu
 emailOptInSuccessMessage2 = ¡Gracies!
 
@@ -113,8 +112,6 @@ emailOptInSuccessMessage2 = ¡Gracies!
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = ¡Preparáu pa despegar!
-experimentListPageSubHeader = Escueyi les carauterístiques que quies probar.<br>Volvi equí ceo pa más esperimentos.
 experimentListEnabledTab = Habilitóse
 experimentListJustLaunchedTab = Ta acabante llanzase
 experimentListJustUpdatedTab = Ta acabante d'anovase
@@ -136,29 +133,11 @@ experimentCardLearnMore = Deprendi más
 [[ feedback ]]
 
 feedbackSubmitButton = Facer encuesta rápida
-feedbackCancelButton = Zarrar
 feedbackUninstallTitle = ¡Gracies!
 feedbackUninstallCopy = 
   | ¡La to participación en Test Pilot significa
   | muncho! Comprueba los otros esperimientos
   | de nueso y tate informáu de lo que vien.
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Un segundín...
-discussNotifyMessageAccountless = 
-  | <p>Nel espíritu de la esperimentación, tamos usando un serviciu esternu de foros.
-  | Precisarás crear una cuenta si desees
-  | participar nos foros.</p>
-  | <p>Si nun quies creala, siempres pues
-  | dexar feedback pente Test Pilot.
-  | <br>
-  | (Lleemos los comentarios, daveres)</p>
-discussNotifySubmitButton = Lleváime al foru
-discussNotifyCancelButton = Encaboxar
 
 
 
@@ -170,7 +149,7 @@ experimentPromoSubheader = Tamos construyendo les carauterístiques de nueva xen
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } ta habilitáu.
@@ -192,7 +171,6 @@ tour = Percorríu
 tourLink = Llanzar percorríu
 contribute = Collaborar
 bugReports = Informes de fallos
-discourse = Discourse
 tourOnboardingTitle = ¡Habilitóse { $title }!
 tourDoneButton = Fecho
 userCountContainer = ¡Agora mesmo hai <span>{ $installation_count }</span> persones probando { $title }!
@@ -216,7 +194,6 @@ retireDialogTitle = ¿Desinstalar Test Pilot?
 retireMessage = Como desees. Esto deshabilitará cualesquier prueba activa, desinstalará l'add-on y desaniciará la to información de cuenta de los nuesos sirvidores.
 retireEmailMessage = Pa dexar de recibir anovamientos per corréu, namái primi l'enllaz de <em>desoscribise</em> en cualesquier corréu de Test Pilot.
 retireSubmitButton = Siguir
-retireCancelButton = Encaboxar
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar Test Pilot
 retirePageProgressMessage = Apagando...
 retirePageHeadline = ¡Gracies por volar!
@@ -282,10 +259,9 @@ newsletterFooterSuccessBody = Si enantes nun confirmesti una soscripción al bol
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Esti esperimentu namái ta disponible n'inglés.
 localeWarningSubtitle = Entá pues habilitalu si te presta.
 
 

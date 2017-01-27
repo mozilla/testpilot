@@ -37,6 +37,7 @@ menuRetire = Odstrani Test Pilot
 # The splash on the homepage.
 [[ landing ]]
 
+landingIntroLead = Pokukajte v prihodnost …
 landingIntroOne = Preskusite nove možnosti.
 landingIntroTwo = Pošljite nam povratne informacije.
 landingIntroThree = Pomagajte ustvarjati Firefox.
@@ -103,7 +104,6 @@ emailValidationError = Vnesite veljaven e-poštni naslov!
 emailOptInInput = 
   [html/placeholder] sem vpišite e-poštni naslov :)
 emailOptInButton = Naroči me
-emailOptInSkip = Preskoči
 emailOptInConfirmationTitle = E-poštno sporočilo poslano
 emailOptInSuccessMessage2 = Hvala!
 emailOptInConfirmationClose = Naprej na poskuse ...
@@ -113,8 +113,6 @@ emailOptInConfirmationClose = Naprej na poskuse ...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Pripravljeni na vzlet!
-experimentListPageSubHeader = Izberite možnosti, ki jih želite preskusiti. <br> Več poskusov bo dodanih kmalu.
 experimentListEnabledTab = Omogočen
 experimentListJustLaunchedTab = Pravkar začet
 experimentListJustUpdatedTab = Pravkar posodobljen
@@ -136,16 +134,7 @@ experimentCardLearnMore = Več o tem
 [[ feedback ]]
 
 feedbackSubmitButton = Izpolnite kratek vprašalnik
-feedbackCancelButton = Zapri
 feedbackUninstallTitle = Hvala!
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Samo sekundo ...
-discussNotifyCancelButton = Prekliči
 
 
 
@@ -165,7 +154,7 @@ experimentPromoSubheader = Ustvarjamo funkcije za Firefox nove generacije. Names
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } je omogočen.
@@ -187,7 +176,6 @@ tour = Predstavitev
 tourLink = Začnite predstavitev
 contribute = Prispevajte
 bugReports = Poročila o napakah
-discourse = Discourse
 tourOnboardingTitle = { $title } omogočen!
 tourDoneButton = Končano
 userCountContainer = { $title } v tem trenutku preskuša <span>{ $installation_count }</span> ljudi!
@@ -211,7 +199,6 @@ retireDialogTitle = Želite odstraniti Test Pilot?
 retireMessage = Kot želite. S tem boste onemogočili vse aktivne poskuse, odstranili dodatek in izbrisali podatke računa z naših strežnikov.
 retireEmailMessage = Za odjavo od e-poštnih novic kliknite povezavo <em>Odjava</em> v kateremkoli od sporočil programa Test Pilot.
 retireSubmitButton = Nadaljuj
-retireCancelButton = Prekliči
 pageTitleRetirePage = Firefox Test Pilot - odstranjevanje
 retirePageProgressMessage = Zaustavljanje ...
 retirePageHeadline = Hvala, ker ste leteli z nami!
@@ -275,10 +262,9 @@ newsletterFooterSuccessHeader = Hvala!
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Ta poskus je na voljo samo v angleščini.
 localeWarningSubtitle = Če želite, ga lahko kljub temu omogočite.
 
 

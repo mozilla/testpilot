@@ -199,7 +199,6 @@ describe('app/components/ExperimentRowCard', () => {
     const link = subject.find('Link');
     expect(link).to.not.be.a('null');
     expect(link.props()).to.contain.all({
-      'data-hook': 'show-detail',
       to: `/experiments/${mockExperiment.slug}`,
       className: 'experiment-summary'
     });

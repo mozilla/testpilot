@@ -16,22 +16,20 @@ contribute_url: 'https://github.com/mozilla/activity-stream'
 bug_report_url: 'https://github.com/mozilla/activity-stream/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/activity-stream'
 privacy_notice_url: 'https://github.com/mozilla/activity-stream/blob/master/data_dictionary.md'
-measurements: >
-  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot
-    experiments, here are the key things you should know about what is happening
-    when you use Activity Stream:</p>
-  <ul>
-    <li>We collect basic usage data regarding how you interact with experimental
-      new tab and timeline pages, such as the types of elements that you click
-      and their position on the page.</li>
-    <li>We also collect basic information about your browser profile that affect
-      Activity Stream, such as the number of bookmarks and history items.</li>
-    <li>To provide Activity Stream, we fetch metadata about websites you have
-      visited, such as images and icons, using a service called <a
-      href="http://embed.ly/" target="_blank">Embedly</a>. We send these requests
-      to Embedly through Mozilla's servers, so they will not be associated with
-      you.</li>
-  </ul>
+measurements:
+  - >
+    We collect basic usage data regarding how you interact with experimental
+    new tab and timeline pages, such as the types of elements that you click
+    and their position on the page.
+  - >
+    We also collect basic information about your browser profile that affect
+    Activity Stream, such as the number of bookmarks and history items.
+  - >
+    To provide Activity Stream, we fetch metadata about websites you have
+    visited, such as images and icons, using a service called <a
+    href="http://embed.ly/" target="_blank">Embedly</a>. We send these requests
+    to Embedly through Mozilla's servers, so they will not be associated with
+    you.
 xpi_url: 'https://testpilot.firefox.com/files/activitystream/latest'
 addon_id: '@activity-streams'
 gradient_start: '#0996F8'
@@ -52,15 +50,18 @@ tour_steps:
   -
     image: /static/images/experiments/activity-stream/experiments_experimenttourstep/b/d/bd3d603ab46949ccb2f98c77f16d9be3_image_1462827230_0789.jpg
     copy: >
-      <p>Find your top sites, recent history, and bookmarks when you open a new tab.</p>
+      Find your top sites, recent history, and bookmarks when you open a new
+      tab.
   -
     image: /static/images/experiments/activity-stream/experiments_experimenttourstep/5/7/57b8ba146994300a54ba1528efc30bf5_image_1462827230_0948.jpg
     copy: >
-      <p>Visit the new timeline view to visually browse all your history and bookmarks.</p>
+      Visit the new timeline view to visually browse all your history and
+      bookmarks.
   -
     image: /static/images/experiments/shared/tour-final.jpg
     copy: >
-      <p>You can always give us feedback or disable Activity Stream from Test Pilot.</p>
+      You can always give us feedback or disable Activity Stream from Test
+      Pilot.
 notifications: []
 contributors:
   -
@@ -117,6 +118,6 @@ contributors:
     avatar: /static/images/experiments/activity-stream/avatars/bryan-bell.jpg
 installation_count: 46732
 created: '2016-03-11T21:05:59.363520Z'
-locale_blocklist: 
+locale_blocklist:
   - 'de'
 order: 4

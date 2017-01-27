@@ -104,7 +104,6 @@ emailValidationError = Будь ласка, введіть дійсну адре
 emailOptInInput = 
   [html/placeholder] адреса ел. пошти :)
 emailOptInButton = Підписатись
-emailOptInSkip = Пропустити
 emailOptInConfirmationTitle = Повідомлення надіслано
 emailOptInSuccessMessage2 = Дякуємо!
 emailOptInConfirmationClose = Вперед до експериментів...
@@ -114,13 +113,12 @@ emailOptInConfirmationClose = Вперед до експериментів...
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Готові до запуску!
-experimentListPageSubHeader = Оберіть функції, які ви хочете спробувати. <br> Повертайтеся швидше для нових експериментів.
 experimentListEnabledTab = Увімкнено
 experimentListJustLaunchedTab = Щойно запущено
 experimentListJustUpdatedTab = Щойно оновлено
 experimentListEndingTomorrow = Закінчується завтра
 experimentListEndingSoon = Скоро закінчується
+experimentsListCondensedHeader = Оберіть свої експерименти!
 
 
 
@@ -137,29 +135,11 @@ experimentCardLearnMore = Докладніше
 [[ feedback ]]
 
 feedbackSubmitButton = Взяти участь в невеличкому опитуванні
-feedbackCancelButton = Закрити
 feedbackUninstallTitle = Дякуємо!
 feedbackUninstallCopy = 
   | Ваша участь у Firefox Test Pilot багато
   | значить! Будь ласка, перегляньте наші інші експерименти,
   | та слідкуйте за оновленнями, бо скоро буде більше!
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Одну секундочку...
-discussNotifyMessageAccountless = 
-  | <p>В дусі експерименту ми використовуємо зовнішній сервіс форуму.
-  | Вам потрібно буде створити обліковий запис, якщо ви
-  | бажаєте брати участь на форумах.</p>
-  | <p>Якщо ви не хочете створювати обліковий запис, ви можете
-  | завжди залишити відгук через Test Pilot.
-  | <br>
-  | (Ми справді це читаємо)</p>
-discussNotifySubmitButton = Перейти до форуму
-discussNotifyCancelButton = Скасувати
 
 
 
@@ -179,7 +159,7 @@ experimentPromoSubheader = Ми будуємо функції наступног
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } увімкнено.
@@ -201,7 +181,7 @@ tour = Знайомство
 tourLink = тур
 contribute = Зробити внесок
 bugReports = Повідомлення про помилки
-discourse = Обговорення
+discussExperiment = Обговорити { $title }
 tourOnboardingTitle = { $title } увімкнено!
 tourDoneButton = Готово
 userCountContainer = <span>{ $installation_count }</span> людей пробують { $title } прямо зараз!
@@ -225,7 +205,6 @@ retireDialogTitle = Видалити Test Pilot?
 retireMessage = Як забажаєте. Це вимкне будь які активні тести, видалить додаток та вилучить вашу інформацію про обліковий запис з наших серверів.
 retireEmailMessage = Аби відписатися від оновлень на електронну пошту, просто натисніть посилання <em>відписатися</em> у будь-якому повідомленні Test Pilot.
 retireSubmitButton = Продовжити
-retireCancelButton = Скасувати
 pageTitleRetirePage = Firefox Test Pilot - Видалити Test Pilot
 retirePageProgressMessage = Вимкнення...
 retirePageHeadline = Дякуємо за політ!
@@ -291,10 +270,9 @@ newsletterFooterSuccessBody = Якщо ви досі не підтвердили
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Цей експеримент доступний лише англійською мовою.
 localeWarningSubtitle = Ви все одно можете увімкнути його, якщо хочете.
 
 

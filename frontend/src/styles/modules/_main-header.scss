@@ -1,5 +1,5 @@
 #main-header {
-  @include flex-container(row, space-between, center);
+  @include flex-container(row, space-between, top);
 
   h1 {
     margin: $grid-unit * .75 0 $grid-unit * .75 - $grid-unit * .25;

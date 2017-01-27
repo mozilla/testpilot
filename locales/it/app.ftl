@@ -55,6 +55,14 @@ landingInstalledButton = Scegli i tuoi esperimenti
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Installa Test Pilot e
+oneClickInstallMajorCta = Attiva { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -104,7 +112,6 @@ emailValidationError = Inserisci un indirizzo email valido.
 emailOptInInput = 
   [html/placeholder] Inserisci qui la tua email :)
 emailOptInButton = Iscrivimi
-emailOptInSkip = Ignora
 emailOptInConfirmationTitle = Email inviata
 emailOptInSuccessMessage2 = Grazie!
 emailOptInConfirmationClose = A proposito degli esperimenti…
@@ -114,13 +121,12 @@ emailOptInConfirmationClose = A proposito degli esperimenti…
 # A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListPageHeader = Pronto per il decollo
-experimentListPageSubHeader = Scegli la funzione che vuoi provare.<br> Torna a trovarci per scoprire nuovi esperimenti.
 experimentListEnabledTab = Attivo
 experimentListJustLaunchedTab = Appena lanciato
 experimentListJustUpdatedTab = Appena aggiornato
 experimentListEndingTomorrow = Si conclude domani
 experimentListEndingSoon = Si concluderà a breve
+experimentsListCondensedHeader = Scegli i tuoi esperimenti
 
 
 
@@ -137,19 +143,8 @@ experimentCardLearnMore = Ulteriori informazioni
 [[ feedback ]]
 
 feedbackSubmitButton = Rispondi a un breve sondaggio
-feedbackCancelButton = Chiudi
 feedbackUninstallTitle = Grazie!
 feedbackUninstallCopy = La tua partecipazione a Test Pilot è molto importante per Mozilla. Dai un’occhiata agli altri esperimenti e rimani in contatto per tutte le novità in arrivo.
-
-
-
-# A modal prompt telling a user that they are about to go to an external forum for discussion.
-[[ discussNotify ]]
-
-discussNotifyTitle = Solo un attimo…
-discussNotifyMessageAccountless = <p>Nello spirito di sperimentazione che caratterizza il progetto, utilizziamo un servizio di forum esterno. Dovrai creare un account per partecipare alle discussioni.</p> <p>Se non vuoi creare un account, puoi inviarci i tuoi commenti direttamente attraverso Test Pilot.<br>Ti garantiamo che leggiamo tutti i messaggi.</p>
-discussNotifySubmitButton = Apri il forum
-discussNotifyCancelButton = Annulla
 
 
 
@@ -169,7 +164,7 @@ experimentPromoSubheader = Stiamo realizzando funzioni di ultima generazione per
 
 
 
-# The experiment detail page. 
+# The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } è attivo.
@@ -182,6 +177,7 @@ disableExperiment = Disattiva { $title }
 disableExperimentTransition = Disattivazione in corso…
 enableExperiment = Attiva { $title }
 enableExperimentTransition = Attivazione in corso…
+experimentMeasurementIntro = In aggiunta ai <a>dati</a> raccolti in tutti gli esperimenti Test Pilot, ecco alcune informazioni utili su quello che accade quando utilizzi { $experimentTitle }:
 measurements = La tua privacy
 experimentPrivacyNotice = Qui puoi scoprire ulteriori informazioni sui dati raccolti in { $title }.
 contributorsHeading = Realizzato da
@@ -191,7 +187,7 @@ tour = Panoramica
 tourLink = Panoramica
 contribute = Collabora
 bugReports = Segnalazione bug
-discourse = Discourse
+discussExperiment = Discuti di { $title }
 tourOnboardingTitle = { $title } attivato.
 tourDoneButton = Fatto
 userCountContainer = In questo momento <span>{ $installation_count }</span> persone stanno provando { $title }.
@@ -215,7 +211,6 @@ retireDialogTitle = Disinstallare Test Pilot?
 retireMessage = Come desideri. Gli esperimenti attivi verranno disattivati, il componente aggiuntivo sarà rimosso e le informazioni sul tuo account verranno eliminate dal server.
 retireEmailMessage = Per non ricevere più aggiornamenti via email fai clic sul link <em>annulla iscrizione</em> presente in tutte le email inviate da Test Pilot.
 retireSubmitButton = Continua
-retireCancelButton = Annulla
 pageTitleRetirePage = Firefox Test Pilot - Disinstallazione di Test Pilot
 retirePageProgressMessage = Spegnimento motori…
 retirePageHeadline = Ti ringraziamo per aver volato con noi!
@@ -281,10 +276,10 @@ newsletterFooterSuccessBody = Se non hai mai confermato prima d’ora l’iscriz
 
 
 
-# A warning shown to users viewing an experiment that is only available in English.
+# A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeWarningTitle = Questo esperimento è disponibile solo in inglese.
+localeUnavailableWarningTitle = Questo esperimento non è disponibile nella tua lingua ({ $locale_code }).
 localeWarningSubtitle = Se lo desideri è comunque possibile attivarlo.
 
 

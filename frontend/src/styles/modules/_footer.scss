@@ -28,10 +28,16 @@
 .legal-links {
   @include respond-to('not-small') {
     @include flex-container(row, flex-start, flex-end);
+
+    .boilerplate {
+      position: relative;
+      top: 5px;
+    }
   }
 
   @include respond-to('small') {
     @include flex-container(column, flex-start, flex-start);
+
   }
 
   font-size: $font-unit;

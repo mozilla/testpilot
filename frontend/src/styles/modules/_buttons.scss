@@ -24,7 +24,7 @@
   }
 
   &.outline {
-    background: none;
+    background-color: none;
     border-color: $white;
     color: $white;
     opacity: .6;
@@ -32,7 +32,7 @@
 
     &:hover,
     &:focus {
-      background: $transparent-white-1;
+      background-color: $transparent-white-1;
       opacity: .8;
     }
 
@@ -40,7 +40,7 @@
     &.active,
     &.active:hover,
     &.active:focus {
-      background: $transparent-white-1;
+      background-color: $transparent-white-1;
       opacity: 1;
     }
   }
@@ -61,6 +61,43 @@
       &:active {
         background: $primary-darker;
         border: 1px solid $primary-darkest;
+      }
+    }
+
+    &.install {
+
+      @include respond-to('not-small') {
+        font-size: 27px;
+        height: 82px;
+        min-width: 320px;
+      }
+
+      @include respond-to('small') {
+        font-size: 21px;
+        height: 72px;
+      }
+
+      border-radius: $large-border-radius;
+      box-shadow: 0 2px 0 $transparent-black-2, 0 -2px 0 $transparent-black-2 inset;
+      font-weight: 500;
+      text-shadow: 0 2px 0 $transparent-black-1;
+
+    }
+
+    .one-click-text {
+      @include respond-to('not-small') {
+        line-height: 30px;
+      }
+
+      @include respond-to('small') {
+        line-height: 24px;
+      }
+
+      .minor-cta {
+        display: block;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 24px;
       }
     }
   }
@@ -114,7 +151,7 @@
     height: 52px;
     line-height: 52px;
     min-width: 300px;
-    padding: 0 20px;
+    padding: 0 10px;
   }
 
   &.extra-large {
