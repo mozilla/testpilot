@@ -180,6 +180,7 @@ disableExperiment = { $title } kikapcsolása
 disableExperimentTransition = Kikapcsolás…
 enableExperiment = { $title } bekapcsolása
 enableExperimentTransition = Bekapcsolás…
+experimentMeasurementIntro = Az összes Tesztpilóta kísérlet során gyűjtött <a>adatok</a> mellett, ezekről a kulcsfontosságú dolgokról érdemes tudnia, ha a(z) { $experimentTitle } kísérletet használja:
 measurements = Magánszféra
 experimentPrivacyNotice = Itt többet tudhat meg a(z) { $title } adatgyűjtéséről.
 contributorsHeading = Nekik köszönhetően:
