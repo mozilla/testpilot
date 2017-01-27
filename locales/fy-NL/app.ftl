@@ -55,6 +55,14 @@ landingInstalledButton = Kies jo funksjes
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Test Pilot ynstallearje &amp;
+oneClickInstallMajorCta = { $title } ynskeakelje
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -169,6 +177,7 @@ disableExperiment = { $title } útskeakelje
 disableExperimentTransition = Utskeakelje…
 enableExperiment = { $title } ynskeakelje
 enableExperimentTransition = Ynskeakelje…
+experimentMeasurementIntro = Neist de <a>gegevens</a>, dy't alle Test-Pilot-eksperiminten sammelje, moatte jo it folgjende witte oer it gebrûk fan { $experimentTitle }:
 measurements = Jo privacy
 experimentPrivacyNotice = Jo kinne hjir mear leare oer de gegevenssamling foar { $title }.
 contributorsHeading = Oanbean troch
@@ -270,6 +279,7 @@ newsletterFooterSuccessBody = As jo yn it ferline noch gjin oanmelding befêstig
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Dit eksperimint wurdt net stipe yn jo taal ({ $locale_code }).
 localeWarningSubtitle = Jo kinne it dochs ynskeakelje as jo wolle.
 
 
