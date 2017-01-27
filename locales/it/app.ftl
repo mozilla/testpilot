@@ -177,6 +177,7 @@ disableExperiment = Disattiva { $title }
 disableExperimentTransition = Disattivazione in corso…
 enableExperiment = Attiva { $title }
 enableExperimentTransition = Attivazione in corso…
+experimentMeasurementIntro = In aggiunta ai <a>dati</a> raccolti in tutti gli esperimenti Test Pilot, ecco alcune informazioni utili su quello che accade quando utilizzi { $experimentTitle }:
 measurements = La tua privacy
 experimentPrivacyNotice = Qui puoi scoprire ulteriori informazioni sui dati raccolti in { $title }.
 contributorsHeading = Realizzato da
