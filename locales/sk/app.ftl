@@ -55,6 +55,14 @@ landingInstalledButton = Vyberte si svoje funkcie
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Nainštalovať Test Pilot a
+oneClickInstallMajorCta = Aktivovať { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -176,7 +184,7 @@ measurements = Vaše súkromie
 experimentPrivacyNotice = Viac sa o zbieraní údajov pre { $title } dozviete tu.
 contributorsHeading = Tento experiment vám priniesli
 contributorsExtraLearnMore = Ďalšie informácie
-changelog = zoznam zmien
+changelog = Zoznam zmien
 tour = Prehliadka
 tourLink = prehliadka
 contribute = Zapojte sa
@@ -273,6 +281,7 @@ newsletterFooterSuccessBody = Ak ste v minulosti nepotvrdili odber noviniek Mozi
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Experiment nie je dostupný vo vašom jazyku ({ $locale_code }).
 localeWarningSubtitle = To vám však nebráni ho aktivovať.
 
 
