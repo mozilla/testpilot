@@ -55,6 +55,14 @@ landingInstalledButton = Fren timahilin inek
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Sebded Test Pilot&amp;
+oneClickInstallMajorCta = Rmed { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -172,6 +180,7 @@ disableExperiment = Kkes armed { $title }
 disableExperimentTransition = Tuksa n urmed...
 enableExperiment = Rmed { $title }
 enableExperimentTransition = Armed...
+experimentMeasurementIntro = Ar tama n <a>isefka</a>i d-yettwaleqḍen sɣur akk tirmitin n Test Pilot, hatent aya tsura i yessefk ad tissineḍ ɣef ayen iḍerrun ticki tseqdaceḍ { $experimentTitle }:
 measurements = Tabaḍnit-inek
 experimentPrivacyNotice = Tzemreḍ ad tisineḍ ugar ɣef ulqwaḍ n isefka i { $title } dagi.
 contributorsHeading = Iwwi-yak-tt-id 
@@ -273,6 +282,7 @@ newsletterFooterSuccessBody = Ma yella ur tsentmeḍ ara ajerred inek ar tebratt
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Tarmit-agi ur tettusefrak ara s tutlayt inek ({ $locale_code }).
 localeWarningSubtitle = Tzemreḍ ad tremdeḍ akka tura ma yella tebɣiḍ.
 
 
