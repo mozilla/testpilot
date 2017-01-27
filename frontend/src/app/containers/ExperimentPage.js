@@ -215,7 +215,7 @@ export class ExperimentDetail extends React.Component {
             showPreFeedbackDialog, showEolDialog,
             stickyHeaderSiblingHeight } = this.state;
 
-    const { title, contribute_url, bug_report_url, discourse_url,
+    const { title, contribute_url, bug_report_url, discourse_url, privacy_preamble,
             introduction, measurements, privacy_notice_url, changelog_url,
             thumbnail, subtitle, survey_url, contributors, contributors_extra, contributors_extra_url, details,
             min_release, graduation_report } = experiment;
@@ -385,7 +385,19 @@ export class ExperimentDetail extends React.Component {
                         {measurements && <section
                               className={classnames('measurements', { highlight: highlightMeasurementPanel })}>
                           <h3 data-l10n-id="measurements">Your privacy</h3>
-                          <div data-l10n-id={this.l10nId('measurements')} className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
+                          <div data-hook="measurements-html" className="measurement">
+                            {privacy_preamble && <p data-l10n-id={this.l10nId('privacy_preamble')}>{privacy_preamble}</p>}
+                            <p data-l10n-id="experimentMeasurementIntro"
+                               data-l10n-args={JSON.stringify({ experimentTitle: experiment.title })}>
+                              In addition to the <a href="/privacy">data</a> collected by all Test Pilot experiments, here are the
+                              key things you should know about what is happening when you use {experiment.title}:
+                            </p>
+                            <ul>
+                              {measurements.map((note, idx) => (
+                                <li data-l10n-id={this.l10nId(['measurements', idx])}>{note}</li>
+                              ))}
+                            </ul>
+                          </div>
                           {privacy_notice_url && <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-l10n-args={JSON.stringify({ title })} href={privacy_notice_url}><span></span></a>}
                         </section>}
                       </div>
@@ -419,7 +431,19 @@ export class ExperimentDetail extends React.Component {
                     {measurements && <section
                           className={classnames('measurements', { highlight: highlightMeasurementPanel })}>
                       <h3 data-l10n-id="measurements">Your privacy</h3>
-                      <div data-l10n-id={this.l10nId('measurements')} className="measurement" dangerouslySetInnerHTML={createMarkup(measurements)}></div>
+                      <div data-hook="measurements-html" className="measurement">
+                        {privacy_preamble && <p data-l10n-id={this.l10nId('privacy_preamble')}>{privacy_preamble}</p>}
+                        <p data-l10n-id="experimentMeasurementIntro"
+                           data-l10n-args={JSON.stringify({ experimentTitle: experiment.title })}>
+                          In addition to the <a href="/privacy">data</a> collected by all Test Pilot experiments, here are the
+                          key things you should know about what is happening when you use {experiment.title}:
+                        </p>
+                        <ul>
+                          {measurements.map((note, idx) => (
+                            <li data-l10n-id={this.l10nId(['measurements', idx])}>{note}</li>
+                          ))}
+                        </ul>
+                      </div>
                       {privacy_notice_url && <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-l10n-args={JSON.stringify({ title })} href={privacy_notice_url}><span data-hook="title"></span></a>}
                     </section>}
                   </div>}

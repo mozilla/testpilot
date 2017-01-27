@@ -48,7 +48,9 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       subtitle_l10nsuffix: 'foo',
       thumbnail: '/thumbnail.png',
       introduction: '<p class="test-introduction">Introduction!</p>',
-      measurements: '<p class="test-measurements">Measurements</p>',
+      measurements: [
+        'Measurement 0'
+      ],
       graduation_report: '<p class="test-graduation">Off to college!</p>',
       description: 'Description',
       pre_feedback_copy: null,
@@ -140,7 +142,8 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
 
     // Fields only available when the add-on is installed.
     subject.setProps({ hasAddon: true });
-    expect(findByL10nID('testingMeasurements')).to.have.property('length', 2);
+    // The measurements section is rendered twice, for responsiveness reasons.
+    expect(findByL10nID('testingMeasurements0')).to.have.property('length', 2);
     expect(findByL10nID('testingDescription')).to.have.property('length', 1);
   });
 

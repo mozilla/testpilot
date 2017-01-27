@@ -16,19 +16,17 @@ contribute_url: 'https://github.com/bwinton/TabCenter#readme'
 bug_report_url: 'https://github.com/bwinton/TabCenter/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/tab-center'
 privacy_notice_url: 'https://github.com/bwinton/TabCenter/blob/master/docs/metrics.md'
-measurements: >
-  <p>In addition to the <a href="/privacy">data</a> collected by all Test Pilot
-    experiments, here are the key things you should know about what is happening
-    when you use Tab Center:</p>
-  <ul>
-    <li>We collect usage data regarding how you interact with the Tab Center,
-      such as how often you maximize or pin Tab Center.</li>
-    <li>We also collect information about the way you use tabs, such as the
-      number of tabs you keep open at a time, and length of time you keep tabs
-      open.</li>
-    <li>Tab Center does not collect any information about sites you visit or the
-      content of tabs.</li>
-  </ul>
+measurements:
+  - >
+    We collect usage data regarding how you interact with the Tab Center,
+    such as how often you maximize or pin Tab Center.
+  - >
+    We also collect information about the way you use tabs, such as the
+    number of tabs you keep open at a time, and length of time you keep tabs
+    open.
+  - >
+    Tab Center does not collect any information about sites you visit or the
+    content of tabs.
 xpi_url: 'https://testpilot.firefox.com/files/tabcentertest1@mozilla.com/latest'
 addon_id: tabcentertest1@mozilla.com
 gradient_start: '#F25820'
