@@ -180,6 +180,7 @@ disableExperiment = Desabilitar { $title }
 disableExperimentTransition = Desabilitando…
 enableExperiment = Habilitar { $title }
 enableExperimentTransition = Habilitando…
+experimentMeasurementIntro = Além dos <a>dados</a> coletados por todas as experiências do Test Pilot, aqui estão as principais coisas que você deve saber sobre o que acontece quando você usar o { $experimentTitle }:
 measurements = Sua privacidade
 experimentPrivacyNotice = Você pode saber mais sobre a coleção de dados de { $title } aqui.
 contributorsHeading = Oferecido por
@@ -281,6 +282,7 @@ newsletterFooterSuccessBody = Se ainda não confirmou a inscrição no boletim d
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Esta experiência não está disponível no seu idioma (⁨{ $locale_code }⁩).
 localeWarningSubtitle = Você ainda pode habilitá-lo se quiser.
 
 
