@@ -55,6 +55,14 @@ landingInstalledButton = Zgjidhni veçoritë tuaja
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Instalo Pilotin e Testeve &amp;
+oneClickInstallMajorCta = Aktivizo { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -172,6 +180,7 @@ disableExperiment = Çaktivizoje { $title }
 disableExperimentTransition = Po çaktivizohet…
 enableExperiment = Aktivizoje { $title }
 enableExperimentTransition = Po aktivizohet…
+experimentMeasurementIntro = Përveç <a>të dhënave</a> të mbledhura nga krejt eksperimentet Pilot Testesh, ja gjërat kyçe që duhet të dini mbi ç’ndodh kur përdorni { $experimentTitle }:
 measurements = Privatësia juaj
 experimentPrivacyNotice = Më tepër rreth grumbullimit të të dhënave për { $title } mund të mësoni këtu.
 contributorsHeading = Sjellë për ju nga
@@ -273,6 +282,7 @@ newsletterFooterSuccessBody = Nëse s’e keni ripohuar më parë pajtimin te nj
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Ky eksperiment nuk mbulohet për gjuhën tuaj ({ $locale_code }).
 localeWarningSubtitle = Mundeni ta aktivizoni, nëse doni.
 
 
