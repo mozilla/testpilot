@@ -703,9 +703,9 @@ export class ExperimentDetail extends React.Component {
           if (this.props.hasAddon) {
             clearInterval(interval);
             resolve();
-          } else if (i > 100) {
+          } else if (i > 2000) {
             clearInterval(interval);
-            reject(new Error('window.navigator.testpilotAddon still undefined after 10 seconds'));
+            reject(new Error('hasAddon still false after 200 seconds'));
           }
         }, 100);
       });
