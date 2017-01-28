@@ -177,6 +177,7 @@ disableExperiment = { $title } znjemóžniś
 disableExperimentTransition = Znjemóžnja se...
 enableExperiment = { $title } zmóžniś
 enableExperimentTransition = Zmóžnja se...
+experimentMeasurementIntro = Mimo <a>datow</a>, kótarež su se pśez wše eksperimenty Test Pilot zgromaźili, jo wažnje, až slědujuce wó tom wěźeś, což se stawa, gaž wužywaśo { $experimentTitle }:
 measurements = Waša priwatnosć
 experimentPrivacyNotice = Móžośo how wěcej wó zběranju datow za { $title } zgóniś.
 contributorsHeading = Prezentěrowany wót
