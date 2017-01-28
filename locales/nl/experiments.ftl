@@ -23,6 +23,7 @@ activitystreamContributors11Title = Software Engineer
 activitystreamContributors12Title = Senior UX Designer
 cliqzDescription = Ontvang sneller zoekresultaten. Cliqz toont suggesties direct onder de URL-balk terwijl u typt. Dit alles met behoud van uw privacy.
 cliqzIntroduction = Ontvang sneller zoekresultaten, rechtstreeks in de browser. Begin met typen en zie suggesties van het hele web in real time, direct onder de URL-balk. En omdat Cliqz het verzamelen van persoonlijk identificeerbare gegevens of het opbouwen van gebruikersprofielen vermijdt, zijn uw resultaten meer privé.
+cliqzPrivacypreamble = Het Test Pilot-experiment Cliqz wordt mogelijk gemaakt door samenwerking tussen Cliqz GmbH en Mozilla. Cliqz is ontworpen om uw privacy te beschermen en het verzamelen van gevoelige gegevens, die kunnen worden gebruikt om gebruikersprofielen aan te maken, te vermijden. Het anoniem maken van gegevens als deze is echter moeilijk, waardoor het nog steeds mogelijk kan zijn om bepaalde personen te herkennen.
 cliqzDetails0Copy = Zie resultaten verschijnen (als bij toverslag!) terwijl u uw zoekopdracht in de URL-balk typt.
 cliqzDetails1Copy = Zie samenvattingsgegevens in real time - zoals weer- en showtijden - direct onder de URL-balk.
 cliqzDetails2Copy = Keer met één klik terug naar uw favoriete websites wanneer u een nieuw tabblad opent. U kunt uw favorieten zelfs aanpassen.
