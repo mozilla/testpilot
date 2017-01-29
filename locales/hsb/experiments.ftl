@@ -1,6 +1,6 @@
 activitystreamDescription = Grafiski přehlad wašeje historije a nowo wuhotowana startowa strona wosnadnjujetej bóle hač hdy prjedy namakać, za kotrymž w Firefox pytaće.
 activitystreamIntroduction = <p>Přehladujće zaso bjez přetorhnjenja. Z Activity Stream su waše najwažniše websydła, zapołožki a najnowša historija w kóždym nowym rajtarku k ruce. A nowa časowa lajsta da wam přehlad wo swojim přehladowanju z ptačeje perspektiwy.</p>
-activitystreamMeasurements0 = Hromadźimy zakładne wužiwanske daty wo tym, kak z eksperimentelnymi stronami za nowe rajtarki a časowu lajstu wobchadźeće, na kotre elementy kliknjeće a hdźež su na stronje.
+activitystreamMeasurements0 = Hromadźimy zakładne wužiwanske daty wo tym, kak z eksperimentelnymi stronami za nowe raejtarki a časowu lajstu, na kotre elementy kliknjeće a hdźež su na stronje.
 activitystreamMeasurements1 = Hromadźimy tež zakładne informacije wo wašim profilu wobhladowaka, kotrež Activity Stream nastupaja, kaž na přikład ličbu zapołožkow a zapiski historije.
 activitystreamMeasurements2 = Zo bychmy Activity Stream poskićili, wotwołujemy metadaty wo websydłach, kotrež sće wopytał, na př. wobrazy a symbole, z pomocu słužby z mjenom <a href="http://embed.ly/" target="_blank">Embedly</a>. Sćelemy tute naprašowanja na Embedly přez serwery Mozilla, zo njebychu z wami zwjazane.
 activitystreamDetails0Copy = Klikńće na nowy rajtark a waše najlubše websydła su jenož jedne kliknjenje zdalene.
@@ -21,6 +21,7 @@ activitystreamContributors9Title = Produktowy manager
 activitystreamContributors10Title = Wuwiwanski manager
 activitystreamContributors11Title = Wuwiwar softwary
 activitystreamContributors12Title = Seniorski designer UX
+cliqzDescription = Dóstańće pytanske wuslědki spěšnišo. Cliqz pokazuje namjety naprawo pod adresowym polom, mjeztym zo pisaće. Waša priwatnosć so wobchowa.
 cliqzIntroduction = Dóstańće pytanske wuslědki spěšnišo, direktnje we wobhladowaku. Započńće pisać a budźeće namjety z weba we woprawdźitym času naprawo pod adresowym polom widźeć. A dokelž Cliqz žane wosobinske daty njehromadźi, z kotrymiž sće identifikujomny abo dadźa so wužiwarske profile załožić, su waše wuslědki priwatniše.
 cliqzDetails0Copy = Wobhladajće sej wuslědki, kotrež so (kaž magisce) jewja, hdyž swój pytanski wuraz do adresoweho pola zapodawaće.
 cliqzDetails1Copy = Wobhladajće sej zhornjene informacije woprawdźiteho časa - kaž na přikład wjedro a pokazajće časy - naprawo pod adresowym polom.
