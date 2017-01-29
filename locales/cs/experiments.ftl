@@ -26,6 +26,7 @@ cliqzIntroduction = Rychlejší výsledky vyhledávání přímo v prohlížeči
 cliqzPrivacypreamble = Experiment Cliqz vám přinášíme ve spolupráci s Cliqz GmbH. Cliqz je navržen tak, aby chránil vaše soukromí a vyhnul se sběru citlivých informací, ale anonymizace podobných dat je obtížná a bohužel i přes veškeré snahy stále může být možné identifikovat jednotlivé uživatele.
 cliqzMeasurements0 = Cliqz GmbH sbírá data ohledně vašeho vyhledávání a prohlížení, včetně textů, které píšete do adresního řádku, dotazů zaslaných na určité vyhledávače a dat ohledně interakce s webovou stránkou, včetně pohybů myší, rolování a stráveného času.
 cliqzMeasurements1 = Cliqz GmbH sbírá telemetrii, včetně vaší interakce se konkrétními poli a tlačítky v Cliqz. Tato data obsahují jednoznačný identifikátor, který umožní Cliqz rozumět výkonu v čase.
+cliqzMeasurements2 = Mozilla sbírá telemetrii, včetně použitých vyhledávačů, počtu návštěv jejich stránek a unikátního identifikátoru služby Cliqz, což umožní Mozille najít korelace mezi daty z telemetrií Firefoxu a služby Cliqz.
 cliqzDetails0Copy = Výsledky vyhledávání se jako zázrakem objeví už během psaní přímo pod adresním řádkem.
 cliqzDetails1Copy = V reálném čase najde i souhrnné informace jako počasí nebo časy promítání filmů.
 cliqzDetails2Copy = Dostaňte se na své oblíbené stránky po otevření nového panelu jediným kliknutím. Oblíbené stránky si můžete nastavit, jak budete chtít.
