@@ -21,7 +21,6 @@ activitystreamContributors9Title = Produktowy manager
 activitystreamContributors10Title = Wuwiwanski manager
 activitystreamContributors11Title = Wuwiwar softwary
 activitystreamContributors12Title = Seniorski designer UX
-cliqzDescription = Dóstańće pytanske wuslědki spěšnišo. Cliqz pokazuje namjety naprawo pod adresowym polom, hdyž zapisujeće. Waša priwatnosć so wobchowuje.
 cliqzIntroduction = Dóstańće pytanske wuslědki spěšnišo, direktnje we wobhladowaku. Započńće pisać a budźeće namjety z weba we woprawdźitym času naprawo pod adresowym polom widźeć. A dokelž Cliqz žane wosobinske daty njehromadźi, z kotrymiž sće identifikujomny abo dadźa so wužiwarske profile załožić, su waše wuslědki priwatniše.
 cliqzDetails0Copy = Wobhladajće sej wuslědki, kotrež so (kaž magisce) jewja, hdyž swój pytanski wuraz do adresoweho pola zapodawaće.
 cliqzDetails1Copy = Wobhladajće sej zhornjene informacije woprawdźiteho časa - kaž na přikład wjedro a pokazajće časy - naprawo pod adresowym polom.
