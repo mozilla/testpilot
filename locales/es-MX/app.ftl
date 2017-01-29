@@ -55,6 +55,14 @@ landingInstalledButton = Elige tus características
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Instalar Test Pilot &amp;
+oneClickInstallMajorCta = Habilitar { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -172,6 +180,7 @@ disableExperiment = Deshabilitar { $title }
 disableExperimentTransition = Deshabilitando...
 enableExperiment = Habilitar { $title }
 enableExperimentTransition = Habilitando...
+experimentMeasurementIntro = Además de los <a>datos</a> que almacenan todos los experimentos de Test Pilot, la siguiente información es clave para saber qué ocurre cuando utilizas { $experimentTitle }:
 measurements = Tu privacidad
 experimentPrivacyNotice = Descubre más sobre la recopilación de datos de { $title } aquí.
 contributorsHeading = Diseñado por
@@ -273,6 +282,7 @@ newsletterFooterSuccessBody = Tienes que confirmar la suscripción a un boletín
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Este experimento no está disponible en tu idioma ({ $locale_code }).
 localeWarningSubtitle = Si quieres, todavía puedes activarlo.
 
 
