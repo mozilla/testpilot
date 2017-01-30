@@ -3,8 +3,9 @@ title: 'Min Vid'
 slug: min-vid
 thumbnail: /static/images/experiments/min-vid/experiments_experiment/thumbnail.png
 description: >
-  Keep videos front and center. Min Vid lets you display YouTube and Vimeo
-  videos in a small frame that stays in the foreground as you browse the web.
+  Take control of media on the web. Display YouTube, Vimeo, SoundCloud
+  tracks, HTML5 Audio and Video in a small frame that stays in the
+  foreground as you browse the web.
 introduction: >
   <p>Love watching video? Love getting things done while you watch video? Try
     Min Vid. It’s like picture-in-picture where one picture is a video and the
