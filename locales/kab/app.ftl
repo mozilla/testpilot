@@ -28,7 +28,7 @@ footerLinkAbout = Ɣef Test Pilot
 home = Asebter agejdan
 menuTitle = Iɣewwaṛen
 menuWiki = Awiki Test Pilot
-menuDiscuss = Mmeskay ɣef Test Pilot
+menuDiscuss = Mmeslay ɣef Test Pilot
 menuFileIssue = Azen ugur
 menuRetire = Kkes Test Pilot
 
