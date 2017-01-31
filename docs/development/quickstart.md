@@ -57,7 +57,7 @@ you should be on your way:
 
    1. Enter `testpilot.env` for the name.
 
-   1. Enter `example` for the value.
+   1. Enter `local` for the value.
 
    1. Right click the list of preferences to summon a menu, pick New > Boolean
       to create a new preference.
