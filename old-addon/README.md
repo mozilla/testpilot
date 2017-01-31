@@ -1,5 +1,10 @@
 [👈 Back to README](../README.md)
 
+
+# DEPRECATED
+
+This addon is being replaced by [../addon](../addon). It will be removed after the new addon has been sucessfully deployed.
+
 # Test Pilot
 The add-on where ideas come to idea
 

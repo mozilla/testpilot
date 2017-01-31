@@ -19,6 +19,7 @@ require('./frontend/tasks/server');
 require('./frontend/tasks/dist');
 
 require('./addon/tasks/locales');
+require('./old-addon/tasks/locales');
 
 gulp.task('clean', () => del([
   config.DEST_PATH,

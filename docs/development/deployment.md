@@ -20,7 +20,7 @@ Softvision is our embedded QA team. Their main functions are to write test plans
 
 During the checkin before the end of the [current milestone](https://github.com/mozilla/testpilot/milestones), we will inform the team that we will be building a release against `master`.
 
-Note: we auto deploy the master branch to our *development environment*: [http://testpilot.dev.mozaws.net](http://testpilot.dev.mozaws.net)
+Note: we auto deploy the master branch to our *development environment*: [https://testpilot.dev.mozaws.net](https://testpilot.dev.mozaws.net)
 
 ## Tag Release ##
 

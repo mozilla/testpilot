@@ -29,12 +29,6 @@ let app;
 // Canned selectable server environment configs
 const SERVER_ENVIRONMENTS = {
   local: {
-    BASE_URL: 'http://testpilot.dev:8000',
-    TESTPILOT_PREFIX: 'testpilot.addon.LOCAL.',
-    WHITELIST_URLS: 'https://www.mozilla.org/*,about:home',
-    BADGE_COLOR: '#AA00AA'
-  },
-  example: {
     BASE_URL: 'https://example.com:8000',
     TESTPILOT_PREFIX: 'testpilot.addon.LOCAL.',
     WHITELIST_URLS: 'https://www.mozilla.org/*,about:home',

@@ -11,8 +11,8 @@
  const tabs = require('sdk/tabs');
 
  const environments = {
-   local: 'http://testpilot.dev:8000',
-   dev: 'http://testpilot.dev.mozaws.net',
+   local: 'https://example.com:8000',
+   dev: 'https://testpilot.dev.mozaws.net',
    'static-dev': 'https://testpilot-static.dev.mozaws.net',
    stage: 'https://testpilot.stage.mozaws.net',
    'static-stage': 'https://testpilot-static.stage.mozaws.net',

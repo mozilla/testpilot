@@ -6,7 +6,7 @@
 
 | ENVIRONMENT | URL |
 |:------------|:----|
-| Development | http://testpilot.dev.mozaws.net/
+| Development | https://testpilot.dev.mozaws.net/
 | Stage       | https://testpilot.stage.mozaws.net/
 | Production  | https://testpilot.firefox.com/
 
@@ -55,13 +55,13 @@
 
 1. Open Google Chrome (so we can verify the 404 pages render in non-Firefox browsers as well).
 
-2. Go to http://testpilot.dev.mozaws.net/fourohfourohno (or desired environment).
+2. Go to https://testpilot.dev.mozaws.net/fourohfourohno (or desired environment).
 
 3. Verify that you see the expected **"Four Oh Four!"** page with a link to the Home page.
 
 4. Click the big, blue **"Home"** button.
 
-5. Verify that you're taken back to the homepage (in this case http://testpilot.dev.mozaws.net/).
+5. Verify that you're taken back to the homepage (in this case https://testpilot.dev.mozaws.net/).
 
 ### Firefox <small>(ETA: 25m)</small>
 
@@ -69,7 +69,7 @@
 
 1. Go to **about:addons** and verify that you don't have any existing Test Pilot add-on or experiment add-ons installed.
 
-1. Go to http://testpilot.dev.mozaws.net/ (or desired environment)
+1. Go to https://testpilot.dev.mozaws.net/ (or desired environment)
 
 1. Verify you see a big, green **"Install the Test Pilot Add-on"** button, as well as the **"By proceeding, you agree to the _Terms of Use_ and _Privacy Notice_ of Test Pilot"** disclaimer beneath it.
 
@@ -91,9 +91,9 @@
 
 1. Hover over each of the experiments (and View all experiments button) in the door-hanger from the previous step and verify the URLs have `?utm_` codes.
 
-1. Click the **"Choose your features"** button on the main site, and verify that you're redirected to the http://testpilot.dev.mozaws.net/experiments page.
+1. Click the **"Choose your features"** button on the main site, and verify that you're redirected to the https://testpilot.dev.mozaws.net/experiments page.
 
-1. Go to **about:addons** in a new tab, switch to the Extensions section and look for the **Test Pilot** add-on. Verify that the Test Pilot spaceship icon appears in the list and click the **"Preferences"** button. Verify that the add-on version information matches the information on the http://testpilot.dev.mozaws.net/__version__ page. Verify that the **Environment** dropdown value matches your current server environment. Go back to the Test Pilot site.
+1. Go to **about:addons** in a new tab, switch to the Extensions section and look for the **Test Pilot** add-on. Verify that the Test Pilot spaceship icon appears in the list and click the **"Preferences"** button. Verify that the add-on version information matches the information on the https://testpilot.dev.mozaws.net/__version__ page. Verify that the **Environment** dropdown value matches your current server environment. Go back to the Test Pilot site.
 
 1. Click on any of the active experiments (ie: Activity Stream) and verify you are taken to the experiment details page.
 
@@ -124,7 +124,7 @@
 
 1. Click the Test Pilot icon in the toolbar and verify that the currently active experiment is listed as **"{Experiment name} is enabled."** and has a green checkbox.
 
-1. Click the **"View all experiments"** button in the Test Pilot doorhanger and verify that you're taken to the http://testpilot.dev.mozaws.net/experiments page and your currently active experiments have a green outline (with a checkbox), and the button at the bottom of the experiment card has a gray **"Manage"** button instead of a blue **"Get Started"** button.
+1. Click the **"View all experiments"** button in the Test Pilot doorhanger and verify that you're taken to the https://testpilot.dev.mozaws.net/experiments page and your currently active experiments have a green outline (with a checkbox), and the button at the bottom of the experiment card has a gray **"Manage"** button instead of a blue **"Get Started"** button.
 
 1. Select a new (non-active) experiment from the Test Pilot toolbar doorhanger, and click the blue **"Enable {experiment name}"** button from the experiment details page.
 
@@ -154,7 +154,7 @@
 
 1. Click the **"Home"** link.
 
-1. You should be back a the http://testpilot.dev.mozaws.net/ page and no longer be signed in. Verify that you no longer see the Test Pilot icon in the toolbar.
+1. You should be back a the https://testpilot.dev.mozaws.net/ page and no longer be signed in. Verify that you no longer see the Test Pilot icon in the toolbar.
 
 1. Go to **about:addons** and verify that you have no add-ons installed in the Extensions tab.
     - If you previously had the **Activity Stream** experiment installed and active, clicking "New Tab" should no longer show the Activity Stream experiment or beautiful new tab page.

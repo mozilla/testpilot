@@ -3,7 +3,7 @@ const fs = require('fs');
 module.exports = {
   SERVER_PORT: 8000,
   IS_DEBUG: (process.env.NODE_ENV === 'development'),
-  USE_HTTPS: (process.env.USE_HTTPS != 0),
+  USE_HTTPS: (process.env.USE_HTTPS !== '0'),
   ENABLE_PONTOON: (process.env.ENABLE_PONTOON === '1'),
   ENABLE_DEV_CONTENT: (process.env.ENABLE_DEV_CONTENT === '1'),
   AVAILABLE_LOCALES: (process.env.ENABLE_DEV_LOCALES === '1') ?

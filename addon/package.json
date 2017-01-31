@@ -54,7 +54,7 @@
   "scripts": {
     "bash": "bash",
     "format": "prettier --flow-parser --single-quote --write data/*.js tools/**/*.js test/*.js src/*.js src/**/*.js src/**/**/*.js",
-    "bundle": "cd src; cross-env NODE_ENV=production webpack; cd ..;",
+    "bundle": "cd ..; npm run addon:locales; cd addon/src; cross-env NODE_ENV=production webpack; cd ..;",
     "start": "npm run bundle && jpm post --post-url http://127.0.0.1:8888",
     "package": "npm run bundle && jpm xpi && mv testpilot-addon.xpi addon.xpi && mv @testpilot-addon-$npm_package_version.update.rdf update.rdf",
     "package-win": "npm run bundle && jpm xpi && move testpilot-addon.xpi addon.xpi && move @testpilot-addon-%npm_package_version%.update.rdf update.rdf",
