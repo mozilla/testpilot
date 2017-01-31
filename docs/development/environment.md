@@ -11,7 +11,7 @@ Below are the environments for the website:
 
 | ENVIRONMENT | `testpilot.env` | URL |
 |:------------|:----------------|:----|
-| Local       | `local`         | http://testpilot.dev:8000/
+| Local       | `local`         | https://example.com:8000/
 | Development | `dev`           | https://testpilot.dev.mozaws.net/
 | Stage       | `stage`         | https://testpilot.stage.mozaws.net/
 | Production  | `production`    | https://testpilot.firefox.com/

@@ -19,7 +19,7 @@
     "urls": {
         "prod": "https://testpilot.firefox.com",
         "stage": "https://testpilot.stage.mozaws.net",
-        "dev": "http://testpilot.dev.mozaws.net"
+        "dev": "https://testpilot.dev.mozaws.net"
     },
     "keywords": [
         "css",

@@ -139,7 +139,7 @@ export function showSharePrompt(url: string) {
   return new Promise(resolve => {
     const { notifyBox, box } = createNotificationBox({
       label: _('share_label'),
-      image: 'resource://@x16/data/icon-64.png',
+      image: 'resource://@testpilot-addon/data/icon-64.png',
       persistence: 10,
       buttons: [
         {

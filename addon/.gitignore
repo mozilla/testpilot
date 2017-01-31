@@ -1,6 +1,5 @@
-install.rdf
-bootstrap.js
 node_modules
-npm-debug.log
-.DS_Store
-*.sw[po]
+data/bundle.*
+tools/control-panel.js
+coverage
+.nyc_output

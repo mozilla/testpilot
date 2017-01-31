@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var util = require('util');
+var childProcess = require('child_process');
+
+// Load the current manifest.json
+var manifestFilename = __dirname + '/../package.json';
+var manifest = require(manifestFilename);
+
+// Come up with a version tag suffix based on CIRCLE_TAG, or fall back to
+// looking up the current git commit hash.
+var tag;
+if (process.env['CIRCLE_TAG']) {
+  tag = 'tag-' + process.env['CIRCLE_TAG'];
+} else {
+  // Note: Must use short git hash, because AMO rejects versions > 32 chars
+  tag = 'dev-' + childProcess.execSync('git rev-parse --short HEAD')
+                             .toString('utf-8')
+                             .trim();
+}
+
+// Update the version tag suffix.
+var versionParts = manifest.version.split('-');
+manifest.version = versionParts[0] + '-' + tag;
+
+// Write the modified manifest.json
+var manifestJSON = JSON.stringify(manifest, null, '  ');
+fs.writeFileSync(manifestFilename, manifestJSON);

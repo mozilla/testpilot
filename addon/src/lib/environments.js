@@ -4,7 +4,7 @@ module.exports = {
   any: { name: 'any', baseUrl: '*', whitelist: '*' },
   local: {
     name: 'local',
-    baseUrl: 'http://testpilot.dev:8000',
+    baseUrl: 'https://example.com:8000',
     whitelist: 'https://www.mozilla.org/*,about:home'
   },
   dev: {
