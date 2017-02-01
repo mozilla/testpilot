@@ -35,7 +35,7 @@
     "eslint": "^3.14.1",
     "eslint-plugin-flowtype": "^2.30.0",
     "flow-bin": "^0.38.0",
-    "flow-coverage-report": "^0.2.0",
+    "flow-coverage-report": "^0.3.0",
     "flow-typed": "^2.0.0",
     "jpm": "^1.2.2",
     "mocha": "^3.1.2",
@@ -50,7 +50,7 @@
   "dependencies": {
     "lodash": "^4.15.0",
     "redux": "^3.6.0",
-    "redux-logger": "^2.6.1",
+    "redux-logger": "^2.8.0",
     "seedrandom": "^2.4.2"
   },
   "scripts": {
@@ -63,7 +63,7 @@
     "sign": "cd .. && npm run addon:locales && cd addon && npm run bundle && ./bin/update-version && ./bin/sign",
     "tools": "cd tools/control-panel; webpack",
     "lint": "eslint .",
-    "slow-test": "flow --quiet && cross-env NODE_ENV=test nyc mocha --reporter min",
+    "slow-test": "npm run lint && flow --quiet && cross-env NODE_ENV=test nyc mocha --reporter min",
     "test": "mocha --compilers js:babel-register --reporter min",
     "coverage": "flow-coverage-report -i 'src/lib/**/*.js' -t html -o coverage/flow && npm run slow-test"
   }

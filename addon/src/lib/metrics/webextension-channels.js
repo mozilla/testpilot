@@ -142,6 +142,7 @@ export default class WebExtensionChannel {
           testpilotPingData: data
         });
       } catch (err) {
+        // eslint-disable-next-line no-console
         console.error('Error executing pingListener', err);
       }
     }

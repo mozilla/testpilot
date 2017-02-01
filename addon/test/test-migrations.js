@@ -1,4 +1,4 @@
-/* global describe beforeEach it */
+/* global describe it */
 import assert from 'assert';
 import { migrate } from '../src/lib/migrations';
 

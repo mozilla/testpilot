@@ -12,6 +12,7 @@ import * as actions from '../../src/lib/actions';
 import templates from './templates';
 
 window.addEventListener('addon-action', event => {
+  // eslint-disable-next-line no-console
   console.log('from addon', event.detail);
 });
 
