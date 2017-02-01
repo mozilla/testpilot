@@ -59,9 +59,8 @@ export default class InstallManager {
   }
 
   selfLoaded(reason: string) {
-    const { dispatch, getState } = this.store;
+    const { dispatch } = this.store;
     if (reason === 'install') {
-      const { baseUrl } = getState();
       dispatch(actions.SELF_INSTALLED());
     } else if (reason === 'enable') {
       dispatch(actions.SELF_ENABLED());

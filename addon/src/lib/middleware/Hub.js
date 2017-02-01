@@ -14,8 +14,8 @@ export default class Hub {
   dispatch: Dispatch;
   ports: Set<EventEmitter>;
   constructor() {
-    this.dispatch = () =>
-      console.error('Hub cannot use dispatch() before middleware()');
+    this.dispatch = () => // eslint-disable-next-line no-console
+    console.error('Hub cannot use dispatch() before middleware()');
     this.ports = new Set();
   }
 

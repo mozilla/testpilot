@@ -16,6 +16,7 @@ import type { Dispatch, ReduxStore } from 'testpilot/types';
 export type Environment = { baseUrl: string, name: string, whitelist: string };
 export type Env = { get(): Environment, subscribe(store: ReduxStore): void };
 
+// eslint-disable-next-line no-console
 let dispatch: Dispatch = () => console.error('env.dispatch is not set');
 
 const env = {

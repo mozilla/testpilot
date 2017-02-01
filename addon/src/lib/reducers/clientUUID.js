@@ -10,6 +10,7 @@ import { uuid } from 'sdk/util/uuid';
 import type { Action } from 'testpilot/types';
 
 const newUUID = uuid().toString().slice(1, -1);
+// eslint-disable-next-line no-unused-vars
 export function reducer(state: string = newUUID, action: Action) {
   return state;
 }
