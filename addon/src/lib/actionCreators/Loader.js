@@ -35,6 +35,7 @@ function fetchExperiments(baseUrl, path): Promise<Experiments> {
         const userLocale = Services.appShell.hiddenDOMWindow.navigator.language;
         const xs = {};
         if (res.status === 200) {
+          // eslint-disable-next-line prefer-const
           for (let o of res.json.results) {
             const x = new Experiment(o, baseUrl);
             if (x.allowsLocale(userLocale)) {
@@ -51,10 +52,12 @@ function fetchExperiments(baseUrl, path): Promise<Experiments> {
 }
 
 function mergeAddonState(experiments: Experiments, addons) {
+  // eslint-disable-next-line prefer-const
   for (let id of Object.keys(experiments)) {
     experiments[id].active = false;
   }
 
+  // eslint-disable-next-line prefer-const
   for (let addon of addons) {
     const x = experiments[addon.id];
     if (x) {
@@ -107,11 +110,13 @@ export default class Loader {
         const { experiments, ui: { clicked } } = getState();
 
         const newExperiments = diffExperimentList(experiments, xs);
+        // eslint-disable-next-line prefer-const
         for (let experiment of newExperiments) {
           if (experiment.launchDate.getTime() > clicked) {
             dispatch(actions.SET_BADGE({ text: _('new_badge') }));
           }
         }
+        // eslint-disable-next-line prefer-const
         for (let id of Object.keys(xs)) {
           const experiment = xs[id];
           if (experiment.active) {

@@ -94,7 +94,7 @@ export default class FeedbackManager {
         Math.random() * eligibles.length
       )];
       if (experiment) {
-        tabs.once('open', tab => {
+        tabs.once('open', () => {
           setTimeout(
             () => this.promptRating({ interval: 'eol', experiment }),
             1000

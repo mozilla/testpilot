@@ -7,7 +7,7 @@ import InstallListener from '../src/lib/actionCreators/InstallListener';
 const dispatch = sinon.spy();
 const experiment = { addon_id: 'x' };
 const addonInstall = {};
-let listener = new InstallListener({ dispatch, experiment });
+const listener = new InstallListener({ dispatch, experiment });
 
 describe('InstallListener', function() {
   beforeEach(function() {

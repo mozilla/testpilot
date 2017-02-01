@@ -70,7 +70,8 @@ export default class WebExtensionChannel {
   handleEvent: Function;
   static channels: Map<string, WebExtensionChannel> = new Map();
   static destroy() {
-    for (const id of WebExtensionChannel.channels.keys()) {
+    // eslint-disable-next-line prefer-const
+    for (let id of WebExtensionChannel.channels.keys()) {
       WebExtensionChannel.remove(id);
     }
   }
@@ -133,6 +134,7 @@ export default class WebExtensionChannel {
   }
 
   notifyPing(data: any, sender: { addonId: string }) {
+    // eslint-disable-next-line prefer-const
     for (let pingListener of this.pingListeners) {
       try {
         pingListener({

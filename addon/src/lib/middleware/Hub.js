@@ -41,6 +41,7 @@ export default class Hub {
         action.meta = action.meta || {};
         action.meta.src = action.meta.src || 'addon';
         if (action.meta.src === 'addon') {
+          // eslint-disable-next-line prefer-const
           for (let port of this.ports) {
             try {
               port.emit('action', action);
