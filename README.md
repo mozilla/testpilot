@@ -30,7 +30,7 @@ Test Pilot is not intended to replace trains for most features, nor is it a test
 - [FAQ](docs/faq.md)
 - [Contributing to Test Pilot](CONTRIBUTING.md)
 - [Code of conduct](docs/code_of_conduct.md)
-- [License](LICENSE.md)
+- [License](LICENSE)
 
 
 ## More Information
