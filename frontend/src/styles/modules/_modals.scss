@@ -63,8 +63,8 @@
 }
 
 .modal {
-  animation-delay: 250ms;
   animation: fade-in-fly-up 300ms forwards;
+  animation-delay: 250ms;
   background: $white;
   border-radius: $large-border-radius;
   box-shadow: 0 4px $grid-unit $transparent-black-5;
