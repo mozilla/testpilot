@@ -10,11 +10,12 @@ import reducers from './reducers';
 import { storage } from 'sdk/simple-storage';
 import { createStore, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
+import { migrate } from './migrations';
 import type Hub from './middleware/Hub';
 import type { Environment } from './actionCreators/env';
 import type { ReduxStore, AddonState } from 'testpilot/types';
 
-const initialState = (Object.assign({}, storage.root): AddonState);
+const initialState = (migrate(storage): AddonState);
 
 export default function configureStore(
   { hub, startEnv }: { hub: Hub, startEnv: Environment }
