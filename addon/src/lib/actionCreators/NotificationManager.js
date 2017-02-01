@@ -56,6 +56,7 @@ export default class NotificationManager {
     this.timeout = setTimeout(
       () => {
         const { experiments } = getState();
+        // eslint-disable-next-line prefer-const
         for (let id of Object.keys(experiments)) {
           this.maybeNotify(experiments[id]);
         }

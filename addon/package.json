@@ -32,6 +32,8 @@
     "babel-preset-stage-2": "^6.17.0",
     "babel-register": "^6.16.3",
     "cross-env": "^3.1.3",
+    "eslint": "^3.14.1",
+    "eslint-plugin-flowtype": "^2.30.0",
     "flow-bin": "^0.38.0",
     "flow-coverage-report": "^0.2.0",
     "flow-typed": "^2.0.0",
@@ -60,6 +62,7 @@
     "package-win": "npm run bundle && jpm xpi && move testpilot-addon.xpi addon.xpi && move @testpilot-addon-%npm_package_version%.update.rdf update.rdf",
     "sign": "cd .. && npm run addon:locales && cd addon && npm run bundle && ./bin/update-version && ./bin/sign",
     "tools": "cd tools/control-panel; webpack",
+    "lint": "eslint .",
     "slow-test": "flow --quiet && cross-env NODE_ENV=test nyc mocha --reporter min",
     "test": "mocha --compilers js:babel-register --reporter min",
     "coverage": "flow-coverage-report -i 'src/lib/**/*.js' -t html -o coverage/flow && npm run slow-test"

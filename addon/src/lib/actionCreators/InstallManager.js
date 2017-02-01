@@ -48,6 +48,7 @@ export default class InstallManager {
   uninstallAll() {
     const { getState } = this.store;
     const active = activeExperiments(getState());
+    // eslint-disable-next-line prefer-const
     for (let id of Object.keys(active)) {
       this.uninstallExperiment(active[id]);
     }

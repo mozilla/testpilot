@@ -120,7 +120,7 @@ describe('Hub', function() {
     h.connect(p);
     const middleware = h.middleware();
     const a = { type: 'test' };
-    const next = action => {
+    const next = () => {
       assert.equal(h.ports.size, 0);
       done();
     };
