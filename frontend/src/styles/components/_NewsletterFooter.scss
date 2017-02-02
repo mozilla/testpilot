@@ -7,10 +7,6 @@ $email-icon--responsive-unit: .66;
   background: $transparent-white-1;
   padding: ($grid-unit * 1.75) 0;
 
-  .responsive-content-wrapper {
-    @include flex-container(row, flex-start, stretch, wrap);
-  }
-
   .error {
     background: $warning-red-darker;
     color: $white;
@@ -37,7 +33,7 @@ $email-icon--responsive-unit: .66;
 
     h2,
     p {
-      margin: 0;
+      margin: $grid-unit * .25;
     }
   }
 
@@ -81,9 +77,6 @@ $email-icon--responsive-unit: .66;
 
   // Stack the header above the form at small screen sizes.
   @include respond-to ('small') {
-    .responsive-content-wrapper {
-      @include flex-container(column, flex-start, stretch);
-    }
 
     header,
     form {

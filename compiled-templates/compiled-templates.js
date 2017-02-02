@@ -31,17 +31,17 @@ module.exports.render = function (options) {
 <body class="blue">
   <div class="stars"></div>
   <div class="full-page-wrapper space-between"/>
-   <header id="main-header" class="responsive-content-wrapper">
+   <header id="main-header" class="layout-wrapper layout-wrapper--row-between-top">
       <h1>
         <a href="/" class="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
       </h1>
     </header>
-    <div class="responsive-content-wrapper static-page-content">
+    <div class="layout-wrapper static-page-content">
     ${options.body}
     </div>
 
-    <footer id="main-footer" class="responsive-content-wrapper">
-      <div id="footer-links">
+    <footer id="main-footer">
+      <div id="footer-links" class="layout-wrapper layout-wrapper--row-between-breaking">
         <div class="legal-links">
           <a href="https://www.mozilla.org" class="mozilla-logo"></a>
           <a data-l10n-id="footerLinkLegal" href="https://www.mozilla.org/about/legal/" class="boilerplate">Legal</a>

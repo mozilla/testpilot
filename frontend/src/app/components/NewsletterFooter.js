@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import React, { PropTypes } from 'react';
 
+import LayoutWrapper from './LayoutWrapper';
 import NewsletterForm from './NewsletterForm';
 
 
@@ -54,11 +55,13 @@ export default class NewsletterFooter extends React.Component {
   render() {
     return (
       <div className={this.getClassNames()}>
-        <section className="responsive-content-wrapper">
+        <LayoutWrapper flexModifier="column-center">
           {this.renderError()}
-          {this.renderHeader()}
+          <LayoutWrapper flexModifier="row-between-breaking">
+            {this.renderHeader()}
           <NewsletterForm {...this.props.newsletterForm} locale={this.props.locale} />
-        </section>
+          </LayoutWrapper>
+        </LayoutWrapper>
       </div>
     );
   }

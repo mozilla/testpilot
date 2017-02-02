@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Copter from '../components/Copter';
+import LayoutWrapper from '../components/LayoutWrapper';
 import View from '../components/View';
 
 
@@ -7,9 +9,9 @@ export default class SharePage extends React.Component {
   render() {
     return (
       <View spaceBetween={true} showNewsletterFooter={false} {...this.props}>
-        <div className="centered-banner">
-          <div id="share" className="modal delayed-fade-in">
-            <div className="modal-content">
+        <LayoutWrapper flexModifier="column-center">
+          <div id="share" className="modal">
+            <div className="modal-content centered">
               <p data-l10n-id="sharePrimary">Love Test Pilot? Help us find some new recruits.</p>
               <ul className="share-list">
                 <li className="share-facebook"><a href={'https://www.facebook.com/sharer/sharer.php?u=' + this.shareUrl('facebook', true)} onClick={this.handleClick('facebook')} target="_blank">Facebook</a></li>
@@ -25,10 +27,8 @@ export default class SharePage extends React.Component {
               </fieldset>
             </div>
           </div>
-          <div className="copter-wrapper">
-            <div className="copter fade-in-fly-up"></div>
-          </div>
-        </div>
+          <Copter animation="fade-in-fly-up" />
+        </LayoutWrapper>
       </View>
     );
   }

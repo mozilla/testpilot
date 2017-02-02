@@ -16,7 +16,7 @@
   }
 }
 
-%content-wrapper {
+.layout-wrapper {
   @include respond-to('big') {
     padding: 0 $grid-unit * .5;
     width: $grid-unit * 50;
@@ -27,19 +27,6 @@
     width: $grid-unit * 38.4;
   }
 
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  transition: width 500ms;
-}
-
-.content-wrapper {
-  @extend %content-wrapper;
-}
-
-.responsive-content-wrapper {
-  @extend %content-wrapper;
-
   @include respond-to('small') {
     margin-left: 4%;
     margin-right: 4%;
@@ -47,50 +34,85 @@
     width: 92%;
   }
 
-  &.static-page-content {
-    flex: 1;
-  }
- }
+  margin: 0 auto;
+  position: relative;
 
-.card-list {
+  .layout-wrapper {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+}
+
+.layout-wrapper--row-between-top {
+  @include flex-container(row, space-between, top);
+}
+
+.layout-wrapper--row-bottom-breaking {
+  @include respond-to('not-small') {
+    @include flex-container(row, space-between, flex-end);
+  }
+
+  @include respond-to('small') {
+    @include flex-container(column, flex-start, flex-start);
+  }
+}
+
+.layout-wrapper--row-around-breaking {
+  @include flex-container(row, space-around, center);
+
+  @include respond-to('small') {
+    @include flex-container(column, center, center);
+  }
+}
+
+.layout-wrapper--row-between-breaking {
+  @include flex-container(row, space-between, center);
+
+  @include respond-to('small') {
+    @include flex-container(column, center, center);
+  }
+}
+
+.layout-wrapper--row-between-reverse {
+  @include flex-container(row, space-between, center);
+
+  @include respond-to('small') {
+    @include flex-container(column-reverse, center, center);
+  }
+}
+
+.layout-wrapper--column-center {
+  @include flex-container(column, center, center)
+}
+
+.layout-wrapper--column-center-start-breaking {
+  @include flex-container(column, center, flex-start)
+
+  @include respond-to('small') {
+    @include flex-container(column, center, center);
+  }
+}
+
+.layout-wrapper--card-list {
   @include flex-container(row, center, stretch, wrap);
 
-  margin: $grid-unit * 2 auto;
-
-  > header {
-    flex: 0 0 100%;
+  @include respond-to('small') {
+    @include flex-container(column, center, stretch);
   }
+
+  margin: $grid-unit * 2 auto;
 }
 
-.card-list-header {
-  margin: 40px 0;
-  text-align: center;
-}
+.layout-wrapper--details-content {
+  @include flex-container(row, space-between, flex-start);
 
-
-.spacer {
-  height: $grid-unit * 2.5;
+  @include respond-to('small') {
+    @include flex-container(column, center, center);
+  }
 }
 
 .small-spacer {
   height: $grid-unit;
-}
-
-.block {
-  display: block;
-}
-
-.pinstripe {
-  border-bottom: 1px solid $transparent-white-1;
-  margin-bottom: $grid-unit * 3;
-  padding-bottom: $grid-unit;
-}
-
-.overflow-hidden {
-  overflow: hidden;
-}
-
-.float-right {
-  float: right;
 }
 

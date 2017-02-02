@@ -1,12 +1,14 @@
 /* eslint-disable */
 import React from 'react';
-
 import classnames from 'classnames';
+
+import Banner from '../components/Banner';
+import Copter from '../components/Copter';
 import EmailDialog from '../components/EmailDialog';
-import CondensedHeader from '../components/CondensedHeader';
 import ExperimentCardList from '../components/ExperimentCardList';
-import PastExperiments from '../components/PastExperiments';
+import LayoutWrapper from '../components/LayoutWrapper';
 import LoadingPage from './LoadingPage';
+import PastExperiments from '../components/PastExperiments';
 import View from '../components/View';
 
 
@@ -39,33 +41,39 @@ export default class HomePageWithAddon extends React.Component {
   renderSplash() {
     if (window.location.search.includes('utm_content=no-experiments-installed')) {
       return (
-        <div className="responsive-content-wrapper reverse-split-banner">
-          <div className="copter-wrapper fly-down">
-            <div className="copter"></div>
-          </div>
-          <div className="intro-text">
-            <h2 data-l10n-id="experimentsListNoneInstalledHeader" className="banner">
+        <Banner background={true}>
+          <LayoutWrapper flexModifier="row-between-breaking">
+          <div className="banner__copy">
+            <h2 data-l10n-id="experimentsListNoneInstalledHeader" className="banner__subtitle">
               Let's get this baby off the ground!
             </h2>
             <p data-l10n-id="experimentsListNoneInstalledSubheader">
               Ready to try a new Test Pilot experiment? Select one to enable, take
               it for a spin, and let us know what you think.
             </p>
-            <p data-l10n-id="experimentsListNoneInstalledCTA" className="cta">
+            <p data-l10n-id="experimentsListNoneInstalledCTA">
               Not interested?
              <a onClick={() => this.onNotInterestedSurveyClick()}
-                href="https://qsurvey.mozilla.com/s3/TxP-User" target="_blank">
+                href="https://qsurvey.mozilla.com/s3/TxP-User" target="_blank"
+                className="banner__link">
               Let us know why
              </a>.
             </p>
-          </div>
-        </div>
+            </div>
+            <Copter/>
+          </LayoutWrapper>
+        </Banner>
       );
     }
     return (
-      <CondensedHeader dataL10nId="experimentsListCondensedHeader">
-        Pick your experiments!
-      </CondensedHeader>
+      <Banner condensed={true}>
+      <LayoutWrapper flexModifier="row-between-reverse">
+        <h2 className="banner__title" data-l10n-id="experimentsListCondensedHeader">
+            Pick your experiments!
+        </h2>
+        <Copter small="true" />
+      </LayoutWrapper>
+      </Banner>
     );
   }
 
@@ -85,10 +93,10 @@ export default class HomePageWithAddon extends React.Component {
             onDismiss={() => this.setState({ showEmailDialog: false })} />}
 
         {this.renderSplash()}
-        <div className="responsive-content-wrapper">
+        <LayoutWrapper flexModifier="card-list">
           <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
-        </div>
-        <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
+          <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
+        </LayoutWrapper>
       </View>
     );
   }

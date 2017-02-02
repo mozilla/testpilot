@@ -1,28 +1,13 @@
 #main-footer {
   @include respond-to('not-small') {
-    padding: $grid-unit * 2 0 0;
+    padding: $grid-unit * 2 0 $grid-unit;
   }
 
   @include respond-to('small') {
-    padding: $grid-unit * 1 0 0;
+    padding: $grid-unit * 1 0;
   }
 
   position: relative;
-}
-
-#footer-links {
-
-  @include respond-to('not-small') {
-    @include flex-container(row, space-between, flex-end);
-  }
-
-  @include respond-to('small') {
-    @include flex-container(column, flex-start, flex-start);
-    padding-top: $grid-unit;
-  }
-
-  margin: 0 $grid-unit * .5;
-  padding-bottom: $grid-unit;
 }
 
 .legal-links {

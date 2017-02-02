@@ -30,7 +30,7 @@ describe('app/containers/HomePageNoAddon', () => {
   it('should render default content with experiments loaded', () => {
     const experiments = [ { title: 'foo' }, { title: 'bar' } ];
     subject.setProps({ experiments });
-    expect(findByL10nID('landingIntroLead')).to.have.property('length', 1);
+    expect(findByL10nID('landingIntroOne')).to.have.property('length', 1);
     expect(subject.find('ExperimentCardList')).to.have.property('length', 1);
   });
 

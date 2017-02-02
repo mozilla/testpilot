@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
-
 import classnames from 'classnames';
 
+import LayoutWrapper from './LayoutWrapper';
 import RetireConfirmationDialog from './RetireConfirmationDialog';
 
 export default class Header extends React.Component {
@@ -74,11 +74,13 @@ export default class Header extends React.Component {
     return (
       <div>
         {this.renderRetireDialog()}
-        <header id="main-header" className="responsive-content-wrapper">
-          <h1>
-            <Link to="/" className="wordmark" data-l10n-id="siteName">Firefox Test Pilot</Link>
-          </h1>
-          {this.renderSettingsMenu()}
+        <header id="main-header">
+          <LayoutWrapper flexModifier="row-between-top">
+            <h1>
+              <Link to="/" className="wordmark" data-l10n-id="siteName">Firefox Test Pilot</Link>
+            </h1>
+            {this.renderSettingsMenu()}
+          </LayoutWrapper>
         </header>
       </div>
     );

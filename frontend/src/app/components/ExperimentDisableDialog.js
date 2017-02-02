@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Copter from './Copter';
 import { buildSurveyURL } from '../lib/utils';
 
 export default class ExperimentDisableDialog extends React.Component {
@@ -19,9 +20,7 @@ export default class ExperimentDisableDialog extends React.Component {
             <div className="modal-cancel" onClick={e => this.cancel(e)} />
           </header>
           <div className="modal-content">
-            <div className="copter-wrapper">
-              <div className="copter" />
-            </div>
+            <Copter small={true}/>
             <p className="centered" data-l10n-id="feedbackUninstallCopy">
               Your participation in Firefox Test Pilot means a lot!
               Please check out our other experiments, and stay tuned for more to come!

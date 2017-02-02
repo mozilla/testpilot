@@ -1,11 +1,13 @@
 import React from 'react';
 
+import LayoutWrapper from './LayoutWrapper';
+
 export default class Footer extends React.Component {
 
   render() {
     return (
-      <footer id="main-footer" className="responsive-content-wrapper">
-        <div id="footer-links">
+      <footer id="main-footer">
+        <LayoutWrapper flexModifier="row-bottom-breaking">
           <div className="legal-links">
             <a href="https://www.mozilla.org" className="mozilla-logo"></a>
             <a data-l10n-id="footerLinkLegal" href="https://www.mozilla.org/about/legal/" className="boilerplate">Legal</a>
@@ -20,7 +22,7 @@ export default class Footer extends React.Component {
             <a onClick={(e) => this.eventToGA(e)} href="https://twitter.com/FxTestPilot"
               target="_blank" className="link-icon twitter" title="Twitter"></a>
           </div>
-        </div>
+        </LayoutWrapper>
       </footer>
     );
   }

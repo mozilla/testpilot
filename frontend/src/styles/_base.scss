@@ -15,53 +15,7 @@ body {
   flex-direction: column;
   font-family: 'Fira Sans', sans-serif;
   font-size: 1.6rem;
-}
-
-h2 {
-
-  @include respond-to('not-small') {
-    margin-bottom: $grid-unit * .75;
-    margin-top: $grid-unit * .75;
-  }
-
-  @include respond-to('small') {
-    margin-bottom: $grid-unit * .5;
-    margin-top: $grid-unit * .5;
-  }
-
-  font-size: 3 * $font-unit;
-  font-weight: 300;
-  line-height: 3 * $line-unit;
-
-  .blue & {
-    text-shadow: 0 2px 0 $transparent-black-2;
-  }
-}
-
-h3 {
-  font-size: 1.875 * $font-unit;
-  font-weight: 400;
-}
-
-h4 {
-  font-size: 1.2 * $font-unit;
-  font-weight: 500;
-
-  .static-page-content & {
-    font-size: 1.66 * $font-unit;
-    font-weight: 400;
-  }
-}
-
-p {
-  line-height: 1.5 * $line-unit;
-
-  &.small {
-    font-size: $font-unit;
-    line-height: $line-unit;
-    margin: 0;
-    opacity: .8;
-  }
+  line-height: 2.2rem;
 }
 
 .parens {

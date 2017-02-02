@@ -24,9 +24,8 @@
 
 @include respond-to('small') {
 
-  .details-header.responsive-content-wrapper {
-    @include flex-container(column, flex-start, flex-start);
-    margin-bottom: $grid-unit * .5;
+  .details-header {
+    margin: $grid-unit * .5 0;
     padding-top: $grid-unit * .75;
   }
 
@@ -52,7 +51,6 @@
 .status-bar {
   @include flex-container(row, center, center);
   animation: fade-in 500ms forwards;
-  font-weight: 300;
   height: $grid-unit * 1.6;
   margin-bottom: $grid-unit * .2;
   opacity: 0;
@@ -108,7 +106,7 @@
     height: $grid-unit * 4.5;
     margin-bottom: 0;
   }
-  @include flex-container(row, space-between, center);
+
   margin-bottom: $grid-unit;
   position: relative;
 
@@ -126,11 +124,11 @@
     @include respond-to('small') {
       font-size: $font-unit * 3.2;
       line-height: $font-unit * 3.2;
+      margin: $grid-unit * .5;
     }
 
     display: flex;
     flex: 1;
-    font-weight: 300;
     margin: 0;
     transition: font-size 200ms;
   }
@@ -170,6 +168,7 @@
   }
 
   @include respond-to('small') {
+    flex: 0 0;
     width: 100%;
   }
 
@@ -277,10 +276,6 @@
   p {
     font-size: $font-unit * (7 / 6);
     margin: 0;
-  }
-
-  h3 {
-    font-weight: bold;
   }
 
   p {
