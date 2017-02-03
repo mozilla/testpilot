@@ -60,7 +60,7 @@ landingInstalledButton = Оберіть ваші функції
 
 landingRequiresDesktop = Test Pilot потребує Firefox на Windows, Mac чи Linux
 landingDownloadFirefoxDesc = (Test Pilot доступний для Firefox на Windows, OS X та Linux)
-landingUpgradeDesc = Test Pilot потребує Firefox 45 або вище.
+landingUpgradeDesc = Test Pilot потребує Firefox 49 або вище.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Оновити Firefox
 landingDownloadFirefoxSubTitle = Безкоштовне завантаження

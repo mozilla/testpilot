@@ -60,7 +60,7 @@ landingInstalledButton = Escueyi les tos carauterístiques
 
 landingRequiresDesktop = Test Pilot rique Firefox pa escritoriu en Linux, Windows o Mac
 landingDownloadFirefoxDesc = (Test Pilot ta disponible pa Firefox en Linux, Windows y MacOS)
-landingUpgradeDesc = Test Pilot riqe Firefox 45 o mayor.
+landingUpgradeDesc = Test Pilot riqe Firefox 49 o mayor.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Anovar Firefox
 landingDownloadFirefoxSubTitle = Descarga de baldre

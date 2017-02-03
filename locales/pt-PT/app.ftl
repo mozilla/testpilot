@@ -68,7 +68,7 @@ oneClickInstallMajorCta = Ativar { $title }
 
 landingRequiresDesktop = O Piloto de Teste requer o Firefox para Computador no Windows, Mac ou Linux
 landingDownloadFirefoxDesc = (O Piloto de Teste está disponível para o Firefox no Windows, OS X e Linux)
-landingUpgradeDesc = O Piloto de Teste requer o Firefox 45 ou superior.
+landingUpgradeDesc = O Piloto de Teste requer o Firefox 49 ou superior.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Atualizar o Firefox
 landingDownloadFirefoxSubTitle = Descarga gratuita
@@ -109,7 +109,7 @@ emailOptInMessage = Conheça novas experiências e consulte os resultados dos te
 emailValidationError = Por favor introduza um endereço de email válido!
 
 # LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput = 
+emailOptInInput =
   [html/placeholder] o email é aqui :)
 emailOptInButton = Inscreva-me
 emailOptInConfirmationTitle = Email enviado
@@ -144,7 +144,7 @@ experimentCardLearnMore = Saiba mais
 
 feedbackSubmitButton = Responda a um questionário rápido
 feedbackUninstallTitle = Obrigado!
-feedbackUninstallCopy = 
+feedbackUninstallCopy =
   | A sua participação no Piloto de Teste do Firefox significa
   | muito! Por favor, consulte as nossas outras experiências,
   | e fique atento para o que está para vir!
@@ -259,7 +259,7 @@ incompatibleSubheader = Recomendamos <a>desativar estes extras</a> antes de ativ
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
-newsletterFormEmailPlaceholder = 
+newsletterFormEmailPlaceholder =
   [html/placeholder] O seu email aqui
 newsletterFormDisclaimer = Nós só iremos enviar-lhe informação relacionada sobre o Piloto de Teste.
 newsletterFormPrivacyNotice = Concordo que a Mozilla faça a gestão da minha informação tal como explicado neste <a>aviso de privacidade</a>.
@@ -310,4 +310,3 @@ noScriptLink = Saiba porquê
 
 viewPastExperiments = Ver experiências passadas
 hidePastExperiments = Esconder experiências passadas
-

@@ -68,7 +68,7 @@ oneClickInstallMajorCta = Habilitar { $title }
 
 landingRequiresDesktop = Test Pilot necesita Firefox para escritorio para Windows, Mac o Linux
 landingDownloadFirefoxDesc = (Test Pilot está disponible para Firefox en Windows, OS X y Linux)
-landingUpgradeDesc = Test Pilot requiere Firefox 45 o superior.
+landingUpgradeDesc = Test Pilot requiere Firefox 49 o superior.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Actualizar Firefox
 landingDownloadFirefoxSubTitle = Descarga gratuita

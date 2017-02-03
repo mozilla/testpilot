@@ -48,7 +48,7 @@ oneClickInstallMajorCta = Enable {$title}
 [[landingFirefox]]
 landingRequiresDesktop = Test Pilot requires Firefox for Desktop on Windows, Mac or Linux
 landingDownloadFirefoxDesc = (Test Pilot is available for Firefox on Windows, OS X and Linux)
-landingUpgradeDesc = Test Pilot requires Firefox 45 or higher.
+landingUpgradeDesc = Test Pilot requires Firefox 49 or higher.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Upgrade Firefox
 landingDownloadFirefoxSubTitle = Free Download

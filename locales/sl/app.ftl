@@ -68,7 +68,7 @@ oneClickInstallMajorCta = omogoči { $title }
 
 landingRequiresDesktop = Test Pilot zahteva Firefox za namizja in sistem Windows, Mac ali Linux
 landingDownloadFirefoxDesc = (Test Pilot je na voljo za Firefox v sistemih Windows, OS X in Linux)
-landingUpgradeDesc = Test Pilot zahteva Firefox 45 ali novejšega.
+landingUpgradeDesc = Test Pilot zahteva Firefox 49 ali novejšega.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Nadgradi Firefox
 landingDownloadFirefoxSubTitle = Brezplačen prenos

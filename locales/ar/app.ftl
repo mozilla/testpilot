@@ -60,7 +60,7 @@ landingInstalledButton = اختر مميزاتك و خصائصك المفضلة
 
 landingRequiresDesktop = الاختبار التجريبي يتطلب نسخة فيرفكس لسطح المكتب على ويندوز، ماك أو لينكس
 landingDownloadFirefoxDesc = (الاختبار التجريبي متاح لفيرفكس على أنظمة التشغيل Windows, OS X و Linux)
-landingUpgradeDesc = يتطلب الاختبار التجريبي نسخة فيرفكس 45 أو أعلى.
+landingUpgradeDesc = يتطلب الاختبار التجريبي نسخة فيرفكس 49 أو أعلى.
 landingDownloadFirefoxTitle = فيرفكس
 landingUpgradeFirefoxTitle = ترقية فيرفكس
 landingDownloadFirefoxSubTitle = تحميل مجاني

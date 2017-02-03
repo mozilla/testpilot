@@ -60,7 +60,7 @@ landingInstalledButton = আপনার ফিচারটি বেছে ন�
 
 landingRequiresDesktop = Test Pilot এর জন্য Windows, Mac অথবা Linux এ ডেস্কটপের জন্য Firefox প্রয়োজন
 landingDownloadFirefoxDesc = (Windows, OS X and Linux এ Firefox এর জন্য Test Pilot পাওয়া যাচ্ছে)
-landingUpgradeDesc = Test Pilot ব্যবহার করতে Firefox 45 বা পরবর্তী সংস্করণ প্রয়োজন।
+landingUpgradeDesc = Test Pilot ব্যবহার করতে Firefox 49 বা পরবর্তী সংস্করণ প্রয়োজন।
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox হালানাগাদ করুন
 landingDownloadFirefoxSubTitle = বিনামূল্যে ডাউনলোড

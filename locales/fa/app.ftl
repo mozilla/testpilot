@@ -60,7 +60,7 @@ landingInstalledButton = امکانات خود را انتخاب کنید
 
 landingRequiresDesktop = خلبان آزمایشی نیاز به فایرفاکس برای رومیزی بر روی ویندوز، مک یا لینوکس دارد
 landingDownloadFirefoxDesc = (خلبان آزمایشی برای فایرفاکس ویندوز، OS X و لینوکس موجو است)
-landingUpgradeDesc = خلبان آزمایشی نیاز به فایرفاکس ۴۵ و بالاتر دارد
+landingUpgradeDesc = خلبان آزمایشی نیاز به فایرفاکس ۴۹ و بالاتر دارد
 landingDownloadFirefoxTitle = فایرفاکس
 landingUpgradeFirefoxTitle = ارتقا فایرفاکس
 landingDownloadFirefoxSubTitle = دریافت رایگان

@@ -68,7 +68,7 @@ oneClickInstallMajorCta = Aktivizo { $title }
 
 landingRequiresDesktop = Piloti i Testeve lyp Firefox për Desktop në Windows, Mac ose Linux
 landingDownloadFirefoxDesc = (Pilot i Testeve mund të përdoret te Firefox-i në Windows, OS X dhe Linux)
-landingUpgradeDesc = Piloti i testeve lyp Firefox 45 ose më të ri.
+landingUpgradeDesc = Piloti i testeve lyp Firefox 49 ose më të ri.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Përmirësojeni Firefox-in
 landingDownloadFirefoxSubTitle = Shkarkim Falas
