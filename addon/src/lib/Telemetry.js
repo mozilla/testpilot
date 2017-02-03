@@ -10,6 +10,7 @@ import aboutConfig from 'sdk/preferences/service';
 import { Request } from 'sdk/request';
 import self from 'sdk/self';
 import { Services } from 'resource://gre/modules/Services.jsm';
+import { ClientID } from 'resource://gre/modules/ClientID.jsm';
 import { storage } from 'sdk/simple-storage';
 import {
   TelemetryController
@@ -25,7 +26,8 @@ function makeTimestamp(timestamp = Date.now()) {
 
 const PREFS = [
   'toolkit.telemetry.enabled',
-  'datareporting.healthreport.uploadEnabled'
+  'datareporting.healthreport.uploadEnabled',
+  'beacon.enabled'
 ];
 
 export default class Telemetry {
@@ -47,7 +49,7 @@ export default class Telemetry {
     }
   }
 
-  ping(object: any, event: string, time?: number) {
+  ping(object: any, event: any, time?: number) {
     const payload = {
       timestamp: makeTimestamp(),
       test: self.id,
@@ -58,6 +60,8 @@ export default class Telemetry {
       addClientId: true,
       addEnvironment: true
     });
+
+    this.sendPingCentreEvent(object, event, time, payload);
 
     this.sendGAEvent({
       t: 'event',
@@ -78,5 +82,32 @@ export default class Telemetry {
       content: data
     });
     req.post();
+  }
+
+  sendPingCentreEvent(object: any, event: string, time?: number, payload: Object) {
+    // A little work is required to replicate the ping sent to Telemetry
+    // via the `submitExternalPing('testpilot', payload, opts)` call:
+    const pcPing = TelemetryController.getCurrentPingData();
+    pcPing.type = 'testpilot';
+    pcPing.payload = payload;
+    const pcPayload = {
+      event_type: event,
+      object: object,
+      client_time: makeTimestamp(time),
+      addon_id: self.id,
+      addon_version: self.version,
+      firefox_version: pcPing.environment.build.version,
+      os_name: pcPing.environment.system.os.name,
+      os_version: pcPing.environment.system.os.version,
+      locale: pcPing.environment.settings.locale,
+      raw: JSON.stringify(pcPing),
+      // Note: these two keys are normally inserted by the ping-centre client.
+      client_id: ClientID.getCachedClientID(),
+      topic: 'testpilot'
+    };
+
+    Services.appShell.hiddenDOMWindow.navigator.sendBeacon(
+      'https://onyx_tiles.stage.mozaws.net/v3/links/ping-centre',
+      JSON.stringify(pcPayload));
   }
 }

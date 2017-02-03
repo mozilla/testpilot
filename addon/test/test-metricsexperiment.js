@@ -12,7 +12,9 @@ const EVENT_SEND_VARIANTS = 'testpilot::receive-variants';
 const AddonManager = {
   getAddonByID: sinon.stub().callsArgWith(1, { version: '0' })
 };
-
+const ClientID = {
+  getCachedClientID: sinon.stub().returns('12345')
+};
 const Events = {
   emit: sinon.spy(),
   on: sinon.spy(),
@@ -20,14 +22,30 @@ const Events = {
   '@noCallThru': true
 };
 const Services = {
-  startup: { getStartupInfo: sinon.stub().returns({ process: new Date() }) }
+  startup: { getStartupInfo: sinon.stub().returns({ process: new Date() }) },
+  appShell: { hiddenDOMWindow: { navigator: { sendBeacon: sinon.stub() } } }
 };
 const storage = {};
-const TelemetryController = { submitExternalPing: sinon.spy() };
+const TelemetryController = {
+  submitExternalPing: sinon.spy(),
+  getCurrentPingData: () => {
+    return {
+      environment: {
+        build: { version: 'environment.build.version' },
+        system: { os: { name: 'system.os.name', version: 'system.os.version' } },
+        settings: { locale: 'en-US' }
+      }
+    };
+  }
+};
 
 const Experiment = proxyquire('../src/lib/metrics/experiment', {
   'resource://gre/modules/AddonManager.jsm': {
     AddonManager,
+    '@noCallThru': true
+  },
+  'resource://gre/modules/ClientID.jsm': {
+    ClientID,
     '@noCallThru': true
   },
   'sdk/system/events': Events,

@@ -5,8 +5,10 @@ import sinon from 'sinon';
 
 const spies = { add: sinon.spy(), remove: sinon.spy(), '@noCallThru': true };
 const hacks = { enabled: sinon.spy(), disabled: sinon.spy() };
+const Services = { '@noCallThru': true, obs: { addObserver: sinon.stub() }};
 
 const sideEffects = proxyquire('../src/lib/reducers/sideEffects', {
+  'resource://gre/modules/Services.jsm': Services,
   '../metrics/webextension-channels': spies
 });
 const { reducer, nothing } = sideEffects;

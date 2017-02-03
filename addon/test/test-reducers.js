@@ -3,9 +3,15 @@ import assert from 'assert';
 import proxyquire from 'proxyquire';
 import sinon from 'sinon';
 
+const Services = {
+  '@noCallThru': true,
+  '@global': true,
+  obs: { addObserver: sinon.stub() }
+};
 const reducers = proxyquire('../src/lib/reducers', {
   'sdk/util/uuid': { uuid: () => 'uuid', '@noCallThru': true, '@global': true },
-  '../metrics/webextension-channels': { '@noCallThru': true, '@global': true }
+  '../metrics/webextension-channels': { '@noCallThru': true, '@global': true },
+  'resource://gre/modules/Services.jsm': Services
 }).default;
 
 import * as actions from '../src/lib/actions';
