@@ -283,6 +283,7 @@ localeWarningSubtitle = Če želite, ga lahko kljub temu omogočite.
 # An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledHeader = Poletimo!
 experimentsListNoneInstalledCTA = Vas ne zanima? <a>Povejte nam, zakaj</a>.
 
 
