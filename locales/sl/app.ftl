@@ -55,6 +55,14 @@ landingInstalledButton = Izberite si možnosti
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Namesti Test Pilot in
+oneClickInstallMajorCta = omogoči { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -118,6 +126,7 @@ experimentListJustLaunchedTab = Pravkar začet
 experimentListJustUpdatedTab = Pravkar posodobljen
 experimentListEndingTomorrow = Se konča jutri
 experimentListEndingSoon = Se končuje
+experimentsListCondensedHeader = Izberite si poskuse zase!
 
 
 
@@ -176,6 +185,7 @@ tour = Predstavitev
 tourLink = Začnite predstavitev
 contribute = Prispevajte
 bugReports = Poročila o napakah
+discussExperiment = Pogovor o { $title }
 tourOnboardingTitle = { $title } omogočen!
 tourDoneButton = Končano
 userCountContainer = { $title } v tem trenutku preskuša <span>{ $installation_count }</span> ljudi!
@@ -265,6 +275,7 @@ newsletterFooterSuccessHeader = Hvala!
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Ta poskus ni podprt v vašem jeziku ({ $locale_code }).
 localeWarningSubtitle = Če želite, ga lahko kljub temu omogočite.
 
 
