@@ -40,8 +40,8 @@ menuRetire = 移除 Test Pilot
 landingIntroLead = 超越現在…
 landingIntroOne = 測試新功能
 landingIntroTwo = 提供意見回饋
-landingIntroThree = 幫助開發 Firefox
-landingLegalNotice = 若繼續，代表您同意 Test Pilot 的 <a>使用條款</a> 及 <a>隱私權公告</a>。
+landingIntroThree = 幫忙開發 Firefox
+landingLegalNotice = 安裝此附加元件，代表您同意 Test Pilot 的 <a>使用條款</a> 及 <a>隱私權公告</a>。
 landingExperimentsTitle = 試用最新的實驗功能
 
 
@@ -79,7 +79,7 @@ landingDownloadFirefoxSubTitle = 免費下載
 [[ landingCard ]]
 
 landingCardListTitle = 倒數三秒，快速上手
-landingCardOne = 安裝 Test Pilot 附加元件
+landingCardOne = 安裝 Test Pilot
 landingCardTwo = 開啟實驗功能
 landingCardThree = 告訴我們您的想法
 
