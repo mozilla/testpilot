@@ -19,6 +19,14 @@ menuWiki = Test Pilot Wiki
 [[ landing ]]
 
 landingIntroThree = Tulungang buuin ang Firefox.
+landingExperimentsTitle = Subukan ang mga pinakabagong mga tampok pang-eksperimento
+
+
+
+# Related to the installation of the Test Pilot add-on.
+[[ landingInstall ]]
+
+landingInstallButton = I-install ang Test Pilot Add-on
 
 
 
