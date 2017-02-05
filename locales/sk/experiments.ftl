@@ -32,9 +32,13 @@ minvidContributors3Title = Inžinier - prispievateľ
 nomore404sSubtitle = Služba využíva Wayback Machine
 nomore404sDescription = Už vás nebavia slepé uličky na webe? Dáme vám vedieť, keď nájdeme uloženú verziu toho, čo hľadáte na Internet Archive Wayback Machine.
 nomore404sIntroduction = <p>Je to jednoduché. Kedykoľvek keď pri prehliadaní narazíte na stránku 404, dáme vám vedieť, či sa vo Wayback Machine nachádza archivovaná verzia stránky, ktorú hľadáte.</p>
+nomore404sMeasurements0 = Zbierame základné údaje o počte stretnutí sa s chybou 404, počet dostupných verzii stránky na Archive.org a koľkokrát sa rozhodnete archivovanú stránku zobraziť.
+nomore404sMeasurements1 = Aby sme mohli uloženú verziu stránky zobraziť, posielame chybné URL adresy na server Archive.org. Zásady ochrany súkromia <a href="https://archive.org/" target="_blank">Archive.org</a> nájdete <a href="https://archive.org/about/terms.php" target="_blank">tu</a>.
+nomore404sMeasurements2 = Nezbierame URL adresy navštívených stránok alebo URL adresy odoslané na servery Archive.org.
 nomore404sMeasurements3 = Výsledky vami vyplneného dotazníka a agregované telemetrické údaje súvisiace s týmto experimentom môžeme zdielať s Internet Archive.
 nomore404sDetails0Copy = Znížte s Wayback Machine počet slepých uličiek a chýb 404.
 nomore404sDetails1Copy = Od našich priateľov z Internet Archive.
+nomore404sToursteps0Copy = Surfujte na internete ako doteraz. Ak sa stretnete so stránkou 404, povieme vám, či je jej archivovaná verzia dostupná v archíve Wayback Machine.
 nomore404sToursteps1Copy = Pomocou Test Pilotu nám môžete poskytnúť spätnú väzbu alebo No More 404s deaktivovať.
 nomore404sContributors1Title = Vývojár, Wayback Machine, The Internet Archive
 nomore404sContributors2Title = Riaditeľ, Wayback Machine, The Internet Archive
