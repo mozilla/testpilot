@@ -59,7 +59,7 @@ landingInstalledButton = Escolha as suas funcionalidades
 [[ oneClickInstall ]]
 
 oneClickInstallMinorCta = Instalar o Teste piloto &amp;
-oneClickInstallMajorCta = Permitir { $title }
+oneClickInstallMajorCta = Ativar { $title }
 
 
 
@@ -70,7 +70,7 @@ landingRequiresDesktop = O Teste piloto requer o Firefox para Computador Windows
 landingDownloadFirefoxDesc = (O Teste piloto está disponível para o Firefox no Windows, OS X e Linux)
 landingUpgradeDesc = O Teste piloto requer o Firefox 45 ou superior.
 landingDownloadFirefoxTitle = Firefox
-landingUpgradeFirefoxTitle = Actualizar o Firefox
+landingUpgradeFirefoxTitle = Atualizar o Firefox
 landingDownloadFirefoxSubTitle = Descarga gratuita
 
 
@@ -80,7 +80,7 @@ landingDownloadFirefoxSubTitle = Descarga gratuita
 
 landingCardListTitle = Comece em 3, 2, 1
 landingCardOne = Obtenha o extra do Teste piloto
-landingCardTwo = Permitir funcionalidades experimentais
+landingCardTwo = Ativar funcionalidades experimentais
 landingCardThree = Dê-nos a sua opinião
 
 
@@ -170,5 +170,78 @@ experimentPromoHeader = Pronto para descolar?
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } está ativado.
+installErrorMessage = Uh oh. { $title } não pôde ser ativado. Tente novamente mais tarde.
 participantCount = <span>{ $installation_count }</span> participantes
+otherExperiments = Experimente estas experiências também
+disableHeader = Desativar experiência?
+disableExperiment = Desativar { $title }
+disableExperimentTransition = A desativar...
+enableExperiment = Ativar { $title }
+enableExperimentTransition = A ativar...
+measurements = A sua privacidade
+experimentPrivacyNotice = Pode saber mais sobre os dados recolhidos para { $title } aqui.
+contributorsExtraLearnMore = Saber mais
+changelog = Registo de alterações
+tour = Visita guiada
+tourLink = Iniciar visita guiada
+contribute = Contribuir
+bugReports = Relatórios de bugs
+tourOnboardingTitle = { $title } ativado!
+tourDoneButton = Feito
+userCountContainerAlt = Acaba de ser lançado!
+highlightPrivacy = A sua privacidade
+
+
+
+# Shown when an experiment requires a version of Firefox newer than the user's.
+[[ upgradeNotice ]]
+
+upgradeNoticeLink = Como atualizar o Firefox.
+
+
+
+# Shown while uninstalling Test Pilot.
+[[ uninstall ]]
+
+retireSubmitButton = Proceder
+retirePageProgressMessage = A encerrar...
+
+
+
+# Shown on a page presented to users three days after installing their first experiment.
+[[ share ]]
+
+shareSecondary = ou apenas copie e cole esta ligação...
+shareEmail = E-mail
+shareCopy = Copiar
+
+
+
+# A form prompting the user to sign up for the Test Pilot Newsletter.
+[[ newsletterForm ]]
+
+newsletterFormSubmitButtonSubmitting = A submeter...
+
+
+
+# A section of the footer containing a newsletter signup form.
+[[ newsletterFooter ]]
+
+newsletterFooterHeader = Mantenha-se informado
+newsletterFooterSuccessHeader = Obrigado!
+
+
+
+# Shown to users who do not have JavaScript enabled.
+[[ noscript ]]
+
+noScriptHeading = Uh oh...
+
+
+
+# Text of a button to toggle visibility of a list of past experiments.
+[[ pastExperiments ]]
+
+viewPastExperiments = Ver experiências passadas
+hidePastExperiments = Esconder experiências passadas
 
