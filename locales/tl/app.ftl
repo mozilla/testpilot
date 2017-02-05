@@ -15,6 +15,13 @@ menuWiki = Test Pilot Wiki
 
 
 
+# The splash on the homepage.
+[[ landing ]]
+
+landingIntroThree = Tulungang buuin ang Firefox.
+
+
+
 # Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
