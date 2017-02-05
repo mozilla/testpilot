@@ -55,6 +55,14 @@ landingInstalledButton = Выберите возможности
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Установить лётчика-испытателя &amp;
+oneClickInstallMajorCta = Включить { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -172,6 +180,7 @@ disableExperiment = Отключить { $title }
 disableExperimentTransition = Отключение...
 enableExperiment = Включить { $title }
 enableExperimentTransition = Включение...
+experimentMeasurementIntro = В дополнение к <a>данным</a>, собранным всеми экспериментами Лётчика-испытателя, есть некоторые ключевые моменты, которые вам нужно знать, чтобы понять, что случается, когда вы используете { $experimentTitle }:
 measurements = Ваша приватность
 experimentPrivacyNotice = Вы можете узнать больше о сборе данных для { $title } здесь.
 contributorsHeading = Создано:
@@ -273,6 +282,7 @@ newsletterFooterSuccessBody = Если вы ранее не подтвержда
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Этот эксперимент не поддерживат ваш язык ({ $locale_code }).
 localeWarningSubtitle = Вы всё ещё можете включить его, если хотите.
 
 
