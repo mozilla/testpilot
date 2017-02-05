@@ -1,5 +1,7 @@
 activitystreamDescription = Bohatý vizuálny výpis z histórie a upravená domovská stránka robia vyhľadávanie vo Firefoxe jednoduchšie než kedykoľvek predtým.
 activitystreamIntroduction = <p>Vráťte sa späť k prehliadaniu bez straty myšlienok. Activity Stream udržiava vaše top stránky, záložky a nedávnu históriu vždy poruke na každej novej karte. Nové zobrazenie na časovej osi vám poskytne jednoduchý prehľad o vašom prehliadaní.</p>
+activitystreamMeasurements0 = Zbierame základné údaje o používaní - ako používate experimentálne funkcie novej karty a časovej osi, na ktoré prvky klikáte a aké je ich umiestnenie na stránke.
+activitystreamMeasurements1 = Zbierame taktiež základné informácie o profile vášho prehliadača, ktoré ovplyvňujú Activity Stream. Ide napríklad o počet záložiek či položiek v histórii.
 activitystreamDetails0Copy = Kliknite na novú kartu a vaše obľúbené stránky budú hneď poruke.
 activitystreamDetails1Copy = Pozrite sa, kde ste boli a kam všade ešte môžete ísť.
 activitystreamToursteps0Copy = Nájdite svoje top stránky, nedávnu históriu a záložky pri každom otvorení novej karty.
