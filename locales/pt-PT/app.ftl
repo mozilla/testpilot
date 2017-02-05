@@ -81,4 +81,94 @@ landingDownloadFirefoxSubTitle = Descarga gratuita
 landingCardListTitle = Comece em 3, 2, 1
 landingCardOne = Obtenha o extra do Teste piloto
 landingCardTwo = Permitir funcionalidades experimentais
+landingCardThree = Dê-nos a sua opinião
+
+
+
+# Shown after the user installs the Test Pilot add-on.
+[[ onboarding ]]
+
+onboardingMessage = Nós colocámos um ícone na barra de ferramentas para que consiga sempre encontrar o Teste Piloto.
+
+
+
+# Error message pages.
+[[ error ]]
+
+errorHeading = Ups!
+errorMessage = Parece que partimos algo. <br>Talvez tente novamente mais tarde.
+notFoundHeader = 404!
+
+
+
+# A modal prompt to sign up for the Test Pilot newsletter.
+[[ emailOptIn ]]
+
+emailOptInDialogTitle = Bem vindo ao Teste Piloto!
+emailOptInMessage = Conheça novas experiências e consulte os resultados dos testes de experiências que experimentou.
+emailValidationError = Por favor introduza um endereço de email válido!
+
+# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput = 
+  [html/placeholder] o email é aqui :)
+emailOptInButton = Inscreva-me
+emailOptInConfirmationTitle = Email enviado
+emailOptInSuccessMessage2 = Obrigado!
+emailOptInConfirmationClose = Para as experiências...
+
+
+
+# A listing of all Test Pilot experiments.
+[[ experimentsList ]]
+
+experimentListEnabledTab = Ativado
+experimentListJustLaunchedTab = Acabado de lançar
+experimentListJustUpdatedTab = Acabado de atualizar
+experimentListEndingTomorrow = Termina amanhã
+experimentListEndingSoon = Termina em breve
+experimentsListCondensedHeader = Escolha as suas experiências!
+
+
+
+# An individual experiment in the listing of all Test Pilot experiments.
+[[ experimentCard ]]
+
+experimentCardManage = Gerir
+experimentCardGetStarted = Começar
+experimentCardLearnMore = Saiba mais
+
+
+
+# A modal prompt shown when a user disables an experiment.
+[[ feedback ]]
+
+feedbackSubmitButton = Responda a um questionário rápido
+feedbackUninstallTitle = Obrigado!
+feedbackUninstallCopy = 
+  | A sua participação no Teste Piloto do Firefox significa
+  | muito! Por favor, consulte as outras experiências,
+  | e fique atento para o que está para vir!
+
+
+
+# A modal prompt shown before the feedback survey for some experiments.
+[[ experimentPreFeedback ]]
+
+experimentPreFeedbackTitle = Feedback { $title }
+experimentPreFeedbackLinkCopy = Dê a sua opinião sobre a experiência { $title }
+
+
+
+# A splash shown on top of the experiment page when Test Pilot is not installed.
+[[ experimentPromo ]]
+
+experimentPromoHeader = Pronto para descolar?
+
+
+
+# The experiment detail page.
+[[ experimentPage ]]
+
+isEnabledStatusMessage = { $title } está ativado.
+participantCount = <span>{ $installation_count }</span> participantes
 
