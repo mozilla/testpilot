@@ -163,6 +163,7 @@ experimentPreFeedbackLinkCopy = Dê a sua opinião sobre a experiência { $title
 [[ experimentPromo ]]
 
 experimentPromoHeader = Pronto para descolar?
+experimentPromoSubheader = Estamos a construir funcionalidades de última geração no Firefox. Instale o Teste piloto para experimentá-las!
 
 
 
