@@ -60,7 +60,7 @@ landingInstalledButton = Elige tus funciones
 
 landingRequiresDesktop = Test Pilot requiere Firefox para Escritorio en Windows, Mac o Linux
 landingDownloadFirefoxDesc = (Test Pilot esta disponible para Firefox en Windows, OS X y Linux)
-landingUpgradeDesc = Test Pilot requiere Firefox 45 o superior.
+landingUpgradeDesc = Test Pilot requiere Firefox 49 o superior.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Actualiza Firefox
 landingDownloadFirefoxSubTitle = Bájalo gratis

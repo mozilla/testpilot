@@ -68,7 +68,7 @@ oneClickInstallMajorCta = Povolit { $title }
 
 landingRequiresDesktop = Test Pilot potřebuje Firefox pro počítače na platformě Windows, Mac nebo Linux
 landingDownloadFirefoxDesc = (Test Pilot je dostupný pro Firefox pro Windows, OS X a Linux)
-landingUpgradeDesc = Test Pilot vyžaduje Firefox 45 nebo novější.
+landingUpgradeDesc = Test Pilot vyžaduje Firefox 49 nebo novější.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Aktualizovat Firefox
 landingDownloadFirefoxSubTitle = Stáhnout zdarma

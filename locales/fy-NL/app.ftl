@@ -68,7 +68,7 @@ oneClickInstallMajorCta = { $title } ynskeakelje
 
 landingRequiresDesktop = Test Pilot fereasket Firefox foar desktop op Windows, Mac of Linux
 landingDownloadFirefoxDesc = (Test Pilot is beskikber foar Firefox op Windows, OS X en Linux)
-landingUpgradeDesc = Test Pilot fereasket Firefox 45 of heger.
+landingUpgradeDesc = Test Pilot fereasket Firefox 49 of heger.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox fernije
 landingDownloadFirefoxSubTitle = Fergeze download

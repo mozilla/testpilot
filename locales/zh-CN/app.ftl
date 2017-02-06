@@ -68,7 +68,7 @@ oneClickInstallMajorCta = 启用 { $title }
 
 landingRequiresDesktop = Test Pilot 需要在 Windows、Mac 或 Linux 上的 Firefox 桌面版中运行
 landingDownloadFirefoxDesc = （Test Pilot 可用于 Windows、Mac 或 Linux 上运行的 Firefox）
-landingUpgradeDesc = Test Pilot 需要 Firefox 45 或更高版本。
+landingUpgradeDesc = Test Pilot 需要 Firefox 49 或更高版本。
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = 升级 Firefox
 landingDownloadFirefoxSubTitle = 免费下载
