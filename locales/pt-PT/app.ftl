@@ -37,7 +37,7 @@ menuRetire = Desinstalar o Teste piloto
 # The splash on the homepage.
 [[ landing ]]
 
-landingIntroLead = Ir além...
+landingIntroLead = Vá além . . .
 landingIntroOne = Testar novas funcionalidades.
 landingIntroTwo = Dê o seu feedback.
 landingIntroThree = Ajude a construir o Firefox.
@@ -174,6 +174,7 @@ isEnabledStatusMessage = { $title } está ativado.
 installErrorMessage = Uh oh. { $title } não pôde ser ativado. Tente novamente mais tarde.
 participantCount = <span>{ $installation_count }</span> participantes
 otherExperiments = Experimente estas experiências também
+giveFeedback = Dê feedback
 disableHeader = Desativar experiência?
 disableExperiment = Desativar { $title }
 disableExperimentTransition = A desativar...
@@ -181,14 +182,17 @@ enableExperiment = Ativar { $title }
 enableExperimentTransition = A ativar...
 measurements = A sua privacidade
 experimentPrivacyNotice = Pode saber mais sobre os dados recolhidos para { $title } aqui.
+contributorsHeading = Trazido a você por
 contributorsExtraLearnMore = Saber mais
 changelog = Registo de alterações
 tour = Visita guiada
 tourLink = Iniciar visita guiada
 contribute = Contribuir
 bugReports = Relatórios de bugs
+discussExperiment = Discuta o { $title }
 tourOnboardingTitle = { $title } ativado!
 tourDoneButton = Feito
+userCountContainer = Estão <span>{ $installation_count }</span> pessoas a experimentar o { $title } neste momento!
 userCountContainerAlt = Acaba de ser lançado!
 highlightPrivacy = A sua privacidade
 
@@ -197,6 +201,7 @@ highlightPrivacy = A sua privacidade
 # Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
+upgradeNoticeTitle = { $title } requer o Firefox { $min_release } ou mais recente.
 upgradeNoticeLink = Como atualizar o Firefox.
 
 
@@ -206,6 +211,7 @@ upgradeNoticeLink = Como atualizar o Firefox.
 
 retireSubmitButton = Proceder
 retirePageProgressMessage = A encerrar...
+retirePageHeadline = Obrigado por voar!
 
 
 
@@ -216,11 +222,27 @@ shareSecondary = ou apenas copie e cole esta ligação...
 shareEmail = E-mail
 shareCopy = Copiar
 
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } termina em { $completedDate }
+eolDisableMessage = A experiência { $title } terminou. Assim que a desinstalar não vai conseguir reinstalá-la novamente através do Teste Piloto.
+completedDateLabel = Data de fim da experiência: <b>{ $completedDate }</b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
+incompatibleHeader = Esta experiência pode não ser compatível com os extras que tem instalados.
+incompatibleSubheader = Recomendamos <a>desativar estes extras</a> antes de ativar esta experiência:
+
 
 
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] O seu email aqui
+newsletterFormSubmitButton = Registe-se agora
 newsletterFormSubmitButtonSubmitting = A submeter...
 
 
@@ -230,6 +252,13 @@ newsletterFormSubmitButtonSubmitting = A submeter...
 
 newsletterFooterHeader = Mantenha-se informado
 newsletterFooterSuccessHeader = Obrigado!
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledCTA = Não esta interessado? <a>Deixe-nos saber porquê</a>.
 
 
 
