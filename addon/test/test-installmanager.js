@@ -97,31 +97,48 @@ describe('InstallManager', function() {
   });
 
   describe('selfLoaded', function() {
-    it('dispatches SELF_INSTALLED when reason is install', function() {
+    it('dispatches SELF_INSTALLED and BROWSER_STARTUP when reason is install',
+      function() {
       const s = {
         dispatch: sinon.spy(),
         getState: sinon.stub().returns({ baseUrl: 'base' })
       };
       const i = new InstallManager(s);
       i.selfLoaded('install');
-      assert.ok(s.dispatch.calledOnce);
-      assert.ok(s.dispatch.firstCall.args[0].type, actions.SELF_INSTALLED.type);
+      assert.ok(s.dispatch.calledTwice);
+      assert.ok(
+        s.dispatch.firstCall.args[0].type,
+        actions.BROWSER_STARTUP.type
+      );
+      assert.ok(
+        s.dispatch.secondCall.args[0].type,
+        actions.SELF_INSTALLED.type
+      );
     });
 
-    it('dispatches SELF_ENABLED when reason is enable', function() {
+    it('dispatches SELF_ENABLED and BROWSER_STARTUP when reason is enable',
+      function() {
       const i = new InstallManager(store);
       i.selfLoaded('enable');
-      assert.ok(store.dispatch.calledOnce);
+      assert.ok(store.dispatch.calledTwice);
       assert.ok(
         store.dispatch.firstCall.args[0].type,
+        actions.BROWSER_STARTUP.type
+      );
+      assert.ok(
+        store.dispatch.secondCall.args[0].type,
         actions.SELF_ENABLED.type
       );
     });
 
-    it('does nothing otherwise', function() {
+    it('dispatches BROWSER_STARTUP otherwise', function() {
       const i = new InstallManager(store);
       i.selfLoaded('anything');
-      assert.ok(!store.dispatch.called);
+      assert.ok(store.dispatch.calledOnce);
+      assert.ok(
+        store.dispatch.firstCall.args[0].type,
+        actions.BROWSER_STARTUP.type
+      );
     });
   });
 

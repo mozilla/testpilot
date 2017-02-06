@@ -60,6 +60,8 @@ export default class InstallManager {
 
   selfLoaded(reason: string) {
     const { dispatch } = this.store;
+    dispatch(actions.BROWSER_STARTUP());
+
     if (reason === 'install') {
       dispatch(actions.SELF_INSTALLED());
     } else if (reason === 'enable') {

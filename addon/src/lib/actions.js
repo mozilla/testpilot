@@ -126,3 +126,4 @@ export const UNINSTALL_EXPERIMENT = createAction('UNINSTALL_EXPERIMENT', [
 export const UNINSTALL_SELF = createAction('UNINSTALL_SELF', []);
 export const GET_INSTALLED = createAction('GET_INSTALLED', []);
 export const SET_BASE_URL = createAction('SET_BASE_URL', [ 'url' ]);
+export const BROWSER_STARTUP = createAction('BROWSER_STARTUP', []);

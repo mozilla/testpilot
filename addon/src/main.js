@@ -6,7 +6,6 @@
 
 // @flow
 
-import { activeExperiments } from './lib/reducers/experiments';
 import AddonListener from './lib/actionCreators/AddonListener';
 import configureStore from './lib/configureStore';
 import createExperimentMetrics from './lib/metrics';
@@ -71,12 +70,6 @@ export function main({ loadReason }: { loadReason: string }) {
   notificationManager.schedule();
   feedbackManager.schedule();
   feedbackManager.maybeShare();
-  telemetry.sendGAEvent({
-    t: 'event',
-    ec: 'add-on Interactions',
-    ea: 'browser startup',
-    el: Object.keys(activeExperiments(store.getState())).length
-  });
 }
 
 export function onUnload(reason: string) {
