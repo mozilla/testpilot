@@ -67,7 +67,7 @@ oneClickInstallMajorCta = Ativar { $title }
 [[ landingFirefox ]]
 
 landingRequiresDesktop = O Piloto de Teste requer o Firefox para Computador no Windows, Mac ou Linux
-landingDownloadFirefoxDesc = (O Teste piloto está disponível para o Firefox no Windows, OS X e Linux)
+landingDownloadFirefoxDesc = (O Piloto de Teste está disponível para o Firefox no Windows, OS X e Linux)
 landingUpgradeDesc = O Piloto de Teste requer o Firefox 45 ou superior.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Atualizar o Firefox
@@ -88,7 +88,7 @@ landingCardThree = Dê-nos a sua opinião
 # Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
-onboardingMessage = Nós colocámos um ícone na barra de ferramentas para que consiga sempre encontrar o Teste Piloto.
+onboardingMessage = Nós colocámos um ícone na sua barra de ferramentas para que consiga sempre encontrar o Piloto de Teste.
 
 
 
@@ -146,7 +146,7 @@ feedbackSubmitButton = Responda a um questionário rápido
 feedbackUninstallTitle = Obrigado!
 feedbackUninstallCopy = 
   | A sua participação no Piloto de Teste do Firefox significa
-  | muito! Por favor, consulte as outras experiências,
+  | muito! Por favor, consulte as nossas outras experiências,
   | e fique atento para o que está para vir!
 
 
@@ -163,7 +163,7 @@ experimentPreFeedbackLinkCopy = Dê a sua opinião sobre a experiência { $title
 [[ experimentPromo ]]
 
 experimentPromoHeader = Pronto para descolar?
-experimentPromoSubheader = Estamos a construir funcionalidades de última geração no Firefox. Instale o Teste piloto para experimentá-las!
+experimentPromoSubheader = Estamos a construir funcionalidades de última geração no Firefox. Instale o Piloto de Teste para experimentá-las!
 
 
 
@@ -212,6 +212,7 @@ upgradeNoticeLink = Como atualizar o Firefox.
 
 retireDialogTitle = Desinstalar o Piloto de Teste?
 retireMessage = Como desejar. Isto vai desativar quaisquer testes ativos, desinstalar o extra e remover as informações da sua conta dos nossos servidores.
+retireEmailMessage = Para deixar de receber atualizações por email, basta clicar na ligação <em>cancelar subscrição</em> em qualquer email do Piloto de Teste.
 retireSubmitButton = Proceder
 pageTitleRetirePage = Piloto de Teste do Firefox - Desinstalar o Piloto de Teste
 retirePageProgressMessage = A encerrar...
@@ -241,7 +242,8 @@ shareCopy = Copiar
 
 # Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } termina em { $completedDate }
-eolDisableMessage = A experiência { $title } terminou. Assim que a desinstalar não vai conseguir reinstalá-la novamente através do Teste Piloto.
+eolNoticeLink = Saber mais
+eolDisableMessage = A experiência { $title } terminou. Assim que a desinstalar não vai conseguir reinstalá-la novamente através do Piloto de Teste.
 completedDateLabel = Data de fim da experiência: <b>{ $completedDate }</b>
 
 
@@ -273,6 +275,7 @@ newsletterFooterError = Houve um erro ao submeter o seu endereço de email. Tent
 newsletterFooterHeader = Mantenha-se informado
 newsletterFooterBody = Descubra sobre as novas experiências e veja os resultados dos testes para experiências que experimentou.
 newsletterFooterSuccessHeader = Obrigado!
+newsletterFooterSuccessBody = Se não confirmou previamente uma subscrição para um newsletter relacionado com a Mozilla poderá ter de o fazer. Por favor verifique a sua caixa de entrada ou filtro de spam por um email nosso.
 
 
 
@@ -287,6 +290,8 @@ localeWarningSubtitle = Ainda pode ativá-lo se desejar.
 # An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledHeader = Vamos tirar este bebé do chão!
+experimentsListNoneInstalledSubheader = Pronto para experimentar uma nova experiência do Piloto de Teste? Selecione uma para ativar, leve-a para uma volta, e deixe-nos saber o que pensa.
 experimentsListNoneInstalledCTA = Não esta interessado? <a>Deixe-nos saber porquê</a>.
 
 
