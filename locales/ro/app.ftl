@@ -37,7 +37,6 @@ menuRetire = Dezinstalează Test Pilot
 # The splash on the homepage.
 [[ landing ]]
 
-landingIntroLead = Mergi mai departe . . .
 landingIntroOne = Testează noi funcții.
 landingIntroTwo = Oferă-ne feedback.
 landingIntroThree = Ajută la construirea Firefox.
