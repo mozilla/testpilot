@@ -9,6 +9,7 @@
 // Page script acts as messaging bridge between addon and web content.
 unsafeWindow.navigator.testpilotAddon = true;
 unsafeWindow.navigator.testpilotAddonVersion = self.options.version;
+unsafeWindow.navigator.testpilotClientUUID = self.options.clientUUID;
 
 // New channel
 self.port.on('action', function(data) {

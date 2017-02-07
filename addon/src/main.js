@@ -40,6 +40,7 @@ const webapp = new WebApp({
   baseUrl: startEnv.baseUrl,
   whitelist: startEnv.whitelist,
   addonVersion: self.version,
+  clientUUID: store.getState().clientUUID,
   hub
 });
 

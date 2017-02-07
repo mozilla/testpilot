@@ -14,7 +14,8 @@ type WebAppOptions = {
   hub: Hub,
   baseUrl: string,
   whitelist: string,
-  addonVersion: string
+  addonVersion: string,
+  clientUUID: string
 };
 
 type PageIncludes = { page: string, beacon: string[] };
@@ -28,11 +29,14 @@ function toIncludes(baseUrl: string, whitelist: string): PageIncludes {
 export default class WebApp {
   hub: Hub;
   addonVersion: string;
+  clientUUID: string;
   page: PageMod;
   beacon: PageMod;
-  constructor({ hub, baseUrl, whitelist, addonVersion }: WebAppOptions) {
+  constructor(options: WebAppOptions) {
+    const { hub, baseUrl, whitelist, addonVersion, clientUUID } = options;
     this.hub = hub;
     this.addonVersion = addonVersion;
+    this.clientUUID = clientUUID;
     this.createMods(toIncludes(baseUrl, whitelist));
   }
 
@@ -41,7 +45,10 @@ export default class WebApp {
       include: includes.page,
       contentScriptFile: './message-bridge.js',
       contentScriptWhen: 'start',
-      contentScriptOptions: { version: this.addonVersion },
+      contentScriptOptions: {
+        version: this.addonVersion,
+        clientUUID: this.clientUUID
+      },
       attachTo: [ 'top', 'existing' ],
       onAttach: worker => {
         this.hub.connect(worker.port);
