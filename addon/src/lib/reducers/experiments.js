@@ -61,9 +61,10 @@ export function activeCompletedExperimentList(
     .filter(x => x.completed && new Date(x.completed) < new Date());
 }
 
-export function randomActiveExperiment(state: AddonState): Experiment {
-  const installed = activeExperiments(state);
-  const installedKeys = Object.keys(installed);
-  const id = installedKeys[Math.floor(Math.random() * installedKeys.length)];
-  return installed[id];
+export function ratableExperiments(state: AddonState): Array<Experiment> {
+  const active = activeExperiments(state);
+  const ids = Object.keys(active);
+  return ids
+    .map(id => active[id])
+    .filter(x => x.testpilotOptions.ratings === 'enabled');
 }

@@ -15,6 +15,14 @@ function toAbsoluteUrl(baseUrl, path) {
   return path[0] === '/' ? baseUrl + path : path;
 }
 
+function parseOptions(input: ?Object): TestPilotOptions {
+  input = input || {};
+  const options = {};
+  // ratings defaults to enabled
+  options.ratings = input.ratings === 'disabled' ? 'disabled' : 'enabled';
+  return options;
+}
+
 export class Notification {
   id: number;
   title: string;
@@ -27,6 +35,12 @@ export class Notification {
     this.notify_after = object.notify_after;
   }
 }
+
+export type FeatureFlag = 'enabled' | 'disabled';
+
+export type TestPilotOptions = {
+  ratings: FeatureFlag
+};
 
 export class Experiment {
   baseUrl: string;
@@ -47,6 +61,7 @@ export class Experiment {
   launchDate: Date;
   localeGrantlist: Array<string>;
   localeBlocklist: Array<string>;
+  testpilotOptions: TestPilotOptions;
   constructor(object: Object, baseUrl?: string) {
     this.baseUrl = object.baseUrl || baseUrl || '';
     this.id = object.addon_id;
@@ -72,6 +87,7 @@ export class Experiment {
 
     this.localeGrantlist = object.locale_grantlist || [];
     this.localeBlocklist = object.locale_blocklist || [];
+    this.testpilotOptions = parseOptions(object.testpilot_options);
   }
 
   allowsLocale(locale: string) {

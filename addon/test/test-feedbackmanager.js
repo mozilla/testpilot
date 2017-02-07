@@ -2,6 +2,7 @@
 import assert from 'assert';
 import proxyquire from 'proxyquire';
 import sinon from 'sinon';
+import { Experiment } from '../src/lib/Experiment';
 import { SHOW_RATING_PROMPT, SET_RATING } from '../src/lib/actions';
 
 const TEN_MINUTES = 1000 * 60 * 10;
@@ -81,7 +82,7 @@ describe('FeedbackManager', function() {
     it('does nothing when no experiments are active', function() {
       const state = {
         ratings: { lastRated: Date.now() - ONE_DAY * 2 },
-        experiments: { a: { active: false } }
+        experiments: { a: new Experiment({ active: false }) }
       };
       const s = {
         getState: sinon.stub().returns(state),
@@ -99,11 +100,11 @@ describe('FeedbackManager', function() {
           a: { rating: 5, '46': true }
         },
         experiments: {
-          a: {
+          a: new Experiment({
             addon_id: 'a',
             active: true,
             installDate: new Date('2015-08-23')
-          }
+          })
         }
       };
       const s = {
@@ -122,15 +123,38 @@ describe('FeedbackManager', function() {
       assert.ok(!fm.dispatch.called);
     });
 
+    it('does nothing when none have ratings enabled', function() {
+      const state = {
+        ratings: { lastRated: Date.now() - ONE_DAY * 2 },
+        experiments: {
+          a: new Experiment({
+            addon_id: 'a',
+            active: true,
+            installDate: new Date('2015-08-23'),
+            testpilot_options: {
+              ratings: 'disabled'
+            }
+          })
+        }
+      };
+      const s = {
+        getState: sinon.stub().returns(state),
+        dispatch: sinon.spy()
+      };
+      const fm = new FeedbackManager(s);
+      fm.check();
+      assert.ok(!s.dispatch.called);
+    });
+
     it('dispatches a SHOW_RATING_PROMPT when it has to', function() {
       const state = {
         ratings: { lastRated: Date.now() - ONE_DAY * 2 },
         experiments: {
-          a: {
+          a: new Experiment({
             addon_id: 'a',
             active: true,
             installDate: new Date('2015-08-23')
-          }
+          })
         }
       };
       const s = {
@@ -148,11 +172,11 @@ describe('FeedbackManager', function() {
     it('returns false if eol experiment was taken', function() {
       const state = {
         experiments: {
-          testId1: {
-            id: 'testId1',
+          testId1: new Experiment({
+            addon_id: 'testId1',
             completed: new Date('2017-01-01'),
             active: true
-          }
+          })
         },
         ratings: { testId1: { eol: 5 } }
       };
@@ -167,11 +191,11 @@ describe('FeedbackManager', function() {
     it('schedules a prompt on tab open', function() {
       const state = {
         experiments: {
-          testId1: {
-            id: 'testId1',
+          testId1: new Experiment({
+            addon_id: 'testId1',
             completed: new Date('2017-01-01'),
             active: true
-          }
+          })
         },
         ratings: {}
       };

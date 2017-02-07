@@ -522,3 +522,14 @@ A boolean indicating whether this experiment should only appear in a dev environ
 ```yaml
 dev: false
 ```
+
+## `testpilot_options`
+
+A set of options for configuring testpilot features for this experiment.
+
+Enabling / disabling the rating feedback prompt is the only option right now. Valid values are `enabled` or `disabled`. Defaults to `enabled`.
+
+```yaml
+testpilot_options:
+  ratings: enabled
+```
