@@ -9,7 +9,6 @@ import PastExperiments from '../components/PastExperiments';
 import LoadingPage from './LoadingPage';
 import View from '../components/View';
 
-
 export default class HomePageWithAddon extends React.Component {
 
   constructor(props) {
@@ -85,6 +84,7 @@ export default class HomePageWithAddon extends React.Component {
             onDismiss={() => this.setState({ showEmailDialog: false })} />}
 
         {this.renderSplash()}
+
         <div className="responsive-content-wrapper">
           <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
         </div>

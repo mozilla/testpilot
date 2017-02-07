@@ -145,6 +145,10 @@
     background-color: $disabled-grey;
   }
 
+  &.big-border {
+    border: 3px solid $white;
+  }
+
   &.large,
   &.extra-large {
     font-size: 20px;
@@ -234,4 +238,3 @@
     bottom: 0;
   }
 }
-

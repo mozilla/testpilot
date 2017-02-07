@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import { VariantTests, VariantTestCase, VariantTestDefault } from './VariantTests';
 
 export default class MainInstallButton extends React.Component {
 
@@ -55,14 +56,28 @@ export default class MainInstallButton extends React.Component {
     }
     return (
       <div>
-        <button onClick={e => this.install(e)}
-                className={classnames('button extra-large primary install', { 'state-change': isInstalling })}>
-          {hasAddon && <span className="progress-btn-msg" data-l10n-id="landingInstalledButton">Installed</span>}
-          {!hasAddon && !isInstalling && installButton}
-          {!hasAddon && isInstalling &&
-            <span className="progress-btn-msg" data-l10n-id="landingInstallingButton">Installing...</span>}
-          <div className="state-change-inner"></div>
-        </button>
+        <VariantTests name="installButtonBorder" varianttests={ this.props.varianttests }>
+          <VariantTestCase value="bigBorder">
+            <button onClick={e => this.install(e)}
+                    className={classnames('button extra-large primary install big-border', { 'state-change': isInstalling })}>
+              {hasAddon && <span className="progress-btn-msg" data-l10n-id="landingInstalledButton">Installed</span>}
+              {!hasAddon && !isInstalling && installButton}
+              {!hasAddon && isInstalling &&
+                <span className="progress-btn-msg" data-l10n-id="landingInstallingButton">Installing...</span>}
+              <div className="state-change-inner"></div>
+            </button>
+          </VariantTestCase>
+          <VariantTestDefault>
+            <button onClick={e => this.install(e)}
+                    className={classnames('button extra-large primary install', { 'state-change': isInstalling })}>
+              {hasAddon && <span className="progress-btn-msg" data-l10n-id="landingInstalledButton">Installed</span>}
+              {!hasAddon && !isInstalling && installButton}
+              {!hasAddon && isInstalling &&
+                <span className="progress-btn-msg" data-l10n-id="landingInstallingButton">Installing...</span>}
+              <div className="state-change-inner"></div>
+            </button>
+          </VariantTestDefault>
+        </VariantTests>
       </div>
     );
   }
