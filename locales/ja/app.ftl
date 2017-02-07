@@ -37,7 +37,6 @@ menuRetire = Test Pilot を削除
 # The splash on the homepage.
 [[ landing ]]
 
-landingIntroLead = さらに先へ...
 landingIntroOne = 新機能を試す。
 landingIntroTwo = フィードバックを送る。
 landingIntroThree = Firefox の開発に協力。
