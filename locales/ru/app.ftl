@@ -37,7 +37,6 @@ menuRetire = Удалить расширение лётчика-испытате
 # The splash on the homepage.
 [[ landing ]]
 
-landingIntroLead = Выйдите за грани . . .
 landingIntroOne = Тестируйте новые функции.
 landingIntroTwo = Оставляйте свои отзывы.
 landingIntroThree = Помогайте улучшать Firefox.
