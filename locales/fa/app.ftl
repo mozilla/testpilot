@@ -37,7 +37,6 @@ menuRetire = حذف خلبان آزمایشی
 # The splash on the homepage.
 [[ landing ]]
 
-landingIntroLead = به ماورا بروید…
 landingIntroOne = امکانات جدید را آزمایش کنید.
 landingIntroTwo = بازخورد بدهید.
 landingIntroThree = در ایجاد فایرفاکس کمک کنید.
