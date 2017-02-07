@@ -105,7 +105,7 @@ trackingprotectionMeasurements2 = Mimo názvu domény nesbíráme o zablokované
 trackingprotectionMeasurements3 = Pro rozpoznání sledovacích prvků používáme seznam našeho partnera Disconnect. O standardech Disconnect si můžete přečíst <a href="https://disconnect.me/trackerprotection" target="_blank">zde</a>.
 trackingprotectionPrefeedbackcopy = <p>Pro nahlášení stránky, která s ochranou proti sledování nefunguje, klepněte na ikonu štítu v řádku s URL adresou stránky.</p>
 trackingprotectionDetails0Copy = Přístup ke všem funkcím ochrany proti sledování najdete v adresním řádku.
-trackingprotectionDetails1Copy = Nahlásit problém a pomoci nám ho vyřešit.
+trackingprotectionDetails1Copy = Nahlaste problém a pomozte nám jej vyřešit.
 trackingprotectionToursteps0Copy = Ikona štítu znamená, že je ochrana proti sledování zapnutá. Pokud je štít přeškrtnutý, pak je vypnutá.
 trackingprotectionToursteps1Copy = Řekněte nám, kdy věci fungují a kdy ne.
 trackingprotectionToursteps2Copy = Vždy nám můžete poslat zpětnou vazbu nebo Tracking Protection v Test Pilotu zakázat.
