@@ -282,7 +282,7 @@ newsletterFooterSuccessBody = Pokud jste dříve nepotvrdili odběr zpravodaje M
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Tento experiment není ve vašem jazyce podporován ({ $locale_code }).
+localeUnavailableWarningTitle = Tento experiment není ve vašem jazyce ({ $locale_code }) podporován.
 localeWarningSubtitle = Můžete ale aktivaci zkusit i bez toho.
 
 
