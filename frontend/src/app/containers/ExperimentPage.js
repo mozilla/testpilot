@@ -391,8 +391,7 @@ export class ExperimentDetail extends React.Component {
                             {privacy_preamble && <p data-l10n-id={this.l10nId('privacy_preamble')}>{privacy_preamble}</p>}
                             <p data-l10n-id="experimentMeasurementIntro"
                                data-l10n-args={JSON.stringify({ experimentTitle: experiment.title })}>
-                              In addition to the <a href="/privacy">data</a> collected by all Test Pilot experiments, here are the
-                              key things you should know about what is happening when you use {experiment.title}:
+                               <a href="/privacy"></a>
                             </p>
                             <ul>
                               {measurements.map((note, idx) => (
