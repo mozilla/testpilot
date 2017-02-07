@@ -9,8 +9,6 @@ import PastExperiments from '../components/PastExperiments';
 import LoadingPage from './LoadingPage';
 import View from '../components/View';
 
-import { VariantTests, VariantTestCase, VariantTestDefault } from '../components/VariantTests.js';
-
 export default class HomePageWithAddon extends React.Component {
 
   constructor(props) {
@@ -86,12 +84,6 @@ export default class HomePageWithAddon extends React.Component {
             onDismiss={() => this.setState({ showEmailDialog: false })} />}
 
         {this.renderSplash()}
-
-        <VariantTests name="foo" varianttests={ this.props.varianttests }>
-          <VariantTestCase value="blastoff">Ready for Blastoff!</VariantTestCase>
-          <VariantTestCase value="houston">Houston, all systems are go.</VariantTestCase>
-          <VariantTestDefault>Ready for Takeoff!</VariantTestDefault>
-        </VariantTests>
 
         <div className="responsive-content-wrapper">
           <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />

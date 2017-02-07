@@ -22,16 +22,15 @@ function random(choices) {
 
 const tests = [
   {
-    name: 'foo',
+    name: 'installButtonBorder',
     getValue: function getValue() {
       if (!window.navigator.language.startsWith('en')) {
         return false;  // User gets whatever the DefaultCase is.
       }
       // 25% of users get blastoff, 25% houston, 50% default.
       return random({
-        blastoff: 1,
-        houston: 1,
-        default: 2
+        bigBorder: 1,
+        default: 1
       });
     }
   }
