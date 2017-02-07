@@ -1,2 +1,5 @@
+activitystreamDescription = Um histórico de feed visual rico e uma página inicial reimaginada tornam mais fácil do que nunca encontrar exatamente o que está a procura no Firefox.
+activitystreamIntroduction = <p>Volte a navegar sem perder o seu fluxo de pensamento. O Canal de atividades mantém-lhe à mão os seus sites favoritos, marcadores e histórico recente em cada novo separador. E a nova vista da cronologia oferece-lhe uma visão geral da sua navegação.</p>
+activitystreamMeasurements0 = Nós recolhemos dados de utilização básicos relativamente a como você interage com páginas experimentais de cronologia e de novos separadores, tais como os tipos de elementos em que você clica e a posição destes na página.
 activitystreamMeasurements1 = Nós também recolhemos informação básica acerca do seu perfil do navegador que afeta o Canal de atividades, tais como o número de marcadores e o histórico.
 activitystreamDetails0Copy = Clique num novo separador e os seus sites favoritos estão apenas a mais um clique de distância.
