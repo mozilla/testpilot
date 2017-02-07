@@ -37,7 +37,6 @@ menuRetire = 卸载 Test Pilot
 # The splash on the homepage.
 [[ landing ]]
 
-landingIntroLead = 正在赶来...
 landingIntroOne = 测试新功能。
 landingIntroTwo = 提供您的反馈。
 landingIntroThree = 帮助打造 Firefox。
