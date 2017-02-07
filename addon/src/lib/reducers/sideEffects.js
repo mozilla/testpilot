@@ -74,7 +74,13 @@ export function reducer(
       };
 
     case actions.EXPERIMENTS_LOADED.type:
-      return ({ loader }) => loader.schedule();
+      return ({ dispatch, loader }) => {
+        loader.schedule();
+        Object.keys(payload.experiments)
+          .map(id => payload.experiments[id])
+          .filter(x => x.uninstalled && new Date(x.uninstalled) < new Date())
+          .forEach(experiment => dispatch(actions.UNINSTALL_EXPERIMENT({ experiment })))
+      }
 
     case actions.INSTALL_EXPERIMENT.type:
       return ({ installManager }) =>
