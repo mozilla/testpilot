@@ -9,6 +9,7 @@ import PastExperiments from '../components/PastExperiments';
 import LoadingPage from './LoadingPage';
 import View from '../components/View';
 
+import { AbTests, AbTestCase, AbTestDefault } from '../components/AbTests.js';
 
 export default class HomePageWithAddon extends React.Component {
 
@@ -85,6 +86,13 @@ export default class HomePageWithAddon extends React.Component {
             onDismiss={() => this.setState({ showEmailDialog: false })} />}
 
         {this.renderSplash()}
+
+        <AbTests name="foo" abtests={ this.props.abtests }>
+          <AbTestCase value="blastoff">Ready for Blastoff!</AbTestCase>
+          <AbTestCase value="houston">Houston, all systems are go.</AbTestCase>
+          <AbTestDefault>Ready for Takeoff!</AbTestDefault>
+        </AbTests>
+
         <div className="responsive-content-wrapper">
           <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
         </div>
