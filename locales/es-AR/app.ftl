@@ -37,7 +37,6 @@ menuRetire = Desinstalar Test Pilot
 # The splash on the homepage.
 [[ landing ]]
 
-landingIntroLead = Y más allá...
 landingIntroOne = Probá nuevas características.
 landingIntroTwo = Danos tu opinión.
 landingIntroThree = Ayudá a construir Firefox.
