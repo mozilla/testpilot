@@ -37,7 +37,6 @@ menuRetire = A Tesztpilóta eltávolítása
 # The splash on the homepage.
 [[ landing ]]
 
-landingIntroLead = Jusson tovább…
 landingIntroOne = Tesztelje az új funkciókat.
 landingIntroTwo = Adjon visszajelzést.
 landingIntroThree = Segítsen a Firefox készítésében.
