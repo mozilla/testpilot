@@ -37,7 +37,6 @@ menuRetire = إزالة تثبيت الاختبار التجريبي
 # The splash on the homepage.
 [[ landing ]]
 
-landingIntroLead = اذهب أبعد من ذلك . . .
 landingIntroOne = أختبر ميزات جديدة.
 landingIntroTwo = قدم ملاحظاتك.
 landingIntroThree = ساعد في بناء فَيَرفُكس.
