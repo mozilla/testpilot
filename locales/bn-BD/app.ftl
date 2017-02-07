@@ -37,7 +37,6 @@ menuRetire = Test Pilot আনইন্সটল করুন
 # The splash on the homepage.
 [[ landing ]]
 
-landingIntroLead = ছাড়িয়ে যান . . .
 landingIntroOne = নতুন নতুন ফিচার পরখ করুন।
 landingIntroTwo = আপনার প্রতিক্রিয়া জানান।
 landingIntroThree = Firefox তৈরিতে সহযোগিতা করুন।
