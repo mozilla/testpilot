@@ -37,7 +37,6 @@ menuRetire = Test Pilotu’nu kaldır
 # The splash on the homepage.
 [[ landing ]]
 
-landingIntroLead = Sınırları aş . . .
 landingIntroOne = Yeni özellikleri test et.
 landingIntroTwo = Yorumlarını paylaş.
 landingIntroThree = Firefox’u inşa etmemize yardım et.
