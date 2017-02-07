@@ -59,7 +59,7 @@ landingInstalledButton = Vyberte si svoje funkcie
 [[ oneClickInstall ]]
 
 oneClickInstallMinorCta = Nainštalovať Test Pilot a
-oneClickInstallMajorCta = Aktivovať { $title }
+oneClickInstallMajorCta = aktivovať { $title }
 
 
 
