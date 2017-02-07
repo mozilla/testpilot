@@ -37,7 +37,6 @@ menuRetire = Kkes Test Pilot
 # The splash on the homepage.
 [[ landing ]]
 
-landingIntroLead = Wali ugar…
 landingIntroOne = Sekyed timahilin timaynutin.
 landingIntroTwo = Ḥku-yaɣ-d ayen d-ufiḍ.
 landingIntroThree = Mudd afus i Firefox akken ad yaẓ ar zdat.
