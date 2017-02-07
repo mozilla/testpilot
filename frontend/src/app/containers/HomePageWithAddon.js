@@ -9,7 +9,7 @@ import PastExperiments from '../components/PastExperiments';
 import LoadingPage from './LoadingPage';
 import View from '../components/View';
 
-import { AbTests, AbTestCase, AbTestDefault } from '../components/AbTests.js';
+import { VariantTests, VariantTestCase, VariantTestDefault } from '../components/VariantTests.js';
 
 export default class HomePageWithAddon extends React.Component {
 
@@ -87,11 +87,11 @@ export default class HomePageWithAddon extends React.Component {
 
         {this.renderSplash()}
 
-        <AbTests name="foo" abtests={ this.props.abtests }>
-          <AbTestCase value="blastoff">Ready for Blastoff!</AbTestCase>
-          <AbTestCase value="houston">Houston, all systems are go.</AbTestCase>
-          <AbTestDefault>Ready for Takeoff!</AbTestDefault>
-        </AbTests>
+        <VariantTests name="foo" varianttests={ this.props.varianttests }>
+          <VariantTestCase value="blastoff">Ready for Blastoff!</VariantTestCase>
+          <VariantTestCase value="houston">Houston, all systems are go.</VariantTestCase>
+          <VariantTestDefault>Ready for Takeoff!</VariantTestDefault>
+        </VariantTests>
 
         <div className="responsive-content-wrapper">
           <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />

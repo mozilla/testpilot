@@ -8,7 +8,7 @@ import addonReducer from './reducers/addon';
 import browserReducer from './reducers/browser';
 import experimentsReducer from './reducers/experiments';
 import newsletterFormReducer from './reducers/newsletter-form';
-import abtestsReducer from './reducers/abtests';
+import varianttestsReducer from './reducers/varianttests';
 
 export const reducers = combineReducers({
   addon: addonReducer,
@@ -16,7 +16,7 @@ export const reducers = combineReducers({
   experiments: experimentsReducer,
   newsletterForm: newsletterFormReducer,
   routing: routerReducer,
-  abtests: abtestsReducer
+  varianttests: varianttestsReducer
 });
 
 

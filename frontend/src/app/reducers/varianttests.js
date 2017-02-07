@@ -12,10 +12,10 @@ function random(choices) {
       variants.push(name);
     }
   });
-  let seed = window.localStorage.getItem('testpilot-abtests-id', null);
+  let seed = window.localStorage.getItem('testpilot-varianttests-id', null);
   if (seed === null) {
     seed = String(Math.random());
-    window.localStorage.setItem('testpilot-abtests-id', seed);
+    window.localStorage.setItem('testpilot-varianttests-id', seed);
   }
   return variants[Math.floor(seedrandom(seed)() * summedWeight)];
 }
@@ -23,15 +23,15 @@ function random(choices) {
 const tests = [
   {
     name: 'foo',
-    getValue: function () {
+    getValue: function getValue() {
       if (!window.navigator.language.startsWith('en')) {
         return false;  // User gets whatever the DefaultCase is.
       }
       // 25% of users get blastoff, 25% houston, 50% default.
       return random({
-        'blastoff': 1,
-        'houston': 1,
-        'default': 2
+        blastoff: 1,
+        houston: 1,
+        default: 2
       });
     }
   }

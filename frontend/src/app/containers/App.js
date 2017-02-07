@@ -141,7 +141,7 @@ const mapStateToProps = state => ({
   locale: state.browser.locale,
   newsletterForm: state.newsletterForm,
   routing: state.routing,
-  abtests: state.abtests
+  varianttests: state.varianttests
 });
 
 
