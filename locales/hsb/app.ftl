@@ -37,7 +37,6 @@ menuRetire = Test Pilot wotinstalować
 # The splash on the homepage.
 [[ landing ]]
 
-landingIntroLead = Hladajće za kulisy . . .
 landingIntroOne = Testujće nowe funkcije.
 landingIntroTwo = Prajće swoje měnjenje.
 landingIntroThree = Pomhajće Firefox wuwiwać.
