@@ -41,13 +41,6 @@ a {
   z-index: 0;
 }
 
-.shifted-stars {
-  @include hidpi-background-image('stars', 1180px 346px);
-  background-color: $darkest-blue-step;
-  background-position: center top;
-  position: relative;
-}
-
 .default-background {
   background: $body-background;
   color: $black;
@@ -59,11 +52,6 @@ a {
   color: $white;
   margin: $grid-unit * 2 0;
   padding: $grid-unit * .25 0;
-}
-
-.flat-blue {
-  background: $darkest-blue-step;
-  color: $white;
 }
 
 .mozilla-logo {

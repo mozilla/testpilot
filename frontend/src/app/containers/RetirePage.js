@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 import classnames from 'classnames';
 
+import Copter from '../components/Copter';
+import LayoutWrapper from '../components/LayoutWrapper';
 import View from '../components/View';
 
 
@@ -38,13 +40,13 @@ export default class RetirePage extends React.Component {
 
     return (
       <View centered={true} showHeader={false} showFooter={false} showNewsletterFooter={false} {...this.props}>
-        <div className="centered-banner">
+        <LayoutWrapper flexModifier="column-center">
           {!uninstalled && <div disabled className={classnames('loading-pill')}>
             <h1 className="emphasis" data-l10n-id="retirePageProgressMessage">Shutting down...</h1>
             <div style={{ opacity: 1 }} className="state-change-inner"></div>
           </div>}
-          {uninstalled && <div>
-            <div id="retire" className="modal fade-in">
+          {uninstalled && <LayoutWrapper flexModifier="column-center">
+            <div id="retire" className="modal centered">
               <div className="modal-header-wrapper">
                 <h1 data-l10n-id="retirePageHeadline" className="modal-header">Thanks for flying!</h1>
               </div>
@@ -56,11 +58,9 @@ export default class RetirePage extends React.Component {
                 <Link to="/"  data-l10n-id="home" className="modal-escape">Home</Link>
               </div>
             </div>
-            <div className="copter-wrapper">
-              <div className="copter fade-in-fly-up"></div>
-            </div>
-          </div>}
-        </div>
+            <Copter animation="fade-in-fly-up" />
+          </LayoutWrapper>}
+        </LayoutWrapper>
       </View>
     );
   }

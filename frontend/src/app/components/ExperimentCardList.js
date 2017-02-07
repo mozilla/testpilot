@@ -2,6 +2,7 @@ import React from 'react';
 
 import ExperimentRowCard from './ExperimentRowCard';
 import Loading from './Loading';
+import LayoutWrapper from './LayoutWrapper';
 
 export default class ExperimentCardList extends React.Component {
   getExperiments() {
@@ -25,14 +26,14 @@ export default class ExperimentCardList extends React.Component {
     const { isExperimentEnabled } = this.props;
 
     return (
-      <div className="card-list experiments">
+      <LayoutWrapper flexModifier="card-list">
         {this.getExperiments().map((experiment, key) => (
           <ExperimentRowCard {...this.props}
                              experiment={experiment}
                              enabled={isExperimentEnabled(experiment)}
                              key={key} />
         ))}
-      </div>
+      </LayoutWrapper>
     );
   }
 

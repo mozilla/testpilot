@@ -30,9 +30,6 @@
   position: relative;
   z-index: 1;
 
-  .blue & {
-    background: $transparent-white-96;
-  }
 
   .experiment-information {
     @include flex-container(column, flex-start, flex-start);

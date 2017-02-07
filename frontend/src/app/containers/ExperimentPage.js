@@ -18,6 +18,10 @@ import ExperimentPreFeedbackDialog from '../components/ExperimentPreFeedbackDial
 import View from '../components/View';
 import Warning from '../components/Warning';
 
+import Banner from '../components/Banner';
+import Copter from '../components/Copter';
+import LayoutWrapper from '../components/LayoutWrapper';
+
 
 export default class ExperimentPage extends React.Component {
   render() {
@@ -270,22 +274,20 @@ export class ExperimentDetail extends React.Component {
         <View {...this.props}>
 
         {(!hasAddon && !graduated) && <section id="testpilot-promo">
-          <div className="experiment-promo">
-            <div className="reverse-split-banner responsive-content-wrapper">
-              <div className="copter-wrapper fly-up">
-                <div className="copter"></div>
-              </div>
-              <div className="intro-text">
-                <h2 className="banner">
-                  <span data-l10n-id="experimentPromoHeader" className="block">Ready for Takeoff?</span>
-                </h2>
-                <p data-l10n-id="experimentPromoSubheader"></p>
-                <MainInstallButton {...this.props}
-                                   experimentTitle={title}
-                                   installCallback={ this.installExperiment.bind(this) } />
-              </div>
-            </div>
-          </div>
+          <Banner>
+              <LayoutWrapper flexModifier="row-between-reverse">
+                <div className="intro-text">
+                  <h2 className="banner__title">
+                    <span data-l10n-id="experimentPromoHeader" className="block">Ready for Takeoff?</span>
+                  </h2>
+                  <p className="banner__copy" data-l10n-id="experimentPromoSubheader"></p>
+                  <MainInstallButton {...this.props}
+                                     experimentTitle={title}
+                                     installCallback={ this.installExperiment.bind(this) } />
+                </div>
+                <Copter/>
+              </LayoutWrapper>
+          </Banner>
         </section>}
 
         <div className="default-background">
@@ -297,19 +299,19 @@ export class ExperimentDetail extends React.Component {
               {(statusType === 'enabled') && <span data-l10n-id="isEnabledStatusMessage" data-l10n-args={JSON.stringify({ title })}><span></span></span>}
               {(statusType === 'error') && <span data-l10n-id="installErrorMessage" data-l10n-args={JSON.stringify({ title })}><span></span></span>}
             </div>
-            <div className="details-header responsive-content-wrapper">
+            <LayoutWrapper helperClass="details-header" flexModifier="row-between-breaking">
               <header>
                 <h1>{title}</h1>
                 {subtitle && <h4 className="subtitle" data-l10n-id={this.l10nId('subtitle')}>{subtitle}</h4>}
               </header>
               { this.renderExperimentControls() }
               { this.renderMinimumVersionNotice(title, hasAddon, min_release) }
-            </div>
+            </LayoutWrapper>
           </div>
           <div className="sticky-header-sibling" style={{ height: `${stickyHeaderSiblingHeight}px` }} ></div>
 
           <div id="details">
-              <div className="details-content responsive-content-wrapper">
+              <LayoutWrapper helperClass="details-content" flexModifier="details-content">
                 <div className="details-overview">
                   <div className="experiment-icon-wrapper"
                        style={{
@@ -394,7 +396,7 @@ export class ExperimentDetail extends React.Component {
                             </p>
                             <ul>
                               {measurements.map((note, idx) => (
-                                <li data-l10n-id={this.l10nId(['measurements', idx])}>{note}</li>
+                                <li data-l10n-id={this.l10nId(['measurements', idx])} key={idx}>{note}</li>
                               ))}
                             </ul>
                           </div>
@@ -440,7 +442,7 @@ export class ExperimentDetail extends React.Component {
                         </p>
                         <ul>
                           {measurements.map((note, idx) => (
-                            <li data-l10n-id={this.l10nId(['measurements', idx])}>{note}</li>
+                            <li data-l10n-id={this.l10nId(['measurements', idx])} key={idx}>{note}</li>
                           ))}
                         </ul>
                       </div>
@@ -452,18 +454,18 @@ export class ExperimentDetail extends React.Component {
                   <div className="details-description">
                     <section className="graduation-report" dangerouslySetInnerHTML={createMarkup(graduation_report)}/>
                   </div>}
-              </div>
+              </LayoutWrapper>
             </div>
           </div>
-          {!hasAddon && <div>
-            <h2 className="card-list-header" data-l10n-id="otherExperiments">Try out these experiments as well</h2>
-            <div className="responsive-content-wrapper delayed-fade-in">
+          {!hasAddon && <Banner>
+            <h2 className="banner__subtitle centered" data-l10n-id="otherExperiments">Try out these experiments as well</h2>
+            <LayoutWrapper flexModifier="card-list">
               <ExperimentCardList {...this.props}
                                   experiments={currentExperiments}
                                   except={experiment.slug}
                                   eventCategory="ExperimentsDetailPage Interactions" />
-            </div>
-          </div>}
+            </LayoutWrapper>
+          </Banner>}
         </View>
       </section>
     );

@@ -8,3 +8,7 @@ rules:
   no-mergeable-selectors: 0
   no-qualifying-elements: 0
   no-warn: 0
+  placeholder-in-extend: 0
+  class-name-format:
+    - 1
+    - convention: hyphenatedbem

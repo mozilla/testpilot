@@ -3,6 +3,8 @@
 #share,
 #legacy-modal,
 #onboarding {
+  animation: fade-in 300ms forwards;
+  animation-delay: 300ms;
   margin-bottom: $grid-unit * 1.5;
   position: relative;
 

@@ -13,8 +13,12 @@ describe('app/components/Footer', () => {
     subject = shallow(<Footer sendToGA={sendToGA} />);
   });
 
-  it('should render expected default content', () => {
-    expect(subject.find('#footer-links')).to.have.property('length', 1);
+  it('should render expected default legal links', () => {
+    expect(subject.find('.legal-links')).to.have.property('length', 1);
+  });
+
+  it('should render expected social links', () => {
+    expect(subject.find('.social-links')).to.have.property('length', 1);
   });
 
   it('should ping GA on social link clicks', () => {

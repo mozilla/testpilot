@@ -1,6 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
 
+import LayoutWrapper from './LayoutWrapper';
+
 export default class MainInstallButton extends React.Component {
 
   constructor(props) {
@@ -27,11 +29,11 @@ export default class MainInstallButton extends React.Component {
     const isInstalling = this.state.isInstalling && !hasAddon;
 
     return (
-      <div>
+      <LayoutWrapper flexModifier="column-center-start-breaking">
         {(isMinFirefox && !isMobile) ? this.renderInstallButton(isInstalling, hasAddon) : this.renderAltButton(isFirefox, isMobile) }
         {isMinFirefox && !isMobile && <p data-l10n-id="landingLegalNotice" className="legal-information">By proceeding,
           you agree to the <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Notice</a> of Test Pilot</p>}
-      </div>
+      </LayoutWrapper>
     );
   }
 
@@ -54,7 +56,6 @@ export default class MainInstallButton extends React.Component {
       </span>;
     }
     return (
-      <div>
         <button onClick={e => this.install(e)}
                 className={classnames('button extra-large primary install', { 'state-change': isInstalling })}>
           {hasAddon && <span className="progress-btn-msg" data-l10n-id="landingInstalledButton">Installed</span>}
@@ -63,7 +64,6 @@ export default class MainInstallButton extends React.Component {
             <span className="progress-btn-msg" data-l10n-id="landingInstallingButton">Installing...</span>}
           <div className="state-change-inner"></div>
         </button>
-      </div>
     );
   }
 

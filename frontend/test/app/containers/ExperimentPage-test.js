@@ -265,13 +265,13 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
     });
 
     it('should display a call-to-action to install Test Pilot', () => {
-      expect(subject.find('.experiment-promo')).to.have.property('length', 1);
+      expect(subject.find('#testpilot-promo')).to.have.property('length', 1);
       expect(subject.find('MainInstallButton')).to.have.property('length', 1);
     });
 
     it('should display a call-to-action to try other experiments', () => {
       const experiment = setExperiment(mockExperiment);
-      expect(subject.find('.card-list-header')).to.have.property('length', 1);
+      expect(subject.find('.banner__subtitle')).to.have.property('length', 1);
       const cardList = subject.find('ExperimentCardList');
       expect(cardList).to.have.property('length', 1);
       expect(cardList.prop('except')).to.equal(experiment.slug);

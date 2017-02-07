@@ -1,12 +1,14 @@
 import React from 'react';
 
-export default function Loading() {
+const Loading = () => {
   return (
-    <div className="loader">
-      <div className="loader-bar"></div>
-      <div className="loader-bar"></div>
-      <div className="loader-bar"></div>
-      <div className="loader-bar"></div>
+    <div className="loading">
+      <div className="loading-bar"></div>
+      <div className="loading-bar"></div>
+      <div className="loading-bar"></div>
+      <div className="loading-bar"></div>
     </div>
   );
-}
+};
+
+export default Loading;
