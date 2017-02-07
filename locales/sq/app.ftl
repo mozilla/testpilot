@@ -37,7 +37,6 @@ menuRetire = Çinstaloje Pilotin e Testeve
 # The splash on the homepage.
 [[ landing ]]
 
-landingIntroLead = Shkoni larg…
 landingIntroOne = Testoni veçori të reja.
 landingIntroTwo = Jepni përshtypjet tuaja.
 landingIntroThree = Ndihmoni të ndërtohet Firefox-i.
