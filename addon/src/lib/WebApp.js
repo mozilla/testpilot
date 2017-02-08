@@ -21,7 +21,7 @@ type WebAppOptions = {
 type PageIncludes = { page: string, beacon: string[] };
 
 function toIncludes(baseUrl: string, whitelist: string): PageIncludes {
-  const page = baseUrl === '*' ? baseUrl : `${baseUrl}/*`;
+  const page = `${baseUrl}/*`;
   const beacon = whitelist.split(',');
   return { page, beacon };
 }

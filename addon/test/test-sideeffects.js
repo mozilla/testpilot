@@ -229,10 +229,10 @@ describe('side effects', function() {
         type: actions.SET_BASE_URL.type,
         payload: { url: 'it' }
       };
-      const dispatch = a => assert.equal(a.payload.baseUrl, 'it');
+      const dispatch = a => assert.equal(a.payload.baseUrl, 'test');
       const env = {
         get: () => {
-          return { name: 'any' };
+          return { name: 'local', baseUrl: 'test' };
         }
       };
       const state = reducer(null, action);
