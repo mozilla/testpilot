@@ -221,6 +221,13 @@ UTM-formatted date indicating the time the experiment will be retired. Used to c
 completed: '2016-01-01T00:00:00.000000Z'
 ```
 
+## `uninstalled`
+
+UTM-formatted date indicating the time the experiment will be automatically uninstalled.
+
+```yaml
+uninstalled: '2016-01-01T00:00:00.000000Z'
+```
 
 ## `launch_date`
 

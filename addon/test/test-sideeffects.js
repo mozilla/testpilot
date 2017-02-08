@@ -25,11 +25,25 @@ describe('side effects', function() {
       hacks.disabled.reset();
     });
 
-    it('handles EXPERIMENTS_LOADED', function(done) {
-      const action = { type: actions.EXPERIMENTS_LOADED.type };
-      const loader = { schedule: done };
+    it('handles EXPERIMENTS_LOADED', function() {
+      const action = {
+        type: actions.EXPERIMENTS_LOADED.type,
+        payload: {
+          experiments: {
+            x: new Experiment({
+              uninstalled: '2016-12-31'
+            }),
+            y: new Experiment({})
+          }
+        }
+      };
+      const loader = { schedule: sinon.spy() };
+      const dispatch = sinon.spy();
       const state = reducer(null, action);
-      state({ loader });
+      state({ dispatch, loader });
+      assert.ok(loader.schedule.calledOnce);
+      assert.ok(dispatch.calledOnce);
+      assert.equal(dispatch.firstCall.args[0].type, 'UNINSTALL_EXPERIMENT');
     });
 
     it('handles EXPERIMENTS_LOAD_ERROR', function() {

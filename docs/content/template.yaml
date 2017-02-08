@@ -24,6 +24,7 @@ addon_id: 'experiment-name@mozilla.com'
 
 created: '2016-01-01T00:00:00.000000Z'
 completed: '2016-01-01T00:00:00.000000Z'
+uninstalled: '2016-01-02T00:00:00.000000Z'
 launch_date: '2016-01-01T00:00:00.000000Z'
 
 changelog_url: 'https://www.github.com/mozilla/experiment-name/blob/master/docs/changelog.md'

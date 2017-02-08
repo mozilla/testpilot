@@ -42,6 +42,7 @@ export class Experiment {
   created: string;
   modified: string;
   completed: string;
+  uninstalled: string;
   active: boolean;
   installDate: ?Date;
   launchDate: Date;
@@ -63,6 +64,7 @@ export class Experiment {
     this.created = object.created;
     this.modified = object.modified;
     this.completed = object.completed;
+    this.uninstalled = object.uninstalled;
 
     this.active = object.active || false;
     this.installDate = object.installDate;
