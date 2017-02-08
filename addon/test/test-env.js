@@ -55,9 +55,9 @@ describe('env', function() {
     });
 
     it('returns the environment from about:config', function() {
-      aboutConfig.get.returns('any');
+      aboutConfig.get.returns('local');
       const e = env.get();
-      assert.equal(e, environments['any']);
+      assert.equal(e, environments['local']);
     });
   });
 

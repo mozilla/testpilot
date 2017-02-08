@@ -112,7 +112,7 @@ export function reducer(
     case actions.SET_BASE_URL.type:
       return ({ dispatch, env }) => {
         const e = env.get();
-        const baseUrl = e.name === 'any' ? payload.url : e.baseUrl;
+        const baseUrl = e.baseUrl;
         dispatch(actions.LOAD_EXPERIMENTS({ envname: e.name, baseUrl }));
       };
 

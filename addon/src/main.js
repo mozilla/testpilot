@@ -66,7 +66,7 @@ export function main({ loadReason }: { loadReason: string }) {
   installManager.selfLoaded(loadReason);
   loader.loadExperiments(
     startEnv.name,
-    startEnv.name === 'any' ? store.getState().baseUrl : startEnv.baseUrl
+    startEnv.baseUrl
   );
   notificationManager.schedule();
   feedbackManager.schedule();

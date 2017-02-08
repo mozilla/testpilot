@@ -36,13 +36,6 @@ self.port.on('from-addon-to-web', function(data) {
 });
 
 function onWebToAddon(event) {
-  // HACK: for use with the 'any' environment
-  if (event && event.detail && event.detail.type === 'sync-installed') {
-    self.port.emit('from-web-to-addon', {
-      type: 'base-url',
-      data: window.location.origin
-    });
-  }
   self.port.emit('from-web-to-addon', event.detail);
 }
 

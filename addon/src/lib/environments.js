@@ -1,7 +1,6 @@
 // @flow
 
 module.exports = {
-  any: { name: 'any', baseUrl: '*', whitelist: '*' },
   local: {
     name: 'local',
     baseUrl: 'https://example.com:8000',
