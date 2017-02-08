@@ -30,6 +30,7 @@ gulp.task('clean', () => del([
 gulp.task('build', done => runSequence(
   'content-build',
   'content-build-en',
+  'content-build-de',
   'addon-copy-locales',
   'old-addon-copy-locales',
   'scripts-build',
