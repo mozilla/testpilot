@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import { VariantTests, VariantTestCase, VariantTestDefault } from './VariantTests';
 
 import LayoutWrapper from './LayoutWrapper';
 
@@ -55,16 +56,25 @@ export default class MainInstallButton extends React.Component {
       installButton = <span className="default-btn-msg" data-l10n-id="landingInstallButton">
       </span>;
     }
-    return (
-        <button onClick={e => this.install(e)}
-                className={classnames('button extra-large primary install', { 'state-change': isInstalling })}>
-          {hasAddon && <span className="progress-btn-msg" data-l10n-id="landingInstalledButton">Installed</span>}
-          {!hasAddon && !isInstalling && installButton}
-          {!hasAddon && isInstalling &&
-            <span className="progress-btn-msg" data-l10n-id="landingInstallingButton">Installing...</span>}
-          <div className="state-change-inner"></div>
-        </button>
-    );
+    const makeInstallButton = (extraClass = '') => {
+      return <button onClick={e => this.install(e)}
+        className={classnames(`button extra-large primary install ${extraClass}`, { 'state-change': isInstalling })}>
+        {hasAddon && <span className="progress-btn-msg" data-l10n-id="landingInstalledButton">Installed</span>}
+        {!hasAddon && !isInstalling && installButton}
+        {!hasAddon && isInstalling &&
+          <span className="progress-btn-msg" data-l10n-id="landingInstallingButton">Installing...</span>}
+        <div className="state-change-inner"></div>
+      </button>;
+    };
+
+    return <VariantTests name="installButtonBorder" varianttests={ this.props.varianttests }>
+      <VariantTestCase value="bigBorder">
+        { makeInstallButton('big-border') }
+      </VariantTestCase>
+      <VariantTestDefault>
+        { makeInstallButton() }
+      </VariantTestDefault>
+    </VariantTests>;
   }
 
   renderAltButton(isFirefox, isMobile) {

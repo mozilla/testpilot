@@ -15,6 +15,7 @@ Test Pilot is not intended to replace trains for most features, nor is it a test
     - [Quickstart](docs/development/quickstart.md) - Get your development environment working.
     - [Add-on](addon/README.md) - Working on the Test Pilot add-on.
     - [Testing](docs/development/testing.md) - Automated testing.
+    - [Variants](docs/development/variants.md) - Creating variant tests on the Test Pilot website.
     - [Deployment](docs/development/deployment.md) - Deploying Test Pilot to staging and production
     - [Verifying deployments](docs/development/verification.md) - Verifying Test Pilot deployments.
     - [Add-on environment](docs/development/environment.md) - Configuring to which server the add-on connects.

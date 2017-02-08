@@ -140,7 +140,8 @@ const mapStateToProps = state => ({
   isMobile: state.browser.isMobile,
   locale: state.browser.locale,
   newsletterForm: state.newsletterForm,
-  routing: state.routing
+  routing: state.routing,
+  varianttests: state.varianttests
 });
 
 
