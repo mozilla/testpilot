@@ -7,6 +7,7 @@
 // @flow
 
 import { AddonManager } from 'resource://gre/modules/AddonManager.jsm';
+import { ClientID } from 'resource://gre/modules/ClientID.jsm';
 import Events from 'sdk/system/events';
 import self from 'sdk/self';
 import { Services } from 'resource://gre/modules/Services.jsm';
@@ -34,6 +35,13 @@ function makeTimestamp(timestamp: Date) {
 function experimentPing(event: ExperimentPingData) {
   const timestamp = new Date();
   const { subject, data } = event;
+  let parsed;
+  try {
+    parsed = JSON.parse(data);
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    return console.error(`Dropping bad metrics packet: ${err}`);
+  }
 
   AddonManager.getAddonByID(subject, addon => {
     const payload = {
@@ -44,12 +52,46 @@ function experimentPing(event: ExperimentPingData) {
         subject in storage.experimentVariants
         ? storage.experimentVariants[subject]
         : null,
-      payload: JSON.parse(data)
+      payload: parsed
     };
     TelemetryController.submitExternalPing('testpilottest', payload, {
       addClientId: true,
       addEnvironment: true
     });
+
+    // TODO: DRY up this ping centre code here and in lib/Telemetry.
+    const pcPing = TelemetryController.getCurrentPingData();
+    pcPing.type = 'testpilot';
+    pcPing.payload = payload;
+    const pcPayload = {
+      // 'method' is used by testpilot-metrics library.
+      // 'event' was used before that library existed.
+      event_type: parsed.event || parsed.method,
+      client_time: makeTimestamp(parsed.timestamp || timestamp),
+      addon_id: subject,
+      addon_version: addon.version,
+      firefox_version: pcPing.environment.build.version,
+      os_name: pcPing.environment.system.os.name,
+      os_version: pcPing.environment.system.os.version,
+      locale: pcPing.environment.settings.locale,
+      raw: JSON.stringify(pcPing),
+      // Note: these two keys are normally inserted by the ping-centre client.
+      client_id: ClientID.getCachedClientID(),
+      topic: 'testpilot',
+    };
+    // Add any other extra top-level keys from the payload, possibly including
+    // 'object' or 'category', among others.
+    Object.keys(parsed).forEach(f => {
+      // Ignore the keys we've already added to `pcPayload`.
+      const ignored = ['event', 'method', 'timestamp'];
+      if (!ignored.includes(f)) {
+        pcPayload[f] = parsed[f];
+      }
+    });
+
+    Services.appShell.hiddenDOMWindow.navigator.sendBeacon(
+      'https://onyx_tiles.stage.mozaws.net/v3/links/ping-centre',
+      JSON.stringify(pcPayload));
   });
 }
 

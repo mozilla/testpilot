@@ -8,6 +8,8 @@
 
 import * as actions from '../actions';
 import WebExtensionChannels from '../metrics/webextension-channels';
+import { activeExperiments } from './experiments';
+import { Services } from 'resource://gre/modules/Services.jsm';
 
 import typeof self from 'sdk/self';
 import typeof tabs from 'sdk/tabs';
@@ -179,6 +181,20 @@ export function reducer(
     case actions.ADDONS_CHANGED.type:
       return ({ installManager }) => {
         installManager.syncInstalled();
+      };
+
+    case actions.BROWSER_STARTUP.type:
+      return ({ telemetry, getState }) => {
+
+        telemetry.sendGAEvent({
+          t: 'event',
+          ec: 'add-on Interactions',
+          ea: 'browser startup',
+          el: Object.keys(activeExperiments(getState())).length
+        });
+        Services.obs.addObserver(() => {
+          telemetry.ping('daily', Object.keys(activeExperiments(getState())).length);
+        }, 'idle-daily', false);
       };
 
     default:

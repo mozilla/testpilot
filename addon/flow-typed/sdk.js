@@ -430,6 +430,7 @@ declare module 'resource://gre/modules/TelemetryController.jsm' {
   declare module.exports: {
     TelemetryController: {
       Constants: Object,
+      getCurrentPingData: any,
       // observe: (subject: string, topic: string, data: any) => any,
       submitExternalPing: (type: string, payload: Object, options?: {
         addClientId?: boolean,
@@ -438,5 +439,11 @@ declare module 'resource://gre/modules/TelemetryController.jsm' {
       }) => Promise<string>
       // TODO
     }
+  }
+}
+
+declare module 'resource://gre/modules/ClientID.jsm' {
+  declare module.exports: {
+    ClientID: any
   }
 }
