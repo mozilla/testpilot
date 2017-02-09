@@ -10,7 +10,7 @@ import * as actions from '../actions';
 import {
   activeCompletedExperimentList,
   activeExperiments,
-  randomActiveExperiment
+  ratableExperiments
 } from '../reducers/experiments';
 import { experimentRating } from '../reducers/ratings';
 import { setTimeout, clearTimeout } from 'sdk/timers';
@@ -72,7 +72,8 @@ export default class FeedbackManager {
     if (Date.now() - (state.ratings.lastRated || 0) < this.dnd) {
       return;
     }
-    const experiment = randomActiveExperiment(state);
+    const experiments = ratableExperiments(state);
+    const experiment = experiments[Math.floor(Math.random() * experiments.length)];
     if (!experiment) {
       return;
     }

@@ -100,3 +100,6 @@ locale_grantlist:
   - 'de'
 
 dev: false
+
+testpilot_options:
+  ratings: enabled

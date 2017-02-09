@@ -81,3 +81,5 @@ created: '2016-09-22T00:07:28.847430Z'
 completed: '2016-11-16T20:15:00Z'
 uninstalled: '2017-02-05T00:00:00Z'
 order: 999
+testpilot_options:
+  ratings: disabled
