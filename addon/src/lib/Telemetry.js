@@ -107,7 +107,7 @@ export default class Telemetry {
     };
 
     Services.appShell.hiddenDOMWindow.navigator.sendBeacon(
-      'https://onyx_tiles.stage.mozaws.net/v3/links/ping-centre',
+      'https://tiles.services.mozilla.com/v3/links/ping-centre',
       JSON.stringify(pcPayload));
   }
 }
