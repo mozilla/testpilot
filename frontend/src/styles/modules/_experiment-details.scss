@@ -387,12 +387,14 @@
 
 .stats {
   font-size: $font-unit;
+  table-layout: fixed;
   width: 100%;
 
   td {
     padding: $grid-unit * .25;
     vertical-align: top;
     width: 65%;
+    word-wrap: break-word;
   }
 
   td:first-child {
