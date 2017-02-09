@@ -58,6 +58,7 @@ pageshotContributors0TitleEngineer = Softvérový inžinier
 pageshotContributors1Title = Softvérový inžinier
 pageshotContributors2Title = Dizajnér používateľského zážitku
 tabcenterDescription = Aké by to bolo, keby sme presunuli karty z hornej časti prehliadača na jeho bok? To sme sa snažili zistiť!
+tabcenterMeasurements1 = Zbierame údaje o tom, akým spôsobom používate karty - koľko kariet máte otvorených a ako dlho.
 tabcenterMeasurements2 = Tab Center nezbiera žiadne informácie o tom, aké stránky navštevujete.
 tabcenterDetails0Copy = Presuňte svoje karty na bok.
 tabcenterDetails2Copy = Radi si prispôsobujete vzhľad Firefoxu? Tab Center funguje i s populárnymi témami vzhľadu.
