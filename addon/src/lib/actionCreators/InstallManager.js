@@ -58,26 +58,6 @@ export default class InstallManager {
     AddonManager.getAddonByID(self.id, a => a.uninstall());
   }
 
-  selfLoaded(reason: string) {
-    const { dispatch } = this.store;
-    dispatch(actions.BROWSER_STARTUP());
-
-    if (reason === 'install') {
-      dispatch(actions.SELF_INSTALLED());
-    } else if (reason === 'enable') {
-      dispatch(actions.SELF_ENABLED());
-    }
-  }
-
-  selfUnloaded(reason: string) {
-    const { dispatch } = this.store;
-    if (reason === 'disable') {
-      dispatch(actions.SELF_DISABLED());
-    } else if (reason === 'uninstall') {
-      dispatch(actions.SELF_UNINSTALLED());
-    }
-  }
-
   syncInstalled() {
     const { dispatch, getState } = this.store;
     AddonManager.getAllAddons(addons => {

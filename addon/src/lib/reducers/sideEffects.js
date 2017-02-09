@@ -8,8 +8,6 @@
 
 import * as actions from '../actions';
 import WebExtensionChannels from '../metrics/webextension-channels';
-import { activeExperiments } from './experiments';
-import { Services } from 'resource://gre/modules/Services.jsm';
 
 import typeof self from 'sdk/self';
 import typeof tabs from 'sdk/tabs';
@@ -78,11 +76,14 @@ export function reducer(
     case actions.EXPERIMENTS_LOADED.type:
       return ({ dispatch, loader }) => {
         loader.schedule();
-        Object.keys(payload.experiments)
+        Object
+          .keys(payload.experiments)
           .map(id => payload.experiments[id])
           .filter(x => x.uninstalled && new Date(x.uninstalled) < new Date())
-          .forEach(experiment => dispatch(actions.UNINSTALL_EXPERIMENT({ experiment })))
-      }
+          .forEach(
+            experiment => dispatch(actions.UNINSTALL_EXPERIMENT({ experiment }))
+          );
+      };
 
     case actions.INSTALL_EXPERIMENT.type:
       return ({ installManager }) =>
@@ -94,13 +95,6 @@ export function reducer(
 
     case actions.UNINSTALL_SELF.type:
       return ({ installManager }) => installManager.uninstallSelf();
-
-    case actions.SELF_UNINSTALLED.type:
-      return ({ installManager, self, telemetry }) => {
-        telemetry.ping(self.id, 'disabled');
-        telemetry.restorePrefs();
-        installManager.uninstallAll();
-      };
 
     case actions.CHANGE_ENV.type:
       return ({ env, dispatch, webapp }) => {
@@ -155,24 +149,6 @@ export function reducer(
     case actions.SCHEDULE_NOTIFIER.type:
       return ({ notificationManager }) => notificationManager.schedule();
 
-    case actions.SELF_INSTALLED.type:
-      return ({ self, telemetry }) => {
-        telemetry.setPrefs();
-        telemetry.ping(self.id, 'enabled');
-      };
-
-    case actions.SELF_ENABLED.type:
-      return ({ self, telemetry }) => {
-        telemetry.setPrefs();
-        telemetry.ping(self.id, 'enabled');
-      };
-
-    case actions.SELF_DISABLED.type:
-      return ({ self, telemetry }) => {
-        telemetry.ping(self.id, 'disabled');
-        telemetry.restorePrefs();
-      };
-
     case actions.PROMPT_SHARE.type:
       return ({ feedbackManager }) => {
         feedbackManager.promptShare(payload.url);
@@ -181,20 +157,6 @@ export function reducer(
     case actions.ADDONS_CHANGED.type:
       return ({ installManager }) => {
         installManager.syncInstalled();
-      };
-
-    case actions.BROWSER_STARTUP.type:
-      return ({ telemetry, getState }) => {
-
-        telemetry.sendGAEvent({
-          t: 'event',
-          ec: 'add-on Interactions',
-          ea: 'browser startup',
-          el: Object.keys(activeExperiments(getState())).length
-        });
-        Services.obs.addObserver(() => {
-          telemetry.ping('daily', Object.keys(activeExperiments(getState())).length);
-        }, 'idle-daily', false);
       };
 
     default:

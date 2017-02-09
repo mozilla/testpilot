@@ -5,7 +5,7 @@ import sinon from 'sinon';
 
 const spies = { add: sinon.spy(), remove: sinon.spy(), '@noCallThru': true };
 const hacks = { enabled: sinon.spy(), disabled: sinon.spy() };
-const Services = { '@noCallThru': true, obs: { addObserver: sinon.stub() }};
+const Services = { '@noCallThru': true, obs: { addObserver: sinon.stub() } };
 
 const sideEffects = proxyquire('../src/lib/reducers/sideEffects', {
   'resource://gre/modules/Services.jsm': Services,
@@ -32,9 +32,7 @@ describe('side effects', function() {
         type: actions.EXPERIMENTS_LOADED.type,
         payload: {
           experiments: {
-            x: new Experiment({
-              uninstalled: '2016-12-31'
-            }),
+            x: new Experiment({ uninstalled: '2016-12-31' }),
             y: new Experiment({})
           }
         }
@@ -222,24 +220,6 @@ describe('side effects', function() {
       state({ installManager });
     });
 
-    it('handles SELF_INSTALLED', function() {
-      const action = {
-        type: actions.SELF_INSTALLED.type,
-        payload: { url: 'it' }
-      };
-      const self = { id: 1 };
-      const telemetry = {
-        ping: (id, name) => {
-          assert.equal(name, 'enabled');
-        },
-        setPrefs: () => {
-        }
-      };
-      const state = reducer(null, action);
-      assert.equal(typeof state, 'function');
-      state({ self, telemetry });
-    });
-
     it('handles SET_BASE_URL', function() {
       const action = {
         type: actions.SET_BASE_URL.type,
@@ -263,19 +243,6 @@ describe('side effects', function() {
       const state = reducer(null, action);
       assert.equal(typeof state, 'function');
       state({ installManager });
-    });
-
-    it('handles SELF_UNINSTALLED', function(done) {
-      const action = { type: actions.SELF_UNINSTALLED.type };
-      const self = { id: 1 };
-      const installManager = { uninstallAll: done };
-      const telemetry = {
-        ping: (id, name) => assert.equal(name, 'disabled'),
-        restorePrefs: () => {
-        }
-      };
-      const state = reducer(null, action);
-      state({ self, installManager, telemetry });
     });
 
     it('handles MAYBE_NOTIFY', function() {
@@ -364,33 +331,6 @@ describe('side effects', function() {
       const action = { type: actions.EXPERIMENT_UNINSTALLED.type };
       const state = reducer(null, action);
       assert.equal(state, nothing);
-    });
-
-    it('handles SELF_ENABLED', function() {
-      const action = { type: actions.SELF_ENABLED.type };
-      const self = { id: 1 };
-      const telemetry = {
-        ping: (id, name) => {
-          assert.equal(name, 'enabled');
-        },
-        setPrefs: () => {
-        }
-      };
-      const state = reducer(null, action);
-      state({ self, telemetry });
-    });
-
-    it('handles SELF_DISABLED', function(done) {
-      const action = { type: actions.SELF_DISABLED.type };
-      const self = { id: 1 };
-      const telemetry = {
-        ping: (id, name) => {
-          assert.equal(name, 'disabled');
-        },
-        restorePrefs: done
-      };
-      const state = reducer(null, action);
-      state({ self, telemetry });
     });
 
     it('handles SYNC_INSTALLED', function() {

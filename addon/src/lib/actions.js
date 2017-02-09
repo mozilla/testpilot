@@ -96,10 +96,6 @@ export const SCHEDULE_NOTIFIER = createAction('SCHEDULE_NOTIFIER', [
   'nextCheck',
   'lastNotified'
 ]);
-export const SELF_INSTALLED = createAction('SELF_INSTALLED', []);
-export const SELF_UNINSTALLED = createAction('SELF_UNINSTALLED', []);
-export const SELF_ENABLED = createAction('SELF_ENABLED', []);
-export const SELF_DISABLED = createAction('SELF_DISABLED', []);
 export const SET_RATING = createAction('SET_RATING', [
   'experiment',
   'rating',
@@ -126,4 +122,3 @@ export const UNINSTALL_EXPERIMENT = createAction('UNINSTALL_EXPERIMENT', [
 export const UNINSTALL_SELF = createAction('UNINSTALL_SELF', []);
 export const GET_INSTALLED = createAction('GET_INSTALLED', []);
 export const SET_BASE_URL = createAction('SET_BASE_URL', [ 'url' ]);
-export const BROWSER_STARTUP = createAction('BROWSER_STARTUP', []);
