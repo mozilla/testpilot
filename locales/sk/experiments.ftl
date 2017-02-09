@@ -58,6 +58,7 @@ pageshotContributors2Title = Dizajnér používateľského zážitku
 tabcenterDescription = Aké by to bolo, keby sme presunuli karty z hornej časti prehliadača na jeho bok? To sme sa snažili zistiť!
 tabcenterDetails0Copy = Presuňte svoje karty na bok.
 tabcenterDetails2Copy = Radi si prispôsobujete vzhľad Firefoxu? Tab Center funguje i s populárnymi témami vzhľadu.
+tabcenterToursteps1Copy = Máte otvorených veľa kariet? Pomocou Tab Center ľahko nájdete tú správnu.
 tabcenterToursteps4Copy = Pomocou Test Pilotu nám môžete poskytnúť spätnú väzbu alebo Tab Center deaktivovať.
 tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
