@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 import MainInstallButton from '../../../src/app/components/MainInstallButton';
 
@@ -16,9 +16,12 @@ describe('app/components/MainInstallButton', () => {
       isFirefox: true,
       isMinFirefox: true,
       isMobile: false,
-      installAddon: sinon.spy()
+      installAddon: sinon.spy(),
+      varianttests: {
+        installButtonBorder: "default"
+      }
     };
-    subject = shallow(<MainInstallButton {...props} />);
+    subject = mount(<MainInstallButton {...props} />);
   });
 
   const findByL10nID = id => subject.findWhere(el => id === el.props()['data-l10n-id']);

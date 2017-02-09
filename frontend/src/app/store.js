@@ -8,14 +8,15 @@ import addonReducer from './reducers/addon';
 import browserReducer from './reducers/browser';
 import experimentsReducer from './reducers/experiments';
 import newsletterFormReducer from './reducers/newsletter-form';
-
+import varianttestsReducer from './reducers/varianttests';
 
 export const reducers = combineReducers({
   addon: addonReducer,
   browser: browserReducer,
   experiments: experimentsReducer,
   newsletterForm: newsletterFormReducer,
-  routing: routerReducer
+  routing: routerReducer,
+  varianttests: varianttestsReducer
 });
 
 
