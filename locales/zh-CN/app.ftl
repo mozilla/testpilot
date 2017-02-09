@@ -189,7 +189,7 @@ bugReports = 缺陷报告
 discussExperiment = 讨论 { $title }
 tourOnboardingTitle = { $title } 已启用！
 tourDoneButton = 完成
-userCountContainer = 已有 <span>{ $installation_count }</span> 人次尝试过 { $title } 它！
+userCountContainer = 已有 <span>{ $installation_count }</span> 人次尝试过 { $title }！
 userCountContainerAlt = 刚刚启动！
 highlightPrivacy = 您的隐私
 
