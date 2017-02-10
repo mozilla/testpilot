@@ -84,6 +84,8 @@ contributors:
     avatar: /static/images/experiments/no-more-404s/avatars/adam-miller.jpg
 installation_count: 20377
 created: '2016-08-03T17:25:54.612365Z'
+completed: '2017-02-15T14:00:00.000000Z'
+eol_warning: The No More 404s experiment will not be removed from your browser and the results will be reported here when it ends. Future updates will be available on addons.mozilla.org.
 locale_blocklist:
   - 'de'
 order: 6

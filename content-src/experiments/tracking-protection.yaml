@@ -88,6 +88,9 @@ contributors_extra: >
 contributors_extra_url: 'https://mzl.la/2fYneDq'
 installation_count: 1
 created: '2016-09-22T00:07:28.847430Z'
+completed: '2017-02-15T14:00:00.000000Z'
+uninstalled: '2017-02-15T14:00:00.000000Z'
+eol_warning: We will automatically disable the Tracking Protection experiment and report the results when it ends.
 locale_blocklist:
   - 'de'
 order: 3
