@@ -141,8 +141,7 @@ describe('side effects', function() {
       const baseUrl = 'testUrl';
       const getState = () => ({ baseUrl });
       const ui = {
-        setBadge: () => {
-        }
+        setBadge: () => {}
       };
       const telemetry = {
         ping: (id, name) => {

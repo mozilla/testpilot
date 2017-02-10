@@ -42,8 +42,7 @@ export type SideEffect = (context: Context) => void;
 let context = {};
 let unsubscribe = nothing;
 
-export function nothing() {
-}
+export function nothing() {}
 
 export function reducer(
   state: Function = nothing,
@@ -76,13 +75,11 @@ export function reducer(
     case actions.EXPERIMENTS_LOADED.type:
       return ({ dispatch, loader }) => {
         loader.schedule();
-        Object
-          .keys(payload.experiments)
+        Object.keys(payload.experiments)
           .map(id => payload.experiments[id])
           .filter(x => x.uninstalled && new Date(x.uninstalled) < new Date())
-          .forEach(
-            experiment => dispatch(actions.UNINSTALL_EXPERIMENT({ experiment }))
-          );
+          .forEach(experiment =>
+            dispatch(actions.UNINSTALL_EXPERIMENT({ experiment })));
       };
 
     case actions.INSTALL_EXPERIMENT.type:
@@ -132,8 +129,10 @@ export function reducer(
       return ({ getState, ui, tabs, telemetry }) => {
         ui.setBadge();
         tabs.open({
-          url: getState().baseUrl +
-            '/?utm_source=testpilot-addon&utm_medium=firefox-browser&utm_campaign=testpilot-doorhanger&utm_content=not+badged'
+          url: (
+            getState().baseUrl +
+              '/?utm_source=testpilot-addon&utm_medium=firefox-browser&utm_campaign=testpilot-doorhanger&utm_content=not+badged'
+          )
         });
         telemetry.ping('txp_toolbar_menu_1', 'clicked');
       };

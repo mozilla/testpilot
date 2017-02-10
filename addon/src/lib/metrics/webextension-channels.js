@@ -80,9 +80,8 @@ export default class WebExtensionChannel {
     if (!WebExtensionChannel.channels.get(id)) {
       const channel = new WebExtensionChannel(id);
       WebExtensionChannel.channels.set(id, channel);
-      channel.registerPingListener(
-        data => Experiment.ping({ subject: id, data: JSON.stringify(data) })
-      );
+      channel.registerPingListener(data =>
+        Experiment.ping({ subject: id, data: JSON.stringify(data) }));
     }
   }
 

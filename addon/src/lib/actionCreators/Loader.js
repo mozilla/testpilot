@@ -30,23 +30,22 @@ function fetchExperiments(baseUrl, path): Promise<Experiments> {
     });
     r.on('complete', (
       res: { status: number, json: { results: Array<Object> } }
-    ) =>
-      {
-        const userLocale = Services.appShell.hiddenDOMWindow.navigator.language;
-        const xs = {};
-        if (res.status === 200) {
-          // eslint-disable-next-line prefer-const
-          for (let o of res.json.results) {
-            const x = new Experiment(o, baseUrl);
-            if (x.allowsLocale(userLocale)) {
-              xs[x.addon_id] = x;
-            }
+    ) => {
+      const userLocale = Services.appShell.hiddenDOMWindow.navigator.language;
+      const xs = {};
+      if (res.status === 200) {
+        // eslint-disable-next-line prefer-const
+        for (let o of res.json.results) {
+          const x = new Experiment(o, baseUrl);
+          if (x.allowsLocale(userLocale)) {
+            xs[x.addon_id] = x;
           }
-          resolve(xs);
-        } else {
-          reject(res);
         }
-      });
+        resolve(xs);
+      } else {
+        reject(res);
+      }
+    });
     r.get();
   });
 }

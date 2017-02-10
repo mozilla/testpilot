@@ -15,7 +15,7 @@ const addons = [
 ];
 const AddonManager = { getAllAddons: sinon.stub().callsArgWith(0, addons) };
 const x = { addon_id: 'x', created: '2015-12-23' };
-const res = { status: 200, json: { results: [ x ] } };
+const res = { status: 200, json: { results: [x] } };
 const req = { on: sinon.stub().callsArgWithAsync(1, res), get: sinon.spy() };
 const Request = sinon.stub().returns(req);
 
@@ -98,34 +98,28 @@ describe('Loader', function() {
           .returns({ experiments: {}, ui: { clicked: Date.now() } })
       };
       const l = new Loader(s);
-      l.loadExperiments('test', 'foo').then(
-        () => {
-          assert.ok(s.dispatch.calledTwice);
-          assert.equal(s.dispatch.firstCall.args[0].type, MAYBE_NOTIFY.type);
-          assert.equal(
-            s.dispatch.secondCall.args[0].type,
-            EXPERIMENTS_LOADED.type
-          );
-          done();
-        },
-        () => assert.fail()
-      );
+      l.loadExperiments('test', 'foo').then(() => {
+        assert.ok(s.dispatch.calledTwice);
+        assert.equal(s.dispatch.firstCall.args[0].type, MAYBE_NOTIFY.type);
+        assert.equal(
+          s.dispatch.secondCall.args[0].type,
+          EXPERIMENTS_LOADED.type
+        );
+        done();
+      }, () => assert.fail());
     });
 
     it('dispatches EXPERIMENT_LOAD_ERROR when the fetch fails', function(done) {
       const l = new Loader(store);
       res.status = 404;
-      l.loadExperiments('test', 'foo').then(
-        () => {
-          assert.ok(store.dispatch.calledOnce);
-          assert.equal(
-            store.dispatch.firstCall.args[0].type,
-            EXPERIMENTS_LOAD_ERROR.type
-          );
-          done();
-        },
-        () => assert.fail()
-      );
+      l.loadExperiments('test', 'foo').then(() => {
+        assert.ok(store.dispatch.calledOnce);
+        assert.equal(
+          store.dispatch.firstCall.args[0].type,
+          EXPERIMENTS_LOAD_ERROR.type
+        );
+        done();
+      }, () => assert.fail());
     });
 
     it('dispatches SET_BADGE when experiment is new', function(done) {
@@ -134,19 +128,16 @@ describe('Loader', function() {
         getState: sinon.stub().returns({ experiments: {}, ui: { clicked: 1 } })
       };
       const l = new Loader(s);
-      l.loadExperiments('test', 'foo').then(
-        () => {
-          assert.ok(s.dispatch.calledThrice);
-          assert.equal(s.dispatch.firstCall.args[0].type, SET_BADGE.type);
-          assert.equal(s.dispatch.secondCall.args[0].type, MAYBE_NOTIFY.type);
-          assert.equal(
-            s.dispatch.thirdCall.args[0].type,
-            EXPERIMENTS_LOADED.type
-          );
-          done();
-        },
-        () => assert.fail()
-      );
+      l.loadExperiments('test', 'foo').then(() => {
+        assert.ok(s.dispatch.calledThrice);
+        assert.equal(s.dispatch.firstCall.args[0].type, SET_BADGE.type);
+        assert.equal(s.dispatch.secondCall.args[0].type, MAYBE_NOTIFY.type);
+        assert.equal(
+          s.dispatch.thirdCall.args[0].type,
+          EXPERIMENTS_LOADED.type
+        );
+        done();
+      }, () => assert.fail());
     });
 
     it('calls WebExtensionChannel.add on active experiments', function(done) {
@@ -157,14 +148,11 @@ describe('Loader', function() {
           .returns({ experiments: {}, ui: { clicked: Date.now() } })
       };
       const l = new Loader(s);
-      l.loadExperiments('test', 'foo').then(
-        () => {
-          assert.ok(xadd.calledOnce);
-          assert.ok(xadd.calledWith(x.addon_id));
-          done();
-        },
-        () => assert.fail()
-      );
+      l.loadExperiments('test', 'foo').then(() => {
+        assert.ok(xadd.calledOnce);
+        assert.ok(xadd.calledWith(x.addon_id));
+        done();
+      }, () => assert.fail());
     });
 
     it(
@@ -180,14 +168,11 @@ describe('Loader', function() {
             .returns({ experiments: {}, ui: { clicked: Date.now() } })
         };
         const l = new Loader(s);
-        l.loadExperiments('test', 'foo').then(
-          () => {
-            assert.ok(!xadd.called);
-            x.active = true;
-            done();
-          },
-          () => assert.fail()
-        );
+        l.loadExperiments('test', 'foo').then(() => {
+          assert.ok(!xadd.called);
+          x.active = true;
+          done();
+        }, () => assert.fail());
       }
     );
   });

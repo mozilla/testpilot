@@ -29,9 +29,9 @@ function newURI(uriStr, base) {
 
 export function removeXULStylesheet(url: string) {
   const uri = newURI(url);
-  const sss = chrome.Cc['@mozilla.org/content/style-sheet-service;1'].getService(
-    chrome.Ci.nsIStyleSheetService
-  );
+  const sss = chrome.Cc[
+    '@mozilla.org/content/style-sheet-service;1'
+  ].getService(chrome.Ci.nsIStyleSheetService);
   if (sss.sheetRegistered(uri, sss.AGENT_SHEET)) {
     sss.unregisterSheet(uri, sss.AGENT_SHEET);
   }
@@ -40,9 +40,9 @@ export function removeXULStylesheet(url: string) {
 
 export function addXULStylesheet(url: string) {
   const uri = newURI(url);
-  const sss = chrome.Cc['@mozilla.org/content/style-sheet-service;1'].getService(
-    chrome.Ci.nsIStyleSheetService
-  );
+  const sss = chrome.Cc[
+    '@mozilla.org/content/style-sheet-service;1'
+  ].getService(chrome.Ci.nsIStyleSheetService);
   sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
   // auto unload just in case
   when(function() {

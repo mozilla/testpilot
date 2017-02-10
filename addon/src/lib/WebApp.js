@@ -49,7 +49,7 @@ export default class WebApp {
         version: this.addonVersion,
         clientUUID: this.clientUUID
       },
-      attachTo: [ 'top', 'existing' ],
+      attachTo: ['top', 'existing'],
       onAttach: worker => {
         this.hub.connect(worker.port);
         worker.on('detach', () => this.hub.disconnect(worker.port));
@@ -60,7 +60,7 @@ export default class WebApp {
       contentScriptFile: './set-installed-flag.js',
       contentScriptWhen: 'start',
       contentScriptOptions: { version: this.addonVersion },
-      attachTo: [ 'top', 'existing' ]
+      attachTo: ['top', 'existing']
     });
   }
 

@@ -23,7 +23,7 @@ export function enabled(id: string) {
   }
   const prefnames = Object.keys(TP_PREFS);
   if (!storage.tpPrefs) {
-    storage.tpPrefs = prefnames.map(name => [ name, PrefsService.get(name) ]);
+    storage.tpPrefs = prefnames.map(name => [name, PrefsService.get(name)]);
   }
   prefnames.forEach(name => {
     PrefsService.set(name, TP_PREFS[name]);

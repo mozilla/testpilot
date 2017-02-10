@@ -9,7 +9,7 @@ const addon = { uninstall: sinon.spy() };
 const install = { addListener: sinon.spy(), install: sinon.spy() };
 
 const AddonManager = {
-  getAllAddons: sinon.stub().callsArgWith(0, [ addon ]),
+  getAllAddons: sinon.stub().callsArgWith(0, [addon]),
   getAddonByID: sinon.stub().callsArgWith(1, addon),
   getInstallForURL: sinon.stub().callsArgWith(1, install)
 };
