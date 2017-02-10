@@ -24,21 +24,17 @@ function selectNotification(notifications, lastNotified) {
       now > after &&
       after > lastNotified;
   });
-  return eligible[Math.floor(
-    Math.random() * eligible.length
-  )]; // undefined is ok
+  return eligible[Math.floor(Math.random() * eligible.length)]; // undefined is ok
 }
 
 function nextCheckTime(notifications, nextCheck) {
   const now = Date.now();
-  return notifications
-    .map(n => new Date(n.notify_after).getTime())
-    .reduce(
-      (min, t) => {
-        return t < now ? min : Math.min(min, t);
-      },
-      nextCheck
-    );
+  return notifications.map(n => new Date(n.notify_after).getTime()).reduce(
+    (min, t) => {
+      return t < now ? min : Math.min(min, t);
+    },
+    nextCheck
+  );
 }
 
 export default class NotificationManager {

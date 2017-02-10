@@ -73,7 +73,9 @@ export default class FeedbackManager {
       return;
     }
     const experiments = ratableExperiments(state);
-    const experiment = experiments[Math.floor(Math.random() * experiments.length)];
+    const experiment = experiments[
+      Math.floor(Math.random() * experiments.length)
+    ];
     if (!experiment) {
       return;
     }
@@ -91,9 +93,9 @@ export default class FeedbackManager {
       return !r || !r['eol'];
     });
     if (eligibles.length > 0) {
-      const experiment = eligibles[Math.floor(
-        Math.random() * eligibles.length
-      )];
+      const experiment = eligibles[
+        Math.floor(Math.random() * eligibles.length)
+      ];
       if (experiment) {
         tabs.once('open', () => {
           setTimeout(
@@ -147,7 +149,6 @@ export default class FeedbackManager {
           }
         });
       })
-      .catch(() => {
-      });
+      .catch(() => {});
   }
 }

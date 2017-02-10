@@ -16,7 +16,7 @@ describe('Variants', function() {
 
   describe('makeTest', function() {
     it('uses seedrandom', function() {
-      const vs = [ { weight: 2, value: 'a' }, { weight: 4, value: 'b' } ];
+      const vs = [{ weight: 2, value: 'a' }, { weight: 4, value: 'b' }];
       const v = new Variants('x');
       v.makeTest({ name: 'foo', variants: vs });
       assert.ok(seedrandom.calledOnce);
@@ -24,7 +24,7 @@ describe('Variants', function() {
     });
 
     it('returns a variant value', function() {
-      const vs = [ { weight: 2, value: 'a' }, { weight: 4, value: 'b' } ];
+      const vs = [{ weight: 2, value: 'a' }, { weight: 4, value: 'b' }];
       const v = new Variants('x');
       const x = v.makeTest({ name: 'foo', variants: vs });
       assert.equal(x, 'b');
@@ -33,14 +33,14 @@ describe('Variants', function() {
 
   describe('parseTests', function() {
     it('returns a variant for each subject', function() {
-      const vs = [ { weight: 2, value: 'a' }, { weight: 4, value: 'b' } ];
+      const vs = [{ weight: 2, value: 'a' }, { weight: 4, value: 'b' }];
       const tests = {
         y: { name: 'y', variants: vs },
         z: { name: 'z', variants: vs }
       };
       const v = new Variants('x');
       const x = v.parseTests(tests);
-      assert.deepEqual(Object.keys(x), [ 'y', 'z' ]);
+      assert.deepEqual(Object.keys(x), ['y', 'z']);
       assert.equal(x.y, 'b');
       assert.equal(x.z, 'b');
     });

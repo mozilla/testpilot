@@ -23,7 +23,7 @@ export default function configureStore(
   if (!initialState.baseUrl) {
     initialState.baseUrl = startEnv.baseUrl;
   }
-  const middleware = [ hub.middleware() ];
+  const middleware = [hub.middleware()];
   if (startEnv.name !== 'production') {
     middleware.push(createLogger({ colors: false }));
   }

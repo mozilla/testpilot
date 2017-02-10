@@ -38,21 +38,17 @@ function createAction(type: string, payloadArgs: string[]): ActionCreator {
 
 // addon created
 export const ADDONS_CHANGED = createAction('ADDONS_CHANGED', []);
-export const INSTALL_ENDED = createAction('INSTALL_ENDED', [ 'experiment' ]);
-export const INSTALL_FAILED = createAction('INSTALL_FAILED', [ 'install' ]);
-export const INSTALL_STARTED = createAction('INSTALL_STARTED', [ 'install' ]);
-export const INSTALL_CANCELLED = createAction('INSTALL_CANCELLED', [
-  'install'
-]);
-export const DOWNLOAD_STARTED = createAction('DOWNLOAD_STARTED', [ 'install' ]);
-export const DOWNLOAD_PROGRESS = createAction('DOWNLOAD_PROGRESS', [
-  'install'
-]);
-export const DOWNLOAD_ENDED = createAction('DOWNLOAD_ENDED', [ 'install' ]);
+export const INSTALL_ENDED = createAction('INSTALL_ENDED', ['experiment']);
+export const INSTALL_FAILED = createAction('INSTALL_FAILED', ['install']);
+export const INSTALL_STARTED = createAction('INSTALL_STARTED', ['install']);
+export const INSTALL_CANCELLED = createAction('INSTALL_CANCELLED', ['install']);
+export const DOWNLOAD_STARTED = createAction('DOWNLOAD_STARTED', ['install']);
+export const DOWNLOAD_PROGRESS = createAction('DOWNLOAD_PROGRESS', ['install']);
+export const DOWNLOAD_ENDED = createAction('DOWNLOAD_ENDED', ['install']);
 export const DOWNLOAD_CANCELLED = createAction('DOWNLOAD_CANCELLED', [
   'install'
 ]);
-export const DOWNLOAD_FAILED = createAction('DOWNLOAD_FAILED', [ 'install' ]);
+export const DOWNLOAD_FAILED = createAction('DOWNLOAD_FAILED', ['install']);
 export const LOAD_EXPERIMENTS = createAction('LOAD_EXPERIMENTS', [
   'envname',
   'baseUrl'
@@ -81,11 +77,11 @@ export const EXPERIMENT_UNINSTALLED = createAction('EXPERIMENT_UNINSTALLED', [
   'experiment'
 ]);
 export const CHANGE_ENV = createAction('CHANGE_ENV', []);
-export const SET_BADGE = createAction('SET_BADGE', [ 'text' ]);
+export const SET_BADGE = createAction('SET_BADGE', ['text']);
 export const MAIN_BUTTON_CLICKED = createAction('MAIN_BUTTON_CLICKED', [
   'time'
 ]);
-export const MAYBE_NOTIFY = createAction('MAYBE_NOTIFY', [ 'experiment' ]);
+export const MAYBE_NOTIFY = createAction('MAYBE_NOTIFY', ['experiment']);
 export const SHOW_NOTIFICATION = createAction('SHOW_NOTIFICATION', [
   'id',
   'title',
@@ -110,7 +106,7 @@ export const SYNC_INSTALLED = createAction('SYNC_INSTALLED', [
   'installed',
   'active'
 ]);
-export const PROMPT_SHARE = createAction('PROMPT_SHARE', [ 'url' ]);
+export const PROMPT_SHARE = createAction('PROMPT_SHARE', ['url']);
 
 // webapp created
 export const INSTALL_EXPERIMENT = createAction('INSTALL_EXPERIMENT', [
@@ -121,4 +117,4 @@ export const UNINSTALL_EXPERIMENT = createAction('UNINSTALL_EXPERIMENT', [
 ]);
 export const UNINSTALL_SELF = createAction('UNINSTALL_SELF', []);
 export const GET_INSTALLED = createAction('GET_INSTALLED', []);
-export const SET_BASE_URL = createAction('SET_BASE_URL', [ 'url' ]);
+export const SET_BASE_URL = createAction('SET_BASE_URL', ['url']);

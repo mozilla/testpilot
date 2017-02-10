@@ -37,7 +37,7 @@ export default class Telemetry {
   }
 
   setPrefs() {
-    storage.originalPrefs = PREFS.map(pref => [ pref, aboutConfig.get(pref) ]);
+    storage.originalPrefs = PREFS.map(pref => [pref, aboutConfig.get(pref)]);
     PREFS.forEach(pref => aboutConfig.set(pref, true));
   }
 
@@ -54,7 +54,7 @@ export default class Telemetry {
       timestamp: makeTimestamp(),
       test: self.id,
       version: self.version,
-      events: [ { timestamp: makeTimestamp(time), event, object } ]
+      events: [{ timestamp: makeTimestamp(time), event, object }]
     };
     TelemetryController.submitExternalPing('testpilot', payload, {
       addClientId: true,
@@ -84,7 +84,12 @@ export default class Telemetry {
     req.post();
   }
 
-  sendPingCentreEvent(object: any, event: string, time?: number, payload: Object) {
+  sendPingCentreEvent(
+    object: any,
+    event: string,
+    time?: number,
+    payload: Object
+  ) {
     // A little work is required to replicate the ping sent to Telemetry
     // via the `submitExternalPing('testpilot', payload, opts)` call:
     const pcPing = TelemetryController.getCurrentPingData();
@@ -108,6 +113,7 @@ export default class Telemetry {
 
     Services.appShell.hiddenDOMWindow.navigator.sendBeacon(
       'https://tiles.services.mozilla.com/v3/links/ping-centre',
-      JSON.stringify(pcPayload));
+      JSON.stringify(pcPayload)
+    );
   }
 }

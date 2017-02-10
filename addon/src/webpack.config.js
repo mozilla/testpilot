@@ -8,7 +8,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 const config = {
-  entry: [ path.join(__dirname, 'main.js') ],
+  entry: [path.join(__dirname, 'main.js')],
   output: {
     path: path.join(__dirname, '..', 'data'),
     filename: 'bundle.js',
@@ -21,15 +21,15 @@ const config = {
         test: /\.js$/,
         loader: 'babel-loader',
         query: {
-          presets: [ [ 'es2015', { modules: false } ], 'stage-2' ],
-          plugins: [ 'transform-flow-strip-types' ]
+          presets: [['es2015', { modules: false }], 'stage-2'],
+          plugins: ['transform-flow-strip-types']
         },
         exclude: /node_modules/,
         include: __dirname
       }
     ]
   },
-  externals: [ /^sdk|chrome|resource/ ],
+  externals: [/^sdk|chrome|resource/],
   plugins: [
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify('production') },

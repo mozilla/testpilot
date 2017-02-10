@@ -32,7 +32,9 @@ const TelemetryController = {
     return {
       environment: {
         build: { version: 'environment.build.version' },
-        system: { os: { name: 'system.os.name', version: 'system.os.version' } },
+        system: {
+          os: { name: 'system.os.name', version: 'system.os.version' }
+        },
         settings: { locale: 'en-US' }
       }
     };

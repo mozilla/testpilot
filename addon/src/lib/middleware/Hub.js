@@ -21,10 +21,8 @@ export default class Hub {
 
   connect(port: EventEmitter): void {
     port.on('action', this.dispatch);
-    port.on(
-      'from-web-to-addon',
-      (evt: Object) => this.dispatch(webToAction(evt))
-    );
+    port.on('from-web-to-addon', (evt: Object) =>
+      this.dispatch(webToAction(evt)));
     this.ports.add(port);
   }
 

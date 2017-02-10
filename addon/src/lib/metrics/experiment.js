@@ -48,10 +48,11 @@ function experimentPing(event: ExperimentPingData) {
       test: subject,
       version: addon.version,
       timestamp: makeTimestamp(timestamp),
-      variants: storage.experimentVariants &&
-        subject in storage.experimentVariants
-        ? storage.experimentVariants[subject]
-        : null,
+      variants: (
+        storage.experimentVariants && subject in storage.experimentVariants
+          ? storage.experimentVariants[subject]
+          : null
+      ),
       payload: parsed
     };
     TelemetryController.submitExternalPing('testpilottest', payload, {
@@ -66,7 +67,9 @@ function experimentPing(event: ExperimentPingData) {
     const pcPayload = {
       // 'method' is used by testpilot-metrics library.
       // 'event' was used before that library existed.
-      event_type: parsed.event || parsed.method,
+      event_type: (
+        parsed.event || parsed.method
+      ),
       client_time: makeTimestamp(parsed.timestamp || timestamp),
       addon_id: subject,
       addon_version: addon.version,
@@ -77,7 +80,7 @@ function experimentPing(event: ExperimentPingData) {
       raw: JSON.stringify(pcPing),
       // Note: these two keys are normally inserted by the ping-centre client.
       client_id: ClientID.getCachedClientID(),
-      topic: 'testpilot',
+      topic: 'testpilot'
     };
     // Add any other extra top-level keys from the payload, possibly including
     // 'object' or 'category', among others.
@@ -91,7 +94,8 @@ function experimentPing(event: ExperimentPingData) {
 
     Services.appShell.hiddenDOMWindow.navigator.sendBeacon(
       'https://tiles.services.mozilla.com/v3/links/ping-centre',
-      JSON.stringify(pcPayload));
+      JSON.stringify(pcPayload)
+    );
   });
 }
 

@@ -52,14 +52,13 @@ class App extends Component {
       >
         <select
           size="24"
-          onChange={e =>
-            this.setState({
-              action: JSON.stringify(createAction(e.target.value), null, 2)
-            })}
+          onChange={e => this.setState({
+            action: JSON.stringify(createAction(e.target.value), null, 2)
+          })}
         >
-          {Object
-            .keys(actions)
-            .map(type => <option key={type} value={type}>{type}</option>)}
+          {Object.keys(actions).map(type => (
+            <option key={type} value={type}>{type}</option>
+          ))}
         </select>
         <textarea
           rows="24"

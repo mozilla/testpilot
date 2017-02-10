@@ -41,15 +41,15 @@ describe('AddonListener', function() {
         getState: sinon.stub().returns({ experiments: { x } })
       };
       const listeners = new Map([
-        [ 'onEnabled', 'EXPERIMENT_ENABLED' ],
-        [ 'onDisabled', 'EXPERIMENT_DISABLED' ],
-        [ 'onUninstalling', 'EXPERIMENT_UNINSTALLING' ],
-        [ 'onUninstalled', 'EXPERIMENT_UNINSTALLED' ]
+        ['onEnabled', 'EXPERIMENT_ENABLED'],
+        ['onDisabled', 'EXPERIMENT_DISABLED'],
+        ['onUninstalling', 'EXPERIMENT_UNINSTALLING'],
+        ['onUninstalled', 'EXPERIMENT_UNINSTALLED']
       ]);
       const listener = new AddonListener(s);
 
       // eslint-disable-next-line prefer-const
-      for (let [ event, action ] of listeners) {
+      for (let [event, action] of listeners) {
         listener[event](addon);
         if (addon.id === 'x') {
           assert.ok(s.dispatch.calledOnce);
