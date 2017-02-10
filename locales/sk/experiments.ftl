@@ -96,6 +96,7 @@ trackingprotectionToursteps1Copy = Povedzte nám kedy veci fungujú a kedy nie.
 trackingprotectionToursteps2Copy = Pomocou Test Pilotu môžete ochranu pred sledovaním deaktivovať.
 trackingprotectionContributors0Title = Webový vývojár
 trackingprotectionContributorsextra = Tento experiment je založený na ochrane pred sledovaním, ktorú vytvorila Mozilla a jej prispievatelia v priebehu niekoľkých rokov.
+universalsearchDescription = Nechajte si odporučiť najlepšie stránky na webe v priebehu písania do adresného riadka.
 universalsearchToursteps2Copy = Pomocou Test Pilotu nám môžete poskytnúť spätnú väzbu alebo Universal Search deaktivovať.
 universalsearchContributors0Title = Produktový manažér
 universalsearchEolwarning = Po ukončení experimentu Universal Search ho automaticky deaktivujeme a o jeho výsledkoch budeme informovať.
