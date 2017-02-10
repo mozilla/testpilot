@@ -23,6 +23,7 @@ activitystreamContributors11Title = Szoftverfejlesztő mérnök
 activitystreamContributors12Title = Senior UX dizájner
 cliqzDescription = Kapjon hamarabb keresési eredményeket. A Cliqz javaslatokat jelenít meg gépelés közben a címsorban. Mindezt a magánszférája megtartásával.
 cliqzIntroduction = Kapjon hamarabb keresési eredményeket, közvetlenül a böngészőben. Kezdjen el gépelni, és lássa a javaslatokat a Webről valós időben, a címsor alatt. Mivel a Cliqz nem gyűjt személyazonosításra alkalmas adatokat, és nem készít felhasználói profilokat, ezért az eredmények jobban tiszteletben tartják a magánszféráját.
+cliqzPrivacypreamble = A Cliqz Tesztpilóta kísérletet a Cliqz GmbH és a Mozilla együttműködése hozta el. A Cliqz arra lett tervezve, hogy megvédje a magánszféráját, és elkerülje az érzékeny információk gyűjtését, amely felhasználói profilok készítésére használható. Viszont az ilyen adatok anonimizálása bonyolult, így még így is lehetséges lehet az egyes személyek azonosítása.
 cliqzDetails0Copy = Nézze hogy megjelennek az eredmények (mint a mágia lenne!) miközben a címsorba ír.
 cliqzDetails1Copy = Lásson valós idejű összegző információkat – mint az időjárás vagy programok időpontjai – közvetlenül a címsor alatt.
 cliqzDetails2Copy = Térjen vissza a kedvenc webhelyeire egyetlen kattintással, amikor új lapot nyit meg. Testre is szabhatja a kedvenceit.
