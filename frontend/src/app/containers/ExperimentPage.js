@@ -186,7 +186,7 @@ export class ExperimentDetail extends React.Component {
       <Warning titleL10nId="eolIntroMessage"
                titleL10nArgs={ JSON.stringify({ title: experiment.title, completedDate }) }
                title={ title }>
-        { experiment.eol_warning }
+        <div data-l10n-id={this.l10nId('eolWarning')} dangerouslySetInnerHTML={createMarkup(experiment.eol_warning)}></div>
         <div className="small-spacer" />
         <a href="/about" data-l10n-id="eolNoticeLink" target="_blank">Learn more</a>
       </Warning>
