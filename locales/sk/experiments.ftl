@@ -17,6 +17,7 @@ activitystreamContributors7Title = Inžinier na stáži
 activitystreamContributors8Title = Inžinier na stáži
 activitystreamContributors9Title = Produktový manažér
 activitystreamContributors11Title = Softvérový inžinier
+cliqzDescription = Rýchlejšie výsledky vyhľadávania. Cliqz zobrazuje návrhy pod adresným riadkov už počas písania. A to bez kompromitácie vášho súkromia.
 cliqzToursteps2Copy = Pomocou Test Pilotu nám môžete poskytnúť spätnú väzbu alebo Cliqz deaktivovať.
 minvidDescription = Majte videá na očiach. Min Vid vám umožňuje zobraziť videá z YouTube a Vimea v malom ráme, ktorý je vždy v popredí, nezávisle od stránky, na ktorej sa nachádzate.
 minvidIntroduction = <p>Radi pozeráte videá? Chcete pri pozeraní videí robiť aj niečo iné? Vyskúšajte Min Vid. Video sa vám zobrazí ako malý obrázok a web bude v popredí.</p><ul> <li><strong>Stačí jeden klik:</strong> Po kliknutí sa vám otvorí malý rám s videom, ktoré sa bude prehrávať v popredí a vy môžete pokračovať v prehliadaní.</li> <li><strong>Premiestnite ho kamkoľvek:</strong> Min Vid vám umožňuje premiestniť rám s videom kamkoľvek.</li> <li><strong>Jednoduché ovládanie:</strong> Min Vid obsahuje ovládanie pre prehrávanie/pauzu, zastavenie videa, presun minimalizovanie či úpravu hlasitosti.</li></ul>
