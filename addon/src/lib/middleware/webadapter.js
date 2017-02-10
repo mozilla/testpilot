@@ -78,6 +78,20 @@ export function actionToWeb({ payload, type }: Action) {
           version: payload.experiment.version
         }
       };
+    case actions.DOWNLOAD_FAILED.type:
+      return {
+        type: 'addon-install:download-failed',
+        data: {
+          name: payload.install.name
+        }
+      };
+    case actions.INSTALL_FAILED.type:
+      return {
+        type: 'addon-install:install-failed',
+        data: {
+          name: payload.install.name
+        }
+      };
   }
   return NO_ACTION;
 }
