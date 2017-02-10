@@ -6,6 +6,7 @@
 
 // @flow
 
+import { activeExperiments } from './lib/reducers/experiments';
 import AddonListener from './lib/actionCreators/AddonListener';
 import configureStore from './lib/configureStore';
 import createExperimentMetrics from './lib/metrics';
@@ -18,6 +19,7 @@ import Loader from './lib/actionCreators/Loader';
 import MainUI from './lib/actionCreators/MainUI';
 import NotificationManager from './lib/actionCreators/NotificationManager';
 import self from 'sdk/self';
+import { Services } from 'resource://gre/modules/Services.jsm';
 import * as sideEffects from './lib/reducers/sideEffects';
 import { storage } from 'sdk/simple-storage';
 import tabs from 'sdk/tabs';
@@ -43,37 +45,61 @@ const webapp = new WebApp({
   hub
 });
 
-sideEffects.setContext(
-  Object.assign({}, store, {
-    env,
-    feedbackManager,
-    hacks,
-    installManager,
-    loader,
-    notificationManager,
-    self,
-    tabs,
-    telemetry,
-    ui,
-    webapp
-  })
-);
-
 export function main({ loadReason }: { loadReason: string }) {
+  sideEffects.setContext(
+    Object.assign({}, store, {
+      env,
+      feedbackManager,
+      hacks,
+      installManager,
+      loader,
+      notificationManager,
+      self,
+      tabs,
+      telemetry,
+      ui,
+      webapp
+    })
+  );
   env.subscribe(store);
   sideEffects.enable(store);
-  installManager.selfLoaded(loadReason);
-  loader.loadExperiments(
-    startEnv.name,
-    startEnv.baseUrl
-  );
+  loader.loadExperiments(startEnv.name, startEnv.baseUrl);
   notificationManager.schedule();
   feedbackManager.schedule();
   feedbackManager.maybeShare();
+  if (loadReason === 'install' || loadReason === 'enable') {
+    telemetry.setPrefs();
+    telemetry.ping(self.id, 'enabled');
+  }
+  telemetry.sendGAEvent({
+    t: 'event',
+    ec: 'add-on Interactions',
+    ea: 'browser startup',
+    el: Object.keys(activeExperiments(store.getState())).length
+  });
+  Services.obs.addObserver(
+    () => {
+      telemetry.ping(
+        'daily',
+        Object.keys(activeExperiments(store.getState())).length
+      );
+    },
+    'idle-daily',
+    false
+  );
 }
 
 export function onUnload(reason: string) {
-  installManager.selfUnloaded(reason);
+  switch (reason) {
+    case 'uninstall':
+      telemetry.ping(self.id, 'disabled');
+      telemetry.restorePrefs();
+      installManager.uninstallAll();
+      break;
+    case 'disable':
+      telemetry.ping(self.id, 'disabled');
+      telemetry.restorePrefs();
+  }
   storage.root = store.getState();
   sideEffects.disable();
   addons.teardown();

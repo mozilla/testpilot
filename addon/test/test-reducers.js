@@ -214,18 +214,6 @@ describe('reducers', function() {
     testAction(action, initialState, expectedState);
   });
 
-  it('handles SELF_INSTALLED', function() {
-    const initialState = DEFAULT_STATE;
-    const expectedState = Object.assign({}, DEFAULT_STATE, {
-      ui: { installTimestamp: 808 }
-    });
-    sinon.stub(Date, 'now').returns(808);
-    const action = { type: actions.SELF_INSTALLED.type, payload: {} };
-
-    testAction(action, initialState, expectedState);
-    Date.now.restore();
-  });
-
   it('handles SET_BASE_URL', function() {
     const initialState = DEFAULT_STATE;
     const expectedState = initialState;
@@ -240,16 +228,6 @@ describe('reducers', function() {
     const action = { type: actions.GET_INSTALLED.type, payload: {} };
 
     testAction(action, initialState, expectedState);
-  });
-
-  it('handles SELF_UNINSTALLED', function() {
-    const initialState = DEFAULT_STATE;
-    const action = {
-      type: actions.SELF_UNINSTALLED.type,
-      payload: { install: {} }
-    };
-    // Not implemented, no change expected
-    testAction(action, initialState, initialState);
   });
 
   it('handles INSTALL_FAILED', function() {
@@ -365,20 +343,6 @@ describe('reducers', function() {
       type: actions.EXPERIMENT_UNINSTALLED.type,
       payload: { experiment: {} }
     };
-    // Not implemented, no change expected
-    testAction(action, initialState, initialState);
-  });
-
-  it('handles SELF_ENABLED', function() {
-    const initialState = DEFAULT_STATE;
-    const action = { type: actions.SELF_ENABLED.type, payload: {} };
-    // Not implemented, no change expected
-    testAction(action, initialState, initialState);
-  });
-
-  it('handles SELF_DISABLED', function() {
-    const initialState = DEFAULT_STATE;
-    const action = { type: actions.SELF_DISABLED.type, payload: {} };
     // Not implemented, no change expected
     testAction(action, initialState, initialState);
   });

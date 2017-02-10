@@ -11,13 +11,15 @@ import * as actions from '../actions';
 import type { Action } from 'testpilot/types';
 
 export function reducer(
-  state: Object = { badge: null, clicked: Date.now(), shareShown: false },
+  state: Object = {
+    badge: null,
+    clicked: Date.now(),
+    shareShown: false,
+    installTimestamp: Date.now()
+  },
   { payload, type }: Action
 ) {
   switch (type) {
-    case actions.SELF_INSTALLED.type:
-      return Object.assign({}, state, { installTimestamp: Date.now() });
-
     case actions.SET_BADGE.type:
       return Object.assign({}, state, { badge: payload.text });
 

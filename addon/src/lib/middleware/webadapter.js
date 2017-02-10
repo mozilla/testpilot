@@ -78,8 +78,6 @@ export function actionToWeb({ payload, type }: Action) {
           version: payload.experiment.version
         }
       };
-    case actions.SELF_UNINSTALLED.type:
-      return { type: 'addon-self:uninstalled' };
   }
   return NO_ACTION;
 }
