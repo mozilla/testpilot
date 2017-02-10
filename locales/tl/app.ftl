@@ -18,6 +18,7 @@ menuWiki = Test Pilot Wiki
 # The splash on the homepage.
 [[ landing ]]
 
+landingIntroOne = Subukan ang mga bagong tampok.
 landingIntroThree = Tulungang buuin ang Firefox.
 landingExperimentsTitle = Subukan ang mga pinakabagong mga tampok pang-eksperimento
 
