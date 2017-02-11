@@ -109,6 +109,16 @@ aws s3 sync \
   --acl "public-read" \
   dist/ s3://${TESTPILOT_BUCKET}/
 
+# l10n files; short cache;
+aws s3 sync \
+    --cache-control "max-age=${TEN_MINUTES}" \
+    --exclude "*" \
+    --include "*.ftl" \
+    --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
+    --metadata-directive "REPLACE" \
+    --acl "public-read" \
+  dist/ s3://${TESTPILOT_BUCKET}/
+
 # SVG; cache forever, assign correct content-type
 aws s3 sync \
   --cache-control "max-age=${ONE_YEAR}, immutable" \
