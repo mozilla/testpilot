@@ -82,6 +82,7 @@ pageshotContributors0TitleEngineer = Engenheiro de software
 pageshotContributors1Title = Engenheiro de software
 pageshotContributors2Title = Designer de UX
 tabcenterDescription = Como seria mover separadores da parte superior do navegador para o lado? Nós queríamos descobrir!
+tabcenterIntroduction = <p>Mova os seus separadores do caminho e coloque-os confinados. O Tab Center move os seus separadores para o lado da janela do seu navegador para que estes fiquem fora de vista quando você não necessita deles, e para que se expandam facilmente quando você necessitar.</p>
 tabcenterMeasurements0 = Nós recolhemos dados de utilização relativamente a como você interage com o Tab Center, como a frequência com que você maximiza ou fixa o Tab Center.
 tabcenterMeasurements1 = Nós recolhemos também informação acerca do modo com que você utiliza os separadores, tais como o número de separadores que você mantém abertos num momento e a duração do tempo com que mantém os separadores abertos.
 tabcenterMeasurements2 = O Tab Center não recolhe qualquer informação acerca dos sites que você visita ou o conteúdo dos separadores.
