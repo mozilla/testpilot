@@ -1,9 +1,9 @@
 .experiment-summary {
 
-  @include flex-container(column, stretch, stretch);
+  @include flex-container(column, flex-start, stretch);
 
   @include respond-to('big') {
-    flex: 0 0 300px;
+    width: 300px;
 
     &:nth-child(3n+1) {
       margin-left: 0;
@@ -11,15 +11,15 @@
   }
 
   @include respond-to('medium') {
-    flex: 0 0 44%;
     margin: 0 3% $grid-unit * 2;
+    width: 44%;
   }
 
   @include respond-to('small') {
-    flex: 0 1 98%;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 100%;
+    width: 98%;
   }
 
   background-color: $white;
@@ -30,12 +30,12 @@
   position: relative;
   z-index: 1;
 
-
   .experiment-information {
     @include flex-container(column, flex-start, flex-start);
     color: $black;
     flex: 1;
     padding: $grid-unit;
+    text-align: left;
   }
 
   header {

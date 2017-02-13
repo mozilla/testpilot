@@ -108,7 +108,7 @@
   @include flex-container(row, space-between, flex-start);
 
   @include respond-to('small') {
-    @include flex-container(column, center, center);
+    @include flex-container(column, flex-start, center);
   }
 }
 
