@@ -65,6 +65,8 @@
       margin: 0;
       position: absolute;
       right: 0;
+      top: $grid-unit * -2.25;
+      width: $grid-unit * 12.5;
     }
   }
 
@@ -89,26 +91,9 @@
 
 
     .banner--condensed & {
-      @include respond-to('big') {
-        position: absolute;
-        right: 0;
-        top: $grid-unit * -2.25;
-      }
-
-      @include respond-to('medium') {
-        position: absolute;
-        right: 0;
-        top: $grid-unit * -1.8;
-      }
-
-      @include respond-to('small') {
-        top: 0;
-      }
-
       background-position: right center;
       background-repeat: no-repeat;
       filter: drop-shadow(0 0 20px $transparent-black-1);
     }
   }
 }
-
