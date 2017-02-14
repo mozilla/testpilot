@@ -1,0 +1,15 @@
+activitystreamContributors0Title = הנדסת תוכנה
+activitystreamContributors1Title = הנדסת אתרים
+activitystreamContributors2Title = פיתוח תוכנה
+activitystreamContributors3Title = הנדסת Desktop Firefox
+activitystreamContributors4Title = הנדסת תוכנה
+activitystreamContributors5Title = ניהול טכני
+activitystreamContributors6Title = הנדסת שירותי ענן
+activitystreamContributors7Title = התמחות בהנדסה
+activitystreamContributors8Title = התמחות בהנדסה
+activitystreamContributors9Title = ניהול מוצר
+activitystreamContributors10Title = ניהול הנדסה
+activitystreamContributors11Title = הנדסת תוכנה
+minvidContributors0Title = הנדסה
+minvidContributors1Title = הנדסת אנוש
+minvidContributors2Title = התמחות בהנדסה
