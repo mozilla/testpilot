@@ -91,6 +91,113 @@ created: '2016-09-22T00:07:28.847430Z'
 completed: '2017-02-15T14:00:00.000000Z'
 uninstalled: '2017-02-15T14:00:00.000000Z'
 eol_warning: We will automatically disable the Tracking Protection experiment and report the results when it ends.
+graduation_report: >
+  <h3>Test Pilot Tracking Protection Retirement Report</h3>
+  <p>The Tracking Protection feature in Private Browsing Mode is popular with Firefox users, 
+  but it comes with a few downsides: it can break page layout and multimedia content on 
+  websites, and it sometimes blocks content that isn’t tracking you. We’ve collected qualitative 
+  evidence of this through user feedback, but since we introduced Tracking Protection, 
+  we haven’t been able to quantify the impact of breakage and false positives on the overall 
+  user experience.</p>
+  <p>We launched the Tracking Protection experiment in Test Pilot with a goal of understanding
+   how the block list we use for Tracking Protection in <a target="_blank" href="https://support.mozilla.org/en-US/kb/private-browsing-use-firefox-without-history">Private Browsing Mode</a> and in 
+   <a target="_blank" href="https://itunes.apple.com/us/app/firefox-focus-privacy-browser/id1055677337?mt=8">Firefox Focus for iOS</a> 
+   contributes to website breakage. The experiment was fairly 
+   simple by design: we enabled Tracking Protection and let users disable it on specific sites 
+   or provide reports about websites that seemed to break as a result of the experiment.</p>
+  <p><strong>Here’s how it went down</strong></p>
+  <p>The user interface for the Tracking Protection experiment was simple. When Tracking 
+  Protection was enabled, users saw an icon in their browser’s URL bar. Clicking 
+  the icon opened a panel where participants could report a problem and turn 
+  Tracking Protection off for that domain.</p>
+  <figure>
+  <img src="/static/images/experiments/tracking-protection/experiments_experimentdetail/detail1.jpg" alt="Tracking Protection doorhanger" />
+  </figure>
+  <p>Participants had the option to give more details about the problems they saw.</p>
+  <figure>
+  <img src="/static/images/experiments/tracking-protection/experiments_experimentdetail/detail2.jpg" alt="Tracking Protection doorhanger" />
+  </figure>
+  <p>For this experiment, we only collected data when participants turned Tracking 
+  Protection on or off, or when they reported problems with a particular domain. 
+  We did not collect data on other browsing activity and we did not record full URLs.</p>
+  <p><strong>Here’s what we learned</strong></p>
+  <p>We hypothesized that users would frequently disable Tracking Protection on broken sites. 
+  This, it turns out, was not the case. The chart below shows that despite a high 
+  number of participants using Firefox Tracking Protection every day, Tracking 
+  Protection was disabled on very few sites.</p>
+  <p><iframe src="https://docs.google.com/spreadsheets/d/19sMMr2Z6O8Ny_Olisz2sKE13CLIOet9KAlrcn4HSXDk/pubchart?oid=1101471247&amp;format=interactive" width="600" height="380" frameborder="0"></iframe></p>
+  <figure>
+  <figcaption>The number of times users disabled Tracking Protection was low to begin with,  and decreased over the life of the experiment.</figcaption>
+  </figure>
+  <p>Further, the rate at which users disabled Tracking Protection decreased as the 
+  experiment progressed. We think that once users disabled Tracking Protection for 
+  the most problematic sites, they didn’t encounter or weren’t bothered by breakage 
+  to the point that they would disable it for additional sites they visited later in 
+  the experiment.  Since we didn’t measure total page views, there are limits to what 
+  we can conclude about the number of sites broken by Tracking protection. Nevertheless, 
+  this data suggests that breakage may be less widespread than we initially believed, 
+  and it’s worth digging deeper into more specific breakage data.</p>
+  <p><iframe src="https://docs.google.com/spreadsheets/d/19sMMr2Z6O8Ny_Olisz2sKE13CLIOet9KAlrcn4HSXDk/pubchart?oid=206050478&amp;format=interactive" width="600" height="380" frameborder="0"></iframe></p>
+  <figure>
+  <figcaption>Disables, enables, reports of breakage, and reports of no breakage over the life of the experiment.</figcaption>
+  </figure>
+  <p>We were also interested in the impact Google Analytics had on site breakage. 
+  Google Analytics is a nearly ubiquitous service across the Web (full disclosure: 
+    we use it to gather traffic data for testpilot.firefox.com) that is blocked by 
+  Tracking Protection. When we began this experiment, some developers suggested that 
+  how a site set up Google Analytics could have a large impact on breakage. Blocking 
+  Google Analytics shouldn’t cause sites to break, but sometimes site developers write 
+  code that ignores the possibility of Google Analytics being blocked. If developers 
+  don’t accommodate for this possibility, broader failures in the way that code running 
+  on sites can occur because scripts on the site make reference to code that is never loaded.</p>
+  <p>It turns out that for the most part Google Analytics does not correlate to breakage. 
+  In fact, while Google Analytics shows up frequently in our data, it only correlated 
+  to breakage reports 25 percent of the time, which is low compared to breakage rates 
+  reported for other trackers.</p>
+  <p>Early on, we noticed that one service – Twimg, Twitter’s remote image hosting 
+  service – consistently showed up as a source of reported breakage. By diving 
+  into our user feedback, we figured out that this breakage caused images not to render 
+  and often lead to broken layout. We communicated our findings to <a target="_blank" href="https://disconnect.me/">Disconnect</a> (the tracking 
+    protection company that provides our block list), and they were able to re-categorize the 
+  Twimg domain as a content provider, mitigating the breakage.</p>
+  <p>In other cases when a known tracker caused site breakages, were less successful in 
+  modifying the Tracking Protection experiment to improve user experience. For 
+  example, we saw many reports of breakage linking video playback issues to Tealium, 
+  a tracker that’s used for marketing analytics. <a target="_blank" href="https://github.com/mozilla/blok/issues/216#issuecomment-266802796">We attempted to create a work around for this breakage</a> by using something called a shim – a fake initial reference to the 
+  tracker code that would theoretically let sites continue to run as though it really existed 
+  without breaking. Unfortunately, we found that while we could resolve the initial 
+  error by faking references with a code shim, secondary errors would crop as sites tried 
+  to execute code. Since these errors tended to be unique across different sites, we 
+  determined our approach couldn’t account for every error and wouldn’t scale effectively.</p>
+  <p><iframe src="https://docs.google.com/spreadsheets/d/19sMMr2Z6O8Ny_Olisz2sKE13CLIOet9KAlrcn4HSXDk/pubchart?oid=1628296436&amp;format=interactive" width="600" height="380" frameborder="0"></iframe></p>
+  <figure>
+  <figcaption>Google Analytics is ubiquitous, but shows relative low reported correlated breakage. Meanwhile Twitter’s image service (pbs.twimg.com) is much smaller but shows much higher reported breakage. Tealium (tags.tiqcdn.com) was also a commonly reported source of breakage.</figcaption>
+  </figure>
+  <p><strong>Here’s what happens next</strong></p>
+  <p>What’s next for the Tracking Protection experiment? Now that we’ve announced 
+  retirement plans for this add-on, we will no longer maintain it. If you have it 
+  enabled, you don’t need to do anything. We’ll automatically uninstall it in the 
+  coming days. Tracking Protection will continue as a feature of Private Browsing, however.</p>
+  <p>The Tracking Protection reporting feature, unlike many Test Pilot experiments, 
+  was never designed to graduate into Firefox. We created this experiment to learn 
+  how Tracking Protection works in the wild. We also learned a lot about (and are 
+    grateful for!) the willingness of our Test Pilot community to provide feedback.</p>
+  <p>We intend to run more studies based on our initial results. We are launching 
+  a similarly structured study in Test Pilot to learn about site performance in Firefox. 
+  We’ll use similar feedback mechanisms as the Tracking Protection study to learn about 
+  sites that cause Firefox users particular problems so we can address these issues 
+  as we work on our next generation Web rendering engine. Look for this study in late February 2017.</p>
+  <p>We will also conduct some messaging studies to help us understand how Firefox 
+  users who aren’t in Test Pilot think about online tracking and how we can best 
+  explain the costs and benefits of Tracking Protection and similar blocking services.</p>
+  <p>Finally, we’re planning a follow-up Tracking Protection Study in Test Pilot 
+  based on what we learned this go round. In the next round, we will be adding 
+  more fine tuned user control, differential privacy, and an improved user interface. 
+  We believe these additions will help us take the next step toward shipping Tracking 
+  Protection in Firefox beyond Private Browsing Mode. Look for that study in late 2017.</p>
+  <p>Thank you to all the Test Pilots who installed Tracking Protection and reported problems through the add-on!</p>
+  <p>Want to try a new experiment? Visit <a href="https://testpilot.firefox.com">https://testpilot.firefox.com</a>.</p>
+  <p><strong>- Luke Crouch, Privacy Engineer & John Gruen, Test Pilot Product Manager</strong></p>
 locale_blocklist:
   - 'de'
 order: 3
