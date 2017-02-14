@@ -3,6 +3,13 @@ import { handleActions } from 'redux-actions';
 const fetchExperiments = (state, { payload: { lastFetched, experimentsLoaded, data } }) =>
   ({ ...state, lastFetched, experimentsLoaded, data });
 
+const fetchUserCounts = (state, { payload: { data } }) => ({
+  ...state,
+  data: state.data.map(experiment =>
+    ((data[experiment.addon_id]) ? { ...experiment, installation_count: data[experiment.addon_id] } : experiment))
+});
+
+
 const updateExperiment = (state, { payload: { addonID, data } }) => ({
   ...state,
   data: state.data.map(experiment =>
@@ -29,6 +36,7 @@ export const isExperimentsLoaded = (state) => state.experimentsLoaded;
 
 export default handleActions({
   fetchExperiments,
+  fetchUserCounts,
   updateExperiment
 }, {
   data: [],

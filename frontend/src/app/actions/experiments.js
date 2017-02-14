@@ -4,22 +4,23 @@ export default createActions({
 
   updateExperiment: (addonID, data) => ({ addonID, data }),
 
-  fetchExperiments: (experimentsUrl, countsUrl) => {
-    let experiments = [];
+  fetchExperiments: (experimentsUrl) => {
     return fetch(experimentsUrl)
       .then(response => response.json())
-      .then(data => {
-        experiments = data.results;
-        return fetch(countsUrl);
-      })
-      .then(response => response.json())
-      .then(counts => ({
+      .then(data => ({
         lastFetched: Date.now(),
         experimentsLoaded: true,
-        data: experiments.map(experiment => ({
-          ...experiment,
-          installation_count: counts[experiment.addon_id]
-        }))
+        data: data.results
+      }));
+  },
+
+  fetchUserCounts: (countsUrl) => {
+    return fetch(countsUrl)
+      .then(
+        response => response.json(),
+        () => ({}))
+      .then(counts => ({
+        data: counts
       }));
   }
 
