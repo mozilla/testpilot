@@ -25,7 +25,7 @@ const tests = [
     name: 'installButtonBorder',
     getValue: function getValue() {
       if (!window.navigator.language.startsWith('en')) {
-        return false;  // User gets whatever the DefaultCase is.
+        return 'default';  // User gets whatever the DefaultCase is.
       }
       return random({
         bigBorder: 1,
@@ -38,9 +38,34 @@ const tests = [
 const chosenVariants = {};
 const identityReducers = {};
 
+let chosenTest = null;
+
 tests.forEach(test => {
-  chosenVariants[test.name] = test.getValue();
+  // Only put each user in one test. If we previously found a non-default test,
+  // put this user in default for the rest of the tests.
+  if (chosenTest !== null) {
+    chosenVariants[test.name] = 'default';
+  } else {
+    const chosen = test.getValue();
+    if (chosen !== 'default') {
+      chosenTest = {
+        test: test.name,
+        variant: chosen
+      };
+    }
+    chosenVariants[test.name] = chosen;
+  }
   identityReducers[test.name] = state => state;
 });
+
+export function getChosenTest() {
+  if (chosenTest === null) {
+    return {
+      test: '',
+      variant: ''
+    };
+  }
+  return chosenTest;
+}
 
 export default handleActions(identityReducers, chosenVariants);

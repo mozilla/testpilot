@@ -7,8 +7,10 @@ import { push as routerPush } from 'react-router-redux';
 import cookies from 'js-cookie';
 import Clipboard from 'clipboard';
 
+
 import { getInstalled, isExperimentEnabled, isAfterCompletedDate, isInstalledLoaded } from '../reducers/addon';
 import { getExperimentBySlug, isExperimentsLoaded } from '../reducers/experiments';
+import { getChosenTest } from '../reducers/varianttests';
 import experimentSelector from '../selectors/experiment';
 import { uninstallAddon, installAddon, enableExperiment, disableExperiment, pollAddon } from '../lib/addon';
 import addonActions from '../actions/addon';
@@ -96,8 +98,11 @@ function sendToGA(type, dataIn) {
     }
   };
   if (window.ga && ga.loaded) {
+    const chosenTest = getChosenTest();
     data.hitType = type;
     data.hitCallback = hitCallback;
+    data.dimension8 = chosenTest.test;
+    data.dimension9 = chosenTest.variant;
     ga('send', data);
   } else {
     hitCallback();
