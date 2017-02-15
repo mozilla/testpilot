@@ -40,6 +40,13 @@ ExperimentPage.propTypes = {
 };
 
 
+const EXPERIMENT_MEASUREMENT_URLS = [
+  null,
+  null,
+  null,
+  'https://www.mozilla.org/privacy/websites'
+];
+
 export class ExperimentDetail extends React.Component {
 
   constructor(props) {
@@ -395,7 +402,9 @@ export class ExperimentDetail extends React.Component {
                             </p>
                             <ul>
                               {measurements.map((note, idx) => (
-                                <li data-l10n-id={this.l10nId(['measurements', idx])} key={idx}>{note}</li>
+                                <li data-l10n-id={this.l10nId(['measurements', idx])} key={idx}>{note}{
+                                  EXPERIMENT_MEASUREMENT_URLS[idx] === null ? null : <a href={EXPERIMENT_MEASUREMENT_URLS[idx]}></a>
+                                }</li>
                               ))}
                             </ul>
                           </div>
@@ -441,7 +450,9 @@ export class ExperimentDetail extends React.Component {
                         </p>
                         <ul>
                           {measurements.map((note, idx) => (
-                            <li data-l10n-id={this.l10nId(['measurements', idx])} key={idx}>{note}</li>
+                            <li data-l10n-id={this.l10nId(['measurements', idx])} key={idx}>{note}{
+                              EXPERIMENT_MEASUREMENT_URLS[idx] === null ? null : <a href={EXPERIMENT_MEASUREMENT_URLS[idx]}></a>
+                            }</li>
                           ))}
                         </ul>
                       </div>
