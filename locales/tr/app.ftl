@@ -54,6 +54,14 @@ landingInstalledButton = Özelliklerinizi seçin
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Test Pilotu’nu yükle &amp;
+oneClickInstallMajorCta = { $title } deneyini etkinleştir
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -180,6 +188,7 @@ tour = Tur
 tourLink = tur
 contribute = Katkıda bulunun
 bugReports = Hata raporları
+discussExperiment = { $title } deneyini tartış
 tourOnboardingTitle = { $title } etkinleştirildi!
 tourDoneButton = Bitti
 userCountContainer = Şu anda { $title } deneyini deneyen <span>{ $installation_count }</span> kişi var!
@@ -271,6 +280,7 @@ newsletterFooterSuccessBody = Daha önce Mozilla ile ilgili bir bültene aboneli
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Bu deney sizin dilinizde ({ $locale_code }) desteklenmiyor.
 localeWarningSubtitle = İsterseniz yine de etkinleştirebilirsiniz.
 
 
