@@ -13,3 +13,4 @@ activitystreamContributors11Title = הנדסת תוכנה
 minvidContributors0Title = הנדסה
 minvidContributors1Title = הנדסת אנוש
 minvidContributors2Title = התמחות בהנדסה
+nomore404sSubtitle = מופעל על־ידי Wayback Machine
