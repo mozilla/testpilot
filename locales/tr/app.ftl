@@ -179,6 +179,7 @@ disableExperiment = { $title } deneyini kapat
 disableExperimentTransition = Kapatılıyor...
 enableExperiment = { $title } deneyini etkinleştir
 enableExperimentTransition = Etkinleştiriliyor...
+experimentMeasurementIntro = Tüm Test Pilotu deneyleri tarafından toplanan <a>verilere</a> ek olarak { $experimentTitle } deneyini kullanırken bilmeniz gereken temel noktalar şunlardır:
 measurements = Gizliliğiniz
 experimentPrivacyNotice = Buradan { $title } deneyinin topladığı veriler hakkında daha fazla bilgi alabilirsiniz.
 contributorsHeading = Geliştirenler
