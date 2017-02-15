@@ -126,7 +126,7 @@ graduation_report: >
   number of participants using Firefox Tracking Protection every day, Tracking 
   Protection was disabled on very few sites.</p>
   <figure>
-  <iframe class="dashboard-embed" src="https://docs.google.com/spreadsheets/d/19sMMr2Z6O8Ny_Olisz2sKE13CLIOet9KAlrcn4HSXDk/pubchart?oid=1101471247&amp;format=interactive" width="600" height="380"></iframe>
+  <iframe class="dashboard-embed" src="https://docs.google.com/spreadsheets/d/19sMMr2Z6O8Ny_Olisz2sKE13CLIOet9KAlrcn4HSXDk/pubchart?oid=1101471247&amp;format=interactive"></iframe>
   <figcaption>The number of times users disabled Tracking Protection was low to begin with,  and decreased over the life of the experiment.</figcaption>
   </figure>
   <p>Further, the rate at which users disabled Tracking Protection decreased as the 
@@ -138,7 +138,7 @@ graduation_report: >
   this data suggests that breakage may be less widespread than we initially believed, 
   and it’s worth digging deeper into more specific breakage data.</p>
   <figure>
-  <iframe class="dashboard-embed" src="https://docs.google.com/spreadsheets/d/19sMMr2Z6O8Ny_Olisz2sKE13CLIOet9KAlrcn4HSXDk/pubchart?oid=206050478&amp;format=interactive" width="600" height="380"></iframe>
+  <iframe class="dashboard-embed" src="https://docs.google.com/spreadsheets/d/19sMMr2Z6O8Ny_Olisz2sKE13CLIOet9KAlrcn4HSXDk/pubchart?oid=206050478&amp;format=interactive"></iframe>
   <figcaption>Disables, enables, reports of breakage, and reports of no breakage over the life of the experiment.</figcaption>
   </figure>
   <p>We were also interested in the impact Google Analytics had on site breakage. 
@@ -169,7 +169,7 @@ graduation_report: >
   error by faking references with a code shim, secondary errors would crop as sites tried 
   to execute code. Since these errors tended to be unique across different sites, we 
   determined our approach couldn’t account for every error and wouldn’t scale effectively.</p>
-  <p><iframe class="dashboard-embed" src="https://docs.google.com/spreadsheets/d/19sMMr2Z6O8Ny_Olisz2sKE13CLIOet9KAlrcn4HSXDk/pubchart?oid=1628296436&amp;format=interactive" width="600" height="380"></iframe></p>
+  <p><iframe class="dashboard-embed" src="https://docs.google.com/spreadsheets/d/19sMMr2Z6O8Ny_Olisz2sKE13CLIOet9KAlrcn4HSXDk/pubchart?oid=1628296436&amp;format=interactive"></iframe></p>
   <figure>
   <figcaption>Google Analytics is ubiquitous, but shows relative low reported correlated breakage. Meanwhile Twitter’s image service (pbs.twimg.com) is much smaller but shows much higher reported breakage. Tealium (tags.tiqcdn.com) was also a commonly reported source of breakage.</figcaption>
   </figure>
