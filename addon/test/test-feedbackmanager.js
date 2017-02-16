@@ -204,7 +204,6 @@ describe('FeedbackManager', function() {
         dispatch: sinon.spy()
       };
       const fm = new FeedbackManager(store);
-      sinon.spy(fm, 'promptRating');
       assert.equal(fm.checkForCompletedExperimentSurveys(), true);
       assert.ok(tabs.once.calledOnce);
       assert.ok(tabs.once.calledWith('open'));
@@ -214,7 +213,8 @@ describe('FeedbackManager', function() {
       assert.ok(timers.setTimeout.calledOnce);
       const callback2 = timers.setTimeout.firstCall.args[0];
       callback2();
-      assert.ok(fm.promptRating.calledOnce);
+      assert.ok(store.dispatch.calledOnce);
+      assert.equal(store.dispatch.firstCall.args[0].type, SHOW_RATING_PROMPT.type);
     });
   });
 
