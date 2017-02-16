@@ -17,7 +17,7 @@ footerLinkAbout = Tentang Test Pilot
 
 landingIntroOne = Uji fitur-fitur terbaru.
 landingIntroTwo = Berikan saran Anda.
-landingIntroThree = Bantu kami membuat Firefox.
+landingIntroThree = Bantu kami membangun Firefox.
 landingLegalNotice = Dengan melanjutkan, Anda menyetujui <a>Ketentuan Penggunaan</a> dan <a>Pernyataan Privasi</a> Test Pilot.
 landingExperimentsTitle = Cobalah fitur percobaan terbaru kami
 
@@ -33,7 +33,7 @@ landingInstallButton = Pasang Pengaya Test Pilot
 # A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
-landingCardListTitle = Mulai pada 3, 2, 1
+landingCardListTitle = Mulai dalam 3, 2, 1
 landingCardOne = Dapatkan pengaya Test Pilot
 landingCardTwo = Aktifkan fitur percobaan
 landingCardThree = Beritahu kami pendapat Anda
@@ -43,7 +43,7 @@ landingCardThree = Beritahu kami pendapat Anda
 # An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
-experimentCardGetStarted = Mulailah
+experimentCardGetStarted = Memulai
 
 
 
