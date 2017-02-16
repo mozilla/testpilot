@@ -1,0 +1,82 @@
+dev: true
+id: 11
+title: 'Pulse'
+slug: pulse
+locales:
+  - 'en'
+launch_date: '2017-02-21T22:00:00.00Z'
+incompatible:
+  'blok@mozilla.org': 'Tracking Protection'
+thumbnail: /static/images/experiments/pulse/icon/thumbnail.png
+description: >
+  Give us a performance review. Add Pulse, and help us understand which websites work well in Firefox and which sites don’t.
+introduction: >
+  We’re building the next generation of Firefox, and we’re focusing on real-world speed and 
+  performance. Pulse lets you give our engineers feedback about your experience on 
+  websites that work well in Firefox and on websites that don’t.  
+image_twitter: /static/images/experiments/pulse/social/pulse-twitter.jpg
+image_facebook: /static/images/experiments/pulse/social/pulse-facebook.jpg
+changelog_url: 'https://github.com/mozilla/pulse/commits/master'
+contribute_url: 'https://github.com/mozilla/pulse/'
+bug_report_url: 'https://github.com/mozilla/pulse/issues/new'
+discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/pulse'
+privacy_notice_url: 'https://github.com/mozilla/pulse/blob/master/docs/metrics.md'
+measurements:
+  - >
+    Pulse will only send information to us when you interact with it, 
+    such as submitting a survey, or when you are prompted to do so. 
+  - >
+    Pulse will send information about your browser and your device, such as 
+    what operating system and version of Firefox you are running, what 
+    addons and settings you have enabled, and how many tabs you have open.
+  - >
+    Pulse will send information about the page you are viewing when you 
+    submit a survey, such as the hostname and domain of the page, and the 
+    network requests associated with the page.
+xpi_url: 'https://testpilot.firefox.com/files/pulse@mozilla.com/latest'
+addon_id: 'pulse@mozilla.org'
+gradient_start: '#9CFF7B'
+gradient_stop: '#4AC7CD'
+details:
+  -
+    image: /static/images/experiments/pulse/details/detail1.png
+    copy: >
+      Provide feedback about website performance as you browse.
+  -
+    image: /static/images/experiments/pulse/details/detail2.png
+    copy: >
+      Pulse may prompt you to answer a short survey about your experience on a website.
+tour_steps:
+  -
+    image: /static/images/experiments/pulse/tour/tour1.jpg
+    copy: Click the Pulse icon in your URL bar to provide feedback for that website.
+  -
+    image: /static/images/experiments/pulse/tour/tour2.jpg
+    copy: Rate your experience and answer a few questions.
+  -
+    image: /static/images/experiments/pulse/tour/tour3.jpg
+    copy: Pulse may also prompt you at random to rate a website.
+  -
+    image: /static/images/experiments/pulse/tour/tour4.jpg
+    copy: You can always give us feedback or disable Pulse from Test Pilot.
+notifications: []
+contributors:
+  -
+    display_name: 'Chuck Harmston'
+    title: 'Senior Engineer'
+    avatar: /static/images/experiments/universal-search/avatars/chuck-harmston.jpg
+  -
+    display_name: 'Sevaan Franks'
+    title: 'Firefox UX'
+    avatar: /static/images/experiments/avatars/sevaan.jpg
+  -
+    display_name: 'Harald Kirschner'
+    title: 'Firefox Platform Product Intelligence'
+    avatar: /static/images/experiments/avatars/harald.jpg
+  -
+    display_name: 'Peter Dehaan'
+    title: 'Firefox QA'
+    avatar: /static/images/experiments/avatars/peter.jpg
+installation_count: 1
+created: '2017-02-17T00:06:00.00Z'
+order: 2

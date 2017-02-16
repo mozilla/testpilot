@@ -85,7 +85,7 @@ contributors:
     avatar: /static/images/experiments/tab-center/avatars/john-g.jpg
 installation_count: 29870
 created: '2016-04-28T00:07:28.847430Z'
-order: 5
+order: 6
 incompatible:
   'TooManyTabs@visibotech.com': 'Too Many Tabs'
   'firebug@software.joehewitt.com': 'Firebug'

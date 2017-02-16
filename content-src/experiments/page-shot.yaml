@@ -97,7 +97,7 @@ installation_count: 1
 created: '2016-09-22T00:07:28.847430Z'
 locales:
   - 'en'
-order: 1
+order: 3
 incompatible:
     '@no-resource-uri-leak': 'No Resource URI Leak'
     'jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack': 'Self-Destructing Cookies'
