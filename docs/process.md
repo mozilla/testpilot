@@ -13,9 +13,12 @@ organize issues.  The columns are:
 
 * *Untriaged*:  These are new issues we haven't looked at yet.
 * *Backlog*:  We've looked at these issues, but there are still some open
-  questions or were not ready to start working on them yet.
+  questions or were not ready to start working on them yet.  Every issue in
+  this column should have a `needs:*` label and/or have an open question for
+  someone.
 * *Ready*:  These issues have been triaged, questions are answered, assets are
-  available, and work is ready to begin.
+  available, and work is ready to begin.  None of the issues here should have a
+  `needs:*` label.
 * *On Deck*:  This is a short list, ordered by priority, for what we're working
   on next.
 * *In Progress*:  These issues are being actively worked on.  To be in this
