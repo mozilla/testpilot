@@ -21,6 +21,7 @@ activitystreamContributors9Title = Produktový manažér
 activitystreamContributors11Title = Softvérový inžinier
 activitystreamContributors12Title = Senior dizajnér používateľského zážitku
 cliqzDescription = Rýchlejšie výsledky vyhľadávania. Cliqz zobrazuje návrhy pod adresným riadkov už počas písania. A to bez kompromitácie vášho súkromia.
+cliqzIntroduction = Rýchlejšie výsledky vyhľadávania priamo v prehliadači. Cliqz zobrazuje návrhy výsledkov vyhľadávania priamo pod adresným riadkov, a to už počas písania. A pretože Cliqz nezbiera osobné údaje, pomocou ktorých by vás bolo možné identifikovať, a ani nevytvára váš osobný profil, neohrozuje vaše súkromie.
 cliqzPrivacypreamble = Experiment Cliqz je spoločným projektom Mozilly a Cliqz GmbH. Cliqz je navrhnutý tak, aby chránil vaše súkromie a aby sa vyhol zbieraniu citlivých údajov, vďaka ktorým by vás bolo možné identifikovať. Anonymizácia takýchto údajov je však náročná a napriek našej snahe môže byť možné identifikovať jednotlivých používateľov.
 cliqzMeasurements0 = Cliqz GmbH zbiera údaje ohľadom vášho vyhľadávania a prehliadania - text, ktorý píšete do adresného riadka, text zadaný do určitých vyhľadávacích modulov a údaje o interakcii s webovými stránkami (pohyby myši, posúvanie sa na stránke a na nej strávený čas).
 cliqzMeasurements1 = Cliqz GmbH zbiera telemetrické údaje, vrátane vašej interakcie s konkrétnymi poliami a tlačidlami v Cliqz. Tieto údaje obsahujú jedinečný identifikačný prvok, vďaka ktorému dokáže Cliqz GmbH porozumieť využívaniu služby v priebehu času.
