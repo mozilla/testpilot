@@ -1,0 +1,103 @@
+dev: true
+id: 10
+title: 'Snooze Tabs'
+slug: snooze-tabs
+locales:
+  - 'en'
+launch_date: '2017-02-21T22:00:00.00Z'
+incompatible:
+  'blok@mozilla.org': 'Tracking Protection'
+thumbnail: /static/images/experiments/snooze-tabs/icon/thumbnail.png
+description: >
+  Right website, wrong time?  Snooze it until you need it. Snooze Tabs let you 
+  dismiss tabs now and set an alarm to open them later.
+introduction: >
+  Snooze Tabs help you focus your attention online, whether you want to remove 
+  distractions for now or save something for later.  Hit the snooze icon to 
+  dismiss tabs you don’t want now, and set an alarm to bring them back when 
+  you need them. Snooze an interesting article until tonight. Snooze that recipe 
+  until next month. When the snooze is ended, the tab will open back up.
+image_twitter: /static/images/experiments/snooze-tabs/social/snooze-tabs-twitter.jpg
+image_facebook: /static/images/experiments/snooze-tabs/social/snooze-tabs-facebook.jpg
+changelog_url: 'https://github.com/bwinton/SnoozeTabs/commits/master'
+contribute_url: 'https://github.com/bwinton/SnoozeTabs/'
+bug_report_url: 'https://github.com/bwinton/SnoozeTabs/issues/new'
+discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/snooze-tabs'
+privacy_notice_url: 'https://github.com/bwinton/SnoozeTabs/blob/master/docs/metrics.md'
+measurements:
+  - >
+    Snooze Tabs will collect information about your interactions with the add-on, 
+    such as when you open the Snooze panel from the toolbar button, and access, 
+    edit or delete Snoozed tabs within the panel.
+  - >
+    Snooze Tabs will also collect information about your use of the feature, 
+    such as when you create a new Snoozed tab, wake or close a Snoozed tab, or focus a Snoozed tab.
+  - >
+    Snooze Tabs does NOT collect any information or details about your tabs such 
+    as URLs, meta attributes, or page content.
+xpi_url: 'https://testpilot.firefox.com/files/snoozetabs@mozilla/latest'
+addon_id: 'snoozetabs@mozilla.com'
+gradient_start: '#F89612'
+gradient_stop: '#851830'
+details:
+  -
+    image: /static/images/experiments/snooze-tabs/details/detail1.jpg
+    copy: >
+      Snooze your tab and choose when Firefox should open it.
+  -
+    image: /static/images/experiments/snooze-tabs/details/detail2.jpg
+    copy: >
+      Snooze Tabs will notify you when your tab returns.
+tour_steps:
+  -
+    image: /static/images/experiments/snooze-tabs/tour/tour1.jpg
+    copy: Click on the icon to snooze your current tab.
+  -
+    image: /static/images/experiments/snooze-tabs/tour/tour2.jpg
+    copy: Select when you want it to appear again.
+  -
+    image: /static/images/experiments/snooze-tabs/tour/tour3.jpg
+    copy: Say bye-bye to your tab until...
+  -
+    image: /static/images/experiments/snooze-tabs/tour/tour4.jpg
+    copy: ...Snooze Tabs brings it back!
+  -
+    image: /static/images/experiments/snooze-tabs/tour/tour5.jpg
+    copy: You can always give us feedback or disable Snooze Tabs from Test Pilot.
+notifications: []
+contributors:
+  -
+    display_name: 'Les Orchard'
+    title: 'Senior Engineer'
+    avatar: /static/images/experiments/avatars/les.jpg
+  -
+    display_name: 'Sevaan Franks'
+    title: 'Firefox UX'
+    avatar: /static/images/experiments/avatars/sevaan.jpg
+  -
+    display_name: 'Blake W'
+    title: 'Firefox UX'
+    avatar: /static/images/experiments/tab-center/avatars/blake-w.jpg
+  -
+    display_name: 'Erica W'
+    title: 'Firefox UX'
+    avatar: /static/images/experiments/tab-center/avatars/erica-wright.png
+  -
+    display_name: 'Parag Nandi'
+    title: 'Design Contributor'
+    avatar: /static/images/experiments/avatars/parag.jpg
+  -
+    display_name: 'Peter Dehaan'
+    title: 'Firefox QA'
+    avatar: /static/images/experiments/avatars/peter.jpg
+  -
+    display_name: 'Emil Pasca'
+    title: 'Softvision QA'
+    avatar: /static/images/experiments/avatars/emil.jpg
+  -
+    display_name: 'Ciprian Muresan'
+    title: 'Softvision QA'
+    avatar: /static/images/experiments/avatars/ciprian.jpg
+installation_count: 1
+created: '2017-02-17T00:06:00.00Z'
+order: 0
