@@ -58,4 +58,21 @@ participantCount = <span>{ $installation_count }</span> pengguna
 [[ newsletterForm ]]
 
 newsletterFormDisclaimer = Kami hanya akan mengirim informasi terkait Test Pilot.
+newsletterFormPrivacyNotice = Saya setuju Mozilla mengelola infomasi saya sesuai yang tertera pada <a>Pernyataan Privasi</a>.
+newsletterFormSubmitButton = Daftar Sekarang
+
+
+
+# A section of the footer containing a newsletter signup form.
+[[ newsletterFooter ]]
+
+newsletterFooterHeader = Tetap Terhubung
+newsletterFooterBody = Cari tahu percobaan baru dan lihat hasil pengujian percobaan yang sudah Anda coba.
+
+
+
+# Text of a button to toggle visibility of a list of past experiments.
+[[ pastExperiments ]]
+
+viewPastExperiments = Lihat Percobaan Sebelumnya
 
