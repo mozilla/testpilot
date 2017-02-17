@@ -80,8 +80,8 @@ export function main({ loadReason }: { loadReason: string }) {
   Services.obs.addObserver(
     () => {
       telemetry.ping(
-        'daily',
-        Object.keys(activeExperiments(store.getState())).length
+        Object.keys(activeExperiments(store.getState())).length.toString(),
+        'daily'
       );
     },
     'idle-daily',
