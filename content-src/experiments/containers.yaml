@@ -1,0 +1,69 @@
+dev: true
+id: 12
+title: 'Containers'
+slug: containers
+locales:
+  - 'en'
+launch_date: '2017-02-21T22:00:00.00Z'
+incompatible:
+  'blok@mozilla.org': 'Tracking Protection'
+thumbnail: /static/images/experiments/containers/icon/thumbnail.png
+description: >
+  Contain yourselves! Create different containers for each of your online lives -  
+  your work self, your social self, your personal self - to stay organized and maintain privacy.
+introduction: >
+  Containers let you create profiles in Firefox for all of your online lives. Custom 
+  labels and color-coded tabs help keep different activities  - like online shopping, 
+  travel planning, or checking work email -  separate.  And each container stores cookies 
+  separately, so online trackers can’t connect your browsing in one container to another.  
+  You can keep your shopping self separate from your social self from your work self, 
+  without worrying about being followed around the Web. 
+image_twitter: 
+image_facebook: 
+changelog_url: 'https://github.com/mozilla/testpilot-containers/commits/master'
+contribute_url: 'https://github.com/mozilla/testpilot-containers/'
+bug_report_url: 'https://github.com/mozilla/testpilot-containers/issues/new'
+discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/containers'
+privacy_notice_url: 'https://github.com/mozilla/testpilot-containers/blob/master/docs/metrics.md'
+measurements:
+  - >
+    Test
+  - >
+    Test
+  - >
+    Test
+xpi_url: 'https://testpilot.firefox.com/files/@testpilot-containers/latest'
+addon_id: 'testpilot-containers@mozilla.org'
+gradient_start: '#42CCD9'
+gradient_stop: '#6C419F'
+details:
+  -
+    image: /static/images/experiments/pulse/details/detail1.png
+    copy: >
+      Test.
+  -
+    image: /static/images/experiments/pulse/details/detail2.png
+    copy: >
+      Test.
+tour_steps:
+  -
+    image: /static/images/experiments/pulse/tour/tour1.jpg
+    copy: Test.
+  -
+    image: /static/images/experiments/pulse/tour/tour2.jpg
+    copy: Test.
+  -
+    image: /static/images/experiments/pulse/tour/tour3.jpg
+    copy: Test.
+  -
+    image: /static/images/experiments/pulse/tour/tour4.jpg
+    copy: Test.
+notifications: []
+contributors:
+  -
+    display_name: 'Sevaan Franks'
+    title: 'Firefox UX'
+    avatar: /static/images/experiments/avatars/generic-profile.png
+installation_count: 1
+created: '2017-02-17T00:06:00.00Z'
+order: 1
