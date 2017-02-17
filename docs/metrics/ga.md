@@ -91,7 +91,7 @@ TODO: issue [#839](https://github.com/mozilla/testpilot/issues/839#issuecomment-
 
 The `pageview` send also uses `sendToGA`, but with slightly different parameters.
 
-Here is an example - [viewing the home page](https://github.com/mozilla/testpilot/blob/7b72e0102e100cdedfc8e02787688aed3d59a36a/testpilot/frontend/static-src/app/views/landing-page.js#L35). 
+Here is an example - [viewing the home page](https://github.com/mozilla/testpilot/blob/7b72e0102e100cdedfc8e02787688aed3d59a36a/testpilot/frontend/static-src/app/views/landing-page.js#L35).
 
 ```
 app.sendToGA('pageview', {
@@ -118,6 +118,8 @@ Here is a list of dimensions we are currently using
 | Experiment Detail Page                        | Experiment title                                  | 5         | "xyz"  |
 | Experiment Detail Page                        | Installation count                                | 6         | {n}    |
 | Home Page, Experiment Detail Page             | Determine if installation will require a restart  | 7         | {'no restart','restart required'}   |
+| Home Page, Experiment Detail Page, Share Page | Which test has this user been selected for?       | 8         | {'installButtonBorder', ''} |
+| Home Page, Experiment Detail Page, Share Page | Which cohort has this user been selected for?     | 9         | {'bigButton', ''} |
 
 ### Tagged Links
 
