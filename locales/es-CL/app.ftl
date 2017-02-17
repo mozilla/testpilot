@@ -54,6 +54,14 @@ landingInstalledButton = Elige tus funciones
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Instalar Test Pilot y
+oneClickInstallMajorCta = Activar { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -117,6 +125,7 @@ experimentListJustLaunchedTab = Recién lanzado
 experimentListJustUpdatedTab = Recién actualizado
 experimentListEndingTomorrow = Termina mañana
 experimentListEndingSoon = Termina pronto
+experimentsListCondensedHeader = ¡Selecciona tus experimentos!
 
 
 
@@ -179,6 +188,7 @@ tour = Tur
 tourLink = Tur de lanzamiento
 contribute = Contribuir
 bugReports = Reportes de errores
+discussExperiment = Opinar sobre { $title }
 tourOnboardingTitle = ¡{ $title } activado!
 tourDoneButton = Hecho
 userCountContainer = ¡Hay <span>{ $installation_count }</span> personas probando { $title } en este momento!
