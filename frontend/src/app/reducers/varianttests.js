@@ -22,13 +22,13 @@ function random(choices) {
 
 const tests = [
   {
-    name: 'installButtonBorder',
+    name: 'experimentPageToggles',
     getValue: function getValue() {
       if (!window.navigator.language.startsWith('en')) {
         return 'default';  // User gets whatever the DefaultCase is.
       }
       return random({
-        bigBorder: 1,
+        toggles: 1,
         default: 1
       });
     }
