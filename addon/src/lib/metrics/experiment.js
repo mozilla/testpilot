@@ -20,7 +20,7 @@ import type Variants from './variants';
 
 export type ExperimentPingData = {
   subject: string,
-  data: string /* JSON { senderAddonId: string, testpilotPingData: any }*/
+  data: string /* JSON { any } */
 };
 
 const EVENT_SEND_METRIC = 'testpilot::send-metric';

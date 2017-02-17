@@ -3,6 +3,8 @@ import assert from 'assert';
 import proxyquire from 'proxyquire';
 import sinon from 'sinon';
 
+const BLOK_ADDON_ID = 'blok@mozilla.org';
+
 const broadcastChannel = {
   addEventListener: sinon.spy(),
   removeEventListener: sinon.spy(),
@@ -149,14 +151,23 @@ describe('WebExtensionChannel', function() {
   });
 
   describe('notifyPing', function() {
+    it('calls the ping listeners with legacy format for Tracking Protection', function() {
+      const w = new WebExtensionChannel(BLOK_ADDON_ID);
+      const fn = sinon.spy();
+      w.registerPingListener(fn);
+      w.notifyPing('x', { addonId: BLOK_ADDON_ID });
+      assert.ok(fn.calledOnce);
+      assert.equal(fn.firstCall.args[0].senderAddonId, BLOK_ADDON_ID);
+      assert.equal(fn.firstCall.args[0].testpilotPingData, 'x');
+    });
+
     it('calls the ping listeners with the arguments', function() {
       const w = new WebExtensionChannel('foo');
       const fn = sinon.spy();
       w.registerPingListener(fn);
       w.notifyPing('x', { addonId: 'f' });
       assert.ok(fn.calledOnce);
-      assert.equal(fn.firstCall.args[0].senderAddonId, 'f');
-      assert.equal(fn.firstCall.args[0].testpilotPingData, 'x');
+      assert.equal(fn.firstCall.args[0], 'x');
     });
 
     it('catches listener exceptions', function() {
