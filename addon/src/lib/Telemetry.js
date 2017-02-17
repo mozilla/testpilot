@@ -49,7 +49,7 @@ export default class Telemetry {
     }
   }
 
-  ping(object: any, event: any, time?: number) {
+  ping(object: string, event: string, time?: number) {
     const payload = {
       timestamp: makeTimestamp(),
       test: self.id,
