@@ -9,7 +9,7 @@ import Clipboard from 'clipboard';
 
 
 import { getInstalled, isExperimentEnabled, isAfterCompletedDate, isInstalledLoaded } from '../reducers/addon';
-import { getExperimentBySlug, isExperimentsLoaded } from '../reducers/experiments';
+import { getExperimentBySlug } from '../reducers/experiments';
 import { getChosenTest } from '../reducers/varianttests';
 import experimentSelector from '../selectors/experiment';
 import { uninstallAddon, installAddon, enableExperiment, disableExperiment, pollAddon } from '../lib/addon';
@@ -26,10 +26,7 @@ class App extends Component {
   }
 
   measurePageview() {
-    const { routing, hasAddon, installed, installedLoaded, experimentsLoaded } = this.props;
-
-    // Wait until experiments are loaded
-    if (!experimentsLoaded) { return; }
+    const { routing, hasAddon, installed, installedLoaded } = this.props;
 
     // If we have an addon, wait until the installed experiments are loaded
     if (hasAddon && !installedLoaded) { return; }
@@ -128,7 +125,6 @@ function subscribeToBasket(email, locale, callback) {
 const mapStateToProps = state => ({
   addon: state.addon,
   experiments: experimentSelector(state),
-  experimentsLoaded: isExperimentsLoaded(state.experiments),
   getExperimentBySlug: slug =>
     getExperimentBySlug(state.experiments, slug),
   hasAddon: state.addon.hasAddon,
