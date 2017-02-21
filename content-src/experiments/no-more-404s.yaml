@@ -26,7 +26,7 @@ measurements:
     To provide cached versions of pages, we send 404 error page URLs to
     Archive.org. <a href="https://archive.org/" target="_blank">Archive.org</a>
     discloses its privacy policy <a href="https://archive.org/about/terms.php"
-    target="_blank">here</a>.</li>
+    target="_blank">here</a>.
   - >
     We do not  collect  URLs of the pages you request or the URLs we send to
     Archive.org.

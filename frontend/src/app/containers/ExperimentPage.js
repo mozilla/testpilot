@@ -421,7 +421,7 @@ export class ExperimentDetail extends React.Component {
                   {this.renderLocaleWarning()}
                   {hasAddon && <div>
                     {!!introduction && <section className="introduction">
-                      <div data-l10n-id={this.l10nId('description')} dangerouslySetInnerHTML={createMarkup(introduction)}></div>
+                      <div data-l10n-id={this.l10nId('introduction')} dangerouslySetInnerHTML={createMarkup(introduction)}></div>
                     </section>}
                   </div>}
                   <div className="details-list">

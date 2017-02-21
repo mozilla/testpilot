@@ -35,7 +35,7 @@ measurements:
     Containers will not send information about open pages; this includes page content, meta information, or URLs.
 xpi_url: 'https://testpilot.firefox.com/files/@testpilot-containers/latest'
 addon_id: '@testpilot-containers'
-gradient_start: '#42CCD9'
+gradient_start: '#069CD6'
 gradient_stop: '#6C419F'
 details:
   -
@@ -82,7 +82,7 @@ contributors:
     avatar: /static/images/experiments/avatars/lcrouch.png
   -
     display_name: 'Kamil Jozwiak'
-    title: 'Firefox UX'
+    title: 'QA Test Engineer'
     avatar: /static/images/experiments/avatars/kjozwiak.png
   -
     display_name: 'Peter deHaan'

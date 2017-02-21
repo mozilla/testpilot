@@ -38,7 +38,7 @@ measurements:
 xpi_url: 'https://testpilot.firefox.com/files/snoozetabs@mozilla.com/latest'
 addon_id: 'snoozetabs@mozilla.com'
 gradient_start: '#F89612'
-gradient_stop: '#851830'
+gradient_stop: '#B64F66'
 details:
   -
     image: /static/images/experiments/snooze-tabs/details/detail1.jpg

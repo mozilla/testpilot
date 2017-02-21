@@ -24,7 +24,7 @@ measurements:
     If you previously configured Firefox to display search suggestions in
     the Search Bar, installing Universal Search will enable <a
     href="https://www.mozilla.org/privacy/firefox/#searchsuggestions"
-    target="_blank">search suggestions</a> in the Awesome Bar.</li>
+    target="_blank">search suggestions</a> in the Awesome Bar.
   - >
     When you use the Awesome Bar, we send the terms you type to our
     recommendation engine. We keep anonymous logs of popular searches to
