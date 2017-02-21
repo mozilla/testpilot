@@ -34,19 +34,19 @@ measurements:
     network requests associated with the page.
 xpi_url: 'https://testpilot.firefox.com/files/pulse@mozilla.com/latest'
 addon_id: 'pulse@mozilla.com'
-gradient_start: '#9CFF7B'
-gradient_stop: '#4AC7CD'
+gradient_start: '#58CA5B'
+gradient_stop: '#3EADB9'
 pre_feedback_copy: >
   <p>To report a site that doesn't work with Pulse, select the
     Pulse icon in the bar that displays the URL of the site.</p>
 pre_feedback_image: /static/images/experiments/pulse/tour/tour2.jpg
 details:
   -
-    image: /static/images/experiments/pulse/details/detail1.png
+    image: /static/images/experiments/pulse/details/detail1.jpg
     copy: >
       Provide feedback about website performance as you browse.
   -
-    image: /static/images/experiments/pulse/details/detail2.png
+    image: /static/images/experiments/pulse/details/detail2.jpg
     copy: >
       Pulse may prompt you to answer a short survey about your experience on a website.
 tour_steps:

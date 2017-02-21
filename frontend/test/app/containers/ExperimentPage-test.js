@@ -144,7 +144,6 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
     subject.setProps({ hasAddon: true });
     // The measurements section is rendered twice, for responsiveness reasons.
     expect(findByL10nID('testingMeasurements0')).to.have.property('length', 2);
-    expect(findByL10nID('testingDescription')).to.have.property('length', 1);
   });
 
   it('should omit l10n IDs for dev-only content', () => {
