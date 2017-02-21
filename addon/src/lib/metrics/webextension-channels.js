@@ -16,6 +16,7 @@ type PingListener = (
 ) => void;
 
 const TESTPILOT_TELEMETRY_CHANNEL = 'testpilot-telemetry';
+const BLOK_ADDON_ID = 'blok@mozilla.org';
 
 function createChannelForAddonId(name, addonId) {
   // The BroadcastChannel API allows messaging between different windows that
@@ -136,10 +137,15 @@ export default class WebExtensionChannel {
     // eslint-disable-next-line prefer-const
     for (let pingListener of this.pingListeners) {
       try {
-        pingListener({
-          senderAddonId: sender.addonId,
-          testpilotPingData: data
-        });
+        if (sender.addonId === BLOK_ADDON_ID) {
+          // HACK: Legacy ping format for Tracking Protection experiment
+          pingListener({
+            senderAddonId: sender.addonId,
+            testpilotPingData: data
+          });
+        } else {
+          pingListener(data);
+        }
       } catch (err) {
         // eslint-disable-next-line no-console
         console.error('Error executing pingListener', err);
