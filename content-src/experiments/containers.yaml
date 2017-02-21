@@ -1,25 +1,26 @@
-dev: true
 id: 12
 title: 'Containers'
 slug: containers
 locales:
   - 'en'
-launch_date: '2017-02-21T22:00:00.00Z'
+launch_date: '2017-02-22T17:00:00.00Z'
 incompatible:
   'blok@mozilla.org': 'Tracking Protection'
+  'snoozetabs@mozilla.com': 'Snooze Tabs'
 thumbnail: /static/images/experiments/containers/icon/thumbnail.png
 description: >
   Contain yourselves! Create different containers for each of your online lives -  
   your work self, your social self, your personal self - to stay organized and maintain privacy.
 introduction: >
   Containers let you create profiles in Firefox for all of your online lives. Custom 
-  labels and color-coded tabs help keep different activities  - like online shopping, 
-  travel planning, or checking work email -  separate.  And each container stores cookies 
-  separately, so online trackers can’t connect your browsing in one container to another.  
-  You can keep your shopping self separate from your social self from your work self, 
-  without worrying about being followed around the Web. 
-image_twitter: 
-image_facebook: 
+  labels and color-coded tabs help keep different activities — like online shopping, 
+  travel planning, or checking work email — separate.  Because Containers store cookies 
+  separately, you can log into the same site with a different account in each Container, 
+  and online trackers can’t connect your browsing in one container to another.  So you can 
+  keep your shopping self separate from your social self from your work self, without 
+  worrying about being followed around the Web.
+image_twitter: /static/images/experiments/containers/social/containers-twitter.jpg
+image_facebook: /static/images/experiments/containers/social/containers-facebook.jpg
 changelog_url: 'https://github.com/mozilla/testpilot-containers/commits/master'
 contribute_url: 'https://github.com/mozilla/testpilot-containers/'
 bug_report_url: 'https://github.com/mozilla/testpilot-containers/issues/new'
@@ -27,43 +28,86 @@ discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/containers'
 privacy_notice_url: 'https://github.com/mozilla/testpilot-containers/blob/master/docs/metrics.md'
 measurements:
   - >
-    Test
+    Containers will only send information to us when you interact with it, such as opening, editing, or deleting a container.
   - >
-    Test
+    Containers will send information about the type of interaction with Containers, which Container you are interacting with, and the number of tabs in the Container.
   - >
-    Test
+    Containers will not send information about open pages; this includes page content, meta information, or URLs.
 xpi_url: 'https://testpilot.firefox.com/files/@testpilot-containers/latest'
 addon_id: '@testpilot-containers'
 gradient_start: '#42CCD9'
 gradient_stop: '#6C419F'
 details:
   -
-    image: /static/images/experiments/pulse/details/detail1.png
+    image: /static/images/experiments/containers/details/detail1.jpg
     copy: >
-      Test.
+      Containers let you separate the different parts of your online life.
   -
-    image: /static/images/experiments/pulse/details/detail2.png
+    image: /static/images/experiments/containers/details/detail2.jpg
     copy: >
-      Test.
+      Select from categories like Shopping, Finance, and Work or create custom labels that work for you.
+  -
+    image: /static/images/experiments/containers/details/detail3.jpg
+    copy: >
+      Use color-coded labels to see different Containers at a glance. 
 tour_steps:
   -
-    image: /static/images/experiments/pulse/tour/tour1.jpg
-    copy: Test.
+    image: /static/images/experiments/containers/tour/tour1.jpg
+    copy: Start a Container to label and organize a set of tabs.
   -
-    image: /static/images/experiments/pulse/tour/tour2.jpg
-    copy: Test.
+    image: /static/images/experiments/containers/tour/tour2.jpg
+    copy: Hover over the New Tab button to select a container.
   -
-    image: /static/images/experiments/pulse/tour/tour3.jpg
-    copy: Test.
+    image: /static/images/experiments/containers/tour/tour3.jpg
+    copy: Use the toolbar menu to open Container tabs, create new Containers and organize, edit or delete Containers.
   -
-    image: /static/images/experiments/pulse/tour/tour4.jpg
-    copy: Test.
+    image: /static/images/experiments/containers/tour/tour4.jpg
+    copy: Hide all tabs in a Container or open them in a new window from the toolbar menu, too.
+  -
+    image: /static/images/experiments/containers/tour/tour5.jpg
+    copy: You can always give us feedback or disable Containers from Test Pilot.
 notifications: []
 contributors:
   -
-    display_name: 'Sevaan Franks'
+    display_name: 'Tanvi Vyas'
+    title: 'User Security and Privacy'
+    avatar: /static/images/experiments/avatars/tvyas.png
+  -
+    display_name: 'Andrea Marchesini'
+    title: 'Platform Engineer'
+    avatar: /static/images/experiments/avatars/amarchesini.png
+  -
+    display_name: 'Luke Crouch'
+    title: 'Privacy Engineer'
+    avatar: /static/images/experiments/avatars/lcrouch.png
+  -
+    display_name: 'Kamil Jozwiak'
     title: 'Firefox UX'
-    avatar: /static/images/experiments/avatars/generic-profile.png
+    avatar: /static/images/experiments/avatars/kjozwiak.png
+  -
+    display_name: 'Peter deHaan'
+    title: 'Firefox QA'
+    avatar: /static/images/experiments/avatars/peter.jpg
+  -
+    display_name: 'Michelle Heubusch'
+    title: 'Firefox Content Strategy'
+    avatar: /static/images/experiments/avatars/michelle.jpg
+  -
+    display_name: 'Jonathan Kingston'
+    title: 'Front End Security'
+    avatar: /static/images/experiments/avatars/jkingston.png
+  -
+    display_name: 'Fang Shih'
+    title: 'Firefox UX'
+    avatar: /static/images/experiments/avatars/fshih.png
+  -
+    display_name: 'Mark Liang'
+    title: 'Firefox UX'
+    avatar: /static/images/experiments/avatars/mliang.png
+  -
+    display_name: 'Morpheus Chen'
+    title: 'Firefox UX'
+    avatar: /static/images/experiments/avatars/mchen.png
 installation_count: 1
 created: '2017-02-17T00:06:00.00Z'
 order: 1

@@ -1,10 +1,9 @@
-dev: true
 id: 11
 title: 'Pulse'
 slug: pulse
 locales:
   - 'en'
-launch_date: '2017-02-21T22:00:00.00Z'
+launch_date: '2017-02-22T17:00:00.00Z'
 incompatible:
   'blok@mozilla.org': 'Tracking Protection'
 thumbnail: /static/images/experiments/pulse/icon/thumbnail.png
@@ -37,6 +36,10 @@ xpi_url: 'https://testpilot.firefox.com/files/pulse@mozilla.com/latest'
 addon_id: 'pulse@mozilla.com'
 gradient_start: '#9CFF7B'
 gradient_stop: '#4AC7CD'
+pre_feedback_copy: >
+  <p>To report a site that doesn't work with Pulse, select the
+    Pulse icon in the bar that displays the URL of the site.</p>
+pre_feedback_image: /static/images/experiments/pulse/tour/tour2.jpg
 details:
   -
     image: /static/images/experiments/pulse/details/detail1.png
