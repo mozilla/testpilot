@@ -402,7 +402,7 @@ export class ExperimentDetail extends React.Component {
                             </p>
                             <ul>
                               {measurements.map((note, idx) => (
-                                <li data-l10n-id={this.l10nId(['measurements', idx])} key={idx}>{note}{
+                                <li data-l10n-id={this.l10nId(['measurements', idx])} key={idx}>{
                                   EXPERIMENT_MEASUREMENT_URLS[idx] === null ? null : <a href={EXPERIMENT_MEASUREMENT_URLS[idx]}></a>
                                 }</li>
                               ))}
@@ -450,7 +450,7 @@ export class ExperimentDetail extends React.Component {
                         </p>
                         <ul>
                           {measurements.map((note, idx) => (
-                            <li data-l10n-id={this.l10nId(['measurements', idx])} key={idx}>{note}{
+                            <li data-l10n-id={this.l10nId(['measurements', idx])} key={idx}>{
                               EXPERIMENT_MEASUREMENT_URLS[idx] === null ? null : <a href={EXPERIMENT_MEASUREMENT_URLS[idx]}></a>
                             }</li>
                           ))}
