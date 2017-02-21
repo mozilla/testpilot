@@ -1,12 +1,12 @@
-dev: true
 id: 10
 title: 'Snooze Tabs'
 slug: snooze-tabs
 locales:
   - 'en'
-launch_date: '2017-02-21T22:00:00.00Z'
+launch_date: '2017-02-22T17:00:00.00Z'
 incompatible:
   'blok@mozilla.org': 'Tracking Protection'
+  '@testpilot-containers': 'Containers'
 thumbnail: /static/images/experiments/snooze-tabs/icon/thumbnail.png
 description: >
   Right website, wrong time?  Snooze it until you need it. Snooze Tabs let you 
