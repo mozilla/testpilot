@@ -109,6 +109,7 @@ trackingprotectionContributors1Title = Senior dizajnér používateľského zá�
 trackingprotectionContributorsextra = Tento experiment je založený na ochrane pred sledovaním, ktorú vytvorila Mozilla a jej prispievatelia v priebehu niekoľkých rokov.
 trackingprotectionEolwarning = Po ukončení experimentu Tracking Protection ho automaticky deaktivujeme a o jeho výsledkoch budeme informovať.
 universalsearchDescription = Nechajte si odporučiť najlepšie stránky na webe v priebehu písania do adresného riadka.
+universalsearchIntroduction = <p>Získajte to najlepšie z webu rýchlejšie s Universal Search. Stačí ak do panela s adresou napíšete pár znakov, a zobrazia sa vám najpopulárnejšie stránky, ľudia a články na Wikipédii.</p>
 universalsearchMeasurements0 = Zbierame základné údaje o vašej interakcii s panelom s adresou, napríklad počet napísaných znakov, typy výsledkov, na ktoré ste kliknete a ich umiestnenie v zozname.
 universalsearchMeasurements1 = Ak ste predtým vo Firefoxe nastavili zobrazovanie návrhov vyhľadávania v paneli vyhľadávania, inštaláciou experimentu Universal Search sa povolí <a href="https://www.mozilla.org/privacy/firefox/#searchsuggestions" target="_blank">zobrazovanie návrhov vyhľadávania</a> v paneli s adresou.
 universalsearchDetails0Copy = Populárne stránky, ľudia a články na Wikipédii sa zobrazia už počas písania.
