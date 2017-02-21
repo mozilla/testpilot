@@ -34,7 +34,7 @@ measurements:
     submit a survey, such as the hostname and domain of the page, and the 
     network requests associated with the page.
 xpi_url: 'https://testpilot.firefox.com/files/pulse@mozilla.com/latest'
-addon_id: 'pulse@mozilla.org'
+addon_id: 'pulse@mozilla.com'
 gradient_start: '#9CFF7B'
 gradient_stop: '#4AC7CD'
 details:
