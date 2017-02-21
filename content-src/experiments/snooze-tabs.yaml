@@ -35,7 +35,7 @@ measurements:
   - >
     Snooze Tabs does NOT collect any information or details about your tabs such 
     as URLs, meta attributes, or page content.
-xpi_url: 'https://testpilot.firefox.com/files/snoozetabs@mozilla/latest'
+xpi_url: 'https://testpilot.firefox.com/files/snoozetabs@mozilla.com/latest'
 addon_id: 'snoozetabs@mozilla.com'
 gradient_start: '#F89612'
 gradient_stop: '#851830'
