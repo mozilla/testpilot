@@ -33,7 +33,7 @@ measurements:
   - >
     Test
 xpi_url: 'https://testpilot.firefox.com/files/@testpilot-containers/latest'
-addon_id: 'testpilot-containers@mozilla.org'
+addon_id: '@testpilot-containers'
 gradient_start: '#42CCD9'
 gradient_stop: '#6C419F'
 details:
