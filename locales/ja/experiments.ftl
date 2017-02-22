@@ -33,6 +33,7 @@ cliqzDetails2Copy = 新しいタブを開いたときに、お気に入りのサ
 cliqzToursteps0Copy = ロケーションバーに文字を入力し始めると、瞬時に結果が表示されます。
 cliqzToursteps1Copy = 新しいタブを開いて、ワンクリックでアクセスできるよう、お気に入りのサイトを追加しましょう。
 cliqzToursteps2Copy = Test Pilot の Cliqz は、いつでもフィードバックを送ったり、無効化したりできます。
+containersDescription = 自分自身を整理！ 仕事、ソーシャル、パーソナルなど、オンライン活動の場面ごとに別々の「コンテナ」を作り、訪れるサイトを分けて、プライバシーを保ちましょう。
 containersToursteps4Copy = Test Pilot の Containers は、いつでもフィードバックを送ったり、無効化したりできます。
 containersContributors0Title = ユーザーセキュリティ・プライバシー
 containersContributors1Title = プラットフォームエンジニア
