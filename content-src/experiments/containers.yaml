@@ -5,7 +5,7 @@ locales:
   - 'en'
 locale_grantlist:
   - 'en'
-launch_date: '2017-02-22T17:00:00.00Z'
+launch_date: '2017-02-28T17:00:00.00Z'
 min_release: 51
 incompatible:
   'blok@mozilla.org': 'Tracking Protection'
