@@ -34,6 +34,7 @@ cliqzToursteps0Copy = ロケーションバーに文字を入力し始めると�
 cliqzToursteps1Copy = 新しいタブを開いて、ワンクリックでアクセスできるよう、お気に入りのサイトを追加しましょう。
 cliqzToursteps2Copy = Test Pilot の Cliqz は、いつでもフィードバックを送ったり、無効化したりできます。
 containersDescription = 自分自身を整理！ 仕事、ソーシャル、パーソナルなど、オンライン活動の場面ごとに別々の「コンテナ」を作り、訪れるサイトを分けて、プライバシーを保ちましょう。
+containersIntroduction = Containers を使えば、あなたのあらゆるオンライン活動のためのプロフィールを Firefox 内に複数作成できます。任意のラベルと色分けされたタブで、オンラインショッピング、旅行の計画、仕事メールのチェックなど、異なる活動を別々に分けておくことが可能です。Containers では個別に Cookie が保存されるため、コンテナごとに違うアカウントで同じサイトにログインすることができ、オンラインの追跡者はあるコンテナ内でのあなたのブラウジング活動を他のコンテナと結び付けられなくなります。そのため、ウェブ上で追い回される心配をせずに、ショッピング中、ソーシャル上、仕事中など、別々のプロフィールを保てます。
 containersToursteps4Copy = Test Pilot の Containers は、いつでもフィードバックを送ったり、無効化したりできます。
 containersContributors0Title = ユーザーセキュリティ・プライバシー
 containersContributors1Title = プラットフォームエンジニア
