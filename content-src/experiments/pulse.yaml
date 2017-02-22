@@ -4,6 +4,7 @@ slug: pulse
 locales:
   - 'en'
 launch_date: '2017-02-22T17:00:00.00Z'
+min_release: 51
 incompatible:
   'blok@mozilla.org': 'Tracking Protection'
 thumbnail: /static/images/experiments/pulse/icon/thumbnail.png
