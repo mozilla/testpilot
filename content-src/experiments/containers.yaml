@@ -3,16 +3,18 @@ title: 'Containers'
 slug: containers
 locales:
   - 'en'
+locale_grantlist:
+  - 'en'
 launch_date: '2017-02-22T17:00:00.00Z'
 min_release: 51
 incompatible:
   'blok@mozilla.org': 'Tracking Protection'
-  'snoozetabs@mozilla.com': 'Snooze Tabs'
 thumbnail: /static/images/experiments/containers/icon/thumbnail.png
 description: >
   Contain yourselves! Create different containers for each of your online lives -  
   your work self, your social self, your personal self - to stay organized and maintain privacy.
 introduction: >
+  <div class="warning"><strong>Note: Because of the security properties of Containers, Test Pilot experiments such as Page Shot, Snooze Tabs, and Pulse will not work from within Container tabs. Remember, this is experimental technology!</strong></div>
   Containers let you create profiles in Firefox for all of your online lives. Custom 
   labels and color-coded tabs help keep different activities — like online shopping, 
   travel planning, or checking work email — separate.  Because Containers store cookies 
