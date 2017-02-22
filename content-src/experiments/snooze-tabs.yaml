@@ -3,6 +3,8 @@ title: 'Snooze Tabs'
 slug: snooze-tabs
 locales:
   - 'en'
+locale_grantlist:
+  - 'en'
 launch_date: '2017-02-22T17:00:00.00Z'
 incompatible:
   'blok@mozilla.org': 'Tracking Protection'
