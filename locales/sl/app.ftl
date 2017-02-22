@@ -274,6 +274,7 @@ newsletterFooterError = Pri naročanju vašega e-poštnega naslova je prišlo do
 newsletterFooterHeader = Ostanite v stiku
 newsletterFooterBody = Bodite obveščeni o novih poskusih in o rezultatih poskusov, ki ste jih preskusili.
 newsletterFooterSuccessHeader = Hvala!
+newsletterFooterSuccessBody = Če še niste potrdili naročila na prejemanje Mozillinih e-novic, to še lahko storite. Preverite svoj e-poštni nabiralnik ali mapo z neželeno pošto, tam nekje bi moralo biti naše sporočilo.
 
 
 
@@ -289,6 +290,7 @@ localeWarningSubtitle = Če želite, ga lahko kljub temu omogočite.
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = Poletimo!
+experimentsListNoneInstalledSubheader = Ste pripravljeni za nov poskus Test Pilot? Izberite enega, naredite z njim nekaj lupingov in nam sporočite, kaj si mislite o njem.
 experimentsListNoneInstalledCTA = Vas ne zanima? <a>Povejte nam, zakaj</a>.
 
 
