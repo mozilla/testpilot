@@ -5,7 +5,6 @@ locales:
   - 'en'
 locale_grantlist:
   - 'en'
-launch_date: '2017-02-22T17:00:00.00Z'
 incompatible:
   'blok@mozilla.org': 'Tracking Protection'
 thumbnail: /static/images/experiments/snooze-tabs/icon/thumbnail.png
@@ -100,5 +99,5 @@ contributors:
     title: 'Softvision QA'
     avatar: /static/images/experiments/avatars/ciprian.jpg
 installation_count: 1
-created: '2017-02-17T00:06:00.00Z'
+created: '2017-02-22T17:00:00.00Z'
 order: 0
