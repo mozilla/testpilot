@@ -33,6 +33,7 @@ cliqzDetails2Copy = 打开新标签页后，只要点一下就能回到您最爱
 cliqzToursteps0Copy = 在地址栏输入，即时看到结果。
 cliqzToursteps1Copy = 打开新标签页，为您最爱的网站添加一键进入的快捷方式。
 cliqzToursteps2Copy = 您可随时提供意见反馈，或在试飞员计划中禁用 Cliqz。
+containersDescription = 身份影分身！为不同的在线生活创建不同的身份容器——工作环境、社交环境、私人环境 - 有条理的管理生活和保护隐私。
 minvidDescription = 让视频始终显示在屏幕上。Min Vid 让您可以用一个小窗口来显示 YouTube 和 Vimeo 的视频，让您在浏览其他网页时也不必中断。
 minvidIntroduction = <p>很喜欢看视频？想在看视频时还做点别的？试试 Min Vid 吧。它为您提供的功能就像画中画，一个画面是视频，另一个画面是整个互联网。</p><ul> <li><strong>点击即到：</strong>弹出 Min Vid 框架以保持视频在前台播放，不影响您浏览网页。</li> <li><strong>随处可放：</strong> Min Vid 允许您拖放视频框架到您的桌面上的任何地方。</li> <li><strong>灵活可控：</strong> Min Vid 的视频框架包括几个控件，允许您暂停/播放、消除、拖动、最小化，以及调整音量。</li></ul>
 minvidMeasurements0 = 在您与上下文菜单、实验图标和播放器控件交互时，我们会收集这个使用情况。
