@@ -278,7 +278,7 @@ newsletterFooterSuccessBody = 如果您以前没有确认过订阅 Mozilla 相�
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = 此实验在您的语言 ({ $locale_code }) 中不支持。
+localeUnavailableWarningTitle = 此实验尚不支持您的语言 ({ $locale_code })。
 localeWarningSubtitle = 如果您不介意，无妨启用它。
 
 
