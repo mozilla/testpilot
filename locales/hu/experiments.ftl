@@ -40,6 +40,7 @@ containersContributors2Title = Adatvédelmi mérnök
 containersContributors3Title = QA tesztmérnök
 containersContributors4Title = Firefox QA
 containersContributors5Title = Firefox tartalomstratégia
+containersContributors6Title = Felületi biztonság
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
