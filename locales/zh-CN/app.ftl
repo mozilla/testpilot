@@ -40,7 +40,7 @@ menuRetire = 卸载 Test Pilot
 landingIntroOne = 测试新功能。
 landingIntroTwo = 提供您的反馈。
 landingIntroThree = 帮助打造 Firefox。
-landingLegalNotice = 继续则表示，您同意 Test Pilot 的<a>使用条款</a>和<a>隐私声明</a>。
+landingLegalNotice = 继续则表示您同意 Test Pilot 的<a>使用条款</a>和<a>隐私声明</a>。
 landingExperimentsTitle = 试用最新鲜的实验功能
 
 
