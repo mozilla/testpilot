@@ -143,6 +143,10 @@ experimentCardLearnMore = Več o tem
 
 feedbackSubmitButton = Izpolnite kratek vprašalnik
 feedbackUninstallTitle = Hvala!
+feedbackUninstallCopy = 
+  | Vaše sodelovanje pri Firefox Test Pilots nam veliko
+  | pomeni! Preizkusite še druge eksperimente,
+  | ki so na voljo, pričakujte pa še veliko novih!
 
 
 
@@ -175,6 +179,7 @@ disableExperiment = Onemogoči { $title }
 disableExperimentTransition = Onemogočanje ...
 enableExperiment = Omogoči { $title }
 enableExperimentTransition = Omogočanje ...
+experimentMeasurementIntro = Poleg <a>podatkov</a>, ki jih zbiramo pri vseh poskusih Test Pilot, navajamo še ključne informacije, ki jih je dobro poznati, če uporabljate { $experimentTitle }:
 measurements = Vaša zasebnost
 experimentPrivacyNotice = O zbiranju podatkov lahko več izveste { $title } tukaj.
 contributorsHeading = Omogoča
@@ -219,6 +224,7 @@ retirePageSurveyButton = Izpolnite kratek vprašalnik
 # Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = Kontrolni seznam pred poletom
 restartIntroOne = Ponovno zaženi brskalnik
 restartIntroTwo = Poiščite dodatek Test Pilot
 restartIntroThree = Izberite si poskuse
