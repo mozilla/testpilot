@@ -84,7 +84,7 @@ export class Experiment {
     this.active = object.active || false;
     this.installDate = object.installDate;
     this.launchDate = object.launch_date
-      ? new Date(object.launchDate)
+      ? new Date(object.launch_date)
       : new Date(object.created);
 
     this.localeGrantlist = object.locale_grantlist || [];
