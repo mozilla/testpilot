@@ -13,7 +13,6 @@ import { get as _ } from 'sdk/l10n';
 import { Request } from 'sdk/request';
 import { Services } from 'resource://gre/modules/Services.jsm';
 import { setTimeout, clearTimeout } from 'sdk/timers';
-import difference from 'lodash/difference';
 import WebExtensionChannels from '../metrics/webextension-channels';
 
 // eslint-disable-next-line
@@ -67,15 +66,6 @@ function mergeAddonState(experiments: Experiments, addons) {
   return experiments;
 }
 
-function diffExperimentList(oldSet: Experiments, newSet: Experiments) {
-  const addedIds = (difference(
-    Object.keys(newSet),
-    Object.keys(oldSet)
-  ): string[]);
-
-  return addedIds.map(id => newSet[id]);
-}
-
 export default class Loader {
   store: ReduxStore;
   timeout: ?number;
@@ -106,18 +96,14 @@ export default class Loader {
         })
       )
       .then(xs => {
-        const { experiments, ui: { clicked } } = getState();
-
-        const newExperiments = diffExperimentList(experiments, xs);
-        // eslint-disable-next-line prefer-const
-        for (let experiment of newExperiments) {
-          if (experiment.launchDate.getTime() > clicked) {
-            dispatch(actions.SET_BADGE({ text: _('new_badge') }));
-          }
-        }
+        const { ui: { clicked } } = getState();
         // eslint-disable-next-line prefer-const
         for (let id of Object.keys(xs)) {
           const experiment = xs[id];
+          const launch = experiment.launchDate.getTime();
+          if (launch > clicked && launch <= Date.now()) {
+            dispatch(actions.SET_BADGE({ text: _('new_badge') }));
+          }
           if (experiment.active) {
             WebExtensionChannels.add(experiment.addon_id);
           }

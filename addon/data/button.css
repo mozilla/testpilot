@@ -26,7 +26,7 @@ toolbar[brighttext] #action-button--testpilot-addon-main> .toolbarbutton-badge-s
   background-image: url('resource://testpilot-addon/data/icon-inverted-16.png') !important;
 }
 
-#action-button--testpilot-addon-main.toolbarbutton-badge {
+#action-button--testpilot-addon-main .toolbarbutton-badge {
   background-color: #1996F7 !important;
   text-shadow: none;
 }
