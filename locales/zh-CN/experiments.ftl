@@ -118,6 +118,7 @@ pulseToursteps2Copy = Pulse 也可能邀约您随机评价一个网站。
 pulseToursteps3Copy = 您随时可以提供反馈，或者从 Test Pilot 禁用 Pulse。
 pulseContributors0Title = 高级工程师
 pulseContributors1Title = Firefox 用户体验
+pulseContributors2Title = Firefox 平台产品智能
 pulseContributors3Title = Firefox 质量保证
 snoozetabsDescription = 正确的网站，但错误的时间？让它打盹到需要之时吧！Snooze Tabs 让您可以将标签页暂时存起来，在之后的指定时间重新打开。
 snoozetabsIntroduction = Snooze Tabs 有助您集中精力在当前事务上，将分心的必要的事情先保存起来。点击打盹图标将您暂时不需要的标签页存起来，并为其设置闹钟，以便在之后需要时恢复。场景例如：打盹有趣的文章，晚上再去看。打盹一篇食谱，下个月再用。在打盹结束之时，标签页将自动打开而回归。
