@@ -30,7 +30,7 @@ module.exports.render = function (options) {
 </head>
 <body class="blue">
   <div class="stars"></div>
-  <div class="full-page-wrapper space-between"/>
+  <div class="full-page-wrapper"/>
    <header id="main-header" class="layout-wrapper layout-wrapper--row-between-top">
       <h1>
         <a href="/" class="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
@@ -41,7 +41,7 @@ module.exports.render = function (options) {
     </div>
 
     <footer id="main-footer">
-      <div id="footer-links" class="layout-wrapper layout-wrapper--row-between-breaking">
+      <div id="footer-links" class="layout-wrapper layout-wrapper--row-bottom-breaking">
         <div class="legal-links">
           <a href="https://www.mozilla.org" class="mozilla-logo"></a>
           <a data-l10n-id="footerLinkLegal" href="https://www.mozilla.org/about/legal/" class="boilerplate">Legal</a>
@@ -62,4 +62,4 @@ module.exports.render = function (options) {
   <script src="/static/scripts/legal.js"></script>
 </body>
 </html>`;
-}
+};
