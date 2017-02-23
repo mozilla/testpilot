@@ -140,6 +140,25 @@ describe('Loader', function() {
       }, () => assert.fail());
     });
 
+    it('does not dispatch SET_BADGE if launchDate is in the future', function (done) {
+      sinon.stub(Date, 'now').returns(42); // set 'now' to a long time ago
+      const s = {
+        dispatch: sinon.spy(),
+        getState: sinon.stub().returns({ experiments: {}, ui: { clicked: 1 } })
+      };
+      const l = new Loader(s);
+      l.loadExperiments('test', 'foo').then(() => {
+        Date.now.restore();
+        assert.ok(s.dispatch.calledTwice);
+        assert.equal(s.dispatch.firstCall.args[0].type, MAYBE_NOTIFY.type);
+        assert.equal(
+          s.dispatch.secondCall.args[0].type,
+          EXPERIMENTS_LOADED.type
+        );
+        done();
+      }, () => assert.fail());
+    });
+
     it('calls WebExtensionChannel.add on active experiments', function(done) {
       const s = {
         dispatch: sinon.spy(),
