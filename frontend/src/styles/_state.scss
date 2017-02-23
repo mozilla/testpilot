@@ -2,6 +2,10 @@
   display: none;
 }
 
+.hidden {
+  opacity: 0;
+}
+
 .delayed-fade-in {
   animation: fade-in 750ms forwards ease-out;
   animation-delay: 750ms;

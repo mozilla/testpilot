@@ -249,8 +249,8 @@
         border: 0;
         display: block;
         height: 380px;
-        width: 100%;
         margin-top: $grid-unit;
+        width: 100%;
       }
     }
 
@@ -383,7 +383,7 @@
 
   .title {
     font-size: $font-unit * .8;
-    line-height: $font-unit;
+    line-height: $grid-unit;
     margin: 0;
   }
 
