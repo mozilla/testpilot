@@ -122,6 +122,7 @@ pulseContributors2Title = Firefox Platform Product Intelligence
 pulseContributors3Title = Firefox kwalitne zawěsćenje
 snoozetabsDescription = Prawe websydło, wopačny čas? Dajće jemu drěmać, doniž jón njetrjebaće. Snooze Tabs wam zmóžnja, rajtarki nětko zaćisnyć a alarm nastajić, zo byšće je pozdźišo wočinił.
 snoozetabsIntroduction = Snooze Tabs wam pomha, wašu kedźbnosć online złožić, hač chceće wotwjedźenja nachwilu wotstronić abo něšto za pozdźišo składować. Klikńće na drěmanski symbol, zo byšće rajtarki zaćisnył, kotrež nětko nochceće, a nastajće alarm, zo byšće je zaso wróćo přinjesł, hdyž je trjebaće. Dajće zajimawy nastawk hač do wječora drěmać. Dajće recept hač do přichodneho měsaca drěmać. Hdyž drěmanje je so skónčiło, so rajtark zaso wočini.
+snoozetabsMeasurements0 = Snooze Tabs budźe informacije wo wašich interakcijach z přidatkom zběrać, na přikład, hdyž drěmanske polo přez tłóčatko ze symboloweje lajsty wočinjeće, zo byšće na drěmanske rajtark přistup měł, je wobdźěłował abo zhašał.
 snoozetabsContributors0Title = Seniorski wuwiwar
 snoozetabsContributors1Title = Firefox UX
 snoozetabsContributors2Title = Firefox UX
