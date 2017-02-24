@@ -108,6 +108,7 @@ pulseDescription = Danos un informe de rendimiento. Agrega Pulse y ayúdanos a e
 pulseIntroduction = Estamos construyendo la siguiente generación de Firefox y nos estamos enfocando en la velocidad y rendimiento del mundo real. Pulse te permite informar a nuestros ingenieros tu experiencia en los sitios web que trabajan bien en Firefox y que sitios no.
 pulseMeasurements0 = Pulse solamente nos enviará información cuando interactúes con él, como enviando una encuesta o cuando se te pida hacerlo.
 pulseMeasurements1 = Pulse enviará información acerca de tu navegador y tu dispositivo, como qué sistema operativo usas y qué versión de Firefox estás ejecutando, que complementos y configuraciones tienes habilitadas y cuántas pestañas tienes abiertas.
+pulseMeasurements2 = Pulse enviará información de la página que estas viendo cuando envías una encuesta, como el nombre del servidor y dominio de la página y las solicitudes de red asociadas a ella.
 pulseContributors0Title = Ingeniero Senior
 pulseContributors1Title = Firefox UX
 pulseContributors3Title = Firefox QA
