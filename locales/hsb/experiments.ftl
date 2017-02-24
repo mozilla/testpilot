@@ -120,6 +120,7 @@ pulseContributors0Title = Seniorski wuwiwar
 pulseContributors1Title = Firefox UX
 pulseContributors2Title = Firefox Platform Product Intelligence
 pulseContributors3Title = Firefox kwalitne zawěsćenje
+snoozetabsDescription = Prawe websydło, wopačny čas? Dajće jemu drěmać, doniž jón njetrjebaće. Snooze Tabs wam zmóžnja, rajtarki nětko zaćisnyć a alarm nastajić, zo byšće je pozdźišo wočinił.
 snoozetabsContributors0Title = Seniorski wuwiwar
 snoozetabsContributors1Title = Firefox UX
 snoozetabsContributors2Title = Firefox UX
