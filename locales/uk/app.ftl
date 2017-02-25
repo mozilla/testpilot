@@ -54,6 +54,14 @@ landingInstalledButton = Оберіть ваші функції
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Встановити Test Pilot
+oneClickInstallMajorCta = Увімкнути { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
