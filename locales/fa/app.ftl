@@ -54,6 +54,14 @@ landingInstalledButton = امکانات خود را انتخاب کنید
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = خلبان آزمایشی را نصب کنید
+oneClickInstallMajorCta = فعال‌سازی { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -117,6 +125,7 @@ experimentListJustLaunchedTab = هم‌اکنون منتشر شد
 experimentListJustUpdatedTab = هم‌اکنون بروزرسانی شد
 experimentListEndingTomorrow = فردا تمام می‌شود
 experimentListEndingSoon = به زودی تمام میشود
+experimentsListCondensedHeader = تجربه‌های آزمایشی خود را انتخاب کنید!
 
 
 
@@ -167,13 +176,17 @@ disableExperiment = غیرفعال‌سازی { $title }
 disableExperimentTransition = در حال غیرفعال‌سازی…
 enableExperiment = فعال‌سازی { $title }
 enableExperimentTransition = در حال فعال‌سازی…
+experimentMeasurementIntro = در کنار <a>اطلاعاتی</a> که توسط تمام آزمایش‌های «خلبان آزمایشی» جمع می‌شود، این اطلاعات کلیدی‌ای هستند که باید در مورد اتفاقاتی که هنگام استفاده از { $experimentTitle } می‌افتد بدانید:
 measurements = حریم‌خصوصی شما
 experimentPrivacyNotice = شما می‌توانید اطلاعات بیشتر در مورد جمع‌آوری اطلاعات برای { $title } را اینجا کسب کنید.
 contributorsHeading = کاری از
+contributorsExtraLearnMore = اطلاعات بیشتر
 changelog = تغییرات
+tour = تور
 tourLink = تور
 contribute = مشارکت
 bugReports = گزارش اشکال
+discussExperiment = بحث در مورد { $title }
 tourOnboardingTitle = { $title } فعال شد!
 tourDoneButton = انجام شد
 userCountContainer = تعداد <span>{ $installation_count }</span> نفر در حال حاضر از { $title } استفاده می‌کنند!
@@ -265,6 +278,7 @@ newsletterFooterSuccessBody = اگر شما قبلا مشترک یکی از خب
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = این آزمایش به زبان شما پشتیبانی نمی‌شود ({ $locale_code }).
 localeWarningSubtitle = اگر تمایل دارید، هنوز می‌توانید فعالش کنید.
 
 
