@@ -118,6 +118,7 @@ pulseToursteps2Copy = Pulse vás také může náhodně požádat o ohodnocení 
 pulseToursteps3Copy = Vždy nám můžete poslat zpětnou vazbu nebo Pulse v Test Pilotu zase zakázat.
 pulseContributors0Title = Hlavní inženýr
 pulseContributors1Title = Firefox UX
+pulseContributors2Title = Product Intelligence platformy Firefox
 pulseContributors3Title = Firefox QA
 snoozetabsDescription = Správná webová stránka, špatný čas? Odložte ji, dokud ji nebudete potřebovat. Snooze Tabs vám umožní odložit panely a nastavit alarm, abyste je otevřeli později.
 snoozetabsIntroduction = Snooze Tabs vám umožní soustředit vaši pozornost na web, když potřebujete odstranit rozptýlení nebo si něco uložit na později. Klepněte na ikonu odložit pro odložení panelů, které nyní nepotřebujete, a nastavte alarm na jejich vrácení, když je budete potřebovat. Odložte zajímavý článek do dnešní noci. Odložte recept do příštího měsíce. Když je odložení ukončeno, panel se zpátky otevře.
