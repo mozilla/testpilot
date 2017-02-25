@@ -121,6 +121,7 @@ pulseContributors1Title = Firefox UX
 pulseContributors2Title = Firefox Platform Product Intelligence
 pulseContributors3Title = Firefox kwalitne zawěsćenje
 snoozetabsDescription = Pšawe websedło, wopacny cas? Dajśo jo drěmaś, až jo trjebaśo. Snooze Tabs wam zmóžnja, rejtarki zachyśiś a alarm nastajiś, aby je pózdźej wócynił.
+snoozetabsIntroduction = Snooze Tabs wam pomaga, wašu zajmowanosć online zebraś, lěc cośo wótchylenja nachylu wótwónoźeś lěc něco za pózdźej składowaś. Klikniśo na drěmański symbol, aby rejtarki zachyśił, kótarež něnto njocośo, a nastajśo alarm, aby je zasej slědk pśinjasł, gaž je trjebaśo. Dajśo zajmny nastawk až do wjacora drěmaś. Dajśo recept až do pśiducego mjaseca drěmaś. Gaž drěmanje jo se skóńcyło, se rejtark zasej wócynijo.
 tabcenterDescription = Kak by było, gaž njeby rejtarki górjejce, ale na boku wobglědowaka byli? My smy to wopytali!
 tabcenterIntroduction = <p>Pśesuńśo swóje rejtarki z drogi. Tab Center suwa waše rejtarki na bok wokna wašogo wobglědowaka, až njeby widobne byli, gaž je njetrjebaśo, ale na drugem boce daju se lažko pokazaś, gaž je trjebaśo.</p>
 tabcenterMeasurements0 = Gromaźimy zakładne wužywańske daty wó tom, kak z Tab Center wobchadaśo, kak cesto na pśikład Tab Center maksiměrujośo abo pśipinaśo.
