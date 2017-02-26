@@ -93,7 +93,7 @@ pageshotMeasurements0 = Wir speichern Ihre Screenshots auf Mozillas Servern und 
 pageshotMeasurements1 = Wir sammeln Nutzungsdaten, um besser zu verstehen, wie Sie mit dem Produkt interagieren, wie oft Sie zum Beispiel auf die Screenshot-Schaltfläche klicken, eine Grafik speichern oder dabei ein Fehler auftritt.
 pageshotMeasurements2 = Um Missbrauch dieses Dienstes zu vermeiden, überwachen wir ihn im Sinne der Sicherheit. Wir sammeln und speichern beispielsweise IP-Adressen, um Personen zu erkennen und zu sperren, die den Dienst nach privaten Seiten absuchen.
 pageshotMeasurements3 = Die beim Besuch der Page-Shot-Website gesammelten Daten werden in unserem <a href="https://www.mozilla.org/privacy/websites/" target="_blank">Datenschutz-Hinweis zu Websites, Mitteilungen und Cookies</a> beschrieben.
-pageshotDetails0Copy = Wählen Sie den Bildbereich und speichern Sie ihn bei gefallen, oder brechen Sie den Vorgang ab.
+pageshotDetails0Copy = Wählen Sie den Bildbereich und speichern Sie ihn bei Gefallen, oder brechen Sie den Vorgang ab.
 pageshotDetails1Copy = Teilen Sie Links zu Grafiken über soziale Medien oder E-Mails, ohne dass Sie die Datei herunterladen und anhängen müssen.
 pageshotDetails2Copy = Gespeicherte Screenshots einfach finden. Durchsuchen Sie die Vorschaugrafiken in der Gitteransicht oder suchen Sie nach einem Stichwort.
 pageshotToursteps0Copy = Wählen Sie das Symbol aus, um Page Shot zu verwenden.
