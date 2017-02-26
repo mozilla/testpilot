@@ -40,7 +40,7 @@ menuRetire = Test Pilot deinstallieren
 landingIntroOne = Testen Sie neue Funktionen.
 landingIntroTwo = Sagen Sie Ihre Meinung.
 landingIntroThree = Helfen Sie bei der Entwicklung von Firefox.
-landingLegalNotice = Indem Sie fortfahren stimmen Sie den <a>Nutzungsbedingungen</a> und dem <a>Datenschutzhinweis</a> von Test Pilot zu.
+landingLegalNotice = Indem Sie fortfahren, stimmen Sie den <a>Nutzungsbedingungen</a> und dem <a>Datenschutzhinweis</a> von Test Pilot zu.
 landingExperimentsTitle = Testen Sie die neuesten experimentellen Funktionen
 
 
