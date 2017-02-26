@@ -207,7 +207,7 @@ upgradeNoticeLink = Wie Sie Firefox aktualisieren können.
 [[ uninstall ]]
 
 retireDialogTitle = Test Pilot deinstallieren?
-retireMessage = Wie Sie möchten. Dadurch werden aktive Test deaktiviert, das Add-on wird deinstalliert und Ihre Kontodaten werden von unserem Server entfernt.
+retireMessage = Wie Sie möchten. Dadurch werden aktive Tests deaktiviert, das Add-on wird deinstalliert und Ihre Kontodaten werden von unserem Server entfernt.
 retireEmailMessage = Klicken Sie einfach auf den Link <em>Abonnement entfernen</em> in einer Test-Pilot-E-Mail, um keine E-Mail-Neuigkeiten mehr zu erhalten.
 retireSubmitButton = Fortfahren
 pageTitleRetirePage = Firefox Test Pilot – Test Pilot deinstallieren
