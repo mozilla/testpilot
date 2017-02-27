@@ -14,8 +14,8 @@ const md = new Remarkable({ html: true });
 const indexTemplate = fs.readFileSync(config.SRC_PATH + 'templates/index.mustache').toString();
 const compiledTemplates = require('../../compiled-templates/compiled-templates');
 
-const THUMBNAIL_FACEBOOK = 'https://testpilot.firefox.com/static/images/thumbnail-facebook.png';
-const THUMBNAIL_TWITTER = 'https://testpilot.firefox.com/static/images/thumbnail-twitter.png';
+const THUMBNAIL_FACEBOOK = config.PRODUCTION_URL + '/static/images/thumbnail-facebook.png';
+const THUMBNAIL_TWITTER = config.PRODUCTION_URL + '/static/images/thumbnail-twitter.png';
 
 gulp.task('pages-misc', () => {
   return gulp.src(config.SRC_PATH + 'templates/index.mustache')
@@ -76,8 +76,10 @@ function buildExperimentPage() {
       meta_title: 'Firefox Test Pilot - ' + experiment.title,
       meta_description: experiment.description,
       canonical_path: 'experiments/' + experiment.slug + '/',
-      image_facebook: experiment.image_facebook || THUMBNAIL_FACEBOOK,
-      image_twitter: experiment.image_twitter || THUMBNAIL_TWITTER,
+      image_facebook: config.PRODUCTION_URL + experiment.image_facebook ||
+        THUMBNAIL_FACEBOOK,
+      image_twitter: config.PRODUCTION_URL + experiment.image_twitter ||
+        THUMBNAIL_TWITTER,
       enable_pontoon: config.ENABLE_PONTOON,
       available_locales: config.AVAILABLE_LOCALES
     });
