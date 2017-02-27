@@ -114,7 +114,10 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       removeCookie: sinon.spy(),
       userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:51.0) Gecko/20100101 Firefox/51.0',
       newsletterForm: newsletterState,
-      setPageTitleL10N: sinon.spy()
+      setPageTitleL10N: sinon.spy(),
+      varianttests: {
+        experimentPageToggles: "default"
+      }
     };
 
     subject = shallow(<ExperimentDetail {...props} />);

@@ -81,7 +81,6 @@ export default class ExperimentRowCard extends React.Component {
         <div className="button card-control secondary" data-l10n-id="experimentCardLearnMore">Learn More</div>
       );
     }
-
     return (
       <div className="button card-control default" data-l10n-id="experimentCardGetStarted">Get Started</div>
     );
