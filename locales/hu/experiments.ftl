@@ -93,6 +93,7 @@ pageshotContributors0TitleEngineer = Szoftverfejlesztő mérnök
 pageshotContributors1Title = Szoftverfejlesztő mérnök
 pageshotContributors2Title = UX dizájner
 pulseDescription = Adjon teljesítményelemzést. Adja hozzá a Pulse-ot, és segítsen megtudnunk mely weblapok működnek jól a Firefoxban, és melyek nem.
+pulseIntroduction = A Firefox következő generációját fejlesztjük, és a való világbeli sebességre és teljesítményre fókuszálunk. A Pulse lehetővé teszi, hogy visszajelzést adjon a mérnőkeinknek azokról a weboldalakról, melyek jól működnek a Firefoxban, és azokról amelyek nem.
 pulseContributors0Title = Senior mérnök
 pulseContributors1Title = Firefox UX
 pulseContributors3Title = Firefox QA
