@@ -37,9 +37,15 @@ gulp.task('pages-compiled', () => {
              .pipe(gulp.dest(config.DEST_PATH));
 });
 
+gulp.task('pages-contributing', () => {
+  gulp.src('./contribute.json')
+    .pipe(gulp.dest(config.DEST_PATH));
+});
+
 gulp.task('pages-build', [
   'pages-misc',
   'pages-experiments',
+  'pages-contributing',
   'pages-compiled'
 ]);
 
