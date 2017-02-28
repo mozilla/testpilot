@@ -12,11 +12,13 @@ gulp.task('dist-rev-assets', function() {
       'favicon.ico',
       /static\/addon\/*/,
       /static\/locales\/*/,
+      /static\/images\/experiments\/*\/social\/*/,
       '.html'
     ],
     dontUpdateReference: [
       /static\/addon\/*/,
       /.*\.json/,
+      /static\/images\/experiments\/*\/social\/*/,
       'favicon.ico'
     ]
   });
