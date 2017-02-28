@@ -10,6 +10,9 @@ export default class NewsletterForm extends React.Component {
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePrivacyClick = this.handlePrivacyClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      privacyNote: ''
+    };
   }
 
   makeRevealedClassNames() {
@@ -46,6 +49,7 @@ export default class NewsletterForm extends React.Component {
       <label className={this.makeRevealedClassNames()} htmlFor={fieldName}>
         <input name={fieldName} type="checkbox" checked={this.props.privacy} required
                onClick={this.handlePrivacyClick} />
+        { this.state.privacyNote ? <span data-l10n-id="newsletterFormPrivacyAgreementRequired" style={{ color: 'red', marginRight: '0.5em' }}></span> : null }
         <span data-l10n-id="newsletterFormPrivacyNotice">
           I'm okay with Mozilla handling by info as explained in
           <a href={url}>this Privacy Notice</a>.
@@ -77,7 +81,12 @@ export default class NewsletterForm extends React.Component {
 
   handleSubmit(evt) {
     evt.preventDefault();
-    this.props.subscribe(this.props.email, this.props.locale);
+    if (!this.props.privacy) {
+      this.setState({ privacyNote: true });
+    } else {
+      this.setState({ privacyNote: false });
+      this.props.subscribe(this.props.email, this.props.locale);
+    }
   }
 
   render() {
