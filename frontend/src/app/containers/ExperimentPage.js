@@ -300,7 +300,10 @@ export class ExperimentDetail extends React.Component {
         <div className="default-background">
           <div className={classnames(
               'details-header-wrapper',
-              { 'has-status': !!statusType, stick: useStickyHeader })
+            {
+              'has-status': !!statusType && !(installed[experiment.addon_id] && installed[experiment.addon_id].manuallyDisabled),
+              stick: useStickyHeader
+            })
             }>
             <div className={classnames('status-bar', statusType)}>
               {(statusType === 'enabled') && <span data-l10n-id="isEnabledStatusMessage" data-l10n-args={JSON.stringify({ title })}><span></span></span>}
@@ -604,6 +607,11 @@ export class ExperimentDetail extends React.Component {
         );
       }
       return null;
+    }
+    if (installed[experiment.addon_id] && installed[experiment.addon_id].manuallyDisabled) {
+      return <div className="experiment-controls">
+        <button disabled onClick={e => { e.preventDefault(); }} style={{ minWidth: progressButtonWidth }} id="install-button"  className={classnames(['button', 'default'])}><span data-l10n-id="experimentManuallyDisabled" data-l10n-args={JSON.stringify({ title })} className="default-text"></span></button>
+      </div>;
     }
     if (enabled) {
       return (

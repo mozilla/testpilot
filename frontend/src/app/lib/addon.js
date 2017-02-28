@@ -168,17 +168,12 @@ function messageReceived(store, evt) {
         experiment.addon_id, { inProgress: false, error: false }
       ));
       break;
-    /**
-     * TODO: See also issue #1300. These events work, but the corresponding
-     * behavior of the "Enable" UI button doesn't account for
-     * installed-but-disabled experiments
     case 'addon-manage:enabled':
-      store.dispatch(addonActions.enableExperiment(experiment));
+      store.dispatch(addonActions.manuallyEnableExperiment(experiment));
       break;
     case 'addon-manage:disabled':
-      store.dispatch(addonActions.disableExperiment(experiment));
+      store.dispatch(addonActions.manuallyDisableExperiment(experiment));
       break;
-    */
     default:
       break;
   }
