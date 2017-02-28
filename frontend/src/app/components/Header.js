@@ -11,11 +11,6 @@ export default class Header extends React.Component {
     super(props);
 
     this.closeTimer = null;
-    this.showSettingsMenu = this.showSettingsMenu.bind(this);
-    this.toggleSettings = this.toggleSettings.bind(this);
-    this.retire = this.retire.bind(this);
-    this.close = this.close.bind(this);
-    this.dismissRetireDialog = this.dismissRetireDialog.bind(this);
     this.state = {
       showRetireDialog: false,
       showSettings: false
@@ -40,11 +35,11 @@ export default class Header extends React.Component {
     if (this.shouldRenderSettingsMenu()) {
       return (
         <Settings
-          close={this.close}
-          retire={this.retire}
-          toggleSettings={this.toggleSettings}
-          settingsClick={this.settingsClick}
-          showSettingsMenu={this.showSettingsMenu}
+          close={this.close.bind(this)}
+          retire={this.retire.bind(this)}
+          toggleSettings={this.toggleSettings.bind(this)}
+          settingsClick={this.settingsClick.bind(this)}
+          showSettingsMenu={this.showSettingsMenu.bind(this)}
           {...this.props}
          />
       );
@@ -62,7 +57,7 @@ export default class Header extends React.Component {
     if (this.state.showRetireDialog) {
       return (
         <RetireConfirmationDialog
-          onDismiss={this.dismissRetireDialog}
+          onDismiss={this.dismissRetireDialog.bind(this)}
           {...this.props}
         />
       );
