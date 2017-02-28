@@ -108,6 +108,7 @@ pulseDescription = Jou ús in prestaasjebeoardieling. Foegje Pulse ta en help ú
 pulseIntroduction = Wy bouwe de folgjende generaasje fan Firefox en rjochtsje ús op faasje en prestaasjes yn de echte wrâld. Mei Pulse kinne jo ús technisy kommentaar jaan oer jo ûnderfining op websites dy't goed yn Firefox wurkje en websites dy't dat net dogge.
 pulseMeasurements0 = Pulse stjoert ús allinnich ynformaasje as jo dermei wurkje, lykas by it ynfoljen fan in enkête, of wannear't jo frege wurdt dit te dwaan.
 pulseMeasurements1 = Pulse stjoert ynformaasje oer jo browser en apparaat, lykas hokker bestjoeringssysteem en ferzje fan Firefox jo brûke, hokker add-ons en ynstellingen jo ynskeakele hawwe, en hoefolle ljepblêden jo iepene hawwe.
+pulseMeasurements2 = Pulse stjoert ynformaasje oer de side dy't jo besjogge wylst it ynfoljen fan in enkête, lykas de hostnamme en it domein fan de side, en de mei de side keppele netwurkoanfragen.
 pulseContributors0Title = Senior Engineer
 pulseContributors1Title = Firefox UX
 pulseContributors2Title = Firefox Platform Product Intelligence
