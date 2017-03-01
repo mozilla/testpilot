@@ -10,6 +10,8 @@ import experimentsReducer from './reducers/experiments';
 import newsletterFormReducer from './reducers/newsletter-form';
 import varianttestsReducer from './reducers/varianttests';
 
+import experiments from '../../build/api/experiments.json';
+
 export const reducers = combineReducers({
   addon: addonReducer,
   browser: browserReducer,
@@ -21,6 +23,9 @@ export const reducers = combineReducers({
 
 
 export const initialState = {
+  experiments: {
+    data: experiments.results
+  },
   addon: {
     hasAddon: !!window.navigator.testpilotAddon,
     installed: {},

@@ -43,7 +43,6 @@ ReactDOM.render(
 // HACK: For debugging fun
 window.store = store;
 
-store.dispatch(experimentsActions.fetchExperiments(config.experimentsURL,
-                                                   config.usageCountsURL));
+store.dispatch(experimentsActions.fetchUserCounts(config.usageCountsURL));
 
 setupAddonConnection(store);

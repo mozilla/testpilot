@@ -1,7 +1,11 @@
 import { handleActions } from 'redux-actions';
 
-const fetchExperiments = (state, { payload: { lastFetched, experimentsLoaded, data } }) =>
-  ({ ...state, lastFetched, experimentsLoaded, data });
+const fetchUserCounts = (state, { payload: { data } }) => ({
+  ...state,
+  data: state.data.map(experiment =>
+    ((data[experiment.addon_id]) ? { ...experiment, installation_count: data[experiment.addon_id] } : experiment))
+});
+
 
 const updateExperiment = (state, { payload: { addonID, data } }) => ({
   ...state,
@@ -10,8 +14,6 @@ const updateExperiment = (state, { payload: { addonID, data } }) => ({
 });
 
 export const getExperiments = (state) => state.data;
-
-export const getExperimentsLastFetched = (state) => state.lastFetched;
 
 export const getExperimentByID = (state, addonID) =>
   state.data.filter(e => e.addon_id === addonID)[0];
@@ -25,13 +27,9 @@ export const getExperimentByURL = (state, url) =>
 export const getExperimentInProgress = (state) =>
   state.data.filter(e => e.inProgress)[0];
 
-export const isExperimentsLoaded = (state) => state.experimentsLoaded;
-
 export default handleActions({
-  fetchExperiments,
+  fetchUserCounts,
   updateExperiment
 }, {
-  data: [],
-  experimentsLoaded: false,
-  lastFetched: null
+  data: []
 });
