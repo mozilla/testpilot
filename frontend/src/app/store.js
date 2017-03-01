@@ -2,7 +2,6 @@ import { routerReducer, routerMiddleware } from 'react-router-redux';
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import createLogger from 'redux-logger';
 import promise from 'redux-promise';
-import thunk from 'redux-thunk';
 
 import addonReducer from './reducers/addon';
 import browserReducer from './reducers/browser';
@@ -41,7 +40,6 @@ export const initialState = {
 
 export const createMiddleware = history => compose(
   applyMiddleware(
-    thunk,
     promise,
     routerMiddleware(history),
     createLogger()
