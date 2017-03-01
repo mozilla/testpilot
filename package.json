@@ -33,7 +33,6 @@
     "redux-actions": "^1.2.1",
     "redux-logger": "^2.6.1",
     "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.1.0",
     "reselect": "^2.5.4",
     "seedrandom": "^2.4.2"
   },
