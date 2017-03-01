@@ -2,11 +2,6 @@ import React from 'react';
 import classnames from 'classnames';
 
 export default class Settings extends React.Component {
-
-  constructor(props) {
-    super(props);
-  }
-
   wiki() {
     this.props.sendToGA('event', {
       eventCategory: 'Menu Interactions',
@@ -54,7 +49,7 @@ export default class Settings extends React.Component {
   }
 
   toggleSettings(evt) {
-    let { sendToGA, toggleSettings } = this.props;
+    const { sendToGA, toggleSettings } = this.props;
     sendToGA('event', {
       eventCategory: 'Menu Interactions',
       eventAction: 'drop-down menu',
@@ -67,7 +62,7 @@ export default class Settings extends React.Component {
     return (
       <div id="settings">
          <div className="settings-contain">
-            <div className={classnames(["button", "outline", "settings-button"], { active: this.showSettingsMenu()})}
+            <div className={classnames(['button', 'outline', 'settings-button'], { active: this.showSettingsMenu() })}
                  onClick={e => this.toggleSettings(e)}
                  data-l10n-id="menuTitle">
               Settings
@@ -103,4 +98,4 @@ Settings.propTypes = {
   settingsClick: React.PropTypes.func,
   showSettingsMenu: React.PropTypes.func,
   showSettings: React.PropTypes.func
-}
+};
