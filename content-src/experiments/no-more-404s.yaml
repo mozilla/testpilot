@@ -127,8 +127,7 @@ graduation_report: >
     <figcaption> Breakdown of the number of 404s encountered by users each week.</figcaption>
   </figure>
   <p><strong>Here's what happens next</strong></p>
-  <p>While we’re graduating No More 404s from Test Pilot, and will be moving the add-on to the <a href="https://addons.mozilla.org/firefox/" target="_blank">Mozilla Add-ons</a> store so it’s accessible to all Firefox users. We won’t remove it from users who have it installed. If you currently have the add-on installed, you don’t need to do anything. The add-on will continue to update as usual. The Internet Archive team will also be adding some new features so users can add content to the Wayback Machine directly through the add-on! On the Firefox side, we will promote No More 404s on the homepage of the browser.
-  </p>
+  <p>While we’re graduating No More 404s from Test Pilot, and will be moving the add-on to the <a href="https://addons.mozilla.org/firefox/addon/wayback-machine_new/" target="_blank">Mozilla Add-ons</a> store so it’s accessible to all Firefox users. We won’t remove it from users who have it installed. If you currently have the add-on installed, you don’t need to do anything. The add-on will continue to update as usual. The Internet Archive team will also be adding some new features so users can add content to the Wayback Machine directly through the add-on! On the Firefox side, we will promote No More 404s on the homepage of the browser.</p>
   <p>Once the add-on is in its permanent home, our teams will continue to work together on studies that answer key questions, including:</p>
   <ul>
     <li>Do average Firefox users see value in the add-on? </li>
