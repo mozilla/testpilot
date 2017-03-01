@@ -121,6 +121,11 @@ giveFeedback = Gje ei tilbakemelding
 disableExperiment = Slå av { $title }
 disableExperimentTransition = Slår av…
 enableExperiment = Slå på { $title }
+enableExperimentTransition = Slår på...
+measurements = Ditt personvern
+contributorsHeading = Presentert av
+contributorsExtraLearnMore = Les meir
+changelog = Endringslogg
 tour = Omvisingstur
 tourLink = Start omvisingstur
 contribute = Bidra
@@ -128,6 +133,7 @@ bugReports = Feilrapportar
 discussExperiment = Diskuter { $title }
 tourOnboardingTitle = { $title } er slått på!
 tourDoneButton = Ferdig
+userCountContainerAlt = Nettopp starta!
 highlightPrivacy = Ditt personvern
 
 
@@ -143,6 +149,17 @@ upgradeNoticeLink = Korleis du oppgraderer Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Avinstallere Test Pilot?
+retireSubmitButton = Hald fram
+pageTitleRetirePage = Firefox Test Pilot - Avinstaller Test Pilot
+retirePageProgressMessage = Avsluttar...
+retirePageHeadline = Takk for at du testar!
+
+
+
+# Shown to users after installing Test Pilot if a restart is required.
+[[ restartIntro ]]
+
+restartIntroOne = Start om nettlesaren din
 
 
 
@@ -158,5 +175,13 @@ eolNoticeLink = Les meir
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterHeader = Hald deg informert
 newsletterFooterSuccessHeader = Takk!
+
+
+
+# Shown to users who do not have JavaScript enabled.
+[[ noscript ]]
+
+noScriptLink = Finn ut kvifor
 
