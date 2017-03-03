@@ -111,9 +111,11 @@ export default class Telemetry {
       topic: 'testpilot'
     };
 
-    Services.appShell.hiddenDOMWindow.navigator.sendBeacon(
-      'https://tiles.services.mozilla.com/v3/links/ping-centre',
-      JSON.stringify(pcPayload)
-    );
+    const req = new Request({
+      url: 'https://tiles.services.mozilla.com/v3/links/ping-centre',
+      contentType: 'application/json',
+      content: JSON.stringify(pcPayload)
+    });
+    req.post();
   }
 }
