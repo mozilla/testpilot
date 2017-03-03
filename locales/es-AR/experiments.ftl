@@ -5,6 +5,8 @@ activitystreamMeasurements1 = También recolectamos información básica acerca 
 activitystreamMeasurements2 = Para ofrecerte Activity Stream, conseguimos metadatos de sitios webs que hayas visitado, como imágenes e íconos, usando un servicio que se llama <a href="http://embed.ly/" target="_blank">Embedly</a>. Enviamos los pedidos a Embedly a través de los servidores de Mozilla, así que no serán asociados contigo.
 activitystreamDetails0Copy = Hacé clic en una nueva pestaña y tus sitios favoritos estarán solamente a un clic.
 activitystreamDetails1Copy = Mirá dónde has estado, así podrás ir donde querés ir.
+activitystreamToursteps0Copy = Encontrá tus sitios más visitados, el historial reciente y tus marcadores cuando abras una nueva pestaña.
+activitystreamToursteps1Copy = Visitá la nueva vista como línea de tiempo para navegar visualmente todos tus marcadores y el historial.
 minvidDescription = Mantené los videos en un lugar central. Min Vid te permite ver videos de YouTube y Vimeo en un pequeño recuadro que se mantiene en el frente mientras seguís navegando por la web.
 pageshotDescription = Una forma intuitiva de hacer capturas de pantalla en tu navegador. Capturá, guardá y compartí capturas de pantalla mientras navegás la web con Firefox.
 tabcenterDescription = ¿Cómo sería tener las pestañas a un costado en lugar de arriba? ¡Queremos saberlo!
