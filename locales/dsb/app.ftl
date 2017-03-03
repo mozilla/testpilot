@@ -259,6 +259,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] Wašu e-mailowu adresu how zapisaś
 newsletterFormDisclaimer = Sćelomy wam jano informacije nastupajucy Test Pilot.
 newsletterFormPrivacyNotice = Som wobjadny, až Mozilla wužywa móje daty tak, ako jo wopisane w <a>toś tom pokazu priwatnosći</a>.
+newsletterFormPrivacyAgreementRequired = Pšosym stajśo kokulku do toś togo kašćika, jolic cośo pókšacowaś.
 newsletterFormSubmitButton = Něnto registrěrowaś
 newsletterFormSubmitButtonSubmitting = Wótpósćeła se...
 
