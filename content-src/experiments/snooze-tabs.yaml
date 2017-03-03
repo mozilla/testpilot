@@ -3,22 +3,6 @@ title: 'Snooze Tabs'
 slug: snooze-tabs
 locales:
   - 'en'
-locale_grantlist:
-  - 'en'
-  - 'cs'
-  - 'de'
-  - 'dsb'
-  - 'fy-NL'
-  - 'hsb'
-  - 'hu'
-  - 'it'
-  - 'ja'
-  - 'nl'
-  - 'pt-PT'
-  - 'sq'
-  - 'sv-SE'
-  - 'zh-CN'
-  - 'zh-TW'
 incompatible:
   'blok@mozilla.org': 'Tracking Protection'
 thumbnail: /static/images/experiments/snooze-tabs/icon/thumbnail.png
