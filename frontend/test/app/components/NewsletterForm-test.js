@@ -92,7 +92,7 @@ describe('app/components/NewsletterForm', () => {
 
     it('should fire subscribe on submit', () => {
       const subscribe = sinon.spy();
-      const subject = _subject({ subscribe }).find('form');
+      const subject = _subject({ subscribe, privacy: true }).find('form');
       subject.simulate('submit');
       expect(subscribe.calledOnce).to.equal(true);
     });
