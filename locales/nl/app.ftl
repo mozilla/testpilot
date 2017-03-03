@@ -262,6 +262,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] Typ hier uw e-mailadres
 newsletterFormDisclaimer = We sturen u alleen Test Pilot-gerelateerde informatie.
 newsletterFormPrivacyNotice = Ik ben het eens met hoe Mozilla met mijn gegevens omgaat, zoals uitgelegd in <a>deze privacyverklaring</a>.
+newsletterFormPrivacyAgreementRequired = Vink dit vakje aan als u wilt doorgaan.
 newsletterFormSubmitButton = Nu inschrijven
 newsletterFormSubmitButtonSubmitting = Verzenden...
 
