@@ -179,6 +179,7 @@ disableExperiment = Slå av { $title }
 disableExperimentTransition = Slår av…
 enableExperiment = Slå på { $title }
 enableExperimentTransition = Slår på...
+experimentMeasurementIntro = I tillegg til dei <a>data</a> som er samla inn av alle Test Pilot-eksperimenta, er dette dei viktigaste tinga du bør vite omkva som skjer når du brukar { $experimentTitle }:
 measurements = Ditt personvern
 experimentPrivacyNotice = Du kan lese meir om datainnsamlinga for { $title } her.
 contributorsHeading = Presentert av
@@ -210,10 +211,12 @@ upgradeNoticeLink = Korleis du oppgraderer Firefox.
 
 retireDialogTitle = Avinstallere Test Pilot?
 retireMessage = Som du vil. Dette kjem til å slå av alle aktive testar, avinstallere utvidinga og fjerne kontoinnformasjonen din frå alle tenarane våre.
+retireEmailMessage = For å trekke seg frå e-postoppdateringar, klikk på lenka <em>avbryt abonnementet</em> i ein Test Pilot e-post.
 retireSubmitButton = Hald fram
 pageTitleRetirePage = Firefox Test Pilot - Avinstaller Test Pilot
 retirePageProgressMessage = Avsluttar...
 retirePageHeadline = Takk for at du testar!
+retirePageMessage = Håper det var moro å eksperimentere saman med oss. <br> Kom gjerne tilbake ein gong.
 retirePageSurveyButton = Ta ei kjapp undersøking
 
 
@@ -272,12 +275,14 @@ newsletterFooterError = Det oppstod ein feil når e-postadressa di vart sendt in
 newsletterFooterHeader = Hald deg informert
 newsletterFooterBody = Finn ut meir om nye eksperiment, og sjå testresultat for eksperiment som du har testa.
 newsletterFooterSuccessHeader = Takk!
+newsletterFooterSuccessBody = Om du tidlegare ikkje har stadfesta eit abonnement på eit Mozilla-relaterat nyheitsbrev kan du måtte gjere det no. Kontroller innboksen din eller søppelpostmappa di, for å sjå om du har fått ein e-post frå oss.
 
 
 
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Dette eksperimentet er ikkje støtta på ditt språk ({ $locale_code }).
 localeWarningSubtitle = Du kan framleis slå det på om du vil.
 
 
@@ -286,6 +291,7 @@ localeWarningSubtitle = Du kan framleis slå det på om du vil.
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = La oss kome i gang!
+experimentsListNoneInstalledSubheader = Klar for å prøve eit nytt eksperiment frå Test Pilot? Vel eitt for å slå det på, ta det på ein prøvetur, og la oss få vite kva du tykkjer.
 experimentsListNoneInstalledCTA = Ikkje interessert? <a>La oss få vite kvifor</a>.
 
 
