@@ -172,6 +172,13 @@ eolNoticeLink = Les meir
 
 
 
+# A form prompting the user to sign up for the Test Pilot Newsletter.
+[[ newsletterForm ]]
+
+newsletterFormSubmitButton = Registrer deg no
+
+
+
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
