@@ -209,10 +209,12 @@ upgradeNoticeLink = Korleis du oppgraderer Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Avinstallere Test Pilot?
+retireMessage = Som du vil. Dette kjem til å slå av alle aktive testar, avinstallere utvidinga og fjerne kontoinnformasjonen din frå alle tenarane våre.
 retireSubmitButton = Hald fram
 pageTitleRetirePage = Firefox Test Pilot - Avinstaller Test Pilot
 retirePageProgressMessage = Avsluttar...
 retirePageHeadline = Takk for at du testar!
+retirePageSurveyButton = Ta ei kjapp undersøking
 
 
 
@@ -237,14 +239,27 @@ shareCopy = Kopier
 # Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } sluttar den { $completedDate }
 eolNoticeLink = Les meir
+eolDisableMessage = Eksperimentet { $title } er avslutta. Når du avinstallerer det vil du ikkje kunne installere det med Test Pilot igjen.
+completedDateLabel = Sluttdato for eksperimentet: <b>{ $completedDate }</b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
+incompatibleHeader = Dette eksperimentet er kanskje ikkje kompatibelt med utvidingar som du har installert.
+incompatibleSubheader = Vi tilrår at du <a>slår av desse utvidingane</a> før du slår på dette eksperimentet:
 
 
 
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Din e-post
 newsletterFormDisclaimer = Vi sender deg berre Test Pilot-relatert informasjon.
 newsletterFormPrivacyNotice = Det er OK at Mozilla handsamar informasjonen min som skildra i <a>denne personvernmerknaden</a>.
+newsletterFormPrivacyAgreementRequired = Kryss av i denne ruta om du vil halde fram.
 newsletterFormSubmitButton = Registrer deg no
 newsletterFormSubmitButtonSubmitting = Sender inn…
 
@@ -253,9 +268,25 @@ newsletterFormSubmitButtonSubmitting = Sender inn…
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = Det oppstod ein feil når e-postadressa di vart sendt inn. Prøve ein gong til?
 newsletterFooterHeader = Hald deg informert
 newsletterFooterBody = Finn ut meir om nye eksperiment, og sjå testresultat for eksperiment som du har testa.
 newsletterFooterSuccessHeader = Takk!
+
+
+
+# A warning shown to users when the experiment is not available in their language
+[[ localeWarning ]]
+
+localeWarningSubtitle = Du kan framleis slå det på om du vil.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledHeader = La oss kome i gang!
+experimentsListNoneInstalledCTA = Ikkje interessert? <a>La oss få vite kvifor</a>.
 
 
 
