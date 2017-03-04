@@ -170,13 +170,17 @@ experimentPromoSubheader = Vi byggjer neste generasjons funksjonar for Firefox. 
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } er slått på.
+installErrorMessage = Hoppsann. { $title } kunne ikkje aktiverast. Prøv igjen seinare.
 participantCount = <span>{ $installation_count }</span> deltakarar
+otherExperiments = Prøv også desse eksperimenta
 giveFeedback = Gje ei tilbakemelding
+disableHeader = Slå av eksperimentet?
 disableExperiment = Slå av { $title }
 disableExperimentTransition = Slår av…
 enableExperiment = Slå på { $title }
 enableExperimentTransition = Slår på...
 measurements = Ditt personvern
+experimentPrivacyNotice = Du kan lese meir om datainnsamlinga for { $title } her.
 contributorsHeading = Presentert av
 contributorsExtraLearnMore = Les meir
 changelog = Endringslogg
@@ -187,6 +191,7 @@ bugReports = Feilrapportar
 discussExperiment = Diskuter { $title }
 tourOnboardingTitle = { $title } er slått på!
 tourDoneButton = Ferdig
+userCountContainer = Det er <span>{ $installation_count }</span> personar som prøver { $title } akkurat no!
 userCountContainerAlt = Nettopp starta!
 highlightPrivacy = Ditt personvern
 
@@ -195,6 +200,7 @@ highlightPrivacy = Ditt personvern
 # Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
+upgradeNoticeTitle = { $title } krev Firefox { $min_release } eller nyare.
 upgradeNoticeLink = Korleis du oppgraderer Firefox.
 
 
@@ -213,15 +219,23 @@ retirePageHeadline = Takk for at du testar!
 # Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = Sjekkliste før start
 restartIntroOne = Start om nettlesaren din
+restartIntroTwo = Finn utvidinga Test Pilot
+restartIntroThree = Vel eksperiment
 
 
 
 # Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
+sharePrimary = Likar du Test Pilot? Hjelp oss med å finne nye medlemmar.
+shareSecondary = eller kopier og lim inn denne lenka…
 shareEmail = E-post
 shareCopy = Kopier
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } sluttar den { $completedDate }
 eolNoticeLink = Les meir
 
 
@@ -232,6 +246,7 @@ eolNoticeLink = Les meir
 newsletterFormDisclaimer = Vi sender deg berre Test Pilot-relatert informasjon.
 newsletterFormPrivacyNotice = Det er OK at Mozilla handsamar informasjonen min som skildra i <a>denne personvernmerknaden</a>.
 newsletterFormSubmitButton = Registrer deg no
+newsletterFormSubmitButtonSubmitting = Sender inn…
 
 
 
@@ -248,6 +263,7 @@ newsletterFooterSuccessHeader = Takk!
 [[ noscript ]]
 
 noScriptHeading = Ops…
+noScriptMessage = Test Pilot krev JavaScript.<br>Lei for det.
 noScriptLink = Finn ut kvifor
 
 
