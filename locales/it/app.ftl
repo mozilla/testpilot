@@ -259,6 +259,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] Inserisci qui la tua email
 newsletterFormDisclaimer = Riceverai solamente aggiornamenti relativi a Test Pilot.
 newsletterFormPrivacyNotice = Acconsento al trattamento dei miei dati personali da parte di Mozilla come indicato nell’<a>informativa sulla privacy</a>.
+newsletterFormPrivacyAgreementRequired = Seleziona questa casella per confermare l’iscrizione alla newsletter.
 newsletterFormSubmitButton = Iscrivimi
 newsletterFormSubmitButtonSubmitting = Invio in corso…
 
