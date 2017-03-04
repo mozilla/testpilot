@@ -6,6 +6,8 @@ siteName = Firefox Test Pilot
 
 pageTitleDefault = Firefox Test Pilot
 pageTitleLandingPage = Firefox Test Pilot
+pageTitleExperimentListPage = Firefox Test Pilot - Eksperiment
+pageTitleExperiment = Firefox Test Pilot - { $title }
 
 
 
@@ -38,12 +40,15 @@ menuRetire = Avinstaller Test Pilot
 landingIntroOne = Test nye funksjonar.
 landingIntroTwo = Gje ei tilbakjemelding.
 landingIntroThree = Hjelp til med å utvikle Firefox.
+landingLegalNotice = Ved å fortsetje godkjenner du <a>brukarvilkåra</a> og <a>personvernmerknaden</a> for Test Pilot.
+landingExperimentsTitle = Prøv dei siste eksperimentelle funksjonane
 
 
 
 # Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
+landingInstallButton = Installer utvidinga Test Pilot
 landingInstallingButton = Installerer...
 landingInstalledButton = Vel funksjonane dine
 
@@ -60,6 +65,9 @@ oneClickInstallMajorCta = Slå på { $title }
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
+landingRequiresDesktop = Test Pilot krev Firefox for desktop på Windows, Mac eller Linux
+landingDownloadFirefoxDesc = (Test Pilot er tillgjengleg for Firefox på Windows, OS X og Linux)
+landingUpgradeDesc = Test Pilot krev Firefox 49 eller høgare.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Oppgrader Firefox
 landingDownloadFirefoxSubTitle = Gratis nedlasting
@@ -70,6 +78,25 @@ landingDownloadFirefoxSubTitle = Gratis nedlasting
 [[ landingCard ]]
 
 landingCardListTitle = Kom i gang på ein, to, tre…
+landingCardOne = Last ned utvidinga Test Pilot
+landingCardTwo = Slå på eksperimentelle funksjonar
+landingCardThree = Fortel os kva du synest
+
+
+
+# Shown after the user installs the Test Pilot add-on.
+[[ onboarding ]]
+
+onboardingMessage = Vi legg till eit ikon i verktøylinja di slik at du alltid kan finne Test Pilot.
+
+
+
+# Error message pages.
+[[ error ]]
+
+errorHeading = Hoppsann!
+errorMessage = Det ser ut til at vi øydelagde noko. <br> Prøv igjen seinare.
+notFoundHeader = Fire null fire!
 
 
 
@@ -77,6 +104,8 @@ landingCardListTitle = Kom i gang på ein, to, tre…
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = Velkomen til Test Pilot!
+emailOptInMessage = Finn ut meir om nye eksperiment og sjå testresultat for eksperiment som du har testa.
+emailValidationError = Ver snill og skriv inn ei gyldig e-postadresse!
 
 # LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
 emailOptInInput = 
@@ -84,6 +113,7 @@ emailOptInInput =
 emailOptInButton = Registrer meg
 emailOptInConfirmationTitle = E-post er sendt
 emailOptInSuccessMessage2 = Takk skal du ha!
+emailOptInConfirmationClose = Vidare til eksperimenta…
 
 
 
@@ -95,6 +125,7 @@ experimentListJustLaunchedTab = Nettopp starta
 experimentListJustUpdatedTab = Nettopp oppdatert
 experimentListEndingTomorrow = Sluttar i morgon
 experimentListEndingSoon = Sluttar snart
+experimentsListCondensedHeader = Vel eksperimenta dine!
 
 
 
@@ -117,6 +148,7 @@ feedbackUninstallTitle = Takk skal du ha!
 # The experiment detail page.
 [[ experimentPage ]]
 
+participantCount = <span>{ $installation_count }</span> deltakarar
 giveFeedback = Gje ei tilbakemelding
 disableExperiment = Slå av { $title }
 disableExperimentTransition = Slår av…
@@ -175,6 +207,8 @@ eolNoticeLink = Les meir
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormDisclaimer = Vi sender deg berre Test Pilot-relatert informasjon.
+newsletterFormPrivacyNotice = Det er OK at Mozilla handsamar informasjonen min som skildra i <a>denne personvernmerknaden</a>.
 newsletterFormSubmitButton = Registrer deg no
 
 
@@ -183,6 +217,7 @@ newsletterFormSubmitButton = Registrer deg no
 [[ newsletterFooter ]]
 
 newsletterFooterHeader = Hald deg informert
+newsletterFooterBody = Finn ut meir om nye eksperiment, og sjå testresultat for eksperiment som du har testa.
 newsletterFooterSuccessHeader = Takk!
 
 
@@ -190,5 +225,14 @@ newsletterFooterSuccessHeader = Takk!
 # Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
+noScriptHeading = Ops…
 noScriptLink = Finn ut kvifor
+
+
+
+# Text of a button to toggle visibility of a list of past experiments.
+[[ pastExperiments ]]
+
+viewPastExperiments = Vis tidlegare eksperiment
+hidePastExperiments = Gøym tidlegare eksperiment
 
