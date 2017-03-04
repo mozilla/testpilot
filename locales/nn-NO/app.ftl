@@ -141,13 +141,35 @@ experimentCardLearnMore = Les meir
 # A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
+feedbackSubmitButton = Ta ei rask spørjeundersøking
 feedbackUninstallTitle = Takk skal du ha!
+feedbackUninstallCopy = 
+  | Di deltaking i Firefox Test Pilot tyder
+  | mykje! Sjekk ut dei andre eksperimenta våre,
+  | og hald augene opne for meir framover!
+
+
+
+# A modal prompt shown before the feedback survey for some experiments.
+[[ experimentPreFeedback ]]
+
+experimentPreFeedbackTitle = { $title }-tilbakemelding
+experimentPreFeedbackLinkCopy = Gje tilbakemelding på { $title }-eksperimentet
+
+
+
+# A splash shown on top of the experiment page when Test Pilot is not installed.
+[[ experimentPromo ]]
+
+experimentPromoHeader = Klar for start?
+experimentPromoSubheader = Vi byggjer neste generasjons funksjonar for Firefox. Installer Test Pilot for å prøva dei!
 
 
 
 # The experiment detail page.
 [[ experimentPage ]]
 
+isEnabledStatusMessage = { $title } er slått på.
 participantCount = <span>{ $installation_count }</span> deltakarar
 giveFeedback = Gje ei tilbakemelding
 disableExperiment = Slå av { $title }
