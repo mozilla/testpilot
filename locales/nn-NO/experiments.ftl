@@ -2,6 +2,7 @@ activitystreamDescription = Ei grafisk oversikt over historikken din og ei ny he
 activitystreamIntroduction = <p>No kan du surfe utan å miste tankestraumen din. Activity Stream held toppsidene dine, bokmerke og nyaste historikk lett tilgjengeleg i kvar ny fane. Den nye tidslinjevisinga gjev deg eit fugleperspektiv på surfinga di.</p>
 activitystreamMeasurements0 = Vi samlar inn grunnleggande brukardata om korleis du samhandlar med den nye eksperimentelle fana og tidslinjer, slik som typar av element som du klikkar på og posisjonen til dei på sida.
 activitystreamMeasurements1 = Vi samlar òg inn grunnleggande informasjon om nettlesarprofilen som påverkar Activity Stream, slik som tal på bokmerke og historikkelement.
+activitystreamMeasurements2 = For å tilby Activity Stream, hentar vi metadata om nettsider du har besøkt, slik som bilde og ikon, ved hjelp av ei teneste som heiter <a href="http://embed.ly/" target="_blank">Embedly</a>. Vi sender desse førespurnadane til Embedly gjennom Mozillas tenarar, slik at dei ikkje vert assosierte med deg.
 activitystreamDetails0Copy = Klikk på ei ny fane og favorittnettstadane dine er berre eit klikk unna.
 activitystreamDetails1Copy = Sjå kvar du har vore, slik at du kan gå vidare dit du skal.
 activitystreamToursteps0Copy = Finn favorittnettstadane dine, nyaste historikk og bokmerke når du opnar ei ny fane.
@@ -21,7 +22,9 @@ activitystreamContributors10Title = Sjefsingeniør
 activitystreamContributors11Title = Programvareingeniør
 activitystreamContributors12Title = Senior UX-formgjevar
 cliqzDescription = Få søkjeresultat raskare. Cliqz viser forslag rett nedanfor adressfeltet medan du skriv. Samstundes beheld du personvernet ditt.
+cliqzIntroduction = Få søkeresultat raskare, direkte i nettlesaren. Når du byrjar å skrive ser du forslag frå nettet i realtid, rett nedanfor adressefeltet. Og fordi Cliqz unngår samle inn personleg identifiserbar informasjon, eller bygge brukarprofilar, er resultata dine meir private.
 cliqzPrivacypreamble = Cliqz Test Pilot experiment vert presentert for deg gjennom eit samarbeid mellom Cliqz GmbH og Mozilla. Cliqz er utforma for å beskytte personvernet ditt og unngå å samle inn kjenslevar informasjon som kan brukast for å lage brukarprofilar. Men å anonymisere opplysningar som dette er vanskeleg, og det kan framleis vere muleg å identifisere einskilde individ.
+cliqzMeasurements0 = Cliqz GmbH samlar inn data om søk og nettaktivitet, inkludert tekst som du skriv i adressefeltet, spørsmål du sender til visse søkemotorar og data om interaksjonane dine på nettsider, slik som muserørsler, rullingar og tid.
 cliqzDetails0Copy = Sjå korleis resultata (som magi!) visest når du skriv inn søkeord i adressfeltet.
 cliqzDetails1Copy = Sjå samanfattande informasjon - som t.d. vêr og flytider - i realtid direkte nedanfor adressfeltet.
 cliqzDetails2Copy = Gå tilbake til favorittnettstadane dine med ber0re eitt klikk når du opnar ei ny fane. Du kan til og med tilpasse favorittane dine.
