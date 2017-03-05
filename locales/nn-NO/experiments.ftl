@@ -108,6 +108,7 @@ trackingprotectionContributors0Title = Nettutviklar
 trackingprotectionContributors1Title = Senior UX-formgjevar
 trackingprotectionContributors2Title = Senior QA-teknikar
 universalsearchDescription = Få tilrådingar om dei beste sidene på nettet når du skriv i det smarte adressfeltet.
+universalsearchMeasurements0 = Vi samlar inn dei vanlega brukaropplysningane slik som korleis du interagerer med det smarte adressefeltet, som talet på teikn som vert skrive inn, og kva for typar av resultat som du klikkar på og plasseringa deira i resultatlista.
 universalsearchMeasurements1 = Om du tidlegare har konfigurert Firefox til å vise søkeforslag i søkefeltet, vil det å installere Universal Search slå på <a href="https://www.mozilla.org/privacy/firefox/#searchsuggestions" target="_blank">sökförslag</a> i smarta adressfältet.
 universalsearchMeasurements2 = Når du brukar det smarte søkefeltet, sender vi deg dei termane du skriv inn til den tilrådde motoren vår. Vi beheld anonyme loggar av populære søk for å forbetre kvaliteten på tilrådingane våre.
 universalsearchDetails0Copy = Populære nettsider, personar og Wikipedia-artiklar dukkar opp medan du skriv.
