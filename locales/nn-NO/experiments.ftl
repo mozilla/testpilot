@@ -1,4 +1,5 @@
 activitystreamDescription = Ei grafisk oversikt over historikken din og ei ny heimeside som gjer det muleg å finne ønskt innhald i Firefox enno betre.
+activitystreamIntroduction = <p>No kan du surfe utan å miste tankestraumen din. Activity Stream held toppsidene dine, bokmerke og nyaste historikk lett tilgjengeleg i kvar ny fane. Den nye tidslinjevisinga gjev deg eit fugleperspektiv på surfinga di.</p>
 activitystreamMeasurements0 = Vi samlar inn grunnleggande brukardata om korleis du samhandlar med den nye eksperimentelle fana og tidslinjer, slik som typar av element som du klikkar på og posisjonen til dei på sida.
 activitystreamMeasurements1 = Vi samlar òg inn grunnleggande informasjon om nettlesarprofilen som påverkar Activity Stream, slik som tal på bokmerke og historikkelement.
 activitystreamDetails0Copy = Klikk på ei ny fane og favorittnettstadane dine er berre eit klikk unna.
@@ -79,6 +80,7 @@ nomore404sEolwarning = Eksperimentet No More 404s vert ikkje fjerna frå nettles
 pageshotDescription = Intuitive skjermbilde direkte frå nettlesaren. Ta, lagre og del skjermbilde når du surfar på nettet med hjelp av Firefox.
 pageshotDetails0Copy = Vel bildeområde og lagre om du likar det du ser, avbryt utan å lagre om du ikkje gjer det.
 pageshotDetails1Copy = Del lenker til bilde via sosiale medium eller e-post, utan å måtte laste ned eller legge ved ei fil.
+pageshotDetails2Copy = Finn lagra skjermbilde lett. Bla i miniatyrbilde i rutenett eller søk etter nykelord.
 pageshotToursteps0Copy = Klikk på ikonet for å byrje å bruke Page Shot.
 pageshotToursteps1Copy = Marker området som du vil fange.
 pageshotToursteps2Copy = Del, lagre eller slett frå nettlesaren.
@@ -135,6 +137,7 @@ universalsearchDescription = Få tilrådingar om dei beste sidene på nettet nå
 universalsearchMeasurements0 = Vi samlar inn dei vanlega brukaropplysningane slik som korleis du interagerer med det smarte adressefeltet, som talet på teikn som vert skrive inn, og kva for typar av resultat som du klikkar på og plasseringa deira i resultatlista.
 universalsearchMeasurements1 = Om du tidlegare har konfigurert Firefox til å vise søkeforslag i søkefeltet, vil det å installere Universal Search slå på <a href="https://www.mozilla.org/privacy/firefox/#searchsuggestions" target="_blank">sökförslag</a> i smarta adressfältet.
 universalsearchMeasurements2 = Når du brukar det smarte søkefeltet, sender vi deg dei termane du skriv inn til den tilrådde motoren vår. Vi beheld anonyme loggar av populære søk for å forbetre kvaliteten på tilrådingane våre.
+universalsearchMeasurements3 = Universal Search brukar nokre tredjepartstenster. Vi brukar <a href="http://www.bing.com/developers/s/APIBasics.html" target="_blank">Bing</a> og <a href="https://developer.yahoo.com/boss/search/" target="_blank">Yahoo</a> for å gje tilrådingar og <a href="http://docs.embed.ly/docs/" target="_blank">Embedly</a> og <a href="https://clearbit.com/logo" target="_blank">Clearbit</a> for å tilby ytterlegare data (slik som bilde og ikon) om desse tilrådingane. For å vise tilrådingane i det smarte adressefeltet, kan Universal Search laste ned desse bilda direkte frå Embedly og Clearbit, noko som kan gje dessa tenestene tillgang til IP-adressa di og bilda som er etterspurde.
 universalsearchDetails0Copy = Populære nettsider, personar og Wikipedia-artiklar dukkar opp medan du skriv.
 universalsearchToursteps0Copy = Du kan no søkje og navigere på ein plass.
 universalsearchToursteps1Copy = Tilrådingar for populære nettstadar og Wikipedia-artiklar dukkar opp medan du skriv.
