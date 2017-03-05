@@ -179,6 +179,7 @@ disableExperiment = Deshabilitar { $title }
 disableExperimentTransition = Deshabilitando...
 enableExperiment = Habilitar { $title }
 enableExperimentTransition = Habilitando...
+experimentMeasurementIntro = Además de la <a>información</a> que se obtiene a través de todos los experimentos de Test Pilot, aquí están las cosas más importantes que tenés que saber que pasan cuando usás { $experimentTitle }:
 measurements = Tu privacidad
 experimentPrivacyNotice = Aquí { $title } puede aprender más acerca de la recolección de datos.
 contributorsHeading = Ofrecido por
