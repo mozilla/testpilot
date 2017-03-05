@@ -262,6 +262,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] Tu correo electrónico acá
 newsletterFormDisclaimer = Solamente enviaremos información relacionada con Test Pilot.
 newsletterFormPrivacyNotice = Me parece bien que Mozilla administre mi información según se explica en <a>esta nota de privacidad</a>.
+newsletterFormPrivacyAgreementRequired = Marcá esta caja si querés continuar.
 newsletterFormSubmitButton = Registrate ahora
 newsletterFormSubmitButtonSubmitting = Enviando...
 
@@ -281,6 +282,7 @@ newsletterFooterSuccessBody = Si no confirmó previamente una suscripción a alg
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Este experimento no está soportado en tu idioma ({ $locale_code }).
 localeWarningSubtitle = Igual puede habilitarlo si quiere.
 
 
