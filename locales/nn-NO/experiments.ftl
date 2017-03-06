@@ -57,7 +57,7 @@ containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
 minvidDescription = Fokus på videoklipp. Min Vid viser filmar frå YouTube og Vimeo i ei lita ramme som vert verande i framgrunnen medan du surfar.
-minvidMeasurements0 = Vi samlar inn brukardata når du kommuniserer med lokalmenyen, eksperimentikonet og spelarkontrollane.
+minvidMeasurements0 = Vi samlar inn bruksdata når du kommuniserer med lokalmenyen, eksperimentikonet og spelarkontrollane.
 minvidMeasurements1 = Vi samlar også inn data om kor manga gongar du støyter på ein spelbar video, kor mange gongar du har spela videon og videotenesta som tilbyr videon. Dette hjelper oss med å forstå kor nyttig brukarane våre synest eksperimentet er.
 minvidMeasurements2 = Vi samlar ikkje inn informasjon om dei konkrete videoane du støyter på.
 minvidDetails0Copy = Få tilgang till Min Vid frå YouTube og Vimeo-videospelarar.
@@ -87,6 +87,9 @@ nomore404sContributors2Title = Director, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Senior Crawl Engineer, The Internet Archive
 nomore404sEolwarning = Eksperimentet No More 404s vert ikkje fjerna frå nettlesaren din og resultaten vert rapportert her når det sluttar. Framtidige oppdateringar vert tilgjengelege på addons.mozilla.org.
 pageshotDescription = Intuitive skjermbilde direkte frå nettlesaren. Ta, lagre og del skjermbilde når du surfar på nettet med hjelp av Firefox.
+pageshotMeasurements1 = Vi samlar in bruksdata for å hjelpe oss med å forstå interaksjonane dine med produktet, til dømes kor mange gongar du klikkar på knappen for å ta bilde, lagrar eit bilde eller støyter på problem med å lagre eit bilde.
+pageshotMeasurements2 = For å hindre misbruk av denne tensta, har vi ei grunnleggande sikkerheitsovervakning. Til dømes, samlar vi inn og beheld IP-adresser for å oppdage og blokkere personar som skannar tenesta for å finne private sider.
+pageshotMeasurements3 = For alle besøk til Page Shot-nettstaden, dei opplysningane vi samlar inn er skildra i <a href="https://www.mozilla.org/privacy/websites/" target="_blank">personvernpraksisen</a> vår.
 pageshotDetails0Copy = Vel bildeområde og lagre om du likar det du ser, avbryt utan å lagre om du ikkje gjer det.
 pageshotDetails1Copy = Del lenker til bilde via sosiale medium eller e-post, utan å måtte laste ned eller legge ved ei fil.
 pageshotDetails2Copy = Finn lagra skjermbilde lett. Bla i miniatyrbilde i rutenett eller søk etter nykelord.
@@ -118,6 +121,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Korleis ville det vere om du kunne flytte faner frå øvst i nettlesaren og ut til sida? Vil du teste det!
+tabcenterMeasurements0 = Vi samlar inn bruksdata om korleis du interagerer med Tab Center, til dømes kor ofte du maksimerer eller festar Tab Center.
 tabcenterDetails0Copy = Skyv fanene dine til sida.
 tabcenterToursteps0Copy = Først og fremst, alle faner finst på sida no.
 tabcenterToursteps1Copy = Massevis av faner? Tab Center lar deg søke i dei.
@@ -129,6 +133,7 @@ tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
 trackingprotectionDescription = Kan du hjelpe oss med å gjere sporingsvernet betre? Dette eksperimentet slår på sporingsvern for all surfing og tilbyr ein rask måte å rapportere eventuelle problem du ser når du surfar.
+trackingprotectionMeasurements0 = Sporingsvern vil be deg om tilbakemelding når det blokkerar ein sporar. Vi samlar inn grunnleggande bruksdata når du brukar førespurnaden, til dømes når du slår på eller av sporning på sida eller rapporterer eit problem.
 trackingprotectionMeasurements2 = Anna enn domenet, samlar vi ikkje inn ytterlegare informasjon frå sporaren, slik som data om unike ID-ar som vert brukte eller infokapslar som er stilte inn.
 trackingprotectionMeasurements3 = For å identifisere sporarar, brukar vi ei liste frå partnaren vår Disconnect. Du kan lese meir om standardane som Disconnect brukar <a href="https://disconnect.me/trackerprotection" target="_blank">her</a>.
 trackingprotectionPrefeedbackcopy = <p>For å rapportere ein nettstad som ikkje fungerer med sporingsvern, vel skjoldikonet i feltet som viser adressa til nettstaden.</p>
@@ -143,7 +148,7 @@ trackingprotectionContributors2Title = Senior QA-teknikar
 trackingprotectionContributorsextra = Dette eksperimentet bygger på Firefox sin sporingsvernteknikk som er bygt av Mozilla-tilsette og medarbeidarar dei siste åra.
 trackingprotectionEolwarning = Vi vil automatisk slå av eksperimentet Sporingsvern og rapportere resultatet når det er avslutta.
 universalsearchDescription = Få tilrådingar om dei beste sidene på nettet når du skriv i det smarte adressfeltet.
-universalsearchMeasurements0 = Vi samlar inn dei vanlega brukaropplysningane slik som korleis du interagerer med det smarte adressefeltet, som talet på teikn som vert skrive inn, og kva for typar av resultat som du klikkar på og plasseringa deira i resultatlista.
+universalsearchMeasurements0 = Vi samlar inn vanlege bruksdata slik som korleis du interagerer med det smarte adressefeltet, som talet på teikn som vert skrive inn, og kva for typar av resultat som du klikkar på og plasseringa deira i resultatlista.
 universalsearchMeasurements1 = Om du tidlegare har konfigurert Firefox til å vise søkeforslag i søkefeltet, vil det å installere Universal Search slå på <a href="https://www.mozilla.org/privacy/firefox/#searchsuggestions" target="_blank">sökförslag</a> i smarta adressfältet.
 universalsearchMeasurements2 = Når du brukar det smarte søkefeltet, sender vi deg dei termane du skriv inn til den tilrådde motoren vår. Vi beheld anonyme loggar av populære søk for å forbetre kvaliteten på tilrådingane våre.
 universalsearchMeasurements3 = Universal Search brukar nokre tredjepartstenster. Vi brukar <a href="http://www.bing.com/developers/s/APIBasics.html" target="_blank">Bing</a> og <a href="https://developer.yahoo.com/boss/search/" target="_blank">Yahoo</a> for å gje tilrådingar og <a href="http://docs.embed.ly/docs/" target="_blank">Embedly</a> og <a href="https://clearbit.com/logo" target="_blank">Clearbit</a> for å tilby ytterlegare data (slik som bilde og ikon) om desse tilrådingane. For å vise tilrådingane i det smarte adressefeltet, kan Universal Search laste ned desse bilda direkte frå Embedly og Clearbit, noko som kan gje dessa tenestene tillgang til IP-adressa di og bilda som er etterspurde.
