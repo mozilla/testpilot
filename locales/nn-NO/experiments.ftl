@@ -134,6 +134,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Korleis ville det vere om du kunne flytte faner frå øvst i nettlesaren og ut til sida? Vil du teste det!
+tabcenterIntroduction = <p>Tab Center flyttar fanene dine til sida av nettlesarvindauget slik at dei er utom syne når du ikkje treng dei, og kan lett utvidast når du treng dei igjen.</p>
 tabcenterMeasurements0 = Vi samlar inn bruksdata om korleis du interagerer med Tab Center, til dømes kor ofte du maksimerer eller festar Tab Center.
 tabcenterDetails0Copy = Skyv fanene dine til sida.
 tabcenterToursteps0Copy = Først og fremst, alle faner finst på sida no.
