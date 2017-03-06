@@ -153,6 +153,7 @@ tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
 trackingprotectionDescription = Kan du hjelpe oss med å gjere sporingsvernet betre? Dette eksperimentet slår på sporingsvern for all surfing og tilbyr ein rask måte å rapportere eventuelle problem du ser når du surfar.
 trackingprotectionMeasurements0 = Sporingsvern vil be deg om tilbakemelding når det blokkerar ein sporar. Vi samlar inn grunnleggande bruksdata når du brukar førespurnaden, til dømes når du slår på eller av sporning på sida eller rapporterer eit problem.
+trackingprotectionMeasurements1 = Når du svarar på eit spørsmål, samlar vi til og med inn informasjon om sida du er på og sporningsdomenet som blir blokkert. Detta hjelper oss med å forstå når og kvifor du opplever problem.
 trackingprotectionMeasurements2 = Anna enn domenet, samlar vi ikkje inn ytterlegare informasjon frå sporaren, slik som data om unike ID-ar som vert brukte eller infokapslar som er stilte inn.
 trackingprotectionMeasurements3 = For å identifisere sporarar, brukar vi ei liste frå partnaren vår Disconnect. Du kan lese meir om standardane som Disconnect brukar <a href="https://disconnect.me/trackerprotection" target="_blank">her</a>.
 trackingprotectionPrefeedbackcopy = <p>For å rapportere ein nettstad som ikkje fungerer med sporingsvern, vel skjoldikonet i feltet som viser adressa til nettstaden.</p>
