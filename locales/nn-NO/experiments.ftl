@@ -1,6 +1,6 @@
 activitystreamDescription = Ei grafisk oversikt over historikken din og ei ny heimeside som gjer det muleg å finne ønskt innhald i Firefox enno betre.
 activitystreamIntroduction = <p>No kan du surfe utan å miste tankestraumen din. Activity Stream held toppsidene dine, bokmerke og nyaste historikk lett tilgjengeleg i kvar ny fane. Den nye tidslinjevisinga gjev deg eit fugleperspektiv på surfinga di.</p>
-activitystreamMeasurements0 = Vi samlar inn grunnleggande brukardata om korleis du samhandlar med den nye eksperimentelle fana og tidslinjer, slik som typar av element som du klikkar på og posisjonen til dei på sida.
+activitystreamMeasurements0 = Vi samlar inn grunnleggande bruksdata om korleis du samhandlar med den nye eksperimentelle fana og tidslinjer, slik som typar av element som du klikkar på og posisjonen til dei på sida.
 activitystreamMeasurements1 = Vi samlar òg inn grunnleggande informasjon om nettlesarprofilen som påverkar Activity Stream, slik som tal på bokmerke og historikkelement.
 activitystreamMeasurements2 = For å tilby Activity Stream, hentar vi metadata om nettsider du har besøkt, slik som bilde og ikon, ved hjelp av ei teneste som heiter <a href="http://embed.ly/" target="_blank">Embedly</a>. Vi sender desse førespurnadane til Embedly gjennom Mozillas tenarar, slik at dei ikkje vert assosierte med deg.
 activitystreamDetails0Copy = Klikk på ei ny fane og favorittnettstadane dine er berre eit klikk unna.
@@ -34,6 +34,7 @@ cliqzToursteps0Copy = Skriv i adressfeltet for å sjå realtidsresultat.
 cliqzToursteps1Copy = Opne ei ny fane og legg til favorittnettsidene dine for rask tilgang med eit museklikk.
 cliqzToursteps2Copy = Du kan alltid gje oss tilbakemelding eller slå av Cliqz frå Test Pilot.
 containersDescription = Avgrens deg! Lag ulike konteinarar for kvart av liva dine på nettet - arbeid, sosialt liv, personleg, - for å halde orden og å behalde personvernet.
+containersIntroduction = Containers lèt deg lage profilar i Firefox for alle liva dine på nettet. Tilpassa etikettar og fargekoda mapper hjelper till med å halde ulike aktivitetar — slik som onlineshopping, reiseplanlegging eller sjekke jobb e-posten — separat. Fordi Containers lagrar infokapslar separat, kan du logge inn på same side med ein annan konto i kvar konteinar, og online sporarar kan ikkje kople surfning di i ein konteinar til ein annan. På denne måten kan du halde shopping separat frå det sosiale eller arbeid, utan at du kjenner deg overvaka.
 containersMeasurements0 = Konteinarar vil berre sende informasjon til oss når du samhandlar med dei, t.d. når du opnar, redigerer eller slettar ein konteinar.
 containersMeasurements1 = Konteinarar vil sende informasjon om kva for type interaksjon som skjer med konteinaren, kva for konteinarar som du interagerer med og talet på faner i konteinaren.
 containersMeasurements2 = Konteinarar sender ikkje informasjon om opne sider. Dette inkluderer sideinnhald, metainformasjon eller nettadresser.
@@ -57,6 +58,7 @@ containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
 minvidDescription = Fokus på videoklipp. Min Vid viser filmar frå YouTube og Vimeo i ei lita ramme som vert verande i framgrunnen medan du surfar.
 minvidMeasurements0 = Vi samlar inn brukardata når du kommuniserer med lokalmenyen, eksperimentikonet og spelarkontrollane.
+minvidMeasurements1 = Vi samlar også inn data om kor manga gongar du støyter på ein spelbar video, kor mange gongar du har spela videon og videotenesta som tilbyr videon. Dette hjelper oss med å forstå kor nyttig brukarane våre synest eksperimentet er.
 minvidMeasurements2 = Vi samlar ikkje inn informasjon om dei konkrete videoane du støyter på.
 minvidDetails0Copy = Få tilgang till Min Vid frå YouTube og Vimeo-videospelarar.
 minvidDetails1Copy = Sjå på video i framgrunnen medan du gjer andre ting på nettet.
@@ -71,6 +73,8 @@ minvidContributors2Title = Intern ingeniørverksemd
 minvidContributors3Title = Ingeniørverksemd-bidragsytar
 nomore404sSubtitle = Driven av Wayback Machine
 nomore404sDescription = Er du lei av blindgater på nettet? Vi informerer deg om det finst innhald som er lagra i internettarkivet til Wayback Machine.
+nomore404sIntroduction = <p>Denne er enkel. Om du støyter på ei 404-side medan du surfar på nettet, vil vi la deg få vite om innhaldet du leitar etter er arkivert i internettarkivet Wayback Machine.</p>
+nomore404sMeasurements0 = Vi samlar inn grunnleggande bruk om kor mange gongar du støyter på ei side med feilkoden 404, kor mange gongar ein bufra versjon av den sida finst på Archive.org og kor mange gongar du vel å vise den bufra versjonen.
 nomore404sMeasurements1 = For å tilby bufra versjonar av sider, sender vi nettadressa for ei 404-feilside til Archive.org. <a href="https://archive.org/" target="_blank">Archive.org</a> viser personvernpraksisen sin <a href="https://archive.org/about/terms.php" target="_blank">her</a>.
 nomore404sMeasurements2 = Vi samlar ikkje inn nettadresser til sider som du ber om, eller nettadresser som vi sender til Archive.org.
 nomore404sMeasurements3 = Vi kan dele enkeltresultat som du sender til oss og aggregerte telemetriopplysningar om dette eksperimentet med Internet Archive.
