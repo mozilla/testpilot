@@ -92,16 +92,6 @@ export class Experiment {
     this.testpilotOptions = parseOptions(object.testpilot_options);
   }
 
-  allowsLocale(locale: string) {
-    const lang = locale.split('-')[0];
-    if (this.localeGrantlist.length) {
-      return this.localeGrantlist.includes(lang);
-    } else if (this.localeBlocklist.length) {
-      return !this.localeBlocklist.includes(lang);
-    }
-    return true;
-  }
-
   toJSON() {
     return {
       addon_id: this.addon_id,
