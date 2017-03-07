@@ -6,6 +6,8 @@ siteName = Firefox Test Pilot
 
 pageTitleDefault = Firefox Test Pilot
 pageTitleLandingPage = Firefox Test Pilot
+pageTitleExperimentListPage = Firefox Test Pilot - Percobaan
+pageTitleExperiment = Firefox Test Pilot - { $title }
 
 
 
@@ -219,20 +221,74 @@ restartIntroThree = Pilih percobaan Anda
 
 
 
+# Shown on a page presented to users three days after installing their first experiment.
+[[ share ]]
+
+sharePrimary = Suka Test Pilot? Bantu kami menemukan beberapa anggota baru.
+shareSecondary = atau salin dan tempel-lah tautan berikut...
+shareEmail = Surel
+shareCopy = Salin
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } berakhir pada { $completedDate }
+eolNoticeLink = Pelajari lebih lanjut
+eolDisableMessage = Percobaan { $title } telah berakhir. Setelah Anda menghapusnya, Anda tidak dapat memasangnya kembali melalui Test Pilot.
+completedDateLabel = Tanggal Akhir Percobaan: <b>{ $completedDate }</b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
+incompatibleHeader = Percobaan ini mungkin tidak kompatibel dengan pengaya yang telah Anda pasang.
+incompatibleSubheader = Kami merekomendasikan untuk <a>menonaktifkan pengaya berikut</a> sebelum mengaktifkan percobaan ini:
+
+
+
 # A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Surel Anda di sini
 newsletterFormDisclaimer = Kami hanya akan mengirim informasi terkait Test Pilot.
 newsletterFormPrivacyNotice = Saya setuju Mozilla mengelola infomasi saya sesuai yang tertera pada <a>Pernyataan Privasi</a>.
+newsletterFormPrivacyAgreementRequired = Centang kotak ini untuk melanjutkan.
 newsletterFormSubmitButton = Daftar Sekarang
+newsletterFormSubmitButtonSubmitting = Mengirim...
 
 
 
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = Ada masalah saat mengirim surel Anda. Coba lagi?
 newsletterFooterHeader = Tetap Terhubung
 newsletterFooterBody = Cari tahu percobaan baru dan lihat hasil pengujian percobaan yang sudah Anda coba.
+newsletterFooterSuccessHeader = Terima kasih!
+
+
+
+# A warning shown to users when the experiment is not available in their language
+[[ localeWarning ]]
+
+localeUnavailableWarningTitle = Percobaan ini tidak didukung dalam bahasa Anda ({ $locale_code }).
+localeWarningSubtitle = Anda masih dapat mengaktifkannya jika Anda mau.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledCTA = Tidak tertarik? <a>Beri tahu kami alasannya</a>.
+
+
+
+# Shown to users who do not have JavaScript enabled.
+[[ noscript ]]
+
+noScriptHeading = Uh oh...
+noScriptMessage = Test Pilot memerlukan JavaScript.<br>Maaf tentang hal ini.
+noScriptLink = Cari tahu alasannya
 
 
 
@@ -240,4 +296,5 @@ newsletterFooterBody = Cari tahu percobaan baru dan lihat hasil pengujian percob
 [[ pastExperiments ]]
 
 viewPastExperiments = Lihat Percobaan Sebelumnya
+hidePastExperiments = Sembunyikan Percobaan Sebelumnya
 
