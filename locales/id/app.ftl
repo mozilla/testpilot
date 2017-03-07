@@ -1,6 +1,14 @@
 siteName = Firefox Test Pilot
 
 
+# Page titles, put in the <title> HTML tag.
+[[ pageTitle ]]
+
+pageTitleDefault = Firefox Test Pilot
+pageTitleLandingPage = Firefox Test Pilot
+
+
+
 # Links in the footer.
 [[ footerLink ]]
 
@@ -9,6 +17,16 @@ footerLinkPrivacy = Privasi
 footerLinkTerms = Ketentuan
 footerLinkLegal = Legal
 footerLinkAbout = Tentang Test Pilot
+
+
+
+# Items in the menu.
+[[ menu ]]
+
+home = Beranda
+menuTitle = Pengaturan
+menuWiki = Wiki Test Pilot
+menuDiscuss = Diskusi Test Pilot
 
 
 
