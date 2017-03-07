@@ -30,7 +30,9 @@ describe('app/components/ExperimentRowCard', () => {
       navigateTo: sinon.spy(),
       sendToGA: sinon.spy(),
       getExperimentLastSeen: sinon.spy(),
-      isAfterCompletedDate: sinon.spy()
+      isAfterCompletedDate: sinon.spy(),
+      enableExperiment: sinon.spy(),
+      disableExperiment: sinon.spy()
     };
     subject = shallow(<ExperimentRowCard {...props} />);
   });
@@ -185,7 +187,6 @@ describe('app/components/ExperimentRowCard', () => {
   it('should ping GA and open the detail page when clicked', () => {
     subject.find('.experiment-summary').simulate('click', mockClickEvent);
 
-    expect(mockClickEvent.preventDefault.called).to.be.true;
     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
       eventCategory: props.eventCategory,
       eventAction: 'Open detail page',
