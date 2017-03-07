@@ -30,6 +30,3 @@ addon/*.rdf
 addon/*.xpi
 addon/locale/
 legal-copy/*html
-old-addon/*.rdf
-old-addon/*.xpi
-old-addon/locale/
