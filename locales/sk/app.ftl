@@ -262,6 +262,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] Sem zadajte svoju e-mailovú adresu
 newsletterFormDisclaimer = Budeme vám posielať len informácie súvisiace s programom Test Pilot.
 newsletterFormPrivacyNotice = Súhlasím s tým, aby Mozilla zaobchádzala s informáciami o mne tak, ako je to popísané v <a>zásadách ochrany súkromia</a>.
+newsletterFormPrivacyAgreementRequired = Pred pokračovaním musíte označiť toto políčko.
 newsletterFormSubmitButton = Prihlásiť sa na odber noviniek
 newsletterFormSubmitButtonSubmitting = Odosiela sa...
 

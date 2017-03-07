@@ -262,6 +262,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] Din e-post
 newsletterFormDisclaimer = Vi skickar endast Test Pilot relaterad information.
 newsletterFormPrivacyNotice = Jag är okej med Mozilla hantering min information som beskrivs i <a>denna sekretesspolicy</a>.
+newsletterFormPrivacyAgreementRequired = Kryssa i den här rutan om du vill fortsätta.
 newsletterFormSubmitButton = Registrera dig nu
 newsletterFormSubmitButtonSubmitting = Skickar...
 

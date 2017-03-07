@@ -262,6 +262,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] כתובת הדוא״ל שלך
 newsletterFormDisclaimer = אנו נשלח אך ורק מידע שקשור ל־Test Pilot.
 newsletterFormPrivacyNotice = בלחיצה על אישור הנך מאשר/ת שהפרטים שלך יטופלו ע״י Mozilla בהתאם לכתוב <a>בהצהרת הפרטיות</a>.
+newsletterFormPrivacyAgreementRequired = נא לסמן את תיבה זו כדי להמשיך.
 newsletterFormSubmitButton = הרשמה כעת
 newsletterFormSubmitButtonSubmitting = שליחה…
 

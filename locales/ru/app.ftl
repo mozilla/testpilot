@@ -262,6 +262,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] Ваша эл. почта
 newsletterFormDisclaimer = Мы будем отправлять вам информацию, относящуюся только к лётчику-испытателям.
 newsletterFormPrivacyNotice = Я согласен с тем, как Mozilla обращается с моей информацией, согласно этой <a>Политике приватности</a>.
+newsletterFormPrivacyAgreementRequired = Для продолжения, пожалуйста, установите этот флажок.
 newsletterFormSubmitButton = Подписаться сейчас
 newsletterFormSubmitButtonSubmitting = Отправляем...
 

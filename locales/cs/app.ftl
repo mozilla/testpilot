@@ -262,6 +262,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] místo pro e-mailovou adresu
 newsletterFormDisclaimer = Budeme vám zasílat pouze informace související s Test Pilotem.
 newsletterFormPrivacyNotice = Souhlasím s tím, aby Mozilla zpracovávala mé informace tak, jak je popsáno v <a>těchto Zásadách ochrany soukromí</a>.
+newsletterFormPrivacyAgreementRequired = Zaškrtněte prosím toto pole.
 newsletterFormSubmitButton = Přihlásit se
 newsletterFormSubmitButtonSubmitting = Odesílání...
 

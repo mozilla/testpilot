@@ -259,6 +259,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] E-Mail-Adresse eintragen
 newsletterFormDisclaimer = Wir schicken Ihnen nur Informationen mit Bezug zu Test Pilot.
 newsletterFormPrivacyNotice = Ich bin einverstanden, dass Mozilla meine Daten wie in <a>diesem Datenschutzhinweis</a> beschrieben verwendet.
+newsletterFormPrivacyAgreementRequired = Aktivieren Sie bitte dieses Kontrollkästchen, um fortzufahren.
 newsletterFormSubmitButton = Jetzt abonnieren
 newsletterFormSubmitButtonSubmitting = Übermitteln…
 

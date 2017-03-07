@@ -262,6 +262,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] Tu correo aquí
 newsletterFormDisclaimer = Solo te enviaremos información relacionada con Test Pilot.
 newsletterFormPrivacyNotice = Me parece bien que Mozilla gestione mi información según se indica en <a>este aviso sobre privacidad</a>.
+newsletterFormPrivacyAgreementRequired = Por favor, marca esta casilla si deseas continuar.
 newsletterFormSubmitButton = Suscríbete ya
 newsletterFormSubmitButtonSubmitting = Enviando...
 

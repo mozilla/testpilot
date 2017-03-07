@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import Header from '../../../src/app/components/Header';
 
@@ -17,7 +17,7 @@ describe('app/components/Header', () => {
       sendToGA: sinon.spy(),
       openWindow: sinon.spy()
     }
-    subject = shallow(<Header {...props} />);
+    subject = mount(<Header {...props} />);
   });
 
   const expectMenuGA = label => {

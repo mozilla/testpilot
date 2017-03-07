@@ -262,6 +262,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] あなたのメールアドレスがここに入ります
 newsletterFormDisclaimer = Test Pilot 関連の情報のみお送りします。
 newsletterFormPrivacyNotice = Mozilla が <a>このプライバシー通知</a> に従って私の個人情報を扱うことに同意します。
+newsletterFormPrivacyAgreementRequired = 続けるにはこのボックスにチェックを入れてください。
 newsletterFormSubmitButton = 今すぐ登録
 newsletterFormSubmitButtonSubmitting = 送信中...
 

@@ -262,6 +262,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] Itt adja meg az e-mail címét
 newsletterFormDisclaimer = Csak a Tesztpilótával kapcsolatos információt fogunk küldeni.
 newsletterFormPrivacyNotice = Elfogadom, hogy a Mozilla <a>ennek az Adatvédelmi nyilatkozatnak</a> megfelelően kezelje az adataimat.
+newsletterFormPrivacyAgreementRequired = Jelölje be ezt a négyzetet a folytatáshoz.
 newsletterFormSubmitButton = Feliratkozás most
 newsletterFormSubmitButtonSubmitting = Beküldés…
 

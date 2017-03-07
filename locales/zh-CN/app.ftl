@@ -259,6 +259,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] 在这里填入您的电子邮件地址
 newsletterFormDisclaimer = 我们只会给您发送 Test Pilot 相关的信息。
 newsletterFormPrivacyNotice = 我允许 Mozilla 按照<a>隐私声明</a>处理我的信息。
+newsletterFormPrivacyAgreementRequired = 如果要继续，请选中此框。
 newsletterFormSubmitButton = 立即注册
 newsletterFormSubmitButtonSubmitting = 正在提交...
 
