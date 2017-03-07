@@ -153,3 +153,21 @@ for fn in $(find dist -name 'index.html' -not -path 'dist/index.html'); do
     --acl "public-read" \
     $fn s3://${TESTPILOT_BUCKET}/${s3path}
 done
+
+# The add-on lives at /static/addon/addon.xpi .  Let's create a /latest/ URL so
+# we can pass in the hash headers
+
+# Make sure we have an empty latest file
+> dist/static/addon/latest
+
+HASH=($(sha256sum dist/static/addon/addon.xpi))
+DIGEST="\"x-amz-meta-x-target-digest\": \"sha256:${HASH}\""
+LOCATION="\"x-amz-meta-location\": \"/static/addon/addon.xpi\""
+
+aws s3 cp \
+  --cache-control "max-age=${TEN_MINUTES}" \
+  --content-type "text/html" \
+  --metadata "{${HPKP}, ${HSTS}, ${TYPE}, ${LOCATION}, ${DIGEST}}" \
+  --metadata-directive "REPLACE" \
+  --acl "public-read" \
+  dist/static/addon/latest s3://${TESTPILOT_BUCKET}/static/addon/
