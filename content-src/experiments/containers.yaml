@@ -3,23 +3,6 @@ title: 'Containers'
 slug: containers
 locales:
   - 'en'
-locale_grantlist:
-  - 'en'
-  - 'cs'
-  - 'de'
-  - 'dsb'
-  - 'fy-NL'
-  - 'hsb'
-  - 'hu'
-  - 'it'
-  - 'ja'
-  - 'nl'
-  - 'pt-PT'
-  - 'ru'
-  - 'sq'
-  - 'sv-SE'
-  - 'zh-CN'
-  - 'zh-TW'
 launch_date: '2017-03-01T21:00:00.00Z'
 min_release: 51
 incompatible:
