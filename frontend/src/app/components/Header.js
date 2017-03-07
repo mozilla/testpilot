@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router';
-import classnames from 'classnames';
 
 import LayoutWrapper from './LayoutWrapper';
 import RetireConfirmationDialog from './RetireConfirmationDialog';
+import Settings from './Settings';
 
 export default class Header extends React.Component {
 
   constructor(props) {
     super(props);
+
     this.closeTimer = null;
-    this.close = this.close.bind(this);
-    this.dismissRetireDialog = this.dismissRetireDialog.bind(this);
     this.state = {
-      showRetireDialog: false
+      showRetireDialog: false,
+      showSettings: false
     };
   }
 
@@ -25,28 +25,23 @@ export default class Header extends React.Component {
     return this.state.showSettings;
   }
 
+  close() {
+    if (!this.state.showSettings) { return; }
+    this.closeTimer = setTimeout(() =>
+      this.setState({ showSettings: false }), 10);
+  }
+
   renderSettingsMenu() {
     if (this.shouldRenderSettingsMenu()) {
       return (
-        <div id="settings">
-          <div className="settings-contain">
-             <div className={classnames(['button', 'outline', 'settings-button'], { active: this.showSettingsMenu() })}
-                  onClick={e => this.toggleSettings(e)}
-                  data-l10n-id="menuTitle">Settings</div>
-               {this.showSettingsMenu() && <div className="settings-menu" onClick={e => this.settingsClick(e)}>
-               <ul>
-                 <li><a onClick={e => this.wiki(e)} data-l10n-id="menuWiki"
-                    href="https://wiki.mozilla.org/Test_Pilot" target="_blank">Test Pilot Wiki</a></li>
-                 <li><a onClick={() => this.discuss()} data-l10n-id="menuDiscuss"
-                    href="https://discourse.mozilla-community.org/c/test-pilot" target="_blank">Discuss Test Pilot</a></li>
-                 <li><a onClick={e => this.fileIssue(e)} data-l10n-id="menuFileIssue"
-                    href="https://github.com/mozilla/testpilot/issues/new" target="_blank">File an Issue</a></li>
-                 <li><hr /></li>
-                 <li><a onClick={e => this.retire(e)} data-l10n-id="menuRetire">Uninstall Test Pilot</a></li>
-               </ul>
-             </div>}
-          </div>
-        </div>
+        <Settings
+          close={this.close.bind(this)}
+          retire={this.retire.bind(this)}
+          toggleSettings={this.toggleSettings.bind(this)}
+          settingsClick={this.settingsClick.bind(this)}
+          showSettingsMenu={this.showSettingsMenu.bind(this)}
+          {...this.props}
+         />
       );
     }
     return null;
@@ -62,12 +57,31 @@ export default class Header extends React.Component {
     if (this.state.showRetireDialog) {
       return (
         <RetireConfirmationDialog
-          onDismiss={this.dismissRetireDialog}
+          onDismiss={this.dismissRetireDialog.bind(this)}
           {...this.props}
         />
       );
     }
     return null;
+  }
+
+  settingsClick() {
+    if (this.closeTimer) { clearTimeout(this.closeTimer); }
+  }
+
+  // HACK: We want to close the settings menu on any click outside the menu.
+  // However, a manually-attached event listener on document.body seems to fire
+  // the 'close' event before any other clicks register inside the settings
+  // menu. So, here's a kludge to schedule a menu close on any click, but
+  // cancel if the click was inside the menu. Sounds backwards, but it works.
+
+  componentDidMount() {
+    document.body.addEventListener('click', this.close);
+  }
+
+  componentWillUnmount() {
+    if (this.closeTimer) { clearTimeout(this.closeTimer); }
+    document.body.removeEventListener('click', this.close);
   }
 
   render() {
@@ -86,81 +100,16 @@ export default class Header extends React.Component {
     );
   }
 
-  // HACK: We want to close the settings menu on any click outside the menu.
-  // However, a manually-attached event listener on document.body seems to fire
-  // the 'close' event before any other clicks register inside the settings
-  // menu. So, here's a kludge to schedule a menu close on any click, but
-  // cancel if the click was inside the menu. Sounds backwards, but it works.
-
-  componentDidMount() {
-    document.body.addEventListener('click', this.close);
-  }
-
-  componentWillUnmount() {
-    if (this.closeTimer) { clearTimeout(this.closeTimer); }
-    document.body.removeEventListener('click', this.close);
-  }
-
-  close() {
-    if (!this.state.showSettings) { return; }
-    this.closeTimer = setTimeout(() =>
-      this.setState({ showSettings: false }), 10);
-  }
-
-  settingsClick() {
-    if (this.closeTimer) { clearTimeout(this.closeTimer); }
-  }
-
-  toggleSettings(ev) {
-    ev.stopPropagation();
-    this.props.sendToGA('event', {
-      eventCategory: 'Menu Interactions',
-      eventAction: 'drop-down menu',
-      eventLabel: 'Toggle Menu'
-    });
+  toggleSettings(evt) {
     if (this.state.showSettings) {
-      this.close(ev);
+      this.close(evt);
     } else {
       this.setState({ showSettings: true });
     }
   }
 
-  retire(evt) {
-    evt.preventDefault();
-    this.props.sendToGA('event', {
-      eventCategory: 'Menu Interactions',
-      eventAction: 'drop-down menu',
-      eventLabel: 'Retire'
-    });
+  retire() {
     this.setState({ showRetireDialog: true });
-    this.close();
-  }
-
-  discuss() {
-    this.props.sendToGA('event', {
-      eventCategory: 'Menu Interactions',
-      eventAction: 'drop-down menu',
-      eventLabel: 'Discuss'
-    });
-    this.close();
-  }
-
-  wiki() {
-    this.props.sendToGA('event', {
-      eventCategory: 'Menu Interactions',
-      eventAction: 'drop-down menu',
-      eventLabel: 'wiki'
-    });
-    this.close();
-  }
-
-  fileIssue() {
-    this.props.sendToGA('event', {
-      eventCategory: 'Menu Interactions',
-      eventAction: 'drop-down menu',
-      eventLabel: 'file issue'
-    });
-    this.close();
   }
 }
 
