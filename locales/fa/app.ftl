@@ -259,6 +259,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] رایانامه شما اینجا قرار می‌گیرد
 newsletterFormDisclaimer = ما فقط اطلاعات مرتبط با خلبان آزمایشی را برای شما ارسال خواهیم کرد.
 newsletterFormPrivacyNotice = با اینکه موزیلا اطلاعات من را به شکل توضیح داده شده در <a>این نکات حریم‌خصوصی</a> مدیریت کند مشکلی ندارم.
+newsletterFormPrivacyAgreementRequired = چنانچه مایل به ادامه دادن هستید این گزینه را انتخاب کنید.
 newsletterFormSubmitButton = همین حالا ثبت‌نام کنید
 newsletterFormSubmitButtonSubmitting = در حال ارسال...
 
