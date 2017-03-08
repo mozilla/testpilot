@@ -262,6 +262,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] Këtu vini email-in tuaj
 newsletterFormDisclaimer = Do t’ju dërgojmë vetëm të dhëna që kanë lidhje Pilotin e Testeve.
 newsletterFormPrivacyNotice = Pajtohem me trajtimin që Mozilla u bën të dhënave të mia, ashtu si shpjegohet te <a>ky shënim mbi privatësinë</a>.
+newsletterFormPrivacyAgreementRequired = Ju lutemi, i vini shenjë kësaj kutize, nëse doni të vazhdohet.
 newsletterFormSubmitButton = Regjistrohuni Tani
 newsletterFormSubmitButtonSubmitting = Po parashtrohet…
 
