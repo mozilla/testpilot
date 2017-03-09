@@ -21,3 +21,4 @@ pageshotToursteps1Copy = আপনি যে টুকু অংশে ছবি
 pageshotContributors1Title = সফটওয়্যার ইঞ্জিনিয়ার
 pageshotContributors2Title = UX ডিজাইনার
 universalsearchContributors3Title = সিনিয়র ইঞ্জিনিয়ার
+universalsearchEolwarning = Universal Search পরীক্ষার ফলাফল প্রেরণের পর এটি আমরা স্বয়ংক্রিয়ভাবে বন্ধ করে দিবো।
