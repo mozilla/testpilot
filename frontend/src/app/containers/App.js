@@ -12,7 +12,7 @@ import { getInstalled, isExperimentEnabled, isAfterCompletedDate, isInstalledLoa
 import { getExperimentBySlug } from '../reducers/experiments';
 import { getChosenTest } from '../reducers/varianttests';
 import experimentSelector from '../selectors/experiment';
-import { uninstallAddon, installAddon, enableExperiment, disableExperiment, pollAddon } from '../lib/addon';
+import { uninstallAddon, installAddon, enableExperiment, disableExperiment, pollAddon } from '../lib/InstallManager';
 import addonActions from '../actions/addon';
 import newsletterFormActions from '../actions/newsletter-form';
 import RestartPage from '../containers/RestartPage';
