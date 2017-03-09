@@ -33,6 +33,7 @@ cliqzDetails2Copy = Uɣal ar ismal inek i tḥemleḍ s yiwen n usiti ticki teld
 cliqzToursteps0Copy = <p>Bdu aru deg ufeggag n tensa URL akken ad d-banen igmaḍ s wakud ilaw.</p>
 cliqzToursteps1Copy = <p>Ldi iccer amaynut akken ad ternuḍ ismal inek web i tḥemleḍ sakin kcem ɣur-sen s yiwen n usiti.</p>
 cliqzToursteps2Copy = <p>Tzemred aɣ-d-azneḍ tikti yinek yal tikelt melmi tebɣiḍ neɣ sens Cliqz n Test Pilot.</p>
+containersContributors0Title = Seqdec taɣellist akked tusligin
 containersContributors1Title = Ajenyuṛ n telɣubliṭ
 containersContributors2Title = Ajenyuṛ n tbaḍnit
 containersContributors4Title = Ajenyuṛ n tɣara
