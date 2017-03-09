@@ -179,6 +179,7 @@ disableExperiment = { $title } を無効化
 disableExperimentTransition = 無効化しています...
 enableExperiment = { $title } を有効化
 enableExperimentTransition = 有効化しています...
+experimentManuallyDisabled = { $title } はアドオンマネージャーで無効化されています
 experimentMeasurementIntro = すべての Test Pilot 実験によって収集される <a>データ</a> に加えて、{ $experimentTitle } 使用時に何が起きているかについてあなたが知っておくべき主な事柄を以下にまとめました。
 measurements = プライバシー
 experimentPrivacyNotice = { $title } のデータ収集に関する詳細はこちらをご覧ください。
