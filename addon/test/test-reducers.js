@@ -108,7 +108,10 @@ describe('reducers', function() {
       experiments: { X: Object.assign({}, X, { active: true }) }
     });
     const expectedState = Object.assign({}, initialState, {
-      experiments: { X: Object.assign({}, X, { active: false }) }
+      experiments: { X: Object.assign({}, X, {
+        active: true,
+        manuallyDisabled: true
+      }) }
     });
     const action = {
       type: actions.EXPERIMENT_DISABLED.type,

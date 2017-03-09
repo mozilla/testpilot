@@ -9,10 +9,33 @@ const setHasAddon = (state, { payload: hasAddon }) => ({
 const setInstalled = (state, { payload: { installed, installedLoaded } }) =>
   ({ ...state, installed, installedLoaded });
 
-const setInstalledAddons = (state, { payload: installedAddons }) =>
-  ({ ...state, installedAddons: (installedAddons || []) });
+function setInstalledAddons(state, { payload: installedAddons }) {
+  const newInstalled = {};
+  const actuallyInstalledAddons = (installedAddons || []);
+  for (const addonId of Object.keys(state.installed)) {
+    const experiment = state.installed[addonId];
+    if (actuallyInstalledAddons.indexOf(addonId) === -1) {
+      newInstalled[addonId] = { manuallyDisabled: true, ...experiment };
+    } else {
+      newInstalled[addonId] = experiment;
+    }
+  }
+  return { ...state, installed: newInstalled, installedAddons: actuallyInstalledAddons };
+}
 
 const setClientUuid = (state, { payload: clientUUID }) => ({ ...state, clientUUID });
+
+const manuallyEnableExperiment = (state, { payload: experiment }) => {
+  const newInstalled = { ...state.installed };
+  newInstalled[experiment.addon_id] = { manuallyDisabled: false, ...experiment };
+  return { ...state, installed: newInstalled };
+};
+
+const manuallyDisableExperiment = (state, { payload: experiment }) => {
+  const newInstalled = { ...state.installed };
+  newInstalled[experiment.addon_id] = { manuallyDisabled: true, ...experiment };
+  return { ...state, installed: newInstalled };
+};
 
 const enableExperiment = (state, { payload: experiment }) => {
   const newInstalled = { ...state.installed };
@@ -37,8 +60,12 @@ const requireRestart = state => {
 
 export const getInstalled = (state) => state.installed;
 
-export const isExperimentEnabled = (state, experiment) =>
-  !!(experiment && experiment.addon_id in state.installed);
+export function isExperimentEnabled(state, experiment) {
+  return !!(
+    experiment &&
+    experiment.addon_id in state.installed &&
+    !state.installed[experiment.addon_id].manuallyDisabled);
+}
 
 export const isAfterCompletedDate = (experiment) =>
   ((new Date(experiment.completed)).getTime() < Date.now());
@@ -52,6 +79,8 @@ export default handleActions({
   setClientUuid,
   enableExperiment,
   disableExperiment,
+  manuallyEnableExperiment,
+  manuallyDisableExperiment,
   requireRestart
 }, {
   hasAddon: false,

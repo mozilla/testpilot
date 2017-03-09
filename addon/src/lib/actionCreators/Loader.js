@@ -55,7 +55,8 @@ function mergeAddonState(experiments: Experiments, addons) {
   for (let addon of addons) {
     const x = experiments[addon.id];
     if (x) {
-      x.active = addon.isActive;
+      x.active = true;
+      x.manuallyDisabled = !addon.isActive;
       x.installDate = addon.installDate;
     }
   }
@@ -100,7 +101,7 @@ export default class Loader {
           if (launch > clicked && launch <= Date.now()) {
             dispatch(actions.SET_BADGE({ text: _('new_badge') }));
           }
-          if (experiment.active) {
+          if (experiment.active && !experiment.manuallyDisabled) {
             WebExtensionChannels.add(experiment.addon_id);
           }
           dispatch(actions.MAYBE_NOTIFY({ experiment }));

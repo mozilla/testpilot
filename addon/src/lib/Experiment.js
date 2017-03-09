@@ -58,6 +58,7 @@ export class Experiment {
   completed: string;
   uninstalled: string;
   active: boolean;
+  manuallyDisabled: boolean;
   installDate: ?Date;
   launchDate: Date;
   localeGrantlist: Array<string>;
@@ -82,6 +83,7 @@ export class Experiment {
     this.uninstalled = object.uninstalled;
 
     this.active = object.active || false;
+    this.manuallyDisabled = object.manuallyDisabled || false;
     this.installDate = object.installDate;
     this.launchDate = object.launch_date
       ? new Date(object.launch_date)
@@ -102,6 +104,7 @@ export class Experiment {
       modified: this.modified,
       completed: this.completed,
       active: this.active,
+      manuallyDisabled: this.manuallyDisabled,
       installDate: this.installDate
     };
   }
