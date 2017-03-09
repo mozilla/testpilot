@@ -57,6 +57,7 @@ containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
 minvidDescription = Fokus på videoklipp. Min Vid viser filmar frå YouTube og Vimeo i ei lita ramme som vert verande i framgrunnen medan du surfar.
+minvidIntroduction = <p>Likar du å sjå på video? Likar du å få ting gjort medan du ser på video? Prøv Min Vid. Det er som bilde-i-bilde, der eitt bilde er ein video og det andre er heile nettet.</p><ul> <li><strong>Klikk og begynn:</strong> Opne ramma for Min Vid for å spele av videoen i framgrunnen medan du surfar.</li> <li><strong>Plasser han der du vil:</strong> Min Vid lar deg dra videoruta kvar som helst på skrivbordet.</li> <li><strong>Kontrollar der du treng dei:</strong> Min Vid inneheld kontrollar som lar deg pause/spele, hoppe over, dra, minimere og justere volumet direkte i ramma.</li></ul>
 minvidMeasurements0 = Vi samlar inn bruksdata når du kommuniserer med lokalmenyen, eksperimentikonet og spelarkontrollane.
 minvidMeasurements1 = Vi samlar også inn data om kor manga gongar du støyter på ein spelbar video, kor mange gongar du har spela videon og videotenesta som tilbyr videon. Dette hjelper oss med å forstå kor nyttig brukarane våre synest eksperimentet er.
 minvidMeasurements2 = Vi samlar ikkje inn informasjon om dei konkrete videoane du støyter på.
