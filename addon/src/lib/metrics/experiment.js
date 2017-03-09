@@ -15,6 +15,7 @@ import { storage } from 'sdk/simple-storage';
 import {
   TelemetryController
 } from 'resource://gre/modules/TelemetryController.jsm';
+import { Request } from 'sdk/request';
 
 import type Variants from './variants';
 
@@ -92,10 +93,12 @@ function experimentPing(event: ExperimentPingData) {
       }
     });
 
-    Services.appShell.hiddenDOMWindow.navigator.sendBeacon(
-      'https://tiles.services.mozilla.com/v3/links/ping-centre',
-      JSON.stringify(pcPayload)
-    );
+    const req = new Request({
+      url: 'https://tiles.services.mozilla.com/v3/links/ping-centre',
+      contentType: 'application/json',
+      content: JSON.stringify(pcPayload)
+    });
+    req.post();
   });
 }
 

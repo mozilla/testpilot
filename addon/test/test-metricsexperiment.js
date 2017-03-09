@@ -21,9 +21,12 @@ const Events = {
   off: sinon.spy(),
   '@noCallThru': true
 };
+function Request() {
+  return { post: sinon.stub() };
+}
+
 const Services = {
-  startup: { getStartupInfo: sinon.stub().returns({ process: new Date() }) },
-  appShell: { hiddenDOMWindow: { navigator: { sendBeacon: sinon.stub() } } }
+  startup: { getStartupInfo: sinon.stub().returns({ process: new Date() }) }
 };
 const storage = {};
 const TelemetryController = {
@@ -51,6 +54,7 @@ const Experiment = proxyquire('../src/lib/metrics/experiment', {
     '@noCallThru': true
   },
   'sdk/system/events': Events,
+  'sdk/request': { Request, '@noCallThru': true },
   'sdk/self': { id: 'self-id', '@noCallThru': true },
   'resource://gre/modules/Services.jsm': { Services, '@noCallThru': true },
   'sdk/simple-storage': { storage, '@noCallThru': true },
