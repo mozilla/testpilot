@@ -1,4 +1,5 @@
 activitystreamDetails0Copy = নতুন ট্যাবে ক্লিক করুন, আর আপনার প্রিয় সাইটগুলো মাত্র এক ক্লিকেই পাবেন।
+activitystreamToursteps2Copy = আপনি যেকোন সময় আমাদের ফিডব্যাক পাঠাতে পারেন অথবা টেস্ট পাইলট থেকে এক্টিভিটি স্ট্রিম নিষ্ক্রিয় করতে পারেন।
 activitystreamContributors0Title = সফটওয়্যার ইঞ্জিনিয়ার
 activitystreamContributors1Title = ওয়েব ইঞ্জিনিয়ার
 activitystreamContributors2Title = সফটওয়ার ডেভেলপার
@@ -16,3 +17,6 @@ minvidContributors0Title = ইঞ্জিনিয়ার
 minvidContributors1Title = স্টাফ ইঞ্জিনিয়ার
 minvidContributors2Title = ইঞ্জিনিয়ারিং ইন্টার্ণ
 nomore404sContributors2Title = পরিচালক,  Wayback Machine, The Internet Archive
+pageshotToursteps1Copy = আপনি যে টুকু অংশে ছবি তুলতে চান তা হাইলাইট করুন।
+pageshotContributors1Title = সফটওয়্যার ইঞ্জিনিয়ার
+pageshotContributors2Title = UX ডিজাইনার
