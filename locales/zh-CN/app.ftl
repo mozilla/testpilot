@@ -176,6 +176,7 @@ disableExperiment = 禁用 { $title }
 disableExperimentTransition = 正在禁用...
 enableExperiment = 启用 { $title }
 enableExperimentTransition = 正在启用...
+experimentManuallyDisabled = { $title } 已在附加组件管理器中禁用
 experimentMeasurementIntro = 除了所有 Test Pilot 实验收集的<a>数据</a>，在您使用 { $experimentTitle } 时还应了解：
 measurements = 您的隐私
 experimentPrivacyNotice = 您在这里可以更详细地了解 { $title } 的数据收集情况。
