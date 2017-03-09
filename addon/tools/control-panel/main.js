@@ -17,10 +17,12 @@ window.addEventListener('addon-action', event => {
 });
 
 function send(action) {
-  document.documentElement.dispatchEvent(new CustomEvent('action', {
-    bubbles: true,
-    detail: action
-  }));
+  document.documentElement.dispatchEvent(
+    new CustomEvent('action', {
+      bubbles: true,
+      detail: action
+    })
+  );
 }
 
 function createAction(type) {
@@ -52,9 +54,10 @@ class App extends Component {
       >
         <select
           size="24"
-          onChange={e => this.setState({
-            action: JSON.stringify(createAction(e.target.value), null, 2)
-          })}
+          onChange={e =>
+            this.setState({
+              action: JSON.stringify(createAction(e.target.value), null, 2)
+            })}
         >
           {Object.keys(actions).map(type => (
             <option key={type} value={type}>{type}</option>

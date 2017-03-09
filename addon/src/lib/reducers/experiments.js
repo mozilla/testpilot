@@ -50,10 +50,12 @@ export function reducer(
 
     case actions.EXPERIMENT_DISABLED.type:
       x = experiments[payload.experiment.addon_id];
-      n = new Experiment(Object.assign({}, x, {
-        active: true,
-        manuallyDisabled: true
-      }));
+      n = new Experiment(
+        Object.assign({}, x, {
+          active: true,
+          manuallyDisabled: true
+        })
+      );
       return Object.assign({}, experiments, { [n.addon_id]: n });
 
     case actions.EXPERIMENT_UNINSTALLING.type:

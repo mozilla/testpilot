@@ -24,9 +24,7 @@ function createAction(type: string, payloadArgs: string[]): ActionCreator {
     payload = payload || {};
     if (!argsOk(payload, payloadArgs)) {
       throw new Error(
-        `Action ${type} expected [${payloadArgs.join(
-          ','
-        )}] but got [${Object.keys(payload).join(',')}]`
+        `Action ${type} expected [${payloadArgs.join(',')}] but got [${Object.keys(payload).join(',')}]`
       );
     }
     return { type, meta, payload };

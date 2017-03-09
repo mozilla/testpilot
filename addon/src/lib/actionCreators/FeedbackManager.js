@@ -99,7 +99,10 @@ export default class FeedbackManager {
       if (experiment) {
         tabs.once('open', () => {
           setTimeout(
-            () => this.dispatch(actions.SHOW_RATING_PROMPT({ interval: 'eol', experiment })),
+            () =>
+              this.dispatch(
+                actions.SHOW_RATING_PROMPT({ interval: 'eol', experiment })
+              ),
             1000
           );
         });

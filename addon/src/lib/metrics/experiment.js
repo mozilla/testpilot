@@ -49,11 +49,10 @@ function experimentPing(event: ExperimentPingData) {
       test: subject,
       version: addon.version,
       timestamp: makeTimestamp(timestamp),
-      variants: (
-        storage.experimentVariants && subject in storage.experimentVariants
-          ? storage.experimentVariants[subject]
-          : null
-      ),
+      variants: storage.experimentVariants &&
+        subject in storage.experimentVariants
+        ? storage.experimentVariants[subject]
+        : null,
       payload: parsed
     };
     TelemetryController.submitExternalPing('testpilottest', payload, {
@@ -68,9 +67,7 @@ function experimentPing(event: ExperimentPingData) {
     const pcPayload = {
       // 'method' is used by testpilot-metrics library.
       // 'event' was used before that library existed.
-      event_type: (
-        parsed.event || parsed.method
-      ),
+      event_type: parsed.event || parsed.method,
       client_time: makeTimestamp(parsed.timestamp || timestamp),
       addon_id: subject,
       addon_version: addon.version,

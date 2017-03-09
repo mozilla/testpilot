@@ -19,7 +19,7 @@ function newURI(uriStr, base) {
       throw new Error('malformed URI: ' + uriStr);
     } else if (
       e.result === chrome.Cr.NS_ERROR_FAILURE ||
-        e.result === chrome.Cr.NS_ERROR_ILLEGAL_VALUE
+      e.result === chrome.Cr.NS_ERROR_ILLEGAL_VALUE
     ) {
       throw new Error('invalid URI: ' + uriStr);
     }

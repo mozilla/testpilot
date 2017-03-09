@@ -14,8 +14,9 @@ export default class Hub {
   dispatch: Dispatch;
   ports: Set<EventEmitter>;
   constructor() {
-    this.dispatch = () => // eslint-disable-next-line no-console
-    console.error('Hub cannot use dispatch() before middleware()');
+    this.dispatch = () =>
+      // eslint-disable-next-line no-console
+      console.error('Hub cannot use dispatch() before middleware()');
     this.ports = new Set();
   }
 
@@ -35,26 +36,27 @@ export default class Hub {
   middleware(): Middleware {
     return ({ dispatch }) => {
       this.dispatch = dispatch;
-      return next => action => {
-        action.meta = action.meta || {};
-        action.meta.src = action.meta.src || 'addon';
-        if (action.meta.src === 'addon') {
-          // eslint-disable-next-line prefer-const
-          for (let port of this.ports) {
-            try {
-              port.emit('action', action);
+      return next =>
+        action => {
+          action.meta = action.meta || {};
+          action.meta.src = action.meta.src || 'addon';
+          if (action.meta.src === 'addon') {
+            // eslint-disable-next-line prefer-const
+            for (let port of this.ports) {
+              try {
+                port.emit('action', action);
 
-              const evt = actionToWeb(action);
-              if (evt !== NO_ACTION) {
-                port.emit('from-addon-to-web', evt);
+                const evt = actionToWeb(action);
+                if (evt !== NO_ACTION) {
+                  port.emit('from-addon-to-web', evt);
+                }
+              } catch (e) {
+                this.ports.delete(port);
               }
-            } catch (e) {
-              this.ports.delete(port);
             }
           }
-        }
-        return next(action);
-      };
+          return next(action);
+        };
     };
   }
 }

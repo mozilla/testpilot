@@ -14,10 +14,12 @@ unsafeWindow.navigator.testpilotClientUUID = self.options.clientUUID;
 // New channel
 self.port.on('action', function(data) {
   const clonedData = cloneInto(data, document.defaultView);
-  document.documentElement.dispatchEvent(new CustomEvent('addon-action', {
-    bubbles: true,
-    detail: clonedData
-  }));
+  document.documentElement.dispatchEvent(
+    new CustomEvent('addon-action', {
+      bubbles: true,
+      detail: clonedData
+    })
+  );
 });
 
 function onAction(event) {
@@ -29,10 +31,12 @@ window.addEventListener('action', onAction, false);
 // Legacy channel
 self.port.on('from-addon-to-web', function(data) {
   const clonedData = cloneInto(data, document.defaultView);
-  document.documentElement.dispatchEvent(new CustomEvent('from-addon-to-web', {
-    bubbles: true,
-    detail: clonedData
-  }));
+  document.documentElement.dispatchEvent(
+    new CustomEvent('from-addon-to-web', {
+      bubbles: true,
+      detail: clonedData
+    })
+  );
 });
 
 function onWebToAddon(event) {

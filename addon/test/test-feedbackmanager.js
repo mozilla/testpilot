@@ -214,7 +214,10 @@ describe('FeedbackManager', function() {
       const callback2 = timers.setTimeout.firstCall.args[0];
       callback2();
       assert.ok(store.dispatch.calledOnce);
-      assert.equal(store.dispatch.firstCall.args[0].type, SHOW_RATING_PROMPT.type);
+      assert.equal(
+        store.dispatch.firstCall.args[0].type,
+        SHOW_RATING_PROMPT.type
+      );
     });
   });
 

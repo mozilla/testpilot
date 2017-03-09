@@ -78,45 +78,39 @@ describe('AddonListener', function() {
     });
 
     describe('onOperationCancelled', function() {
-      it(
-        'dispatches EXPERIMENT_ENABLED when addon has a pending enable',
-        function() {
-          const x = {};
-          const s = {
-            dispatch: sinon.spy(),
-            getState: sinon.stub().returns({ experiments: { x } })
-          };
-          const l = new AddonListener(s);
-          l.onOperationCancelled({ id: 'x', pendingOperations: 1 });
-          assert.ok(s.dispatch.calledOnce);
-          assert.equal(
-            s.dispatch.firstCall.args[0].type,
-            EXPERIMENT_ENABLED.type
-          );
-        }
-      );
+      it('dispatches EXPERIMENT_ENABLED when addon has a pending enable', function() {
+        const x = {};
+        const s = {
+          dispatch: sinon.spy(),
+          getState: sinon.stub().returns({ experiments: { x } })
+        };
+        const l = new AddonListener(s);
+        l.onOperationCancelled({ id: 'x', pendingOperations: 1 });
+        assert.ok(s.dispatch.calledOnce);
+        assert.equal(
+          s.dispatch.firstCall.args[0].type,
+          EXPERIMENT_ENABLED.type
+        );
+      });
 
-      it(
-        'dispatches EXPERIMENT_DISABLED when addon is userDisabled and installed',
-        function() {
-          const x = {};
-          const s = {
-            dispatch: sinon.spy(),
-            getState: sinon.stub().returns({ experiments: { x } })
-          };
-          const l = new AddonListener(s);
-          l.onOperationCancelled({
-            id: 'x',
-            userDisabled: true,
-            installDate: new Date()
-          });
-          assert.ok(s.dispatch.calledOnce);
-          assert.equal(
-            s.dispatch.firstCall.args[0].type,
-            EXPERIMENT_DISABLED.type
-          );
-        }
-      );
+      it('dispatches EXPERIMENT_DISABLED when addon is userDisabled and installed', function() {
+        const x = {};
+        const s = {
+          dispatch: sinon.spy(),
+          getState: sinon.stub().returns({ experiments: { x } })
+        };
+        const l = new AddonListener(s);
+        l.onOperationCancelled({
+          id: 'x',
+          userDisabled: true,
+          installDate: new Date()
+        });
+        assert.ok(s.dispatch.calledOnce);
+        assert.equal(
+          s.dispatch.firstCall.args[0].type,
+          EXPERIMENT_DISABLED.type
+        );
+      });
     });
   });
 });

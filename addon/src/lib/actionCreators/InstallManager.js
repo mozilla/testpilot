@@ -34,11 +34,13 @@ export default class InstallManager {
       experiment.xpi_url,
       install => {
         const { dispatch } = this.store;
-        install.addListener(new InstallListener({
-          install,
-          experiment,
-          dispatch
-        }));
+        install.addListener(
+          new InstallListener({
+            install,
+            experiment,
+            dispatch
+          })
+        );
         install.install();
       },
       'application/x-xpinstall'

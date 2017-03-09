@@ -26,9 +26,10 @@ function fetchExperiments(baseUrl, path): Promise<Experiments> {
       headers: { Accept: 'application/json' },
       url: baseUrl + path
     });
-    r.on('complete', (
-      res: { status: number, json: { results: Array<Object> } }
-    ) => {
+    r.on('complete', (res: {
+      status: number,
+      json: { results: Array<Object> }
+    }) => {
       const xs = {};
       if (res.status === 200) {
         // eslint-disable-next-line prefer-const
@@ -86,11 +87,12 @@ export default class Loader {
     const { dispatch, getState } = this.store;
     return fetchExperiments(baseUrl, '/api/experiments.json')
       .then(
-        xs => new Promise(resolve => {
-          AddonManager.getAllAddons(addons => {
-            resolve(mergeAddonState(xs, addons));
-          });
-        })
+        xs =>
+          new Promise(resolve => {
+            AddonManager.getAllAddons(addons => {
+              resolve(mergeAddonState(xs, addons));
+            });
+          })
       )
       .then(xs => {
         const { ui: { clicked } } = getState();
