@@ -31,6 +31,7 @@ cliqzToursteps1Copy = Відкрийте нову вкладку і додайт
 cliqzToursteps2Copy = Ви завжди можете залишити свій відгук або вимкнути Cliqz в Test Pilot.
 containersContributors1Title = Інженер платформи
 containersContributors2Title = Інженер приватності
+containersContributors4Title = Firefox QA
 containersContributors7Title = Дизайнер інтерфейсу Firefox
 containersContributors8Title = Дизайнер інтерфейсу Firefox
 containersContributors9Title = Дизайнер інтерфейсу Firefox

@@ -179,6 +179,8 @@ disableExperiment = Вимкнути { $title }
 disableExperimentTransition = Вимикаємо...
 enableExperiment = Увімкнути { $title }
 enableExperimentTransition = Вмикаємо...
+experimentManuallyDisabled = { $title } вимкнено у менеджері додатків
+experimentMeasurementIntro = Окрім <a>даних</a>, що збираються всіма експериментами Test Pilot, є деякі ключові моменти, які ви маєте знати, щоб зрозуміти, що відбувається, коли ви використовуєте { $experimentTitle }:
 measurements = Ваша приватність
 experimentPrivacyNotice = Ви можете дізнатися більше про збір даних для { $title } тут.
 contributorsHeading = Для вас від
@@ -261,6 +263,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] Ваша е-пошта тут
 newsletterFormDisclaimer = Ми будемо надсилати вам лише інформацію, яка стосується Test Pilot.
 newsletterFormPrivacyNotice = Я погоджуюсь з тим, як Mozilla поводиться з моїми даними згідно з <a>цим повідомленням про приватність</a>.
+newsletterFormPrivacyAgreementRequired = Будь ласка, встановіть цей прапорець, щоб продовжити.
 newsletterFormSubmitButton = Підписатися зараз
 newsletterFormSubmitButtonSubmitting = Надсилаємо...
 
@@ -280,6 +283,7 @@ newsletterFooterSuccessBody = Якщо ви досі не підтвердили
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Цей експеримент не підтримує вашу мову ({ $locale_code }).
 localeWarningSubtitle = Ви все одно можете увімкнути його, якщо хочете.
 
 
