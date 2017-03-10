@@ -179,6 +179,7 @@ disableExperiment = Slå av { $title }
 disableExperimentTransition = Slår av…
 enableExperiment = Slå på { $title }
 enableExperimentTransition = Slår på...
+experimentManuallyDisabled = { $title } slått av i utvidingshandsamaren
 experimentMeasurementIntro = I tillegg til dei <a>data</a> som er samla inn av alle Test Pilot-eksperimenta, er dette dei viktigaste tinga du bør vite omkva som skjer når du brukar { $experimentTitle }:
 measurements = Ditt personvern
 experimentPrivacyNotice = Du kan lese meir om datainnsamlinga for { $title } her.
