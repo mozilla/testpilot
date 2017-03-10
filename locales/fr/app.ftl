@@ -176,6 +176,7 @@ disableExperiment = Désactiver { $title }
 disableExperimentTransition = Désactivation…
 enableExperiment = Activer { $title }
 enableExperimentTransition = Activation…
+experimentManuallyDisabled = { $title } est désactivé dans le gestionnaire de modules
 experimentMeasurementIntro = Outre les <a>données</a> collectées par toutes les expériences de Test Pilot, voici les principales choses que vous devez savoir sur ce qui se passe lorsque vous utilisez { $experimentTitle } :
 measurements = Confidentialité
 experimentPrivacyNotice = Vous pouvez en apprendre davantage sur la collecte de données pour { $title } ici.
