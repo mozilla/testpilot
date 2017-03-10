@@ -179,6 +179,7 @@ disableExperiment = Inaktivera { $title }
 disableExperimentTransition = Inaktiverar...
 enableExperiment = Aktivera { $title }
 enableExperimentTransition = Aktiverar...
+experimentManuallyDisabled = { $title } inaktiverad i tilläggshanteraren
 experimentMeasurementIntro = Utöver de <a>uppgifter</a> som samlats in av alla Test Pilot experiment, här är de viktigaste sakerna du bör veta om vad som händer när du använder { $experimentTitle }:
 measurements = Din sekretesspolicy
 experimentPrivacyNotice = Du kan läsa mer om datainsamlingen för { $title } här.
