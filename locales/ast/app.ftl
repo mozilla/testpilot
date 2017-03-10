@@ -54,6 +54,13 @@ landingInstalledButton = Escueyi les tos carauterístiques
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMajorCta = Habilitar { $title }
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -116,6 +123,7 @@ experimentListJustLaunchedTab = Ta acabante llanzase
 experimentListJustUpdatedTab = Ta acabante d'anovase
 experimentListEndingTomorrow = Fina mañana
 experimentListEndingSoon = Fina ceo
+experimentsListCondensedHeader = ¡Escueyi los tos esperimentos!
 
 
 
@@ -261,6 +269,7 @@ newsletterFooterSuccessBody = Si enantes nun confirmesti una soscripción al bol
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Esti esperimentu nun ta sofitáu na to llingua ({ $locale_code }).
 localeWarningSubtitle = Entá pues habilitalu si te presta.
 
 
