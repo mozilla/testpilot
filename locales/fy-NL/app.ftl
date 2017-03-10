@@ -176,6 +176,7 @@ disableExperiment = { $title } útskeakelje
 disableExperimentTransition = Utskeakelje…
 enableExperiment = { $title } ynskeakelje
 enableExperimentTransition = Ynskeakelje…
+experimentManuallyDisabled = { $title } yn Add-ons-behear útskeakele
 experimentMeasurementIntro = Neist de <a>gegevens</a>, dy't alle Test-Pilot-eksperiminten sammelje, moatte jo it folgjende witte oer it gebrûk fan { $experimentTitle }:
 measurements = Jo privacy
 experimentPrivacyNotice = Jo kinne hjir mear leare oer de gegevenssamling foar { $title }.
