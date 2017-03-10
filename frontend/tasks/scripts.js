@@ -54,6 +54,16 @@ gulp.task('scripts-misc', () => {
     .pipe(gulp.dest(config.DEST_PATH + 'static/scripts'));
 });
 
+gulp.task('scripts-generate-static-html', () => {
+  return commonBrowserify('generate-static-html.js', browserify({
+    entries: [config.SRC_PATH + 'generate-static-html.js'],
+    debug: config.IS_DEBUG,
+    fullPaths: config.IS_DEBUG,
+    transform: [babelify],
+    standalone: 'generate-static-html'
+  }).external(vendorModules));
+});
+
 gulp.task('scripts-app-main', () => {
   return commonBrowserify('app.js', browserify({
     entries: [config.SRC_PATH + 'app/index.js'],
@@ -72,6 +82,7 @@ gulp.task('scripts-app-vendor', () => {
 gulp.task('scripts-build', done => runSequence(
   'scripts-clean',
   'scripts-lint',
+  'scripts-generate-static-html',
   'scripts-misc',
   'scripts-app-main',
   'scripts-app-vendor',
