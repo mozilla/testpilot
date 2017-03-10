@@ -161,8 +161,8 @@ done
 > dist/static/addon/latest
 
 HASH=($(sha256sum dist/static/addon/addon.xpi))
-DIGEST="\"x-amz-meta-x-target-digest\": \"sha256:${HASH}\""
-LOCATION="\"x-amz-meta-location\": \"/static/addon/addon.xpi\""
+DIGEST="\"x-target-digest\": \"sha256:${HASH}\""
+LOCATION="\"location\": \"/static/addon/addon.xpi\""
 
 aws s3 cp \
   --cache-control "max-age=${TEN_MINUTES}" \
