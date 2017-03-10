@@ -179,6 +179,7 @@ disableExperiment = { $title } uitschakelen
 disableExperimentTransition = Uitschakelen...
 enableExperiment = { $title } inschakelen
 enableExperimentTransition = Inschakelen...
+experimentManuallyDisabled = { $title } is uitgeschakeld in de Add-onbeheerder
 experimentMeasurementIntro = Naast de <a>gegevens</a> die door alle Test Pilot-experimenten worden verzameld, zijn dit de belangrijkste zaken die u dient te weten over wat er bij het gebruik van { $experimentTitle } gebeurt:
 measurements = Uw privacy
 experimentPrivacyNotice = Hier vindt u meer info over het verzamelen van gegevens voor { $title }.
