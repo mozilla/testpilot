@@ -67,6 +67,11 @@ some changes or improvements or alternatives.
 
 We try to avoid landing any code without at least a cursory review.
 
+General rules for picking up reviews:
+ - if you are going to review a PR, assign yourself to it
+ - assigned person is responsible for helping get the PR over the finish line
+ - if a PR doesn't have an assigned person, it's up for grabs
+
 Reviewers will run through roughly the following checklist:
 - Does the code do what it says it does?
 - Is the proposed fix the right fix? Does it address the underlying cause of the bug?
