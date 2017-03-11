@@ -176,6 +176,7 @@ disableExperiment = 停用 { $title }
 disableExperimentTransition = 停用中…
 enableExperiment = 開啟 { $title }
 enableExperimentTransition = 啟用中…
+experimentManuallyDisabled = { $title } 已在附加元件管理員中被停用
 experimentMeasurementIntro = 除了所有 Test Pilot 實驗都會收集的 <a>資料</a> 外，以下是您使用 { $experimentTitle } 時應該知道的事情:
 measurements = 您的隱私權
 experimentPrivacyNotice = 您可在這裡了解 { $title } 會收集哪些資料。
