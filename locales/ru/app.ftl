@@ -179,6 +179,7 @@ disableExperiment = Отключить { $title }
 disableExperimentTransition = Отключение...
 enableExperiment = Включить { $title }
 enableExperimentTransition = Включение...
+experimentManuallyDisabled = { $title } отключено в менеджере дополнений
 experimentMeasurementIntro = В дополнение к <a>данным</a>, собранным всеми экспериментами Лётчика-испытателя, есть некоторые ключевые моменты, которые вам нужно знать, чтобы понять, что случается, когда вы используете { $experimentTitle }:
 measurements = Ваша приватность
 experimentPrivacyNotice = Вы можете узнать больше о сборе данных для { $title } здесь.
