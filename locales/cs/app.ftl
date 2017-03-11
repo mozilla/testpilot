@@ -179,6 +179,7 @@ disableExperiment = Zakázat { $title }
 disableExperimentTransition = Zakazování...
 enableExperiment = Povolit { $title }
 enableExperimentTransition = Povolování...
+experimentManuallyDisabled = { $title } je vypnut ve Správci doplňků
 experimentMeasurementIntro = Kromě <a>dat</a>, která experimenty Test Pilotu shromažďují, je tu několik důležitých věcí, které se dějí, když používáte { $experimentTitle }:
 measurements = Vaše soukromí
 experimentPrivacyNotice = Další informace o shromažďování dat pro { $title } můžete najít zde.
