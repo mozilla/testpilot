@@ -38,6 +38,7 @@ containersToursteps0Copy = Створіть контейнер, щоб позн�
 containersContributors0Title = Безпека і приватність користувачів
 containersContributors1Title = Інженер платформи
 containersContributors2Title = Інженер приватності
+containersContributors3Title = QA Інженер-тестувальник
 containersContributors4Title = Firefox QA
 containersContributors5Title = Стратег вмісту Firefox
 containersContributors6Title = Front End безпека
