@@ -105,7 +105,6 @@ export default class Telemetry {
       os_name: pcPing.environment.system.os.name,
       os_version: pcPing.environment.system.os.version,
       locale: pcPing.environment.settings.locale,
-      raw: JSON.stringify(pcPing),
       // Note: these two keys are normally inserted by the ping-centre client.
       client_id: ClientID.getCachedClientID(),
       topic: 'testpilot'
