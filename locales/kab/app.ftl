@@ -179,6 +179,7 @@ disableExperiment = Sens { $title }
 disableExperimentTransition = Tuksa n urmed...
 enableExperiment = Rmed { $title }
 enableExperimentTransition = Armad...
+experimentManuallyDisabled = { $title } isens deg umsefrak n izegrar
 experimentMeasurementIntro = Ar tama n <a>isefka</a>i d-yettwaleqḍen sɣur akk tirmitin n Test Pilot, hatent aya tsura i yessefk ad tissineḍ ɣef ayen iḍerrun ticki tseqdaceḍ { $experimentTitle }:
 measurements = Tabaḍnit-inek
 experimentPrivacyNotice = Tzemreḍ ad tisineḍ ugar ɣef ulqwaḍ n isefka i { $title } dagi.
@@ -262,6 +263,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] Imayl inek dagi
 newsletterFormDisclaimer = Ak-d-nazen talɣut icudden ar Test Pilot.
 newsletterFormPrivacyNotice = Qebleɣ d akken Mozilla ad iseqdec iseka yinu akken tella di <a>tsertit-agi n tbaḍnit</a>.
+newsletterFormPrivacyAgreementRequired = Ma ulac aɣilif ṛcem taxxamt-agi ma tebɣiḍ ad tkemleḍ.
 newsletterFormSubmitButton = Jerred tura
 newsletterFormSubmitButtonSubmitting = Tuzna...
 
