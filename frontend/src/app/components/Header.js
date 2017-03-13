@@ -69,21 +69,6 @@ export default class Header extends React.Component {
     if (this.closeTimer) { clearTimeout(this.closeTimer); }
   }
 
-  // HACK: We want to close the settings menu on any click outside the menu.
-  // However, a manually-attached event listener on document.body seems to fire
-  // the 'close' event before any other clicks register inside the settings
-  // menu. So, here's a kludge to schedule a menu close on any click, but
-  // cancel if the click was inside the menu. Sounds backwards, but it works.
-
-  componentDidMount() {
-    document.body.addEventListener('click', this.close);
-  }
-
-  componentWillUnmount() {
-    if (this.closeTimer) { clearTimeout(this.closeTimer); }
-    document.body.removeEventListener('click', this.close);
-  }
-
   render() {
     return (
       <div>
