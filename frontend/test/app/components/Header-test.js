@@ -54,7 +54,6 @@ describe('app/components/Header', () => {
     });
 
     describe('and showSettings=true', () => {
-      let dom;
       beforeEach(() => {
         subject.setState({ showSettings: true });
       });
