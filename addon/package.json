@@ -7,7 +7,7 @@
   "repository": "mozilla/testpilot",
   "homepage": "https://testpilot.firefox.com/",
   "updateURL": "https://testpilot.firefox.com/static/addon/update.rdf",
-  "updateLink": "https://testpilot.firefox.com/static/addon/addon.xpi",
+  "updateLink": "https://testpilot.firefox.com/static/addon/latest",
   "icon": "resource://@testpilot-addon/data/icon-96.png",
   "bugs": {
     "url": "https://github.com/mozilla/testpilot/issues"
