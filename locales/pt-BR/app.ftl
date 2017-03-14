@@ -179,6 +179,7 @@ disableExperiment = Desabilitar { $title }
 disableExperimentTransition = Desabilitando…
 enableExperiment = Habilitar { $title }
 enableExperimentTransition = Habilitando…
+experimentManuallyDisabled = { $title } desativado no Gerenciador de Extensões
 experimentMeasurementIntro = Além dos <a>dados</a> coletados por todas as experiências do Test Pilot, aqui estão as principais coisas que você deve saber sobre o que acontece quando você usar o { $experimentTitle }:
 measurements = Sua privacidade
 experimentPrivacyNotice = Você pode saber mais sobre a coleção de dados de { $title } aqui.
