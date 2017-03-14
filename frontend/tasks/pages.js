@@ -6,19 +6,19 @@ const fs = require('fs');
 const gutil = require('gulp-util');
 const multiDest = require('gulp-multi-dest');
 const through = require('through2');
-const Mustache = require('mustache');
 const YAML = require('yamljs');
 
 const md = new Remarkable({ html: true });
 
-const indexTemplate = fs.readFileSync(config.SRC_PATH + 'templates/index.mustache').toString();
 const compiledTemplates = require('../../compiled-templates/compiled-templates');
 
 const THUMBNAIL_FACEBOOK = config.PRODUCTION_URL + '/static/images/thumbnail-facebook.png';
 const THUMBNAIL_TWITTER = config.PRODUCTION_URL + '/static/images/thumbnail-twitter.png';
 
 gulp.task('pages-misc', () => {
-  return gulp.src(config.SRC_PATH + 'templates/index.mustache')
+  // We just need a dummy file to get a stream going; we're going to ignore
+  // the contents in buildLandingPage
+  return gulp.src(config.SRC_PATH + 'generate-static-html.js')
     .pipe(buildLandingPage())
     .pipe(multiDest([
       '', 'experiments', 'onboarding', 'home', 'share', 'legacy', 'error', 'retire'
@@ -50,22 +50,24 @@ gulp.task('pages-build', [
 ]);
 
 gulp.task('pages-watch', () => {
-  gulp.watch(config.SRC_PATH + 'templates/index.mustache', ['pages-build']);
+  gulp.watch(config.SRC_PATH + 'generate-static-html.js', ['pages-build']);
   gulp.watch(['./compiled-templates/*.md', './compiled-templates/*.js'], ['pages-compiled']);
 });
 
 function buildLandingPage() {
   return through.obj(function experimentPage(file, enc, cb) {
-    const template = file.contents.toString();
-    const pageContent = Mustache.render(template, {
-      meta_title: 'Firefox Test Pilot',
-      meta_description: 'Test new Features. Give us feedback. Help build Firefox.',
-      canonical_path: '',
-      image_facebook: THUMBNAIL_FACEBOOK,
-      image_twitter: THUMBNAIL_TWITTER,
-      enable_pontoon: config.ENABLE_PONTOON,
-      available_locales: config.AVAILABLE_LOCALES
-    });
+    const generateStaticHtml = require('../build/static/app/generate-static-html.js');
+    const pageContent = generateStaticHtml.generateStaticPage(
+      {
+        meta_title: 'Firefox Test Pilot',
+        meta_description: 'Test new Features. Give us feedback. Help build Firefox.',
+        canonical_path: '',
+        image_facebook: THUMBNAIL_FACEBOOK,
+        image_twitter: THUMBNAIL_TWITTER,
+        enable_pontoon: config.ENABLE_PONTOON,
+        available_locales: config.AVAILABLE_LOCALES
+      }
+    );
     this.push(new gutil.File({
       path: 'index.html',
       contents: new Buffer(pageContent)
@@ -78,17 +80,20 @@ function buildExperimentPage() {
   return through.obj(function experimentPage(file, enc, cb) {
     const yamlData = file.contents.toString();
     const experiment = YAML.parse(yamlData);
-    const pageContent = Mustache.render(indexTemplate, {
-      meta_title: 'Firefox Test Pilot - ' + experiment.title,
-      meta_description: experiment.description,
-      canonical_path: 'experiments/' + experiment.slug + '/',
-      image_facebook: config.PRODUCTION_URL + experiment.image_facebook ||
-        THUMBNAIL_FACEBOOK,
-      image_twitter: config.PRODUCTION_URL + experiment.image_twitter ||
-        THUMBNAIL_TWITTER,
-      enable_pontoon: config.ENABLE_PONTOON,
-      available_locales: config.AVAILABLE_LOCALES
-    });
+    const generateStaticHtml = require('../build/static/app/generate-static-html.js');
+    const pageContent = generateStaticHtml.generateStaticPage(
+      {
+        meta_title: 'Firefox Test Pilot - ' + experiment.title,
+        meta_description: experiment.description,
+        canonical_path: 'experiments/' + experiment.slug + '/',
+        image_facebook: config.PRODUCTION_URL + experiment.image_facebook ||
+          THUMBNAIL_FACEBOOK,
+        image_twitter: config.PRODUCTION_URL + experiment.image_twitter ||
+          THUMBNAIL_TWITTER,
+        enable_pontoon: config.ENABLE_PONTOON,
+        available_locales: config.AVAILABLE_LOCALES
+      }
+    );
     this.push(new gutil.File({
       path: experiment.slug + '/index.html',
       contents: new Buffer(pageContent)
