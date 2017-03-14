@@ -29,7 +29,6 @@
     "react-router": "^2.7.0",
     "react-router-redux": "^4.0.5",
     "redux": "^3.5.2",
-    "redux-actions": "^1.2.1",
     "redux-logger": "^2.6.1",
     "redux-promise": "^0.5.3",
     "reselect": "^2.5.4",

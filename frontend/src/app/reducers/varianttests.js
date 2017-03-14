@@ -1,8 +1,6 @@
 
 import seedrandom from 'seedrandom';
 
-import { handleActions } from 'redux-actions';
-
 function random(choices) {
   let summedWeight = 0;
   const variants = [];
@@ -36,7 +34,6 @@ const tests = [
 ];
 
 const chosenVariants = {};
-const identityReducers = {};
 
 let chosenTest = null;
 
@@ -55,7 +52,6 @@ tests.forEach(test => {
     }
     chosenVariants[test.name] = chosen;
   }
-  identityReducers[test.name] = state => state;
 });
 
 export function getChosenTest() {
@@ -68,4 +64,6 @@ export function getChosenTest() {
   return chosenTest;
 }
 
-export default handleActions(identityReducers, chosenVariants);
+export default function variantTestsReducer() {
+  return chosenVariants;
+}
