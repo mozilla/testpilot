@@ -71,7 +71,7 @@ gulp.task('scripts-app-vendor', () => {
 
 gulp.task('scripts-build', done => runSequence(
   'scripts-clean',
-  'scripts-lint',
+  // 'scripts-lint',
   'scripts-misc',
   'scripts-app-main',
   'scripts-app-vendor',
