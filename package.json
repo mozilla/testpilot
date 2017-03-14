@@ -16,7 +16,7 @@
     "domready": "^1.0.8",
     "es-symbol": "^1.1.2",
     "es6-promise": "^3.0.2",
-    "history": "^2.0.0",
+    "history": "^4.6.0",
     "isomorphic-fetch": "^2.2.1",
     "js-cookie": "2.1.1",
     "l20n": "4.0.0-beta.1",
