@@ -17,6 +17,7 @@ gulp.task('dist-rev-assets', function() {
     ],
     dontUpdateReference: [
       /static\/addon\/*/,
+      /static\/locales\/*/,
       /.*\.json/,
       /static\/images\/experiments\/[^]*\/social\/*/,
       'favicon.ico'
