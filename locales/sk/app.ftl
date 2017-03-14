@@ -179,6 +179,7 @@ disableExperiment = Ukončiť experiment { $title }
 disableExperimentTransition = Ukončovanie...
 enableExperiment = Aktivovať { $title }
 enableExperimentTransition = Aktivácia...
+experimentManuallyDisabled = Experiment { $title } bol zakázaný v Správcovi doplnkov
 experimentMeasurementIntro = Experimenty programu Test Pilot zbierajú <a>údaje</a>. Okrem toho je tu pár dôležitých vecí, o ktorých by ste mali vedieť a ktoré súvisia s vašim používaním experimentu { $experimentTitle }:
 measurements = Vaše súkromie
 experimentPrivacyNotice = Viac sa o zbieraní údajov pre { $title } dozviete tu.
