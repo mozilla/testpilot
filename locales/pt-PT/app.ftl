@@ -284,7 +284,7 @@ newsletterFooterSuccessBody = Se não confirmou previamente uma subscrição par
 [[ localeWarning ]]
 
 localeUnavailableWarningTitle = Esta experiência não é suportada no seu idioma ({ $locale_code }).
-localeWarningSubtitle = Ainda pode ativá-lo se desejar.
+localeWarningSubtitle = Ainda pode ativá-la se desejar.
 
 
 
