@@ -95,6 +95,7 @@ onboardingMessage = Kami menempatkan ikon di bilah alat sehingga Anda dapat sela
 [[ error ]]
 
 errorHeading = Duh!
+notFoundHeader = Empat Oh Empat!
 
 
 
@@ -104,6 +105,9 @@ errorHeading = Duh!
 emailOptInDialogTitle = Selamat datang di Test Pilot!
 emailOptInMessage = Cari tahu percobaan baru dan lihat hasil pengujian percobaan yang sudah Anda coba.
 emailValidationError = Tolong gunakan alamat email yang sah!
+
+# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput = [html/placeholder] surel di sini :)
 emailOptInButton = Daftarkan saya
 emailOptInConfirmationTitle = Surel Terkirim
 emailOptInSuccessMessage2 = Terima kasih!
