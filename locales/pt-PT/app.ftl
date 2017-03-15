@@ -1,13 +1,13 @@
-siteName = Piloto de Teste do Firefox
+siteName = Firefox Test Pilot
 
 
 # Page titles, put in the <title> HTML tag.
 [[ pageTitle ]]
 
-pageTitleDefault = Piloto de Teste do Firefox
-pageTitleLandingPage = Piloto de Teste do Firefox
-pageTitleExperimentListPage = Piloto de Teste do Firefox - Experiências
-pageTitleExperiment = Piloto de Teste do Firefox - { $title }
+pageTitleDefault = Firefox Test Pilot
+pageTitleLandingPage = Firefox Test Pilot
+pageTitleExperimentListPage = Firefox Test Pilot - Experiências
+pageTitleExperiment = Firefox Test Pilot - { $title }
 
 
 
@@ -18,7 +18,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Privacidade
 footerLinkTerms = Termos
 footerLinkLegal = Legal
-footerLinkAbout = Acerca do Piloto de Teste
+footerLinkAbout = Acerca do Test Pilot
 
 
 
@@ -27,10 +27,10 @@ footerLinkAbout = Acerca do Piloto de Teste
 
 home = Página inicial
 menuTitle = Definições
-menuWiki = Wiki do Piloto de Teste
-menuDiscuss = Discutir o Piloto de Teste
+menuWiki = Wiki do Test Pilot
+menuDiscuss = Discutir o Test Pilot
 menuFileIssue = Comunique um problema
-menuRetire = Desinstalar o Piloto de Teste
+menuRetire = Desinstalar o Test Pilot
 
 
 
@@ -40,7 +40,7 @@ menuRetire = Desinstalar o Piloto de Teste
 landingIntroOne = Testar novas funcionalidades.
 landingIntroTwo = Dê o seu feedback.
 landingIntroThree = Ajude a construir o Firefox.
-landingLegalNotice = Ao prosseguir, você concorda com os <a>Termos de utilização</a> e o <a>Aviso de privacidade</a> do Piloto de Teste.
+landingLegalNotice = Ao prosseguir, você concorda com os <a>Termos de utilização</a> e o <a>Aviso de privacidade</a> do Test Pilot.
 landingExperimentsTitle = Experimente as funcionalidades mais recentes
 
 
@@ -48,7 +48,7 @@ landingExperimentsTitle = Experimente as funcionalidades mais recentes
 # Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
-landingInstallButton = Instalar o extra do Piloto de Teste
+landingInstallButton = Instalar o extra do Test Pilot
 landingInstallingButton = A instalar...
 landingInstalledButton = Escolha as suas funcionalidades
 
@@ -57,7 +57,7 @@ landingInstalledButton = Escolha as suas funcionalidades
 # Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
-oneClickInstallMinorCta = Instalar o Piloto de Teste &amp;
+oneClickInstallMinorCta = Instalar o Test Pilot e
 oneClickInstallMajorCta = Ativar { $title }
 
 
@@ -65,9 +65,9 @@ oneClickInstallMajorCta = Ativar { $title }
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
-landingRequiresDesktop = O Piloto de Teste requer o Firefox para Computador no Windows, Mac ou Linux
-landingDownloadFirefoxDesc = (O Piloto de Teste está disponível para o Firefox no Windows, OS X e Linux)
-landingUpgradeDesc = O Piloto de Teste requer o Firefox 49 ou superior.
+landingRequiresDesktop = O Test Pilot requer o Firefox para Computador no Windows, Mac ou Linux
+landingDownloadFirefoxDesc = (O Test Pilot está disponível para o Firefox no Windows, OS X e Linux)
+landingUpgradeDesc = O Test Pilot requer o Firefox 49 ou superior.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Atualizar o Firefox
 landingDownloadFirefoxSubTitle = Descarga gratuita
@@ -78,7 +78,7 @@ landingDownloadFirefoxSubTitle = Descarga gratuita
 [[ landingCard ]]
 
 landingCardListTitle = Comece em 3, 2, 1
-landingCardOne = Obtenha o extra do Piloto de Teste
+landingCardOne = Obtenha o extra do Test Pilot
 landingCardTwo = Ativar funcionalidades experimentais
 landingCardThree = Dê-nos a sua opinião
 
@@ -87,7 +87,7 @@ landingCardThree = Dê-nos a sua opinião
 # Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
-onboardingMessage = Nós colocámos um ícone na sua barra de ferramentas para que consiga sempre encontrar o Piloto de Teste.
+onboardingMessage = Nós colocámos um ícone na sua barra de ferramentas para que consiga sempre encontrar o Test Pilot.
 
 
 
@@ -103,7 +103,7 @@ notFoundHeader = 404!
 # A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
-emailOptInDialogTitle = Bem-vindo ao Piloto de Teste!
+emailOptInDialogTitle = Bem-vindo ao Test Pilot!
 emailOptInMessage = Conheça novas experiências e consulte os resultados dos testes de experiências que experimentou.
 emailValidationError = Por favor introduza um endereço de email válido!
 
@@ -144,7 +144,7 @@ experimentCardLearnMore = Saiba mais
 feedbackSubmitButton = Responda a um questionário rápido
 feedbackUninstallTitle = Obrigado!
 feedbackUninstallCopy = 
-  | A sua participação no Piloto de Teste do Firefox significa
+  | A sua participação no Firefox Test Pilot significa
   | muito! Por favor, consulte as nossas outras experiências,
   | e fique atento para o que está para vir!
 
@@ -162,7 +162,7 @@ experimentPreFeedbackLinkCopy = Dê a sua opinião sobre a experiência { $title
 [[ experimentPromo ]]
 
 experimentPromoHeader = Pronto para descolar?
-experimentPromoSubheader = Estamos a construir funcionalidades de última geração no Firefox. Instale o Piloto de Teste para experimentá-las!
+experimentPromoSubheader = Estamos a construir funcionalidades de última geração no Firefox. Instale o Test Pilot para experimentá-las!
 
 
 
@@ -180,7 +180,7 @@ disableExperimentTransition = A desativar...
 enableExperiment = Ativar { $title }
 enableExperimentTransition = A ativar...
 experimentManuallyDisabled = { $title } desativado no Gestor de extras
-experimentMeasurementIntro = Além de <a>dados</a> recolhidos por todas as experiências do Piloto de Teste, aqui estão as principais coisas que deve saber sobre o que esta acontecer quando utiliza { $experimentTitle }:
+experimentMeasurementIntro = Além de <a>dados</a> recolhidos por todas as experiências do Test Pilot, aqui estão as principais coisas que deve saber sobre o que esta acontecer quando utiliza { $experimentTitle }:
 measurements = A sua privacidade
 experimentPrivacyNotice = Pode saber mais sobre os dados recolhidos para { $title } aqui.
 contributorsHeading = Trazido a você por
@@ -210,11 +210,11 @@ upgradeNoticeLink = Como atualizar o Firefox.
 # Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
-retireDialogTitle = Desinstalar o Piloto de Teste?
+retireDialogTitle = Desinstalar o Test Pilot?
 retireMessage = Como desejar. Isto vai desativar quaisquer testes ativos, desinstalar o extra e remover as informações da sua conta dos nossos servidores.
-retireEmailMessage = Para deixar de receber atualizações por email, basta clicar na ligação <em>cancelar subscrição</em> em qualquer email do Piloto de Teste.
+retireEmailMessage = Para deixar de receber atualizações por email, basta clicar na ligação <em>cancelar subscrição</em> em qualquer email do Test Pilot.
 retireSubmitButton = Proceder
-pageTitleRetirePage = Piloto de Teste do Firefox - Desinstalar o Piloto de Teste
+pageTitleRetirePage = Firefox Test Pilot - Desinstalar o Test Pilot
 retirePageProgressMessage = A encerrar...
 retirePageHeadline = Obrigado por voar!
 retirePageMessage = Esperamos que se tenha divertido a experimentar connosco. <br> Volte a qualquer momento.
@@ -227,7 +227,7 @@ retirePageSurveyButton = Responda a um questionário rápido
 
 restartIntroLead = Lista de verificação
 restartIntroOne = Reinicie o seu navegador
-restartIntroTwo = Localize o extra do Piloto de Teste
+restartIntroTwo = Localize o extra do Test Pilot
 restartIntroThree = Selecione as suas experiências
 
 
@@ -235,7 +235,7 @@ restartIntroThree = Selecione as suas experiências
 # Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
-sharePrimary = Ama o Piloto de Teste? Ajude-nos a encontrar novos recrutas.
+sharePrimary = Gostou do Test Pilot? Ajude-nos a encontrar alguns novos recrutas.
 shareSecondary = ou apenas copie e cole esta ligação...
 shareEmail = E-mail
 shareCopy = Copiar
@@ -243,7 +243,7 @@ shareCopy = Copiar
 # Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } termina em { $completedDate }
 eolNoticeLink = Saber mais
-eolDisableMessage = A experiência { $title } terminou. Assim que a desinstalar não vai conseguir reinstalá-la novamente através do Piloto de Teste.
+eolDisableMessage = A experiência { $title } terminou. Assim que a desinstalar não vai conseguir reinstalá-la novamente através do Test Pilot.
 completedDateLabel = Data de fim da experiência: <b>{ $completedDate }</b>
 
 
@@ -261,7 +261,7 @@ incompatibleSubheader = Recomendamos <a>desativar estes extras</a> antes de ativ
 
 newsletterFormEmailPlaceholder = 
   [html/placeholder] O seu email aqui
-newsletterFormDisclaimer = Nós só iremos enviar-lhe informação relacionada sobre o Piloto de Teste.
+newsletterFormDisclaimer = Nós só iremos enviar-lhe informação relacionada sobre o Test Pilot.
 newsletterFormPrivacyNotice = Concordo que a Mozilla faça a gestão da minha informação tal como explicado neste <a>aviso de privacidade</a>.
 newsletterFormPrivacyAgreementRequired = Por favor marque esta caixa se deseja proceder.
 newsletterFormSubmitButton = Registe-se agora
@@ -292,7 +292,7 @@ localeWarningSubtitle = Ainda pode ativá-la se desejar.
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = Vamos tirar este bebé do chão!
-experimentsListNoneInstalledSubheader = Pronto para experimentar uma nova experiência do Piloto de Teste? Selecione uma para ativar, leve-a para uma volta, e deixe-nos saber o que pensa.
+experimentsListNoneInstalledSubheader = Pronto para experimentar uma nova experiência do Test Pilot? Selecione uma para ativar, leve-a para uma volta, e deixe-nos saber o que pensa.
 experimentsListNoneInstalledCTA = Não esta interessado? <a>Deixe-nos saber porquê</a>.
 
 
@@ -301,7 +301,7 @@ experimentsListNoneInstalledCTA = Não esta interessado? <a>Deixe-nos saber porq
 [[ noscript ]]
 
 noScriptHeading = Uh oh...
-noScriptMessage = O Piloto de Teste requer JavaScript.<br>Pedimos desculpa.
+noScriptMessage = O Test Pilot requer JavaScript.<br>Pedimos desculpa.
 noScriptLink = Saiba porquê
 
 
