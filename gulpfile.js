@@ -22,8 +22,14 @@ require('./addon/tasks/locales');
 
 gulp.task('clean', () => del([
   config.DEST_PATH,
+  config.DIST_PATH
+]));
+
+gulp.task('distclean', () => del([
+  config.DEST_PATH,
   config.DIST_PATH,
-  config.DJANGO_OLD_STATIC
+  './node_modules',
+  './addon/node_modules'
 ]));
 
 gulp.task('build', done => runSequence(
