@@ -48,9 +48,9 @@ gulp.task('scripts-watch', () => {
 
 gulp.task('scripts-misc', () => {
   return gulp.src(config.SRC_PATH + 'scripts/**/*')
-    .pipe(gulpif(config.IS_DEBUG, sourcemaps.init({loadMaps: true})))
+    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(gulpif(!config.IS_DEBUG, uglify()))
-    .pipe(gulpif(config.IS_DEBUG, sourcemaps.write('./')))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(config.DEST_PATH + 'static/scripts'));
 });
 
@@ -94,10 +94,10 @@ function commonBrowserify(sourceName, b) {
     .bundle()
     .pipe(source(sourceName))
     .pipe(buffer())
-    .pipe(gulpif(config.IS_DEBUG, sourcemaps.init({loadMaps: true})))
+    .pipe(sourcemaps.init({loadMaps: true}))
      // don't uglify in development. eases build chain debugging
     .pipe(gulpif(!config.IS_DEBUG, uglify()))
     .on('error', gutil.log)
-    .pipe(gulpif(config.IS_DEBUG, sourcemaps.write('./')))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(config.DEST_PATH + 'static/app/'));
 }
