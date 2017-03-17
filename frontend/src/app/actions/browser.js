@@ -1,3 +1,11 @@
-import { createActions } from 'redux-actions';
 
-export default createActions({}, 'setState');
+function setState(payload) {
+  return {
+    type: 'SET_STATE',
+    payload: payload
+  };
+}
+
+export default {
+  setState
+};

@@ -1,23 +1,26 @@
-import { createActions } from 'redux-actions';
 
-export default createActions({
+function updateExperiment(addonID, data) {
+  return {
+    type: 'UPDATE_EXPERIMENT',
+    payload: { addonID, data }
+  };
+}
 
-  updateExperiment: (addonID, data) => ({ addonID, data }),
+function fetchUserCounts(countsUrl) {
+  return fetch(countsUrl)
+    .then(
+      response => {
+        if (response.ok) {
+          return {
+            type: 'FETCH_USER_COUNTS',
+            payload: { data: response.json() }
+          };
+        }
+        throw new Error('Could not get user counts');
+      });
+}
 
-  fetchUserCounts: (countsUrl) => {
-    return fetch(countsUrl)
-      .then(
-        response => {
-          if (response.ok) {
-            return response.json();
-          }
-          // TODO: in this and the error case log to Sentry
-          return {};
-        },
-        () => ({}))
-      .then(counts => ({
-        data: counts
-      }));
-  }
-
-});
+export default {
+  updateExperiment,
+  fetchUserCounts
+};

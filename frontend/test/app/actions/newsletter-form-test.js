@@ -5,9 +5,9 @@ import sinon from 'sinon';
 
 import { basketUrl } from '../../../src/app/actions/newsletter-form';
 
-const FAILED = 'newsletterFormSetFailed';
-const SUBMITTING = 'newsletterFormSetSubmitting';
-const SUCCEEDED = 'newsletterFormSetSucceeded';
+const FAILED = 'NEWSLETTER_FORM_SET_FAILED';
+const SUBMITTING = 'NEWSLETTER_FORM_SET_SUBMITTING';
+const SUCCEEDED = 'NEWSLETTER_FORM_SET_SUCCEEDED';
 
 const MOCK_EMAIL = 'foo@bar.com';
 const MOCK_LOCALE = 'bz';
