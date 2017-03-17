@@ -21,10 +21,6 @@
     margin: 0 .6%;
   }
 
-  @include respond-to('small') {
-    flex: 0 0 90%;
-  }
-
   padding: $grid-unit;
   position: relative;
 
