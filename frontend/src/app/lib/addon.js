@@ -31,7 +31,7 @@ function mozAddonManagerInstall(url) {
 
 export function installAddon(requireRestart, sendToGA, eventCategory, eventLabel) {
   const { protocol, hostname, port } = window.location;
-  const path = '/static/addon/addon.xpi';
+  const path = '/static/addon/latest';
   const downloadUrl = `${protocol}//${hostname}${port ? ':' + port : ''}${path}`;
   const useMozAddonManager = (
     navigator.mozAddonManager &&

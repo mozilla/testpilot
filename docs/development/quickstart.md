@@ -32,7 +32,7 @@ npm install
 
 # Add hostname alias to /etc/hosts and start up dev webserver
 echo '127.0.0.1 example.com' | sudo tee -a /etc/hosts
-USE_HTTPS=1 npm start
+npm start
 ```
 
 **Note:** While you *will* be able to see the web site locally via

@@ -176,6 +176,7 @@ disableExperiment = غیرفعال‌سازی { $title }
 disableExperimentTransition = در حال غیرفعال‌سازی…
 enableExperiment = فعال‌سازی { $title }
 enableExperimentTransition = در حال فعال‌سازی…
+experimentManuallyDisabled = ‫{ $title } در مدیریت افزودنی‌ها غیرفعال شده است
 experimentMeasurementIntro = در کنار <a>اطلاعاتی</a> که توسط تمام آزمایش‌های «خلبان آزمایشی» جمع می‌شود، این اطلاعات کلیدی‌ای هستند که باید در مورد اتفاقاتی که هنگام استفاده از { $experimentTitle } می‌افتد بدانید:
 measurements = حریم‌خصوصی شما
 experimentPrivacyNotice = شما می‌توانید اطلاعات بیشتر در مورد جمع‌آوری اطلاعات برای { $title } را اینجا کسب کنید.

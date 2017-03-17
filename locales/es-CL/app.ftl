@@ -179,6 +179,8 @@ disableExperiment = Desactivar { $title }
 disableExperimentTransition = Desactivando...
 enableExperiment = Activar { $title }
 enableExperimentTransition = Activando...
+experimentManuallyDisabled = { $title } desactivado en el Administrador de complementos
+experimentMeasurementIntro = En adición a los <a>datos</a> recolectados por todos los experimentos de Test Pilot, aquí están las cosas clave que debieras saber sobre lo que sucede cuando usas { $experimentTitle }:
 measurements = Tu privacidad
 experimentPrivacyNotice = Puedes leer más sobre la recolección de datos para { $title } aquí.
 contributorsHeading = Traído a ti por
@@ -261,6 +263,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] tu correo va aquí
 newsletterFormDisclaimer = Solo te enviaremos información relacionada con Test Pilot.
 newsletterFormPrivacyNotice = Me parece bien que Mozilla gestione mi información según se indica en el <a>Aviso de privacidad</a>.
+newsletterFormPrivacyAgreementRequired = Por favor, marca esta cajita si quieres proceder.
 newsletterFormSubmitButton = Suscríbete ahora
 newsletterFormSubmitButtonSubmitting = Enviando...
 
@@ -273,12 +276,14 @@ newsletterFooterError = Hubo un error al enviar tu correo. ¿Volvemos a intentar
 newsletterFooterHeader = Mantente informado
 newsletterFooterBody = Entérate de nuevos experimentos y mira los resultados de aquellos en los que has participado.
 newsletterFooterSuccessHeader = ¡Gracias!
+newsletterFooterSuccessBody = Si no has confirmado previamente una suscripción a un boletín relacionado a Mozilla, puede que tengas que hacerlo. Por favor, revisa tu bandeja de entrada o filtro de spam en busca de un email de nosotros.
 
 
 
 # A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Este experimento no está soportado en tu idioma ({ $locale_code }).
 localeWarningSubtitle = Todavía lo puedes activar si lo deseas.
 
 
@@ -287,6 +292,8 @@ localeWarningSubtitle = Todavía lo puedes activar si lo deseas.
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = ¡Hagamos despegar este bebé!
+experimentsListNoneInstalledSubheader = ¿Listo para probar un nuevo experimento de Test Pilot? Selecciona uno para activarlo, pruébalo y cuéntanos que piensas.
+experimentsListNoneInstalledCTA = ¿No te interesa? <a>Dinos por qué</a>.
 
 
 

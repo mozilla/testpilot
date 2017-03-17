@@ -182,7 +182,7 @@ measurements = Confidentialité
 experimentPrivacyNotice = Vous pouvez en apprendre davantage sur la collecte de données pour { $title } ici.
 contributorsHeading = Conçu et réalisé par
 contributorsExtraLearnMore = En savoir plus
-changelog = notes de version
+changelog = Notes de version
 tour = Visite guidée
 tourLink = visite guidée
 contribute = Participer
@@ -281,7 +281,7 @@ newsletterFooterSuccessBody = Si vous n’avez jamais confirmé d’abonnement �
 [[ localeWarning ]]
 
 localeUnavailableWarningTitle = Cette expérience n’est pas disponible dans votre langue ({ $locale_code }).
-localeWarningSubtitle = Vous pourrez toujours l’activer ensuite si vous le souhaitez.
+localeWarningSubtitle = Vous pouvez quand même l’activer si vous le souhaitez.
 
 
 
