@@ -107,6 +107,7 @@ pulseContributors0Title = Senior inžinier
 pulseContributors1Title = Firefox UX
 pulseContributors2Title = Firefox Platform Product Intelligence
 pulseContributors3Title = Firefox QA
+snoozetabsDescription = Správna webstránka v nesprávny čas? Odložte si ju na neskôr. Snooze Tabs vám umožňuje odložiť karty a nastaviť ich otvorenie na vami stanovený čas.
 snoozetabsToursteps4Copy = Pomocou Test Pilotu nám môžete poskytnúť spätnú väzbu alebo Snooze Tabs deaktivovať.
 snoozetabsContributors0Title = Senior inžinier
 snoozetabsContributors1Title = Firefox UX
