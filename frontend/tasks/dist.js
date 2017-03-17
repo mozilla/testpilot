@@ -6,7 +6,7 @@ const runSequence = require('run-sequence');
 const RevAll = require('gulp-rev-all');
 
 gulp.task('dist-rev-assets', function() {
-  const revAll = new RevAll({
+  const revAll = RevAll.revision({
     dontRenameFile: [
       '.json',
       'favicon.ico',
@@ -24,7 +24,7 @@ gulp.task('dist-rev-assets', function() {
     ]
   });
   return gulp.src(config.DEST_PATH + '**')
-    .pipe(revAll.revision())
+    .pipe(revAll)
     .pipe(gulp.dest(config.DIST_PATH));
 });
 
