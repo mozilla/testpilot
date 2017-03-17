@@ -33,6 +33,7 @@ cliqzDetails2Copy = Uɣal ar ismal inek i tḥemleḍ s yiwen n usiti ticki teld
 cliqzToursteps0Copy = <p>Bdu aru deg ufeggag n tensa URL akken ad d-banen igmaḍ s wakud ilaw.</p>
 cliqzToursteps1Copy = <p>Ldi iccer amaynut akken ad ternuḍ ismal inek web i tḥemleḍ sakin kcem ɣur-sen s yiwen n usiti.</p>
 cliqzToursteps2Copy = <p>Tzemred aɣ-d-azneḍ tikti yinek yal tikelt melmi tebɣiḍ neɣ sens Cliqz n Test Pilot.</p>
+containersIntroduction = Tarmit n imagbaren ak-teǧǧ ad ternuɣ imeɣna di Firefox i yal tudert-ik tumḍint. Tibzimin akked yiccaren s yini udmawan ak-d-fken afus akken ad tsimgirdeḍ gar irmuden, am tiɣin srid, asuddes n tirza, neɣ awali n iznan inek isedriyen. Imagbaren ad skelsen inagan n tuqqna yal yiwen iman-is, tzemreḍ ad teqqneḍ ar usmel s umiḍan-nniḍen di yal amnaḍ yettwarnan, sakin imsfuɣal ur ttizmiren ara ad eggen assaɣ gar urmud inek deg umagbar akked urmud inek yeḍran deg umagbar-nniḍen. Tzemreḍ ad tsemgirdeḍ gar tudert inek tinmetti neɣ tasedrit, war ma tugadeḍ imesfuɣal n tunigin inek di Web.
 containersToursteps0Copy = Rnu amnaḍ amaynut akken ad ternuḍ tabzimt neɣ ad tsuddseḍ tagrumma n yiccaren.
 containersToursteps1Copy = Sers taḥnaccaṭ ɣef tqeffalt Iccer amaynut akken ad tferneḍ amnaḍ.
 containersContributors0Title = Seqdec taɣellist akked tusligin
