@@ -109,6 +109,7 @@ pulseContributors2Title = Firefox Platform Product Intelligence
 pulseContributors3Title = Firefox QA
 snoozetabsDescription = Správna webstránka v nesprávny čas? Odložte si ju na neskôr. Snooze Tabs vám umožňuje odložiť karty a nastaviť ich otvorenie na vami stanovený čas.
 snoozetabsMeasurements0 = Snooze Tabs bude zbierať informácie o vašej interakcii s doplnkom, napríklad ak otvoríte ponuku z tlačidla na paneli nástrojov a budete upravovať alebo odstraňovať odložené karty.
+snoozetabsMeasurements1 = Snooze Tabs bude taktiež zbierať informácie o vašom používaní jeho funkcie. Ide napríklad o odloženie karty, jej prebudenie či zavretie alebo prepnutie sa na ňu.
 snoozetabsMeasurements2 = Snooze Tabs NEZBIERA žiadne údaje alebo detaily o vašich kartách (URL, meta atribúty či obsah stránok).
 snoozetabsDetails0Copy = Odložte svoju kartu a vyberte si čas, kedy ju má Firefox otvoriť.
 snoozetabsDetails1Copy = Snooze Tabs vás upozorní na návrat vašej karty.
