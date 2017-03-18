@@ -79,7 +79,7 @@ landingDownloadFirefoxSubTitle = Descarga gratuita
 
 landingCardListTitle = Comece em 3, 2, 1
 landingCardOne = Obtenha o extra do Test Pilot
-landingCardTwo = Ativar funcionalidades experimentais
+landingCardTwo = Ative funcionalidades experimentais
 landingCardThree = Dê-nos a sua opinião
 
 
@@ -124,7 +124,7 @@ experimentListEnabledTab = Ativado
 experimentListJustLaunchedTab = Acabado de lançar
 experimentListJustUpdatedTab = Acabado de atualizar
 experimentListEndingTomorrow = Termina amanhã
-experimentListEndingSoon = Termina em breve
+experimentListEndingSoon = Termina brevemente
 experimentsListCondensedHeader = Escolha as suas experiências!
 
 
