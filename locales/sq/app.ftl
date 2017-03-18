@@ -179,6 +179,7 @@ disableExperiment = Çaktivizoje { $title }
 disableExperimentTransition = Po çaktivizohet…
 enableExperiment = Aktivizoje { $title }
 enableExperimentTransition = Po aktivizohet…
+experimentManuallyDisabled = { $title } është çaktivizuar te Përgjegjësi i Shtesave
 experimentMeasurementIntro = Përveç <a>të dhënave</a> të mbledhura nga krejt eksperimentet Pilot Testesh, ja gjërat kyçe që duhet të dini mbi ç’ndodh kur përdorni { $experimentTitle }:
 measurements = Privatësia juaj
 experimentPrivacyNotice = Më tepër rreth grumbullimit të të dhënave për { $title } mund të mësoni këtu.
