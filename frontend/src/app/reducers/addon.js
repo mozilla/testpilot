@@ -19,7 +19,7 @@ function setInstalled(state, { payload: { installed, installedLoaded } }) {
 function setInstalledAddons(state, { payload: installedAddons }) {
   const newInstalled = {};
   const actuallyInstalledAddons = (installedAddons || []);
-  for (const addonId of Object.keys(state.installed)) {
+  for (const addonId of Object.keys(state.installed || {})) {
     const experiment = state.installed[addonId];
     if (actuallyInstalledAddons.indexOf(addonId) === -1) {
       newInstalled[addonId] = { manuallyDisabled: true, ...experiment };
@@ -73,7 +73,7 @@ export function getInstalled(state) {
 
 export function isExperimentEnabled(state, experiment) {
   return !!(
-    experiment &&
+    experiment && state.installed &&
     experiment.addon_id in state.installed &&
     !state.installed[experiment.addon_id].manuallyDisabled);
 }

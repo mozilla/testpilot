@@ -21,19 +21,19 @@ export function getExperiments(state) {
 }
 
 export function getExperimentByID(state, addonID) {
-  state.data.filter(e => e.addon_id === addonID)[0];
+  return state.data.filter(e => e.addon_id === addonID)[0];
 }
 
 export function getExperimentBySlug(state, filter) {
-  state.data.filter(e => e.slug === filter)[0];
+  return state.data.filter(e => e.slug === filter)[0];
 }
 
 export function getExperimentByURL(state, url) {
-  state.data.filter(e => e.xpi_url === url)[0];
+  return state.data.filter(e => e.xpi_url === url)[0];
 }
 
 export function getExperimentInProgress(state) {
-  state.data.filter(e => e.inProgress)[0];
+  return state.data.filter(e => e.inProgress)[0];
 }
 
 export default function experimentsReducer(state, action) {
