@@ -608,7 +608,7 @@ export class ExperimentDetail extends React.Component {
       }
       return null;
     }
-    if (installed[experiment.addon_id] && installed[experiment.addon_id].manuallyDisabled) {
+    if (installed && installed[experiment.addon_id] && installed[experiment.addon_id].manuallyDisabled) {
       return <div className="experiment-controls">
         <button disabled onClick={e => { e.preventDefault(); }} style={{ minWidth: progressButtonWidth }} id="install-button"  className={classnames(['button', 'default'])}><span data-l10n-id="experimentManuallyDisabled" data-l10n-args={JSON.stringify({ title })} className="default-text"></span></button>
       </div>;
