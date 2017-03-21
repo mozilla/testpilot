@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import React, { PropTypes } from 'react';
 
-import { initialState } from '../reducers/newsletter-form';
+import { defaultState } from '../reducers/newsletter-form';
 
 
 export default class NewsletterForm extends React.Component {
@@ -101,7 +101,7 @@ export default class NewsletterForm extends React.Component {
   }
 }
 
-NewsletterForm.defaultProps = initialState;
+NewsletterForm.defaultProps = defaultState();
 NewsletterForm.propTypes = {
   email: PropTypes.string.isRequired,
   locale: PropTypes.string.isRequired,

@@ -1,12 +1,19 @@
+// @flow
 
-function updateExperiment(addonID, data) {
+import type {
+  Experiment,
+  UpdateExperimentAction,
+  FetchUserCountsAction
+} from '../reducers/experiments.js';
+
+function updateExperiment(addonID: string, data: Experiment): UpdateExperimentAction {
   return {
     type: 'UPDATE_EXPERIMENT',
     payload: { addonID, data }
   };
 }
 
-function fetchUserCounts(countsUrl) {
+function fetchUserCounts(countsUrl: string): Promise<FetchUserCountsAction> {
   return fetch(countsUrl)
     .then(
       response => {
