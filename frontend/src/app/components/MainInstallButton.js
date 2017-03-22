@@ -33,7 +33,7 @@ export default class MainInstallButton extends React.Component {
       <LayoutWrapper flexModifier="column-center-start-breaking">
         {(isMinFirefox && !isMobile) ? this.renderInstallButton(isInstalling, hasAddon) : this.renderAltButton(isFirefox, isMobile) }
         {isMinFirefox && !isMobile && <p data-l10n-id="landingLegalNotice" className="legal-information">By proceeding,
-          you agree to the <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Notice</a> of Test Pilot</p>}
+          you agree to the <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Notice</a> of Test Pilot.</p>}
       </LayoutWrapper>
     );
   }

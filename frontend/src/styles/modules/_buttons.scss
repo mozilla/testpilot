@@ -3,6 +3,7 @@
   border-radius: 3px;
   cursor: pointer;
   display: inline-block;
+  font-family: 'Fira Sans', sans-serif;
   font-weight: 400;
   height: $grid-unit * 2;
   line-height: $grid-unit * 2;
@@ -11,7 +12,7 @@
   position: relative;
   text-align: center;
   text-decoration: none;
-  transition: background 150ms;
+  transition: background 150ms, width 150ms;
   user-select: none;
   white-space: nowrap;
 
@@ -24,7 +25,7 @@
   }
 
   &.outline {
-    background-color: none;
+    background-color: transparent;
     border-color: $white;
     color: $white;
     opacity: .6;

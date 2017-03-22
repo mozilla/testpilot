@@ -61,13 +61,13 @@ export default class NewsletterForm extends React.Component {
   renderSubmitButton() {
     if (this.props.submitting) {
       return (
-        <button disabled={true}
+        <button disabled={true} className="button outline large"
                 data-l10n-id='newsletterFormSubmitButtonSubmitting'>
           Submitting...
         </button>
       );
     }
-    return <button data-l10n-id='newsletterFormSubmitButton'>Sign Up Now</button>;
+    return <button data-l10n-id='newsletterFormSubmitButton' className="button outline large">Sign Up Now</button>;
   }
 
   renderDisclaimer() {
