@@ -1,7 +1,6 @@
 
 
 import { expect } from 'chai';
-import sinon from 'sinon';
 
 const INSTALLED = {installed: "experiments"};
 
