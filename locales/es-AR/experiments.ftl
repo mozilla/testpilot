@@ -8,6 +8,7 @@ activitystreamDetails1Copy = Mirá dónde has estado, así podrás ir donde quer
 activitystreamToursteps0Copy = Encontrá tus sitios más visitados, el historial reciente y tus marcadores cuando abras una nueva pestaña.
 activitystreamToursteps1Copy = Visitá la nueva vista como línea de tiempo para navegar visualmente todos tus marcadores y el historial.
 activitystreamToursteps2Copy = Siempre podés darnos tu opinión o deshabilitar Activity Stream de Test Pilot.
+activitystreamContributors0Title = Ingeniero de Software
 cliqzDescription = Conseguí resultados de búsqueda más rápido. Cliqz muestra sugerencias debajo de la barra de URL mientras se escribe. Todo manteniendo la privacidad.
 cliqzIntroduction = Conseguí resultados de búsqueda más rápido, directamente en el navegador. Al empezar a escribir verás sugerencias desde la web en tiempo real, justo debajo de la barra de URL. Y porque Cliqz evita recolectar datos personales identificables ni hace perfiles de usuarios, los resultados son más privados.
 cliqzMeasurements0 = Cliqz GmbH recolecta datos sobre las búsquedas y actividad de navegación, incluyendo textos mientras se escriben en la barra URL, pedidos hechos a los buscadores y datos sobre las interacciones con la página web, como movimientos del mouse, desplazamientos y tiempo transcurrido.
