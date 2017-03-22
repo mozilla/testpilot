@@ -10,6 +10,7 @@ function makeStaticString(headComponent, bodyComponent) {
 <html>
   ${head}
   <body class="blue">
+    <div class="stars"></div>
     <div id="page-container">${root}</div>
   </body>
 </html>`;
@@ -48,7 +49,6 @@ export function generateStaticPage({
     <meta name="twitter:image" content={ image_twitter } />
   </head>;
   const bodyComponent = <div>
-    <div className="stars"></div>
     <noscript>
       <div className="full-page-wrapper centered">
         <div className="layout-wrapper layout-wrapper--column-center">
@@ -68,11 +68,11 @@ export function generateStaticPage({
       </div>
     </noscript>
     <div className="full-page-wrapper centered overflow-hidden">
-      <div className="loader">
-        <div className="loader-bar"></div>
-        <div className="loader-bar"></div>
-        <div className="loader-bar"></div>
-        <div className="loader-bar"></div>
+      <div className="loading">
+        <div className="loading-bar"></div>
+        <div className="loading-bar"></div>
+        <div className="loading-bar"></div>
+        <div className="loading-bar"></div>
       </div>
     </div>
     <script src="/static/app/vendor.js"></script>
