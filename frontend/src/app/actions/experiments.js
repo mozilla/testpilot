@@ -11,10 +11,10 @@ function fetchUserCounts(countsUrl) {
     .then(
       response => {
         if (response.ok) {
-          return {
+          return response.json().then(data => ({
             type: 'FETCH_USER_COUNTS',
-            payload: { data: response.json() }
-          };
+            payload: { data }
+          }));
         }
         throw new Error('Could not get user counts');
       });
