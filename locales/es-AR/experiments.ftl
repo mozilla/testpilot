@@ -15,6 +15,7 @@ cliqzPrivacypreamble = El experimento Cliqz de Test Pilot se brinda através de 
 cliqzMeasurements0 = Cliqz GmbH recolecta datos sobre las búsquedas y actividad de navegación, incluyendo textos mientras se escriben en la barra URL, pedidos hechos a los buscadores y datos sobre las interacciones con la página web, como movimientos del mouse, desplazamientos y tiempo transcurrido.
 cliqzDetails0Copy = Vea aparecer los resultados (como si fuera magia) a medida que ingresa los términos de búsqueda en la barra de URL.
 cliqzDetails1Copy = Vea un resumen de la información en tiempo real, como el clima, justo debajo de la barra de URL.
+cliqzDetails2Copy = Regrese a sus sitios favoritos con un clic cuando abre una pestaña nueva. También puede personalizar sus favoritos.
 minvidDescription = Mantené los videos en un lugar central. Min Vid te permite ver videos de YouTube y Vimeo en un pequeño recuadro que se mantiene en el frente mientras seguís navegando por la web.
 pageshotDescription = Una forma intuitiva de hacer capturas de pantalla en tu navegador. Capturá, guardá y compartí capturas de pantalla mientras navegás la web con Firefox.
 tabcenterDescription = ¿Cómo sería tener las pestañas a un costado en lugar de arriba? ¡Queremos saberlo!
