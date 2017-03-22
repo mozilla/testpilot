@@ -74,7 +74,6 @@ export function setupAddonConnection(store) {
     evt => messageReceived(store, evt)
   );
 
-  store.dispatch(addonActions.setInstalled());
   pollAddon();
 }
 

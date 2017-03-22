@@ -7,8 +7,10 @@ function makeSimpleActionCreator(type) {
 function setInstalled(installed) {
   return {
     type: 'SET_INSTALLED',
-    payload: installed || {},
-    installedLoaded: !!installed
+    payload: {
+      installed,
+      installedLoaded: !!installed
+    }
   };
 }
 
