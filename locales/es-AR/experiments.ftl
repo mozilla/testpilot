@@ -21,6 +21,7 @@ cliqzDetails2Copy = Regrese a sus sitios favoritos con un clic cuando abre una p
 cliqzToursteps0Copy = Comience a tipear en la barra de URL para ver los resultados en tiempo real.
 cliqzToursteps1Copy = Abra una pestaña nueva y agregue sus sitios favoritos para acceder con un solo clic.
 cliqzToursteps2Copy = Siempre puede enviarnos su opinión o deshabilitar Cliqz desde Test Pilot.
+containersDescription = ¡Conténgase a sí mismo¡ Cree contenedores diferentes para cada una de sus vidas en línea, su vida laboral, su vida social, su vida personal para permanecer organizado y mantener la privacidad. 
 containersContributors0Title = Seguridad y privacidad del usuario
 minvidDescription = Mantenga los videos en un lugar central. Min Vid le permite ver videos de YouTube y Vimeo en un pequeño recuadro que se mantiene en el frente mientras sigue navegando por la web.
 minvidIntroduction = <p> ¿Le gusta ver videos? ¿Le gusta hacer otras cosas mientras mira videos? Pruebe Min Vid. Es como la imagen dentro de la imagen donde una imagen es un video y la otra es toda la Web. </p> <ul> <li> <strong> HAga clic y adelante </strong> Abra la ventana de Min Vid para mantener la reproducción de los videos en primer plano mientras navega. </li> <li> <strong> Ubíquela donde desee: </strong> Min Vid le permite arrastrar la ventana del video a cualquier lugar del escritorio. </li> <li> <strong> Los controles están donde los necesita: </strong> Min Vid incluye los controles que le permiten pausar /play, suspender, arrastrar y ajustar el volumen en la misma ventana. </li> </ul>
