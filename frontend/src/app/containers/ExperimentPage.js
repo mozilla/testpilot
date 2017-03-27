@@ -12,6 +12,7 @@ import EmailDialog from '../components/EmailDialog';
 import ExperimentDisableDialog from '../components/ExperimentDisableDialog';
 import ExperimentEolDialog from '../components/ExperimentEolDialog';
 import ExperimentTourDialog from '../components/ExperimentTourDialog';
+import Loading from '../components/Loading';
 import MainInstallButton from '../components/MainInstallButton';
 import ExperimentCardList from '../components/ExperimentCardList';
 import ExperimentPreFeedbackDialog from '../components/ExperimentPreFeedbackDialog';
@@ -25,6 +26,10 @@ import LayoutWrapper from '../components/LayoutWrapper';
 
 export default class ExperimentPage extends React.Component {
   render() {
+    // We haven't received the async message about whether we have the addon yet.
+    if (this.props.hasAddon === null) {
+      return <Loading />;
+    }
     const { getExperimentBySlug, params } = this.props;
     const experiment = getExperimentBySlug(params.slug);
     return <ExperimentDetail experiment={experiment} {...this.props} />;

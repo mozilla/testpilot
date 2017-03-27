@@ -4,12 +4,7 @@
  * http://mozilla.org/MPL/2.0/.
  */
 
-/* global cloneInto self CustomEvent unsafeWindow */
-
-// Page script acts as messaging bridge between addon and web content.
-unsafeWindow.navigator.testpilotAddon = true;
-unsafeWindow.navigator.testpilotAddonVersion = self.options.version;
-unsafeWindow.navigator.testpilotClientUUID = self.options.clientUUID;
+/* global cloneInto self CustomEvent */
 
 // New channel
 self.port.on('action', function(data) {

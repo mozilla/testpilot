@@ -28,7 +28,9 @@ class App extends Component {
   measurePageview() {
     const { routing, hasAddon, installed, installedLoaded } = this.props;
 
-    // If we have an addon, wait until the installed experiments are loaded
+    // If we don't know if we have an addon or not (null), wait.
+    if (hasAddon === null) { return; }
+    // If we have an addon, wait until the installed experiments are loaded.
     if (hasAddon && !installedLoaded) { return; }
 
     const { pathname } = routing.locationBeforeTransitions;
