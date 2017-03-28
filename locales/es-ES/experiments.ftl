@@ -121,6 +121,7 @@ pulseContributors1Title = Firefox UX
 pulseContributors2Title = Inteligencia de producto de plataforma Firefox
 pulseContributors3Title = Firefox QA
 snoozetabsDescription = ¿El sitio web correcto pero en el momento equivocado? Posponlo hasta que lo necesites. Snooze Tabs te permite descartar pestañas ahora y configurar una alarma para abrirlas más tarde.
+snoozetabsIntroduction = Snooze Tabs te ayuda a centrar tu atención en línea, tanto para eliminar distracciones como para guardar algo para más tarde. Haz clic en el icono para descartar las pestañas que no quieres ahora, y establece una alarma para traerlas de vuelta cuando las necesites. Puedes posponer un interesante artículo hasta la noche. Posponer esa receta hasta el próximo mes. Cuando se cumpla el tiempo configurado la pestaña se abrirá de nuevo.
 snoozetabsDetails1Copy = Snooze Tabs te notificará cuando vuelva tu pestaña.
 snoozetabsToursteps1Copy = Selecciónalo cuando quieras que vuelva a aparecer.
 snoozetabsToursteps2Copy = Di adiós a tu pestaña hasta...
