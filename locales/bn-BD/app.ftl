@@ -54,6 +54,14 @@ landingInstalledButton = আপনার ফিচারটি বেছে ন�
 
 
 
+# Related to a one click to install test pilot and an experiment.
+[[ oneClickInstall ]]
+
+oneClickInstallMinorCta = Test Pilot ইন্সটল করুন &amp;
+oneClickInstallMajorCta = { $title } সক্রিয় করুন
+
+
+
 # Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
@@ -117,6 +125,7 @@ experimentListJustLaunchedTab = নতুন শুরু হয়েছে
 experimentListJustUpdatedTab = এইমাত্র হালানাগাদকৃত
 experimentListEndingTomorrow = আগামীকাল শেষ হবে
 experimentListEndingSoon = শীগ্রই শেষ হচ্ছে
+experimentsListCondensedHeader = আপনার পরীক্ষণ নির্বাচন করুন!
 
 
 
