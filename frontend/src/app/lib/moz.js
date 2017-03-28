@@ -3,30 +3,6 @@ import cookies from 'js-cookie';
 import addonActions from '../actions/addon';
 import experimentActions from '../actions/experiments';
 
-const MANAGER_EVENTS = [
-  'onInstalling',
-  'onInstalled',
-  'onEnabling',
-  'onEnabled',
-  'onDisabling',
-  'onDisabled',
-  'onUninstalling',
-  'onUninstalled',
-  'onOperationCancelled',
-  'onPropertyChanged'
-];
-const INSTALL_EVENTS = [
-  'onDownloadStarted',
-  'onDownloadProgress',
-  'onDownloadEnded',
-  'onDownloadCancelled',
-  'onDownloadFailed',
-  'onInstallStarted',
-  'onInstallProgress',
-  'onInstallEnded',
-  'onInstallCancelled',
-  'onInstallFailed'
-];
 
 const RESTART_NEEDED = false; // TODO
 
@@ -113,27 +89,27 @@ export function setupAddonConnection(store) {
     }
   });
   mam.addEventListener('onEnabling', (addon, restart) => {
-    console.warn('onEnabling', addon);
+    console.warn('onEnabling', addon, restart);
   });
   mam.addEventListener('onDisabling', (addon, restart) => {
-    console.warn('onDisabling', addon);
+    console.warn('onDisabling', addon, restart);
   });
   mam.addEventListener('onInstalling', (addon, restart) => {
-    console.warn('onInstalling', addon);
+    console.warn('onInstalling', addon, restart);
   });
   mam.addEventListener('onInstalled', addon => {
     console.warn('onInstalled', addon);
   });
   mam.addEventListener('onUninstalling', (addon, restart) => {
-    //TODO similar logic to txp addon AddonListener.js
-    console.warn('onUninstalling', addon);
+    // TODO similar logic to txp addon AddonListener.js
+    console.warn('onUninstalling', addon, restart);
   });
   mam.addEventListener('onOperationCancelled', addon => {
-    //TODO similar logic to txp addon AddonListener.js
+    // TODO similar logic to txp addon AddonListener.js
     console.warn('onOperationCancelled', addon);
   });
   mam.addEventListener('onPropertyChanged', (addon, p) => {
-    console.warn('onPropertyChanged', addon);
+    console.warn('onPropertyChanged', addon, p);
   });
   getExperimentAddons(store.getState().experiments.data)
     .then(addons => {
@@ -143,13 +119,13 @@ export function setupAddonConnection(store) {
         installed[a.id] = {
           // TODO see which of these are required
           active: true,
-          addon_id: a.id,
+          addon_id: a.id
           // created:
           // html_url:
           // installDate:
           // thumbnail:
           // title:
-        }
+        };
       });
       store.dispatch(addonActions.setInstalled(installed));
     });
@@ -228,5 +204,5 @@ export function disableExperiment(dispatch, experiment) {
 function getExperimentAddons(experiments) {
   return Promise.all(
     experiments.map(x => mam.getAddonByID(x.addon_id))
-  )
+  );
 }

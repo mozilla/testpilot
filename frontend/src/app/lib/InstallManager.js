@@ -1,6 +1,6 @@
 
-import * as moz from './moz'
-import * as addon from './addon'
+import * as moz from './moz';
+import * as addon from './addon';
 
 function hasMozAddonManager() {
   return !!navigator.mozAddonManager;
