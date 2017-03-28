@@ -10,7 +10,6 @@ const DISCONNECT_TIMEOUT = 3333;
 
 function listenForAddonMessages(store, handler) {
   window.addEventListener('from-addon-to-web', handler);
-  store.dispatch(addonActions.setInstalled());
   pollAddon();
 }
 
@@ -54,7 +53,7 @@ export function pollAddon() {
   pollTimer = setTimeout(pollAddon, INSTALL_STATE_WATCH_PERIOD);
 }
 
-export function foo(store) {
+export function listen(store) {
   listenForAddonMessages(store, evt => {
     messageReceived(store);
 
