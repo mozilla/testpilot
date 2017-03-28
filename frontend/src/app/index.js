@@ -52,4 +52,4 @@ window.setTimeout(() => {
   if (store.getState().addon.hasAddon === null) {
     store.dispatch(addonActions.setHasAddon(false));
   }
-}, 500);
+}, 250);
