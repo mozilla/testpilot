@@ -258,6 +258,7 @@ newsletterFormEmailPlaceholder =
 newsletterFormDisclaimer = আমরা আপনাকে Test Pilot সম্পর্কিত তথ্য পাঠাবো।
 newsletterFormPrivacyNotice = Mozilla কিভাবে আমার তথ্যাদি ব্যবহার করছে এ সম্পর্কিত <a>এই গোপনীয়তা নোটিশে</a> ব্যাখ্যায় আমি সন্তুষ্ট।
 newsletterFormSubmitButton = এখনই সাইন আপ করুন
+newsletterFormSubmitButtonSubmitting = জমা দেওয়া হচ্ছে...
 
 
 
