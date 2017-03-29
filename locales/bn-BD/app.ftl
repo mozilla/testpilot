@@ -238,6 +238,15 @@ shareCopy = অনুলিপি
 # Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } শেষ হয়েছে { $completedDate } এ
 eolNoticeLink = আরো শিখুন
+eolDisableMessage = { $title } পরীক্ষা শেষ হয়েছে। আপনি একবার এটি আনইন্সটল করলে, Test Pilot দ্বারা আর ইনস্টল করতে পারবেন না।
+completedDateLabel = পরীক্ষণের সর্বশেষ তারিখ: <b>{ $completedDate }</b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
+incompatibleHeader = আপনি যে এড-অনসটি ইন্সটল করছেন সেটার সাথে এই গবেষণাটি সামঞ্জস্যপূর্ণ নয়।
 
 
 
