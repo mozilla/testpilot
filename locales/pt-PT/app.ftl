@@ -37,7 +37,7 @@ menuRetire = Desinstalar o Test Pilot
 # The splash on the homepage.
 [[ landing ]]
 
-landingIntroOne = Testar novas funcionalidades.
+landingIntroOne = Teste novas funcionalidades.
 landingIntroTwo = Dê o seu feedback.
 landingIntroThree = Ajude a construir o Firefox.
 landingLegalNotice = Ao prosseguir, você concorda com os <a>Termos de utilização</a> e o <a>Aviso de privacidade</a> do Test Pilot.
@@ -87,7 +87,7 @@ landingCardThree = Dê-nos a sua opinião
 # Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
-onboardingMessage = Nós colocámos um ícone na sua barra de ferramentas para que consiga sempre encontrar o Test Pilot.
+onboardingMessage = Colocámos um ícone na sua barra de ferramentas para que consiga sempre encontrar o Test Pilot.
 
 
 
@@ -261,7 +261,7 @@ incompatibleSubheader = Recomendamos <a>desativar estes extras</a> antes de ativ
 
 newsletterFormEmailPlaceholder = 
   [html/placeholder] O seu email aqui
-newsletterFormDisclaimer = Nós só iremos enviar-lhe informação relacionada sobre o Test Pilot.
+newsletterFormDisclaimer = Apenas lhe iremos enviar informação relacionada sobre o Test Pilot.
 newsletterFormPrivacyNotice = Concordo que a Mozilla faça a gestão da minha informação tal como explicado neste <a>aviso de privacidade</a>.
 newsletterFormPrivacyAgreementRequired = Por favor marque esta caixa se deseja proceder.
 newsletterFormSubmitButton = Registe-se agora

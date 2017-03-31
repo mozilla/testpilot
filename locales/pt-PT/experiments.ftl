@@ -1,8 +1,8 @@
 activitystreamDescription = Um histórico de feed visual rico e uma página inicial reimaginada tornam mais fácil do que nunca encontrar exatamente o que está a procura no Firefox.
 activitystreamIntroduction = <p>Volte a navegar sem perder o seu fluxo de pensamento. O Activity Stream mantém-lhe à mão os seus sites favoritos, marcadores e histórico recente em cada novo separador. E a nova vista da cronologia oferece-lhe uma visão geral da sua navegação.</p>
-activitystreamMeasurements0 = Nós recolhemos dados de utilização básicos relativamente a como você interage com páginas experimentais de cronologia e de novos separadores, tais como os tipos de elementos em que você clica e a posição destes na página.
-activitystreamMeasurements1 = Nós também recolhemos informação básica acerca do seu perfil do navegador que afeta o Activity Stream, tal como o número de marcadores e o histórico.
-activitystreamMeasurements2 = Para lhe fornecer o Activity Stream, nós obtemos metadados acerca de websites que visitou, tais como imagens e ícones, utilizando um serviço denominado <a href="http://embed.ly/" target="_blank">Embedly</a>. Nós enviamos estes pedidos para o Embedly através dos servidores da Mozilla, para que estes não sejam associados a si.
+activitystreamMeasurements0 = Recolhemos dados de utilização básicos relativamente a como você interage com páginas experimentais de cronologia e de novos separadores, tais como os tipos de elementos em que clica e a posição destes na página.
+activitystreamMeasurements1 = Também recolhemos informação básica acerca do seu perfil do navegador que afeta o Activity Stream, tal como o número de marcadores e itens do histórico.
+activitystreamMeasurements2 = Para lhe fornecer o Activity Stream, obtemos metadados acerca de websites que visitou, tais como imagens e ícones, utilizando um serviço denominado <a href="http://embed.ly/" target="_blank">Embedly</a>. Enviamos estes pedidos para o Embedly através dos servidores da Mozilla, para que estes não sejam associados a si.
 activitystreamDetails0Copy = Clique num novo separador e os seus sites favoritos estarão apenas a mais um clique de distância.
 activitystreamDetails1Copy = Veja onde você tem estado, de modo a que possa chegar onde está a ir.
 activitystreamToursteps0Copy = Ao abrir um novo separador, encontre os seus sites favoritos, histórico recente e os marcadores.
@@ -73,26 +73,26 @@ minvidContributors1Title = Funcionário de Engenharia
 minvidContributors2Title = Estagiário de Engenharia
 minvidContributors3Title = Colaborador de Engenharia
 nomore404sSubtitle = Distribuído por Wayback Machine
-nomore404sDescription = Está cansado de becos sem saída na Web? Nós vamos avisá-lo quando existir uma versão guardada daquilo que está a procura no Wayback Machine dos Arquivos da Internet.
-nomore404sIntroduction = <p>Este é simples: Se você deparar-se com uma página 404 enquanto navega na Web, nós iremos avisá-lo se o conteúdo o qual está à procura está arquivado no Wayback Machine dos Arquivos da Internet.</p>
-nomore404sMeasurements0 = Nós recolhemos a utilização básica acerca de quantas vezes você deparou-se com um erro Página não encontrada (código 404), quantas vezes uma versão em cache dessa página existe, a partir de Archive.org, e quantas vezes você escolheu visualizar a versão em cache.
-nomore404sMeasurements1 = Para fornecermos versões em cache das páginas, nós enviamos os URLs da página de erro 404 para Archive.org. O <a href="https://archive.org/" target="_blank">Archive.org</a> divulga a politica de privacidade deles <a href="https://archive.org/about/terms.php" target="_blank">aqui</a>.
-nomore404sMeasurements2 = Não recolhemos os URLs das páginas que você solicita ou dos URLs que nós enviamos para Archive.org.
-nomore404sMeasurements3 = Poderemos partilhar com o Arquivo da Internet os resultados de questionários que você submete para nós e os dados de telemetria agregada relacionada com esta experiência.
+nomore404sDescription = Está cansado de becos sem saída na Web? Vamos avisá-lo quando existir uma versão guardada daquilo que está a procura no Wayback Machine dos Arquivos da Internet.
+nomore404sIntroduction = <p>Este é simples. Se você deparar-se com uma página 404 enquanto navega na Web, avisar-lhe-emos se o conteúdo o qual está à procura está arquivado no Wayback Machine dos Arquivos da Internet.</p>
+nomore404sMeasurements0 = Recolhemos a utilização básica acerca de quantas vezes você deparou-se com um erro Página não encontrada (código 404), quantas vezes uma versão em cache dessa página existe, a partir de Archive.org, e quantas vezes você escolheu visualizar a versão em cache.
+nomore404sMeasurements1 = Para fornecermos versões em cache das páginas, enviamos os URLs de página de erro 404 para Archive.org. O <a href="https://archive.org/" target="_blank">Archive.org</a> divulga a sua política de privacidade <a href="https://archive.org/about/terms.php" target="_blank">aqui</a>.
+nomore404sMeasurements2 = Não recolhemos os URLs das páginas que você solicita ou os URLs que enviamos para Archive.org.
+nomore404sMeasurements3 = Poderemos partilhar com o Arquivo da Internet os resultados de questionários que você nos submete e os dados de telemetria agregada relacionada com esta experiência.
 nomore404sDetails0Copy = Reduz os problemas 404 com o Wayback Machine.
 nomore404sDetails1Copy = Trazido até si através dos nossos amigos no Arquivo da Internet.
-nomore404sToursteps0Copy = Simplesmente navegue na Web como costuma fazer. Se você encontrar uma página 404, nós iremos avisá-lo se estiver disponível no Wayback Machine uma versão arquivada.
-nomore404sToursteps1Copy = Pode sempre fornecer-nos feedback ou desativar os 404s a partir do Test Pilot.
+nomore404sToursteps0Copy = Simplesmente navegue na Web como costuma fazer. Se encontrar uma página 404, avisar-lhe-emos se estiver disponível no Wayback Machine uma versão arquivada.
+nomore404sToursteps1Copy = Pode sempre fornecer-nos feedback ou desativar o No More 404s a partir do Test Pilot.
 nomore404sContributors1Title = Programador, Wayback Machine, O Arquivo da Internet
 nomore404sContributors2Title = Diretor, Wayback Machine, O Arquivo da Internet
 nomore404sContributors3Title = Engenheiro Superior, O Arquivo da Internet
 nomore404sEolwarning = A experiência Sem Mais 404s não será removida do seu navegador e os resultados serão comunicados aqui quando terminar. Atualizações futuras estarão disponíveis em addons.mozilla.org.
 pageshotDescription = Capturas de ecrã intuitivas diretamente do navegador. Capture, guarde e partilhe capturas de ecrã enquanto navega na Web utilizando o Firefox.
 pageshotIntroduction = <p>O Page Shot permite-lhe tirar, partilhar e recuperar capturas de ecrã - sem deixar o Firefox.</p><ul><li><strong>Visualização em grade:</strong> Navegue pelas miniaturas de capturas de ecrã guardadas</li> <li><strong>Pesquisa inteligente:</strong> Encontre a captura de ecrã que você procura com apenas uma palavra-chave. O Page Shot indexa os títulos da página e o texto nas capturas de ecrã</li> <li><strong>Partilhar num passo:</strong> Publique a sua captura de ecrã nas redes sociais ou copie a hiperligação partilhável diretamente a partir do topo da janela do seu navegador.</li></ul>
-pageshotMeasurements0 = Nós armazenamos as suas capturas nos servidores da Mozilla e teremos acesso a essas capturas. No entanto, nós iremos aceder às suas capturas apenas quando razoavelmente necessário para a operação do serviço, tais como quando alguém envia-nos a hiperligação para uma captura utilizando a nossa funcionalidade "reportar", ou para diagnosticar quaisquer problemas. Nós iremos também analisar todas as capturas globalmente para ajudar a melhorar o Page Shot, por exemplo, identificando o tamanho e número médio de capturas tiradas pelos utilizadores.
-pageshotMeasurements1 = Nós recolhemos dados de utilização para ajudar-nos a compreender as suas interações com o produto, tais como o número de vezes que você clica no botão de captura, guarda uma imagem, ou encontra um erro ao guardar uma imagem.
-pageshotMeasurements2 = Para impedir abuso deste serviço, nós efetuamos uma monitorização de segurança básica. Por exemplo, nós recolhemos e retemos endereços IP para detetar e bloquear indivíduos que estão a verificar o serviço para encontrar páginas privadas.
-pageshotMeasurements3 = Para todas as visitas ao website Page Shot, os dados que nós recolhemos estão descritos na nossa <a href="https://www.mozilla.org/privacy/websites/" target="_blank">Nota de privacidade de Websites, Comunicações & Cookies</a>.
+pageshotMeasurements0 = Armazenamos as suas capturas nos servidores da Mozilla e teremos acesso a essas capturas. No entanto, apenas iremos aceder às suas capturas quando razoavelmente necessário para a operação do serviço, tal como quando alguém nos envia a ligação para uma captura utilizando a nossa funcionalidade "reportar", ou para diagnosticar quaisquer problemas. Iremos também analisar todas as capturas no agregado para ajudar a melhorar o Page Shot, por exemplo, identificando o tamanho e número médio de capturas tiradas pelos utilizadores.
+pageshotMeasurements1 = Recolhemos dados de utilização para nos ajudar a compreender as suas interações com o produto, tais como o número de vezes que você clica no botão de captura, guarda uma imagem, ou encontra um erro ao guardar uma imagem.
+pageshotMeasurements2 = Para impedir abuso deste serviço, efetuamos uma monitorização de segurança básica. Por exemplo, recolhemos e retemos endereços IP para detetar e bloquear indivíduos que estão a verificar o serviço para encontrar páginas privadas.
+pageshotMeasurements3 = Para todas as visitas ao website Page Shot, os dados que recolhemos estão descritos na nossa <a href="https://www.mozilla.org/privacy/websites/" target="_blank">Nota de privacidade de Websites, Comunicações e Cookies</a>.
 pageshotDetails0Copy = Selecione a área da imagem e guarde se gostar do que vê ou cancele sem guardar se assim o desejar.
 pageshotDetails1Copy = Partilhe hiperligações para imagens nas redes sociais ou por email, sem ter que descarregar e anexar um ficheiro.
 pageshotDetails2Copy = Localize capturas de ecrã guardadas facilmente. Navegue pelas miniaturas na vista de grelha ou procure com uma palavra-chave.
@@ -142,8 +142,8 @@ snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Como seria mover separadores da parte superior do navegador para o lado? Nós queríamos descobrir!
 tabcenterIntroduction = <p>Mova os seus separadores do caminho e coloque-os confinados. O Tab Center move os seus separadores para o lado da janela do seu navegador para que estes fiquem fora de vista quando você não necessita deles, e para que se expandam facilmente quando você necessitar.</p>
-tabcenterMeasurements0 = Nós recolhemos dados de utilização relativamente a como você interage com o Tab Center, como a frequência com que você maximiza ou fixa o Tab Center.
-tabcenterMeasurements1 = Nós recolhemos também informação acerca do modo com que você utiliza os separadores, tais como o número de separadores que você mantém abertos num momento e a duração do tempo com que mantém os separadores abertos.
+tabcenterMeasurements0 = Recolhemos dados de utilização relativamente a como você interage com o Tab Center, como a frequência com que maximiza ou afixa o Tab Center.
+tabcenterMeasurements1 = Recolhemos também informação acerca do modo como utiliza os separadores, tal como o número de separadores que mantém abertos ao mesmo tempo e a duração de tempo com que mantém os separadores abertos.
 tabcenterMeasurements2 = O Tab Center não recolhe qualquer informação acerca dos sites que você visita ou o conteúdo dos separadores.
 tabcenterDetails0Copy = Posicione os seus separadores de lado.
 tabcenterDetails1Copy = Oculte esses separadores até precisar deles.
@@ -173,7 +173,7 @@ trackingprotectionContributors0Title = Programador Web
 trackingprotectionContributors1Title = Designer Sénior de UX
 trackingprotectionContributors2Title = Engenheiro Sénior de QA
 trackingprotectionContributorsextra = Esta experiência é baseada na tecnologia de Proteção contra monitorização do Firefox, construída pelos funcionários da Mozilla e pelos colaboradores durante os últimos anos.
-trackingprotectionEolwarning = Nós iremos desativar automaticamente a experiência de Proteção contra monitorização e comunicar os resultados quando esta terminar.
+trackingprotectionEolwarning = Iremos desativar automaticamente a experiência de Proteção contra monitorização e comunicar os resultados quando esta terminar.
 universalsearchDescription = Obtenha recomendações acerca dos melhores sites na Web à medida que digita na Barra fantástica.
 universalsearchIntroduction = <p>Aceda ao melhor da Web mais rapidamente com a Universal Search. Basta digitar alguns caracteres na Barra fantástica e os sites, pessoas e artigos da Wikipédia mais populares irão aparecer para o seu prazer de navegação.</p>
 universalsearchMeasurements0 = Nós recolhemos dados de utilização básica acerca de como interage com a Barra fantástica (barra de endereço), tais como o número de caracteres que digitou, os tipos de resultados em que clica, e a respetiva posição na lista de resultados.
