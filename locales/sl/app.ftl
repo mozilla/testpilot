@@ -179,6 +179,7 @@ disableExperiment = Onemogoči { $title }
 disableExperimentTransition = Onemogočanje ...
 enableExperiment = Omogoči { $title }
 enableExperimentTransition = Omogočanje ...
+experimentManuallyDisabled = { $title } onemogočen v upravitelju dodatkov
 experimentMeasurementIntro = Poleg <a>podatkov</a>, ki jih zbiramo pri vseh poskusih Test Pilot, navajamo še ključne informacije, ki jih je dobro poznati, če uporabljate { $experimentTitle }:
 measurements = Vaša zasebnost
 experimentPrivacyNotice = O zbiranju podatkov lahko več izveste { $title } tukaj.
@@ -262,6 +263,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] Sem vpišite svoj e-poštni naslov
 newsletterFormDisclaimer = Pošiljali vam bomo samo informacije o programu Test Pilot.
 newsletterFormPrivacyNotice = Strinjam se, da Mozilla obdela te podatke, kot je razloženo v <a>obvestilu o zasebnosti</a>.
+newsletterFormPrivacyAgreementRequired = Odkljukajte to izbiro, če želite nadaljevati.
 newsletterFormSubmitButton = Naroči se zdaj
 newsletterFormSubmitButtonSubmitting = Pošiljanje ...
 
