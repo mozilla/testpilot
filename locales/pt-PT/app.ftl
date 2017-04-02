@@ -29,7 +29,7 @@ home = Página inicial
 menuTitle = Definições
 menuWiki = Wiki do Test Pilot
 menuDiscuss = Discutir o Test Pilot
-menuFileIssue = Comunique um problema
+menuFileIssue = Submeta um issue
 menuRetire = Desinstalar o Test Pilot
 
 
@@ -180,7 +180,7 @@ disableExperimentTransition = A desativar...
 enableExperiment = Ativar { $title }
 enableExperimentTransition = A ativar...
 experimentManuallyDisabled = { $title } desativado no Gestor de extras
-experimentMeasurementIntro = Além de <a>dados</a> recolhidos por todas as experiências do Test Pilot, aqui estão as principais coisas que deve saber sobre o que esta acontecer quando utiliza { $experimentTitle }:
+experimentMeasurementIntro = Além dos <a>dados</a> recolhidos por todas as experiências do Test Pilot, aqui estão as principais coisas que deve saber acerca do que está a acontecer quando utiliza { $experimentTitle }:
 measurements = A sua privacidade
 experimentPrivacyNotice = Pode saber mais sobre os dados recolhidos para { $title } aqui.
 contributorsHeading = Trazido a você por
@@ -218,7 +218,7 @@ pageTitleRetirePage = Firefox Test Pilot - Desinstalar o Test Pilot
 retirePageProgressMessage = A encerrar...
 retirePageHeadline = Obrigado por voar!
 retirePageMessage = Esperamos que se tenha divertido a experimentar connosco. <br> Volte a qualquer momento.
-retirePageSurveyButton = Responda a um questionário rápido
+retirePageSurveyButton = Responda a um rápido questionário
 
 
 
