@@ -15,7 +15,7 @@ import { Provider } from 'react-redux';
 
 import './lib/ga-snippet';
 
-import { setupAddonConnection } from './lib/addon';
+import { setupAddonConnection } from './lib/InstallManager';
 import createStore from './store';
 import config from './config';
 
