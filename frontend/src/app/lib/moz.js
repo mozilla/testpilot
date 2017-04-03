@@ -55,7 +55,6 @@ export function uninstallAddon() {
 
 export function setupAddonConnection(store) {
   mam.addEventListener('onEnabled', addon => {
-    console.warn('onEnabled', addon);
     if (addon) {
       const { experiments } = store.getState();
       const i = experiments.data.map(x => x.addon_id).indexOf(addon.id);
@@ -72,7 +71,6 @@ export function setupAddonConnection(store) {
     }
   });
   mam.addEventListener('onDisabled', addon => {
-    console.warn('onDisabled', addon);
     if (addon) {
       const { experiments } = store.getState();
       const i = experiments.data.map(x => x.addon_id).indexOf(addon.id);
@@ -88,29 +86,24 @@ export function setupAddonConnection(store) {
       }
     }
   });
+/*
   mam.addEventListener('onEnabling', (addon, restart) => {
-    console.warn('onEnabling', addon, restart);
   });
   mam.addEventListener('onDisabling', (addon, restart) => {
-    console.warn('onDisabling', addon, restart);
   });
   mam.addEventListener('onInstalling', (addon, restart) => {
-    console.warn('onInstalling', addon, restart);
   });
   mam.addEventListener('onInstalled', addon => {
-    console.warn('onInstalled', addon);
   });
   mam.addEventListener('onUninstalling', (addon, restart) => {
     // TODO similar logic to txp addon AddonListener.js
-    console.warn('onUninstalling', addon, restart);
   });
   mam.addEventListener('onOperationCancelled', addon => {
     // TODO similar logic to txp addon AddonListener.js
-    console.warn('onOperationCancelled', addon);
   });
   mam.addEventListener('onPropertyChanged', (addon, p) => {
-    console.warn('onPropertyChanged', addon, p);
   });
+*/
   getExperimentAddons(store.getState().experiments.data)
     .then(addons => {
       const enabled = addons.filter(a => a && a.isEnabled);
