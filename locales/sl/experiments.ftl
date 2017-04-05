@@ -7,6 +7,7 @@ activitystreamContributors4Title = Programski inženir
 activitystreamContributors11Title = Programski inženir
 cliqzDescription = Hitrejši predlogi iskanja. Medtem ko tipkate, Cliqz prikazuje predloge prav pod naslovno vrstico. Ne da bi ogrožal vašo zasebnost.
 cliqzToursteps2Copy = Vedno nam lahko sporočite povratne informacije ali onemogočite Cliqz v Test Pilotu.
+containersDescription = Razdelite svoje spletno življenja! Ustvarite ločene vsebnike za vsako od svojih spletnih življenj - službeno, družabno, osebno - ostanite organizirani in zaščitite svojo zasebnost.
 containersToursteps4Copy = Vedno nam lahko sporočite povratne informacije ali onemogočite Containers v Test Pilotu.
 containersContributors0Title = Uporabniška varnost in zasebnost
 containersContributors7Title = Firefox UX
