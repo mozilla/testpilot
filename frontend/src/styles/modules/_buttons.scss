@@ -63,6 +63,10 @@
         background: $primary-darker;
         border: 1px solid $primary-darkest;
       }
+
+      &.state-change {
+        background: $primary-darker;
+      }
     }
 
     &.install {
