@@ -20,7 +20,7 @@ function fetchUserCounts(countsUrl: string): Promise<FetchUserCountsAction> {
         if (response.ok) {
           return response.json().then(data => ({
             type: 'FETCH_USER_COUNTS',
-            payload: { data }
+            payload: data
           }));
         }
         throw new Error('Could not get user counts');
