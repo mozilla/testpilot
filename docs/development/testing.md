@@ -3,8 +3,12 @@
 # Testing
 
 We have several mechanisms for testing parts of Test Pilot. All of these tests
-must pass for Pull Requests to be accepted into the project, so it's very 
+must pass for Pull Requests to be accepted into the project, so it's very
 handy to know how to run them and write new ones as code changes.
+
+## All tests
+
+To quickly run all tests, including addon tests, frontend tests, eslint checks, and flow types coverage reports, use `npm run test:all`.
 
 ## Front-end client tests
 
@@ -15,7 +19,7 @@ tests to review for inspiration in the [`frontend/test/app`][fetests]
 directory.
 
 After completing the [Development Quickstart][quickstart], you can run the
-tests with the following command: 
+tests with the following command:
 
 ```
 npm test
@@ -31,7 +35,7 @@ npm run test:watch
 It's useful to have this running as you develop, because then you can see test
 failures quickly and not have to remember to run the suite before submitting a
 Pull Request.
- 
+
 [fetests]: https://github.com/mozilla/testpilot/tree/master/frontend/test/app
 [react]: https://facebook.github.io/react/
 [redux]: http://redux.js.org/
