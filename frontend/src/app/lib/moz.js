@@ -12,6 +12,7 @@ function mozAddonManagerInstall(url) {
   return mam.createInstall({ url }).then(install => {
     return new Promise((resolve, reject) => {
       install.addEventListener('onInstallEnded', () => resolve());
+      install.addEventListener('onDownloadFailed', () => reject());
       install.addEventListener('onInstallFailed', () => reject());
       install.install();
     });
