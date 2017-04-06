@@ -25,9 +25,7 @@ describe('app/actions/experiments/setInstalled', () => {
       try {
         expect(JSON.stringify(result)).to.equal(JSON.stringify({
           type: 'FETCH_USER_COUNTS',
-          payload: {
-            data: USAGE_COUNTS
-          }
+          payload: USAGE_COUNTS
         }));
       } catch (e) {
         return done(e);
