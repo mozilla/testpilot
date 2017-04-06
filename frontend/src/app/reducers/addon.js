@@ -1,6 +1,82 @@
+// @flow
 
+import type { Experiment } from './experiments';
 
-function setHasAddon(state, { payload: hasAddon }) {
+type RestartState = {
+  isRequired: boolean,
+};
+
+type InstalledExperiment = {
+  active: boolean,
+  addon_id: string,
+  created: string,
+  html_url: string,
+  installDate: string,
+  manuallyDisabled: boolean,
+  thumbnail: string,
+  title: string
+};
+
+export type InstalledExperiments = {
+  [name: string]: InstalledExperiment
+};
+
+type AddonState = {
+  hasAddon: boolean,
+  installed: InstalledExperiments,
+  installedLoaded: boolean,
+  installedAddons: Array<string>,
+  clientUUID: string,
+  restart: RestartState
+};
+
+function defaultState(): AddonState {
+  return {
+    hasAddon: false,
+    installed: {},
+    installedLoaded: false,
+    installedAddons: [],
+    clientUUID: '',
+    restart: {
+      isRequired: false
+    }
+  };
+}
+
+type SetHasAddonAction = {
+  type: 'SET_HAS_ADDON',
+  payload: boolean
+};
+
+type SetClientUUIDAction = {
+  type: 'SET_CLIENT_UUID',
+  payload: string
+};
+
+export type SetInstalledAction = {
+  type: 'SET_INSTALLED',
+  payload: {
+    installed: InstalledExperiments,
+    installedLoaded: boolean
+  }
+};
+
+type SetInstalledAddonsAction = {
+  type: 'SET_INSTALLED_ADDONS',
+  payload: Array<string>
+};
+
+type ExperimentPayloadAction = {
+  type: 'ENABLE_EXPERIMENT' | 'DISABLE_EXPERIMENT' | 'MANUALLY_ENABLE_EXPERIMENT' | 'MANUALLY_DISABLE_EXPERIMENT',
+  payload: Experiment
+};
+
+type AddonActions = SetHasAddonAction | SetClientUUIDAction | SetInstalledAction | ExperimentPayloadAction;
+
+function setHasAddon(
+  state: AddonState,
+  { payload: hasAddon }: SetHasAddonAction
+): AddonState {
   return {
     ...state,
     hasAddon,
@@ -8,7 +84,10 @@ function setHasAddon(state, { payload: hasAddon }) {
   };
 }
 
-function setInstalled(state, { payload: { installed, installedLoaded } }) {
+function setInstalled(
+  state: AddonState,
+  { payload: { installed, installedLoaded } }: SetInstalledAction
+): AddonState {
   return {
     ...state,
     installed,
@@ -16,10 +95,13 @@ function setInstalled(state, { payload: { installed, installedLoaded } }) {
   };
 }
 
-function setInstalledAddons(state, { payload: installedAddons }) {
+function setInstalledAddons(
+  state: AddonState,
+  { payload: installedAddons }: SetInstalledAddonsAction
+): AddonState {
   const newInstalled = {};
   const actuallyInstalledAddons = (installedAddons || []);
-  for (const addonId of Object.keys(state.installed || {})) {
+  for (const addonId of Object.keys(state.installed)) {
     const experiment = state.installed[addonId];
     if (actuallyInstalledAddons.indexOf(addonId) === -1) {
       newInstalled[addonId] = { manuallyDisabled: true, ...experiment };
@@ -27,38 +109,57 @@ function setInstalledAddons(state, { payload: installedAddons }) {
       newInstalled[addonId] = experiment;
     }
   }
-  return { ...state, installed: newInstalled, installedAddons: actuallyInstalledAddons };
+  return {
+    ...state,
+    installed: newInstalled,
+    installedAddons: actuallyInstalledAddons
+  };
 }
 
-function setClientUuid(state, { payload: clientUUID }) {
+function setClientUuid(
+  state: AddonState,
+  { payload: clientUUID }: SetClientUUIDAction
+): AddonState {
   return { ...state, clientUUID };
 }
 
-function manuallyEnableExperiment(state, { payload: experiment }) {
+function manuallyEnableExperiment(
+  state: AddonState,
+  { payload: experiment }: ExperimentPayloadAction
+): AddonState {
   const newInstalled = { ...state.installed };
   newInstalled[experiment.addon_id] = { manuallyDisabled: false, ...experiment };
   return { ...state, installed: newInstalled };
 }
 
-function manuallyDisableExperiment(state, { payload: experiment }) {
+function manuallyDisableExperiment(
+  state: AddonState,
+  { payload: experiment }: ExperimentPayloadAction
+): AddonState {
   const newInstalled = { ...state.installed };
   newInstalled[experiment.addon_id] = { manuallyDisabled: true, ...experiment };
   return { ...state, installed: newInstalled };
 }
 
-function enableExperiment(state, { payload: experiment }) {
+function enableExperiment(
+  state: AddonState,
+  { payload: experiment }: ExperimentPayloadAction
+): AddonState {
   const newInstalled = { ...state.installed };
   newInstalled[experiment.addon_id] = experiment;
   return { ...state, installed: newInstalled };
 }
 
-function disableExperiment(state, { payload: experiment }) {
+function disableExperiment(
+  state: AddonState,
+  { payload: experiment }: ExperimentPayloadAction
+): AddonState {
   const newInstalled = { ...state.installed };
   delete newInstalled[experiment.addon_id];
   return { ...state, installed: newInstalled };
 }
 
-function requireRestart(state) {
+function requireRestart(state: AddonState): AddonState {
   return {
     ...state,
     restart: {
@@ -67,38 +168,27 @@ function requireRestart(state) {
   };
 }
 
-export function getInstalled(state) {
+export function getInstalled(state: AddonState): InstalledExperiments {
   return state.installed;
 }
 
-export function isExperimentEnabled(state, experiment) {
+export function isExperimentEnabled(state: AddonState, experiment: Experiment) {
   return !!(
-    experiment && state.installed &&
-    experiment.addon_id in state.installed &&
+    experiment && experiment.addon_id in state.installed &&
     !state.installed[experiment.addon_id].manuallyDisabled);
 }
 
-export function isAfterCompletedDate(experiment) {
+export function isAfterCompletedDate(experiment: Experiment) {
   return ((new Date(experiment.completed)).getTime() < Date.now());
 }
 
-export function isInstalledLoaded(state) {
+export function isInstalledLoaded(state: AddonState) {
   return state.installedLoaded;
 }
 
-export default function addonReducer(state, action) {
-  if (state === undefined) {
-    return {
-      hasAddon: false,
-      installed: {},
-      installedLoaded: false,
-      installedAddons: [],
-      clientUUID: '',
-      restart: {
-        isRequired: false,
-        forExperiment: null
-      }
-    };
+export default function addonReducer(state: ?AddonState, action: AddonActions): AddonState {
+  if (!state) {
+    return defaultState();
   }
 
   switch (action.type) {

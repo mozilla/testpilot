@@ -1,4 +1,3 @@
-// eslint-disable-next-line
 declare class AddonEventTarget {
   initialize(): void;
   on(type: string, listener: Function): AddonEventTarget;
@@ -7,12 +6,10 @@ declare class AddonEventTarget {
   off(type?: string, listener?: Function): AddonEventTarget;
 }
 
-// eslint-disable-next-line
 declare class EventEmitter extends AddonEventTarget {
   emit(type: string, ...args: any): void;
 }
 
-// eslint-disable-next-line
 declare class Worker extends AddonEventTarget {
   postMessage(data: number | string | Object): void;
   destroy(): void;

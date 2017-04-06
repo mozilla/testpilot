@@ -1,0 +1,7 @@
+[ignore]
+
+[include]
+../node_modules/seedrandom/*.
+
+[libs]
+../flow-typed

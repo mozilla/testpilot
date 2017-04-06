@@ -1,9 +1,11 @@
 extends:
   - eslint:recommended
+  - plugin:flowtype/recommended
   - plugin:react/recommended
   - airbnb/base
 
 plugins:
+  - flowtype
   - react
 
 globals:

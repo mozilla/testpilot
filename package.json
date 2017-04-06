@@ -38,6 +38,7 @@
     "babel-core": "^6.24.0",
     "babel-eslint": "^7.1.1",
     "babel-plugin-istanbul": "^4.0.0",
+    "babel-plugin-transform-flow-strip-types": "^6.14.0",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.22.0",
@@ -51,9 +52,13 @@
     "eslint": "^3.17.1",
     "eslint-config-airbnb": "10.0.1",
     "eslint-config-react": "^1.1.7",
+    "eslint-plugin-flowtype": "^2.30.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
+    "flow-bin": "^0.41.0",
+    "flow-coverage-report": "^0.3.0",
+    "flow-typed": "^2.0.0",
     "fetch-mock": "^5.9.4",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
@@ -100,6 +105,7 @@
     "url": "git+https://github.com/mozilla/testpilot.git"
   },
   "scripts": {
+    "bootstrap": "npm install && cd addon && npm install && cd .. && gulp",
     "start": "NODE_ENV=development ENABLE_DEV_LOCALES=1 ENABLE_DEV_CONTENT=1 gulp",
     "server": "gulp server",
     "static": "gulp dist-build",
@@ -108,8 +114,9 @@
     "test": "cd frontend && mocha --require babel-register --require test-setup.js --recursive",
     "test:ci": "NODE_ENV=test nyc mocha --recursive --reporter mocha-junit-reporter --require frontend/test-setup.js frontend/test",
     "test:watch": "npm test -- --watch",
-    "test:all": "npm run lint && npm run test && cd addon && npm run lint && npm run coverage && npm run test",
+    "test:all": "npm run lint && npm run test && npm run flow-coverage && cd addon && npm run lint && npm run coverage && npm run test",
     "coverage": "NODE_ENV=test nyc mocha --recursive --require frontend/test-setup.js frontend/test",
+    "flow-coverage": "cd frontend && flow-coverage-report --threshold 60 -i 'src/**/*.js' -t html -o coverage/flow",
     "addon:locales": "gulp addon-copy-locales",
     "content": "gulp content-build"
   }

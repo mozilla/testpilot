@@ -1,14 +1,68 @@
+// @flow
 
-function fetchUserCounts(state, { payload: { data } }) {
+export type Experiment = {
+  addon_id: string,
+  completed: string,
+  slug: string,
+  xpi_url: string,
+  inProgress: boolean,
+  installation_count: number
+};
+
+export type ExperimentsState = {
+  data: Array<Experiment>
+};
+
+function defaultState(): ExperimentsState {
   return {
-    ...state,
-    data: state.data.map(experiment =>
-      ((data[experiment.addon_id]) ? { ...experiment, installation_count: data[experiment.addon_id] } : experiment))
+    data: []
   };
 }
 
+type UserCounts = {
+  [name: string]: number
+};
 
-function updateExperiment(state, { payload: { addonID, data } }) {
+export type FetchUserCountsAction = {
+  type: "FETCH_USER_COUNTS",
+  payload: UserCounts
+};
+
+export type UpdateExperimentAction = {
+  type: "UPDATE_EXPERIMENT",
+  payload: {
+    addonID: string,
+    data: Experiment
+  }
+};
+
+type ExperimentsActions = FetchUserCountsAction | UpdateExperimentAction;
+
+function fetchUserCounts(
+  state: ExperimentsState,
+  { payload: newNumbers }: FetchUserCountsAction
+): ExperimentsState {
+  const newExperiments = [];
+  for (const exp: Experiment of state.data) {
+    if (newNumbers[exp.addon_id]) {
+      newExperiments.push({
+        ...exp,
+        installation_count: newNumbers[exp.addon_id]
+      });
+    } else {
+      newExperiments.push(exp);
+    }
+  }
+  return {
+    ...state,
+    data: newExperiments
+  };
+}
+
+function updateExperiment(
+  state: ExperimentsState,
+  { payload: { addonID, data } }: UpdateExperimentAction
+): ExperimentsState {
   return {
     ...state,
     data: state.data.map(experiment =>
@@ -16,31 +70,45 @@ function updateExperiment(state, { payload: { addonID, data } }) {
   };
 }
 
-export function getExperiments(state) {
+export function getExperiments(
+  state: ExperimentsState
+): Array<Experiment> {
   return state.data;
 }
 
-export function getExperimentByID(state, addonID) {
+export function getExperimentByID(
+  state: ExperimentsState,
+  addonID: string
+): Experiment {
   return state.data.filter(e => e.addon_id === addonID)[0];
 }
 
-export function getExperimentBySlug(state, filter) {
+export function getExperimentBySlug(
+  state: ExperimentsState,
+  filter: string
+): Experiment {
   return state.data.filter(e => e.slug === filter)[0];
 }
 
-export function getExperimentByURL(state, url) {
+export function getExperimentByURL(
+  state: ExperimentsState,
+  url: string
+): Experiment {
   return state.data.filter(e => e.xpi_url === url)[0];
 }
 
-export function getExperimentInProgress(state) {
+export function getExperimentInProgress(
+  state: ExperimentsState
+): Experiment {
   return state.data.filter(e => e.inProgress)[0];
 }
 
-export default function experimentsReducer(state, action) {
-  if (state === undefined) {
-    return {
-      data: []
-    };
+export default function experimentsReducer(
+  state: ?ExperimentsState,
+  action: ExperimentsActions
+): ExperimentsState {
+  if (!state) {
+    return defaultState();
   }
   switch (action.type) {
     case 'FETCH_USER_COUNTS':

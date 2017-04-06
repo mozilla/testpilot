@@ -1,15 +1,32 @@
+// @flow
 
 import seedrandom from 'seedrandom';
 
-function random(choices) {
+type TestChooser = {
+  name: string,
+  getValue: () => string
+};
+
+type ChosenVariantsState = {
+  [name: string]: string
+};
+
+type ChosenTestState = {
+  test: string,
+  variant: string
+};
+
+function random(choices: { [name: string]: number }): string {
   let summedWeight = 0;
   const variants = [];
-  Object.entries(choices).forEach(([name, weight]) => {
+  const choiceNames: Array<string> = Object.keys(choices);
+  for (const name of choiceNames) {
+    const weight = choices[name];
     summedWeight += weight;
     for (let i = 0; i < weight; i++) {
       variants.push(name);
     }
-  });
+  }
   let seed = window.localStorage.getItem('testpilot-varianttests-id', null);
   if (seed === null) {
     seed = String(Math.random());
@@ -18,7 +35,7 @@ function random(choices) {
   return variants[Math.floor(seedrandom(seed)() * summedWeight)];
 }
 
-const tests = [
+const tests: Array<TestChooser> = [
   {
     name: 'installButtonBorder',
     getValue: function getValue() {
@@ -33,9 +50,9 @@ const tests = [
   }
 ];
 
-const chosenVariants = {};
+const chosenVariants: ChosenVariantsState = {};
 
-let chosenTest = null;
+let chosenTest: ChosenTestState | null = null;
 
 tests.forEach(test => {
   // Only put each user in one test. If we previously found a non-default test,
@@ -54,7 +71,7 @@ tests.forEach(test => {
   }
 });
 
-export function getChosenTest() {
+export function getChosenTest(): ChosenTestState {
   if (chosenTest === null) {
     return {
       test: '',
@@ -64,6 +81,6 @@ export function getChosenTest() {
   return chosenTest;
 }
 
-export default function variantTestsReducer() {
+export default function variantTestsReducer(): ChosenVariantsState {
   return chosenVariants;
 }

@@ -1,10 +1,15 @@
+// @flow
 
+import type {
+  InstalledExperiments,
+  SetInstalledAction
+} from '../reducers/addon';
 
-function makeSimpleActionCreator(type) {
-  return (payload) => ({ type, payload });
+function makeSimpleActionCreator<T>(type: string) {
+  return (payload: T): { type: string, payload: T } => ({ type, payload });
 }
 
-function setInstalled(installed) {
+function setInstalled(installed: InstalledExperiments): SetInstalledAction {
   return {
     type: 'SET_INSTALLED',
     payload: {

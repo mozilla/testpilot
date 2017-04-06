@@ -2,7 +2,7 @@
   "presets": ["es2015", "stage-0", "react"],
   "env": {
     "test": {
-      "plugins": ["istanbul"]
+      "plugins": ["istanbul", "transform-flow-strip-types"]
     }
   }
 }
