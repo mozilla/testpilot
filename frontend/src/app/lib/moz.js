@@ -70,7 +70,7 @@ export function setupAddonConnection(store) {
       }
     }
   });
-  mam.addEventListener('onDisabled', addon => {
+  function onDisabled(addon) {
     if (addon) {
       const { experiments } = store.getState();
       const i = experiments.data.map(x => x.addon_id).indexOf(addon.id);
@@ -85,7 +85,9 @@ export function setupAddonConnection(store) {
         );
       }
     }
-  });
+  }
+  mam.addEventListener('onDisabled', onDisabled);
+  mam.addEventListener('onUninstalled', onDisabled);
 /*
   mam.addEventListener('onEnabling', (addon, restart) => {
   });
