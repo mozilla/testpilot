@@ -73,6 +73,11 @@ you should be on your way:
 
    1. Enter `false` for the value.
 
+   1. Enter `extensions.webapi.testing` for the name.
+
+   1. Enter `true` for the value. This is needed for whitelisting mozAddonManager
+      on testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, and example.com.
+
 1. View your local site in Firefox Developer Edition at https://example.com:8000/
 
 [devedition]: https://www.mozilla.org/en-US/firefox/developer/
