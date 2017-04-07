@@ -88,19 +88,19 @@ nomore404sContributors2Title = Igazgató, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Senior crawler mérnök, The Internet Archive
 nomore404sEolwarning = A No More 404s kísérlet nem kerül eltávolításra a böngészőjéből, és az eredmények itt lesznek jelentve, ha a kísérlet véget ér. A jövőbeli frissítések az addons.mozilla.org-on lesznek elérhetőek.
 pageshotDescription = Intuitív képernyőképek közvetlenül a böngészőjében. Készítsen, mentsen és osszon meg képernyőképeket, miközben böngészi a Webet a Firefoxszal.
-pageshotIntroduction = <p>A Lapképpel képernyőképeket készíthet, oszthat meg és kereshet elő – a Firefox elhagyása nélkül.</p><ul><li><strong>Rács nézet:</strong> böngéssze a mentett képernyőképek bélyegképeit</li> <li><strong>Okos keresés:</strong> találja meg amit keres egyetlen kulcsszóval. A Lapkép indexeli a lapcímeket és a szöveget a képernyőképen</li> <li><strong>Egy lépéses megosztás:</strong> tegye közzé a képernyőképet a közösségi médiában, vagy másolja ki a megosztható hivatkozást a böngészőablak tetejéről.</li></ul>
+pageshotIntroduction = <p>A Page Shottal képernyőképeket készíthet, oszthat meg és kereshet elő – a Firefox elhagyása nélkül.</p><ul><li><strong>Rács nézet:</strong> böngéssze a mentett képernyőképek bélyegképeit</li> <li><strong>Okos keresés:</strong> találja meg amit keres egyetlen kulcsszóval. A Lapkép indexeli a lapcímeket és a szöveget a képernyőképen</li> <li><strong>Egy lépéses megosztás:</strong> tegye közzé a képernyőképet a közösségi médiában, vagy másolja ki a megosztható hivatkozást a böngészőablak tetejéről.</li></ul>
 pageshotMeasurements0 = Tároljuk a képeit a Mozilla kiszolgálóin, és hozzáférése lesz azokhoz a képernyőképekhez. Bár csak akkor fogunk hozzáférni a képekhez, ha ésszerűen szükséges a szolgáltatás működéséhez, mint amikor valaki elküldi nekünk a hivatkozást a „megjelölés” funkciót használva, vagy ha problémákat diagnosztizálunk. Emellett minden képet aggregálva elemzünk, hogy fejlesszük a Lapképet, például azonosítjuk az átlagos méretet és a felhasználó által készített képek számát.
 pageshotMeasurements1 = Felhasználási adatokat is gyűjtünk, hogy jobban megértsük hogyan használják a terméket, például hogy hányszor kattint a képkészítés gombra, hányszor ment le képet, vagy hányszor találkozik hibával eközben.
 pageshotMeasurements2 = A szolgáltatással történő visszaélések megakadályozása miatt alapvető biztonsági megfigyelést végzünk. Például gyűjtjük és tároljuk az IP-címeket, hogy észleljük és blokkoljuk azokat, akik privát lapok után fésülik át a szolgáltatást.
-pageshotMeasurements3 = A Lapkép weboldal felkeresésekor a <a href="https://www.mozilla.org/privacy/websites/" target="_blank">webhelyekre, közleményekre és sütikre vonatkozó adatvédelmi nyilatkozatban</a> leírtak szerint gyűjtünk adatokat.
+pageshotMeasurements3 = A Page Shot weboldal felkeresésekor a <a href="https://www.mozilla.org/privacy/websites/" target="_blank">webhelyekre, közleményekre és sütikre vonatkozó adatvédelmi nyilatkozatban</a> leírtak szerint gyűjtünk adatokat.
 pageshotDetails0Copy = Válassza ki a képterületet, és mentse el, ha tetszik amit lát; szakítsa meg mentés nélkül, ha nem.
 pageshotDetails1Copy = Ossza meg a hivatkozásokat közösségi médián vagy e-mailen keresztül, anélkül hogy le kellene töltenie, és csatolnia a fájlt.
 pageshotDetails2Copy = Találja meg könnyedén a mentett képernyőképeket. Böngésszen a bélyegképek között rács nézetben, vagy keressen kulcsszó alapján.
-pageshotToursteps0Copy = Válassza az ikont a Lapkép használatához.
+pageshotToursteps0Copy = Válassza az ikont a Page Shot használatához.
 pageshotToursteps1Copy = Emelje ki a megörökítendő területet.
 pageshotToursteps2Copy = Ossza meg, mentse vagy törölje a böngészőből.
 pageshotToursteps3Copy = Keressen vagy böngésszen a mentett képernyőképek között.
-pageshotToursteps4Copy = Bármikor adhat visszajelzést vagy letilthatja a Lapképet a Tesztpilótából.
+pageshotToursteps4Copy = Bármikor adhat visszajelzést vagy letilthatja a Page Shotot a Tesztpilótából.
 pageshotContributors0TitleEngineer = Szoftverfejlesztő mérnök
 pageshotContributors1Title = Szoftverfejlesztő mérnök
 pageshotContributors2Title = UX dizájner
