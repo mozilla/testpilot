@@ -183,7 +183,7 @@ experimentManuallyDisabled = { $title } desativado no Gestor de extras
 experimentMeasurementIntro = Além dos <a>dados</a> recolhidos por todas as experiências do Test Pilot, aqui estão as principais coisas que deve saber acerca do que está a acontecer quando utiliza { $experimentTitle }:
 measurements = A sua privacidade
 experimentPrivacyNotice = Pode saber mais sobre os dados recolhidos para { $title } aqui.
-contributorsHeading = Trazido a você por
+contributorsHeading = Trazido a si por
 contributorsExtraLearnMore = Saber mais
 changelog = Registo de alterações
 tour = Visita guiada
@@ -310,5 +310,5 @@ noScriptLink = Saiba porquê
 [[ pastExperiments ]]
 
 viewPastExperiments = Ver experiências passadas
-hidePastExperiments = Esconder experiências passadas
+hidePastExperiments = Ocultar experiências passadas
 
