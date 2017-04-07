@@ -179,6 +179,7 @@ disableExperiment = { $title } deneyini kapat
 disableExperimentTransition = Kapatılıyor...
 enableExperiment = { $title } deneyini etkinleştir
 enableExperimentTransition = Etkinleştiriliyor...
+experimentManuallyDisabled = { $title } Eklenti Yöneticisi'nde devre dışı bırakıldı
 experimentMeasurementIntro = Tüm Test Pilotu deneyleri tarafından toplanan <a>verilere</a> ek olarak { $experimentTitle } deneyini kullanırken bilmeniz gereken temel noktalar şunlardır:
 measurements = Gizliliğiniz
 experimentPrivacyNotice = Buradan { $title } deneyinin topladığı veriler hakkında daha fazla bilgi alabilirsiniz.
@@ -262,6 +263,7 @@ newsletterFormEmailPlaceholder =
   [html/placeholder] E-posta adresiniz
 newsletterFormDisclaimer = Yalnızca Test Pilotu ile ilgili bilgiler göndereceğiz.
 newsletterFormPrivacyNotice = Bilgilerimi <a>bu gizlilik bildiriminde</a> açıklandığı şekilde Mozilla ile paylaşmayı kabul ediyorum.
+newsletterFormPrivacyAgreementRequired = Devam etmek istiyorsanız bu kutuyu işaretleyin.
 newsletterFormSubmitButton = Kaydol
 newsletterFormSubmitButtonSubmitting = Gönderiliyor...
 
