@@ -1,5 +1,5 @@
-activitystreamDescription = Ulac asuddem n umazray neɣ asebter agejdan amaynut, d ayen fessusen akken ad tafeḍ ayen tebɣiḍ s Firefox.
-activitystreamIntroduction = <p>Uɣal ar tunigin s war ma ṛeḥent tiktiwin inek. Activity Stream ad iḥrez ismal i tḥemleḍ, ticraḍ n isebtarakked umazray amaynut ɣef afus di yal iccer. Udiɣ timeẓri n umazray ad k-mudd taskant n tunigin inek.</p>
+activitystreamDescription = Ulac asuddem n umazray neγ asebter agejdan amaynut, d ayen fessusen akken ad tafeḍ ayen tebγiḍ s Firefox.
+activitystreamIntroduction = <p>Uγal ar tunigin s war ma ṛeḥent tiktiwin inek. Activity Stream ad iḥrez ismal i tḥemleḍ, ticraḍ n isebtarakked umazray amaynut γef afus di yal iccer. Udiɣ timeẓri n umazray ad k-mudd taskant n tunigin inek.</p>
 activitystreamMeasurements0 = Nleqqeḍ-d isefka n useqdec izaduren ɣef wamek tseddayeḍ isebtar irmitanen Iccer amaynut akked umazray, am wanaw n iferdisen fiɣef tsendeḍ akked wadig nsen deg usebter.
 activitystreamMeasurements1 = Nleqqed-d daɣen isefkaizaduren n umaɣnu yinek n tunigin, am umḍan n tecraḍ n isebtar akked iferdisen n umazray inek.
 activitystreamMeasurements2 = Akken ad d-nmudd Activity Stream, Ad nekkes akk iɣef-isefka seg ismal Web yettwarzan, am tugniwin akken tignitin, s useqdec n umeẓlu yettusemman<a href="http://embed.ly/" target="_blank">Embedly</a>. Nettazen tuttriwin i Embedly s useqdec n iqeddacen n Mozilla, ihi ur ttizmiren ara ad ttwaqnen ɣur-k.
