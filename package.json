@@ -3,6 +3,9 @@
   "description": "A place where ideas come to idea",
   "version": "1.0.0",
   "author": "Mozilla (https://mozilla.org/)",
+  "browser": {
+    "tos-pp": false
+  },
   "bugs": {
     "url": "https://github.com/mozilla/testpilot/issues"
   },
@@ -32,7 +35,8 @@
     "redux-logger": "^2.8.2",
     "redux-promise": "^0.5.3",
     "reselect": "^2.5.4",
-    "seedrandom": "^2.4.2"
+    "seedrandom": "^2.4.2",
+    "tos-pp": "https://github.com/mozilla/legal-docs.git"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
