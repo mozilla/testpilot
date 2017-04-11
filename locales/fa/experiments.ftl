@@ -77,3 +77,4 @@ universalsearchContributors0Title = مدیر محصول
 universalsearchContributors1Title = طراح ارشد UX
 universalsearchContributors2Title = مهندس
 universalsearchContributors3Title = مهندس ارشد
+universalsearchEolwarning = ما به صورت خودکار تجربه جست‌وجو همگانی را غیر فعال می‌کنیم و نتایج را در پایان گزارش می‌کنیم.
