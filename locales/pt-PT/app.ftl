@@ -58,7 +58,7 @@ landingInstalledButton = Escolha as suas funcionalidades
 [[ oneClickInstall ]]
 
 oneClickInstallMinorCta = Instalar o Test Pilot e
-oneClickInstallMajorCta = Ativar { $title }
+oneClickInstallMajorCta = Ativar o { $title }
 
 
 
@@ -175,14 +175,14 @@ participantCount = <span>{ $installation_count }</span> participantes
 otherExperiments = Experimente estas experiências também
 giveFeedback = Dê feedback
 disableHeader = Desativar experiência?
-disableExperiment = Desativar { $title }
+disableExperiment = Desativar o { $title }
 disableExperimentTransition = A desativar...
-enableExperiment = Ativar { $title }
+enableExperiment = Ativar o { $title }
 enableExperimentTransition = A ativar...
 experimentManuallyDisabled = { $title } desativado no Gestor de extras
-experimentMeasurementIntro = Além dos <a>dados</a> recolhidos por todas as experiências do Test Pilot, aqui estão as principais coisas que deve saber acerca do que está a acontecer quando utiliza { $experimentTitle }:
+experimentMeasurementIntro = Além dos <a>dados</a> recolhidos por todas as experiências do Test Pilot, aqui estão as principais coisas que deve saber acerca do que está a acontecer quando utiliza o { $experimentTitle }:
 measurements = A sua privacidade
-experimentPrivacyNotice = Pode saber mais sobre os dados recolhidos para { $title } aqui.
+experimentPrivacyNotice = Pode saber mais acerca dos dados recolhidos para o { $title } aqui.
 contributorsHeading = Trazido a si por
 contributorsExtraLearnMore = Saber mais
 changelog = Registo de alterações
