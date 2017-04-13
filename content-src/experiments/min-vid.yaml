@@ -6,9 +6,8 @@ description: >
   Keep videos front and center. Min Vid lets you display YouTube and Vimeo
   videos in a small frame that stays in the foreground as you browse the web.
 introduction: >
-  <p>Love watching video? Love getting things done while you watch video? Try
-    Min Vid. It’s like picture-in-picture where one picture is a video and the
-    other is the entire Web.</p>
+  <p>Love multitasking? Try Min Vid. It’s like picture-in-picture where one picture
+  is a media player and the other is the entire Web.</p>
   <ul>
     <li><strong>Click and go:</strong> Pop up the Min Vid frame to keep videos
       playing in the foreground while you browse.</li>
@@ -16,6 +15,14 @@ introduction: >
       video frame anywhere on your desktop.</li>
     <li><strong>Controls where you need them:</strong> Min Vid includes controls
       to let you pause/play, scrub, drag, minimize, and adjust volume right in the frame.</li>
+    <li><strong>Now supporting audio playback:</strong> Min Vid now supports playback from
+      SoundCloud and direct mp3 links.</li>
+    <li><strong>Create a queue:</strong> Min Vid now supports queues, just start up
+      a video and add tracks from any supported domains(YouTube, Vimeo, SoundCloud, and
+      direct links).</li>
+    <li><strong>View your history:</strong> Min Vid keeps track of your history, just pop
+    open the queue panel from the top right of the player and you can access all the media
+    you've been playing.</li>
   </ul>
 image_twitter: /static/images/experiments/min-vid/social/mv-twitter.jpg
 image_facebook: /static/images/experiments/min-vid/social/mv-facebook.jpg
@@ -42,7 +49,7 @@ details:
   -
     image: /static/images/experiments/min-vid/experiments_experimentdetail/detail1.jpg
     copy: >
-      Access Min Vid from YouTube and Vimeo video players.
+      Access Min Vid from YouTube, Vimeo, and SoundCloud players.
   -
     image: /static/images/experiments/min-vid/experiments_experimentdetail/detail2.jpg
     copy: >
@@ -50,7 +57,12 @@ details:
   -
     image: /static/images/experiments/min-vid/experiments_experimentdetail/detail3.jpg
     copy: >
-      Right click on links to video to find Min Vid in the in-context controls.
+      Right click on links to media to find Min Vid in the in-context controls.
+  -
+    image: /static/images/experiments/min-vid/experiments_experimentdetail/detail4.jpg
+    copy: >
+      Launch an entire YouTube playlist into your queue. Create your own by clicking
+      the '+' icon or choosing the 'send to queue' option from the context menu.
 tour_steps:
   -
     image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour1.jpg
