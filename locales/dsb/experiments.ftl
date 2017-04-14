@@ -64,6 +64,7 @@ minvidMeasurements2 = Njegromaźimy daty wó jadnotliwych wideo, na kótarež st
 minvidDetails0Copy = Wužywajśo Min Vid z wideowóthrawakowu YouTube a Vimeo.
 minvidDetails1Copy = Woglědajśo se wideo na prědku, mjaztym až něco druge we webje cyniśo.
 minvidDetails2Copy = Klikniśo z pšaweju tastu na wideo, aby Min Vid w kontekstowem meniju namakał.
+minvidDetails3Copy = Pśidajśo cełu wótgrawańsku lisćinu Youtube do swójogo cakanskego rěda. Klikniśo na symbol '+' abo wubjeŕśo nastajenje 'Cakańskemu rědoju pśidaś' z kontekstowego menija, aby swójsku napórał.
 minvidToursteps0Copy = Wubjeŕśo symbol, aby Min Vid wužywał.
 minvidToursteps1Copy = Wótgrajśo wideo na prědku, mjaztym až dalej pśeglědujośo.
 minvidToursteps2Copy = Wužywajśo wóźeńske elementy we wobłuku, aby głosnosć pśiměrił, wideo wóthrał, pawzěrował a pśesunuł.
