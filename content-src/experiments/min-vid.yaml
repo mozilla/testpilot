@@ -18,7 +18,7 @@ introduction: >
     <li><strong>Now supporting audio playback:</strong> Min Vid now supports playback from
       SoundCloud and direct mp3 links.</li>
     <li><strong>Create a queue:</strong> Min Vid now supports queues, just start up
-      a video and add tracks from any supported domains(YouTube, Vimeo, SoundCloud, and
+      a video and add tracks from any supported domains (YouTube, Vimeo, SoundCloud, and
       direct links).</li>
     <li><strong>View your history:</strong> Min Vid keeps track of your history, just pop
     open the queue panel from the top right of the player and you can access all the media
@@ -62,7 +62,7 @@ details:
     image: /static/images/experiments/min-vid/experiments_experimentdetail/detail4.jpg
     copy: >
       Launch an entire YouTube playlist into your queue. Create your own by clicking
-      the '+' icon or choosing the 'send to queue' option from the context menu.
+      the '+' icon or choosing the 'add to queue' option from the context menu.
 tour_steps:
   -
     image: /static/images/experiments/min-vid/experiments_experimenttourstep/tour1.jpg
