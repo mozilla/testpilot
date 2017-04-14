@@ -64,6 +64,7 @@ minvidMeasurements2 = O samotných videích, která potkáte nebo spustíte, ž�
 minvidDetails0Copy = Přístup k funkcím Min Vid je přímo v přehrávači videa YouTube i Vimeo.
 minvidDetails1Copy = Dívejte se na videa v popředí a zároveň dělejte na webu klidně i něco jiného.
 minvidDetails2Copy = Klikněte pravým tlačítkem myši na odkaz na video a v nabídce najdete také ovládání Min Vid.
+minvidDetails3Copy = Přidejte si celý seznam videí z YouTube do své fronty. Vytvořte si novou kliknutím na ikonu „+“ nebo v kontextové nabídce vyberte „Odeslat do fronty“.
 minvidToursteps0Copy = Vyberte ikonu a začněte používat Min Vid.
 minvidToursteps1Copy = Přehrávejte video na popředí a pokračujte při tom v prohlížení.
 minvidToursteps2Copy = Ovládání hlasitosti, přehrávání videa nebo jeho zastavení a přesun přímo v rámu.
