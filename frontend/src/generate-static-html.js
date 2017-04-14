@@ -47,6 +47,7 @@ export function generateStaticPage({
     <meta name="twitter:card" content="summary" />
     <meta property="og:image" content={ image_facebook } />
     <meta name="twitter:image" content={ image_twitter } />
+    <meta property="og:url" content="https://testpilot.firefox.com" />
   </head>;
   const bodyComponent = <div>
     <noscript>
