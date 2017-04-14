@@ -77,6 +77,7 @@ trackingprotectionContributors0Title = توسعه‌دهنده وب
 trackingprotectionContributors1Title = طراح ارشد UX
 trackingprotectionContributors2Title = مهندس ارشد QA
 universalsearchDescription = پیشنهاداتی از بهترین سایت‌های وب هنگام تایپ در Awesome Bar دریافت کنید.
+universalsearchDetails0Copy = پایگاه‌های اینترنتی محبوب ، مردم و مقالات ویکی‌پدیا که ظاهر می‌شوند بسته به نوع شما.
 universalsearchToursteps0Copy = اکنون شما می‌توانید در یک جا جستجو کنید و جابجا شوید.
 universalsearchToursteps1Copy = توصیه‌هایی برای پایگاه های اطلاع رسانی محبوب و مقالات ویکی‌پدیا که به نظر می‌رسید مناسب شماست.
 universalsearchToursteps2Copy = شما می‌توانید به ما بازخورد دهید یا جست‌وجو سراسری را درخلبان آزمایشی غیرفعال کنید.
