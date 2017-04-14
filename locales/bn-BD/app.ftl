@@ -1,4 +1,4 @@
-siteName = Firefox টেস্ট পাইলট
+siteName = Firefox Test Pilot
 
 
 # Page titles, put in the <title> HTML tag.
