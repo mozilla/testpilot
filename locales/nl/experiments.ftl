@@ -64,6 +64,7 @@ minvidMeasurements2 = We verzamelen geen informatie over de specifieke video’s
 minvidDetails0Copy = Benader Min Vid vanuit YouTube- en Vimeo-videospelers.
 minvidDetails1Copy = Bekijk video’s op de voorgrond terwijl u andere dingen doet op het web.
 minvidDetails2Copy = Klik met de rechtermuisknop op koppelingen naar video’s om Min Vid in de in-context-bedieningen te vinden.
+minvidDetails3Copy = Laad een hele YouTube-afspeellijst in uw wachtrij. Maak een eigen afspeellijst door op het ‘+’-pictogram te klikken of de optie ‘Toevoegen aan wachtrij’ vanuit het contextmenu te kiezen.
 minvidToursteps0Copy = Selecteer het pictogram om Min Vid te gebruiken.
 minvidToursteps1Copy = Speel video’s op de voorgrond af terwijl u verder surft.
 minvidToursteps2Copy = Benader knoppen in het venster voor aanpassen van volume, afspelen, pauzeren en verplaatsen van de video.
