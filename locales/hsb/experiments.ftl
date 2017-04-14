@@ -64,6 +64,7 @@ minvidMeasurements2 = Njehromadźimy daty wo jednotliwych widejach, na kotrež s
 minvidDetails0Copy = Wužiwajće Min Vid z widejowothrawakow YouTube a Vimeo.
 minvidDetails1Copy = Wobhladajće sej widejo w prědku, mjeztym zo něšto druhe we webje činiće.
 minvidDetails2Copy = Klikńće z prawej tastu na widejo, zo byšće Min Vid w kontekstowym meniju namakał.
+minvidDetails3Copy = Přidajće cyłu wothrawansku lisćinu Youtube do swojeho čakanskeho rynka. Klikńće na symbol '+' abo wubjerće nastajenje 'Čakanskemu rynkej přidać' z kontekstoweho menija, zo byšće swójsku wutworił.
 minvidToursteps0Copy = Wubjerće symbol, zo byšće Min Vid wužiwał.
 minvidToursteps1Copy = Wothrajće widejo w prědku, mjeztym zo dale přehladujeće.
 minvidToursteps2Copy = Wužiwajće wodźenske elementy we wobłuku, zo byšće sylnosć zwuka přiměrił, widejo wothrał, pawzował a přesunył.
