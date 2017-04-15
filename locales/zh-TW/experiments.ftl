@@ -64,6 +64,7 @@ minvidMeasurements2 = 我們不會收集您遇到的影片的個別資訊。
 minvidDetails0Copy = 在 YouTube 與 Vimeo 視訊播放器中使用 Min Vid。
 minvidDetails1Copy = 讓您在網路上作別的事情時，同時能在前景播放影片。
 minvidDetails2Copy = 對影片鏈結按右鍵，即可在選單中找到 Min Vid。
+minvidDetails3Copy = 您可以直接將整個 YouTube 播放清單加到播放佇列當中，也可以點擊「+」圖示或從右鍵選單選擇「新增至佇列」來建立全新的佇列。
 minvidToursteps0Copy = 選擇圖示開始使用。
 minvidToursteps1Copy = 一邊看影片一邊繼續上網。
 minvidToursteps2Copy = 使用影片方塊中的控制元件來調整音量、播放、暫停、移動影片。
