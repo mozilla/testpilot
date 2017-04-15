@@ -64,6 +64,7 @@ minvidMeasurements2 = 我们不会收集您遇到的具体的视频信息。
 minvidDetails0Copy = 在 YouTube 和 Vimeo 的视频播放器上访问 Min Vid。
 minvidDetails1Copy = 在前台观看视频，且不影响您浏览网页。
 minvidDetails2Copy = 右击视频链接，在右键菜单中也能找到 Min Vid。
+minvidDetails3Copy = 将整个 YouTube 播放列表加入您的队列。点击 + 图标或选择右键菜单中的“添加到队列”选项创建自己的列表。
 minvidToursteps0Copy = 选择该图标，开始使用 Min Vid。
 minvidToursteps1Copy = 在前台观看视频，且不影响您浏览网页。
 minvidToursteps2Copy = 在小窗口中，还有调整音量、暂停、移动该视频等控件。
