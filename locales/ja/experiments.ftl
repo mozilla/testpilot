@@ -64,6 +64,7 @@ minvidMeasurements2 = 私達はあなたが遭遇した特定の動画に関す�
 minvidDetails0Copy = YouTube や Vimeo の動画プレーヤーから Min Vid へアクセスできます。
 minvidDetails1Copy = Web 上で何か別のことをしている間に、動画を前面で再生できます。
 minvidDetails2Copy = リンクへのリンクを右クリックして、コンテキストメニューから Min Vid を探してください。
+minvidDetails3Copy = ひとつの YouTube プレイリスト全体をキューへ追加できます。キューを作成するには「+」アイコンをクリックするかコンテキストメニューから「キューへ追加」オプションを選択してください。
 minvidToursteps0Copy = Min Vid を使い始めるにはアイコンを選択してください。
 minvidToursteps1Copy = ブラウジングを続けている間に、動画を前面で再生できます。
 minvidToursteps2Copy = フレーム内のコントロールにアクセスして、音量を調節したり、動画を再生、停止、シークしたりできます。
