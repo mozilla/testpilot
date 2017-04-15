@@ -64,6 +64,7 @@ minvidMeasurements2 = Não coletamos informações específicas sobre os vídeos
 minvidDetails0Copy = Use o Min Vid no YouTube e no Vimeo.
 minvidDetails1Copy = Assista o vídeo em primeiro plano, enquanto você faz outras coisas na Web.
 minvidDetails2Copy = Clique com o botão direito do mouse nos links dos vídeos para localizar o Min Vid junto aos controles de contexto.
+minvidDetails3Copy = Inicie uma lista de reprodução do YouTube na sua fila. Crie a sua própria ao clicar no ícone '+' ou ao escolher a opção 'Adicionar à fila' a partir do menu de contexto.
 minvidToursteps0Copy = Selecione o ícone para começar a usar o Min Vid.
 minvidToursteps1Copy = Assista vídeos em primeiro plano enquanto você navega.
 minvidToursteps2Copy = Acesse as opções de volume, reproduzir, pausar e avançar o vídeo diretamente no quadro do vídeo.
