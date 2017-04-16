@@ -64,6 +64,7 @@ minvidMeasurements2 = Arról nem gyűjtünk információt, hogy pontosan mely vi
 minvidDetails0Copy = Érje el a Min Videt a YouTube és a Vimeo videolejátszókból.
 minvidDetails1Copy = Nézzen videót az előtérben, míg más dolgokat csinál a Weben.
 minvidDetails2Copy = Kattintson jobb gombbal a videohivatkozásokon, hogy megtalálja a Min Videt a környezeti menüben.
+minvidDetails3Copy = Adjon egy teljes YouTube lejátszólistát a sorhoz. Hozza létre a sajátját a „+” ikonra kattintva, vagy válassza a „Hozzáadás a sorhoz” lehetőséget a környezeti menüből.
 minvidToursteps0Copy = Válassza az ikont a Min Vid használatához.
 minvidToursteps1Copy = Játsszon egy videót az előtérben, miközben folytatja a böngészést.
 minvidToursteps2Copy = Érje el a vezérlőelemeket a keretben a hang állításához, lejátszáshoz, szüneteltetéshez és a videó mozgatásához.
