@@ -78,6 +78,7 @@ nomore404sDescription = ¿Cansado de callejones sin salida en la web? Nosotros t
 nomore404sIntroduction = <p>Esto es simple. Si llegás a una página 404 al navegar la web, te haremos saber si el contenido que estás buscando está archivado en Wayback Machine de Internet Archive.</p>
 nomore404sMeasurements0 = Recolectamos información básica de uso, cuántas veces ocurre un error de Página no encontrada (código 404), cuántas veces una versión de esa página se encuentra en el archivo de Archive.org y cuántas veces elegís ver esa versión guardada.
 nomore404sMeasurements1 = Para brindar versiones guardadas de páginas, enviamos las URLs de las páginas de error 404 a Archive.org. <a href="https://archive.org/" target="_blank">Archive.org</a> publica sus políticas de privacidad <a href="https://archive.org/about/terms.php" target="_blank">aquí</a>.
+nomore404sMeasurements2 = No recolectamos URLs de las páginas que buscás o las URLs que enviamos a Archive.org.
 nomore404sMeasurements3 = Podemos compartir resultados de encuestas enviados y datos agregados de telemetría relacionados con este expermiento con Internet Archive.
 nomore404sDetails0Copy = Reducir los callejones sin salida de 404 con Wayback Machine.
 nomore404sToursteps0Copy = Navegá la web como normalmente hacés. Si encontrás una página 404, te haremos saber si hay una versión archivada disponible en Wayback Machine.
