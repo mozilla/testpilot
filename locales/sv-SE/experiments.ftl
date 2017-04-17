@@ -64,6 +64,7 @@ minvidMeasurements2 = Vi samlar inte in information om de specifika videoklipp s
 minvidDetails0Copy = Få tillgång till Min Vid från YouTube och Vimeo videospelare.
 minvidDetails1Copy = Titta på video i förgrunden medan du gör andra saker på webben.
 minvidDetails2Copy = Högerklicka på länkar till video för att hitta Min Vid i snabbmenyn.
+minvidDetails3Copy = Lägg till en hel YouTube-spellista till din kö. Skapa din egen genom att klicka på '+'-ikonen eller välj alternativet 'Lägg till i kö' från menyn.
 minvidToursteps0Copy = Klicka på ikonen för att börja använda Min Vid.
 minvidToursteps1Copy = Spela upp video i förgrunden medan du fortsätter att surfa.
 minvidToursteps2Copy = Åtkomstkontroller i ramen för att justera volym, spela upp, pausa och flytta video.
