@@ -134,6 +134,7 @@ snoozetabsContributors6Title = Control de calidad de Softvision
 snoozetabsContributors7Title = Control de calidad de Softvision
 tabcenterDescription = ¿Cómo sería tener las pestañas a un costado en lugar de arriba? ¡Queremos saberlo!
 tabcenterMeasurements0 = Recolectamos información sobre la forma en la que interactuás con Tab Center, como por ejemplo qué tan usualmente maximizás o pegás Tab Center.
+tabcenterMeasurements1 = Además obtenemos información sobre la forma en la que usás las pestañas, como por ejemplo la cantidad de pestañas que mantenés abiertas, y cuánto tiempo mantenés las pestañas abiertas.
 tabcenterDetails0Copy = Llevate las pestañas al costado.
 tabcenterToursteps0Copy = Primero lo primero, todas las pestañas ahora están en el costado.
 tabcenterContributors0Title = UX de Firefox
