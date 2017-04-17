@@ -86,8 +86,16 @@ nomore404sToursteps0Copy = Navegá la web como normalmente hacés. Si encontrás
 nomore404sToursteps1Copy = Siempre podés darnos tu opinión o deshabilitar No More 404s desde Test Pilot.
 nomore404sContributors1Title = Desarrollador, Wayback Machine, The Internet Archive
 nomore404sContributors2Title = Director, Wayback Machine, The Internet Archive
+nomore404sContributors3Title = Ingeniero Senior, The Internet Archive
 nomore404sEolwarning = El experimento No más 404 no se eliminará de tu navegador y los resultados se informarán aquí cuando termine. Las actualizaciones futuras estarán disponibles en addons.mozilla.org.
 pageshotDescription = Una forma intuitiva de hacer capturas de pantalla en tu navegador. Capturá, guardá y compartí capturas de pantalla mientras navegás la web con Firefox.
+pageshotIntroduction = <p>Page Shot te permite tomar, compartir y recuperar capturas de pantalla directamente desde Firefox.</p><ul><li><strong>Vista de grilla:</strong> Navegá por miniaturas de las capturas guardadas</li><li><strong>Búsqueda inteligente:</strong> Encontrá la captura que estabas buscando con sólo una palabra clave. Page Shot indexa los títulos y textos de la página</li><li><strong>Compartí en un solo paso:</strong> Publicá tus capturas de pantalla en redes sociales o copiá un enlace para compartir desde la parte superior de la ventana de tu navegador.</li></ul>
+pageshotMeasurements0 = Guardamos tus capturas en los servidores de Mozilla y tendremos acceso a ellas. Sin embargo, sólo accederemos a ellas cuando sea necesario para el funcionamiento del servicio, como cuando alguien nos envíe el enlace a una captura con la función "denuncia", o para diagnosticar algún problema. También analizaremos todas las capturas en conjunto para ayudar a mejorar Page Shot, por ejemplo, para conocer el tamaño promedio y la cantidad de capturas por usuario.
+pageshotMeasurements1 = Recolectamos información del uso para entender tus interacciones con el producto, como por ejemplo el número de veces que hacés clic en el botón de captura, guardás una imagen u ocurren errores al guardar una imagen.
+pageshotMeasurements2 = Para prevenir un abuso del servicio, realizamos un monitoreo básico de seguridad. Por ejemplo, guardamos direcciones IP para detectar y bloquear usuarios que escanean el servicio para encontrar imágenes privadas.
+pageshotMeasurements3 = Para todas las visitas al sitio de Page Shot, la información que recolectamos está descripta en nuestras <a href="https://www.mozilla.org/privacy/websites/" target="_blank">notas sobre Sitios Web, comunicaciones y privacidad de Cookies</a>.
+pageshotDetails0Copy = Seleccioná el área de la imagen y guardá si te gusta lo que ves, cancelá sin guardar si no querés.
+pageshotDetails1Copy = Compartí enlaces a las imágenes a través de las redes sociales o correo electrónico, sin tener que descargar la imagen y adjuntar un archivo.
 pageshotToursteps1Copy = Marcá el área que querés capturar.
 pageshotToursteps2Copy = Compartir, guardar o borrar desde el navegador.
 pageshotToursteps3Copy = Buscar o navegar para buscar capturas de pantalla guardadas.
