@@ -81,6 +81,7 @@ nomore404sMeasurements1 = Para brindar versiones guardadas de páginas, enviamos
 nomore404sMeasurements2 = No recolectamos URLs de las páginas que buscás o las URLs que enviamos a Archive.org.
 nomore404sMeasurements3 = Podemos compartir resultados de encuestas enviados y datos agregados de telemetría relacionados con este expermiento con Internet Archive.
 nomore404sDetails0Copy = Reducir los callejones sin salida de 404 con Wayback Machine.
+nomore404sDetails1Copy = Creado por nuestros amigos de Internet Archive.
 nomore404sToursteps0Copy = Navegá la web como normalmente hacés. Si encontrás una página 404, te haremos saber si hay una versión archivada disponible en Wayback Machine.
 nomore404sToursteps1Copy = Siempre podés darnos tu opinión o deshabilitar No More 404s desde Test Pilot.
 nomore404sContributors1Title = Desarrollador, Wayback Machine, The Internet Archive
