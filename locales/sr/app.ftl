@@ -170,6 +170,8 @@ experimentPromoSubheader = Ми градимо могућности следећ
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } је омогућен.
+installErrorMessage = Уф. { $title } не може бити омогућен. Покушајте поново касније.
+participantCount = <span>{ $installation_count }</span> учесника
 otherExperiments = Испробајте и ове експерименте
 giveFeedback = Пошаљите повратну информацију
 disableHeader = Онемогућити експеримент?
@@ -181,7 +183,11 @@ experimentManuallyDisabled = { $title } онемогућен у управљач
 experimentMeasurementIntro = Уз <a>податке</a> сакупљене од свих Test Pilot експеримената, ево кључних ствари које треба да знате о томе шта се дешава када користите { $experimentTitle }:
 measurements = Ваша приватност
 experimentPrivacyNotice = Можете сазнати више о сакупљању података за { $title } овде.
+contributorsHeading = Омогућио вам је
 contributorsExtraLearnMore = Сазнајте више
+changelog = Последње промене
+tour = Обилазак
+tourLink = Крените у обилазак
 contribute = Допринесите
 bugReports = Пријаве грешака
 discussExperiment = Причајте о { $title }
@@ -196,6 +202,7 @@ highlightPrivacy = Ваша приватност
 [[ upgradeNotice ]]
 
 upgradeNoticeTitle = { $title } захтева Firefox { $min_release } или новији.
+upgradeNoticeLink = Како ажурирати Firefox.
 
 
 
@@ -203,13 +210,51 @@ upgradeNoticeTitle = { $title } захтева Firefox { $min_release } или �
 [[ uninstall ]]
 
 retireDialogTitle = Деинсталирај Test Pilot?
+retireMessage = Како желите. Овим ћете онемогућити све активне тестове, деинсталирати додатак и уклонити ваше податке о налогу са наших сервера.
+retirePageProgressMessage = Искључивање...
+retirePageHeadline = Хвала на летењу!
+retirePageMessage = Надамо се да сте се забавили експериментишући са нама. <br> Вратите се кад год будете желели.
+
+
+
+# Shown to users after installing Test Pilot if a restart is required.
+[[ restartIntro ]]
+
+restartIntroThree = Изаберите своје експерименте
+
+
+
+# Shown on a page presented to users three days after installing their first experiment.
+[[ share ]]
+
+sharePrimary = Допада вам се Test Pilot? Помозите нам да пронађемо нове регруте.
+shareEmail = Е-пошта
+
+# Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } се завршава { $completedDate }
+eolNoticeLink = Сазнајте више
+eolDisableMessage = Експеримент { $title } је завршен. Уколико га деинсталирате, нећете моћи да га поново инсталирате путем Test Pilot-a.
+completedDateLabel = Крајњи датум експеримента: <b>{ $completedDate }</b>
+
+
+
+# A form prompting the user to sign up for the Test Pilot Newsletter.
+[[ newsletterForm ]]
+
+newsletterFormEmailPlaceholder = 
+  [html/placeholder] Ваша е-пошта овде
+newsletterFormDisclaimer = Слаћемо вам искључиво информације у вези Test Pilot-a.
+newsletterFormPrivacyNotice = Прихватам да Mozilla рукује мојим подацима како је објашњено у <a>овом обавештењу о приватности</a>.
+newsletterFormSubmitButtonSubmitting = Слање...
 
 
 
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = Дошло је до грешке приликом слања ваше адресе е-поште. Покушајте поново?
 newsletterFooterHeader = Останите информисани
+newsletterFooterBody = Сазнајте за нове експерименте и погледајте резултате експеримената које сте испробали.
 newsletterFooterSuccessHeader = Хвала!
 
 
@@ -218,11 +263,29 @@ newsletterFooterSuccessHeader = Хвала!
 [[ localeWarning ]]
 
 localeUnavailableWarningTitle = Овај експеримент није подржан за ваш језик ({ $locale_code }).
+localeWarningSubtitle = Можете га ипак омогућити уколико желите.
+
+
+
+# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+[[ experimentsListNoneInstalled ]]
+
+experimentsListNoneInstalledSubheader = Спремни да испробате нови Test Pilot експеримент? Изаберите један да га омогућите, испробајте га и кажите нам ваше мишљење.
+experimentsListNoneInstalledCTA = Нисте заинтересовани? <a>Кажите нам зашто</a>.
+
+
+
+# Shown to users who do not have JavaScript enabled.
+[[ noscript ]]
+
+noScriptMessage = Test Pilot захтева JavaScript.<br>Жао нам је због тога.
+noScriptLink = Сазнајте зашто
 
 
 
 # Text of a button to toggle visibility of a list of past experiments.
 [[ pastExperiments ]]
 
+viewPastExperiments = Прикажи прошле експерименте
 hidePastExperiments = Сакриј прошле експерименте
 
