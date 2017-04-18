@@ -106,7 +106,7 @@ experimentsListCondensedHeader = Одаберите своје експерим�
 # A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
-feedbackSubmitButton = Попуни кратко истраживање
+feedbackSubmitButton = Попуните кратко истраживање
 feedbackUninstallTitle = Хвала!
 
 
