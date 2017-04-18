@@ -64,6 +64,7 @@ minvidMeasurements2 = Nezbierame údaje o konkrétnych videách, ktoré pozerát
 minvidDetails0Copy = Min Vid spustíte v prehrávačoch YouTube a Vimeo.
 minvidDetails1Copy = Pozerajte videá a pritom robte na webe aj niečo iné.
 minvidDetails2Copy = Po kliknutí pravým tlačidlom myši na odkaz na video a zobrazí sa vám kontextová ponuka experimentu Min Vid.
+minvidDetails3Copy = Pridajte si celý zoznam videí z YouTube do svojho zoznamu. Vytvorte si svoj vlastný kliknutím na ikonu "+" alebo v kontextovej ponuke vyberte "Pridať do zoznamu".
 minvidToursteps0Copy = Min Vid spustíte kliknutím na jeho ikonu.
 minvidToursteps1Copy = Prehrávajte video na popredí a pokračujte pri tom v práci.
 minvidToursteps2Copy = Ovládacie prvky nájdete priamo v ráme s videom.
