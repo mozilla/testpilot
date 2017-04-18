@@ -64,6 +64,7 @@ minvidMeasurements2 = No recopilamos información sobre los vídeos específicos
 minvidDetails0Copy = Accede a Min Vid desde YouTube y reproductores de vídeo Vimeo.
 minvidDetails1Copy = Ve vídeos en primer plano mientras haces otras cosas en la Web.
 minvidDetails2Copy = Haz clic con el botón derecho en los enlaces a un vídeo para encontrar Min Vid en el menú contextual.
+minvidDetails3Copy = Encola toda una lista de reproducción de YouTube. Crea tu propia cola haciendo clic en el icono '+' o seleccionando la opción 'añadir a la cola' en el menú contextual.
 minvidToursteps0Copy = Selecciona el icono para empezar a usar Min Vid.
 minvidToursteps1Copy = Reproduce vídeos en primer plano mientras navegas.
 minvidToursteps2Copy = Accede a los controles del borde para ajustar el volumen, reproducir, pausar y mover el vídeo.
