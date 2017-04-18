@@ -85,4 +85,41 @@ notFoundHeader = Четири нула четири!
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = Добродошли у Test Pilot!
+emailOptInButton = Пријави ме
+emailOptInSuccessMessage2 = Хвала!
+emailOptInConfirmationClose = Напред на експерименте...
+
+
+
+# A listing of all Test Pilot experiments.
+[[ experimentsList ]]
+
+experimentListEnabledTab = Омогућено
+experimentListJustLaunchedTab = Управо покренуто
+experimentListJustUpdatedTab = Управо ажурирано
+experimentListEndingTomorrow = Завршава се сутра
+experimentListEndingSoon = Завршава се ускоро
+experimentsListCondensedHeader = Одаберите своје експерименте!
+
+
+
+# A modal prompt shown when a user disables an experiment.
+[[ feedback ]]
+
+feedbackSubmitButton = Попуни кратко истраживање
+feedbackUninstallTitle = Хвала!
+
+
+
+# A splash shown on top of the experiment page when Test Pilot is not installed.
+[[ experimentPromo ]]
+
+experimentPromoSubheader = Ми градимо могућности следеће генерације за Firefox. Инсталирај Test Pilot да их испробаш!
+
+
+
+# Shown while uninstalling Test Pilot.
+[[ uninstall ]]
+
+retireDialogTitle = Деинсталирај Test Pilot?
 
