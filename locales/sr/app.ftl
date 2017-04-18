@@ -1,3 +1,12 @@
+siteName = Firefox Test Pilot
+
+
+# Page titles, put in the <title> HTML tag.
+[[ pageTitle ]]
+
+pageTitleDefault = Firefox Test Pilot
+pageTitleLandingPage = Firefox Test Pilot
+
 
 
 # Links in the footer.
@@ -13,6 +22,7 @@ footerLinkAbout = О Test Pilot-у
 # Items in the menu.
 [[ menu ]]
 
+home = Почетна
 menuTitle = Поставке
 menuRetire = Деинсталирај Test Pilot
 
