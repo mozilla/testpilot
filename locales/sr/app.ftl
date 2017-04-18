@@ -77,4 +77,12 @@ onboardingMessage = Ставили смо иконицу у вашу траку 
 [[ error ]]
 
 errorHeading = Упс!
+notFoundHeader = Четири нула четири!
+
+
+
+# A modal prompt to sign up for the Test Pilot newsletter.
+[[ emailOptIn ]]
+
+emailOptInDialogTitle = Добродошли у Test Pilot!
 
