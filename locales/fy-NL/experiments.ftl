@@ -64,6 +64,7 @@ minvidMeasurements2 = Wy sammelje gjin ynformaasje oer de spesifike fideo's dy't
 minvidDetails0Copy = Brûk Min Vid yn fideospilers fan YouTube en Vimeo.
 minvidDetails1Copy = Besjoch fideo op de foargrûn wylst jo oare saken dogge op it web.
 minvidDetails2Copy = Klik rjochts op keppelingen nei video's en fyn dêr Min Vid yn it kontekstmenu.
+minvidDetails3Copy = Laad in hiele YouTube-ôfspyllist yn jo wachtrige. Meitsje in eigen ôfspyllist troch op it ‘+’-piktogram te klikken of de opsje ‘Oan wachtrige tafoegje’ fan it kontekstmenu út te kiezen.
 minvidToursteps0Copy = Selektearje it piktogram om te starten mei Min Vid.
 minvidToursteps1Copy = Spylje fideo yn de foargrûn wylst jo trochgean mei sneupjen.
 minvidToursteps2Copy = Brûk betsjinning yn it finster om it folume te regeljen, de fideo ôf te spyljen, te pauzearjen en te ferpleatsen.
