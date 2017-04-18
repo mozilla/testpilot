@@ -123,3 +123,24 @@ experimentPromoSubheader = Ми градимо могућности следећ
 
 retireDialogTitle = Деинсталирај Test Pilot?
 
+
+
+# A section of the footer containing a newsletter signup form.
+[[ newsletterFooter ]]
+
+newsletterFooterSuccessHeader = Хвала!
+
+
+
+# A warning shown to users when the experiment is not available in their language
+[[ localeWarning ]]
+
+localeUnavailableWarningTitle = Овај експеримент није подржан за ваш језик ({ $locale_code }).
+
+
+
+# Text of a button to toggle visibility of a list of past experiments.
+[[ pastExperiments ]]
+
+hidePastExperiments = Сакриј прошле експерименте
+
