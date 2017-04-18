@@ -143,6 +143,10 @@ experimentCardLearnMore = Сазнајте више
 
 feedbackSubmitButton = Попуните кратко истраживање
 feedbackUninstallTitle = Хвала!
+feedbackUninstallCopy = 
+  | Ваше учешће у Test Pilot-у значи
+  | пуно! Погледајте и наше остале експерименте
+  | и будите у току са новима који долазе!
 
 
 
@@ -165,8 +169,33 @@ experimentPromoSubheader = Ми градимо могућности следећ
 # The experiment detail page.
 [[ experimentPage ]]
 
+isEnabledStatusMessage = { $title } је омогућен.
 otherExperiments = Испробајте и ове експерименте
 giveFeedback = Пошаљите повратну информацију
+disableHeader = Онемогућити експеримент?
+disableExperiment = Онемогући { $title }
+disableExperimentTransition = Онемогућавање...
+enableExperiment = Омогући { $title }
+enableExperimentTransition = Омогућавање...
+experimentManuallyDisabled = { $title } онемогућен у управљачу додатака
+experimentMeasurementIntro = Уз <a>податке</a> сакупљене од свих Test Pilot експеримената, ево кључних ствари које треба да знате о томе шта се дешава када користите { $experimentTitle }:
+measurements = Ваша приватност
+experimentPrivacyNotice = Можете сазнати више о сакупљању података за { $title } овде.
+contributorsExtraLearnMore = Сазнајте више
+contribute = Допринесите
+bugReports = Пријаве грешака
+discussExperiment = Причајте о { $title }
+tourOnboardingTitle = { $title } омогућен!
+tourDoneButton = Готово
+userCountContainer = Тренутно има <span>{ $installation_count }</span> људи који испробавају { $title }!
+highlightPrivacy = Ваша приватност
+
+
+
+# Shown when an experiment requires a version of Firefox newer than the user's.
+[[ upgradeNotice ]]
+
+upgradeNoticeTitle = { $title } захтева Firefox { $min_release } или новији.
 
 
 
