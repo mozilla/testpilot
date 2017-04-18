@@ -6,6 +6,8 @@ siteName = Firefox Test Pilot
 
 pageTitleDefault = Firefox Test Pilot
 pageTitleLandingPage = Firefox Test Pilot
+pageTitleExperimentListPage = Firefox Test Pilot - Експерименти
+pageTitleExperiment = Firefox Test Pilot - { $title }
 
 
 
@@ -15,6 +17,7 @@ pageTitleLandingPage = Firefox Test Pilot
 footerLinkCookies = Колачићи
 footerLinkPrivacy = Приватност
 footerLinkTerms = Услови
+footerLinkLegal = Права
 footerLinkAbout = О Test Pilot-у
 
 
@@ -24,6 +27,9 @@ footerLinkAbout = О Test Pilot-у
 
 home = Почетна
 menuTitle = Поставке
+menuWiki = Test Pilot Wiki
+menuDiscuss = Причајте о Test Pilot-у
+menuFileIssue = Пријавите грешку
 menuRetire = Деинсталирај Test Pilot
 
 
@@ -32,7 +38,9 @@ menuRetire = Деинсталирај Test Pilot
 [[ landing ]]
 
 landingIntroOne = Тестирајте нове могућности.
+landingIntroTwo = Пошаљите повратне информације.
 landingIntroThree = Помозите да изградимо Firefox.
+landingLegalNotice = Наставком коришћења прихватате <a>услове коришћења</a> и <a>обавештење о приватности</a> Test Pilot-а.
 landingExperimentsTitle = Испробајте најновије експерименталне могућности
 
 
@@ -87,6 +95,7 @@ onboardingMessage = Ставили смо иконицу у вашу траку 
 [[ error ]]
 
 errorHeading = Упс!
+errorMessage = Изгледа да смо нешто покварили. <br> Покушајте поново касније.
 notFoundHeader = Четири нула четири!
 
 
@@ -95,7 +104,14 @@ notFoundHeader = Четири нула четири!
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = Добродошли у Test Pilot!
+emailOptInMessage = Сазнајте за нове експерименте и погледајте резултате експеримената које сте испробали.
+emailValidationError = Користите валидну адресу е-поште!
+
+# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput = 
+  [html/placeholder] е-пошта иде овде :)
 emailOptInButton = Пријави ме
+emailOptInConfirmationTitle = Порука послата
 emailOptInSuccessMessage2 = Хвала!
 emailOptInConfirmationClose = Напред на експерименте...
 
@@ -113,6 +129,15 @@ experimentsListCondensedHeader = Одаберите своје експерим�
 
 
 
+# An individual experiment in the listing of all Test Pilot experiments.
+[[ experimentCard ]]
+
+experimentCardManage = Управљајте
+experimentCardGetStarted = Започните
+experimentCardLearnMore = Сазнајте више
+
+
+
 # A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
@@ -121,10 +146,27 @@ feedbackUninstallTitle = Хвала!
 
 
 
+# A modal prompt shown before the feedback survey for some experiments.
+[[ experimentPreFeedback ]]
+
+experimentPreFeedbackTitle = { $title } повратна информација
+experimentPreFeedbackLinkCopy = Пошаљите повратну информацију о експерименту { $title }
+
+
+
 # A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
+experimentPromoHeader = Спремни за полетање?
 experimentPromoSubheader = Ми градимо могућности следеће генерације за Firefox. Инсталирај Test Pilot да их испробаш!
+
+
+
+# The experiment detail page.
+[[ experimentPage ]]
+
+otherExperiments = Испробајте и ове експерименте
+giveFeedback = Пошаљите повратну информацију
 
 
 
@@ -138,6 +180,7 @@ retireDialogTitle = Деинсталирај Test Pilot?
 # A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterHeader = Останите информисани
 newsletterFooterSuccessHeader = Хвала!
 
 
