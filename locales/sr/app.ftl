@@ -211,15 +211,19 @@ upgradeNoticeLink = Како ажурирати Firefox.
 
 retireDialogTitle = Деинсталирај Test Pilot?
 retireMessage = Како желите. Овим ћете онемогућити све активне тестове, деинсталирати додатак и уклонити ваше податке о налогу са наших сервера.
+retireSubmitButton = Настави
+pageTitleRetirePage = Firefox Test Pilot - деинсталирај Test Pilot
 retirePageProgressMessage = Искључивање...
 retirePageHeadline = Хвала на летењу!
 retirePageMessage = Надамо се да сте се забавили експериментишући са нама. <br> Вратите се кад год будете желели.
+retirePageSurveyButton = Попуните кратку анкету
 
 
 
 # Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = Провере пре полетања
 restartIntroThree = Изаберите своје експерименте
 
 
