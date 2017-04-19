@@ -293,6 +293,7 @@ experimentsListNoneInstalledCTA = Нисте заинтересовани? <a>К
 # Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
+noScriptHeading = Упс...
 noScriptMessage = Test Pilot захтева JavaScript.<br>Жао нам је због тога.
 noScriptLink = Сазнајте зашто
 
