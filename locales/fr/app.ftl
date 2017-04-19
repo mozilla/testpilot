@@ -94,7 +94,7 @@ onboardingMessage = Une icône dans la barre d’outils vous permet d’accéder
 # Error message pages.
 [[ error ]]
 
-errorHeading = Oups&nbsp;!
+errorHeading = Oups !
 errorMessage = On dirait qu’il y a une panne quelque part. <br> Revenez demain peut-être.
 notFoundHeader = Zut… quatre cent quatre !
 
@@ -112,7 +112,7 @@ emailOptInInput =
   [html/placeholder] Adresse électronique :)
 emailOptInButton = Je m’inscris
 emailOptInConfirmationTitle = Courriel envoyé
-emailOptInSuccessMessage2 = Merci&nbsp;!
+emailOptInSuccessMessage2 = Merci !
 emailOptInConfirmationClose = À propos d’expériences…
 
 
@@ -142,8 +142,8 @@ experimentCardLearnMore = Apprenez-en davantage
 [[ feedback ]]
 
 feedbackSubmitButton = Répondre à un court sondage
-feedbackUninstallTitle = Merci&nbsp;!
-feedbackUninstallCopy = Votre participation à Firefox Test Pilot est très importante pour nous. Découvrez également nos autres expériences et restez à l’écoute des prochaines annonces&nbsp;!
+feedbackUninstallTitle = Merci !
+feedbackUninstallCopy = Votre participation à Firefox Test Pilot est très importante pour nous. Découvrez également nos autres expériences et restez à l’écoute des prochaines annonces !
 
 
 
@@ -159,7 +159,7 @@ experimentPreFeedbackLinkCopy = Donnez votre avis sur votre expérience avec { $
 [[ experimentPromo ]]
 
 experimentPromoHeader = Prêt⋅e au décollage ?
-experimentPromoSubheader = Nous élaborons les fonctionnalités de prochaine génération pour Firefox. Installez Test Pilot pour les essayer&nbsp;!
+experimentPromoSubheader = Nous élaborons les fonctionnalités de prochaine génération pour Firefox. Installez Test Pilot pour les essayer !
 
 
 
@@ -171,7 +171,7 @@ installErrorMessage = Hum… { $title } n’a pas pu être activé. Réessayez p
 participantCount = Déjà <span>{ $installation_count }</span> participants
 otherExperiments = Essayez aussi ces autres expériences
 giveFeedback = Faites-nous part de vos observations
-disableHeader = Désactiver l’expérience&nbsp;?
+disableHeader = Désactiver l’expérience ?
 disableExperiment = Désactiver { $title }
 disableExperimentTransition = Désactivation…
 enableExperiment = Activer { $title }
@@ -190,7 +190,7 @@ bugReports = Rapports de bogues
 discussExperiment = Discuter de { $title }
 tourOnboardingTitle = { $title } a été activé !
 tourDoneButton = Terminé
-userCountContainer = <span>{ $installation_count }</span> personnes essaient { $title } en ce moment même&nbsp;!
+userCountContainer = <span>{ $installation_count }</span> personnes essaient { $title } en ce moment même !
 userCountContainerAlt = Nouveau
 highlightPrivacy = Confidentialité
 
@@ -207,7 +207,7 @@ upgradeNoticeLink = Procédure pour mettre à jour Firefox.
 # Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
-retireDialogTitle = Désinstaller Test Pilot&nbsp;?
+retireDialogTitle = Désinstaller Test Pilot ?
 retireMessage = Comme vous le souhaitez. Cette action désactivera l’ensemble des tests actifs, désinstallera le module et supprimera les données de votre compte sur nos serveurs.
 retireEmailMessage = Pour ne plus recevoir les annonces, cliquez simplement sur le lien de <em>désabonnement</em> dans n’importe quel courriel envoyé par Test pilot.
 retireSubmitButton = Continuer
@@ -232,7 +232,7 @@ restartIntroThree = Sélectionnez vos expériences
 # Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
-sharePrimary = Vous appréciez Test Pilot&nbsp;? Aidez-nous à trouver de nouveaux testeurs.
+sharePrimary = Vous appréciez Test Pilot ? Aidez-nous à trouver de nouveaux testeurs.
 shareSecondary = ou copiez et collez simplement  ce lien…
 shareEmail = Adresse électronique
 shareCopy = Copier
@@ -272,7 +272,7 @@ newsletterFormSubmitButtonSubmitting = Envoi…
 newsletterFooterError = Une erreur s’est produite lors de l’envoi de votre adresse électronique. Réessayer ?
 newsletterFooterHeader = Restez au courant
 newsletterFooterBody = Découvrez de nouvelles expériences et recevez les résultats de celles que vous avez menées.
-newsletterFooterSuccessHeader = Merci&nbsp;!
+newsletterFooterSuccessHeader = Merci !
 newsletterFooterSuccessBody = Si vous n’avez jamais confirmé d’abonnement à une lettre d’information liée à Mozilla, vous devrez peut-être le faire. Veuillez vérifier votre boîte de réception ou vos courriers indésirables et recherchez un message de notre part.
 
 
