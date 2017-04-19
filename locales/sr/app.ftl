@@ -224,6 +224,8 @@ retirePageSurveyButton = Попуните кратку анкету
 [[ restartIntro ]]
 
 restartIntroLead = Провере пре полетања
+restartIntroOne = Рестартујте ваш прегледач
+restartIntroTwo = Лоцирајте Test Pilot додатак
 restartIntroThree = Изаберите своје експерименте
 
 
@@ -232,13 +234,22 @@ restartIntroThree = Изаберите своје експерименте
 [[ share ]]
 
 sharePrimary = Допада вам се Test Pilot? Помозите нам да пронађемо нове регруте.
+shareSecondary = или само ископирајте и налепите ову везу...
 shareEmail = Е-пошта
+shareCopy = Копирај
 
 # Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } се завршава { $completedDate }
 eolNoticeLink = Сазнајте више
 eolDisableMessage = Експеримент { $title } је завршен. Уколико га деинсталирате, нећете моћи да га поново инсталирате путем Test Pilot-a.
 completedDateLabel = Крајњи датум експеримента: <b>{ $completedDate }</b>
+
+
+
+# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+[[ incompatible ]]
+
+incompatibleHeader = Овај експеримент можда није сагласан са додацима који су вам инсталирани.
 
 
 
