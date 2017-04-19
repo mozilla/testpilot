@@ -64,6 +64,7 @@ minvidMeasurements2 = Nous ne collectons aucune information sur les vidéos que 
 minvidDetails0Copy = Accédez à Min Vid depuis les lecteurs vidéo de YouTube et Vimeo.
 minvidDetails1Copy = Gardez un œil sur la vidéo au premier plan tout en faisant autre chose sur le Web.
 minvidDetails2Copy = Faites un clic droit sur le lien d’une vidéo pour retrouver Min Vid dans les contrôles contextuels.
+minvidDetails3Copy = Ajoutez une liste de lecture Youtube entière à votre file d’attente. Créez votre propre liste de lecture en cliquant sur l'icône « + » ou en sélectionnant « ajouter à la file d’attente » à partir du menu contextuel.
 minvidToursteps0Copy = Cliquez sur l’icône pour commencer à utiliser Min Vid.
 minvidToursteps1Copy = Lancez une vidéo au premier plan tout en poursuivant votre navigation.
 minvidToursteps2Copy = Accédez aux contrôles intégrés pour changer le volume, lancer la lecture, mettre en pause et naviguer dans la vidéo.
