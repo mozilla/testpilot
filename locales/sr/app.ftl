@@ -194,6 +194,7 @@ discussExperiment = Причајте о { $title }
 tourOnboardingTitle = { $title } омогућен!
 tourDoneButton = Готово
 userCountContainer = Тренутно има <span>{ $installation_count }</span> људи који испробавају { $title }!
+userCountContainerAlt = Управо објављено!
 highlightPrivacy = Ваша приватност
 
 
