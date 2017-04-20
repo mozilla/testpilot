@@ -291,6 +291,7 @@ localeWarningSubtitle = Можете га ипак омогућити уколи
 # An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledHeader = Испробајмо заједно неке додатке!
 experimentsListNoneInstalledSubheader = Спремни да испробате нови Test Pilot експеримент? Изаберите један да га омогућите, испробајте га и кажите нам ваше мишљење.
 experimentsListNoneInstalledCTA = Нисте заинтересовани? <a>Кажите нам зашто</a>.
 
