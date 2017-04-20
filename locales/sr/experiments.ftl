@@ -56,6 +56,7 @@ containersContributors6Title = Front end безбедност
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+minvidMeasurements0 = Прикупљамо податке о коришћењу када користите контекст мени, иконицу експеримента и контроле плејера.
 minvidContributors0Title = Инжењер
 minvidContributors2Title = Инжењер стажиста
 minvidContributors3Title = Инжењер сарадник
