@@ -48,6 +48,6 @@
   }
   else {
     require('babel-polyfill/browser');
-    require('l20n/dist/compat/web/l20n');
+    require('l20n');
   }
 }());
