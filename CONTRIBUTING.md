@@ -31,11 +31,11 @@ the Mozilla [wiki][wiki] has instructions.
 We use the same process for community members and paid staff.
 
 #### Tests
-Tests should be written for new code contributed.
-* [server tests example](testpilot/experiments/tests.py)
-* [client tests example](testpilot/frontend/static-src/test/)
 
-[Further docs on testing](./docs/TESTING.md).
+Tests should be written for new code contributed. See [`docs/development/testing.md`][testing]
+for more information.
+
+[testing]: ./docs/development/testing.md
 
 #### Branches
 
