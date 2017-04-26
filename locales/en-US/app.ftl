@@ -74,7 +74,7 @@ notFoundHeader = Four Oh Four!
 emailOptInDialogTitle = Welcome to Test Pilot!
 emailOptInMessage = Find out about new experiments and see test results for experiments you've tried.
 emailValidationError = Please use a valid email address!
-// LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
 emailOptInInput
   .placeholder = email goes here :)
 emailOptInButton = Sign me up
