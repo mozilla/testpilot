@@ -2,7 +2,7 @@ activitystreamDescription = Bogat vizualni tok zgodovine in prenovljena domača 
 activitystreamIntroduction = <p>Nadaljujte z brskanjem, ne da bi izgubili svoj miselni tok. Activity Stream ohranja vaše priljubljene strani, zaznamke in nedavno zgodovino na dosegu roke na vsakem novem zavihku. Nov pogled časovne premice pa vam omogoča pregled vašega brskanja iz ptičje perspektive.</p>
 activitystreamMeasurements0 = Zbiramo osnovne podatke o uporabi poskusne strani novega zavihka in časovne premice, kot so vrste elementov, ki jih kliknete, in njihov položaj na strani.
 activitystreamMeasurements1 = Zbiramo tudi osnovne informacije o profilu brskalnika, ki vplivajo na Activity Stream, kot sta število zaznamkov in elementov zgodovine.
-activitystreamMeasurements2 = Za svoje delovanje Activity Stream pridobiva metapodatke o straneh, ki ste jih obiskali, kot so slike in ikone, z uporabo storitve, imenovane <a href="http://embed.ly/" target="_blank">Embedly</a>. Te zahteve so Embedlyju poslane prek Mozillinih strežnikov, tako da niso povezani z vami.
+activitystreamMeasurements2 = Za svoje delovanje Activity Stream pridobiva metapodatke o straneh, ki ste jih obiskali, kot so slike in ikone, z uporabo storitve, imenovane <a href="http://embed.ly/" target="_blank">Embedly</a>. Te zahteve so Embedlyju poslane prek Mozillinih strežnikov, tako da niso povezane z vami.
 activitystreamDetails0Copy = Kliknite na nov zavihek in vaše priljubljene strani so samo en klik stran.
 activitystreamDetails1Copy = Oglejte si, kje ste bili, da lahko nadaljujete pot tja, kamor ste bili namenjeni.
 activitystreamToursteps0Copy = Najdite svoje priljubljene strani, nedavno zgodovino in zaznamke na novem zavihku.
