@@ -122,6 +122,7 @@ pulseContributors1Title = Imcebbeḥ Firefox
 pulseContributors2Title = Talɣubliṭ Firefox, afaris uḥric
 pulseContributors3Title = Ajenyuṛ n tɣara
 snoozetabsDescription = Asmel web iseḥḥan, yir akud? Ales-it arama tesriḍ-t. Snooze Tabs ak-yeǧǧ ad tmedleḍ iccaṛen udiɣ ad ternuḍ ahil n tengedwit akken ad t-id-lidiḍ az zdat.
+snoozetabsIntroduction = Snooze Tabs ak-d-yefk afus ad tserseḍ aqerru-k ticki telliḍ srid, ma tebɣiḍ ad terreḍ di rrif sekra n wayen ara k-iselhun neɣ tebɣiḍ ad terred di rrif taɣawa i ticki. Tekki ɣef tignit akken ad tsegneḍ iccer, sakin sbadu tangedwit akken ad t-id-isakwi ticki tebɣiḍ. Sgen amagrad yelhan arama d tameddit. Sgen tismelt n usewwi ar waggur d-iteddun. Ticki iɛedda wakud, iccer ad-d-yeldi tikelt-nniḍen.
 snoozetabsDetails0Copy = Ales iccer-ik sakin fren ticki Firefox yessefk ad t-id-ildi.
 snoozetabsDetails1Copy = Snooze Tabs ak-id-yelɣu ticki yuɣal-d yiccer-ik.
 snoozetabsToursteps0Copy = Sit ɣef tignit akken ad talseḍ iccer-ik amiran.
