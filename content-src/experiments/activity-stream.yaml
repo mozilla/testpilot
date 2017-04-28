@@ -15,7 +15,7 @@ changelog_url: 'https://github.com/mozilla/activity-stream/blob/master/CHANGELOG
 contribute_url: 'https://github.com/mozilla/activity-stream'
 bug_report_url: 'https://github.com/mozilla/activity-stream/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/activity-stream'
-privacy_notice_url: 'https://github.com/mozilla/activity-stream/blob/master/docs/data_dictionary.md'
+privacy_notice_url: 'https://github.com/mozilla/activity-stream/blob/master/docs/v1-test-pilot/data_dictionary.md'
 measurements:
   - >
     We collect basic usage data regarding how you interact with experimental
