@@ -51,6 +51,7 @@ nomore404sSubtitle = omogoča Wayback Machine
 nomore404sDescription = Ste naveličani nedelujočih spletnih strani? Obvestili vas bomo, ali obstaja shranjena različica strani, ki jo želite obiskati, v storitvi Internet Archive Wayback Machine.
 nomore404sIntroduction = <p>Ta je preprost. Če med brskanjem po spletu naletite na napako 404, bomo preverili, ali obstaja arhivska kopija strani na Internet Archive's Wayback Machine.</p>
 nomore404sMeasurements0 = Zbiramo osnovne podatke o uporabi, tj. kako pogosto naletite na napako Strani ni mogoče najti (404), kako pogosto obstaja predpomnjena različica te strani na Archive.org in kako pogosto se odločite za ogled predpomnjene različice.
+nomore404sMeasurements1 = Da vam lahko priskrbimo predpomnjeno različico strani, pošljemo spletne naslove z napako 404 na Archive.org. Pravilnik o zasebnosti <a href="https://archive.org/" target="_blank">Archive.org</a> je na voljo <a href="https://archive.org/about/terms.php" target="_blank">tukaj</a>.
 nomore404sToursteps1Copy = Vedno nam lahko sporočite povratne informacije ali onemogočite No More 404s v Test Pilotu.
 pageshotDescription = Intuitivni posnetki zaslona kar v brskalniku. Med brskanjem po spletu lahko s Firefoxom ustvarite, shranite in delite posnetke zaslona.
 pageshotIntroduction = <p>Page Shot vam omogoča zajemati, shranjevati in deliti posnetke zaslona - ne da bi zapustili Firefox.</p><ul> <li><strong>Pogled mreže:</strong> Brskajte po ploščicah shranjenih posnetko zaslona</li> <li><strong>Pametno iskanje:</strong> Poiščite želeni posnetek s ključno besedo. Page Shot k posnetkom shrani naslove in besedilo strani</li> <li><strong>Deljenje z enim korakom:</strong> Objavite posnetek zaslona na družbenih omrežjih ali z vrha okna brskalnika kopirajte povezavo za deljenje.</li></ul>
@@ -119,6 +120,7 @@ tabcenterContributors3Title = Firefox UX
 trackingprotectionDescription = Bi nam pomagali izboljšati zaščito pred sledenjem? Ta eksperiment vključi zaščito pred sledenjem za vsako brskanje in omogoča preprost način poročanja o težavah, na katere naletite med brskanjem.
 trackingprotectionIntroduction = <p>Doslej je bila zaščita pred sledenjem na voljo le v načinu zasebnega brskanja. Ta poskus jo aktivira tudi v običajnem brskanju! (Seveda jo lahko kadarkoli izklopite za določena spletna mesta.)</p><p>Ta poskus nam pomaga ugotoviti, kaj zaščita pred sledenjem pokvari na spletnih straneh, in jo izboljšati za vse uporabnike Firefoxa. Da nam sporočite, ali stran z zaščito pred sledenjem deluje pravilno ali ne, kliknite vijolično ikono ščita v naslovni vrstici.</p>
 trackingprotectionMeasurements0 = Zaščita pred sledenjem vas bo ob zavrnitvi sledilca povprašala za povratne informacije. Zbiramo osnovne podatke o vaši uporabi tega poziva, na primer kdaj na strani omogočite ali onemogočite sledilce ter prijavite težavo.
+trackingprotectionMeasurements1 = Ko uporabite ploščo za poročanje, zberemo tudi informacije o strani, na kateri se nahajate, in zavrnjene domene sledilcev na njej. To nam pomaga razumeti, kdaj in zakaj naletite na težavo.
 trackingprotectionMeasurements2 = Razen domene ne zbiramo nobenih podatkov sledilcev, na primer edinstvenih ID-jev ali piškotkov.
 trackingprotectionMeasurements3 = Za prepoznavanje sledilcev uporabljamo seznam našega partnerja Disconnect. Več o Disconnectovem prepoznavanju sledilcev lahko preberete <a href="https://disconnect.me/trackerprotection" target="_blank">tukaj</a>.
 trackingprotectionPrefeedbackcopy = <p>Za prijavo strani, ki zaradi zaščite pred sledenjem ne deluje pravilno, kliknite ikono ščita v vrstici s spletnim naslovom strani.</p>
@@ -131,8 +133,13 @@ trackingprotectionContributors0Title = spletni razvijalec
 trackingprotectionContributors1Title = Starejši načrtovalec UX
 trackingprotectionContributors2Title = Starejši inženir QA
 trackingprotectionContributorsextra = Ta poskus temelji na Firefoxovi zaščiti pred sledenjem, ki jo je v zadnjih letih razvila Mozilla in njeni sodelavci.
+trackingprotectionEolwarning = Ko se bo poskus zaščite pred sledenjem končal, ga bomo samodejno onemogočili in poročali o rezultatih.
+universalsearchMeasurements1 = Če je vaš Firefox nastavljen na prikazovanje predlogov iskanja v iskalni vrstici, bodo ob namestitvi poskusa Universal Search omogočeni <a href="https://www.mozilla.org/privacy/firefox/#searchsuggestions" target="_blank">predlogi iskanja</a> v naslovni vrstici.
+universalsearchDetails0Copy = Priljubljene strani, osebe in članki z Wikipedije se pojavljajo, medtem ko tipkate.
 universalsearchToursteps0Copy = Zdaj lahko iščete in krmarite na enem mestu.
+universalsearchToursteps1Copy = Priporočene priljubljene strani in članku Wikipedije se pojavijo, medtem ko tipkate.
 universalsearchToursteps2Copy = Vedno nam lahko sporočite povratne informacije ali onemogočite Universal Search v Test Pilotu.
 universalsearchContributors0Title = Produktni vodja
 universalsearchContributors1Title = Starejši načrtovalec UX
 universalsearchContributors3Title = Starejši inženir
+universalsearchEolwarning = Ko se bo poskus Universal Search končal, ga bomo samodejno onemogočili in poročali o rezultatih.
