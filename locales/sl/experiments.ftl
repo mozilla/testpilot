@@ -52,6 +52,10 @@ nomore404sDescription = Ste naveličani nedelujočih spletnih strani? Obvestili 
 nomore404sIntroduction = <p>Ta je preprost. Če med brskanjem po spletu naletite na napako 404, bomo preverili, ali obstaja arhivska kopija strani na Internet Archive's Wayback Machine.</p>
 nomore404sMeasurements0 = Zbiramo osnovne podatke o uporabi, tj. kako pogosto naletite na napako Strani ni mogoče najti (404), kako pogosto obstaja predpomnjena različica te strani na Archive.org in kako pogosto se odločite za ogled predpomnjene različice.
 nomore404sMeasurements1 = Da vam lahko priskrbimo predpomnjeno različico strani, pošljemo spletne naslove z napako 404 na Archive.org. Pravilnik o zasebnosti <a href="https://archive.org/" target="_blank">Archive.org</a> je na voljo <a href="https://archive.org/about/terms.php" target="_blank">tukaj</a>.
+nomore404sMeasurements2 = Ne zbiramo spletnih naslovov strani, ki jih obiskujete ali ki jih pošiljamo na Archive.org.
+nomore404sDetails0Copy = Izognite se slepim ulicam 404 z Wayback Machine.
+nomore404sDetails1Copy = Storitev omogočajo naši prijatelji pri Internet Archive.
+nomore404sToursteps0Copy = Samo brskajte po spletu kot običajno. Če naletite na stran 404, vam bomo povedali, ali je na voljo arhivirana različica v storitvi Wayback Machine.
 nomore404sToursteps1Copy = Vedno nam lahko sporočite povratne informacije ali onemogočite No More 404s v Test Pilotu.
 pageshotDescription = Intuitivni posnetki zaslona kar v brskalniku. Med brskanjem po spletu lahko s Firefoxom ustvarite, shranite in delite posnetke zaslona.
 pageshotIntroduction = <p>Page Shot vam omogoča zajemati, shranjevati in deliti posnetke zaslona - ne da bi zapustili Firefox.</p><ul> <li><strong>Pogled mreže:</strong> Brskajte po ploščicah shranjenih posnetko zaslona</li> <li><strong>Pametno iskanje:</strong> Poiščite želeni posnetek s ključno besedo. Page Shot k posnetkom shrani naslove in besedilo strani</li> <li><strong>Deljenje z enim korakom:</strong> Objavite posnetek zaslona na družbenih omrežjih ali z vrha okna brskalnika kopirajte povezavo za deljenje.</li></ul>
@@ -134,6 +138,8 @@ trackingprotectionContributors1Title = Starejši načrtovalec UX
 trackingprotectionContributors2Title = Starejši inženir QA
 trackingprotectionContributorsextra = Ta poskus temelji na Firefoxovi zaščiti pred sledenjem, ki jo je v zadnjih letih razvila Mozilla in njeni sodelavci.
 trackingprotectionEolwarning = Ko se bo poskus zaščite pred sledenjem končal, ga bomo samodejno onemogočili in poročali o rezultatih.
+universalsearchDescription = Prejemajte priporočila za najboljše strani na spletu, medtem ko tipkate v naslovno vrstico.
+universalsearchMeasurements0 = Zbiramo osnovne podatke o uporabi naslovne vrstice, na primer število natipkanih znakov, vrste rezultatov, ki jih kliknete, in njihov položaj na seznamu rezultatov.
 universalsearchMeasurements1 = Če je vaš Firefox nastavljen na prikazovanje predlogov iskanja v iskalni vrstici, bodo ob namestitvi poskusa Universal Search omogočeni <a href="https://www.mozilla.org/privacy/firefox/#searchsuggestions" target="_blank">predlogi iskanja</a> v naslovni vrstici.
 universalsearchDetails0Copy = Priljubljene strani, osebe in članki z Wikipedije se pojavljajo, medtem ko tipkate.
 universalsearchToursteps0Copy = Zdaj lahko iščete in krmarite na enem mestu.
