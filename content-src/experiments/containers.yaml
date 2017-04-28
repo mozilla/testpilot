@@ -1,6 +1,7 @@
 id: 12
 title: 'Containers'
 slug: containers
+min_release: 99
 locales:
   - 'en'
 launch_date: '2017-03-01T21:00:00.00Z'

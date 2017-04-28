@@ -1,6 +1,7 @@
 id: 10
 title: 'Snooze Tabs'
 slug: snooze-tabs
+min_release: 49
 locales:
   - 'en'
 incompatible:

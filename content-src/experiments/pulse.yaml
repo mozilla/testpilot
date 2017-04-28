@@ -1,6 +1,7 @@
 id: 11
 title: 'Pulse'
 slug: pulse
+min_release: 49
 locales:
   - 'en'
 min_release: 51
