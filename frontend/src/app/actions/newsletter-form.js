@@ -2,6 +2,7 @@
 import 'isomorphic-fetch';
 
 export const basketUrl = 'https://basket.mozilla.org/news/subscribe/';
+export const sourceUrl = 'https://testpilot.firefox.com/';
 
 function makeSimpleActionCreator(type) {
   return (payload) => ({ type, payload });
@@ -22,7 +23,7 @@ function newsletterFormSubscribe(dispatch, email, locale) {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: `newsletters=test-pilot&email=${encodeURIComponent(email)}&lang=${encodeURIComponent(locale)}`
+    body: `newsletters=test-pilot&email=${encodeURIComponent(email)}&lang=${encodeURIComponent(locale)}&source_url=${encodeURIComponent(sourceUrl)}`
   })
     .then(response => {
       if (response.ok) {
