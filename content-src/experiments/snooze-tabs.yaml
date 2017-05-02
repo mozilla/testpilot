@@ -62,7 +62,12 @@ tour_steps:
   -
     image: /static/images/experiments/snooze-tabs/tour/tour5.jpg
     copy: You can always give us feedback or disable Snooze Tabs from Test Pilot.
-notifications: []
+notifications:
+  -
+    id: 3
+    title: '[Test] Snooze Tabs'
+    text: 'Ref: https://github.com/mozilla/testpilot/issues/1309'
+    notify_after: '2017-01-01T00:00:00Z'
 contributors:
   -
     display_name: 'Les Orchard'
