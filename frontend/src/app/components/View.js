@@ -112,11 +112,6 @@ View.propTypes = {
    */
   centered: PropTypes.bool.isRequired,
 
-  /*
-  * Locale passed in for use in email footer component.
-  */
-  locale: PropTypes.string.isRequired,
-
   /**
    * If true, renders a newsletter subscription form above the footer
    * component. Default: `true`.

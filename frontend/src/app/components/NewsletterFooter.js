@@ -59,7 +59,7 @@ export default class NewsletterFooter extends React.Component {
           {this.renderError()}
           <LayoutWrapper flexModifier="row-between-breaking">
             {this.renderHeader()}
-          <NewsletterForm {...this.props.newsletterForm} locale={this.props.locale} />
+            <NewsletterForm {...this.props.newsletterForm} />
           </LayoutWrapper>
         </LayoutWrapper>
       </div>
@@ -68,5 +68,5 @@ export default class NewsletterFooter extends React.Component {
 }
 
 NewsletterFooter.propTypes = {
-  locale: PropTypes.string.isRequired
+  getWindowLocation: PropTypes.func.isRequired
 };

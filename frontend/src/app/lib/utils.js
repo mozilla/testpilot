@@ -2,6 +2,16 @@ import querystring from 'querystring';
 
 import { experimentL10nId, l10nId, l10nIdFormat, lookup } from '../../../tasks/util';
 
+export const basketUrl = 'https://basket.mozilla.org/news/subscribe/';
+
+export function subscribeToBasket(email, source) {
+  const sourceUrl = source || 'https://testpilot.firefox.com/';
+  return fetch(basketUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `newsletters=test-pilot&email=${encodeURIComponent(email)}&source_url=${encodeURIComponent(sourceUrl)}`
+  });
+}
 
 export function formatDate(date) {
   let out = '';

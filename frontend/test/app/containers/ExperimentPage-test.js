@@ -114,6 +114,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       removeCookie: sinon.spy(),
       userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:51.0) Gecko/20100101 Firefox/51.0',
       newsletterForm: defaultState(),
+      getWindowLocation: sinon.spy(() => 'https://example.com'),
       setPageTitleL10N: sinon.spy()
     };
 

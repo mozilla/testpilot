@@ -1,7 +1,4 @@
-
-
-export const basketUrl = 'https://basket.mozilla.org/news/subscribe/';
-export const sourceUrl = 'https://testpilot.firefox.com/';
+import { subscribeToBasket } from '../lib/utils';
 
 function makeSimpleActionCreator(type) {
   return (payload) => ({ type, payload });
@@ -15,15 +12,9 @@ const actions = {
   newsletterFormSetSucceeded: makeSimpleActionCreator('NEWSLETTER_FORM_SET_SUCCEEDED')
 };
 
-function newsletterFormSubscribe(dispatch, email, locale) {
+function newsletterFormSubscribe(dispatch, email, source) {
   dispatch(actions.newsletterFormSetSubmitting());
-  fetch(basketUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    body: `newsletters=test-pilot&email=${encodeURIComponent(email)}&lang=${encodeURIComponent(locale)}&source_url=${encodeURIComponent(sourceUrl)}`
-  })
+  subscribeToBasket(email, source)
     .then(response => {
       if (response.ok) {
         dispatch(actions.newsletterFormSetSucceeded());

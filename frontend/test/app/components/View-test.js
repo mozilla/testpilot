@@ -17,6 +17,7 @@ const mockRequiredProps = {
   uninstallAddon: sinon.spy(),
   sendToGA: sinon.spy(),
   openWindow: sinon.spy(),
+  getWindowLocation: sinon.spy(() => 'https://example.com'),
   newsletterForm: defaultState()
 };
 

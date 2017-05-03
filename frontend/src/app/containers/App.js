@@ -124,22 +124,6 @@ function sendToGA(type, dataIn) {
   }
 }
 
-function subscribeToBasket(email, locale, callback) {
-  const url = 'https://basket.mozilla.org/news/subscribe/';
-  fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    body: `newsletters=test-pilot&lang=${encodeURIComponent(locale)}&email=${encodeURIComponent(email)}`
-  }).then(callback)
-  .catch(err => {
-    // for now, log the error in the console & do nothing in the UI
-    console && console.error(err); // eslint-disable-line no-console
-  });
-}
-
-
 const mapStateToProps = state => ({
   addon: state.addon,
   experiments: experimentSelector(state),
@@ -185,8 +169,8 @@ const mapDispatchToProps = dispatch => ({
       dispatch(newsletterFormActions.newsletterFormSetEmail(email)),
     setPrivacy: privacy =>
       dispatch(newsletterFormActions.newsletterFormSetPrivacy(privacy)),
-    subscribe: (email, locale) =>
-      dispatch(newsletterFormActions.newsletterFormSubscribe(dispatch, email, locale))
+    subscribe: (email) =>
+      dispatch(newsletterFormActions.newsletterFormSubscribe(dispatch, email, '' + window.location))
   }
 });
 
@@ -198,7 +182,6 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     installAddon,
     uninstallAddon,
     sendToGA,
-    subscribeToBasket,
     clipboard,
     setPageTitleL10N: (id, args) => {
       if (typeof document === 'undefined') { return; }
