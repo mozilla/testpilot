@@ -38,7 +38,7 @@ export default class ExperimentRowCard extends React.Component {
         <div className="experiment-icon-wrapper"
           style={{
             backgroundColor: experiment.gradient_start,
-            backgroundImage: `linear-gradient(135deg, ${experiment.gradient_start}, ${experiment.gradient_stop}`
+            backgroundImage: `linear-gradient(135deg, ${experiment.gradient_start}, ${experiment.gradient_stop})`
           }}>
           <div className="experiment-icon" style={{
             backgroundImage: `url(${thumbnail})`
