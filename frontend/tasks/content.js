@@ -22,22 +22,6 @@ gulp.task('content-experiments-data', function generateStaticAPITask() {
     .pipe(gulp.dest(config.DEST_PATH));
 });
 
-// The next two tasks are hacks to copy the en-US locale
-// to an en locale. See issue #2006 for background.
-gulp.task('content-watch-en', () => {
-   gulp.watch('./locales/en-US/**/*', ['content-build-en']);
-});
-
-gulp.task('content-build-en', () => {
-  return gulp.src('./locales/en-US/**/*')
-    .pipe(gulp.dest('./locales/en'));
-});
-
-gulp.task('content-build-de', () => {
-  return gulp.src('./locales/de/**/*')
-    .pipe(gulp.dest('./locales/de-DE'));
-});
-
 gulp.task('import-api-content', (done) => {
   fetch(config.PRODUCTION_EXPERIMENTS_URL)
     .then(response => response.json())

@@ -34,8 +34,6 @@ gulp.task('distclean', () => del([
 
 gulp.task('build', done => runSequence(
   'content-build',
-  'content-build-en',
-  'content-build-de',
   'addon-copy-locales',
   'scripts-build',
   'styles-build',
@@ -48,7 +46,6 @@ gulp.task('build', done => runSequence(
 gulp.task('watch', [
   'self-watch',
   'content-watch',
-  'content-watch-en',
   'addon-watch-locales',
   'scripts-watch',
   'styles-watch',
