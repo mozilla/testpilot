@@ -25,3 +25,4 @@ rules:
   no-console: warn
   no-var: error
   prefer-const: error
+  flowtype/no-types-missing-file-annotation: [0]
