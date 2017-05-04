@@ -1,7 +1,7 @@
 siteName = Firefox Test Pilot
 
 
-# Page titles, put in the <title> HTML tag.
+// Page titles, put in the <title> HTML tag.
 [[ pageTitle ]]
 
 pageTitleDefault = Firefox Test Pilot
@@ -10,8 +10,7 @@ pageTitleExperimentListPage = Firefox Test Pilot - Eksperimenty
 pageTitleExperiment = Firefox Test Pilot - { $title }
 
 
-
-# Links in the footer.
+// Links in the footer.
 [[ footerLink ]]
 
 footerLinkCookies = Placki
@@ -21,8 +20,7 @@ footerLinkLegal = Prawniske
 footerLinkAbout = Wo Test Pilot
 
 
-
-# Items in the menu.
+// Items in the menu.
 [[ menu ]]
 
 home = Startowa strona
@@ -33,8 +31,7 @@ menuFileIssue = Problem zdźělić
 menuRetire = Test Pilot wotinstalować
 
 
-
-# The splash on the homepage.
+// The splash on the homepage.
 [[ landing ]]
 
 landingIntroOne = Testujće nowe funkcije.
@@ -44,8 +41,7 @@ landingLegalNotice = Hdyž pokročujeće, zwoliće do <a>wužiwarskich wuměnjen
 landingExperimentsTitle = Wupruwujće najnowše eksperimentelne funkcije.
 
 
-
-# Related to the installation of the Test Pilot add-on.
+// Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
 landingInstallButton = Přidatk Test Pilot instalować
@@ -53,16 +49,14 @@ landingInstallingButton = Instaluje so...
 landingInstalledButton = Wubjerće swoje funkcije
 
 
-
-# Related to a one click to install test pilot and an experiment.
+// Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
 oneClickInstallMinorCta = Test Pilot instalować &amp;
 oneClickInstallMajorCta = { $title } zmóžnić
 
 
-
-# Homepage messaging for users not on Firefox or with an old version of Firefox.
+// Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
 landingRequiresDesktop = Test Pilot sej Firefox za desktop na Windows, Mac abo Linux wužaduje
@@ -73,8 +67,7 @@ landingUpgradeFirefoxTitle = Firefox aktualizować
 landingDownloadFirefoxSubTitle = Darmotne sćehnjenje
 
 
-
-# A section of the homepage explaining how Test Pilot works.
+// A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
 landingCardListTitle = 3, 2, 1, start
@@ -83,15 +76,13 @@ landingCardTwo = Eksperimentelne funkcije zmóžnić
 landingCardThree = Prajće nam swoje měnjenje
 
 
-
-# Shown after the user installs the Test Pilot add-on.
+// Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
 onboardingMessage = Smy symbol do wašeje symboloweje lajsty stajili, zo byšće Test Pilot přeco zaso namakał.
 
 
-
-# Error message pages.
+// Error message pages.
 [[ error ]]
 
 errorHeading = Hopla!
@@ -99,25 +90,22 @@ errorMessage = Po wšěm zdaću je so něšto skónčowało. <br> Syptajće pozd
 notFoundHeader = Štyri Nul Štyri!
 
 
-
-# A modal prompt to sign up for the Test Pilot newsletter.
+// A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = Witajće k Test Pilot!
 emailOptInMessage = Zhońće wjace wo nowych eksperimentach a wobhladajće sej testowe wuslědki za eksperimenty, na kotrychž sće so wobdźělił.
 emailValidationError = Prošu wužiwajće płaćiwu e-mejlowu adresu!
-
-# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput = 
-  [html/placeholder] tu e-mejlowu adresu zapisać :)
+// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput
+    .placeholder = tu e-mejlowu adresu zapisać :)
 emailOptInButton = Registrować
 emailOptInConfirmationTitle = E-mejlka je so pósłała
 emailOptInSuccessMessage2 = Wulki dźak!
 emailOptInConfirmationClose = Dale k eksperimentam...
 
 
-
-# A listing of all Test Pilot experiments.
+// A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
 experimentListEnabledTab = Zmóžnjeny
@@ -128,8 +116,7 @@ experimentListEndingSoon = Skónči so bórze
 experimentsListCondensedHeader = Wubjerće swoje eksperimenty!
 
 
-
-# An individual experiment in the listing of all Test Pilot experiments.
+// An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
 experimentCardManage = Rjadować
@@ -137,8 +124,7 @@ experimentCardGetStarted = Start
 experimentCardLearnMore = Dalše informacije
 
 
-
-# A modal prompt shown when a user disables an experiment.
+// A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
 feedbackSubmitButton = Wobdźělće so na krótkim naprašowanju
@@ -146,24 +132,21 @@ feedbackUninstallTitle = Wulki dźak!
 feedbackUninstallCopy = Waše wobdźělenje na Firefox Test Pilot je nam jara wažne! Prošu wobhladajće sej naše druhe eksperimenty a přińdźće zaso!
 
 
-
-# A modal prompt shown before the feedback survey for some experiments.
+// A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
 experimentPreFeedbackTitle = Měnjenje wo { $title }
 experimentPreFeedbackLinkCopy = Prajće swoje měnjenje wo eksperimenće { $title }
 
 
-
-# A splash shown on top of the experiment page when Test Pilot is not installed.
+// A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
 experimentPromoHeader = Za start hotowy?
 experimentPromoSubheader = Wuwiwamy funkcije přichodneje generacije za Firefox. Instalujće Test Pilot, zo byšće je wupruwował!
 
 
-
-# The experiment detail page.
+// The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } je zmóžnjeny.
@@ -190,21 +173,19 @@ bugReports = Rozprawy wo programowych zmylkach
 discussExperiment = Wo { $title } diskutować
 tourOnboardingTitle = { $title } zmóžnjeny!
 tourDoneButton = Hotowo
-userCountContainer = <span>{ $installation_count }</span> wosobow runje { $title } wupruwuje! 
+userCountContainer = <span>{ $installation_count }</span> wosobow runje { $title } wupruwuje!
 userCountContainerAlt = Runje startowany!
 highlightPrivacy = Waša priwatnosć
 
 
-
-# Shown when an experiment requires a version of Firefox newer than the user's.
+// Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
 upgradeNoticeTitle = { $title } sej Firefox { $min_release } abo nowši wužaduje.
 upgradeNoticeLink = Kak móžeće Firefox aktualizować.
 
 
-
-# Shown while uninstalling Test Pilot.
+// Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
 retireDialogTitle = Test Pilot wotinstalować?
@@ -218,8 +199,7 @@ retirePageMessage = Nadźijamy so, zo eksperiment je was wjeselił. <br> Móže�
 retirePageSurveyButton = Wobdźělće so na krótkim naprašowanju
 
 
-
-# Shown to users after installing Test Pilot if a restart is required.
+// Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
 restartIntroLead = Kontrolna lisćina před startom
@@ -228,36 +208,32 @@ restartIntroTwo = Pytajće za přidatkom Test Pilot
 restartIntroThree = Wubjerće swoje eksperimenty
 
 
-
-# Shown on a page presented to users three days after installing their first experiment.
+// Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
 sharePrimary = Test Pilot so wam spodoba? Pomhajće nam, dalšich wobdźělnikow namakać.
 shareSecondary = abo kopěrujće prosće tutón wotkaz...
 shareEmail = E-mejl
 shareCopy = Kopěrować
-
-# Shown on pages of retired or retiring experiments.
+// Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } so { $completedDate } kónči
 eolNoticeLink = Dalše informacije
 eolDisableMessage = Eksperiment { $title } je so skónčił. Hdyž jón wotinstalujeće, njemóžeće wjace jón hišće raz přez Test Pilot instalować.
 completedDateLabel = Kónčny datum eksperimenta: <b>{ $completedDate }</b>
 
 
-
-# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+// A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 [[ incompatible ]]
 
 incompatibleHeader = Tutón eksperiment snano z přidatkami kompatibelny njeje, kotrež sće instalował.
 incompatibleSubheader = Poručamy <a>tute přidatki znjemóžnić</a>, prjedy hač tutón eksperiment zmóžniće:
 
 
-
-# A form prompting the user to sign up for the Test Pilot Newsletter.
+// A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
-newsletterFormEmailPlaceholder = 
-  [html/placeholder] Wašu e-mejlowu adresu tu zapisać
+newsletterFormEmailPlaceholder
+    .placeholder = Wašu e-mejlowu adresu tu zapisać
 newsletterFormDisclaimer = Sćelemy wam jenož informacije nastupajo Test Pilot.
 newsletterFormPrivacyNotice = Sym přezjedny, zo Mozilla moje daty tak wužiwa, kaž je w <a>tutym pokazu priwatnosće</a> wopisane.
 newsletterFormPrivacyAgreementRequired = Prošu stajće hóčku do tutoho kašćika, jeli chceće pokročować.
@@ -265,8 +241,7 @@ newsletterFormSubmitButton = Nětko registrować
 newsletterFormSubmitButtonSubmitting = Wotpósćele so...
 
 
-
-# A section of the footer containing a newsletter signup form.
+// A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
 newsletterFooterError = Při słanju wašeje e-mejloweje adresy je zmylk wustupił. Hišće raz spytać?
@@ -276,16 +251,14 @@ newsletterFooterSuccessHeader = Wulki dźak!
 newsletterFooterSuccessBody = Jeli hišće njejsće abonement powěsćoweho lista Mozilla wobkrućił, dyrbiće to nětko činić. Prošu hladajće do dochadneje e-mejle abo spamoweho filtra za e-mejlku wot nas.
 
 
-
-# A warning shown to users when the experiment is not available in their language
+// A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
 localeUnavailableWarningTitle = Tutón eksperiment so we wašej rěči njepodpěruje ({ $locale_code }).
 localeWarningSubtitle = Móžeće jón najebać to zmóžnić, jeli chceće.
 
 
-
-# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+// An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = Započńmy nětk!
@@ -293,8 +266,7 @@ experimentsListNoneInstalledSubheader = Sće hotowy za nowy eksperiment Test Pil
 experimentsListNoneInstalledCTA = Njejsće zajimowany? <a>Zdźělće nam čehodla nic</a>.
 
 
-
-# Shown to users who do not have JavaScript enabled.
+// Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
 noScriptHeading = Ow, ow...
@@ -302,10 +274,8 @@ noScriptMessage = Test Pilot sej JavaScript wužaduje.<br>To je nam žel.
 noScriptLink = Zhońće čehodla
 
 
-
-# Text of a button to toggle visibility of a list of past experiments.
+// Text of a button to toggle visibility of a list of past experiments.
 [[ pastExperiments ]]
 
 viewPastExperiments = Zańdźene eksperimenty sej wobhladać
 hidePastExperiments = Zańdźene eksperimenty schować
-
