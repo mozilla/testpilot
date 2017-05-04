@@ -1,7 +1,7 @@
 siteName = Firefox Test Pilot
 
 
-# Page titles, put in the <title> HTML tag.
+// Page titles, put in the <title> HTML tag.
 [[ pageTitle ]]
 
 pageTitleDefault = Firefox Test Pilot
@@ -10,8 +10,7 @@ pageTitleExperimentListPage = Firefox Test Pilot - 實驗功能
 pageTitleExperiment = Firefox Test Pilot - { $title }
 
 
-
-# Links in the footer.
+// Links in the footer.
 [[ footerLink ]]
 
 footerLinkCookies = Cookies
@@ -21,8 +20,7 @@ footerLinkLegal = 法律
 footerLinkAbout = 關於 Test Pilot
 
 
-
-# Items in the menu.
+// Items in the menu.
 [[ menu ]]
 
 home = 首頁
@@ -33,8 +31,7 @@ menuFileIssue = 回報問題
 menuRetire = 移除 Test Pilot
 
 
-
-# The splash on the homepage.
+// The splash on the homepage.
 [[ landing ]]
 
 landingIntroOne = 測試新功能
@@ -44,8 +41,7 @@ landingLegalNotice = 安裝此附加元件，代表您同意 Test Pilot 的 <a>�
 landingExperimentsTitle = 試用最新的實驗功能
 
 
-
-# Related to the installation of the Test Pilot add-on.
+// Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
 landingInstallButton = 安裝 Test Pilot 附加元件
@@ -53,16 +49,14 @@ landingInstallingButton = 安裝中…
 landingInstalledButton = 選擇您要的功能
 
 
-
-# Related to a one click to install test pilot and an experiment.
+// Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
 oneClickInstallMinorCta = 安裝 Test Pilot &amp;
 oneClickInstallMajorCta = 開啟 { $title }
 
 
-
-# Homepage messaging for users not on Firefox or with an old version of Firefox.
+// Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
 landingRequiresDesktop = 需要使用 Windows、Mac 或 Linux 的 Firefox 才能安裝 Test Pilot
@@ -73,8 +67,7 @@ landingUpgradeFirefoxTitle = 升級 Firefox
 landingDownloadFirefoxSubTitle = 免費下載
 
 
-
-# A section of the homepage explaining how Test Pilot works.
+// A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
 landingCardListTitle = 倒數三秒，快速上手
@@ -83,15 +76,13 @@ landingCardTwo = 開啟實驗功能
 landingCardThree = 告訴我們您的想法
 
 
-
-# Shown after the user installs the Test Pilot add-on.
+// Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
 onboardingMessage = 我們會在工具列中加入圖示，讓您能隨時找到 Test Pilot。
 
 
-
-# Error message pages.
+// Error message pages.
 [[ error ]]
 
 errorHeading = 喔喔！
@@ -99,25 +90,22 @@ errorMessage = 看來我們把某些東西改壞了。<br>請稍候再試試。
 notFoundHeader = 找不到！
 
 
-
-# A modal prompt to sign up for the Test Pilot newsletter.
+// A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = 歡迎使用 Test Pilot！
 emailOptInMessage = 看看有什麼新實驗，以及您參與過的實驗測試結果。
 emailValidationError = 請使用有效的電子郵件地址！
-
-# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput = 
-  [html/placeholder] 電子郵件會寄到這裡 :)
+// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput
+    .placeholder = 電子郵件會寄到這裡 :)
 emailOptInButton = 我要訂閱
 emailOptInConfirmationTitle = 已寄出郵件
 emailOptInSuccessMessage2 = 感謝您！
 emailOptInConfirmationClose = 繼續前往實驗內容…
 
 
-
-# A listing of all Test Pilot experiments.
+// A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
 experimentListEnabledTab = 已開啟
@@ -128,8 +116,7 @@ experimentListEndingSoon = 快要結束
 experimentsListCondensedHeader = 挑選實驗！
 
 
-
-# An individual experiment in the listing of all Test Pilot experiments.
+// An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
 experimentCardManage = 管理
@@ -137,8 +124,7 @@ experimentCardGetStarted = 開始使用
 experimentCardLearnMore = 了解更多
 
 
-
-# A modal prompt shown when a user disables an experiment.
+// A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
 feedbackSubmitButton = 寫一份小問卷
@@ -146,24 +132,21 @@ feedbackUninstallTitle = 感謝您！
 feedbackUninstallCopy = 您參與 Firefox 的 Test Pilot 計畫對我們有很重大的意義！也請試試其他的實驗，常常回來看看有沒有更多的新鮮事！
 
 
-
-# A modal prompt shown before the feedback survey for some experiments.
+// A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
 experimentPreFeedbackTitle = { $title } 意見回饋
 experimentPreFeedbackLinkCopy = 提供關於 { $title } 實驗的意見回饋
 
 
-
-# A splash shown on top of the experiment page when Test Pilot is not installed.
+// A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
 experimentPromoHeader = 準備好要起飛了嗎？
 experimentPromoSubheader = 我們正在開發 Firefox 的下一代新功能，請安裝 Test Pilot 搶先試試看！
 
 
-
-# The experiment detail page.
+// The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = 已開啟 { $title }。
@@ -195,16 +178,14 @@ userCountContainerAlt = 剛推出！
 highlightPrivacy = 您的隱私權
 
 
-
-# Shown when an experiment requires a version of Firefox newer than the user's.
+// Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
 upgradeNoticeTitle = { $title } 需要 Firefox { $min_release } 或更新版本。
 upgradeNoticeLink = 如何更新 Firefox。
 
 
-
-# Shown while uninstalling Test Pilot.
+// Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
 retireDialogTitle = 要移除 Test Pilot 嗎？
@@ -218,8 +199,7 @@ retirePageMessage = 希望您有過一段不錯的體驗。<br>歡迎隨時回�
 retirePageSurveyButton = 寫一份小問卷
 
 
-
-# Shown to users after installing Test Pilot if a restart is required.
+// Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
 restartIntroLead = 飛行前檢查清單
@@ -228,36 +208,32 @@ restartIntroTwo = 找到 Test Pilot 附加元件
 restartIntroThree = 選擇您的實驗
 
 
-
-# Shown on a page presented to users three days after installing their first experiment.
+// Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
 sharePrimary = 喜歡 Test Pilot 嗎？請幫助我們找到新成員。
 shareSecondary = 或分享這個鏈結…
 shareEmail = E-mail
 shareCopy = 複製
-
-# Shown on pages of retired or retiring experiments.
+// Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } 實驗將結束於 { $completedDate }
 eolNoticeLink = 了解更多
 eolDisableMessage = { $title } 實驗已結束，您移除後就無法透過 Test Pilot 再次安裝。
 completedDateLabel = 實驗結束日期: <b>{ $completedDate }</b>
 
 
-
-# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+// A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 [[ incompatible ]]
 
 incompatibleHeader = 此實驗可能無法與您已安裝的附加元件相容。
 incompatibleSubheader = 我們建議您開啟此實驗前 <a>停用下列附加元件</a>:
 
 
-
-# A form prompting the user to sign up for the Test Pilot Newsletter.
+// A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
-newsletterFormEmailPlaceholder = 
-  [html/placeholder] 在此輸入您的電子郵件地址
+newsletterFormEmailPlaceholder
+    .placeholder = 在此輸入您的電子郵件地址
 newsletterFormDisclaimer = 我們只會傳送與 Test Pilot 相關的資訊給您。
 newsletterFormPrivacyNotice = 我同意 Mozilla 依照 <a>此隱私公告</a> 當中描述的方式處理我的資訊。
 newsletterFormPrivacyAgreementRequired = 若要繼續，請勾選此欄位。
@@ -265,8 +241,7 @@ newsletterFormSubmitButton = 立即訂閱
 newsletterFormSubmitButtonSubmitting = 送出中…
 
 
-
-# A section of the footer containing a newsletter signup form.
+// A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
 newsletterFooterError = 送出您的電子郵件地址時遇到問題，要再試一次嗎？
@@ -276,16 +251,14 @@ newsletterFooterSuccessHeader = 多謝！
 newsletterFooterSuccessBody = 若您先前沒有確認訂閱任何 Mozilla 電子報，您可能會需要進行確認。請檢查信件匣或垃圾信件匣當中是否有來自我們的電子郵件。
 
 
-
-# A warning shown to users when the experiment is not available in their language
+// A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
 localeUnavailableWarningTitle = 此實驗不支援您的語言（{ $locale_code }）。
 localeWarningSubtitle = 您想要的話還是可以安裝。
 
 
-
-# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+// An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = 新手上路，全新出發！
@@ -293,8 +266,7 @@ experimentsListNoneInstalledSubheader = 準備好要參加全新的 Test Pilot �
 experimentsListNoneInstalledCTA = 沒興趣？<a>請讓我們知道原因</a>。
 
 
-
-# Shown to users who do not have JavaScript enabled.
+// Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
 noScriptHeading = 唉呀…
@@ -302,10 +274,8 @@ noScriptMessage = 抱歉，<br>Test Pilot 需要 JavaScript 才能使用。
 noScriptLink = 找出原因
 
 
-
-# Text of a button to toggle visibility of a list of past experiments.
+// Text of a button to toggle visibility of a list of past experiments.
 [[ pastExperiments ]]
 
 viewPastExperiments = 檢視先前的實驗
 hidePastExperiments = 隱藏先前的實驗
-
