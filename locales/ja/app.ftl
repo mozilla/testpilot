@@ -1,7 +1,7 @@
 siteName = Firefox Test Pilot
 
 
-# Page titles, put in the <title> HTML tag.
+// Page titles, put in the <title> HTML tag.
 [[ pageTitle ]]
 
 pageTitleDefault = Firefox Test Pilot
@@ -10,8 +10,7 @@ pageTitleExperimentListPage = Firefox Test Pilot - 実験
 pageTitleExperiment = Firefox Test Pilot - { $title }
 
 
-
-# Links in the footer.
+// Links in the footer.
 [[ footerLink ]]
 
 footerLinkCookies = Cookie
@@ -21,8 +20,7 @@ footerLinkLegal = 法的通知
 footerLinkAbout = Test Pilot について
 
 
-
-# Items in the menu.
+// Items in the menu.
 [[ menu ]]
 
 home = ホーム
@@ -33,8 +31,7 @@ menuFileIssue = 問題を報告
 menuRetire = Test Pilot を削除
 
 
-
-# The splash on the homepage.
+// The splash on the homepage.
 [[ landing ]]
 
 landingIntroOne = 新機能を試す。
@@ -44,8 +41,7 @@ landingLegalNotice = 続けることで、あなたは Test Pilot の <a>利用�
 landingExperimentsTitle = 最新の実験的機能を試す
 
 
-
-# Related to the installation of the Test Pilot add-on.
+// Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
 landingInstallButton = Test Pilot アドオンをインストール
@@ -53,16 +49,14 @@ landingInstallingButton = インストール中...
 landingInstalledButton = 機能を選ぶ
 
 
-
-# Related to a one click to install test pilot and an experiment.
+// Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
 oneClickInstallMinorCta = Test Pilot をインストール &amp;
 oneClickInstallMajorCta = { $title } を有効化
 
 
-
-# Homepage messaging for users not on Firefox or with an old version of Firefox.
+// Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
 landingRequiresDesktop = Test Pilot を試すには Windows、Mac または Linux 向けのデスクトップ版 Firefox が必要です
@@ -73,8 +67,7 @@ landingUpgradeFirefoxTitle = Firefox をアップグレード
 landingDownloadFirefoxSubTitle = 無料ダウンロード
 
 
-
-# A section of the homepage explaining how Test Pilot works.
+// A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
 landingCardListTitle = 3、2、1 と数えるうちに始めましょう
@@ -83,15 +76,13 @@ landingCardTwo = 実験的機能を有効化
 landingCardThree = あなたの考えをお聞かせください
 
 
-
-# Shown after the user installs the Test Pilot add-on.
+// Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
 onboardingMessage = Test Pilot をいつでも見つけられるよう、ツールバーにアイコンを追加しました。
 
 
-
-# Error message pages.
+// Error message pages.
 [[ error ]]
 
 errorHeading = おっと！
@@ -99,25 +90,22 @@ errorMessage = 何か問題が発生したようです。<br>また後で試し�
 notFoundHeader = ページが見つかりません
 
 
-
-# A modal prompt to sign up for the Test Pilot newsletter.
+// A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = Test Pilot へようこそ！
 emailOptInMessage = 新しい実験について知り、あなたが試した実験のテスト結果を見てみましょう。
 emailValidationError = 有効なメールアドレスを入力してください！
-
-# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput = 
-  [html/placeholder] メールアドレスがここに入ります :)
+// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput
+    .placeholder = メールアドレスがここに入ります :)
 emailOptInButton = ログイン
 emailOptInConfirmationTitle = メールをお送りしました
 emailOptInSuccessMessage2 = ありがとうございます！
 emailOptInConfirmationClose = 実験に進む...
 
 
-
-# A listing of all Test Pilot experiments.
+// A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
 experimentListEnabledTab = 有効
@@ -128,8 +116,7 @@ experimentListEndingSoon = まもなく終了
 experimentsListCondensedHeader = 興味のある実験を選びましょう！
 
 
-
-# An individual experiment in the listing of all Test Pilot experiments.
+// An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
 experimentCardManage = 管理
@@ -137,36 +124,32 @@ experimentCardGetStarted = はじめに
 experimentCardLearnMore = 詳細
 
 
-
-# A modal prompt shown when a user disables an experiment.
+// A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
 feedbackSubmitButton = 簡単なアンケートに答える
 feedbackUninstallTitle = ありがとうございます！
-feedbackUninstallCopy = 
-  | あなたの Firefox Test Pilot への参加は多くの
-  | 意味を持ちます！ 他の実験についてもチェックし、
-  | 今後追加される実験を楽しみにしてください！
+feedbackUninstallCopy =
+    あなたの Firefox Test Pilot への参加は多くの
+    意味を持ちます！ 他の実験についてもチェックし、
+    今後追加される実験を楽しみにしてください！
 
 
-
-# A modal prompt shown before the feedback survey for some experiments.
+// A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
 experimentPreFeedbackTitle = { $title } のフィードバック
 experimentPreFeedbackLinkCopy = { $title } の実験についてフィードバックを送る
 
 
-
-# A splash shown on top of the experiment page when Test Pilot is not installed.
+// A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
 experimentPromoHeader = 離陸準備は整いましたか？
 experimentPromoSubheader = 私たちは Firefox の次世代機能を作っています。Test Pilot をインストールしてそれらを試してください！
 
 
-
-# The experiment detail page.
+// The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } が有効化されました。
@@ -198,16 +181,14 @@ userCountContainerAlt = 最近公開！
 highlightPrivacy = プライバシー
 
 
-
-# Shown when an experiment requires a version of Firefox newer than the user's.
+// Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
 upgradeNoticeTitle = { $title } を試すには Firefox { $min_release } 以降が必要です。
 upgradeNoticeLink = Firefox の更新方法
 
 
-
-# Shown while uninstalling Test Pilot.
+// Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
 retireDialogTitle = Test Pilot を削除しますか？
@@ -221,8 +202,7 @@ retirePageMessage = 実験をお楽しみいただけたでしょうか。<br>�
 retirePageSurveyButton = 簡単なアンケートに答える
 
 
-
-# Shown to users after installing Test Pilot if a restart is required.
+// Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
 restartIntroLead = 離陸前チェックリスト
@@ -231,36 +211,32 @@ restartIntroTwo = Test Pilot アドオンを探す
 restartIntroThree = 実験を選択
 
 
-
-# Shown on a page presented to users three days after installing their first experiment.
+// Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
 sharePrimary = Test Pilot を気に入ってもらえましたか？ 新人を探す手助けをしてください。
 shareSecondary = あるいは単純にこのリンクをコピー＆ペーストしてください...
 shareEmail = メール
 shareCopy = コピー
-
-# Shown on pages of retired or retiring experiments.
+// Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } は { $completedDate } に終了します
 eolNoticeLink = 詳細
 eolDisableMessage = { $title } の実験は終了しました。一度削除すると Test Pilot を通じて再度インストールすることはできません。
 completedDateLabel = 実験終了日: <b>{ $completedDate }</b>
 
 
-
-# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+// A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 [[ incompatible ]]
 
 incompatibleHeader = この実験はあなたがインストールしているアドオンと互換性がないようです。
 incompatibleSubheader = この実験に参加する前に <a>これらのアドオンを無効化</a> することをお勧めします:
 
 
-
-# A form prompting the user to sign up for the Test Pilot Newsletter.
+// A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
-newsletterFormEmailPlaceholder = 
-  [html/placeholder] あなたのメールアドレスがここに入ります
+newsletterFormEmailPlaceholder
+    .placeholder = あなたのメールアドレスがここに入ります
 newsletterFormDisclaimer = Test Pilot 関連の情報のみお送りします。
 newsletterFormPrivacyNotice = Mozilla が <a>このプライバシー通知</a> に従って私の個人情報を扱うことに同意します。
 newsletterFormPrivacyAgreementRequired = 続けるにはこのボックスにチェックを入れてください。
@@ -268,8 +244,7 @@ newsletterFormSubmitButton = 今すぐ登録
 newsletterFormSubmitButtonSubmitting = 送信中...
 
 
-
-# A section of the footer containing a newsletter signup form.
+// A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
 newsletterFooterError = メールアドレスの送信中に問題が発生しました。再度試しますか？
@@ -279,16 +254,14 @@ newsletterFooterSuccessHeader = ありがとうございます！
 newsletterFooterSuccessBody = これまでに Mozilla 関連のニュースレターを購読したことがない場合、購読開始の確認が必要となります。お送りした確認メールを受信トレイもしくは迷惑メールフィルタから探してください。
 
 
-
-# A warning shown to users when the experiment is not available in their language
+// A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
 localeUnavailableWarningTitle = この実験はあなたの言語 ({ $locale_code }) には対応していません。
 localeWarningSubtitle = お望みなら引き続き有効にしておくこともできます。
 
 
-
-# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+// An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = この機能を離陸させ軌道に乗せましょう！
@@ -296,8 +269,7 @@ experimentsListNoneInstalledSubheader = 新しい Test Pilot の実験を試す�
 experimentsListNoneInstalledCTA = 興味が湧きませんか？ <a>理由を聞かせてください</a>。
 
 
-
-# Shown to users who do not have JavaScript enabled.
+// Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
 noScriptHeading = おっと...
@@ -305,10 +277,8 @@ noScriptMessage = 申し訳ありませんが、<br>Test Pilot を試すには J
 noScriptLink = 理由を確かめる
 
 
-
-# Text of a button to toggle visibility of a list of past experiments.
+// Text of a button to toggle visibility of a list of past experiments.
 [[ pastExperiments ]]
 
 viewPastExperiments = 過去の実験を見る
 hidePastExperiments = 過去の実験を隠す
-
