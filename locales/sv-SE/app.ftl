@@ -1,7 +1,7 @@
 siteName = Firefox Test Pilot
 
 
-# Page titles, put in the <title> HTML tag.
+// Page titles, put in the <title> HTML tag.
 [[ pageTitle ]]
 
 pageTitleDefault = Firefox Test Pilot
@@ -10,8 +10,7 @@ pageTitleExperimentListPage = Firefox Test Pilot - Experiment
 pageTitleExperiment = Firefox Test Pilot - { $title }
 
 
-
-# Links in the footer.
+// Links in the footer.
 [[ footerLink ]]
 
 footerLinkCookies = Kakor
@@ -21,8 +20,7 @@ footerLinkLegal = Juridisk information
 footerLinkAbout = Om Test Pilot
 
 
-
-# Items in the menu.
+// Items in the menu.
 [[ menu ]]
 
 home = Hem
@@ -33,8 +31,7 @@ menuFileIssue = Rapportera ett problem
 menuRetire = Avinstallera Test Pilot
 
 
-
-# The splash on the homepage.
+// The splash on the homepage.
 [[ landing ]]
 
 landingIntroOne = Testa nya funktioner.
@@ -44,8 +41,7 @@ landingLegalNotice = Genom att fortsätta godkänner du <a>användarvillkoren</a
 landingExperimentsTitle = Testa de senaste experimentella funktionerna
 
 
-
-# Related to the installation of the Test Pilot add-on.
+// Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
 landingInstallButton = Installera tillägget Test Pilot
@@ -53,16 +49,14 @@ landingInstallingButton = Installerar...
 landingInstalledButton = Välj dina funktioner
 
 
-
-# Related to a one click to install test pilot and an experiment.
+// Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
 oneClickInstallMinorCta = Installera Test Pilot &amp;
 oneClickInstallMajorCta = Aktivera { $title }
 
 
-
-# Homepage messaging for users not on Firefox or with an old version of Firefox.
+// Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
 landingRequiresDesktop = Test Pilot kräver Firefox för datorer i Windows, Mac eller Linux
@@ -73,8 +67,7 @@ landingUpgradeFirefoxTitle = Uppgradera Firefox
 landingDownloadFirefoxSubTitle = Gratis nedladdning
 
 
-
-# A section of the homepage explaining how Test Pilot works.
+// A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
 landingCardListTitle = Kom igång med tre enkla steg
@@ -83,15 +76,13 @@ landingCardTwo = Aktivera experimentella funktioner
 landingCardThree = Berätta vad du tycker
 
 
-
-# Shown after the user installs the Test Pilot add-on.
+// Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
 onboardingMessage = Vi lägger till en ikon i verktygsfältet så att du alltid kan hitta Test Pilot.
 
 
-
-# Error message pages.
+// Error message pages.
 [[ error ]]
 
 errorHeading = Hoppsan!
@@ -99,25 +90,22 @@ errorMessage = Ser ut som något är trasigt. <br> Försök igen senare.
 notFoundHeader = Fyra noll fyra!
 
 
-
-# A modal prompt to sign up for the Test Pilot newsletter.
+// A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = Välkommen till Test Pilot!
 emailOptInMessage = Få reda på mer om nya experiment och se testresultat för experiment som du har testat.
 emailValidationError = Var vänlig ange en giltig e-postadress!
-
-# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput = 
-  [html/placeholder] ange din e-postadress :)
+// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput
+    .placeholder = ange din e-postadress :)
 emailOptInButton = Registrera mig
 emailOptInConfirmationTitle = E-post har skickats
 emailOptInSuccessMessage2 = Tack!
 emailOptInConfirmationClose = Vidare till experimenten...
 
 
-
-# A listing of all Test Pilot experiments.
+// A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
 experimentListEnabledTab = Aktiverad
@@ -128,8 +116,7 @@ experimentListEndingSoon = Slutar snart
 experimentsListCondensedHeader = Välj dina experiment!
 
 
-
-# An individual experiment in the listing of all Test Pilot experiments.
+// An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
 experimentCardManage = Hantera
@@ -137,36 +124,32 @@ experimentCardGetStarted = Kom igång
 experimentCardLearnMore = Läs mer
 
 
-
-# A modal prompt shown when a user disables an experiment.
+// A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
 feedbackSubmitButton = Gör en snabb undersökning
 feedbackUninstallTitle = Tack!
-feedbackUninstallCopy = 
-  | Ditt deltagande i Firefox Test Pilot innebär
-  | mycket! Kolla in våra andra experiment,
-  | och håll ögonen öppna för mer framöver!
+feedbackUninstallCopy =
+    Ditt deltagande i Firefox Test Pilot innebär
+    mycket! Kolla in våra andra experiment,
+    och håll ögonen öppna för mer framöver!
 
 
-
-# A modal prompt shown before the feedback survey for some experiments.
+// A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
 experimentPreFeedbackTitle = Återkoppling { $title }
 experimentPreFeedbackLinkCopy = Ge återkoppling för experimentet { $title }
 
 
-
-# A splash shown on top of the experiment page when Test Pilot is not installed.
+// A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
 experimentPromoHeader = Redo för start?
 experimentPromoSubheader = Vi bygger nästa generations funktioner för Firefox. Installera Test Pilot för att prova dem!
 
 
-
-# The experiment detail page.
+// The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } är aktiverad.
@@ -198,16 +181,14 @@ userCountContainerAlt = Nyligen startad!
 highlightPrivacy = Din sekretesspolicy
 
 
-
-# Shown when an experiment requires a version of Firefox newer than the user's.
+// Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
 upgradeNoticeTitle = { $title } kräver Firefox { $min_release } eller senare.
 upgradeNoticeLink = Hur du uppdaterar Firefox.
 
 
-
-# Shown while uninstalling Test Pilot.
+// Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
 retireDialogTitle = Avinstallera Test Pilot?
@@ -221,8 +202,7 @@ retirePageMessage = Hoppas du hade kul att experimentera med oss. <br> Komma gä
 retirePageSurveyButton = Gör en snabb undersökning
 
 
-
-# Shown to users after installing Test Pilot if a restart is required.
+// Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
 restartIntroLead = Checklista före start
@@ -231,36 +211,32 @@ restartIntroTwo = Hitta tillägget Test Pilot
 restartIntroThree = Välj dina experiment
 
 
-
-# Shown on a page presented to users three days after installing their first experiment.
+// Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
 sharePrimary = Gillar du Test Pilot? Hjälp oss att hitta några nya medlemmar.
 shareSecondary = eller kopiera och klistra in den här länken...
 shareEmail = E-post
 shareCopy = Kopiera
-
-# Shown on pages of retired or retiring experiments.
+// Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } slutar den { $completedDate }
 eolNoticeLink = Läs mer
 eolDisableMessage = Experimentet { $title } har avslutats. När du avinstallerar det kommer du inte att kunna återinstallera det genom Test Pilot igen.
 completedDateLabel = Slutdatum för experiment: <b>{ $completedDate }</b>
 
 
-
-# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+// A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 [[ incompatible ]]
 
 incompatibleHeader = Detta experiment kanske inte är kompatibelt med tillägg som du har installerat.
 incompatibleSubheader = Vi rekommenderar att du <a>inaktiverar dessa tillägg</a> innan du aktiverar det här experimentet:
 
 
-
-# A form prompting the user to sign up for the Test Pilot Newsletter.
+// A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
-newsletterFormEmailPlaceholder = 
-  [html/placeholder] Din e-post
+newsletterFormEmailPlaceholder
+    .placeholder = Din e-post
 newsletterFormDisclaimer = Vi skickar endast Test Pilot relaterad information.
 newsletterFormPrivacyNotice = Jag är okej med Mozilla hantering min information som beskrivs i <a>denna sekretesspolicy</a>.
 newsletterFormPrivacyAgreementRequired = Kryssa i den här rutan om du vill fortsätta.
@@ -268,8 +244,7 @@ newsletterFormSubmitButton = Registrera dig nu
 newsletterFormSubmitButtonSubmitting = Skickar...
 
 
-
-# A section of the footer containing a newsletter signup form.
+// A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
 newsletterFooterError = Det uppstod ett fel när din e-postadress skickades in. Försök igen?
@@ -279,16 +254,14 @@ newsletterFooterSuccessHeader = Tack!
 newsletterFooterSuccessBody = Om du tidigare inte har bekräftat en prenumeration på en Mozilla-relaterat nyhetsbrev kan du behöva göra det. Kontrollera din inkorg eller ditt spamfilter för ett e-postmeddelande från oss.
 
 
-
-# A warning shown to users when the experiment is not available in their language
+// A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
 localeUnavailableWarningTitle = Detta experiment stöds inte på ditt språk ({ $locale_code }).
 localeWarningSubtitle = Du kan fortfarande aktivera det om du vill.
 
 
-
-# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+// An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = Låt oss komma igång!
@@ -296,8 +269,7 @@ experimentsListNoneInstalledSubheader = Redo att prova en nytt experiment från 
 experimentsListNoneInstalledCTA = Inte intresserad? <a>Låt oss veta varför</a>.
 
 
-
-# Shown to users who do not have JavaScript enabled.
+// Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
 noScriptHeading = Ojdå...
@@ -305,10 +277,8 @@ noScriptMessage = Test Pilot kräver JavaScript.<br>Ledsen för det.
 noScriptLink = Ta reda på varför
 
 
-
-# Text of a button to toggle visibility of a list of past experiments.
+// Text of a button to toggle visibility of a list of past experiments.
 [[ pastExperiments ]]
 
 viewPastExperiments = Visa tidigare experiment
 hidePastExperiments = Dölj tidigare experiment
-
