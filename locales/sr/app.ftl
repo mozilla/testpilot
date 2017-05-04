@@ -1,7 +1,7 @@
 siteName = Firefox Test Pilot
 
 
-# Page titles, put in the <title> HTML tag.
+// Page titles, put in the <title> HTML tag.
 [[ pageTitle ]]
 
 pageTitleDefault = Firefox Test Pilot
@@ -10,8 +10,7 @@ pageTitleExperimentListPage = Firefox Test Pilot - Експерименти
 pageTitleExperiment = Firefox Test Pilot - { $title }
 
 
-
-# Links in the footer.
+// Links in the footer.
 [[ footerLink ]]
 
 footerLinkCookies = Колачићи
@@ -21,8 +20,7 @@ footerLinkLegal = Права
 footerLinkAbout = О Test Pilot-у
 
 
-
-# Items in the menu.
+// Items in the menu.
 [[ menu ]]
 
 home = Почетна
@@ -33,8 +31,7 @@ menuFileIssue = Пријавите грешку
 menuRetire = Деинсталирај Test Pilot
 
 
-
-# The splash on the homepage.
+// The splash on the homepage.
 [[ landing ]]
 
 landingIntroOne = Тестирајте нове могућности.
@@ -44,8 +41,7 @@ landingLegalNotice = Наставком коришћења прихватате 
 landingExperimentsTitle = Испробајте најновије експерименталне могућности
 
 
-
-# Related to the installation of the Test Pilot add-on.
+// Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
 landingInstallButton = Инсталирај Test Pilot додатак
@@ -53,16 +49,14 @@ landingInstallingButton = Инсталирање...
 landingInstalledButton = Изаберите жељене могућности
 
 
-
-# Related to a one click to install test pilot and an experiment.
+// Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
 oneClickInstallMinorCta = Инсталирај Test Pilot &amp;
 oneClickInstallMajorCta = Омогући { $title }
 
 
-
-# Homepage messaging for users not on Firefox or with an old version of Firefox.
+// Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
 landingRequiresDesktop = Test Pilot захтева Firefox за Windows, Mac или Linux рачунар
@@ -73,8 +67,7 @@ landingUpgradeFirefoxTitle = Надогради Firefox
 landingDownloadFirefoxSubTitle = Бесплатно преузимање
 
 
-
-# A section of the homepage explaining how Test Pilot works.
+// A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
 landingCardListTitle = Почните за 3, 2, 1
@@ -83,15 +76,13 @@ landingCardTwo = Омогућите експерименталне могућн�
 landingCardThree = Кажите нам своје мишљење
 
 
-
-# Shown after the user installs the Test Pilot add-on.
+// Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
 onboardingMessage = Ставили смо иконицу у вашу траку са алатима да можете увек пронаћи Test Pilot.
 
 
-
-# Error message pages.
+// Error message pages.
 [[ error ]]
 
 errorHeading = Упс!
@@ -99,25 +90,22 @@ errorMessage = Изгледа да смо нешто покварили. <br> П
 notFoundHeader = Четири нула четири!
 
 
-
-# A modal prompt to sign up for the Test Pilot newsletter.
+// A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = Добродошли у Test Pilot!
 emailOptInMessage = Сазнајте за нове експерименте и погледајте резултате експеримената које сте испробали.
 emailValidationError = Користите валидну адресу е-поште!
-
-# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput = 
-  [html/placeholder] е-пошта иде овде :)
+// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput
+    .placeholder = е-пошта иде овде :)
 emailOptInButton = Пријави ме
 emailOptInConfirmationTitle = Порука послата
 emailOptInSuccessMessage2 = Хвала!
 emailOptInConfirmationClose = Напред на експерименте...
 
 
-
-# A listing of all Test Pilot experiments.
+// A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
 experimentListEnabledTab = Омогућено
@@ -128,8 +116,7 @@ experimentListEndingSoon = Завршава се ускоро
 experimentsListCondensedHeader = Одаберите своје експерименте!
 
 
-
-# An individual experiment in the listing of all Test Pilot experiments.
+// An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
 experimentCardManage = Управљајте
@@ -137,36 +124,32 @@ experimentCardGetStarted = Започните
 experimentCardLearnMore = Сазнајте више
 
 
-
-# A modal prompt shown when a user disables an experiment.
+// A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
 feedbackSubmitButton = Попуните кратко истраживање
 feedbackUninstallTitle = Хвала!
-feedbackUninstallCopy = 
-  | Ваше учешће у Test Pilot-у значи
-  | пуно! Погледајте и наше остале експерименте
-  | и будите у току са новима који долазе!
+feedbackUninstallCopy =
+    Ваше учешће у Test Pilot-у значи
+    пуно! Погледајте и наше остале експерименте
+    и будите у току са новима који долазе!
 
 
-
-# A modal prompt shown before the feedback survey for some experiments.
+// A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
 experimentPreFeedbackTitle = { $title } повратна информација
 experimentPreFeedbackLinkCopy = Пошаљите повратну информацију о експерименту { $title }
 
 
-
-# A splash shown on top of the experiment page when Test Pilot is not installed.
+// A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
 experimentPromoHeader = Спремни за полетање?
 experimentPromoSubheader = Ми градимо могућности следеће генерације за Firefox. Инсталирај Test Pilot да их испробаш!
 
 
-
-# The experiment detail page.
+// The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } је омогућен.
@@ -198,16 +181,14 @@ userCountContainerAlt = Управо објављено!
 highlightPrivacy = Ваша приватност
 
 
-
-# Shown when an experiment requires a version of Firefox newer than the user's.
+// Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
 upgradeNoticeTitle = { $title } захтева Firefox { $min_release } или новији.
 upgradeNoticeLink = Како ажурирати Firefox.
 
 
-
-# Shown while uninstalling Test Pilot.
+// Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
 retireDialogTitle = Деинсталирај Test Pilot?
@@ -221,8 +202,7 @@ retirePageMessage = Надамо се да сте се забавили експ
 retirePageSurveyButton = Попуните кратку анкету
 
 
-
-# Shown to users after installing Test Pilot if a restart is required.
+// Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
 restartIntroLead = Провере пре полетања
@@ -231,36 +211,32 @@ restartIntroTwo = Лоцирајте Test Pilot додатак
 restartIntroThree = Изаберите своје експерименте
 
 
-
-# Shown on a page presented to users three days after installing their first experiment.
+// Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
 sharePrimary = Допада вам се Test Pilot? Помозите нам да пронађемо нове регруте.
 shareSecondary = или само ископирајте и налепите ову везу...
 shareEmail = Е-пошта
 shareCopy = Копирај
-
-# Shown on pages of retired or retiring experiments.
+// Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } се завршава { $completedDate }
 eolNoticeLink = Сазнајте више
 eolDisableMessage = Експеримент { $title } је завршен. Уколико га деинсталирате, нећете моћи да га поново инсталирате путем Test Pilot-a.
 completedDateLabel = Крајњи датум експеримента: <b>{ $completedDate }</b>
 
 
-
-# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+// A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 [[ incompatible ]]
 
 incompatibleHeader = Овај експеримент можда није сагласан са додацима који су вам инсталирани.
 incompatibleSubheader = Предлажемо <a>онемогућавање ових додатака</a> пре активирања овог експеримента:
 
 
-
-# A form prompting the user to sign up for the Test Pilot Newsletter.
+// A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
-newsletterFormEmailPlaceholder = 
-  [html/placeholder] Ваша е-пошта овде
+newsletterFormEmailPlaceholder
+    .placeholder = Ваша е-пошта овде
 newsletterFormDisclaimer = Слаћемо вам искључиво информације у вези Test Pilot-a.
 newsletterFormPrivacyNotice = Прихватам да Mozilla рукује мојим подацима како је објашњено у <a>овом обавештењу о приватности</a>.
 newsletterFormPrivacyAgreementRequired = Означите ово поље ако желите да наставите.
@@ -268,8 +244,7 @@ newsletterFormSubmitButton = Претплатите се
 newsletterFormSubmitButtonSubmitting = Слање...
 
 
-
-# A section of the footer containing a newsletter signup form.
+// A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
 newsletterFooterError = Дошло је до грешке приликом слања ваше адресе е-поште. Покушајте поново?
@@ -279,16 +254,14 @@ newsletterFooterSuccessHeader = Хвала!
 newsletterFooterSuccessBody = Уколико нисте претходно потврдили претплату на Mozilla билтен, можда ћете морати то да урадите. Проверите ваше долазно сандуче или вашу нежељену пошту.
 
 
-
-# A warning shown to users when the experiment is not available in their language
+// A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
 localeUnavailableWarningTitle = Овај експеримент није подржан за ваш језик ({ $locale_code }).
 localeWarningSubtitle = Можете га ипак омогућити уколико желите.
 
 
-
-# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+// An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = Испробајмо заједно неке додатке!
@@ -296,8 +269,7 @@ experimentsListNoneInstalledSubheader = Спремни да испробате �
 experimentsListNoneInstalledCTA = Нисте заинтересовани? <a>Кажите нам зашто</a>.
 
 
-
-# Shown to users who do not have JavaScript enabled.
+// Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
 noScriptHeading = Упс...
@@ -305,10 +277,8 @@ noScriptMessage = Test Pilot захтева JavaScript.<br>Жао нам је з
 noScriptLink = Сазнајте зашто
 
 
-
-# Text of a button to toggle visibility of a list of past experiments.
+// Text of a button to toggle visibility of a list of past experiments.
 [[ pastExperiments ]]
 
 viewPastExperiments = Прикажи прошле експерименте
 hidePastExperiments = Сакриј прошле експерименте
-
