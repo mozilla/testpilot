@@ -1,7 +1,7 @@
 siteName = Firefox Test Pilot
 
 
-# Page titles, put in the <title> HTML tag.
+// Page titles, put in the <title> HTML tag.
 [[ pageTitle ]]
 
 pageTitleDefault = Firefox Test Pilot
@@ -10,8 +10,7 @@ pageTitleExperimentListPage = Firefox Test Pilot - tirmitanin
 pageTitleExperiment = Firefox Test Pilot - { $title }
 
 
-
-# Links in the footer.
+// Links in the footer.
 [[ footerLink ]]
 
 footerLinkCookies = Inagan n tuqqna
@@ -21,8 +20,7 @@ footerLinkLegal = Usḍif
 footerLinkAbout = Ɣef Test Pilot
 
 
-
-# Items in the menu.
+// Items in the menu.
 [[ menu ]]
 
 home = Asebter agejdan
@@ -33,8 +31,7 @@ menuFileIssue = Azen ugur
 menuRetire = Kkes Test Pilot
 
 
-
-# The splash on the homepage.
+// The splash on the homepage.
 [[ landing ]]
 
 landingIntroOne = Sekyed timahilin timaynutin.
@@ -44,8 +41,7 @@ landingLegalNotice = Ma tkemleḍ, ad tqebleḍ s wudem usrid  <a>Tiwtilin n use
 landingExperimentsTitle = Sekyed amaynut i d-yeffɣen seg ulabo
 
 
-
-# Related to the installation of the Test Pilot add-on.
+// Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
 landingInstallButton = Sebded azegrir Test Pilot
@@ -53,16 +49,14 @@ landingInstallingButton = Asebded...
 landingInstalledButton = Fren timahilin inek
 
 
-
-# Related to a one click to install test pilot and an experiment.
+// Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
 oneClickInstallMinorCta = Sebded Test Pilot&amp;
 oneClickInstallMajorCta = Rmed { $title }
 
 
-
-# Homepage messaging for users not on Firefox or with an old version of Firefox.
+// Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
 landingRequiresDesktop = Akken ad tesqedceḍ Test Pilot yessefk ad tesbeddeḍ Firefox ɣef uselkim inek Windows, Mac ou Linux
@@ -73,8 +67,7 @@ landingUpgradeFirefoxTitle = Leqqem Firefox
 landingDownloadFirefoxSubTitle = Asider baṭel
 
 
-
-# A section of the homepage explaining how Test Pilot works.
+// A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
 landingCardListTitle = Bdu di 3, 2, 1
@@ -83,15 +76,13 @@ landingCardTwo = Rmed timahilin tirmitanin
 landingCardThree = Ini-yaɣ-d ayen tettxemmimeḍ
 
 
-
-# Shown after the user installs the Test Pilot add-on.
+// Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
 onboardingMessage = Ad nger tignit deg ufeggag n tunigin i wakken ad tzemreḍ ad tafeḍ Test Pilote di yal tikkelt.
 
 
-
-# Error message pages.
+// Error message pages.
 [[ error ]]
 
 errorHeading = Ayhu!
@@ -99,25 +90,22 @@ errorMessage = Yettban am akken yell wayen ixuṣṣen. <br> Uɣal-d ahat azekka
 notFoundHeader = Ihuh… 404 !
 
 
-
-# A modal prompt to sign up for the Test Pilot newsletter.
+// A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = Ansuf ɣeṛ Test Pilot!
 emailOptInMessage = Awi-d igmaḍ n ikayaden n tirmitin inek udiɣ wali amaynut.
 emailValidationError = Ma ulac aɣilif seqdec tansa imayl tameɣtut!
-
-# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput = 
-  [html/placeholder] tansa imayl :)
+// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput
+    .placeholder = tansa imayl :)
 emailOptInButton = Ad jerdeɣ iman-iw
 emailOptInConfirmationTitle = Imayl ittwaciyeɛ
 emailOptInSuccessMessage2 = Tanemirt-ik
 emailOptInConfirmationClose = Ɣef tirmitin…
 
 
-
-# A listing of all Test Pilot experiments.
+// A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
 experimentListEnabledTab = Irmed
@@ -128,8 +116,7 @@ experimentListEndingSoon = Ad ifak ticki
 experimentsListCondensedHeader = Fren tirmitin inek!
 
 
-
-# An individual experiment in the listing of all Test Pilot experiments.
+// An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
 experimentCardManage = Sefrek
@@ -137,36 +124,32 @@ experimentCardGetStarted = Bdu
 experimentCardLearnMore = Issin ugar
 
 
-
-# A modal prompt shown when a user disables an experiment.
+// A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
 feedbackSubmitButton = Bdu aḥedqis fessusen
 feedbackUninstallTitle = Tanemirt!
-feedbackUninstallCopy = 
-  | Attekki yinek di Firefox Test Pilot yemmal-d
-  | aṭas! Ma ulac aɣilif senqed tirmitin nneɣ,
-  | udiɣ qim deg umaynut i wayen nniḍen ar zdat!
+feedbackUninstallCopy =
+    Attekki yinek di Firefox Test Pilot yemmal-d
+    aṭas! Ma ulac aɣilif senqed tirmitin nneɣ,
+    udiɣ qim deg umaynut i wayen nniḍen ar zdat!
 
 
-
-# A modal prompt shown before the feedback survey for some experiments.
+// A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
 experimentPreFeedbackTitle = { $title }  tuɣalin n usuddem
 experimentPreFeedbackLinkCopy = Fk-ed  tuɣalin n usuddem ɣef urmitan { $title }
 
 
-
-# A splash shown on top of the experiment page when Test Pilot is not installed.
+// A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
 experimentPromoHeader = Theggaḍ ad tesrifgeḍ?
 experimentPromoSubheader = Nbennu timahilin n uzekka n i tsuta d-iteddun n Firefox. Sebded Test Pilot akken ad ten-tɛerḍeḍ!
 
 
-
-# The experiment detail page.
+// The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } ittwarmed.
@@ -183,7 +166,7 @@ experimentManuallyDisabled = { $title } isens deg umsefrak n izegrar
 experimentMeasurementIntro = Ar tama n <a>isefka</a>i d-yettwaleqḍen sɣur akk tirmitin n Test Pilot, hatent aya tsura i yessefk ad tissineḍ ɣef ayen iḍerrun ticki tseqdaceḍ { $experimentTitle }:
 measurements = Tabaḍnit-inek
 experimentPrivacyNotice = Tzemreḍ ad tisineḍ ugar ɣef ulqwaḍ n isefka i { $title } dagi.
-contributorsHeading = Iwwi-yak-tt-id 
+contributorsHeading = Iwwi-yak-tt-id
 contributorsExtraLearnMore = Issin ugar
 changelog = Tizmilin n lqem
 tour = Tirza fessusen
@@ -198,16 +181,14 @@ userCountContainerAlt = Ikker tura akka!
 highlightPrivacy = Tabaḍnit inek
 
 
-
-# Shown when an experiment requires a version of Firefox newer than the user's.
+// Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
 upgradeNoticeTitle = { $title } yesra Firefox { $min_release } neɣ ugar.
 upgradeNoticeLink = Amek ad tleqmeḍ Firefox.
 
 
-
-# Shown while uninstalling Test Pilot.
+// Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
 retireDialogTitle = Kkes Test Pilot?
@@ -221,8 +202,7 @@ retirePageMessage = NEssaram d akken tesɛeddaḍ akud igarrzen deg usekyed yid-
 retirePageSurveyButton = Bdu aḥedqis fessusen
 
 
-
-# Shown to users after installing Test Pilot if a restart is required.
+// Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
 restartIntroLead = Asenqed send asrifeg
@@ -231,36 +211,32 @@ restartIntroTwo = Af-d azegrir Test Pilot
 restartIntroThree = Fren tirmitin inek
 
 
-
-# Shown on a page presented to users three days after installing their first experiment.
+// Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
 sharePrimary = Tḥemleḍ Test Pilot? Mudd-aɣ-d afus ad d-naf kra n isekyaden.
 shareSecondary = neɣ nɣel sakin senteḍ aseɣwen-agi...
 shareEmail = Imayl
 shareCopy = Nɣel
-
-# Shown on pages of retired or retiring experiments.
+// Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } add ifak di { $completedDate }
 eolNoticeLink = Issin ugar
 eolDisableMessage = Tarmit { $title } tfuk yakan. Ticki tettwakkes, ur tettizmireḍ ara ad tesbeddeḍ tikelt nniḍen si Test Pilot.
 completedDateLabel = Azemz n tagara n termit <b>{ $completedDate }</b>
 
 
-
-# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+// A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 [[ incompatible ]]
 
 incompatibleHeader = Tarmit-agi ur temṣada ara akked izegrar i tesbedded.
 incompatibleSubheader = Ma ulac aɣilif <a>sens izegrar-agi</a> send ad tremdeḍ tarmit-agi:
 
 
-
-# A form prompting the user to sign up for the Test Pilot Newsletter.
+// A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
-newsletterFormEmailPlaceholder = 
-  [html/placeholder] Imayl inek dagi
+newsletterFormEmailPlaceholder
+    .placeholder = Imayl inek dagi
 newsletterFormDisclaimer = Ak-d-nazen talɣut icudden ar Test Pilot.
 newsletterFormPrivacyNotice = Qebleɣ d akken Mozilla ad iseqdec iseka yinu akken tella di <a>tsertit-agi n tbaḍnit</a>.
 newsletterFormPrivacyAgreementRequired = Ma ulac aɣilif ṛcem taxxamt-agi ma tebɣiḍ ad tkemleḍ.
@@ -268,27 +244,24 @@ newsletterFormSubmitButton = Jerred tura
 newsletterFormSubmitButtonSubmitting = Tuzna...
 
 
-
-# A section of the footer containing a newsletter signup form.
+// A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
-newsletterFooterError = Teḍra-d tuccḍa di tuzna n yimayl inek. Ɛreḍ tikelt nniḍen? 
+newsletterFooterError = Teḍra-d tuccḍa di tuzna n yimayl inek. Ɛreḍ tikelt nniḍen?
 newsletterFooterHeader = Qqim akked umaynut
 newsletterFooterBody = Wali tirmitin timaynutin udiɣ rmes-d igmaḍ n tid i tɛerḍeḍ.
 newsletterFooterSuccessHeader = Tanemmirt!
 newsletterFooterSuccessBody = Ma yella ur tsentmeḍ ara ajerred inek ar tebratt n telɣut iciudden arMozilla, yessefk hata ad teggeḍ tura. Ma ulac aɣilif, senqed amiḍan inek imayl neq wali daɣen deg ispamen sakin nadi izen-nneɣ.
 
 
-
-# A warning shown to users when the experiment is not available in their language
+// A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
 localeUnavailableWarningTitle = Tarmit-agi ur tettusefrak ara s tutlayt inek ({ $locale_code }).
 localeWarningSubtitle = Tzemreḍ ad tremdeḍ akka tura ma yella tebɣiḍ.
 
 
-
-# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+// An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = Awal aneggaru send tanekra!
@@ -296,8 +269,7 @@ experimentsListNoneInstalledSubheader = Twejḍeḍ i wakken ad tɛarḍeḍ arm
 experimentsListNoneInstalledCTA = Ur k-d-yehwi ara? <a>Eǧǧ-aq ad nzeṛ acuɣer</a>.
 
 
-
-# Shown to users who do not have JavaScript enabled.
+// Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
 noScriptHeading = Ihuh...
@@ -305,10 +277,8 @@ noScriptMessage = Test Pilot yesra JavaScript.<br>Suref-aɣ.
 noScriptLink = Af ayen
 
 
-
-# Text of a button to toggle visibility of a list of past experiments.
+// Text of a button to toggle visibility of a list of past experiments.
 [[ pastExperiments ]]
 
 viewPastExperiments = Sken tirmitanin izrin
 hidePastExperiments = Ffer tirmitanin izrin
-
