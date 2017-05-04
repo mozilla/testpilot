@@ -1,7 +1,7 @@
 siteName = Firefox Test Pilot
 
 
-# Page titles, put in the <title> HTML tag.
+// Page titles, put in the <title> HTML tag.
 [[ pageTitle ]]
 
 pageTitleDefault = Firefox Test Pilot
@@ -10,8 +10,7 @@ pageTitleExperimentListPage = Firefox Test Pilot – Eksperiminten
 pageTitleExperiment = Firefox Test Pilot – { $title }
 
 
-
-# Links in the footer.
+// Links in the footer.
 [[ footerLink ]]
 
 footerLinkCookies = Cookies
@@ -21,8 +20,7 @@ footerLinkLegal = Juridysk
 footerLinkAbout = Oer Test Pilot
 
 
-
-# Items in the menu.
+// Items in the menu.
 [[ menu ]]
 
 home = Start
@@ -33,8 +31,7 @@ menuFileIssue = In probleem melde
 menuRetire = Test Pilot de-ynstallearje
 
 
-
-# The splash on the homepage.
+// The splash on the homepage.
 [[ landing ]]
 
 landingIntroOne = Test nije funksjes.
@@ -44,8 +41,7 @@ landingLegalNotice = Troch fierder te gean, gean jo akkoard mei de <a>Servicebet
 landingExperimentsTitle = Test de lêste eksperimintele funksjes
 
 
-
-# Related to the installation of the Test Pilot add-on.
+// Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
 landingInstallButton = Add-on ‘Test Pilot’ ynstallearje
@@ -53,16 +49,14 @@ landingInstallingButton = Ynstallearje…
 landingInstalledButton = Kies jo funksjes
 
 
-
-# Related to a one click to install test pilot and an experiment.
+// Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
 oneClickInstallMinorCta = Test Pilot ynstallearje &amp;
 oneClickInstallMajorCta = { $title } ynskeakelje
 
 
-
-# Homepage messaging for users not on Firefox or with an old version of Firefox.
+// Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
 landingRequiresDesktop = Test Pilot fereasket Firefox foar desktop op Windows, Mac of Linux
@@ -73,8 +67,7 @@ landingUpgradeFirefoxTitle = Firefox fernije
 landingDownloadFirefoxSubTitle = Fergeze download
 
 
-
-# A section of the homepage explaining how Test Pilot works.
+// A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
 landingCardListTitle = Los yn 3, 2, 1
@@ -83,15 +76,13 @@ landingCardTwo = Skeakelje eksperimintele funksjes yn
 landingCardThree = Fertel ús wat jo tinke
 
 
-
-# Shown after the user installs the Test Pilot add-on.
+// Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
 onboardingMessage = Wy hawwe in ikoantsje op jo arkbalke pleatst, sadat jo altyd Test Pilot fine kinne.
 
 
-
-# Error message pages.
+// Error message pages.
 [[ error ]]
 
 errorHeading = Wûpsty!
@@ -99,25 +90,22 @@ errorMessage = It liket der op dat der wat misgien is. <br>Probearje letter noch
 notFoundHeader = Fjouwer Nul Fjouwer!
 
 
-
-# A modal prompt to sign up for the Test Pilot newsletter.
+// A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = Wolkom by Test Pilot!
 emailOptInMessage = Untdek mear oer nije eksperiminten en besjoch testresultaten foar eksperiminten dy't jo probearre hawwe.
 emailValidationError = Brûk in jildich e-mailadres!
-
-# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput = 
-  [html/placeholder] e-mailadres ynfiere :)
+// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput
+    .placeholder = e-mailadres ynfiere :)
 emailOptInButton = Registrearje
 emailOptInConfirmationTitle = E-mailberjocht ferstjoerd
 emailOptInSuccessMessage2 = Tige tank!
 emailOptInConfirmationClose = Troch nei de eksperiminten…
 
 
-
-# A listing of all Test Pilot experiments.
+// A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
 experimentListEnabledTab = Ynskeakele
@@ -128,8 +116,7 @@ experimentListEndingSoon = Einiget ynkoarten
 experimentsListCondensedHeader = Kies jo eksperiminten!
 
 
-
-# An individual experiment in the listing of all Test Pilot experiments.
+// An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
 experimentCardManage = Beheare
@@ -137,8 +124,7 @@ experimentCardGetStarted = Oan de slach
 experimentCardLearnMore = Mear ynfo
 
 
-
-# A modal prompt shown when a user disables an experiment.
+// A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
 feedbackSubmitButton = Doch in flugge enkête
@@ -146,24 +132,21 @@ feedbackUninstallTitle = Tige tank!
 feedbackUninstallCopy = Jo dielnimming oan Firefox Test Pilot betsjut in protte! Sjoch ris nei ús oare eksperiminten en kom gau werom foar mear!
 
 
-
-# A modal prompt shown before the feedback survey for some experiments.
+// A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
 experimentPreFeedbackTitle = { $title } kommentaar
 experimentPreFeedbackLinkCopy = Leverje kommentaar oer it eksperimint { $title }
 
 
-
-# A splash shown on top of the experiment page when Test Pilot is not installed.
+// A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
 experimentPromoHeader = Ree?
 experimentPromoSubheader = Wy ûntwikkelje foar Firefox de funksjes fan de folgjende generaasje. Mei Test Pilot kinne jo dizze probearje!
 
 
-
-# The experiment detail page.
+// The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } is ynskeakele.
@@ -195,16 +178,14 @@ userCountContainerAlt = Krekt start!
 highlightPrivacy = Jo privacy
 
 
-
-# Shown when an experiment requires a version of Firefox newer than the user's.
+// Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
 upgradeNoticeTitle = { $title } fereasket Firefox { $min_release } of heger.
 upgradeNoticeLink = Hoe't jo Firefox fernije kinne.
 
 
-
-# Shown while uninstalling Test Pilot.
+// Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
 retireDialogTitle = Test Pilot de-ynstallearje?
@@ -218,8 +199,7 @@ retirePageMessage = Wy hoopje dat jo nocht hiene mei de eksperiminten.<br> Kom w
 retirePageSurveyButton = Doch in flugge enkête
 
 
-
-# Shown to users after installing Test Pilot if a restart is required.
+// Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
 restartIntroLead = Checklist foar de start
@@ -228,36 +208,32 @@ restartIntroTwo = Fyn de add-on ‘Test Pilot’
 restartIntroThree = Selektearje jo eksperiminten
 
 
-
-# Shown on a page presented to users three days after installing their first experiment.
+// Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
 sharePrimary = Meie jo wol oer Test Pilot? Help ús mear testers te finen.
 shareSecondary = of kopiearje ienfâldichwei dizze keppeling…
 shareEmail = E-mailadres
 shareCopy = Kopiearje
-
-# Shown on pages of retired or retiring experiments.
+// Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } einiget op { $completedDate }
 eolNoticeLink = Mear ynfo
 eolDisableMessage = It eksperimint{ $title } is einige. As jo it de-ynstallearje, kinne jo it net wer ynstallearje fia Test Pilot.
 completedDateLabel = Eindatum eksperimint: <b>{ $completedDate }</b>
 
 
-
-# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+// A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 [[ incompatible ]]
 
 incompatibleHeader = Dit eksperimint is mooglik net kompatibel mei al ynstallearre add-ons.
 incompatibleSubheader = Wy rekommandearje oan <a>dizze add-ons út te skeakeljen</a> eardat jo dit eksperimint aktivearje:
 
 
-
-# A form prompting the user to sign up for the Test Pilot Newsletter.
+// A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
-newsletterFormEmailPlaceholder = 
-  [html/placeholder] E-mailadres ynfiere
+newsletterFormEmailPlaceholder
+    .placeholder = E-mailadres ynfiere
 newsletterFormDisclaimer = Wy sille jo allinnich Test Pilot-relatearre ynformaasje stjoere.
 newsletterFormPrivacyNotice = Ik gean akkoard mei hoe't Mozilla omgiet mei myn ynformaasje as útlein yn <a>dit Privacybelied</a>.
 newsletterFormPrivacyAgreementRequired = Finkje dit fek oan as jo trochgean wolle.
@@ -265,27 +241,24 @@ newsletterFormSubmitButton = No ynskriuwe
 newsletterFormSubmitButtonSubmitting = Yntsjinje…
 
 
-
-# A section of the footer containing a newsletter signup form.
+// A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
 newsletterFooterError = Der is in flater bard wylst it yntsjinjenfan jo e-mailadres. Opnij probearje?
 newsletterFooterHeader = Bliuw op de hichte
 newsletterFooterBody = Untdek mear oer nije eksperiminten en besjoch testresultaten foar eksperiminten dy't jo probearre hawwe.
 newsletterFooterSuccessHeader = Tank!
-newsletterFooterSuccessBody = As jo yn it ferline noch gjin oanmelding befêstige hawwe foar in Mozilla-relatearre nijsbrief, dan is dat miskien noch nedich. Kontrolearje jo Postfek YN of net-winske-map foar in e-mail fan ús. 
+newsletterFooterSuccessBody = As jo yn it ferline noch gjin oanmelding befêstige hawwe foar in Mozilla-relatearre nijsbrief, dan is dat miskien noch nedich. Kontrolearje jo Postfek YN of net-winske-map foar in e-mail fan ús.
 
 
-
-# A warning shown to users when the experiment is not available in their language
+// A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
 localeUnavailableWarningTitle = Dit eksperimint wurdt net stipe yn jo taal ({ $locale_code }).
 localeWarningSubtitle = Jo kinne it dochs ynskeakelje as jo wolle.
 
 
-
-# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+// An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = En no giet it oan!
@@ -293,8 +266,7 @@ experimentsListNoneInstalledSubheader = Ree om nije Test Pilot-eksperiminten te 
 experimentsListNoneInstalledCTA = Net ynteressearre? <a>Lit ús witte wêrom</a>.
 
 
-
-# Shown to users who do not have JavaScript enabled.
+// Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
 noScriptHeading = Oh oh,...
@@ -302,10 +274,8 @@ noScriptMessage = Test Pilot fereasket JavaScript.<br>Sorry derfoar.
 noScriptLink = Besjoch wêrom
 
 
-
-# Text of a button to toggle visibility of a list of past experiments.
+// Text of a button to toggle visibility of a list of past experiments.
 [[ pastExperiments ]]
 
 viewPastExperiments = Alde eksperiminten besjen
 hidePastExperiments = Alde eksperiminten ferstopje
-
