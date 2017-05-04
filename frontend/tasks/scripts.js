@@ -16,11 +16,9 @@ const packageJSON = require('../../package.json');
 
 const excludeVendorModules = [
   'babel-polyfill',
-  'l20n'
 ];
 const includeVendorModules = [
   'babel-polyfill/browser',
-  'l20n/dist/compat/web/l20n'
 ];
 const vendorModules = Object.keys(packageJSON.dependencies)
   .filter(name => excludeVendorModules.indexOf(name) < 0)

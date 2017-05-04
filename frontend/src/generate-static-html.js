@@ -30,8 +30,6 @@ export function generateStaticPage({
     <meta name="availableLanguages" content={ available_locales } />
     <meta name="viewport" content="width=device-width" />
 
-    <link rel="localization" href="/static/locales/en-US/app.ftl" />
-    <link rel="localization" href="/static/locales/en-US/experiments.ftl" />
     <link rel="localization" href="/static/locales/{locale}/app.ftl" />
     <link rel="localization" href="/static/locales/{locale}/experiments.ftl" />
 
