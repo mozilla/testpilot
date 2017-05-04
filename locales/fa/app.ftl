@@ -1,7 +1,7 @@
 siteName = خلبان آزمایشی فایرفاکس
 
 
-# Page titles, put in the <title> HTML tag.
+// Page titles, put in the <title> HTML tag.
 [[ pageTitle ]]
 
 pageTitleDefault = خلبان آزمایشی فایرفاکس
@@ -10,8 +10,7 @@ pageTitleExperimentListPage = خلبان آزمایشی فایرفاکس - آز�
 pageTitleExperiment = خلبان آزمایشی فایرفاکس - { $title }
 
 
-
-# Links in the footer.
+// Links in the footer.
 [[ footerLink ]]
 
 footerLinkCookies = کوکی‌ها
@@ -21,8 +20,7 @@ footerLinkLegal = ملاحظات قانونی
 footerLinkAbout = درباره خلبان آزمایشی
 
 
-
-# Items in the menu.
+// Items in the menu.
 [[ menu ]]
 
 home = خانه
@@ -33,8 +31,7 @@ menuFileIssue = گزارش یک مشکل
 menuRetire = حذف خلبان آزمایشی
 
 
-
-# The splash on the homepage.
+// The splash on the homepage.
 [[ landing ]]
 
 landingIntroOne = امکانات جدید را آزمایش کنید.
@@ -44,8 +41,7 @@ landingLegalNotice = با ادامه دادن، شما با <a>شرایط است
 landingExperimentsTitle = آخرین امکانات آزمایشی ما را تست کنید
 
 
-
-# Related to the installation of the Test Pilot add-on.
+// Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
 landingInstallButton = نصب افزودنی خلبان آزمایشی
@@ -53,16 +49,14 @@ landingInstallingButton = در حال نصب…
 landingInstalledButton = امکانات خود را انتخاب کنید
 
 
-
-# Related to a one click to install test pilot and an experiment.
+// Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
 oneClickInstallMinorCta = خلبان آزمایشی را نصب کنید
 oneClickInstallMajorCta = فعال‌سازی { $title }
 
 
-
-# Homepage messaging for users not on Firefox or with an old version of Firefox.
+// Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
 landingRequiresDesktop = خلبان آزمایشی نیاز به فایرفاکس برای رومیزی بر روی ویندوز، مک یا لینوکس دارد
@@ -73,8 +67,7 @@ landingUpgradeFirefoxTitle = ارتقا فایرفاکس
 landingDownloadFirefoxSubTitle = دریافت رایگان
 
 
-
-# A section of the homepage explaining how Test Pilot works.
+// A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
 landingCardListTitle = آماده حرکت در ۳، ۲، ۱
@@ -83,15 +76,13 @@ landingCardTwo = امکانات آزمایشی را فعال کنید
 landingCardThree = نظر خود را به ما بگویید
 
 
-
-# Shown after the user installs the Test Pilot add-on.
+// Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
 onboardingMessage = ما یک آیکن در نوار ابزار قرار می‌دهیم تا شما بتوانید همیشه خلبان آزمایشی را پیدا کنید.
 
 
-
-# Error message pages.
+// Error message pages.
 [[ error ]]
 
 errorHeading = اوه!
@@ -99,25 +90,22 @@ errorMessage = به نظر میاد ما چیزی را خراب کردیم.<br>�
 notFoundHeader = چهارصد اوه چهار!
 
 
-
-# A modal prompt to sign up for the Test Pilot newsletter.
+// A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = به خلبان آزمایشی خوش آمدید!
 emailOptInMessage = در مورد آزمایش‌های جدید مطلع شوید و نتایج آزمایش‌هایی که امتحانشان کرده‌اید را ببینید.
 emailValidationError = لطفا یک نشانی رایانامه معتبر وارد کنید!
-
-# LOCALIZATION NOTE: The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput = 
-  [html/placeholder] رایانامه اینجا قرار می‌گیرد :)
+// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput
+    .placeholder = رایانامه اینجا قرار می‌گیرد :)
 emailOptInButton = من را ثبت‌نام کن
 emailOptInConfirmationTitle = رایانامه ارسال شد
 emailOptInSuccessMessage2 = ممنون!
 emailOptInConfirmationClose = به سوی تجربه‌ها…
 
 
-
-# A listing of all Test Pilot experiments.
+// A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
 experimentListEnabledTab = فعال شد
@@ -128,8 +116,7 @@ experimentListEndingSoon = به زودی تمام میشود
 experimentsListCondensedHeader = تجربه‌های آزمایشی خود را انتخاب کنید!
 
 
-
-# An individual experiment in the listing of all Test Pilot experiments.
+// An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
 experimentCardManage = مدیریت
@@ -137,8 +124,7 @@ experimentCardGetStarted = شروع کنید
 experimentCardLearnMore = اطلاعات بیشتر
 
 
-
-# A modal prompt shown when a user disables an experiment.
+// A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
 feedbackSubmitButton = یک نظرسنجی کوتاه پر کنید
@@ -146,24 +132,21 @@ feedbackUninstallTitle = متشکریم!
 feedbackUninstallCopy = مشارکت شما در خلبان آزمایشی فایرفاکس معنای زیادی برای ما دارد! لطفا سایر آزمایش‌های ما را هم بررسی کنید، و برای آزمایش‌های بیشتر سر بزنید!
 
 
-
-# A modal prompt shown before the feedback survey for some experiments.
+// A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
 experimentPreFeedbackTitle = { $title } بازخورد
 experimentPreFeedbackLinkCopy = ارسال بازخورد برای آزمایش { $title }
 
 
-
-# A splash shown on top of the experiment page when Test Pilot is not installed.
+// A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
 experimentPromoHeader = آماده پروازید؟
 experimentPromoSubheader = ما در حال ساخت نسل بعدی امکانات برای فایرفاکس هستیم. برای آزمایش خلبان آزمایشی را فعال کنید!
 
 
-
-# The experiment detail page.
+// The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } فعال است.
@@ -195,16 +178,14 @@ userCountContainerAlt = هم‌اکنون منتشر شد!
 highlightPrivacy = حریم‌خصوصی شما
 
 
-
-# Shown when an experiment requires a version of Firefox newer than the user's.
+// Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
 upgradeNoticeTitle = { $title } نیاز به فایرفاکس با حداقل نسخه { $min_release } یا بیشتر را دارد.
 upgradeNoticeLink = چگونه فایرفاکس را بروزرسانی کنید.
 
 
-
-# Shown while uninstalling Test Pilot.
+// Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
 retireDialogTitle = حذف خلبان آزمایشی؟
@@ -218,8 +199,7 @@ retirePageMessage = امیدواریم آزمایش با ما برایتان ج�
 retirePageSurveyButton = یک نظرسنجی کوتاه پر کنید
 
 
-
-# Shown to users after installing Test Pilot if a restart is required.
+// Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
 restartIntroLead = چک‌لیست قبل از پرواز
@@ -228,36 +208,32 @@ restartIntroTwo = افزودنی خلبان آزمایشی را پیدا کنی�
 restartIntroThree = آزمایش‌های خود را انتخاب کنید
 
 
-
-# Shown on a page presented to users three days after installing their first experiment.
+// Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
 sharePrimary = عاشق خلبان آزمایشی شدید؟ به ما در پیدا کردن افراد بیشتر کمک کنید.
 shareSecondary = یا فقط این پیوند را رونوشت و جای‌گذاری کنید…
 shareEmail = رایانامه
 shareCopy = رونوشت
-
-# Shown on pages of retired or retiring experiments.
+// Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } در تاریخ { $completedDate } تمام می‌شود
 eolNoticeLink = اطلاعات بیشتر
 eolDisableMessage = آزمایش { $title } تمام شده است. زمانی که حذف‌اش کنید، دیگر قادر به نصب آن از طریق خلبان آزمایشی نخواهید بود.
 completedDateLabel = تاریخ پایان آزمایش: { $completedDate }
 
 
-
-# A warning shown to users looking at experiments incompatible with add-ons they already have installed.
+// A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 [[ incompatible ]]
 
 incompatibleHeader = این آزمایش ممکن است با افزودنی‌هایی که نصب دارید سازگار نباشد.
 incompatibleSubheader = ما پیشنهاد می‌کنیم <a>این افزونه‌ها را</a> قبل از فعال کردن این آزمایش غیرفعال کنید:
 
 
-
-# A form prompting the user to sign up for the Test Pilot Newsletter.
+// A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
-newsletterFormEmailPlaceholder = 
-  [html/placeholder] رایانامه شما اینجا قرار می‌گیرد
+newsletterFormEmailPlaceholder
+    .placeholder = رایانامه شما اینجا قرار می‌گیرد
 newsletterFormDisclaimer = ما فقط اطلاعات مرتبط با خلبان آزمایشی را برای شما ارسال خواهیم کرد.
 newsletterFormPrivacyNotice = با اینکه موزیلا اطلاعات من را به شکل توضیح داده شده در <a>این نکات حریم‌خصوصی</a> مدیریت کند مشکلی ندارم.
 newsletterFormPrivacyAgreementRequired = چنانچه مایل به ادامه دادن هستید این گزینه را انتخاب کنید.
@@ -265,8 +241,7 @@ newsletterFormSubmitButton = همین حالا ثبت‌نام کنید
 newsletterFormSubmitButtonSubmitting = در حال ارسال...
 
 
-
-# A section of the footer containing a newsletter signup form.
+// A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
 newsletterFooterError = یک خطا هنگام ثبت رایانامه شما رخ داد. دوباره تلاش می‌کنید؟
@@ -276,16 +251,14 @@ newsletterFooterSuccessHeader = ممنون!
 newsletterFooterSuccessBody = اگر شما قبلا مشترک یکی از خبرنامه‌های موزیلا نشده‌اید ممکن است لازم باشد اینکار را بکنید. لطفا صندوق‌پستی یا اسپم‌های خود را برای یک رایانامه از طرف ما بررسی کنید.
 
 
-
-# A warning shown to users when the experiment is not available in their language
+// A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
 localeUnavailableWarningTitle = این آزمایش به زبان شما پشتیبانی نمی‌شود ({ $locale_code }).
 localeWarningSubtitle = اگر تمایل دارید، هنوز می‌توانید فعالش کنید.
 
 
-
-# An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
+// An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = بیاید این خلبان را از زمین بلند کنیم!
@@ -293,8 +266,7 @@ experimentsListNoneInstalledSubheader = آیا آماده انجام یک تجر
 experimentsListNoneInstalledCTA = برایتان جالب نیست؟ <a>به ما بگویید چرا</a>.
 
 
-
-# Shown to users who do not have JavaScript enabled.
+// Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
 noScriptHeading = هممم…
@@ -302,10 +274,8 @@ noScriptMessage = خلبان آزمایشی نیاز به جاوا اسکریپ�
 noScriptLink = ببینید چرا
 
 
-
-# Text of a button to toggle visibility of a list of past experiments.
+// Text of a button to toggle visibility of a list of past experiments.
 [[ pastExperiments ]]
 
 viewPastExperiments = نمایش آزمایش‌های گذشته
 hidePastExperiments = مخفی کردن آزمایش‌های گذشته
-
