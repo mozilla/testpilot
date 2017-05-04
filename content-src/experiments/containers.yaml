@@ -67,12 +67,7 @@ tour_steps:
   -
     image: /static/images/experiments/containers/tour/tour5.jpg
     copy: You can always give us feedback or disable Containers from Test Pilot.
-notifications:
-  -
-    id: 1
-    title: 'Containers has a new look!'
-    text: '(Test) Check out how cool Containers is.'
-    notify_after: '2017-01-01T00:00:00Z'
+notifications: []
 contributors:
   -
     display_name: 'Tanvi Vyas'
