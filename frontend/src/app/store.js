@@ -26,7 +26,7 @@ export const initialState = {
     data: experiments.results
   },
   addon: {
-    hasAddon: !!window.navigator.testpilotAddon,
+    hasAddon: null,
     installed: {},
     installedLoaded: false,
     clientUUID: '',

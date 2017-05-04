@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
+import Loading from './app/components/Loading';
 
 function makeStaticString(headComponent, bodyComponent) {
   const head = ReactDOMServer.renderToStaticMarkup(headComponent);
@@ -66,14 +67,7 @@ export function generateStaticPage({
         </div>
       </div>
     </noscript>
-    <div className="full-page-wrapper centered overflow-hidden">
-      <div className="loading">
-        <div className="loading-bar"></div>
-        <div className="loading-bar"></div>
-        <div className="loading-bar"></div>
-        <div className="loading-bar"></div>
-      </div>
-    </div>
+    <Loading />
     <script src="/static/app/vendor.js"></script>
     <script src="/static/app/app.js"></script>
     { enable_pontoon ? <script src="https://pontoon.mozilla.org/pontoon.js"></script> : null }

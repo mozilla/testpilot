@@ -20,6 +20,7 @@ import createStore from './store';
 import config from './config';
 
 import experimentsActions from './actions/experiments';
+import addonActions from './actions/addon';
 import Routes from './components/Routes';
 
 es6Promise.polyfill();
@@ -46,3 +47,9 @@ window.store = store;
 store.dispatch(experimentsActions.fetchUserCounts(config.usageCountsURL));
 
 setupAddonConnection(store);
+
+window.setTimeout(() => {
+  if (store.getState().addon.hasAddon === null) {
+    store.dispatch(addonActions.setHasAddon(false));
+  }
+}, 250);

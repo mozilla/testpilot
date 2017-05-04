@@ -55,13 +55,6 @@ export default class WebApp {
         worker.on('detach', () => this.hub.disconnect(worker.port));
       }
     });
-    this.beacon = new PageMod({
-      include: includes.beacon,
-      contentScriptFile: './set-installed-flag.js',
-      contentScriptWhen: 'start',
-      contentScriptOptions: { version: this.addonVersion },
-      attachTo: ['top', 'existing']
-    });
   }
 
   changeEnv({ baseUrl, whitelist }: Environment) {
