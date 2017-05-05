@@ -1,4 +1,4 @@
-activitystreamDescription = Bogat vizualni tok zgodovine in prenovljena domača stran naredita iskanje s Firefoxom preprostejše kot kadarkoli prej.
+activitystreamDescription = Bogat vizualni tok zgodovine in prenovljena domača stran naredita iskanje s Firefoxom preprostejše kot kdajkoli prej.
 activitystreamIntroduction = <p>Nadaljujte z brskanjem, ne da bi izgubili svoj miselni tok. Activity Stream ohranja vaše priljubljene strani, zaznamke in nedavno zgodovino na dosegu roke na vsakem novem zavihku. Nov pogled časovne premice pa vam omogoča pregled vašega brskanja iz ptičje perspektive.</p>
 activitystreamMeasurements0 = Zbiramo osnovne podatke o uporabi poskusne strani novega zavihka in časovne premice, kot so vrste elementov, ki jih kliknete, in njihov položaj na strani.
 activitystreamMeasurements1 = Zbiramo tudi osnovne informacije o profilu brskalnika, ki vplivajo na Activity Stream, kot sta število zaznamkov in elementov zgodovine.
