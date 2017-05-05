@@ -1,8 +1,7 @@
 id: 10
 title: 'Snooze Tabs'
 slug: snooze-tabs
-locales:
-  - 'en'
+locales: ['en', 'cs', 'de', 'dsb', 'es', 'fr', 'fy', 'hsb', 'hu', 'id', 'it', 'ja', 'kab', 'nl', 'pt', 'ru', 'sk', 'sl', 'sq', 'sv', 'tr', 'zh']
 incompatible:
   'blok@mozilla.org': 'Tracking Protection'
 thumbnail: /static/images/experiments/snooze-tabs/icon/thumbnail.png
