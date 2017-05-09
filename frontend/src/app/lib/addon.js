@@ -2,7 +2,7 @@
 import cookies from 'js-cookie';
 
 import addonActions from '../actions/addon';
-import experimentActions from '../actions/experiments';
+import { updateExperiment } from '../actions/experiments';
 import { getExperimentByID, getExperimentByURL, getExperimentInProgress } from '../reducers/experiments';
 
 const INSTALL_STATE_WATCH_PERIOD = 2000;
@@ -67,12 +67,12 @@ export function listen(store) {
 }
 
 export function enableExperiment(dispatch, experiment) {
-  dispatch(experimentActions.updateExperiment(experiment.addon_id, { inProgress: true }));
+  dispatch(updateExperiment(experiment.addon_id, { inProgress: true }));
   sendMessage('install-experiment', experiment);
 }
 
 export function disableExperiment(dispatch, experiment) {
-  dispatch(experimentActions.updateExperiment(experiment.addon_id, { inProgress: true }));
+  dispatch(updateExperiment(experiment.addon_id, { inProgress: true }));
   sendMessage('uninstall-experiment', experiment);
 }
 
@@ -122,25 +122,25 @@ function handleMessage(store, evt) {
       break;
     case 'addon-install:download-failed':
       store.dispatch(addonActions.disableExperiment(experiment));
-      store.dispatch(experimentActions.updateExperiment(
+      store.dispatch(updateExperiment(
         experiment.addon_id, { inProgress: false, error: true }
       ));
       break;
     case 'addon-install:install-failed':
       store.dispatch(addonActions.disableExperiment(experiment));
-      store.dispatch(experimentActions.updateExperiment(
+      store.dispatch(updateExperiment(
         experiment.addon_id, { inProgress: false, error: true }
       ));
       break;
     case 'addon-install:install-ended':
       store.dispatch(addonActions.enableExperiment(experiment));
-      store.dispatch(experimentActions.updateExperiment(
+      store.dispatch(updateExperiment(
         experiment.addon_id, { inProgress: false, error: false }
       ));
       break;
     case 'addon-uninstall:uninstall-ended':
       store.dispatch(addonActions.disableExperiment(experiment));
-      store.dispatch(experimentActions.updateExperiment(
+      store.dispatch(updateExperiment(
         experiment.addon_id, { inProgress: false, error: false }
       ));
       break;

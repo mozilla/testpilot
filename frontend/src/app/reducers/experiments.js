@@ -36,7 +36,12 @@ export type UpdateExperimentAction = {
   }
 };
 
-type ExperimentsActions = FetchUserCountsAction | UpdateExperimentAction;
+export type SetSlugAction = {
+  type: 'SET_SLUG',
+  payload: string
+};
+
+type ExperimentsActions = FetchUserCountsAction | UpdateExperimentAction | SetSlugAction;
 
 function fetchUserCounts(
   state: ExperimentsState,
@@ -67,6 +72,13 @@ function updateExperiment(
     ...state,
     data: state.data.map(experiment =>
       ((experiment.addon_id !== addonID) ?  experiment : { ...experiment, ...data }))
+  };
+}
+
+function setSlug(state, { payload: slug }: SetSlugAction): ExperimentsState {
+  return {
+    ...state,
+    slug
   };
 }
 
@@ -111,6 +123,8 @@ export default function experimentsReducer(
     return defaultState();
   }
   switch (action.type) {
+    case 'SET_SLUG':
+      return setSlug(state, action);
     case 'FETCH_USER_COUNTS':
       return fetchUserCounts(state, action);
     case 'UPDATE_EXPERIMENT':

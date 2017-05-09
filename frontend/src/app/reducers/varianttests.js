@@ -2,6 +2,10 @@
 
 import seedrandom from 'seedrandom';
 
+export type ChooseTestsAction = {
+  type: 'CHOOSE_TESTS'
+};
+
 type TestChooser = {
   name: string,
   getValue: () => string
@@ -35,41 +39,45 @@ function random(choices: { [name: string]: number }): string {
   return variants[Math.floor(seedrandom(seed)() * summedWeight)];
 }
 
-const tests: Array<TestChooser> = [
-  {
-    name: 'installButtonBorder',
-    getValue: function getValue() {
-      if (!window.navigator.language.startsWith('en')) {
-        return 'default';  // User gets whatever the DefaultCase is.
-      }
-      return random({
-        bigBorder: 1,
-        default: 1
-      });
-    }
-  }
-];
-
 const chosenVariants: ChosenVariantsState = {};
 
 let chosenTest: ChosenTestState | null = null;
 
-tests.forEach(test => {
-  // Only put each user in one test. If we previously found a non-default test,
-  // put this user in default for the rest of the tests.
-  if (chosenTest !== null) {
-    chosenVariants[test.name] = 'default';
-  } else {
-    const chosen = test.getValue();
-    if (chosen !== 'default') {
-      chosenTest = {
-        test: test.name,
-        variant: chosen
-      };
+function chooseTests() {
+  const language = window.navigator.language;
+
+  const tests: Array<TestChooser> = [
+    {
+      name: 'installButtonBorder',
+      getValue: function getValue() {
+        if (!language.startsWith('en')) {
+          return 'default';  // User gets whatever the DefaultCase is.
+        }
+        return random({
+          bigBorder: 1,
+          default: 1
+        });
+      }
     }
-    chosenVariants[test.name] = chosen;
-  }
-});
+  ];
+
+  tests.forEach(test => {
+    // Only put each user in one test. If we previously found a non-default test,
+    // put this user in default for the rest of the tests.
+    if (chosenTest !== null) {
+      chosenVariants[test.name] = 'default';
+    } else {
+      const chosen = test.getValue();
+      if (chosen !== 'default') {
+        chosenTest = {
+          test: test.name,
+          variant: chosen
+        };
+      }
+      chosenVariants[test.name] = chosen;
+    }
+  });
+}
 
 export function getChosenTest(): ChosenTestState {
   if (chosenTest === null) {
@@ -81,6 +89,12 @@ export function getChosenTest(): ChosenTestState {
   return chosenTest;
 }
 
-export default function variantTestsReducer(): ChosenVariantsState {
+export default function variantTestsReducer(action: ChooseTestsAction): ChosenVariantsState {
+  if (typeof action === 'undefined') {
+    return {};
+  }
+  if (action.type === 'CHOOSE_TESTS') {
+    chooseTests();
+  }
   return chosenVariants;
 }

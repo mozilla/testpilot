@@ -14,15 +14,19 @@ export default class MainInstallButton extends React.Component {
   }
 
   install(e) {
-    const { requireRestart, sendToGA, eventCategory, eventLabel, hasAddon, installAddon, installCallback } = this.props;
+    const { requireRestart, sendToGA, eventCategory, eventLabel, hasAddon, installAddon, installCallback, navigateTo } = this.props;
+    if (hasAddon) {
+      navigateTo('/experiments');
+      return;
+    }
     if (installCallback) {
       this.setState({ isInstalling: true });
       installCallback(e);
       return;
     }
-    if (hasAddon) { return; }
     this.setState({ isInstalling: true });
-    installAddon(requireRestart, sendToGA, eventCategory, eventLabel);
+    installAddon(requireRestart, sendToGA, eventCategory, eventLabel)
+      .then(() => navigateTo('/experiments'));
   }
 
   render() {
@@ -54,6 +58,7 @@ export default class MainInstallButton extends React.Component {
       installButton = this.renderOneClickInstallButton(experimentTitle);
     } else {
       installButton = <span className="default-btn-msg" data-l10n-id="landingInstallButton">
+        Install the Test Pilot Add-on
       </span>;
     }
     const makeInstallButton = (extraClass = '') => {

@@ -1,24 +1,39 @@
 
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
+import ReactMarkdown from 'react-markdown';
 
-
-function makeStaticString(headComponent, bodyComponent) {
+function makeStaticString(
+  prepareForClient, componentName, headComponent,
+  staticBodyComponent, dynamicBodyComponent
+) {
   const head = ReactDOMServer.renderToStaticMarkup(headComponent);
-  const root = ReactDOMServer.renderToStaticMarkup(bodyComponent);
+  const staticRoot = ReactDOMServer.renderToStaticMarkup(staticBodyComponent);
+  let dynamicRoot;
+  let bootstrapScript;
+  if (prepareForClient) {
+    dynamicRoot = ReactDOMServer.renderToString(dynamicBodyComponent);
+    bootstrapScript = '<script src="/static/app/app.js"></script>';
+  } else if (dynamicBodyComponent) {
+    dynamicRoot = ReactDOMServer.renderToStaticMarkup(dynamicBodyComponent);
+    bootstrapScript = '';
+  }
   return `<!DOCTYPE html>
 <html>
   ${head}
   <body class="blue">
     <div class="stars"></div>
-    <div id="page-container">${root}</div>
+    ${staticRoot}
+    <div id="page-container">${dynamicRoot}</div>
+    ${bootstrapScript}
   </body>
 </html>`;
 }
 
-export function generateStaticPage({
-  available_locales, canonical_path,
-  meta_title, meta_description, image_facebook, image_twitter, enable_pontoon
+// TODO XXX Export two functions, generateStaticPage, and prerenderDynamicComponent
+export function generateStaticPage(prepareForClient, name, component, {
+  available_locales, canonical_path, meta_title, meta_description,
+  image_facebook, image_twitter, enable_pontoon
 }) {
   const headComponent = <head>
     <meta charSet="utf-8" />
@@ -66,18 +81,46 @@ export function generateStaticPage({
         </div>
       </div>
     </noscript>
-    <div className="full-page-wrapper centered overflow-hidden">
-      <div className="loading">
-        <div className="loading-bar"></div>
-        <div className="loading-bar"></div>
-        <div className="loading-bar"></div>
-        <div className="loading-bar"></div>
-      </div>
-    </div>
-    <script src="/static/app/vendor.js"></script>
-    <script src="/static/app/app.js"></script>
+    { prepareForClient ? <script src="/static/app/vendor.js"></script> : null }
     { enable_pontoon ? <script src="https://pontoon.mozilla.org/pontoon.js"></script> : null }
   </div>;
 
-  return makeStaticString(headComponent, bodyComponent);
+  return makeStaticString(prepareForClient, name, headComponent, bodyComponent, component);
+}
+
+export function generateStaticPageFromMarkdown(name, markdown, params) {
+  const body = <div className="full-page-wrapper">
+    <header id="main-header" className="layout-wrapper layout-wrapper--row-between-top">
+      <h1>
+        <a href="/" className="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
+      </h1>
+    </header>
+    <div className="layout-wrapper static-page-content">
+      <ReactMarkdown source={ markdown } />
+    </div>
+
+    <footer id="main-footer">
+      <div id="footer-links" className="layout-wrapper layout-wrapper--row-bottom-breaking">
+        <div className="legal-links">
+          <a href="https://www.mozilla.org" className="mozilla-logo"></a>
+          <a data-l10n-id="footerLinkLegal" href="https://www.mozilla.org/about/legal/" className="boilerplate">Legal</a>
+          <a data-l10n-id="footerLinkAbout" href="/about" className="boilerplate">About Test Pilot</a>
+          <a data-l10n-id="footerLinkPrivacy" href="/privacy" className="boilerplate">Privacy</a>
+          <a data-l10n-id="footerLinkTerms" href="/terms" className="boilerplate">Terms</a>
+          <a data-l10n-id="footerLinkCookies" href="https://www.mozilla.org/privacy/websites/#cookies" className="boilerplate">Cookies</a>
+        </div>
+        <div className="social-links">
+          <a href="https://github.com/mozilla/testpilot" target="_blank" title="GitHub" className="link-icon github"></a>
+          <a href="https://twitter.com/FxTestPilot" target="_blank" title="Twitter" className="link-icon twitter"></a>
+        </div>
+      </div>
+    </footer>
+    <script src="/static/app/vendor.js"></script>
+    <script src="/static/scripts/locale.js"></script>
+    <script src="/static/scripts/legal.js"></script>
+  </div>;
+
+  return generateStaticPage(
+    false, 'markdown.js', body, JSON.stringify(markdown), params
+  );
 }

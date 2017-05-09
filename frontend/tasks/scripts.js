@@ -1,5 +1,7 @@
 const gulp = require('gulp');
 const config = require('../config.js');
+const path = require('path');
+const fs = require('fs');
 
 const babelify = require('babelify');
 const browserify = require('browserify');
@@ -17,9 +19,13 @@ const packageJSON = require('../../package.json');
 const excludeVendorModules = [
   'babel-polyfill',
 ];
+
 const includeVendorModules = [
   'babel-polyfill/browser',
+  'react/lib/ReactDOMFactories',
+  'querystring'
 ];
+
 const vendorModules = Object.keys(packageJSON.dependencies)
   .filter(name => excludeVendorModules.indexOf(name) < 0)
   .concat(includeVendorModules);
@@ -39,7 +45,7 @@ gulp.task('scripts-clean', () => {
 });
 
 gulp.task('scripts-watch', () => {
-  gulp.watch([config.SRC_PATH + 'app/**/*.js'], ['scripts-app-main']);
+  gulp.watch([config.SRC_PATH + 'app/**/*.js'], ['scripts-app', 'scripts-app-individual']);
   gulp.watch('../../package.json', ['scripts-app-vendor']);
   gulp.watch(config.SRC_PATH + 'scripts/**/*.js', ['scripts-misc']);
 });
@@ -58,22 +64,48 @@ gulp.task('scripts-generate-static-html', () => {
     debug: config.IS_DEBUG,
     fullPaths: config.IS_DEBUG,
     transform: [babelify],
-    standalone: 'generate-static-html'
+    standalone: 'generate-static-html',
+    bundleExternal: false
+  }).external(vendorModules), config.DEST_PATH);
+});
+
+gulp.task('scripts-app', () => {
+  return commonBrowserify('app.js', browserify({
+    entries: [config.SRC_PATH + 'app.js'],
+    debug: config.IS_DEBUG,
+    fullPaths: config.IS_DEBUG,
+    transform: [babelify],
+    standalone: 'app',
+    bundleExternal: false
   }).external(vendorModules));
 });
 
-gulp.task('scripts-app-main', () => {
-  return commonBrowserify('app.js', browserify({
-    entries: [config.SRC_PATH + 'app/index.js'],
-    debug: config.IS_DEBUG,
-    fullPaths: config.IS_DEBUG,
-    transform: [babelify]
-  }).external(vendorModules));
+gulp.task('scripts-app-individual', () => {
+  return Promise.all(
+    fs.readdirSync(config.SRC_PATH + 'pages')
+    .filter(entry => entry.endsWith('.js'))
+    .map(entry => new Promise((resolve, reject) => {
+      if (!fs.existsSync(config.DEST_PATH + 'static/app/')) {
+        fs.mkdirSync(config.DEST_PATH + 'static/app/');
+      }
+      browserify({
+        entries: [config.SRC_PATH + 'pages/' + entry],
+        debug: config.IS_DEBUG,
+        fullPaths: config.IS_DEBUG,
+        transform: [babelify],
+        standalone: entry.slice(0, entry.indexOf('.')),
+        bundleExternal: false
+      }).external(vendorModules).bundle().pipe(
+        fs.createWriteStream(config.DEST_PATH + 'static/app/' + entry)
+          .on('finish', resolve)
+      );
+    }))
+  );
 });
 
 gulp.task('scripts-app-vendor', () => {
   return commonBrowserify('vendor.js', browserify({
-    debug: config.IS_DEBUG
+    debug: config.IS_DEBUG,
   }).require(vendorModules));
 });
 
@@ -81,13 +113,17 @@ gulp.task('scripts-build', done => runSequence(
   'scripts-clean',
   'scripts-lint',
   'scripts-generate-static-html',
+  'scripts-app-individual',
+  'scripts-app',
   'scripts-misc',
-  'scripts-app-main',
   'scripts-app-vendor',
   done
 ));
 
-function commonBrowserify(sourceName, b) {
+function commonBrowserify(sourceName, b, destPath) {
+  if (typeof destPath === 'undefined') {
+    destPath = config.DEST_PATH + 'static/app/';
+  }
   return b
     .bundle()
     .pipe(source(sourceName))
@@ -97,5 +133,5 @@ function commonBrowserify(sourceName, b) {
     .pipe(gulpif(!config.IS_DEBUG, uglify()))
     .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(config.DEST_PATH + 'static/app/'));
+    .pipe(gulp.dest(destPath));
 }
