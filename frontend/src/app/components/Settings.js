@@ -106,7 +106,7 @@ export default class Settings extends React.Component {
 }
 
 Settings.propTypes = {
-  hasAddon: React.PropTypes.bool,
+  hasAddon: React.PropTypes.any,
   sendToGA: React.PropTypes.func,
   close: React.PropTypes.func,
   retire: React.PropTypes.func,

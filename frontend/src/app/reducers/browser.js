@@ -2,13 +2,6 @@
 
 
 import config from '../config';
-import { isFirefox, isMinFirefoxVersion, isMobile } from '../lib/utils';
-
-const userAgent = navigator.userAgent.toLowerCase();
-const isUserAgentFirefox = isFirefox(userAgent);
-const isUserAgentMobile = isMobile(userAgent);
-const isUserAgentMinFirefox = isMinFirefoxVersion(userAgent, config.minFirefoxVersion);
-const locale = (navigator.language || '').split('-')[0];
 
 export type BrowserState = {
   isFirefox: boolean,
@@ -20,11 +13,12 @@ export type BrowserState = {
 
 function defaultState(): BrowserState {
   return {
-    isFirefox: isUserAgentFirefox,
-    isMinFirefox: isUserAgentMinFirefox,
-    isMobile: isUserAgentMobile,
+    userAgent: '',
+    isFirefox: true,
+    isMinFirefox: true,
+    isMobile: false,
     isDev: config.isDev,
-    locale
+    locale: 'en-US'
   };
 }
 

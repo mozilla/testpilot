@@ -2,47 +2,38 @@ import 'babel-polyfill/browser';
 import 'l20n';
 import es6Promise from 'es6-promise';
 import 'isomorphic-fetch';
-
 import Raven from 'raven-js';
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-import { createHistory } from 'history';
-import { useRouterHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
-import { Provider } from 'react-redux';
-
 import './lib/ga-snippet';
-
-import { setupAddonConnection } from './lib/InstallManager';
-import createStore from './store';
 import config from './config';
 
-import experimentsActions from './actions/experiments';
-import Routes from './components/Routes';
+import error from '../pages/error.js';
+import experiment from '../pages/experiment.js';
+import experiments from '../pages/experiments.js';
+import home from '../pages/home.js';
+import legacy from '../pages/legacy.js';
+import onboarding from '../pages/onboarding.js';
+import retire from '../pages/retire.js';
+import share from '../pages/share.js';
 
 es6Promise.polyfill();
-
 Raven.config(config.ravenPublicDSN).install();
 
-const browserHistory = useRouterHistory(createHistory)({ basename: '/' });
+const routes = {
+  error,
+  experiment,
+  experiments,
+  home,
+  legacy,
+  onboarding,
+  retire,
+  share
+};
 
-const store = createStore(browserHistory);
-const history = syncHistoryWithStore(browserHistory, store);
-// HACK: On history change, scroll to the top.
-history.listen(() => window.scroll(0, 0));
-
-ReactDOM.render(
-  <Provider store={store}>
-    <Routes history={history} />
-  </Provider>,
-  document.querySelector('div#page-container')
-);
-
-// HACK: For debugging fun
-window.store = store;
-
-store.dispatch(experimentsActions.fetchUserCounts(config.usageCountsURL));
-
-setupAddonConnection(store);
+const name = document.body.dataset.pageName;
+const param = document.body.dataset.pageParam;
+if (name in routes) {
+  routes[name](param);
+} else {
+  routes.error();
+}

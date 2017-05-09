@@ -19,13 +19,13 @@ describe('app/containers/ExperimentPage', () => {
   const mockExperiments = [ mockExperiment ];
   const mockParams = { slug: mockExperiment.slug };
   const mockProps = {
+    slug: mockExperiment.slug,
     getCookie: sinon.spy(),
     removeCookie: sinon.spy(),
     experiments: [ mockExperiment ],
     getExperimentBySlug: slug => {
       return slug === mockExperiment.slug ? mockExperiment : null;
-    },
-    params: { slug: mockExperiment.slug }
+    }
   };
 
   it('should pass the correct experiment to children', () => {

@@ -130,7 +130,7 @@ export function reducer(
         ui.setBadge();
         tabs.open({
           url: getState().baseUrl +
-            '/?utm_source=testpilot-addon&utm_medium=firefox-browser&utm_campaign=testpilot-doorhanger&utm_content=not+badged'
+            '/experiments?utm_source=testpilot-addon&utm_medium=firefox-browser&utm_campaign=testpilot-doorhanger&utm_content=not+badged'
         });
         telemetry.ping('txp_toolbar_menu_1', 'clicked');
       };

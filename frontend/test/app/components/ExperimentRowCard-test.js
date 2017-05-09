@@ -195,11 +195,11 @@ describe('app/components/ExperimentRowCard', () => {
       .to.equal(`/experiments/${mockExperiment.slug}`);
   });
 
-  it('should have a Link component with the right properties', () => {
-    const link = subject.find('Link');
+  it('should have an anchor component with the right properties', () => {
+    const link = subject.find('a');
     expect(link).to.not.be.a('null');
     expect(link.props()).to.contain.all({
-      to: `/experiments/${mockExperiment.slug}`,
+      href: `/experiments/${mockExperiment.slug}`,
       className: 'experiment-summary'
     });
   });
