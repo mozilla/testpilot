@@ -2,7 +2,7 @@
 import 'babel-polyfill/browser';
 import es6Promise from 'es6-promise';
 import 'isomorphic-fetch';
-import 'l20n/dist/compat/web/l20n';
+import 'l20n';
 import Raven from 'raven-js';
 
 import './app/lib/ga-snippet';
