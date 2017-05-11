@@ -99,7 +99,7 @@ emailValidationError = Por favor, use um e-mail válido!
 // The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
 emailOptInInput
     .placeholder = o e-mail vai aqui :)
-emailOptInButton = Assinar
+emailOptInButton = Inscreva-me
 emailOptInConfirmationTitle = E-mail enviado
 emailOptInSuccessMessage2 = Obrigado!
 emailOptInConfirmationClose = Vamos aos experimentos...
@@ -240,7 +240,7 @@ newsletterFormEmailPlaceholder
 newsletterFormDisclaimer = Somente enviaremos informações relacionadas ao Test Pilot.
 newsletterFormPrivacyNotice = Eu aceito que a Mozilla manuseie minhas informações como explicado <a>neste Termo de Privacidade</a>.
 newsletterFormPrivacyAgreementRequired = Por favor, marque esta opção se deseja continuar.
-newsletterFormSubmitButton = Inscreva-se Agora
+newsletterFormSubmitButton = Inscreva-se agora
 newsletterFormSubmitButtonSubmitting = Enviando...
 
 
