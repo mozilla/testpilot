@@ -1,0 +1,16 @@
+activitystreamContributors9Title = Διευθυντής προϊόντος
+activitystreamContributors10Title = Μηχανικός διευθυντής
+activitystreamContributors11Title = Μηχανικός λογισμικού
+minvidContributors0Title = Μηχανικός
+snoozetabsContributors1Title = Firefox UX
+snoozetabsContributors2Title = Firefox UX
+snoozetabsContributors3Title = Firefox UX
+snoozetabsContributors5Title = Firefox QA
+snoozetabsContributors6Title = Softvision QA
+snoozetabsContributors7Title = Softvision QA
+tabcenterDetails0Copy = Πάρτε τις καρτέλες με το μέρος σας.
+tabcenterContributors0Title = Firefox UX
+tabcenterContributors1Title = Firefox UX
+tabcenterContributors2Title = Firefox UX
+tabcenterContributors3Title = Firefox UX
+universalsearchContributors0Title = Διευθυντής προϊόντος
