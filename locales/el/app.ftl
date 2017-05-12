@@ -92,33 +92,47 @@ experimentListEnabledTab = Ενεργό
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+experimentCardManage = Διαχείριση
+experimentCardGetStarted = Ξεκινήστε
+experimentCardLearnMore = Μάθετε περισσότερα
 
 
 // A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
+feedbackUninstallTitle = Σάς ευχαριστούμε!
 
 
 // A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
+experimentPreFeedbackTitle = Σχόλια για το { $title }
 
 
 // A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
+experimentPromoHeader = Έτοιμοι για απογείωση;
 
 
 // The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = Το { $title } ενεργοποιήθηκε.
+otherExperiments = Δοκιμάστε κι αυτά τα πειράματα
+disableHeader = Απενεργοποίηση πειράματος;
+disableExperiment = Απενεργοποίηση του { $title }
+disableExperimentTransition = Απενεργοποίηση...
+enableExperiment = Ενεργοποίηση του { $title }
+enableExperimentTransition = Ενεργοποίηση...
+experimentManuallyDisabled = Το { $title } απενεργοποιήθηκε στη Διαχείριση Προσθέτων
 measurements = Το απόρρητό σας
 contributorsExtraLearnMore = Μάθετε περισσότερα
 changelog = Αρχείο καταγραφής αλλαγών
 tour = Ξενάγηση
 tourLink = Εκκίνηση ξενάγησης
 contribute = Συνεισφορά
+bugReports = Αναφορές σφαλμάτων
 tourDoneButton = Τέλος
 highlightPrivacy = Το απόρρητό σας
 
@@ -162,11 +176,16 @@ eolNoticeLink = Μάθετε περισσότερα
 // A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder
+    .placeholder = Το e-mail σας εδώ
+newsletterFormSubmitButton = Εγγραφή τώρα
+newsletterFormSubmitButtonSubmitting = Υποβολή...
 
 
 // A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterSuccessHeader = Ευχαριστούμε!
 
 
 // A warning shown to users when the experiment is not available in their language
