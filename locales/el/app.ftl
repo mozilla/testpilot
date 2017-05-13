@@ -37,17 +37,22 @@ menuRetire = Απεγκατάσταση του Test Pilot
 landingIntroOne = Δοκιμάστε νέες λειτουργίες.
 landingIntroTwo = Υποβάλετε τα σχόλιά σας.
 landingIntroThree = Βοηθήστε στην ανάπτυξη του Firefox.
+landingExperimentsTitle = Δοκιμάστε τις πιο πρόσφατες, πειραματικές λειτουργίες
 
 
 // Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
+landingInstallButton = Εγκατάσταση του προσθέτου Test Pilot
 landingInstallingButton = Εγκατάσταση...
+landingInstalledButton = Επιλέξτε τις λειτουργίες σας
 
 
 // Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
+oneClickInstallMinorCta = Εγκατάσταση του Test Pilot &amp;
+oneClickInstallMajorCta = Ενεργοποίηση του { $title }
 
 
 // Homepage messaging for users not on Firefox or with an old version of Firefox.
@@ -80,6 +85,11 @@ errorHeading = Ουπς!
 // A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
+emailValidationError = Παρακαλώ χρησιμοποιήστε μια έγκυρη διεύθυνση e-mail!
+// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
+emailOptInInput
+    .placeholder = το e-mail πηγαίνει εδώ :)
+emailOptInConfirmationTitle = Το e-mail απεστάλη
 emailOptInSuccessMessage2 = Σάς ευχαριστούμε!
 
 
@@ -146,6 +156,7 @@ highlightPrivacy = Το απόρρητό σας
 [[ uninstall ]]
 
 retireDialogTitle = Απεγκατάσταση του Test Pilot;
+retireSubmitButton = Συνέχεια
 pageTitleRetirePage = Firefox Test Pilot - Απεγκατάσταση του Test Pilot
 retirePageProgressMessage = Τερματισμός λειτουργίας...
 retirePageHeadline = Ευχαριστούμε για την "πτήση"!
@@ -191,6 +202,7 @@ newsletterFooterSuccessHeader = Ευχαριστούμε!
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeWarningSubtitle = Μπορείτε ακόμη να το ενεργοποιήσετε αν θέλετε.
 
 
 // An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
