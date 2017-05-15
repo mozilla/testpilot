@@ -1,4 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies*/
+
 const gulp = require('gulp');
 const config = require('./frontend/config.js');
 
@@ -8,7 +9,6 @@ const runSequence = require('run-sequence');
 
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
-
 require('./frontend/tasks/content');
 require('./frontend/tasks/scripts');
 require('./frontend/tasks/styles');
@@ -17,7 +17,6 @@ require('./frontend/tasks/assets');
 require('./frontend/tasks/pages');
 require('./frontend/tasks/server');
 require('./frontend/tasks/dist');
-
 require('./addon/tasks/locales');
 
 gulp.task('clean', () => del([
