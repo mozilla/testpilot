@@ -1,5 +1,4 @@
 
-import 'isomorphic-fetch';
 
 export const basketUrl = 'https://basket.mozilla.org/news/subscribe/';
 export const sourceUrl = 'https://testpilot.firefox.com/';
@@ -33,6 +32,9 @@ function newsletterFormSubscribe(dispatch, email, locale) {
       }
     })
     .catch(() => dispatch(actions.newsletterFormSetFailed()));
+  return {
+    type: 'NEWSLETTER_FORM_SUBSCRIBE'
+  };
 }
 
 export default Object.assign({}, actions, {

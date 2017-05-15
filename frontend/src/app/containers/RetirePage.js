@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 import classnames from 'classnames';
 
 import Copter from '../components/Copter';
@@ -55,7 +54,7 @@ export default class RetirePage extends React.Component {
               </div>
               <div className="modal-actions">
                 <a onClick={() => this.takeSurvey()} data-l10n-id="retirePageSurveyButton" href="https://qsurvey.mozilla.com/s3/test-pilot" target="_blank" className="button default large">Take a quick survey</a>
-                <Link to="/"  data-l10n-id="home" className="modal-escape">Home</Link>
+                <a href="/"  data-l10n-id="home" className="modal-escape">Home</a>
               </div>
             </div>
             <Copter animation="fade-in-fly-up" />

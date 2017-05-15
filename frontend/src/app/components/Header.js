@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 
 import LayoutWrapper from './LayoutWrapper';
 import RetireConfirmationDialog from './RetireConfirmationDialog';
@@ -76,7 +75,7 @@ export default class Header extends React.Component {
         <header id="main-header">
           <LayoutWrapper flexModifier="row-between-top">
             <h1>
-              <Link to="/" className="wordmark" data-l10n-id="siteName">Firefox Test Pilot</Link>
+              <a href="/" className="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
             </h1>
             {this.renderSettingsMenu()}
           </LayoutWrapper>
@@ -102,6 +101,6 @@ Header.propTypes = {
   uninstallAddon: React.PropTypes.func.isRequired,
   sendToGA: React.PropTypes.func.isRequired,
   openWindow: React.PropTypes.func.isRequired,
-  hasAddon: React.PropTypes.bool,
+  hasAddon: React.PropTypes.any,
   forceHideSettings: React.PropTypes.bool
 };

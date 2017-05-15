@@ -13,7 +13,7 @@ describe('app/actions/experiments/setInstalled', () => {
   beforeEach(() => {
     fetchMock.get(config.usageCountsURL, USAGE_COUNTS);
     dispatch = sinon.spy(),
-    fetchUserCounts = require('../../../src/app/actions/experiments').default.fetchUserCounts
+    fetchUserCounts = require('../../../src/app/actions/experiments').fetchUserCounts
   });
 
   afterEach(() => {

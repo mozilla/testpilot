@@ -3,17 +3,18 @@
 import type {
   Experiment,
   UpdateExperimentAction,
-  FetchUserCountsAction
+  FetchUserCountsAction,
+  SetSlugAction
 } from '../reducers/experiments.js';
 
-function updateExperiment(addonID: string, data: Experiment): UpdateExperimentAction {
+export function updateExperiment(addonID: string, data: Experiment): UpdateExperimentAction {
   return {
     type: 'UPDATE_EXPERIMENT',
     payload: { addonID, data }
   };
 }
 
-function fetchUserCounts(countsUrl: string): Promise<FetchUserCountsAction> {
+export function fetchUserCounts(countsUrl: string): Promise<FetchUserCountsAction> {
   return fetch(countsUrl)
     .then(
       response => {
@@ -27,7 +28,9 @@ function fetchUserCounts(countsUrl: string): Promise<FetchUserCountsAction> {
       });
 }
 
-export default {
-  updateExperiment,
-  fetchUserCounts
-};
+export function setSlug(slug: string): SetSlugAction {
+  return {
+    type: 'SET_SLUG',
+    payload: slug
+  };
+}

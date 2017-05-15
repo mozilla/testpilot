@@ -1,12 +1,15 @@
 import cookies from 'js-cookie';
 
 import addonActions from '../actions/addon';
-import experimentActions from '../actions/experiments';
+import { updateExperiment } from '../actions/experiments';
 
 
 const RESTART_NEEDED = false; // TODO
 
-const mam = navigator.mozAddonManager;
+let mam;
+if (typeof navigator !== 'undefined') {
+  mam = navigator.mozAddonManager;
+}
 
 function mozAddonManagerInstall(url) {
   return mam.createInstall({ url }).then(install => {
@@ -63,7 +66,7 @@ export function setupAddonConnection(store) {
         const x = experiments.data[i];
         store.dispatch(addonActions.enableExperiment(x));
         store.dispatch(
-          experimentActions.updateExperiment(x.addon_id, {
+          updateExperiment(x.addon_id, {
             inProgress: false,
             error: false
           })
@@ -79,7 +82,7 @@ export function setupAddonConnection(store) {
         const x = experiments.data[i];
         store.dispatch(addonActions.disableExperiment(x));
         store.dispatch(
-          experimentActions.updateExperiment(x.addon_id, {
+          updateExperiment(x.addon_id, {
             inProgress: false,
             error: false
           })
@@ -147,7 +150,7 @@ export function enableExperiment(dispatch, experiment) {
       () => {
         dispatch(addonActions.enableExperiment(experiment));
         dispatch(
-          experimentActions.updateExperiment(experiment.addon_id, {
+          updateExperiment(experiment.addon_id, {
             inProgress: false,
             error: false
           })
@@ -156,7 +159,7 @@ export function enableExperiment(dispatch, experiment) {
       () => {
         dispatch(addonActions.disableExperiment(experiment));
         dispatch(
-          experimentActions.updateExperiment(experiment.addon_id, {
+          updateExperiment(experiment.addon_id, {
             inProgress: false,
             error: true
           })
@@ -164,7 +167,7 @@ export function enableExperiment(dispatch, experiment) {
       }
     );
   dispatch(
-    experimentActions.updateExperiment(experiment.addon_id, {
+    updateExperiment(experiment.addon_id, {
       inProgress: true
     })
   );
@@ -184,14 +187,14 @@ export function disableExperiment(dispatch, experiment) {
     .then(() => {
       dispatch(addonActions.disableExperiment(experiment));
       dispatch(
-        experimentActions.updateExperiment(experiment.addon_id, {
+        updateExperiment(experiment.addon_id, {
           inProgress: false,
           error: false
         })
       );
     });
   dispatch(
-    experimentActions.updateExperiment(experiment.addon_id, {
+    updateExperiment(experiment.addon_id, {
       inProgress: true
     })
   );
