@@ -22,14 +22,6 @@ gulp.task('content-experiments-data', function generateStaticAPITask() {
     .pipe(gulp.dest(config.DEST_PATH));
 });
 
-gulp.task('import-api-content', (done) => {
-  fetch(config.PRODUCTION_EXPERIMENTS_URL)
-    .then(response => response.json())
-    .then(data => Promise.all(data.results.map(processImportedExperiment)))
-    .then(() => done())
-    .catch(done);
-});
-
 function buildExperimentsData() {
   const index = {results: []};
   const strings = [];
@@ -114,82 +106,4 @@ function buildExperimentsData() {
   }
 
   return through.obj(collectEntry, endStream);
-}
-
-function processImportedExperiment(experiment) {
-  // Clean up auto-generated and unused model fields.
-  const fieldsToDelete = {
-    '': ['url', 'html_url', 'survey_url'],
-    details: ['order', 'url', 'experiment_url'],
-    tour_steps: ['order', 'experiment_url'],
-    contributors: ['username']
-  };
-  Object.keys(fieldsToDelete).forEach(key => {
-    const items = (key === '') ? [experiment] : experiment[key];
-    const fields = fieldsToDelete[key];
-    items.forEach(item => fields.forEach(field => delete item[field]));
-  });
-
-  // Download all the images associated with the experiment.
-  const imageFields = {
-    '': ['thumbnail', 'image_twitter', 'image_facebook'],
-    details: ['image'],
-    tour_steps: ['image'],
-    contributors: ['avatar']
-  };
-  const toDownload = [];
-  Object.keys(imageFields).forEach(key => {
-    const items = (key === '') ? [experiment] : experiment[key];
-    const fields = imageFields[key];
-    items.forEach(item => fields.forEach(field => {
-      // Grab the original image URL, bail if it's not available
-      const origURL = item[field];
-      if (!origURL) { return; }
-
-      // Chop off the protocol & domain, convert gravatar param to .jpg
-      const path = origURL.split('/').slice(3).join('/').replace('?s=64', '.jpg');
-
-      // Now build a new file path and URL for the image
-      const newPath = `${config.IMAGE_NEW_BASE_PATH}${experiment.slug}/${path}`;
-      const newURL = `${config.IMAGE_NEW_BASE_URL}${experiment.slug}/${path}`;
-
-      // Replace the old URL with new static URL
-      item[field] = newURL;
-
-      // Schedule the old URL for download at the new path.
-      toDownload.push({url: origURL, path: newPath});
-    }));
-  });
-
-  // Download all the images, then write the YAML.
-  return Promise.all(toDownload.map(downloadURL))
-    .then(() => writeExperimentYAML(experiment));
-}
-
-// Write file contents after first ensuring the parent directory exists.
-function writeFile(path, content) {
-  const parentDir = path.split('/').slice(0, -1).join('/');
-  return new Promise((resolve, reject) => {
-    mkdirp(parentDir, dirErr => {
-      if (dirErr) { return reject(dirErr); }
-      fs.writeFile(path, content, err => err ? reject(err) : resolve(path));
-    });
-  });
-}
-
-function downloadURL(item) {
-  const {url, path} = item;
-  return fetch(url)
-    .then(res => res.buffer())
-    .then(resBuffer => writeFile(path, resBuffer))
-    .then(() => {
-      if (config.IS_DEBUG) { console.log('Downloaded', url, 'to', path); }
-    });
-}
-
-function writeExperimentYAML(experiment) {
-  const out = YAML.stringify(experiment, 4, 2);
-  const path = `${config.CONTENT_SRC_PATH}experiments/${experiment.slug}.yaml`;
-  if (config.IS_DEBUG) { console.log(`Generated ${path}`); }
-  return writeFile(path, out);
 }
