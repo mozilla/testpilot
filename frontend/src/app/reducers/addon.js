@@ -22,7 +22,7 @@ export type InstalledExperiments = {
 };
 
 type AddonState = {
-  hasAddon: boolean,
+  hasAddon: any,
   installed: InstalledExperiments,
   installedLoaded: boolean,
   installedAddons: Array<string>,
@@ -32,7 +32,9 @@ type AddonState = {
 
 function defaultState(): AddonState {
   return {
-    hasAddon: false,
+    // Null means we are being rendered at build time, and can't know
+    // if the client will have the add on or not yet
+    hasAddon: null,
     installed: {},
     installedLoaded: false,
     installedAddons: [],

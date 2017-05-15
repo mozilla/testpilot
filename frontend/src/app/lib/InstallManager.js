@@ -3,6 +3,11 @@ import * as moz from './moz';
 import * as addon from './addon';
 
 function hasMozAddonManager() {
+  // If we are being rendered at build time, we can't know if the client will
+  // have mozAddonManager.
+  if (typeof navigator === 'undefined') {
+    return false;
+  }
   return !!navigator.mozAddonManager;
 }
 

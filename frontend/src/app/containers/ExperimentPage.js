@@ -25,8 +25,8 @@ import LayoutWrapper from '../components/LayoutWrapper';
 
 export default class ExperimentPage extends React.Component {
   render() {
-    const { getExperimentBySlug, params } = this.props;
-    const experiment = getExperimentBySlug(params.slug);
+    const { getExperimentBySlug, slug } = this.props;
+    const experiment = getExperimentBySlug(slug);
     return <ExperimentDetail experiment={experiment} {...this.props} />;
   }
 }
@@ -169,8 +169,8 @@ export class ExperimentDetail extends React.Component {
   }
 
   renderLocaleWarning() {
-    const { experiment, locale } = this.props;
-    if (locale && ((experiment.locales && !experiment.locales.includes(locale)) || (experiment.locale_blocklist && experiment.locale_blocklist.includes(locale)))) {
+    const { experiment, locale, hasAddon } = this.props;
+    if (hasAddon !== null && locale && ((experiment.locales && !experiment.locales.includes(locale)) || (experiment.locale_blocklist && experiment.locale_blocklist.includes(locale)))) {
       return (
         <Warning titleL10nId="localeUnavailableWarningTitle"
                  titleL10nArgs={ JSON.stringify({ locale_code: locale }) }
@@ -209,7 +209,7 @@ export class ExperimentDetail extends React.Component {
     if (experiments.length === 0) { return <LoadingPage />; }
 
     // Show a 404 page if an experiment for this slug wasn't found.
-    if (!experiment) { return <NotFoundPage />; }
+    if (!experiment) { return <NotFoundPage {...this.props} />; }
 
     setPageTitleL10N('pageTitleExperiment', experiment);
 
@@ -280,7 +280,7 @@ export class ExperimentDetail extends React.Component {
 
         <View {...this.props}>
 
-        {(!hasAddon && !graduated) && <section id="testpilot-promo">
+        {hasAddon !== null && (!hasAddon && !graduated) && <section id="testpilot-promo">
           <Banner>
               <LayoutWrapper flexModifier="row-between-reverse">
                 <div className="intro-text">
@@ -798,7 +798,7 @@ ExperimentDetail.propTypes = {
   userAgent: React.PropTypes.string,
   clientUUID: React.PropTypes.string,
   isDev: React.PropTypes.bool,
-  hasAddon: React.PropTypes.bool,
+  hasAddon: React.PropTypes.any,
   experiments: React.PropTypes.array,
   installed: React.PropTypes.object,
   installedAddons: React.PropTypes.array,

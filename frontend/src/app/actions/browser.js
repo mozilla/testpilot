@@ -6,13 +6,9 @@ import type {
   SetStateAction
 } from '../reducers/browser';
 
-function setState(payload: BrowserState): SetStateAction {
+export function setState(payload: BrowserState): SetStateAction {
   return {
     type: 'SET_STATE',
     payload: payload
   };
 }
-
-export default {
-  setState
-};

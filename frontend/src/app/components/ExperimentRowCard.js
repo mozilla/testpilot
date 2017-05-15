@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 import classnames from 'classnames';
 
 import { experimentL10nId } from '../lib/utils';
@@ -22,7 +21,7 @@ export default class ExperimentRowCard extends React.Component {
     const isCompleted = isAfterCompletedDate(experiment);
 
     return (
-      <Link id="show-detail" to={`/experiments/${slug}`} onClick={(evt) => this.openDetailPage(evt)}
+      <a id="show-detail" href={`/experiments/${slug}`} onClick={(evt) => this.openDetailPage(evt)}
         className={classnames('experiment-summary', {
           enabled,
           'just-launched': this.justLaunched(),
@@ -54,7 +53,7 @@ export default class ExperimentRowCard extends React.Component {
         { this.renderInstallationCount(installation_count, isCompleted) }
         { this.renderManageButton(enabled, hasAddon, isCompleted) }
       </div>
-    </Link>
+    </a>
     );
   }
 
@@ -156,7 +155,7 @@ export default class ExperimentRowCard extends React.Component {
 
 ExperimentRowCard.propTypes = {
   experiment: React.PropTypes.object.isRequired,
-  hasAddon: React.PropTypes.bool.isRequired,
+  hasAddon: React.PropTypes.any,
   enabled: React.PropTypes.bool.isRequired,
   eventCategory: React.PropTypes.string.isRequired,
   getExperimentLastSeen: React.PropTypes.func.isRequired,

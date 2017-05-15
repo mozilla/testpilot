@@ -1,5 +1,7 @@
 const gulp = require('gulp');
 const config = require('../config.js');
+const path = require('path');
+const fs = require('fs');
 
 const babelify = require('babelify');
 const browserify = require('browserify');
@@ -15,11 +17,15 @@ const runSequence = require('run-sequence');
 const packageJSON = require('../../package.json');
 
 const excludeVendorModules = [
-  'babel-polyfill',
+  'babel-polyfill'
 ];
+
 const includeVendorModules = [
   'babel-polyfill/browser',
+  'react/lib/ReactDOMFactories',
+  'querystring'
 ];
+
 const vendorModules = Object.keys(packageJSON.dependencies)
   .filter(name => excludeVendorModules.indexOf(name) < 0)
   .concat(includeVendorModules);
@@ -52,22 +58,14 @@ gulp.task('scripts-misc', () => {
     .pipe(gulp.dest(config.DEST_PATH + 'static/scripts'));
 });
 
-gulp.task('scripts-generate-static-html', () => {
-  return commonBrowserify('generate-static-html.js', browserify({
-    entries: [config.SRC_PATH + 'generate-static-html.js'],
-    debug: config.IS_DEBUG,
-    fullPaths: config.IS_DEBUG,
-    transform: [babelify],
-    standalone: 'generate-static-html'
-  }).external(vendorModules));
-});
-
 gulp.task('scripts-app-main', () => {
   return commonBrowserify('app.js', browserify({
     entries: [config.SRC_PATH + 'app/index.js'],
     debug: config.IS_DEBUG,
     fullPaths: config.IS_DEBUG,
-    transform: [babelify]
+    transform: [babelify],
+    standalone: 'app',
+    bundleExternal: false
   }).external(vendorModules));
 });
 
@@ -80,7 +78,6 @@ gulp.task('scripts-app-vendor', () => {
 gulp.task('scripts-build', done => runSequence(
   'scripts-clean',
   'scripts-lint',
-  'scripts-generate-static-html',
   'scripts-misc',
   'scripts-app-main',
   'scripts-app-vendor',

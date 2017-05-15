@@ -2,22 +2,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { push as routerPush } from 'react-router-redux';
-
 import cookies from 'js-cookie';
 import Clipboard from 'clipboard';
 
 
 import { getInstalled, isExperimentEnabled, isAfterCompletedDate, isInstalledLoaded } from '../reducers/addon';
+import { setState as setBrowserState } from '../actions/browser';
 import { getExperimentBySlug } from '../reducers/experiments';
 import { getChosenTest } from '../reducers/varianttests';
 import experimentSelector from '../selectors/experiment';
 import { uninstallAddon, installAddon, enableExperiment, disableExperiment, pollAddon } from '../lib/InstallManager';
+import { fetchUserCounts } from '../actions/experiments';
+import { chooseTests } from '../actions/varianttests';
 import addonActions from '../actions/addon';
 import newsletterFormActions from '../actions/newsletter-form';
 import RestartPage from '../containers/RestartPage';
+import { isFirefox, isMinFirefoxVersion, isMobile } from '../lib/utils';
+import config from '../config';
 
-const clipboard = new Clipboard('button');
+let clipboard = null;
+if (typeof document !== 'undefined') {
+  clipboard = new Clipboard('button');
+}
 
 class App extends Component {
   constructor(props) {
@@ -26,12 +32,12 @@ class App extends Component {
   }
 
   measurePageview() {
-    const { routing, hasAddon, installed, installedLoaded } = this.props;
+    const { hasAddon, installed, installedLoaded } = this.props;
 
     // If we have an addon, wait until the installed experiments are loaded
     if (hasAddon && !installedLoaded) { return; }
 
-    const { pathname } = routing.locationBeforeTransitions;
+    const pathname = window.location.pathname;
 
     const experimentsPath = 'experiments/';
 
@@ -74,7 +80,19 @@ class App extends Component {
     }
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    this.props.setHasAddon(!!window.navigator.testpilotAddon);
+    this.props.setBrowserState({
+      userAgent,
+      isFirefox: isFirefox(userAgent),
+      isMobile: isMobile(userAgent),
+      isMinFirefox: isMinFirefoxVersion(userAgent, config.minFirefoxVersion),
+      isDev: config.isDev,
+      locale: (navigator.language || '').split('-')[0]
+    });
+    this.props.chooseTests();
+    this.props.fetchUserCounts(config.usageCountsURL);
     this.measurePageview();
   }
 
@@ -125,6 +143,7 @@ function subscribeToBasket(email, locale, callback) {
 const mapStateToProps = state => ({
   addon: state.addon,
   experiments: experimentSelector(state),
+  slug: state.experiments.slug,
   getExperimentBySlug: slug =>
     getExperimentBySlug(state.experiments, slug),
   hasAddon: state.addon.hasAddon,
@@ -139,6 +158,7 @@ const mapStateToProps = state => ({
   isFirefox: state.browser.isFirefox,
   isMinFirefox: state.browser.isMinFirefox,
   isMobile: state.browser.isMobile,
+  userAgent: state.browser.userAgent,
   locale: state.browser.locale,
   newsletterForm: state.newsletterForm,
   routing: state.routing,
@@ -147,7 +167,12 @@ const mapStateToProps = state => ({
 
 
 const mapDispatchToProps = dispatch => ({
-  navigateTo: path => dispatch(routerPush(path)),
+  setBrowserState: state => dispatch(setBrowserState(state)),
+  chooseTests: () => dispatch(chooseTests()),
+  fetchUserCounts: (url) => dispatch(fetchUserCounts(url)),
+  navigateTo: path => {
+    window.location = path;
+  },
   enableExperiment: experiment => enableExperiment(dispatch, experiment),
   disableExperiment: experiment => disableExperiment(dispatch, experiment),
   requireRestart: () => dispatch(addonActions.requireRestart()),
@@ -175,8 +200,9 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     sendToGA,
     subscribeToBasket,
     clipboard,
-    userAgent: navigator.userAgent,
     setPageTitleL10N: (id, args) => {
+      if (typeof document === 'undefined') { return; }
+
       const title = document.querySelector('head title');
       title.setAttribute('data-l10n-id', id);
       title.setAttribute('data-l10n-args', JSON.stringify(args));
@@ -199,10 +225,17 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     },
     getCookie: name => cookies.get(name),
     removeCookie: name => cookies.remove(name),
-    getExperimentLastSeen: experiment =>
-      parseInt(window.localStorage.getItem(`experiment-last-seen-${experiment.id}`), 10),
-    setExperimentLastSeen: (experiment, value) =>
-      window.localStorage.setItem(`experiment-last-seen-${experiment.id}`, value || Date.now())
+    getExperimentLastSeen: experiment => {
+      if (typeof document !== 'undefined') {
+        return parseInt(window.localStorage.getItem(`experiment-last-seen-${experiment.id}`), 10);
+      }
+      return 0;
+    },
+    setExperimentLastSeen: (experiment, value) => {
+      if (typeof window !== 'undefined') {
+        window.localStorage.setItem(`experiment-last-seen-${experiment.id}`, value || Date.now());
+      }
+    }
   }, ownProps, stateProps, dispatchProps, {
     newsletterForm
   });

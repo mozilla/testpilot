@@ -1,4 +1,4 @@
-import { routerReducer, routerMiddleware } from 'react-router-redux';
+
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import createLogger from 'redux-logger';
 import promise from 'redux-promise';
@@ -16,7 +16,6 @@ export const reducers = combineReducers({
   browser: browserReducer,
   experiments: experimentsReducer,
   newsletterForm: newsletterFormReducer,
-  routing: routerReducer,
   varianttests: varianttestsReducer
 });
 
@@ -26,7 +25,9 @@ export const initialState = {
     data: experiments.results
   },
   addon: {
-    hasAddon: !!window.navigator.testpilotAddon,
+    // Null means we are being rendered at build time, and can't know
+    // if the client will have the add on or not yet
+    hasAddon: null,
     installed: {},
     installedLoaded: false,
     clientUUID: '',
@@ -38,16 +39,17 @@ export const initialState = {
 };
 
 
-export const createMiddleware = history => compose(
-  applyMiddleware(
-    promise,
-    routerMiddleware(history),
-    createLogger()
-  ),
-  window.devToolsExtension ? window.devToolsExtension() : f => f
-);
+export function createMiddleware() {
+  return compose(
+    applyMiddleware(
+      promise,
+      createLogger()
+    ),
+    (typeof window !== 'undefined' && window.devToolsExtension) ? window.devToolsExtension() : f => f
+  );
+}
 
 
-export default function store(history) {
-  return createStore(reducers, initialState, createMiddleware(history));
+export default function store() {
+  return createStore(reducers, initialState, createMiddleware());
 }
