@@ -93,11 +93,6 @@ notFoundHeader = Patru zero patru!
 
 emailOptInDialogTitle = Bun venit în Test Pilot!
 emailOptInMessage = Află despre noile experimente și vezi rezultatele de testare pentru experimentele încercate.
-emailValidationError = Trebuie să folosești o adresă de e-mail validă!
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput
-    .placeholder = e-mail-ul vine aici :)
-emailOptInButton = Înregistrează-mă
 emailOptInConfirmationTitle = E-mail trimis
 emailOptInSuccessMessage2 = Mulțumim!
 emailOptInConfirmationClose = Mai departe spre experimente...
