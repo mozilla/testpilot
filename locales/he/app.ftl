@@ -95,11 +95,6 @@ notFoundHeader = ארבע אפס ארבע!
 
 emailOptInDialogTitle = ברוכים הבאים אל Test Pilot!
 emailOptInMessage = בדקו את הניסויים החדשים שלנו וראו תוצאות על ניסויים שניסיתם בעבר.
-emailValidationError = נא להשתמש בכתובת דוא״ל תקנית!
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput
-    .placeholder = כאן ממלאים כתובת דוא״ל :)
-emailOptInButton = הרשמה
 emailOptInConfirmationTitle = הודעת דוא״ל נשלחה
 emailOptInSuccessMessage2 = תודה רבה!
 emailOptInConfirmationClose = מעבר לניסויים…
