@@ -10,6 +10,7 @@ describe('app/components/NewsletterFooter', () => {
 
   const _subject = (form) => {
     const props = {
+      getWindowLocation: sinon.spy(() => 'https://example.com'),
       newsletterForm: {
         subscribe: sinon.spy(),
         setEmail: sinon.spy(),

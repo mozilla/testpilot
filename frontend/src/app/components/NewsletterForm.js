@@ -48,7 +48,7 @@ export default class NewsletterForm extends React.Component {
     return (
       <label className={this.makeRevealedClassNames()} htmlFor={fieldName}>
         <input name={fieldName} type="checkbox" checked={this.props.privacy} required
-               onClick={this.handlePrivacyClick} />
+               onChange={this.handlePrivacyClick} onClick={this.handlePrivacyClick} />
         { this.state.privacyNote ? <span data-l10n-id="newsletterFormPrivacyAgreementRequired" style={{ color: 'red', marginRight: '0.5em' }}></span> : null }
         <span data-l10n-id="newsletterFormPrivacyNotice">
           I'm okay with Mozilla handling by info as explained in
@@ -67,7 +67,7 @@ export default class NewsletterForm extends React.Component {
         </button>
       );
     }
-    return <button data-l10n-id='newsletterFormSubmitButton' className="button outline large">Sign Up Now</button>;
+    return <button data-l10n-id='newsletterFormSubmitButton' className={classnames('button', 'large', this.props.isModal ? 'default' : 'outline')}>Sign Up Now</button>;
   }
 
   renderDisclaimer() {
@@ -85,13 +85,14 @@ export default class NewsletterForm extends React.Component {
       this.setState({ privacyNote: true });
     } else {
       this.setState({ privacyNote: false });
-      this.props.subscribe(this.props.email, this.props.locale);
+      this.props.subscribe(this.props.email);
     }
   }
 
   render() {
     return (
-      <form className='newsletter-form' onSubmit={this.handleSubmit}>
+      <form className={ classnames('newsletter-form', { 'newsletter-form-modal': this.props.isModal }) }
+            onSubmit={this.handleSubmit}>
         {this.renderEmailField()}
         {this.renderPrivacyField()}
         {this.renderSubmitButton()}
@@ -104,8 +105,8 @@ export default class NewsletterForm extends React.Component {
 NewsletterForm.defaultProps = defaultState();
 NewsletterForm.propTypes = {
   email: PropTypes.string.isRequired,
-  locale: PropTypes.string.isRequired,
   privacy: PropTypes.bool.isRequired,
+  isModal: PropTypes.bool,
   subscribe: PropTypes.func,
   setEmail: PropTypes.func,
   setPrivacy: PropTypes.func

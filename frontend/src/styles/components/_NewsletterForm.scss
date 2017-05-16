@@ -48,3 +48,19 @@
     }
   }
 }
+
+.newsletter-form-modal {
+  input[type='email'] {
+    border: 1px solid $transparent-black-3;
+    // border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+
+  a {
+    color: $default;
+  }
+
+  p.disclaimer {
+    text-align: center;
+    width: 100%;
+  }
+}

@@ -3,14 +3,14 @@ import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-import { basketUrl } from '../../../src/app/actions/newsletter-form';
+import { basketUrl } from '../../../src/app/lib/utils';
 
 const FAILED = 'NEWSLETTER_FORM_SET_FAILED';
 const SUBMITTING = 'NEWSLETTER_FORM_SET_SUBMITTING';
 const SUCCEEDED = 'NEWSLETTER_FORM_SET_SUCCEEDED';
 
 const MOCK_EMAIL = 'foo@bar.com';
-const MOCK_LOCALE = 'bz';
+const MOCK_SOURCE = 'https://example.com';
 
 const setUp = responseCode => {
   fetchMock.post(basketUrl, responseCode);
@@ -28,7 +28,7 @@ describe('app/actions/newsletter-form/subscribe', () => {
 
   describe('requests with', () => {
     const { dispatch, subscribe } = setUp(200);
-    subscribe(dispatch, MOCK_EMAIL, MOCK_LOCALE);
+    subscribe(dispatch, MOCK_EMAIL, MOCK_SOURCE);
 
     const url = fetchMock.lastCall(basketUrl)[0];
     const request = fetchMock.lastCall(basketUrl)[1];
@@ -54,8 +54,8 @@ describe('app/actions/newsletter-form/subscribe', () => {
       expect(request.body).to.contain(`email=${encodeURIComponent(MOCK_EMAIL)}`);
     });
 
-    it('the URLencoded locale in the body', () => {
-      expect(request.body).to.contain(`lang=${encodeURIComponent(MOCK_LOCALE)}`);
+    it('has the URL encoded source_url in the body', () => {
+      expect(request.body).to.contain(`source_url=${encodeURIComponent(MOCK_SOURCE)}`);
     });
 
     tearDown();

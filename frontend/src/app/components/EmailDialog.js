@@ -1,53 +1,86 @@
 import React from 'react';
-import emailValidator from 'micro-email-validator';
+import NewsletterForm from './NewsletterForm';
+import { subscribeToBasket } from '../lib/utils';
 
 export default class EmailDialog extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      isFirstPage: true,
-      isValidEmail: true,
-      email: ''
+      isSuccess: false,
+      isError: false,
+      email: '',
+      privacy: false
     };
   }
 
   render() {
-    const { isFirstPage, isValidEmail } = this.state;
+    const { isSuccess, isError } = this.state;
 
     return (
       <div className="modal-container">
-        {isFirstPage && <div id="first-page" className="modal feedback-modal modal-bounce-in">
-          <header className="modal-header-wrapper">
-            <h3 className="modal-header" data-l10n-id="emailOptInDialogTitle">Welcome to Test Pilot!</h3>
-            <div className="modal-cancel" onClick={e => this.skip(e)}/>
-          </header>
-          <form>
-            <div className="modal-content modal-form centered">
-              <p data-l10n-id="emailOptInMessage" className="">Find out about new experiments and see test results for experiments you've tried.</p>
-              {!isValidEmail && <p className="error" data-l10n-id="emailValidationError" >Please use a valid email address!</p>}
-              <input data-l10n-id="emailOptInInput" placeholder="email goes here :)"
-                     onChange={e => this.handleEmailChange(e)}
-                     value={this.state.email} />
-            </div>
-            <div className="modal-actions">
-              <button onClick={e => this.submit(e)} data-l10n-id="emailOptInButton" className="submit button large default">Sign me up</button>
-            </div>
-          </form>
-        </div>}
-        {!isFirstPage && <div id="second-page" className="modal">
-          <header className="modal-header-wrapper">
-            <h3 className="modal-header" data-l10n-id="emailOptInConfirmationTitle">Email Sent</h3>
-            <div className="modal-cancel" onClick={e => this.continue(e)} />
-          </header>
-          <div className="modal-content centered">
-            <div className="envelope" />
-            <p data-l10n-id="emailOptInSuccessMessage2">Thank you!</p>
-          </div>
-          <div className="modal-actions">
-            <button id="email-success-continue" onClick={e => this.continue(e)} className="button default large" data-l10n-id="emailOptInConfirmationClose">On to the experiments...</button>
-          </div>
-        </div>}
+        {!isSuccess && !isError && this.renderForm()}
+        {isSuccess && this.renderSuccess()}
+        {isError && this.renderError()}
+      </div>
+    );
+  }
+
+  renderForm() {
+    const { email, privacy } = this.state;
+
+    return (
+      <div id="first-page" className="modal feedback-modal modal-bounce-in">
+        <header className="modal-header-wrapper">
+          <h3 className="modal-header" data-l10n-id="emailOptInDialogTitle">Welcome to Test Pilot!</h3>
+          <div className="modal-cancel" onClick={e => this.skip(e)}/>
+        </header>
+        <div className="modal-content modal-form centered">
+          <p data-l10n-id="emailOptInMessage" className="">Find out about new experiments and see test results for experiments you've tried.</p>
+          <NewsletterForm {...{ email, privacy }}
+                          isModal={true}
+                          setEmail={newEmail => this.setState({ email: newEmail })}
+                          setPrivacy={newPrivacy => this.setState({ privacy: newPrivacy })}
+                          subscribe={this.handleSubscribe.bind(this)} />
+        </div>
+      </div>
+    );
+  }
+
+  renderSuccess() {
+    return (
+      <div id="second-page" className="modal">
+        <header className="modal-header-wrapper">
+          <h3 className="modal-header" data-l10n-id="emailOptInConfirmationTitle">Email Sent</h3>
+          <div className="modal-cancel" onClick={e => this.continue(e)} />
+        </header>
+        <div className="modal-content centered">
+          <div className="envelope" />
+          <p data-l10n-id="emailOptInSuccessMessage2">Thank you!</p>
+        </div>
+        <div className="modal-actions">
+          <button id="email-success-continue" onClick={e => this.continue(e)} className="button default large" data-l10n-id="emailOptInConfirmationClose">On to the experiments...</button>
+        </div>
+      </div>
+    );
+  }
+
+  renderError() {
+    return (
+      <div id="second-page" className="modal">
+        <header className="modal-header-wrapper">
+          <h3 className="modal-header" data-l10n-id="emailOptInDialogTitle">Welcome to Test Pilot!</h3>
+          <div className="modal-cancel" onClick={e => this.continue(e)} />
+        </header>
+        <div className="modal-content centered">
+          <div className="envelope" />
+          <p className="error" data-l10n-id="newsletterFooterError">
+            There was an error submitting your email address. Try again?
+          </p>
+        </div>
+        <div className="modal-actions">
+          <button id="email-success-continue" onClick={e => this.reset(e)} className="button default large" data-l10n-id="newsletterFormSubmitButton">Sign Up Now</button>
+        </div>
       </div>
     );
   }
@@ -56,18 +89,9 @@ export default class EmailDialog extends React.Component {
     this.setState({ email: e.target.value });
   }
 
-  submit(e) {
-    const { sendToGA, subscribeToBasket, locale } = this.props;
-    e.preventDefault();
-
-    // TODO: should we log the number of email validity failures? worth tracking?
-    const email = this.state.email;
-    if (!this.validate(email)) {
-      this.setState({ isValidEmail: false });
-      return;
-    }
-    // Hide the email validation error message, if it's visible.
-    this.setState({ isValidEmail: true });
+  handleSubscribe(email) {
+    const { sendToGA } = this.props;
+    const source = '' + this.props.getWindowLocation();
 
     sendToGA('event', {
       eventCategory: 'HomePage Interactions',
@@ -75,19 +99,25 @@ export default class EmailDialog extends React.Component {
       eventLabel: 'Sign me up'
     });
 
-    subscribeToBasket(email, locale, () => {
-      // TODO: review question: basket failures are swallowed by the subscribeToBasket
-      // function. Is it worth it to send a second GA ping to help us monitor the error
-      // rate? If so, should I overload the button click interaction, as done below, or
-      // use some other kind of category / action?
-      sendToGA('event', {
-        eventCategory: 'HomePage Interactions',
-        eventAction: 'button click',
-        eventLabel: 'email submitted to basket'
+    subscribeToBasket(email, source).then(response => {
+      if (response.ok) {
+        sendToGA('event', {
+          eventCategory: 'HomePage Interactions',
+          eventAction: 'button click',
+          eventLabel: 'email submitted to basket'
+        });
+      }
+      this.setState({
+        isSuccess: response.ok,
+        isError: !response.ok
       });
     });
+  }
 
-    this.setState({ isFirstPage: false });
+  reset(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.setState({ isSuccess: false, isError: false });
   }
 
   skip(e) {
@@ -121,10 +151,6 @@ export default class EmailDialog extends React.Component {
     this.close();
   }
 
-  validate(email) {
-    return emailValidator(email);
-  }
-
   close() {
     if (this.props.onDismiss) { this.props.onDismiss(); }
   }
@@ -132,7 +158,7 @@ export default class EmailDialog extends React.Component {
 }
 
 EmailDialog.propTypes = {
+  getWindowLocation: React.PropTypes.func.isRequired,
   onDismiss: React.PropTypes.func.isRequired,
-  sendToGA: React.PropTypes.func.isRequired,
-  subscribeToBasket: React.PropTypes.func.isRequired
+  sendToGA: React.PropTypes.func.isRequired
 };
