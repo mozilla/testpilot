@@ -95,11 +95,6 @@ notFoundHeader = چهارصد اوه چهار!
 
 emailOptInDialogTitle = به خلبان آزمایشی خوش آمدید!
 emailOptInMessage = در مورد آزمایش‌های جدید مطلع شوید و نتایج آزمایش‌هایی که امتحانشان کرده‌اید را ببینید.
-emailValidationError = لطفا یک نشانی رایانامه معتبر وارد کنید!
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput
-    .placeholder = رایانامه اینجا قرار می‌گیرد :)
-emailOptInButton = من را ثبت‌نام کن
 emailOptInConfirmationTitle = رایانامه ارسال شد
 emailOptInSuccessMessage2 = ممنون!
 emailOptInConfirmationClose = به سوی تجربه‌ها…
