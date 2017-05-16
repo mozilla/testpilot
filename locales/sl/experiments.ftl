@@ -133,6 +133,7 @@ snoozetabsContributors0Title = Starejši inženir
 snoozetabsContributors1Title = Firefox UX
 snoozetabsContributors2Title = Firefox UX
 snoozetabsContributors3Title = Firefox UX
+snoozetabsContributors4Title = Sodelavec pri zasnovi
 snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
