@@ -95,11 +95,6 @@ notFoundHeader = Четыреста четыре!
 
 emailOptInDialogTitle = Добро пожаловать в программу лётчиков-испытателей!
 emailOptInMessage = Узнавайте о новых экспериментах и смотрите результаты тех, в которых вы участвовали.
-emailValidationError = Пожалуйста, используйте корректный адрес электронной почты!
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput
-    .placeholder = адрес эл. почты :)
-emailOptInButton = Подписать меня
 emailOptInConfirmationTitle = Письмо отправлено
 emailOptInSuccessMessage2 = Спасибо!
 emailOptInConfirmationClose = Вперёд к экспериментам...
