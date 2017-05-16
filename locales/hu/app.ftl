@@ -95,11 +95,6 @@ notFoundHeader = Négy nulla négy!
 
 emailOptInDialogTitle = Üdvözli a Tesztpilóta!
 emailOptInMessage = Tudjon az új kísérletekről, és lássa a kipróbált kísérletek teszteredményeit.
-emailValidationError = Használjon egy érvényes e-mail címet!
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput
-    .placeholder = az e-mail cím ide kerül :)
-emailOptInButton = Feliratkozás
 emailOptInConfirmationTitle = E-mail elküldve
 emailOptInSuccessMessage2 = Köszönjük!
 emailOptInConfirmationClose = Tovább a kísérletekhez…
