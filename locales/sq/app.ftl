@@ -95,11 +95,6 @@ notFoundHeader = Katër Zero Katër!
 
 emailOptInDialogTitle = Mirë se vini te Pilot Testesh!
 emailOptInMessage = Mësoni rreth eksperimentesh të reja dhe shihni përfundime testesh për eksperimente që keni provuar.
-emailValidationError = Ju lutemi, përdorni një adresë email të vlefshme!
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput
-    .placeholder = këtu vendoset email-i :)
-emailOptInButton = Regjistromëni
 emailOptInConfirmationTitle = Email-i u Dërgua
 emailOptInSuccessMessage2 = Faleminderit!
 emailOptInConfirmationClose = Oburra te eksperimentet…
