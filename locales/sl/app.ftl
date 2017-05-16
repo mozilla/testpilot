@@ -95,11 +95,6 @@ notFoundHeader = Štiristo štiri!
 
 emailOptInDialogTitle = Dobrodošli v programu Test Pilot!
 emailOptInMessage = Bodite obveščeni o novih poskusih in o rezultatih poskusov, ki ste jih preskusili.
-emailValidationError = Vnesite veljaven e-poštni naslov!
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput
-    .placeholder = sem vpišite e-poštni naslov :)
-emailOptInButton = Naroči me
 emailOptInConfirmationTitle = E-poštno sporočilo poslano
 emailOptInSuccessMessage2 = Hvala!
 emailOptInConfirmationClose = Naprej na poskuse ...
