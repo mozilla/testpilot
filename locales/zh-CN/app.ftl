@@ -95,11 +95,6 @@ notFoundHeader = 找不到呢！
 
 emailOptInDialogTitle = 欢迎来到 Test Pilot！
 emailOptInMessage = 了解新的实验，以及查看您尝试过的实验的测试结果。
-emailValidationError = 请使用有效的电子邮件地址！
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput
-    .placeholder = 您的电子邮件地址 :)
-emailOptInButton = 我要注册
 emailOptInConfirmationTitle = 电子邮件已发送
 emailOptInSuccessMessage2 = 谢谢！
 emailOptInConfirmationClose = 关于此实验...
