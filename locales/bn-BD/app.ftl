@@ -95,11 +95,6 @@ notFoundHeader = চারে চার!
 
 emailOptInDialogTitle = Test Pilot এ আপনাকে স্বাগতম!
 emailOptInMessage = নতুন পরীক্ষা-নীরিক্ষা সম্পর্কে জানুন এবং আপনার করা পরীক্ষাগুলোর ফলাফল দেখুন।
-emailValidationError = অনুগ্রহ করে একটি কার্যকর ইমেইল ঠিকানা দিন!
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput
-    .placeholder = ইমেইল এখানে যাবে :)
-emailOptInButton = আমাকে সাইন আপ করুন
 emailOptInConfirmationTitle = ইমেইল পাঠানো হয়েছে
 emailOptInSuccessMessage2 = ধন্যবাদ!
 emailOptInConfirmationClose = অন্যান্য পরীক্ষার উপরে...
