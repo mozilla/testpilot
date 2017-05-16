@@ -93,11 +93,6 @@ notFoundHeader = الخطأ 404!
 
 emailOptInDialogTitle = مرحبا بكم في الاختبار التجريبي!
 emailOptInMessage = تعرف على تجارب جديدة و اطلع على نتائج الاختبار للتجارب التي جربتها.
-emailValidationError = الرجاء استخدام عنوان بريد إلكتروني صالح!
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput
-    .placeholder = رسائل البريد الإلكتروني تذهب هنا :)
-emailOptInButton = أشركني الآن
 emailOptInConfirmationTitle = تم إرسال البريد الإلكتروني
 emailOptInSuccessMessage2 = شكرًا لك!
 emailOptInConfirmationClose = إلى التجارب...
