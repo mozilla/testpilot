@@ -95,11 +95,6 @@ notFoundHeader = Ihuh… 404 !
 
 emailOptInDialogTitle = Ansuf ɣeṛ Test Pilot!
 emailOptInMessage = Awi-d igmaḍ n ikayaden n tirmitin inek udiɣ wali amaynut.
-emailValidationError = Ma ulac aɣilif seqdec tansa imayl tameɣtut!
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput
-    .placeholder = tansa imayl :)
-emailOptInButton = Ad jerdeɣ iman-iw
 emailOptInConfirmationTitle = Imayl ittwaciyeɛ
 emailOptInSuccessMessage2 = Tanemirt-ik
 emailOptInConfirmationClose = Ɣef tirmitin…
