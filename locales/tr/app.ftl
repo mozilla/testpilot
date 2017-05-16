@@ -95,11 +95,6 @@ notFoundHeader = Dört yüz dört!
 
 emailOptInDialogTitle = Test Pilotu'na hoş geldiniz!
 emailOptInMessage = Yeni deneyleri öğrenin ve denediğiniz deneylerin test sonuçlarını görün.
-emailValidationError = Lütfen geçerli bir e-posta adresi girin!
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput
-    .placeholder = e-posta adresinizi buraya yazın :)
-emailOptInButton = Kaydol
 emailOptInConfirmationTitle = E-posta gönderildi
 emailOptInSuccessMessage2 = Teşekkürler!
 emailOptInConfirmationClose = Deneylere geçelim...
