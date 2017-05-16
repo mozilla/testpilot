@@ -16,7 +16,7 @@ export default class ExperimentRowCard extends React.Component {
   render() {
     const { hasAddon, experiment, enabled, isAfterCompletedDate } = this.props;
 
-    const { description, title, thumbnail, subtitle, slug } = experiment;
+    const { description, title, subtitle, slug } = experiment;
     const installation_count = (experiment.installation_count) ? experiment.installation_count : 0;
     const isCompleted = isAfterCompletedDate(experiment);
 
@@ -34,14 +34,8 @@ export default class ExperimentRowCard extends React.Component {
           {this.justLaunched() && <div data-l10n-id="experimentListJustLaunchedTab" className="tab just-launched-tab"></div>}
           {this.justUpdated() && <div data-l10n-id="experimentListJustUpdatedTab" className="tab just-updated-tab"></div>}
         </div>
-        <div className="experiment-icon-wrapper"
-          style={{
-            backgroundColor: experiment.gradient_start,
-            backgroundImage: `linear-gradient(135deg, ${experiment.gradient_start}, ${experiment.gradient_stop})`
-          }}>
-          <div className="experiment-icon" style={{
-            backgroundImage: `url(${thumbnail})`
-          }}></div>
+        <div className={`experiment-icon-wrapper-${experiment.slug} experiment-icon-wrapper`}>
+          <div className={`experiment-icon-${experiment.slug} experiment-icon`}></div>
         </div>
       <div className="experiment-information">
         <header>

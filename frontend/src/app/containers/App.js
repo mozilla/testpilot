@@ -92,7 +92,12 @@ class App extends Component {
       locale: (navigator.language || '').split('-')[0]
     });
     this.props.chooseTests();
-    this.props.fetchUserCounts(config.usageCountsURL);
+    this.props.fetchUserCounts(config.usageCountsURL).then(() => {
+      const staticNode = document.getElementById('static-root');
+      if (staticNode) {
+        staticNode.parentNode.removeChild(staticNode);
+      }
+    });
     this.measurePageview();
   }
 
