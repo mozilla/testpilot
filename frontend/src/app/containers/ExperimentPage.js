@@ -323,11 +323,7 @@ export class ExperimentDetail extends React.Component {
           <div id="details">
               <LayoutWrapper helperClass="details-content" flexModifier="details-content">
                 <div className="details-overview">
-                  <div className="experiment-icon-wrapper"
-                       style={{
-                         backgroundColor: `${experiment.gradient_start}`,
-                         backgroundImage: `linear-gradient(135deg, ${experiment.gradient_start}, ${experiment.gradient_stop})`
-                       }}>
+                  <div className={`experiment-icon-wrapper-${experiment.slug} experiment-icon-wrapper`}>
                     <img className="experiment-icon" src={thumbnail}></img>
                   </div>
                   <div className="details-sections">

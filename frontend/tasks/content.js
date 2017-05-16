@@ -26,6 +26,7 @@ function buildExperimentsData() {
   const index = {results: []};
   const strings = [];
   const counts = {};
+  const cssStrings = [];
 
   function findLocalizableStrings(obj, pieces = [], experiment = null) {
     if (!experiment) {
@@ -62,6 +63,17 @@ function buildExperimentsData() {
       // Exclude dev content if it's not enabled in config
       return cb();
     }
+
+    cssStrings.push(`
+.experiment-icon-wrapper-${experiment.slug} {
+  background-color: ${experiment.gradient_start};
+  background-image: linear-gradient(135deg, ${experiment.gradient_start}, ${experiment.gradient_stop});
+}
+
+.experiment-icon-${experiment.slug} {
+  background-image: url(${experiment.thumbnail});
+}
+`);
 
     // Auto-generate some derivative API values expected by the frontend.
     Object.assign(experiment, {
@@ -101,6 +113,10 @@ function buildExperimentsData() {
     this.push(new gutil.File({
       path: 'api/experiments/usage_counts.json',
       contents: new Buffer(JSON.stringify(counts, null, 2))
+    }));
+    this.push(new gutil.File({
+      path: 'static/styles/experiments.css',
+      contents: new Buffer(cssStrings.join('\n'))
     }));
     cb();
   }

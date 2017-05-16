@@ -9,6 +9,8 @@ const through = require('through2');
 const YAML = require('yamljs');
 const ReactDOMServer = require('react-dom/server');
 
+import Loading from '../src/app/components/Loading';
+
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
@@ -52,7 +54,6 @@ gulp.task('pages-build', [
 ]);
 
 gulp.task('pages-watch', () => {
-  gulp.watch(config.SRC_PATH + 'generate-static-html.js', ['pages-build', 'pages-compiled']);
   gulp.watch(config.SRC_PATH + 'app.js', ['pages-build']);
   gulp.watch([config.SRC_PATH + 'pages/**/*.md'], ['pages-compiled']);
 });
@@ -193,6 +194,7 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
     <meta charSet="utf-8" />
     <link rel="shortcut icon" href="/static/images/favicon.ico" />
     <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css" />
+    <link rel="stylesheet" href="/static/styles/experiments.css" />
     <link rel="stylesheet" href="/static/styles/main.css" />
 
     <meta name="defaultLanguage" content="en-US" />
@@ -216,7 +218,7 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
     <meta name="twitter:image" content={ image_twitter } />
     <meta property="og:url" content="https://testpilot.firefox.com" />
   </head>;
-  const bodyComponent = <div>
+  const bodyComponent = <div id="static-root">
     <noscript>
       <div className="full-page-wrapper centered">
         <div className="layout-wrapper layout-wrapper--column-center">
@@ -235,6 +237,7 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
         </div>
       </div>
     </noscript>
+    <Loading />
     { prepareForClient ? <script src="/static/app/vendor.js"></script> : null }
     { enable_pontoon ? <script src="https://pontoon.mozilla.org/pontoon.js"></script> : null }
   </div>;
