@@ -95,11 +95,6 @@ notFoundHeader = Štyri Nul Štyri!
 
 emailOptInDialogTitle = Witajće k Test Pilot!
 emailOptInMessage = Zhońće wjace wo nowych eksperimentach a wobhladajće sej testowe wuslědki za eksperimenty, na kotrychž sće so wobdźělił.
-emailValidationError = Prošu wužiwajće płaćiwu e-mejlowu adresu!
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput
-    .placeholder = tu e-mejlowu adresu zapisać :)
-emailOptInButton = Registrować
 emailOptInConfirmationTitle = E-mejlka je so pósłała
 emailOptInSuccessMessage2 = Wulki dźak!
 emailOptInConfirmationClose = Dale k eksperimentam...
