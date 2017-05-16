@@ -95,11 +95,6 @@ notFoundHeader = Чотириста чотири!
 
 emailOptInDialogTitle = Вітаємо у Test Pilot!
 emailOptInMessage = Дізнайтеся про нові експерименти та перегляньте результати експериментів, якими ви користувалися.
-emailValidationError = Будь ласка, введіть дійсну адресу електронної пошти!
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput
-    .placeholder = адреса ел. пошти :)
-emailOptInButton = Підписатись
 emailOptInConfirmationTitle = Повідомлення надіслано
 emailOptInSuccessMessage2 = Дякуємо!
 emailOptInConfirmationClose = Вперед до експериментів...
