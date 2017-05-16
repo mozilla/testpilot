@@ -95,11 +95,6 @@ notFoundHeader = Fyra noll fyra!
 
 emailOptInDialogTitle = Välkommen till Test Pilot!
 emailOptInMessage = Få reda på mer om nya experiment och se testresultat för experiment som du har testat.
-emailValidationError = Var vänlig ange en giltig e-postadress!
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput
-    .placeholder = ange din e-postadress :)
-emailOptInButton = Registrera mig
 emailOptInConfirmationTitle = E-post har skickats
 emailOptInSuccessMessage2 = Tack!
 emailOptInConfirmationClose = Vidare till experimenten...
