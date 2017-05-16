@@ -95,11 +95,6 @@ notFoundHeader = Čtyři sta čtyři!
 
 emailOptInDialogTitle = Vítá vás Test Pilot!
 emailOptInMessage = Nechce si posílat informace o nových experimentech a výsledky experimentů, které jste sami vyzkoušeli.
-emailValidationError = Použijte prosím platnou e-mailovou adresu!
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput
-    .placeholder = sem napište e-mailovou adresu :)
-emailOptInButton = Přihlásit se
 emailOptInConfirmationTitle = E-mail odeslán
 emailOptInSuccessMessage2 = Děkujeme!
 emailOptInConfirmationClose = Podívat se na experimenty...
