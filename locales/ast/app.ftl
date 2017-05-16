@@ -94,11 +94,6 @@ notFoundHeader = ¡Cuatro cero Cuatro!
 
 emailOptInDialogTitle = ¡Afáyate en Test Pilot!
 emailOptInMessage = Pescuda tocante a esperimentos nuevos y mira los resultaos de les pruebes pa los esperimentos que probesti.
-emailValidationError = ¡Usa una direición de corréu válida, por favor!
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput
-    .placeholder = equí va'l corréu :)
-emailOptInButton = Rexistráime
 emailOptInConfirmationTitle = Unvióse'l corréu
 emailOptInSuccessMessage2 = ¡Gracies!
 
