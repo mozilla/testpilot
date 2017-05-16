@@ -94,10 +94,6 @@ notFoundHeader = Empat Oh Empat!
 
 emailOptInDialogTitle = Selamat datang di Test Pilot!
 emailOptInMessage = Cari tahu percobaan baru dan lihat hasil pengujian percobaan yang sudah Anda coba.
-emailValidationError = Tolong gunakan alamat email yang sah!
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput = [html/placeholder] surel di sini :)
-emailOptInButton = Daftarkan saya
 emailOptInConfirmationTitle = Surel Terkirim
 emailOptInSuccessMessage2 = Terima kasih!
 emailOptInConfirmationClose = Pada percobaan...
