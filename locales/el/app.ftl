@@ -85,10 +85,6 @@ errorHeading = Ουπς!
 // A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
-emailValidationError = Παρακαλώ χρησιμοποιήστε μια έγκυρη διεύθυνση e-mail!
-// The ':)' characters in the emailOptInInput placeholder are a smiley face emoticon.
-emailOptInInput
-    .placeholder = το e-mail πηγαίνει εδώ :)
 emailOptInConfirmationTitle = Το e-mail απεστάλη
 emailOptInSuccessMessage2 = Σάς ευχαριστούμε!
 
