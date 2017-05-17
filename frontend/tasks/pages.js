@@ -237,7 +237,7 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
         </div>
       </div>
     </noscript>
-    <Loading />
+    { prepareForClient ? <Loading /> : null }
     { prepareForClient ? <script src="/static/app/vendor.js"></script> : null }
     { enable_pontoon ? <script src="https://pontoon.mozilla.org/pontoon.js"></script> : null }
   </div>;

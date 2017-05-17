@@ -52,7 +52,7 @@ export default class NewsletterForm extends React.Component {
         { this.state.privacyNote ? <span data-l10n-id="newsletterFormPrivacyAgreementRequired" style={{ color: 'red', marginRight: '0.5em' }}></span> : null }
         <span data-l10n-id="newsletterFormPrivacyNotice">
           I'm okay with Mozilla handling by info as explained in
-          <a href={url}>this Privacy Notice</a>.
+          <a target="_blank" href={url}>this Privacy Notice</a>.
         </span>
       </label>
     );
