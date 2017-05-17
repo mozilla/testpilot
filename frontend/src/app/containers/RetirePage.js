@@ -16,8 +16,9 @@ export default class RetirePage extends React.Component {
   }
 
   componentDidMount() {
-    // HACK: Older add-on versions give no reliable signal of having been
-    // uninstalled, so let's fake it.
+    // HACK: The add-on gets uninstalled too quickly, so let's
+    // show the user the uninstalling dialog for at least a
+    // few seconds.
     this.fakeUninstallTimer = setTimeout(() => {
       this.setState({ fakeUninstalled: true });
       this.props.setHasAddon(false);
@@ -29,10 +30,9 @@ export default class RetirePage extends React.Component {
   }
 
   render() {
-    const { hasAddon } = this.props;
     const { fakeUninstalled } = this.state;
 
-    const uninstalled = !hasAddon || fakeUninstalled;
+    const uninstalled = fakeUninstalled;
     if (uninstalled) {
       clearTimeout(this.fakeUninstallTimer);
     }
@@ -42,7 +42,7 @@ export default class RetirePage extends React.Component {
         <LayoutWrapper flexModifier="column-center">
           {!uninstalled && <div disabled className={classnames('loading-pill')}>
             <h1 className="emphasis" data-l10n-id="retirePageProgressMessage">Shutting down...</h1>
-            <div style={{ opacity: 1 }} className="state-change-inner"></div>
+            <div className="state-change-inner">&nbsp;</div>
           </div>}
           {uninstalled && <LayoutWrapper flexModifier="column-center">
             <div id="retire" className="modal centered">
