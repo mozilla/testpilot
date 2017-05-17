@@ -16,6 +16,7 @@ const CSP = `default-src 'self'; connect-src 'self' https://sentry.prod.mozaws.n
 const serverOptions = {
   root: config.DEST_PATH,
   livereload: false,
+  fallback: './frontend/build/notfound/index.html',
   host: '0.0.0.0',
   port: config.SERVER_PORT,
   middleware: (connect, ops) => [

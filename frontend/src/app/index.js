@@ -7,6 +7,7 @@ import Raven from 'raven-js';
 import './lib/ga-snippet';
 import config from './config';
 
+import notfound from '../pages/notfound.js';
 import error from '../pages/error.js';
 import experiment from '../pages/experiment.js';
 import experiments from '../pages/experiments.js';
@@ -20,6 +21,7 @@ es6Promise.polyfill();
 Raven.config(config.ravenPublicDSN).install();
 
 const routes = {
+  notfound,
   error,
   experiment,
   experiments,
