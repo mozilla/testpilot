@@ -49,6 +49,17 @@ describe('app/containers/RetirePage', () => {
     });
 
     it('should render expected content', () => {
+      expect(findByL10nID('retirePageProgressMessage')).to.have.property('length', 1);
+      expect(findByL10nID('retirePageMessage')).to.have.property('length', 0);
+    });
+  });
+
+  describe('with fakeUninstalled=true', () => {
+    beforeEach(() => {
+      subject.setState({ fakeUninstalled: true });
+    });
+
+    it('should render expected content', () => {
       expect(findByL10nID('retirePageProgressMessage')).to.have.property('length', 0);
       expect(findByL10nID('retirePageMessage')).to.have.property('length', 1);
     });
