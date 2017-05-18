@@ -181,6 +181,7 @@ highlightPrivacy = Ваша приватност
 
 upgradeNoticeTitle = { $title } захтева Firefox { $min_release } или новији.
 upgradeNoticeLink = Како ажурирати Firefox.
+versionChangeNoticeLink = Преузмите најновију верзију Firefox-а.
 
 
 // Shown while uninstalling Test Pilot.
