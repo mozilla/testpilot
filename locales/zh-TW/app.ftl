@@ -178,6 +178,8 @@ highlightPrivacy = 您的隱私權
 
 upgradeNoticeTitle = { $title } 需要 Firefox { $min_release } 或更新版本。
 upgradeNoticeLink = 如何更新 Firefox。
+versionChangeNotice = 此版本的 Firefox 不支援 { $experiment_title }。
+versionChangeNoticeLink = 下載最新版 Firefox。
 
 
 // Shown while uninstalling Test Pilot.
