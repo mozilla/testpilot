@@ -163,7 +163,7 @@ measurements = Uw privacy
 experimentPrivacyNotice = Hier vindt u meer info over het verzamelen van gegevens voor { $title }.
 contributorsHeading = Aangeboden door
 contributorsExtraLearnMore = Meer info
-changelog = changelog
+changelog = Changelog
 tour = Rondleiding
 tourLink = Rondleiding starten
 contribute = Bijdragen
@@ -181,6 +181,8 @@ highlightPrivacy = Uw privacy
 
 upgradeNoticeTitle = { $title } vereist Firefox { $min_release } of hoger.
 upgradeNoticeLink = Hoe u Firefox kunt bijwerken.
+versionChangeNotice = { $experiment_title } wordt niet ondersteund in deze versie van Firefox.
+versionChangeNoticeLink = Download de huidige versie van Firefox.
 
 
 // Shown while uninstalling Test Pilot.
