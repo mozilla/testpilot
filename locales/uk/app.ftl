@@ -181,6 +181,8 @@ highlightPrivacy = Ваша приватність
 
 upgradeNoticeTitle = { $title } потребує Firefox { $min_release } чи новішої.
 upgradeNoticeLink = Як оновити Firefox.
+versionChangeNotice = { $experiment_title } не підтримується цією версією Firefox.
+versionChangeNoticeLink = Отримати свіжу версію Firefox.
 
 
 // Shown while uninstalling Test Pilot.
