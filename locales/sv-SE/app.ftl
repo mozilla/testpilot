@@ -181,6 +181,8 @@ highlightPrivacy = Din sekretesspolicy
 
 upgradeNoticeTitle = { $title } kräver Firefox { $min_release } eller senare.
 upgradeNoticeLink = Hur du uppdaterar Firefox.
+versionChangeNotice = { $experiment_title } stöds inte i den här versionen av Firefox.
+versionChangeNoticeLink = Hämta den aktuella versionen av Firefox.
 
 
 // Shown while uninstalling Test Pilot.
