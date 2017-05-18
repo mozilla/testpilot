@@ -474,8 +474,17 @@ The minimum version of Firefox with which this experiment is compatible. If the 
 ```yaml
 min_release: 99
 ```
-
 ![Warning shown to users with incompatible versions of Firefox](img/min_release.png)
+
+## `max_release`
+
+The maximum version of Firefox with which this experiment is compatible. If the user is browsing with a version higher than this number, an incompatibility notice is displayed. Optional.
+
+```yaml
+max_release: 2084
+```
+
+![Warning shown to users with incompatible versions of Firefox](img/max_release.png)
 
 
 ## `incompatible`

@@ -125,11 +125,6 @@ export class ExperimentDetail extends React.Component {
     }
   }
 
-  isValidVersion(min) {
-    const version = parseInt(this.props.userAgent.split('/').pop(), 10);
-    return typeof min === 'undefined' || version >= min;
-  }
-
   getIncompatibleInstalled(incompatible) {
     if (!incompatible) {
       return [];
@@ -229,7 +224,7 @@ export class ExperimentDetail extends React.Component {
     const { title, contribute_url, bug_report_url, discourse_url, privacy_preamble,
             introduction, measurements, privacy_notice_url, changelog_url,
             thumbnail, subtitle, survey_url, contributors, contributors_extra, contributors_extra_url, details,
-            min_release, graduation_report } = experiment;
+            min_release, max_release, graduation_report } = experiment;
 
     // Set the timestamp for when this experiment was last seen (for
     // ExperimentRowCard updated/launched banner logic)
@@ -316,6 +311,7 @@ export class ExperimentDetail extends React.Component {
               </header>
               { this.renderExperimentControls() }
               { this.renderMinimumVersionNotice(title, hasAddon, min_release) }
+              { this.renderMaximumVersionNotice(title, hasAddon, max_release) }
             </LayoutWrapper>
           </div>
           <div className="sticky-header-sibling" style={{ height: `${stickyHeaderSiblingHeight}px` }} ></div>
@@ -572,8 +568,23 @@ export class ExperimentDetail extends React.Component {
     );
   }
 
+  maxVersionCheck(max) {
+    const version = parseInt(this.props.userAgent.split('/').pop(), 10);
+    return typeof max === 'undefined' || version <= max;
+  }
+
+  minVersionCheck(min) {
+    const version = parseInt(this.props.userAgent.split('/').pop(), 10);
+    return typeof min === 'undefined' || version >= min;
+  }
+
+  isValidVersion(min, max) {
+    if (!max) max = Infinity;
+    return this.minVersionCheck(min) && this.maxVersionCheck(max);
+  }
+
   renderMinimumVersionNotice(title, hasAddon, min_release) {
-    if (hasAddon && !this.isValidVersion(min_release)) {
+    if (hasAddon && !this.minVersionCheck(min_release)) {
       return (
         <div className="upgrade-notice">
           <div data-l10n-id="upgradeNoticeTitle" data-l10n-args={JSON.stringify({ title, min_release })}></div>
@@ -584,11 +595,23 @@ export class ExperimentDetail extends React.Component {
     return null;
   }
 
+  renderMaximumVersionNotice(title, hasAddon, max_release) {
+    if (hasAddon && !this.maxVersionCheck(max_release)) {
+      return (
+        <div className="upgrade-notice">
+          <div data-l10n-id="versionChangeNotice" data-l10n-args={ JSON.stringify({ experiment_title: title }) }></div>
+          <a onClick={e => this.clickUpgradeNotice(e)} data-l10n-id="versionChangeNoticeLink" href="https://www.mozilla.org/firefox/" target="_blank">Get the current version of Firefox.</a>
+        </div>
+      );
+    }
+    return null;
+  }
+
   renderExperimentControls() {
     const { enabled, isEnabling, isDisabling, progressButtonWidth } = this.state;
     const { experiment, installed, isAfterCompletedDate, hasAddon, clientUUID } = this.props;
-    const { title, min_release, survey_url } = experiment;
-    const validVersion = this.isValidVersion(min_release);
+    const { title, min_release, max_release, survey_url } = experiment;
+    const validVersion = this.isValidVersion(min_release, max_release);
     const surveyURL = buildSurveyURL('givefeedback', title, installed, clientUUID, survey_url);
 
     if (!hasAddon || !validVersion) {

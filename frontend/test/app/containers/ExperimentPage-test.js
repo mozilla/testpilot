@@ -336,7 +336,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       });
 
       it('should display a warning only if userAgent does not meet minimum version', () => {
-        const experiment = setExperiment({ ...mockExperiment, min_release: 50 });
+        const experiment = setExperiment({ ...mockExperiment, min_release: 50});
 
         const userAgentPre = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:51.0) Gecko/20100101 Firefox/';
 
@@ -358,6 +358,32 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
         subject.setProps({ userAgent: `${userAgentPre}51.0` });
         expect(subject.find('.upgrade-notice')).to.have.property('length', 0);
         expect(subject.find('.experiment-controls')).to.have.property('length', 1);
+      });
+
+      it('should display a warning only if userAgent does not meet maximum version limit', () => {
+        const experiment = setExperiment({ ...mockExperiment, max_release: 52 });
+
+        const userAgentPre = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:51.0) Gecko/20100101 Firefox/';
+
+        subject.setProps({ userAgent: `${userAgentPre}49.0` });
+        expect(subject.find('.upgrade-notice')).to.have.property('length', 0);
+        expect(subject.find('.experiment-controls')).to.have.property('length', 1);
+
+        subject.setProps({ userAgent: `${userAgentPre}50.0` });
+        expect(subject.find('.upgrade-notice')).to.have.property('length', 0);
+        expect(subject.find('.experiment-controls')).to.have.property('length', 1);
+
+        subject.setProps({ userAgent: `${userAgentPre}53.0` });
+        expect(subject.find('.upgrade-notice')).to.have.property('length', 1);
+        expect(subject.find('.experiment-controls')).to.have.property('length', 0);
+
+        findByL10nID('versionChangeNoticeLink').simulate('click', mockClickEvent);
+
+        expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
+          eventCategory: 'ExperimentDetailsPage Interactions',
+          eventAction: 'Upgrade Notice',
+          eventLabel: experiment.title
+        }]);
       });
 
       it('should display a banner if the experiment has an error status', () => {
