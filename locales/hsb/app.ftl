@@ -178,6 +178,8 @@ highlightPrivacy = Waša priwatnosć
 
 upgradeNoticeTitle = { $title } sej Firefox { $min_release } abo nowši wužaduje.
 upgradeNoticeLink = Kak móžeće Firefox aktualizować.
+versionChangeNotice = { $experiment_title } so w tutej wersiji Firefox njepodpěruje.
+versionChangeNoticeLink = Wobstarajće sej aktualnu wersiju Firefox.
 
 
 // Shown while uninstalling Test Pilot.
