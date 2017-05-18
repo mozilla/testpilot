@@ -181,6 +181,8 @@ highlightPrivacy = Magánszféra
 
 upgradeNoticeTitle = A(z) { $title } Firefox { $min_release } vagy újabb verziót igényel.
 upgradeNoticeLink = Hogyan frissítse a Firefoxot.
+versionChangeNotice = A(z) { $experiment_title } nem támogatott a Firefox ezen verziójában.
+versionChangeNoticeLink = A Firefox jelenlegi verziójának beszerzése.
 
 
 // Shown while uninstalling Test Pilot.
