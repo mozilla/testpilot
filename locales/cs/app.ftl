@@ -181,6 +181,8 @@ highlightPrivacy = Vaše soukromí
 
 upgradeNoticeTitle = { $title } vyžaduje Firefox { $min_release } nebo novější.
 upgradeNoticeLink = Jak aktualizovat Firefox.
+versionChangeNotice = { $experiment_title } není v této verzi Firefoxu podporován.
+versionChangeNoticeLink = Získejte aktuální verzi Firefoxu.
 
 
 // Shown while uninstalling Test Pilot.
