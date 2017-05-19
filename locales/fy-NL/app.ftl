@@ -178,6 +178,8 @@ highlightPrivacy = Jo privacy
 
 upgradeNoticeTitle = { $title } fereasket Firefox { $min_release } of heger.
 upgradeNoticeLink = Hoe't jo Firefox fernije kinne.
+versionChangeNotice = { $experiment_title } wurdt net stipe yn dizze ferzje fan Firefox.
+versionChangeNoticeLink = Download de aktuele ferzje fan Firefox.
 
 
 // Shown while uninstalling Test Pilot.
