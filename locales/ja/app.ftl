@@ -181,6 +181,8 @@ highlightPrivacy = プライバシー
 
 upgradeNoticeTitle = { $title } を試すには Firefox { $min_release } 以降が必要です。
 upgradeNoticeLink = Firefox の更新方法
+versionChangeNotice = { $experiment_title } はこのバージョンの Firefox には対応していません。
+versionChangeNoticeLink = Firefox の最新版をダウンロード。
 
 
 // Shown while uninstalling Test Pilot.
