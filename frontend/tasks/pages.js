@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const config = require('../config.js');
 const path = require('path');
-const Remarkable = require('remarkable');
 const fs = require('fs');
 const gutil = require('gulp-util');
 const multiDest = require('gulp-multi-dest');
@@ -13,8 +12,6 @@ import Loading from '../src/app/components/Loading';
 
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-
-const md = new Remarkable({ html: true });
 
 const THUMBNAIL_FACEBOOK = config.PRODUCTION_URL + '/static/images/thumbnail-facebook.png';
 const THUMBNAIL_TWITTER = config.PRODUCTION_URL + '/static/images/thumbnail-twitter.png';

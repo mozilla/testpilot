@@ -85,7 +85,6 @@
     "node-sass": "^4.5.0",
     "nyc": "^10.1.2",
     "react-addons-test-utils": "^15.4.2",
-    "remarkable": "1.7.1",
     "require-globify": "^1.4.1",
     "run-sequence": "^1.2.2",
     "sass-lint": "1.10.2",
