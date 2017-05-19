@@ -178,6 +178,8 @@ highlightPrivacy = Tu privacidad
 
 upgradeNoticeTitle = { $title } requiere Firefox { $min_release } o posterior.
 upgradeNoticeLink = Cómo actualizar Firefox.
+versionChangeNotice = Esta versión de Firefox no admite { $experiment_title }.
+versionChangeNoticeLink = Obtén la versión actual de Firefox.
 
 
 // Shown while uninstalling Test Pilot.
