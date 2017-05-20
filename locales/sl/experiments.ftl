@@ -86,6 +86,7 @@ nomore404sToursteps0Copy = Samo brskajte po spletu kot običajno. Če naletite n
 nomore404sToursteps1Copy = Vedno nam lahko sporočite povratne informacije ali onemogočite No More 404s v Test Pilotu.
 nomore404sContributors1Title = Razvijalec, Wayback Machine, The Internet Archive
 nomore404sContributors2Title = Direktor, Wayback Machine, The Internet Archive
+nomore404sContributors3Title = Starejši inženir iskanja, The Internet Archive
 nomore404sEolwarning = Poskus No More 404s ne bo odstranjen iz vašega brskalnika, ko se konča, pa bomo o rezultatih poročali tukaj. Prihodnje posodobitve bodo na voljo na addons.mozilla.org.
 pageshotDescription = Intuitivni posnetki zaslona kar v brskalniku. Med brskanjem po spletu lahko s Firefoxom ustvarite, shranite in delite posnetke zaslona.
 pageshotIntroduction = <p>Page Shot vam omogoča zajemati, shranjevati in deliti posnetke zaslona - ne da bi zapustili Firefox.</p><ul> <li><strong>Pogled mreže:</strong> Brskajte po ploščicah shranjenih posnetko zaslona</li> <li><strong>Pametno iskanje:</strong> Poiščite želeni posnetek s ključno besedo. Page Shot k posnetkom shrani naslove in besedilo strani</li> <li><strong>Deljenje z enim korakom:</strong> Objavite posnetek zaslona na družbenih omrežjih ali z vrha okna brskalnika kopirajte povezavo za deljenje.</li></ul>
