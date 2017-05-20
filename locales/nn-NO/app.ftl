@@ -181,6 +181,8 @@ highlightPrivacy = Ditt personvern
 
 upgradeNoticeTitle = { $title } krev Firefox { $min_release } eller nyare.
 upgradeNoticeLink = Korleis du oppgraderer Firefox.
+versionChangeNotice = { $experiment_title } er ikkje støtta i denne versjonen av Firefox.
+versionChangeNoticeLink = Last ned siste versjon av Firefox.
 
 
 // Shown while uninstalling Test Pilot.
