@@ -119,6 +119,7 @@ pulseToursteps2Copy = Pulse vas bo morda naključno pozval, da ocenite spletno s
 pulseToursteps3Copy = Vedno nam lahko sporočite povratne informacije ali onemogočite Pulse v Test Pilotu.
 pulseContributors0Title = Starejši inženir
 pulseContributors1Title = Firefox UX
+pulseContributors2Title = Obdelava podatkov platforme Firefoxa
 pulseContributors3Title = Firefox QA
 snoozetabsDescription = Prava spletna stran ob nepravem času? Uspavajte jo, dokler nimate časa zanjo. Snooze Tabs vam omogoča skriti zavihke do časa, ki ga določite.
 snoozetabsIntroduction = Snooze Tabs vam omogoča, da se na spletu laže osredotočite, v kolikor želite za zdaj odstraniti odvračajoče dejavnike ali kaj shraniti za kasneje. Kliknite ikono za dremež, da pospravite zavihek, ki ga trenutno ne potrebujete, in nastavite, kdaj naj se povrne. Uspavajte zanimiv članek do večera. Uspavajte ta recept do drugega meseca. Ko bo dremež končan, se bo zavihek nazaj odprl.
