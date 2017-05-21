@@ -181,6 +181,7 @@ highlightPrivacy = Ваша приватност
 
 upgradeNoticeTitle = { $title } захтева Firefox { $min_release } или новији.
 upgradeNoticeLink = Како ажурирати Firefox.
+versionChangeNotice = { $experiment_title } није подржан у овој верзији Firefox-а.
 versionChangeNoticeLink = Преузмите најновију верзију Firefox-а.
 
 
