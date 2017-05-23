@@ -58,6 +58,8 @@ oneClickInstallMajorCta = Ενεργοποίηση του { $title }
 // Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
+landingDownloadFirefoxDesc = (Το Test Pilot είναι διαθέσιμο για το Firefox σε Windows, OS X και Linux)
+landingUpgradeDesc = Το Test Pilot απαιτεί το Firefox 49 ή νεότερο.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Αναβάθμιση του Firefox
 landingDownloadFirefoxSubTitle = Δωρεάν λήψη
@@ -69,6 +71,7 @@ landingDownloadFirefoxSubTitle = Δωρεάν λήψη
 landingCardListTitle = Ξεκινήστε σε 3, 2, 1
 landingCardOne = Απόκτηση του προσθέτου Test Pilot
 landingCardTwo = Ενεργοποίηση πειραματικών λειτουργιών
+landingCardThree = Πείτε μας την άποψή σας
 
 
 // Shown after the user installs the Test Pilot add-on.

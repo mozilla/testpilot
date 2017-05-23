@@ -27,3 +27,4 @@ tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
 universalsearchToursteps0Copy = Μπορείτε πλέον να αναζητήσετε και να πλοηγηθείτε σε ένα μέρος.
 universalsearchContributors0Title = Διευθυντής προϊόντος
+universalsearchEolwarning = Θα απενεργοποιήσουμε αυτόματα το πείραμα Universal Search και θα αναφέρουμε τα αποτελέσματα όταν τελειώσει.
