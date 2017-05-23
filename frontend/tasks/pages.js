@@ -278,6 +278,6 @@ function generateStaticPageFromMarkdown(pageName, pageParam, markdown, params) {
   </div>;
 
   return generateStaticPage(
-    false, pageName, pageParam, body, JSON.stringify(markdown), params
+    false, pageName, pageParam, body, params
   );
 }
