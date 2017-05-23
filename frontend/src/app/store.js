@@ -1,6 +1,4 @@
-
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
-import createLogger from 'redux-logger';
 import promise from 'redux-promise';
 
 import addonReducer from './reducers/addon';
@@ -42,8 +40,7 @@ export const initialState = {
 export function createMiddleware() {
   return compose(
     applyMiddleware(
-      promise,
-      createLogger()
+      promise
     ),
     (typeof window !== 'undefined' && window.devToolsExtension) ? window.devToolsExtension() : f => f
   );
