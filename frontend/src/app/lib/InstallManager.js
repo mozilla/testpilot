@@ -1,4 +1,3 @@
-
 import * as moz from './moz';
 import * as addon from './addon';
 

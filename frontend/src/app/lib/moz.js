@@ -1,12 +1,12 @@
 import cookies from 'js-cookie';
-
 import addonActions from '../actions/addon';
 import { updateExperiment } from '../actions/experiments';
-
+import InstallHistory from './install-history';
 
 const RESTART_NEEDED = false; // TODO
 
 let mam;
+let installHistory;
 if (typeof navigator !== 'undefined') {
   mam = navigator.mozAddonManager;
 }
@@ -88,18 +88,19 @@ export function setupAddonConnection(store) {
           })
         );
       }
+
+      installHistory.setInactive(addon.id);
     }
   }
   mam.addEventListener('onDisabled', onDisabled);
   mam.addEventListener('onUninstalled', onDisabled);
+  mam.addEventListener('onInstalled', addon => installHistory.setActive(addon.id));
 /*
   mam.addEventListener('onEnabling', (addon, restart) => {
   });
   mam.addEventListener('onDisabling', (addon, restart) => {
   });
   mam.addEventListener('onInstalling', (addon, restart) => {
-  });
-  mam.addEventListener('onInstalled', addon => {
   });
   mam.addEventListener('onUninstalling', (addon, restart) => {
     // TODO similar logic to txp addon AddonListener.js
@@ -127,6 +128,20 @@ export function setupAddonConnection(store) {
         };
       });
       store.dispatch(addonActions.setInstalled(installed));
+
+      // populate install history for initial load
+      if (!installHistory) {
+        const installations = Object.assign({}, installed);
+        store.getState().experiments.data.forEach(e => {
+          if (!installations[e.addon_id]) {
+            installations[e.addon_id] = {
+              active: false,
+              addon_id: e.addon_id
+            };
+          }
+        });
+        installHistory = new InstallHistory(installations);
+      }
     });
 }
 
