@@ -1,4 +1,4 @@
-activitystreamDescription = Um visual impressionante do histórico e uma página inicial reinventada tornam mais fácil do que nunca encontrar exatamente o que está procurando no Firefox.
+activitystreamDescription = Um visual impressionante do histórico e uma pagina inicial reimaginada tornam mais fácil do que nunca encontrar exatamente o que está procurando no Firefox.
 activitystreamIntroduction = <p>Volte a navegar sem perder sua linha de pensamento. O Activity Stream mantém os sites mais visitados, favoritos e histórico recente ao alcance das mãos em cada nova aba. E a nova linha do tempo dá a você uma visão geral da sua navegação.</p>
 activitystreamMeasurements0 = Coletamos dados de uso básico sobre como você interage com novas abas experimentais e a linha do tempo, como os tipos de elementos que você clicou e sua posição na página.
 activitystreamMeasurements1 = Também coletamos informações sobre seu perfil de navegação e que afetam o Activity Stream, como o número de favoritos e itens de histórico.
@@ -13,8 +13,8 @@ activitystreamContributors1Title = Engenheiro Web
 activitystreamContributors2Title = Desenvolvedor de software
 activitystreamContributors3Title = Engenheiro do Firefox Desktop
 activitystreamContributors4Title = Engenheiro de software
-activitystreamContributors5Title = Gerente técnico
-activitystreamContributors6Title = Engenheiro de serviços de nuvem
+activitystreamContributors5Title = Gerente Técnico de Programação
+activitystreamContributors6Title = Engenheiro de serviços da nuvem
 activitystreamContributors7Title = Estagiário de engenharia
 activitystreamContributors8Title = Estagiário de engenharia
 activitystreamContributors9Title = Gerente de produto
