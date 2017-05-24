@@ -4,35 +4,45 @@
 # AMO_SECRET     - api key secret from addons.mozilla.com
 
 machine:
+  environment:
+    DISPLAY: :99
+    PATH: "/home/ubuntu/testpilot/firefox:$PATH"
   hosts:
-    testpilot.dev: 127.0.0.1
+    example.com: 127.0.0.1
   node:
     version: 6.9.1
   python:
     version: 2.7.11
 
 dependencies:
-
   cache_directories:
     - "addon/node_modules"
     # node_modules is included by default
 
   override:
+    - pip install tox mozdownload mozinstall
     - google-chrome --version
     - ./bin/circleci/install-node-dependencies.sh
-    - ./bin/circleci/setup-test-dependencies.sh
     - ./bin/circleci/build-addon.sh
 
 test:
+  pre:
+    - mozdownload --version latest --destination firefox.tar.bz2
+    - mozinstall firefox.tar.bz2
+    - curl -L -o geckodriver.tar.gz `curl -s 'https://api.github.com/repos/mozilla/geckodriver/releases/latest' | python -c "import sys, json; r = json.load(sys.stdin); print([a for a in r['assets'] if 'linux64' in a['name']][0]['browser_download_url']);"`
+    - gunzip -c geckodriver.tar.gz | tar xopf -
+    - chmod +x geckodriver
+    - sudo mv geckodriver /home/ubuntu/bin
+    - firefox --version
+    - geckodriver --version
   override:
     - ./bin/circleci/test-addon.sh
     - ./bin/circleci/test-frontend.sh
-    - ./bin/circleci/run-integration-tests.sh
+    - tox
   post:
     - bash <(curl -s https://codecov.io/bash)
 
 deployment:
-
   static_development:
     owner: mozilla
     branch:
