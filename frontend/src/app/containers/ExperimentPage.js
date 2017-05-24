@@ -634,7 +634,7 @@ export class ExperimentDetail extends React.Component {
     if (enabled) {
       return (
         <div className="experiment-controls">
-          <a onClick={e => this.handleFeedback(e)} data-l10n-id="giveFeedback" id="feedback-button" className="button default" href={surveyURL}>Give Feedback</a>
+          <a onClick={e => this.handleFeedback(e)} data-l10n-id="giveFeedback" id="feedback-button" className="button default" href={surveyURL} target="_blank">Give Feedback</a>
           <button onClick={e => this.renderUninstallSurvey(e)} style={{ minWidth: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'secondary'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text"></span></button>
         </div>
       );
@@ -677,13 +677,12 @@ export class ExperimentDetail extends React.Component {
     });
   }
 
-  feedback(evt) {
+  feedback() {
     const { experiment } = this.props;
     this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'Give Feedback',
-      eventLabel: experiment.title,
-      outboundURL: evt.target.getAttribute('href')
+      eventLabel: experiment.title
     });
   }
 
@@ -701,11 +700,11 @@ export class ExperimentDetail extends React.Component {
   }
 
   handleFeedback(evt) {
-    evt.preventDefault();
     const { pre_feedback_copy } = this.props.experiment;
     if (pre_feedback_copy === null || !pre_feedback_copy) {
-      this.feedback(evt);
+      this.feedback();
     } else {
+      evt.preventDefault();
       this.showPreFeedbackDialog();
     }
   }

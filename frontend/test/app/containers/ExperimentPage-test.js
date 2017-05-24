@@ -499,7 +499,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
           expect(button.prop('href')).to.equal(expectedHref);
         });
 
-        it('should navigate to survey URL when "Give Feedback" clicked', () => {
+        it('should send a GA event when "Give Feedback" clicked', () => {
           const experiment = setExperiment(mockExperiment);
           const button = subject.find('#feedback-button');
           const expectedHref = button.prop('href');
@@ -509,8 +509,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
           expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
             eventCategory: 'ExperimentDetailsPage Interactions',
             eventAction: 'Give Feedback',
-            eventLabel: experiment.title,
-            outboundURL: expectedHref
+            eventLabel: experiment.title
           }]);
         });
 
