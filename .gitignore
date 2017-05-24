@@ -3,6 +3,8 @@
 *.log
 *.pyc
 *.sw?
+*.tox
+*.cache
 
 # Files to ignore in the base directory
 coverage
