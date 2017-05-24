@@ -1,3 +1,12 @@
+// If static page is still rendered; don't display the page container
+// This was added to correct some odd scrollbar behavior when page-container
+// is injected and static-root is removed. These should happen at the same time, 
+// but wind up happening a few frames apart. This rule resolves
+
+#static-root + #page-container {
+  display: none;
+}
+
 .full-page-wrapper {
   flex: 1;
   min-height: 100vh;

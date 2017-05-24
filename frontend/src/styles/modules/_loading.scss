@@ -1,5 +1,4 @@
 // HT: https://www.pexels.com/blog/css-only-loaders/
-
 .loading {
   @include flex-container(row, space-between, center);
   width: $grid-unit * 1.6;

@@ -7,7 +7,6 @@ import Copter from '../components/Copter';
 import EmailDialog from '../components/EmailDialog';
 import ExperimentCardList from '../components/ExperimentCardList';
 import LayoutWrapper from '../components/LayoutWrapper';
-import LoadingPage from './LoadingPage';
 import MainInstallButton from '../components/MainInstallButton';
 import PastExperiments from '../components/PastExperiments';
 import View from '../components/View';
@@ -82,7 +81,7 @@ export default class HomePageWithAddon extends React.Component {
   render() {
     const { experiments, isAfterCompletedDate } = this.props;
 
-    if (experiments.length === 0) { return <LoadingPage />; }
+    if (experiments.length === 0) { return null; }
 
     const { showEmailDialog } = this.state;
     const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));

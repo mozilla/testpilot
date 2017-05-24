@@ -22,9 +22,9 @@ describe('app/containers/HomePageNoAddon', () => {
 
   const findByL10nID = (id) => subject.findWhere(el => id === el.props()['data-l10n-id']);
 
-  it('should render a Loading component if no experiments available', () => {
+  it('should return nothing if no experiments are available', () => {
     subject.setProps({ experiments: [] });
-    expect(subject.find('LoadingPage')).to.have.property('length', 1);
+    expect(subject.find('#landing-page')).to.have.property('length', 0);
   });
 
   it('should render default content with experiments loaded', () => {

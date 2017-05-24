@@ -31,9 +31,9 @@ describe('app/containers/HomePageWithAddon', () => {
     expect(subject.find('EmailDialog')).to.have.property('length', 0);
   });
 
-  it('should render a Loading component if no experiments available', () => {
+  it('should not show anything if no experiments are available', () => {
     subject.setProps({ experiments: [] });
-    expect(subject.find('LoadingPage')).to.have.property('length', 1);
+    expect(subject.find('View')).to.have.property('length', 0);
   });
 
   it('should show an email dialog if the URL contains utm_campaign=restart-required',  () => {

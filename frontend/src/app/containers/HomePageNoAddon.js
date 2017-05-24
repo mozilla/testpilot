@@ -4,7 +4,6 @@ import Banner from '../components/Banner';
 import Copter from '../components/Copter';
 import ExperimentCardList from '../components/ExperimentCardList';
 import LayoutWrapper from '../components/LayoutWrapper';
-import LoadingPage from './LoadingPage';
 import MainInstallButton from '../components/MainInstallButton';
 import PastExperiments from '../components/PastExperiments';
 import View from '../components/View';
@@ -17,7 +16,7 @@ export default class HomePageNoAddon extends React.Component {
     const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
     const pastExperiments = experiments.filter(isAfterCompletedDate);
 
-    if (experiments.length === 0) { return <LoadingPage />; }
+    if (experiments.length === 0) { return null; }
     if (this.props.hasAddon === true) {
       this.props.navigateTo('/experiments');
       return null;
