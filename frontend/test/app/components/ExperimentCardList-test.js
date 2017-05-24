@@ -25,9 +25,9 @@ describe('app/components/ExperimentCardList', () => {
     subject = shallow(<ExperimentCardList {...props} />);
   });
 
-  it('renders a loading screen if no experiments are available', () => {
+  it('returns nothing if there are no experiments', () => {
     subject.setProps({ experiments: [] });
-    expect(subject.find('Loading')).to.have.property('length', 1);
+    expect(subject.find('LayoutWrapper')).to.have.property('length', 0);
   });
 
   it('renders ExperimentRowCards for each experiment', () => {

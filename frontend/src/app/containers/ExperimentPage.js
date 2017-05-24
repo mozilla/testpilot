@@ -5,7 +5,6 @@ import classnames from 'classnames';
 
 import { buildSurveyURL, createMarkup, experimentL10nId, formatDate } from '../lib/utils';
 
-import LoadingPage from './LoadingPage';
 import NotFoundPage from './NotFoundPage';
 
 import EmailDialog from '../components/EmailDialog';
@@ -200,8 +199,8 @@ export class ExperimentDetail extends React.Component {
             hasAddon, setExperimentLastSeen, clientUUID,
             setPageTitleL10N } = this.props;
 
-    // Show the loading animation if experiments haven't been loaded yet.
-    if (experiments.length === 0) { return <LoadingPage />; }
+    // Loading handled in static with react router; don't return anything if no experiments
+    if (experiments.length === 0) { return null; }
 
     // Show a 404 page if an experiment for this slug wasn't found.
     if (!experiment) { return <NotFoundPage {...this.props} />; }

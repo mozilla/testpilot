@@ -156,8 +156,8 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
     expect(findByL10nID('testingDetails0Copy')).to.have.property('length', 0);
   });
 
-  it('should render a loading page if no experiments are available', () => {
-    expect(subject.find('LoadingPage')).to.have.property('length', 1);
+  it('should not render experiment content if no experiment content is loaded', () => {
+    expect(subject.find('#experiment-page')).to.have.property('length', 0);
   });
 
   it('should render a 404 page if experiment is undefined', () => {

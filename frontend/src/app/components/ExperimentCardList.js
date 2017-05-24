@@ -1,7 +1,6 @@
 import React from 'react';
 
 import ExperimentRowCard from './ExperimentRowCard';
-import Loading from './Loading';
 import LayoutWrapper from './LayoutWrapper';
 
 export default class ExperimentCardList extends React.Component {
@@ -12,14 +11,6 @@ export default class ExperimentCardList extends React.Component {
     return this.props.experiments.filter(experiment => (
       experiment.slug !== this.props.except
     ));
-  }
-
-  renderLoading() {
-    return (
-      <div className="card-list experiments">
-        <Loading />
-      </div>
-    );
   }
 
   renderExperiments() {
@@ -39,7 +30,7 @@ export default class ExperimentCardList extends React.Component {
 
   render() {
     if (this.props.experiments.length === 0) {
-      return this.renderLoading();
+      return null;
     }
     return this.renderExperiments();
   }
