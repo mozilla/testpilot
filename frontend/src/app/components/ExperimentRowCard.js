@@ -131,7 +131,7 @@ export default class ExperimentRowCard extends React.Component {
     return '';
   }
 
-  openDetailPage(evt) {
+  openDetailPage() {
     const { eventCategory, experiment, sendToGA } = this.props;
     const { title } = experiment;
 

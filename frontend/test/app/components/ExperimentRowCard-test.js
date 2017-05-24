@@ -182,17 +182,14 @@ describe('app/components/ExperimentRowCard', () => {
     expect(findByL10nID('experimentCardManage')).to.have.property('length', 1);
   })
 
-  it('should ping GA and open the detail page when clicked', () => {
+  it('should ping GA when clicked', () => {
     subject.find('.experiment-summary').simulate('click', mockClickEvent);
 
-    expect(mockClickEvent.preventDefault.called).to.be.true;
     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
       eventCategory: props.eventCategory,
       eventAction: 'Open detail page',
       eventLabel: mockExperiment.title
     }]);
-    expect(props.navigateTo.lastCall.args[0])
-      .to.equal(`/experiments/${mockExperiment.slug}`);
   });
 
   it('should have an anchor component with the right properties', () => {
