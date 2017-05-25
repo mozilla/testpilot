@@ -69,7 +69,6 @@ tour_steps:
     copy: >
       You can always give us feedback or disable Universal Search from Test
       Pilot.
-notifications: []
 contributors:
   -
     display_name: 'Nick Chapman'

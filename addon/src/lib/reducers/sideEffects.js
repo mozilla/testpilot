@@ -16,7 +16,6 @@ import type { Env } from '../actionCreators/env';
 import type FeedbackManager from '../actionCreators/FeedbackManager';
 import type InstallManager from '../actionCreators/InstallManager';
 import type Loader from '../actionCreators/Loader';
-import type NotificationManager from '../actionCreators/NotificationManager';
 import type Telemetry from '../Telemetry';
 import type MainUI from '../actionCreators/MainUI';
 import type WebApp from '../WebApp';
@@ -29,7 +28,6 @@ export type Context = {
   hacks: Object,
   installManager: InstallManager,
   loader: Loader,
-  notificationManager: NotificationManager,
   self: self,
   tabs: tabs,
   telemetry: Telemetry,
@@ -134,17 +132,6 @@ export function reducer(
         });
         telemetry.ping('txp_toolbar_menu_1', 'clicked');
       };
-
-    case actions.MAYBE_NOTIFY.type:
-      return ({ notificationManager }) =>
-        notificationManager.maybeNotify(payload.experiment);
-
-    case actions.SHOW_NOTIFICATION.type:
-      return ({ notificationManager }) =>
-        notificationManager.showNotification(payload);
-
-    case actions.SCHEDULE_NOTIFIER.type:
-      return ({ notificationManager }) => notificationManager.schedule();
 
     case actions.PROMPT_SHARE.type:
       return ({ feedbackManager }) => {

@@ -55,7 +55,6 @@ const types = {
         copy: '<p>You can always give us feedback or disable Min Vid from Test Pilot.</p>'
       }
     ],
-    notifications: [],
     contributors: [
       {
         display_name: 'Dave Justice',
@@ -99,7 +98,6 @@ const types = {
   text: 'yo!',
   time: Date.now(),
   nextCheck: Date.now(),
-  lastNotified: Date.now(),
   rating: 5,
   interval: 2
 };

@@ -62,7 +62,6 @@ tour_steps:
     copy: >
       You can always give us feedback or disable Activity Stream from Test
       Pilot.
-notifications: []
 contributors:
   -
     display_name: 'Kate Hudson'

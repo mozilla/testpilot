@@ -62,7 +62,6 @@ tour_steps:
   -
     image: /static/images/experiments/shared/tour-final.jpg
     copy: The final step
-notifications: []
 contributors:
   -
     display_name: 'Dave Justice'

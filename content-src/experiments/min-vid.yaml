@@ -78,7 +78,6 @@ tour_steps:
   -
     image: /static/images/experiments/shared/tour-final.jpg
     copy: You can always give us feedback or disable Min Vid from Test Pilot.
-notifications: []
 contributors:
   -
     display_name: 'Dave Justice'

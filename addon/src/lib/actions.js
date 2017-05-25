@@ -79,17 +79,6 @@ export const SET_BADGE = createAction('SET_BADGE', ['text']);
 export const MAIN_BUTTON_CLICKED = createAction('MAIN_BUTTON_CLICKED', [
   'time'
 ]);
-export const MAYBE_NOTIFY = createAction('MAYBE_NOTIFY', ['experiment']);
-export const SHOW_NOTIFICATION = createAction('SHOW_NOTIFICATION', [
-  'id',
-  'title',
-  'text',
-  'url'
-]);
-export const SCHEDULE_NOTIFIER = createAction('SCHEDULE_NOTIFIER', [
-  'nextCheck',
-  'lastNotified'
-]);
 export const SET_RATING = createAction('SET_RATING', [
   'experiment',
   'rating',

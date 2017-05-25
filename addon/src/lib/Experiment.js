@@ -23,19 +23,6 @@ function parseOptions(input: ?Object): TestPilotOptions {
   return options;
 }
 
-export class Notification {
-  id: number;
-  title: string;
-  text: string;
-  notify_after: string;
-  constructor(object: Object) {
-    this.id = object.id;
-    this.title = object.title;
-    this.text = object.text;
-    this.notify_after = object.notify_after;
-  }
-}
-
 export type FeatureFlag = 'enabled' | 'disabled';
 
 export type TestPilotOptions = {
@@ -52,7 +39,6 @@ export class Experiment {
   xpi_url: string;
   html_url: string;
   survey_url: string;
-  notifications: Array<Notification>;
   created: string;
   modified: string;
   completed: string;
@@ -74,9 +60,6 @@ export class Experiment {
     this.xpi_url = toAbsoluteUrl(this.baseUrl, object.xpi_url);
     this.html_url = toAbsoluteUrl(this.baseUrl, object.html_url);
     this.survey_url = toAbsoluteUrl(this.baseUrl, object.survey_url);
-    this.notifications = Array.isArray(object.notifications)
-      ? object.notifications.map(o => new Notification(o))
-      : [];
     this.created = object.created;
     this.modified = object.modified;
     this.completed = object.completed;

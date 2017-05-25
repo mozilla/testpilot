@@ -17,7 +17,6 @@ import Hub from './lib/middleware/Hub';
 import InstallManager from './lib/actionCreators/InstallManager';
 import Loader from './lib/actionCreators/Loader';
 import MainUI from './lib/actionCreators/MainUI';
-import NotificationManager from './lib/actionCreators/NotificationManager';
 import self from 'sdk/self';
 import { Services } from 'resource://gre/modules/Services.jsm';
 import * as sideEffects from './lib/reducers/sideEffects';
@@ -34,7 +33,6 @@ const experimentMetrics = createExperimentMetrics(store.getState().clientUUID);
 const feedbackManager = new FeedbackManager(store);
 const installManager = new InstallManager(store);
 const loader = new Loader(store);
-const notificationManager = new NotificationManager(store);
 const telemetry = new Telemetry(store);
 const ui = new MainUI(store);
 const webapp = new WebApp({
@@ -53,7 +51,6 @@ export function main({ loadReason }: { loadReason: string }) {
       hacks,
       installManager,
       loader,
-      notificationManager,
       self,
       tabs,
       telemetry,
@@ -64,7 +61,6 @@ export function main({ loadReason }: { loadReason: string }) {
   env.subscribe(store);
   sideEffects.enable(store);
   loader.loadExperiments(startEnv.name, startEnv.baseUrl);
-  notificationManager.schedule();
   feedbackManager.schedule();
   feedbackManager.maybeShare();
   if (loadReason === 'install' || loadReason === 'enable') {
