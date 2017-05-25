@@ -157,6 +157,7 @@ disableExperiment = נטרול { $title }
 disableExperimentTransition = ניטרול…
 enableExperiment = להפעיל את { $title }
 enableExperimentTransition = הפעלה…
+experimentManuallyDisabled = { $title } מנוטרל במנהל התוספות
 experimentMeasurementIntro = בנוסף ל<a>מידע</a> הנאסף על ידי כל הניסויים של Test Pilot, ישנם מספר דברים עליכם לדעת לגבי מה קורה בעת שימוש ב-{ $experimentTitle }:
 measurements = הפרטיות שלך
 experimentPrivacyNotice = מידע נוסף על איסוף הנתונים עבור{ $title }.
