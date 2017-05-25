@@ -12,6 +12,8 @@ var exposedProperties = ['window', 'navigator', 'document'];
 var dom = new JSDOM('')
 global.window = dom.window;
 global.document = dom.window.document;
+global.window.location.protocol = 'https:';
+global.window.location.host = 'testpilot.firefox.com';
 Object.keys(dom.window).forEach((property) => {
   if (typeof global[property] === 'undefined') {
     exposedProperties.push(property);
