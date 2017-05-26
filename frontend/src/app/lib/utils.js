@@ -1,6 +1,6 @@
 import querystring from 'querystring';
 
-import { experimentL10nId, l10nId, l10nIdFormat, lookup } from '../../../tasks/util';
+import { experimentL10nId, newsUpdateL10nId, l10nId, l10nIdFormat, lookup } from '../../../tasks/util';
 
 export const basketUrl = 'https://basket.mozilla.org/news/subscribe/';
 
@@ -90,3 +90,5 @@ export { experimentL10nId };
 // >> lookup({}, 'foo');
 // null
 export { lookup };
+
+export { newsUpdateL10nId };

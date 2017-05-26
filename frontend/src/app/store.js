@@ -6,21 +6,26 @@ import browserReducer from './reducers/browser';
 import experimentsReducer from './reducers/experiments';
 import newsletterFormReducer from './reducers/newsletter-form';
 import varianttestsReducer from './reducers/varianttests';
+import newsReducer from './reducers/news';
 
 import experiments from '../../build/api/experiments.json';
+import newsUpdates from '../../build/api/news_updates.json';
 
 export const reducers = combineReducers({
   addon: addonReducer,
   browser: browserReducer,
   experiments: experimentsReducer,
   newsletterForm: newsletterFormReducer,
-  varianttests: varianttestsReducer
+  varianttests: varianttestsReducer,
+  news: newsReducer
 });
-
 
 export const initialState = {
   experiments: {
     data: experiments.results
+  },
+  news: {
+    updates: newsUpdates
   },
   addon: {
     // Null means we are being rendered at build time, and can't know

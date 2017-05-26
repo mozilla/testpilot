@@ -18,6 +18,7 @@ import addonActions from '../actions/addon';
 import newsletterFormActions from '../actions/newsletter-form';
 import RestartPage from '../containers/RestartPage';
 import { isFirefox, isMinFirefoxVersion, isMobile } from '../lib/utils';
+import newsUpdatesSelector from '../selectors/news';
 import config from '../config';
 
 let clipboard = null;
@@ -132,6 +133,7 @@ function sendToGA(type, dataIn) {
 const mapStateToProps = state => ({
   addon: state.addon,
   experiments: experimentSelector(state),
+  newsUpdates: newsUpdatesSelector(state),
   slug: state.experiments.slug,
   getExperimentBySlug: slug =>
     getExperimentBySlug(state.experiments, slug),
