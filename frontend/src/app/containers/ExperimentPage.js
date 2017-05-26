@@ -2,8 +2,9 @@ import React from 'react';
 import moment from 'moment';
 
 import classnames from 'classnames';
+import parser from 'html-react-parser';
 
-import { buildSurveyURL, createMarkup, experimentL10nId, formatDate } from '../lib/utils';
+import { buildSurveyURL, experimentL10nId, formatDate } from '../lib/utils';
 
 import NotFoundPage from './NotFoundPage';
 
@@ -187,7 +188,9 @@ export class ExperimentDetail extends React.Component {
       <Warning titleL10nId="eolIntroMessage"
                titleL10nArgs={ JSON.stringify({ title: experiment.title, completedDate }) }
                title={ title }>
-        <div data-l10n-id={this.l10nId('eolWarning')} dangerouslySetInnerHTML={createMarkup(experiment.eol_warning)}></div>
+        <div data-l10n-id={this.l10nId('eolWarning')}>
+          {parser(experiment.eol_warning)}
+        </div>
         <div className="small-spacer" />
         <a href="/about" data-l10n-id="eolNoticeLink" target="_blank">Learn more</a>
       </Warning>
@@ -328,7 +331,9 @@ export class ExperimentDetail extends React.Component {
                     {!hasAddon && <div>
                       {!!introduction && <section className="introduction">
                       {!graduated &&
-                        <div data-l10n-id={this.l10nId('introduction')} dangerouslySetInnerHTML={createMarkup(introduction)}></div>
+                        <div data-l10n-id={this.l10nId('introduction')}>
+                          {parser(introduction)}
+                        </div>
                       }
                       </section>}
                     </div>}
@@ -415,7 +420,9 @@ export class ExperimentDetail extends React.Component {
                   {this.renderLocaleWarning()}
                   {hasAddon && <div>
                     {!!introduction && <section className="introduction">
-                      <div data-l10n-id={this.l10nId('introduction')} dangerouslySetInnerHTML={createMarkup(introduction)}></div>
+                      <div data-l10n-id={this.l10nId('introduction')}>
+                        {parser(introduction)}
+                      </div>
                     </section>}
                   </div>}
                   <div className="details-list">
@@ -425,7 +432,9 @@ export class ExperimentDetail extends React.Component {
                          <img width="680" src={detail.image} />
                          <p className="caption">
                            {detail.headline && <strong data-l10n-id={this.l10nId(['details', idx, 'headline'])}>{detail.headline}</strong>}
-                           {detail.copy && <span data-l10n-id={this.l10nId(['details', idx, 'copy'])} dangerouslySetInnerHTML={createMarkup(detail.copy)}></span>}
+                           {detail.copy && <span data-l10n-id={this.l10nId(['details', idx, 'copy'])}>
+                             {parser(detail.copy)}
+                           </span>}
                          </p>
                        </div>
                      </div>
@@ -456,7 +465,9 @@ export class ExperimentDetail extends React.Component {
                   </div>}
                 {graduated &&
                   <div className="details-description">
-                    <section className="graduation-report" dangerouslySetInnerHTML={createMarkup(graduation_report)}/>
+                    <section className="graduation-report">
+                      {parser(graduation_report || '')}
+                    </section>
                   </div>}
               </LayoutWrapper>
             </div>

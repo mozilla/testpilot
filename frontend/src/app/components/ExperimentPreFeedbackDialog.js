@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import parser from 'html-react-parser';
 
 export default class ExperimentPreFeedbackDialog extends React.Component {
 
@@ -24,7 +25,9 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
                 <img src={experiment.pre_feedback_image} />
                 <div className="fade" />
               </div>
-              <div className="tour-text" dangerouslySetInnerHTML={{ __html: experiment.pre_feedback_copy }} />
+              <div className="tour-text">
+                {parser(experiment.pre_feedback_copy)}
+              </div>
               <div className="tour-text">
                 <a data-l10n-id="experimentPreFeedbackLinkCopy"
                    data-l10n-args={l10nArgs} onClick={e => this.feedback(e)}
