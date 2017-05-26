@@ -164,9 +164,11 @@ function makeStaticString(
   const staticRoot = ReactDOMServer.renderToStaticMarkup(staticBodyComponent);
   let dynamicRoot;
   let bootstrapScript;
+  let dynamicPageClass = '';
   if (prepareForClient) {
     dynamicRoot = ReactDOMServer.renderToString(dynamicBodyComponent);
     bootstrapScript = '<script src="/static/app/app.js"></script>';
+    dynamicPageClass = ' class="dynamic-page"';
   } else if (dynamicBodyComponent) {
     dynamicRoot = ReactDOMServer.renderToStaticMarkup(dynamicBodyComponent);
     bootstrapScript = '';
@@ -177,7 +179,7 @@ function makeStaticString(
   <body class="blue" data-page-name="${pageName}" data-page-param="${pageParam}">
     <div class="stars"></div>
     ${staticRoot}
-    <div id="page-container">${dynamicRoot}</div>
+    <div id="page-container"${dynamicPageClass}>${dynamicRoot}</div>
     ${bootstrapScript}
   </body>
 </html>`;
