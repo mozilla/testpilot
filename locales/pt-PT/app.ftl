@@ -37,7 +37,7 @@ menuRetire = Desinstalar o Test Pilot
 landingIntroOne = Teste novas funcionalidades.
 landingIntroTwo = Dê o seu feedback.
 landingIntroThree = Ajude a construir o Firefox.
-landingLegalNotice = Ao prosseguir, você concorda com os <a>Termos de utilização</a> e o <a>Aviso de privacidade</a> do Test Pilot.
+landingLegalNotice = Ao proceder, você concorda com os <a>Termos de utilização</a> e com o <a>Aviso de privacidade</a> do Test Pilot.
 landingExperimentsTitle = Experimente as funcionalidades mais recentes
 
 
@@ -160,7 +160,7 @@ enableExperimentTransition = A ativar...
 experimentManuallyDisabled = { $title } desativado no Gestor de extras
 experimentMeasurementIntro = Além dos <a>dados</a> recolhidos por todas as experiências do Test Pilot, aqui estão as principais coisas que deve saber acerca do que está a acontecer quando utiliza o { $experimentTitle }:
 measurements = A sua privacidade
-experimentPrivacyNotice = Pode saber mais acerca dos dados recolhidos para o { $title } aqui.
+experimentPrivacyNotice = Pode saber mais acerca dos dados recolhidos para { $title } aqui.
 contributorsHeading = Trazido a si por
 contributorsExtraLearnMore = Saber mais
 changelog = Registo de alterações
@@ -235,7 +235,7 @@ incompatibleSubheader = Recomendamos <a>desativar estes extras</a> antes de ativ
 newsletterFormEmailPlaceholder
     .placeholder = O seu email aqui
 newsletterFormDisclaimer = Apenas lhe iremos enviar informação relacionada sobre o Test Pilot.
-newsletterFormPrivacyNotice = Concordo que a Mozilla faça a gestão da minha informação tal como explicado neste <a>aviso de privacidade</a>.
+newsletterFormPrivacyNotice = Concordo que a Mozilla faça a gestão da minha informação tal como explicado <a>neste aviso de privacidade</a>.
 newsletterFormPrivacyAgreementRequired = Por favor marque esta caixa se deseja proceder.
 newsletterFormSubmitButton = Registe-se agora
 newsletterFormSubmitButtonSubmitting = A submeter...
