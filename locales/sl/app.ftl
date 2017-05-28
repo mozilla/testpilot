@@ -141,7 +141,7 @@ experimentPreFeedbackLinkCopy = Pošljite povratne informacije o poskusu { $titl
 [[ experimentPromo ]]
 
 experimentPromoHeader = Pripravljeni na vzlet?
-experimentPromoSubheader = Ustvarjamo funkcije za Firefox nove generacije. Namestite dodatek Test Pilot, da jih preskusite!
+experimentPromoSubheader = Razvijamo funkcije za novo generacijo Firefoxa. Namestite dodatek Test Pilot, da jih preskusite!
 
 
 // The experiment detail page.
@@ -160,10 +160,10 @@ enableExperimentTransition = Omogočanje ...
 experimentManuallyDisabled = { $title } onemogočen v upravitelju dodatkov
 experimentMeasurementIntro = Poleg <a>podatkov</a>, ki jih zbiramo pri vseh poskusih Test Pilot, navajamo še ključne informacije, ki jih je dobro poznati, če uporabljate { $experimentTitle }:
 measurements = Vaša zasebnost
-experimentPrivacyNotice = O zbiranju podatkov lahko več izveste { $title } tukaj.
-contributorsHeading = Omogoča
+experimentPrivacyNotice = O { $title }ovem zbiranju podatkov lahko več izveste tukaj.
+contributorsHeading = Omogočajo
 contributorsExtraLearnMore = Več o tem
-changelog = dnevnik sprememb
+changelog = Dnevnik sprememb
 tour = Predstavitev
 tourLink = Začnite predstavitev
 contribute = Prispevajte
