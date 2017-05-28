@@ -181,6 +181,8 @@ highlightPrivacy = Tabaḍnit inek
 
 upgradeNoticeTitle = { $title } yesra Firefox { $min_release } neɣ ugar.
 upgradeNoticeLink = Amek ad tleqmeḍ Firefox.
+versionChangeNotice = { $experiment_title } ur iteddu ara deg lqem-agi n Firefox.
+versionChangeNoticeLink = Awi lqem amiran n Firefox.
 
 
 // Shown while uninstalling Test Pilot.
