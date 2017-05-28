@@ -178,6 +178,8 @@ highlightPrivacy = حریم‌خصوصی شما
 
 upgradeNoticeTitle = { $title } نیاز به فایرفاکس با حداقل نسخه { $min_release } یا بیشتر را دارد.
 upgradeNoticeLink = چگونه فایرفاکس را بروزرسانی کنید.
+versionChangeNotice = { $experiment_title } در این نسخه از فایرفاکس پشتیبانی نمی شود.
+versionChangeNoticeLink = نسخه کنونی فایرفاکس را دریافت کنید.
 
 
 // Shown while uninstalling Test Pilot.
