@@ -39,10 +39,6 @@ export function buildSurveyURL(ref, title, installed, clientUUID, survey_url) {
   return `${survey_url}?${queryParams}`;
 }
 
-export function createMarkup(content) {
-  return { __html: content };
-}
-
 export function isFirefox(ua) {
   return ua.indexOf('firefox') > -1 || ua.indexOf('fxios') > -1;
 }
