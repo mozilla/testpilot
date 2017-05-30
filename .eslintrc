@@ -25,6 +25,8 @@ parserOptions:
 rules:
   "import/prefer-default-export": [0]
   "react/prop-types": [0]
+  "react/no-danger": error
+  "react/no-danger-with-children": error
   arrow-body-style: [0]
   camelcase: [0]
   prefer-template: [0]
