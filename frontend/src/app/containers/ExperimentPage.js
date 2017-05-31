@@ -224,7 +224,7 @@ export class ExperimentDetail extends React.Component {
             stickyHeaderSiblingHeight } = this.state;
 
     const { title, contribute_url, bug_report_url, discourse_url, privacy_preamble,
-            introduction, measurements, privacy_notice_url, changelog_url,
+            warning, introduction, measurements, privacy_notice_url, changelog_url,
             thumbnail, subtitle, survey_url, contributors, contributors_extra, contributors_extra_url, details,
             min_release, max_release, graduation_report } = experiment;
 
@@ -329,12 +329,11 @@ export class ExperimentDetail extends React.Component {
                       { this.renderInstallationCount() }
                     </section>
                     {!hasAddon && <div>
-                      {!!introduction && <section className="introduction">
-                      {!graduated &&
-                        <div data-l10n-id={this.l10nId('introduction')}>
-                          {parser(introduction)}
-                        </div>
-                      }
+                     {!!introduction && <section className="introduction">
+                       {!!warning && <div className="warning"><strong data-l10n-id={this.l10nId('warning')}>{warning}</strong></div>}
+-                      {!graduated && <div data-l10n-id={this.l10nId('introduction')}>
+                         {parser(introduction)}
+                        </div>}
                       </section>}
                     </div>}
                     {!graduated && <div>
@@ -419,11 +418,12 @@ export class ExperimentDetail extends React.Component {
                   {this.renderIncompatibleAddons()}
                   {this.renderLocaleWarning()}
                   {hasAddon && <div>
-                    {!!introduction && <section className="introduction">
-                      <div data-l10n-id={this.l10nId('introduction')}>
-                        {parser(introduction)}
-                      </div>
-                    </section>}
+                   {!!introduction && <section className="introduction">
+                     {!!warning && <div className="warning"><strong data-l10n-id={this.l10nId('warning')}>{warning}</strong></div>}
+                     <div data-l10n-id={this.l10nId('introduction')}>
+                       {parser(introduction)}
+                     </div>
+                   </section>}
                   </div>}
                   <div className="details-list">
                     {details.map((detail, idx) => (

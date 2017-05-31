@@ -143,6 +143,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = What would it be like to move tabs from the top of the browser to the side? We wanted to find out!
+tabcenterWarning = Firefox is changing fast. Tab Center may have bugs in Firefox 55 and will be disabled completely in Firefox 56+.
 tabcenterIntroduction = <p>Take your tabs from in the way to tucked away. Tab Center moves your tabs to the side of your browser window so they're out of sight when you don't need them, and easy to expand and grab when you do.</p>
 tabcenterMeasurements0 = We collect usage data regarding how you interact with the Tab Center, such as how often you maximize or pin Tab Center.
 tabcenterMeasurements1 = We also collect information about the way you use tabs, such as the number of tabs you keep open at a time, and length of time you keep tabs open.

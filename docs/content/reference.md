@@ -117,6 +117,18 @@ description: >
 
 ![Example Twitter share with description](img/description.png)
 
+## `warning`
+
+A warning message to let users know when an experiment is going to
+have conflicts with a specific version.
+
+```yaml
+warning: >
+  Firefox is changing fast. Tab Center may have bugs in Firefox 55 and
+  will be disabled completely in Firefox 56+.
+```
+
+![Example use of warning](img/warning.png)
 
 ## `introduction`
 
