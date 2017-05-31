@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Como seria mover separadores da parte superior do navegador para o lado? Nós queríamos descobrir!
+tabcenterWarning = O Firefox está a mudar rapidamente. O Tab Center pode ter bugs no Firefox 55 e será completamente desativado no Firefox 56+.
 tabcenterIntroduction = <p>Mova os seus separadores do caminho e coloque-os confinados. O Tab Center move os seus separadores para o lado da janela do seu navegador para que estes fiquem fora de vista quando você não necessita deles, e para que se expandam facilmente quando você necessitar.</p>
 tabcenterMeasurements0 = Recolhemos dados de utilização relativamente a como você interage com o Tab Center, como a frequência com que maximiza ou afixa o Tab Center.
 tabcenterMeasurements1 = Recolhemos também informação acerca do modo como utiliza os separadores, tal como o número de separadores que mantém abertos ao mesmo tempo e a duração de tempo com que mantém os separadores abertos.
