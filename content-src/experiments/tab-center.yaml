@@ -5,10 +5,13 @@ thumbnail: /static/images/experiments/tab-center/experiments_experiment/6/9/6933
 description: >
   What would it be like to move tabs from the top of the browser to the side? We
   wanted to find out!
+warning: >
+  Firefox is changing fast. Tab Center may have
+  bugs in Firefox 55 and will be disabled completely in Firefox 56+.
 introduction: >
   <p>Take your tabs from in the way to tucked away. Tab Center moves your tabs
-    to the side of your browser window so they're out of sight when you don't
-    need them, and easy to expand and grab when you do.</p>
+  to the side of your browser window so they're out of sight when you don't
+  need them, and easy to expand and grab when you do.</p>
 image_twitter: /static/images/experiments/tab-center/social/tc-twitter.jpg
 image_facebook: /static/images/experiments/tab-center/social/tc-facebook.jpg
 changelog_url: 'https://github.com/bwinton/TabCenter/releases/latest'
@@ -32,6 +35,7 @@ addon_id: tabcentertest1@mozilla.com
 gradient_start: '#F25820'
 gradient_stop: '#D74012'
 min_release:
+max_release: 56
 pre_feedback_image:
 pre_feedback_copy:
 details:
