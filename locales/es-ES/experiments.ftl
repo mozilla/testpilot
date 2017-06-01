@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = QA de Softvision
 snoozetabsContributors7Title = QA de Softvision
 tabcenterDescription = ¿Cómo sería mover las pestañas desde la parte superior del navegador a un lateral? ¡Lo queríamos descubrir!
+tabcenterWarning = Firefox está cambiando muy rápido. Puede que el Centro de pestañas tenga errores en Firefox 55 y se desactivará completamente en Firefox 56+.
 tabcenterIntroduction = <p>Esconde tus pestañas. Tab Center mueve tus pestañas a un lado de la ventana del navegador dejándolas fuera de la vista cuando no las necesitas, pero fácilmente accesibles cuando te hagan falta.</p>
 tabcenterMeasurements0 = Recopilamos información sobre tu interacción con Tab Center, como la frecuencia con la que maximizas o fijas Tab Center.
 tabcenterMeasurements1 = También recopilamos información sobre tu forma de usar las pestañas, como el número de pestañas que tienes abiertas al mismo tiempo y durante cuánto tiempo.
