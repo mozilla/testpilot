@@ -142,6 +142,7 @@ snoozetabsContributors5Title = QA Firefox
 snoozetabsContributors6Title = QA Softvision
 snoozetabsContributors7Title = QA Softvision
 tabcenterDescription = Nous nous sommes demandé ce que ça donnerait si on déplaçait les onglets vers le côté.
+tabcenterWarning = Firefox évolue rapidement. Tab Center peut rencontrer des problèmes avec Firefox 55 et sera entièrement désactivé pour Firefox 56 et les versions ultérieures.
 tabcenterIntroduction = <p>Vos onglets seront disponibles mais peu encombrants : Tab Center les place sur le côté de votre fenêtre de navigateur pour qu’ils soient hors de vue quand vous n’en avez pas besoin, mais faciles à développer et saisir quand vous en avez envie.</p>
 tabcenterMeasurements0 = Nous collectons les données sur votre usage et la façon dont vous interagissez avec Tab Center, comme le nombre de fois où vous réduisez ou développez Tab Center.
 tabcenterMeasurements1 = Nous collectons également des informations sur votre usage des onglets, comme le nombre de ceux que vous ouvrez en même temps et combien de temps ils restent ouverts.
