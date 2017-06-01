@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Milyen lenne ha áttennénk a böngésző tetejéről a lapokat oldalra? Mi ki akartuk deríteni.
+tabcenterWarning = A Firefox gyorsan változik. A Lapközpontban hibák lehetnek a Firefox 55-ben, és a Firefox 56 után teljesen le lesz tiltva.
 tabcenterIntroduction = <p>Tegye el a lapokat az útból, és rejtse el őket. A Lapközpont a böngészőablak oldalára mozgatja a lapokat, így nem lesznek útban ha nincs rá szüksége rájuk, de könnyedén kinyithatóak és megfoghatóak.</p>
 tabcenterMeasurements0 = Adatokat gyűjtünk arról, hogyan használja a Lapközpontot, például hogy milyen gyakran maximalizálja vagy tűzi ki a Lapközpontot.
 tabcenterMeasurements1 = Arról is adatokat gyűjtünk hogyan használja a lapokat, például a nyitott lapok számát, a lapok nyitva tartásának hosszát.
