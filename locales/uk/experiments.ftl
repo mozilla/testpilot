@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = А що, якби перемістити вкладки з верхньої частини браузера вбік? Ми хотіли розібратися!
+tabcenterWarning = Firefox швидко змінюється. Tab Center може працювати з помилками у Firefox 55 і буде повністю вимкнений у Firefox версії 56 і вище.
 tabcenterIntroduction = <p>Приховайте свої вкладки. Tab Center переміщує ваші вкладки вбік вікна браузера таким чином, що вони не заважають, коли не потрібні вам, та легко розкриваються за потреби.</p>
 tabcenterMeasurements0 = Ми збираємо дані використання, зважаючи на те, як ви використовуєте Tab Center, наприклад, як часто ви розгортаєте чи прикріплюєте Tab Center.
 tabcenterMeasurements1 = Ми також збираємо інформацію про спосіб використання вкладок, наприклад, кількість та тривалість одночасно відкритих вкладок.
