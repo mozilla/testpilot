@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox kwalitne zawěsćenje
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Kak by było, hdy njebychu rajtarki horjeka, ale na boku wobhladowaka byli? My smy to spytali!
+tabcenterWarning = Firefox so spěšnje měnja. Tab Center móže w Firefox 55 zmylki  měć a znjemóžni so dospołnje we wersijach wot  Firefox 56.
 tabcenterIntroduction = <p>Přesuńće swoje rajtarki z puća. Tab Center suwa waše rajtarki na bok wokna wašeho wobhladowaka, zo njebychu widźomne byli, hdyž je njetrjebaće, ale z druheje strony dadźa so lochko pokazać, hdyž je trjebaće.</p>
 tabcenterMeasurements0 = Hromadźimy zakładne wužiwanske daty wo tym, kak z Tab Center wobchadźeće, kak husto na přikład Tab Center maksiměrujeće abo připinaće.
 tabcenterMeasurements1 = Hromadźimy tež informacije wo tym, kak rajtarki wužiwaće, na přikład ličbu rajtarkow, kotrež runočasnje wočinjene dźeržiće a traće, kak dołho rajtarki wočinjene dźeržiće.
