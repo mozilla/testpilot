@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Hur skulle det vara att kunna flytta flikar från toppen av webbläsaren till sidan? Vi ville testa det!
+tabcenterWarning = Firefox ändras snabbt. Tab Center kan innehålla fel i Firefox 55 och kommer att inaktiveras helt i Firefox 56+.
 tabcenterIntroduction = <p>Tab Center flyttar dina flikar till sidan av webbläsarfönstret så att de är utom synhåll när du inte behöver dem och kan lätt utvidgas när du behöver dem igen.</p>
 tabcenterMeasurements0 = Vi samlar användningsdata om hur du interagerar med Tab Center, till exempel hur ofta du maximerar eller nålar fast Tab Center
 tabcenterMeasurements1 = Vi samlar också information om hur du använder flikar, såsom antal flikar du håller öppna samtidigt och hur länge du håller dem öppna.
