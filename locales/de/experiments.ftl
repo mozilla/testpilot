@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Wie wäre es, wenn Tabs nicht mehr oben, sondern an der Seite des Browsers wären? Wir probieren es!
+tabcenterWarning = Firefox ändert sich schnell. Tab Center kann in Firefox 55 Fehler aufweisen und wird ab Firefox 56 komplett deaktiviert.
 tabcenterIntroduction = <p>Verschieben Sie Ihre Tabs aus dem Weg und an den Rand. Tab Center schiebt Ihre Tabs an die Seite des Browser-Fensters, sodass sie außer Sicht sind, wenn Sie sie nicht brauchen, gleichzeitig aber einfach ausgeklappt werden können, wenn Sie sie brauchen.</p>
 tabcenterMeasurements0 = Wir sammeln Nutzungsdaten darüber, wie Sie mit dem Tab Center interagieren, wie oft Sie zum Beispiel Tab Center maximieren oder anheften.
 tabcenterMeasurements1 = Wir sammeln auch Informationen darüber, wie Sie Tabs nutzen, wie viele Tabs Sie gleichzeitig offen haben und wie lange Sie sie geöffnet lassen.
