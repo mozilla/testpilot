@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox 质量保证
 snoozetabsContributors6Title = Softvision 质量保证
 snoozetabsContributors7Title = Softvision 质量保证
 tabcenterDescription = 将标签栏从顶部放到侧边是何种体验？我们与你都想知道！
+tabcenterWarning = Firefox 正在快速变化。Tab Center 可能在 Firefox 55 中存在问题，并将在 Firefox 56+ 中完全禁用。
 tabcenterIntroduction = <p>把您的标签页卷起来。Tab Center 使标签页转移到浏览器窗口的侧边，让它们在您不需要的时候不可见，而在您需要时，又可以轻松的展开和拿到它们。</p>
 tabcenterMeasurements0 = 我们会收集您与 Tab Center 互动的使用数据，诸如您最大化或固定 Tab Center 的频率。
 tabcenterMeasurements1 = 我们还收集有关您如何使用标签页的信息，诸如您同时打开的标签页的数量，以及保留标签页多久时间。
