@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = 如果把分頁列從瀏覽器頂端移到旁邊去會怎樣呢？我們想知道！
+tabcenterWarning = Firefox 發展快速。 Tab Center 在 Firefox 55 版中可能會造成 bug，將會在 56 版起完全停用。
 tabcenterIntroduction = <p>Tab Center 可將您的分頁移到瀏覽器的邊邊，暫時藏起來，這樣不需要的時候就不會占用您的畫面空間，需要時也可簡單地展開使用。</p>
 tabcenterMeasurements0 = 為了解使用情況，我們會收集您多常最大化或釘選 Tab Center 等使用資訊。
 tabcenterMeasurements1 = 我們也會收集您如何使用分頁，諸如您保持開啟的分頁數量、分頁開啟多久等資訊。
