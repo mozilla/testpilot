@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Aké by to bolo, keby sme presunuli karty z hornej časti prehliadača na jeho bok? To sme sa snažili zistiť!
+tabcenterWarning = Firefox sa rýchlo mení. Tab Center môže vo Firefoxe 55 obsahovať chyby a od verzie 56 bude zakázaný.
 tabcenterIntroduction = <p>Zmenšite si svoje karty tak, aby vám nezavadzali. Tab Center presunie vaše karty na bok okna prehliadača, takže vám nebudú zavadzať, a v prípade potreby ich budete mať poruke.</p>
 tabcenterMeasurements0 = Zbierame údaje o vašej interakcii s Tab Center, napríklad ako často Tab Center maximalizujete alebo zmenšíte.
 tabcenterMeasurements1 = Zbierame údaje o tom, akým spôsobom používate karty - koľko kariet máte otvorených a ako dlho.
