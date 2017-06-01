@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Como seria mover as abas do topo do navegador para o lado? Nós queremos descobrir!
+tabcenterWarning = O Firefox está a mudar rapidamente. O Tab Center pode ter bugs no Firefox 55 e será completamente desativado no Firefox 56+.
 tabcenterIntroduction = <p>Tire suas abas do caminho. O Tab Center muda suas abas para a lateral do seu navegador, assim elas ficam escondidas quando você não precisa delas, e torna fácil para expandir e usar quando precisar.</p>
 tabcenterMeasurements0 = Coletamos dados sobre o uso de como você interage com o Tab Center, como a frequência que você maximiza ou fixa o Tab Center.
 tabcenterMeasurements1 = Também coletamos informações sobre a forma como você usa as abas, como o número de abas que mantém aberta por vez, e o tempo que você mantém as abas abertas.
