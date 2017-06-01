@@ -22,7 +22,6 @@ const DEFAULT_STATE = {
   env: null,
   baseUrl: null,
   clientUUID: 'XXXX',
-  notifications: { lastNotified: 1471935600000, nextCheck: 1471935600000 },
   ui: {},
   ratings: {},
   experiments: null,
@@ -153,19 +152,6 @@ describe('reducers', function() {
     const action = {
       type: actions.MAIN_BUTTON_CLICKED.type,
       payload: { time: 1 }
-    };
-    testAction(action, initialState, expectedState);
-  });
-
-  it('handles SCHEDULE_NOTIFIER', function() {
-    const now = Date.now();
-    const initialState = DEFAULT_STATE;
-    const expectedState = Object.assign({}, DEFAULT_STATE, {
-      notifications: { lastNotified: now, nextCheck: now + 1 }
-    });
-    const action = {
-      type: actions.SCHEDULE_NOTIFIER.type,
-      payload: { lastNotified: now, nextCheck: now + 1 }
     };
     testAction(action, initialState, expectedState);
   });
@@ -362,20 +348,6 @@ describe('reducers', function() {
   it('handles CHANGE_ENV', function() {
     const initialState = DEFAULT_STATE;
     const action = { type: actions.CHANGE_ENV.type, payload: {} };
-    // Not implemented, no change expected
-    testAction(action, initialState, initialState);
-  });
-
-  it('handles MAYBE_NOTIFY', function() {
-    const initialState = DEFAULT_STATE;
-    const action = { type: actions.MAYBE_NOTIFY.type, payload: {} };
-    // Not implemented, no change expected
-    testAction(action, initialState, initialState);
-  });
-
-  it('handles SHOW_NOTIFICATION', function() {
-    const initialState = DEFAULT_STATE;
-    const action = { type: actions.SHOW_NOTIFICATION.type, payload: {} };
     // Not implemented, no change expected
     testAction(action, initialState, initialState);
   });

@@ -159,14 +159,6 @@ describe('side effects', function() {
       state({ ui, telemetry, tabs, getState });
     });
 
-    it('handles SCHEDULE_NOTIFIER', function(done) {
-      const action = { type: actions.SCHEDULE_NOTIFIER.type };
-      const notificationManager = { schedule: done };
-      const state = reducer(null, action);
-      assert.equal(typeof state, 'function');
-      state({ notificationManager });
-    });
-
     it('handles SET_RATING', function(done) {
       const action = {
         type: actions.SET_RATING.type,
@@ -242,18 +234,6 @@ describe('side effects', function() {
       const state = reducer(null, action);
       assert.equal(typeof state, 'function');
       state({ installManager });
-    });
-
-    it('handles MAYBE_NOTIFY', function() {
-      const action = {
-        type: actions.MAYBE_NOTIFY.type,
-        payload: { experiment: {} }
-      };
-      const notificationManager = {
-        maybeNotify: x => assert.equal(x, action.payload.experiment)
-      };
-      const state = reducer(null, action);
-      state({ notificationManager });
     });
 
     it('handles INSTALL_FAILED', function() {
@@ -352,17 +332,6 @@ describe('side effects', function() {
       const a = dispatch.firstCall.args[0];
       assert.equal(a.type, actions.LOAD_EXPERIMENTS.type);
       assert.equal(a.payload.baseUrl, e.baseUrl);
-    });
-
-    it('handles SHOW_NOTIFICATION', function() {
-      const action = { type: actions.SHOW_NOTIFICATION.type, payload: {} };
-      const notificationManager = { showNotification: sinon.spy() };
-      const state = reducer(null, action);
-      state({ notificationManager });
-      assert.ok(notificationManager.showNotification.calledOnce);
-      assert.ok(
-        notificationManager.showNotification.calledWith(action.payload)
-      );
     });
 
     it('handles ADDONS_CHANGED', function() {

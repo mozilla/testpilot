@@ -5,7 +5,6 @@ import sinon from 'sinon';
 import {
   EXPERIMENTS_LOADED,
   EXPERIMENTS_LOAD_ERROR,
-  MAYBE_NOTIFY,
   SET_BADGE
 } from '../src/lib/actions';
 
@@ -100,10 +99,9 @@ describe('Loader', function() {
       const l = new Loader(s);
       l.loadExperiments('test', 'foo').then(
         () => {
-          assert.ok(s.dispatch.calledTwice);
-          assert.equal(s.dispatch.firstCall.args[0].type, MAYBE_NOTIFY.type);
+          assert.ok(s.dispatch.calledOnce);
           assert.equal(
-            s.dispatch.secondCall.args[0].type,
+            s.dispatch.firstCall.args[0].type,
             EXPERIMENTS_LOADED.type
           );
           done();
@@ -136,11 +134,10 @@ describe('Loader', function() {
       const l = new Loader(s);
       l.loadExperiments('test', 'foo').then(
         () => {
-          assert.ok(s.dispatch.calledThrice);
+          assert.ok(s.dispatch.calledTwice);
           assert.equal(s.dispatch.firstCall.args[0].type, SET_BADGE.type);
-          assert.equal(s.dispatch.secondCall.args[0].type, MAYBE_NOTIFY.type);
           assert.equal(
-            s.dispatch.thirdCall.args[0].type,
+            s.dispatch.secondCall.args[0].type,
             EXPERIMENTS_LOADED.type
           );
           done();
@@ -159,10 +156,9 @@ describe('Loader', function() {
       l.loadExperiments('test', 'foo').then(
         () => {
           Date.now.restore();
-          assert.ok(s.dispatch.calledTwice);
-          assert.equal(s.dispatch.firstCall.args[0].type, MAYBE_NOTIFY.type);
+          assert.ok(s.dispatch.calledOnce);
           assert.equal(
-            s.dispatch.secondCall.args[0].type,
+            s.dispatch.firstCall.args[0].type,
             EXPERIMENTS_LOADED.type
           );
           done();

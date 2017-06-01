@@ -320,18 +320,6 @@ declare module 'sdk/preferences/event-target' {
   }
 }
 
-declare module 'sdk/notifications' {
-  declare module.exports: {
-    notify(options: {
-      title?: string,
-      text?: string,
-      iconURL?: string,
-      onClick?: Function,
-      data?: string
-    }): void
-  }
-}
-
 declare module 'sdk/page-mod' {
   declare class PageMod mixins AddonEventTarget {
     constructor(options: {

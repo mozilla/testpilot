@@ -14,10 +14,6 @@ declare module 'testpilot/types' {
     clientUUID: string,
     env: string,
     experiments: Experiments,
-    notifications: {
-      lastNotified: number,
-      nextCheck: number
-    },
     ratings: {
       lastRated?: number,
       [id: string]: {

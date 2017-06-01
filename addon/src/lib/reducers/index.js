@@ -10,7 +10,6 @@ import { reducer as baseUrl } from './baseUrl';
 import { reducer as clientUUID } from './clientUUID';
 import { reducer as env } from './env';
 import { reducer as experiments } from './experiments';
-import { reducer as notifications } from './notifications';
 import { reducer as ratings } from './ratings';
 import { reducer as sideEffects } from './sideEffects';
 import { reducer as ui } from './ui';
@@ -21,7 +20,6 @@ export default combineReducers({
   clientUUID,
   env,
   experiments,
-  notifications,
   ratings,
   sideEffects,
   ui

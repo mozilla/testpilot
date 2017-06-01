@@ -106,7 +106,6 @@ export default class Loader {
           if (experiment.active && !experiment.manuallyDisabled) {
             WebExtensionChannels.add(experiment.addon_id);
           }
-          dispatch(actions.MAYBE_NOTIFY({ experiment }));
         }
         return (xs: Experiments);
       })

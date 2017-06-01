@@ -68,7 +68,6 @@ tour_steps:
   -
     image: /static/images/experiments/shared/tour-final.jpg
     copy: You can always disable Tracking Protection from Test Pilot.
-notifications: []
 contributors:
   -
     display_name: 'Luke Crouch'

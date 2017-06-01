@@ -62,7 +62,6 @@ tour_steps:
   -
     image: /static/images/experiments/pulse/tour/tour4.jpg
     copy: You can always give us feedback or disable Pulse from Test Pilot.
-notifications: []
 contributors:
   -
     display_name: 'Chuck Harmston'

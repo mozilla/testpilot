@@ -69,7 +69,6 @@ tour_steps:
   -
     image: /static/images/experiments/shared/tour-final.jpg
     copy: You can always give us feedback or disable Tab Center from Test Pilot.
-notifications: []
 contributors:
   -
     display_name: 'Blake W'
