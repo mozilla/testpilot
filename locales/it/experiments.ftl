@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Ti sei mai chiesto come sarebbe la tua navigazione se il browser visualizzasse le schede sul lato? Abbiamo deciso di scoprirlo.
+tabcenterWarning = Firefox sta cambiando velocemente. Potrebbero verificarsi dei problemi utilizzando Tab Center in Firefox 55 e l’esperimento sarà disattivato completamente a partire da Firefox 56.
 tabcenterIntroduction = <p>Togli di mezzo le tue schede e recupera spazio. Tab Center sposta le tue schede sul lato della finestra del browser, in modo che non siano d’intralcio mentre navighi e allo stesso tempo siano sempre facili da raggiungere quando servono.</p>
 tabcenterMeasurements0 = Raccogliamo dati relativi all’interazione con Tab Center, come ad esempio la frequenza con cui ingrandisci o blocchi la barra.
 tabcenterMeasurements1 = Raccogliamo dati sull’utilizzo delle schede, come ad esempio il numero di schede aperte contemporaneamente e per quanto tempo rimangono aperte.
