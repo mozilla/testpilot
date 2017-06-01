@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Инженер по обеспечению кач
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Что будет если переместить вкладки из верхней части браузера в сторону? Мы бы хотели разобраться!
+tabcenterWarning = Firefox быстро меняется. Tab Center может работать с ошибками в Firefox 55 и будет полностью отключён в Firefox 56+.
 tabcenterIntroduction = <p>Скройте свои вкладки. Tab Center перемещает ваши вкладки вбок окна браузера, так что они не будут мешаться глазам, когда не нужны, и легко раскрываться, когда понадобятся.</p>
 tabcenterMeasurements0 = Мы собираем данные о том, как вы взаимодействуете с Tab Center, например, о том, как часто вы сворачиваете и разворачиваете Tab Center.
 tabcenterMeasurements1 = Также мы собираем информацию о том, как вы используете вкладки, например, о том какое количество вкладок вы открываете одновременно и как долго вы оставляете их открытыми.
