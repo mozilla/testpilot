@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Hoe zou het zijn om tabbladen van de bovenkant naar de zijkant van de browser te verplaatsen? We wilden het weten!
+tabcenterWarning = Firefox verandert snel. Tab Center kan in Firefox 55 bugs bevatten en zal in Firefox 56+ volledig worden uitgeschakeld.
 tabcenterIntroduction = <p>Plaats uw tabbladen van in de weg naar weggestopt. Tab Center verplaatst uw tabbladen naar de zijkant van uw browservenster, zodat ze uit het zicht zijn als u ze niet nodig hebt, en makkelijk uit te vouwen en beschikbaar zijn als dat wel zo is.</p>
 tabcenterMeasurements0 = We verzamelen gebruiksgegevens met betrekking tot uw wisselwerking met het Tab Center, zoals hoe vaak u Tab Center maximaliseert of vastzet.
 tabcenterMeasurements1 = Ook verzamelen we informatie over de manier waarop u tabbladen gebruikt, zoals het aantal tabbladen dat u tegelijk geopend houdt, en de tijdsduur van het open houden van tabbladen.
