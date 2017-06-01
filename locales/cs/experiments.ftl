@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Jaké by to bylo, přesunout si panely z horní části prohlížeče na stranu? Chceme to zjistit!
+tabcenterWarning = Firefox se rychle mění. Tab Center může ve verzi Firefoxu 55 obsahovat chyby a od verze 56 a vyšší bude zakázán.
 tabcenterIntroduction = <p>Zastrčte své panely tak, aby vám nepřekážely. Tab Center přesune panely na stranu okna, takže vám nebudou překážet, když je nepotřebujete, a zároveň budou po ruce, pokud ano.</p>
 tabcenterMeasurements0 = Sbíráme základní údaje o používání Tab Center, např. jak často nastavíte ponechat postranní lištu zavřenou nebo otevřenou.
 tabcenterMeasurements1 = Sbíráme také údaje, jakým způsobem panely používáte, jako je počet panelů, které máte najednou otevřené, nebo za jak dlouho je zase zavřete.
