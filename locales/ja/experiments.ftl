@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = タブをブラウザーの上から横に移動したらどうなるでしょう？ 私達はそれを確かめてみたいと思いました。
+tabcenterWarning = Firefox は急激に変化しています。Tab Center は Firefox 55 上ではバグを含む可能性があり、Firefox 56 以降では完全に無効化されます。
 tabcenterIntroduction = <p>タブを目障りになるものから隠してしまうものへ。Tab Center はあなたのタブをブラウザーウィンドウの横へ移動して、必要のない場合は見えなくし、必要になったら簡単に拡大し選択できるようにします。</p>
 tabcenterMeasurements0 = 私達は、あなたがどのくらいの頻度で Tab Center を最大化したりピン留めしたりしているかなど、あなたと Tab Center のインタラクションに関する使用状況データを収集します。
 tabcenterMeasurements1 = また、同時に開いたままにしているタブの数や、タブを開いたままにしている時間など、あなたのタブの使い方に関する情報も収集します。
