@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox kwalitne zawěsćenje
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Kak by było, gaž njeby rejtarki górjejce, ale na boku wobglědowaka byli? My smy to wopytali!
+tabcenterWarning = Firefox se malsnje změnja. Tab Center móžo w Firefox 55 zmólki  měś a znjemóžnijo se dopołnje we wersijach wót  Firefox 56.
 tabcenterIntroduction = <p>Pśesuńśo swóje rejtarki z drogi. Tab Center suwa waše rejtarki na bok wokna wašogo wobglědowaka, až njeby widobne byli, gaž je njetrjebaśo, ale na drugem boce daju se lažko pokazaś, gaž je trjebaśo.</p>
 tabcenterMeasurements0 = Gromaźimy zakładne wužywańske daty wó tom, kak z Tab Center wobchadaśo, kak cesto na pśikład Tab Center maksiměrujośo abo pśipinaśo.
 tabcenterMeasurements1 = Gromaźimy teke informacije wó tom, kak rejtarki wužywaśo, na pśikład licbu rejtarkow, kótarež źaržiśo rownocasnje wócynjone a cas, kak dłujko źaržiśo rejtarki wócynjone.
