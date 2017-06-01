@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Kako bi bilo, če bi lahko zavihke z vrha zaslona postavili ob strani? Želeli smo izvedeti!
+tabcenterWarning = Firefox se hitro spreminja. Tab Center ima lahko v Firefoxu 55 težave, v Firefoxu 56+ pa bo popolnoma onemogočen.
 tabcenterIntroduction = <p>Spravite si zavihke, ki so vam v napoto, s poti. Tab Center vaše zavihke premakne na stran okna brskalnika, tako da so priročno pospravljeni, ko jih ne potrebujete, in še vedno pri roki, ko jih.</p>
 tabcenterMeasurements0 = Zbiramo podatke o vaši uporabi dodatka Tab Center, npr. kako pogosto ga povečate in pripnete.
 tabcenterMeasurements1 = Zbiramo tudi informacije o načinu uporabe zavihkov, na primer koliko zavihkov imate naenkrat odprtih in kako dolgo.
