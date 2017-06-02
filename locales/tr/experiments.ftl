@@ -90,6 +90,7 @@ trackingprotectionContributors0Title = Web Geliştirici
 trackingprotectionContributors1Title = Kıdemli UX Tasarımcısı
 trackingprotectionContributors2Title = Kıdemli Kalite Kontrol Mühendisi
 universalsearchDescription = Şahane Çubuk'a bir şeyler yazarken web'in en iyi sitelerinden öneriler alın.
+universalsearchToursteps0Copy = Artık tek bir yerde arama yapabilir ve gezinebilirsin.
 universalsearchContributors0Title = Ürün Müdürü
 universalsearchContributors1Title = Kıdemli UX Tasarımcısı
 universalsearchContributors2Title = Kadrolu Mühendis
