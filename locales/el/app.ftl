@@ -37,6 +37,7 @@ menuRetire = Απεγκατάσταση του Test Pilot
 landingIntroOne = Δοκιμάστε νέες λειτουργίες.
 landingIntroTwo = Υποβάλετε τα σχόλιά σας.
 landingIntroThree = Βοηθήστε στην ανάπτυξη του Firefox.
+landingLegalNotice = Συνεχίζοντας, συμφωνείτε με τους <a>όρους χρήσης</a> και τη <a>σημείωση απορρήτου</a> του Test Pilot.
 landingExperimentsTitle = Δοκιμάστε τις πιο πρόσφατες, πειραματικές λειτουργίες
 
 
@@ -58,6 +59,7 @@ oneClickInstallMajorCta = Ενεργοποίηση του { $title }
 // Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
+landingRequiresDesktop = Το Test Pilot απαιτεί το Firefox για υπολογιστές σε Windows, Mac ή Linux
 landingDownloadFirefoxDesc = (Το Test Pilot είναι διαθέσιμο για το Firefox σε Windows, OS X και Linux)
 landingUpgradeDesc = Το Test Pilot απαιτεί το Firefox 49 ή νεότερο.
 landingDownloadFirefoxTitle = Firefox
@@ -77,25 +79,35 @@ landingCardThree = Πείτε μας την άποψή σας
 // Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
+onboardingMessage = Τοποθετήσαμε ένα κουμπί στη γραμμή εργαλείων σας, ώστε να μπορείτε πάντα να βρίσκετε το Test Pilot.
 
 
 // Error message pages.
 [[ error ]]
 
 errorHeading = Ουπς!
+errorMessage = Φαίνεται πως κάτι χαλάσαμε. <br> Δοκιμάστε ξανά αργότερα.
 
 
 // A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
+emailOptInDialogTitle = Καλώς ορίσατε στο Test Pilot!
+emailOptInMessage = Μάθετε για νέα πειράματα και δείτε τα αποτελέσματα των δοκιμών για πειράματα που έχετε δοκιμάσει.
 emailOptInConfirmationTitle = Το e-mail απεστάλη
 emailOptInSuccessMessage2 = Σάς ευχαριστούμε!
+emailOptInConfirmationClose = Μετάβαση στα πειράματα...
 
 
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
 experimentListEnabledTab = Ενεργό
+experimentListJustLaunchedTab = Μόλις ξεκίνησε
+experimentListJustUpdatedTab = Μόλις ενημερώθηκε
+experimentListEndingTomorrow = Λήγει αύριο
+experimentListEndingSoon = Λήγει σύντομα
+experimentsListCondensedHeader = Επιλέξτε τα πειράματά σας!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -149,6 +161,9 @@ highlightPrivacy = Το απόρρητό σας
 // Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
+upgradeNoticeTitle = Το { $title } απαιτεί το Firefox { $min_release } ή νεότερα.
+upgradeNoticeLink = Πώς να ενημερώσετε το Firefox.
+versionChangeNoticeLink = Λάβετε την τρέχουσα έκδοση του Firefox.
 
 
 // Shown while uninstalling Test Pilot.
@@ -212,6 +227,7 @@ localeWarningSubtitle = Μπορείτε ακόμη να το ενεργοποι
 // Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
+noScriptLink = Μάθετε γιατί
 
 
 // Text of a button to toggle visibility of a list of past experiments.

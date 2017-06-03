@@ -12,6 +12,7 @@ containersContributors9Title = Firefox UX
 minvidContributors0Title = Μηχανικός
 pulseContributors1Title = Firefox UX
 pulseContributors3Title = Firefox QA
+snoozetabsToursteps2Copy = Πείτε αντίο στην καρτέλα σας μέχρι...
 snoozetabsContributors1Title = Firefox UX
 snoozetabsContributors2Title = Firefox UX
 snoozetabsContributors3Title = Firefox UX
