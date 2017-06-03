@@ -121,6 +121,7 @@ experimentCardLearnMore = Μάθετε περισσότερα
 // A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
+feedbackSubmitButton = Συμμετοχή σε γρήγορη έρευνα
 feedbackUninstallTitle = Σάς ευχαριστούμε!
 
 
@@ -128,6 +129,7 @@ feedbackUninstallTitle = Σάς ευχαριστούμε!
 [[ experimentPreFeedback ]]
 
 experimentPreFeedbackTitle = Σχόλια για το { $title }
+experimentPreFeedbackLinkCopy = Στείλετε σχόλια σχετικά με το πείραμα { $title }
 
 
 // A splash shown on top of the experiment page when Test Pilot is not installed.
@@ -140,6 +142,7 @@ experimentPromoHeader = Έτοιμοι για απογείωση;
 [[ experimentPage ]]
 
 isEnabledStatusMessage = Το { $title } ενεργοποιήθηκε.
+installErrorMessage = Ωχ ωχ. Αδυναμία ενεργοποίησης του { $title }. Δοκιμάστε ξανά αργότερα.
 otherExperiments = Δοκιμάστε κι αυτά τα πειράματα
 disableHeader = Απενεργοποίηση πειράματος;
 disableExperiment = Απενεργοποίηση του { $title }
@@ -148,13 +151,18 @@ enableExperiment = Ενεργοποίηση του { $title }
 enableExperimentTransition = Ενεργοποίηση...
 experimentManuallyDisabled = Το { $title } απενεργοποιήθηκε στη Διαχείριση Προσθέτων
 measurements = Το απόρρητό σας
+experimentPrivacyNotice = Μπορείτε να μάθετε περισσότερα σχετικά τη συλλογή δεδομένων για το { $title } εδώ.
+contributorsHeading = Παρέχεται σε εσάς από
 contributorsExtraLearnMore = Μάθετε περισσότερα
 changelog = Αρχείο καταγραφής αλλαγών
 tour = Ξενάγηση
 tourLink = Εκκίνηση ξενάγησης
 contribute = Συνεισφορά
 bugReports = Αναφορές σφαλμάτων
+tourOnboardingTitle = Το { $title } ενεργοποιήθηκε!
 tourDoneButton = Τέλος
+userCountContainer = Υπάρχουν <span>{ $installation_count }</span> άτομα που δοκιμάζουν το { $title } αυτή τη στιγμή!
+userCountContainerAlt = Μόλις ξεκίνησε!
 highlightPrivacy = Το απόρρητό σας
 
 
@@ -163,6 +171,7 @@ highlightPrivacy = Το απόρρητό σας
 
 upgradeNoticeTitle = Το { $title } απαιτεί το Firefox { $min_release } ή νεότερα.
 upgradeNoticeLink = Πώς να ενημερώσετε το Firefox.
+versionChangeNotice = Το { $experiment_title } δεν υποστηρίζεται σε αυτή την έκδοση του Firefox.
 versionChangeNoticeLink = Λάβετε την τρέχουσα έκδοση του Firefox.
 
 
@@ -170,6 +179,8 @@ versionChangeNoticeLink = Λάβετε την τρέχουσα έκδοση το
 [[ uninstall ]]
 
 retireDialogTitle = Απεγκατάσταση του Test Pilot;
+retireMessage = Όπως επιθυμείτε. Αυτό θα απενεργοποιήσει κάθε ενεργή δοκιμή, θα απεγκαταστήσει το πρόσθετο και θα αφαιρέσει τις πληροφορίες του λογαριασμού σας από τους διακομιστές μας.
+retireEmailMessage = Για να απενεργοποιήσετε τις ενημερώσεις μέσω e-mail, κάντε απλά κλικ στο σύνδεσμο <em>κατάργησης εγγραφής</em> σε οποιοδήποτε e-mail από το Test Pilot.
 retireSubmitButton = Συνέχεια
 pageTitleRetirePage = Firefox Test Pilot - Απεγκατάσταση του Test Pilot
 retirePageProgressMessage = Τερματισμός λειτουργίας...
@@ -187,9 +198,12 @@ restartIntroThree = Επιλέξτε τα πειράματά σας
 // Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
+sharePrimary = Σάς αρέσει το Test Pilot; Βοηθήστε μας να βρούμε μερικά νέα μέλη.
 shareSecondary = ή απλά αντιγράψτε και επικολλήστε αυτό το σύνδεσμο...
 shareEmail = E-mail
 shareCopy = Αντιγραφή
+// Shown on pages of retired or retiring experiments.
+eolIntroMessage = Το { $title } λήγει στις { $completedDate }
 eolNoticeLink = Μάθετε περισσότερα
 
 
@@ -203,6 +217,7 @@ eolNoticeLink = Μάθετε περισσότερα
 
 newsletterFormEmailPlaceholder
     .placeholder = Το e-mail σας εδώ
+newsletterFormPrivacyAgreementRequired = Παρακαλώ επιλέξτε αυτό το κουτί αν θέλετε να συνεχίσετε.
 newsletterFormSubmitButton = Εγγραφή τώρα
 newsletterFormSubmitButtonSubmitting = Υποβολή...
 
@@ -210,12 +225,14 @@ newsletterFormSubmitButtonSubmitting = Υποβολή...
 // A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = Προέκυψε σφάλμα κατά την υποβολή της διεύθυνσης e-mail σας. Δοκιμή ξανά;
 newsletterFooterSuccessHeader = Ευχαριστούμε!
 
 
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Αυτό το πείραμα δεν υποστηρίζεται στη γλώσσα σας: ({ $locale_code }).
 localeWarningSubtitle = Μπορείτε ακόμη να το ενεργοποιήσετε αν θέλετε.
 
 
@@ -227,9 +244,13 @@ localeWarningSubtitle = Μπορείτε ακόμη να το ενεργοποι
 // Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
+noScriptHeading = Ωχ ωχ...
+noScriptMessage = Το Test Pilot απαιτεί το JavaScript.<br>Λυπούμαστε γι' αυτό.
 noScriptLink = Μάθετε γιατί
 
 
 // Text of a button to toggle visibility of a list of past experiments.
 [[ pastExperiments ]]
 
+viewPastExperiments = Προβολή παλαιών πειραμάτων
+hidePastExperiments = Απόκρυψη παλαιών πειραμάτων
