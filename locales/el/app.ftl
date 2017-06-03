@@ -136,6 +136,7 @@ experimentPreFeedbackLinkCopy = Στείλετε σχόλια σχετικά μ�
 [[ experimentPromo ]]
 
 experimentPromoHeader = Έτοιμοι για απογείωση;
+experimentPromoSubheader = Αναπτύσσουμε καινοτόμες λειτουργίες για το Firefox. Εγκαταστήστε το Test Pilot για τις δοκιμάσετε!
 
 
 // The experiment detail page.
@@ -143,7 +144,9 @@ experimentPromoHeader = Έτοιμοι για απογείωση;
 
 isEnabledStatusMessage = Το { $title } ενεργοποιήθηκε.
 installErrorMessage = Ωχ ωχ. Αδυναμία ενεργοποίησης του { $title }. Δοκιμάστε ξανά αργότερα.
+participantCount = <span>{ $installation_count }</span> συμμετέχοντες
 otherExperiments = Δοκιμάστε κι αυτά τα πειράματα
+giveFeedback = Υποβολή σχολίων
 disableHeader = Απενεργοποίηση πειράματος;
 disableExperiment = Απενεργοποίηση του { $title }
 disableExperimentTransition = Απενεργοποίηση...
@@ -159,6 +162,7 @@ tour = Ξενάγηση
 tourLink = Εκκίνηση ξενάγησης
 contribute = Συνεισφορά
 bugReports = Αναφορές σφαλμάτων
+discussExperiment = Συζήτηση για το { $title }
 tourOnboardingTitle = Το { $title } ενεργοποιήθηκε!
 tourDoneButton = Τέλος
 userCountContainer = Υπάρχουν <span>{ $installation_count }</span> άτομα που δοκιμάζουν το { $title } αυτή τη στιγμή!
@@ -185,6 +189,8 @@ retireSubmitButton = Συνέχεια
 pageTitleRetirePage = Firefox Test Pilot - Απεγκατάσταση του Test Pilot
 retirePageProgressMessage = Τερματισμός λειτουργίας...
 retirePageHeadline = Ευχαριστούμε για την "πτήση"!
+retirePageMessage = Ελπίζουμε να διασκεδάσατε με τα πειράματα μαζί μας. <br> Μπορείτε να επιστρέψετε ανά πάσα στιγμή.
+retirePageSurveyButton = Συμμετοχή σε μια γρήγορη έρευνα
 
 
 // Shown to users after installing Test Pilot if a restart is required.
@@ -205,11 +211,15 @@ shareCopy = Αντιγραφή
 // Shown on pages of retired or retiring experiments.
 eolIntroMessage = Το { $title } λήγει στις { $completedDate }
 eolNoticeLink = Μάθετε περισσότερα
+eolDisableMessage = Το πείραμα { $title } έχει λήξει. Μόλις το απεγκαταστήσετε, δεν θα μπορείτε να το εγκαταστήσετε ξανά μέσω του Test Pilot.
+completedDateLabel = Ημερομηνία λήξης πειράματος: <b>{ $completedDate }</b>
 
 
 // A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 [[ incompatible ]]
 
+incompatibleHeader = Αυτό το πείραμα ενδέχεται να μην είναι συμβατό με τα πρόσθετα που έχετε εγκαταστήσει.
+incompatibleSubheader = Προτείνουμε να <a>απενεργοποιήσετε αυτά τα πρόσθετα</a> πριν ενεργοποιήσετε αυτό το πείραμα:
 
 
 // A form prompting the user to sign up for the Test Pilot Newsletter.
@@ -239,6 +249,8 @@ localeWarningSubtitle = Μπορείτε ακόμη να το ενεργοποι
 // An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledHeader = Ας απογειωθούμε!
+experimentsListNoneInstalledCTA = Δεν ενδιαφέρεστε; <a>Πείτε μας γιατί</a>.
 
 
 // Shown to users who do not have JavaScript enabled.
