@@ -227,6 +227,8 @@ incompatibleSubheader = Προτείνουμε να <a>απενεργοποιή�
 
 newsletterFormEmailPlaceholder
     .placeholder = Το e-mail σας εδώ
+newsletterFormDisclaimer = Θα σάς στέλνουμε μόνο πληροφορίες που σχετίζονται με το Test Pilot.
+newsletterFormPrivacyNotice = Δεν με πειράζει να διαχειρίζεται η Mozilla τις πληροφορίες μου, όπως εξηγείται σε <a>αυτή τη σημείωση απορρήτου</a>.
 newsletterFormPrivacyAgreementRequired = Παρακαλώ επιλέξτε αυτό το κουτί αν θέλετε να συνεχίσετε.
 newsletterFormSubmitButton = Εγγραφή τώρα
 newsletterFormSubmitButtonSubmitting = Υποβολή...
