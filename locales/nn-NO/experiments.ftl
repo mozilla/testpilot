@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Korleis ville det vere om du kunne flytte faner frå øvst i nettlesaren og ut til sida? Vil du teste det!
+tabcenterWarning = Firefox endrar seg raskt. Tab Center kan innehalde feil i Firefox 55 og vert inaktivert heilt i Firefox 56+.
 tabcenterIntroduction = <p>Tab Center flyttar fanene dine til sida av nettlesarvindauget slik at dei er utom syne når du ikkje treng dei, og kan lett utvidast når du treng dei igjen.</p>
 tabcenterMeasurements0 = Vi samlar inn bruksdata om korleis du interagerer med Tab Center, til dømes kor ofte du maksimerer eller festar Tab Center.
 tabcenterMeasurements1 = Vi samlar også informasjon om korleis du brukar faner, slik som tal på faner du har opne samstundes, og kor lenge dei er opne.
