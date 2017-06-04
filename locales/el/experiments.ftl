@@ -12,6 +12,7 @@ containersContributors9Title = Firefox UX
 minvidToursteps3Copy = Μπορείτε πάντα να στείλετε σχόλια ή να απενεργοποιήσετε το Min Vid από το Test Pilot.
 minvidContributors0Title = Μηχανικός
 pageshotToursteps2Copy = Κοινοποίηση, αποθήκευση ή διαγραφή από το πρόγραμμα περιήγησης.
+pageshotToursteps3Copy = Αναζήτηση ή περιήγηση για εύρεση αποθηκευμένων στιγμιότυπων.
 pulseContributors1Title = Firefox UX
 pulseContributors3Title = Firefox QA
 snoozetabsDescription = Σωστή ιστοσελίδα, λάθος χρόνος; Αναβάλλετέ τη μέχρι να τη χρειαστείτε. Το Snooze Tabs σάς επιτρέπει να απορρίψετε τις καρτέλες τώρα και να ορίσετε μια ειδοποίηση για να τις ανοίξετε αργότερα.
