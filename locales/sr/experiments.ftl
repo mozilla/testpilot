@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Како би изгледало да померите језичке са врха вашег прегледача на страну? Желели смо да откријемо!
+tabcenterWarning = Firefox се брзо мења. Tab Center можда буде имао грешке у Firefox-у 55 и биће онемогућен у потпуности у Firefox-у 56+.
 tabcenterIntroduction = <p>Склоните ваше језичке с пута. Tab Center помера ваше језичке на страну вашег прегледача, тако да су ван погледа када вам не требају, а лако их је проширити и ухватити када вам затребају.</p>
 tabcenterMeasurements0 = Прикупљамо податке о коришћењу Tab Center-a, нпр. колико често увећавате или качите Tab Center.
 tabcenterMeasurements1 = Такође прикупљамо податке о начину на који користите језичке, као што је број језичака које држите отвореним истовремено и време колико су вам језичци отворени.
