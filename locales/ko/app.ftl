@@ -104,6 +104,9 @@ landingDownloadFirefoxSubTitle = 무료 다운로드
 // The experiment detail page.
 [[ experimentPage ]]
 
+tourDoneButton = 완료
+userCountContainerAlt = 바로 시작!
+highlightPrivacy = 개인 정보 보호
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
