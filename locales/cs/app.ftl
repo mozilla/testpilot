@@ -53,7 +53,7 @@ landingInstalledButton = Vyberte si funkce
 [[ oneClickInstall ]]
 
 oneClickInstallMinorCta = Nainstalovat Test Pilot &amp;
-oneClickInstallMajorCta = Povolit { $title }
+oneClickInstallMajorCta = Zapnout { $title }
 
 
 // Homepage messaging for users not on Firefox or with an old version of Firefox.
@@ -72,7 +72,7 @@ landingDownloadFirefoxSubTitle = Stáhnout zdarma
 
 landingCardListTitle = Začněte za 3, 2, 1
 landingCardOne = Získejte doplněk Test Pilot
-landingCardTwo = Povolte experimentální funkce
+landingCardTwo = Zapněte si experimentální funkce
 landingCardThree = Sdělte nám svůj názor
 
 
@@ -103,7 +103,7 @@ emailOptInConfirmationClose = Podívat se na experimenty...
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentListEnabledTab = Povoleno
+experimentListEnabledTab = Zapnuto
 experimentListJustLaunchedTab = Právě spuštěno
 experimentListJustUpdatedTab = Právě aktualizováno
 experimentListEndingTomorrow = Zítra končí
@@ -147,16 +147,16 @@ experimentPromoSubheader = Vytváříme funkce pro Firefox nové generace. Nains
 // The experiment detail page.
 [[ experimentPage ]]
 
-isEnabledStatusMessage = { $title } je povolen.
-installErrorMessage = Jejda. { $title } nelze povolit. Zkuste to znovu později.
+isEnabledStatusMessage = { $title } je zapnut.
+installErrorMessage = Jejda. { $title } nelze zapnout. Zkuste to znovu později.
 participantCount = <span>{ $installation_count }</span> účastníků
 otherExperiments = Vyzkoušejte také tyto experimenty
 giveFeedback = Poskytnout zpětnou vazbu
-disableHeader = Zakázat experiment?
-disableExperiment = Zakázat { $title }
+disableHeader = Vypnout experiment?
+disableExperiment = Vypnout { $title }
 disableExperimentTransition = Zakazování...
-enableExperiment = Povolit { $title }
-enableExperimentTransition = Povolování...
+enableExperiment = Zapnout { $title }
+enableExperimentTransition = Zapínání...
 experimentManuallyDisabled = { $title } je vypnut ve Správci doplňků
 experimentMeasurementIntro = Kromě <a>dat</a>, která experimenty Test Pilotu shromažďují, je tu několik důležitých věcí, které se dějí, když používáte { $experimentTitle }:
 measurements = Vaše soukromí
@@ -169,7 +169,7 @@ tourLink = prohlídka
 contribute = Přispět
 bugReports = Hlášení chyb
 discussExperiment = DIskutujte o experimentu { $title }
-tourOnboardingTitle = Experiment { $title } povolen!
+tourOnboardingTitle = Experiment { $title } zapnut!
 tourDoneButton = Hotovo
 userCountContainer = Experiment { $title } zkouší <span>{ $installation_count }</span> lidí!
 userCountContainerAlt = Právě spuštěno!
