@@ -92,7 +92,7 @@ export default class NewsletterForm extends React.Component {
   render() {
     return (
       <form className={ classnames('newsletter-form', { 'newsletter-form-modal': this.props.isModal }) }
-            onSubmit={this.handleSubmit}>
+            onSubmit={this.handleSubmit} data-no-csrf>
         {this.renderEmailField()}
         {this.renderPrivacyField()}
         {this.renderSubmitButton()}
