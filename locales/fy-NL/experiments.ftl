@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = Hoe soe it wêze, as ljepblêden net mear oan de boppekant, mar oan de sydkant stiene? Wy woene dat graach witte!
+tabcenterWarning = Firefox feroaret fluch. Tab Center kin yn Firefox 55 bugs befetsje en sil yn Firefox 56+ folslein útskeakele wurde.
 tabcenterIntroduction = <p>Nim jo ljepblêden fan yn it paad nei ferstoppe. Tab Center ferpleatst jo ljepblêden nei de sydkant fan jo browserskerm, sa dat se út it sicht binne as jo se net nedich hawwe en maklik út te klappen as jo se nedich hawwe.</p>
 tabcenterMeasurements0 = Wy sammelje gegevensgebrûk oer hoe't jo omgean mei Tab Center, lyka hoe faak jo Tab Center maksimalisearje of fêstsette.
 tabcenterMeasurements1 = Wy sammelje ek ynformaasje oer de manier hoe't jo ljepblêden brûke, lykas it tal tagelyk iepen ljepblêden en de tiid dat jo ljepblêden iepen hawwe.
