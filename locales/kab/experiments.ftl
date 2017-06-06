@@ -142,6 +142,7 @@ snoozetabsContributors5Title = Ajenyuṛ n tɣara
 snoozetabsContributors6Title = Ajenyuṛ n tɣara Softvision
 snoozetabsContributors7Title = Ajenyuṛ n tɣara Softvision
 tabcenterDescription = Nenna-yas ahat yelha limer ad nawi iccaren s idis? Nebɣa ad nwali amek!
+tabcenterWarning = Firefox igemu s wudem arurad. Agwans n iccaren izmer ad d-imlil uguren di Firefox 55 sakin ad ittwasens akk i Firefox 56 akked ileqman imezwura.
 tabcenterIntroduction = <p>Iccaren inek ad ilin acukan s war dḥis: Tab Center ad ten-isers ɣef idis n usfaylu inek n tunigin akken ur ten-ttwaliḍ ara ticki ur ten-tesriḍ ara, acukan fessus-it i tririt nsen neɣ i tiraticki tebɣiḍ.</p>
 tabcenterMeasurements0 = Nleqqeḍ-d isefka ɣef useqdec inek d wamek tessedduyeḍ Tab Center, am umḍan n ugnaẓ neɣ n tneflit n Tab Center.
 tabcenterMeasurements1 = Nleqqed-d daɣen talɣut ɣef useqdec inek n yiccaren, am umḍan n wid teldiḍ deg iwen n tikelt akked wakud anda qqimen ldin.
