@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 
 import Banner from '../components/Banner';
@@ -9,7 +11,15 @@ import PastExperiments from '../components/PastExperiments';
 import View from '../components/View';
 
 
+type HomePageNoAddonProps = {
+  hasAddon: any,
+  isFirefox: boolean,
+  experiments: Array<Object>,
+  isAfterCompletedDate: Function
+}
+
 export default class HomePageNoAddon extends React.Component {
+  props: HomePageNoAddonProps
 
   render() {
     const { experiments, isAfterCompletedDate } = this.props;
@@ -82,10 +92,3 @@ export default class HomePageNoAddon extends React.Component {
   }
 
 }
-
-HomePageNoAddon.propTypes = {
-  hasAddon: React.PropTypes.any,
-  isFirefox: React.PropTypes.bool,
-  experiments: React.PropTypes.array,
-  isAfterCompletedDate: React.PropTypes.func
-};

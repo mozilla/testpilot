@@ -1,7 +1,22 @@
+// @flow
+
 import React from 'react';
 import classnames from 'classnames';
 
+type SettingsProps = {
+  hasAddon: any,
+  sendToGA: Function,
+  close: Function,
+  retire: Function,
+  toggleSettings: Function,
+  settingsClick: Function,
+  showSettingsMenu: Function,
+  showSettings?: Function
+}
+
 export default class Settings extends React.Component {
+  props: SettingsProps
+
   wiki() {
     this.props.sendToGA('event', {
       eventCategory: 'Menu Interactions',
@@ -29,7 +44,7 @@ export default class Settings extends React.Component {
     this.props.close();
   }
 
-  retire(evt) {
+  retire(evt: Object) {
     evt.preventDefault();
     this.props.sendToGA('event', {
       eventCategory: 'Menu Interactions',
@@ -48,7 +63,7 @@ export default class Settings extends React.Component {
     return this.props.showSettingsMenu();
   }
 
-  toggleSettings(evt) {
+  toggleSettings(evt: Object) {
     const { sendToGA, toggleSettings } = this.props;
     sendToGA('event', {
       eventCategory: 'Menu Interactions',
@@ -95,23 +110,18 @@ export default class Settings extends React.Component {
   // cancel if the click was inside the menu. Sounds backwards, but it works.
 
   componentDidMount() {
-    document.body.addEventListener('click', this.props.close);
+    if (typeof document !== 'undefined'
+      && document.body !== null) {
+      document.body.addEventListener('click', this.props.close);
+    }
   }
 
   componentWillUnmount() {
     if (this.closeTimer) { clearTimeout(this.closeTimer); }
-    document.body.removeEventListener('click', this.props.close);
+    if (typeof document !== 'undefined'
+      && document.body !== null) {
+      document.body.removeEventListener('click', this.props.close);
+    }
   }
 
 }
-
-Settings.propTypes = {
-  hasAddon: React.PropTypes.any,
-  sendToGA: React.PropTypes.func,
-  close: React.PropTypes.func,
-  retire: React.PropTypes.func,
-  toggleSettings: React.PropTypes.func,
-  settingsClick: React.PropTypes.func,
-  showSettingsMenu: React.PropTypes.func,
-  showSettings: React.PropTypes.func
-};

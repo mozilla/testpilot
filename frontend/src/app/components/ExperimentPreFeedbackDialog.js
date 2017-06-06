@@ -1,8 +1,18 @@
+// @flow
+
 import React from 'react';
 import classnames from 'classnames';
 import parser from 'html-react-parser';
 
+type ExperimentPreFeedbackDialogProps = {
+  experiment: Object,
+  surveyURL: string,
+  onCancel: Function,
+  sendToGA: Function
+}
+
 export default class ExperimentPreFeedbackDialog extends React.Component {
+  props: ExperimentPreFeedbackDialogProps
 
   render() {
     const { experiment, surveyURL } = this.props;
@@ -39,7 +49,7 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
     );
   }
 
-  feedback(e) {
+  feedback(e: Object) {
     e.preventDefault();
 
     this.props.sendToGA('event', {
@@ -50,7 +60,7 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
     });
   }
 
-  cancel(e) {
+  cancel(e: Object) {
     e.preventDefault();
     this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
@@ -60,10 +70,3 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
     this.props.onCancel(e);
   }
 }
-
-ExperimentPreFeedbackDialog.propTypes = {
-  experiment: React.PropTypes.object.isRequired,
-  surveyURL: React.PropTypes.string.isRequired,
-  onCancel: React.PropTypes.func.isRequired,
-  sendToGA: React.PropTypes.func.isRequired
-};

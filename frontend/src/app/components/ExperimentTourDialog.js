@@ -1,15 +1,31 @@
+// @flow
+
 import React from 'react';
 import classnames from 'classnames';
 
 import { experimentL10nId } from '../lib/utils';
 
+type ExperimentTourDialogProps = {
+  experiment: Object,
+  onCancel: Function,
+  onComplete: Function,
+  sendToGA: Function
+}
+
+type ExperimentTourDialogState = {
+  currentStep: number
+}
+
 export default class ExperimentTourDialog extends React.Component {
-  constructor(props) {
+  props: ExperimentTourDialogProps
+  state: ExperimentTourDialogState
+
+  constructor(props: ExperimentTourDialogProps) {
     super(props);
     this.state = { currentStep: 0 };
   }
 
-  l10nId(pieces) {
+  l10nId(pieces: string | Array<string | number>) {
     return experimentL10nId(this.props.experiment, pieces);
   }
 
@@ -69,7 +85,7 @@ export default class ExperimentTourDialog extends React.Component {
     );
   }
 
-  renderDots(tourSteps, currentStep) {
+  renderDots(tourSteps: Array<any>, currentStep: number) {
     const dots = tourSteps.map((el, index) => {
       if (currentStep === index) return (<div key={index} className="current dot"></div>);
       return (<div key={index} className="dot" onClick={e => this.tourToDot(e, index)} ></div>);
@@ -78,7 +94,7 @@ export default class ExperimentTourDialog extends React.Component {
     return dots;
   }
 
-  cancel(e) {
+  cancel(e: Object) {
     e.preventDefault();
     this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
@@ -88,7 +104,7 @@ export default class ExperimentTourDialog extends React.Component {
     if (this.props.onCancel) { this.props.onCancel(e); }
   }
 
-  complete(e) {
+  complete(e: Object) {
     e.preventDefault();
     this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
@@ -98,7 +114,7 @@ export default class ExperimentTourDialog extends React.Component {
     if (this.props.onComplete) { this.props.onComplete(e); }
   }
 
-  tourToDot(e, index) {
+  tourToDot(e: Object, index: number) {
     e.preventDefault();
     this.setState({ currentStep: index });
 
@@ -137,10 +153,3 @@ export default class ExperimentTourDialog extends React.Component {
     });
   }
 }
-
-ExperimentTourDialog.propTypes = {
-  experiment: React.PropTypes.object.isRequired,
-  onCancel: React.PropTypes.func.isRequired,
-  onComplete: React.PropTypes.func.isRequired,
-  sendToGA: React.PropTypes.func.isRequired
-};

@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 
 const LayoutWrapper = ({ children, flexModifier, helperClass = null }) => {
@@ -13,7 +13,9 @@ const LayoutWrapper = ({ children, flexModifier, helperClass = null }) => {
 
 export default LayoutWrapper;
 
-LayoutWrapper.PropTypes = {
-  flexModifier: PropTypes.string,
-  helperClass: PropTypes.string
-};
+// TODO Port propTypes to FlowTypes for LayoutWrapper
+
+// LayoutWrapper.propTypes = {
+//   flexModifier: PropTypes.string,
+//   helperClass: PropTypes.string
+// };

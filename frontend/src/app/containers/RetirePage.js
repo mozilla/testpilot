@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import classnames from 'classnames';
 
@@ -6,9 +8,26 @@ import LayoutWrapper from '../components/LayoutWrapper';
 import View from '../components/View';
 
 
-export default class RetirePage extends React.Component {
+type RetirePageProps = {
+  setHasAddon: Function,
+  sendToGA: Function,
+  fakeUninstallDelay?: number
+}
 
-  constructor(props) {
+type RetirePageState = {
+  fakeUninstalled: boolean
+}
+
+export default class RetirePage extends React.Component {
+  props: RetirePageProps
+  state: RetirePageState
+  fakeUninstallTimer: any
+
+  static defaultProps = {
+    fakeUninstallDelay: 5000
+  };
+
+  constructor(props: RetirePageProps) {
     super(props);
     this.state = {
       fakeUninstalled: false
@@ -72,12 +91,3 @@ export default class RetirePage extends React.Component {
     });
   }
 }
-
-RetirePage.propTypes = {
-  setHasAddon: React.PropTypes.func,
-  fakeUninstallDelay: React.PropTypes.number
-};
-
-RetirePage.defaultProps = {
-  fakeUninstallDelay: 5000
-};

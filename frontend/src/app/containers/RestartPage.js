@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 
 import Banner from '../components/Banner';
@@ -5,7 +7,17 @@ import LayoutWrapper from '../components/LayoutWrapper';
 import View from '../components/View';
 
 
+type RestartProps = {
+  experimentTitle: string,
+  hasAddon: any,
+  uninstallAddon: Function,
+  sendToGA: Function,
+  openWindow: Function
+}
+
 export default class Restart extends React.Component {
+  props: RestartProps
+
   componentWillMount() {
     this.props.sendToGA('event', {
       eventCategory: 'PostInstall Interactions',
@@ -36,11 +48,3 @@ export default class Restart extends React.Component {
     );
   }
 }
-
-Restart.propTypes = {
-  experimentTitle: React.PropTypes.string,
-  hasAddon: React.PropTypes.any,
-  uninstallAddon: React.PropTypes.func,
-  sendToGA: React.PropTypes.func,
-  openWindow: React.PropTypes.func
-};

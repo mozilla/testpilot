@@ -1,6 +1,17 @@
+// @flow
+
 import React from 'react';
 
+type RetireConfirmationDialogProps = {
+  uninstallAddon: Function,
+  onDismiss: Function,
+  sendToGA: Function,
+  navigateTo?: Function
+}
+
 export default class RetireConfirmationDialog extends React.Component {
+  props: RetireConfirmationDialogProps
+
   render() {
     return (
       <div className="modal-container">
@@ -24,7 +35,7 @@ export default class RetireConfirmationDialog extends React.Component {
     );
   }
 
-  proceed(e) {
+  proceed(e: Object) {
     const { sendToGA, navigateTo, uninstallAddon } = this.props;
     e.preventDefault();
     uninstallAddon();
@@ -33,18 +44,13 @@ export default class RetireConfirmationDialog extends React.Component {
       eventAction: 'button click',
       eventLabel: 'Retire'
     });
-    navigateTo('/retire');
+    if (typeof navigateTo !== 'undefined') {
+      navigateTo('/retire');
+    }
   }
 
-  cancel(e) {
+  cancel(e: Object) {
     e.preventDefault();
     this.props.onDismiss();
   }
 }
-
-RetireConfirmationDialog.propTypes = {
-  uninstallAddon: React.PropTypes.func,
-  onDismiss: React.PropTypes.func,
-  sendToGA: React.PropTypes.func,
-  navigateTo: React.PropTypes.func
-};

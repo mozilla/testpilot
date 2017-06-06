@@ -1,11 +1,21 @@
+// @flow
+
 import React from 'react';
 
 import Copter from '../components/Copter';
 import LayoutWrapper from '../components/LayoutWrapper';
 import View from '../components/View';
 
+type ErrorPageProps = {
+  uninstallAddon: Function,
+  sendToGA: Function,
+  openWindow: Function
+}
+
 
 export default class ErrorPage extends React.Component {
+  props: ErrorPageProps
+
   render() {
     return (
       <View spaceBetween={true} showNewsletterFooter={false} {...this.props}>
@@ -24,9 +34,3 @@ export default class ErrorPage extends React.Component {
     );
   }
 }
-
-ErrorPage.propTypes = {
-  uninstallAddon: React.PropTypes.func,
-  sendToGA: React.PropTypes.func,
-  openWindow: React.PropTypes.func
-};

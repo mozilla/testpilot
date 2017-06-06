@@ -31,13 +31,14 @@ export default class ExperimentPage extends React.Component {
   }
 }
 
+// TODO Implement FlowTypes for ExperimentPage
 
-ExperimentPage.propTypes = {
-  getExperimentBySlug: React.PropTypes.func,
-  params: React.PropTypes.shape({
-    slug: React.PropTypes.string
-  })
-};
+// ExperimentPage.propTypes = {
+//   getExperimentBySlug: React.PropTypes.func,
+//   params: React.PropTypes.shape({
+//     slug: React.PropTypes.string
+//   })
+// };
 
 
 const EXPERIMENT_MEASUREMENT_URLS = [
@@ -822,28 +823,30 @@ export class ExperimentDetail extends React.Component {
   }
 }
 
-ExperimentDetail.propTypes = {
-  userAgent: React.PropTypes.string,
-  clientUUID: React.PropTypes.string,
-  isDev: React.PropTypes.bool,
-  hasAddon: React.PropTypes.any,
-  experiments: React.PropTypes.array,
-  installed: React.PropTypes.object,
-  installedAddons: React.PropTypes.array,
-  navigateTo: React.PropTypes.func,
-  isAfterCompletedDate: React.PropTypes.func,
-  isExperimentEnabled: React.PropTypes.func,
-  requireRestart: React.PropTypes.func,
-  sendToGA: React.PropTypes.func,
-  openWindow: React.PropTypes.func,
-  uninstallAddon: React.PropTypes.func,
-  enableExperiment: React.PropTypes.func,
-  disableExperiment: React.PropTypes.func,
-  addScrollListener: React.PropTypes.func,
-  removeScrollListener: React.PropTypes.func,
-  getScrollY: React.PropTypes.func,
-  setScrollY: React.PropTypes.func,
-  getElementY: React.PropTypes.func,
-  getElementOffsetHeight: React.PropTypes.func,
-  setExperimentLastSeen: React.PropTypes.func
-};
+// TODO Implement FlowTypes for ExperimentDetail
+
+// ExperimentDetail.propTypes = {
+//   userAgent: React.PropTypes.string,
+//   clientUUID: React.PropTypes.string,
+//   isDev: React.PropTypes.bool,
+//   hasAddon: React.PropTypes.any,
+//   experiments: React.PropTypes.array,
+//   installed: React.PropTypes.object,
+//   installedAddons: React.PropTypes.array,
+//   navigateTo: React.PropTypes.func,
+//   isAfterCompletedDate: React.PropTypes.func,
+//   isExperimentEnabled: React.PropTypes.func,
+//   requireRestart: React.PropTypes.func,
+//   sendToGA: React.PropTypes.func,
+//   openWindow: React.PropTypes.func,
+//   uninstallAddon: React.PropTypes.func,
+//   enableExperiment: React.PropTypes.func,
+//   disableExperiment: React.PropTypes.func,
+//   addScrollListener: React.PropTypes.func,
+//   removeScrollListener: React.PropTypes.func,
+//   getScrollY: React.PropTypes.func,
+//   setScrollY: React.PropTypes.func,
+//   getElementY: React.PropTypes.func,
+//   getElementOffsetHeight: React.PropTypes.func,
+//   setExperimentLastSeen: React.PropTypes.func
+// };

@@ -1,6 +1,15 @@
+// @flow
+
 import React from 'react';
 
+type ExperimentEolDialogProps = {
+  title: string,
+  onCancel: Function,
+  onSubmit: Function
+}
+
 export default class ExperimentEolDialog extends React.Component {
+  props: ExperimentEolDialogProps
 
   render() {
     const { title } = this.props;
@@ -24,19 +33,13 @@ export default class ExperimentEolDialog extends React.Component {
     );
   }
 
-  proceed(e) {
+  proceed(e: Object) {
     e.preventDefault();
     this.props.onSubmit(e);
   }
 
-  cancel(e) {
+  cancel(e: Object) {
     e.preventDefault();
     this.props.onCancel();
   }
 }
-
-ExperimentEolDialog.propTypes = {
-  title: React.PropTypes.string,
-  onCancel: React.PropTypes.func,
-  onSubmit: React.PropTypes.func
-};

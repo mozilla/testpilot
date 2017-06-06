@@ -1,13 +1,25 @@
+// @flow
+
 import classnames from 'classnames';
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 import ExperimentCardList from '../components/ExperimentCardList';
 import LayoutWrapper from '../components/LayoutWrapper';
 
 
-export default class PastExperiments extends React.Component {
+type PastExperimentsProps = {
+  pastExperiments: Array<Object>
+}
 
-  constructor(props) {
+type PastExperimentsState = {
+  showPastExperiments: boolean
+}
+
+export default class PastExperiments extends React.Component {
+  props: PastExperimentsProps
+  state: PastExperimentsState
+
+  constructor(props: PastExperimentsProps) {
     super(props);
     this.state = {
       showPastExperiments: false
@@ -36,7 +48,3 @@ export default class PastExperiments extends React.Component {
     );
   }
 }
-
-PastExperiments.PropTypes = {
-  pastExperiments: PropTypes.array
-};

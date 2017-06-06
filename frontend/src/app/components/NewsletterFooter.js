@@ -1,11 +1,22 @@
+// @flow
+
 import classnames from 'classnames';
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 import LayoutWrapper from './LayoutWrapper';
 import NewsletterForm from './NewsletterForm';
 
+type NewsletterFooterProps = {
+  getWindowLocation: Function,
+  newsletterForm: {
+    failed: boolean,
+    succeeded: boolean
+  }
+}
 
 export default class NewsletterFooter extends React.Component {
+  props: NewsletterFooterProps
+
   renderError() {
     if (this.props.newsletterForm.failed) {
       return (
@@ -66,7 +77,3 @@ export default class NewsletterFooter extends React.Component {
     );
   }
 }
-
-NewsletterFooter.propTypes = {
-  getWindowLocation: PropTypes.func.isRequired
-};
