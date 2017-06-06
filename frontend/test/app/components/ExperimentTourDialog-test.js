@@ -20,6 +20,7 @@ describe('app/components/ExperimentTourDialog', () => {
           { image: '/example3.png', copy: 'Example 3' },
         ]
       },
+      isExperimentEnabled: () => true,
       sendToGA: sinon.spy(),
       onComplete: sinon.spy(),
       onCancel: sinon.spy()
@@ -39,6 +40,12 @@ describe('app/components/ExperimentTourDialog', () => {
       .to.equal(expectedTourStep.image);
     expect(subject.find('.tour-text > p').html())
       .to.include(expectedTourStep.copy);
+  });
+
+  it('should render only the experiment title if not enabled', () => {
+    subject.setProps({ isExperimentEnabled: () => false,
+                       experiment: { ...props.experiment } });
+    expect(subject.find('.modal-header').text()).to.equal(props.experiment.title);
   });
 
   it('should have the correct l10n IDs', () => {
