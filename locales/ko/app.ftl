@@ -159,6 +159,7 @@ highlightPrivacy = 개인 정보 보호
 [[ noscript ]]
 
 noScriptHeading = 어 음...
+noScriptMessage = JavaScript가 안되면 Test Pilot을 쓰실 수 없습니다.<br>이 점 양해 부탁드립니다.
 
 
 // Text of a button to toggle visibility of a list of past experiments.
