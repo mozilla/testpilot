@@ -5,16 +5,23 @@
 
 // see also: https://github.com/airbnb/enzyme/blob/master/docs/guides/jsdom.md#using-enzyme-with-jsdom
 // see also: https://github.com/lelandrichardson/enzyme-example-mocha/blob/master/test/.setup.js
-var jsdom = require('jsdom').jsdom;
+var JSDOM = require('jsdom').JSDOM;
 
 var exposedProperties = ['window', 'navigator', 'document'];
 
-global.document = jsdom('');
-global.window = document.defaultView;
-Object.keys(document.defaultView).forEach((property) => {
+var dom = new JSDOM('')
+global.window = dom.window;
+global.document = dom.window.document;
+Object.keys(dom.window).forEach((property) => {
   if (typeof global[property] === 'undefined') {
     exposedProperties.push(property);
-    global[property] = document.defaultView[property];
+    global[property] = dom.window[property];
+  }
+});
+Object.keys(dom.window._core).forEach((property) => {
+  if (typeof global[property] === 'undefined') {
+    exposedProperties.push(property);
+    global[property] = dom.window._core[property];
   }
 });
 

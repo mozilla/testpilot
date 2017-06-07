@@ -193,7 +193,10 @@ export class ExperimentDetail extends React.Component {
           {parser(experiment.eol_warning)}
         </div>
         <div className="small-spacer" />
-        <a href="/about" data-l10n-id="eolNoticeLink" target="_blank">Learn more</a>
+        <a href="/about" data-l10n-id="eolNoticeLink"
+          target="_blank" rel="noopener noreferrer">
+          Learn more
+        </a>
       </Warning>
     );
   }
@@ -383,7 +386,7 @@ export class ExperimentDetail extends React.Component {
                     {contributors_extra && <p className="disclaimer">
                         <span data-l10n-id={this.l10nId('contributors_extra')}>{contributors_extra}</span>
                         {contributors_extra_url && <span>&nbsp;
-                          <a data-l10n-id="contributorsExtraLearnMore" href={contributors_extra_url} target="_blank">Learn more</a>.</span>
+                          <a data-l10n-id="contributorsExtraLearnMore" href={contributors_extra_url} target="_blank" rel="noopener noreferrer">Learn more</a>.</span>
                         }
                       </p>
                     }
@@ -599,7 +602,7 @@ export class ExperimentDetail extends React.Component {
       return (
         <div className="upgrade-notice">
           <div data-l10n-id="upgradeNoticeTitle" data-l10n-args={JSON.stringify({ title, min_release })}></div>
-          <a onClick={e => this.clickUpgradeNotice(e)} data-l10n-id="upgradeNoticeLink" href="https://support.mozilla.org/kb/find-what-version-firefox-you-are-using" target="_blank">How to update Firefox.</a>
+          <a onClick={e => this.clickUpgradeNotice(e)} data-l10n-id="upgradeNoticeLink" href="https://support.mozilla.org/kb/find-what-version-firefox-you-are-using" target="_blank" rel="noopener noreferrer">How to update Firefox.</a>
         </div>
       );
     }
@@ -611,7 +614,7 @@ export class ExperimentDetail extends React.Component {
       return (
         <div className="upgrade-notice">
           <div data-l10n-id="versionChangeNotice" data-l10n-args={ JSON.stringify({ experiment_title: title }) }></div>
-          <a onClick={e => this.clickUpgradeNotice(e)} data-l10n-id="versionChangeNoticeLink" href="https://www.mozilla.org/firefox/" target="_blank">Get the current version of Firefox.</a>
+          <a onClick={e => this.clickUpgradeNotice(e)} data-l10n-id="versionChangeNoticeLink" href="https://www.mozilla.org/firefox/" target="_blank" rel="noopener noreferrer">Get the current version of Firefox.</a>
         </div>
       );
     }
@@ -646,7 +649,7 @@ export class ExperimentDetail extends React.Component {
     if (enabled) {
       return (
         <div className="experiment-controls">
-          <a onClick={e => this.handleFeedback(e)} data-l10n-id="giveFeedback" id="feedback-button" className="button default" href={surveyURL} target="_blank">Give Feedback</a>
+          <a onClick={e => this.handleFeedback(e)} data-l10n-id="giveFeedback" id="feedback-button" className="button default" href={surveyURL} target="_blank" rel="noopener noreferrer">Give Feedback</a>
           <button onClick={e => this.renderUninstallSurvey(e)} style={{ minWidth: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'secondary'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text"></span></button>
         </div>
       );
