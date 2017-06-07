@@ -21,6 +21,8 @@ Once you've got a good version of Node.js installed for your operating system,
 here are some shell commands to get you started on Linux & OS X:
 
 ```bash
+cd testpilot
+
 # Set up add-on environment and build an unsigned package
 cd addon
 npm install
@@ -93,6 +95,8 @@ for you to get it working.
 After installing Node.js for Windows, run these commands to get started:
 
 ```cmd
+cd testpilot
+
 :: Set up add-on environment and build an unsigned package
 cd addon
 npm install
