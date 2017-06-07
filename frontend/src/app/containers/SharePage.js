@@ -1,11 +1,22 @@
+// @flow
+
 import React from 'react';
 
 import Copter from '../components/Copter';
 import LayoutWrapper from '../components/LayoutWrapper';
 import View from '../components/View';
 
+type SharePageProps = {
+  hasAddon: any,
+  uninstallAddon: Function,
+  sendToGA: Function,
+  openWindow: Function
+}
+
 
 export default class SharePage extends React.Component {
+  props: SharePageProps
+
   render() {
     return (
       <View spaceBetween={true} showNewsletterFooter={false} {...this.props}>
@@ -33,12 +44,12 @@ export default class SharePage extends React.Component {
     );
   }
 
-  shareUrl(medium, urlencode) {
+  shareUrl(medium: string, urlencode: boolean) {
     const url = `https://testpilot.firefox.com/?utm_source=${medium}&utm_medium=social&utm_campaign=share-page`;
     return urlencode ? encodeURIComponent(url) : url;
   }
 
-  handleClick(label) {
+  handleClick(label: string) {
     return () => this.props.sendToGA('event', {
       eventCategory: 'ShareView Interactions',
       eventAction: 'button click',
@@ -46,10 +57,3 @@ export default class SharePage extends React.Component {
     });
   }
 }
-
-SharePage.propTypes = {
-  hasAddon: React.PropTypes.any,
-  uninstallAddon: React.PropTypes.func,
-  sendToGA: React.PropTypes.func,
-  openWindow: React.PropTypes.func
-};

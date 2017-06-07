@@ -1,8 +1,15 @@
+// @flow
+
 import React from 'react';
 
 import LayoutWrapper from './LayoutWrapper';
 
+type FooterProps = {
+  sendToGA: Function
+}
+
 export default class Footer extends React.Component {
+  props: FooterProps
 
   render() {
     return (
@@ -27,7 +34,7 @@ export default class Footer extends React.Component {
     );
   }
 
-  eventToGA(e) {
+  eventToGA(e: Object) {
     const label = e.target.getAttribute('title');
     this.props.sendToGA('event', {
       eventCategory: 'FooterView Interactions',
@@ -37,7 +44,3 @@ export default class Footer extends React.Component {
   }
 
 }
-
-Footer.propTypes = {
-  sendToGA: React.PropTypes.func.isRequired
-};

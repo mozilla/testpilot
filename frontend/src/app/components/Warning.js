@@ -1,6 +1,20 @@
-import React, { PropTypes } from 'react';
+// @flow
+
+import React from 'react';
+
+type WarningProps = {
+  title: string,
+  titleL10nId: string,
+  titleL10nArgs: Array<string>,
+  subtitle: string,
+  subtitleL10nId: string,
+  subtitleL10nArgs: Array<string>,
+  children: Array<any>
+}
 
 export default class Warning extends React.Component {
+  props: WarningProps
+
   renderSubtitle() {
     if (this.props.subtitle) {
       return (
@@ -42,14 +56,3 @@ export default class Warning extends React.Component {
     );
   }
 }
-
-Warning.propTypes = {
-  title: PropTypes.string,
-  titleL10nId: PropTypes.string,
-  subtitle: PropTypes.string,
-  subtitleL10nId: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.arrayOf(PropTypes.element)
-  ])
-};

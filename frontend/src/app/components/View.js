@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { PropTypes } from 'react';
+import React from 'react';
 import ReactDOMFactories from 'react/lib/ReactDOMFactories';
 import Symbol from 'es-symbol';
 
@@ -105,37 +105,6 @@ export default class View extends React.Component {
 
 }
 
-View.propTypes = {
-
-  /**
-   * If true, adds the `centered` class to the wrapper. Default: `false`.
-   */
-  centered: PropTypes.bool.isRequired,
-
-  /**
-   * If true, renders a newsletter subscription form above the footer
-   * component. Default: `true`.
-   */
-  showNewsletterFooter: PropTypes.bool.isRequired,
-
-  /**
-   * If true, renders the `<Footer>` component. Default: `true`.
-   */
-  showFooter: PropTypes.bool.isRequired,
-
-  /**
-   * If true, renders the `<Header>` component. Default: `true`.
-   */
-  showHeader: PropTypes.bool.isRequired,
-
-  /**
-   * If true, adds the `space-between` class to the wrapper. Default: `false`.
-   */
-  spaceBetween: PropTypes.bool.isRequired
-
-};
-
-
 View.defaultProps = {
   centered: false,
   showNewsletterFooter: true,
@@ -143,3 +112,35 @@ View.defaultProps = {
   showHeader: true,
   spaceBetween: false
 };
+
+// TODO Implement FlowTypes for View
+
+// View.propTypes = {
+//
+//   /**
+//    * If true, adds the `centered` class to the wrapper. Default: `false`.
+//    */
+//   centered: PropTypes.bool.isRequired,
+//
+//   /**
+//    * If true, renders a newsletter subscription form above the footer
+//    * component. Default: `true`.
+//    */
+//   showNewsletterFooter: PropTypes.bool.isRequired,
+//
+//   /**
+//    * If true, renders the `<Footer>` component. Default: `true`.
+//    */
+//   showFooter: PropTypes.bool.isRequired,
+//
+//   /**
+//    * If true, renders the `<Header>` component. Default: `true`.
+//    */
+//   showHeader: PropTypes.bool.isRequired,
+//
+//   /**
+//    * If true, adds the `space-between` class to the wrapper. Default: `false`.
+//    */
+//   spaceBetween: PropTypes.bool.isRequired
+//
+// };

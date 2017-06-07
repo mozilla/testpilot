@@ -1,10 +1,27 @@
+// @flow
+
 import React from 'react';
 import NewsletterForm from './NewsletterForm';
 import { subscribeToBasket } from '../lib/utils';
 
-export default class EmailDialog extends React.Component {
+type EmailDialogProps = {
+  getWindowLocation: Function,
+  onDismiss: Function,
+  sendToGA: Function
+}
 
-  constructor(props) {
+type EmailDialogState = {
+  isSuccess: boolean,
+  isError: boolean,
+  email: string,
+  privacy: boolean
+}
+
+export default class EmailDialog extends React.Component {
+  props: EmailDialogProps
+  state: EmailDialogState
+
+  constructor(props: EmailDialogProps) {
     super(props);
     this.state = {
       isSuccess: false,
@@ -85,11 +102,11 @@ export default class EmailDialog extends React.Component {
     );
   }
 
-  handleEmailChange(e) {
+  handleEmailChange(e: Object) {
     this.setState({ email: e.target.value });
   }
 
-  handleSubscribe(email) {
+  handleSubscribe(email: string) {
     const { sendToGA } = this.props;
     const source = '' + this.props.getWindowLocation();
 
@@ -114,13 +131,13 @@ export default class EmailDialog extends React.Component {
     });
   }
 
-  reset(e) {
+  reset(e: Object) {
     e.preventDefault();
     e.stopPropagation();
     this.setState({ isSuccess: false, isError: false });
   }
 
-  skip(e) {
+  skip(e: Object) {
     const { sendToGA } = this.props;
 
     e.preventDefault();
@@ -137,7 +154,7 @@ export default class EmailDialog extends React.Component {
     this.close();
   }
 
-  continue(e) {
+  continue(e: Object) {
     const { sendToGA } = this.props;
 
     e.preventDefault();
@@ -156,9 +173,3 @@ export default class EmailDialog extends React.Component {
   }
 
 }
-
-EmailDialog.propTypes = {
-  getWindowLocation: React.PropTypes.func.isRequired,
-  onDismiss: React.PropTypes.func.isRequired,
-  sendToGA: React.PropTypes.func.isRequired
-};

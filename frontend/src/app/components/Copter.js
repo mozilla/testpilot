@@ -1,19 +1,20 @@
-import React, { PropTypes } from 'react';
+// @flow
+
+import React from 'react';
 import classnames from 'classnames';
 
+type CopterProps = {
+  small?: boolean,
+  animation?: string
+}
 
-const Copter = ({ small = false, animation = null }) => {
-  return (
-    <div className={classnames('copter', { 'copter--small': small })}>
+export default class Copter extends React.Component {
+  props: CopterProps
+
+  render() {
+    const { small = false, animation = null } = this.props;
+    return <div className={classnames('copter', { 'copter--small': small })}>
       <div className={classnames('copter__inner', animation)} />
-    </div>
-  );
-};
-
-export default Copter;
-
-Copter.PropTypes = {
-  small: PropTypes.boolean,
-  animation: PropTypes.string
-};
-
+    </div>;
+  }
+}

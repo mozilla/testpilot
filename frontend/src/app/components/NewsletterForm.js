@@ -1,17 +1,39 @@
+// @flow
+
 import classnames from 'classnames';
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 import { defaultState } from '../reducers/newsletter-form';
 
+type NewsletterFormProps = {
+  email?: string,
+  privacy?: boolean,
+  isModal?: boolean,
+  subscribe?: Function,
+  setEmail?: Function,
+  setPrivacy?: Function
+}
+
+type NewsletterFormState = {
+  privacyNote: boolean
+}
 
 export default class NewsletterForm extends React.Component {
-  constructor(props) {
+  props: NewsletterFormProps
+  state: NewsletterFormState
+  handleEmailChange: Function
+  handlePrivacyClick: Function
+  handleSubmit: Function
+
+  static defaultProps = defaultState();
+
+  constructor(props: NewsletterFormProps) {
     super(props);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePrivacyClick = this.handlePrivacyClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
-      privacyNote: ''
+      privacyNote: false
     };
   }
 
@@ -21,8 +43,10 @@ export default class NewsletterForm extends React.Component {
     });
   }
 
-  handleEmailChange(evt) {
-    this.props.setEmail(evt.target.value);
+  handleEmailChange(evt: Object) {
+    if (typeof this.props.setEmail !== 'undefined') {
+      this.props.setEmail(evt.target.value);
+    }
   }
 
   renderEmailField() {
@@ -37,8 +61,10 @@ export default class NewsletterForm extends React.Component {
     );
   }
 
-  handlePrivacyClick(evt) {
-    this.props.setPrivacy(evt.target.checked);
+  handlePrivacyClick(evt: Object) {
+    if (typeof this.props.setPrivacy !== 'undefined') {
+      this.props.setPrivacy(evt.target.checked);
+    }
   }
 
   renderPrivacyField() {
@@ -79,13 +105,15 @@ export default class NewsletterForm extends React.Component {
     );
   }
 
-  handleSubmit(evt) {
+  handleSubmit(evt: Object) {
     evt.preventDefault();
     if (!this.props.privacy) {
       this.setState({ privacyNote: true });
     } else {
       this.setState({ privacyNote: false });
-      this.props.subscribe(this.props.email);
+      if (typeof this.props.subscribe !== 'undefined') {
+        this.props.subscribe(this.props.email);
+      }
     }
   }
 
@@ -101,13 +129,3 @@ export default class NewsletterForm extends React.Component {
     );
   }
 }
-
-NewsletterForm.defaultProps = defaultState();
-NewsletterForm.propTypes = {
-  email: PropTypes.string.isRequired,
-  privacy: PropTypes.bool.isRequired,
-  isModal: PropTypes.bool,
-  subscribe: PropTypes.func,
-  setEmail: PropTypes.func,
-  setPrivacy: PropTypes.func
-};

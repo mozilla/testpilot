@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import classnames from 'classnames';
 
@@ -8,8 +10,21 @@ const ONE_WEEK = 7 * ONE_DAY;
 const MAX_JUST_LAUNCHED_PERIOD = 2 * ONE_WEEK;
 const MAX_JUST_UPDATED_PERIOD = 2 * ONE_WEEK;
 
+type ExperimentRowCardProps = {
+  experiment: Object,
+  hasAddon: any,
+  enabled: Boolean,
+  eventCategory: string,
+  getExperimentLastSeen: Function,
+  sendToGA: Function,
+  navigateTo: Function,
+  isAfterCompletedDate: Function
+}
+
 export default class ExperimentRowCard extends React.Component {
-  l10nId(pieces) {
+  props: ExperimentRowCardProps
+
+  l10nId(pieces: string) {
     return experimentL10nId(this.props.experiment, pieces);
   }
 
@@ -55,7 +70,7 @@ export default class ExperimentRowCard extends React.Component {
   // which has been sending telemetry pings via installs from dev
   // TODO: figure out a non-hack way to toggle user counts when we have
   // telemetry data coming in from prod
-  renderInstallationCount(installation_count, isCompleted) {
+  renderInstallationCount(installation_count: number, isCompleted: Boolean) {
     if (installation_count <= 100 || isCompleted) return '';
     return (
       <span className="participant-count"
@@ -64,7 +79,7 @@ export default class ExperimentRowCard extends React.Component {
     );
   }
 
-  renderManageButton(enabled, hasAddon, isCompleted) {
+  renderManageButton(enabled: Boolean, hasAddon: Boolean, isCompleted: Boolean) {
     if (enabled && hasAddon) {
       return (
         <div className="button card-control secondary" data-l10n-id="experimentCardManage">Manage</div>
@@ -143,14 +158,3 @@ export default class ExperimentRowCard extends React.Component {
   }
 
 }
-
-ExperimentRowCard.propTypes = {
-  experiment: React.PropTypes.object.isRequired,
-  hasAddon: React.PropTypes.any,
-  enabled: React.PropTypes.bool.isRequired,
-  eventCategory: React.PropTypes.string.isRequired,
-  getExperimentLastSeen: React.PropTypes.func.isRequired,
-  sendToGA: React.PropTypes.func.isRequired,
-  navigateTo: React.PropTypes.func.isRequired,
-  isAfterCompletedDate: React.PropTypes.func
-};
