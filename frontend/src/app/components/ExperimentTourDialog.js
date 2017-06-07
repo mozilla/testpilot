@@ -7,6 +7,7 @@ import { experimentL10nId } from '../lib/utils';
 
 type ExperimentTourDialogProps = {
   experiment: Object,
+  isExperimentEnabled: Function,
   onCancel: Function,
   onComplete: Function,
   sendToGA: Function
