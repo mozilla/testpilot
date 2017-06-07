@@ -53,6 +53,7 @@ oneClickInstallMajorCta = { $title } 쓰기
 // Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
+landingRequiresDesktop = Windows, Mac 또는 Linux에 깔린 데스크톱용 Firefox에서만 Test Pilot을 쓰실 수 있습니다.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox 업그레이드
 landingDownloadFirefoxSubTitle = 무료 다운로드
