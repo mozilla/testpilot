@@ -52,6 +52,7 @@ landingIntroThree = Firefox를 만드는데 도움을 주세요.
 // Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
+landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox 업그레이드
 landingDownloadFirefoxSubTitle = 무료 다운로드
 
@@ -157,6 +158,7 @@ highlightPrivacy = 개인 정보 보호
 // Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
+noScriptHeading = 어 음...
 
 
 // Text of a button to toggle visibility of a list of past experiments.
