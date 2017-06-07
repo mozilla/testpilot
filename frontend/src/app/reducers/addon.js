@@ -211,7 +211,7 @@ export default function addonReducer(state: ?AddonState, action: AddonActions): 
     case 'MANUALLY_DISABLE_EXPERIMENT':
       return manuallyDisableExperiment(state, action);
     case 'REQUIRE_RESTART':
-      return requireRestart(state, action);
+      return requireRestart(state);
     default:
       return state;
   }

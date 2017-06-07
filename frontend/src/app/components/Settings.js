@@ -85,10 +85,10 @@ export default class Settings extends React.Component {
               {
                 this.showSettingsMenu()
                 &&
-                <div className="settings-menu" onClick={e => this.settingsClick(e)}>
+                <div className="settings-menu" onClick={() => this.settingsClick()}>
                   <ul>
                     <li>
-                      <a onClick={e => this.wiki(e)} data-l10n-id="menuWiki"
+                      <a onClick={() => this.wiki()} data-l10n-id="menuWiki"
                        href="https://wiki.mozilla.org/Test_Pilot"
                        target="_blank" rel="noopener noreferrer">
                        Test Pilot Wiki
@@ -97,7 +97,7 @@ export default class Settings extends React.Component {
                     <li><a onClick={() => this.discuss()} data-l10n-id="menuDiscuss"
                        href="https://discourse.mozilla-community.org/c/test-pilot"
                        target="_blank" rel="noopener noreferrer">Discuss Test Pilot</a></li>
-                    <li><a onClick={e => this.fileIssue(e)} data-l10n-id="menuFileIssue"
+                    <li><a onClick={() => this.fileIssue()} data-l10n-id="menuFileIssue"
                        href="https://github.com/mozilla/testpilot/issues/new"
                        target="_blank" rel="noopener noreferrer">File an Issue</a></li>
                     <li><hr /></li>

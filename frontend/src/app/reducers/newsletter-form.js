@@ -96,11 +96,11 @@ export default function newsletterFormReducer(
     case 'NEWSLETTER_FORM_SET_PRIVACY':
       return newsletterFormSetPrivacy(state, action);
     case 'NEWSLETTER_FORM_SET_SUBMITTING':
-      return newsletterFormSetSubmitting(state, action);
+      return newsletterFormSetSubmitting(state);
     case 'NEWSLETTER_FORM_SET_FAILED':
-      return newsletterFormSetFailed(state, action);
+      return newsletterFormSetFailed(state);
     case 'NEWSLETTER_FORM_SET_SUCCEEDED':
-      return newsletterFormSetSucceeded(state, action);
+      return newsletterFormSetSucceeded(state);
     default:
       return state;
   }

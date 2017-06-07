@@ -15,7 +15,8 @@ type HomePageNoAddonProps = {
   hasAddon: any,
   isFirefox: boolean,
   experiments: Array<Object>,
-  isAfterCompletedDate: Function
+  isAfterCompletedDate: Function,
+  navigateTo: Function
 }
 
 export default class HomePageNoAddon extends React.Component {
