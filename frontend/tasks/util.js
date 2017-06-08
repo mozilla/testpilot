@@ -1,7 +1,9 @@
 const LOCALIZABLE_FIELDS = [
   'subtitle',
   'description',
+  'warning',
   'introduction',
+  'privacy_preamble',
   'measurements',
   'eol_warning',
   'pre_feedback_copy',
