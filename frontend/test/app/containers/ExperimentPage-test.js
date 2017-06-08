@@ -269,14 +269,6 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       expect(subject.find('MainInstallButton')).to.have.property('length', 1);
     });
 
-    it('should display a call-to-action to try other experiments', () => {
-      const experiment = setExperiment(mockExperiment);
-      expect(subject.find('.banner__subtitle')).to.have.property('length', 1);
-      const cardList = subject.find('ExperimentCardList');
-      expect(cardList).to.have.property('length', 1);
-      expect(cardList.prop('except')).to.equal(experiment.slug);
-    });
-
     describe('with hasAddon=true', () => {
       beforeEach(() => {
         subject.setProps({ hasAddon: true });
