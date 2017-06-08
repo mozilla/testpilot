@@ -195,7 +195,7 @@ describe('app/components/ExperimentRowCard', () => {
   it('should have an anchor component with the right properties', () => {
     const link = subject.find('a');
     expect(link).to.not.be.a('null');
-    expect(link.props()).to.contain.all({
+    expect(link.props()).to.contain({
       href: `/experiments/${mockExperiment.slug}`,
       className: 'experiment-summary'
     });

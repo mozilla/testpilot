@@ -36,7 +36,7 @@ export default class ExperimentRowCard extends React.Component {
     const isCompleted = isAfterCompletedDate(experiment);
 
     return (
-      <a id="show-detail" href={`/experiments/${slug}`} onClick={(evt) => this.openDetailPage(evt)}
+      <a id="show-detail" href={`/experiments/${slug}`} onClick={() => this.openDetailPage()}
         className={classnames('experiment-summary', {
           enabled,
           'just-launched': this.justLaunched(),

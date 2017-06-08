@@ -53,7 +53,7 @@ export default class EmailDialog extends React.Component {
           <div className="modal-cancel" onClick={e => this.skip(e)}/>
         </header>
         <div className="modal-content modal-form centered">
-          <p data-l10n-id="emailOptInMessage" className="">Find out about new experiments and see test results for experiments you've tried.</p>
+          <p data-l10n-id="emailOptInMessage" className="">Find out about new experiments and see test results for experiments you&apos;ve tried.</p>
           <NewsletterForm {...{ email, privacy }}
                           isModal={true}
                           setEmail={newEmail => this.setState({ email: newEmail })}

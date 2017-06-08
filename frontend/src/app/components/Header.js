@@ -102,9 +102,9 @@ export default class Header extends React.Component {
     );
   }
 
-  toggleSettings(evt: Object) {
+  toggleSettings() {
     if (this.state.showSettings) {
-      this.close(evt);
+      this.close();
     } else {
       this.setState({ showSettings: true });
     }

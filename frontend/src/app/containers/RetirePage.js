@@ -72,7 +72,7 @@ export default class RetirePage extends React.Component {
                 <p data-l10n-id="retirePageMessage">Hope you had fun experimenting with us. <br /> Come back any time.</p>
               </div>
               <div className="modal-actions">
-                <a onClick={() => this.takeSurvey()} data-l10n-id="retirePageSurveyButton" href="https://qsurvey.mozilla.com/s3/test-pilot" target="_blank" className="button default large">Take a quick survey</a>
+                <a onClick={() => this.takeSurvey()} data-l10n-id="retirePageSurveyButton" href="https://qsurvey.mozilla.com/s3/test-pilot" target="_blank" rel="noopener noreferrer" className="button default large">Take a quick survey</a>
                 <a href="/"  data-l10n-id="home" className="modal-escape">Home</a>
               </div>
             </div>

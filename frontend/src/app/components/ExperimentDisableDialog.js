@@ -42,7 +42,10 @@ export default class ExperimentDisableDialog extends React.Component {
           <div className="modal-actions">
             <a data-l10n-id="feedbackSubmitButton"
                onClick={e => this.submit(e)} href={surveyURL}
-               target="_blank" className="submit button default large quit">Take a quick survey</a>
+               target="_blank" rel="noopener noreferrer"
+               className="submit button default large quit">
+               Take a quick survey
+            </a>
           </div>
         </div>
       </div>

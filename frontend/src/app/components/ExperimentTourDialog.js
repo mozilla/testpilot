@@ -73,9 +73,9 @@ export default class ExperimentTourDialog extends React.Component {
             </div>
           ))}
           <div className="tour-actions">
-            <div onClick={e => this.tourBack(e)}
+            <div onClick={() => this.tourBack()}
                  className={classnames('tour-back', { hidden: atStart })}><div/></div>
-            <div onClick={e => this.tourNext(e)}
+            <div onClick={() => this.tourNext()}
                  className={classnames('tour-next', { 'no-display': atEnd })}><div/></div>
             <div onClick={e => this.complete(e)}
                     className={classnames('tour-done', { 'no-display': !atEnd })}

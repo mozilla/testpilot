@@ -25,8 +25,8 @@ export default class SharePage extends React.Component {
             <div className="modal-content centered">
               <p data-l10n-id="sharePrimary">Love Test Pilot? Help us find some new recruits.</p>
               <ul className="share-list">
-                <li className="share-facebook"><a href={'https://www.facebook.com/sharer/sharer.php?u=' + this.shareUrl('facebook', true)} onClick={this.handleClick('facebook')} target="_blank">Facebook</a></li>
-                <li className="share-twitter"><a href={'https://twitter.com/home?status=' + this.shareUrl('twitter', true)} onClick={this.handleClick('twitter')} target="_blank">Twitter</a></li>
+                <li className="share-facebook"><a href={'https://www.facebook.com/sharer/sharer.php?u=' + this.shareUrl('facebook', true)} onClick={this.handleClick('facebook')} target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                <li className="share-twitter"><a href={'https://twitter.com/home?status=' + this.shareUrl('twitter', true)} onClick={this.handleClick('twitter')} target="_blank" rel="noopener noreferrer">Twitter</a></li>
                 <li className="share-email"><a href={'mailto:?body=' + this.shareUrl('email', true)} data-l10n-id="shareEmail" onClick={this.handleClick('email')}>E-mail</a></li>
               </ul>
               <p data-l10n-id="shareSecondary">or just copy and paste this link...</p>

@@ -77,8 +77,11 @@ export default class NewsletterForm extends React.Component {
                onChange={this.handlePrivacyClick} onClick={this.handlePrivacyClick} />
         { this.state.privacyNote ? <span data-l10n-id="newsletterFormPrivacyAgreementRequired" style={{ color: 'red', marginRight: '0.5em' }}></span> : null }
         <span data-l10n-id="newsletterFormPrivacyNotice">
-          I'm okay with Mozilla handling by info as explained in
-          <a target="_blank" href={url}>this Privacy Notice</a>.
+          I&apos;m okay with Mozilla handling by info as explained in
+          <a target="_blank" rel="noopener noreferrer"
+            href={url}>
+            this Privacy Notice
+          </a>.
         </span>
       </label>
     );
