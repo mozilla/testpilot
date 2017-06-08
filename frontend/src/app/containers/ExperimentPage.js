@@ -13,7 +13,6 @@ import ExperimentDisableDialog from '../components/ExperimentDisableDialog';
 import ExperimentEolDialog from '../components/ExperimentEolDialog';
 import ExperimentTourDialog from '../components/ExperimentTourDialog';
 import MainInstallButton from '../components/MainInstallButton';
-import ExperimentCardList from '../components/ExperimentCardList';
 import ExperimentPreFeedbackDialog from '../components/ExperimentPreFeedbackDialog';
 import View from '../components/View';
 import Warning from '../components/Warning';
@@ -202,12 +201,9 @@ export class ExperimentDetail extends React.Component {
   }
 
   render() {
-    const { experiment, experiments, installed, isAfterCompletedDate, isDev,
+    const { experiment, installed, isAfterCompletedDate, isDev,
             hasAddon, setExperimentLastSeen, clientUUID,
             setPageTitleL10N } = this.props;
-
-    // Loading handled in static with react router; don't return anything if no experiments
-    if (experiments.length === 0) { return null; }
 
     // Show a 404 page if an experiment for this slug wasn't found.
     if (!experiment) { return <NotFoundPage {...this.props} />; }
@@ -238,7 +234,6 @@ export class ExperimentDetail extends React.Component {
 
     const surveyURL = buildSurveyURL('givefeedback', title, installed, clientUUID, survey_url);
     const graduated = isAfterCompletedDate(experiment);
-    const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
 
     let statusType = null;
     if (experiment.error) {
@@ -476,15 +471,6 @@ export class ExperimentDetail extends React.Component {
               </LayoutWrapper>
             </div>
           </div>
-          {!hasAddon && <Banner>
-            <h2 className="banner__subtitle centered" data-l10n-id="otherExperiments">Try out these experiments as well</h2>
-            <LayoutWrapper flexModifier="card-list">
-              <ExperimentCardList {...this.props}
-                                  experiments={currentExperiments}
-                                  except={experiment.slug}
-                                  eventCategory="ExperimentsDetailPage Interactions" />
-            </LayoutWrapper>
-          </Banner>}
         </View>
       </section>
     );
@@ -833,7 +819,6 @@ export class ExperimentDetail extends React.Component {
 //   clientUUID: React.PropTypes.string,
 //   isDev: React.PropTypes.bool,
 //   hasAddon: React.PropTypes.any,
-//   experiments: React.PropTypes.array,
 //   installed: React.PropTypes.object,
 //   installedAddons: React.PropTypes.array,
 //   navigateTo: React.PropTypes.func,
