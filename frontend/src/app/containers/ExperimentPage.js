@@ -22,6 +22,9 @@ import Banner from '../components/Banner';
 import Copter from '../components/Copter';
 import LayoutWrapper from '../components/LayoutWrapper';
 
+import Switch from '../components/Switch';
+import { VariantTests, VariantTestCase, VariantTestDefault } from '../components/VariantTests';
+
 
 export default class ExperimentPage extends React.Component {
   render() {
@@ -275,6 +278,7 @@ export class ExperimentDetail extends React.Component {
             title={title}
             onCancel={() => this.setState({ showEolDialog: false })}
             onSubmit={e => {
+              e.preventDefault();
               this.setState({ showEolDialog: false });
               this.uninstallExperiment(e);
             }} />}
@@ -631,14 +635,14 @@ export class ExperimentDetail extends React.Component {
     if (!hasAddon || !validVersion) {
       return null;
     }
-    if (isAfterCompletedDate(experiment)) {
-      if (enabled) {
-        return (
-          <div className="experiment-controls">
-            <button onClick={e => { e.preventDefault(); this.setState({ showEolDialog: true }); }} style={{ minWidth: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'warning'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text"></span></button>
-          </div>
-        );
-      }
+
+    let button;
+    let progress;
+    if (isEnabling) {
+      progress = Infinity;
+    }
+
+    if (isAfterCompletedDate(experiment) && !enabled) {
       return null;
     }
     if (installed && installed[experiment.addon_id] && installed[experiment.addon_id].manuallyDisabled) {
@@ -647,19 +651,35 @@ export class ExperimentDetail extends React.Component {
       </div>;
     }
     if (enabled) {
-      return (
-        <div className="experiment-controls">
-          <a onClick={e => this.handleFeedback(e)} data-l10n-id="giveFeedback" id="feedback-button" className="button default" href={surveyURL} target="_blank" rel="noopener noreferrer">Give Feedback</a>
-          <button onClick={e => this.renderUninstallSurvey(e)} style={{ minWidth: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'secondary'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text"></span></button>
-        </div>
-      );
-    }
-    return (
-      <div className="experiment-controls">
+      button = <div className="experiment-controls">
+        <a onClick={e => this.handleFeedback(e)} data-l10n-id="giveFeedback" id="feedback-button" className="button default" href={surveyURL} target="_blank" rel="noopener noreferrer">Give Feedback</a>
+        <button onClick={e => this.renderUninstallSurvey(e)} style={{ minWidth: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'secondary'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text"></span></button>
+      </div>;
+    } else {
+      button = <div className="experiment-controls">
         <a onClick={e => this.highlightPrivacy(e)} className="highlight-privacy" data-l10n-id="highlightPrivacy">Your privacy</a>
         <button onClick={e => this.installExperiment(e)} style={{ minWidth: progressButtonWidth }} id="install-button"  className={classnames(['button', 'default'], { 'state-change': isEnabling })}><span className="state-change-inner"></span><span data-l10n-id="enableExperimentTransition" className="transition-text">Enabling...</span><span data-l10n-id="enableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text"></span></button>
-      </div>
-    );
+      </div>;
+    }
+
+    return <VariantTests name="experimentPageToggles" varianttests={ this.props.varianttests }>
+      <VariantTestCase value="toggles">
+        <Switch name="homepage-toggle" label="homepage-toggle-label"
+          progress={ progress }
+          onEnable={ (e) => {
+            e.preventDefault();
+            this.installExperiment(e);
+          }}
+          onDisable={ (e) => {
+            e.preventDefault();
+            this.renderUninstallSurvey(e);
+          }}
+          checked={ enabled } />
+      </VariantTestCase>
+      <VariantTestDefault>
+        { button }
+      </VariantTestDefault>
+    </VariantTests>;
   }
 
   // scrollOffset lets us scroll to the top of the highlight box shadow animation
@@ -728,8 +748,6 @@ export class ExperimentDetail extends React.Component {
     const { experiment, enableExperiment, sendToGA } = this.props;
     const { isEnabling } = this.state;
 
-    evt.preventDefault();
-
     // Ignore subsequent clicks if already in progress
     if (isEnabling) { return; }
 
@@ -792,8 +810,6 @@ export class ExperimentDetail extends React.Component {
     const { experiment, disableExperiment } = this.props;
     const { isDisabling } = this.state;
 
-    evt.preventDefault();
-
     // Ignore subsequen clicks if already in progress
     if (isDisabling) { return; }
 
@@ -812,10 +828,8 @@ export class ExperimentDetail extends React.Component {
     disableExperiment(experiment);
   }
 
-  renderUninstallSurvey(evt) {
-    evt.preventDefault();
-
-    this.uninstallExperiment(evt);
+  renderUninstallSurvey(e) {
+    this.uninstallExperiment(e);
 
     this.setState({ showDisableDialog: true });
   }

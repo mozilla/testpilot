@@ -30,7 +30,9 @@ describe('app/components/ExperimentRowCard', () => {
       navigateTo: sinon.spy(),
       sendToGA: sinon.spy(),
       getExperimentLastSeen: sinon.spy(),
-      isAfterCompletedDate: sinon.spy()
+      isAfterCompletedDate: sinon.spy(),
+      enableExperiment: sinon.spy(),
+      disableExperiment: sinon.spy()
     };
     subject = shallow(<ExperimentRowCard {...props} />);
   });

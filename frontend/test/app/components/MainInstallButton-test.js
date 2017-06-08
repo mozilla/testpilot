@@ -73,4 +73,9 @@ describe('app/components/MainInstallButton', () => {
     expect(props.installAddon.called).to.equal(false);
     expect(props.navigateTo.calledWith('/experiments')).to.equal(true);
   });
+
+  it('shows the button when the white border variant test is chosen', () => {
+    subject.setProps({ varianttests: { installButtonBorder: "bigBorder" } });
+    expect(findByL10nID('landingInstallButton').length).to.equal(1);
+  });
 });
