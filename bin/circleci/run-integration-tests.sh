@@ -1,6 +1,7 @@
 #!/bin/bash
 end=$((SECONDS+60))
 
+npm run content
 npm start &
 STATIC_SERVER_PID=$!
 
