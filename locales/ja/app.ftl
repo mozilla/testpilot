@@ -62,6 +62,7 @@ oneClickInstallMajorCta = { $title } を有効化
 landingRequiresDesktop = Test Pilot を試すには Windows、Mac または Linux 向けのデスクトップ版 Firefox が必要です
 landingDownloadFirefoxDesc = Test Pilot は Windows、OS X および Linux 版の Firefox に対応しています)
 landingUpgradeDesc = Test Pilot を試すには Firefox 49 以降が必要です。
+landingUpgradeDesc2 = Test Pilot は Firefox { $version } 以上を必要とします。
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox をアップグレード
 landingDownloadFirefoxSubTitle = 無料ダウンロード
