@@ -62,6 +62,7 @@ oneClickInstallMajorCta = { $title } bekapcsolása
 landingRequiresDesktop = A Tesztpilótához asztali Firefox szükséges Windowson, Macen vagy Linuxon
 landingDownloadFirefoxDesc = (A Tesztpilóta a Windowsos, OS X-es és Linuxos Firefoxhoz érhető el)
 landingUpgradeDesc = A Tesztpilótához Firefox 49 vagy újabb szükséges.
+landingUpgradeDesc2 = A Tesztpilótához Firefox { $version } vagy újabb szükséges.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox frissítése
 landingDownloadFirefoxSubTitle = Ingyenes letöltés
