@@ -64,6 +64,7 @@ minvidMeasurements1 = Zbiramo tudi podatke o tem, kolikokrat naletite na predvaj
 minvidMeasurements2 = Ne zbiramo podatkov o tem, katere videoposnetke gledate.
 minvidDetails0Copy = Dostopajte do Min Vida iz predvajalnikov YouTube in Vimeo.
 minvidDetails1Copy = Obdržite si videoposnetek na očeh, medtem ko na spletu počnete druge stvari.
+minvidDetails2CopyChangevideotomedia = Z desno miškino tipko kliknite na povezave do predstavnosti in v meniju boste našli Min Vid.
 minvidDetails3Copy = Dodajte celoten YouTubov seznam predvajanja v čakalno vrsto. Ustvarite svojo s klikom na ikono '+' ali v priročnem meniju izberite možnost "Dodaj v čakalno vrsto".
 minvidToursteps0Copy = Izberite ikono za začetek uporabe Min Vid.
 minvidToursteps1Copy = Obdržite si videoposnetek na očeh, medtem ko brskate.
