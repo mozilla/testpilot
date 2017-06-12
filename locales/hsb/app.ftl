@@ -62,6 +62,7 @@ oneClickInstallMajorCta = { $title } zmóžnić
 landingRequiresDesktop = Test Pilot sej Firefox za desktop na Windows, Mac abo Linux wužaduje
 landingDownloadFirefoxDesc = (Test Pilot je za Firefox na Windows, OS X a Linux k dispoziciji)
 landingUpgradeDesc = Test Pilot sej Firefox 49 abo nowši wužaduje.
+landingUpgradeDesc2 = Test Pilot sej Firefox { $version } abo nowši wužaduje.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox aktualizować
 landingDownloadFirefoxSubTitle = Darmotne sćehnjenje
