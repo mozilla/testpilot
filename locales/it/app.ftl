@@ -62,6 +62,7 @@ oneClickInstallMajorCta = Attiva { $title }
 landingRequiresDesktop = Test Pilot è compatibile con Firefox per computer Windows, Mac o Linux.
 landingDownloadFirefoxDesc = (Test Pilot è disponibile per Firefox su Windows, OS X e Linux)
 landingUpgradeDesc = Test Pilot è compatibile con Firefox 49 o versioni successive.
+landingUpgradeDesc2 = Test Pilot è compatibile con Firefox { $version } o superiore.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Aggiorna Firefox
 landingDownloadFirefoxSubTitle = Download gratuito
