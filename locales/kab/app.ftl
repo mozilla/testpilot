@@ -62,6 +62,7 @@ oneClickInstallMajorCta = Rmed { $title }
 landingRequiresDesktop = Akken ad tesqedceḍ Test Pilot yessefk ad tesbeddeḍ Firefox ɣef uselkim inek Windows, Mac ou Linux
 landingDownloadFirefoxDesc = (Test Pilot yella kan i Firefox Windows, OS X akked Linux)
 landingUpgradeDesc = Test Pilot yesra Firefox 49 neɣ ugar.
+landingUpgradeDesc2 = Test Pilot yesra Firefox { $version } neγ ugar.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Leqqem Firefox
 landingDownloadFirefoxSubTitle = Asider baṭel
