@@ -62,6 +62,7 @@ oneClickInstallMajorCta = Включить { $title }
 landingRequiresDesktop = Лётчику-испытателю требуется Firefox для компьютера на Windows, Mac или Linux
 landingDownloadFirefoxDesc = (Лётчик-испытатель доступен для Firefox на Windows, OS X и Linux)
 landingUpgradeDesc = Лётчику-испытателю необходим Firefox 49 или выше.
+landingUpgradeDesc2 = Лётчику-испытателю необходим Firefox { $version } или выше.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Обновить Firefox
 landingDownloadFirefoxSubTitle = Загрузить бесплатно
