@@ -30,17 +30,15 @@ const Services = {
 };
 const storage = {};
 const TelemetryController = {
-  submitExternalPing: sinon.spy(),
-  getCurrentPingData: () => {
-    return {
-      environment: {
-        build: { version: 'environment.build.version' },
-        system: {
-          os: { name: 'system.os.name', version: 'system.os.version' }
-        },
-        settings: { locale: 'en-US' }
-      }
-    };
+  submitExternalPing: sinon.spy()
+};
+const TelemetryEnvironment = {
+  currentEnvironment: {
+    build: { version: 'environment.build.version' },
+    system: {
+      os: { name: 'system.os.name', version: 'system.os.version' }
+    },
+    settings: { locale: 'en-US' }
   }
 };
 
@@ -60,6 +58,10 @@ const Experiment = proxyquire('../src/lib/metrics/experiment', {
   'sdk/simple-storage': { storage, '@noCallThru': true },
   'resource://gre/modules/TelemetryController.jsm': {
     TelemetryController,
+    '@noCallThru': true
+  },
+  'resource://gre/modules/TelemetryEnvironment.jsm': {
+    TelemetryEnvironment,
     '@noCallThru': true
   }
 }).default;
