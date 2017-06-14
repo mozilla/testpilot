@@ -101,6 +101,12 @@ emailOptInSuccessMessage2 = ありがとうございます！
 emailOptInConfirmationClose = 実験に進む...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = 最新情報
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -109,7 +115,8 @@ experimentListJustLaunchedTab = 最近公開
 experimentListJustUpdatedTab = 最近更新
 experimentListEndingTomorrow = 明日終了
 experimentListEndingSoon = まもなく終了
-experimentsListCondensedHeader = 興味のある実験を選びましょう！
+experimentCondensedHeader = Test Pilot へようこそ！
+experimentListHeader = 興味のある実験を選びましょう！
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
