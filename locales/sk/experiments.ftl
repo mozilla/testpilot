@@ -45,6 +45,7 @@ containersDetails2Copy = Vďaka farebným označeniam ľahko rozlíšite jednotl
 containersToursteps0Copy = Vďaka experimentu Containers môžete označiť a organizovať skupiny kariet.
 containersToursteps1Copy = Prejdite myšou na tlačidlo novej karty a vyberte si ľubovoľný kontajner.
 containersToursteps2Copy = Na otvorenie kontajnerových kariet, vytvorenie nových kontajnerov, ich organizáciu, úpravu či odstránenie použite tlačidlo v paneli nástrojov.
+containersToursteps3CopyRewordwithouttoolbar = Vo svojom prehliadači môžete udržovať poriadok skrytím všetkých otvorených kontajnerových kariet.
 containersToursteps4Copy = Pomocou Test Pilotu nám môžete poskytnúť spätnú väzbu alebo Containers deaktivovať.
 containersContributors0Title = Bezpečnosť a súkromie používateľov
 containersContributors1Title = Inžinier - platforma
