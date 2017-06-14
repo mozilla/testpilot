@@ -60,6 +60,7 @@
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "5.0.3",
     "eslint-plugin-react": "7.0.1",
+    "feed": "1.1.0",
     "fetch-mock": "5.9.4",
     "flow-bin": "0.47.0",
     "flow-coverage-report": "0.3.0",

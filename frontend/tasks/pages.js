@@ -204,6 +204,10 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
     <link rel="localization" href="/static/locales/{locale}/app.ftl" />
     <link rel="localization" href="/static/locales/{locale}/experiments.ftl" />
 
+    <link rel="alternate" type="application/atom+xml" href="/feed.atom" title="Atom Feed"/>
+    <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="RSS Feed"/>
+    <link rel="alternate" type="application/json" href="/feed.json" title="JSON Feed"/>
+
     <link rel="canonical" href={ `https://testpilot.firefox.com/${canonical_path}` } />
 
     <title data-l10n-id="pageTitleDefault">{ meta_title }</title>
@@ -218,6 +222,7 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
     <meta name="twitter:image" content={ image_twitter } />
     <meta property="og:url" content="https://testpilot.firefox.com" />
   </head>;
+
   const bodyComponent = <div id="static-root">
     <noscript>
       <div className="full-page-wrapper centered">
