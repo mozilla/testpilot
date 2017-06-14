@@ -415,7 +415,6 @@ declare module 'resource://gre/modules/TelemetryController.jsm' {
   declare module.exports: {
     TelemetryController: {
       Constants: Object,
-      getCurrentPingData: any,
       // observe: (subject: string, topic: string, data: any) => any,
       submitExternalPing: (type: string, payload: Object, options?: {
         addClientId?: boolean,
@@ -423,6 +422,31 @@ declare module 'resource://gre/modules/TelemetryController.jsm' {
         overrideEnvironment?: Object
       }) => Promise<string>
       // TODO
+    }
+  }
+}
+
+declare module 'resource://gre/modules/TelemetryEnvironment.jsm' {
+  declare module.exports: {
+    TelemetryEnvironment: {
+      currentEnvironment: {
+        addons: any,
+        build: {
+          version: string,
+        },
+        experiments: any,
+        partner: any,
+        profile: any,
+        settings: {
+          locale: string
+        },
+        system: {
+          os: {
+            name: string,
+            version: string
+          }
+        }
+      }
     }
   }
 }
