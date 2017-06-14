@@ -3,6 +3,7 @@ import 'l20n';
 import es6Promise from 'es6-promise';
 import 'isomorphic-fetch';
 import Raven from 'raven-js';
+import moment from 'moment';
 
 import './lib/ga-snippet';
 import config from './config';
@@ -19,6 +20,7 @@ import share from '../pages/share.js';
 
 es6Promise.polyfill();
 Raven.config(config.ravenPublicDSN).install();
+moment.locale(window.navigator.language);
 
 const routes = {
   notfound,

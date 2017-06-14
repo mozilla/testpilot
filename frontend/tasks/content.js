@@ -10,20 +10,20 @@ const YAML = require('yamljs');
 
 const util = require('./util');
 
+const NEWS_UPDATES_YAML = config.CONTENT_SRC_PATH + 'news_updates.yaml'
+
 gulp.task('content-build', ['content-experiments-data']);
 
-gulp.task('content-watch', () => {
+gulp.task('content-watch', () =>
   gulp.watch(config.CONTENT_SRC_PATH + '/**/*.yaml', [
     'content-experiments-data',
     'content-extract-experiment-strings'
-  ]);
-});
+  ]));
 
-gulp.task('content-experiments-data', function generateStaticAPITask() {
-  return gulp.src(config.CONTENT_SRC_PATH + 'experiments/*.yaml')
+gulp.task('content-experiments-data', () =>
+  gulp.src(config.CONTENT_SRC_PATH + 'experiments/*.yaml')
     .pipe(buildExperimentsData())
-    .pipe(gulp.dest(config.DEST_PATH));
-});
+    .pipe(gulp.dest(config.DEST_PATH)));
 
 gulp.task('content-extract-strings', ['content-extract-experiment-strings']);
 
@@ -34,6 +34,7 @@ gulp.task('content-extract-experiment-strings', () =>
 
 function buildExperimentsFTL() {
   const strings = [];
+  let newsUpdates = loadGeneralNewsUpdates();
 
   function collectEntry(file, enc, cb) {
     const yamlData = file.contents.toString();
@@ -43,15 +44,35 @@ function buildExperimentsFTL() {
       findLocalizableStrings(experiment);
     }
 
+    if (experiment.news_updates) {
+      newsUpdates = newsUpdates.concat(extractNewsUpdatesFromExperiment(experiment));
+      delete experiment.news_updates;
+    }
+
     return cb();
   }
 
   function endStream(cb) {
+    newsUpdates = excludeDevOnlyNewsUpdates(newsUpdates);
+    extractNewsUpdateStrings();
     this.push(new gutil.File({
       path: 'experiments.ftl',
       contents: new Buffer(generateFTL())
     }));
     cb();
+  }
+
+  function extractNewsUpdateStrings() {
+    // Extract FTL strings for news updates
+    const newsUpdateL10nFields = ['title', 'content'];
+    newsUpdates.forEach(update => {
+      newsUpdateL10nFields.forEach(fieldName => {
+        strings.push({
+          key: util.newsUpdateL10nId(update, fieldName),
+          value: update[fieldName]
+        });
+      });
+    });
   }
 
   function findLocalizableStrings(obj, pieces = [], experiment = null) {
@@ -88,6 +109,7 @@ function buildExperimentsData() {
   const index = {results: []};
   const counts = {};
   const cssStrings = [];
+  let newsUpdates = loadGeneralNewsUpdates();
 
   function collectEntry(file, enc, cb) {
     const yamlData = file.contents.toString();
@@ -96,6 +118,11 @@ function buildExperimentsData() {
     if (experiment.dev && !config.ENABLE_DEV_CONTENT) {
       // Exclude dev content if it's not enabled in config
       return cb();
+    }
+
+    if (experiment.news_updates) {
+      newsUpdates = newsUpdates.concat(extractNewsUpdatesFromExperiment(experiment));
+      delete experiment.news_updates;
     }
 
     cssStrings.push(`
@@ -130,6 +157,12 @@ function buildExperimentsData() {
   }
 
   function endStream(cb) {
+    newsUpdates = excludeDevOnlyNewsUpdates(newsUpdates);
+    this.push(new gutil.File({
+      path: 'api/news_updates.json',
+      contents: new Buffer(JSON.stringify(newsUpdates, null, 2))
+    }));
+
     // These files are being consumed by 3rd parties (at a minimum, the Mozilla
     // Measurements Team).  Before changing them, please consult with the
     // appropriate folks!
@@ -149,4 +182,23 @@ function buildExperimentsData() {
   }
 
   return through.obj(collectEntry, endStream);
+}
+
+// Load the initial set of general news updates not attached to any experiment
+function loadGeneralNewsUpdates() {
+  const newsUpdatesData = fs.readFileSync(NEWS_UPDATES_YAML).toString('utf-8');
+  return YAML.parse(newsUpdatesData) || [];
+}
+
+// Extract news updates from experiment, annotate each update with slug.
+function extractNewsUpdatesFromExperiment(experiment) {
+  const { news_updates, slug } = experiment;
+  return news_updates.map(update => ({
+    ...update, experimentSlug: slug
+  }));
+}
+
+// Final pass through news updates to exclude dev-only content
+function excludeDevOnlyNewsUpdates(newsUpdates) {
+  return newsUpdates.filter(update => config.ENABLE_DEV_CONTENT || !update.dev);
 }
