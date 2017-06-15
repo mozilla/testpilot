@@ -115,6 +115,8 @@ experimentListJustLaunchedTab = Krekt lansearre
 experimentListJustUpdatedTab = Krekt bywurke
 experimentListEndingTomorrow = Einiget moarn
 experimentListEndingSoon = Einiget ynkoarten
+experimentCondensedHeader = Wolkom by Test Pilot!
+experimentListHeader = Kies jo eksperiminten!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
