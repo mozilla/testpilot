@@ -101,6 +101,12 @@ emailOptInSuccessMessage2 = Tack!
 emailOptInConfirmationClose = Vidare till experimenten...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Senast uppdaterade
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -109,7 +115,8 @@ experimentListJustLaunchedTab = Nyligen startad
 experimentListJustUpdatedTab = Nyligen uppdaterad
 experimentListEndingTomorrow = Slutar imorgon
 experimentListEndingSoon = Slutar snart
-experimentsListCondensedHeader = Välj dina experiment!
+experimentCondensedHeader = Välkommen till Test Pilot!
+experimentListHeader = Välj dina experiment!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
