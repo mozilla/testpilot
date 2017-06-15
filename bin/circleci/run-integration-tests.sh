@@ -1,8 +1,7 @@
 #!/bin/bash
 end=$((SECONDS+60))
 
-npm run content
-npm start &
+npm run server &
 STATIC_SERVER_PID=$!
 # Wait until the server is available...
 while [ $SECONDS != $end ]; do
