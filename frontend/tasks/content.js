@@ -7,6 +7,7 @@ const mkdirp = require('mkdirp');
 const through = require('through2');
 const gutil = require('gulp-util');
 const YAML = require('yamljs');
+const Feed = require('feed');
 
 const util = require('./util');
 
@@ -31,6 +32,34 @@ gulp.task('content-extract-experiment-strings', () =>
   gulp.src(config.CONTENT_SRC_PATH + 'experiments/*.yaml')
     .pipe(buildExperimentsFTL())
     .pipe(gulp.dest('./locales/en-US')));
+
+function populateRSSFeed(newsUpdates) {
+  return new Feed({
+    title: 'Test Pilot News Updates',
+    description: 'News Updates for Test Pilot experiments',
+    id: 'https://blog.mozilla.org/testpilot',
+    link: 'https://blog.mozilla.org/testpilot',
+    favicon: 'https://testpilot.firefox.com/static/images/favicon.ico',
+    feedLinks: {
+      rss: 'https://testpilot.firefox.com/feed.rss',
+      atom: 'https://testpilot.firefox.com/feed.atom',
+      json: 'https://testpilot.firefox.com/feed.json'
+    },
+    author: {
+      name: 'Mozilla',
+      link: 'https://testpilot.firefox.com'
+    },
+    feed: newsUpdates.map(post => {
+      return {
+        title: post.title,
+        id: post.link,
+        link: post.link,
+        date: post.published,
+        content: post.content
+      }
+    })
+  });
+}
 
 function buildExperimentsFTL() {
   const strings = [];
@@ -158,9 +187,23 @@ function buildExperimentsData() {
 
   function endStream(cb) {
     newsUpdates = excludeDevOnlyNewsUpdates(newsUpdates);
+    const feed = populateRSSFeed(newsUpdates);
+
     this.push(new gutil.File({
       path: 'api/news_updates.json',
       contents: new Buffer(JSON.stringify(newsUpdates, null, 2))
+    }));
+    this.push(new gutil.File({
+      path: 'feed.rss',
+      contents: new Buffer(feed.rss2())
+    }));
+    this.push(new gutil.File({
+      path: 'feed.atom',
+      contents: new Buffer(feed.atom1())
+    }));
+    this.push(new gutil.File({
+      path: 'feed.json',
+      contents: new Buffer(feed.json1())
     }));
 
     // These files are being consumed by 3rd parties (at a minimum, the Mozilla
