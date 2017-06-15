@@ -101,6 +101,12 @@ emailOptInSuccessMessage2 = Köszönjük!
 emailOptInConfirmationClose = Tovább a kísérletekhez…
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Legújabb frissítések
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -109,7 +115,8 @@ experimentListJustLaunchedTab = Épp most indult
 experimentListJustUpdatedTab = Épp most frissült
 experimentListEndingTomorrow = Holnap véget ér
 experimentListEndingSoon = Hamarosan véget ér
-experimentsListCondensedHeader = Válasszon kísérleteket!
+experimentCondensedHeader = Üdvözli a Tesztpilóta!
+experimentListHeader = Válasszon kísérleteket!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
