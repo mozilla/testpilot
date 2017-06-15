@@ -101,6 +101,12 @@ emailOptInSuccessMessage2 = Děkujeme!
 emailOptInConfirmationClose = Podívat se na experimenty...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Poslední aktualizace
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -109,7 +115,8 @@ experimentListJustLaunchedTab = Právě spuštěno
 experimentListJustUpdatedTab = Právě aktualizováno
 experimentListEndingTomorrow = Zítra končí
 experimentListEndingSoon = Brzy končí
-experimentsListCondensedHeader = Vyberte si experimenty!
+experimentCondensedHeader = Vítá vás Test Pilot!
+experimentListHeader = Vyberte si experimenty!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
