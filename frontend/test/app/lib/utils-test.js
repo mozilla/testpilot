@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { l10nIdFormat, l10nId, experimentL10nId, lookup } from '../../../src/app/lib/utils';
+import { l10nIdFormat, l10nId, experimentL10nId, newsUpdateL10nId, lookup } from '../../../src/app/lib/utils';
 
 describe('app/lib/utils', () => {
 
@@ -82,6 +82,37 @@ describe('app/lib/utils', () => {
     it('should return null for a dev-only experiment', () => {
       expect(experimentL10nId({ dev: true, ...mockExperiment }, ['string'])).to.equal(null);
     });
+  });
+
+  describe('newsUpdateL10nId', () => {
+
+    it('should generate the correct l10n ID when given an update with experiment slug', () => {
+      const result = newsUpdateL10nId({
+        experimentSlug: 'foobar',
+        slug: 'xyzzy',
+        title: 'bazquux'
+      }, 'title');
+      expect(result).to.equal('foobarNewsupdatesXyzzyTitle');
+    });
+
+    it('should generate the correct l10n ID when given an field with an _l10nsuffix', () => {
+      const result = newsUpdateL10nId({
+        experimentSlug: 'foobar',
+        slug: 'xyzzy',
+        title: 'bazquux',
+        title_l10nsuffix: 'frobnitz'
+      }, 'title');
+      expect(result).to.equal('foobarNewsupdatesXyzzyTitleFrobnitz');
+    });
+
+    it('should generate the correct l10n ID when given an update without experiment slug', () => {
+      const result = newsUpdateL10nId({
+        slug: 'xyzzy',
+        title: 'bazquux'
+      }, 'title');
+      expect(result).to.equal('testpilotNewsupdatesXyzzyTitle');
+    });
+
   });
 
 });

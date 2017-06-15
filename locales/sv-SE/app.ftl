@@ -62,6 +62,7 @@ oneClickInstallMajorCta = Aktivera { $title }
 landingRequiresDesktop = Test Pilot kräver Firefox för datorer i Windows, Mac eller Linux
 landingDownloadFirefoxDesc = (Test Pilot är tillgänglig för Firefox på Windows, OS X och Linux)
 landingUpgradeDesc = Test Pilot kräver Firefox 49 eller högre.
+landingUpgradeDesc2 = Test Pilot kräver Firefox { $version } eller högre.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Uppgradera Firefox
 landingDownloadFirefoxSubTitle = Gratis nedladdning
@@ -100,6 +101,12 @@ emailOptInSuccessMessage2 = Tack!
 emailOptInConfirmationClose = Vidare till experimenten...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Senast uppdaterade
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -108,7 +115,8 @@ experimentListJustLaunchedTab = Nyligen startad
 experimentListJustUpdatedTab = Nyligen uppdaterad
 experimentListEndingTomorrow = Slutar imorgon
 experimentListEndingSoon = Slutar snart
-experimentsListCondensedHeader = Välj dina experiment!
+experimentCondensedHeader = Välkommen till Test Pilot!
+experimentListHeader = Välj dina experiment!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.

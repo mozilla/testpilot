@@ -62,6 +62,7 @@ oneClickInstallMajorCta = Увімкнути { $title }
 landingRequiresDesktop = Test Pilot потребує Firefox на Windows, Mac чи Linux
 landingDownloadFirefoxDesc = (Test Pilot доступний для Firefox на Windows, OS X та Linux)
 landingUpgradeDesc = Test Pilot потребує Firefox 49 або вище.
+landingUpgradeDesc2 = Test Pilot потребує Firefox { $version } або вище.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Оновити Firefox
 landingDownloadFirefoxSubTitle = Безкоштовне завантаження

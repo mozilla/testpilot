@@ -4,6 +4,8 @@ import { VariantTests, VariantTestCase, VariantTestDefault } from './VariantTest
 
 import LayoutWrapper from './LayoutWrapper';
 
+import config from '../config';
+
 export default class MainInstallButton extends React.Component {
 
   constructor(props) {
@@ -95,7 +97,7 @@ export default class MainInstallButton extends React.Component {
           {!isFirefox ? (
               <span data-l10n-id="landingDownloadFirefoxDesc" className="parens">(Test Pilot is available for Firefox on Windows, OS X and Linux)</span>
             ) : (
-              <span className="parens" data-l10n-id="landingUpgradeDesc">Test Pilot requires Firefox 49 or higher.</span>
+              <span className="parens" data-l10n-id="landingUpgradeDesc2" data-l10n-args={JSON.stringify({ version: config.minFirefoxVersion })}>Test Pilot requires Firefox { config.minFirefoxVersion } or higher.</span>
             )
           }
           {!isMobile && <a href="https://www.mozilla.org/firefox" className="button primary download-firefox">

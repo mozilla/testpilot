@@ -62,6 +62,7 @@ oneClickInstallMajorCta = Slå på { $title }
 landingRequiresDesktop = Test Pilot krev Firefox for desktop på Windows, Mac eller Linux
 landingDownloadFirefoxDesc = (Test Pilot er tillgjengleg for Firefox på Windows, OS X og Linux)
 landingUpgradeDesc = Test Pilot krev Firefox 49 eller høgare.
+landingUpgradeDesc2 = Test Pilot krev Firefox { $version } eller høgare.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Oppgrader Firefox
 landingDownloadFirefoxSubTitle = Gratis nedlasting

@@ -58,6 +58,7 @@ details:
     image: /static/images/experiments/min-vid/experiments_experimentdetail/detail3.jpg
     copy: >
       Right click on links to media to find Min Vid in the in-context controls.
+    copy_l10nsuffix: changeVideoToMedia
   -
     image: /static/images/experiments/min-vid/experiments_experimentdetail/detail4.jpg
     copy: >

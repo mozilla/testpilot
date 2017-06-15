@@ -17,9 +17,15 @@ To make a new experiment:
 
 # Localization
 
-An experiment's YAML file is considered to contain the canonical localization for English, and is compiled into [an FTL file](https://testpilot.dev.mozaws.net/static/locales/en-US/experiments.ftl) with each build. That file is monitored by Pontoon, and strings are translated by volunteer localizers.
+An experiment's YAML file is considered to contain the canonical localization for English. This content must be extracted & compiled into [an FTL file](https://testpilot.dev.mozaws.net/static/locales/en-US/experiments.ftl). That file is monitored by Pontoon, and strings are translated by volunteer localizers.
 
-For new experiments, you must copy the build version from `frontend/build/static/locales/en-US/experiments.ftl` to `locales/en-US/experiments.ftl`, and include it in the pull request (ref #1781).
+To manually extract strings for Pontoon, run the command `npm run l10n:extract`. If you have a dev server running via `npm start`, this should happen automatically when you change YAML files. In either case, the FTL file should *not* be edited manually.
+
+Be sure to include changes to `locales/en-US/experiments.ftl` in your pull requests with changed content. The `npm run l10n:check` command will be run in CircleCI to help ensure any string changes have been picked up - uncommitted string changes will cause the test run to fail.
+
+If a new field is added to the experiment YAML - and it needs to be localized - that field **must** be also added to [the list of `LOCALIZABLE_FIELDS` in `frontend/tasks/util.js`][LOCALIZABLE_FIELDS].
+
+[LOCALIZABLE_FIELDS]: https://github.com/mozilla/testpilot/blob/master/frontend/tasks/util.js#L1
 
 If the content of a string changes sufficiently that translations of it should be invalidated:
 

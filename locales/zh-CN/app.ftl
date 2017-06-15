@@ -62,6 +62,7 @@ oneClickInstallMajorCta = 启用 { $title }
 landingRequiresDesktop = Test Pilot 需要在 Windows、Mac 或 Linux 上的 Firefox 桌面版中运行
 landingDownloadFirefoxDesc = （Test Pilot 可用于 Windows、Mac 或 Linux 上运行的 Firefox）
 landingUpgradeDesc = Test Pilot 需要 Firefox 49 或更高版本。
+landingUpgradeDesc2 = Test Pilot 需要 Firefox { $version } 或更高版本。
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = 升级 Firefox
 landingDownloadFirefoxSubTitle = 免费下载
@@ -100,6 +101,12 @@ emailOptInSuccessMessage2 = 谢谢！
 emailOptInConfirmationClose = 关于此实验...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = 最新更新
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -108,7 +115,8 @@ experimentListJustLaunchedTab = 刚刚启动
 experimentListJustUpdatedTab = 刚刚更新
 experimentListEndingTomorrow = 明天结束
 experimentListEndingSoon = 即将结束
-experimentsListCondensedHeader = 选择你的实验！
+experimentCondensedHeader = 欢迎使用 Test Pilot！
+experimentListHeader = 挑选您的实验！
 
 
 // An individual experiment in the listing of all Test Pilot experiments.

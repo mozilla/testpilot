@@ -49,6 +49,7 @@ gulp.task('scripts-watch', () => {
   gulp.watch('../../package.json', ['scripts-app-vendor']);
   gulp.watch(config.SRC_PATH + 'scripts/**/*.js', ['scripts-misc']);
   gulp.watch(config.DEST_PATH + 'api/experiments.json', ['scripts-app-main']);
+  gulp.watch(config.DEST_PATH + 'api/news_updates.json', ['scripts-app-main']);
 });
 
 gulp.task('scripts-misc', () => {

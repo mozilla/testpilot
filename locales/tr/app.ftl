@@ -62,6 +62,7 @@ oneClickInstallMajorCta = { $title } deneyini etkinleştir
 landingRequiresDesktop = Test Pilotu için Firefox'un masaüstü Windows, Mac veya Linux sürümü gerekir
 landingDownloadFirefoxDesc = (Test Pilotu Firox'un Windows, OS X ve Linux sürümlerinde çalışır.)
 landingUpgradeDesc = Test Pilotu için Firefox 49 veya daha yeni bir sürüm gerekir.
+landingUpgradeDesc2 = Test Pilotu için Firefox { $version } veya daha yeni bir sürüm gerekir.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox'u yükseltin
 landingDownloadFirefoxSubTitle = Ücretsiz indirin

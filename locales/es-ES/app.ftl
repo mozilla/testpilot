@@ -62,6 +62,7 @@ oneClickInstallMajorCta = Activar { $title }
 landingRequiresDesktop = Test Pilot requiere Firefox para escritorio en Windows, Mac o Linux
 landingDownloadFirefoxDesc = (Test Pilot está disponible para Firefox en Windows, OS X y Linux)
 landingUpgradeDesc = Test Pilot requiere Firefox 49 o superior.
+landingUpgradeDesc2 = Test Pilot requiere Firefox { $version } o superior.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Actualizar Firefox
 landingDownloadFirefoxSubTitle = Descarga gratuita
@@ -100,6 +101,12 @@ emailOptInSuccessMessage2 = ¡Gracias!
 emailOptInConfirmationClose = Vamos a los experimentos...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Últimas actualizaciones
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -108,7 +115,8 @@ experimentListJustLaunchedTab = Recién iniciados
 experimentListJustUpdatedTab = Recién actualizados
 experimentListEndingTomorrow = Finaliza mañana
 experimentListEndingSoon = Finaliza pronto
-experimentsListCondensedHeader = ¡Escoge tus experimentos!
+experimentCondensedHeader = ¡Bienvenido a Test Pilot!
+experimentListHeader = ¡Elige tus experimentos!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.

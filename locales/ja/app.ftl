@@ -62,6 +62,7 @@ oneClickInstallMajorCta = { $title } を有効化
 landingRequiresDesktop = Test Pilot を試すには Windows、Mac または Linux 向けのデスクトップ版 Firefox が必要です
 landingDownloadFirefoxDesc = Test Pilot は Windows、OS X および Linux 版の Firefox に対応しています)
 landingUpgradeDesc = Test Pilot を試すには Firefox 49 以降が必要です。
+landingUpgradeDesc2 = Test Pilot は Firefox { $version } 以上を必要とします。
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox をアップグレード
 landingDownloadFirefoxSubTitle = 無料ダウンロード
@@ -100,6 +101,12 @@ emailOptInSuccessMessage2 = ありがとうございます！
 emailOptInConfirmationClose = 実験に進む...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = 最新情報
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -108,7 +115,8 @@ experimentListJustLaunchedTab = 最近公開
 experimentListJustUpdatedTab = 最近更新
 experimentListEndingTomorrow = 明日終了
 experimentListEndingSoon = まもなく終了
-experimentsListCondensedHeader = 興味のある実験を選びましょう！
+experimentCondensedHeader = Test Pilot へようこそ！
+experimentListHeader = 興味のある実験を選びましょう！
 
 
 // An individual experiment in the listing of all Test Pilot experiments.

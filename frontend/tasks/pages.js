@@ -52,7 +52,8 @@ gulp.task('pages-build', [
 
 gulp.task('pages-watch', () => {
   gulp.watch(config.SRC_PATH + 'app.js', ['pages-build']);
-  gulp.watch([config.SRC_PATH + 'pages/**/*.md'], ['pages-compiled']);
+  gulp.watch(config.CONTENT_SRC_PATH + '/**/*.yaml', ['pages-build']);
+  gulp.watch(config.SRC_PATH + 'pages/**/*.md', ['pages-compiled']);
 });
 
 function buildLandingPage() {
