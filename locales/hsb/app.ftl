@@ -101,6 +101,12 @@ emailOptInSuccessMessage2 = Wulki dźak!
 emailOptInConfirmationClose = Dale k eksperimentam...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Najnowše aktualizacije
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -109,7 +115,8 @@ experimentListJustLaunchedTab = Runje startowany
 experimentListJustUpdatedTab = Runje zaktualizowany
 experimentListEndingTomorrow = Skónči so jutře
 experimentListEndingSoon = Skónči so bórze
-experimentsListCondensedHeader = Wubjerće swoje eksperimenty!
+experimentCondensedHeader = Witajće k Test Pilot!
+experimentListHeader = Wubjerće swoje eksperimenty!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
