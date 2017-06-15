@@ -101,6 +101,12 @@ emailOptInSuccessMessage2 = Tige tank!
 emailOptInConfirmationClose = Troch nei de eksperiminten…
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Lêste fernijingen
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -109,7 +115,6 @@ experimentListJustLaunchedTab = Krekt lansearre
 experimentListJustUpdatedTab = Krekt bywurke
 experimentListEndingTomorrow = Einiget moarn
 experimentListEndingSoon = Einiget ynkoarten
-experimentsListCondensedHeader = Kies jo eksperiminten!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
