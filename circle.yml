@@ -24,6 +24,8 @@ dependencies:
     - google-chrome --version
     - ./bin/circleci/install-node-dependencies.sh
     - ./bin/circleci/build-addon.sh
+    - ./bin/circleci/build-version-json.sh
+    - ./bin/circleci/build-frontend.sh
 
 test:
   pre:
@@ -47,8 +49,6 @@ deployment:
     branch:
       - master
     commands:
-      - ./bin/circleci/build-version-json.sh
-      - ./bin/circleci/build-frontend.sh
       - TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/deploy.sh dev
       - aws configure set preview.cloudfront true
       - aws cloudfront create-invalidation --distribution-id E2ERG47PHCWD0Z --paths '/*'

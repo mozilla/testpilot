@@ -1,9 +1,6 @@
 #!/bin/bash
 set -ex
 
-# build experiments.json
-npm run content
-
 npm run lint
 npm run l10n:check
 npm run flow
