@@ -116,6 +116,7 @@ experimentListJustUpdatedTab = Recién actualizado
 experimentListEndingTomorrow = Finaliza mañana
 experimentListEndingSoon = Finaliza pronto
 experimentCondensedHeader = ¡Bienvenido a Test Pilot!
+experimentListHeader = ¡Elige tus experimentos!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
