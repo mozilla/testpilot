@@ -287,3 +287,18 @@ noScriptLink = 理由を確かめる
 
 viewPastExperiments = 過去の実験を見る
 hidePastExperiments = 過去の実験を隠す
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = 何か問題が発生しました。
+warningGenericDetail = Test Pilot に何か問題が発生したようです。<a>バグを報告</a> し、このエラーメッセージを教えてください。
+warningUpgradeFirefoxTitle = 続けるには Firefox をアップグレードしてください！
+warningUpgradeFirefoxDetail = Test Pilot を使うには Firefox の最新版が必要です。まずは <a>Firefox をアップグレード</a> してください。
+warningHttpsRequiredTitle = HTTPS 必須です。
+warningHttpsRequiredDetail = Test Pilot は HTTPS 経由でのアクセスが必須となっています。詳細は <a>ドキュメント</a> をご覧ください。
+warningMissingPrefTitle = Test Pilot を開発中ですか？
+warningMissingPrefDetail = Test Pilot をローカルもしくは開発環境で実行する場合、特別な設定が必要となります。詳細は <a>ドキュメント</a> をご覧ください。
+warningBadHostnameTitle = 未承認のホスト名です！
+warningBadHostnameDetail = Test Pilot のサイトは、testpilot.firefox.com、testpilot.stage.mozaws.net、testpilot.dev.mozaws.net あるいは example.com:8000 からのみアクセス可能です。詳細は <a>ドキュメント</a> をご覧ください。
