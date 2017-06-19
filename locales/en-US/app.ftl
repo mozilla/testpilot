@@ -230,3 +230,16 @@ noScriptLink = Find out why
 [[pastExperiments]]
 viewPastExperiments = View Past Experiments
 hidePastExperiments = Hide Past Experiments
+
+// Text of warnings to the user if various error conditions are detected
+[[warnings]]
+warningGenericTitle=Something is wrong!
+warningGenericDetail=Something has gone wrong with Test Pilot. Please <a>file a bug</a> and mention this error message.
+warningUpgradeFirefoxTitle=Upgrade Firefox to continue!
+warningUpgradeFirefoxDetail=Test Pilot reqires the latest version of Firefox. <a>Upgrade Firefox</a> to get started.
+warningHttpsRequiredTitle=HTTPS required!
+warningHttpsRequiredDetail=Test Pilot must be accessed over HTTPS. Please see <a>our documentation</a> for details.
+warningMissingPrefTitle=Developing Test Pilot?
+warningMissingPrefDetail=When running Test Pilot locally or in development environments, special configuration is required. Please see <a>our documentation</a> for details.
+warningBadHostnameTitle=Unapproved hostname!
+warningBadHostnameDetail=The Test Pilot site may only be accessed from testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, or example.com:8000. Please see <a>our documentation</a> for details.
