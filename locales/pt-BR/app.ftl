@@ -287,3 +287,12 @@ noScriptLink = Descubra por quê
 
 viewPastExperiments = Ver experimentos antigos
 hidePastExperiments = Esconder experimentos antigos
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Algo está errado!
+warningUpgradeFirefoxTitle = Atualize o Firefox para continuar!
+warningHttpsRequiredTitle = É necessário HTTPS!
+warningBadHostnameTitle = Hostname não aprovado!
