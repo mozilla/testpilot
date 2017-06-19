@@ -287,3 +287,18 @@ noScriptLink = Saiba porquê
 
 viewPastExperiments = Ver experiências passadas
 hidePastExperiments = Ocultar experiências passadas
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Algo está errado!
+warningGenericDetail = Algo correu mal com o Test Pilot. Por favor <a>submeta um bug</a> e mencione esta mensagem de erro.
+warningUpgradeFirefoxTitle = Atualize o Firefox para continuar!
+warningUpgradeFirefoxDetail = O Test Pilot requer a versão mais recente do Firefox. <a>Atualize o Firefox</a> para começar.
+warningHttpsRequiredTitle = HTTPS requerido!
+warningHttpsRequiredDetail = O Test Pilot tem de ser acedido através de HTTPS. Por favor veja a <a>nossa documentação</a> para detalhes.
+warningMissingPrefTitle = A programar no Test Pilot?
+warningMissingPrefDetail = Ao correr o Test Pilot localmente ou em ambiente de programação, é requerida configuração especial. Por favor veja a <a>nossa documentação</a> para detalhes.
+warningBadHostnameTitle = Nome de servidor não aprovado!
+warningBadHostnameDetail = O site do Test Pilot apenas pode ser acedido a partir de testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, ou example.com:8000. Por favor veja a <a>nossa documentação</a> para detalhes.
