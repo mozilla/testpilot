@@ -284,3 +284,13 @@ noScriptLink = Découvrez pour quelle raison
 
 viewPastExperiments = Montrer les expériences déjà accomplies
 hidePastExperiments = Masquer les expériences passées
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Des erreurs se sont produites
+warningGenericDetail = Test Pilot ne fonctionne pas correctement, veuillez <a>signaler un dysfonctionnement</a> et mentionner ce message d’erreur.
+warningHttpsRequiredTitle = HTTPS obligatoire
+warningBadHostnameTitle = Nom d’hôte non approuvé
+warningBadHostnameDetail = Le site Test Pilot ne peut être consulté que via testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net ou example.com:8000. Veuillez consulter <a>notre documentation</a> pour plus de détails.
