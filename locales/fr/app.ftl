@@ -104,6 +104,7 @@ emailOptInConfirmationClose = À propos d’expériences…
 // news feed updates.
 [[ updateList ]]
 
+latestUpdatesTitle = Dernières mises à jour
 
 
 // A listing of all Test Pilot experiments.
