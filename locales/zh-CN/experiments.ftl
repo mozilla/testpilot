@@ -1,7 +1,7 @@
 activitystreamDescription = 视觉丰富的历史记录，重新构想的首页体验，希望您可以更容易地找到想在 Firefox 中看到的东西。
 activitystreamIntroduction = <p>返回浏览，而免于忘记正在想的东西。活动流功能将您最常访问的网站、书签和最近的历史记录都放到新标签页里随手就能点到的地方。新的时间线视图能让您轻易查看自己的浏览足迹。</p>
 activitystreamMeasurements0 = 我们会收集有关您如何与实验性新标签页和时间线页面进行交互的基本使用数据，诸如您单击的元素类型，以及它在页面上的位置。
-activitystreamMeasurements1 = 我们还收集有关  Activity Stream 所在的您的浏览器配置的基本信息，诸如书签和历史记录的数量。
+activitystreamMeasurements1 = 我们还收集有关 Activity Stream 所在的您的浏览器配置的基本信息，诸如书签和历史记录的数量。
 activitystreamMeasurements2 = 为提供 Activity Stream，我们会使用名为 <a href="http://embed.ly/" target="_blank">Embedly</a> 的服务获取您所访问网站的元数据，例如图像和图标。我们通过 Mozilla 的服务器发送这些请求至 Embedly，以免它与您个人关联。
 activitystreamDetails0Copy = 新建一个标签页，你喜欢的网站一键可达。
 activitystreamDetails1Copy = 看到你去过哪里，然后你可以回到那里。
@@ -102,7 +102,7 @@ pageshotToursteps0Copy = 选择该图标，开始使用 Page Shot。
 pageshotToursteps1Copy = 高亮您想捕捉的区域。
 pageshotToursteps2Copy = 在浏览器中分享、保存，或者删除。
 pageshotToursteps3Copy = 搜索或浏览以找到已保存的截图。
-pageshotToursteps4Copy = 您随时可以提供反馈，或者从 Test Pilot 禁用  Page Shot。
+pageshotToursteps4Copy = 您随时可以提供反馈，或者从 Test Pilot 禁用 Page Shot。
 pageshotContributors0TitleEngineer = 软件工程师
 pageshotContributors1Title = 软件工程师
 pageshotContributors2Title = UX设计师
