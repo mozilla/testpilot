@@ -42,6 +42,7 @@ test:
     - sh ./bin/circleci/test-firefox-nightly.sh
   post:
     - bash <(curl -s https://codecov.io/bash)
+    - cp ui-tests.html $CIRCLE_ARTIFACTS
 
 deployment:
   static_development:
