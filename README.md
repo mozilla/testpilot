@@ -20,13 +20,14 @@ Test Pilot is not intended to replace trains for most features, nor is it a test
     - [Verifying deployments](docs/development/verification.md) - Verifying Test Pilot deployments.
     - [Add-on environment](docs/development/environment.md) - Configuring to which server the add-on connects.
 - Developing experiments
+    - [Experiment metrics](docs/experiments/ga.md) - The use of Google Analytics to track experiment data.
     - [Variant testing](docs/experiments/variants.md) - Creating variant (e.g. A/B) tests in experiments.
     - [Example experiments](docs/experiments/)
 - Metrics
     - [Telemetry](docs/metrics/telemetry.md) - How we use Firefox telemetry.
     - [Google Analytics](docs/metrics/ga.md) - How we use Google Analytics.
     - [New features](docs/metrics/new_features.md) - Everything needed to instrument something new.
-- [Experiment content] (docs/content/reference.md) - Management of experiment content.
+- [Experiment content](docs/content/reference.md) - Management of experiment content.
 - [Process](docs/process.md) - How we create, triage, and assign work.
 - [FAQ](docs/faq.md)
 - [Contributing to Test Pilot](CONTRIBUTING.md)
