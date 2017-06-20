@@ -43,6 +43,17 @@ For more information about the components of an event and best practices for doi
 - [`el`](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#el) - the event’s label. _(Optional)_
 - [`ev`](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#ev) - the event’s value, as an integer. _(Optional)_
 
+### Custom Dimension/Metric Fields
+Google Analytics allows you to report [custom dimensions and metrics](https://support.google.com/analytics/answer/2709828?hl=en) with each event, up to 20 of each. Care should be taken in choosing these, given their limited number and inability to repurpose them once used. They are [defined in the property’s admin](https://support.google.com/analytics/answer/2709828?hl=en#configuration) before being used, and their definition and use are documented in each experiment’s repository.
+
+- [`cd<index>`](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#cd_) - the value of custom dimension number `<index>`.
+- [`cm<index>`](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#cm_) - the value of custom metric number `<index>`.
+
+#### Global Custom Dimensions/Metrics
+Some custom dimensions and metrics are used consistently across Test Pilot experiments. These use the highest index numbers possible, for consistency across reports. These are all required.
+
+- `cd20` - indicates the Firefox release channel. This can be reverse-engineered by comparing the user agent to [information from `product-details`](https://product-details.mozilla.org/1.0/). Should be one of `esr`, `release`, `beta`, `developer`, or `nightly`.
+
 ### Content Experiment Fields
 - [`xid`](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#xid) - the ID of the current experiment._(Optional)_
 - [`xvar`](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#xvar) - the name of the population to which the user belongs in the current experiment. _(Optional)_
