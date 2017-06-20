@@ -284,3 +284,12 @@ noScriptLink = Scopri perché
 
 viewPastExperiments = Visualizza gli esperimenti già conclusi
 hidePastExperiments = Nascondi gli esperimenti già conclusi
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Qualcosa è andato storto
+warningGenericDetail = Si è verificato un errore con Test Pilot. <a>Apri un bug</a> riportando il seguente messaggio d’errore.
+warningUpgradeFirefoxTitle = Aggiorna Firefox per continuare.
+warningHttpsRequiredDetail = Per accedere a Test Pilot è necessario utilizzare una connessione HTTPS. Per ulteriori informazioni consulta <a>la documentazione</a>.
