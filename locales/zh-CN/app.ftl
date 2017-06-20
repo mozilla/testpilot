@@ -284,3 +284,18 @@ noScriptLink = 找出原因
 
 viewPastExperiments = 查看以前的实验
 hidePastExperiments = 隐藏以前的实验
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = 某处出错了！
+warningGenericDetail = Test Pilot 的某处出现问题。请<a>填报 bug</a> 并提及此错误消息。
+warningUpgradeFirefoxTitle = 升级 Firefox 以继续！
+warningUpgradeFirefoxDetail = Test Pilot 需要最新版 Firefox。<a>升级 Firefox</a> 以前进。
+warningHttpsRequiredTitle = 需要 HTTPS！
+warningHttpsRequiredDetail = Test Pilot 必须通过 HTTPS 访问。查阅<a>我们的文档</a>了解详情。
+warningMissingPrefTitle = 开发 Test Pilot？
+warningMissingPrefDetail = 在本地或在开发环境中运行 Test Pilot 必需进行特殊配置。有关详细信息，请查阅<a>我们的文档</a>。
+warningBadHostnameTitle = 未被批准的主机名！
+warningBadHostnameDetail = Test Pilot 网站只能从 testpilot.firefox.com、testpilot.stage.mozaws.net、testpilot.dev.mozaws.net 或 example.com:8000 访问。有关详细信息，请查阅<a>我们的文档</a>。
