@@ -287,3 +287,15 @@ noScriptLink = Узнать почему
 
 viewPastExperiments = Посмотреть старые эксперименты
 hidePastExperiments = Скрыть старые эксперименты
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Что-то пошло не так!
+warningUpgradeFirefoxTitle = Для продолжения обновите Firefox!
+warningHttpsRequiredTitle = Требуется HTTPS!
+warningHttpsRequiredDetail = Для доступа к Летчику-испытателю необходимо использовать HTTPS. Для получения более подробной информации, пожалуйста, обратитесь к <a>нашей документации</a>.
+warningMissingPrefTitle = Вы разработчик Лётчика-испытателя?
+warningBadHostnameTitle = Неутверждённое имя хоста!
+warningBadHostnameDetail = Доступ к сайту Летчика-испытателя возможен только с testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net или example.com:8000. Для получения более подробной информации, пожалуйста, обратитесь к <a>нашей документации</a>.
