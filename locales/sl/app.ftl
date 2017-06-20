@@ -287,3 +287,9 @@ noScriptLink = Spoznajte, zakaj
 
 viewPastExperiments = Ogled končanih poskusov
 hidePastExperiments = Skrij končane poskuse
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Nekaj ni v redu!
