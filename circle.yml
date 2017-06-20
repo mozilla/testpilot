@@ -37,9 +37,6 @@ test:
   override:
     - ./bin/circleci/test-addon.sh
     - ./bin/circleci/test-frontend.sh
-    - sh ./bin/circleci/test-firefox-release.sh
-    - sh ./bin/circleci/test-firefox-dev.sh
-    - sh ./bin/circleci/test-firefox-nightly.sh
   post:
     - bash <(curl -s https://codecov.io/bash)
 
