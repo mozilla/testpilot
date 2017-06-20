@@ -287,3 +287,13 @@ noScriptLink = Ta reda på varför
 
 viewPastExperiments = Visa tidigare experiment
 hidePastExperiments = Dölj tidigare experiment
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Något gick fel!
+warningGenericDetail = Något har gått fel med Test Pilot. Vänligen <a>skicka in en bugg</a> och ta med detta felmeddelande.
+warningUpgradeFirefoxTitle = Uppgradera Firefox för att fortsätta!
+warningUpgradeFirefoxDetail = Test Pilot kräver den senaste versionen av Firefox. <a>Uppgradera Firefox</a> för att komma igång.
+warningHttpsRequiredTitle = HTTPS krävs!
