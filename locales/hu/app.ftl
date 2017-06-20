@@ -287,3 +287,18 @@ noScriptLink = Tudja meg, mi az oka
 
 viewPastExperiments = Múltbeli kísérletek megtekintése
 hidePastExperiments = Múltbeli kísérletek elrejtése
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Valami baj van!
+warningGenericDetail = Valami baj van a Tesztpilótával. <a>Jelentse be a hibát</a>, és említse meg ezt a hibaüzenetet.
+warningUpgradeFirefoxTitle = A folytatáshoz frissítse a Firefoxot.
+warningUpgradeFirefoxDetail = A Tesztpilótához a Firefox legfrissebb változata szükséges. <a>Frissítse a Firefoxot</a> az induláshoz.
+warningHttpsRequiredTitle = HTTPS szükséges!
+warningHttpsRequiredDetail = A Tesztpilótát HTTPS-en keresztül kell elérnie. Nézze meg a <a>dokumentációt</a> a részletekért.
+warningMissingPrefTitle = A Tesztpilótát fejleszti?
+warningMissingPrefDetail = Ha fejlesztői környezetekben futtatja a Tesztpilótát, akkor speciális konfiguráció szükséges. Olvassa el a <a>dokumentációt</a> a részletekért.
+warningBadHostnameTitle = Nem jóváhagyott gépnév!
+warningBadHostnameDetail = A Tesztpilóta csak a testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net vagy example.com:8000 helyekről érhető el. Olvassa el a <a>dokumentációt</a> a részletekért.
