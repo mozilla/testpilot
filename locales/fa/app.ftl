@@ -297,3 +297,4 @@ warningHttpsRequiredTitle = HTTPS مورد نیاز است!
 warningHttpsRequiredDetail = خلبان آزمایشی باید از طریق HTTPS مورد استفاده قرار بگیرد. برای جزییات لطفا <a>مستندات ما</a> را ببینید.
 warningMissingPrefDetail = وقتی خلبان آزمایشی را محلی یا در محیط‌های توسعه اجرا می‌کنید، پیکربندی ویژه‌ای مورد نیاز است. برای جزییات لطفا <a>مستندات ما<a/> را ببینید.
 warningBadHostnameTitle = نام میزبان تایید نشده!
+warningBadHostnameDetail = ممکن است خلبان آزمایشی تنها از طریق testpilot.firefox.com، testpilot.stage.mozaws.net، testpilot.dev.mozaws.net یا example.com:8000 دردسترس باشد. برای جزییات لطفا <a>مستندات ما</a> را ببینید.
