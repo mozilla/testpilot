@@ -287,3 +287,18 @@ noScriptLink = Lees waarom
 
 viewPastExperiments = Oude experimenten bekijken
 hidePastExperiments = Oude experimenten verbergen
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Er is iets mis!
+warningGenericDetail = Er is iets misgegaan met Test Pilot. <a>Meld een bug</a> en noem deze foutmelding.
+warningUpgradeFirefoxTitle = Upgrade Firefox om door te gaan!
+warningUpgradeFirefoxDetail = Test Pilot vereist de nieuwste versie van Firefox. <a>Upgrade Firefox</a> om te beginnen.
+warningHttpsRequiredTitle = HTTPS vereist!
+warningHttpsRequiredDetail = Test Pilot moet via HTTPS worden benaderd. Bekijk <a>onze documentatie</a> voor details.
+warningMissingPrefTitle = Ontwikkelt u Test Pilot?
+warningMissingPrefDetail = Voor het lokaal of in ontwikkelomgevingen uitvoeren van Test Pilot is speciale configuratie vereist. Bekijk <a>onze documentatie</a> voor details.
+warningBadHostnameTitle = Niet-goedgekeurde hostnaam!
+warningBadHostnameDetail = De Test Pilot-website mag alleen vanaf testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net of example.com:8000 worden benaderd. Bekijk <a>onze documentatie</a> voor details.
