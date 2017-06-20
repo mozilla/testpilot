@@ -294,7 +294,7 @@ hidePastExperiments = Skrij končane poskuse
 
 warningGenericTitle = Nekaj ni v redu!
 warningUpgradeFirefoxTitle = Nadgradite Firefox za nadaljevanje!
-warningUpgradeFirefoxDetail = Test Pilot zahteva najnovejšo različico Firefoxa. Za začetek <a>posodobite Firefox</a>.
+warningUpgradeFirefoxDetail = Test Pilot zahteva najnovejšo različico Firefoxa. Za začetek <a>nadgradite Firefox</a>.
 warningHttpsRequiredTitle = HTTPS zahtevan!
 warningHttpsRequiredDetail = Dostop do Test Pilota mora biti preko HTTPS. Za podrobnosti glejte <a>našo dokumentacijo</a>.
 warningMissingPrefTitle = Razvijate Test Pilot?
