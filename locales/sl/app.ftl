@@ -296,3 +296,7 @@ warningGenericTitle = Nekaj ni v redu!
 warningUpgradeFirefoxTitle = Nadgradite Firefox za nadaljevanje!
 warningUpgradeFirefoxDetail = Test Pilot zahteva najnovejšo različico Firefoxa. Za začetek <a>posodobite Firefox</a>.
 warningHttpsRequiredTitle = HTTPS zahtevan!
+warningHttpsRequiredDetail = Dostop do Test Pilota mora biti preko HTTPS. Za podrobnosti glejte <a>našo dokumentacijo</a>.
+warningMissingPrefTitle = Razvijate Test Pilot?
+warningBadHostnameTitle = Neodobreno ime gostitelja!
+warningBadHostnameDetail = Do strani Test Pilota je omogočen dostop samo s testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net ali example.com:8000. Za podrobnosti glejte <a>našo dokumentacijo</a>.
