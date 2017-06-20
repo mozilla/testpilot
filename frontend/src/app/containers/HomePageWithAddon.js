@@ -7,6 +7,7 @@ import classnames from 'classnames';
 
 import Banner from '../components/Banner';
 import Copter from '../components/Copter';
+import UpdateList from '../components/UpdateList';
 import EmailDialog from '../components/EmailDialog';
 import ExperimentCardList from '../components/ExperimentCardList';
 import LayoutWrapper from '../components/LayoutWrapper';
@@ -18,6 +19,7 @@ import View from '../components/View';
 type HomePageWithAddonProps = {
   hasAddon: any,
   experiments: Array<Object>,
+  newsUpdates: Array<Object>,
   getCookie: Function,
   removeCookie: Function,
   getWindowLocation: Function,
@@ -90,8 +92,8 @@ export default class HomePageWithAddon extends React.Component {
     return (
       <Banner condensed={true}>
       <LayoutWrapper flexModifier="row-between-reverse">
-        <h2 className="banner__title" data-l10n-id="experimentsListCondensedHeader">
-            Pick your experiments!
+        <h2 className="banner__title" data-l10n-id="experimentCondensedHeader">
+          Welcome to Test Pilot!
         </h2>
         <Copter small={true} />
       </LayoutWrapper>
@@ -100,7 +102,7 @@ export default class HomePageWithAddon extends React.Component {
   }
 
   render() {
-    const { experiments, isAfterCompletedDate } = this.props;
+    const { experiments, isAfterCompletedDate, newsUpdates } = this.props;
 
     if (experiments.length === 0) { return null; }
 
@@ -115,7 +117,10 @@ export default class HomePageWithAddon extends React.Component {
             onDismiss={() => this.setState({ showEmailDialog: false })} />}
 
         {this.renderSplash()}
+
         <LayoutWrapper flexModifier="card-list">
+          <UpdateList {...{ newsUpdates, experiments }} />
+          <h1 className="emphasis card-list-heading" data-l10n-id="experimentListHeader">Pick your experiments!</h1>
           <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
           <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
         </LayoutWrapper>

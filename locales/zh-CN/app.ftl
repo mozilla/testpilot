@@ -62,6 +62,7 @@ oneClickInstallMajorCta = 启用 { $title }
 landingRequiresDesktop = Test Pilot 需要在 Windows、Mac 或 Linux 上的 Firefox 桌面版中运行
 landingDownloadFirefoxDesc = （Test Pilot 可用于 Windows、Mac 或 Linux 上运行的 Firefox）
 landingUpgradeDesc = Test Pilot 需要 Firefox 49 或更高版本。
+landingUpgradeDesc2 = Test Pilot 需要 Firefox { $version } 或更高版本。
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = 升级 Firefox
 landingDownloadFirefoxSubTitle = 免费下载
@@ -100,6 +101,12 @@ emailOptInSuccessMessage2 = 谢谢！
 emailOptInConfirmationClose = 关于此实验...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = 最新更新
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -108,7 +115,8 @@ experimentListJustLaunchedTab = 刚刚启动
 experimentListJustUpdatedTab = 刚刚更新
 experimentListEndingTomorrow = 明天结束
 experimentListEndingSoon = 即将结束
-experimentsListCondensedHeader = 选择你的实验！
+experimentCondensedHeader = 欢迎使用 Test Pilot！
+experimentListHeader = 挑选您的实验！
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -276,3 +284,18 @@ noScriptLink = 找出原因
 
 viewPastExperiments = 查看以前的实验
 hidePastExperiments = 隐藏以前的实验
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = 某处出错了！
+warningGenericDetail = Test Pilot 的某处出现问题。请<a>填报 bug</a> 并提及此错误消息。
+warningUpgradeFirefoxTitle = 升级 Firefox 以继续！
+warningUpgradeFirefoxDetail = Test Pilot 需要最新版 Firefox。<a>升级 Firefox</a> 以前进。
+warningHttpsRequiredTitle = 需要 HTTPS！
+warningHttpsRequiredDetail = Test Pilot 必须通过 HTTPS 访问。查阅<a>我们的文档</a>了解详情。
+warningMissingPrefTitle = 开发 Test Pilot？
+warningMissingPrefDetail = 在本地或在开发环境中运行 Test Pilot 必需进行特殊配置。有关详细信息，请查阅<a>我们的文档</a>。
+warningBadHostnameTitle = 未被批准的主机名！
+warningBadHostnameDetail = Test Pilot 网站只能从 testpilot.firefox.com、testpilot.stage.mozaws.net、testpilot.dev.mozaws.net 或 example.com:8000 访问。有关详细信息，请查阅<a>我们的文档</a>。

@@ -62,6 +62,7 @@ oneClickInstallMajorCta = aktivovať { $title }
 landingRequiresDesktop = Test Pilot vyžaduje Firefox pre počítače v systéme Windows, Mac alebo Linux
 landingDownloadFirefoxDesc = (Test Pilot je dostupný pre Firefox pre Windows, OS X a Linux)
 landingUpgradeDesc = Test Pilot vyžaduje Firefox 49 alebo novší.
+landingUpgradeDesc2 = Test Pilot vyžaduje Firefox { $version } alebo novší.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Aktualizovať Firefox
 landingDownloadFirefoxSubTitle = Prevziať zadarmo
@@ -100,6 +101,12 @@ emailOptInSuccessMessage2 = Ďakujeme!
 emailOptInConfirmationClose = Prejsť na experimenty...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Najnovšie aktualizácie
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -108,7 +115,8 @@ experimentListJustLaunchedTab = Práve spustený
 experimentListJustUpdatedTab = Práve aktualizovaný
 experimentListEndingTomorrow = Zajtra končí
 experimentListEndingSoon = Čoskoro končí
-experimentsListCondensedHeader = Vyberte si experimenty!
+experimentCondensedHeader = Víta vás Test Pilot!
+experimentListHeader = Vyberte si svoje experimenty!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.

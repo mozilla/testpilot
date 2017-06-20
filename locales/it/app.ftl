@@ -62,6 +62,7 @@ oneClickInstallMajorCta = Attiva { $title }
 landingRequiresDesktop = Test Pilot è compatibile con Firefox per computer Windows, Mac o Linux.
 landingDownloadFirefoxDesc = (Test Pilot è disponibile per Firefox su Windows, OS X e Linux)
 landingUpgradeDesc = Test Pilot è compatibile con Firefox 49 o versioni successive.
+landingUpgradeDesc2 = Test Pilot è compatibile con Firefox { $version } o superiore.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Aggiorna Firefox
 landingDownloadFirefoxSubTitle = Download gratuito
@@ -100,6 +101,12 @@ emailOptInSuccessMessage2 = Grazie!
 emailOptInConfirmationClose = A proposito degli esperimenti…
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Ultimi aggiornamenti
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -108,7 +115,8 @@ experimentListJustLaunchedTab = Appena lanciato
 experimentListJustUpdatedTab = Appena aggiornato
 experimentListEndingTomorrow = Si conclude domani
 experimentListEndingSoon = Si concluderà a breve
-experimentsListCondensedHeader = Scegli i tuoi esperimenti
+experimentCondensedHeader = Benvenuto in Test Pilot
+experimentListHeader = Scegli i tuoi esperimenti
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -276,3 +284,18 @@ noScriptLink = Scopri perché
 
 viewPastExperiments = Visualizza gli esperimenti già conclusi
 hidePastExperiments = Nascondi gli esperimenti già conclusi
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Qualcosa è andato storto
+warningGenericDetail = Si è verificato un errore con Test Pilot. <a>Apri un bug</a> riportando il seguente messaggio d’errore.
+warningUpgradeFirefoxTitle = Aggiorna Firefox per continuare.
+warningUpgradeFirefoxDetail = Per utilizzare Test Pilot è necessario avere l’ultima versione di Firefox. <a>Aggiornalo ora</a> per iniziare.
+warningHttpsRequiredTitle = È richiesta una connessione HTTPS.
+warningHttpsRequiredDetail = Per accedere a Test Pilot è necessario utilizzare una connessione HTTPS. Per ulteriori informazioni consulta <a>la documentazione</a>.
+warningMissingPrefTitle = Vuoi contribuire allo sviluppo di Test Pilot?
+warningMissingPrefDetail = Per eseguire Test Pilot sul tuo computer o in un ambiente di sviluppo è necessario configurare correttamente il sistema. Per ulteriori informazioni consulta <a>la documentazione</a>.
+warningBadHostnameTitle = Hostname non autorizzato.
+warningBadHostnameDetail = È possibile accedere al sito di Test Pilot solo utilizzando i seguenti domini: testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net ed example.com:8000. Per ulteriori informazioni consulta <a>la documentazione</a>.

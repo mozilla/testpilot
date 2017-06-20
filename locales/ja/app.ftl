@@ -62,6 +62,7 @@ oneClickInstallMajorCta = { $title } を有効化
 landingRequiresDesktop = Test Pilot を試すには Windows、Mac または Linux 向けのデスクトップ版 Firefox が必要です
 landingDownloadFirefoxDesc = Test Pilot は Windows、OS X および Linux 版の Firefox に対応しています)
 landingUpgradeDesc = Test Pilot を試すには Firefox 49 以降が必要です。
+landingUpgradeDesc2 = Test Pilot は Firefox { $version } 以上を必要とします。
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox をアップグレード
 landingDownloadFirefoxSubTitle = 無料ダウンロード
@@ -100,6 +101,12 @@ emailOptInSuccessMessage2 = ありがとうございます！
 emailOptInConfirmationClose = 実験に進む...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = 最新情報
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -108,7 +115,8 @@ experimentListJustLaunchedTab = 最近公開
 experimentListJustUpdatedTab = 最近更新
 experimentListEndingTomorrow = 明日終了
 experimentListEndingSoon = まもなく終了
-experimentsListCondensedHeader = 興味のある実験を選びましょう！
+experimentCondensedHeader = Test Pilot へようこそ！
+experimentListHeader = 興味のある実験を選びましょう！
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -279,3 +287,18 @@ noScriptLink = 理由を確かめる
 
 viewPastExperiments = 過去の実験を見る
 hidePastExperiments = 過去の実験を隠す
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = 何か問題が発生しました。
+warningGenericDetail = Test Pilot に何か問題が発生したようです。<a>バグを報告</a> し、このエラーメッセージを教えてください。
+warningUpgradeFirefoxTitle = 続けるには Firefox をアップグレードしてください！
+warningUpgradeFirefoxDetail = Test Pilot を使うには Firefox の最新版が必要です。まずは <a>Firefox をアップグレード</a> してください。
+warningHttpsRequiredTitle = HTTPS 必須です。
+warningHttpsRequiredDetail = Test Pilot は HTTPS 経由でのアクセスが必須となっています。詳細は <a>ドキュメント</a> をご覧ください。
+warningMissingPrefTitle = Test Pilot を開発中ですか？
+warningMissingPrefDetail = Test Pilot をローカルもしくは開発環境で実行する場合、特別な設定が必要となります。詳細は <a>ドキュメント</a> をご覧ください。
+warningBadHostnameTitle = 未承認のホスト名です！
+warningBadHostnameDetail = Test Pilot のサイトは、testpilot.firefox.com、testpilot.stage.mozaws.net、testpilot.dev.mozaws.net あるいは example.com:8000 からのみアクセス可能です。詳細は <a>ドキュメント</a> をご覧ください。

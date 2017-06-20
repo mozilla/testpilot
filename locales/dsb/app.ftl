@@ -62,6 +62,7 @@ oneClickInstallMajorCta = { $title } zmóžniś
 landingRequiresDesktop = Test Pilot pomina se Firefox za desktop na Windows, Mac abo Linux
 landingDownloadFirefoxDesc = (Test Pilot jo za Firefox na Windows, OS X a Linux k dispoziciji)
 landingUpgradeDesc = Test Pilot pomina se Firefox 49 abo nowšy.
+landingUpgradeDesc2 = Test Pilot pomina se Firefox { $version } abo nowšy.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox aktualizěrowaś
 landingDownloadFirefoxSubTitle = Dermotne ześěgnjenje
@@ -100,6 +101,12 @@ emailOptInSuccessMessage2 = Wjeliki źěk!
 emailOptInConfirmationClose = Dalej k eksperimentam...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Nejnowše aktualizacije
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -108,7 +115,8 @@ experimentListJustLaunchedTab = Rowno startowany
 experimentListJustUpdatedTab = Rowno aktualizěrowany
 experimentListEndingTomorrow = Skóńcyjo se witśe
 experimentListEndingSoon = Skóńcyjo se skóro
-experimentsListCondensedHeader = Wubjeŕśo swóje eksperimenty!
+experimentCondensedHeader = Witajśo k Test Pilot!
+experimentListHeader = Wubjeŕśo swóje eksperimenty!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.

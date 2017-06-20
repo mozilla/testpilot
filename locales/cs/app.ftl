@@ -62,6 +62,7 @@ oneClickInstallMajorCta = Zapnout { $title }
 landingRequiresDesktop = Test Pilot potřebuje Firefox pro počítače na platformě Windows, Mac nebo Linux
 landingDownloadFirefoxDesc = (Test Pilot je dostupný pro Firefox pro Windows, OS X a Linux)
 landingUpgradeDesc = Test Pilot vyžaduje Firefox 49 nebo novější.
+landingUpgradeDesc2 = Test Pilot vyžaduje Firefox { $version } nebo novější.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Aktualizovat Firefox
 landingDownloadFirefoxSubTitle = Stáhnout zdarma
@@ -100,6 +101,12 @@ emailOptInSuccessMessage2 = Děkujeme!
 emailOptInConfirmationClose = Podívat se na experimenty...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Poslední aktualizace
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -108,7 +115,8 @@ experimentListJustLaunchedTab = Právě spuštěno
 experimentListJustUpdatedTab = Právě aktualizováno
 experimentListEndingTomorrow = Zítra končí
 experimentListEndingSoon = Brzy končí
-experimentsListCondensedHeader = Vyberte si experimenty!
+experimentCondensedHeader = Vítá vás Test Pilot!
+experimentListHeader = Vyberte si experimenty!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -279,3 +287,18 @@ noScriptLink = Zjistěte proč
 
 viewPastExperiments = Zobrazit ukončené experimenty
 hidePastExperiments = Skrýt ukončené experimenty
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Něco je špatně!
+warningGenericDetail = V Test Pilotu se něco pokazilo. <a>Při hlášení chyby</a> prosím uveďte tuto chybovou zprávu.
+warningUpgradeFirefoxTitle = Pro pokračování aktualizujte Firefox.
+warningUpgradeFirefoxDetail = Test Pilot potřebuje nejnovější verzi Firefoxu. Pro začátek prosím <a>aktualizujte Firefox</a>.
+warningHttpsRequiredTitle = Vyžadováno HTTPS!
+warningHttpsRequiredDetail = Do programu Test Pilot lze přistupovat jenom přes HTTPS. Pro více informací si prosím přečtěte <a>naši dokumentaci</a>.
+warningMissingPrefTitle = Vyvíjíte Test Pilot?
+warningMissingPrefDetail = Při lokálním spuštění nebo ve vývojových prostředích potřebuje Test Pilot speciální konfiguraci. Pro více informací si přečtěte <a>naši dokumentaci</a>.
+warningBadHostnameTitle = Nepovolený hostname!
+warningBadHostnameDetail = Ke stránkám Test Pilotu je možné přistupovat jenom z domén testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net nebo example.com:8000. Pro více informací si přečtěte <a>naši dokumentaci</a>.

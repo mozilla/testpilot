@@ -14,6 +14,8 @@ const FooComponent = React.createClass({
 });
 
 const mockRequiredProps = {
+  hasAddon: null,
+  isFirefox: true,
   uninstallAddon: sinon.spy(),
   sendToGA: sinon.spy(),
   openWindow: sinon.spy(),
@@ -98,5 +100,29 @@ describe('app/components/View', () => {
   it('should not render the newsletter footer when requested', () => {
     const wrapper = shallow(<View showNewsletterFooter={false} {...mockRequiredProps}><FooComponent /></View>);
     expect(wrapper.find('NewsletterFooter')).to.have.length(0);
+  });
+
+  it('should show a warning if Firefox is too old', () => {
+    const wrapper = shallow(<View {...mockRequiredProps} hasAddon={true} isMinFirefox={false}><FooComponent /></View>);
+    expect(wrapper.find('#warning')).to.have.length(1);
+  });
+
+  it('should show a warning if protocol is not https', () => {
+    window.location.protocol = 'http:';
+    const wrapper = shallow(<View {...mockRequiredProps} hasAddon={true}><FooComponent /></View>);
+    window.location.protocol = 'https:';
+    expect(wrapper.find('#warning')).to.have.length(1);
+  });
+
+  it('should show a warning if extensions.webapi.testing is not set', () => {
+    const wrapper = shallow(<View {...mockRequiredProps} hasAddon={true}><FooComponent /></View>);
+    expect(wrapper.find('#warning')).to.have.length(1);
+  });
+
+  it('should show a warning if hostname is unapproved', () => {
+    window.location.host = 'asdf';
+    const wrapper = shallow(<View {...mockRequiredProps} hasAddon={true}><FooComponent /></View>);
+    window.location.host = 'testpilot.firefox.com';
+    expect(wrapper.find('#warning')).to.have.length(1);
   });
 });

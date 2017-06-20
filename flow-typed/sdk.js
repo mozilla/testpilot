@@ -427,6 +427,14 @@ declare module 'resource://gre/modules/TelemetryController.jsm' {
   }
 }
 
+declare module 'resource://gre/modules/TelemetryEnvironment.jsm' {
+  declare module.exports: {
+    TelemetryEnvironment: {
+      currentEnvironment: Object
+    }
+  }
+}
+
 declare module 'resource://gre/modules/ClientID.jsm' {
   declare module.exports: {
     ClientID: any

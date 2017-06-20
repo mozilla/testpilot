@@ -1,0 +1,115 @@
+.update-list {
+  @include respond-to('small') {
+    margin: 0 0 30px;
+  }
+
+  margin: -40px 0 60px;
+  width: 100%;
+}
+
+.update-list-heading {
+  @include respond-to('medium') {
+    font-size: $font-unit * 3.5;
+    line-height: $font-unit * 3.5;
+  }
+
+  @include respond-to('small') {
+    font-size: $font-unit * 2.7;
+    line-height: $font-unit * 2.7;
+  }
+
+  font-size: $grid-unit * 2;
+  line-height: $grid-unit * 2.7;
+  margin: 0 0 $grid-unit * 1.5;
+  text-shadow: 0 2px 0 $transparent-black-3;
+}
+
+.update {
+  align-items: center;
+  background: $dark-over-darkest-blue;
+  border-radius: 6px;
+  cursor: default;
+  display: flex;
+  margin: 0 0 12px;
+  padding: 5px;
+  width: 100%;
+
+  .update-content {
+    flex-grow: 1;
+
+    header {
+      @include flex-container(row, flex-start, center);
+      margin-bottom: 15px;
+    }
+  }
+
+  .news-update-test-pilot-icon {
+    background-image: url('../images/copter.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 80px auto;
+  }
+
+  .experiment-icon {
+    @include respond-to('small') {
+      display: none;
+    }
+    background-position: center center;
+    background-size: 64px auto;
+  }
+
+  > div {
+    margin: 15px;
+  }
+
+  h2 {
+    font-style: italic;
+    margin: 0;
+  }
+
+  .summary,
+  h4 {
+    font-size: 16px;
+  }
+
+  h4 {
+    margin: 0 0 5px;
+  }
+
+  .summary {
+    margin: 0;
+  }
+
+  .link-chevron {
+    .chevron {
+      background: transparent;
+      display: block;
+      height: 35px;
+      width: 35px;
+    }
+  }
+
+  &.has-link {
+    cursor: pointer;
+    transition: background 50ms;
+
+    &:hover {
+      background: $dark-over-darkest-blue-highlight;
+    }
+
+    .link-chevron {
+      .chevron {
+        background-image: url('../images/news-link-chevron.svg');
+        background-repeat: no-repeat;
+        background-size: 21px 35px;
+      }
+    }
+  }
+}
+
+.up-date {
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 300;
+  margin: 0 0 0 15px;
+}

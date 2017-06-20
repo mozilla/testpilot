@@ -24,21 +24,22 @@ dependencies:
     - google-chrome --version
     - ./bin/circleci/install-node-dependencies.sh
     - ./bin/circleci/build-addon.sh
+    - ./bin/circleci/build-version-json.sh
+    - ./bin/circleci/build-frontend.sh
 
 test:
   pre:
-    - mozdownload --version latest --destination firefox.tar.bz2
-    - mozinstall firefox.tar.bz2
     - curl -L -o geckodriver.tar.gz `curl -s 'https://api.github.com/repos/mozilla/geckodriver/releases/latest' | python -c "import sys, json; r = json.load(sys.stdin); print([a for a in r['assets'] if 'linux64' in a['name']][0]['browser_download_url']);"`
     - gunzip -c geckodriver.tar.gz | tar xopf -
     - chmod +x geckodriver
     - sudo mv geckodriver /home/ubuntu/bin
-    - firefox --version
     - geckodriver --version
   override:
     - ./bin/circleci/test-addon.sh
     - ./bin/circleci/test-frontend.sh
-    - tox
+    - sh ./bin/circleci/test-firefox-release.sh
+    - sh ./bin/circleci/test-firefox-dev.sh
+    - sh ./bin/circleci/test-firefox-nightly.sh
   post:
     - bash <(curl -s https://codecov.io/bash)
 
@@ -48,8 +49,6 @@ deployment:
     branch:
       - master
     commands:
-      - ./bin/circleci/build-version-json.sh
-      - ./bin/circleci/build-frontend.sh
       - TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/deploy.sh dev
       - aws configure set preview.cloudfront true
       - aws cloudfront create-invalidation --distribution-id E2ERG47PHCWD0Z --paths '/*'

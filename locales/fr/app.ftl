@@ -62,6 +62,7 @@ oneClickInstallMajorCta = activer { $title }
 landingRequiresDesktop = Pour utiliser Test Pilot il vous faut Firefox pour ordinateur sur Windows, Mac ou Linux
 landingDownloadFirefoxDesc = (Test Pilot est disponible pour Firefox sous Windows, OS X et Linux)
 landingUpgradeDesc = Test Pilot nécessite Firefox 49 ou supérieur.
+landingUpgradeDesc2 = Test Pilot nécessite Firefox { $version } ou supérieur.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Mettez Firefox à jour
 landingDownloadFirefoxSubTitle = Téléchargement gratuit
@@ -100,6 +101,12 @@ emailOptInSuccessMessage2 = Merci !
 emailOptInConfirmationClose = À propos d’expériences…
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Dernières mises à jour
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -108,7 +115,8 @@ experimentListJustLaunchedTab = Lancé récemment
 experimentListJustUpdatedTab = Mis à jour récemment
 experimentListEndingTomorrow = Se termine demain
 experimentListEndingSoon = Se termine bientôt
-experimentsListCondensedHeader = Choisissez des expériences !
+experimentCondensedHeader = Bienvenue sur Test Pilot !
+experimentListHeader = Choisissez vos expériences !
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -276,3 +284,13 @@ noScriptLink = Découvrez pour quelle raison
 
 viewPastExperiments = Montrer les expériences déjà accomplies
 hidePastExperiments = Masquer les expériences passées
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Des erreurs se sont produites
+warningGenericDetail = Test Pilot ne fonctionne pas correctement, veuillez <a>signaler un dysfonctionnement</a> et mentionner ce message d’erreur.
+warningHttpsRequiredTitle = HTTPS obligatoire
+warningBadHostnameTitle = Nom d’hôte non approuvé
+warningBadHostnameDetail = Le site Test Pilot ne peut être consulté que via testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net ou example.com:8000. Veuillez consulter <a>notre documentation</a> pour plus de détails.

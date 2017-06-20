@@ -62,6 +62,7 @@ oneClickInstallMajorCta = Slå på { $title }
 landingRequiresDesktop = Test Pilot krev Firefox for desktop på Windows, Mac eller Linux
 landingDownloadFirefoxDesc = (Test Pilot er tillgjengleg for Firefox på Windows, OS X og Linux)
 landingUpgradeDesc = Test Pilot krev Firefox 49 eller høgare.
+landingUpgradeDesc2 = Test Pilot krev Firefox { $version } eller høgare.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Oppgrader Firefox
 landingDownloadFirefoxSubTitle = Gratis nedlasting
@@ -100,6 +101,12 @@ emailOptInSuccessMessage2 = Takk skal du ha!
 emailOptInConfirmationClose = Vidare til eksperimenta…
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Siste oppdateringar
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -108,7 +115,8 @@ experimentListJustLaunchedTab = Nettopp starta
 experimentListJustUpdatedTab = Nettopp oppdatert
 experimentListEndingTomorrow = Sluttar i morgon
 experimentListEndingSoon = Sluttar snart
-experimentsListCondensedHeader = Vel eksperimenta dine!
+experimentCondensedHeader = Velkomen til Test Pilot!
+experimentListHeader = Vel eksperimenta dine!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -279,3 +287,9 @@ noScriptLink = Finn ut kvifor
 
 viewPastExperiments = Vis tidlegare eksperiment
 hidePastExperiments = Gøym tidlegare eksperiment
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Noko gjekk gale!

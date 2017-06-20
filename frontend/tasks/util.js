@@ -1,7 +1,9 @@
 const LOCALIZABLE_FIELDS = [
   'subtitle',
   'description',
+  'warning',
   'introduction',
+  'privacy_preamble',
   'measurements',
   'eol_warning',
   'pre_feedback_copy',
@@ -54,10 +56,25 @@ function experimentL10nId(experiment, pieces) {
   return l10nId([].concat([experiment.slug], pieces));
 }
 
+function newsUpdateL10nId(update, fieldName) {
+  const pieces = [
+    update.experimentSlug || 'testpilot',
+    'news_updates',
+    update.slug,
+    fieldName
+  ];
+  const suffix = update[`${fieldName}_l10nsuffix`];
+  if (suffix) {
+    pieces.push(suffix);
+  }
+  return l10nId(pieces);
+}
+
 module.exports = {
   isLocalizableField: isLocalizableField,
   l10nIdFormat: l10nIdFormat,
   l10nId: l10nId,
   lookup: lookup,
-  experimentL10nId: experimentL10nId
+  experimentL10nId: experimentL10nId,
+  newsUpdateL10nId: newsUpdateL10nId
 };

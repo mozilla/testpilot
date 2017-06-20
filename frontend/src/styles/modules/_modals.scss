@@ -2,6 +2,7 @@
 #retire,
 #share,
 #legacy-modal,
+#warning,
 #onboarding {
   animation: fade-in 300ms forwards;
   animation-delay: 300ms;
@@ -23,7 +24,12 @@
 
   p {
     font-size: $font-unit * 1.6;
+    line-height: $font-unit * 2.4;
     margin: 0;
+  }
+
+  a {
+    color: $default;
   }
 }
 

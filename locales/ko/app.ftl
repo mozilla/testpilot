@@ -128,16 +128,22 @@ highlightPrivacy = 개인 정보 보호
 // Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
+retirePageProgressMessage = 종료 중...
 
 
 // Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroOne = 브라우저 다시 시작
+restartIntroThree = 실험 선택
 
 
 // Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
+shareEmail = 이메일
+shareCopy = 복사
+eolNoticeLink = 더 알아보기
 
 
 // A warning shown to users looking at experiments incompatible with add-ons they already have installed.
@@ -148,11 +154,14 @@ highlightPrivacy = 개인 정보 보호
 // A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormSubmitButton = 지금 가입
+newsletterFormSubmitButtonSubmitting = 제출 중...
 
 
 // A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterSuccessHeader = 감사합니다!
 
 
 // A warning shown to users when the experiment is not available in their language

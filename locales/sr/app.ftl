@@ -62,6 +62,7 @@ oneClickInstallMajorCta = Омогући { $title }
 landingRequiresDesktop = Test Pilot захтева Firefox за Windows, Mac или Linux рачунар
 landingDownloadFirefoxDesc = (Test Pilot је доступан за Firefox за Windows, OS X и Linux)
 landingUpgradeDesc = Test Pilot захтева Firefox 49 или новији.
+landingUpgradeDesc2 = Test Pilot захтева Firefox { $version } или новију верзију.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Надогради Firefox
 landingDownloadFirefoxSubTitle = Бесплатно преузимање
@@ -100,6 +101,12 @@ emailOptInSuccessMessage2 = Хвала!
 emailOptInConfirmationClose = Напред на експерименте...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Последња ажурирања
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -108,7 +115,8 @@ experimentListJustLaunchedTab = Управо покренуто
 experimentListJustUpdatedTab = Управо ажурирано
 experimentListEndingTomorrow = Завршава се сутра
 experimentListEndingSoon = Завршава се ускоро
-experimentsListCondensedHeader = Одаберите своје експерименте!
+experimentCondensedHeader = Добродошли на Test Pilot!
+experimentListHeader = Изаберите ваше експерименте!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.

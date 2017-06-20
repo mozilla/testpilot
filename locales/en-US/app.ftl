@@ -48,6 +48,7 @@ oneClickInstallMajorCta = Enable {$title}
 landingRequiresDesktop = Test Pilot requires Firefox for Desktop on Windows, Mac or Linux
 landingDownloadFirefoxDesc = (Test Pilot is available for Firefox on Windows, OS X and Linux)
 landingUpgradeDesc = Test Pilot requires Firefox 49 or higher.
+landingUpgradeDesc2 = Test Pilot requires Firefox {$version} or higher.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Upgrade Firefox
 landingDownloadFirefoxSubTitle = Free Download
@@ -77,6 +78,10 @@ emailOptInConfirmationTitle = Email Sent
 emailOptInSuccessMessage2 = Thank you!
 emailOptInConfirmationClose = On to the experiments...
 
+// news feed updates.
+[[updateList]]
+latestUpdatesTitle = Latest updates
+
 // A listing of all Test Pilot experiments.
 [[experimentsList]]
 experimentListEnabledTab = Enabled
@@ -84,7 +89,8 @@ experimentListJustLaunchedTab = Just Launched
 experimentListJustUpdatedTab = Just Updated
 experimentListEndingTomorrow = Ending Tomorrow
 experimentListEndingSoon = Ending Soon
-experimentsListCondensedHeader = Pick your experiments!
+experimentCondensedHeader = Welcome to Test Pilot!
+experimentListHeader = Pick your experiments!
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[experimentCard]]
@@ -224,3 +230,16 @@ noScriptLink = Find out why
 [[pastExperiments]]
 viewPastExperiments = View Past Experiments
 hidePastExperiments = Hide Past Experiments
+
+// Text of warnings to the user if various error conditions are detected
+[[warnings]]
+warningGenericTitle=Something is wrong!
+warningGenericDetail=Something has gone wrong with Test Pilot. Please <a>file a bug</a> and mention this error message.
+warningUpgradeFirefoxTitle=Upgrade Firefox to continue!
+warningUpgradeFirefoxDetail=Test Pilot reqires the latest version of Firefox. <a>Upgrade Firefox</a> to get started.
+warningHttpsRequiredTitle=HTTPS required!
+warningHttpsRequiredDetail=Test Pilot must be accessed over HTTPS. Please see <a>our documentation</a> for details.
+warningMissingPrefTitle=Developing Test Pilot?
+warningMissingPrefDetail=When running Test Pilot locally or in development environments, special configuration is required. Please see <a>our documentation</a> for details.
+warningBadHostnameTitle=Unapproved hostname!
+warningBadHostnameDetail=The Test Pilot site may only be accessed from testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, or example.com:8000. Please see <a>our documentation</a> for details.

@@ -62,6 +62,7 @@ oneClickInstallMajorCta = omogoči { $title }
 landingRequiresDesktop = Test Pilot zahteva Firefox za namizja in sistem Windows, Mac ali Linux
 landingDownloadFirefoxDesc = (Test Pilot je na voljo za Firefox v sistemih Windows, OS X in Linux)
 landingUpgradeDesc = Test Pilot zahteva Firefox 49 ali novejšega.
+landingUpgradeDesc2 = Test Pilot zahteva Firefox { $version } ali novejšega.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Nadgradi Firefox
 landingDownloadFirefoxSubTitle = Brezplačen prenos
@@ -100,6 +101,12 @@ emailOptInSuccessMessage2 = Hvala!
 emailOptInConfirmationClose = Naprej na poskuse ...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Najnovejše posodobitve
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -108,7 +115,8 @@ experimentListJustLaunchedTab = Pravkar začet
 experimentListJustUpdatedTab = Pravkar posodobljen
 experimentListEndingTomorrow = Se konča jutri
 experimentListEndingSoon = Se končuje
-experimentsListCondensedHeader = Izberite si poskuse zase!
+experimentCondensedHeader = Dobrodošli v Test Pilotu!
+experimentListHeader = Izberite si poskuse zase!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -279,3 +287,17 @@ noScriptLink = Spoznajte, zakaj
 
 viewPastExperiments = Ogled končanih poskusov
 hidePastExperiments = Skrij končane poskuse
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Nekaj ni v redu!
+warningGenericDetail = Pri Test Pilotu se je nekaj zalomilo. <a>Prijavite napako</a> in v poročilu omenite to stran napake.
+warningUpgradeFirefoxTitle = Nadgradite Firefox za nadaljevanje!
+warningUpgradeFirefoxDetail = Test Pilot zahteva najnovejšo različico Firefoxa. Za začetek <a>nadgradite Firefox</a>.
+warningHttpsRequiredTitle = HTTPS zahtevan!
+warningHttpsRequiredDetail = Dostop do Test Pilota mora biti preko HTTPS. Za podrobnosti glejte <a>našo dokumentacijo</a>.
+warningMissingPrefTitle = Razvijate Test Pilot?
+warningBadHostnameTitle = Neodobreno ime gostitelja!
+warningBadHostnameDetail = Do strani Test Pilota je omogočen dostop samo s testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net ali example.com:8000. Za podrobnosti glejte <a>našo dokumentacijo</a>.

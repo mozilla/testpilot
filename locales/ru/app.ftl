@@ -62,6 +62,7 @@ oneClickInstallMajorCta = Включить { $title }
 landingRequiresDesktop = Лётчику-испытателю требуется Firefox для компьютера на Windows, Mac или Linux
 landingDownloadFirefoxDesc = (Лётчик-испытатель доступен для Firefox на Windows, OS X и Linux)
 landingUpgradeDesc = Лётчику-испытателю необходим Firefox 49 или выше.
+landingUpgradeDesc2 = Лётчику-испытателю необходим Firefox { $version } или выше.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Обновить Firefox
 landingDownloadFirefoxSubTitle = Загрузить бесплатно
@@ -100,6 +101,12 @@ emailOptInSuccessMessage2 = Спасибо!
 emailOptInConfirmationClose = Вперёд к экспериментам...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Последние обновления
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -108,7 +115,8 @@ experimentListJustLaunchedTab = Только что запущен
 experimentListJustUpdatedTab = Только что обновлён
 experimentListEndingTomorrow = Заканчиваются завтра
 experimentListEndingSoon = Скоро заканчиваются
-experimentsListCondensedHeader = Выберите ваши эксперименты!
+experimentCondensedHeader = Добро пожаловать в программу лётчиков-испытателей!
+experimentListHeader = Выберите ваши эксперименты!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -182,7 +190,7 @@ highlightPrivacy = Ваша приватность
 upgradeNoticeTitle = Для { $title } требуется Firefox { $min_release } или выше.
 upgradeNoticeLink = Как обновить Firefox.
 versionChangeNotice = { $experiment_title } не поддерживается в этой версии Firefox.
-versionChangeNoticeLink = Загрузить свежую версию Firefox,
+versionChangeNoticeLink = Загрузить свежую версию Firefox.
 
 
 // Shown while uninstalling Test Pilot.
@@ -279,3 +287,18 @@ noScriptLink = Узнать почему
 
 viewPastExperiments = Посмотреть старые эксперименты
 hidePastExperiments = Скрыть старые эксперименты
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Что-то пошло не так!
+warningGenericDetail = С Лётчиком-испытателем что-то пошло не так. Пожалуйста, <a>напишите об ошибке</a> и укажите там это сообщение об ошибке.
+warningUpgradeFirefoxTitle = Для продолжения обновите Firefox!
+warningUpgradeFirefoxDetail = Для работы Лётчика-испытателя необходимо использовать последнюю версию Firefox. Чтобы начать, <a>обновите Firefox</a>.
+warningHttpsRequiredTitle = Требуется HTTPS!
+warningHttpsRequiredDetail = Для доступа к Летчику-испытателю необходимо использовать HTTPS. Для получения более подробной информации, пожалуйста, обратитесь к <a>нашей документации</a>.
+warningMissingPrefTitle = Вы разработчик Лётчика-испытателя?
+warningMissingPrefDetail = При запуске Лётчика-испытателя локально или в среде разработки необходимо использовать специальную конфигурацию. Для получения более подробной информации, пожалуйста, обратитесь к <a>нашей документации</a>.
+warningBadHostnameTitle = Неутверждённое имя хоста!
+warningBadHostnameDetail = Доступ к сайту Летчика-испытателя возможен только с testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net или example.com:8000. Для получения более подробной информации, пожалуйста, обратитесь к <a>нашей документации</a>.

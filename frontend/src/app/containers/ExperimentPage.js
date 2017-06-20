@@ -476,7 +476,7 @@ export class ExperimentDetail extends React.Component {
               </LayoutWrapper>
             </div>
           </div>
-          {!hasAddon && <Banner>
+          <Banner>
             <h2 className="banner__subtitle centered" data-l10n-id="otherExperiments">Try out these experiments as well</h2>
             <LayoutWrapper flexModifier="card-list">
               <ExperimentCardList {...this.props}
@@ -484,7 +484,7 @@ export class ExperimentDetail extends React.Component {
                                   except={experiment.slug}
                                   eventCategory="ExperimentsDetailPage Interactions" />
             </LayoutWrapper>
-          </Banner>}
+          </Banner>
         </View>
       </section>
     );

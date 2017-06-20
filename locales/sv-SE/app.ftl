@@ -62,6 +62,7 @@ oneClickInstallMajorCta = Aktivera { $title }
 landingRequiresDesktop = Test Pilot kräver Firefox för datorer i Windows, Mac eller Linux
 landingDownloadFirefoxDesc = (Test Pilot är tillgänglig för Firefox på Windows, OS X och Linux)
 landingUpgradeDesc = Test Pilot kräver Firefox 49 eller högre.
+landingUpgradeDesc2 = Test Pilot kräver Firefox { $version } eller högre.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Uppgradera Firefox
 landingDownloadFirefoxSubTitle = Gratis nedladdning
@@ -100,6 +101,12 @@ emailOptInSuccessMessage2 = Tack!
 emailOptInConfirmationClose = Vidare till experimenten...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Senast uppdaterade
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -108,7 +115,8 @@ experimentListJustLaunchedTab = Nyligen startad
 experimentListJustUpdatedTab = Nyligen uppdaterad
 experimentListEndingTomorrow = Slutar imorgon
 experimentListEndingSoon = Slutar snart
-experimentsListCondensedHeader = Välj dina experiment!
+experimentCondensedHeader = Välkommen till Test Pilot!
+experimentListHeader = Välj dina experiment!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -279,3 +287,18 @@ noScriptLink = Ta reda på varför
 
 viewPastExperiments = Visa tidigare experiment
 hidePastExperiments = Dölj tidigare experiment
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Något gick fel!
+warningGenericDetail = Något har gått fel med Test Pilot. Vänligen <a>skicka in en bugg</a> och ta med detta felmeddelande.
+warningUpgradeFirefoxTitle = Uppgradera Firefox för att fortsätta!
+warningUpgradeFirefoxDetail = Test Pilot kräver den senaste versionen av Firefox. <a>Uppgradera Firefox</a> för att komma igång.
+warningHttpsRequiredTitle = HTTPS krävs!
+warningHttpsRequiredDetail = Test Pilot måste nås via HTTPS. Se <a>vår dokumentation</a> för mer information.
+warningMissingPrefTitle = Utveckla Test Pilot?
+warningMissingPrefDetail = När du kör Test Pilot lokalt eller i utvecklingsmiljöer, krävs särskild konfiguration. Vänligen se <a>vår dokumentation</a> för detaljer.
+warningBadHostnameTitle = Okontrollerat värdnamn!
+warningBadHostnameDetail = Test Pilot webbplats är endast tillgänglig från testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net eller example.com:8000. Se <a>vår dokumentation</a> för mer information.

@@ -13,6 +13,25 @@
   }
 }
 
+.card-list-heading {
+  @include respond-to('medium') {
+    font-size: $font-unit * 3.5;
+    line-height: $font-unit * 3.5;
+  }
+
+  @include respond-to('small') {
+    font-size: $font-unit * 2.7;
+    line-height: $font-unit * 2.7;
+  }
+
+  font-size: $grid-unit * 2;
+  line-height: $grid-unit * 2.7;
+  margin: 0 0 $grid-unit * 1.5;
+  text-shadow: 0 2px 0 $transparent-black-3;
+  width: 100%;
+}
+
+
 .card {
   @include flex-container (column, center, center);
 

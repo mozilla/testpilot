@@ -5,6 +5,7 @@
 ../node_modules/classnames/*.
 ../node_modules/react/*.
 ../node_modules/html-react-parser/*.
+../node_modules/moment/*.
 
 [libs]
 ../flow-typed

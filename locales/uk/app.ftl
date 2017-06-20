@@ -62,6 +62,7 @@ oneClickInstallMajorCta = Увімкнути { $title }
 landingRequiresDesktop = Test Pilot потребує Firefox на Windows, Mac чи Linux
 landingDownloadFirefoxDesc = (Test Pilot доступний для Firefox на Windows, OS X та Linux)
 landingUpgradeDesc = Test Pilot потребує Firefox 49 або вище.
+landingUpgradeDesc2 = Test Pilot потребує Firefox { $version } або вище.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Оновити Firefox
 landingDownloadFirefoxSubTitle = Безкоштовне завантаження
@@ -100,6 +101,12 @@ emailOptInSuccessMessage2 = Дякуємо!
 emailOptInConfirmationClose = Вперед до експериментів...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Останні оновлення
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -108,7 +115,8 @@ experimentListJustLaunchedTab = Щойно запущено
 experimentListJustUpdatedTab = Щойно оновлено
 experimentListEndingTomorrow = Закінчується завтра
 experimentListEndingSoon = Скоро закінчується
-experimentsListCondensedHeader = Оберіть свої експерименти!
+experimentCondensedHeader = Вітаємо у Test Pilot!
+experimentListHeader = Оберіть свої експерименти!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.

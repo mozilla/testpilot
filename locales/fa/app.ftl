@@ -62,6 +62,7 @@ oneClickInstallMajorCta = فعال‌سازی { $title }
 landingRequiresDesktop = خلبان آزمایشی نیاز به فایرفاکس برای رومیزی بر روی ویندوز، مک یا لینوکس دارد
 landingDownloadFirefoxDesc = (خلبان آزمایشی برای فایرفاکس ویندوز، OS X و لینوکس موجو است)
 landingUpgradeDesc = خلبان آزمایشی نیاز به فایرفاکس ۴۹ و بالاتر دارد
+landingUpgradeDesc2 = خلبان آزمایشی نیاز به فایرفاکس { $version } یا بالاتر دارد.
 landingDownloadFirefoxTitle = فایرفاکس
 landingUpgradeFirefoxTitle = ارتقا فایرفاکس
 landingDownloadFirefoxSubTitle = دریافت رایگان
@@ -100,6 +101,12 @@ emailOptInSuccessMessage2 = ممنون!
 emailOptInConfirmationClose = به سوی تجربه‌ها…
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = آخرین بروزرسانی
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -108,7 +115,8 @@ experimentListJustLaunchedTab = هم‌اکنون منتشر شد
 experimentListJustUpdatedTab = هم‌اکنون بروزرسانی شد
 experimentListEndingTomorrow = فردا تمام می‌شود
 experimentListEndingSoon = به زودی تمام میشود
-experimentsListCondensedHeader = تجربه‌های آزمایشی خود را انتخاب کنید!
+experimentCondensedHeader = به خلبان آزمایشی خوش‌آمدید!
+experimentListHeader = آزمایش‌های خود را انتخاب کنید!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
