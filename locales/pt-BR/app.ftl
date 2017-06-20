@@ -293,6 +293,12 @@ hidePastExperiments = Esconder experimentos antigos
 [[ warnings ]]
 
 warningGenericTitle = Algo está errado!
+warningGenericDetail = Algo deu errado com o Test Pilot. Por favor <a>submeta um bug</a> e mencione esta mensagem de erro.
 warningUpgradeFirefoxTitle = Atualize o Firefox para continuar!
+warningUpgradeFirefoxDetail = O Test Pilot requer a versão mais recente do Firefox. <a>Atualize o Firefox</a> para começar.
 warningHttpsRequiredTitle = É necessário HTTPS!
+warningHttpsRequiredDetail = O Test Pilot tem de ser acessado através de HTTPS. Por favor veja a <a>nossa documentação</a> para detalhes.
+warningMissingPrefTitle = Desenvolvendo no Test Pilot?
+warningMissingPrefDetail = Ao executar o Test Pilot localmente ou em ambiente de desenvolvimento, é necessária uma configuração especial. Consulte <a>nossa documentação</a> para detalhes.
 warningBadHostnameTitle = Hostname não aprovado!
+warningBadHostnameDetail = O site do Test Pilot apenas pode ser acessado a partir de testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, ou example.com:8000. Por favor veja a <a>nossa documentação</a> para detalhes.
