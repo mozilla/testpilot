@@ -284,3 +284,16 @@ noScriptLink = ببینید چرا
 
 viewPastExperiments = نمایش آزمایش‌های گذشته
 hidePastExperiments = مخفی کردن آزمایش‌های گذشته
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = خطایی رخ داده است!
+warningGenericDetail = مشکلی در خلبان آزمایشی رخ داده است. لطفا <a>یک گزارش خطا ایجاد کنید<a/> و این پیغام خطا را ذکر نمایید.
+warningUpgradeFirefoxTitle = برای ادامه، فایرفاکس را ارتقا دهید!
+warningUpgradeFirefoxDetail = خلبان آزمایشی به آخرین نسخه فایرفاکس احتیاج دارد، برای شروع <a>فایرفاکس را ارتقا دهید</a>.
+warningHttpsRequiredTitle = HTTPS مورد نیاز است!
+warningHttpsRequiredDetail = خلبان آزمایشی باید از طریق HTTPS مورد استفاده قرار بگیرد. برای جزییات لطفا <a>مستندات ما</a> را ببینید.
+warningMissingPrefDetail = وقتی خلبان آزمایشی را محلی یا در محیط‌های توسعه اجرا می‌کنید، پیکربندی ویژه‌ای مورد نیاز است. برای جزییات لطفا <a>مستندات ما<a/> را ببینید.
+warningBadHostnameTitle = نام میزبان تایید نشده!
