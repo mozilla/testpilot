@@ -293,9 +293,12 @@ hidePastExperiments = Скрыть старые эксперименты
 [[ warnings ]]
 
 warningGenericTitle = Что-то пошло не так!
+warningGenericDetail = С Лётчиком-испытателем что-то пошло не так. Пожалуйста, <a>напишите об ошибке</a> и укажите там это сообщение об ошибке.
 warningUpgradeFirefoxTitle = Для продолжения обновите Firefox!
+warningUpgradeFirefoxDetail = Для работы Лётчика-испытателя необходимо использовать последнюю версию Firefox. Чтобы начать, <a>обновите Firefox</a>.
 warningHttpsRequiredTitle = Требуется HTTPS!
 warningHttpsRequiredDetail = Для доступа к Летчику-испытателю необходимо использовать HTTPS. Для получения более подробной информации, пожалуйста, обратитесь к <a>нашей документации</a>.
 warningMissingPrefTitle = Вы разработчик Лётчика-испытателя?
+warningMissingPrefDetail = При запуске Лётчика-испытателя локально или в среде разработки необходимо использовать специальную конфигурацию. Для получения более подробной информации, пожалуйста, обратитесь к <a>нашей документации</a>.
 warningBadHostnameTitle = Неутверждённое имя хоста!
 warningBadHostnameDetail = Доступ к сайту Летчика-испытателя возможен только с testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net или example.com:8000. Для получения более подробной информации, пожалуйста, обратитесь к <a>нашей документации</a>.
