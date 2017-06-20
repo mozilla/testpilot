@@ -101,6 +101,12 @@ emailOptInSuccessMessage2 = ¡Gracias!
 emailOptInConfirmationClose = Hacia los experimentos...
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Últimas actualizaciones
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -109,7 +115,8 @@ experimentListJustLaunchedTab = Recién lanzado
 experimentListJustUpdatedTab = Recién actualizado
 experimentListEndingTomorrow = Termina mañana
 experimentListEndingSoon = Termina pronto
-experimentsListCondensedHeader = ¡Elegí tus experimentos!
+experimentCondensedHeader = ¡Bienvenido a Test Pilot!
+experimentListHeader = ¡Elegí tus experimentos!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -280,3 +287,18 @@ noScriptLink = Encuentre el motivo
 
 viewPastExperiments = Ver experimentos pasados
 hidePastExperiments = Ocultar experimentos pasados
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = ¡Algo está mal!
+warningGenericDetail = Algo falló con Test Pilot. <a>Informá la falla</a> y mencioná este mensaje de error.
+warningUpgradeFirefoxTitle = ¡Actualizá Firefox para continuar!
+warningUpgradeFirefoxDetail = Test Pilot requiere la última versión de Firefox. <a>Actualizá Firefox</a> para comenzar.
+warningHttpsRequiredTitle = ¡HTTPS requerido!
+warningHttpsRequiredDetail = Test Pilot debe accederse  mediante HTTPS. Mirá <a>nuestra documentación</a> para más detalles.
+warningMissingPrefTitle = ¿Desarrollando Test Pilot?
+warningMissingPrefDetail = Al ejecutar Test Pilot localmente o en entornos de desarrollo, se necesita una configuración especial. Mirá <a>nuestra documentación</a> para más detalles.
+warningBadHostnameTitle = ¡Nombre de servidor no aprobado!
+warningBadHostnameDetail = El sitio de Test Pilot solamente puede ser accedido desde  testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, o example.com:8000.  Mirá <a>nuestra documentación</a> para más detalles.
