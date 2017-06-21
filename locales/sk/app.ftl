@@ -295,3 +295,7 @@ hidePastExperiments = Skryť predchádzajúce experimenty
 warningGenericTitle = Niečo nie je v poriadku!
 warningGenericDetail = V Test Pilote sa niečo pokazilo. <a>Pri nahlásení chyby</a>, prosím, uveďte túto chybovú správu.
 warningUpgradeFirefoxTitle = Pre pokračovanie aktualizujte Firefox.
+warningUpgradeFirefoxDetail = Test Pilot vyžaduje najnovšiu verziu Firefoxu. Pred začiatkom, prosím, <a>aktualizujte svoj Firefox</a>.
+warningHttpsRequiredTitle = Je vyžadované HTTPS!
+warningHttpsRequiredDetail = Program Test Pilot je prístupný len prostredníctvom HTTPS. Viac informácií nájdete v <a>našej dokumentácií</a>.
+warningMissingPrefTitle = Vyvíjate Test Pilot? 
