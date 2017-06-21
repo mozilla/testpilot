@@ -290,3 +290,12 @@ hidePastExperiments = Zańdźene eksperimenty schować
 [[ warnings ]]
 
 warningGenericTitle = Něšto je so nimokuliło!
+warningGenericDetail = Něšto je so z Test Pilot nimokuliło. Prošu <a>pisajće zmylkowu rozprawu</a> a podajće tutu zmylkowu zdźělenku.
+warningUpgradeFirefoxTitle = Aktualizujće Firefox, zo byšće pokročował!
+warningUpgradeFirefoxDetail = Test Pilot sej najnowšu wersiju Firefox wužaduje. <a>Aktualizujće Firefox</a>, zo byšće započał.
+warningHttpsRequiredTitle = HTTPS trěbny!
+warningHttpsRequiredDetail = Zo byšće přistup na Test Pilot měł, trjebaće HTTPS. Podrobnosće w <a>našej dokumentaciji</a> zhoniće.
+warningMissingPrefTitle = Wuwiwaće Test Pilot?
+warningMissingPrefDetail = Hdyž Test Pilot lokalnje abo we wuwiwanskich wokolinach wuwjedźeće, trjebaće specialnu konfiguraciju. Podrobnosće w <a>našej dokumentaciji</a> namakaće.
+warningBadHostnameTitle = Njedowolene hostmjeno!
+warningBadHostnameDetail = Přistup na websydło Test Pilot maće jenož wot testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net abo example.com:8000. Podrobnosće w <a>našej dokumentaciji</a> namakaće.
