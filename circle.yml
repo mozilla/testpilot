@@ -39,7 +39,8 @@ test:
     - ./bin/circleci/test-frontend.sh
   post:
     - bash <(curl -s https://codecov.io/bash)
-    - cp ui-tests.html $CIRCLE_ARTIFACTS
+    - >
+      [ -e ui-tests.html ] && cp ui-tests.html $CIRCLE_ARTIFACTS || echo 'No ui-tests.html'
 
 deployment:
   static_development:
