@@ -287,3 +287,11 @@ noScriptLink = Zistite prečo
 
 viewPastExperiments = Zobraziť predchádzajúce experimenty
 hidePastExperiments = Skryť predchádzajúce experimenty
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Niečo nie je v poriadku!
+warningGenericDetail = V Test Pilote sa niečo pokazilo. <a>Pri nahlásení chyby</a>, prosím, uveďte túto chybovú správu.
+warningUpgradeFirefoxTitle = Pre pokračovanie aktualizujte Firefox.
