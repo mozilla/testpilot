@@ -284,3 +284,15 @@ noScriptLink = Zgóńśo cogodla
 
 viewPastExperiments = Zachadne eksperimenty se woglědaś
 hidePastExperiments = Zachadne eksperimenty schowaś
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Něco njejo se raźiło!
+warningGenericDetail = Něco njejo se z Test Pilot raźiło. Pšosym <a>pišćo zmólkowu rozpšawu</a> a pódajśo toś tu zmólkowu powěźeńku.
+warningUpgradeFirefoxTitle = Aktualizěrujśo Firefox, aby pókšacował!
+warningUpgradeFirefoxDetail = Test Pilot se nejnowšu wersiju Firefox pomina. <a>Aktualizěrujśo Firefox</a>, aby zachopił.
+warningHttpsRequiredTitle = HTTPS trěbny!
+warningHttpsRequiredDetail = Aby pśistup na Test Pilot měł, trjebaśo HTTPS. Drobnostki w <a>našej dokumentaciji</a> zgónijośo.
+warningMissingPrefTitle = Wuwijaśo Test Pilot?
