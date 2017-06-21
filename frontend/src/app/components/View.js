@@ -108,7 +108,7 @@ export default class View extends React.Component {
     let copy = <p data-l10n-id="warningGenericDetail">Something has gone wrong with Test Pilot. Please <a href="https://github.com/mozilla/testpilot/issues/new">file a bug</a> and mention this error message.</p>;
     if (!this.props.isMinFirefox) {
       title = <span data-l10n-id="warningUpgradeFirefoxTitle">Upgrade Firefox to continue!</span>;
-      copy = <p data-l10n-id="warningUpgradeFirefoxDetail">Test Pilot reqires the latest version of Firefox. <a href="https://www.mozilla.org/firefox/">Upgrade Firefox</a> to get started.</p>;
+      copy = <p data-l10n-id="warningUpgradeFirefoxDetail">Test Pilot requires the latest version of Firefox. <a href="https://www.mozilla.org/firefox/">Upgrade Firefox</a> to get started.</p>;
     } else if (window.location.protocol !== 'https:') {
       title = <span data-l10n-id="warningHttpsRequiredTitle">HTTPS required!</span>;
       copy = <p data-l10n-id="warningHttpsRequiredDetail">Test Pilot must be accessed over HTTPS. Please see <a href="https://github.com/mozilla/testpilot/blob/master/docs/development/quickstart.md">our documentation</a> for details.</p>;
