@@ -299,3 +299,6 @@ warningUpgradeFirefoxDetail = Test Pilot vyžaduje najnovšiu verziu Firefoxu. P
 warningHttpsRequiredTitle = Je vyžadované HTTPS!
 warningHttpsRequiredDetail = Program Test Pilot je prístupný len prostredníctvom HTTPS. Viac informácií nájdete v <a>našej dokumentácií</a>.
 warningMissingPrefTitle = Vyvíjate Test Pilot? 
+warningMissingPrefDetail = Pri lokálnom spustení alebo vo vývojových prostrediach vyžaduje Test Pilot špeciálnu konfiguráciu. Viac informácií nájdete v <a>našej dokumentácií</a>.
+warningBadHostnameTitle = Nepovolený hostname!
+warningBadHostnameDetail = Stránka Test Pilotu je prístupná len z domén testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net alebo example.com:8000. Ďalšie informácie nájdete v <a>našej dokumentácií</a>.
