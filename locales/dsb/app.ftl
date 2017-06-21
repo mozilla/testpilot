@@ -296,3 +296,6 @@ warningUpgradeFirefoxDetail = Test Pilot se nejnowšu wersiju Firefox pomina. <a
 warningHttpsRequiredTitle = HTTPS trěbny!
 warningHttpsRequiredDetail = Aby pśistup na Test Pilot měł, trjebaśo HTTPS. Drobnostki w <a>našej dokumentaciji</a> zgónijośo.
 warningMissingPrefTitle = Wuwijaśo Test Pilot?
+warningMissingPrefDetail = Gaž Test Pilot lokalnje abo we wuwijańskich wokolinach wuwjedujośo, trjebaśo specialnu konfiguraciju. Drobnostki w <a>našej dokumentaciji</a> namakajośo.
+warningBadHostnameTitle = Njedówolone hostmě!
+warningBadHostnameDetail = Pśistup na websedło Test Pilot maśo jano wót testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net abo example.com:8000. Drobnostki w <a>našej dokumentaciji</a> namakajośo.
