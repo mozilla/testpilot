@@ -33,8 +33,8 @@ test:
     - ./bin/circleci/test-frontend.sh
     - tox -e flake8
     - ./bin/circleci/test-firefox-release.sh
-    # - ./bin/circleci/test-firefox-dev.sh
-    # - ./bin/circleci/test-firefox-nightly.sh
+    - ./bin/circleci/test-firefox-dev.sh
+    - ./bin/circleci/test-firefox-nightly.sh
   post:
     - bash <(curl -s https://codecov.io/bash)
     - cp ui-tests.html $CIRCLE_ARTIFACTS
