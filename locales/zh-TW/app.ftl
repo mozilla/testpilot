@@ -295,3 +295,4 @@ warningUpgradeFirefoxDetail = 需要使用最新版本的 Firefox 才能使用 T
 warningHttpsRequiredTitle = 必須使用 HTTPS！
 warningHttpsRequiredDetail = 必須透過 HTTPS 通訊協定存取 Test Pilot。請參考<a>文件</a>當中的詳細資訊。
 warningMissingPrefTitle = 正在開發 Test Pilot 嗎？
+warningBadHostnameTitle = 不允許的主機名稱！
