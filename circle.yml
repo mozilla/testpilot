@@ -17,34 +17,27 @@ machine:
 dependencies:
   cache_directories:
     - "addon/node_modules"
+    - "/home/ubuntu/firefox-downloads"
     # node_modules is included by default
 
   override:
-    - pip install tox mozdownload mozinstall
-    - google-chrome --version
+    - ./bin/circleci/install-test-dependencies.sh
     - ./bin/circleci/install-node-dependencies.sh
     - ./bin/circleci/build-addon.sh
     - ./bin/circleci/build-version-json.sh
     - ./bin/circleci/build-frontend.sh
 
 test:
-  pre:
-    - curl -L -o geckodriver.tar.gz `curl -s 'https://api.github.com/repos/mozilla/geckodriver/releases/latest' | python -c "import sys, json; r = json.load(sys.stdin); print([a for a in r['assets'] if 'linux64' in a['name']][0]['browser_download_url']);"`
-    - gunzip -c geckodriver.tar.gz | tar xopf -
-    - chmod +x geckodriver
-    - sudo mv geckodriver /home/ubuntu/bin
-    - geckodriver --version
   override:
     - ./bin/circleci/test-addon.sh
     - ./bin/circleci/test-frontend.sh
-    - sh ./bin/circleci/test-firefox-release.sh
-    # - sh ./bin/circleci/test-firefox-dev.sh
-    # - sh ./bin/circleci/test-firefox-nightly.sh
     - tox -e flake8
+    - ./bin/circleci/test-firefox-release.sh
+    # - ./bin/circleci/test-firefox-dev.sh
+    # - ./bin/circleci/test-firefox-nightly.sh
   post:
     - bash <(curl -s https://codecov.io/bash)
-    - >
-      [ -e ui-tests.html ] && cp ui-tests.html $CIRCLE_ARTIFACTS || echo 'No ui-tests.html'
+    - cp ui-tests.html $CIRCLE_ARTIFACTS
 
 deployment:
   static_development:
