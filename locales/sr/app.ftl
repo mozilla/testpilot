@@ -287,3 +287,13 @@ noScriptLink = Сазнајте зашто
 
 viewPastExperiments = Прикажи прошле експерименте
 hidePastExperiments = Сакриј прошле експерименте
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Нешто није у реду!
+warningGenericDetail = Нешто није у реду са Test Pilot-ом. Молимо вас да <a>пријавите грешку</a> и споменете поруку ове грешке.
+warningUpgradeFirefoxTitle = Надоградите Firefox да наставите!
+warningUpgradeFirefoxDetail = Test Pilot захтева послељњу верзију Firefox-а. <a>Надоградите Firefox</a> да започнете.
+warningHttpsRequiredTitle = HTTPS је потребан!
