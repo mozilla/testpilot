@@ -284,3 +284,9 @@ noScriptLink = Zhońće čehodla
 
 viewPastExperiments = Zańdźene eksperimenty sej wobhladać
 hidePastExperiments = Zańdźene eksperimenty schować
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Něšto je so nimokuliło!
