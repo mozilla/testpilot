@@ -290,9 +290,12 @@ hidePastExperiments = 隱藏先前的實驗
 [[ warnings ]]
 
 warningGenericTitle = 有些東西不對勁！
+warningGenericDetail = Test Pilot 有點東西不對勁，請<a>回報 Bug</a> 並包含此錯誤訊息。
 warningUpgradeFirefoxTitle = 升級 Firefox 後再繼續使用！
 warningUpgradeFirefoxDetail = 需要使用最新版本的 Firefox 才能使用 Test Pilot。<a>請升級 Firefox</a> 開始使用。
 warningHttpsRequiredTitle = 必須使用 HTTPS！
 warningHttpsRequiredDetail = 必須透過 HTTPS 通訊協定存取 Test Pilot。請參考<a>文件</a>當中的詳細資訊。
 warningMissingPrefTitle = 正在開發 Test Pilot 嗎？
+warningMissingPrefDetail = 在本機或開發環境中執行 Test Pilot 時，需進行特別設定。請參考<a>文件</a>中的詳細資訊。
 warningBadHostnameTitle = 不允許的主機名稱！
+warningBadHostnameDetail = Test Pilot 只能從 testpilot.firefox.com、testpilot.stage.mozaws.net、testpilot.dev.mozaws.net 或 example.com:8000 這些網址存取，請參考<a>文件</a>當中的詳細資訊。
