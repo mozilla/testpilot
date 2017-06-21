@@ -1,7 +1,6 @@
 #!/bin/bash
 set -ex
 
-mozdownload --version latest --destination firefox.tar.bz2
-mozinstall firefox.tar.bz2
+mozinstall $(ls -t /home/ubuntu/firefox-downloads/firefox/*.tar.bz2 | head -1)
 firefox --version
-tox
+tox -e ui-tests

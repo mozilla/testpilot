@@ -18,6 +18,7 @@ def firefox_options(firefox_options):
     firefox_options.set_preference('xpinstall.signatures.required', False)
     firefox_options.set_preference('extensions.webapi.testing', True)
     firefox_options.set_preference('example.com', 'local')
+    firefox_options.log.level = 'trace'
     return firefox_options
 
 
