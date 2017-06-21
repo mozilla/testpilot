@@ -284,3 +284,13 @@ noScriptLink = Besjoch wêrom
 
 viewPastExperiments = Alde eksperiminten besjen
 hidePastExperiments = Alde eksperiminten ferstopje
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Der is wat mis!
+warningGenericDetail = Der is wat misgien mei Test Pilot. <a>Meld in bug</a> en neam dizze flatermelding.
+warningUpgradeFirefoxTitle = Fernij Firefox om troch te gean!
+warningUpgradeFirefoxDetail = Test Pilot fereasket de nijste ferzje fan Firefox. <a>Fernij Firefox</a> om te begjinnen.
+warningHttpsRequiredTitle = HTTPS fereaske!
