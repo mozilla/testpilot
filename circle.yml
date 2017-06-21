@@ -39,6 +39,7 @@ test:
     - ./bin/circleci/test-frontend.sh
   post:
     - bash <(curl -s https://codecov.io/bash)
+    - cp ui-tests.html $CIRCLE_ARTIFACTS
 
 deployment:
   static_development:
