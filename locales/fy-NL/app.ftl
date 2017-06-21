@@ -284,3 +284,18 @@ noScriptLink = Besjoch wêrom
 
 viewPastExperiments = Alde eksperiminten besjen
 hidePastExperiments = Alde eksperiminten ferstopje
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Der is wat mis!
+warningGenericDetail = Der is wat misgien mei Test Pilot. <a>Meld in bug</a> en neam dizze flatermelding.
+warningUpgradeFirefoxTitle = Fernij Firefox om troch te gean!
+warningUpgradeFirefoxDetail = Test Pilot fereasket de nijste ferzje fan Firefox. <a>Fernij Firefox</a> om te begjinnen.
+warningHttpsRequiredTitle = HTTPS fereaske!
+warningHttpsRequiredDetail = Test Pilot moat fia HTTPS benadere wurde. Besjoch <a>ús dokumintaasje</a> foar details.
+warningMissingPrefTitle = Untwikkelje jo Test Pilot?
+warningMissingPrefDetail = Foar it lokaal of yn ûntwikkelomjouwingen útfieren fan Test Pilot is spesjale konfiguraasje fereaske. Besjoch <a>ús dokumintaasje</a> foar details.
+warningBadHostnameTitle = Net-goedkarde hostnamme!
+warningBadHostnameDetail = De Test Pilot-website mei allinnich fan testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net of example.com:8000 ôf benadere wurde. Besjoch <a>ús dokumintaasje</a> foar details.

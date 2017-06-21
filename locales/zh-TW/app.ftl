@@ -284,3 +284,14 @@ noScriptLink = 找出原因
 
 viewPastExperiments = 檢視先前的實驗
 hidePastExperiments = 隱藏先前的實驗
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = 有些東西不對勁！
+warningUpgradeFirefoxTitle = 升級 Firefox 後再繼續使用！
+warningUpgradeFirefoxDetail = 需要使用最新版本的 Firefox 才能使用 Test Pilot。<a>請升級 Firefox</a> 開始使用。
+warningHttpsRequiredTitle = 必須使用 HTTPS！
+warningHttpsRequiredDetail = 必須透過 HTTPS 通訊協定存取 Test Pilot。請參考<a>文件</a>當中的詳細資訊。
+warningMissingPrefTitle = 正在開發 Test Pilot 嗎？
