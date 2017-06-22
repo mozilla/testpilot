@@ -38,6 +38,8 @@
     "tos-pp": "https://github.com/mozilla/legal-docs.git"
   },
   "devDependencies": {
+    "@storybook/addon-knobs": "^3.1.5",
+    "@storybook/react": "^3.1.5",
     "babel-core": "6.24.0",
     "babel-eslint": "7.1.1",
     "babel-plugin-istanbul": "4.0.0",
@@ -96,8 +98,7 @@
     "try-require": "1.2.1",
     "vinyl-buffer": "1.0.0",
     "vinyl-source-stream": "1.1.0",
-    "yamljs": "0.2.8",
-    "@storybook/react": "^3.1.5"
+    "yamljs": "0.2.8"
   },
   "directories": {
     "doc": "docs"
@@ -127,7 +128,7 @@
     "flow-coverage": "cd frontend && flow-coverage-report --threshold 60 -i 'src/**/*.js' -t html -o coverage/flow",
     "addon:locales": "gulp addon-copy-locales",
     "content": "gulp content-build",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -s ./frontend/build -p 6006",
+    "build-storybook": "build-storybook -o ./frontend/build/.storybook"
   }
 }

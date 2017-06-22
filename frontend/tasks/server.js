@@ -24,17 +24,23 @@ const serverOptions = {
     (req, res, next) => {
       const parsed = url.parse(req.url);
       const { pathname } = parsed;
+
       // If no dot and trailing slash, try rewriting
       if (pathname.indexOf('.') === -1 &&
           pathname.substring(pathname.length - 1) !== '/') {
         parsed.pathname = pathname + '/index.html';
         req.url = url.format(parsed);
       }
+
+      // Skip CSP for storybook
+      if (pathname.indexOf('.storybook')) { return next(); }
+
       // Rewrite /static/addon/latest to /static/addon/addon.xpi
       if (pathname === '/static/addon/latest') {
         parsed.pathname = '/static/addon/addon.xpi';
         req.url = url.format(parsed);
       }
+
       res.setHeader('content-security-policy', CSP);
       next();
     }
