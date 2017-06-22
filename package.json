@@ -96,7 +96,8 @@
     "try-require": "1.2.1",
     "vinyl-buffer": "1.0.0",
     "vinyl-source-stream": "1.1.0",
-    "yamljs": "0.2.8"
+    "yamljs": "0.2.8",
+    "@storybook/react": "^3.1.5"
   },
   "directories": {
     "doc": "docs"
@@ -125,6 +126,8 @@
     "coverage": "cross-env NODE_ENV=test nyc mocha --recursive --require frontend/test-setup.js frontend/test",
     "flow-coverage": "cd frontend && flow-coverage-report --threshold 60 -i 'src/**/*.js' -t html -o coverage/flow",
     "addon:locales": "gulp addon-copy-locales",
-    "content": "gulp content-build"
+    "content": "gulp content-build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   }
 }
