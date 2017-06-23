@@ -333,10 +333,10 @@ export class ExperimentDetail extends React.Component {
                       { this.renderInstallationCount() }
                     </section>
                     {!hasAddon && <div>
-                     {!!introduction && <section className="introduction">
-                       {!!warning && <div className="warning"><strong data-l10n-id={this.l10nId('warning')}>{warning}</strong></div>}
--                      {!graduated && <div data-l10n-id={this.l10nId('introduction')}>
-                         {parser(introduction)}
+                      {!!introduction && <section className="introduction">
+                        {!!warning && <div className="warning"><strong data-l10n-id={this.l10nId('warning')}>{warning}</strong></div>}
+                        {!graduated && <div data-l10n-id={this.l10nId('introduction')}>
+                          {parser(introduction)}
                         </div>}
                       </section>}
                     </div>}
