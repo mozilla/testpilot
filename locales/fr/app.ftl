@@ -291,7 +291,8 @@ hidePastExperiments = Masquer les expériences passées
 
 warningGenericTitle = Des erreurs se sont produites
 warningGenericDetail = Test Pilot ne fonctionne pas correctement, veuillez <a>signaler un dysfonctionnement</a> et mentionner ce message d’erreur.
-warningUpgradeFirefoxTitle = Veuillez mettre à jour Firefox pour continuer
+warningUpgradeFirefoxTitle = Vous devez mettre à jour Firefox pour continuer
+warningUpgradeFirefoxDetail = Test Pilot nécessite la dernière version de Firefox. <a>Mettez Firefox à jour</a> pour pouvoir commencer.
 warningHttpsRequiredTitle = HTTPS obligatoire
 warningBadHostnameTitle = Nom d’hôte non approuvé
 warningBadHostnameDetail = Le site Test Pilot ne peut être consulté que via testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net ou example.com:8000. Veuillez consulter <a>notre documentation</a> pour plus de détails.
