@@ -3,7 +3,9 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import { experimentL10nId } from '../lib/utils';
+import { buildSurveyURL, experimentL10nId } from '../lib/utils';
+
+import type { InstalledExperiments } from '../reducers/addon';
 
 const ONE_DAY = 24 * 60 * 60 * 1000;
 const ONE_WEEK = 7 * ONE_DAY;
@@ -14,6 +16,8 @@ type ExperimentRowCardProps = {
   experiment: Object,
   hasAddon: any,
   enabled: Boolean,
+  installed: InstalledExperiments,
+  clientUUID: ?string,
   eventCategory: string,
   getExperimentLastSeen: Function,
   sendToGA: Function,
@@ -54,9 +58,12 @@ export default class ExperimentRowCard extends React.Component {
         </div>
       <div className="experiment-information">
         <header>
-          <h3>{title}</h3>
-          {subtitle && <h4 data-l10n-id={this.l10nId('subtitle')} className="subtitle">{subtitle}</h4>}
-          <h4>{this.statusMsg()}</h4>
+          <div>
+            <h3>{title}</h3>
+            {subtitle && <h4 data-l10n-id={this.l10nId('subtitle')} className="subtitle">{subtitle}</h4>}
+            <h4>{this.statusMsg()}</h4>
+          </div>
+          {this.renderFeedbackButton()}
         </header>
         <p data-l10n-id={this.l10nId('description')}>{description}</p>
         { this.renderInstallationCount(installation_count, isCompleted) }
@@ -77,6 +84,32 @@ export default class ExperimentRowCard extends React.Component {
             data-l10n-id="participantCount"
             data-l10n-args={JSON.stringify({ installation_count })}>{installation_count}</span>
     );
+  }
+
+  renderFeedbackButton() {
+    if (!this.props.enabled) { return null; }
+
+    const { experiment, installed, clientUUID } = this.props;
+    const { title, survey_url } = experiment;
+    const surveyURL = buildSurveyURL('givefeedback', title, installed, clientUUID, survey_url);
+    return (
+      <div>
+        <a onClick={() => this.handleFeedback()}
+           href={surveyURL} target="_blank" rel="noopener noreferrer"
+           className="experiment-feedback" data-l10n-id="experimentCardFeedback">
+           Feedback
+        </a>
+      </div>
+    );
+  }
+
+  handleFeedback() {
+    const { experiment, eventCategory } = this.props;
+    this.props.sendToGA('event', {
+      eventCategory,
+      eventAction: 'Give Feedback',
+      eventLabel: experiment.title
+    });
   }
 
   renderManageButton(enabled: Boolean, hasAddon: Boolean, isCompleted: Boolean) {

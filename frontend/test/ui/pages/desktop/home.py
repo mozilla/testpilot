@@ -45,7 +45,7 @@ class Home(Base):
         class Experiments(Region):
             """Represents the experiments region"""
             _name_locator = (By.CSS_SELECTOR, '.experiment-information > \
-                             header > h3')
+                             header > div > h3')
 
             @property
             def name(self):
