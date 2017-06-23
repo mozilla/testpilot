@@ -22,7 +22,7 @@ export default class RetireConfirmationDialog extends React.Component {
           </header>
           <form>
 
-            <div className="modal-content modal-form">
+            <div className="modal-content">
               <p data-l10n-id="retireMessage" className="centered">As you wish. This will disable any active tests, uninstall the Test Pilot add-on, and remove your account information from our servers.</p>
               <p data-l10n-id="retireEmailMessage" className="centered small">To opt out of email updates, simply click the <em>unsubscribe</em> link on any Test Pilot email.</p>
             </div>

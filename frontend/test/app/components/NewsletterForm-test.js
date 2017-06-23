@@ -97,17 +97,4 @@ describe('app/components/NewsletterForm', () => {
       expect(subscribe.calledOnce).to.equal(true);
     });
   });
-
-  describe('disclaimer', () => {
-    it('should be hidden by default', () => {
-      const subject = _subject().find('.disclaimer');
-      expect(subject.hasClass('reveal')).to.equal(false);
-      expect(subject.hasClass('revealed-field')).to.equal(true);
-    });
-
-    it('should be shown when an email is entered', () => {
-      const subject = _subject({ email: 'a' }).find('.disclaimer');
-      expect(subject.hasClass('reveal')).to.equal(true);
-    });
-  });
 });

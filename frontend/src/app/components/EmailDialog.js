@@ -52,7 +52,7 @@ export default class EmailDialog extends React.Component {
           <h3 className="modal-header" data-l10n-id="emailOptInDialogTitle">Welcome to Test Pilot!</h3>
           <div className="modal-cancel" onClick={e => this.skip(e)}/>
         </header>
-        <div className="modal-content modal-form centered">
+        <div className="modal-content centered">
           <p data-l10n-id="emailOptInMessage" className="">Find out about new experiments and see test results for experiments you&apos;ve tried.</p>
           <NewsletterForm {...{ email, privacy }}
                           isModal={true}
@@ -68,12 +68,12 @@ export default class EmailDialog extends React.Component {
     return (
       <div id="second-page" className="modal">
         <header className="modal-header-wrapper">
-          <h3 className="modal-header" data-l10n-id="emailOptInConfirmationTitle">Email Sent</h3>
+          <h3 className="modal-header" data-l10n-id="newsletterFooterSuccessHeader">Thanks!</h3>
           <div className="modal-cancel" onClick={e => this.continue(e)} />
         </header>
         <div className="modal-content centered">
           <div className="envelope" />
-          <p data-l10n-id="emailOptInSuccessMessage2">Thank you!</p>
+          <p data-l10n-id="newsletterFooterSuccessBody" />
         </div>
         <div className="modal-actions">
           <button id="email-success-continue" onClick={e => this.continue(e)} className="button default large" data-l10n-id="emailOptInConfirmationClose">On to the experiments...</button>
@@ -86,7 +86,7 @@ export default class EmailDialog extends React.Component {
     return (
       <div id="second-page" className="modal">
         <header className="modal-header-wrapper">
-          <h3 className="modal-header" data-l10n-id="emailOptInDialogTitle">Welcome to Test Pilot!</h3>
+          <h3 className="modal-header" data-l10n-id="emailOptInDialogErrorTitle">Oh no!</h3>
           <div className="modal-cancel" onClick={e => this.continue(e)} />
         </header>
         <div className="modal-content centered">
