@@ -101,6 +101,12 @@ emailOptInSuccessMessage2 = Tanemirt-ik
 emailOptInConfirmationClose = Ɣef tirmitin…
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Ileqqman ineggura
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -109,7 +115,8 @@ experimentListJustLaunchedTab = Ikker tura akka
 experimentListJustUpdatedTab = Ittwalqem tura akka
 experimentListEndingTomorrow = Ad ifak azekka
 experimentListEndingSoon = Ad ifak ticki
-experimentsListCondensedHeader = Fren tirmitin inek!
+experimentCondensedHeader = Ansuf γeṛ Test Pilot!
+experimentListHeader = Fren tirmitin inek!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -280,3 +287,8 @@ noScriptLink = Af ayen
 
 viewPastExperiments = Sken tirmitanin izrin
 hidePastExperiments = Ffer tirmitanin izrin
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
