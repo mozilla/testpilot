@@ -292,3 +292,4 @@ hidePastExperiments = Ffer tirmitanin izrin
 // Text of warnings to the user if various error conditions are detected
 [[ warnings ]]
 
+warningHttpsRequiredTitle = Isra HTTPS!
