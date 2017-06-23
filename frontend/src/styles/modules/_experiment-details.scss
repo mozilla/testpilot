@@ -435,6 +435,44 @@
   }
 }
 
+.experiment-platform {
+  @include flex-container(row, flex-start, center);
+  color: $transparent-black-5;
+  font-size: 1.2 * $font-unit;
+  font-weight: normal;
+
+  .platform-icon {
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    height: 16px;
+    margin-right: 6px;
+    margin-top: -4px;
+    opacity: .5;
+    width: 16px;
+  }
+
+  .platform-icon-web {
+    background-image: url('../images/experiment-type-web.svg');
+  }
+
+  .platform-icon-addon {
+    background-image: url('../images/experiment-type-addon.svg');
+  }
+
+  .platform-icon-mobile {
+    background-image: url('../images/experiment-type-mobile.svg');
+  }
+}
+
+.experiment-information .experiment-platform {
+  margin: 10px 0 -2px;
+}
+
+.details-overview .experiment-platform {
+  margin: 0 0 8px;
+}
+
 @include respond-to('small') {
   #experiment-page {
     .card-list {

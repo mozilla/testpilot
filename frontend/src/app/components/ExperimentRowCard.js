@@ -7,6 +7,8 @@ import { buildSurveyURL, experimentL10nId } from '../lib/utils';
 
 import type { InstalledExperiments } from '../reducers/addon';
 
+import ExperimentPlatforms from './ExperimentPlatforms';
+
 const ONE_DAY = 24 * 60 * 60 * 1000;
 const ONE_WEEK = 7 * ONE_DAY;
 const MAX_JUST_LAUNCHED_PERIOD = 2 * ONE_WEEK;
@@ -65,6 +67,7 @@ export default class ExperimentRowCard extends React.Component {
           </div>
           {this.renderFeedbackButton()}
         </header>
+        <ExperimentPlatforms experiment={experiment} />
         <p data-l10n-id={this.l10nId('description')}>{description}</p>
         { this.renderInstallationCount(installation_count, isCompleted) }
         { this.renderManageButton(enabled, hasAddon, isCompleted) }
@@ -79,11 +82,18 @@ export default class ExperimentRowCard extends React.Component {
   // telemetry data coming in from prod
   renderInstallationCount(installation_count: number, isCompleted: Boolean) {
     if (installation_count <= 100 || isCompleted) return '';
-    return (
-      <span className="participant-count"
-            data-l10n-id="participantCount"
-            data-l10n-args={JSON.stringify({ installation_count })}>{installation_count}</span>
-    );
+
+    const platforms = this.props.experiment.platforms || [];
+    if (platforms.length === 0 || platforms.indexOf('addon') !== -1) {
+      return (
+        <span className="participant-count"
+              data-l10n-id="participantCount"
+              data-l10n-args={JSON.stringify({ installation_count })}>{installation_count}</span>
+      );
+    }
+
+    // TODO: Display visitor count for web & mobile experiments?
+    return '';
   }
 
   renderFeedbackButton() {

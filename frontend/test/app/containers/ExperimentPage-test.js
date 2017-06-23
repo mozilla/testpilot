@@ -219,6 +219,12 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       expect(subject.state('isDisabling')).to.be.false;
     });
 
+    it('should include an ExperimentPlatforms component if `platforms` is set', () => {
+      expect(subject.find('ExperimentPlatforms')).to.have.property('length', 0);
+      subject.setProps({experiment: {...mockExperiment, platforms: ['addon', 'web']}});
+      expect(subject.find('ExperimentPlatforms')).to.have.property('length', 1);
+    });
+
     it('should show the tour dialog if shouldShowTourDialog is true and experiment then becomes enabled', () => {
       // Flag the tour dialog to be shown, but experiment isn't enabled yet.
       subject.setState({ shouldShowTourDialog: true });

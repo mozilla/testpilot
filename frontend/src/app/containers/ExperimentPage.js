@@ -18,6 +18,7 @@ import ExperimentPreFeedbackDialog from '../components/ExperimentPreFeedbackDial
 import View from '../components/View';
 import Warning from '../components/Warning';
 
+import ExperimentPlatforms from '../components/ExperimentPlatforms';
 import Banner from '../components/Banner';
 import Copter from '../components/Copter';
 import LayoutWrapper from '../components/LayoutWrapper';
@@ -325,6 +326,7 @@ export class ExperimentDetail extends React.Component {
           <div id="details">
               <LayoutWrapper helperClass="details-content" flexModifier="details-content">
                 <div className="details-overview">
+                  {experiment.platforms && <ExperimentPlatforms experiment={experiment} />}
                   <div className={`experiment-icon-wrapper-${experiment.slug} experiment-icon-wrapper`}>
                     <img className="experiment-icon" src={thumbnail}></img>
                   </div>
@@ -651,7 +653,7 @@ export class ExperimentDetail extends React.Component {
   }
 
   renderExperimentControls() {
-    const { enabled, isEnabling, isDisabling, progressButtonWidth } = this.state;
+    const { enabled, isDisabling, progressButtonWidth } = this.state;
     const { experiment, installed, isAfterCompletedDate, hasAddon, clientUUID } = this.props;
     const { title, min_release, max_release, survey_url } = experiment;
     const validVersion = this.isValidVersion(min_release, max_release);
@@ -683,12 +685,44 @@ export class ExperimentDetail extends React.Component {
         </div>
       );
     }
+
     return (
       <div className="experiment-controls">
         <a onClick={e => this.highlightPrivacy(e)} className="highlight-privacy" data-l10n-id="highlightPrivacy">Your privacy</a>
-        <button onClick={e => this.installExperiment(e)} style={{ minWidth: progressButtonWidth }} id="install-button"  className={classnames(['button', 'default'], { 'state-change': isEnabling })}><span className="state-change-inner"></span><span data-l10n-id="enableExperimentTransition" className="transition-text">Enabling...</span><span data-l10n-id="enableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text"></span></button>
+        {this.renderEnableButton()}
       </div>
     );
+  }
+
+  renderEnableButton() {
+    const { experiment } = this.props;
+    const { title, web_url } = experiment;
+
+    const useWebLink = (experiment.platforms || []).indexOf('web') !== -1;
+    if (useWebLink) {
+      return (
+        <a href={web_url} onClick={() => this.handleGoToLink()} target="_blank" rel="noopener noreferrer" className="button default">
+          <span data-l10n-id="experimentGoToLink" data-l10n-args={JSON.stringify({ title })} className="default-text"></span>
+        </a>
+      );
+    }
+
+    const { isEnabling, progressButtonWidth } = this.state;
+    return (
+      <button onClick={e => this.installExperiment(e)} style={{ minWidth: progressButtonWidth }} id="install-button"  className={classnames(['button', 'default'], { 'state-change': isEnabling })}>
+        <span className="state-change-inner"></span>
+        <span data-l10n-id="enableExperimentTransition" className="transition-text">Enabling...</span>
+        <span data-l10n-id="enableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text"></span>
+      </button>
+    );
+  }
+
+  handleGoToLink() {
+    this.props.sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'Enable Experiment',
+      eventLabel: this.props.experiment.title
+    });
   }
 
   // scrollOffset lets us scroll to the top of the highlight box shadow animation
