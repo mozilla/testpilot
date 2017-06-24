@@ -287,3 +287,12 @@ noScriptLink = Дізнатися, чому
 
 viewPastExperiments = Переглянути минулі експерименти
 hidePastExperiments = Приховати минулі експерименти
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Щось не так!
+warningUpgradeFirefoxTitle = Оновіть Firefox, щоб продовжити!
+warningHttpsRequiredTitle = Вимагається HTTPS!
+warningHttpsRequiredDetail = Test Pilot повиннен бути відкритий через HTTPS. Будь ласка, перегляньте <a>нашу документацію</a> для деталей.
