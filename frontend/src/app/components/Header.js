@@ -38,6 +38,10 @@ export default class Header extends React.Component {
     return this.props.hasAddon;
   }
 
+  setHeaderLinkPath() {
+    return this.props.hasAddon ? '/experiments' : '/';
+  }
+
   showSettingsMenu() {
     return this.state.showSettings;
   }
@@ -93,7 +97,7 @@ export default class Header extends React.Component {
         <header id="main-header">
           <LayoutWrapper flexModifier="row-between-top">
             <h1>
-              <a href="/" className="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
+              <a href={ this.setHeaderLinkPath() } className="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
             </h1>
             {this.renderSettingsMenu()}
           </LayoutWrapper>

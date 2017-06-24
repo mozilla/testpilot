@@ -35,6 +35,9 @@ describe('app/components/Header', () => {
     it('should not show the settings button', () => {
       expect(subject.find('.settings-button')).to.have.property('length', 0);
     });
+    it('should link to /', () => {
+      expect(subject.find('.wordmark').props()).to.have.property('href', '/');
+    });
   });
 
   describe('with hasAddon=true', () => {
@@ -51,6 +54,9 @@ describe('app/components/Header', () => {
       expect(subject.state('showSettings')).to.be.true;
       expect(subject.find('.settings-contain')).to.have.property('length', 1);
       expectMenuGA('Toggle Menu');
+    });
+    it('should link to /experiments', () => {
+      expect(subject.find('.wordmark').props()).to.have.property('href', '/experiments');
     });
 
     describe('and showSettings=true', () => {
