@@ -168,7 +168,7 @@ enableExperimentTransition = A ativar...
 experimentManuallyDisabled = { $title } desativado no Gestor de extras
 experimentMeasurementIntro = Além dos <a>dados</a> recolhidos por todas as experiências do Test Pilot, aqui estão as principais coisas que deve saber acerca do que está a acontecer quando utiliza o { $experimentTitle }:
 measurements = A sua privacidade
-experimentPrivacyNotice = Pode saber mais acerca dos dados recolhidos para { $title } aqui.
+experimentPrivacyNotice = Pode saber mais sobre os dados recolhidos para { $title } aqui.
 contributorsHeading = Trazido a si por
 contributorsExtraLearnMore = Saber mais
 changelog = Registo de alterações
@@ -190,7 +190,7 @@ highlightPrivacy = A sua privacidade
 upgradeNoticeTitle = { $title } requer o Firefox { $min_release } ou mais recente.
 upgradeNoticeLink = Como atualizar o Firefox.
 versionChangeNotice = { $experiment_title } não é suportado nesta versão do Firefox.
-versionChangeNoticeLink = Obter a versão atual do Firefox.
+versionChangeNoticeLink = Obter a versão mais recente do Firefox.
 
 
 // Shown while uninstalling Test Pilot.
@@ -224,7 +224,7 @@ shareSecondary = ou apenas copie e cole esta ligação...
 shareEmail = E-mail
 shareCopy = Copiar
 // Shown on pages of retired or retiring experiments.
-eolIntroMessage = { $title } termina em { $completedDate }
+eolIntroMessage = { $title } termina a { $completedDate }
 eolNoticeLink = Saber mais
 eolDisableMessage = A experiência { $title } terminou. Assim que a desinstalar não vai conseguir reinstalá-la novamente através do Test Pilot.
 completedDateLabel = Data de fim da experiência: <b>{ $completedDate }</b>
@@ -243,7 +243,7 @@ incompatibleSubheader = Recomendamos <a>desativar estes extras</a> antes de ativ
 newsletterFormEmailPlaceholder
     .placeholder = O seu email aqui
 newsletterFormDisclaimer = Apenas lhe iremos enviar informação relacionada sobre o Test Pilot.
-newsletterFormPrivacyNotice = Concordo que a Mozilla faça a gestão da minha informação tal como explicado <a>neste aviso de privacidade</a>.
+newsletterFormPrivacyNotice = Concordo que a Mozilla faça a gestão da minha informação tal como explicado <a>nesta política de privacidade</a>.
 newsletterFormPrivacyAgreementRequired = Por favor marque esta caixa se deseja proceder.
 newsletterFormSubmitButton = Registe-se agora
 newsletterFormSubmitButtonSubmitting = A submeter...
@@ -296,9 +296,9 @@ warningGenericTitle = Algo está errado!
 warningGenericDetail = Algo correu mal com o Test Pilot. Por favor <a>submeta um bug</a> e mencione esta mensagem de erro.
 warningUpgradeFirefoxTitle = Atualize o Firefox para continuar!
 warningUpgradeFirefoxDetail = O Test Pilot requer a versão mais recente do Firefox. <a>Atualize o Firefox</a> para começar.
-warningHttpsRequiredTitle = HTTPS requerido!
-warningHttpsRequiredDetail = O Test Pilot tem de ser acedido através de HTTPS. Por favor veja a <a>nossa documentação</a> para detalhes.
+warningHttpsRequiredTitle = HTTPS é obrigatório!
+warningHttpsRequiredDetail = O Test Pilot deve ser acedido através de HTTPS. Por favor, consulte a <a>nossa documentação</a> para detalhes.
 warningMissingPrefTitle = A programar no Test Pilot?
-warningMissingPrefDetail = Ao correr o Test Pilot localmente ou em ambiente de programação, é requerida configuração especial. Por favor veja a <a>nossa documentação</a> para detalhes.
+warningMissingPrefDetail = Ao executar o Test Pilot localmente ou em ambiente de desenvolvimento, é necessária uma configuração especial. Por favor, consulte a <a>nossa documentação</a> para detalhes.
 warningBadHostnameTitle = Nome de servidor não aprovado!
-warningBadHostnameDetail = O site do Test Pilot apenas pode ser acedido a partir de testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, ou example.com:8000. Por favor veja a <a>nossa documentação</a> para detalhes.
+warningBadHostnameDetail = O site do Test Pilot apenas pode ser acedido a partir de testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, ou example.com:8000. Por favor, consulte a <a>nossa documentação</a> para detalhes.
