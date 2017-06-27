@@ -105,20 +105,40 @@ export default class View extends React.Component {
     if (!this.props.isFirefox) {
       return null;
     }
-    let title = <span data-l10n-id="warningGenericTitle">Something is wrong!</span>;
-    let copy = <p data-l10n-id="warningGenericDetail">Something has gone wrong with Test Pilot. Please <a href="https://github.com/mozilla/testpilot/issues/new">file a bug</a> and mention this error message.</p>;
+    let title = <Localized id="warningGenericTitle">
+      <span>Something is wrong!</span>
+    </Localized>;
+    let copy = <Localized id="warningGenericDetail">
+      <p>Something has gone wrong with Test Pilot. Please <a href="https://github.com/mozilla/testpilot/issues/new">file a bug</a> and mention this error message.</p>
+    </Localized>;
     if (!this.props.isMinFirefox) {
-      title = <span data-l10n-id="warningUpgradeFirefoxTitle">Upgrade Firefox to continue!</span>;
-      copy = <p data-l10n-id="warningUpgradeFirefoxDetail">Test Pilot reqires the latest version of Firefox. <a href="https://www.mozilla.org/firefox/">Upgrade Firefox</a> to get started.</p>;
+      title = <Localized id="warningUpgradeFirefoxTitle">
+        <span>Upgrade Firefox to continue!</span>
+      </Localized>;
+      copy = <Localized id="warningUpgradeFirefoxDetail">
+        <p>Test Pilot reqires the latest version of Firefox. <a href="https://www.mozilla.org/firefox/">Upgrade Firefox</a> to get started.</p>
+      </Localized>;
     } else if (window.location.protocol !== 'https:') {
-      title = <span data-l10n-id="warningHttpsRequiredTitle">HTTPS required!</span>;
-      copy = <p data-l10n-id="warningHttpsRequiredDetail">Test Pilot must be accessed over HTTPS. Please see <a href="https://github.com/mozilla/testpilot/blob/master/docs/development/quickstart.md">our documentation</a> for details.</p>;
+      title = <Localized id="warningHttpsRequiredTitle">
+        <span>HTTPS required!</span>
+      </Localized>;
+      copy = <Localized id="warningHttpsRequiredDetail">
+        <p>Test Pilot must be accessed over HTTPS. Please see <a href="https://github.com/mozilla/testpilot/blob/master/docs/development/quickstart.md">our documentation</a> for details.</p>
+      </Localized>;
     } else if (['example.com:8000', 'testpilot.dev.mozaws.net', 'testpilot.stage.mozaws.net'].includes(window.location.host)) {
-      title = <span data-l10n-id="warningMissingPrefTitle">Developing Test Pilot?</span>;
-      copy = <p data-l10n-id="warningMissingPrefDetail">When running Test Pilot locally or in development environments, special configuration is required. Please see <a href="https://github.com/mozilla/testpilot/blob/master/docs/development/quickstart.md">our documentation</a> for details.</p>;
+      title = <Localized id="warningMissingPrefTitle">
+        <span>Developing Test Pilot?</span>
+      </Localized>;
+      copy = <Localized id="warningMissingPrefDetail">
+        <p>When running Test Pilot locally or in development environments, special configuration is required. Please see <a href="https://github.com/mozilla/testpilot/blob/master/docs/development/quickstart.md">our documentation</a> for details.</p>
+      </Localized>;
     } else if (window.location.host !== 'testpilot.firefox.com') {
-      title = <span data-l10n-id="warningBadHostnameTitle">Unapproved hostname!</span>;
-      copy = <p data-l10n-id="warningBadHostnameDetail">The Test Pilot site may only be accessed from testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, or example.com:8000. Please see <a href="https://github.com/mozilla/testpilot/blob/master/docs/development/quickstart.md">our documentation</a> for details.</p>;
+      title = <Localized id="warningBadHostnameTitle">
+        <span>Unapproved hostname!</span>
+      </Localized>;
+      copy = <Localized id="warningBadHostnameDetail">
+        <p>The Test Pilot site may only be accessed from testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, or example.com:8000. Please see <a href="https://github.com/mozilla/testpilot/blob/master/docs/development/quickstart.md">our documentation</a> for details.</p>
+      </Localized>;
     }
     return <LayoutWrapper flexModifier="column-center">
         <div id="warning" className="modal">
@@ -137,11 +157,6 @@ export default class View extends React.Component {
     return (
       <section className={this.makeClassNames(setWarningLayout)}>
         {this.renderHeader()}
-        <Localized id="pageTitleDefault">
-          <h2 className="banner__subtitle">
-            Firefox Test Pilot
-          </h2>
-        </Localized>
         {upgradeWarning !== null ? upgradeWarning : this.renderChildren()}
         {upgradeWarning !== null ? null : this.renderNewsletterFooter()}
         {this.renderFooter()}
