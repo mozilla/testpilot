@@ -37,7 +37,7 @@ menuRetire = Desinstalar o Test Pilot
 landingIntroOne = Teste novas funcionalidades.
 landingIntroTwo = Dê o seu feedback.
 landingIntroThree = Ajude a construir o Firefox.
-landingLegalNotice = Ao continuar, você concorda com os <a>Termos de utilização</a> e com o <a>Aviso de privacidade</a> do Test Pilot.
+landingLegalNotice = Ao proceder, você concorda com os <a>Termos de utilização</a> e com o <a>Aviso de privacidade</a> do Test Pilot.
 landingExperimentsTitle = Experimente as funcionalidades mais recentes
 
 
@@ -95,7 +95,7 @@ notFoundHeader = 404!
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = Bem-vindo ao Test Pilot!
-emailOptInMessage = Conheça novas experiências e consulte os resultados dos testes de experiências que experimentou.
+emailOptInMessage = Descubra acerca de novas experiências e veja os resultados dos testes para experiências que experimentou.
 emailOptInConfirmationTitle = Email enviado
 emailOptInSuccessMessage2 = Obrigado!
 emailOptInConfirmationClose = Para as experiências...
@@ -141,7 +141,7 @@ feedbackUninstallCopy =
 // A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
-experimentPreFeedbackTitle = Feedback { $title }
+experimentPreFeedbackTitle = Feedback do { $title }
 experimentPreFeedbackLinkCopy = Dê a sua opinião sobre a experiência { $title }
 
 
@@ -168,7 +168,7 @@ enableExperimentTransition = A ativar...
 experimentManuallyDisabled = { $title } desativado no Gestor de extras
 experimentMeasurementIntro = Além dos <a>dados</a> recolhidos por todas as experiências do Test Pilot, aqui estão as principais coisas que deve saber acerca do que está a acontecer quando utiliza o { $experimentTitle }:
 measurements = A sua privacidade
-experimentPrivacyNotice = Pode saber mais sobre os dados recolhidos para { $title } aqui.
+experimentPrivacyNotice = Pode saber mais acerca dos dados recolhidos para { $title } aqui.
 contributorsHeading = Trazido a si por
 contributorsExtraLearnMore = Saber mais
 changelog = Registo de alterações
