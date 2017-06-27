@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import ReactDOMFactories from 'react/lib/ReactDOMFactories';
 import Symbol from 'es-symbol';
+import { Localized } from 'fluent-react';
 
 import Copter from '../components/Copter';
 import Footer from '../components/Footer';
@@ -136,6 +137,11 @@ export default class View extends React.Component {
     return (
       <section className={this.makeClassNames(setWarningLayout)}>
         {this.renderHeader()}
+        <Localized id="pageTitleDefault">
+          <h2 className="banner__subtitle">
+            Firefox Test Pilot
+          </h2>
+        </Localized>
         {upgradeWarning !== null ? upgradeWarning : this.renderChildren()}
         {upgradeWarning !== null ? null : this.renderNewsletterFooter()}
         {this.renderFooter()}

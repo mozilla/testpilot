@@ -1,4 +1,6 @@
 /* global ga */
+import { MessageContext } from 'fluent';
+import { LocalizationProvider } from 'fluent-react';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
@@ -13,10 +15,12 @@ import { getChosenTest } from '../reducers/varianttests';
 import experimentSelector from '../selectors/experiment';
 import { uninstallAddon, installAddon, enableExperiment, disableExperiment, pollAddon } from '../lib/InstallManager';
 import { fetchUserCounts } from '../actions/experiments';
+import { setLocalizations } from '../actions/localizations';
 import { chooseTests } from '../actions/varianttests';
 import addonActions from '../actions/addon';
 import newsletterFormActions from '../actions/newsletter-form';
 import RestartPage from '../containers/RestartPage';
+import Loading from '../components/Loading';
 import { isFirefox, isMinFirefoxVersion, isMobile } from '../lib/utils';
 import newsUpdatesSelector from '../selectors/news';
 import config from '../config';
@@ -100,6 +104,29 @@ class App extends Component {
       }
     });
     this.measurePageview();
+
+    const langs = {};
+
+    function addLang(lang, response) {
+      if (response.ok) {
+        response.text().then(data => {
+          langs[lang] = `${langs[lang] || ''}${data}
+`;
+        });
+      }
+    }
+
+    Promise.all(navigator.languages.map(language =>
+      Promise.all(
+        [
+          fetch(`/static/locales/${language}/app.ftl`).then(response => addLang(language, response)),
+          fetch(`/static/locales/${language}/experiments.ftl`).then(response => addLang(language, response))
+        ]
+      )
+    )).then(() => {
+      console.log('all done', langs);
+      this.props.setLocalizations(langs)
+    });
   }
 
   render() {
@@ -107,7 +134,27 @@ class App extends Component {
     if (restart.isRequired) {
       return <RestartPage {...this.props}/>;
     }
-    return React.cloneElement(this.props.children, this.props);
+
+    function* generateMessages(languages, localizations) {
+      console.log('generateMessages', languages, localizations);
+      for (const lang of languages) {
+        const cx = new MessageContext(lang);
+        cx.addMessages(localizations[lang]);
+        yield cx;
+      }
+    }
+
+    if (Object.keys(this.props.localizations).length === 0) {
+      return <Loading {...this.props} />;
+    }
+    console.log('asdfasdf', this.props.localizations.length, this.props.localizations);
+    console.log('localz', navigator.languages);
+    return <LocalizationProvider messages={ generateMessages(
+      navigator.languages,
+      this.props.localizations
+    ) }>
+      { React.cloneElement(this.props.children, this.props) }
+    </LocalizationProvider>;
   }
 }
 
@@ -133,6 +180,7 @@ function sendToGA(type, dataIn) {
 const mapStateToProps = state => ({
   addon: state.addon,
   experiments: experimentSelector(state),
+  localizations: state.localizations,
   newsUpdates: newsUpdatesSelector(state),
   slug: state.experiments.slug,
   getExperimentBySlug: slug =>
@@ -178,7 +226,9 @@ const mapDispatchToProps = dispatch => ({
       dispatch(newsletterFormActions.newsletterFormSetPrivacy(privacy)),
     subscribe: (email) =>
       dispatch(newsletterFormActions.newsletterFormSubscribe(dispatch, email, '' + window.location))
-  }
+  },
+  setLocalizations: localizations =>
+    dispatch(setLocalizations(localizations))
 });
 
 
