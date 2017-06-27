@@ -13,7 +13,6 @@ export function updateExperiment(addonID: string, data: Experiment): UpdateExper
 }
 
 export function setLocalizations(localizations: Localizations): SetLocalizationsAction {
-  console.log('setLocalizations', localizations);
   return {
     type: 'SET_LOCALIZATIONS',
     payload: localizations

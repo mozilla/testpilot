@@ -123,10 +123,7 @@ class App extends Component {
           fetch(`/static/locales/${language}/experiments.ftl`).then(response => addLang(language, response))
         ]
       )
-    )).then(() => {
-      console.log('all done', langs);
-      this.props.setLocalizations(langs)
-    });
+    )).then(() => this.props.setLocalizations(langs));
   }
 
   render() {
@@ -136,7 +133,6 @@ class App extends Component {
     }
 
     function* generateMessages(languages, localizations) {
-      console.log('generateMessages', languages, localizations);
       for (const lang of languages) {
         const cx = new MessageContext(lang);
         cx.addMessages(localizations[lang]);
@@ -147,8 +143,6 @@ class App extends Component {
     if (Object.keys(this.props.localizations).length === 0) {
       return <Loading {...this.props} />;
     }
-    console.log('asdfasdf', this.props.localizations.length, this.props.localizations);
-    console.log('localz', navigator.languages);
     return <LocalizationProvider messages={ generateMessages(
       navigator.languages,
       this.props.localizations
