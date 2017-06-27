@@ -88,6 +88,7 @@ contributors:
     avatar: /static/images/experiments/tab-center/avatars/john-g.jpg
 installation_count: 29870
 created: '2016-04-28T00:07:28.847430Z'
+completed: '2017-07-05T20:00:00.000000Z'
 order: 6
 incompatible:
   'TooManyTabs@visibotech.com': 'Too Many Tabs'
