@@ -11,8 +11,8 @@ machine:
     example.com: 127.0.0.1
   node:
     version: 6.9.1
-  python:
-    version: 2.7.11
+  post:
+    - pyenv global 2.7.12 3.6.1
 
 dependencies:
   cache_directories:
@@ -32,12 +32,13 @@ test:
     - ./bin/circleci/test-addon.sh
     - ./bin/circleci/test-frontend.sh
     - tox -e flake8
+    - mkdir integration-test-results
     - ./bin/circleci/test-firefox-release.sh
     - ./bin/circleci/test-firefox-dev.sh
-    - ./bin/circleci/test-firefox-nightly.sh
+    - # ./bin/circleci/test-firefox-nightly.sh
   post:
     - bash <(curl -s https://codecov.io/bash)
-    - cp ui-tests.html $CIRCLE_ARTIFACTS
+    - cp -r integration-test-results $CIRCLE_ARTIFACTS
 
 deployment:
   static_development:
