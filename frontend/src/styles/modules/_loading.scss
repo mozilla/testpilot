@@ -1,43 +1,21 @@
-// HT: https://www.pexels.com/blog/css-only-loaders/
 .loading {
-  @include flex-container(row, space-between, center);
-  width: $grid-unit * 1.6;
+  animation: wobble 1.2s steps(60) infinite;
+  background: url('../images/loading.svg') no-repeat;
+  height: 60px;
+  opacity: .5;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  width: 217px;
 }
 
-.loading-bar {
-  animation: loading 1s ease-in-out infinite;
-  background-color: $transparent-white-5;
-  border-radius: $small-border-radius;
-  height: $grid-unit * 2;
-  width: $grid-unit * .2;
+.loading-wrapper {
+  animation: fade-in 1s forwards;
+  animation-delay: 250ms;
+  opacity: 0;
 }
 
-.loading-bar:nth-child(1) {
-  animation-delay: 0;
-}
-
-.loading-bar:nth-child(2) {
-  animation-delay: .09s;
-}
-
-.loading-bar:nth-child(3) {
-  animation-delay: .18s;
-}
-
-.loading-bar:nth-child(4) {
-  animation-delay: .27s;
-}
-
-@keyframes loading {
-  0% {
-    transform: scale(1);
-  }
-
-  20% {
-    transform: scale(1, 2);
-  }
-
-  40% {
-    transform: scale(1);
+@keyframes wobble {
+  100% {
+    background-position: -13020px 0;
   }
 }
