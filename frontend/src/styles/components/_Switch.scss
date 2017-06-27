@@ -1,0 +1,566 @@
+.visually-hidden {
+  visibility: hidden;
+}
+
+
+// Add-on details
+$primary-font-color: #000;
+$body-font-color: #1d1d1d;
+$header-font-color: #fff;
+
+$black-color: #000;
+$white-color: #fff;
+
+$transparent-shadow: rgba(0, 0, 0, .25);
+
+$progress-bar-background: #3ef827;
+
+// Colours
+$text-color-default: #333;
+$text-color-headings: $text-color-default;
+$text-color-message: #fff;
+$sub-text-color: #6a6a6a;
+$form-border-color: $primary-font-color;
+$error-text-color: $text-color-message;
+$error-background-color: #f03e3e;
+
+$button-background-color: #0095dd;
+
+$base-color: #fff;
+$link-color: #0568ba;
+
+$warning: #d63920;
+
+$focus-outline-color: #0096dc;
+
+// Fonts
+$default-font-family: 'Clear Sans', Helvetica, Arial, sans-serif;
+
+// Font-Size Variables
+$font-size-default: 14px;
+$font-size-s: 12px;
+$font-size-m: 16px;
+$font-size-l: 28px;
+$font-size-xl: 36px;
+$font-size-xxl: 42px;
+$font-size-form-header: 24px;
+
+// Animation Variables
+$transition-short: 150ms;
+$transition-medium: $transition-short * 3;
+$transition-long: $transition-short * 7;
+
+// Border-Radius Variables
+$border-radius-default: 9px;
+$border-radius-s: 4px;
+$border-radius-m: 8px;
+
+// Page padding (this is the padding for an entire page that isn't full-width,
+// like the AddonsDetail page)
+$padding-page: 10px;
+// Font mixins. Changes here affect *alL* apps
+
+@mixin font-light {
+  font-family: 'Fira Sans', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+@mixin font-light-italic {
+  font-family: 'Fira Sans', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+@mixin font-regular {
+  font-family: 'Fira Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin font-regular-italic {
+  font-family: 'Fira Sans', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+@mixin font-medium {
+  font-family: 'Fira Sans', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@mixin font-medium-italic {
+  font-family: 'Fira Sans', sans-serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+@mixin font-bold {
+  font-family: 'Fira Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@mixin font-bold-italic {
+  font-family: 'Fira Sans', sans-serif;
+  font-style: italic;
+  font-weight: 600;
+}
+
+// Shared mixins. Bear in mind changes here impact *all* apps.
+
+@mixin focus {
+  border-color: $focus-outline-color;
+  box-shadow: 0 0 5px 0 $focus-outline-color;
+  outline: none;
+}
+
+// stylelint-disable at-rule-empty-line-before, media-feature-no-missing-punctuation
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+      @content;
+    }
+  } @else {
+    @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. '
+    + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+// Arrows
+$default-arrow-margin: 3px;
+@mixin arrow($margin: $default-arrow-margin) {
+  background: url('~amo/img/icons/arrow.svg') 50% 50% no-repeat;
+  border-radius: $border-radius-m;
+  content: '';
+  display: inline-block;
+  height: 16px;
+  margin-right: -$margin * 2;
+  position: relative;
+  right: -$margin;
+  top: 4px;
+  width: 22px;
+
+  [dir='rtl'] & {
+    left: -$margin;
+    margin-left: -$margin * 2;
+    margin-right: 0;
+    right: auto;
+    transform: rotate(180deg);
+  }
+}
+
+@mixin arrow-down($margin: $default-arrow-margin) {
+  @include arrow($margin);
+
+  transform: rotate(90deg);
+}
+
+// This alias to arrow (which is the same as arrow-next) makes it easier to
+// differentiate two arrows when both arrow-next and arrow-previous are used
+// near each other.
+@mixin arrow-next($margin: $default-arrow-margin) {
+  @include arrow($margin);
+}
+
+@mixin arrow-previous($margin: $default-arrow-margin) {
+  @include arrow($margin);
+
+  left: -$margin;
+  margin-left: -$margin * 2;
+  margin-right: 0;
+  right: auto;
+  transform: rotate(180deg);
+
+  [dir='rtl'] & {
+    left: auto;
+    margin-left: 0;
+    margin-right: -$margin * 2;
+    right: -$margin;
+    transform: none;
+  }
+}
+
+@mixin arrow-up($margin: $default-arrow-margin) {
+  @include arrow($margin);
+
+  transform: rotate(270deg);
+}
+
+// Button
+@mixin button($background: $button-background-color,
+  $color: $text-color-message) {
+  @include font-regular;
+
+  background: $background;
+  border: 0;
+  border-radius: $border-radius-default;
+  color: $color;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $font-size-m;
+  line-height: 1.5em;
+  margin: 0;
+  padding: .5em 1em;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: $transition-short;
+  transition-property: background-color;
+
+  &:active,
+  &:hover,
+  &:focus {
+    @if lightness($background) < 5% {
+      background: lighten($background, 9%);
+    } @else {
+      background: darken($background, 3%);
+    }
+
+    @if lightness($background) > 80% {
+      color: $black-color;
+    } @else {
+      color: $white-color;
+    }
+  }
+
+  &:focus {
+    @include focus;
+  }
+
+  &:disabled,
+  &.disabled {
+    @if lightness($background) > 80 {
+      background: adjust-hue(darken(desaturate($background, 85%), 13%), 6);
+    } @else {
+      background: adjust-hue(lighten(desaturate($background, 85%), 13%), 6);
+    }
+
+    cursor: not-allowed;
+  }
+
+  &.warning {
+    background: $warning;
+  }
+
+  &.button-start {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  &.button-middle {
+    border-radius: 0;
+  }
+
+  &.button-end {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  &.button-inverse {
+    background: transparent;
+    border: 1px solid $background;
+    color: $background;
+  }
+}
+
+@mixin text-align-start {
+  text-align: left;
+
+  [dir='rtl'] & {
+    text-align: right;
+  }
+}
+
+@mixin start($pos) {
+  left: $pos;
+  right: auto;
+
+  [dir='rtl'] & {
+    left: auto;
+    right: $pos;
+  }
+}
+
+@mixin end($pos) {
+  left: auto;
+  right: $pos;
+
+  [dir='rtl'] & {
+    left: $pos;
+    right: auto;
+  }
+}
+
+@mixin margin($top, $end, $bottom, $start) {
+  margin: $top $end $bottom $start;
+
+  [dir='rtl'] & {
+    margin: $top $start $bottom $end;
+  }
+}
+
+@mixin margin-start($val) {
+  [dir='ltr'] & {
+    margin-left: $val;
+  }
+
+  [dir='rtl'] & {
+    margin-right: $val;
+  }
+}
+
+@mixin margin-end($val) {
+  [dir='ltr'] & {
+    margin-right: $val;
+  }
+
+  [dir='rtl'] & {
+    margin-left: $val;
+  }
+}
+
+$size: 26px;
+
+$transition: .3s;
+
+$switch-handle-active: #fff;
+$switch-handle-inactive: transparentize($switch-handle-active, .75);
+$switch-handle-gap: 1px;
+$switch-to-background-ratio: 2.7;
+
+$switch-stroke-off: #858585;
+$switch-stroke-on: #00a920;
+$switch-stroke-width: 1px;
+$switch-stroke-active-position: round(($size * $switch-to-background-ratio) - ($size + ($switch-handle-gap * 2 + $switch-stroke-width)));
+
+$switch-background-on: #57bd35;
+$switch-background-off: #b1b1b1;
+
+$uninstall-stripe-color-1: $switch-background-off;
+$uninstall-stripe-color-2: #d4d4d4;
+
+$install-stripe-color-1: #00a920;
+$install-stripe-color-2: #00c42e;
+
+@keyframes stripes {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: $size $size / 2;
+  }
+}
+
+@mixin stripes($color1, $color2, $stripe-background-color) {
+  animation: stripes .5s linear infinite;
+  background-color: $stripe-background-color;
+  background-image:
+  repeating-linear-gradient(
+    45deg,
+    $color1,
+    $color1 25%,
+    $color2 25%,
+    $color2 50%,
+    $color1 50%
+  );
+  background-size: $size / 2 $size / 2;
+}
+
+.switch {
+  display: inline-block;
+  position: relative;
+
+  input:focus + label {
+    @include focus;
+  }
+
+  input + label {
+    background: $switch-background-off;
+    border: $switch-stroke-width solid $switch-stroke-off;
+    border-radius: $size;
+    cursor: pointer;
+    display: block;
+    height: $size + ($switch-handle-gap * 2) + ($switch-stroke-width * 2);
+    overflow: hidden;
+    position: relative;
+    transition: border-color .1s;
+    width: round($size * $switch-to-background-ratio);
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+    }
+
+    // Switch background.
+    &::before {
+      border-radius: $size;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      transition: background-color $transition;
+    }
+
+    // Handle.
+    &::after {
+      background: $switch-handle-active;
+      border-radius: 50%;
+      bottom: $switch-handle-gap;
+      box-shadow: 0 1px 1px $transparent-shadow;
+      height: $size;
+      top: $switch-handle-gap;
+      transform: translateX($switch-handle-gap);
+      transition: transform $transition, box-shadow $transition;
+      width: $size;
+      z-index: 3;
+
+      [dir='rtl'] & {
+        transform: translateX(-$switch-handle-gap);
+      }
+    }
+
+    &:hover::after {
+      box-shadow: 0 1px 1px $transparent-shadow, 0 0 0 $size / 2 transparentize($switch-handle-active, .8);
+    }
+  }
+
+  // Disabled State
+  input:disabled + label,
+  input:checked:disabled + label {
+    cursor: not-allowed;
+
+    &::after {
+      background: $switch-handle-inactive;
+    }
+
+    &:hover::after {
+      box-shadow: none;
+    }
+  }
+
+  input:checked + label {
+    border-color: $switch-stroke-on;
+
+    &::before {
+      background: $switch-background-on;
+    }
+
+    &::after {
+      transform: translateX($switch-stroke-active-position);
+
+      [dir='rtl'] & {
+        transform: translateX(-$switch-stroke-active-position);
+      }
+    }
+  }
+
+  &.switch--success {
+    input + label::before {
+      background: $switch-background-on url('./tick.svg') no-repeat 35% 50%;
+
+      [dir='rtl'] & {
+        background-position: 65% 50%;
+      }
+    }
+  }
+}
+
+.switch--indefinite-reverse {
+  input + label::before {
+    @include stripes(
+      $uninstall-stripe-color-1,
+      $uninstall-stripe-color-2,
+      $switch-background-off);
+    // Reverse the stripe direction without
+    // impacting the animation speed.
+    transform: scaleX(-1);
+  }
+
+  input + label {
+    &::after {
+      transform: translateX($switch-handle-gap);
+
+      [dir='rtl'] & {
+        transform: translateX(-$switch-handle-gap);
+      }
+    }
+
+    &:hover::after {
+      box-shadow: none;
+    }
+  }
+}
+
+.switch--progress {
+  overflow: hidden;
+  position: relative;
+
+  input + label {
+    border: 1px solid $switch-stroke-off;
+    overflow: hidden;
+
+    &::after {
+      background: $switch-handle-active;
+      transform: translateX($switch-stroke-active-position);
+
+      [dir='rtl'] & {
+        transform: translateX(-$switch-stroke-active-position);
+      }
+    }
+  }
+}
+
+.switch--indefinite {
+  input:checked + label {
+    border-color: $switch-stroke-on;
+
+    &::before {
+      @include stripes(
+        $install-stripe-color-1,
+        $install-stripe-color-2,
+        $switch-background-on);
+    }
+
+    &::after {
+      transform: translateX($switch-stroke-active-position);
+
+      [dir='rtl'] & {
+        transform: translateX(-$switch-stroke-active-position);
+      }
+    }
+
+    &:hover::after {
+      box-shadow: none;
+    }
+  }
+}
+
+.switch-progress-bar {
+  background: transparentize($progress-bar-background, .5);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateX(-100%);
+  transition: transform $transition;
+  width: 100%;
+
+  [dir='rtl'] & {
+    transform: translateX(100%);
+  }
+}
+
+@for $i from 1 through 100 {
+  [data-progress='#{$i}'] .switch-progress-bar {
+    transform: translateX(#{percentage($i - 100) / 100});
+
+    [dir='rtl'] & {
+      transform: translateX(#{percentage(100 - $i) / 100});
+    }
+  }
+}

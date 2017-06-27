@@ -93,6 +93,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       installed: {},
       installedAddons: [],
       params: {},
+      varianttests: {},
       uninstallAddon: sinon.spy(),
       navigateTo: sinon.spy(),
       isAfterCompletedDate: sinon.stub().returns(false),

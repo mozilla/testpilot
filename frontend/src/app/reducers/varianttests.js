@@ -48,13 +48,13 @@ function chooseTests() {
 
   const tests: Array<TestChooser> = [
     {
-      name: 'installButtonBorder',
+      name: 'experimentPageToggles',
       getValue: function getValue() {
         if (!language.startsWith('en')) {
-          return 'default';  // User gets whatever the DefaultCase is.
+          return 'default';
         }
         return random({
-          bigBorder: 1,
+          toggles: 1,
           default: 1
         });
       }
@@ -89,7 +89,7 @@ export function getChosenTest(): ChosenTestState {
   return chosenTest;
 }
 
-export default function variantTestsReducer(action: ChooseTestsAction): ChosenVariantsState {
+export default function variantTestsReducer(state?: ChosenVariantsState, action: ChooseTestsAction): ChosenVariantsState {
   if (typeof action === 'undefined') {
     return {};
   }
