@@ -5,7 +5,7 @@ import React from 'react';
 type WarningProps = {
   title: string,
   titleL10nId: string,
-  titleL10nArgs: Array<string>,
+  titleL10nArgs: string,
   subtitle: string,
   subtitleL10nId: string,
   subtitleL10nArgs: string,
