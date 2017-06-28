@@ -1,5 +1,5 @@
 // @flow
-
+import { Localized } from 'fluent-react';
 import React from 'react';
 
 import Copter from './Copter';
@@ -27,25 +27,29 @@ export default class ExperimentDisableDialog extends React.Component {
       <div className="modal-container">
         <div id="disabled-feedback-modal" className="modal feedback-modal modal-bounce-in">
           <header className="modal-header-wrapper">
-            <h3 className="modal-header"
-                data-l10n-id="feedbackUninstallTitle"
-                data-l10n-args={JSON.stringify({ title: experiment.title })} />
+            <Localized id="feedbackUninstallTitle" $title={ experiment.title }>
+              <h3 className="modal-header" />
+            </Localized>
             <div className="modal-cancel" onClick={e => this.cancel(e)} />
           </header>
           <div className="modal-content">
             <Copter small={true}/>
-            <p className="centered" data-l10n-id="feedbackUninstallCopy">
-              Your participation in Firefox Test Pilot means a lot!
-              Please check out our other experiments, and stay tuned for more to come!
-            </p>
+            <Localized id="feedbackUninstallCopy">
+              <p className="centered">
+                Your participation in Firefox Test Pilot means a lot!
+                Please check out our other experiments, and stay tuned for more to come!
+              </p>
+            </Localized>
           </div>
           <div className="modal-actions">
-            <a data-l10n-id="feedbackSubmitButton"
-               onClick={e => this.submit(e)} href={surveyURL}
-               target="_blank" rel="noopener noreferrer"
-               className="submit button default large quit">
-               Take a quick survey
-            </a>
+            <Localized id="feedbackSubmitButton">
+              <a
+                 onClick={e => this.submit(e)} href={surveyURL}
+                 target="_blank" rel="noopener noreferrer"
+                 className="submit button default large quit">
+                 Take a quick survey
+              </a>
+            </Localized>
           </div>
         </div>
       </div>
