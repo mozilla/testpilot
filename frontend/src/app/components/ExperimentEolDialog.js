@@ -1,5 +1,6 @@
 // @flow
 
+import { Localized } from 'fluent-react';
 import React from 'react';
 
 type ExperimentEolDialogProps = {
@@ -17,15 +18,21 @@ export default class ExperimentEolDialog extends React.Component {
       <div className="modal-container">
         <div id="retire-dialog-modal" className="modal feedback-modal modal-bounce-in">
           <header className="modal-header-wrapper warning-modal">
-            <h3 className="title modal-header" data-l10n-id="disableHeader">Disable Experiment?</h3>
+            <Localized id="disableHeader">
+              <h3 className="title modal-header">Disable Experiment?</h3>
+            </Localized>
             <div className="modal-cancel" onClick={e => this.cancel(e)}/>
           </header>
           <form>
             <div className="modal-content modal-form">
-              <p data-l10n-id="eolDisableMessage" data-l10n-args={JSON.stringify({ title })} className="centered"></p>
+              <Localized id="eolDisableMessage" $title={title}>
+                <p className="centered"></p>
+              </Localized>
             </div>
             <div className="modal-actions">
-              <button onClick={e => this.proceed(e)} data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="submit button warning large"></button>
+              <Localized id="disableExperiment" $title={title}>
+                <button onClick={e => this.proceed(e)} className="submit button warning large"></button>
+              </Localized>
             </div>
           </form>
         </div>
