@@ -17,7 +17,7 @@ export default class Warning extends React.Component {
 
   renderSubtitle() {
     if (this.props.subtitle) {
-      const parsed = JSON.parse(this.props.subtitleL10nArgs);
+      const parsed = this.props.subtitleL10nArgs ? JSON.parse(this.props.subtitleL10nArgs) : {};
       const args = {};
       Object.keys(parsed).map(key => {
         return args[`$${key}`] = parsed[key];
@@ -33,7 +33,7 @@ export default class Warning extends React.Component {
 
   renderHeader() {
     if (this.props.title) {
-      const parsed = JSON.parse(this.props.titleL10nArgs);
+      const parsed = this.props.titleL10nArgs ? JSON.parse(this.props.titleL10nArgs) : {};
       const args = {};
       Object.keys(parsed).map(key => {
         return args[`$${key}`] = parsed[key];
