@@ -1,5 +1,5 @@
 // @flow
-
+import { Localized } from 'fluent-react';
 import React from 'react';
 
 import Banner from '../components/Banner';
@@ -38,9 +38,15 @@ export default class HomePageNoAddon extends React.Component {
       <LayoutWrapper flexModifier="row-around-breaking">
       <Copter animation="fly-up"/>
         <div>
-          <h2 className="banner__title emphasis" data-l10n-id="landingIntroOne">Test new features.</h2>
-          <h2 className="banner__title emphasis" data-l10n-id="landingIntroTwo">Give your feedback.</h2>
-          <h2 className="banner__title emphasis" data-l10n-id="landingIntroThree">Help build Firefox.</h2>
+          <Localized id="landingIntroOne">
+            <h2 className="banner__title emphasis">Test new features.</h2>
+          </Localized>
+          <Localized id="landingIntroTwo">
+            <h2 className="banner__title emphasis">Give your feedback.</h2>
+          </Localized>
+          <Localized id="landingIntroThree">
+            <h2 className="banner__title emphasis">Help build Firefox.</h2>
+          </Localized>
         </div>
       </LayoutWrapper>
 
@@ -59,26 +65,36 @@ export default class HomePageNoAddon extends React.Component {
 
           <Banner>
             <LayoutWrapper flexModifier="column-center">
-              <h2 className="banner__subtitle emphasis centered" data-l10n-id="landingExperimentsTitle">Try out the latest experimental features</h2>
+              <Localized id="landingExperimentsTitle">
+                <h2 className="banner__subtitle emphasis centered">Try out the latest experimental features</h2>
+              </Localized>
               <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
               <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
             </LayoutWrapper>
           </Banner>
 
           <Banner background={true}>
-            <h2 className="banner__subtitle emphasis centered" data-l10n-id="landingCardListTitle">Get started in 3 easy steps</h2>
+            <Localized id="landingCardListTitle">
+              <h2 className="banner__subtitle emphasis centered">Get started in 3 easy steps</h2>
+            </Localized>
             <LayoutWrapper flexModifier="card-list" helperClass="card-list">
               <div className="card">
                 <div className="card-icon add-on-icon large"></div>
-                <div className="card-copy large" data-l10n-id="landingCardOne">Get the Test Pilot add-on</div>
+                <Localized id="landingCardOne">
+                  <div className="card-copy large">Get the Test Pilot add-on</div>
+                </Localized>
               </div>
               <div className="card">
                 <div className="card-icon test-pilot-icon large"></div>
-                <div className="card-copy large" data-l10n-id="landingCardTwo">Enable experimental features</div>
+                <Localized id="landingCardTwo">
+                  <div className="card-copy large">Enable experimental features</div>
+                </Localized>
               </div>
               <div className="card">
                 <div className="card-icon chat-icon large"></div>
-                <div className="card-copy large" data-l10n-id="landingCardThree">Tell us what you think</div>
+                <Localized id="landingCardThree">
+                  <div className="card-copy large">Tell us what you think</div>                  
+                </Localized>
               </div>
             </LayoutWrapper>
             <LayoutWrapper flexModifier="column-center">
