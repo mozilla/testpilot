@@ -1,5 +1,6 @@
 // @flow
 
+import { Localized } from 'fluent-react';
 import React from 'react';
 
 import LayoutWrapper from './LayoutWrapper';
@@ -93,7 +94,9 @@ export default class Header extends React.Component {
         <header id="main-header">
           <LayoutWrapper flexModifier="row-between-top">
             <h1>
-              <a href="/" className="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
+              <Localized id="siteName">
+                <a href="/" className="wordmark">Firefox Test Pilot</a>
+              </Localized>
             </h1>
             {this.renderSettingsMenu()}
           </LayoutWrapper>
