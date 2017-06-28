@@ -1,6 +1,6 @@
 // @flow
-
 import classnames from 'classnames';
+import { Localized } from 'fluent-react';
 import React from 'react';
 
 import LayoutWrapper from './LayoutWrapper';
@@ -20,9 +20,11 @@ export default class NewsletterFooter extends React.Component {
   renderError() {
     if (this.props.newsletterForm.failed) {
       return (
-        <div className="error" data-l10n-id="newsletterFooterError">
-          There was an error submitting your email address. Try again?
-        </div>
+        <Localized id="newsletterFooterError">
+          <div className="error">
+            There was an error submitting your email address. Try again?
+          </div>
+        </Localized>
       );
     }
     return null;
@@ -31,12 +33,16 @@ export default class NewsletterFooter extends React.Component {
   renderSuccess() {
     return (
       <header className="success-header">
-        <h2 data-l10n-id="newsletterFooterSuccessHeader">Thanks!</h2>
-        <p data-l10n-id="newsletterFooterSuccessBody">
-          If you haven&apos;t previously confirmed a subscription to a Mozilla-related
-          newsletter you may have to do so. Please check your inbox or your spam
-          filter for an email from us.
-        </p>
+        <Localized id="newsletterFooterSuccessHeader">
+          <h2>Thanks!</h2>
+        </Localized>
+        <Localized id="newsletterFooterSuccessBody">
+          <p>
+            If you haven&apos;t previously confirmed a subscription to a Mozilla-related
+            newsletter you may have to do so. Please check your inbox or your spam
+            filter for an email from us.
+          </p>
+        </Localized>
       </header>
     );
   }
@@ -48,11 +54,15 @@ export default class NewsletterFooter extends React.Component {
 
     return (
       <header>
-        <h2 data-l10n-id="newsletterFooterHeader">Stay Informed</h2>
-        <p data-l10n-id="newsletterFooterBody">
-          Find out about new experiments and see test results for experiments
-          you&apos;ve tried.
-        </p>
+        <Localized id="newsletterFooterHeader">
+          <h2>Stay Informed</h2>
+        </Localized>
+        <Localized id="newsletterFooterBody">
+          <p>
+            Find out about new experiments and see test results for experiments
+            you&apos;ve tried.
+          </p>
+        </Localized>
       </header>
     );
   }
