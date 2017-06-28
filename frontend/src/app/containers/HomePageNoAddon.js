@@ -93,7 +93,7 @@ export default class HomePageNoAddon extends React.Component {
               <div className="card">
                 <div className="card-icon chat-icon large"></div>
                 <Localized id="landingCardThree">
-                  <div className="card-copy large">Tell us what you think</div>                  
+                  <div className="card-copy large">Tell us what you think</div>
                 </Localized>
               </div>
             </LayoutWrapper>
