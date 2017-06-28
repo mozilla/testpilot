@@ -118,6 +118,7 @@ contributors:
 installation_count: 46732
 created: '2016-03-11T21:05:59.363520Z'
 completed: '2017-07-05T20:00:00.000000Z'
+eol_warning: This experiment is ending but Activity Stream will ship in Firefox by default.  Keep an eye out in the next versions of Firefox!
 locale_blocklist:
   - 'de'
 order: 5
