@@ -71,7 +71,7 @@ export default class HomePageWithAddon extends React.Component {
             <div className="banner__copy">
               <Localized id="experimentsListNoneInstalledHeader">
                 <h2 className="banner__subtitle">
-                  Let's get this baby off the ground!
+                  Let&apos;s get this baby off the ground!
                 </h2>
               </Localized>
               <Localized id="experimentsListNoneInstalledSubheader">
