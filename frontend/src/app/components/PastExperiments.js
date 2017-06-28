@@ -1,6 +1,7 @@
 // @flow
 
 import classnames from 'classnames';
+import { Localized } from 'fluent-react';
 import React from 'react';
 
 import ExperimentCardList from '../components/ExperimentCardList';
@@ -33,14 +34,20 @@ export default class PastExperiments extends React.Component {
     return (
       <LayoutWrapper flexModifier="card-list">
         {pastExperiments.length > 0 && !showPastExperiments &&
-        <div className={classnames(['button past-experiments', 'outline'])}
-            onClick={() => this.setState({ showPastExperiments: true })}
-            data-l10n-id="viewPastExperiments">View Past Experiments</div>}
+        <Localized id="viewPastExperiments">
+          <div className={classnames(['button past-experiments', 'outline'])}
+              onClick={() => this.setState({ showPastExperiments: true })}>
+            View Past Experiments
+          </div>
+        </Localized>}
         {showPastExperiments &&
         <div>
-          <div className={classnames(['button past-experiments', 'outline'])}
-              onClick={() => this.setState({ showPastExperiments: false })}
-              data-l10n-id="hidePastExperiments">Hide Past Experiments</div>
+          <Localized id="hidePastExperiments">
+            <div className={classnames(['button past-experiments', 'outline'])}
+                onClick={() => this.setState({ showPastExperiments: false })}>
+              Hide Past Experiments
+            </div>
+          </Localized>
           <div className="past-experiments-padding" />
           <ExperimentCardList {...this.props} experiments={pastExperiments} eventCategory="HomePage Interactions" />
         </div>}
