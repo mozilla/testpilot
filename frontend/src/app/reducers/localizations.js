@@ -4,7 +4,7 @@ export type Localizations = {
   [language: string]: string
 };
 
-function defaultState(): ExperimentsState {
+function defaultState(): Localizations {
   return {
   };
 }
