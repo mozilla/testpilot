@@ -57,7 +57,7 @@ export default class EmailDialog extends React.Component {
         </header>
         <div className="modal-content modal-form centered">
           <Localized id="emailOptInMessage">
-            <p className="">Find out about new experiments and see test results for experiments you&apos;ve tried.</p>
+            <p>Find out about new experiments and see test results for experiments you&apos;ve tried.</p>
           </Localized>
           <NewsletterForm {...{ email, privacy }}
                           isModal={true}
