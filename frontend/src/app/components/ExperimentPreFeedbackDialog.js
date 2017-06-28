@@ -1,8 +1,9 @@
 // @flow
 
-import React from 'react';
 import classnames from 'classnames';
+import { Localized } from 'fluent-react';
 import parser from 'html-react-parser';
+import React from 'react';
 
 type ExperimentPreFeedbackDialogProps = {
   experiment: Object,
@@ -17,18 +18,14 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
   render() {
     const { experiment, surveyURL } = this.props;
 
-    const l10nArgs = JSON.stringify({
-      title: experiment.title
-    });
-
     return (
       <div className="modal-container">
         <div className={classnames('modal', 'tour-modal')}>
           <header className="modal-header-wrapper">
-            <h3 className="modal-header"
-                data-l10n-id="experimentPreFeedbackTitle"
-                data-l10n-args={l10nArgs}></h3>
-                <div className="modal-cancel" onClick={e => this.cancel(e)}/>
+            <Localized id="experimentPreFeedbackTitle" $title={experiment.title}>
+              <h3 className="modal-header"></h3>
+            </Localized>
+            <div className="modal-cancel" onClick={e => this.cancel(e)}/>
           </header>
             <div className="tour-content">
               <div className="tour-image">
@@ -39,9 +36,10 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
                 {parser(experiment.pre_feedback_copy)}
               </div>
               <div className="tour-text">
-                <a data-l10n-id="experimentPreFeedbackLinkCopy"
-                   data-l10n-args={l10nArgs} onClick={e => this.feedback(e)}
-                   href={surveyURL}></a>
+                <Localized id="experimentPreFeedbackLinkCopy">
+                  <a onClick={e => this.feedback(e)}
+                     href={surveyURL}></a>
+                </Localized>
               </div>
             </div>
         </div>
