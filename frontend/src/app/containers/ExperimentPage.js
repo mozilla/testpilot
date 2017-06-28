@@ -320,7 +320,7 @@ export class ExperimentDetail extends React.Component {
             }>
             <div className={classnames('status-bar', statusType)}>
               {(statusType === 'enabled') && <Localized id="isEnabledStatusMessage" $title={ title }>
-                <span><span></span></span>
+                <span>{title} is enabled.</span>
               </Localized>}
               {(statusType === 'error') && <Localized id="installErrorMessage" $title={ title }>
                 <span><span></span></span>
