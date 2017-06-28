@@ -21,7 +21,7 @@ function setLocalizations(
   return action.payload;
 }
 
-export default function experimentsReducer(
+export default function localizationsReducer(
   state: ?Localizations,
   action: SetLocalizationsAction
 ): Localizations {
