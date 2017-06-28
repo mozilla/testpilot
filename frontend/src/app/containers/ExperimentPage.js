@@ -455,8 +455,8 @@ export class ExperimentDetail extends React.Component {
                               </p>
                             </Localized>
                             <ul>
-                              {measurements.map((note, idx) => <Localized id={this.l10nId(['measurements', idx])}>
-                                <li key={idx}>{
+                              {measurements.map((note, idx) => <Localized key={idx} id={this.l10nId(['measurements', idx])}>
+                                <li>{
                                   EXPERIMENT_MEASUREMENT_URLS[idx] === null ? null : <a href={EXPERIMENT_MEASUREMENT_URLS[idx]}></a>
                                 }</li>
                               </Localized>)}
@@ -526,8 +526,8 @@ export class ExperimentDetail extends React.Component {
                         </Localized>
                         <ul>
                           {measurements.map((note, idx) => (
-                            <Localized id={this.l10nId(['measurements', idx])}>
-                              <li key={idx}>{
+                            <Localized key={idx} id={this.l10nId(['measurements', idx])}>
+                              <li>{
                                 EXPERIMENT_MEASUREMENT_URLS[idx] === null ? null : <a href={EXPERIMENT_MEASUREMENT_URLS[idx]}></a>
                               }</li>
                             </Localized>
