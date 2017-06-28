@@ -1,7 +1,8 @@
 // @flow
 
-import React from 'react';
 import classnames from 'classnames';
+import { Localized } from 'fluent-react';
+import React from 'react';
 
 import { experimentL10nId } from '../lib/utils';
 
@@ -40,14 +41,10 @@ export default class ExperimentTourDialog extends React.Component {
     const atStart = (currentStep === 0);
     const atEnd   = (currentStep === tourSteps.length - 1);
 
-    const l10nArgs = JSON.stringify({
-      title: experiment.title
-    });
-
-    const headerTitle = enabled ? (<h3 className="modal-header"
-                                   data-l10n-id="tourOnboardingTitle"
-                                   data-l10n-args={l10nArgs}></h3>) :
-          (<h3 className="modal-header">{experiment.title}</h3>);
+    const headerTitle = enabled ? (
+      <Localized id="tourOnboardingTitle" $title={experiment.title}>
+        <h3 className="modal-header"></h3>
+      </Localized>) : (<h3 className="modal-header">{experiment.title}</h3>);
 
     return (
       <div className="modal-container">
@@ -68,7 +65,9 @@ export default class ExperimentTourDialog extends React.Component {
               </div>
               {step.copy &&
                 <div className="tour-text">
-                  <p data-l10n-id={this.l10nId(['tour_steps', idx, 'copy'])}>{step.copy}</p>
+                  <Localized id={this.l10nId(['tour_steps', idx, 'copy'])}>
+                    <p>{step.copy}</p>
+                  </Localized>
                 </div>}
             </div>
           ))}
@@ -77,9 +76,10 @@ export default class ExperimentTourDialog extends React.Component {
                  className={classnames('tour-back', { hidden: atStart })}><div/></div>
             <div onClick={() => this.tourNext()}
                  className={classnames('tour-next', { 'no-display': atEnd })}><div/></div>
-            <div onClick={e => this.complete(e)}
-                    className={classnames('tour-done', { 'no-display': !atEnd })}
-                    data-l10n-id="tourDoneButton">Done</div>
+            <Localized id="tourDoneButton">
+              <div onClick={e => this.complete(e)}
+                   className={classnames('tour-done', { 'no-display': !atEnd })}>Done</div>
+            </Localized>
           </div>
         </div>
       </div>
