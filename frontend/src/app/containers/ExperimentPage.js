@@ -329,9 +329,9 @@ export class ExperimentDetail extends React.Component {
             <LayoutWrapper helperClass="details-header" flexModifier="row-between-breaking">
               <header>
                 <h1>{title}</h1>
-                {subtitle && <Localization id={this.l10nId('subtitle')}>
+                {subtitle && <Localized id={this.l10nId('subtitle')}>
                   <h4 className="subtitle">{subtitle}</h4>
-                </Localization>}
+                </Localized>}
               </header>
               { this.renderExperimentControls() }
               { this.renderMinimumVersionNotice(title, hasAddon, min_release) }
@@ -455,11 +455,11 @@ export class ExperimentDetail extends React.Component {
                               </p>
                             </Localized>
                             <ul>
-                              {measurements.map((note, idx) => <Localization id={this.l10nId(['measurements', idx])}>
+                              {measurements.map((note, idx) => <Localized id={this.l10nId(['measurements', idx])}>
                                 <li key={idx}>{
                                   EXPERIMENT_MEASUREMENT_URLS[idx] === null ? null : <a href={EXPERIMENT_MEASUREMENT_URLS[idx]}></a>
                                 }</li>
-                              </Localization>)}
+                              </Localized>)}
                             </ul>
                           </div>
                           {privacy_notice_url && <Localized id="experimentPrivacyNotice" $title={title}>
