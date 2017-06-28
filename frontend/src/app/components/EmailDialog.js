@@ -86,7 +86,7 @@ export default class EmailDialog extends React.Component {
         </div>
         <div className="modal-actions">
           <Localized id="emailOptInConfirmationClose">
-            <button id="email-success-continue" onClick={e => this.continue(e)} className="button default large">On to the experiments...</button>
+            <button id="email-success-continue" onClick={e => this.continue(e)} className="button default large">On to the experiments&hellip;</button>
           </Localized>
         </div>
       </div>
