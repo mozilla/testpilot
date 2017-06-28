@@ -20,6 +20,7 @@ build/
 dist/
 docs/_build
 frontend/build/
+frontend/storybook/
 media/
 node_modules/
 static/

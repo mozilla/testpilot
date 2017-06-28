@@ -129,6 +129,6 @@
     "addon:locales": "gulp addon-copy-locales",
     "content": "gulp content-build",
     "storybook": "start-storybook -s ./frontend/build -p 6006",
-    "build-storybook": "build-storybook -o ./frontend/build/.storybook"
+    "build-storybook": "build-storybook -o ./frontend/build/storybook"
   }
 }

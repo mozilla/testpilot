@@ -161,7 +161,7 @@ function buildExperimentsData() {
 }
 
 .experiment-icon-${experiment.slug} {
-  background-image: url(${experiment.thumbnail});
+  background-image: url(../..${experiment.thumbnail});
 }
 `);
 
