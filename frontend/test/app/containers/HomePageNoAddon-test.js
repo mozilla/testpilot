@@ -2,6 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
+import { findLocalizedById } from '../util';
 
 import HomePageNoAddon from '../../../src/app/containers/HomePageNoAddon';
 
@@ -20,8 +21,6 @@ describe('app/containers/HomePageNoAddon', () => {
     subject = shallow(<HomePageNoAddon {...props} />);
   });
 
-  const findByL10nID = (id) => subject.findWhere(el => id === el.props()['data-l10n-id']);
-
   it('should return nothing if no experiments are available', () => {
     subject.setProps({ experiments: [] });
     expect(subject.find('#landing-page')).to.have.property('length', 0);
@@ -30,7 +29,7 @@ describe('app/containers/HomePageNoAddon', () => {
   it('should render default content with experiments loaded', () => {
     const experiments = [ { title: 'foo' }, { title: 'bar' } ];
     subject.setProps({ experiments });
-    expect(findByL10nID('landingIntroOne')).to.have.property('length', 1);
+    expect(findLocalizedById(subject, 'landingIntroOne')).to.have.property('length', 1);
     expect(subject.find('ExperimentCardList')).to.have.property('length', 1);
   });
 
