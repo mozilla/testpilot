@@ -143,6 +143,9 @@ export class ExperimentDetail extends React.Component {
     if (installed.length === 0) return null;
 
     const helpUrl = 'https://support.mozilla.org/kb/disable-or-remove-add-ons';
+    const disableLink = <Localized id="incompatibleSubheaderDisableLink">
+      <a href={helpUrl}>disabling these add-ons</a>
+    </Localized>;
 
     return (
       <section className="incompatible-addons">
@@ -152,9 +155,9 @@ export class ExperimentDetail extends React.Component {
               This experiment may not be compatible with add-ons you have installed.
             </h3>
           </Localized>
-          <Localized id="incompatibleSubheader">
+          <Localized id="incompatibleSubheader2" $disableLink={disableLink}>
             <p>
-              We recommend <a href={helpUrl}>disabling these add-ons</a> before activating this experiment:
+              We recommend {disableLink} before activating this experiment:
             </p>
           </Localized>
         </header>
@@ -649,19 +652,22 @@ export class ExperimentDetail extends React.Component {
     const { experiment, isAfterCompletedDate } = this.props;
     const { completed, title, installation_count } = experiment;
 
+    const installation_count_node = <span className="bold">{installation_count}</span>;
     if (isAfterCompletedDate(experiment)) {
-      const completedDate = formatDate(completed);
-      return <Localized id="completedDateLabel" $completedDate={completedDate}>
-        <span><b></b></span>
+      const completedDate = <b>
+        {formatDate(completed)}
+      </b>;
+      return <Localized id="completedDateLabel2" $completedDate={completedDate}>
+        <span>Experiment End Date: <b>{completedDate}</b></span>
       </Localized>;
     }
     if (!installation_count || installation_count <= 100) {
       return <Localized id="userCountContainerAlt" $title={title}>
-        <span className="bold"></span>
+        <span className="bold">Just launched!</span>
       </Localized>;
     }
-    return <Localized id="userCountContainer2" $installation_count={installation_count} $title={title}>
-      <span><span className="bold"></span></span>
+    return <Localized id="userCountContainer2" $installation_count={installation_count_node} $title={title}>
+      <span>There are {installation_count_node} people trying {title} right now!</span>
     </Localized>;
   }
 

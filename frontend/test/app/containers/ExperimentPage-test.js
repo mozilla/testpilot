@@ -549,7 +549,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
         });
 
         it('displays the end date instead of install count', () => {
-          expect(findByL10nID('completedDateLabel').length).to.equal(1);
+          expect(findByL10nID('completedDateLabel2').length).to.equal(1);
           expect(findByL10nID('userCountContainer').length).to.equal(0);
           expect(findByL10nID('userCountContainerAlt').length).to.equal(0);
         });

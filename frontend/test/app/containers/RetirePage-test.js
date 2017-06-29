@@ -21,7 +21,7 @@ describe('app/containers/RetirePage', () => {
 
   it('should render expected content', () => {
     expect(findByL10nID('retirePageProgressMessage')).to.have.property('length', 1);
-    expect(findByL10nID('retirePageMessage')).to.have.property('length', 0);
+    expect(findByL10nID('retirePageMessage2')).to.have.property('length', 0);
   });
 
   it('should fake uninstall completion if too much time has passed', (done) => {
@@ -33,11 +33,11 @@ describe('app/containers/RetirePage', () => {
     const mountedSubject = mount(<RetirePage {...mountedProps} />);
 
     expect(mountedSubject.state('fakeUninstalled')).to.be.false;
-    expect(findByL10nID('retirePageMessage', mountedSubject)).to.have.property('length', 0);
+    expect(findByL10nID('retirePageMessage2', mountedSubject)).to.have.property('length', 0);
 
     setTimeout(() => {
       expect(mountedSubject.state('fakeUninstalled')).to.be.true;
-      expect(findByL10nID('retirePageMessage', mountedSubject)).to.have.property('length', 1);
+      expect(findByL10nID('retirePageMessage2', mountedSubject)).to.have.property('length', 1);
       expect(mountedProps.setHasAddon.called).to.be.true;
       done();
     }, 20);
@@ -50,7 +50,7 @@ describe('app/containers/RetirePage', () => {
 
     it('should render expected content', () => {
       expect(findByL10nID('retirePageProgressMessage')).to.have.property('length', 1);
-      expect(findByL10nID('retirePageMessage')).to.have.property('length', 0);
+      expect(findByL10nID('retirePageMessage2')).to.have.property('length', 0);
     });
   });
 
@@ -61,7 +61,7 @@ describe('app/containers/RetirePage', () => {
 
     it('should render expected content', () => {
       expect(findByL10nID('retirePageProgressMessage')).to.have.property('length', 0);
-      expect(findByL10nID('retirePageMessage')).to.have.property('length', 1);
+      expect(findByL10nID('retirePageMessage2')).to.have.property('length', 1);
     });
 
     it('should ping GA when survey button is clicked', () => {

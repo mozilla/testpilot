@@ -73,8 +73,11 @@ export default class RetirePage extends React.Component {
                 </Localized>
               </div>
               <div className="modal-content">
-                <Localized id="retirePageMessage">
-                  <p>Hope you had fun experimenting with us. <br /> Come back any time.</p>
+                <Localized id="retirePageMessage2">
+                  <p>Hope you had fun experimenting with us.</p>
+                </Localized>
+                <Localized id="retirePageMessageComeBack">
+                  <p>Come back any time.</p>
                 </Localized>
               </div>
               <div className="modal-actions">

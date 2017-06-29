@@ -61,7 +61,7 @@ export default class MainInstallButton extends React.Component {
           <span className="minor-cta">Install Test Pilot &amp;</span>
         </Localized>
         <Localized id="oneClickInstallMajorCta" $title={title}>
-          <span className="major-cta"></span>
+          <span className="major-cta">Enable {title}</span>
         </Localized>
       </div>
     );

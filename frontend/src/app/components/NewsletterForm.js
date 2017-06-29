@@ -71,6 +71,12 @@ export default class NewsletterForm extends React.Component {
   renderPrivacyField() {
     const fieldName = 'privacy';
     const url = '/privacy';
+    const privacyNoticeLinkNode = <Localized id="newsletterFormPrivacyNoticeLink">
+      <a target="_blank" rel="noopener noreferrer"
+        href={url}>
+        this privacy notice
+      </a>
+    </Localized>;
 
     return (
       <label className={this.makeRevealedClassNames()} htmlFor={fieldName}>
@@ -79,13 +85,9 @@ export default class NewsletterForm extends React.Component {
         { this.state.privacyNote ? <Localized id="newsletterFormPrivacyAgreementRequired">
           <span style={{ color: 'red', marginRight: '0.5em' }}></span>
         </Localized> : null }
-        <Localized id="newsletterFormPrivacyNotice">
+        <Localized id="newsletterFormPrivacyNotice2" $privacyNoticeLink={privacyNoticeLinkNode}>
           <span>
-            I&apos;m okay with Mozilla handling by info as explained in
-            <a target="_blank" rel="noopener noreferrer"
-              href={url}>
-              this Privacy Notice
-            </a>.
+            I&apos;m okay with Mozilla handling by info as explained in {privacyNoticeLinkNode}.
           </span>
         </Localized>
       </label>

@@ -65,6 +65,13 @@ export default class HomePageWithAddon extends React.Component {
 
   renderSplash() {
     if (typeof window !== 'undefined' && window.location.search.includes('utm_content=no-experiments-installed')) {
+      const link = <Localized id="experimentsListNoneInstalledCTALink">
+        <a onClick={() => this.onNotInterestedSurveyClick()}
+           href="https://qsurvey.mozilla.com/s3/TxP-User" target="_blank"
+           className="banner__link">
+         Let us know why
+        </a>
+      </Localized>;
       return (
         <Banner background={true}>
           <LayoutWrapper flexModifier="row-between-breaking">
@@ -80,14 +87,10 @@ export default class HomePageWithAddon extends React.Component {
                   it for a spin, and let us know what you think.
                 </p>
               </Localized>
-              <Localized id="experimentsListNoneInstalledCTA">
+              <Localized id="experimentsListNoneInstalledCTA2" $link={link}>
                 <p>
                   Not interested?
-                 <a onClick={() => this.onNotInterestedSurveyClick()}
-                    href="https://qsurvey.mozilla.com/s3/TxP-User" target="_blank"
-                    className="banner__link">
-                  Let us know why
-                 </a>.
+                 {link}.
                 </p>
               </Localized>
             </div>
