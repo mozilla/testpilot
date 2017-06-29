@@ -82,6 +82,25 @@ describe('app/components/ExperimentRowCard', () => {
     expect(subject.find('.enabled-tab')).to.have.property('length', 1);
   });
 
+  it('should display a feedback button if the experiment is enabled', () => {
+    expect(subject.find('.experiment-feedback')).to.have.property('length', 0);
+
+    subject.setProps({ enabled: true });
+
+    expect(subject.find('.experiment-feedback')).to.have.property('length', 1);
+  });
+
+  it('should ping GA when feedback is clicked', () => {
+    subject.setProps({ enabled: true });
+    subject.find('.experiment-feedback').simulate('click', mockClickEvent);
+
+    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: props.eventCategory,
+      eventAction: 'Give Feedback',
+      eventLabel: mockExperiment.title
+    }]);
+  });
+
   it('should display "just launched" banner if created date within 2 weeks, never seen, and not enabled', () => {
     expect(subject.find('.experiment-summary').hasClass('just-launched')).to.be.false;
     expect(subject.find('.just-launched-tab')).to.have.property('length', 0);
@@ -182,7 +201,7 @@ describe('app/components/ExperimentRowCard', () => {
     expect(findByL10nID('experimentCardManage')).to.have.property('length', 1);
   })
 
-  it('should ping GA when clicked', () => {
+  it('should ping GA when manage is clicked', () => {
     subject.find('.experiment-summary').simulate('click', mockClickEvent);
 
     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {

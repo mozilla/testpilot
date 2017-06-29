@@ -39,9 +39,40 @@
   }
 
   header {
-    @include flex-container(column, space-between, flex-start);
+    @include flex-container(row, space-between, flex-start);
     margin-bottom: $grid-unit * .5;
     width: 100%;
+  }
+
+  header > div {
+    @include flex-container(column, space-between, flex-start);
+  }
+
+  .experiment-feedback {
+    background-color: $feedback-button-blue;
+    background-image: url('../images/feedback.svg');
+    background-position: 4px 4px;
+    background-repeat: no-repeat;
+    background-size: 14px;
+    border: 1px solid $feedback-button-blue;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px $feedback-button-shadow;
+    color: $white;
+    cursor: pointer;
+    display: block;
+    float: right;
+    font-size: 10px;
+    line-height: 12px;
+    padding: 4px 4px 4px 22px;
+
+    &:hover,
+    &:focus {
+      background-color: darken($feedback-button-blue, 4);
+    }
+
+    &:active {
+      background-color: darken($feedback-button-blue, 6);
+    }
   }
 
   h3 {
