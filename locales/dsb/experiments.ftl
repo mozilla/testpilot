@@ -21,6 +21,7 @@ activitystreamContributors9Title = Produktowy manager
 activitystreamContributors10Title = Wuwijański manager
 activitystreamContributors11Title = Wuwijaŕ softwary
 activitystreamContributors12Title = Seniorski designer UX
+activitystreamEolwarning = Eksperiment se kóńcy, ale Activity Stream se w Firefox pó standarźe zmóžnja. Źiwajśo na pśichodne wersije Firefox!
 cliqzDescription = Dostańśo pytańske wuslědki malsnjej. Cliqz pokazujo naraźenja napšawo pód adresowym pólom, gaž zapisujośo. Waša priwatnosć se wuchowajo.
 cliqzIntroduction = Dostańśo pytańske wuslědki malsnjej, direktnje we wobglědowaku. Zachopśo pisaś a buźośo naraźenja z weba w napšawdnem casu napšawo pód adresowym pólom wiźeś. A dokulaž Cliqz njegromaźi žedne wósobinske daty, z kótarymiž sćo identifificěrujobny abo daju se wužywarske profile załožyś, su waše wuslědki priwatnjejše.
 cliqzPrivacypreamble = Eksperiment Test Pilot Cliqz staja se wam pśez zgromadne źěło mjazy Cliqz GmbH a Mozilla k dispoziciji. Cliqz jo za to myslony, wašu priwatnosć šćitaś a zajźowaś, až se sensibelne daty gromaźe, kótarež daju se wužywaś, aby wužywarske profile napórali. Anonymizěrowanje datow ako toś tych pak jo śěžke a mógło hyšći móžno byś, až wěste wósoby se identficěruju.
