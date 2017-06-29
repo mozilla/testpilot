@@ -35,13 +35,19 @@ export default class MainInstallButton extends React.Component {
   render() {
     const { isFirefox, isMinFirefox, isMobile, hasAddon } = this.props;
     const isInstalling = this.state.isInstalling && !hasAddon;
+    const terms = <Localized id="landingLegalNoticeTermsOfUse">
+      <a href="/terms">Terms of Use</a>
+    </Localized>;
+    const privacy = <Localized id="landingLegalNoticePrivacyNotice">
+      <a href="/privacy">Privacy Notice</a>
+    </Localized>;
 
     return (
       <LayoutWrapper flexModifier="column-center-start-breaking">
         {(isMinFirefox && !isMobile) ? this.renderInstallButton(isInstalling, hasAddon) : this.renderAltButton(isFirefox, isMobile) }
-        {isMinFirefox && !isMobile && <Localized id="landingLegalNotice">
+        {isMinFirefox && !isMobile && <Localized id="landingLegalNotice2" $terms={terms} $privacy={privacy}>
           <p className="legal-information">
-            By proceeding, you agree to the <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Notice</a> of Test Pilot.
+            By proceeding, you agree to the {terms} and {privacy} of Test Pilot.
           </p>
         </Localized>}
       </LayoutWrapper>
@@ -51,7 +57,7 @@ export default class MainInstallButton extends React.Component {
   renderOneClickInstallButton(title) {
     return (
       <div className="default-btn-msg one-click-text">
-        <Localized id="oneClickInstallMinorCta">
+        <Localized id="oneClickInstallMinorCta2">
           <span className="minor-cta">Install Test Pilot &amp;</span>
         </Localized>
         <Localized id="oneClickInstallMajorCta" $title={title}>

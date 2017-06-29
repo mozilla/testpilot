@@ -29,7 +29,9 @@ menuRetire = Uninstall Test Pilot
 landingIntroOne = Test new features.
 landingIntroTwo = Give your feedback.
 landingIntroThree = Help build Firefox.
-landingLegalNotice = By proceeding, you agree to the <a>Terms of Use</a> and <a>Privacy Notice</a> of Test Pilot.
+landingLegalNotice2 = By proceeding, you agree to the { $terms } and { $privacy } of Test Pilot.
+landingLegalNoticeTermsOfUse = Terms of Use
+landingLegalNoticePrivacyNotice = Privacy Notice
 landingExperimentsTitle = Try out the latest experimental features
 
 // Related to the installation of the Test Pilot add-on.
@@ -40,14 +42,13 @@ landingInstalledButton = Choose your features
 
 // Related to a one click to install test pilot and an experiment.
 [[oneClickInstall]]
-oneClickInstallMinorCta = Install Test Pilot &amp;
+oneClickInstallMinorCta2 = Install Test Pilot &
 oneClickInstallMajorCta = Enable {$title}
 
 // Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[landingFirefox]]
 landingRequiresDesktop = Test Pilot requires Firefox for Desktop on Windows, Mac or Linux
 landingDownloadFirefoxDesc = (Test Pilot is available for Firefox on Windows, OS X and Linux)
-landingUpgradeDesc = Test Pilot requires Firefox 49 or higher.
 landingUpgradeDesc2 = Test Pilot requires Firefox {$version} or higher.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Upgrade Firefox
@@ -67,7 +68,8 @@ onboardingMessage = We put an icon in your toolbar so you can always find Test P
 // Error message pages.
 [[error]]
 errorHeading = Whoops!
-errorMessage = Looks like we broke something. <br> Maybe try again later.
+errorMessage2 = Looks like we broke something.
+errorMessageTryAgain = Maybe try again later.
 notFoundHeader = Four Oh Four!
 
 // A modal prompt to sign up for the Test Pilot newsletter.
@@ -121,7 +123,7 @@ experimentPromoSubheader = We're building next-generation features for Firefox. 
 [[experimentPage]]
 isEnabledStatusMessage = {$title} is enabled.
 installErrorMessage = Uh oh. {$title} could not be enabled. Try again later.
-participantCount = <span>{$installation_count}</span> participants
+participantCount2 = {$installation_count} participants
 otherExperiments = Try out these experiments as well
 giveFeedback = Give Feedback
 disableHeader = Disable Experiment?
@@ -130,7 +132,8 @@ disableExperimentTransition = Disabling...
 enableExperiment = Enable {$title}
 enableExperimentTransition = Enabling...
 experimentManuallyDisabled = {$title} disabled in Add-ons Manager
-experimentMeasurementIntro = In addition to the <a>data</a> collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use { $experimentTitle }:
+experimentMeasurementIntro2 = In addition to the {$data} collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use {$experimentTitle}:
+experimentMeasurementIntroDataLink = data
 measurements = Your privacy
 experimentPrivacyNotice = You can learn more about the data collection for {$title} here.
 contributorsHeading = Brought to you by
@@ -143,7 +146,7 @@ bugReports = Bug Reports
 discussExperiment = Discuss { $title }
 tourOnboardingTitle = {$title} enabled!
 tourDoneButton = Done
-userCountContainer = There are <span>{$installation_count}</span> people trying {$title} right now!
+userCountContainer2 = There are {$installation_count} people trying {$title} right now!
 userCountContainerAlt = Just launched!
 highlightPrivacy = Your privacy
 

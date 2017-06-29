@@ -83,9 +83,10 @@ export default class ExperimentRowCard extends React.Component {
   // telemetry data coming in from prod
   renderInstallationCount(installation_count: number, isCompleted: Boolean) {
     if (installation_count <= 100 || isCompleted) return '';
+    const installation_count_node = <span>{installation_count}</span>;
     return (
-      <Localized id="participantCount" $installation_count={installation_count}>
-        <span className="participant-count">{installation_count}</span>
+      <Localized id="participantCount2" $installation_count={installation_count_node}>
+        <span className="participant-count">{installation_count_node} participants</span>
       </Localized>
     );
   }

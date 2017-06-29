@@ -449,9 +449,15 @@ export class ExperimentDetail extends React.Component {
                             {privacy_preamble && <Localized id={this.l10nId('privacy_preamble')}>
                               <p>{privacy_preamble}</p>
                             </Localized>}
-                            <Localized id="experimentMeasurementIntro" $experimentTitle={experiment.title}>
+                            <Localized id="experimentMeasurementIntro2"
+                              $data={<a href="/privacy">
+                                <Localized id="experimentMeasurementIntroDataLink">
+                                  <span>data</span>
+                                </Localized>
+                              </a>}
+                              $experimentTitle={experiment.title}>
                               <p>
-                                 <a href="/privacy"></a>
+                                In addition to the data collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use {experiment.title}:
                               </p>
                             </Localized>
                             <ul>
@@ -518,10 +524,15 @@ export class ExperimentDetail extends React.Component {
                         {privacy_preamble && <Localized id={this.l10nId('privacy_preamble')}>
                           <p>{privacy_preamble}</p>
                         </Localized>}
-                        <Localized id="experimentMeasurementIntro" $experimentTitle={experiment.title}>
+                        <Localized id="experimentMeasurementIntro2"
+                          $data={<a href="/privacy">
+                            <Localized id="experimentMeasurementIntroDataLink">
+                              <span>data</span>
+                            </Localized>
+                          </a>}
+                          $experimentTitle={experiment.title}>
                           <p>
-                            In addition to the <a href="/privacy">data</a> collected by all Test Pilot experiments, here are the
-                            key things you should know about what is happening when you use {experiment.title}:
+                            In addition to the asdf collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use {experiment.title}:
                           </p>
                         </Localized>
                         <ul>
@@ -649,7 +660,7 @@ export class ExperimentDetail extends React.Component {
         <span className="bold"></span>
       </Localized>;
     }
-    return <Localized id="userCountContainer" $installation_count={installation_count} $title={title}>
+    return <Localized id="userCountContainer2" $installation_count={installation_count} $title={title}>
       <span><span className="bold"></span></span>
     </Localized>;
   }

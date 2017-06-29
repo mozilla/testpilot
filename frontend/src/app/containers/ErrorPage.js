@@ -28,8 +28,11 @@ export default class ErrorPage extends React.Component {
               </Localized>
             </header>
             <div className="modal-content">
-              <Localized id="errorMessage">
-                <p>Looks like we broke something. <br /> Maybe try again later.</p>
+              <Localized id="errorMessage2">
+                <p>Looks like we broke something.</p>
+              </Localized>
+              <Localized id="errorMessageTryAgain">
+                <p>Maybe try again later.</p>
               </Localized>
             </div>
           </div>
