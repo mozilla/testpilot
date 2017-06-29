@@ -13,14 +13,18 @@ gulp.task('dist-rev-assets', function() {
       /static\/addon\/*/,
       /static\/locales\/*/,
       /static\/images\/experiments\/[^]*\/social\/*/,
-      '.html'
+      '.html',
+      '.rss',
+      '.atom'
     ],
     dontUpdateReference: [
       /static\/addon\/*/,
       /static\/locales\/*/,
       /.*\.json/,
       /static\/images\/experiments\/[^]*\/social\/*/,
-      'favicon.ico'
+      'favicon.ico',
+      /.*\.rss/,
+      /.*\.atom/
     ]
   });
   return gulp.src(config.DEST_PATH + '**')
