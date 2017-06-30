@@ -34,7 +34,7 @@ gulp.task('content-extract-experiment-strings', () =>
     .pipe(gulp.dest('./locales/en-US')));
 
 function populateRSSFeed(newsUpdates) {
-  return new Feed({
+  const feed = new Feed({
     title: 'Test Pilot News Updates',
     description: 'News Updates for Test Pilot experiments',
     id: 'https://blog.mozilla.org/testpilot',
@@ -48,17 +48,22 @@ function populateRSSFeed(newsUpdates) {
     author: {
       name: 'Mozilla',
       link: 'https://testpilot.firefox.com'
-    },
-    feed: newsUpdates.map(post => {
-      return {
-        title: post.title,
-        id: post.link,
-        link: post.link,
-        date: post.published,
-        content: post.content
-      }
-    })
+    }
   });
+
+  newsUpdates.forEach(({experimentSlug, title, slug, link, published, content}) => {
+    const item = { title, content, date: published };
+    if (link) {
+      item.link = link;
+    } else if (experimentSlug) {
+      item.link = `https://testpilot.firefox.com/experiments/${experimentSlug}/#${slug}`;
+    } else {
+      item.link = `https://testpilot.firefox.com/experiments/#${slug}`;
+    }
+    feed.addItem(item);
+  });
+
+  return feed;
 }
 
 function buildExperimentsFTL() {
