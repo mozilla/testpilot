@@ -196,3 +196,7 @@ universalsearchContributors1Title = Senior-UX-Designer
 universalsearchContributors2Title = Entwickler
 universalsearchContributors3Title = Senior-Entwickler
 universalsearchEolwarning = Wir deaktivieren das Universal-Search-Experiment automatisch, wenn es endet, und melden dann die Ergebnisse.
+testpilotNewsupdatesGeneralupdate1Title = Neueste Informationen!
+testpilotNewsupdatesGeneralupdate1Content = Wir haben diesen Newsfeed in Test Pilot integriert, um Sie über die neuesten Nachrichten und Verbesserungen an Experimenten zu informieren.
+testpilotNewsupdatesGeneralupdate2Title = Bevorstehende Änderungen
+testpilotNewsupdatesGeneralupdate2Content = Page Shot, Activity Stream, Tab Center und Pulse verlassen Test Pilot in der nächsten Woche – wir bereiten die nächste Runde an Experimenten vor. Wir informieren bald darüber, wo diese Experimente hingehen und wie Sie sie weiter verwenden können.

@@ -122,6 +122,8 @@ experimentListHeader = Wählen Sie Ihre Experimente!
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Feedback
 experimentCardManage = Verwalten
 experimentCardGetStarted = Los geht’s
 experimentCardLearnMore = Mehr erfahren
