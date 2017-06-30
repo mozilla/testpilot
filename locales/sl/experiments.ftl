@@ -197,3 +197,5 @@ universalsearchContributors2Title = Generalni inženir
 universalsearchContributors3Title = Starejši inženir
 universalsearchEolwarning = Ko se bo poskus Universal Search končal, ga bomo samodejno onemogočili in poročali o rezultatih.
 testpilotNewsupdatesGeneralupdate1Title = Sveže novice!
+testpilotNewsupdatesGeneralupdate1Content = V Test Pilot smo dodali ta vir novic, ki vas bo obveščal o najnovejših novicah in izboljšavah poskusov.
+testpilotNewsupdatesGeneralupdate2Title = Spremembe na poti
