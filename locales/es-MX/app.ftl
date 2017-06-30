@@ -122,6 +122,8 @@ experimentListHeader = ¡Elige tus experimentos!
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Retroalimentación
 experimentCardManage = Administrar
 experimentCardGetStarted = Comenzar
 experimentCardLearnMore = Saber más
@@ -287,3 +289,15 @@ noScriptLink = Descubre por qué
 
 viewPastExperiments = Ver experimentos pasados
 hidePastExperiments = Ocultar experimentos pasados
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = ¡Algo salió mal!
+warningGenericDetail = Test Pilot ha presentado un problema. Por favor, <a>envía un bug<a> y menciona este mensaje de error.
+warningUpgradeFirefoxTitle = ¡Actualiza Firefox para continuar!
+warningUpgradeFirefoxDetail = Test Pilot requiere la última versión de Firefox. <a>Actualiza Firefox</a> para comenzar.
+warningHttpsRequiredTitle = ¡Se requiere HTTPS!
+warningHttpsRequiredDetail = Test Pilot debe ser accedido mediante HTTPS. Por favor mira <a>nuestra documentación</a> para más detalles.
+warningMissingPrefTitle = ¿Desarrollando Test Pilot?
