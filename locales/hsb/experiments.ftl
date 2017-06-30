@@ -197,3 +197,6 @@ universalsearchContributors2Title = Personalny inženjer
 universalsearchContributors3Title = Seniorski wuwiwar
 universalsearchEolwarning = Znjemóžnimy awtomatisce eksperiment Universal Search, hdyž so kónči a zdźělimy wuslědki.
 testpilotNewsupdatesGeneralupdate1Title = Wosebite powěsće!
+testpilotNewsupdatesGeneralupdate1Content = Smy Test Pilot tutón powěsćowy kanal přidali, zo bychmy was wo najnowšich powěsćach a eksperimentowych polěpšenjach informowali.
+testpilotNewsupdatesGeneralupdate2Title = Změny po puću
+testpilotNewsupdatesGeneralupdate2Content = Page Shot, Activity Stream, Tab Center a Pulse budu na nowy tydźeń z Test Pilot postupować, dokelž na přichodnu rundu eksperimentowa hotujemy.  Budźeny bórze dale činić, zo bychmy wam zdźělili, hdźež tute eksperimenty du a kak móžeće je dale wužiwać.
