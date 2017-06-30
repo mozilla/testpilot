@@ -197,3 +197,6 @@ universalsearchContributors2Title = Haadyngenieur
 universalsearchContributors3Title = Senior yngenieur
 universalsearchEolwarning = Wy sille it eksperimint Universal Search automatysk útskeakelje en de resultaten rapportearje as it einiget.
 testpilotNewsupdatesGeneralupdate1Title = Ekstra nijs!
+testpilotNewsupdatesGeneralupdate1Content = Om jo mear te fertellen oer it lêste nijs en ferbetteringen fan eksperiminten hawwe wy dizze nijsfeed tafoege oan Test Pilot.
+testpilotNewsupdatesGeneralupdate2Title = Wizigingen ûnderweis
+testpilotNewsupdatesGeneralupdate2Content = Page Shot, Activity Stream, Tab Center en Pulse sille dizze wike slagje fan Test Pilot út as wy ús klear meitsje foar de folgjende eksperiminten. Wy sille jo ynkoarten mear fertelle wêr't dizze eksperiminten hinne gean en hoe't jo se brûke bliuwe kinne.
