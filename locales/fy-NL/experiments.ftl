@@ -196,3 +196,4 @@ universalsearchContributors1Title = Senior-UX-ûntwerper
 universalsearchContributors2Title = Haadyngenieur
 universalsearchContributors3Title = Senior yngenieur
 universalsearchEolwarning = Wy sille it eksperimint Universal Search automatysk útskeakelje en de resultaten rapportearje as it einiget.
+testpilotNewsupdatesGeneralupdate1Title = Ekstra nijs!

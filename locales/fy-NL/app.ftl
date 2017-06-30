@@ -122,6 +122,8 @@ experimentListHeader = Kies jo eksperiminten!
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Kommentaar
 experimentCardManage = Beheare
 experimentCardGetStarted = Oan de slach
 experimentCardLearnMore = Mear ynfo
