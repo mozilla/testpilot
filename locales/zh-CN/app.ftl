@@ -122,6 +122,8 @@ experimentListHeader = 挑选您的实验！
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = 反馈
 experimentCardManage = 管理
 experimentCardGetStarted = 了解详情
 experimentCardLearnMore = 详细了解
