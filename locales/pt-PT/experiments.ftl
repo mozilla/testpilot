@@ -196,3 +196,4 @@ universalsearchContributors1Title = Designer Sénior de UX
 universalsearchContributors2Title = Funcionário de Engenharia
 universalsearchContributors3Title = Engenheiro Sénior
 universalsearchEolwarning = Iremos desativar automaticamente a experiência da Universal Search e reportaremos os resultados quando terminar.
+testpilotNewsupdatesGeneralupdate1Title = Notícias de última hora!
