@@ -21,6 +21,7 @@ activitystreamContributors9Title = Product Manager
 activitystreamContributors10Title = Engineering Manager
 activitystreamContributors11Title = Software Engineer
 activitystreamContributors12Title = Senior UX Designer
+activitystreamEolwarning = Questo esperimento si sta per concludere, ma Activity Stream verrà incluso direttamente in Firefox in autunno. Se hai installato l’esperimento, l’aggiornamento alla versione integrata sarà completamente automatico.
 cliqzDescription = Ottieni risultati di ricerca più velocemente con Cliqz. I suggerimenti verranno mostrati direttamente nella barra degli indirizzi durante la digitazione, nel massimo rispetto della privacy.
 cliqzIntroduction = Ottieni risultati più velocemente per le tue ricerche, direttamente nel browser. Inizia a digitare e osserva i suggerimenti apparire in tempo reale dal Web sotto la barra degli indirizzi. Dal momento che Cliqz non raccoglie dati personali in grado di identificarti, né costruisce un profilo degli utenti, i tuoi risultati sono ancora più privati.
 cliqzPrivacypreamble = L’esperimento Test Pilot Cliqz è realizzato in collaborazione tra Mozilla e Cliqz GmbH. Cliqz è progettato per garantire la tua privacy ed evitare di raccogliere dati sensibili utilizzabili per la profilazione. Purtroppo rendere anonimi questo tipo di dati è complesso e potrebbe essere comunque possibile identificare un individuo specifico.
