@@ -196,3 +196,6 @@ universalsearchContributors1Title = Designer UX sênior
 universalsearchContributors2Title = Equipe de engenharia
 universalsearchContributors3Title = Engenheiro sênior
 universalsearchEolwarning = Iremos desabilitar automaticamente o experimento Pesquisa Universal e relatar os resultados quando acabar.
+testpilotNewsupdatesGeneralupdate1Title = Notícias de última hora!
+testpilotNewsupdatesGeneralupdate1Content = Adicionámos esta fonte de notícias ao Test Pilot para lhe informar sobre as últimas novidades e melhorias na experiência.
+testpilotNewsupdatesGeneralupdate2Title = Mudanças a caminho
