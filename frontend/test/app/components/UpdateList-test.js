@@ -73,11 +73,17 @@ describe('app/components/UpdateList', () => {
       expect(icon.hasClass('experiment-icon-foobar')).to.be.true;
     });
 
-    it('should display "Firefox Test Pilot" as the category when no experiment is given', () => {
+    it('should not display a subtitle for general updates', () => {
+      const subject = shallow(<Update
+        update={{ title: 'foo', content: 'bar' }} />);
+      expect(subject.find('h4')).to.have.length(0);
+    });
+
+    it('should display the update title as the category when no experiment is given', () => {
       const subject = shallow(<Update update={{ title: 'foo' }} />);
       const categoryTitle = subject.find('.update-content h2');
-      expect(categoryTitle.text()).to.equal('Firefox Test Pilot');
-      expect(categoryTitle.props()).to.have.property('data-l10n-id', 'siteName');
+      expect(categoryTitle.text()).to.equal('foo');
+      expect(categoryTitle.hasClass('update-title')).to.be.true;
     });
 
     it('should display the experiment title as category when experiment is given', () => {

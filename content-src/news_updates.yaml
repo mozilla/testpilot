@@ -8,3 +8,23 @@
 #   dev: false
 #   content: >
 #     Example content goes here
+-
+  slug: general-update-1
+  title: Breaking news!
+  created: 2017-06-29T12:00:00Z
+  published: 2017-06-29T12:00:00Z
+  dev: false
+  content: >
+    We added this news feed to Test Pilot to tell you about the latest news and experiment improvements.
+-
+  slug: general-update-2
+  title: Changes on the way
+  created: 2017-06-29T12:00:01Z
+  published: 2017-06-29T12:00:01Z
+  dev: false
+  content: >
+    Page Shot, Activity Stream, Tab Center, and Pulse will graduate from Test Pilot next week as we get ready for the next round of experiments. We'll follow up very soon to tell you where these experiments are going and how you can keep using them.
+
+
+
+

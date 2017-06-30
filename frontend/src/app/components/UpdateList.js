@@ -32,10 +32,11 @@ export class Update extends React.Component {
           <div className={classnames(iconClassName, 'experiment-icon')}></div>
           <div className="update-content">
             <header>
-              <h2 data-l10n-id={categoryTitleL10nID}>{categoryTitle}</h2>
+              {experiment ? <h2 data-l10n-id={categoryTitleL10nID}>{categoryTitle}</h2> :
+              <h2 className="update-title" data-l10n-id={newsUpdateL10nId(update, 'title')}>{title}</h2>}
               <p className="up-date">{prettyDate(published || created)}</p>
             </header>
-            <h4 data-l10n-id={newsUpdateL10nId(update, 'title')}>{title}</h4>
+            {experiment ? <h4 className="update-title" data-l10n-id={newsUpdateL10nId(update, 'title')}>{title}</h4> : null}
             <p data-l10n-id={newsUpdateL10nId(update, 'content')} className="summary">{content}</p>
           </div>
           <div className="link-chevron">
