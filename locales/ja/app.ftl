@@ -122,6 +122,8 @@ experimentListHeader = 興味のある実験を選びましょう！
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = フィードバック
 experimentCardManage = 管理
 experimentCardGetStarted = はじめに
 experimentCardLearnMore = 詳細

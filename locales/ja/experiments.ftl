@@ -196,3 +196,7 @@ universalsearchContributors1Title = 上級 UX デザイナー
 universalsearchContributors2Title = スタッフエンジニア
 universalsearchContributors3Title = 上級エンジニア
 universalsearchEolwarning = Universal Search 実験は終了時に自動的に無効化され、その後私達から結果を報告します。
+testpilotNewsupdatesGeneralupdate1Title = 速報！
+testpilotNewsupdatesGeneralupdate1Content = 最新情報や実験の改善をお伝えするため、このニュースフィードを Test Pilot へ追加しました。
+testpilotNewsupdatesGeneralupdate2Title = 近く予定されている変更
+testpilotNewsupdatesGeneralupdate2Content = 次回実験への準備を進めるため、Page Shot、Activity Stream、Tab Center、Pulse は来週 Test Pilot から卒業します。これらの実験が今後どうなるのかや使い続ける方法については近日中にお知らせします。
