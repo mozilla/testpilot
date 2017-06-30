@@ -196,3 +196,7 @@ universalsearchContributors1Title = Senior UX dizájner
 universalsearchContributors2Title = Vezető mérnök
 universalsearchContributors3Title = Senior mérnök
 universalsearchEolwarning = Automatikusan letiltjuk az Univerzális keresést, és tájékoztatjuk a kísérlet eredményről, ha az véget ér.
+testpilotNewsupdatesGeneralupdate1Title = Friss hírek!
+testpilotNewsupdatesGeneralupdate1Content = Hozzáadtunk egy hírcsatornát a Tesztpilótához, hogy értesítsük a legfrissebb hírekről és kísérleti fejlesztésekről.
+testpilotNewsupdatesGeneralupdate2Title = Úton lévő változások
+testpilotNewsupdatesGeneralupdate2Content = A Page Shot, Activity Stream, Tab Center és a Pulse kilép a Tesztpilótából a jövő héten, ahogy felkészülünk a kísérletek következő körére. Hamarosan jelentkezünk a hírekkel, hogy hová kerülnek ezek a kísérletek, és hogyan használhatja őket a továbbiakban.

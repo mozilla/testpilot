@@ -122,6 +122,8 @@ experimentListHeader = Válasszon kísérleteket!
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Visszajelzés
 experimentCardManage = Kezelés
 experimentCardGetStarted = Kezdő lépések
 experimentCardLearnMore = Tudjon meg többet
