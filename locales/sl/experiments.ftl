@@ -199,3 +199,4 @@ universalsearchEolwarning = Ko se bo poskus Universal Search končal, ga bomo sa
 testpilotNewsupdatesGeneralupdate1Title = Sveže novice!
 testpilotNewsupdatesGeneralupdate1Content = V Test Pilot smo dodali ta vir novic, ki vas bo obveščal o najnovejših novicah in izboljšavah poskusov.
 testpilotNewsupdatesGeneralupdate2Title = Spremembe na poti
+testpilotNewsupdatesGeneralupdate2Content = Page Shot, Activity Stream, Tab Center in Pulse bodo končali fazo poskusa v Test Pilotu naslednji teden, ko se pripravimo za novo dozo poskusov. Kmalu bomo oznanili, kam se ti poskusi selijo in kako lahko nadaljujete z njihovo uporabo.
