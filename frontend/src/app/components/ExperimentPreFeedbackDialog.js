@@ -36,7 +36,7 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
                 {parser(experiment.pre_feedback_copy)}
               </div>
               <div className="tour-text">
-                <Localized id="experimentPreFeedbackLinkCopy">
+                <Localized id="experimentPreFeedbackLinkCopy" $title={experiment.title}>
                   <a onClick={e => this.feedback(e)}
                      href={surveyURL}></a>
                 </Localized>

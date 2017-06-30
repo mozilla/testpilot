@@ -2,6 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
+import { findLocalizedById } from '../util';
 
 import ExperimentPreFeedbackDialog from '../../../src/app/components/ExperimentPreFeedbackDialog';
 
@@ -30,10 +31,10 @@ describe('app/components/ExperimentPreFeedbackDialog', () => {
   it('should render expected content', () => {
     expect(subject.find('.modal-container'))
       .to.have.property('length', 1);
-    expect(subject.find('.modal-header').props()['data-l10n-args'])
-      .to.equal(JSON.stringify({ title: experiment.title }));
-    expect(subject.find('.tour-text a').props()['data-l10n-args'])
-      .to.equal(JSON.stringify({ title: experiment.title }));
+    expect(findLocalizedById(subject, 'experimentPreFeedbackTitle').prop('$title'))
+      .to.equal(experiment.title);
+    expect(findLocalizedById(subject, 'experimentPreFeedbackLinkCopy').prop('$title'))
+      .to.equal(experiment.title);
     expect(subject.find('.tour-image img').props().src)
       .to.equal(experiment.pre_feedback_image);
     expect(subject.find('.tour-text').first().html())

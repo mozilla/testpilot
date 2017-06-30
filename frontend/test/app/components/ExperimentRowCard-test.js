@@ -2,6 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
+import { findLocalizedById } from '../util';
 import moment from 'moment';
 
 import ExperimentRowCard from '../../../src/app/components/ExperimentRowCard';
@@ -35,23 +36,21 @@ describe('app/components/ExperimentRowCard', () => {
     subject = shallow(<ExperimentRowCard {...props} />);
   });
 
-  const findByL10nID = id => subject.findWhere(el => id === el.props()['data-l10n-id']);
-
   it('should render expected content', () => {
     expect(subject.find('.experiment-information header h3').text()).to.equal(mockExperiment.title);
   });
 
   it('should have the expected l10n ID', () => {
     // Title field not localized; see #1732.
-    expect(findByL10nID('testingTitle')).to.have.property('length', 0);
-    expect(findByL10nID('testingSubtitleFoo')).to.have.property('length', 1);
-    expect(findByL10nID('testingDescription')).to.have.property('length', 1);
+    expect(findLocalizedById(subject, 'testingTitle')).to.have.property('length', 0);
+    expect(findLocalizedById(subject, 'testingSubtitleFoo')).to.have.property('length', 1);
+    expect(findLocalizedById(subject, 'testingDescription')).to.have.property('length', 1);
   });
 
   it('should not have l10n IDs if the experiment is dev-only', () => {
     subject.setProps({ experiment: { dev: true, ...props.experiment } });
-    expect(findByL10nID('testingSubtitleFoo')).to.have.property('length', 0);
-    expect(findByL10nID('testingDescription')).to.have.property('length', 0);
+    expect(findLocalizedById(subject, 'testingSubtitleFoo')).to.have.property('length', 0);
+    expect(findLocalizedById(subject, 'testingDescription')).to.have.property('length', 0);
   });
 
   it('should change style based on hasAddon', () => {
@@ -63,8 +62,9 @@ describe('app/components/ExperimentRowCard', () => {
   it('should display installation count if over 100', () => {
     const expectedCount = '101';
     subject.setProps({ experiment: { ...mockExperiment, installation_count: expectedCount }});
-    expect(subject.find('.participant-count')).to.have.property('length', 1);
-    expect(subject.find('.participant-count').text()).to.equal(expectedCount);
+    const localized = findLocalizedById(subject, 'participantCount2');
+    expect(localized.find('.participant-count')).to.have.property('length', 1);
+    expect(localized.prop('$installation_count')).to.deep.equal(<span>{expectedCount}</span>);
   });
 
   it('should display nothing if installation count <= 100', () => {
@@ -146,40 +146,40 @@ describe('app/components/ExperimentRowCard', () => {
   });
 
   it('should show a "tomorrow" status message when ending in one day', () => {
-    expect(findByL10nID('experimentListEndingTomorrow')).to.have.property('length', 0);
+    expect(findLocalizedById(subject, 'experimentListEndingTomorrow')).to.have.property('length', 0);
     subject.setProps({ experiment: { ...mockExperiment,
       completed: moment().add(23, 'hours').utc()
     }});
-    expect(findByL10nID('experimentListEndingTomorrow')).to.have.property('length', 1);
+    expect(findLocalizedById(subject, 'experimentListEndingTomorrow')).to.have.property('length', 1);
   });
 
   it('should show a "soon" status message when ending in one week', () => {
-    expect(findByL10nID('experimentListEndingSoon')).to.have.property('length', 0);
+    expect(findLocalizedById(subject, 'experimentListEndingSoon')).to.have.property('length', 0);
     subject.setProps({ experiment: { ...mockExperiment,
       completed: moment().add(6, 'days').utc()
     }});
-    expect(findByL10nID('experimentListEndingSoon')).to.have.property('length', 1);
+    expect(findLocalizedById(subject, 'experimentListEndingSoon')).to.have.property('length', 1);
   });
 
   it('should have a "Learn More" button if the experiment is completed', () => {
-    expect(findByL10nID('experimentCardLearnMore')).to.have.property('length', 0);
+    expect(findLocalizedById(subject, 'experimentCardLearnMore')).to.have.property('length', 0);
     subject.setProps({
       experiment: { ...mockExperiment,
         completed: moment().subtract(1, 'days').utc()
       },
       isAfterCompletedDate: () => true
     });
-    expect(findByL10nID('experimentCardLearnMore')).to.have.property('length', 1);
-    expect(findByL10nID('participantCount')).to.have.property('length', 0);
+    expect(findLocalizedById(subject, 'experimentCardLearnMore')).to.have.property('length', 1);
+    expect(findLocalizedById(subject, 'participantCount')).to.have.property('length', 0);
   });
 
   it('should have a "Manage" button if the experiment is enabled and has an addon', () => {
-    expect(findByL10nID('experimentCardManage')).to.have.property('length', 0);
+    expect(findLocalizedById(subject, 'experimentCardManage')).to.have.property('length', 0);
     subject.setProps({
       enabled: true,
       hasAddon: true
     });
-    expect(findByL10nID('experimentCardManage')).to.have.property('length', 1);
+    expect(findLocalizedById(subject, 'experimentCardManage')).to.have.property('length', 1);
   })
 
   it('should ping GA when clicked', () => {

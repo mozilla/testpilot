@@ -2,6 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
+import { findLocalizedById } from '../util';
 
 import ExperimentDisableDialog from '../../../src/app/components/ExperimentDisableDialog';
 
@@ -27,8 +28,8 @@ describe('app/components/ExperimentDisableDialog', () => {
 
   it('should render a modal container', () => {
     expect(subject.find('.modal-container')).to.have.property('length', 1);
-    expect(subject.find('.modal-header').props()['data-l10n-args'])
-      .to.equal(JSON.stringify({ title: experiment.title }));
+    expect(findLocalizedById(subject, 'feedbackUninstallTitle').props()['$title'])
+      .to.equal(experiment.title);
   });
 
   it('should call onCancel when cancel button clicked', () => {
