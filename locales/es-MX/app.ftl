@@ -301,3 +301,6 @@ warningUpgradeFirefoxDetail = Test Pilot requiere la última versión de Firefox
 warningHttpsRequiredTitle = ¡Se requiere HTTPS!
 warningHttpsRequiredDetail = Test Pilot debe ser accedido mediante HTTPS. Por favor mira <a>nuestra documentación</a> para más detalles.
 warningMissingPrefTitle = ¿Desarrollando Test Pilot?
+warningMissingPrefDetail = Al ejecutar Test Pilot localmente o en entornos de desarrollo, se necesita una configuración especial. Por favor mira <a>nuestra documentación</a> para más detalles.
+warningBadHostnameTitle = ¡Nombre de servidor no aprobado!
+warningBadHostnameDetail = El sitio de Test Pilot solo puede ser accedido desde testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, o example.com:8000. Mira <a>nuestra documentación</a> para más detalles.
