@@ -199,3 +199,4 @@ universalsearchEolwarning = Znjemóžnijomy awtomatiski eksperiment Universal Se
 testpilotNewsupdatesGeneralupdate1Title = Wósebne powěsći!
 testpilotNewsupdatesGeneralupdate1Content = Smy Test Pilot toś ten powěsćowy kanal pśidali, aby my was wó nejnowšych powěsćach a eksperimentowych pólěpšenjach informěrowali.
 testpilotNewsupdatesGeneralupdate2Title = Změny pó droze
+testpilotNewsupdatesGeneralupdate2Content = Page Shot, Activity Stream, Tab Center a Pulse budu pśichodny tyźeń z Test Pilot póstupowaś, dokulaž se na pśichodnu rundu eksperimentow pśigótujomy.  Buźomy skóro dalej gótowaś, aby my wam k wěsći dali, źož toś te eksperimenty du a kak móžośo je dalej wužywaś.
