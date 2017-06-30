@@ -199,3 +199,4 @@ universalsearchEolwarning = Iremos desabilitar automaticamente o experimento Pes
 testpilotNewsupdatesGeneralupdate1Title = Notícias de última hora!
 testpilotNewsupdatesGeneralupdate1Content = Adicionámos esta fonte de notícias ao Test Pilot para lhe informar sobre as últimas novidades e melhorias na experiência.
 testpilotNewsupdatesGeneralupdate2Title = Mudanças a caminho
+testpilotNewsupdatesGeneralupdate2Content = Page Shot, Activity Stream, Tab Center e Pulse se formarão no Test Pilot na semana que vem, enquanto nos preparamos para a próxima rodada de experimentos. Voltaremos muito em breve para lhe dizer onde esses experimentos irão e como você pode continuar usando-os.
