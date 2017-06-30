@@ -196,3 +196,6 @@ universalsearchContributors1Title = Seniorski designer UX
 universalsearchContributors2Title = Personalny inženjer
 universalsearchContributors3Title = Seniorski wuwijaŕ
 universalsearchEolwarning = Znjemóžnijomy awtomatiski eksperiment Universal Search, gaž se kóńcy a damy wuslědki k wěsći.
+testpilotNewsupdatesGeneralupdate1Title = Wósebne powěsći!
+testpilotNewsupdatesGeneralupdate1Content = Smy Test Pilot toś ten powěsćowy kanal pśidali, aby my was wó nejnowšych powěsćach a eksperimentowych pólěpšenjach informěrowali.
+testpilotNewsupdatesGeneralupdate2Title = Změny pó droze
