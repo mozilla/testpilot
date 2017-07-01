@@ -196,3 +196,7 @@ universalsearchContributors1Title = 高级UX设计师
 universalsearchContributors2Title = 受雇工程师
 universalsearchContributors3Title = 高级工程师
 universalsearchEolwarning = 我们将在它结束时自动禁用 Universal Search 实验并报告结果。
+testpilotNewsupdatesGeneralupdate1Title = 最新消息！
+testpilotNewsupdatesGeneralupdate1Content = 我们为 Test Pilot 添加了这个新闻订阅点，助您了解最新消息和实验变更。
+testpilotNewsupdatesGeneralupdate2Title = 正在改变
+testpilotNewsupdatesGeneralupdate2Content = Page Shot、Activity Stream、Tab Center 及 Pulse 将在下周于 Test Pilot 中毕业。新一轮实验已经就绪，实验及使用方法即将到来。
