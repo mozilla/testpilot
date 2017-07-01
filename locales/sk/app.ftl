@@ -122,6 +122,8 @@ experimentListHeader = Vyberte si svoje experimenty!
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Spätná väzba
 experimentCardManage = Spravovať
 experimentCardGetStarted = Aktivovať
 experimentCardLearnMore = Ďalšie informácie

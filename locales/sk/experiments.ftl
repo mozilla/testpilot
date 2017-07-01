@@ -196,3 +196,7 @@ universalsearchContributors1Title = Senior dizajnér používateľského zážit
 universalsearchContributors2Title = Staff Engineer
 universalsearchContributors3Title = Senior inžinier
 universalsearchEolwarning = Po ukončení experimentu Universal Search ho automaticky deaktivujeme a o jeho výsledkoch budeme informovať.
+testpilotNewsupdatesGeneralupdate1Title = Mimoriadna správa!
+testpilotNewsupdatesGeneralupdate1Content = Pridali sme do Test Pilotu tento news feed, aby ste mali k dispozícii najnovšie správy a informácie o vylepšeniach doplnkov.
+testpilotNewsupdatesGeneralupdate2Title = Chystajú sa zmeny
+testpilotNewsupdatesGeneralupdate2Content = Experimenty Page Shot, Activity Stream, Tab Center a Pulse budú budúci týždeň z Test Pilotu odstránené v rámci príprav na novú sériu experimentov. Čoskoro sa dozviete, aká bude budúcnosť týchto experimentov a ako budete môcť pokračovať v ich používaní.
