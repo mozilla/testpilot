@@ -199,3 +199,4 @@ universalsearchEolwarning = Desactivaremos automáticamente el experimento de b�
 testpilotNewsupdatesGeneralupdate1Title = ¡Noticias de última hora!
 testpilotNewsupdatesGeneralupdate1Content = Hemos agregado estas noticias a Test Pilot para informarte sobre las últimas novedades y mejoras en los experimentos.
 testpilotNewsupdatesGeneralupdate2Title = Cambios en camino
+testpilotNewsupdatesGeneralupdate2Content = Page Shot, Activity Stream, Tab Center y Pulse se graduarán de Test Pilot la próxima semana mientras nos preparamos para la siguiente ronda de experimentos. Muy pronto te diremos a donde van estos experimentos y cómo puedes seguir utilizandolos.
