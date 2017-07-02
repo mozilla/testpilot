@@ -122,6 +122,8 @@ experimentListHeader = Vel eksperimenta dine!
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Tilbakemelding
 experimentCardManage = Handsam
 experimentCardGetStarted = Kom i gang
 experimentCardLearnMore = Les meir
@@ -293,3 +295,6 @@ hidePastExperiments = Gøym tidlegare eksperiment
 [[ warnings ]]
 
 warningGenericTitle = Noko gjekk gale!
+warningUpgradeFirefoxTitle = Oppgrader Firefox for å fortsetje!
+warningHttpsRequiredTitle = HTTPS er påkravd!
+warningMissingPrefTitle = Utvikle Test Pilot?
