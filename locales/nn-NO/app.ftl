@@ -298,3 +298,4 @@ warningGenericTitle = Noko gjekk gale!
 warningUpgradeFirefoxTitle = Oppgrader Firefox for å fortsetje!
 warningHttpsRequiredTitle = HTTPS er påkravd!
 warningMissingPrefTitle = Utvikle Test Pilot?
+warningBadHostnameTitle = Ikkje-godkjend vertsnamn!
