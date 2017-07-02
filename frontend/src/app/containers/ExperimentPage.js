@@ -470,7 +470,36 @@ export class ExperimentDetail extends React.Component {
                 {graduated &&
                   <div className="details-description">
                     <section className="graduation-report">
-                      {parser(graduation_report || '')}
+                      { graduation_report ? parser(graduation_report) :
+                        // TODO: This is not very DRY.
+                        // When this page gets refactored we should
+                        // Consolidate the details description to
+                        // Better modularize possible content blocks.git
+                        <div>
+                          <Warning titleL10nId="experimentGradReportPendingTitle"
+                            title="This experiment has ended.">
+                              <div data-l10n-id="experimentGradReportPendingCopy">We are working on a full report. Check back soon for the details.</div>
+                          </Warning>
+                          <div data-l10n-id={this.l10nId('introduction')}>
+                            {parser(introduction)}
+                          </div>
+                          <div className="details-list">
+                            {details.map((detail, idx) => (
+                              <div key={idx}>
+                                <div className="details-image">
+                                  <img width="680" src={detail.image} />
+                                  <p className="caption">
+                                    {detail.headline && <strong data-l10n-id={this.l10nId(['details', idx, 'headline'])}>{detail.headline}</strong>}
+                                    {detail.copy && <span data-l10n-id={this.l10nId(['details', idx, 'copy'])}>
+                                    {parser(detail.copy)}
+                                    </span>}
+                                  </p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      }
                     </section>
                   </div>}
               </LayoutWrapper>
