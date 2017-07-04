@@ -25,9 +25,11 @@ media/
 node_modules/
 static/
 tmp/
+addon/build/
+addon/dist/
+addon/locale/
 
 # Files to ignore within specific directories
 addon/*.rdf
 addon/*.xpi
-addon/locale/
 legal-copy/*html

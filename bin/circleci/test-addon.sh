@@ -1,4 +1,5 @@
 #!/bin/bash
 set -ex
 cd addon/
-npm run slow-test
+npm run lint
+npm run test

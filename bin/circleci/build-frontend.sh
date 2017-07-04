@@ -5,3 +5,4 @@ if [[ $CIRCLE_BRANCH == 'master' ]]; then
 else
     NODE_ENV=production ENABLE_PONTOON=0 ENABLE_DEV_CONTENT=0 ENABLE_DEV_LOCALES=0 npm run static
 fi
+zip -r $CIRCLE_ARTIFACTS/frontend.zip frontend/build

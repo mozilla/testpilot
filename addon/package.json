@@ -1,0 +1,63 @@
+{
+  "title": "Test Pilot",
+  "name": "testpilot-addon",
+  "id": "@testpilot-addon",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Test Pilot is a privacy-sensitive user research program focused on getting new features into Firefox faster.",
+  "repository": "mozilla/testpilot",
+  "homepage": "https://testpilot.firefox.com/",
+  "updateURL": "https://testpilot.firefox.com/static/addon/update.rdf",
+  "updateLink": "https://testpilot.firefox.com/static/addon/latest",
+  "bugs": {
+    "url": "https://github.com/mozilla/testpilot/issues"
+  },
+  "author": "Mozilla (https://mozilla.org/)",
+  "engines": {
+    "firefox": ">=51",
+    "fennec": ">=51"
+  },
+  "permissions": {
+    "multiprocess": true
+  },
+  "main": "./bootstrap.js",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "babel-plugin-syntax-async-functions": "6.13.0",
+    "babel-plugin-syntax-object-rest-spread": "6.13.0",
+    "babel-plugin-transform-object-rest-spread": "6.23.0",
+    "chai": "4.0.2",
+    "copy-webpack-plugin": "4.0.1",
+    "cross-env": "5.0.1",
+    "eslint": "3.17.1",
+    "eslint-config-airbnb": "10.0.1",
+    "eslint-config-react": "1.1.7",
+    "eslint-plugin-flowtype": "2.30.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "5.0.3",
+    "eslint-plugin-react": "7.0.1",
+    "jpm": "1.3.1",
+    "mocha": "3.2.0",
+    "mocha-junit-reporter": "1.13.0",
+    "nyc": "11.0.2",
+    "pontoon-to-webext": "^1.0.2",
+    "shelljs": "0.7.8",
+    "webpack": "3.1.0"
+  },
+  "dependencies": {
+    "babel-loader": "7.1.1",
+    "babel-polyfill": "6.23.0",
+    "pubsub-js": "1.5.7",
+    "uuid": "3.1.0"
+  },
+  "scripts": {
+    "start": "npm run watch",
+    "watch": "cross-env NODE_ENV=development webpack --watch",
+    "package": "cross-env NODE_ENV=production webpack",
+    "package:dev": "cross-env NODE_ENV=development webpack",
+    "sign": "cross-env NODE_ENV=production webpack && node bin/sign",
+    "lint": "eslint -c ../.eslintrc src",
+    "test": "mocha --require babel-register --require ./test/test-setup.js --recursive",
+    "test:watch": "npm test -- --watch"
+  }
+}
