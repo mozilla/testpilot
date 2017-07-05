@@ -184,6 +184,7 @@ tourDoneButton = Končano
 userCountContainer = { $title } v tem trenutku preskuša <span>{ $installation_count }</span> ljudi!
 userCountContainerAlt = Pravkar izdan!
 highlightPrivacy = Vaša zasebnost
+experimentGradReportPendingTitle = Ta poskus se je končal
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
