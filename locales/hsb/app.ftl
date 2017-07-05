@@ -181,6 +181,8 @@ tourDoneButton = Hotowo
 userCountContainer = <span>{ $installation_count }</span> wosobow runje { $title } wupruwuje!
 userCountContainerAlt = Runje startowany!
 highlightPrivacy = Waša priwatnosć
+experimentGradReportPendingTitle = Tutón eksperiment je skónčeny
+experimentGradReportPendingCopy = Dźěłamy na wobšěrnej rozprawje. Hladajće bórze za podrobnosćemi.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
