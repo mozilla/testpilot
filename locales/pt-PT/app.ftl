@@ -184,6 +184,8 @@ tourDoneButton = Feito
 userCountContainer = Estão <span>{ $installation_count }</span> pessoas a experimentar o { $title } neste momento!
 userCountContainerAlt = Acaba de ser lançado!
 highlightPrivacy = A sua privacidade
+experimentGradReportPendingTitle = Esta experiência terminou
+experimentGradReportPendingCopy = Estamos a trabalhar num relatório completo. Volte em breve para ver os detalhes.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
