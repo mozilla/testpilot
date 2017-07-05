@@ -6,6 +6,10 @@
   margin-bottom: $grid-unit;
   padding: $grid-unit;
 
+  .graduation-report & {
+    padding-top: 0;
+  }
+
   header {
     @include flex-container(column, space-around, flex-start);
     background: url('../images/warning.svg') no-repeat left;
