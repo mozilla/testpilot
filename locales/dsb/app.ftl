@@ -181,6 +181,8 @@ tourDoneButton = Gótowo
 userCountContainer = <span>{ $installation_count }</span> wósobow rowno { $title } testujo!
 userCountContainerAlt = Rowno startowany!
 highlightPrivacy = Waša priwatnosć
+experimentGradReportPendingTitle = Toś ten eksperiment jo skóńcony
+experimentGradReportPendingCopy = Źěłamy na wobšyrnej rozpšawje. Glědajśo skóro za drobnostkami.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
