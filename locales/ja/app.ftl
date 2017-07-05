@@ -184,6 +184,8 @@ tourDoneButton = 完了
 userCountContainer = 今現在 <span>{ $installation_count }</span> 人のユーザーが { $title } を試しています！
 userCountContainerAlt = 最近公開！
 highlightPrivacy = プライバシー
+experimentGradReportPendingTitle = この実験は終了しました
+experimentGradReportPendingCopy = 現在詳細なレポートを作成中です。また後で見に来てください。
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
