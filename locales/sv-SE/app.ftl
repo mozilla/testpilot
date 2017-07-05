@@ -97,8 +97,8 @@ notFoundHeader = Fyra noll fyra!
 emailOptInDialogTitle = Välkommen till Test Pilot!
 emailOptInMessage = Få reda på mer om nya experiment och se testresultat för experiment som du har testat.
 emailOptInConfirmationTitle = E-post har skickats
-emailOptInSuccessMessage2 = Tack!
 emailOptInConfirmationClose = Vidare till experimenten...
+emailOptInDialogErrorTitle = Åh nej!
 
 
 // news feed updates.
@@ -184,6 +184,8 @@ tourDoneButton = Klar
 userCountContainer = Det finns <span>{ $installation_count }</span> personer som provar { $title } just nu!
 userCountContainerAlt = Nyligen startad!
 highlightPrivacy = Din sekretesspolicy
+experimentGradReportPendingTitle = Detta experiment har upphört
+experimentGradReportPendingCopy = Vi arbetar med en fullständig rapport. Återkom snart för detaljer.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
