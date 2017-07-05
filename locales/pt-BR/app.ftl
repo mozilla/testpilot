@@ -97,8 +97,8 @@ notFoundHeader = Não encontrado!
 emailOptInDialogTitle = Bem vindo ao Test Pilot!
 emailOptInMessage = Descubra novas experiência e veja os resultados dos testes que você participou.
 emailOptInConfirmationTitle = E-mail enviado
-emailOptInSuccessMessage2 = Obrigado!
 emailOptInConfirmationClose = Vamos aos experimentos...
+emailOptInDialogErrorTitle = Ah não!
 
 
 // news feed updates.
@@ -184,6 +184,8 @@ tourDoneButton = Pronto
 userCountContainer = <span>{ $installation_count }</span> estão experimentando o { $title } agora!
 userCountContainerAlt = Lançado!
 highlightPrivacy = Sua privacidade
+experimentGradReportPendingTitle = Este experimento terminou
+experimentGradReportPendingCopy = Estamos trabalhando em um relatório completo. Volte em breve para ver os detalhes.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
