@@ -122,6 +122,8 @@ experimentListHeader = ¡Elige tus experimentos!
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Comentarios
 experimentCardManage = Administrar
 experimentCardGetStarted = Comenzar
 experimentCardLearnMore = Descubre más
@@ -179,6 +181,8 @@ tourDoneButton = Hecho
 userCountContainer = ¡Hay <span>{ $installation_count }</span> personas probando { $title } ahora mismo!
 userCountContainerAlt = ¡Recién iniciado!
 highlightPrivacy = Tu privacidad
+experimentGradReportPendingTitle = Este experimento ha terminado
+experimentGradReportPendingCopy = Estamos preparando un informe completo. Vuelve pronto para ver todos los detalles.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
