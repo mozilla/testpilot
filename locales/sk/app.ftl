@@ -184,6 +184,8 @@ tourDoneButton = Hotovo
 userCountContainer = Experiment { $title } práve testuje <span>{ $installation_count }</span> ľudí!
 userCountContainerAlt = Práve spustený!
 highlightPrivacy = Vaše súkromie
+experimentGradReportPendingTitle = Tento experiment bol ukončený
+experimentGradReportPendingCopy = Pracujeme na správe. Podrobnosti sa dozviete čoskoro.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
