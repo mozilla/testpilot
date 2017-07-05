@@ -11,7 +11,7 @@ machine:
     example.com: 127.0.0.1
   node:
     version: 6.9.1
-  post
+  post:
     - pyenv global 2.7.12 3.6.1
 
 dependencies:
