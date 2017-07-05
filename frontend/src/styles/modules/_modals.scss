@@ -28,7 +28,7 @@
     margin: 0;
   }
 
-  a {
+  a:not(.button) {
     color: $default;
   }
 }
@@ -144,7 +144,7 @@
   .modal-content {
     font-size: $font-unit * 1.4;
     overflow: hidden;
-    padding: $grid-unit * 1.5;
+    padding: $grid-unit * 1.5 $grid-unit;
     position: relative;
 
     & >:first-child {
@@ -153,90 +153,6 @@
 
     & >:last-child {
       margin-bottom: 0;
-    }
-  }
-
-  .modal-form {
-    @include flex-container(column, center, stretch);
-
-    ul {
-      list-style: none;
-      margin: $grid-unit 0 0;
-      padding: 0;
-    }
-
-    li {
-      margin: 0 0 $grid-unit * .6;
-      padding: 0;
-    }
-
-    input {
-      border: 1px solid $transparent-black-5;
-      border-radius: $small-border-radius;
-      margin: 0;
-      padding: 7px 6px 6px;
-      transition: border 150ms;
-
-      &:focus {
-        border: 1px solid $default;
-      }
-    }
-
-    label {
-      font-size: $font-unit + 4;
-      margin-left: $grid-unit * .25;
-      position: relative;
-      top: $grid-unit * .1;
-    }
-
-    .additional-feedback {
-      background: $transparent-black-02;
-      border: 1px solid $transparent-black-1;
-      border-radius: $small-border-radius;
-      margin: $grid-unit 0 0;
-      padding: $grid-unit * .5;
-    }
-
-    .text-area-label {
-      font-size: $font-unit + 2;
-      margin: 0;
-      padding: $grid-unit * .25;
-      text-align: center;
-    }
-
-    .error {
-      background: $transparent-warning-lightest-5;
-      border: 1px solid $warning-red-light;
-      border-radius: $small-border-radius;
-      color: $warning-red-default;
-    }
-
-    .form-notification {
-      background: $transparent-warning-lightest-5;
-      border-bottom: 1px solid $warning-red-light;
-      border-radius: $small-border-radius;
-      display: block;
-      margin: 0  0 (-$grid-unit * 1.5);
-      padding: $grid-unit * .25;
-      position: absolute;
-      text-align: center;
-      top: 0;
-      transition: opacity 100ms;
-      width: 100%;
-
-      &.hidden {
-        opacity: 0;
-      }
-    }
-
-    textarea {
-      border: 1px solid $feedback-modal-grey;
-      display: block;
-      font-size: $font-unit + 2;
-      height: $font-unit * 8;
-      padding: $grid-unit * .25;
-      resize: none;
-      width: 100%;
     }
   }
 

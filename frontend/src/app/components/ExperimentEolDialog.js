@@ -21,7 +21,7 @@ export default class ExperimentEolDialog extends React.Component {
             <div className="modal-cancel" onClick={e => this.cancel(e)}/>
           </header>
           <form>
-            <div className="modal-content modal-form">
+            <div className="modal-content">
               <p data-l10n-id="eolDisableMessage" data-l10n-args={JSON.stringify({ title })} className="centered"></p>
             </div>
             <div className="modal-actions">

@@ -6,7 +6,6 @@
     border-radius: $small-border-radius;
     box-shadow: none;
     line-height: $font-unit * 1.6;
-    margin-bottom: $grid-unit * .5;
     padding: ($grid-unit * .75) ($grid-unit * .5);
     width: 100%;
   }
@@ -14,10 +13,10 @@
   input[type='email'] {
     border: 0;
     color: $black;
+    margin: $grid-unit * .5 0;
 
     &::placeholder {
       color: $transparent-black-7;
-      text-transform: uppercase;
     }
   }
 
@@ -33,19 +32,22 @@
     }
   }
 
-  p {
-    font-size: $font-unit;
-  }
-
   .revealed-field {
-    height: 0;
-    margin: 0;
-    overflow: hidden;
+    @include flex-container(row, center, center);
+    margin: 0 auto $grid-unit * .5;
+    transform: scaleY(0);
+    transition: transform 125ms;
+    width: 100%;
 
     &.reveal {
-      height: auto;
-      margin-bottom: $grid-unit * .5;
+      transform: scaleY(1);
     }
+  }
+
+  p.disclaimer {
+    margin: $grid-unit * .5 auto 0 auto;
+    text-align: center;
+    width: 100%;
   }
 }
 
@@ -57,10 +59,5 @@
 
   a {
     color: $default;
-  }
-
-  p.disclaimer {
-    text-align: center;
-    width: 100%;
   }
 }

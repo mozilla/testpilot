@@ -73,9 +73,9 @@ export default class NewsletterForm extends React.Component {
 
     return (
       <label className={this.makeRevealedClassNames()} htmlFor={fieldName}>
-        <input name={fieldName} type="checkbox" checked={this.props.privacy} required
+        <input name={fieldName} id={fieldName} type="checkbox" checked={this.props.privacy} required
                onChange={this.handlePrivacyClick} onClick={this.handlePrivacyClick} />
-        { this.state.privacyNote ? <span data-l10n-id="newsletterFormPrivacyAgreementRequired" style={{ color: 'red', marginRight: '0.5em' }}></span> : null }
+        { this.state.privacyNote ? <span data-l10n-id="newsletterFormPrivacyAgreementRequired"></span> : null }
         <span data-l10n-id="newsletterFormPrivacyNotice">
           I&apos;m okay with Mozilla handling by info as explained in
           <a target="_blank" rel="noopener noreferrer"
@@ -101,7 +101,7 @@ export default class NewsletterForm extends React.Component {
 
   renderDisclaimer() {
     return (
-      <p className={`disclaimer ${this.makeRevealedClassNames()}`}
+      <p className="disclaimer"
          data-l10n-id='newsletterFormDisclaimer'>
         We will only send you Test Pilot-related information.
       </p>

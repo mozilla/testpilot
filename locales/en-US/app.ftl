@@ -75,8 +75,8 @@ notFoundHeader = Four Oh Four!
 emailOptInDialogTitle = Welcome to Test Pilot!
 emailOptInMessage = Find out about new experiments and see test results for experiments you've tried.
 emailOptInConfirmationTitle = Email Sent
-emailOptInSuccessMessage2 = Thank you!
 emailOptInConfirmationClose = On to the experiments...
+emailOptInDialogErrorTitle = Oh no!
 
 // news feed updates.
 [[updateList]]

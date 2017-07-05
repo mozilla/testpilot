@@ -71,7 +71,7 @@ describe('app/components/EmailDialog', () => {
       });
 
       expect(subject.state('isSuccess')).to.be.true;
-      const message = subject.findWhere(el => 'emailOptInSuccessMessage2' === el.props()['data-l10n-id']);
+      const message = subject.findWhere(el => 'newsletterFooterSuccessBody' === el.props()['data-l10n-id']);
       expect(message).to.have.length(1);
 
       expect(sendToGA.lastCall.args).to.deep.equal(['event', {
@@ -107,7 +107,7 @@ describe('app/components/EmailDialog', () => {
   it('should dismiss when continue button is clicked after subscribe', () => {
     subject.setState({ isSuccess: true, isError: false });
 
-    const message = subject.findWhere(el => 'emailOptInSuccessMessage2' === el.props()['data-l10n-id']);
+    const message = subject.findWhere(el => 'newsletterFooterSuccessBody' === el.props()['data-l10n-id']);
     expect(message).to.have.length(1);
 
     const button = subject.findWhere(el => 'email-success-continue' === el.props()['id']);
