@@ -97,7 +97,6 @@ notFoundHeader = Štiristo štiri!
 emailOptInDialogTitle = Dobrodošli v programu Test Pilot!
 emailOptInMessage = Bodite obveščeni o novih poskusih in o rezultatih poskusov, ki ste jih preskusili.
 emailOptInConfirmationTitle = E-poštno sporočilo poslano
-emailOptInSuccessMessage2 = Hvala!
 emailOptInConfirmationClose = Naprej na poskuse ...
 
 
@@ -185,6 +184,7 @@ userCountContainer = { $title } v tem trenutku preskuša <span>{ $installation_c
 userCountContainerAlt = Pravkar izdan!
 highlightPrivacy = Vaša zasebnost
 experimentGradReportPendingTitle = Ta poskus se je končal
+experimentGradReportPendingCopy = Pripravljamo popolno poročilo. Podrobnosti bodo kmalu na voljo.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
