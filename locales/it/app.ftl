@@ -97,8 +97,8 @@ notFoundHeader = Quattro zero quattro
 emailOptInDialogTitle = Benvenuto in Test Pilot
 emailOptInMessage = Scopri nuovi esperimenti e consulta i risultati di quelli a cui hai partecipato.
 emailOptInConfirmationTitle = Email inviata
-emailOptInSuccessMessage2 = Grazie!
 emailOptInConfirmationClose = A proposito degli esperimenti…
+emailOptInDialogErrorTitle = Accidenti!
 
 
 // news feed updates.
