@@ -97,8 +97,8 @@ notFoundHeader = 404!
 emailOptInDialogTitle = Víta vás Test Pilot!
 emailOptInMessage = Dozviete sa informácie o nových experimentoch a uvidíte výsledky testov doplnkov, ktoré ste skúšali.
 emailOptInConfirmationTitle = E-mail bol odoslaný
-emailOptInSuccessMessage2 = Ďakujeme!
 emailOptInConfirmationClose = Prejsť na experimenty...
+emailOptInDialogErrorTitle = Ale nie!
 
 
 // news feed updates.
