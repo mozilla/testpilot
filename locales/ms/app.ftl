@@ -95,23 +95,35 @@ notFoundHeader = Empat Kosong Empat!
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = Sekamat datang ke Ujian Perintis!
+emailOptInMessage = Ketahui perihal eksperimen baru dan lihat keputusan ujian bagi eksperimen yang telah anda cuba.
+emailOptInConfirmationTitle = E-mel Dihantar
+emailOptInConfirmationClose = Masih dalam eksperimen...
+emailOptInDialogErrorTitle = Oh tidak!
 
 
 // news feed updates.
 [[ updateList ]]
 
+latestUpdatesTitle = Kemaskini terkini
 
 
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
+experimentListEnabledTab = Didayakan
+experimentListJustLaunchedTab = Baru Dilancarkan
+experimentListJustUpdatedTab = Baru Dikemaskini
 experimentListEndingTomorrow = Tamat Esok
 experimentListEndingSoon = Hampir Tamat
+experimentCondensedHeader = Selamat Datang ke Ujian Perintis!
+experimentListHeader = Pilih eksperimen anda!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Maklum balas
 
 
 // A modal prompt shown when a user disables an experiment.
