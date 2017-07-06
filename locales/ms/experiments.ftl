@@ -53,4 +53,5 @@ trackingprotectionEolwarning = Secara automatik kami akan nyahdayakan eksperimen
 universalsearchDescription = Dapatkan cadangan untuk laman web yang terbaik di web semasa anda menaip dalam Bar Awesome ini.
 universalsearchDetails0Copy = Laman web popular, orang dan artikel Wikipedia muncul semasa anda menaip.
 universalsearchToursteps0Copy = Sekarang anda boleh membuat carian dan navigasi dalam satu tempat.
+universalsearchContributors0Title = Pengurus Produk
 testpilotNewsupdatesGeneralupdate1Title = Berita terkini!
