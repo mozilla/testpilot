@@ -97,8 +97,8 @@ notFoundHeader = 找不到呢！
 emailOptInDialogTitle = 欢迎来到 Test Pilot！
 emailOptInMessage = 了解新的实验，以及查看您尝试过的实验的测试结果。
 emailOptInConfirmationTitle = 电子邮件已发送
-emailOptInSuccessMessage2 = 谢谢！
 emailOptInConfirmationClose = 关于此实验...
+emailOptInDialogErrorTitle = 很遗憾
 
 
 // news feed updates.
@@ -181,6 +181,8 @@ tourDoneButton = 完成
 userCountContainer = 已有 <span>{ $installation_count }</span> 人次尝试过 { $title }！
 userCountContainerAlt = 刚刚启动！
 highlightPrivacy = 您的隐私
+experimentGradReportPendingTitle = 此实验已经结束
+experimentGradReportPendingCopy = 我们正在制作完整报告。请过段时间再回来了解详细信息。
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
