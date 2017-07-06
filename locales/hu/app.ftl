@@ -97,8 +97,8 @@ notFoundHeader = Négy nulla négy!
 emailOptInDialogTitle = Üdvözli a Tesztpilóta!
 emailOptInMessage = Tudjon az új kísérletekről, és lássa a kipróbált kísérletek teszteredményeit.
 emailOptInConfirmationTitle = E-mail elküldve
-emailOptInSuccessMessage2 = Köszönjük!
 emailOptInConfirmationClose = Tovább a kísérletekhez…
+emailOptInDialogErrorTitle = Jaj ne!
 
 
 // news feed updates.
@@ -184,6 +184,8 @@ tourDoneButton = Kész
 userCountContainer = Jelenleg <span>{ $installation_count }</span> ember próbálja ezt ki: { $title }.
 userCountContainerAlt = Épp most indult!
 highlightPrivacy = Magánszféra
+experimentGradReportPendingTitle = Ez a kísérlet véget ért
+experimentGradReportPendingCopy = A teljes jelentésen dolgozunk. Nézzen vissza hamarosan a részletekért.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
