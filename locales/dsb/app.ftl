@@ -97,8 +97,8 @@ notFoundHeader = Styri Nul Styri!
 emailOptInDialogTitle = Witajśo k Test Pilot!
 emailOptInMessage = Zgóńśo wěcej wó nowych eksperimentach a woglědajśo se testowe wuslědki za eksperimenty, na kótarychž sćo se wobźělił.
 emailOptInConfirmationTitle = Mejlka jo se pósłała
-emailOptInSuccessMessage2 = Wjeliki źěk!
 emailOptInConfirmationClose = Dalej k eksperimentam...
+emailOptInDialogErrorTitle = Ow ně!
 
 
 // news feed updates.
