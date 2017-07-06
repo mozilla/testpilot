@@ -95,8 +95,14 @@ errorMessage = Φαίνεται πως κάτι χαλάσαμε. <br> Δοκι�
 emailOptInDialogTitle = Καλώς ορίσατε στο Test Pilot!
 emailOptInMessage = Μάθετε για νέα πειράματα και δείτε τα αποτελέσματα των δοκιμών για πειράματα που έχετε δοκιμάσει.
 emailOptInConfirmationTitle = Το e-mail απεστάλη
-emailOptInSuccessMessage2 = Σάς ευχαριστούμε!
 emailOptInConfirmationClose = Μετάβαση στα πειράματα...
+emailOptInDialogErrorTitle = Ωχ όχι!
+
+
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Τελευταίες ενημερώσεις
 
 
 // A listing of all Test Pilot experiments.
@@ -107,12 +113,15 @@ experimentListJustLaunchedTab = Μόλις ξεκίνησε
 experimentListJustUpdatedTab = Μόλις ενημερώθηκε
 experimentListEndingTomorrow = Λήγει αύριο
 experimentListEndingSoon = Λήγει σύντομα
-experimentsListCondensedHeader = Επιλέξτε τα πειράματά σας!
+experimentCondensedHeader = Καλώς ορίσατε στο Test Pilot!
+experimentListHeader = Επιλέξτε τα πειράματά σας!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Σχόλια
 experimentCardManage = Διαχείριση
 experimentCardGetStarted = Ξεκινήστε
 experimentCardLearnMore = Μάθετε περισσότερα
@@ -168,6 +177,7 @@ tourDoneButton = Τέλος
 userCountContainer = Υπάρχουν <span>{ $installation_count }</span> άτομα που δοκιμάζουν το { $title } αυτή τη στιγμή!
 userCountContainerAlt = Μόλις ξεκίνησε!
 highlightPrivacy = Το απόρρητό σας
+experimentGradReportPendingTitle = Αυτό το πείραμα έχει λήξει
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -268,3 +278,10 @@ noScriptLink = Μάθετε γιατί
 
 viewPastExperiments = Προβολή παλαιών πειραμάτων
 hidePastExperiments = Απόκρυψη παλαιών πειραμάτων
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Κάτι δεν πάει καλά!
+warningHttpsRequiredTitle = Απαιτείται HTTPS!
