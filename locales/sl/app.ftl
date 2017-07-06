@@ -98,6 +98,7 @@ emailOptInDialogTitle = Dobrodošli v programu Test Pilot!
 emailOptInMessage = Bodite obveščeni o novih poskusih in o rezultatih poskusov, ki ste jih preskusili.
 emailOptInConfirmationTitle = E-poštno sporočilo poslano
 emailOptInConfirmationClose = Naprej na poskuse ...
+emailOptInDialogErrorTitle = O, ne!
 
 
 // news feed updates.
