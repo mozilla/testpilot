@@ -97,8 +97,8 @@ notFoundHeader = Fjouwer Nul Fjouwer!
 emailOptInDialogTitle = Wolkom by Test Pilot!
 emailOptInMessage = Untdek mear oer nije eksperiminten en besjoch testresultaten foar eksperiminten dy't jo probearre hawwe.
 emailOptInConfirmationTitle = E-mailberjocht ferstjoerd
-emailOptInSuccessMessage2 = Tige tank!
 emailOptInConfirmationClose = Troch nei de eksperiminten…
+emailOptInDialogErrorTitle = O nee!
 
 
 // news feed updates.
@@ -181,6 +181,8 @@ tourDoneButton = Dien
 userCountContainer = <span>{ $installation_count }</span> minsken brûke op dit stuit { $title }!
 userCountContainerAlt = Krekt start!
 highlightPrivacy = Jo privacy
+experimentGradReportPendingTitle = Dit eksperimint is einige
+experimentGradReportPendingCopy = Wy wurkje oan in folslein rapport. Sjoch ynkoarten nochris foar de details.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
