@@ -97,8 +97,8 @@ notFoundHeader = Štyri Nul Štyri!
 emailOptInDialogTitle = Witajće k Test Pilot!
 emailOptInMessage = Zhońće wjace wo nowych eksperimentach a wobhladajće sej testowe wuslědki za eksperimenty, na kotrychž sće so wobdźělił.
 emailOptInConfirmationTitle = E-mejlka je so pósłała
-emailOptInSuccessMessage2 = Wulki dźak!
 emailOptInConfirmationClose = Dale k eksperimentam...
+emailOptInDialogErrorTitle = Ow ně!
 
 
 // news feed updates.
