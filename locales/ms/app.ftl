@@ -124,47 +124,97 @@ experimentListHeader = Pilih eksperimen anda!
 
 // Small button on experiment card that links to a survey for feedback submission
 experimentCardFeedback = Maklum balas
+experimentCardManage = Urus
+experimentCardGetStarted = Mulakan
+experimentCardLearnMore = Ketahui Selanjutnya
 
 
 // A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
+feedbackSubmitButton = Sertai Kajian Ringkas
+feedbackUninstallTitle = Terima kasih!
+feedbackUninstallCopy =
+    Penyertaan anda dalam Ujian Perintis Firefox
+    amat bermakna! Sila semak eksperimen kami yang lain,
+    dan teruskan untuk banyak lagi yang akan datang!
 
 
 // A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
+experimentPreFeedbackTitle = { $title } maklum balas
+experimentPreFeedbackLinkCopy = Beri maklum balas perihal eksperimen { $title }
 
 
 // A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
+experimentPromoHeader = Sudah bersedia untuk Mulakan?
+experimentPromoSubheader = Kami membina ciri generasi-akan-datang untuk Firefox. Pasang Ujian Perintis dan cubalah!
 
 
 // The experiment detail page.
 [[ experimentPage ]]
 
+isEnabledStatusMessage = { $title } didayakan.
+installErrorMessage = Uh oh. { $title } tidak boleh didayakan. Cuba lagi nanti.
+participantCount = <span>{ $installation_count }</span> peserta
+otherExperiments = Cubalah juga eksperimen berikut
+giveFeedback = Beri maklum balas
+disableHeader = Nyahdayakan Eksperimen?
+disableExperiment = Nyahdayakan { $title }
+disableExperimentTransition = Menyahdaya...
+enableExperiment = Dayakan { $title }
+enableExperimentTransition = Mendayakan...
+experimentManuallyDisabled = { $title } dinyahdaya dalam Pengurus Add-ons
+experimentMeasurementIntro = Sebagai tambahan kepada <a>data</a> dikumpulkan oleh semua eksperimen Ujian Perintis, ini adalah perkara utama yang anda perlu tahu perihal hal yang sedang berlaku apabila anda menggunakan { $experimentTitle }:
+measurements = Privasi anda
+experimentPrivacyNotice = Anda boleh ketahui selanjutnya perihal pengumpulan data untuk { $title } di sini.
+contributorsHeading = Dibawakan untuk anda oleh
+contributorsExtraLearnMore = Ketahui selanjutnya
+changelog = Changelog
+tour = Panduan ringkas
+tourLink = Lancarkan Lawatan
+contribute = Sumbangan
+bugReports = Laporan Pepijat
+discussExperiment = Perbincangan { $title }
+tourOnboardingTitle = { $title } didayakan!
+tourDoneButton = Selesai!
+userCountContainerAlt = baru sahaja dilancarkan!
+highlightPrivacy = Privasi anda
 experimentGradReportPendingTitle = Eksperimen ini sudah tamat
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
+upgradeNoticeTitle = { $title } memerlukan Firefox { $min_release } atau lebih baru.
+upgradeNoticeLink = Cara untuk naik taraf Firefox.
+versionChangeNoticeLink = Dapatkan versi terkini Firefox
 
 
 // Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
+retireSubmitButton = Teruskan
+retirePageSurveyButton = Sertai kajian ringkas
 
 
 // Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroOne = Mula semula pelayar anda
+restartIntroThree = Pilih eksperimen anda
 
 
 // Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
+sharePrimary = Suka Ujian Perintis? Bantu kami cari rekrut baru.
+shareEmail = E-mel
+shareCopy = Salin
+eolNoticeLink = Ketahui selanjutnya
 
 
 // A warning shown to users looking at experiments incompatible with add-ons they already have installed.
@@ -175,11 +225,14 @@ experimentGradReportPendingTitle = Eksperimen ini sudah tamat
 // A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder
+    .placeholder = Emel anda di sini
 
 
 // A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterSuccessHeader = Terima kasih!
 
 
 // A warning shown to users when the experiment is not available in their language
@@ -195,6 +248,7 @@ experimentGradReportPendingTitle = Eksperimen ini sudah tamat
 // Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
+noScriptLink = Ketahui mengapa
 
 
 // Text of a button to toggle visibility of a list of past experiments.
@@ -205,3 +259,5 @@ experimentGradReportPendingTitle = Eksperimen ini sudah tamat
 // Text of warnings to the user if various error conditions are detected
 [[ warnings ]]
 
+warningUpgradeFirefoxTitle = Naik taraf Firefox untuk teruskan!
+warningHttpsRequiredTitle = HTTPS diperlukan!
