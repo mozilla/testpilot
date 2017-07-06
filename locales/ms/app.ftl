@@ -60,26 +60,41 @@ oneClickInstallMajorCta = Dayakan { $title }
 [[ landingFirefox ]]
 
 landingRequiresDesktop = Ujian Perintis memerlukan Firefox untuk Desktop menggunakan Windows, Mac atau Linux
+landingDownloadFirefoxDesc = (Ujian Perintis tersedia untuk Firefox menggunakan Windows, OS X dan Linux)
+landingUpgradeDesc = Ujian Perintis memerlukan Firefox 49 atau lebih tinggi.
+landingUpgradeDesc2 = Ujian Perintis memerlukan Firefox { $version } atau lebih tinggi.
+landingDownloadFirefoxTitle = Firefox
+landingUpgradeFirefoxTitle = Naiktaraf Firefox
+landingDownloadFirefoxSubTitle = Muat turun Percuma
 
 
 // A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
+landingCardListTitle = Bermula 3, 2, 1
+landingCardOne = Dapatkan add-on Ujian Perintis
+landingCardTwo = Dayakan ciri eksperimen
+landingCardThree = Maklumkan kami pendapat anda
 
 
 // Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
+onboardingMessage = Kami letakkan satu ikon pada bar alatan anda supaya anda sentiasa menemukan Ujian Perintis.
 
 
 // Error message pages.
 [[ error ]]
 
+errorHeading = Whoops!
+errorMessage = Nampaknya ada sesuatu yang kami tertinggal. <br> Mungkin boleh cuba lagi nanti.
+notFoundHeader = Empat Kosong Empat!
 
 
 // A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
+emailOptInDialogTitle = Sekamat datang ke Ujian Perintis!
 
 
 // news feed updates.
@@ -90,6 +105,8 @@ landingRequiresDesktop = Ujian Perintis memerlukan Firefox untuk Desktop menggun
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
+experimentListEndingTomorrow = Tamat Esok
+experimentListEndingSoon = Hampir Tamat
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -115,6 +132,7 @@ landingRequiresDesktop = Ujian Perintis memerlukan Firefox untuk Desktop menggun
 // The experiment detail page.
 [[ experimentPage ]]
 
+experimentGradReportPendingTitle = Eksperimen ini sudah tamat
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
