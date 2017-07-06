@@ -97,8 +97,8 @@ notFoundHeader = ページが見つかりません
 emailOptInDialogTitle = Test Pilot へようこそ！
 emailOptInMessage = 新しい実験について知り、あなたが試した実験のテスト結果を見てみましょう。
 emailOptInConfirmationTitle = メールをお送りしました
-emailOptInSuccessMessage2 = ありがとうございます！
 emailOptInConfirmationClose = 実験に進む...
+emailOptInDialogErrorTitle = おっと！
 
 
 // news feed updates.
