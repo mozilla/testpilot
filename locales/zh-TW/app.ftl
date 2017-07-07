@@ -97,8 +97,8 @@ notFoundHeader = 找不到！
 emailOptInDialogTitle = 歡迎使用 Test Pilot！
 emailOptInMessage = 看看有什麼新實驗，以及您參與過的實驗測試結果。
 emailOptInConfirmationTitle = 已寄出郵件
-emailOptInSuccessMessage2 = 感謝您！
 emailOptInConfirmationClose = 繼續前往實驗內容…
+emailOptInDialogErrorTitle = 糟糕！
 
 
 // news feed updates.
@@ -122,6 +122,8 @@ experimentListHeader = 挑選一個實驗！
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = 意見回饋
 experimentCardManage = 管理
 experimentCardGetStarted = 開始使用
 experimentCardLearnMore = 了解更多
@@ -179,6 +181,8 @@ tourDoneButton = 完成
 userCountContainer = 已經有 <span>{ $installation_count }</span> 個人正在試用 { $title }！
 userCountContainerAlt = 剛推出！
 highlightPrivacy = 您的隱私權
+experimentGradReportPendingTitle = 此實驗已經結束
+experimentGradReportPendingCopy = 我們正在撰寫實驗報告，請稍後再回來瞭解報告詳情。
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
