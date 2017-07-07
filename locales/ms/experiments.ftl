@@ -35,6 +35,7 @@ cliqzToursteps0Copy = Mula taip dalam bar URL untuk lihat keputusan masa-sebenar
 cliqzToursteps1Copy = Buka tab baru dan tambah laman web kegemaran anda untuk akses satu-klik.
 cliqzToursteps2Copy = Anda sentiasa boleh memberikan kami maklum balas atau menyahdayakan Cliqz dari Ujian Perintis.
 containersDescription = Penuhkan ruang diri anda sendiri! Cipta beberapa penyimpan untuk setiap kehidupan dalam talian anda - ruang kerja anda, ruang sosial anda, ruang personal anda - untuk kekal terurus dan tetap privasi.
+containersWarning = Nota: Disebabkan ciri keselamatan Penyimpan, eksperimen Ujian Perintis seperti Syot Halaman, Tab Jenak, Pulse dan Aliran Aktiviti mungkin tidak berfungsi di dalam tab Penyimpan. Ingat, ini adalah teknologi eksperimen.
 containersDetails1Copy = Pilih kategori seperti Beli-belah, Kewangan, Kerja atau cipta label baru yang anda suka.
 containersDetails2Copy = Gunakan label kod-warna untuk membezakan Penyimpan sekilas pandang.
 containersToursteps0Copy = Buka Penyimpan baru untuk label dan susun satu set tab.
