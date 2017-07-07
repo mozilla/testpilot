@@ -1,6 +1,12 @@
 #!/bin/bash
 set -ex
 
+IS_PONTOON=$(git show -s --format=%s | grep -q 'Pontoon:' && echo 'true' || echo '')
+if [[ $IS_PONTOON ]]; then
+  echo "Skipping Integration Tests on Pontoon commit.";
+  exit 0;
+fi
+
 GECKODRIVER_URL=$(
   curl -s 'https://api.github.com/repos/mozilla/geckodriver/releases/latest' |
   python -c "import sys, json; r = json.load(sys.stdin); print([a for a in r['assets'] if 'linux64' in a['name']][0]['browser_download_url']);"
