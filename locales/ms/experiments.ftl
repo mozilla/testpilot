@@ -58,6 +58,7 @@ containersContributors6Title = Keselamatan Terunggul
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+minvidDescription = Mengekalkan video menjadi tumpuan. Min Vid membolehkan anda memaparkan video Youtube dan Vimeo dalam bingkai kecil yang kekal di hadapan semasa anda melayari web.
 minvidDetails2CopyChangevideotomedia = Klik kanan pada pautan kepada media untuk cari Min Vid dalam kawalan dalam-konteks.
 minvidToursteps0Copy = Pilih ikon untuk mula menggunakan Min Vid.
 minvidContributors0Title = Jurutera
