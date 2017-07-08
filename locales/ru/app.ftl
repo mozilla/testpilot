@@ -97,8 +97,8 @@ notFoundHeader = Четыреста четыре!
 emailOptInDialogTitle = Добро пожаловать в программу лётчиков-испытателей!
 emailOptInMessage = Узнавайте о новых экспериментах и смотрите результаты тех, в которых вы участвовали.
 emailOptInConfirmationTitle = Письмо отправлено
-emailOptInSuccessMessage2 = Спасибо!
 emailOptInConfirmationClose = Вперёд к экспериментам...
+emailOptInDialogErrorTitle = О, нет!
 
 
 // news feed updates.
@@ -122,6 +122,8 @@ experimentListHeader = Выберите ваши эксперименты!
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Отзыв
 experimentCardManage = Управление
 experimentCardGetStarted = Приступить
 experimentCardLearnMore = Узнать больше
@@ -182,6 +184,8 @@ tourDoneButton = Готово
 userCountContainer = Прямо сейчас <span>{ $installation_count }</span> людей пробуют { $title }!
 userCountContainerAlt = Только что запущено!
 highlightPrivacy = Ваша приватность
+experimentGradReportPendingTitle = Этот эксперимент завершён
+experimentGradReportPendingCopy = Мы работаем над полным отчётом. Загляните попозже, чтобы узнать подробности.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
