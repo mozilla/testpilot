@@ -273,6 +273,7 @@ localeWarningSubtitle = Anda masih dapat mengaktifkannya jika Anda mau.
 // An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledHeader = Mari kita coba percobaan berikut!
 experimentsListNoneInstalledSubheader = Siap untuk mencoba percobaan Test Pilot yang baru? Pilih salah satu untuk mengaktifkannya, coba, dan beritahu kami pendapat Anda.
 experimentsListNoneInstalledCTA = Tidak tertarik? <a>Beri tahu kami alasannya</a>.
 
