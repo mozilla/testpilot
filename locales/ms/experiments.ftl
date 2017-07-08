@@ -78,6 +78,17 @@ minvidContributors3Title = Penyumbang Kejuruteraan
 nomore404sSubtitle = Dikuasakan oleh Wayback Machine
 nomore404sDescription = Bosan dengan kebuntuan dalam web? Kami akan memaklumkan anda apabila ada versi tersimpan perkara yang anda mahu dalam Internet Archive's Wayback Machine.
 nomore404sIntroduction = <p>Ini perkara mudah. Jika anda memukan halaman 404 semasa melayari web, kami akan maklumkan anda samada kandungan yang anda cari itu sudah diarkib dalam Internet Archive's Wayback Machine.</p>
+nomore404sMeasurements0 = Kami mengumpul penggunaan asas bilangan anda menemukan ralat Halaman Tidak Ditemui (Kod 404), bilangan versi cache halaman yang wujud dalam Archive.org, dan bilangan anda  versi cache yang anda tinjau.
+nomore404sMeasurements1 = Untuk menyediakan halaman versi cache, kami hantar URL halaman ralat 404 ke Archive.org. <a href="https://archive.org/" target="_blank">Archive.org</a> memaparkan dasar privasi <a href="https://archive.org/about/terms.php" target="_blank">di sini</a>.
+nomore404sMeasurements2 = Kami tidak mengumpul URL halaman yang anda pinta atau URL yang kami hantar ke Archive.org.
+nomore404sMeasurements3 = Kami mungkin berkongsi keputusan kaji selidik yang anda serahkan kepada kami dan data agregat telemetri berkaitan eksperimen ini dengan Internet Archive,
+nomore404sDetails0Copy = Mengurangkan kebuntuan 404 dengan Wayback Machine.
+nomore404sDetails1Copy = Dibawakan kepada anda oleh rakan kami di Internet Archive.
+nomore404sToursteps0Copy = Layari web seperti yang biasa anda lakukan.  Jika anda menemukan halaman 404, kami akan memaklumkan anda samada wujud versi arkib dalam Wayback Machine.
+nomore404sToursteps1Copy = Anda sentiasa boleh berikan kami maklum balas atau menyahdayakan Tiada Lagi 404 dari Ujian Perintis.
+nomore404sContributors1Title = Pembangun, Wayback Machine, Internet Archive
+nomore404sContributors2Title = Pengarah, Wayback Machine, Internet Archive
+nomore404sContributors3Title = Jurutera Kanan Crawl, Internet Archive
 pageshotContributors0TitleEngineer = Jurutera Perisian
 pageshotContributors1Title = Jurutera Perisian
 pageshotContributors2Title = Pereka bentuk UX
