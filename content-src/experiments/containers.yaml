@@ -4,7 +4,7 @@ slug: containers
 locales:
   - 'en'
 launch_date: '2017-03-01T21:00:00.00Z'
-min_release: 51
+min_release: 53
 incompatible:
   'blok@mozilla.org': 'Tracking Protection'
 thumbnail: /static/images/experiments/containers/icon/thumbnail.png
