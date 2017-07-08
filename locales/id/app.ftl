@@ -62,6 +62,7 @@ oneClickInstallMajorCta = Aktifkan { $title }
 landingRequiresDesktop = Test Pilot memerlukan Firefox for Desktop pada Windows, Mac, atau Linux
 landingDownloadFirefoxDesc = (Test Pilot tersedia untuk Firefox di Windows, OS X, dan Linux)
 landingUpgradeDesc = Test Pilot memerlukan Firefox versi 49 atau lebih tinggi.
+landingUpgradeDesc2 = Test Pilot memerlukan Firefox versi { $version } atau selanjutnya.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Tingkatkan Firefox
 landingDownloadFirefoxSubTitle = Unduh Gratis
@@ -86,6 +87,7 @@ onboardingMessage = Kami menempatkan ikon di bilah alat sehingga Anda dapat sela
 [[ error ]]
 
 errorHeading = Duh!
+errorMessage = Sepertinya ada kerusakan. <br> Mungkin coba lagi nanti.
 notFoundHeader = Empat Oh Empat!
 
 
@@ -95,8 +97,14 @@ notFoundHeader = Empat Oh Empat!
 emailOptInDialogTitle = Selamat datang di Test Pilot!
 emailOptInMessage = Cari tahu percobaan baru dan lihat hasil pengujian percobaan yang sudah Anda coba.
 emailOptInConfirmationTitle = Surel Terkirim
-emailOptInSuccessMessage2 = Terima kasih!
 emailOptInConfirmationClose = Pada percobaan...
+emailOptInDialogErrorTitle = Oh tidak!
+
+
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Pembaruan terbaru
 
 
 // A listing of all Test Pilot experiments.
@@ -107,12 +115,15 @@ experimentListJustLaunchedTab = Baru Diluncurkan
 experimentListJustUpdatedTab = Baru Diperbarui
 experimentListEndingTomorrow = Berakhir Besok
 experimentListEndingSoon = Berakhir Segera
-experimentsListCondensedHeader = Pilih percobaan Anda!
+experimentCondensedHeader = Selamat datang di Test Pilot!
+experimentListHeader = Pilih percobaan Anda
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Umpan Balik
 experimentCardManage = Kelola
 experimentCardGetStarted = Memulai
 experimentCardLearnMore = Pelajari Lebih Lanjut
@@ -156,7 +167,10 @@ disableExperiment = Nonaktifkan { $title }
 disableExperimentTransition = Menonaktifkan...
 enableExperiment = Aktifkan { $title }
 enableExperimentTransition = Mengaktifkan...
+experimentManuallyDisabled = { $title } dimatikan di Pengelola Pengaya
+experimentMeasurementIntro = Selain <a>data</a> yang dikumpulkan oleh semua percobaan Test Pilot, berikut adalah hal-hal utama yang harus Anda ketahui tentang apa yang terjadi ketika Anda menggunakan { $experimentTitle }:
 measurements = Privasi Anda
+experimentPrivacyNotice = Anda dapat mempelajari lebih lanjut mengenai pengumpulan data untuk { $title } di sini.
 contributorsHeading = Dipersembahkan oleh
 contributorsExtraLearnMore = Pelajari lebih lanjut
 changelog = Log perubahan
@@ -170,6 +184,8 @@ tourDoneButton = Selesai
 userCountContainer = Saat ini ada <span>{ $installation_count }</span> orang sedang mencoba { $title }!
 userCountContainerAlt = Baru saja diluncurkan!
 highlightPrivacy = Privasi Anda
+experimentGradReportPendingTitle = Percobaan ini telah berakhir
+experimentGradReportPendingCopy = Kami sedang mengerjakan laporan lengkapnya. Periksa kembali untuk melihat secara detil.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -177,12 +193,16 @@ highlightPrivacy = Privasi Anda
 
 upgradeNoticeTitle = { $title } membutuhkan Firefox versi { $min_release } atau yang lebih baru.
 upgradeNoticeLink = Cara memperbarui Firefox.
+versionChangeNotice = { $experiment_title } tidak didukung pada Firefox versi ini.
+versionChangeNoticeLink = Dapatkan Firefox versi terbaru.
 
 
 // Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
 retireDialogTitle = Hapus Test Pilot?
+retireMessage = Seperti yang Anda inginkan. Hal ini akan mematikan test manapun yang aktif, mencopot pengaya dan menghapus informasi akun Anda dari server kami.
+retireEmailMessage = Untuk menyisih dari pembaruan surel, cukup klik tautan <em>berhenti berlangganan</em> pada surel Test Pilot manapun.
 retireSubmitButton = Memproses
 pageTitleRetirePage = Firefox Test Pilot - Hapus Test Pilot
 retirePageProgressMessage = Mematikan...
@@ -240,6 +260,7 @@ newsletterFooterError = Ada masalah saat mengirim surel Anda. Coba lagi?
 newsletterFooterHeader = Tetap Terhubung
 newsletterFooterBody = Cari tahu percobaan baru dan lihat hasil pengujian percobaan yang sudah Anda coba.
 newsletterFooterSuccessHeader = Terima kasih!
+newsletterFooterSuccessBody = Jika Anda belum pernah mengkonfirmasi langganan pada nawala Mozilla manapun, Anda mungkin harus melakukannya. Mohon periksa kotak masuk atau filter spam Anda.
 
 
 // A warning shown to users when the experiment is not available in their language
@@ -252,6 +273,7 @@ localeWarningSubtitle = Anda masih dapat mengaktifkannya jika Anda mau.
 // An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledSubheader = Siap untuk mencoba percobaan Test Pilot yang baru? Pilih salah satu untuk mengaktifkannya, coba, dan beritahu kami pendapat Anda.
 experimentsListNoneInstalledCTA = Tidak tertarik? <a>Beri tahu kami alasannya</a>.
 
 
@@ -268,3 +290,18 @@ noScriptLink = Cari tahu alasannya
 
 viewPastExperiments = Lihat Percobaan Sebelumnya
 hidePastExperiments = Sembunyikan Percobaan Sebelumnya
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Ada kesalahan!
+warningGenericDetail = Ada kesalahan pada Test Pilot. Mohon  <a>lapor bug</a> dan sebutkan pesan kesalahan ini.
+warningUpgradeFirefoxTitle = Tingkatkan Firefox untuk melanjutkan!
+warningUpgradeFirefoxDetail = Test Pilot memerlukan Firefox versi terbaru. <a>Tingkatkan Firefox</a> untuk memulai.
+warningHttpsRequiredTitle = HTTPS diwajibkan!
+warningHttpsRequiredDetail = Test Pilot harus diakses melalui HTTPS. Mohon lihat <a>dokumentasi kami</a> untuk selengkapnya.
+warningMissingPrefTitle = Mengembangkan Test Pilot?
+warningMissingPrefDetail = Saat menjalankan Test Pilot secara lokal atau pada lingkungan pengembangan, konfigurasi khusus diperlukan. Mohon liat <a>dokumentasi kami</a> untuk selengkapnya.
+warningBadHostnameTitle = Hostname tidak disetujui!
+warningBadHostnameDetail = Situs Test Pilot hanya bisa diakses melalui testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, atau example.com:8000. Mohon lihat <a>dokumentasi kami</a> untuk selengkapnya.
