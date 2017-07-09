@@ -97,8 +97,8 @@ notFoundHeader = Fire null fire!
 emailOptInDialogTitle = Velkomen til Test Pilot!
 emailOptInMessage = Finn ut meir om nye eksperiment og sjå testresultat for eksperiment som du har testa.
 emailOptInConfirmationTitle = E-post er sendt
-emailOptInSuccessMessage2 = Takk skal du ha!
 emailOptInConfirmationClose = Vidare til eksperimenta…
+emailOptInDialogErrorTitle = Å, nei!
 
 
 // news feed updates.
@@ -184,6 +184,7 @@ tourDoneButton = Ferdig
 userCountContainer = Det er <span>{ $installation_count }</span> personar som prøver { $title } akkurat no!
 userCountContainerAlt = Nettopp starta!
 highlightPrivacy = Ditt personvern
+experimentGradReportPendingTitle = Dette eksperimentet er avslutta
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
