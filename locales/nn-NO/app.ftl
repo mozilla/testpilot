@@ -185,6 +185,7 @@ userCountContainer = Det er <span>{ $installation_count }</span> personar som pr
 userCountContainerAlt = Nettopp starta!
 highlightPrivacy = Ditt personvern
 experimentGradReportPendingTitle = Dette eksperimentet er avslutta
+experimentGradReportPendingCopy = Vi arbeider med ein fullstendig rapport. Kom tilbake snart for meir info.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -296,7 +297,10 @@ hidePastExperiments = Gøym tidlegare eksperiment
 [[ warnings ]]
 
 warningGenericTitle = Noko gjekk gale!
+warningGenericDetail = Noko gjekk gale med Test Pilot. Gjer vel og <a>send inn ein feilrapport</a> og ta med denne feilmeldinga.
 warningUpgradeFirefoxTitle = Oppgrader Firefox for å fortsetje!
+warningUpgradeFirefoxDetail = Test Pilot krev siste versjon av Firefox. <a>Oppgrader Firefox</a> for att kome i gang.
 warningHttpsRequiredTitle = HTTPS er påkravd!
+warningHttpsRequiredDetail = Test Pilot må brukast via HTTPS. Sjå <a>dokumentasjonen vår</a> for meir informasjon.
 warningMissingPrefTitle = Utvikle Test Pilot?
 warningBadHostnameTitle = Ikkje-godkjend vertsnamn!
