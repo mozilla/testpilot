@@ -98,6 +98,7 @@ pageshotContributors0TitleEngineer = Jurutera Perisian
 pageshotContributors1Title = Jurutera Perisian
 pageshotContributors2Title = Pereka bentuk UX
 pageshotEolwarning = Eksperimen ini akan tamat, tetapi Syot Halaman akan dihantar dalam Firefox secara piawai musim luruh ini. Jika anda mempunyai eksperimen Syot Halaman yang dipasang, secara automatik kami menaiktaraf anda.
+pulseIntroduction = Kami sedang membina Firefox generasi baru dan memberi tumpuan kepada prestasi dan kelajuan dunia-sebenar. Pulse membolehkan anda memberi kami maklum balas mengenai laman web yang berfungsi dengan baik dan yang tidak berfungsi dalam Firefox.
 pulsePrefeedbackcopy = <p>Untuk laporkan laman web yang tidak berfungsi dengan Pulse, pilih ikon Pulse dalam bar yang mempamerkan URL laman web tersebut.</p>
 pulseDetails0Copy = Berikan maklum balas prestasi laman web semasa anda melayari web.
 pulseToursteps0Copy = Klik pada ikon Pulse di bar URL anda untuk memberi maklum balas untuk laman web itu.
