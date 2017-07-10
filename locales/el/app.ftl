@@ -88,6 +88,7 @@ onboardingMessage = Τοποθετήσαμε ένα κουμπί στη γραμ
 
 errorHeading = Ουπς!
 errorMessage = Φαίνεται πως κάτι χαλάσαμε. <br> Δοκιμάστε ξανά αργότερα.
+notFoundHeader = Τέσσερα μηδέν τέσσερα!
 
 
 // A modal prompt to sign up for the Test Pilot newsletter.
@@ -298,4 +299,10 @@ hidePastExperiments = Απόκρυψη παλαιών πειραμάτων
 warningGenericTitle = Κάτι δεν πάει καλά!
 warningGenericDetail = Κάτι έχει πάει στραβά με το Test Pilot. Παρακαλούμε <a>αναφέρετε ένα σφάλμα</a> και παραθέστε το μήνυμα του σφάλματος.
 warningUpgradeFirefoxTitle = Αναβαθμίστε το Firefox για να συνεχίσετε!
+warningUpgradeFirefoxDetail = Το Test Pilot απαιτεί την πιο πρόσφατη έκδοση του Firefox. <a>Αναβαθμίστε το Firefox</a> για να ξεκινήσετε.
 warningHttpsRequiredTitle = Απαιτείται HTTPS!
+warningHttpsRequiredDetail = Η πρόσβαση στο Test Pilot πρέπει να γίνεται μέσω HTTPS. Παρακαλούμε δείτε <a>την τεκμηρίωσή μας</a> για λεπτομέρειες.
+warningMissingPrefTitle = Είστε προγραμματιστής του Test Pilot;
+warningMissingPrefDetail = Όταν εκτελείτε το Test Pilot τοπικά ή σε προγραμματιστικό περιβάλλον, απαιτείται ειδική ρύθμιση. Παρακαλούμε δείτε <a>την τεκμηρίωσή μας</a> για λεπτομέρειες.
+warningBadHostnameTitle = Μη εγκεκριμένο όνομα host!
+warningBadHostnameDetail = Η πρόσβαση στην ιστοσελίδα του Test Pilot μπορεί να γίνει μόνο από το testpilot.firefox.com, το testpilot.stage.mozaws.net, το testpilot.dev.mozaws.net ή το example.com:8000. Παρακαλούμε δείτε <a>την τεκμηρίωσή μας</a> για λεπτομέρειες.
