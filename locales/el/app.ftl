@@ -133,6 +133,10 @@ experimentCardLearnMore = Μάθετε περισσότερα
 
 feedbackSubmitButton = Συμμετοχή σε γρήγορη έρευνα
 feedbackUninstallTitle = Σάς ευχαριστούμε!
+feedbackUninstallCopy =
+    Η συμμετοχή στο Firefox Test Pilot σημαίνει
+    πολλά! Παρακαλούμε δείτε τα άλλα μας πειράματα
+    και μείνετε συντονισμένοι για πολλά άλλα!
 
 
 // A modal prompt shown before the feedback survey for some experiments.
@@ -163,6 +167,7 @@ disableExperimentTransition = Απενεργοποίηση...
 enableExperiment = Ενεργοποίηση του { $title }
 enableExperimentTransition = Ενεργοποίηση...
 experimentManuallyDisabled = Το { $title } απενεργοποιήθηκε στη Διαχείριση Προσθέτων
+experimentMeasurementIntro = Πέρα από τα <a>δεδομένα</a> που συλλέγονται από όλα τα πειράματα του Test Pilot, ορίστε τα σημαντικά πράγματα που πρέπει να γνωρίζετε σχετικά με το τι συμβαίνει όταν χρησιμοποιείτε το { $experimentTitle }:
 measurements = Το απόρρητό σας
 experimentPrivacyNotice = Μπορείτε να μάθετε περισσότερα σχετικά τη συλλογή δεδομένων για το { $title } εδώ.
 contributorsHeading = Παρέχεται σε εσάς από
@@ -179,6 +184,7 @@ userCountContainer = Υπάρχουν <span>{ $installation_count }</span> άτ�
 userCountContainerAlt = Μόλις ξεκίνησε!
 highlightPrivacy = Το απόρρητό σας
 experimentGradReportPendingTitle = Αυτό το πείραμα έχει λήξει
+experimentGradReportPendingCopy = Εργαζόμαστε πάνω σε μια πλήρη αναφορά. Ελέγξτε ξανά σύντομα για λεπτομέρειες.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -207,6 +213,7 @@ retirePageSurveyButton = Συμμετοχή σε μια γρήγορη έρευ�
 // Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = Τι να κάνετε πριν την "απογείωση"
 restartIntroOne = Κάντε επανεκκίνηση του προγράμματος περιήγησής σας
 restartIntroTwo = Εντοπίστε το πρόσθετο Test Pilot
 restartIntroThree = Επιλέξτε τα πειράματά σας
@@ -250,7 +257,9 @@ newsletterFormSubmitButtonSubmitting = Υποβολή...
 
 newsletterFooterError = Προέκυψε σφάλμα κατά την υποβολή της διεύθυνσης e-mail σας. Δοκιμή ξανά;
 newsletterFooterHeader = Μείνετε ενημερωμένοι
+newsletterFooterBody = Μάθετε για τα νέα πειράματα και δείτε τα αποτελέσματα των δοκιμών για πειράματα που έχετε δοκιμάσει.
 newsletterFooterSuccessHeader = Ευχαριστούμε!
+newsletterFooterSuccessBody = Αν δεν έχετε επιβεβαιώσει προηγουμένως μια εγγραφή στο newsletter σχετικά με τη Mozilla, ίσως χρειαστεί να το κάνετε. Παρακαλώ ελέγξτε τα εισερχόμενά σας ή το φάκελο ανεπιθύμητων για ένα email από εμάς.
 
 
 // A warning shown to users when the experiment is not available in their language
@@ -264,6 +273,7 @@ localeWarningSubtitle = Μπορείτε ακόμη να το ενεργοποι
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = Ας απογειωθούμε!
+experimentsListNoneInstalledSubheader = Έτοιμοι να δοκιμάσετε ένα νέο πείραμα Test Pilot; Επιλέξτε ένα για ενεργοποίηση, δοκιμάστε το και ενημερώστε μας για την άποψή σας.
 experimentsListNoneInstalledCTA = Δεν ενδιαφέρεστε; <a>Πείτε μας γιατί</a>.
 
 
@@ -286,4 +296,6 @@ hidePastExperiments = Απόκρυψη παλαιών πειραμάτων
 [[ warnings ]]
 
 warningGenericTitle = Κάτι δεν πάει καλά!
+warningGenericDetail = Κάτι έχει πάει στραβά με το Test Pilot. Παρακαλούμε <a>αναφέρετε ένα σφάλμα</a> και παραθέστε το μήνυμα του σφάλματος.
+warningUpgradeFirefoxTitle = Αναβαθμίστε το Firefox για να συνεχίσετε!
 warningHttpsRequiredTitle = Απαιτείται HTTPS!
