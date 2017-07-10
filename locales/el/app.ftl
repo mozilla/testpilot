@@ -62,6 +62,7 @@ oneClickInstallMajorCta = Ενεργοποίηση του { $title }
 landingRequiresDesktop = Το Test Pilot απαιτεί το Firefox για υπολογιστές σε Windows, Mac ή Linux
 landingDownloadFirefoxDesc = (Το Test Pilot είναι διαθέσιμο για το Firefox σε Windows, OS X και Linux)
 landingUpgradeDesc = Το Test Pilot απαιτεί το Firefox 49 ή νεότερο.
+landingUpgradeDesc2 = Το Test Pilot απαιτεί το Firefox { $version } ή νεότερο.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Αναβάθμιση του Firefox
 landingDownloadFirefoxSubTitle = Δωρεάν λήψη
@@ -248,6 +249,7 @@ newsletterFormSubmitButtonSubmitting = Υποβολή...
 [[ newsletterFooter ]]
 
 newsletterFooterError = Προέκυψε σφάλμα κατά την υποβολή της διεύθυνσης e-mail σας. Δοκιμή ξανά;
+newsletterFooterHeader = Μείνετε ενημερωμένοι
 newsletterFooterSuccessHeader = Ευχαριστούμε!
 
 
