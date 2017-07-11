@@ -97,8 +97,8 @@ notFoundHeader = Четири нула четири!
 emailOptInDialogTitle = Добродошли у Test Pilot!
 emailOptInMessage = Сазнајте за нове експерименте и погледајте резултате експеримената које сте испробали.
 emailOptInConfirmationTitle = Порука послата
-emailOptInSuccessMessage2 = Хвала!
 emailOptInConfirmationClose = Напред на експерименте...
+emailOptInDialogErrorTitle = Ох не!
 
 
 // news feed updates.
@@ -122,6 +122,8 @@ experimentListHeader = Изаберите ваше експерименте!
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Повратна информација
 experimentCardManage = Управљајте
 experimentCardGetStarted = Започните
 experimentCardLearnMore = Сазнајте више
@@ -182,6 +184,8 @@ tourDoneButton = Готово
 userCountContainer = Тренутно има <span>{ $installation_count }</span> људи који испробавају { $title }!
 userCountContainerAlt = Управо објављено!
 highlightPrivacy = Ваша приватност
+experimentGradReportPendingTitle = Овај експеримент се завршио
+experimentGradReportPendingCopy = Радимо на потпуном извештају. Вратите се ускоро за детаље.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.

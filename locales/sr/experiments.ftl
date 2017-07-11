@@ -196,3 +196,7 @@ universalsearchContributors1Title = Сениор UX дизајнер
 universalsearchContributors2Title = Инжењер особља
 universalsearchContributors3Title = Сениор инжењер
 universalsearchEolwarning = Ми ћемо аутоматски онемогућити експеримент Universal Search и поднети извештај о резултатима када се заврши.
+testpilotNewsupdatesGeneralupdate1Title = Нове вести!
+testpilotNewsupdatesGeneralupdate1Content = Додали смо ове вести Test Pilot-у да вас обавестимо о последњим новостима и побољшањима експеримената.
+testpilotNewsupdatesGeneralupdate2Title = Измене на путу
+testpilotNewsupdatesGeneralupdate2Content = Page Shot, Activity Stream, Tab Center и Pulse ће се уклонити са Test Pilot-а следеће недеље док се спремамо за следеће експерименте. Ускоро ћемо вас обавестити где ће се ови експерименти пребацити и како да их и даље користите.
