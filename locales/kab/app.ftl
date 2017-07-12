@@ -97,8 +97,8 @@ notFoundHeader = Ihuh… 404 !
 emailOptInDialogTitle = Ansuf ɣeṛ Test Pilot!
 emailOptInMessage = Awi-d igmaḍ n ikayaden n tirmitin inek udiɣ wali amaynut.
 emailOptInConfirmationTitle = Imayl ittwaciyeɛ
-emailOptInSuccessMessage2 = Tanemirt-ik
 emailOptInConfirmationClose = Ɣef tirmitin…
+emailOptInDialogErrorTitle = Ayuh ala!
 
 
 // news feed updates.
@@ -122,6 +122,8 @@ experimentListHeader = Fren tirmitin inek!
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Tikti
 experimentCardManage = Sefrek
 experimentCardGetStarted = Bdu
 experimentCardLearnMore = Issin ugar
@@ -182,6 +184,8 @@ tourDoneButton = Tefra
 userCountContainer = Llan <span>{ $installation_count }</span> n yemdanen ttaɛraḍen { $title } akka tura!
 userCountContainerAlt = Ikker tura akka!
 highlightPrivacy = Tabaḍnit inek
+experimentGradReportPendingTitle = Tfuk termit
+experimentGradReportPendingCopy = Aqlaɣ nxeddem ɣef uneqqis ummid. Uɣal-d ticki akken ad twaliḍ ugar.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -292,4 +296,12 @@ hidePastExperiments = Ffer tirmitanin izrin
 // Text of warnings to the user if various error conditions are detected
 [[ warnings ]]
 
+warningGenericTitle = Yella wayen ixuṣṣen!
+warningGenericDetail = Test Pilot ur iteddu ara akken iwata, Ma ulac aɣilif, <a>azen yir tiddin</a> udiɣ mmel-d izen n tuccḍa.
+warningUpgradeFirefoxTitle = Leqqem Firefox akken ad tkemleḍ!
+warningUpgradeFirefoxDetail = Test Pilot yesra lqem aneggaru n Firefox. <a>Leqqem Firefox</a> akken ad tebduḍ.
 warningHttpsRequiredTitle = Isra HTTPS!
+warningHttpsRequiredDetail = Test Pilot yessefk ad yekcem s HTTPS. Wali <a>tasemlit-nneɣ</a> i ugar n telqayt.
+warningMissingPrefTitle = Ad tesnefliḍ Test Pilot?
+warningMissingPrefDetail = Ticki tselkameḍ Test Pilot di twennaḍ tadigant neɣ n neflit, tella twila ilaqen. Wali <a>tasemlit-nneɣ</a>i ugar n telɣut.
+warningBadHostnameTitle = Asennefteɣ ur yettwaqeblen ara!
