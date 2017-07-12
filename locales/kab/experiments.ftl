@@ -21,6 +21,7 @@ activitystreamContributors9Title = Anedbal n ufaris
 activitystreamContributors10Title = Anebdal n iseɣẓanen
 activitystreamContributors11Title = Ajenyuṛ n tneflit
 activitystreamContributors12Title = Imcebbeḥ amusnaw
+activitystreamEolwarning = Tarmit-agi tfuk, acu kan Activity Stream ad yettwarmed s wudem amezwer di dans Firefox di lqem d-iteddun.
 cliqzDescription = Awi-d igmaḍ n unadi s zreb. Cliqz ad d-yesken isumar daw n ufeggag n tensa URL skud tettaruḍ. Ayagi akk s ummesten n tudert inek tusligt.
 cliqzIntroduction = Awi-d igmaḍ s zreb, srid deg iminig. Bdu aru sakin ad twaliḍ isumar s wakud ilaw daw n ufeggag n tensa URL. Imi Cliqz izeggel alqaḍ n isefka udmawanen yettwasnen neɣ ad yernu amaɣnu n iseqdacen, igmaḍ inek ad uɣalen d ibaḍniyen.
 cliqzPrivacypreamble = Tarmit Cliqz Test Pilot tusssa-d si leqdic lwaḥid gar Cliqz GmbH, akked Mozilla. Cliqz yettwafṣel akken ad immesten tabaḍnit inek udiɣ ad isewḥel alqaḍ n isefka udmawanen izemren ad tettwaseqdec i tmerna n imeɣna n useqdac. Acu kan, asedreg n isefka dayen iweɣren aṭas, akken yebɣu yeḍru, dima yella wamek ara tesuluḍ imdanen.
