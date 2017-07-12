@@ -1,7 +1,7 @@
 // @flow
 
 import classnames from 'classnames';
-import { Localized } from 'fluent-react';
+import { Localized } from 'fluent-react/compat';
 import moment from 'moment';
 import React from 'react';
 

@@ -1,6 +1,6 @@
 /* global ga */
 import { MessageContext } from 'fluent';
-import { LocalizationProvider } from 'fluent-react';
+import { LocalizationProvider } from 'fluent-react/compat';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 

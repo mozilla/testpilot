@@ -1,4 +1,4 @@
-import { Localized } from 'fluent-react';
+import { Localized } from 'fluent-react/compat';
 
 export function findLocalizedById(wrapper, id) {
   return wrapper.findWhere(

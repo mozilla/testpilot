@@ -1,6 +1,6 @@
 // @flow
 import classnames from 'classnames';
-import { Localized } from 'fluent-react';
+import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
 import LayoutWrapper from './LayoutWrapper';

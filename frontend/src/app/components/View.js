@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import ReactDOMFactories from 'react/lib/ReactDOMFactories';
 import Symbol from 'es-symbol';
-import { Localized } from 'fluent-react';
+import { Localized } from 'fluent-react/compat';
 
 import Copter from '../components/Copter';
 import Footer from '../components/Footer';
