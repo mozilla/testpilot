@@ -10,7 +10,7 @@ module.exports = {
     // All locales on Pontoon for local & dev
     fs.readdirSync('./locales').join(',')  :
     // Enabled locales for stage & production - update as they reach 100%
-    'en-US,cs,de,dsb,es-ES,es-MX,fr,fy-NL,hsb,hu,it,ja,kab,nl,nn-NO,pt-BR,pt-PT,ru,sk,sl,sq,sr,sv-SE,uk,zh-CN,zh-TW',
+    'en-US,cs,de,dsb,es-ES,es-MX,fr,fy-NL,hsb,hu,it,ja,kab,ms,nl,nn-NO,pt-BR,pt-PT,ru,sk,sl,sq,sr,sv-SE,uk,zh-CN,zh-TW',
 
   // TODO: Move addon build to a better path
   ADDON_SRC_PATH: './addon/',
