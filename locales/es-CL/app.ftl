@@ -62,6 +62,7 @@ oneClickInstallMajorCta = Activar { $title }
 landingRequiresDesktop = Test Pilot requiere Firefox para Escritorio en Windows, Mac o Linux
 landingDownloadFirefoxDesc = (Test Pilot esta disponible para Firefox en Windows, OS X y Linux)
 landingUpgradeDesc = Test Pilot requiere Firefox 49 o superior.
+landingUpgradeDesc2 = Test Pilot requiere Firefox { $version } o superior.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Actualiza Firefox
 landingDownloadFirefoxSubTitle = Bájalo gratis
@@ -96,8 +97,14 @@ notFoundHeader = ¡Cuatro Cero Cuatro!
 emailOptInDialogTitle = ¡Bienvenido a Test Pilot!
 emailOptInMessage = Entérate de nuevos experimentos y mira los resultados de aquellos en los que has participado.
 emailOptInConfirmationTitle = Correo enviado
-emailOptInSuccessMessage2 = ¡Gracias!
 emailOptInConfirmationClose = A los experimentos...
+emailOptInDialogErrorTitle = ¡Oh no!
+
+
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Últimas actualizaciones
 
 
 // A listing of all Test Pilot experiments.
@@ -108,12 +115,15 @@ experimentListJustLaunchedTab = Recién lanzado
 experimentListJustUpdatedTab = Recién actualizado
 experimentListEndingTomorrow = Termina mañana
 experimentListEndingSoon = Termina pronto
-experimentsListCondensedHeader = ¡Selecciona tus experimentos!
+experimentCondensedHeader = ¡Bienvenido a Test Pilot!
+experimentListHeader = ¡Selecciona tus experimentos!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Comentarios
 experimentCardManage = Gestionar
 experimentCardGetStarted = Empezar
 experimentCardLearnMore = Aprender más
@@ -174,6 +184,8 @@ tourDoneButton = Hecho
 userCountContainer = ¡Hay <span>{ $installation_count }</span> personas probando { $title } en este momento!
 userCountContainerAlt = ¡Recién lanzado!
 highlightPrivacy = Tu privacidad
+experimentGradReportPendingTitle = Este experimento a terminado
+experimentGradReportPendingCopy = Estamos trabajando en un reporte completo. Revisa pronto para más detalles.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -279,3 +291,18 @@ noScriptLink = Descubre por qué
 
 viewPastExperiments = Ver experimentos anteriores
 hidePastExperiments = Ocultar experimentos anteriores
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = ¡Algo se fue a las pailas!
+warningGenericDetail = Algo falló en Test Pilot. Por favor, <a>ingresa un bug</a> y menciona este mensaje de error.
+warningUpgradeFirefoxTitle = ¡Actualiza Firefox para continuar!
+warningUpgradeFirefoxDetail = Test Pilot requiere la última versión de Firefox. <a>Actualiza Firefox</a> para empezar.
+warningHttpsRequiredTitle = ¡HTTPS requerido!
+warningHttpsRequiredDetail = Test Pilot debe ser accedido a través de HTTPS. Por favor, mira <a>nuestra documentación</a> para detalles.
+warningMissingPrefTitle = ¿Desarrollando Test Pilot?
+warningMissingPrefDetail = Al ejecutar Test Pilot localmente o en entornos de desarrollo, se requiere una configuración especial. Por favor, mira <a>nuestra documentación</a> para detalles.
+warningBadHostnameTitle = ¡Nombre de servidor no aprobado!
+warningBadHostnameDetail = El sitio de Test Pilot solo puede ser accedido desde testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, o example.com:8000. Por favor, mira <a>nuestra documentación</a> para más detalles.
