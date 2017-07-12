@@ -13,6 +13,7 @@ import EmailDialog from '../components/EmailDialog';
 import ExperimentDisableDialog from '../components/ExperimentDisableDialog';
 import ExperimentEolDialog from '../components/ExperimentEolDialog';
 import ExperimentTourDialog from '../components/ExperimentTourDialog';
+import LocalizedHtml from '../components/LocalizedHtml';
 import MainInstallButton from '../components/MainInstallButton';
 import ExperimentCardList from '../components/ExperimentCardList';
 import ExperimentPreFeedbackDialog from '../components/ExperimentPreFeedbackDialog';
@@ -360,11 +361,11 @@ export class ExperimentDetail extends React.Component {
                            <strong>{warning}</strong>
                          </Localized>
                        </div>}
-                      {!graduated && <Localized id={this.l10nId('introduction')}>
+                      {!graduated && <LocalizedHtml id={this.l10nId('introduction')}>
                         <div>
                          {parser(introduction)}
                         </div>
-                      </Localized>}
+                      </LocalizedHtml>}
                       </section>}
                     </div>}
                     {!graduated && <div>
@@ -464,11 +465,11 @@ export class ExperimentDetail extends React.Component {
                               </p>
                             </Localized>
                             <ul>
-                              {measurements.map((note, idx) => <Localized key={idx} id={this.l10nId(['measurements', idx])}>
+                              {measurements.map((note, idx) => <LocalizedHtml key={idx} id={this.l10nId(['measurements', idx])}>
                                 <li>{
                                   EXPERIMENT_MEASUREMENT_URLS[idx] === null ? null : <a href={EXPERIMENT_MEASUREMENT_URLS[idx]}></a>
                                 }</li>
-                              </Localized>)}
+                              </LocalizedHtml>)}
                             </ul>
                           </div>
                           {privacy_notice_url && <Localized id="experimentPrivacyNotice" $title={title}>
@@ -491,11 +492,11 @@ export class ExperimentDetail extends React.Component {
                          <strong>{warning}</strong>
                        </Localized>
                      </div>}
-                     <Localized id={this.l10nId('introduction')}>
+                     <LocalizedHtml id={this.l10nId('introduction')}>
                        <div>
                          {parser(introduction)}
                        </div>
-                     </Localized>
+                     </LocalizedHtml>
                    </section>}
                   </div>}
                   <div className="details-list">
@@ -540,11 +541,11 @@ export class ExperimentDetail extends React.Component {
                         </Localized>
                         <ul>
                           {measurements.map((note, idx) => (
-                            <Localized key={idx} id={this.l10nId(['measurements', idx])}>
+                            <LocalizedHtml key={idx} id={this.l10nId(['measurements', idx])}>
                               <li>{
                                 EXPERIMENT_MEASUREMENT_URLS[idx] === null ? null : <a href={EXPERIMENT_MEASUREMENT_URLS[idx]}></a>
                               }</li>
-                            </Localized>
+                            </LocalizedHtml>
                           ))}
                         </ul>
                       </div>
