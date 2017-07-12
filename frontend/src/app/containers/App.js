@@ -1,5 +1,6 @@
 /* global ga */
 import { MessageContext } from 'fluent';
+import negotiateLanguages from 'fluent-langneg';
 import { LocalizationProvider } from 'fluent-react/compat';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -116,7 +117,13 @@ class App extends Component {
       }
     }
 
-    Promise.all(navigator.languages.map(language =>
+    const negotiated = negotiateLanguages(
+      navigator.languages,
+      config.AVAILABLE_LOCALES,
+      { defaultLocale: 'en-US' }
+    );
+
+    Promise.all(negotiated.map(language =>
       Promise.all(
         [
           fetch(`/static/locales/${language}/app.ftl`).then(response => addLang(language, response)),
