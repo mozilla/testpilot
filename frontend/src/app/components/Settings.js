@@ -1,7 +1,8 @@
 // @flow
 
-import React from 'react';
 import classnames from 'classnames';
+import { Localized } from 'fluent-react/compat';
+import React from 'react';
 
 type SettingsProps = {
   hasAddon: any,
@@ -77,31 +78,46 @@ export default class Settings extends React.Component {
     return (
       <div id="settings">
          <div className="settings-contain">
-            <div className={classnames(['button', 'outline', 'settings-button'], { active: this.showSettingsMenu() })}
-                 onClick={e => this.toggleSettings(e)}
-                 data-l10n-id="menuTitle">
-              Settings
-            </div>
+           <Localized id="menuTitle">
+             <div className={classnames(['button', 'outline', 'settings-button'], { active: this.showSettingsMenu() })}
+                  onClick={e => this.toggleSettings(e)}>
+               Settings
+             </div>
+           </Localized>
               {
                 this.showSettingsMenu()
                 &&
                 <div className="settings-menu" onClick={() => this.settingsClick()}>
                   <ul>
                     <li>
-                      <a onClick={() => this.wiki()} data-l10n-id="menuWiki"
-                       href="https://wiki.mozilla.org/Test_Pilot"
-                       target="_blank" rel="noopener noreferrer">
-                       Test Pilot Wiki
-                      </a>
+                      <Localized id="menuWiki">
+                        <a onClick={() => this.wiki()}
+                         href="https://wiki.mozilla.org/Test_Pilot"
+                         target="_blank" rel="noopener noreferrer">
+                         Test Pilot Wiki
+                        </a>
+                      </Localized>
                     </li>
-                    <li><a onClick={() => this.discuss()} data-l10n-id="menuDiscuss"
-                       href="https://discourse.mozilla-community.org/c/test-pilot"
-                       target="_blank" rel="noopener noreferrer">Discuss Test Pilot</a></li>
-                    <li><a onClick={() => this.fileIssue()} data-l10n-id="menuFileIssue"
-                       href="https://github.com/mozilla/testpilot/issues/new"
-                       target="_blank" rel="noopener noreferrer">File an Issue</a></li>
+                    <li>
+                      <Localized id="menuDiscuss">
+                        <a onClick={() => this.discuss()}
+                         href="https://discourse.mozilla-community.org/c/test-pilot"
+                         target="_blank" rel="noopener noreferrer">Discuss Test Pilot</a>
+                      </Localized>
+                    </li>
+                    <li>
+                      <Localized id="menuFileIssue">
+                        <a onClick={() => this.fileIssue()}
+                         href="https://github.com/mozilla/testpilot/issues/new"
+                         target="_blank" rel="noopener noreferrer">File an Issue</a>
+                      </Localized>
+                    </li>
                     <li><hr /></li>
-                    <li><a onClick={e => this.retire(e)} data-l10n-id="menuRetire">Uninstall Test Pilot</a></li>
+                    <li>
+                      <Localized id="menuRetire">
+                        <a onClick={e => this.retire(e)}>Uninstall Test Pilot</a>
+                      </Localized>
+                    </li>
                   </ul>
                 </div>
               }

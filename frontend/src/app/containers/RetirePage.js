@@ -1,7 +1,7 @@
 // @flow
-
-import React from 'react';
 import classnames from 'classnames';
+import { Localized } from 'fluent-react/compat';
+import React from 'react';
 
 import Copter from '../components/Copter';
 import LayoutWrapper from '../components/LayoutWrapper';
@@ -60,20 +60,33 @@ export default class RetirePage extends React.Component {
       <View centered={true} showHeader={false} showFooter={false} showNewsletterFooter={false} {...this.props}>
         <LayoutWrapper flexModifier="column-center">
           {!uninstalled && <div disabled className={classnames('loading-pill')}>
-            <h1 className="emphasis" data-l10n-id="retirePageProgressMessage">Shutting down...</h1>
+            <Localized id="retirePageProgressMessage">
+              <h1 className="emphasis">Shutting down...</h1>
+            </Localized>
             <div className="state-change-inner">&nbsp;</div>
           </div>}
           {uninstalled && <LayoutWrapper flexModifier="column-center">
             <div id="retire" className="modal centered">
               <div className="modal-header-wrapper">
-                <h1 data-l10n-id="retirePageHeadline" className="modal-header">Thanks for flying!</h1>
+                <Localized id="retirePageHeadline">
+                  <h1 className="modal-header">Thanks for flying!</h1>
+                </Localized>
               </div>
               <div className="modal-content">
-                <p data-l10n-id="retirePageMessage">Hope you had fun experimenting with us. <br /> Come back any time.</p>
+                <Localized id="retirePageMessage2">
+                  <p>Hope you had fun experimenting with us.</p>
+                </Localized>
+                <Localized id="retirePageMessageComeBack">
+                  <p>Come back any time.</p>
+                </Localized>
               </div>
               <div className="modal-actions">
-                <a onClick={() => this.takeSurvey()} data-l10n-id="retirePageSurveyButton" href="https://qsurvey.mozilla.com/s3/test-pilot" target="_blank" rel="noopener noreferrer" className="button default large">Take a quick survey</a>
-                <a href="/"  data-l10n-id="home" className="modal-escape">Home</a>
+                <Localized id="retirePageSurveyButton">
+                  <a onClick={() => this.takeSurvey()} href="https://qsurvey.mozilla.com/s3/test-pilot" target="_blank" rel="noopener noreferrer" className="button default large">Take a quick survey</a>
+                </Localized>
+                <Localized id="home">
+                  <a href="/" className="modal-escape">Home</a>
+                </Localized>
               </div>
             </div>
             <Copter animation="fade-in-fly-up" />

@@ -2,8 +2,9 @@
 
 // @flow
 
-import React from 'react';
 import classnames from 'classnames';
+import { Localized } from 'fluent-react/compat';
+import React from 'react';
 
 import Banner from '../components/Banner';
 import Copter from '../components/Copter';
@@ -64,25 +65,34 @@ export default class HomePageWithAddon extends React.Component {
 
   renderSplash() {
     if (typeof window !== 'undefined' && window.location.search.includes('utm_content=no-experiments-installed')) {
+      const link = <Localized id="experimentsListNoneInstalledCTALink">
+        <a onClick={() => this.onNotInterestedSurveyClick()}
+           href="https://qsurvey.mozilla.com/s3/TxP-User" target="_blank"
+           className="banner__link">
+         Let us know why
+        </a>
+      </Localized>;
       return (
         <Banner background={true}>
           <LayoutWrapper flexModifier="row-between-breaking">
-          <div className="banner__copy">
-            <h2 data-l10n-id="experimentsListNoneInstalledHeader" className="banner__subtitle">
-              Let's get this baby off the ground!
-            </h2>
-            <p data-l10n-id="experimentsListNoneInstalledSubheader">
-              Ready to try a new Test Pilot experiment? Select one to enable, take
-              it for a spin, and let us know what you think.
-            </p>
-            <p data-l10n-id="experimentsListNoneInstalledCTA">
-              Not interested?
-             <a onClick={() => this.onNotInterestedSurveyClick()}
-                href="https://qsurvey.mozilla.com/s3/TxP-User" target="_blank"
-                className="banner__link">
-              Let us know why
-             </a>.
-            </p>
+            <div className="banner__copy">
+              <Localized id="experimentsListNoneInstalledHeader">
+                <h2 className="banner__subtitle">
+                  Let&apos;s get this baby off the ground!
+                </h2>
+              </Localized>
+              <Localized id="experimentsListNoneInstalledSubheader">
+                <p>
+                  Ready to try a new Test Pilot experiment? Select one to enable, take
+                  it for a spin, and let us know what you think.
+                </p>
+              </Localized>
+              <Localized id="experimentsListNoneInstalledCTA2" $link={link}>
+                <p>
+                  Not interested?
+                 {link}.
+                </p>
+              </Localized>
             </div>
             <Copter/>
           </LayoutWrapper>
@@ -92,9 +102,11 @@ export default class HomePageWithAddon extends React.Component {
     return (
       <Banner condensed={true}>
       <LayoutWrapper flexModifier="row-between-reverse">
-        <h2 className="banner__title" data-l10n-id="experimentCondensedHeader">
-          Welcome to Test Pilot!
-        </h2>
+        <Localized id="experimentCondensedHeader">
+          <h2 className="banner__title">
+            Welcome to Test Pilot!
+          </h2>
+        </Localized>
         <Copter small={true} />
       </LayoutWrapper>
       </Banner>
@@ -120,7 +132,9 @@ export default class HomePageWithAddon extends React.Component {
 
         <LayoutWrapper flexModifier="card-list">
           <UpdateList {...{ newsUpdates, experiments }} />
-          <h1 className="emphasis card-list-heading" data-l10n-id="experimentListHeader">Pick your experiments!</h1>
+          <Localized id="experimentListHeader">
+            <h1 className="emphasis card-list-heading">Pick your experiments!</h1>
+          </Localized>
           <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
           <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
         </LayoutWrapper>

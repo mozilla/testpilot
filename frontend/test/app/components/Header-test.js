@@ -2,6 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { mount } from 'enzyme';
+import { findLocalizedById } from '../util';
 
 import Header from '../../../src/app/components/Header';
 
@@ -65,8 +66,8 @@ describe('app/components/Header', () => {
       });
 
       const clickItem = name => {
-        subject
-          .findWhere(el => name === el.props()['data-l10n-id'])
+        findLocalizedById(subject, name)
+          .find('a')
           .simulate('click', mockClickEvent);
       };
 

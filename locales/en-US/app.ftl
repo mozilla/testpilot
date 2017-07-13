@@ -29,7 +29,9 @@ menuRetire = Uninstall Test Pilot
 landingIntroOne = Test new features.
 landingIntroTwo = Give your feedback.
 landingIntroThree = Help build Firefox.
-landingLegalNotice = By proceeding, you agree to the <a>Terms of Use</a> and <a>Privacy Notice</a> of Test Pilot.
+landingLegalNotice2 = By proceeding, you agree to the { $terms } and { $privacy } of Test Pilot.
+landingLegalNoticeTermsOfUse = Terms of Use
+landingLegalNoticePrivacyNotice = Privacy Notice
 landingExperimentsTitle = Try out the latest experimental features
 
 // Related to the installation of the Test Pilot add-on.
@@ -40,14 +42,13 @@ landingInstalledButton = Choose your features
 
 // Related to a one click to install test pilot and an experiment.
 [[oneClickInstall]]
-oneClickInstallMinorCta = Install Test Pilot &amp;
+oneClickInstallMinorCta2 = Install Test Pilot &
 oneClickInstallMajorCta = Enable {$title}
 
 // Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[landingFirefox]]
 landingRequiresDesktop = Test Pilot requires Firefox for Desktop on Windows, Mac or Linux
 landingDownloadFirefoxDesc = (Test Pilot is available for Firefox on Windows, OS X and Linux)
-landingUpgradeDesc = Test Pilot requires Firefox 49 or higher.
 landingUpgradeDesc2 = Test Pilot requires Firefox {$version} or higher.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Upgrade Firefox
@@ -67,7 +68,8 @@ onboardingMessage = We put an icon in your toolbar so you can always find Test P
 // Error message pages.
 [[error]]
 errorHeading = Whoops!
-errorMessage = Looks like we broke something. <br> Maybe try again later.
+errorMessage2 = Looks like we broke something.
+errorMessageTryAgain = Maybe try again later.
 notFoundHeader = Four Oh Four!
 
 // A modal prompt to sign up for the Test Pilot newsletter.
@@ -123,7 +125,7 @@ experimentPromoSubheader = We're building next-generation features for Firefox. 
 [[experimentPage]]
 isEnabledStatusMessage = {$title} is enabled.
 installErrorMessage = Uh oh. {$title} could not be enabled. Try again later.
-participantCount = <span>{$installation_count}</span> participants
+participantCount2 = {$installation_count} participants
 otherExperiments = Try out these experiments as well
 giveFeedback = Give Feedback
 disableHeader = Disable Experiment?
@@ -132,7 +134,8 @@ disableExperimentTransition = Disabling...
 enableExperiment = Enable {$title}
 enableExperimentTransition = Enabling...
 experimentManuallyDisabled = {$title} disabled in Add-ons Manager
-experimentMeasurementIntro = In addition to the <a>data</a> collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use { $experimentTitle }:
+experimentMeasurementIntro2 = In addition to the {$data} collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use {$experimentTitle}:
+experimentMeasurementIntroDataLink = data
 measurements = Your privacy
 experimentPrivacyNotice = You can learn more about the data collection for {$title} here.
 contributorsHeading = Brought to you by
@@ -145,7 +148,7 @@ bugReports = Bug Reports
 discussExperiment = Discuss { $title }
 tourOnboardingTitle = {$title} enabled!
 tourDoneButton = Done
-userCountContainer = There are <span>{$installation_count}</span> people trying {$title} right now!
+userCountContainer2 = There are {$installation_count} people trying {$title} right now!
 userCountContainerAlt = Just launched!
 highlightPrivacy = Your privacy
 experimentGradReportPendingTitle = This experiment has ended
@@ -162,12 +165,13 @@ versionChangeNoticeLink = Get the current version of Firefox.
 [[uninstall]]
 retireDialogTitle = Uninstall Test Pilot?
 retireMessage = As you wish. This will disable any active tests, uninstall the add-on and remove your account info from our servers.
-retireEmailMessage = To opt out of email updates, simply click the <em>unsubscribe</em> link on any Test Pilot email.
+retireEmailMessage2 = To opt out of email updates, simply click the unsubscribe link on any Test Pilot email.
 retireSubmitButton = Proceed
 pageTitleRetirePage = Firefox Test Pilot - Uninstall Test Pilot
 retirePageProgressMessage = Shutting down...
 retirePageHeadline = Thanks for flying!
-retirePageMessage = Hope you had fun experimenting with us. <br> Come back any time.
+retirePageMessage2 = Hope you had fun experimenting with us.
+retirePageMessageComeBack = Come back any time.
 retirePageSurveyButton = Take a quick survey
 
 // Shown to users after installing Test Pilot if a restart is required.
@@ -188,19 +192,20 @@ shareCopy = Copy
 eolIntroMessage = {$title} is ending on {$completedDate}
 eolNoticeLink = Learn more
 eolDisableMessage = The {$title} experiment has ended. Once you uninstall it you won't be able to re-install it through Test Pilot again.
-completedDateLabel = Experiment End Date: <b>{$completedDate}</b>
+completedDateLabel2 = Experiment End Date: {$completedDate}
 
 // A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 [[incompatible]]
 incompatibleHeader = This experiment may not be compatible with add-ons you have installed.
-incompatibleSubheader = We recommend <a>disabling these add-ons</a> before activating this experiment:
-
+incompatibleSubheader2 = We recommend {$disableLink} before activating this experiment:
+incompatibleSubheaderDisableLink = disabling these add-ons
 // A form prompting the user to sign up for the Test Pilot Newsletter.
 [[newsletterForm]]
 newsletterFormEmailPlaceholder
     .placeholder = Your email here
 newsletterFormDisclaimer = We will only send you Test Pilot-related information.
-newsletterFormPrivacyNotice = I'm okay with Mozilla handling my info as explained in <a>this privacy notice</a>.
+newsletterFormPrivacyNotice2 = I'm okay with Mozilla handling my info as explained in ${privacyNoticeLink}.
+newsletterFormPrivacyNoticeLink = this privacy notice
 newsletterFormPrivacyAgreementRequired = Please check this box if you want to proceed.
 newsletterFormSubmitButton = Sign Up Now
 newsletterFormSubmitButtonSubmitting = Submitting...
@@ -222,13 +227,8 @@ localeWarningSubtitle = You can still enable it if you like.
 [[experimentsListNoneInstalled]]
 experimentsListNoneInstalledHeader = Let's get this baby off the ground!
 experimentsListNoneInstalledSubheader = Ready to try a new Test Pilot experiment? Select one to enable, take it for a spin, and let us know what you think.
-experimentsListNoneInstalledCTA = Not interested? <a>Let us know why</a>.
-
-// Shown to users who do not have JavaScript enabled.
-[[noscript]]
-noScriptHeading = Uh oh...
-noScriptMessage = Test Pilot requires JavaScript.<br>Sorry about that.
-noScriptLink = Find out why
+experimentsListNoneInstalledCTA2 = Not interested? {$link}.
+experimentsListNoneInstalledCTALink = Let us know why
 
 // Text of a button to toggle visibility of a list of past experiments.
 [[pastExperiments]]
@@ -238,12 +238,17 @@ hidePastExperiments = Hide Past Experiments
 // Text of warnings to the user if various error conditions are detected
 [[warnings]]
 warningGenericTitle=Something is wrong!
-warningGenericDetail=Something has gone wrong with Test Pilot. Please <a>file a bug</a> and mention this error message.
+warningGenericDetail2=Something has gone wrong with Test Pilot. Please {$link} and mention this error message.
+warningGenericDetailLink=file a bug
 warningUpgradeFirefoxTitle=Upgrade Firefox to continue!
-warningUpgradeFirefoxDetail=Test Pilot requires the latest version of Firefox. <a>Upgrade Firefox</a> to get started.
+warningUpgradeFirefoxDetail2=Test Pilot requires the latest version of Firefox. {$link} to get started.
+warningUpgradeFirefoxDetailLink=Upgrade Firefox
 warningHttpsRequiredTitle=HTTPS required!
-warningHttpsRequiredDetail=Test Pilot must be accessed over HTTPS. Please see <a>our documentation</a> for details.
+warningHttpsRequiredDetail2=Test Pilot must be accessed over HTTPS. Please see {$link} for details.
+warningHttpsRequiredDetailLink=our documentation
 warningMissingPrefTitle=Developing Test Pilot?
-warningMissingPrefDetail=When running Test Pilot locally or in development environments, special configuration is required. Please see <a>our documentation</a> for details.
+warningMissingPrefDetail2=When running Test Pilot locally or in development environments, special configuration is required. Please see {$link} for details.
+warningMissingPrefDetailLink=our documentation
 warningBadHostnameTitle=Unapproved hostname!
-warningBadHostnameDetail=The Test Pilot site may only be accessed from testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, or example.com:8000. Please see <a>our documentation</a> for details.
+warningBadHostnameDetail2=The Test Pilot site may only be accessed from testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, or example.com:8000. Please see {$link} for details.
+warningBadHostnameDetailLink=our documentation

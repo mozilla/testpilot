@@ -1,6 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
+import { findLocalizedById } from '../util';
 
 import ErrorPage from '../../../src/app/containers/ErrorPage';
 
@@ -13,9 +14,8 @@ describe('app/containers/ErrorPage', () => {
       uninstallAddon: noop,
       openWindow: noop
     };
-    expect(shallow(<ErrorPage {...props} />)
-      // HACK: .find('[data-l10n-id="errorMessage"]') seems not to work
-      .findWhere(el => 'errorMessage' === el.props()['data-l10n-id']))
+    const subject = shallow(<ErrorPage {...props} />);
+    expect(findLocalizedById(subject, 'errorMessage2'))
       .to.have.length(1);
   });
 });

@@ -4,6 +4,7 @@ import promise from 'redux-promise';
 import addonReducer from './reducers/addon';
 import browserReducer from './reducers/browser';
 import experimentsReducer from './reducers/experiments';
+import localizationsReducer from './reducers/localizations';
 import newsletterFormReducer from './reducers/newsletter-form';
 import varianttestsReducer from './reducers/varianttests';
 import newsReducer from './reducers/news';
@@ -15,6 +16,7 @@ export const reducers = combineReducers({
   addon: addonReducer,
   browser: browserReducer,
   experiments: experimentsReducer,
+  localizations: localizationsReducer,
   newsletterForm: newsletterFormReducer,
   varianttests: varianttestsReducer,
   news: newsReducer
