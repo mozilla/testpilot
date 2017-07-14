@@ -185,6 +185,7 @@ userCountContainer = ¡Hay <span>{ $installation_count }</span> personas proband
 userCountContainerAlt = ¡Recién lanzado!
 highlightPrivacy = Tu privacidad
 experimentGradReportPendingTitle = Terminó este experimento
+experimentGradReportPendingCopy = Estamos haciendo un informe completo. Vuelva pronto para ver los detalles.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
