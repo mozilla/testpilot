@@ -1,3 +1,5 @@
+activitystreamDetails1Copy = Mira dónde has estado para saber adonde quieres ir.
+activitystreamToursteps2Copy = Siempre puedes enviarnos comentarios o desactivar Activity Stream en Test Pilot.
 activitystreamContributors0Title = Ingeniero de software
 activitystreamContributors1Title = Ingeniero Web
 activitystreamContributors2Title = Desarrollador de software
@@ -82,6 +84,7 @@ trackingprotectionContributors0Title = Desarrollador Web
 trackingprotectionContributors1Title = Diseñador UX senior
 trackingprotectionContributors2Title = Ingeniero senior senior
 trackingprotectionEolwarning = Cuando termines el experimento de Protección contra el rastreo y publiquemos los resultados, se deshabilitará automáticamente.
+universalsearchMeasurements1 = Si ya habías configurado anteriormente Firefox para que mostrara sugerencias de búsquedas en la barra de búsqueda, al instalar la búsqueda universal se activarán <a href="https://www.mozilla.org/privacy/firefox/#searchsuggestions" target="_blank">las sugerencias de búsqueda</a> en la barra alucinante.
 universalsearchDetails0Copy = Los sitios, personas y artículos de Wikipedia más populares aparecerán mientras escribes.
 universalsearchToursteps0Copy = Ahora puedes buscar y navegar desde un solo lugar.
 universalsearchToursteps2Copy = Siempre puedes darnos feedback o desactivar la búsqueda universal desde Test Pilot.
