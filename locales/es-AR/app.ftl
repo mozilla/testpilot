@@ -97,8 +97,8 @@ notFoundHeader = ¡Cuatro Cero Cuatro!
 emailOptInDialogTitle = ¡Bienvenido a Test Pilot!
 emailOptInMessage = Descubrí los experimentos nuevos y mirá los resultados de los experimentos que probaste.
 emailOptInConfirmationTitle = Correo enviado
-emailOptInSuccessMessage2 = ¡Gracias!
 emailOptInConfirmationClose = Hacia los experimentos...
+emailOptInDialogErrorTitle = ¡No!
 
 
 // news feed updates.
@@ -122,6 +122,8 @@ experimentListHeader = ¡Elegí tus experimentos!
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Opinión
 experimentCardManage = Administrar
 experimentCardGetStarted = Comenzá
 experimentCardLearnMore = Concer más
@@ -182,6 +184,7 @@ tourDoneButton = Hecho
 userCountContainer = ¡Hay <span>{ $installation_count }</span> personas probando { $title } ahora mismo!
 userCountContainerAlt = ¡Recién lanzado!
 highlightPrivacy = Tu privacidad
+experimentGradReportPendingTitle = Terminó este experimento
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
