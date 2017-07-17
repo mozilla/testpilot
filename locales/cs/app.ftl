@@ -97,8 +97,8 @@ notFoundHeader = Čtyři sta čtyři!
 emailOptInDialogTitle = Vítá vás Test Pilot!
 emailOptInMessage = Nechce si posílat informace o nových experimentech a výsledky experimentů, které jste sami vyzkoušeli.
 emailOptInConfirmationTitle = E-mail odeslán
-emailOptInSuccessMessage2 = Děkujeme!
 emailOptInConfirmationClose = Podívat se na experimenty...
+emailOptInDialogErrorTitle = Ale ne!
 
 
 // news feed updates.
@@ -122,6 +122,8 @@ experimentListHeader = Vyberte si experimenty!
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Zpětná vazba
 experimentCardManage = Správa
 experimentCardGetStarted = Jdeme na to
 experimentCardLearnMore = Zjistit více
@@ -182,6 +184,8 @@ tourDoneButton = Hotovo
 userCountContainer = Experiment { $title } zkouší <span>{ $installation_count }</span> lidí!
 userCountContainerAlt = Právě spuštěno!
 highlightPrivacy = Vaše soukromí
+experimentGradReportPendingTitle = Tento experiment byl ukončen
+experimentGradReportPendingCopy = Pracujeme na kompletní zprávě o výsledcích. Podrobnosti doplníme brzy.
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
