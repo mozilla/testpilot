@@ -1,14 +1,14 @@
 // @flow
-
+import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
 type WarningProps = {
   title: string,
   titleL10nId: string,
-  titleL10nArgs: Array<string>,
+  titleL10nArgs: string,
   subtitle: string,
   subtitleL10nId: string,
-  subtitleL10nArgs: Array<string>,
+  subtitleL10nArgs: string,
   children: Array<any>
 }
 
@@ -17,8 +17,15 @@ export default class Warning extends React.Component {
 
   renderSubtitle() {
     if (this.props.subtitle) {
+      const parsed = this.props.subtitleL10nArgs ? JSON.parse(this.props.subtitleL10nArgs) : {};
+      const args = {};
+      Object.keys(parsed).map(key => {
+        return args[`$${key}`] = parsed[key];
+      });
       return (
-        <p data-l10n-id={this.props.subtitleL10nId} data-l10n-args={this.props.subtitleL10nArgs}>{this.props.subtitle}</p>
+        <Localized id={this.props.subtitleL10nId} {...args}>
+          <p>{this.props.subtitle}</p>
+        </Localized>
       );
     }
     return null;
@@ -26,9 +33,16 @@ export default class Warning extends React.Component {
 
   renderHeader() {
     if (this.props.title) {
+      const parsed = this.props.titleL10nArgs ? JSON.parse(this.props.titleL10nArgs) : {};
+      const args = {};
+      Object.keys(parsed).map(key => {
+        return args[`$${key}`] = parsed[key];
+      });
       return (
         <header>
-          <h3 data-l10n-id={this.props.titleL10nId} data-l10n-args={this.props.titleL10nArgs}>{this.props.title}</h3>
+          <Localized id={this.props.titleL10nId} {...args}>
+            <h3>{this.props.title}</h3>
+          </Localized>
           {this.renderSubtitle()}
         </header>
       );

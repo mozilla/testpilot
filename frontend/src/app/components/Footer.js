@@ -1,5 +1,5 @@
 // @flow
-
+import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
 import LayoutWrapper from './LayoutWrapper';
@@ -17,11 +17,21 @@ export default class Footer extends React.Component {
         <LayoutWrapper flexModifier="row-bottom-breaking">
           <div className="legal-links">
             <a href="https://www.mozilla.org" className="mozilla-logo"></a>
-            <a data-l10n-id="footerLinkLegal" href="https://www.mozilla.org/about/legal/" className="boilerplate">Legal</a>
-            <a data-l10n-id="footerLinkAbout" href="/about" className="boilerplate">About Test Pilot</a>
-            <a data-l10n-id="footerLinkPrivacy" href="/privacy" className="boilerplate">Privacy</a>
-            <a data-l10n-id="footerLinkTerms" href="/terms" className="boilerplate">Terms</a>
-            <a data-l10n-id="footerLinkCookies" href="https://www.mozilla.org/privacy/websites/#cookies" className="boilerplate">Cookies</a>
+            <Localized id="footerLinkLegal">
+              <a href="https://www.mozilla.org/about/legal/" className="boilerplate">Legal</a>
+            </Localized>
+            <Localized id="footerLinkAbout">
+              <a href="/about" className="boilerplate">About Test Pilot</a>
+            </Localized>
+            <Localized id="footerLinkPrivacy">
+              <a href="/privacy" className="boilerplate">Privacy</a>
+            </Localized>
+            <Localized id="footerLinkTerms">
+              <a href="/terms" className="boilerplate">Terms</a>
+            </Localized>
+            <Localized id="footerLinkCookies">
+              <a href="https://www.mozilla.org/privacy/websites/#cookies" className="boilerplate">Cookies</a>
+            </Localized>
           </div>
           <div className="social-links">
             <a onClick={(e) => this.eventToGA(e)} href="https://github.com/mozilla/testpilot"

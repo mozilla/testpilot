@@ -1,7 +1,8 @@
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
+import { findLocalizedById } from '../util';
 
 import RetireConfirmationDialog from '../../../src/app/components/RetireConfirmationDialog';
 
@@ -20,8 +21,6 @@ describe('app/components/RetireConfirmationDialog', () => {
     subject = shallow(<RetireConfirmationDialog {...props} />);
   });
 
-  const findByL10nID = id => subject.findWhere(el => id === el.props()['data-l10n-id']);
-
   it('should display expected content', () => {
     expect(subject.find('#retire-dialog-modal')).to.have.property('length', 1);
   });
@@ -32,7 +31,7 @@ describe('app/components/RetireConfirmationDialog', () => {
   });
 
   it('should uninstall the addon and ping GA when the proceed button is clicked', () => {
-    findByL10nID('retireSubmitButton').simulate('click', mockClickEvent);
+    findLocalizedById(subject, 'retireSubmitButton').find('button').simulate('click', mockClickEvent);
     expect(props.uninstallAddon.called).to.be.true;
     expect(props.navigateTo.called).to.be.true;
     expect(props.navigateTo.lastCall.args[0]).to.equal('/retire');
