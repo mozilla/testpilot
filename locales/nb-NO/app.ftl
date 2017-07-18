@@ -184,6 +184,9 @@ tourDoneButton = Ferdig
 userCountContainer = Det er <span>{ $installation_count }</span> personer som prøver { $title } akkurat nå!
 userCountContainerAlt = Nettopp startet!
 highlightPrivacy = Ditt personvern
+experimentGradReportPendingTitle = Dette eksperimentet er avsluttet
+experimentGradReportPendingCopy = Vi arbeider med en fullstendig rapport. Kom tilbake snart for mer info.
+experimentGoToLink = Gå til { $title }
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -191,6 +194,8 @@ highlightPrivacy = Ditt personvern
 
 upgradeNoticeTitle = { $title } krever Firefox { $min_release } eller nyere.
 upgradeNoticeLink = Hvordan du oppgraderer Firefox.
+versionChangeNotice = { $experiment_title } er ikke støttet i denne versjonen av Firefox.
+versionChangeNoticeLink = Last ned siste versjon av Firefox.
 
 
 // Shown while uninstalling Test Pilot.
@@ -292,3 +297,5 @@ hidePastExperiments = Skul tidligere eksperimenter
 // Text of warnings to the user if various error conditions are detected
 [[ warnings ]]
 
+warningGenericTitle = Noe gikk galt!
+warningUpgradeFirefoxTitle = Oppgrader Firefox for å fortsette!
