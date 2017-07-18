@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow, mount } from 'enzyme';
-import { findLocalizedById } from '../util';
+import { findLocalizedById, findLocalizedHtmlById } from '../util';
 
 import RetirePage from '../../../src/app/containers/RetirePage';
 
@@ -19,7 +19,7 @@ describe('app/containers/RetirePage', () => {
 
   it('should render expected content', () => {
     expect(findLocalizedById(subject, 'retirePageProgressMessage')).to.have.property('length', 1);
-    expect(findLocalizedById(subject, 'retirePageMessage2')).to.have.property('length', 0);
+    expect(findLocalizedById(subject, 'retirePageMessage')).to.have.property('length', 0);
   });
 
   it('should fake uninstall completion if too much time has passed', (done) => {
@@ -31,11 +31,11 @@ describe('app/containers/RetirePage', () => {
     const mountedSubject = mount(<RetirePage {...mountedProps} />);
 
     expect(mountedSubject.state('fakeUninstalled')).to.be.false;
-    expect(findLocalizedById(mountedSubject, 'retirePageMessage2')).to.have.property('length', 0);
+    expect(findLocalizedHtmlById(mountedSubject, 'retirePageMessage')).to.have.property('length', 0);
 
     setTimeout(() => {
       expect(mountedSubject.state('fakeUninstalled')).to.be.true;
-      expect(findLocalizedById(mountedSubject, 'retirePageMessage2')).to.have.property('length', 1);
+      expect(findLocalizedHtmlById(mountedSubject, 'retirePageMessage')).to.have.property('length', 1);
       expect(mountedProps.setHasAddon.called).to.be.true;
       done();
     }, 20);
@@ -48,7 +48,7 @@ describe('app/containers/RetirePage', () => {
 
     it('should render expected content', () => {
       expect(findLocalizedById(subject, 'retirePageProgressMessage')).to.have.property('length', 1);
-      expect(findLocalizedById(subject, 'retirePageMessage2')).to.have.property('length', 0);
+      expect(findLocalizedById(subject, 'retirePageMessage')).to.have.property('length', 0);
     });
   });
 
@@ -59,7 +59,7 @@ describe('app/containers/RetirePage', () => {
 
     it('should render expected content', () => {
       expect(findLocalizedById(subject, 'retirePageProgressMessage')).to.have.property('length', 0);
-      expect(findLocalizedById(subject, 'retirePageMessage2')).to.have.property('length', 1);
+      expect(findLocalizedHtmlById(subject, 'retirePageMessage')).to.have.property('length', 1);
     });
 
     it('should ping GA when survey button is clicked', () => {

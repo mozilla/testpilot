@@ -5,6 +5,7 @@ import React from 'react';
 
 import Copter from '../components/Copter';
 import LayoutWrapper from '../components/LayoutWrapper';
+import LocalizedHtml from '../components/LocalizedHtml';
 import View from '../components/View';
 
 
@@ -73,12 +74,9 @@ export default class RetirePage extends React.Component {
                 </Localized>
               </div>
               <div className="modal-content">
-                <Localized id="retirePageMessage2">
-                  <p>Hope you had fun experimenting with us.</p>
-                </Localized>
-                <Localized id="retirePageMessageComeBack">
-                  <p>Come back any time.</p>
-                </Localized>
+                <LocalizedHtml id="retirePageMessage">
+                  <p>Hope you had fun experimenting with us. <br/> Come back any time.</p>
+                </LocalizedHtml>
               </div>
               <div className="modal-actions">
                 <Localized id="retirePageSurveyButton">

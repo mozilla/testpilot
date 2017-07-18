@@ -4,6 +4,8 @@ import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
+import LocalizedHtml from '../components/LocalizedHtml';
+
 import { defaultState } from '../reducers/newsletter-form';
 
 type NewsletterFormProps = {
@@ -71,12 +73,6 @@ export default class NewsletterForm extends React.Component {
   renderPrivacyField() {
     const fieldName = 'privacy';
     const url = '/privacy';
-    const privacyNoticeLinkNode = <Localized id="newsletterFormPrivacyNoticeLink">
-      <a target="_blank" rel="noopener noreferrer"
-        href={url}>
-        this privacy notice
-      </a>
-    </Localized>;
 
     return (
       <label className={this.makeRevealedClassNames()} htmlFor={fieldName}>
@@ -85,11 +81,14 @@ export default class NewsletterForm extends React.Component {
         { this.state.privacyNote ? <Localized id="newsletterFormPrivacyAgreementRequired">
           <span></span>
         </Localized> : null }
-        <Localized id="newsletterFormPrivacyNotice2" $privacyNoticeLink={privacyNoticeLinkNode}>
+        <LocalizedHtml id="newsletterFormPrivacyNotice">
           <span>
-            I&apos;m okay with Mozilla handling my info as explained in {privacyNoticeLinkNode}.
+            I&apos;m okay with Mozilla handling my info as explained in <a target="_blank" rel="noopener noreferrer"
+              href={url}>
+              this privacy notice
+            </a>.
           </span>
-        </Localized>
+        </LocalizedHtml>
       </label>
     );
   }

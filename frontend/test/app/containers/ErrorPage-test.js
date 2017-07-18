@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import { findLocalizedById } from '../util';
+import { findLocalizedById, findLocalizedHtmlById } from '../util';
 
 import ErrorPage from '../../../src/app/containers/ErrorPage';
 
@@ -15,7 +15,7 @@ describe('app/containers/ErrorPage', () => {
       openWindow: noop
     };
     const subject = shallow(<ErrorPage {...props} />);
-    expect(findLocalizedById(subject, 'errorMessage2'))
+    expect(findLocalizedHtmlById(subject, 'errorMessage'))
       .to.have.length(1);
   });
 });

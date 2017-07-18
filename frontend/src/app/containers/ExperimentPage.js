@@ -144,9 +144,6 @@ export class ExperimentDetail extends React.Component {
     if (installed.length === 0) return null;
 
     const helpUrl = 'https://support.mozilla.org/kb/disable-or-remove-add-ons';
-    const disableLink = <Localized id="incompatibleSubheaderDisableLink">
-      <a href={helpUrl}>disabling these add-ons</a>
-    </Localized>;
 
     return (
       <section className="incompatible-addons">
@@ -156,11 +153,11 @@ export class ExperimentDetail extends React.Component {
               This experiment may not be compatible with add-ons you have installed.
             </h3>
           </Localized>
-          <Localized id="incompatibleSubheader2" $disableLink={disableLink}>
+          <LocalizedHtml id="incompatibleSubheader">
             <p>
-              We recommend {disableLink} before activating this experiment:
+              We recommend <a href={helpUrl}>disabling these add-ons</a> before activating this experiment:
             </p>
-          </Localized>
+          </LocalizedHtml>
         </header>
         <main>
           <ul>
@@ -528,17 +525,15 @@ export class ExperimentDetail extends React.Component {
                         {privacy_preamble && <Localized id={this.l10nId('privacy_preamble')}>
                           <p>{privacy_preamble}</p>
                         </Localized>}
-                        <Localized id="experimentMeasurementIntro2"
-                          $data={<a href="/privacy">
-                            <Localized id="experimentMeasurementIntroDataLink">
-                              <span>data</span>
-                            </Localized>
-                          </a>}
-                          $experimentTitle={experiment.title}>
+                        <LocalizedHtml id="experimentMeasurementIntro" $experimentTitle={experiment.title}>
                           <p>
-                            In addition to the asdf collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use {experiment.title}:
+                            In addition to the
+                            <a href="/privacy">
+                              data
+                            </a>
+                            collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use {experiment.title}:
                           </p>
-                        </Localized>
+                        </LocalizedHtml>
                         <ul>
                           {measurements.map((note, idx) => (
                             <LocalizedHtml key={idx} id={this.l10nId(['measurements', idx])}>
@@ -695,18 +690,18 @@ export class ExperimentDetail extends React.Component {
       const completedDate = <b>
         {formatDate(completed)}
       </b>;
-      return <Localized id="completedDateLabel2" $completedDate={completedDate}>
+      return <LocalizedHtml id="completedDateLabel" $completedDate={completedDate}>
         <span>Experiment End Date: <b>{completedDate}</b></span>
-      </Localized>;
+      </LocalizedHtml>;
     }
     if (!installation_count || installation_count <= 100) {
       return <Localized id="userCountContainerAlt" $title={title}>
         <span className="bold">Just launched!</span>
       </Localized>;
     }
-    return <Localized id="userCountContainer2" $installation_count={installation_count_node} $title={title}>
-      <span>There are {installation_count_node} people trying {title} right now!</span>
-    </Localized>;
+    return <LocalizedHtml id="userCountContainer" $installation_count={installation_count_node} $title={title}>
+      <span>There are <span>{installation_count_node}</span> people trying {title} right now!</span>
+    </LocalizedHtml>;
   }
 
   maxVersionCheck(max) {

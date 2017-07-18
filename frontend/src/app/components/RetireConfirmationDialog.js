@@ -2,6 +2,8 @@
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
+import LocalizedHtml from '../components/LocalizedHtml';
+
 type RetireConfirmationDialogProps = {
   uninstallAddon: Function,
   onDismiss: Function,
@@ -28,9 +30,9 @@ export default class RetireConfirmationDialog extends React.Component {
               <Localized id="retireMessage">
                 <p className="centered">As you wish. This will disable any active tests, uninstall the Test Pilot add-on, and remove your account information from our servers.</p>
               </Localized>
-              <Localized id="retireEmailMessage">
+              <LocalizedHtml id="retireEmailMessage">
                 <p className="centered small">To opt out of email updates, simply click the <em>unsubscribe</em> link on any Test Pilot email.</p>
-              </Localized>
+              </LocalizedHtml>
             </div>
             <div className="modal-actions">
               <Localized id="retireSubmitButton">

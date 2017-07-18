@@ -5,6 +5,7 @@ import React from 'react';
 
 import Copter from '../components/Copter';
 import LayoutWrapper from '../components/LayoutWrapper';
+import LocalizedHtml from '../components/LocalizedHtml';
 import View from '../components/View';
 
 type ErrorPageProps = {
@@ -28,12 +29,9 @@ export default class ErrorPage extends React.Component {
               </Localized>
             </header>
             <div className="modal-content">
-              <Localized id="errorMessage2">
-                <p>Looks like we broke something.</p>
-              </Localized>
-              <Localized id="errorMessageTryAgain">
-                <p>Maybe try again later.</p>
-              </Localized>
+              <LocalizedHtml id="errorMessage">
+                <p>Looks like we broke something.<br />Maybe try again later.</p>
+              </LocalizedHtml>
             </div>
           </div>
           <Copter animation="fade-in-fly-up" />

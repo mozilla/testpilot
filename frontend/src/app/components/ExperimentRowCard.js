@@ -4,6 +4,8 @@ import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
+import LocalizedHtml from '../components/LocalizedHtml';
+
 import { buildSurveyURL, experimentL10nId } from '../lib/utils';
 
 import type { InstalledExperiments } from '../reducers/addon';
@@ -92,9 +94,9 @@ export default class ExperimentRowCard extends React.Component {
     if (installation_count <= 100 || isCompleted) return '';
     const installation_count_node = <span>{installation_count}</span>;
     return (
-      <Localized id="participantCount2" $installation_count={installation_count_node}>
+      <LocalizedHtml id="participantCount" $installation_count={installation_count_node}>
         <span className="participant-count">{installation_count_node} participants</span>
-      </Localized>
+      </LocalizedHtml>
     );
   }
 

@@ -62,7 +62,7 @@ describe('app/components/ExperimentRowCard', () => {
   it('should display installation count if over 100', () => {
     const expectedCount = '101';
     subject.setProps({ experiment: { ...mockExperiment, installation_count: expectedCount }});
-    const localized = findLocalizedById(subject, 'participantCount2');
+    const localized = findLocalizedById(subject, 'participantCount');
     expect(localized.find('.participant-count')).to.have.property('length', 1);
     expect(localized.prop('$installation_count')).to.deep.equal(<span>{expectedCount}</span>);
   });

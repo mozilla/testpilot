@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import LayoutWrapper from '../components/LayoutWrapper';
 import NewsletterFooter from '../components/NewsletterFooter';
+import LocalizedHtml from '../components/LocalizedHtml';
 
 
 const DOMFactories = Object.keys(ReactDOMFactories);
@@ -108,52 +109,67 @@ export default class View extends React.Component {
     let title = <Localized id="warningGenericTitle">
       <span>Something is wrong!</span>
     </Localized>;
-    let link = <Localized id="warningGenericDetailLink">
-      <a href="https://github.com/mozilla/testpilot/issues/new">file a bug</a>
-    </Localized>;
-    let copy = <Localized id="warningGenericDetail2" $link={link}>
-      <p>Something has gone wrong with Test Pilot. Please {link} and mention this error message.</p>
-    </Localized>;
+    let copy = <LocalizedHtml id="warningGenericDetail">
+      <p>
+        Something has gone wrong with Test Pilot. Please
+        <a href="https://github.com/mozilla/testpilot/issues/new">
+          file a bug
+        </a>
+        and mention this error message.
+      </p>
+    </LocalizedHtml>;
     if (!this.props.isMinFirefox) {
       title = <Localized id="warningUpgradeFirefoxTitle">
         <span>Upgrade Firefox to continue!</span>
       </Localized>;
-      link = <Localized id="warningUpgradeFirefoxDetailLink">
-        <a href="https://www.mozilla.org/firefox/">Upgrade Firefox</a>
-      </Localized>;
-      copy = <Localized id="warningUpgradeFirefoxDetail2" $link={link}>
-        <p>Test Pilot reqires the latest version of Firefox. {link} to get started.</p>
-      </Localized>;
+      copy = <LocalizedHtml id="warningUpgradeFirefoxDetail">
+        <p>
+          Test Pilot reqires the latest version of Firefox.
+          <a href="https://www.mozilla.org/firefox/">
+            Upgrade Firefox
+          </a>
+          to get started.
+        </p>
+      </LocalizedHtml>;
     } else if (window.location.protocol !== 'https:') {
       title = <Localized id="warningHttpsRequiredTitle">
         <span>HTTPS required!</span>
       </Localized>;
-      link = <Localized id="warningHttpsRequiredDetailLink">
-        <a href="https://github.com/mozilla/testpilot/blob/master/docs/development/quickstart.md">our documentation</a>
-      </Localized>;
-      copy = <Localized id="warningHttpsRequiredDetail2" $link={link}>
-        <p>Test Pilot must be accessed over HTTPS. Please see {link} for details.</p>
-      </Localized>;
+      copy = <LocalizedHtml id="warningHttpsRequiredDetail">
+        <p>
+          Test Pilot must be accessed over HTTPS. Please see
+          <a href="https://github.com/mozilla/testpilot/blob/master/docs/development/quickstart.md">
+            our documentation
+          </a>
+          for details.
+        </p>
+      </LocalizedHtml>;
     } else if (['example.com:8000', 'testpilot.dev.mozaws.net', 'testpilot.stage.mozaws.net'].includes(window.location.host)) {
       title = <Localized id="warningMissingPrefTitle">
         <span>Developing Test Pilot?</span>
       </Localized>;
-      link = <Localized id="warningMissingPrefDetailLink">
-        <a href="https://github.com/mozilla/testpilot/blob/master/docs/development/quickstart.md">our documentation</a>
-      </Localized>;
-      copy = <Localized id="warningMissingPrefDetail2" $link={link}>
-        <p>When running Test Pilot locally or in development environments, special configuration is required. Please see {link} for details.</p>
-      </Localized>;
+      copy = <LocalizedHtml id="warningMissingPrefDetail">
+        <p>
+          When running Test Pilot locally or in development environments, special configuration is required. Please see
+          <a href="https://github.com/mozilla/testpilot/blob/master/docs/development/quickstart.md">
+            our documentation
+          </a>
+          for details.
+        </p>
+      </LocalizedHtml>;
     } else if (window.location.host !== 'testpilot.firefox.com') {
       title = <Localized id="warningBadHostnameTitle">
         <span>Unapproved hostname!</span>
       </Localized>;
-      link = <Localized id="warningBadHostnameDetailLink">
-        <a href="https://github.com/mozilla/testpilot/blob/master/docs/development/quickstart.md">our documentation</a>
-      </Localized>;
-      copy = <Localized id="warningBadHostnameDetail2" $link={link}>
-        <p>The Test Pilot site may only be accessed from testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, or example.com:8000. Please see {link} for details.</p>
-      </Localized>;
+      copy = <LocalizedHtml id="warningBadHostnameDetail">
+        <p>
+          The Test Pilot site may only be accessed from testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, or example.com:8000. Please see
+          <a href="https://github.com/mozilla/testpilot/blob/master/docs/development/quickstart.md">
+            our documentation
+          </a>
+          for details.
+        </p>
+      </LocalizedHtml>;
     }
     return <LayoutWrapper flexModifier="column-center">
         <div id="warning" className="modal">

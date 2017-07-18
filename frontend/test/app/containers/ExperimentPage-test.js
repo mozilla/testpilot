@@ -251,7 +251,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
 
     it('should display installation count if over 100', () => {
       const experiment = setExperiment({ ...mockExperiment, installation_count: '101' });
-      const el = findLocalizedById(subject, 'userCountContainer2');
+      const el = findLocalizedHtmlById(subject, 'userCountContainer');
       expect(el).has.property('length', 1);
       expect(el.prop('$installation_count')).to.deep.equal(
         <span className="bold">{experiment.installation_count}</span>
@@ -549,7 +549,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
         });
 
         it('displays the end date instead of install count', () => {
-          expect(findLocalizedById(subject, 'completedDateLabel2').length).to.equal(1);
+          expect(findLocalizedHtmlById(subject, 'completedDateLabel').length).to.equal(1);
           expect(findLocalizedById(subject, 'userCountContainer').length).to.equal(0);
           expect(findLocalizedById(subject, 'userCountContainerAlt').length).to.equal(0);
         });

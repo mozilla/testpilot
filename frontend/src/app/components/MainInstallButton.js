@@ -3,6 +3,7 @@ import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
 import LayoutWrapper from './LayoutWrapper';
+import LocalizedHtml from '../components/LocalizedHtml';
 import { VariantTests, VariantTestCase, VariantTestDefault } from './VariantTests';
 
 import config from '../config';
@@ -45,11 +46,11 @@ export default class MainInstallButton extends React.Component {
     return (
       <LayoutWrapper flexModifier="column-center-start-breaking">
         {(isMinFirefox && !isMobile) ? this.renderInstallButton(isInstalling, hasAddon) : this.renderAltButton(isFirefox, isMobile) }
-        {isMinFirefox && !isMobile && <Localized id="landingLegalNotice2" $terms={terms} $privacy={privacy}>
+        {isMinFirefox && !isMobile && <LocalizedHtml id="landingLegalNotice" $terms={terms} $privacy={privacy}>
           <p className="legal-information">
             By proceeding, you agree to the {terms} and {privacy} of Test Pilot.
           </p>
-        </Localized>}
+        </LocalizedHtml>}
       </LayoutWrapper>
     );
   }
@@ -57,9 +58,9 @@ export default class MainInstallButton extends React.Component {
   renderOneClickInstallButton(title) {
     return (
       <div className="default-btn-msg one-click-text">
-        <Localized id="oneClickInstallMinorCta2">
+        <LocalizedHtml id="oneClickInstallMinorCta">
           <span className="minor-cta">Install Test Pilot &amp;</span>
-        </Localized>
+        </LocalizedHtml>
         <Localized id="oneClickInstallMajorCta" $title={title}>
           <span className="major-cta">Enable {title}</span>
         </Localized>
