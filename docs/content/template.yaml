@@ -4,6 +4,9 @@ title: 'Experiment Name'
 subtitle: 'Powered by a Yellow Submarine'
 order: 0
 
+platforms: ['addon']
+web_url: https://example.com/web-experiment
+
 description: >
   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum cum ad deserunt
   iusto possimus. Fugiat odit corrupti cumque.

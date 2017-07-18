@@ -123,6 +123,21 @@ description: >
 
 ![Example Twitter share with description](img/description.png)
 
+## `platform`
+
+A list of platforms on which this experiment is available - one or more of `addon`, `web`, and `mobile`.
+
+```yaml
+platform: ['addon', 'mobile']
+```
+## `web_url`
+
+If the experiment is on `web` platform, this is the URL to which the details page links.
+
+```yaml
+web_url: 'https://example.com/some-web-experiment'
+```
+
 ## `warning`
 
 A warning message to let users know when an experiment is going to
