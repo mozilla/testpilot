@@ -183,6 +183,19 @@ userCountContainerAlt = Rowno startowany!
 highlightPrivacy = Waša priwatnosć
 experimentGradReportPendingTitle = Toś ten eksperiment jo skóńcony
 experimentGradReportPendingCopy = Źěłamy na wobšyrnej rozpšawje. Glědajśo skóro za drobnostkami.
+experimentGoToLink = K { $title }
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Eksperiment za Firefox, web a mobilne rědy
+experimentPlatformWebAddon = Eksperiment za Firefox a web
+experimentPlatformWebMobile = Eksperiment za web a mobilne rědy
+experimentPlatformAddonMobile = Eksperiment za Firefox a mobilne rědy
+experimentPlatformWeb = webeksperiment
+experimentPlatformAddon = Eksperiment za Firefox
+experimentPlatformMobileApp = Eksperiment za mobilne rědy
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
