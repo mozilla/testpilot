@@ -186,6 +186,19 @@ userCountContainerAlt = Nyligen startad!
 highlightPrivacy = Din sekretesspolicy
 experimentGradReportPendingTitle = Detta experiment har upphört
 experimentGradReportPendingCopy = Vi arbetar med en fullständig rapport. Återkom snart för detaljer.
+experimentGoToLink = Gå till { $title }
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Experiment för Firefox / webb / mobil
+experimentPlatformWebAddon = Experiment för Firefox / webb
+experimentPlatformWebMobile = Experiment för webb / mobil
+experimentPlatformAddonMobile = Experiment för Firefox / mobil
+experimentPlatformWeb = Experiment för webb
+experimentPlatformAddon = Experiment för Firefox
+experimentPlatformMobileApp = Experiment för mobil
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
