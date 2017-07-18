@@ -61,8 +61,8 @@ export function main({ loadReason }: { loadReason: string }) {
   env.subscribe(store);
   sideEffects.enable(store);
   loader.loadExperiments(startEnv.name, startEnv.baseUrl);
-  feedbackManager.schedule();
-  feedbackManager.maybeShare();
+  // feedbackManager.schedule();
+  // feedbackManager.maybeShare();
   if (loadReason === 'install' || loadReason === 'enable') {
     telemetry.setPrefs();
     telemetry.ping(self.id, 'enabled');
