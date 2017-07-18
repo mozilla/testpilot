@@ -161,6 +161,7 @@ disableExperimentTransition = Slår av...
 enableExperiment = Slå på { $title }
 enableExperimentTransition = Slår på...
 experimentManuallyDisabled = { $title } slått av i utvidelsesbehandler
+experimentMeasurementIntro = I tilleg til de <a>data</a> som er samlet inn av alle Test Pilot-eksperimentene, er dette de viktigste tingene du bør vite om hva som skjer når du bruker { $experimentTitle }:
 measurements = Ditt personvern
 experimentPrivacyNotice = Du kan lære mer om datainnsamlingen for { $title } her.
 contributorsHeading = Presentert av
@@ -248,26 +249,37 @@ newsletterFooterError = Det oppsto en feil når e-postadressen din ble sendt inn
 newsletterFooterHeader = Hold deg informert
 newsletterFooterBody = Finn ut mer om nye eksperiment, og se testresultater for eksperiment du har testet.
 newsletterFooterSuccessHeader = Takk!
+newsletterFooterSuccessBody = Om du ikke tidligere har bekreftet et abonnement på et Mozilla-relatert nyhetsbrev, må du kanskje gjøre det nå. Se etter en e-post fra oss i innboksen din eller i søppelpostfilteret ditt.
 
 
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Dette eksperimentet er ikke støttet på ditt språk ({ $locale_code }).
+localeWarningSubtitle = Du kan fortsatt skru det på om du vil.
 
 
 // An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledHeader = La oss komme i gang!
+experimentsListNoneInstalledSubheader = Klar til å prøve et nytt Test Pilot-eksperiment? Velg en for å skru det på, ta det på en prøvetur, og fortell oss hva du synes.
+experimentsListNoneInstalledCTA = Ikke interessert? <a>Fortell oss hvorfor</a>.
 
 
 // Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
+noScriptHeading = Ups...
+noScriptMessage = Test Pilot krever JavaScript.<br>Lei for det.
+noScriptLink = Finn ut hvorfor
 
 
 // Text of a button to toggle visibility of a list of past experiments.
 [[ pastExperiments ]]
 
+viewPastExperiments = Vis tidligere eksperimenter
+hidePastExperiments = Skul tidligere eksperimenter
 
 
 // Text of warnings to the user if various error conditions are detected
