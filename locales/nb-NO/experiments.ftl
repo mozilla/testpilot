@@ -1,2 +1,16 @@
 activitystreamToursteps1Copy = Besøk den nye tidslinjen for å visuelt bla i all historikk og alle bokmerker.
+activitystreamContributors0Title = Programvareingeniør
+activitystreamContributors1Title = Nettingeniør
+activitystreamContributors2Title = Programvareutvikler
+activitystreamContributors3Title = Desktop Firefox-ingeniør
+activitystreamContributors4Title = Programvareingeniør
+activitystreamContributors5Title = Teknisk programsjef
+activitystreamContributors6Title = Ingeniør for skytjenester
+activitystreamContributors7Title = Teknisk praktikant
+activitystreamContributors8Title = Teknisk praktikant
+activitystreamContributors9Title = Produktsjef
+activitystreamContributors10Title = Sjefsingeniør
+activitystreamContributors11Title = Programvareingeniør
+activitystreamContributors12Title = Senior UX-designer
+cliqzToursteps0Copy = Skriv i adressefeltet for å se sanntidsresultater.
 containersContributors6Title = Front End-sikkerhet
