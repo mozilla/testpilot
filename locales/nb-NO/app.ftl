@@ -62,6 +62,7 @@ oneClickInstallMajorCta = Aktiver { $title }
 landingRequiresDesktop = Test Pilot krever Firefox for desktop på Windows, Mac eller Linux
 landingDownloadFirefoxDesc = (Test Pilot er tilgjengelig for Firefox på Windows, OS X og Linux)
 landingUpgradeDesc = Test Pilot krever Firefox 49 eller nyere.
+landingUpgradeDesc2 = Test Pilot krever Firefox { $version } eller høyere.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Oppgrader Firefox
 landingDownloadFirefoxSubTitle = Gratis nedlasting
@@ -97,11 +98,13 @@ emailOptInDialogTitle = Velkommen til Test Pilot!
 emailOptInMessage = Finn ut mer om nye eksperiment og se testresultatene for eksperimenter som du har testet.
 emailOptInConfirmationTitle = E-post er sendt
 emailOptInConfirmationClose = Videre til eksperimentene…
+emailOptInDialogErrorTitle = Å nei!
 
 
 // news feed updates.
 [[ updateList ]]
 
+latestUpdatesTitle = Siste oppdateringer
 
 
 // A listing of all Test Pilot experiments.
@@ -112,11 +115,15 @@ experimentListJustLaunchedTab = Nettopp startet
 experimentListJustUpdatedTab = Nettopp oppdatert
 experimentListEndingTomorrow = Slutter i morgen
 experimentListEndingSoon = Slutter snart
+experimentCondensedHeader = Velkommen til Test Pilot!
+experimentListHeader = Velg dine eksperiment!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Tilbakemelding
 experimentCardManage = Administrer
 experimentCardGetStarted = Kom i gang
 experimentCardLearnMore = Les mer
