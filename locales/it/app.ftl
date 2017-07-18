@@ -183,6 +183,14 @@ userCountContainerAlt = Appena lanciato
 highlightPrivacy = La tua privacy
 experimentGradReportPendingTitle = Questo esperimento si è concluso
 experimentGradReportPendingCopy = Stiamo preparando il rapporto conclusivo con i risultati di questo esperimento. Torna a trovarci per tutti i dettagli.
+experimentPlatformWebAddonMobile = Esperimento Firefox, web e mobile
+experimentPlatformWebAddon = Esperimento Firefox e web
+experimentPlatformWebMobile = Esperimento web e mobile
+experimentPlatformAddonMobile = Esperimento Firefox e mobile
+experimentPlatformWeb = Experimento web
+experimentPlatformAddon = Esperimento Firefox
+experimentPlatformMobile = Disponibile per mobile
+experimentGoToLink = Vai a { $title }
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
