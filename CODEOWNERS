@@ -1,2 +1,2 @@
 # flod as main contact for string changes - TODO: find more to spread the effort
-locales/* @flodolo
+*.ftl @flodolo
