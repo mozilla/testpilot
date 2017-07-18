@@ -9,9 +9,14 @@ export default function ExperimentPlatforms({ experiment }) {
     .filter(platform => platforms.indexOf(platform) !== -1);
   if (enabledPlatforms.length === 0) { return null; }
 
-  const l10nId = 'experimentPlatform' + enabledPlatforms
+  let l10nId = 'experimentPlatform' + enabledPlatforms
     .map(platform => platform.charAt(0).toUpperCase() + platform.slice(1))
     .join('');
+
+  if (l10nId === 'experimentPlatformMobile') {
+    // HACK: string changed after initial commit, so the ID had to change
+    l10nId = 'experimentPlatformMobileApp';
+  }
 
   return (
     <h4 className="experiment-platform">
