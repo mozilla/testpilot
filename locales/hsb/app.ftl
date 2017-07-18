@@ -183,6 +183,14 @@ userCountContainerAlt = Runje startowany!
 highlightPrivacy = Waša priwatnosć
 experimentGradReportPendingTitle = Tutón eksperiment je skónčeny
 experimentGradReportPendingCopy = Dźěłamy na wobšěrnej rozprawje. Hladajće bórze za podrobnosćemi.
+experimentPlatformWebAddonMobile = Firefox / web / mobilny eksperiment
+experimentPlatformWebAddon = Firefox / webeksperiment
+experimentPlatformWebMobile = web / mobilny eksperiment
+experimentPlatformAddonMobile = Firefox / mobilny eksperiment
+experimentPlatformWeb = webeksperiment
+experimentPlatformAddon = Eksperiment Firefox
+experimentPlatformMobile = Na mobilnym telefonje k dispoziciji
+experimentGoToLink = K { $title }
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
