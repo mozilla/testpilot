@@ -10,7 +10,7 @@ The following fields are used in experiment event reporting. All fields are requ
 
 ### General Fields
 - [`v`](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#v) - this indicates the version of the measurement protocol being used. Currently always `1`.
-- [`tid`](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#tid) - this indicates the ID of the Google Analytics property being used by the experiment. Should follow the form `UA-XXXX-Y`.
+- [`tid`](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#tid) - this indicates the ID of the Google Analytics property being used by the experiment. Should follow the form `UA-XXXX-Y`. Different IDs should be used for different deployments (i.e. for dev, stage, and production).
 - [`aip`](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#aip) - this indicates that the IP address of the sender should be anonymized. Always `1`.
 - [`ds`](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#ds) - this indicates the context from which the event is being reported. Should be `addon` if sent from an experiment’s add-on, `web` if sent from an associated web property, or `app` if sent from an associated mobile application.
 - [`qt`](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#qt) - if [batching](https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#batch) or delaying reports, this should represent the time delta between the event happening and the time it is being reported. This should not exceed 4 hours. _(Optional)_
