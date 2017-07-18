@@ -186,6 +186,8 @@ userCountContainerAlt = Nettopp startet!
 highlightPrivacy = Ditt personvern
 experimentGradReportPendingTitle = Dette eksperimentet er avsluttet
 experimentGradReportPendingCopy = Vi arbeider med en fullstendig rapport. Kom tilbake snart for mer info.
+experimentPlatformAddon = Firefox-eksperiment
+experimentPlatformMobile = Tilgjengelig på mobil
 experimentGoToLink = Gå til { $title }
 
 
@@ -299,3 +301,8 @@ hidePastExperiments = Skul tidligere eksperimenter
 
 warningGenericTitle = Noe gikk galt!
 warningUpgradeFirefoxTitle = Oppgrader Firefox for å fortsette!
+warningUpgradeFirefoxDetail = Test Pilot krever siste versjon av Firefox. <a>Oppgrader Firefox</a> for å komme i gang.
+warningHttpsRequiredTitle = HTTPS er påkrevd!
+warningHttpsRequiredDetail = Test Pilot må brukes via HTTPS. Se <a>dokumentasjonen vår</a> for mer informasjon.
+warningMissingPrefTitle = Utvikle Test Pilot?
+warningBadHostnameTitle = Ikke-godkjent vertsnavn!

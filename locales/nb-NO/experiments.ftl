@@ -69,3 +69,5 @@ universalsearchContributors0Title = Produktsjef
 universalsearchContributors1Title = Senior UX-designer
 universalsearchContributors2Title = Avdelingsingeniør
 universalsearchContributors3Title = Senioringeniør
+testpilotNewsupdatesGeneralupdate1Title = Siste nytt!
+testpilotNewsupdatesGeneralupdate2Title = Endringer på vei
