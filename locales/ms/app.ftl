@@ -186,6 +186,13 @@ userCountContainerAlt = baru sahaja dilancarkan!
 highlightPrivacy = Privasi anda
 experimentGradReportPendingTitle = Eksperimen ini sudah tamat
 experimentGradReportPendingCopy = Kami sedang meyediakan laporan penuh. Semak semula untuk dapatkan butirannya.
+experimentGoToLink = Pergi ke { $title }
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Eksperimen Firefox / web / mobile
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
