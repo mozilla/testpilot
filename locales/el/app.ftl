@@ -186,6 +186,19 @@ userCountContainerAlt = Μόλις ξεκίνησε!
 highlightPrivacy = Το απόρρητό σας
 experimentGradReportPendingTitle = Αυτό το πείραμα έχει λήξει
 experimentGradReportPendingCopy = Εργαζόμαστε πάνω σε μια πλήρη αναφορά. Ελέγξτε ξανά σύντομα για λεπτομέρειες.
+experimentGoToLink = Μετάβαση στο { $title }
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = πείραμα Firefox/ιστού/κινητού
+experimentPlatformWebAddon = πείραμα Firefox/ιστού
+experimentPlatformWebMobile = πείραμα ιστού/κινητού
+experimentPlatformAddonMobile = πείραμα Firefox/κινητού
+experimentPlatformWeb = πείραμα ιστού
+experimentPlatformAddon = πείραμα Firefox
+experimentPlatformMobileApp = πείραμα κινητού
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.

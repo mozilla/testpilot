@@ -73,6 +73,7 @@ tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
+trackingprotectionDetails1Copy = Αναφέρετε ένα πρόβλημα και βοηθήστε μας στην επίλυσή του.
 trackingprotectionToursteps0Copy = Η ασπίδα υποδεικνύει ότι η προστασία από παρακολούθηση είναι ενεργή. Αν υπάρχει και μια κάθετος, είναι ανενεργή.
 trackingprotectionToursteps1Copy = Πείτε μας πότε λειτουργούν όλα σωστά και πότε όχι.
 trackingprotectionToursteps2Copy = Μπορείτε πάντα να απενεργοποιήσετε την προστασία από παρακολούθηση από το Test Pilot.
