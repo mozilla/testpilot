@@ -183,6 +183,19 @@ userCountContainerAlt = Krekt start!
 highlightPrivacy = Jo privacy
 experimentGradReportPendingTitle = Dit eksperimint is einige
 experimentGradReportPendingCopy = Wy wurkje oan in folslein rapport. Sjoch ynkoarten nochris foar de details.
+experimentGoToLink = Nei { $title }
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Firefox- / web- / mobyl-eksperimint
+experimentPlatformWebAddon = Firefox- / web-eksperimint
+experimentPlatformWebMobile = web- / mobyl-eksperimint
+experimentPlatformAddonMobile = Firefox- / mobyl-eksperimint
+experimentPlatformWeb = webeksperimint
+experimentPlatformAddon = Firefox-eksperimint
+experimentPlatformMobileApp = mobyl-eksperimint
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
