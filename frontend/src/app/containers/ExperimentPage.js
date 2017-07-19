@@ -282,7 +282,7 @@ export class ExperimentDetail extends React.Component {
 
         <View {...this.props}>
 
-        {hasAddon !== null && (!hasAddon && !graduated) && <section id="testpilot-promo">
+        {hasAddon !== null && (!hasAddon && !graduated && !experiment.web_url) && <section id="testpilot-promo">
           <Banner>
               <LayoutWrapper flexModifier="row-between-reverse">
                 <div className="intro-text">
@@ -324,9 +324,11 @@ export class ExperimentDetail extends React.Component {
           <div className="sticky-header-sibling" style={{ height: `${stickyHeaderSiblingHeight}px` }} ></div>
 
           <div id="details">
+              <LayoutWrapper>
+                {experiment.platforms && <ExperimentPlatforms experiment={experiment} />}
+              </LayoutWrapper>
               <LayoutWrapper helperClass="details-content" flexModifier="details-content">
-                <div className="details-overview">
-                  {experiment.platforms && <ExperimentPlatforms experiment={experiment} />}
+                  <div className="details-overview">
                   <div className={`experiment-icon-wrapper-${experiment.slug} experiment-icon-wrapper`}>
                     <img className="experiment-icon" src={thumbnail}></img>
                   </div>
@@ -334,18 +336,10 @@ export class ExperimentDetail extends React.Component {
                     <section className="user-count">
                       { this.renderInstallationCount() }
                     </section>
-                    {!hasAddon && <div>
-                      {!!introduction && <section className="introduction">
-                        {!!warning && <div className="warning"><strong data-l10n-id={this.l10nId('warning')}>{warning}</strong></div>}
-                        {!graduated && <div data-l10n-id={this.l10nId('introduction')}>
-                          {parser(introduction)}
-                        </div>}
-                      </section>}
-                    </div>}
                     {!graduated && <div>
                       <section className="stats-section">
                         <table className="stats"><tbody>
-                          {hasAddon && <tr>
+                          {!experiment.web_url && <tr>
                             <td data-l10n-id="tour">Tour</td>
                             <td><a className="showTour" data-l10n-id="tourLink" onClick={e => this.showTour(e)} href="#">Launch Tour</a></td>
                           </tr>}
@@ -423,14 +417,14 @@ export class ExperimentDetail extends React.Component {
                   {this.renderEolBlock()}
                   {this.renderIncompatibleAddons()}
                   {this.renderLocaleWarning()}
-                  {hasAddon && <div>
+                  <div>
                    {!!introduction && <section className="introduction">
                      {!!warning && <div className="warning"><strong data-l10n-id={this.l10nId('warning')}>{warning}</strong></div>}
                      <div data-l10n-id={this.l10nId('introduction')}>
                        {parser(introduction)}
                      </div>
                    </section>}
-                  </div>}
+                  </div>
                   <div className="details-list">
                     {details.map((detail, idx) => (
                      <div key={idx}>
@@ -652,6 +646,14 @@ export class ExperimentDetail extends React.Component {
     return null;
   }
 
+  renderWebExperimentControls(web_url, title) {
+    return (
+      <a href={web_url} onClick={() => this.handleGoToLink()} target="_blank" rel="noopener noreferrer" className="button default">
+        <span data-l10n-id="experimentGoToLink" data-l10n-args={JSON.stringify({ title })} className="default-text"></span>
+      </a>
+    );
+  }
+
   renderExperimentControls() {
     const { enabled, isDisabling, progressButtonWidth } = this.state;
     const { experiment, installed, isAfterCompletedDate, hasAddon, clientUUID } = this.props;
@@ -660,7 +662,10 @@ export class ExperimentDetail extends React.Component {
     const surveyURL = buildSurveyURL('givefeedback', title, installed, clientUUID, survey_url);
 
     if (!hasAddon || !validVersion) {
-      return null;
+      const useWebLink = (experiment.platforms || []).indexOf('web') !== -1;
+      if (!useWebLink) {
+        return null;
+      }
     }
     if (isAfterCompletedDate(experiment)) {
       if (enabled) {
@@ -696,15 +701,10 @@ export class ExperimentDetail extends React.Component {
 
   renderEnableButton() {
     const { experiment } = this.props;
-    const { title, web_url } = experiment;
-
+    const { title } = experiment;
     const useWebLink = (experiment.platforms || []).indexOf('web') !== -1;
     if (useWebLink) {
-      return (
-        <a href={web_url} onClick={() => this.handleGoToLink()} target="_blank" rel="noopener noreferrer" className="button default">
-          <span data-l10n-id="experimentGoToLink" data-l10n-args={JSON.stringify({ title })} className="default-text"></span>
-        </a>
-      );
+      return this.renderWebExperimentControls(experiment.web_url, title);
     }
 
     const { isEnabling, progressButtonWidth } = this.state;
