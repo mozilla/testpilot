@@ -192,10 +192,10 @@ experimentGoToLink = Ir para { $title }
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 
-experimentPlatformWebAddonMobile = experiência do Firefox / web / dispositivos móveis
+experimentPlatformWebAddonMobile = experiência do Firefox / web / móvel
 experimentPlatformWebAddon = experiência do Firefox / web
-experimentPlatformWebMobile = experiência da web / dispositivos móveis
-experimentPlatformAddonMobile = experiência do Firefox / dispositivos móveis
+experimentPlatformWebMobile = experiência da web / móvel
+experimentPlatformAddonMobile = experiência do Firefox / móvel
 experimentPlatformWeb = experiência da web
 experimentPlatformAddon = experiência do Firefox
 experimentPlatformMobileApp = experiência móvel
