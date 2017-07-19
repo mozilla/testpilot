@@ -193,6 +193,12 @@ experimentGoToLink = Pergi ke { $title }
 [[ experimentPlatform ]]
 
 experimentPlatformWebAddonMobile = Eksperimen Firefox / web / mobile
+experimentPlatformWebAddon = Eksperimen Firefox / web
+experimentPlatformWebMobile = eksperimen web / mobile
+experimentPlatformAddonMobile = eksperimen Firefox / mobile
+experimentPlatformWeb = eksperimen web
+experimentPlatformAddon = eskperimen Firefox
+experimentPlatformMobileApp = eksperimen mobile
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
