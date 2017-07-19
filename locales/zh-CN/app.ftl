@@ -183,6 +183,19 @@ userCountContainerAlt = 刚刚启动！
 highlightPrivacy = 您的隐私
 experimentGradReportPendingTitle = 此实验已经结束
 experimentGradReportPendingCopy = 我们正在制作完整报告。请过段时间再回来了解详细信息。
+experimentGoToLink = 前往 { $title }
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Firefox / 网页端 / 移动端的实验
+experimentPlatformWebAddon = Firefox / 网页端的实验
+experimentPlatformWebMobile = 网页端 / 移动端的实验
+experimentPlatformAddonMobile = Firefox / 移动端的实验
+experimentPlatformWeb = 网页端的实验
+experimentPlatformAddon = Firefox 的实验
+experimentPlatformMobileApp = 移动端的实验
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
