@@ -192,8 +192,13 @@ experimentGoToLink = Pojdi na { $title }
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 
-experimentPlatformWeb = spletni poskus
-experimentPlatformMobileApp = mobilni poskus
+experimentPlatformWebAddonMobile = Poskus za Firefox / splet / mobilno aplikacijo
+experimentPlatformWebAddon = Poskus za Firefox / splet
+experimentPlatformWebMobile = Pokus za splet / mobilno aplikacijo
+experimentPlatformAddonMobile = Poksus za Firefox / mobilno aplikacijo
+experimentPlatformWeb = poskus za splet
+experimentPlatformAddon = Poskus za Firefox
+experimentPlatformMobileApp = Poskus za mobilno aplikacijo
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
