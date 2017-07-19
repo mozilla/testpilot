@@ -186,6 +186,19 @@ userCountContainerAlt = Épp most indult!
 highlightPrivacy = Magánszféra
 experimentGradReportPendingTitle = Ez a kísérlet véget ért
 experimentGradReportPendingCopy = A teljes jelentésen dolgozunk. Nézzen vissza hamarosan a részletekért.
+experimentGoToLink = Ugrás ide: { $title }
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Firefox / webes / mobilos kísérlet
+experimentPlatformWebAddon = Firefox / webes kísérlet
+experimentPlatformWebMobile = webes / mobilos kísérlet
+experimentPlatformAddonMobile = Firefox / mobilos kísérlet
+experimentPlatformWeb = webes kísérlet
+experimentPlatformAddon = Firefox kísérlet
+experimentPlatformMobileApp = mobilos kísérlet
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
