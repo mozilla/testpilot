@@ -81,7 +81,7 @@ export default class HomePageWithAddon extends React.Component {
                   it for a spin, and let us know what you think.
                 </p>
               </Localized>
-              <LocalizedHtml id="experimentsListNoneInstalledCTA" $link={link}>
+              <LocalizedHtml id="experimentsListNoneInstalledCTA">
                 <p>
                   Not interested?
                   <a onClick={() => this.onNotInterestedSurveyClick()}
