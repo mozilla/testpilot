@@ -186,14 +186,19 @@ userCountContainerAlt = 最近公開！
 highlightPrivacy = プライバシー
 experimentGradReportPendingTitle = この実験は終了しました
 experimentGradReportPendingCopy = 現在詳細なレポートを作成中です。また後で見に来てください。
+experimentGoToLink = { $title } へ
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
 experimentPlatformWebAddonMobile = Firefox / ウェブ / モバイル向け実験
 experimentPlatformWebAddon = Firefox / ウェブ向け実験
 experimentPlatformWebMobile = ウェブ / モバイル向け実験
 experimentPlatformAddonMobile = Firefox / モバイル向け実験
 experimentPlatformWeb = ウェブ向け実験
 experimentPlatformAddon = Firefox 向け実験
-experimentPlatformMobile = モバイル向け
-experimentGoToLink = { $title } へ
+experimentPlatformMobileApp = モバイル向け実験
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
