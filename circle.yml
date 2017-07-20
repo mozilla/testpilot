@@ -31,7 +31,7 @@ test:
   override:
     - ./bin/circleci/test-addon.sh
     - ./bin/circleci/test-frontend.sh
-    - tox -e flake8
+    - ./bin/circleci/flake8.sh
     - mkdir integration-test-results
     - ./bin/circleci/test-firefox-release.sh
     - ./bin/circleci/test-firefox-dev.sh
