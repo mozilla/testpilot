@@ -52,6 +52,7 @@ Google Analytics allows you to report [custom dimensions and metrics](https://su
 #### Global Custom Dimensions/Metrics
 Some custom dimensions and metrics are used consistently across Test Pilot experiments. These use the highest index numbers possible, for consistency across reports. These are all required.
 
+- `cd19` - indicates the release channel of the add-on. Should be one of `local`, `dev`, `stage`, or `production`.
 - `cd20` - indicates the Firefox release channel. This can be reverse-engineered by comparing the user agent to [information from `product-details`](https://product-details.mozilla.org/1.0/). Should be one of `esr`, `release`, `beta`, `developer`, or `nightly`.
 
 ### Content Experiment Fields
