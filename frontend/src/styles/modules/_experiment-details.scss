@@ -88,7 +88,8 @@
     }
 
     font-size: $grid-unit * .9;
-    height: $grid-unit * 2;
+    height: $grid-unit * 2.6;
+    line-height: $grid-unit * 2.6;
     padding: 0 $grid-unit * .75;
   }
 
@@ -440,6 +441,12 @@
   color: $transparent-black-5;
   font-size: 1.2 * $font-unit;
   font-weight: normal;
+  margin: 0;
+
+  .platform-copy,
+  .platform-icon {
+    margin-bottom: 0;
+  }
 
   .platform-icon {
     background-position: left center;
@@ -463,14 +470,6 @@
   .platform-icon-mobile {
     background-image: url('../images/experiment-type-mobile.svg');
   }
-}
-
-.experiment-information .experiment-platform {
-  margin: 10px 0 -2px;
-}
-
-.details-overview .experiment-platform {
-  margin: 0 0 8px;
 }
 
 @include respond-to('small') {
