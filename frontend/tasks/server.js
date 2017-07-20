@@ -32,6 +32,10 @@ const serverOptions = {
         req.url = url.format(parsed);
       }
 
+      if (pathname.indexOf('.json') !== -1) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+      }
+
       // Skip CSP for storybook
       if (pathname.indexOf('.storybook') !== -1) { return next(); }
 
