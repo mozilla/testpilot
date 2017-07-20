@@ -163,16 +163,46 @@ disableHeader = Analluogi'r Arbrawf?
 disableExperiment = Analluogi { $title }
 disableExperimentTransition = Analluogi...
 enableExperiment = Galluogi { $title }
+enableExperimentTransition = Galluogi...
+experimentManuallyDisabled = Mae { $title } wedi ei analluogi yn y Rheolwr Ychwanegion
+experimentMeasurementIntro = Yn ychwanegol i'r <a>data</a> sy'n cael ei gasglu gan bob arbrawf Test Pilot, dyma'r prif bethau i chi wybod pan fyddwch yn defnyddio { $experimentTitle }:
+measurements = Eich preifatrwydd
+experimentPrivacyNotice = Gallwch ddysgu ragor am gasglu data ar gyfer { $title } yma.
+contributorsHeading = Wedi ei gyflwyno gan
+contributorsExtraLearnMore = Dysgu rhagor
+changelog = Cofnod newid
+tour = Cyflwyniad
+tourLink = Cychwyn y Cyflwyniad
+contribute = Cyfrannu
+bugReports = Adroddiadau Gwall
+discussExperiment = Trafod { $title }
+tourOnboardingTitle = Galluogwyd { $title }
+tourDoneButton = Gorffen
+userCountContainer = Mae yna <span>{ $installation_count }</span> o bobl yn profi { $title } ar hyn o bryd!
+userCountContainerAlt = Newydd ei gyflwyno!
+highlightPrivacy = Eich preifatrwydd
+experimentGradReportPendingTitle = Mae'r arbrawf hwn wedi dod i ben
+experimentGradReportPendingCopy = Rydym yn gweithio ar adroddiad llawn. Dewch nôl cyn bo hir am y manylion.
+experimentGoToLink = Mynd i { $title }
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 
+experimentPlatformWebAddonMobile = Arbrawf Firefox / gwe / symudol
+experimentPlatformWebAddon = Firefox / arbrawf gwe
+experimentPlatformWebMobile = arbrawf gwe / symudol
+experimentPlatformAddonMobile = Firefox / arbrawf symudol
+experimentPlatformWeb = arbrawf gwe
+experimentPlatformAddon = arbrawf Firefox
+experimentPlatformMobileApp = arbrawf symudol
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
+upgradeNoticeTitle = Mae { $title } angen Firefox { $min_release } neu hwyrach.
+upgradeNoticeLink = Sut i ddiweddaru Firefox.
 
 
 // Shown while uninstalling Test Pilot.
