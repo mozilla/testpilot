@@ -203,31 +203,61 @@ experimentPlatformMobileApp = arbrawf symudol
 
 upgradeNoticeTitle = Mae { $title } angen Firefox { $min_release } neu hwyrach.
 upgradeNoticeLink = Sut i ddiweddaru Firefox.
+versionChangeNotice = Nid yw { $experiment_title } yn cael ei gynnal yn y fersiwn yma o  Firefox.
+versionChangeNoticeLink = Estyn y fersiwn diweddaraf o Firefox.
 
 
 // Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
+retireDialogTitle = Dadosod Test Pilot?
+retireMessage = Eich dewis chi. Bydd hyn yn anallogi unrhyw brofion gweithredol, dadosod yr ychwanegyn a thynnu manylion eich cyfrif o'n gweinyddion.
+retireEmailMessage = I beidio derbyn diweddariadau e-bost, cliciwch ar ddolen <em>dad-tanysgrifio</em> ar unrhyw e-bost Test Pilot.
+retireSubmitButton = Parhau
+pageTitleRetirePage = Firefox Test Pilot - Dadosod Test Pilot
+retirePageProgressMessage = Cau i lawr...
+retirePageHeadline = Diolch am hedfan!
+retirePageMessage = Gobeithio eich bod wedi cael hwyl yn arbrofi gyda ni. <br>Dewch nôl unrhyw bryd.
+retirePageSurveyButton = Cymrwch arolwg sydyn
 
 
 // Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = Rhest wirio cyn cychwyn
+restartIntroOne = Ailgychwynnwch eich porwr
+restartIntroTwo = Chwiliwch am y r ychwanegyn Test Pilot
+restartIntroThree = Dewiswch eich arbrofion
 
 
 // Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
+sharePrimary = Hoffi Test Pilot? Helpwch ni i ganfod rhagor i'w profi.
+shareSecondary = neu dorri a gludo'r ddolen hon...
+shareEmail = E-bost
+shareCopy = Copïo
+// Shown on pages of retired or retiring experiments.
+eolIntroMessage = Mae { $title } yn gorffen ar { $completedDate }
+eolNoticeLink = Dysgu rhagor
+eolDisableMessage = Mae arbrawf { $title } wedi dod i ben. Unwaith i chi ei ddadosod ni fydd modd i chi ei ailosod drwy Test Pilot eto.
+completedDateLabel = Dyddiad Gorffen yr Arbrawf: <b>{ $completedDate }</b>
 
 
 // A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 [[ incompatible ]]
 
+incompatibleHeader = Efallai nad yw'r arbrawf yma'n gydnaws â rhai o'r ychwanegion sydd gennych ar eich porwr.
+incompatibleSubheader = Rydym yn argymell <a>analluogi’r ychwanegion hyn</a> cyn cychwyn yr arbrawf hwn:
 
 
 // A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder
+    .placeholder = Eich e-bost yma
+newsletterFormDisclaimer = Dim ond gwybodaeth am Test Pilot fyddwn yn ei anfon.
+newsletterFormPrivacyNotice = Rwy'n iawn gyda Mozilla'n trin fy manylion fel sy'n cael ei drin yn yr <a>hysbysiad preifatrwydd</>hwn.
 
 
 // A section of the footer containing a newsletter signup form.
