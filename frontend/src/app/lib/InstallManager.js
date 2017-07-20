@@ -24,7 +24,6 @@ export function uninstallAddon() {
 export function setupAddonConnection(...args) {
   if (hasMozAddonManager()) {
     addon.listen(...args);
-    addon.pollAddon();
   }
   return manager.setupAddonConnection(...args);
 }
