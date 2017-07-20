@@ -186,9 +186,13 @@ userCountContainerAlt = Nettopp startet!
 highlightPrivacy = Ditt personvern
 experimentGradReportPendingTitle = Dette eksperimentet er avsluttet
 experimentGradReportPendingCopy = Vi arbeider med en fullstendig rapport. Kom tilbake snart for mer info.
-experimentPlatformAddon = Firefox-eksperiment
-experimentPlatformMobile = Tilgjengelig på mobil
 experimentGoToLink = Gå til { $title }
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformAddon = Firefox-eksperiment
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -300,6 +304,7 @@ hidePastExperiments = Skul tidligere eksperimenter
 [[ warnings ]]
 
 warningGenericTitle = Noe gikk galt!
+warningGenericDetail = Noe gikk galt med Test Pilot. Vennligst <a>send inn en feilrapport</a> og ta med denne feilmeldingen.
 warningUpgradeFirefoxTitle = Oppgrader Firefox for å fortsette!
 warningUpgradeFirefoxDetail = Test Pilot krever siste versjon av Firefox. <a>Oppgrader Firefox</a> for å komme i gang.
 warningHttpsRequiredTitle = HTTPS er påkrevd!
