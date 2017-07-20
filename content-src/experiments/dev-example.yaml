@@ -8,6 +8,7 @@ description: >
 introduction: >
   <p>Do you like Test Pilot experiments? Well, this one should exercise all the
   features of the site. You should never see it on production!</p>
+  <p><iframe width="560" height="315" src="https://www.youtube.com/embed/lDv68xYHFXM" frameborder="0" allowfullscreen></iframe></p>
   <ul>
     <li><strong>Markup in introduction:</strong> Look at this HTML list!</li>
     <li><strong>Hidden from production:</strong> If you see this on production
