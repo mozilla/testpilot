@@ -258,21 +258,32 @@ newsletterFormEmailPlaceholder
     .placeholder = Eich e-bost yma
 newsletterFormDisclaimer = Dim ond gwybodaeth am Test Pilot fyddwn yn ei anfon.
 newsletterFormPrivacyNotice = Rwy'n iawn gyda Mozilla'n trin fy manylion fel sy'n cael ei drin yn yr <a>hysbysiad preifatrwydd</>hwn.
+newsletterFormPrivacyAgreementRequired = Ticiwch y blwch yma os ydych am barhau.
+newsletterFormSubmitButton = Cofrestrwch Nawr
+newsletterFormSubmitButtonSubmitting = Cyflwyno...
 
 
 // A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = Bu gwall wrth gyflwyno eich cyfeiriad e-bost. Ceisio eto?
+newsletterFooterHeader = Cadw'n Gyfredol
+newsletterFooterBody = Derbyn gwybodaeth am arbrofion newydd a gweld canlyniadau ar arbrofion rydych wedi eu profi.
+newsletterFooterSuccessHeader = Diolch!
+newsletterFooterSuccessBody = Os nad ydych wed cadwrnhau tanysgrifiad i gylchlythyr gan Mozilla, mae'n bosib y bydd yn rhaid i chi wneud hynny. Edrychwch y eich blwch derbyn neu hidl sbam am e-bost gennym ni.
 
 
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Nid yw'r arbrawf yma'ncael ei gynnal y eich iaith chi. ({ $locale_code }).
+localeWarningSubtitle = Gallwch ei alluogi o hyd, os hoffech chi.
 
 
 // An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledHeader = Beth am gychwyn arni!
 
 
 // Shown to users who do not have JavaScript enabled.
