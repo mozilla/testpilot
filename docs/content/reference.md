@@ -182,6 +182,17 @@ see also:[General news updates](#general-news-updates)
 
 ![Example use of news_updates](img/news_update.png)
 
+## `video_url`
+
+If there's a youtube video for the experiment use this field. Note that this should be the embed URL
+rather than the sharing url
+
+```yaml
+video_url: 'video_url: https://www.youtube.com/embed/lDv68xYHFXM'
+```
+
+![Example share on embed code](img/embed_url.png)
+
 ## `image_twitter`
 
 A representative image to be used when being shared on Twitter. Should be a 560x300 JPG. Required.
