@@ -313,3 +313,6 @@ warningUpgradeFirefoxDetail = Mae Test Pilot angen y fersiwn diweddaraf o Firefo
 warningHttpsRequiredTitle = Mae angen HTTPS!
 warningHttpsRequiredDetail = Rhaid mynd i Test Pilot drwy HTTPS. Darllenwch ein <a>dogfennaeth</a> am y manylion.
 warningMissingPrefTitle = Datblygu Test Pilot?
+warningMissingPrefDetail = Wrth redeg Test Pilot yn lleol neu mewn amgylchedd datblygu, mae angen ffurfweddiad arbennig. Darllenwch ein <a>dogfennaeth</a> am y manylion.
+warningBadHostnameTitle = Enw gwestai heb ei gymeradwyo!
+warningBadHostnameDetail = Dim ond drwy testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, neu example.com:8000 y mae modd cael mynediad i Test Pilot. Darllenwch <a>ein dogfennaeth</a> am y manylion.
