@@ -67,7 +67,7 @@ export default class LocalizedHtml extends Localized {
                 }
               );
             }
-            console.error('ftl string did not have as many anchors as the jsx');
+            throw new Error('ftl string did not have as many anchors as the jsx');
           }
         }
         return undefined;

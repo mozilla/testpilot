@@ -110,6 +110,7 @@ class App extends Component {
 `;
         });
       }
+      return Promise.resolve();
     }
 
     const negotiated = negotiateLanguages(
