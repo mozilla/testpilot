@@ -147,9 +147,11 @@ class App extends Component {
 
     function* generateMessages(languages, localizations) {
       for (const lang of languages) {
-        const cx = new MessageContext(lang);
-        cx.addMessages(localizations[lang]);
-        yield cx;
+        if (typeof localizations[lang] === 'string') {
+          const cx = new MessageContext(lang);
+          cx.addMessages(localizations[lang]);
+          yield cx;
+        }
       }
     }
 
