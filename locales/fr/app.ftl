@@ -97,8 +97,8 @@ notFoundHeader = Zut… quatre cent quatre !
 emailOptInDialogTitle = Bienvenue dans Test Pilot.
 emailOptInMessage = Obtenez les résultats des tests de vos expériences et découvrez-en de nouvelles.
 emailOptInConfirmationTitle = Courriel envoyé
-emailOptInSuccessMessage2 = Merci !
 emailOptInConfirmationClose = À propos d’expériences…
+emailOptInDialogErrorTitle = Oups !
 
 
 // news feed updates.
@@ -181,6 +181,24 @@ tourDoneButton = Terminé
 userCountContainer = <span>{ $installation_count }</span> personnes essaient { $title } en ce moment même !
 userCountContainerAlt = Nouveau
 highlightPrivacy = Confidentialité
+experimentGradReportPendingTitle = Cette expérience est terminée
+experimentGradReportPendingCopy = Nous sommes en train de réaliser un rapport complet. Revenez un peu plus tard pour consulter tous les détails.
+experimentGoToLink =
+    Aller à { $title }
+    
+
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Expérience Firefox / Web / mobile
+experimentPlatformWebAddon = Expérience Firefox / Web
+experimentPlatformWebMobile = Expérience web / mobile
+experimentPlatformAddonMobile = Expérience Firefox / mobile
+experimentPlatformWeb = Expérience web
+experimentPlatformAddon = Expérience Firefox
+experimentPlatformMobileApp = Expérience mobile
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
