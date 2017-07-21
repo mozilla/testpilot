@@ -284,18 +284,32 @@ localeWarningSubtitle = Gallwch ei alluogi o hyd, os hoffech chi.
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = Beth am gychwyn arni!
+experimentsListNoneInstalledSubheader = Yn barod i brofi arbrawf Test Pilot newydd? Dewiswch u i'w alluogi, ei brofi a gadael i ni wybod eich barn.
+experimentsListNoneInstalledCTA = Dim diddordeb? a>Gadewch i ni wybod pam</a>
 
 
 // Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
+noScriptHeading = O na...
+noScriptMessage = Mae Test Pilot ange Java Script.<br>Sori am hynny.
+noScriptLink = Pam?
 
 
 // Text of a button to toggle visibility of a list of past experiments.
 [[ pastExperiments ]]
 
+viewPastExperiments = Edrych ar Arbrofion y Gorffennol
+hidePastExperiments = Cuddio Arbrofion y Gorffennol
 
 
 // Text of warnings to the user if various error conditions are detected
 [[ warnings ]]
 
+warningGenericTitle = Aeth rhywbeth o'i le!
+warningGenericDetail = Aeth rhywbeth o'i le gyda Test Pilot. Anfonnwch <a>adroddiad gwall</a> a sôn am y neges gwall hwn.
+warningUpgradeFirefoxTitle = Diweddarwch Firefox i barhau!
+warningUpgradeFirefoxDetail = Mae Test Pilot angen y fersiwn diweddaraf o Firefox. <a>Diweddarwch Firefox</a> i gychwyn arni.
+warningHttpsRequiredTitle = Mae angen HTTPS!
+warningHttpsRequiredDetail = Rhaid mynd i Test Pilot drwy HTTPS. Darllenwch ein <a>dogfennaeth</a> am y manylion.
+warningMissingPrefTitle = Datblygu Test Pilot?
