@@ -1,7 +1,10 @@
 activitystreamDescription = En grafisk oversikt over historikken din og en ny hjemmeside som gjør det mulig å finne ønsket innhold i Firefox ennå bedre.
 activitystreamIntroduction = <p>Nå kan du surfe uten å miste tankestrømmen din. Activity Stream holder toppsidene dine, bokmerker og nyeste historikk lett tilgjengelig i hver nye fane. Den nye tidslinjevisinga gir deg et fugleperspektiv på surfinga din.</p>
 activitystreamMeasurements0 = Vi samler inn grunnleggende bruksdata om hvordan du samhandler med den nye eksperimentelle fanen og tidslinjesider, slik som typer av element som du klikker på og posisjonen til dem på siden.
+activitystreamDetails1Copy = Se hvor du har vært, slik at du kan gå videre dit du skal.
+activitystreamToursteps0Copy = Finn favorittnettstedene dine, nyeste historikk og bokmerker når du åpner en ny fane.
 activitystreamToursteps1Copy = Besøk den nye tidslinjen for å visuelt bla i all historikk og alle bokmerker.
+activitystreamToursteps2Copy = Du kan alltid gi oss tilbakemelding eller slå av Activity Stream fra Test Pilot.
 activitystreamContributors0Title = Programvareingeniør
 activitystreamContributors1Title = Nettingeniør
 activitystreamContributors2Title = Programvareutvikler
