@@ -1,0 +1,62 @@
+id: 14
+title: 'Notes'
+slug: notes
+platforms: ['addon']
+thumbnail: /static/images/experiments/notes/experiments_experiment/thumbnail.png
+description: >
+  A simple notepad built into Firefox. Ever need to jot
+  something down while you browse the web? This is the experiment for you.
+introduction: >
+  Notes adds a simple, one-page notepad to your browser’s sidebar. We’ve added a few basic formatting options to start, but we want your feedback to tell us what features you’d like to see us add.
+image_twitter: /static/images/experiments/min-vid/social/mv-twitter.jpg
+image_facebook: /static/images/experiments/min-vid/social/mv-facebook.jpg
+changelog_url: 'https://github.com/mozilla/notes/blob/master/CHANGELOG.md'
+contribute_url: 'https://github.com/mozilla/notes'
+bug_report_url: 'https://github.com/mozilla/notes/issues'
+discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/notes'
+privacy_notice_url: 'https://github.com/mozilla/notes/blob/master/docs/metrics.md'
+measurements:
+  - >
+    Notes will collect information about your use of the feature, such as how often you create notes
+    and how long you spend editing them, the number of characters you save in your notes, and whether
+    you use any advanced editing features (e.g., bold or stylized text).
+  - >
+    Notes will also collect information about your interaction with the add-on, such as how you
+    access the feature, and what buttons you may click.
+xpi_url: 'https://testpilot.firefox.com/files/@notes/latest'
+addon_id: 'notes@mozilla.com'
+gradient_start: '#A665B4'
+gradient_stop: '#CF5858'
+details:
+  -
+    image: /static/images/experiments/notes/experiments_experimentdetail/detail1.jpg
+    copy: >
+      It’s a notepad. Why didn’t we think of this earlier?
+contributors:
+  -
+    display_name: 'Udara Weerasinghege'
+    title: 'Engineering Intern'
+    avatar: /static/images/experiments/avatars/udara-w.jpg
+  -
+    display_name: 'Ryan Feeley'
+    title: 'Senior Product/UX Designer'
+    avatar: /static/images/experiments/avatars/ryan-f.jpg
+  -
+    display_name: 'Remy Hubscher'
+    title: 'Software Engineer'
+    avatar: /static/images/experiments/avatars/remy-h.jpg
+  -
+    display_name: 'Vlad Filippov'
+    title: 'Senior Engineer'
+    avatar: /static/images/experiments/avatars/vlad-f.jpg
+  -
+    display_name: 'Peter Dehaan'
+    title: 'Firefox QA'
+    avatar: /static/images/experiments/avatars/peter.jpg
+  -
+    display_name: 'Emil Pasca'
+    title: 'Softvision QA'
+    avatar: /static/images/experiments/avatars/emil.jpg
+installation_count: 1
+created: '2017-10-26T00:00:00Z'
+order: 1

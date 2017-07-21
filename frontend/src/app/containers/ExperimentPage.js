@@ -333,9 +333,11 @@ export class ExperimentDetail extends React.Component {
                     <img className="experiment-icon" src={thumbnail}></img>
                   </div>
                   <div className="details-sections">
-                    <section className="user-count">
-                      { this.renderInstallationCount() }
-                    </section>
+                    {!experiment.web_url &&
+                      <section className="user-count">
+                        { this.renderInstallationCount() }
+                      </section>
+                    }
                     {!graduated && <div>
                       <section className="stats-section">
                         <table className="stats"><tbody>
@@ -417,6 +419,9 @@ export class ExperimentDetail extends React.Component {
                   {this.renderEolBlock()}
                   {this.renderIncompatibleAddons()}
                   {this.renderLocaleWarning()}
+                  {experiment.video_link &&
+                    <iframe width="100%" height="360" src={experiment.video_link} frameBorder="0" allowFullScreen></iframe>
+                  }
                   <div>
                    {!!introduction && <section className="introduction">
                      {!!warning && <div className="warning"><strong data-l10n-id={this.l10nId('warning')}>{warning}</strong></div>}

@@ -1,0 +1,70 @@
+id: 14
+title: 'Voice Fill'
+slug: voice-fill
+platforms: ['addon']
+thumbnail: /static/images/experiments/voice-fill/experiments_experiment/thumbnail.png
+description: >
+  Speech recognition comes to Firefox. Voice fill lets you speak to your favorite search engines.
+introduction: >
+  <p>Voice Fill uses artificial intelligence to interpret speech input. As a participant in the Voice Fill experiment in Test Pilot, your voice searches will teach our AI to provide smarter results.</p>
+  <p>We've added Voice Fill to Google, Yahoo and DuckDuckGo search pages, and will expand to more sites as the experiment progresses.</p>
+
+image_twitter: /static/images/experiments/voice-fill/social/mv-twitter.jpg
+image_facebook: /static/images/experiments/voice-fill/social/mv-facebook.jpg
+video_link: https://www.youtube.com/embed/lDv68xYHFXM
+changelog_url: 'https://github.com/mozilla/speaktome/blob/master/CHANGELOG.md'
+contribute_url: 'https://github.com/mozilla/speaktome/'
+bug_report_url: 'https://github.com/mozilla/speaktome/issues'
+discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/voice-fill'
+privacy_notice_url: 'https://github.com/mozilla/speaktome/blob/master/docs/metrics.md'
+measurements:
+  - >
+    We collect usage data when you engage with the context menu, experiment
+    icon and player controls.
+  - >
+    We also collect data on the number of times you encounter a playable
+    video, the number of times you played the video and the video service that
+    provided the video. This helps us understand how useful our users are
+    finding the experiment.
+  - We do not collect information about the specific videos you encounter.
+xpi_url: 'https://testpilot.firefox.com/files/@voicefill/latest'
+addon_id: 'speaktome@mozilla.com'
+gradient_start: '#00C8D7'
+gradient_stop: '#00a8b7'
+details:
+  -
+    image: /static/images/experiments/voice-fill/experiments_experimentdetail/detail1.jpg
+    copy: >
+      Look for the Microphone icon on Yahoo, DuckDuckGo, and Google.
+  -
+    image: /static/images/experiments/voice-fill/experiments_experimentdetail/detail2.jpg
+    copy: >
+      Voice Fill will listen to you speak.
+  -
+    image: /static/images/experiments/voice-fill/experiments_experimentdetail/detail3.jpg
+    copy: >
+      Voice Fill may offer you multiple options. Select the one you want to help train the AI.
+contributors:
+  -
+    display_name: 'Andre Natal'
+    title: 'Speech Engineer'
+    avatar: /static/images/experiments/avatars/andre-n.jpg
+  -
+    display_name: 'Fang Shih'
+    title: 'Visual Designer'
+    avatar: /static/images/experiments/avatars/fshih.jpg
+  -
+    display_name: 'Carmen Fat'
+    title: 'Softvision QA'
+    avatar: /static/images/experiments/avatars/carmen-f.jpg
+  -
+    display_name: 'Ciprian Muresan'
+    title: 'Softvision QA'
+    avatar: /static/images/experiments/avatars/ciprian.jpg
+  -
+    display_name: 'Faramarz Rashed'
+    title: 'Advanced Development, Emerging Technologies'
+    avatar: /static/images/experiments/avatars/faramarz-r.jpg
+installation_count: 1
+created: '2017-07-26T00:00:00Z'
+order: 0
