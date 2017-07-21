@@ -98,19 +98,14 @@ class App extends Component {
       locale: (navigator.language || '').split('-')[0]
     });
     this.props.chooseTests();
-    this.props.fetchUserCounts(config.usageCountsURL).then(() => {
-      const staticNode = document.getElementById('static-root');
-      if (staticNode) {
-        staticNode.parentNode.removeChild(staticNode);
-      }
-    });
+    const userCountsPromise = this.props.fetchUserCounts(config.usageCountsURL);
     this.measurePageview();
 
     const langs = {};
 
     function addLang(lang, response) {
       if (response.ok) {
-        response.text().then(data => {
+        return response.text().then(data => {
           langs[lang] = `${langs[lang] || ''}${data}
 `;
         });
@@ -123,14 +118,24 @@ class App extends Component {
       { defaultLocale: 'en-US' }
     );
 
-    Promise.all(negotiated.map(language =>
+    const promises = negotiated.map(language =>
       Promise.all(
         [
           fetch(`/static/locales/${language}/app.ftl`).then(response => addLang(language, response)),
           fetch(`/static/locales/${language}/experiments.ftl`).then(response => addLang(language, response))
         ]
       )
-    )).then(() => this.props.setLocalizations(langs));
+    );
+
+    promises.push(userCountsPromise);
+
+    Promise.all(promises).then(() => {
+      this.props.setLocalizations(langs);
+      const staticNode = document.getElementById('static-root');
+      if (staticNode) {
+        staticNode.parentNode.removeChild(staticNode);
+      }
+    });
   }
 
   render() {
