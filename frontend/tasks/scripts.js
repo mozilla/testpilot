@@ -28,6 +28,7 @@ const includeVendorModules = [
   'fluent/compat',
   'fluent-langneg/compat',
   'fluent-react/compat',
+  'html-react-parser/lib/dom-to-react',
   'react/lib/ReactDOMFactories',
   'querystring'
 ];

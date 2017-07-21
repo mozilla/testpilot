@@ -22,7 +22,7 @@
     "fluent": "0.4.1",
     "fluent-langneg": "0.0.2",
     "fluent-react": "0.4.1",
-    "html-react-parser": "0.3.3",
+    "html-react-parser": "0.3.5",
     "isomorphic-fetch": "2.2.1",
     "js-cookie": "2.1.4",
     "l20n": "5.0.0",
