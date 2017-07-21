@@ -1,6 +1,8 @@
 
 import React from 'react';
 
+import { Localized } from 'fluent-react/compat';
+
 const AVAILABLE_PLATFORMS = ['web', 'addon', 'mobile'];
 
 export default function ExperimentPlatforms({ experiment }) {
@@ -22,9 +24,11 @@ export default function ExperimentPlatforms({ experiment }) {
     <h4 className="experiment-platform">
       {enabledPlatforms.map(platform =>
         <span key={platform} className={'platform-icon platform-icon-' + platform}>&nbsp;</span>)}
-      <span data-l10n-id={l10nId} className='platform-copy'>
-        Available on {enabledPlatforms.join(' / ')}
-      </span>
+      <Localized id={ l10nId }>
+        <span className='platform-copy'>
+          Available on { enabledPlatforms.join(' / ') }
+        </span>
+      </Localized>
     </h4>
   );
 }

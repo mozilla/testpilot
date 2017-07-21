@@ -1,3 +1,4 @@
+import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
 import Copter from '../components/Copter';
@@ -12,10 +13,14 @@ export default class NotFoundPage extends React.Component {
             {...this.props}>
         <LayoutWrapper flexModifier="column-center">
           <div id="four-oh-four" className="modal delayed-fade-in">
-            <h1 data-l10n-id="notFoundHeader" className="title">Four Oh Four!</h1>
+            <Localized id="notFoundHeader">
+              <h1 className="title">Four Oh Four!</h1>
+            </Localized>
             <br/>
             <div className="modal-actions">
-              <a data-l10n-id="home" className="button default large" href="/">Home</a>
+              <Localized id="home">
+                <a className="button default large" href="/">Home</a>
+              </Localized>
             </div>
           </div>
           <Copter animation="fade-in-fly-up"/>

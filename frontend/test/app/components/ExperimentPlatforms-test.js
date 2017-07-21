@@ -5,6 +5,7 @@ import sinon from 'sinon';
 import { shallow } from 'enzyme';
 import moment from 'moment';
 
+import { findLocalizedById } from '../util';
 import ExperimentPlatforms from '../../../src/app/components/ExperimentPlatforms';
 
 
@@ -26,8 +27,6 @@ describe('app/components/ExperimentPlatforms', () => {
     subject = shallow(<ExperimentPlatforms {...props} />);
   });
 
-  const findByL10nID = id => subject.findWhere(el => id === el.props()['data-l10n-id']);
-
   it('should not display platforms if there are none', () => {
     expect(subject.find('.experiment-platform')).to.have.property('length', 0);
   });
@@ -39,7 +38,7 @@ describe('app/components/ExperimentPlatforms', () => {
         platforms: ['addon', 'mobile', 'web', 'diving', 'political']
       }
     });
-    expect(findByL10nID('experimentPlatformWebAddonMobile')).to.have.property('length', 1);
+    expect(findLocalizedById(subject, 'experimentPlatformWebAddonMobile')).to.have.property('length', 1);
     ['addon', 'mobile', 'web'].forEach(platform =>
       expect(subject.find(`.platform-icon-${platform}`)).to.have.property('length', 1));
     ['diving', 'political'].forEach(platform =>

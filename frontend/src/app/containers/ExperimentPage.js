@@ -1,3 +1,4 @@
+import { Localized } from 'fluent-react/compat';
 import React from 'react';
 import moment from 'moment';
 
@@ -12,6 +13,7 @@ import EmailDialog from '../components/EmailDialog';
 import ExperimentDisableDialog from '../components/ExperimentDisableDialog';
 import ExperimentEolDialog from '../components/ExperimentEolDialog';
 import ExperimentTourDialog from '../components/ExperimentTourDialog';
+import LocalizedHtml from '../components/LocalizedHtml';
 import MainInstallButton from '../components/MainInstallButton';
 import ExperimentCardList from '../components/ExperimentCardList';
 import ExperimentPreFeedbackDialog from '../components/ExperimentPreFeedbackDialog';
@@ -147,12 +149,16 @@ export class ExperimentDetail extends React.Component {
     return (
       <section className="incompatible-addons">
         <header>
-          <h3 data-l10n-id="incompatibleHeader">
-            This experiment may not be compatible with add-ons you have installed.
-          </h3>
-          <p data-l10n-id="incompatibleSubheader">
-            We recommend <a href={helpUrl}>disabling these add-ons</a> before activating this experiment:
-          </p>
+          <Localized id="incompatibleHeader">
+            <h3>
+              This experiment may not be compatible with add-ons you have installed.
+            </h3>
+          </Localized>
+          <LocalizedHtml id="incompatibleSubheader">
+            <p>
+              We recommend <a href={helpUrl}>disabling these add-ons</a> before activating this experiment:
+            </p>
+          </LocalizedHtml>
         </header>
         <main>
           <ul>
@@ -190,14 +196,17 @@ export class ExperimentDetail extends React.Component {
       <Warning titleL10nId="eolIntroMessage"
                titleL10nArgs={ JSON.stringify({ title: experiment.title, completedDate }) }
                title={ title }>
-        <div data-l10n-id={this.l10nId('eolWarning')}>
-          {parser(experiment.eol_warning)}
-        </div>
+        <Localized id={this.l10nId('eolWarning')}>
+          <div>
+            {parser(experiment.eol_warning)}
+          </div>
+        </Localized>
         <div className="small-spacer" />
-        <a href="/about" data-l10n-id="eolNoticeLink"
-          target="_blank" rel="noopener noreferrer">
-          Learn more
-        </a>
+        <Localized id="eolNoticeLink">
+          <a href="/about" target="_blank" rel="noopener noreferrer">
+            Learn more
+          </a>
+        </Localized>
       </Warning>
     );
   }
@@ -287,9 +296,13 @@ export class ExperimentDetail extends React.Component {
               <LayoutWrapper flexModifier="row-between-reverse">
                 <div className="intro-text">
                   <h2 className="banner__title">
-                    <span data-l10n-id="experimentPromoHeader" className="block">Ready for Takeoff?</span>
+                    <Localized id="experimentPromoHeader">
+                      <span className="block">Ready for Takeoff?</span>
+                    </Localized>
                   </h2>
-                  <p className="banner__copy" data-l10n-id="experimentPromoSubheader"></p>
+                  <Localized id="experimentPromoSubheader">
+                    <p className="banner__copy"></p>
+                  </Localized>
                   <MainInstallButton {...this.props}
                                      experimentTitle={title}
                                      installCallback={ this.installExperiment.bind(this) } />
@@ -308,13 +321,19 @@ export class ExperimentDetail extends React.Component {
             })
             }>
             <div className={classnames('status-bar', statusType)}>
-              {(statusType === 'enabled') && <span data-l10n-id="isEnabledStatusMessage" data-l10n-args={JSON.stringify({ title })}><span></span></span>}
-              {(statusType === 'error') && <span data-l10n-id="installErrorMessage" data-l10n-args={JSON.stringify({ title })}><span></span></span>}
+              {(statusType === 'enabled') && <Localized id="isEnabledStatusMessage" $title={ title }>
+                <span>{title} is enabled.</span>
+              </Localized>}
+              {(statusType === 'error') && <Localized id="installErrorMessage" $title={ title }>
+                <span><span></span></span>
+              </Localized>}
             </div>
             <LayoutWrapper helperClass="details-header" flexModifier="row-between-breaking">
               <header>
                 <h1>{title}</h1>
-                {subtitle && <h4 className="subtitle" data-l10n-id={this.l10nId('subtitle')}>{subtitle}</h4>}
+                {subtitle && <Localized id={this.l10nId('subtitle')}>
+                  <h4 className="subtitle">{subtitle}</h4>
+                </Localized>}
               </header>
               { this.renderExperimentControls() }
               { this.renderMinimumVersionNotice(title, hasAddon, min_release) }
@@ -340,50 +359,73 @@ export class ExperimentDetail extends React.Component {
                       <section className="stats-section">
                         <table className="stats"><tbody>
                           {!experiment.web_url && <tr>
-                            <td data-l10n-id="tour">Tour</td>
-                            <td><a className="showTour" data-l10n-id="tourLink" onClick={e => this.showTour(e)} href="#">Launch Tour</a></td>
+                            <Localized id="tour">
+                              <td>Tour</td>
+                            </Localized>
+                            <td>
+                              <Localized id="tourLink">
+                                <a className="showTour" onClick={e => this.showTour(e)} href="#">Launch Tour</a>
+                              </Localized>
+                            </td>
                           </tr>}
                           {changelog_url && <tr>
-                            <td data-l10n-id="changelog">Changelog</td>
+                            <Localized id="changelog">
+                              <td>Changelog</td>
+                            </Localized>
                             <td>
                              {changelog_url && <a href={changelog_url}>{changelog_url}</a>}
                             </td>
                           </tr>}
                           <tr>
-                            <td data-l10n-id="contribute">Contribute</td>
+                            <Localized id="contribute">
+                              <td>Contribute</td>
+                            </Localized>
                             <td><a href={contribute_url}>{contribute_url}</a></td>
                           </tr>
 
                           <tr>
-                            <td data-l10n-id="bugReports">Bug Reports</td>
+                            <Localized id="bugReports">
+                              <td>Bug Reports</td>
+                            </Localized>
                             <td><a href={bug_report_url}>{bug_report_url}</a></td>
                           </tr>
 
                           <tr>
-                            <td data-l10n-id="discussExperiment" data-l10n-args={JSON.stringify({ title })}></td>
+                            <Localized id="discussExperiment" $title={title}>
+                              <td></td>
+                            </Localized>
                             <td><a href={discourse_url}>{discourse_url}</a></td>
                           </tr>
                         </tbody></table>
                       </section>
                     </div>}
                     <section className="contributors-section">
-                      <h3 data-l10n-id="contributorsHeading">Brought to you by</h3>
+                      <Localized id="contributorsHeading">
+                        <h3>Brought to you by</h3>
+                      </Localized>
                       <ul className="contributors">
                         {contributors.map((contributor, idx) => (
                           <li key={idx}>
                             <img className="avatar" width="56" height="56" src={contributor.avatar} />
                             <div className="contributor">
                               <p className="name">{contributor.display_name}</p>
-                              {contributor.title && <p className="title" data-l10n-id={this.l10nId(['contributors', idx, 'title'])}>{contributor.title}</p>}
+                              {contributor.title && <Localized id={this.l10nId(['contributors', idx, 'title'])}>
+                                <p className="title">{contributor.title}</p>
+                              </Localized>}
                             </div>
                           </li>
                         ))}
                       </ul>
                     {contributors_extra && <p className="disclaimer">
-                        <span data-l10n-id={this.l10nId('contributors_extra')}>{contributors_extra}</span>
+                        <Localized id={this.l10nId('contributors_extra')}>
+                          <span>{contributors_extra}</span>
+                        </Localized>
                         {contributors_extra_url && <span>&nbsp;
-                          <a data-l10n-id="contributorsExtraLearnMore" href={contributors_extra_url} target="_blank" rel="noopener noreferrer">Learn more</a>.</span>
-                        }
+                          <Localized id="contributorsExtraLearnMore">
+                            <a href={contributors_extra_url} target="_blank" rel="noopener noreferrer">Learn more</a>
+                          </Localized>
+                          .
+                        </span>}
                       </p>
                     }
                     </section>
@@ -391,22 +433,35 @@ export class ExperimentDetail extends React.Component {
                       <div>
                         {measurements && <section
                               className={classnames('measurements', { highlight: highlightMeasurementPanel })}>
-                          <h3 data-l10n-id="measurements">Your privacy</h3>
+                          <Localized id="measurements">
+                            <h3>Your privacy</h3>
+                          </Localized>
                           <div data-hook="measurements-html" className="measurement">
-                            {privacy_preamble && <p data-l10n-id={this.l10nId('privacy_preamble')}>{privacy_preamble}</p>}
-                            <p data-l10n-id="experimentMeasurementIntro"
-                               data-l10n-args={JSON.stringify({ experimentTitle: experiment.title })}>
-                               <a href="/privacy"></a>
-                            </p>
+                            {privacy_preamble && <Localized id={this.l10nId('privacy_preamble')}>
+                              <p>{privacy_preamble}</p>
+                            </Localized>}
+                            <Localized id="experimentMeasurementIntro2"
+                              $data={<a href="/privacy">
+                                <Localized id="experimentMeasurementIntroDataLink">
+                                  <span>data</span>
+                                </Localized>
+                              </a>}
+                              $experimentTitle={experiment.title}>
+                              <p>
+                                In addition to the data collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use {experiment.title}:
+                              </p>
+                            </Localized>
                             <ul>
-                              {measurements.map((note, idx) => (
-                                <li data-l10n-id={this.l10nId(['measurements', idx])} key={idx}>{
+                              {measurements.map((note, idx) => <LocalizedHtml key={idx} id={this.l10nId(['measurements', idx])}>
+                                <li>{
                                   EXPERIMENT_MEASUREMENT_URLS[idx] === null ? null : <a href={EXPERIMENT_MEASUREMENT_URLS[idx]}></a>
                                 }</li>
-                              ))}
+                              </LocalizedHtml>)}
                             </ul>
                           </div>
-                          {privacy_notice_url && <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-l10n-args={JSON.stringify({ title })} href={privacy_notice_url}><span></span></a>}
+                          {privacy_notice_url && <Localized id="experimentPrivacyNotice" $title={title}>
+                            <a className="privacy-policy" href={privacy_notice_url}><span></span></a>
+                          </Localized>}
                         </section>}
                       </div>
                     </div>}
@@ -419,10 +474,16 @@ export class ExperimentDetail extends React.Component {
                   {this.renderLocaleWarning()}
                   <div>
                    {!!introduction && <section className="introduction">
-                     {!!warning && <div className="warning"><strong data-l10n-id={this.l10nId('warning')}>{warning}</strong></div>}
-                     <div data-l10n-id={this.l10nId('introduction')}>
-                       {parser(introduction)}
-                     </div>
+                     {!!warning && <div className="warning">
+                       <Localized id={this.l10nId('warning')}>
+                         <strong>{warning}</strong>
+                       </Localized>
+                     </div>}
+                     <LocalizedHtml id={this.l10nId('introduction')}>
+                       <div>
+                         {parser(introduction)}
+                       </div>
+                     </LocalizedHtml>
                    </section>}
                   </div>
                   <div className="details-list">
@@ -431,10 +492,14 @@ export class ExperimentDetail extends React.Component {
                        <div className="details-image">
                          <img width="680" src={detail.image} />
                          <p className="caption">
-                           {detail.headline && <strong data-l10n-id={this.l10nId(['details', idx, 'headline'])}>{detail.headline}</strong>}
-                           {detail.copy && <span data-l10n-id={this.l10nId(['details', idx, 'copy'])}>
-                             {parser(detail.copy)}
-                           </span>}
+                           {detail.headline && <Localized id={this.l10nId(['details', idx, 'headline'])}>
+                             <strong>{detail.headline}</strong>
+                           </Localized>}
+                           {detail.copy && <Localized id={this.l10nId(['details', idx, 'copy'])}>
+                             <span>
+                               {parser(detail.copy)}
+                             </span>
+                           </Localized>}
                          </p>
                        </div>
                      </div>
@@ -443,23 +508,35 @@ export class ExperimentDetail extends React.Component {
                   {hasAddon && <div>
                     {measurements && <section
                           className={classnames('measurements', { highlight: highlightMeasurementPanel })}>
-                      <h3 data-l10n-id="measurements">Your privacy</h3>
+                      <Localized id="measurements">
+                        <h3>Your privacy</h3>
+                      </Localized>
                       <div data-hook="measurements-html" className="measurement">
-                        {privacy_preamble && <p data-l10n-id={this.l10nId('privacy_preamble')}>{privacy_preamble}</p>}
-                        <p data-l10n-id="experimentMeasurementIntro"
-                           data-l10n-args={JSON.stringify({ experimentTitle: experiment.title })}>
-                          In addition to the <a href="/privacy">data</a> collected by all Test Pilot experiments, here are the
-                          key things you should know about what is happening when you use {experiment.title}:
-                        </p>
+                        {privacy_preamble && <Localized id={this.l10nId('privacy_preamble')}>
+                          <p>{privacy_preamble}</p>
+                        </Localized>}
+                        <LocalizedHtml id="experimentMeasurementIntro" $experimentTitle={experiment.title}>
+                          <p>
+                            In addition to the
+                            <a href="/privacy">
+                              data
+                            </a>
+                            collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use {experiment.title}:
+                          </p>
+                        </LocalizedHtml>
                         <ul>
                           {measurements.map((note, idx) => (
-                            <li data-l10n-id={this.l10nId(['measurements', idx])} key={idx}>{
-                              EXPERIMENT_MEASUREMENT_URLS[idx] === null ? null : <a href={EXPERIMENT_MEASUREMENT_URLS[idx]}></a>
-                            }</li>
+                            <LocalizedHtml key={idx} id={this.l10nId(['measurements', idx])}>
+                              <li>{
+                                EXPERIMENT_MEASUREMENT_URLS[idx] === null ? null : <a href={EXPERIMENT_MEASUREMENT_URLS[idx]}></a>
+                              }</li>
+                            </LocalizedHtml>
                           ))}
                         </ul>
                       </div>
-                      {privacy_notice_url && <a className="privacy-policy" data-l10n-id="experimentPrivacyNotice" data-l10n-args={JSON.stringify({ title })} href={privacy_notice_url}><span data-hook="title"></span></a>}
+                      {privacy_notice_url && <Localized id="experimentPrivacyNotice" $title={title}>
+                        <a className="privacy-policy" href={privacy_notice_url}><span data-hook="title"></span></a>
+                      </Localized>}
                     </section>}
                   </div>}
                   </div>}
@@ -474,21 +551,29 @@ export class ExperimentDetail extends React.Component {
                         <div>
                           <Warning titleL10nId="experimentGradReportPendingTitle"
                             title="This experiment has ended.">
-                              <div data-l10n-id="experimentGradReportPendingCopy">We are working on a full report. Check back soon for the details.</div>
+                              <Localized id="experimentGradReportPendingCopy">
+                                <div>We are working on a full report. Check back soon for the details.</div>
+                              </Localized>
                           </Warning>
-                          <div data-l10n-id={this.l10nId('introduction')}>
-                            {parser(introduction)}
-                          </div>
+                          <LocalizedHtml id={this.l10nId('introduction')}>
+                            <div>
+                              {parser(introduction)}
+                            </div>
+                          </LocalizedHtml>
                           <div className="details-list">
                             {details.map((detail, idx) => (
                               <div key={idx}>
                                 <div className="details-image">
                                   <img width="680" src={detail.image} />
                                   <p className="caption">
-                                    {detail.headline && <strong data-l10n-id={this.l10nId(['details', idx, 'headline'])}>{detail.headline}</strong>}
-                                    {detail.copy && <span data-l10n-id={this.l10nId(['details', idx, 'copy'])}>
-                                    {parser(detail.copy)}
-                                    </span>}
+                                    {detail.headline && <Localized id={this.l10nId(['details', idx, 'headline'])}>
+                                      <strong>{detail.headline}</strong>
+                                    </Localized>}
+                                    {detail.copy && <LocalizedHtml id={this.l10nId(['details', idx, 'copy'])}>
+                                      <span>
+                                        {parser(detail.copy)}
+                                      </span>
+                                    </LocalizedHtml>}
                                   </p>
                                 </div>
                               </div>
@@ -502,7 +587,9 @@ export class ExperimentDetail extends React.Component {
             </div>
           </div>
           <Banner>
-            <h2 className="banner__subtitle centered" data-l10n-id="otherExperiments">Try out these experiments as well</h2>
+            <Localized id="otherExperiments">
+              <h2 className="banner__subtitle centered">Try out these experiments as well</h2>
+            </Localized>
             <LayoutWrapper flexModifier="card-list">
               <ExperimentCardList {...this.props}
                                   experiments={currentExperiments}
@@ -588,23 +675,23 @@ export class ExperimentDetail extends React.Component {
     const { experiment, isAfterCompletedDate } = this.props;
     const { completed, title, installation_count } = experiment;
 
+    const installation_count_node = <span className="bold">{installation_count}</span>;
     if (isAfterCompletedDate(experiment)) {
-      const completedDate = formatDate(completed);
-      return (
-        <span data-l10n-id="completedDateLabel" data-l10n-args={JSON.stringify({ completedDate })}><b></b></span>
-      );
+      const completedDate = <b>
+        {formatDate(completed)}
+      </b>;
+      return <LocalizedHtml id="completedDateLabel" $completedDate={completedDate}>
+        <span>Experiment End Date: <b>{completedDate}</b></span>
+      </LocalizedHtml>;
     }
     if (!installation_count || installation_count <= 100) {
-      return (
-        <span data-l10n-id="userCountContainerAlt" className="bold" data-l10n-args={JSON.stringify({ title })}></span>
-      );
+      return <Localized id="userCountContainerAlt" $title={title}>
+        <span className="bold">Just launched!</span>
+      </Localized>;
     }
-    return (
-      // Note: this doesn't include the text content because of a conflict
-      // in how l20n and react modify the dom.
-      // https://github.com/mozilla/testpilot/pull/1712
-      <span data-l10n-id="userCountContainer" data-l10n-args={JSON.stringify({ installation_count: installation_count, title })}><span className="bold"></span></span>
-    );
+    return <LocalizedHtml id="userCountContainer" $installation_count={installation_count_node} $title={title}>
+      <span>There are <span>{installation_count_node}</span> people trying {title} right now!</span>
+    </LocalizedHtml>;
   }
 
   maxVersionCheck(max) {
@@ -626,8 +713,12 @@ export class ExperimentDetail extends React.Component {
     if (hasAddon && !this.minVersionCheck(min_release)) {
       return (
         <div className="upgrade-notice">
-          <div data-l10n-id="upgradeNoticeTitle" data-l10n-args={JSON.stringify({ title, min_release })}></div>
-          <a onClick={e => this.clickUpgradeNotice(e)} data-l10n-id="upgradeNoticeLink" href="https://support.mozilla.org/kb/find-what-version-firefox-you-are-using" target="_blank" rel="noopener noreferrer">How to update Firefox.</a>
+          <Localized id="upgradeNoticeTitle" $title={title} $min_release={min_release}>
+            <div></div>
+          </Localized>
+          <Localized id="upgradeNoticeLink">
+            <a onClick={e => this.clickUpgradeNotice(e)} href="https://support.mozilla.org/kb/find-what-version-firefox-you-are-using" target="_blank" rel="noopener noreferrer">How to update Firefox.</a>
+          </Localized>
         </div>
       );
     }
@@ -638,8 +729,12 @@ export class ExperimentDetail extends React.Component {
     if (hasAddon && !this.maxVersionCheck(max_release)) {
       return (
         <div className="upgrade-notice">
-          <div data-l10n-id="versionChangeNotice" data-l10n-args={ JSON.stringify({ experiment_title: title }) }></div>
-          <a onClick={e => this.clickUpgradeNotice(e)} data-l10n-id="versionChangeNoticeLink" href="https://www.mozilla.org/firefox/" target="_blank" rel="noopener noreferrer">Get the current version of Firefox.</a>
+          <Localized id="versionChangeNotice" $experiment_title={title}>
+            <div></div>
+          </Localized>
+          <Localized id="versionChangeNoticeLink">
+            <a onClick={e => this.clickUpgradeNotice(e)} href="https://www.mozilla.org/firefox/" target="_blank" rel="noopener noreferrer">Get the current version of Firefox.</a>
+          </Localized>
         </div>
       );
     }
@@ -649,7 +744,9 @@ export class ExperimentDetail extends React.Component {
   renderWebExperimentControls(web_url, title) {
     return (
       <a href={web_url} onClick={() => this.handleGoToLink()} target="_blank" rel="noopener noreferrer" className="button default">
-        <span data-l10n-id="experimentGoToLink" data-l10n-args={JSON.stringify({ title })} className="default-text"></span>
+        <Localized id="experimentGoToLink" $title={ title }>
+          <span className="default-text">Go to { title }</span>
+        </Localized>
       </a>
     );
   }
@@ -671,7 +768,15 @@ export class ExperimentDetail extends React.Component {
       if (enabled) {
         return (
           <div className="experiment-controls">
-            <button onClick={e => { e.preventDefault(); this.setState({ showEolDialog: true }); }} style={{ minWidth: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'warning'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text"></span></button>
+            <button onClick={e => { e.preventDefault(); this.setState({ showEolDialog: true }); }} style={{ minWidth: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'warning'], { 'state-change': isDisabling })}>
+              <span className="state-change-inner"></span>
+              <Localized id="disableExperimentTransition">
+                <span className="transition-text">Disabling...</span>
+              </Localized>
+              <Localized id="disableExperiment" $title={title}>
+                <span className="default-text"></span>
+              </Localized>
+            </button>
           </div>
         );
       }
@@ -679,21 +784,34 @@ export class ExperimentDetail extends React.Component {
     }
     if (installed && installed[experiment.addon_id] && installed[experiment.addon_id].manuallyDisabled) {
       return <div className="experiment-controls">
-        <button disabled onClick={e => { e.preventDefault(); }} style={{ minWidth: progressButtonWidth }} id="install-button"  className={classnames(['button', 'default'])}><span data-l10n-id="experimentManuallyDisabled" data-l10n-args={JSON.stringify({ title })} className="default-text"></span></button>
+        <button disabled onClick={e => { e.preventDefault(); }} style={{ minWidth: progressButtonWidth }} id="install-button"  className={classnames(['button', 'default'])}>
+          <Localized id="experimentManuallyDisabled" $title={title}>
+            <span className="default-text"></span>
+          </Localized>
+        </button>
       </div>;
     }
     if (enabled) {
-      return (
-        <div className="experiment-controls">
-          <a onClick={e => this.handleFeedback(e)} data-l10n-id="giveFeedback" id="feedback-button" className="button default" href={surveyURL} target="_blank" rel="noopener noreferrer">Give Feedback</a>
-          <button onClick={e => this.renderUninstallSurvey(e)} style={{ minWidth: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'secondary'], { 'state-change': isDisabling })}><span className="state-change-inner"></span><span data-l10n-id="disableExperimentTransition" className="transition-text">Disabling...</span><span data-l10n-id="disableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text"></span></button>
-        </div>
-      );
+      return <div className="experiment-controls">
+        <Localized id="giveFeedback">
+          <a onClick={e => this.handleFeedback(e)} id="feedback-button" className="button default" href={surveyURL} target="_blank" rel="noopener noreferrer">Give Feedback</a>
+        </Localized>
+        <button onClick={e => this.renderUninstallSurvey(e)} style={{ minWidth: progressButtonWidth }} id="uninstall-button" className={classnames(['button', 'secondary'], { 'state-change': isDisabling })}><span className="state-change-inner"></span>
+          <Localized id="disableExperimentTransition">
+            <span className="transition-text">Disabling...</span>
+          </Localized>
+          <Localized id="disableExperiment" $title={title}>
+            <span className="default-text"></span>
+          </Localized>
+        </button>
+      </div>;
     }
 
     return (
       <div className="experiment-controls">
-        <a onClick={e => this.highlightPrivacy(e)} className="highlight-privacy" data-l10n-id="highlightPrivacy">Your privacy</a>
+        <Localized id="highlightPrivacy">
+          <a onClick={e => this.highlightPrivacy(e)} className="highlight-privacy">Your privacy</a>
+        </Localized>
         {this.renderEnableButton()}
       </div>
     );
@@ -711,8 +829,12 @@ export class ExperimentDetail extends React.Component {
     return (
       <button onClick={e => this.installExperiment(e)} style={{ minWidth: progressButtonWidth }} id="install-button"  className={classnames(['button', 'default'], { 'state-change': isEnabling })}>
         <span className="state-change-inner"></span>
-        <span data-l10n-id="enableExperimentTransition" className="transition-text">Enabling...</span>
-        <span data-l10n-id="enableExperiment" data-l10n-args={JSON.stringify({ title })} className="default-text"></span>
+        <Localized id="enableExperimentTransition">
+          <span className="transition-text">Enabling...</span>
+        </Localized>
+        <Localized id="enableExperiment" $title={ title }>
+          <span className="default-text">Enable { title }</span>
+        </Localized>
       </button>
     );
   }

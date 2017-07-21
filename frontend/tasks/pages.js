@@ -201,16 +201,13 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
     <meta name="availableLanguages" content={ available_locales } />
     <meta name="viewport" content="width=device-width" />
 
-    <link rel="localization" href="/static/locales/{locale}/app.ftl" />
-    <link rel="localization" href="/static/locales/{locale}/experiments.ftl" />
-
     <link rel="alternate" type="application/atom+xml" href="/feed.atom" title="Atom Feed"/>
     <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="RSS Feed"/>
     <link rel="alternate" type="application/json" href="/feed.json" title="JSON Feed"/>
 
     <link rel="canonical" href={ `https://testpilot.firefox.com/${canonical_path}` } />
 
-    <title data-l10n-id="pageTitleDefault">{ meta_title }</title>
+    <title>{ meta_title }</title>
 
     <meta property="og:title" content={ meta_title } />
     <meta name="twitter:title" content={ meta_title } />
@@ -228,12 +225,12 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
       <div className="full-page-wrapper centered">
         <div className="layout-wrapper layout-wrapper--column-center">
           <div id="four-oh-four" className="modal delayed-fade-in">
-            <h1 data-l10n-id="noScriptHeading" className="title">Uh oh...</h1>
+            <h1 className="title">Uh oh...</h1>
             <div className="modal-content">
-              <p data-l10n-id="noScriptMessage">Test Pilot requires JavaScript.<br />Sorry about that.</p>
+              <p>Test Pilot requires JavaScript.<br />Sorry about that.</p>
             </div>
             <div className="modal-actions">
-              <a data-l10n-id="noScriptLink" className="button default large" href="https://github.com/mozilla/testpilot/blob/master/docs/faq.md">Find out why</a>
+              <a className="button default large" href="https://github.com/mozilla/testpilot/blob/master/docs/faq.md">Find out why</a>
             </div>
           </div>
           <div className="copter">
@@ -244,7 +241,6 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
     </noscript>
     { prepareForClient ? <Loading /> : null }
     { prepareForClient ? <script src="/static/app/vendor.js"></script> : null }
-    { enable_pontoon ? <script src="https://pontoon.mozilla.org/pontoon.js"></script> : null }
   </div>;
 
   return makeStaticString(prepareForClient, pageName, pageParam, headComponent, bodyComponent, component);
@@ -254,7 +250,7 @@ function generateStaticPageFromMarkdown(pageName, pageParam, markdown, params) {
   const body = <div className="full-page-wrapper">
     <header id="main-header" className="layout-wrapper layout-wrapper--row-between-top">
       <h1>
-        <a href="/" className="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
+        <a href="/" className="wordmark">Firefox Test Pilot</a>
       </h1>
     </header>
     <div className="layout-wrapper static-page-content">
@@ -265,11 +261,11 @@ function generateStaticPageFromMarkdown(pageName, pageParam, markdown, params) {
       <div id="footer-links" className="layout-wrapper layout-wrapper--row-bottom-breaking">
         <div className="legal-links">
           <a href="https://www.mozilla.org" className="mozilla-logo"></a>
-          <a data-l10n-id="footerLinkLegal" href="https://www.mozilla.org/about/legal/" className="boilerplate">Legal</a>
-          <a data-l10n-id="footerLinkAbout" href="/about" className="boilerplate">About Test Pilot</a>
-          <a data-l10n-id="footerLinkPrivacy" href="/privacy" className="boilerplate">Privacy</a>
-          <a data-l10n-id="footerLinkTerms" href="/terms" className="boilerplate">Terms</a>
-          <a data-l10n-id="footerLinkCookies" href="https://www.mozilla.org/privacy/websites/#cookies" className="boilerplate">Cookies</a>
+          <a href="https://www.mozilla.org/about/legal/" className="boilerplate">Legal</a>
+          <a href="/about" className="boilerplate">About Test Pilot</a>
+          <a href="/privacy" className="boilerplate">Privacy</a>
+          <a href="/terms" className="boilerplate">Terms</a>
+          <a href="https://www.mozilla.org/privacy/websites/#cookies" className="boilerplate">Cookies</a>
         </div>
         <div className="social-links">
           <a href="https://github.com/mozilla/testpilot" target="_blank" title="GitHub" className="link-icon github"></a>

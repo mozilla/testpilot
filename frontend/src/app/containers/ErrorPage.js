@@ -1,9 +1,11 @@
 // @flow
 
+import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
 import Copter from '../components/Copter';
 import LayoutWrapper from '../components/LayoutWrapper';
+import LocalizedHtml from '../components/LocalizedHtml';
 import View from '../components/View';
 
 type ErrorPageProps = {
@@ -22,10 +24,14 @@ export default class ErrorPage extends React.Component {
         <LayoutWrapper flexModifier="column-center">
           <div id="four-oh-four" className="modal centered">
             <header className="modal-header-wrapper neutral-modal">
-              <h1 data-l10n-id="errorHeading" className="modal-header">Whoops!</h1>
+              <Localized id="errorHeading">
+                <h1 className="modal-header">Whoops!</h1>
+              </Localized>
             </header>
             <div className="modal-content">
-              <p data-l10n-id="errorMessage">Looks like we broke something. <br /> Maybe try again later.</p>
+              <LocalizedHtml id="errorMessage">
+                <p>Looks like we broke something.<br />Maybe try again later.</p>
+              </LocalizedHtml>
             </div>
           </div>
           <Copter animation="fade-in-fly-up" />

@@ -3,6 +3,7 @@ import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
+import { findLocalizedById } from '../util';
 
 import EmailDialog from '../../../src/app/components/EmailDialog';
 import { basketUrl } from '../../../src/app/lib/utils';
@@ -71,8 +72,7 @@ describe('app/components/EmailDialog', () => {
       });
 
       expect(subject.state('isSuccess')).to.be.true;
-      const message = subject.findWhere(el => 'newsletterFooterSuccessBody' === el.props()['data-l10n-id']);
-      expect(message).to.have.length(1);
+      expect(findLocalizedById(subject, 'newsletterFooterSuccessBody')).to.have.length(1);
 
       expect(sendToGA.lastCall.args).to.deep.equal(['event', {
         eventCategory: 'HomePage Interactions',
@@ -98,8 +98,7 @@ describe('app/components/EmailDialog', () => {
 
     setTimeout(() => {
       expect(subject.state('isError')).to.be.true;
-      const message = subject.findWhere(el => 'newsletterFooterError' === el.props()['data-l10n-id']);
-      expect(message).to.have.length(1);
+      expect(findLocalizedById(subject, 'newsletterFooterError')).to.have.length(1);
       done();
     }, 1);
   });
@@ -107,8 +106,7 @@ describe('app/components/EmailDialog', () => {
   it('should dismiss when continue button is clicked after subscribe', () => {
     subject.setState({ isSuccess: true, isError: false });
 
-    const message = subject.findWhere(el => 'newsletterFooterSuccessBody' === el.props()['data-l10n-id']);
-    expect(message).to.have.length(1);
+    expect(findLocalizedById(subject, 'newsletterFooterSuccessBody')).to.have.length(1);
 
     const button = subject.findWhere(el => 'email-success-continue' === el.props()['id']);
     expect(button).to.have.length(1);

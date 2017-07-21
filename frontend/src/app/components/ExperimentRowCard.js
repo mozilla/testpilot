@@ -1,7 +1,10 @@
 // @flow
 
-import React from 'react';
 import classnames from 'classnames';
+import { Localized } from 'fluent-react/compat';
+import React from 'react';
+
+import LocalizedHtml from '../components/LocalizedHtml';
 
 import { buildSurveyURL, experimentL10nId } from '../lib/utils';
 
@@ -51,9 +54,15 @@ export default class ExperimentRowCard extends React.Component {
         })}
       >
         <div className="experiment-actions">
-          {enabled && <div data-l10n-id="experimentListEnabledTab" className="tab enabled-tab"></div>}
-          {this.justLaunched() && <div data-l10n-id="experimentListJustLaunchedTab" className="tab just-launched-tab"></div>}
-          {this.justUpdated() && <div data-l10n-id="experimentListJustUpdatedTab" className="tab just-updated-tab"></div>}
+          {enabled && <Localized id="experimentListEnabledTab">
+            <div className="tab enabled-tab"></div>
+          </Localized>}
+          {this.justLaunched() && <Localized id="experimentListJustLaunchedTab">
+            <div className="tab just-launched-tab"></div>
+          </Localized>}
+          {this.justUpdated() && <Localized id="experimentListJustUpdatedTab">
+            <div className="tab just-updated-tab"></div>
+          </Localized>}
         </div>
         <div className={`experiment-icon-wrapper-${experiment.slug} experiment-icon-wrapper`}>
           <div className={`experiment-icon-${experiment.slug} experiment-icon`}></div>
@@ -62,13 +71,17 @@ export default class ExperimentRowCard extends React.Component {
         <header>
           <div>
             <h3>{title}</h3>
-            {subtitle && <h4 data-l10n-id={this.l10nId('subtitle')} className="subtitle">{subtitle}</h4>}
+            {subtitle && <Localized id={this.l10nId('subtitle')}>
+              <h4 className="subtitle">{subtitle}</h4>
+            </Localized>}
             <h4>{this.statusMsg()}</h4>
           </div>
           {this.renderFeedbackButton()}
         </header>
         <ExperimentPlatforms experiment={experiment} />
-        <p data-l10n-id={this.l10nId('description')}>{description}</p>
+        <Localized id={this.l10nId('description')}>
+          <p>{description}</p>
+        </Localized>
         { this.renderInstallationCount(installation_count, isCompleted) }
         { this.renderManageButton(enabled, hasAddon, isCompleted) }
       </div>
@@ -86,9 +99,9 @@ export default class ExperimentRowCard extends React.Component {
     const platforms = this.props.experiment.platforms || [];
     if (platforms.length === 0 || platforms.indexOf('addon') !== -1) {
       return (
-        <span className="participant-count"
-              data-l10n-id="participantCount"
-              data-l10n-args={JSON.stringify({ installation_count })}>{installation_count}</span>
+        <LocalizedHtml id="participantCount" $installation_count={installation_count}>
+          <span className="participant-count"><span>{installation_count}</span> participants</span>
+        </LocalizedHtml>
       );
     }
 
@@ -104,11 +117,13 @@ export default class ExperimentRowCard extends React.Component {
     const surveyURL = buildSurveyURL('givefeedback', title, installed, clientUUID, survey_url);
     return (
       <div>
-        <a onClick={() => this.handleFeedback()}
-           href={surveyURL} target="_blank" rel="noopener noreferrer"
-           className="experiment-feedback" data-l10n-id="experimentCardFeedback">
-           Feedback
-        </a>
+        <Localized id="experimentCardFeedback">
+          <a onClick={() => this.handleFeedback()}
+             href={surveyURL} target="_blank" rel="noopener noreferrer"
+             className="experiment-feedback">
+             Feedback
+          </a>
+        </Localized>
       </div>
     );
   }
@@ -125,15 +140,21 @@ export default class ExperimentRowCard extends React.Component {
   renderManageButton(enabled: Boolean, hasAddon: Boolean, isCompleted: Boolean) {
     if (enabled && hasAddon) {
       return (
-        <div className="button card-control secondary" data-l10n-id="experimentCardManage">Manage</div>
+        <Localized id="experimentCardManage">
+          <div className="button card-control secondary">Manage</div>
+        </Localized>
       );
     } else if (isCompleted) {
       return (
-        <div className="button card-control secondary" data-l10n-id="experimentCardLearnMore">Learn More</div>
+        <Localized id="experimentCardLearnMore">
+          <div className="button card-control secondary">Learn More</div>
+        </Localized>
       );
     }
     return (
-      <div className="button card-control default" data-l10n-id="experimentCardGetStarted">Get Started</div>
+      <Localized id="experimentCardGetStarted">
+        <div className="button card-control default">Get Started</div>
+      </Localized>
     );
   }
 
@@ -181,9 +202,13 @@ export default class ExperimentRowCard extends React.Component {
       if (delta < 0) {
         return '';
       } else if (delta < ONE_DAY) {
-        return <span className="eol-message" data-l10n-id="experimentListEndingTomorrow">Ending Tomorrow</span>;
+        return <Localized id="experimentListEndingTomorrow">
+          <span className="eol-message">Ending Tomorrow</span>
+        </Localized>;
       } else if (delta < ONE_WEEK) {
-        return <span className="eol-message" data-l10n-id="experimentListEndingSoon">Ending Soon</span>;
+        return <Localized id="experimentListEndingSoon">
+          <span className="eol-message">Ending Soon</span>
+        </Localized>;
       }
     }
     return '';

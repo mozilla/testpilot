@@ -1,8 +1,10 @@
 // @flow
 
-import React from 'react';
 import classnames from 'classnames';
+import { Localized } from 'fluent-react/compat';
 import moment from 'moment';
+import React from 'react';
+
 import LayoutWrapper from './LayoutWrapper';
 import { newsUpdateL10nId } from '../lib/utils';
 
@@ -32,12 +34,19 @@ export class Update extends React.Component {
           <div className={classnames(iconClassName, 'experiment-icon')}></div>
           <div className="update-content">
             <header>
-              {experiment ? <h2 data-l10n-id={categoryTitleL10nID}>{categoryTitle}</h2> :
-              <h2 className="update-title" data-l10n-id={newsUpdateL10nId(update, 'title')}>{title}</h2>}
+              {experiment ? <Localized id={categoryTitleL10nID}>
+                <h2>{categoryTitle}</h2>
+              </Localized> : <Localized id={newsUpdateL10nId(update, 'title')}>
+                <h2 className="update-title">{title}</h2>
+              </Localized>}
               <p className="up-date">{prettyDate(published || created)}</p>
             </header>
-            {experiment ? <h4 className="update-title" data-l10n-id={newsUpdateL10nId(update, 'title')}>{title}</h4> : null}
-            <p data-l10n-id={newsUpdateL10nId(update, 'content')} className="summary">{content}</p>
+            {experiment ? <Localized id={newsUpdateL10nId(update, 'title')}>
+              <h4 className="update-title">{title}</h4>
+            </Localized> : null}
+            <Localized id={newsUpdateL10nId(update, 'content')}>
+              <p className="summary">{content}</p>
+            </Localized>
           </div>
           <div className="link-chevron">
             <span className="chevron">&nbsp;</span>
@@ -67,7 +76,9 @@ export default class UpdateList extends React.Component {
 
     return (
       <div className="update-list">
-        <h1 className="emphasis update-list-heading" data-l10n-id="latestUpdatesTitle">Latest Updates</h1>
+        <Localized id="latestUpdatesTitle">
+          <h1 className="emphasis update-list-heading">Latest Updates</h1>
+        </Localized>
         <LayoutWrapper flexModifier="column-center">
           {newsUpdates.map((update, index) =>
             <Update key={index} update={update}
