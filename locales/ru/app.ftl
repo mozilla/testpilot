@@ -192,6 +192,13 @@ experimentGoToLink = Перейти к { $title }
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 
+experimentPlatformWebAddonMobile = Эксперимент для Firefox / Интернета / мобильного устройства
+experimentPlatformWebAddon = Эксперимент для Firefox / Интернета
+experimentPlatformWebMobile = Эксперимент для Интернета / мобильного устройства
+experimentPlatformAddonMobile = Эксперимент для Firefox / мобильного устройства
+experimentPlatformWeb = Эксперимент для Интернета
+experimentPlatformAddon = Эксперимент для Firefox
+experimentPlatformMobileApp = Эксперимент для мобильного устройства
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
