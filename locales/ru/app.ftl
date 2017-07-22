@@ -186,6 +186,12 @@ userCountContainerAlt = Только что запущено!
 highlightPrivacy = Ваша приватность
 experimentGradReportPendingTitle = Этот эксперимент завершён
 experimentGradReportPendingCopy = Мы работаем над полным отчётом. Загляните попозже, чтобы узнать подробности.
+experimentGoToLink = Перейти к { $title }
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
