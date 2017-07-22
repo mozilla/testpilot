@@ -59,6 +59,7 @@ tour_steps:
   -
     image: /static/images/experiments/containers/tour/tour2.jpg
     copy: Long press on the New Tab button to select a container.
+    copy_l10nsuffix: longPress
   -
     image: /static/images/experiments/containers/tour/tour3.jpg
     copy: Use the toolbar menu to open Container tabs, create new Containers and organize, edit or delete Containers.
