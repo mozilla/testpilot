@@ -58,7 +58,7 @@ tour_steps:
     copy: Start a Container to label and organize a set of tabs.
   -
     image: /static/images/experiments/containers/tour/tour2.jpg
-    copy: Hover over the New Tab button to select a container.
+    copy: Long press on the New Tab button to select a container.
   -
     image: /static/images/experiments/containers/tour/tour3.jpg
     copy: Use the toolbar menu to open Container tabs, create new Containers and organize, edit or delete Containers.
