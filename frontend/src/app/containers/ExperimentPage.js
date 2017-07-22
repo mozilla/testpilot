@@ -417,6 +417,9 @@ export class ExperimentDetail extends React.Component {
                   {this.renderEolBlock()}
                   {this.renderIncompatibleAddons()}
                   {this.renderLocaleWarning()}
+                  {experiment.video_url &&
+                    <iframe width="100%" height="360" src={experiment.video_url} frameBorder="0" allowFullScreen className="experiment-video"></iframe>
+                  }
                   <div>
                    {!!introduction && <section className="introduction">
                      {!!warning && <div className="warning"><strong data-l10n-id={this.l10nId('warning')}>{warning}</strong></div>}
