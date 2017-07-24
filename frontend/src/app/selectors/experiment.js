@@ -41,6 +41,11 @@ export const localeSelector = store => store.browser.locale;
 // blockedlisted in that locale, or grantlisted and not available in that locale.
 export const l10nSelector = (locale, experiments) => experiments.filter(exp => {
   if ('locale_blocklist' in exp) {
+    // #2382 Show graduated experiments to every locale.
+    if ((new Date(exp.completed)).getTime() < Date.now()) {
+      return true;
+    }
+
     return !exp.locale_blocklist.includes(locale);
   }
   if ('locale_grantlist' in exp) {
