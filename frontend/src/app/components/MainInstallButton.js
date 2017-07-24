@@ -16,6 +16,10 @@ export default class MainInstallButton extends React.Component {
   }
 
   install(e) {
+    // Don't install if a mouse button other than the primary button was clicked
+    if (e.button !== 0) {
+      return;
+    }
     const { requireRestart, sendToGA, eventCategory, eventLabel, hasAddon, installAddon, installCallback, navigateTo } = this.props;
     if (hasAddon) {
       navigateTo('/experiments');
