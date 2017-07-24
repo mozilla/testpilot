@@ -186,6 +186,19 @@ userCountContainerAlt = Управо објављено!
 highlightPrivacy = Ваша приватност
 experimentGradReportPendingTitle = Овај експеримент се завршио
 experimentGradReportPendingCopy = Радимо на потпуном извештају. Вратите се ускоро за детаље.
+experimentGoToLink = Иди на { $title }
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Firefox / веб / мобилни експеримент
+experimentPlatformWebAddon = Firefox / веб експеримент
+experimentPlatformWebMobile = веб / мобилни експеримент
+experimentPlatformAddonMobile = Firefox / мобилни експеримент
+experimentPlatformWeb = веб експеримент
+experimentPlatformAddon = Firefox експеримент
+experimentPlatformMobileApp = мобилни експеримент
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.

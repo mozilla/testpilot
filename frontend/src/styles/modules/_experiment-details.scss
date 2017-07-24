@@ -72,6 +72,10 @@
   }
 }
 
+.experiment-video {
+  margin-bottom: $grid-unit;
+}
+
 .experiment-controls {
   @include respond-to('not-small') {
     @include flex-container(row, flex-end, center);

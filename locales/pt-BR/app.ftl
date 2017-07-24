@@ -186,6 +186,12 @@ userCountContainerAlt = Lançado!
 highlightPrivacy = Sua privacidade
 experimentGradReportPendingTitle = Este experimento terminou
 experimentGradReportPendingCopy = Estamos trabalhando em um relatório completo. Volte em breve para ver os detalhes.
+experimentGoToLink = Vá para { $title }
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.

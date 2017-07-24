@@ -186,6 +186,19 @@ userCountContainerAlt = Ikker tura akka!
 highlightPrivacy = Tabaḍnit inek
 experimentGradReportPendingTitle = Tfuk termit
 experimentGradReportPendingCopy = Aqlaɣ nxeddem ɣef uneqqis ummid. Uɣal-d ticki akken ad twaliḍ ugar.
+experimentGoToLink = Ddu ar { $title }
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Firefox / web / tarmit tazirazt
+experimentPlatformWebAddon = Firefox / tarmit web
+experimentPlatformWebMobile = web / tarmit tazirazt
+experimentPlatformAddonMobile = Firefox / tarmit tazirazt
+experimentPlatformWeb = tarmit web
+experimentPlatformAddon = tarmit Firefox
+experimentPlatformMobileApp = tarmit tazirazt
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.

@@ -8,7 +8,6 @@ description: >
 introduction: >
   <p>Do you like Test Pilot experiments? Well, this one should exercise all the
   features of the site. You should never see it on production!</p>
-  <p></p>
   <ul>
     <li><strong>Markup in introduction:</strong> Look at this HTML list!</li>
     <li><strong>Hidden from production:</strong> If you see this on production
@@ -19,6 +18,7 @@ introduction: >
   </ul>
 image_twitter: /static/images/experiments/min-vid/social/mv-twitter.jpg
 image_facebook: /static/images/experiments/min-vid/social/mv-facebook.jpg
+video_url: https://www.youtube.com/embed/lDv68xYHFXM
 changelog_url: 'https://github.com/meandavejustice/min-vid/blob/master/CHANGELOG.md'
 contribute_url: 'https://github.com/meandavejustice/min-vid'
 bug_report_url: 'https://github.com/meandavejustice/min-vid/issues'

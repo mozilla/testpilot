@@ -225,6 +225,12 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       expect(subject.find('ExperimentPlatforms')).to.have.property('length', 1);
     });
 
+    it('should render video iframe if video available', () => {
+      expect(subject.find('.experiment-video')).to.have.property('length', 0);
+      setExperiment({...mockExperiment, video_url: 'https://example.com/video' });
+      expect(subject.find('.experiment-video')).to.have.property('length', 1);
+    });
+
     it('should show the tour dialog if shouldShowTourDialog is true and experiment then becomes enabled', () => {
       // Flag the tour dialog to be shown, but experiment isn't enabled yet.
       subject.setState({ shouldShowTourDialog: true });

@@ -419,8 +419,8 @@ export class ExperimentDetail extends React.Component {
                   {this.renderEolBlock()}
                   {this.renderIncompatibleAddons()}
                   {this.renderLocaleWarning()}
-                  {experiment.video_link &&
-                    <iframe width="100%" height="360" src={experiment.video_link} frameBorder="0" allowFullScreen></iframe>
+                  {experiment.video_url &&
+                    <iframe width="100%" height="360" src={experiment.video_url} frameBorder="0" allowFullScreen className="experiment-video"></iframe>
                   }
                   <div>
                    {!!introduction && <section className="introduction">
