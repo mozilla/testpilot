@@ -96,8 +96,12 @@ notFoundHeader = চারে চার!
 emailOptInDialogTitle = Test Pilot এ আপনাকে স্বাগতম!
 emailOptInMessage = নতুন পরীক্ষা-নীরিক্ষা সম্পর্কে জানুন এবং আপনার করা পরীক্ষাগুলোর ফলাফল দেখুন।
 emailOptInConfirmationTitle = ইমেইল পাঠানো হয়েছে
-emailOptInSuccessMessage2 = ধন্যবাদ!
 emailOptInConfirmationClose = অন্যান্য পরীক্ষার উপরে...
+
+
+// news feed updates.
+[[ updateList ]]
+
 
 
 // A listing of all Test Pilot experiments.
@@ -108,7 +112,6 @@ experimentListJustLaunchedTab = নতুন শুরু হয়েছে
 experimentListJustUpdatedTab = এইমাত্র হালানাগাদকৃত
 experimentListEndingTomorrow = আগামীকাল শেষ হবে
 experimentListEndingSoon = শীগ্রই শেষ হচ্ছে
-experimentsListCondensedHeader = আপনার পরীক্ষণ নির্বাচন করুন!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -171,11 +174,17 @@ userCountContainerAlt = নতুন শুরু হয়েছে
 highlightPrivacy = আপনার গোপনীয়তা
 
 
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+
+
 // Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
 upgradeNoticeTitle = { $title } এর জন্য প্রয়োজন Firefox { $min_release } অথবা পরের কোন সংস্করণ।
 upgradeNoticeLink = কিভাবে Firefox হালনাগাদ করবেন।
+versionChangeNoticeLink = Firefox এর বর্তমান সংষ্করণ নিন।
 
 
 // Shown while uninstalling Test Pilot.
@@ -237,11 +246,13 @@ newsletterFormSubmitButtonSubmitting = জমা দেওয়া হচ্ছে
 
 newsletterFooterHeader = অবগত থাকুন
 newsletterFooterBody = নতুন নতুন পরীক্ষা-নীরিক্ষা সম্পর্কে জানুন এবং আপনার করা পরীক্ষাগুলোর ফলাফল দেখুন।
+newsletterFooterSuccessHeader = ধন্যবাদ!
 
 
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = পরীক্ষাটি আপনার ভাষায় অনুমোদন করবে না ({ $locale_code })।
 
 
 // An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
@@ -256,4 +267,9 @@ newsletterFooterBody = নতুন নতুন পরীক্ষা-নীর
 
 // Text of a button to toggle visibility of a list of past experiments.
 [[ pastExperiments ]]
+
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
 
