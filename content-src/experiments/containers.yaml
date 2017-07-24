@@ -12,7 +12,8 @@ description: >
   Contain yourselves! Create different containers for each of your online lives -
   your work self, your social self, your personal self - to stay organized and maintain privacy.
 warning: >
-  Note: Because of the security properties of Containers, Test Pilot experiments such as Page Shot, Snooze Tabs, Pulse, and Activity Stream may not work from within Container tabs. Remember, this is experimental technology!
+  Note: Because of the security properties of Containers, Test Pilot experiments such as Snooze Tabs may not work from within Container tabs. Remember, this is experimental technology!
+warning_l10nsuffix: 'fewer_experiments'
 introduction: >
   Containers let you create profiles in Firefox for all of your online lives. Custom
   labels and color-coded tabs help keep different activities — like online shopping,
