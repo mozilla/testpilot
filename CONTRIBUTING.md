@@ -11,7 +11,7 @@ rigid or confusing. If you'd like to contribute and don't understand something
 here, reach out on IRC, and we'll be happy to offer solutions.
 
 [mozcoc]: https://www.mozilla.org/en-US/about/governance/policies/participation
-[coc]: https://github.com/mozilla/testpilot/blob/master/CODE_OF_CONDUCT.md
+[coc]: https://github.com/mozilla/testpilot/blob/master/docs/code_of_conduct.md
 [dev setup]: https://github.com/mozilla/testpilot#development
 
 ### Saying Hello
