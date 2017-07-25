@@ -192,13 +192,13 @@ experimentGoToLink = { $title } へ
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 
-experimentPlatformWebAddonMobile = Firefox / ウェブ / モバイル向け実験
-experimentPlatformWebAddon = Firefox / ウェブ向け実験
-experimentPlatformWebMobile = ウェブ / モバイル向け実験
-experimentPlatformAddonMobile = Firefox / モバイル向け実験
-experimentPlatformWeb = ウェブ向け実験
-experimentPlatformAddon = Firefox 向け実験
-experimentPlatformMobileApp = モバイル向け実験
+experimentPlatformWebAddonMobile = Firefox / ウェブ / モバイル実験
+experimentPlatformWebAddon = Firefox / ウェブ実験
+experimentPlatformWebMobile = ウェブ / モバイル実験
+experimentPlatformAddonMobile = Firefox / モバイル実験
+experimentPlatformWeb = ウェブ実験
+experimentPlatformAddon = Firefox 実験
+experimentPlatformMobileApp = モバイル実験
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
