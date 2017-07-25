@@ -72,6 +72,10 @@
   }
 }
 
+.experiment-video {
+  margin-bottom: $grid-unit;
+}
+
 .experiment-controls {
   @include respond-to('not-small') {
     @include flex-container(row, flex-end, center);
@@ -445,7 +449,7 @@
 
   .platform-copy,
   .platform-icon {
-    margin-bottom: 0;
+    margin-bottom: 5px;
   }
 
   .platform-icon {

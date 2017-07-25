@@ -1,0 +1,82 @@
+id: 13
+title: 'Send'
+slug: send
+platforms: ['web']
+web_url: 'https://send.firefox.com'
+thumbnail: /static/images/experiments/send/experiments_experiment/thumbnail.png
+description: >
+  Encrypt and send files with a link that automatically expires to ensure your important documents don’t stay online forever.
+introduction: >
+  <p>Send lets you upload and encrypt large files (up to 1GB) to share online. When you upload a file, send creates a link to pass along to whoever you want. Each link created by Send will expire after 1 download or 24 hours, and all sent files will be automatically deleted from the Send Server.</p>
+  <p>Unlike other Test Pilot experiments. Send does not require an add-on, and can be used in any modern browser.</p>
+image_twitter: /static/images/experiments/send/social/send-twitter.jpg
+image_facebook: /static/images/experiments/send/social/send-fb.jpg
+changelog_url: 'https://github.com/mozilla/send/releases'
+contribute_url: 'https://github.com/mozilla/send'
+bug_report_url: 'https://github.com/mozilla/send/issues'
+discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/send'
+privacy_notice_url: 'https://github.com/mozilla/send/blob/master/docs/metrics.md'
+measurements:
+  - >
+    When you use Send, Mozilla receives an encrypted copy of the file you upload, and basic information about the file, such as filename and file size. Mozilla does not have the ability to access the contents of your encrypted file, and only keeps it for the time or number of downloads indicated.
+  - >
+    To allow you to see the status of your previously uploaded files, or delete them, basic information about your uploaded files are stored on your local device, such as Send’s identifier for the file, the filename, and the file’s unique download link. This is cleared if you delete your uploaded file or upon visiting Send after the file expires.
+  - >
+    Anyone you provide with the unique link (including the encryption key) to your encrypted file will be able to download and access that file. You should not provide the link to anyone you do not want to have access to your encrypted file.
+  - >
+    Send will also collect information about the performance and your use of the service, such as how often you upload files, how long your files remain with Mozilla before they expire, any errors related to file transfers, and what cryptographic protocols your browser supports.
+  - >
+    Send is also subject to our <a href="https://www.mozilla.org/privacy/websites/" target="_blank">websites privacy notice</a>. When you visit the Send website, information such as your IP address is temporarily retained as part of a standard server log.
+
+gradient_start: '#32CADD'
+gradient_stop: '#3199FF'
+details:
+  -
+    image: /static/images/experiments/send/experiments_experimentdetail/send-1.jpg
+    copy: >
+      Send lets you upload and share encrypted files.
+  -
+    image: /static/images/experiments/send/experiments_experimentdetail/send-2.jpg
+    copy: >
+      Send will only store your files for one download or 24 hours.
+  -
+    image: /static/images/experiments/send/experiments_experimentdetail/send-3.jpg
+    copy: >
+      You can use Send in any modern browser.
+contributors:
+  -
+    display_name: 'Abhinav Adduri'
+    title: 'Engineering Intern'
+    avatar: /static/images/experiments/avatars/abhi-a.jpg
+  -
+    display_name: 'Daniela Arcese'
+    title: 'Engineering Intern'
+    avatar: /static/images/experiments/avatars/daniela-a.jpg
+  -
+    display_name: 'Danny Coates'
+    title: 'Sanitation Engineer'
+    avatar: /static/images/experiments/avatars/danny-c.jpg
+  -
+    display_name: 'Peko Chen'
+    title: 'UX Visual Designer'
+    avatar: /static/images/experiments/avatars/peko-c.jpg
+  -
+    display_name: 'Mark Liang'
+    title: 'Firefox UX'
+    avatar: /static/images/experiments/avatars/mliang.png
+  -
+    display_name: 'Morpheus Chen'
+    title: 'Firefox UX'
+    avatar: /static/images/experiments/avatars/mchen.png
+  -
+    display_name: 'Erica Wright'
+    title: 'UX Developer'
+    avatar: /static/images/experiments/avatars/erica-w.png
+  -
+    display_name: 'Sevaan Franks'
+    title: 'Staff Product/UX Designer'
+    avatar: /static/images/experiments/avatars/sevaan.jpg
+
+installation_count: 1
+created: '2017-07-27T14:00:00Z'
+order: 2

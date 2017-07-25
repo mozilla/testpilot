@@ -1,0 +1,100 @@
+id: 14
+title: 'Voice Fill'
+slug: voice-fill
+platforms: ['addon']
+thumbnail: /static/images/experiments/voice-fill/experiments_experiment/thumbnail.png
+description: >
+  Speech recognition comes to Firefox. Voice Fill lets you speak to your favorite search engines.
+introduction: >
+  <p>Voice Fill uses artificial intelligence to interpret speech input. As a participant in the Voice Fill experiment, your voice searches will teach our AI to provide smarter results.</p>
+  <p>We’ve added Voice Fill to Google, Yahoo and DuckDuckGo search pages, and will expand to more sites as the experiment progresses.</p>
+
+image_twitter: /static/images/experiments/voice-fill/social/vf-twitter.jpg
+image_facebook: /static/images/experiments/voice-fill/social/vf-fb.jpg
+video_url: https://www.youtube.com/embed/wjvM18UWMmM
+changelog_url: 'https://github.com/mozilla/speaktome/releases'
+contribute_url: 'https://github.com/mozilla/speaktome/'
+bug_report_url: 'https://github.com/mozilla/speaktome/issues'
+discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/voice-fill'
+privacy_notice_url: 'https://github.com/mozilla/speaktome/blob/master/docs/metrics.md'
+measurements:
+  - >
+    When you choose to use Voice Fill, your recordings will be sent to our servers for processing to provide you with suggested text.
+  - >
+    Voice Fill will collect technical information related to the performance of the feature, such as how long it takes for our servers to process a submitted recording and whether you selected or modified any of the suggestions we gave.
+  - >
+    Voice Fill will also collect information about your use of the feature, such as how frequently Voice Fill is used and whether you used Voice Fill with specific tabs or pages such as Google, DuckDuckGo, or Yahoo.
+  - >
+    To help us improve the accuracy of our suggestions, we may retain a copy of submitted audio recordings, and related suggestion information. Audio recordings kept for this purpose will not be associated with any other personal identifiers.
+xpi_url: 'https://testpilot.firefox.com/files/speaktome@mozilla.com/latest'
+addon_id: 'speaktome@mozilla.com'
+gradient_start: '#00C8D7'
+gradient_stop: '#00a8b7'
+details:
+  -
+    image: /static/images/experiments/voice-fill/experiments_experimentdetail/detail1.jpg
+    copy: >
+      Look for the microphone icon on Yahoo, DuckDuckGo, and Google.
+  -
+    image: /static/images/experiments/voice-fill/experiments_experimentdetail/detail2.jpg
+    copy: >
+      Before using Voice Fill, you will need to allow voice input.
+  -
+    image: /static/images/experiments/voice-fill/experiments_experimentdetail/detail3.jpg
+    copy: >
+      Voice Fill may offer you multiple options. Select the one you want to help train the AI.
+tour_steps:
+  -
+    image: /static/images/experiments/voice-fill/experiments_experimenttourstep/vf-1.jpg
+    copy: Look for the Voice Fill icon when you use Google, Yahoo, or DuckDuckGo.
+  -
+    image: /static/images/experiments/voice-fill/experiments_experimenttourstep/vf-2.jpg
+    copy: Voice Fill lets you speak your searches.
+  -
+    image: /static/images/experiments/voice-fill/experiments_experimenttourstep/vf-3.jpg
+    copy: Depending on what you wish to search for, Voice Fill may give you several options. By using Voice Fill, you help make it smarter.
+  -
+    image: /static/images/experiments/voice-fill/experiments_experimenttourstep/vf-4.jpg
+    copy: You can always give us feedback or disable Voice Fill from Test Pilot.
+contributors:
+  -
+    display_name: 'Andre Natal'
+    title: 'Speech Engineer'
+    avatar: /static/images/experiments/avatars/andre-n.jpg
+  -
+    display_name: 'Frabrice Desre'
+    title: 'Speech Engineer'
+    avatar: /static/images/experiments/avatars/fabrice-d.jpg
+  -
+    display_name: 'Fang Shih'
+    title: 'Visual Designer'
+    avatar: /static/images/experiments/avatars/fshih.png
+  -
+    display_name: 'Mark Liang'
+    title: 'Firefox UX'
+    avatar: /static/images/experiments/avatars/mliang.png
+  -
+    display_name: 'Morpheus Chen'
+    title: 'Firefox UX'
+    avatar: /static/images/experiments/avatars/mchen.png
+  -
+    display_name: 'Carmen Fat'
+    title: 'Softvision QA'
+    avatar: /static/images/experiments/avatars/carmen-f.jpg
+  -
+    display_name: 'Ciprian Muresan'
+    title: 'Softvision QA'
+    avatar: /static/images/experiments/avatars/ciprian.jpg
+  -
+    display_name: 'Faramarz Rashed'
+    title: 'Advanced Development, Emerging Technologies'
+    avatar: /static/images/experiments/avatars/faramarz-r.jpg
+installation_count: 1
+created: '2017-07-27T14:00:00Z'
+order: 0
+locale_grantlist:
+  - 'en'
+  - 'en-us'
+  - 'en-gb'
+  - 'en-ca'
+
