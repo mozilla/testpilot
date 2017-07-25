@@ -35,6 +35,7 @@ cliqzToursteps0Copy = 在網址列輸入要搜尋的詞彙，即可檢視即時�
 cliqzToursteps1Copy = 開啟分頁，加入您最愛的網站快速開啟。
 cliqzToursteps2Copy = 您可隨時提供意見回饋，或在 Test Pilot 停用 Cliqz。
 containersDescription = 把自己裝起來！為您的線上生活建立不同的容器，不論是工作我、社交我、或是個人我，讓您可輕鬆管理不同的自己，同時保持隱私。
+containersWarningFewerexperiments = 註: 由於容器功能的安全性設計，某些 Test Pilot 實驗，例如 Snooze Tabs 無法在容器分頁中使用。別忘記這是還在實驗中的技術！
 containersIntroduction = 您可在 Firefox 中透過不同容器來管理不同的線上身分，不論是線上購物、規劃旅遊行程、工作使用，更可以建立其他不同色彩與名稱的自訂容器。每個容器當中的 Cookie 會分開儲存，所以您可以同時在不同容器中登入同一個網站的不同帳號，而線上追蹤器也無法將您不同容器間的行為連結起來，這樣就可以讓線上購物的你、社群網路中的你、以及工作中的你分別開來，不用擔心在網路上被追蹤。
 containersMeasurements0 = Containers 只會在您與容器互動（例如開啟容器、編輯容器、刪除容器）時傳送相關資訊給我們。
 containersMeasurements1 = Containers 會傳送您與容器間互動的類型、您正與哪個容器互動，以及容器中的分頁數量等資訊。
