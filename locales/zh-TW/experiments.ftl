@@ -90,6 +90,7 @@ nomore404sContributors1Title = The Internet Archive 的 Wayback Machine 開發�
 nomore404sContributors2Title = The Internet Archive 的 Wayback Machine 總監
 nomore404sContributors3Title = The Internet Archive 資深爬蟲工程師
 nomore404sEolwarning = No More 404s 實驗結束時將自動回報實驗結果，但不會從您的瀏覽器移除。未來將透過 addons.mozilla.org 持續更新。
+notesDescription = Firefox 內的簡易記事本。上網時會突然想到什麼事情需要記下來嗎？這個實驗就是您最好用的工具。
 notesContributors0Title = 工程實習生
 notesContributors1Title = 社群貢獻者
 notesContributors2Title = 資深產品 / UX 設計師
