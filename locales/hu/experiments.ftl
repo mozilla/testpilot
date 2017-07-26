@@ -213,3 +213,4 @@ voicefillContributors3Title = Firefox UX
 voicefillContributors4Title = Firefox UX
 voicefillContributors5Title = Softvision QA
 voicefillContributors6Title = Softvision QA
+voicefillContributors7Title = Korszerű fejlesztés, feltörekvő technológiák
