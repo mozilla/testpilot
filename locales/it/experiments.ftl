@@ -212,6 +212,7 @@ universalsearchContributors1Title = Senior UX Designer
 universalsearchContributors2Title = Staff Engineer
 universalsearchContributors3Title = Senior Engineer
 universalsearchEolwarning = Al termine del periodo di prova l’esperimento Universal Search verrà disattivato automaticamente e condivideremo i risultati raccolti.
+voicefillToursteps3Copy = Puoi inviare la tua opinione o disattivare Voice Fill in Test Pilot in qualunque momento.
 voicefillContributors0Title = Speech Engineer
 voicefillContributors1Title = Speech Engineer
 voicefillContributors2Title = Visual Designer
