@@ -132,6 +132,7 @@ pulseContributors1Title = Firefox UX
 pulseContributors2Title = Firefox 平台產品資訊
 pulseContributors3Title = Firefox QA
 pulseEolwarning = Pulse 實驗即將結束。您提供的資料對我們如何打造 Firefox 當中的功能有極大幫助，非常感謝。我們很快會移除此實驗。
+sendDetails2Copy = 您可在任何現代瀏覽器中使用 Send。
 sendContributors0Title = 實習工程師
 sendContributors1Title = 實習工程師
 sendContributors3Title = UX 視覺設計師
