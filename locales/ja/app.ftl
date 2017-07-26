@@ -59,10 +59,10 @@ oneClickInstallMajorCta = { $title } を有効化
 // Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
-landingRequiresDesktop = Test Pilot を試すには Windows、Mac または Linux 向けのデスクトップ版 Firefox が必要です
+landingRequiresDesktop = Test Pilot へ参加するには Windows、Mac または Linux 向けのデスクトップ版 Firefox が必要です
 landingDownloadFirefoxDesc = (Test Pilot は Windows、OS X および Linux 版の Firefox に対応しています)
-landingUpgradeDesc = Test Pilot を試すには Firefox 49 以上が必要です。
-landingUpgradeDesc2 = Test Pilot を試すには Firefox { $version } 以上が必要です。
+landingUpgradeDesc = Test Pilot へ参加するには Firefox 49 以上が必要です。
+landingUpgradeDesc2 = Test Pilot へ参加するには Firefox { $version } 以上が必要です。
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox をアップグレード
 landingDownloadFirefoxSubTitle = 無料ダウンロード
@@ -97,7 +97,7 @@ notFoundHeader = お探しのページは見つかりませんでした。
 emailOptInDialogTitle = Test Pilot へようこそ！
 emailOptInMessage = 新しい実験について知り、あなたが試した実験のテスト結果を見てみましょう。
 emailOptInConfirmationTitle = メールをお送りしました
-emailOptInConfirmationClose = 実験に進む...
+emailOptInConfirmationClose = 実験へ進む...
 emailOptInDialogErrorTitle = おっと！
 
 
@@ -135,7 +135,7 @@ experimentCardLearnMore = 詳細
 feedbackSubmitButton = 簡単なアンケートに答える
 feedbackUninstallTitle = ありがとうございます！
 feedbackUninstallCopy =
-    あなたの Firefox Test Pilot への参加は多くの
+    あなたの Firefox Test Pilot への参加は重要な
     意味を持ちます！ 他の実験についてもチェックし、
     今後追加される実験を楽しみにしてください！
 
@@ -151,16 +151,16 @@ experimentPreFeedbackLinkCopy = { $title } の実験についてフィードバ�
 [[ experimentPromo ]]
 
 experimentPromoHeader = 離陸準備は整いましたか？
-experimentPromoSubheader = 私たちは Firefox の次世代機能を作っています。Test Pilot をインストールしてそれらを試してください！
+experimentPromoSubheader = 私たちは Firefox の次世代機能を開発中です。Test Pilot をインストールしてそれらを試してください！
 
 
 // The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } が有効化されました。
-installErrorMessage = おっと、{ $title } を有効化できませんでした。また後で試してください。
+installErrorMessage = { $title } を有効化できませんでした。また後で試してください。
 participantCount = <span>{ $installation_count }</span> 人の参加者
-otherExperiments = これらの実験的機能も試す
+otherExperiments = これらの実験的機能も試してください
 giveFeedback = フィードバックを送る
 disableHeader = 実験を無効化しますか？
 disableExperiment = { $title } を無効化
@@ -171,17 +171,17 @@ experimentManuallyDisabled = { $title } はアドオンマネージャーで無�
 experimentMeasurementIntro = すべての Test Pilot 実験によって収集される <a>データ</a> に加えて、{ $experimentTitle } 使用時に何が起きているかについてあなたが知っておくべき主な事柄を以下にまとめました。
 measurements = プライバシー
 experimentPrivacyNotice = { $title } のデータ収集に関する詳細はこちらをご覧ください。
-contributorsHeading = 提供:
+contributorsHeading = 開発スタッフ
 contributorsExtraLearnMore = 詳しくはこちら
-changelog = 変更ログ
+changelog = 変更履歴
 tour = ツアー
-tourLink = ツアー
+tourLink = ツアーを始める
 contribute = 協力
 bugReports = バグ報告
 discussExperiment = { $title } について議論する
 tourOnboardingTitle = { $title } が有効化されました！
 tourDoneButton = 完了
-userCountContainer = 今現在 <span>{ $installation_count }</span> 人のユーザーが { $title } を試しています！
+userCountContainer = 現在 <span>{ $installation_count }</span> 人が { $title } を試しています！
 userCountContainerAlt = 最近公開！
 highlightPrivacy = プライバシー
 experimentGradReportPendingTitle = この実験は終了しました
@@ -204,7 +204,7 @@ experimentPlatformMobileApp = モバイル実験
 // Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
-upgradeNoticeTitle = { $title } を試すには Firefox { $min_release } 以降が必要です。
+upgradeNoticeTitle = { $title } を試すには Firefox { $min_release } 以上が必要です。
 upgradeNoticeLink = Firefox の更新方法
 versionChangeNotice = { $experiment_title } はこのバージョンの Firefox には対応していません。
 versionChangeNoticeLink = Firefox の最新版をダウンロード。
@@ -214,8 +214,8 @@ versionChangeNoticeLink = Firefox の最新版をダウンロード。
 [[ uninstall ]]
 
 retireDialogTitle = Test Pilot を削除しますか？
-retireMessage = 了解しました。これにより、アクティブなテストはすべて無効化され、アドオンは削除され、サーバーからあなたのアカウント情報は削除されます。
-retireEmailMessage = メールによる最新情報の配信を停止するには、Test Pilot に関するメール内の <em>購読中止</em> リンクをクリックしてください。
+retireMessage = 了解しました。これにより、アクティブなテストはすべて無効化され、アドオンは削除され、あなたのアカウント情報はサーバーから削除されます。
+retireEmailMessage = メールによる最新情報の配信を停止するには、Test Pilot からのメールに記載されている <em>購読中止</em> リンクをクリックしてください。
 retireSubmitButton = 続ける
 pageTitleRetirePage = Firefox Test Pilot - Test Pilot を削除
 retirePageProgressMessage = 終了中...
@@ -258,7 +258,7 @@ incompatibleSubheader = この実験に参加する前に <a>これらのアド�
 [[ newsletterForm ]]
 
 newsletterFormEmailPlaceholder
-    .placeholder = あなたのメールアドレスがここに入ります
+    .placeholder = あなたのメールアドレスをここに入力
 newsletterFormDisclaimer = Test Pilot 関連の情報のみお送りします。
 newsletterFormPrivacyNotice = Mozilla が <a>このプライバシー通知</a> に従って私の個人情報を扱うことに同意します。
 newsletterFormPrivacyAgreementRequired = 続けるにはこのボックスにチェックを入れてください。
@@ -270,7 +270,7 @@ newsletterFormSubmitButtonSubmitting = 送信中...
 [[ newsletterFooter ]]
 
 newsletterFooterError = メールアドレスの送信中に問題が発生しました。再度試しますか？
-newsletterFooterHeader = 今後も情報を受け取る
+newsletterFooterHeader = 最新情報をいち早く入手
 newsletterFooterBody = 新しい実験について知り、あなたが試した実験のテスト結果を見てみましょう。
 newsletterFooterSuccessHeader = ありがとうございます！
 newsletterFooterSuccessBody = これまでに Mozilla 関連のニュースレターを購読したことがない場合、購読開始の確認が必要となります。お送りした確認メールを受信トレイもしくは迷惑メールフィルタから探してください。
