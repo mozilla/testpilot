@@ -194,3 +194,5 @@ universalsearchContributors1Title = Imcebbeḥ amusnaw
 universalsearchContributors2Title = Aneflay amusnaw
 universalsearchContributors3Title = Ajenyuṛ amusnaw
 universalsearchEolwarning = Ad nessens s wudem awurman tarmit anadi Amadlan -Universal Search- ticki tfuk, sakin ak-d-nazen igmad.
+voicefillContributors3Title = Imcebbeḥ Firefox
+voicefillContributors4Title = Imcebbeḥ Firefox

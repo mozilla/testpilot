@@ -316,6 +316,6 @@ warningUpgradeFirefoxDetail = Test Pilot yesra lqem aneggaru n Firefox. <a>Leqqe
 warningHttpsRequiredTitle = Isra HTTPS!
 warningHttpsRequiredDetail = Test Pilot yessefk ad yekcem s HTTPS. Wali <a>tasemlit-nneɣ</a> i ugar n telqayt.
 warningMissingPrefTitle = Ad tesnefliḍ Test Pilot?
-warningMissingPrefDetail = Ticki tselkameḍ Test Pilot di twennaḍ tadigant neɣ n neflit, tella twila ilaqen. Wali <a>tasemlit-nneɣ</a>i ugar n telɣut.
+warningMissingPrefDetail = Ticki tselkameḍ Test Pilot di twennafḍt tadigant neɣ n tneflit, tella twila ilaqen. Wali <a>tasemlit-nneɣ</a> i ugar n telɣut.
 warningBadHostnameTitle = Asennefteɣ ur yettwaqeblen ara!
 warningBadHostnameDetail = Asmel Test Pilot ur izmir ara ad yettwakcem deg testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net neɣ example.com:8000. Wali <a>tasemlit-nneɣ</a> i ugar n telɣut.
