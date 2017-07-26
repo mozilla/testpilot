@@ -94,6 +94,7 @@ notesToursteps0Copy = Notes doda preprosto beležko v stransko vrstico brskalnik
 notesToursteps1Copy = V Notes smo dodali nekaj osnovnih možnosti oblikovanja. Z vašimi povratnimi informacijami, jih bomo dodali še več.
 notesToursteps3Copy = Vedno nam lahko pošljete povratne informacije ali onemogočite Notes v Test Pilotu.
 notesContributors0Title = Inženir - pripravnik
+notesContributors1Title = Sodelavec skupnosti
 notesContributors3Title = Programski inženir
 notesContributors4Title = Starejši inženir
 notesContributors5Title = 
