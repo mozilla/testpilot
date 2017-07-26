@@ -1,8 +1,8 @@
 activitystreamDescription = 視覚的で分かりやすい履歴フィードと再考されたホームページによって、あなたがまさに Firefox の中で探しているものをかつてなく見つけやすくします。
 activitystreamIntroduction = <p>思考の流れを止めることなくブラウジングに戻りましょう。Activity Stream は、トップサイト、ブックマーク、最近の履歴を、新しいタブの中のすぐに手が届くところに用意しておきます。また、新たなタイムラインビューが、あなたのブラウジングの鳥瞰図を見せてくれます。</p>
-activitystreamMeasurements0 = 私たちは、あなたが実験的な新しいタブやタイムラインページとどのように関わっているかについて、あなたがクリックした要素の種類や、そのページ上の位置など、基本的な使用状況データを収集します。
+activitystreamMeasurements0 = Mozilla は、あなたが実験的な新しいタブやタイムラインページとどのように関わっているかについて、あなたがクリックした要素の種類や、そのページ上の位置など、基本的な使用状況データを収集します。
 activitystreamMeasurements1 = また、ブックマークや履歴項目の数など、Activity Stream に影響を及ぼすブラウザープロファイルに関する基本的な情報も収集します。
-activitystreamMeasurements2 = 私たちは、Activity Stream を提供するため、<a href="http://embed.ly/" target="_blank">Embedly</a> というサービスを通じて、画像やアイコンなど、あなたが訪れたウェブサイトに関するメタデータを取得します。それらのリクエストは Mozilla のサーバーを通じて Embedly へ送信されるため、あなたと関連付けられることはありません。
+activitystreamMeasurements2 = Mozilla は、Activity Stream を提供するため、<a href="http://embed.ly/" target="_blank">Embedly</a> というサービスを通じて、画像やアイコンなど、あなたが訪れたウェブサイトに関するメタデータを取得します。それらのリクエストは Mozilla のサーバーを通じて Embedly へ送信されるため、あなたと関連付けられることはありません。
 activitystreamDetails0Copy = 新しいタブをクリックすれば、お気に入りのサイトはもう一度クリックするだけで開けます。
 activitystreamDetails1Copy = あなたがこれまでに訪れたサイトが表示されるので、次に行く場所へすぐに進めます。
 activitystreamToursteps0Copy = 新しいタブを開いたときに、よく開くサイト、最近の履歴、ブックマークが表示されます。
@@ -60,9 +60,9 @@ containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
 minvidDescription = 動画を全面に、中心に置いておきましょう。Min Vid を使えば、ウェブブラウジング中前面に固定される小さなフレーム内に YouTube や Vimeo の動画を表示することができます。
 minvidIntroduction = <p>マルチタスクが好きですか？ それなら Min Vid を試してください。これは、ひとつのピクチャーをメディアプレイヤー、もうひとつをウェブ全体として捉えた場合に「ピクチャー・イン・ピクチャー」機能と呼べるようなものです。</p><ul> <li><strong>クリックして移動:</strong> Min Vid のフレームをポップアップさせて、ブラウジング中に前面で動画を再生したままにしておくことができます。</li> <li><strong>好きな場所に配置:</strong> Min Vid の動画フレームはデスクトップ上のどこへでもドラッグして移動できます。</li> <li><strong>必要な場面でコントロール:</strong> Min Vid では、一時停止や再生、早送り、シーク、最小化、音量調節といった操作を、フレーム内で直接行うことができます。</li> <li><strong>音楽再生にも対応:</strong> Min Vid は SoundCloud や MP3 直リンクからの再生にも対応しました。</li> <li><strong>キューの作成:</strong> Min Vid はキューにも対応しました。動画を再生して、あらゆる対応ドメインからトラックを追加できます (YouTube、Vimeo、SoundCloud、直リンク)。</li> <li><strong>履歴の表示:</strong> Min Vid は再生履歴を保存します。プレーヤーの右上からキューパネルを開けば、これまでに再生したすべてのメディアにアクセスできます。</li></ul>
-minvidMeasurements0 = 私たちは、あなたがいつコンテキストメニューや実験アイコン、プレーヤーコントロールを操作したかといった使用状況データを収集します。
+minvidMeasurements0 = Mozilla は、あなたがいつコンテキストメニューや実験アイコン、プレーヤーコントロールを操作したかといった使用状況データを収集します。
 minvidMeasurements1 = また、あなたが再生可能な動画に遭遇した回数、動画を再生した回数、その動画を提供している動画サービスに関するデータも収集します。これは、ユーザーがこの実験を便利なものと感じているか私たちが理解を深めるのに役立ちます。
-minvidMeasurements2 = 私たちはあなたが遭遇した特定の動画に関する情報は収集しません。
+minvidMeasurements2 = Mozilla は、あなたが遭遇した特定の動画に関する情報は収集しません。
 minvidDetails0Copy = YouTube や Vimeo、SoundCloud のプレーヤーから Min Vid へアクセスできます。
 minvidDetails1Copy = Web 上で何か別のことをしている間に、動画を前面で再生できます。
 minvidDetails2CopyChangevideotomedia = メディアへのリンクを右クリックすれば、コンテキストメニューから Min Vid を使用できます。
@@ -78,10 +78,10 @@ minvidContributors3Title = エンジニアリング貢献者
 nomore404sSubtitle = 協力: Wayback Machine
 nomore404sDescription = ウェブ上の行き止まりにうんざりしていませんか？ Internet Archive の Wayback Machine にあなたが探しているページの保存されたバージョンがあればお知らせします。
 nomore404sIntroduction = <p>これは単純なものです。ウェブブラウジング中に 404 ページに遭遇した場合に、Internet Archive の Wayback Machine にそのコンテンツがアーカイブされていればそのことをお知らせします。</p>
-nomore404sMeasurements0 = 私たちは、あなたが Page Not Found エラー (コード 404) に遭遇した回数、そのページのキャッシュ済みバージョンが Archive.org に存在した回数、あなたがそのキャッシュ済みバージョンを表示することを選択した回数について、基本的な使用状況データを収集します。
-nomore404sMeasurements1 = ページのキャッシュ済みバージョンを提供するため、私達は 404 エラーページの URL を Archive.org へ送信します。<a href="https://archive.org/" target="_blank">Archive.org</a> はプライバシーポリシーを <a href="https://archive.org/about/terms.php" target="_blank">こちら</a> で公開しています。
-nomore404sMeasurements2 = 私たちは、あなたがリクエストしたページの URL や、私たちが Archive.org へ送信した URL は収集しません。
-nomore404sMeasurements3 = 私たちは、あなたが送信したアンケート結果や、この実験に関する集計的使用解析データを Internet Archive と共有する可能性があります。
+nomore404sMeasurements0 = Mozilla は、あなたが Page Not Found エラー (コード 404) に遭遇した回数、そのページのキャッシュ済みバージョンが Archive.org に存在した回数、あなたがそのキャッシュ済みバージョンを表示することを選択した回数について、基本的な使用状況データを収集します。
+nomore404sMeasurements1 = ページのキャッシュ済みバージョンを提供するため、404 エラーページの URL が Archive.org へ送信されます。<a href="https://archive.org/" target="_blank">Archive.org</a> はプライバシーポリシーを <a href="https://archive.org/about/terms.php" target="_blank">こちら</a> で公開しています。
+nomore404sMeasurements2 = Mozilla は、あなたがリクエストしたページの URL や、Archive.org へ送信された URL は収集しません。
+nomore404sMeasurements3 = Mozilla は、あなたが送信したアンケート結果や、この実験に関する集計的使用解析データを Internet Archive と共有する可能性があります。
 nomore404sDetails0Copy = Wayback Machine で 404 の行き止まりを減らしましょう。
 nomore404sDetails1Copy = Internet Archive の友人が皆さんにお届けします。
 nomore404sToursteps0Copy = いつも通りウェブをブラウズしてください。404 ページに遭遇して、もし Wayback Machine にそのアーカイブされたバージョンがあればお知らせします。
@@ -96,7 +96,7 @@ notesMeasurements0 = Notes は機能の使用状況に関する情報を収集�
 notesMeasurements1 = Notes は、どのように機能にアクセスしたか、どのボタンをクリックしたかといった、あなたのアドオンとのインタラクションに関する情報も収集します。
 notesDetails0Copy = これはメモ帳です。なぜもっと早く思い付かなかったんでしょう？
 notesToursteps0Copy = Notes はブラウザーのサイドバーにシンプルなメモ帳を追加します。
-notesToursteps1Copy = 私たちは Notes にいくつかの基本的な書式設定を用意しました。皆さんからのフィードバックを元に、さらに機能を追加していきます。
+notesToursteps1Copy = Notes には当初いくつかの基本的な書式設定を用意しました。皆さんからのフィードバックを元に、さらに機能を追加していきます。
 notesToursteps2Copy = Notes 実験へ戻るにはサイドバーアイコンをクリックしてください。
 notesToursteps3Copy = Test Pilot の Notes は、いつでもフィードバックを送ったり、無効化したりできます。
 notesContributors0Title = エンジニアリングインターン
@@ -109,9 +109,9 @@ notesContributors6Title = Softvision QA
 pageshotDescription = 直感的なスクリーンショットをブラウザー内に直接組み込みました。Firefox を使ってウェブをブラウジングしながら、スクリーンショットをキャプチャー、保存、共有できます。
 pageshotIntroduction = <p>Page Shot を使えば、Firefox を離れることなく、スクリーンショットを撮影、共有、検索できます。</p><ul> <li><strong>グリッド表示:</strong> 保存されたスクリーンショットのサムネイルを閲覧</li> <li><strong>スマート検索:</strong> 探しているスクリーンショットをキーワードで見つけ出せます。Page Shot はページタイトルやスクリーンショット内の文字をインデックスします</li> <li><strong>ワンステップ共有:</strong> ブラウザーウィンドウ上部から直接、スクリーンショットをソーシャルメディアへ投稿したり、共有可能なリンクをコピーしたりできます</li></ul>
 pageshotMeasurements0 = 私たちはあなたのスクリーンショットを Mozilla のサーバー上に保存しており、それらのショットにアクセスすることが可能です。しかし、誰かが「フラグ」機能を使ってショットへのリンクを送ってきた場合や、何らかの問題が発生した場合の原因特定など、このサービスの運営にとって合理的に必要な場合に限って、私たちはあなたのショットにアクセスします。また、すべてのショットを集合的に解析し、例えばユーザーによって撮影されたショットの平均サイズや数などを特定することによって、Page Shot の改善に役立てます。
-pageshotMeasurements1 = 私たちは、あなたが Shot ボタンをクリックしたり、画像を保存したり、画像保存時にエラーに遭遇したりした回数など、あなたと製品のインタラクションの理解を深めるため、使用状況データを収集します。
-pageshotMeasurements2 = このサービスの不正利用を防ぐため、私たちは基本的なセキュリティ監視を行います。例えば、プライベートなページを見つけるためにサービスをスキャンしている個人を判別しブロックするため、IP アドレスを収集、保存します。
-pageshotMeasurements3 = Page Shot ウェブサイトへのすべての訪問については、私たちが収集するデータは <a href="https://www.mozilla.org/privacy/websites/" target="_blank">ウェブサイト、コミュニケーション、Cookie に関するプライバシー通知</a> で説明しています。
+pageshotMeasurements1 = Mozilla は、あなたが Shot ボタンをクリックしたり、画像を保存したり、画像保存時にエラーに遭遇したりした回数など、あなたと製品のインタラクションの理解を深めるため、使用状況データを収集します。
+pageshotMeasurements2 = このサービスの不正利用を防ぐため、Mozilla は基本的なセキュリティ監視を行います。例えば、プライベートなページを見つけるためにサービスをスキャンしている個人を判別しブロックするため、IP アドレスを収集、保存します。
+pageshotMeasurements3 = Page Shot ウェブサイトへの訪問や Mozilla が収集するデータについては、<a href="https://www.mozilla.org/privacy/websites/" target="_blank">ウェブサイト、コミュニケーション、Cookie に関するプライバシー通知</a> で説明しています。
 pageshotDetails0Copy = 画像範囲を選択し、その内容に満足したら保存、そうでなければ保存せずにキャンセルできます。
 pageshotDetails1Copy = 画像へのリンクを、ファイルをダウンロードして添付することなく、ソーシャルネットワークやメールで共有しましょう。
 pageshotDetails2Copy = 保存したスクリーンショットは簡単に見つけられます。グリッドビューでサムネイルを閲覧したり、キーワードで検索したりできます。
@@ -182,7 +182,7 @@ snoozetabsContributors7Title = Softvision QA
 tabcenterDescription = タブをブラウザーの上から横に移動したらどうなるでしょう？ 私たちはそれを確かめてみたいと思いました。
 tabcenterWarning = Firefox は急激に変化しています。Tab Center は Firefox 55 上ではバグを含む可能性があり、Firefox 56 以降では完全に無効化されます。
 tabcenterIntroduction = <p>タブを目障りになるものから隠してしまうものへ。Tab Center はあなたのタブをブラウザーウィンドウの横へ移動して、必要のない場合は見えなくし、必要になったら簡単に拡大し選択できるようにします。</p>
-tabcenterMeasurements0 = 私たちは、あなたがどのくらいの頻度で Tab Center を最大化したりピン留めしたりしているかなど、あなたと Tab Center のインタラクションに関する使用状況データを収集します。
+tabcenterMeasurements0 = Mozilla は、あなたがどのくらいの頻度で Tab Center を最大化したりピン留めしたりしているかなど、あなたと Tab Center のインタラクションに関する使用状況データを収集します。
 tabcenterMeasurements1 = また、同時に開いたままにしているタブの数や、タブを開いたままにしている時間など、あなたのタブの使い方に関する情報も収集します。
 tabcenterMeasurements2 = Tab Center は、あなたが訪れたサイトやタブの内容に関する情報は一切収集しません。
 tabcenterDetails0Copy = タブを画面横に配置してみましょう。
@@ -203,7 +203,7 @@ trackingprotectionIntroduction = <p>これまで、Firefox のトラッキング
 trackingprotectionMeasurements0 = Tracking Protection は、トラッカーをブロックした際、あなたにフィードバックを求めます。あなたがいつページ上のトラッカーを有効化あるいは無効化したか、あるいは問題を報告したかなど、あなたがこのプロンプトを操作した際に基本的な使用状況データを収集します。
 trackingprotectionMeasurements1 = あなたがプロンプトを操作した場合、あなたが開いていたページに関する情報や、ブロックされたトラッキングドメインに関する情報も収集します。これは、あなたが問題に遭遇した状況や理由について私たちが理解を深めるために役立ちます。
 trackingprotectionMeasurements2 = ドメイン以外に、使われた固有の ID や設定された Cookie に関するデータなど、何らかの情報をトラッカーから収集することはありません。
-trackingprotectionMeasurements3 = トラッカーを特定するため、私たちはパートナーの Disconnect から提供されるリストを使用します。Disconnect が適用する基準に関しては <a href="https://disconnect.me/trackerprotection" target="_blank">こちら</a> で参照できます。
+trackingprotectionMeasurements3 = トラッカーを特定するため、パートナーの Disconnect から提供されるリストを使用します。Disconnect が適用する基準に関しては <a href="https://disconnect.me/trackerprotection" target="_blank">こちら</a> で参照できます。
 trackingprotectionPrefeedbackcopy = <p>トラッキング保護機能有効時にうまく動かないサイトを報告するには、そのサイトの URL を表示しているロケーションバー内の盾アイコンを選択してください。</p>
 trackingprotectionDetails0Copy = Tracking Protection の機能はすべてロケーションバーから使用できます。
 trackingprotectionDetails1Copy = 問題を報告し、私たちにその解決を手伝わせてください。
@@ -217,10 +217,10 @@ trackingprotectionContributorsextra = この実験は、Mozilla のスタッフ�
 trackingprotectionEolwarning = Tracking Protection 実験は終了時に自動的に無効化され、その後私たちから結果を報告します。
 universalsearchDescription = ロケーションバーで検索語句を入力中に、ウェブ上でお勧めの人気サイト一覧を見ることができます。
 universalsearchIntroduction = <p>Universal Search でウェブ上の人気サイトへより素早く移動できます。ロケーションバーに何文字か入力するだけで、最も人気のサイトや人物、Wikipedia の記事が表示されるので、快適にブラウジングを続けることができます。</p>
-universalsearchMeasurements0 = 私たちは、入力された文字の数、あなたがクリックした結果の種類、その結果リスト内の位置など、あなたとロケーションバーのインタラクションに関する基本的な使用状況データを収集します。
+universalsearchMeasurements0 = Mozilla は、入力された文字の数、あなたがクリックした結果の種類、その結果リスト内の位置など、あなたとロケーションバーのインタラクションに関する基本的な使用状況データを収集します。
 universalsearchMeasurements1 = あなたが検索バー内に検索候補を表示するよう過去に Firefox を設定していた場合、Universal Search をインストールすると、ロケーションバー内での <a href="https://www.mozilla.org/privacy/firefox/#searchsuggestions" target="_blank">検索候補表示</a> も有効となります。
-universalsearchMeasurements2 = あなたがロケーションバーを使用する際、私たちはあなたが入力した語句をリコメンデーションエンジンへ送信します。私たちはリコメンデーションの品質を向上させるため、よく使用される検索語句について匿名のログを保存します。
-universalsearchMeasurements3 = Universal Search を提供するため、私たちはいくつかのサードパーティーサービスを使用します。私たちは、リコメンデーションを提供するために <a href="http://www.bing.com/developers/s/APIBasics.html" target="_blank">Bing</a> と <a href="https://developer.yahoo.com/boss/search/" target="_blank">Yahoo</a> を、またそれらのリコメンデーションに関する追加情報 (画像やアイコンなど) を提供するために <a href="http://docs.embed.ly/docs/" target="_blank">Embedly</a> と <a href="https://clearbit.com/logo" target="_blank">Clearbit</a> を使用します。ロケーションバー内にリコメンデーションを表示するため、Universal Search はそれらの画像を直接 Embedly と Clearbit からダウンロードする場合があり、それによってそれらのサービスがあなたの IP アドレスとリクエストされた画像を把握できるようになる可能性があります。
+universalsearchMeasurements2 = ロケーションバーを使用する際、あなたが入力した語句がリコメンデーションエンジンへ送信されます。Mozilla は、リコメンデーションの品質を向上させるため、よく使用される検索語句について匿名のログを保存します。
+universalsearchMeasurements3 = Universal Search を提供するため、いくつかのサードパーティーサービスを使用します。リコメンデーションを提供するために <a href="http://www.bing.com/developers/s/APIBasics.html" target="_blank">Bing</a> と <a href="https://developer.yahoo.com/boss/search/" target="_blank">Yahoo</a> を、またそれらのリコメンデーションに関する追加情報 (画像やアイコンなど) を提供するために <a href="http://docs.embed.ly/docs/" target="_blank">Embedly</a> と <a href="https://clearbit.com/logo" target="_blank">Clearbit</a> を使用します。ロケーションバー内にリコメンデーションを表示するため、Universal Search はそれらの画像を直接 Embedly と Clearbit からダウンロードする場合があり、それによってそれらのサービスがあなたの IP アドレスとリクエストされた画像を把握できるようになる可能性があります。
 universalsearchDetails0Copy = 人気のサイトや人物、Wikipedia の記事が入力中に表示されます。
 universalsearchToursteps0Copy = 検索とページの移動を 1 か所で行なえます。
 universalsearchToursteps1Copy = 検索語句を入力中に、人気サイトや Wikipedia 記事の候補一覧が表示されます。
@@ -232,26 +232,26 @@ universalsearchContributors3Title = 上級エンジニア
 universalsearchEolwarning = Universal Search 実験は終了時に自動的に無効化され、その後私たちから結果を報告します。
 voicefillDescription = 音声認識が Firefox へやって来ました。Voice Fill を使えばお気に入りの検索エンジンに話し掛けることができます。
 voicefillIntroduction = <p>Voice Fill は人工知能 (AI) を活用して音声入力を解析します。Voice Fill 実験の参加者として、あなたの音声検索が、より賢い結果を返せるように AI を鍛えます。</p> <p>Voice Fill は、Google、Yahoo、DuckDuckGo の検索ページで使用可能となっています。実験が進むにつれて、さらに多くのサイトへ展開していく予定です。</p>
-voicefillMeasurements0 = Voice Fill を使うことを選択した場合、あなたの録音は私たちのサーバーへ送信され、あなたに推定文字列を返すために処理されます。
+voicefillMeasurements0 = Voice Fill を使うことを選択した場合、あなたの録音は Mozilla のサーバーへ送信され、あなたに推定文字列を返すために処理されます。
 voicefillMeasurements1 = Voice Fill は機能のパフォーマンスに関連した技術情報を収集します。これには、サーバーが送信された録音を処理するのに掛かった時間や、返された推定結果をあなたが選択あるいは変更したかどうかなどが含まれます。
 voicefillMeasurements2 = Voice Fill は機能の使用状況に関する情報も収集します。これには、Voice Fill の使用頻度や、Google、DuckDuckGo あるいは Yahoo など特定のタブやページであなたが Voice Fill を使用したかどうかなどが含まれます。
-voicefillMeasurements3 = 推定精度を高めるため、私たちは送信された録音のコピーと関連する推定情報を保存する場合があります。この目的のために保存された録音が個人を識別可能な他の何らかの情報と関連付けられることはありません。
+voicefillMeasurements3 = 推定精度を高めるため、Mozilla は送信された録音のコピーと関連する推定情報を保存する場合があります。この目的のために保存された録音が個人を識別可能な他の何らかの情報と関連付けられることはありません。
 voicefillDetails0Copy = Yahoo、DuckDuckGo あるいは Google 上でマイクのアイコンを探してください。
 voicefillDetails1Copy = Voice Fill を使う前に、音声入力を許可する必要があります。
 voicefillDetails2Copy = Voice Fill は複数の推定結果を提示する場合があります。いずれかを選択することで AI の訓練に協力できます。
 voicefillToursteps0Copy = Google、Yahoo あるいは DuckDuckGo を使う際に Voice Fill アイコンを探してください。
 voicefillToursteps1Copy = Voice Fill を使えば音声入力で検索できます。
-voicefillToursteps2Copy = あなたが探しているものに応じて、Voice Fill は複数の推定結果を提示する場合があります。Voice Fill を使うことで、その改善に協力してください。
+voicefillToursteps2Copy = あなたが探しているものに応じて、Voice Fill は複数の推定結果を提示する場合があります。Voice Fill を使うことで AI の改善にご協力を。
 voicefillToursteps3Copy = Test Pilot の Voice Fill は、いつでもフィードバックを送ったり、無効化したりできます。
-voicefillContributors0Title = スピーチエンジニア
-voicefillContributors1Title = スピーチエンジニア
+voicefillContributors0Title = 音声エンジニア
+voicefillContributors1Title = 音声エンジニア
 voicefillContributors2Title = ビジュアルデザイナー
 voicefillContributors3Title = Firefox UX
 voicefillContributors4Title = Firefox UX
 voicefillContributors5Title = Softvision QA
 voicefillContributors6Title = Softvision QA
-voicefillContributors7Title = 高度な開発、新興技術
+voicefillContributors7Title = 高度開発、新興技術
 testpilotNewsupdatesGeneralupdate3Title = 新しい実験を始めました
 testpilotNewsupdatesGeneralupdate3Content = Send、Notes、Voice Fill を紹介します。下のカードをクリックして試してみてください。
-testpilotNewsupdatesGeneralupdate4Title = ブログを始めました。
+testpilotNewsupdatesGeneralupdate4Title = ブログを始めました
 testpilotNewsupdatesGeneralupdate4Content = 私たちの新しいブログで Firefox Test Pilot に関する詳しい議論をご覧ください。
