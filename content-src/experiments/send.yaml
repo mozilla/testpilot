@@ -7,8 +7,8 @@ thumbnail: /static/images/experiments/send/experiments_experiment/thumbnail.png
 description: >
   Encrypt and send files with a link that automatically expires to ensure your important documents don’t stay online forever.
 introduction: >
-  <p>Send lets you upload and encrypt large files (up to 1GB) to share online. When you upload a file, send creates a link to pass along to whoever you want. Each link created by Send will expire after 1 download or 24 hours, and all sent files will be automatically deleted from the Send Server.</p>
-  <p>Unlike other Test Pilot experiments. Send does not require an add-on, and can be used in any modern browser.</p>
+  <p>Send lets you upload and encrypt large files (up to 1GB) to share online. When you upload a file, Send creates a link to pass along to whoever you want. Each link created by Send will expire after 1 download or 24 hours, and all sent files will be automatically deleted from the Send server.</p>
+  <p>Unlike other Test Pilot experiments, Send does not require an add-on, and can be used in any modern browser.</p>
 image_twitter: /static/images/experiments/send/social/send-twitter.jpg
 image_facebook: /static/images/experiments/send/social/send-fb.jpg
 changelog_url: 'https://github.com/mozilla/send/releases'
@@ -18,7 +18,7 @@ discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/send'
 privacy_notice_url: 'https://github.com/mozilla/send/blob/master/docs/metrics.md'
 measurements:
   - >
-    When you use Send, Mozilla receives an encrypted copy of the file you upload, and basic information about the file, such as filename and file size. Mozilla does not have the ability to access the contents of your encrypted file, and only keeps it for the time or number of downloads indicated.
+    When you use Send, Mozilla receives an encrypted copy of the file you upload, and basic information about the file, such as filename and file size. Mozilla does not have the ability to access the content of your encrypted file, and only keeps it for the time or number of downloads indicated.
   - >
     To allow you to see the status of your previously uploaded files, or delete them, basic information about your uploaded files are stored on your local device, such as Send’s identifier for the file, the filename, and the file’s unique download link. This is cleared if you delete your uploaded file or upon visiting Send after the file expires.
   - >
