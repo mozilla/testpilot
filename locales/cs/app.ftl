@@ -186,6 +186,19 @@ userCountContainerAlt = Právě spuštěno!
 highlightPrivacy = Vaše soukromí
 experimentGradReportPendingTitle = Tento experiment byl ukončen
 experimentGradReportPendingCopy = Pracujeme na kompletní zprávě o výsledcích. Podrobnosti doplníme brzy.
+experimentGoToLink = Přejít na { $title }
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Experiment pro Firefox, web i mobily
+experimentPlatformWebAddon = Experiment pro Firefox a web
+experimentPlatformWebMobile = Experiment pro web a mobily
+experimentPlatformAddonMobile = Experiment pro Firefox a mobily
+experimentPlatformWeb = Experiment pro web
+experimentPlatformAddon = Experiment pro Firefox
+experimentPlatformMobileApp = Experiment pro mobily
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
