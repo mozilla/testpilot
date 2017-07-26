@@ -15,7 +15,7 @@ pageTitleExperiment = Firefox Test Pilot - { $title }
 
 footerLinkCookies = Cookie
 footerLinkPrivacy = プライバシー
-footerLinkTerms = 規約
+footerLinkTerms = 利用規約
 footerLinkLegal = 法的通知
 footerLinkAbout = Test Pilot について
 
@@ -60,9 +60,9 @@ oneClickInstallMajorCta = { $title } を有効化
 [[ landingFirefox ]]
 
 landingRequiresDesktop = Test Pilot を試すには Windows、Mac または Linux 向けのデスクトップ版 Firefox が必要です
-landingDownloadFirefoxDesc = Test Pilot は Windows、OS X および Linux 版の Firefox に対応しています)
-landingUpgradeDesc = Test Pilot を試すには Firefox 49 以降が必要です。
-landingUpgradeDesc2 = Test Pilot は Firefox { $version } 以上を必要とします。
+landingDownloadFirefoxDesc = (Test Pilot は Windows、OS X および Linux 版の Firefox に対応しています)
+landingUpgradeDesc = Test Pilot を試すには Firefox 49 以上が必要です。
+landingUpgradeDesc2 = Test Pilot を試すには Firefox { $version } 以上が必要です。
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox をアップグレード
 landingDownloadFirefoxSubTitle = 無料ダウンロード
@@ -71,10 +71,10 @@ landingDownloadFirefoxSubTitle = 無料ダウンロード
 // A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
-landingCardListTitle = 3、2、1 と数えるうちに始めましょう
+landingCardListTitle = 3、2、1 と数えるうちに始めよう
 landingCardOne = Test Pilot アドオンを入手
 landingCardTwo = 実験的機能を有効化
-landingCardThree = あなたの考えをお聞かせください
+landingCardThree = フィードバックを提供
 
 
 // Shown after the user installs the Test Pilot add-on.
@@ -88,7 +88,7 @@ onboardingMessage = Test Pilot をいつでも見つけられるよう、ツー�
 
 errorHeading = おっと！
 errorMessage = 何か問題が発生したようです。<br>また後で試してください。
-notFoundHeader = ページが見つかりません
+notFoundHeader = お探しのページは見つかりませんでした。
 
 
 // A modal prompt to sign up for the Test Pilot newsletter.
