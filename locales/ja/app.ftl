@@ -286,7 +286,7 @@ localeWarningSubtitle = お望みなら引き続き有効にしておくこと�
 // An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
-experimentsListNoneInstalledHeader = この機能を離陸させ軌道に乗せましょう！
+experimentsListNoneInstalledHeader = この機能を無事に離陸させましょう！
 experimentsListNoneInstalledSubheader = 新しい Test Pilot の実験を試す準備ができましたか？ どれか選んで有効にし、実際に試してみて、感想を聞かせてください。
 experimentsListNoneInstalledCTA = 興味が湧きませんか？ <a>理由を聞かせてください</a>。
 
@@ -295,7 +295,7 @@ experimentsListNoneInstalledCTA = 興味が湧きませんか？ <a>理由を聞
 [[ noscript ]]
 
 noScriptHeading = おっと...
-noScriptMessage = 申し訳ありませんが、<br>Test Pilot を試すには JavaScript が必要です。
+noScriptMessage = 申し訳ありませんが、<br>Test Pilot へ参加するには JavaScript が必要です。
 noScriptLink = 理由を確かめる
 
 
@@ -312,8 +312,8 @@ hidePastExperiments = 過去の実験を隠す
 warningGenericTitle = 何か問題が発生しました。
 warningGenericDetail = Test Pilot に何か問題が発生したようです。<a>バグを報告</a> し、このエラーメッセージを教えてください。
 warningUpgradeFirefoxTitle = 続けるには Firefox をアップグレードしてください！
-warningUpgradeFirefoxDetail = Test Pilot を使うには Firefox の最新版が必要です。まずは <a>Firefox をアップグレード</a> してください。
-warningHttpsRequiredTitle = HTTPS 必須です。
+warningUpgradeFirefoxDetail = Test Pilot へ参加するには Firefox の最新版が必要です。まずは <a>Firefox をアップグレード</a> してください。
+warningHttpsRequiredTitle = HTTPS が必須です。
 warningHttpsRequiredDetail = Test Pilot は HTTPS 経由でのアクセスが必須となっています。詳細は <a>ドキュメント</a> をご覧ください。
 warningMissingPrefTitle = Test Pilot を開発中ですか？
 warningMissingPrefDetail = Test Pilot をローカルもしくは開発環境で実行する場合、特別な設定が必要となります。詳細は <a>ドキュメント</a> をご覧ください。

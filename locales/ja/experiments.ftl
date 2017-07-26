@@ -1,15 +1,15 @@
-activitystreamDescription = 視覚的な履歴フィードと再考されたホームページによって、あなたがまさに Firefox の中で探しているものをかつてなく見つけやすくします。
-activitystreamIntroduction = <p>思考の流れを失うことなくブラウジングに戻りましょう。Activity Stream は、トップサイト、ブックマーク、最近の履歴を、新しいタブの中のすぐに手が届くところに用意しておきます。また、新たなタイムラインビューが、あなたのブラウジングの鳥瞰図を見せてくれます。</p>
+activitystreamDescription = 視覚的で分かりやすい履歴フィードと再考されたホームページによって、あなたがまさに Firefox の中で探しているものをかつてなく見つけやすくします。
+activitystreamIntroduction = <p>思考の流れを止めることなくブラウジングに戻りましょう。Activity Stream は、トップサイト、ブックマーク、最近の履歴を、新しいタブの中のすぐに手が届くところに用意しておきます。また、新たなタイムラインビューが、あなたのブラウジングの鳥瞰図を見せてくれます。</p>
 activitystreamMeasurements0 = 私たちは、あなたが実験的な新しいタブやタイムラインページとどのように関わっているかについて、あなたがクリックした要素の種類や、そのページ上の位置など、基本的な使用状況データを収集します。
 activitystreamMeasurements1 = また、ブックマークや履歴項目の数など、Activity Stream に影響を及ぼすブラウザープロファイルに関する基本的な情報も収集します。
-activitystreamMeasurements2 = 私たちは、Activity Stream を提供するため、<a href="http://embed.ly/" target="_blank">Embedly</a> というサービスを通じて、画像やアイコンなど、あなたが訪れたウェブサイトのメタデータを取得します。それらのリクエストは Mozilla のサーバーを通じて Embedly へ送信されるため、あなたと関連付けられることはありません。
+activitystreamMeasurements2 = 私たちは、Activity Stream を提供するため、<a href="http://embed.ly/" target="_blank">Embedly</a> というサービスを通じて、画像やアイコンなど、あなたが訪れたウェブサイトに関するメタデータを取得します。それらのリクエストは Mozilla のサーバーを通じて Embedly へ送信されるため、あなたと関連付けられることはありません。
 activitystreamDetails0Copy = 新しいタブをクリックすれば、お気に入りのサイトはもう一度クリックするだけで開けます。
 activitystreamDetails1Copy = あなたがこれまでに訪れたサイトが表示されるので、次に行く場所へすぐに進めます。
 activitystreamToursteps0Copy = 新しいタブを開いたときに、よく開くサイト、最近の履歴、ブックマークが表示されます。
 activitystreamToursteps1Copy = 新しいタイムラインビューを訪れて、すべての履歴とブックマークを視覚的に閲覧できます。
 activitystreamToursteps2Copy = Test Pilot の Activity Stream は、いつでもフィードバックを送ったり、無効化したりできます。
 activitystreamContributors0Title = ソフトウェアエンジニア
-activitystreamContributors1Title = Web エンジニア
+activitystreamContributors1Title = ウェブエンジニア
 activitystreamContributors2Title = ソフトウェアエンジニア
 activitystreamContributors3Title = デスクトップ Firefox エンジニア
 activitystreamContributors4Title = ソフトウェアエンジニア
@@ -17,12 +17,12 @@ activitystreamContributors5Title = 技術プログラムマネージャー
 activitystreamContributors6Title = クラウドサービスエンジニア
 activitystreamContributors7Title = エンジニアリングインターン
 activitystreamContributors8Title = エンジニアリングインターン
-activitystreamContributors9Title = 製品マネージャー
+activitystreamContributors9Title = プロダクトマネージャー
 activitystreamContributors10Title = エンジニアリングマネージャー
 activitystreamContributors11Title = ソフトウェアエンジニア
 activitystreamContributors12Title = 上級 UX デザイナー
-activitystreamEolwarning = この実験は終了しますが、Activity Stream は Firefox 本体に組み込まれます。Firefox の次期バージョンを楽しみにしていてください！
-cliqzDescription = 検索結果をもっと素早く手に入れましょう。Cliqz は、ロケーションバーへ検索語句を入力中、そのすぐ下に候補一覧を表示します。その際プライバシーは保たれます。
+activitystreamEolwarning = この実験は終了しますが、Activity Stream はこの秋に Firefox 本体へ組み込まれます。Activity Stream 実験をインストールしている場合、その際自動的にアップグレードされます。
+cliqzDescription = 検索結果をもっと素早く手に入れよう。Cliqz は、ロケーションバーへ検索語句を入力中、そのすぐ下に候補一覧を表示します。その際プライバシーは保たれます。
 cliqzIntroduction = ブラウザー内で直接、検索結果をもっと素早く手に入れましょう。検索語句を入力し始めると同時に、ロケーションバーの直下にウェブ検索候補がリアルタイムで表示されます。Cliqz は個人を識別可能なデータの収集やユーザープロフィールの作成を行わないため、プライバシーを保ちつつ結果を得ることができます。
 cliqzPrivacypreamble = Cliqz の Test Pilot 実験は、Cliqz GmbH と Mozilla の協力を通じて皆さんにお届けしています。Cliqz はあなたのプライバシーを保護するよう設計されており、ユーザープロフィールの作成に使用可能な個人情報の収集を行いません。しかしながら、このようなデータの匿名化は難しく、なおも特定の個人を識別できてしまう可能性もあります。
 cliqzMeasurements0 = Cliqz GmbH は、ロケーションバーにあなたが入力した文字、いくつかの検索エンジンへ送信されるクエリー、マウスの動き、スクロール、費やした時間といったウェブページ上でのあなたのインタラクションに関するデータなど、あなたの検索とブラウジング活動に関するデータを収集します。
