@@ -219,6 +219,7 @@ universalsearchContributors3Title = Starejši inženir
 universalsearchEolwarning = Ko se bo poskus Universal Search končal, ga bomo samodejno onemogočili in poročali o rezultatih.
 voicefillDetails1Copy = Pred uporabo Voice Filla, boste morali dovoliti glasovni vnos.
 voicefillToursteps3Copy = Vedno nam lahko sporočite povratne informacije ali onemogočite Voice Fill v Test Pilotu.
+voicefillContributors2Title = Grafični oblikovalec
 voicefillContributors3Title = Firefox UX
 voicefillContributors4Title = Firefox UX
 voicefillContributors5Title = Softvision QA
