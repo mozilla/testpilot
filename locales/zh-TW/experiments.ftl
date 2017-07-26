@@ -146,6 +146,7 @@ sendDetails1Copy = Send 只會讓您下載一次檔案，或是在分享 24 小�
 sendDetails2Copy = 您可在任何現代瀏覽器中使用 Send。
 sendContributors0Title = 實習工程師
 sendContributors1Title = 實習工程師
+sendContributors2Title = Sanitation Engineer
 sendContributors3Title = UX 視覺設計師
 sendContributors4Title = Firefox UX
 sendContributors5Title = Firefox UX
