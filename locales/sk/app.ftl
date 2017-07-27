@@ -192,6 +192,13 @@ experimentGoToLink = Prejsť na experiment { $title }
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 
+experimentPlatformWebAddonMobile = Experiment pre Firefox, web a mobilné zariadenia
+experimentPlatformWebAddon = Experiment pre Firefox a web
+experimentPlatformWebMobile = Experiment pre web a mobilné zariadenia
+experimentPlatformAddonMobile = Experiment pre Firefox a mobilné zariadenia
+experimentPlatformWeb = Experiment pre web
+experimentPlatformAddon = Experiment pre Firefox
+experimentPlatformMobileApp = Experiment pre mobilné zariadenia
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
