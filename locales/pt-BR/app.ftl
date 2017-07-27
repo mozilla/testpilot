@@ -192,6 +192,13 @@ experimentGoToLink = Vá para { $title }
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 
+experimentPlatformWebAddonMobile = Firefox / web / móvel
+experimentPlatformWebAddon = Firefox / web
+experimentPlatformWebMobile = web / móvel
+experimentPlatformAddonMobile = Firefox / móvel
+experimentPlatformWeb = experimento web
+experimentPlatformAddon = experimento Firefox
+experimentPlatformMobileApp = experimento móvel
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
