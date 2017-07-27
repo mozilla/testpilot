@@ -13,7 +13,7 @@ pageTitleExperiment = Firefox Test Pilot - { $title }
 // Links in the footer.
 [[ footerLink ]]
 
-footerLinkCookies = Piškotki
+footerLinkCookies = Piškotki2
 footerLinkPrivacy = Zasebnost
 footerLinkTerms = Pogoji
 footerLinkLegal = Pravne informacije
