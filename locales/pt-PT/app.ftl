@@ -126,7 +126,7 @@ experimentListHeader = Escolha as suas experiências!
 experimentCardFeedback = Feedback
 experimentCardManage = Gerir
 experimentCardGetStarted = Começar
-experimentCardLearnMore = Saiba mais
+experimentCardLearnMore = Saber mais
 
 
 // A modal prompt shown when a user disables an experiment.
@@ -259,10 +259,10 @@ incompatibleSubheader = Recomendamos <a>desativar estes extras</a> antes de ativ
 
 newsletterFormEmailPlaceholder
     .placeholder = O seu email aqui
-newsletterFormDisclaimer = Apenas lhe iremos enviar informação relacionada sobre o Test Pilot.
+newsletterFormDisclaimer = Apenas lhe iremos enviar informação relacionada com o Test Pilot.
 newsletterFormPrivacyNotice = Concordo que a Mozilla faça a gestão da minha informação tal como explicado <a>nesta política de privacidade</a>.
 newsletterFormPrivacyAgreementRequired = Por favor marque esta caixa se deseja proceder.
-newsletterFormSubmitButton = Registe-se agora
+newsletterFormSubmitButton = Registar-se agora
 newsletterFormSubmitButtonSubmitting = A submeter...
 
 
@@ -270,7 +270,7 @@ newsletterFormSubmitButtonSubmitting = A submeter...
 [[ newsletterFooter ]]
 
 newsletterFooterError = Houve um erro ao submeter o seu endereço de email. Tentar novamente?
-newsletterFooterHeader = Mantenha-se informado
+newsletterFooterHeader = Mantenha-se informado(a)
 newsletterFooterBody = Descubra sobre as novas experiências e veja os resultados dos testes para experiências que experimentou.
 newsletterFooterSuccessHeader = Obrigado!
 newsletterFooterSuccessBody = Se não confirmou previamente uma subscrição para um newsletter relacionado com a Mozilla poderá ter de o fazer. Por favor verifique a sua caixa de entrada ou filtro de spam por um email nosso.
