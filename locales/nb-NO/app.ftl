@@ -192,6 +192,10 @@ experimentGoToLink = Gå til { $title }
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 
+experimentPlatformWebAddonMobile = Eksperiment for Firefox / nett / mobil
+experimentPlatformWebAddon = Eksperiment for Firefox / nett
+experimentPlatformWebMobile = Eksperiment for nett / mobil
+experimentPlatformAddonMobile = Eksperiment for Firefox / mobil
 experimentPlatformWeb = nettsideeksperiment
 experimentPlatformAddon = Firefox-eksperiment
 experimentPlatformMobileApp = mobileksperiment
@@ -312,4 +316,6 @@ warningUpgradeFirefoxDetail = Test Pilot krever siste versjon av Firefox. <a>Opp
 warningHttpsRequiredTitle = HTTPS er påkrevd!
 warningHttpsRequiredDetail = Test Pilot må brukes via HTTPS. Se <a>dokumentasjonen vår</a> for mer informasjon.
 warningMissingPrefTitle = Utvikle Test Pilot?
+warningMissingPrefDetail = Spesiell konfigurasjon kreves for å kjøre Test Pilot lokalt eller i utviklingsmiljøer. Se <a>vår dokumentasjon</a> for detaljer.
 warningBadHostnameTitle = Ikke-godkjent vertsnavn!
+warningBadHostnameDetail = Test Pilot-siden er bare tilgjengelig fra testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net eller example.com:8000. Se <a>vår dokumentasjon</a> for mer informasjon.
