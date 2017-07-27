@@ -15,7 +15,7 @@ pageTitleExperiment = Firefox Test Pilot - { $title }
 
 footerLinkCookies = Cookie
 footerLinkPrivacy = Privacy
-footerLinkTerms = Condizioni d'uso
+footerLinkTerms = Condizioni di utilizzo
 footerLinkLegal = Note legali
 footerLinkAbout = Informazioni su Test Pilot
 
@@ -26,7 +26,7 @@ footerLinkAbout = Informazioni su Test Pilot
 home = Pagina iniziale
 menuTitle = Impostazioni
 menuWiki = Wiki di Test Pilot
-menuDiscuss = Discuti di Test Pilot
+menuDiscuss = Discussioni su Test Pilot
 menuFileIssue = Segnala un problema
 menuRetire = Disinstalla Test Pilot
 
@@ -44,7 +44,7 @@ landingExperimentsTitle = Prova gli esperimenti più recenti
 // Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
-landingInstallButton = Installa l’estensione Test Pilot
+landingInstallButton = Installa l’estensione di Test Pilot
 landingInstallingButton = Installazione in corso…
 landingInstalledButton = Scegli i tuoi esperimenti
 
@@ -113,7 +113,7 @@ latestUpdatesTitle = Ultime notizie
 experimentListEnabledTab = Attivo
 experimentListJustLaunchedTab = Appena lanciato
 experimentListJustUpdatedTab = Appena aggiornato
-experimentListEndingTomorrow = Si conclude domani
+experimentListEndingTomorrow = Si concluderà domani
 experimentListEndingSoon = Si concluderà a breve
 experimentCondensedHeader = Benvenuto in Test Pilot
 experimentListHeader = Scegli i tuoi esperimenti
@@ -175,7 +175,7 @@ tour = Panoramica
 tourLink = Panoramica
 contribute = Collabora
 bugReports = Segnalazione bug
-discussExperiment = Discuti di { $title }
+discussExperiment = Discussioni su { $title }
 tourOnboardingTitle = { $title } attivato.
 tourDoneButton = Fatto
 userCountContainer = In questo momento <span>{ $installation_count }</span> persone stanno provando { $title }.
