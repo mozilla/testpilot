@@ -91,10 +91,10 @@ contributors:
     avatar: /static/images/experiments/avatars/faramarz-r.jpg
 installation_count: 1
 created: '2017-08-01T14:00:00Z'
+launch_date: '2017-08-01T14:00:00Z'
 order: 0
 locale_grantlist:
   - 'en'
   - 'en-us'
   - 'en-gb'
   - 'en-ca'
-
