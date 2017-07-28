@@ -88,7 +88,7 @@ onboardingMessage = 我们会在您的工具栏放一个图标，以便您回到
 
 errorHeading = 啊呀！
 errorMessage = 这里好像坏掉了。<br>可以待会再试试。
-notFoundHeader = 找不到呢！
+notFoundHeader = 到了什么都没有的太空！
 
 
 // A modal prompt to sign up for the Test Pilot newsletter.
