@@ -186,6 +186,19 @@ userCountContainerAlt = Nettopp starta!
 highlightPrivacy = Ditt personvern
 experimentGradReportPendingTitle = Dette eksperimentet er avslutta
 experimentGradReportPendingCopy = Vi arbeider med ein fullstendig rapport. Kom tilbake snart for meir info.
+experimentGoToLink = Gå til { $title }
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Eksperiment for Firefox / nett / mobil
+experimentPlatformWebAddon = Eksperiment for Firefox / nett
+experimentPlatformWebMobile = Eksperiment for nett / mobil
+experimentPlatformAddonMobile = Eksperiment for Firefox / mobil
+experimentPlatformWeb = nettsideeksperiment
+experimentPlatformAddon = Firefox-eksperiment
+experimentPlatformMobileApp = mobileksperiment
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -303,4 +316,6 @@ warningUpgradeFirefoxDetail = Test Pilot krev siste versjon av Firefox. <a>Oppgr
 warningHttpsRequiredTitle = HTTPS er påkravd!
 warningHttpsRequiredDetail = Test Pilot må brukast via HTTPS. Sjå <a>dokumentasjonen vår</a> for meir informasjon.
 warningMissingPrefTitle = Utvikle Test Pilot?
+warningMissingPrefDetail = Det krevst ein spesiell konfigurasjon for å køyre Test Pilot lokalt eller i utviklingsmiljø. Sjå <a>dokumentasjonen vår</a> for detaljar.
 warningBadHostnameTitle = Ikkje-godkjend vertsnamn!
+warningBadHostnameDetail = Test Pilot-sida er berre tilgjengeleg få testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net eller example.com:8000. Sjå <a>dokumentasjonen vår</a> for meir informasjon.
