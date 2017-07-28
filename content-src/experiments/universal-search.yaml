@@ -1,6 +1,7 @@
 id: 4
 title: 'Universal Search'
 slug: universal-search
+platforms: ['addon']
 thumbnail: /static/images/experiments/universal-search/experiments_experiment/a/8/a8182b008f6434ba702ab177232625e2_thumbnail_1461818424_0011.png
 description: >
   Get recommendations for the best sites on the web as you type in the Awesome Bar.

@@ -1,6 +1,7 @@
 id: 2
 title: 'Activity Stream'
 slug: activity-stream
+platforms: ['addon']
 thumbnail: /static/images/experiments/activity-stream/experiments_experiment/e/1/e19739ea25188c866b654d3aa2616b27_thumbnail_1461817294_0590.png
 description: >
   A rich visual history feed and a reimagined home page make it easier than ever

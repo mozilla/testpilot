@@ -1,6 +1,7 @@
 id: 3
 title: 'Tab Center'
 slug: tab-center
+platforms: ['addon']
 thumbnail: /static/images/experiments/tab-center/experiments_experiment/6/9/69333a5f98edf04bbb52085d20e6303e_thumbnail_1461802048_0012.png
 description: >
   What would it be like to move tabs from the top of the browser to the side? We

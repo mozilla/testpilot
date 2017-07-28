@@ -1,6 +1,7 @@
 id: 8
 title: 'Min Vid'
 slug: min-vid
+platforms: ['addon']
 thumbnail: /static/images/experiments/min-vid/experiments_experiment/thumbnail.png
 description: >
   Keep videos front and center. Min Vid lets you display YouTube and Vimeo

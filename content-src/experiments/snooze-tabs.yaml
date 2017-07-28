@@ -1,18 +1,19 @@
 id: 10
 title: 'Snooze Tabs'
 slug: snooze-tabs
+platforms: ['addon']
 locales: ['en', 'cs', 'de', 'dsb', 'es', 'fr', 'fy', 'hsb', 'hu', 'id', 'it', 'ja', 'kab', 'nl', 'pt', 'ru', 'sk', 'sl', 'sq', 'sv', 'tr', 'zh']
 incompatible:
   'blok@mozilla.org': 'Tracking Protection'
 thumbnail: /static/images/experiments/snooze-tabs/icon/thumbnail.png
 description: >
-  Right website, wrong time?  Snooze it until you need it. Snooze Tabs let you 
+  Right website, wrong time?  Snooze it until you need it. Snooze Tabs let you
   dismiss tabs now and set an alarm to open them later.
 introduction: >
-  Snooze Tabs help you focus your attention online, whether you want to remove 
-  distractions for now or save something for later.  Hit the snooze icon to 
-  dismiss tabs you don’t want now, and set an alarm to bring them back when 
-  you need them. Snooze an interesting article until tonight. Snooze that recipe 
+  Snooze Tabs help you focus your attention online, whether you want to remove
+  distractions for now or save something for later.  Hit the snooze icon to
+  dismiss tabs you don’t want now, and set an alarm to bring them back when
+  you need them. Snooze an interesting article until tonight. Snooze that recipe
   until next month. When the snooze is ended, the tab will open back up.
 image_twitter: /static/images/experiments/snooze-tabs/social/snooze-tabs-twitter.jpg
 image_facebook: /static/images/experiments/snooze-tabs/social/snooze-tabs-facebook.jpg
@@ -23,14 +24,14 @@ discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/snooze-tabs
 privacy_notice_url: 'https://github.com/bwinton/SnoozeTabs/blob/master/docs/metrics.md'
 measurements:
   - >
-    Snooze Tabs will collect information about your interactions with the add-on, 
-    such as when you open the Snooze panel from the toolbar button, and access, 
+    Snooze Tabs will collect information about your interactions with the add-on,
+    such as when you open the Snooze panel from the toolbar button, and access,
     edit or delete Snoozed tabs within the panel.
   - >
-    Snooze Tabs will also collect information about your use of the feature, 
+    Snooze Tabs will also collect information about your use of the feature,
     such as when you create a new Snoozed tab, wake or close a Snoozed tab, or focus a Snoozed tab.
   - >
-    Snooze Tabs does NOT collect any information or details about your tabs such 
+    Snooze Tabs does NOT collect any information or details about your tabs such
     as URLs, meta attributes, or page content.
 xpi_url: 'https://testpilot.firefox.com/files/snoozetabs@mozilla.com/latest'
 addon_id: 'snoozetabs@mozilla.com'
