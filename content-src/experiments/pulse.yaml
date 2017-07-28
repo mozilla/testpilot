@@ -1,6 +1,7 @@
 id: 11
 title: 'Pulse'
 slug: pulse
+platforms: ['addon']
 locales:
   - 'en'
 min_release: 51

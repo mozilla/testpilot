@@ -2,6 +2,7 @@ dev: true
 id: 999
 title: 'Dev Example'
 slug: dev-example
+platforms: ['addon']
 thumbnail: /static/images/check.png
 description: >
   This is an example experiment that you should never see in production.

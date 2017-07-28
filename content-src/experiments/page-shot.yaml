@@ -1,6 +1,7 @@
 id: 6
 title: 'Page Shot'
 slug: page-shot
+platforms: ['addon']
 thumbnail: /static/images/experiments/page-shot/experiments_experiment/thumbnail.png
 description: >
   Intuitive screenshots baked right into the browser. Capture, save and share
