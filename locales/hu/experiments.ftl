@@ -144,6 +144,9 @@ pulseEolwarning = Köszönjük a segítségét. A Pulse kísérlet véget ér. N
 sendDescription = Titkosítsa és küldje el a fájljait egy hivatkozással, amely automatikus elévül, hogy a fontos dokumentumai ne maradjanak örökké online.
 sendIntroduction = <p>A Senddel nagy fájlokat (legfeljebb 1 GB-ig) tölthet és titkosíthat online megosztáshoz. Ha feltölt egy fájlt, akkor a Send létrehoz egy hivatkozást, amelyet továbbküldhet annak, akinek szeretné. Minden a Send által létrehozott hivatkozás lejár 1 letöltés vagy 24 óra után, és minden elküldött fájl automatikusan törlésre kerül a kiszolgálóról.</p> <p>Más Tesztpilóta kísérletektől eltérő módon, a Sendhez nem szükséges kiegészítő, és bármelyik modern böngészőben használható.</p>
 sendMeasurements0 = Ha a Sendet használja, akkor a Mozilla megkapja a feltöltött fájl titkosított másolatát, valamint a fájl alapvető információit, mint a fájl nevét és méretét. A Mozilla nem képes hozzáférni a titkosított fájlok tartalmához, és csak a megadott ideig, illetve letöltésszámig kerül megtartásra.
+sendMeasurements1 = Az előzőleg feltöltött fájlok állapotának megtekintéséhez, vagy azok törléséhez, a feltöltött fájlok alapvető információi helyi eszközön kerülnek tárolásra, ilyenek a Send fájlazonosítója, a fájlnév, és a fájl egyedi letöltő hivatkozása. Ez törlésre kerül, ha törli a feltöltött fájlt, vagy ha meglátogatja a Sendet, miután a hivatkozás lejárt.
+sendMeasurements2 = Bárki, akinek elküldi az egyedi hivatkozást (és a titkosítási kulcsot) a titkosított fájlhoz, akkor letöltheti és elérheti azt a fájlt. Ne küldje el a hivatkozást olyanoknak, akiknek nem kíván hozzáférést adni a titkosított fájlhoz.
+sendMeasurements4 = A Sendre is vonatkozik a <a href="https://www.mozilla.org/privacy/websites/" target="_blank">weboldalakra vonatkozó adatvédelmi nyilatkozatra</a>. Amikor a Send weboldalt felkeresi, az információi, mint az IP-címe ideiglenesen tárolásra kerül, a szabványos kiszolgálónaplóban.
 sendDetails0Copy = A Send lehetővé teszi, hogy titkosított fájlokat töltsön fel, és osszon meg.
 sendDetails1Copy = A Send csak egy letöltésig vagy 24 óráig tárolja a fájlokat.
 sendDetails2Copy = A Send bármelyik modern böngészőben használható.
@@ -226,6 +229,7 @@ universalsearchContributors2Title = Vezető mérnök
 universalsearchContributors3Title = Senior mérnök
 universalsearchEolwarning = Automatikusan letiltjuk az Univerzális keresést, és tájékoztatjuk a kísérlet eredményről, ha az véget ér.
 voicefillDescription = A hangfelismerés megérkezett a Firefoxba. A Voice FIllel beszélhet a kedvenc keresőmotorjaihoz.
+voicefillIntroduction = <p>A Voice Fill mesterséges intelligenciát használ a beszédbemenet értelmezéséhez. A Voice Fill kísérlet résztvevőjeként, a beszéd-alapú keresés segít betanítani az MI-nket, hogy okosabb találatokat adjon.</p> <p>Hozzáadtuk a Voice Fillt a Google, a Yahoo és a DuckDuckGo keresőoldalakhoz, és további oldalakkal fogunk bővíteni, ahogy a kísérlet folyik.</p>
 voicefillDetails0Copy = Keresse a mikrofon ikont a Yahoon, DuckDuckGo-n és a Google-ön.
 voicefillDetails1Copy = A Voice Fill használata előtt engedélyeznie kell a hangbevitelt.
 voicefillDetails2Copy = A Voice Fill több lehetőséget is biztosíthat. Válassza ki azt, amelyiket szeretné, és segítsen betanítani az MI-t.
