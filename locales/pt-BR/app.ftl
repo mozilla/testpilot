@@ -16,7 +16,7 @@ pageTitleExperiment = Firefox Test Pilot - { $title }
 footerLinkCookies = Cookies
 footerLinkPrivacy = Privacidade
 footerLinkTerms = Termos
-footerLinkLegal = Informações legais
+footerLinkLegal = Informações Legais
 footerLinkAbout = Sobre o Test Pilot
 
 
