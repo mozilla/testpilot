@@ -183,10 +183,7 @@ userCountContainerAlt = Nouveau
 highlightPrivacy = Confidentialité
 experimentGradReportPendingTitle = Cette expérience est terminée
 experimentGradReportPendingCopy = Nous sommes en train de réaliser un rapport complet. Revenez un peu plus tard pour consulter tous les détails.
-experimentGoToLink =
-    Aller à { $title }
-    
-
+experimentGoToLink = Ouvrir { $title }
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
