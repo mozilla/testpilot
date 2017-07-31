@@ -11,6 +11,7 @@ introduction: >
   <p>Unlike other Test Pilot experiments, Send does not require an add-on, and can be used in any modern browser.</p>
 image_twitter: /static/images/experiments/send/social/send-twitter.jpg
 image_facebook: /static/images/experiments/send/social/send-fb.jpg
+video_url: https://www.youtube.com/embed/ZGWZGYtAS3U
 changelog_url: 'https://github.com/mozilla/send/releases'
 contribute_url: 'https://github.com/mozilla/send'
 bug_report_url: 'https://github.com/mozilla/send/issues'
