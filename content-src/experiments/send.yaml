@@ -25,9 +25,9 @@ measurements:
   - >
     Anyone you provide with the unique link (including the encryption key) to your encrypted file will be able to download and access that file. You should not provide the link to anyone you do not want to have access to your encrypted file.
   - >
-    Send will also collect information about the performance and your use of the service, such as how often you upload files, how long your files remain with Mozilla before they expire, any errors related to file transfers, and what cryptographic protocols your browser supports.
+    Send is also subject to our <a>websites privacy notice</a>. When you visit the Send website, information such as your IP address is temporarily retained as part of a standard server log.
   - >
-    Send is also subject to our <a href="https://www.mozilla.org/privacy/websites/" target="_blank">websites privacy notice</a>. When you visit the Send website, information such as your IP address is temporarily retained as part of a standard server log.
+    Send will also collect information about the performance and your use of the service, such as how often you upload files, how long your files remain with Mozilla before they expire, any errors related to file transfers, and what cryptographic protocols your browser supports.
 
 gradient_start: '#32CADD'
 gradient_stop: '#3199FF'
