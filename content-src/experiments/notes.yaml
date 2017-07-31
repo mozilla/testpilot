@@ -10,6 +10,7 @@ introduction: >
   Notes adds a simple, one-page notepad to your browser’s sidebar. We’ve added a few basic formatting options to start, but we want your feedback to tell us what features you’d like to see us add.
 image_twitter: /static/images/experiments/notes/social/notes-twitter.jpg
 image_facebook: /static/images/experiments/notes/social/notes-fb.jpg
+video_url: https://www.youtube.com/embed/vaFvr_70yxw
 changelog_url: 'https://github.com/mozilla/notes/releases'
 contribute_url: 'https://github.com/mozilla/notes'
 bug_report_url: 'https://github.com/mozilla/notes/issues'
