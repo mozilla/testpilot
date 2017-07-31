@@ -23,6 +23,7 @@ menuWiki = Test Pilot Wiki
 menuDiscuss = Discuss Test Pilot
 menuFileIssue = File an Issue
 menuRetire = Uninstall Test Pilot
+headerLinkBlog = Blog
 
 // The splash on the homepage.
 [[landing]]

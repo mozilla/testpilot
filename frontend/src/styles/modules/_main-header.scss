@@ -16,4 +16,45 @@
       width: 190px;
     }
   }
+
+  .header-links {
+    @include flex-container(row, flex-end, flex-start);
+    @include respond-to('not-small') {
+      display: flex;
+    }
+
+    display: none;
+
+
+    > a {
+      background-position: 10px center;
+      background-repeat: no-repeat;
+      background-size: 16px 16px;
+      border-radius: 0 0 3px 3px;
+      border-top: 0;
+      height: 20px;
+      line-height: 20px;
+      margin: 10px 10px 0;
+      opacity: .6;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+
+  .blog-link {
+    background-image: url('../images/highlight.svg');
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    border-radius: 0 0 3px 3px;
+    border-top: 0;
+    padding: 0 10px 0 32px;
+
+    &:hover {
+      background-position: 9px center;
+      background-size: 18px 18px;
+    }
+  }
 }

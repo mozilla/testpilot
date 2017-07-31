@@ -21,10 +21,10 @@ describe('app/components/Header', () => {
     subject = mount(<Header {...props} />);
   });
 
-  const expectMenuGA = label => {
+  const expectMenuGA = (label, action = 'drop-down menu') => {
     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
       eventCategory: 'Menu Interactions',
-      eventAction: 'drop-down menu',
+      eventAction: action,
       eventLabel: label
     }]);
   };
@@ -50,12 +50,22 @@ describe('app/components/Header', () => {
       expect(subject.find('.settings-button')).to.have.property('length', 1);
     });
 
+    it('should show a link to the blog', () => {
+      expect(subject.find('.blog-link')).to.have.property('length', 1);
+    });
+
+    it('should ping GA on blog link clicked', () => {
+      subject.find('.blog-link').simulate('click', mockClickEvent);
+      expectMenuGA('open blog', 'click');
+    });
+
     it('should show the settings menu when the settings button is clicked', () => {
       subject.find('.settings-button').simulate('click', mockClickEvent);
       expect(subject.state('showSettings')).to.be.true;
       expect(subject.find('.settings-contain')).to.have.property('length', 1);
       expectMenuGA('Toggle Menu');
     });
+
     it('should link to /experiments', () => {
       expect(subject.find('.wordmark').props()).to.have.property('href', '/experiments');
     });
