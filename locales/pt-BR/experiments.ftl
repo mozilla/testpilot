@@ -235,6 +235,7 @@ voicefillIntroduction = <p>Voice Fill utiliza inteligência artificial para inte
 voicefillMeasurements0 = Quando você escolhe usar o Voice Fill, sua gravação será enviada para nossos servidores para processamento e para prover sugestões de textos.
 voicefillMeasurements1 = Voice Fill coletará informações técnicas relacionadas ao desempenho da funcionalidade, como quanto tempo levou para nossos servidores processarem uma gravação enviada e se selecionou ou modificou algum das sugestões dadas.
 voicefillMeasurements2 = Voice Fill também coleta informações sobre seu uso da funcionalidade, como a frequência de uso do Voice Fill e se você usou o Voice Fill com uma aba específica ou página como Google, DuckDuckGo ou Yahoo.
+voicefillMeasurements3 = Para ajudar-nos a melhorar a precisão das suas sugestões, nós podemos armazenar uma copia das gravações de áudio submetidas e sugestões de informações relacionadas. Gravação de áudio mantidas com esse propósito não serão associadas com qualquer identificadores pessoais.
 voicefillDetails0Copy = Procure pelo ícone do microfone no Yahoo, DuckDuckGo e Google.
 voicefillDetails1Copy = Antes de usar o Voice Fill, você precisa permitir a captura de voz.
 voicefillDetails2Copy = Voice Fill oferecerá várias opções. Escolha uma para ajudar a treinar a IA.
