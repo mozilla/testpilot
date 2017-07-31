@@ -141,6 +141,7 @@ pulseContributors2Title = Obdelava podatkov platforme Firefoxa
 pulseContributors3Title = Firefox QA
 pulseEolwarning = Hvala za vašo pomoč. Poskus Pulse se končuje. Dodatek lahko onemogočite ali odstranite.
 sendDescription = Šifrirajte in pošljite datoteke s povezavo, ki samodejno poteče, kar vam zagotavlja, da vaši pomembni dokumenti ne bodo ostali za vedno na spletu.
+sendIntroduction = <p>Send omogoča nalaganje in šifriranje velikih datotek (do 1 GB) za deljenje na spletu. Ko naložite datoteko, Send ustvari povezavo, ki jo lahko delite s komerkoli želite. Vse povezave, ustvarjene v Sendu, potečejo po 1 prenosu ali v 24 urah, vse poslane datoteke pa bodo samodejno izbrisane iz strežnika Senda.</p><p>Za razliko od ostalih poskusov Test Pilota, Send ne potrebuje dodatka in ga lahko uporabite v vseh sodobnih brskalnikih.</p>
 sendMeasurements0 = Ko uporabljate Send, Mozilla prejme šifrirano kopijo vaše prenesene datoteke in osnovne informacije o datoteki, kot sta ime in velikost. Mozilla nima dostopa do vsebine šifrirane datoteke in jo hrani samo za določen čas ali število prenosov.
 sendDetails0Copy = Send vam omogoča nalaganje in deljenje šifriranih datotek.
 sendDetails1Copy = Send bo shranil vaše datoteke samo za en prenos ali za 24 ur.
