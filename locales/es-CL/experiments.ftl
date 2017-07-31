@@ -114,4 +114,6 @@ universalsearchContributors2Title = Ingeniero de equipo
 universalsearchContributors3Title = Ingeniero senior
 voicefillDetails1Copy = Antes de usar Voice Fill, debes permitir la entrada de voz.
 voicefillDetails2Copy = Voice Fill puede ofrecerte múltiples opciones. Selecciona la que quieres que entrene la IA.
+voicefillToursteps2Copy = Dependiendo de lo que quieras buscar, Voice Fill te ofrecerá múltiples opciones. Al usar Voice Fill, contribuyes a que se vuelva más inteligente.
+voicefillToursteps3Copy = Siempre puedes darnos tu opinión o desactivar Voice Fill de Test Pilot.
 testpilotNewsupdatesGeneralupdate4Title = Empezamos un blog
