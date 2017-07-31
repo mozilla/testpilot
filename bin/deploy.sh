@@ -91,28 +91,6 @@ aws s3 sync \
   --acl "public-read" \
   dist/ s3://${TESTPILOT_BUCKET}/
 
-# XPI; short cache; amazon won't detect the content-type correctly
-aws s3 sync \
-  --cache-control "max-age=${TEN_MINUTES}" \
-  --content-type "application/x-xpinstall" \
-  --exclude "*" \
-  --include "*.xpi" \
-  --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
-  --metadata-directive "REPLACE" \
-  --acl "public-read" \
-  dist/ s3://${TESTPILOT_BUCKET}/
-
-# RDF; short cache; amazon won't detect the content-type correctly
-aws s3 sync \
-  --cache-control "max-age=${TEN_MINUTES}" \
-  --content-type "text/rdf" \
-  --exclude "*" \
-  --include "*.rdf" \
-  --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
-  --metadata-directive "REPLACE" \
-  --acl "public-read" \
-  dist/ s3://${TESTPILOT_BUCKET}/
-
 # l10n files; short cache;
 aws s3 sync \
     --cache-control "max-age=${TEN_MINUTES}" \
@@ -157,21 +135,3 @@ for fn in $(find dist -name 'index.html' -not -path 'dist/index.html'); do
     --acl "public-read" \
     $fn s3://${TESTPILOT_BUCKET}/${s3path}
 done
-
-# The add-on lives at /static/addon/addon.xpi .  Let's create a /latest/ URL so
-# we can pass in the hash headers
-
-# Make sure we have an empty latest file
-> dist/static/addon/latest
-
-HASH=($(sha256sum dist/static/addon/addon.xpi))
-DIGEST="\"x-target-digest\": \"sha256:${HASH}\""
-LOCATION="\"location\": \"/static/addon/addon.xpi\""
-
-aws s3 cp \
-  --cache-control "max-age=${TEN_MINUTES}" \
-  --content-type "text/html" \
-  --metadata "{${HPKP}, ${HSTS}, ${TYPE}, ${LOCATION}, ${DIGEST}}" \
-  --metadata-directive "REPLACE" \
-  --acl "public-read" \
-  dist/static/addon/latest s3://${TESTPILOT_BUCKET}/static/addon/
