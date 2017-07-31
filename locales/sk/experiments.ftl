@@ -141,6 +141,7 @@ pulseContributors1Title = Firefox UX
 pulseContributors2Title = Firefox Platform Product Intelligence
 pulseContributors3Title = Firefox QA
 pulseEolwarning = Ďakujeme za vašu pomoc. Experiment Pulse končí. Doplnok môžete kľudne zakázať alebo odstrániť.
+sendDescription = Šifrujte a posielajte súbory prostredníctvom odkazov, ktorých platnosť automaticky vyprší a vaše dôležité dokumenty tak nezostanú na internete navždy.
 sendContributors0Title = Vývojár na stáži
 sendContributors1Title = Vývojár na stáži
 sendContributors3Title = UX dizajnér
