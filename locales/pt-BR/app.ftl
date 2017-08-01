@@ -35,7 +35,7 @@ menuRetire = Remover Test Pilot
 [[ landing ]]
 
 landingIntroOne = Teste novos recursos.
-landingIntroTwo = Dê seu feedback.
+landingIntroTwo = Dê sua opinião.
 landingIntroThree = Ajude a construir o Firefox.
 landingLegalNotice = Ao prosseguir, você concorda com os <a>termos de uso</a> e com a <a>política de privacidade</a> do Test Pilot.
 landingExperimentsTitle = Teste nossos experimentos mais recentes
@@ -123,7 +123,7 @@ experimentListHeader = Escolha seus experimentos!
 [[ experimentCard ]]
 
 // Small button on experiment card that links to a survey for feedback submission
-experimentCardFeedback = Feedback
+experimentCardFeedback = Opinião
 experimentCardManage = Gerenciar
 experimentCardGetStarted = Começar
 experimentCardLearnMore = Saiba mais
