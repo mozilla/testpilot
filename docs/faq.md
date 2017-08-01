@@ -42,3 +42,11 @@ You can see graduated experiments by clicking on the `View Past Experiments` but
 Test Pilot bugs can be filed on the Test Pilot GitHub repo. [link](https://github.com/mozilla/testpilot/issues)
 
 You will find a link to report bugs for individual experiments on the experiment's detail page on [Test Pilot](https://testpilot.firefox.com/) for the most up to date link.
+
+## Why do Test Pilot experiments ask me to allow Google Analytics?
+
+Test Pilot uses GA event tracking to measure certain interactions within experiments. We use this data to better understand how participants are using experiments. Each experiment contains a summary description of what data we collect and a link to the precise schema definitions we send to GA. For example, here is the entire metrics schema for [Notes](https://github.com/mozilla/notes/blob/master/docs/metrics.md). We do not provide any Test Pilot data for use in Google's products & services.
+
+If you're uncomfortable with submitting data to GA, all of our experiments respect the Do Not Track flag in `about:preferences`.
+
+
