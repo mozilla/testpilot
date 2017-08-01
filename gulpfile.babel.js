@@ -20,8 +20,6 @@ require('./frontend/tasks/pages');
 require('./frontend/tasks/server');
 require('./frontend/tasks/dist');
 
-require('./addon/tasks/locales');
-
 gulp.task('clean', () => del([
   config.DEST_PATH,
   config.DIST_PATH
@@ -36,7 +34,6 @@ gulp.task('distclean', () => del([
 
 gulp.task('build', done => runSequence(
   'content-build',
-  'addon-copy-locales',
   'scripts-build',
   'styles-build',
   'images-build',
@@ -48,7 +45,6 @@ gulp.task('build', done => runSequence(
 gulp.task('watch', [
   'self-watch',
   'content-watch',
-  'addon-watch-locales',
   'scripts-watch',
   'styles-watch',
   'images-watch',

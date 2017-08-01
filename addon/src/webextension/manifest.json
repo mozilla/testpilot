@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "name": "testpilot",
+  "author": "Les Orchard <me@lmorchard.com>",
+  "version": "2.0.0",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "64": "icons/icon-64.png",
+    "96": "icons/icon-96.png"
+  },
+  "default_locale": "en_US",
+  "permissions": [
+    "notifications",
+    "storage",
+    "tabs"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "browser_style": false,
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "64": "icons/icon-64.png",
+      "96": "icons/icon-96.png"
+    },
+    "theme_icons": [
+      { "size": 16, "light": "icons/icon-16.png", "dark": "icons/icon-inverted-16.png" },
+      { "size": 32, "light": "icons/icon-32.png", "dark": "icons/icon-inverted-32.png" },
+      { "size": 64, "light": "icons/icon-64.png", "dark": "icons/icon-inverted-64.png" },
+      { "size": 96, "light": "icons/icon-96.png", "dark": "icons/icon-inverted-96.png" }
+    ]
+  }
+}

@@ -1,8 +1,11 @@
 import cookies from 'js-cookie';
 import addonActions from '../actions/addon';
+import { hasAddonSelector } from '../selectors/addon';
 import { updateExperiment } from '../actions/experiments';
 import InstallHistory from './install-history';
 
+const TESTPILOT_ADDON_ID = '@testpilot-addon';
+const INSTALL_STATE_WATCH_PERIOD = 2000;
 const RESTART_NEEDED = false; // TODO
 
 let mam;
@@ -50,14 +53,34 @@ export function installAddon(
 }
 
 export function uninstallAddon() {
-  mam.getAddonByID('@testpilot-addon').then(addon => {
+  mam.getAddonByID(TESTPILOT_ADDON_ID).then(addon => {
     if (addon) {
       addon.uninstall();
     }
   });
 }
 
+function pollMainAddonAvailability(store) {
+  const finish = status => {
+    const hasAddon = hasAddonSelector(store.getState());
+    if (status !== hasAddon) {
+      if (status === false && hasAddon === true) {
+        window.location.reload();
+      } else {
+        store.dispatch(addonActions.setHasAddon(status));
+      }
+    }
+    setTimeout(() => pollMainAddonAvailability(store),
+               INSTALL_STATE_WATCH_PERIOD);
+  };
+  mam.getAddonByID(TESTPILOT_ADDON_ID)
+    .then(addon => finish(!!addon))
+    .catch(() => finish(false));
+}
+
 export function setupAddonConnection(store) {
+  pollMainAddonAvailability(store);
+
   mam.addEventListener('onEnabled', addon => {
     if (addon) {
       const { experiments } = store.getState();

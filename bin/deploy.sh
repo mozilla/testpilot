@@ -43,6 +43,7 @@ CSP="\"content-security-policy\": \"default-src 'self'; connect-src 'self' https
 HSTS="\"strict-transport-security\": \"max-age=${ONE_YEAR}; includeSubDomains; preload\""
 TYPE="\"x-content-type-options\": \"nosniff\""
 XSS="\"x-xss-protection\": \"1; mode=block\""
+ACAO="\"Access-Control-Allow-Origin\": \"\*\""
 
 # Our dev server has a couple different rules to allow easier debugging and
 # enable localization.  Also expires more often.
@@ -63,7 +64,7 @@ if [ -e version.json ]; then
     aws s3 cp \
       --cache-control "max-age=${TEN_MINUTES}" \
       --content-type "application/json" \
-      --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
+      --metadata "{${ACAO}, ${HPKP}, ${HSTS}, ${TYPE}}" \
       --metadata-directive "REPLACE" \
       --acl "public-read" \
       dist/__version__ s3://${TESTPILOT_BUCKET}/__version__
@@ -86,7 +87,7 @@ aws s3 sync \
   --content-type "application/json" \
   --exclude "*" \
   --include "*.json" \
-  --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
+  --metadata "{${ACAO}, ${HPKP}, ${HSTS}, ${TYPE}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
   dist/ s3://${TESTPILOT_BUCKET}/
