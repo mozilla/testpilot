@@ -1,7 +1,10 @@
 // @flow
 
 import classnames from 'classnames';
+import { Localized } from 'fluent-react/compat';
 import React from 'react';
+
+import LocalizedHtml from '../components/LocalizedHtml';
 
 import { defaultState } from '../reducers/newsletter-form';
 
@@ -53,7 +56,7 @@ export default class NewsletterForm extends React.Component {
     return (
       <input
         type='email'
-        required data-l10n-id='newsletterFormEmailPlaceholder'
+        required
         placeholder='Your email here'
         value={this.props.email}
         onChange={this.handleEmailChange}
@@ -75,14 +78,17 @@ export default class NewsletterForm extends React.Component {
       <label className={this.makeRevealedClassNames()} htmlFor={fieldName}>
         <input name={fieldName} id={fieldName} type="checkbox" checked={this.props.privacy} required
                onChange={this.handlePrivacyClick} onClick={this.handlePrivacyClick} />
-        { this.state.privacyNote ? <span data-l10n-id="newsletterFormPrivacyAgreementRequired"></span> : null }
-        <span data-l10n-id="newsletterFormPrivacyNotice">
-          I&apos;m okay with Mozilla handling by info as explained in
-          <a target="_blank" rel="noopener noreferrer"
-            href={url}>
-            this Privacy Notice
-          </a>.
-        </span>
+        { this.state.privacyNote ? <Localized id="newsletterFormPrivacyAgreementRequired">
+          <span></span>
+        </Localized> : null }
+        <LocalizedHtml id="newsletterFormPrivacyNotice">
+          <span>
+            I&apos;m okay with Mozilla handling my info as explained in <a target="_blank" rel="noopener noreferrer"
+              href={url}>
+              this privacy notice
+            </a>.
+          </span>
+        </LocalizedHtml>
       </label>
     );
   }
@@ -90,21 +96,25 @@ export default class NewsletterForm extends React.Component {
   renderSubmitButton() {
     if (this.props.submitting) {
       return (
-        <button disabled={true} className="button outline large"
-                data-l10n-id='newsletterFormSubmitButtonSubmitting'>
-          Submitting...
-        </button>
+        <Localized id='newsletterFormSubmitButtonSubmitting'>
+          <button disabled={true} className="button outline large">
+            Submitting...
+          </button>
+        </Localized>
       );
     }
-    return <button data-l10n-id='newsletterFormSubmitButton' className={classnames('button', 'large', this.props.isModal ? 'default' : 'outline')}>Sign Up Now</button>;
+    return <Localized id='newsletterFormSubmitButton'>
+      <button className={classnames('button', 'large', this.props.isModal ? 'default' : 'outline')}>Sign Up Now</button>
+    </Localized>;
   }
 
   renderDisclaimer() {
     return (
-      <p className="disclaimer"
-         data-l10n-id='newsletterFormDisclaimer'>
-        We will only send you Test Pilot-related information.
-      </p>
+      <Localized id='newsletterFormDisclaimer'>
+        <p className="disclaimer">
+          We will only send you Test Pilot-related information.
+        </p>
+      </Localized>
     );
   }
 

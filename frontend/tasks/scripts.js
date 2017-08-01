@@ -17,11 +17,18 @@ const runSequence = require('run-sequence');
 const packageJSON = require('../../package.json');
 
 const excludeVendorModules = [
-  'babel-polyfill'
+  'babel-polyfill',
+  'fluent',
+  'fluent-langneg',
+  'fluent-react'
 ];
 
 const includeVendorModules = [
   'babel-polyfill/browser',
+  'fluent/compat',
+  'fluent-langneg/compat',
+  'fluent-react/compat',
+  'html-react-parser/lib/dom-to-react',
   'react/lib/ReactDOMFactories',
   'querystring'
 ];

@@ -1,3 +1,4 @@
+import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
 import Copter from '../components/Copter';
@@ -13,7 +14,9 @@ export default class OnboardingPage extends React.Component {
           <div id="onboarding" className="modal">
             <div className="modal-content centered">
               <div className="toolbar-button-onboarding"></div>
-              <p data-l10n-id="onboardingMessage">We put an icon in your toolbar so you can always find Test Pilot.</p>
+              <Localized id="onboardingMessage">
+                <p>We put an icon in your toolbar so you can always find Test Pilot.</p>
+              </Localized>
             </div>
           </div>
           <Copter animation="fade-in-fly-up"/>

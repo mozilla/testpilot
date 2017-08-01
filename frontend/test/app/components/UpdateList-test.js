@@ -90,7 +90,7 @@ describe('app/components/UpdateList', () => {
       const subject = shallow(<Update update={{ title: 'foo' }} experiment={{ title: 'Yay hooray' }} />);
       const categoryTitle = subject.find('.update-content h2');
       expect(categoryTitle.text()).to.equal('Yay hooray');
-      expect(categoryTitle.props()).to.have.property('data-l10n-id', null);
+      expect(categoryTitle.parent().props()).to.have.property('id', null);
     });
 
   });

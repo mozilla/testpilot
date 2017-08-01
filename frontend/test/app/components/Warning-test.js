@@ -34,13 +34,13 @@ describe('app/components/Warning', () => {
     const title = subject.find('h3');
     expect(title).to.have.length(1);
     expect(title.text()).to.equal(props.title);
-    expect(title.prop('data-l10n-id')).to.equal(props.titleL10nId);
+    expect(title.parent().prop('id')).to.equal(props.titleL10nId);
   });
 
   it('should render the subtitle correctly', () => {
     const subtitle = subject.find('header p');
     expect(subtitle).to.have.length(1);
     expect(subtitle.text()).to.equal(props.subtitle);
-    expect(subtitle.prop('data-l10n-id')).to.equal(props.subtitleL10nId);
+    expect(subtitle.parent().prop('id')).to.equal(props.subtitleL10nId);
   });
 });

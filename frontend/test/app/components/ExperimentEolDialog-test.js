@@ -1,7 +1,8 @@
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
+import { findLocalizedById } from '../util';
 
 import ExperimentEolDialog from '../../../src/app/components/ExperimentEolDialog';
 
@@ -18,8 +19,6 @@ describe('app/components/ExperimentEolDialog', () => {
     subject = shallow(<ExperimentEolDialog {...props} />);
   });
 
-  const findByL10nID = id => subject.findWhere(el => id === el.props()['data-l10n-id']);
-
   it('should display expected content', () => {
     expect(subject.find('#retire-dialog-modal')).to.have.property('length', 1);
   });
@@ -30,7 +29,8 @@ describe('app/components/ExperimentEolDialog', () => {
   });
 
   it('calls onSubmit when the disable button is clicked', () => {
-    findByL10nID('disableExperiment').simulate('click', mockClickEvent);
+    findLocalizedById(subject, 'disableExperiment').find('button')
+      .simulate('click', mockClickEvent);
     expect(props.onSubmit.called).to.be.true;
   });
 

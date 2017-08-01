@@ -1,7 +1,8 @@
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
-import { shallow, mount } from 'enzyme';
+import { shallow, mount, render } from 'enzyme';
+import { findLocalizedById, findLocalizedHtmlById } from '../util';
 import moment from 'moment';
 
 import ExperimentPage, { ExperimentDetail } from '../../../src/app/containers/ExperimentPage';
@@ -121,8 +122,6 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
     subject = shallow(<ExperimentDetail {...props} />);
   });
 
-  const findByL10nID = id => subject.findWhere(el => id === el.props()['data-l10n-id']);
-
   const setExperiment = experiment => {
     subject.setProps({
       experiment,
@@ -134,26 +133,26 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
   it('should have the correct l10n IDs', () => {
     setExperiment(mockExperiment);
     // Title field not localized; see #1732.
-    expect(findByL10nID('testingTitle')).to.have.property('length', 0);
-    expect(findByL10nID('testingSubtitleFoo')).to.have.property('length', 1);
-    expect(findByL10nID('testingIntroduction')).to.have.property('length', 1);
-    expect(findByL10nID('testingContributors0Title')).to.have.property('length', 1);
-    expect(findByL10nID('testingDetails0Headline')).to.have.property('length', 1);
-    expect(findByL10nID('testingDetails0Copy')).to.have.property('length', 1);
+    expect(findLocalizedById(subject, 'testingTitle')).to.have.property('length', 0);
+    expect(findLocalizedById(subject, 'testingSubtitleFoo')).to.have.property('length', 1);
+    expect(findLocalizedHtmlById(subject, 'testingIntroduction')).to.have.property('length', 1);
+    expect(findLocalizedById(subject, 'testingContributors0Title')).to.have.property('length', 1);
+    expect(findLocalizedById(subject, 'testingDetails0Headline')).to.have.property('length', 1);
+    expect(findLocalizedById(subject, 'testingDetails0Copy')).to.have.property('length', 1);
 
     // Fields only available when the add-on is installed.
     subject.setProps({ hasAddon: true });
     // The measurements section is rendered twice, for responsiveness reasons.
-    expect(findByL10nID('testingMeasurements0')).to.have.property('length', 2);
+    expect(findLocalizedHtmlById(subject, 'testingMeasurements0')).to.have.property('length', 2);
   });
 
   it('should omit l10n IDs for dev-only content', () => {
     setExperiment({ dev: true, ...mockExperiment });
-    expect(findByL10nID('testingSubtitleFoo')).to.have.property('length', 0);
-    expect(findByL10nID('testingIntroduction')).to.have.property('length', 0);
-    expect(findByL10nID('testingContributors0Title')).to.have.property('length', 0);
-    expect(findByL10nID('testingDetails0Headline')).to.have.property('length', 0);
-    expect(findByL10nID('testingDetails0Copy')).to.have.property('length', 0);
+    expect(findLocalizedById(subject, 'testingSubtitleFoo')).to.have.property('length', 0);
+    expect(findLocalizedHtmlById(subject, 'testingIntroduction')).to.have.property('length', 0);
+    expect(findLocalizedById(subject, 'testingContributors0Title')).to.have.property('length', 0);
+    expect(findLocalizedById(subject, 'testingDetails0Headline')).to.have.property('length', 0);
+    expect(findLocalizedById(subject, 'testingDetails0Copy')).to.have.property('length', 0);
   });
 
   it('should not render experiment content if no experiment content is loaded', () => {
@@ -264,15 +263,16 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
 
     it('should display installation count if over 100', () => {
       const experiment = setExperiment({ ...mockExperiment, installation_count: '101' });
-      const el = findByL10nID('userCountContainer');
+      const el = findLocalizedHtmlById(subject, 'userCountContainer');
       expect(el).has.property('length', 1);
-      expect(JSON.parse(el.prop('data-l10n-args')))
-        .to.have.property('installation_count', experiment.installation_count);
+      expect(el.prop('$installation_count')).to.deep.equal(
+        <span className="bold">{experiment.installation_count}</span>
+      );
     });
 
     it('should display alternative message if installation count <= 100', () => {
       setExperiment({ ...mockExperiment, installation_count: '99' });
-      const el = findByL10nID('userCountContainerAlt');
+      const el = findLocalizedById(subject, 'userCountContainerAlt');
       expect(el).has.property('length', 1);
     });
 
@@ -356,7 +356,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
         expect(subject.find('.upgrade-notice')).to.have.property('length', 1);
         expect(subject.find('.experiment-controls')).to.have.property('length', 0);
 
-        findByL10nID('upgradeNoticeLink').simulate('click', mockClickEvent);
+        findLocalizedById(subject, 'upgradeNoticeLink').find('a').simulate('click', mockClickEvent);
         expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
           eventCategory: 'ExperimentDetailsPage Interactions',
           eventAction: 'Upgrade Notice',
@@ -389,7 +389,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
         expect(subject.find('.upgrade-notice')).to.have.property('length', 1);
         expect(subject.find('.experiment-controls')).to.have.property('length', 0);
 
-        findByL10nID('versionChangeNoticeLink').simulate('click', mockClickEvent);
+        findLocalizedById(subject, 'versionChangeNoticeLink').find('a').simulate('click', mockClickEvent);
 
         expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
           eventCategory: 'ExperimentDetailsPage Interactions',
@@ -402,7 +402,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
         setExperiment({ ...mockExperiment, error: true });
         expect(subject.find('.details-header-wrapper').hasClass('has-status')).to.be.true;
         expect(subject.find('.status-bar').hasClass('error')).to.be.true;
-        expect(findByL10nID('installErrorMessage')).to.have.property('length', 1);
+        expect(findLocalizedById(subject, 'installErrorMessage')).to.have.property('length', 1);
       });
 
       it('should make the page header sticky on page scrolling', (done) => {
@@ -543,7 +543,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
         it('should display a banner when the experiment is enabled', () => {
           expect(subject.find('.details-header-wrapper').hasClass('has-status')).to.be.true;
           expect(subject.find('.status-bar').hasClass('enabled')).to.be.true;
-          expect(findByL10nID('isEnabledStatusMessage')).to.have.property('length', 1);
+          expect(findLocalizedById(subject, 'isEnabledStatusMessage')).to.have.property('length', 1);
         });
 
       });
@@ -561,9 +561,9 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
         });
 
         it('displays the end date instead of install count', () => {
-          expect(findByL10nID('completedDateLabel').length).to.equal(1);
-          expect(findByL10nID('userCountContainer').length).to.equal(0);
-          expect(findByL10nID('userCountContainerAlt').length).to.equal(0);
+          expect(findLocalizedHtmlById(subject, 'completedDateLabel').length).to.equal(1);
+          expect(findLocalizedById(subject, 'userCountContainer').length).to.equal(0);
+          expect(findLocalizedById(subject, 'userCountContainerAlt').length).to.equal(0);
         });
 
         it('displays the graduation report', () => {
@@ -576,8 +576,8 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
           });
 
           it('only renders the disable button control', () => {
-            expect(findByL10nID('giveFeedback').length).to.equal(0);
-            expect(findByL10nID('disableExperiment').length).to.equal(1);
+            expect(findLocalizedById(subject, 'giveFeedback').length).to.equal(0);
+            expect(findLocalizedById(subject, 'disableExperiment').length).to.equal(1);
             expect(subject.find('#uninstall-button').hasClass('warning')).to.equal(true);
           });
 
