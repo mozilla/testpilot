@@ -142,6 +142,7 @@ pulseContributors2Title = Firefox Platform Product Intelligence
 pulseContributors3Title = Firefox QA
 pulseEolwarning = Takk for hjelpa di. Eksperimentet Puls vert snart avslutta. Du må gjerne inaktivere det eller fjerne utvidinga.
 sendDescription = Krypter og send filer med ein lenke som automatisk går ut for å sjå til at dei viktige dokumenta dine ikkje blir verande på nettet i all æve.
+sendIntroduction = <p>Send lèt deg laste opp og kryptere store filer (opp til 1 GB) for å dele på nettet. Når du lastar opp ei fil, lagar Send ei lenke som vert sendt til mottakaren. Kvar lenke som vert laga av Send går ut etter 1 nedlasting eller 24 timar og alle sende filer vert automatisk sletta frå Send-tenaren.</p> <p>Ulikt andre Test Pilot-eksperiment, krev Send ikkje noko utviding, og kan brukast i alle nettlesarar.</p>
 sendDetails1Copy = Send kjem berre til å lagre filene dine for ei nedlasting eller i 24 timar.
 sendDetails2Copy = Du kan bruke Send i alle moderne nettlesarar.
 sendContributors0Title = Engineering Intern
