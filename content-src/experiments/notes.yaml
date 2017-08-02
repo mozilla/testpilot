@@ -23,7 +23,8 @@ measurements:
     you use any editing features (e.g., bold or stylized text).
   - >
     Notes will also collect information about your interaction with the add-on, such as how you
-    access the feature, and what buttons you may click.
+    access the feature, and what buttons you clicked.
+measurements_l10nsuffix: 'v2'
 xpi_url: 'https://testpilot.firefox.com/files/notes@mozilla.com/latest'
 addon_id: 'notes@mozilla.com'
 gradient_start: '#A665B4'
