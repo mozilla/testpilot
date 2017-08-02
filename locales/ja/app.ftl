@@ -270,7 +270,7 @@ newsletterFormSubmitButtonSubmitting = 送信中...
 [[ newsletterFooter ]]
 
 newsletterFooterError = メールアドレスの送信中に問題が発生しました。再度試しますか？
-newsletterFooterHeader = 最新情報をいち早く入手
+newsletterFooterHeader = 最新情報をいち早く
 newsletterFooterBody = 新しい実験について知り、あなたが試した実験のテスト結果を見てみましょう。
 newsletterFooterSuccessHeader = ありがとうございます！
 newsletterFooterSuccessBody = これまでに Mozilla 関連のニュースレターを購読したことがない場合、購読開始の確認が必要となります。お送りした確認メールを受信トレイもしくは迷惑メールフィルタから探してください。
