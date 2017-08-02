@@ -39,12 +39,6 @@ const serverOptions = {
       // Skip CSP for storybook
       if (pathname.indexOf('.storybook') !== -1) { return next(); }
 
-      // Rewrite /static/addon/latest to /static/addon/addon.xpi
-      if (pathname === '/static/addon/latest') {
-        parsed.pathname = '/static/addon/addon.xpi';
-        req.url = url.format(parsed);
-      }
-
       res.setHeader('content-security-policy', CSP);
       next();
     }
