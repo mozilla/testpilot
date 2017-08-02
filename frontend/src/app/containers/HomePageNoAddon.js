@@ -28,10 +28,6 @@ export default class HomePageNoAddon extends React.Component {
     const pastExperiments = experiments.filter(isAfterCompletedDate);
 
     if (experiments.length === 0) { return null; }
-    if (this.props.hasAddon === true) {
-      this.props.navigateTo('/experiments');
-      return null;
-    }
 
     const installSplash = <Banner background={true}>
 
