@@ -139,6 +139,7 @@ pulseContributors2Title = Firefox 平台产品智能
 pulseContributors3Title = Firefox 质量保证
 pulseEolwarning = 感谢您的帮助。Pulse 实验即将结束。您可以禁用或移除此附加组件。
 sendDescription = 通过链接发送经过加密的文件，链接自动过期，确保您的重要文档只短暂留存、只能被下载一次。
+sendMeasurements3 = Send 也受到我们的<a>网站隐私声明</a>的约束。在您访问 Send 网站时，诸如您的 IP 地址等信息将作为标准服务器日志的一部分暂时保留。
 sendDetails0Copy = Send 允许您加密的上传和分享文件。
 sendDetails1Copy = Send 只将您的文件存储 24 小时，或者截至到它被首次下载时。
 sendDetails2Copy = 您可以在所有现代浏览器中使用 Send。
