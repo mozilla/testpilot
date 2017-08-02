@@ -36,7 +36,7 @@ menuRetire = Test Pilot を削除
 
 landingIntroOne = 新機能を試す。
 landingIntroTwo = フィードバックを送る。
-landingIntroThree = Firefox の開発に協力。
+landingIntroThree = Firefox の開発に貢献。
 landingLegalNotice = 続けることで、あなたは Test Pilot の <a>利用規約</a> と <a>プライバシー通知</a> に同意したことになります。
 landingExperimentsTitle = 最新の実験的機能を試す
 
@@ -125,7 +125,7 @@ experimentListHeader = 興味のある実験を選びましょう！
 // Small button on experiment card that links to a survey for feedback submission
 experimentCardFeedback = フィードバック
 experimentCardManage = 管理
-experimentCardGetStarted = はじめに
+experimentCardGetStarted = 使ってみる
 experimentCardLearnMore = 詳細
 
 
@@ -150,7 +150,7 @@ experimentPreFeedbackLinkCopy = { $title } の実験についてフィードバ�
 // A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
-experimentPromoHeader = 離陸準備は整いましたか？
+experimentPromoHeader = 離陸準備 OK?
 experimentPromoSubheader = 私たちは Firefox の次世代機能を開発中です。Test Pilot をインストールしてそれらを試してください！
 
 
