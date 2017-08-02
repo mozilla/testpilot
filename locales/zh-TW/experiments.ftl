@@ -142,6 +142,7 @@ pulseContributors2Title = Firefox 平台產品資訊
 pulseContributors3Title = Firefox QA
 pulseEolwarning = Pulse 實驗即將結束。您提供的資料對我們如何打造 Firefox 當中的功能有極大幫助，非常感謝。我們很快會移除此實驗。
 sendDescription = 以加密的方式傳送檔案，鏈結會自動失效，讓檔案不會永久停留在網路上。
+sendIntroduction = <p>Send 讓您可加密上傳大檔案（最大 1GB）在線上分享。當您上傳檔案後，Send 就會產生鏈結讓您可發給別人。Send 建立的連結會在 1 次下載或 24 小時候失效，且伺服器會刪除該檔案。</p> <p>與其他 Test Pilot 實驗不同的是，Send 無須安裝附加元件，且可在任何現代瀏覽器中使用。</p>
 sendMeasurements0 = 使用 Send 時，Mozilla 會收到您要分享的檔案的加密後版本，以及檔案名稱、大小等基本資訊。Mozilla 無法解開您加密檔案的內容，也只會把檔案保存到您指定的下載次數或時間後，自動失效。
 sendDetails0Copy = Send 讓您可上傳並分享加密過的檔案。
 sendDetails1Copy = Send 只會讓您下載一次檔案，或是在分享 24 小時後就刪除。
