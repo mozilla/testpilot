@@ -35,6 +35,9 @@ Test Pilot is not intended to replace trains for most features, nor is it a test
 - [Code of conduct](docs/code_of_conduct.md)
 - [License](LICENSE)
 
+## Localization
+
+Test Pilot localization is managed via [Pontoon](https://pontoon.mozilla.org/projects/test-pilot-website/), not direct pull requests to the repository. If you want to fix a typo, add a new language, or simply know more about localization, please get in touch with the [existing localization team](https://pontoon.mozilla.org/teams/) for your language, or Mozilla’s [l10n-drivers](https://wiki.mozilla.org/L10n:Mozilla_Team#Mozilla_Corporation) for guidance.
 
 ## More Information
 
