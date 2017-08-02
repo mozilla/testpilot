@@ -52,7 +52,7 @@ landingInstalledButton = 機能を選ぶ
 // Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
-oneClickInstallMinorCta = Test Pilot をインストール &amp;
+oneClickInstallMinorCta = Test Pilot をインストールして
 oneClickInstallMajorCta = { $title } を有効化
 
 
