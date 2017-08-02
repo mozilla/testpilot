@@ -7,7 +7,7 @@ import HomePageWithAddon from './HomePageWithAddon';
 export default class HomePage extends React.Component {
   render() {
     if (this.props.hasAddon) {
-      window.history.replaceState({}, '', '/experiments');
+      this.props.replaceState({}, '', '/experiments');
       return <HomePageWithAddon {...this.props} />;
     }
     return <HomePageNoAddon {...this.props} />;
