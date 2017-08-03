@@ -2,13 +2,13 @@
   "title": "Test Pilot",
   "name": "testpilot-addon",
   "id": "@testpilot-addon",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": true,
   "description": "Test Pilot is a privacy-sensitive user research program focused on getting new features into Firefox faster.",
   "repository": "mozilla/testpilot",
   "homepage": "https://testpilot.firefox.com/",
-  "updateURL": "https://testpilot.firefox.com/static/addon/update.rdf",
-  "updateLink": "https://testpilot.firefox.com/static/addon/latest",
+  "updateURL": "https://testpilot.firefox.com/files/@testpilot-addon/updates.json",
+  "updateLink": "https://testpilot.firefox.com/files/@testpilot-addon/latest",
   "bugs": {
     "url": "https://github.com/mozilla/testpilot/issues"
   },
@@ -55,7 +55,6 @@
     "watch": "cross-env NODE_ENV=development webpack --watch",
     "package": "cross-env NODE_ENV=production webpack",
     "package:dev": "cross-env NODE_ENV=development webpack",
-    "sign": "cross-env NODE_ENV=production webpack && node bin/sign",
     "lint": "eslint -c ../.eslintrc src",
     "test": "mocha --require babel-register --require ./test/test-setup.js --recursive",
     "test:watch": "npm test -- --watch"

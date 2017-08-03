@@ -1,6 +1,7 @@
 /* global CustomEvent */
 import cookies from 'js-cookie';
 
+import config from '../config';
 import addonActions from '../actions/addon';
 import { updateExperiment } from '../actions/experiments';
 import { getExperimentByID, getExperimentByURL, getExperimentInProgress } from '../reducers/experiments';
@@ -15,7 +16,7 @@ function listenForAddonMessages(store, handler) {
 
 export function installAddon(requireRestart, sendToGA, eventCategory, eventLabel) {
   const { protocol, hostname, port } = window.location;
-  const path = '/static/addon/latest';
+  const path = config.addonPath;
   const downloadUrl = `${protocol}//${hostname}${port ? ':' + port : ''}${path}`;
 
   const gaEvent = {
