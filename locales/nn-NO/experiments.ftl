@@ -231,6 +231,7 @@ universalsearchContributors2Title = Avdelingsingeniør
 universalsearchContributors3Title = Senioringeniør
 universalsearchEolwarning = Vi vil automatisk slå av eksperimentet Universal Search og rapportere resultatet når det sluttar.
 voicefillDescription = Taleattkjenning kjem til Firefox. Med Voice Fill kan du snakke med favorittsøkjemotorane dine.
+voicefillIntroduction = <p>Voice Fill brukar kunstig intelligens til å tolke tale-inndata. Som deltakar i Voice Fill eksperimentet, vil stemmesøka dine lære AI å gje smartare resultat.</p> <p>Vi har lagt til Voice Fill til søkesider for Google, Yahoo og DuckDuckGo, og kjem til å utvide til fleire nettstadar etterkvart som eksperimentet utviklar seg.</p>
 voicefillMeasurements0 = Når du vel å bruke Voice Fill vert opptaka dine sendt til tenarane våre for handtering for å gje deg ein føreslått tekst.
 voicefillMeasurements1 = Voice Fill samlar inn teknisk informasjon relatert til ytinga i funksjonen, t.d. kor lang tid det tek for tenarane våre å handtere eit innsendt opptak og om du har valt eller endra noko av dei forslaga vi gav.
 voicefillMeasurements2 = Voice Fill samlar òg inn informasjon om bruken din av funksjonen, til dømes kor ofte Voice Fill vert nytta og om du nytta Voice Fill med bestemte faner eller sider som Google, DuckDuckGo eller Yahoo.
