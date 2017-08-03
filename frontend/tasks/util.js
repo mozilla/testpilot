@@ -49,11 +49,15 @@ function experimentL10nId(experiment, pieces) {
   if (typeof pieces === 'string') {
     pieces = [pieces];
   }
-  const suffix = lookup(experiment, `${pieces.join('.')}_l10nsuffix`);
-  if (suffix) {
-    pieces.push(suffix);
+  const piecesOut = [];
+  for (let i=0; i<pieces.length; i++) {
+    piecesOut.push(pieces[i]);
+    const suffix = lookup(experiment, `${pieces.slice(0, i+1).join('.')}_l10nsuffix`);
+    if (suffix) {
+      piecesOut.push(suffix);
+    }
   }
-  return l10nId([].concat([experiment.slug], pieces));
+  return l10nId([].concat([experiment.slug], piecesOut));
 }
 
 function newsUpdateL10nId(update, fieldName) {

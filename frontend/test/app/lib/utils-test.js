@@ -39,7 +39,12 @@ describe('app/lib/utils', () => {
       }
     ],
     string2: 'h',
-    string2_l10nsuffix: 'i'
+    string2_l10nsuffix: 'i',
+    stringarray: [
+      'item one',
+      'item two'
+    ],
+    stringarray_l10nsuffix: 'bar'
   };
 
   describe('lookup', () => {
@@ -78,6 +83,11 @@ describe('app/lib/utils', () => {
     it('looks up array items', () => {
       expect(experimentL10nId(mockExperiment, ['array', '0', 'x'])).to.equal('fooArray0XZ');
     });
+
+    it('looks up arrays of strings', () => {
+      expect(experimentL10nId(mockExperiment, ['stringarray', '0'])).to.equal('fooStringarrayBar0');
+      expect(experimentL10nId(mockExperiment, ['stringarray', '1'])).to.equal('fooStringarrayBar1');
+    })
 
     it('should return null for a dev-only experiment', () => {
       expect(experimentL10nId({ dev: true, ...mockExperiment }, ['string'])).to.equal(null);
