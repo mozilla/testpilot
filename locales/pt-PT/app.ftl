@@ -176,7 +176,7 @@ contributorsExtraLearnMore = Saber mais
 changelog = Registo de alterações
 tour = Visita guiada
 tourLink = Iniciar visita guiada
-contribute = Contribuir
+contribute = Contribua
 bugReports = Relatórios de bugs
 discussExperiment = Discuta o { $title }
 tourOnboardingTitle = { $title } ativado!
@@ -271,7 +271,7 @@ newsletterFormSubmitButtonSubmitting = A submeter...
 
 newsletterFooterError = Houve um erro ao submeter o seu endereço de email. Tentar novamente?
 newsletterFooterHeader = Mantenha-se informado(a)
-newsletterFooterBody = Descubra sobre as novas experiências e veja os resultados dos testes para experiências que experimentou.
+newsletterFooterBody = Descubra acerca de novas experiências e veja resultados de testes para experiências que experimentou.
 newsletterFooterSuccessHeader = Obrigado!
 newsletterFooterSuccessBody = Se não confirmou previamente uma subscrição para um newsletter relacionado com a Mozilla poderá ter de o fazer. Por favor verifique a sua caixa de entrada ou filtro de spam por um email nosso.
 
