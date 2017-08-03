@@ -97,8 +97,8 @@ notFoundHeader = Чотириста чотири!
 emailOptInDialogTitle = Вітаємо у Test Pilot!
 emailOptInMessage = Дізнайтеся про нові експерименти та перегляньте результати експериментів, якими ви користувалися.
 emailOptInConfirmationTitle = Повідомлення надіслано
-emailOptInSuccessMessage2 = Дякуємо!
 emailOptInConfirmationClose = Вперед до експериментів...
+emailOptInDialogErrorTitle = О ні!
 
 
 // news feed updates.
@@ -122,6 +122,8 @@ experimentListHeader = Оберіть свої експерименти!
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Відгук
 experimentCardManage = Керувати
 experimentCardGetStarted = Розпочати
 experimentCardLearnMore = Докладніше
@@ -182,6 +184,12 @@ tourDoneButton = Готово
 userCountContainer = <span>{ $installation_count }</span> людей пробують { $title } прямо зараз!
 userCountContainerAlt = Щойно запущено!
 highlightPrivacy = Ваша приватність
+experimentGradReportPendingTitle = Цей експеримент закінчився
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
