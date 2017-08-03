@@ -23,6 +23,7 @@ activitystreamContributors11Title = Software Engineer
 activitystreamContributors12Title = Senior UX Designer
 activitystreamEolwarning = Dette eksperimentet blir snart avsluttet, men Activity Stream kommer til å bli levert i Firefox som standard denne høsten. Hold utkikk i kommende versjoner av Firefox!
 cliqzDescription = Få søkeresultat raskere. Cliqz viser forslag rett nedenfor adressefeltet mens du skriver. Samtidig behold du personvernet ditt.
+cliqzIntroduction = Få søkeresultat raskere, direkte i nettleseren. Når du begynner å skrive ser du forslag fra nettet i sanntid, rett nedenfor adressefeltet. Og fordi Cliqz unngår å samle inn personlig identifiserbar informasjon, eller bygger brukerprofiler, er resultatene dine mer private.
 cliqzToursteps0Copy = Skriv i adressefeltet for å se sanntidsresultater.
 cliqzToursteps1Copy = Åpne en ny fane og legg til dine favorittnettsider for rask tilgang med bare ett klikk.
 cliqzToursteps2Copy = Du kan alltid gi oss tilbakemelding eller skru av Cliqz fra Test Pilot.
