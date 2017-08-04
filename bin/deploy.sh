@@ -43,7 +43,7 @@ CSP="\"content-security-policy\": \"default-src 'self'; connect-src 'self' https
 HSTS="\"strict-transport-security\": \"max-age=${ONE_YEAR}; includeSubDomains; preload\""
 TYPE="\"x-content-type-options\": \"nosniff\""
 XSS="\"x-xss-protection\": \"1; mode=block\""
-ACAO="\"Access-Control-Allow-Origin\": \"\*\""
+ACAO="\"Access-Control-Allow-Origin\": \"*\""
 
 # Our dev server has a couple different rules to allow easier debugging and
 # enable localization.  Also expires more often.
