@@ -186,6 +186,15 @@
   }
 }
 
+.stats-section dt {
+  font-weight: bold;
+}
+
+.stats-section dd {
+  margin-left: 0;
+  margin-bottom: 1em;
+}
+
 .details-description {
   @include respond-to('big') {
     flex: 0 0 $grid-unit * 32;
