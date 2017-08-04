@@ -430,17 +430,12 @@ export class ExperimentDetail extends React.Component {
                             {privacy_preamble && <Localized id={this.l10nId('privacy_preamble')}>
                               <p>{privacy_preamble}</p>
                             </Localized>}
-                            <Localized id="experimentMeasurementIntro2"
-                              $data={<a href="/privacy">
-                                <Localized id="experimentMeasurementIntroDataLink">
-                                  <span>data</span>
-                                </Localized>
-                              </a>}
+                            <LocalizedHtml id="experimentMeasurementIntro"
                               $experimentTitle={experiment.title}>
                               <p>
-                                In addition to the data collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use {experiment.title}:
+                                In addition to the <a href="/privacy">data</a> collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use {experiment.title}:
                               </p>
-                            </Localized>
+                            </LocalizedHtml>
                             <ul>
                               {measurements.map((note, idx) => <LocalizedHtml key={idx} id={this.l10nId(['measurements', idx])}>
                                 <li>{
