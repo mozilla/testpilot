@@ -359,46 +359,34 @@ export class ExperimentDetail extends React.Component {
                     }
                     {!graduated && <div>
                       <section className="stats-section">
-                        <table className="stats"><tbody>
-                          {!experiment.web_url && <tr>
-                            <Localized id="tour">
-                              <td>Tour</td>
-                            </Localized>
-                            <td>
-                              <Localized id="tourLink">
-                                <a className="showTour" onClick={e => this.showTour(e)} href="#">Launch Tour</a>
-                              </Localized>
-                            </td>
-                          </tr>}
-                          {changelog_url && <tr>
-                            <Localized id="changelog">
-                              <td>Changelog</td>
-                            </Localized>
-                            <td>
-                             {changelog_url && <a href={changelog_url}>{changelog_url}</a>}
-                            </td>
-                          </tr>}
-                          <tr>
-                            <Localized id="contribute">
-                              <td>Contribute</td>
-                            </Localized>
-                            <td><a href={contribute_url}>{contribute_url}</a></td>
-                          </tr>
+                        {!experiment.web_url &&
+                        <p>
+                          <Localized id="tourLink">
+                            <a className="showTour" onClick={e => this.showTour(e)} href="#">Launch Tour</a>
+                          </Localized>
+                        </p>}
+                        <dl>
+                          {changelog_url &&
+                          <Localized id="changelog">
+                            <dt>Changelog</dt>
+                          </Localized>}
+                          {changelog_url &&
+                          <dd><a href={changelog_url}>{changelog_url}</a></dd>}
+                          <Localized id="contribute">
+                            <dt>Contribute</dt>
+                          </Localized>
+                          <dd><a href={contribute_url}>{contribute_url}</a></dd>
 
-                          <tr>
-                            <Localized id="bugReports">
-                              <td>Bug Reports</td>
-                            </Localized>
-                            <td><a href={bug_report_url}>{bug_report_url}</a></td>
-                          </tr>
+                          <Localized id="bugReports">
+                            <dt>Bug Reports</dt>
+                          </Localized>
+                          <dd><a href={bug_report_url}>{bug_report_url}</a></dd>
 
-                          <tr>
-                            <Localized id="discussExperiment" $title={title}>
-                              <td></td>
-                            </Localized>
-                            <td><a href={discourse_url}>{discourse_url}</a></td>
-                          </tr>
-                        </tbody></table>
+                          <Localized id="discussExperiment" $title={title}>
+                            <dt>{title}</dt>
+                          </Localized>
+                          <dd><a href={discourse_url}>{discourse_url}</a></dd>
+                        </dl>
                       </section>
                     </div>}
                     <section className="contributors-section">
