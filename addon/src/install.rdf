@@ -12,7 +12,7 @@
     <em:creator>Mozilla (https://mozilla.org/)</em:creator>
     <em:homepageURL>https://testpilot.firefox.com/</em:homepageURL>
     <em:updateURL>https://testpilot.firefox.com/static/addon/update.rdf</em:updateURL>
-    <em:iconURL>resource://@testpilot-addon/webextension/icons/icon-96.png</em:iconURL>
+    <em:iconURL>chrome://testpilot-addon-icons/content/icon-96.png</em:iconURL>
     <em:multiprocessCompatible>true</em:multiprocessCompatible>
     <em:targetApplication>
       <!-- Firefox -->
