@@ -91,6 +91,7 @@ nomore404sContributors2Title = Directeur Wayback Machine chez The Internet Archi
 nomore404sContributors3Title = Développeur expérimenté pour le système de récupération des pages chez The Internet Archive
 nomore404sEolwarning = L’expérience No More 404s ne sera pas retirée de votre navigateur et les résultats seront communiqués ici lorsqu’elle se terminera. Les mises à jour suivantes seront disponibles sur addons.mozilla.org.
 notesDescription = Un bloc-notes simple et intégré à Firefox. Vous avez déjà eu besoin de noter quelque chose pendant que vous naviguez ? Cette expérience se révèlera très utile.
+notesIntroduction = Notes ajoute un bloc-notes tout simple à la barre latérale de votre navigateur. Nous avons inclus quelques options basiques de formatage pour commencer, mais nous voulons entendre vos retours pour savoir ce que vous souhaitez que nous ajoutions.
 notesDetails0Copy = C’est un bloc-notes. Pourquoi n’y avons-nous pas pensé plus tôt ?
 notesToursteps0Copy = Notes est un simple bloc-notes qui s’ajoute à la barre latérale de votre navigateur.
 notesToursteps1Copy = Nous avons inclut des options basiques de formatage. Faites-nous part de votre avis pour que nous ajoutions plus de fonctionnalités.
