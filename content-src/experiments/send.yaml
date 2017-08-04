@@ -19,7 +19,7 @@ discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/send'
 privacy_notice_url: 'https://github.com/mozilla/send/blob/master/docs/metrics.md'
 measurements:
   - >
-    When you use Send, Mozilla receives an encrypted copy of the file you upload, and basic information about the file, such as filename and file size. Mozilla does not have the ability to access the content of your encrypted file, and only keeps it for the time or number of downloads indicated.
+    When you use Send, Mozilla receives an encrypted copy of the file you upload, and basic information about the file, such as filename, file hash and file size. Mozilla does not have the ability to access the content of your encrypted file, and only keeps it for the time or number of downloads indicated.
   - >
     To allow you to see the status of your previously uploaded files, or delete them, basic information about your uploaded files are stored on your local device, such as Send’s identifier for the file, the filename, and the file’s unique download link. This is cleared if you delete your uploaded file or upon visiting Send after the file expires.
   - >
@@ -28,7 +28,7 @@ measurements:
     Send is also subject to our <a>websites privacy notice</a>. When you visit the Send website, information such as your IP address is temporarily retained as part of a standard server log.
   - >
     Send will also collect information about the performance and your use of the service, such as how often you upload files, how long your files remain with Mozilla before they expire, any errors related to file transfers, and what cryptographic protocols your browser supports.
-
+measurements_l10nsuffix: 'filehash'
 gradient_start: '#32CADD'
 gradient_stop: '#3199FF'
 details:
