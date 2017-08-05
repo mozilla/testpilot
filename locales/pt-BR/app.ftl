@@ -6,7 +6,7 @@ siteName = Firefox Test Pilot
 
 pageTitleDefault = Firefox Test Pilot
 pageTitleLandingPage = Firefox Test Pilot
-pageTitleExperimentListPage = Firefox Test Pilot - Experiências
+pageTitleExperimentListPage = Firefox Test Pilot - Experimentos
 pageTitleExperiment = Firefox Test Pilot - { $title }
 
 
@@ -16,7 +16,7 @@ pageTitleExperiment = Firefox Test Pilot - { $title }
 footerLinkCookies = Cookies
 footerLinkPrivacy = Privacidade
 footerLinkTerms = Termos
-footerLinkLegal = Informações Legais
+footerLinkLegal = Jurídico
 footerLinkAbout = Sobre o Test Pilot
 
 
