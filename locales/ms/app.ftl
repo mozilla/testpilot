@@ -258,8 +258,8 @@ incompatibleSubheader = Kami syor <a>nyahdayakan add-ons berikut</a> sebelum men
 [[ newsletterForm ]]
 
 newsletterFormEmailPlaceholder
-    .placeholder = Emel anda di sini
-newsletterFormDisclaimer = Kami hanya akan menghantar kepada anda maklumat berkenaan Ujian Perintis.
+    .placeholder = E-mel anda di sini
+newsletterFormDisclaimer = Kami hanya akan menghantar maklumat berkenaan Ujian Perintis kepada anda.
 newsletterFormPrivacyNotice = Saya okay dengan Mozilla untuk mengendalikan info saya seperti yang dijelaskan dalam <a href="%s">Dasar Privasi ini</a>
 newsletterFormPrivacyAgreementRequired = Sila tandakan kotak ini jika anda ingin teruskan.
 newsletterFormSubmitButton = Daftar Sekarang
@@ -269,7 +269,7 @@ newsletterFormSubmitButtonSubmitting = Menghantar...
 // A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
-newsletterFooterError = Terdapat ralat semasa menghantar alamat emel anda. Cuba lagi?
+newsletterFooterError = Terdapat ralat semasa menghantar alamat e-mel anda. Cuba lagi?
 newsletterFooterHeader = Terus Dimaklumkan
 newsletterFooterBody = Ketahui perihal eksperimen baru dan lihat keputusan ujian bagi eksperimen yang telah anda cuba.
 newsletterFooterSuccessHeader = Terima kasih!
