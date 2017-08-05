@@ -186,6 +186,19 @@ userCountContainerAlt = Baru saja diluncurkan!
 highlightPrivacy = Privasi Anda
 experimentGradReportPendingTitle = Percobaan ini telah berakhir
 experimentGradReportPendingCopy = Kami sedang mengerjakan laporan lengkapnya. Periksa kembali untuk melihat secara detil.
+experimentGoToLink = Buka { $title }
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Firefox / web / percobaan seluler
+experimentPlatformWebAddon = Firefox / percobaan web
+experimentPlatformWebMobile = web / percobaan seluler
+experimentPlatformAddonMobile = Firefox / percobaan seluler
+experimentPlatformWeb = percobaan web
+experimentPlatformAddon = percobaan Firefox
+experimentPlatformMobileApp = percobaan seluler
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.

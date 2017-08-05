@@ -1,3 +1,6 @@
+activitystreamDescription = Daftar riwayat yang kaya visual dan simbol baru beranda yang mempermudah Anda mencari apa yang Anda inginkan di Firefox.
+activitystreamIntroduction = <p>Kembali menjelajah tanpa kehilangan pemikiran Anda sebelumnya. Activity Stream menempatkan situs terbaik, markah, dan riwayat baru-baru ini Anda tetap dekat di setiap tab baru. Tampilan lini masanya juga memberikan gambaran besar penjelajahan Anda.</p>
+activitystreamMeasurements1 = Kami juga mengumpulkan informasi dasar tentang profil peramban Anda yang mempengaruhi Activity Stream, seperti jumlah markah dan riwayat.
 activitystreamContributors9Title = Manajer Produk
 cliqzToursteps0Copy = Mulailah mengetik di bilah URL untuk melihat hasilnya secara langsung.
 notesContributors1Title = Kontributor Komunitas
