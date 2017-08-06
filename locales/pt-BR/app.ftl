@@ -221,7 +221,7 @@ pageTitleRetirePage = Firefox Test Pilot - Desinstalar o Test Pilot
 retirePageProgressMessage = Desligando...
 retirePageHeadline = Obrigador por voar!
 retirePageMessage = Esperamos que tenha se divertido fazendo os experimentos. <br> Volte quando quiser.
-retirePageSurveyButton = Responder à pesquisa
+retirePageSurveyButton = Responda a uma pesquisa rápida
 
 
 // Shown to users after installing Test Pilot if a restart is required.
