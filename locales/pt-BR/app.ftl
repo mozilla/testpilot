@@ -271,7 +271,7 @@ newsletterFormSubmitButtonSubmitting = Enviando...
 
 newsletterFooterError = Houve um erro ao enviar seu endereço de e-mail. Tentar novamente?
 newsletterFooterHeader = Mantenha-se informado
-newsletterFooterBody = Descubra sobre novas experiências e veja os resultados dos testes que você participou.
+newsletterFooterBody = Descubra sobre novos experimentos e veja os resultados dos testes que você participou.
 newsletterFooterSuccessHeader = Obrigado!
 newsletterFooterSuccessBody = Se ainda não confirmou a inscrição no boletim de notícias da Mozilla, talvez precise disso. Por favor, verifique sua caixa de entrada ou seu filtro de spam por um e-mail nosso.
 
@@ -279,7 +279,7 @@ newsletterFooterSuccessBody = Se ainda não confirmou a inscrição no boletim d
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Esta experiência não está disponível no seu idioma (⁨{ $locale_code }⁩).
+localeUnavailableWarningTitle = Este experimento não está disponível no seu idioma (⁨{ $locale_code }⁩).
 localeWarningSubtitle = Você ainda pode habilitá-lo se quiser.
 
 
