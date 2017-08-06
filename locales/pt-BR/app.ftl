@@ -94,8 +94,8 @@ notFoundHeader = Não encontrado!
 // A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
-emailOptInDialogTitle = Bem vindo ao Test Pilot!
-emailOptInMessage = Descubra novas experiência e veja os resultados dos testes que você participou.
+emailOptInDialogTitle = Bem-vindo ao Test Pilot!
+emailOptInMessage = Descubra novos experimentos e veja os resultados dos testes que você participou.
 emailOptInConfirmationTitle = E-mail enviado
 emailOptInConfirmationClose = Vamos aos experimentos...
 emailOptInDialogErrorTitle = Ah não!
@@ -115,7 +115,7 @@ experimentListJustLaunchedTab = Recém lançados
 experimentListJustUpdatedTab = Última atualização
 experimentListEndingTomorrow = Termina amanhã
 experimentListEndingSoon = Terminando em breve
-experimentCondensedHeader = Bem vindo ao Test Pilot!
+experimentCondensedHeader = Bem-vindo ao Test Pilot!
 experimentListHeader = Escolha seus experimentos!
 
 
@@ -143,7 +143,7 @@ feedbackUninstallCopy =
 // A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
-experimentPreFeedbackTitle = { $title } opinião
+experimentPreFeedbackTitle = opinião sobre { $title }
 experimentPreFeedbackLinkCopy = Dê sua opinião sobre o experimento { $title }
 
 
@@ -168,14 +168,14 @@ disableExperimentTransition = Desabilitando…
 enableExperiment = Habilitar { $title }
 enableExperimentTransition = Habilitando…
 experimentManuallyDisabled = { $title } desativado no Gerenciador de Extensões
-experimentMeasurementIntro = Além dos <a>dados</a> coletados por todas as experiências do Test Pilot, aqui estão as principais coisas que você deve saber sobre o que acontece quando você usar o { $experimentTitle }:
+experimentMeasurementIntro = Além dos <a>dados</a> coletados por todas os experimentos do Test Pilot, aqui estão as principais coisas que você deve saber sobre o que acontece quando você usa o { $experimentTitle }:
 measurements = Sua privacidade
-experimentPrivacyNotice = Você pode saber mais sobre a coleção de dados de { $title } aqui.
+experimentPrivacyNotice = Você pode saber mais sobre a coleta de dados do { $title } aqui.
 contributorsHeading = Oferecido por
 contributorsExtraLearnMore = Saiba mais
-changelog = registro de alterações
+changelog = Registro de alterações
 tour = Tour
-tourLink = tour
+tourLink = Começar o tour
 contribute = Contribua
 bugReports = Relatório de falhas
 discussExperiment = Debater sobre { $title }
@@ -287,8 +287,8 @@ localeWarningSubtitle = Você ainda pode habilitá-lo se quiser.
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = Vamos tirar essa belezinha do chão!
-experimentsListNoneInstalledSubheader = Pronto para um novo experimento do Test Pilot? Selecione um para habilitar, dê uma volta, e nos diga o que achou.
-experimentsListNoneInstalledCTA = Não tem interesse? <a>Conte por quê</a>.
+experimentsListNoneInstalledSubheader = Pronto para um novo experimento do Test Pilot? Selecione um para habilitar, dê uma volta, e diga-nos o que achou.
+experimentsListNoneInstalledCTA = Não tem interesse? <a>Diga-nos por quê</a>.
 
 
 // Shown to users who do not have JavaScript enabled.
