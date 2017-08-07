@@ -158,6 +158,7 @@ sendContributors3Title = Diseñador Visual UX
 sendContributors4Title = Firefox UX
 sendContributors5Title = Firefox UX
 sendContributors6Title = Desarrollador UX
+sendContributors7Title = Diseñador de Producto/UX
 snoozetabsDescription = ¿El sitio web correcto pero en el momento equivocado? Posponlo hasta que lo necesites. Snooze Tabs te permite descartar pestañas ahora y configurar una alarma para abrirlas más tarde.
 snoozetabsIntroduction = Snooze Tabs te ayuda a centrar tu atención en línea, tanto para eliminar distracciones como para guardar algo para más tarde. Haz clic en el icono para descartar las pestañas que no quieres ahora, y establece una alarma para traerlas de vuelta cuando las necesites. Puedes posponer un interesante artículo hasta la noche. Posponer esa receta hasta el próximo mes. Cuando se cumpla el tiempo configurado la pestaña se abrirá de nuevo.
 snoozetabsMeasurements0 = Snooze Tabs recogerá información acerca de tus interacciones con el complemento, como cuando abres el panel desde el botón en la barra de herramientas o si accedes, editas o eliminas pestañas pospuestas.
@@ -239,9 +240,7 @@ voicefillDetails0Copy = Busca el icono del micrófono en Yahoo, DuckDuckGo, y Go
 voicefillDetails1Copy = Antes de utilizar Voice Fill, tendrás que permitir la entrada de voz.
 voicefillDetails2Copy = Voice Fill te ofrece varias opciones. Elige la que quieras para ayudar a la IA.
 voicefillToursteps0Copy = Busca el icono del micrófono cuando utilices Yahoo, DuckDuckGo, y Google.
-voicefillToursteps1Copy =
-    Voice Fill te permite darle voz a tus búsquedas.
-
+voicefillToursteps1Copy = Voice Fill te permite darle voz a tus búsquedas.
 voicefillToursteps2Copy = Dependiendo de lo que quieras buscar, Voice Fill podría darte varias opciones. Si utilizas Voice Fill, estás ayudando a hacerlo más inteligente.
 voicefillToursteps3Copy = Siempre puedes enviarnos comentarios o deshabilitar Voice Fill desde Test Pilot.
 voicefillContributors0Title = Ingeniero de Voz
