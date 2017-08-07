@@ -113,9 +113,12 @@ class App extends Component {
       return Promise.resolve();
     }
 
+    const availableLanguages = document.querySelector(
+      'meta[name=availableLanguages]').content.split(',');
+
     const negotiated = negotiateLanguages(
       navigator.languages,
-      config.AVAILABLE_LOCALES,
+      availableLanguages,
       { defaultLocale: 'en-US' }
     );
 
