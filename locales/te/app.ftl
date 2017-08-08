@@ -26,6 +26,7 @@ footerLinkAbout = టెస్ట్ పైలట్ గురించి
 home = ముంగిలి
 menuTitle = అమరికలు
 menuWiki = టెస్ట్ పైలట్ వికీ
+menuFileIssue = సమస్యని దాఖలు చేయ౦డి
 
 
 // The splash on the homepage.
@@ -77,19 +78,26 @@ errorHeading = అయ్యో!
 
 emailOptInDialogTitle = Test Pilotకు స్వాగతం!
 emailOptInConfirmationTitle = ఈ-మెయిలు పంపబడింది
-emailOptInSuccessMessage2 = ధన్యవాదాలు!
+
+
+// news feed updates.
+[[ updateList ]]
+
 
 
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
-experimentsListCondensedHeader = మీ ప్రయోగాలను ఎంచుకోండి!
+experimentListEnabledTab = చేతనపరచిన
+experimentListJustUpdatedTab = ఇప్పుడే నవీకరించబడినది
+experimentListEndingTomorrow = రేపు ముగుస్తుంది
+experimentListEndingSoon = త్వరలో ముగుస్తుంది
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
-experimentCardManage = నిర్వహించు
+experimentCardManage = నిర్వహించండి
 experimentCardGetStarted = మొదలుపెట్టండి
 experimentCardLearnMore = మరింత తెలుసుకోండి
 
@@ -97,6 +105,7 @@ experimentCardLearnMore = మరింత తెలుసుకోండి
 // A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
+feedbackSubmitButton = త్వరిత అవలోకనము తీసుకో౦డి
 feedbackUninstallTitle = కృతజ్ఞతలు!
 
 
@@ -116,6 +125,11 @@ experimentPreFeedbackLinkCopy = { $title } ప్రయోగంపై మీ �
 [[ experimentPage ]]
 
 tourDoneButton = పూర్తయ్యింది
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -147,6 +161,7 @@ eolNoticeLink = మరింత తెలుసుకోండి
 // A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormSubmitButton = ఇప్పుడే సైన్ అప్ చేయండి
 
 
 // A section of the footer containing a newsletter signup form.
@@ -173,4 +188,9 @@ newsletterFooterBody = కొత్త ప్రయోగాల గురిం�
 
 // Text of a button to toggle visibility of a list of past experiments.
 [[ pastExperiments ]]
+
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
 
