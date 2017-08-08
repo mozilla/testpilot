@@ -661,9 +661,8 @@ export class ExperimentDetail extends React.Component {
   // telemetry data coming in from prod
   renderInstallationCount() {
     const { experiment, isAfterCompletedDate } = this.props;
-    const { completed, title, installation_count } = experiment;
+    const { completed } = experiment;
 
-    const installation_count_node = <span className="bold">{installation_count}</span>;
     if (isAfterCompletedDate(experiment)) {
       const completedDate = <b>
         {formatDate(completed)}
@@ -672,14 +671,8 @@ export class ExperimentDetail extends React.Component {
         <span>Experiment End Date: <b>{completedDate}</b></span>
       </LocalizedHtml>;
     }
-    if (!installation_count || installation_count <= 100) {
-      return <Localized id="userCountContainerAlt" $title={title}>
-        <span className="bold">Just launched!</span>
-      </Localized>;
-    }
-    return <LocalizedHtml id="userCountContainer" $installation_count={installation_count_node} $title={title}>
-      <span>There are <span>{installation_count_node}</span> people trying {title} right now!</span>
-    </LocalizedHtml>;
+    // Don't show installation counts any more
+    return null;
   }
 
   maxVersionCheck(max) {
