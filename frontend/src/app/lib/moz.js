@@ -1,4 +1,5 @@
 import cookies from 'js-cookie';
+import config from '../config';
 import addonActions from '../actions/addon';
 import { hasAddonSelector } from '../selectors/addon';
 import { updateExperiment } from '../actions/experiments';
@@ -32,7 +33,7 @@ export function installAddon(
   eventLabel
 ) {
   const { protocol, hostname, port } = window.location;
-  const path = '/static/addon/addon.xpi';
+  const path = config.addonPath;
   const downloadUrl = `${protocol}//${hostname}${port ? ':' + port : ''}${path}`;
 
   const gaEvent = {
