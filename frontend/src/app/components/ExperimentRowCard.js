@@ -41,7 +41,6 @@ export default class ExperimentRowCard extends React.Component {
     const { hasAddon, experiment, enabled, isAfterCompletedDate } = this.props;
 
     const { description, title, subtitle, slug } = experiment;
-    const installation_count = (experiment.installation_count) ? experiment.installation_count : 0;
     const isCompleted = isAfterCompletedDate(experiment);
 
     return (
@@ -82,7 +81,6 @@ export default class ExperimentRowCard extends React.Component {
         <Localized id={this.l10nId('description')}>
           <p>{description}</p>
         </Localized>
-        { this.renderInstallationCount(installation_count, isCompleted) }
         { this.renderManageButton(enabled, hasAddon, isCompleted) }
       </div>
     </a>
