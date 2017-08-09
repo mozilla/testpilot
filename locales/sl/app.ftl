@@ -196,7 +196,7 @@ experimentPlatformWebAddonMobile = Poskus za Firefox / splet / mobilno aplikacij
 experimentPlatformWebAddon = Poskus za Firefox / splet
 experimentPlatformWebMobile = Pokus za splet / mobilno aplikacijo
 experimentPlatformAddonMobile = Poksus za Firefox / mobilno aplikacijo
-experimentPlatformWeb = poskus za splet
+experimentPlatformWeb = Poskus za splet
 experimentPlatformAddon = Poskus za Firefox
 experimentPlatformMobileApp = Poskus za mobilno aplikacijo
 
