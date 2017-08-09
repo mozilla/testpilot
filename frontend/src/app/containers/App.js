@@ -15,7 +15,6 @@ import { getExperimentBySlug } from '../reducers/experiments';
 import { getChosenTest } from '../reducers/varianttests';
 import experimentSelector from '../selectors/experiment';
 import { uninstallAddon, installAddon, enableExperiment, disableExperiment, pollAddon } from '../lib/InstallManager';
-import { fetchUserCounts } from '../actions/experiments';
 import { setLocalizations } from '../actions/localizations';
 import { chooseTests } from '../actions/varianttests';
 import addonActions from '../actions/addon';
@@ -209,7 +208,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   setBrowserState: state => dispatch(setBrowserState(state)),
   chooseTests: () => dispatch(chooseTests()),
-  fetchUserCounts: (url) => dispatch(fetchUserCounts(url)),
   navigateTo: path => {
     window.location = path;
   },
