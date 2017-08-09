@@ -87,26 +87,6 @@ export default class ExperimentRowCard extends React.Component {
     );
   }
 
-  // this is set to 100, to accomodate Tracking Protection
-  // which has been sending telemetry pings via installs from dev
-  // TODO: figure out a non-hack way to toggle user counts when we have
-  // telemetry data coming in from prod
-  renderInstallationCount(installation_count: number, isCompleted: Boolean) {
-    if (installation_count <= 100 || isCompleted) return '';
-
-    const platforms = this.props.experiment.platforms || [];
-    if (platforms.length === 0 || platforms.indexOf('addon') !== -1) {
-      return (
-        <LocalizedHtml id="participantCount" $installation_count={installation_count}>
-          <span className="participant-count"><span>{installation_count}</span> participants</span>
-        </LocalizedHtml>
-      );
-    }
-
-    // TODO: Display visitor count for web & mobile experiments?
-    return '';
-  }
-
   renderFeedbackButton() {
     if (!this.props.enabled) { return null; }
 
