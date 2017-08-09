@@ -70,7 +70,7 @@ class App extends Component {
       this.debounceSendToGA(pathname, 'pageview', {
         dimension1: hasAddon,
         dimension4: isExperimentEnabled(experiment),
-        dimension5: experiment.title,
+        dimension5: experiment.title
       });
     }
   }

@@ -4,8 +4,6 @@ import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import LocalizedHtml from '../components/LocalizedHtml';
-
 import { buildSurveyURL, experimentL10nId } from '../lib/utils';
 
 import type { InstalledExperiments } from '../reducers/addon';
