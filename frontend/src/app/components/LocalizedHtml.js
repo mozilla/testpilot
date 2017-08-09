@@ -83,7 +83,6 @@ export default class LocalizedHtml extends Localized {
       });
 
       if (mapped === null) {
-        console.log('MAPPED WAS NULL', result, result.props.children);
         joined = '';
       } else {
         joined = mapped.join('');
