@@ -25,7 +25,7 @@ import newsletterFormActions from '../actions/newsletter-form';
 import RestartPage from '../containers/RestartPage';
 import Loading from '../components/Loading';
 import { isFirefox, isMinFirefoxVersion, isMobile } from '../lib/utils';
-import newsUpdatesSelector from '../selectors/news';
+import { staleNewsUpdatesSelector, freshNewsUpdatesSelector } from '../selectors/news';
 import config from '../config';
 
 let clipboard = null;
@@ -201,7 +201,8 @@ const mapStateToProps = state => ({
   experiments: experimentSelector(state),
   localizations: localizationsSelector(state),
   negotiatedLanguages: negotiatedLanguagesSelector(state),
-  newsUpdates: newsUpdatesSelector(state),
+  staleNewsUpdates: staleNewsUpdatesSelector(state),
+  freshNewsUpdates: freshNewsUpdatesSelector(state),
   slug: state.experiments.slug,
   getExperimentBySlug: slug =>
     getExperimentBySlug(state.experiments, slug),

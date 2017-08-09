@@ -13,12 +13,13 @@ export function prettyDate(date: string) {
 }
 
 type UpdateProps = {
+  sendToGA: Function,
   experiment: Object,
   update: Object
 };
 
 export class Update extends React.Component {
-  props: UpdateProps
+  props: UpdateProps;
 
   render() {
     const { experiment, update } = this.props;
@@ -26,53 +27,110 @@ export class Update extends React.Component {
 
     const categoryTitle = experiment ? experiment.title : 'Firefox Test Pilot';
     const categoryTitleL10nID = experiment ? null : 'siteName';
-    const iconClassName = experiment ? `experiment-icon-${experiment.slug}` :
-      'news-update-test-pilot-icon';
+    const iconClassName = experiment
+      ? `experiment-icon-${experiment.slug}`
+      : 'news-update-test-pilot-icon';
 
     return (
-        <a className={classnames('update', { 'has-link': !!link })} href={link}>
-          <div className={classnames(iconClassName, 'experiment-icon')}></div>
-          <div className="update-content">
-            <header>
-              {experiment ? <Localized id={categoryTitleL10nID}>
-                <h2>{categoryTitle}</h2>
-              </Localized> : <Localized id={newsUpdateL10nId(update, 'title')}>
-                <h2 className="update-title">{title}</h2>
-              </Localized>}
-              <p className="up-date">{prettyDate(published || created)}</p>
-            </header>
-            {experiment ? <Localized id={newsUpdateL10nId(update, 'title')}>
-              <h4 className="update-title">{title}</h4>
-            </Localized> : null}
-            <Localized id={newsUpdateL10nId(update, 'content')}>
-              <p className="summary">{content}</p>
-            </Localized>
-          </div>
-          <div className="link-chevron">
-            <span className="chevron">&nbsp;</span>
-          </div>
-        </a>
+      <a className={classnames('update', { 'has-link': !!link })}
+          href={link}
+          onClick={() => this.handleLinkClick()}>
+        <div className={classnames(iconClassName, 'experiment-icon')} />
+        <div className="update-content">
+          <header>
+            {experiment
+              ? <Localized id={categoryTitleL10nID}>
+                  <h2>
+                    {categoryTitle}
+                  </h2>
+                </Localized>
+              : <Localized id={newsUpdateL10nId(update, 'title')}>
+                  <h2 className="update-title">
+                    {title}
+                  </h2>
+                </Localized>}
+            <p className="up-date">
+              {prettyDate(published || created)}
+            </p>
+          </header>
+          {experiment
+            ? <Localized id={newsUpdateL10nId(update, 'title')}>
+                <h4 className="update-title">
+                  {title}
+                </h4>
+              </Localized>
+            : null}
+          <Localized id={newsUpdateL10nId(update, 'content')}>
+            <p className="summary">
+              {content}
+            </p>
+          </Localized>
+        </div>
+        <div className="link-chevron">
+          <span className="chevron">&nbsp;</span>
+        </div>
+      </a>
     );
+  }
+
+  handleLinkClick() {
+    const { sendToGA, update } = this.props;
+    const { slug, link } = update;
+
+    if (!link) return;
+
+    sendToGA('event', {
+      eventCategory: 'ExperimentsPage Interactions',
+      eventAction: 'click',
+      eventLabel: `news-item-${slug}`
+    });
   }
 }
 
 type UpdateListProps = {
-  newsUpdates: Array<Object>,
-  experiments: Array<Object>
+  sendToGA: Function,
+  staleNewsUpdates: Array<Object>,
+  freshNewsUpdates: Array<Object>,
+  experiments: Array<Object>,
+  initialShowMoreNews?: boolean
+};
+
+type UpdateListState = {
+  showMoreNews: boolean
 };
 
 export default class UpdateList extends React.Component {
-  props: UpdateListProps
+  props: UpdateListProps;
+  state: UpdateListState;
+
+  constructor(props: UpdateListProps) {
+    super(props);
+    this.state = {
+      showMoreNews: !!props.initialShowMoreNews
+    };
+  }
 
   render() {
-    const { newsUpdates, experiments } = this.props;
-    if (!newsUpdates || newsUpdates.length === 0) {
+    const { sendToGA, staleNewsUpdates, freshNewsUpdates, experiments } = this.props;
+    const { showMoreNews } = this.state;
+
+    const hasStaleNewsUpdates = staleNewsUpdates && staleNewsUpdates.length > 0;
+    const shouldShowStaleNewsUpdates = showMoreNews && hasStaleNewsUpdates;
+    const shouldShowMoreNewsButton = !showMoreNews && hasStaleNewsUpdates;
+
+    const shownNewsUpdates = shouldShowStaleNewsUpdates
+      ? [].concat(freshNewsUpdates, staleNewsUpdates.slice(0, 5))
+      : freshNewsUpdates;
+
+    if (!shownNewsUpdates || shownNewsUpdates.length === 0) {
       // If no updates, render as nothing - not even the header.
       return null;
     }
 
     const experimentsBySlug = {};
-    experiments.forEach(experiment => experimentsBySlug[experiment.slug] = experiment);
+    experiments.forEach(
+      experiment => (experimentsBySlug[experiment.slug] = experiment)
+    );
 
     return (
       <div className="update-list">
@@ -80,11 +138,29 @@ export default class UpdateList extends React.Component {
           <h1 className="emphasis update-list-heading">Latest Updates</h1>
         </Localized>
         <LayoutWrapper flexModifier="column-center">
-          {newsUpdates.map((update, index) =>
-            <Update key={index} update={update}
-                    experiment={experimentsBySlug[update.experimentSlug]} />)}
+          {shownNewsUpdates.map((update, index) =>
+            <Update
+              key={index}
+              sendToGA={sendToGA}
+              update={update}
+              experiment={experimentsBySlug[update.experimentSlug]}
+            />
+          )}
         </LayoutWrapper>
+        {shouldShowMoreNewsButton &&
+          <LayoutWrapper flexModifier="card-list">
+            <Localized id="showMoreNewsTitle">
+              <div className={classnames(['button', 'more-news', 'outline'])}
+                  onClick={() => this.handleShowMoreNews()}>
+                Show More News
+              </div>
+            </Localized>
+          </LayoutWrapper>}
       </div>
     );
+  }
+
+  handleShowMoreNews() {
+    this.setState({ showMoreNews: true });
   }
 }

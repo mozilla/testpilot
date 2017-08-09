@@ -21,7 +21,8 @@ import LocalizedHtml from '../components/LocalizedHtml';
 type HomePageWithAddonProps = {
   hasAddon: any,
   experiments: Array<Object>,
-  newsUpdates: Array<Object>,
+  freshNewsUpdates: Array<Object>,
+  staleNewsUpdates: Array<Object>,
   getCookie: Function,
   removeCookie: Function,
   getWindowLocation: Function,
@@ -112,7 +113,8 @@ export default class HomePageWithAddon extends React.Component {
   }
 
   render() {
-    const { experiments, isAfterCompletedDate, newsUpdates } = this.props;
+    const { sendToGA, experiments, isAfterCompletedDate, staleNewsUpdates, freshNewsUpdates }
+      = this.props;
 
     if (experiments.length === 0) { return null; }
 
@@ -129,7 +131,7 @@ export default class HomePageWithAddon extends React.Component {
         {this.renderSplash()}
 
         <LayoutWrapper flexModifier="card-list">
-          <UpdateList {...{ newsUpdates, experiments }} />
+          <UpdateList {...{ sendToGA, staleNewsUpdates, freshNewsUpdates, experiments }} />
           <Localized id="experimentListHeader">
             <h1 className="emphasis card-list-heading">Pick your experiments!</h1>
           </Localized>
