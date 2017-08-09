@@ -220,7 +220,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   setBrowserState: state => dispatch(setBrowserState(state)),
   chooseTests: () => dispatch(chooseTests()),
-  fetchUserCounts: (url) => dispatch(fetchUserCounts(url)),
   navigateTo: path => {
     window.location = path;
   },
