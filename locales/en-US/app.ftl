@@ -123,7 +123,6 @@ experimentPromoSubheader = We're building next-generation features for Firefox. 
 [[experimentPage]]
 isEnabledStatusMessage = {$title} is enabled.
 installErrorMessage = Uh oh. {$title} could not be enabled. Try again later.
-participantCount = <span>{$installation_count}</span> participants
 otherExperiments = Try out these experiments as well
 giveFeedback = Give Feedback
 disableHeader = Disable Experiment?
@@ -145,7 +144,6 @@ bugReports = Bug Reports
 discussExperiment = Discuss { $title }
 tourOnboardingTitle = {$title} enabled!
 tourDoneButton = Done
-userCountContainer = There are <span>{$installation_count}</span> people trying {$title} right now!
 userCountContainerAlt = Just launched!
 highlightPrivacy = Your privacy
 experimentGradReportPendingTitle = This experiment has ended

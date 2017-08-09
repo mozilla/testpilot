@@ -69,7 +69,6 @@ class App extends Component {
         dimension1: hasAddon,
         dimension4: isExperimentEnabled(experiment),
         dimension5: experiment.title,
-        dimension6: experiment.installation_count
       });
     }
   }
