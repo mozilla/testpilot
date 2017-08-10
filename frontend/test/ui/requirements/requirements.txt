@@ -4,4 +4,4 @@ pytest-selenium==1.11.0
 pytest-variables==1.7.0
 pytest-xdist==1.18.2
 requests==2.18.3
-selenium==3.4.3
+selenium==3.5.0
