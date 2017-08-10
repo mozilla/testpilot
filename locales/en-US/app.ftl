@@ -149,6 +149,7 @@ highlightPrivacy = Your privacy
 experimentGradReportPendingTitle = This experiment has ended
 experimentGradReportPendingCopy = We are working on a full report. Check back soon for the details.
 experimentGoToLink = Go to { $title }
+startedDateLabel = Experiment Start Date: <b>{$startedDate}</b>
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[experimentPlatform]]
