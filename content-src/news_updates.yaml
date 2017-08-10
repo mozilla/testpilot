@@ -8,25 +8,6 @@
 #   dev: false
 #   content: >
 #     Example content goes here
--
-  slug: general-update-3
-  title: New experiments launched
-  created: 2017-08-01T14:00:00Z
-  published: 2017-08-01T14:00:00Z
-  dev: false
-  content: >
-    Introducing Send, Notes, and Voice Fill. Click on the cards below to try them out.
--
-  slug: general-update-4
-  title: We started a blog
-  link: https://medium.com/firefox-test-pilot
-  created: 2017-08-01T14:00:00Z
-  published: 2017-08-01T14:00:00Z
-  dev: false
-  content: >
-    Check out our brand new blog for in-depth discussion about Firefox Test Pilot.
-
-
 
 
 
