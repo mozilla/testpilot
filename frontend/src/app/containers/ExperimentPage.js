@@ -354,7 +354,7 @@ export class ExperimentDetail extends React.Component {
                   <div className="details-sections">
                     {!experiment.web_url &&
                       <section className="user-count">
-                        { this.renderInstallationCount() }
+                        { this.renderLaunchStatus() }
                       </section>
                     }
                     {!graduated && <div>
@@ -655,24 +655,25 @@ export class ExperimentDetail extends React.Component {
     return stickyHeaderSiblingHeight;
   }
 
-  // this is set to 100, to accomodate Tracking Protection
-  // which has been sending telemetry pings via installs from dev
-  // TODO: figure out a non-hack way to toggle user counts when we have
-  // telemetry data coming in from prod
-  renderInstallationCount() {
+  renderLaunchStatus() {
     const { experiment, isAfterCompletedDate } = this.props;
-    const { completed } = experiment;
+    const { created, completed } = experiment;
 
     if (isAfterCompletedDate(experiment)) {
       const completedDate = <b>
         {formatDate(completed)}
       </b>;
       return <LocalizedHtml id="completedDateLabel" $completedDate={completedDate}>
-        <span>Experiment End Date: <b>{completedDate}</b></span>
+        <span>Experiment End Date: {completedDate}</span>
       </LocalizedHtml>;
     }
     // Don't show installation counts any more
-    return null;
+    const startedDate = <b>
+      {formatDate(created)}
+    </b>;
+    return <LocalizedHtml id="startedDateLabel" $startedDate={startedDate}>
+      <span>Experiment Start Date: {startedDate}</span>
+    </LocalizedHtml>;
   }
 
   maxVersionCheck(max) {
