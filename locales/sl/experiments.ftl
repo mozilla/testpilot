@@ -251,3 +251,5 @@ voicefillContributors4Title = Firefox UX
 voicefillContributors5Title = Softvision QA
 voicefillContributors6Title = Softvision QA
 voicefillContributors7Title = Napredni razvoj, tehnologije v nastajanju
+sendNewsupdatesSendupdate1Title = Pošlji s Safarijem in Edgeem!
+sendNewsupdatesSendupdate1Content = Pravkar je izšel Send 1.1.0 z izboljšano podporo brskalnikom in nekaj drugimi izboljšavami.
