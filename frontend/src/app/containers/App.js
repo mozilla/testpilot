@@ -17,7 +17,8 @@ import { getChosenTest } from '../reducers/varianttests';
 import experimentSelector from '../selectors/experiment';
 import { uninstallAddon, installAddon, enableExperiment, disableExperiment, pollAddon } from '../lib/InstallManager';
 import { fetchUserCounts } from '../actions/experiments';
-import { setLocalizations } from '../actions/localizations';
+import { setLocalizations, setNegotiatedLanguages } from '../actions/localizations';
+import { localizationsSelector, negotiatedLanguagesSelector } from '../selectors/localizations';
 import { chooseTests } from '../actions/varianttests';
 import addonActions from '../actions/addon';
 import newsletterFormActions from '../actions/newsletter-form';
@@ -114,7 +115,19 @@ class App extends Component {
       return Promise.resolve();
     }
 
-    const negotiated = this.negotiateLanguages();
+    const availableLanguages = document.querySelector(
+      'meta[name=availableLanguages]').content.split(',');
+
+    const negotiated = negotiateLanguages(
+      navigator.languages,
+      availableLanguages,
+      {
+        defaultLocale: 'en-US',
+        likelySubtags: likelySubtagsData.supplemental.likelySubtags
+      }
+    );
+
+    this.props.setNegotiatedLanguages(negotiated);
 
     const promises = negotiated.map(language =>
       Promise.all(
@@ -134,19 +147,6 @@ class App extends Component {
         staticNode.parentNode.removeChild(staticNode);
       }
     });
-  }
-
-  negotiateLanguages() {
-    const availableLanguages = document.querySelector(
-      'meta[name=availableLanguages]').content.split(',');
-    return negotiateLanguages(
-      navigator.languages,
-      availableLanguages,
-      {
-        defaultLocale: 'en-US',
-        likelySubtags: likelySubtagsData.supplemental.likelySubtags
-      }
-    );
   }
 
   render() {
@@ -169,7 +169,7 @@ class App extends Component {
       return <Loading {...this.props} />;
     }
     return <LocalizationProvider messages={ generateMessages(
-      this.negotiateLanguages(),
+      this.props.negotiatedLanguages,
       this.props.localizations
     ) }>
       { React.cloneElement(this.props.children, this.props) }
@@ -199,7 +199,8 @@ function sendToGA(type, dataIn) {
 const mapStateToProps = state => ({
   addon: state.addon,
   experiments: experimentSelector(state),
-  localizations: state.localizations,
+  localizations: localizationsSelector(state),
+  negotiatedLanguages: negotiatedLanguagesSelector(state),
   newsUpdates: newsUpdatesSelector(state),
   slug: state.experiments.slug,
   getExperimentBySlug: slug =>
@@ -246,6 +247,8 @@ const mapDispatchToProps = dispatch => ({
     subscribe: (email) =>
       dispatch(newsletterFormActions.newsletterFormSubscribe(dispatch, email, '' + window.location))
   },
+  setNegotiatedLanguages: negotiatedLanguages =>
+    dispatch(setNegotiatedLanguages(negotiatedLanguages)),
   setLocalizations: localizations =>
     dispatch(setLocalizations(localizations))
 });

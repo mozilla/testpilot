@@ -35,9 +35,9 @@ declare module 'testpilot/types' {
   }
 
   declare type Action = {
-    type: string,
+    +type: string,
     meta?: ActionMeta,
-    payload: Object
+    payload: any
   };
 
   declare type GetState = () => AddonState;
