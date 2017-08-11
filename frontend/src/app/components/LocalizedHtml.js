@@ -73,14 +73,19 @@ export default class LocalizedHtml extends Localized {
         html <span>///</span> and storing the original
         template elements in `templates`.
       */
-      joined = React.Children.map(result.props.children, child => {
+      const mapped = React.Children.map(result.props.children, child => {
         if (typeof child === 'string') {
           return child;
         }
         templates.insertIndex++;
         templates[templates.insertIndex] = child;
         return '<span>///</span>';
-      }).join('');
+      });
+      if (mapped === null) {
+        joined = '';
+      } else {
+        joined = mapped.join('');
+      }
     }
 
     /*
