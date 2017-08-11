@@ -20,7 +20,8 @@ const excludeVendorModules = [
   'babel-polyfill',
   'fluent',
   'fluent-langneg',
-  'fluent-react'
+  'fluent-react',
+  'cldr-core'
 ];
 
 const includeVendorModules = [
@@ -28,6 +29,7 @@ const includeVendorModules = [
   'fluent/compat',
   'fluent-langneg/compat',
   'fluent-react/compat',
+  'cldr-core/supplemental/likelySubtags.json',
   'html-react-parser/lib/dom-to-react',
   'react/lib/ReactDOMFactories',
   'querystring'

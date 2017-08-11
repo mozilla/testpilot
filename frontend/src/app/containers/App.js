@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import cookies from 'js-cookie';
 import Clipboard from 'clipboard';
 
+import likelySubtagsData from 'cldr-core/supplemental/likelySubtags.json';
 
 import { getInstalled, isExperimentEnabled, isAfterCompletedDate, isInstalledLoaded } from '../reducers/addon';
 import { setState as setBrowserState } from '../actions/browser';
@@ -113,14 +114,7 @@ class App extends Component {
       return Promise.resolve();
     }
 
-    const availableLanguages = document.querySelector(
-      'meta[name=availableLanguages]').content.split(',');
-
-    const negotiated = negotiateLanguages(
-      navigator.languages,
-      availableLanguages,
-      { defaultLocale: 'en-US' }
-    );
+    const negotiated = this.negotiateLanguages();
 
     const promises = negotiated.map(language =>
       Promise.all(
@@ -140,6 +134,19 @@ class App extends Component {
         staticNode.parentNode.removeChild(staticNode);
       }
     });
+  }
+
+  negotiateLanguages() {
+    const availableLanguages = document.querySelector(
+      'meta[name=availableLanguages]').content.split(',');
+    return negotiateLanguages(
+      navigator.languages,
+      availableLanguages,
+      {
+        defaultLocale: 'en-US',
+        likelySubtags: likelySubtagsData.supplemental.likelySubtags
+      }
+    );
   }
 
   render() {
@@ -162,7 +169,7 @@ class App extends Component {
       return <Loading {...this.props} />;
     }
     return <LocalizationProvider messages={ generateMessages(
-      navigator.languages,
+      this.negotiateLanguages(),
       this.props.localizations
     ) }>
       { React.cloneElement(this.props.children, this.props) }
