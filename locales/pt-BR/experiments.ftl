@@ -252,4 +252,4 @@ voicefillContributors5Title = Garantia de Qualidade Softvision
 voicefillContributors6Title = Garantia de Qualidade Softvision
 voicefillContributors7Title = Desenvolvimento Avançado, Tecnologias Emergentes
 sendNewsupdatesSendupdate1Title = Send com o Safari e o Edge!
-sendNewsupdatesSendupdate1Content = O Send 1.1.0 acaba de ser lançado, com suporte aprimorado para  navegadores, conta também com várias outras melhorias!
+sendNewsupdatesSendupdate1Content = O Send versão 1.1.0 acaba de ser lançado com suporte aprimorado para navegadores e com várias outras melhorias!
