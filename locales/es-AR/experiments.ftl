@@ -42,6 +42,7 @@ containersDetails0Copy = Los contenedores permiten separar las diferentes partes
 containersDetails1Copy = Elegí alguna de las categorías como Compras, Bancos y Trabajo o creá las etiquetas que mejor te sirvan.
 containersDetails2Copy = Usá etiquetas con colores para ver los diferentes contenedores fácilmente.
 containersToursteps0Copy = Iniciar un contenedor para etiquetar y organizar un conjunto de pestañas.
+containersToursteps1CopyLongpress = Si mantenés presionado el botón de Nueva Pestaña, podés seleccionar el contenedor.
 containersToursteps2Copy = Usá el menú de la barra de herramientas para abrir pestañas contendoras, crear nuevos contenedores y organizar, editar o eliminar contenedores.
 containersToursteps4Copy = Siempre podés darnos tu opinión o deshabilitar los Contenedores desde Test Pilot.
 containersContributors0Title = Seguridad y privacidad del usuario
