@@ -95,7 +95,12 @@ notFoundHeader = ¡Cuatro cero Cuatro!
 emailOptInDialogTitle = ¡Afáyate en Test Pilot!
 emailOptInMessage = Pescuda tocante a esperimentos nuevos y mira los resultaos de les pruebes pa los esperimentos que probesti.
 emailOptInConfirmationTitle = Unvióse'l corréu
-emailOptInSuccessMessage2 = ¡Gracies!
+emailOptInDialogErrorTitle = ¡Oh non!
+
+
+// news feed updates.
+[[ updateList ]]
+
 
 
 // A listing of all Test Pilot experiments.
@@ -106,12 +111,15 @@ experimentListJustLaunchedTab = Ta acabante llanzase
 experimentListJustUpdatedTab = Ta acabante d'anovase
 experimentListEndingTomorrow = Fina mañana
 experimentListEndingSoon = Fina ceo
-experimentsListCondensedHeader = ¡Escueyi los tos esperimentos!
+experimentCondensedHeader = ¡Afáyate en Test Pilot!
+experimentListHeader = ¡Escueyi los tos esperimentos!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Feedback
 experimentCardManage = Xestionar
 experimentCardGetStarted = Entamar
 experimentCardLearnMore = Deprendi más
@@ -167,6 +175,14 @@ tourDoneButton = Fecho
 userCountContainer = ¡Agora mesmo hai <span>{ $installation_count }</span> persones probando { $title }!
 userCountContainerAlt = ¡Ta acabante llanzase!
 highlightPrivacy = La to privacidá
+experimentGradReportPendingTitle = Esti esperimentu finó
+experimentGradReportPendingCopy = Tamos trabayando nun informe completu. Volvi ceo pa más detalles.
+experimentGoToLink = Dir a { $title }
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -174,6 +190,7 @@ highlightPrivacy = La to privacidá
 
 upgradeNoticeTitle = { $title } rique Firefox { $min_release } o mayor.
 upgradeNoticeLink = Cómo anovar Firefox.
+versionChangeNoticeLink = Consigui la versión actual de Firefox.
 
 
 // Shown while uninstalling Test Pilot.
@@ -269,3 +286,9 @@ noScriptLink = Pescuda porqué
 
 viewPastExperiments = Ver esperimentos pasaos
 hidePastExperiments = Anubrir esperimentos pasaos
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = ¡Daqué ta mal!
