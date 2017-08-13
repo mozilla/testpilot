@@ -61,6 +61,7 @@ oneClickInstallMajorCta = Habilitar { $title }
 landingRequiresDesktop = Test Pilot rique Firefox pa escritoriu en Linux, Windows o Mac
 landingDownloadFirefoxDesc = (Test Pilot ta disponible pa Firefox en Linux, Windows y MacOS)
 landingUpgradeDesc = Test Pilot riqe Firefox 49 o mayor.
+landingUpgradeDesc2 = Test Pilot rique Firefox { $version } o mayor.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Anovar Firefox
 landingDownloadFirefoxSubTitle = Descarga de baldre
@@ -95,12 +96,14 @@ notFoundHeader = ¡Cuatro cero Cuatro!
 emailOptInDialogTitle = ¡Afáyate en Test Pilot!
 emailOptInMessage = Pescuda tocante a esperimentos nuevos y mira los resultaos de les pruebes pa los esperimentos que probesti.
 emailOptInConfirmationTitle = Unvióse'l corréu
+emailOptInConfirmationClose = A los esperimentos...
 emailOptInDialogErrorTitle = ¡Oh non!
 
 
 // news feed updates.
 [[ updateList ]]
 
+latestUpdatesTitle = Caberos anovamientos
 
 
 // A listing of all Test Pilot experiments.
@@ -170,6 +173,7 @@ tour = Percorríu
 tourLink = Llanzar percorríu
 contribute = Collaborar
 bugReports = Informes de fallos
+discussExperiment = Aldericar { $title }
 tourOnboardingTitle = ¡Habilitóse { $title }!
 tourDoneButton = Fecho
 userCountContainer = ¡Agora mesmo hai <span>{ $installation_count }</span> persones probando { $title }!
@@ -244,6 +248,7 @@ newsletterFormEmailPlaceholder
     .placeholder = El to corréu equí
 newsletterFormDisclaimer = Namái t'unviaremos información venceyada a Test Pilot.
 newsletterFormPrivacyNotice = Aceuto que Mozilla remane la mio información como se desplica <a>nesta anuncia de privacidá</a>.
+newsletterFormPrivacyAgreementRequired = Conseña esti caxellu si quies siguir, por favor.
 newsletterFormSubmitButton = Rexistrase agora
 newsletterFormSubmitButtonSubmitting = Unviando...
 
@@ -292,3 +297,4 @@ hidePastExperiments = Anubrir esperimentos pasaos
 [[ warnings ]]
 
 warningGenericTitle = ¡Daqué ta mal!
+warningUpgradeFirefoxTitle = ¡Anueva Firefox pa siguir!
