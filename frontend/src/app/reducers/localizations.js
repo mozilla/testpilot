@@ -1,34 +1,53 @@
 // @flow
 
+import type {
+  SetLocalizationsAction,
+  SetNegotiatedLanguagesAction,
+  LocalizationsAction
+} from '../actions/localizations';
+
 export type Localizations = {
   [language: string]: string
 };
 
-function defaultState(): Localizations {
+export type NegotiatedLanguages = Array<string>;
+
+export type LocalizationsState = {
+  localizations: Localizations,
+  negotiatedLanguages: NegotiatedLanguages
+};
+
+function defaultState(): LocalizationsState {
   return {
+    localizations: {},
+    negotiatedLanguages: []
   };
 }
 
-export type SetLocalizationsAction = {
-  type: 'SET_LOCALIZATIONS',
-  payload: Localizations
-};
-
 function setLocalizations(
-  state: Localizations,
+  state: LocalizationsState,
   action: SetLocalizationsAction
-): Localizations {
-  return action.payload;
+): LocalizationsState {
+  return { ...state, localizations: action.payload };
+}
+
+function setNegotiatedLanguages(
+  state: LocalizationsState,
+  action: SetNegotiatedLanguagesAction
+): LocalizationsState {
+  return { ...state, negotiatedLanguages: action.payload };
 }
 
 export default function localizationsReducer(
-  state: ?Localizations,
-  action: SetLocalizationsAction
-): Localizations {
+  state: ?LocalizationsState,
+  action: LocalizationsAction
+): LocalizationsState {
   if (!state) {
     return defaultState();
   }
   switch (action.type) {
+    case 'SET_NEGOTIATED_LANGUAGES':
+      return setNegotiatedLanguages(state, action);
     case 'SET_LOCALIZATIONS':
       return setLocalizations(state, action);
     default:
