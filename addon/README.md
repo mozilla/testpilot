@@ -27,7 +27,10 @@ npm package:dev  # Development mode with lots of Browser Console logging
 
 If you'd like to actively work on the add-on, here are some additional steps to set up a more convenient workflow:
 
-1. Install [Firefox Developer Edition][devedition].
+1. Install [Firefox Developer Edition][devedition]. (Nightly should work, too, but Dev Edition is preferred.)
+
+1. Set `extensions.legacy.enabled` to `true` [using `about:config`][aboutconfig],
+   which should allow the use of legacy and unsigned Mozilla Extensions.
 
 1. Install the [DevPrefs][devprefs] Add-on, which sets a number of preferences
    necessary for Add-on development, importantly `xpinstall.signatures.required`
@@ -39,6 +42,7 @@ If you'd like to actively work on the add-on, here are some additional steps to 
 1. Read all about [setting up an extension development
    environment][extensiondev] on MDN.
 
+[aboutconfig]: https://support.mozilla.org/en-US/kb/about-config-editor-firefox
 [devedition]: https://www.mozilla.org/en-US/firefox/developer/
 [devprefs]: https://addons.mozilla.org/en-US/firefox/addon/devprefs/
 [autoinstaller]: https://addons.mozilla.org/en-US/firefox/addon/autoinstaller/
