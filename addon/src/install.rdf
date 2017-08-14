@@ -6,7 +6,7 @@
     <em:bootstrap>true</em:bootstrap>
     <em:hasEmbeddedWebExtension>true</em:hasEmbeddedWebExtension>
     <em:unpack>false</em:unpack>
-    <em:version>2.0.0</em:version>
+    <em:version>2.0.3</em:version>
     <em:name>Test Pilot</em:name>
     <em:description>Test Pilot is a privacy-sensitive user research program focused on getting new features into Firefox faster.</em:description>
     <em:creator>Mozilla (https://mozilla.org/)</em:creator>
