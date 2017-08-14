@@ -258,7 +258,7 @@ incompatibleSubheader = Vi tilrår at du <a>slår av desse utvidingane</a> før 
 [[ newsletterForm ]]
 
 newsletterFormEmailPlaceholder
-    .placeholder = Din e-post
+    .placeholder = Di e-postadresse
 newsletterFormDisclaimer = Vi sender deg berre Test Pilot-relatert informasjon.
 newsletterFormPrivacyNotice = Det er OK at Mozilla handsamar informasjonen min som skildra i <a>denne personvernmerknaden</a>.
 newsletterFormPrivacyAgreementRequired = Kryss av i denne ruta om du vil halde fram.
