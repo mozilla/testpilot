@@ -7,6 +7,7 @@ machine:
   environment:
     DISPLAY: :99
     PATH: "/home/ubuntu/testpilot/firefox:$PATH"
+    MOZ_HEADLESS: 1
   hosts:
     example.com: 127.0.0.1
   node:
@@ -17,7 +18,7 @@ machine:
 dependencies:
   cache_directories:
     - "addon/node_modules"
-    - "/home/ubuntu/firefox-downloads"
+    - # "/home/ubuntu/firefox-downloads"
     # node_modules is included by default
 
   override:
@@ -34,8 +35,8 @@ test:
     - ./bin/circleci/flake8.sh
     - mkdir integration-test-results
     - ./bin/circleci/test-firefox-release.sh
-    - ./bin/circleci/test-firefox-dev.sh
-    - # ./bin/circleci/test-firefox-nightly.sh
+    - # ./bin/circleci/test-firefox-dev.sh
+    - ./bin/circleci/test-firefox-nightly.sh
   post:
     - bash <(curl -s https://codecov.io/bash)
     - cp -r integration-test-results $CIRCLE_ARTIFACTS

@@ -1,3 +1,4 @@
 #!/bin/bash
-npm run server &
+set -ex
+npm start &
 STATIC_SERVER_PID=$!
