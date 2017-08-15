@@ -252,3 +252,4 @@ voicefillContributors5Title = Softvision QA
 voicefillContributors6Title = Softvision QA
 voicefillContributors7Title = Desarrollo avanzado, tecnologías emergentes
 sendNewsupdatesSendupdate1Title = ¡Enviar con Safari y Edge!
+sendNewsupdatesSendupdate1Content = Se acaba de lanzar Send 1.1.0, con una mejor asistencia al navegador y algunas otras mejoras.
