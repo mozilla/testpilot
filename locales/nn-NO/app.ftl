@@ -215,8 +215,8 @@ versionChangeNoticeLink = Last ned siste versjon av Firefox.
 
 retireDialogTitle = Avinstallere Test Pilot?
 retireMessage = Som du vil. Dette kjem til å slå av alle aktive testar, avinstallere utvidinga og fjerne kontoinnformasjonen din frå alle tenarane våre.
-retireEmailMessage = For å trekke seg frå e-postoppdateringar, klikk på lenka <em>avbryt abonnementet</em> i ein Test Pilot e-post.
-retireSubmitButton = Hald fram
+retireEmailMessage = For å trekkje seg frå e-postoppdateringar, klikk på lenka <em>avbryt abonnementet</em> i ein Test Pilot e-post.
+retireSubmitButton = Fortset
 pageTitleRetirePage = Firefox Test Pilot - Avinstaller Test Pilot
 retirePageProgressMessage = Avsluttar...
 retirePageHeadline = Takk for at du testar!
