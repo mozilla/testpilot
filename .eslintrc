@@ -42,3 +42,6 @@ rules:
   no-use-before-define: [2, nofunc]
   yoda: [0]
   linebreak-style: [0]
+  "import/no-extraneous-dependencies":
+    - error
+    - { devDependencies: [ "./frontend/{stories,tasks,tests}/**/*.{js,jsx}" ] }

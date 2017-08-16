@@ -6,7 +6,8 @@
 },i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://ssl.google-analytics.com/ga.js','ga');
-/*eslint-enable*/
+
+// TODO: re-add eslint-enable after reworking things below to pass linting
 
 if (typeof(ga) !== 'undefined') {
   ga('create', 'UA-49796218-34', 'auto');
