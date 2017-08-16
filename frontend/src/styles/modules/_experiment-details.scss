@@ -33,8 +33,8 @@
     @include flex-container (column, center, stretch);
 
     .button {
-      flex: 1 0 100%;
       margin: $grid-unit * .5 0;
+      width: 100%;
     }
   }
 
@@ -184,15 +184,6 @@
   .measurements {
     @include hide-on-small;
   }
-}
-
-.stats-section dt {
-  font-weight: bold;
-}
-
-.stats-section dd {
-  margin-left: 0;
-  margin-bottom: 1em;
 }
 
 .details-description {
@@ -407,19 +398,21 @@
   }
 }
 
-.stats {
-  font-size: $font-unit;
-  table-layout: fixed;
+.stats-section {
   width: 100%;
 
-  td {
-    padding: $grid-unit * .25;
-    vertical-align: top;
-    width: 65%;
-    word-wrap: break-word;
+  dt {
+    font-weight: bold;
+    margin: 0 0 $grid-unit * .25;
   }
 
-  td:first-child {
+  dd {
+    margin: 0 0 $grid-unit;
+    width: 100%;
+    word-break: break-all;
+  }
+
+  p {
     font-weight: bold;
     width: 35%;
   }
