@@ -5,7 +5,7 @@ import { shallow, mount, render } from 'enzyme';
 
 import { defaultState } from '../../../src/app/reducers/newsletter-form';
 import View from '../../../src/app/components/View';
-
+import appConfig from '../../../src/app/config';
 
 const FooComponent = React.createClass({
   render: function(){
@@ -25,6 +25,12 @@ const mockRequiredProps = {
 
 
 describe('app/components/View', () => {
+
+  // HACK: store & restore old mock window global between tests
+  // TODO: replace with props (#2778)
+  let oldWindow;
+  beforeEach(() => oldWindow = global.window);
+  afterEach(() => global.window = oldWindow);
 
   it('should pass its props to child components', () => {
     const wrapper = mount(
@@ -115,8 +121,25 @@ describe('app/components/View', () => {
   });
 
   it('should show a warning if extensions.webapi.testing is not set', () => {
-    const wrapper = shallow(<View {...mockRequiredProps} hasAddon={true}><FooComponent /></View>);
+    const wrapper = shallow(<View {...mockRequiredProps} hasAddon={false}><FooComponent /></View>);
     expect(wrapper.find('#warning')).to.have.length(1);
+  });
+
+  it('should not show a warning if mozAddonManager is missing but the host is an exception', () => {
+    // HACK: construct minimal window global. JSDOM window.location is partly read-only :/
+    // TODO: replace with props (#2778)
+    global.window = {
+      location: {
+        protocol: 'https:',
+        host: appConfig.nonAddonManagerDevHosts[0]
+      }
+    };
+    const wrapper = shallow(
+      <View {...mockRequiredProps} isMinFirefox={true} hasAddon={true}>
+        <FooComponent />
+      </View>
+    );
+    expect(wrapper.find('#warning')).to.have.length(0);
   });
 
   it('should show a warning if hostname is unapproved', () => {
