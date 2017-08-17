@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "testpilot",
+  "name": "Test Pilot",
   "author": "Les Orchard <me@lmorchard.com>",
   "applications": {
     "gecko": {
