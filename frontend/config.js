@@ -30,5 +30,10 @@ module.exports = {
 };
 
 // Pull in local debug-config.json overrides
-const tryRequire = require('try-require');
-Object.assign(module.exports, tryRequire('../debug-config.json') || {});
+let debugConfig;
+try {
+  debugConfig = require('../debug-config.json');
+} catch (e) {
+  debugConfig = {};
+}
+Object.assign(module.exports, debugConfig);

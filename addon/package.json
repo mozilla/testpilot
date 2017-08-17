@@ -23,6 +23,7 @@
   "main": "./bootstrap.js",
   "license": "MPL-2.0",
   "devDependencies": {
+    "babel-core": "6.24.0",
     "babel-plugin-syntax-async-functions": "6.13.0",
     "babel-plugin-syntax-object-rest-spread": "6.13.0",
     "babel-plugin-transform-object-rest-spread": "6.23.0",
