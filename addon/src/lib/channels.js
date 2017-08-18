@@ -41,7 +41,7 @@ export default class WebExtensionChannel {
     this.listeners = new Set();
     this.topic = topic;
     this.targetAddonId = targetAddonId;
-    this.handleEvent = (event: Object) => {
+    this.handleEvent = event => {
       if (event.data) {
         this.notify(event.data, this.targetAddonId);
       }
@@ -69,11 +69,11 @@ export default class WebExtensionChannel {
     this.addonChromeWebNav = null;
   }
 
-  registerListener(callback: Function) {
+  registerListener(callback) {
     this.listeners.add(callback);
   }
 
-  unregisterListener(callback: Function) {
+  unregisterListener(callback) {
     this.listeners.delete(callback);
   }
 

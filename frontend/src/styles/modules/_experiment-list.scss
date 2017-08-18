@@ -39,13 +39,9 @@
   }
 
   header {
-    @include flex-container(row, space-between, flex-start);
+    @include flex-container(row, space-between, center);
     margin-bottom: $grid-unit * .5;
     width: 100%;
-  }
-
-  header > div {
-    @include flex-container(column, space-between, flex-start);
   }
 
   .experiment-feedback {
@@ -60,10 +56,11 @@
     color: $white;
     cursor: pointer;
     display: block;
-    float: right;
     font-size: 10px;
     line-height: 12px;
-    padding: 4px 6px 4px 20px;
+    padding: 5px 8px 3px 20px;
+    position: relative;
+    top: -2px;
 
     &:hover,
     &:focus {
