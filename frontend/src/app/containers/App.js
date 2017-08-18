@@ -116,18 +116,12 @@ class App extends Component {
       'meta[name=availableLanguages]').content.split(',');
 
     const negotiated = negotiateLanguages(
-<<<<<<< HEAD
       navigator.languages,
       availableLanguages,
       {
         defaultLocale: 'en-US',
         likelySubtags: likelySubtagsData.supplemental.likelySubtags
       }
-=======
-      typeof navigator !== 'undefined' ? navigator.languages : [],
-      config.AVAILABLE_LOCALES,
-      { defaultLocale: 'en-US' }
->>>>>>> origin/remove-user-counts
     );
 
     this.props.setNegotiatedLanguages(negotiated);
@@ -167,11 +161,7 @@ class App extends Component {
     }
 
     return <LocalizationProvider messages={ generateMessages(
-<<<<<<< HEAD
       this.props.negotiatedLanguages,
-=======
-      typeof navigator !== 'undefined' ? navigator.languages : [],
->>>>>>> origin/remove-user-counts
       this.props.localizations
     ) }>
       { React.cloneElement(this.props.children, this.props) }
