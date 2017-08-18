@@ -31,7 +31,7 @@ const baseConfig = {
         options: {
           // Minimal babel transforms - Firefox supports many ES2015 features
           babelrc: false,
-          presets: ['react'],
+          presets: [],
           plugins: []
         }
       }
