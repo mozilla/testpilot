@@ -142,6 +142,7 @@ pulseContributors2Title = Firefox Platform Product Intelligence
 pulseContributors3Title = Firefox kwalitne zawěsćenje
 pulseEolwarning = Dźakujemy so wam za wašu pomoc. Eksperiment Pulse so kónči. Móžeće přidatk pak znjemóžnić pak wotstronić.
 sendDescription = Zaklučujće a sćelće dataje z wotkazom, kotryž awtomatisce spadnje, zo byšće zawěsćił, zo waše wažne dokumenty na přeco online njewostanu.
+sendIntroduction = <p>Send wam zmóžnja, wulke dataje nahrać a zaklučować (hač do 1 GB) a je online dźělić. Hdyž dataju nahrawaće, Send wotkaz wutwori, kotryž móžeće někomužkuli pósłać. Kóždy přez Send wutworjeny wotkaz po jednym sćehnjenju abo 24 hodźinach spadnje, a wšě pósłane dataje so awtomatisce ze serwera Send zhašeja.</p> <p>Na rozdźěl wot druhich eksperimentow Test Pilot, Send přidatk njetrjeba, a da so w modernym wobhladowaku wužiwać.
 sendDetails0Copy = Send wam zmóžnja, zaklučowane dataje nahrać a dźělić.
 sendDetails1Copy = Send budźe waše daty za jedne sćehnjenje abo 24 hodźin składować.
 sendDetails2Copy = Móžeće Send w modernym wobhladowaku wužiwać.
