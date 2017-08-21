@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STORYBOOK_BUCKET=${STORYBOOK_BUCKET:-storybook.testpilot.dev.mozaws.net}
+STORYBOOK_BUCKET=${STORYBOOK_BUCKET:-testpilot-storybook.dev.mozaws.net}
 if [ -z "$STORYBOOK_BUCKET" ]; then
   echo "The S3 bucket is not set. Failing."
   exit 1;
