@@ -21,6 +21,10 @@ dependencies:
     # node_modules is included by default
 
   override:
+    - |
+      curl -L -o ~/bin/jq \
+      https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 && \
+      chmod +x ~/bin/jq
     - ./bin/circleci/install-test-dependencies.sh
     - ./bin/circleci/install-node-dependencies.sh
     - ./bin/circleci/build-addon.sh
@@ -47,7 +51,9 @@ deployment:
     branch:
       - master
     commands:
-      - TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/deploy.sh dev
+      - TESTPILOT_BUCKET=testpilot.dev.mozaws.net \
+        ./bin/circleci/do-exclusively.sh --branch master \
+        ./bin/deploy.sh dev
       - aws configure set preview.cloudfront true
       - aws cloudfront create-invalidation --distribution-id E2ERG47PHCWD0Z --paths '/*'
   static_l10n:
