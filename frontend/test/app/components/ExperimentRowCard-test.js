@@ -59,17 +59,6 @@ describe('app/components/ExperimentRowCard', () => {
     expect(subject.find('.experiment-summary').hasClass('has-addon')).to.be.true;
   });
 
-  it('should display installation count if over 100', () => {
-    const expectedCount = '101';
-    subject.setProps({ experiment: { ...mockExperiment, installation_count: expectedCount }});
-    expect(subject.find('.participant-count').text()).to.equal(`${expectedCount} participants`);
-  });
-
-  it('should display nothing if installation count <= 100', () => {
-    subject.setProps({ experiment: { ...mockExperiment, installation_count: '99' }});
-    expect(subject.find('.participant-count')).to.have.property('length', 0);
-  });
-
   it('should display an "enabled" banner if the experiment is enabled', () => {
     expect(subject.find('.experiment-summary').hasClass('enabled')).to.be.false;
     expect(subject.find('.enabled-tab')).to.have.property('length', 0);

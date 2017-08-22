@@ -23,7 +23,6 @@ import { chooseTests } from '../actions/varianttests';
 import addonActions from '../actions/addon';
 import newsletterFormActions from '../actions/newsletter-form';
 import RestartPage from '../containers/RestartPage';
-import Loading from '../components/Loading';
 import { isFirefox, isMinFirefoxVersion, isMobile } from '../lib/utils';
 import newsUpdatesSelector from '../selectors/news';
 import config from '../config';
@@ -71,8 +70,7 @@ class App extends Component {
       this.debounceSendToGA(pathname, 'pageview', {
         dimension1: hasAddon,
         dimension4: isExperimentEnabled(experiment),
-        dimension5: experiment.title,
-        dimension6: experiment.installation_count
+        dimension5: experiment.title
       });
     }
   }
@@ -100,7 +98,6 @@ class App extends Component {
       locale: (navigator.language || '').split('-')[0]
     });
     this.props.chooseTests();
-    const userCountsPromise = this.props.fetchUserCounts(config.usageCountsURL);
     this.measurePageview();
 
     const langs = {};
@@ -138,8 +135,6 @@ class App extends Component {
       )
     );
 
-    promises.push(userCountsPromise);
-
     Promise.all(promises).then(() => {
       this.props.setLocalizations(langs);
       const staticNode = document.getElementById('static-root');
@@ -165,9 +160,6 @@ class App extends Component {
       }
     }
 
-    if (Object.keys(this.props.localizations).length === 0) {
-      return <Loading {...this.props} />;
-    }
     return <LocalizationProvider messages={ generateMessages(
       this.props.negotiatedLanguages,
       this.props.localizations
@@ -228,7 +220,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   setBrowserState: state => dispatch(setBrowserState(state)),
   chooseTests: () => dispatch(chooseTests()),
-  fetchUserCounts: (url) => dispatch(fetchUserCounts(url)),
   navigateTo: path => {
     window.location = path;
   },

@@ -141,7 +141,6 @@ function buildExperimentsFTL() {
 
 function buildExperimentsData() {
   const index = {results: []};
-  const counts = {};
   const cssStrings = [];
   let newsUpdates = loadGeneralNewsUpdates();
 
@@ -176,9 +175,6 @@ function buildExperimentsData() {
       html_url: `/experiments/${experiment.slug}`,
       survey_url: `https://qsurvey.mozilla.com/s3/${experiment.slug}`
     });
-
-    counts[experiment.addon_id] = experiment.installation_count;
-    delete experiment.installation_count;
 
     this.push(new gutil.File({
       path: `experiments/${experiment.id}.json`,
@@ -217,10 +213,6 @@ function buildExperimentsData() {
     this.push(new gutil.File({
       path: 'api/experiments.json',
       contents: new Buffer(JSON.stringify(index, null, 2))
-    }));
-    this.push(new gutil.File({
-      path: 'api/experiments/usage_counts.json',
-      contents: new Buffer(JSON.stringify(counts, null, 2))
     }));
     this.push(new gutil.File({
       path: 'static/styles/experiments.css',
