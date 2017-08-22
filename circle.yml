@@ -51,9 +51,7 @@ deployment:
     branch:
       - master
     commands:
-      - TESTPILOT_BUCKET=testpilot.dev.mozaws.net \
-        ./bin/circleci/do-exclusively.sh --branch master \
-        ./bin/deploy.sh dev
+      - TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/circleci/do-exclusively.sh --branch master ./bin/deploy.sh dev
       - aws configure set preview.cloudfront true
       - aws cloudfront create-invalidation --distribution-id E2ERG47PHCWD0Z --paths '/*'
   static_l10n:
