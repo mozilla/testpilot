@@ -27,6 +27,11 @@ export const environments = {
     baseUrl: 'https://testpilot.dev.mozaws.net',
     whitelist: 'https://www.mozilla.org/,about:home'
   },
+  l10n: {
+    name: 'l10n',
+    baseUrl: 'https://testpilot-l10n.dev.mozaws.net',
+    whitelist: 'https://www.mozilla.org/,about:home'
+  },
   stage: {
     name: 'stage',
     baseUrl: 'https://testpilot.stage.mozaws.net',

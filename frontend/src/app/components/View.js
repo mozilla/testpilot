@@ -4,6 +4,8 @@ import ReactDOMFactories from 'react/lib/ReactDOMFactories';
 import Symbol from 'es-symbol';
 import { Localized } from 'fluent-react/compat';
 
+import config from '../config';
+
 import Copter from '../components/Copter';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -97,15 +99,15 @@ export default class View extends React.Component {
   }
 
   renderUpgradeWarning() {
-    if (this.props.hasAddon === null) {
-      return null;
-    }
-    if (typeof navigator.mozAddonManager !== 'undefined') {
-      return null;
-    }
-    if (!this.props.isFirefox) {
-      return null;
-    }
+    const { hasAddon, isFirefox, isMinFirefox } = this.props;
+    // TODO: Move these consts into props from App container (#2778)
+    const hasAddonManager = typeof navigator.mozAddonManager !== 'undefined';
+    const { host, protocol } = window.location;
+
+    if (hasAddon === null) return null;
+    if (hasAddonManager) return null;
+    if (!isFirefox) return null;
+
     let title = <Localized id="warningGenericTitle">
       <span>Something is wrong!</span>
     </Localized>;
@@ -118,7 +120,7 @@ export default class View extends React.Component {
         and mention this error message.
       </p>
     </LocalizedHtml>;
-    if (!this.props.isMinFirefox) {
+    if (!isMinFirefox) {
       title = <Localized id="warningUpgradeFirefoxTitle">
         <span>Upgrade Firefox to continue!</span>
       </Localized>;
@@ -131,7 +133,7 @@ export default class View extends React.Component {
           to get started.
         </p>
       </LocalizedHtml>;
-    } else if (window.location.protocol !== 'https:') {
+    } else if (protocol !== 'https:') {
       title = <Localized id="warningHttpsRequiredTitle">
         <span>HTTPS required!</span>
       </Localized>;
@@ -144,7 +146,11 @@ export default class View extends React.Component {
           for details.
         </p>
       </LocalizedHtml>;
-    } else if (['example.com:8000', 'testpilot.dev.mozaws.net', 'testpilot.stage.mozaws.net'].includes(window.location.host)) {
+    } else if (!hasAddonManager && config.nonAddonManagerDevHosts.includes(host)) {
+      // Allow exceptions for dev hosts known not to have access to mozAddonManager,
+      // but do not skip the other checks up to this point.
+      return null;
+    } else if (config.devHosts.includes(host)) {
       title = <Localized id="warningMissingPrefTitle">
         <span>Developing Test Pilot?</span>
       </Localized>;
@@ -157,7 +163,7 @@ export default class View extends React.Component {
           for details.
         </p>
       </LocalizedHtml>;
-    } else if (window.location.host !== 'testpilot.firefox.com') {
+    } else if (host !== config.prodHost) {
       title = <Localized id="warningBadHostnameTitle">
         <span>Unapproved hostname!</span>
       </Localized>;

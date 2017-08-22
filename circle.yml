@@ -50,6 +50,14 @@ deployment:
       - TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/deploy.sh dev
       - aws configure set preview.cloudfront true
       - aws cloudfront create-invalidation --distribution-id E2ERG47PHCWD0Z --paths '/*'
+  static_l10n:
+    owner: mozilla
+    branch:
+      - l10n
+    commands:
+      - TESTPILOT_BUCKET=testpilot-l10n.dev.mozaws.net ./bin/deploy.sh dev
+      - aws configure set preview.cloudfront true
+      - aws cloudfront create-invalidation --distribution-id ELL21V1NJAJJ8 --paths '/*'
 
 # Only notify of builds on master branch.
 experimental:
@@ -57,3 +65,4 @@ experimental:
     branches:
       only:
         - master
+        - l10n
