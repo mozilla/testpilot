@@ -239,7 +239,6 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
         </div>
       </div>
     </noscript>
-    { prepareForClient ? <Loading /> : null }
     { prepareForClient ? <script src="/static/app/vendor.js"></script> : null }
   </div>;
 

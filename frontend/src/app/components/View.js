@@ -100,11 +100,13 @@ export default class View extends React.Component {
 
   renderUpgradeWarning() {
     const { hasAddon, isFirefox, isMinFirefox } = this.props;
+
+    if (hasAddon === null) return null;
+
     // TODO: Move these consts into props from App container (#2778)
     const hasAddonManager = typeof navigator.mozAddonManager !== 'undefined';
     const { host, protocol } = window.location;
 
-    if (hasAddon === null) return null;
     if (hasAddonManager) return null;
     if (!isFirefox) return null;
 

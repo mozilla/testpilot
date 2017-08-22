@@ -16,7 +16,6 @@ const experiment = {
   subtitle: '',
   slug: 'snooze-tabs',
   survey_url: 'https://example.com',
-  installation_count: '86753',
   created: '2010-06-21T12:12:12Z',
   modified: '2010-06-21T12:12:12Z'
 };
@@ -56,12 +55,6 @@ storiesOf('ExperimentRowCard', module)
     <ExperimentRowCard
       {...baseProps}
       experiment={{ ...experiment, subtitle: 'example subtitle here' }}
-    />
-  )
-  .add('< 100 participants', () =>
-    <ExperimentRowCard
-      {...baseProps}
-      experiment={{ ...experiment, installation_count: 90 }}
     />
   )
   .add('just launched', () =>

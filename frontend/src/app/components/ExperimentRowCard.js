@@ -4,8 +4,6 @@ import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import LocalizedHtml from '../components/LocalizedHtml';
-
 import { buildSurveyURL, experimentL10nId } from '../lib/utils';
 
 import type { InstalledExperiments } from '../reducers/addon';
@@ -41,7 +39,6 @@ export default class ExperimentRowCard extends React.Component {
     const { hasAddon, experiment, enabled, isAfterCompletedDate } = this.props;
 
     const { description, title, subtitle, slug } = experiment;
-    const installation_count = (experiment.installation_count) ? experiment.installation_count : 0;
     const isCompleted = isAfterCompletedDate(experiment);
 
     return (
@@ -82,31 +79,10 @@ export default class ExperimentRowCard extends React.Component {
         <Localized id={this.l10nId('description')}>
           <p>{description}</p>
         </Localized>
-        { this.renderInstallationCount(installation_count, isCompleted) }
         { this.renderManageButton(enabled, hasAddon, isCompleted) }
       </div>
     </a>
     );
-  }
-
-  // this is set to 100, to accomodate Tracking Protection
-  // which has been sending telemetry pings via installs from dev
-  // TODO: figure out a non-hack way to toggle user counts when we have
-  // telemetry data coming in from prod
-  renderInstallationCount(installation_count: number, isCompleted: Boolean) {
-    if (installation_count <= 100 || isCompleted) return '';
-
-    const platforms = this.props.experiment.platforms || [];
-    if (platforms.length === 0 || platforms.indexOf('addon') !== -1) {
-      return (
-        <LocalizedHtml id="participantCount" $installation_count={installation_count}>
-          <span className="participant-count"><span>{installation_count}</span> participants</span>
-        </LocalizedHtml>
-      );
-    }
-
-    // TODO: Display visitor count for web & mobile experiments?
-    return '';
   }
 
   renderFeedbackButton() {

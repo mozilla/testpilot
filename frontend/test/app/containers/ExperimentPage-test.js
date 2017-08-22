@@ -261,21 +261,6 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       expect(subject.find('.incompatible-addons')).to.have.property('length', 1);
     });
 
-    it('should display installation count if over 100', () => {
-      const experiment = setExperiment({ ...mockExperiment, installation_count: '101' });
-      const el = findLocalizedHtmlById(subject, 'userCountContainer');
-      expect(el).has.property('length', 1);
-      expect(el.prop('$installation_count')).to.deep.equal(
-        <span className="bold">{experiment.installation_count}</span>
-      );
-    });
-
-    it('should display alternative message if installation count <= 100', () => {
-      setExperiment({ ...mockExperiment, installation_count: '99' });
-      const el = findLocalizedById(subject, 'userCountContainerAlt');
-      expect(el).has.property('length', 1);
-    });
-
     it('should display a call-to-action to install Test Pilot', () => {
       expect(subject.find('#testpilot-promo')).to.have.property('length', 1);
       expect(subject.find('MainInstallButton')).to.have.property('length', 1);
