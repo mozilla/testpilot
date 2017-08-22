@@ -97,7 +97,6 @@ notFoundHeader = چهارصد اوه چهار!
 emailOptInDialogTitle = به خلبان آزمایشی خوش آمدید!
 emailOptInMessage = در مورد آزمایش‌های جدید مطلع شوید و نتایج آزمایش‌هایی که امتحانشان کرده‌اید را ببینید.
 emailOptInConfirmationTitle = رایانامه ارسال شد
-emailOptInSuccessMessage2 = ممنون!
 emailOptInConfirmationClose = به سوی تجربه‌ها…
 
 
@@ -179,6 +178,11 @@ tourDoneButton = انجام شد
 userCountContainer = تعداد <span>{ $installation_count }</span> نفر در حال حاضر از { $title } استفاده می‌کنند!
 userCountContainerAlt = هم‌اکنون منتشر شد!
 highlightPrivacy = حریم‌خصوصی شما
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -295,6 +299,7 @@ warningUpgradeFirefoxTitle = برای ادامه، فایرفاکس را ارت�
 warningUpgradeFirefoxDetail = خلبان آزمایشی به آخرین نسخه فایرفاکس احتیاج دارد، برای شروع <a>فایرفاکس را ارتقا دهید</a>.
 warningHttpsRequiredTitle = HTTPS مورد نیاز است!
 warningHttpsRequiredDetail = خلبان آزمایشی باید از طریق HTTPS مورد استفاده قرار بگیرد. برای جزییات لطفا <a>مستندات ما</a> را ببینید.
+warningMissingPrefTitle = در حال توسعه خلبان آزمایشی هستید؟
 warningMissingPrefDetail = وقتی خلبان آزمایشی را محلی یا در محیط‌های توسعه اجرا می‌کنید، پیکربندی ویژه‌ای مورد نیاز است. برای جزییات لطفا <a>مستندات ما<a/> را ببینید.
 warningBadHostnameTitle = نام میزبان تایید نشده!
 warningBadHostnameDetail = ممکن است خلبان آزمایشی تنها از طریق testpilot.firefox.com، testpilot.stage.mozaws.net، testpilot.dev.mozaws.net یا example.com:8000 دردسترس باشد. برای جزییات لطفا <a>مستندات ما</a> را ببینید.
