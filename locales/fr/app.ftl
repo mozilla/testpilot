@@ -72,9 +72,9 @@ landingDownloadFirefoxSubTitle = Téléchargement gratuit
 [[ landingCard ]]
 
 landingCardListTitle = Décollage imminent : 3, 2, 1…
-landingCardOne = Téléchargez <br>le module
+landingCardOne = Téléchargez le module
 landingCardTwo = Activez les fonctionnalités expérimentales
-landingCardThree = Donnez-nous <br> votre avis
+landingCardThree = Donnez-nous votre avis
 
 
 // Shown after the user installs the Test Pilot add-on.
