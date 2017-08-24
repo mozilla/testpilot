@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STORYBOOK_BUCKET=${STORYBOOK_BUCKET:-storybook.testpilot.dev.mozaws.net}
+STORYBOOK_BUCKET=${STORYBOOK_BUCKET:-testpilot-storybook.dev.mozaws.net}
 if [ -z "$STORYBOOK_BUCKET" ]; then
   echo "The S3 bucket is not set. Failing."
   exit 1;
@@ -17,8 +17,9 @@ fi
 HASH=$(git --no-pager log --format=format:"%H" -1)
 cp -r .storybook .storybook-$HASH
 sed -i "s#href=\"/static#href=\"/$HASH/static#g" .storybook-$HASH/preview-head.html
+# HACK: correct paths to experiment images in existing build
+sed -i "s#url(/static/#url(../#g" ./frontend/build/static/styles/experiments.css
 ./node_modules/.bin/build-storybook -c .storybook-$HASH -o ./frontend/storybook/$HASH
-rm -rf .storybook-$HASH
 cp -r ./frontend/build/static ./frontend/storybook/$HASH
 
 # Deploy the files to bucket with git hash subdirectory

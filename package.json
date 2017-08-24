@@ -42,6 +42,7 @@
     "tos-pp": "https://github.com/mozilla/legal-docs.git"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.2.0",
     "@storybook/addon-knobs": "^3.1.5",
     "@storybook/react": "^3.1.5",
     "babel-core": "6.24.0",

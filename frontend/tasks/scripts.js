@@ -44,7 +44,7 @@ function shouldLint(opt, task) {
 }
 
 gulp.task('scripts-lint', () => {
-  return gulp.src([config.SRC_PATH + '*.js', config.SRC_PATH + '{app,tests}/**/*.js'])
+  return gulp.src('./frontend/{src,tests,stories}/**/*.{js,jsx}')
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failOnError());

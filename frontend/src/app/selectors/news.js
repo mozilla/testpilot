@@ -34,4 +34,26 @@ const newsUpdatesSelector = createSelector(
   }
 );
 
+const TWO_WEEKS = 2 * 7 * 24 * 60 * 60 * 1000;
+
+const twoWeeksAgoSelector = () => Date.now() - TWO_WEEKS;
+
+const makeNewsAgeSelector = includeStale => (newsUpdates, twoWeeksAgo) =>
+  newsUpdates.filter(update => {
+    const dt = new Date(update.published || update.created).getTime();
+    return includeStale ? dt < twoWeeksAgo : dt >= twoWeeksAgo;
+  });
+
+export const freshNewsUpdatesSelector = createSelector(
+  newsUpdatesSelector,
+  twoWeeksAgoSelector,
+  makeNewsAgeSelector(false)
+);
+
+export const staleNewsUpdatesSelector = createSelector(
+  newsUpdatesSelector,
+  twoWeeksAgoSelector,
+  makeNewsAgeSelector(true)
+);
+
 export default newsUpdatesSelector;
