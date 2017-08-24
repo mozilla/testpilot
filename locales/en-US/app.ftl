@@ -82,6 +82,7 @@ emailOptInDialogErrorTitle = Oh no!
 // news feed updates.
 [[updateList]]
 latestUpdatesTitle = Latest updates
+showMoreNewsTitle = Show Past News
 
 // A listing of all Test Pilot experiments.
 [[experimentsList]]
