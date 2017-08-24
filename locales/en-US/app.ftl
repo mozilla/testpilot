@@ -156,6 +156,11 @@ experimentGradReportReady=We have prepared a full graduation report.
 experimentGoToLink = Go to { $title }
 startedDateLabel = Experiment Start Date: <b>{$startedDate}</b>
 
+// news updates dialog.
+[[newsUpdatesDialog]]
+nonExperimentDialogHeaderLink = Test Pilot
+learnMoreLink = LEARN MORE
+
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[experimentPlatform]]
 experimentPlatformWebAddonMobile = Firefox / web / mobile experiment
