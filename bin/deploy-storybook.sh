@@ -13,6 +13,12 @@ if [[ $IS_PONTOON ]]; then
   exit 0;
 fi
 
+# Skip builds for non-Mozilla users
+if [ "$CIRCLE_PROJECT_USERNAME" != "mozilla" ]; then
+  echo "Skipping Storybook deploy for non-Mozilla CircleCI";
+  exit 0;
+fi
+
 # HACK: Build static storybook with URL paths edited to include git hash
 HASH=$(git --no-pager log --format=format:"%H" -1)
 cp -r .storybook .storybook-$HASH
@@ -34,6 +40,7 @@ echo "Deployed Storybook to $STORYBOOK_URL"
 # Deploy a client-side redirect page for a per-PR URL
 if [[ ! -z $CI_PULL_REQUEST ]]; then
   STORYBOOK_PR_PATH=$(echo $CI_PULL_REQUEST | cut -d/ -f6-7);
+  STORYBOOK_PR_NUMBER=$(echo $CI_PULL_REQUEST | cut -d/ -f7);
   STORYBOOK_PR_URL=http://${STORYBOOK_BUCKET}/${STORYBOOK_PR_PATH}/index.html
   REDIRECT_HTML=$(cat <<EOF
 <!DOCTYPE html>
@@ -53,4 +60,10 @@ EOF
       s3://${STORYBOOK_BUCKET}/${STORYBOOK_PR_PATH}/index.html
 
   echo "Deployed Storybook PR redirect to ${STORYBOOK_PR_URL}"
+
+  curl \
+    -H'Content-Type: application/json' \
+    -H"Authorization: token $STORYBOOK_GITHUB_ACCESS_TOKEN" \
+    --data "{\"body\":\"# Storybook Deployment\\nPull Request: $STORYBOOK_PR_URL\\nCommit: $STORYBOOK_URL\"}" \
+    https://api.github.com/repos/mozilla/testpilot/issues/${STORYBOOK_PR_NUMBER}/comments
 fi
