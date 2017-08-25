@@ -152,7 +152,7 @@ export default class UpdateList extends React.Component {
             <Localized id="showMoreNewsTitle">
               <div className={classnames(['button', 'more-news', 'outline'])}
                   onClick={() => this.handleShowMoreNews()}>
-                Show More News
+                Show Past News
               </div>
             </Localized>
           </LayoutWrapper>}
