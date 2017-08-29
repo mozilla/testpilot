@@ -13,6 +13,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Privacy
 footerLinkTerms = Terms
 footerLinkLegal = Legal
+footerLinkFeedback = Give Feedback
 footerLinkAbout = About Test Pilot
 
 // Items in the menu.
