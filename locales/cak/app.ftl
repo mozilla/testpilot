@@ -111,11 +111,22 @@ latestUpdatesTitle = Ruk'isib'äl taq k'exoj
 [[ experimentsList ]]
 
 experimentListEnabledTab = Tzijon
+experimentListJustLaunchedTab = K'a b'a' Ketikirisäx
+experimentListJustUpdatedTab = K'a b'a' Tik'ex
+experimentListEndingTomorrow = Nik'is Chwa'q
+experimentListEndingSoon = Nik'is Yan
+experimentCondensedHeader = ¡Ütz apetik pa Test Pilot!
+experimentListHeader = ¡Ke'acha' ri taq asolna'oj!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Taq tzijol
+experimentCardManage = Tinuk'samajïx
+experimentCardGetStarted = Titikirisäx
+experimentCardLearnMore = Tetamäx Ch'aqa' Chik
 
 
 // A modal prompt shown when a user disables an experiment.
