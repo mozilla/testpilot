@@ -150,11 +150,18 @@ experimentPreFeedbackLinkCopy = Taya' taq atzij chi qe chi rij ri { $title } sol
 // A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
+experimentPromoHeader = ¿La ütz chik richin yaxik'an?
+experimentPromoSubheader = Tajin yeqab'än kik'ojlem ri ruk'isib'äl tanaj samaj richin Firefox. ¡Tiyak Test Pilot richin nitojtob'ëx!
 
 
 // The experiment detail page.
 [[ experimentPage ]]
 
+isEnabledStatusMessage = { $title } tzijon.
+installErrorMessage = Uy. Man xtzij ta ri { $title }. Tatojtob'ej chik na.
+participantCount = <span>{ $installation_count }</span> to'onela'
+otherExperiments = Ketojtob'ëx chuqa' re taq solna'oj re'
+giveFeedback = Titaq Na'oj
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
