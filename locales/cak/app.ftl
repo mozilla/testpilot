@@ -80,16 +80,21 @@ landingCardThree = Tatzijoj chi qe achike nana'ojij
 // Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
+onboardingMessage = Xqaya' qa jun wachaj pa ri molsamajib'al richin chanin yatok pa Test Pilot.
 
 
 // Error message pages.
 [[ error ]]
 
+errorHeading = ¡Uy!
+errorMessage = Achi'el chi k'o man ütz ta xel. <br> Tatojtob'ej chik na.
+notFoundHeader = ¡Kaji' Wa'ix Kaji'!
 
 
 // A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
+emailOptInDialogTitle = ¡Ütz apetik pa Test Pilot!
 
 
 // news feed updates.
