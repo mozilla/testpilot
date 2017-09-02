@@ -95,6 +95,8 @@ notFoundHeader = ¡Kaji' Wa'ix Kaji'!
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = ¡Ütz apetik pa Test Pilot!
+emailOptInMessage = Ke'awila' ch'aqa' chik taq solna'oj chuqa' tatz'eta' ri xq'i' pa ri taq solna'oj akuchi' xato'on.
+emailOptInConfirmationTitle = Xtaq Taqoya'l
 
 
 // news feed updates.
