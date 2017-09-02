@@ -132,11 +132,19 @@ experimentCardLearnMore = Tetamäx Ch'aqa' Chik
 // A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
+feedbackSubmitButton = Tanojisaj jun ko'öl molna'oj
+feedbackUninstallTitle = ¡Matyox Chawe!
+feedbackUninstallCopy =
+    ¡Yalan k'o rejqalem chi qawäch ri ato'ik pa Firefox Pilot! 
+    ¡Ke'atz'eta' ch'aqa' chik taq solna'oj, 
+    richin man xke'asäch ta ri k'ak'a' xke'eleyaj pe!
 
 
 // A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
+experimentPreFeedbackTitle = { $title } taq na'oj
+experimentPreFeedbackLinkCopy = Taya' taq atzij chi qe chi rij ri { $title } solna'oj
 
 
 // A splash shown on top of the experiment page when Test Pilot is not installed.
