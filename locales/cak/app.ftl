@@ -45,21 +45,36 @@ landingExperimentsTitle = Ke'atojtob'ej ri ruk'isib'äl tojtob'enel taq rub'anik
 [[ landingInstall ]]
 
 landingInstallButton = Tayaka' ruchokoy Test Pilot
+landingInstallingButton = Tajin niyak...
+landingInstalledButton = Ke'acha' ri taq ab'anikil
 
 
 // Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
+oneClickInstallMinorCta = Tiyak Test Pilot &amp;
+oneClickInstallMajorCta = Titzij { $title }
 
 
 // Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
+landingRequiresDesktop = Test Pilot nrajo' Firefox richin ajkematz'ib' pa Windows, Mac o Linux
+landingDownloadFirefoxDesc = (Test Pilot wachel pa Firefox pa Windows, OS X chuqa' Linux)
+landingUpgradeDesc = Test Pilot nrajo' chi man tiqa chi re ri Firefox 49.
+landingUpgradeDesc2 = Test Pilot nrajo' Firefox { $version } o nïm chuwäch.
+landingDownloadFirefoxTitle = Firefox
+landingUpgradeFirefoxTitle = Tik'ex Firefox
+landingDownloadFirefoxSubTitle = Sipan Ruqasaxik
 
 
 // A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
+landingCardListTitle = Titikirisäx pa 3, 2, 1
+landingCardOne = Tak'ulu' ri ruchokoy Test Pilot
+landingCardTwo = Ketzij ri tojtob'enel taq b'anikil
+landingCardThree = Tatzijoj chi qe achike nana'ojij
 
 
 // Shown after the user installs the Test Pilot add-on.
