@@ -97,16 +97,20 @@ notFoundHeader = ¡Kaji' Wa'ix Kaji'!
 emailOptInDialogTitle = ¡Ütz apetik pa Test Pilot!
 emailOptInMessage = Ke'awila' ch'aqa' chik taq solna'oj chuqa' tatz'eta' ri xq'i' pa ri taq solna'oj akuchi' xato'on.
 emailOptInConfirmationTitle = Xtaq Taqoya'l
+emailOptInConfirmationClose = Jo' pa ri taq solna'oj...
+emailOptInDialogErrorTitle = ¡Mani'!
 
 
 // news feed updates.
 [[ updateList ]]
 
+latestUpdatesTitle = Ruk'isib'äl taq k'exoj
 
 
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
+experimentListEnabledTab = Tzijon
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
