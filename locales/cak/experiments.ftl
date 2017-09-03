@@ -18,3 +18,6 @@ tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
+trackingprotectionContributors0Title = Ajk'amaya'l B'anonel
+voicefillContributors3Title = Firefox UX
+voicefillContributors4Title = Firefox UX
