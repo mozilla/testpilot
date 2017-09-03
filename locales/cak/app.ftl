@@ -162,6 +162,13 @@ installErrorMessage = Uy. Man xtzij ta ri { $title }. Tatojtob'ej chik na.
 participantCount = <span>{ $installation_count }</span> to'onela'
 otherExperiments = Ketojtob'ëx chuqa' re taq solna'oj re'
 giveFeedback = Titaq Na'oj
+disableHeader = ¿La Nichup ri Solna'oj?
+disableExperiment = Tichup { $title }
+disableExperimentTransition = Tajin nichup...
+enableExperiment = Titzij { $title }
+enableExperimentTransition = Tajin nitzij...
+experimentManuallyDisabled = { $title } chupun pa Runuk'samajel Chokoy
+experimentMeasurementIntro = Achi'el ri taq <a>tzij</a> yemol kuma ronojel taq rusolna'oj Test Pilot, ja taq etamab'äl re' k'o ta chi awetaman chi rij ri nik'ulwachitäj toq nawokisaj { $experimentTitle }:
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
