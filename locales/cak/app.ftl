@@ -172,6 +172,10 @@ experimentMeasurementIntro = Achi'el ri taq <a>tzij</a> yemol kuma ronojel taq r
 measurements = Awichinanem
 experimentPrivacyNotice = Yatikïr nawetamaj ch'aqa' chik chi kij ri taq tzij yemol ruma { $title } wawe'.
 contributorsHeading = Wachib'en chi awichin ruma
+contributorsExtraLearnMore = Tetamäx ch'aqa' chik
+tour = K'astajinem
+tourDoneButton = Xk'is
+highlightPrivacy = Awichinanem
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -187,6 +191,7 @@ contributorsHeading = Wachib'en chi awichin ruma
 // Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
+retirePageSurveyButton = Tanojisaj jun aninäq molna'oj
 
 
 // Shown to users after installing Test Pilot if a restart is required.
@@ -198,6 +203,8 @@ contributorsHeading = Wachib'en chi awichin ruma
 [[ share ]]
 
 shareEmail = Taqoya'l
+shareCopy = Tiwachib'ëx
+eolNoticeLink = Tetamäx ch'aqa' chik
 
 
 // A warning shown to users looking at experiments incompatible with add-ons they already have installed.
@@ -208,11 +215,20 @@ shareEmail = Taqoya'l
 // A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder
+    .placeholder = Ataqoya'l wawe'
+newsletterFormDisclaimer = Xa xe xtiqatäq el chawe taq etamab'äl chi rij Test Pilot.
+newsletterFormPrivacyAgreementRequired = Taya' retal re k'ojlemal re' we k'a nawajo' natikirisaj chik el.
+newsletterFormSubmitButton = Tatz'ib'aj Awi' Wakami
 
 
 // A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterHeader = Tawetamaj
+newsletterFooterBody = Ke'awila' ch'aqa' chik taq solna'oj chuqa' tatz'eta' ri xq'i' pa ri taq solna'oj akuchi' xato'on.
+newsletterFooterSuccessHeader = ¡Matyox!
+newsletterFooterSuccessBody = We man ajikib'an ta rutz'ib'axik ab'i' pa jun rutzijol ko'öl na'oj pa ruwi' ri Mozilla rik'in jub'a' k'o chi nab'än. Tab'ana' utzil tanik'oj ri ataqob'al o ri ruchayub'al itzel taq taqoya'l richin jun rutzijol jun taqoya'l.
 
 
 // A warning shown to users when the experiment is not available in their language
@@ -228,6 +244,7 @@ shareEmail = Taqoya'l
 // Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
+noScriptLink = Tawila' achike ruma
 
 
 // Text of a button to toggle visibility of a list of past experiments.
