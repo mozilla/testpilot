@@ -173,19 +173,39 @@ measurements = Awichinanem
 experimentPrivacyNotice = Yatikïr nawetamaj ch'aqa' chik chi kij ri taq tzij yemol ruma { $title } wawe'.
 contributorsHeading = Wachib'en chi awichin ruma
 contributorsExtraLearnMore = Tetamäx ch'aqa' chik
+changelog = Kicholajem jaloj
 tour = K'astajinem
+tourLink = Kemil Tz'etoj
+contribute = Kato'on
+bugReports = Kitzijol Sachoj
+discussExperiment = Titzijöx rij ri { $title }
+tourOnboardingTitle = ¡{ $title } tzijon!
 tourDoneButton = Xk'is
+userCountContainer = ¡K'o <span>{ $installation_count }</span> winaqi' tajin nikitojtob'ej { $title } wakami!
+userCountContainerAlt = ¡K'a nimakol tichap qa!
 highlightPrivacy = Awichinanem
+experimentGradReportPendingTitle = Xk'is re solna'oj re'
+experimentGradReportPendingCopy = Tajin niqasamajij jun tz'aqät rutzijol. K'a xkatzolin pe richin ye'atz'ët ri taq rub'anikil.
+experimentGoToLink = Tib'an b'enam pa { $title }
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 
+experimentPlatformWebAddonMobile = Firefox / ajk'amaya'l / ajoyonib'äl solna'oj
+experimentPlatformWebAddon = Firefox /ajk'amaya'l solna'oj
+experimentPlatformWebMobile = Ajk'amaya'l / ajoyonib'äl solna'oj
+experimentPlatformAddonMobile = Firefox / ajoyonib'äl solna'oj
+experimentPlatformWeb = Ajk'amaya'l solna'oj
+experimentPlatformAddon = Firefox solna'oj
+experimentPlatformMobileApp = ajoyonib'äl solna'oj
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
+upgradeNoticeTitle = { $title } nrajo' Firefox { $min_release } o jotöl.
+upgradeNoticeLink = Achike rub'eyal nik'ex Firefox.
 
 
 // Shown while uninstalling Test Pilot.
