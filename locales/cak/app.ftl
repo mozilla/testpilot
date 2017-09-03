@@ -295,14 +295,25 @@ experimentsListNoneInstalledCTA = ¿La man ütz ta natz'ët? <a>Tab'ij chi qe ar
 [[ noscript ]]
 
 noScriptHeading = Ow, ow...
+noScriptMessage = Ri Test Pilot nrajo' JavaScript.<br>Kojakuyu'.
 noScriptLink = Tawila' achike ruma
 
 
 // Text of a button to toggle visibility of a list of past experiments.
 [[ pastExperiments ]]
 
+viewPastExperiments = Ketz'et Ojer taq Solna'oj
+hidePastExperiments = Ke'ewäx Ojer taq Solna'oj
 
 
 // Text of warnings to the user if various error conditions are detected
 [[ warnings ]]
 
+warningGenericTitle = ¡K'o ri man ütz ta rub'anon!
+warningGenericDetail = K'o man ütz ta xub'än pa Test Pilot. Tab'ana' utzilr <a>tatz'ib'aj jun sachoj</a> chuqa' tasik'ij re rutzijol sachoj re'.
+warningUpgradeFirefoxTitle = ¡Tak'exa' Firefox richin yasamäj qa!
+warningHttpsRequiredDetail = K'o chi nib'an okem pa Test Pilot rik'in HTTPS. Tab'ana' utzil tatz'eta' <a>qawujil</a> richin ch'aqa' chik rub'anil.
+warningMissingPrefTitle = ¿La tajin nib'an Test Pilot?
+warningMissingPrefDetail = Toq nisamajïx aj wawe' o pa rub'anikil ri Test Pilot, nik'atzin jun jeb'ël runuk'ulem. Tab'ana' utzil tatz'eta' <a>qawujil</a> richin ch'aqa' chik rub'anikil.
+warningBadHostnameTitle = ¡Man ya'on ta q'ij chi re ri rub'i' ruk'u'x samaj!
+warningBadHostnameDetail = Ri ruxaq ruk'amaya'l Test Pilot tikirel nib'an okem chupam pa testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, or example.com:8000. Tab'ana' utzil tatz'eta' <a>qawujil</a> richin ch'aqa' chik rub'anikil.
