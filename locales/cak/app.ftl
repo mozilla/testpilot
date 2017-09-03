@@ -206,24 +206,42 @@ experimentPlatformMobileApp = ajoyonib'äl solna'oj
 
 upgradeNoticeTitle = { $title } nrajo' Firefox { $min_release } o jotöl.
 upgradeNoticeLink = Achike rub'eyal nik'ex Firefox.
+versionChangeNotice = Man nuk'ül ta ri { $experiment_title } pa re ruwäch Firefox re'.
+versionChangeNoticeLink = Tak'ulu' ri ruwäch Firefox k'o wakami.
 
 
 // Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
+retireDialogTitle = ¿La nelesäx el ri Test Pilot?
+retireMessage = Achi'el nawajo'. Re re' xkeruchüp ri tzijïl taq tojtob'enïk, xtrelesaj el ri chokoy chuqa' xkeyuj el ri taq awetamab'al pan ataqoya'l pa ri kik'u'x qasamaj.
+retireEmailMessage = Richin yek'ul taq k'exoj pa taqoya'l, tapitz'a' pa ruwi' ri ximonel <em>unsubscribe</em> pa xab'achike rutaqoya'l Test Pilot.
+retireSubmitButton = Tisamajïx
+pageTitleRetirePage = Firefox Test Pilot - Telesäx Test Pilot
+retirePageProgressMessage = Tajin nuchüp...
+retirePageHeadline = ¡Matyox ruma yaxik'an!
+retirePageMessage = Niqoyob'ej chi xqa chawäch xasolna'ojin qik'in. <br> Katzolin pe toq nawajo'.
 retirePageSurveyButton = Tanojisaj jun aninäq molna'oj
 
 
 // Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = Runik'oxik chuwäch nixik'an el
+restartIntroOne = Tatikirisaj chik ri awokik'amaya'l
+restartIntroTwo = Tawila' ruchokoy ri Test Pilot
+restartIntroThree = Ke'acha' ri taq asolna'oj
 
 
 // Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
+sharePrimary = ¿La niqa chawäch ri Test Pilot? Kojato' richin yeqajïk' ruqawinaq.
+shareSecondary = o tiwachib'ëx chuqa' titz'ajb'äx re ximonel re'...
 shareEmail = Taqoya'l
 shareCopy = Tiwachib'ëx
+// Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } tajin nuk'ïs ri { $completedDate }
 eolNoticeLink = Tetamäx ch'aqa' chik
 
 
