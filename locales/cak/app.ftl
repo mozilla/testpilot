@@ -243,11 +243,15 @@ shareCopy = Tiwachib'ëx
 // Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } tajin nuk'ïs ri { $completedDate }
 eolNoticeLink = Tetamäx ch'aqa' chik
+eolDisableMessage = Ri { $title } solna'oj xk'is. We xtelesäx el man xkatikïr ta chik xtayäk rik'in ri Test Pilot.
+completedDateLabel = Ruq'ijul Xtik'is: <b>{ $completedDate }</b>
 
 
 // A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 [[ incompatible ]]
 
+incompatibleHeader = Rik'in jub'a' re solna'oj re' man nuk'äm ta ri' kik'in ch'aqa' chik taq chokoy e'ayakon.
+incompatibleSubheader = Niqachilab'ej chawe chi <a>ke'achupu' re taq chokoy re'</a> chuwäch natzïj ri solna'oj:
 
 
 // A form prompting the user to sign up for the Test Pilot Newsletter.
@@ -256,13 +260,16 @@ eolNoticeLink = Tetamäx ch'aqa' chik
 newsletterFormEmailPlaceholder
     .placeholder = Ataqoya'l wawe'
 newsletterFormDisclaimer = Xa xe xtiqatäq el chawe taq etamab'äl chi rij Test Pilot.
+newsletterFormPrivacyNotice = Ütz nintz'ët chi yerusamajij ri wetamab'al ri Mozilla achi'el niq'alajisäx pa <a>re rutzijol ichinanem re'</a>.
 newsletterFormPrivacyAgreementRequired = Taya' retal re k'ojlemal re' we k'a nawajo' natikirisaj chik el.
 newsletterFormSubmitButton = Tatz'ib'aj Awi' Wakami
+newsletterFormSubmitButtonSubmitting = Tajin nitaq...
 
 
 // A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = Xk'ulwachitäj jun sachoj toq tajin nitaq ri ataqoya'l. ¿La niqatojtob'ej chik?
 newsletterFooterHeader = Tawetamaj
 newsletterFooterBody = Ke'awila' ch'aqa' chik taq solna'oj chuqa' tatz'eta' ri xq'i' pa ri taq solna'oj akuchi' xato'on.
 newsletterFooterSuccessHeader = ¡Matyox!
@@ -272,16 +279,22 @@ newsletterFooterSuccessBody = We man ajikib'an ta rutz'ib'axik ab'i' pa jun rutz
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeUnavailableWarningTitle = Man k'o ta re solna'oj re' pan ach'ab'äl ({ $locale_code }).
+localeWarningSubtitle = We nawajo' k'a yatikïr na natzïj.
 
 
 // An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledHeader = ¡Tiqajotob'a' re xik'ach'ich re'!
+experimentsListNoneInstalledSubheader = ¿La ütz chik richin natojtob'ej jun chik rusolna'oj Test Pilot? Tacha' jun richin natzïj, natojtob'ej chuqa' naya' pe ana'oj chi qe.
+experimentsListNoneInstalledCTA = ¿La man ütz ta natz'ët? <a>Tab'ij chi qe aruma</a>.
 
 
 // Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
+noScriptHeading = Ow, ow...
 noScriptLink = Tawila' achike ruma
 
 
