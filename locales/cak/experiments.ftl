@@ -1,4 +1,7 @@
 activitystreamDescription = Jun jeb'ël rutz'etik rucholajem nojinäq chi etamab'äl chuqa' jun rutikirib'al ruxaq ri wachib'en richin man k'ayew ta nawïl ri tajin nakanoj pa Firefox.
+activitystreamIntroduction = <p>Katok chi pa k'amaya'l akuchi' man nasäch ta rub'ey ana'ojib'al. Activity Stream nuya' apo pan aq'a' ri nimaläj taq ruxaq ak'amaya'l, k'ak'a' taq yaketal chuqa' natab'äl pa jujun k'ak'a' ruwi'. Chuqa' ri k'ak'a' rutz'etik rucholajem nuk'üt chawäch ronojel ri awokem pa k'amaya'l.</p>
+activitystreamMeasurements0 = Yeqamöl ruxe'el etamab'äl chi rij ri nab'än rik'in ri k'ak'a' solna'oj ruwi' chuqa' ri kixaq taq cholajem, achi'el ri taq ch'akulaj e'apitz'on chuqa' ri ruk'ojlem pa ri ruxaq.
+activitystreamMeasurements1 = Chuqa' niqamöl ri awetamab'al chi rij ri ruwäch ab'i' pa ri okik'amaya'l nawokisaj rik'in Activity Stream, achi'el ri kajlab'al taq yaketal chuqa' kich'akulal ri natab'äl.
 containersContributors4Title = Firefox QA
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
