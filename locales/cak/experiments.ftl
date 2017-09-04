@@ -21,6 +21,7 @@ activitystreamContributors9Title = Ruk'amöl B'ey Tikojil
 activitystreamContributors10Title = Ruk'amöl B'ey Nojk'ay
 activitystreamContributors11Title = Ajkema' Nojk'ayel
 activitystreamContributors12Title = Nab'ey UX Wachib'enel
+activitystreamEolwarning = Tajin nik'is re solna'oj re', we ayakon ri Activity Stream xtitaq xtiqak'ëx pa ruyonilpa Firefox kan k'o wi re tz'apijäb' re'. We ayakon ri Activity Stream solna'oj, qayon chi qawa xtiqak'ëx.
 containersContributors4Title = Firefox QA
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
