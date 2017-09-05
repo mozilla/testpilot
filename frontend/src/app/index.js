@@ -1,7 +1,4 @@
 import 'babel-polyfill/browser';
-import 'l20n';
-import es6Promise from 'es6-promise';
-import 'isomorphic-fetch';
 import Raven from 'raven-js';
 import moment from 'moment';
 
@@ -18,7 +15,6 @@ import onboarding from '../pages/onboarding.js';
 import retire from '../pages/retire.js';
 import share from '../pages/share.js';
 
-es6Promise.polyfill();
 Raven.config(config.ravenPublicDSN).install();
 moment.locale(window.navigator.language);
 
