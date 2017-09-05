@@ -65,6 +65,7 @@ minvidMeasurements2 = Man niqamöl ta etamab'äl chi kij ri taq silowachib'äl r
 minvidDetails0Copy = Katok pa Min Vid rik'in ruq'ajab'äl YouTube, Vimeo chuqa' SoundCloud.
 minvidDetails1Copy = Titz'et silowäch chuwäch toq nib'an ch'aqa' chik taq wachinäq pa Ajk'amaya'l.
 minvidDetails2CopyChangevideotomedia = Tapitz'a' rajkiq'a' ch'oy chi rij ri ruximonel k'ïy k'oxom richin yatok pa ri taq rusamajel rokem Min Vid. 
+minvidDetails3Copy = Ke'acholajij taq tzijonem pa YouTube. Tatz'uku' acholaj rik'in napïtz ri ruwachaj '+' o nacha' ri 'titz'aqatisäx pa cholaj' pa ri ruk'utsamaj rokem.
 notesContributors5Title = Firefox QA
 pageshotDescription = Na'onel chapoj wachib'äl chapon pa ri okik'amaya'l. Nachap, nayak chuqa' nakomonij ri chapoj ruwäch toq atokinäq pa k'amaya'l rik'in  Ajk'amaya'l richin Firefox.
 pulseContributors1Title = Firefox UX
