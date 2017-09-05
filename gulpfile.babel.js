@@ -56,20 +56,21 @@ gulp.task('default', done => runSequence(
   'self-lint',
   'clean',
   'build',
-  'watch',
   'server',
+  'watch',
   done
 ));
 
 // Exit if the gulpfile changes so we can self-reload with a wrapper script.
 gulp.task('self-watch', () => gulp.watch([
   './gulpfile.babel.js',
+  './webpack.config.js',
   './frontend/config.js',
   './debug-config.json',
   './frontend/tasks/*.js'
 ], () => process.exit()));
 
-gulp.task('self-lint', () => gulp.src('gulpfile.babel.js')
+gulp.task('self-lint', () => gulp.src(['gulpfile.babel.js', 'webpack.config.js'])
   .pipe(eslint())
   .pipe(eslint.format())
   .pipe(eslint.failOnError()));
