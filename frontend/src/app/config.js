@@ -34,11 +34,7 @@ const hostConfig = {
   'testpilot.stage.mozaws.net': {
     isDev: false,
     ravenPublicDSN:
-      'https://5aa2b40919a64763b32e1bca6e40b322@sentry.prod.mozaws.net/171',
-    addonPath: '/files/@testpilot-addon/latest'
-  },
-  'testpilot.dev.mozaws.net': {
-    addonPath: '/files/@testpilot-addon/latest'
+      'https://5aa2b40919a64763b32e1bca6e40b322@sentry.prod.mozaws.net/171'
   }
 };
 
