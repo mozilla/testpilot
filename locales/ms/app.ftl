@@ -17,6 +17,7 @@ footerLinkCookies = Kuki
 footerLinkPrivacy = Privasi
 footerLinkTerms = Terma
 footerLinkLegal = Perundangan
+footerLinkFeedback = Beri maklum balas
 footerLinkAbout = Perihal Ujian Perintis
 
 
@@ -29,6 +30,7 @@ menuWiki = Test Pilot Wiki
 menuDiscuss = Bincangkan Ujian Perintis
 menuFileIssue = Failkan Isu
 menuRetire = Nyahpasang Ujian Perintis
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = Oh tidak!
 [[ updateList ]]
 
 latestUpdatesTitle = Kemaskini terkini
+showMoreNewsTitle = Papar Berita Lama
 
 
 // A listing of all Test Pilot experiments.
@@ -159,7 +162,6 @@ experimentPromoSubheader = Kami membina ciri generasi-akan-datang untuk Firefox.
 
 isEnabledStatusMessage = { $title } didayakan.
 installErrorMessage = Uh oh. { $title } tidak boleh didayakan. Cuba lagi nanti.
-participantCount = <span>{ $installation_count }</span> peserta
 otherExperiments = Cubalah juga eksperimen berikut
 giveFeedback = Beri maklum balas
 disableHeader = Nyahdayakan Eksperimen?
@@ -181,12 +183,12 @@ bugReports = Laporan Pepijat
 discussExperiment = Perbincangan { $title }
 tourOnboardingTitle = { $title } didayakan!
 tourDoneButton = Selesai!
-userCountContainer = Ada <span>{ $installation_count }</span> pengguna sedang mencuba { $title } pada masa ini!
 userCountContainerAlt = baru sahaja dilancarkan!
 highlightPrivacy = Privasi anda
 experimentGradReportPendingTitle = Eksperimen ini sudah tamat
 experimentGradReportPendingCopy = Kami sedang meyediakan laporan penuh. Semak semula untuk dapatkan butirannya.
 experimentGoToLink = Pergi ke { $title }
+startedDateLabel = Tarikh Mula Eksperimen: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
