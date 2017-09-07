@@ -209,6 +209,7 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
 
     <title>{ meta_title }</title>
 
+    <meta property="og:type" content="website" />
     <meta property="og:title" content={ meta_title } />
     <meta name="twitter:title" content={ meta_title } />
     <meta name="description" content={ meta_description } />
@@ -217,7 +218,7 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
     <meta name="twitter:card" content="summary" />
     <meta property="og:image" content={ image_facebook } />
     <meta name="twitter:image" content={ image_twitter } />
-    <meta property="og:url" content="https://testpilot.firefox.com" />
+    <meta property="og:url" content={ `https://testpilot.firefox.com/${canonical_path}` } />
   </head>;
 
   const bodyComponent = <div id="static-root">
@@ -239,7 +240,6 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
         </div>
       </div>
     </noscript>
-    { prepareForClient ? <Loading /> : null }
     { prepareForClient ? <script src="/static/app/vendor.js"></script> : null }
   </div>;
 

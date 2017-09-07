@@ -20,6 +20,9 @@ export default class Footer extends React.Component {
             <Localized id="footerLinkLegal">
               <a href="https://www.mozilla.org/about/legal/" className="boilerplate">Legal</a>
             </Localized>
+            <Localized id="footerLinkFeedback">
+              <a href="https://qsurvey.mozilla.com/s3/test-pilot-general-feedback" className="boilerplate">Give Feedback</a>
+            </Localized>
             <Localized id="footerLinkAbout">
               <a href="/about" className="boilerplate">About Test Pilot</a>
             </Localized>

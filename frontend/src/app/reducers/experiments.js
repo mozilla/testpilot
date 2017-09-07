@@ -6,7 +6,6 @@ export type Experiment = {
   slug: string,
   xpi_url: string,
   inProgress: boolean,
-  installation_count: number
 };
 
 export type ExperimentsState = {
@@ -18,15 +17,6 @@ function defaultState(): ExperimentsState {
     data: []
   };
 }
-
-type UserCounts = {
-  [name: string]: number
-};
-
-export type FetchUserCountsAction = {
-  type: "FETCH_USER_COUNTS",
-  payload: UserCounts
-};
 
 export type UpdateExperimentAction = {
   type: "UPDATE_EXPERIMENT",
@@ -41,28 +31,8 @@ export type SetSlugAction = {
   payload: string
 };
 
-type ExperimentsActions = FetchUserCountsAction | UpdateExperimentAction | SetSlugAction;
+type ExperimentsActions = UpdateExperimentAction | SetSlugAction;
 
-function fetchUserCounts(
-  state: ExperimentsState,
-  { payload: newNumbers }: FetchUserCountsAction
-): ExperimentsState {
-  const newExperiments = [];
-  for (const exp: Experiment of state.data) {
-    if (newNumbers[exp.addon_id]) {
-      newExperiments.push({
-        ...exp,
-        installation_count: newNumbers[exp.addon_id]
-      });
-    } else {
-      newExperiments.push(exp);
-    }
-  }
-  return {
-    ...state,
-    data: newExperiments
-  };
-}
 
 function updateExperiment(
   state: ExperimentsState,
@@ -125,8 +95,6 @@ export default function experimentsReducer(
   switch (action.type) {
     case 'SET_SLUG':
       return setSlug(state, action);
-    case 'FETCH_USER_COUNTS':
-      return fetchUserCounts(state, action);
     case 'UPDATE_EXPERIMENT':
       return updateExperiment(state, action);
     default:

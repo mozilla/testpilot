@@ -11,8 +11,8 @@ introduction: >
   <p>This one is simple. If you hit a 404 page while browsing the web, we will
     let you know if the content you're looking for is archived on the Internet
     Archive's Wayback Machine.</p>
-image_twitter: /static/images/experiments/no-more-404s/experiments_experiment/a/9/a9e6dc66c6a22851721715ae4d0641fb_image_1472573814_0582.png
-image_facebook: /static/images/experiments/no-more-404s/experiments_experiment/a/9/a9e6dc66c6a22851721715ae4d0641fb_image_1472573814_0278.png
+image_twitter: /static/images/experiments/no-more-404s/social/a9e6dc66c6a22851721715ae4d0641fb_image_1472573814_0582.png
+image_facebook: /static/images/experiments/no-more-404s/social/a9e6dc66c6a22851721715ae4d0641fb_image_1472573814_0278.png
 changelog_url: 'https://github.com/internetarchive/FirefoxNoMore404s/blob/master/Changelog.md'
 contribute_url: 'https://github.com/internetarchive/FirefoxNoMore404s'
 bug_report_url: 'https://github.com/internetarchive/FirefoxNoMore404s/issues/new'
@@ -77,7 +77,6 @@ contributors:
     display_name: 'Adam Miller'
     title: 'Senior Crawl Engineer, The Internet Archive'
     avatar: /static/images/experiments/no-more-404s/avatars/adam-miller.jpg
-installation_count: 20377
 created: '2016-08-03T17:25:54.612365Z'
 completed: '2017-02-15T20:00:00.000000Z'
 eol_warning: The No More 404s experiment will not be removed from your browser and the results will be reported here when it ends. Future updates will be available on addons.mozilla.org.

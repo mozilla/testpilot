@@ -81,6 +81,7 @@ export default class LocalizedHtml extends Localized {
         templates[templates.insertIndex] = child;
         return '<span>///</span>';
       });
+
       if (mapped === null) {
         joined = '';
       } else {

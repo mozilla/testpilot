@@ -13,6 +13,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Privacy
 footerLinkTerms = Terms
 footerLinkLegal = Legal
+footerLinkFeedback = Give Feedback
 footerLinkAbout = About Test Pilot
 
 // Items in the menu.
@@ -23,6 +24,7 @@ menuWiki = Test Pilot Wiki
 menuDiscuss = Discuss Test Pilot
 menuFileIssue = File an Issue
 menuRetire = Uninstall Test Pilot
+headerLinkBlog = Blog
 
 // The splash on the homepage.
 [[landing]]
@@ -81,6 +83,7 @@ emailOptInDialogErrorTitle = Oh no!
 // news feed updates.
 [[updateList]]
 latestUpdatesTitle = Latest updates
+showMoreNewsTitle = Show Past News
 
 // A listing of all Test Pilot experiments.
 [[experimentsList]]
@@ -123,7 +126,6 @@ experimentPromoSubheader = We're building next-generation features for Firefox. 
 [[experimentPage]]
 isEnabledStatusMessage = {$title} is enabled.
 installErrorMessage = Uh oh. {$title} could not be enabled. Try again later.
-participantCount = <span>{$installation_count}</span> participants
 otherExperiments = Try out these experiments as well
 giveFeedback = Give Feedback
 disableHeader = Disable Experiment?
@@ -145,12 +147,12 @@ bugReports = Bug Reports
 discussExperiment = Discuss { $title }
 tourOnboardingTitle = {$title} enabled!
 tourDoneButton = Done
-userCountContainer = There are <span>{$installation_count}</span> people trying {$title} right now!
 userCountContainerAlt = Just launched!
 highlightPrivacy = Your privacy
 experimentGradReportPendingTitle = This experiment has ended
 experimentGradReportPendingCopy = We are working on a full report. Check back soon for the details.
 experimentGoToLink = Go to { $title }
+startedDateLabel = Experiment Start Date: <b>{$startedDate}</b>
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[experimentPlatform]]

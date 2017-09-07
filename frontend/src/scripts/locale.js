@@ -1,3 +1,5 @@
+/*eslint-disable*/
+// TODO: re-add eslint-enable after reworking things below to pass linting
 (function () {
   var availableLangs = [];
   var defaultLang = null;

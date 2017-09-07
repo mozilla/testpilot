@@ -78,7 +78,7 @@ contributors:
   -
     display_name: 'Bryan Bell'
     title: 'Senior UX Designer'
-    avatar: /static/images/experiments/universal-search/avatars/bryan-bell.jpg
+    avatar: /static/images/experiments/universal-search/avatars/bryan-bell.png
   -
     display_name: 'Jared Hirsch'
     title: 'Staff Engineer'
@@ -87,7 +87,6 @@ contributors:
     display_name: 'Chuck Harmston'
     title: 'Senior Engineer'
     avatar: /static/images/experiments/universal-search/avatars/chuck-harmston.jpg
-installation_count: 39943
 created: '2016-04-28T03:57:32.270681Z'
 completed: '2016-11-30T16:00:00.000000Z'
 eol_warning: We will automatically disable the Universal Search experiment and report the results when it ends.

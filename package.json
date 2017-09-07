@@ -42,18 +42,18 @@
     "tos-pp": "https://github.com/mozilla/legal-docs.git"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.2.0",
     "@storybook/addon-knobs": "^3.1.5",
     "@storybook/react": "^3.1.5",
     "babel-core": "6.24.0",
     "babel-eslint": "7.1.1",
+    "babel-loader": "^7.1.2",
     "babel-plugin-istanbul": "4.0.0",
     "babel-plugin-transform-flow-strip-types": "6.14.0",
     "babel-preset-es2015": "6.24.0",
     "babel-preset-react": "6.23.0",
     "babel-preset-stage-0": "6.22.0",
     "babel-register": "6.24.0",
-    "babelify": "7.3.0",
-    "browserify": "14.1.0",
     "chai": "4.0.2",
     "cross-env": "5.0.0",
     "cross-spawn": "^5.1.0",
@@ -100,8 +100,10 @@
     "sass-lint": "1.10.2",
     "sinon": "2.0.0",
     "through2": "2.0.3",
-    "vinyl-buffer": "1.0.0",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "vinyl-source-stream": "1.1.0",
+    "webpack": "^3.5.5",
+    "webpack-stream": "^4.0.0",
     "yamljs": "0.2.8"
   },
   "directories": {

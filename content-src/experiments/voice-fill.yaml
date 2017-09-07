@@ -2,6 +2,7 @@ id: 14
 title: 'Voice Fill'
 slug: voice-fill
 platforms: ['addon']
+min_release: 54
 thumbnail: /static/images/experiments/voice-fill/experiments_experiment/thumbnail.png
 description: >
   Speech recognition comes to Firefox. Voice Fill lets you speak to your favorite search engines.
@@ -89,7 +90,6 @@ contributors:
     display_name: 'Faramarz Rashed'
     title: 'Advanced Development, Emerging Technologies'
     avatar: /static/images/experiments/avatars/faramarz-r.jpg
-installation_count: 1
 created: '2017-08-01T14:00:00Z'
 launch_date: '2017-08-01T14:00:00Z'
 order: 0

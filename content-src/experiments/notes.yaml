@@ -2,6 +2,7 @@ id: 15
 title: 'Notes'
 slug: notes
 platforms: ['addon']
+min_release: 54
 thumbnail: /static/images/experiments/notes/experiments_experiment/thumbnail.png
 description: >
   A simple notepad built into Firefox. Ever need to jot
@@ -75,7 +76,6 @@ contributors:
     display_name: 'Emil Pasca'
     title: 'Softvision QA'
     avatar: /static/images/experiments/avatars/emil.jpg
-installation_count: 1
 created: '2017-08-01T14:00:00Z'
 launch_date: '2017-08-01T14:00:00Z'
 order: 1
