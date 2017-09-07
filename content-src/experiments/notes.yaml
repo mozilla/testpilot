@@ -2,6 +2,7 @@ id: 15
 title: 'Notes'
 slug: notes
 platforms: ['addon']
+min_release: 54
 thumbnail: /static/images/experiments/notes/experiments_experiment/thumbnail.png
 description: >
   A simple notepad built into Firefox. Ever need to jot
