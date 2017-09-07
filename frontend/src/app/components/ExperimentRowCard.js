@@ -19,6 +19,8 @@ type ExperimentRowCardProps = {
   experiment: Object,
   hasAddon: any,
   enabled: Boolean,
+  isFirefox: Boolean,
+  isMinFirefox: Boolean,
   installed: InstalledExperiments,
   clientUUID: ?string,
   eventCategory: string,
@@ -36,7 +38,8 @@ export default class ExperimentRowCard extends React.Component {
   }
 
   render() {
-    const { hasAddon, experiment, enabled, isAfterCompletedDate } = this.props;
+    const { hasAddon, experiment, enabled, isAfterCompletedDate,
+      isFirefox, isMinFirefox } = this.props;
 
     const { description, title, subtitle, slug } = experiment;
     const isCompleted = isAfterCompletedDate(experiment);
@@ -79,7 +82,7 @@ export default class ExperimentRowCard extends React.Component {
         <Localized id={this.l10nId('description')}>
           <p>{description}</p>
         </Localized>
-        { this.renderManageButton(enabled, hasAddon, isCompleted) }
+        { this.renderManageButton(enabled, hasAddon, isCompleted, isFirefox, isMinFirefox) }
       </div>
     </a>
     );
@@ -113,7 +116,8 @@ export default class ExperimentRowCard extends React.Component {
     });
   }
 
-  renderManageButton(enabled: Boolean, hasAddon: Boolean, isCompleted: Boolean) {
+  renderManageButton(enabled: Boolean, hasAddon: Boolean, isCompleted: Boolean,
+                     isFirefox: Boolean, isMinFirefox: Boolean) {
     if (enabled && hasAddon) {
       return (
         <Localized id="experimentCardManage">
@@ -121,6 +125,12 @@ export default class ExperimentRowCard extends React.Component {
         </Localized>
       );
     } else if (isCompleted) {
+      return (
+        <Localized id="experimentCardLearnMore">
+          <div className="button card-control secondary">Learn More</div>
+        </Localized>
+      );
+    } else if (!isFirefox || !isMinFirefox) {
       return (
         <Localized id="experimentCardLearnMore">
           <div className="button card-control secondary">Learn More</div>

@@ -27,6 +27,8 @@ describe('app/components/ExperimentRowCard', () => {
       experiment: mockExperiment,
       hasAddon: false,
       enabled: false,
+      isFirefox: true,
+      isMinFirefox: true,
       eventCategory: 'test category',
       navigateTo: sinon.spy(),
       sendToGA: sinon.spy(),
@@ -177,6 +179,16 @@ describe('app/components/ExperimentRowCard', () => {
     });
     expect(findLocalizedById(subject, 'experimentCardLearnMore')).to.have.property('length', 1);
     expect(findLocalizedById(subject, 'participantCount')).to.have.property('length', 0);
+  });
+
+  it('should have a "Learn More" button if the browser is not supported Firefox', () => {
+    expect(findLocalizedById(subject, 'experimentCardLearnMore')).to.have.property('length', 0);
+    subject.setProps({
+      experiment: { ...mockExperiment },
+      isFirefox: false,
+      isMinFirefox: false
+    });
+    expect(findLocalizedById(subject, 'experimentCardLearnMore')).to.have.property('length', 1);
   });
 
   it('should have a "Manage" button if the experiment is enabled and has an addon', () => {
