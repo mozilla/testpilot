@@ -17,6 +17,7 @@ footerLinkCookies = Cookie
 footerLinkPrivacy = プライバシー
 footerLinkTerms = 利用規約
 footerLinkLegal = 法的通知
+footerLinkFeedback = フィードバックを送る
 footerLinkAbout = Test Pilot について
 
 
@@ -29,6 +30,7 @@ menuWiki = Test Pilot Wiki
 menuDiscuss = Test Pilot について議論する
 menuFileIssue = 問題を報告
 menuRetire = Test Pilot を削除
+headerLinkBlog = ブログ
 
 
 // The splash on the homepage.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = おっと！
 [[ updateList ]]
 
 latestUpdatesTitle = 最新情報
+showMoreNewsTitle = 過去のニュースを表示
 
 
 // A listing of all Test Pilot experiments.
@@ -159,7 +162,6 @@ experimentPromoSubheader = 私たちは Firefox の次世代機能を開発中�
 
 isEnabledStatusMessage = { $title } が有効化されました。
 installErrorMessage = { $title } を有効化できませんでした。また後で試してください。
-participantCount = <span>{ $installation_count }</span> 人の参加者
 otherExperiments = これらの実験的機能も試してください
 giveFeedback = フィードバックを送る
 disableHeader = 実験を無効化しますか？
@@ -181,12 +183,12 @@ bugReports = バグ報告
 discussExperiment = { $title } について議論する
 tourOnboardingTitle = { $title } が有効化されました！
 tourDoneButton = 完了
-userCountContainer = 現在 <span>{ $installation_count }</span> 人が { $title } を試しています！
 userCountContainerAlt = 最近公開！
 highlightPrivacy = プライバシー
 experimentGradReportPendingTitle = この実験は終了しました
 experimentGradReportPendingCopy = 現在詳細なレポートを作成中です。また後で見に来てください。
 experimentGoToLink = { $title } へ
+startedDateLabel = 実験開始日: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
