@@ -17,6 +17,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = 隱私權
 footerLinkTerms = 使用條款
 footerLinkLegal = 法律
+footerLinkFeedback = 提供意見回饋
 footerLinkAbout = 關於 Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Test Pilot Wiki
 menuDiscuss = 討論 Test Pilot
 menuFileIssue = 回報問題
 menuRetire = 移除 Test Pilot
+headerLinkBlog = 部落格
 
 
 // The splash on the homepage.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = 糟糕！
 [[ updateList ]]
 
 latestUpdatesTitle = 最新消息
+showMoreNewsTitle = 顯示過去新聞
 
 
 // A listing of all Test Pilot experiments.
@@ -156,7 +159,6 @@ experimentPromoSubheader = 我們正在開發 Firefox 的下一代新功能，�
 
 isEnabledStatusMessage = 已開啟 { $title }。
 installErrorMessage = 唉呀，無法開啟 { $title }。請稍候再試試看。
-participantCount = <span>{ $installation_count }</span> 位參與者
 otherExperiments = 也試試這些實驗
 giveFeedback = 提供意見回饋
 disableHeader = 要關閉實驗嗎？
@@ -178,12 +180,12 @@ bugReports = 錯誤回報
 discussExperiment = 討論 { $title }
 tourOnboardingTitle = 已開啟 { $title }！
 tourDoneButton = 完成
-userCountContainer = 已經有 <span>{ $installation_count }</span> 個人正在試用 { $title }！
 userCountContainerAlt = 剛推出！
 highlightPrivacy = 您的隱私權
 experimentGradReportPendingTitle = 此實驗已經結束
 experimentGradReportPendingCopy = 我們正在撰寫實驗報告，請稍後再回來瞭解報告詳情。
 experimentGoToLink = 前往 { $title }
+startedDateLabel = 實驗開始日期: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
