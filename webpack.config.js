@@ -39,6 +39,11 @@ const plugins = [
     'process.env.ENABLE_DEV_LOCALES': process.env.ENABLE_DEV_LOCALE || 0,
     'process.env.ENABLE_DEV_CONTENT': process.env.ENABLE_DEV_CONTENT || 0
   }),
+  // Include only moment locale modules that match AVAILABLE_LOCALES
+  new webpack.ContextReplacementPlugin(
+    /moment[\/\\]locale$/, // eslint-disable-line no-useless-escape
+    new RegExp(config.AVAILABLE_LOCALES.replace(/,/g, '|'))
+  ),
   new webpack.optimize.CommonsChunkPlugin('static/app/vendor.js'),
   new UglifyJSPlugin({
     parallel: true,
