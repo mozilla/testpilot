@@ -62,6 +62,9 @@ module.exports = {
     path: path.resolve(__dirname, 'frontend/build'),
     filename: '[name]'
   },
+  node: {
+    crypto: false
+  },
   devServer: {
     contentBase: 'dist'
   },
