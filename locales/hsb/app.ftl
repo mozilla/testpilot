@@ -17,6 +17,7 @@ footerLinkCookies = Placki
 footerLinkPrivacy = Priwatnosć
 footerLinkTerms = Wužiwarske wuměnjenja
 footerLinkLegal = Prawniske
+footerLinkFeedback = Komentar pósłać
 footerLinkAbout = Wo Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Wiki Test Pilot
 menuDiscuss = Wo Test Pilot diskutować
 menuFileIssue = Problem zdźělić
 menuRetire = Test Pilot wotinstalować
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = Ow ně!
 [[ updateList ]]
 
 latestUpdatesTitle = Najnowše aktualizacije
+showMoreNewsTitle = Zańdźene nowinki pokazać
 
 
 // A listing of all Test Pilot experiments.
@@ -156,7 +159,6 @@ experimentPromoSubheader = Wuwiwamy funkcije přichodneje generacije za Firefox.
 
 isEnabledStatusMessage = { $title } je zmóžnjeny.
 installErrorMessage = Ow, ow. { $title } njeda so zmóžnić. Spytajće pozdźišo hišće raz.
-participantCount = <span>{ $installation_count }</span> wobdźělnikow
 otherExperiments = Wobhladajće sej tež slědowace eksperimenty
 giveFeedback = Prajće swoje měnjenje
 disableHeader = Eksperiment znjemóžnić?
@@ -178,12 +180,12 @@ bugReports = Rozprawy wo programowych zmylkach
 discussExperiment = Wo { $title } diskutować
 tourOnboardingTitle = { $title } zmóžnjeny!
 tourDoneButton = Hotowo
-userCountContainer = <span>{ $installation_count }</span> wosobow runje { $title } wupruwuje!
 userCountContainerAlt = Runje startowany!
 highlightPrivacy = Waša priwatnosć
 experimentGradReportPendingTitle = Tutón eksperiment je skónčeny
 experimentGradReportPendingCopy = Dźěłamy na wobšěrnej rozprawje. Hladajće bórze za podrobnosćemi.
 experimentGoToLink = K { $title }
+startedDateLabel = Spočatny datum eksperimenta: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
