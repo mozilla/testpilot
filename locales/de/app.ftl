@@ -17,6 +17,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Datenschutz
 footerLinkTerms = Nutzungsbedingungen
 footerLinkLegal = Rechtliches
+footerLinkFeedback = Ihre Meinung sagen
 footerLinkAbout = Über Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Test-Pilot-Wiki
 menuDiscuss = Über Test Pilot diskutieren
 menuFileIssue = Ein Problem melden
 menuRetire = Test Pilot deinstallieren
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = Oh nein!
 [[ updateList ]]
 
 latestUpdatesTitle = Neueste Nachrichten
+showMoreNewsTitle = Nachrichtenarchiv anzeigen
 
 
 // A listing of all Test Pilot experiments.
@@ -156,7 +159,6 @@ experimentPromoSubheader = Wir entwickeln für Firefox die Funktionen der nächs
 
 isEnabledStatusMessage = { $title } ist aktiviert.
 installErrorMessage = Oh, oh. { $title } konnte nicht aktiviert werden. Versuchen Sie es später erneut.
-participantCount = <span>{ $installation_count }</span> Teilnehmer
 otherExperiments = Sehen Sie sich auch die folgenden Experimente an
 giveFeedback = Sagen Sie Ihre Meinung
 disableHeader = Experiment deaktivieren?
@@ -178,12 +180,12 @@ bugReports = Fehlermeldungen
 discussExperiment = Über { $title } diskutieren
 tourOnboardingTitle = { $title } aktiviert!
 tourDoneButton = Fertig
-userCountContainer = <span>{ $installation_count }</span> Personen probieren gerade { $title } aus!
 userCountContainerAlt = Gerade gestartet!
 highlightPrivacy = Ihre Privatsphäre
 experimentGradReportPendingTitle = Dieses Experiment ist abgeschlossen
 experimentGradReportPendingCopy = Wir arbeiten an einem Abschlussbericht. Details finden Sie bald hier.
 experimentGoToLink = Zu { $title } gehen
+startedDateLabel = Experiment läuft seit: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
