@@ -48,8 +48,4 @@
   if (window.location.pathname.split('/').filter(function (s) { return !!s.length }).length < 2) {
     navigateToLocale();
   }
-  else {
-    require('babel-polyfill/browser');
-    require('l20n');
-  }
 }());
