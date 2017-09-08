@@ -17,6 +17,7 @@ footerLinkCookies = Infokapslar
 footerLinkPrivacy = Personvern
 footerLinkTerms = Vilkår
 footerLinkLegal = Juridisk informasjon
+footerLinkFeedback = Gje tilbakemelding
 footerLinkAbout = Om Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Wiki for Test Pilot
 menuDiscuss = Diskuter Test Pilot
 menuFileIssue = Rapporter eit problem
 menuRetire = Avinstaller Test Pilot
+headerLinkBlog = Blogg
 
 
 // The splash on the homepage.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = Å, nei!
 [[ updateList ]]
 
 latestUpdatesTitle = Siste oppdateringar
+showMoreNewsTitle = Vis tidlegare nyheiter
 
 
 // A listing of all Test Pilot experiments.
@@ -159,7 +162,6 @@ experimentPromoSubheader = Vi byggjer neste generasjons funksjonar for Firefox. 
 
 isEnabledStatusMessage = { $title } er slått på.
 installErrorMessage = Hoppsann. { $title } kunne ikkje aktiverast. Prøv igjen seinare.
-participantCount = <span>{ $installation_count }</span> deltakarar
 otherExperiments = Prøv også desse eksperimenta
 giveFeedback = Gje ei tilbakemelding
 disableHeader = Slå av eksperimentet?
@@ -181,12 +183,12 @@ bugReports = Feilrapportar
 discussExperiment = Diskuter { $title }
 tourOnboardingTitle = { $title } er slått på!
 tourDoneButton = Ferdig
-userCountContainer = Det er <span>{ $installation_count }</span> personar som prøver { $title } akkurat no!
 userCountContainerAlt = Nettopp starta!
 highlightPrivacy = Ditt personvern
 experimentGradReportPendingTitle = Dette eksperimentet er avslutta
 experimentGradReportPendingCopy = Vi arbeider med ein fullstendig rapport. Kom tilbake snart for meir info.
 experimentGoToLink = Gå til { $title }
+startedDateLabel = Startdato for eksperimentet: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
