@@ -11,7 +11,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const RUN_ANALYZER = !!process.env.ANALYZER;
 
 const excludeVendorModules = [
-  'babel-polyfill',
+  'regenerator-runtime',
   'fluent',
   'fluent-langneg',
   'fluent-react',
@@ -19,7 +19,7 @@ const excludeVendorModules = [
 ];
 
 const includeVendorModules = [
-  'babel-polyfill/browser',
+  'regenerator-runtime/runtime',
   'fluent/compat',
   'fluent-langneg/compat',
   'fluent-react/compat',
