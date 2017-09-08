@@ -36,11 +36,11 @@
     return defaultLang;
   }
 
-  function navigateToLocale(addPath) {
+  function navigateToLocale() {
     var path = window.location.pathname;
     var lang = bestLang();
     if (lang !== defaultLang) {
-      window.location = addPath ? '/' + addPath : '' + window.location + (path[path.length - 1] === '/' ? '' : '/') + lang;
+      window.location = window.location + (path[path.length - 1] === '/' ? '' : '/') + lang;
     }
   }
 
