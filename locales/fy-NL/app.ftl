@@ -17,6 +17,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Privacy
 footerLinkTerms = Betingsten
 footerLinkLegal = Juridysk
+footerLinkFeedback = Kommentaar jaan
 footerLinkAbout = Oer Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Test-Pilot-Wiki
 menuDiscuss = Oer Test Pilot
 menuFileIssue = In probleem melde
 menuRetire = Test Pilot de-ynstallearje
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = O nee!
 [[ updateList ]]
 
 latestUpdatesTitle = Lêste fernijingen
+showMoreNewsTitle = Ald nijs toane
 
 
 // A listing of all Test Pilot experiments.
@@ -156,7 +159,6 @@ experimentPromoSubheader = Wy ûntwikkelje foar Firefox de funksjes fan de folgj
 
 isEnabledStatusMessage = { $title } is ynskeakele.
 installErrorMessage = Oh, oh. { $title } koe net aktivearre wurden. Probearje it letter nochris.
-participantCount = <span>{ $installation_count }</span> dielnimmers
 otherExperiments = Probearje ek ris dizze eksperiminten
 giveFeedback = Leverje kommentaar
 disableHeader = Eksperimint útskeakelje?
@@ -178,12 +180,12 @@ bugReports = Bugrapporten
 discussExperiment = Oer { $title } diskusjearje
 tourOnboardingTitle = { $title } ynskeakele!
 tourDoneButton = Dien
-userCountContainer = <span>{ $installation_count }</span> minsken brûke op dit stuit { $title }!
 userCountContainerAlt = Krekt start!
 highlightPrivacy = Jo privacy
 experimentGradReportPendingTitle = Dit eksperimint is einige
 experimentGradReportPendingCopy = Wy wurkje oan in folslein rapport. Sjoch ynkoarten nochris foar de details.
 experimentGoToLink = Nei { $title }
+startedDateLabel = Startdatum eksperimint: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
