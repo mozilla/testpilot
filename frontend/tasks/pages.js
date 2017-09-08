@@ -262,6 +262,7 @@ function generateStaticPageFromMarkdown(pageName, pageParam, markdown, params) {
         <div className="legal-links">
           <a href="https://www.mozilla.org" className="mozilla-logo"></a>
           <a href="https://www.mozilla.org/about/legal/" className="boilerplate">Legal</a>
+          <a href="https://qsurvey.mozilla.com/s3/test-pilot-general-feedback" className="boilerplate">Give Feedback</a>
           <a href="/about" className="boilerplate">About Test Pilot</a>
           <a href="/privacy" className="boilerplate">Privacy</a>
           <a href="/terms" className="boilerplate">Terms</a>
