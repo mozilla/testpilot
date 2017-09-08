@@ -17,6 +17,7 @@ footerLinkCookies = Piškotki
 footerLinkPrivacy = Zasebnost
 footerLinkTerms = Pogoji
 footerLinkLegal = Pravne informacije
+footerLinkFeedback = Sporočite povratne informacije
 footerLinkAbout = O programu Test Pilot
 
 
@@ -106,6 +107,7 @@ emailOptInDialogErrorTitle = O, ne!
 [[ updateList ]]
 
 latestUpdatesTitle = Najnovejše posodobitve
+showMoreNewsTitle = Prikaži pretekle novice
 
 
 // A listing of all Test Pilot experiments.
