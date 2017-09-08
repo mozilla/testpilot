@@ -29,6 +29,7 @@ menuWiki = Test Pilot Wiki
 menuDiscuss = Razprava o programu Test Pilot
 menuFileIssue = Prijavite težavo
 menuRetire = Odstrani Test Pilot
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -159,7 +160,6 @@ experimentPromoSubheader = Razvijamo funkcije za novo generacijo Firefoxa. Names
 
 isEnabledStatusMessage = { $title } je omogočen.
 installErrorMessage = Ojej. Poskusa { $title } ni mogoče omogočiti. Poskusite znova pozneje.
-participantCount = <span>{ $installation_count }</span> uporabnikov
 otherExperiments = Preskusite tudi te poskuse
 giveFeedback = Sporočite povratne informacije
 disableHeader = Onemogoči poskus?
@@ -181,12 +181,12 @@ bugReports = Poročila o napakah
 discussExperiment = Pogovor o { $title }
 tourOnboardingTitle = { $title } omogočen!
 tourDoneButton = Končano
-userCountContainer = { $title } v tem trenutku preskuša <span>{ $installation_count }</span> ljudi!
 userCountContainerAlt = Pravkar izdan!
 highlightPrivacy = Vaša zasebnost
 experimentGradReportPendingTitle = Ta poskus se je končal
 experimentGradReportPendingCopy = Pripravljamo popolno poročilo. Podrobnosti bodo kmalu na voljo.
 experimentGoToLink = Pojdi na { $title }
+startedDateLabel = Datum začetka poskusa: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
