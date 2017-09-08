@@ -17,6 +17,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Privacidad
 footerLinkTerms = Términos
 footerLinkLegal = Legales
+footerLinkFeedback = Enviar opinión
 footerLinkAbout = Acerca de Test Pilot
 
 
@@ -159,7 +160,6 @@ experimentPromoSubheader = Estamos creando funciones de última generación para
 
 isEnabledStatusMessage = { $title } está habilitado.
 installErrorMessage = Oh oh. { $title } no se pudo habilitar. Probá de nuevo más tarde.
-participantCount = <span>{ $installation_count }</span> participantes
 otherExperiments = Probá también estos experimentos
 giveFeedback = Opine
 disableHeader = ¿Deshabilitar experimentos?
@@ -181,7 +181,6 @@ bugReports = Informes de fallos
 discussExperiment = Conversá { $title }
 tourOnboardingTitle = ¡{ $title } habilitado!
 tourDoneButton = Hecho
-userCountContainer = ¡Hay <span>{ $installation_count }</span> personas probando { $title } ahora mismo!
 userCountContainerAlt = ¡Recién lanzado!
 highlightPrivacy = Tu privacidad
 experimentGradReportPendingTitle = Terminó este experimento
