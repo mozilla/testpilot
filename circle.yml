@@ -52,16 +52,14 @@ deployment:
       - master
     commands:
       - TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/circleci/do-exclusively.sh --branch master ./bin/deploy.sh dev
-      - aws configure set preview.cloudfront true
-      - aws cloudfront create-invalidation --distribution-id E2ERG47PHCWD0Z --paths '/*'
+      - ./bin/circleci/invalidate-cloudfront-distribution.sh E2ERG47PHCWD0Z
   static_l10n:
     owner: mozilla
     branch:
       - l10n
     commands:
       - TESTPILOT_BUCKET=testpilot-l10n.dev.mozaws.net ./bin/deploy.sh dev
-      - aws configure set preview.cloudfront true
-      - aws cloudfront create-invalidation --distribution-id ELL21V1NJAJJ8 --paths '/*'
+      - ./bin/circleci/invalidate-cloudfront-distribution.sh ELL21V1NJAJJ8
 
 # Only notify of builds on master branch.
 experimental:
