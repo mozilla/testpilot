@@ -2,9 +2,13 @@
 
 const path = require('path');
 const webpack = require('webpack');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const packageJSON = require('./package.json');
 const config = require('./frontend/config.js');
+
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+const RUN_ANALYZER = !!process.env.ANALYZER;
 
 const excludeVendorModules = [
   'babel-polyfill',
@@ -29,6 +33,26 @@ const vendorModules = Object.keys(packageJSON.dependencies)
   .filter(name => excludeVendorModules.indexOf(name) < 0)
   .concat(includeVendorModules);
 
+const plugins = [
+  new webpack.DefinePlugin({
+    'process.env.NODE_ENV': `"${process.env.NODE_ENV || 'dev'}"`,
+    'process.env.ENABLE_DEV_LOCALES': process.env.ENABLE_DEV_LOCALE || 0,
+    'process.env.ENABLE_DEV_CONTENT': process.env.ENABLE_DEV_CONTENT || 0
+  }),
+  new webpack.optimize.CommonsChunkPlugin('static/app/vendor.js'),
+  new UglifyJSPlugin({
+    parallel: true,
+    sourceMap: true,
+    compress: config.IS_DEBUG
+  })
+];
+
+if (RUN_ANALYZER) {
+  plugins.push(new BundleAnalyzerPlugin({
+    analyzerPort: 9888 // Changed because extension auto-installer squats 8888
+  }));
+}
+
 module.exports = {
   entry: {
     'static/app/app.js': './frontend/src/app/index.js',
@@ -51,17 +75,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': `"${process.env.NODE_ENV || 'dev'}"`,
-      'process.env.ENABLE_DEV_LOCALES': process.env.ENABLE_DEV_LOCALE || 0,
-      'process.env.ENABLE_DEV_CONTENT': process.env.ENABLE_DEV_CONTENT || 0
-    }),
-    new webpack.optimize.CommonsChunkPlugin('static/app/vendor.js'),
-    new UglifyJSPlugin({
-      parallel: true,
-      sourceMap: true,
-      compress: config.IS_DEBUG
-    })
-  ]
+  plugins
 };
