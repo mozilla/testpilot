@@ -198,6 +198,7 @@ tabcenterContributors1Title = UX de Firefox
 tabcenterContributors2Title = UX de Firefox
 tabcenterContributors3Title = UX de Firefox
 tabcenterEolwarning = El experimento Tab Center está finalizando. Será automáticamente desinstalado próximamente.
+trackingprotectionDescription = ¿Nos ayudaría a mejorar la  Protección de rastreo? Este experimento habilita la Protección de rastreo para la navegación en general y ofrece una forma rápida de informar sobre cualquier problema que vea mientras navegaa.
 trackingprotectionDetails1Copy = Informá un problema y ayudanos a resolverlo.
 trackingprotectionToursteps1Copy = Decinos que cosas funcionan y cuales no.
 trackingprotectionToursteps2Copy = Siempre se puede deshabilitar la protección de rastreo desde Test Pilot.

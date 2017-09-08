@@ -30,6 +30,7 @@ menuWiki = Wiki de Test Pilot
 menuDiscuss = Discutir Test Pilot
 menuFileIssue = Informar sobre un problema
 menuRetire = Desinstalar Test Pilot
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -106,6 +107,7 @@ emailOptInDialogErrorTitle = ¡No!
 [[ updateList ]]
 
 latestUpdatesTitle = Últimas actualizaciones
+showMoreNewsTitle = Mostrar noticias pasadas
 
 
 // A listing of all Test Pilot experiments.
@@ -186,6 +188,7 @@ highlightPrivacy = Tu privacidad
 experimentGradReportPendingTitle = Terminó este experimento
 experimentGradReportPendingCopy = Estamos haciendo un informe completo. Vuelva pronto para ver los detalles.
 experimentGoToLink = Ir a { $title }
+startedDateLabel = Fecha de inicio del experimento: <b>{ $completedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
