@@ -101,6 +101,7 @@
     "uglifyjs-webpack-plugin": "^0.4.6",
     "vinyl-source-stream": "1.1.0",
     "webpack": "^3.5.5",
+    "webpack-bundle-analyzer": "^2.9.0",
     "webpack-stream": "^4.0.0",
     "yamljs": "0.2.8"
   },
@@ -117,6 +118,7 @@
   "scripts": {
     "bootstrap": "npm install && cd addon && npm install && cd .. && gulp",
     "start": "cross-env USE_HTTPS=1 NODE_ENV=development ENABLE_DEV_LOCALES=1 ENABLE_DEV_CONTENT=1 gulp",
+    "analyzer": "cross-env ANALYZER=1 webpack --watch --progress --colors",
     "server": "gulp server",
     "static": "gulp dist-build",
     "docs": "doctoc README.md && doctoc addon/README.md",
