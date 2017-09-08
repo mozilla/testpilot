@@ -52,14 +52,14 @@ deployment:
       - master
     commands:
       - TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/circleci/do-exclusively.sh --branch master ./bin/deploy.sh dev
-      - ./bin/circleci/invalidate-cloudfront-distribution.sh E2ERG47PHCWD0Z
+      - ./bin/circleci/invalidate-cloudfront-cache.sh E2ERG47PHCWD0Z
   static_l10n:
     owner: mozilla
     branch:
       - l10n
     commands:
       - TESTPILOT_BUCKET=testpilot-l10n.dev.mozaws.net ./bin/deploy.sh dev
-      - ./bin/circleci/invalidate-cloudfront-distribution.sh ELL21V1NJAJJ8
+      - ./bin/circleci/invalidate-cloudfront-cache.sh ELL21V1NJAJJ8
 
 # Only notify of builds on master branch.
 experimental:
