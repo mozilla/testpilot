@@ -17,6 +17,7 @@ footerLinkCookies = Cwcis
 footerLinkPrivacy = Preifatrwydd
 footerLinkTerms = Amodau
 footerLinkLegal = Cyfreithiol
+footerLinkFeedback = Rhowch Adborth
 footerLinkAbout = Ynghylch Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Wici Test Pilot
 menuDiscuss = Trafod Test Pilot
 menuFileIssue = Ffeilio mater
 menuRetire = Dadosod Test Pilot
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = O na!
 [[ updateList ]]
 
 latestUpdatesTitle = Diweddariadau diweddaraf
+showMoreNewsTitle = Dangoswch Newyddion Blaenorol
 
 
 // A listing of all Test Pilot experiments.
@@ -156,7 +159,6 @@ experimentPromoSubheader = Rydym yn adeiladu'r nodweddion nesaf ar gyfer Firefox
 
 isEnabledStatusMessage = Mae { $title } wedi ei alluogi.
 installErrorMessage = Ow. Nid oedd modd galluogi { $title }. Ceisiwch eto'n hwyrach
-participantCount = Cyfranogwyr <span>{ $installation_count }</span>
 otherExperiments = Profwch yr arbrofion y hefyd
 giveFeedback = Rhowch Adborth
 disableHeader = Analluogi'r Arbrawf?
@@ -178,12 +180,12 @@ bugReports = Adroddiadau Gwall
 discussExperiment = Trafod { $title }
 tourOnboardingTitle = Galluogwyd { $title }
 tourDoneButton = Gorffen
-userCountContainer = Mae yna <span>{ $installation_count }</span> o bobl yn profi { $title } ar hyn o bryd!
 userCountContainerAlt = Newydd ei gyflwyno!
 highlightPrivacy = Eich preifatrwydd
 experimentGradReportPendingTitle = Mae'r arbrawf hwn wedi dod i ben
 experimentGradReportPendingCopy = Rydym yn gweithio ar adroddiad llawn. Dewch nôl cyn bo hir am y manylion.
 experimentGoToLink = Mynd i { $title }
+startedDateLabel = Dyddiad Cychwyn yr Arbrawf: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
