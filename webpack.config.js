@@ -65,6 +65,16 @@ module.exports = {
   node: {
     crypto: false
   },
+  stats: {
+    warningsFilter: warning => {
+      // seedrandom has a known complaint about missing optional crypto dep
+      if (warning.includes('seedrandom.js') &&
+          warning.includes('crypto')) { return true; }
+      // UglifyJs reports a lot of un-actionable warnings from vendor modules
+      if (warning.includes('static/app/vendor.js from UglifyJs')) { return true; }
+      return false;
+    }
+  },
   devServer: {
     contentBase: 'dist'
   },
