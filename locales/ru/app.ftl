@@ -107,6 +107,7 @@ emailOptInDialogErrorTitle = О, нет!
 [[ updateList ]]
 
 latestUpdatesTitle = Последние обновления
+showMoreNewsTitle = Показать прошлые новости
 
 
 // A listing of all Test Pilot experiments.
@@ -187,6 +188,7 @@ highlightPrivacy = Ваша приватность
 experimentGradReportPendingTitle = Этот эксперимент завершён
 experimentGradReportPendingCopy = Мы работаем над полным отчётом. Загляните попозже, чтобы узнать подробности.
 experimentGoToLink = Перейти к { $title }
+startedDateLabel = Дата начала эксперимента: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
