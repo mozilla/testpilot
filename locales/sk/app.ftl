@@ -17,6 +17,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Súkromie
 footerLinkTerms = Podmienky používania
 footerLinkLegal = Právne informácie
+footerLinkFeedback = Poskytnúť spätnú väzbu
 footerLinkAbout = O projekte Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Test Pilot Wiki
 menuDiscuss = Diskusia o Test Pilote
 menuFileIssue = Nahlásiť chybu
 menuRetire = Odinštalovať Test Pilot
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = Ale nie!
 [[ updateList ]]
 
 latestUpdatesTitle = Najnovšie aktualizácie
+showMoreNewsTitle = Zobraziť predchádzajúce novinky
 
 
 // A listing of all Test Pilot experiments.
@@ -159,7 +162,6 @@ experimentPromoSubheader = Tvoríme funkcie novej generácie pre Firefox. Nainš
 
 isEnabledStatusMessage = Experiment { $title } je aktivovaný!
 installErrorMessage = Ojoj. Experiment { $title } nemohol byť aktivovaný. Skúste to znova neskôr.
-participantCount = <span>{ $installation_count }</span> používateľov
 otherExperiments = Vyskúšajte aj tieto experimenty
 giveFeedback = Poskytnúť spätnú väzbu
 disableHeader = Ukončiť experiment?
@@ -181,12 +183,12 @@ bugReports = Nahláste chybu
 discussExperiment = Diskutujte o { $title }
 tourOnboardingTitle = Experiment { $title } je aktivovaný!
 tourDoneButton = Hotovo
-userCountContainer = Experiment { $title } práve testuje <span>{ $installation_count }</span> ľudí!
 userCountContainerAlt = Práve spustený!
 highlightPrivacy = Vaše súkromie
 experimentGradReportPendingTitle = Tento experiment bol ukončený
 experimentGradReportPendingCopy = Pracujeme na správe. Podrobnosti sa dozviete čoskoro.
 experimentGoToLink = Prejsť na experiment { $title }
+startedDateLabel = Dátum začiatku experimentu: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
