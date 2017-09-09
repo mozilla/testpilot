@@ -275,7 +275,7 @@ newsletterFooterError = Terdapat ralat semasa menghantar alamat e-mel anda. Cuba
 newsletterFooterHeader = Terus Dimaklumkan
 newsletterFooterBody = Ketahui perihal eksperimen baru dan lihat keputusan ujian bagi eksperimen yang telah anda cuba.
 newsletterFooterSuccessHeader = Terima kasih!
-newsletterFooterSuccessBody = Jika anda belum pernah mengesahkan langganan surat berita berkaitan-Mozilla, anda perlu berbuat demikian. Sila semak peti masuk atau saringan spam anda untuk mendapatkan e-mel daripada kami.
+newsletterFooterSuccessBody = Jika anda belum pernah mengesahkan langganan surat berita berkaitan Mozilla, anda perlu berbuat demikian. Sila semak peti masuk atau tapisan spam anda untuk mendapatkan e-mel daripada kami.
 
 
 // A warning shown to users when the experiment is not available in their language
