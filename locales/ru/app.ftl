@@ -17,6 +17,7 @@ footerLinkCookies = Куки
 footerLinkPrivacy = Приватность
 footerLinkTerms = Условия использования
 footerLinkLegal = Права
+footerLinkFeedback = Оставить отзыв
 footerLinkAbout = О программе лётчика-испытателя
 
 
@@ -29,6 +30,7 @@ menuWiki = Вики лётчика-испытателя
 menuDiscuss = Обсуждение лётчика-испытателя
 menuFileIssue = Сообщить о проблеме
 menuRetire = Удалить расширение лётчика-испытателя
+headerLinkBlog = Блог
 
 
 // The splash on the homepage.
@@ -159,7 +161,6 @@ experimentPromoSubheader = Мы создаём новое поколение в�
 
 isEnabledStatusMessage = { $title } включено.
 installErrorMessage = О, нет. Не удалось включить { $title }. Попробуйте снова позже.
-participantCount = <span>{ $installation_count }</span> участников
 otherExperiments = Также попробуйте эти эксперименты
 giveFeedback = Оставить отзыв
 disableHeader = Отключить эксперимент?
@@ -181,7 +182,6 @@ bugReports = Сообщения об ошибках
 discussExperiment = Обсудить { $title }
 tourOnboardingTitle = { $title } включено!
 tourDoneButton = Готово
-userCountContainer = Прямо сейчас <span>{ $installation_count }</span> людей пробуют { $title }!
 userCountContainerAlt = Только что запущено!
 highlightPrivacy = Ваша приватность
 experimentGradReportPendingTitle = Этот эксперимент завершён
