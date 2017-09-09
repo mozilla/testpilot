@@ -17,6 +17,7 @@ footerLinkCookies = Taq kaxlanwey
 footerLinkPrivacy = Ichinanem
 footerLinkTerms = Taq ojqanem
 footerLinkLegal = Taqanel tzijol
+footerLinkFeedback = Titaq Na'oj
 footerLinkAbout = Chi rij Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Test Pilot Wiki
 menuDiscuss = Kojch'o chi rij Test Pilot
 menuFileIssue = Tiyak jun k'ayewal
 menuRetire = Telesäx Test Pilot
+headerLinkBlog = Ichinya'l
 
 
 // The splash on the homepage.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = ¡Mani'!
 [[ updateList ]]
 
 latestUpdatesTitle = Ruk'isib'äl taq k'exoj
+showMoreNewsTitle = Kek'ut Ojer taq Rutzijol
 
 
 // A listing of all Test Pilot experiments.
@@ -159,7 +162,6 @@ experimentPromoSubheader = Tajin yeqab'än kik'ojlem ri ruk'isib'äl tanaj samaj
 
 isEnabledStatusMessage = { $title } tzijon.
 installErrorMessage = Uy. Man xtzij ta ri { $title }. Tatojtob'ej chik na.
-participantCount = <span>{ $installation_count }</span> to'onela'
 otherExperiments = Ketojtob'ëx chuqa' re taq solna'oj re'
 giveFeedback = Titaq Na'oj
 disableHeader = ¿La Nichup ri Solna'oj?
@@ -181,12 +183,12 @@ bugReports = Kitzijol Sachoj
 discussExperiment = Titzijöx rij ri { $title }
 tourOnboardingTitle = ¡{ $title } tzijon!
 tourDoneButton = Xk'is
-userCountContainer = ¡K'o <span>{ $installation_count }</span> winaqi' tajin nikitojtob'ej { $title } wakami!
 userCountContainerAlt = ¡K'a nimakol tichap qa!
 highlightPrivacy = Awichinanem
 experimentGradReportPendingTitle = Xk'is re solna'oj re'
 experimentGradReportPendingCopy = Tajin niqasamajij jun tz'aqät rutzijol. K'a xkatzolin pe richin ye'atz'ët ri taq rub'anikil.
 experimentGoToLink = Tib'an b'enam pa { $title }
+startedDateLabel = Rutikirib'al Q'ij Solna'oj: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
