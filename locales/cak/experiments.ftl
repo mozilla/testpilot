@@ -59,6 +59,7 @@ containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
 minvidDescription = Ke'aya' ri taq silowachib'äl pa jun tz'etel k'ojlib'äl. Min Vid nuya' q'ij chawe ye'atz'ët taq rusilowachib'al YouTube chuqa' Vimeo, ri nik'oje' chuwäch toq yatok pa k'amaya'l.
+minvidIntroduction = <p>¿La niqa chawäch nab'än jalajöj taq samaj? Tatojtob'ej Min Vid. Achi'el jun wachib'äl pa jun chik wachib'äl, akuchi' jun wachib'äl xa jun q'axab'äl k'oxom, ja k'a ri jun chik ja ronojel ri Ajk'amaya'l.</p> <ul> <li><strong>Tapitz'a' richin natikirisaj:</strong> Taqaja' ri Min Vid richin chi ri silowäch titzijtäj nab'ey toq yatok pa k'amaya'l.</li> <li><strong>Taya' apo akuchi' nawajo':</strong> Min Vid nuya' q'ij chawe naqirirej ri rutzuwäch silowäch pa xab'akuchi' ruk'ojlib'al ajk'amaya'l.</li> <li><strong>Ri taq samajinel xab'akuchi' nawajo' rat:</strong> Ri Min Vid k'o taq rusamajinel ri nikiya' q'ij chawe richin naq'ät/natzïj, naqirirej ri rujolom tzijonïk, nach'utinisaj chuqa' nacha' ri rupalem ruch'ab'äl.</li> <li><strong>Tatz'uku' rucholajem tzijonem:</strong> Wakami ri Min Vid nuköch' tzijonem richin SoundCloud chuqa' choj taq ruximonel mp3.</li> <li><strong>Tatz'uk' rucholajem tzijonem:</strong> Wakami ri Min Vid nuköch rucholaj tzijonem, xa xe titzija' jun silowäch chuqa' tatz'aqatisaj jun retal k'oxom pa jun koch'el samajib'äl (Youtube, Vimeo, SoundCloud, chuqa' choj taq ximonel).</li> <li><strong>Tatz'eta' anatab'al:</strong> Ri Min Vid nuk'öl rucholajem anatab'al, xa xe tajaqa' ri kipas taq rucholajem tzijonem pan ajsik rajkiq'a' q'ajab'äl richin yatok pa ronojel ri e'atzijon.</li></ul>
 minvidMeasurements0 = Yeqamöl taq tzij richin okisaxïk toq yatok pa ruk'utsamaj rokem, pa ruwachaj solna'ojinem chuqa' pa ri taq ruk'wayöl winäq. 
 minvidMeasurements1 = Chuqa' niqamöl etamab'äl chi kij ri janipe' mul nib'ewachin pe jun silowachib'äl, ri tikirel nitzij, ri janipe' mul ye'atzïj chuqa' ri ruk'u'x samaj xya'o. Re re' nuya' q'ij chi qe nino' pa qawi' ri ruk'a'tz ri solna'oj chi kiwa ri winaqi'.
 minvidMeasurements2 = Man niqamöl ta etamab'äl chi kij ri taq silowachib'äl ri ye'awïl.
@@ -75,6 +76,7 @@ minvidContributors1Title = Ajsamajel Nojk'ayel
 minvidContributors2Title = Nojk'ayel To'el
 minvidContributors3Title = Nojk'ayel To'onel
 nomore404sSubtitle = Rik'in runa'ob'al Wayback Machine
+nomore404sDescription = ¿La at kosinäq chik ruma ri tz'apäl taq ruq'a' b'ey pa ajk'amaya'l? Xtiqaya' rutzijol chawe to k'o jun ruwäch yakon tajin nakanoj pa Internet Archive's Wayback Machine.
 notesContributors0Title = To'el Nojk'ayel
 notesContributors1Title = Ruto'onel Tinamït
 notesContributors2Title = Ruwachib'enel Senior UX Tikojil
@@ -91,9 +93,7 @@ pageshotToursteps4Copy = Junelïk yatikïr natäq ana'oj chi qe o nachüp ri Pag
 pageshotContributors0TitleEngineer = Runojk'ayel Kema'
 pageshotContributors1Title = Runojk'ayel Kema'
 pageshotContributors2Title = UX wachib'enel
-pageshotEolwarning =
-    Tajin nik'is re solna'oj re', we ayakon ri Page Shot xtitaq xtiqak'ëx pa ruyonil pa Firefox kan k'o wi re tz'apijäb' re'. We ayakon ri Page Shot solna'oj, qayon chi qawa xtiqak'ëx.
-
+pageshotEolwarning = Tajin nik'is re solna'oj re', we ayakon ri Page Shot xtitaq xtiqak'ëx pa ruyonil pa Firefox kan k'o wi re tz'apijäb' re'. We ayakon ri Page Shot solna'oj, qayon chi qawa xtiqak'ëx.
 pulseContributors1Title = Firefox UX
 pulseContributors3Title = Firefox QA
 sendContributors4Title = Firefox UX
