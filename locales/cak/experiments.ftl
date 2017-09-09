@@ -91,6 +91,9 @@ pageshotToursteps4Copy = Junelïk yatikïr natäq ana'oj chi qe o nachüp ri Pag
 pageshotContributors0TitleEngineer = Runojk'ayel Kema'
 pageshotContributors1Title = Runojk'ayel Kema'
 pageshotContributors2Title = UX wachib'enel
+pageshotEolwarning =
+    Tajin nik'is re solna'oj re', we ayakon ri Page Shot xtitaq xtiqak'ëx pa ruyonil pa Firefox kan k'o wi re tz'apijäb' re'. We ayakon ri Page Shot solna'oj, qayon chi qawa xtiqak'ëx.
+
 pulseContributors1Title = Firefox UX
 pulseContributors3Title = Firefox QA
 sendContributors4Title = Firefox UX
