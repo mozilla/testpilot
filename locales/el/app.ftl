@@ -107,6 +107,7 @@ emailOptInDialogErrorTitle = Ωχ όχι!
 [[ updateList ]]
 
 latestUpdatesTitle = Τελευταίες ενημερώσεις
+showMoreNewsTitle = Εμφάνιση προηγούμενων ειδήσεων
 
 
 // A listing of all Test Pilot experiments.
