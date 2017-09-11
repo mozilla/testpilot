@@ -79,6 +79,10 @@ nomore404sSubtitle = Rik'in runa'ob'al Wayback Machine
 nomore404sDescription = ¿La at kosinäq chik ruma ri tz'apäl taq ruq'a' b'ey pa ajk'amaya'l? Xtiqaya' rutzijol chawe to k'o jun ruwäch yakon tajin nakanoj pa Internet Archive's Wayback Machine.
 nomore404sIntroduction = <p>Re re' choj relik. We nawïl jun sachoj 404 toq atokinäq pa ajk'amaya'l, xtiqaya' rutzijol chawe we ri rupam yakon pa ri Internet Archive's Wayback Machine.</p>
 nomore404sMeasurements0 = Niqamöl ruxe'el etamab'äl chi rij jarupe' mul nel pe ri Man Xilitäj ta ri Ruxaq (b'itz'ib' 404), jampe' mul toq k'o jun ruwäch kaxlanweyin pa ri ruxaq richin Archive.org chuqa' jarupe' mul nacha' natz'ët ri ruwäch kaxlanweyin.
+nomore404sMeasurements1 = Richin yeqasüj kaxlanweyin taq ruwäch, xqatäq ri URLs richin ri ruxaq sachoj 404 chi re Archive.org. <a href="https://archive.org/" target="_blank">Archive.org</a> yatikïr nawïl ri runa'ojil ichinanem pa <a href="https://archive.org/about/terms.php" target="_blank">wawe'</a>.
+nomore404sMeasurements2 = Man yeqamöl ta taq URLs kichin ri taq ruxaq ye'akanoj o ri taq URLs ri yeqatäq pa Archive.org.
+nomore404sMeasurements3 = Rik'in jub'a' niqakomonij rik'in ri Ruyakb'al K'amaya'l ri xe'ilitäj kik'in ri taq tojtob'enïk ye'atäq chi qe chuqa' ri rutz'aqat retamab'al telemety chuqa' ri ruximon ri' rik'in re solna'oj re'.
+nomore404sDetails0Copy = Ke'ch'utinisaj ri tz'apin taq ruq'a' rub'ey 404 rik'in Wayback Machine.
 notesContributors0Title = To'el Nojk'ayel
 notesContributors1Title = Ruto'onel Tinamït
 notesContributors2Title = Ruwachib'enel Senior UX Tikojil
