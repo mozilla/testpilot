@@ -83,6 +83,7 @@ nomore404sMeasurements1 = Richin yeqasüj kaxlanweyin taq ruwäch, xqatäq ri UR
 nomore404sMeasurements2 = Man yeqamöl ta taq URLs kichin ri taq ruxaq ye'akanoj o ri taq URLs ri yeqatäq pa Archive.org.
 nomore404sMeasurements3 = Rik'in jub'a' niqakomonij rik'in ri Ruyakb'al K'amaya'l ri xe'ilitäj kik'in ri taq tojtob'enïk ye'atäq chi qe chuqa' ri rutz'aqat retamab'al telemety chuqa' ri ruximon ri' rik'in re solna'oj re'.
 nomore404sDetails0Copy = Ke'ch'utinisaj ri tz'apin taq ruq'a' rub'ey 404 rik'in Wayback Machine.
+nomore404sDetails1Copy = Nuk'un kuma ri qachib'ij richin Internet Archive.
 notesContributors0Title = To'el Nojk'ayel
 notesContributors1Title = Ruto'onel Tinamït
 notesContributors2Title = Ruwachib'enel Senior UX Tikojil
