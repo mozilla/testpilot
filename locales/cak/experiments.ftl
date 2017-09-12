@@ -102,6 +102,9 @@ pageshotMeasurements0 = Yeqayäk ri taq achapoj pa ruk'u'x rusamaj Mozilla chuqa
 pageshotMeasurements1 = Yeqamöl re taq etamab'äl re' richin nino' pan qawi' ri nab'än rik'in ri tikojil, achi'el jarupe' mul napïtz' pa ruwi' ri rupitz'b'al chapoj, toq nayäk jun wachib'äl o we niqa'alajin pe jun sachoj toq nayäk kan.
 pageshotMeasurements2 = Richin nichajïx rutz'ilanem re samaj re', niqatz'ët ri ruk'u'x jikomal. Achi'el, yeqamöl chuqa' yeqayäk ri IP taq ochochib'äl richin ye'ilitäj chuqa' yeq'at ri ye'okisan ri samaj richin yekanon ichinan taq ruxaq.
 pageshotMeasurements3 = Toq natz'ët ri Page Shot ruxaq k'amaya'l, xa xe niqamöl ri etab'äl k'o retal pa <a href="https://www.mozilla.org/privacy/websites/" target="_blank">Websites, Communications & Cookies Privacy Notice</a>.
+pageshotDetails0Copy = Tacha' ri ruwa wachib'äl chuqa' we nawajo', tayaka' qa, we mani, taq'ata' richin man niyak ta qa.
+pageshotDetails1Copy = Ke'akomonij taq kiximonel wachib'äl pa taqoya'l o ajwinäq k'amab'ey, akuchi' man k'atzinel ta naqasaj o ye'atün el taq yakb'äl.
+pageshotDetails2Copy = Aninäq ke'awila' ri taq ruchapoj ruwa' eyakon. Katok pa ri ch'uti rutzub'al o ke'akanoj kik'u'x tzij.
 pageshotToursteps0Copy = Ticha' ri wachaj richin nokisäx qa ri Page Shot.
 pageshotToursteps1Copy = Taya' retal ri k'ojlib'äl nawajo' nachäp.
 pageshotToursteps2Copy = Tikomonïx, tiyak o tiyuj el pa ri okik'amaya'l.
@@ -111,6 +114,7 @@ pageshotContributors0TitleEngineer = Runojk'ayel Kema'
 pageshotContributors1Title = Runojk'ayel Kema'
 pageshotContributors2Title = UX wachib'enel
 pageshotEolwarning = Tajin nik'is re solna'oj re', we ayakon ri Page Shot xtitaq xtiqak'ëx pa ruyonil pa Firefox kan k'o wi re tz'apijäb' re'. We ayakon ri Page Shot solna'oj, qayon chi qawa xtiqak'ëx.
+pulseDescription = Taya' chi qe jun rutzijol rub'eyal nisamäj. Tatz'aqatisaj Tapitz'a' chuqa' kojato' richin nino' pan qawi' achike' ajk'amaya'l ütz nisamäj pa Firefox chuqa' e achike manäq.
 pulseContributors1Title = Firefox UX
 pulseContributors3Title = Firefox QA
 sendContributors4Title = Firefox UX
