@@ -97,6 +97,7 @@ notesContributors4Title = Senior Nojk'ayel
 notesContributors5Title = Firefox QA
 notesContributors6Title = Softvision QA
 pageshotDescription = Na'onel chapoj wachib'äl chapon pa ri okik'amaya'l. Nachap, nayak chuqa' nakomonij ri chapoj ruwäch toq atokinäq pa k'amaya'l rik'in  Ajk'amaya'l richin Firefox.
+pageshotIntroduction = <p>Ri Page Shot nuya' q'ij chawe richin nachäp ruwäch, ye'akomonij chuqa' ye'aköl, akuchi' man k'atzinel ta yatel el pa Firefox.</p><ul> <li><strong>Rutz'etb'al k'ïy kajtz'ik:</strong>Ke'anachaj ri taq chapoj eyakon</li> <li><strong>Na'owinäq taq kanoxïk:</strong> Tawila' ri chapoj tajin nakanoj rik'in jun ruk'u'x tzij. Page Shot nuchola yerucholajij ri taq rub'i' ruxaq chuqa' ri rucholajem kitzij ri taq chapoj </li> <li><strong>Tikomonïx rik'in jun pitz'oj:</strong> Tataqa' ri achapoj pa ri aj winäq k'amab'ey o tawachib'ej jun ximonel richin nikomonïx pa rutzuwäch awokik'amaya'l.</li></ul>
 pageshotToursteps0Copy = Ticha' ri wachaj richin nokisäx qa ri Page Shot.
 pageshotToursteps1Copy = Taya' retal ri k'ojlib'äl nawajo' nachäp.
 pageshotToursteps2Copy = Tikomonïx, tiyak o tiyuj el pa ri okik'amaya'l.
