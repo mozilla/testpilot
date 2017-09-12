@@ -9,6 +9,8 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const RUN_ANALYZER = !!process.env.ANALYZER;
+const NODE_ENV = process.env.NODE_ENV || 'development';
+const IS_DEV = NODE_ENV === 'development';
 
 const excludeVendorModules = [
   'regenerator-runtime',
@@ -35,7 +37,7 @@ const vendorModules = Object.keys(packageJSON.dependencies)
 
 const plugins = [
   new webpack.DefinePlugin({
-    'process.env.NODE_ENV': `"${process.env.NODE_ENV || 'dev'}"`,
+    'process.env.NODE_ENV': `"${NODE_ENV}"`,
     'process.env.ENABLE_DEV_LOCALES': process.env.ENABLE_DEV_LOCALE || 0,
     'process.env.ENABLE_DEV_CONTENT': process.env.ENABLE_DEV_CONTENT || 0
   }),
@@ -44,13 +46,18 @@ const plugins = [
     /moment[\/\\]locale$/, // eslint-disable-line no-useless-escape
     new RegExp(config.AVAILABLE_LOCALES.replace(/,/g, '|'))
   ),
-  new webpack.optimize.CommonsChunkPlugin('static/app/vendor.js'),
-  new UglifyJSPlugin({
-    parallel: true,
-    sourceMap: true,
-    compress: config.IS_DEBUG
-  })
+  new webpack.optimize.CommonsChunkPlugin('static/app/vendor.js')
 ];
+
+if (!IS_DEV) {
+  plugins.push(
+    new UglifyJSPlugin({
+      parallel: true,
+      sourceMap: true,
+      compress: true
+    })
+  );
+}
 
 if (RUN_ANALYZER) {
   plugins.push(new BundleAnalyzerPlugin({
