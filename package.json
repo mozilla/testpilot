@@ -13,7 +13,6 @@
     "node": ">=4.4.0"
   },
   "dependencies": {
-    "babel-polyfill": "6.23.0",
     "classnames": "2.2.5",
     "cldr-core": "^31.0.1",
     "clipboard": "1.6.1",
@@ -30,11 +29,10 @@
     "raven-js": "3.12.1",
     "react": "15.6.1",
     "react-dom": "15.6.1",
-    "react-markdown": "2.5.0",
     "react-redux": "5.0.3",
     "redux": "3.6.0",
-    "redux-logger": "3.0.6",
     "redux-promise": "0.5.3",
+    "regenerator-runtime": "^0.11.0",
     "reselect": "3.0.1",
     "seedrandom": "2.4.2",
     "tos-pp": "https://github.com/mozilla/legal-docs.git"
@@ -93,6 +91,7 @@
     "node-sass": "4.5.0",
     "nyc": "11.0.2",
     "react-addons-test-utils": "15.4.2",
+    "react-markdown": "2.5.0",
     "require-globify": "1.4.1",
     "run-sequence": "1.2.2",
     "sass-lint": "1.10.2",
@@ -101,6 +100,7 @@
     "uglifyjs-webpack-plugin": "^0.4.6",
     "vinyl-source-stream": "1.1.0",
     "webpack": "^3.5.5",
+    "webpack-bundle-analyzer": "^2.9.0",
     "webpack-stream": "^4.0.0",
     "yamljs": "0.2.8"
   },
@@ -117,6 +117,7 @@
   "scripts": {
     "bootstrap": "npm install && cd addon && npm install && cd .. && gulp",
     "start": "cross-env USE_HTTPS=1 NODE_ENV=development ENABLE_DEV_LOCALES=1 ENABLE_DEV_CONTENT=1 gulp",
+    "analyzer": "cross-env ANALYZER=1 webpack --watch --progress --colors",
     "server": "gulp server",
     "static": "gulp dist-build",
     "docs": "doctoc README.md && doctoc addon/README.md",
