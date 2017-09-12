@@ -17,6 +17,7 @@ footerLinkCookies = কুকি
 footerLinkPrivacy = গোপনীয়তা
 footerLinkTerms = শর্তাবলী
 footerLinkLegal = আইনী
+footerLinkFeedback = প্রতিক্রিয়া জানান
 footerLinkAbout = Test Pilot পরিচিতি
 
 
@@ -29,6 +30,7 @@ menuWiki = Test Pilot উইকি
 menuDiscuss = Test Pilot আলোচনা
 menuFileIssue = ইস্যু ফাইল করুন
 menuRetire = Test Pilot আনইন্সটল করুন
+headerLinkBlog = ব্লগ
 
 
 // The splash on the homepage.
@@ -97,11 +99,13 @@ emailOptInDialogTitle = Test Pilot এ আপনাকে স্বাগতম!
 emailOptInMessage = নতুন পরীক্ষা-নীরিক্ষা সম্পর্কে জানুন এবং আপনার করা পরীক্ষাগুলোর ফলাফল দেখুন।
 emailOptInConfirmationTitle = ইমেইল পাঠানো হয়েছে
 emailOptInConfirmationClose = অন্যান্য পরীক্ষার উপরে...
+emailOptInDialogErrorTitle = ওহ না!
 
 
 // news feed updates.
 [[ updateList ]]
 
+latestUpdatesTitle = সর্বশেষ হালনাগাদ
 
 
 // A listing of all Test Pilot experiments.
@@ -112,11 +116,15 @@ experimentListJustLaunchedTab = নতুন শুরু হয়েছে
 experimentListJustUpdatedTab = এইমাত্র হালানাগাদকৃত
 experimentListEndingTomorrow = আগামীকাল শেষ হবে
 experimentListEndingSoon = শীগ্রই শেষ হচ্ছে
+experimentCondensedHeader = Test Pilot এ স্বাগতম!
+experimentListHeader = আপনার পরীক্ষণ নির্বাচন করুন!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = প্রতিক্রিয়া
 experimentCardManage = পরিচালনা
 experimentCardGetStarted = শুরু করুন
 experimentCardLearnMore = আরও জানুন
@@ -148,7 +156,6 @@ experimentPromoSubheader = আমরা Firefox এর পরবর্তী প
 
 isEnabledStatusMessage = { $title } সক্রিয়।
 installErrorMessage = { $title } সক্রিয় করা হয়নি। পরে আবার চেষ্টা করুন।
-participantCount = <span>{ $installation_count }</span> অংশগ্রহণকারী
 otherExperiments = এই পরীক্ষা গুলোও চেষ্টা করুন
 giveFeedback = প্রতিক্রিয়া জানান
 disableHeader = পরীক্ষণ নিষ্ক্রিয় করবেন?
@@ -169,14 +176,22 @@ bugReports = বাগ রিপোর্ট
 discussExperiment = আলোচনা { $title }
 tourOnboardingTitle = { $title } সক্রিয়!
 tourDoneButton = সম্পন্ন
-userCountContainer = { $title }<span>{ $installation_count }</span> জন ব্যবহারকারী বর্তমানে ব্যবহার করছেন!
 userCountContainerAlt = নতুন শুরু হয়েছে
 highlightPrivacy = আপনার গোপনীয়তা
+experimentGradReportPendingTitle = পরীক্ষণটি শেষ হয়েছে।
+experimentGoToLink = { $title } এ যাও
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 
+experimentPlatformWebAddonMobile = Firefox / ওয়েব / মোবাইল পরীক্ষণ
+experimentPlatformWebAddon = Firefox / মোবাইল পরীক্ষণ
+experimentPlatformWebMobile = ওয়েব / মোবাইল পরীক্ষণ
+experimentPlatformAddonMobile = Firefox / মোবাইল পরীক্ষণ
+experimentPlatformWeb = ওয়েব পরীক্ষণ
+experimentPlatformAddon = Firefox পরীক্ষণ
+experimentPlatformMobileApp = মোবাইল পরীক্ষণ
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -263,13 +278,19 @@ localeUnavailableWarningTitle = পরীক্ষাটি আপনার ভ�
 // Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
+noScriptHeading = উহ ওহ...
+noScriptLink = কারণ খুঁজুন
 
 
 // Text of a button to toggle visibility of a list of past experiments.
 [[ pastExperiments ]]
 
+viewPastExperiments = পূর্বের পরীক্ষণ দেখাও
+hidePastExperiments = পূর্বের পরীক্ষণ লুকাও
 
 
 // Text of warnings to the user if various error conditions are detected
 [[ warnings ]]
 
+warningGenericTitle = কিছু একটা ভুল হচ্ছে!
+warningHttpsRequiredTitle = HTTPS প্রয়োজন!
