@@ -199,6 +199,11 @@ tabcenterContributors2Title = Firefox UX
 tabcenterContributors3Title = Firefox UX
 tabcenterEolwarning = Ri Tab Center solna'oj nik'is yan. Xtelesäx el pa ruyonil pa re tz'apijäb' re'.
 trackingprotectionDescription = ¿La yojato' richin niqutzilaj ri Chajinïk chuwäch Ojqanem? Re solna'oj re' nutzïj ri Chajinïk chuwäch Ojqanem chuqa' man k'ayew ta nub'än chawäch richin natäq kitzijol ta k'ayewal ye'atz'ët toq atokinäq pa k'amaya'l.
+trackingprotectionIntroduction = <p>K'a wakami, ri Chajinïk chuwäch Ojqanem pa Firefox xa xe k'o pa Ichinan Okem pa K'amaya'l. ¡Re solna'oj re' jantape' rutzijon! (Yatikïr nachüp chi kikojol taq ruxaq toq nawajo'.)</p><p>Re solna'oj re' nuya' q'ij chawe richin yojato' chi niq'ax pan qawi' akuchi' man nisamäj ta ri Chajinïk chuwäch Ojqanem, ke ri' nib'an rutzil chi kiwäch konojel ri ruwinaq Firefox. Toq atokinäq pa k'amaya'l, tapitz'a' ri ruwachaj ri tuq' b'oko', pa ri rukajtz'ik URL ajsik ruxaq richin nab'ij  chi qe achike ruxaq yesamäj ütz rik'in ri Chajinïk chuwäch Ojqanem chuqa' ri manäq.</p>
+trackingprotectionMeasurements0 = Ri Chajinïk chuwäch Ojqanem xtuk'utuj atzij toq xtuq'ät jun ojqanel. Niqamöl ruk'u'x etamab'äl toq naya' ri atzij achi'el toq ye'atzïj o ye'achüp ri taq ojqanela' pa ri ruxaq o toq naya' rutzijol jun k'ayewal.
+trackingprotectionMeasurements1 = Toq naya' atzij, chuqa' niqamöl etamab'äl chi rij ri ruxaq akuchi' at k'o wi chuqa' ri ruk'ojlem rub'ey kanoxïk q'aton. Re re' yojruto' richin niq'ax pan qawi' jampe' chuqa' aruma yek'ulwachitäj ri taq k'ayewal.
+trackingprotectionMeasurements2 = Jun chik achi'el ri ruk'ojlem b'ey, man yeqamöl ta ch'aqa' chik taq retamab'al ojqanel, achi'el ri etamab'äl chi rij IDs yekokisaj o ri taq kaxlanwey.
+trackingprotectionMeasurements3 = Richin niya' ketal ri ojqanela', niqokisaj jun cholb'äl nuya' ri Disconnect. Yatikïr nawïl ch'aqa' chik taq rub'eyal nrokisaj ri Disconnect  <a href="https://disconnect.me/trackerprotection" target="_blank">wawe'</a>.
 trackingprotectionContributors0Title = Ajk'amaya'l B'anonel
 voicefillContributors3Title = Firefox UX
 voicefillContributors4Title = Firefox UX
