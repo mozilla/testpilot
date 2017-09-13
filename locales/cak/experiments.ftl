@@ -217,6 +217,13 @@ trackingprotectionContributorsextra = Re solna'oj re' k'o ruxe'el pa ruwi' ri ru
 trackingprotectionEolwarning = Toq xtik'is ri solna'oj Chajinïk chuwäch Ojqanem chuqa' tiqataluj rutzijol ri xqaq'i', ruyonil xtichuputäj qa.
 universalsearchDescription = Tak'ulu' ri jeb'ël taq kichilab'enik taq ajk'amaya'l ruxaq toq yatz'ib'an pa ri Na'anel Kajtz'ik.
 universalsearchIntroduction = <p>Tawila' aninäq ri jeb'ël pan Ajk'amaya'l rik'in Universal Search. Xa xe tatz'ib'aj jujun taq tz'ib' pa ri Na'anel Akajtz'ik richin yeb'ewachin pe ri yalan etz'eton taq ruxaq k'amaya'l, winäq chuqa' taq rucholna'oj Wikipedia, richin jeb'ël yatok pa k'amaya'l.</p>
+universalsearchMeasurements0 = Niqamöl ruk'u'x etamab'äl toq nawokisaj ri Na'anel Kajtz'ik (kikajtz'ik taq ochochib'äl), achi'el jarupe' taq tz'ib' ye'atz'ib'aj, ri kiwäch taq kanoxïk ye'acha' chuqa' ri kik'ojlem pa ri cholb'äl.
+universalsearchMeasurements1 =
+    We xab'än yan runuk'ulem ri Firefox richin yeruk'üt pe taq kichilab'exik Kanoxïk pa ri Kikajtz'ik taq Ochochib'äl, toq xayäk Universal Search xtitz'ijtäj <a href="https://www.mozilla.org/privacy/firefox/#searchsuggestions" target="_blank">ri taq kichilab'enik kanoxïk</a> pa ri Na'anel Kajtz'ik.
+    
+    Context universalsearchMeasurements1
+universalsearchMeasurements2 = Toq xtawokisaj, yeqatäq ri taq tzij ye'atz'ib'aj pa ri ruk'wab'äl taq qachilab'enik. E k'o me'etaman taq tz'ib'anïk pa ri jeb'ël taq kanob'äl richin ye'utziläx kib'anikil ri taq chilab'enïk ri'.
+universalsearchMeasurements3 = Richin yojtikïr niqasüj ri Universal Seach chawe, qak'ulun kisamaj aj rox winäq: <a href="http://www.bing.com/developers/s/APIBasics.html" target="_blank">Bing</a> and <a href="https://developer.yahoo.com/boss/search/" target="_blank">Yahoo</a> richin ri taq chilab'enïk, chuqa' <a href="http://docs.embed.ly/docs/" target="_blank">Embedly</a> chuqa' <a href="https://clearbit.com/logo" target="_blank">Clearbit</a> richin rutz'aqat etamab'äl (taq wachib'äl o taq wachaj) chi kij ri taq chilab'enïk ri'. Richin yeqak'üt pa ri Na'anel Kajtz'ik, ri Universal Search rik'in jub'a' yeruqasaj ri taq wachib'äl ri' pa Embedly chuqa' Clearbit, ri nuya' q'ij chi ke richin nikitz'ët ri IP awochichib'al chuqa' ri taq wachib'äl xek'utüx.
 universalsearchDetails0Copy = Toq yatz'ib'an yeb'ewachin pe taq ruxaq k'amaya'l, winaqi' chuqa' taq rucholna'oj Wikipedia. 
 universalsearchToursteps0Copy = Wakami yatikïr yakanon chuqa' yatok pa k'amaya'l pa juyonil k'ojlib'äl.
 universalsearchToursteps1Copy = Toq yatz'ib'an, xkeb'ewachin pe taq kichilab'enik ruxaq k'amaya'l chuqa' taq rucholna'oj Wikipedia.
@@ -225,6 +232,7 @@ universalsearchContributors0Title = Ruk'amöl B'ey Tikojil
 universalsearchContributors1Title = To'el Ux Wachib'enel
 universalsearchContributors2Title = Runojk'ayel Molaj
 universalsearchContributors3Title = To'el Nojk'ayel
+universalsearchEolwarning = Qayonil xtiqachüp ri solna'oj Universal Seach chuqa' xtiqaya' kitzijol ri taq q'i'oj toq xtik'is.
 voicefillContributors0Title = Runojk'ayel Tzij
 voicefillContributors1Title = Runojk'ayel Tzij
 voicefillContributors2Title = Rutzub'al Wachib'enel
