@@ -234,6 +234,7 @@ universalsearchContributors2Title = Runojk'ayel Molaj
 universalsearchContributors3Title = To'el Nojk'ayel
 universalsearchEolwarning = Qayonil xtiqachüp ri solna'oj Universal Seach chuqa' xtiqaya' kitzijol ri taq q'i'oj toq xtik'is.
 voicefillDescription = Ri retamaxik tzij xapon pa Firefox. Voice Fill nuya' qij chawe yatzijon kik'in ri k'wab'äl jeb'ël taq akanoxik.
+voicefillIntroduction = <p>Voice Fill nrokisaj tz'ukun na'oj richin nisol ri runimik tzij. Achi'el to'onel pa ri rusolna'oj Voice Fill, ri rukanoxik atzij xtuk'üt chuwäch ri AI richin yeruya' pe na'owinäq taq q'i'oj.</p> <p>Xqatz'aqatisaj Voice Fill pa taq ruxaq kanoxïk pa Google, Yahoo chuqa' DuckDuckGo chuqa' xketz'aqatisäx pa ch'aqa' chik taq ruxaq k'amaya'l toq xtib'iyin ri solna'oj.</p>
 voicefillContributors0Title = Runojk'ayel Tzij
 voicefillContributors1Title = Runojk'ayel Tzij
 voicefillContributors2Title = Rutzub'al Wachib'enel
