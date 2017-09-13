@@ -204,9 +204,7 @@ trackingprotectionMeasurements0 = Ri Chajinïk chuwäch Ojqanem xtuk'utuj atzij 
 trackingprotectionMeasurements1 = Toq naya' atzij, chuqa' niqamöl etamab'äl chi rij ri ruxaq akuchi' at k'o wi chuqa' ri ruk'ojlem rub'ey kanoxïk q'aton. Re re' yojruto' richin niq'ax pan qawi' jampe' chuqa' aruma yek'ulwachitäj ri taq k'ayewal.
 trackingprotectionMeasurements2 = Jun chik achi'el ri ruk'ojlem b'ey, man yeqamöl ta ch'aqa' chik taq retamab'al ojqanel, achi'el ri etamab'äl chi rij IDs yekokisaj o ri taq kaxlanwey.
 trackingprotectionMeasurements3 = Richin niya' ketal ri ojqanela', niqokisaj jun cholb'äl nuya' ri Disconnect. Yatikïr nawïl ch'aqa' chik taq rub'eyal nrokisaj ri Disconnect  <a href="https://disconnect.me/trackerprotection" target="_blank">wawe'</a>.
-trackingprotectionPrefeedbackcopy =
-    <p>Richin niya' rutzijol jun ruxaq ri man nusamäj ta ütz rik'in ri Chajinïk chuwäch Ojqanem, tacha' ri ruwachaj b'oko' pa URL richin ri ruxaq.</p>
-
+trackingprotectionPrefeedbackcopy = <p>Richin niya' rutzijol jun ruxaq ri man nusamäj ta ütz rik'in ri Chajinïk chuwäch Ojqanem, tacha' ri ruwachaj b'oko' pa URL richin ri ruxaq.</p>
 trackingprotectionDetails0Copy = Katok pa ronojel ri taq rusamaj Chajinïk chuwäch Ojqanem pa kikajtz'ik taq ochochib'äl.
 trackingprotectionDetails1Copy = Taya' rutzijol jun k'ayewal richin yojato' richin niqab'än rutzil.
 trackingprotectionToursteps0Copy = Ri b'oko' nuya' retal chi ri Chajinïk chuwäch Ojqanem tzijon. We juxun, chupun.
@@ -223,5 +221,12 @@ universalsearchContributors0Title = Ruk'amöl B'ey Tikojil
 universalsearchContributors1Title = To'el Ux Wachib'enel
 universalsearchContributors2Title = Runojk'ayel Molaj
 universalsearchContributors3Title = To'el Nojk'ayel
+voicefillContributors0Title = Runojk'ayel Tzij
+voicefillContributors1Title = Runojk'ayel Tzij
+voicefillContributors2Title = Rutzub'al Wachib'enel
 voicefillContributors3Title = Firefox UX
 voicefillContributors4Title = Firefox UX
+voicefillContributors5Title = Softvision QA
+voicefillContributors6Title = Softvision QA
+sendNewsupdatesSendupdate1Title = ¡Titaq rik'in Safari chuqa' Edge!
+sendNewsupdatesSendupdate1Content = K'a b'a' titaq Send 1.1.0 rik'in jeb'ël ruto'ik okik'amaya'l chuqa' ch'aqa' chik jujun taq rutzil.
