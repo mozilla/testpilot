@@ -233,6 +233,7 @@ universalsearchContributors1Title = To'el Ux Wachib'enel
 universalsearchContributors2Title = Runojk'ayel Molaj
 universalsearchContributors3Title = To'el Nojk'ayel
 universalsearchEolwarning = Qayonil xtiqachüp ri solna'oj Universal Seach chuqa' xtiqaya' kitzijol ri taq q'i'oj toq xtik'is.
+voicefillDescription = Ri retamaxik tzij xapon pa Firefox. Voice Fill nuya' qij chawe yatzijon kik'in ri k'wab'äl jeb'ël taq akanoxik.
 voicefillContributors0Title = Runojk'ayel Tzij
 voicefillContributors1Title = Runojk'ayel Tzij
 voicefillContributors2Title = Rutzub'al Wachib'enel
