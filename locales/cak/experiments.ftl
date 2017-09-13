@@ -129,7 +129,7 @@ pulseIntroduction = Tajin niqatz'ük' ri k'ak'a' ralk'walaxnem Firefox, chuqa' q
 pulseMeasurements0 = Ri Pulse xa xe xtutäq etamab'äl chi qe achi'el toq xtanojisaj jun nojwuj o nik'utüx chawe chi tataqa' etamab'äl.
 pulseMeasurements1 = Ri Pulse xtutäq etamab'äl chi rij ri awokik'amaya'l chuqa' awokisaxel, achi'el ri samajel q'inoj chuqa' ri ruwäch Firefox tajin nawokisaj, ri taq chokoy chuqa' taq cha'oj xe'atzïj chuqa' jarupe' taq ruwi' e'ajaqon.
 pulseMeasurements2 = Ri Pulse xtutäq etamab'äl chi rij ri ruxaq xatz'ët toq xanojisaj jun nojwuj, achi'el ri rub'i' ruk'u'x samaj chuqa' ri ruk'ojlem rub'ey ruxaq chuqa' ri taq ruk'utunik k'amab'ey kiximon ki' rik'in.
-pulsePrefeedbackcopy = <p><Richin niya' rutzijol jun ruxaq ri man nuk'äm ta ri' rik'in ri Pulse, tacha' ri ruwachaj Pulse, ri k'o pa rucholajem ri URL richin ri ruxaq./p>
+pulsePrefeedbackcopy = <p>Richin niya' rutzijol jun ruxaq ri man nuk'äm ta ri' rik'in ri Pulse, tacha' ri ruwachaj Pulse, ri k'o pa rucholajem ri URL richin ri ruxaq.</p>
 pulseDetails0Copy = Tataqa' etamab'äl chi rij ri rub'eyal nisamäj ri ruxaq toq atokinäq pa k'amaya'l.
 pulseDetails1Copy = Rik'in jub'a' ri Pulse xtuk'utuj chawe chi tanojisaj jun ko'öl nojwuj pa ruwi' awetamab'al rik'in jun ruxaq ajk'amaya'l.
 pulseToursteps0Copy = Tapitz'a' ri ruwachaj Pulse pa kik'ajtz'ik taq ochochib'äl richin natäq ana'oj chi qe pa ruwi' re ruxaq ajk'amaya'l re'. 
@@ -204,6 +204,24 @@ trackingprotectionMeasurements0 = Ri Chajinïk chuwäch Ojqanem xtuk'utuj atzij 
 trackingprotectionMeasurements1 = Toq naya' atzij, chuqa' niqamöl etamab'äl chi rij ri ruxaq akuchi' at k'o wi chuqa' ri ruk'ojlem rub'ey kanoxïk q'aton. Re re' yojruto' richin niq'ax pan qawi' jampe' chuqa' aruma yek'ulwachitäj ri taq k'ayewal.
 trackingprotectionMeasurements2 = Jun chik achi'el ri ruk'ojlem b'ey, man yeqamöl ta ch'aqa' chik taq retamab'al ojqanel, achi'el ri etamab'äl chi rij IDs yekokisaj o ri taq kaxlanwey.
 trackingprotectionMeasurements3 = Richin niya' ketal ri ojqanela', niqokisaj jun cholb'äl nuya' ri Disconnect. Yatikïr nawïl ch'aqa' chik taq rub'eyal nrokisaj ri Disconnect  <a href="https://disconnect.me/trackerprotection" target="_blank">wawe'</a>.
+trackingprotectionPrefeedbackcopy =
+    <p>Richin niya' rutzijol jun ruxaq ri man nusamäj ta ütz rik'in ri Chajinïk chuwäch Ojqanem, tacha' ri ruwachaj b'oko' pa URL richin ri ruxaq.</p>
+
+trackingprotectionDetails0Copy = Katok pa ronojel ri taq rusamaj Chajinïk chuwäch Ojqanem pa kikajtz'ik taq ochochib'äl.
+trackingprotectionDetails1Copy = Taya' rutzijol jun k'ayewal richin yojato' richin niqab'än rutzil.
+trackingprotectionToursteps0Copy = Ri b'oko' nuya' retal chi ri Chajinïk chuwäch Ojqanem tzijon. We juxun, chupun.
+trackingprotectionToursteps1Copy = Taya' rutzijol chi qe toq ronojel nisamäj ütz chuqa' achike ri manäq.
+trackingprotectionToursteps2Copy = Junelïk yatikïr nachüp ri Chajinïk  chuwäch Ojqanem pa Test Pilot.
 trackingprotectionContributors0Title = Ajk'amaya'l B'anonel
+trackingprotectionContributors1Title = To'el UX wachib'enel
+trackingprotectionContributors2Title = To'el Qa Nojk'ayel
+universalsearchDetails0Copy = Toq yatz'ib'an yeb'ewachin pe taq ruxaq k'amaya'l, winaqi' chuqa' taq rucholna'oj Wikipedia. 
+universalsearchToursteps0Copy = Wakami yatikïr yakanon chuqa' yatok pa k'amaya'l pa juyonil k'ojlib'äl.
+universalsearchToursteps1Copy = Toq yatz'ib'an, xkeb'ewachin pe taq kichilab'enik ruxaq k'amaya'l chuqa' taq rucholna'oj Wikipedia.
+universalsearchToursteps2Copy = Junelïk yatikïr natäq ana'oj chi qe o nachüp Universal Search pa Test Pilot.
+universalsearchContributors0Title = Ruk'amöl B'ey Tikojil
+universalsearchContributors1Title = To'el Ux Wachib'enel
+universalsearchContributors2Title = Runojk'ayel Molaj
+universalsearchContributors3Title = To'el Nojk'ayel
 voicefillContributors3Title = Firefox UX
 voicefillContributors4Title = Firefox UX
