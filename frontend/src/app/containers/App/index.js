@@ -10,26 +10,36 @@ import Clipboard from 'clipboard';
 
 import likelySubtagsData from 'cldr-core/supplemental/likelySubtags.json';
 
-import { getInstalled, isExperimentEnabled, isAfterCompletedDate, isInstalledLoaded } from '../reducers/addon';
-import { setState as setBrowserState } from '../actions/browser';
-import { getExperimentBySlug } from '../reducers/experiments';
-import { getChosenTest } from '../reducers/varianttests';
-import experimentSelector from '../selectors/experiment';
-import { uninstallAddon, installAddon, enableExperiment, disableExperiment, pollAddon } from '../lib/InstallManager';
-import { setLocalizations, setNegotiatedLanguages } from '../actions/localizations';
-import { localizationsSelector, negotiatedLanguagesSelector } from '../selectors/localizations';
-import { chooseTests } from '../actions/varianttests';
-import addonActions from '../actions/addon';
-import newsletterFormActions from '../actions/newsletter-form';
-import RestartPage from '../containers/RestartPage';
-import { isFirefox, isMinFirefoxVersion, isMobile } from '../lib/utils';
-import { staleNewsUpdatesSelector, freshNewsUpdatesSelector } from '../selectors/news';
-import config from '../config';
+import { getInstalled, isExperimentEnabled, isAfterCompletedDate, isInstalledLoaded } from '../../reducers/addon';
+import { setState as setBrowserState } from '../../actions/browser';
+import { getExperimentBySlug } from '../../reducers/experiments';
+import { getChosenTest } from '../../reducers/varianttests';
+import experimentSelector from '../../selectors/experiment';
+import { uninstallAddon, installAddon, enableExperiment, disableExperiment, pollAddon } from '../../lib/InstallManager';
+import { setLocalizations, setNegotiatedLanguages } from '../../actions/localizations';
+import { localizationsSelector, negotiatedLanguagesSelector } from '../../selectors/localizations';
+import { chooseTests } from '../../actions/varianttests';
+import addonActions from '../../actions/addon';
+import newsletterFormActions from '../../actions/newsletter-form';
+import RestartPage from '../../containers/RestartPage';
+import UpgradeWarningPage from '../../containers/UpgradeWarningPage';
+import { isFirefox, isMinFirefoxVersion, isMobile } from '../../lib/utils';
+import { staleNewsUpdatesSelector, freshNewsUpdatesSelector } from '../../selectors/news';
+import config from '../../config';
 
 let clipboard = null;
 if (typeof document !== 'undefined') {
   clipboard = new Clipboard('button');
 }
+
+export function shouldShowUpgradeWarning(hasAddon, hasAddonManager, thisIsFirefox, host) {
+  if (hasAddon === null) return false;
+  if (hasAddonManager) return false;
+  if (!thisIsFirefox) return false;
+  if (!hasAddonManager && config.nonAddonManagerDevHosts.includes(host)) return false;
+  return true;
+}
+
 
 class App extends Component {
   constructor(props) {
@@ -90,9 +100,14 @@ class App extends Component {
     this.props.setHasAddon(!!window.navigator.testpilotAddon);
     this.props.setBrowserState({
       userAgent,
+      host: window.location.host,
+      protocol: window.location.protocol,
+      hasAddonManager: (typeof navigator.mozAddonManager !== 'undefined'),
       isFirefox: isFirefox(userAgent),
       isMobile: isMobile(userAgent),
       isMinFirefox: isMinFirefoxVersion(userAgent, config.minFirefoxVersion),
+      isProdHost: window.location.host === config.prodHost,
+      isDevHost: config.devHosts.includes(window.location.host),
       isDev: config.isDev,
       locale: (navigator.language || '').split('-')[0]
     });
@@ -143,10 +158,19 @@ class App extends Component {
     });
   }
 
+  shouldShowUpgradeWarning() {
+    const { hasAddon, hasAddonManager, host } = this.props;
+    return shouldShowUpgradeWarning(hasAddon, hasAddonManager, isFirefox, host);
+  }
+
   render() {
     const { restart } = this.props.addon;
     if (restart.isRequired) {
-      return <RestartPage {...this.props}/>;
+      return <RestartPage {...this.props} />;
+    }
+
+    if (this.shouldShowUpgradeWarning()) {
+      return <UpgradeWarningPage {...this.props} />;
     }
 
     function* generateMessages(languages, localizations) {
@@ -189,16 +213,14 @@ function sendToGA(type, dataIn) {
 
 const mapStateToProps = state => ({
   addon: state.addon,
+  clientUUID: state.addon.clientUUID,
   experiments: experimentSelector(state),
-  localizations: localizationsSelector(state),
-  negotiatedLanguages: negotiatedLanguagesSelector(state),
-  staleNewsUpdates: staleNewsUpdatesSelector(state),
   freshNewsUpdates: freshNewsUpdatesSelector(state),
-  slug: state.experiments.slug,
   getExperimentBySlug: slug =>
     getExperimentBySlug(state.experiments, slug),
   hasAddon: state.addon.hasAddon,
-  clientUUID: state.addon.clientUUID,
+  hasAddonManager: state.browser.hasAddonManager,
+  host: state.browser.host,
   installed: getInstalled(state.addon),
   installedAddons: state.addon.installedAddons,
   installedLoaded: isInstalledLoaded(state.addon),
@@ -208,11 +230,18 @@ const mapStateToProps = state => ({
   isAfterCompletedDate,
   isFirefox: state.browser.isFirefox,
   isMinFirefox: state.browser.isMinFirefox,
+  isDevHost: state.browser.isDevHost,
+  isProdHost: state.browser.isProdHost,
   isMobile: state.browser.isMobile,
   userAgent: state.browser.userAgent,
   locale: state.browser.locale,
+  localizations: localizationsSelector(state),
+  negotiatedLanguages: negotiatedLanguagesSelector(state),
   newsletterForm: state.newsletterForm,
+  protocol: state.browser.protocol,
   routing: state.routing,
+  slug: state.experiments.slug,
+  staleNewsUpdates: staleNewsUpdatesSelector(state),
   varianttests: state.varianttests
 });
 
