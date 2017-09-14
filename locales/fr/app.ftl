@@ -17,6 +17,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Confidentialité
 footerLinkTerms = Conditions
 footerLinkLegal = Mentions légales
+footerLinkFeedback = Donner votre avis
 footerLinkAbout = À propos de Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Wiki de Test Pilot
 menuDiscuss = Discuter de Test Pilot
 menuFileIssue = Signaler un problème
 menuRetire = Désinstaller Test Pilot
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -72,9 +74,9 @@ landingDownloadFirefoxSubTitle = Téléchargement gratuit
 [[ landingCard ]]
 
 landingCardListTitle = Décollage imminent : 3, 2, 1…
-landingCardOne = Téléchargez <br>le module
+landingCardOne = Téléchargez le module
 landingCardTwo = Activez les fonctionnalités expérimentales
-landingCardThree = Donnez-nous <br> votre avis
+landingCardThree = Donnez-nous votre avis
 
 
 // Shown after the user installs the Test Pilot add-on.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = Oups !
 [[ updateList ]]
 
 latestUpdatesTitle = Dernières mises à jour
+showMoreNewsTitle = Afficher les nouvelles précédentes
 
 
 // A listing of all Test Pilot experiments.
@@ -156,7 +159,6 @@ experimentPromoSubheader = Nous élaborons les fonctionnalités de prochaine gé
 
 isEnabledStatusMessage = { $title } est activé.
 installErrorMessage = Hum… { $title } n’a pas pu être activé. Réessayez plus tard.
-participantCount = Déjà <span>{ $installation_count }</span> participants
 otherExperiments = Essayez aussi ces autres expériences
 giveFeedback = Faites-nous part de vos observations
 disableHeader = Désactiver l’expérience ?
@@ -178,12 +180,12 @@ bugReports = Rapports de bogues
 discussExperiment = Discuter de { $title }
 tourOnboardingTitle = { $title } a été activé !
 tourDoneButton = Terminé
-userCountContainer = <span>{ $installation_count }</span> personnes essaient { $title } en ce moment même !
 userCountContainerAlt = Nouveau
 highlightPrivacy = Confidentialité
 experimentGradReportPendingTitle = Cette expérience est terminée
 experimentGradReportPendingCopy = Nous sommes en train de réaliser un rapport complet. Revenez un peu plus tard pour consulter tous les détails.
 experimentGoToLink = Ouvrir { $title }
+startedDateLabel = Date de début de l’expérience : <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site

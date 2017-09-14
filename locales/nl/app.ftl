@@ -17,6 +17,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Privacy
 footerLinkTerms = Voorwaarden
 footerLinkLegal = Juridisch
+footerLinkFeedback = Feedback geven
 footerLinkAbout = Over Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Test Pilot-wiki
 menuDiscuss = Test Pilot bespreken
 menuFileIssue = Een probleem melden
 menuRetire = Test Pilot verwijderen
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = O nee!
 [[ updateList ]]
 
 latestUpdatesTitle = Nieuwste updates
+showMoreNewsTitle = Eerder nieuws tonen
 
 
 // A listing of all Test Pilot experiments.
@@ -159,7 +162,6 @@ experimentPromoSubheader = We bouwen functies van de volgende generatie voor Fir
 
 isEnabledStatusMessage = { $title } is ingeschakeld.
 installErrorMessage = O, o. { $title } kon niet worden ingeschakeld. Probeer het later opnieuw.
-participantCount = <span>{ $installation_count }</span> deelnemers
 otherExperiments = Probeer ook deze experimenten
 giveFeedback = Geef feedback
 disableHeader = Experiment uitschakelen?
@@ -181,12 +183,12 @@ bugReports = Bugrapporten
 discussExperiment = Discussiëren over { $title }
 tourOnboardingTitle = { $title } ingeschakeld!
 tourDoneButton = Gereed
-userCountContainer = <span>{ $installation_count }</span> mensen proberen { $title } op dit moment uit!
 userCountContainerAlt = Zojuist gestart!
 highlightPrivacy = Uw privacy
 experimentGradReportPendingTitle = Dit experiment is beëindigd
 experimentGradReportPendingCopy = We werken aan een volledig rapport. Kijk binnenkort nog eens voor de details.
 experimentGoToLink = Naar { $title }
+startedDateLabel = Begindatum van experiment: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site

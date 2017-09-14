@@ -17,6 +17,7 @@ footerLinkCookies = Kuki
 footerLinkPrivacy = Privasi
 footerLinkTerms = Terma
 footerLinkLegal = Perundangan
+footerLinkFeedback = Beri maklum balas
 footerLinkAbout = Perihal Ujian Perintis
 
 
@@ -29,6 +30,7 @@ menuWiki = Test Pilot Wiki
 menuDiscuss = Bincangkan Ujian Perintis
 menuFileIssue = Failkan Isu
 menuRetire = Nyahpasang Ujian Perintis
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = Oh tidak!
 [[ updateList ]]
 
 latestUpdatesTitle = Kemaskini terkini
+showMoreNewsTitle = Papar Berita Lama
 
 
 // A listing of all Test Pilot experiments.
@@ -159,7 +162,6 @@ experimentPromoSubheader = Kami membina ciri generasi-akan-datang untuk Firefox.
 
 isEnabledStatusMessage = { $title } didayakan.
 installErrorMessage = Uh oh. { $title } tidak boleh didayakan. Cuba lagi nanti.
-participantCount = <span>{ $installation_count }</span> peserta
 otherExperiments = Cubalah juga eksperimen berikut
 giveFeedback = Beri maklum balas
 disableHeader = Nyahdayakan Eksperimen?
@@ -181,12 +183,12 @@ bugReports = Laporan Pepijat
 discussExperiment = Perbincangan { $title }
 tourOnboardingTitle = { $title } didayakan!
 tourDoneButton = Selesai!
-userCountContainer = Ada <span>{ $installation_count }</span> pengguna sedang mencuba { $title } pada masa ini!
 userCountContainerAlt = baru sahaja dilancarkan!
 highlightPrivacy = Privasi anda
 experimentGradReportPendingTitle = Eksperimen ini sudah tamat
 experimentGradReportPendingCopy = Kami sedang meyediakan laporan penuh. Semak semula untuk dapatkan butirannya.
 experimentGoToLink = Pergi ke { $title }
+startedDateLabel = Tarikh Mula Eksperimen: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -215,7 +217,7 @@ versionChangeNoticeLink = Dapatkan versi terkini Firefox
 
 retireDialogTitle = Nyahpasang Ujian Perintis?
 retireMessage = Ikut kehendak anda. Ini akan nyahdaya semua ujian aktif, nyahpasang add-on dan buang info akaun anda dari pelayan kami.
-retireEmailMessage = Untuk tidak menerima kemaskini e-mel, hanya klik pautan <em>unsubscribe</em> dalam sebarang e-mel Ujian Perintis.
+retireEmailMessage = Untuk memilih supaya tidak menerima kemaskini e-mel, hanya klik pautan <em>batal langganan</em> dalam sebarang e-mel Ujian Perintis.
 retireSubmitButton = Teruskan
 pageTitleRetirePage = Firefox Ujian Perintis - Nyahpasang Ujian Perintis
 retirePageProgressMessage = Menutup...
@@ -273,7 +275,7 @@ newsletterFooterError = Terdapat ralat semasa menghantar alamat e-mel anda. Cuba
 newsletterFooterHeader = Terus Dimaklumkan
 newsletterFooterBody = Ketahui perihal eksperimen baru dan lihat keputusan ujian bagi eksperimen yang telah anda cuba.
 newsletterFooterSuccessHeader = Terima kasih!
-newsletterFooterSuccessBody = Jika anda belum pernah mengesahkan langganan surat berita berkaitan-Mozilla, anda perlu berbuat demikian. Sila semak peti masuk atau saringan spam anda untuk mendapatkan e-mel daripada kami.
+newsletterFooterSuccessBody = Jika anda belum pernah mengesahkan langganan surat berita berkaitan Mozilla, anda perlu berbuat demikian. Sila semak peti masuk atau tapisan spam anda untuk mendapatkan e-mel daripada kami.
 
 
 // A warning shown to users when the experiment is not available in their language

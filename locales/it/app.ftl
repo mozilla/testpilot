@@ -17,6 +17,7 @@ footerLinkCookies = Cookie
 footerLinkPrivacy = Privacy
 footerLinkTerms = Condizioni di utilizzo
 footerLinkLegal = Note legali
+footerLinkFeedback = Dacci la tua opinione
 footerLinkAbout = Informazioni su Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Wiki di Test Pilot
 menuDiscuss = Discussioni su Test Pilot
 menuFileIssue = Segnala un problema
 menuRetire = Disinstalla Test Pilot
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = Accidenti!
 [[ updateList ]]
 
 latestUpdatesTitle = Ultime notizie
+showMoreNewsTitle = Visualizza notizie più vecchie
 
 
 // A listing of all Test Pilot experiments.
@@ -156,7 +159,6 @@ experimentPromoSubheader = Stiamo realizzando funzioni di ultima generazione per
 
 isEnabledStatusMessage = { $title } è attivo.
 installErrorMessage = Oops. Non è stato possibile attivare { $title }. Riprova più tardi.
-participantCount = <span>{ $installation_count }</span> partecipanti
 otherExperiments = Prova anche questi esperimenti
 giveFeedback = Dacci la tua opinione
 disableHeader = Disattivare l’esperimento?
@@ -178,12 +180,12 @@ bugReports = Segnalazione bug
 discussExperiment = Discussioni su { $title }
 tourOnboardingTitle = { $title } attivato.
 tourDoneButton = Fatto
-userCountContainer = In questo momento <span>{ $installation_count }</span> persone stanno provando { $title }.
 userCountContainerAlt = Appena lanciato
 highlightPrivacy = La tua privacy
 experimentGradReportPendingTitle = Questo esperimento si è concluso
 experimentGradReportPendingCopy = Stiamo preparando il rapporto conclusivo con i risultati di questo esperimento. Torna a trovarci per tutti i dettagli.
 experimentGoToLink = Vai a { $title }
+startedDateLabel = Data di inizio esperimento: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site

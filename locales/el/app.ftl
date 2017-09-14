@@ -17,6 +17,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Απόρρητο
 footerLinkTerms = Όροι
 footerLinkLegal = Νομικά
+footerLinkFeedback = Αποστολή σχολίων
 footerLinkAbout = Σχετικά με το Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Test Pilot Wiki
 menuDiscuss = Συζήτηση για το Test Pilot
 menuFileIssue = Αναφορά ζητήματος
 menuRetire = Απεγκατάσταση του Test Pilot
+headerLinkBlog = Ιστολόγιο
 
 
 // The splash on the homepage.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = Ωχ όχι!
 [[ updateList ]]
 
 latestUpdatesTitle = Τελευταίες ενημερώσεις
+showMoreNewsTitle = Εμφάνιση προηγούμενων ειδήσεων
 
 
 // A listing of all Test Pilot experiments.
@@ -159,7 +162,6 @@ experimentPromoSubheader = Αναπτύσσουμε καινοτόμες λει�
 
 isEnabledStatusMessage = Το { $title } ενεργοποιήθηκε.
 installErrorMessage = Ωχ ωχ. Αδυναμία ενεργοποίησης του { $title }. Δοκιμάστε ξανά αργότερα.
-participantCount = <span>{ $installation_count }</span> συμμετέχοντες
 otherExperiments = Δοκιμάστε κι αυτά τα πειράματα
 giveFeedback = Υποβολή σχολίων
 disableHeader = Απενεργοποίηση πειράματος;
@@ -181,7 +183,6 @@ bugReports = Αναφορές σφαλμάτων
 discussExperiment = Συζήτηση για το { $title }
 tourOnboardingTitle = Το { $title } ενεργοποιήθηκε!
 tourDoneButton = Τέλος
-userCountContainer = Υπάρχουν <span>{ $installation_count }</span> άτομα που δοκιμάζουν το { $title } αυτή τη στιγμή!
 userCountContainerAlt = Μόλις ξεκίνησε!
 highlightPrivacy = Το απόρρητό σας
 experimentGradReportPendingTitle = Αυτό το πείραμα έχει λήξει

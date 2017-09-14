@@ -17,6 +17,7 @@ footerLinkCookies = Kakor
 footerLinkPrivacy = Sekretesspolicy
 footerLinkTerms = Villkor
 footerLinkLegal = Juridisk information
+footerLinkFeedback = Ge återkoppling
 footerLinkAbout = Om Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Wiki för Test Pilot
 menuDiscuss = Diskutera Test Pilot
 menuFileIssue = Rapportera ett problem
 menuRetire = Avinstallera Test Pilot
+headerLinkBlog = Blogg
 
 
 // The splash on the homepage.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = Åh nej!
 [[ updateList ]]
 
 latestUpdatesTitle = Senast uppdaterade
+showMoreNewsTitle = Visa äldre nyheter
 
 
 // A listing of all Test Pilot experiments.
@@ -159,7 +162,6 @@ experimentPromoSubheader = Vi bygger nästa generations funktioner för Firefox.
 
 isEnabledStatusMessage = { $title } är aktiverad.
 installErrorMessage = Hoppsan. { $title } kunde inte aktiveras. Försök igen senare.
-participantCount = <span>{ $installation_count }</span> deltagare
 otherExperiments = Prova dessa experiment också
 giveFeedback = Ge återkoppling
 disableHeader = Inaktivera experiment?
@@ -181,12 +183,12 @@ bugReports = Felrapporter
 discussExperiment = Diskutera { $title }
 tourOnboardingTitle = { $title } är aktiverad!
 tourDoneButton = Klar
-userCountContainer = Det finns <span>{ $installation_count }</span> personer som provar { $title } just nu!
 userCountContainerAlt = Nyligen startad!
 highlightPrivacy = Din sekretesspolicy
 experimentGradReportPendingTitle = Detta experiment har upphört
 experimentGradReportPendingCopy = Vi arbetar med en fullständig rapport. Återkom snart för detaljer.
 experimentGoToLink = Gå till { $title }
+startedDateLabel = Startdatum för experiment: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site

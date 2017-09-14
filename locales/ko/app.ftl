@@ -29,6 +29,7 @@ menuWiki = Test Pilot 위키
 menuDiscuss = Text Pilot에 대하여 토론하기
 menuFileIssue = 문제 보고하기
 menuRetire = Test Pilot 제거하기
+headerLinkBlog = 블로그
 
 
 // The splash on the homepage.
@@ -87,9 +88,17 @@ errorHeading = 이런!
 
 
 
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = 최신 업데이트
+showMoreNewsTitle = 지난 뉴스 보기
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
+experimentListEnabledTab = 활성화됨
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -118,6 +127,11 @@ errorHeading = 이런!
 tourDoneButton = 완료
 userCountContainerAlt = 바로 시작!
 highlightPrivacy = 개인 정보 보호
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -187,3 +201,8 @@ noScriptLink = 왜 그런지 알아보기
 
 viewPastExperiments = 지나간 실험 보기
 hidePastExperiments = 지나간 실험 가리기
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
