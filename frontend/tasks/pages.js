@@ -196,6 +196,7 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
     <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css" />
     <link rel="stylesheet" href="/static/styles/experiments.css" />
     <link rel="stylesheet" href="/static/styles/main.css" />
+    <link rel="stylesheet" href="/static/app/app.js.css" />
 
     <meta name="defaultLanguage" content="en-US" />
     <meta name="availableLanguages" content={ available_locales } />
