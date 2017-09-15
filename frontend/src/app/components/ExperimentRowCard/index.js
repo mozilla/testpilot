@@ -4,11 +4,11 @@ import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import { buildSurveyURL, experimentL10nId } from '../lib/utils';
+import { buildSurveyURL, experimentL10nId } from '../../lib/utils';
 
-import type { InstalledExperiments } from '../reducers/addon';
+import type { InstalledExperiments } from '../../reducers/addon';
 
-import ExperimentPlatforms from './ExperimentPlatforms';
+import ExperimentPlatforms from '../ExperimentPlatforms';
 
 const ONE_DAY = 24 * 60 * 60 * 1000;
 const ONE_WEEK = 7 * ONE_DAY;

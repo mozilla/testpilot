@@ -4,8 +4,8 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, object, boolean } from '@storybook/addon-knobs';
 
-import ExperimentRowCard from '../../../src/app/components/ExperimentRowCard';
-import LayoutWrapper from '../../../src/app/components/LayoutWrapper';
+import ExperimentRowCard from './index';
+import LayoutWrapper from '../LayoutWrapper';
 
 const ONE_DAY = 24 * 60 * 60 * 1000;
 const ONE_WEEK = 7 * ONE_DAY;
