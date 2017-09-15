@@ -5,8 +5,8 @@ import { Localized } from 'fluent-react/compat';
 import moment from 'moment';
 import React from 'react';
 
-import LayoutWrapper from './LayoutWrapper';
-import { newsUpdateL10nId } from '../lib/utils';
+import LayoutWrapper from '../LayoutWrapper';
+import { newsUpdateL10nId } from '../../lib/utils';
 
 export function prettyDate(date: string) {
   return moment(date).format('MMMM Do, YYYY');

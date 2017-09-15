@@ -1,8 +1,10 @@
+/* global describe, beforeEach, it */
 import React from 'react';
 import sinon from 'sinon';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import UpdateList, { Update, prettyDate } from '../../../src/app/components/UpdateList';
+
+import UpdateList, { Update, prettyDate } from './index';
 
 describe('app/components/UpdateList', () => {
   it('should display nothing if no updates are available', () => {
@@ -73,7 +75,7 @@ describe('app/components/UpdateList', () => {
         { slug: 'foo', experimentSlug: 'exp1' },
         { slug: 'bar' }
       ],
-      staleNewsUpdates: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(idx => ({ slug: `stale-${idx}` })),
+      staleNewsUpdates: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(idx => ({ slug: `stale-${idx}` }))
     };
 
     const mockClickEvent = {
@@ -94,7 +96,6 @@ describe('app/components/UpdateList', () => {
   });
 
   describe('Update', () => {
-
     it('should display expected basic content', () => {
       const subject = shallow(<Update
         update={{ title: 'foo', content: 'bar' }}
@@ -182,7 +183,5 @@ describe('app/components/UpdateList', () => {
         eventLabel: `news-item-${slug}`
       }]);
     });
-
   });
-
 });

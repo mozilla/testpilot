@@ -4,8 +4,8 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import UpdateList from '../../../src/app/components/UpdateList';
-import LayoutWrapper from '../../../src/app/components/LayoutWrapper';
+import UpdateList from './index';
+import LayoutWrapper from '../LayoutWrapper';
 
 const time = Date.now();
 
