@@ -142,6 +142,7 @@ pulseContributors2Title = Firefox Platform Product Intelligence
 pulseContributors3Title = Firefox kwalitne zawěsćenje
 pulseEolwarning = Źěkujomy se wam za wašu pomoc. Eksperiment Pulse se kóńcy. Móžośo dodank pak znjemóžniś pak wótwónoźeś.
 sendDescription = Koděrujśo a sćelśo dataje z wótkazom, kótaryž awtomatiski spadnjo, aby zawěsćił, až waše wažne dokumenty na pśecej online njewóstanu.
+sendIntroduction = <p>Send wam zmóžnja, wjelike dataje nagraś a koděrowaś (až do 1 GB) a je online źěliś. Gaž dataju nagrawaśo, Send wótkaz napórajo, kótaryž móžośo komužkuli pósłaś. Kuždy pśez Send wnapórany wótkaz pó jadnom ześěgnjenju abo 24 góźinach spadnjo, a wše pósłane dataje se awtomatiski ze serwera Send wulašuju.</p> <p>Na rozdźěl wót drugich eksperimentow Test Pilot, Send dodank njetrjeba, a dajo se w modernem wobglědowaku wužywaś.
 sendDetails0Copy = Send wam zmóžnja, skoděrowane dataje nagraś a źěliś.
 sendDetails1Copy = Send buźo waše daty za jadno ześěgnjenje abo 24 góźinow składowaś.
 sendDetails2Copy = Móžośo Send w modernem wobglědowaku wužywaś.
