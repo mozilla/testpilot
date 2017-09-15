@@ -13,6 +13,7 @@ import EmailDialog from '../components/EmailDialog';
 import ExperimentDisableDialog from '../components/ExperimentDisableDialog';
 import ExperimentEolDialog from '../components/ExperimentEolDialog';
 import ExperimentTourDialog from '../components/ExperimentTourDialog';
+import GraduatedNotice from '../components/GraduatedNotice';
 import LocalizedHtml from '../components/LocalizedHtml';
 import MainInstallButton from '../components/MainInstallButton';
 import ExperimentCardList from '../components/ExperimentCardList';
@@ -237,7 +238,7 @@ export class ExperimentDetail extends React.Component {
     const { title, contribute_url, bug_report_url, discourse_url, privacy_preamble,
             warning, introduction, measurements, privacy_notice_url, changelog_url,
             thumbnail, subtitle, survey_url, contributors, contributors_extra, contributors_extra_url, details,
-            min_release, max_release, graduation_report } = experiment;
+            min_release, max_release, graduation_report, graduation_url } = experiment;
 
     // Set the timestamp for when this experiment was last seen (for
     // ExperimentRowCard updated/launched banner logic)
@@ -288,7 +289,7 @@ export class ExperimentDetail extends React.Component {
 
         <View {...this.props}>
 
-        {hasAddon !== null && (!hasAddon && !graduated && !experiment.web_url) && <section id="testpilot-promo">
+        {hasAddon !== null && (!hasAddon && !experiment.web_url) && <section id="testpilot-promo">
           <Banner>
               <LayoutWrapper flexModifier="row-between-reverse">
                 <div className="intro-text">
@@ -354,7 +355,7 @@ export class ExperimentDetail extends React.Component {
                         { this.renderLaunchStatus() }
                       </section>
                     }
-                    {!graduated && <div>
+                    <div>
                       <section className="stats-section">
                         {!experiment.web_url &&
                         <p>
@@ -385,7 +386,7 @@ export class ExperimentDetail extends React.Component {
                           <dd><a href={discourse_url}>{discourse_url}</a></dd>
                         </dl>
                       </section>
-                    </div>}
+                    </div>
                     <section className="contributors-section">
                       <Localized id="contributorsHeading">
                         <h3>Brought to you by</h3>
@@ -449,11 +450,12 @@ export class ExperimentDetail extends React.Component {
                     </div>}
                   </div>
                 </div>
-                {!graduated &&
-                  <div className="details-description">
+                <div className="details-description">
                   {this.renderEolBlock()}
                   {this.renderIncompatibleAddons()}
                   {this.renderLocaleWarning()}
+                  {graduated && <GraduatedNotice graduated={graduated} graduation_url={graduation_url} graduation_report={graduation_report} />}
+
                   {experiment.video_url &&
                     <iframe width="100%" height="360" src={experiment.video_url} frameBorder="0" allowFullScreen className="experiment-video"></iframe>
                   }
@@ -490,7 +492,7 @@ export class ExperimentDetail extends React.Component {
                      </div>
                     ))}
                   </div>
-                  {hasAddon && <div>
+                  {hasAddon && !graduated && <div>
                     {measurements && <section
                           className={classnames('measurements', { highlight: highlightMeasurementPanel })}>
                       <Localized id="measurements">
@@ -524,50 +526,7 @@ export class ExperimentDetail extends React.Component {
                       </Localized>}
                     </section>}
                   </div>}
-                  </div>}
-                {graduated &&
-                  <div className="details-description">
-                    <section className="graduation-report">
-                      { graduation_report ? parser(graduation_report) :
-                        // TODO: This is not very DRY.
-                        // When this page gets refactored we should
-                        // Consolidate the details description to
-                        // Better modularize possible content blocks.git
-                        <div>
-                          <Warning titleL10nId="experimentGradReportPendingTitle"
-                            title="This experiment has ended.">
-                              <Localized id="experimentGradReportPendingCopy">
-                                <div>We are working on a full report. Check back soon for the details.</div>
-                              </Localized>
-                          </Warning>
-                          <LocalizedHtml id={this.l10nId('introduction')}>
-                            <div>
-                              {parser(introduction)}
-                            </div>
-                          </LocalizedHtml>
-                          <div className="details-list">
-                            {details.map((detail, idx) => (
-                              <div key={idx}>
-                                <div className="details-image">
-                                  <img width="680" src={detail.image} />
-                                  <p className="caption">
-                                    {detail.headline && <Localized id={this.l10nId(['details', idx, 'headline'])}>
-                                      <strong>{detail.headline}</strong>
-                                    </Localized>}
-                                    {detail.copy && <LocalizedHtml id={this.l10nId(['details', idx, 'copy'])}>
-                                      <span>
-                                        {parser(detail.copy)}
-                                      </span>
-                                    </LocalizedHtml>}
-                                  </p>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      }
-                    </section>
-                  </div>}
+                </div>
               </LayoutWrapper>
             </div>
           </div>

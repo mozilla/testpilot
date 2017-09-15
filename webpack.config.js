@@ -7,6 +7,7 @@ const config = require('./frontend/config.js');
 
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const RUN_ANALYZER = !!process.env.ANALYZER;
 const NODE_ENV = process.env.NODE_ENV || 'development';
@@ -35,6 +36,10 @@ const vendorModules = Object.keys(packageJSON.dependencies)
   .filter(name => excludeVendorModules.indexOf(name) < 0)
   .concat(includeVendorModules);
 
+const extractSass = new ExtractTextPlugin({
+  filename: '[name].css'
+});
+
 const plugins = [
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': `"${NODE_ENV}"`,
@@ -46,7 +51,8 @@ const plugins = [
     /moment[\/\\]locale$/, // eslint-disable-line no-useless-escape
     new RegExp(config.AVAILABLE_LOCALES.replace(/,/g, '|'))
   ),
-  new webpack.optimize.CommonsChunkPlugin('static/app/vendor.js')
+  new webpack.optimize.CommonsChunkPlugin('static/app/vendor.js'),
+  extractSass
 ];
 
 if (!IS_DEV) {
@@ -91,12 +97,23 @@ module.exports = {
     contentBase: 'dist'
   },
   devtool: 'source-map',
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: 'babel-loader'
+      },
+      {
+        test: /\.scss$/,
+        use: extractSass.extract({
+          use: [{ loader: 'css-loader' }, { loader: 'sass-loader' }],
+          // use style-loader in development
+          fallback: 'style-loader'
+        })
       }
     ]
   },
