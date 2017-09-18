@@ -29,7 +29,7 @@ changelog_url: 'https://github.com/mozilla/testpilot-containers/commits/master'
 contribute_url: 'https://github.com/mozilla/testpilot-containers/'
 bug_report_url: 'https://github.com/mozilla/testpilot-containers/issues/new'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/containers'
-privacy_notice_url: 'https://github.com/mozilla/testpilot-containers/blob/master/docs/metrics.md'
+privacy_notice_url: 'https://github.com/mozilla/testpilot-containers/blob/3.1.0/docs/metrics.md'
 measurements:
   - >
     Containers will only send information to us when you interact with it, such as opening, editing, or deleting a container.
