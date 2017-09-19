@@ -1,7 +1,5 @@
-from datetime import datetime
 
 import pytest
-import requests
 
 from pages.desktop.home import Home
 from pages.desktop.privacy import Privacy
@@ -21,7 +19,6 @@ def test_install_button_loads(base_url, selenium):
     """Test install button for test pilot addon loads"""
     page = Home(selenium, base_url).open()
     assert page.header.is_install_button_displayed
-
 
 
 @pytest.mark.nondestructive
