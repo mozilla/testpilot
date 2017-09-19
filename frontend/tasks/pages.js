@@ -36,7 +36,15 @@ gulp.task('pages-experiments', () => {
 gulp.task('pages-legal', () => {
   return git.clone(
     'https://github.com/mozilla/legal-docs.git',
-    {args: config.DEST_PATH + 'legal-docs'});
+    {args: config.DEST_PATH + 'legal-docs'},
+    (err) => {
+      if (err) {
+        // The most likely error is that frontend/build/legal-docs
+        // already exists, so just try to git pull on it to make
+        // sure we have the latest.
+        return git.pull({cwd: config.DEST_PATH + 'legal-docs'});
+      }
+    });
 });
 
 // This is pretty weird. We checkout legal-docs into the build directory,
