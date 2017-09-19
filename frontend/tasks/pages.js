@@ -1,3 +1,4 @@
+const git = require('gulp-git');
 const gulp = require('gulp');
 const config = require('../config.js');
 const path = require('path');
@@ -32,7 +33,40 @@ gulp.task('pages-experiments', () => {
     .pipe(gulp.dest(config.DEST_PATH + 'experiments'));
 });
 
-gulp.task('pages-compiled', () => {
+gulp.task('pages-legal-privacy', () => {
+  return git.clone(
+    'https://github.com/mozilla/legal-docs.git/firefox_testpilot_PrivacyNotice',
+    {args: 'frontend/src/pages/privacy'},
+    (result) => {
+      console.log(result);
+    });
+});
+
+
+gulp.task('pages-legal', () => {
+  return git.clone(
+    'https://github.com/mozilla/legal-docs.git',
+    {args: config.DEST_PATH + 'legal-docs'});
+});
+
+// This is pretty weird. We checkout legal-docs into the build directory,
+// but then we want to copy the md files into the src pages directory,
+// so that pages-compiled will find the md files and convert them into
+// compiled pages in the build directory.
+gulp.task('pages-legal-privacy', ['pages-legal'], () => {
+  return gulp.src(
+    config.DEST_PATH + 'legal-docs/firefox_testpilot_PrivacyNotice/**/*.md')
+      .pipe(gulp.dest(config.SRC_PATH + 'pages/privacy'));
+});
+
+gulp.task('pages-legal-terms', ['pages-legal'], () => {
+  return gulp.src(
+    config.DEST_PATH + 'legal-docs/firefox_testpilot_Terms/**/*.md')
+      .pipe(gulp.dest(config.SRC_PATH + 'pages/terms'));
+});
+
+gulp.task('pages-compiled', ['pages-legal-privacy', 'pages-legal-terms'],
+() => {
   return gulp.src(config.SRC_PATH + 'pages/**/*.md')
              .pipe(convertToCompiledPage())
              .pipe(gulp.dest(config.DEST_PATH));

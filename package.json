@@ -35,7 +35,6 @@
     "regenerator-runtime": "^0.11.0",
     "reselect": "3.0.1",
     "seedrandom": "2.4.2",
-    "tos-pp": "https://github.com/mozilla/legal-docs.git"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.0",
@@ -74,6 +73,7 @@
     "gulp-connect": "5.0.0",
     "gulp-cssnano": "2.1.2",
     "gulp-eslint": "3.0.1",
+    "gulp-git": "2.4.2",
     "gulp-if": "2.0.2",
     "gulp-multi-dest": "0.0.4",
     "gulp-rename": "1.2.2",
