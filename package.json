@@ -34,8 +34,7 @@
     "redux-promise": "0.5.3",
     "regenerator-runtime": "^0.11.0",
     "reselect": "3.0.1",
-    "seedrandom": "2.4.2",
-    "tos-pp": "https://github.com/mozilla/legal-docs.git"
+    "seedrandom": "2.4.2"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.0",
@@ -87,6 +86,7 @@
     "merge-stream": "1.0.1",
     "mocha": "3.2.0",
     "mocha-junit-reporter": "1.13.0",
+    "node-fetch": "1.7.3",
     "node-normalize-scss": "3.0.0",
     "node-sass": "4.5.0",
     "nyc": "11.0.2",

@@ -1,7 +1,5 @@
-from datetime import datetime
 
 import pytest
-import requests
 
 from pages.desktop.home import Home
 from pages.desktop.privacy import Privacy
@@ -21,21 +19,6 @@ def test_install_button_loads(base_url, selenium):
     """Test install button for test pilot addon loads"""
     page = Home(selenium, base_url).open()
     assert page.header.is_install_button_displayed
-
-
-@pytest.mark.nondestructive
-def test_number_of_experiments(base_url, selenium):
-    """Test current number of experiments"""
-    page = Home(selenium, base_url).open()
-    url = '{0}/{1}'.format(base_url, 'api/experiments.json')
-    # Ping api to get current number of completed experiments
-    data = requests.get(url, verify=False).json()
-    # add one for dev experiment
-    completed_experiments = len(
-        [value for value in data['results'] if 'completed' in value and
-         value['completed'] < str(datetime.utcnow())]) + 1
-    assert len(page.body.experiments) == int(
-        len(data['results']) - completed_experiments)
 
 
 @pytest.mark.nondestructive

@@ -29,6 +29,10 @@ addon/build/
 addon/dist/
 addon/locale/
 
+# These get copied from the legal-docs repository on build
+frontend/src/pages/terms
+frontend/src/pages/privacy
+
 # Files to ignore within specific directories
 addon/*.rdf
 addon/*.xpi

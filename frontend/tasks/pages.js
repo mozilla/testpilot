@@ -1,3 +1,4 @@
+const fetch = require('node-fetch');
 const gulp = require('gulp');
 const config = require('../config.js');
 const path = require('path');
@@ -18,6 +19,17 @@ const THUMBNAIL_TWITTER = config.PRODUCTION_URL + '/static/images/thumbnail-twit
 const META_TITLE = 'Firefox Test Pilot';
 const META_DESCRIPTION = 'Test new Features. Give us feedback. Help build Firefox.';
 
+const PRIVACY_PAGES = [
+  'https://raw.githubusercontent.com/mozilla/legal-docs/master/firefox_testpilot_PrivacyNotice/en-US.md',
+  'https://raw.githubusercontent.com/mozilla/legal-docs/master/firefox_testpilot_PrivacyNotice/de.md'
+];
+
+const TERMS_PAGES = [
+  'https://raw.githubusercontent.com/mozilla/legal-docs/master/firefox_testpilot_Terms/en-US.md',
+  'https://raw.githubusercontent.com/mozilla/legal-docs/master/firefox_testpilot_Terms/de.md'
+];
+
+
 gulp.task('pages-misc', () => {
   // We just need a dummy file to get a stream going; we're going to ignore
   // the contents in buildLandingPage
@@ -32,11 +44,30 @@ gulp.task('pages-experiments', () => {
     .pipe(gulp.dest(config.DEST_PATH + 'experiments'));
 });
 
-gulp.task('pages-compiled', () => {
-  return gulp.src(config.SRC_PATH + 'pages/**/*.md')
-             .pipe(convertToCompiledPage())
-             .pipe(gulp.dest(config.DEST_PATH));
-});
+function fetchAndSave(url, prefix) {
+  const filename = path.basename(url);
+  return fetch(url).then((response) => {
+    return response.text();
+  }).then((text) => {
+    return new Promise((resolve, reject) => {
+      fs.writeFile(
+        config.SRC_PATH + prefix + filename, text, resolve);
+    });
+  });
+}
+
+gulp.task('pages-legal-privacy', () => Promise.all(
+  PRIVACY_PAGES.map(
+    (url) => fetchAndSave(url, 'pages/privacy/'))));
+
+gulp.task('pages-legal-terms', () => Promise.all(
+  TERMS_PAGES.map(
+    (url) => fetchAndSave(url, 'pages/terms/'))));
+
+gulp.task('pages-compiled', ['pages-legal-privacy', 'pages-legal-terms'],
+  () => gulp.src(config.SRC_PATH + 'pages/**/*.md')
+            .pipe(convertToCompiledPage())
+            .pipe(gulp.dest(config.DEST_PATH)));
 
 gulp.task('pages-contributing', () => {
   gulp.src('./contribute.json')
