@@ -33,16 +33,6 @@ gulp.task('pages-experiments', () => {
     .pipe(gulp.dest(config.DEST_PATH + 'experiments'));
 });
 
-gulp.task('pages-legal-privacy', () => {
-  return git.clone(
-    'https://github.com/mozilla/legal-docs.git/firefox_testpilot_PrivacyNotice',
-    {args: 'frontend/src/pages/privacy'},
-    (result) => {
-      console.log(result);
-    });
-});
-
-
 gulp.task('pages-legal', () => {
   return git.clone(
     'https://github.com/mozilla/legal-docs.git',
