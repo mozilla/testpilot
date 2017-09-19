@@ -197,6 +197,7 @@ experimentPlatformWebMobile = وب / آزمایش موبایل
 experimentPlatformAddonMobile = فایرفاکس / آزمایش موبایل
 experimentPlatformWeb = آزمایش وب
 experimentPlatformAddon = آزمایش فایرفاکس
+experimentPlatformMobileApp = آزمایش موبایل
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
