@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Mozilla (https://mozilla.org/)",
   "browser": {
-    "tos-pp": false
+    "legal-docs": false
   },
   "bugs": {
     "url": "https://github.com/mozilla/testpilot/issues"
@@ -35,7 +35,7 @@
     "regenerator-runtime": "^0.11.0",
     "reselect": "3.0.1",
     "seedrandom": "2.4.2",
-    "tos-pp": "https://github.com/mozilla/legal-docs.git"
+    "legal-docs": "https://github.com/mozilla/legal-docs.git"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.0",
