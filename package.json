@@ -34,7 +34,7 @@
     "redux-promise": "0.5.3",
     "regenerator-runtime": "^0.11.0",
     "reselect": "3.0.1",
-    "seedrandom": "2.4.2",
+    "seedrandom": "2.4.2"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.0",
