@@ -94,29 +94,27 @@ aws s3 sync \
   --acl "public-read" \
   dist/ s3://${TESTPILOT_BUCKET}/
 
-if [ "$DEST" = "dev" ] || [ "$DEST" = "stage" ]; then
-  # XPI; short cache; amazon won't detect the content-type correctly
-  aws s3 sync \
-    --cache-control "max-age=${TEN_MINUTES}" \
-    --content-type "application/x-xpinstall" \
-    --exclude "*" \
-    --include "*.xpi" \
-    --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
-    --metadata-directive "REPLACE" \
-    --acl "public-read" \
-    dist/ s3://${TESTPILOT_BUCKET}/
+# XPI; short cache; amazon won't detect the content-type correctly
+aws s3 sync \
+  --cache-control "max-age=${TEN_MINUTES}" \
+  --content-type "application/x-xpinstall" \
+  --exclude "*" \
+  --include "*.xpi" \
+  --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
+  --metadata-directive "REPLACE" \
+  --acl "public-read" \
+  dist/ s3://${TESTPILOT_BUCKET}/
 
-  # RDF; short cache; amazon won't detect the content-type correctly
-  aws s3 sync \
-    --cache-control "max-age=${TEN_MINUTES}" \
-    --content-type "text/rdf" \
-    --exclude "*" \
-    --include "*.rdf" \
-    --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
-    --metadata-directive "REPLACE" \
-    --acl "public-read" \
-    dist/ s3://${TESTPILOT_BUCKET}/
-fi
+# RDF; short cache; amazon won't detect the content-type correctly
+aws s3 sync \
+  --cache-control "max-age=${TEN_MINUTES}" \
+  --content-type "text/rdf" \
+  --exclude "*" \
+  --include "*.rdf" \
+  --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
+  --metadata-directive "REPLACE" \
+  --acl "public-read" \
+  dist/ s3://${TESTPILOT_BUCKET}/
 
 # l10n files; short cache;
 aws s3 sync \
