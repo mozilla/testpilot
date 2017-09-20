@@ -23,6 +23,8 @@ const experiment = {
 const baseProps = {
   hasAddon: false,
   enabled: false,
+  isFirefox: true,
+  isMinFirefox: true,
   experiment: experiment,
   eventCategory: 'storybook',
   getExperimentLastSeen: () => Date.now(),
@@ -96,4 +98,7 @@ storiesOf('ExperimentRowCard', module)
   )
   .add('after completed date', () =>
     <ExperimentRowCard {...baseProps} isAfterCompletedDate={() => true} />
+  )
+  .add('not supported Firefox version', () =>
+    <ExperimentRowCard {...baseProps} isMinFirefox={false} isFirefox={false} />
   );

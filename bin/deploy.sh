@@ -23,6 +23,8 @@ fi
 
 if [ "$1" = "dev" ]; then
     DEST="dev"
+elif [ "$1" = "stage" ]; then
+    DEST="stage"
 fi
 
 
@@ -88,6 +90,28 @@ aws s3 sync \
   --exclude "*" \
   --include "*.json" \
   --metadata "{${ACAO}, ${HPKP}, ${HSTS}, ${TYPE}}" \
+  --metadata-directive "REPLACE" \
+  --acl "public-read" \
+  dist/ s3://${TESTPILOT_BUCKET}/
+
+# XPI; short cache; amazon won't detect the content-type correctly
+aws s3 sync \
+  --cache-control "max-age=${TEN_MINUTES}" \
+  --content-type "application/x-xpinstall" \
+  --exclude "*" \
+  --include "*.xpi" \
+  --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
+  --metadata-directive "REPLACE" \
+  --acl "public-read" \
+  dist/ s3://${TESTPILOT_BUCKET}/
+
+# RDF; short cache; amazon won't detect the content-type correctly
+aws s3 sync \
+  --cache-control "max-age=${TEN_MINUTES}" \
+  --content-type "text/rdf" \
+  --exclude "*" \
+  --include "*.rdf" \
+  --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
   dist/ s3://${TESTPILOT_BUCKET}/

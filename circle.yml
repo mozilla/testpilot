@@ -7,6 +7,7 @@ machine:
   environment:
     DISPLAY: :99
     PATH: "/home/ubuntu/testpilot/firefox:$PATH"
+    MOZ_HEADLESS: 1
   hosts:
     example.com: 127.0.0.1
   node:
@@ -38,8 +39,7 @@ test:
     - ./bin/circleci/flake8.sh
     - mkdir integration-test-results
     - ./bin/circleci/test-firefox-release.sh
-    - ./bin/circleci/test-firefox-dev.sh
-    - # ./bin/circleci/test-firefox-nightly.sh
+    - ./bin/circleci/test-firefox-nightly.sh
   post:
     - bash <(curl -s https://codecov.io/bash)
     - cp -r integration-test-results $CIRCLE_ARTIFACTS
@@ -52,16 +52,14 @@ deployment:
       - master
     commands:
       - TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/circleci/do-exclusively.sh --branch master ./bin/deploy.sh dev
-      - aws configure set preview.cloudfront true
-      - aws cloudfront create-invalidation --distribution-id E2ERG47PHCWD0Z --paths '/*'
+      - ./bin/circleci/invalidate-cloudfront-cache.sh E2ERG47PHCWD0Z
   static_l10n:
     owner: mozilla
     branch:
       - l10n
     commands:
       - TESTPILOT_BUCKET=testpilot-l10n.dev.mozaws.net ./bin/deploy.sh dev
-      - aws configure set preview.cloudfront true
-      - aws cloudfront create-invalidation --distribution-id ELL21V1NJAJJ8 --paths '/*'
+      - ./bin/circleci/invalidate-cloudfront-cache.sh ELL21V1NJAJJ8
 
 # Only notify of builds on master branch.
 experimental:

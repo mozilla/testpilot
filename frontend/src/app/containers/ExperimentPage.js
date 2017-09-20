@@ -118,10 +118,7 @@ export class ExperimentDetail extends React.Component {
 
     // On enable state change, stop installation indicators & show tour dialog if needed.
     if (prevEnabled !== nextEnabled) {
-      // TODO: Tweak experiment install count?
-      const showTourDialog = shouldShowTourDialog &&
-                             nextExperiment &&
-                             !nextExperiment.error;
+      const showTourDialog = shouldShowTourDialog && nextEnabled;
       this.setState({
         shouldShowTourDialog: false,
         showTourDialog
