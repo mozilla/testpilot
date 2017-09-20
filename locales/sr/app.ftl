@@ -17,6 +17,7 @@ footerLinkCookies = Колачићи
 footerLinkPrivacy = Приватност
 footerLinkTerms = Услови
 footerLinkLegal = Права
+footerLinkFeedback = Пошаљите повратне информације
 footerLinkAbout = О Test Pilot-у
 
 
@@ -29,6 +30,7 @@ menuWiki = Test Pilot Wiki
 menuDiscuss = Причајте о Test Pilot-у
 menuFileIssue = Пријавите грешку
 menuRetire = Деинсталирај Test Pilot
+headerLinkBlog = Блог
 
 
 // The splash on the homepage.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = Ох не!
 [[ updateList ]]
 
 latestUpdatesTitle = Последња ажурирања
+showMoreNewsTitle = Прикажи старије новости
 
 
 // A listing of all Test Pilot experiments.
@@ -159,7 +162,6 @@ experimentPromoSubheader = Ми градимо могућности следећ
 
 isEnabledStatusMessage = { $title } је омогућен.
 installErrorMessage = Уф. { $title } не може бити омогућен. Покушајте поново касније.
-participantCount = <span>{ $installation_count }</span> учесника
 otherExperiments = Испробајте и ове експерименте
 giveFeedback = Пошаљите повратну информацију
 disableHeader = Онемогућити експеримент?
@@ -181,12 +183,12 @@ bugReports = Пријаве грешака
 discussExperiment = Причајте о { $title }
 tourOnboardingTitle = { $title } омогућен!
 tourDoneButton = Готово
-userCountContainer = Тренутно има <span>{ $installation_count }</span> људи који испробавају { $title }!
 userCountContainerAlt = Управо објављено!
 highlightPrivacy = Ваша приватност
 experimentGradReportPendingTitle = Овај експеримент се завршио
 experimentGradReportPendingCopy = Радимо на потпуном извештају. Вратите се ускоро за детаље.
 experimentGoToLink = Иди на { $title }
+startedDateLabel = Датум почетка експеримента: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
