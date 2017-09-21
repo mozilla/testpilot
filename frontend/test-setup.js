@@ -1,5 +1,9 @@
 // Global setup for all tests
 
+
+// HACK: Ignore non-JS imports used for asset dependencies in Webpack
+require.extensions['.scss'] = function () {}
+
 // We need jsdom for enzyme mount()'ed components - mainly the sticky header
 // scroll handler stuff on the experiments page.
 
