@@ -216,7 +216,7 @@ versionChangeNoticeLink = Obtener la versión actual de Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = ¿Desinstalar Test Pilot?
-retireMessage = Como quieras. Se deshabilitarán los tests activos, se desinstalará el complemento y se eliminará la información de tu cuenta de nuestros servidores.
+retireMessageUpdate = Como quiera. Esto desinstalará Test Pilot. Puede deshabilitar los experimentos individuales desde el Administrador de complementos de Firefox.
 retireEmailMessage = Para dejar de recibir actualizaciones por correo electrónico, solo haga clic en el enlace <em> darme de baja </em> en cualquier correo electrónico de Test Pilot.
 retireSubmitButton = Continuar
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar Test Pilot
