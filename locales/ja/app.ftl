@@ -216,7 +216,7 @@ versionChangeNoticeLink = Firefox の最新版をダウンロード。
 [[ uninstall ]]
 
 retireDialogTitle = Test Pilot を削除しますか？
-retireMessage = 了解しました。これにより、アクティブなテストはすべて無効化され、アドオンは削除され、あなたのアカウント情報はサーバーから削除されます。
+retireMessageUpdate = 了解しました。これにより Test Pilot は削除されます。個々の実験は Firefox のアドオンマネージャーから無効化できます。
 retireEmailMessage = メールによる最新情報の配信を停止するには、Test Pilot からのメールに記載されている <em>購読中止</em> リンクをクリックしてください。
 retireSubmitButton = 続ける
 pageTitleRetirePage = Firefox Test Pilot - Test Pilot を削除
