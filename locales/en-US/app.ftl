@@ -174,7 +174,7 @@ versionChangeNoticeLink = Get the current version of Firefox.
 // Shown while uninstalling Test Pilot.
 [[uninstall]]
 retireDialogTitle = Uninstall Test Pilot?
-retireMessage = As you wish. This will disable any active tests, uninstall the add-on and remove your account info from our servers.
+retireMessageUpdate = As you wish. This will uninstall Test Pilot. You can disable individual experiments from the Firefox Add-ons Manager.
 retireEmailMessage = To opt out of email updates, simply click the <em>unsubscribe</em> link on any Test Pilot email.
 retireSubmitButton = Proceed
 pageTitleRetirePage = Firefox Test Pilot - Uninstall Test Pilot

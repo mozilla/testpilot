@@ -27,8 +27,8 @@ export default class RetireConfirmationDialog extends React.Component {
           <form>
 
             <div className="modal-content">
-              <Localized id="retireMessage">
-                <p className="centered">As you wish. This will disable any active tests, uninstall the Test Pilot add-on, and remove your account information from our servers.</p>
+              <Localized id="retireMessageUpdate">
+                <p className="centered">As you wish. This will uninstall Test Pilot. You can disable individual experiments from the Firefox Add-ons Manager.</p>
               </Localized>
               <LocalizedHtml id="retireEmailMessage">
                 <p className="centered small">To opt out of email updates, simply click the <em>unsubscribe</em> link on any Test Pilot email.</p>
