@@ -19,6 +19,7 @@ import ExperimentCardList from '../components/ExperimentCardList';
 import ExperimentPreFeedbackDialog from '../components/ExperimentPreFeedbackDialog';
 import View from '../components/View';
 import Warning from '../components/Warning';
+import IncompatibleAddons from '../components/IncompatibleAddons';
 
 import ExperimentPlatforms from '../components/ExperimentPlatforms';
 import Banner from '../components/Banner';
@@ -126,48 +127,6 @@ export class ExperimentDetail extends React.Component {
     }
   }
 
-  getIncompatibleInstalled(incompatible) {
-    if (!incompatible) {
-      return [];
-    }
-    const installed = this.props.installedAddons || [];
-    return Object.keys(incompatible).filter(guid => (
-      installed.indexOf(guid) !== -1
-    ));
-  }
-
-  renderIncompatibleAddons() {
-    const { incompatible } = this.props.experiment;
-    const installed = this.getIncompatibleInstalled(incompatible);
-    if (installed.length === 0) return null;
-
-    const helpUrl = 'https://support.mozilla.org/kb/disable-or-remove-add-ons';
-
-    return (
-      <section className="incompatible-addons">
-        <header>
-          <Localized id="incompatibleHeader">
-            <h3>
-              This experiment may not be compatible with add-ons you have installed.
-            </h3>
-          </Localized>
-          <LocalizedHtml id="incompatibleSubheader">
-            <p>
-              We recommend <a href={helpUrl}>disabling these add-ons</a> before activating this experiment:
-            </p>
-          </LocalizedHtml>
-        </header>
-        <main>
-          <ul>
-            {installed.map(guid => (
-              <li key={guid}>{incompatible[guid]}</li>
-            ))}
-          </ul>
-        </main>
-      </section>
-    );
-  }
-
   renderLocaleWarning() {
     const { experiment, locale, hasAddon } = this.props;
     if (hasAddon !== null && locale && ((experiment.locales && !experiment.locales.includes(locale)) || (experiment.locale_blocklist && experiment.locale_blocklist.includes(locale)))) {
@@ -210,7 +169,7 @@ export class ExperimentDetail extends React.Component {
 
   render() {
     const { experiment, experiments, installed, isAfterCompletedDate, isDev,
-            hasAddon, setExperimentLastSeen, clientUUID,
+            hasAddon, setExperimentLastSeen, clientUUID, installedAddons,
             setPageTitleL10N } = this.props;
 
     // Loading handled in static with react router; don't return anything if no experiments
@@ -452,7 +411,7 @@ export class ExperimentDetail extends React.Component {
                 {!graduated &&
                   <div className="details-description">
                   {this.renderEolBlock()}
-                  {this.renderIncompatibleAddons()}
+                  <IncompatibleAddons {...{ experiment, installedAddons }} />
                   {this.renderLocaleWarning()}
                   {experiment.video_url &&
                     <iframe width="100%" height="360" src={experiment.video_url} frameBorder="0" allowFullScreen className="experiment-video"></iframe>
