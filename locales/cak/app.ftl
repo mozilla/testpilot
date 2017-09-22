@@ -216,7 +216,7 @@ versionChangeNoticeLink = Tak'ulu' ri ruwäch Firefox k'o wakami.
 [[ uninstall ]]
 
 retireDialogTitle = ¿La nelesäx el ri Test Pilot?
-retireMessage = Achi'el nawajo'. Re re' xkeruchüp ri tzijïl taq tojtob'enïk, xtrelesaj el ri chokoy chuqa' xkeyuj el ri taq awetamab'al pan ataqoya'l pa ri kik'u'x qasamaj.
+retireMessageUpdate = Achi'el nawajo'. Re re' xtrelesaj el ri Test Pilot. Yatikïr ye'achüp ri taq asolna'oj pa ri Runuk'samajel Firefox Add-ons
 retireEmailMessage = Richin yek'ul taq k'exoj pa taqoya'l, tapitz'a' pa ruwi' ri ximonel <em>unsubscribe</em> pa xab'achike rutaqoya'l Test Pilot.
 retireSubmitButton = Tisamajïx
 pageTitleRetirePage = Firefox Test Pilot - Telesäx Test Pilot
