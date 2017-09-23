@@ -213,7 +213,7 @@ versionChangeNoticeLink = Scarica l’ultima versione di Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Disinstallare Test Pilot?
-retireMessage = Come desideri. Gli esperimenti attivi verranno disattivati, il componente aggiuntivo sarà rimosso e le informazioni sul tuo account verranno eliminate dal server.
+retireMessageUpdate = Come desideri: Test Pilot verrà disinstallato, mentre i singoli esperimenti possono essere disattivati dal gestore componenti aggiuntivi di Firefox.
 retireEmailMessage = Per non ricevere più aggiornamenti via email fai clic sul link <em>annulla iscrizione</em> presente in tutte le email inviate da Test Pilot.
 retireSubmitButton = Continua
 pageTitleRetirePage = Firefox Test Pilot - Disinstallazione di Test Pilot
