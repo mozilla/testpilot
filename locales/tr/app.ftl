@@ -17,6 +17,7 @@ footerLinkCookies = Çerezler
 footerLinkPrivacy = Gizlilik
 footerLinkTerms = Koşullar
 footerLinkLegal = Yasal Uyarı
+footerLinkFeedback = Geri bildirim ver
 footerLinkAbout = Test Pilotu Hakkında
 
 
@@ -29,6 +30,7 @@ menuWiki = Test Pilotuu Wiki'si
 menuDiscuss = Test Pilotu'nu tartışın
 menuFileIssue = Sorun bildirin
 menuRetire = Test Pilotu’nu kaldır
+headerLinkBlog = Günlük
 
 
 // The splash on the homepage.
@@ -97,8 +99,15 @@ notFoundHeader = Dört yüz dört!
 emailOptInDialogTitle = Test Pilotu'na hoş geldiniz!
 emailOptInMessage = Yeni deneyleri öğrenin ve denediğiniz deneylerin test sonuçlarını görün.
 emailOptInConfirmationTitle = E-posta gönderildi
-emailOptInSuccessMessage2 = Teşekkürler!
 emailOptInConfirmationClose = Deneylere geçelim...
+emailOptInDialogErrorTitle = Hayır!
+
+
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Son güncellemeler
+showMoreNewsTitle = Eski haberleri göster
 
 
 // A listing of all Test Pilot experiments.
@@ -109,12 +118,15 @@ experimentListJustLaunchedTab = Yeni çıktı
 experimentListJustUpdatedTab = Yeni güncellendi
 experimentListEndingTomorrow = Yarın bitiyor
 experimentListEndingSoon = Yakında bitiyor
-experimentsListCondensedHeader = Deneylerinizi seçin!
+experimentCondensedHeader = Test Pilot'a hoş geldiniz!
+experimentListHeader = Deneylerinizi seçin!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Geri bildirim
 experimentCardManage = Yönet
 experimentCardGetStarted = Bunu deneyin
 experimentCardLearnMore = Daha fazla bilgi al
@@ -150,7 +162,6 @@ experimentPromoSubheader = Firefox'un yeni nesil özelliklerini inşa ediyoruz. 
 
 isEnabledStatusMessage = { $title } etkinleştirildi.
 installErrorMessage = { $title } etkinleştirilemedi. Daha sonra yeniden deneyin.
-participantCount = <span>{ $installation_count }</span> katılımcı
 otherExperiments = Bu deneyleri de deneyin
 giveFeedback = Yorum yapın
 disableHeader = Deney kapatılsın mı?
@@ -172,9 +183,24 @@ bugReports = Hata raporları
 discussExperiment = { $title } deneyini tartış
 tourOnboardingTitle = { $title } etkinleştirildi!
 tourDoneButton = Bitti
-userCountContainer = Şu anda { $title } deneyini deneyen <span>{ $installation_count }</span> kişi var!
 userCountContainerAlt = Yeni çıktı!
 highlightPrivacy = Gizliliğiniz
+experimentGradReportPendingTitle = Deney sona erdi
+experimentGradReportPendingCopy = Kapsamlı bir rapor üzerinde çalışıyoruz. Ayrıntıları öğrenmek için yakında tekrar bakın.
+experimentGoToLink = { $title } deneyine git
+startedDateLabel = Denet başlangıç tarihi:  <b>{ $startedDate }</b>
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Firefox / web / mobil deney
+experimentPlatformWebAddon = Firefox / web deneyi
+experimentPlatformWebMobile = web / mobil deney
+experimentPlatformAddonMobile = Firefox / mobil deney
+experimentPlatformWeb = web deneyi
+experimentPlatformAddon = Firefox deneyi
+experimentPlatformMobileApp = mobil deney
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -190,7 +216,7 @@ versionChangeNoticeLink = Firefox'un son sürümünü indirin.
 [[ uninstall ]]
 
 retireDialogTitle = Test Pilotu kaldırılsın mı?
-retireMessage = Bu işlem tüm aktif testleri kapatacak, eklentiyi kaldıracak ve hesabınızı sunucularımızdan silecektir.
+retireMessageUpdate = Nasıl arzu ederseniz... Böylece Test Pilot kaldıracak. Firefox eklenti yöneticisinden her bir deneyi ayrı olarak da devre dışı bırakabilirsiniz.
 retireEmailMessage = E-posta bültenlerinden çıkmak için herhangi bir Test Pilotu e-postasının altındaki <em>abonelikten ayrıl</em> linkine tıklamalısınız.
 retireSubmitButton = Devam et
 pageTitleRetirePage = Firefox Test Pilotu - Test Pilotu'nu kaldır
@@ -280,3 +306,9 @@ noScriptLink = Nedenini öğrenin
 
 viewPastExperiments = Geçmiş deneyleri göster
 hidePastExperiments = Geçmiş deneyleri gizle
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Bir yerde bir sorun var!
