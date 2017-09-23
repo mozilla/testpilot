@@ -213,7 +213,7 @@ versionChangeNoticeLink = Wobstarajśo se aktualnu wersiju Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Test Pilot wótinstalěrowaś?
-retireMessage = Cele kaž sebje žycyśo. To znjemóžnijo aktiwne testy, wótinstalěrujo dodank a wótwónoźijo waše kontowe informacije z našych serwerow.
+retireMessageUpdate = Ako se žycyśo. To buźo Test Pilot wótinstalěrowaś. Móžośo jadnotliwe eksperimenty ze zastojnika rozšyrenjow dodankow znjemóžniś.
 retireEmailMessage = Klikniśo jadnorje na wótkaz <em>Wótskazaś</em> w mejlce Test Pilot, až njeby wy žedne nowosći wěcej dostał.
 retireSubmitButton = Dalej
 pageTitleRetirePage = Firefox Test Pilot - Test Pilot wótinstalěrowaś
