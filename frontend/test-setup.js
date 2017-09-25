@@ -1,6 +1,5 @@
 // Global setup for all tests
 
-
 // HACK: Ignore non-JS imports used for asset dependencies in Webpack
 require.extensions['.scss'] = function () {}
 
