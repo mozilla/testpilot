@@ -216,7 +216,7 @@ versionChangeNoticeLink = Hämta den aktuella versionen av Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Avinstallera Test Pilot?
-retireMessage = Som du önskar. Detta kommer att inaktivera alla aktiva tester, avinstallera tillägget och ta bort din kontoinformation från våra servrar.
+retireMessageUpdate = Som du vill. Detta avinstallerar Test Pilot. Du kan inaktivera enskilda experiment från tilläggshanteraren i Firefox.
 retireEmailMessage = För att välja bort e-postuppdateringar, klicka på länken <em>avbryt prenumeration</em> på någon Test Pilot e-post.
 retireSubmitButton = Fortsätt
 pageTitleRetirePage = Firefox Test Pilot - Avinstallera Test Pilot
