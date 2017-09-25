@@ -29,7 +29,7 @@ export default class GraduatedNotice extends React.Component {
         <p>
           We are working on a full report. Check back soon for the details.
         </p>
-      </Localized>
+      </Localized>;
     }
     return <div className="graduated-notice">
       <img className="graduated-notice-image" src="/static/images/info-16.svg" />

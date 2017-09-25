@@ -1,7 +1,6 @@
 /* global describe, beforeEach, it */
 import React from 'react';
 import { expect } from 'chai';
-import sinon from 'sinon';
 import { mount } from 'enzyme';
 
 import GraduatedNotice from './index';
