@@ -5,28 +5,28 @@ import moment from 'moment';
 import classnames from 'classnames';
 import parser from 'html-react-parser';
 
-import { buildSurveyURL, experimentL10nId, formatDate } from '../lib/utils';
+import { buildSurveyURL, experimentL10nId, formatDate } from '../../lib/utils';
 
-import NotFoundPage from './NotFoundPage';
+import NotFoundPage from '../NotFoundPage';
 
-import EmailDialog from '../components/EmailDialog';
-import ExperimentDisableDialog from '../components/ExperimentDisableDialog';
-import ExperimentEolDialog from '../components/ExperimentEolDialog';
-import ExperimentTourDialog from '../components/ExperimentTourDialog';
-import GraduatedNotice from '../components/GraduatedNotice';
-import LocalizedHtml from '../components/LocalizedHtml';
-import MainInstallButton from '../components/MainInstallButton';
-import ExperimentCardList from '../components/ExperimentCardList';
-import ExperimentPreFeedbackDialog from '../components/ExperimentPreFeedbackDialog';
-import View from '../components/View';
-import Warning from '../components/Warning';
-import IncompatibleAddons from '../components/IncompatibleAddons';
+import EmailDialog from '../../components/EmailDialog';
+import ExperimentDisableDialog from '../../components/ExperimentDisableDialog';
+import ExperimentEolDialog from '../../components/ExperimentEolDialog';
+import ExperimentTourDialog from '../../components/ExperimentTourDialog';
+import GraduatedNotice from '../../components/GraduatedNotice';
+import LocalizedHtml from '../../components/LocalizedHtml';
+import MainInstallButton from '../../components/MainInstallButton';
+import ExperimentCardList from '../../components/ExperimentCardList';
+import ExperimentPreFeedbackDialog from '../../components/ExperimentPreFeedbackDialog';
+import View from '../../components/View';
+import Warning from '../../components/Warning';
 
-import ExperimentPlatforms from '../components/ExperimentPlatforms';
-import Banner from '../components/Banner';
-import Copter from '../components/Copter';
-import LayoutWrapper from '../components/LayoutWrapper';
+import ExperimentPlatforms from '../../components/ExperimentPlatforms';
+import Banner from '../../components/Banner';
+import Copter from '../../components/Copter';
+import LayoutWrapper from '../../components/LayoutWrapper';
 
+import IncompatibleAddons from './IncompatibleAddons';
 
 export default class ExperimentPage extends React.Component {
   render() {

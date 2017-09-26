@@ -3,9 +3,9 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import IncompatibleAddons from './index.js';
+import IncompatibleAddons from './IncompatibleAddons';
 
-describe('app/components/IncompatibleAddons', () => {
+describe('app/containers/ExperimentPage/IncompatibleAddons', () => {
   let mockExperiment, props, subject;
   beforeEach(() => {
     mockExperiment = {

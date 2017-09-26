@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import IncompatibleAddons from './index';
-import LayoutWrapper from '../LayoutWrapper';
+import IncompatibleAddons from './IncompatibleAddons';
+import LayoutWrapper from '../../components/LayoutWrapper';
 
 const experiment = {
   title: 'Sample experiment',
@@ -36,9 +36,9 @@ storiesOf('IncompatibleAddons', module)
     </div>
   )
   .add('base state', () =>
-    <IncompatibleAddons {...{ baseProps }} />
+    <IncompatibleAddons {...baseProps} />
   )
   .add('none installed', () =>
-    <IncompatibleAddons {...{ baseProps, installedAddons: [] }} />
+    <IncompatibleAddons {...{ ...baseProps, installedAddons: [] }} />
   )
   ;

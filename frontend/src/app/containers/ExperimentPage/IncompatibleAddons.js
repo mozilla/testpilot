@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Localized } from 'fluent-react/compat';
-import LocalizedHtml from '../LocalizedHtml';
+import LocalizedHtml from '../../components/LocalizedHtml';
 
 import './index.scss';
 
