@@ -1,7 +1,4 @@
-
-
 import React from 'react';
-
 import { storiesOf } from '@storybook/react';
 
 import GraduatedNotice from './index';
@@ -16,4 +13,3 @@ storiesOf('GraduatedNotice', module)
       graduation_url="https://medium.com/firefox-test-pilot"
     />
   );
-

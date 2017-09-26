@@ -1,4 +1,3 @@
-
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
@@ -45,4 +44,3 @@ export default class GraduatedNotice extends React.Component {
     </div>;
   }
 }
-
