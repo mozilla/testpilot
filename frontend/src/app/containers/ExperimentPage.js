@@ -308,11 +308,9 @@ export class ExperimentDetail extends React.Component {
                     <img className="experiment-icon" src={thumbnail}></img>
                   </div>
                   <div className="details-sections">
-                    {!experiment.web_url &&
-                      <section className="user-count">
-                        { this.renderLaunchStatus() }
-                      </section>
-                    }
+                    <section className="user-count">
+                      { this.renderLaunchStatus() }
+                    </section>
                     {!graduated && <div>
                       <section className="stats-section">
                         {!experiment.web_url &&
