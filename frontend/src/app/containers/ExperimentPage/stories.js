@@ -1,8 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import IncompatibleAddons from './IncompatibleAddons';
 import LayoutWrapper from '../../components/LayoutWrapper';
+
+import IncompatibleAddons from './IncompatibleAddons';
 
 const experiment = {
   title: 'Sample experiment',
