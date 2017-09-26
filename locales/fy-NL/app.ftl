@@ -213,7 +213,7 @@ versionChangeNoticeLink = Download de aktuele ferzje fan Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Test Pilot de-ynstallearje?
-retireMessage = Sa as jo winske. Dit sil elke aktive test útskeakelje, de add-on de-ynstallearje en jo account fuortsmite fan ús servers.
+retireMessageUpdate = Sa as jo wolle. Hjirtroch wurdt Test Pilot de-ynstallearre. Jo kinne yndividuele eksperiminten útskeakelje yn de Add-onbehearder fan Firefox.
 retireEmailMessage = Klik ienfâldichwei op de keppeling <em>ôfmelde</em> yn in e-mail fan Test Pilot, om gjin e-mailfernijingen mear te ûntfangen.
 retireSubmitButton = Fierdergean
 pageTitleRetirePage = Firefox Test Pilot - Test Pilot de-ynstallearje
