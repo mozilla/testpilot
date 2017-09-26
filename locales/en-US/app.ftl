@@ -149,8 +149,10 @@ tourOnboardingTitle = {$title} enabled!
 tourDoneButton = Done
 userCountContainerAlt = Just launched!
 highlightPrivacy = Your privacy
+experimentGradReportButton=Graduation Report
 experimentGradReportPendingTitle = This experiment has ended
 experimentGradReportPendingCopy = We are working on a full report. Check back soon for the details.
+experimentGradReportReady=We have prepared a full graduation report.
 experimentGoToLink = Go to { $title }
 startedDateLabel = Experiment Start Date: <b>{$startedDate}</b>
 
@@ -261,9 +263,3 @@ warningMissingPrefDetail=When running Test Pilot locally or in development envir
 warningBadHostnameTitle=Unapproved hostname!
 warningBadHostnameDetail=The Test Pilot site may only be accessed from testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, or example.com:8000. Please see <a>our documentation</a> for details.
 
-// Text to show to users when an experiment has graduated
-[[graduated]]
-graduationReportButton=Graduation Report
-graduationNoticeTitle=This experiment has ended
-graduationNoticeReportNotReady=We are working on a full report. Check back soon for the details.
-graduationNoticeReportReady=We have prepared a full graduation report.
