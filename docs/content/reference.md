@@ -609,4 +609,4 @@ the experiment updates.
      Example content goes here
 ```
 
-!(Example general news update)[img/general_news_update.png]
+![Example general news update](img/general_news_update.png)
