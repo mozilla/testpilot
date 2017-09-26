@@ -27,10 +27,7 @@
   },
   "browser_action": {
     "default_title": "Firefox Test Pilot",
-    "browser_style": false,
-    "default_icon": {
-      "16": "icons/icon-16.svg",
-      "32": "icons/icon-32.svg"
-    }
+    "browser_style": true,
+    "default_icon":  "icons/icon.svg"
   }
 }
