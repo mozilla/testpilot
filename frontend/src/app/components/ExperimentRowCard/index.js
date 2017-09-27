@@ -55,13 +55,13 @@ export default class ExperimentRowCard extends React.Component {
       >
         <div className="experiment-actions">
           {enabled && <Localized id="experimentListEnabledTab">
-            <div className="tab enabled-tab"></div>
+            <div className="tab enabled-tab">Enabled</div>
           </Localized>}
           {this.justLaunched() && <Localized id="experimentListJustLaunchedTab">
-            <div className="tab just-launched-tab"></div>
+            <div className="tab just-launched-tab">Just Launched</div>
           </Localized>}
           {this.justUpdated() && <Localized id="experimentListJustUpdatedTab">
-            <div className="tab just-updated-tab"></div>
+            <div className="tab just-updated-tab">Just Updated</div>
           </Localized>}
         </div>
         <div className={`experiment-icon-wrapper-${experiment.slug} experiment-icon-wrapper`}>

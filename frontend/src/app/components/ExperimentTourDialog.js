@@ -43,7 +43,7 @@ export default class ExperimentTourDialog extends React.Component {
 
     const headerTitle = enabled ? (
       <Localized id="tourOnboardingTitle" $title={experiment.title}>
-        <h3 className="modal-header"></h3>
+        <h3 className="modal-header">{experiment.title} enabled!</h3>
       </Localized>) : (<h3 className="modal-header">{experiment.title}</h3>);
 
     return (
