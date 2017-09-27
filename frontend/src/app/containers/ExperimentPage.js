@@ -257,7 +257,7 @@ export class ExperimentDetail extends React.Component {
                     </Localized>
                   </h2>
                   <Localized id="experimentPromoSubheader">
-                    <p className="banner__copy"></p>
+                    <p className="banner__copy">We&apos;re building next-generation features for Firefox. Install Test Pilot to try them!</p>
                   </Localized>
                   <MainInstallButton {...this.props}
                                      experimentTitle={title}
@@ -281,7 +281,7 @@ export class ExperimentDetail extends React.Component {
                 <span>{title} is enabled.</span>
               </Localized>}
               {(statusType === 'error') && <Localized id="installErrorMessage" $title={ title }>
-                <span><span></span></span>
+                <span>Uh oh. {title} could not be enabled. Try again later.</span>
               </Localized>}
             </div>
             <LayoutWrapper helperClass="details-header" flexModifier="row-between-breaking">
@@ -399,7 +399,7 @@ export class ExperimentDetail extends React.Component {
                             </ul>
                           </div>
                           {privacy_notice_url && <Localized id="experimentPrivacyNotice" $title={title}>
-                            <a className="privacy-policy" href={privacy_notice_url}><span></span></a>
+                            <a className="privacy-policy" href={privacy_notice_url}>You can learn more about the data collection for {title} here.</a>
                           </Localized>}
                         </section>}
                       </div>
@@ -650,7 +650,7 @@ export class ExperimentDetail extends React.Component {
       return (
         <div className="upgrade-notice">
           <Localized id="upgradeNoticeTitle" $title={title} $min_release={min_release}>
-            <div></div>
+            <div>{title} requires Firefox {min_release} or later.</div>
           </Localized>
           <Localized id="upgradeNoticeLink">
             <a onClick={e => this.clickUpgradeNotice(e)} href="https://support.mozilla.org/kb/find-what-version-firefox-you-are-using" target="_blank" rel="noopener noreferrer">How to update Firefox.</a>
@@ -666,7 +666,7 @@ export class ExperimentDetail extends React.Component {
       return (
         <div className="upgrade-notice">
           <Localized id="versionChangeNotice" $experiment_title={title}>
-            <div></div>
+            <div>{title} is not supported in this version of Firefox.</div>
           </Localized>
           <Localized id="versionChangeNoticeLink">
             <a onClick={e => this.clickUpgradeNotice(e)} href="https://www.mozilla.org/firefox/" target="_blank" rel="noopener noreferrer">Get the current version of Firefox.</a>
@@ -710,7 +710,7 @@ export class ExperimentDetail extends React.Component {
                 <span className="transition-text">Disabling...</span>
               </Localized>
               <Localized id="disableExperiment" $title={title}>
-                <span className="default-text"></span>
+                <span className="default-text">Disable {title}</span>
               </Localized>
             </button>
           </div>
@@ -722,7 +722,7 @@ export class ExperimentDetail extends React.Component {
       return <div className="experiment-controls">
         <button disabled onClick={e => { e.preventDefault(); }} style={{ minWidth: progressButtonWidth }} id="install-button"  className={classnames(['button', 'default'])}>
           <Localized id="experimentManuallyDisabled" $title={title}>
-            <span className="default-text"></span>
+            <span className="default-text">{title} disabled in Add-ons Manager</span>
           </Localized>
         </button>
       </div>;
@@ -737,7 +737,7 @@ export class ExperimentDetail extends React.Component {
             <span className="transition-text">Disabling...</span>
           </Localized>
           <Localized id="disableExperiment" $title={title}>
-            <span className="default-text"></span>
+            <span className="default-text">Disable {title}</span>
           </Localized>
         </button>
       </div>;

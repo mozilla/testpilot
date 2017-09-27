@@ -26,12 +26,16 @@ export default class ExperimentEolDialog extends React.Component {
           <form>
             <div className="modal-content">
               <Localized id="eolDisableMessage" $title={title}>
-                <p className="centered"></p>
+                <p className="centered">
+                  The {title} experiment has ended. Once you uninstall it you won&apos;t be able to re-install it through Test Pilot again.
+                </p>
               </Localized>
             </div>
             <div className="modal-actions">
               <Localized id="disableExperiment" $title={title}>
-                <button onClick={e => this.proceed(e)} className="submit button warning large"></button>
+                <button onClick={e => this.proceed(e)} className="submit button warning large">
+                  Disable {title}
+                </button>
               </Localized>
             </div>
           </form>

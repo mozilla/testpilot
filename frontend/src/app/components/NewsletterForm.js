@@ -79,7 +79,9 @@ export default class NewsletterForm extends React.Component {
         <input name={fieldName} id={fieldName} type="checkbox" checked={this.props.privacy} required
                onChange={this.handlePrivacyClick} onClick={this.handlePrivacyClick} />
         { this.state.privacyNote ? <Localized id="newsletterFormPrivacyAgreementRequired">
-          <span></span>
+          <span>
+            Please check this box if you want to proceed.
+          </span>
         </Localized> : null }
         <LocalizedHtml id="newsletterFormPrivacyNotice">
           <span>
