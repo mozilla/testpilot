@@ -2,16 +2,15 @@
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
-import { shallow, mount, render } from 'enzyme';
-import { findLocalizedById, findLocalizedHtmlById } from '../../../../test/app/util';
+import { shallow, mount } from 'enzyme';
 import moment from 'moment';
+
+import { findLocalizedById, findLocalizedHtmlById } from '../../../../test/app/util';
 
 import { defaultState } from '../../reducers/newsletter-form';
 
 import ExperimentPage, { ExperimentDetail } from './index';
 import IncompatibleAddons from './IncompatibleAddons';
-
-const CHANGE_HEADER_ON = 105;
 
 describe('app/containers/ExperimentPage/IncompatibleAddons', () => {
   let mockExperiment, props, subject;
@@ -43,18 +42,15 @@ describe('app/containers/ExperimentPage/IncompatibleAddons', () => {
 });
 
 describe('app/containers/ExperimentPage', () => {
-
   const mockExperiment = {
     slug: 'testing',
     foo: 'bar'
   };
-  const mockExperiments = [ mockExperiment ];
-  const mockParams = { slug: mockExperiment.slug };
   const mockProps = {
     slug: mockExperiment.slug,
     getCookie: sinon.spy(),
     removeCookie: sinon.spy(),
-    experiments: [ mockExperiment ],
+    experiments: [mockExperiment],
     getExperimentBySlug: slug => {
       return slug === mockExperiment.slug ? mockExperiment : null;
     }
@@ -65,12 +61,10 @@ describe('app/containers/ExperimentPage', () => {
     const child = wrapper.find(ExperimentDetail);
     expect(child.props().experiment).to.equal(mockExperiment);
   });
-
 });
 
 
 describe('app/containers/ExperimentPage:ExperimentDetail', () => {
-
   let mockExperiment, mockClickEvent, props, subject;
   beforeEach(() => {
     mockExperiment = {
@@ -156,7 +150,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
   const setExperiment = experiment => {
     subject.setProps({
       experiment,
-      experiments: [ experiment ]
+      experiments: [experiment]
     });
     return experiment;
   };
@@ -193,7 +187,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
   it('should render a 404 page if experiment is undefined', () => {
     props = { ...props,
       experiment: undefined,
-      experiments: [ { ...mockExperiment, slug: 'notit' } ]
+      experiments: [{ ...mockExperiment, slug: 'notit' }]
     };
     subject.setProps(props);
     expect(subject.find('NotFoundPage'))
@@ -204,7 +198,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
     beforeEach(() => {
       setExperiment(mockExperiment);
       subject.setProps({
-        isExperimentEnabled: experiment => false
+        isExperimentEnabled: () => false
       });
     });
 
@@ -251,13 +245,13 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
 
     it('should include an ExperimentPlatforms component if `platforms` is set', () => {
       expect(subject.find('ExperimentPlatforms')).to.have.property('length', 0);
-      subject.setProps({experiment: {...mockExperiment, platforms: ['addon', 'web']}});
+      subject.setProps({ experiment: { ...mockExperiment, platforms: ['addon', 'web'] } });
       expect(subject.find('ExperimentPlatforms')).to.have.property('length', 1);
     });
 
     it('should render video iframe if video available', () => {
       expect(subject.find('.experiment-video')).to.have.property('length', 0);
-      setExperiment({...mockExperiment, video_url: 'https://example.com/video' });
+      setExperiment({ ...mockExperiment, video_url: 'https://example.com/video' });
       expect(subject.find('.experiment-video')).to.have.property('length', 1);
     });
 
@@ -271,7 +265,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       expect(subject.find('ExperimentTourDialog')).to.have.property('length', 0);
 
       // Enable the experiment...
-      subject.setProps({ isExperimentEnabled: experiment => true });
+      subject.setProps({ isExperimentEnabled: () => true });
 
       // Now show the tour dialog...
       expect(subject.state('shouldShowTourDialog')).to.be.false;
@@ -303,9 +297,9 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       });
 
       it('should show an email dialog if the first-run cookie is set', () => {
-        const getCookie = sinon.spy(name => 1);
+        const getCookie = sinon.spy(() => 1);
         const removeCookie = sinon.spy();
-        props = { ...props, hasAddon: true, getCookie, removeCookie }
+        props = { ...props, hasAddon: true, getCookie, removeCookie };
         subject = shallow(<ExperimentDetail {...props} />);
         setExperiment(mockExperiment);
 
@@ -351,7 +345,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       });
 
       it('should display a warning only if userAgent does not meet minimum version', () => {
-        const experiment = setExperiment({ ...mockExperiment, min_release: 50});
+        const experiment = setExperiment({ ...mockExperiment, min_release: 50 });
 
         const userAgentPre = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:51.0) Gecko/20100101 Firefox/';
 
@@ -416,7 +410,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
           hasAddon: true,
           getScrollY: () => scrollY,
           getElementOffsetHeight: () => genericElementHeight,
-          experiments: [ mockExperiment ],
+          experiments: [mockExperiment],
           experiment: mockExperiment
         };
         const mountedSubject = mount(<ExperimentDetail {...mountedProps} />);
@@ -454,7 +448,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
         const genericElementHeight = 125;
 
         subject.setProps({
-          getElementY: sel => elementY,
+          getElementY: () => elementY,
           getElementOffsetHeight: () => genericElementHeight
         });
 
@@ -476,7 +470,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
 
       describe('with experiment enabled', () => {
         beforeEach(() => {
-          subject.setProps({ isExperimentEnabled: experiment => true });
+          subject.setProps({ isExperimentEnabled: () => true });
         });
 
         it('should show a "Disable" button', () =>
@@ -518,7 +512,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
           const experiment = setExperiment(mockExperiment);
           const button = subject.find('#feedback-button');
           const expectedHref = button.prop('href');
-          mockClickEvent.target.getAttribute = name => expectedHref;
+          mockClickEvent.target.getAttribute = () => expectedHref;
           button.simulate('click', mockClickEvent);
 
           expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
@@ -534,7 +528,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
 
           const button = subject.find('#feedback-button');
           const expectedHref = button.prop('href');
-          mockClickEvent.target.getAttribute = name => expectedHref;
+          mockClickEvent.target.getAttribute = () => expectedHref;
           button.simulate('click', mockClickEvent);
 
           expect(subject.state('showPreFeedbackDialog')).to.be.true;
@@ -548,7 +542,6 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
           expect(subject.find('.status-bar').hasClass('enabled')).to.be.true;
           expect(findLocalizedById(subject, 'isEnabledStatusMessage')).to.have.property('length', 1);
         });
-
       });
 
       describe('with a completed experiment', () => {
@@ -571,7 +564,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
 
         describe('with experiment enabled', () => {
           beforeEach(() => {
-            subject.setProps({ isExperimentEnabled: experiment => true });
+            subject.setProps({ isExperimentEnabled: () => true });
           });
 
           it('only renders the disable button control', () => {
@@ -588,7 +581,5 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
         });
       });
     });
-
   });
-
 });
