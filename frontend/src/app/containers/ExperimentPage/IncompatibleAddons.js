@@ -1,15 +1,11 @@
 // @flow
-
 import React from 'react';
 import { Localized } from 'fluent-react/compat';
 import LocalizedHtml from '../../components/LocalizedHtml';
 
 import './index.scss';
 
-type IncompatibleAddonsProps = {
-  experiment: Object,
-  installedAddons: Array<string>
-};
+import type { IncompatibleAddonsProps } from './types';
 
 export default class IncompatibleAddons extends React.Component {
   props: IncompatibleAddonsProps

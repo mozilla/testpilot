@@ -11,6 +11,7 @@ import { defaultState } from '../../reducers/newsletter-form';
 
 import ExperimentPage, { ExperimentDetail } from './index';
 import IncompatibleAddons from './IncompatibleAddons';
+import TestpilotPromo from './TestpilotPromo';
 
 describe('app/containers/ExperimentPage/IncompatibleAddons', () => {
   let mockExperiment, props, subject;
@@ -38,6 +39,38 @@ describe('app/containers/ExperimentPage/IncompatibleAddons', () => {
 
     subject.setProps({ installedAddons: ['baz', 'bar'] });
     expect(subject.find('.incompatible-addons')).to.have.property('length', 1);
+  });
+});
+
+describe('app/containers/ExperimentPage/TestpilotPromo', () => {
+  let mockExperiment, props, subject;
+  beforeEach(() => {
+    mockExperiment = {
+      slug: 'testing',
+      title: 'Testing',
+      incompatible: {}
+    };
+    props = {
+      experiment: mockExperiment,
+      isFirefox: false,
+      isMinFirefox: false,
+      graduated: false,
+      hasAddon: false,
+      varianttests: {},
+      installExperiment: () => {}
+    };
+    subject = shallow(<TestpilotPromo {...props} />);
+  });
+
+  it('should display a call-to-action to install Test Pilot without add-on', () => {
+    expect(subject.find('#testpilot-promo')).to.have.property('length', 1);
+    expect(subject.find('MainInstallButton')).to.have.property('length', 1);
+  });
+
+  it('should not display a call-to-action to install Test Pilot with add-on installed', () => {
+    subject.setProps({ hasAddon: true });
+    expect(subject.find('.experiment-promo')).to.have.property('length', 0);
+    expect(subject.find('MainInstallButton')).to.have.property('length', 0);
   });
 });
 
@@ -271,11 +304,6 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       expect(subject.state('shouldShowTourDialog')).to.be.false;
       expect(subject.state('showTourDialog')).to.be.true;
       expect(subject.find('ExperimentTourDialog')).to.have.property('length', 1);
-    });
-
-    it('should display a call-to-action to install Test Pilot', () => {
-      expect(subject.find('#testpilot-promo')).to.have.property('length', 1);
-      expect(subject.find('MainInstallButton')).to.have.property('length', 1);
     });
 
     it('should display a call-to-action to try other experiments', () => {

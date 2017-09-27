@@ -4,6 +4,15 @@ import { action } from '@storybook/addon-actions';
 import LayoutWrapper from '../../components/LayoutWrapper';
 
 import IncompatibleAddons from './IncompatibleAddons';
+import TestpilotPromo from './TestpilotPromo';
+
+const layoutDecorator = story =>
+  <div className="blue" style={{ padding: 10 }} onClick={action('click')}>
+    <div className="stars" />
+    <LayoutWrapper>
+      {story()}
+    </LayoutWrapper>
+  </div>;
 
 const experiment = {
   title: 'Sample experiment',
@@ -18,28 +27,45 @@ const experiment = {
   }
 };
 
-const installedAddons = [
-  'foo@bar.com'
-];
+const installedAddons = ['foo@bar.com'];
 
-const baseProps = {
+const incompatibleAddonBaseProps = {
   experiment,
   installedAddons
 };
 
-storiesOf('IncompatibleAddons', module)
-  .addDecorator(story =>
-    <div className="blue" style={{ padding: 10 }} onClick={action('click')}>
-      <div className="stars" />
-      <LayoutWrapper flexModifier="card-list">
-        {story()}
-      </LayoutWrapper>
-    </div>
-  )
+storiesOf('ExperimentPage/IncompatibleAddons', module)
+  .addDecorator(layoutDecorator)
   .add('base state', () =>
-    <IncompatibleAddons {...baseProps} />
+    <IncompatibleAddons {...incompatibleAddonBaseProps} />
   )
   .add('none installed', () =>
-    <IncompatibleAddons {...{ ...baseProps, installedAddons: [] }} />
+    <IncompatibleAddons
+      {...{ ...incompatibleAddonBaseProps, installedAddons: [] }}
+    />
+  );
+
+const testpilotPromoBaseProps = {
+  experiment,
+  isFirefox: false,
+  isMinFirefox: false,
+  graduated: false,
+  hasAddon: false,
+  varianttests: {},
+  installExperiment: action('installExperiment')
+};
+
+storiesOf('ExperimentPage/TestpilotPromo', module)
+  .addDecorator(layoutDecorator)
+  .add('base state', () => <TestpilotPromo {...testpilotPromoBaseProps} />)
+  .add('is firefox', () =>
+    <TestpilotPromo {...{ ...testpilotPromoBaseProps, isFirefox: true }} />
   )
-  ;
+  .add('is min firefox', () =>
+    <TestpilotPromo
+      {...{ ...testpilotPromoBaseProps, isFirefox: true, isMinFirefox: true }}
+    />
+  )
+  .add('has add-on', () =>
+    <TestpilotPromo {...{ ...testpilotPromoBaseProps, hasAddon: true }} />
+  );
