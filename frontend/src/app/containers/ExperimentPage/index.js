@@ -60,6 +60,8 @@ export class ExperimentDetail extends React.Component {
     const { isExperimentEnabled, experiment,
             getCookie, removeCookie, hasAddon } = this.props;
 
+    this.installExperiment = this.installExperiment.bind(this);
+
     let showEmailDialog = false;
     if (getCookie('first-run')) {
       removeCookie('first-run');

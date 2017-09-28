@@ -14,7 +14,7 @@ export default class TestpilotPromo extends React.Component {
   props: TestpilotPromoProps;
 
   render() {
-    const { hasAddon, graduated, experiment } = this.props;
+    const { hasAddon, graduated, experiment, installCallback } = this.props;
 
     const { title, web_url } = experiment;
     if (hasAddon === null || hasAddon || graduated || web_url) {
@@ -39,7 +39,7 @@ export default class TestpilotPromo extends React.Component {
               <MainInstallButton
                 {...this.props}
                 experimentTitle={title}
-                installCallback={this.installExperiment.bind(this)}
+                installCallback={installCallback}
               />
             </div>
             <Copter />
