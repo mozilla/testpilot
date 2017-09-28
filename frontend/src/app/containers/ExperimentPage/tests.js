@@ -621,7 +621,7 @@ describe('app/containers/ExperimentPage/ExperimentDisableDialog', () => {
   const clientUUID = '38c51b84-9586-499f-ac52-94626e2b29cf';
 
   let onSubmit, onCancel, sendToGA, preventDefault, mockClickEvent, subject;
-  beforeEach(function() {
+  beforeEach(() => {
     onSubmit = sinon.spy();
     onCancel = sinon.spy();
     sendToGA = sinon.spy();
@@ -637,7 +637,7 @@ describe('app/containers/ExperimentPage/ExperimentDisableDialog', () => {
 
   it('should render a modal container', () => {
     expect(subject.find('.modal-container')).to.have.property('length', 1);
-    expect(findLocalizedById(subject, 'feedbackUninstallTitle').props()['$title'])
+    expect(findLocalizedById(subject, 'feedbackUninstallTitle').props().$title)
       .to.equal(experiment.title);
   });
 
@@ -666,7 +666,7 @@ describe('app/containers/ExperimentPage/ExperimentDisableDialog', () => {
 
 describe('app/containers/ExperimentPage/ExperimentEolDialog', () => {
   let props, mockClickEvent, subject;
-  beforeEach(function() {
+  beforeEach(() => {
     props = {
       onSubmit: sinon.spy(),
       onCancel: sinon.spy()
@@ -691,7 +691,6 @@ describe('app/containers/ExperimentPage/ExperimentEolDialog', () => {
       .simulate('click', mockClickEvent);
     expect(props.onSubmit.called).to.be.true;
   });
-
 });
 
 describe('app/containers/ExperimentPage/ExperimentPreFeedbackDialog', () => {
@@ -704,7 +703,7 @@ describe('app/containers/ExperimentPage/ExperimentPreFeedbackDialog', () => {
   const surveyURL = experiment.survey_url;
 
   let sendToGA, onCancel, preventDefault, getAttribute, mockClickEvent, subject;
-  beforeEach(function() {
+  beforeEach(() => {
     sendToGA = sinon.spy();
     onCancel = sinon.spy();
     preventDefault = sinon.spy();
@@ -764,7 +763,7 @@ describe('app/containers/ExperimentPage/ExperimentTourDialog', () => {
         tour_steps: [
           { image: '/example1.png', copy: 'Example 1', copy_l10nsuffix: 'foo' },
           { image: '/example2.png', copy: 'Example 2' },
-          { image: '/example3.png', copy: 'Example 3' },
+          { image: '/example3.png', copy: 'Example 3' }
         ]
       },
       isExperimentEnabled: () => true,
@@ -791,8 +790,10 @@ describe('app/containers/ExperimentPage/ExperimentTourDialog', () => {
   });
 
   it('should render only the experiment title if not enabled', () => {
-    subject.setProps({ isExperimentEnabled: () => false,
-                       experiment: { ...props.experiment } });
+    subject.setProps({
+      isExperimentEnabled: () => false,
+      experiment: { ...props.experiment }
+    });
     expect(subject.find('.modal-header').text()).to.equal(props.experiment.title);
   });
 
@@ -819,7 +820,7 @@ describe('app/containers/ExperimentPage/ExperimentTourDialog', () => {
     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
-      eventLabel: `forward to step 1`
+      eventLabel: 'forward to step 1'
     }]);
   });
 
@@ -841,7 +842,7 @@ describe('app/containers/ExperimentPage/ExperimentTourDialog', () => {
     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
-      eventLabel: `back to step 0`
+      eventLabel: 'back to step 0'
     }]);
   });
 
@@ -859,7 +860,7 @@ describe('app/containers/ExperimentPage/ExperimentTourDialog', () => {
     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
-      eventLabel: `dot to step 0`
+      eventLabel: 'dot to step 0'
     }]);
   });
 
