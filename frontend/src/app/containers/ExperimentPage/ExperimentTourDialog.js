@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import { experimentL10nId } from '../lib/utils';
+import { experimentL10nId } from '../../lib/utils';
 
 type ExperimentTourDialogProps = {
   experiment: Object,

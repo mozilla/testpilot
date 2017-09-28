@@ -16,8 +16,8 @@ export default class TestpilotPromo extends React.Component {
   render() {
     const { hasAddon, graduated, experiment } = this.props;
 
-    const { title } = experiment;
-    if (hasAddon === null || hasAddon || graduated || experiment.web_url) {
+    const { title, web_url } = experiment;
+    if (hasAddon === null || hasAddon || graduated || web_url) {
       return null;
     }
     return (

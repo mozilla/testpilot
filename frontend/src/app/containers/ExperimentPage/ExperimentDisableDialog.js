@@ -2,8 +2,8 @@
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import Copter from './Copter';
-import { buildSurveyURL } from '../lib/utils';
+import Copter from '../../components/Copter';
+import { buildSurveyURL } from '../../lib/utils';
 
 type ExperimentDisableDialogProps = {
   experiment: Object,
