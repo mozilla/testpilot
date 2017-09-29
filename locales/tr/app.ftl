@@ -312,3 +312,8 @@ hidePastExperiments = Geçmiş deneyleri gizle
 [[ warnings ]]
 
 warningGenericTitle = Bir yerde bir sorun var!
+warningUpgradeFirefoxTitle = Devam etmek için Firefox’u yükseltin!
+warningHttpsRequiredTitle = HTTPS gerekli!
+warningHttpsRequiredDetail = Test Pilotu'na HTTPS üzerinden erişmelisiniz. Ayrıntılar için lütfen <a>belgelerimize</a> bakın.
+warningMissingPrefTitle = Test Pilotu'nu geliştiriyor musunuz?
+warningBadHostnameTitle = Onaylanmamış ana makine adı!
