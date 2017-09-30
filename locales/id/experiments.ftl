@@ -3,6 +3,7 @@ activitystreamIntroduction = <p>Kembali menjelajah tanpa kehilangan pemikiran An
 activitystreamMeasurements0 = Kami mengumpulkan data penggunaan dasar mengenai cara Anda berinteraksi dengan tab baru percobaan dan laman linimasa, seperti tipe elemen yang Anda klik dan posisi mereka di laman.
 activitystreamMeasurements1 = Kami juga mengumpulkan informasi dasar tentang profil peramban Anda yang mempengaruhi Activity Stream, seperti jumlah markah dan riwayat.
 activitystreamMeasurements2 = Dalam menyajikan Activity Stream, kami mengambil metadata tentang situs yang Anda kunjungi, seperti gambar dan ikon, menggunakan layanan <a href="http://embed.ly/" target="_blank">Embedly</a>. Kami mengirim permintaan ke Embedly melalui server Mozilla, sehingga mereka tidak akan berasosiasi dengan Anda.
+activitystreamToursteps0Copy = Temukan situs teratas, riwayat terkini, dan markah ketika Anda membuka tab baru.
 activitystreamContributors0Title = Insinyur Software
 activitystreamContributors1Title = Insinyur Web
 activitystreamContributors3Title = Insinyur Firefox Desktop
