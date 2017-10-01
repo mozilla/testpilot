@@ -188,6 +188,7 @@ highlightPrivacy = Το απόρρητό σας
 experimentGradReportPendingTitle = Αυτό το πείραμα έχει λήξει
 experimentGradReportPendingCopy = Εργαζόμαστε πάνω σε μια πλήρη αναφορά. Ελέγξτε ξανά σύντομα για λεπτομέρειες.
 experimentGoToLink = Μετάβαση στο { $title }
+startedDateLabel = Ημερομηνία έναρξης πειράματος: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -215,7 +216,6 @@ versionChangeNoticeLink = Λάβετε την τρέχουσα έκδοση το
 [[ uninstall ]]
 
 retireDialogTitle = Απεγκατάσταση του Test Pilot;
-retireMessage = Όπως επιθυμείτε. Αυτό θα απενεργοποιήσει κάθε ενεργή δοκιμή, θα απεγκαταστήσει το πρόσθετο και θα αφαιρέσει τις πληροφορίες του λογαριασμού σας από τους διακομιστές μας.
 retireEmailMessage = Για να απενεργοποιήσετε τις ενημερώσεις μέσω e-mail, κάντε απλά κλικ στο σύνδεσμο <em>κατάργησης εγγραφής</em> σε οποιοδήποτε e-mail από το Test Pilot.
 retireSubmitButton = Συνέχεια
 pageTitleRetirePage = Firefox Test Pilot - Απεγκατάσταση του Test Pilot
