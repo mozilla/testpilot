@@ -123,7 +123,7 @@ export default class LocalizedHtml extends Localized {
                 }
               );
             }
-            throw new Error('ftl string did not have as many anchors as the jsx');
+            throw new Error(`ftl string "${this.props.id}" did not have as many anchors as the jsx`);
           }
         }
         return undefined;
