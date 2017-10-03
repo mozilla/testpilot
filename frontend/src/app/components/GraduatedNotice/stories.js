@@ -15,7 +15,7 @@ storiesOf('GraduatedNotice', module)
           <div id="details">
             <LayoutWrapper helperClass="details-content" flexModifier="details-content">
               <div className="details-overview">
-                <div className={`experiment-icon-wrapper-dev-example experiment-icon-wrapper`}>
+                <div className="experiment-icon-wrapper-dev-example experiment-icon-wrapper">
                   <img className="experiment-icon" src="/static/images/check.png"></img>
                 </div>
               </div>

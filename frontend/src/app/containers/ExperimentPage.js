@@ -248,7 +248,7 @@ export class ExperimentDetail extends React.Component {
 
         <View {...this.props}>
 
-        {hasAddon !== null && (!hasAddon && !experiment.web_url) && <section id="testpilot-promo">
+        {hasAddon !== null && (!hasAddon && !graduated && !experiment.web_url) && <section id="testpilot-promo">
           <Banner>
               <LayoutWrapper flexModifier="row-between-reverse">
                 <div className="intro-text">
