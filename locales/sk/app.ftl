@@ -216,7 +216,7 @@ versionChangeNoticeLink = Prevezmite si najnovšiu verziu Firefoxu.
 [[ uninstall ]]
 
 retireDialogTitle = Odinštalovať Test Pilot?
-retireMessage = Ako si želáte. Všetky vaše aktívne testy budú ukončené, doplnok sa odinštaluje a údaje o vašom účte sa budú odstránené z našich serverov.
+retireMessageUpdate = Ako si želáte. Test Pilot bude odinštalovaný. Jednotlivé experimenty môžete odinštalovať pomocou Správcu doplnkov vo Firefoxe.
 retireEmailMessage = Ak chcete e-mailové správy od nás vypnúť, stačí ak kliknete na odkaz <em>unsubscribe</em> v ktoromkoľvek e-maile z projektu Test Pilot.
 retireSubmitButton = Pokračovať
 pageTitleRetirePage = Firefox Test Pilot - Odinštalovanie

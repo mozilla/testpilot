@@ -54,7 +54,7 @@ landingInstalledButton = Elige tus funciones
 // Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
-oneClickInstallMinorCta = Inslatar Test Pilot &amp;
+oneClickInstallMinorCta = Instalar Test Pilot &amp;
 oneClickInstallMajorCta = Activar { $title }
 
 
@@ -213,7 +213,7 @@ versionChangeNoticeLink = Obtén la versión actual de Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = ¿Desinstalamos Test Pilot?
-retireMessage = Como quieras. Se desactivarán los tests activos, se desinstalará el complemento y se eliminará la información de tu cuenta de nuestros servidores.
+retireMessageUpdate = Como quieras. Se desinstalará Test Pilot. Puedes deshabilitar experimentos de forma individual en el Administrador de complementos de Firefox.
 retireEmailMessage = Para no recibir actualizaciones por correo, haz clic en el enlace <em>cancelar suscripción</em> de cualquier correo de Test Pilot.
 retireSubmitButton = Continuar
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar Test Pilot

@@ -17,6 +17,7 @@ footerLinkCookies = کوکی‌ها
 footerLinkPrivacy = حریم‌خصوصی
 footerLinkTerms = شرایط استفاده
 footerLinkLegal = ملاحظات قانونی
+footerLinkFeedback = به ما بازخورد دهید
 footerLinkAbout = درباره خلبان آزمایشی
 
 
@@ -29,6 +30,7 @@ menuWiki = ویکی خلبان آزمایشی
 menuDiscuss = گفت‌وگو در مورد خلبان آزمایشی
 menuFileIssue = گزارش یک مشکل
 menuRetire = حذف خلبان آزمایشی
+headerLinkBlog = وبلاگ
 
 
 // The splash on the homepage.
@@ -98,12 +100,14 @@ emailOptInDialogTitle = به خلبان آزمایشی خوش آمدید!
 emailOptInMessage = در مورد آزمایش‌های جدید مطلع شوید و نتایج آزمایش‌هایی که امتحانشان کرده‌اید را ببینید.
 emailOptInConfirmationTitle = رایانامه ارسال شد
 emailOptInConfirmationClose = به سوی تجربه‌ها…
+emailOptInDialogErrorTitle = آه نه !
 
 
 // news feed updates.
 [[ updateList ]]
 
 latestUpdatesTitle = آخرین بروزرسانی
+showMoreNewsTitle = نمایش خبرهای اخیر
 
 
 // A listing of all Test Pilot experiments.
@@ -121,6 +125,8 @@ experimentListHeader = آزمایش‌های خود را انتخاب کنید!
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = بازخورد
 experimentCardManage = مدیریت
 experimentCardGetStarted = شروع کنید
 experimentCardLearnMore = اطلاعات بیشتر
@@ -153,7 +159,6 @@ experimentPromoSubheader = ما در حال ساخت نسل بعدی امکان�
 
 isEnabledStatusMessage = { $title } فعال است.
 installErrorMessage = هممم. امکان فعال کردن { $title } نبود. بعدا دوباره تلاش کنید.
-participantCount = <span>{ $installation_count }</span> مشارکت کننده
 otherExperiments = این آزمایش‌ها را نیز بررسی کنید
 giveFeedback = ارسال بازخورد
 disableHeader = غیرفعال‌سازی آزمایش؟
@@ -175,14 +180,24 @@ bugReports = گزارش اشکال
 discussExperiment = بحث در مورد { $title }
 tourOnboardingTitle = { $title } فعال شد!
 tourDoneButton = انجام شد
-userCountContainer = تعداد <span>{ $installation_count }</span> نفر در حال حاضر از { $title } استفاده می‌کنند!
 userCountContainerAlt = هم‌اکنون منتشر شد!
 highlightPrivacy = حریم‌خصوصی شما
+experimentGradReportPendingTitle = این آزمایش به پایان رسیده است
+experimentGradReportPendingCopy = ما در حال کار بر روی یک گزارش کامل هستیم. دوباره برگردید برای جزئیات
+experimentGoToLink = برو به { $title }
+startedDateLabel = شروع تاریخ آزمایش:  <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 
+experimentPlatformWebAddonMobile = فایرفاکس/ وب/ آزمایش موبایل
+experimentPlatformWebAddon = فایرفاکس/ آزمایش موبایل
+experimentPlatformWebMobile = وب / آزمایش موبایل
+experimentPlatformAddonMobile = فایرفاکس / آزمایش موبایل
+experimentPlatformWeb = آزمایش وب
+experimentPlatformAddon = آزمایش فایرفاکس
+experimentPlatformMobileApp = آزمایش موبایل
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.

@@ -17,6 +17,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Soukromí
 footerLinkTerms = Podmínky
 footerLinkLegal = Právní informace
+footerLinkFeedback = Zpětná vazba
 footerLinkAbout = O programu Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Wiki Test Pilot
 menuDiscuss = Diskutovat o Test Pilot
 menuFileIssue = Nahlásit chybu
 menuRetire = Odinstalovat Test Pilot
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = Ale ne!
 [[ updateList ]]
 
 latestUpdatesTitle = Poslední aktualizace
+showMoreNewsTitle = Ukázat starší zprávy
 
 
 // A listing of all Test Pilot experiments.
@@ -159,7 +162,6 @@ experimentPromoSubheader = Vytváříme funkce pro Firefox nové generace. Nains
 
 isEnabledStatusMessage = { $title } je zapnut.
 installErrorMessage = Jejda. { $title } nelze zapnout. Zkuste to znovu později.
-participantCount = <span>{ $installation_count }</span> účastníků
 otherExperiments = Vyzkoušejte také tyto experimenty
 giveFeedback = Poskytnout zpětnou vazbu
 disableHeader = Vypnout experiment?
@@ -181,12 +183,12 @@ bugReports = Hlášení chyb
 discussExperiment = DIskutujte o experimentu { $title }
 tourOnboardingTitle = Experiment { $title } zapnut!
 tourDoneButton = Hotovo
-userCountContainer = Experiment { $title } zkouší <span>{ $installation_count }</span> lidí!
 userCountContainerAlt = Právě spuštěno!
 highlightPrivacy = Vaše soukromí
 experimentGradReportPendingTitle = Tento experiment byl ukončen
 experimentGradReportPendingCopy = Pracujeme na kompletní zprávě o výsledcích. Podrobnosti doplníme brzy.
 experimentGoToLink = Přejít na { $title }
+startedDateLabel = Datum začátku experimentu: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -214,7 +216,7 @@ versionChangeNoticeLink = Získejte aktuální verzi Firefoxu.
 [[ uninstall ]]
 
 retireDialogTitle = Odinstalovat Test Pilot?
-retireMessage = Jak si přejete. Toto zakáže všechny aktivní testy, odinstaluje doplněk a odstraní informace o vašem účtu z našich serverů.
+retireMessageUpdate = Jak si přejete, Test Pilot odinstalujeme. Jednotlivé experimenty můžete zakázat ve Firefoxu ve správci doplňků.
 retireEmailMessage = Pro odhlášení ze zasílání informací klepněte na odkaz <em>unsubscribe</em> v kterémkoliv e-mailu zaslaném Test Pilotem.
 retireSubmitButton = Pokračovat
 pageTitleRetirePage = Firefox Test Pilot - Odinstalovat Test Pilot

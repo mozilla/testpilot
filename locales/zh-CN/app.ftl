@@ -213,7 +213,7 @@ versionChangeNoticeLink = 获取最新 Firefox 版本。
 [[ uninstall ]]
 
 retireDialogTitle = 卸载 Test Pilot？
-retireMessage = 如您所愿。这将禁用所有已激活的测试，卸载该附加组件，以及从我们的服务器上移除您的账户信息。
+retireMessageUpdate = 如您所愿。这将卸载 Test Pilot。您可以在 Firefox 的附加组件管理器中禁用各个实验。
 retireEmailMessage = 要停用电子邮件更新，只需点击任何 Test Pilot 邮件中的<em>退订</em>链接。
 retireSubmitButton = 继续
 pageTitleRetirePage = Firefox Test Pilot - 卸载 Test Pilot

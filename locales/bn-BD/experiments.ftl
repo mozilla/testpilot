@@ -42,6 +42,7 @@ pulseContributors0Title = সিনিয়র ইঞ্জিনিয়ার
 pulseContributors1Title = Firefox UX
 pulseContributors2Title = Firefox Platform Product Intelligence
 pulseContributors3Title = Firefox QA
+snoozetabsToursteps3Copy = ...স্নুজ ট্যাব আবার ফিরে আসবে!
 snoozetabsContributors0Title = সিনিয়র ইঞ্জিনিয়ার
 snoozetabsContributors1Title = Firefox UX
 snoozetabsContributors2Title = Firefox UX
