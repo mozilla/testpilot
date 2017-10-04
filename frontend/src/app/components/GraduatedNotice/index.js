@@ -31,7 +31,7 @@ export default class GraduatedNotice extends React.Component {
       </Localized>;
     }
     return <div className="graduated-notice">
-      <img className="graduated-notice-image" src="/static/images/info-16.svg" />
+      <img className="graduated-notice-image" src="/static/images/info-16.svg" width="40" height="40"/>
       <div className="graduated-notice-text">
         <Localized id="experimentGradReportPendingTitle">
           <h1>

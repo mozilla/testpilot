@@ -1,52 +1,41 @@
 .graduated-notice {
-  display: flex;
-  border: 2px dotted #f5a623;
+  align-items: center;
   border-radius: 5px;
-  padding: 32px;
-  padding-top: 32px !important;
-  padding-right: 28px;
+  border: 2px dotted #f5a623;
+  display: flex;
+  padding: 32px 28px;
 }
 
 .graduated-notice-image {
-  margin-right: 32px;
-  height: 40px !important;
-  width: 40px !important;
-  align-self: center;
+  flex: 0 0 40px;
+  max-width: 40px;
+  margin-right: 28px;
 }
 
 .graduated-notice-text {
-  flex-grow: 1;
+  flex: 1;
+  margin-right: 28px;
 }
 
 .graduated-notice-text h1 {
-  color: #000000;
   font-size: 20px;
-  font-family: 'Fira Sans';
-  font-weight: bold;
-  margin: 0;
+  margin: 0 0 5px;
 }
 
 .graduated-notice-text p {
-  color: #000000;
   font-size: 18px;
-  font-family: 'Fira Sans';
-  font-weight: normal;
   margin: 0;
   padding: 0;
 }
 
 .graduated-notice-button {
-  text-align: center;
-  vertical-align: center;
+  align-items: center;
   background-color: rgb(9, 150, 248);
-  height: 62px;
-  width: 300px;
-  padding: 18px;
-  padding-top: 20px;
-  align-self: center;
   border-radius: 3px;
   color: #ffffff !important;
+  display: flex;
   font-size: 22px;
-  font-family: 'Fira Sans';
-  font-weight: medium;
+  height: 62px;
+  padding: 0 18px;
+  white-space: nowrap;
 }
