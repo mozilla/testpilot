@@ -54,7 +54,7 @@ landingInstalledButton = Elige tus funciones
 // Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
-oneClickInstallMinorCta = Inslatar Test Pilot &amp;
+oneClickInstallMinorCta = Instalar Test Pilot &amp;
 oneClickInstallMajorCta = Activar { $title }
 
 
