@@ -216,7 +216,7 @@ versionChangeNoticeLink = Dapatkan versi terkini Firefox
 [[ uninstall ]]
 
 retireDialogTitle = Nyahpasang Ujian Perintis?
-retireMessage = Ikut kehendak anda. Ini akan nyahdaya semua ujian aktif, nyahpasang add-on dan buang info akaun anda dari pelayan kami.
+retireMessageUpdate = Seperti yang anda mahu. Tindakan ini akan menyahpasang Ujian Perintis. Anda boleh nyahdayakan eksperimen individu dari dalam Pengurus Add-ons Firefox.
 retireEmailMessage = Untuk memilih supaya tidak menerima kemaskini e-mel, hanya klik pautan <em>batal langganan</em> dalam sebarang e-mel Ujian Perintis.
 retireSubmitButton = Teruskan
 pageTitleRetirePage = Firefox Ujian Perintis - Nyahpasang Ujian Perintis

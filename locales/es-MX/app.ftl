@@ -17,6 +17,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Privacidad
 footerLinkTerms = Términos
 footerLinkLegal = Legal
+footerLinkFeedback = Enviar comentarios
 footerLinkAbout = Acerca de Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Wiki de Test Pilot
 menuDiscuss = Hablemos de Test Pilot
 menuFileIssue = Abre una incidencia
 menuRetire = Desinstalar Test Pilot
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -105,6 +107,7 @@ emailOptInDialogErrorTitle = ¡Oh no!
 [[ updateList ]]
 
 latestUpdatesTitle = Últimas actualizaciones
+showMoreNewsTitle = Mostrar noticias antiguas
 
 
 // A listing of all Test Pilot experiments.
@@ -159,7 +162,6 @@ experimentPromoSubheader = Estamos creando la próxima generación de funciones 
 
 isEnabledStatusMessage = { $title } está habilitado.
 installErrorMessage = Oh no. { $title } no pudo habilitarse. Intenta de nuevo después.
-participantCount = <span>{ $installation_count }</span> participantes
 otherExperiments = Prueba también estos experimentos
 giveFeedback = Enviar comentarios
 disableHeader = ¿Deshabilitar experimento?
@@ -181,12 +183,12 @@ bugReports = Informes de fallos
 discussExperiment = Hablar sobre { $title }
 tourOnboardingTitle = ¡{ $title } habilitado!
 tourDoneButton = Hecho
-userCountContainer = ¡Hay <span>{ $installation_count }</span> personas probando { $title } ahora mismo!
 userCountContainerAlt = ¡Recién iniciado!
 highlightPrivacy = Tu privacidad
 experimentGradReportPendingTitle = Este experimento ha terminado
 experimentGradReportPendingCopy = Estamos preparando un reporte completo. Regresa pronto para ver todos los detalles.
 experimentGoToLink = Ir a { $title }
+startedDateLabel = Fecha de inicio del experimento <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -214,7 +216,7 @@ versionChangeNoticeLink = Obtén la versión actual de Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = ¿Desinstalar Test Pilot?
-retireMessage = Como quieras. Se desactivarán los tests activos, se desinstalará el complemento y se eliminará la información de tu cuenta de nuestros servidores.
+retireMessageUpdate = Como desees. Esto desinstalará Test ílot. Puedes desactivar los experimentos individuales del Administrador de Complementos de Firefox.
 retireEmailMessage = Para no recibir actualizaciones por correo, haz clic en el enlace <em>cancelar suscripción</em> de cualquier correo de Test Pilot.
 retireSubmitButton = Continuar
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar Test Pilot
