@@ -41,10 +41,10 @@ export default class MainInstallButton extends React.Component {
     const { isFirefox, isMinFirefox, isMobile, hasAddon } = this.props;
     const isInstalling = this.state.isInstalling && !hasAddon;
     const terms = <Localized id="landingLegalNoticeTermsOfUse">
-      <a href="/terms">Terms of Use</a>
+      <a href="/terms"/>
     </Localized>;
     const privacy = <Localized id="landingLegalNoticePrivacyNotice">
-      <a href="/privacy">Privacy Notice</a>
+      <a href="/privacy"/>
     </Localized>;
 
     return (
