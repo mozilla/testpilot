@@ -54,13 +54,14 @@ export default class NewsletterForm extends React.Component {
 
   renderEmailField() {
     return (
-      <input
-        type='email'
-        required
-        placeholder='Your email here'
-        value={this.props.email}
-        onChange={this.handleEmailChange}
-      />
+      <Localized id="newsletterFormEmailPlaceholder">
+        <input
+          type='email'
+          required
+          value={this.props.email}
+          onChange={this.handleEmailChange}
+        />
+      </Localized>
     );
   }
 
@@ -72,7 +73,10 @@ export default class NewsletterForm extends React.Component {
 
   renderPrivacyField() {
     const fieldName = 'privacy';
-    const url = '/privacy';
+    const privacy = <Localized id="newsletterFormPrivacyNoticePrivacyLink">
+      <a target="_blank" rel="noopener noreferrer"
+        href="/privacy"/>
+    </Localized>;
 
     return (
       <label className={this.makeRevealedClassNames()} htmlFor={fieldName}>
@@ -83,12 +87,9 @@ export default class NewsletterForm extends React.Component {
             Please check this box if you want to proceed.
           </span>
         </Localized> : null }
-        <LocalizedHtml id="newsletterFormPrivacyNotice">
+        <LocalizedHtml id="newsletterFormPrivacyNotice" $privacy={privacy}>
           <span>
-            I&apos;m okay with Mozilla handling my info as explained in <a target="_blank" rel="noopener noreferrer"
-              href={url}>
-              this privacy notice
-            </a>.
+            I&apos;m okay with Mozilla handling my info as explained in {privacy}.
           </span>
         </LocalizedHtml>
       </label>
