@@ -77,3 +77,17 @@ minvidContributors2Title = Peiriannydd Intern
 minvidContributors3Title = Peiriannydd Cyfrannu
 nomore404sSubtitle = Grym Wayback Machine
 nomore404sDescription = Wedi blino ar golli dolenni? Byddwn yn gadael i chi wybod pryd fydd yna fersiwn wedi ei gadw o'r hyn rydych yn chwilio amdano ar Archif Rhyngrwyd Wayback Machine.
+nomore404sIntroduction = <p>Mae hwn yn syml. Os y Rhyngrwyd dych wedi cael tudalen 404 wrth bori'r we, byddwn yn gadael i chi wybod os yw'r cynnwys wedi ei archifo ar archif Wayback Machine.</p>
+nomore404sMeasurements0 = Rydym yn casglu data defnydd elfennol ar sawl gwaith rydych yn dod ar draws gwall Tudalen Heb ei Chanfod/Page Not Found (cod 404), sawl gwaith mae copi wedi ei storio o'r dudalen yn bodoli o Archive.org a sawl gwaith rydych am ddefnyddio'r copi sydd wedi ei storio.
+nomore404sMeasurements1 = I ddarparu fersiynau wedi eu storio, rydym yn anfon URL tudalennau gwall 404 i Archive.org. <a href="https://archive.org/" target="_blank">Mae Archive.org</a> yn dangos ei bolisi preifatrwydd <a href="https://archive.org/about/terms.php" target="_blank">yma</a>.
+nomore404sMeasurements2 = Nid ydym yn casglu URLau tudalennau rydych yn gofyn amdanyn nhw na'r URLau rydym yn anfon at Archive.org.
+nomore404sMeasurements3 = Efallai y byddwn yn rhannu canlyniadau arolygon rydych wedi eu cyflwyno i ni a data telemetreg wedi eu crynhoi’n berthnasol i'r arbrawf gydag Internet Archive.
+nomore404sDetails0Copy = Lleihewch terfyn 404 gyda Wayback Machine.
+nomore404sDetails1Copy = I chi gan ein ffrindiau yn Internet Archive
+nomore404sToursteps0Copy = Porwch y we fel arfer. Os dowch ar draws dudalen 404, byddwn yn dweud wrthych os oes tudalen wedi ei harchifo ar gael ar Wayback Machine.
+nomore404sToursteps1Copy = Rhowch adborth i ni neu analluogi No More 404 o Test Pilot
+nomore404sContributors1Title = Datblygwr, Wayback Machine, The Internet Archive
+nomore404sContributors2Title = Cyfarwyddwr, Wayback Machine, The Internet Archive
+nomore404sContributors3Title = Uwch Beiriannydd Crawl, The Internet Archive
+nomore404sEolwarning = Ni fydd yr arbrawf No More 404 yn cael ei dynnu o'ch porwr a bydd y canlyniadau'n cael eu hadrodd yma pan ddaw i ben. Bydd diweddariadau ar gael ar addons.mozilla.org.
+notesDescription = Pad ysgrifennu syml wedi ei adeiladu o fewn Firefox. Erioed wedi cael yr angen is nodi rhywbeth wrth bori'r we? Hwn yw'r arbrawf i chi.
