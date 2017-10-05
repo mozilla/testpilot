@@ -230,7 +230,7 @@ newsletterFooterSuccessBody = If you haven't previously confirmed a subscription
 
 // A warning shown to users when the experiment is not available in their language
 [[localeWarning]]
-localeUnavailableWarningTitle = This experiment is not supported in your language ({$locale_code}).
+localeNotTranslatedWarningTitle = This experiment has not been translated to your language ({$locale_code}).
 localeWarningSubtitle = You can still enable it if you like.
 
 // An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
