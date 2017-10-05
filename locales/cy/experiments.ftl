@@ -106,3 +106,4 @@ notesContributors3Title = Peiriannydd Meddalwedd
 notesContributors4Title = Uwch Beiriannydd
 notesContributors5Title = QA Firefox
 notesContributors6Title = QA Softvision
+sendDescription = Amgryptiwch ac anfon ffeiliau gyda dolen sy'n dod i ben yn awtomatig i sicrhau nad yw eich dogfennau pwysig yn aros ar-lein am byth
