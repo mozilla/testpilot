@@ -132,9 +132,9 @@ export class ExperimentDetail extends React.Component {
     const { experiment, locale, hasAddon } = this.props;
     if (hasAddon !== null && locale && ((experiment.locales && !experiment.locales.includes(locale)) || (experiment.locale_blocklist && experiment.locale_blocklist.includes(locale)))) {
       return (
-        <Warning titleL10nId="localeUnavailableWarningTitle"
+        <Warning titleL10nId="localeNotTranslatedWarningTitle"
                  titleL10nArgs={ JSON.stringify({ locale_code: locale }) }
-                 title="This experiment is not supported in your language (en)."
+                 title="This experiment has not been translated to your language (en)."
                  subtitleL10nId="localeWarningSubtitle"
                  subtitle="You can still enable it if you like." />
       );
