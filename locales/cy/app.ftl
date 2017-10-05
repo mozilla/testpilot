@@ -28,7 +28,7 @@ home = Cartref
 menuTitle = Gosodiadau
 menuWiki = Wici Test Pilot
 menuDiscuss = Trafod Test Pilot
-menuFileIssue = Ffeilio mater
+menuFileIssue = Ffeilio gwall
 menuRetire = Dadosod Test Pilot
 headerLinkBlog = Blog
 
@@ -37,18 +37,18 @@ headerLinkBlog = Blog
 [[ landing ]]
 
 landingIntroOne = Profi nodweddion newydd.
-landingIntroTwo = Adborth.
-landingIntroThree = Helpwch adeiladu Firefox.
+landingIntroTwo = Rhannu adborth.
+landingIntroThree = Helpu adeiladu Firefox.
 landingLegalNotice = Drwy barhau, rydych yn cytuno i <a>Amodau Defnydd</a> a <a>Hysbysiad Preifatrwydd</a> Test Pilot.
-landingExperimentsTitle = Profwch ein nodweddion arbrofol diweddaraf
+landingExperimentsTitle = Rhowch gynnig ar ein nodweddion arbrofol diweddaraf
 
 
 // Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
-landingInstallButton = Gosodwch Ychwanegyn Test Pilot
+landingInstallButton = Gosod Ychwanegyn Test Pilot
 landingInstallingButton = Gosod...
-landingInstalledButton = Dewiswch eich nodwedd
+landingInstalledButton = Dewis eich nodweddion
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -73,7 +73,7 @@ landingDownloadFirefoxSubTitle = Llwytho i Lawr am Ddim
 // A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
-landingCardListTitle = Cychwyn yn 3, 2, 1
+landingCardListTitle = 3, 2, 1, Cychwyn
 landingCardOne = Estyn ychwanegyn Test Pilot
 landingCardTwo = Galluogi nodweddion arbrofol
 landingCardThree = Rhannwch eich barn
@@ -226,7 +226,7 @@ retirePageSurveyButton = Cymrwch arolwg sydyn
 // Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
-restartIntroLead = Rhest wirio cyn cychwyn
+restartIntroLead = Rhestr wirio cyn hedfan
 restartIntroOne = Ailgychwynnwch eich porwr
 restartIntroTwo = Chwiliwch am y r ychwanegyn Test Pilot
 restartIntroThree = Dewiswch eich arbrofion
