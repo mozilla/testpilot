@@ -73,7 +73,7 @@ landingDownloadFirefoxSubTitle = Llwytho i Lawr am Ddim
 // A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
-landingCardListTitle = 3, 2, 1, Cychwyn
+landingCardListTitle = 3, 2, 1, i Ffwrdd â ni...
 landingCardOne = Estyn ychwanegyn Test Pilot
 landingCardTwo = Galluogi nodweddion arbrofol
 landingCardThree = Rhannwch eich barn
@@ -97,8 +97,8 @@ notFoundHeader = Pedwar Dim Pedwar!
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = Croeso i Test Pilot!
-emailOptInMessage = Gallwch ddarganfod ein harbrofion newydd a gweld canlyniadau profion ar yr arbrofion rydych wedi eu profi.
-emailOptInConfirmationTitle = Wedi anfon yr E-bost
+emailOptInMessage = Gallwch ddarganfod ein harbrofion newydd a gweld canlyniadau'r profion ar yr arbrofion rydych wedi eu profi.
+emailOptInConfirmationTitle = Wedi anfon E-bost
 emailOptInConfirmationClose = Ymlaen at yr arbrofion...
 emailOptInDialogErrorTitle = O na!
 
@@ -119,7 +119,7 @@ experimentListJustUpdatedTab = Newydd eu Diweddaru
 experimentListEndingTomorrow = Yn Gorffen Yfory
 experimentListEndingSoon = Yn Gorffen cyn bo Hir
 experimentCondensedHeader = Croeso i Test Pilot!
-experimentListHeader = Dewiswch eich arbrofion!
+experimentListHeader = Dewiswch eich arbrawf!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -137,7 +137,7 @@ experimentCardLearnMore = Dysgu Rhagor
 
 feedbackSubmitButton = Cymrwch arolwg sydyn
 feedbackUninstallTitle = Diolch!
-feedbackUninstallCopy = Mae eich cyfraniad i Test Pilot yn golygu llawer i ni! Profwch ein harbrofion eraill, a bod y effro i'r ffaith fod rhagor i ddod.
+feedbackUninstallCopy = Mae eich cyfraniad i Test Pilot yn golygu llawer i ni! Rhowch gynnig ar ein harbrofion eraill, gan wybod fod rhagor i ddod.
 
 
 // A modal prompt shown before the feedback survey for some experiments.
@@ -150,7 +150,7 @@ experimentPreFeedbackLinkCopy = Rhannwch eich adborth ar arbrawf { $title }
 // A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
-experimentPromoHeader = Yn barod i danio?
+experimentPromoHeader = Yn Barod i Hedfan?
 experimentPromoSubheader = Rydym yn adeiladu'r nodweddion nesaf ar gyfer Firefox. Gosodwch Test Pilot i'w profi!
 
 
@@ -158,8 +158,8 @@ experimentPromoSubheader = Rydym yn adeiladu'r nodweddion nesaf ar gyfer Firefox
 [[ experimentPage ]]
 
 isEnabledStatusMessage = Mae { $title } wedi ei alluogi.
-installErrorMessage = Ow. Nid oedd modd galluogi { $title }. Ceisiwch eto'n hwyrach
-otherExperiments = Profwch yr arbrofion y hefyd
+installErrorMessage = Ow. Does dim modd galluogi { $title }. Ceisiwch eto'n hwyrach
+otherExperiments = Rhowch gynnig ar yr arbrofion hyn hefyd
 giveFeedback = Rhowch Adborth
 disableHeader = Analluogi'r Arbrawf?
 disableExperiment = Analluogi { $title }
