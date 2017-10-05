@@ -259,7 +259,7 @@ incompatibleSubheader = Rydym yn argymell <a>analluogi’r ychwanegion hyn</a> c
 newsletterFormEmailPlaceholder
     .placeholder = Eich e-bost yma
 newsletterFormDisclaimer = Dim ond gwybodaeth am Test Pilot fyddwn yn ei anfon.
-newsletterFormPrivacyNotice = Rwy'n iawn gyda Mozilla'n trin fy manylion fel sy'n cael ei drin yn yr <a>hysbysiad preifatrwydd</>hwn.
+newsletterFormPrivacyNotice = Rwy'n hapus i Mozilla'n trin fy manylion fel sy'n cael ei amlinellu yn yr <a>hysbysiad preifatrwydd</>hwn.
 newsletterFormPrivacyAgreementRequired = Ticiwch y blwch yma os ydych am barhau.
 newsletterFormSubmitButton = Cofrestrwch Nawr
 newsletterFormSubmitButtonSubmitting = Cyflwyno...
@@ -272,21 +272,21 @@ newsletterFooterError = Bu gwall wrth gyflwyno eich cyfeiriad e-bost. Ceisio eto
 newsletterFooterHeader = Cadw'n Gyfredol
 newsletterFooterBody = Derbyn gwybodaeth am arbrofion newydd a gweld canlyniadau ar arbrofion rydych wedi eu profi.
 newsletterFooterSuccessHeader = Diolch!
-newsletterFooterSuccessBody = Os nad ydych wed cadwrnhau tanysgrifiad i gylchlythyr gan Mozilla, mae'n bosib y bydd yn rhaid i chi wneud hynny. Edrychwch y eich blwch derbyn neu hidl sbam am e-bost gennym ni.
+newsletterFooterSuccessBody = Os nad ydych wedi cadarnhau tanysgrifiad i gylchlythyr gan Mozilla o'r blaen, mae'n bosib y bydd yn rhaid i chi wneud hynny. Edrychwch yn eich blwch derbyn neu hidl sbam am e-bost gennym ni.
 
 
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Nid yw'r arbrawf yma'ncael ei gynnal y eich iaith chi. ({ $locale_code }).
+localeUnavailableWarningTitle = Nid yw'r arbrawf yma'n cael ei gynnal y eich iaith chi. ({ $locale_code }).
 localeWarningSubtitle = Gallwch ei alluogi o hyd, os hoffech chi.
 
 
 // An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
-experimentsListNoneInstalledHeader = Beth am gychwyn arni!
-experimentsListNoneInstalledSubheader = Yn barod i brofi arbrawf Test Pilot newydd? Dewiswch u i'w alluogi, ei brofi a gadael i ni wybod eich barn.
+experimentsListNoneInstalledHeader = Beth am baratoi i hedfan!
+experimentsListNoneInstalledSubheader = Yn barod i roi cynnig ar arbrawf Test Pilot newydd? Dewiswch un i'w alluogi, ei brofi a gadael i ni wybod eich barn.
 experimentsListNoneInstalledCTA = Dim diddordeb? a>Gadewch i ni wybod pam</a>
 
 
@@ -294,7 +294,7 @@ experimentsListNoneInstalledCTA = Dim diddordeb? a>Gadewch i ni wybod pam</a>
 [[ noscript ]]
 
 noScriptHeading = O na...
-noScriptMessage = Mae Test Pilot ange Java Script.<br>Sori am hynny.
+noScriptMessage = Mae Test Pilot angen JavaScript.<br>Sori am hynny.
 noScriptLink = Pam?
 
 
@@ -309,9 +309,9 @@ hidePastExperiments = Cuddio Arbrofion y Gorffennol
 [[ warnings ]]
 
 warningGenericTitle = Aeth rhywbeth o'i le!
-warningGenericDetail = Aeth rhywbeth o'i le gyda Test Pilot. Anfonnwch <a>adroddiad gwall</a> a sôn am y neges gwall hwn.
+warningGenericDetail = Aeth rhywbeth o'i le gyda Test Pilot. Anfonwch <a>adroddiad gwall</a> a sôn am y neges gwall hon.
 warningUpgradeFirefoxTitle = Diweddarwch Firefox i barhau!
-warningUpgradeFirefoxDetail = Mae Test Pilot angen y fersiwn diweddaraf o Firefox. <a>Diweddarwch Firefox</a> i gychwyn arni.
+warningUpgradeFirefoxDetail = Mae Test Pilot angen y fersiwn diweddaraf o Firefox. <a>Diweddarwch Firefox</a> i gychwyn arno.
 warningHttpsRequiredTitle = Mae angen HTTPS!
 warningHttpsRequiredDetail = Rhaid mynd i Test Pilot drwy HTTPS. Darllenwch ein <a>dogfennaeth</a> am y manylion.
 warningMissingPrefTitle = Datblygu Test Pilot?
