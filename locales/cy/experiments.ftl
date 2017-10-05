@@ -66,3 +66,5 @@ minvidMeasurements2 = Nid ydym yn casglu manylion y fideos penodol rydych yn dod
 minvidDetails0Copy = Cewch fynediad at MinVid o chwaraewyr YouTube, Vimeo, a SoundCloud
 minvidDetails1Copy = Gwyliwch fideoau yn y blaendir tra'ch bod chi'n gwneud pethau eraill ar y We
 minvidDetails2CopyChangevideotomedia = Rhowch glic de i ddolenni i gyfryngau i ddod o hyd i 'r rheolyddion cyd-destynol.
+minvidDetails3Copy = Cychwynnwch restr chwarae YouTube cyflawn yn eich ciw. Crëwch un eich hun drwy glicio'r eicon '+' neu ddewis 'ychwanegu i'r ciw' o'r ddewislen gyd-destun.
+minvidToursteps0Copy = Dewiswch yr eicon i gychwyn defnyddio Min Vid.
