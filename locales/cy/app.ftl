@@ -213,7 +213,7 @@ versionChangeNoticeLink = Estyn y fersiwn diweddaraf o Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Dadosod Test Pilot?
-retireMessage = Eich dewis chi. Bydd hyn yn anallogi unrhyw brofion gweithredol, dadosod yr ychwanegyn a thynnu manylion eich cyfrif o'n gweinyddion.
+retireMessageUpdate = Yn ôl eich dymuniad. Bydd hyn yn dadosod Test Pilot. Gallwch analluogi arbrofion unigol o Reolwr Ychwanegion Firefox.
 retireEmailMessage = I beidio derbyn diweddariadau e-bost, cliciwch ar ddolen <em>dad-tanysgrifio</em> ar unrhyw e-bost Test Pilot.
 retireSubmitButton = Parhau
 pageTitleRetirePage = Firefox Test Pilot - Dadosod Test Pilot
