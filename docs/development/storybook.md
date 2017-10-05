@@ -26,26 +26,6 @@ All of these are conditions that are difficult or tedious to reproduce, so
 Storybook offers us a way to preview how components work without having to do
 the manual steps.
 
-## Stories
-
-[The Storybook site has good documentation on writing stories][storydocs],
-so we won't reproduce them here.
-
-Stories for Test Pilot are located at [`frontend/stories`][storydir]. The
-directory structure mostly mirrors what's found under `frontend/src`. For
-example, here's the path to the news updates feed and its associated
-collection of stories:
-
-* [`frontend/src/app/components/UpdateList.js`](../frontend/src/app/components/UpdateList.js)
-* [`frontend/stories/app/components/UpdateList-story.jsx`](../frontend/src/app/components/UpdateList.js)
-
-When making changes to a component, you should ensure that:
-1. a module of stories for that component exists; and 
-1. that the module contains stories capturing the full range of your component's behavior. 
-
-Storybook is a pretty new technology for us at the time of this writing, so
-it's likely that new work will need to backfill both of the above.
-
 ## Local development
 
 If you've got a local development environment working [per the quickstart
@@ -97,3 +77,142 @@ Where `{git-commit-id}` is the hash of the latest commit to the branch.
 [storydir]: ../../frontend/stories/
 [quickstart]: quickstart.md
 [repo]: https://github.com/mozilla/testpilot/
+
+## Definitions
+
+- **Component** - an independent, reusable piece of UI. May contain additional components.
+- **Story** - A variation of a component’s state, such as a hover, loading, or error state.
+- **Container** - a component that is [`connect`](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options)ed to the Redux store.
+- **Dependent components** - components that are only used in the context of a parent component. For example, a `ListItem` component may only be used by a `List` component. 
+
+## Changes to code
+
+In order to idiomatically accommodate a shift to use Storybook, substantial pieces of the Test Pilot site will be refactored. The following changes will be made:
+
+- Components will be refactored to be more self-containing (see Appendix 1).
+	- Dependent components will be defined in the same file as the parent component.
+		- The parent component should be the default export for the module, but dependent components should also be exported.
+	- CSS will be tightly coupled with components.
+		- Each component will have its own CSS file that is imported into the component source.
+		- Each component’s styles will be namespaced with a single CSS class, which will be used as a prefix for any children classes.
+		- Any reuse of styles will be implemented as SCSS mix-ins, rather than with utility CSS classes.
+	- Stories will be tightly coupled with components.
+		- Each component will have its own `stories.js` file in the component directory.
+		- That file will contain each story for the component itself, as well as any dependent components.
+	- Connected versions of container components will be their default export.
+		- Unconnected versions will also be exported, for use in stories.
+- There will be a single top-level `<App>` component that serves as the entry point to the application. It will contain any static components (such as the header and footer), and exactly one store-connected component for the current view.
+	- All connected components will live in `src/containers`.
+	- Each container will have its own `mapStateToProps` and `mapDispatchToProps` that provide the bare minimum state and actions required for the view to function, eliminate any potentially-expensive changes to the DOM from irrelevant changes to the store.
+	- All other components will live in `src/components`.
+
+## Changes to process
+
+This change will necessitate changes to both the deployment process and in how UX and engineering interact.
+
+### Deployment and release
+
+In addition to [other, unrelated changes](https://public.etherpad-mozilla.org/p/testpilot-new-branch-process) to our build and deployment processes, Storybook will be deployed for most commits to the `mozilla/testpilot` repository.
+
+It will work like this:
+
+1. For each commit on any branch of `mozilla/testpilot`, CircleCI will build the site.
+2. If the tests pass, CI will deploy a static copy of the Storybook for that commit to a special S3 bucket.
+3. If there is an associated pull request for the commit, a bot will comment on the pull requests with links to both the Storybook for the commit and for the latest commit for the pull request.
+
+A dashboard will be built with links to the Storybook for each pull request and commit. Deployed Storybooks will be pruned every 3 months.
+
+### UX and engineering
+
+With the UX and engineering teams on opposite sides of the globe, a process to work on UX changes or new features is designed to minimize back-and-forth between teams. It works like this:
+
+1. UX proposes new designs and delivers them will full-page mocks highlighting any implied changes.
+	- This includes any variations at smaller breakpoints (especially for containers).
+	- This includes a set of suggested states: hovers, errors, loading, etc. These do not need to be visually specified at this stage, just indicated as desired.
+2. Engineering reviews the mocks, and delivers back to UX:
+	- A list of all existing components and stories that are changed by the mocks.
+	- A list of any new components implied by the mockups.
+	- A list of all the stories to be defined for each new component, including the ones suggested
+3. UX provides redline-level specifications for each component and story that is either new or affected by the proposed change, in isolation.
+	- This will allow UX to create and maintain an accurate component of source files for each component.
+	- Each component and story should be clearly named.
+4. Engineering builds the proposed components and stories and opens a pull request with them.
+	- The names of each component (i.e. `storiesOf(‘a component name’)` and story (`.add(‘story name’)` should match the ones provided in the UX source material for easy cross-referencing.
+	- The UX contact should be marked as a reviewer for the pull request.
+5. UX reviews the storybook for the pull requests, requesting any appropriate changes before signing off on and merging the new feature.
+
+## Appendix 1: Example component structure.
+
+```
+src
+└ containers
+| └ homepage
+| | └ index.js
+| | └ index.scss
+| | └ stories.js
+| | └ tests.js
+└ components
+| └ install-button
+| | └ index.js
+| | └ index.scss
+| | └ stories.js
+| | └ tests.js
+└ util.scss
+```
+
+### `components/install-button/index.js`
+
+``` javascript
+import './index.scss';
+
+export default class InstallButton extends Component {
+  renderIcon() {
+    const { icon } = this.props;
+    if (icon) {
+      return (
+        <span className={`install-button--icon install-button--icon--${icon}`} />
+      );
+    }
+    return null;
+  }
+
+  render() {
+    const { text } = this.props;
+    return (
+      <button className="install-button">{this.renderIcon()}{text}</button>
+    );
+  }
+}
+```
+
+### `components/install-button/index.scss`
+
+``` css
+@import '../../util.scss'; 
+
+.install-button {
+  @include button();
+
+  background: #000;
+  color: #FFF;
+
+  .install-button--icon {
+    display: inline-block;
+    margin-right: 4px;
+  }
+}
+```
+
+### `containers/homepage/index.js`
+
+``` javascript
+export class Homepage extends Component {
+  render() {
+    return <p>Hi!</p>
+  }
+}
+
+export default connect(Homepage)(mapStateToProps, mapDispatchToProps);
+```
+
+

@@ -225,7 +225,7 @@
 
   padding-top: $grid-unit * .5;
 
-  > :first-child {
+  > :first-child:not(.graduated-notice) {
     margin-top: 0;
     padding-top: 0;
   }

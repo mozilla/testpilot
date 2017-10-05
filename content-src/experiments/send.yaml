@@ -91,3 +91,12 @@ news_updates:
     dev: false
     content: >
       Send 1.1.0 just shipped with enhanced browser support and a few other improvements as well.
+  -
+    slug: send-update-2
+    title: Learning from Send
+    link: https://medium.com/firefox-test-pilot/kicking-the-tires-on-a-b-testing-bc52939dec52
+    created: 2017-10-15T12:00:00Z
+    published: 2017-10-15T12:00:00Z
+    dev: false
+    content: >
+      We just conducted our first A/B test to learn more about Send’s user interface. Get the results.

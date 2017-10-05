@@ -1,6 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies*/
 require('babel-polyfill');
 
+// HACK: Ignore non-JS imports used for asset dependencies in Webpack
+require.extensions['.scss'] = function reqireNonJS() {};
+
 const gulp = require('gulp');
 const config = require('./frontend/config.js');
 

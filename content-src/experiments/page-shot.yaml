@@ -95,6 +95,7 @@ contributors:
     avatar: /static/images/experiments/page-shot/avatars/bram-pitoyo.jpg
 created: '2016-09-22T00:07:28.847430Z'
 completed: '2017-07-12T20:00:00.000000Z'
+graduation_url: https://medium.com/firefox-test-pilot/screenshots-is-shipping-in-firefox-56-25ecbe0d5b91
 eol_warning: This experiment is ending, but Page Shot will ship in Firefox by default this fall. If you have the Page Shot experiment installed, we will automatically upgrade you.
 locales:
   - 'en'

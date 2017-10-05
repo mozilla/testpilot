@@ -1,11 +1,12 @@
+/* global describe, beforeEach, it */
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
-import { findLocalizedById } from '../util';
 import moment from 'moment';
+import { findLocalizedById } from '../../../../test/app/util';
 
-import ExperimentRowCard from '../../../src/app/components/ExperimentRowCard';
+import ExperimentRowCard from './index';
 
 describe('app/components/ExperimentRowCard', () => {
   let mockExperiment, mockClickEvent, props, subject;
@@ -112,7 +113,7 @@ describe('app/components/ExperimentRowCard', () => {
 
     subject.setProps({
       enabled: false,
-      getExperimentLastSeen: sinon.spy(experiment => moment().valueOf())
+      getExperimentLastSeen: sinon.spy(() => moment().valueOf())
     });
 
     expect(props.getExperimentLastSeen.called).to.be.true;
@@ -127,7 +128,7 @@ describe('app/components/ExperimentRowCard', () => {
     props = { ...props,
       enabled: false,
       getExperimentLastSeen:
-        sinon.spy(experiment => moment().subtract(1.5, 'week').valueOf()),
+        sinon.spy(() => moment().subtract(1.5, 'week').valueOf()),
       experiment: { ...mockExperiment,
         modified: moment().subtract(1, 'week').utc()
       }
@@ -145,7 +146,7 @@ describe('app/components/ExperimentRowCard', () => {
 
     subject.setProps({
       enabled: false,
-      getExperimentLastSeen: sinon.spy(experiment => moment().valueOf())
+      getExperimentLastSeen: sinon.spy(() => moment().valueOf())
     });
 
     expect(props.getExperimentLastSeen.called).to.be.true;
@@ -157,7 +158,7 @@ describe('app/components/ExperimentRowCard', () => {
     expect(findLocalizedById(subject, 'experimentListEndingTomorrow')).to.have.property('length', 0);
     subject.setProps({ experiment: { ...mockExperiment,
       completed: moment().add(23, 'hours').utc()
-    }});
+    } });
     expect(findLocalizedById(subject, 'experimentListEndingTomorrow')).to.have.property('length', 1);
   });
 
@@ -165,7 +166,7 @@ describe('app/components/ExperimentRowCard', () => {
     expect(findLocalizedById(subject, 'experimentListEndingSoon')).to.have.property('length', 0);
     subject.setProps({ experiment: { ...mockExperiment,
       completed: moment().add(6, 'days').utc()
-    }});
+    } });
     expect(findLocalizedById(subject, 'experimentListEndingSoon')).to.have.property('length', 1);
   });
 
@@ -198,7 +199,7 @@ describe('app/components/ExperimentRowCard', () => {
       hasAddon: true
     });
     expect(findLocalizedById(subject, 'experimentCardManage')).to.have.property('length', 1);
-  })
+  });
 
   it('should ping GA when manage is clicked', () => {
     subject.find('.experiment-summary').simulate('click', mockClickEvent);

@@ -4,11 +4,11 @@ import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import { buildSurveyURL, experimentL10nId } from '../lib/utils';
+import { buildSurveyURL, experimentL10nId } from '../../lib/utils';
 
-import type { InstalledExperiments } from '../reducers/addon';
+import type { InstalledExperiments } from '../../reducers/addon';
 
-import ExperimentPlatforms from './ExperimentPlatforms';
+import ExperimentPlatforms from '../ExperimentPlatforms';
 
 const ONE_DAY = 24 * 60 * 60 * 1000;
 const ONE_WEEK = 7 * ONE_DAY;
@@ -55,13 +55,13 @@ export default class ExperimentRowCard extends React.Component {
       >
         <div className="experiment-actions">
           {enabled && <Localized id="experimentListEnabledTab">
-            <div className="tab enabled-tab"></div>
+            <div className="tab enabled-tab">Enabled</div>
           </Localized>}
           {this.justLaunched() && <Localized id="experimentListJustLaunchedTab">
-            <div className="tab just-launched-tab"></div>
+            <div className="tab just-launched-tab">Just Launched</div>
           </Localized>}
           {this.justUpdated() && <Localized id="experimentListJustUpdatedTab">
-            <div className="tab just-updated-tab"></div>
+            <div className="tab just-updated-tab">Just Updated</div>
           </Localized>}
         </div>
         <div className={`experiment-icon-wrapper-${experiment.slug} experiment-icon-wrapper`}>
