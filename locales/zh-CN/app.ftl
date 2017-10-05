@@ -182,8 +182,10 @@ tourOnboardingTitle = { $title } 已启用！
 tourDoneButton = 完成
 userCountContainerAlt = 刚刚启动！
 highlightPrivacy = 您的隐私
+experimentGradReportButton = 毕业报告
 experimentGradReportPendingTitle = 此实验已经结束
 experimentGradReportPendingCopy = 我们正在制作完整报告。请过段时间再回来了解详细信息。
+experimentGradReportReady = 我们准备了一份完整的毕业报告。
 experimentGoToLink = 前往 { $title }
 startedDateLabel = 实验开始时间：<b>{ $startedDate }</b>
 
@@ -278,7 +280,7 @@ newsletterFooterSuccessBody = 如果您以前没有确认过订阅 Mozilla 相�
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = 此实验尚不支持您的语言 ({ $locale_code })。
+localeNotTranslatedWarningTitle = 此实验未翻译为您的语言 ({ $locale_code })。
 localeWarningSubtitle = 如果您不介意，无妨启用它。
 
 
