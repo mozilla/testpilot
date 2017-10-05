@@ -185,8 +185,10 @@ tourOnboardingTitle = ¡{ $title } tzijon!
 tourDoneButton = Xk'is
 userCountContainerAlt = ¡K'a nimakol tichap qa!
 highlightPrivacy = Awichinanem
+experimentGradReportButton = Rutzijol Chakoj Tijonïk
 experimentGradReportPendingTitle = Xk'is re solna'oj re'
 experimentGradReportPendingCopy = Tajin niqasamajij jun tz'aqät rutzijol. K'a xkatzolin pe richin ye'atz'ët ri taq rub'anikil.
+experimentGradReportReady = Xqanük' jun tz'aqät rutzijol ch'akoj tijonïk.
 experimentGoToLink = Tib'an b'enam pa { $title }
 startedDateLabel = Rutikirib'al Q'ij Solna'oj: <b>{ $startedDate }</b>
 
@@ -281,7 +283,6 @@ newsletterFooterSuccessBody = We man ajikib'an ta rutz'ib'axik ab'i' pa jun rutz
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Man k'o ta re solna'oj re' pan ach'ab'äl ({ $locale_code }).
 localeWarningSubtitle = We nawajo' k'a yatikïr na natzïj.
 
 
