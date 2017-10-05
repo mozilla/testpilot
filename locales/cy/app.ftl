@@ -54,7 +54,7 @@ landingInstalledButton = Dewis eich nodweddion
 // Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
-oneClickInstallMinorCta = Gosod Test Pilot &amp;
+oneClickInstallMinorCta = Gosod Test Pilot a
 oneClickInstallMajorCta = Galluogi { $title }
 
 
@@ -73,7 +73,7 @@ landingDownloadFirefoxSubTitle = Llwytho i Lawr am Ddim
 // A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
-landingCardListTitle = 3, 2, 1, i Ffwrdd â ni...
+landingCardListTitle = 3, 2, 1, i ffwrdd â ni...
 landingCardOne = Estyn ychwanegyn Test Pilot
 landingCardTwo = Galluogi nodweddion arbrofol
 landingCardThree = Rhannwch eich barn
