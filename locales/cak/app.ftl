@@ -283,6 +283,7 @@ newsletterFooterSuccessBody = We man ajikib'an ta rutz'ib'axik ab'i' pa jun rutz
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeNotTranslatedWarningTitle = Re solna'oj re' man tzalq'omin ta pan ach'ab'äl ({ $locale_code }).
 localeWarningSubtitle = We nawajo' k'a yatikïr na natzïj.
 
 
