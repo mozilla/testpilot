@@ -7,6 +7,7 @@
 ../node_modules/html-react-parser/*.
 ../node_modules/moment/*.
 ../node_modules/fluent-react/*.
+../node_modules/js-cookie/*.
 
 [libs]
 ../flow-typed
