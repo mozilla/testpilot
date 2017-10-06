@@ -182,8 +182,10 @@ tourOnboardingTitle = Galluogwyd { $title }
 tourDoneButton = Gorffen
 userCountContainerAlt = Newydd ei gyflwyno!
 highlightPrivacy = Eich preifatrwydd
+experimentGradReportButton = Adroddiad Graddio
 experimentGradReportPendingTitle = Mae'r arbrawf hwn wedi dod i ben
 experimentGradReportPendingCopy = Rydym yn gweithio ar adroddiad llawn. Dewch nôl cyn bo hir am y manylion.
+experimentGradReportReady = Rydym wedi paratoi adroddiad graddio llawn.
 experimentGoToLink = Mynd i { $title }
 startedDateLabel = Dyddiad Cychwyn yr Arbrawf: <b>{ $startedDate }</b>
 
@@ -278,7 +280,7 @@ newsletterFooterSuccessBody = Os nad ydych wedi cadarnhau tanysgrifiad i gylchly
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Nid yw'r arbrawf yma'n cael ei gynnal y eich iaith chi. ({ $locale_code }).
+localeNotTranslatedWarningTitle = Nid yw'r arbrawf yma wedi ei gyfieithu i'ch iaith chi ({ $locale_code }).
 localeWarningSubtitle = Gallwch ei alluogi o hyd, os hoffech chi.
 
 

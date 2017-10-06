@@ -147,3 +147,5 @@ snoozetabsContributors7Title = QA Softvision
 tabcenterDescription = 
 sendNewsupdatesSendupdate1Title = Send gyda Safari ac Edge!
 sendNewsupdatesSendupdate1Content = Mae Send 1.1.0 newydd ei ryddhau gyda gwell cefnogaeth i borwyr a nifer o welliannau eraill.
+sendNewsupdatesSendupdate2Title = Dysgu dray Send
+sendNewsupdatesSendupdate2Content = Rydym newydd gyflawni ein prawf cyntaf i ddysgu am ryngwyneb defnyddiwr Send. Estynnwch y canlyniadau.
