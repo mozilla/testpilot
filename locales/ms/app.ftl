@@ -185,8 +185,10 @@ tourOnboardingTitle = { $title } didayakan!
 tourDoneButton = Selesai!
 userCountContainerAlt = baru sahaja dilancarkan!
 highlightPrivacy = Privasi anda
+experimentGradReportButton = Laporan Senggatan
 experimentGradReportPendingTitle = Eksperimen ini sudah tamat
 experimentGradReportPendingCopy = Kami sedang meyediakan laporan penuh. Semak semula untuk dapatkan butirannya.
+experimentGradReportReady = Kami telah menyediakan laporan senggatan lengkap.
 experimentGoToLink = Pergi ke { $title }
 startedDateLabel = Tarikh Mula Eksperimen: <b>{ $startedDate }</b>
 
@@ -281,7 +283,6 @@ newsletterFooterSuccessBody = Jika anda belum pernah mengesahkan langganan surat
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Eksperimen ini tidak disokong oleh bahasa anda ({ $locale_code }).
 localeWarningSubtitle = Anda masih boleh dayakannya jika anda mahu.
 
 
