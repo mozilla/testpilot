@@ -185,6 +185,7 @@ tourOnboardingTitle = ¡{ $title } habilitado!
 tourDoneButton = Hecho
 userCountContainerAlt = ¡Recién lanzado!
 highlightPrivacy = Tu privacidad
+experimentGradReportButton = Informe de graduación
 experimentGradReportPendingTitle = Terminó este experimento
 experimentGradReportPendingCopy = Estamos haciendo un informe completo. Vuelva pronto para ver los detalles.
 experimentGoToLink = Ir a { $title }
@@ -281,7 +282,6 @@ newsletterFooterSuccessBody = Si no confirmó previamente una suscripción a alg
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Este experimento no está soportado en tu idioma ({ $locale_code }).
 localeWarningSubtitle = Igual puede habilitarlo si quiere.
 
 
