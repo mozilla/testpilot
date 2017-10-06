@@ -255,3 +255,5 @@ testpilotNewsupdatesGeneralupdate4Title = Ahora, Page Shote se llama Firefox Scr
 testpilotNewsupdatesGeneralupdate4Content = El experimento Page Shot se transferirá a Firefox con el nombre de Firefox Screenshots. Descubre por qué.
 sendNewsupdatesSendupdate1Title = ¡Enviar con Safari y Edge!
 sendNewsupdatesSendupdate1Content = Se acaba de lanzar Send 1.1.0, con una mejor asistencia al navegador y algunas otras mejoras.
+sendNewsupdatesSendupdate2Title = Saber más de Send
+sendNewsupdatesSendupdate2Content = Acabamos de realizar nuestro primer test A/B para saber más sobre la interfaz de usuario de Send. Descubre los resultados.
