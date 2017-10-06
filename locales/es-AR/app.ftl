@@ -188,6 +188,7 @@ highlightPrivacy = Tu privacidad
 experimentGradReportButton = Informe de graduación
 experimentGradReportPendingTitle = Terminó este experimento
 experimentGradReportPendingCopy = Estamos haciendo un informe completo. Vuelva pronto para ver los detalles.
+experimentGradReportReady = Preparamos un informe completo sobre la graduación.
 experimentGoToLink = Ir a { $title }
 startedDateLabel = Fecha de inicio del experimento: <b>{ $completedDate }</b>
 
