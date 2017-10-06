@@ -251,5 +251,7 @@ voicefillContributors4Title = Firefox UX
 voicefillContributors5Title = Softvision QA
 voicefillContributors6Title = Softvision QA
 voicefillContributors7Title = Napredni razvoj, tehnologije v nastajanju
+testpilotNewsupdatesGeneralupdate4Title = Page Shot je zdaj Firefox Screenshots
+testpilotNewsupdatesGeneralupdate4Content = Poskus Page Shot je sedaj vključen v Firefox kot Firefox Screenshots. Preberite, kako se je zgodilo.
 sendNewsupdatesSendupdate1Title = Pošlji s Safarijem in Edgeem!
 sendNewsupdatesSendupdate1Content = Pravkar je izšel Send 1.1.0 z izboljšano podporo brskalnikom in nekaj drugimi izboljšavami.

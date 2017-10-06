@@ -281,7 +281,7 @@ newsletterFooterSuccessBody = Če še niste potrdili naročila na prejemanje Moz
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Ta poskus ni podprt v vašem jeziku ({ $locale_code }).
+localeNotTranslatedWarningTitle = Ta poskus ni bil preveden v vaš jezik ({ $locale_code }).
 localeWarningSubtitle = Če želite, ga lahko kljub temu omogočite.
 
 
