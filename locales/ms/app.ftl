@@ -283,6 +283,7 @@ newsletterFooterSuccessBody = Jika anda belum pernah mengesahkan langganan surat
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeNotTranslatedWarningTitle = Eksperimen ini masih belum diterjemahkan ke bahasa anda ({ $locale_code }).
 localeWarningSubtitle = Anda masih boleh dayakannya jika anda mahu.
 
 
