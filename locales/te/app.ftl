@@ -17,6 +17,7 @@ footerLinkCookies = కుకీలు
 footerLinkPrivacy = గోప్యత
 footerLinkTerms = నియమాలు
 footerLinkLegal = చట్టపరమైన
+footerLinkFeedback = అభిప్రాయం తెలియజేయండి
 footerLinkAbout = టెస్ట్ పైలట్ గురించి
 
 
