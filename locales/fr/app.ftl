@@ -182,8 +182,10 @@ tourOnboardingTitle = { $title } a été activé !
 tourDoneButton = Terminé
 userCountContainerAlt = Nouveau
 highlightPrivacy = Confidentialité
+experimentGradReportButton = Retour d’expérience
 experimentGradReportPendingTitle = Cette expérience est terminée
 experimentGradReportPendingCopy = Nous sommes en train de réaliser un rapport complet. Revenez un peu plus tard pour consulter tous les détails.
+experimentGradReportReady = Nous avons préparé un retour d’expérience détaillé.
 experimentGoToLink = Ouvrir { $title }
 startedDateLabel = Date de début de l’expérience : <b>{ $startedDate }</b>
 
