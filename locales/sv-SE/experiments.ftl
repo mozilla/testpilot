@@ -251,5 +251,6 @@ voicefillContributors4Title = Firefox UX
 voicefillContributors5Title = Softvision QA
 voicefillContributors6Title = Softvision QA
 voicefillContributors7Title = Advanced Development, Emerging Technologies
+testpilotNewsupdatesGeneralupdate4Title = Page Shot är nu Firefox Screenshots
 sendNewsupdatesSendupdate1Title = Send med Safari och Edge!
 sendNewsupdatesSendupdate1Content = Send 1.1.0 finns nu med förbättrad webbläsarsupport och en del andra förbättringar.
