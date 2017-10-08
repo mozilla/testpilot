@@ -283,6 +283,7 @@ newsletterFooterSuccessBody = Si no confirmó previamente una suscripción a alg
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeNotTranslatedWarningTitle = Este experimento no ha sido traducido a tu idioma ({ $locale_code }).
 localeWarningSubtitle = Igual puede habilitarlo si quiere.
 
 

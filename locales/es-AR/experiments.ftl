@@ -236,5 +236,6 @@ voicefillContributors4Title = UX de Firefox
 voicefillContributors5Title = Control de Calidad, Softvision
 voicefillContributors6Title = Control de Calidad, Softvision
 voicefillContributors7Title = Desarrollo avanzado, tecnologías emergentes
+testpilotNewsupdatesGeneralupdate4Title = Page Shot ahora es Firefox Screenshots
 sendNewsupdatesSendupdate1Title = ¡Send con Safari y Edge!
 sendNewsupdatesSendupdate1Content = Ya lanzamos Send 1.1.0 con mejoras en soporte de navegadores y otras pequeñas mejoras más.
