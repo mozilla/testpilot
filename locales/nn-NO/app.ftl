@@ -216,7 +216,7 @@ versionChangeNoticeLink = Last ned siste versjon av Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Avinstallere Test Pilot?
-retireMessage = Som du vil. Dette kjem til å slå av alle aktive testar, avinstallere utvidinga og fjerne kontoinnformasjonen din frå alle tenarane våre.
+retireMessageUpdate = Som du vil. Dette vil avinstallere Test Pilot. Du kan inaktivere einskilde eksperiment frå utvidingshandsamaren i Firefox.
 retireEmailMessage = For å trekkje seg frå e-postoppdateringar, klikk på lenka <em>avbryt abonnementet</em> i ein Test Pilot e-post.
 retireSubmitButton = Fortset
 pageTitleRetirePage = Firefox Test Pilot - Avinstaller Test Pilot
@@ -281,7 +281,6 @@ newsletterFooterSuccessBody = Om du tidlegare ikkje har stadfesta eit abonnement
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Dette eksperimentet er ikkje støtta på ditt språk ({ $locale_code }).
 localeWarningSubtitle = Du kan framleis slå det på om du vil.
 
 
