@@ -185,8 +185,10 @@ tourOnboardingTitle = { $title } är aktiverad!
 tourDoneButton = Klar
 userCountContainerAlt = Nyligen startad!
 highlightPrivacy = Din sekretesspolicy
+experimentGradReportButton = Examensrapport
 experimentGradReportPendingTitle = Detta experiment har upphört
 experimentGradReportPendingCopy = Vi arbetar med en fullständig rapport. Återkom snart för detaljer.
+experimentGradReportReady = Vi har utarbetat en fullständig examinationsrapport.
 experimentGoToLink = Gå till { $title }
 startedDateLabel = Startdatum för experiment: <b>{ $startedDate }</b>
 
@@ -281,7 +283,7 @@ newsletterFooterSuccessBody = Om du tidigare inte har bekräftat en prenumeratio
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Detta experiment stöds inte på ditt språk ({ $locale_code }).
+localeNotTranslatedWarningTitle = Detta experiment har inte översatts till ditt språk ({ $locale_code }).
 localeWarningSubtitle = Du kan fortfarande aktivera det om du vill.
 
 
