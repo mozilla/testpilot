@@ -255,3 +255,5 @@ testpilotNewsupdatesGeneralupdate4Title = Page Shot je zdaj Firefox Screenshots
 testpilotNewsupdatesGeneralupdate4Content = Poskus Page Shot je sedaj vključen v Firefox kot Firefox Screenshots. Preberite, kako se je zgodilo.
 sendNewsupdatesSendupdate1Title = Pošlji s Safarijem in Edgeem!
 sendNewsupdatesSendupdate1Content = Pravkar je izšel Send 1.1.0 z izboljšano podporo brskalnikom in nekaj drugimi izboljšavami.
+sendNewsupdatesSendupdate2Title = Učimo se od Senda
+sendNewsupdatesSendupdate2Content = Pravkar smo izvedli svoj prvi preskus A/B, s katerim smo želeli izvedeti več o uporabniškem vmesniku Senda. Oglejte si izsledke.

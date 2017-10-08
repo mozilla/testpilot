@@ -185,8 +185,10 @@ tourOnboardingTitle = { $title } omogočen!
 tourDoneButton = Končano
 userCountContainerAlt = Pravkar izdan!
 highlightPrivacy = Vaša zasebnost
+experimentGradReportButton = Poročilo o zaključku
 experimentGradReportPendingTitle = Ta poskus se je končal
 experimentGradReportPendingCopy = Pripravljamo popolno poročilo. Podrobnosti bodo kmalu na voljo.
+experimentGradReportReady = Pripravili smo celotno poročilo o zaključku.
 experimentGoToLink = Pojdi na { $title }
 startedDateLabel = Datum začetka poskusa: <b>{ $startedDate }</b>
 
