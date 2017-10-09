@@ -3,6 +3,7 @@
 *.log
 *.pyc
 *.sw?
+*~
 *.tox
 *.cache
 
