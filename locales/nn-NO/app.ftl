@@ -185,8 +185,10 @@ tourOnboardingTitle = { $title } er slått på!
 tourDoneButton = Ferdig
 userCountContainerAlt = Nettopp starta!
 highlightPrivacy = Ditt personvern
+experimentGradReportButton = Eksamensrapport
 experimentGradReportPendingTitle = Dette eksperimentet er avslutta
 experimentGradReportPendingCopy = Vi arbeider med ein fullstendig rapport. Kom tilbake snart for meir info.
+experimentGradReportReady = Vi har utarbeidd ein fullstendig eksaminasjonsrapport.
 experimentGoToLink = Gå til { $title }
 startedDateLabel = Startdato for eksperimentet: <b>{ $startedDate }</b>
 
@@ -281,6 +283,7 @@ newsletterFooterSuccessBody = Om du tidlegare ikkje har stadfesta eit abonnement
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeNotTranslatedWarningTitle = Dette eksperimentet er ikkje omsett til ditt språk ({ $locale_code }).
 localeWarningSubtitle = Du kan framleis slå det på om du vil.
 
 
