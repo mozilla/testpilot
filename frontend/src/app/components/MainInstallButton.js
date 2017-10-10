@@ -1,3 +1,5 @@
+// @flow
+
 import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
@@ -8,21 +10,28 @@ import { VariantTests, VariantTestCase, VariantTestDefault } from './VariantTest
 
 import config from '../config';
 
-export default class MainInstallButton extends React.Component {
+import type { MainInstallButtonProps } from './types';
 
-  constructor(props) {
+type MainInstallButtonState = { isInstalling: boolean };
+
+export default class MainInstallButton extends React.Component {
+  props: MainInstallButtonProps;
+  state: MainInstallButtonState;
+
+  constructor(props: MainInstallButtonProps) {
     super(props);
     this.state = {
       isInstalling: false
     };
   }
 
-  install(e) {
+  install(e: Object) {
     // Don't install if a mouse button other than the primary button was clicked
     if (e.button !== 0) {
       return;
     }
     const { requireRestart, sendToGA, eventCategory, eventLabel, hasAddon, installAddon, installCallback, navigateTo } = this.props;
+
     if (hasAddon) {
       navigateTo('/experiments');
       return;
@@ -59,7 +68,7 @@ export default class MainInstallButton extends React.Component {
     );
   }
 
-  renderOneClickInstallButton(title) {
+  renderOneClickInstallButton(title: string) {
     return (
       <div className="default-btn-msg one-click-text">
         <LocalizedHtml id="oneClickInstallMinorCta">
@@ -72,7 +81,7 @@ export default class MainInstallButton extends React.Component {
     );
   }
 
-  renderInstallButton(isInstalling, hasAddon) {
+  renderInstallButton(isInstalling: boolean, hasAddon: any) {
     const { experimentTitle } = this.props;
     let installButton = null;
     if (experimentTitle) {
@@ -109,7 +118,7 @@ export default class MainInstallButton extends React.Component {
     </VariantTests>;
   }
 
-  renderAltButton(isFirefox, isMobile) {
+  renderAltButton(isFirefox: boolean, isMobile: boolean) {
     if (isFirefox && isMobile) {
       return (
         <div>

@@ -5,28 +5,27 @@ import moment from 'moment';
 import classnames from 'classnames';
 import parser from 'html-react-parser';
 
-import { buildSurveyURL, experimentL10nId, formatDate } from '../lib/utils';
+import { buildSurveyURL, experimentL10nId, formatDate } from '../../lib/utils';
 
-import NotFoundPage from './NotFoundPage';
+import NotFoundPage from '../NotFoundPage';
 
-import EmailDialog from '../components/EmailDialog';
-import ExperimentDisableDialog from '../components/ExperimentDisableDialog';
-import ExperimentEolDialog from '../components/ExperimentEolDialog';
-import ExperimentTourDialog from '../components/ExperimentTourDialog';
-import GraduatedNotice from '../components/GraduatedNotice';
-import LocalizedHtml from '../components/LocalizedHtml';
-import MainInstallButton from '../components/MainInstallButton';
-import ExperimentCardList from '../components/ExperimentCardList';
-import ExperimentPreFeedbackDialog from '../components/ExperimentPreFeedbackDialog';
-import View from '../components/View';
-import Warning from '../components/Warning';
-import IncompatibleAddons from '../components/IncompatibleAddons';
+import EmailDialog from '../../components/EmailDialog';
+import GraduatedNotice from '../../components/GraduatedNotice';
+import LocalizedHtml from '../../components/LocalizedHtml';
+import ExperimentCardList from '../../components/ExperimentCardList';
+import View from '../../components/View';
+import Warning from '../../components/Warning';
 
-import ExperimentPlatforms from '../components/ExperimentPlatforms';
-import Banner from '../components/Banner';
-import Copter from '../components/Copter';
-import LayoutWrapper from '../components/LayoutWrapper';
+import ExperimentPlatforms from '../../components/ExperimentPlatforms';
+import Banner from '../../components/Banner';
+import LayoutWrapper from '../../components/LayoutWrapper';
 
+import ExperimentPreFeedbackDialog from './ExperimentPreFeedbackDialog';
+import ExperimentDisableDialog from './ExperimentDisableDialog';
+import ExperimentEolDialog from './ExperimentEolDialog';
+import ExperimentTourDialog from './ExperimentTourDialog';
+import IncompatibleAddons from './IncompatibleAddons';
+import TestpilotPromo from './TestpilotPromo';
 
 export default class ExperimentPage extends React.Component {
   render() {
@@ -60,6 +59,8 @@ export class ExperimentDetail extends React.Component {
 
     const { isExperimentEnabled, experiment,
             getCookie, removeCookie, hasAddon } = this.props;
+
+    this.installExperiment = this.installExperiment.bind(this);
 
     let showEmailDialog = false;
     if (getCookie('first-run')) {
@@ -248,26 +249,12 @@ export class ExperimentDetail extends React.Component {
 
         <View {...this.props}>
 
-        {hasAddon !== null && (!hasAddon && !graduated && !experiment.web_url) && <section id="testpilot-promo">
-          <Banner>
-              <LayoutWrapper flexModifier="row-between-reverse">
-                <div className="intro-text">
-                  <h2 className="banner__title">
-                    <Localized id="experimentPromoHeader">
-                      <span className="block">Ready for Takeoff?</span>
-                    </Localized>
-                  </h2>
-                  <Localized id="experimentPromoSubheader">
-                    <p className="banner__copy">We&apos;re building next-generation features for Firefox. Install Test Pilot to try them!</p>
-                  </Localized>
-                  <MainInstallButton {...this.props}
-                                     experimentTitle={title}
-                                     installCallback={ this.installExperiment.bind(this) } />
-                </div>
-                <Copter/>
-              </LayoutWrapper>
-          </Banner>
-        </section>}
+          <TestpilotPromo {...{
+            ...this.props,
+            graduated,
+            experiment,
+            installCallback: this.installExperiment
+          }} />
 
         <div className="default-background">
           <div className={classnames(
