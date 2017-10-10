@@ -213,7 +213,7 @@ versionChangeNoticeLink = 下載最新版 Firefox。
 [[ uninstall ]]
 
 retireDialogTitle = 要移除 Test Pilot 嗎？
-retireMessage = 如您所願。將會停用所有進行中的測試、移除附加元件，並移除我們的伺服器上關於您的帳號資訊。
+retireMessageUpdate = 如您所願，將移除 Test Pilot。您可在 Firefox 的附加元件管理員中停用各個實驗。
 retireEmailMessage = 要停止收到電子報，只要點擊每封信當中的 <em>取消訂閱</em> 鏈結。
 retireSubmitButton = 繼續
 pageTitleRetirePage = Firefox Test Pilot - 移除 Test Pilot

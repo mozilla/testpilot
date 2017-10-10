@@ -149,8 +149,10 @@ tourOnboardingTitle = {$title} enabled!
 tourDoneButton = Done
 userCountContainerAlt = Just launched!
 highlightPrivacy = Your privacy
+experimentGradReportButton=Graduation Report
 experimentGradReportPendingTitle = This experiment has ended
 experimentGradReportPendingCopy = We are working on a full report. Check back soon for the details.
+experimentGradReportReady=We have prepared a full graduation report.
 experimentGoToLink = Go to { $title }
 startedDateLabel = Experiment Start Date: <b>{$startedDate}</b>
 
@@ -228,7 +230,7 @@ newsletterFooterSuccessBody = If you haven't previously confirmed a subscription
 
 // A warning shown to users when the experiment is not available in their language
 [[localeWarning]]
-localeUnavailableWarningTitle = This experiment is not supported in your language ({$locale_code}).
+localeNotTranslatedWarningTitle = This experiment has not been translated to your language ({$locale_code}).
 localeWarningSubtitle = You can still enable it if you like.
 
 // An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
@@ -260,3 +262,4 @@ warningMissingPrefTitle=Developing Test Pilot?
 warningMissingPrefDetail=When running Test Pilot locally or in development environments, special configuration is required. Please see <a>our documentation</a> for details.
 warningBadHostnameTitle=Unapproved hostname!
 warningBadHostnameDetail=The Test Pilot site may only be accessed from testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, or example.com:8000. Please see <a>our documentation</a> for details.
+

@@ -13,6 +13,7 @@ import EmailDialog from '../components/EmailDialog';
 import ExperimentDisableDialog from '../components/ExperimentDisableDialog';
 import ExperimentEolDialog from '../components/ExperimentEolDialog';
 import ExperimentTourDialog from '../components/ExperimentTourDialog';
+import GraduatedNotice from '../components/GraduatedNotice';
 import LocalizedHtml from '../components/LocalizedHtml';
 import MainInstallButton from '../components/MainInstallButton';
 import ExperimentCardList from '../components/ExperimentCardList';
@@ -131,9 +132,9 @@ export class ExperimentDetail extends React.Component {
     const { experiment, locale, hasAddon } = this.props;
     if (hasAddon !== null && locale && ((experiment.locales && !experiment.locales.includes(locale)) || (experiment.locale_blocklist && experiment.locale_blocklist.includes(locale)))) {
       return (
-        <Warning titleL10nId="localeUnavailableWarningTitle"
+        <Warning titleL10nId="localeNotTranslatedWarningTitle"
                  titleL10nArgs={ JSON.stringify({ locale_code: locale }) }
-                 title="This experiment is not supported in your language (en)."
+                 title="This experiment has not been translated to your language (en)."
                  subtitleL10nId="localeWarningSubtitle"
                  subtitle="You can still enable it if you like." />
       );
@@ -196,7 +197,7 @@ export class ExperimentDetail extends React.Component {
     const { title, contribute_url, bug_report_url, discourse_url, privacy_preamble,
             warning, introduction, measurements, privacy_notice_url, changelog_url,
             thumbnail, subtitle, survey_url, contributors, contributors_extra, contributors_extra_url, details,
-            min_release, max_release, graduation_report } = experiment;
+            min_release, max_release, graduation_report, graduation_url } = experiment;
 
     // Set the timestamp for when this experiment was last seen (for
     // ExperimentRowCard updated/launched banner logic)
@@ -257,7 +258,7 @@ export class ExperimentDetail extends React.Component {
                     </Localized>
                   </h2>
                   <Localized id="experimentPromoSubheader">
-                    <p className="banner__copy"></p>
+                    <p className="banner__copy">We&apos;re building next-generation features for Firefox. Install Test Pilot to try them!</p>
                   </Localized>
                   <MainInstallButton {...this.props}
                                      experimentTitle={title}
@@ -281,7 +282,7 @@ export class ExperimentDetail extends React.Component {
                 <span>{title} is enabled.</span>
               </Localized>}
               {(statusType === 'error') && <Localized id="installErrorMessage" $title={ title }>
-                <span><span></span></span>
+                <span>Uh oh. {title} could not be enabled. Try again later.</span>
               </Localized>}
             </div>
             <LayoutWrapper helperClass="details-header" flexModifier="row-between-breaking">
@@ -311,7 +312,7 @@ export class ExperimentDetail extends React.Component {
                     <section className="user-count">
                       { this.renderLaunchStatus() }
                     </section>
-                    {!graduated && <div>
+                    <div>
                       <section className="stats-section">
                         {!experiment.web_url &&
                         <p>
@@ -342,7 +343,7 @@ export class ExperimentDetail extends React.Component {
                           <dd><a href={discourse_url}>{discourse_url}</a></dd>
                         </dl>
                       </section>
-                    </div>}
+                    </div>
                     <section className="contributors-section">
                       <Localized id="contributorsHeading">
                         <h3>Brought to you by</h3>
@@ -399,18 +400,19 @@ export class ExperimentDetail extends React.Component {
                             </ul>
                           </div>
                           {privacy_notice_url && <Localized id="experimentPrivacyNotice" $title={title}>
-                            <a className="privacy-policy" href={privacy_notice_url}><span></span></a>
+                            <a className="privacy-policy" href={privacy_notice_url}>You can learn more about the data collection for {title} here.</a>
                           </Localized>}
                         </section>}
                       </div>
                     </div>}
                   </div>
                 </div>
-                {!graduated &&
-                  <div className="details-description">
+                <div className="details-description">
                   {this.renderEolBlock()}
                   <IncompatibleAddons {...{ experiment, installedAddons }} />
                   {this.renderLocaleWarning()}
+                  {graduated && <GraduatedNotice graduated={graduated} graduation_url={graduation_url} graduation_report={graduation_report} />}
+
                   {experiment.video_url &&
                     <iframe width="100%" height="360" src={experiment.video_url} frameBorder="0" allowFullScreen className="experiment-video"></iframe>
                   }
@@ -447,7 +449,7 @@ export class ExperimentDetail extends React.Component {
                      </div>
                     ))}
                   </div>
-                  {hasAddon && <div>
+                  {hasAddon && !graduated && <div>
                     {measurements && <section
                           className={classnames('measurements', { highlight: highlightMeasurementPanel })}>
                       <Localized id="measurements">
@@ -481,50 +483,7 @@ export class ExperimentDetail extends React.Component {
                       </Localized>}
                     </section>}
                   </div>}
-                  </div>}
-                {graduated &&
-                  <div className="details-description">
-                    <section className="graduation-report">
-                      { graduation_report ? parser(graduation_report) :
-                        // TODO: This is not very DRY.
-                        // When this page gets refactored we should
-                        // Consolidate the details description to
-                        // Better modularize possible content blocks.git
-                        <div>
-                          <Warning titleL10nId="experimentGradReportPendingTitle"
-                            title="This experiment has ended.">
-                              <Localized id="experimentGradReportPendingCopy">
-                                <div>We are working on a full report. Check back soon for the details.</div>
-                              </Localized>
-                          </Warning>
-                          <LocalizedHtml id={this.l10nId('introduction')}>
-                            <div>
-                              {parser(introduction)}
-                            </div>
-                          </LocalizedHtml>
-                          <div className="details-list">
-                            {details.map((detail, idx) => (
-                              <div key={idx}>
-                                <div className="details-image">
-                                  <img width="680" src={detail.image} />
-                                  <p className="caption">
-                                    {detail.headline && <Localized id={this.l10nId(['details', idx, 'headline'])}>
-                                      <strong>{detail.headline}</strong>
-                                    </Localized>}
-                                    {detail.copy && <LocalizedHtml id={this.l10nId(['details', idx, 'copy'])}>
-                                      <span>
-                                        {parser(detail.copy)}
-                                      </span>
-                                    </LocalizedHtml>}
-                                  </p>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      }
-                    </section>
-                  </div>}
+                </div>
               </LayoutWrapper>
             </div>
           </div>
@@ -650,7 +609,7 @@ export class ExperimentDetail extends React.Component {
       return (
         <div className="upgrade-notice">
           <Localized id="upgradeNoticeTitle" $title={title} $min_release={min_release}>
-            <div></div>
+            <div>{title} requires Firefox {min_release} or later.</div>
           </Localized>
           <Localized id="upgradeNoticeLink">
             <a onClick={e => this.clickUpgradeNotice(e)} href="https://support.mozilla.org/kb/find-what-version-firefox-you-are-using" target="_blank" rel="noopener noreferrer">How to update Firefox.</a>
@@ -666,7 +625,7 @@ export class ExperimentDetail extends React.Component {
       return (
         <div className="upgrade-notice">
           <Localized id="versionChangeNotice" $experiment_title={title}>
-            <div></div>
+            <div>{title} is not supported in this version of Firefox.</div>
           </Localized>
           <Localized id="versionChangeNoticeLink">
             <a onClick={e => this.clickUpgradeNotice(e)} href="https://www.mozilla.org/firefox/" target="_blank" rel="noopener noreferrer">Get the current version of Firefox.</a>
@@ -710,7 +669,7 @@ export class ExperimentDetail extends React.Component {
                 <span className="transition-text">Disabling...</span>
               </Localized>
               <Localized id="disableExperiment" $title={title}>
-                <span className="default-text"></span>
+                <span className="default-text">Disable {title}</span>
               </Localized>
             </button>
           </div>
@@ -722,7 +681,7 @@ export class ExperimentDetail extends React.Component {
       return <div className="experiment-controls">
         <button disabled onClick={e => { e.preventDefault(); }} style={{ minWidth: progressButtonWidth }} id="install-button"  className={classnames(['button', 'default'])}>
           <Localized id="experimentManuallyDisabled" $title={title}>
-            <span className="default-text"></span>
+            <span className="default-text">{title} disabled in Add-ons Manager</span>
           </Localized>
         </button>
       </div>;
@@ -737,7 +696,7 @@ export class ExperimentDetail extends React.Component {
             <span className="transition-text">Disabling...</span>
           </Localized>
           <Localized id="disableExperiment" $title={title}>
-            <span className="default-text"></span>
+            <span className="default-text">Disable {title}</span>
           </Localized>
         </button>
       </div>;

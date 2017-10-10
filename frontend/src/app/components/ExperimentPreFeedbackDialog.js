@@ -23,7 +23,7 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
         <div className={classnames('modal', 'tour-modal')}>
           <header className="modal-header-wrapper">
             <Localized id="experimentPreFeedbackTitle" $title={experiment.title}>
-              <h3 className="modal-header"></h3>
+              <h3 className="modal-header">{experiment.title} feedback</h3>
             </Localized>
             <div className="modal-cancel" onClick={e => this.cancel(e)}/>
           </header>
@@ -38,7 +38,7 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
               <div className="tour-text">
                 <Localized id="experimentPreFeedbackLinkCopy" $title={experiment.title}>
                   <a onClick={e => this.feedback(e)}
-                     href={surveyURL}></a>
+                     href={surveyURL}>Give feedback about the {experiment.title} experiment</a>
                 </Localized>
               </div>
             </div>

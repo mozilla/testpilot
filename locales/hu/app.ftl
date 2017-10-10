@@ -216,7 +216,7 @@ versionChangeNoticeLink = A Firefox jelenlegi verziójának beszerzése.
 [[ uninstall ]]
 
 retireDialogTitle = Eltávolítja a Tesztpilótát?
-retireMessage = Ahogy kívánja. Ez kikapcsol minden aktív tesztet, eltávolítja a kiegészítőt és eltávolítja a fiókinformációit a kiszolgálóinkról.
+retireMessageUpdate = Ahogy kívánja. Ez eltávolítja a Tesztpilótát. Az egyes kísérleteket a Firefox kiegészítőkezelőben is letilthatja.
 retireEmailMessage = Hogy kiszálljon az e-mail értesítésekből, egyszerűen kattintson a <em>leiratkozás</em> hivatkozásra bármelyik Tesztpilóta e-mailben.
 retireSubmitButton = Folytatás
 pageTitleRetirePage = Firefox Tesztpilóta – A Tesztpilóta eltávolítása

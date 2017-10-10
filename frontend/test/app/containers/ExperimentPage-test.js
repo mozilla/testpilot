@@ -538,10 +538,6 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
           expect(findLocalizedById(subject, 'userCountContainerAlt').length).to.equal(0);
         });
 
-        it('displays the graduation report', () => {
-          expect(subject.find('.graduation-report').length).to.equal(1);
-        });
-
         describe('with experiment enabled', () => {
           beforeEach(() => {
             subject.setProps({ isExperimentEnabled: experiment => true });

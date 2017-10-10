@@ -1,0 +1,42 @@
+.graduated-notice {
+  align-items: center;
+  border-radius: 5px;
+  border: 2px dotted #f5a623;
+  display: flex;
+  padding: 32px 28px;
+  margin-bottom: 32px;
+}
+
+.graduated-notice-image {
+  flex: 0 0 40px;
+  max-width: 40px;
+  margin-right: 28px;
+}
+
+.graduated-notice-text {
+  flex: 1;
+  margin-right: 28px;
+}
+
+.graduated-notice-text h1 {
+  font-size: 20px;
+  margin: 0 0 5px;
+}
+
+.graduated-notice-text p {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.graduated-notice-button {
+  align-items: center;
+  background-color: rgb(9, 150, 248);
+  border-radius: 3px;
+  color: #ffffff !important;
+  display: flex;
+  font-size: 22px;
+  height: 62px;
+  padding: 0 18px;
+  white-space: nowrap;
+}

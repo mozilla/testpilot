@@ -216,7 +216,7 @@ versionChangeNoticeLink = Prenesite najnovejšo različico Firefoxa.
 [[ uninstall ]]
 
 retireDialogTitle = Želite odstraniti Test Pilot?
-retireMessage = Kot želite. S tem boste onemogočili vse aktivne poskuse, odstranili dodatek in izbrisali podatke računa z naših strežnikov.
+retireMessageUpdate = Kot želite. S tem boste odstranili Test Pilot. Posamezne poskuse lahko odstranite v Firefoxovem upravitelju dodatkov.
 retireEmailMessage = Za odjavo od e-poštnih novic kliknite povezavo <em>Odjava</em> v kateremkoli od sporočil programa Test Pilot.
 retireSubmitButton = Nadaljuj
 pageTitleRetirePage = Firefox Test Pilot - odstranjevanje

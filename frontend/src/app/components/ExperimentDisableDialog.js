@@ -28,7 +28,7 @@ export default class ExperimentDisableDialog extends React.Component {
         <div id="disabled-feedback-modal" className="modal feedback-modal modal-bounce-in">
           <header className="modal-header-wrapper">
             <Localized id="feedbackUninstallTitle" $title={ experiment.title }>
-              <h3 className="modal-header" />
+              <h3 className="modal-header">Thank You!</h3>
             </Localized>
             <div className="modal-cancel" onClick={e => this.cancel(e)} />
           </header>

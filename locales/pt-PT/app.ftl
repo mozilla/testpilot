@@ -216,7 +216,7 @@ versionChangeNoticeLink = Obter a versão mais recente do Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Desinstalar o Test Pilot?
-retireMessage = Como desejar. Isto vai desativar quaisquer testes ativos, desinstalar o extra e remover as informações da sua conta dos nossos servidores.
+retireMessageUpdate = Como queira. Isto irá desinstalar o Test Pilot. Pode desativar experiências específicas a partir do Gestor de extras do Firefox.
 retireEmailMessage = Para deixar de receber atualizações por email, basta clicar na ligação <em>cancelar subscrição</em> em qualquer email do Test Pilot.
 retireSubmitButton = Proceder
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar o Test Pilot
