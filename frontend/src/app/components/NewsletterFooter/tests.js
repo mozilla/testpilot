@@ -6,12 +6,10 @@ import { shallow } from 'enzyme';
 
 import NewsletterFooter from './index';
 
-let sendToGA;
-
 describe('app/components/NewsletterFooter', () => {
   const props = {
     getWindowLocation: sinon.spy(() => 'https://example.com'),
-    sendToGA: sendToGA = sinon.spy(),
+    sendToGA: sinon.spy(),
     newsletterForm: {
       subscribe: sinon.spy(),
       setEmail: sinon.spy(),
@@ -66,16 +64,18 @@ describe('app/components/NewsletterFooter', () => {
     expect(subject.hasClass('success')).to.equal(true);
   });
 
-  it('should have call sendToGA when succeeded=true', () => {
-    expect(sendToGA.lastCall.args).to.deep.equal(['event', {
+  it('should have called sendToGA with a success event when succeeded=true', () => {
+    _subject({ succeeded: true, failed: false });
+    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
       eventCategory: 'HomePage Interactions',
       eventAction: 'footer newsletter form success',
       eventLabel: 'email submitted to basket'
     }]);
   });
 
-  it('should have call sendToGA when succeeded=false', () => {
-    expect(sendToGA.lastCall.args).to.deep.equal(['event', {
+  it('should have called sendToGA with a failure event when succeeded=false', () => {
+    _subject({ failed: true, succeeded: false });
+    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
       eventCategory: 'HomePage Interactions',
       eventAction: 'footer newsletter form submit',
       eventLabel: 'email failed to submit to basket'
