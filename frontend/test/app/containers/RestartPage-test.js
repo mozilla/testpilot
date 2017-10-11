@@ -4,7 +4,6 @@ import sinon from 'sinon';
 import { shallow, mount } from 'enzyme';
 import { findLocalizedById } from '../util';
 
-
 import Restart from '../../../src/app/containers/RestartPage';
 
 
@@ -20,7 +19,7 @@ describe('app/containers/RestartPage', () => {
     subject = shallow(<Restart {...props} />);
   });
 
-  it('should ping GA on componment mount', () => {
+  it('should ping GA on component mount', () => {
     const mountedProps = { ...props };
     const mountedSubject = mount(<Restart {...mountedProps} />);
     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
@@ -29,7 +28,6 @@ describe('app/containers/RestartPage', () => {
       eventLabel: 'restart required'
     }]);
   });
-
   it('should display restart instructions', () => {
     expect(findLocalizedById(subject, 'restartIntroLead')).to.have.property('length', 1);
     expect(findLocalizedById(subject, 'restartIntroOne')).to.have.property('length', 1);
