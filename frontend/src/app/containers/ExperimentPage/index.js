@@ -300,6 +300,7 @@ export class ExperimentDetail extends React.Component {
                       { this.renderLaunchStatus() }
                     </section>
                     <div>
+                    {!graduated &&
                       <section className="stats-section">
                         {!experiment.web_url &&
                         <p>
@@ -329,7 +330,7 @@ export class ExperimentDetail extends React.Component {
                           </Localized>
                           <dd><a href={discourse_url}>{discourse_url}</a></dd>
                         </dl>
-                      </section>
+                      </section>}
                     </div>
                     <section className="contributors-section">
                       <Localized id="contributorsHeading">
