@@ -198,7 +198,7 @@ export class ExperimentDetail extends React.Component {
     const { title, contribute_url, bug_report_url, discourse_url, privacy_preamble,
             warning, introduction, measurements, privacy_notice_url, changelog_url,
             thumbnail, subtitle, survey_url, contributors, contributors_extra, contributors_extra_url, details,
-            min_release, max_release, graduation_report, graduation_url } = experiment;
+            min_release, max_release, graduation_url } = experiment;
 
     // Set the timestamp for when this experiment was last seen (for
     // ExperimentRowCard updated/launched banner logic)
@@ -398,7 +398,7 @@ export class ExperimentDetail extends React.Component {
                   {this.renderEolBlock()}
                   <IncompatibleAddons {...{ experiment, installedAddons }} />
                   {this.renderLocaleWarning()}
-                  {graduated && <GraduatedNotice graduated={graduated} graduation_url={graduation_url} graduation_report={graduation_report} />}
+                  {graduated && <GraduatedNotice graduated={graduated} graduation_url={graduation_url} />}
 
                   {experiment.video_url &&
                     <iframe width="100%" height="360" src={experiment.video_url} frameBorder="0" allowFullScreen className="experiment-video"></iframe>
