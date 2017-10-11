@@ -1,3 +1,4 @@
+/* global describe, it */
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
@@ -14,18 +15,18 @@ describe('app/components/NewsletterFooter', () => {
     newsletterForm: {
       subscribe: sinon.spy(),
       setEmail: sinon.spy(),
-      setPrivacy: sinon.spy(),
+      setPrivacy: sinon.spy()
     }
   };
 
-  const _subject = (form) => {
+  const _subject = (form) => { // eslint-disable-line no-underscore-dangle
     const mergedProps = Object.assign(props, {
       getWindowLocation: sinon.spy(() => 'https://example.com'),
       newsletterForm: {
         subscribe: sinon.spy(),
         setEmail: sinon.spy(),
         setPrivacy: sinon.spy(),
-          ...form
+        ...form
       }
     });
     return shallow(<NewsletterFooter {...mergedProps} />);
