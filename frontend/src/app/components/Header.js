@@ -56,10 +56,6 @@ export default class Header extends React.Component {
   renderHeaderMenu() {
     if (this.shouldRenderSettingsMenu()) {
       return (
-        <div className="header-links">
-          <Localized id="headerLinkBlog">
-          <a className="blog-link" onClick={this.blogLinkClick.bind(this)} href="https://medium.com/firefox-test-pilot" target="_blank" rel="noopener noreferrer">Blog</a>
-          </Localized>
           <Settings
             close={this.close.bind(this)}
             retire={this.retire.bind(this)}
@@ -68,7 +64,6 @@ export default class Header extends React.Component {
             showSettingsMenu={this.showSettingsMenu.bind(this)}
             {...this.props}
            />
-         </div>
       );
     }
     return null;
@@ -115,7 +110,12 @@ export default class Header extends React.Component {
                 <a href={ this.setHeaderLinkPath() } className="wordmark">Firefox Test Pilot</a>
               </Localized>
             </h1>
-            {this.renderHeaderMenu()}
+              <div className="header-links">
+                <Localized id="headerLinkBlog">
+                  <a className="blog-link" onClick={this.blogLinkClick.bind(this)} href="https://medium.com/firefox-test-pilot" target="_blank" rel="noopener noreferrer">Blog</a>
+                </Localized>
+                {this.renderHeaderMenu()}
+              </div>
           </LayoutWrapper>
         </header>
       </div>
