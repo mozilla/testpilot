@@ -3,22 +3,32 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
 
-import NewsletterFooter from '../../../src/app/components/NewsletterFooter';
+import NewsletterFooter from './index';
+let sendToGA;
 
+const props = {
+  getWindowLocation: sinon.spy(() => 'https://example.com'),
+  sendToGA: sendToGA = sinon.spy(),
+  newsletterForm: {
+    subscribe: sinon.spy(),
+    setEmail: sinon.spy(),
+    setPrivacy: sinon.spy(),
+  }
+};
 
 describe('app/components/NewsletterFooter', () => {
 
   const _subject = (form) => {
-    const props = {
+    const mergedProps = Object.assign(props, {
       getWindowLocation: sinon.spy(() => 'https://example.com'),
       newsletterForm: {
         subscribe: sinon.spy(),
         setEmail: sinon.spy(),
         setPrivacy: sinon.spy(),
-        ...form
+          ...form
       }
-    };
-    return shallow(<NewsletterFooter {...props} />);
+    });
+    return shallow(<NewsletterFooter {...mergedProps} />);
   };
 
   describe('error notification', () => {
@@ -53,6 +63,22 @@ describe('app/components/NewsletterFooter', () => {
   it('should have `correct` class when succeeded=true', () => {
     const subject = _subject({ succeeded: true });
     expect(subject.hasClass('success')).to.equal(true);
+  });
+
+  it('should have call sendToGA when succeeded=true', () => {
+    expect(sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'HomePage Interactions',
+      eventAction: 'footer newsletter form success',
+      eventLabel: 'email submitted to basket'
+    }]);
+  });
+
+  it('should have call sendToGA when succeeded=false', () => {
+    expect(sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'HomePage Interactions',
+      eventAction: 'footer newsletter form submit',
+      eventLabel: 'email failed to submit to basket'
+    }]);
   });
 
   it('should pass props to the child NewsletterForm', () => {

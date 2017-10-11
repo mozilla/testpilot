@@ -3,11 +3,12 @@ import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import LayoutWrapper from './LayoutWrapper';
-import NewsletterForm from './NewsletterForm';
+import LayoutWrapper from '../LayoutWrapper';
+import NewsletterForm from './index';
 
 type NewsletterFooterProps = {
   getWindowLocation: Function,
+  sendToGA: Function,
   newsletterForm: {
     failed: boolean,
     succeeded: boolean
@@ -19,6 +20,12 @@ export default class NewsletterFooter extends React.Component {
 
   renderError() {
     if (this.props.newsletterForm.failed) {
+      this.props.sendToGA({
+        eventCategory: 'HomePage Interactions',
+        eventAction: 'footer newsletter form submit',
+        eventLabel: 'email failed to submit to basket'
+      });
+
       return (
         <Localized id="newsletterFooterError">
           <div className="error">
@@ -31,6 +38,12 @@ export default class NewsletterFooter extends React.Component {
   }
 
   renderSuccess() {
+    this.props.sendToGA({
+      eventCategory: 'HomePage Interactions',
+      eventAction: 'footer newsletter form success',
+      eventLabel: 'email submitted to basket'
+    });
+
     return (
       <header className="success-header">
         <Localized id="newsletterFooterSuccessHeader">
