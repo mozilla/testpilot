@@ -4,19 +4,19 @@ import sinon from 'sinon';
 import { shallow } from 'enzyme';
 
 import NewsletterFooter from './index';
+
 let sendToGA;
 
-const props = {
-  getWindowLocation: sinon.spy(() => 'https://example.com'),
-  sendToGA: sendToGA = sinon.spy(),
-  newsletterForm: {
-    subscribe: sinon.spy(),
-    setEmail: sinon.spy(),
-    setPrivacy: sinon.spy(),
-  }
-};
-
 describe('app/components/NewsletterFooter', () => {
+  const props = {
+    getWindowLocation: sinon.spy(() => 'https://example.com'),
+    sendToGA: sendToGA = sinon.spy(),
+    newsletterForm: {
+      subscribe: sinon.spy(),
+      setEmail: sinon.spy(),
+      setPrivacy: sinon.spy(),
+    }
+  };
 
   const _subject = (form) => {
     const mergedProps = Object.assign(props, {
