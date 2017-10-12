@@ -76,14 +76,7 @@ pre_feedback_copy: >
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
     suscipit, nam commodi excepturi error modi.</p>
 
-graduation_report: >
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
-    suscipit, nam commodi excepturi error modi.</p>
-    <ul>
-    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
-      suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
-      cupiditate vitae praesentium eveniet unde totam, architecto molestiae?</li>
-  </ul>
+graduation_url: 'http://example.com/graduation-report'
 
 eol_warning: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
 min_release: 99

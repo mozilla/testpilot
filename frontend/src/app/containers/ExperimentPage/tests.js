@@ -52,7 +52,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       measurements: [
         'Measurement 0'
       ],
-      graduation_report: '<p class="test-graduation">Off to college!</p>',
+      graduation_url: 'http://example.com/graqduation-report',
       description: 'Description',
       pre_feedback_copy: null,
       contribute_url: 'https://example.com/contribute',
