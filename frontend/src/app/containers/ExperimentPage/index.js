@@ -609,7 +609,7 @@ export class ExperimentDetail extends React.Component {
   }
 
   renderMaximumVersionNotice(title, hasAddon, max_release) {
-    if (hasAddon && !this.maxVersionCheck(max_release)) {
+    if (hasAddon && !this.maxVersionCheck(max_release) && !graduated) {
       return (
         <div className="upgrade-notice">
           <Localized id="versionChangeNotice" $experiment_title={title}>
