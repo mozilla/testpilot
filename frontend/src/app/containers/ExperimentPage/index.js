@@ -281,7 +281,7 @@ export class ExperimentDetail extends React.Component {
               </header>
               { this.renderExperimentControls() }
               { this.renderMinimumVersionNotice(title, hasAddon, min_release) }
-              { this.renderMaximumVersionNotice(title, hasAddon, max_release) }
+              { this.renderMaximumVersionNotice(title, hasAddon, max_release, graduated) }
             </LayoutWrapper>
           </div>
           <div className="sticky-header-sibling" style={{ height: `${stickyHeaderSiblingHeight}px` }} ></div>
@@ -608,7 +608,7 @@ export class ExperimentDetail extends React.Component {
     return null;
   }
 
-  renderMaximumVersionNotice(title, hasAddon, max_release) {
+  renderMaximumVersionNotice(title, hasAddon, max_release, graduated) {
     if (hasAddon && !this.maxVersionCheck(max_release) && !graduated) {
       return (
         <div className="upgrade-notice">
