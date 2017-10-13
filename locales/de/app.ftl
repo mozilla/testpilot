@@ -182,8 +182,10 @@ tourOnboardingTitle = { $title } aktiviert!
 tourDoneButton = Fertig
 userCountContainerAlt = Gerade gestartet!
 highlightPrivacy = Ihre Privatsphäre
+experimentGradReportButton = Abschlussbericht
 experimentGradReportPendingTitle = Dieses Experiment ist abgeschlossen
 experimentGradReportPendingCopy = Wir arbeiten an einem Abschlussbericht. Details finden Sie bald hier.
+experimentGradReportReady = Wir haben einen vollständigen Abschlussbericht erstellt.
 experimentGoToLink = Zu { $title } gehen
 startedDateLabel = Experiment läuft seit: <b>{ $startedDate }</b>
 
@@ -278,7 +280,7 @@ newsletterFooterSuccessBody = Wenn Sie bisher noch kein Abonnement für einen Mo
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Dieses Experiment wird in Ihrer Sprache ({ $locale_code }) nicht unterstützt.
+localeNotTranslatedWarningTitle = Dieses Experiment wurde nicht in Ihre Sprache ({ $locale_code }) übersetzt.
 localeWarningSubtitle = Sie können es trotzdem aktivieren, wenn Sie möchten.
 
 

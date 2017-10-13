@@ -185,8 +185,10 @@ tourOnboardingTitle = { $title } омогућен!
 tourDoneButton = Готово
 userCountContainerAlt = Управо објављено!
 highlightPrivacy = Ваша приватност
+experimentGradReportButton = Извештај о дипломирању
 experimentGradReportPendingTitle = Овај експеримент се завршио
 experimentGradReportPendingCopy = Радимо на потпуном извештају. Вратите се ускоро за детаље.
+experimentGradReportReady = Припремили смо потпун извештај о дипломирању.
 experimentGoToLink = Иди на { $title }
 startedDateLabel = Датум почетка експеримента: <b>{ $startedDate }</b>
 
@@ -281,7 +283,7 @@ newsletterFooterSuccessBody = Уколико нисте претходно по�
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Овај експеримент није подржан за ваш језик ({ $locale_code }).
+localeNotTranslatedWarningTitle = Овај експеримент није преведен на ваш језик ({ $locale_code }).
 localeWarningSubtitle = Можете га ипак омогућити уколико желите.
 
 

@@ -185,8 +185,10 @@ tourOnboardingTitle = Experiment { $title } je aktivovaný!
 tourDoneButton = Hotovo
 userCountContainerAlt = Práve spustený!
 highlightPrivacy = Vaše súkromie
+experimentGradReportButton = Správa o ukončení experimentu
 experimentGradReportPendingTitle = Tento experiment bol ukončený
 experimentGradReportPendingCopy = Pracujeme na správe. Podrobnosti sa dozviete čoskoro.
+experimentGradReportReady = Pripravili sme správu o ukončení experimentu.
 experimentGoToLink = Prejsť na experiment { $title }
 startedDateLabel = Dátum začiatku experimentu: <b>{ $startedDate }</b>
 
@@ -281,7 +283,7 @@ newsletterFooterSuccessBody = Ak ste v minulosti nepotvrdili odber noviniek Mozi
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Experiment nie je dostupný vo vašom jazyku ({ $locale_code }).
+localeNotTranslatedWarningTitle = Tento experiment nebol preložený do vášho jazyka ({ $locale_code }).
 localeWarningSubtitle = To vám však nebráni ho aktivovať.
 
 

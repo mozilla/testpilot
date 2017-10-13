@@ -17,6 +17,7 @@ footerLinkCookies = Inagan n tuqqna
 footerLinkPrivacy = Tabaḍnit
 footerLinkTerms = Tiwtilin
 footerLinkLegal = Usḍif
+footerLinkFeedback = Mudd-d tikti
 footerLinkAbout = Ɣef Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Awiki Test Pilot
 menuDiscuss = Mmeslay ɣef Test Pilot
 menuFileIssue = Azen ugur
 menuRetire = Kkes Test Pilot
+headerLinkBlog = Ablug
 
 
 // The splash on the homepage.
@@ -159,7 +161,6 @@ experimentPromoSubheader = Nbennu timahilin n uzekka n i tsuta d-iteddun n Firef
 
 isEnabledStatusMessage = { $title } ittwarmed.
 installErrorMessage = Ihuh… { $title } ur yermid ara. Ɛreḍ ticki.
-participantCount = <span>{ $installation_count }</span> imttekkiyen
 otherExperiments = Ɛreḍ ula d tirmitin-agi nniḍen.
 giveFeedback = Mudd-d tikti
 disableHeader = Kkes armed i urmitan?
@@ -181,7 +182,6 @@ bugReports = Ineqqisen n ibugen
 discussExperiment = Sqeṛdec { $title }
 tourOnboardingTitle = { $title } ittwarmed!
 tourDoneButton = Tefra
-userCountContainer = Llan <span>{ $installation_count }</span> n yemdanen ttaɛraḍen { $title } akka tura!
 userCountContainerAlt = Ikker tura akka!
 highlightPrivacy = Tabaḍnit inek
 experimentGradReportPendingTitle = Tfuk termit
@@ -214,7 +214,6 @@ versionChangeNoticeLink = Awi lqem amiran n Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Kkes Test Pilot?
-retireMessage = Akken teɣiḍ. Tigwat-agi ad tessens akk ikayaden urmiden, ad yekkes azegrir akked isefka n umiḍan inek ɣef iqeddacen nneɣ.
 retireEmailMessage = Akken ur tremseḍ ara isallen, sit ɣef useɣwen <em>ffeɣ seg ujerred</em> deg izen i d-yuzen Test pilot.
 retireSubmitButton = Kemmel
 pageTitleRetirePage = Firefox Test Pilot - Kkes Test Pilot
@@ -279,7 +278,6 @@ newsletterFooterSuccessBody = Ma yella ur tsentmeḍ ara ajerred inek ar tebratt
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Tarmit-agi ur tettusefrak ara s tutlayt inek ({ $locale_code }).
 localeWarningSubtitle = Tzemreḍ ad tremdeḍ akka tura ma yella tebɣiḍ.
 
 

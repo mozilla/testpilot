@@ -185,8 +185,10 @@ tourOnboardingTitle = { $title } が有効化されました！
 tourDoneButton = 完了
 userCountContainerAlt = 最近公開！
 highlightPrivacy = プライバシー
+experimentGradReportButton = 卒業報告
 experimentGradReportPendingTitle = この実験は終了しました
 experimentGradReportPendingCopy = 現在詳細なレポートを作成中です。また後で見に来てください。
+experimentGradReportReady = 私たちは詳細な卒業報告をまとめました。
 experimentGoToLink = { $title } へ
 startedDateLabel = 実験開始日: <b>{ $startedDate }</b>
 
@@ -281,7 +283,7 @@ newsletterFooterSuccessBody = これまでに Mozilla 関連のニュースレ�
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = この実験はあなたの言語 ({ $locale_code }) には対応していません。
+localeNotTranslatedWarningTitle = この実験はあなたの言語 ({ $locale_code }) には翻訳されていません。
 localeWarningSubtitle = お望みなら引き続き有効にしておくこともできます。
 
 

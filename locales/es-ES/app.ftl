@@ -172,18 +172,20 @@ measurements = Tu privacidad
 experimentPrivacyNotice = Descubre más sobre la recopilación de datos de { $title } aquí.
 contributorsHeading = Diseñado por
 contributorsExtraLearnMore = Descubre más
-changelog = registro de cambios
+changelog = Registro de cambios
 tour = Visita guiada
-tourLink = visita virtual
-contribute = Colabora
+tourLink = Visita virtual
+contribute = Colaborar
 bugReports = Informes de fallos
 discussExperiment = Hablar sobre { $title }
 tourOnboardingTitle = ¡{ $title } activado!
 tourDoneButton = Hecho
 userCountContainerAlt = ¡Recién iniciado!
 highlightPrivacy = Tu privacidad
+experimentGradReportButton = Informe de graduación
 experimentGradReportPendingTitle = Este experimento ha terminado
 experimentGradReportPendingCopy = Estamos preparando un informe completo. Vuelve pronto para ver todos los detalles.
+experimentGradReportReady = Hemos preparado un informe de graduación completo.
 experimentGoToLink = Ir a { $title }
 startedDateLabel = Fecha de inicio del experimento: <b>{ $startedDate }</b>
 
@@ -278,7 +280,7 @@ newsletterFooterSuccessBody = Tienes que confirmar la suscripción a un boletín
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Este experimento no está disponible en tu idioma ({ $locale_code }).
+localeNotTranslatedWarningTitle = No se ha traducido este experimento a tu idioma ({ $locale_code }).
 localeWarningSubtitle = Si quieres, todavía puedes activarlo.
 
 

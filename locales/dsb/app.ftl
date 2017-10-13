@@ -182,8 +182,10 @@ tourOnboardingTitle = { $title } zmóžnjony!
 tourDoneButton = Gótowo
 userCountContainerAlt = Rowno startowany!
 highlightPrivacy = Waša priwatnosć
+experimentGradReportButton = Kóńcna rozpšawa
 experimentGradReportPendingTitle = Toś ten eksperiment jo skóńcony
 experimentGradReportPendingCopy = Źěłamy na wobšyrnej rozpšawje. Glědajśo skóro za drobnostkami.
+experimentGradReportReady = Smy pśigótowali dopołnu kóńcnu rozpšawu.
 experimentGoToLink = K { $title }
 startedDateLabel = Zachopny datum eksperimenta: <b>{ $startedDate }</b>
 
@@ -278,7 +280,7 @@ newsletterFooterSuccessBody = Jolic hyšći njejsćo abonement powěsćowego lis
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Toś ten eksperiment njepódpěra se we wašej rěcy ({ $locale_code }).
+localeNotTranslatedWarningTitle = Toś ten eksperiment njejo se pśełožył do wašeje rěcy ({ $locale_code }).
 localeWarningSubtitle = Móžośo jen weto zmóžniś, jolic cośo.
 
 

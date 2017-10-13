@@ -185,8 +185,10 @@ tourOnboardingTitle = { $title } bekapcsolva!
 tourDoneButton = Kész
 userCountContainerAlt = Épp most indult!
 highlightPrivacy = Magánszféra
+experimentGradReportButton = Kísérlet befejezési jelentés
 experimentGradReportPendingTitle = Ez a kísérlet véget ért
 experimentGradReportPendingCopy = A teljes jelentésen dolgozunk. Nézzen vissza hamarosan a részletekért.
+experimentGradReportReady = Egy teljes zárójelentést készítettünk.
 experimentGoToLink = Ugrás ide: { $title }
 startedDateLabel = Kísérlet kezdő dátuma: <b>{ $startedDate }</b>
 
@@ -281,7 +283,7 @@ newsletterFooterSuccessBody = Ha korábban nem erősítette meg a Mozillához ka
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Ez a kísérlet nem támogatott az Ön nyelvén ({ $locale_code }).
+localeNotTranslatedWarningTitle = Ez a kísérlet még nem lett lefordítva az Ön nyelvére ({ $locale_code }.
 localeWarningSubtitle = Attól még bekapcsolhatja, ha szeretné.
 
 

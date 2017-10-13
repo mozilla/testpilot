@@ -17,6 +17,7 @@ footerLinkCookies = 쿠키
 footerLinkPrivacy = 개인 정보
 footerLinkTerms = 이용 약관
 footerLinkLegal = 법적 고지
+footerLinkFeedback = 피드백
 footerLinkAbout = Test Pilot에 대하여
 
 
@@ -38,6 +39,8 @@ headerLinkBlog = 블로그
 landingIntroOne = 새로운 기능을 테스트합니다.
 landingIntroTwo = 피드백을 주세요.
 landingIntroThree = Firefox를 만드는데 도움을 주세요.
+landingLegalNotice = 계속하시면, Test Pilot의 <a>이용약관</a>과 <a>개인정보취급방침</a>에 동의하는 것으로 간주합니다.
+landingExperimentsTitle = 새로운 실험적 기능을 사용해보세요
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -45,6 +48,7 @@ landingIntroThree = Firefox를 만드는데 도움을 주세요.
 
 landingInstallButton = Test Pilot 부가 기능 설치하기
 landingInstallingButton = 설치하고 있습니다...
+landingInstalledButton = 기능 선택
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -60,6 +64,7 @@ oneClickInstallMajorCta = { $title } 쓰기
 landingRequiresDesktop = Windows, Mac 또는 Linux에 깔린 데스크톱용 Firefox에서만 Test Pilot이 돌아갑니다.
 landingDownloadFirefoxDesc = (Windows, Mac 또는 Linux에 깔린 Firefox에서만 Test Pilot을 쓸 수 있음)
 landingUpgradeDesc = Test Pilot은 Firefox 49 이상에서만 쓸 수 있습니다.
+landingUpgradeDesc2 = Test Pilot은 Firefox { $version }나 상위 버전이 필요합니다.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox 업그레이드
 landingDownloadFirefoxSubTitle = 무료 다운로드
@@ -70,22 +75,30 @@ landingDownloadFirefoxSubTitle = 무료 다운로드
 
 landingCardOne = Test Pilot 부가 기능 받기
 landingCardTwo = 시험적인 기능 쓰기
+landingCardThree = 의견을 알려주세요
 
 
 // Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
+onboardingMessage = 언제든 Test Pilot를 찾을 수 있게 툴바에 아이콘을 넣었습니다.
 
 
 // Error message pages.
 [[ error ]]
 
 errorHeading = 이런!
+errorMessage = 무언가가 망가진 것 같네요.<br>나중에 시도해 보세요.
+notFoundHeader = 문제 발생!
 
 
 // A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
+emailOptInDialogTitle = Test Pilot에 오신 것을 환영합니다!
+emailOptInMessage = 새로운 실험과 참여한 실험의 결과를 받아보세요.
+emailOptInConfirmationTitle = 이메일 보냄
+emailOptInDialogErrorTitle = 이런!
 
 
 // news feed updates.
@@ -99,31 +112,50 @@ showMoreNewsTitle = 지난 뉴스 보기
 [[ experimentsList ]]
 
 experimentListEnabledTab = 활성화됨
+experimentListJustLaunchedTab = 방금 시작함
+experimentListJustUpdatedTab = 방금 업데이트됨
+experimentListEndingTomorrow = 내일 끝남
+experimentListEndingSoon = 곧 끝남
+experimentCondensedHeader = Test Pilot에 오신 것을 환영합니다!
+experimentListHeader = 실험을 선택하세요!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = 피드백
+experimentCardManage = 관리
+experimentCardGetStarted = 시작하기
+experimentCardLearnMore = 더 알아보기
 
 
 // A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
+feedbackSubmitButton = 간단한 설문조사하기
+feedbackUninstallTitle = 감사합니다!
 
 
 // A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
+experimentPreFeedbackTitle = { $title } 피드백
+experimentPreFeedbackLinkCopy = { $title } 실험에 대해 피드백을 제공해주세요
 
 
 // A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
+experimentPromoHeader = 준비되셨나요?
+experimentPromoSubheader = 저희는 Firefox의 차세대 기능을 만들고 있습니다. Test Pilot를 설치해 체험해보세요!
 
 
 // The experiment detail page.
 [[ experimentPage ]]
 
+isEnabledStatusMessage = { $title }을 사용하고 있습니다.
+installErrorMessage = { $title }을 사용할 수 없네요. 나중에 시도해주세요.
 tourDoneButton = 완료
 userCountContainerAlt = 바로 시작!
 highlightPrivacy = 개인 정보 보호

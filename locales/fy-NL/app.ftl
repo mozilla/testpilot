@@ -182,8 +182,10 @@ tourOnboardingTitle = { $title } ynskeakele!
 tourDoneButton = Dien
 userCountContainerAlt = Krekt start!
 highlightPrivacy = Jo privacy
+experimentGradReportButton = Einrapport
 experimentGradReportPendingTitle = Dit eksperimint is einige
 experimentGradReportPendingCopy = Wy wurkje oan in folslein rapport. Sjoch ynkoarten nochris foar de details.
+experimentGradReportReady = Wy hawwe in folslein einrapport opsteld.
 experimentGoToLink = Nei { $title }
 startedDateLabel = Startdatum eksperimint: <b>{ $startedDate }</b>
 
@@ -278,7 +280,7 @@ newsletterFooterSuccessBody = As jo yn it ferline noch gjin oanmelding befêstig
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Dit eksperimint wurdt net stipe yn jo taal ({ $locale_code }).
+localeNotTranslatedWarningTitle = Dit eksperimint is net oerset nei jo taal ({ $locale_code }).
 localeWarningSubtitle = Jo kinne it dochs ynskeakelje as jo wolle.
 
 
