@@ -26,7 +26,7 @@ Note: we auto deploy the master branch to our *development environment*: [https:
 
 Before tagging the release, merge the l10n branch into the master branch. These commands assume the remote named `mozilla` points at the mozilla repository on github.
 
-`git checkout -b l10n mozilla/l10n && git pull mozilla l10n && git checkout master && git merge l10n && git push mozilla master`
+`git checkout -b l10n mozilla/l10n && git pull mozilla l10n && git checkout master && git pull mozilla master && git merge l10n && git push mozilla master`
 
 
 ## Tag Release ##
