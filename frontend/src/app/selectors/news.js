@@ -6,16 +6,14 @@ import experimentSelector from './experiment';
 // from all available experiments and Test Pilot in general
 const newsUpdatesSelector = createSelector(
   store => store.news.updates,
-  store => store.browser.isDev,
   experimentSelector,
 
-  (newsUpdates, isDev, experiments) => {
+  (newsUpdates, experiments) => {
     const availableExperiments = new Set(experiments.map(e => e.slug));
     return newsUpdates
 
       // Filter for published updates and updates for available experiments,
-      // but allow all updates if we're in dev.
-      .filter(update => isDev || (
+      .filter(update => (
         (typeof update.published === 'undefined' ||
           moment(moment.utc()).isAfter(update.published)) &&
         (typeof update.experimentSlug === 'undefined' ||

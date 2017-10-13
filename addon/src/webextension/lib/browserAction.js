@@ -34,7 +34,12 @@ export async function setupBrowserAction() {
 
   PubSub.subscribe(environmentTopics('resources'), updateBadgeTextOnNew);
 
+  browser.browserAction.setBadgeBackgroundColor({ color: '#0996f8' });
+
   browser.browserAction.onClicked.addListener(() => {
+    // reset badge immediately
+    browser.browserAction.setBadgeText({ text: '' });
+
     const baseUrl = getCurrentEnv().baseUrl;
     storage.set({ clicked: Date.now() });
     browser.tabs.create({
@@ -43,7 +48,7 @@ export async function setupBrowserAction() {
   });
 }
 
-async function updateBadgeTextOnNew(topic, { experiments }) {
+async function updateBadgeTextOnNew(topic, { experiments, news_updates }) {
   let { clicked } = await storage.get('clicked');
   if (!clicked) {
     // Set initial button click timestamp if not found
@@ -56,12 +61,21 @@ async function updateBadgeTextOnNew(topic, { experiments }) {
     return dt >= clicked;
   });
 
-  BROWSER_ACTION_LINK = newExperiments.length > 0
+  const newsUpdates = (news_updates || []).filter(update => {
+    const dt = new Date(update.published).getTime();
+    return dt >= clicked;
+  });
+
+  BROWSER_ACTION_LINK = (newExperiments.length || newsUpdates.length) > 0
     ? BROWSER_ACTION_LINK_BADGED
     : BROWSER_ACTION_LINK_NOT_BADGED;
 
   browser.browserAction.setBadgeText({
-    text: newExperiments.length > 0 ? browser.i18n.getMessage('new_badge') : ''
+    text: (newExperiments.length || newsUpdates.length) > 0 ? '!' : ''
+  });
+
+  browser.browserAction.setBadgeText({
+    text: (newExperiments.length || newsUpdates.length) > 0 ? '!' : ''
   });
 }
 
