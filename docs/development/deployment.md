@@ -22,6 +22,13 @@ During the checkin before the end of the [current milestone](https://github.com/
 
 Note: we auto deploy the master branch to our *development environment*: [https://testpilot.dev.mozaws.net](https://testpilot.dev.mozaws.net)
 
+## Merge l10n ##
+
+Before tagging the release, merge the l10n branch into the master branch. These commands assume the remote named `mozilla` points at the mozilla repository on github.
+
+`git checkout -b l10n mozilla/l10n && git pull mozilla l10n && git checkout master && git merge l10n && git push mozilla master`
+
+
 ## Tag Release ##
 
 This will happen on Thursday at the end of sprint.
@@ -50,7 +57,7 @@ This will happen on Thursday at the end of sprint after we've pushed to stage.
 
 Create a deployment issue to track status and potential blockers. [Example](https://github.com/mozilla/testpilot/issues/1643). Give it a `needs:qa` label.
 
-Send out an email notification to `testpilot-dev@mozilla.com` to please test the staging environment. [Example](https://mail.mozilla.org/pipermail/testpilot-dev/2016-October/000306.html).
+Send out an email notification to `testpilot-qa@softvision.ro` to please test the staging environment. [Example](https://mail.mozilla.org/pipermail/testpilot-dev/2016-October/000306.html).
 
 Include Softvision and the issue link in the email notification.
 
