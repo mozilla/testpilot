@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect';
 import moment from 'moment';
+import cookies from 'js-cookie';
 import experimentSelector from './experiment';
 
 // Gathers up a reverse-chronological list of currently published news updates
@@ -42,8 +43,16 @@ const makeNewsAgeSelector = includeStale => (newsUpdates, twoWeeksAgo) =>
     return includeStale ? dt < twoWeeksAgo : dt >= twoWeeksAgo;
   });
 
+const seenSelector = () => (newsUpdates) =>
+  newsUpdates.filter(update => {
+    const dt = new Date(update.published || update.created).getTime();
+    const lastSeen = new Date(cookies.get('updates-last-viewed-date') || 0);
+    return dt > lastSeen;
+  });
+
 export const freshNewsUpdatesSelector = createSelector(
   newsUpdatesSelector,
+  seenSelector,
   twoWeeksAgoSelector,
   makeNewsAgeSelector(false)
 );

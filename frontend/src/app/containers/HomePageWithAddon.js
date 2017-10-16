@@ -5,8 +5,6 @@
 import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
-import cookies from 'js-cookie';
-
 import Banner from '../components/Banner';
 import Copter from '../components/Copter';
 import UpdateList from '../components/UpdateList';
@@ -19,7 +17,6 @@ import View from '../components/View';
 import LocalizedHtml from '../components/LocalizedHtml';
 import NewsUpdatesDialog from '../components/NewsUpdatesDialog';
 
-const updatesLastViewedDate = cookies.get('updates-last-viewed-date') || 0;
 
 type HomePageWithAddonProps = {
   hasAddon: any,
