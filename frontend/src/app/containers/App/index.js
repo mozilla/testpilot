@@ -103,7 +103,7 @@ class App extends Component {
       host: window.location.host,
       protocol: window.location.protocol,
       hasAddonManager: (typeof navigator.mozAddonManager !== 'undefined'),
-      isFirefox: isFirefox(userAgent),
+      thisIsFirefox: isFirefox(userAgent),
       isMobile: isMobile(userAgent),
       isMinFirefox: isMinFirefoxVersion(userAgent, config.minFirefoxVersion),
       isProdHost: window.location.host === config.prodHost,
@@ -159,8 +159,8 @@ class App extends Component {
   }
 
   shouldShowUpgradeWarning() {
-    const { hasAddon, hasAddonManager, host } = this.props;
-    return shouldShowUpgradeWarning(hasAddon, hasAddonManager, isFirefox, host);
+    const { hasAddon, hasAddonManager, host, thisIsFirefox } = this.props;
+    return shouldShowUpgradeWarning(hasAddon, hasAddonManager, thisIsFirefox, host);
   }
 
   render() {
@@ -228,7 +228,7 @@ const mapStateToProps = state => ({
   isExperimentEnabled: experiment =>
     isExperimentEnabled(state.addon, experiment),
   isAfterCompletedDate,
-  isFirefox: state.browser.isFirefox,
+  thisIsFirefox: state.browser.thisIsFirefox,
   isMinFirefox: state.browser.isMinFirefox,
   isDevHost: state.browser.isDevHost,
   isProdHost: state.browser.isProdHost,
