@@ -14,7 +14,7 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 const IS_DEV = NODE_ENV === 'development';
 
 const excludeVendorModules = [
-  'regenerator-runtime',
+  'babel-polyfill',
   'fluent',
   'fluent-langneg',
   'fluent-react',
@@ -22,7 +22,7 @@ const excludeVendorModules = [
 ];
 
 const includeVendorModules = [
-  'regenerator-runtime/runtime',
+  'babel-polyfill/browser',
   'fluent/compat',
   'fluent-langneg/compat',
   'fluent-react/compat',
