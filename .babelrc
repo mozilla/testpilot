@@ -1,5 +1,20 @@
 {
-  "presets": ["es2015", "stage-0", "react"],
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": [
+          "Chrome >= 52",
+          "FireFox >= 51",
+          "Safari >= 7",
+          "Explorer 11",
+          "last 4 Edge versions"
+        ]
+      },
+      "useBuiltIns": true
+    }],
+    "stage-0",
+    "react"
+  ],
   "env": {
     "test": {
       "plugins": ["istanbul", "transform-flow-strip-types"]
