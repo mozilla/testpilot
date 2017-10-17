@@ -1,3 +1,5 @@
+@import '../../../styles/_utils';
+
 .copter {
   @include respond-to ('big') {
     width: 365px;
@@ -19,7 +21,8 @@
 }
 
 .copter__inner {
-  @include hidpi-background-image('copter', 328px 265px);
+  background-image: url('./img/copter.png');
+  background-size: 328px 265px;
   @include respond-to ('big') {
     height: 265px;
     width: 345px;
@@ -71,7 +74,8 @@
   }
 
   .copter__inner {
-    @include hidpi-background-image('copter', auto ($grid-unit * 10));
+    background-image: url('./img/copter.png');
+    background-size: auto $grid-unit * 10;
 
     @include respond-to('big') {
       height: $grid-unit * 10;

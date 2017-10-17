@@ -3,6 +3,8 @@
 import React from 'react';
 import classnames from 'classnames';
 
+import './index.scss';
+
 type CopterProps = {
   small?: boolean,
   animation?: string
