@@ -1,8 +1,9 @@
+/* global describe, beforeEach, it */
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import Loading from '../../../src/app/components/Loading';
+import Loading from './index.js';
 
 describe('app/components/Loading', () => {
   it('should render <div class="loading">', () =>
