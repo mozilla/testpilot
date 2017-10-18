@@ -18,7 +18,8 @@ const excludeVendorModules = [
   'fluent',
   'fluent-langneg',
   'fluent-react',
-  'cldr-core'
+  'cldr-core',
+  'core-js'
 ];
 
 const includeVendorModules = [
@@ -74,7 +75,7 @@ if (RUN_ANALYZER) {
 module.exports = {
   entry: {
     'static/app/app.js': './frontend/src/app/index.js',
-    'static/app/vendor.js': vendorModules
+    // 'static/app/vendor.js': vendorModules
   },
   output: {
     path: path.resolve(__dirname, 'frontend/build'),
@@ -104,7 +105,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
         use: 'babel-loader'
       },
       {
