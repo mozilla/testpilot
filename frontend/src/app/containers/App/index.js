@@ -15,7 +15,7 @@ import { setState as setBrowserState } from '../../actions/browser';
 import { getExperimentBySlug } from '../../reducers/experiments';
 import { getChosenTest } from '../../reducers/varianttests';
 import experimentSelector from '../../selectors/experiment';
-import { uninstallAddon, installAddon, enableExperiment, disableExperiment, pollAddon } from '../../lib/InstallManager';
+import { uninstallAddon, installAddon, enableExperiment, disableExperiment } from '../../lib/InstallManager';
 import { setLocalizations, setNegotiatedLanguages } from '../../actions/localizations';
 import { localizationsSelector, negotiatedLanguagesSelector } from '../../selectors/localizations';
 import { chooseTests } from '../../actions/varianttests';
@@ -255,10 +255,7 @@ const mapDispatchToProps = dispatch => ({
   enableExperiment: experiment => enableExperiment(dispatch, experiment),
   disableExperiment: experiment => disableExperiment(dispatch, experiment),
   requireRestart: () => dispatch(addonActions.requireRestart()),
-  setHasAddon: installed => {
-    dispatch(addonActions.setHasAddon(installed));
-    if (!installed) { pollAddon(); }
-  },
+  setHasAddon: installed => dispatch(addonActions.setHasAddon(installed)),
   newsletterForm: {
     setEmail: email =>
       dispatch(newsletterFormActions.newsletterFormSetEmail(email)),
