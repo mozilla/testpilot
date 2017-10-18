@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './index.scss';
+
 const Loading = () => {
   return (
     <div className="full-page-wrapper centered overflow-hidden">

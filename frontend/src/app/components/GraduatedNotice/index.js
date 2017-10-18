@@ -3,7 +3,6 @@ import React from 'react';
 
 import './index.scss';
 
-
 class GraduatedNoticeButton extends React.Component {
   render() {
     return <Localized id="experimentGradReportButton">
