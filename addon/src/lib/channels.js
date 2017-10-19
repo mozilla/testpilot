@@ -12,7 +12,9 @@ import { registerWebExtensionAPI } from './webExtension';
 
 const { interfaces: Ci, utils: Cu } = Components;
 Cu.import('resource://gre/modules/Services.jsm');
-const { getExtensionUUID } = Cu.import('resource://gre/modules/Extension.jsm');
+const { WebExtensionPolicy } = Cu.getGlobalForObject(
+  Cu.import('resource://gre/modules/Extension.jsm', {})
+);
 
 const bootstrapTopics = (...args) => allTopics('bootstrap', ...args);
 const channelsTopics = (...args) => bootstrapTopics('channels', ...args);
@@ -47,10 +49,10 @@ export default class WebExtensionChannel {
       }
     };
 
-    const {
-      addonChromeWebNav,
-      addonBroadcastChannel
-    } = createChannelForAddonId(topic, targetAddonId);
+    const channel = createChannelForAddonId(topic, targetAddonId);
+    if (!channel) { return; }
+
+    const { addonChromeWebNav, addonBroadcastChannel } = channel;
 
     // NOTE: Keep a ref to prevent it from going away during garbage collection
     // (or the BroadcastChannel will stop working).
@@ -98,6 +100,8 @@ export function openChannel(addonId, topic) {
     closeChannel(addonId, topic);
   }
   const channel = new WebExtensionChannel(topic, addonId);
+  if (!channel.addonBroadcastChannel) { return; }
+
   channels.set(id, channel);
   channel.registerListener((payload, subject) =>
     PubSub.publishSync(channelsTopics(topic), {
@@ -127,14 +131,20 @@ function createChannelForAddonId(name, addonId) {
   // Load that about:blank page, and use its `window` to get a BroadcastChannel
   // that allows two-way communication between the main Test Pilot extension and
   // individual experiment extensions.
-  // Note: the `targetExtensionUUID` is different for each copy of Firefox,
+  // Note: the `mozExtensionHostname` is different for each copy of Firefox,
   // so that malicious websites can't guess the special URL associated with
   // an extension.
-  const targetExtensionUUID = getExtensionUUID(addonId);
+  const policy = WebExtensionPolicy.getByID(addonId);
+  if (!policy) {
+    log('createChannelForAddonId FAILED (not installed)', name, addonId);
+    return null;
+  }
+  const { mozExtensionHostname } = policy;
+  log('createChannelForAddonId', name, addonId, mozExtensionHostname);
 
   // Create the special about:blank URL for the extension.
   const baseURI = Services.io.newURI(
-    `moz-extension://${targetExtensionUUID}/_blank.html`,
+    `moz-extension://${mozExtensionHostname}/_blank.html`,
     null,
     null
   );
