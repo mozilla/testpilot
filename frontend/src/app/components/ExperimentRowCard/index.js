@@ -163,7 +163,7 @@ export default class ExperimentRowCard extends React.Component {
   }
 
   justLaunched() {
-    const { experiment, enabled, getExperimentLastSeen } = this.props;
+    const { experiment, enabled } = this.props;
 
     // Enabled & updated trumps launched.
     if (enabled || this.justUpdated()) { return false; }
@@ -173,11 +173,8 @@ export default class ExperimentRowCard extends React.Component {
     const created = (new Date(experiment.created)).getTime();
     if ((now - created) > MAX_JUST_LAUNCHED_PERIOD) { return false; }
 
-    // If never seen, *do* consider it "just" launched.
-    if (!getExperimentLastSeen(experiment)) { return true; }
-
     // All else fails, don't consider it launched.
-    return false;
+    return true;
   }
 
   statusMsg() {
