@@ -175,9 +175,9 @@ measurements = Vaše soukromí
 experimentPrivacyNotice = Další informace o shromažďování dat pro { $title } můžete najít zde.
 contributorsHeading = Tento experiment přináší
 contributorsExtraLearnMore = Zjistit více
-changelog = seznam změn
+changelog = Seznam změn
 tour = Průvodce
-tourLink = prohlídka
+tourLink = Prohlídka
 contribute = Přispět
 bugReports = Hlášení chyb
 discussExperiment = DIskutujte o experimentu { $title }
@@ -281,7 +281,6 @@ newsletterFooterSuccessBody = Pokud jste dříve nepotvrdili odběr zpravodaje M
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Tento experiment není ve vašem jazyce ({ $locale_code }) podporován.
 localeWarningSubtitle = Můžete ale aktivaci zkusit i bez toho.
 
 
