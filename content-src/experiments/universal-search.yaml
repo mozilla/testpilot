@@ -16,32 +16,6 @@ contribute_url: 'https://github.com/mozilla/universal-search'
 bug_report_url: 'https://github.com/mozilla/universal-search/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/universal-search'
 privacy_notice_url: 'https://github.com/mozilla/universal-search/blob/master/docs/metrics.md'
-measurements:
-  - >
-    We collect basic usage data regarding how you interact with the Awesome
-    Bar (address bar), such as the number of characters typed, the types of
-    results that you click, and their position in the results list.
-  - >
-    If you previously configured Firefox to display search suggestions in
-    the Search Bar, installing Universal Search will enable <a
-    href="https://www.mozilla.org/privacy/firefox/#searchsuggestions"
-    target="_blank">search suggestions</a> in the Awesome Bar.
-  - >
-    When you use the Awesome Bar, we send the terms you type to our
-    recommendation engine. We keep anonymous logs of popular searches to
-    improve the quality of our recommendations.
-  - >
-    To provide Universal Search, we use a few third-party services. We use
-    <a href="http://www.bing.com/developers/s/APIBasics.html"
-    target="_blank">Bing</a> and <a
-    href="https://developer.yahoo.com/boss/search/" target="_blank">Yahoo</a>
-    to provide recommendations, and <a href="http://docs.embed.ly/docs/"
-    target="_blank">Embedly</a> and <a href="https://clearbit.com/logo"
-    target="_blank">Clearbit</a> to provide additional data (such as images or
-    icons) about those recommendations. To display the recommendations in the
-    Awesome Bar, Universal Search may download those images directly from
-    Embedly and Clearbit, which may allow those services to see your IP address
-    and the image requested.
 xpi_url: 'https://s3-us-west-2.amazonaws.com/universal-search/universal-search.xpi'
 addon_id: universal-search@mozilla.com
 gradient_start: '#01BDAD'
@@ -56,20 +30,6 @@ details:
       Popular sites, people and Wikipedia articles appear as you type.
   -
     image: /static/images/experiments/universal-search/experiments_experimentdetail/8/6/8675c7bf31054abdaf58b47850a1365d_image_1462827811_0451.jpg
-tour_steps:
-  -
-    image: /static/images/experiments/universal-search/experiments_experimenttourstep/e/b/eb1a0c8bbb18c79f63d0df45d165eb7a_image_1462826805_0035.jpg
-    copy: You can now search and navigate in one place.
-  -
-    image: /static/images/experiments/universal-search/experiments_experimenttourstep/5/2/5218821d5851bef5ad979da5830f68b2_image_1462826805_0031.jpg
-    copy: >
-      Recommendations for popular sites and Wikipedia articles will appear as
-      you type.
-  -
-    image: /static/images/experiments/universal-search/experiments_experimenttourstep/1/d/1d414ba2fc88a188b6f74ea79de908e9_image_1462826805_0789.jpg
-    copy: >
-      You can always give us feedback or disable Universal Search from Test
-      Pilot.
 contributors:
   -
     display_name: 'Nick Chapman'
@@ -89,7 +49,6 @@ contributors:
     avatar: /static/images/experiments/universal-search/avatars/chuck-harmston.jpg
 created: '2016-04-28T03:57:32.270681Z'
 completed: '2016-11-30T16:00:00.000000Z'
-eol_warning: We will automatically disable the Universal Search experiment and report the results when it ends.
 graduation_url: https://medium.com/firefox-test-pilot/universal-search-retirement-report-3144f765acb5
 order: 7
 locales:

@@ -22,33 +22,11 @@ contribute_url: 'https://github.com/mozilla/blok/'
 bug_report_url: 'https://github.com/mozilla/blok/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/tracking-protection'
 privacy_notice_url: 'https://github.com/mozilla/blok/blob/master/docs/metrics.md'
-measurements:
-  - >
-    Tracking Protection will prompt you for feedback when it blocks a
-    tracker. We collect basic usage data when you engage with this prompt,
-    such as when you enable or disable the trackers on the page or report a
-    problem.
-  - >
-    When you engage with a prompt, we also collect information about the
-    page you are on and the tracking domain that is being blocked. This helps
-    us understand when and why you are experiencing a problem.
-  - >
-    Other than the domain, we don't collect any further information from the
-    tracker, such as data about unique IDs that are used or cookies that are
-    set.
-  - >
-    To identify trackers, we use a list provided by our partner Disconnect.
-    You can read more about the standards Disconnect applies <a
-    href="https://disconnect.me/trackerprotection" target="_blank">here</a>.
 xpi_url: 'https://testpilot.firefox.com/files/blok/latest'
 addon_id: blok@mozilla.org
 gradient_start: '#8725A7'
 gradient_stop: '#591C56'
 min_release: 48
-pre_feedback_copy: >
-  <p>To report a site that doesn't work with Tracking Protection, select the
-    shield icon in the bar that displays the URL of the site.</p>
-pre_feedback_image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour2.jpg
 details:
   -
     image: /static/images/experiments/tracking-protection/experiments_experimentdetail/detail1.jpg
@@ -58,17 +36,6 @@ details:
     image: /static/images/experiments/tracking-protection/experiments_experimentdetail/detail2.jpg
     copy: >
       Report a problem and help us troubleshoot.
-tour_steps:
-  -
-    image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour1.jpg
-    copy: >
-      The shield indicates Tracking Protection is on. With a slash, it's off.
-  -
-    image: /static/images/experiments/tracking-protection/experiments_experimenttourstep/tour2.jpg
-    copy: Tell us when things work and when they don't.
-  -
-    image: /static/images/experiments/shared/tour-final.jpg
-    copy: You can always disable Tracking Protection from Test Pilot.
 contributors:
   -
     display_name: 'Luke Crouch'
@@ -89,7 +56,6 @@ contributors_extra_url: 'https://mzl.la/2fYneDq'
 created: '2016-09-22T00:07:28.847430Z'
 completed: '2017-02-15T20:00:00.000000Z'
 uninstalled: '2017-02-15T20:00:00.000000Z'
-eol_warning: We will automatically disable the Tracking Protection experiment and report the results when it ends.
 graduation_url: https://medium.com/firefox-test-pilot/test-pilot-tracking-protection-graduation-report-7452b5ccc477
 locale_blocklist:
   - 'de'
