@@ -62,16 +62,27 @@ oneClickInstallMajorCta = Omogući { $title }
 [[ landingFirefox ]]
 
 landingRequiresDesktop = Test Pilot zahtjeva Firefox za Windows, Mac ili Linux računar
+landingDownloadFirefoxDesc = (Test Pilot je dostupan za Firefox za Windows, OS X i Linux)
+landingUpgradeDesc = Test Pilot zahtjeva Firefox 49 ili noviji.
+landingUpgradeDesc2 = Test pilot zahtjeva Firefox { $version } ili noviji.
+landingDownloadFirefoxTitle = Firefox
+landingUpgradeFirefoxTitle = Nadogradi Firefox
+landingDownloadFirefoxSubTitle = Besplatno preuzimanje
 
 
 // A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
+landingCardListTitle = Započnite za 3, 2, 1
+landingCardOne = Preuzmite Test Pilot dodatak
+landingCardTwo = Omogućite eksperimentalne mogućnosti
+landingCardThree = Recite nam svoje mišljenje
 
 
 // Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
+onboardingMessage = Stavili smo ikonu u vašu traku s alatima da možete uvijek pronaći Test Pilot.
 
 
 // Error message pages.
