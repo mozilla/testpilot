@@ -247,14 +247,14 @@ restartIntroThree = Pilih eksperimen anda
 // Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
-sharePrimary = Suka Ujian Perintis? Bantu kami cari rekrut baru.
+sharePrimary = Suka Test Pilot? Bantu kami mencari rekrut baru.
 shareSecondary = atau salin dan tampal pautan ini...
 shareEmail = E-mel
 shareCopy = Salin
 // Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } akan tamat pada { $completedDate }
 eolNoticeLink = Ketahui selanjutnya
-eolDisableMessage = Eksperimen { $title } telah dihentikan. Anda tidak akan dapat memasangnya semula melalui Ujian Perintis apabila anda nyahpasang ia.
+eolDisableMessage = Eksperimen { $title } telah dihentikan. Anda tidak akan dapat memasangnya semula melalui Test Pilot apabila anda nyahpasang.
 completedDateLabel = Tarikh Tamat Eksperimen: <b>{ $completedDate }</b>
 
 
@@ -270,7 +270,7 @@ incompatibleSubheader = Kami syor <a>nyahdayakan add-ons berikut</a> sebelum men
 
 newsletterFormEmailPlaceholder
     .placeholder = E-mel anda di sini
-newsletterFormDisclaimer = Kami hanya akan menghantar maklumat berkenaan Ujian Perintis kepada anda.
+newsletterFormDisclaimer = Kami hanya akan menghantar maklumat berkenaan Test Pilot kepada anda.
 newsletterFormPrivacyNotice = Saya okay dengan Mozilla untuk mengendalikan info saya seperti yang dijelaskan dalam <a href="%s">Dasar Privasi ini</a>
 newsletterFormPrivacyAgreementRequired = Sila tandakan kotak ini jika anda ingin teruskan.
 newsletterFormSubmitButton = Daftar Sekarang
@@ -298,7 +298,7 @@ localeWarningSubtitle = Anda masih boleh dayakannya jika anda mahu.
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = Mari lancarkan ujian!
-experimentsListNoneInstalledSubheader = Sudah bersedia untuk mencuba eksperimen Ujian Perintis? Pilih satu untuk.didayakan, uji kesemuanya, dan beritahu kami pendapat anda.
+experimentsListNoneInstalledSubheader = Sudah bersedia untuk mencuba eksperimen Test Pilot? Pilih satu untuk.didayakan, uji kesemuanya, dan beritahu kami pendapat anda.
 experimentsListNoneInstalledCTA = Tidak berminat? <a>Beritahu kami kenapa</a>.
 
 
@@ -306,7 +306,7 @@ experimentsListNoneInstalledCTA = Tidak berminat? <a>Beritahu kami kenapa</a>.
 [[ noscript ]]
 
 noScriptHeading = Uh oh...
-noScriptMessage = Harap maaf.<br>Ujian Perintis memerlukan JavaScript.
+noScriptMessage = Harap maaf.<br>Test Pilot memerlukan JavaScript.
 noScriptLink = Ketahui mengapa
 
 
@@ -321,12 +321,12 @@ hidePastExperiments = Sorok Eksperimen Terdahulu
 [[ warnings ]]
 
 warningGenericTitle = Ada sesuatu yang tidak kena!
-warningGenericDetail = Ada sesuatu yang tidak kena dengan Ujian Perintis. Sila <a>failkan pepijat</a> dan nyatakan mesej ralat ini.
+warningGenericDetail = Ada sesuatu yang tidak kena dengan Test Pilot. Sila <a>failkan pepijat</a> dan nyatakan mesej ralat ini.
 warningUpgradeFirefoxTitle = Naik taraf Firefox untuk teruskan!
-warningUpgradeFirefoxDetail = Ujian Perintis memerlukan versi terbaru Firefox. <a>Naik taraf Firefox</a> untuk mula.
+warningUpgradeFirefoxDetail = Test Pilot memerlukan Firefox versi terbaru. <a>Naik taraf Firefox</a> untuk mula.
 warningHttpsRequiredTitle = HTTPS diperlukan!
-warningHttpsRequiredDetail = Ujian Perintis mesti diakses menggunakan HTTPS. Baca <a>dokumentasi kami</a> untuk keterangan lanjut.
-warningMissingPrefTitle = Membangunkan Ujian Perintis?
-warningMissingPrefDetail = Aoabila melaksanakan Ujian Perintis secara lokal atau dalam persekitaran pembangunan, konfigurasi khas diperlukan. Sila rujuk <a>dokumentasi kami</a> untuk butirannya.
+warningHttpsRequiredDetail = Test Pilot mesti diakses menggunakan HTTPS. Baca <a>dokumentasi kami</a> untuk keterangan lanjut.
+warningMissingPrefTitle = Membangunkan Test Pilot?
+warningMissingPrefDetail = Apabila melaksanakan Test Pilot secara lokal atau dalam persekitaran pembangunan, konfigurasi khas diperlukan. Sila rujuk <a>dokumentasi kami</a> untuk butirannya.
 warningBadHostnameTitle = Nama hos tidak diluluskan!
-warningBadHostnameDetail = Laman Ujian Perintis mungkin hanya boleh diakses di testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, atau example.com:8000. Sila rujuk <a>dokumentasi kami</a> untuk butiran.
+warningBadHostnameDetail = Laman Test Pilot mungkin hanya boleh diakses di testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, atau example.com:8000. Sila rujuk <a>dokumentasi kami</a> untuk butiran.
