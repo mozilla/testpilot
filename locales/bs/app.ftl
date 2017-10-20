@@ -153,11 +153,18 @@ experimentPreFeedbackLinkCopy = Pošaljite povratnu informaciju o eksperimentu {
 // A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
+experimentPromoHeader = Spremni za uzlet?
+experimentPromoSubheader = Mi gradimo mogućnosti sljedeće generacije za Firefox. Instalirajte Test Pilot da ih isprobate!
 
 
 // The experiment detail page.
 [[ experimentPage ]]
 
+isEnabledStatusMessage = { $title } јe omogućen.
+installErrorMessage = Uf. { $title } ne može biti omogućen. Pokušajte ponovo kasnije.
+otherExperiments = Isprobajte i ove eksperimente
+giveFeedback = Pošaljite povratnu informaciju
+disableHeader = Onemogućiti eksperiment?
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
