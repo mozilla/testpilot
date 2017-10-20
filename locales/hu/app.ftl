@@ -193,6 +193,13 @@ experimentGoToLink = Ugrás ide: { $title }
 startedDateLabel = Kísérlet kezdő dátuma: <b>{ $startedDate }</b>
 
 
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Tesztpilóta
+learnMoreLink = TOVÁBBI INFORMÁCIÓK
+
+
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 
