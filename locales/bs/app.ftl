@@ -165,16 +165,51 @@ installErrorMessage = Uf. { $title } ne može biti omogućen. Pokušajte ponovo 
 otherExperiments = Isprobajte i ove eksperimente
 giveFeedback = Pošaljite povratnu informaciju
 disableHeader = Onemogućiti eksperiment?
+disableExperiment = Onemogući { $title }
+disableExperimentTransition = Onemogućavanje...
+enableExperiment = Omogući { $title }
+enableExperimentTransition = Omogućavanje...
+experimentManuallyDisabled = { $title } onemogućen u upravljaču dodataka
+experimentMeasurementIntro = Uz <a>podatke</a> sakupljene od svih Test Pilot eksperimenata, evo ključnih stvari koje treba da znate o tome šta se dešava kada koristite { $experimentTitle }:
+measurements = Vaša privatnost
+experimentPrivacyNotice = Možete saznati više o sakupljanju podataka za { $title } ovdje.
+contributorsHeading = Omogućeno vam je
+contributorsExtraLearnMore = Saznajte više
+changelog = Dnevnih promijena
+tour = Obilazak
+tourLink = Krenite u obilazak
+contribute = Doprinesite
+bugReports = Prijave grešaka
+discussExperiment = Razgovor o { $title }
+tourOnboardingTitle = { $title } omogućen!
+tourDoneButton = Gotovo
+userCountContainerAlt = Upravo objavljeno!
+highlightPrivacy = Vaša privatnost
+experimentGradReportButton = Izvještaj o završetku
+experimentGradReportPendingTitle = Ovaj eksperiment se završio
+experimentGradReportPendingCopy = Radimo na potpunom izvještaju. Vratite se uskoro za detalje.
+experimentGradReportReady = Pripremili smo potpun izvještaj o završenom eksperimentu.
+experimentGoToLink = Idite na { $title }
+startedDateLabel = Datum početka eksperimenta: <b>{ $startedDate }</b>
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 
+experimentPlatformWebAddonMobile = Firefox / web / mobilni eksperiment
+experimentPlatformWebAddon = Firefox / web eksperiment
+experimentPlatformWebMobile = web / mobilni eksperiment
+experimentPlatformAddonMobile = Firefox / mobilni eksperiment
+experimentPlatformWeb = web eksperiment
+experimentPlatformAddon = Firefox eksperiment
+experimentPlatformMobileApp = mobilni eksperiment
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
+upgradeNoticeTitle = { $title } zahtjeva Firefox { $min_release } ili noviji.
+upgradeNoticeLink = Kako ažurirati Firefox.
 
 
 // Shown while uninstalling Test Pilot.
