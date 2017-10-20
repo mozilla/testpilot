@@ -5,28 +5,27 @@ import moment from 'moment';
 import classnames from 'classnames';
 import parser from 'html-react-parser';
 
-import { buildSurveyURL, experimentL10nId, formatDate } from '../lib/utils';
+import { buildSurveyURL, experimentL10nId, formatDate } from '../../lib/utils';
 
-import NotFoundPage from './NotFoundPage';
+import NotFoundPage from '../NotFoundPage';
 
-import EmailDialog from '../components/EmailDialog';
-import ExperimentDisableDialog from '../components/ExperimentDisableDialog';
-import ExperimentEolDialog from '../components/ExperimentEolDialog';
-import ExperimentTourDialog from '../components/ExperimentTourDialog';
-import GraduatedNotice from '../components/GraduatedNotice';
-import LocalizedHtml from '../components/LocalizedHtml';
-import MainInstallButton from '../components/MainInstallButton';
-import ExperimentCardList from '../components/ExperimentCardList';
-import ExperimentPreFeedbackDialog from '../components/ExperimentPreFeedbackDialog';
-import View from '../components/View';
-import Warning from '../components/Warning';
-import IncompatibleAddons from '../components/IncompatibleAddons';
+import EmailDialog from '../../components/EmailDialog';
+import GraduatedNotice from '../../components/GraduatedNotice';
+import LocalizedHtml from '../../components/LocalizedHtml';
+import ExperimentCardList from '../../components/ExperimentCardList';
+import View from '../../components/View';
+import Warning from '../../components/Warning';
 
-import ExperimentPlatforms from '../components/ExperimentPlatforms';
-import Banner from '../components/Banner';
-import Copter from '../components/Copter';
-import LayoutWrapper from '../components/LayoutWrapper';
+import ExperimentPlatforms from '../../components/ExperimentPlatforms';
+import Banner from '../../components/Banner';
+import LayoutWrapper from '../../components/LayoutWrapper';
 
+import ExperimentPreFeedbackDialog from './ExperimentPreFeedbackDialog';
+import ExperimentDisableDialog from './ExperimentDisableDialog';
+import ExperimentEolDialog from './ExperimentEolDialog';
+import ExperimentTourDialog from './ExperimentTourDialog';
+import IncompatibleAddons from './IncompatibleAddons';
+import TestpilotPromo from './TestpilotPromo';
 
 export default class ExperimentPage extends React.Component {
   render() {
@@ -60,6 +59,8 @@ export class ExperimentDetail extends React.Component {
 
     const { isExperimentEnabled, experiment,
             getCookie, removeCookie, hasAddon } = this.props;
+
+    this.installExperiment = this.installExperiment.bind(this);
 
     let showEmailDialog = false;
     if (getCookie('first-run')) {
@@ -197,7 +198,7 @@ export class ExperimentDetail extends React.Component {
     const { title, contribute_url, bug_report_url, discourse_url, privacy_preamble,
             warning, introduction, measurements, privacy_notice_url, changelog_url,
             thumbnail, subtitle, survey_url, contributors, contributors_extra, contributors_extra_url, details,
-            min_release, max_release, graduation_report, graduation_url } = experiment;
+            min_release, max_release, graduation_url } = experiment;
 
     // Set the timestamp for when this experiment was last seen (for
     // ExperimentRowCard updated/launched banner logic)
@@ -248,26 +249,12 @@ export class ExperimentDetail extends React.Component {
 
         <View {...this.props}>
 
-        {hasAddon !== null && (!hasAddon && !experiment.web_url) && <section id="testpilot-promo">
-          <Banner>
-              <LayoutWrapper flexModifier="row-between-reverse">
-                <div className="intro-text">
-                  <h2 className="banner__title">
-                    <Localized id="experimentPromoHeader">
-                      <span className="block">Ready for Takeoff?</span>
-                    </Localized>
-                  </h2>
-                  <Localized id="experimentPromoSubheader">
-                    <p className="banner__copy">We&apos;re building next-generation features for Firefox. Install Test Pilot to try them!</p>
-                  </Localized>
-                  <MainInstallButton {...this.props}
-                                     experimentTitle={title}
-                                     installCallback={ this.installExperiment.bind(this) } />
-                </div>
-                <Copter/>
-              </LayoutWrapper>
-          </Banner>
-        </section>}
+          <TestpilotPromo {...{
+            ...this.props,
+            graduated,
+            experiment,
+            installCallback: this.installExperiment
+          }} />
 
         <div className="default-background">
           <div className={classnames(
@@ -294,7 +281,7 @@ export class ExperimentDetail extends React.Component {
               </header>
               { this.renderExperimentControls() }
               { this.renderMinimumVersionNotice(title, hasAddon, min_release) }
-              { this.renderMaximumVersionNotice(title, hasAddon, max_release) }
+              { this.renderMaximumVersionNotice(title, hasAddon, max_release, graduated) }
             </LayoutWrapper>
           </div>
           <div className="sticky-header-sibling" style={{ height: `${stickyHeaderSiblingHeight}px` }} ></div>
@@ -313,6 +300,7 @@ export class ExperimentDetail extends React.Component {
                       { this.renderLaunchStatus() }
                     </section>
                     <div>
+                    {!graduated &&
                       <section className="stats-section">
                         {!experiment.web_url &&
                         <p>
@@ -342,7 +330,7 @@ export class ExperimentDetail extends React.Component {
                           </Localized>
                           <dd><a href={discourse_url}>{discourse_url}</a></dd>
                         </dl>
-                      </section>
+                      </section>}
                     </div>
                     <section className="contributors-section">
                       <Localized id="contributorsHeading">
@@ -411,7 +399,7 @@ export class ExperimentDetail extends React.Component {
                   {this.renderEolBlock()}
                   <IncompatibleAddons {...{ experiment, installedAddons }} />
                   {this.renderLocaleWarning()}
-                  {graduated && <GraduatedNotice graduated={graduated} graduation_url={graduation_url} graduation_report={graduation_report} />}
+                  {graduated && <GraduatedNotice graduated={graduated} graduation_url={graduation_url} />}
 
                   {experiment.video_url &&
                     <iframe width="100%" height="360" src={experiment.video_url} frameBorder="0" allowFullScreen className="experiment-video"></iframe>
@@ -620,8 +608,8 @@ export class ExperimentDetail extends React.Component {
     return null;
   }
 
-  renderMaximumVersionNotice(title, hasAddon, max_release) {
-    if (hasAddon && !this.maxVersionCheck(max_release)) {
+  renderMaximumVersionNotice(title, hasAddon, max_release, graduated) {
+    if (hasAddon && !this.maxVersionCheck(max_release) && !graduated) {
       return (
         <div className="upgrade-notice">
           <Localized id="versionChangeNotice" $experiment_title={title}>

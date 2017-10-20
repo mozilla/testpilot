@@ -1,5 +1,6 @@
 import { expect } from 'chai';
 import moment from 'moment';
+import cookies from 'js-cookie';
 
 import newsUpdatesSelector, {
   staleNewsUpdatesSelector,
@@ -35,20 +36,6 @@ describe('app/selectors/news', () => {
       expect(resultDev.has('exp1')).to.be.true;
     });
 
-    it('should include updates published in the future only in dev environment', () => {
-      function store(isDev) {
-        const store = makeStore();
-        store.browser.isDev = isDev;
-        return store;
-      }
-
-      const resultNonDev = titleSet(newsUpdatesSelector(store(false)));
-      expect(resultNonDev.has('Exp1 future update')).to.be.false;
-
-      const resultDev = titleSet(newsUpdatesSelector(store(true)));
-      expect(resultDev.has('Exp1 future update')).to.be.true;
-    });
-
     it('should include Test Pilot general updates', () => {
       const result = newsUpdatesSelector(makeStore())
         .filter(update => !update.experimentSlug)
@@ -77,6 +64,8 @@ describe('app/selectors/news', () => {
     const store = makeStore();
     const updates = store.news.updates;
     const freshCount = 4;
+    const cookieDate = useStale ? 0: new Date().toISOString();
+    cookies.set('updates-last-viewed-date', cookieDate);
 
     for (let i = 0; i < updates.length; i++) {
       // HACK: Since this is time dependent, give this a couple seconds of
@@ -110,6 +99,8 @@ describe('app/selectors/news', () => {
   };
 
   describe('freshNewsUpdatesSelector', () => {
+    // clean up cookie test
+    after(() => cookies.set('updates-last-viewed-date', 0));
     it(
       'should only produce updates within the last 2 weeks',
       makeNewsUpdateSelectorAgeTest(false)

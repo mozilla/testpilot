@@ -1,29 +1,32 @@
+/* global describe, beforeEach, it */
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
-import { shallow, mount, render } from 'enzyme';
-import { findLocalizedById, findLocalizedHtmlById } from '../util';
+import { shallow, mount } from 'enzyme';
 import moment from 'moment';
 
-import ExperimentPage, { ExperimentDetail } from '../../../src/app/containers/ExperimentPage';
-import { defaultState } from '../../../src/app/reducers/newsletter-form';
+import { findLocalizedById, findLocalizedHtmlById } from '../../../../test/app/util';
 
+import { defaultState } from '../../reducers/newsletter-form';
 
-const CHANGE_HEADER_ON = 105;
+import ExperimentPage, { ExperimentDetail } from './index';
+import IncompatibleAddons from './IncompatibleAddons';
+import TestpilotPromo from './TestpilotPromo';
+import ExperimentPreFeedbackDialog from './ExperimentPreFeedbackDialog';
+import ExperimentDisableDialog from './ExperimentDisableDialog';
+import ExperimentEolDialog from './ExperimentEolDialog';
+import ExperimentTourDialog from './ExperimentTourDialog';
 
 describe('app/containers/ExperimentPage', () => {
-
   const mockExperiment = {
     slug: 'testing',
     foo: 'bar'
   };
-  const mockExperiments = [ mockExperiment ];
-  const mockParams = { slug: mockExperiment.slug };
   const mockProps = {
     slug: mockExperiment.slug,
     getCookie: sinon.spy(),
     removeCookie: sinon.spy(),
-    experiments: [ mockExperiment ],
+    experiments: [mockExperiment],
     getExperimentBySlug: slug => {
       return slug === mockExperiment.slug ? mockExperiment : null;
     }
@@ -34,12 +37,9 @@ describe('app/containers/ExperimentPage', () => {
     const child = wrapper.find(ExperimentDetail);
     expect(child.props().experiment).to.equal(mockExperiment);
   });
-
 });
 
-
 describe('app/containers/ExperimentPage:ExperimentDetail', () => {
-
   let mockExperiment, mockClickEvent, props, subject;
   beforeEach(() => {
     mockExperiment = {
@@ -52,7 +52,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       measurements: [
         'Measurement 0'
       ],
-      graduation_report: '<p class="test-graduation">Off to college!</p>',
+      graduation_url: 'http://example.com/graqduation-report',
       description: 'Description',
       pre_feedback_copy: null,
       contribute_url: 'https://example.com/contribute',
@@ -125,7 +125,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
   const setExperiment = experiment => {
     subject.setProps({
       experiment,
-      experiments: [ experiment ]
+      experiments: [experiment]
     });
     return experiment;
   };
@@ -162,7 +162,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
   it('should render a 404 page if experiment is undefined', () => {
     props = { ...props,
       experiment: undefined,
-      experiments: [ { ...mockExperiment, slug: 'notit' } ]
+      experiments: [{ ...mockExperiment, slug: 'notit' }]
     };
     subject.setProps(props);
     expect(subject.find('NotFoundPage'))
@@ -173,7 +173,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
     beforeEach(() => {
       setExperiment(mockExperiment);
       subject.setProps({
-        isExperimentEnabled: experiment => false
+        isExperimentEnabled: () => false
       });
     });
 
@@ -220,13 +220,13 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
 
     it('should include an ExperimentPlatforms component if `platforms` is set', () => {
       expect(subject.find('ExperimentPlatforms')).to.have.property('length', 0);
-      subject.setProps({experiment: {...mockExperiment, platforms: ['addon', 'web']}});
+      subject.setProps({ experiment: { ...mockExperiment, platforms: ['addon', 'web'] } });
       expect(subject.find('ExperimentPlatforms')).to.have.property('length', 1);
     });
 
     it('should render video iframe if video available', () => {
       expect(subject.find('.experiment-video')).to.have.property('length', 0);
-      setExperiment({...mockExperiment, video_url: 'https://example.com/video' });
+      setExperiment({ ...mockExperiment, video_url: 'https://example.com/video' });
       expect(subject.find('.experiment-video')).to.have.property('length', 1);
     });
 
@@ -240,17 +240,12 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       expect(subject.find('ExperimentTourDialog')).to.have.property('length', 0);
 
       // Enable the experiment...
-      subject.setProps({ isExperimentEnabled: experiment => true });
+      subject.setProps({ isExperimentEnabled: () => true });
 
       // Now show the tour dialog...
       expect(subject.state('shouldShowTourDialog')).to.be.false;
       expect(subject.state('showTourDialog')).to.be.true;
       expect(subject.find('ExperimentTourDialog')).to.have.property('length', 1);
-    });
-
-    it('should display a call-to-action to install Test Pilot', () => {
-      expect(subject.find('#testpilot-promo')).to.have.property('length', 1);
-      expect(subject.find('MainInstallButton')).to.have.property('length', 1);
     });
 
     it('should display a call-to-action to try other experiments', () => {
@@ -272,9 +267,9 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       });
 
       it('should show an email dialog if the first-run cookie is set', () => {
-        const getCookie = sinon.spy(name => 1);
+        const getCookie = sinon.spy(() => 1);
         const removeCookie = sinon.spy();
-        props = { ...props, hasAddon: true, getCookie, removeCookie }
+        props = { ...props, hasAddon: true, getCookie, removeCookie };
         subject = shallow(<ExperimentDetail {...props} />);
         setExperiment(mockExperiment);
 
@@ -320,7 +315,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       });
 
       it('should display a warning only if userAgent does not meet minimum version', () => {
-        const experiment = setExperiment({ ...mockExperiment, min_release: 50});
+        const experiment = setExperiment({ ...mockExperiment, min_release: 50 });
 
         const userAgentPre = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:51.0) Gecko/20100101 Firefox/';
 
@@ -385,7 +380,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
           hasAddon: true,
           getScrollY: () => scrollY,
           getElementOffsetHeight: () => genericElementHeight,
-          experiments: [ mockExperiment ],
+          experiments: [mockExperiment],
           experiment: mockExperiment
         };
         const mountedSubject = mount(<ExperimentDetail {...mountedProps} />);
@@ -423,7 +418,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
         const genericElementHeight = 125;
 
         subject.setProps({
-          getElementY: sel => elementY,
+          getElementY: () => elementY,
           getElementOffsetHeight: () => genericElementHeight
         });
 
@@ -445,7 +440,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
 
       describe('with experiment enabled', () => {
         beforeEach(() => {
-          subject.setProps({ isExperimentEnabled: experiment => true });
+          subject.setProps({ isExperimentEnabled: () => true });
         });
 
         it('should show a "Disable" button', () =>
@@ -487,7 +482,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
           const experiment = setExperiment(mockExperiment);
           const button = subject.find('#feedback-button');
           const expectedHref = button.prop('href');
-          mockClickEvent.target.getAttribute = name => expectedHref;
+          mockClickEvent.target.getAttribute = () => expectedHref;
           button.simulate('click', mockClickEvent);
 
           expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
@@ -503,7 +498,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
 
           const button = subject.find('#feedback-button');
           const expectedHref = button.prop('href');
-          mockClickEvent.target.getAttribute = name => expectedHref;
+          mockClickEvent.target.getAttribute = () => expectedHref;
           button.simulate('click', mockClickEvent);
 
           expect(subject.state('showPreFeedbackDialog')).to.be.true;
@@ -517,7 +512,6 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
           expect(subject.find('.status-bar').hasClass('enabled')).to.be.true;
           expect(findLocalizedById(subject, 'isEnabledStatusMessage')).to.have.property('length', 1);
         });
-
       });
 
       describe('with a completed experiment', () => {
@@ -540,7 +534,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
 
         describe('with experiment enabled', () => {
           beforeEach(() => {
-            subject.setProps({ isExperimentEnabled: experiment => true });
+            subject.setProps({ isExperimentEnabled: () => true });
           });
 
           it('only renders the disable button control', () => {
@@ -557,7 +551,346 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
         });
       });
     });
+  });
+});
 
+describe('app/containers/ExperimentPage/IncompatibleAddons', () => {
+  let mockExperiment, props, subject;
+  beforeEach(() => {
+    mockExperiment = {
+      slug: 'testing',
+      title: 'Testing',
+      incompatible: {}
+    };
+    props = {
+      experiment: mockExperiment,
+      installedAddons: []
+    };
+    subject = shallow(<IncompatibleAddons {...props} />);
   });
 
+  it('should render a warning only if incompatible add-ons are installed', () => {
+    expect(subject.find('.incompatible-addons')).to.have.property('length', 0);
+
+    const experiment = { ...mockExperiment, incompatible: { foo: 1, bar: 2 } };
+    subject.setProps({ experiment });
+
+    subject.setProps({ installedAddons: ['baz'] });
+    expect(subject.find('.incompatible-addons')).to.have.property('length', 0);
+
+    subject.setProps({ installedAddons: ['baz', 'bar'] });
+    expect(subject.find('.incompatible-addons')).to.have.property('length', 1);
+  });
+});
+
+describe('app/containers/ExperimentPage/TestpilotPromo', () => {
+  let mockExperiment, props, subject;
+  beforeEach(() => {
+    mockExperiment = {
+      slug: 'testing',
+      title: 'Testing',
+      incompatible: {}
+    };
+    props = {
+      experiment: mockExperiment,
+      isFirefox: false,
+      isMinFirefox: false,
+      graduated: false,
+      hasAddon: false,
+      varianttests: {},
+      installExperiment: () => {}
+    };
+    subject = shallow(<TestpilotPromo {...props} />);
+  });
+
+  it('should display a call-to-action to install Test Pilot without add-on', () => {
+    expect(subject.find('#testpilot-promo')).to.have.property('length', 1);
+    expect(subject.find('MainInstallButton')).to.have.property('length', 1);
+  });
+
+  it('should not display a call-to-action to install Test Pilot with add-on installed', () => {
+    subject.setProps({ hasAddon: true });
+    expect(subject.find('.experiment-promo')).to.have.property('length', 0);
+    expect(subject.find('MainInstallButton')).to.have.property('length', 0);
+  });
+});
+
+describe('app/containers/ExperimentPage/ExperimentDisableDialog', () => {
+  const experiment = { title: 'foobar', survey_url: 'https://example.com' };
+  const installed = { ex1: true, ex2: true };
+  const clientUUID = '38c51b84-9586-499f-ac52-94626e2b29cf';
+
+  let onSubmit, onCancel, sendToGA, preventDefault, mockClickEvent, subject;
+  beforeEach(() => {
+    onSubmit = sinon.spy();
+    onCancel = sinon.spy();
+    sendToGA = sinon.spy();
+    preventDefault = sinon.spy();
+    mockClickEvent = { preventDefault };
+    subject = shallow(
+      <ExperimentDisableDialog
+        experiment={experiment} installed={installed}
+        onSubmit={onSubmit} onCancel={onCancel}
+        clientUUID={clientUUID} sendToGA={sendToGA} />
+    );
+  });
+
+  it('should render a modal container', () => {
+    expect(subject.find('.modal-container')).to.have.property('length', 1);
+    expect(findLocalizedById(subject, 'feedbackUninstallTitle').props().$title)
+      .to.equal(experiment.title);
+  });
+
+  it('should call onCancel when cancel button clicked', () => {
+    subject.find('.modal-cancel').simulate('click', mockClickEvent);
+    expect(onCancel.called).to.be.true;
+    expect(preventDefault.called).to.be.true;
+  });
+
+  it('should launch a survey when submit button clicked', () => {
+    const submitLink = subject.find('.modal-actions a.submit');
+    const expectedHref = 'https://example.com?ref=disable&experiment=foobar&cid=38c51b84-9586-499f-ac52-94626e2b29cf&installed=ex1&installed=ex2';
+
+    expect(submitLink.props().href).to.equal(expectedHref);
+
+    submitLink.simulate('click', mockClickEvent);
+    expect(onSubmit.called).to.be.true;
+    expect(preventDefault.called).to.be.false;
+    expect(sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'exit survey disabled'
+    }]);
+  });
+});
+
+describe('app/containers/ExperimentPage/ExperimentEolDialog', () => {
+  let props, mockClickEvent, subject;
+  beforeEach(() => {
+    props = {
+      onSubmit: sinon.spy(),
+      onCancel: sinon.spy()
+    };
+    mockClickEvent = {
+      preventDefault: sinon.spy()
+    };
+    subject = shallow(<ExperimentEolDialog {...props} />);
+  });
+
+  it('should display expected content', () => {
+    expect(subject.find('#retire-dialog-modal')).to.have.property('length', 1);
+  });
+
+  it('calls onCancel when the cancel button is clicked', () => {
+    subject.find('.modal-cancel').simulate('click', mockClickEvent);
+    expect(props.onCancel.called).to.be.true;
+  });
+
+  it('calls onSubmit when the disable button is clicked', () => {
+    findLocalizedById(subject, 'disableExperiment').find('button')
+      .simulate('click', mockClickEvent);
+    expect(props.onSubmit.called).to.be.true;
+  });
+});
+
+describe('app/containers/ExperimentPage/ExperimentPreFeedbackDialog', () => {
+  const experiment = {
+    title: 'foobar',
+    survey_url: 'https://example.com/survey',
+    pre_feedback_image: '/foo.png',
+    pre_feedback_copy: '<p class="expectedCopy">markup works!</p>'
+  };
+  const surveyURL = experiment.survey_url;
+
+  let sendToGA, onCancel, preventDefault, getAttribute, mockClickEvent, subject;
+  beforeEach(() => {
+    sendToGA = sinon.spy();
+    onCancel = sinon.spy();
+    preventDefault = sinon.spy();
+    getAttribute = sinon.spy(() => surveyURL);
+    mockClickEvent = { preventDefault, target: { getAttribute } };
+    subject = shallow(
+      <ExperimentPreFeedbackDialog experiment={experiment} surveyURL={surveyURL}
+                                   onCancel={onCancel} sendToGA={sendToGA} />
+    );
+  });
+
+  it('should render expected content', () => {
+    expect(subject.find('.modal-container'))
+      .to.have.property('length', 1);
+    expect(findLocalizedById(subject, 'experimentPreFeedbackTitle').prop('$title'))
+      .to.equal(experiment.title);
+    expect(findLocalizedById(subject, 'experimentPreFeedbackLinkCopy').prop('$title'))
+      .to.equal(experiment.title);
+    expect(subject.find('.tour-image img').props().src)
+      .to.equal(experiment.pre_feedback_image);
+    expect(subject.find('.tour-text').first().html())
+      .to.contain(experiment.pre_feedback_copy);
+  });
+
+  it('should call onCancel on cancel button click', () => {
+    subject.find('.modal-cancel').simulate('click', mockClickEvent);
+    expect(onCancel.called).to.be.true;
+    expect(sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'cancel feedback'
+    }]);
+  });
+
+  it('should launch feedback on feedback button click', () => {
+    subject.find('.tour-text a').simulate('click', mockClickEvent);
+    expect(onCancel.called).to.be.false;
+    expect(getAttribute.called).to.be.true;
+    expect(sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'PreFeedback Confirm',
+      eventLabel: 'foobar',
+      outboundURL: surveyURL
+    }]);
+  });
+});
+
+describe('app/containers/ExperimentPage/ExperimentTourDialog', () => {
+  let props, mockClickEvent, subject;
+  beforeEach(() => {
+    mockClickEvent = { preventDefault: sinon.spy() };
+
+    props = {
+      experiment: {
+        title: 'Test Experiment',
+        slug: 'test',
+        tour_steps: [
+          { image: '/example1.png', copy: 'Example 1', copy_l10nsuffix: 'foo' },
+          { image: '/example2.png', copy: 'Example 2' },
+          { image: '/example3.png', copy: 'Example 3' }
+        ]
+      },
+      isExperimentEnabled: () => true,
+      sendToGA: sinon.spy(),
+      onComplete: sinon.spy(),
+      onCancel: sinon.spy()
+    };
+
+    subject = mount(<ExperimentTourDialog {...props} />);
+  });
+
+  it('should render expected default content', () => {
+    expect(findLocalizedById(subject, 'tourOnboardingTitle').prop('$title'))
+      .to.equal(props.experiment.title);
+
+    const expectedTourStep = props.experiment.tour_steps[0];
+    expect(subject.find('.tour-image > img').prop('src'))
+      .to.equal(expectedTourStep.image);
+    // There is now a LocalizedHtml element between the
+    // .tour-text element and the p element, so
+    // '.tour-text > p' won't work, but '.tour-text p' does
+    expect(subject.find('.tour-text p').html())
+      .to.include(expectedTourStep.copy);
+  });
+
+  it('should render only the experiment title if not enabled', () => {
+    subject.setProps({
+      isExperimentEnabled: () => false,
+      experiment: { ...props.experiment }
+    });
+    expect(subject.find('.modal-header').text()).to.equal(props.experiment.title);
+  });
+
+  it('should have the correct l10n IDs', () => {
+    expect(findLocalizedById(subject, 'testToursteps0CopyFoo').length).to.equal(1);
+  });
+
+  it('should not have l10n IDs if the experiment is dev-only', () => {
+    subject.setProps({ experiment: { dev: true, ...props.experiment } });
+    expect(subject.find('.tour-text > Localized').prop('id')).to.equal(null);
+  });
+
+  it('should advance one step and ping GA when the next button is clicked', () => {
+    subject.find('.tour-next').simulate('click', mockClickEvent);
+
+    const expectedTourStep = props.experiment.tour_steps[1];
+    expect(subject.find('.tour-image > img').prop('src'))
+      .to.equal(expectedTourStep.image);
+    expect(subject.find('.tour-text').html())
+      .to.include(expectedTourStep.copy);
+
+    expect(subject.state('currentStep')).to.equal(1);
+
+    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'forward to step 1'
+    }]);
+  });
+
+  it('should rewind one step and ping GA when the back button is clicked', () => {
+    expect(subject.find('.tour-back').hasClass('hidden')).to.be.true;
+    subject.setState({ currentStep: 1 });
+    expect(subject.find('.tour-back').hasClass('hidden')).to.be.false;
+
+    subject.find('.tour-back').simulate('click', mockClickEvent);
+
+    const expectedTourStep = props.experiment.tour_steps[0];
+    expect(subject.find('.tour-image > img').prop('src'))
+      .to.equal(expectedTourStep.image);
+    expect(subject.find('.tour-text').html())
+      .to.include(expectedTourStep.copy);
+
+    expect(subject.state('currentStep')).to.equal(0);
+
+    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'back to step 0'
+    }]);
+  });
+
+  it('should render dots to indicate and choose tour steps', () => {
+    expect(subject.find('.tour-image .dot'))
+      .to.have.property('length', props.experiment.tour_steps.length);
+
+    subject.setState({ currentStep: 2 });
+    expect(subject.find('.tour-image .dot').at(2).hasClass('current')).to.be.true;
+
+    subject.find('.tour-image .dot').at(0).simulate('click', mockClickEvent);
+
+    expect(subject.state('currentStep')).to.equal(0);
+
+    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'dot to step 0'
+    }]);
+  });
+
+  it('should ping GA and call onCancel when cancel button clicked', () => {
+    subject.find('.modal-cancel').simulate('click', mockClickEvent);
+
+    expect(props.onCancel.called).to.be.true;
+
+    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'cancel tour'
+    }]);
+  });
+
+  it('should ping GA and call onComplete when done button clicked', () => {
+    expect(subject.find('.tour-next').hasClass('no-display')).to.be.false;
+    expect(subject.find('.tour-done').hasClass('no-display')).to.be.true;
+    subject.setState({ currentStep: 2 });
+    expect(subject.find('.tour-next').hasClass('no-display')).to.be.true;
+    expect(subject.find('.tour-done').hasClass('no-display')).to.be.false;
+
+    subject.find('.tour-done').simulate('click', mockClickEvent);
+
+    expect(props.onComplete.called).to.be.true;
+
+    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'complete tour'
+    }]);
+  });
 });

@@ -478,22 +478,14 @@ pre_feedback_copy: >
 
 ![Example pre-feedback prompt](img/pre-feedback.png)
 
-## `graduation_report`
+## `graduation_url`
 
-When an experiment graduates, the following replaces the introduction and detail images sections on the experiment details page.
+When an experiment graduates, a link to the provided graduation_url will be shown on the experiment details page.
 
-Should be wrapped in html tags. [While not yet localized, we may retain a l10n agency to localize as needed](https://github.com/mozilla/testpilot/issues/1829).
-Generally optional, but required before the experiment graduates.
+If an experiment has graduated but no graduation_url is provided, a message is shown stating that a graduation report is coming soon.
 
 ```yaml
-graduation_report: >
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
-    suscipit, nam commodi excepturi error modi.</p>
-    <ul>
-    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
-      suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
-      cupiditate vitae praesentium eveniet unde totam, architecto molestiae?</li>
-  </ul>
+graduation_url: http://example.com/graduation-report
 ```
 
 ## `eol_warning`

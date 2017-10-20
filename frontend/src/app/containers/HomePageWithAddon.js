@@ -5,7 +5,6 @@
 import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
-
 import Banner from '../components/Banner';
 import Copter from '../components/Copter';
 import UpdateList from '../components/UpdateList';
@@ -16,6 +15,7 @@ import MainInstallButton from '../components/MainInstallButton';
 import PastExperiments from '../components/PastExperiments';
 import View from '../components/View';
 import LocalizedHtml from '../components/LocalizedHtml';
+import NewsUpdatesDialog from '../components/NewsUpdatesDialog';
 
 
 type HomePageWithAddonProps = {
@@ -29,11 +29,13 @@ type HomePageWithAddonProps = {
   uninstallAddon: Function,
   sendToGA: Function,
   openWindow: Function,
+  isExperimentEnabled: Function,
   isAfterCompletedDate: Function
 }
 
 type HomePageWithAddonState = {
-  showEmailDialog: boolean
+  showEmailDialog: boolean,
+  showNewsUpdateDialog: boolean
 }
 
 export default class HomePageWithAddon extends React.Component {
@@ -53,7 +55,8 @@ export default class HomePageWithAddon extends React.Component {
     }
 
     this.state = {
-      showEmailDialog
+      showEmailDialog,
+      showNewsUpdateDialog: true
     };
   }
 
@@ -118,7 +121,7 @@ export default class HomePageWithAddon extends React.Component {
 
     if (experiments.length === 0) { return null; }
 
-    const { showEmailDialog } = this.state;
+    const { showEmailDialog, showNewsUpdateDialog } = this.state;
     const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
     const pastExperiments = experiments.filter(isAfterCompletedDate);
 
@@ -128,7 +131,13 @@ export default class HomePageWithAddon extends React.Component {
           <EmailDialog {...this.props}
             onDismiss={() => this.setState({ showEmailDialog: false })} />}
 
-        {this.renderSplash()}
+      {this.renderSplash()}
+
+      {showNewsUpdateDialog && freshNewsUpdates.length ? (
+          <NewsUpdatesDialog {...this.props} newsUpdates={freshNewsUpdates}
+                             currentExperiments={currentExperiments}
+                             onCancel={() => this.setState({ showNewsUpdateDialog: false })}
+                             onComplete={() => this.setState({ showNewsUpdateDialog: false })} />) : null}
 
         <LayoutWrapper flexModifier="card-list">
           <UpdateList {...{ sendToGA, staleNewsUpdates, freshNewsUpdates, experiments }} />

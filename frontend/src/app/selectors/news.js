@@ -1,21 +1,20 @@
 import { createSelector } from 'reselect';
 import moment from 'moment';
+import cookies from 'js-cookie';
 import experimentSelector from './experiment';
 
 // Gathers up a reverse-chronological list of currently published news updates
 // from all available experiments and Test Pilot in general
 const newsUpdatesSelector = createSelector(
   store => store.news.updates,
-  store => store.browser.isDev,
   experimentSelector,
 
-  (newsUpdates, isDev, experiments) => {
+  (newsUpdates, experiments) => {
     const availableExperiments = new Set(experiments.map(e => e.slug));
     return newsUpdates
 
       // Filter for published updates and updates for available experiments,
-      // but allow all updates if we're in dev.
-      .filter(update => isDev || (
+      .filter(update => (
         (typeof update.published === 'undefined' ||
           moment(moment.utc()).isAfter(update.published)) &&
         (typeof update.experimentSlug === 'undefined' ||
@@ -44,8 +43,16 @@ const makeNewsAgeSelector = includeStale => (newsUpdates, twoWeeksAgo) =>
     return includeStale ? dt < twoWeeksAgo : dt >= twoWeeksAgo;
   });
 
+const seenSelector = () => (newsUpdates) =>
+  newsUpdates.filter(update => {
+    const dt = new Date(update.published || update.created).getTime();
+    const lastSeen = new Date(cookies.get('updates-last-viewed-date') || 0);
+    return dt > lastSeen;
+  });
+
 export const freshNewsUpdatesSelector = createSelector(
   newsUpdatesSelector,
+  seenSelector,
   twoWeeksAgoSelector,
   makeNewsAgeSelector(false)
 );

@@ -31,6 +31,7 @@ Test Pilot is not intended to replace trains for most features, nor is it a test
     - [Google Analytics](docs/metrics/ga.md) - How we use Google Analytics.
     - [New features](docs/metrics/new_features.md) - Everything needed to instrument something new.
 - [Experiment content](docs/content/reference.md) - Management of experiment content.
+- [Graduating experiments](docs/content/graduation.md) - Graduation of old experiments.
 - [Process](docs/process.md) - How we create, triage, and assign work.
 - [FAQ](docs/faq.md)
 - [Contributing to Test Pilot](CONTRIBUTING.md)

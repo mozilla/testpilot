@@ -13,6 +13,7 @@
     "node": ">=4.4.0"
   },
   "dependencies": {
+    "babel-polyfill": "6.23.0",
     "classnames": "2.2.5",
     "cldr-core": "31.0.1",
     "clipboard": "1.6.1",
@@ -24,6 +25,7 @@
     "fluent-react": "0.4.1",
     "html-react-parser": "0.3.5",
     "js-cookie": "2.1.4",
+    "legal-docs": "https://github.com/mozilla/legal-docs.git",
     "micro-email-validator": "0.0.1",
     "moment": "2.17.1",
     "raven-js": "3.12.1",
@@ -32,10 +34,9 @@
     "react-redux": "5.0.3",
     "redux": "3.6.0",
     "redux-promise": "0.5.3",
-    "regenerator-runtime": "0.11.0",
     "reselect": "3.0.1",
     "seedrandom": "2.4.2",
-    "legal-docs": "https://github.com/mozilla/legal-docs.git"
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "@storybook/addon-actions": "3.2.0",

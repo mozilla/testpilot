@@ -1,4 +1,5 @@
-import 'regenerator-runtime/runtime';
+import 'babel-polyfill/browser';
+import 'whatwg-fetch';
 import Raven from 'raven-js';
 import moment from 'moment';
 

@@ -1,15 +1,24 @@
+/* global describe, it */
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
 
-import NewsletterFooter from '../../../src/app/components/NewsletterFooter';
-
+import NewsletterFooter from './index';
 
 describe('app/components/NewsletterFooter', () => {
+  const props = {
+    getWindowLocation: sinon.spy(() => 'https://example.com'),
+    sendToGA: sinon.spy(),
+    newsletterForm: {
+      subscribe: sinon.spy(),
+      setEmail: sinon.spy(),
+      setPrivacy: sinon.spy()
+    }
+  };
 
-  const _subject = (form) => {
-    const props = {
+  const _subject = (form) => { // eslint-disable-line no-underscore-dangle
+    const mergedProps = Object.assign(props, {
       getWindowLocation: sinon.spy(() => 'https://example.com'),
       newsletterForm: {
         subscribe: sinon.spy(),
@@ -17,8 +26,8 @@ describe('app/components/NewsletterFooter', () => {
         setPrivacy: sinon.spy(),
         ...form
       }
-    };
-    return shallow(<NewsletterFooter {...props} />);
+    });
+    return shallow(<NewsletterFooter {...mergedProps} />);
   };
 
   describe('error notification', () => {
@@ -53,6 +62,24 @@ describe('app/components/NewsletterFooter', () => {
   it('should have `correct` class when succeeded=true', () => {
     const subject = _subject({ succeeded: true });
     expect(subject.hasClass('success')).to.equal(true);
+  });
+
+  it('should have called sendToGA with a success event when succeeded=true', () => {
+    _subject({ succeeded: true, failed: false });
+    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'HomePage Interactions',
+      eventAction: 'footer newsletter form success',
+      eventLabel: 'email submitted to basket'
+    }]);
+  });
+
+  it('should have called sendToGA with a failure event when succeeded=false', () => {
+    _subject({ failed: true, succeeded: false });
+    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'HomePage Interactions',
+      eventAction: 'footer newsletter form submit',
+      eventLabel: 'email failed to submit to basket'
+    }]);
   });
 
   it('should pass props to the child NewsletterForm', () => {
