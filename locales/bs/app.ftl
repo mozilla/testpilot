@@ -88,36 +88,65 @@ onboardingMessage = Stavili smo ikonu u vašu traku s alatima da možete uvijek 
 // Error message pages.
 [[ error ]]
 
+errorHeading = Ups!
+errorMessage = Izgleda da smo nešto pokvarili. <br> Pokušajte ponovo kasnije.
+notFoundHeader = Četiri nula četiri!
 
 
 // A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
+emailOptInDialogTitle = Dobrodošli u Test Pilot!
+emailOptInMessage = Saznajte za nove eksperimente i pogledajte rezultate eksperimenata koje ste isprobali.
+emailOptInConfirmationTitle = E-pošta poslana
+emailOptInConfirmationClose = Naprijed na eksperimente...
+emailOptInDialogErrorTitle = Oh ne!
 
 
 // news feed updates.
 [[ updateList ]]
 
+latestUpdatesTitle = Najnovija ažuriranja
+showMoreNewsTitle = Prikaži starije novosti
 
 
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
+experimentListEnabledTab = Omogućeno
+experimentListJustLaunchedTab = Upravo pokrenuto
+experimentListJustUpdatedTab = Upravo ažurirano
+experimentListEndingTomorrow = Završava sutra
+experimentListEndingSoon = Završava uskoro
+experimentCondensedHeader = Dobrodošli u Test Pilot!
+experimentListHeader = Izaberite vaše eksperimente!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Povratne informacije
+experimentCardManage = Upravljajte
+experimentCardGetStarted = Započnite
+experimentCardLearnMore = Saznajte više
 
 
 // A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
+feedbackSubmitButton = Ispunite kratku anketu
+feedbackUninstallTitle = Hvala vam!
+feedbackUninstallCopy =
+    Vaše sudjelovanje u Firefox Test Pilotu znači
+    puno! Molimo pogledajte naše ostale eksperimente,
+    i budite u toku s novima koji dolaze!
 
 
 // A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
+experimentPreFeedbackTitle = Povratne informacije za { $title }
 
 
 // A splash shown on top of the experiment page when Test Pilot is not installed.
