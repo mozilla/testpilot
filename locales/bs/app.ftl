@@ -147,6 +147,7 @@ feedbackUninstallCopy =
 [[ experimentPreFeedback ]]
 
 experimentPreFeedbackTitle = Povratne informacije za { $title }
+experimentPreFeedbackLinkCopy = Pošaljite povratnu informaciju o eksperimentu { $title } 
 
 
 // A splash shown on top of the experiment page when Test Pilot is not installed.
