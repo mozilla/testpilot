@@ -5,8 +5,8 @@ siteName = Ujian Perintis Firefox
 [[ pageTitle ]]
 
 pageTitleDefault = Ujian Perintis Firefox
-pageTitleLandingPage = Ujian Perintis Firefox
-pageTitleExperimentListPage = Ujian Perintis Firefox - Eksperimen
+pageTitleLandingPage = Firefox Test Pilot
+pageTitleExperimentListPage = Firefox Test Pilot - Eksperimen
 pageTitleExperiment = Ujian Perintis Firefox - { $title }
 
 
@@ -18,7 +18,7 @@ footerLinkPrivacy = Privasi
 footerLinkTerms = Terma
 footerLinkLegal = Perundangan
 footerLinkFeedback = Beri maklum balas
-footerLinkAbout = Perihal Ujian Perintis
+footerLinkAbout = Perihal Test Pilot
 
 
 // Items in the menu.
@@ -27,9 +27,9 @@ footerLinkAbout = Perihal Ujian Perintis
 home = Halaman Utama
 menuTitle = Tetapan
 menuWiki = Test Pilot Wiki
-menuDiscuss = Bincangkan Ujian Perintis
+menuDiscuss = Bincangkan Test Pilot
 menuFileIssue = Failkan Isu
-menuRetire = Nyahpasang Ujian Perintis
+menuRetire = Nyahpasang Test Pilot
 headerLinkBlog = Blog
 
 
@@ -39,14 +39,14 @@ headerLinkBlog = Blog
 landingIntroOne = Uji ciri baru.
 landingIntroTwo = Berikan maklum balas anda.
 landingIntroThree = Bantu membina Firefox.
-landingLegalNotice = Dengan meneruskan, anda bersetuju dengan <a>Terma Penggunaan</a> dan <a>Notis Privasi</a> Ujian Perintis.
+landingLegalNotice = Dengan meneruskan, anda bersetuju dengan <a>Terma Penggunaan</a> dan <a>Notis Privasi</a> Test Pilot.
 landingExperimentsTitle = Cuba ciri eksperimen yang terkini
 
 
 // Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
-landingInstallButton = Pasang Add-on Ujian Perintis
+landingInstallButton = Pasang Add-on Test Pilot
 landingInstallingButton = Memasang...
 landingInstalledButton = Pilih ciri anda
 
@@ -54,17 +54,17 @@ landingInstalledButton = Pilih ciri anda
 // Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
-oneClickInstallMinorCta = Pasang Ujian Perintis &amp;
+oneClickInstallMinorCta = Pasang Test Pilot &amp;
 oneClickInstallMajorCta = Dayakan { $title }
 
 
 // Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
-landingRequiresDesktop = Ujian Perintis memerlukan Firefox untuk Desktop menggunakan Windows, Mac atau Linux
-landingDownloadFirefoxDesc = (Ujian Perintis tersedia untuk Firefox menggunakan Windows, OS X dan Linux)
-landingUpgradeDesc = Ujian Perintis memerlukan Firefox 49 atau lebih tinggi.
-landingUpgradeDesc2 = Ujian Perintis memerlukan Firefox { $version } atau lebih tinggi.
+landingRequiresDesktop = Test Pilot memerlukan Firefox untuk Desktop menggunakan Windows, Mac atau Linux
+landingDownloadFirefoxDesc = Test Pilot tersedia untuk Firefox menggunakan Windows, OS X dan Linux)
+landingUpgradeDesc = Test Pilot memerlukan Firefox 49 atau lebih tinggi.
+landingUpgradeDesc2 = Test Pilot memerlukan Firefox { $version } atau lebih tinggi.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Naiktaraf Firefox
 landingDownloadFirefoxSubTitle = Muat turun Percuma
@@ -74,7 +74,7 @@ landingDownloadFirefoxSubTitle = Muat turun Percuma
 [[ landingCard ]]
 
 landingCardListTitle = Bermula 3, 2, 1
-landingCardOne = Dapatkan add-on Ujian Perintis
+landingCardOne = Dapatkan add-on Test Pliot
 landingCardTwo = Dayakan ciri eksperimen
 landingCardThree = Maklumkan kami pendapat anda
 
@@ -82,7 +82,7 @@ landingCardThree = Maklumkan kami pendapat anda
 // Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
-onboardingMessage = Kami letakkan satu ikon pada bar alatan anda supaya anda sentiasa menemukan Ujian Perintis.
+onboardingMessage = Kami letakkan satu ikon pada bar alatan anda supaya anda sentiasa menemukan Test Pliot.
 
 
 // Error message pages.
@@ -96,7 +96,7 @@ notFoundHeader = Empat Kosong Empat!
 // A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
-emailOptInDialogTitle = Sekamat datang ke Ujian Perintis!
+emailOptInDialogTitle = Selamat datang ke Test Pilot!
 emailOptInMessage = Ketahui perihal eksperimen baru dan lihat keputusan ujian bagi eksperimen yang telah anda cuba.
 emailOptInConfirmationTitle = E-mel Dihantar
 emailOptInConfirmationClose = Masih dalam eksperimen...
@@ -118,7 +118,7 @@ experimentListJustLaunchedTab = Baru Dilancarkan
 experimentListJustUpdatedTab = Baru Dikemaskini
 experimentListEndingTomorrow = Tamat Esok
 experimentListEndingSoon = Hampir Tamat
-experimentCondensedHeader = Selamat Datang ke Ujian Perintis!
+experimentCondensedHeader = Selamat datang ke Test Pliot!
 experimentListHeader = Pilih eksperimen anda!
 
 
@@ -138,7 +138,7 @@ experimentCardLearnMore = Ketahui Selanjutnya
 feedbackSubmitButton = Sertai Kajian Ringkas
 feedbackUninstallTitle = Terima kasih!
 feedbackUninstallCopy =
-    Penyertaan anda dalam Ujian Perintis Firefox
+    Penyertaan anda dalam Firefox Test Pilot
     amat bermakna! Sila semak eksperimen kami yang lain,
     dan teruskan untuk banyak lagi yang akan datang!
 
@@ -154,7 +154,7 @@ experimentPreFeedbackLinkCopy = Beri maklum balas perihal eksperimen { $title }
 [[ experimentPromo ]]
 
 experimentPromoHeader = Sudah bersedia untuk Mulakan?
-experimentPromoSubheader = Kami membina ciri generasi-akan-datang untuk Firefox. Pasang Ujian Perintis dan cubalah!
+experimentPromoSubheader = Kami membina ciri generasi-akan-datang untuk Firefox. Pasang Test Pilot dan cubalah!
 
 
 // The experiment detail page.
@@ -170,7 +170,7 @@ disableExperimentTransition = Menyahdaya...
 enableExperiment = Dayakan { $title }
 enableExperimentTransition = Mendayakan...
 experimentManuallyDisabled = { $title } dinyahdaya dalam Pengurus Add-ons
-experimentMeasurementIntro = Sebagai tambahan kepada <a>data</a> dikumpulkan oleh semua eksperimen Ujian Perintis, ini adalah perkara utama yang anda perlu tahu perihal hal yang sedang berlaku apabila anda menggunakan { $experimentTitle }:
+experimentMeasurementIntro = Sebagai tambahan kepada <a>data</a> dikumpulkan oleh semua eksperimen Test Pilot, ini adalah perkara utama yang anda perlu tahu perihal hal yang sedang berlaku apabila anda menggunakan { $experimentTitle }:
 measurements = Privasi anda
 experimentPrivacyNotice = Anda boleh ketahui selanjutnya perihal pengumpulan data untuk { $title } di sini.
 contributorsHeading = Dibawakan untuk anda oleh
@@ -191,6 +191,13 @@ experimentGradReportPendingCopy = Kami sedang meyediakan laporan penuh. Semak se
 experimentGradReportReady = Kami telah menyediakan laporan senggatan lengkap.
 experimentGoToLink = Pergi ke { $title }
 startedDateLabel = Tarikh Mula Eksperimen: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+learnMoreLink = KETAHUI SELANJUTNYA
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -217,11 +224,11 @@ versionChangeNoticeLink = Dapatkan versi terkini Firefox
 // Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
-retireDialogTitle = Nyahpasang Ujian Perintis?
-retireMessageUpdate = Seperti yang anda mahu. Tindakan ini akan menyahpasang Ujian Perintis. Anda boleh nyahdayakan eksperimen individu dari dalam Pengurus Add-ons Firefox.
-retireEmailMessage = Untuk memilih supaya tidak menerima kemaskini e-mel, hanya klik pautan <em>batal langganan</em> dalam sebarang e-mel Ujian Perintis.
+retireDialogTitle = Nyahpasang Test Pilot?
+retireMessageUpdate = Seperti yang anda mahu. Tindakan ini akan menyahpasang Test Pilot. Anda boleh nyahdayakan eksperimen individu dari dalam Pengurus Add-ons Firefox.
+retireEmailMessage = Untuk memilih supaya tidak menerima kemaskini e-mel, hanya klik pautan <em>batal langganan</em> dalam sebarang e-mel Test Pilot.
 retireSubmitButton = Teruskan
-pageTitleRetirePage = Firefox Ujian Perintis - Nyahpasang Ujian Perintis
+pageTitleRetirePage = Firefox Test Pilot - Nyahpasang Test Pilot
 retirePageProgressMessage = Menutup...
 retirePageHeadline = Terima kasih kerana mengujinya!
 retirePageMessage = Kami harap anda seronok membuat eksperimen kami. <br> Sila kembali semula pada bila-bila masa.
@@ -233,7 +240,7 @@ retirePageSurveyButton = Sertai kajian ringkas
 
 restartIntroLead = Senarai semak praujian
 restartIntroOne = Mula semula pelayar anda
-restartIntroTwo = Cari add-on Ujian Perintis
+restartIntroTwo = Cari add-on Test Pilot
 restartIntroThree = Pilih eksperimen anda
 
 
