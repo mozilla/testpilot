@@ -22,6 +22,11 @@ describe('app/components/EmailDialog', () => {
     stopPropagation() {},
     key: 'Escape'
   };
+  const mockEnterKeyDownEvent = {
+    preventDefault() {},
+    stopPropagation() {},
+    key: 'Enter'
+  };
 
   let onDismiss, sendToGA, getWindowLocation, subject;
   beforeEach(() => {
@@ -100,6 +105,43 @@ describe('app/components/EmailDialog', () => {
     }, 1);
   });
 
+  it('should subscribe to basket on valid email when <Enter> key is pressed', done => {
+    const expectedEmail = 'me@a.b.com';
+    subject.setState({ email: expectedEmail });
+
+    fetchMock.post(basketUrl, 200);
+    subject.find('.modal-container').simulate('keyDown', mockEnterKeyDownEvent);
+
+    expect(sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'HomePage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'Sign me up'
+    }]);
+
+    // HACK: Yield for fetch-mock promises to complete, because we don't have
+    // direct control over that here.
+    setTimeout(() => {
+      const [url, request] = fetchMock.lastCall(basketUrl);
+
+      expect(url).to.equal(basketUrl);
+      expect(request).to.deep.equal({
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'newsletters=test-pilot&email=me%40a.b.com&source_url=https%3A%2F%2Fexample.com'
+      });
+
+      expect(subject.state('isSuccess')).to.be.true;
+      expect(findLocalizedById(subject, 'newsletterFooterSuccessBody')).to.have.length(1);
+
+      expect(sendToGA.lastCall.args).to.deep.equal(['event', {
+        eventCategory: 'HomePage Interactions',
+        eventAction: 'button click',
+        eventLabel: 'email submitted to basket'
+      }]);
+      done();
+    }, 1);
+  });
+
   it('should show an error page on error', done => {
     const expectedEmail = 'me@a.b.com';
     subject.setState({ email: expectedEmail });
@@ -119,6 +161,23 @@ describe('app/components/EmailDialog', () => {
       done();
     }, 1);
   });
+
+  it('should reset the email dialog when the <Enter> key is pressed ' +
+    'on the error page', () => {
+    subject.setState({ isSuccess: false, isError: true });
+
+    const footer = findLocalizedById(subject, 'newsletterFooterError');
+    expect(footer).to.have.length(1);
+
+    const button = subject.findWhere(el => 'email-success-continue' === el.props()['id']);
+    expect(button).to.have.length(1);
+
+    subject.find('.modal-container').simulate('keyDown', mockEnterKeyDownEvent);
+
+    expect(subject.state('isSuccess')).to.be.false;
+    expect(subject.state('isError')).to.be.false;
+  });
+
 
   it('should dismiss when continue button is clicked after subscribe', () => {
     subject.setState({ isSuccess: true, isError: false });

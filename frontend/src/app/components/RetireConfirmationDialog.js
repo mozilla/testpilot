@@ -77,6 +77,9 @@ export default class RetireConfirmationDialog extends React.Component {
       case 'Escape':
         this.cancel(e);
         break;
+      case 'Enter':
+        this.proceed(e);
+        break;
       default:
         break;
     }

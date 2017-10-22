@@ -83,6 +83,18 @@ export default class ExperimentDisableDialog extends React.Component {
       case 'Escape':
         this.cancel(e);
         break;
+      case 'Enter': {
+        this.submit(e);
+
+        const { experiment, installed, clientUUID } = this.props;
+        const { title, survey_url } = experiment;
+        const surveyURL = buildSurveyURL('disable', title, installed, clientUUID, survey_url);
+
+        const newWindow = window.open();
+        newWindow.opener = null;
+        newWindow.location = surveyURL;
+        break;
+      }
       default:
         break;
     }

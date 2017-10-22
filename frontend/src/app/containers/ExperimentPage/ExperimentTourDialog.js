@@ -163,10 +163,27 @@ export default class ExperimentTourDialog extends React.Component {
   }
 
   handleKeyDown(e: Object) {
+    e.preventDefault();
     switch (e.key) {
       case 'Escape':
         this.cancel(e);
         break;
+      case 'ArrowRight':
+        this.tourNext();
+        break;
+      case 'ArrowLeft':
+        this.tourBack();
+        break;
+      case 'Enter': {
+        const { experiment } = this.props;
+        const { currentStep } = this.state;
+        const tourSteps = experiment.tour_steps || [];
+        const atEnd = (currentStep === tourSteps.length - 1);
+        if (atEnd) {
+          this.complete(e);
+        }
+        break;
+      }
       default:
         break;
     }

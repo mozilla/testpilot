@@ -209,6 +209,15 @@ export default class EmailDialog extends React.Component {
           this.continue(e);
         }
         break;
+      case 'Enter':
+        if (!isSuccess && !isError) {
+          this.handleSubscribe(this.state.email);
+        } else if (isSuccess) {
+          this.continue(e);
+        } else if (isError) {
+          this.reset(e);
+        }
+        break;
       default:
         break;
     }
