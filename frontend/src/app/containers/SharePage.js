@@ -27,11 +27,11 @@ export default class SharePage extends React.Component {
                 <p>Love Test Pilot? Help us find some new recruits.</p>
               </Localized>
               <ul className="share-list">
-                <li className="share-facebook"><a href={'https://www.facebook.com/sharer/sharer.php?u=' + this.shareUrl('facebook', true)} onClick={this.handleClick('facebook')} target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                <li className="share-twitter"><a href={'https://twitter.com/home?status=' + this.shareUrl('twitter', true)} onClick={this.handleClick('twitter')} target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                <li className="share-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https://mzl.la/2dheNkx" onClick={this.handleClick('facebook')} target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                <li className="share-twitter"><a href="https://twitter.com/home?status=https://mzl.la/2e7huGS" onClick={this.handleClick('twitter')} target="_blank" rel="noopener noreferrer">Twitter</a></li>
                 <li className="share-email">
                   <Localized id="shareEmail">
-                    <a href={'mailto:?body=' + this.shareUrl('email', true)} onClick={this.handleClick('email')}>E-mail</a>
+                    <a href="mailto:?body=https://mzl.la/2dZByMS" onClick={this.handleClick('email')}>E-mail</a>
                   </Localized>
                 </li>
               </ul>
@@ -40,7 +40,7 @@ export default class SharePage extends React.Component {
               </Localized>
               <fieldset className="share-url-wrapper">
                 <div className="share-url">
-                  <input type="text" readOnly value={this.shareUrl('copy', false)} />
+                  <input type="text" readOnly value="https://mzl.la/2dps7H1" />
                   <Localized id="shareCopy">
                     <button onClick={this.handleClick('copy')} data-clipboard-target=".share-url input">Copy</button>
                   </Localized>
