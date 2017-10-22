@@ -620,13 +620,18 @@ describe('app/containers/ExperimentPage/ExperimentDisableDialog', () => {
   const installed = { ex1: true, ex2: true };
   const clientUUID = '38c51b84-9586-499f-ac52-94626e2b29cf';
 
-  let onSubmit, onCancel, sendToGA, preventDefault, mockClickEvent, subject;
+  let onSubmit, onCancel, sendToGA, preventDefault,
+    mockClickEvent, mockEscapeKeyDownEvent, subject;
   beforeEach(() => {
     onSubmit = sinon.spy();
     onCancel = sinon.spy();
     sendToGA = sinon.spy();
     preventDefault = sinon.spy();
     mockClickEvent = { preventDefault };
+    mockEscapeKeyDownEvent = {
+      preventDefault,
+      key: 'Escape'
+    };
     subject = shallow(
       <ExperimentDisableDialog
         experiment={experiment} installed={installed}
@@ -643,6 +648,12 @@ describe('app/containers/ExperimentPage/ExperimentDisableDialog', () => {
 
   it('should call onCancel when cancel button clicked', () => {
     subject.find('.modal-cancel').simulate('click', mockClickEvent);
+    expect(onCancel.called).to.be.true;
+    expect(preventDefault.called).to.be.true;
+  });
+
+  it('should call onCancel when the <Escape> key is pressed', () => {
+    subject.find('.modal-container').simulate('keyDown', mockEscapeKeyDownEvent);
     expect(onCancel.called).to.be.true;
     expect(preventDefault.called).to.be.true;
   });
@@ -665,7 +676,7 @@ describe('app/containers/ExperimentPage/ExperimentDisableDialog', () => {
 });
 
 describe('app/containers/ExperimentPage/ExperimentEolDialog', () => {
-  let props, mockClickEvent, subject;
+  let props, mockClickEvent, mockEscapeKeyDownEvent, subject;
   beforeEach(() => {
     props = {
       onSubmit: sinon.spy(),
@@ -673,6 +684,10 @@ describe('app/containers/ExperimentPage/ExperimentEolDialog', () => {
     };
     mockClickEvent = {
       preventDefault: sinon.spy()
+    };
+    mockEscapeKeyDownEvent = {
+      preventDefault: sinon.spy(),
+      key: 'Escape'
     };
     subject = shallow(<ExperimentEolDialog {...props} />);
   });
@@ -683,6 +698,11 @@ describe('app/containers/ExperimentPage/ExperimentEolDialog', () => {
 
   it('calls onCancel when the cancel button is clicked', () => {
     subject.find('.modal-cancel').simulate('click', mockClickEvent);
+    expect(props.onCancel.called).to.be.true;
+  });
+
+  it('should call onCancel when the <Escape> button is pressed', () => {
+    subject.find('.modal-container').simulate('keyDown', mockEscapeKeyDownEvent);
     expect(props.onCancel.called).to.be.true;
   });
 
@@ -702,13 +722,18 @@ describe('app/containers/ExperimentPage/ExperimentPreFeedbackDialog', () => {
   };
   const surveyURL = experiment.survey_url;
 
-  let sendToGA, onCancel, preventDefault, getAttribute, mockClickEvent, subject;
+  let sendToGA, onCancel, preventDefault, getAttribute,
+    mockClickEvent, mockEscapeKeyDownEvent, subject;
   beforeEach(() => {
     sendToGA = sinon.spy();
     onCancel = sinon.spy();
     preventDefault = sinon.spy();
     getAttribute = sinon.spy(() => surveyURL);
     mockClickEvent = { preventDefault, target: { getAttribute } };
+    mockEscapeKeyDownEvent = {
+      preventDefault,
+      key: 'Escape'
+    };
     subject = shallow(
       <ExperimentPreFeedbackDialog experiment={experiment} surveyURL={surveyURL}
                                    onCancel={onCancel} sendToGA={sendToGA} />
@@ -738,6 +763,16 @@ describe('app/containers/ExperimentPage/ExperimentPreFeedbackDialog', () => {
     }]);
   });
 
+  it('should call onCancel when the <Escape> key is pressed', () => {
+    subject.find('.modal-container').simulate('keyDown', mockEscapeKeyDownEvent);
+    expect(onCancel.called).to.be.true;
+    expect(sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'cancel feedback'
+    }]);
+  });
+
   it('should launch feedback on feedback button click', () => {
     subject.find('.tour-text a').simulate('click', mockClickEvent);
     expect(onCancel.called).to.be.false;
@@ -752,9 +787,13 @@ describe('app/containers/ExperimentPage/ExperimentPreFeedbackDialog', () => {
 });
 
 describe('app/containers/ExperimentPage/ExperimentTourDialog', () => {
-  let props, mockClickEvent, subject;
+  let props, mockClickEvent, mockEscapeKeyDownEvent, subject;
   beforeEach(() => {
     mockClickEvent = { preventDefault: sinon.spy() };
+    mockEscapeKeyDownEvent = {
+      preventDefault: sinon.spy(),
+      key: 'Escape'
+    };
 
     props = {
       experiment: {
@@ -866,6 +905,18 @@ describe('app/containers/ExperimentPage/ExperimentTourDialog', () => {
 
   it('should ping GA and call onCancel when cancel button clicked', () => {
     subject.find('.modal-cancel').simulate('click', mockClickEvent);
+
+    expect(props.onCancel.called).to.be.true;
+
+    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'cancel tour'
+    }]);
+  });
+
+  it('should ping GA and call onCancel when the <Escape> key is pressed', () => {
+    subject.find('.modal-container').simulate('keyDown', mockEscapeKeyDownEvent);
 
     expect(props.onCancel.called).to.be.true;
 

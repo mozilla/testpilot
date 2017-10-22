@@ -12,10 +12,19 @@ type ExperimentEolDialogProps = {
 export default class ExperimentEolDialog extends React.Component {
   props: ExperimentEolDialogProps
 
+  modalContainer: Object
+
+  componentDidMount() {
+    this.modalContainer.focus();
+    console.log(typeof this.modalContainer);
+  }
+
   render() {
     const { title } = this.props;
     return (
-      <div className="modal-container">
+      <div className="modal-container" tabIndex="0"
+           ref={modalContainer => { this.modalContainer = modalContainer; }}
+           onKeyDown={e => this.handleKeyDown(e)}>
         <div id="retire-dialog-modal" className="modal feedback-modal modal-bounce-in">
           <header className="modal-header-wrapper warning-modal">
             <Localized id="disableHeader">
@@ -52,5 +61,15 @@ export default class ExperimentEolDialog extends React.Component {
   cancel(e: Object) {
     e.preventDefault();
     this.props.onCancel();
+  }
+
+  handleKeyDown(e: Object) {
+    switch (e.key) {
+      case 'Escape':
+        this.cancel(e);
+        break;
+      default:
+        break;
+    }
   }
 }

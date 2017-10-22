@@ -22,6 +22,8 @@ export default class ExperimentTourDialog extends React.Component {
   props: ExperimentTourDialogProps
   state: ExperimentTourDialogState
 
+  modalContainer: Object
+
   constructor(props: ExperimentTourDialogProps) {
     super(props);
     this.state = { currentStep: 0 };
@@ -29,6 +31,10 @@ export default class ExperimentTourDialog extends React.Component {
 
   l10nId(pieces: string | Array<string | number>) {
     return experimentL10nId(this.props.experiment, pieces);
+  }
+
+  componentDidMount() {
+    this.modalContainer.focus();
   }
 
   render() {
@@ -47,7 +53,9 @@ export default class ExperimentTourDialog extends React.Component {
       </Localized>) : (<h3 className="modal-header">{experiment.title}</h3>);
 
     return (
-      <div className="modal-container">
+      <div className="modal-container" tabIndex="0"
+           ref={modalContainer => { this.modalContainer = modalContainer; }}
+           onKeyDown={e => this.handleKeyDown(e)}>
         <div className={classnames('modal', 'tour-modal')}>
           <header className="modal-header-wrapper">
             {headerTitle}
@@ -152,5 +160,15 @@ export default class ExperimentTourDialog extends React.Component {
       eventAction: 'button click',
       eventLabel: `forward to step ${newStep}`
     });
+  }
+
+  handleKeyDown(e: Object) {
+    switch (e.key) {
+      case 'Escape':
+        this.cancel(e);
+        break;
+      default:
+        break;
+    }
   }
 }

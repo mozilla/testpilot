@@ -7,7 +7,7 @@ import { findLocalizedById } from '../util';
 import RetireConfirmationDialog from '../../../src/app/components/RetireConfirmationDialog';
 
 describe('app/components/RetireConfirmationDialog', () => {
-  let props, mockClickEvent, subject;
+  let props, mockClickEvent, mockEscapeKeyDownEvent, subject;
   beforeEach(function() {
     props = {
       uninstallAddon: sinon.spy(),
@@ -18,6 +18,10 @@ describe('app/components/RetireConfirmationDialog', () => {
     mockClickEvent = {
       preventDefault: sinon.spy()
     };
+    mockEscapeKeyDownEvent = {
+      preventDefault: sinon.spy(),
+      key: 'Escape'
+    };
     subject = shallow(<RetireConfirmationDialog {...props} />);
   });
 
@@ -27,6 +31,11 @@ describe('app/components/RetireConfirmationDialog', () => {
 
   it('should call onDismiss when the cancel button is clicked', () => {
     subject.find('.modal-cancel').simulate('click', mockClickEvent);
+    expect(props.onDismiss.called).to.be.true;
+  });
+
+  it('should call onDismiss when the <Escape> key is pressed', () => {
+    subject.find('.modal-container').simulate('keyDown', mockEscapeKeyDownEvent);
     expect(props.onDismiss.called).to.be.true;
   });
 

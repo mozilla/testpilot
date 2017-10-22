@@ -22,6 +22,8 @@ export default class EmailDialog extends React.Component {
   props: EmailDialogProps
   state: EmailDialogState
 
+  modalContainer: Object
+
   constructor(props: EmailDialogProps) {
     super(props);
     this.state = {
@@ -32,11 +34,17 @@ export default class EmailDialog extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.modalContainer.focus();
+  }
+
   render() {
     const { isSuccess, isError } = this.state;
 
     return (
-      <div className="modal-container">
+      <div className="modal-container" tabIndex="0"
+           ref={modalContainer => { this.modalContainer = modalContainer; }}
+           onKeyDown={e => this.handleKeyDown(e)}>
         {!isSuccess && !isError && this.renderForm()}
         {isSuccess && this.renderSuccess()}
         {isError && this.renderError()}
@@ -187,6 +195,23 @@ export default class EmailDialog extends React.Component {
 
   close() {
     if (this.props.onDismiss) { this.props.onDismiss(); }
+  }
+
+  handleKeyDown(e: Object) {
+    const { isSuccess, isError } = this.state;
+    switch (e.key) {
+      case 'Escape':
+        if (!isSuccess && !isError) {
+          this.skip(e);
+        } else if (isSuccess) {
+          this.continue(e);
+        } else if (isError) {
+          this.continue(e);
+        }
+        break;
+      default:
+        break;
+    }
   }
 
 }

@@ -14,9 +14,17 @@ type RetireConfirmationDialogProps = {
 export default class RetireConfirmationDialog extends React.Component {
   props: RetireConfirmationDialogProps
 
+  modalContainer: Object
+
+  componentDidMount() {
+    this.modalContainer.focus();
+  }
+
   render() {
     return (
-      <div className="modal-container">
+      <div className="modal-container" tabIndex="0"
+           ref={modalContainer => { this.modalContainer = modalContainer; }}
+           onKeyDown={e => this.handleKeyDown(e)}>
         <div id="retire-dialog-modal" className="modal feedback-modal modal-bounce-in">
           <header className="modal-header-wrapper warning-modal">
             <Localized id="retireDialogTitle">
@@ -62,5 +70,15 @@ export default class RetireConfirmationDialog extends React.Component {
   cancel(e: Object) {
     e.preventDefault();
     this.props.onDismiss();
+  }
+
+  handleKeyDown(e: Object) {
+    switch (e.key) {
+      case 'Escape':
+        this.cancel(e);
+        break;
+      default:
+        break;
+    }
   }
 }

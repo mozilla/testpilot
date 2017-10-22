@@ -17,6 +17,12 @@ describe('app/components/EmailDialog', () => {
     stopPropagation() {}
   };
 
+  const mockEscapeKeyDownEvent = {
+    preventDefault() {},
+    stopPropagation() {},
+    key: 'Escape'
+  };
+
   let onDismiss, sendToGA, getWindowLocation, subject;
   beforeEach(() => {
     fetchMock.restore();
@@ -32,6 +38,17 @@ describe('app/components/EmailDialog', () => {
 
   it('should dismiss when skip is clicked', () => {
     subject.find('.modal-cancel').simulate('click', mockClickEvent);
+
+    expect(onDismiss.called).to.be.true;
+    expect(sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'HomePage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'Skip email'
+    }]);
+  });
+
+  it('should dismiss when <Escape> key is pressed', () => {
+    subject.find('.modal-container').simulate('keyDown', mockEscapeKeyDownEvent);
 
     expect(onDismiss.called).to.be.true;
     expect(sendToGA.lastCall.args).to.deep.equal(['event', {
@@ -112,6 +129,23 @@ describe('app/components/EmailDialog', () => {
     expect(button).to.have.length(1);
 
     button.simulate('click', mockClickEvent);
+    expect(onDismiss.called).to.be.true;
+    expect(sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'HomePage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'On to the experiments'
+    }]);
+  });
+
+  it('should dismiss when <Escape> key is pressed, after subscribe', () => {
+    subject.setState({ isSuccess: true, isError: false });
+
+    expect(findLocalizedById(subject, 'newsletterFooterSuccessBody')).to.have.length(1);
+
+    const button = subject.findWhere(el => 'email-success-continue' === el.props()['id']);
+    expect(button).to.have.length(1);
+
+    subject.find('.modal-container').simulate('keyDown', mockEscapeKeyDownEvent);
     expect(onDismiss.called).to.be.true;
     expect(sendToGA.lastCall.args).to.deep.equal(['event', {
       eventCategory: 'HomePage Interactions',

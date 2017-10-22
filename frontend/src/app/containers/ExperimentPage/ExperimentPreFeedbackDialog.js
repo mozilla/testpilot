@@ -15,11 +15,19 @@ type ExperimentPreFeedbackDialogProps = {
 export default class ExperimentPreFeedbackDialog extends React.Component {
   props: ExperimentPreFeedbackDialogProps
 
+  modalContainer: Object
+
+  componentDidMount() {
+    this.modalContainer.focus();
+  }
+
   render() {
     const { experiment, surveyURL } = this.props;
 
     return (
-      <div className="modal-container">
+      <div className="modal-container" tabIndex="0"
+           ref={modalContainer => { this.modalContainer = modalContainer; }}
+           onKeyDown={e => this.handleKeyDown(e)}>
         <div className={classnames('modal', 'tour-modal')}>
           <header className="modal-header-wrapper">
             <Localized id="experimentPreFeedbackTitle" $title={experiment.title}>
@@ -66,5 +74,15 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
       eventLabel: 'cancel feedback'
     });
     this.props.onCancel(e);
+  }
+
+  handleKeyDown(e: Object) {
+    switch (e.key) {
+      case 'Escape':
+        this.cancel(e);
+        break;
+      default:
+        break;
+    }
   }
 }
