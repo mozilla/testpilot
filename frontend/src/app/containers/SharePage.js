@@ -54,11 +54,6 @@ export default class SharePage extends React.Component {
     );
   }
 
-  shareUrl(medium: string, urlencode: boolean) {
-    const url = `https://testpilot.firefox.com/?utm_source=${medium}&utm_medium=social&utm_campaign=share-page`;
-    return urlencode ? encodeURIComponent(url) : url;
-  }
-
   handleClick(label: string) {
     return () => this.props.sendToGA('event', {
       eventCategory: 'ShareView Interactions',
