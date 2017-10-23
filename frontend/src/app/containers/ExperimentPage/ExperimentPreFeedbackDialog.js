@@ -55,7 +55,7 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
     );
   }
 
-  feedback(e: Object, url: String) {
+  feedback(e: Object, url: string) {
     e.preventDefault();
 
     this.props.sendToGA('event', {
