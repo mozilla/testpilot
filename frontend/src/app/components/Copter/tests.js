@@ -1,11 +1,11 @@
+/* global describe, beforeEach, it */
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import Copter from '../../../src/app/components/Copter';
+import Copter from './index';
 
 describe('app/components/Copter', () => {
-  
   let props, subject;
   beforeEach(() => {
     props = {
