@@ -15,13 +15,24 @@ if (typeof navigator !== 'undefined') {
   mam = navigator.mozAddonManager;
 }
 
-function mozAddonManagerInstall(url) {
+function mozAddonManagerInstall(url, sendToGA) {
+  const start = url.indexOf('files/') + 6;
+  const end = url.indexOf('@');
+  const experimentTitle = url.substring(start, end);
   return mam.createInstall({ url }).then(install => {
-    return new Promise((resolve, reject) => {
-      install.addEventListener('onInstallEnded', () => resolve());
-      install.addEventListener('onDownloadFailed', () => reject());
-      install.addEventListener('onInstallFailed', () => reject());
-      install.install();
+    return install.install().then(() => {
+      sendToGA('event', {
+        eventCategory: 'ExperimentDetailsPage Interactions',
+        eventAction: 'Accept From Permission',
+        eventLabel: experimentTitle
+      });
+    }).catch((err) => {
+      sendToGA('event', {
+        eventCategory: 'ExperimentDetailsPage Interactions',
+        eventAction: 'Cancel From Permission',
+        eventLabel: experimentTitle
+      });
+      throw err;
     });
   });
 }
@@ -50,7 +61,7 @@ export function installAddon(
 
   cookies.set('first-run', 'true');
 
-  return mozAddonManagerInstall(downloadUrl).then(() => {
+  return mozAddonManagerInstall(downloadUrl, sendToGA).then(() => {
     gaEvent.dimension7 = RESTART_NEEDED ? 'restart required' : 'no restart';
     sendToGA('event', gaEvent);
     if (RESTART_NEEDED) {
@@ -187,7 +198,7 @@ export function setupAddonConnection(store) {
   });
 }
 
-export function enableExperiment(dispatch, experiment) {
+export function enableExperiment(dispatch, experiment, sendToGA) {
   if (!mam) {
     return;
   }
@@ -204,7 +215,7 @@ export function enableExperiment(dispatch, experiment) {
           // already enabled
           return Promise.resolve();
         }
-        return mozAddonManagerInstall(experiment.xpi_url);
+        return mozAddonManagerInstall(experiment.xpi_url, sendToGA);
       } // TODO error case
     )
     .then(
