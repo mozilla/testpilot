@@ -17,6 +17,8 @@ import ExperimentDisableDialog from './ExperimentDisableDialog';
 import ExperimentEolDialog from './ExperimentEolDialog';
 import ExperimentTourDialog from './ExperimentTourDialog';
 
+import { PRIVACY_SCROLL_OFFSET } from './DetailsHeader';
+
 describe('app/containers/ExperimentPage', () => {
   const mockExperiment = {
     slug: 'testing',
@@ -119,7 +121,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
       setPageTitleL10N: sinon.spy()
     };
 
-    subject = shallow(<ExperimentDetail {...props} />);
+    subject = mount(<ExperimentDetail {...props} />);
   });
 
   const setExperiment = experiment => {
@@ -386,7 +388,6 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
         const mountedSubject = mount(<ExperimentDetail {...mountedProps} />);
 
         expect(props.addScrollListener.called).to.be.true;
-        expect(mountedSubject.state('useStickyHeader')).to.be.false;
         expect(mountedSubject.find('.details-header-wrapper').hasClass('stick')).to.be.false;
 
         const scrollListener = props.addScrollListener.lastCall.args[0];
@@ -395,14 +396,12 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
 
         // HACK: scrollListner() has a setTimeout(..., 1) so let's wait longer.
         setTimeout(() => {
-          expect(mountedSubject.state('useStickyHeader')).to.be.true;
           expect(mountedSubject.find('.details-header-wrapper').hasClass('stick')).to.be.true;
 
           // Now, scroll back.
           scrollY = 10;
           scrollListener();
           setTimeout(() => {
-            expect(mountedSubject.state('useStickyHeader')).to.be.false;
             expect(mountedSubject.find('.details-header-wrapper').hasClass('stick')).to.be.false;
             expect(mountedSubject.find('.details-header-wrapper.stick'))
               .to.have.property('length', 0);
@@ -424,8 +423,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
 
         subject.find('.highlight-privacy').simulate('click', mockClickEvent);
         expect(props.setScrollY.lastCall.args[0]).to.equal(
-          elementY + (genericElementHeight - subject.state('privacyScrollOffset')));
-        expect(subject.state('useStickyHeader')).to.be.true;
+          elementY + (genericElementHeight - PRIVACY_SCROLL_OFFSET));
         expect(subject.state('highlightMeasurementPanel')).to.be.true;
 
         // TODO: 5 second delay is too much. Skip until/unless we mock setTimeout.
