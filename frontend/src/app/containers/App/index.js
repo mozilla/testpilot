@@ -252,7 +252,7 @@ const mapDispatchToProps = dispatch => ({
   navigateTo: path => {
     window.location = path;
   },
-  enableExperiment: experiment => enableExperiment(dispatch, experiment),
+  enableExperiment: experiment => enableExperiment(dispatch, experiment, sendToGA),
   disableExperiment: experiment => disableExperiment(dispatch, experiment),
   requireRestart: () => dispatch(addonActions.requireRestart()),
   setHasAddon: installed => dispatch(addonActions.setHasAddon(installed)),
