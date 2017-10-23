@@ -16,7 +16,6 @@ export default class ExperimentEolDialog extends React.Component {
 
   componentDidMount() {
     this.modalContainer.focus();
-    console.log(typeof this.modalContainer);
   }
 
   render() {
