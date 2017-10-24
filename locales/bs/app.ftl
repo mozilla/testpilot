@@ -241,21 +241,37 @@ retirePageSurveyButton = Ispunite kratku anketu
 restartIntroLead = Provjera prije polijetanja
 restartIntroOne = Ponovo pokrenite pretraživač
 restartIntroTwo = Locirajte Test Pilot dodatak
+restartIntroThree = Odaberite svoje eksperimente
 
 
 // Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
+sharePrimary = Dopada vam se Test Pilot? Pomozite nam da pronađemo nove regrute.
+shareSecondary = ili samo kopirajte i zalijepite ovaj link...
+shareEmail = E-pošta
+shareCopy = Kopiraj
+// Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } se završava { $completedDate }
+eolNoticeLink = Saznajte više
+eolDisableMessage = Eksperiment { $title } je završen. Ukoliko ga deinstalirate, nećete moći da ga ponovo instalirate putem Test Pilota.
+completedDateLabel = Datum kraja eksperimenta: <b>{ $completedDate }</b>
 
 
 // A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 [[ incompatible ]]
 
+incompatibleHeader = Ovaj eksperiment možda nije saglasan s dodacima koji su vam instalirani.
+incompatibleSubheader = Predlažemo <a>onemogućavanje ovih dodataka</a> prije aktiviranja ovog eksperimenta:
 
 
 // A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder
+    .placeholder = Vaša e-pošta ovdje
+newsletterFormDisclaimer = Mi ćemo vam slati informacije vezane samo za Test Pilot.
+newsletterFormPrivacyNotice = Prihvatam da Mozilla rukuje mojim podacima kako je objašnjeno u <a>obavještenju o privatnosti</a>.
 
 
 // A section of the footer containing a newsletter signup form.
