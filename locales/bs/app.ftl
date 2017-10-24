@@ -193,6 +193,13 @@ experimentGoToLink = Idite na { $title }
 startedDateLabel = Datum početka eksperimenta: <b>{ $startedDate }</b>
 
 
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+learnMoreLink = SAZNAJTE VIŠE
+
+
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 
@@ -210,16 +217,30 @@ experimentPlatformMobileApp = mobilni eksperiment
 
 upgradeNoticeTitle = { $title } zahtjeva Firefox { $min_release } ili noviji.
 upgradeNoticeLink = Kako ažurirati Firefox.
+versionChangeNotice = { $experiment_title } nije podržan u ovoj verziji Firefoxa.
+versionChangeNoticeLink = Preuzmite najnoviju verziju Firefoxa.
 
 
 // Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
+retireDialogTitle = Deinstaliraj Test Pilot?
+retireMessageUpdate = Kako želite. Ovo će ukloniti Test Pilot. Možete onemogućiti pojedinačne eksperimente iz Firefoxovog upravljača dodacima.
+retireEmailMessage = Da odustanete od obaviještenja putem e-pošte, kliknite na <em>ukini pretplatu</em> u bilo kojoj pošti Test Pilota.
+retireSubmitButton = Nastavi
+pageTitleRetirePage = Firefox Test Pilot - deinstaliraj Test Pilot
+retirePageProgressMessage = Gašenje...
+retirePageHeadline = Hvala vam na učešću!
+retirePageMessage = Nadamo se da ste se zabavili eksperimentišući sa nama. <br> Vratite se kad god poželite.
+retirePageSurveyButton = Ispunite kratku anketu
 
 
 // Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = Provjera prije polijetanja
+restartIntroOne = Ponovo pokrenite pretraživač
+restartIntroTwo = Locirajte Test Pilot dodatak
 
 
 // Shown on a page presented to users three days after installing their first experiment.
