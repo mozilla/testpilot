@@ -1,0 +1,2 @@
+activitystreamDescription = Bogat vizuelni izvor historije i poboljšana početna stranica više nego ikad olakšavaju nalaženje onoga što tražite u Firefoxu.
+activitystreamIntroduction = <p>Vratite se na pretraživanje bez gubljenja toka misli. Tok aktivnosti čuva vaše najposjećenije stranice, zabilješke ii skoriju historiju pri ruci u svakom novom tabu. A nova vremenska linija vam pruža ptičiju perspektivu na vaše pretraživanje.</p>

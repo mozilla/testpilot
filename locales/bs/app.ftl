@@ -328,3 +328,5 @@ warningHttpsRequiredTitle = HTTPS je potreban!
 warningHttpsRequiredDetail = Test Pilot-u se mora pristupiti preko HTTPS. Pogledajte <a>našu dokumentaciju</a> za više detalja.
 warningMissingPrefTitle = Razvijate Test Pilot?
 warningMissingPrefDetail = Kada pokrećete Test Pilot lokalno ili u razvojnim okruženjima, poseba konfiguracija je potrebna. Pogledajte <a>našu dokumentaciju</a> za više detalja.
+warningBadHostnameTitle = Neodobreno ime hosta!
+warningBadHostnameDetail = Test Pilot stranici se može pristupiti samo sa testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, ili example.com:8000. Pogledajte <a>našu dokumentaciju</a> za više detalja.
