@@ -272,33 +272,59 @@ newsletterFormEmailPlaceholder
     .placeholder = Vaša e-pošta ovdje
 newsletterFormDisclaimer = Mi ćemo vam slati informacije vezane samo za Test Pilot.
 newsletterFormPrivacyNotice = Prihvatam da Mozilla rukuje mojim podacima kako je objašnjeno u <a>obavještenju o privatnosti</a>.
+newsletterFormPrivacyAgreementRequired = Označite ovo polje ako želite da nastavite.
+newsletterFormSubmitButton = Registrujte se sada
+newsletterFormSubmitButtonSubmitting = Slanje...
 
 
 // A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterError = Došlo je do greške prilikom slanja vaše adrese e-pošte. Pokušajte ponovo?
+newsletterFooterHeader = Ostanite informisani
+newsletterFooterBody = Saznajte za nove eksperimente i pogledajte rezultate eksperimenata koje ste isprobali.
+newsletterFooterSuccessHeader = Hvala!
+newsletterFooterSuccessBody = Ukoliko niste prethodno potvrdili pretplatu na Mozilla bilten, možda ćete morati to da uradite. Provjerite vašu dolaznu poštu ili vašu neželjenu poštu.
 
 
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeNotTranslatedWarningTitle = Ovaj eksperiment nije preveden na vaš jezik ({ $locale_code }).
+localeWarningSubtitle = Možete ga ipak omogućiti ukoliko želite.
 
 
 // An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledHeader = Isprobajmo zajedno neke dodatke!
+experimentsListNoneInstalledSubheader = Jeste li spremni da isprobate novi Test Pilot eksperiment? Odaberite jedan da ga omogućite, isprobajte ga i kažite nam vaše mišljenje.
+experimentsListNoneInstalledCTA = Niste zainteresovani? <a>Recite nam zašto</a>.
 
 
 // Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
+noScriptHeading = Ups...
+noScriptMessage = Test Pilot zahtjeva JavaScript.<br>Žao nam je zbog toga.
+noScriptLink = Saznajte zašto
 
 
 // Text of a button to toggle visibility of a list of past experiments.
 [[ pastExperiments ]]
 
+viewPastExperiments = Prikaži prošle eksperimente
+hidePastExperiments = Sakrij prošle eksperimente
 
 
 // Text of warnings to the user if various error conditions are detected
 [[ warnings ]]
 
+warningGenericTitle = Nešto nije u redu!
+warningGenericDetail = Nešto nije u redu sa Test Pilot-om. Molimo vas da <a>prijavite grešku</a> i spomenite poruku ove greške.
+warningUpgradeFirefoxTitle = Nadogradite Firefox da nastavite!
+warningUpgradeFirefoxDetail = Test Pilot zahtjeva najnoviju verziju Firefoxa. <a>Nadogradite Firefox</a> da započnete.
+warningHttpsRequiredTitle = HTTPS je potreban!
+warningHttpsRequiredDetail = Test Pilot-u se mora pristupiti preko HTTPS. Pogledajte <a>našu dokumentaciju</a> za više detalja.
+warningMissingPrefTitle = Razvijate Test Pilot?
+warningMissingPrefDetail = Kada pokrećete Test Pilot lokalno ili u razvojnim okruženjima, poseba konfiguracija je potrebna. Pogledajte <a>našu dokumentaciju</a> za više detalja.
