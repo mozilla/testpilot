@@ -11,9 +11,6 @@ const del = require('del');
 const eslint = require('gulp-eslint');
 const runSequence = require('run-sequence');
 
-require('es6-promise').polyfill();
-require('isomorphic-fetch');
-
 require('./frontend/tasks/content');
 require('./frontend/tasks/scripts');
 require('./frontend/tasks/styles');

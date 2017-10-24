@@ -10,7 +10,7 @@
           "last 4 Edge versions"
         ]
       },
-      "useBuiltIns": "usage"
+      "useBuiltIns": true
     }],
     "stage-0",
     "react"

@@ -14,16 +14,13 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 const IS_DEV = NODE_ENV === 'development';
 
 const excludeVendorModules = [
-  'babel-polyfill',
   'fluent',
   'fluent-langneg',
   'fluent-react',
-  'cldr-core',
-  'core-js'
+  'cldr-core'
 ];
 
 const includeVendorModules = [
-  'babel-polyfill/browser',
   'fluent/compat',
   'fluent-langneg/compat',
   'fluent-react/compat',
@@ -75,7 +72,7 @@ if (RUN_ANALYZER) {
 module.exports = {
   entry: {
     'static/app/app.js': './frontend/src/app/index.js',
-    // 'static/app/vendor.js': vendorModules
+    'static/app/vendor.js': vendorModules
   },
   output: {
     path: path.resolve(__dirname, 'frontend/build'),
@@ -105,7 +102,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        // exclude: /node_modules/,
+        exclude: /node_modules/,
         use: 'babel-loader'
       },
       {

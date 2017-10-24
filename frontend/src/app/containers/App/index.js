@@ -1,4 +1,5 @@
 /* global ga */
+import 'babel-polyfill';
 import { MessageContext } from 'fluent/compat';
 import { negotiateLanguages } from 'fluent-langneg/compat';
 import { LocalizationProvider } from 'fluent-react/compat';
