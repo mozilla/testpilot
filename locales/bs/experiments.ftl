@@ -29,3 +29,7 @@ cliqzToursteps1Copy = Otvorite novi tab i dodajte vađe pmiljene stranice za pri
 cliqzToursteps2Copy = Uvijek nam možete poslati povratnu informaciju ili onemogućiti Cliqz iz Test Pilot-a.
 containersDescription = Kreirajte posebne kontejnere za svaki vaš internet život . poslovni, društveni, lični - kako biste se organizovali i čuvali privatnost.
 containersWarningFewerexperiments = Napomena: Zbog sigurnosnih svojstava kontejnera, Test Pilot eksperimenti kao što je Snooze Tabs možda neće raditi u tabovima kontejnera. Upamtite, ovo je eksperimentalna tehnologija!
+containersIntroduction = Kontejneri vam omogućavaju da kreirate profile u Firefoxu za sve vaše živote na meži. Prilagođene etikete i obojeni tabovi vam pomažu da različite aktivnosti — poput šopinga, planiranja putovanja ili provjeravanja poslovne e-pošte — odvojite. Kontejneri čuvaju kolačiće odvojeno, pa se možete prijaviti na istu stranicu sa različitim računom u svakom kontejneru i ragači ne mogu da povežu vaše pregledanje u jednom kontejneru s drugim. Tako možete vaš šoping identitet da odvojite od socijalnog ili poslovnog identiteta, bez brige da ste praćeni putem weba.
+containersDetails0Copy = Kontejneri wam omogućavaju da razdvojite različite dijelove vašeg života na internetu.
+containersDetails1Copy = Odaberite kategoriju kao što su šoping, finansije i posao ili kreirajte etiketu po vašoj želji.
+containersDetails2Copy = Koristite obojene oznake da vidite različite kontejnere na prvi pogled.
