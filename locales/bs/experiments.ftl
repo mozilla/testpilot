@@ -16,3 +16,5 @@ activitystreamContributors10Title = Menadžer inženjerstva
 activitystreamContributors11Title = Softverski inženjer
 activitystreamContributors12Title = Senior UX dizajner
 cliqzDescription = Dobijte rezultate pretrage brže.Cliqz prikazuje prijedloge odmah ispod URL trake dok kucate. Sve uz održavanje vaše privatnosti.
+cliqzIntroduction = Dobijte rezultate pretrage brže, direktno u pretraživaču. Počnite s kucanjem i vidite prijedloge iz čitavog weba u realnom vremenu, odmah ispod URL trake. I zbog roga što Cliqz izbjegava sakupljanje lično identičnih podataka i građenje profila ličnosti, vaši podaci su privatniji.
+cliqzPrivacypreamble = Cliqz Test Pilot eksperiment vam omogućava saradnja između Cliqz GmbH i Mozille. Cliqz je dizajniran da štiti privatnost i izbjegava sakupljanja osjetljivih informacija koje mogu biti iskorištene za stvaranje profila korisnika. Naravno, anonimizacija ovakvih podataka je teška, pa je ipak moguće identifikovanje određenih pojedinaca.
