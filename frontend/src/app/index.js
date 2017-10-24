@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import Raven from 'raven-js';
 import moment from 'moment';
 
