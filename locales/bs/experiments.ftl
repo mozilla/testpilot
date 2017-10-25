@@ -69,3 +69,5 @@ nomore404sContributors1Title = Programer, Wayback Machine, The Internet Archive
 nomore404sContributors2Title = Direktor, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Stariji inženjer popisivanja, The Internet Archive
 notesDescription = Jednostavan notes ugrađen u Firefox. Da li ste nekada željeli da nešto brzo zabilježite dok ste pretraživali internet? Ovaj eksperiment je za vas.
+notesIntroduction = Notes dodaje jednostavan, jednostranični blok za bilješke u vašu bočnu paletu. Dodali smo nekoliko osnovnih opcija formatiranja za početak, ali bismo željeli da dobijemo povratne informacije od vas i da nam kažete koje mogućnosti bi voljeli da imate.
+notesMeasurements0 = Notes će prikupljati podatke o vašem korištenju mogućnosti, kao što je to koliko često pravite nove bilješke i koliko dugo provodite uređujući ih, broj karaktera koji sačuvate u vašim bilješkama i da li ste koristili neku mogućnost uređivanja (podebljanje slova, i sl.).
