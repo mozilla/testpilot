@@ -68,3 +68,4 @@ nomore404sDetails1Copy = Omogućili naši prijatelji iz Internet Archive.
 nomore404sContributors1Title = Programer, Wayback Machine, The Internet Archive
 nomore404sContributors2Title = Direktor, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Stariji inženjer popisivanja, The Internet Archive
+notesDescription = Jednostavan notes ugrađen u Firefox. Da li ste nekada željeli da nešto brzo zabilježite dok ste pretraživali internet? Ovaj eksperiment je za vas.
