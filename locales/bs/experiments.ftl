@@ -94,3 +94,7 @@ pageshotContributors1Title = Softverski inženjer
 pageshotContributors2Title = UX dizajner
 pulseDescription = Dajte nam ocjenu kvaliteta. Dodajte Pulse i pomozite nam da razumijemo koje stranice rade dobro u Firefoxu, a koje ne.
 pulseIntroduction = Gradićemo sljedeću generaciju Firefoxa i fokusirani smo na brzinu i performanse u stvarnom svijetu. Pulse vam omogućava da našim inženjerima pošaljete povratnu informaciju o vašem iskustvu sa stranicama koje rade dobro u Firefoxu i stranicama koje ne rade.
+pulseDetails0Copy = Pošaljite povratnu informaciju o performansama stranice dok pretražujete.
+pulseDetails1Copy = Pulse vas može upitati da popunite kratku anketu o vašem iskustvu na nekoj stranici.
+pulseContributors0Title = Senior inženjer
+pulseContributors1Title = Firefox UX
