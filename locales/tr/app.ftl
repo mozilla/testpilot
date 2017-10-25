@@ -185,10 +185,19 @@ tourOnboardingTitle = { $title } etkinleştirildi!
 tourDoneButton = Bitti
 userCountContainerAlt = Yeni çıktı!
 highlightPrivacy = Gizliliğiniz
+experimentGradReportButton = Mezuniyet raporu
 experimentGradReportPendingTitle = Deney sona erdi
 experimentGradReportPendingCopy = Kapsamlı bir rapor üzerinde çalışıyoruz. Ayrıntıları öğrenmek için yakında tekrar bakın.
+experimentGradReportReady = Kapsamlı bir mezuniyet raporu hazırladık.
 experimentGoToLink = { $title } deneyine git
 startedDateLabel = Denet başlangıç tarihi:  <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilotu
+learnMoreLink = DAHA FAZLA BİLGİ AL
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -281,7 +290,7 @@ newsletterFooterSuccessBody = Daha önce Mozilla ile ilgili bir bültene aboneli
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Bu deney sizin dilinizde ({ $locale_code }) desteklenmiyor.
+localeNotTranslatedWarningTitle = Bu deney sizin dilinize ({ $locale_code }) çevrilmemiş.
 localeWarningSubtitle = İsterseniz yine de etkinleştirebilirsiniz.
 
 
