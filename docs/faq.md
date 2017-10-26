@@ -49,4 +49,31 @@ Test Pilot uses GA event tracking to measure certain interactions within experim
 
 If you're uncomfortable with submitting data to GA, all of our experiments respect the Do Not Track flag in `about:preferences`.
 
+## What browsers are supported by Test Pilot? 
+
+While you can only install Test Pilot on Firefox, the site should render and work correctly in the following Contexts.
+
+| Browser            | Support                              | Current | Issue |
+|--------------------|--------------------------------------|---------|-------|
+| Firefox            | Release, Release - 1, Beta, Nightly* | Green   |       |
+| Chrome             | Current Release                      | Green   |       |
+| Edge               | Current Release                      | Green   |       |
+| Safari             | Current Release                      | Green   |       |
+| Firefox iOS        | Current Release                      | Red     | [#2642](https://github.com/mozilla/testpilot/issues/2642) |
+| Fennec             | Current Release                      | Green   |       |
+| Chrome iOS         | Current Release                      | Green   |       |
+| Safari iOS         | Current Release                      | Green   |       |
+| Chrome for Android | Current Release                      | Green   |       |
+| Focus iOS          | Current Release                      | Green   |       |
+| Focus Android      | Current Release                      | Green   |       |
+| IE                 | Not Supported                        |   ✌️     |       |
+
+*Firefox Nightly may have bugs that are beyond our ability to support on any given day.
+
+## Why not support ESR 52?
+
+Firefox underwent some pretty radical changes for Firefox 57 that make supporting ESR 52 untenable for Test Pilot. We will revisit ESR support in 2018 when ESR is updated to Firefox 59.
+
+
+
 
