@@ -112,8 +112,7 @@ describe('app/components/ExperimentRowCard', () => {
     expect(subject.find('.just-launched-tab')).to.have.property('length', 0);
 
     subject.setProps({
-      enabled: false,
-      getExperimentLastSeen: sinon.spy(() => moment().valueOf())
+      enabled: true
     });
 
     expect(props.getExperimentLastSeen.called).to.be.true;
