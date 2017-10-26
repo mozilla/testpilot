@@ -268,3 +268,6 @@ warningMissingPrefDetail=When running Test Pilot locally or in development envir
 warningBadHostnameTitle=Unapproved hostname!
 warningBadHostnameDetail=The Test Pilot site may only be accessed from testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, or example.com:8000. Please see <a>our documentation</a> for details.
 
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot requires JavaScript. Sorry about that.
+
