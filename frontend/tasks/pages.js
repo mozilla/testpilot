@@ -241,7 +241,6 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
         </div>
       </div>
     </noscript>
-    { prepareForClient ? <script src="/static/app/vendor.js"></script> : null }
   </div>;
 
   return makeStaticString(prepareForClient, pageName, pageParam, headComponent, bodyComponent, component);

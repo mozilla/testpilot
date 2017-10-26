@@ -3,11 +3,10 @@
     ["env", {
       "targets": {
         "browsers": [
-          "Chrome >= 52",
-          "FireFox >= 51",
-          "Safari >= 7",
-          "Explorer 11",
-          "last 4 Edge versions"
+          "last 2 Chrome versions",
+          "last 2 FireFox versions",
+          "last 2 Safari versions",
+          "last 2 Edge versions"
         ]
       },
       "useBuiltIns": true
