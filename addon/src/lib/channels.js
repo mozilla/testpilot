@@ -28,6 +28,9 @@ export async function startupChannels() {
   registerWebExtensionAPI('openChannel', ({ addonId, topic }) =>
     openChannel(addonId, topic)
   );
+  registerWebExtensionAPI('closeChannel', ({ addonId, topic }) =>
+    closeChannel(addonId, topic)
+  );
 }
 
 export async function shutdownChannels() {

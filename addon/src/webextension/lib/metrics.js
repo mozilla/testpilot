@@ -8,7 +8,7 @@ import PubSub from 'pubsub-js';
 
 import allTopics from '../../lib/topics';
 import { submitMainPing, sendPingCentreEvent } from '../../lib/pings';
-import { log, debug } from './utils';
+import { log } from './utils';
 import { getResources } from './environments';
 import { sendBootstrapMessage } from './bootstrap';
 
@@ -41,6 +41,22 @@ export async function setupMetrics() {
   // Refresh available add-ons list whenever AddonManager does stuff
   PubSub.subscribe(bootstrapTopics('addonManager'), fetchAvailableAddons);
 
+  // Open webextension metrics channel on install
+  PubSub.subscribe(bootstrapTopics('addonManager', 'installed'), (_, { addon }) => {
+    sendBootstrapMessage('openChannel', {
+      addonId: addon.id,
+      topic: 'testpilot-telemetry'
+    });
+  });
+
+  // Close webextension metrics channel on uninstall
+  PubSub.subscribe(bootstrapTopics('addonManager', 'uninstalled'), (_, { addon }) => {
+    sendBootstrapMessage('closeChannel', {
+      addonId: addon.id,
+      topic: 'testpilot-telemetry'
+    });
+  });
+
   // Set up daily idle ping with number of enabled experiments
   PubSub.subscribe(eventsTopics('idle-daily'), submitDailyPing);
 
@@ -54,15 +70,6 @@ export async function setupMetrics() {
       });
     });
   });
-
-  if (debug) {
-    // HACK: open a channel for pings from the webextension in docs/examples
-    // because it will never be listed as an experiment
-    sendBootstrapMessage('openChannel', {
-      addonId: 'testpilotexample1@mozilla.org',
-      topic: 'testpilot-telemetry'
-    });
-  }
 
   // Handle telemetry pings from WebExtensions
   PubSub.subscribe(channelsTopics('testpilot-telemetry'), (message, data) =>
