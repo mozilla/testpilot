@@ -172,9 +172,9 @@ measurements = Waša priwatnosć
 experimentPrivacyNotice = Móžeće tu wjace wo zběranju datow za { $title } zhonić.
 contributorsHeading = Prezentowany wot
 contributorsExtraLearnMore = Dalše informacije
-changelog = protokol změnow
+changelog = Protokol změnow
 tour = Tura
-tourLink = tura
+tourLink = Tura
 contribute = Sobu skutkować
 bugReports = Rozprawy wo programowych zmylkach
 discussExperiment = Wo { $title } diskutować
@@ -188,6 +188,13 @@ experimentGradReportPendingCopy = Dźěłamy na wobšěrnej rozprawje. Hladajće
 experimentGradReportReady = Smy dospołnu kónčnu rozprawo přihotowali.
 experimentGoToLink = K { $title }
 startedDateLabel = Spočatny datum eksperimenta: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+learnMoreLink = DALŠE INFORMACIJE
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site

@@ -193,6 +193,13 @@ experimentGoToLink = Tib'an b'enam pa { $title }
 startedDateLabel = Rutikirib'al Q'ij Solna'oj: <b>{ $startedDate }</b>
 
 
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+learnMoreLink = TETAMÄX CH'AQA' CHIK
+
+
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 

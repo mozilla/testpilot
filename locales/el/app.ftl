@@ -185,6 +185,7 @@ tourOnboardingTitle = Το { $title } ενεργοποιήθηκε!
 tourDoneButton = Τέλος
 userCountContainerAlt = Μόλις ξεκίνησε!
 highlightPrivacy = Το απόρρητό σας
+experimentGradReportButton = Αναφορά αποφοίτησης
 experimentGradReportPendingTitle = Αυτό το πείραμα έχει λήξει
 experimentGradReportPendingCopy = Εργαζόμαστε πάνω σε μια πλήρη αναφορά. Ελέγξτε ξανά σύντομα για λεπτομέρειες.
 experimentGoToLink = Μετάβαση στο { $title }
@@ -280,7 +281,6 @@ newsletterFooterSuccessBody = Αν δεν έχετε επιβεβαιώσει π
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Αυτό το πείραμα δεν υποστηρίζεται στη γλώσσα σας: ({ $locale_code }).
 localeWarningSubtitle = Μπορείτε ακόμη να το ενεργοποιήσετε αν θέλετε.
 
 

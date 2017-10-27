@@ -193,6 +193,13 @@ experimentGoToLink = Ir a { $title }
 startedDateLabel = Fecha de inicio del experimento <b>{ $startedDate }</b>
 
 
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+learnMoreLink = SABER MÁS
+
+
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 

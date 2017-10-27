@@ -175,9 +175,9 @@ measurements = Magánszféra
 experimentPrivacyNotice = Itt többet tudhat meg a(z) { $title } adatgyűjtéséről.
 contributorsHeading = Nekik köszönhetően:
 contributorsExtraLearnMore = Tudjon meg többet
-changelog = változások listája
+changelog = Változások listája
 tour = Kalauz
-tourLink = kalauz
+tourLink = Kalauz indítása
 contribute = Közreműködés
 bugReports = Hibajelentések
 discussExperiment = A(z) { $title } megvitatása
@@ -191,6 +191,13 @@ experimentGradReportPendingCopy = A teljes jelentésen dolgozunk. Nézzen vissza
 experimentGradReportReady = Egy teljes zárójelentést készítettünk.
 experimentGoToLink = Ugrás ide: { $title }
 startedDateLabel = Kísérlet kezdő dátuma: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Tesztpilóta
+learnMoreLink = TOVÁBBI INFORMÁCIÓK
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
