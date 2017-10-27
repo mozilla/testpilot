@@ -17,6 +17,12 @@ type ExperimentDisableDialogProps = {
 export default class ExperimentDisableDialog extends React.Component {
   props: ExperimentDisableDialogProps
 
+  modalContainer: Object
+
+  componentDidMount() {
+    this.modalContainer.focus();
+  }
+
   render() {
     const { experiment, installed, clientUUID } = this.props;
     const { title, survey_url } = experiment;
@@ -24,7 +30,9 @@ export default class ExperimentDisableDialog extends React.Component {
     const surveyURL = buildSurveyURL('disable', title, installed, clientUUID, survey_url);
 
     return (
-      <div className="modal-container">
+      <div className="modal-container" tabIndex="0"
+           ref={modalContainer => { this.modalContainer = modalContainer; }}
+           onKeyDown={e => this.handleKeyDown(e)}>
         <div id="disabled-feedback-modal" className="modal feedback-modal modal-bounce-in">
           <header className="modal-header-wrapper">
             <Localized id="feedbackUninstallTitle" $title={ experiment.title }>
@@ -68,5 +76,27 @@ export default class ExperimentDisableDialog extends React.Component {
   cancel(e: Object) {
     e.preventDefault();
     this.props.onCancel(e);
+  }
+
+  handleKeyDown(e: Object) {
+    switch (e.key) {
+      case 'Escape':
+        this.cancel(e);
+        break;
+      case 'Enter': {
+        this.submit(e);
+
+        const { experiment, installed, clientUUID } = this.props;
+        const { title, survey_url } = experiment;
+        const surveyURL = buildSurveyURL('disable', title, installed, clientUUID, survey_url);
+
+        const newWindow = window.open();
+        newWindow.opener = null;
+        newWindow.location = surveyURL;
+        break;
+      }
+      default:
+        break;
+    }
   }
 }

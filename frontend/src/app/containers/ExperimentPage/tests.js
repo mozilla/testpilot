@@ -620,13 +620,26 @@ describe('app/containers/ExperimentPage/ExperimentDisableDialog', () => {
   const installed = { ex1: true, ex2: true };
   const clientUUID = '38c51b84-9586-499f-ac52-94626e2b29cf';
 
-  let onSubmit, onCancel, sendToGA, preventDefault, mockClickEvent, subject;
+  let onSubmit, onCancel, sendToGA, preventDefault, mockClickEvent, subject,
+    mockEscapeKeyDownEvent, mockEnterKeyDownEvent, mockNewWindowOpened;
   beforeEach(() => {
+    mockNewWindowOpened = { location: '', opener: {} };
+    global.window = { open: () => mockNewWindowOpened };
+    sinon.spy(global.window, 'open');
+
     onSubmit = sinon.spy();
     onCancel = sinon.spy();
     sendToGA = sinon.spy();
     preventDefault = sinon.spy();
     mockClickEvent = { preventDefault };
+    mockEscapeKeyDownEvent = {
+      preventDefault,
+      key: 'Escape'
+    };
+    mockEnterKeyDownEvent = {
+      preventDefault,
+      key: 'Enter'
+    };
     subject = shallow(
       <ExperimentDisableDialog
         experiment={experiment} installed={installed}
@@ -647,6 +660,12 @@ describe('app/containers/ExperimentPage/ExperimentDisableDialog', () => {
     expect(preventDefault.called).to.be.true;
   });
 
+  it('should call onCancel when the <Escape> key is pressed', () => {
+    subject.find('.modal-container').simulate('keyDown', mockEscapeKeyDownEvent);
+    expect(onCancel.called).to.be.true;
+    expect(preventDefault.called).to.be.true;
+  });
+
   it('should launch a survey when submit button clicked', () => {
     const submitLink = subject.find('.modal-actions a.submit');
     const expectedHref = 'https://example.com?ref=disable&experiment=foobar&cid=38c51b84-9586-499f-ac52-94626e2b29cf&installed=ex1&installed=ex2';
@@ -662,10 +681,28 @@ describe('app/containers/ExperimentPage/ExperimentDisableDialog', () => {
       eventLabel: 'exit survey disabled'
     }]);
   });
+
+  it('should launch a survey when the <Enter> key is pressed', () => {
+    subject.find('.modal-container').simulate('keyDown', mockEnterKeyDownEvent);
+
+    expect(global.window.open.calledOnce).to.be.true;
+    const expectedHref = 'https://example.com?ref=disable&experiment=foobar&cid=38c51b84-9586-499f-ac52-94626e2b29cf&installed=ex1&installed=ex2';
+    expect(mockNewWindowOpened.location).to.equal(expectedHref);
+    expect(mockNewWindowOpened.opener).to.be.null;
+
+    expect(onSubmit.called).to.be.true;
+    expect(preventDefault.called).to.be.false;
+    expect(sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'exit survey disabled'
+    }]);
+  });
 });
 
 describe('app/containers/ExperimentPage/ExperimentEolDialog', () => {
-  let props, mockClickEvent, subject;
+  let props, mockClickEvent, subject,
+    mockEscapeKeyDownEvent, mockEnterKeyDownEvent;
   beforeEach(() => {
     props = {
       onSubmit: sinon.spy(),
@@ -673,6 +710,14 @@ describe('app/containers/ExperimentPage/ExperimentEolDialog', () => {
     };
     mockClickEvent = {
       preventDefault: sinon.spy()
+    };
+    mockEscapeKeyDownEvent = {
+      preventDefault: sinon.spy(),
+      key: 'Escape'
+    };
+    mockEnterKeyDownEvent = {
+      preventDefault: sinon.spy(),
+      key: 'Enter'
     };
     subject = shallow(<ExperimentEolDialog {...props} />);
   });
@@ -686,9 +731,19 @@ describe('app/containers/ExperimentPage/ExperimentEolDialog', () => {
     expect(props.onCancel.called).to.be.true;
   });
 
+  it('should call onCancel when the <Escape> button is pressed', () => {
+    subject.find('.modal-container').simulate('keyDown', mockEscapeKeyDownEvent);
+    expect(props.onCancel.called).to.be.true;
+  });
+
   it('calls onSubmit when the disable button is clicked', () => {
     findLocalizedById(subject, 'disableExperiment').find('button')
       .simulate('click', mockClickEvent);
+    expect(props.onSubmit.called).to.be.true;
+  });
+
+  it('should call onSubmit when the <Enter> key is pressed', () => {
+    subject.find('.modal-container').simulate('keyDown', mockEnterKeyDownEvent);
     expect(props.onSubmit.called).to.be.true;
   });
 });
@@ -702,13 +757,27 @@ describe('app/containers/ExperimentPage/ExperimentPreFeedbackDialog', () => {
   };
   const surveyURL = experiment.survey_url;
 
-  let sendToGA, onCancel, preventDefault, getAttribute, mockClickEvent, subject;
+  let sendToGA, onCancel, preventDefault, getAttribute, subject,
+    mockClickEvent, mockEscapeKeyDownEvent, mockEnterKeyDownEvent, mockNewWindowOpened;
   beforeEach(() => {
+    mockNewWindowOpened = { location: '', opener: {} };
+    global.window = { open: () => mockNewWindowOpened };
+    sinon.spy(global.window, 'open');
+
     sendToGA = sinon.spy();
     onCancel = sinon.spy();
     preventDefault = sinon.spy();
     getAttribute = sinon.spy(() => surveyURL);
     mockClickEvent = { preventDefault, target: { getAttribute } };
+    mockEscapeKeyDownEvent = {
+      preventDefault,
+      key: 'Escape'
+    };
+    mockEnterKeyDownEvent = {
+      preventDefault,
+      target: { getAttribute },
+      key: 'Enter'
+    };
     subject = shallow(
       <ExperimentPreFeedbackDialog experiment={experiment} surveyURL={surveyURL}
                                    onCancel={onCancel} sendToGA={sendToGA} />
@@ -738,6 +807,16 @@ describe('app/containers/ExperimentPage/ExperimentPreFeedbackDialog', () => {
     }]);
   });
 
+  it('should call onCancel when the <Escape> key is pressed', () => {
+    subject.find('.modal-container').simulate('keyDown', mockEscapeKeyDownEvent);
+    expect(onCancel.called).to.be.true;
+    expect(sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'cancel feedback'
+    }]);
+  });
+
   it('should launch feedback on feedback button click', () => {
     subject.find('.tour-text a').simulate('click', mockClickEvent);
     expect(onCancel.called).to.be.false;
@@ -749,12 +828,42 @@ describe('app/containers/ExperimentPage/ExperimentPreFeedbackDialog', () => {
       outboundURL: surveyURL
     }]);
   });
+
+  it('should launch feedback on <Enter> key pressed', () => {
+    subject.find('.modal-container').simulate('keyDown', mockEnterKeyDownEvent);
+    expect(global.window.open.calledOnce).to.be.true;
+    expect(onCancel.called).to.be.false;
+    expect(sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'PreFeedback Confirm',
+      eventLabel: 'foobar',
+      outboundURL: surveyURL
+    }]);
+  });
 });
 
 describe('app/containers/ExperimentPage/ExperimentTourDialog', () => {
-  let props, mockClickEvent, subject;
+  let props, mockClickEvent, subject,
+    mockEscapeKeyDownEvent, mockEnterKeyDownEvent,
+    mockArrowLeftKeyDownEvent, mockArrowRightKeyDownEvent;
   beforeEach(() => {
     mockClickEvent = { preventDefault: sinon.spy() };
+    mockEscapeKeyDownEvent = {
+      preventDefault: sinon.spy(),
+      key: 'Escape'
+    };
+    mockArrowLeftKeyDownEvent = {
+      preventDefault: sinon.spy(),
+      key: 'ArrowLeft'
+    };
+    mockArrowRightKeyDownEvent = {
+      preventDefault: sinon.spy(),
+      key: 'ArrowRight'
+    };
+    mockEnterKeyDownEvent = {
+      preventDefault: sinon.spy(),
+      key: 'Enter'
+    };
 
     props = {
       experiment: {
@@ -824,12 +933,52 @@ describe('app/containers/ExperimentPage/ExperimentTourDialog', () => {
     }]);
   });
 
+  it('should advance one step and ping GA when the <ArrowRight> key is pressed', () => {
+    subject.find('.modal-container').simulate('keyDown', mockArrowRightKeyDownEvent);
+
+    const expectedTourStep = props.experiment.tour_steps[1];
+    expect(subject.find('.tour-image > img').prop('src'))
+      .to.equal(expectedTourStep.image);
+    expect(subject.find('.tour-text').html())
+      .to.include(expectedTourStep.copy);
+
+    expect(subject.state('currentStep')).to.equal(1);
+
+    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'forward to step 1'
+    }]);
+  });
+
   it('should rewind one step and ping GA when the back button is clicked', () => {
     expect(subject.find('.tour-back').hasClass('hidden')).to.be.true;
     subject.setState({ currentStep: 1 });
     expect(subject.find('.tour-back').hasClass('hidden')).to.be.false;
 
     subject.find('.tour-back').simulate('click', mockClickEvent);
+
+    const expectedTourStep = props.experiment.tour_steps[0];
+    expect(subject.find('.tour-image > img').prop('src'))
+      .to.equal(expectedTourStep.image);
+    expect(subject.find('.tour-text').html())
+      .to.include(expectedTourStep.copy);
+
+    expect(subject.state('currentStep')).to.equal(0);
+
+    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'back to step 0'
+    }]);
+  });
+
+  it('should rewind one step and ping GA when the <ArrowLeft> key is pressed', () => {
+    expect(subject.find('.tour-back').hasClass('hidden')).to.be.true;
+    subject.setState({ currentStep: 1 });
+    expect(subject.find('.tour-back').hasClass('hidden')).to.be.false;
+
+    subject.find('.modal-container').simulate('keyDown', mockArrowLeftKeyDownEvent);
 
     const expectedTourStep = props.experiment.tour_steps[0];
     expect(subject.find('.tour-image > img').prop('src'))
@@ -876,6 +1025,18 @@ describe('app/containers/ExperimentPage/ExperimentTourDialog', () => {
     }]);
   });
 
+  it('should ping GA and call onCancel when the <Escape> key is pressed', () => {
+    subject.find('.modal-container').simulate('keyDown', mockEscapeKeyDownEvent);
+
+    expect(props.onCancel.called).to.be.true;
+
+    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'cancel tour'
+    }]);
+  });
+
   it('should ping GA and call onComplete when done button clicked', () => {
     expect(subject.find('.tour-next').hasClass('no-display')).to.be.false;
     expect(subject.find('.tour-done').hasClass('no-display')).to.be.true;
@@ -884,6 +1045,24 @@ describe('app/containers/ExperimentPage/ExperimentTourDialog', () => {
     expect(subject.find('.tour-done').hasClass('no-display')).to.be.false;
 
     subject.find('.tour-done').simulate('click', mockClickEvent);
+
+    expect(props.onComplete.called).to.be.true;
+
+    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'complete tour'
+    }]);
+  });
+
+  it('should ping GA and call onComplete when the <Enter> key is pressed', () => {
+    expect(subject.find('.tour-next').hasClass('no-display')).to.be.false;
+    expect(subject.find('.tour-done').hasClass('no-display')).to.be.true;
+    subject.setState({ currentStep: 2 });
+    expect(subject.find('.tour-next').hasClass('no-display')).to.be.true;
+    expect(subject.find('.tour-done').hasClass('no-display')).to.be.false;
+
+    subject.find('.modal-container').simulate('keyDown', mockEnterKeyDownEvent);
 
     expect(props.onComplete.called).to.be.true;
 

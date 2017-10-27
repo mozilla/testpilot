@@ -15,11 +15,19 @@ type ExperimentPreFeedbackDialogProps = {
 export default class ExperimentPreFeedbackDialog extends React.Component {
   props: ExperimentPreFeedbackDialogProps
 
+  modalContainer: Object
+
+  componentDidMount() {
+    this.modalContainer.focus();
+  }
+
   render() {
     const { experiment, surveyURL } = this.props;
 
     return (
-      <div className="modal-container">
+      <div className="modal-container" tabIndex="0"
+           ref={modalContainer => { this.modalContainer = modalContainer; }}
+           onKeyDown={e => this.handleKeyDown(e)}>
         <div className={classnames('modal', 'tour-modal')}>
           <header className="modal-header-wrapper">
             <Localized id="experimentPreFeedbackTitle" $title={experiment.title}>
@@ -37,7 +45,7 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
               </div>
               <div className="tour-text">
                 <Localized id="experimentPreFeedbackLinkCopy" $title={experiment.title}>
-                  <a onClick={e => this.feedback(e)}
+                  <a onClick={e => this.feedback(e, e.target.getAttribute('href'))}
                      href={surveyURL}>Give feedback about the {experiment.title} experiment</a>
                 </Localized>
               </div>
@@ -47,14 +55,14 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
     );
   }
 
-  feedback(e: Object) {
+  feedback(e: Object, url: string) {
     e.preventDefault();
 
     this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'PreFeedback Confirm',
       eventLabel: this.props.experiment.title,
-      outboundURL: e.target.getAttribute('href')
+      outboundURL: url
     });
   }
 
@@ -66,5 +74,24 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
       eventLabel: 'cancel feedback'
     });
     this.props.onCancel(e);
+  }
+
+  handleKeyDown(e: Object) {
+    switch (e.key) {
+      case 'Escape':
+        this.cancel(e);
+        break;
+      case 'Enter': {
+        const { surveyURL } = this.props;
+        this.feedback(e, surveyURL);
+
+        const newWindow = window.open();
+        newWindow.opener = null;
+        newWindow.location = surveyURL;
+        break;
+      }
+      default:
+        break;
+    }
   }
 }

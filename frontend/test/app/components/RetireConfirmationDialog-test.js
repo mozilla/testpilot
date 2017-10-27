@@ -7,7 +7,8 @@ import { findLocalizedById } from '../util';
 import RetireConfirmationDialog from '../../../src/app/components/RetireConfirmationDialog';
 
 describe('app/components/RetireConfirmationDialog', () => {
-  let props, mockClickEvent, subject;
+  let props, mockClickEvent, subject,
+    mockEscapeKeyDownEvent, mockEnterKeyDownEvent;
   beforeEach(function() {
     props = {
       uninstallAddon: sinon.spy(),
@@ -17,6 +18,14 @@ describe('app/components/RetireConfirmationDialog', () => {
     };
     mockClickEvent = {
       preventDefault: sinon.spy()
+    };
+    mockEscapeKeyDownEvent = {
+      preventDefault: sinon.spy(),
+      key: 'Escape'
+    };
+    mockEnterKeyDownEvent = {
+      preventDefault: sinon.spy(),
+      key: 'Enter'
     };
     subject = shallow(<RetireConfirmationDialog {...props} />);
   });
@@ -30,8 +39,25 @@ describe('app/components/RetireConfirmationDialog', () => {
     expect(props.onDismiss.called).to.be.true;
   });
 
+  it('should call onDismiss when the <Escape> key is pressed', () => {
+    subject.find('.modal-container').simulate('keyDown', mockEscapeKeyDownEvent);
+    expect(props.onDismiss.called).to.be.true;
+  });
+
   it('should uninstall the addon and ping GA when the proceed button is clicked', () => {
     findLocalizedById(subject, 'retireSubmitButton').find('button').simulate('click', mockClickEvent);
+    expect(props.uninstallAddon.called).to.be.true;
+    expect(props.navigateTo.called).to.be.true;
+    expect(props.navigateTo.lastCall.args[0]).to.equal('/retire');
+    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'HomePage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'Retire'
+    }]);
+  });
+
+  it('should uninstall the addon and ping GA when the <Enter> key is pressed', () => {
+    subject.find('.modal-container').simulate('keyDown', mockEnterKeyDownEvent);
     expect(props.uninstallAddon.called).to.be.true;
     expect(props.navigateTo.called).to.be.true;
     expect(props.navigateTo.lastCall.args[0]).to.equal('/retire');
