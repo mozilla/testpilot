@@ -182,10 +182,19 @@ tourOnboardingTitle = { $title } فعال شد!
 tourDoneButton = انجام شد
 userCountContainerAlt = هم‌اکنون منتشر شد!
 highlightPrivacy = حریم‌خصوصی شما
+experimentGradReportButton = گزارش اتمام کار
 experimentGradReportPendingTitle = این آزمایش به پایان رسیده است
 experimentGradReportPendingCopy = ما در حال کار بر روی یک گزارش کامل هستیم. دوباره برگردید برای جزئیات
+experimentGradReportReady = ما یک گزارش اتمام کار خیلی کامل آماده کرده ایم.
 experimentGoToLink = برو به { $title }
 startedDateLabel = شروع تاریخ آزمایش:  <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = خلبان آزمایشی
+learnMoreLink = بیشتر بدانید
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -213,7 +222,7 @@ versionChangeNoticeLink = نسخه کنونی فایرفاکس را دریافت
 [[ uninstall ]]
 
 retireDialogTitle = حذف خلبان آزمایشی؟
-retireMessage = هر جور دوست دارید. این همه تست‌های فعال را غیرفعال خواهد کرد، افزودنی را حذف و اطلاعات حساب شما را از روی سرورهای ما حذف خواهد کرد.
+retireMessageUpdate = همانطور که میخواستید. این خلبان آزمایشی را پاک می‌کند. شما می‌توانید تک تک آزمایشات را از بخش مدیریت افزونه فایرفاکس غیرفعال کنید.
 retireEmailMessage = برای لغو اشتراک از رایانامه‌ها، به سادگی بر روی پیوند <em>لغو اشتراک</em> در هر کدام از رایانامه‌های خلبان آزمایشی کلیک کنید.
 retireSubmitButton = ادامه
 pageTitleRetirePage = خلبان آزمایشی فایرفاکس - حذف خلبان آزمایشی
@@ -278,7 +287,6 @@ newsletterFooterSuccessBody = اگر شما قبلا مشترک یکی از خب
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = این آزمایش به زبان شما پشتیبانی نمی‌شود ({ $locale_code }).
 localeWarningSubtitle = اگر تمایل دارید، هنوز می‌توانید فعالش کنید.
 
 
