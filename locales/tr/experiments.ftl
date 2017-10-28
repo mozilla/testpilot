@@ -105,6 +105,7 @@ universalsearchContributors0Title = Ürün Müdürü
 universalsearchContributors1Title = Kıdemli UX Tasarımcısı
 universalsearchContributors2Title = Kadrolu Mühendis
 universalsearchContributors3Title = Kıdemli Mühendis
+voicefillDetails0Copy = Yahoo, DuckDuckGo ve Google'da mikrofon simgesine bakın.
 voicefillContributors0Title = Konuşma Mühendisi
 voicefillContributors1Title = Konuşma Mühendisi
 voicefillContributors2Title = Görsel Tasarımcı
