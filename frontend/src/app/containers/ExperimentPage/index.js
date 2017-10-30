@@ -215,6 +215,10 @@ export class ExperimentDetail extends React.Component {
       statusType = 'enabled';
     }
 
+    const privacy = (<Localized id="experimentMeasurementIntroPrivacyLink">
+                       <a target="_blank" rel="noopener noreferrer" href="/privacy"/>
+                     </Localized>);
+
     return (
       <section id="experiment-page">
 
@@ -374,9 +378,9 @@ export class ExperimentDetail extends React.Component {
                               <p>{privacy_preamble}</p>
                             </Localized>}
                             <LocalizedHtml id="experimentMeasurementIntro"
-                              $experimentTitle={experiment.title}>
+                              $experimentTitle={experiment.title} $privacy={privacy}>
                               <p>
-                                In addition to the <a href="/privacy">data</a> collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use {experiment.title}:
+                                In addition to the {privacy} collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use {experiment.title}:
                               </p>
                             </LocalizedHtml>
                             <ul>
@@ -447,12 +451,10 @@ export class ExperimentDetail extends React.Component {
                         {privacy_preamble && <Localized id={this.l10nId('privacy_preamble')}>
                           <p>{privacy_preamble}</p>
                         </Localized>}
-                        <LocalizedHtml id="experimentMeasurementIntro" $experimentTitle={experiment.title}>
+                        <LocalizedHtml id="experimentMeasurementIntro" $experimentTitle={experiment.title} $privacy={privacy}>
                           <p>
                             In addition to the
-                            <a href="/privacy">
-                              data
-                            </a>
+                            {privacy}
                             collected by all Test Pilot experiments, here are the key things you should know about what is happening when you use {experiment.title}:
                           </p>
                         </LocalizedHtml>
