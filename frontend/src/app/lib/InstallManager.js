@@ -82,33 +82,10 @@ export function uninstallAddon() {
   });
 }
 
-function pollMainAddonAvailability(store) {
-  const finish = status => {
-    const hasAddon = hasAddonSelector(store.getState());
-    if (status !== hasAddon) {
-      if (status === false && hasAddon === true) {
-        window.location.reload();
-      } else {
-        store.dispatch(addonActions.setHasAddon(status));
-      }
-    }
-    setTimeout(
-      () => pollMainAddonAvailability(store),
-      INSTALL_STATE_WATCH_PERIOD
-    );
-  };
-  mam
-    .getAddonByID(TESTPILOT_ADDON_ID)
-    .then(addon => finish(!!addon))
-    .catch(() => finish(false));
-}
-
 export function setupAddonConnection(store) {
   if (!mam) {
     return;
   }
-
-  pollMainAddonAvailability(store);
 
   mam.addEventListener('onEnabled', addon => {
     if (addon) {
