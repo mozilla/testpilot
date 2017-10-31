@@ -23,7 +23,6 @@ export default class HomePage extends React.Component {
   render() {
     if (this.state.shouldRedirectToExperiments) {
       this.props.replaceState({}, '', '/experiments');
-      this.setState({ shouldRedirectToExperiments: false });
       return <HomePageWithAddon {...this.props} />;
     }
     return <HomePageNoAddon {...this.props} />;
