@@ -1,7 +1,6 @@
 import cookies from 'js-cookie';
 import config from '../config';
 import addonActions from '../actions/addon';
-import { hasAddonSelector } from '../selectors/addon';
 import { updateExperiment } from '../actions/experiments';
 import InstallHistory from './install-history';
 
