@@ -57,14 +57,12 @@ export class ExperimentDetail extends React.Component {
   constructor(props) {
     super(props);
 
-    const { isExperimentEnabled, experiment,
-            getCookie, removeCookie, hasAddon } = this.props;
+    const { isExperimentEnabled, experiment, getCookie, hasAddon } = this.props;
 
     this.installExperiment = this.installExperiment.bind(this);
 
     let showEmailDialog = false;
     if (getCookie('first-run')) {
-      removeCookie('first-run');
       if (hasAddon) {
         showEmailDialog = true;
       }
@@ -172,7 +170,7 @@ export class ExperimentDetail extends React.Component {
   render() {
     const { experiment, experiments, installed, isAfterCompletedDate, isDev,
             hasAddon, setExperimentLastSeen, clientUUID, installedAddons,
-            setPageTitleL10N } = this.props;
+            setPageTitleL10N, removeCookie } = this.props;
 
     // Loading handled in static with react router; don't return anything if no experiments
     if (experiments.length === 0) { return null; }
@@ -224,7 +222,10 @@ export class ExperimentDetail extends React.Component {
 
         {showEmailDialog &&
           <EmailDialog {...this.props}
-            onDismiss={() => this.setState({ showEmailDialog: false })} />}
+            onDismiss={() => {
+              removeCookie('first-run');
+              this.setState({ showEmailDialog: false });
+            }} />}
 
         {showDisableDialog &&
           <ExperimentDisableDialog {...this.props}

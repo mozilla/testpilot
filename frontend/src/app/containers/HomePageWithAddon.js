@@ -44,13 +44,12 @@ export default class HomePageWithAddon extends React.Component {
 
   constructor(props: HomePageWithAddonProps) {
     super(props);
-    const { getCookie, removeCookie, getWindowLocation } = this.props;
+    const { getCookie, getWindowLocation } = this.props;
 
     let showEmailDialog = false;
     if (getCookie('first-run') ||
       typeof window !== 'undefined' &&
       getWindowLocation().search.indexOf('utm_campaign=restart-required') > -1) {
-      removeCookie('first-run');
       showEmailDialog = true;
     }
 
@@ -116,8 +115,8 @@ export default class HomePageWithAddon extends React.Component {
   }
 
   render() {
-    const { sendToGA, experiments, isAfterCompletedDate, staleNewsUpdates, freshNewsUpdates }
-      = this.props;
+    const { sendToGA, experiments, isAfterCompletedDate, staleNewsUpdates,
+      freshNewsUpdates, removeCookie } = this.props;
 
     if (experiments.length === 0) { return null; }
 
@@ -129,7 +128,10 @@ export default class HomePageWithAddon extends React.Component {
       <View {...this.props}>
         {showEmailDialog &&
           <EmailDialog {...this.props}
-            onDismiss={() => this.setState({ showEmailDialog: false })} />}
+            onDismiss={() => {
+              removeCookie('first-run');
+              this.setState({ showEmailDialog: false })
+            }} />}
 
       {this.renderSplash()}
 

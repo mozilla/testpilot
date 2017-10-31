@@ -86,10 +86,9 @@ export function setupAddonConnection(store) {
   }
 
   mam.addEventListener('onEnabled', addon => {
-    if (!addon) { return; }
+    if (!addon) { return false; }
     if (addon.id === TESTPILOT_ADDON_ID) {
-      store.dispatch(addonActions.setHasAddon(true));
-      return;
+      return store.dispatch(addonActions.setHasAddon(true));
     }
     const { experiments } = store.getState();
     const i = experiments.data.map(x => x.addon_id).indexOf(addon.id);
@@ -103,21 +102,21 @@ export function setupAddonConnection(store) {
         })
       );
     }
+    return true;
   });
 
   mam.addEventListener('onInstalled', addon => {
     if (addon && addon.id === TESTPILOT_ADDON_ID) {
-      store.dispatch(addonActions.setHasAddon(true));
-      return;
+      return store.dispatch(addonActions.setHasAddon(true));
     }
     installHistory.setActive(addon.id);
+    return true;
   });
 
   function onDisabled(addon) {
-    if (!addon) { return; }
+    if (!addon) { return false; }
     if (addon.id === TESTPILOT_ADDON_ID) {
-      store.dispatch(addonActions.setHasAddon(false));
-      return;
+      return store.dispatch(addonActions.setHasAddon(false));
     }
     const { experiments } = store.getState();
     const i = experiments.data.map(x => x.addon_id).indexOf(addon.id);
@@ -133,6 +132,7 @@ export function setupAddonConnection(store) {
 
       installHistory.setInactive(addon.id);
     }
+    return true;
   }
 
   mam.addEventListener('onDisabled', onDisabled);
