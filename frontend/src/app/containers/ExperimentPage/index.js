@@ -795,7 +795,7 @@ export class ExperimentDetail extends React.Component {
   }
 
   installExperiment(evt) {
-    const { experiment, enableExperiment, sendToGA, setHasAddon } = this.props;
+    const { experiment, enableExperiment, sendToGA } = this.props;
     const { isEnabling } = this.state;
 
     evt.preventDefault();

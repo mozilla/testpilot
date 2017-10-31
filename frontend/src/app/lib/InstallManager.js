@@ -88,7 +88,8 @@ export function setupAddonConnection(store) {
   mam.addEventListener('onEnabled', addon => {
     if (!addon) { return; }
     if (addon.id === TESTPILOT_ADDON_ID) {
-      return store.dispatch(addonActions.setHasAddon(true));
+      store.dispatch(addonActions.setHasAddon(true));
+      return;
     }
     const { experiments } = store.getState();
     const i = experiments.data.map(x => x.addon_id).indexOf(addon.id);
@@ -106,15 +107,17 @@ export function setupAddonConnection(store) {
 
   mam.addEventListener('onInstalled', addon => {
     if (addon && addon.id === TESTPILOT_ADDON_ID) {
-      return store.dispatch(addonActions.setHasAddon(true));
+      store.dispatch(addonActions.setHasAddon(true));
+      return;
     }
-    installHistory.setActive(addon.id)
+    installHistory.setActive(addon.id);
   });
 
   function onDisabled(addon) {
     if (!addon) { return; }
     if (addon.id === TESTPILOT_ADDON_ID) {
-      return store.dispatch(addonActions.setHasAddon(false));
+      store.dispatch(addonActions.setHasAddon(false));
+      return;
     }
     const { experiments } = store.getState();
     const i = experiments.data.map(x => x.addon_id).indexOf(addon.id);
