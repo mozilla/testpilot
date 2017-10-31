@@ -5,7 +5,6 @@ import { updateExperiment } from '../actions/experiments';
 import InstallHistory from './install-history';
 
 const TESTPILOT_ADDON_ID = '@testpilot-addon';
-const INSTALL_STATE_WATCH_PERIOD = 2000;
 const RESTART_NEEDED = false; // TODO
 
 let installHistory;
