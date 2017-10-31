@@ -1,8 +1,9 @@
 // @flow
 
-import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
+
+import StepModal from '../../components/StepModal';
 
 import { experimentL10nId } from '../../lib/utils';
 
@@ -37,155 +38,94 @@ export default class ExperimentTourDialog extends React.Component {
     this.modalContainer.focus();
   }
 
-  render() {
+  renderHeaderTitle() {
     const { experiment, isExperimentEnabled } = this.props;
-    const { currentStep } = this.state;
-
     const enabled = isExperimentEnabled(experiment);
-    const tourSteps = experiment.tour_steps || [];
-
-    const atStart = (currentStep === 0);
-    const atEnd   = (currentStep === tourSteps.length - 1);
 
     const headerTitle = enabled ? (
-      <Localized id="tourOnboardingTitle" $title={experiment.title}>
-        <h3 className="modal-header">{experiment.title} enabled!</h3>
-      </Localized>) : (<h3 className="modal-header">{experiment.title}</h3>);
+        <Localized id="tourOnboardingTitle" $title={experiment.title}>
+          <h3 className="modal-header">{experiment.title} enabled!</h3>
+        </Localized>) : (<h3 className="modal-header">{experiment.title}</h3>);
+  }
 
-    return (
-      <div className="modal-container" tabIndex="0"
-           ref={modalContainer => { this.modalContainer = modalContainer; }}
-           onKeyDown={e => this.handleKeyDown(e)}>
-        <div className={classnames('modal', 'tour-modal')}>
-          <header className="modal-header-wrapper">
-            {headerTitle}
-            <div className="modal-cancel" onClick={e => this.cancel(e)}/>
-          </header>
-          {tourSteps.map((step, idx) => (idx === currentStep) && (
-            <div key={idx} className="tour-content">
-              <div className="tour-image">
-                <img src={step.image} />
-                <div className="fade">
-                  <div className="dot-row">
-                    {this.renderDots(tourSteps, currentStep)}
-                  </div>
-                </div>
+  renderStep(tourSteps: Array<Object>, currentStep: number) {
+    return tourSteps.map((step, idx) => (idx === currentStep) && (
+        <div key={idx} className="tour-content">
+          <div className="tour-image">
+            <img src={step.image} />
+            <div className="fade">
+              <div className="dot-row">
+                {this.renderDots(tourSteps, currentStep)}
               </div>
-              {step.copy &&
-                <div className="tour-text">
-                  <Localized id={this.l10nId(['tour_steps', idx, 'copy'])}>
-                    <p>{step.copy}</p>
-                  </Localized>
-                </div>}
             </div>
-          ))}
-          <div className="tour-actions">
-            <div onClick={() => this.tourBack()}
-                 className={classnames('tour-back', { hidden: atStart })}><div/></div>
-            <div onClick={() => this.tourNext()}
-                 className={classnames('tour-next', { 'no-display': atEnd })}><div/></div>
-            <Localized id="tourDoneButton">
-              <div onClick={e => this.complete(e)}
-                   className={classnames('tour-done', { 'no-display': !atEnd })}>Done</div>
-            </Localized>
           </div>
+          {step.copy &&
+            <div className="tour-text">
+              <Localized id={this.l10nId(['tour_steps', idx, 'copy'])}>
+                <p>{step.copy}</p>
+              </Localized>
+            </div>}
         </div>
-      </div>
-    );
+    ))
   }
 
-  renderDots(tourSteps: Array<any>, currentStep: number) {
-    const dots = tourSteps.map((el, index) => {
-      if (currentStep === index) return (<div key={index} className="current dot"></div>);
-      return (<div key={index} className="dot" onClick={e => this.tourToDot(e, index)} ></div>);
-    });
-
-    return dots;
-  }
-
-  cancel(e: Object) {
-    e.preventDefault();
-    this.props.sendToGA('event', {
-      eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'cancel tour'
-    });
-    if (this.props.onCancel) { this.props.onCancel(e); }
-  }
-
-  complete(e: Object) {
-    e.preventDefault();
-    this.props.sendToGA('event', {
-      eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'complete tour'
-    });
-    if (this.props.onComplete) { this.props.onComplete(e); }
-  }
-
-  tourToDot(e: Object, index: number) {
-    e.preventDefault();
-    this.setState({ currentStep: index });
-
-    this.props.sendToGA('event', {
-      eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'button click',
-      eventLabel: `dot to step ${index}`
-    });
-  }
-
-  tourBack() {
+  render() {
+    const { sendToGA, experiment } = this.props;
     const { currentStep } = this.state;
+    const tourSteps = experiment.tour_steps || [];
 
-    const newStep = Math.max(currentStep - 1, 0);
-    this.setState({ currentStep: newStep });
+    const myProps = {
+      steps: tourSteps,
+      onCancel: this.onCancel,
+      onComplete: this.onComplete,
+      renderStep: this.renderUpdate,
+      wrapperClass: 'news-updates-modal',
+      headerTitle: this.renderHeaderTitle(tourSteps, currentStep),
+      stepNextPing: (newStep) => {
+        sendToGA('event', {
+          eventCategory: 'ExperimentDetailsPage Interactions',
+          eventAction: 'button click',
+          eventLabel: `forward to step ${newStep}`
+        });
+      },
+      stepBackPing: (newStep) => {
+        sendToGA('event', {
+          eventCategory: 'ExperimentDetailsPage Interactions',
+          eventAction: 'button click',
+          eventLabel: `back to step ${newStep}`
+        });
+      },
+      stepToDotPing: (index) => {
+        sendToGA('event', {
+          eventCategory: 'ExperimentDetailsPage Interactions',
+          eventAction: 'button click',
+          eventLabel: `dot to step ${index}`
+        });
+      }
+    };
 
-    this.props.sendToGA('event', {
-      eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'button click',
-      eventLabel: `back to step ${newStep}`
-    });
+    return (<StepModal {...myProps} />);
   }
 
-  tourNext() {
-    const { experiment, sendToGA } = this.props;
-    const { currentStep } = this.state;
-
-    const newStep = Math.min(currentStep + 1,
-                             experiment.tour_steps.length - 1);
-    this.setState({ currentStep: newStep });
+  onCancel(ev: Object) {
+    const { sendToGA, onCancel } = this.props;
 
     sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
-      eventLabel: `forward to step ${newStep}`
+      eventLabel: 'cancel tour'
     });
+    if (onCancel) { onCancel(ev); }
   }
 
-  handleKeyDown(e: Object) {
-    e.preventDefault();
-    switch (e.key) {
-      case 'Escape':
-        this.cancel(e);
-        break;
-      case 'ArrowRight':
-        this.tourNext();
-        break;
-      case 'ArrowLeft':
-        this.tourBack();
-        break;
-      case 'Enter': {
-        const { experiment } = this.props;
-        const { currentStep } = this.state;
-        const tourSteps = experiment.tour_steps || [];
-        const atEnd = (currentStep === tourSteps.length - 1);
-        if (atEnd) {
-          this.complete(e);
-        }
-        break;
-      }
-      default:
-        break;
-    }
+  onComplete(ev: Object) {
+    const { sendToGA, onCancel } = this.props;
+
+    sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: 'complete tour'
+    });
+    if (onComplete) { onComplete(ev); }
   }
 }
