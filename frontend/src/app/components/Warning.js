@@ -6,10 +6,10 @@ type WarningProps = {
   title: string,
   titleL10nId: string,
   titleL10nArgs: string,
-  subtitle: string,
-  subtitleL10nId: string,
-  subtitleL10nArgs: string,
-  children: Array<any>
+  subtitle?: string,
+  subtitleL10nId?: string,
+  subtitleL10nArgs?: string,
+  children?: Array<any>
 }
 
 export default class Warning extends React.Component {
