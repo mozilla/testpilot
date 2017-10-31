@@ -827,7 +827,6 @@ export class ExperimentDetail extends React.Component {
     });
 
     function finishEnabling() {
-      setHasAddon(true);
       enableExperiment(experiment);
 
       sendToGA('event', {
