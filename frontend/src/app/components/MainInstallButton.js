@@ -42,8 +42,7 @@ export default class MainInstallButton extends React.Component {
       return;
     }
     this.setState({ isInstalling: true });
-    installAddon(requireRestart, sendToGA, eventCategory, eventLabel)
-      .then(() => navigateTo('/experiments'));
+    installAddon(requireRestart, sendToGA, eventCategory, eventLabel);
   }
 
   render() {

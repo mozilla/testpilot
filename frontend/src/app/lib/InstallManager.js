@@ -1,12 +1,10 @@
 import cookies from 'js-cookie';
 import config from '../config';
 import addonActions from '../actions/addon';
-import { hasAddonSelector } from '../selectors/addon';
 import { updateExperiment } from '../actions/experiments';
 import InstallHistory from './install-history';
 
 const TESTPILOT_ADDON_ID = '@testpilot-addon';
-const INSTALL_STATE_WATCH_PERIOD = 2000;
 const RESTART_NEEDED = false; // TODO
 
 let installHistory;
@@ -82,73 +80,64 @@ export function uninstallAddon() {
   });
 }
 
-function pollMainAddonAvailability(store) {
-  const finish = status => {
-    const hasAddon = hasAddonSelector(store.getState());
-    if (status !== hasAddon) {
-      if (status === false && hasAddon === true) {
-        window.location.reload();
-      } else {
-        store.dispatch(addonActions.setHasAddon(status));
-      }
-    }
-    setTimeout(
-      () => pollMainAddonAvailability(store),
-      INSTALL_STATE_WATCH_PERIOD
-    );
-  };
-  mam
-    .getAddonByID(TESTPILOT_ADDON_ID)
-    .then(addon => finish(!!addon))
-    .catch(() => finish(false));
-}
-
 export function setupAddonConnection(store) {
   if (!mam) {
     return;
   }
 
-  pollMainAddonAvailability(store);
-
   mam.addEventListener('onEnabled', addon => {
-    if (addon) {
-      const { experiments } = store.getState();
-      const i = experiments.data.map(x => x.addon_id).indexOf(addon.id);
-      if (i > -1) {
-        const x = experiments.data[i];
-        store.dispatch(addonActions.enableExperiment(x));
-        store.dispatch(
-          updateExperiment(x.addon_id, {
-            inProgress: false,
-            error: false
-          })
-        );
-      }
+    if (!addon) { return false; }
+    if (addon.id === TESTPILOT_ADDON_ID) {
+      return store.dispatch(addonActions.setHasAddon(true));
     }
+    const { experiments } = store.getState();
+    const i = experiments.data.map(x => x.addon_id).indexOf(addon.id);
+    if (i > -1) {
+      const x = experiments.data[i];
+      store.dispatch(addonActions.enableExperiment(x));
+      store.dispatch(
+        updateExperiment(x.addon_id, {
+          inProgress: false,
+          error: false
+        })
+      );
+    }
+    return true;
   });
+
+  mam.addEventListener('onInstalled', addon => {
+    if (addon && addon.id === TESTPILOT_ADDON_ID) {
+      return store.dispatch(addonActions.setHasAddon(true));
+    }
+    installHistory.setActive(addon.id);
+    return true;
+  });
+
   function onDisabled(addon) {
-    if (addon) {
-      const { experiments } = store.getState();
-      const i = experiments.data.map(x => x.addon_id).indexOf(addon.id);
-      if (i > -1) {
-        const x = experiments.data[i];
-        store.dispatch(addonActions.disableExperiment(x));
-        store.dispatch(
-          updateExperiment(x.addon_id, {
-            inProgress: false,
-            error: false
-          })
-        );
-      }
+    if (!addon) { return false; }
+    if (addon.id === TESTPILOT_ADDON_ID) {
+      return store.dispatch(addonActions.setHasAddon(false));
+    }
+    const { experiments } = store.getState();
+    const i = experiments.data.map(x => x.addon_id).indexOf(addon.id);
+    if (i > -1) {
+      const x = experiments.data[i];
+      store.dispatch(addonActions.disableExperiment(x));
+      store.dispatch(
+        updateExperiment(x.addon_id, {
+          inProgress: false,
+          error: false
+        })
+      );
 
       installHistory.setInactive(addon.id);
     }
+    return true;
   }
+
   mam.addEventListener('onDisabled', onDisabled);
   mam.addEventListener('onUninstalled', onDisabled);
-  mam.addEventListener('onInstalled', addon =>
-    installHistory.setActive(addon.id)
-  );
+
   /*
   mam.addEventListener('onEnabling', (addon, restart) => {
   });
