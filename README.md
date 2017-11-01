@@ -1,4 +1,4 @@
-![Test Pilot Logo](frontend/src/images/copter.png)
+<img src="frontend/src/app/components/Copter/img/copter.png" alt="Test Pilot Logo" width="328" height="265">  
 
 # Test Pilot
 
