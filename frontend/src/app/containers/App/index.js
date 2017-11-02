@@ -27,6 +27,7 @@ import { isFirefox, isMinFirefoxVersion, isMobile } from '../../lib/utils';
 import {
   makeStaleNewsUpdatesSelector,
   makeFreshNewsUpdatesSelector,
+  makeMajorNewsUpdatesForDialogSelector,
   makeFreshNewsUpdatesSinceLastViewedSelector
 } from '../../selectors/news';
 import config from '../../config';
@@ -220,7 +221,7 @@ const mapStateToProps = state => ({
   clientUUID: state.addon.clientUUID,
   experiments: experimentSelector(state),
   freshNewsUpdates: makeFreshNewsUpdatesSelector(Date.now())(state),
-  freshNewsUpdatesSinceLastViewed: makeFreshNewsUpdatesSinceLastViewedSelector(
+  majorNewsUpdates: makeNewsUpdatesForDialogSelector(
     cookies.get('updates-last-viewed-date'),
     Date.now()
   )(state),

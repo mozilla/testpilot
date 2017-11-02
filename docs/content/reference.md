@@ -171,11 +171,14 @@ news_updates:
   -
     slug: min-vid-update-1
     title: My Update title
-    link: https://blog.mozilla.org/testpilot/example
-    created: 2017-06-01T12:00:00Z
-    published: 2017-06-02T12:00:00Z
+    link: 'https://blog.mozilla.org/testpilot/example'
+    created: '2017-06-01T12:00:00Z'
+    published: '2017-06-02T12:00:00Z'
+    image: 'images/link/to/image.jpg' # optional
+    major: true # optional
     dev: false
     content: >
+    
       Example content goes here
 ```
 see also:[General news updates](#general-news-updates)
@@ -594,9 +597,10 @@ the experiment updates.
    slug: general-update-1
    title: Example title
    link: https://blog.mozilla.org/testpilot/example
-   created: 2017-06-01T12:00:00Z
-   published: 2017-06-02T12:00:00Z
-   dev: false
+   created: '2017-06-01T12:00:00Z'
+   published: '2017-06-02T12:00:00Z'
+   image: 'images/link/to/image.jpg' # optional
+   major: true # optional
    content: >
      Example content goes here
 ```
