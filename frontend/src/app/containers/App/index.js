@@ -24,7 +24,11 @@ import newsletterFormActions from '../../actions/newsletter-form';
 import RestartPage from '../../containers/RestartPage';
 import UpgradeWarningPage from '../../containers/UpgradeWarningPage';
 import { isFirefox, isMinFirefoxVersion, isMobile } from '../../lib/utils';
-import { staleNewsUpdatesSelector, freshNewsUpdatesSelector } from '../../selectors/news';
+import {
+  makeStaleNewsUpdatesSelector,
+  makeFreshNewsUpdatesSelector,
+  makeFreshNewsUpdatesSinceLastViewedSelector
+} from '../../selectors/news';
 import config from '../../config';
 
 let clipboard = null;
@@ -215,7 +219,11 @@ const mapStateToProps = state => ({
   addon: state.addon,
   clientUUID: state.addon.clientUUID,
   experiments: experimentSelector(state),
-  freshNewsUpdates: freshNewsUpdatesSelector(state),
+  freshNewsUpdates: makeFreshNewsUpdatesSelector(Date.now())(state),
+  freshNewsUpdatesSinceLastViewed: makeFreshNewsUpdatesSinceLastViewedSelector(
+    cookies.get('updates-last-viewed-date'),
+    Date.now()
+  )(state),
   getExperimentBySlug: slug =>
     getExperimentBySlug(state.experiments, slug),
   hasAddon: state.addon.hasAddon,
@@ -241,7 +249,7 @@ const mapStateToProps = state => ({
   protocol: state.browser.protocol,
   routing: state.routing,
   slug: state.experiments.slug,
-  staleNewsUpdates: staleNewsUpdatesSelector(state),
+  staleNewsUpdates: makeStaleNewsUpdatesSelector(Date.now())(state),
   varianttests: state.varianttests
 });
 
