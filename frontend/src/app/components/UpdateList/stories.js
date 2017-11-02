@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
 
+import PhotonColors from 'photon-colors';
 import UpdateList from './index';
 import LayoutWrapper from '../LayoutWrapper';
 
@@ -74,8 +75,11 @@ const basePropsWithStaleNews = Object.assign({}, baseProps, {
 storiesOf('UpdateList', module)
   .addDecorator(withKnobs)
   .addDecorator(story =>
-    <div className="blue" style={{ padding: 10 }} onClick={action('click')}>
-      <div className="stars" />
+    <div className="blue" style={{
+      padding: 10,
+      // TODO: Replace this with a proper background class that's been photonized
+      background: `linear-gradient(-180deg, ${PhotonColors.BLUE_90} 0%, ${PhotonColors.PURPLE_90} 100%, ${PhotonColors.BLUE_90} 100%)`
+    }} onClick={action('click')}>
       <LayoutWrapper flexModifier="card-list">
         {story()}
       </LayoutWrapper>

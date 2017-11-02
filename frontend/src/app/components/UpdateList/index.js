@@ -8,6 +8,8 @@ import React from 'react';
 import LayoutWrapper from '../LayoutWrapper';
 import { newsUpdateL10nId } from '../../lib/utils';
 
+import './index.scss';
+
 export function prettyDate(date: string) {
   return moment(date).format('MMMM Do, YYYY');
 }
@@ -35,7 +37,7 @@ export class Update extends React.Component {
       <a className={classnames('update', { 'has-link': !!link })}
           href={link}
           onClick={() => this.handleLinkClick()}>
-        <div className={classnames(iconClassName, 'experiment-icon')} />
+        <div className={classnames(iconClassName, 'update-experiment-icon')} />
         <div className="update-content">
           <header>
             {experiment
@@ -135,7 +137,7 @@ export default class UpdateList extends React.Component {
     return (
       <div className="update-list">
         <Localized id="latestUpdatesTitle">
-          <h1 className="emphasis update-list-heading">Latest Updates</h1>
+          <h1 className="update-list-heading">Latest Updates</h1>
         </Localized>
         <LayoutWrapper flexModifier="column-center">
           {shownNewsUpdates.map((update, index) =>

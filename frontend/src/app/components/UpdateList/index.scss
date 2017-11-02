@@ -1,0 +1,124 @@
+@import '~photon-colors/colors.scss';
+@import '../../../styles/_utils';
+
+.update-list {
+  @include respond-to('small') {
+    margin: 0 0 30px;
+  }
+
+  margin: -40px 0 40px;
+  width: 100%;
+
+  .more-news {
+    margin-top: 10px;
+  }
+}
+
+.update-list-heading {
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 56px;
+}
+
+.update {
+  align-items: center;
+  border-radius: 4px;
+  border: 1px rgba(255, 255, 255, 0.2) solid;
+  box-shadow: 0 -2px 0 $transparent-black-05 inset;
+  cursor: default;
+  display: flex;
+  margin-bottom: 8px;
+  opacity: .9;
+  padding: 36px;
+  width: 100%;
+
+  .update-content {
+    flex-grow: 1;
+
+    header {
+      @include flex-container(row, flex-start, center);
+      margin-bottom: 1px;
+    }
+  }
+
+  .news-update-test-pilot-icon {
+    background-image: url('./img/test-pilot-news-icon.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 60px auto;
+  }
+
+  .update-experiment-icon {
+    height: 48px;
+    width: 106px;
+    margin: 0;
+    @include respond-to('small') {
+      display: none;
+    }
+    background-position: left center;
+    background-size: 60px auto;
+    background-repeat: no-repeat;
+  }
+
+  h2,
+  h2.update-title {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0;
+    margin: 0 0 1px 0;
+  }
+
+  .summary {
+    font-size: 16px;
+  }
+
+  h4.update-title {
+    font-weight: normal;
+    font-size: 17px;
+    margin: 0 0 6px 0;
+  }
+
+  .summary {
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 22px;
+    margin: 10px 0 0 0;
+  }
+
+  .link-chevron {
+    .chevron {
+      background: transparent;
+      display: block;
+      width: 12px;
+      height: 21px;
+    }
+  }
+
+  &.has-link {
+    cursor: pointer;
+    transition: background 50ms;
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .link-chevron {
+      .chevron {
+        background-image: url('./img/news-link-chevron.svg');
+        background-repeat: no-repeat;
+        background-size: 12px 21px;
+      }
+    }
+  }
+}
+
+.up-date {
+  opacity: 0.7;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin: 0 0 0 20px;
+}
