@@ -1,12 +1,11 @@
 import { expect } from 'chai';
-import moment from 'moment';
-import cookies from 'js-cookie';
 
 import newsUpdatesSelector, {
   publishedFilter,
   experimentUpdateAvailable,
-  staleNewsUpdatesSelector,
-  freshNewsUpdatesSelector
+  makeStaleNewsUpdatesSelector,
+  makeFreshNewsUpdatesSelector,
+  makeFreshNewsUpdatesSinceLastViewedSelector
 } from '../../../src/app/selectors/news';
 
 describe('app/selectors/news', () => {
@@ -103,21 +102,21 @@ describe('app/selectors/news', () => {
     });
   });
 
-  const makeNewsUpdateSelectorAgeTest = useStale => () => {
+  const makeNewsUpdateSelectorAgeTest = (useStale, useLastViewed) => () => {
     const today = Date.now();
     const twoWeeksAgo = today - 2 * 7 * 24 * 60 * 60 * 1000;
+    const yesterday = today - (24 * 60 * 60 * 1000);
     const store = makeStore();
     const updates = store.news.updates;
     const freshCount = 4;
-    const cookieDate = useStale ? 0: new Date().toISOString();
-    cookies.set('updates-last-viewed-date', cookieDate);
+    const lastViewedDate = new Date(yesterday).toISOString();
 
     for (let i = 0; i < updates.length; i++) {
       // HACK: Since this is time dependent, give this a couple seconds of
       // wiggle room around the two-week mark
       let dt;
       if (i < freshCount) {
-        dt = [today, twoWeeksAgo + 2000][i % 2];
+        dt = [today, yesterday, twoWeeksAgo + 2000][i % 3];
       } else {
         dt = twoWeeksAgo - 2000;
       }
@@ -125,16 +124,20 @@ describe('app/selectors/news', () => {
       updates[i][key] = new Date(dt).toISOString();
     }
 
-    const selector = useStale
-      ? staleNewsUpdatesSelector
-      : freshNewsUpdatesSelector;
+    const selector = useLastViewed
+      ? makeFreshNewsUpdatesSinceLastViewedSelector(lastViewedDate, today)
+      : useStale
+        ? makeStaleNewsUpdatesSelector(today)
+        : makeFreshNewsUpdatesSelector(today);
 
     // Filter result to assert no updates contradict the selector
     const shouldBeEmpty = selector(store)
       .map(update => new Date(update.published || update.created).getTime())
       .filter(
         dt =>
-          useStale
+          useLastViewed
+          ? dt > yesterday
+          : useStale
             ? dt >= twoWeeksAgo // fresh news from stale selector is a failure
             : dt < twoWeeksAgo // stale news from fresh selector is a failure
       );
@@ -143,19 +146,24 @@ describe('app/selectors/news', () => {
     expect(shouldBeEmpty).to.have.property('length', 0);
   };
 
-  describe('freshNewsUpdatesSelector', () => {
-    // clean up cookie test
-    after(() => cookies.set('updates-last-viewed-date', 0));
+  describe('makeFreshNewsUpdatesSelector', () => {
     it(
       'should only produce updates within the last 2 weeks',
-      makeNewsUpdateSelectorAgeTest(false)
+      makeNewsUpdateSelectorAgeTest(false, false)
     );
   });
 
-  describe('staleNewsUpdatesSelector', () => {
+  describe('makeFreshNewsUpdatesSinceLastViewedSelector', () => {
+    it(
+      'should only produce updates sinmce last viewed',
+      makeNewsUpdateSelectorAgeTest(false, true)
+    );
+  });
+
+  describe('makeStaleNewsUpdatesSelector', () => {
     it(
       'should only produce updates older than 2 weeks',
-      makeNewsUpdateSelectorAgeTest(true)
+      makeNewsUpdateSelectorAgeTest(true, false)
     );
   });
 });
