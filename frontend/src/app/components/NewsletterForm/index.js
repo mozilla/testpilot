@@ -4,9 +4,11 @@ import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import LocalizedHtml from '../components/LocalizedHtml';
+import LocalizedHtml from '../../components/LocalizedHtml';
 
-import { defaultState } from '../reducers/newsletter-form';
+import { defaultState } from '../../reducers/newsletter-form';
+
+import './index.scss';
 
 type NewsletterFormProps = {
   email?: string,
