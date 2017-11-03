@@ -28,48 +28,47 @@
     background-color: transparent;
     border-color: $white;
     color: $white;
-    opacity: .6;
-    transition: background 150ms, opacity 150ms;
+    transition: background 150ms, border 150ms;
 
     &:hover,
     &:focus {
       background-color: $transparent-white-1;
-      opacity: .8;
+      border-color: $transparent-white-8;
     }
 
     &:active,
     &.active,
     &.active:hover,
     &.active:focus {
-      background-color: $transparent-white-1;
-      opacity: 1;
+      background-color: $transparent-white-2;
+      border-color: $transparent-white-8;
     }
   }
 
 
   &.primary {
-    background: $primary;
-    border: 1px solid $primary-dark;
+    background: $green-60;
+    border: 1px solid $green-70;
     color: $white;
 
     &:not([disabled='true']) {
       &:hover,
       &:focus {
-        background: $primary-dark;
-        border: 1px solid $primary-darker;
+        background: $green-60;
+        border: 1px solid $green-70;
       }
 
       &:focus:hover {
-        background: $primary-darker;
+        background: $green-60;
       }
 
       &:active {
-        background: $primary-darker;
-        border: 1px solid $primary-darkest;
+        background: $green-70;
+        border: 1px solid $green-80;
       }
 
       &.state-change {
-        background: $primary-darker;
+        background: $green-70;
       }
     }
 
@@ -113,38 +112,41 @@
   }
 
   &.secondary {
-    background: $secondary-button-background;
-    border: 1px solid $secondary-button-border;
+    background: $white;
+    border: 1px solid $grey-30;
 
     &:hover,
     &:focus {
-      background: darken($secondary-button-background, 4);
-      border: 1px solid darken($secondary-button-border, 4);
+      background: $grey-20;
+      border: 1px solid $grey-30;
     }
 
     &:active {
-      background: darken($secondary-button-background, 8);
-      border: 1px solid darken($secondary-button-border, 8);
+      background: $grey-30;
+      border: 1px solid $grey-40;
     }
   }
 
   &.default {
-    background: $default;
+    background: $blue-40;
+    border: 1px solid $blue-50;
     color: $white;
 
     &:hover,
     &:focus {
-      background: darken($default, 4);
+      background: $blue-50;
+      border-color: $blue-60;
     }
 
     &:active {
-      background: darken($default, 6);
+      background: $blue-60;
+      border-color: $blue-70;
     }
   }
 
   &.warning {
-    background: $warning-red-light;
-    border: 1px solid $warning-red-default;
+    background: $red-50;
+    border: 1px solid $red-60;
     color: $white;
   }
 
@@ -152,7 +154,8 @@
   &.disabled:hover,
   &.disabled:active,
   &.disabled:focus {
-    background-color: $disabled-grey;
+    background-color: $grey-30;
+    border: 1px solid transparent;
   }
 
   &.large,
