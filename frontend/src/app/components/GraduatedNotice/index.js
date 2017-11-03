@@ -6,7 +6,7 @@ import './index.scss';
 class GraduatedNoticeButton extends React.Component {
   render() {
     return <Localized id="experimentGradReportButton">
-      <a className="graduated-notice-button" href={this.props.graduation_url}>
+      <a className="graduated-notice-button button default" href={this.props.graduation_url}>
         Graduation Report
       </a>
     </Localized>;
