@@ -5,15 +5,16 @@
 
     .wordmark {
       @include respond-to('not-small') {
-        @include hidpi-background-image('wordmark', 296px 64px);
+        @include hidpi-background-image('wordmark', 302px 64px);
         height: 64px;
-        width: 296px;
+        width: 302px;
       }
-      @include hidpi-background-image('wordmark', 190px 41px);
+      @include hidpi-background-image('wordmark', 194px 41px);
+      background-repeat: no-repeat;
       display: block;
       height: 41px;
       position: relative;
-      width: 190px;
+      width: 200px;
     }
   }
 
