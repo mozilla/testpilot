@@ -1,11 +1,13 @@
+$body-gradient: linear-gradient(#000f40, rgba(37, 0, 62, 80));
+
 body {
-  background: $body-background;
+  background: $white;
   color: $black;
   min-height: 100vh;
 }
 
 a {
-  color: $default;
+  color: $blue-40;
   text-decoration: none;
 
   .blue &,
@@ -14,7 +16,7 @@ a {
   }
 
   .default-background & {
-    color: $default;
+    color: $blue-40;
   }
 
   .static-page-content & {
@@ -23,15 +25,15 @@ a {
 }
 
 .blue {
-  background-color: $darkest-blue-step;
-  background-image: radial-gradient(ellipse 250% 100% at center 140%, $light-blue-step 12%, $dark-blue-step 50%, $darkest-blue-step 100%);
+  background-color: $white;
+  background-image: $body-gradient;
   color: $white;
   position: relative;
 }
 
 .stars {
   @include hidpi-background-image('stars', 1180px 346px);
-  background-position: center top;
+  background-position: center 16px;
   background-repeat: no-repeat;
   bottom: 0;
   left: 0;
@@ -42,7 +44,7 @@ a {
 }
 
 .default-background {
-  background: $body-background;
+  background: $white;
   color: $black;
   position: relative;
 }
@@ -66,10 +68,6 @@ a {
   &:hover {
     opacity: 1;
   }
-}
-
-.firefox-icon {
-  background: url('../images/fox.svg');
 }
 
 .add-on-icon {

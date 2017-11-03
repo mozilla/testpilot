@@ -29,7 +29,7 @@
   }
 
   a:not(.button) {
-    color: $default;
+    color: $blue-40;
   }
 }
 
@@ -101,13 +101,13 @@
 
   .modal-header-wrapper {
     @include flex-container(row, center, center);
-    background-color: $default;
+    background-color: $blue-40;
     border-radius: 4px 4px 0 0;
     height: 54px;
     margin: 0 0 2px;
 
     &.warning-modal {
-      background: $warning-red-light;
+      background: $red-50;
     }
   }
 
@@ -169,7 +169,7 @@
   }
 
   .modal-escape {
-    color: $default;
+    color: $blue-40;
     position: relative;
     top: 10px;
   }
@@ -196,7 +196,7 @@
     }
 
     a {
-      color: $default;
+      color: $blue-40;
     }
   }
 
@@ -211,8 +211,8 @@
   }
 
   .dot {
-    background: $secondary-button-background;
-    border: 1px solid $secondary-button-border;
+    background: $white;
+    border: 1px solid $grey-10;
     border-radius: $circle-border-radius;
     cursor: pointer;
     flex: 0 0 12px;
@@ -220,7 +220,7 @@
     margin: 0 3px;
 
     &.current {
-      background: $default;
+      background: $blue-40;
       border: 0;
     }
   }
@@ -292,7 +292,7 @@
     }
 
     &:hover {
-      background-color: $secondary-button-background;
+      background-color: $grey-10;
     }
   }
 
@@ -370,14 +370,14 @@
     }
 
     .modal-header {
-      color: $dark-title;
+      color: $grey-10;
       font-size: $font-unit * 3;
       font-weight: normal;
       position: relative;
       text-transform: capitalize;
 
       &.enabled::after {
-        background: $bright-green;
+        background: $green-60;
         border-radius: 2px;
         color: $white;
         content: 'Enabled';
@@ -407,7 +407,7 @@
     }
 
     .published-date {
-      color: $disabled-grey;
+      color: $grey-20;
     }
   }
 }
@@ -475,7 +475,7 @@
     background: transparent;
     border-radius: 0 $small-border-radius $small-border-radius 0;
     border-width: 0;
-    color: $default-light;
+    color: $blue-40;
     flex: 1 0 20%;
     line-height: $font-unit * 1.6;
     padding: $grid-unit * .7 $grid-unit * .8;

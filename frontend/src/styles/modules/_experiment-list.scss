@@ -45,14 +45,13 @@
   }
 
   .experiment-feedback {
-    background-color: $feedback-button-blue;
+    background-color: $blue-40;
     background-image: url('../images/feedback.svg');
     background-position: 4px 4px;
     background-repeat: no-repeat;
     background-size: 14px;
-    border: 1px solid $feedback-button-blue;
     border-radius: 3px;
-    box-shadow: 0 1px 2px $feedback-button-shadow;
+    box-shadow: 0 1px 2px $transparent-black-1;
     color: $white;
     cursor: pointer;
     display: block;
@@ -64,11 +63,11 @@
 
     &:hover,
     &:focus {
-      background-color: darken($feedback-button-blue, 4);
+      background-color: $blue-50;
     }
 
     &:active {
-      background-color: darken($feedback-button-blue, 6);
+      background-color: $blue-60;
     }
   }
 
@@ -99,10 +98,10 @@
   }
 
   &.enabled {
-    box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-green;
+    box-shadow: 0 0 0 3px $white, 0 0 0 6px $green-60;
 
     &:hover {
-      box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-green, 0 0 0 9px $transparent-white-1;
+      box-shadow: 0 0 0 3px $white, 0 0 0 6px $green-60, 0 0 0 9px $transparent-white-1;
     }
   }
 
@@ -112,7 +111,7 @@
 
     h3,
     h4 {
-      color: $default;
+      color: $blue-40;
       transition: color 150ms;
     }
   }
@@ -165,7 +164,7 @@
   }
 
   .enabled-tab {
-    background: $bright-green;
+    background: $green-60;
     border-bottom-color: $white;
     color: $white;
   }

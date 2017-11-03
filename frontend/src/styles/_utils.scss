@@ -2,10 +2,7 @@
 $black: #000;
 $white: #fff;
 
-$dark-title: #1e1e1e;
-
 //These are handy trasparencies
-$transparent-black-02: rgba($black, .02);
 $transparent-black-05: rgba($black, .05);
 $transparent-black-1: rgba($black, .1);
 $transparent-black-2: rgba($black, .2);
@@ -28,41 +25,7 @@ $transparent-white-8: rgba($white, .8);
 $transparent-white-9: rgba($white, .9);
 $transparent-white-96: rgba($white, .96);
 
-// These are button and waring colors
-$default: #0996f8;
-$default-dark: #0675d3;
-$default-darker: #0568ba;
-$default-light: #2ea3ff;
-$transparent-default: rgba($default, .2);
-
-$primary: #57bd35;
-$primary-light: #e2fddc;
-$primary-dark: #40a624;
-$primary-darker: #399320;
-$primary-darkest: #2e761a;
-
-$warning-red-darkest: #881606;
-$warning-red-darker: #aa1b08;
-$warning-red-dark: #c21f09;
-$warning-red-default: #d92215;
-$warning-red-light: #ee4b36;
-$warning-red-lighter: #f67964;
-$warning-red-lightest: #ffa792;
-
-$secondary-button-background: #e7e7e7;
-$secondary-button-border: #ccc;
-
 // These are used in feedback forms
-$transparent-warning-lightest-5: rgba($warning-red-lightest, .5);
-$disabled-grey: #8a9ba8;
-$feedback-modal-grey: #bbb;
-
-// These are used in blue backgrounds
-$body-background: #fcfcfc;
-$legal-background: #d3e7fc;
-$darkest-blue-step: #1e4488;
-$dark-blue-step: #0065b8;
-$light-blue-step: #737ffd;
 
 // These are for corners
 $large-border-radius: 5px;
@@ -74,11 +37,6 @@ $grid-unit: 20px;
 $font-unit: 12px;
 $line-unit: 18px;
 
-// "Enabled" greens
-$green: #7cd06a;
-$dark-green: #3b9827;
-$bright-green: #65c751;
-
 // Error status-bar reds
 $error-red-background: #f3bcb8;
 $error-red-border: #f5570e;
@@ -88,10 +46,6 @@ $bright-blue: #1e98f5;
 // updates blues
 $dark-over-darkest-blue: #163875;
 $dark-over-darkest-blue-highlight: #0a75ba;
-
-// feedback button blue
-$feedback-button-blue: $default;
-$feedback-button-shadow: $transparent-black-1;
 
 // End-of-life (eol) oranges
 $eol-dark-orange: #f46323;
