@@ -1,8 +1,8 @@
 @import '~photon-colors/colors.scss';
 @import '../../../styles/_utils';
 
-$email-icon--width: 146px;
-$email-icon--height: 127px;
+$email-icon--width: 64px;
+$email-icon--height: 48px;
 $email-icon--responsive-unit: .66;
 
 
@@ -34,8 +34,14 @@ $email-icon--responsive-unit: .66;
     min-height: $email-icon--height;
     padding-left: $email-icon--width + ($grid-unit * 1.5);
 
-    h2,
+    h2 {
+      font-size: 22px;
+      font-weight: normal;
+      margin: $grid-unit * .25;      
+    }
+
     p {
+      font-size: 15px;
       margin: $grid-unit * .25;
     }
   }
@@ -72,10 +78,6 @@ $email-icon--responsive-unit: .66;
       width: 100%;
     }
 
-    h2 {
-      font-size: $font-unit * 2.5;
-      line-height: $font-unit * 2.5 * 1.5;
-    }
   }
 
   // Stack the header above the form at small screen sizes.
