@@ -102,7 +102,7 @@ export default class NewsletterForm extends React.Component {
     if (this.props.submitting) {
       return (
         <Localized id='newsletterFormSubmitButtonSubmitting'>
-          <button disabled={true} className="button outline large">
+          <button disabled={true} className="button outline large newsletter-form-submitting">
             Submitting...
           </button>
         </Localized>

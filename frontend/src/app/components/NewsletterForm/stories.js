@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 import NewsletterForm from './index';
@@ -44,4 +43,13 @@ storiesOf('NewsletterForm', module)
       email={'foo@example.com'}
       privacy={true}
       isModal={true}
+    />)
+  .add('submitting', () =>
+    <NewsletterForm
+      {...baseProps}
+      email={'foo@example.com'}
+      privacy={true}
+      isModal={true}
+      submitting={true}
     />);
+

@@ -6,7 +6,7 @@ import NewsletterFooter from './index';
 import LayoutWrapper from '../LayoutWrapper';
 
 const baseProps = {
-  getWindowLocation: () =>'https://example.com',
+  getWindowLocation: () => 'https://example.com',
   sendToGA: () => null,
   newsletterForm: {
     failed: false,
