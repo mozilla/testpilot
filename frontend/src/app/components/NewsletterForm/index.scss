@@ -1,3 +1,6 @@
+@import '~photon-colors/colors.scss';
+@import '../../../styles/_utils';
+
 .newsletter-form {
   @include flex-container(column, center, flex-start);
 
@@ -22,6 +25,26 @@
 
   input[type='checkbox'] {
     margin-right: $grid-unit * .25;
+    display: none;
+  }
+
+  input[type='checkbox'] + label {
+    background: url('./img/unchecked.svg') no-repeat left;
+    background-height: 21px;
+    background-width: 21px;
+    padding-left: 30px;
+  }
+
+  input[type='checkbox']:hover + label {
+    background: url('./img/unchecked-hover.svg') no-repeat left;
+  }
+
+  input[type='checkbox']:checked + label {
+    background: url('./img/checked.svg') no-repeat left;
+  }
+
+  input[type='checkbox']:checked:hover + label {
+    background: url('./img/checked-hover.svg') no-repeat left;
   }
 
   label {
@@ -60,4 +83,21 @@
   a {
     color: $blue-40;
   }
+}
+
+.newsletter-form-submitting {
+  animation: barberpole 1000ms infinite linear;
+  background-image: linear-gradient(
+    45deg,
+    $transparent-white-1 25%,
+    transparent 25%,
+    transparent 50%,
+    $transparent-white-1 50%,
+    $transparent-white-1 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 50px 50px;
+  opacity: 0;
+  transition: opacity .1s ease;
 }
