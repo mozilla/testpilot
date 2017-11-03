@@ -124,7 +124,7 @@ describe('app/components/UpdateList', () => {
         update={{ title: 'foo' }}
         experiment={{ slug: 'foobar' }}
       />);
-      const icon = subject.find('.experiment-icon');
+      const icon = subject.find('.update-experiment-icon');
       expect(icon.hasClass('experiment-icon-foobar')).to.be.true;
     });
 
