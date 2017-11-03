@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import LocalizedHtml from '../../components/LocalizedHtml';
+import LocalizedHtml from '../LocalizedHtml';
 
 import { defaultState } from '../../reducers/newsletter-form';
 
