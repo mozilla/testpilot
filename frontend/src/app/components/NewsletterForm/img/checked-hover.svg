@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="25px" viewBox="0 0 24 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Check Box ON - Hover</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Newsletter-footer" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Email-status" transform="translate(-922.000000, -821.000000)">
+            <g id="Group-3" transform="translate(300.000000, 694.666667)">
+                <g id="part5" transform="translate(231.000000, 70.000000)">
+                    <g id="Group-18">
+                        <g id="Check-Box-ON---Hover" transform="translate(392.000000, 58.000000)">
+                            <g id="checkbox.on-copy" stroke="#0A84FF" stroke-width="2" fill="#FFFFFF">
+                                <rect id="Rectangle-path" x="0.2" y="0.2" width="21.6" height="21.6" rx="2"></rect>
+                            </g>
+                            <g id="-" transform="translate(3.000000, 4.000000)" fill-rule="nonzero" fill="#0A84FF">
+                                <path d="M2.47215025,7.51919978 C2.06854043,7.06513873 1.37326082,7.02423993 0.919199776,7.42784975 C0.465138729,7.83145957 0.424239926,8.52673918 0.827849748,8.98080022 L5.22784975,13.9308002 C5.70666153,14.4694635 6.56547891,14.4098348 6.96525532,13.8101702 L14.6652553,2.26017022 C15.0022431,1.75468866 14.8656518,1.07173238 14.3601702,0.734744681 C13.8546886,0.397756975 13.1717324,0.534348232 12.8347447,1.03982978 L5.92530135,11.4039948 L2.47215025,7.51919978 Z" id="Path-4"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

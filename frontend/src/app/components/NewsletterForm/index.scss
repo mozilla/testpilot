@@ -25,6 +25,26 @@
 
   input[type='checkbox'] {
     margin-right: $grid-unit * .25;
+    display: none;
+  }
+
+  input[type='checkbox'] + label {
+    background: url('./img/unchecked.svg') no-repeat left;
+    background-height: 21px;
+    background-width: 21px;
+    padding-left: 30px;
+  }
+
+  input[type='checkbox']:hover + label {
+    background: url('./img/unchecked-hover.svg') no-repeat left;
+  }
+
+  input[type='checkbox']:checked + label {
+    background: url('./img/checked.svg') no-repeat left;
+  }
+
+  input[type='checkbox']:checked:hover + label {
+    background: url('./img/checked-hover.svg') no-repeat left;
   }
 
   label {

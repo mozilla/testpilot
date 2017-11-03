@@ -27,6 +27,21 @@ storiesOf('NewsletterFooter', module)
     <NewsletterFooter
       {...baseProps}
     />)
+  .add('with email', () =>
+    <NewsletterFooter
+      {...baseProps}
+      newsletterForm={{
+        email: 'foo@example.com'
+      }}
+    />)
+  .add('agreed', () =>
+    <NewsletterFooter
+      {...baseProps}
+      newsletterForm={{
+        email: 'foo@example.com',
+        privacy: true
+      }}
+    />)
   .add('failed', () =>
     <NewsletterFooter
       {...baseProps}

@@ -33,6 +33,11 @@ storiesOf('NewsletterForm', module)
       privacy={boolean('Privacy', false)}
       isModal={boolean('Is Modal', false)}
     />)
+  .add('with email but no agreement', () =>
+    <NewsletterForm
+      {...baseProps}
+      email={'foo@example.com'}
+    />)
   .add('modal, filled in', () =>
     <NewsletterForm
       {...baseProps}
