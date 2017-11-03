@@ -1,3 +1,6 @@
+@import '~photon-colors/colors.scss';
+@import '../../../styles/_utils';
+
 $email-icon--width: 146px;
 $email-icon--height: 127px;
 $email-icon--responsive-unit: .66;
@@ -25,7 +28,7 @@ $email-icon--responsive-unit: .66;
   header {
     @include flex-container(column, center, flex-start);
 
-    background: url('../images/email.svg') no-repeat left;
+    background: url('./img/email.svg') no-repeat left;
     background-size: $email-icon--width $email-icon--height;
     margin-right: 10%;
     min-height: $email-icon--height;

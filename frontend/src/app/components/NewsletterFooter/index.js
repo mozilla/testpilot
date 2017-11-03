@@ -6,6 +6,8 @@ import React from 'react';
 import LayoutWrapper from '../LayoutWrapper';
 import NewsletterForm from '../NewsletterForm';
 
+import './index.scss';
+
 type NewsletterFooterProps = {
   getWindowLocation: Function,
   sendToGA: Function,
