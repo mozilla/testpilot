@@ -107,6 +107,7 @@ emailOptInDialogErrorTitle = Ayuh ala!
 [[ updateList ]]
 
 latestUpdatesTitle = Ileqqman ineggura
+showMoreNewsTitle = Sken isallen izrin
 
 
 // A listing of all Test Pilot experiments.
@@ -184,9 +185,19 @@ tourOnboardingTitle = { $title } ittwarmed!
 tourDoneButton = Tefra
 userCountContainerAlt = Ikker tura akka!
 highlightPrivacy = Tabaḍnit inek
+experimentGradReportButton = Tuɣalin n termit
 experimentGradReportPendingTitle = Tfuk termit
 experimentGradReportPendingCopy = Aqlaɣ nxeddem ɣef uneqqis ummid. Uɣal-d ticki akken ad twaliḍ ugar.
+experimentGradReportReady = Nhegga-d tuɣalin n termit leqqayen.
 experimentGoToLink = Ddu ar { $title }
+startedDateLabel = Azemz n tazwara n termit: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+learnMoreLink = ISSIN UGAR
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
