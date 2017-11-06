@@ -19,11 +19,13 @@ describe('app/containers/HomePageWithAddon', () => {
       uninstallAddon: sinon.spy(),
       navigateTo: sinon.spy(),
       newsletterForm: {succeeded: true},
-      freshNewsUpdatesSinceLastViewed: [
-        {experimentSlug: 'min-vid',
+      majorNewsUpdates: [
+        {
+          experimentSlug: 'min-vid',
           slug: 'min-vid-update-1',
           title: 'update shouldnt show since its more than 2 weeks old',
           link: 'https://medium.com/firefox-test-pilot',
+          major: true,
           created: new Date(twoWeeksAgo).toISOString(),
           published: new Date(twoWeeksAgo).toISOString(),
           image: 'http://www.revelinnewyork.com/sites/default/files/RatMay8-21%2C1970_jpg.jpg',
@@ -33,6 +35,7 @@ describe('app/containers/HomePageWithAddon', () => {
           slug: 'min-vid-update-2',
           title: 'update should be 2nd in carousel',
           link: 'https://medium.com/firefox-test-pilot',
+          major: true,
           created: new Date(twoDaysAgo).toISOString(),
           published: new Date(twoDaysAgo).toISOString(),
           image: 'http://www.revelinnewyork.com/sites/default/files/RatMay8-21%2C1970_jpg.jpg',
@@ -42,6 +45,7 @@ describe('app/containers/HomePageWithAddon', () => {
           slug: 'min-vid-update-3',
           title: 'Another update, should be shown 1st in the carousel since it is fresher',
           link: 'https://medium.com/firefox-test-pilot',
+          major: true,
           created: new Date(oneDayAgo).toISOString(),
           published: new Date(oneDayAgo).toISOString(),
           image: 'http://www.revelinnewyork.com/sites/default/files/RatMay8-21%2C1970_jpg.jpg',
@@ -97,7 +101,7 @@ describe('app/containers/HomePageWithAddon', () => {
     expect(subject.find('.news-updates-modal')).to.have.property('length', 1);
 
     subject = render(<HomePageWithAddon {...props}
-      freshNewsUpdatesSinceLastViewed={[]}
+      majorNewsUpdates={[]}
       getExperimentLastSeen={()=>{}}/>);
     expect(subject.find('.news-updates-modal')).to.have.property('length', 0);
   });

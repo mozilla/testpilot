@@ -100,24 +100,3 @@ news_updates:
     dev: false
     content: >
       We just conducted our first A/B test to learn more about Send’s user interface. Get the results.
-  -
-    slug: send-update-3
-    title: GO ON AHEAD A SEND FILES YEE HAW
-    link: https://medium.com/firefox-test-pilot/screenshots-is-shipping-in-firefox-56-25ecbe0d5b91
-    created: 2017-11-1T12:00:00Z
-    published: 2017-11-1T12:00:00Z
-    major: true
-    image: '/static/images/fox.svg'
-    dev: false
-    content: >
-      The general updates/news alerts are actually working now! wowooo!
-
-  -
-    slug: send-update-4
-    title: Send a dang file if ya want
-    link: https://medium.com/firefox-test-pilot/screenshots-is-shipping-in-firefox-56-25ecbe0d5b91
-    created: 2017-11-1T12:00:00Z
-    published: 2017-11-1T12:00:00Z
-    dev: false
-    content: >
-      The general updates/news alerts are actually working now! wowooo!

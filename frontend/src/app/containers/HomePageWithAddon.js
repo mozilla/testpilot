@@ -118,8 +118,7 @@ export default class HomePageWithAddon extends React.Component {
 
   render() {
     const { sendToGA, experiments, isAfterCompletedDate, staleNewsUpdates,
-            freshNewsUpdates, majorNewsUpdates }
-          = this.props;
+            freshNewsUpdates, majorNewsUpdates } = this.props;
     if (experiments.length === 0) { return null; }
 
     const { showEmailDialog, showNewsUpdateDialog } = this.state;

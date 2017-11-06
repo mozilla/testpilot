@@ -18,7 +18,13 @@
   "permissions": [
     "notifications",
     "storage",
-    "tabs"
+    "cookies",
+    "tabs",
+    "*://example.com/",
+    "*://testpilot.dev.mozaws.net/",
+    "*://testpilot-l10n.dev.mozaws.net/",
+    "*://testpilot.stage.mozaws.net/",
+    "*://testpilot.firefox.com/"
   ],
   "background": {
     "scripts": [

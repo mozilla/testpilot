@@ -178,7 +178,6 @@ news_updates:
     major: true # optional
     dev: false
     content: >
-    
       Example content goes here
 ```
 see also:[General news updates](#general-news-updates)

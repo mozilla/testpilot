@@ -19,24 +19,5 @@
   content: >
     The Page Shot experiment is now shipping in Firefox as Firefox Screenshots. Find out how it happened.
 
--
-  slug: general-update-5
-  title: General Updates actually work now
-  link: https://medium.com/firefox-test-pilot/screenshots-is-shipping-in-firefox-56-25ecbe0d5b91
-  created: 2017-11-1T12:00:00Z
-  published: 2017-11-1T12:00:00Z
-  major: true
-  image: '/static/images/fox.svg'
-  dev: false
-  content: >
-    The general updates/news alerts are actually working now! wowooo!
 
--
-  slug: general-update-6
-  title: Minor update General Updates actually work now
-  link: https://medium.com/firefox-test-pilot/screenshots-is-shipping-in-firefox-56-25ecbe0d5b91
-  created: 2017-11-1T12:00:00Z
-  published: 2017-11-1T12:00:00Z
-  dev: false
-  content: >
-    The general updates/news alerts are actually working now! wowooo!
+

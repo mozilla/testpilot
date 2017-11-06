@@ -80,17 +80,23 @@ const makeNewsAgeSelector = (
 export const makeFreshNewsUpdatesSelector = now =>
   createSelector(newsUpdatesSelector, makeNewsAgeSelector(false, null, now));
 
+export const makeFreshNewsUpdatesSinceLastViewedSelector = (
+  lastViewedDate,
+  now
+) =>
+  createSelector(
+    newsUpdatesSelector,
+    makeNewsAgeSelector(false, lastViewedDate, now)
+  );
 
 export const makeNewsUpdatesForDialogSelector = (
   lastViewedDate,
   now
 ) =>
   createSelector(
-    newsUpdatesSelector,
-    makeNewsAgeSelector(false, lastViewedDate, now),
+    makeFreshNewsUpdatesSinceLastViewedSelector(lastViewedDate, now),
     (newsUpdates) => newsUpdates.filter(update => update.major)
   );
-
 
 export const makeStaleNewsUpdatesSelector = now =>
   createSelector(newsUpdatesSelector, makeNewsAgeSelector(true, null, now));

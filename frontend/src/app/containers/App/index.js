@@ -27,8 +27,7 @@ import { isFirefox, isMinFirefoxVersion, isMobile } from '../../lib/utils';
 import {
   makeStaleNewsUpdatesSelector,
   makeFreshNewsUpdatesSelector,
-  makeMajorNewsUpdatesForDialogSelector,
-  makeFreshNewsUpdatesSinceLastViewedSelector
+  makeNewsUpdatesForDialogSelector
 } from '../../selectors/news';
 import config from '../../config';
 

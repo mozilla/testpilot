@@ -61,18 +61,26 @@ async function updateBadgeTextOnNew(topic, { experiments, news_updates }) {
     return dt >= clicked;
   });
 
-  let { value: lastViewed } = await browser.cookies.get({
-    url: getCurrentEnv().baseUrl,
+  // check for port number on local, we need to strip it off
+  // to properly fetch cookies.
+  const portIndex = getCurrentEnv().baseUrl.indexOf(':8000');
+  const baseUrl = (portIndex > -1) ?
+        getCurrentEnv().baseUrl.substring(0, portIndex)
+        : getCurrentEnv().baseUrl.indexOf(':8000');
+
+  let lastViewed = 0;
+  const cookie = await browser.cookies.get({
+    url: baseUrl,
     name: 'updates-last-viewed-date'
   });
 
-  if (!lastViewed) lastViewed = 0;
+  if (cookie) lastViewed = cookie.value;
 
   /* only show badge for news update if:
    * - has the "major" key
    * - update has been published in the past two weeks
-   * - update has not been "seen" by the addon (clicked)
    * - update has not been "seen" by the frontend (lastViewed)
+   * - update has not been "seen" by the addon (clicked)
    */
   const TWO_WEEKS = 2 * 7 * 24 * 60 * 60 * 1000;
   const twoWeeksAgo = Date.now() - TWO_WEEKS;
