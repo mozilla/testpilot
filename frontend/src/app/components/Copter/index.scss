@@ -8,13 +8,13 @@
   @include respond-to ('medium') {
     background: none;
     height: 220px;
-    width: 260px;
+    width: 345px;
   }
 
   @include respond-to('small') {
     background: none;
-    height: 220px;
-    width: 260px;
+    height: 141px;
+    width: 183px;
   }
 
   position: relative;
@@ -22,7 +22,7 @@
 
 .copter__inner {
   background-image: url('./img/copter.png');
-  background-size: 328px 265px;
+  background-size: 250px 201px;
   @include respond-to ('big') {
     height: 265px;
     width: 345px;
@@ -31,13 +31,13 @@
   @include respond-to ('medium') {
     background-size: 260px auto;
     height: 220px;
-    width: 260px;
+    width: 345px;
   }
 
   @include respond-to('small') {
-    background-size: 260px auto;
-    height: 220px;
-    width: 260px;
+    background-size: 141px auto;
+    height: 141px;
+    width: 183px;
   }
 
   background-position: center center;

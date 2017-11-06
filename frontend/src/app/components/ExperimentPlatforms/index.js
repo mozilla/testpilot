@@ -1,7 +1,8 @@
-
 import React from 'react';
 
 import { Localized } from 'fluent-react/compat';
+
+import './index.scss';
 
 const AVAILABLE_PLATFORMS = ['web', 'addon', 'mobile'];
 

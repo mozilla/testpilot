@@ -122,7 +122,7 @@ export const StatsSection = ({
 
         <Localized id="discussExperiment" $title={title}>
           <dt>
-            {title}
+            Discuss {title}
           </dt>
         </Localized>
         <dd>
