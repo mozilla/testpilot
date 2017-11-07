@@ -19,6 +19,7 @@ const experiments = [{
   description: 'This is a different experiment',
   subtitle: 'A subtitle',
   slug: 'pulse',
+  enabled: true,
   survey_url: 'https://example.com',
   created: '2010-06-21T12:12:12Z',
   modified: '2010-06-21T12:12:12Z'
@@ -33,7 +34,7 @@ const baseProps = {
   eventCategory: 'storybook',
   getExperimentLastSeen: () => Date.now(),
   isAfterCompletedDate: () => false,
-  isExperimentEnabled: () => false,
+  isExperimentEnabled: (e) => e.enabled === true,
   sendToGA: action('sendToGA'),
   navigateTo: action('navigateTo'),
   installed: {},
