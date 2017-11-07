@@ -150,6 +150,7 @@ tabcenterContributors2Title = UX de Firefox
 tabcenterContributors3Title = UX de Firefox
 trackingprotectionDescription = ¿Nos ayudaría a mejorar la  Protección de rastreo? Este experimento habilita la Protección de rastreo para la navegación en general y ofrece una forma rápida de informar sobre cualquier problema que vea mientras navegaa.
 trackingprotectionIntroduction = <p>Hasta ahora, la Protección de rastreo en Firefox sólo estaba disponible en el modo de Navegación privada. ¡Este experimento habilita la Protección de rastreo continua! (Por supuesto, puede deshabilitarla sitio por sitio cuando lo desee.)</p><p>Este experimento le permite ayudarnos a entender los sitios en los que la Protección rompe la Web para que podamos mejorarla para todos los usuarios de Firefox. Mientras navega, haga clic en el icono de escudo púrpura en la barra de URL en la parte superior de la página para comunicarnos cuáles sitios funcionan bien con Protección de rastreo y cuáles no.</p>
+trackingprotectionDetails0Copy = Acceda a todas las funciones de Protección contra rastreo en la barra de direcciones.
 trackingprotectionDetails1Copy = Informá un problema y ayudanos a resolverlo.
 trackingprotectionContributors0Title = Desarrollador web
 trackingprotectionContributors1Title = Diseñador de UX senior
