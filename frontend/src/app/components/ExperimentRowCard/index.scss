@@ -6,7 +6,7 @@
   @include flex-container(column, flex-start, stretch);
 
   @include respond-to('big') {
-    width: 300px;
+    width: 230px;
 
     &:nth-child(3n+1) {
       margin-left: 0;
@@ -15,7 +15,7 @@
 
   @include respond-to('medium') {
     margin: 0 3% $grid-unit * 2;
-    width: 44%;
+    width: 230px;
   }
 
   @include respond-to('small') {
@@ -100,14 +100,6 @@
     }
   }
 
-  &.enabled {
-    box-shadow: 0 0 0 3px $white, 0 0 0 6px $green-60;
-
-    &:hover {
-      box-shadow: 0 0 0 3px $white, 0 0 0 6px $green-60, 0 0 0 9px $transparent-white-1;
-    }
-  }
-
   &:hover {
     box-shadow: 0 1px 0 0 $transparent-white-2, 0 0 0 5px $transparent-white-2;
     transition: box-shadow 150ms;
@@ -118,22 +110,6 @@
       transition: color 150ms;
     }
   }
-
-  &.just-launched {
-    box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-blue;
-
-    &:hover {
-      box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-blue, 0 0 0 9px $transparent-white-1;
-    }
-  }
-
-  &.just-updated {
-    box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-blue;
-
-    &:hover {
-      box-shadow: 0 0 0 3px $white, 0 0 0 6px $bright-blue, 0 0 0 9px $transparent-white-1;
-    }
-  }
 }
 
 .experiment-actions {
@@ -142,25 +118,21 @@
   }
 
   .tab {
-    border-bottom-right-radius: $large-border-radius;
-    border-bottom-width: 3px;
-    border-left-width: 0;
-    border-right-color: $white;
-    border-right-width: 3px;
-    border-style: solid;
-    border-top-left-radius: $small-border-radius;
-    border-top-width: 0;
+    border-style: solid;   
+    border-width: 1px;
+    border-color: rgb(58, 133, 36);
+    border-radius: $small-border-radius;
     display: inline-block;
     font-weight: 300;
     height: $grid-unit * 1.5;
-    left: -3px;
+    top: -5px;
+    left: -5px;
     line-height: $grid-unit * 1.5;
     outline: none;
     padding: 0 20px;
     position: absolute;
     text-align: center;
     text-decoration: none;
-    top: -3px;
     transition: background 150ms;
     white-space: nowrap;
     z-index: 99999;
@@ -168,21 +140,50 @@
 
   .enabled-tab {
     background: $green-60;
-    border-bottom-color: $white;
     color: $white;
+  }
+
+  .enabled-tab::before {
+    background-image: url('./img/check.svg');
+    content: '';
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    margin-right: 4px;
   }
 
   .just-launched-tab {
-    background: $bright-blue;
-    border-bottom-color: $white;
+    background: $green-60;
     color: $white;
   }
 
+  .just-launched-tab::before {
+    background-image: url('./img/star.svg');
+    position: relative;
+    top: 2px;
+    content: '';
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+
   .just-updated-tab {
-    background: $bright-blue;
-    border-bottom-color: $white;
+    background: $green-60;
     color: $white;
   }
+
+  .just-updated-tab::before {
+    background-image: url('./img/star.svg');
+    position: relative;
+    top: 2px;
+    content: '';
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+
 }
 
 .experiment-icon-wrapper {
