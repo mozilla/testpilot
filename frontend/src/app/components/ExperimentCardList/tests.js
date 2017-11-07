@@ -3,7 +3,7 @@ import { assert, expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
 
-import ExperimentCardList from '../../../src/app/components/ExperimentCardList';
+import ExperimentCardList from './index';
 
 
 describe('app/components/ExperimentCardList', () => {
