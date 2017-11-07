@@ -4,9 +4,10 @@ import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import ExperimentCardList from '../components/ExperimentCardList';
-import LayoutWrapper from '../components/LayoutWrapper';
+import ExperimentCardList from '../ExperimentCardList';
+import LayoutWrapper from '../LayoutWrapper';
 
+import './index.scss';
 
 type PastExperimentsProps = {
   pastExperiments: Array<Object>

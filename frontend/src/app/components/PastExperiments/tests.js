@@ -1,15 +1,15 @@
+/* global describe, beforeEach, it */
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import PastExperiments from '../../../src/app/components/PastExperiments';
+import PastExperiments from './index.js';
 
 describe('app/components/PastExperiments', () => {
-
   const pastExperiments = [{ title: 'foo' }, { title: 'bar' }];
   let subject;
 
-  beforeEach(function() {
+  beforeEach(() => {
     subject = shallow(<PastExperiments pastExperiments={ pastExperiments } />);
   });
 
