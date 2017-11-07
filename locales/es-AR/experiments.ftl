@@ -157,6 +157,7 @@ trackingprotectionContributors1Title = Diseñador de UX senior
 trackingprotectionContributors2Title = Ingeniero de control de calidad senior
 trackingprotectionContributorsextra = Este experimento se basa en la tecnología de Protección de rastreo de Firefox, desarrollada por los empleados y voluntarios de Mozilla durante los últimos años. 
 universalsearchDescription = Obtenga sugerencias para los mejores sitios de la Web a medida que tipea en la Barra alucinante.
+universalsearchIntroduction = <p>Navegue más rápido por Internet con la Búsqueda universal. Solo ingrese unos pocos caracteres en su Barra alucinante y disfrutará de los sitios, personas y artículos de Wikipedia más populares.<p>
 universalsearchDetails0Copy = A medida que tipea aparecen sitios populares, personas y artículos de Wikipedia.
 universalsearchContributors0Title = Gerente de producto
 universalsearchContributors1Title = Diseñador de UX senior
