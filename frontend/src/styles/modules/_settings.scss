@@ -7,13 +7,13 @@
   background-position: 10px center;
   background-repeat: no-repeat;
   background-size: 16px 16px;
-  border-radius: 0 0 3px 3px;
-  border-top: 0;
+  opacity: .6;
   padding: 0 10px 0 32px;
 
   &:hover {
     background-position: 9px center;
     background-size: 18px 18px;
+    opacity: .8;
   }
 }
 

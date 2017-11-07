@@ -79,7 +79,7 @@ export default class Settings extends React.Component {
       <div id="settings">
          <div className="settings-contain">
            <Localized id="menuTitle">
-             <div className={classnames(['button', 'outline', 'settings-button'], { active: this.showSettingsMenu() })}
+             <div className={classnames('settings-button', { active: this.showSettingsMenu() })}
                   onClick={e => this.toggleSettings(e)}>
                Settings
              </div>

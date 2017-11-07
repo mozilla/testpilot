@@ -3,9 +3,11 @@
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import LayoutWrapper from './LayoutWrapper';
-import RetireConfirmationDialog from './RetireConfirmationDialog';
-import Settings from './Settings';
+import LayoutWrapper from '../LayoutWrapper';
+import RetireConfirmationDialog from '../RetireConfirmationDialog';
+import Settings from '../Settings';
+
+import './index.scss';
 
 type HeaderProps = {
   uninstallAddon: Function,
@@ -104,7 +106,7 @@ export default class Header extends React.Component {
       <div>
         {this.renderRetireDialog()}
         <header id="main-header">
-          <LayoutWrapper flexModifier="row-between-top">
+          <LayoutWrapper flexModifier="row-between-breaking">
             <h1>
               <Localized id="siteName">
                 <a href={ this.setHeaderLinkPath() } className="wordmark">Firefox Test Pilot</a>

@@ -4,13 +4,14 @@ import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import LayoutWrapper from './LayoutWrapper';
-import LocalizedHtml from '../components/LocalizedHtml';
-import { VariantTests, VariantTestCase, VariantTestDefault } from './VariantTests';
+import LayoutWrapper from '../LayoutWrapper';
+import LocalizedHtml from '../LocalizedHtml';
 
-import config from '../config';
+import './index.scss';
 
-import type { MainInstallButtonProps } from './types';
+import config from '../../config';
+
+import type { MainInstallButtonProps } from '../types';
 
 type MainInstallButtonState = { isInstalling: boolean };
 
@@ -46,7 +47,7 @@ export default class MainInstallButton extends React.Component {
   }
 
   render() {
-    const { isFirefox, isMinFirefox, isMobile, hasAddon } = this.props;
+    const { isFirefox, isMinFirefox, isMobile, hasAddon, experimentTitle } = this.props;
     const isInstalling = this.state.isInstalling && !hasAddon;
     const terms = <Localized id="landingLegalNoticeTermsOfUse">
       <a href="/terms"/>
@@ -54,12 +55,14 @@ export default class MainInstallButton extends React.Component {
     const privacy = <Localized id="landingLegalNoticePrivacyNotice">
       <a href="/privacy"/>
     </Localized>;
+    const layout = experimentTitle ? 'column-center-start-breaking' : 'column-center';
 
     return (
-      <LayoutWrapper flexModifier="column-center-start-breaking">
+      <LayoutWrapper flexModifier={layout} helperClass="main-install">
+        <div className="main-install__spacer" />
         {(isMinFirefox && !isMobile) ? this.renderInstallButton(isInstalling, hasAddon) : this.renderAltButton(isFirefox, isMobile) }
         {isMinFirefox && !isMobile && <LocalizedHtml id="landingLegalNotice" $terms={terms} $privacy={privacy}>
-          <p className="legal-information">
+          <p className="main-install__legal">
             By proceeding, you agree to the {terms} and {privacy} of Test Pilot.
           </p>
         </LocalizedHtml>}
@@ -69,12 +72,12 @@ export default class MainInstallButton extends React.Component {
 
   renderOneClickInstallButton(title: string) {
     return (
-      <div className="default-btn-msg one-click-text">
+      <div className="main-install__one-click">
         <LocalizedHtml id="oneClickInstallMinorCta">
-          <span className="minor-cta">Install Test Pilot &amp;</span>
+          <span className="main-install__minor-cta">Install Test Pilot &amp;</span>
         </LocalizedHtml>
         <Localized id="oneClickInstallMajorCta" $title={title}>
-          <span className="major-cta">Enable {title}</span>
+          <span className="main-install__major-cta">Enable {title}</span>
         </Localized>
       </div>
     );
@@ -94,7 +97,7 @@ export default class MainInstallButton extends React.Component {
     }
     const makeInstallButton = (extraClass = '') => {
       return <button onClick={e => this.install(e)}
-        className={classnames(`button extra-large primary install ${extraClass}`, { 'state-change': isInstalling })}>
+        className={classnames(`button primary main-install__button ${extraClass}`, { 'state-change': isInstalling })}>
         {hasAddon && <Localized id="landingInstalledButton">
           <span className="progress-btn-msg">Installed</span>
         </Localized>}
@@ -107,14 +110,7 @@ export default class MainInstallButton extends React.Component {
       </button>;
     };
 
-    return <VariantTests name="installButtonBorder" varianttests={ this.props.varianttests }>
-      <VariantTestCase value="bigBorder">
-        { makeInstallButton('big-border') }
-      </VariantTestCase>
-      <VariantTestDefault>
-        { makeInstallButton() }
-      </VariantTestDefault>
-    </VariantTests>;
+    return makeInstallButton();
   }
 
   renderAltButton(isFirefox: boolean, isMobile: boolean) {
@@ -131,7 +127,7 @@ export default class MainInstallButton extends React.Component {
       <div>
           {!isFirefox ? (
               <Localized id="landingDownloadFirefoxDesc">
-                <span className="parens">(Test Pilot is available for Firefox on Windows, OS X and Linux)</span>
+                <span>(Test Pilot is available for Firefox on Windows, OS X and Linux)</span>
               </Localized>
             ) : (
               <Localized id="landingUpgradeDesc2" $version={config.minFirefoxVersion}>
@@ -139,23 +135,23 @@ export default class MainInstallButton extends React.Component {
               </Localized>
             )
           }
-          {!isMobile && <a href="https://www.mozilla.org/firefox" className="button primary download-firefox">
-            <div className="button-icon">
-              <div className="button-icon-badge"></div>
+          {!isMobile && <a href="https://www.mozilla.org/firefox" className="button primary main-install__download">
+            <div className="main-install__icon">
+              <div className="main-install__badge"></div>
             </div>
-            <div className="button-copy">
+            <div className="main-install__copy">
               {(!isFirefox) ? (
                   <Localized id="landingDownloadFirefoxTitle">
-                    <div className="button-title">Firefox</div>
+                    <div className="main-install__title">Firefox</div>
                   </Localized>
                 ) : (
                   <Localized id="landingUpgradeFirefoxTitle">
-                    <div className="button-title">Upgrade Firefox</div>
+                    <div className="main-install__title">Upgrade Firefox</div>
                   </Localized>
                 )
               }
               <Localized id="landingDownloadFirefoxSubTitle">
-                <div className="button-description">Free Download</div>
+                <div className="main-install__description">Free Download</div>
               </Localized>
             </div>
           </a>}

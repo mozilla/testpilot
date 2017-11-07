@@ -8,7 +8,7 @@ import LayoutWrapper from '../LayoutWrapper';
 
 storiesOf('GraduatedNotice', module)
   .addDecorator(story =>
-    <div className="blue" style={{ padding: 10 }} onClick={action('click')}>
+    <div className="blue storybook-center" onClick={action('click')}>
       <div className="stars" />
       <div className="default-background">
         <section id="experiment-page">

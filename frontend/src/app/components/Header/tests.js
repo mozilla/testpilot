@@ -1,13 +1,14 @@
+/* global describe, beforeEach, it */
+
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { mount } from 'enzyme';
-import { findLocalizedById } from '../util';
+import { findLocalizedById } from '../../../../test/app/util';
 
-import Header from '../../../src/app/components/Header';
+import Header from './index';
 
-describe('app/components/Header', () => {
-
+describe('Header', () => {
   let preventDefault, stopPropagation, mockClickEvent, props, subject;
   beforeEach(() => {
     preventDefault = sinon.spy();
@@ -17,7 +18,7 @@ describe('app/components/Header', () => {
       uninstallAddon: sinon.spy(),
       sendToGA: sinon.spy(),
       openWindow: sinon.spy()
-    }
+    };
     subject = mount(<Header {...props} />);
   });
 
@@ -103,8 +104,6 @@ describe('app/components/Header', () => {
         clickItem('menuFileIssue');
         expectMenuGA('file issue');
       });
-
     });
   });
-
 });

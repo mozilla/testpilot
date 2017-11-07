@@ -1,36 +1,22 @@
 @import '../../../styles/_utils';
 
-.card-list {
-
-  > :nth-child(2):not(.experiment-summary) {
-    @include respond-to('not-small') {
-      border-left: 1px solid $transparent-white-3;
-      border-right: 1px solid $transparent-white-3;
-    }
-
-    @include respond-to('small') {
-      border-bottom: 1px solid $transparent-white-3;
-      border-top: 1px solid $transparent-white-3;
-    }
-  }
-}
-
 .card-list-heading {
   @include respond-to('medium') {
-    font-size: $font-unit * 3.5;
-    line-height: $font-unit * 3.5;
+    font-size: 33px;
+    line-height: 33px;
   }
 
   @include respond-to('small') {
-    font-size: $font-unit * 2.7;
-    line-height: $font-unit * 2.7;
+    font-size: $font-unit * 2;
+    line-height: $font-unit * 2;
   }
 
+  font-size: $grid-unit * 1.5;
   font-weight: 300;
-  font-size: 33px;
-  text-shadow: 0 2px 0 $transparent-black-2;
-  line-height: $grid-unit * 2.7;
+  line-height: $grid-unit * 2;
   margin: 0 0 $grid-unit * 1.5;
+  text-align: center;
+  text-shadow: 0 2px 0 $transparent-black-3;
   width: 100%;
 }
 
@@ -55,13 +41,6 @@
     opacity: .9;
     position: relative;
     width: $grid-unit * 3.2;
-
-    &.large {
-      background-size: $grid-unit * 4.8 $grid-unit * 4.8;
-      height: $grid-unit * 4.8;
-      margin-bottom: $grid-unit * 2;
-      width: $grid-unit * 4.8;
-    }
   }
 
   .card-title {
@@ -78,6 +57,20 @@
     &.large {
       font-size: $font-unit * 1.66;
     }
+  }
+
+  .add-on-icon {
+    background-image: url('./img/add-on.svg');
+    left: 9px;
+    top: -2px;
+  }
+
+  .test-pilot-icon {
+    background-image: url('./img/testpilot.svg');
+  }
+
+  .chat-icon {
+    background-image: url('./img/chat-icon.svg');
   }
 }
 

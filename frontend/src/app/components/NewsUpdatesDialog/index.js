@@ -34,7 +34,7 @@ export default class NewsUpdatesDialog extends React.Component {
           {u.content &&
             <div className='tour-text'>
               <h2 className='lighter tour-title'>{u.title}</h2>
-              <p className='published-date lighter emphasis'>{moment(new Date(u.published)).format('dddd, MMMM Do YYYY')}</p>
+              <p className='published-date lighter'>{moment(new Date(u.published)).format('dddd, MMMM Do YYYY')}</p>
               <p className='lighter'>{u.content}</p>
               {u.link && (<Localized id='learnMoreLink'>
                             <a className="learn" href={u.link}>LEARN MORE</a>

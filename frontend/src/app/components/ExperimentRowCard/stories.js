@@ -38,7 +38,7 @@ const baseProps = {
 storiesOf('ExperimentRowCard', module)
   .addDecorator(withKnobs)
   .addDecorator(story =>
-    <div className="blue" style={{ padding: 10 }} onClick={action('click')}>
+    <div className="blue storybook-center" onClick={action('click')}>
       <div className="stars" />
       <LayoutWrapper flexModifier="card-list">
         {story()}

@@ -1,11 +1,3 @@
-.no-display {
-  display: none;
-}
-
-.hidden {
-  opacity: 0;
-}
-
 .delayed-fade-in {
   animation: fade-in 750ms forwards ease-out;
   animation-delay: 750ms;
@@ -20,12 +12,6 @@
 
 .fade-in-fly-up {
   animation: fade-in-fly-up 500ms forwards;
-}
-
-.delayed-fade-in-fly-up {
-  @extend .fade-in-fly-up;
-  animation-delay: 500ms;
-  opacity: 0;
 }
 
 .modal-bounce-in {

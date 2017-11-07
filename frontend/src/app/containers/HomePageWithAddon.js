@@ -81,13 +81,13 @@ export default class HomePageWithAddon extends React.Component {
                 </h2>
               </Localized>
               <Localized id="experimentsListNoneInstalledSubheader">
-                <p>
+                <p className="banner__copy">
                   Ready to try a new Test Pilot experiment? Select one to enable, take
                   it for a spin, and let us know what you think.
                 </p>
               </Localized>
               <LocalizedHtml id="experimentsListNoneInstalledCTA">
-                <p>
+                <p className="banner__copy">
                   Not interested?
                   <a onClick={() => this.onNotInterestedSurveyClick()}
                      href="https://qsurvey.mozilla.com/s3/TxP-User" target="_blank"
@@ -97,14 +97,15 @@ export default class HomePageWithAddon extends React.Component {
                 </p>
               </LocalizedHtml>
             </div>
+            <div className="banner__spacer" />
             <Copter/>
           </LayoutWrapper>
         </Banner>
       );
     }
     return (
-      <Banner condensed={true}>
-      <LayoutWrapper flexModifier="row-between-reverse">
+      <Banner>
+      <LayoutWrapper flexModifier="column-center-reverse">
         <Localized id="experimentCondensedHeader">
           <h2 className="banner__title">
             Welcome to Test Pilot!
@@ -142,12 +143,17 @@ export default class HomePageWithAddon extends React.Component {
 
         <LayoutWrapper flexModifier="card-list">
           <UpdateList {...{ sendToGA, staleNewsUpdates, freshNewsUpdates, experiments }} />
+        </LayoutWrapper>
+        <Banner background={true}>
+        <LayoutWrapper>
           <Localized id="experimentListHeader">
+
             <h1 className="emphasis card-list-heading">Pick your experiments!</h1>
           </Localized>
           <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
           <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
-        </LayoutWrapper>
+          </LayoutWrapper>
+          </Banner>
       </View>
     );
   }
