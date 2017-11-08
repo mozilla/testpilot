@@ -6,6 +6,8 @@ import React from 'react';
 
 import { buildSurveyURL, experimentL10nId } from '../../lib/utils';
 
+import './index.scss';
+
 import type { InstalledExperiments } from '../../reducers/addon';
 
 import ExperimentPlatforms from '../ExperimentPlatforms';

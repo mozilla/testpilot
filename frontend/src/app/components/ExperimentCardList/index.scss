@@ -1,3 +1,5 @@
+@import '../../../styles/_utils';
+
 .card-list {
 
   > :nth-child(2):not(.experiment-summary) {
@@ -24,10 +26,11 @@
     line-height: $font-unit * 2.7;
   }
 
-  font-size: $grid-unit * 2;
+  font-weight: 300;
+  font-size: 33px;
+  text-shadow: 0 2px 0 $transparent-black-2;
   line-height: $grid-unit * 2.7;
   margin: 0 0 $grid-unit * 1.5;
-  text-shadow: 0 2px 0 $transparent-black-3;
   width: 100%;
 }
 
@@ -77,3 +80,4 @@
     }
   }
 }
+
