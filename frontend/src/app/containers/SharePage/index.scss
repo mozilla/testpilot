@@ -1,0 +1,80 @@
+.share-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: $grid-unit 0;
+    padding: 0;
+
+    li {
+        margin-right: $grid-unit;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    a {
+        background-repeat: no-repeat;
+        background-size: auto;
+        display: inline-block;
+        height: 60px;
+        overflow: hidden;
+        text-indent: -9999px;
+        width: 60px;
+    }
+
+    .share-facebook a {
+        background-image: url('../images/share-facebook.svg');
+    }
+
+    .share-twitter a {
+        background-image: url('../images/share-twitter.svg');
+    }
+
+    .share-email a {
+        background-image: url('../images/share-email.svg');
+    }
+}
+
+.share-url-wrapper {
+    border: 0;
+    margin: $grid-unit 0 0;
+    padding: 0;
+}
+
+.share-url {
+    @include flex-container(row, space-between, stretch);
+    border: 1px solid $transparent-black-8;
+    border-radius: $small-border-radius;
+    padding: 0;
+
+    input {
+        background: transparent;
+        border-width: 0;
+        flex: 1 1 80%;
+        font-size: $font-unit * 1.6;
+        line-height: $font-unit * 1.6;
+        padding: $grid-unit * .6;
+    }
+
+    button {
+        background: transparent;
+        border-radius: 0 $small-border-radius $small-border-radius 0;
+        border-width: 0;
+        color: $blue-40;
+        flex: 1 0 20%;
+        line-height: $font-unit * 1.6;
+        padding: $grid-unit * .7 $grid-unit * .8;
+        text-transform: lowercase;
+        transition: background 150ms;
+
+        &:hover,
+        &:focus {
+            background-color: $transparent-black-1;
+        }
+
+        &:active {
+            animation: pop 50ms;
+        }
+    }
+}

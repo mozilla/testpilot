@@ -1,0 +1,12 @@
+.toolbar-button-onboarding {
+    @include hidpi-background-image('toolbar-button-onboarding', 382px 182px);
+    height: 182px;
+    margin: auto auto $grid-unit -10px;
+    width: 382px;
+}
+
+.modal {
+    &#onboarding {
+        width: $grid-unit * 21;
+    }
+}

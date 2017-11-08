@@ -1,0 +1,6 @@
+.envelope {
+  @include hidpi-background-image('envelope', 150px 130px);
+  height: 130px;
+  margin: auto;
+  width: 150px;
+}
