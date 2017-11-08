@@ -1,0 +1,10 @@
+.loading-pill {
+  border: 1px solid $transparent-white-3;
+  border-radius: $small-border-radius;
+  padding: $grid-unit * .5;
+  position: relative;
+
+  > * {
+    margin: 0;
+  }
+}
