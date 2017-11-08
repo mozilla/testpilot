@@ -4,9 +4,11 @@ import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import LocalizedHtml from '../components/LocalizedHtml';
+import LocalizedHtml from '../LocalizedHtml';
 
-import { defaultState } from '../reducers/newsletter-form';
+import { defaultState } from '../../reducers/newsletter-form';
+
+import './index.scss';
 
 type NewsletterFormProps = {
   email?: string,
@@ -78,10 +80,10 @@ export default class NewsletterForm extends React.Component {
         href="/privacy"/>
     </Localized>;
 
-    return (
+    return <div>
+      <input name={fieldName} id={fieldName} type="checkbox" checked={this.props.privacy} required
+             onChange={this.handlePrivacyClick} onClick={this.handlePrivacyClick} />
       <label className={this.makeRevealedClassNames()} htmlFor={fieldName}>
-        <input name={fieldName} id={fieldName} type="checkbox" checked={this.props.privacy} required
-               onChange={this.handlePrivacyClick} onClick={this.handlePrivacyClick} />
         { this.state.privacyNote ? <Localized id="newsletterFormPrivacyAgreementRequired">
           <span>
             Please check this box if you want to proceed.
@@ -93,14 +95,14 @@ export default class NewsletterForm extends React.Component {
           </span>
         </LocalizedHtml>
       </label>
-    );
+    </div>;
   }
 
   renderSubmitButton() {
     if (this.props.submitting) {
       return (
         <Localized id='newsletterFormSubmitButtonSubmitting'>
-          <button disabled={true} className="button outline large">
+          <button disabled={true} className="button outline large newsletter-form-submitting">
             Submitting...
           </button>
         </Localized>

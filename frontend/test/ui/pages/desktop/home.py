@@ -75,7 +75,7 @@ class Home(Base):
     class SignUpFooter(Region):
         """Represents the footer."""
         _root_locator = (By.CLASS_NAME, 'newsletter-footer')
-        _privacy_checkbox_locator = (By.CSS_SELECTOR, 'input#privacy')
+        _privacy_checkbox_locator = (By.CSS_SELECTOR, 'label[for="privacy"]')
         _sign_up_locator = (By.CSS_SELECTOR, 'input')
         _sign_up_now_locator = (By.CLASS_NAME, 'button')
         _stay_informed_locator = (By.CSS_SELECTOR, 'h2')
