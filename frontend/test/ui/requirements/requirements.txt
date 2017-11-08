@@ -1,6 +1,6 @@
 PyPOM==1.2.0
 pytest==3.2.3
-pytest-selenium==1.11.1
+pytest-selenium==1.11.2
 pytest-firefox==0.1.1
 pytest-repeat==0.4.1
 pytest-variables==1.7.0
