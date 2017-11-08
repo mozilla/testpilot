@@ -182,7 +182,7 @@
     margin: 0 auto;
   }
 
-  .tour-text {
+  .step-text {
     background: $white;
     display: block;
     font-weight: bold;
@@ -225,7 +225,7 @@
     }
   }
 
-  .tour-image {
+  .step-image {
     @include flex-container(row, center, center);
     background: $transparent-black-1;
     height: 360px;
@@ -248,7 +248,7 @@
     }
   }
 
-  .tour-actions {
+  .step-actions {
     @include flex-container(row, space-between, center);
     height: 92px;
     left: -7.8%;
@@ -258,9 +258,9 @@
     width: 115.6%;
   }
 
-  .tour-next,
-  .tour-back,
-  .tour-done {
+  .step-next,
+  .step-back,
+  .step-done {
     @include flex-container(row, center, center);
     border-radius: $circle-border-radius;
     box-shadow: 0 0 5px 1px $transparent-black-2, 0 0 0 1px $transparent-black-3;
@@ -274,16 +274,16 @@
     }
   }
 
-  .tour-next {
+  .step-next {
     animation: pop 150ms ease-in;
     animation-delay: 700ms;
   }
 
-  .tour-next,
-  .tour-back {
+  .step-next,
+  .step-back {
     background: $white;
 
-    & > div {
+    & > .step-filler {
       background-position: center center;
       background-repeat: no-repeat;
       height: $grid-unit * 2;
@@ -296,7 +296,7 @@
     }
   }
 
-  .tour-done {
+  .step-done {
     background-color: $white;
     color: $bright-blue;
     font-weight: bold;
@@ -307,11 +307,11 @@
     }
   }
 
-  .tour-back > div {
+  .step-back > .step-filler {
     @include hidpi-background-image('back', 40px 40px);
   }
 
-  .tour-next > div {
+  .step-next > .step-filler {
     @include hidpi-background-image('next', 40px 40px);
   }
 
@@ -324,7 +324,7 @@
     position: relative;
     width: 644px;
 
-    .tour-general-actions {
+    .step-general-actions {
       bottom: -40px;
       color: $white;
       position: absolute;
@@ -345,7 +345,7 @@
       }
     }
 
-    .tour-title {
+    .step-title {
       line-height: 110%;
     }
 
@@ -398,12 +398,12 @@
       margin-top: 25px;
     }
 
-    .tour-text {
+    .step-text {
       margin: 30px auto;
       width: 80%;
     }
 
-    .tour-image {
+    .step-image {
       background: inherit;
     }
 

@@ -1,4 +1,5 @@
 // @flow
+
 import cn from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
@@ -31,12 +32,12 @@ export default class NewsUpdatesDialog extends React.Component {
 
   renderUpdate(newsUpdates: Array<Object>, currentStep: number) {
     return newsUpdates.map((u, idx) => (idx === currentStep) && (
-        <div key={idx} className='tour-content'>
-          {u.image && <div className='tour-image'><img src={u.image} /></div>}
+        <div key={idx} className='step-content'>
+          {u.image && <div className='step-image'><img src={u.image} /></div>}
           {u.content &&
-            <div className='tour-text'>
-              <h2 className='lighter tour-title'>{u.title}</h2>
-              <p className='published-date lighter'>{moment(new Date(u.published)).format('dddd, MMMM Do YYYY')}</p>
+            <div className='step-text'>
+              <h2 className='lighter step-title'>{u.title}</h2>
+              <p className='published-date lighter emphasis'>{moment(new Date(u.published)).format('dddd, MMMM Do YYYY')}</p>
               <p className='lighter'>{u.content}</p>
               {u.link && (<Localized id='learnMoreLink'>
                             <a className="learn" href={u.link}>LEARN MORE</a>
@@ -70,9 +71,9 @@ export default class NewsUpdatesDialog extends React.Component {
 
     const myProps = {
       steps: newsUpdates,
-      onCancel: this.onCancel,
-      onComplete: this.onComplete,
-      renderStep: this.renderUpdate,
+      onCancel: this.onCancel.bind(this),
+      onComplete: this.onComplete.bind(this),
+      renderStep: this.renderUpdate.bind(this),
       wrapperClass: 'news-updates-modal',
       headerTitle: this.renderHeaderTitle(newsUpdates, currentStep),
       stepNextPing: (newStep) => {
@@ -114,7 +115,7 @@ export default class NewsUpdatesDialog extends React.Component {
   }
 
   onComplete(ev) {
-    const { sendToGA, onCancel } = this.props;
+    const { sendToGA, onComplete } = this.props;
 
     sendToGA('event', {
       eventCategory: 'NewsUpdatesDialog Interactions',

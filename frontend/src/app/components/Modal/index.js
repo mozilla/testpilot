@@ -1,17 +1,16 @@
 // @flow
 
-import classnames from 'classnames';
-import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
 import './index.scss';
 
 type ModalProps = {
+  wrapperClass: String,
   onCancel: Function,
   onComplete: Function,
-  onStepNext: Function,
-  onStepBack: Function,
-  wrapperClass: String
+  handleKeyDown: ?Function,
+  headerTitle: React.Element<any>,
+  children: Array<React.Element<any>> | React.Element<any>
 }
 
 export default class Modal extends React.Component {
@@ -23,12 +22,16 @@ export default class Modal extends React.Component {
   }
 
   render() {
-    const { headerTitle, wrapperClass, onCancel } = this.props;
+    const { headerTitle, wrapperClass, onCancel, children } = this.props;
+
+    const handleKeyDown = this.props.handleKeyDown ?
+          this.props.handleKeyDown.bind(this) :
+          this.handleKeyDown.bind(this);
 
     return (
       <div className="modal-container" tabIndex="0"
            ref={modalContainer => { this.modalContainer = modalContainer; }}
-           onKeyDown={e => this.handleKeyDown(e)}>
+           onKeyDown={e => handleKeyDown(e)}>
         <div className={`modal ${wrapperClass}`}>
           <header className="modal-header-wrapper">
             {headerTitle}
@@ -36,25 +39,18 @@ export default class Modal extends React.Component {
           </header>
 
           {children}
-          {stepActions}
         </div>
       </div>
     );
   }
 
   handleKeyDown(ev: Object) {
-    const { onCancel, onComplete, onStepNext, onStepBack } = this.props;
+    const { onCancel, onComplete } = this.props;
     ev.preventDefault();
 
     switch (ev.key) {
       case 'Escape':
         if (onCancel) onCancel(ev);
-        break;
-      case 'ArrowRight':
-        if (onStepNext) onStepNext();
-        break;
-      case 'ArrowLeft':
-        if (onStepBack) onStepBack();
         break;
       case 'Enter': {
         if (onComplete) onComplete(ev);
