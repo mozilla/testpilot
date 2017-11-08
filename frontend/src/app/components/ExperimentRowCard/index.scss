@@ -85,8 +85,10 @@
 
   p {
     flex: 1;
-    font-size: $font-unit + 4;
-    line-height: 1.4 * $line-unit;
+    font-weight: 300;
+    font-size: 13px;
+    color: $grey-90;
+    line-height: 18px;
     margin: 0 0 $grid-unit * .5;
   }
 
@@ -123,7 +125,8 @@
     border-color: rgb(58, 133, 36);
     border-radius: $small-border-radius;
     display: inline-block;
-    font-weight: 300;
+    font-weight: 600;
+    font-size: 11px;
     height: $grid-unit * 1.5;
     top: -5px;
     left: -5px;
@@ -209,9 +212,9 @@
 
 .experiment-icon {
   background-repeat: no-repeat;
-  background-size: $grid-unit * 4 $grid-unit * 4;
+  background-size: 45px 45px;
   filter: drop-shadow(0 1px 0 $transparent-black-1);
-  flex: 0 0 $grid-unit * 4;
-  height: $grid-unit * 4;
+  flex: 0 0 45px;
+  height: 45px;
   opacity: .9;
 }
