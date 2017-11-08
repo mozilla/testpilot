@@ -23,8 +23,6 @@ export default class ExperimentTourDialog extends React.Component {
   props: ExperimentTourDialogProps
   state: ExperimentTourDialogState
 
-  modalContainer: Object
-
   constructor(props: ExperimentTourDialogProps) {
     super(props);
     this.state = { currentStep: 0 };
@@ -34,39 +32,35 @@ export default class ExperimentTourDialog extends React.Component {
     return experimentL10nId(this.props.experiment, pieces);
   }
 
-  componentDidMount() {
-    this.modalContainer.focus();
-  }
-
   renderHeaderTitle() {
     const { experiment, isExperimentEnabled } = this.props;
     const enabled = isExperimentEnabled(experiment);
 
-    const headerTitle = enabled ? (
+    return enabled ? (
         <Localized id="tourOnboardingTitle" $title={experiment.title}>
           <h3 className="modal-header">{experiment.title} enabled!</h3>
         </Localized>) : (<h3 className="modal-header">{experiment.title}</h3>);
   }
 
-  renderStep(tourSteps: Array<Object>, currentStep: number) {
+  renderStep(tourSteps: Array<Object>, currentStep: number, renderDots: Function) {
     return tourSteps.map((step, idx) => (idx === currentStep) && (
-        <div key={idx} className="tour-content">
-          <div className="tour-image">
+        <div key={idx} className="step-content">
+          <div className="step-image">
             <img src={step.image} />
             <div className="fade">
               <div className="dot-row">
-                {this.renderDots(tourSteps, currentStep)}
+                {renderDots(tourSteps, currentStep)}
               </div>
             </div>
           </div>
           {step.copy &&
-            <div className="tour-text">
+            <div className="step-text">
               <Localized id={this.l10nId(['tour_steps', idx, 'copy'])}>
                 <p>{step.copy}</p>
               </Localized>
             </div>}
         </div>
-    ))
+    ));
   }
 
   render() {
@@ -76,10 +70,10 @@ export default class ExperimentTourDialog extends React.Component {
 
     const myProps = {
       steps: tourSteps,
-      onCancel: this.onCancel,
-      onComplete: this.onComplete,
-      renderStep: this.renderUpdate,
-      wrapperClass: 'news-updates-modal',
+      onCancel: this.onCancel.bind(this),
+      onComplete: this.onComplete.bind(this),
+      renderStep: this.renderStep.bind(this),
+      wrapperClass: 'tour-modal',
       headerTitle: this.renderHeaderTitle(tourSteps, currentStep),
       stepNextPing: (newStep) => {
         sendToGA('event', {
@@ -119,7 +113,7 @@ export default class ExperimentTourDialog extends React.Component {
   }
 
   onComplete(ev: Object) {
-    const { sendToGA, onCancel } = this.props;
+    const { sendToGA, onComplete } = this.props;
 
     sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
