@@ -10,32 +10,27 @@ html {
 }
 
 body {
+  @include flex-container(column);
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
   font-family: 'Fira Sans', sans-serif;
-  font-size: 15px;
-  line-height: 22px;
-}
-
-.parens {
-  color: $transparent-white-8;
-  font-size: $font-unit * 1.2;
-  margin-bottom: $grid-unit * .5;
-}
-
-.emphasis {
-  font-style: italic;
-}
-
-.bold {
-  font-weight: 900;
-}
-
-.lighter {
-  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  min-height: 100vh;
 }
 
 .centered {
   text-align: center;
+}
+
+.no-display {
+  display: none;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.storybook-center {
+  @include flex-container(column, center, center);
+  min-height: 100vh;
 }

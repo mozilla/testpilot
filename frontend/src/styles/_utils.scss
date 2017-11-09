@@ -5,6 +5,7 @@ $white: #fff;
 //These are handy transparencies
 $transparent-black-05: rgba($black, .05);
 $transparent-black-1: rgba($black, .1);
+$transparent-black-15: rgba($black, .15);
 $transparent-black-2: rgba($black, .2);
 $transparent-black-3: rgba($black, .3);
 $transparent-black-34: rgba($black, .34);
@@ -65,7 +66,7 @@ $eol-dark-orange: #f46323;
 $eol-orange: #ff9300;
 $eol-light-orange: rgba($eol-orange, .25);
 
-@mixin flex-container($direction, $justification, $alignment, $wrap: nowrap) {
+@mixin flex-container($direction, $justification: flex-start, $alignment: stretch, $wrap: nowrap) {
   display: flex;
   @if $alignment != 'stretch' {
     align-items: $alignment;

@@ -29,28 +29,25 @@ export default class HomePageNoAddon extends React.Component {
 
     if (experiments.length === 0) { return null; }
 
-    const installSplash = <Banner background={true}>
+    const installSplash = <Banner>
 
-      <LayoutWrapper flexModifier="row-around-breaking">
-      <Copter animation="fly-up"/>
+      <LayoutWrapper flexModifier="row-center-breaking">
+        <Copter small={true} animation="fly-up"/>
+        <div className="banner__spacer" />
         <div>
           <Localized id="landingIntroOne">
-            <h2 className="banner__title emphasis">Test new features.</h2>
+            <h2 className="banner__title">Test new features.</h2>
           </Localized>
           <Localized id="landingIntroTwo">
-            <h2 className="banner__title emphasis">Give your feedback.</h2>
+            <h2 className="banner__title">Give your feedback.</h2>
           </Localized>
           <Localized id="landingIntroThree">
-            <h2 className="banner__title emphasis">Help build Firefox.</h2>
+            <h2 className="banner__title">Help build Firefox.</h2>
           </Localized>
         </div>
       </LayoutWrapper>
 
-      <LayoutWrapper flexModifier="column-center">
-        <div className="centered">
-          <MainInstallButton {...this.props} eventCategory="HomePage Interactions" eventLabel="Install the Add-on"/>
-        </div>
-      </LayoutWrapper>
+      <MainInstallButton {...this.props} eventCategory="HomePage Interactions" eventLabel="Install the Add-on"/>
 
     </Banner>;
 
@@ -59,19 +56,19 @@ export default class HomePageNoAddon extends React.Component {
         <View {...this.props}>
           { installSplash }
 
-          <Banner>
+          <Banner background={true}>
             <LayoutWrapper flexModifier="column-center">
               <Localized id="landingExperimentsTitle">
-                <h2 className="banner__subtitle emphasis centered">Try out the latest experimental features</h2>
+                <h2 className="banner__subtitle centered">Try out the latest experimental features</h2>
               </Localized>
               <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
               <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
             </LayoutWrapper>
           </Banner>
 
-          <Banner background={true}>
+          <Banner>
             <Localized id="landingCardListTitle">
-              <h2 className="banner__subtitle emphasis centered">Get started in 3 easy steps</h2>
+              <h2 className="banner__subtitle centered">Get started in 3 easy steps</h2>
             </Localized>
             <LayoutWrapper flexModifier="card-list" helperClass="card-list">
               <div className="card">

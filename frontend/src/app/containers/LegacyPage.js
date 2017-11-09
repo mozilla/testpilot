@@ -21,7 +21,7 @@ export default class LegacyPage extends React.Component {
               <a className="button default large" href="/?utm_source=testpilot_legacy&utm_medium=firefox-browser">Check out Test Pilot</a>
             </div>
           </div>
-          <Copter animation="delayed-fade-in-fly-up"/>
+          <Copter animation="fade-in-fly-up"/>
         </LayoutWrapper>
       </View>
     );

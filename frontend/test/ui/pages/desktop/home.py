@@ -22,7 +22,7 @@ class Home(Base):
         """Represents the Header portion of the page"""
         _root_locator = (By.CLASS_NAME, 'banner')
         _copter_locator = (By.CLASS_NAME, 'copter')
-        _install_locator = (By.CLASS_NAME, 'install')
+        _install_locator = (By.CLASS_NAME, 'main-install__button')
 
         @property
         def is_copter_displayed(self):

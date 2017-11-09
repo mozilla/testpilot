@@ -1,10 +1,11 @@
+/* global describe, beforeEach, it */
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
-import { shallow, mount } from 'enzyme';
-import { findLocalizedById } from '../util';
+import { mount } from 'enzyme';
+import { findLocalizedById } from '../../../../test/app/util';
 
-import MainInstallButton from '../../../src/app/components/MainInstallButton';
+import MainInstallButton from './index';
 
 describe('app/components/MainInstallButton', () => {
   let subject, props;
@@ -20,7 +21,7 @@ describe('app/components/MainInstallButton', () => {
       installAddon: sinon.spy(() => Promise.resolve()),
       navigateTo: sinon.spy(),
       varianttests: {
-        installButtonBorder: "default"
+        installButtonBorder: 'default'
       }
     };
     subject = mount(<MainInstallButton {...props} />);
@@ -62,18 +63,18 @@ describe('app/components/MainInstallButton', () => {
   });
 
   it('calls installAddon on button click', () => {
-    subject.find('.install').simulate('click', { button: 0 });
+    subject.find('.main-install__button').simulate('click', { button: 0 });
     expect(props.installAddon.calledOnce).to.equal(true);
   });
 
   it('does not call installAddon on middle button click', () => {
-    subject.find('.install').simulate('click', { button: 1 });
+    subject.find('.main-install__button').simulate('click', { button: 1 });
     expect(props.installAddon.called).to.equal(false);
   });
 
   it('navigates to the /experiments page on button click when hasAddon is true', () => {
     subject.setProps({ hasAddon: true });
-    subject.find('.install').simulate('click', { button: 0 });
+    subject.find('.main-install__button').simulate('click', { button: 0 });
     expect(props.installAddon.called).to.equal(false);
     expect(props.navigateTo.calledWith('/experiments')).to.equal(true);
   });

@@ -7,6 +7,7 @@
     padding: $grid-unit * 1 0;
   }
 
+  background: $transparent-white-1;
   position: relative;
 }
 
@@ -82,4 +83,18 @@
 
 .legal-container .link-icon {
   filter: invert(25%);
+}
+
+.mozilla-logo {
+  background-image: url('../images/mozilla.svg');
+  background-repeat: no-repeat;
+  background-size: auto 32px;
+  height: 32px;
+  opacity: .9;
+  transition: opacity 150ms;
+  width: 112px;
+
+  &:hover {
+    opacity: 1;
+  }
 }

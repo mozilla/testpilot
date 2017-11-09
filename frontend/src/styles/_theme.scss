@@ -1,6 +1,6 @@
-$body-gradient-start: $blue-90;
-$body-gradient-end: rgba(37, 0, 62, 80);
-$body-gradient: linear-gradient($body-gradient-start, $body-gradient-end);
+$theme-dark: $blue-90;
+$theme-light: rgba(37, 0, 62, 80);
+$body-gradient: linear-gradient($theme-dark, $theme-light);
 
 body {
   background: $white;
@@ -49,48 +49,4 @@ a {
   background: $white;
   color: $grey-90;
   position: relative;
-}
-
-.transparent-container {
-  background: $transparent-white-1;
-  color: $white;
-  margin: $grid-unit * 2 0;
-  padding: $grid-unit * .25 0;
-}
-
-.mozilla-logo {
-  background-image: url('../images/mozilla.svg');
-  background-repeat: no-repeat;
-  background-size: auto 32px;
-  height: 32px;
-  opacity: .9;
-  transition: opacity 150ms;
-  width: 112px;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
-.add-on-icon {
-  background: url('../images/add-on.svg');
-  left: 9px;
-  top: -2px;
-}
-
-.test-pilot-icon {
-  background: url('../images/testpilot.svg');
-}
-
-.chat-icon {
-  background: url('../images/chat-icon.svg');
-}
-
-hr {
-  border: 0;
-  border-bottom: 1px solid $transparent-black-3;
-
-  .static-page-content & {
-    border-bottom: 1px solid $transparent-white-2;
-  }
 }

@@ -24,6 +24,10 @@
   }
 }
 
+.layout-wrapper:empty {
+  display: none;
+}
+
 .layout-wrapper {
   @include respond-to('big') {
     padding: 0 $grid-unit * .5;
@@ -74,6 +78,14 @@
   }
 }
 
+.layout-wrapper--row-center-breaking {
+  @include flex-container(row, center, center);
+
+  @include respond-to('small') {
+    @include flex-container(column, center, center);
+  }
+}
+
 .layout-wrapper--row-between-breaking {
   @include flex-container(row, space-between, center);
 
@@ -92,6 +104,10 @@
 
 .layout-wrapper--column-center {
   @include flex-container(column, center, center)
+}
+
+.layout-wrapper--column-center-reverse {
+  @include flex-container(column-reverse, center, center)
 }
 
 .layout-wrapper--column-center-start-breaking {

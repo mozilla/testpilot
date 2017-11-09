@@ -123,25 +123,25 @@ export default class ExperimentRowCard extends React.Component {
     if (enabled && hasAddon) {
       return (
         <Localized id="experimentCardManage">
-          <div className="button card-control secondary">Manage</div>
+          <div className="button secondary">Manage</div>
         </Localized>
       );
     } else if (isCompleted) {
       return (
         <Localized id="experimentCardLearnMore">
-          <div className="button card-control secondary">Learn More</div>
+          <div className="button secondary">Learn More</div>
         </Localized>
       );
     } else if (!isFirefox || !isMinFirefox) {
       return (
         <Localized id="experimentCardLearnMore">
-          <div className="button card-control secondary">Learn More</div>
+          <div className="button secondary">Learn More</div>
         </Localized>
       );
     }
     return (
       <Localized id="experimentCardGetStarted">
-        <div className="button card-control default">Get Started</div>
+        <div className="button default">Get Started</div>
       </Localized>
     );
   }
