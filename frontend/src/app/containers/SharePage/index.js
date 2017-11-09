@@ -2,9 +2,9 @@
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import Copter from '../components/Copter';
-import LayoutWrapper from '../components/LayoutWrapper';
-import View from '../components/View';
+import Copter from '../../components/Copter';
+import LayoutWrapper from '../../components/LayoutWrapper';
+import View from '../../components/View';
 
 type SharePageProps = {
   hasAddon: any,

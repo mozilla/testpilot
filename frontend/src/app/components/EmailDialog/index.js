@@ -2,8 +2,8 @@
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import NewsletterForm from './NewsletterForm';
-import { subscribeToBasket } from '../lib/utils';
+import NewsletterForm from '../NewsletterForm';
+import { subscribeToBasket } from '../../lib/utils';
 
 type EmailDialogProps = {
   getWindowLocation: Function,

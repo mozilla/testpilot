@@ -1,0 +1,144 @@
+@import '~photon-colors/colors.scss';
+@import '../../../styles/_utils';
+
+.modal {
+    .step-text {
+        background: $white;
+        display: block;
+        font-weight: bold;
+        padding: 0 0 ($grid-unit * .25);
+        text-align: center;
+        width: 100%;
+
+        p {
+            margin: 0;
+            padding: $grid-unit * .5;
+        }
+
+        a {
+            color: $blue-60;
+            margin: $grid-unit * .5;
+        }
+
+        .button {
+            background-color:  $blue-60;
+            color: white;
+        }
+    }
+
+    .dot-row {
+        @include flex-container(row, center, center);
+        background: transparent;
+        bottom: 5px;
+        height: 12px;
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .dot {
+        background: $white;
+        border: 1px solid $grey-10;
+        border-radius: $circle-border-radius;
+        cursor: pointer;
+        flex: 0 0 12px;
+        height: 12px;
+        margin: 0 3px;
+
+        &.current {
+            background: $blue-40;
+            border: 0;
+        }
+    }
+
+    .step-image {
+        @include flex-container(row, center, center);
+        background: $transparent-black-1;
+        height: 360px;
+        overflow: hidden;
+        position: relative;
+        width: 640px;
+
+        img {
+            height: 360px;
+        }
+
+        .fade {
+            background: linear-gradient(transparent, $white);
+            bottom: 0;
+            content: '';
+            height: 120px;
+            left: 0;
+            position: absolute;
+            width: 100%;
+        }
+    }
+
+    .step-actions {
+        @include flex-container(row, space-between, center);
+        height: 92px;
+        left: -7.8%;
+        padding: 20px;
+        position: absolute;
+        top: 40%;
+        width: 115.6%;
+    }
+
+    .step-next,
+    .step-back,
+    .step-done {
+        @include flex-container(row, center, center);
+        border-radius: $circle-border-radius;
+        box-shadow: 0 0 5px 1px $transparent-black-2, 0 0 0 1px $transparent-black-3;
+        cursor: pointer;
+        height: $grid-unit * 3;
+        transition: background-color 150ms;
+        width: $grid-unit * 3;
+
+        &.no-display {
+            display: none;
+        }
+    }
+
+    .step-next {
+        animation: pop 150ms ease-in;
+        animation-delay: 700ms;
+    }
+
+    .step-next,
+    .step-back {
+        background: $white;
+
+        & > .step-filler {
+            background-position: center center;
+            background-repeat: no-repeat;
+            height: $grid-unit * 2;
+            opacity: .8;
+            width: $grid-unit * 2;
+        }
+
+        &:hover {
+            background-color: $grey-10;
+        }
+    }
+
+    .step-done {
+        background-color: $white;
+        color: $blue-60;
+        font-weight: bold;
+
+        &:hover {
+            background-color: $bright-blue;
+            color: $white;
+        }
+    }
+
+    .step-back > .step-filler {
+        background-image: url('../../../images/icon-Arrow.svg');
+    }
+
+    .step-next > .step-filler {
+        background-image: url('../../../images/icon-Arrow.svg');
+        transform: rotate(180deg);
+    }
+}

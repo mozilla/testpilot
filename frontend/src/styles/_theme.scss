@@ -34,7 +34,7 @@ a {
 }
 
 .stars {
-  @include hidpi-background-image('stars', 1180px 346px);
+  @include hidpi-background-image('../images/stars', 1180px 346px);
   background-position: center 16px;
   background-repeat: no-repeat;
   bottom: 0;

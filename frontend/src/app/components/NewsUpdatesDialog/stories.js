@@ -19,7 +19,8 @@ const mkupdate = (daysAgo, slug, experimentSlug, title, content, rest) => {
       title,
       content,
       created: new Date(dt - 1000).toISOString(),
-      published: new Date(dt).toISOString()
+      published: new Date(dt).toISOString(),
+      image: '/static/images/experiments/min-vid/experiments_experimentdetail/detail1.jpg'
     },
     rest || {}
   );

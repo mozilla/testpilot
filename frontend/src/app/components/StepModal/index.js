@@ -14,6 +14,8 @@ import React from 'react';
 
 import Modal from '../Modal';
 
+import './index.scss';
+
 type StepModalDialogProps = {
   onCancel: Function,
   onComplete: Function,

@@ -8,6 +8,7 @@ import cookies from 'js-cookie';
 
 import StepModal from '../StepModal';
 
+import './index.scss';
 
 type newsUpdatesDialogProps = {
   newsUpdates: Array<Object>,
@@ -37,7 +38,7 @@ export default class NewsUpdatesDialog extends React.Component {
           {u.content &&
             <div className='step-text'>
               <h2 className='lighter step-title'>{u.title}</h2>
-              <p className='published-date lighter emphasis'>{moment(new Date(u.published)).format('dddd, MMMM Do YYYY')}</p>
+              <p className='published-date small-font'>{moment(new Date(u.published)).format('dddd, MMMM Do YYYY')}</p>
               <p className='lighter'>{u.content}</p>
               {u.link && (<Localized id='learnMoreLink'>
                             <a className="learn" href={u.link}>LEARN MORE</a>
