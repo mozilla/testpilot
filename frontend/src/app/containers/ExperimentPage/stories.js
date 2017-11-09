@@ -366,11 +366,6 @@ storiesOf('ExperimentPage/DetailsDescription', module)
   );
 
 storiesOf('ExperimentPage/ExperimentTourDialog', module)
-  .addDecorator(story =>
-                <div className="content-wrapper" onClick={action('click')}>
-                {story()}
-                </div>
-               )
   .add('base state', () =>
        <ExperimentTourDialog
        {...{
@@ -381,4 +376,4 @@ storiesOf('ExperimentPage/ExperimentTourDialog', module)
          sendToGA: () => {}
        }}
        />
-      )
+      );

@@ -3,10 +3,10 @@ import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import Copter from '../components/Copter';
-import LayoutWrapper from '../components/LayoutWrapper';
-import LocalizedHtml from '../components/LocalizedHtml';
-import View from '../components/View';
+import Copter from '../../components/Copter';
+import LayoutWrapper from '../../components/LayoutWrapper';
+import LocalizedHtml from '../../components/LocalizedHtml';
+import View from '../../components/View';
 
 
 type RetirePageProps = {

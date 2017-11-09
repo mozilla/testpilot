@@ -1,16 +1,17 @@
+/* global describe, beforeEach, it */
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
 
-import SharePage from '../../../src/app/containers/SharePage';
+import SharePage from './index';
 
 
 describe('app/containers/SharePage', () => {
   const linknames = ['facebook', 'twitter', 'email', 'copy'];
 
   let props, subject;
-  beforeEach(function() {
+  beforeEach(() => {
     props = {
       hasAddon: false,
       uninstallAddon: sinon.spy(),
@@ -39,5 +40,4 @@ describe('app/containers/SharePage', () => {
       }]);
     });
   });
-
 });
