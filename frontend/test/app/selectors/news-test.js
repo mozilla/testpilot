@@ -5,7 +5,7 @@ import newsUpdatesSelector, {
   experimentUpdateAvailable,
   makeStaleNewsUpdatesSelector,
   makeFreshNewsUpdatesSelector,
-  makeFreshNewsUpdatesSinceLastViewedSelector
+  makeNewsUpdatesForDialogSelector
 } from '../../../src/app/selectors/news';
 
 describe('app/selectors/news', () => {
@@ -125,7 +125,7 @@ describe('app/selectors/news', () => {
     }
 
     const selector = useLastViewed
-      ? makeFreshNewsUpdatesSinceLastViewedSelector(lastViewedDate, today)
+      ? makeNewsUpdatesForDialogSelector(lastViewedDate, today)
       : useStale
         ? makeStaleNewsUpdatesSelector(today)
         : makeFreshNewsUpdatesSelector(today);
@@ -155,7 +155,7 @@ describe('app/selectors/news', () => {
 
   describe('makeFreshNewsUpdatesSinceLastViewedSelector', () => {
     it(
-      'should only produce updates sinmce last viewed',
+      'should only produce updates since last viewed and major',
       makeNewsUpdateSelectorAgeTest(false, true)
     );
   });

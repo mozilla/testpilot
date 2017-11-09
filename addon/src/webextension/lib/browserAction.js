@@ -17,6 +17,8 @@ const environmentTopics = (...args) =>
 
 const storage = browser.storage.local;
 
+const TWO_WEEKS = 2 * 7 * 24 * 60 * 60 * 1000;
+
 const BROWSER_ACTION_LINK_BASE = [
   '/experiments',
   '?utm_source=testpilot-addon',
@@ -61,10 +63,31 @@ async function updateBadgeTextOnNew(topic, { experiments, news_updates }) {
     return dt >= clicked;
   });
 
-  const newsUpdates = (news_updates || []).filter(update => {
-    const dt = new Date(update.published).getTime();
-    return dt >= clicked;
+  // check for port number on local, we need to strip it off
+  // to properly fetch cookies.
+  const baseUrl = getCurrentEnv().baseUrl;
+  const portIndex = baseUrl.indexOf(':8000');
+  const cookieUrl = (portIndex > -1) ? baseUrl.substring(0, portIndex) : baseUrl;
+
+  let lastViewed = 0;
+  const cookie = await browser.cookies.get({
+    url: cookieUrl,
+    name: 'updates-last-viewed-date'
   });
+
+  if (cookie) lastViewed = cookie.value;
+
+  /* only show badge for news update if:
+   * - has the "major" key
+   * - update has been published in the past two weeks
+   * - update has not been "seen" by the frontend (lastViewed)
+   * - update has not been "seen" by the addon (clicked)
+   */
+  const twoWeeksAgo = Date.now() - TWO_WEEKS;
+  const newsUpdates = (news_updates || []).filter((u) => u.major)
+        .filter((u) => new Date(u.published).getTime() >= twoWeeksAgo)
+        .filter((u) => new Date(u.published).getTime() >= new Date(lastViewed))
+        .filter((u) => new Date(u.published).getTime() >= clicked);
 
   BROWSER_ACTION_LINK = (newExperiments.length || newsUpdates.length) > 0
     ? BROWSER_ACTION_LINK_BADGED

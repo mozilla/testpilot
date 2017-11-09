@@ -21,8 +21,8 @@ import NewsUpdatesDialog from '../components/NewsUpdatesDialog';
 type HomePageWithAddonProps = {
   hasAddon: any,
   experiments: Array<Object>,
+  majorNewsUpdates: Array<Object>,
   freshNewsUpdates: Array<Object>,
-  freshNewsUpdatesSinceLastViewed: Array<Object>,
   staleNewsUpdates: Array<Object>,
   getCookie: Function,
   removeCookie: Function,
@@ -117,9 +117,8 @@ export default class HomePageWithAddon extends React.Component {
   }
 
   render() {
-    const { sendToGA, experiments, isAfterCompletedDate, staleNewsUpdates, freshNewsUpdates,
-      freshNewsUpdatesSinceLastViewed } = this.props;
-
+    const { sendToGA, experiments, isAfterCompletedDate, staleNewsUpdates,
+            freshNewsUpdates, majorNewsUpdates } = this.props;
     if (experiments.length === 0) { return null; }
 
     const { showEmailDialog, showNewsUpdateDialog } = this.state;
@@ -134,8 +133,8 @@ export default class HomePageWithAddon extends React.Component {
 
       {this.renderSplash()}
 
-      {showNewsUpdateDialog && freshNewsUpdatesSinceLastViewed.length ? (
-          <NewsUpdatesDialog {...this.props} newsUpdates={freshNewsUpdatesSinceLastViewed}
+      {showNewsUpdateDialog && majorNewsUpdates.length ? (
+          <NewsUpdatesDialog {...this.props} newsUpdates={majorNewsUpdates}
                              currentExperiments={currentExperiments}
                              onCancel={() => this.setState({ showNewsUpdateDialog: false })}
                              onComplete={() => this.setState({ showNewsUpdateDialog: false })} />) : null}
