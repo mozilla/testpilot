@@ -21,51 +21,26 @@
 
     .learn {
         font-weight: normal;
-        &::after {
-            content: ' >>';
-        }
+        font-size: 15px;
     }
 
     .step-text .button.default {
         color: $white;
-        margin-top: 25px;
     }
 
     .step-text {
         margin: 30px auto;
         width: 80%;
-    }
 
-    .step-image {
-        background: inherit;
+        p {
+            padding-top: 0;
+        }
     }
 
     .published-date {
         color: $grey-50;
+        font-size: 13px;
+        padding-bottom: 0 !important;
     }
 }
 
-    /* .modal-header-wrapper {} */
-
-    /* .modal-header { */
-    /*     color: $grey-10; */
-    /*     font-size: $font-unit * 3; */
-    /*     font-weight: normal; */
-    /*     position: relative; */
-    /*     text-transform: capitalize; */
-
-    /*     &.enabled::after { */
-    /*         background: $green-60; */
-    /*         border-radius: 2px; */
-    /*         color: $white; */
-    /*         content: 'Enabled'; */
-    /*         display: block; */
-    /*         font-size: 11px; */
-    /*         line-height: 150%; */
-    /*         margin: 0; */
-    /*         padding: 2px 3px 0; */
-    /*         position: absolute; */
-    /*         right: -43px; */
-    /*         top: 9px; */
-    /*     } */
-    /* } */

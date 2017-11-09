@@ -41,10 +41,14 @@ export default class StepModal extends React.Component {
   }
 
   renderDots(steps: Array<any>, currentStep: Number) {
-    return steps.map((el, index) => {
+    const dots = steps.map((el, index) => {
       if (currentStep === index) return (<div key={index} className="current dot"></div>);
       return (<div key={index} className="dot" onClick={e => this.stepToDot(e, index)} ></div>);
     });
+
+    return (<div className="fade dot-wrapper">
+              <div className="dot-row">{dots}</div>
+            </div>);
   }
 
   renderStepActions(steps: Array<any>, currentStep: Number) {
@@ -73,8 +77,7 @@ export default class StepModal extends React.Component {
     const { currentStep } = this.state;
     const steps = this.props.steps || [];
 
-    const stepEl = steps.map((step, idx) => (idx === currentStep) && (this.props.renderStep(steps, currentStep, this.renderDots)));
-    console.log('MY STEP EL', stepEl);
+    const stepEl = steps.map((step, idx) => (idx === currentStep) && (this.props.renderStep(steps, currentStep)));
     return (
         <Modal {...this.props}
                onCancel={this.cancel.bind(this)}
@@ -82,6 +85,7 @@ export default class StepModal extends React.Component {
 
           {stepEl}
           {this.renderStepActions(steps, currentStep)}
+          {this.renderDots(steps, currentStep)}
         </Modal>
     );
   }

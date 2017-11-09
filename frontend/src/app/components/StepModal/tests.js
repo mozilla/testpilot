@@ -1,266 +1,87 @@
+/* global describe, beforeEach, it */
+import React from 'react';
+import { expect } from 'chai';
+import sinon from 'sinon';
+import { mount } from 'enzyme';
+import { findLocalizedById } from '../../../../test/app/util';
 
-//   it('should render expected content', () => {
-//     expect(subject.find('.modal-container'))
-//       .to.have.property('length', 1);
-//     expect(findLocalizedById(subject, 'experimentPreFeedbackTitle').prop('$title'))
-//       .to.equal(experiment.title);
-//     expect(findLocalizedById(subject, 'experimentPreFeedbackLinkCopy').prop('$title'))
-//       .to.equal(experiment.title);
-//     expect(subject.find('.tour-image img').props().src)
-//       .to.equal(experiment.pre_feedback_image);
-//     expect(subject.find('.tour-text').first().html())
-//       .to.contain(experiment.pre_feedback_copy);
-//   });
+import StepModal from './index';
 
-//   it('should call onCancel on cancel button click', () => {
-//     subject.find('.modal-cancel').simulate('click', mockClickEvent);
-//     expect(onCancel.called).to.be.true;
-//     expect(sendToGA.lastCall.args).to.deep.equal(['event', {
-//       eventCategory: 'ExperimentDetailsPage Interactions',
-//       eventAction: 'button click',
-//       eventLabel: 'cancel feedback'
-//     }]);
-//   });
+const today = new Date();
+const twoDaysAgo = today - (1000 * 60 * 60 * 24 * 2);
+const oneDayAgo = today - (1000 * 60 * 60 * 24 * 1);
+const newsUpdates = [{
+  experimentSlug: 'min-vid',
+  slug: 'min-vid-update-2',
+  title: 'update should be 2nd in carousel',
+  link: 'https://medium.com/firefox-test-pilot',
+  created: new Date(twoDaysAgo).toISOString(),
+  published: new Date(twoDaysAgo).toISOString(),
+  image: 'http://www.revelinnewyork.com/sites/default/files/RatMay8-21%2C1970_jpg.jpg',
+  content: 'Min Vid 1.1.0 just shipped with enhanced browser support and a few other improvements as well.'
+}, {
+  experimentSlug: 'min-vid',
+  slug: 'min-vid-update-3',
+  title: 'Another update, should be shown 1st in the carousel since it is fresher',
+  link: 'https://medium.com/firefox-test-pilot',
+  created: new Date(oneDayAgo).toISOString(),
+  published: new Date(oneDayAgo).toISOString(),
+  image: 'http://www.revelinnewyork.com/sites/default/files/RatMay8-21%2C1970_jpg.jpg',
+  content: 'Min Vid 1.1.0 just shipped with enhanced browser support and a few other improvements as well.'
+}];
 
-//   it('should call onCancel when the <Escape> key is pressed', () => {
-//     subject.find('.modal-container').simulate('keyDown', mockEscapeKeyDownEvent);
-//     expect(onCancel.called).to.be.true;
-//     expect(sendToGA.lastCall.args).to.deep.equal(['event', {
-//       eventCategory: 'ExperimentDetailsPage Interactions',
-//       eventAction: 'button click',
-//       eventLabel: 'cancel feedback'
-//     }]);
-//   });
+describe('app/components/StepModal', () => {
+  let mockClickEvent, props, subject;
+  beforeEach(() => {
+    mockClickEvent = {
+      preventDefault: sinon.spy(),
+      stopPropagation: sinon.spy()
+    };
+    props = {
+      wrapperClass: 'news-updates-modal',
+      onCancel: sinon.spy(),
+      onComplete: sinon.spy(),
+      stepNextPing: sinon.spy(),
+      stepBackPing: sinon.spy(),
+      stepToDotPing: sinon.spy(),
+      renderStep: sinon.spy(),
+      headerTitle: '<div>header title</div>'
+    };
+    subject = mount(<StepModal {...props} />);
+  });
 
+  it('should have the expected l10n ID', () => {
+    expect(findLocalizedById(subject, 'stepDoneButton')).to.have.property('length', 1);
+  });
 
-// describe('app/containers/ExperimentPage/ExperimentTourDialog', () => {
-//   let props, mockClickEvent, subject,
-//     mockEscapeKeyDownEvent, mockEnterKeyDownEvent,
-//     mockArrowLeftKeyDownEvent, mockArrowRightKeyDownEvent;
-//   beforeEach(() => {
-//     mockClickEvent = { preventDefault: sinon.spy() };
-//     mockEscapeKeyDownEvent = {
-//       preventDefault: sinon.spy(),
-//       key: 'Escape'
-//     };
-//     mockArrowLeftKeyDownEvent = {
-//       preventDefault: sinon.spy(),
-//       key: 'ArrowLeft'
-//     };
-//     mockArrowRightKeyDownEvent = {
-//       preventDefault: sinon.spy(),
-//       key: 'ArrowRight'
-//     };
-//     mockEnterKeyDownEvent = {
-//       preventDefault: sinon.spy(),
-//       key: 'Enter'
-//     };
+  it('should call stepNextPing and stepBackPing (which will both ping GA) when back and next buttons are clicked', () => {
+    subject.find('.step-next').simulate('click', mockClickEvent);
 
-//     props = {
-//       experiment: {
-//         title: 'Test Experiment',
-//         slug: 'test',
-//         tour_steps: [
-//           { image: '/example1.png', copy: 'Example 1', copy_l10nsuffix: 'foo' },
-//           { image: '/example2.png', copy: 'Example 2' },
-//           { image: '/example3.png', copy: 'Example 3' }
-//         ]
-//       },
-//       isExperimentEnabled: () => true,
-//       sendToGA: sinon.spy(),
-//       onComplete: sinon.spy(),
-//       onCancel: sinon.spy()
-//     };
+    expect(props.stepNextPing.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'NewsUpdatesDialog Interactions',
+      eventAction: 'button click',
+      eventLabel: 'forward to step 1'
+    }]);
 
-//     subject = mount(<ExperimentTourDialog {...props} />);
-//   });
+    subject.find('.step-back').simulate('click', mockClickEvent);
 
-//   it('should render expected default content', () => {
-//     expect(findLocalizedById(subject, 'tourOnboardingTitle').prop('$title'))
-//       .to.equal(props.experiment.title);
+    expect(props.stepBackPing.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'NewsUpdatesDialog Interactions',
+      eventAction: 'button click',
+      eventLabel: 'back to step 0'
+    }]);
+  });
 
-//     const expectedTourStep = props.experiment.tour_steps[0];
-//     expect(subject.find('.tour-image > img').prop('src'))
-//       .to.equal(expectedTourStep.image);
-//     // There is now a LocalizedHtml element between the
-//     // .tour-text element and the p element, so
-//     // '.tour-text > p' won't work, but '.tour-text p' does
-//     expect(subject.find('.tour-text p').html())
-//       .to.include(expectedTourStep.copy);
-//   });
+  it('should call onComplete (which will ping GA) when done button is clicked', () => {
+    subject.setProps({ newsUpdates: [Object.assign(newsUpdates[0])] });
 
-//   it('should render only the experiment title if not enabled', () => {
-//     subject.setProps({
-//       isExperimentEnabled: () => false,
-//       experiment: { ...props.experiment }
-//     });
-//     expect(subject.find('.modal-header').text()).to.equal(props.experiment.title);
-//   });
+    subject.find('.step-done').simulate('click', mockClickEvent);
 
-//   it('should have the correct l10n IDs', () => {
-//     expect(findLocalizedById(subject, 'testToursteps0CopyFoo').length).to.equal(1);
-//   });
+    expect(props.onComplete.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'NewsUpdatesDialog Interactions',
+      eventAction: 'button click',
+      eventLabel: 'complete updates'
+    }]);
+  });
+});
 
-//   it('should not have l10n IDs if the experiment is dev-only', () => {
-//     subject.setProps({ experiment: { dev: true, ...props.experiment } });
-//     expect(subject.find('.tour-text > Localized').prop('id')).to.equal(null);
-//   });
-
-//   it('should advance one step and ping GA when the next button is clicked', () => {
-//     subject.find('.tour-next').simulate('click', mockClickEvent);
-
-//     const expectedTourStep = props.experiment.tour_steps[1];
-//     expect(subject.find('.tour-image > img').prop('src'))
-//       .to.equal(expectedTourStep.image);
-//     expect(subject.find('.tour-text').html())
-//       .to.include(expectedTourStep.copy);
-
-//     expect(subject.state('currentStep')).to.equal(1);
-
-//     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
-//       eventCategory: 'ExperimentDetailsPage Interactions',
-//       eventAction: 'button click',
-//       eventLabel: 'forward to step 1'
-//     }]);
-//   });
-
-//   it('should advance one step and ping GA when the <ArrowRight> key is pressed', () => {
-//     subject.find('.modal-container').simulate('keyDown', mockArrowRightKeyDownEvent);
-
-//     const expectedTourStep = props.experiment.tour_steps[1];
-//     expect(subject.find('.tour-image > img').prop('src'))
-//       .to.equal(expectedTourStep.image);
-//     expect(subject.find('.tour-text').html())
-//       .to.include(expectedTourStep.copy);
-
-//     expect(subject.state('currentStep')).to.equal(1);
-
-//     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
-//       eventCategory: 'ExperimentDetailsPage Interactions',
-//       eventAction: 'button click',
-//       eventLabel: 'forward to step 1'
-//     }]);
-//   });
-
-//   it('should rewind one step and ping GA when the back button is clicked', () => {
-//     expect(subject.find('.tour-back').hasClass('hidden')).to.be.true;
-//     subject.setState({ currentStep: 1 });
-//     expect(subject.find('.tour-back').hasClass('hidden')).to.be.false;
-
-//     subject.find('.tour-back').simulate('click', mockClickEvent);
-
-//     const expectedTourStep = props.experiment.tour_steps[0];
-//     expect(subject.find('.tour-image > img').prop('src'))
-//       .to.equal(expectedTourStep.image);
-//     expect(subject.find('.tour-text').html())
-//       .to.include(expectedTourStep.copy);
-
-//     expect(subject.state('currentStep')).to.equal(0);
-
-//     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
-//       eventCategory: 'ExperimentDetailsPage Interactions',
-//       eventAction: 'button click',
-//       eventLabel: 'back to step 0'
-//     }]);
-//   });
-
-//   it('should rewind one step and ping GA when the <ArrowLeft> key is pressed', () => {
-//     expect(subject.find('.tour-back').hasClass('hidden')).to.be.true;
-//     subject.setState({ currentStep: 1 });
-//     expect(subject.find('.tour-back').hasClass('hidden')).to.be.false;
-
-//     subject.find('.modal-container').simulate('keyDown', mockArrowLeftKeyDownEvent);
-
-//     const expectedTourStep = props.experiment.tour_steps[0];
-//     expect(subject.find('.tour-image > img').prop('src'))
-//       .to.equal(expectedTourStep.image);
-//     expect(subject.find('.tour-text').html())
-//       .to.include(expectedTourStep.copy);
-
-//     expect(subject.state('currentStep')).to.equal(0);
-
-//     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
-//       eventCategory: 'ExperimentDetailsPage Interactions',
-//       eventAction: 'button click',
-//       eventLabel: 'back to step 0'
-//     }]);
-//   });
-
-//   it('should render dots to indicate and choose tour steps', () => {
-//     expect(subject.find('.tour-image .dot'))
-//       .to.have.property('length', props.experiment.tour_steps.length);
-
-//     subject.setState({ currentStep: 2 });
-//     expect(subject.find('.tour-image .dot').at(2).hasClass('current')).to.be.true;
-
-//     subject.find('.tour-image .dot').at(0).simulate('click', mockClickEvent);
-
-//     expect(subject.state('currentStep')).to.equal(0);
-
-//     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
-//       eventCategory: 'ExperimentDetailsPage Interactions',
-//       eventAction: 'button click',
-//       eventLabel: 'dot to step 0'
-//     }]);
-//   });
-
-//   it('should ping GA and call onCancel when cancel button clicked', () => {
-//     subject.find('.modal-cancel').simulate('click', mockClickEvent);
-
-//     expect(props.onCancel.called).to.be.true;
-
-//     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
-//       eventCategory: 'ExperimentDetailsPage Interactions',
-//       eventAction: 'button click',
-//       eventLabel: 'cancel tour'
-//     }]);
-//   });
-
-//   it('should ping GA and call onCancel when the <Escape> key is pressed', () => {
-//     subject.find('.modal-container').simulate('keyDown', mockEscapeKeyDownEvent);
-
-//     expect(props.onCancel.called).to.be.true;
-
-//     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
-//       eventCategory: 'ExperimentDetailsPage Interactions',
-//       eventAction: 'button click',
-//       eventLabel: 'cancel tour'
-//     }]);
-//   });
-
-//   it('should ping GA and call onComplete when done button clicked', () => {
-//     expect(subject.find('.tour-next').hasClass('no-display')).to.be.false;
-//     expect(subject.find('.tour-done').hasClass('no-display')).to.be.true;
-//     subject.setState({ currentStep: 2 });
-//     expect(subject.find('.tour-next').hasClass('no-display')).to.be.true;
-//     expect(subject.find('.tour-done').hasClass('no-display')).to.be.false;
-
-//     subject.find('.tour-done').simulate('click', mockClickEvent);
-
-//     expect(props.onComplete.called).to.be.true;
-
-//     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
-//       eventCategory: 'ExperimentDetailsPage Interactions',
-//       eventAction: 'button click',
-//       eventLabel: 'complete tour'
-//     }]);
-//   });
-
-//   it('should ping GA and call onComplete when the <Enter> key is pressed', () => {
-//     expect(subject.find('.tour-next').hasClass('no-display')).to.be.false;
-//     expect(subject.find('.tour-done').hasClass('no-display')).to.be.true;
-//     subject.setState({ currentStep: 2 });
-//     expect(subject.find('.tour-next').hasClass('no-display')).to.be.true;
-//     expect(subject.find('.tour-done').hasClass('no-display')).to.be.false;
-
-//     subject.find('.modal-container').simulate('keyDown', mockEnterKeyDownEvent);
-
-//     expect(props.onComplete.called).to.be.true;
-
-//     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
-//       eventCategory: 'ExperimentDetailsPage Interactions',
-//       eventAction: 'button click',
-//       eventLabel: 'complete tour'
-//     }]);
-//   });
-// });

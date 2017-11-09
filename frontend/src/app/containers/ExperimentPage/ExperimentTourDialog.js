@@ -42,16 +42,11 @@ export default class ExperimentTourDialog extends React.Component {
         </Localized>) : (<h3 className="modal-header">{experiment.title}</h3>);
   }
 
-  renderStep(tourSteps: Array<Object>, currentStep: number, renderDots: Function) {
+  renderStep(tourSteps: Array<Object>, currentStep: number) {
     return tourSteps.map((step, idx) => (idx === currentStep) && (
         <div key={idx} className="step-content">
           <div className="step-image">
             <img src={step.image} />
-            <div className="fade">
-              <div className="dot-row">
-                {renderDots(tourSteps, currentStep)}
-              </div>
-            </div>
           </div>
           {step.copy &&
             <div className="step-text">
