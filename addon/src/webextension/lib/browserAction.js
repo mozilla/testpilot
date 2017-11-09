@@ -17,6 +17,8 @@ const environmentTopics = (...args) =>
 
 const storage = browser.storage.local;
 
+const TWO_WEEKS = 2 * 7 * 24 * 60 * 60 * 1000;
+
 const BROWSER_ACTION_LINK_BASE = [
   '/experiments',
   '?utm_source=testpilot-addon',
@@ -63,14 +65,13 @@ async function updateBadgeTextOnNew(topic, { experiments, news_updates }) {
 
   // check for port number on local, we need to strip it off
   // to properly fetch cookies.
-  const portIndex = getCurrentEnv().baseUrl.indexOf(':8000');
-  const baseUrl = (portIndex > -1) ?
-        getCurrentEnv().baseUrl.substring(0, portIndex)
-        : getCurrentEnv().baseUrl.indexOf(':8000');
+  const baseUrl = getCurrentEnv().baseUrl;
+  const portIndex = baseUrl.indexOf(':8000');
+  const cookieUrl = (portIndex > -1) ? baseUrl.substring(0, portIndex) : baseUrl;
 
   let lastViewed = 0;
   const cookie = await browser.cookies.get({
-    url: baseUrl,
+    url: cookieUrl,
     name: 'updates-last-viewed-date'
   });
 
@@ -82,7 +83,6 @@ async function updateBadgeTextOnNew(topic, { experiments, news_updates }) {
    * - update has not been "seen" by the frontend (lastViewed)
    * - update has not been "seen" by the addon (clicked)
    */
-  const TWO_WEEKS = 2 * 7 * 24 * 60 * 60 * 1000;
   const twoWeeksAgo = Date.now() - TWO_WEEKS;
   const newsUpdates = (news_updates || []).filter((u) => u.major)
         .filter((u) => new Date(u.published).getTime() >= twoWeeksAgo)

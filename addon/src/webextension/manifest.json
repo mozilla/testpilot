@@ -20,11 +20,11 @@
     "storage",
     "cookies",
     "tabs",
-    "*://example.com/",
-    "*://testpilot.dev.mozaws.net/",
-    "*://testpilot-l10n.dev.mozaws.net/",
-    "*://testpilot.stage.mozaws.net/",
-    "*://testpilot.firefox.com/"
+    "https://example.com/",
+    "https://testpilot.dev.mozaws.net/",
+    "https://testpilot-l10n.dev.mozaws.net/",
+    "https://testpilot.stage.mozaws.net/",
+    "https://testpilot.firefox.com/"
   ],
   "background": {
     "scripts": [
