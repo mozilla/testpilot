@@ -5,7 +5,6 @@
     .step-text {
         background: $white;
         display: block;
-        font-weight: bold;
         padding: 0 0 ($grid-unit * .25);
         text-align: center;
         width: 100%;
@@ -26,6 +25,12 @@
         }
     }
 
+    .dot-wrapper {
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+    }
+
     .dot-row {
         @include flex-container(row, center, center);
         background: transparent;
@@ -38,30 +43,33 @@
 
     .dot {
         background: $white;
-        border: 1px solid $grey-10;
         border-radius: $circle-border-radius;
         cursor: pointer;
         flex: 0 0 12px;
         height: 12px;
         margin: 0 3px;
+        opacity: .6;
 
         &.current {
-            background: $blue-40;
+            background: $white;
             border: 0;
+            opacity: 1;
         }
+    }
+
+    .step-title {
+        margin-bottom: 10px;
     }
 
     .step-image {
         @include flex-container(row, center, center);
-        background: $transparent-black-1;
-        height: 360px;
+        height: auto;
         overflow: hidden;
         position: relative;
-        width: 640px;
-
-        img {
-            height: 360px;
-        }
+        width: 580px;
+        padding: 40px;
+        padding-bottom: 10px;
+        margin: 0 auto;
 
         .fade {
             background: linear-gradient(transparent, $white);
@@ -124,11 +132,10 @@
 
     .step-done {
         background-color: $white;
-        color: $blue-60;
-        font-weight: bold;
+        color: $green-50;
 
         &:hover {
-            background-color: $bright-blue;
+            background-color: $green-50;
             color: $white;
         }
     }
@@ -140,5 +147,25 @@
     .step-next > .step-filler {
         background-image: url('../../../images/icon-Arrow.svg');
         transform: rotate(180deg);
+    }
+
+    .modal-header.enabled::after {
+        background-color: $green-60;
+        background-image: url('../../../images/icon_enabled.svg');
+        border-radius: 2px;
+        color: #fff;
+        content: 'Enabled';
+        display: block;
+        font-size: 15px;
+        line-height: 150%;
+        margin: 0;
+        padding: 4px 5px 0 26px;
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        background-repeat: no-repeat;
+        background-size: 15%;
+        background-position: 8px;
+        font-weight: normal;
     }
 }

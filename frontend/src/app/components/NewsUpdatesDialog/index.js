@@ -39,11 +39,11 @@ export default class NewsUpdatesDialog extends React.Component {
             <div className='step-text'>
               <h2 className='lighter step-title'>{u.title}</h2>
               <p className='published-date small-font'>{moment(new Date(u.published)).format('dddd, MMMM Do YYYY')}</p>
-              <p className='lighter'>{u.content}</p>
-              {u.link && (<Localized id='learnMoreLink'>
-                            <a className="learn" href={u.link}>LEARN MORE</a>
+              <p>{u.content}</p>
+              {u.link && (<Localized id='experimentCardLearnMore'>
+                            <a className="learn" href={u.link}>Learn more</a>
                           </Localized>)}
-              <br/>
+              {u.link && (<br/>)}
               {u.experimentSlug &&
                  <Localized id='viewExperimentPage'>
                    <a href={`experiments/${u.experimentSlug}`} className='button default'>View Experiment Page</a>

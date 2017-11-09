@@ -2,7 +2,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { findLocalizedById } from '../../../../test/app/util';
 
 import NewsUpdatesDialog from './index';
@@ -42,13 +42,16 @@ describe('app/components/NewsUpdatesDialog', () => {
       isExperimentEnabled: () => true,
       onCancel: sinon.spy(),
       onComplete: sinon.spy(),
-      sendToGA: sinon.spy()
+      stepNextPing: sinon.spy(),
+      stepBackPing: sinon.spy(),
+      stepToDotPing: sinon.spy()
     };
-    subject = shallow(<NewsUpdatesDialog {...props} />);
+    subject = mount(<NewsUpdatesDialog {...props} />);
   });
 
   it('should render expected content', () => {
-    expect(subject.find('.tour-title').text()).to.equal(newsUpdates[0].title);
+    console.error('heyyyyooooo', subject.find('.step-title').first().text());
+    expect(subject.find('.step-title').first().text()).to.equal(newsUpdates[0].title);
   });
 
   it('should display an "enabled" banner if the experiment is enabled', () => {
@@ -56,7 +59,7 @@ describe('app/components/NewsUpdatesDialog', () => {
   });
 
   it('should have the expected l10n ID', () => {
-    expect(findLocalizedById(subject, 'learnMoreLink')).to.have.property('length', 1);
+    expect(findLocalizedById(subject, 'experimentCardLearnMore')).to.have.property('length', 1);
     expect(findLocalizedById(subject, 'viewExperimentPage')).to.have.property('length', 1);
     expect(findLocalizedById(subject, 'nonExperimentDialogHeaderLink')).to.have.property('length', 0);
 
@@ -67,50 +70,10 @@ describe('app/components/NewsUpdatesDialog', () => {
   });
 
   it('should show learn more link if there is a blog post link', () => {
-    expect(findLocalizedById(subject, 'learnMoreLink')).to.have.property('length', 1);
+    expect(findLocalizedById(subject, 'experimentCardLearnMore')).to.have.property('length', 1);
 
     subject.setProps({ newsUpdates: [Object.assign(newsUpdates[0], { link: null })] });
 
     expect(findLocalizedById(subject, 'learnMoreLink')).to.have.property('length', 0);
-  });
-
-  it('should ping GA when skip is clicked', () => {
-    subject.find('.modal-skip').simulate('click', mockClickEvent);
-
-    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
-      eventCategory: 'NewsUpdatesDialog Interactions',
-      eventAction: 'button click',
-      eventLabel: 'cancel updates'
-    }]);
-  });
-
-  it('should ping GA when back and next buttons are clicked', () => {
-    subject.find('.tour-next').simulate('click', mockClickEvent);
-
-    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
-      eventCategory: 'NewsUpdatesDialog Interactions',
-      eventAction: 'button click',
-      eventLabel: 'forward to step 1'
-    }]);
-
-    subject.find('.tour-back').simulate('click', mockClickEvent);
-
-    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
-      eventCategory: 'NewsUpdatesDialog Interactions',
-      eventAction: 'button click',
-      eventLabel: 'back to step 0'
-    }]);
-  });
-
-  it('should ping GA when done button is clicked', () => {
-    subject.setProps({ newsUpdates: [Object.assign(newsUpdates[0])] });
-
-    subject.find('.tour-done').simulate('click', mockClickEvent);
-
-    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
-      eventCategory: 'NewsUpdatesDialog Interactions',
-      eventAction: 'button click',
-      eventLabel: 'complete updates'
-    }]);
   });
 });

@@ -101,6 +101,7 @@ experimentListHeader = Pick your experiments!
 experimentCardFeedback = Feedback
 experimentCardManage = Manage
 experimentCardGetStarted = Get Started
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Learn More
 
 // A modal prompt shown when a user disables an experiment.
@@ -159,7 +160,6 @@ startedDateLabel = Experiment Start Date: <b>{$startedDate}</b>
 // news updates dialog.
 [[newsUpdatesDialog]]
 nonExperimentDialogHeaderLink = Test Pilot
-learnMoreLink = LEARN MORE
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[experimentPlatform]]
