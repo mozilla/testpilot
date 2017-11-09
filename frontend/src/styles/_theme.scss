@@ -1,4 +1,6 @@
-$body-gradient: linear-gradient(#000f40, rgba(37, 0, 62, 80));
+$body-gradient-start: $blue-90;
+$body-gradient-end: rgba(37, 0, 62, 80);
+$body-gradient: linear-gradient($body-gradient-start, $body-gradient-end);
 
 body {
   background: $white;
@@ -45,7 +47,7 @@ a {
 
 .default-background {
   background: $white;
-  color: $black;
+  color: $grey-90;
   position: relative;
 }
 

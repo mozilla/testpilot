@@ -8,34 +8,37 @@
 
   .banner__copy {
     @include respond-to('medium') {
-      font-size: $font-unit * 1.8;
-      line-height: $font-unit * 2.6;
+      font-size: 19.8px;
+      line-height: 27.9px;
     }
 
     @include respond-to('small') {
-      font-size: $font-unit * 1.7;
-      line-height: $font-unit * 2.5;
+      font-size: 17.82px;
+      line-height: 25.11px;
     }
 
-    font-size: $font-unit * 2.3;
-    line-height: $font-unit * 3.5;
+    font-size: 22px;
+    font-weight: $weight-light;
+    line-height: 31px;
     margin: 0;
-    max-width: $grid-unit * 25;
+    max-width: 403px;
   }
 
   .banner__title {
     @include respond-to('medium') {
-      font-size: $font-unit * 3.5;
-      line-height: $font-unit * 3.5;
+      font-size: 36px;
+      line-height: 36px;
     }
 
     @include respond-to('small') {
-      font-size: $font-unit * 2.7;
-      line-height: $font-unit * 2.7;
+      font-size: 28.6px;
+      line-height: 28.6px;
     }
 
-    font-size: $grid-unit * 2.75;
-    line-height: $grid-unit * 3;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 40px;
   }
 
   .banner__subtitle {
@@ -70,14 +73,18 @@
 }
 
 .banner--expanded {
-  padding: $grid-unit * 2 0;
+  padding: $grid-unit * 2 64px;
+
+  .layout-wrapper {
+    padding: 0 80px;
+  }
 
   .banner__title {
     @include respond-to('small') {
       margin: $grid-unit * .66 0;
     }
 
-    margin: 0 0 $grid-unit * .66;
+    margin: 0 0 8px;
   }
 }
 

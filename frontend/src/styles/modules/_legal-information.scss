@@ -1,7 +1,7 @@
 .legal-information {
   font-size: $font-unit;
   line-height: $line-unit;
-  margin: $grid-unit 0 0;
+  margin: $grid-unit * .5 0 0;
   max-width: $grid-unit * 16;
   position: relative;
 

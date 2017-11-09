@@ -25,6 +25,8 @@ import DetailsOverview from './DetailsOverview';
 import DetailsDescription from './DetailsDescription';
 import DetailsHeader from './DetailsHeader';
 
+import './index.scss';
+
 import type {
   ExperimentPageProps,
   ExperimentDetailProps,

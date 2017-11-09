@@ -3,20 +3,21 @@
 
 .graduated-notice {
   @include flex-container(row, center, center);
-  border-radius: 5px;
-  border: 2px dotted $orange-60;
-  padding: 32px 28px;
+  border-radius: 2px;
+  border: 2px dashed $orange-50;
+  border-radius: 2px;
+  padding: 16px;
   margin-bottom: 32px;
-  
+
   @include respond-to('medium') {
     @include flex-container(column, center, flex-start);
   }
 }
 
 .graduated-notice-image {
-  flex: 0 0 40px;
-  max-width: 40px;
-  margin-right: 28px;
+  flex: 0 0 20px;
+  max-width: 20px;
+  margin-right: 12px;
 
   @include respond-to('medium') {
     display: none;
@@ -32,20 +33,22 @@
 }
 
 .graduated-notice-text h1 {
-  font-size: 20px;
-  margin: 0 0 5px;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: $weight-semi-bold;
+  margin: 0;
 }
 
 .graduated-notice-text p {
-  font-size: 18px;
+  font-size: 13px;
+  line-height: 18px;
   margin: 0;
   padding: 0;
 }
 
 .graduated-notice-button {
   @include flex-container(row, center, center);
-  font-size: 22px;
-  height: 62px;
-  padding: 0 18px;
+  font-size: 15px;
+  padding: 0 32px;
   white-space: nowrap;
 }

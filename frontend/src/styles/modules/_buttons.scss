@@ -1,10 +1,10 @@
 .button {
-  border: 1px solid transparent;
+  border: 1px solid $transparent-black-34;
   border-radius: 3px;
   cursor: pointer;
   display: inline-block;
   font-family: 'Fira Sans', sans-serif;
-  font-weight: 400;
+  font-weight: $weight-normal;
   height: $grid-unit * 2;
   line-height: $grid-unit * 2;
   outline: none;
@@ -48,14 +48,12 @@
 
   &.primary {
     background: $green-60;
-    border: 1px solid $green-70;
     color: $white;
 
     &:not([disabled='true']) {
       &:hover,
       &:focus {
         background: $green-60;
-        border: 1px solid $green-70;
       }
 
       &:focus:hover {
@@ -64,7 +62,6 @@
 
       &:active {
         background: $green-70;
-        border: 1px solid $green-80;
       }
 
       &.state-change {
@@ -87,8 +84,8 @@
 
       border-radius: $large-border-radius;
       box-shadow: 0 2px 0 $transparent-black-2, 0 -2px 0 $transparent-black-2 inset;
-      font-weight: 500;
-      margin-top: $grid-unit * 1.5;
+      font-weight: $weight-medium;
+      margin-top: 15px;
       text-shadow: 0 2px 0 $transparent-black-1;
 
     }
@@ -113,23 +110,22 @@
 
   &.secondary {
     background: $white;
-    border: 1px solid $grey-30;
+    color: $grey-70;
+    font-size: 14px;
+    font-weight: $weight-semi-bold;
 
     &:hover,
     &:focus {
       background: $grey-20;
-      border: 1px solid $grey-30;
     }
 
     &:active {
       background: $grey-30;
-      border: 1px solid $grey-40;
     }
   }
 
   &.default {
     background: $blue-40;
-    border: 1px solid $blue-50;
     color: $white;
 
     &:hover,
@@ -146,7 +142,6 @@
 
   &.warning {
     background: $red-50;
-    border: 1px solid $red-60;
     color: $white;
   }
 
@@ -155,7 +150,6 @@
   &.disabled:active,
   &.disabled:focus {
     background-color: $grey-30;
-    border: 1px solid transparent;
   }
 
   &.large,
