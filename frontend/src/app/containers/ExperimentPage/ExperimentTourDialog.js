@@ -19,20 +19,44 @@ type ExperimentTourDialogProps = {
 export default class ExperimentTourDialog extends React.Component {
   props: ExperimentTourDialogProps
 
+  stepNextPing = (newStep) => {
+    this.props.sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: `forward to step ${newStep}`
+    });
+  };
+
+  stepBackPing = (newStep) => {
+    this.props.sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: `back to step ${newStep}`
+    });
+  };
+
+  stepToDotPing = (index) => {
+    this.props.sendToGA('event', {
+      eventCategory: 'ExperimentDetailsPage Interactions',
+      eventAction: 'button click',
+      eventLabel: `dot to step ${index}`
+    });
+  };
+
   l10nId(pieces: string | Array<string | number>) {
     return experimentL10nId(this.props.experiment, pieces);
   }
 
-  renderHeaderTitle() {
+  renderHeaderTitle = () => {
     const { experiment, isExperimentEnabled } = this.props;
     return (<Localized id="tourOnboardingTitle" $title={experiment.title}>
               <h3 className={cn('modal-header lighter', {
                 enabled: isExperimentEnabled({ addon_id: `@${experiment.title}` })
               })}>{experiment.title}</h3>
             </Localized>);
-  }
+  };
 
-  renderStep(tourSteps: Array<Object>, currentStep: number) {
+  renderStep = (tourSteps: Array<Object>, currentStep: number) => {
     return tourSteps.map((step, idx) => (idx === currentStep) && (
         <div key={idx} className="step-content">
           <div className="step-image">
@@ -46,46 +70,23 @@ export default class ExperimentTourDialog extends React.Component {
             </div>}
         </div>
     ));
-  }
+  };
 
   render() {
-    const { sendToGA, experiment } = this.props;
-    const tourSteps = experiment.tour_steps || [];
-
-    const myProps = {
-      steps: tourSteps,
-      onCancel: this.onCancel.bind(this),
-      onComplete: this.onComplete.bind(this),
-      renderStep: this.renderStep.bind(this),
-      wrapperClass: 'tour-modal',
-      renderHeaderTitle: this.renderHeaderTitle.bind(this),
-      stepNextPing: (newStep) => {
-        sendToGA('event', {
-          eventCategory: 'ExperimentDetailsPage Interactions',
-          eventAction: 'button click',
-          eventLabel: `forward to step ${newStep}`
-        });
-      },
-      stepBackPing: (newStep) => {
-        sendToGA('event', {
-          eventCategory: 'ExperimentDetailsPage Interactions',
-          eventAction: 'button click',
-          eventLabel: `back to step ${newStep}`
-        });
-      },
-      stepToDotPing: (index) => {
-        sendToGA('event', {
-          eventCategory: 'ExperimentDetailsPage Interactions',
-          eventAction: 'button click',
-          eventLabel: `dot to step ${index}`
-        });
-      }
-    };
-
-    return (<StepModal {...myProps} />);
+    return (<StepModal
+              steps={this.props.experiment.tour_steps || []}
+              onCancel={this.onCancel}
+              onComplete={this.onComplete}
+              renderStep={this.renderStep}
+              renderHeaderTitle={this.renderHeaderTitle}
+              wrapperClass={'tour-modal'}
+              stepToDotPing={this.stepToDotPing}
+              stepNextPing={this.stepNextPing}
+              stepBackPing={this.stepBackPing}
+            />);
   }
 
-  onCancel(ev: Object) {
+  onCancel = (ev: Object) => {
     const { sendToGA, onCancel } = this.props;
 
     sendToGA('event', {
@@ -94,9 +95,9 @@ export default class ExperimentTourDialog extends React.Component {
       eventLabel: 'cancel tour'
     });
     if (onCancel) { onCancel(ev); }
-  }
+  };
 
-  onComplete(ev: Object) {
+  onComplete = (ev: Object) => {
     const { sendToGA, onComplete } = this.props;
 
     sendToGA('event', {
@@ -105,5 +106,5 @@ export default class ExperimentTourDialog extends React.Component {
       eventLabel: 'complete tour'
     });
     if (onComplete) { onComplete(ev); }
-  }
+  };
 }
