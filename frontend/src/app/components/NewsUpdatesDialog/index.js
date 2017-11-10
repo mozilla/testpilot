@@ -21,7 +21,7 @@ type newsUpdatesDialogProps = {
 export default class NewsUpdatesDialog extends React.Component {
   props: newsUpdatesDialogProps
 
-  stepNextPing = (newStep) => {
+  stepNextPing = (newStep: number) => {
     this.props.sendToGA('event', {
       eventCategory: 'NewsUpdatesDialog Interactions',
       eventAction: 'button click',
@@ -29,7 +29,7 @@ export default class NewsUpdatesDialog extends React.Component {
     });
   };
 
-  stepBackPing = (newStep) => {
+  stepBackPing = (newStep: number) => {
     this.props.sendToGA('event', {
       eventCategory: 'NewsUpdatesDialog Interactions',
       eventAction: 'button click',
@@ -37,7 +37,7 @@ export default class NewsUpdatesDialog extends React.Component {
     });
   };
 
-  stepToDotPing = (index) => {
+  stepToDotPing = (index: number) => {
     this.props.sendToGA('event', {
       eventCategory: 'NewsUpdatesDialog Interactions',
       eventAction: 'button click',

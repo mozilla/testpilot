@@ -19,7 +19,7 @@ type ExperimentTourDialogProps = {
 export default class ExperimentTourDialog extends React.Component {
   props: ExperimentTourDialogProps
 
-  stepNextPing = (newStep) => {
+  stepNextPing = (newStep: number) => {
     this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
@@ -27,7 +27,7 @@ export default class ExperimentTourDialog extends React.Component {
     });
   };
 
-  stepBackPing = (newStep) => {
+  stepBackPing = (newStep: number) => {
     this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
@@ -35,7 +35,7 @@ export default class ExperimentTourDialog extends React.Component {
     });
   };
 
-  stepToDotPing = (index) => {
+  stepToDotPing = (index: number) => {
     this.props.sendToGA('event', {
       eventCategory: 'ExperimentDetailsPage Interactions',
       eventAction: 'button click',
