@@ -21,7 +21,31 @@ type newsUpdatesDialogProps = {
 export default class NewsUpdatesDialog extends React.Component {
   props: newsUpdatesDialogProps
 
-  renderUpdate(newsUpdates: Array<Object>, currentStep: number) {
+  stepNextPing = (newStep) => {
+    this.props.sendToGA('event', {
+      eventCategory: 'NewsUpdatesDialog Interactions',
+      eventAction: 'button click',
+      eventLabel: `forward to step ${newStep}`
+    });
+  };
+
+  stepBackPing = (newStep) => {
+    this.props.sendToGA('event', {
+      eventCategory: 'NewsUpdatesDialog Interactions',
+      eventAction: 'button click',
+      eventLabel: `back to step ${newStep}`
+    });
+  };
+
+  stepToDotPing = (index) => {
+    this.props.sendToGA('event', {
+      eventCategory: 'NewsUpdatesDialog Interactions',
+      eventAction: 'button click',
+      eventLabel: `dot to step ${index}`
+    });
+  };
+
+  renderUpdate = (newsUpdates: Array<Object>, currentStep: number) => {
     return newsUpdates.map((u, idx) => (idx === currentStep) && (
         <div key={idx} className='step-content'>
           {u.image && <div className='step-image'><img src={u.image} /></div>}
@@ -41,9 +65,9 @@ export default class NewsUpdatesDialog extends React.Component {
             </div>}
         </div>
     ));
-  }
+  };
 
-  renderHeaderTitle(newsUpdates: Array<Object>, currentStep: number) {
+  renderHeaderTitle = (newsUpdates: Array<Object>, currentStep: number) => {
     const { isExperimentEnabled } = this.props;
     const defaultNewsUpdateTitle = (<Localized id='nonExperimentDialogHeaderLink'>
                                       <h3 className='modal-header lighter'>Test Pilot</h3>
@@ -54,45 +78,23 @@ export default class NewsUpdatesDialog extends React.Component {
          enabled: isExperimentEnabled({ addon_id: `@${u.experimentSlug}` })
        })}>{u.experimentSlug.split('-').join(' ')}</h3>) : (defaultNewsUpdateTitle)
     ));
-  }
+  };
 
   render() {
-    const { sendToGA, newsUpdates } = this.props;
-
-    const myProps = {
-      steps: newsUpdates,
-      onCancel: this.onCancel.bind(this),
-      onComplete: this.onComplete.bind(this),
-      renderStep: this.renderUpdate.bind(this),
-      wrapperClass: 'news-updates-modal',
-      renderHeaderTitle: this.renderHeaderTitle.bind(this),
-      stepNextPing: (newStep) => {
-        sendToGA('event', {
-          eventCategory: 'NewsUpdatesDialog Interactions',
-          eventAction: 'button click',
-          eventLabel: `forward to step ${newStep}`
-        });
-      },
-      stepBackPing: (newStep) => {
-        sendToGA('event', {
-          eventCategory: 'NewsUpdatesDialog Interactions',
-          eventAction: 'button click',
-          eventLabel: `back to step ${newStep}`
-        });
-      },
-      stepToDotPing: (index) => {
-        sendToGA('event', {
-          eventCategory: 'NewsUpdatesDialog Interactions',
-          eventAction: 'button click',
-          eventLabel: `dot to step ${index}`
-        });
-      }
-    };
-
-    return (<StepModal {...myProps} />);
+    return (<StepModal
+              steps={this.props.newsUpdates}
+              wrapperClass={'news-updates-modal'}
+              onCancel={this.onCancel}
+              onComplete={this.onComplete}
+              renderStep={this.renderUpdate}
+              renderHeaderTitle={this.renderHeaderTitle}
+              stepNextPing={this.stepNextPing}
+              stepBackPing={this.stepBackPing}
+              stepToDotPing={this.stepToDotPing}
+            />);
   }
 
-  onCancel(ev: Object) {
+  onCancel = (ev: Object) => {
     const { sendToGA, onCancel } = this.props;
 
     sendToGA('event', {
@@ -102,9 +104,9 @@ export default class NewsUpdatesDialog extends React.Component {
     });
     cookies.set('updates-last-viewed-date', new Date().toISOString());
     if (onCancel) onCancel(ev);
-  }
+  };pp
 
-  onComplete(ev: Object) {
+  onComplete = (ev: Object) => {
     const { sendToGA, onComplete } = this.props;
 
     sendToGA('event', {
@@ -114,5 +116,5 @@ export default class NewsUpdatesDialog extends React.Component {
     });
     cookies.set('updates-last-viewed-date', new Date().toISOString());
     if (onComplete) { onComplete(ev); }
-  }
+  };
 }
