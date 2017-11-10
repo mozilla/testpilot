@@ -28,22 +28,22 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
       <div className="modal-container" tabIndex="0"
            ref={modalContainer => { this.modalContainer = modalContainer; }}
            onKeyDown={e => this.handleKeyDown(e)}>
-        <div className={classnames('modal', 'tour-modal')}>
+        <div className={classnames('modal', 'step-modal')}>
           <header className="modal-header-wrapper">
             <Localized id="experimentPreFeedbackTitle" $title={experiment.title}>
               <h3 className="modal-header">{experiment.title} feedback</h3>
             </Localized>
             <div className="modal-cancel" onClick={e => this.cancel(e)}/>
           </header>
-            <div className="tour-content">
-              <div className="tour-image">
+            <div className="step-content">
+              <div className="step-image">
                 <img src={experiment.pre_feedback_image} />
                 <div className="fade" />
               </div>
-              <div className="tour-text">
+              <div className="step-text">
                 {parser(experiment.pre_feedback_copy)}
               </div>
-              <div className="tour-text">
+              <div className="step-text">
                 <Localized id="experimentPreFeedbackLinkCopy" $title={experiment.title}>
                   <a onClick={e => this.feedback(e, e.target.getAttribute('href'))}
                      href={surveyURL}>Give feedback about the {experiment.title} experiment</a>

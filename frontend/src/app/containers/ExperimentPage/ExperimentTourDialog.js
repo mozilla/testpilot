@@ -1,5 +1,6 @@
 // @flow
 
+import cn from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
@@ -15,18 +16,8 @@ type ExperimentTourDialogProps = {
   sendToGA: Function
 }
 
-type ExperimentTourDialogState = {
-  currentStep: number
-}
-
 export default class ExperimentTourDialog extends React.Component {
   props: ExperimentTourDialogProps
-  state: ExperimentTourDialogState
-
-  constructor(props: ExperimentTourDialogProps) {
-    super(props);
-    this.state = { currentStep: 0 };
-  }
 
   l10nId(pieces: string | Array<string | number>) {
     return experimentL10nId(this.props.experiment, pieces);
@@ -34,12 +25,11 @@ export default class ExperimentTourDialog extends React.Component {
 
   renderHeaderTitle() {
     const { experiment, isExperimentEnabled } = this.props;
-    const enabled = isExperimentEnabled(experiment);
-
-    return enabled ? (
-        <Localized id="tourOnboardingTitle" $title={experiment.title}>
-          <h3 className="modal-header">{experiment.title} enabled!</h3>
-        </Localized>) : (<h3 className="modal-header">{experiment.title}</h3>);
+    return (<Localized id="tourOnboardingTitle" $title={experiment.title}>
+              <h3 className={cn('modal-header lighter', {
+                enabled: isExperimentEnabled({ addon_id: `@${experiment.title}` })
+              })}>{experiment.title}</h3>
+            </Localized>);
   }
 
   renderStep(tourSteps: Array<Object>, currentStep: number) {
@@ -60,7 +50,6 @@ export default class ExperimentTourDialog extends React.Component {
 
   render() {
     const { sendToGA, experiment } = this.props;
-    const { currentStep } = this.state;
     const tourSteps = experiment.tour_steps || [];
 
     const myProps = {
@@ -69,7 +58,7 @@ export default class ExperimentTourDialog extends React.Component {
       onComplete: this.onComplete.bind(this),
       renderStep: this.renderStep.bind(this),
       wrapperClass: 'tour-modal',
-      headerTitle: this.renderHeaderTitle(tourSteps, currentStep),
+      renderHeaderTitle: this.renderHeaderTitle.bind(this),
       stepNextPing: (newStep) => {
         sendToGA('event', {
           eventCategory: 'ExperimentDetailsPage Interactions',

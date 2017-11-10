@@ -5,10 +5,10 @@ import React from 'react';
 import './index.scss';
 
 type ModalProps = {
-  wrapperClass: String,
+  wrapperClass: string,
   onCancel: Function,
   onComplete: Function,
-  handleKeyDown: ?Function,
+  handleKeyDown?: Function,
   headerTitle: React.Element<any>,
   children: Array<React.Element<any>> | React.Element<any>
 }
