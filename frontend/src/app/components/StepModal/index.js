@@ -19,12 +19,13 @@ import './index.scss';
 type StepModalDialogProps = {
   onCancel: Function,
   onComplete: Function,
-  wrapperClass: String,
+  wrapperClass: string,
+  steps: Array<any>,
   stepNextPing: Function,
   stepBackPing: Function,
   stepToDotPing: Function,
   renderStep: Function,
-  headerTitle: React.Element<any>
+  renderHeaderTitle: Function
 }
 
 type StepModalDialogState = {
@@ -40,7 +41,7 @@ export default class StepModal extends React.Component {
     this.state = { currentStep: 0 };
   }
 
-  renderDots(steps: Array<any>, currentStep: Number) {
+  renderDots(steps: Array<any>, currentStep: number) {
     const dots = steps.map((el, index) => {
       if (currentStep === index) return (<div key={index} className="current dot"></div>);
       return (<div key={index} className="dot" onClick={e => this.stepToDot(e, index)} ></div>);
@@ -51,7 +52,7 @@ export default class StepModal extends React.Component {
             </div>);
   }
 
-  renderStepActions(steps: Array<any>, currentStep: Number) {
+  renderStepActions(steps: Array<any>, currentStep: number) {
     const atStart = (currentStep === 0);
     const atEnd   = (currentStep === steps.length - 1);
 
@@ -81,8 +82,8 @@ export default class StepModal extends React.Component {
     return (
         <Modal {...this.props}
                onCancel={this.cancel.bind(this)}
-               onComplete={this.complete.bind(this)}>
-
+               onComplete={this.complete.bind(this)}
+               headerTitle={this.props.renderHeaderTitle(steps, currentStep)}>
           {stepEl}
           {this.renderStepActions(steps, currentStep)}
           {this.renderDots(steps, currentStep)}

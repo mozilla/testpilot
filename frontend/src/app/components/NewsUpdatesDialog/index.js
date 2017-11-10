@@ -18,18 +18,8 @@ type newsUpdatesDialogProps = {
   sendToGA: Function
 }
 
-type newsUpdatesDialogState = {
-  currentStep: number
-}
-
 export default class NewsUpdatesDialog extends React.Component {
   props: newsUpdatesDialogProps
-  state: newsUpdatesDialogState
-
-  constructor(props: newsUpdatesDialogProps) {
-    super(props);
-    this.state = { currentStep: 0 };
-  }
 
   renderUpdate(newsUpdates: Array<Object>, currentStep: number) {
     return newsUpdates.map((u, idx) => (idx === currentStep) && (
@@ -68,7 +58,6 @@ export default class NewsUpdatesDialog extends React.Component {
 
   render() {
     const { sendToGA, newsUpdates } = this.props;
-    const { currentStep } = this.state;
 
     const myProps = {
       steps: newsUpdates,
@@ -76,7 +65,7 @@ export default class NewsUpdatesDialog extends React.Component {
       onComplete: this.onComplete.bind(this),
       renderStep: this.renderUpdate.bind(this),
       wrapperClass: 'news-updates-modal',
-      headerTitle: this.renderHeaderTitle(newsUpdates, currentStep),
+      renderHeaderTitle: this.renderHeaderTitle.bind(this),
       stepNextPing: (newStep) => {
         sendToGA('event', {
           eventCategory: 'NewsUpdatesDialog Interactions',
@@ -103,7 +92,7 @@ export default class NewsUpdatesDialog extends React.Component {
     return (<StepModal {...myProps} />);
   }
 
-  onCancel(ev) {
+  onCancel(ev: Object) {
     const { sendToGA, onCancel } = this.props;
 
     sendToGA('event', {
@@ -115,7 +104,7 @@ export default class NewsUpdatesDialog extends React.Component {
     if (onCancel) onCancel(ev);
   }
 
-  onComplete(ev) {
+  onComplete(ev: Object) {
     const { sendToGA, onComplete } = this.props;
 
     sendToGA('event', {

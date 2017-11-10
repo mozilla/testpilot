@@ -1,3 +1,5 @@
+@import '../../../styles/_hidpi-mixin';
+
 .envelope {
   @include hidpi-background-image('../../../images/envelope', 150px 130px);
   height: 130px;

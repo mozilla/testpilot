@@ -31,12 +31,8 @@ const newsUpdates = [{
 }];
 
 describe('app/components/NewsUpdatesDialog', () => {
-  let mockClickEvent, props, subject;
+  let props, subject;
   beforeEach(() => {
-    mockClickEvent = {
-      preventDefault: sinon.spy(),
-      stopPropagation: sinon.spy()
-    };
     props = {
       newsUpdates: newsUpdates,
       isExperimentEnabled: () => true,
@@ -50,7 +46,6 @@ describe('app/components/NewsUpdatesDialog', () => {
   });
 
   it('should render expected content', () => {
-    console.error('heyyyyooooo', subject.find('.step-title').first().text());
     expect(subject.find('.step-title').first().text()).to.equal(newsUpdates[0].title);
   });
 
