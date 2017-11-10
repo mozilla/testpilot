@@ -221,7 +221,7 @@ export default class EmailDialog extends React.Component {
             this.handleSubscribe(this.state.email);
           }
           // TODO: Else, show notification that the checkbox
-          // needs to be checked to proceed (#3042)
+          // needs to be checked to proceed.
         } else if (isSuccess) {
           this.continue(e);
         } else if (isError) {

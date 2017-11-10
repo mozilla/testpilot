@@ -105,9 +105,17 @@ describe('app/components/EmailDialog', () => {
     }, 1);
   });
 
+  it('should not submit the email when privacy checkbox is unchecked and <Enter> key is pressed', () => {
+    const expectedEmail = 'me@a.b.com';
+    subject.setState({ email: expectedEmail, privacy: false });
+    subject.find('.modal-container').simulate('keyDown', mockEnterKeyDownEvent);
+    expect(sendToGA.notCalled).to.be.true;
+    expect(subject.state('isSuccess')).to.be.false;
+  });
+
   it('should subscribe to basket on valid email when <Enter> key is pressed', done => {
     const expectedEmail = 'me@a.b.com';
-    subject.setState({ email: expectedEmail });
+    subject.setState({ email: expectedEmail, privacy: true });
 
     fetchMock.post(basketUrl, 200);
     subject.find('.modal-container').simulate('keyDown', mockEnterKeyDownEvent);
