@@ -104,7 +104,7 @@ export default class NewsUpdatesDialog extends React.Component {
     });
     cookies.set('updates-last-viewed-date', new Date().toISOString());
     if (onCancel) onCancel(ev);
-  };pp
+  };
 
   onComplete = (ev: Object) => {
     const { sendToGA, onComplete } = this.props;
