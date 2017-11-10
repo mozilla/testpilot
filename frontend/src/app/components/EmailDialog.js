@@ -211,7 +211,17 @@ export default class EmailDialog extends React.Component {
         break;
       case 'Enter':
         if (!isSuccess && !isError) {
-          this.handleSubscribe(this.state.email);
+          // If event is bubbled up from the input form,
+          // do nothing and let the HTML form handle it.
+          if (e.target !== e.currentTarget) {
+            return;
+          }
+          // Submit only if privacy checkbox is checked.
+          if (this.state.privacy) {
+            this.handleSubscribe(this.state.email);
+          }
+          // TODO: Else, show notification that the checkbox
+          // needs to be checked to proceed.
         } else if (isSuccess) {
           this.continue(e);
         } else if (isError) {
