@@ -6,7 +6,7 @@
   @include flex-container(column, flex-start, stretch);
 
   @include respond-to('big') {
-    width: 230px;
+    width: 280px;
 
     &:nth-child(3n+1) {
       margin-left: 0;
@@ -15,7 +15,7 @@
 
   @include respond-to('medium') {
     margin: 0 3% $grid-unit * 2;
-    width: 230px;
+    width: 280px;
   }
 
   @include respond-to('small') {
@@ -55,7 +55,7 @@
   .experiment-feedback {
     background-color: $blue-40;
     background-image: url('./img/feedback.svg');
-    background-position: 4px 4px;
+    background-position: 6px 3px;
     background-repeat: no-repeat;
     background-size: 14px;
     border-radius: 3px;
@@ -65,7 +65,7 @@
     display: block;
     font-size: 10px;
     line-height: 12px;
-    padding: 5px 8px 3px 20px;
+    padding: 5px 8px 4px 24px;
     position: relative;
     top: -2px;
 
@@ -90,9 +90,9 @@
 
   p {
     flex: 1;
-    font-size: 13px;
+    font-size: 14px;
     color: $grey-90;
-    line-height: 20px;
+    line-height: 22px;
     margin: 0 0 $grid-unit * .5;
   }
 
@@ -216,9 +216,9 @@
 
 .experiment-icon {
   background-repeat: no-repeat;
-  background-size: 45px 45px;
+  background-size: 60px 60px;
   filter: drop-shadow(0 1px 0 $transparent-black-1);
-  flex: 0 0 45px;
-  height: 45px;
+  flex: 0 0 60px;
+  height: 60px;
   opacity: .9;
 }
