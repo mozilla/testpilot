@@ -2,45 +2,45 @@
 @import '../../../styles/_utils';
 
 .news-updates-modal {
-    max-width: 644px;
-    position: relative;
-    width: 644px;
+  max-width: 644px;
+  position: relative;
+  width: 644px;
 
-    .step-general-actions {
-        bottom: -40px;
-        color: $white;
-        position: absolute;
-        width: 100%;
+  .step-general-actions {
+    bottom: -40px;
+    color: $white;
+    position: absolute;
+    width: 100%;
+  }
+
+  .modal-skip {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  .learn {
+    font-weight: normal;
+    font-size: 15px;
+  }
+
+  .step-text .button.default {
+    color: $white;
+  }
+
+  .step-text {
+    margin: 30px auto;
+    width: 80%;
+
+    p {
+      padding-top: 0;
     }
+  }
 
-    .modal-skip {
-        cursor: pointer;
-        display: inline-block;
-        font-weight: bold;
-    }
-
-    .learn {
-        font-weight: normal;
-        font-size: 15px;
-    }
-
-    .step-text .button.default {
-        color: $white;
-    }
-
-    .step-text {
-        margin: 30px auto;
-        width: 80%;
-
-        p {
-            padding-top: 0;
-        }
-    }
-
-    .published-date {
-        color: $grey-50;
-        font-size: 13px;
-        padding-bottom: 0 !important;
-    }
+  .published-date {
+    color: $grey-50;
+    font-size: 13px;
+    padding-bottom: 0 !important;
+  }
 }
 

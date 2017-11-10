@@ -2,170 +2,170 @@
 @import '../../../styles/_utils';
 
 .modal {
-    .step-text {
-        background: $white;
-        display: block;
-        padding: 0 0 ($grid-unit * .25);
-        text-align: center;
-        width: 100%;
+  .step-text {
+    background: $white;
+    display: block;
+    padding: 0 0 ($grid-unit * .25);
+    text-align: center;
+    width: 100%;
 
-        p {
-            margin: 0;
-            padding: $grid-unit * .5;
-        }
-
-        a {
-            color: $blue-60;
-            margin: $grid-unit * .5;
-        }
-
-        .button {
-            background-color:  $blue-60;
-            color: white;
-        }
+    p {
+      margin: 0;
+      padding: $grid-unit * .5;
     }
 
-    .dot-wrapper {
-        position: absolute;
-        bottom: -30px;
-        left: 50%;
+    a {
+      color: $blue-60;
+      margin: $grid-unit * .5;
     }
 
-    .dot-row {
-        @include flex-container(row, center, center);
-        background: transparent;
-        bottom: 5px;
-        height: 12px;
-        position: absolute;
-        width: 100%;
-        z-index: 10;
+    .button {
+      background-color:  $blue-60;
+      color: white;
+    }
+  }
+
+  .dot-wrapper {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+  }
+
+  .dot-row {
+    @include flex-container(row, center, center);
+    background: transparent;
+    bottom: 5px;
+    height: 12px;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .dot {
+    background: $white;
+    border-radius: $circle-border-radius;
+    cursor: pointer;
+    flex: 0 0 12px;
+    height: 12px;
+    margin: 0 3px;
+    opacity: .6;
+
+    &.current {
+      background: $white;
+      border: 0;
+      opacity: 1;
+    }
+  }
+
+  .step-title {
+    margin-bottom: 10px;
+  }
+
+  .step-image {
+    @include flex-container(row, center, center);
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    width: 580px;
+    padding: 40px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+
+    .fade {
+      background: linear-gradient(transparent, $white);
+      bottom: 0;
+      content: '';
+      height: 120px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+  }
+
+  .step-actions {
+    @include flex-container(row, space-between, center);
+    height: 92px;
+    left: -7.8%;
+    padding: 20px;
+    position: absolute;
+    top: 40%;
+    width: 115.6%;
+  }
+
+  .step-next,
+  .step-back,
+  .step-done {
+    @include flex-container(row, center, center);
+    border-radius: $circle-border-radius;
+    box-shadow: 0 0 5px 1px $transparent-black-2, 0 0 0 1px $transparent-black-3;
+    cursor: pointer;
+    height: $grid-unit * 3;
+    transition: background-color 150ms;
+    width: $grid-unit * 3;
+
+    &.no-display {
+      display: none;
+    }
+  }
+
+  .step-next {
+    animation: pop 150ms ease-in;
+    animation-delay: 700ms;
+  }
+
+  .step-next,
+  .step-back {
+    background: $white;
+
+    & > .step-filler {
+      background-position: center center;
+      background-repeat: no-repeat;
+      height: $grid-unit * 2;
+      opacity: .8;
+      width: $grid-unit * 2;
     }
 
-    .dot {
-        background: $white;
-        border-radius: $circle-border-radius;
-        cursor: pointer;
-        flex: 0 0 12px;
-        height: 12px;
-        margin: 0 3px;
-        opacity: .6;
-
-        &.current {
-            background: $white;
-            border: 0;
-            opacity: 1;
-        }
+    &:hover {
+      background-color: $grey-10;
     }
+  }
 
-    .step-title {
-        margin-bottom: 10px;
+  .step-done {
+    background-color: $white;
+    color: $green-50;
+
+    &:hover {
+      background-color: $green-50;
+      color: $white;
     }
+  }
 
-    .step-image {
-        @include flex-container(row, center, center);
-        height: auto;
-        overflow: hidden;
-        position: relative;
-        width: 580px;
-        padding: 40px;
-        padding-bottom: 10px;
-        margin: 0 auto;
+  .step-back > .step-filler {
+    background-image: url('../../../images/icon-Arrow.svg');
+  }
 
-        .fade {
-            background: linear-gradient(transparent, $white);
-            bottom: 0;
-            content: '';
-            height: 120px;
-            left: 0;
-            position: absolute;
-            width: 100%;
-        }
-    }
+  .step-next > .step-filler {
+    background-image: url('../../../images/icon-Arrow.svg');
+    transform: rotate(180deg);
+  }
 
-    .step-actions {
-        @include flex-container(row, space-between, center);
-        height: 92px;
-        left: -7.8%;
-        padding: 20px;
-        position: absolute;
-        top: 40%;
-        width: 115.6%;
-    }
-
-    .step-next,
-    .step-back,
-    .step-done {
-        @include flex-container(row, center, center);
-        border-radius: $circle-border-radius;
-        box-shadow: 0 0 5px 1px $transparent-black-2, 0 0 0 1px $transparent-black-3;
-        cursor: pointer;
-        height: $grid-unit * 3;
-        transition: background-color 150ms;
-        width: $grid-unit * 3;
-
-        &.no-display {
-            display: none;
-        }
-    }
-
-    .step-next {
-        animation: pop 150ms ease-in;
-        animation-delay: 700ms;
-    }
-
-    .step-next,
-    .step-back {
-        background: $white;
-
-        & > .step-filler {
-            background-position: center center;
-            background-repeat: no-repeat;
-            height: $grid-unit * 2;
-            opacity: .8;
-            width: $grid-unit * 2;
-        }
-
-        &:hover {
-            background-color: $grey-10;
-        }
-    }
-
-    .step-done {
-        background-color: $white;
-        color: $green-50;
-
-        &:hover {
-            background-color: $green-50;
-            color: $white;
-        }
-    }
-
-    .step-back > .step-filler {
-        background-image: url('../../../images/icon-Arrow.svg');
-    }
-
-    .step-next > .step-filler {
-        background-image: url('../../../images/icon-Arrow.svg');
-        transform: rotate(180deg);
-    }
-
-    .modal-header.enabled::after {
-        background-color: $green-60;
-        background-image: url('../../../images/icon_enabled.svg');
-        border-radius: 2px;
-        color: #fff;
-        content: 'Enabled';
-        display: block;
-        font-size: 15px;
-        line-height: 150%;
-        margin: 0;
-        padding: 4px 5px 0 26px;
-        position: absolute;
-        left: -10px;
-        top: -10px;
-        background-repeat: no-repeat;
-        background-size: 15%;
-        background-position: 8px;
-        font-weight: normal;
-    }
+  .modal-header.enabled::after {
+    background-color: $green-60;
+    background-image: url('../../../images/icon_enabled.svg');
+    border-radius: 2px;
+    color: #fff;
+    content: 'Enabled';
+    display: block;
+    font-size: 15px;
+    line-height: 150%;
+    margin: 0;
+    padding: 4px 5px 0 26px;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    background-repeat: no-repeat;
+    background-size: 15%;
+    background-position: 8px;
+    font-weight: normal;
+  }
 }
