@@ -185,7 +185,7 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
     expect(subject.find(DetailsDescription).find(LocaleWarning)).to.have.length(0);
   });
 
-  it('should render a locale warning for a unsupported locales, on non-graduated experiments', () => {
+  it('should render a locale warning for unsupported locales, on non-graduated experiments', () => {
     const unsupportedLocale = 'de';
     subject.setProps({
       isAfterCompletedDate: sinon.stub().returns(false),
