@@ -18,6 +18,7 @@ import ExperimentEolDialog from './ExperimentEolDialog';
 import ExperimentTourDialog from './ExperimentTourDialog';
 
 import { PRIVACY_SCROLL_OFFSET } from './DetailsHeader';
+import DetailsDescription, { LocaleWarning } from './DetailsDescription';
 
 describe('app/containers/ExperimentPage', () => {
   const mockExperiment = {
@@ -169,6 +170,32 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
     subject.setProps(props);
     expect(subject.find('NotFoundPage'))
       .to.have.property('length', 1);
+  });
+
+  it('should not render a locale warning for unsupported locales, on graduated experiments', () => {
+    const unsupportedLocale = 'de';
+    subject.setProps({
+      isAfterCompletedDate: sinon.stub().returns(true),
+      locale: unsupportedLocale
+    });
+    setExperiment({
+      ...mockExperiment,
+      locale_blocklist: unsupportedLocale
+    });
+    expect(subject.find(DetailsDescription).find(LocaleWarning)).to.have.length(0);
+  });
+
+  it('should render a locale warning for a unsupported locales, on non-graduated experiments', () => {
+    const unsupportedLocale = 'de';
+    subject.setProps({
+      isAfterCompletedDate: sinon.stub().returns(false),
+      locale: unsupportedLocale
+    });
+    setExperiment({
+      ...mockExperiment,
+      locale_blocklist: unsupportedLocale
+    });
+    expect(subject.find(DetailsDescription).find(LocaleWarning)).to.have.length(1);
   });
 
   describe('with a valid experiment slug', () => {
