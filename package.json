@@ -138,7 +138,7 @@
     "test:watch": "npm test -- --watch",
     "test:all": "npm run lint && npm run flow && npm run test && npm run flow-coverage && cd addon && npm run lint && npm run test && tox -e ui-tests",
     "coverage": "cross-env NODE_ENV=test nyc mocha --recursive --require frontend/test-setup.js frontend/test",
-    "flow-coverage": "cd frontend && flow-coverage-report --threshold 60 -i 'src/**/*.js' -t html -o coverage/flow",
+    "flow-coverage": "cd frontend && flow-coverage-report --threshold 50 -i 'src/**/*.js' -t html -o coverage/flow",
     "addon:locales": "gulp addon-copy-locales",
     "package": "cd addon && npm install && npm run package && cp addon.xpi ..",
     "content": "gulp content-build",

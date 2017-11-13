@@ -34,3 +34,7 @@ body {
   @include flex-container(column, center, center);
   min-height: 100vh;
 }
+
+.small {
+  font-size: 13px;
+}

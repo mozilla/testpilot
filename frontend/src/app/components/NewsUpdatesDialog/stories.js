@@ -19,7 +19,8 @@ const mkupdate = (daysAgo, slug, experimentSlug, title, content, rest) => {
       title,
       content,
       created: new Date(dt - 1000).toISOString(),
-      published: new Date(dt).toISOString()
+      published: new Date(dt).toISOString(),
+      image: '/static/images/experiments/min-vid/experiments_experimentdetail/detail1.jpg'
     },
     rest || {}
   );
@@ -61,7 +62,7 @@ const experimentUpdateNoLink = mkupdate(
 storiesOf('NewsUpdatesDialog', module)
   .addDecorator(withKnobs)
   .addDecorator(story =>
-    <div className="blue" style={{ padding: 10 }} onClick={action('click')}>
+     <div className="content-wrapper" onClick={action('click')}>
       <div className="stars" />
       <LayoutWrapper flexModifier="card-list">
         {story()}

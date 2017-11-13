@@ -1,0 +1,156 @@
+@import '~photon-colors/colors.scss';
+@import '../../../styles/_utils';
+
+#four-oh-four,
+#retire,
+#share,
+#legacy-modal,
+#warning,
+#onboarding {
+  animation: fade-in 300ms forwards;
+  animation-delay: 300ms;
+  margin-bottom: $grid-unit * 1.5;
+  position: relative;
+
+  &::after {
+    border-left: $grid-unit * .75 solid transparent;
+    border-right: $grid-unit * .75 solid transparent;
+    border-top: $grid-unit * .75 solid $white;
+    bottom: -14px;
+    content: '';
+    height: 0;
+    left: 50%;
+    margin-left: -13px;
+    position: absolute;
+    width: 0;
+  }
+
+  p {
+    font-size: $font-unit * 1.6;
+    line-height: $font-unit * 2.4;
+    margin: 0;
+  }
+
+  a:not(.button) {
+    color: $blue-40;
+  }
+}
+
+.modal-container {
+  @include flex-container(row, center, center);
+  animation: fade-in 500ms forwards;
+  background: $transparent-black-7;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+}
+
+.modal {
+  animation: fade-in-fly-up 300ms forwards;
+  animation-delay: 250ms;
+  background: $white;
+  box-shadow: 0 4px $grid-unit $transparent-black-5;
+  color: $black;
+  opacity: 0;
+  position: relative;
+  width: $grid-unit * 25;
+
+  :not(.content-wrapper) & {
+    @include respond-to('small') {
+      width: 92%;
+    }
+  }
+
+  &.tour-modal {
+    max-width: 644px;
+    width: 644px;
+  }
+
+  .modal-header-wrapper {
+    @include flex-container(row, center, center);
+    background-color: $teal-70;
+    height: 54px;
+
+    &.warning-modal {
+      background: $red-50;
+    }
+  }
+
+  .modal-header {
+    color: $white;
+    font-size: $font-unit * 2;
+    margin: 0;
+    // padding: $grid-unit * .6;
+    text-align: center;
+
+  }
+
+  .modal-cancel {
+    background-image: url('../../../images/close-icon.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    border-radius: $small-border-radius;
+    cursor: pointer;
+    height: 24px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 24px;
+    z-index: 1;
+
+    &:hover,
+    &:active {
+      background-color: $transparent-black-2;
+      box-shadow: 0 -2px 0 $transparent-black-1 inset;
+    }
+  }
+
+  .modal-content {
+    font-size: $font-unit * 1.4;
+    overflow: hidden;
+    padding: $grid-unit * 1.5 $grid-unit;
+    position: relative;
+
+    & >:first-child {
+      margin-top: 0;
+    }
+
+    & >:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .modal-actions {
+    @include flex-container(column, space-between, center);
+    padding: 0 $grid-unit * 1.5 $grid-unit * 1.5;
+
+    .button {
+      font-size: $font-unit * 1.5;
+      padding: 0 ($grid-unit * .5);
+      width: 100%;
+    }
+  }
+
+  .modal-escape {
+    color: $blue-40;
+    position: relative;
+    top: 10px;
+  }
+
+  .copter {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 220px auto;
+    height: 180px;
+    margin: 0 auto;
+  }
+
+  .button {
+    margin: 0 auto;
+  }
+}
