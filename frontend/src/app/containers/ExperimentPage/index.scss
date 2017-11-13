@@ -52,19 +52,21 @@
 
 .status-bar {
   @include flex-container(row, center, center);
-  animation: fade-in 500ms forwards;
+  // animation: fade-in 500ms forwards;
   height: $grid-unit * 1.6;
   margin-bottom: $grid-unit * .2;
   opacity: 0;
   padding-top: $grid-unit * .1;
 
   &.enabled {
+    opacity: 1;
     background: $teal-60;
     border-bottom: 1px solid $teal-70;
     color: $white;
   }
 
   &.error {
+    opacity: 1;
     background: $error-red-background;
     border-bottom: 1px solid $error-red-border;
   }
