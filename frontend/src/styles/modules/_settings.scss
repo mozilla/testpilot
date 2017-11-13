@@ -4,15 +4,14 @@
 
 .settings-button {
   background-image: url('../images/settings.svg');
-  background-position: 10px center;
+  background-position: 10px 2px;
   background-repeat: no-repeat;
   background-size: 16px 16px;
+  cursor: pointer;
   opacity: .6;
   padding: 0 10px 0 32px;
 
   &:hover {
-    background-position: 9px center;
-    background-size: 18px 18px;
     opacity: .8;
   }
 }
