@@ -42,7 +42,7 @@ export default function DetailsDescription({
     <div className="details-description">
       {completed && !graduated && <EolBlock {...{ experiment, l10nId }} />}
       <IncompatibleAddons {...{ experiment, installedAddons }} />
-      <LocaleWarning {...{ experiment, locale, hasAddon }} />
+      {!graduated && <LocaleWarning {...{ experiment, locale, hasAddon }} />}
       {graduated && <GraduatedNotice {...{ graduated, graduation_url }} />}
 
       {video_url &&
