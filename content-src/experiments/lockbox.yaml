@@ -6,25 +6,26 @@ platforms: ['addon']
 min_release: 57
 thumbnail: /static/images/experiments/notes/experiments_experiment/thumbnail.png
 description: >
-  A free password manager to assure your online accounts are secure without having to remember passwords and security codes.
+  A free password manager to assure your online accounts are secure without
+  having to remember passwords and security codes.
 introduction: >
-  Lockbox lets you add and access your website credentials right from the browser. These are secure to your local Firefox browser. If you want to further secure your entries, lock those in a vault with your Firefox Account. 
+  Lockbox lets you add and access your website credentials right from the
+  browser. These are secure to your local Firefox browser. If you want to
+  further secure your entries, lock those in a vault with your Firefox Account. 
 image_twitter: /static/images/experiments/notes/social/notes-twitter.jpg
 image_facebook: /static/images/experiments/notes/social/notes-fb.jpg
 video_url: https://www.youtube.com/embed/vaFvr_70yxw
-changelog_url: 'https://github.com/mozilla/notes/releases'
-contribute_url: 'https://github.com/mozilla/notes'
-bug_report_url: 'https://github.com/mozilla/notes/issues'
-discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/notes'
-privacy_notice_url: 'https://github.com/mozilla/notes/blob/master/docs/metrics.md'
+changelog_url: 'https://mozilla-lockbox.github.io/lockbox-extension/release-notes/'
+contribute_url: 'https://github.com/mozilla-lockbox/lockbox-extension'
+bug_report_url: 'https://github.com/mozilla-lockbox/lockbox-extension/issues'
+privacy_notice_url: 'https://github.com/mozilla-lockbox/lockbox-extension/blob/master/docs/metrics.md'
 measurements:
   - >
-    Notes will collect information about your use of the feature, such as how often you create notes
-    and how long you spend editing them, the number of characters you save in your notes, and whether
-    you use any editing features (e.g., bold or stylized text).
+    Lockbox will collect information about your use of the feature, such as how
+    often you create entries.
   - >
-    Notes will also collect information about your interaction with the add-on, such as how you
-    access the feature, and what buttons you may click.
+    Lockbox will also collect information about your interaction with the add-on,
+    such as how you access the feature, and what buttons you may click.
 xpi_url: 'https://testpilot.firefox.com/files/lockbox@mozilla.com/latest'
 addon_id: 'lockbox@mozilla.com'
 gradient_start: '#A665B4'
@@ -37,45 +38,12 @@ details:
 tour_steps:
   -
     image: /static/images/experiments/notes/experiments_experimenttourstep/notes-tour-1.jpg
-    copy: Notes adds a simple notepad to your browser’s sidebar.
-  -
-    image: /static/images/experiments/notes/experiments_experimenttourstep/notes-tour-2.jpg
-    copy: We’ve built some basic formatting options into Notes. With your feedback we will add more features.
-  -
-    image: /static/images/experiments/notes/experiments_experimenttourstep/notes-tour-3.jpg
-    copy: You can get back to the Notes experiment by clicking on the sidebar icon.
-  -
-    image: /static/images/experiments/notes/experiments_experimenttourstep/notes-tour-4.jpg
-    copy: You can always give us feedback or disable Notes from Test Pilot.
+    copy: Lockbox adds a simple password management experience to your browser.
 contributors:
   -
-    display_name: 'Udara Weerasinghege'
-    title: 'Engineering Intern'
-    avatar: /static/images/experiments/avatars/udara-w.jpg
-  -
-    display_name: 'Cedric Amaya'
-    title: 'Community Contributor'
-    avatar: /static/images/experiments/avatars/cedric-a.png
-  -
-    display_name: 'Ryan Feeley'
-    title: 'Senior Product/UX Designer'
-    avatar: /static/images/experiments/avatars/ryan-f.jpg
-  -
-    display_name: 'Remy Hubscher'
-    title: 'Software Engineer'
-    avatar: /static/images/experiments/avatars/remy-h.jpg
-  -
-    display_name: 'Vlad Filippov'
-    title: 'Senior Engineer'
-    avatar: /static/images/experiments/avatars/vlad-f.jpg
-  -
-    display_name: 'Peter Dehaan'
-    title: 'Firefox QA'
-    avatar: /static/images/experiments/avatars/peter.jpg
-  -
-    display_name: 'Emil Pasca'
-    title: 'Softvision QA'
-    avatar: /static/images/experiments/avatars/emil.jpg
-created: '2017-08-01T14:00:00Z'
-launch_date: '2017-08-01T14:00:00Z'
+    display_name: 'Sandy Sage'
+    title: 'Product Manager'
+    avatar: /static/images/experiments/avatars/generic-profile.png
+created: '2017-12-01T14:00:00Z'
+launch_date: '2017-12-12T23:59:59Z'
 order: 1
