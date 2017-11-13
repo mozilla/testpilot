@@ -38,7 +38,7 @@
     display: none;
 
     > a {
-      background-position: 10px center;
+      background-position: 10px 1px;
       background-repeat: no-repeat;
       background-size: 16px 16px;
       border-radius: 0 0 3px 3px;
@@ -62,10 +62,5 @@
     border-radius: 0 0 3px 3px;
     border-top: 0;
     padding: 0 10px 0 32px;
-
-    &:hover {
-      background-position: 9px center;
-      background-size: 18px 18px;
-    }
   }
 }
