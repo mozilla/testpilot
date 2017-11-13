@@ -185,10 +185,19 @@ tourOnboardingTitle = Experiment { $title } zapnut!
 tourDoneButton = Hotovo
 userCountContainerAlt = Právě spuštěno!
 highlightPrivacy = Vaše soukromí
+experimentGradReportButton = Zpráva o ukončení experimentu
 experimentGradReportPendingTitle = Tento experiment byl ukončen
 experimentGradReportPendingCopy = Pracujeme na kompletní zprávě o výsledcích. Podrobnosti doplníme brzy.
+experimentGradReportReady = Připravili jsme zprávu o ukončení experimentu.
 experimentGoToLink = Přejít na { $title }
 startedDateLabel = Datum začátku experimentu: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+learnMoreLink = ZJISTIT VÍCE
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -281,6 +290,7 @@ newsletterFooterSuccessBody = Pokud jste dříve nepotvrdili odběr zpravodaje M
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeNotTranslatedWarningTitle = Tento experiment nebyl přeložen do vašeho jazyka ({ $locale_code }).
 localeWarningSubtitle = Můžete ale aktivaci zkusit i bez toho.
 
 
