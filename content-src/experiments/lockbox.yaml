@@ -3,6 +3,10 @@ id: 999
 title: 'Lockbox'
 slug: lockbox
 platforms: ['addon']
+locales:
+- 'en-US'
+locale_grantlist:
+- 'en-US'
 min_release: 57
 thumbnail: /static/images/experiments/notes/experiments_experiment/thumbnail.png
 description: >
