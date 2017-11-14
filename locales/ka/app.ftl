@@ -66,6 +66,7 @@ landingCardThree = მოგვახსენეთ, თქვენი აზ�
 // Shown after the user installs the Test Pilot add-on.
 [[ onboarding ]]
 
+onboardingMessage = ხატულა განთავსდება ხელსაწყოთა ზოლზე, ასე რომ ყოველთვის ადვილად შეგეძლებათ მიაგნოთ Test Pilot-ს.
 
 
 // Error message pages.
@@ -76,26 +77,48 @@ landingCardThree = მოგვახსენეთ, თქვენი აზ�
 // A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
+emailOptInDialogTitle = მოგესალმებათ Test Pilot!
+emailOptInMessage = მოიძიეთ ახალი საცდელი შესაძლებლობები და იხილეთ შემოწმების შედეგები
+emailOptInConfirmationTitle = წერილი გამოგზავნილია
+emailOptInConfirmationClose = წინ, ახალი შესაძლებლობების გამოცდისკენ...
+emailOptInDialogErrorTitle = ოჰ, არა!
 
 
 // news feed updates.
 [[ updateList ]]
 
+latestUpdatesTitle = ბოლო განახლებები
 
 
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
+experimentListEnabledTab = ჩართულია
+experimentListJustLaunchedTab = ახლახან გაეშვა
+experimentListJustUpdatedTab = ახლახან განახლდა
+experimentListEndingTomorrow = სრულდება ხვალ
+experimentListEndingSoon = სრულდება მალე
+experimentCondensedHeader = მოგესალმებათ Test Pilot!
+experimentListHeader = შეარჩიეთ გამოსაცდელი შესაძლებლობები!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = გამოხმაურება
+experimentCardManage = მართვა
+experimentCardGetStarted = დაწყება
+experimentCardLearnMore = ვრცლად
 
 
 // A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
+feedbackUninstallCopy =
+    თქვენი მონაწილეობა Firefox-ის Test Pilot-ში,
+    ჩვენთვის ბევრს ნიშნავს! გთხოვთ, გამოცადოთ სხვა 
+    შესაძლებლობებიც და დარჩეთ, კიდევ უფრო მეტ ხანს!
 
 
 // A modal prompt shown before the feedback survey for some experiments.
@@ -106,6 +129,8 @@ landingCardThree = მოგვახსენეთ, თქვენი აზ�
 // A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
+experimentPromoHeader = მზად ხართ გასაშვებად?
+experimentPromoSubheader = ჩვენ ვქმნით ახალი თაობის შესაძლებლობებს Firefox-ისთვის. დააყენეთ Test Pilot და გამოცადეთ თავად!
 
 
 // The experiment detail page.
