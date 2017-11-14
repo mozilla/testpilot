@@ -136,11 +136,13 @@ experimentPromoSubheader = ჩვენ ვქმნით ახალი თ�
 // The experiment detail page.
 [[ experimentPage ]]
 
+experimentMeasurementIntro = გარდა იმისა, რომ <a>მონაცემები</a> აღირიცხება Test Pilot-ის ყველა საცდელ პროექტში, აქ არის მოცემული რამდენიმე მნიშვნელოვანი საკითხი, რაც უნდა გაითვალისწინოთ { $experimentTitle }-ის სარგებლობისას:
 
 
 // news updates dialog.
 [[ newsUpdatesDialog ]]
 
+nonExperimentDialogHeaderLink = Test Pilot
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -156,16 +158,31 @@ experimentPromoSubheader = ჩვენ ვქმნით ახალი თ�
 // Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
+retireDialogTitle = გსურთ Test Pilot-ის წაშლა?
+retireMessageUpdate = როგორც გენებოთ. Test Pilot ამოიშლება. შეგიძლიათ, ცალკეული საცდელი შესაძლებლობების ამოშლაც, დამატებების მმართველიდან.
+retireEmailMessage = ელფოსტაზე მოსული სიახლეების შესაწყვეტად, უბრალოდ დააწკაპეთ <em>გამოწერის გაუქმების</em> ბმულს, Test Pilot-ისგან მოსულ წერილში.
+retireSubmitButton = გაგრძელება
+pageTitleRetirePage = Firefox Test Pilot - Test Pilot-ის ამოშლა
+retirePageProgressMessage = დახურვა...
+retirePageHeadline = გმადლობთ, ფრენისთვის!
+retirePageMessage = ვიმედოვნებთ, რომ ისიამოვნეთ ახალი შესაძლებლობების გამოცდით, ჩვენთან ერთად. <br> ჩვენი კარი, თქვენთვის ყოველთვის ღია იქნება.
+retirePageSurveyButton = შეავსეთ მცირე კითხვარი
 
 
 // Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = გაფრენისწინა შემოწმება
+restartIntroOne = ხელახლა გაუშვით ბრაუზერი
+restartIntroTwo = მონახეთ Test Pilot დამატება
+restartIntroThree = აირჩიეთ გამოსაცდელი შესაძლებლობები
 
 
 // Shown on a page presented to users three days after installing their first experiment.
 [[ share ]]
 
+sharePrimary = მოგეწონათ Test Pilot? დაგვეხმარეთ ახალი მონაწილეების შემომატებაში.
+eolDisableMessage = { $title } შესაძლებლობის გამოცდა დასრულებულია. ამოშლის შემდეგ, მისი ხელახლა დაყენება Test Pilot-ის საშუალებით, აღარ შეგეძლებათ.
 
 
 // A warning shown to users looking at experiments incompatible with add-ons they already have installed.
@@ -176,6 +193,11 @@ experimentPromoSubheader = ჩვენ ვქმნით ახალი თ�
 // A form prompting the user to sign up for the Test Pilot Newsletter.
 [[ newsletterForm ]]
 
+newsletterFormEmailPlaceholder
+    .placeholder = თქვენი ელფოსტა
+newsletterFormDisclaimer = მიიღებთ მხოლოდ Test Pilot-თან დაკავშირებულ ინფორმაციას.
+newsletterFormPrivacyNotice = თანახმა ვარ, რომ Mozilla-მ ჩემი მონაცემები გამოიყენოს, <a>პირადულობის დაცვის დებულების</a> შესაბამისად
+newsletterFormPrivacyAgreementRequired = გასაგრძელებლად, გთხოვთ მონიშნოთ ეს უჯრა.
 
 
 // A section of the footer containing a newsletter signup form.
