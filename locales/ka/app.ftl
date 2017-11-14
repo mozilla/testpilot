@@ -28,7 +28,7 @@ menuDiscuss = Test Pilot-ის განხილვა
 landingIntroOne = გამოცადეთ ახალი შესაძლებლობები.
 landingIntroTwo = გამოგვეხმაურეთ.
 landingIntroThree = დაგვეხმარეთ Firefox-ის გაუმჯობესებაში.
-landingLegalNotice = გასაგრძელებლად, უნდა დაეთანხმოთ Test Pilot-ის <a>გამოყენების პირობებსა</a> და <a>პირადულობის დებულებას</a>
+landingLegalNotice = გაეცანით Test Pilot-ის <a>გამოყენების პირობებსა</a> და <a>პირადულობის დებულებას</a>
 landingExperimentsTitle = გამოცადეთ უახლესი შესაძლებლობები
 
 
@@ -90,6 +90,7 @@ emailOptInDialogErrorTitle = ოჰ, არა!
 [[ updateList ]]
 
 latestUpdatesTitle = ბოლო განახლებები
+showMoreNewsTitle = ძველი სიახლეების ჩვენება
 
 
 // A listing of all Test Pilot experiments.
@@ -228,8 +229,17 @@ newsletterFooterBody = მოიძიეთ ახალი საცდელ�
 // Text of a button to toggle visibility of a list of past experiments.
 [[ pastExperiments ]]
 
+viewPastExperiments = იხილეთ ძველი პროექტები
+hidePastExperiments = ძველი პროექტების დამალვა
 
 
 // Text of warnings to the user if various error conditions are detected
 [[ warnings ]]
 
+warningGenericTitle = რაღაც ხარვეზია!
+warningGenericDetail = Test Pilot-ის მუშაობასთან დაკავშირებით შეფერხებაა. გთხოვთ, <a>მოგვახსენოთ ხარვეზის შესახებ</a>.
+warningUpgradeFirefoxTitle = გასაგრძელებლად, განაახლეთ Firefox!
+warningUpgradeFirefoxDetail = Test Pilot საჭიროებს Firefox-ის უახლესს ვერსიას. <a>განაახლეთ Firefox</a> დასაწყებად.
+warningHttpsRequiredTitle = აუცილებელია HTTPS!
+warningHttpsRequiredDetail = Test Pilot წვდომისთვის საჭიროებს HTTPS პროტოკოლს. დამატებითი ინფორმაციისთვის, გთხოვთ გაეცნოთ <a>ჩვენს დოკუმენტაციას</a>.
+warningBadHostnameTitle = ჰოსტის არამართბული სახელი!
