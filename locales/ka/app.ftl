@@ -26,6 +26,8 @@ menuDiscuss = Test Pilot-ის განხილვა
 [[ landing ]]
 
 landingIntroOne = გამოცადეთ ახალი შესაძლებლობები.
+landingIntroTwo = გამოგვეხმაურეთ.
+landingIntroThree = დაგვეხმარეთ Firefox-ის გაუმჯობესებაში.
 landingLegalNotice = გასაგრძელებლად, უნდა დაეთანხმოთ Test Pilot-ის <a>გამოყენების პირობებსა</a> და <a>პირადულობის დებულებას</a>
 landingExperimentsTitle = გამოცადეთ უახლესი შესაძლებლობები
 
@@ -41,8 +43,8 @@ landingInstalledButton = მიუთითეთ სასურველი �
 // Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
-oneClickInstallMinorCta = Test Pilot-ის დაყენება &amp;
-oneClickInstallMajorCta = ჩართვა { $title }
+oneClickInstallMinorCta = დააყენეთ Test Pilot &amp;
+oneClickInstallMajorCta = ჩართეთ { $title }
 
 
 // Homepage messaging for users not on Firefox or with an old version of Firefox.
@@ -78,7 +80,7 @@ onboardingMessage = ხატულა განთავსდება ხე�
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = მოგესალმებათ Test Pilot!
-emailOptInMessage = მოიძიეთ ახალი საცდელი შესაძლებლობები და იხილეთ შემოწმების შედეგები
+emailOptInMessage = მოიძიეთ ახალი საცდელი შესაძლებლობები და იხილეთ შემოწმების შედეგები.
 emailOptInConfirmationTitle = წერილი გამოგზავნილია
 emailOptInConfirmationClose = წინ, ახალი შესაძლებლობების გამოცდისკენ...
 emailOptInDialogErrorTitle = ოჰ, არა!
@@ -129,8 +131,8 @@ feedbackUninstallCopy =
 // A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
-experimentPromoHeader = მზად ხართ გასაშვებად?
-experimentPromoSubheader = ჩვენ ვქმნით ახალი თაობის შესაძლებლობებს Firefox-ისთვის. დააყენეთ Test Pilot და გამოცადეთ თავად!
+experimentPromoHeader = მზად ხართ გაფრენისთვის?
+experimentPromoSubheader = ჩვენ ვქმნით ახალი თაობის შესაძლებლობებს Firefox-ისთვის. დააყენეთ Test Pilot და გამოცადეთ!
 
 
 // The experiment detail page.
@@ -198,11 +200,14 @@ newsletterFormEmailPlaceholder
 newsletterFormDisclaimer = მიიღებთ მხოლოდ Test Pilot-თან დაკავშირებულ ინფორმაციას.
 newsletterFormPrivacyNotice = თანახმა ვარ, რომ Mozilla-მ ჩემი მონაცემები გამოიყენოს, <a>პირადულობის დაცვის დებულების</a> შესაბამისად
 newsletterFormPrivacyAgreementRequired = გასაგრძელებლად, გთხოვთ მონიშნოთ ეს უჯრა.
+newsletterFormSubmitButton = გამოწერა
+newsletterFormSubmitButtonSubmitting = იგზავნება...
 
 
 // A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterBody = მოიძიეთ ახალი საცდელი შესაძლებლობები და იხილეთ შემოწმების შედეგები.
 
 
 // A warning shown to users when the experiment is not available in their language
