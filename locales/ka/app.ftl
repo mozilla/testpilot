@@ -62,7 +62,7 @@ landingUpgradeDesc2 = Test Pilot საჭიროებს Firefox { $version 
 
 landingCardListTitle = დაიწყეთ - 3, 2, 1
 landingCardOne = გადმოწერეთ Test Pilot დამატება
-landingCardTwo = საცდელი შესაძლებლობების ჩართვა
+landingCardTwo = ჩართეთ საცდელი შესაძლებლობები
 landingCardThree = მოგვახსენეთ, თქვენი აზრი
 
 
@@ -156,7 +156,7 @@ contributorsHeading = შემქმნელები
 contributorsExtraLearnMore = ვრცლად
 changelog = ცვლილებები
 tour = პროექტის გაცნობა
-tourLink = დაწყება
+tourLink = ტურის გაშვება
 contribute = შემოწირულობა
 bugReports = ხარვეზების შესახებ მოხსენება
 discussExperiment = { $title } პროექტის განხილვა
@@ -164,6 +164,7 @@ tourOnboardingTitle = { $title } ჩართულია!
 tourDoneButton = მზადაა
 userCountContainerAlt = ახლახან გაეშვა!
 highlightPrivacy = თქვენი პირადულობის დაცვა
+startedDateLabel = საცდელი პროექტის დაწყების თარიღი: <b>{ $startedDate }</b>
 
 
 // news updates dialog.
@@ -175,6 +176,7 @@ nonExperimentDialogHeaderLink = Test Pilot
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 
+experimentPlatformAddon = Firefox საცდელი შესაძლებლობები
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -232,6 +234,7 @@ newsletterFormSubmitButtonSubmitting = იგზავნება...
 // A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
+newsletterFooterHeader = იყავით კავშირზე
 newsletterFooterBody = მოიძიეთ ახალი საცდელი შესაძლებლობები და იხილეთ შემოწმების შედეგები.
 
 
