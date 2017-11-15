@@ -303,3 +303,4 @@ warningUpgradeFirefoxDetail = Test Pilot საჭიროებს Firefox-ი
 warningHttpsRequiredTitle = აუცილებელია HTTPS!
 warningHttpsRequiredDetail = Test Pilot წვდომისთვის საჭიროებს HTTPS პროტოკოლს. დამატებითი ინფორმაციისთვის, გთხოვთ გაეცნოთ <a>ჩვენს დოკუმენტაციას</a>.
 warningBadHostnameTitle = ჰოსტის არამართბული სახელი!
+warningBadHostnameDetail = Test Pilot ვებსაიტი ხელმისაწვდომია მხოლოდ testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, ან example.com:8000 მისამართებიდან. დამატებითი ინფორმაციისთვის, გთხოვთ, გაეცნოთ <a>ჩვენს დოკუმენტაციას</a>.
