@@ -13,6 +13,11 @@ pageTitleExperiment = Firefox Test Pilot - { $title }
 // Links in the footer.
 [[ footerLink ]]
 
+footerLinkCookies = ფუნთუშები
+footerLinkPrivacy = პირადულობა
+footerLinkTerms = პირობები
+footerLinkLegal = სამართლებრივი აქტები
+footerLinkFeedback = გამოხმაურება
 footerLinkAbout = Test Pilot-ის შესახებ
 
 
@@ -21,6 +26,7 @@ footerLinkAbout = Test Pilot-ის შესახებ
 
 menuWiki = Test Pilot Wiki
 menuDiscuss = Test Pilot-ის განხილვა
+headerLinkBlog = სვეტი
 
 
 // The splash on the homepage.
@@ -128,6 +134,7 @@ feedbackUninstallCopy =
 // A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
+experimentPreFeedbackLinkCopy = გამოხმაურება { $title } საცდელი პროექტის შესახებ
 
 
 // A splash shown on top of the experiment page when Test Pilot is not installed.
