@@ -7,6 +7,7 @@ siteName = Firefox Test Pilot
 pageTitleDefault = Firefox Test Pilot
 pageTitleLandingPage = Firefox Test Pilot
 pageTitleExperimentListPage = Firefox Test Pilot - საცდელი შესაძლებლობები
+pageTitleExperiment = Firefox Test Pilot - { $title }
 
 
 // Links in the footer.
@@ -139,8 +140,29 @@ experimentPromoSubheader = ჩვენ ვქმნით ახალი თ�
 // The experiment detail page.
 [[ experimentPage ]]
 
+isEnabledStatusMessage = { $title } ჩართულია.
+otherExperiments = ეს პროექტებიც გამოსცადეთ
+giveFeedback = გამოგვეხმაურეთ
+disableHeader = გსურთ საცდელი პროექტის გამორთვა?
+disableExperiment = { $title } პროექტის გამორთვა
+disableExperimentTransition = გამოირთვება...
+enableExperiment = { $title } პროექტის ჩართვა
+enableExperimentTransition = ირთვება...
+experimentManuallyDisabled = { $title } ამორთულია დამატებების მმართველიდან
 experimentMeasurementIntro = გარდა იმისა, რომ Test Pilot-ის ყველა საცდელ პროექტში აღირიცხება <a>მონაცემები</a>, აქ არის მოცემული რამდენიმე მნიშვნელოვანი საკითხი, რაც უნდა გაითვალისწინოთ უშუალოდ { $experimentTitle } პროექტით სარგებლობისას:
 measurements = თქვენი პირადულობის დაცვა
+experimentPrivacyNotice = იხილეთ ვრცლად მონაცემთა აღრიცხვის შესახებ, { $title } პროექტთან დაკავშირებით.
+contributorsHeading = შემქმნელები
+contributorsExtraLearnMore = ვრცლად
+changelog = ცვლილებები
+tour = პროექტის გაცნობა
+tourLink = დაწყება
+contribute = შემოწირულობა
+bugReports = ხარვეზების შესახებ მოხსენება
+discussExperiment = { $title } პროექტის განხილვა
+tourOnboardingTitle = { $title } ჩართულია!
+tourDoneButton = მზადაა
+userCountContainerAlt = ახლახან გაეშვა!
 highlightPrivacy = თქვენი პირადულობის დაცვა
 
 
