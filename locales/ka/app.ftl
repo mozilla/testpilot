@@ -140,6 +140,8 @@ experimentPromoSubheader = ჩვენ ვქმნით ახალი თ�
 [[ experimentPage ]]
 
 experimentMeasurementIntro = გარდა იმისა, რომ Test Pilot-ის ყველა საცდელ პროექტში აღირიცხება <a>მონაცემები</a>, აქ არის მოცემული რამდენიმე მნიშვნელოვანი საკითხი, რაც უნდა გაითვალისწინოთ უშუალოდ { $experimentTitle } პროექტით სარგებლობისას:
+measurements = თქვენი პირადულობის დაცვა
+highlightPrivacy = თქვენი პირადულობის დაცვა
 
 
 // news updates dialog.
