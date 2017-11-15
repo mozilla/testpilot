@@ -125,6 +125,8 @@ experimentCardLearnMore = ვრცლად
 // A modal prompt shown when a user disables an experiment.
 [[ feedback ]]
 
+feedbackSubmitButton = შეავსეთ მცირე კითხვარი
+feedbackUninstallTitle = გმადლობთ!
 feedbackUninstallCopy =
     თქვენი მონაწილეობა Firefox-ის Test Pilot-ში,
     ჩვენთვის ბევრს ნიშნავს! გთხოვთ, გამოცადოთ სხვა 
@@ -134,6 +136,7 @@ feedbackUninstallCopy =
 // A modal prompt shown before the feedback survey for some experiments.
 [[ experimentPreFeedback ]]
 
+experimentPreFeedbackTitle = { $title } გამოხმაურება
 experimentPreFeedbackLinkCopy = გამოხმაურება { $title } საცდელი პროექტის შესახებ
 
 
@@ -183,6 +186,8 @@ nonExperimentDialogHeaderLink = Test Pilot
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 
+experimentPlatformWebAddon = Firefox / საცდელი ვებპროექტები
+experimentPlatformWeb = საცდელი ვებპროექტები
 experimentPlatformAddon = Firefox საცდელი შესაძლებლობები
 
 
