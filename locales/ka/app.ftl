@@ -263,8 +263,11 @@ newsletterFormSubmitButtonSubmitting = იგზავნება...
 // A section of the footer containing a newsletter signup form.
 [[ newsletterFooter ]]
 
-newsletterFooterHeader = იყავით კავშირზე
+newsletterFooterError = თქვენი ელფოსტის მისამართის გადმოგზავნისას მოხდა შეცდომა. ცდით ხელმეორედ?
+newsletterFooterHeader = იყავით მუდმივ კავშირზე
 newsletterFooterBody = მოიძიეთ ახალი საცდელი შესაძლებლობები და იხილეთ შემოწმების შედეგები.
+newsletterFooterSuccessHeader = გმადლობთ!
+newsletterFooterSuccessBody = თუ ჯერ არ დაგიმოწმებიათ Mozilla-ს საინფორმაციო ცნობების გამოწერა, ამის გაკეთება ახლაც შეგიძლიათ. გთხოვთ, მონახოთ ჩვენი გზავნილი მიღებული წერილების, ან სპამის საქაღალდეში.
 
 
 // A warning shown to users when the experiment is not available in their language
