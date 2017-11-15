@@ -1,3 +1,5 @@
+@import '../../../styles/_utils';
+
 #main-footer {
   @include respond-to('not-small') {
     padding: $grid-unit * 2 0 $grid-unit;
@@ -7,7 +9,10 @@
     padding: $grid-unit * 1 0;
   }
 
-  background: $transparent-white-1;
+  .newsletter-footer + & {
+    background: $transparent-white-1;
+  }
+
   position: relative;
 }
 
@@ -73,11 +78,11 @@
   }
 
   .github {
-    background-image: url('../images/github-icon.svg');
+    background-image: url('./img/github-icon.svg');
   }
 
   .twitter {
-    background-image: url('../images/twitter-icon.svg');
+    background-image: url('./img/twitter-icon.svg');
   }
 }
 
@@ -86,7 +91,7 @@
 }
 
 .mozilla-logo {
-  background-image: url('../images/mozilla.svg');
+  background-image: url('./img/mozilla.svg');
   background-repeat: no-repeat;
   background-size: auto 32px;
   height: 32px;

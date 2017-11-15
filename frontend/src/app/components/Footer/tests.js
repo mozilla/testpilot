@@ -1,12 +1,13 @@
+/* global describe, beforeEach, it */
+
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
 
-import Footer from '../../../src/app/components/Footer';
+import Footer from './index';
 
 describe('app/components/Footer', () => {
-
   let subject, sendToGA;
   beforeEach(() => {
     sendToGA = sinon.spy();
