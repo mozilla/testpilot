@@ -264,7 +264,7 @@ newsletterFormSubmitButtonSubmitting = იგზავნება...
 [[ newsletterFooter ]]
 
 newsletterFooterError = თქვენი ელფოსტის მისამართის გადმოგზავნისას მოხდა შეცდომა. ცდით ხელმეორედ?
-newsletterFooterHeader = იყავით მუდმივ კავშირზე
+newsletterFooterHeader = დარჩით კავშირზე
 newsletterFooterBody = მოიძიეთ ახალი საცდელი შესაძლებლობები და იხილეთ შემოწმების შედეგები.
 newsletterFooterSuccessHeader = გმადლობთ!
 newsletterFooterSuccessBody = თუ ჯერ არ დაგიმოწმებიათ Mozilla-ს საინფორმაციო ცნობების გამოწერა, ამის გაკეთება ახლაც შეგიძლიათ. გთხოვთ, მონახოთ ჩვენი გზავნილი მიღებული წერილების, ან სპამის საქაღალდეში.
