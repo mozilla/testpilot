@@ -90,7 +90,7 @@ onboardingMessage = ხატულა განთავსდება ხე�
 
 errorHeading = ვაჰ!
 errorMessage = როგორც ჩანს, რაღაც დაზიანდა. <br>გთხოვთ, სცადოთ ხელახლა მოგვიანებით.
-notFoundHeader = ოთხასოთხი!
+notFoundHeader = ოთხას ოთხი!
 
 
 // A modal prompt to sign up for the Test Pilot newsletter.
@@ -197,6 +197,7 @@ startedDateLabel = საცდელი პროექტის დაწყ�
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Test Pilot
+learnMoreLink = ვრცლად
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -247,8 +248,12 @@ restartIntroThree = აირჩიეთ გამოსაცდელი შ�
 [[ share ]]
 
 sharePrimary = მოგეწონათ Test Pilot? დაგვეხმარეთ ახალი მონაწილეების შემომატებაში.
+shareSecondary = ან დააკოპირეთ და ჩასვით ეს ბმული...
+shareEmail = ელფოსტა
+shareCopy = კოპირება
 // Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } პროექტის დასრულების თარიღია { $completedDate }
+eolNoticeLink = ვრცლად
 eolDisableMessage = { $title } შესაძლებლობის გამოცდა დასრულებულია. ამოშლის შემდეგ, მისი ხელახლა დაყენება Test Pilot-ის საშუალებით, აღარ შეგეძლებათ.
 completedDateLabel = საცდელი პროექტის დასრულების თარიღი: <b>{ $completedDate }</b>
 
@@ -256,6 +261,8 @@ completedDateLabel = საცდელი პროექტის დასრ
 // A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 [[ incompatible ]]
 
+incompatibleHeader = ეს საცდელი პროექტი, შესაძლოა არ იყოს თქვენს დამატებებთან თავსებადი.
+incompatibleSubheader = ჩვენ გირჩევთ <a>ამორთოთ მოცემული დამატებები,</a> ამ საცდელი პროექტის ამოქმედებამდე:
 
 
 // A form prompting the user to sign up for the Test Pilot Newsletter.
@@ -291,12 +298,16 @@ localeWarningSubtitle = მისი ჩართვა მაინც შე�
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = მოდი გავუშვათ ჰაერში!
+experimentsListNoneInstalledSubheader = მზად ხართ გამოცადოთ Test Pilot-ის ახალი საცდელი პროექტი? შეარჩიეთ რომელიმე მათგანი, აამუშავეთ და მოგვახსენეთ, თქვენი აზრი.
 experimentsListNoneInstalledCTA = არ გაინტერესებთ? <a>მოგვახსენეთ, რატომ</a>.
 
 
 // Shown to users who do not have JavaScript enabled.
 [[ noscript ]]
 
+noScriptHeading = ვაჰ-ვაჰ...
+noScriptMessage = Test Pilot საჭიროებს JavaScript-ს.<br>ვწუხვართ, ამის გამო.
+noScriptLink = იხილეთ, რატომ
 
 
 // Text of a button to toggle visibility of a list of past experiments.
