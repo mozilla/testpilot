@@ -2,7 +2,9 @@
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import LayoutWrapper from './LayoutWrapper';
+import LayoutWrapper from '../LayoutWrapper';
+
+import './index.scss';
 
 type FooterProps = {
   sendToGA: Function
