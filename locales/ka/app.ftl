@@ -196,8 +196,8 @@ experimentPlatformWebAddonMobile = საცდელი Firefox / მობი�
 experimentPlatformWebAddon = საცდელი Firefox / ვებპროექტები
 experimentPlatformWebMobile = საცდელი მობილური / ვებპროექტები
 experimentPlatformAddonMobile = საცდელი Firefox / მობილური პროექტები
-experimentPlatformWeb = საცდელი ვებპროექტები
-experimentPlatformAddon = Firefox საცდელი შესაძლებლობები
+experimentPlatformWeb = საცდელი ვებპროექტი
+experimentPlatformAddon = Firefox საცდელი შესაძლებლობა
 experimentPlatformMobileApp = საცდელი მობილური პროექტები
 
 
