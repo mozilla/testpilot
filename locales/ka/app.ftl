@@ -24,8 +24,12 @@ footerLinkAbout = Test Pilot-ის შესახებ
 // Items in the menu.
 [[ menu ]]
 
+home = მთავარი
+menuTitle = პარამეტრები
 menuWiki = Test Pilot Wiki
 menuDiscuss = Test Pilot-ის განხილვა
+menuFileIssue = ხარვეზის მოხსენება
+menuRetire = Test Pilot ამოშლა
 headerLinkBlog = სვეტი
 
 
@@ -61,6 +65,9 @@ landingRequiresDesktop = Test Pilot-ის გამოსაყენებლ�
 landingDownloadFirefoxDesc = (Test Pilot ხელმისაწვდომია Firefox-ზე, Windows, OS X და Linux სისტემებისთვის)
 landingUpgradeDesc = Test Pilot საჭიროებს Firefox 49 ან უფრო ახალ ვერსიას.
 landingUpgradeDesc2 = Test Pilot საჭიროებს Firefox { $version } ან უფრო ახალ ვერსიას.
+landingDownloadFirefoxTitle = Firefox
+landingUpgradeFirefoxTitle = Firefox განახლება
+landingDownloadFirefoxSubTitle = უფასო ჩამოტვირთვა
 
 
 // A section of the homepage explaining how Test Pilot works.
@@ -81,6 +88,9 @@ onboardingMessage = ხატულა განთავსდება ხე�
 // Error message pages.
 [[ error ]]
 
+errorHeading = ვაჰ!
+errorMessage = როგორც ჩანს, რაღაც დაზიანდა. <br>გთხოვთ, სცადოთ ხელახლა მოგვიანებით.
+notFoundHeader = ოთხასოთხი!
 
 
 // A modal prompt to sign up for the Test Pilot newsletter.
@@ -305,5 +315,7 @@ warningUpgradeFirefoxTitle = გასაგრძელებლად, გა�
 warningUpgradeFirefoxDetail = Test Pilot საჭიროებს Firefox-ის უახლესს ვერსიას. <a>განაახლეთ Firefox</a> დასაწყებად.
 warningHttpsRequiredTitle = აუცილებელია HTTPS!
 warningHttpsRequiredDetail = Test Pilot წვდომისთვის საჭიროებს HTTPS პროტოკოლს. დამატებითი ინფორმაციისთვის, გთხოვთ გაეცნოთ <a>ჩვენს დოკუმენტაციას</a>.
+warningMissingPrefTitle = Test Pilot პროექტის შემმუშავებელი ხართ?
+warningMissingPrefDetail = Test Pilot-ის გაშვება ლოკალურად საჭიროებს სპეციალურ სამუშაო გარემოს და კონფიგურაციას. დამატებითი ინფორმაციისთვის, გთხოვთ გაეცნოთ <a>ჩვენს დოკუმენტაციას</a>.
 warningBadHostnameTitle = ჰოსტის არამართბული სახელი!
 warningBadHostnameDetail = Test Pilot ვებსაიტი ხელმისაწვდომია მხოლოდ testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, ან example.com:8000 მისამართებიდან. დამატებითი ინფორმაციისთვის, გთხოვთ, გაეცნოთ <a>ჩვენს დოკუმენტაციას</a>.
