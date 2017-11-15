@@ -139,7 +139,7 @@ experimentPromoSubheader = ჩვენ ვქმნით ახალი თ�
 // The experiment detail page.
 [[ experimentPage ]]
 
-experimentMeasurementIntro = გარდა იმისა, რომ <a>მონაცემები</a> აღირიცხება Test Pilot-ის ყველა საცდელ პროექტში, აქ არის მოცემული რამდენიმე მნიშვნელოვანი საკითხი, რაც უნდა გაითვალისწინოთ { $experimentTitle }-ის სარგებლობისას:
+experimentMeasurementIntro = გარდა იმისა, რომ Test Pilot-ის ყველა საცდელ პროექტში აღირიცხება <a>მონაცემები</a>, აქ არის მოცემული რამდენიმე მნიშვნელოვანი საკითხი, რაც უნდა გაითვალისწინოთ უშუალოდ { $experimentTitle } პროექტით სარგებლობისას:
 
 
 // news updates dialog.
