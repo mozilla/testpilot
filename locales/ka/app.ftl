@@ -177,6 +177,7 @@ userCountContainerAlt = ახლახან გაეშვა!
 highlightPrivacy = პირადულობის დაცვის შესახებ
 experimentGradReportPendingTitle = ეს საცდელი პროექტი დასრულებულია
 experimentGradReportPendingCopy = ჩვენ ვმუშაობთ სრულ მოხსენებაზე. დამატებით ინფორმაციას იხილავთ მოგვიანებით.
+experimentGoToLink = { $title }-ზე გადასვლა
 startedDateLabel = საცდელი პროექტის დაწყების თარიღი: <b>{ $startedDate }</b>
 
 
