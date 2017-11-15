@@ -175,8 +175,10 @@ tourOnboardingTitle = { $title } ჩართულია!
 tourDoneButton = მზადაა
 userCountContainerAlt = ახლახან გაეშვა!
 highlightPrivacy = პირადულობის დაცვის შესახებ
+experimentGradReportButton = საბოლოო მოხსენება
 experimentGradReportPendingTitle = ეს საცდელი პროექტი დასრულებულია
 experimentGradReportPendingCopy = ჩვენ ვმუშაობთ სრულ მოხსენებაზე. დამატებით ინფორმაციას იხილავთ მოგვიანებით.
+experimentGradReportReady = ჩვენ უკვე მოვამზადეთ სრული საბოლოო მოხსენება.
 experimentGoToLink = { $title }-ზე გადასვლა
 startedDateLabel = საცდელი პროექტის დაწყების თარიღი: <b>{ $startedDate }</b>
 
