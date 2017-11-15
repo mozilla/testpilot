@@ -235,7 +235,10 @@ restartIntroThree = აირჩიეთ გამოსაცდელი შ�
 [[ share ]]
 
 sharePrimary = მოგეწონათ Test Pilot? დაგვეხმარეთ ახალი მონაწილეების შემომატებაში.
+// Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title } პროექტის დასრულების თარიღია { $completedDate }
 eolDisableMessage = { $title } შესაძლებლობის გამოცდა დასრულებულია. ამოშლის შემდეგ, მისი ხელახლა დაყენება Test Pilot-ის საშუალებით, აღარ შეგეძლებათ.
+completedDateLabel = საცდელი პროექტის დასრულების თარიღი: <b>{ $completedDate }</b>
 
 
 // A warning shown to users looking at experiments incompatible with add-ons they already have installed.
@@ -270,6 +273,8 @@ newsletterFooterBody = მოიძიეთ ახალი საცდელ�
 // An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
+experimentsListNoneInstalledHeader = მოდი გავუშვათ ჰაერში!
+experimentsListNoneInstalledCTA = არ გაინტერესებთ? <a>მოგვახსენეთ, რატომ</a>.
 
 
 // Shown to users who do not have JavaScript enabled.
