@@ -270,6 +270,8 @@ newsletterFooterBody = მოიძიეთ ახალი საცდელ�
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeNotTranslatedWarningTitle = ეს საცდელი პროექტი, არ არის თარგმნილი თქვენს ენაზე ({ $locale_code }).
+localeWarningSubtitle = მისი ჩართვა მაინც შეგიძლიათ, თუ გსურთ.
 
 
 // An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
