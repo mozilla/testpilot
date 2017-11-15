@@ -151,6 +151,7 @@ experimentPromoSubheader = ჩვენ ვქმნით ახალი თ�
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } ჩართულია.
+installErrorMessage = ოჰ არა. { $title } პროექტის ჩართვა ვერ ხერხდება. სცადეთ მოგვიანებით.
 otherExperiments = ეს პროექტებიც გამოსცადეთ
 giveFeedback = გამოგვეხმაურეთ
 disableHeader = გსურთ საცდელი პროექტის გამორთვა?
@@ -174,6 +175,8 @@ tourOnboardingTitle = { $title } ჩართულია!
 tourDoneButton = მზადაა
 userCountContainerAlt = ახლახან გაეშვა!
 highlightPrivacy = თქვენი პირადულობის დაცვა
+experimentGradReportPendingTitle = ეს საცდელი პროექტი დასრულებულია
+experimentGradReportPendingCopy = ჩვენ ვმუშაობთ სრულ მოხსენებაზე. დამატებით ინფორმაციას იხილავთ მოგვიანებით.
 startedDateLabel = საცდელი პროექტის დაწყების თარიღი: <b>{ $startedDate }</b>
 
 
@@ -186,14 +189,22 @@ nonExperimentDialogHeaderLink = Test Pilot
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 [[ experimentPlatform ]]
 
-experimentPlatformWebAddon = Firefox / საცდელი ვებპროექტები
+experimentPlatformWebAddonMobile = საცდელი Firefox / მობილური / ვებპროექტები
+experimentPlatformWebAddon = საცდელი Firefox / ვებპროექტები
+experimentPlatformWebMobile = საცდელი მობილური / ვებპროექტები
+experimentPlatformAddonMobile = საცდელი Firefox / მობილური პროექტები
 experimentPlatformWeb = საცდელი ვებპროექტები
 experimentPlatformAddon = Firefox საცდელი შესაძლებლობები
+experimentPlatformMobileApp = საცდელი მობილური პროექტები
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
+upgradeNoticeTitle = { $title } საჭიროებს Firefox { $min_release } ან უფრო ახალ ვერსიას.
+upgradeNoticeLink = როგორც განვაახლო Firefox.
+versionChangeNotice = { $experiment_title } არ არის მხარდაჭერილი Firefox-ის ამ ვერსიაზე.
+versionChangeNoticeLink = გადმოწერეთ Firefox-ის მიმდინარე ვერსია.
 
 
 // Shown while uninstalling Test Pilot.
