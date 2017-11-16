@@ -52,6 +52,8 @@ landingInstalledButton = Alege funcțiile tale
 // Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
+oneClickInstallMinorCta = Instalează Test Pilot &amp;
+oneClickInstallMajorCta = Activează { $title }
 
 
 // Homepage messaging for users not on Firefox or with an old version of Firefox.
@@ -94,8 +96,12 @@ notFoundHeader = Patru zero patru!
 emailOptInDialogTitle = Bun venit în Test Pilot!
 emailOptInMessage = Află despre noile experimente și vezi rezultatele de testare pentru experimentele încercate.
 emailOptInConfirmationTitle = E-mail trimis
-emailOptInSuccessMessage2 = Mulțumim!
 emailOptInConfirmationClose = Mai departe spre experimente...
+
+
+// news feed updates.
+[[ updateList ]]
+
 
 
 // A listing of all Test Pilot experiments.
@@ -106,7 +112,6 @@ experimentListJustLaunchedTab = Tocmai lansat
 experimentListJustUpdatedTab = Tocmai actualizat
 experimentListEndingTomorrow = Se termină mâine
 experimentListEndingSoon = Se termină în curând
-experimentsListCondensedHeader = Alege experimentele tale!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -147,7 +152,6 @@ experimentPromoSubheader = Noi construim funcțiile de viitor pentru Firefox. In
 
 isEnabledStatusMessage = { $title } este activat.
 installErrorMessage = Ups. { $title } nu a putut fi încărcat. Încearcă din nou mai târziu.
-participantCount = <span>{ $installation_count }</span> participanți
 otherExperiments = Încearcă și aceste experimente
 giveFeedback = Oferă feedback
 disableHeader = Dezactivează experimentul?
@@ -166,9 +170,18 @@ contribute = Contribuie
 bugReports = Rapoarte de defecte
 tourOnboardingTitle = { $title } activat!
 tourDoneButton = Gata
-userCountContainer = <span>{ $installation_count }</span> persoane încearcă { $title } chiar acum!
 userCountContainerAlt = Nou lansat!
 highlightPrivacy = Confidențialitatea ta
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -182,7 +195,6 @@ upgradeNoticeLink = Cum să actualizezi Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Dezinstalează Test Pilot?
-retireMessage = Cum dorești. Aceasta va dezactiva toate testele active, va dezinstala suplimentul și va șterge informațiile despre contul tău de pe serverele noastre.
 retireEmailMessage = Pentru a nu mai primi actualizări pe e-mail, clic pe linkul <em>dezabonare</em> (unsubscribe) din orice e-mail Test Pilot.
 retireSubmitButton = Continuă
 pageTitleRetirePage = Firefox Test Pilot - Dezinstalează Test Pilot
@@ -270,3 +282,8 @@ noScriptLink = Află de ce
 
 viewPastExperiments = Vezi experimentele trecute
 hidePastExperiments = Ascunde experimentele trecute
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
