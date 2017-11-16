@@ -1,0 +1,14 @@
+/* featured experiment styles */
+
+.featured-experiment {
+  display: flex;
+  width: 100%;
+
+  & > div {
+    flex-basis: 100%;
+  }
+
+  .featured-video {}
+
+  .featured-status {}
+}
