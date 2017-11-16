@@ -290,6 +290,7 @@ newsletterFooterSuccessBody = Якщо ви досі не підтвердили
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeNotTranslatedWarningTitle = Цей експеримент не був перекладений вашою мовою ({ $locale_code }).
 localeWarningSubtitle = Ви все одно можете увімкнути його, якщо хочете.
 
 
