@@ -123,6 +123,18 @@ export default class HomePageWithAddon extends React.Component {
             freshNewsUpdates, majorNewsUpdates } = this.props;
     if (experiments.length === 0) { return null; }
 
+    const featuredExperiment = {
+      title: 'Voice Fill',
+      description: 'This is a different experiment',
+      subtitle: 'A subtitle',
+      slug: 'voice-fill',
+      enabled: true,
+      survey_url: 'https://example.com',
+      created: '2010-06-21T12:12:12Z',
+      modified: '2010-06-21T12:12:12Z',
+      video_url: 'https://www.youtube.com/embed/n6wiRyKkmKc',
+    };
+
     const { showEmailDialog, showNewsUpdateDialog } = this.state;
     const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
     const pastExperiments = experiments.filter(isAfterCompletedDate);
@@ -145,6 +157,7 @@ export default class HomePageWithAddon extends React.Component {
           <UpdateList {...{ sendToGA, staleNewsUpdates, freshNewsUpdates, experiments }} />
         </LayoutWrapper>
         <Banner background={true}>
+        <FeaturedExperiment {...this.props} experiment={featuredExperiment} eventCategory="HomePage Interactions" />
         <LayoutWrapper>
           <Localized id="experimentListHeader">
 

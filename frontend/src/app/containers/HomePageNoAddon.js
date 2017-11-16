@@ -27,6 +27,18 @@ export default class HomePageNoAddon extends React.Component {
     const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
     const pastExperiments = experiments.filter(isAfterCompletedDate);
 
+    const featuredExperiment = {
+      title: 'Voice Fill',
+      description: 'This is a different experiment',
+      subtitle: 'A subtitle',
+      slug: 'voice-fill',
+      enabled: true,
+      survey_url: 'https://example.com',
+      created: '2010-06-21T12:12:12Z',
+      modified: '2010-06-21T12:12:12Z',
+      video_url: 'https://www.youtube.com/embed/n6wiRyKkmKc',
+    };
+
     if (experiments.length === 0) { return null; }
 
     const installSplash = <Banner>
@@ -61,6 +73,8 @@ export default class HomePageNoAddon extends React.Component {
               <Localized id="landingExperimentsTitle">
                 <h2 className="banner__subtitle centered">Try out the latest experimental features</h2>
               </Localized>
+
+              <FeaturedExperiment {...this.props} experiment={featuredExperiment} eventCategory="HomePage Interactions" />
               <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
               <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
             </LayoutWrapper>
