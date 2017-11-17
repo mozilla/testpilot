@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
-import ReactDOMFactories from 'react/lib/ReactDOMFactories';
+// TODO ReactDOMFactories is deprecated, can we do this in a different way?
+import ReactDOMFactories from 'react-dom-factories';
 import Symbol from 'es-symbol';
 
 import Footer from '../Footer';

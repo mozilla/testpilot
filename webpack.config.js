@@ -28,7 +28,6 @@ const includeVendorModules = [
   'fluent-react/compat',
   'cldr-core/supplemental/likelySubtags.json',
   'html-react-parser/lib/dom-to-react',
-  'react/lib/ReactDOMFactories',
   'querystring'
 ];
 

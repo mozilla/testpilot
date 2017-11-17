@@ -35,7 +35,9 @@ export default class EmailDialog extends React.Component {
   }
 
   componentDidMount() {
-    this.modalContainer.focus();
+    if (this.modalContainer !== undefined) {
+      this.modalContainer.focus();
+    }
   }
 
   render() {

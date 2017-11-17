@@ -18,7 +18,9 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
   modalContainer: Object
 
   componentDidMount() {
-    this.modalContainer.focus();
+    if (this.modalContainer !== undefined) {
+      this.modalContainer.focus();
+    }
   }
 
   render() {
