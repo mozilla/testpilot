@@ -103,6 +103,7 @@
     "sass-loader": "6.0.6",
     "sass-module-importer": "1.4.0",
     "sinon": "2.0.0",
+    "svg-url-loader": "2.3.0",
     "through2": "2.0.3",
     "uglifyjs-webpack-plugin": "0.4.6",
     "url-loader": "0.5.9",
