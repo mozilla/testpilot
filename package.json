@@ -68,7 +68,7 @@
     "extract-text-webpack-plugin": "3.0.2",
     "feed": "1.1.0",
     "fetch-mock": "5.13.1",
-    "flow-bin": "0.59.0",
+    "flow-bin": "0.47.0",
     "flow-coverage-report": "0.4.0",
     "flow-typed": "2.2.3",
     "gulp": "3.9.1",
