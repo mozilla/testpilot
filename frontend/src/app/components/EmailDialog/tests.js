@@ -68,14 +68,6 @@ describe('app/components/EmailDialog', () => {
     expect(form).to.have.length(1);
   });
 
-  it('should not submit the email when privacy checkbox is unchecked and <Enter> key is pressed', () => {
-    const expectedEmail = 'me@a.b.com';
-    subject.setState({ email: expectedEmail, privacy: false });
-    subject.find('.modal-container').simulate('keyDown', mockEnterKeyDownEvent);
-    expect(sendToGA.notCalled).to.be.true;
-    expect(subject.state('isSuccess')).to.be.false;
-  });
-
   it('should reset the email dialog when the <Enter> key is pressed ' +
     'on the error page', () => {
     subject.setState({ isSuccess: false, isError: true });
