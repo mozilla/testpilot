@@ -94,7 +94,8 @@ type UpdateListProps = {
   staleNewsUpdates: Array<Object>,
   freshNewsUpdates: Array<Object>,
   experiments: Array<Object>,
-  initialShowMoreNews?: boolean
+  initialShowMoreNews?: boolean,
+  hideHeader?: boolean
 };
 
 type UpdateListState = {
@@ -113,7 +114,7 @@ export default class UpdateList extends React.Component {
   }
 
   render() {
-    const { sendToGA, staleNewsUpdates, freshNewsUpdates, experiments } = this.props;
+    const { sendToGA, staleNewsUpdates, freshNewsUpdates, experiments, hideHeader } = this.props;
     const { showMoreNews } = this.state;
 
     const hasStaleNewsUpdates = staleNewsUpdates && staleNewsUpdates.length > 0;
@@ -136,9 +137,9 @@ export default class UpdateList extends React.Component {
 
     return (
       <div className="update-list">
-        <Localized id="latestUpdatesTitle">
-          <h1 className="update-list-heading">Latest Updates</h1>
-        </Localized>
+        {!hideHeader && <Localized id="latestUpdatesTitle">
+           <h1 className="update-list-heading">Latest Updates</h1>
+         </Localized>}
         <LayoutWrapper flexModifier="column-center">
           {shownNewsUpdates.map((update, index) =>
             <Update

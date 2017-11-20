@@ -1,0 +1,59 @@
+/* @import '~photon-colors/colors.scss'; */
+@import '../../../styles/_utils';
+
+#news-feed-page {
+  border-left: 2px solid rgba(6, 79, 157, 0.5);
+  padding-left: 55px;
+  margin-top: 50px;
+
+  > h1 {
+    margin-top: -6px;
+    padding-bottom: 50px;
+    position: relative;
+
+    &:before {
+      content: '\25CF';
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      font-size: 13px;
+      color: RGB(0, 148, 251);
+      position: absolute;
+      left: -66px;
+      top: 0px;
+      background: rgba(0,148,251, 0.3);
+      border: 1px solid #0094FB;
+      padding-left: 3px;
+      line-height: 130%;
+    }
+  }
+
+  .update {
+    position: relative;
+
+    &:before {
+      content: '\25CF';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      font-size: 13px;
+      color: #0094FB;
+      position: absolute;
+      left: -63px;
+      top: 43%;
+      border: 3px solid rgb(15, 9, 63);
+    }
+  }
+}
+
+@include respond-to('small') {
+  #news-feed-page {
+    border-left: none;
+    padding-left: 0px;
+    margin-top: 20px;
+
+    > h1 {
+      text-align: center;
+    }
+  }
+}

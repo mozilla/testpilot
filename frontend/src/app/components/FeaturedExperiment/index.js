@@ -5,12 +5,13 @@ import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
 import { buildSurveyURL, experimentL10nId } from '../../lib/utils';
+import MainInstallButton from '../MainInstallButton';
 
 import './index.scss';
 
 import type { InstalledExperiments } from '../../reducers/addon';
 
-import ExperimentPlatforms from '../ExperimentPlatforms';
+// import ExperimentPlatforms from '../ExperimentPlatforms';
 
 const ONE_DAY = 24 * 60 * 60 * 1000;
 const ONE_WEEK = 7 * ONE_DAY;
@@ -40,11 +41,12 @@ export default class FeaturedExperiment extends React.Component {
   }
 
   render() {
-    const { hasAddon, experiment, enabled, isAfterCompletedDate,
-            isFirefox, isMinFirefox } = this.props;
+    const { hasAddon, experiment, enabled // , isAfterCompletedDate
+            // isFirefox, isMinFirefox
+          } = this.props;
 
     const { description, title, subtitle, slug, video_url } = experiment;
-    const isCompleted = isAfterCompletedDate(experiment);
+    // const isCompleted = isAfterCompletedDate(experiment);
 
     return (
       <div className={classnames('featured-experiment', {
@@ -53,44 +55,42 @@ export default class FeaturedExperiment extends React.Component {
         'just-updated': this.justUpdated(),
         'has-addon': hasAddon
       })}>
-
         <div className="featured-information">
           <header>
-            <div className={`experiment-icon-${slug} experiment-icon`}></div>
-            <div>
-              <h3>{title}</h3>
-              <ExperimentPlatforms experiment={experiment} />
-              {subtitle && <p> | </p>}
-              {subtitle && <Localized id={this.l10nId('subtitle')}>
-                <h4 className="subtitle">{subtitle}</h4>
-              </Localized>}
+            <div className="icon-wrap">
+              <div className={`experiment-icon-${slug} experiment-icon`}></div>
+            </div>
+            <div className="title-wrap">
+              <h2>{title}</h2>
+              <div className="featured-info-line">
+                <h4 className="featured-experiment-type">Firefox experiment</h4>
+                {subtitle && <Localized id={this.l10nId('subtitle')}>
+                  <h4 className="subtitle">{subtitle}</h4>
+                </Localized>}
+              </div>
             </div>
           </header>
 
           <Localized id={this.l10nId('description')}>
-            <p>{description}</p>
+            <p className="featured-description">{description}</p>
           </Localized>
 
-          <Localized id={this.l10nId('more-detail')}>
-            <a>MORE DETAIL</a>
-          </Localized>
+      {// <Localized id={this.l10nId('more-detail')}>
+       //      <a>MORE DETAIL</a>
+       //  </Localized>
+      }
 
-          { this.renderManageButton(enabled, hasAddon, isCompleted, isFirefox, isMinFirefox) }
-          { this.renderFeedbackButton() }
+          <div className="featured-actions">
+            { this.renderManageButton() }
+            { this.renderFeedbackButton() }
+          </div>
+
+      {// <p className="featured-notice">By proceeding, you agree to the <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Notice</a> of Test Pilot and <a href={`/experiments/${slug}`}>{title}</a>.</p>
+      }
         </div>
 
         <div className="featured-video">
-          <div className="featured-status">
-            {enabled && <Localized id="experimentListEnabledTab">
-              <div className="tab enabled-tab">Enabled</div>
-            </Localized>}
-            {this.justLaunched() && <Localized id="experimentListJustLaunchedTab">
-              <div className="tab just-launched-tab">Just Launched</div>
-            </Localized>}
-            {this.justUpdated() && <Localized id="experimentListJustUpdatedTab">
-              <div className="tab just-updated-tab">Just Updated</div>
-            </Localized>}
-          </div>
+          {this.renderFeaturedStatus(enabled)}
           <iframe
             width="100%"
             height="360"
@@ -102,6 +102,29 @@ export default class FeaturedExperiment extends React.Component {
     );
   }
 
+  renderFeaturedStatus(enabled) {
+    const justLaunched = this.justLaunched();
+    const justUpdated = this.justUpdated();
+    const showIcon = (enabled || justLaunched || justUpdated);
+
+    return (
+      <div className="featured-status">
+        {showIcon && <div className="star-icon"></div>}
+
+        {enabled && <Localized id="experimentListEnabledTab">
+          <div className="tab enabled-tab">Enabled</div>
+        </Localized>}
+
+        {justLaunched && <Localized id="experimentListJustLaunchedTab">
+          <div className="tab just-launched-tab">Just Launched</div>
+        </Localized>}
+
+        {justUpdated && <Localized id="experimentListJustUpdatedTab">
+          <div className="tab just-updated-tab">Just Updated</div>
+        </Localized>}
+      </div>);
+  }
+
   renderFeedbackButton() {
     if (!this.props.enabled) { return null; }
 
@@ -109,15 +132,13 @@ export default class FeaturedExperiment extends React.Component {
     const { title, survey_url } = experiment;
     const surveyURL = buildSurveyURL('givefeedback', title, installed, clientUUID, survey_url);
     return (
-      <div>
         <Localized id="experimentCardFeedback">
           <a onClick={() => this.handleFeedback()}
              href={surveyURL} target="_blank" rel="noopener noreferrer"
-             className="featured-feedback">
+             className="button default featured-feedback">
              Feedback
           </a>
         </Localized>
-      </div>
     );
   }
 
@@ -130,32 +151,32 @@ export default class FeaturedExperiment extends React.Component {
     });
   }
 
-  renderManageButton(enabled: Boolean, hasAddon: Boolean, isCompleted: Boolean,
-                     isFirefox: Boolean, isMinFirefox: Boolean) {
-    if (enabled && hasAddon) {
-      return (
-        <Localized id="experimentCardManage">
-          <div className="button secondary">Manage</div>
-        </Localized>
-      );
-    } else if (isCompleted) {
-      return (
-        <Localized id="experimentCardLearnMore">
-          <div className="button secondary">Learn More</div>
-        </Localized>
-      );
-    } else if (!isFirefox || !isMinFirefox) {
-      return (
-        <Localized id="experimentCardLearnMore">
-          <div className="button secondary">Learn More</div>
-        </Localized>
-      );
-    }
-    return (
-      <Localized id="experimentCardGetStarted">
-        <div className="button default">Get Started</div>
-      </Localized>
-    );
+  renderManageButton() {
+    const { experiment } = this.props;
+    const { title } = experiment;
+    return (<MainInstallButton {...this.props}
+              experimentTitle={title}
+              eventCategory="HomePage Interactions"
+              eventLabel="Install the Add-on"/>);
+
+    // if (enabled && hasAddon) {
+    //   return (
+    //     <Localized id="experimentCardManage">
+    //       <a className="button secondary">Manage</a>
+    //     </Localized>
+    //   );
+    // } else if (!isFirefox || !isMinFirefox) {
+
+    //   console.log('IS FIREFOX: ', isFirefox);
+
+    //   return (
+
+    //   );
+    // } else return (
+    //   <Localized id="experimentCardGetStarted">
+    //     <a className="button default">Get Started</a>
+    //   </Localized>
+    // );
   }
 
   justUpdated() {

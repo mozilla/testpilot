@@ -21,8 +21,8 @@ import { localizationsSelector, negotiatedLanguagesSelector } from '../../select
 import { chooseTests } from '../../actions/varianttests';
 import addonActions from '../../actions/addon';
 import newsletterFormActions from '../../actions/newsletter-form';
-import RestartPage from '../../containers/RestartPage';
-import UpgradeWarningPage from '../../containers/UpgradeWarningPage';
+import RestartPage from '../RestartPage';
+import UpgradeWarningPage from '../UpgradeWarningPage';
 import { isFirefox, isMinFirefoxVersion, isMobile } from '../../lib/utils';
 import {
   makeStaleNewsUpdatesSelector,

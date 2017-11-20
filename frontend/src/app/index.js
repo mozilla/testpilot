@@ -15,6 +15,7 @@ import legacy from '../pages/legacy.js';
 import onboarding from '../pages/onboarding.js';
 import retire from '../pages/retire.js';
 import share from '../pages/share.js';
+import news from '../pages/news.js';
 
 Raven.config(config.ravenPublicDSN).install();
 moment.locale(window.navigator.language);
@@ -28,7 +29,8 @@ const routes = {
   legacy,
   onboarding,
   retire,
-  share
+  share,
+  news
 };
 
 const name = document.body.dataset.pageName;
