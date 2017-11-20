@@ -113,6 +113,9 @@ export default class Header extends React.Component {
               </Localized>
             </h1>
               <div className="header-links">
+                <Localized id="headerLinkNews">
+                  <a className="news-link" href="/news">News Feed</a>
+                </Localized>
                 <Localized id="headerLinkBlog">
                   <a className="blog-link" onClick={this.blogLinkClick.bind(this)} href="https://medium.com/firefox-test-pilot" target="_blank" rel="noopener noreferrer">Blog</a>
                 </Localized>

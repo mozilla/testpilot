@@ -1,14 +1,151 @@
-/* featured experiment styles */
+@import '~photon-colors/colors.scss';
 
 .featured-experiment {
+  background-color: $blue-80;
   display: flex;
+  padding: 40px;
   width: 100%;
+
+  .featured-status {
+    display: flex;
+    padding: 10px 0;
+    font-weight: bold;
+  }
+
+  .featured-experiment-type {
+    font-weight: normal;
+
+    position: relative;
+    &:before {
+      content: ' ';
+      display: block;
+      background-image: url('./img/experiment-type-addon-white.svg');
+      background-position: left center;
+      background-repeat: no-repeat;
+      background-size: 16px;
+      height: 16px;
+      margin-right: 6px;
+      opacity: .5;
+      width: 16px;
+
+      top: 0;
+      left: -20px;
+      position: absolute;
+    }
+  }
+
+  .star-icon {
+    background-image: url('./img/launched.svg');
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    height: 12px;
+    margin-right: 6px;
+    opacity: .5;
+    width: 12px;
+    margin-top: 4px;
+  }
+
+  .experiment-platform {
+    color: white;
+    font-size: 16px;
+  }
+
+  .featured-information {
+    margin: 30px;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .featured-description {
+    text-align: left;
+  }
+
+  .title-wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    padding-left: 25px;
+
+    h2 {
+      font-size: 33px;
+      font-weight: normal;
+      margin: 0 0 5px;
+    }
+
+    h4 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  header {
+    text-align: center;
+    display: flex;
+  }
 
   & > div {
     flex-basis: 100%;
   }
 
-  .featured-video {}
+  .icon-wrap {
+    background: $teal-60;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin: 12px;
+    margin-left: 0;
+  }
 
-  .featured-status {}
+  .experiment-icon {
+    background-position: 50%;
+    background-position: 50% 32%;
+    background-size: 32px;
+  }
+
+  .featured-actions a {
+    height: 48px;
+    margin: 18px !important;
+    padding: 5px;
+    width: 160px;
+  }
+
+  .main-install {
+    button {
+      width: 100%;
+    }
+  }
+
+  .featured-notice {
+    font-size: 10px;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  .featured-info-line {
+    display: flex;
+
+    h4 {
+      font-weight: normal;
+    }
+  }
+
+  .experiment-platform {
+    white-space: nowrap;
+  }
+
+  .subtitle {
+    border-left: 1px solid white;
+    margin-left: 10px;
+    padding-left: 10px;
+  }
+  
+  .featured-video {
+    iframe {
+      width: 500px;
+      height: 281px;
+    }
+  }
 }

@@ -9,6 +9,7 @@ import Banner from '../components/Banner';
 import Copter from '../components/Copter';
 import UpdateList from '../components/UpdateList';
 import EmailDialog from '../components/EmailDialog';
+import FeaturedExperiment from '../components/FeaturedExperiment';
 import ExperimentCardList from '../components/ExperimentCardList';
 import LayoutWrapper from '../components/LayoutWrapper';
 import MainInstallButton from '../components/MainInstallButton';
@@ -154,10 +155,12 @@ export default class HomePageWithAddon extends React.Component {
                              onComplete={() => this.setState({ showNewsUpdateDialog: false })} />) : null}
 
         <LayoutWrapper flexModifier="card-list">
-          <UpdateList {...{ sendToGA, staleNewsUpdates, freshNewsUpdates, experiments }} />
+          {!featuredExperiment &&
+            <UpdateList {...{ sendToGA, staleNewsUpdates, freshNewsUpdates, experiments }} />}
         </LayoutWrapper>
         <Banner background={true}>
-        <FeaturedExperiment {...this.props} experiment={featuredExperiment} eventCategory="HomePage Interactions" />
+        {featuredExperiment &&
+           <FeaturedExperiment {...this.props} experiment={featuredExperiment} eventCategory="HomePage Interactions" />}
         <LayoutWrapper>
           <Localized id="experimentListHeader">
 

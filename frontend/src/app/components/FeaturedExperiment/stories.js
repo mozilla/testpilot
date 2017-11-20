@@ -8,14 +8,15 @@ import LayoutWrapper from '../LayoutWrapper';
 
 const experiment = {
   title: 'Voice Fill',
-  description: 'This is a different experiment',
+  description: 'This is a different experiment This Source Code Form is subject to the terms of the Mozilla Public This Source Code Form is subject to the terms of the Mozilla Public This Source Code Form is subject to the terms of the Mozilla Public.',
   subtitle: 'A subtitle',
   slug: 'voice-fill',
   enabled: true,
+  platforms: ['addon'],
   survey_url: 'https://example.com',
   created: '2010-06-21T12:12:12Z',
   modified: '2010-06-21T12:12:12Z',
-  video_url: 'https://www.youtube.com/embed/n6wiRyKkmKc',
+  video_url: 'https://www.youtube.com/embed/wjvM18UWMmM'
 };
 
 const baseProps = {
@@ -42,8 +43,23 @@ storiesOf('FeaturedExperiment', module)
       </LayoutWrapper>
     </div>
   )
-  .add('base state', () =>
+  .add('not enabled, no addon, isFirefox', () =>
     <FeaturedExperiment
       {...baseProps}
+    />
+  )
+  .add('has addon, not enabled', () =>
+    <FeaturedExperiment {...baseProps}
+      hasAddon={true}
+    />
+  )
+  .add('has addon, enabled', () =>
+    <FeaturedExperiment {...baseProps}
+     hasAddon={true} enabled={true}
+    />
+  )
+  .add('not firefox', () =>
+    <FeaturedExperiment {...baseProps}
+     isFirefox={false}
     />
   );

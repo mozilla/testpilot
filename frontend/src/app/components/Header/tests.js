@@ -60,6 +60,11 @@ describe('Header', () => {
       expectMenuGA('open blog', 'click');
     });
 
+    it('should show a link to the news feed', () => {
+      expect(subject.find('.news-link')).to.have.property('length', 1);
+      expect(subject.find('.news-link').props()).to.have.property('href', '/news');
+    });
+
     it('should show the settings menu when the settings button is clicked', () => {
       subject.find('.settings-button').simulate('click', mockClickEvent);
       expect(subject.state('showSettings')).to.be.true;
