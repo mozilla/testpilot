@@ -2,7 +2,6 @@
 
 const path = require('path');
 const webpack = require('webpack');
-const packageJSON = require('./package.json');
 const config = require('./frontend/config.js');
 
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
@@ -12,29 +11,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const RUN_ANALYZER = !!process.env.ANALYZER;
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const IS_DEV = NODE_ENV === 'development';
-
-const excludeVendorModules = [
-  'babel-polyfill',
-  'fluent',
-  'fluent-langneg',
-  'fluent-react',
-  'cldr-core'
-];
-
-const includeVendorModules = [
-  'babel-polyfill/browser',
-  'fluent/compat',
-  'fluent-langneg/compat',
-  'fluent-react/compat',
-  'cldr-core/supplemental/likelySubtags.json',
-  'html-react-parser/lib/dom-to-react',
-  'react/lib/ReactDOMFactories',
-  'querystring'
-];
-
-const vendorModules = Object.keys(packageJSON.dependencies)
-  .filter(name => excludeVendorModules.indexOf(name) < 0)
-  .concat(includeVendorModules);
 
 const extractSass = new ExtractTextPlugin({
   filename: '[name].css'
@@ -51,7 +27,6 @@ const plugins = [
     /moment[\/\\]locale$/, // eslint-disable-line no-useless-escape
     new RegExp(config.AVAILABLE_LOCALES.replace(/,/g, '|'))
   ),
-  new webpack.optimize.CommonsChunkPlugin('static/app/vendor.js'),
   extractSass
 ];
 
@@ -73,8 +48,7 @@ if (RUN_ANALYZER) {
 
 module.exports = {
   entry: {
-    'static/app/app.js': './frontend/src/app/index.js',
-    'static/app/vendor.js': vendorModules
+    'static/app/app.js': './frontend/src/app/index.js'
   },
   output: {
     path: path.resolve(__dirname, 'frontend/build'),

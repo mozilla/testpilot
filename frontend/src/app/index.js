@@ -1,5 +1,4 @@
-import 'babel-polyfill/browser';
-import 'whatwg-fetch';
+import 'babel-polyfill';
 import Raven from 'raven-js';
 import moment from 'moment';
 
