@@ -1,28 +1,4 @@
-// If static page is still rendered; don't display the page container
-// This was added to correct some odd scrollbar behavior when page-container
-// is injected and static-root is removed. These should happen at the same time,
-// but wind up happening a few frames apart. This rule resolves
-#static-root + #page-container.dynamic-page {
-  display: none;
-}
-
-.full-page-wrapper {
-  flex: 1;
-  min-height: 100vh;
-  width: 100%;
-
-  &.space-between {
-    @include flex-container(column, space-between, center);
-  }
-
-  &.centered {
-    @include flex-container(column, center, center);
-  }
-
-  noscript + &  {
-    display: none;
-  }
-}
+@import '../../../styles/_utils';
 
 .layout-wrapper:empty {
   display: none;
@@ -134,8 +110,4 @@
   @include respond-to('small') {
     @include flex-container(column, flex-start, center);
   }
-}
-
-.small-spacer {
-  height: $grid-unit;
 }
