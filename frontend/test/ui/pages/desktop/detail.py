@@ -44,7 +44,7 @@ class Detail(Base):
 
     class Footer(Region):
         _root_locator = (By.CSS_SELECTOR, '#main-footer')
-        
+
         def wait_for_region_to_load(self):
             self.wait.until(
                 lambda _: self.root.is_displayed())

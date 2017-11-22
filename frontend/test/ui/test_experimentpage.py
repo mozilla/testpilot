@@ -1,8 +1,6 @@
 import os
 import pytest
 
-from selenium.webdriver.common.by import By
-
 from pages.desktop.home import Home
 
 
@@ -21,6 +19,6 @@ def test_experiment_page_sticky_header(base_url, selenium):
         experiment='Dev Example')
     selenium.execute_script(
         "document.querySelector('#main-footer').scrollIntoView();"
-    );
+    )
     assert experiment.footer.is_displayed()
     assert experiment.stick.is_displayed()
