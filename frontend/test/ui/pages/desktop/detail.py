@@ -41,3 +41,31 @@ class Detail(Base):
         def is_popup_displayed(self):
             el = self.find_element(*self._popup_header_locator).is_displayed()
             return el
+
+    class Footer(Region):
+        _root_locator = (By.CSS_SELECTOR, '#main-footer')
+
+        def wait_for_region_to_load(self):
+            self.wait.until(
+                lambda _: self.root.is_displayed())
+
+        def is_displayed(self):
+            return self.root.is_displayed()
+
+    @property
+    def footer(self):
+        return self.Footer(self)
+
+    class Stick(Region):
+        _root_locator = (By.CSS_SELECTOR, '.stick')
+
+        def wait_for_region_to_load(self):
+            self.wait.until(
+                lambda _: self.root.is_displayed())
+
+        def is_displayed(self):
+            return self.root.is_displayed()
+
+    @property
+    def stick(self):
+        return self.Stick(self)

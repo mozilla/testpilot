@@ -22,25 +22,6 @@ describe('app/containers/RetirePage', () => {
     expect(findLocalizedById(subject, 'retirePageMessage')).to.have.property('length', 0);
   });
 
-  it('should fake uninstall completion if too much time has passed', (done) => {
-    // Switch to mounted component to exercise componentDidMount
-    const mountedProps = { ...props,
-      fakeUninstallDelay: 10,
-      setHasAddon: sinon.spy()
-    };
-    const mountedSubject = mount(<RetirePage {...mountedProps} />);
-
-    expect(mountedSubject.state('fakeUninstalled')).to.be.false;
-    expect(findLocalizedHtmlById(mountedSubject, 'retirePageMessage')).to.have.property('length', 0);
-
-    setTimeout(() => {
-      expect(mountedSubject.state('fakeUninstalled')).to.be.true;
-      expect(findLocalizedHtmlById(mountedSubject, 'retirePageMessage')).to.have.property('length', 1);
-      expect(mountedProps.setHasAddon.called).to.be.true;
-      done();
-    }, 20);
-  });
-
   describe('with hasAddon=false', () => {
     beforeEach(() => {
       subject.setProps({ hasAddon: false });

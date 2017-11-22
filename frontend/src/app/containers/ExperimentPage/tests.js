@@ -401,44 +401,6 @@ describe('app/containers/ExperimentPage:ExperimentDetail', () => {
         expect(findLocalizedById(subject, 'installErrorMessage')).to.have.property('length', 1);
       });
 
-      it('should make the page header sticky on page scrolling', (done) => {
-        // Switch to mounted component to exercise componentDidMount
-        let scrollY = 0;
-        const genericElementHeight = 125;
-        const mountedProps = { ...props,
-          hasAddon: true,
-          getScrollY: () => scrollY,
-          getElementOffsetHeight: () => genericElementHeight,
-          experiments: [mockExperiment],
-          experiment: mockExperiment
-        };
-        const mountedSubject = mount(<ExperimentDetail {...mountedProps} />);
-
-        expect(props.addScrollListener.called).to.be.true;
-        expect(mountedSubject.find('.details-header-wrapper').hasClass('stick')).to.be.false;
-
-        const scrollListener = props.addScrollListener.lastCall.args[0];
-        scrollY = 300;  // see CHANGE_HEADER_ON in the component
-        scrollListener();
-
-        // HACK: scrollListner() has a setTimeout(..., 1) so let's wait longer.
-        setTimeout(() => {
-          expect(mountedSubject.find('.details-header-wrapper').hasClass('stick')).to.be.true;
-
-          // Now, scroll back.
-          scrollY = 10;
-          scrollListener();
-          setTimeout(() => {
-            expect(mountedSubject.find('.details-header-wrapper').hasClass('stick')).to.be.false;
-            expect(mountedSubject.find('.details-header-wrapper.stick'))
-              .to.have.property('length', 0);
-            mountedSubject.unmount();
-            expect(props.removeScrollListener.called).to.be.true;
-            done();
-          }, 5);
-        }, 5);
-      });
-
       it('should scroll down to measurements block when "Your privacy" clicked', (done) => {
         const elementY = 400;
         const genericElementHeight = 125;

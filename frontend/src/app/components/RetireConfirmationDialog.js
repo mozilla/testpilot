@@ -17,7 +17,9 @@ export default class RetireConfirmationDialog extends React.Component {
   modalContainer: Object
 
   componentDidMount() {
-    this.modalContainer.focus();
+    if (this.modalContainer !== undefined) {
+      this.modalContainer.focus();
+    }
   }
 
   render() {
