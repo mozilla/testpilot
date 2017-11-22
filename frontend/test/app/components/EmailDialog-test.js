@@ -68,106 +68,12 @@ describe('app/components/EmailDialog', () => {
     expect(form).to.have.length(1);
   });
 
-  it('should subscribe to basket on valid email when submit clicked', done => {
-    const expectedEmail = 'me@a.b.com';
-    subject.setState({ email: expectedEmail });
-
-    fetchMock.post(basketUrl, 200);
-    subject.instance().handleSubscribe(expectedEmail);
-
-    expect(sendToGA.lastCall.args).to.deep.equal(['event', {
-      eventCategory: 'HomePage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'Sign me up'
-    }]);
-
-    // HACK: Yield for fetch-mock promises to complete, because we don't have
-    // direct control over that here.
-    setTimeout(() => {
-      const [url, request] = fetchMock.lastCall(basketUrl);
-
-      expect(url).to.equal(basketUrl);
-      expect(request).to.deep.equal({
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: 'newsletters=test-pilot&email=me%40a.b.com&source_url=https%3A%2F%2Fexample.com'
-      });
-
-      expect(subject.state('isSuccess')).to.be.true;
-      expect(findLocalizedById(subject, 'newsletterFooterSuccessBody')).to.have.length(1);
-
-      expect(sendToGA.lastCall.args).to.deep.equal(['event', {
-        eventCategory: 'HomePage Interactions',
-        eventAction: 'button click',
-        eventLabel: 'email submitted to basket'
-      }]);
-      done();
-    }, 1);
-  });
-
   it('should not submit the email when privacy checkbox is unchecked and <Enter> key is pressed', () => {
     const expectedEmail = 'me@a.b.com';
     subject.setState({ email: expectedEmail, privacy: false });
     subject.find('.modal-container').simulate('keyDown', mockEnterKeyDownEvent);
     expect(sendToGA.notCalled).to.be.true;
     expect(subject.state('isSuccess')).to.be.false;
-  });
-
-  it('should subscribe to basket on valid email when <Enter> key is pressed', done => {
-    const expectedEmail = 'me@a.b.com';
-    subject.setState({ email: expectedEmail, privacy: true });
-
-    fetchMock.post(basketUrl, 200);
-    subject.find('.modal-container').simulate('keyDown', mockEnterKeyDownEvent);
-
-    expect(sendToGA.lastCall.args).to.deep.equal(['event', {
-      eventCategory: 'HomePage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'Sign me up'
-    }]);
-
-    // HACK: Yield for fetch-mock promises to complete, because we don't have
-    // direct control over that here.
-    setTimeout(() => {
-      const [url, request] = fetchMock.lastCall(basketUrl);
-
-      expect(url).to.equal(basketUrl);
-      expect(request).to.deep.equal({
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: 'newsletters=test-pilot&email=me%40a.b.com&source_url=https%3A%2F%2Fexample.com'
-      });
-
-      expect(subject.state('isSuccess')).to.be.true;
-      expect(findLocalizedById(subject, 'newsletterFooterSuccessBody')).to.have.length(1);
-
-      expect(sendToGA.lastCall.args).to.deep.equal(['event', {
-        eventCategory: 'HomePage Interactions',
-        eventAction: 'button click',
-        eventLabel: 'email submitted to basket'
-      }]);
-      done();
-    }, 1);
-  });
-
-  it('should show an error page on error', done => {
-    const expectedEmail = 'me@a.b.com';
-    subject.setState({ email: expectedEmail });
-
-    fetchMock.post(basketUrl, 500);
-    subject.instance().handleSubscribe(expectedEmail);
-
-    expect(sendToGA.lastCall.args).to.deep.equal(['event', {
-      eventCategory: 'HomePage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'Sign me up'
-    }]);
-
-    setTimeout(() => {
-      expect(subject.state('isError')).to.be.true;
-      expect(findLocalizedById(subject, 'newsletterFooterError')).to.have.length(1);
-      done();
-    }, 1);
   });
 
   it('should reset the email dialog when the <Enter> key is pressed ' +
