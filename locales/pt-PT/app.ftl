@@ -67,7 +67,7 @@ landingUpgradeDesc = O Test Pilot requer o Firefox 49 ou superior.
 landingUpgradeDesc2 = O Test Pilot requer o Firefox { $version } ou superior.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Atualizar o Firefox
-landingDownloadFirefoxSubTitle = Descarga gratuita
+landingDownloadFirefoxSubTitle = Descarregamento gratuito
 
 
 // A section of the homepage explaining how Test Pilot works.
@@ -205,9 +205,9 @@ learnMoreLink = Saber mais
 
 experimentPlatformWebAddonMobile = experiência do Firefox / web / móvel
 experimentPlatformWebAddon = experiência do Firefox / web
-experimentPlatformWebMobile = experiência da web / móvel
+experimentPlatformWebMobile = experiência da Web / móvel
 experimentPlatformAddonMobile = experiência do Firefox / móvel
-experimentPlatformWeb = experiência da web
+experimentPlatformWeb = experiência da Web
 experimentPlatformAddon = experiência do Firefox
 experimentPlatformMobileApp = experiência móvel
 
@@ -248,7 +248,7 @@ restartIntroThree = Selecione as suas experiências
 [[ share ]]
 
 sharePrimary = Gostou do Test Pilot? Ajude-nos a encontrar alguns novos recrutas.
-shareSecondary = ou apenas copie e cole esta ligação...
+shareSecondary = ou apenas copie e cole esta hiperligação...
 shareEmail = E-mail
 shareCopy = Copiar
 // Shown on pages of retired or retiring experiments.
