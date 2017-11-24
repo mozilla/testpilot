@@ -205,9 +205,9 @@ learnMoreLink = Saber mais
 
 experimentPlatformWebAddonMobile = experiência do Firefox / web / móvel
 experimentPlatformWebAddon = experiência do Firefox / web
-experimentPlatformWebMobile = experiência da Web / móvel
+experimentPlatformWebMobile = experiência da web / móvel
 experimentPlatformAddonMobile = experiência do Firefox / móvel
-experimentPlatformWeb = experiência da Web
+experimentPlatformWeb = experiência da web
 experimentPlatformAddon = experiência do Firefox
 experimentPlatformMobileApp = experiência móvel
 
@@ -248,7 +248,7 @@ restartIntroThree = Selecione as suas experiências
 [[ share ]]
 
 sharePrimary = Gostou do Test Pilot? Ajude-nos a encontrar alguns novos recrutas.
-shareSecondary = ou apenas copie e cole esta hiperligação...
+shareSecondary = ou apenas copie e cole esta ligação...
 shareEmail = E-mail
 shareCopy = Copiar
 // Shown on pages of retired or retiring experiments.
