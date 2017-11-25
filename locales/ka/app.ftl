@@ -328,5 +328,5 @@ warningHttpsRequiredTitle = აუცილებელია HTTPS!
 warningHttpsRequiredDetail = Test Pilot წვდომისთვის საჭიროებს HTTPS პროტოკოლს. დამატებითი ინფორმაციისთვის, გთხოვთ გაეცნოთ <a>ჩვენს დოკუმენტაციას</a>.
 warningMissingPrefTitle = Test Pilot პროექტის შემმუშავებელი ხართ?
 warningMissingPrefDetail = Test Pilot-ის გაშვება ლოკალურად საჭიროებს სპეციალურ სამუშაო გარემოს და კონფიგურაციას. დამატებითი ინფორმაციისთვის, გთხოვთ გაეცნოთ <a>ჩვენს დოკუმენტაციას</a>.
-warningBadHostnameTitle = ჰოსტის არამართბული სახელი!
+warningBadHostnameTitle = ჰოსტის არამართებული სახელი!
 warningBadHostnameDetail = Test Pilot ვებსაიტი ხელმისაწვდომია მხოლოდ testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, ან example.com:8000 მისამართებიდან. დამატებითი ინფორმაციისთვის, გთხოვთ, გაეცნოთ <a>ჩვენს დოკუმენტაციას</a>.
