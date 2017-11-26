@@ -284,7 +284,7 @@ newsletterFooterError = Det oppstod ein feil når e-postadressa di vart sendt in
 newsletterFooterHeader = Hald deg informert
 newsletterFooterBody = Finn ut meir om nye eksperiment, og sjå testresultat for eksperiment som du har testa.
 newsletterFooterSuccessHeader = Takk!
-newsletterFooterSuccessBody = Om du tidlegare ikkje har stadfesta eit abonnement på eit Mozilla-relaterat nyheitsbrev kan du måtte gjere det no. Kontroller innboksen din eller søppelpostmappa di, for å sjå om du har fått ein e-post frå oss.
+newsletterFooterSuccessBody = Om du tidlegare ikkje har stadfesta eit abonnement på eit Mozilla-relaterat nyheitsbrev, må du kanskje gjere det no. Sjå etter ein e-post frå oss i innboksen din eller i søppelpostfilteret ditt.
 
 
 // A warning shown to users when the experiment is not available in their language
