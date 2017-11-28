@@ -5,11 +5,13 @@ import pytest
 from pages.desktop.home import Home
 from pages.desktop.detail import Detail
 
+
 def save_screenshot(selenium, name):
     selenium.save_screenshot(
         os.path.join(
             '/tmp',
             name))
+
 
 @pytest.mark.nondestructive
 @pytest.mark.skipif(os.environ.get('SKIP_INSTALL_TEST') is not None,
@@ -24,7 +26,7 @@ def test_install_of_test_pilot_addon(
     ).close()
     save_screenshot(selenium, 'install-before.png')
     try:
-        assert 'Welcome to Test Pilot!' in experiments.welcome_popup.title
+        assert experiments.welcome_popup.is_title_displayed
     finally:
         save_screenshot(selenium, 'install-after.png')
 

@@ -16,7 +16,7 @@ def save_screenshot(selenium, name):
     os.environ.get('SKIP_INSTALL_TEST') is not None,
     reason='Skip install on Release and Beta Firefox.')
 def test_experiment_page_sticky_header(
-    base_url, selenium, firefox, notifications):
+        base_url, selenium, firefox, notifications):
     """Test that scrolling down on an experiment page with the
     add-on installed properly makes the header sticky
     """

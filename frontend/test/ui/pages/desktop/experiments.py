@@ -52,6 +52,13 @@ class Experiments(Base):
             self.find_element(*self._close_button_locator).click()
 
         @property
+        def is_title_displayed(self):
+            """Return if modal title is displayed."""
+            return self.find_element(
+                *self._popup_locator_title
+            ).is_displayed()
+
+        @property
         def title(self):
             """Return title text of popup."""
             return self.find_element(*self._popup_locator_title).text
