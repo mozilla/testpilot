@@ -26,9 +26,9 @@ jobs:
             sudo ./bin/circleci/build-version-json.sh
             sudo ./bin/circleci/build-frontend.sh
       - store_artifacts:
-          path: ~/testpilot/addon/*.rdf
+          path: ~/testpilot/addon/update.rdf
       - store_artifacts:
-          path: ~/testpilot/addon/*.xpi
+          path: ~/testpilot/addon/addon.xpi
       - store_artifacts:
           path: ~/testpilot/frontend.zip
       - persist_to_workspace:
