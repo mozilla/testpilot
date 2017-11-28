@@ -25,6 +25,12 @@ jobs:
             sudo ./bin/circleci/build-addon.sh
             sudo ./bin/circleci/build-version-json.sh
             sudo ./bin/circleci/build-frontend.sh
+      - store_artifacts:
+          path: ~/testpilot/addon/*.rdf
+      - store_artifacts:
+          path: ~/testpilot/addon/*.xpi
+      - store_artifacts:
+          path: ~/testpilot/frontend.zip
       - persist_to_workspace:
           root: .
           paths:
@@ -73,6 +79,8 @@ jobs:
       - run:
           name: Test Firefox Nightly
           command: ./bin/circleci/test-firefox-nightly.sh
+      - store_artifacts:
+          path: ~/project/integration-test-results
       - save_cache:
          key: integration-test-{{ checksum "frontend/test/ui/requirements/flake8.txt" }}
          paths:
