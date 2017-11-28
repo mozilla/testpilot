@@ -10,10 +10,6 @@ const source = require('vinyl-source-stream');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const runSequence = require('run-sequence');
-const webpack = require('webpack');
-const webpackStream = require('webpack-stream');
-
-const webpackConfig = require('../../webpack.config');
 
 function shouldLint(opt, task) {
   return config[opt] ? [task] : [];
@@ -29,7 +25,7 @@ gulp.task('scripts-lint', () => {
 gulp.task('scripts-clean', () => {
 });
 
-gulp.task('scripts-watch', ['scripts-app-watch'], () => {
+gulp.task('scripts-watch', () => {
   gulp.watch(config.SRC_PATH + 'scripts/**/*.js', ['scripts-misc']);
 });
 
@@ -41,23 +37,9 @@ gulp.task('scripts-misc', () => {
     .pipe(gulp.dest(config.DEST_PATH + 'static/scripts'));
 });
 
-gulp.task('scripts-app', () =>
-  gulp.src(config.SRC_PATH + 'app/index.js')
-    .pipe(webpackStream(webpackConfig))
-    .pipe(gulp.dest(config.DEST_PATH)));
-
-gulp.task('scripts-app-watch', () =>
-  gulp.src(config.SRC_PATH + 'app/index.js')
-    .pipe(webpackStream(Object.assign(
-      { watch: true },
-      webpackConfig
-    )))
-    .pipe(gulp.dest(config.DEST_PATH)));
-
 gulp.task('scripts-build', done => runSequence(
   'scripts-clean',
   'scripts-lint',
   'scripts-misc',
-  'scripts-app',
   done
 ));

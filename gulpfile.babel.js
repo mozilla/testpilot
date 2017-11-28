@@ -20,7 +20,6 @@ require('./frontend/tasks/styles');
 require('./frontend/tasks/images');
 require('./frontend/tasks/assets');
 require('./frontend/tasks/pages');
-require('./frontend/tasks/server');
 require('./frontend/tasks/dist');
 
 gulp.task('clean', () => del([
@@ -59,7 +58,6 @@ gulp.task('default', done => runSequence(
   'self-lint',
   'clean',
   'build',
-  'server',
   'watch',
   done
 ));
