@@ -140,6 +140,12 @@ export default class HomePageWithAddon extends React.Component {
     const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
     const pastExperiments = experiments.filter(isAfterCompletedDate);
 
+    const featuredSection = featuredExperiment ? (<Banner background={true}>
+      <LayoutWrapper flexModifier="column-center">
+        <FeaturedExperiment {...this.props} experiment={featuredExperiment} eventCategory="HomePage Interactions" />
+      </LayoutWrapper>
+    </Banner>) : null;
+
     return (
       <View {...this.props}>
         {showEmailDialog &&
@@ -147,6 +153,7 @@ export default class HomePageWithAddon extends React.Component {
             onDismiss={() => this.setState({ showEmailDialog: false })} />}
 
       {this.renderSplash()}
+      {featuredSection}
 
       {showNewsUpdateDialog && majorNewsUpdates.length ? (
           <NewsUpdatesDialog {...this.props} newsUpdates={majorNewsUpdates}
@@ -158,13 +165,10 @@ export default class HomePageWithAddon extends React.Component {
           {!featuredExperiment &&
             <UpdateList {...{ sendToGA, staleNewsUpdates, freshNewsUpdates, experiments }} />}
         </LayoutWrapper>
-        <Banner background={true}>
-        {featuredExperiment &&
-           <FeaturedExperiment {...this.props} experiment={featuredExperiment} eventCategory="HomePage Interactions" />}
+        <Banner>
         <LayoutWrapper>
           <Localized id="experimentListHeader">
-
-            <h1 className="emphasis card-list-heading">Pick your experiments!</h1>
+            <h1 className="emphasis card-list-heading">Or try other experiments</h1>
           </Localized>
           <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
           <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
