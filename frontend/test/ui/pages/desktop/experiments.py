@@ -51,7 +51,6 @@ class Experiments(Base):
             """Close welcome popup using the close button."""
             self.find_element(*self._close_button_locator).click()
 
-        @property
         def is_title_displayed(self):
             """Return if modal title is displayed."""
             return self.find_element(

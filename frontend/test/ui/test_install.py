@@ -6,13 +6,6 @@ from pages.desktop.home import Home
 from pages.desktop.detail import Detail
 
 
-def save_screenshot(selenium, name):
-    selenium.save_screenshot(
-        os.path.join(
-            '/tmp',
-            name))
-
-
 @pytest.mark.nondestructive
 @pytest.mark.skipif(os.environ.get('SKIP_INSTALL_TEST') is not None,
                     reason='Skip install on Release and Beta Firefox.')
@@ -24,11 +17,7 @@ def test_install_of_test_pilot_addon(
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete
     ).close()
-    save_screenshot(selenium, 'install-before.png')
-    try:
-        assert experiments.welcome_popup.is_title_displayed
-    finally:
-        save_screenshot(selenium, 'install-after.png')
+    assert experiments.welcome_popup.is_title_displayed()
 
 
 @pytest.mark.nondestructive
@@ -45,13 +34,7 @@ def test_enable_experiment(base_url, selenium, firefox, notifications):
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
 
-    save_screenshot(selenium, 'enable-before.png')
-    try:
-        popup = experiments.welcome_popup
-        save_screenshot(selenium, 'enable-middle.png')
-        popup.close()
-    finally:
-        save_screenshot(selenium, 'enable-after.png')
+    experiments.welcome_popup.close()
 
     experiment = experiments.find_experiment(experiment='Dev Example')
     experiment.enable()
