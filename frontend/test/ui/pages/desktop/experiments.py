@@ -44,7 +44,8 @@ class Experiments(Base):
         _popup_locator_title = (By.CSS_SELECTOR, '.modal-header')
 
         def wait_for_region_to_load(self):
-            self.wait.until(lambda _: 'Welcome to Test Pilot!' in self.title)
+            self.wait.until(
+                lambda _: self.root.is_displayed())
 
         def close(self):
             """Close welcome popup using the close button."""

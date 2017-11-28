@@ -52,7 +52,7 @@ class Home(Base):
 
         @property
         def experiments(self):
-            """Return list of experiements on home page."""
+            """Return list of experiments on home page."""
             experiments = self.find_elements(*self._experiment_locator)
             return [self.Experiments(self.page, el) for el in experiments]
 
