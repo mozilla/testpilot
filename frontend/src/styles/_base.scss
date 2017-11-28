@@ -18,6 +18,24 @@ body {
   min-height: 100vh;
 }
 
+.full-page-wrapper {
+  flex: 1;
+  min-height: 100vh;
+  width: 100%;
+
+  &.space-between {
+    @include flex-container(column, space-between, center);
+  }
+
+  &.centered {
+    @include flex-container(column, center, center);
+  }
+
+  noscript + &  {
+    display: none;
+  }
+}
+
 .centered {
   text-align: center;
 }
@@ -30,6 +48,20 @@ body {
   opacity: 0;
 }
 
+.small-spacer {
+  height: $grid-unit;
+}
+
+
+// If static page is still rendered; don't display the page container
+// This was added to correct some odd scrollbar behavior when page-container
+// is injected and static-root is removed. These should happen at the same time,
+// but wind up happening a few frames apart. This rule resolves
+#static-root + #page-container.dynamic-page {
+  display: none;
+}
+
+//THis is a layout helper for storybooks
 .storybook-center {
   @include flex-container(column, center, center);
   min-height: 100vh;
