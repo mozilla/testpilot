@@ -7,7 +7,7 @@ from pages.desktop.home import Home
 def save_screenshot(selenium, name):
     selenium.save_screenshot(
         os.path.join(
-            os.getenv('CIRCLE_ARTIFACTS', '/tmp'),
+            '/tmp',
             name))
 
 

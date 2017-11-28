@@ -43,6 +43,8 @@ test:
   post:
     - bash <(curl -s https://codecov.io/bash)
     - cp -r integration-test-results $CIRCLE_ARTIFACTS
+    - cp /tmp/before.png $CIRCLE_ARTIFACTS
+    - cp /tmp/after.png $CIRCLE_ARTIFACTS
     - ./bin/deploy-storybook.sh
 
 deployment:
