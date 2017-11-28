@@ -118,6 +118,10 @@ workflows:
       - integration_test:
           requires:
             - build
+          filters:
+            branches:
+              ignore:
+                - l10n
       - static_deploy:
           requires:
             - unit_test
@@ -128,7 +132,6 @@ workflows:
       - l10n_deploy:
           requires:
             - unit_test
-            - integration_test
           filters:
             branches:
               only: l10n
