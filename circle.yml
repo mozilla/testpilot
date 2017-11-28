@@ -44,7 +44,13 @@ test:
     - bash <(curl -s https://codecov.io/bash)
     - cp -r integration-test-results $CIRCLE_ARTIFACTS
     - cp /tmp/before.png $CIRCLE_ARTIFACTS
+    - cp /tmp/middle.png $CIRCLE_ARTIFACTS
     - cp /tmp/after.png $CIRCLE_ARTIFACTS
+    - cp /tmp/install-before.png $CIRCLE_ARTIFACTS
+    - cp /tmp/install-after.png $CIRCLE_ARTIFACTS
+    - cp /tmp/enable-before.png $CIRCLE_ARTIFACTS
+    - cp /tmp/enable-middle.png $CIRCLE_ARTIFACTS
+    - cp /tmp/enable-after.png $CIRCLE_ARTIFACTS
     - ./bin/deploy-storybook.sh
 
 deployment:

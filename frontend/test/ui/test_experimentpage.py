@@ -27,7 +27,9 @@ def test_experiment_page_sticky_header(
     ).close()
     save_screenshot(selenium, 'before.png')
     try:
-        experiments.welcome_popup.close()
+        popup = experiments.welcome_popup
+        save_screenshot(selenium, 'middle.png')
+        popup.close()
     finally:
         save_screenshot(selenium, 'after.png')
     experiment = experiments.find_experiment(
