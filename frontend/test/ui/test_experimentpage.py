@@ -4,6 +4,13 @@ import pytest
 from pages.desktop.home import Home
 
 
+def save_screenshot(selenium, name):
+    selenium.save_screenshot(
+        os.path.join(
+            os.getenv('CIRCLE_ARTIFACTS', '/tmp'),
+            name))
+
+
 @pytest.mark.nondestructive
 @pytest.mark.skipif(
     os.environ.get('SKIP_INSTALL_TEST') is not None,
@@ -14,7 +21,11 @@ def test_experiment_page_sticky_header(base_url, selenium):
     """
     page = Home(selenium, base_url).open()
     experiments = page.header.click_install_button()
-    experiments.welcome_popup.close()
+    save_screenshot(selenium, 'before.png')
+    try:
+        experiments.welcome_popup.close()
+    finally:
+        save_screenshot(selenium, 'after.png')
     experiment = experiments.find_experiment(
         experiment='Dev Example')
     selenium.execute_script(

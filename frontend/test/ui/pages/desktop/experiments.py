@@ -41,7 +41,7 @@ class Experiments(Base):
     class WelcomePopup(Region):
         _root_locator = (By.ID, 'first-page')
         _close_button_locator = (By.CSS_SELECTOR, '.modal-cancel')
-        _popup_locator_title = (By.CSS_SELECTOR, '.modal-header-wrapper h3')
+        _popup_locator_title = (By.CSS_SELECTOR, '.modal-header')
 
         def wait_for_region_to_load(self):
             self.wait.until(lambda _: 'Welcome to Test Pilot!' in self.title)
