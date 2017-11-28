@@ -47,7 +47,7 @@ export default class MainInstallButton extends React.Component {
   }
 
   render() {
-    const { isFirefox, isMinFirefox, isMobile, hasAddon, experimentTitle } = this.props;
+    const { isFirefox, isMinFirefox, isMobile, hasAddon, experimentTitle, experimentLegalLink } = this.props;
     const isInstalling = this.state.isInstalling && !hasAddon;
     const terms = <Localized id="landingLegalNoticeTermsOfUse">
       <a href="/terms"/>
@@ -57,15 +57,19 @@ export default class MainInstallButton extends React.Component {
     </Localized>;
     const layout = experimentTitle ? 'column-center-start-breaking' : 'column-center';
 
+    console.log('RENDER MAIN INSTALL:', experimentLegalLink);
+
     return (
       <LayoutWrapper flexModifier={layout} helperClass="main-install">
         <div className="main-install__spacer" />
         {(isMinFirefox && !isMobile) ? this.renderInstallButton(isInstalling, hasAddon) : this.renderAltButton(isFirefox, isMobile) }
-        {isMinFirefox && !isMobile && <LocalizedHtml id="landingLegalNotice" $terms={terms} $privacy={privacy}>
+        {isMinFirefox && !isMobile && !experimentLegalLink && <LocalizedHtml id="landingLegalNotice" $terms={terms} $privacy={privacy}>
           <p className="main-install__legal">
-            By proceeding, you agree to the {terms} and {privacy} of Test Pilot.
+          By proceeding, you agree to the {terms} and {privacy} of Test Pilot.
           </p>
-        </LocalizedHtml>}
+         </LocalizedHtml>}
+
+        {isMinFirefox && !isMobile && experimentLegalLink && experimentLegalLink}
       </LayoutWrapper>
     );
   }

@@ -32,7 +32,6 @@ landingIntroOne = Test new features.
 landingIntroTwo = Give your feedback.
 landingIntroThree = Help build Firefox.
 landingLegalNotice = By proceeding, you agree to the <a>Terms of Use</a> and <a>Privacy Notice</a> of Test Pilot.
-landingExperimentsTitle = Try out the latest experimental features
 
 // Related to the installation of the Test Pilot add-on.
 [[landingInstall]]
@@ -93,7 +92,7 @@ experimentListJustUpdatedTab = Just Updated
 experimentListEndingTomorrow = Ending Tomorrow
 experimentListEndingSoon = Ending Soon
 experimentCondensedHeader = Welcome to Test Pilot!
-experimentListHeader = Pick your experiments!
+experimentListHeaderPostFeatured = Or try other experiments
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[experimentCard]]

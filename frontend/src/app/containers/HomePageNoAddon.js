@@ -43,7 +43,6 @@ export default class HomePageNoAddon extends React.Component {
     if (experiments.length === 0) { return null; }
 
     const installSplash = <Banner>
-
       <LayoutWrapper flexModifier="row-center-breaking">
         <Copter small={true} animation="fly-up"/>
         <div className="banner__spacer" />
@@ -59,23 +58,25 @@ export default class HomePageNoAddon extends React.Component {
           </Localized>
         </div>
       </LayoutWrapper>
-
-      <MainInstallButton {...this.props} eventCategory="HomePage Interactions" eventLabel="Install the Add-on"/>
-
     </Banner>;
+
+    const featuredSection = (<Banner background={true}>
+      <LayoutWrapper flexModifier="column-center">
+        <FeaturedExperiment {...this.props} experiment={featuredExperiment} eventCategory="HomePage Interactions" />
+      </LayoutWrapper>
+    </Banner>);
 
     return (
       <section id="landing-page">
         <View {...this.props}>
           { installSplash }
-
+          { featuredSection }
           <Banner background={true}>
             <LayoutWrapper flexModifier="column-center">
-              <Localized id="landingExperimentsTitle">
-                <h2 className="banner__subtitle centered">Try out the latest experimental features</h2>
+              <Localized id="experimentListHeader">
+                <h2 className="banner__subtitle centered">Or try other experiments</h2>
               </Localized>
 
-              <FeaturedExperiment {...this.props} experiment={featuredExperiment} eventCategory="HomePage Interactions" />
               <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
               <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
             </LayoutWrapper>

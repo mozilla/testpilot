@@ -45,7 +45,8 @@ export default class FeaturedExperiment extends React.Component {
             // isFirefox, isMinFirefox
           } = this.props;
 
-    const { description, title, subtitle, slug, video_url } = experiment;
+    const { description, title, subtitle, slug// , video_url
+          } = experiment;
     // const isCompleted = isAfterCompletedDate(experiment);
 
     return (
@@ -85,8 +86,6 @@ export default class FeaturedExperiment extends React.Component {
             { this.renderFeedbackButton() }
           </div>
 
-      {// <p className="featured-notice">By proceeding, you agree to the <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Notice</a> of Test Pilot and <a href={`/experiments/${slug}`}>{title}</a>.</p>
-      }
         </div>
 
         <div className="featured-video">
@@ -94,7 +93,7 @@ export default class FeaturedExperiment extends React.Component {
           <iframe
             width="100%"
             height="360"
-            src={video_url}
+            src={'https://example.com'}
             frameBorder="0"
             allowFullScreen/>
         </div>
@@ -151,11 +150,39 @@ export default class FeaturedExperiment extends React.Component {
     });
   }
 
+  launchLegalModal(ev) {
+    const { privacy_preamble } = this.props.experiment;
+    ev.preventDefault();
+    // {privacy_preamble &&
+    //  <Localized id={l10nId('privacy_preamble')}>
+    //  <p>
+    //  {privacy_preamble}
+    //  </p>
+    //  </Localized>}
+    console.log(this.props.experiment, privacy_preamble);
+  }
+
   renderManageButton() {
-    const { experiment } = this.props;
-    const { title } = experiment;
+    const { title } = this.props.experiment;
+    const terms = <Localized id="landingLegalNoticeTermsOfUse">
+      <a href="/terms">terms</a>
+    </Localized>;
+    const privacy = <Localized id="landingLegalNoticePrivacyNotice">
+      <a href="/privacy">privacy</a>
+    </Localized>;
+
+    const experimentLegalLink = (<Localized id={this.l10nId('legal-link')}>
+      <p className="main-install__legal">
+        By proceeding, you agree to the {terms} and {privacy} of Test Pilot
+        and <a href="#" onClick={this.launchLegalModal.bind(this)}>{title}</a>.
+      </p>
+    </Localized>);
+
+    console.log('renderManageButton', experimentLegalLink);
+
     return (<MainInstallButton {...this.props}
               experimentTitle={title}
+              experimentLegalLink={experimentLegalLink}
               eventCategory="HomePage Interactions"
               eventLabel="Install the Add-on"/>);
 

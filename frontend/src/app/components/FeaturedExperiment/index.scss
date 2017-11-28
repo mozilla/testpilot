@@ -1,10 +1,8 @@
 @import '~photon-colors/colors.scss';
 
 .featured-experiment {
-  background-color: $blue-80;
+  // background-color: $blue-80;
   display: flex;
-  padding: 40px;
-  width: 100%;
 
   .featured-status {
     display: flex;
@@ -103,16 +101,25 @@
     background-size: 32px;
   }
 
-  .featured-actions a {
-    height: 48px;
-    margin: 18px !important;
-    padding: 5px;
-    width: 160px;
-  }
+  /* .featured-actions a { */
+  /*   height: 48px; */
+  /*   margin: 18px !important; */
+  /*   padding: 5px; */
+  /*   width: 160px; */
+  /* } */
 
   .main-install {
     button {
       width: 100%;
+    }
+  }
+
+  .main-install__legal {
+    max-width: 100%;
+
+    a {
+      padding: 0;
+      margin: 0;
     }
   }
 
