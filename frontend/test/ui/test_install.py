@@ -14,7 +14,7 @@ def test_install_of_test_pilot_addon(
     """Check that the testpilot addon is installable and installs."""
     page = Home(selenium, base_url).open()
     experiments = page.header.click_install_button()
-    firefox.browser.wait_for_notification(notifications.AddOnInstallComplete)
+    firefox.browser.wait_for_notification(notifications.AddOnInstallComplete).close()
     assert 'Welcome to Test Pilot!' in experiments.welcome_popup.title
 
 
