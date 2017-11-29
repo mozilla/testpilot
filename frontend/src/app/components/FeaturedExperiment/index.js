@@ -6,12 +6,14 @@ import React from 'react';
 
 import { buildSurveyURL, experimentL10nId } from '../../lib/utils';
 import MainInstallButton from '../MainInstallButton';
+// import { MeasurementSection } from '../Measurements';
+// import Modal from '../Modal';
 
 import './index.scss';
 
 import type { InstalledExperiments } from '../../reducers/addon';
 
-// import ExperimentPlatforms from '../ExperimentPlatforms';
+import ExperimentPlatforms from '../ExperimentPlatforms';
 
 const ONE_DAY = 24 * 60 * 60 * 1000;
 const ONE_WEEK = 7 * ONE_DAY;
@@ -29,26 +31,38 @@ type FeaturedExperimentProps = {
   eventCategory: string,
   getExperimentLastSeen: Function,
   sendToGA: Function,
-  navigateTo: Function,
-  isAfterCompletedDate: Function
+  navigateTo: Function
 }
 
+type FeaturedExperimentState = {
+  showLegalDialog: boolean
+}
 export default class FeaturedExperiment extends React.Component {
   props: FeaturedExperimentProps
+  state: FeaturedExperimentState
+
+  constructor(props: HomePageWithAddonProps) {
+    super(props);
+    this.state = {
+      showLegalDialog: true
+    };
+  }
 
   l10nId(pieces: string) {
     return experimentL10nId(this.props.experiment, pieces);
   }
 
   render() {
-    const { hasAddon, experiment, enabled // , isAfterCompletedDate
-            // isFirefox, isMinFirefox
+    const { hasAddon, experiment// , isFirefox, isMinFirefox
           } = this.props;
-
-    const { description, title, subtitle, slug// , video_url
+    const { showLegalDialog } = this.state;
+    const { description, title, subtitle,
+            slug, enabled// , video_url
           } = experiment;
-    // const isCompleted = isAfterCompletedDate(experiment);
 
+    console.log('MY PLATFORM', experiment.platfroms);
+    const platform = (<ExperimentPlatforms experiment={experiment} />);
+    console.log('THAT WAS MY PLATFORM');
     return (
       <div className={classnames('featured-experiment', {
         enabled,
@@ -64,7 +78,7 @@ export default class FeaturedExperiment extends React.Component {
             <div className="title-wrap">
               <h2>{title}</h2>
               <div className="featured-info-line">
-                <h4 className="featured-experiment-type">Firefox experiment</h4>
+                {platform}
                 {subtitle && <Localized id={this.l10nId('subtitle')}>
                   <h4 className="subtitle">{subtitle}</h4>
                 </Localized>}
@@ -76,10 +90,9 @@ export default class FeaturedExperiment extends React.Component {
             <p className="featured-description">{description}</p>
           </Localized>
 
-      {// <Localized id={this.l10nId('more-detail')}>
-       //      <a>MORE DETAIL</a>
-       //  </Localized>
-      }
+          {!enabled && <Localized id={this.l10nId('more-detail')}>
+            <a href={`/experiments/${slug}`}>More Detail</a>
+          </Localized>}
 
           <div className="featured-actions">
             { this.renderManageButton() }
@@ -97,6 +110,15 @@ export default class FeaturedExperiment extends React.Component {
             frameBorder="0"
             allowFullScreen/>
         </div>
+
+        {showLegalDialog && null // && <Modal wrapperClass='legal-modal'
+        //                            onCancel={() => this.setState({ showLegalDialog: false })}
+        //                            onComplete={() => this.setState({ showLegalDialog: false })}>
+        //   <MeasurementSection experiment={experiment}
+        //                       l10nId={this.l10nId}
+        //                       highlightMeasurementPanel={false} />
+        // </Modal>
+        }
       </div>
     );
   }
@@ -110,16 +132,16 @@ export default class FeaturedExperiment extends React.Component {
       <div className="featured-status">
         {showIcon && <div className="star-icon"></div>}
 
-        {enabled && <Localized id="experimentListEnabledTab">
-          <div className="tab enabled-tab">Enabled</div>
-        </Localized>}
-
         {justLaunched && <Localized id="experimentListJustLaunchedTab">
           <div className="tab just-launched-tab">Just Launched</div>
         </Localized>}
 
         {justUpdated && <Localized id="experimentListJustUpdatedTab">
           <div className="tab just-updated-tab">Just Updated</div>
+        </Localized>}
+
+        {enabled && <Localized id="experimentListEnabledTab">
+          <div className="tab enabled-tab">Enabled</div>
         </Localized>}
       </div>);
   }
@@ -150,18 +172,6 @@ export default class FeaturedExperiment extends React.Component {
     });
   }
 
-  launchLegalModal(ev) {
-    const { privacy_preamble } = this.props.experiment;
-    ev.preventDefault();
-    // {privacy_preamble &&
-    //  <Localized id={l10nId('privacy_preamble')}>
-    //  <p>
-    //  {privacy_preamble}
-    //  </p>
-    //  </Localized>}
-    console.log(this.props.experiment, privacy_preamble);
-  }
-
   renderManageButton() {
     const { title } = this.props.experiment;
     const terms = <Localized id="landingLegalNoticeTermsOfUse">
@@ -171,10 +181,15 @@ export default class FeaturedExperiment extends React.Component {
       <a href="/privacy">privacy</a>
     </Localized>;
 
+    const launchLegalModal = (ev) => {
+      ev.preventDefault();
+      this.setState({ showLegalDialog: true });
+    };
+
     const experimentLegalLink = (<Localized id={this.l10nId('legal-link')}>
       <p className="main-install__legal">
         By proceeding, you agree to the {terms} and {privacy} of Test Pilot
-        and <a href="#" onClick={this.launchLegalModal.bind(this)}>{title}</a>.
+        and <a href="#" onClick={launchLegalModal}>{title}</a>.
       </p>
     </Localized>);
 

@@ -1,4 +1,4 @@
-/* @import '~photon-colors/colors.scss'; */
+@import '~photon-colors/colors.scss';
 @import '../../../styles/_utils';
 
 #news-feed-page {
@@ -22,7 +22,7 @@
       left: -66px;
       top: 0px;
       background: rgba(0,148,251, 0.3);
-      border: 1px solid #0094FB;
+      border: 1px solid $blue-50;
       padding-left: 3px;
       line-height: 130%;
     }
@@ -37,11 +37,10 @@
       height: 10px;
       border-radius: 50%;
       font-size: 13px;
-      color: #0094FB;
+      color: $blue-50;
       position: absolute;
       left: -63px;
       top: 43%;
-      border: 3px solid rgb(15, 9, 63);
     }
   }
 }

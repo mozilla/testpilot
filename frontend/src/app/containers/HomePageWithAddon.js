@@ -133,6 +133,7 @@ export default class HomePageWithAddon extends React.Component {
       survey_url: 'https://example.com',
       created: '2010-06-21T12:12:12Z',
       modified: '2010-06-21T12:12:12Z',
+      platforms: ['addon'],
       video_url: 'https://www.youtube.com/embed/n6wiRyKkmKc',
     };
 
