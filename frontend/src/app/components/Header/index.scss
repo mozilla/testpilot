@@ -1,8 +1,13 @@
+@import '~photon-colors/colors.scss';
 @import '../../../styles/_utils';
 
 #main-header {
   position: relative;
   z-index: 1;
+
+  .active {
+    color: $blue-40;
+  }
 
   h1 {
     margin: $grid-unit * .75 0 $grid-unit * .75 - $grid-unit * .25;

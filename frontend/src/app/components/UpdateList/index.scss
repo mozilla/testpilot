@@ -62,6 +62,19 @@
     margin-right: 40px;
   }
 
+  .new-wrap {
+    display: flex;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .star-icon {
+    margin-right: 10px;
+    margin-left:30px;
+  }
+
   h2,
   h2.update-title {
     margin: 0;
@@ -73,6 +86,7 @@
 
   .summary {
     font-size: 16px;
+    padding-right: 25px;
   }
 
   h4.update-title {
