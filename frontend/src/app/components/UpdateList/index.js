@@ -14,6 +14,9 @@ export function prettyDate(date: string) {
   return moment(date).format('MMMM Do, YYYY');
 }
 
+const TWO_WEEKS = 2 * 7 * 24 * 60 * 60 * 1000;
+const twoWeeksAgo = new Date() - TWO_WEEKS;
+
 type UpdateProps = {
   sendToGA: Function,
   experiment: Object,
@@ -33,13 +36,15 @@ export class Update extends React.Component {
     const categoryTitleL10nID = experiment ? null : 'siteName';
     const iconClassName = experiment
       ? `experiment-icon-${experiment.slug}`
-      : 'news-update-test-pilot-icon';
+          : 'news-update-test-pilot-icon';
+
+    const isNew = experiment ? new Date(experiment.published) < twoWeeksAgo : false;
 
     return (
       <a className={classnames('update', { 'has-link': !!link })}
           href={link}
           onClick={() => this.handleLinkClick()}>
-        <div className={classnames(iconClassName, 'update-experiment-icon')} style={{backgroundColor: gradient_stop}}/>
+        <div className={classnames(iconClassName, 'update-experiment-icon')} style={ { backgroundColor: gradient_stop } }/>
         <div className="update-content">
           <header>
             {experiment
@@ -56,6 +61,10 @@ export class Update extends React.Component {
             <p className="up-date">
               {prettyDate(published || created)}
             </p>
+            {isNew && <div className="star-wrap">
+              <div className="star-icon"></div>
+              <p className="new">new</p>
+            </div>}
           </header>
           {experiment
             ? <Localized id={newsUpdateL10nId(update, 'title')}>

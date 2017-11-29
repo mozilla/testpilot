@@ -1,7 +1,6 @@
 @import '~photon-colors/colors.scss';
 
 .featured-experiment {
-  // background-color: $blue-80;
   display: flex;
 
   .featured-status {
@@ -25,18 +24,6 @@
     .platform-icon-mobile {
       background-image: url('./img/experiment-type-mobile-white.svg');
     }
-  }
-
-  .star-icon {
-    background-image: url('./img/launched.svg');
-    background-position: left center;
-    background-repeat: no-repeat;
-    background-size: 12px;
-    height: 12px;
-    margin-right: 6px;
-    opacity: .5;
-    width: 12px;
-    margin-top: 4px;
   }
 
   .featured-information {
