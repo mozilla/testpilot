@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import cookies from 'js-cookie';
 import { Localized } from 'fluent-react/compat';
 
 import View from '../../components/View';
@@ -18,6 +19,10 @@ type NewsFeedPageProps = {
 
 export default class NewsFeedPage extends React.Component {
   props: NewsFeedPageProps
+
+  componentDidMount() {
+    cookies.set('updates-last-viewed-date', new Date().toISOString());
+  }
 
   render() {
     return (
