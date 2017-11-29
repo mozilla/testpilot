@@ -98,7 +98,20 @@
     background-size: 32px;
   }
 
-  .main-install__button {
+  .featured-enabled-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 352px;
+
+    .button {
+      height: 64px;
+      width: 160px;
+      font-size: 18px;
+      padding: 10px;
+    }
+  }
+  
+  .main-install__button, .main-install__download {
     font-size: 18px;
     height: 64px;
     width: 352px;
@@ -106,6 +119,10 @@
 
   .main-install__spacer {
     height: 25px; 
+  }
+
+  .main-install__available {
+    display: none;
   }
 
   .main-install__legal {

@@ -52,14 +52,14 @@
 
   .update-experiment-icon {
     height: 48px;
-    width: 106px;
+    width: 48px;
     margin: 0;
-    @include respond-to('small') {
-      display: none;
-    }
-    background-position: left center;
-    background-size: 60px auto;
+    margin-right: 0px;
+    background-position: center;
+    background-size: 36px auto;
     background-repeat: no-repeat;
+    border-radius: 50%;
+    margin-right: 40px;
   }
 
   h2,
