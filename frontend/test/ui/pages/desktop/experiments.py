@@ -41,14 +41,21 @@ class Experiments(Base):
     class WelcomePopup(Region):
         _root_locator = (By.ID, 'first-page')
         _close_button_locator = (By.CSS_SELECTOR, '.modal-cancel')
-        _popup_locator_title = (By.CSS_SELECTOR, '.modal-header-wrapper h3')
+        _popup_locator_title = (By.CSS_SELECTOR, '.modal-header')
 
         def wait_for_region_to_load(self):
-            self.wait.until(lambda _: 'Welcome to Test Pilot!' in self.title)
+            self.wait.until(
+                lambda _: self.root.is_displayed())
 
         def close(self):
             """Close welcome popup using the close button."""
             self.find_element(*self._close_button_locator).click()
+
+        def is_title_displayed(self):
+            """Return if modal title is displayed."""
+            return self.find_element(
+                *self._popup_locator_title
+            ).is_displayed()
 
         @property
         def title(self):

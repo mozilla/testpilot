@@ -14,8 +14,10 @@ def test_install_of_test_pilot_addon(
     """Check that the testpilot addon is installable and installs."""
     page = Home(selenium, base_url).open()
     experiments = page.header.click_install_button()
-    firefox.browser.wait_for_notification(notifications.AddOnInstallComplete)
-    assert 'Welcome to Test Pilot!' in experiments.welcome_popup.title
+    firefox.browser.wait_for_notification(
+        notifications.AddOnInstallComplete
+    ).close()
+    assert experiments.welcome_popup.is_title_displayed()
 
 
 @pytest.mark.nondestructive
@@ -29,11 +31,13 @@ def test_enable_experiment(base_url, selenium, firefox, notifications):
                          'max_age': 120,
                          'domain': 'example.com'})
     experiments = page.header.click_install_button()
-    experiments.welcome_popup.close()
-    experiment = experiments.find_experiment(experiment='Dev Example')
-    experiment.enable()
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
+
+    experiments.welcome_popup.close()
+
+    experiment = experiments.find_experiment(experiment='Dev Example')
+    experiment.enable()
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallConfirmation).install()
     firefox.browser.wait_for_notification(
