@@ -27,6 +27,8 @@ export class Update extends React.Component {
     const { experiment, update } = this.props;
     const { created, published, title, content, link } = update;
 
+    const gradient_stop = experiment ? experiment.gradient_stop : 'transparent';
+
     const categoryTitle = experiment ? experiment.title : 'Firefox Test Pilot';
     const categoryTitleL10nID = experiment ? null : 'siteName';
     const iconClassName = experiment
@@ -37,7 +39,7 @@ export class Update extends React.Component {
       <a className={classnames('update', { 'has-link': !!link })}
           href={link}
           onClick={() => this.handleLinkClick()}>
-        <div className={classnames(iconClassName, 'update-experiment-icon')} />
+        <div className={classnames(iconClassName, 'update-experiment-icon')} style={{backgroundColor: gradient_stop}}/>
         <div className="update-content">
           <header>
             {experiment

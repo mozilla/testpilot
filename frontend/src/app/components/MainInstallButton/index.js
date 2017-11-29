@@ -57,8 +57,6 @@ export default class MainInstallButton extends React.Component {
     </Localized>;
     const layout = experimentTitle ? 'column-center-start-breaking' : 'column-center';
 
-    console.log('RENDER MAIN INSTALL:', experimentLegalLink);
-
     return (
       <LayoutWrapper flexModifier={layout} helperClass="main-install">
         <div className="main-install__spacer" />
@@ -131,7 +129,7 @@ export default class MainInstallButton extends React.Component {
       <div>
           {!isFirefox ? (
               <Localized id="landingDownloadFirefoxDesc">
-                <span>(Test Pilot is available for Firefox on Windows, OS X and Linux)</span>
+                <span className="main-install__available">(Test Pilot is available for Firefox on Windows, OS X and Linux)</span>
               </Localized>
             ) : (
               <Localized id="landingUpgradeDesc2" $version={config.minFirefoxVersion}>
