@@ -10,25 +10,20 @@
     font-weight: bold;
   }
 
-  .featured-experiment-type {
-    font-weight: normal;
+  .experiment-platform {
+    color: white;
+    font-size: 16px;
 
-    position: relative;
-    &:before {
-      content: ' ';
-      display: block;
+    .platform-icon-addon {
       background-image: url('./img/experiment-type-addon-white.svg');
-      background-position: left center;
-      background-repeat: no-repeat;
-      background-size: 16px;
-      height: 16px;
-      margin-right: 6px;
-      opacity: .5;
-      width: 16px;
+    }
 
-      top: 0;
-      left: -20px;
-      position: absolute;
+    .platform-icon-web {
+      background-image: url('./img/experiment-type-web-white.svg');
+    }
+
+    .platform-icon-mobile {
+      background-image: url('./img/experiment-type-mobile-white.svg');
     }
   }
 
@@ -44,15 +39,18 @@
     margin-top: 4px;
   }
 
-  .experiment-platform {
-    color: white;
-    font-size: 16px;
-  }
-
   .featured-information {
     margin: 30px;
     max-width: 500px;
     text-align: center;
+    margin-top: 5px;
+
+    > a {
+      color: $blue-40;
+      float: left;
+      font-size: 18px;
+      text-decoration: underline;
+    }
   }
 
   .featured-description {
@@ -63,7 +61,6 @@
     display: flex;
     flex-direction: column;
     padding: 12px;
-    padding-left: 25px;
 
     h2 {
       font-size: 33px;
@@ -101,21 +98,19 @@
     background-size: 32px;
   }
 
-  /* .featured-actions a { */
-  /*   height: 48px; */
-  /*   margin: 18px !important; */
-  /*   padding: 5px; */
-  /*   width: 160px; */
-  /* } */
+  .main-install__button {
+    font-size: 18px;
+    height: 64px;
+    width: 352px;
+  }
 
-  .main-install {
-    button {
-      width: 100%;
-    }
+  .main-install__spacer {
+    height: 25px; 
   }
 
   .main-install__legal {
-    max-width: 100%;
+    max-width: 352px;
+    width: 352px;
 
     a {
       padding: 0;

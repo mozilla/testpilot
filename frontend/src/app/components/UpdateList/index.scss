@@ -25,7 +25,7 @@
 .update {
   align-items: center;
   border-radius: 4px;
-  border: 1px $transparent-white-2 solid;
+  border: 1px transparent solid;
   box-shadow: 0 -2px 0 $transparent-black-05 inset;
   cursor: default;
   display: flex;
@@ -102,8 +102,11 @@
     transition: background 50ms;
 
     &:hover {
-      border-color: $transparent-white-8;
-      background: $transparent-white-1;
+      border-color: $transparent-white-2;
+    }
+
+    &:active {
+      border-color: $transparent-white-5;
     }
 
     .link-chevron {

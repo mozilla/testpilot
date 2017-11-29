@@ -174,9 +174,3 @@ export type ContributorsSectionType = {
   experiment: Object,
   l10nId: Function
 };
-
-export type MeasurementsSectionType = {
-  experiment: Object,
-  highlightMeasurementPanel: boolean,
-  l10nId: Function
-};
