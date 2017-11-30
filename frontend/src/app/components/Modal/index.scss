@@ -138,6 +138,12 @@
     &:active {
       background-color: $transparent-grey-20;
     }
+
+    &.floating {
+      position: absolute;
+      top: -30px;
+      right: 0px;
+    }
   }
 
   .modal-content {

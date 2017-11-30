@@ -9,7 +9,7 @@ type ModalProps = {
   onCancel: Function,
   onComplete: Function,
   handleKeyDown?: Function,
-  headerTitle: React.Element<any>,
+  headerTitle?: React.Element<any>,
   children: Array<React.Element<any>> | React.Element<any>
 }
 
@@ -33,10 +33,11 @@ export default class Modal extends React.Component {
            ref={modalContainer => { this.modalContainer = modalContainer; }}
            onKeyDown={e => handleKeyDown(e)}>
         <div className={`modal ${wrapperClass}`}>
-          <header className="modal-header-wrapper">
+          {!headerTitle && <div className="modal-cancel floating" onClick={e => onCancel(e)}/>}
+          {headerTitle && <header className="modal-header-wrapper">
             {headerTitle}
             <div className="modal-cancel" onClick={e => onCancel(e)}/>
-          </header>
+          </header>}
 
           {children}
         </div>
