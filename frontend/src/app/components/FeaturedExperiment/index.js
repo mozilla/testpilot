@@ -6,8 +6,8 @@ import React from 'react';
 
 import { buildSurveyURL, experimentL10nId } from '../../lib/utils';
 import MainInstallButton from '../MainInstallButton';
-// import { MeasurementSection } from '../Measurements';
-// import Modal from '../Modal';
+import MeasurementSection from '../Measurements';
+import Modal from '../Modal';
 
 import './index.scss';
 
@@ -44,7 +44,7 @@ export default class FeaturedExperiment extends React.Component {
   constructor(props: HomePageWithAddonProps) {
     super(props);
     this.state = {
-      showLegalDialog: true
+      showLegalDialog: false
     };
   }
 
@@ -103,14 +103,13 @@ export default class FeaturedExperiment extends React.Component {
             allowFullScreen />
         </div>
 
-        {showLegalDialog && null // && <Modal wrapperClass='legal-modal'
-        //                            onCancel={() => this.setState({ showLegalDialog: false })}
-        //                            onComplete={() => this.setState({ showLegalDialog: false })}>
-        //   <MeasurementSection experiment={experiment}
-        //                       l10nId={this.l10nId}
-        //                       highlightMeasurementPanel={false} />
-        // </Modal>
-        }
+        {showLegalDialog && <Modal wrapperClass='legal-modal'
+                                   onCancel={() => this.setState({ showLegalDialog: false })}
+                                   onComplete={() => this.setState({ showLegalDialog: false })}>
+          <MeasurementSection experiment={experiment}
+                              l10nId={this.l10nId.bind(this)}
+                              highlightMeasurementPanel={false}></MeasurementSection>
+        </Modal>}
       </div>
     );
   }

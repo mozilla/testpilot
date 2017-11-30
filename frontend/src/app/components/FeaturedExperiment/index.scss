@@ -154,4 +154,14 @@
       height: 281px;
     }
   }
+
+  .legal-modal {
+    .measurements {
+      padding: 20px 40px;
+
+      a {
+        color: $blue-60;
+      }
+    }
+  }
 }

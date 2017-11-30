@@ -3,9 +3,11 @@ import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
+import moment from 'moment';
+
+import { findLocalizedById } from '../../../../test/app/util';
 
 import FeaturedExperiment from './index';
-
 
 describe('app/components/FeaturedExperiment', () => {
   let mockExperiment, mockClickEvent, props, subject;
@@ -33,8 +35,7 @@ describe('app/components/FeaturedExperiment', () => {
       eventCategory: 'test category',
       navigateTo: sinon.spy(),
       sendToGA: sinon.spy(),
-      getExperimentLastSeen: sinon.spy(),
-      navigateTo: sinon.spy()
+      getExperimentLastSeen: sinon.spy()
     };
     subject = shallow(<FeaturedExperiment {...props} />);
   });
