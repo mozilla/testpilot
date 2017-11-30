@@ -53,19 +53,15 @@ export default class FeaturedExperiment extends React.Component {
   }
 
   render() {
-    const { hasAddon, experiment } = this.props;
+    const { experiment, enabled } = this.props;
     const { showLegalDialog } = this.state;
-    const { description, title, subtitle,
-            slug, enabled// , video_url
-          } = experiment;
+    const { description, title, subtitle, slug, video_url } = experiment;
 
-    const platform = (<ExperimentPlatforms experiment={experiment} />);
     return (
       <div className={classnames('featured-experiment', {
         enabled,
         'just-launched': this.justLaunched(),
-        'just-updated': this.justUpdated(),
-        'has-addon': hasAddon
+        'just-updated': this.justUpdated()
       })}>
         <div className="featured-information">
           <header>
@@ -75,7 +71,7 @@ export default class FeaturedExperiment extends React.Component {
             <div className="title-wrap">
               <h2>{title}</h2>
               <div className="featured-info-line">
-                {platform}
+                <ExperimentPlatforms experiment={experiment} />
                 {subtitle && <Localized id={this.l10nId('subtitle')}>
                   <h4 className="subtitle">{subtitle}</h4>
                 </Localized>}
@@ -87,7 +83,7 @@ export default class FeaturedExperiment extends React.Component {
             <p className="featured-description">{description}</p>
           </Localized>
 
-          {!enabled && <Localized id={this.l10nId('more-detail')}>
+          {!enabled && <Localized id='moreDetail'>
             <a href={`/experiments/${slug}`}>More Detail</a>
           </Localized>}
 
@@ -102,9 +98,9 @@ export default class FeaturedExperiment extends React.Component {
           <iframe
             width="100%"
             height="360"
-            src={'https://example.com'}
+            src={video_url}
             frameBorder="0"
-            allowFullScreen/>
+            allowFullScreen />
         </div>
 
         {showLegalDialog && null // && <Modal wrapperClass='legal-modal'
@@ -152,8 +148,8 @@ export default class FeaturedExperiment extends React.Component {
   }
 
   renderButton() {
-    const { experiment, installed, clientUUID, hasAddon } = this.props;
-    const { enabled, slug, survey_url, title } = experiment;
+    const { experiment, installed, clientUUID, hasAddon, enabled } = this.props;
+    const { slug, survey_url, title } = experiment;
     const terms = <Localized id="landingLegalNoticeTermsOfUse">
       <a href="/terms">terms</a>
     </Localized>;
@@ -171,7 +167,7 @@ export default class FeaturedExperiment extends React.Component {
         By proceeding, you agree to the {terms} and {privacy} of Test Pilot
         and <a href="#" onClick={launchLegalModal}>{title}</a>.
       </p>
-    </Localized>);
+                                 </Localized>);
 
     let Buttons = (<MainInstallButton {...this.props}
                                       experimentTitle={title}

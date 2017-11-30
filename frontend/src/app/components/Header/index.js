@@ -1,5 +1,3 @@
-// @flow
-
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 import classnames from 'classnames';
@@ -103,6 +101,8 @@ export default class Header extends React.Component {
   }
 
   render() {
+    const newsPageActive = typeof window !== 'undefined' ? window.location.pathname === '/news' : false;
+
     return (
       <div>
         {this.renderRetireDialog()}
@@ -115,9 +115,7 @@ export default class Header extends React.Component {
             </h1>
               <div className="header-links">
                 <Localized id="headerLinkNews">
-                  <a className={classnames("news-link", {
-                     active: window.location.pathname === '/news'
-                  })} href="/news">News Feed</a>
+                  <a className={classnames('news-link', { active: newsPageActive })} href="/news">News Feed</a>
                 </Localized>
                 <Localized id="headerLinkBlog">
                   <a className="blog-link" onClick={this.blogLinkClick.bind(this)} href="https://medium.com/firefox-test-pilot" target="_blank" rel="noopener noreferrer">Blog</a>

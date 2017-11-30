@@ -84,6 +84,9 @@ emailOptInDialogErrorTitle = Oh no!
 latestUpdatesTitle = Latest updates
 showMoreNewsTitle = Show Past News
 
+[[featuredExperiment]]
+moreDetail = More Detail
+
 // A listing of all Test Pilot experiments.
 [[experimentsList]]
 experimentListEnabledTab = Enabled
@@ -92,7 +95,8 @@ experimentListJustUpdatedTab = Just Updated
 experimentListEndingTomorrow = Ending Tomorrow
 experimentListEndingSoon = Ending Soon
 experimentCondensedHeader = Welcome to Test Pilot!
-experimentListHeaderPostFeatured = Or try other experiments
+experimentListHeader = Pick your experiments
+experimentListHeaderWithFeatured = Or try other experiments
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[experimentCard]]

@@ -14,7 +14,7 @@ import { getInstalled, isExperimentEnabled, isAfterCompletedDate, isInstalledLoa
 import { setState as setBrowserState } from '../../actions/browser';
 import { getExperimentBySlug } from '../../reducers/experiments';
 import { getChosenTest } from '../../reducers/varianttests';
-import experimentSelector from '../../selectors/experiment';
+import experimentSelector, { featuredExperimentsSelectorWithL10n } from '../../selectors/experiment';
 import { uninstallAddon, installAddon, enableExperiment, disableExperiment } from '../../lib/InstallManager';
 import { setLocalizations, setNegotiatedLanguages } from '../../actions/localizations';
 import { localizationsSelector, negotiatedLanguagesSelector } from '../../selectors/localizations';
@@ -219,6 +219,7 @@ const mapStateToProps = state => ({
   addon: state.addon,
   clientUUID: state.addon.clientUUID,
   experiments: experimentSelector(state),
+  featuredExperiments: featuredExperimentsSelectorWithL10n(state),
   freshNewsUpdates: makeFreshNewsUpdatesSelector(Date.now())(state),
   majorNewsUpdates: makeNewsUpdatesForDialogSelector(
     cookies.get('updates-last-viewed-date'),
