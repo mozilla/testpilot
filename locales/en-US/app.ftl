@@ -95,7 +95,7 @@ experimentListJustUpdatedTab = Just Updated
 experimentListEndingTomorrow = Ending Tomorrow
 experimentListEndingSoon = Ending Soon
 experimentCondensedHeader = Welcome to Test Pilot!
-experimentListHeader = Pick your experiments
+experimentListHeader = Pick your experiments!
 experimentListHeaderWithFeatured = Or try other experiments
 
 // An individual experiment in the listing of all Test Pilot experiments.

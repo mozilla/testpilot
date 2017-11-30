@@ -1,3 +1,5 @@
+// @flow
+
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 import classnames from 'classnames';
