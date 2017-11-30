@@ -24,22 +24,10 @@ export default class HomePageNoAddon extends React.Component {
   props: HomePageNoAddonProps
 
   render() {
-    const { experiments, isAfterCompletedDate } = this.props;
+    const { experiments, isAfterCompletedDate, featuredExperiments, isExperimentEnabled } = this.props;
     const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
     const pastExperiments = experiments.filter(isAfterCompletedDate);
-
-    const featuredExperiment = {
-      title: 'Voice Fill',
-      description: 'This is a different experiment',
-      subtitle: 'A subtitle',
-      slug: 'voice-fill',
-      enabled: true,
-      survey_url: 'https://example.com',
-      created: '2010-06-21T12:12:12Z',
-      modified: '2010-06-21T12:12:12Z',
-      platforms: ['addon'],
-      video_url: 'https://www.youtube.com/embed/n6wiRyKkmKc'
-    };
+    const featuredExperiment = featuredExperiments.length ? featuredExperiments[0] : false;
 
     if (experiments.length === 0) { return null; }
 
@@ -59,13 +47,27 @@ export default class HomePageNoAddon extends React.Component {
           </Localized>
         </div>
       </LayoutWrapper>
+
+      {!featuredExperiment && <MainInstallButton {...this.props}
+                                                 eventCategory="HomePage Interactions"
+                                                 eventLabel="Install the Add-on" />}
     </Banner>;
 
-    const featuredSection = (<Banner background={true}>
+    const featuredSection = featuredExperiment ? (<Banner background={true}>
       <LayoutWrapper flexModifier="column-center">
-        <FeaturedExperiment {...this.props} experiment={featuredExperiment} eventCategory="HomePage Interactions" />
+        <FeaturedExperiment {...this.props}
+                            experiment={featuredExperiment}
+                            eventCategory="HomePage Interactions"
+                            enabled={isExperimentEnabled(featuredExperiment)} />
       </LayoutWrapper>
-    </Banner>);
+    </Banner>) : null;
+
+    const headerMessage = !featuredExperiment ? (<Localized id="experimentListHeader">
+      <h1 className="emphasis card-list-heading">Pick your experiments</h1>
+    </Localized>) :
+    (<Localized id="experimentListHeaderWithFeatured">
+      <h1 className="emphasis card-list-heading">Or try other experiments</h1>
+    </Localized>);
 
     return (
       <section id="landing-page">
@@ -74,10 +76,7 @@ export default class HomePageNoAddon extends React.Component {
           { featuredSection }
           <Banner background={true}>
             <LayoutWrapper flexModifier="column-center">
-              <Localized id="experimentListHeader">
-                <h2 className="banner__subtitle centered">Or try other experiments</h2>
-              </Localized>
-
+              {headerMessage}
               <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
               <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
             </LayoutWrapper>

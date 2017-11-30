@@ -16,14 +16,14 @@ const mockRequiredProps = {
 };
 
 describe('app/containers/NewsFeedPage', () => {
-  // it('should ping GA on component mount', () => {
-  //   shallow(<NewsFeedPage {...mockRequiredProps} />);
-  //   expect(mockRequiredProps.sendToGA.lastCall.args).to.deep.equal(['event', {
-  //     eventCategory: 'HomePage Interactions',
-  //     eventAction: 'Upgrade Warning',
-  //     eventLabel: 'upgrade notice shown'
-  //   }]);
-  // });
+  it('should ping GA on component mount', () => {
+    shallow(<NewsFeedPage {...mockRequiredProps} />);
+    expect(mockRequiredProps.sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: 'HomePage Interactions',
+      eventAction: 'Upgrade Warning',
+      eventLabel: 'upgrade notice shown'
+    }]);
+  });
 
   it('should show a render updates if updates are available', () => {
     const wrapper = shallow(<NewsFeedPage {...mockRequiredProps} isMinFirefox={false} />);

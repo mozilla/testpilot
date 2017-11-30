@@ -120,32 +120,30 @@ export default class HomePageWithAddon extends React.Component {
   }
 
   render() {
-    const { sendToGA, experiments, isAfterCompletedDate, staleNewsUpdates,
-            freshNewsUpdates, majorNewsUpdates } = this.props;
-    if (experiments.length === 0) { return null; }
+    const { sendToGA, experiments, isAfterCompletedDate, staleNewsUpdates, freshNewsUpdates,
+            majorNewsUpdates, featuredExperiments, isExperimentEnabled } = this.props;
 
-    const featuredExperiment = {
-      title: 'Voice Fill',
-      description: 'This is a different experiment',
-      subtitle: 'A subtitle',
-      slug: 'voice-fill',
-      enabled: true,
-      survey_url: 'https://example.com',
-      created: '2010-06-21T12:12:12Z',
-      modified: '2010-06-21T12:12:12Z',
-      platforms: ['addon'],
-      video_url: 'https://www.youtube.com/embed/n6wiRyKkmKc',
-    };
+    if (experiments.length === 0) { return null; }
 
     const { showEmailDialog, showNewsUpdateDialog } = this.state;
     const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
     const pastExperiments = experiments.filter(isAfterCompletedDate);
+    const featuredExperiment = featuredExperiments.length ? featuredExperiments[0] : false;
 
     const featuredSection = featuredExperiment ? (<Banner background={true}>
       <LayoutWrapper flexModifier="column-center">
-        <FeaturedExperiment {...this.props} experiment={featuredExperiment} eventCategory="HomePage Interactions" />
+        <FeaturedExperiment {...this.props} experiment={featuredExperiment}
+                            eventCategory="HomePage Interactions"
+                            enabled={isExperimentEnabled(featuredExperiment)} />
       </LayoutWrapper>
     </Banner>) : null;
+
+    const headerMessage = !featuredExperiment ? (<Localized id="experimentListHeader">
+      <h1 className="emphasis card-list-heading">Pick your experiments</h1>
+    </Localized>) :
+    (<Localized id="experimentListHeaderWithFeatured">
+      <h1 className="emphasis card-list-heading">Or try other experiments</h1>
+     </Localized>);
 
     return (
       <View {...this.props}>
@@ -168,9 +166,7 @@ export default class HomePageWithAddon extends React.Component {
         </LayoutWrapper>
         <Banner>
         <LayoutWrapper>
-          <Localized id="experimentListHeader">
-            <h1 className="emphasis card-list-heading">Or try other experiments</h1>
-          </Localized>
+          {headerMessage}
           <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
           <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
           </LayoutWrapper>
