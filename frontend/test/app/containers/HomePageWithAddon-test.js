@@ -14,6 +14,7 @@ describe('app/containers/HomePageWithAddon', () => {
   let props, experiments, subject;
   beforeEach(function() {
     props = {
+      featuredExperiments: [],
       experiments: [ { title: 'foo' }, { title: 'bar' } ],
       hasAddon: true,
       uninstallAddon: sinon.spy(),
@@ -73,6 +74,15 @@ describe('app/containers/HomePageWithAddon', () => {
   it('should not show anything if no experiments are available', () => {
     subject.setProps({ experiments: [] });
     expect(subject.find('View')).to.have.property('length', 0);
+  });
+
+  it('should render featured experiment section if there is a featured experiment', () => {
+    expect(subject.find('FeaturedExperiment')).to.have.property('length', 0);
+
+    const experiments = [ { title: 'foo' }, { title: 'bar' } ];
+    const featuredExperiments = [ { title: 'bar' } ];
+    subject.setProps({ experiments, featuredExperiments });
+    expect(subject.find('FeaturedExperiment')).to.have.property('length', 1);
   });
 
   it('should show an email dialog if the URL contains utm_campaign=restart-required',  () => {

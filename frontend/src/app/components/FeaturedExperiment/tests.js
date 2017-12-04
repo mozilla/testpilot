@@ -2,7 +2,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import moment from 'moment';
 
 import { findLocalizedById } from '../../../../test/app/util';
@@ -37,7 +37,7 @@ describe('app/components/FeaturedExperiment', () => {
       sendToGA: sinon.spy(),
       getExperimentLastSeen: sinon.spy()
     };
-    subject = shallow(<FeaturedExperiment {...props} />);
+    subject = mount(<FeaturedExperiment {...props} />);
   });
 
   it('should render expected content', () => {

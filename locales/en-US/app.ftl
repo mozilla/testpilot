@@ -43,6 +43,7 @@ landingInstalledButton = Choose your features
 [[oneClickInstall]]
 oneClickInstallMinorCta = Install Test Pilot &amp;
 oneClickInstallMajorCta = Enable {$title}
+enabledExperimentCta =  Enable {$title}
 
 // Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[landingFirefox]]

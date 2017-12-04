@@ -22,6 +22,7 @@ import NewsUpdatesDialog from '../components/NewsUpdatesDialog';
 type HomePageWithAddonProps = {
   hasAddon: any,
   experiments: Array<Object>,
+  featuredExperiments: Array<Object>,
   majorNewsUpdates: Array<Object>,
   freshNewsUpdates: Array<Object>,
   staleNewsUpdates: Array<Object>,

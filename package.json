@@ -37,6 +37,7 @@
     "redux-promise": "0.5.3",
     "reselect": "3.0.1",
     "seedrandom": "2.4.3",
+    "stable": "0.1.6",
     "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {

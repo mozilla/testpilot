@@ -19,7 +19,7 @@ import LayoutWrapper from '../../components/LayoutWrapper';
 import ExperimentPreFeedbackDialog from './ExperimentPreFeedbackDialog';
 import ExperimentDisableDialog from './ExperimentDisableDialog';
 import ExperimentEolDialog from './ExperimentEolDialog';
-import ExperimentTourDialog from './ExperimentTourDialog';
+import ExperimentTourDialog from '../../components/ExperimentTourDialog';
 import TestpilotPromo from './TestpilotPromo';
 import DetailsOverview from './DetailsOverview';
 import DetailsDescription from './DetailsDescription';

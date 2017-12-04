@@ -22,8 +22,8 @@ describe('app/selectors/experiment', () => {
 
     const _exp = [
       { name: 'foo', order: 1 },
-      { name: 'baz', order: 3, launch_date: moment.utc() + 99999, is_featured: true },
-      { name: 'bat', order: 2, launch_date: moment.utc() - 99999 },
+      { name: 'baz', order: 3, launch_date: moment.utc() + 99999 },
+      { name: 'bat', order: 2, launch_date: moment.utc() - 99999, is_featured: true },
       { name: 'xyzzy', order: 4, dev: true }
     ];
 
