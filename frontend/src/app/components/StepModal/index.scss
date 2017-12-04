@@ -1,13 +1,17 @@
 @import '~photon-colors/colors.scss';
 @import '../../../styles/_utils';
 
-.modal {
+.step-modal {
+  width: unset;
+  min-height: 400px;
+
   .step-text {
     background: $white;
     display: block;
+    margin: 0 auto;
+    max-width: 550px;
     padding: 0 0 ($grid-unit * .25);
     text-align: center;
-    width: 100%;
 
     p {
       margin: 0;

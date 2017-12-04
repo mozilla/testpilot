@@ -12,19 +12,6 @@
   margin-bottom: $grid-unit * 1.5;
   position: relative;
 
-  &::after {
-    border-left: $grid-unit * .75 solid transparent;
-    border-right: $grid-unit * .75 solid transparent;
-    border-top: $grid-unit * .75 solid $white;
-    bottom: -14px;
-    content: '';
-    height: 0;
-    left: 50%;
-    margin-left: -13px;
-    position: absolute;
-    width: 0;
-  }
-
   p {
     font-size: $font-unit * 1.6;
     line-height: $font-unit * 2.4;
@@ -57,6 +44,7 @@
   color: $black;
   position: relative;
   width: $grid-unit * 25;
+  border-radius: $large-border-radius;
 
   :not(.content-wrapper) & {
     @include respond-to('small') {
@@ -93,7 +81,6 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 16px 16px;
-    border-radius: $small-border-radius;
     cursor: pointer;
     height: 24px;
     position: absolute;

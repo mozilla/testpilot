@@ -1,4 +1,5 @@
 // @flow
+
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
@@ -6,13 +7,14 @@ import Copter from '../../components/Copter';
 import LayoutWrapper from '../../components/LayoutWrapper';
 import View from '../../components/View';
 
+import './index.scss';
+
 type SharePageProps = {
   hasAddon: any,
   uninstallAddon: Function,
   sendToGA: Function,
   openWindow: Function
 }
-
 
 export default class SharePage extends React.Component {
   props: SharePageProps
@@ -42,7 +44,7 @@ export default class SharePage extends React.Component {
                 <div className="share-url">
                   <input type="text" readOnly value="https://mzl.la/2dps7H1" />
                   <Localized id="shareCopy">
-                    <button onClick={this.handleClick('copy')} data-clipboard-target=".share-url input">Copy</button>
+                    <button className="button default" onClick={this.handleClick('copy')} data-clipboard-target=".share-url input">Copy</button>
                   </Localized>
                 </div>
               </fieldset>
