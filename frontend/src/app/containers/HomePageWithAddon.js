@@ -45,20 +45,21 @@ export default class HomePageWithAddon extends React.Component {
 
   constructor(props: HomePageWithAddonProps) {
     super(props);
-    const { getCookie, removeCookie, getWindowLocation } = this.props;
-
-    let showEmailDialog = false;
-    if (getCookie('first-run') ||
-      typeof window !== 'undefined' &&
-      getWindowLocation().search.indexOf('utm_campaign=restart-required') > -1) {
-      removeCookie('first-run');
-      showEmailDialog = true;
-    }
 
     this.state = {
-      showEmailDialog,
+      showEmailDialog: false,
       showNewsUpdateDialog: true
     };
+  }
+
+  componentDidMount() {
+    const { getCookie, removeCookie, getWindowLocation } = this.props;
+
+    if (getCookie('first-run') ||
+      getWindowLocation().search.indexOf('utm_campaign=restart-required') > -1) {
+      removeCookie('first-run');
+      this.setState({showEmailDialog: true});
+    }
   }
 
   onNotInterestedSurveyClick() {
