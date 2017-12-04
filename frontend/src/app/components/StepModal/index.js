@@ -77,10 +77,11 @@ export default class StepModal extends React.Component {
   render() {
     const { currentStep } = this.state;
     const steps = this.props.steps || [];
+    const { wrapperClass } = this.props;
 
     const stepEl = steps.map((step, idx) => (idx === currentStep) && (this.props.renderStep(steps, currentStep)));
     return (
-        <Modal {...this.props}
+        <Modal {...this.props} wrapperClass={wrapperClass ? `${wrapperClass} step-modal` : 'step-modal'}
                onCancel={this.cancel.bind(this)}
                onComplete={this.complete.bind(this)}
                headerTitle={this.props.renderHeaderTitle(steps, currentStep)}>
