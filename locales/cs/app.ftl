@@ -160,7 +160,7 @@ experimentPromoSubheader = Vytváříme funkce pro Firefox nové generace. Nains
 // The experiment detail page.
 [[ experimentPage ]]
 
-isEnabledStatusMessage = { $title } je zapnut.
+isEnabledStatusMessage = Experiment { $title } je zapnut.
 installErrorMessage = Jejda. { $title } nelze zapnout. Zkuste to znovu později.
 otherExperiments = Vyzkoušejte také tyto experimenty
 giveFeedback = Poskytnout zpětnou vazbu
