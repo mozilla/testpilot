@@ -364,16 +364,3 @@ storiesOf('ExperimentPage/DetailsDescription', module)
       }}
     />
   );
-
-storiesOf('ExperimentPage/ExperimentTourDialog', module)
-  .add('base state', () =>
-       <ExperimentTourDialog
-       {...{
-         experiment,
-         isExperimentEnabled: () => true,
-         onCancel: () => {},
-         onComplete: () => {},
-         sendToGA: () => {}
-       }}
-       />
-      );

@@ -31,10 +31,14 @@ export default class MainInstallButton extends React.Component {
     if (e.button !== 0) {
       return;
     }
-    const { requireRestart, sendToGA, eventCategory, eventLabel, hasAddon, installAddon, installCallback, navigateTo } = this.props;
+    const { requireRestart, sendToGA, eventCategory, eventLabel,
+            installAddon, installCallback, navigateTo, hasAddon,
+            isExperimentEnabled, enableExperiment, experiment } = this.props;
 
     if (hasAddon) {
-      navigateTo('/experiments');
+      if (!isExperimentEnabled(experiment)) {
+        this.setState({ isInstalling: true }, () => enableExperiment(experiment));
+      } else navigateTo('/experiments');
       return;
     }
     if (installCallback) {
@@ -48,7 +52,8 @@ export default class MainInstallButton extends React.Component {
 
   render() {
     const { isFirefox, isMinFirefox, isMobile, hasAddon, experimentTitle, experimentLegalLink } = this.props;
-    const isInstalling = this.state.isInstalling && !hasAddon;
+    const { isInstalling } = this.state;
+
     const terms = <Localized id="landingLegalNoticeTermsOfUse">
       <a href="/terms"/>
     </Localized>;
@@ -72,6 +77,16 @@ export default class MainInstallButton extends React.Component {
     );
   }
 
+  renderEnableExperimentButton(title: string) {
+    return (
+        <div className="main-install__enable">
+          <LocalizedHtml id="enabledExperimentCta" $title={title}>
+            <span className="main-install__minor-cta">Enable {title}</span>
+          </LocalizedHtml>
+        </div>
+    );
+  }
+
   renderOneClickInstallButton(title: string) {
     return (
       <div className="main-install__one-click">
@@ -86,10 +101,13 @@ export default class MainInstallButton extends React.Component {
   }
 
   renderInstallButton(isInstalling: boolean, hasAddon: any) {
-    const { experimentTitle } = this.props;
+    const { experimentTitle, isExperimentEnabled, experiment } = this.props;
     let installButton = null;
+
     if (experimentTitle) {
-      installButton = this.renderOneClickInstallButton(experimentTitle);
+      if (hasAddon && !isExperimentEnabled(experiment)) {
+        installButton = this.renderEnableExperimentButton(experimentTitle);
+      } else installButton = this.renderOneClickInstallButton(experimentTitle);
     } else {
       installButton = <Localized id="landingInstallButton">
         <span className="default-btn-msg">
@@ -97,14 +115,15 @@ export default class MainInstallButton extends React.Component {
         </span>
       </Localized>;
     }
+
     const makeInstallButton = (extraClass = '') => {
       return <button onClick={e => this.install(e)}
         className={classnames(`button primary main-install__button ${extraClass}`, { 'state-change': isInstalling })}>
-        {hasAddon && <Localized id="landingInstalledButton">
+        {hasAddon && !installButton && <Localized id="landingInstalledButton">
           <span className="progress-btn-msg">Installed</span>
         </Localized>}
-        {!hasAddon && !isInstalling && installButton}
-        {!hasAddon && isInstalling &&
+        {!isInstalling && installButton}
+        {isInstalling &&
           <Localized id="landingInstallingButton">
             <span className="progress-btn-msg">Installing...</span>
           </Localized>}

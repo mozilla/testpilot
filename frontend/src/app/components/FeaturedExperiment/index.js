@@ -7,6 +7,7 @@ import React from 'react';
 import { buildSurveyURL, experimentL10nId } from '../../lib/utils';
 import MainInstallButton from '../MainInstallButton';
 import MeasurementSection from '../Measurements';
+import ExperimentTourDialog from '../ExperimentTourDialog';
 import Modal from '../Modal';
 
 import './index.scss';
@@ -35,7 +36,9 @@ type FeaturedExperimentProps = {
 }
 
 type FeaturedExperimentState = {
-  showLegalDialog: boolean
+  showLegalDialog: boolean,
+  shouldShowTourDialog: boolean,
+  showTourDialog: boolean
 }
 export default class FeaturedExperiment extends React.Component {
   props: FeaturedExperimentProps
@@ -44,8 +47,23 @@ export default class FeaturedExperiment extends React.Component {
   constructor(props: HomePageWithAddonProps) {
     super(props);
     this.state = {
-      showLegalDialog: false
+      showLegalDialog: false,
+      shouldShowTourDialog: false,
+      showTourDialog: false,
     };
+  }
+
+  componentWillReceiveProps(nextProps: FeaturedExperimentProps, prevProps: FeaturedExperimentProps) {
+    const { shouldShowTourDialog } = this.state;
+
+    // On enable state change, stop installation indicators & show tour dialog if needed.
+    if (nextProps.enabled !== prevProps.enabled) {
+      const showTourDialog = shouldShowTourDialog && nextProps.enabled;
+      this.setState({
+        shouldShowTourDialog: false,
+        showTourDialog
+      });
+    }
   }
 
   l10nId(pieces: string) {
@@ -110,6 +128,11 @@ export default class FeaturedExperiment extends React.Component {
                               l10nId={this.l10nId.bind(this)}
                               highlightMeasurementPanel={false}></MeasurementSection>
         </Modal>}
+
+        {showTourDialog && <ExperimentTourDialog {...this.props}
+                             onCancel={() => this.setState({ showTourDialog: false })}
+                             onComplete={() => this.setState({ showTourDialog: false })}
+        />}
       </div>
     );
   }
@@ -170,6 +193,7 @@ export default class FeaturedExperiment extends React.Component {
 
     let Buttons = (<MainInstallButton {...this.props}
                                       experimentTitle={title}
+                                      experiment={experiment}
                                       experimentLegalLink={experimentLegalLink}
                                       eventCategory="HomePage Interactions"
                                       eventLabel="Install the Add-on"/>);
@@ -192,7 +216,7 @@ export default class FeaturedExperiment extends React.Component {
           {experimentLegalLink}
         </div>
       );
-    }
+    } else this.setState({shouldShowTourDialog: true});
 
     return Buttons;
   }
