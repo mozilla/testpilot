@@ -2,7 +2,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import SharePage from './index';
 
@@ -13,12 +13,9 @@ describe('app/containers/SharePage', () => {
   let props, subject;
   beforeEach(() => {
     props = {
-      hasAddon: false,
-      uninstallAddon: sinon.spy(),
-      sendToGA: sinon.spy(),
-      openWindow: sinon.spy()
+      sendToGA: sinon.spy()
     };
-    subject = shallow(<SharePage {...props} />);
+    subject = mount(<SharePage {...props} />);
   });
 
   it('should render expected content', () => {
