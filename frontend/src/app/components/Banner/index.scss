@@ -19,10 +19,11 @@
       line-height: $font-unit * 2.2;
     }
 
-    font-size: $font-unit * 2;
-    line-height: $font-unit * 2.5;
+    font-size: $font-unit * 1.833;
+    line-height: $font-unit * 2.583;
     margin: 0 0 $grid-unit * .5;
-    max-width: $grid-unit * 25;
+    max-width: $grid-unit * 20;
+    font-weight: 200;
   }
 
   .banner__title {
@@ -142,5 +143,11 @@
 
     font-style: oblique;
     margin: 0;
+  }
+}
+
+.intro-text {
+  @include respond-to('big') {
+    margin-left: 67px;
   }
 }

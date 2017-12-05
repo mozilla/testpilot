@@ -109,12 +109,6 @@
   &:hover {
     box-shadow: 0 1px 0 0 $transparent-white-2, 0 0 0 5px $transparent-white-2;
     transition: box-shadow 150ms;
-
-    h3,
-    h4 {
-      color: $blue-40;
-      transition: color 150ms;
-    }
   }
 }
 
@@ -131,12 +125,12 @@
     display: inline-block;
     font-weight: 600;
     font-size: 11px;
-    height: $grid-unit * 1.5;
+    height: $grid-unit * 1.2;
     top: -5px;
     left: -5px;
-    line-height: $grid-unit * 1.5;
+    line-height: $grid-unit * 1.2;
     outline: none;
-    padding: 0 20px;
+    padding: 0 7px;
     position: absolute;
     text-align: center;
     text-decoration: none;
@@ -156,7 +150,10 @@
     display: inline-block;
     height: 14px;
     width: 14px;
-    margin-right: 4px;
+    margin-right: 5px;
+    background-size: contain;
+    background-position: center 2px;
+    background-repeat: no-repeat;
   }
 
   .just-launched-tab {
