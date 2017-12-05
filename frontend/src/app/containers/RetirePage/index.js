@@ -8,6 +8,7 @@ import LayoutWrapper from '../../components/LayoutWrapper';
 import LocalizedHtml from '../../components/LocalizedHtml';
 import View from '../../components/View';
 
+import './index.scss';
 
 type RetirePageProps = {
   setHasAddon: Function,
