@@ -1,6 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+import ExperimentTourDialog from './index';
+
 const experiment = {
   slug: 'voice-fill',
   title: 'Sample experiment',
