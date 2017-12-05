@@ -43,20 +43,24 @@
 
   &.primary {
     background: $green-60;
+    border: 2px solid $green-70;
     color: $white;
 
     &:not([disabled='true']) {
       &:hover,
       &:focus {
-        background: $green-60;
+        background: $green-70;
+        border: 2px solid $green-80;
       }
 
       &:focus:hover {
-        background: $green-60;
+        background: $green-70;
+        border: 2px solid $green-80;
       }
 
       &:active {
-        background: $green-70;
+        background: $green-80;
+        border: 2px solid $green-90;
       }
 
       &.state-change {
