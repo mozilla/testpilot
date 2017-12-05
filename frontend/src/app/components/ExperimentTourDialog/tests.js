@@ -4,6 +4,10 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import { mount } from 'enzyme';
 
+import { findLocalizedById } from '../../../../test/app/util';
+
+import ExperimentTourDialog from './index';
+
 describe('app/components/ExperimentTourDialog', () => {
   let props, mockClickEvent, subject, mockEscapeKeyDownEvent;
   beforeEach(() => {

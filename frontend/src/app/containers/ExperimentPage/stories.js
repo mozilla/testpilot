@@ -11,8 +11,6 @@ import DetailsOverview from './DetailsOverview';
 import DetailsDescription, { EolBlock } from './DetailsDescription';
 import DetailsHeader from './DetailsHeader';
 
-import ExperimentTourDialog from './ExperimentTourDialog';
-
 const layoutDecorator = story =>
   <div className="blue" style={{ padding: 10 }} onClick={action('click')}>
     <div className="stars" />

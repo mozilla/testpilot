@@ -15,7 +15,6 @@ import TestpilotPromo from './TestpilotPromo';
 import ExperimentPreFeedbackDialog from './ExperimentPreFeedbackDialog';
 import ExperimentDisableDialog from './ExperimentDisableDialog';
 import ExperimentEolDialog from './ExperimentEolDialog';
-import ExperimentTourDialog from '../../components/ExperimentTourDialog';
 
 import { PRIVACY_SCROLL_OFFSET } from './DetailsHeader';
 import DetailsDescription, { LocaleWarning } from './DetailsDescription';
