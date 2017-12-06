@@ -1,8 +1,16 @@
+@import '../../../styles/_utils';
+
 .loading-pill {
   border: 1px solid $transparent-white-3;
   border-radius: $small-border-radius;
-  padding: $grid-unit * .5;
+  padding: $grid-unit;
   position: relative;
+  max-width: $grid-unit * 15;
+
+  h1 {
+    font-weight: 300;
+    font-style: oblique;
+  }
 
   > * {
     margin: 0;
