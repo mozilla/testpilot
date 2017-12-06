@@ -1,6 +1,6 @@
 .button {
   border: 1px solid $transparent-black-34;
-  border-radius: 3px;
+  border-radius: 2px;
   cursor: pointer;
   display: inline-block;
   font-family: 'Fira Sans', sans-serif;
@@ -86,18 +86,19 @@
   }
 
   &.default {
-    background: $blue-40;
+    background: $blue-60;
+    border-color: $blue-60;
     color: $white;
 
     &:hover,
     &:focus {
-      background: $blue-50;
-      border-color: $blue-60;
+      background: $blue-70;
+      border-color: $blue-70;
     }
 
     &:active {
-      background: $blue-60;
-      border-color: $blue-70;
+      background: $blue-80;
+      border-color: $blue-80;
     }
   }
 
@@ -126,10 +127,11 @@
   }
 
   &.large {
-    font-size: 20px;
-    height: 52px;
-    line-height: 52px;
-    min-width: 300px;
+    font-size: $font-unit * 1.25;
+    line-height: 48px;
+    height: 48px;
+    max-width: 360px;
     padding: 0 10px;
+    border-radius: $medium-border-radius;
   }
 }

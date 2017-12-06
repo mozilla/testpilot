@@ -64,18 +64,20 @@
       background: transparent;
       border-width: 0;
       border: 1px solid #C1C1C1;
-      border-radius: $small-border-radius;
+      border-radius: $medium-border-radius;
       flex: 1 1 80%;
-      font-size: $font-unit * 1.6;
-      height: 44px;
-      line-height: $font-unit * 1.6;
+      font-size: $font-unit * 1.25;
+      height: 48px;
+      line-height: $font-unit * 1.75;
       padding: $grid-unit * .6;
+      color: $grey-90;
     }
 
     .button {
       border: none;
       font-size: 15px;
-      height: 44px;
+      border-radius: $medium-border-radius;
+      height: 48px;
       margin-left: 10px;
       padding: 2px 25px;
     }

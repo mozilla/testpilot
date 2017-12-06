@@ -27,7 +27,7 @@ export default class RetireConfirmationDialog extends React.Component {
       <div className="modal-container" tabIndex="0"
            ref={modalContainer => { this.modalContainer = modalContainer; }}
            onKeyDown={e => this.handleKeyDown(e)}>
-        <div id="retire-dialog-modal" className="modal feedback-modal modal-bounce-in">
+        <div id="retire-dialog-modal" className="modal feedback-modal modal-bounce-in uninstall-modal">
           <header className="modal-header-wrapper warning-modal">
             <Localized id="retireDialogTitle">
               <h3 className="title modal-header">Uninstall Test Pilot?</h3>
@@ -37,11 +37,12 @@ export default class RetireConfirmationDialog extends React.Component {
           <form>
 
             <div className="modal-content">
+              <div className="retireIcon"></div>
               <Localized id="retireMessageUpdate">
-                <p className="centered">As you wish. This will uninstall Test Pilot. You can disable individual experiments from the Firefox Add-ons Manager.</p>
+                <p>As you wish. This will uninstall Test Pilot. You can disable individual experiments from the Firefox Add-ons Manager.</p>
               </Localized>
               <LocalizedHtml id="retireEmailMessage">
-                <p className="centered small">To opt out of email updates, simply click the <em>unsubscribe</em> link on any Test Pilot email.</p>
+                <p>To opt out of email updates, simply click the <em>unsubscribe</em> link on any Test Pilot email.</p>
               </LocalizedHtml>
             </div>
             <div className="modal-actions">

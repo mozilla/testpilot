@@ -1,8 +1,8 @@
-@import '../../../styles/_hidpi-mixin';
-
 .envelope {
-  @include hidpi-background-image('../../../images/envelope', 150px 130px);
-  height: 130px;
-  margin: auto;
-  width: 150px;
+  background-image: url('../../../images/envelope.svg');
+  background-repeat: no-repeat;  
+  background-size: contain;
+  height: 80px;
+  margin: 30px auto 20px;
+  width: 74px;
 }
