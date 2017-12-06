@@ -4,6 +4,7 @@
   cursor: pointer;
   display: inline-block;
   font-family: 'Fira Sans', sans-serif;
+  font-size: $font-unit * 1.25;
   font-weight: $weight-normal;
   height: $grid-unit * 2;
   line-height: $grid-unit * 2;
@@ -70,30 +71,32 @@
   }
 
   &.secondary {
-    background: $white;
-    color: $grey-70;
-    font-size: 14px;
-    font-weight: $weight-semi-bold;
+    background: $transparent-grey-10;
+    color: $grey-90;
+    font-size: 15px;
+    border: none;
 
     &:hover,
     &:focus {
-      background: $grey-20;
+      background: $transparent-grey-20;
+      border: none;
     }
 
     &:active {
-      background: $grey-30;
+      background: $transparent-grey-30;
+      border-color: $transparent-grey-30;
     }
   }
 
   &.default {
     background: $blue-60;
-    border-color: $blue-60;
+    border: none;
     color: $white;
 
     &:hover,
     &:focus {
       background: $blue-70;
-      border-color: $blue-70;
+      border: none;
     }
 
     &:active {
