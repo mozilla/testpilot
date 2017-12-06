@@ -32,12 +32,15 @@ export default class MainInstallButton extends React.Component {
       return;
     }
     const { requireRestart, sendToGA, eventCategory, eventLabel,
-            installAddon, installCallback, navigateTo, hasAddon,
+            installAddon, installCallback, navigateTo, hasAddon, postInstallCallback,
             isExperimentEnabled, enableExperiment, experiment } = this.props;
 
     if (hasAddon) {
       if (!isExperimentEnabled(experiment)) {
-        this.setState({ isInstalling: true }, () => enableExperiment(experiment));
+        this.setState({ isInstalling: true }, () => enableExperiment(experiment)
+                      .then(() => {
+                        if (postInstallCallback) postInstallCallback();
+                      }));
       } else navigateTo('/experiments');
       return;
     }
@@ -47,7 +50,10 @@ export default class MainInstallButton extends React.Component {
       return;
     }
     this.setState({ isInstalling: true });
-    installAddon(requireRestart, sendToGA, eventCategory, eventLabel);
+    installAddon(requireRestart, sendToGA, eventCategory, eventLabel)
+      .then(() => {
+        if (postInstallCallback) postInstallCallback();
+      });
   }
 
   render() {

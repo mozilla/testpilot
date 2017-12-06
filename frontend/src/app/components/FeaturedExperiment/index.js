@@ -29,7 +29,6 @@ type FeaturedExperimentProps = {
 }
 
 type FeaturedExperimentState = {
-  shouldShowTourDialog: boolean,
   showTourDialog: boolean
 }
 
@@ -40,28 +39,23 @@ export default class FeaturedExperiment extends React.Component {
   constructor(props: HomePageWithAddonProps) {
     super(props);
     this.state = {
-      shouldShowTourDialog: false,
       showTourDialog: false
     };
   }
 
-  componentWillReceiveProps(nextProps: FeaturedExperimentProps, prevProps: FeaturedExperimentProps) {
-    const { shouldShowTourDialog } = this.state;
-
-    // this.setState({ shouldShowTourDialog: true });
-
-    // On enable state change, stop installation indicators & show tour dialog if needed.
-    if (nextProps.enabled !== prevProps.enabled) {
-      const showTourDialog = shouldShowTourDialog && nextProps.enabled;
-      this.setState({
-        shouldShowTourDialog: false,
-        showTourDialog
-      });
-    }
-  }
-
   l10nId(pieces: string) {
     return experimentL10nId(this.props.experiment, pieces);
+  }
+
+  postInstallCallback() {
+    this.setState({ showTourDialog: true });
+  }
+
+  onTourDialogComplete() {
+    const { navigateTo, experiment } = this.props;
+    const { slug } = experiment;
+    this.setState({ showTourDialog: false });
+    navigateTo(`/experiments/${slug}`);
   }
 
   render() {
@@ -96,7 +90,7 @@ export default class FeaturedExperiment extends React.Component {
           </Localized>}
 
           <div className="featured-actions">
-            <FeaturedButton {...this.props} />
+            <FeaturedButton {...this.props} postInstallCallback={this.postInstallCallback.bind(this)} />
           </div>
         </div>
 
@@ -112,7 +106,7 @@ export default class FeaturedExperiment extends React.Component {
 
         {showTourDialog && <ExperimentTourDialog {...this.props}
                              onCancel={() => this.setState({ showTourDialog: false })}
-                             onComplete={() => this.setState({ showTourDialog: false })}
+                             onComplete={this.onTourDialogComplete.bind(this)}
         />}
       </div>
     );

@@ -70,9 +70,14 @@ export default class FeaturedButton extends React.Component {
     });
   }
 
+  postInstallCallback() {
+    this.setState({ shouldShowTourDialog: true });
+  }
+
   render() {
     const { showLegalDialog } = this.state;
-    const { experiment, installed, clientUUID, hasAddon, enabled } = this.props;
+    const { experiment, installed, clientUUID, hasAddon,
+            enabled, postInstallCallback } = this.props;
     const { slug, survey_url, title } = experiment;
 
     let Buttons;
@@ -107,6 +112,7 @@ export default class FeaturedButton extends React.Component {
       Buttons = (<MainInstallButton {...this.props}
                                     experimentTitle={title}
                                     experiment={experiment}
+                                    postInstallCallback={postInstallCallback}
                                     experimentLegalLink={this.renderLegalLink()}
                                     eventCategory="HomePage Interactions"
                                     eventLabel="Install the Add-on" />);

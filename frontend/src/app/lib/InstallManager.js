@@ -191,7 +191,13 @@ export function enableExperiment(dispatch, experiment, sendToGA) {
     return;
   }
 
-  mam
+  dispatch(
+    updateExperiment(experiment.addon_id, {
+      inProgress: true
+    })
+  );
+
+  return mam
     .getAddonByID(experiment.addon_id)
     .then(
       addon => {
@@ -226,11 +232,6 @@ export function enableExperiment(dispatch, experiment, sendToGA) {
         );
       }
     );
-  dispatch(
-    updateExperiment(experiment.addon_id, {
-      inProgress: true
-    })
-  );
 }
 
 export function disableExperiment(dispatch, experiment) {
