@@ -125,9 +125,6 @@ export default class MainInstallButton extends React.Component {
     const makeInstallButton = (extraClass = '') => {
       return <button onClick={e => this.install(e)}
         className={classnames(`button primary main-install__button ${extraClass}`, { 'state-change': isInstalling })}>
-        {hasAddon && !installButton && <Localized id="landingInstalledButton">
-          <span className="progress-btn-msg">Installed</span>
-        </Localized>}
         {!isInstalling && installButton}
         {isInstalling &&
           <Localized id="landingInstallingButton">

@@ -35,7 +35,8 @@ describe('app/components/FeaturedExperiment', () => {
       eventCategory: 'test category',
       navigateTo: sinon.spy(),
       sendToGA: sinon.spy(),
-      getExperimentLastSeen: sinon.spy()
+      getExperimentLastSeen: sinon.spy(),
+      isExperimentEnabled: sinon.spy()
     };
     subject = mount(<FeaturedExperiment {...props} />);
   });
@@ -51,9 +52,10 @@ describe('app/components/FeaturedExperiment', () => {
   });
 
   it('should change button text based on hasAddon', () => {
-    expect(subject.find('.main-install__minor-cta')).to.be.true;
+    console.error('lalal', subject.find('.main-install__minor-cta'));
+    expect(subject.find('.main-install__minor-cta')).to.have.property('length', 1);
     subject.setProps({ hasAddon: true });
-    expect(subject.find('.experiment-summary')).to.be.false;
+    expect(subject.find('.experiment-summary')).to.have.property('length', 0);
   });
 
   it('should display an "enabled" text if the experiment is enabled', () => {
@@ -65,13 +67,13 @@ describe('app/components/FeaturedExperiment', () => {
   it('should display a feedback button if the experiment is enabled', () => {
     expect(subject.find('.featured-feedback')).to.have.property('length', 0);
 
-    subject.setProps({ enabled: true });
+    subject.setProps({ enabled: true, hasAddon: true });
 
     expect(subject.find('.featured-feedback')).to.have.property('length', 1);
   });
 
   it('should ping GA when feedback is clicked', () => {
-    subject.setProps({ enabled: true });
+    subject.setProps({ enabled: true, hasAddon: true });
     subject.find('.featured-feedback').simulate('click', mockClickEvent);
 
     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
@@ -82,7 +84,6 @@ describe('app/components/FeaturedExperiment', () => {
   });
 
   it('should display "just launched" banner if created date within 2 weeks, never seen, and not enabled', () => {
-    expect(subject.find('.featured-summary').hasClass('just-launched')).to.be.false;
     expect(subject.find('.just-launched-tab')).to.have.property('length', 0);
 
     subject.setProps({
@@ -93,12 +94,10 @@ describe('app/components/FeaturedExperiment', () => {
       }
     });
 
-    expect(subject.find('.featured-summary').hasClass('just-launched')).to.be.true;
     expect(subject.find('.just-launched-tab')).to.have.property('length', 1);
 
     subject.setProps({ enabled: true });
 
-    expect(subject.find('.featured-summary').hasClass('just-launched')).to.be.false;
     expect(subject.find('.just-launched-tab')).to.have.property('length', 0);
 
     subject.setProps({
@@ -106,12 +105,10 @@ describe('app/components/FeaturedExperiment', () => {
     });
 
     expect(props.getExperimentLastSeen.called).to.be.true;
-    expect(subject.find('.featured-summary').hasClass('just-launched')).to.be.false;
     expect(subject.find('.just-launched-tab')).to.have.property('length', 0);
   });
 
   it('should display "just updated" banner if modified date within 2 weeks, since last seen, not enabled, and no just launched', () => {
-    expect(subject.find('.featured-summary').hasClass('just-updated')).to.be.false;
     expect(subject.find('.just-updated-tab')).to.have.property('length', 0);
 
     props = { ...props,
@@ -125,12 +122,10 @@ describe('app/components/FeaturedExperiment', () => {
     subject.setProps(props);
 
     expect(props.getExperimentLastSeen.called).to.be.true;
-    expect(subject.find('.featured-summary').hasClass('just-updated')).to.be.true;
     expect(subject.find('.just-updated-tab')).to.have.property('length', 1);
 
     subject.setProps({ enabled: true });
 
-    expect(subject.find('.featured-summary').hasClass('just-updated')).to.be.false;
     expect(subject.find('.just-updated-tab')).to.have.property('length', 0);
 
     subject.setProps({
@@ -139,17 +134,13 @@ describe('app/components/FeaturedExperiment', () => {
     });
 
     expect(props.getExperimentLastSeen.called).to.be.true;
-    expect(subject.find('.featured-summary').hasClass('just-updated')).to.be.false;
     expect(subject.find('.just-updated-tab')).to.have.property('length', 0);
   });
 
-  it('should have a "More Detail" button if the browser is not supported Firefox', () => {
+  it('should have a "More Detail" button if not enabled', () => {
+    subject.setProps({enabled: true});
     expect(findLocalizedById(subject, 'moreDetail')).to.have.property('length', 0);
-    subject.setProps({
-      experiment: { ...mockExperiment },
-      isFirefox: false,
-      isMinFirefox: false
-    });
+    subject.setProps({enabled: false});
     expect(findLocalizedById(subject, 'moreDetail')).to.have.property('length', 1);
   });
 
@@ -163,7 +154,11 @@ describe('app/components/FeaturedExperiment', () => {
   });
 
   it('should ping GA when manage is clicked', () => {
-    subject.find('.featured-summary').simulate('click', mockClickEvent);
+    subject.setProps({
+      enabled: true,
+      hasAddon: true
+    });
+    subject.find('.manage-button').simulate('click', mockClickEvent);
 
     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
       eventCategory: props.eventCategory,
