@@ -61,6 +61,15 @@ export default class FeaturedButton extends React.Component {
             </Localized>);
   }
 
+  handleManage() {
+    const { experiment, eventCategory } = this.props;
+    this.props.sendToGA('event', {
+      eventCategory,
+      eventAction: 'Open detail page',
+      eventLabel: experiment.title
+    });
+  }
+
   handleFeedback() {
     const { experiment, eventCategory } = this.props;
     this.props.sendToGA('event', {
@@ -88,7 +97,11 @@ export default class FeaturedButton extends React.Component {
         <div>
           <div className="featured-enabled-buttons">
             <Localized id="experimentCardManage">
-              <a href={`/experiments/${slug}`} className="button secondary">Manage</a>
+              <a onClick={() => this.handleManage()}
+                 href={`/experiments/${slug}`}
+                 className="button secondary manage-button">
+                 Manage
+              </a>
             </Localized>
             <Localized id="experimentCardFeedback">
               <a onClick={() => this.handleFeedback()}

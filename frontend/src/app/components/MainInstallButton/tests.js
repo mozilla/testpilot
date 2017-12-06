@@ -19,6 +19,8 @@ describe('app/components/MainInstallButton', () => {
       isMinFirefox: true,
       isMobile: false,
       installAddon: sinon.spy(() => Promise.resolve()),
+      isExperimentEnabled: sinon.spy(),
+      enableExperiment: sinon.spy(() => Promise.resolve()),
       navigateTo: sinon.spy(),
       varianttests: {
         installButtonBorder: 'default'
@@ -57,11 +59,6 @@ describe('app/components/MainInstallButton', () => {
     expect(findLocalizedById(subject, 'landingInstallingButton').length).to.equal(1);
   });
 
-  it('shows installed text when hasAddon is true', () => {
-    subject.setProps({ hasAddon: true });
-    expect(findLocalizedById(subject, 'landingInstalledButton').length).to.equal(1);
-  });
-
   it('calls installAddon on button click', () => {
     subject.find('.main-install__button').simulate('click', { button: 0 });
     expect(props.installAddon.calledOnce).to.equal(true);
@@ -70,12 +67,5 @@ describe('app/components/MainInstallButton', () => {
   it('does not call installAddon on middle button click', () => {
     subject.find('.main-install__button').simulate('click', { button: 1 });
     expect(props.installAddon.called).to.equal(false);
-  });
-
-  it('navigates to the /experiments page on button click when hasAddon is true', () => {
-    subject.setProps({ hasAddon: true });
-    subject.find('.main-install__button').simulate('click', { button: 0 });
-    expect(props.installAddon.called).to.equal(false);
-    expect(props.navigateTo.calledWith('/experiments')).to.equal(true);
   });
 });

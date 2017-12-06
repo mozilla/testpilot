@@ -12,21 +12,28 @@ const mockRequiredProps = {
   isMinFirefox: true,
   sendToGA: sinon.spy(),
   isDevHost: false,
-  isProdHost: true
+  isProdHost: true,
+  initialShowMoreNews: true,
+  hideHeader: true,
+  experiments: [
+    { slug: 'exp0' },
+    { slug: 'exp1' }
+  ],
+  freshNewsUpdates: [
+    { slug: 'foo', experimentSlug: 'exp1' },
+    { slug: 'bar' }
+  ],
+  staleNewsUpdates: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(idx => ({ slug: `stale-${idx}` }))
 };
 
 describe('app/containers/NewsFeedPage', () => {
-  it('should ping GA on component mount', () => {
-    shallow(<NewsFeedPage {...mockRequiredProps} />);
-    expect(mockRequiredProps.sendToGA.lastCall.args).to.deep.equal(['event', {
-      eventCategory: 'HomePage Interactions',
-      eventAction: 'Upgrade Warning',
-      eventLabel: 'upgrade notice shown'
-    }]);
+  it('should render updates if updates are available', () => {
+    const wrapper = shallow(<NewsFeedPage {...mockRequiredProps} />);
+    expect(wrapper.find('UpdateList')).to.have.property('length', 1);
   });
 
-  it('should show a render updates if updates are available', () => {
-    const wrapper = shallow(<NewsFeedPage {...mockRequiredProps} isMinFirefox={false} />);
-    expect(findLocalizedById(wrapper, 'warningUpgradeFirefoxTitle')).to.have.property('length', 1);
+  it('should not show header to updateList', () => {
+    const wrapper = shallow(<NewsFeedPage {...mockRequiredProps} />);
+    expect(findLocalizedById(wrapper, 'latestUpdatesTitle')).to.have.property('length', 0);
   });
 });
