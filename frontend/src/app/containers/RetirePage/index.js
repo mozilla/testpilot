@@ -68,13 +68,14 @@ export default class RetirePage extends React.Component {
             <div className="state-change-inner">&nbsp;</div>
           </div>}
           {uninstalled && <LayoutWrapper flexModifier="column-center">
-            <div id="retire" className="modal centered">
+            <div id="retire" className="modal centered retire-modal">
               <div className="modal-header-wrapper">
                 <Localized id="retirePageHeadline">
                   <h1 className="modal-header">Thanks for flying!</h1>
                 </Localized>
               </div>
               <div className="modal-content">
+                <div className="flyingIcon"></div>
                 <LocalizedHtml id="retirePageMessage">
                   <p>Hope you had fun experimenting with us. <br/> Come back any time.</p>
                 </LocalizedHtml>

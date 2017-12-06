@@ -1,9 +1,10 @@
 .button {
   border: 1px solid $transparent-black-34;
-  border-radius: 3px;
+  border-radius: 2px;
   cursor: pointer;
   display: inline-block;
   font-family: 'Fira Sans', sans-serif;
+  font-size: $font-unit * 1.25;
   font-weight: $weight-normal;
   height: $grid-unit * 2;
   line-height: $grid-unit * 2;
@@ -70,34 +71,37 @@
   }
 
   &.secondary {
-    background: $white;
-    color: $grey-70;
-    font-size: 14px;
-    font-weight: $weight-semi-bold;
+    background: $transparent-grey-10;
+    border: 0;
+    color: $grey-90;
+    font-size: 15px;
 
     &:hover,
     &:focus {
-      background: $grey-20;
+      background: $transparent-grey-20;
+      border: 0;
     }
 
     &:active {
-      background: $grey-30;
+      background: $transparent-grey-30;
+      border-color: $transparent-grey-30;
     }
   }
 
   &.default {
-    background: $blue-40;
+    background: $blue-60;
+    border: 0;
     color: $white;
 
     &:hover,
     &:focus {
-      background: $blue-50;
-      border-color: $blue-60;
+      background: $blue-70;
+      border: 0;
     }
 
     &:active {
-      background: $blue-60;
-      border-color: $blue-70;
+      background: $blue-80;
+      border-color: $blue-80;
     }
   }
 
@@ -126,10 +130,11 @@
   }
 
   &.large {
-    font-size: 20px;
-    height: 52px;
-    line-height: 52px;
-    min-width: 300px;
+    border-radius: $medium-border-radius;
+    font-size: $font-unit * 1.25;
+    height: 48px;
+    line-height: 48px;
+    max-width: 360px;
     padding: 0 10px;
   }
 }

@@ -1,8 +1,8 @@
 @import '~photon-colors/colors.scss';
 @import '../../../styles/_utils';
 
-$email-icon--width: 64px;
-$email-icon--height: 48px;
+$email-icon--width: 74px;
+$email-icon--height: 80px;
 $email-icon--responsive-unit: .66;
 
 
@@ -21,15 +21,25 @@ $email-icon--responsive-unit: .66;
     padding: $grid-unit * .5;
   }
 
-  header,
+  header {
+    width: 45%;
+    @include respond-to ('big') {
+      margin-left: 55px;
+    }
+  }
+
   form {
     width: 45%;
+    max-width: 360px;
+    @include respond-to ('big') {
+      margin-right: 55px;
+    }
   }
 
   header {
     @include flex-container(column, center, flex-start);
 
-    background: url('./img/email.svg') no-repeat left;
+    background: url('./img/envelope.svg') no-repeat left;
     background-size: $email-icon--width $email-icon--height;
     margin-right: 10%;
     min-height: $email-icon--height;

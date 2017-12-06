@@ -12,11 +12,11 @@ export default class NotFoundPage extends React.Component {
       <View centered={true} showNewsletterFooter={false} showFooter={false} showHeader={false}
             {...this.props}>
         <LayoutWrapper flexModifier="column-center">
-          <div id="four-oh-four" className="modal">
+          <div id="four-oh-four" className="modal notFound-modal">
+            <div className="notFoundIcon"></div>
             <Localized id="notFoundHeader">
               <h1 className="title">Four Oh Four!</h1>
             </Localized>
-            <br/>
             <div className="modal-actions">
               <Localized id="home">
                 <a className="button default large" href="/">Home</a>

@@ -1,6 +1,7 @@
 // These are black and white
 $black: #000;
 $white: #fff;
+$grey-90: #0c0c0d;
 
 //These are handy transparencies
 $transparent-black-05: rgba($black, .05);
@@ -26,6 +27,9 @@ $transparent-white-7: rgba($white, .7);
 $transparent-white-8: rgba($white, .8);
 $transparent-white-9: rgba($white, .9);
 $transparent-white-96: rgba($white, .96);
+$transparent-grey-10: rgba($grey-90, .1);
+$transparent-grey-20: rgba($grey-90, .2);
+$transparent-grey-30: rgba($grey-90, .3);
 
 // common font-weight mappings
 // https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#Common_weight_name_mapping
@@ -42,6 +46,7 @@ $weight-heavy: 900;
 
 // These are for corners
 $large-border-radius: 5px;
+$medium-border-radius: 4px;
 $small-border-radius: 3px;
 $circle-border-radius: 50%;
 
