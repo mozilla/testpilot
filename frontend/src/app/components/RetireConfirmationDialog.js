@@ -35,8 +35,7 @@ export default class RetireConfirmationDialog extends React.Component {
             <div className="modal-cancel" onClick={e => this.cancel(e)}/>
           </header>
           <form>
-
-            <div className="modal-content">
+            <div className="modal-content centered">
               <div className="retireIcon"></div>
               <Localized id="retireMessageUpdate">
                 <p>As you wish. This will uninstall Test Pilot. You can disable individual experiments from the Firefox Add-ons Manager.</p>

@@ -72,14 +72,14 @@
 
   &.secondary {
     background: $transparent-grey-10;
+    border: 0;
     color: $grey-90;
     font-size: 15px;
-    border: none;
 
     &:hover,
     &:focus {
       background: $transparent-grey-20;
-      border: none;
+      border: 0;
     }
 
     &:active {
@@ -90,13 +90,13 @@
 
   &.default {
     background: $blue-60;
-    border: none;
+    border: 0;
     color: $white;
 
     &:hover,
     &:focus {
       background: $blue-70;
-      border: none;
+      border: 0;
     }
 
     &:active {
@@ -130,11 +130,11 @@
   }
 
   &.large {
+    border-radius: $medium-border-radius;
     font-size: $font-unit * 1.25;
-    line-height: 48px;
     height: 48px;
+    line-height: 48px;
     max-width: 360px;
     padding: 0 10px;
-    border-radius: $medium-border-radius;
   }
 }
