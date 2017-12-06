@@ -5,18 +5,18 @@
 import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
-import Banner from '../components/Banner';
-import Copter from '../components/Copter';
-import UpdateList from '../components/UpdateList';
-import EmailDialog from '../components/EmailDialog';
-import ExperimentCardList from '../components/ExperimentCardList';
-import LayoutWrapper from '../components/LayoutWrapper';
-import MainInstallButton from '../components/MainInstallButton';
-import PastExperiments from '../components/PastExperiments';
-import View from '../components/View';
-import LocalizedHtml from '../components/LocalizedHtml';
-import NewsUpdatesDialog from '../components/NewsUpdatesDialog';
-
+import Banner from '../../components/Banner';
+import Copter from '../../components/Copter';
+import UpdateList from '../../components/UpdateList';
+import EmailDialog from '../../components/EmailDialog';
+import ExperimentCardList from '../../components/ExperimentCardList';
+import LayoutWrapper from '../../components/LayoutWrapper';
+import MainInstallButton from '../../components/MainInstallButton';
+import PastExperiments from '../../components/PastExperiments';
+import View from '../../components/View';
+import LocalizedHtml from '../../components/LocalizedHtml';
+import NewsUpdatesDialog from '../../components/NewsUpdatesDialog';
+import Visibility from '../../components/Visibility';
 
 type HomePageWithAddonProps = {
   hasAddon: any,
@@ -71,7 +71,7 @@ export default class HomePageWithAddon extends React.Component {
   }
 
   renderSplash() {
-    if (typeof window !== 'undefined' && window.location.search.includes('utm_content=no-experiments-installed')) {
+    if (typeof window !== 'undefined' && typeof window.location !== 'undefined' && window.location.search.includes('utm_content=no-experiments-installed')) {
       return (
         <Banner background={true}>
           <LayoutWrapper flexModifier="row-between-breaking">
@@ -144,16 +144,18 @@ export default class HomePageWithAddon extends React.Component {
         <LayoutWrapper flexModifier="card-list">
           <UpdateList {...{ sendToGA, staleNewsUpdates, freshNewsUpdates, experiments }} />
         </LayoutWrapper>
-        <Banner background={true}>
-        <LayoutWrapper>
-          <Localized id="experimentListHeader">
+        <Visibility className="landingExperiments">
+          <Banner background={true}>
+            <LayoutWrapper>
+              <Localized id="experimentListHeader">
 
-            <h1 className="emphasis card-list-heading">Pick your experiments!</h1>
-          </Localized>
-          <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
-          <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
-          </LayoutWrapper>
+                <h1 className="emphasis card-list-heading">Pick your experiments!</h1>
+              </Localized>
+              <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
+              <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
+            </LayoutWrapper>
           </Banner>
+        </Visibility>
       </View>
     );
   }

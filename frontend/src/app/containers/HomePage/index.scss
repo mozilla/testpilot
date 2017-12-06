@@ -1,0 +1,27 @@
+@import '../../../styles/_utils';
+
+.landingExperiments.notvisible {
+  h1,
+  h2 {
+    cursor: pointer;
+    width: 100%;
+    margin: 0;
+    padding: $grid-unit * 2 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient($transparent-black-2 40px, $transparent-black-15);
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      margin: 0 0 0 0.25em;
+      background-image: url(./arrowhead-down-16.svg);
+      background-size: 16px 16px;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+  }
+}
