@@ -839,6 +839,7 @@ describe('app/containers/ExperimentPage/ExperimentTourDialog', () => {
     };
 
     props = {
+      isFirefox: true,
       experiment: {
         title: 'Test Experiment',
         slug: 'test',
@@ -869,6 +870,13 @@ describe('app/containers/ExperimentPage/ExperimentTourDialog', () => {
     // '.step-text > p' won't work, but '.step-text p' does
     expect(subject.find('.step-text p').html())
       .to.include(expectedTourStep.copy);
+  });
+
+  it('should render only the experiment name in title if not Firefox', () => {
+    subject.setProps({
+      isFirefox: false
+    });
+    expect(subject.find('.modal-header').text()).to.equal(props.experiment.title);
   });
 
   it('should render only the experiment title if not enabled', () => {

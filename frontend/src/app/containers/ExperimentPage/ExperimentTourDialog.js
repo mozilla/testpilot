@@ -13,7 +13,8 @@ type ExperimentTourDialogProps = {
   isExperimentEnabled: Function,
   onCancel: Function,
   onComplete: Function,
-  sendToGA: Function
+  sendToGA: Function,
+  isFirefox: boolean
 }
 
 export default class ExperimentTourDialog extends React.Component {
@@ -48,7 +49,10 @@ export default class ExperimentTourDialog extends React.Component {
   }
 
   renderHeaderTitle = () => {
-    const { experiment, isExperimentEnabled } = this.props;
+    const { experiment, isExperimentEnabled, isFirefox } = this.props;
+    if (!isFirefox) {
+      return <h3 className="modal-header lighter">{experiment.title}</h3>;
+    }
     return (<Localized id="tourOnboardingTitle" $title={experiment.title}>
               <h3 className={cn('modal-header lighter', {
                 enabled: isExperimentEnabled({ addon_id: `@${experiment.title}` })
@@ -60,7 +64,7 @@ export default class ExperimentTourDialog extends React.Component {
     return tourSteps.map((step, idx) => (idx === currentStep) && (
         <div key={idx} className="step-content">
           <div className="step-image">
-            <img src={step.image} />
+            <img src={step.image} width="580" height="332"/>
           </div>
           {step.copy &&
             <div className="step-text">

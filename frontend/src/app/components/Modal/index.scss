@@ -40,11 +40,13 @@
   animation: fade-in-fly-up 300ms forwards;
   animation-delay: 250ms;
   background: $white;
+  border-radius: $medium-border-radius;
   box-shadow: 0 4px $grid-unit $transparent-black-5;
   color: $grey-90;
+  opacity: 0;
   position: relative;
+  user-select: none;
   width: $grid-unit * 30;
-  border-radius: $medium-border-radius;
 
   :not(.content-wrapper) & {
     @include respond-to('small') {
