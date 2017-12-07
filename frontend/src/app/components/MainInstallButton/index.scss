@@ -15,7 +15,8 @@
 
   @include respond-to('small') {
     font-size: 21px;
-    height: 72px;
+    height: $grid-unit * 4;
+    min-width: $grid-unit * 12;
   }
 
   border-radius: $large-border-radius;
@@ -42,6 +43,10 @@
 }
 
 .main-install__download {
+  @include respond-to('small') {
+    margin: $grid-unit auto;
+  }
+
   @include flex-container(row, center, center);
   color: $white;
   cursor: auto;
