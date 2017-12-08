@@ -22,8 +22,8 @@ function shouldLint(opt, task) {
 gulp.task('scripts-lint', () => {
   return gulp.src('./frontend/{src,tests,stories}/**/*.{js,jsx}')
     .pipe(eslint())
-    .pipe(eslint.format());
-    // .pipe(eslint.failOnError());
+    .pipe(eslint.format())
+    .pipe(eslint.failOnError());
 });
 
 gulp.task('scripts-clean', () => {
