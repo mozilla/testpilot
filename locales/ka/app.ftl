@@ -182,7 +182,7 @@ contribute = შემოწირულობა
 bugReports = ხარვეზების შესახებ მოხსენება
 discussExperiment = { $title } პროექტის განხილვა
 tourOnboardingTitle = { $title } ჩართულია!
-tourDoneButton = მზადაა
+tourDoneButton = კარგი
 userCountContainerAlt = ახლახან გაეშვა!
 highlightPrivacy = პირადულობის დაცვის შესახებ
 experimentGradReportButton = საბოლოო მოხსენება
@@ -291,7 +291,7 @@ newsletterFooterSuccessBody = თუ ჯერ არ დაგიმოწმ�
 [[ localeWarning ]]
 
 localeNotTranslatedWarningTitle = ეს საცდელი პროექტი, არ არის თარგმნილი თქვენს ენაზე ({ $locale_code }).
-localeWarningSubtitle = მისი ჩართვა მაინც შეგიძლიათ, სურვილისამებრ.
+localeWarningSubtitle = მისი ჩართვა მაინც შეგიძლიათ, სურვილის შემთხვევაში.
 
 
 // An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
