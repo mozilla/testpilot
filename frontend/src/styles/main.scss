@@ -1,9 +1,7 @@
 // vendor code includes normalize.css; load it first
 @import 'vendor';
 @import 'utils';
-@import 'hidpi-mixin';
 @import 'theme';
 @import 'animations';
 @import 'base';
-@import 'modules';
-@import 'components';
+@import 'buttons';

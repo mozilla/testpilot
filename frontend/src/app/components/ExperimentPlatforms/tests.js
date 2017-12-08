@@ -1,12 +1,12 @@
+/* global describe, beforeEach, it */
 
 import React from 'react';
 import { expect } from 'chai';
-import sinon from 'sinon';
 import { shallow } from 'enzyme';
 import moment from 'moment';
 
-import { findLocalizedById } from '../util';
-import ExperimentPlatforms from '../../../src/app/components/ExperimentPlatforms';
+import { findLocalizedById } from '../../../../test/app/util';
+import ExperimentPlatforms from './index';
 
 
 describe('app/components/ExperimentPlatforms', () => {
@@ -23,7 +23,7 @@ describe('app/components/ExperimentPlatforms', () => {
     };
     props = {
       experiment: mockExperiment
-    }
+    };
     subject = shallow(<ExperimentPlatforms {...props} />);
   });
 
@@ -32,7 +32,7 @@ describe('app/components/ExperimentPlatforms', () => {
   });
 
   it('should use expected l10n ID and icons for known platforms', () => {
-   subject.setProps({
+    subject.setProps({
       experiment: {
         ...mockExperiment,
         platforms: ['addon', 'mobile', 'web', 'diving', 'political']
@@ -44,6 +44,4 @@ describe('app/components/ExperimentPlatforms', () => {
     ['diving', 'political'].forEach(platform =>
       expect(subject.find(`.platform-icon-${platform}`)).to.have.property('length', 0));
   });
-
-
 });

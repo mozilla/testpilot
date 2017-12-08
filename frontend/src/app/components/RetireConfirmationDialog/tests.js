@@ -1,15 +1,17 @@
+/* global describe, beforeEach, it */
+
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
-import { findLocalizedById } from '../util';
+import { findLocalizedById } from '../../../../test/app/util';
 
-import RetireConfirmationDialog from '../../../src/app/components/RetireConfirmationDialog';
+import RetireConfirmationDialog from './index';
 
 describe('app/components/RetireConfirmationDialog', () => {
   let props, mockClickEvent, subject,
     mockEscapeKeyDownEvent, mockEnterKeyDownEvent;
-  beforeEach(function() {
+  beforeEach(() => {
     props = {
       uninstallAddon: sinon.spy(),
       onDismiss: sinon.spy(),
@@ -67,5 +69,4 @@ describe('app/components/RetireConfirmationDialog', () => {
       eventLabel: 'Retire'
     }]);
   });
-
 });

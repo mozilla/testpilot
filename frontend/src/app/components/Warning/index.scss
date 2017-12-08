@@ -1,3 +1,5 @@
+@import '../../../styles/_utils';
+
 .incompatible-addons,
 .warning {
   background: $transparent-black-05;
@@ -12,7 +14,7 @@
 
   header {
     @include flex-container(column, space-around, flex-start);
-    background: url('../images/warning.svg') no-repeat left;
+    background: url('./img/warning.svg') no-repeat left;
     background-size: ($grid-unit * 2) auto;
     margin: $grid-unit 0 0;
     min-height: $grid-unit * 2;

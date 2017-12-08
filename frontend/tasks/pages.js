@@ -226,7 +226,7 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
     <noscript>
       <div className="full-page-wrapper centered">
         <div className="layout-wrapper layout-wrapper--column-center">
-          <div id="four-oh-four" className="modal delayed-fade-in">
+          <div id="four-oh-four" className="modal">
             <h1 className="title">Uh oh...</h1>
             <div className="modal-content">
               <p>Test Pilot requires JavaScript.<br />Sorry about that.</p>

@@ -1,12 +1,13 @@
+/* global describe, beforeEach, it */
+
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import Warning from '../../../src/app/components/Warning';
+import Warning from './index';
 
 
 describe('app/components/Warning', () => {
-
   it('should omit the <header> when a title isn\'t passed', () => {
     const subject = shallow(<Warning/>);
     expect(subject.find('header')).to.have.length(0);
@@ -17,7 +18,7 @@ describe('app/components/Warning', () => {
     expect(subject.find('header p')).to.have.length(0);
   });
 
-  it('should pass on its children',() => {
+  it('should pass on its children', () => {
     const subject = shallow(<Warning><abbr foo="bar"/></Warning>);
     expect(subject.find('abbr')).to.have.length(1);
   });
