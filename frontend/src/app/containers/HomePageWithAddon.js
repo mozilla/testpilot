@@ -17,11 +17,12 @@ import PastExperiments from '../components/PastExperiments';
 import View from '../components/View';
 import LocalizedHtml from '../components/LocalizedHtml';
 import NewsUpdatesDialog from '../components/NewsUpdatesDialog';
-
+import type { InstalledExperiments } from '../reducers/addon';
 
 type HomePageWithAddonProps = {
   hasAddon: any,
   experiments: Array<Object>,
+  installed: InstalledExperiments,
   featuredExperiments: Array<Object>,
   majorNewsUpdates: Array<Object>,
   freshNewsUpdates: Array<Object>,
@@ -33,7 +34,11 @@ type HomePageWithAddonProps = {
   sendToGA: Function,
   openWindow: Function,
   isExperimentEnabled: Function,
-  isAfterCompletedDate: Function
+  isAfterCompletedDate: Function,
+  navigateTo: Function,
+  isMinFirefox: boolean,
+  isFirefox: boolean,
+  getExperimentLastSeen: Function
 }
 
 type HomePageWithAddonState = {
