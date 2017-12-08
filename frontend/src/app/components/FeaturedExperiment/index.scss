@@ -109,16 +109,23 @@
     justify-content: space-between;
     width: 352px;
 
+    .secondary {
+      background: $grey-30;
+
+      &:hover,
+      &:focus {
+        background: $grey-40;
+        border: 0;
+      }
+    }
+
     .button {
       @include respond-to('small') {
-        font-size: 18px;
-        height: 64px;
-        padding: 10px;
         width: 45%;
       }
       font-size: 18px;
       height: 64px;
-      padding: 10px;
+      padding: 12px;
       width: 160px;
     }
   }
