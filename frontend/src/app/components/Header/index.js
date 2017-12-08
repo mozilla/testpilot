@@ -103,7 +103,13 @@ export default class Header extends React.Component {
   }
 
   render() {
-    const newsPageActive = typeof window !== 'undefined' ? window.location.pathname === '/news' : false;
+    let newsPageActive = false;
+
+    if (typeof window !== 'undefined') {
+      if (typeof window.location !== 'undefined') {
+        newsPageActive = window.location.pathname === '/news';
+      }
+    }
 
     return (
       <div>
