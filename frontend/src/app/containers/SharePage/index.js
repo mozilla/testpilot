@@ -56,3 +56,18 @@ export class ShareDialog extends React.Component {
     );
   }
 }
+
+export default class SharePage extends React.Component {
+  props: SharePageProps
+
+  render() {
+    return (
+      <View spaceBetween={true} showNewsletterFooter={false} {...this.props}>
+        <LayoutWrapper flexModifier="column-center">
+          <ShareDialog { ...this.props }/>
+          <Copter animation="fade-in-fly-up" />
+        </LayoutWrapper>
+      </View>
+    );
+  }
+}
