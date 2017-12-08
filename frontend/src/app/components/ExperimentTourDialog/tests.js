@@ -18,6 +18,7 @@ describe('app/components/ExperimentTourDialog', () => {
     };
 
     props = {
+      isFirefox: true,
       experiment: {
         title: 'Test Experiment',
         slug: 'test',
