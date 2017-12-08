@@ -17,13 +17,14 @@ import ExperimentPlatforms from '../ExperimentPlatforms';
 type FeaturedExperimentProps = {
   experiment: Object,
   hasAddon: any,
-  enabled: Boolean,
-  isFirefox: Boolean,
-  isMinFirefox: Boolean,
+  enabled: boolean,
+  isFirefox: boolean,
+  isMinFirefox: boolean,
   installed: InstalledExperiments,
-  clientUUID: ?string,
+  clientUUID?: string,
   eventCategory: string,
   getExperimentLastSeen: Function,
+  isExperimentEnabled: Function,
   sendToGA: Function,
   navigateTo: Function
 }
@@ -36,7 +37,7 @@ export default class FeaturedExperiment extends React.Component {
   props: FeaturedExperimentProps
   state: FeaturedExperimentState
 
-  constructor(props: HomePageWithAddonProps) {
+  constructor(props: FeaturedExperimentProps) {
     super(props);
     this.state = {
       showTourDialog: false

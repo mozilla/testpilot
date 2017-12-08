@@ -12,12 +12,14 @@ import type { InstalledExperiments } from '../../reducers/addon';
 
 type FeaturedButtonProps = {
   clientUUID?: string,
-  enabled: Boolean,
+  enabled: boolean,
   experiment: Object,
+  eventCategory: string,
   hasAddon: any,
   installed: InstalledExperiments,
   getExperimentLastSeen: Function,
-  sendToGA: Function
+  sendToGA: Function,
+  postInstallCallback: Function
 }
 
 type FeaturedButtonState = {

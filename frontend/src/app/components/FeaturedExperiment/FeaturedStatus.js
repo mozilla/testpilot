@@ -9,7 +9,7 @@ const MAX_JUST_LAUNCHED_PERIOD = 2 * ONE_WEEK;
 const MAX_JUST_UPDATED_PERIOD = 2 * ONE_WEEK;
 
 type FeaturedStatusProps = {
-  enabled: Boolean,
+  enabled: boolean,
   experiment: Object,
   getExperimentLastSeen: Function
 }

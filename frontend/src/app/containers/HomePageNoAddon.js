@@ -11,14 +11,20 @@ import PastExperiments from '../components/PastExperiments';
 import FeaturedExperiment from '../components/FeaturedExperiment';
 import View from '../components/View';
 
+import type { InstalledExperiments } from '../reducers/addon';
 
 type HomePageNoAddonProps = {
   hasAddon: any,
   isFirefox: boolean,
+  installed: InstalledExperiments,
   experiments: Array<Object>,
   featuredExperiments: Array<Object>,
   isAfterCompletedDate: Function,
-  navigateTo: Function
+  navigateTo: Function,
+  isMinFirefox: boolean,
+  getExperimentLastSeen: Function,
+  isExperimentEnabled: Function,
+  sendToGA: Function
 }
 
 export default class HomePageNoAddon extends React.Component {
