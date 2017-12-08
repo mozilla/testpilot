@@ -19,19 +19,19 @@ export default class FeaturedStatus extends React.Component {
 
   render() {
     const { enabled } = this.props;
-    const justLaunched = this.justLaunched();
-    const justUpdated = this.justUpdated();
-    const showIcon = (enabled || justLaunched || justUpdated);
+    const launched = this.justLaunched();
+    const updated = this.justUpdated();
+    const showIcon = (enabled || launched || updated);
 
     return (
         <div className="featured-status">
           {showIcon && <div className="star-icon"></div>}
 
-          {justLaunched && <Localized id="experimentListJustLaunchedTab">
+          {launched && <Localized id="experimentListJustLaunchedTab">
             <div className="tab just-launched-tab">Just Launched</div>
           </Localized>}
 
-          {justUpdated && <Localized id="experimentListJustUpdatedTab">
+          {updated && <Localized id="experimentListJustUpdatedTab">
             <div className="tab just-updated-tab">Just Updated</div>
           </Localized>}
 

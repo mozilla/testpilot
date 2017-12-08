@@ -2,8 +2,11 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import moment from 'moment';
 
 import FeaturedExperiment from './index';
+import FeaturedStatus from './FeaturedStatus';
+import FeaturedButton from './FeaturedButton';
 import LayoutWrapper from '../LayoutWrapper';
 
 const experiment = {
@@ -60,6 +63,57 @@ storiesOf('FeaturedExperiment', module)
   )
   .add('not firefox', () =>
     <FeaturedExperiment {...baseProps}
-     isFirefox={false}
-    />
-  );
+       isFirefox={false} isMinFirefox={false} />
+      );
+
+storiesOf('FeaturedStatus', module)
+  .addDecorator(story =>
+                <div className="blue" style={{ padding: 10 }} onClick={action('click')}>
+                <div className="stars" />
+                <LayoutWrapper flexModifier="card-list">
+                {story()}
+                </LayoutWrapper>
+                </div>
+               )
+  .add('just-launched, not enabled', () => {
+    experiment.created = moment().subtract(1, 'week').utc();
+    const freshProps = Object.assign(baseProps, { experiment });
+    return (<FeaturedStatus {...freshProps}/>);
+  })
+  .add('just-launched, enabled', () => {
+    experiment.created = moment().subtract(1, 'week').utc();
+    const freshProps = Object.assign(baseProps, { experiment, enabled: true });
+    return (<FeaturedStatus {...freshProps}/>);
+  })
+  .add('just-updated, not enabled', () => {
+    experiment.modified = moment().subtract(1, 'week').utc();
+    const freshProps = Object.assign(baseProps, { experiment });
+    return (<FeaturedStatus {...freshProps} hasAddon={true} />);
+  })
+  .add('just-updated, enabled', () => {
+    experiment.modified = moment().subtract(1, 'week').utc();
+    const freshProps = Object.assign(baseProps, { experiment, enabled: true });
+    return (<FeaturedStatus {...freshProps} hasAddon={true}/>);
+  })
+  .add('enabled', () =>
+       <FeaturedStatus {...baseProps} enabled={true} />
+      )
+  .add('not just launched, not just updated, not just enabled (should be blank)', () =>
+       <FeaturedStatus {...baseProps} />
+      );
+
+storiesOf('FeaturedButton', module)
+  .addDecorator(story =>
+                <div className="blue" style={{ padding: 10 }} onClick={action('click')}>
+                <div className="stars" />
+                <LayoutWrapper flexModifier="card-list">
+                {story()}
+                </LayoutWrapper>
+                </div>
+               )
+  .add('not enabled, no addon', () =>
+       <FeaturedButton {...baseProps}/>
+      )
+  .add('has addon, enabled', () =>
+       <FeaturedButton {...baseProps} hasAddon={true} enabled={true} />
+      );

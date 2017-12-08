@@ -8,9 +8,11 @@ import moment from 'moment';
 import { findLocalizedById } from '../../../../test/app/util';
 
 import FeaturedExperiment from './index';
+import FeaturedStatus from './FeaturedStatus';
+import FeaturedButton from './FeaturedButton';
 
 describe('app/components/FeaturedExperiment', () => {
-  let mockExperiment, mockClickEvent, props, subject;
+  let mockExperiment, props, subject;
   beforeEach(() => {
     mockExperiment = {
       slug: 'testing',
@@ -20,10 +22,6 @@ describe('app/components/FeaturedExperiment', () => {
       description: 'This is a description.',
       created: moment().subtract(2, 'months').utc(),
       modified: moment().subtract(2, 'months').utc()
-    };
-    mockClickEvent = {
-      preventDefault: sinon.spy(),
-      stopPropagation: sinon.spy()
     };
     props = {
       experiment: mockExperiment,
@@ -52,7 +50,6 @@ describe('app/components/FeaturedExperiment', () => {
   });
 
   it('should change button text based on hasAddon', () => {
-    console.error('lalal', subject.find('.main-install__minor-cta'));
     expect(subject.find('.main-install__minor-cta')).to.have.property('length', 1);
     subject.setProps({ hasAddon: true });
     expect(subject.find('.experiment-summary')).to.have.property('length', 0);
@@ -70,17 +67,6 @@ describe('app/components/FeaturedExperiment', () => {
     subject.setProps({ enabled: true, hasAddon: true });
 
     expect(subject.find('.featured-feedback')).to.have.property('length', 1);
-  });
-
-  it('should ping GA when feedback is clicked', () => {
-    subject.setProps({ enabled: true, hasAddon: true });
-    subject.find('.featured-feedback').simulate('click', mockClickEvent);
-
-    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
-      eventCategory: props.eventCategory,
-      eventAction: 'Give Feedback',
-      eventLabel: mockExperiment.title
-    }]);
   });
 
   it('should display "just launched" banner if created date within 2 weeks, never seen, and not enabled', () => {
@@ -138,9 +124,9 @@ describe('app/components/FeaturedExperiment', () => {
   });
 
   it('should have a "More Detail" button if not enabled', () => {
-    subject.setProps({enabled: true});
+    subject.setProps({ enabled: true });
     expect(findLocalizedById(subject, 'moreDetail')).to.have.property('length', 0);
-    subject.setProps({enabled: false});
+    subject.setProps({ enabled: false });
     expect(findLocalizedById(subject, 'moreDetail')).to.have.property('length', 1);
   });
 
@@ -152,8 +138,123 @@ describe('app/components/FeaturedExperiment', () => {
     });
     expect(findLocalizedById(subject, 'experimentCardManage')).to.have.property('length', 1);
   });
+});
 
-  it('should ping GA when manage is clicked', () => {
+
+describe('app/components/FeaturedStatus', () => {
+  let mockExperiment, props, subject;
+  beforeEach(() => {
+    mockExperiment = {
+      slug: 'testing',
+      title: 'Testing Experiment',
+      subtitle: 'This is a subtitle.',
+      subtitle_l10nsuffix: 'foo',
+      description: 'This is a description.',
+      created: moment().subtract(1, 'week').utc(),
+      modified: null
+    };
+    props = {
+      experiment: mockExperiment,
+      enabled: false,
+      getExperimentLastSeen: sinon.spy()
+    };
+    subject = mount(<FeaturedStatus {...props} />);
+  });
+
+  it('should show just launched if launched within 2 weeks', () => {
+    expect(subject.find('.just-launched-tab')).to.have.property('length', 1);
+  });
+
+  it('should show just updated if modified within 2 weeks', () => {
+    mockExperiment.created = moment().subtract(2, 'week').utc();
+    mockExperiment.modified =  moment().subtract(1, 'week').utc();
+
+    subject.setProps({
+      getExperimentLastSeen: () => 0,
+      experiment: mockExperiment
+    });
+
+    expect(subject.find('.just-updated-tab')).to.have.property('length', 1);
+  });
+
+  it('should show just updated over just launched', () => {
+    mockExperiment.created = moment().subtract(1, 'week').utc();
+    mockExperiment.modified =  moment().subtract(1, 'week').utc();
+
+    subject.setProps({
+      getExperimentLastSeen: () => 0,
+      experiment: mockExperiment
+    });
+    expect(subject.find('.just-updated-tab')).to.have.property('length', 1);
+  });
+
+  it('should show enabled over just launched or just updated', () => {
+    mockExperiment.created = moment().subtract(1, 'week').utc();
+    mockExperiment.modified =  moment().subtract(1, 'week').utc();
+
+    subject.setProps({
+      enabled: true,
+      experiment: mockExperiment
+    });
+
+    expect(subject.find('.enabled-tab')).to.have.property('length', 1);
+  });
+});
+
+describe('app/components/FeaturedButton', () => {
+  let mockExperiment, mockClickEvent, props, subject;
+  beforeEach(() => {
+    mockExperiment = {
+      slug: 'testing',
+      title: 'Testing Experiment',
+      subtitle: 'This is a subtitle.',
+      subtitle_l10nsuffix: 'foo',
+      description: 'This is a description.',
+      created: moment().subtract(1, 'week').utc(),
+      modified: moment().subtract(1, 'week').utc()
+    };
+    mockClickEvent = {
+      preventDefault: sinon.spy(),
+      stopPropagation: sinon.spy()
+    };
+    props = {
+      enabled: false,
+      experiment: mockExperiment,
+      hasAddon: false,
+      installed: [],
+      getExperimentLastSeen: sinon.spy(),
+      sendToGA: sinon.spy()
+    };
+    subject = mount(<FeaturedButton {...props} />);
+  });
+
+  it('should show manage and feedback buttons if enabled and hasAddon', () => {
+    subject.setProps({
+      enabled: true,
+      hasAddon: true
+    });
+    expect(subject.find('.manage-button')).to.have.property('length', 1);
+  });
+
+  it('should show MainInstallButton if not enabled or without addon', () => {
+    expect(subject.find('MainInstallButton')).to.have.property('length', 1);
+
+    subject.setProps({
+      enabled: true,
+      hasAddon: false
+    });
+
+    expect(subject.find('MainInstallButton')).to.have.property('length', 1);
+
+    subject.setProps({
+      enabled: false,
+      hasAddon: true
+    });
+
+    expect(subject.find('MainInstallButton')).to.have.property('length', 1);
+  });
+
+  it('should call sendToGA when manage button clicked', () => {
     subject.setProps({
       enabled: true,
       hasAddon: true
@@ -163,6 +264,21 @@ describe('app/components/FeaturedExperiment', () => {
     expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
       eventCategory: props.eventCategory,
       eventAction: 'Open detail page',
+      eventLabel: mockExperiment.title
+    }]);
+  });
+
+  it('should call sendToGA when feedback button clicked', () => {
+    subject.setProps({
+      enabled: true,
+      hasAddon: true
+    });
+
+    subject.find('.featured-feedback').simulate('click', mockClickEvent);
+
+    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
+      eventCategory: props.eventCategory,
+      eventAction: 'Give Feedback',
       eventLabel: mockExperiment.title
     }]);
   });

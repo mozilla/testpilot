@@ -1,7 +1,12 @@
 @import '~photon-colors/colors.scss';
+@import '../../../styles/_utils';
 
 .featured-experiment {
   display: flex;
+
+  @include respond-to('small') {
+    flex-direction: column;
+  }
 
   .featured-status {
     display: flex;
@@ -27,6 +32,12 @@
   }
 
   .featured-information {
+    @include respond-to('small') {
+      max-width: unset;
+      width: 75%;
+      margin: 0 auto;
+    }
+
     margin: 30px;
     max-width: 500px;
     text-align: center;
@@ -80,21 +91,35 @@
   }
 
   .experiment-icon {
+    @include respond-to('small') {
+      width: 48px;
+    }
     background-position: 50%;
     background-position: 50% 32%;
     background-size: 32px;
   }
 
   .featured-enabled-buttons {
+    @include respond-to('small') {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
     display: flex;
     justify-content: space-between;
     width: 352px;
 
     .button {
-      height: 64px;
-      width: 160px;
+      @include respond-to('small') {
+        font-size: 18px;
+        height: 64px;
+        padding: 10px;
+        width: 45%;
+      }
       font-size: 18px;
+      height: 64px;
       padding: 10px;
+      width: 160px;
     }
   }
   
@@ -113,6 +138,9 @@
   }
 
   .main-install__legal {
+    @include respond-to('small') {
+      width: 100%;
+    }
     max-width: 352px;
     width: 352px;
 
@@ -150,6 +178,10 @@
   
   .featured-video {
     iframe {
+      @include respond-to('small') {
+        width: 100%;
+        height: auto;
+      }
       width: 500px;
       height: 281px;
     }

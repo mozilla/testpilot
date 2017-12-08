@@ -7,6 +7,9 @@
   margin-top: 50px;
 
   > h1 {
+    @include respond-to('small') {
+      padding-bottom: 0px;
+    }
     margin-top: -6px;
     padding-bottom: 50px;
     position: relative;
