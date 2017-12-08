@@ -32,8 +32,12 @@ gulp.task('styles-build', ['styles-lint', 'styles-clean'], () => {
     .pipe(sass({ includePaths: [normalize.includePaths], importer: sassImporter() })
     .on('error', sass.logError))
     .pipe(autoprefixer('last 2 versions'))
-      // don't minify in development
-      .pipe(gulpif(!config.IS_DEBUG, minifycss()))
+      // don't minify in development...
+      // and set cssNano.reduceIdents to false
+      // because we need to maintain our keyframe naming
+      // across gulp and webpack
+      // TODO: #3111
+      .pipe(gulpif(!config.IS_DEBUG, minifycss({ reduceIdents: false })))
       .pipe(gulpif(config.IS_DEBUG, sourcemaps.write('.')))
     .pipe(gulp.dest(config.DEST_PATH + 'static/styles'));
 });
