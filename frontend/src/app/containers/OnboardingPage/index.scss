@@ -1,5 +1,8 @@
+@import '../../../styles/_utils';
+
 .toolbar-button-onboarding {
-  @include hidpi-background-image('../../../images/toolbar-button-onboarding', 382px 182px);
+  background-image: url('img/toolbar-button-onboarding@2x.png');
+  background-size: 382px 182px;
   height: 182px;
   margin: auto auto $grid-unit -10px;
   width: 382px;

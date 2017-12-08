@@ -2,6 +2,8 @@
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
+import './index.scss';
+
 type WarningProps = {
   title: string,
   titleL10nId: string,

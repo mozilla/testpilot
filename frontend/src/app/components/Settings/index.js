@@ -4,6 +4,8 @@ import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
+import './index.scss';
+
 type SettingsProps = {
   hasAddon: any,
   sendToGA: Function,

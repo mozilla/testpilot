@@ -70,6 +70,7 @@ $eol-dark-orange: #f46323;
 $eol-orange: #ff9300;
 $eol-light-orange: rgba($eol-orange, .25);
 
+// flexing container
 @mixin flex-container($direction, $justification: flex-start, $alignment: stretch, $wrap: nowrap) {
   display: flex;
   @if $alignment != 'stretch' {
@@ -93,7 +94,6 @@ $breakpoints: (
   small: '(max-width: 768px)',
   not-small: '(min-width: 769px)',
   mobile: '(max-width: 520px)'
-
 );
 
 @mixin respond-to($breakpoint) {

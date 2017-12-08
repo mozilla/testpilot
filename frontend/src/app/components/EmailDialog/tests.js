@@ -1,15 +1,15 @@
+/* global describe, beforeEach, it */
+
 import fetchMock from 'fetch-mock';
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
-import { findLocalizedById } from '../util';
+import { findLocalizedById } from '../../../../test/app/util';
 
-import EmailDialog from '../../../src/app/components/EmailDialog';
-import { basketUrl } from '../../../src/app/lib/utils';
+import EmailDialog from './index';
 
 describe('app/components/EmailDialog', () => {
-
   const mockLocation = 'https://example.com';
 
   const mockClickEvent = {
@@ -83,7 +83,7 @@ describe('app/components/EmailDialog', () => {
     const footer = findLocalizedById(subject, 'newsletterFooterError');
     expect(footer).to.have.length(1);
 
-    const button = subject.findWhere(el => 'email-success-continue' === el.props()['id']);
+    const button = subject.findWhere(el => 'email-success-continue' === el.props().id);
     expect(button).to.have.length(1);
 
     subject.find('.modal-container').simulate('keyDown', mockEnterKeyDownEvent);
@@ -98,7 +98,7 @@ describe('app/components/EmailDialog', () => {
 
     expect(findLocalizedById(subject, 'newsletterFooterSuccessBody')).to.have.length(1);
 
-    const button = subject.findWhere(el => 'email-success-continue' === el.props()['id']);
+    const button = subject.findWhere(el => 'email-success-continue' === el.props().id);
     expect(button).to.have.length(1);
 
     button.simulate('click', mockClickEvent);
@@ -115,7 +115,7 @@ describe('app/components/EmailDialog', () => {
 
     expect(findLocalizedById(subject, 'newsletterFooterSuccessBody')).to.have.length(1);
 
-    const button = subject.findWhere(el => 'email-success-continue' === el.props()['id']);
+    const button = subject.findWhere(el => 'email-success-continue' === el.props().id);
     expect(button).to.have.length(1);
 
     subject.find('.modal-container').simulate('keyDown', mockEscapeKeyDownEvent);
