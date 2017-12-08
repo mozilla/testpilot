@@ -16,7 +16,8 @@ type FeaturedButtonProps = {
   experiment: Object,
   hasAddon: any,
   installed: InstalledExperiments,
-  getExperimentLastSeen: Function
+  getExperimentLastSeen: Function,
+  sendToGA: Function
 }
 
 type FeaturedButtonState = {
@@ -77,10 +78,6 @@ export default class FeaturedButton extends React.Component {
       eventAction: 'Give Feedback',
       eventLabel: experiment.title
     });
-  }
-
-  postInstallCallback() {
-    this.setState({ shouldShowTourDialog: true });
   }
 
   render() {

@@ -200,7 +200,7 @@ export function setupAddonConnection(store) {
 
 export function enableExperiment(dispatch, experiment, sendToGA) {
   if (!mam) {
-    return;
+    return false;
   }
 
   dispatch(

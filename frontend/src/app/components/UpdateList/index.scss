@@ -51,6 +51,10 @@
   }
 
   .update-experiment-icon {
+    @include respond-to('small') {
+      margin-right: 10px;
+      padding: 15px;
+    }
     height: 48px;
     width: 48px;
     margin: 0;
