@@ -139,8 +139,8 @@ feedbackSubmitButton = Plotësoni një anketim të shpejtë
 feedbackUninstallTitle = Faleminderit!
 feedbackUninstallCopy =
     Pjesëmarrja juaj te Piloti i Testeve të Firefox-it
-    ka shumë domethëniet! ju lutemi, shihni eksperimente
-    tonat të tjera, dhe na ndiqni për më tepër në të ardhmen!
+    ka shumë domethënie! ju lutemi, shihni eksperimente
+    tonat të tjera dhe na ndiqni për më tepër në të ardhmen!
 
 
 // A modal prompt shown before the feedback survey for some experiments.
