@@ -64,6 +64,7 @@ oneClickInstallMajorCta = Aktivizo { $title }
 landingRequiresDesktop = Piloti i Testeve lyp Firefox për Desktop në Windows, Mac ose Linux
 landingDownloadFirefoxDesc = (Pilot i Testeve mund të përdoret te Firefox-i në Windows, OS X dhe Linux)
 landingUpgradeDesc = Piloti i testeve lyp Firefox 49 ose më të ri.
+landingUpgradeDesc2 = Test Pilot lyp Firefox { $version } ose më të ri.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Përmirësojeni Firefox-in
 landingDownloadFirefoxSubTitle = Shkarkim Falas
@@ -184,8 +185,12 @@ tourOnboardingTitle = { $title } u aktivizua!
 tourDoneButton = U bë
 userCountContainerAlt = Të sapohedhura në qarkullim!
 highlightPrivacy = Privatësia juaj
+experimentGradReportButton = Raport Eksperimenti
 experimentGradReportPendingTitle = Ky eksperiment ka përfunduar
 experimentGradReportPendingCopy = Po punojmë për një raport të plotë. Për hollësi, rikthehuni së shpejti.
+experimentGradReportReady = Kemi përgatitur një raport të plotë të eksperimentit.
+experimentGoToLink = Kalo te { $title }
+startedDateLabel = Datë Fillimi Eksperimenti: <b>{ $startedDate }</b>
 
 
 // news updates dialog.
@@ -199,6 +204,9 @@ learnMoreLink = MËSONI MË TEPËR
 [[ experimentPlatform ]]
 
 experimentPlatformWebAddonMobile = Eksperiment për Firefox / web / celular
+experimentPlatformWebAddon = Eksperiment Firefox / web
+experimentPlatformWebMobile = eksperiment web / për celular
+experimentPlatformAddonMobile = Eksperiment Firefox / për celular
 experimentPlatformWeb = Eksperiment web
 experimentPlatformAddon = Eksperiment Firefox
 experimentPlatformMobileApp = Eksperiment për celular
@@ -209,12 +217,15 @@ experimentPlatformMobileApp = Eksperiment për celular
 
 upgradeNoticeTitle = { $title } lyp Firefox { $min_release } ose më të ri.
 upgradeNoticeLink = Si të përditësohet Firefox-i.
+versionChangeNotice = { $experiment_title } nuk mbulohet për këtë version të Firefox-it.
+versionChangeNoticeLink = Merrni versionin e tanishëm të Firefox-it.
 
 
 // Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
 retireDialogTitle = Të çinstalohet Piloti i Testeve?
+retireMessageUpdate = Si të doni. Kjo do të çinstalojë Test Pilot-in. Eksperimentet individuale mund t’i çaktivizoni që nga Përgjegjësi i Shtesave te Firefox-i.
 retireEmailMessage = Që të zgjidhni mosmarrje përditësimesh me email, thjesht klikoni mbi lidhjen <em>shpajtomëni</em> te cilido email i ardhur nga Piloti i Testeve.
 retireSubmitButton = Vazhdoni
 pageTitleRetirePage = Pilot Testesh Firefox - Çinstaloje Pilotin e Testeve
@@ -279,6 +290,7 @@ newsletterFooterSuccessBody = Nëse s’e keni ripohuar më parë pajtimin te nj
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeNotTranslatedWarningTitle = Ky eksperiment s’është përkthyer në gjuhën tuaj ({ $locale_code }).
 localeWarningSubtitle = Mundeni ta aktivizoni, nëse doni.
 
 
@@ -308,3 +320,13 @@ hidePastExperiments = Fshihi Eksperimentet e Dikurshëm
 // Text of warnings to the user if various error conditions are detected
 [[ warnings ]]
 
+warningGenericTitle = Ka diçka gabim!
+warningGenericDetail = Diç shkoi ters me Test Pilot-in. Ju lutemi, <a>njoftoni një të metë</a> dhe përmendni këtë mesazh gabimi.
+warningUpgradeFirefoxTitle = Që të vazhdohet, përmirësoni Firefox-in!
+warningUpgradeFirefoxDetail = Test Pilot lyp versionin më të ri të Firefox-it. Që t’ia fillohet, <a>përmirësoni Firefox-in</a>.
+warningHttpsRequiredTitle = Lypset HTTPS!
+warningHttpsRequiredDetail = Tek Test Pilot duhet të hyhet përmes HTTPS-je. Ju lutemi, për hollësi, shihni <a>dokumentimin tonë</a>.
+warningMissingPrefTitle = Dëshironi të zhvilloni për Test Pilot?
+warningMissingPrefDetail = Kur Test Pilot-in e xhironi lokalisht ose në mjedise zhvillimesh, lypset formësim special. Ju lutemi, për hollësi, shihni <a>dokumentimin tonë</a>.
+warningBadHostnameTitle = Strehëemër i pamiratuar!
+warningBadHostnameDetail = Sajti Test Pilot mund të përdoret vetëm që nga testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, ose example.com:8000. Ju lutemi, për hollësi, shihni <a>dokumentimin tonë</a>.
