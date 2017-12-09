@@ -17,6 +17,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Privatësi
 footerLinkTerms = Kushte
 footerLinkLegal = Ligjore
+footerLinkFeedback = Jepni Përshtypjet
 footerLinkAbout = Rreth Pilotit të Testeve
 
 
@@ -29,6 +30,7 @@ menuWiki = Wiki për Pilot Testesh
 menuDiscuss = Diskutojeni Pilotin e Testeve
 menuFileIssue = Njoftoni një Problem
 menuRetire = Çinstaloje Pilotin e Testeve
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -96,8 +98,15 @@ notFoundHeader = Katër Zero Katër!
 emailOptInDialogTitle = Mirë se vini te Pilot Testesh!
 emailOptInMessage = Mësoni rreth eksperimentesh të reja dhe shihni përfundime testesh për eksperimente që keni provuar.
 emailOptInConfirmationTitle = Email-i u Dërgua
-emailOptInSuccessMessage2 = Faleminderit!
 emailOptInConfirmationClose = Oburra te eksperimentet…
+emailOptInDialogErrorTitle = Mooos!
+
+
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Përditësimet më të reja
+showMoreNewsTitle = Shfaq Lajme të Së kaluarës
 
 
 // A listing of all Test Pilot experiments.
@@ -108,12 +117,15 @@ experimentListJustLaunchedTab = Të sapohedhur Në Qarkullim
 experimentListJustUpdatedTab = Të sapopërditësuar
 experimentListEndingTomorrow = Përfundon Nesër
 experimentListEndingSoon = Përfundon Së Shpejti
-experimentsListCondensedHeader = Zgjidhni eksperimentet tuaja!
+experimentCondensedHeader = Mirë se vini te Pilot Testesh!
+experimentListHeader = Zgjidhni eksperimentet tuaja!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Përshtypje
 experimentCardManage = Administroni
 experimentCardGetStarted = Si T’ia Fillohet
 experimentCardLearnMore = Mësoni Më Tepër
@@ -149,7 +161,6 @@ experimentPromoSubheader = Po krijojmë veçoritë e brezit të ardhshëm për F
 
 isEnabledStatusMessage = { $title } është i aktivizuar.
 installErrorMessage = Hëm. { $title } s’u aktivizua dot. Riprovoni më vonë.
-participantCount = <span>{ $installation_count }</span> pjesëmarrës
 otherExperiments = Provoni edhe këto eksperimente
 giveFeedback = Jepni Përshtypjet
 disableHeader = Të çaktivizohet Eksperimenti?
@@ -171,9 +182,26 @@ bugReports = Njoftime të Metash
 discussExperiment = Diskutoni mbi { $title }
 tourOnboardingTitle = { $title } u aktivizua!
 tourDoneButton = U bë
-userCountContainer = Ka <span>{ $installation_count }</span> vetë që po e provojnë { $title } tani!
 userCountContainerAlt = Të sapohedhura në qarkullim!
 highlightPrivacy = Privatësia juaj
+experimentGradReportPendingTitle = Ky eksperiment ka përfunduar
+experimentGradReportPendingCopy = Po punojmë për një raport të plotë. Për hollësi, rikthehuni së shpejti.
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Pilot Testesh
+learnMoreLink = MËSONI MË TEPËR
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Eksperiment për Firefox / web / celular
+experimentPlatformWeb = Eksperiment web
+experimentPlatformAddon = Eksperiment Firefox
+experimentPlatformMobileApp = Eksperiment për celular
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -187,7 +215,6 @@ upgradeNoticeLink = Si të përditësohet Firefox-i.
 [[ uninstall ]]
 
 retireDialogTitle = Të çinstalohet Piloti i Testeve?
-retireMessage = Si të doni. Kjo do të çaktivizojë çfarëdo testi, do të çinstalojë shtojcën dhe do të heqë llogarinë tuaj nga shërbyesit tanë.
 retireEmailMessage = Që të zgjidhni mosmarrje përditësimesh me email, thjesht klikoni mbi lidhjen <em>shpajtomëni</em> te cilido email i ardhur nga Piloti i Testeve.
 retireSubmitButton = Vazhdoni
 pageTitleRetirePage = Pilot Testesh Firefox - Çinstaloje Pilotin e Testeve
@@ -252,7 +279,6 @@ newsletterFooterSuccessBody = Nëse s’e keni ripohuar më parë pajtimin te nj
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Ky eksperiment nuk mbulohet për gjuhën tuaj ({ $locale_code }).
 localeWarningSubtitle = Mundeni ta aktivizoni, nëse doni.
 
 
@@ -277,3 +303,8 @@ noScriptLink = Shihni pe
 
 viewPastExperiments = Shihni Eksperimente të Dikurshme
 hidePastExperiments = Fshihi Eksperimentet e Dikurshëm
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
