@@ -39,7 +39,7 @@ headerLinkBlog = Blog
 landingIntroOne = Testoni veçori të reja.
 landingIntroTwo = Jepni përshtypjet tuaja.
 landingIntroThree = Ndihmoni të ndërtohet Firefox-i.
-landingLegalNotice = Duke vazhduar më tutje, pajtoheni me <a>Kushtet e Përdorimit</a> dhe <a>Shënimin mbi Privatësinë</a> të Pilotit të testeve.
+landingLegalNotice = Duke vazhduar më tutje, pajtoheni me <a>Kushtet e Përdorimit</a> dhe <a>Shënimin mbi Privatësinë</a> të Pilotit të Testeve.
 landingExperimentsTitle = Provoni veçoritë tona më të reja eksperimentale
 
 
@@ -64,7 +64,7 @@ oneClickInstallMajorCta = Aktivizo { $title }
 landingRequiresDesktop = Piloti i Testeve lyp Firefox për Desktop në Windows, Mac ose Linux
 landingDownloadFirefoxDesc = (Pilot i Testeve mund të përdoret te Firefox-i në Windows, OS X dhe Linux)
 landingUpgradeDesc = Piloti i testeve lyp Firefox 49 ose më të ri.
-landingUpgradeDesc2 = Test Pilot lyp Firefox { $version } ose më të ri.
+landingUpgradeDesc2 = Piloti i Testeve lyp Firefox { $version } ose më të ri.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Përmirësojeni Firefox-in
 landingDownloadFirefoxSubTitle = Shkarkim Falas
@@ -73,7 +73,7 @@ landingDownloadFirefoxSubTitle = Shkarkim Falas
 // A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
-landingCardListTitle = Fillojani për 3, 2, 1
+landingCardListTitle = Fillojani! 3, 2, 1…
 landingCardOne = Merrni shtesën Pilot Testesh
 landingCardTwo = Aktivizoni veçori eksperimentale
 landingCardThree = Tregonani si ju duket
@@ -225,7 +225,7 @@ versionChangeNoticeLink = Merrni versionin e tanishëm të Firefox-it.
 [[ uninstall ]]
 
 retireDialogTitle = Të çinstalohet Piloti i Testeve?
-retireMessageUpdate = Si të doni. Kjo do të çinstalojë Test Pilot-in. Eksperimentet individuale mund t’i çaktivizoni që nga Përgjegjësi i Shtesave te Firefox-i.
+retireMessageUpdate = Si të doni. Kjo do të çinstalojë Pilotin e Testeve. Eksperimentet individuale mund t’i çaktivizoni që nga Përgjegjësi i Shtesave te Firefox-i.
 retireEmailMessage = Që të zgjidhni mosmarrje përditësimesh me email, thjesht klikoni mbi lidhjen <em>shpajtomëni</em> te cilido email i ardhur nga Piloti i Testeve.
 retireSubmitButton = Vazhdoni
 pageTitleRetirePage = Pilot Testesh Firefox - Çinstaloje Pilotin e Testeve
@@ -270,7 +270,7 @@ incompatibleSubheader = Këshillojmë <a>çaktivizimin e këtyre shtesave</a> p�
 
 newsletterFormEmailPlaceholder
     .placeholder = Këtu vini email-in tuaj
-newsletterFormDisclaimer = Do t’ju dërgojmë vetëm të dhëna që kanë lidhje Pilotin e Testeve.
+newsletterFormDisclaimer = Do t’ju dërgojmë vetëm të dhëna që kanë lidhje me Pilotin e Testeve.
 newsletterFormPrivacyNotice = Pajtohem me trajtimin që Mozilla u bën të dhënave të mia, ashtu si shpjegohet te <a>ky shënim mbi privatësinë</a>.
 newsletterFormPrivacyAgreementRequired = Ju lutemi, i vini shenjë kësaj kutize, nëse doni të vazhdohet.
 newsletterFormSubmitButton = Regjistrohuni Tani
@@ -321,9 +321,9 @@ hidePastExperiments = Fshihi Eksperimentet e Dikurshëm
 [[ warnings ]]
 
 warningGenericTitle = Ka diçka gabim!
-warningGenericDetail = Diç shkoi ters me Test Pilot-in. Ju lutemi, <a>njoftoni një të metë</a> dhe përmendni këtë mesazh gabimi.
+warningGenericDetail = Diç shkoi ters me Pilot-in e Testeve. Ju lutemi, <a>njoftoni një të metë</a> dhe përmendni këtë mesazh gabimi.
 warningUpgradeFirefoxTitle = Që të vazhdohet, përmirësoni Firefox-in!
-warningUpgradeFirefoxDetail = Test Pilot lyp versionin më të ri të Firefox-it. Që t’ia fillohet, <a>përmirësoni Firefox-in</a>.
+warningUpgradeFirefoxDetail = Pilot Testesh lyp versionin më të ri të Firefox-it. Që t’ia fillohet, <a>përmirësoni Firefox-in</a>.
 warningHttpsRequiredTitle = Lypset HTTPS!
 warningHttpsRequiredDetail = Tek Test Pilot duhet të hyhet përmes HTTPS-je. Ju lutemi, për hollësi, shihni <a>dokumentimin tonë</a>.
 warningMissingPrefTitle = Dëshironi të zhvilloni për Test Pilot?
