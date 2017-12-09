@@ -100,6 +100,7 @@ pulseContributors1Title = UX në Firefox
 pulseContributors2Title = Firefox Platform Product Intelligence
 pulseContributors3Title = SC Firefox-i
 sendDescription = Fshehtëzojini dhe dërgoni kartela përmes një lidhjeje që skadon automatikisht, për të garantuar që dokumentet tuaja të rëndësishme nuk mbeten përgjithmonë nëpër internet.
+sendIntroduction = <p>Send ju lejon të ngarkoni dhe fshehtëzoni kartela të mëdha (deri në 1GB) për t’i ndarë me të tjerët përmes internetit. Kur ngarkoni një kartelë, Send krijon një lidhje për t’ia dhënë kujt të doni. Çdo lidhje e krijuar nga Send do të skadojë pas 1 shkarkimi ose brenda 24 orësh, dhe krejt kartelat e dërguara do të fshihen automatikisht në shërbyesit Send.</p> <p>Ndryshe nga eksperimentet e tjera Pilot testesh, Send nuk lyp ndonjë shtesë, dhe mund të përdoret në çfarëdo shfletuesi modern.</p>
 sendContributors0Title = Stazhier Inxhinierimi
 sendContributors1Title = Stazhier Inxhinierimi
 sendContributors2Title = Inxhinier Sanitarizimi
