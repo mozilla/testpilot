@@ -166,6 +166,7 @@ voicefillMeasurements0 = Kur zgjidhni përdorimin e Voice Fill-it, regjistrimet 
 voicefillMeasurements1 = Voice Fill do të grumbullojë të dhëna teknike lidhur me funksionimin e veçorisë, sa kohë u duhet shërbyesve tanë të përpunojnë një regjistrim të parashtruar dhe nëse përzgjodhët apo ndryshuar ndonjë nga sugjerimet që dhamë.
 voicefillMeasurements2 = Voice Fill do të mbledhë gjithashtu të dhëna rreth përdorimit tuaj të veçorisë, të tilla si, sa shpesh është përdorur Voice Fill dhe nëse e përdorët Voice Fill-in që nga skeda apo dritare të caktuara, si Google, DuckDuckGo, ose Yahoo.
 voicefillMeasurements3 = Për të na ndihmuar të përmirësojmë përpikërinë e sugjerimeve tona, mund të mbajmë një kopje të regjistrimeve audio të parashtruara, dhe të dhëna të lidhura me sugjerimet e dhëna për to. Regjistrimet audio të mbajtura për këtë qëllim nuk do të përshoqërohen me ndonjë identifikues tjetër personal.
+voicefillDetails0Copy = Shihni për ikonën e mikrofonit te Yahoo, DuckDuckGo, dhe Google.
 voicefillContributors0Title = Inxhinier të Foluri
 voicefillContributors1Title = Inxhinier të Foluri
 voicefillContributors3Title = UX në Firefox
