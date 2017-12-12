@@ -321,8 +321,12 @@ hidePastExperiments = Geçmiş deneyleri gizle
 [[ warnings ]]
 
 warningGenericTitle = Bir yerde bir sorun var!
+warningGenericDetail = Test Pilotu'nda bir şeyler ters gitti. Lütfen <a>hata bildirimi yapıp</a> bu hata mesajından da bahsedin.
 warningUpgradeFirefoxTitle = Devam etmek için Firefox’u yükseltin!
+warningUpgradeFirefoxDetail = Test Pilotu için Firefox'un son sürümü gerekir. Başlamak için <a>Firefox'u yükseltin</a>.
 warningHttpsRequiredTitle = HTTPS gerekli!
 warningHttpsRequiredDetail = Test Pilotu'na HTTPS üzerinden erişmelisiniz. Ayrıntılar için lütfen <a>belgelerimize</a> bakın.
 warningMissingPrefTitle = Test Pilotu'nu geliştiriyor musunuz?
+warningMissingPrefDetail = Test Pilotu'nu yerel ortamda veya geliştirme ortamlarında çalıştırırken özel yapılandırma gerekir. Ayrıntılar için lütfen <a>belgelerimize</a> bakın.
 warningBadHostnameTitle = Onaylanmamış ana makine adı!
+warningBadHostnameDetail = Test Pilotu sitesinde yalnızca testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net ve example.com:8000 adreslerinden ulaşabilirsiniz. Ayrıntılar için lütfen <a>belgelerimize</a> bakın.
