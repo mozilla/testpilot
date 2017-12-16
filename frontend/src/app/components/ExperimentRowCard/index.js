@@ -76,7 +76,9 @@ export default class ExperimentRowCard extends React.Component {
             {subtitle && <Localized id={this.l10nId('subtitle')}>
               <h4 className="subtitle">{subtitle}</h4>
             </Localized>}
-            <h4>{this.statusMsg()}</h4>
+            {this.statusMsg() &&
+              <h4>{this.statusMsg()}</h4>
+            }
           </div>
           {this.renderFeedbackButton()}
         </header>
