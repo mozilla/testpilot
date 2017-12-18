@@ -55,7 +55,7 @@ export default class ExperimentTourDialog extends React.Component {
     }
     return (<Localized id="tourOnboardingTitle" $title={experiment.title}>
             <h3 className={cn('modal-header lighter', {
-              enabled: isExperimentEnabled({ addon_id: `@${experiment.title}` })
+              enabled: isExperimentEnabled(experiment)
             })}>{experiment.title}</h3>
             </Localized>);
   };
