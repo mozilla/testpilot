@@ -22,7 +22,6 @@ type HomePageNoAddonProps = {
   isAfterCompletedDate: Function,
   navigateTo: Function,
   isMinFirefox: boolean,
-  getExperimentLastSeen: Function,
   isExperimentEnabled: Function,
   sendToGA: Function
 }

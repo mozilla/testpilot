@@ -23,7 +23,6 @@ type FeaturedExperimentProps = {
   installed: InstalledExperiments,
   clientUUID?: string,
   eventCategory: string,
-  getExperimentLastSeen: Function,
   isExperimentEnabled: Function,
   sendToGA: Function,
   navigateTo: Function

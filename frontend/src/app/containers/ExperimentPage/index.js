@@ -147,7 +147,6 @@ export class ExperimentDetail extends React.Component {
       isAfterCompletedDate,
       isDev,
       hasAddon,
-      setExperimentLastSeen,
       clientUUID,
       installedAddons,
       setPageTitleL10N,
@@ -197,10 +196,6 @@ export class ExperimentDetail extends React.Component {
     ) {
       return <NotFoundPage />;
     }
-
-    // Set the timestamp for when this experiment was last seen (for
-    // ExperimentRowCard updated/launched banner logic)
-    setExperimentLastSeen(experiment);
 
     const surveyURL = buildSurveyURL(
       'givefeedback',

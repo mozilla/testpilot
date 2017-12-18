@@ -107,12 +107,13 @@ describe('app/containers/HomePageWithAddon', () => {
   });
 
   it('should show news update dialog if valid news updates are available', () => {
-    subject = render(<HomePageWithAddon {...props} getExperimentLastSeen={()=>{}}/>);
+    window.localStorage = {
+      getItem: () => {}
+    };
+    subject = render(<HomePageWithAddon {...props} />);
     expect(subject.find('.news-updates-modal')).to.have.property('length', 1);
 
-    subject = render(<HomePageWithAddon {...props}
-      majorNewsUpdates={[]}
-      getExperimentLastSeen={()=>{}}/>);
+    subject = render(<HomePageWithAddon {...props} majorNewsUpdates={[]} />);
     expect(subject.find('.news-updates-modal')).to.have.property('length', 0);
   });
 });

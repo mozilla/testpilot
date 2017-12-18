@@ -33,7 +33,6 @@ describe('app/components/FeaturedExperiment', () => {
       eventCategory: 'test category',
       navigateTo: sinon.spy(),
       sendToGA: sinon.spy(),
-      getExperimentLastSeen: sinon.spy(),
       isExperimentEnabled: sinon.spy()
     };
     subject = mount(<FeaturedExperiment {...props} />);
@@ -75,8 +74,7 @@ describe('app/components/FeaturedExperiment', () => {
     subject.setProps({
       enabled: false,
       experiment: { ...mockExperiment,
-        created: moment().subtract(1, 'week').utc(),
-        modified: moment().subtract(1, 'week').utc()
+        created: moment().subtract(1, 'week').utc()
       }
     });
 
@@ -90,36 +88,24 @@ describe('app/components/FeaturedExperiment', () => {
       enabled: true
     });
 
-    expect(props.getExperimentLastSeen.called).to.be.true;
     expect(subject.find('.just-launched-tab')).to.have.property('length', 0);
   });
 
-  it('should display "just updated" banner if modified date within 2 weeks, since last seen, not enabled, and no just launched', () => {
+  it('should display "just updated" banner if modified date within 2 weeks, not enabled, and no just launched', () => {
     expect(subject.find('.just-updated-tab')).to.have.property('length', 0);
 
     props = { ...props,
       enabled: false,
-      getExperimentLastSeen:
-        sinon.spy(() => moment().subtract(1.5, 'week').valueOf()),
       experiment: { ...mockExperiment,
         modified: moment().subtract(1, 'week').utc()
       }
     };
     subject.setProps(props);
 
-    expect(props.getExperimentLastSeen.called).to.be.true;
     expect(subject.find('.just-updated-tab')).to.have.property('length', 1);
 
     subject.setProps({ enabled: true });
 
-    expect(subject.find('.just-updated-tab')).to.have.property('length', 0);
-
-    subject.setProps({
-      enabled: false,
-      getExperimentLastSeen: sinon.spy(() => moment().valueOf())
-    });
-
-    expect(props.getExperimentLastSeen.called).to.be.true;
     expect(subject.find('.just-updated-tab')).to.have.property('length', 0);
   });
 
@@ -155,8 +141,7 @@ describe('app/components/FeaturedStatus', () => {
     };
     props = {
       experiment: mockExperiment,
-      enabled: false,
-      getExperimentLastSeen: sinon.spy()
+      enabled: false
     };
     subject = mount(<FeaturedStatus {...props} />);
   });
@@ -170,7 +155,6 @@ describe('app/components/FeaturedStatus', () => {
     mockExperiment.modified =  moment().subtract(1, 'week').utc();
 
     subject.setProps({
-      getExperimentLastSeen: () => 0,
       experiment: mockExperiment
     });
 
@@ -182,7 +166,6 @@ describe('app/components/FeaturedStatus', () => {
     mockExperiment.modified =  moment().subtract(1, 'week').utc();
 
     subject.setProps({
-      getExperimentLastSeen: () => 0,
       experiment: mockExperiment
     });
     expect(subject.find('.just-updated-tab')).to.have.property('length', 1);
@@ -222,7 +205,6 @@ describe('app/components/FeaturedButton', () => {
       experiment: mockExperiment,
       hasAddon: false,
       installed: [],
-      getExperimentLastSeen: sinon.spy(),
       sendToGA: sinon.spy()
     };
     subject = mount(<FeaturedButton {...props} />);

@@ -33,7 +33,6 @@ describe('app/components/ExperimentRowCard', () => {
       eventCategory: 'test category',
       navigateTo: sinon.spy(),
       sendToGA: sinon.spy(),
-      getExperimentLastSeen: sinon.spy(),
       isAfterCompletedDate: sinon.spy()
     };
     subject = shallow(<ExperimentRowCard {...props} />);
@@ -98,8 +97,7 @@ describe('app/components/ExperimentRowCard', () => {
     subject.setProps({
       enabled: false,
       experiment: { ...mockExperiment,
-        created: moment().subtract(1, 'week').utc(),
-        modified: moment().subtract(1, 'week').utc()
+        created: moment().subtract(1, 'week').utc()
       }
     });
 
@@ -115,40 +113,27 @@ describe('app/components/ExperimentRowCard', () => {
       enabled: true
     });
 
-    expect(props.getExperimentLastSeen.called).to.be.true;
     expect(subject.find('.experiment-summary').hasClass('just-launched')).to.be.false;
     expect(subject.find('.just-launched-tab')).to.have.property('length', 0);
   });
 
-  it('should display "just updated" banner if modified date within 2 weeks, since last seen, not enabled, and no just launched', () => {
+  it('should display "just updated" banner if modified date within 2 weeks, not enabled, and not just launched', () => {
     expect(subject.find('.experiment-summary').hasClass('just-updated')).to.be.false;
     expect(subject.find('.just-updated-tab')).to.have.property('length', 0);
 
     props = { ...props,
       enabled: false,
-      getExperimentLastSeen:
-        sinon.spy(() => moment().subtract(1.5, 'week').valueOf()),
       experiment: { ...mockExperiment,
         modified: moment().subtract(1, 'week').utc()
       }
     };
     subject.setProps(props);
 
-    expect(props.getExperimentLastSeen.called).to.be.true;
     expect(subject.find('.experiment-summary').hasClass('just-updated')).to.be.true;
     expect(subject.find('.just-updated-tab')).to.have.property('length', 1);
 
     subject.setProps({ enabled: true });
 
-    expect(subject.find('.experiment-summary').hasClass('just-updated')).to.be.false;
-    expect(subject.find('.just-updated-tab')).to.have.property('length', 0);
-
-    subject.setProps({
-      enabled: false,
-      getExperimentLastSeen: sinon.spy(() => moment().valueOf())
-    });
-
-    expect(props.getExperimentLastSeen.called).to.be.true;
     expect(subject.find('.experiment-summary').hasClass('just-updated')).to.be.false;
     expect(subject.find('.just-updated-tab')).to.have.property('length', 0);
   });
