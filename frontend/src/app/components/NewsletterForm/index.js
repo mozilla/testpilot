@@ -16,7 +16,8 @@ type NewsletterFormProps = {
   isModal?: boolean,
   subscribe?: Function,
   setEmail?: Function,
-  setPrivacy?: Function
+  setPrivacy?: Function,
+  buttonRef?: Function
 }
 
 type NewsletterFormState = {
@@ -109,7 +110,8 @@ export default class NewsletterForm extends React.Component {
       );
     }
     return <Localized id='newsletterFormSubmitButton'>
-      <button className={classnames('button', 'large', this.props.isModal ? 'default' : 'outline')}>Sign Up Now</button>
+      <button className={classnames('button', 'large', this.props.isModal ? 'default' : 'outline')}
+              ref={this.props.buttonRef}>Sign Up Now</button>
     </Localized>;
   }
 

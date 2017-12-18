@@ -25,6 +25,7 @@ export default class EmailDialog extends React.Component {
   state: EmailDialogState
 
   modalContainer: Object
+  submitButton: Object
 
   constructor(props: EmailDialogProps) {
     super(props);
@@ -37,9 +38,7 @@ export default class EmailDialog extends React.Component {
   }
 
   componentDidMount() {
-    if (this.modalContainer !== undefined) {
-      this.modalContainer.focus();
-    }
+    this.focusModalContainer();
   }
 
   render() {
@@ -75,7 +74,8 @@ export default class EmailDialog extends React.Component {
                           isModal={true}
                           setEmail={newEmail => this.setState({ email: newEmail })}
                           setPrivacy={newPrivacy => this.setState({ privacy: newPrivacy })}
-                          subscribe={this.handleSubscribe.bind(this)} />
+                          subscribe={this.handleSubscribe.bind(this)}
+                          buttonRef={button => this.submitButton = button} />
         </div>
       </div>
     );
@@ -129,6 +129,13 @@ export default class EmailDialog extends React.Component {
         </div>
       </div>
     );
+  }
+
+  focusModalContainer() {
+    if (!this.modalContainer) {
+      return;
+    }
+    this.modalContainer.focus();
   }
 
   handleEmailChange(e: Object) {
@@ -203,6 +210,7 @@ export default class EmailDialog extends React.Component {
 
   handleKeyDown(e: Object) {
     const { isSuccess, isError } = this.state;
+
     switch (e.key) {
       case 'Escape':
         if (!isSuccess && !isError) {
@@ -215,17 +223,12 @@ export default class EmailDialog extends React.Component {
         break;
       case 'Enter':
         if (!isSuccess && !isError) {
-          // If event is bubbled up from the input form,
-          // do nothing and let the HTML form handle it.
-          if (e.target !== e.currentTarget) {
-            return;
-          }
-          // Submit only if privacy checkbox is checked.
-          if (this.state.privacy) {
-            this.handleSubscribe(this.state.email);
-          }
-          // TODO: Else, show notification that the checkbox
-          // needs to be checked to proceed.
+          e.preventDefault();
+          e.stopPropagation();
+          // Keeps the modal-container focused
+          // after success/error state renders
+          this.focusModalContainer();
+          this.submitButton.click();
         } else if (isSuccess) {
           this.continue(e);
         } else if (isError) {
