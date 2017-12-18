@@ -3,7 +3,7 @@ slug: experiment-name
 title: 'Experiment Name'
 subtitle: 'Powered by a Yellow Submarine'
 order: 0
-is_featured: true
+is_featured: false
 platforms: ['addon']
 web_url: https://example.com/web-experiment
 

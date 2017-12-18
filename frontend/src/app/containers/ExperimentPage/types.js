@@ -14,7 +14,6 @@ export type ExperimentPropsFromApp = {
   installed: Object,
   isAfterCompletedDate: Function,
   isDev: boolean,
-  setExperimentLastSeen: Function,
   clientUUID: string,
   installedAddons: Object,
   setPageTitleL10N: Function,

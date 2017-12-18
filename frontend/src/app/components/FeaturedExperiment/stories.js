@@ -29,9 +29,9 @@ const baseProps = {
   isFirefox: true,
   isMinFirefox: true,
   eventCategory: 'storybook',
-  getExperimentLastSeen: () => Date.now(),
   isExperimentEnabled: (e) => e.enabled === true,
   isAfterCompletedDate: () => false,
+  installAddon: action('installAddon'),
   sendToGA: action('sendToGA'),
   navigateTo: action('navigateTo'),
   clientUUID: '867-5309'

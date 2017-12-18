@@ -313,18 +313,7 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
       return el ? el.offsetHeight : 0;
     },
     getCookie: name => cookies.get(name),
-    removeCookie: name => cookies.remove(name),
-    getExperimentLastSeen: experiment => {
-      if (typeof document !== 'undefined') {
-        return parseInt(window.localStorage.getItem(`experiment-last-seen-${experiment.id}`), 10);
-      }
-      return 0;
-    },
-    setExperimentLastSeen: (experiment, value) => {
-      if (typeof window !== 'undefined') {
-        window.localStorage.setItem(`experiment-last-seen-${experiment.id}`, value || Date.now());
-      }
-    }
+    removeCookie: name => cookies.remove(name)
   }, ownProps, stateProps, dispatchProps, {
     newsletterForm
   });

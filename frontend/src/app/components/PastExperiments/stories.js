@@ -32,7 +32,6 @@ const baseProps = {
   isFirefox: true,
   isMinFirefox: true,
   eventCategory: 'storybook',
-  getExperimentLastSeen: () => Date.now(),
   isAfterCompletedDate: () => false,
   isExperimentEnabled: (e) => e.enabled === true,
   sendToGA: action('sendToGA'),

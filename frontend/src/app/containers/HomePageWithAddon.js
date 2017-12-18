@@ -37,8 +37,7 @@ type HomePageWithAddonProps = {
   isAfterCompletedDate: Function,
   navigateTo: Function,
   isMinFirefox: boolean,
-  isFirefox: boolean,
-  getExperimentLastSeen: Function
+  isFirefox: boolean
 }
 
 type HomePageWithAddonState = {

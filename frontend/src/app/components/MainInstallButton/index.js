@@ -86,7 +86,7 @@ export default class MainInstallButton extends React.Component {
   renderEnableExperimentButton(title: string) {
     return (
         <div className="main-install__enable">
-          <LocalizedHtml id="enabledExperimentCta" $title={title}>
+         <LocalizedHtml id="oneClickInstallMajorCta" $title={title}>
             <span className="main-install__minor-cta">Enable {title}</span>
           </LocalizedHtml>
         </div>

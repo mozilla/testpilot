@@ -1,7 +1,6 @@
 import { createSelector } from 'reselect';
 import moment from 'moment';
 
-
 // Return all experiments from the store, sorted.
 export const allExperimentSelector = createSelector(
   store => store.experiments.data,

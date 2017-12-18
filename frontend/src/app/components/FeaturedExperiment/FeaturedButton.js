@@ -17,7 +17,6 @@ type FeaturedButtonProps = {
   eventCategory: string,
   hasAddon: any,
   installed: InstalledExperiments,
-  getExperimentLastSeen: Function,
   sendToGA: Function,
   postInstallCallback: Function
 }
@@ -37,9 +36,9 @@ export default class FeaturedButton extends React.Component {
     };
   }
 
-  l10nId(pieces: string) {
+  l10nId = (pieces: string) => {
     return experimentL10nId(this.props.experiment, pieces);
-  }
+  };
 
   renderLegalLink() {
     const { title } = this.props.experiment;
@@ -64,16 +63,16 @@ export default class FeaturedButton extends React.Component {
             </Localized>);
   }
 
-  handleManage() {
+  handleManage = () => {
     const { experiment, eventCategory } = this.props;
     this.props.sendToGA('event', {
       eventCategory,
       eventAction: 'Open detail page',
       eventLabel: experiment.title
     });
-  }
+  };
 
-  handleFeedback() {
+  handleFeedback = () => {
     const { experiment, eventCategory } = this.props;
     this.props.sendToGA('event', {
       eventCategory,
@@ -96,14 +95,14 @@ export default class FeaturedButton extends React.Component {
         <div>
           <div className="featured-enabled-buttons">
             <Localized id="experimentCardManage">
-              <a onClick={() => this.handleManage()}
+              <a onClick={this.handleManage}
                  href={`/experiments/${slug}`}
                  className="button secondary manage-button">
                  Manage
               </a>
             </Localized>
             <Localized id="experimentCardFeedback">
-              <a onClick={() => this.handleFeedback()}
+              <a onClick={this.handleFeedback}
                  href={surveyURL} target="_blank" rel="noopener noreferrer"
                  className="button default featured-feedback">
                  Feedback
@@ -115,7 +114,7 @@ export default class FeaturedButton extends React.Component {
                                      onCancel={() => this.setState({ showLegalDialog: false })}
                                      onComplete={() => this.setState({ showLegalDialog: false })}>
             <MeasurementSection experiment={experiment}
-                                l10nId={this.l10nId.bind(this)}
+                                l10nId={this.l10nId}
                                 highlightMeasurementPanel={false}></MeasurementSection>
           </Modal>}
         </div>
