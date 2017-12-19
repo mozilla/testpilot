@@ -84,7 +84,8 @@ export default class StepModal extends React.Component {
         <Modal {...this.props} wrapperClass={wrapperClass ? `${wrapperClass} step-modal` : 'step-modal'}
                onCancel={this.cancel.bind(this)}
                onComplete={this.complete.bind(this)}
-               headerTitle={this.props.renderHeaderTitle(steps, currentStep)}>
+               headerTitle={this.props.renderHeaderTitle(steps, currentStep)}
+               handleKeyDown={this.handleKeyDown.bind(this)}>
           {stepEl}
           {this.renderStepActions(steps, currentStep)}
           {this.renderDots(steps, currentStep)}
@@ -132,7 +133,7 @@ export default class StepModal extends React.Component {
 
   handleKeyDown(ev: Object) {
     const { steps } = this.props;
-    ev.preventDefault();
+
     switch (ev.key) {
       case 'Escape':
         this.cancel(ev);
