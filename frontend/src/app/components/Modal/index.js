@@ -46,7 +46,6 @@ export default class Modal extends React.Component {
 
   handleKeyDown(ev: Object) {
     const { onCancel, onComplete } = this.props;
-    ev.preventDefault();
 
     switch (ev.key) {
       case 'Escape':
