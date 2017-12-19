@@ -38,13 +38,13 @@ def test_enable_experiment(base_url, selenium, firefox, notifications):
             experiment = Detail(selenium, page.base_url)
 
     experiment.enable()
-    ## First we wait for notification that the test pilot add-on was installed
+    # First we wait for notification that the test pilot add-on was installed
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
-    ## Then we wait to be asked to install the experiment
+    # Then we wait to be asked to install the experiment
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallConfirmation).install()
-    ## Then we wait for the experiment to be installed
+    # Then we wait for the experiment to be installed
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
     assert Detail(selenium, base_url).enabled_popup.is_popup_displayed()
