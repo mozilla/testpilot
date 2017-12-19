@@ -148,7 +148,6 @@ tourLink = Launch Tour
 contribute = Contribute
 bugReports = Bug Reports
 discussExperiment = Discuss { $title }
-tourOnboardingTitleGeneral = {$title}
 tourDoneButton = Done
 userCountContainerAlt = Just launched!
 highlightPrivacy = Your privacy
