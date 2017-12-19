@@ -116,7 +116,7 @@ order: 0
 Determines whether the experiment will be featured on the home page. Optional.
 
 ```yaml
-order: 0
+is_featured: false
 ```
 
 ## `description`
