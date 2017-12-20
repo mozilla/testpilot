@@ -2,14 +2,14 @@
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import Banner from '../components/Banner';
-import Copter from '../components/Copter';
-import ExperimentCardList from '../components/ExperimentCardList';
-import LayoutWrapper from '../components/LayoutWrapper';
-import MainInstallButton from '../components/MainInstallButton';
-import PastExperiments from '../components/PastExperiments';
-import View from '../components/View';
-
+import Banner from '../../components/Banner';
+import Copter from '../../components/Copter';
+import ExperimentCardList from '../../components/ExperimentCardList';
+import LayoutWrapper from '../../components/LayoutWrapper';
+import MainInstallButton from '../../components/MainInstallButton';
+import PastExperiments from '../../components/PastExperiments';
+import View from '../../components/View';
+import Visibility from '../../components/Visibility';
 
 type HomePageNoAddonProps = {
   hasAddon: any,
@@ -56,15 +56,17 @@ export default class HomePageNoAddon extends React.Component {
         <View {...this.props}>
           { installSplash }
 
-          <Banner background={true}>
-            <LayoutWrapper flexModifier="column-center">
-              <Localized id="landingExperimentsTitle">
-                <h2 className="banner__subtitle centered">Try out the latest experimental features</h2>
-              </Localized>
-              <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
-              <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
-            </LayoutWrapper>
-          </Banner>
+          <Visibility className="landingExperiments">
+            <Banner background={true}>
+              <LayoutWrapper flexModifier="column-center">
+                <Localized id="landingExperimentsTitle">
+                  <h2 className="banner__subtitle centered">Try out the latest experimental features</h2>
+                </Localized>
+                <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
+                <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
+              </LayoutWrapper>
+            </Banner>
+          </Visibility>
 
           <Banner>
             <Localized id="landingCardListTitle">
