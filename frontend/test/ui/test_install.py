@@ -30,16 +30,21 @@ def test_enable_experiment(base_url, selenium, firefox, notifications):
                          'value': datetime.datetime.now().isoformat(),
                          'max_age': 120,
                          'domain': 'example.com'})
-    experiments = page.header.click_install_button()
+
+    experiment = None
+    for e in page.body.experiments:
+        if 'Dev Example' in e.name:
+            e.click()
+            experiment = Detail(selenium, page.base_url)
+
+    experiment.enable()
+    # First we wait for notification that the test pilot add-on was installed
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
-
-    experiments.welcome_popup.close()
-
-    experiment = experiments.find_experiment(experiment='Dev Example')
-    experiment.enable()
+    # Then we wait to be asked to install the experiment
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallConfirmation).install()
+    # Then we wait for the experiment to be installed
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
     assert Detail(selenium, base_url).enabled_popup.is_popup_displayed()
