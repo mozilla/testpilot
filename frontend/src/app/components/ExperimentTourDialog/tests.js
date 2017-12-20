@@ -38,8 +38,7 @@ describe('app/components/ExperimentTourDialog', () => {
   });
 
   it('should render expected default content', () => {
-    expect(findLocalizedById(subject, 'tourOnboardingTitle').prop('$title'))
-      .to.equal(props.experiment.title);
+    expect(subject.find('.modal-header').text()).to.equal(props.experiment.title);
 
     const expectedTourStep = props.experiment.tour_steps[0];
     expect(subject.find('.step-image > img').prop('src'))
