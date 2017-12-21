@@ -75,7 +75,7 @@ export default class RetirePage extends React.Component {
                 </Localized>
               </div>
               <div className="modal-content">
-                <div className="flyingIcon"></div>
+                <div className="flying-icon"></div>
                 <LocalizedHtml id="retirePageMessage">
                   <p>Hope you had fun experimenting with us. <br/> Come back any time.</p>
                 </LocalizedHtml>

@@ -2,142 +2,209 @@
 @import '../../../styles/_utils';
 
 .featured-experiment {
-  display: flex;
-
   @include respond-to('small') {
-    flex-direction: column;
-  }
+    @include flex-container(column, center, stretch, nowrap);
 
-  .featured-status {
-    display: flex;
-    padding: 10px 0;
-    font-weight: bold;
-  }
+    margin: 10px 0;
 
-  .experiment-platform {
-    color: white;
-    font-size: 16px;
-
-    .platform-icon-addon {
-      background-image: url('./img/experiment-type-addon-white.svg');
+    .featured-experiment__header {
+      order: 1;
     }
 
-    .platform-icon-web {
-      background-image: url('./img/experiment-type-web-white.svg');
+    .featured-experiment__video {
+      order: 2;
     }
 
-    .platform-icon-mobile {
-      background-image: url('./img/experiment-type-mobile-white.svg');
+    .featured-experiment__description {
+      order: 3;
+    }
+
+    .featured-experiment__actions {
+      order: 5;
+    }
+
+    .featured-experiment__details {
+      order: 4;
     }
   }
 
-  .featured-information {
+  @include respond-to('not-small') {
+    @include flex-container(column, flex-start, flex-start, wrap);
+    max-height: 500px;
+  }
+
+  .featured-experiment__header,
+  .featured-experiment__description,
+  .featured-experiment__details,
+  .featured-experiment__actions {
+    @include respond-to('medium') {
+      margin-right: 40px;
+      max-width: 340px;
+      width: 340px;
+    }
+
     @include respond-to('small') {
-      max-width: unset;
-      width: 75%;
       margin: 0 auto;
+      max-width: 100%;
     }
 
-    margin: 30px;
-    max-width: 500px;
-    text-align: center;
-    margin-top: 5px;
+    margin: 0 60px 0 0;
+    width: 420px;
+  }
 
-    > a {
-      color: $blue-40;
-      float: left;
-      font-size: 18px;
-      text-decoration: underline;
+  .featured-experiment__header {
+    @include respond-to('small') {
+      @include flex-container(column, center, center);
+    }
+
+    @include respond-to('not-small') {
+      .featured-experiment__status  {
+        display: none;
+      }
+    }
+
+    display: flex;
+    margin-bottom: 20px;
+
+    .experiment-icon-wrapper {
+      @include respond-to('small') {
+        margin: 0 0 20px;
+      }
+
+      border-radius: 50%;
+      flex: 0 0 54px;
+      height: 54px;
+      margin: 0 10px 0 0;
+      width: 54px;
+    }
+
+    .experiment-icon {
+      background-position: center center;
+      background-size: 32px auto;
+      height: 54px;
+      width: 54px;
+    }
+
+    .experiment-platform {
+      color: $white;
+      font-size: 16px;
+      white-space: nowrap;
+
+      .platform-icon,
+      .platform-copy {
+        margin: 0 8px 0 0;
+        opacity: 1;
+      }
+
+      .platform-icon-addon {
+        background-image: url('./img/experiment-type-addon-white.svg');
+      }
+
+      .platform-icon-web {
+        background-image: url('./img/experiment-type-web-white.svg');
+      }
+
+      .platform-icon-mobile {
+        background-image: url('./img/experiment-type-mobile-white.svg');
+      }
     }
   }
 
-  .featured-description {
+  .featured-experiment__title-wrapper {
+    @include respond-to('small') {
+      @include flex-container(column, center, center);
+    }
+
+    @include flex-container(column, space-between, flex-start);
+
+    .featured-experiment__title {
+      @include respond-to('small') {
+        margin: 10px 0 20px;
+      }
+
+      font-size: 33px;
+      font-weight: 300;
+      margin: 0 0 7px;
+      text-align: left;
+    }
+
+    .featured-experiment__subtitle {
+      font-size: 17px;
+      font-weight: 300;
+      margin: 0;
+    }
+
+    .featured-experiment__info {
+      display: flex;
+    }
+  }
+
+  .featured-experiment__description {
+    @include respond-to('small') {
+      margin: 20px auto 0;
+      text-align: center;
+    }
+
+    @include respond-to('medium') {
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 30px;
+    margin: 0 0 16px;
     text-align: left;
   }
 
-  .title-wrap {
-    display: flex;
-    flex-direction: column;
-    padding: 12px;
-
-    h2 {
-      font-size: 33px;
-      font-weight: normal;
-      margin: 0 0 5px;
-    }
-
-    h4 {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
+  .featured-experiment__details {
+    color: $blue-40;
+    font-size: 14px;
+    text-decoration: underline;
   }
 
-  header {
-    text-align: center;
-    display: flex;
-  }
-
-  & > div {
-    flex-basis: 100%;
-  }
-
-  .icon-wrap {
-    background: $teal-60;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    margin: 12px;
-    margin-left: 0;
-  }
-
-  .experiment-icon {
+  .featured-experiment__enabled-buttons {
     @include respond-to('small') {
-      width: 48px;
-    }
-    background-position: 50%;
-    background-position: 50% 32%;
-    background-size: 32px;
-  }
-
-  .featured-enabled-buttons {
-    @include respond-to('small') {
-      display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       width: 100%;
     }
+
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
     width: 352px;
-
-    .secondary {
-      background: $grey-30;
-
-      &:hover,
-      &:focus {
-        background: $grey-40;
-        border: 0;
-      }
-    }
 
     .button {
       @include respond-to('small') {
-        width: 45%;
+        margin: 0 auto 20px;
+        width: 100%;
       }
+
       font-size: 18px;
-      height: 64px;
+      height: 48px;
       padding: 12px;
       width: 160px;
     }
   }
-  
-  .main-install__button, .main-install__download {
-    font-size: 18px;
-    height: 64px;
+
+  .main-install__button,
+  .main-install__download {
+    @include respond-to('medium') {
+      width: 320px;
+    }
+
+    @include respond-to('small') {
+      margin-bottom: 20px;
+      max-width: 320px;
+      width: 100%;
+    }
+
+    height: 84px;
     width: 352px;
   }
 
   .main-install__spacer {
-    height: 25px; 
+    height: 25px;
   }
 
   .main-install__available {
@@ -146,57 +213,91 @@
 
   .main-install__legal {
     @include respond-to('small') {
+      margin: 0;
+      text-align: center;
       width: 100%;
     }
+
     max-width: 352px;
+    text-align: left;
     width: 352px;
 
     a {
-      padding: 0;
+      font-weight: bold;
       margin: 0;
-    }
-  }
-
-  .featured-notice {
-    font-size: 10px;
-
-    a {
+      padding: 0;
       text-decoration: underline;
     }
   }
 
-  .featured-info-line {
-    display: flex;
+  .featured-experiment__subtitle {
+    border-left: 1px solid $white;
+    padding-left: 6px;
+  }
 
-    h4 {
-      font-weight: normal;
+  .featured-experiment__status {
+    display: flex;
+    font-weight: bold;
+    margin: -5px 0 10px;
+
+    .star-icon {
+      opacity: 1;
+    }
+
+    &:empty {
+      display: none;
     }
   }
 
-  .experiment-platform {
-    white-space: nowrap;
-  }
+  .featured-experiment__video {
+    @include flex-container(column, flex-start, stretch);
 
-  .subtitle {
-    border-left: 1px solid white;
-    margin-left: 10px;
-    padding-left: 10px;
-  }
-  
-  .featured-video {
-    iframe {
-      @include respond-to('small') {
-        width: 100%;
-        height: auto;
+    @include respond-to('small') {
+
+      .featured-experiment__status  {
+        display: none;
       }
-      width: 500px;
+    }
+
+    iframe {
+      @include respond-to('medium') {
+        height: 300px;
+        width: 380px;
+      }
+      @include respond-to('small') {
+        height: 260px;
+        margin: 0 -6%;
+        width: 112%;
+      }
+
       height: 281px;
+      width: 500px;
     }
   }
 
   .legal-modal {
+
+    font-size: 15px;
+    max-width: 460px;
+
+    h3 {
+      font-size: 22px;
+      font-weight: 300;
+    }
+
     .measurements {
+      @include respond-to('small') {
+        padding: 20px;
+        text-align: left;
+      }
+
       padding: 20px 40px;
+
+      ul {
+        background: $grey-20;
+        list-style-position: inside;
+        padding: 20px;
+      }
 
       a {
         color: $blue-60;

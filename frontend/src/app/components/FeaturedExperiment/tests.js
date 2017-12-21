@@ -39,7 +39,7 @@ describe('app/components/FeaturedExperiment', () => {
   });
 
   it('should render expected content', () => {
-    expect(subject.find('.featured-information header h2').text()).to.equal(mockExperiment.title);
+    expect(subject.find('.featured-experiment__title').text()).to.equal(mockExperiment.title);
   });
 
   it('should have the expected l10n ID', () => {
@@ -54,18 +54,19 @@ describe('app/components/FeaturedExperiment', () => {
     expect(subject.find('.experiment-summary')).to.have.property('length', 0);
   });
 
+  // HACK: we inject this element into the DOM twice and show/hide based on window size
   it('should display an "enabled" text if the experiment is enabled', () => {
     expect(subject.find('.enabled-tab')).to.have.property('length', 0);
     subject.setProps({ enabled: true });
-    expect(subject.find('.enabled-tab')).to.have.property('length', 1);
+    expect(subject.find('.enabled-tab')).to.have.property('length', 2);
   });
 
   it('should display a feedback button if the experiment is enabled', () => {
-    expect(subject.find('.featured-feedback')).to.have.property('length', 0);
+    expect(subject.find('.featured-experiment__enabled-buttons')).to.have.property('length', 0);
 
     subject.setProps({ enabled: true, hasAddon: true });
 
-    expect(subject.find('.featured-feedback')).to.have.property('length', 1);
+    expect(subject.find('.featured-experiment__enabled-buttons')).to.have.property('length', 1);
   });
 
   it('should display "just launched" banner if created date within 2 weeks, never seen, and not enabled', () => {
@@ -78,7 +79,7 @@ describe('app/components/FeaturedExperiment', () => {
       }
     });
 
-    expect(subject.find('.just-launched-tab')).to.have.property('length', 1);
+    expect(subject.find('.just-launched-tab')).to.have.property('length', 2);
 
     subject.setProps({ enabled: true });
 
@@ -102,7 +103,7 @@ describe('app/components/FeaturedExperiment', () => {
     };
     subject.setProps(props);
 
-    expect(subject.find('.just-updated-tab')).to.have.property('length', 1);
+    expect(subject.find('.just-updated-tab')).to.have.property('length', 2);
 
     subject.setProps({ enabled: true });
 

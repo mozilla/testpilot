@@ -4,6 +4,8 @@
 $email-icon--width: 74px;
 $email-icon--height: 80px;
 $email-icon--responsive-unit: .66;
+$error-border: #c4c4c4;
+$error-background: #f2f2f2;
 
 
 .newsletter-footer {
@@ -11,10 +13,10 @@ $email-icon--responsive-unit: .66;
   padding: ($grid-unit * 1.75) 0;
 
   .error {
-    color: $red-70;
-    border: 1px solid #C4C4C4;
+    background-color: $error-background;
+    border: 1px solid $error-border;
     border-radius: 4px;
-    background-color: #F2F2F2;
+    color: $red-70;
     font-size: $font-unit * 7 / 6;
     line-height: 8 / 7;
     margin-bottom: $grid-unit;
@@ -22,23 +24,24 @@ $email-icon--responsive-unit: .66;
   }
 
   header {
-    width: 45%;
     @include respond-to ('big') {
       margin-left: 55px;
     }
+
+    width: 45%;
   }
 
   form {
-    width: 45%;
-    max-width: 360px;
     @include respond-to ('big') {
       margin-right: 55px;
     }
+
+    max-width: 360px;
+    width: 45%;
   }
 
   header {
     @include flex-container(column, center, flex-start);
-
     background: url('./img/envelope.svg') no-repeat left;
     background-size: $email-icon--width $email-icon--height;
     margin-right: 10%;
