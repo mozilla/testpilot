@@ -61,7 +61,7 @@ export default class HomePageNoAddon extends React.Component {
     </Banner>;
 
     const featuredSection = featuredExperiment ? (<Banner background={true}>
-      <LayoutWrapper flexModifier="column-center">
+      <LayoutWrapper flexModifier="row-between-breaking">
         <FeaturedExperiment {...this.props}
                             experiment={featuredExperiment}
                             eventCategory="HomePage Interactions"
@@ -81,7 +81,7 @@ export default class HomePageNoAddon extends React.Component {
         <View {...this.props}>
           { installSplash }
           { featuredSection }
-          <Banner background={true}>
+          <Banner background={!featuredSection}>
             <LayoutWrapper flexModifier="column-center">
               {headerMessage}
               <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
@@ -89,7 +89,7 @@ export default class HomePageNoAddon extends React.Component {
             </LayoutWrapper>
           </Banner>
 
-          <Banner>
+          <Banner background={!!featuredSection}>
             <Localized id="landingCardListTitle">
               <h2 className="banner__subtitle centered">Get started in 3 easy steps</h2>
             </Localized>

@@ -21,8 +21,6 @@
 }
 
 .copter__inner {
-  background-image: url('./img/copter.png');
-  background-size: 250px 201px;
   @include respond-to ('big') {
     height: 265px;
     width: 345px;
@@ -40,8 +38,10 @@
     width: 183px;
   }
 
+  background-image: url('./img/copter.png');
   background-position: center center;
   background-repeat: no-repeat;
+  background-size: 250px 201px;
   margin: 0 auto;
   position: relative;
   top: 0;
@@ -71,9 +71,6 @@
   }
 
   .copter__inner {
-    background-image: url('./img/copter.png');
-    background-size: auto $grid-unit * 10;
-
     @include respond-to('not-small') {
       height: $grid-unit * 10;
       width: $grid-unit * 12.5;
@@ -85,9 +82,10 @@
       width: 184px;
     }
 
+    background-image: url('./img/copter.png');
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: $grid-unit * 12.5 $grid-unit * 10;
+    background-size: auto $grid-unit * 10;
     filter: drop-shadow(0 0 20px $transparent-black-1);
     margin: 0 auto;
 

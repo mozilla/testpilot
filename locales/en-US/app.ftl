@@ -84,7 +84,7 @@ latestUpdatesTitle = Latest updates
 showMoreNewsTitle = Show Past News
 
 [[featuredExperiment]]
-moreDetail = More Detail
+moreDetail = View details
 
 // A listing of all Test Pilot experiments.
 [[experimentsList]]
@@ -95,7 +95,7 @@ experimentListEndingTomorrow = Ending Tomorrow
 experimentListEndingSoon = Ending Soon
 experimentCondensedHeader = Welcome to Test Pilot!
 experimentListHeader = Pick your experiments!
-experimentListHeaderWithFeatured = Or try other experiments
+experimentListHeaderWithFeatured = Try all of our experiments
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[experimentCard]]

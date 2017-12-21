@@ -1,8 +1,8 @@
 .button {
+  @include flex-container(row, center, center);
   border: 1px solid $transparent-black-34;
   border-radius: 2px;
   cursor: pointer;
-  display: inline-block;
   font-family: 'Fira Sans', sans-serif;
   font-size: $font-unit * 1.25;
   font-weight: $weight-normal;
@@ -11,7 +11,6 @@
   outline: none;
   padding: 0 10px;
   position: relative;
-  text-align: center;
   text-decoration: none;
   transition: background 150ms, width 150ms;
   user-select: none;
@@ -71,19 +70,19 @@
   }
 
   &.secondary {
-    background: $transparent-grey-10;
+    background: $grey-20;
     border: 0;
     color: $grey-90;
     font-size: 15px;
 
     &:hover,
     &:focus {
-      background: $transparent-grey-20;
+      background: $grey-30;
       border: 0;
     }
 
     &:active {
-      background: $transparent-grey-30;
+      background: $grey-40;
       border-color: $transparent-grey-30;
     }
   }

@@ -10,12 +10,12 @@
   }
 
   h1 {
+    @include-respond-to('small') {
+      margin: 0;
+    }
+
     margin: $grid-unit * .75 0 $grid-unit * .75 - $grid-unit * .25;
     text-indent: -9999px;
-
-      @include-respond-to('small') {
-        margin: 0;
-      }
 
     .wordmark {
       @include respond-to('not-small') {
@@ -23,6 +23,7 @@
         height: 90px;
         width: 302px;
       }
+
       background-image: url('./img/wordmark.png');
       background-position: left 5px;
       background-repeat: no-repeat;
@@ -50,7 +51,7 @@
       border-top: 0;
       height: 20px;
       line-height: 20px;
-      margin: 0 10px 0;
+      margin: 0 10px;
       opacity: .6;
 
       &:hover {

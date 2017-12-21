@@ -136,7 +136,7 @@ export default class HomePageWithAddon extends React.Component {
     const featuredExperiment = featuredExperiments.length ? featuredExperiments[0] : false;
 
     const featuredSection = featuredExperiment ? (<Banner background={true}>
-      <LayoutWrapper flexModifier="column-center">
+      <LayoutWrapper flexModifier="row-center">
         <FeaturedExperiment {...this.props} experiment={featuredExperiment}
                             eventCategory="HomePage Interactions"
                             enabled={isExperimentEnabled(featuredExperiment)} />

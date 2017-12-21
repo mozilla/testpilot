@@ -2,40 +2,40 @@
 @import '../../../styles/_utils';
 
 .graduated-notice {
-  @include flex-container(row, center, center);
-  border-radius: 2px;
-  border: 2px dashed $orange-50;
-  border-radius: 2px;
-  padding: 16px;
-  margin-bottom: 32px;
-
   @include respond-to('medium') {
     @include flex-container(column, center, flex-start);
   }
+
+  @include flex-container(row, center, center);
+  border: 2px dashed $orange-50;
+  border-radius: 2px;
+  margin-bottom: 32px;
+  padding: 16px;
 }
 
 .graduated-notice-image {
-  flex: 0 0 20px;
-  max-width: 20px;
-  margin-right: 12px;
-
   @include respond-to('medium') {
     display: none;
   }
+
+  flex: 0 0 20px;
+  margin-right: 12px;
+  max-width: 20px;
 }
 
 .graduated-notice-text {
-  flex: 1;
-  margin-right: 28px;
   @include respond-to('medium') {
     margin: 0 0 $grid-unit;
   }
+
+  flex: 1;
+  margin-right: 28px;
 }
 
 .graduated-notice-text h1 {
   font-size: 15px;
-  line-height: 18px;
   font-weight: $weight-semi-bold;
+  line-height: 18px;
   margin: 0;
 }
 

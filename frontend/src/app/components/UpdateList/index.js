@@ -37,6 +37,9 @@ export class Update extends React.Component {
     const iconClassName = experiment
       ? `experiment-icon-${experiment.slug}`
           : 'news-update-test-pilot-icon';
+    const iconWrapperClassName = experiment
+      ? `experiment-icon-wrapper-${experiment.slug}`
+          : 'news-update-test-pilot-icon-wrapper';
 
     const isNew = experiment ? new Date(experiment.published) < twoWeeksAgo : false;
 
@@ -44,7 +47,9 @@ export class Update extends React.Component {
       <a className={classnames('update', { 'has-link': !!link })}
           href={link}
           onClick={() => this.handleLinkClick()}>
-        <div className={classnames(iconClassName, 'update-experiment-icon')} style={ { backgroundColor: gradient_stop } }/>
+        <div className={classnames(iconWrapperClassName, 'update-experiment-icon-wrapper')}>
+          <div className={classnames(iconClassName, 'update-experiment-icon')} style={ { backgroundColor: gradient_stop } }/>
+        </div>
         <div className="update-content">
           <header>
             {experiment
