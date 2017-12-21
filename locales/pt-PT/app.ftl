@@ -129,6 +129,7 @@ experimentListHeader = Escolha as suas experiências!
 experimentCardFeedback = Feedback
 experimentCardManage = Gerir
 experimentCardGetStarted = Começar
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Saber mais
 
 
@@ -197,7 +198,6 @@ startedDateLabel = Data de início da experiência: <b>{ $startedDate }</b>
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Piloto de testes
-learnMoreLink = Saber mais
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -330,3 +330,5 @@ warningMissingPrefTitle = A programar no Test Pilot?
 warningMissingPrefDetail = Ao executar o Test Pilot localmente ou em ambiente de desenvolvimento, é necessária uma configuração especial. Por favor, consulte a <a>nossa documentação</a> para detalhes.
 warningBadHostnameTitle = Nome de servidor não aprovado!
 warningBadHostnameDetail = O site do Test Pilot apenas pode ser acedido a partir de testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, ou example.com:8000. Por favor, consulte a <a>nossa documentação</a> para detalhes.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = O Test Pilot requer JavaScript. Pedimos desculpa.
