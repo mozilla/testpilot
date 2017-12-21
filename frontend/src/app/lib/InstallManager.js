@@ -188,10 +188,16 @@ export function setupAddonConnection(store) {
 
 export function enableExperiment(dispatch, experiment, sendToGA) {
   if (!mam) {
-    return;
+    return false;
   }
 
-  mam
+  dispatch(
+    updateExperiment(experiment.addon_id, {
+      inProgress: true
+    })
+  );
+
+  return mam
     .getAddonByID(experiment.addon_id)
     .then(
       addon => {
@@ -226,11 +232,6 @@ export function enableExperiment(dispatch, experiment, sendToGA) {
         );
       }
     );
-  dispatch(
-    updateExperiment(experiment.addon_id, {
-      inProgress: true
-    })
-  );
 }
 
 export function disableExperiment(dispatch, experiment) {

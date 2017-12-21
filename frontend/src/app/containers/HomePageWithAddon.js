@@ -9,6 +9,7 @@ import Banner from '../components/Banner';
 import Copter from '../components/Copter';
 import UpdateList from '../components/UpdateList';
 import EmailDialog from '../components/EmailDialog';
+import FeaturedExperiment from '../components/FeaturedExperiment';
 import ExperimentCardList from '../components/ExperimentCardList';
 import LayoutWrapper from '../components/LayoutWrapper';
 import MainInstallButton from '../components/MainInstallButton';
@@ -16,11 +17,13 @@ import PastExperiments from '../components/PastExperiments';
 import View from '../components/View';
 import LocalizedHtml from '../components/LocalizedHtml';
 import NewsUpdatesDialog from '../components/NewsUpdatesDialog';
-
+import type { InstalledExperiments } from '../reducers/addon';
 
 type HomePageWithAddonProps = {
   hasAddon: any,
   experiments: Array<Object>,
+  installed: InstalledExperiments,
+  featuredExperiments: Array<Object>,
   majorNewsUpdates: Array<Object>,
   freshNewsUpdates: Array<Object>,
   staleNewsUpdates: Array<Object>,
@@ -31,7 +34,10 @@ type HomePageWithAddonProps = {
   sendToGA: Function,
   openWindow: Function,
   isExperimentEnabled: Function,
-  isAfterCompletedDate: Function
+  isAfterCompletedDate: Function,
+  navigateTo: Function,
+  isMinFirefox: boolean,
+  isFirefox: boolean
 }
 
 type HomePageWithAddonState = {
@@ -119,13 +125,30 @@ export default class HomePageWithAddon extends React.Component {
   }
 
   render() {
-    const { sendToGA, experiments, isAfterCompletedDate, staleNewsUpdates,
-            freshNewsUpdates, majorNewsUpdates } = this.props;
+    const { sendToGA, experiments, isAfterCompletedDate, staleNewsUpdates, freshNewsUpdates,
+            majorNewsUpdates, featuredExperiments, isExperimentEnabled } = this.props;
+
     if (experiments.length === 0) { return null; }
 
     const { showEmailDialog, showNewsUpdateDialog } = this.state;
     const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
     const pastExperiments = experiments.filter(isAfterCompletedDate);
+    const featuredExperiment = featuredExperiments.length ? featuredExperiments[0] : false;
+
+    const featuredSection = featuredExperiment ? (<Banner background={true}>
+      <LayoutWrapper flexModifier="row-center">
+        <FeaturedExperiment {...this.props} experiment={featuredExperiment}
+                            eventCategory="HomePage Interactions"
+                            enabled={isExperimentEnabled(featuredExperiment)} />
+      </LayoutWrapper>
+    </Banner>) : null;
+
+    const headerMessage = !featuredExperiment ? (<Localized id="experimentListHeader">
+      <h1 className="emphasis card-list-heading">Pick your experiments</h1>
+    </Localized>) :
+    (<Localized id="experimentListHeaderWithFeatured">
+      <h1 className="emphasis card-list-heading">Or try other experiments</h1>
+     </Localized>);
 
     return (
       <View {...this.props}>
@@ -134,6 +157,7 @@ export default class HomePageWithAddon extends React.Component {
             onDismiss={() => this.setState({ showEmailDialog: false })} />}
 
       {this.renderSplash()}
+      {featuredSection}
 
       {showNewsUpdateDialog && majorNewsUpdates.length ? (
           <NewsUpdatesDialog {...this.props} newsUpdates={majorNewsUpdates}
@@ -142,14 +166,12 @@ export default class HomePageWithAddon extends React.Component {
                              onComplete={() => this.setState({ showNewsUpdateDialog: false })} />) : null}
 
         <LayoutWrapper flexModifier="card-list">
-          <UpdateList {...{ sendToGA, staleNewsUpdates, freshNewsUpdates, experiments }} />
+          {!featuredExperiment &&
+            <UpdateList {...{ sendToGA, staleNewsUpdates, freshNewsUpdates, experiments }} />}
         </LayoutWrapper>
-        <Banner background={true}>
+        <Banner>
         <LayoutWrapper>
-          <Localized id="experimentListHeader">
-
-            <h1 className="emphasis card-list-heading">Pick your experiments!</h1>
-          </Localized>
+          {headerMessage}
           <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
           <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
           </LayoutWrapper>

@@ -27,7 +27,6 @@ const baseProps = {
   isMinFirefox: true,
   experiment: experiment,
   eventCategory: 'storybook',
-  getExperimentLastSeen: () => Date.now(),
   isAfterCompletedDate: () => false,
   sendToGA: action('sendToGA'),
   navigateTo: action('navigateTo'),
@@ -63,14 +62,12 @@ storiesOf('ExperimentRowCard', module)
     <ExperimentRowCard
       {...baseProps}
       experiment={{ ...experiment, created: Date.now() }}
-      getExperimentLastSeen={() => 0}
     />
   )
   .add('just updated', () =>
     <ExperimentRowCard
       {...baseProps}
       experiment={{ ...experiment, created: Date.now(), modified: Date.now() }}
-      getExperimentLastSeen={() => 0}
     />
   )
   .add('has addon & enabled', () =>

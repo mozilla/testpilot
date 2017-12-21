@@ -14,15 +14,15 @@ import { getInstalled, isExperimentEnabled, isAfterCompletedDate, isInstalledLoa
 import { setState as setBrowserState } from '../../actions/browser';
 import { getExperimentBySlug } from '../../reducers/experiments';
 import { getChosenTest } from '../../reducers/varianttests';
-import experimentSelector from '../../selectors/experiment';
+import experimentSelector, { featuredExperimentsSelectorWithL10n } from '../../selectors/experiment';
 import { uninstallAddon, installAddon, enableExperiment, disableExperiment } from '../../lib/InstallManager';
 import { setLocalizations, setNegotiatedLanguages } from '../../actions/localizations';
 import { localizationsSelector, negotiatedLanguagesSelector } from '../../selectors/localizations';
 import { chooseTests } from '../../actions/varianttests';
 import addonActions from '../../actions/addon';
 import newsletterFormActions from '../../actions/newsletter-form';
-import RestartPage from '../../containers/RestartPage';
-import UpgradeWarningPage from '../../containers/UpgradeWarningPage';
+import RestartPage from '../RestartPage';
+import UpgradeWarningPage from '../UpgradeWarningPage';
 import { isFirefox, isMinFirefoxVersion, isMobile } from '../../lib/utils';
 import {
   makeStaleNewsUpdatesSelector,
@@ -219,6 +219,7 @@ const mapStateToProps = state => ({
   addon: state.addon,
   clientUUID: state.addon.clientUUID,
   experiments: experimentSelector(state),
+  featuredExperiments: featuredExperimentsSelectorWithL10n(state),
   freshNewsUpdates: makeFreshNewsUpdatesSelector(Date.now())(state),
   majorNewsUpdates: makeNewsUpdatesForDialogSelector(
     cookies.get('updates-last-viewed-date'),
@@ -312,18 +313,7 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
       return el ? el.offsetHeight : 0;
     },
     getCookie: name => cookies.get(name),
-    removeCookie: name => cookies.remove(name),
-    getExperimentLastSeen: experiment => {
-      if (typeof document !== 'undefined') {
-        return parseInt(window.localStorage.getItem(`experiment-last-seen-${experiment.id}`), 10);
-      }
-      return 0;
-    },
-    setExperimentLastSeen: (experiment, value) => {
-      if (typeof window !== 'undefined') {
-        window.localStorage.setItem(`experiment-last-seen-${experiment.id}`, value || Date.now());
-      }
-    }
+    removeCookie: name => cookies.remove(name)
   }, ownProps, stateProps, dispatchProps, {
     newsletterForm
   });

@@ -12,6 +12,7 @@ describe('app/containers/HomePageNoAddon', () => {
   beforeEach(function() {
     props = {
       experiments: [],
+      featuredExperiments: [],
       hasAddon: false,
       isFirefox: false,
       uninstallAddon: sinon.spy(),
@@ -31,6 +32,15 @@ describe('app/containers/HomePageNoAddon', () => {
     subject.setProps({ experiments });
     expect(findLocalizedById(subject, 'landingIntroOne')).to.have.property('length', 1);
     expect(subject.find('ExperimentCardList')).to.have.property('length', 1);
+  });
+
+  it('should render featured experiment section if there is a featured experiment', () => {
+    expect(subject.find('FeaturedExperiment')).to.have.property('length', 0);
+
+    const experiments = [ { title: 'foo' }, { title: 'bar' } ];
+    const featuredExperiments = [ { title: 'bar' } ];
+    subject.setProps({ experiments, featuredExperiments });
+    expect(subject.find('FeaturedExperiment')).to.have.property('length', 1);
   });
 
   it('should not display completed experiments', () => {

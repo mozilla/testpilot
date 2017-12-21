@@ -20,8 +20,8 @@
   }
 
   .learn {
-    font-weight: normal;
     font-size: 15px;
+    font-weight: normal;
   }
 
   .step-text .button.default {
@@ -40,7 +40,6 @@
   .published-date {
     color: $grey-50;
     font-size: 13px;
-    padding-bottom: 0 !important;
+    padding-bottom: 0;
   }
 }
-

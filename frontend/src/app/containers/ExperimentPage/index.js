@@ -19,7 +19,7 @@ import LayoutWrapper from '../../components/LayoutWrapper';
 import ExperimentPreFeedbackDialog from './ExperimentPreFeedbackDialog';
 import ExperimentDisableDialog from './ExperimentDisableDialog';
 import ExperimentEolDialog from './ExperimentEolDialog';
-import ExperimentTourDialog from './ExperimentTourDialog';
+import ExperimentTourDialog from '../../components/ExperimentTourDialog';
 import TestpilotPromo from './TestpilotPromo';
 import DetailsOverview from './DetailsOverview';
 import DetailsDescription from './DetailsDescription';
@@ -147,7 +147,6 @@ export class ExperimentDetail extends React.Component {
       isAfterCompletedDate,
       isDev,
       hasAddon,
-      setExperimentLastSeen,
       clientUUID,
       installedAddons,
       setPageTitleL10N,
@@ -197,10 +196,6 @@ export class ExperimentDetail extends React.Component {
     ) {
       return <NotFoundPage />;
     }
-
-    // Set the timestamp for when this experiment was last seen (for
-    // ExperimentRowCard updated/launched banner logic)
-    setExperimentLastSeen(experiment);
 
     const surveyURL = buildSurveyURL(
       'givefeedback',

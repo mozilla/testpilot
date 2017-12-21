@@ -14,6 +14,9 @@ export function prettyDate(date: string) {
   return moment(date).format('MMMM Do, YYYY');
 }
 
+const TWO_WEEKS = 2 * 7 * 24 * 60 * 60 * 1000;
+const twoWeeksAgo = new Date() - TWO_WEEKS;
+
 type UpdateProps = {
   sendToGA: Function,
   experiment: Object,
@@ -27,17 +30,26 @@ export class Update extends React.Component {
     const { experiment, update } = this.props;
     const { created, published, title, content, link } = update;
 
+    const gradient_stop = experiment ? experiment.gradient_stop : 'transparent';
+
     const categoryTitle = experiment ? experiment.title : 'Firefox Test Pilot';
     const categoryTitleL10nID = experiment ? null : 'siteName';
     const iconClassName = experiment
       ? `experiment-icon-${experiment.slug}`
-      : 'news-update-test-pilot-icon';
+          : 'news-update-test-pilot-icon';
+    const iconWrapperClassName = experiment
+      ? `experiment-icon-wrapper-${experiment.slug}`
+          : 'news-update-test-pilot-icon-wrapper';
+
+    const isNew = experiment ? new Date(experiment.published) < twoWeeksAgo : false;
 
     return (
       <a className={classnames('update', { 'has-link': !!link })}
           href={link}
           onClick={() => this.handleLinkClick()}>
-        <div className={classnames(iconClassName, 'update-experiment-icon')} />
+        <div className={classnames(iconWrapperClassName, 'update-experiment-icon-wrapper')}>
+          <div className={classnames(iconClassName, 'update-experiment-icon')} style={ { backgroundColor: gradient_stop } }/>
+        </div>
         <div className="update-content">
           <header>
             {experiment
@@ -54,6 +66,10 @@ export class Update extends React.Component {
             <p className="up-date">
               {prettyDate(published || created)}
             </p>
+            {isNew && <div className="star-wrap">
+              <div className="star-icon"></div>
+              <p className="new">new</p>
+            </div>}
           </header>
           {experiment
             ? <Localized id={newsUpdateL10nId(update, 'title')}>
@@ -94,7 +110,8 @@ type UpdateListProps = {
   staleNewsUpdates: Array<Object>,
   freshNewsUpdates: Array<Object>,
   experiments: Array<Object>,
-  initialShowMoreNews?: boolean
+  initialShowMoreNews?: boolean,
+  hideHeader?: boolean
 };
 
 type UpdateListState = {
@@ -113,7 +130,7 @@ export default class UpdateList extends React.Component {
   }
 
   render() {
-    const { sendToGA, staleNewsUpdates, freshNewsUpdates, experiments } = this.props;
+    const { sendToGA, staleNewsUpdates, freshNewsUpdates, experiments, hideHeader } = this.props;
     const { showMoreNews } = this.state;
 
     const hasStaleNewsUpdates = staleNewsUpdates && staleNewsUpdates.length > 0;
@@ -136,9 +153,9 @@ export default class UpdateList extends React.Component {
 
     return (
       <div className="update-list">
-        <Localized id="latestUpdatesTitle">
-          <h1 className="update-list-heading">Latest Updates</h1>
-        </Localized>
+        {!hideHeader && <Localized id="latestUpdatesTitle">
+           <h1 className="update-list-heading">Latest Updates</h1>
+         </Localized>}
         <LayoutWrapper flexModifier="column-center">
           {shownNewsUpdates.map((update, index) =>
             <Update

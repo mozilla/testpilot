@@ -14,24 +14,16 @@
   }
 }
 
-.update-list-heading {
-  font-size: 22px;
-  font-style: italic;
-  font-weight: 300;
-  letter-spacing: 0;
-  line-height: 56px;
-}
-
 .update {
   align-items: center;
+  border: 1px transparent solid;
   border-radius: 4px;
-  border: 1px $transparent-white-2 solid;
   box-shadow: 0 -2px 0 $transparent-black-05 inset;
   cursor: default;
   display: flex;
   margin-bottom: 8px;
   opacity: .9;
-  padding: 36px;
+  padding: 36px 24px;
   width: 100%;
 
   .update-content {
@@ -43,57 +35,80 @@
     }
   }
 
-  .news-update-test-pilot-icon {
-    background-image: url('./img/test-pilot-news-icon.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 60px auto;
+  .update-experiment-icon-wrapper {
+    border-radius: 50%;
+    height: 54px;
+    margin-right: 40px;
+    width: 54px;
   }
 
   .update-experiment-icon {
-    height: 48px;
-    width: 106px;
-    margin: 0;
     @include respond-to('small') {
-      display: none;
+      margin-right: 10px;
+      padding: 15px;
     }
-    background-position: left center;
-    background-size: 60px auto;
+
+    background-position: center;
     background-repeat: no-repeat;
+    background-size: 36px auto;
+    border-radius: 50%;
+    height: 54px;
+    overflow: hidden;
+    width: 54px;
+  }
+
+  .news-update-test-pilot-icon {
+    background-color: $transparent-black-3;
+    background-image: url('./img/test-pilot-news-icon.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto 32px;
+    border: 2px solid $transparent-black-5;
+  }
+
+
+
+  .new-wrap {
+    display: flex;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .star-icon {
+    margin-left: 30px;
+    margin-right: 10px;
   }
 
   h2,
   h2.update-title {
-    margin: 0;
-    font-size: 17px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 300;
     letter-spacing: 0;
-    margin: 0 0 1px 0;
+    margin: 0 0 1px;
+  }
+
+  h4.update-title {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 5px 0 6px;
   }
 
   .summary {
     font-size: 16px;
-  }
-
-  h4.update-title {
-    font-weight: normal;
-    font-size: 17px;
-    margin: 0 0 6px 0;
-  }
-
-  .summary {
-    font-size: 15px;
     letter-spacing: 0;
-    line-height: 22px;
-    margin: 10px 0 0 0;
+    line-height: 26px;
+    margin: 10px 0 0;
+    padding-right: 100px;
   }
 
   .link-chevron {
     .chevron {
       background: transparent;
       display: block;
-      width: 12px;
       height: 21px;
+      width: 12px;
     }
   }
 
@@ -102,8 +117,11 @@
     transition: background 50ms;
 
     &:hover {
-      border-color: $transparent-white-8;
-      background: $transparent-white-1;
+      border-color: $transparent-white-2;
+    }
+
+    &:active {
+      border-color: $transparent-white-5;
     }
 
     .link-chevron {
@@ -117,9 +135,10 @@
 }
 
 .up-date {
-  opacity: 0.7;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 12px;
+  opacity: .7;
+  padding-top: 5px;
 }

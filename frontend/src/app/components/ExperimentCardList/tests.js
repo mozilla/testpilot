@@ -19,7 +19,6 @@ describe('app/components/ExperimentCardList', () => {
       // required by ExperimentRowCard {...this.props}
       hasAddon: true,
       eventCategory: 'test category',
-      getExperimentLastSeen: sinon.spy(),
       sendToGA: sinon.spy(),
       navigateTo: sinon.spy()
     };

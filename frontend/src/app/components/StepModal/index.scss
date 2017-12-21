@@ -2,8 +2,8 @@
 @import '../../../styles/_utils';
 
 .step-modal {
-  width: unset;
   min-height: 400px;
+  width: unset;
 
   .step-text {
     background: $white;
@@ -25,14 +25,14 @@
 
     .button {
       background-color:  $blue-60;
-      color: white;
+      color: $white;
     }
   }
 
   .dot-wrapper {
-    position: absolute;
     bottom: -30px;
     left: 50%;
+    position: absolute;
   }
 
   .dot-row {
@@ -68,10 +68,10 @@
   .step-image {
     @include flex-container(row, center, center);
     height: 332px;
+    margin: 40px auto 10px;
     overflow: hidden;
     position: relative;
     width: 580px;
-    margin: 40px auto 10px auto;
 
     .fade {
       background: linear-gradient(transparent, $white);
@@ -154,20 +154,20 @@
   .modal-header.enabled::after {
     background-color: $green-60;
     background-image: url('../../../images/icon_enabled.svg');
+    background-position: 8px;
+    background-repeat: no-repeat;
+    background-size: 15%;
     border-radius: 2px;
-    color: #fff;
+    color: $white;
     content: 'Enabled';
     display: block;
     font-size: 15px;
+    font-weight: normal;
+    left: -10px;
     line-height: 150%;
     margin: 0;
     padding: 4px 5px 0 26px;
     position: absolute;
-    left: -10px;
     top: -10px;
-    background-repeat: no-repeat;
-    background-size: 15%;
-    background-position: 8px;
-    font-weight: normal;
   }
 }

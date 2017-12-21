@@ -7,6 +7,7 @@ import experimentSelector, {
   l10nSelector,
   localeSelector,
   onlyLaunchedExperimentSelector,
+  featuredExperimentsSelector
 } from '../../../src/app/selectors/experiment';
 
 
@@ -22,7 +23,7 @@ describe('app/selectors/experiment', () => {
     const _exp = [
       { name: 'foo', order: 1 },
       { name: 'baz', order: 3, launch_date: moment.utc() + 99999 },
-      { name: 'bat', order: 2, launch_date: moment.utc() - 99999 },
+      { name: 'bat', order: 2, launch_date: moment.utc() - 99999, is_featured: true },
       { name: 'xyzzy', order: 4, dev: true }
     ];
 
@@ -50,6 +51,16 @@ describe('app/selectors/experiment', () => {
         assert.deepEqual(
           onlyLaunchedExperimentSelector(store),
           [_exp[0], _exp[2]]
+        );
+      });
+    });
+
+    describe('featuredExperimentsSelector', () => {
+      it('should exclude experiments without is_featured flag', () => {
+        const store = _store(_exp);
+        assert.deepEqual(
+          featuredExperimentsSelector(store),
+          [_exp[2]]
         );
       });
     });

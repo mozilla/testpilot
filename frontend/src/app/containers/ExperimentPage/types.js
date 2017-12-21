@@ -14,7 +14,6 @@ export type ExperimentPropsFromApp = {
   installed: Object,
   isAfterCompletedDate: Function,
   isDev: boolean,
-  setExperimentLastSeen: Function,
   clientUUID: string,
   installedAddons: Object,
   setPageTitleL10N: Function,
@@ -172,11 +171,5 @@ export type StatsSectionType = {
 
 export type ContributorsSectionType = {
   experiment: Object,
-  l10nId: Function
-};
-
-export type MeasurementsSectionType = {
-  experiment: Object,
-  highlightMeasurementPanel: boolean,
   l10nId: Function
 };

@@ -1,7 +1,6 @@
 import { createSelector } from 'reselect';
 import moment from 'moment';
 
-
 // Return all experiments from the store, sorted.
 export const allExperimentSelector = createSelector(
   store => store.experiments.data,
@@ -54,6 +53,16 @@ export const l10nSelector = (locale, experiments) => experiments.filter(exp => {
   return true;
 });
 
+export const featuredExperimentsSelector = createSelector(
+  launchedExperimentSelector,
+  experiments => experiments.filter((e) => e.is_featured)
+    .sort((a, b) => a.order > b.order)
+);
+
+export const featuredExperimentsSelectorWithL10n = createSelector(
+  [localeSelector, featuredExperimentsSelector],
+  l10nSelector
+);
 
 export default createSelector(
   [localeSelector, launchedExperimentSelector],

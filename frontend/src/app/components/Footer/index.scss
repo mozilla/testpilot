@@ -9,11 +9,11 @@
     padding: $grid-unit * 1 0;
   }
 
+  position: relative;
+
   .newsletter-footer + & {
     background: $transparent-white-1;
   }
-
-  position: relative;
 }
 
 .legal-links {

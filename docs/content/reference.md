@@ -111,6 +111,14 @@ The order in which the experiment will appear. Lower numbers appear first. Requi
 order: 0
 ```
 
+## `is_featured`
+
+Determines whether the experiment will be featured on the home page. Optional.
+
+```yaml
+is_featured: false
+```
+
 ## `description`
 
 A short description of the experiment, used for search engines, social media shares, and in the experiment card. Localized, required, HTML not allowed.

@@ -10,7 +10,7 @@ import { experimentL10nId, formatDate } from '../../lib/utils';
 
 import GraduatedNotice from '../../components/GraduatedNotice';
 import IncompatibleAddons from './IncompatibleAddons';
-import { MeasurementsSection } from './DetailsOverview';
+import MeasurementsSection from '../../components/Measurements';
 
 import type {
   DetailsDescriptionProps,

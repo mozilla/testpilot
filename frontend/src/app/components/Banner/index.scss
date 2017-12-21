@@ -25,8 +25,8 @@
     }
 
     font-size: $font-unit * 1.833;
-    line-height: $font-unit * 2.583;
     font-weight: 200;
+    line-height: $font-unit * 2.583;
   }
 
   .banner__title {
@@ -41,9 +41,9 @@
     }
 
     font-size: $grid-unit * 2;
-    line-height: $grid-unit * 2.3;
     font-style: oblique;
     font-weight: 300;
+    line-height: $grid-unit * 2.3;
   }
 
   .banner__subtitle {
@@ -92,7 +92,7 @@
 }
 
 .banner--expanded {
-  padding: $grid-unit * 2 64px;
+  padding: $grid-unit * 2 0;
 
   .banner__title {
     @include respond-to('small') {

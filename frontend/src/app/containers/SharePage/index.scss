@@ -1,6 +1,8 @@
 @import '~photon-colors/colors.scss';
 @import '../../../styles/_utils';
 
+$input-border: #c1c1c1;
+
 #share {
   width: 600px;
 
@@ -9,8 +11,8 @@
   }
 
   .modal-content {
-    max-width: 420px;
     margin: 10px auto;
+    max-width: 420px;
   }
 
   .share-list {
@@ -62,21 +64,21 @@
 
     input {
       background: transparent;
-      border-width: 0;
-      border: 1px solid #C1C1C1;
+      border: 1px solid $input-border;
       border-radius: $medium-border-radius;
+      border-width: 0;
+      color: $grey-90;
       flex: 1 1 80%;
       font-size: $font-unit * 1.25;
       height: 48px;
       line-height: $font-unit * 1.75;
       padding: $grid-unit * .6;
-      color: $grey-90;
     }
 
     .button {
-      border: none;
-      font-size: 15px;
+      border: 0;
       border-radius: $medium-border-radius;
+      font-size: 15px;
       height: 48px;
       margin-left: 10px;
       padding: 2px 25px;

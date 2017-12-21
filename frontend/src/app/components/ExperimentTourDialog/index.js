@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
 
-import StepModal from '../../components/StepModal';
+import StepModal from '../StepModal';
 
 import { experimentL10nId } from '../../lib/utils';
 
@@ -13,8 +13,7 @@ type ExperimentTourDialogProps = {
   isExperimentEnabled: Function,
   onCancel: Function,
   onComplete: Function,
-  sendToGA: Function,
-  isFirefox: boolean
+  sendToGA: Function
 }
 
 export default class ExperimentTourDialog extends React.Component {
@@ -49,22 +48,17 @@ export default class ExperimentTourDialog extends React.Component {
   }
 
   renderHeaderTitle = () => {
-    const { experiment, isExperimentEnabled, isFirefox } = this.props;
-    if (!isFirefox) {
-      return <h3 className="modal-header lighter">{experiment.title}</h3>;
-    }
-    return (<Localized id="tourOnboardingTitle" $title={experiment.title}>
-              <h3 className={cn('modal-header lighter', {
-                enabled: isExperimentEnabled({ addon_id: `@${experiment.title}` })
-              })}>{experiment.title}</h3>
-            </Localized>);
+    const { experiment, isExperimentEnabled } = this.props;
+    return (<h3 className={cn('modal-header lighter', {
+      enabled: isExperimentEnabled(experiment)
+    })}>{experiment.title}</h3>);
   };
 
   renderStep = (tourSteps: Array<Object>, currentStep: number) => {
     return tourSteps.map((step, idx) => (idx === currentStep) && (
         <div key={idx} className="step-content">
           <div className="step-image">
-            <img src={step.image} width="580" height="332"/>
+            <img src={step.image} />
           </div>
           {step.copy &&
             <div className="step-text">

@@ -31,10 +31,17 @@ export default class MainInstallButton extends React.Component {
     if (e.button !== 0) {
       return;
     }
-    const { requireRestart, sendToGA, eventCategory, eventLabel, hasAddon, installAddon, installCallback, navigateTo } = this.props;
+    const { requireRestart, sendToGA, eventCategory, eventLabel,
+            installAddon, installCallback, navigateTo, hasAddon, postInstallCallback,
+            isExperimentEnabled, enableExperiment, experiment } = this.props;
 
     if (hasAddon) {
-      navigateTo('/experiments');
+      if (!isExperimentEnabled(experiment)) {
+        this.setState({ isInstalling: true }, () => enableExperiment(experiment)
+                      .then(() => {
+                        if (postInstallCallback) postInstallCallback();
+                      }));
+      } else navigateTo('/experiments');
       return;
     }
     if (installCallback) {
@@ -43,12 +50,16 @@ export default class MainInstallButton extends React.Component {
       return;
     }
     this.setState({ isInstalling: true });
-    installAddon(requireRestart, sendToGA, eventCategory, eventLabel);
+    installAddon(requireRestart, sendToGA, eventCategory, eventLabel)
+      .then(() => {
+        if (postInstallCallback) postInstallCallback();
+      });
   }
 
   render() {
-    const { isFirefox, isMinFirefox, isMobile, hasAddon, experimentTitle } = this.props;
-    const isInstalling = this.state.isInstalling && !hasAddon;
+    const { isFirefox, isMinFirefox, isMobile, hasAddon, experimentTitle, experimentLegalLink } = this.props;
+    const { isInstalling } = this.state;
+
     const terms = <Localized id="landingLegalNoticeTermsOfUse">
       <a href="/terms"/>
     </Localized>;
@@ -61,12 +72,24 @@ export default class MainInstallButton extends React.Component {
       <LayoutWrapper flexModifier={layout} helperClass="main-install">
         <div className="main-install__spacer" />
         {(isMinFirefox && !isMobile) ? this.renderInstallButton(isInstalling, hasAddon) : this.renderAltButton(isFirefox, isMobile) }
-        {isMinFirefox && !isMobile && <LocalizedHtml id="landingLegalNotice" $terms={terms} $privacy={privacy}>
+        {isMinFirefox && !isMobile && !experimentLegalLink && <LocalizedHtml id="landingLegalNotice" $terms={terms} $privacy={privacy}>
           <p className="main-install__legal">
-            By proceeding, you agree to the {terms} and {privacy} of Test Pilot.
+          By proceeding, you agree to the {terms} and {privacy} of Test Pilot.
           </p>
-        </LocalizedHtml>}
+         </LocalizedHtml>}
+
+        {isMinFirefox && !isMobile && experimentLegalLink && experimentLegalLink}
       </LayoutWrapper>
+    );
+  }
+
+  renderEnableExperimentButton(title: string) {
+    return (
+        <div className="main-install__enable">
+         <LocalizedHtml id="oneClickInstallMajorCta" $title={title}>
+            <span className="main-install__minor-cta">Enable {title}</span>
+          </LocalizedHtml>
+        </div>
     );
   }
 
@@ -84,10 +107,13 @@ export default class MainInstallButton extends React.Component {
   }
 
   renderInstallButton(isInstalling: boolean, hasAddon: any) {
-    const { experimentTitle } = this.props;
+    const { experimentTitle, isExperimentEnabled, experiment } = this.props;
     let installButton = null;
+
     if (experimentTitle) {
-      installButton = this.renderOneClickInstallButton(experimentTitle);
+      if (hasAddon && !isExperimentEnabled(experiment)) {
+        installButton = this.renderEnableExperimentButton(experimentTitle);
+      } else installButton = this.renderOneClickInstallButton(experimentTitle);
     } else {
       installButton = <Localized id="landingInstallButton">
         <span className="default-btn-msg">
@@ -95,14 +121,12 @@ export default class MainInstallButton extends React.Component {
         </span>
       </Localized>;
     }
+
     const makeInstallButton = (extraClass = '') => {
       return <button onClick={e => this.install(e)}
         className={classnames(`button primary main-install__button ${extraClass}`, { 'state-change': isInstalling })}>
-        {hasAddon && <Localized id="landingInstalledButton">
-          <span className="progress-btn-msg">Installed</span>
-        </Localized>}
-        {!hasAddon && !isInstalling && installButton}
-        {!hasAddon && isInstalling &&
+        {!isInstalling && installButton}
+        {isInstalling &&
           <Localized id="landingInstallingButton">
             <span className="progress-btn-msg">Installing...</span>
           </Localized>}
@@ -127,7 +151,7 @@ export default class MainInstallButton extends React.Component {
       <div>
           {!isFirefox ? (
               <Localized id="landingDownloadFirefoxDesc">
-                <span>(Test Pilot is available for Firefox on Windows, OS X and Linux)</span>
+                <span className="main-install__available">(Test Pilot is available for Firefox on Windows, OS X and Linux)</span>
               </Localized>
             ) : (
               <Localized id="landingUpgradeDesc2" $version={config.minFirefoxVersion}>

@@ -14,6 +14,7 @@ const sourcemaps = require('gulp-sourcemaps');
 gulp.task('styles-lint', () => {
   const files = [
     config.SRC_PATH + '/styles/**/*.scss',
+    config.SRC_PATH + '/app/**/*.scss',
     '!' + config.SRC_PATH + '/styles/_hidpi-mixin.scss'
   ];
   return gulp.src(files)
