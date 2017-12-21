@@ -22,7 +22,7 @@ export default class FeaturedStatus extends React.Component {
     const showIcon = (enabled || launched || updated);
 
     return (
-      <div className="featured-status">
+      <div className="featured-experiment__status">
         {showIcon && <div className="star-icon"></div>}
 
         {launched && <Localized id="experimentListJustLaunchedTab">

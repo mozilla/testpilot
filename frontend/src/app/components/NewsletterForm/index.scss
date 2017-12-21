@@ -6,19 +6,26 @@
 
   input[type='email'],
   button {
+    @include respond-to('small') {
+      margin-left: 0;
+    }
+
     border-radius: $small-border-radius;
     box-shadow: none;
     line-height: $font-unit * 1.6;
+    margin-left: 10px;
     padding: ($grid-unit * .75) ($grid-unit * .5);
     width: 100%;
-    margin-left: 10px;
   }
 
   input[type='email'] {
+    @include respond-to('small') {
+      margin-left: 0;
+    }
+
     border: 0;
     color: $black;
-    margin: $grid-unit * .5 0;
-    margin-left: 10px;
+    margin: $grid-unit * .5 0 $grid-unit * .5 $grid-unit * .5;
 
     &::placeholder {
       color: $transparent-black-7;
@@ -26,19 +33,22 @@
   }
 
   input[type='checkbox'] {
-    margin-right: $grid-unit * .25;
     display: none;
+    margin-right: $grid-unit * .25;
   }
 
   input[type='checkbox'] + label {
+    @include respond-to('small') {
+      margin-left: 0;
+    }
+
     background: url('./img/unchecked.svg') no-repeat left;
-    background-height: 21px;
-    background-width: 21px;
-    padding-left: 32px;
-    max-width: 360px;
-    margin-left: 10px;
-    text-align: left;
+    background-size: 21px 21px;
     line-height: 20px;
+    margin-left: 10px;
+    max-width: 360px;
+    padding-left: 32px;
+    text-align: left;
   }
 
   input[type='checkbox']:hover + label {
@@ -63,11 +73,11 @@
 
   .revealed-field {
     @include flex-container(row, center, center);
+    height: 0;
     margin: 0 auto $grid-unit * .5;
     transform: scaleY(0);
     transition: transform 125ms;
     width: 100%;
-    height: 0px;
 
     &.reveal {
       height: 40px;
@@ -76,18 +86,17 @@
   }
 
   p.disclaimer {
-    margin: $grid-unit * .5 $grid-unit * .5 0;
-    text-align: left;
+    padding: $grid-unit * .5 $grid-unit * .5 0;
+    text-align: center;
     width: 100%;
   }
 }
 
 .newsletter-form-modal {
   input[type='email'] {
-    max-width: 360px;
-    margin: 10px auto;
     border: 1px solid $transparent-black-3;
-    // border: 1px solid rgba(0, 0, 0, 0.5);
+    margin: 10px auto;
+    max-width: 360px;
   }
 
   a {

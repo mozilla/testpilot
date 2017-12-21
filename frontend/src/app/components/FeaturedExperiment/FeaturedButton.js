@@ -93,7 +93,7 @@ export default class FeaturedButton extends React.Component {
       const surveyURL = buildSurveyURL('givefeedback', title, installed, clientUUID, survey_url);
       Buttons = (
         <div>
-          <div className="featured-enabled-buttons">
+          <div className="featured-experiment__enabled-buttons">
             <Localized id="experimentCardManage">
               <a onClick={this.handleManage}
                  href={`/experiments/${slug}`}

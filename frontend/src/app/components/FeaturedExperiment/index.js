@@ -65,36 +65,36 @@ export default class FeaturedExperiment extends React.Component {
 
     return (
       <div className="featured-experiment">
-        <div className="featured-information">
-          <header>
-            <div className="icon-wrap">
-              <div className={`experiment-icon-${slug} experiment-icon`}></div>
-            </div>
-            <div className="title-wrap">
-              <h2>{title}</h2>
-              <div className="featured-info-line">
-                <ExperimentPlatforms experiment={experiment} />
-                {subtitle && <Localized id={this.l10nId('subtitle')}>
-                  <h4 className="subtitle">{subtitle}</h4>
-                </Localized>}
-              </div>
-            </div>
-          </header>
-
-          <Localized id={this.l10nId('description')}>
-            <p className="featured-description">{description}</p>
-          </Localized>
-
-          {!enabled && <Localized id='moreDetail'>
-            <a href={`/experiments/${slug}`}>More Detail</a>
-          </Localized>}
-
-          <div className="featured-actions">
-            <FeaturedButton {...this.props} postInstallCallback={this.postInstallCallback.bind(this)} />
+        <header className="featured-experiment__header">
+          <div className={`experiment-icon-wrapper-${slug} experiment-icon-wrapper`}>
+            <div className={`experiment-icon-${slug} experiment-icon`}></div>
           </div>
+          <FeaturedStatus {...this.props} />
+          <div className="featured-experiment__title-wrapper">
+            <h2 className="featured-experiment__title">{title}</h2>
+            <div className="featured-experiment__info">
+              <ExperimentPlatforms experiment={experiment} />
+              {subtitle && <Localized id={this.l10nId('subtitle')}>
+                <h4 className="featured-experiment__subtitle">{subtitle}</h4>
+              </Localized>}
+            </div>
+          </div>
+        </header>
+
+        <Localized id={this.l10nId('description')}>
+          <p className="featured-experiment__description">{description}</p>
+        </Localized>
+
+        {!enabled && <Localized id='moreDetail'>
+          <a className="featured-experiment__details" href={`/experiments/${slug}`}>Details</a>
+        </Localized>}
+
+        <div className="featured-experiment__actions">
+          <FeaturedButton {...this.props} postInstallCallback={this.postInstallCallback.bind(this)} />
         </div>
 
-        <div className="featured-video">
+
+        <div className="featured-experiment__video">
           <FeaturedStatus {...this.props} />
           <iframe
             width="100%"

@@ -121,10 +121,10 @@
 
 .main-install__legal {
   font-size: $font-unit;
+  font-weight: 300;
   line-height: $line-unit;
   margin: $grid-unit 0 0;
   position: relative;
-  font-weight: 300;
 
   .layout-wrapper--column-center & {
     text-align: center;
