@@ -129,6 +129,7 @@ experimentListHeader = 挑选您的实验！
 experimentCardFeedback = 反馈
 experimentCardManage = 管理
 experimentCardGetStarted = 了解详情
+// also used in NewsUpdateDialog
 experimentCardLearnMore = 详细了解
 
 
@@ -194,7 +195,6 @@ startedDateLabel = 实验开始时间：<b>{ $startedDate }</b>
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Test Pilot
-learnMoreLink = 详细了解
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -327,3 +327,5 @@ warningMissingPrefTitle = 开发 Test Pilot？
 warningMissingPrefDetail = 在本地或在开发环境中运行 Test Pilot 必需进行特殊配置。有关详细信息，请查阅<a>我们的文档</a>。
 warningBadHostnameTitle = 未被批准的主机名！
 warningBadHostnameDetail = Test Pilot 网站只能从 testpilot.firefox.com、testpilot.stage.mozaws.net、testpilot.dev.mozaws.net 或 example.com:8000 访问。有关详细信息，请查阅<a>我们的文档</a>。
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = 很抱歉，Test Pilot 需要 JavaScript 来运行。
