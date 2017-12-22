@@ -129,6 +129,7 @@ experimentListHeader = Επιλέξτε τα πειράματά σας!
 experimentCardFeedback = Σχόλια
 experimentCardManage = Διαχείριση
 experimentCardGetStarted = Ξεκινήστε
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Μάθετε περισσότερα
 
 
@@ -190,6 +191,12 @@ experimentGradReportPendingTitle = Αυτό το πείραμα έχει λήξ�
 experimentGradReportPendingCopy = Εργαζόμαστε πάνω σε μια πλήρη αναφορά. Ελέγξτε ξανά σύντομα για λεπτομέρειες.
 experimentGoToLink = Μετάβαση στο { $title }
 startedDateLabel = Ημερομηνία έναρξης πειράματος: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -320,3 +327,5 @@ warningMissingPrefTitle = Είστε προγραμματιστής του Test 
 warningMissingPrefDetail = Όταν εκτελείτε το Test Pilot τοπικά ή σε προγραμματιστικό περιβάλλον, απαιτείται ειδική ρύθμιση. Παρακαλούμε δείτε <a>την τεκμηρίωσή μας</a> για λεπτομέρειες.
 warningBadHostnameTitle = Μη εγκεκριμένο όνομα host!
 warningBadHostnameDetail = Η πρόσβαση στην ιστοσελίδα του Test Pilot μπορεί να γίνει μόνο από το testpilot.firefox.com, το testpilot.stage.mozaws.net, το testpilot.dev.mozaws.net ή το example.com:8000. Παρακαλούμε δείτε <a>την τεκμηρίωσή μας</a> για λεπτομέρειες.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Το Test Pilot απαιτεί JavaScript. Λυπούμαστε γι' αυτό.
