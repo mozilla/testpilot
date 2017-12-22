@@ -152,6 +152,9 @@ universalsearchContributors1Title = Kıdemli UX Tasarımcısı
 universalsearchContributors2Title = Kadrolu Mühendis
 universalsearchContributors3Title = Kıdemli Mühendis
 voicefillDescription = Konuşma tanıma Firefox'a geliyor. Voice Fill, sevdiğiniz arama motorlarıyla konuşmanızı sağlıyor.
+voicefillIntroduction =
+    <p>Voice Fill, konuşmanızı anlamak için yapak zekâyı kullanır. Voice Fill deneyine katıldığınızda konuşarak yaptığınız aramalar yapay zekâmızı eğiterek daha akıllı sonuçlar vermesini sağlar.</p>
+    <p>Voice Fill’i Google, Yahoo ve DuckDuckGo arama sayfalarına ekledik. Deney ilerledikçe başka siteleri destekleyeceğiz.</p>
 voicefillMeasurements0 = Voice Fill'i kullandığınızda ses kayıtlarınız, önerilen metinlerin tespit edilmesi için işlenmek üzere sunucularımıza gönderilir.
 voicefillDetails0Copy = Yahoo, DuckDuckGo ve Google'da mikrofon simgesine bakın.
 voicefillDetails1Copy = Voice Fill'i kullanmadan önce ses girdisine izin vermeniz gerekir.

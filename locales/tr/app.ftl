@@ -129,6 +129,7 @@ experimentListHeader = Deneylerinizi seçin!
 experimentCardFeedback = Geri bildirim
 experimentCardManage = Yönet
 experimentCardGetStarted = Bunu deneyin
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Daha fazla bilgi al
 
 
@@ -197,7 +198,6 @@ startedDateLabel = Denet başlangıç tarihi:  <b>{ $startedDate }</b>
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Test Pilotu
-learnMoreLink = DAHA FAZLA BİLGİ AL
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -330,3 +330,5 @@ warningMissingPrefTitle = Test Pilotu'nu geliştiriyor musunuz?
 warningMissingPrefDetail = Test Pilotu'nu yerel ortamda veya geliştirme ortamlarında çalıştırırken özel yapılandırma gerekir. Ayrıntılar için lütfen <a>belgelerimize</a> bakın.
 warningBadHostnameTitle = Onaylanmamış ana makine adı!
 warningBadHostnameDetail = Test Pilotu sitesinde yalnızca testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net ve example.com:8000 adreslerinden ulaşabilirsiniz. Ayrıntılar için lütfen <a>belgelerimize</a> bakın.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilotu için JavaScript şarttır. Kusura bakmayın.
