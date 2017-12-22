@@ -129,6 +129,7 @@ experimentListHeader = Válasszon kísérleteket!
 experimentCardFeedback = Visszajelzés
 experimentCardManage = Kezelés
 experimentCardGetStarted = Kezdő lépések
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Tudjon meg többet
 
 
@@ -197,7 +198,6 @@ startedDateLabel = Kísérlet kezdő dátuma: <b>{ $startedDate }</b>
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Tesztpilóta
-learnMoreLink = TOVÁBBI INFORMÁCIÓK
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -330,3 +330,5 @@ warningMissingPrefTitle = A Tesztpilótát fejleszti?
 warningMissingPrefDetail = Ha fejlesztői környezetekben futtatja a Tesztpilótát, akkor speciális konfiguráció szükséges. Olvassa el a <a>dokumentációt</a> a részletekért.
 warningBadHostnameTitle = Nem jóváhagyott gépnév!
 warningBadHostnameDetail = A Tesztpilóta csak a testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net vagy example.com:8000 helyekről érhető el. Olvassa el a <a>dokumentációt</a> a részletekért.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = A Tesztpilótához JavaScript szükséges. Sajnáljuk.
