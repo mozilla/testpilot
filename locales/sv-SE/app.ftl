@@ -129,6 +129,7 @@ experimentListHeader = Välj dina experiment!
 experimentCardFeedback = Återkoppling
 experimentCardManage = Hantera
 experimentCardGetStarted = Kom igång
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Läs mer
 
 
@@ -197,7 +198,6 @@ startedDateLabel = Startdatum för experiment: <b>{ $startedDate }</b>
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Test Pilot
-learnMoreLink = LÄS MER
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -330,3 +330,5 @@ warningMissingPrefTitle = Utveckla Test Pilot?
 warningMissingPrefDetail = När du kör Test Pilot lokalt eller i utvecklingsmiljöer, krävs särskild konfiguration. Vänligen se <a>vår dokumentation</a> för detaljer.
 warningBadHostnameTitle = Okontrollerat värdnamn!
 warningBadHostnameDetail = Test Pilot webbplats är endast tillgänglig från testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net eller example.com:8000. Se <a>vår dokumentation</a> för mer information.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot kräver JavaScript. Ledsen för det.
