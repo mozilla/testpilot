@@ -129,6 +129,7 @@ experimentListHeader = შეარჩიეთ გამოსაცდელ�
 experimentCardFeedback = გამოხმაურება
 experimentCardManage = მართვა
 experimentCardGetStarted = დაწყება
+// also used in NewsUpdateDialog
 experimentCardLearnMore = ვრცლად
 
 
@@ -197,7 +198,6 @@ startedDateLabel = საცდელი პროექტის დაწყ�
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Test Pilot
-learnMoreLink = ვრცლად
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -330,3 +330,5 @@ warningMissingPrefTitle = Test Pilot პროექტის შემმუშ
 warningMissingPrefDetail = Test Pilot-ის გაშვება ლოკალურად საჭიროებს სპეციალურ სამუშაო გარემოს და კონფიგურაციას. დამატებითი ინფორმაციისთვის, გთხოვთ გაეცნოთ <a>ჩვენს დოკუმენტაციას</a>.
 warningBadHostnameTitle = ჰოსტის არამართებული სახელი!
 warningBadHostnameDetail = Test Pilot ვებსაიტი ხელმისაწვდომია მხოლოდ testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, ან example.com:8000 მისამართებიდან. დამატებითი ინფორმაციისთვის, გთხოვთ, გაეცნოთ <a>ჩვენს დოკუმენტაციას</a>.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot საჭიროებს JavaScript-ს. ვწუხვართ, ამის გამო.
