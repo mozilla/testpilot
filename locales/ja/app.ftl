@@ -129,6 +129,7 @@ experimentListHeader = 興味のある実験を選びましょう！
 experimentCardFeedback = フィードバック
 experimentCardManage = 管理
 experimentCardGetStarted = 使ってみる
+// also used in NewsUpdateDialog
 experimentCardLearnMore = 詳細
 
 
@@ -197,7 +198,6 @@ startedDateLabel = 実験開始日: <b>{ $startedDate }</b>
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Test Pilot
-learnMoreLink = 詳しくはこちら
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -330,3 +330,5 @@ warningMissingPrefTitle = Test Pilot を開発中ですか？
 warningMissingPrefDetail = Test Pilot をローカルもしくは開発環境で実行する場合、特別な設定が必要となります。詳細は <a>ドキュメント</a> をご覧ください。
 warningBadHostnameTitle = 未承認のホスト名です！
 warningBadHostnameDetail = Test Pilot のサイトは、testpilot.firefox.com、testpilot.stage.mozaws.net、testpilot.dev.mozaws.net あるいは example.com:8000 からのみアクセス可能です。詳細は <a>ドキュメント</a> をご覧ください。
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot を使うには JavaScript が必要です。申し訳ありません。
