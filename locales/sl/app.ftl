@@ -129,6 +129,7 @@ experimentListHeader = Izberite si poskuse zase!
 experimentCardFeedback = Povratne informacije
 experimentCardManage = Upravljaj
 experimentCardGetStarted = Začnite
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Več o tem
 
 
@@ -197,7 +198,6 @@ startedDateLabel = Datum začetka poskusa: <b>{ $startedDate }</b>
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Test Pilot
-learnMoreLink = VEČ O TEM
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -330,3 +330,5 @@ warningMissingPrefTitle = Razvijate Test Pilot?
 warningMissingPrefDetail = Kadar Test Pilot poganjate lokalno ali v razvojnih okoljih, je zahtevana posebna konfiguracija. Za podrobnosti glejte <a>našo dokumentacijo</a>.
 warningBadHostnameTitle = Neodobreno ime gostitelja!
 warningBadHostnameDetail = Do strani Test Pilota je omogočen dostop samo s testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net ali example.com:8000. Za podrobnosti glejte <a>našo dokumentacijo</a>.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot zahteva JavaScript. Žal nam je.
