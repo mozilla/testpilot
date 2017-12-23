@@ -189,6 +189,7 @@ highlightPrivacy = Το απόρρητό σας
 experimentGradReportButton = Αναφορά αποφοίτησης
 experimentGradReportPendingTitle = Αυτό το πείραμα έχει λήξει
 experimentGradReportPendingCopy = Εργαζόμαστε πάνω σε μια πλήρη αναφορά. Ελέγξτε ξανά σύντομα για λεπτομέρειες.
+experimentGradReportReady = Έχουμε προετοιμάσει μια πλήρη αναφορά αποφοίτησης.
 experimentGoToLink = Μετάβαση στο { $title }
 startedDateLabel = Ημερομηνία έναρξης πειράματος: <b>{ $startedDate }</b>
 
@@ -224,6 +225,7 @@ versionChangeNoticeLink = Λάβετε την τρέχουσα έκδοση το
 [[ uninstall ]]
 
 retireDialogTitle = Απεγκατάσταση του Test Pilot;
+retireMessageUpdate = Όπως επιθυμείτε. Αυτό θα απεγκαταστήσει το Test Pilot. Μπορείτε να απενεργοποιήσετε μεμονωμένα πειράματα από τη Διαχείριση Πρόσθετων του Firefox.
 retireEmailMessage = Για να απενεργοποιήσετε τις ενημερώσεις μέσω e-mail, κάντε απλά κλικ στο σύνδεσμο <em>κατάργησης εγγραφής</em> σε οποιοδήποτε e-mail από το Test Pilot.
 retireSubmitButton = Συνέχεια
 pageTitleRetirePage = Firefox Test Pilot - Απεγκατάσταση του Test Pilot
@@ -288,6 +290,7 @@ newsletterFooterSuccessBody = Αν δεν έχετε επιβεβαιώσει π
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeNotTranslatedWarningTitle = Αυτό το πείραμα δεν έχει μεταφραστεί στη γλώσσα σας ({ $locale_code }).
 localeWarningSubtitle = Μπορείτε ακόμη να το ενεργοποιήσετε αν θέλετε.
 
 
