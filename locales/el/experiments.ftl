@@ -71,6 +71,7 @@ snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
 tabcenterWarning = Το Firefox αλλάζει γρήγορα. Το Tab Center ενδέχεται να περιέχει σφάλματα στο Firefox 55 και θα απενεργοποιηθεί εντελώς στο Firefox 56+.
+tabcenterIntroduction = <p>Διώξτε τις καρτέλες που σας εμποδίζουν. Το Tab Center μετακινεί τις καρτέλες σας στην άκρη του παραθύρου του προγράμματος περιήγησής σας, ώστε να μην τις βλέπετε όταν δεν τις χρειάζεστε, ενώ μπορείτε να τις πιάσετε και να τις επεκτείνετε όταν το επιθυμείτε.</p>
 tabcenterDetails0Copy = Πάρτε τις καρτέλες με το μέρος σας.
 tabcenterDetails1Copy = Διώξτε αυτές τις καρτέλες μέχρι να τις χρειαστείτε.
 tabcenterContributors0Title = Firefox UX
