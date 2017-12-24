@@ -129,6 +129,7 @@ experimentListHeader = Vyberte si svoje experimenty!
 experimentCardFeedback = Spätná väzba
 experimentCardManage = Spravovať
 experimentCardGetStarted = Aktivovať
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Ďalšie informácie
 
 
@@ -197,7 +198,6 @@ startedDateLabel = Dátum začiatku experimentu: <b>{ $startedDate }</b>
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Test Pilot
-learnMoreLink = ĎALŠIE INFORMÁCIE
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -330,3 +330,5 @@ warningMissingPrefTitle = Vyvíjate Test Pilot?
 warningMissingPrefDetail = Pri lokálnom spustení alebo vo vývojových prostrediach vyžaduje Test Pilot špeciálnu konfiguráciu. Viac informácií nájdete v <a>našej dokumentácií</a>.
 warningBadHostnameTitle = Nepovolený hostname!
 warningBadHostnameDetail = Stránka Test Pilotu je prístupná len z domén testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net alebo example.com:8000. Ďalšie informácie nájdete v <a>našej dokumentácií</a>.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot vyžaduje JavaScript. Ospravedlňujeme sa za problémy.
