@@ -129,6 +129,7 @@ experimentListHeader = Выберите ваши эксперименты!
 experimentCardFeedback = Отзыв
 experimentCardManage = Управление
 experimentCardGetStarted = Приступить
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Узнать больше
 
 
@@ -197,7 +198,6 @@ startedDateLabel = Дата начала эксперимента: <b>{ $started
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Лётчик-испытатель
-learnMoreLink = ПОДРОБНЕЕ
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -330,3 +330,5 @@ warningMissingPrefTitle = Вы разработчик Лётчика-испыт�
 warningMissingPrefDetail = При запуске Лётчика-испытателя локально или в среде разработки необходимо использовать специальную конфигурацию. Для получения более подробной информации, пожалуйста, обратитесь к <a>нашей документации</a>.
 warningBadHostnameTitle = Неутверждённое имя хоста!
 warningBadHostnameDetail = Доступ к сайту Летчика-испытателя возможен только с testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net или example.com:8000. Для получения более подробной информации, пожалуйста, обратитесь к <a>нашей документации</a>.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Для работы Лётчика-испытателя необходимо включить JavaScript. Извините.
