@@ -129,6 +129,7 @@ experimentListHeader = Vel eksperimenta dine!
 experimentCardFeedback = Tilbakemelding
 experimentCardManage = Handsam
 experimentCardGetStarted = Kom i gang
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Les meir
 
 
@@ -197,7 +198,6 @@ startedDateLabel = Startdato for eksperimentet: <b>{ $startedDate }</b>
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Test Pilot
-learnMoreLink = LES MEIR
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -330,3 +330,5 @@ warningMissingPrefTitle = Utvikle Test Pilot?
 warningMissingPrefDetail = Det krevst ein spesiell konfigurasjon for å køyre Test Pilot lokalt eller i utviklingsmiljø. Sjå <a>dokumentasjonen vår</a> for detaljar.
 warningBadHostnameTitle = Ikkje-godkjend vertsnamn!
 warningBadHostnameDetail = Test Pilot-sida er berre tilgjengeleg få testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net eller example.com:8000. Sjå <a>dokumentasjonen vår</a> for meir informasjon.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot krev JavaScript. Lei for det.
