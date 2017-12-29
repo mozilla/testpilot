@@ -7,3 +7,4 @@ import HomePage from '../app/containers/HomePage';
 export default function create() {
   return inject('home', <HomePage />);
 }
+                
