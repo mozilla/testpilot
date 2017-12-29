@@ -2,8 +2,8 @@
 import React from 'react';
 
 import inject from '../app/lib/inject';
-import LegacyPage from '../app/containers/LegacyPage';
+import HomePage from '../app/containers/HomePage';
 
 export default function create() {
-  return inject('legacy', <LegacyPage />);
+  return inject('home', <HomePage />);
 }
