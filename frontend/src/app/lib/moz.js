@@ -1,5 +1,3 @@
-import cookies from 'js-cookie';
-import config from '../config';
 import addonActions from '../actions/addon';
 import { hasAddonSelector } from '../selectors/addon';
 import { updateExperiment } from '../actions/experiments';
@@ -7,51 +5,9 @@ import InstallHistory from './install-history';
 
 const TESTPILOT_ADDON_ID = '@testpilot-addon';
 const INSTALL_STATE_WATCH_PERIOD = 2000;
-const RESTART_NEEDED = false; // TODO
 
 let mam;
 let installHistory;
-if (typeof navigator !== 'undefined') {
-  mam = navigator.mozAddonManager;
-}
-
-function mozAddonManagerInstall(url) {
-  return mam.createInstall({ url }).then(install => {
-    return new Promise((resolve, reject) => {
-      install.addEventListener('onInstallEnded', () => resolve());
-      install.addEventListener('onDownloadFailed', () => reject());
-      install.addEventListener('onInstallFailed', () => reject());
-      install.install();
-    });
-  });
-}
-
-export function installAddon(
-  requireRestart,
-  sendToGA,
-  eventCategory,
-  eventLabel
-) {
-  const { protocol, hostname, port } = window.location;
-  const path = config.addonPath;
-  const downloadUrl = `${protocol}//${hostname}${port ? ':' + port : ''}${path}`;
-
-  const gaEvent = {
-    eventCategory: eventCategory,
-    eventAction: 'install button click',
-    eventLabel: eventLabel
-  };
-
-  cookies.set('first-run', 'true');
-
-  return mozAddonManagerInstall(downloadUrl).then(() => {
-    gaEvent.dimension7 = RESTART_NEEDED ? 'restart required' : 'no restart';
-    sendToGA('event', gaEvent);
-    if (RESTART_NEEDED) {
-      requireRestart();
-    }
-  });
-}
 
 export function uninstallAddon() {
   mam.getAddonByID(TESTPILOT_ADDON_ID).then(addon => {
@@ -72,7 +28,7 @@ function pollMainAddonAvailability(store) {
       }
     }
     setTimeout(() => pollMainAddonAvailability(store),
-               INSTALL_STATE_WATCH_PERIOD);
+      INSTALL_STATE_WATCH_PERIOD);
   };
   mam.getAddonByID(TESTPILOT_ADDON_ID)
     .then(addon => finish(!!addon))
@@ -119,22 +75,22 @@ export function setupAddonConnection(store) {
   mam.addEventListener('onDisabled', onDisabled);
   mam.addEventListener('onUninstalled', onDisabled);
   mam.addEventListener('onInstalled', addon => installHistory.setActive(addon.id));
-/*
-  mam.addEventListener('onEnabling', (addon, restart) => {
-  });
-  mam.addEventListener('onDisabling', (addon, restart) => {
-  });
-  mam.addEventListener('onInstalling', (addon, restart) => {
-  });
-  mam.addEventListener('onUninstalling', (addon, restart) => {
-    // TODO similar logic to txp addon AddonListener.js
-  });
-  mam.addEventListener('onOperationCancelled', addon => {
-    // TODO similar logic to txp addon AddonListener.js
-  });
-  mam.addEventListener('onPropertyChanged', (addon, p) => {
-  });
-*/
+  /*
+    mam.addEventListener('onEnabling', (addon, restart) => {
+    });
+    mam.addEventListener('onDisabling', (addon, restart) => {
+    });
+    mam.addEventListener('onInstalling', (addon, restart) => {
+    });
+    mam.addEventListener('onUninstalling', (addon, restart) => {
+      // TODO similar logic to txp addon AddonListener.js
+    });
+    mam.addEventListener('onOperationCancelled', addon => {
+      // TODO similar logic to txp addon AddonListener.js
+    });
+    mam.addEventListener('onPropertyChanged', (addon, p) => {
+    });
+  */
   getExperimentAddons(store.getState().experiments.data)
     .then(addons => {
       const enabled = addons.filter(a => a && a.isEnabled);
@@ -173,37 +129,36 @@ export function enableExperiment(dispatch, experiment) {
   mam
     .getAddonByID(experiment.addon_id)
     .then(
-      addon => {
-        if (addon) {
-          // already installed
-          if (!addon.isEnabled) {
-            return addon.setEnabled(true);
-          }
-          // already enabled
-          return Promise.resolve();
+    addon => {
+      if (addon) {
+        // already installed
+        if (!addon.isEnabled) {
+          return addon.setEnabled(true);
         }
-        return mozAddonManagerInstall(experiment.xpi_url);
-      } // TODO error case
+      }
+      // already enabled
+      return Promise.resolve();
+    }
     )
     .then(
-      () => {
-        dispatch(addonActions.enableExperiment(experiment));
-        dispatch(
-          updateExperiment(experiment.addon_id, {
-            inProgress: false,
-            error: false
-          })
-        );
-      },
-      () => {
-        dispatch(addonActions.disableExperiment(experiment));
-        dispatch(
-          updateExperiment(experiment.addon_id, {
-            inProgress: false,
-            error: true
-          })
-        );
-      }
+    () => {
+      dispatch(addonActions.enableExperiment(experiment));
+      dispatch(
+        updateExperiment(experiment.addon_id, {
+          inProgress: false,
+          error: false
+        })
+      );
+    },
+    () => {
+      dispatch(addonActions.disableExperiment(experiment));
+      dispatch(
+        updateExperiment(experiment.addon_id, {
+          inProgress: false,
+          error: true
+        })
+      );
+    }
     );
   dispatch(
     updateExperiment(experiment.addon_id, {
@@ -216,12 +171,12 @@ export function disableExperiment(dispatch, experiment) {
   mam
     .getAddonByID(experiment.addon_id)
     .then(
-      addon => {
-        if (addon) {
-          return addon.uninstall();
-        }
-        return Promise.resolve();
-      } // TODO error case
+    addon => {
+      if (addon) {
+        return addon.uninstall();
+      }
+      return Promise.resolve();
+    } // TODO error case
     )
     .then(() => {
       dispatch(addonActions.disableExperiment(experiment));
