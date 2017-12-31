@@ -129,6 +129,7 @@ experimentListHeader = ¡Ke'acha' ri taq asolna'oj!
 experimentCardFeedback = Taq tzijol
 experimentCardManage = Tinuk'samajïx
 experimentCardGetStarted = Titikirisäx
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Tetamäx Ch'aqa' Chik
 
 
@@ -197,7 +198,6 @@ startedDateLabel = Rutikirib'al Q'ij Solna'oj: <b>{ $startedDate }</b>
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Test Pilot
-learnMoreLink = TETAMÄX CH'AQA' CHIK
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -330,3 +330,5 @@ warningMissingPrefTitle = ¿La tajin nib'an Test Pilot?
 warningMissingPrefDetail = Toq nisamajïx aj wawe' o pa rub'anikil ri Test Pilot, nik'atzin jun jeb'ël runuk'ulem. Tab'ana' utzil tatz'eta' <a>qawujil</a> richin ch'aqa' chik rub'anikil.
 warningBadHostnameTitle = ¡Man ya'on ta q'ij chi re ri rub'i' ruk'u'x samaj!
 warningBadHostnameDetail = Ri ruxaq ruk'amaya'l Test Pilot tikirel nib'an okem chupam pa testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, or example.com:8000. Tab'ana' utzil tatz'eta' <a>qawujil</a> richin ch'aqa' chik rub'anikil.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Ri Test Pilot nrajo' JavaScript. Kojakuyu'.
