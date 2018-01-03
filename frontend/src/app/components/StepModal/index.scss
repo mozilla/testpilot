@@ -73,6 +73,10 @@
     position: relative;
     width: 580px;
 
+    img {
+      width: 100%;
+    }
+
     .fade {
       background: linear-gradient(transparent, $white);
       bottom: 0;
