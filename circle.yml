@@ -41,7 +41,7 @@ jobs:
            - addon/node_modules
   unit_test:
     docker:
-      - image: circleci/node:6.12.0
+      - image: circleci/node:8.9.4
     steps:
       - attach_workspace:
           at: .
@@ -50,7 +50,7 @@ jobs:
       - run: sudo ./bin/deploy-storybook.sh
   integration_test:
     docker:
-      - image: circleci/node:6.12.0
+      - image: circleci/node:8.9.4
     environment:
       - MOZ_HEADLESS: 1
     steps:
@@ -95,7 +95,7 @@ jobs:
            - .tox
   static_deploy:
     docker:
-      - image: circleci/node:6.12.0
+      - image: circleci/node:8.9.4
     steps:
       - attach_workspace:
           at: .
@@ -106,7 +106,7 @@ jobs:
             ./bin/circleci/invalidate-cloudfront-cache.sh E2ERG47PHCWD0Z
   l10n_deploy:
     docker:
-      - image: circleci/node:6.12.0
+      - image: circleci/node:8.9.4
     steps:
       - attach_workspace:
         at: .
