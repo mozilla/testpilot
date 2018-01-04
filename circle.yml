@@ -47,7 +47,6 @@ jobs:
           at: .
       - run: ./bin/circleci/test-addon.sh
       - run: ./bin/circleci/test-frontend.sh
-      - run: sudo ./bin/deploy-storybook.sh
   integration_test:
     docker:
       - image: circleci/node:8.9.4
