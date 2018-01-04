@@ -10,7 +10,7 @@
     "url": "https://github.com/mozilla/testpilot/issues"
   },
   "engines": {
-    "node": ">=8.9.0"
+    "node": ">=8.9.4"
   },
   "dependencies": {
     "babel-polyfill": "6.26.0",
