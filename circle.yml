@@ -7,7 +7,7 @@ notify:
 jobs:
   build:
     docker:
-      - image: circleci/node:6.12.0
+      - image: circleci/node:8.9.4
     working_directory: ~/testpilot
     steps:
       - checkout
