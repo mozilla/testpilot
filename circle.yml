@@ -138,7 +138,7 @@ workflows:
             branches:
               ignore:
                 - l10n
-      - static_deploy:
+      - static/storybook_deploy:
           requires:
             - unit_test
             - integration_test
