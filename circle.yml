@@ -92,7 +92,7 @@ jobs:
          key: integration-test-
          paths:
            - .tox
-  static/storybook_deploy:
+  static_and_storybook_deploy:
     docker:
       - image: circleci/node:8.9.4
     steps:
@@ -138,7 +138,7 @@ workflows:
             branches:
               ignore:
                 - l10n
-      - static/storybook_deploy:
+      - static_and_storybook_deploy:
           requires:
             - unit_test
             - integration_test
