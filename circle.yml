@@ -92,7 +92,7 @@ jobs:
          key: integration-test-
          paths:
            - .tox
-  static_deploy:
+  static/storybook_deploy:
     docker:
       - image: circleci/node:8.9.4
     steps:
@@ -104,6 +104,9 @@ jobs:
             sudo apt-get install python-pip python-dev build-essential
             sudo pip install --upgrade pip
             sudo pip install awscli --upgrade
+      - run:
+          name: Storybook Deploy
+          command: ./bin/deploy-storybook.sh
       - run:
           name: Static deployment
           command: |
