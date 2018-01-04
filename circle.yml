@@ -1,70 +1,145 @@
-# These environment variables must be set in CircleCI UI
-#
-# AMO_USER       - api user from addons.mozilla.com
-# AMO_SECRET     - api key secret from addons.mozilla.com
-
-machine:
-  environment:
-    DISPLAY: :99
-    PATH: "/home/ubuntu/testpilot/firefox:$PATH"
-    MOZ_HEADLESS: 1
-  hosts:
-    example.com: 127.0.0.1
-  node:
-    version: 8.9.4
-  post:
-    - pyenv global 2.7.12 3.6.1
-
-dependencies:
-  cache_directories:
-    - "addon/node_modules"
-    - "/home/ubuntu/firefox-downloads"
-    # node_modules is included by default
-
-  override:
-    - |
-      curl -L -o ~/bin/jq \
-      https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 && \
-      chmod +x ~/bin/jq
-    - ./bin/circleci/install-test-dependencies.sh
-    - ./bin/circleci/install-node-dependencies.sh
-    - ./bin/circleci/build-addon.sh
-    - ./bin/circleci/build-version-json.sh
-    - ./bin/circleci/build-frontend.sh
-
-test:
-  override:
-    - ./bin/circleci/test-addon.sh
-    - ./bin/circleci/test-frontend.sh
-    - ./bin/circleci/flake8.sh
-    - mkdir integration-test-results
-    - ./bin/circleci/test-firefox-release.sh
-    - ./bin/circleci/test-firefox-nightly.sh
-  post:
-    - bash <(curl -s https://codecov.io/bash)
-    - cp -r integration-test-results $CIRCLE_ARTIFACTS
-    - ./bin/deploy-storybook.sh
-
-deployment:
-  static_development:
-    owner: mozilla
-    branch:
+version: 2.0
+notify:
+  branches:
+    only:
       - master
-    commands:
-      - TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/circleci/do-exclusively.sh --branch master ./bin/deploy.sh dev
-      - ./bin/circleci/invalidate-cloudfront-cache.sh E2ERG47PHCWD0Z
-  static_l10n:
-    owner: mozilla
-    branch:
       - l10n
-    commands:
-      - TESTPILOT_BUCKET=testpilot-l10n.dev.mozaws.net ./bin/deploy.sh dev
-      - ./bin/circleci/invalidate-cloudfront-cache.sh ELL21V1NJAJJ8
-
-# Only notify of builds on master branch.
-experimental:
-  notify:
-    branches:
-      only:
-        - master
-        - l10n
+jobs:
+  build:
+    docker:
+      - image: circleci/node:6.12.0
+    working_directory: ~/testpilot
+    steps:
+      - checkout
+      - restore_cache:
+         keys:
+           - node-modules-
+      - run:
+          name: Setup env
+          command: |
+            curl -L -o ~/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 && chmod +x ~/bin/jq
+            ./bin/circleci/install-node-dependencies.sh
+      - run:
+          name: Build addon and frontend
+          command: |
+            sudo ./bin/circleci/build-addon.sh
+            sudo ./bin/circleci/build-version-json.sh
+            sudo ./bin/circleci/build-frontend.sh
+      - store_artifacts:
+          path: ~/testpilot/addon/update.rdf
+      - store_artifacts:
+          path: ~/testpilot/addon/addon.xpi
+      - store_artifacts:
+          path: ~/testpilot/frontend.zip
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./*
+      - save_cache:
+         key: node-modules-
+         paths:
+           - addon/node_modules
+  unit_test:
+    docker:
+      - image: circleci/node:6.12.0
+    steps:
+      - attach_workspace:
+          at: .
+      - run: ./bin/circleci/test-addon.sh
+      - run: ./bin/circleci/test-frontend.sh
+      - run: sudo ./bin/deploy-storybook.sh
+  integration_test:
+    docker:
+      - image: circleci/node:6.12.0
+    environment:
+      - MOZ_HEADLESS: 1
+    steps:
+      - attach_workspace:
+          at: .
+      - restore_cache:
+         keys:
+           - integration-test-{{ checksum "frontend/test/ui/requirements/flake8.txt" }}
+           - integration-test-{{ checksum "frontend/test/ui/requirements/requirements.txt" }}
+           - integration-test-
+      - run:
+          name: Set hosts
+          command: |
+            echo 127.0.0.1 example.com | sudo tee -a /etc/hosts
+            cat /etc/hosts
+      - run:
+          name: Install dependencies
+          command: ./bin/circleci/install-test-dependencies.sh
+      - run:
+          name: Flake8
+          command: ./bin/circleci/flake8.sh
+      - run: mkdir integration-test-results
+      - run:
+          name: Test Firefox Release
+          command: ./bin/circleci/test-firefox-release.sh
+      - run:
+          name: Test Firefox Nightly
+          command: ./bin/circleci/test-firefox-nightly.sh
+      - store_artifacts:
+          path: ~/project/integration-test-results
+      - save_cache:
+         key: integration-test-{{ checksum "frontend/test/ui/requirements/flake8.txt" }}
+         paths:
+           - frontend/test/ui/requirements/flake8.txt
+      - save_cache:
+         key: integration-test-{{ checksum "frontend/test/ui/requirements/requirements.txt" }}
+         paths:
+           - frontend/test/ui/requirements/requirements.txt
+      - save_cache:
+         key: integration-test-
+         paths:
+           - .tox
+  static_deploy:
+    docker:
+      - image: circleci/node:6.12.0
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Static deployment
+          command: |
+            TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/circleci/do-exclusively.sh --branch master ./bin/deploy.sh dev
+            ./bin/circleci/invalidate-cloudfront-cache.sh E2ERG47PHCWD0Z
+  l10n_deploy:
+    docker:
+      - image: circleci/node:6.12.0
+    steps:
+      - attach_workspace:
+        at: .
+      - run:
+          name: l10n deployment
+          command: |
+            TESTPILOT_BUCKET=testpilot-l10n.dev.mozaws.net ./bin/deploy.sh dev
+            ./bin/circleci/invalidate-cloudfront-cache.sh ELL21V1NJAJJ8
+workflows:
+  version: 2
+  build_test_deploy:
+    jobs:
+      - build
+      - unit_test:
+          requires:
+            - build
+      - integration_test:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore:
+                - l10n
+      - static_deploy:
+          requires:
+            - unit_test
+            - integration_test
+          filters:
+            branches:
+              only: master
+      - l10n_deploy:
+          requires:
+            - unit_test
+          filters:
+            branches:
+only: l10n
