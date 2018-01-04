@@ -1,13 +1,21 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
+const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
-const packageJSON = require('./package.json');
-const config = require('./frontend/config.js');
+const morgan = require('morgan');
 
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const {
+  DevServerMiddleware,
+  DevServerHTTPSOptions
+} = require('./frontend/lib/dev-server');
+
+const packageJSON = require('./package.json');
+const config = require('./frontend/config.js');
 
 const RUN_ANALYZER = !!process.env.ANALYZER;
 const NODE_ENV = process.env.NODE_ENV || 'development';
@@ -36,6 +44,8 @@ const vendorModules = Object.keys(packageJSON.dependencies)
   .concat(includeVendorModules);
 
 const extractSass = new ExtractTextPlugin({
+  // TODO: Take over filename hashing once gulp stops doing rev-assets
+  // filename: '[name].[contenthash].css'
   filename: '[name].css'
 });
 
@@ -50,7 +60,7 @@ const plugins = [
     /moment[\/\\]locale$/, // eslint-disable-line no-useless-escape
     new RegExp(config.AVAILABLE_LOCALES.replace(/,/g, '|'))
   ),
-  new webpack.optimize.CommonsChunkPlugin('static/app/vendor.js'),
+  new webpack.optimize.CommonsChunkPlugin('static/app/vendor'),
   extractSass
 ];
 
@@ -72,12 +82,14 @@ if (RUN_ANALYZER) {
 
 module.exports = {
   entry: {
-    'static/app/app.js': './frontend/src/app/index.js',
-    'static/app/vendor.js': vendorModules
+    'static/app/app': './frontend/src/app/index.js',
+    'static/app/vendor': vendorModules
   },
   output: {
     path: path.resolve(__dirname, 'frontend/build'),
-    filename: '[name]'
+    // TODO: Take over filename hashing once gulp stops doing rev-assets
+    // filename: '[name].[hash].js'
+    filename: '[name].js'
   },
   node: {
     crypto: false
@@ -93,7 +105,16 @@ module.exports = {
     }
   },
   devServer: {
-    contentBase: 'dist'
+    port: process.env.PORT || 8000,
+    allowedHosts: ['example.com'],
+    publicPath: '/',
+    contentBase: path.join(__dirname, 'frontend/build'),
+    index: 'index.html',
+    before: app => {
+      app.use(morgan('dev'));
+      app.use(DevServerMiddleware);
+    },
+    https: { ...DevServerHTTPSOptions },
   },
   devtool: 'source-map',
   resolve: {
@@ -122,7 +143,7 @@ module.exports = {
             options: {
               hash: 'sha512',
               digest: 'hex',
-              name: '/static/images/[name]-[hash].[ext]'
+              name: '/static/app/images/[name]-[hash].[ext]'
             }
           },
           {

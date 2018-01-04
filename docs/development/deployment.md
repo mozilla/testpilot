@@ -119,6 +119,13 @@ NODE_ENV=production ENABLE_PONTOON=0 npm run static
 After all the above commands, you should have an optimized static build of the
 site in the `dist` directory.
 
+If you'd like to preview this static build of the site, you can start up a
+local web server pointed at the `dist` directory with this npm script:
+
+```
+npm run server:dist
+```
+
 The `NODE_ENV` variable in the last command can be set to `development` to
 produce a build that's easier to debug, at the expense of JS bundle size and
 performance.
