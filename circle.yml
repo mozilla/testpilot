@@ -142,4 +142,4 @@ workflows:
             - unit_test
           filters:
             branches:
-only: l10n
+              only: l10n
