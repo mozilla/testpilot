@@ -92,3 +92,13 @@ created: '2017-02-17T00:06:00.00Z'
 completed: '2017-09-05T19:38:00.42Z'
 graduation_url: https://medium.com/firefox-test-pilot/firefox-containers-are-go-ed2e3533b6e3
 order: 4
+news_updates:
+  -
+    slug: containers-update-1
+    title: Containers Graduation Report
+    link: 'https://medium.com/firefox-test-pilot/firefox-containers-are-go-ed2e3533b6e3'
+    created: 2017-10-10T12:00:00Z
+    published: 2017-10-10T12:00:00Z
+    dev: false
+    content: >
+      Containers made the jump from Test Pilot and are now available as an add-on for all Firefox users.

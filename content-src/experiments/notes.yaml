@@ -79,3 +79,22 @@ contributors:
 created: '2017-08-01T14:00:00Z'
 launch_date: '2017-08-01T14:00:00Z'
 order: 1
+news_updates:
+  -
+    slug: notes-update-2
+    title: Sync Your Notes
+    link: 'https://medium.com/firefox-test-pilot/notes-sync-feature-is-now-available-with-end-to-end-encryption-a4cf47bbf9ae'
+    created: 2017-12-12T12:00:00Z
+    published: 2017-12-12T12:00:00Z
+    dev: false
+    content: >
+      As of today, you can now Sync your notes wherever you use Firefox. See how we did it.
+  -
+    slug: notes-update-1
+    title: Notes Improvements
+    link: 'https://medium.com/firefox-test-pilot/testpilot-notes-v1-9-0-b166c6cd7353'
+    created: 2017-12-12T12:00:00Z
+    published: 2017-12-12T12:00:00Z
+    dev: false
+    content: >
+      We dramatically improved Notes by switching the text editor.
