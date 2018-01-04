@@ -47,7 +47,6 @@ jobs:
           at: .
       - run: ./bin/circleci/test-addon.sh
       - run: ./bin/circleci/test-frontend.sh
-      - run: sudo ./bin/deploy-storybook.sh
   integration_test:
     docker:
       - image: circleci/node:8.9.4
@@ -99,6 +98,12 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+      - run:
+          name: Install AWSCLI
+          command: |
+            sudo apt-get install python-pip python-dev build-essential
+            sudo pip install --upgrade pip
+            sudo pip install awscli --upgrade
       - run:
           name: Static deployment
           command: |
