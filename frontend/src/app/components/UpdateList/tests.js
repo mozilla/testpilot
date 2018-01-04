@@ -65,7 +65,7 @@ describe('app/components/UpdateList', () => {
     expect(subjectWithMore.find('.more-news')).to.have.property('length', 1);
   });
 
-  it('should display at most 5 more news updates and hide the button if the button is clicked', () => {
+  it('should display at most 10 more news updates and hide the button if the button is clicked', () => {
     const props = {
       experiments: [
         { slug: 'exp0' },
@@ -92,7 +92,7 @@ describe('app/components/UpdateList', () => {
 
     expect(subject.find('.more-news')).to.have.property('length', 0);
     expect(subject.find('Update')).to.have.property('length',
-      props.freshNewsUpdates.length + 5);
+      props.freshNewsUpdates.length + 10);
   });
 
   describe('Update', () => {

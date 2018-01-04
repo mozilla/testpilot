@@ -138,7 +138,7 @@ export default class UpdateList extends React.Component {
     const shouldShowMoreNewsButton = !showMoreNews && hasStaleNewsUpdates;
 
     const shownNewsUpdates = shouldShowStaleNewsUpdates
-      ? [].concat(freshNewsUpdates, staleNewsUpdates.slice(0, 5))
+      ? [].concat(freshNewsUpdates, staleNewsUpdates.slice(0, 10))
       : freshNewsUpdates;
 
     if (!shownNewsUpdates || shownNewsUpdates.length === 0) {
