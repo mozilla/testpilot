@@ -8,7 +8,7 @@ class Detail(Base):
     """Represents the individual details page of an experiment"""
     _root_locator = (By.CLASS_NAME, 'default-background')
     _name_locator = (By.CSS_SELECTOR, '.details-header > header > h1')
-    _enable_locator = (By.CLASS_NAME, 'main-install__button')
+    _enable_locator = (By.ID, 'install-button')
 
     def wait_for_page_to_load(self):
         self.wait.until(

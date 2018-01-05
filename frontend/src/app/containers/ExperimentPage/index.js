@@ -391,7 +391,23 @@ export class ExperimentDetail extends React.Component {
       return;
     }
 
-    installAddonPromise.then(finishEnabling);
+    installAddonPromise
+      .then(() => {
+        return new Promise((resolve, reject) => {
+          let i = 0;
+          const interval = setInterval(() => {
+            i++;
+            if (this.props.hasAddon) {
+              clearInterval(interval);
+              resolve();
+            } else if (i > 2000) {
+              clearInterval(interval);
+              reject(new Error('hasAddon still false after 200 seconds'));
+            }
+          }, 100);
+        });
+      })
+      .then(finishEnabling);
   };
 
   uninstallExperiment = (evt: MouseEventWithElementTarget) => {
