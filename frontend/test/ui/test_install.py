@@ -26,6 +26,7 @@ def test_install_of_test_pilot_addon(
         ).close()
         assert experiments.welcome_popup.is_title_displayed()
 
+
 @pytest.mark.nondestructive
 @pytest.mark.skipif(os.environ.get('SKIP_INSTALL_TEST') is not None,
                     reason='Skip install on Release and Beta Firefox.')

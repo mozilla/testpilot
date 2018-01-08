@@ -15,6 +15,10 @@ class Home(Base):
         return self.Body(self)
 
     @property
+    def featured(self):
+        return self.Featured(self)
+
+    @property
     def signup_footer(self):
         return self.SignUpFooter(self)
 
