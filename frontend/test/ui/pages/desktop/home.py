@@ -45,6 +45,40 @@ class Home(Base):
             from .experiments import Experiments
             return Experiments(self.selenium, self.page.base_url)
 
+    class Featured(Region):
+        """Represents the Header portion of the page"""
+        _root_locator = (By.CLASS_NAME, 'featured-experiment')
+        _video_locator = (By.CLASS_NAME, 'featured-experiment__video')
+        _action_locator = (By.CLASS_NAME, 'featured-experiment__actions')
+        _install_locator = (By.CLASS_NAME, 'main-install__button')
+        _header_locator = (By.CLASS_NAME, 'featured-experiment__header')
+
+        @property
+        def is_displayed(self):
+            """Return if firefox copter is displayed."""
+            return self.find_element(*self._header_locator).is_displayed()
+
+        @property
+        def is_video_displayed(self):
+            """Return if featured video is displayed."""
+            return self.find_element(*self._video_locator).is_displayed()
+
+        @property
+        def are_actions_displayed(self):
+            """Return if the featured action buttons are displayed."""
+            return self.find_element(*self._action_locator).is_displayed()
+
+        def click_install_button(self):
+            """Clicks the button to install the testpilot addon.
+
+            Returns:
+                obj: Experiments object.
+
+            """
+            self.find_element(*self._install_locator).click()
+            from .experiments import Experiments
+            return Experiments(self.selenium, self.page.base_url)
+
     class Body(Region):
         """Represents the main body of the page"""
         _root_locator = (By.CLASS_NAME, 'layout-wrapper--card-list')
