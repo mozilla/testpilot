@@ -91,6 +91,7 @@ completed: '2017-07-12T20:00:00.000000Z'
 locale_blocklist:
   - 'de'
 order: 5
+graduation_url: https://medium.com/firefox-test-pilot/graduation-report-activity-stream-31aed429bd49
 news_updates:
   -
     slug: as-update-1
