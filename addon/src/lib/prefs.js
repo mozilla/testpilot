@@ -48,6 +48,13 @@ export function shutdownPrefsObserver() {
 
 function sendInitialPrefs(port) {
   const message = {};
-  message[ENV_PREF] = Services.prefs.getCharPref(ENV_PREF);
+  try {
+    message[ENV_PREF] = Services.prefs.getCharPref(ENV_PREF);
+  } catch (e) {
+    // If no pref is set, treat it like the pref is set to ''.
+    // In environments.js setCurrentEnv this will cause it to
+    // fall back to the default environment.
+    message[ENV_PREF] = '';
+  }
   port.postMessage({ op: prefsTopics('prefsChange'), message });
 }
