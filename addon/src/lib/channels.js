@@ -147,9 +147,7 @@ function createChannelForAddonId(name, addonId) {
 
   // Create the special about:blank URL for the extension.
   const baseURI = Services.io.newURI(
-    `moz-extension://${mozExtensionHostname}/_blank.html`,
-    null,
-    null
+    `moz-extension://${mozExtensionHostname}/_blank.html`
   );
 
   // Create a principal (security context) for the generalized origin given
