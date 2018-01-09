@@ -1,14 +1,14 @@
 // @flow
 
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
-import classnames from 'classnames';
+import { Localized } from "fluent-react/compat";
+import React from "react";
+import classnames from "classnames";
 
-import LayoutWrapper from '../LayoutWrapper';
-import RetireConfirmationDialog from '../RetireConfirmationDialog';
-import Settings from '../Settings';
+import LayoutWrapper from "../LayoutWrapper";
+import RetireConfirmationDialog from "../RetireConfirmationDialog";
+import Settings from "../Settings";
 
-import './index.scss';
+import "./index.scss";
 
 type HeaderProps = {
   uninstallAddon: Function,
@@ -43,7 +43,7 @@ export default class Header extends React.Component {
   }
 
   setHeaderLinkPath() {
-    return this.props.hasAddon ? '/experiments' : '/';
+    return this.props.hasAddon ? "/experiments" : "/";
   }
 
   showSettingsMenu() {
@@ -95,19 +95,19 @@ export default class Header extends React.Component {
   }
 
   blogLinkClick() {
-    this.props.sendToGA('event', {
-      eventCategory: 'Menu Interactions',
-      eventAction: 'click',
-      eventLabel: 'open blog'
+    this.props.sendToGA("event", {
+      eventCategory: "Menu Interactions",
+      eventAction: "click",
+      eventLabel: "open blog"
     });
   }
 
   render() {
     let newsPageActive = false;
 
-    if (typeof window !== 'undefined') {
-      if (typeof window.location !== 'undefined') {
-        newsPageActive = window.location.pathname === '/news';
+    if (typeof window !== "undefined") {
+      if (typeof window.location !== "undefined") {
+        newsPageActive = window.location.pathname === "/news";
       }
     }
 
@@ -123,7 +123,7 @@ export default class Header extends React.Component {
             </h1>
               <div className="header-links">
                 <Localized id="headerLinkNews">
-                  <a className={classnames('news-link', { active: newsPageActive })} href="/news">News Feed</a>
+                  <a className={classnames("news-link", { active: newsPageActive })} href="/news">News Feed</a>
                 </Localized>
                 <Localized id="headerLinkBlog">
                   <a className="blog-link" onClick={this.blogLinkClick.bind(this)} href="https://medium.com/firefox-test-pilot" target="_blank" rel="noopener noreferrer">Blog</a>

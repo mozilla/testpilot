@@ -1,39 +1,39 @@
 /* global ga */
-import { MessageContext } from 'fluent/compat';
-import { negotiateLanguages } from 'fluent-langneg/compat';
-import { LocalizationProvider } from 'fluent-react/compat';
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { MessageContext } from "fluent/compat";
+import { negotiateLanguages } from "fluent-langneg/compat";
+import { LocalizationProvider } from "fluent-react/compat";
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
-import cookies from 'js-cookie';
-import Clipboard from 'clipboard';
+import cookies from "js-cookie";
+import Clipboard from "clipboard";
 
-import likelySubtagsData from 'cldr-core/supplemental/likelySubtags.json';
+import likelySubtagsData from "cldr-core/supplemental/likelySubtags.json";
 
-import { getInstalled, isExperimentEnabled, isAfterCompletedDate, isInstalledLoaded } from '../../reducers/addon';
-import { setState as setBrowserState } from '../../actions/browser';
-import { getExperimentBySlug } from '../../reducers/experiments';
-import { getChosenTest } from '../../reducers/varianttests';
-import experimentSelector, { featuredExperimentsSelectorWithL10n } from '../../selectors/experiment';
-import { uninstallAddon, installAddon, enableExperiment, disableExperiment } from '../../lib/InstallManager';
-import { setLocalizations, setNegotiatedLanguages } from '../../actions/localizations';
-import { localizationsSelector, negotiatedLanguagesSelector } from '../../selectors/localizations';
-import { chooseTests } from '../../actions/varianttests';
-import addonActions from '../../actions/addon';
-import newsletterFormActions from '../../actions/newsletter-form';
-import RestartPage from '../RestartPage';
-import UpgradeWarningPage from '../UpgradeWarningPage';
-import { isFirefox, isMinFirefoxVersion, isMobile } from '../../lib/utils';
+import { getInstalled, isExperimentEnabled, isAfterCompletedDate, isInstalledLoaded } from "../../reducers/addon";
+import { setState as setBrowserState } from "../../actions/browser";
+import { getExperimentBySlug } from "../../reducers/experiments";
+import { getChosenTest } from "../../reducers/varianttests";
+import experimentSelector, { featuredExperimentsSelectorWithL10n } from "../../selectors/experiment";
+import { uninstallAddon, installAddon, enableExperiment, disableExperiment } from "../../lib/InstallManager";
+import { setLocalizations, setNegotiatedLanguages } from "../../actions/localizations";
+import { localizationsSelector, negotiatedLanguagesSelector } from "../../selectors/localizations";
+import { chooseTests } from "../../actions/varianttests";
+import addonActions from "../../actions/addon";
+import newsletterFormActions from "../../actions/newsletter-form";
+import RestartPage from "../RestartPage";
+import UpgradeWarningPage from "../UpgradeWarningPage";
+import { isFirefox, isMinFirefoxVersion, isMobile } from "../../lib/utils";
 import {
   makeStaleNewsUpdatesSelector,
   makeFreshNewsUpdatesSelector,
   makeNewsUpdatesForDialogSelector
-} from '../../selectors/news';
-import config from '../../config';
+} from "../../selectors/news";
+import config from "../../config";
 
 let clipboard = null;
-if (typeof document !== 'undefined') {
-  clipboard = new Clipboard('button');
+if (typeof document !== "undefined") {
+  clipboard = new Clipboard("button");
 }
 
 export function shouldShowUpgradeWarning(hasAddon, hasAddonManager, thisIsFirefox, host) {
@@ -59,28 +59,28 @@ class App extends Component {
 
     const pathname = window.location.pathname;
 
-    const experimentsPath = 'experiments/';
+    const experimentsPath = "experiments/";
 
-    if (pathname === '/') {
+    if (pathname === "/") {
       const installedCount = Object.keys(installed).length;
       const anyInstalled = installedCount > 0;
-      this.debounceSendToGA(pathname, 'pageview', {
+      this.debounceSendToGA(pathname, "pageview", {
         dimension1: hasAddon,
         dimension2: anyInstalled,
         dimension3: installedCount
       });
     } else if (pathname === experimentsPath) {
-      this.debounceSendToGA(pathname, 'pageview', {
+      this.debounceSendToGA(pathname, "pageview", {
         dimension1: hasAddon
       });
     } else if (pathname.indexOf(experimentsPath) === 0) {
       let slug = pathname.substring(experimentsPath.length);
       // Trim trailing slash, if necessary
-      if (slug.charAt(slug.length - 1) === '/') {
+      if (slug.charAt(slug.length - 1) === "/") {
         slug = slug.substring(0, slug.length - 1);
       }
       const experiment = this.props.getExperimentBySlug(slug);
-      this.debounceSendToGA(pathname, 'pageview', {
+      this.debounceSendToGA(pathname, "pageview", {
         dimension1: hasAddon,
         dimension4: isExperimentEnabled(experiment),
         dimension5: experiment.title
@@ -95,7 +95,7 @@ class App extends Component {
       const data = dataIn || {};
       data.hitType = type;
       data.location = window.location;
-      ga('send', data);
+      ga("send", data);
     }
   }
 
@@ -106,14 +106,14 @@ class App extends Component {
       userAgent,
       host: window.location.host,
       protocol: window.location.protocol,
-      hasAddonManager: (typeof navigator.mozAddonManager !== 'undefined'),
+      hasAddonManager: (typeof navigator.mozAddonManager !== "undefined"),
       isFirefox: isFirefox(userAgent),
       isMobile: isMobile(userAgent),
       isMinFirefox: isMinFirefoxVersion(userAgent, config.minFirefoxVersion),
       isProdHost: window.location.host === config.prodHost,
       isDevHost: config.devHosts.includes(window.location.host),
       isDev: config.isDev,
-      locale: (navigator.language || '').split('-')[0]
+      locale: (navigator.language || "").split("-")[0]
     });
     this.props.chooseTests();
     this.measurePageview();
@@ -123,7 +123,7 @@ class App extends Component {
     function addLang(lang, response) {
       if (response.ok) {
         return response.text().then(data => {
-          langs[lang] = `${langs[lang] || ''}${data}
+          langs[lang] = `${langs[lang] || ""}${data}
 `;
         });
       }
@@ -131,13 +131,13 @@ class App extends Component {
     }
 
     const availableLanguages = document.querySelector(
-      'meta[name=availableLanguages]').content.split(',');
+      "meta[name=availableLanguages]").content.split(",");
 
     const negotiated = negotiateLanguages(
       navigator.languages,
       availableLanguages,
       {
-        defaultLocale: 'en-US',
+        defaultLocale: "en-US",
         likelySubtags: likelySubtagsData.supplemental.likelySubtags
       }
     );
@@ -155,7 +155,7 @@ class App extends Component {
 
     Promise.all(promises).then(() => {
       this.props.setLocalizations(langs);
-      const staticNode = document.getElementById('static-root');
+      const staticNode = document.getElementById("static-root");
       if (staticNode) {
         staticNode.parentNode.removeChild(staticNode);
       }
@@ -179,7 +179,7 @@ class App extends Component {
 
     function* generateMessages(languages, localizations) {
       for (const lang of languages) {
-        if (typeof localizations[lang] === 'string') {
+        if (typeof localizations[lang] === "string") {
           const cx = new MessageContext(lang);
           cx.addMessages(localizations[lang]);
           yield cx;
@@ -209,7 +209,7 @@ function sendToGA(type, dataIn) {
     data.hitCallback = hitCallback;
     data.dimension8 = chosenTest.test;
     data.dimension9 = chosenTest.variant;
-    ga('send', data);
+    ga("send", data);
   } else {
     hitCallback();
   }
@@ -222,7 +222,7 @@ const mapStateToProps = state => ({
   featuredExperiments: featuredExperimentsSelectorWithL10n(state),
   freshNewsUpdates: makeFreshNewsUpdatesSelector(Date.now())(state),
   majorNewsUpdates: makeNewsUpdatesForDialogSelector(
-    cookies.get('updates-last-viewed-date'),
+    cookies.get("updates-last-viewed-date"),
     Date.now()
   )(state),
   getExperimentBySlug: slug =>
@@ -271,7 +271,7 @@ const mapDispatchToProps = dispatch => ({
     setPrivacy: privacy =>
       dispatch(newsletterFormActions.newsletterFormSetPrivacy(privacy)),
     subscribe: (email) =>
-      dispatch(newsletterFormActions.newsletterFormSubscribe(dispatch, email, '' + window.location))
+      dispatch(newsletterFormActions.newsletterFormSubscribe(dispatch, email, "" + window.location))
   },
   setNegotiatedLanguages: negotiatedLanguages =>
     dispatch(setNegotiatedLanguages(negotiatedLanguages)),
@@ -289,19 +289,19 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     sendToGA,
     clipboard,
     setPageTitleL10N: (id, args) => {
-      if (typeof document === 'undefined') { return; }
+      if (typeof document === "undefined") { return; }
 
-      const title = document.querySelector('head title');
-      title.setAttribute('data-l10n-id', id);
-      title.setAttribute('data-l10n-args', JSON.stringify(args));
+      const title = document.querySelector("head title");
+      title.setAttribute("data-l10n-id", id);
+      title.setAttribute("data-l10n-args", JSON.stringify(args));
     },
     openWindow: (href, name) => window.open(href, name),
     getWindowLocation: () => window.location,
     replaceState: (state, title, location) => window.history.replaceState(state, title, location),
     addScrollListener: listener =>
-      window.addEventListener('scroll', listener),
+      window.addEventListener("scroll", listener),
     removeScrollListener: listener =>
-      window.removeEventListener('scroll', listener),
+      window.removeEventListener("scroll", listener),
     getScrollY: () => window.pageYOffset || document.documentElement.scrollTop,
     setScrollY: pos => window.scrollTo(0, pos),
     getElementY: sel => {

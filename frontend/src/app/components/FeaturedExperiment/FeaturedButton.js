@@ -1,14 +1,14 @@
 // @flow
 
-import React from 'react';
-import { Localized } from 'fluent-react/compat';
-import { buildSurveyURL, experimentL10nId } from '../../lib/utils';
+import React from "react";
+import { Localized } from "fluent-react/compat";
+import { buildSurveyURL, experimentL10nId } from "../../lib/utils";
 
-import Modal from '../Modal';
-import MeasurementSection from '../Measurements';
-import MainInstallButton from '../MainInstallButton';
+import Modal from "../Modal";
+import MeasurementSection from "../Measurements";
+import MainInstallButton from "../MainInstallButton";
 
-import type { InstalledExperiments } from '../../reducers/addon';
+import type { InstalledExperiments } from "../../reducers/addon";
 
 type FeaturedButtonProps = {
   clientUUID?: string,
@@ -55,7 +55,7 @@ export default class FeaturedButton extends React.Component {
       this.setState({ showLegalDialog: true });
     };
 
-    return (<Localized id={this.l10nId('legal-link')}>
+    return (<Localized id={this.l10nId("legal-link")}>
               <p className="main-install__legal">
                 By proceeding, you agree to the {terms} and {privacy} of Test Pilot
                 and <a href="#" onClick={launchLegalModal}>{title}</a>.
@@ -65,18 +65,18 @@ export default class FeaturedButton extends React.Component {
 
   handleManage = () => {
     const { experiment, eventCategory } = this.props;
-    this.props.sendToGA('event', {
+    this.props.sendToGA("event", {
       eventCategory,
-      eventAction: 'Open detail page',
+      eventAction: "Open detail page",
       eventLabel: experiment.title
     });
   };
 
   handleFeedback = () => {
     const { experiment, eventCategory } = this.props;
-    this.props.sendToGA('event', {
+    this.props.sendToGA("event", {
       eventCategory,
-      eventAction: 'Give Feedback',
+      eventAction: "Give Feedback",
       eventLabel: experiment.title
     });
   }
@@ -90,7 +90,7 @@ export default class FeaturedButton extends React.Component {
     let Buttons;
 
     if (enabled && hasAddon) {
-      const surveyURL = buildSurveyURL('givefeedback', title, installed, clientUUID, survey_url);
+      const surveyURL = buildSurveyURL("givefeedback", title, installed, clientUUID, survey_url);
       Buttons = (
         <div>
           <div className="featured-experiment__enabled-buttons">

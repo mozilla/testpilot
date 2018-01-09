@@ -1,17 +1,17 @@
 // @flow
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import Banner from '../components/Banner';
-import Copter from '../components/Copter';
-import ExperimentCardList from '../components/ExperimentCardList';
-import LayoutWrapper from '../components/LayoutWrapper';
-import MainInstallButton from '../components/MainInstallButton';
-import PastExperiments from '../components/PastExperiments';
-import FeaturedExperiment from '../components/FeaturedExperiment';
-import View from '../components/View';
+import Banner from "../components/Banner";
+import Copter from "../components/Copter";
+import ExperimentCardList from "../components/ExperimentCardList";
+import LayoutWrapper from "../components/LayoutWrapper";
+import MainInstallButton from "../components/MainInstallButton";
+import PastExperiments from "../components/PastExperiments";
+import FeaturedExperiment from "../components/FeaturedExperiment";
+import View from "../components/View";
 
-import type { InstalledExperiments } from '../reducers/addon';
+import type { InstalledExperiments } from "../reducers/addon";
 
 type HomePageNoAddonProps = {
   hasAddon: any,

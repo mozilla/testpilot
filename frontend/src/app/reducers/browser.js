@@ -1,7 +1,7 @@
 // @flow
 
 
-import config from '../config';
+import config from "../config";
 
 export type BrowserState = {
   isFirefox: boolean,
@@ -13,12 +13,12 @@ export type BrowserState = {
 
 function defaultState(): BrowserState {
   return {
-    userAgent: '',
+    userAgent: "",
     isFirefox: true,
     isMinFirefox: true,
     isMobile: false,
     isDev: config.isDev,
-    locale: 'en-US'
+    locale: "en-US"
   };
 }
 
@@ -32,7 +32,7 @@ export default function browserReducer(state: BrowserState, action: SetStateActi
     return defaultState();
   }
   switch (action.type) {
-    case 'SET_STATE':
+    case "SET_STATE":
       return action.payload;
     default:
       return state;

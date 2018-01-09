@@ -6,7 +6,7 @@ const MAX_JUST_LAUNCHED_PERIOD = 2 * ONE_WEEK;
 const MAX_JUST_UPDATED_PERIOD = 2 * ONE_WEEK;
 
 export function justUpdated(experiment: Object) {
-  if (typeof experiment.modified === 'undefined') return false;
+  if (typeof experiment.modified === "undefined") return false;
   // If modified awhile ago, don't consider it "just" updated.
   const now = Date.now();
   const modified = (new Date(experiment.modified)).getTime();

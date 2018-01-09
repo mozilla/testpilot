@@ -1,8 +1,8 @@
 // @flow
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import './index.scss';
+import "./index.scss";
 
 type WarningProps = {
   title: string,

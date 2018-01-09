@@ -1,11 +1,11 @@
 // @flow
 
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import Banner from '../components/Banner';
-import LayoutWrapper from '../components/LayoutWrapper';
-import View from '../components/View';
+import Banner from "../components/Banner";
+import LayoutWrapper from "../components/LayoutWrapper";
+import View from "../components/View";
 
 
 type RestartProps = {
@@ -20,10 +20,10 @@ export default class Restart extends React.Component {
   props: RestartProps
 
   componentWillMount() {
-    this.props.sendToGA('event', {
-      eventCategory: 'PostInstall Interactions',
-      eventAction: 'view modal',
-      eventLabel: 'restart required'
+    this.props.sendToGA("event", {
+      eventCategory: "PostInstall Interactions",
+      eventAction: "view modal",
+      eventLabel: "restart required"
     });
   }
 

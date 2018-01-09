@@ -2,7 +2,7 @@ import {
   MiscAppProps,
   BrowserEnvProps,
   SendToGAProps
-} from '../containers/types';
+} from "../containers/types";
 
 export type VariantTestsProps = {
   varianttests: Object

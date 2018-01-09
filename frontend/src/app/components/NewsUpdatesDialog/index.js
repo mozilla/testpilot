@@ -1,14 +1,14 @@
 // @flow
 
-import cn from 'classnames';
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
-import moment from 'moment';
-import cookies from 'js-cookie';
+import cn from "classnames";
+import { Localized } from "fluent-react/compat";
+import React from "react";
+import moment from "moment";
+import cookies from "js-cookie";
 
-import StepModal from '../StepModal';
+import StepModal from "../StepModal";
 
-import './index.scss';
+import "./index.scss";
 
 type newsUpdatesDialogProps = {
   newsUpdates: Array<Object>,
@@ -22,25 +22,25 @@ export default class NewsUpdatesDialog extends React.Component {
   props: newsUpdatesDialogProps
 
   stepNextPing = (newStep: number) => {
-    this.props.sendToGA('event', {
-      eventCategory: 'NewsUpdatesDialog Interactions',
-      eventAction: 'button click',
+    this.props.sendToGA("event", {
+      eventCategory: "NewsUpdatesDialog Interactions",
+      eventAction: "button click",
       eventLabel: `forward to step ${newStep}`
     });
   };
 
   stepBackPing = (newStep: number) => {
-    this.props.sendToGA('event', {
-      eventCategory: 'NewsUpdatesDialog Interactions',
-      eventAction: 'button click',
+    this.props.sendToGA("event", {
+      eventCategory: "NewsUpdatesDialog Interactions",
+      eventAction: "button click",
       eventLabel: `back to step ${newStep}`
     });
   };
 
   stepToDotPing = (index: number) => {
-    this.props.sendToGA('event', {
-      eventCategory: 'NewsUpdatesDialog Interactions',
-      eventAction: 'button click',
+    this.props.sendToGA("event", {
+      eventCategory: "NewsUpdatesDialog Interactions",
+      eventAction: "button click",
       eventLabel: `dot to step ${index}`
     });
   };
@@ -52,7 +52,7 @@ export default class NewsUpdatesDialog extends React.Component {
           {u.content &&
             <div className='step-text'>
               <h2 className='lighter step-title'>{u.title}</h2>
-              <p className='published-date small-font'>{moment(new Date(u.published)).format('dddd, MMMM Do YYYY')}</p>
+              <p className='published-date small-font'>{moment(new Date(u.published)).format("dddd, MMMM Do YYYY")}</p>
               <p>{u.content}</p>
               {u.link && (<Localized id='experimentCardLearnMore'>
                             <a className="learn" href={u.link}>Learn more</a>
@@ -74,16 +74,16 @@ export default class NewsUpdatesDialog extends React.Component {
                                     </Localized>);
 
     return newsUpdates.map((u, idx) => (idx === currentStep) && (u.experimentSlug ?
-       (<h3 className={cn('modal-header lighter', {
+       (<h3 className={cn("modal-header lighter", {
          enabled: isExperimentEnabled({ addon_id: `@${u.experimentSlug}` })
-       })}>{u.experimentSlug.split('-').join(' ')}</h3>) : (defaultNewsUpdateTitle)
+       })}>{u.experimentSlug.split("-").join(" ")}</h3>) : (defaultNewsUpdateTitle)
     ));
   };
 
   render() {
     return (<StepModal
               steps={this.props.newsUpdates}
-              wrapperClass={'news-updates-modal'}
+              wrapperClass={"news-updates-modal"}
               onCancel={this.onCancel}
               onComplete={this.onComplete}
               renderStep={this.renderUpdate}
@@ -97,24 +97,24 @@ export default class NewsUpdatesDialog extends React.Component {
   onCancel = (ev: Object) => {
     const { sendToGA, onCancel } = this.props;
 
-    sendToGA('event', {
-      eventCategory: 'NewsUpdatesDialog Interactions',
-      eventAction: 'button click',
-      eventLabel: 'cancel updates'
+    sendToGA("event", {
+      eventCategory: "NewsUpdatesDialog Interactions",
+      eventAction: "button click",
+      eventLabel: "cancel updates"
     });
-    cookies.set('updates-last-viewed-date', new Date().toISOString());
+    cookies.set("updates-last-viewed-date", new Date().toISOString());
     if (onCancel) onCancel(ev);
   };
 
   onComplete = (ev: Object) => {
     const { sendToGA, onComplete } = this.props;
 
-    sendToGA('event', {
-      eventCategory: 'NewsUpdatesDialog Interactions',
-      eventAction: 'button click',
-      eventLabel: 'complete updates'
+    sendToGA("event", {
+      eventCategory: "NewsUpdatesDialog Interactions",
+      eventAction: "button click",
+      eventLabel: "complete updates"
     });
-    cookies.set('updates-last-viewed-date', new Date().toISOString());
+    cookies.set("updates-last-viewed-date", new Date().toISOString());
     if (onComplete) { onComplete(ev); }
   };
 }

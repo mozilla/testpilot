@@ -1,9 +1,9 @@
 // @flow
 
-import React from 'react';
-import classnames from 'classnames';
+import React from "react";
+import classnames from "classnames";
 
-import './index.scss';
+import "./index.scss";
 
 type CopterProps = {
   small?: boolean,
@@ -15,8 +15,8 @@ export default class Copter extends React.Component {
 
   render() {
     const { small = false, animation = null } = this.props;
-    return <div className={classnames('copter', { 'copter--small': small })}>
-      <div className={classnames('copter__inner', animation)} />
+    return <div className={classnames("copter", { "copter--small": small })}>
+      <div className={classnames("copter__inner", animation)} />
     </div>;
   }
 }

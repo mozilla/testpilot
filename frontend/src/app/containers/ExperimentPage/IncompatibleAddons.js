@@ -1,11 +1,11 @@
 // @flow
-import React from 'react';
-import { Localized } from 'fluent-react/compat';
-import LocalizedHtml from '../../components/LocalizedHtml';
+import React from "react";
+import { Localized } from "fluent-react/compat";
+import LocalizedHtml from "../../components/LocalizedHtml";
 
-import './index.scss';
+import "./index.scss";
 
-import type { IncompatibleAddonsProps } from './types';
+import type { IncompatibleAddonsProps } from "./types";
 
 export default class IncompatibleAddons extends React.Component {
   props: IncompatibleAddonsProps
@@ -15,7 +15,7 @@ export default class IncompatibleAddons extends React.Component {
     const installed = this.getIncompatibleInstalled(incompatible);
     if (installed.length === 0) return null;
 
-    const helpUrl = 'https://support.mozilla.org/kb/disable-or-remove-add-ons';
+    const helpUrl = "https://support.mozilla.org/kb/disable-or-remove-add-ons";
 
     return (
       <section className="incompatible-addons">

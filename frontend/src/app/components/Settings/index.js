@@ -1,10 +1,10 @@
 // @flow
 
-import classnames from 'classnames';
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import classnames from "classnames";
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import './index.scss';
+import "./index.scss";
 
 type SettingsProps = {
   hasAddon: any,
@@ -21,38 +21,38 @@ export default class Settings extends React.Component {
   props: SettingsProps
 
   wiki() {
-    this.props.sendToGA('event', {
-      eventCategory: 'Menu Interactions',
-      eventAction: 'drop-down menu',
-      eventLabel: 'wiki'
+    this.props.sendToGA("event", {
+      eventCategory: "Menu Interactions",
+      eventAction: "drop-down menu",
+      eventLabel: "wiki"
     });
     this.props.close();
   }
 
   fileIssue() {
-    this.props.sendToGA('event', {
-      eventCategory: 'Menu Interactions',
-      eventAction: 'drop-down menu',
-      eventLabel: 'file issue'
+    this.props.sendToGA("event", {
+      eventCategory: "Menu Interactions",
+      eventAction: "drop-down menu",
+      eventLabel: "file issue"
     });
     this.props.close();
   }
 
   discuss() {
-    this.props.sendToGA('event', {
-      eventCategory: 'Menu Interactions',
-      eventAction: 'drop-down menu',
-      eventLabel: 'Discuss'
+    this.props.sendToGA("event", {
+      eventCategory: "Menu Interactions",
+      eventAction: "drop-down menu",
+      eventLabel: "Discuss"
     });
     this.props.close();
   }
 
   retire(evt: Object) {
     evt.preventDefault();
-    this.props.sendToGA('event', {
-      eventCategory: 'Menu Interactions',
-      eventAction: 'drop-down menu',
-      eventLabel: 'Retire'
+    this.props.sendToGA("event", {
+      eventCategory: "Menu Interactions",
+      eventAction: "drop-down menu",
+      eventLabel: "Retire"
     });
     this.props.retire();
     this.props.close();
@@ -68,10 +68,10 @@ export default class Settings extends React.Component {
 
   toggleSettings(evt: Object) {
     const { sendToGA, toggleSettings } = this.props;
-    sendToGA('event', {
-      eventCategory: 'Menu Interactions',
-      eventAction: 'drop-down menu',
-      eventLabel: 'Toggle Menu'
+    sendToGA("event", {
+      eventCategory: "Menu Interactions",
+      eventAction: "drop-down menu",
+      eventLabel: "Toggle Menu"
     });
     toggleSettings(evt);
   }
@@ -81,7 +81,7 @@ export default class Settings extends React.Component {
       <div id="settings">
          <div className="settings-contain">
            <Localized id="menuTitle">
-             <div className={classnames('settings-button', { active: this.showSettingsMenu() })}
+             <div className={classnames("settings-button", { active: this.showSettingsMenu() })}
                   onClick={e => this.toggleSettings(e)}>
                Settings
              </div>
@@ -135,17 +135,17 @@ export default class Settings extends React.Component {
   // cancel if the click was inside the menu. Sounds backwards, but it works.
 
   componentDidMount() {
-    if (typeof document !== 'undefined'
+    if (typeof document !== "undefined"
       && document.body !== null) {
-      document.body.addEventListener('click', this.props.close);
+      document.body.addEventListener("click", this.props.close);
     }
   }
 
   componentWillUnmount() {
     if (this.closeTimer) { clearTimeout(this.closeTimer); }
-    if (typeof document !== 'undefined'
+    if (typeof document !== "undefined"
       && document.body !== null) {
-      document.body.removeEventListener('click', this.props.close);
+      document.body.removeEventListener("click", this.props.close);
     }
   }
 

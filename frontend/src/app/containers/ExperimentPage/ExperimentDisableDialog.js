@@ -1,9 +1,9 @@
 // @flow
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import Copter from '../../components/Copter';
-import { buildSurveyURL } from '../../lib/utils';
+import Copter from "../../components/Copter";
+import { buildSurveyURL } from "../../lib/utils";
 
 type ExperimentDisableDialogProps = {
   experiment: Object,
@@ -29,7 +29,7 @@ export default class ExperimentDisableDialog extends React.Component {
     const { experiment, installed, clientUUID } = this.props;
     const { title, survey_url } = experiment;
 
-    const surveyURL = buildSurveyURL('disable', title, installed, clientUUID, survey_url);
+    const surveyURL = buildSurveyURL("disable", title, installed, clientUUID, survey_url);
 
     return (
       <div className="modal-container" tabIndex="0"
@@ -67,10 +67,10 @@ export default class ExperimentDisableDialog extends React.Component {
   }
 
   submit(e: Object) {
-    this.props.sendToGA('event', {
-      eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'exit survey disabled'
+    this.props.sendToGA("event", {
+      eventCategory: "ExperimentDetailsPage Interactions",
+      eventAction: "button click",
+      eventLabel: "exit survey disabled"
     });
     this.props.onSubmit(e);
   }
@@ -82,15 +82,15 @@ export default class ExperimentDisableDialog extends React.Component {
 
   handleKeyDown(e: Object) {
     switch (e.key) {
-      case 'Escape':
+      case "Escape":
         this.cancel(e);
         break;
-      case 'Enter': {
+      case "Enter": {
         this.submit(e);
 
         const { experiment, installed, clientUUID } = this.props;
         const { title, survey_url } = experiment;
-        const surveyURL = buildSurveyURL('disable', title, installed, clientUUID, survey_url);
+        const surveyURL = buildSurveyURL("disable", title, installed, clientUUID, survey_url);
 
         const newWindow = window.open();
         newWindow.opener = null;

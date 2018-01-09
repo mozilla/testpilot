@@ -1,13 +1,13 @@
 // @flow
 
-import classnames from 'classnames';
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import classnames from "classnames";
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import ExperimentCardList from '../ExperimentCardList';
-import LayoutWrapper from '../LayoutWrapper';
+import ExperimentCardList from "../ExperimentCardList";
+import LayoutWrapper from "../LayoutWrapper";
 
-import './index.scss';
+import "./index.scss";
 
 type PastExperimentsProps = {
   pastExperiments: Array<Object>
@@ -36,7 +36,7 @@ export default class PastExperiments extends React.Component {
       <LayoutWrapper flexModifier="card-list">
         {pastExperiments.length > 0 && !showPastExperiments &&
         <Localized id="viewPastExperiments">
-          <div className={classnames(['button past-experiments', 'outline'])}
+          <div className={classnames(["button past-experiments", "outline"])}
               onClick={() => this.setState({ showPastExperiments: true })}>
             View Past Experiments
           </div>
@@ -44,7 +44,7 @@ export default class PastExperiments extends React.Component {
         {showPastExperiments &&
         <div>
           <Localized id="hidePastExperiments">
-            <div className={classnames(['button past-experiments', 'outline'])}
+            <div className={classnames(["button past-experiments", "outline"])}
                 onClick={() => this.setState({ showPastExperiments: false })}>
               Hide Past Experiments
             </div>

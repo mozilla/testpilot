@@ -1,9 +1,9 @@
 
-import React from 'react';
+import React from "react";
 
-import inject from '../app/lib/inject';
-import SharePage from '../app/containers/SharePage';
+import inject from "../app/lib/inject";
+import SharePage from "../app/containers/SharePage";
 
 export default function create() {
-  return inject('share', <SharePage />);
+  return inject("share", <SharePage />);
 }
