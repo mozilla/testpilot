@@ -15,6 +15,7 @@ function shouldLint(opt, task) {
 }
 
 gulp.task("scripts-clean", () => {
+});
 
 gulp.task("scripts-watch", () => {
   gulp.watch(config.SRC_PATH + "scripts/**/*.js", ["scripts-misc"]);
