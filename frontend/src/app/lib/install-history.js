@@ -1,7 +1,7 @@
 class InstallHistory {
   constructor(installations) {
-    if (typeof window !== 'undefined' && !window.localStorage.installations) {
-      window.localStorage.setItem('installations', JSON.stringify(installations));
+    if (typeof window !== "undefined" && !window.localStorage.installations) {
+      window.localStorage.setItem("installations", JSON.stringify(installations));
     }
   }
 
@@ -12,7 +12,7 @@ class InstallHistory {
       addon_id: id,
       installDate: new Date().toISOString()
     };
-    window.localStorage.setItem('installations', JSON.stringify(installations));
+    window.localStorage.setItem("installations", JSON.stringify(installations));
   }
 
   setInactive(id) {
@@ -22,7 +22,7 @@ class InstallHistory {
       addon_id: id,
       uninstallDate: new Date().toISOString()
     };
-    window.localStorage.setItem('installations', JSON.stringify(installations));
+    window.localStorage.setItem("installations", JSON.stringify(installations));
   }
 }
 

@@ -1,8 +1,8 @@
 // @flow
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import LocalizedHtml from '../LocalizedHtml';
+import LocalizedHtml from "../LocalizedHtml";
 
 type RetireConfirmationDialogProps = {
   uninstallAddon: Function,
@@ -59,13 +59,13 @@ export default class RetireConfirmationDialog extends React.Component {
     const { sendToGA, navigateTo, uninstallAddon } = this.props;
     e.preventDefault();
     uninstallAddon();
-    sendToGA('event', {
-      eventCategory: 'HomePage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'Retire'
+    sendToGA("event", {
+      eventCategory: "HomePage Interactions",
+      eventAction: "button click",
+      eventLabel: "Retire"
     });
-    if (typeof navigateTo !== 'undefined') {
-      navigateTo('/retire');
+    if (typeof navigateTo !== "undefined") {
+      navigateTo("/retire");
     }
   }
 
@@ -76,10 +76,10 @@ export default class RetireConfirmationDialog extends React.Component {
 
   handleKeyDown(e: Object) {
     switch (e.key) {
-      case 'Escape':
+      case "Escape":
         this.cancel(e);
         break;
-      case 'Enter':
+      case "Enter":
         this.proceed(e);
         break;
       default:

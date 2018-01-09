@@ -1,10 +1,10 @@
 // @flow
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import LayoutWrapper from '../LayoutWrapper';
+import LayoutWrapper from "../LayoutWrapper";
 
-import './index.scss';
+import "./index.scss";
 
 type FooterProps = {
   sendToGA: Function
@@ -52,10 +52,10 @@ export default class Footer extends React.Component {
   }
 
   eventToGA(e: Object) {
-    const label = e.target.getAttribute('title');
-    this.props.sendToGA('event', {
-      eventCategory: 'FooterView Interactions',
-      eventAction: 'social link clicked',
+    const label = e.target.getAttribute("title");
+    this.props.sendToGA("event", {
+      eventCategory: "FooterView Interactions",
+      eventAction: "social link clicked",
       eventLabel: label
     });
   }

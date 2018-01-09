@@ -1,14 +1,14 @@
 // @flow
 
-import React from 'react';
-import cookies from 'js-cookie';
-import { Localized } from 'fluent-react/compat';
+import React from "react";
+import cookies from "js-cookie";
+import { Localized } from "fluent-react/compat";
 
-import View from '../../components/View';
-import LayoutWrapper from '../../components/LayoutWrapper';
-import UpdateList from '../../components/UpdateList';
+import View from "../../components/View";
+import LayoutWrapper from "../../components/LayoutWrapper";
+import UpdateList from "../../components/UpdateList";
 
-import './index.scss';
+import "./index.scss";
 
 type NewsFeedPageProps = {
   sendToGA: Function,
@@ -21,7 +21,7 @@ export default class NewsFeedPage extends React.Component {
   props: NewsFeedPageProps
 
   componentDidMount() {
-    cookies.set('updates-last-viewed-date', new Date().toISOString());
+    cookies.set("updates-last-viewed-date", new Date().toISOString());
   }
 
   render() {

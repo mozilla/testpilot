@@ -1,22 +1,22 @@
 // @flow
 
-import React from 'react';
-import parser from 'html-react-parser';
-import { Localized } from 'fluent-react/compat';
-import LocalizedHtml from '../../components/LocalizedHtml';
+import React from "react";
+import parser from "html-react-parser";
+import { Localized } from "fluent-react/compat";
+import LocalizedHtml from "../../components/LocalizedHtml";
 
-import Warning from '../../components/Warning';
-import { experimentL10nId, formatDate } from '../../lib/utils';
+import Warning from "../../components/Warning";
+import { experimentL10nId, formatDate } from "../../lib/utils";
 
-import GraduatedNotice from '../../components/GraduatedNotice';
-import IncompatibleAddons from './IncompatibleAddons';
-import MeasurementsSection from '../../components/Measurements';
+import GraduatedNotice from "../../components/GraduatedNotice";
+import IncompatibleAddons from "./IncompatibleAddons";
+import MeasurementsSection from "../../components/Measurements";
 
 import type {
   DetailsDescriptionProps,
   LocaleWarningType,
   EolBlockProps
-} from './types';
+} from "./types";
 
 export default function DetailsDescription({
   experiment,
@@ -59,13 +59,13 @@ export default function DetailsDescription({
           <section className="introduction">
             {!!warning &&
               <div className="warning">
-                <Localized id={l10nId('warning')}>
+                <Localized id={l10nId("warning")}>
                   <strong>
                     {warning}
                   </strong>
                 </Localized>
               </div>}
-            <LocalizedHtml id={l10nId('introduction')}>
+            <LocalizedHtml id={l10nId("introduction")}>
               <div>
                 {parser(introduction)}
               </div>
@@ -79,13 +79,13 @@ export default function DetailsDescription({
               <img width="680" src={image} />
               <p className="caption">
                 {headline &&
-                  <Localized id={l10nId(['details', idx, 'headline'])}>
+                  <Localized id={l10nId(["details", idx, "headline"])}>
                     <strong>
                       {headline}
                     </strong>
                   </Localized>}
                 {copy &&
-                  <Localized id={l10nId(['details', idx, 'copy'])}>
+                  <Localized id={l10nId(["details", idx, "copy"])}>
                     <span>
                       {parser(copy)}
                     </span>
@@ -142,7 +142,7 @@ export const EolBlock = ({ experiment, l10nId }: EolBlockProps) => {
       titleL10nArgs={JSON.stringify({ title: experiment.title, completedDate })}
       title={title}
     >
-      <Localized id={l10nId('eolWarning')}>
+      <Localized id={l10nId("eolWarning")}>
         <div>
           {parser(experiment.eol_warning)}
         </div>

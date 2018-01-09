@@ -1,53 +1,53 @@
-const gulp = require('gulp');
-const config = require('../config.js');
+const gulp = require("gulp");
+const config = require("../config.js");
 
-const fs = require('fs');
-const isArray = require('util').isArray;
-const mkdirp = require('mkdirp');
-const through = require('through2');
-const gutil = require('gulp-util');
-const YAML = require('yamljs');
-const Feed = require('feed');
+const fs = require("fs");
+const isArray = require("util").isArray;
+const mkdirp = require("mkdirp");
+const through = require("through2");
+const gutil = require("gulp-util");
+const YAML = require("yamljs");
+const Feed = require("feed");
 
-const util = require('./util');
+const util = require("./util");
 
-const NEWS_UPDATES_YAML = config.CONTENT_SRC_PATH + 'news_updates.yaml'
+const NEWS_UPDATES_YAML = config.CONTENT_SRC_PATH + "news_updates.yaml";
 
-gulp.task('content-build', ['content-experiments-data']);
+gulp.task("content-build", ["content-experiments-data"]);
 
-gulp.task('content-watch', () =>
-  gulp.watch(config.CONTENT_SRC_PATH + '/**/*.yaml', [
-    'content-experiments-data',
-    'content-extract-experiment-strings'
+gulp.task("content-watch", () =>
+  gulp.watch(config.CONTENT_SRC_PATH + "/**/*.yaml", [
+    "content-experiments-data",
+    "content-extract-experiment-strings"
   ]));
 
-gulp.task('content-experiments-data', () =>
-  gulp.src(config.CONTENT_SRC_PATH + 'experiments/*.yaml')
+gulp.task("content-experiments-data", () =>
+  gulp.src(config.CONTENT_SRC_PATH + "experiments/*.yaml")
     .pipe(buildExperimentsData())
     .pipe(gulp.dest(config.DEST_PATH)));
 
-gulp.task('content-extract-strings', ['content-extract-experiment-strings']);
+gulp.task("content-extract-strings", ["content-extract-experiment-strings"]);
 
-gulp.task('content-extract-experiment-strings', () =>
-  gulp.src(config.CONTENT_SRC_PATH + 'experiments/*.yaml')
+gulp.task("content-extract-experiment-strings", () =>
+  gulp.src(config.CONTENT_SRC_PATH + "experiments/*.yaml")
     .pipe(buildExperimentsFTL())
-    .pipe(gulp.dest('./locales/en-US')));
+    .pipe(gulp.dest("./locales/en-US")));
 
 function populateRSSFeed(newsUpdates) {
   const feed = new Feed({
-    title: 'Test Pilot News Updates',
-    description: 'News Updates for Test Pilot experiments',
-    id: 'https://blog.mozilla.org/testpilot',
-    link: 'https://blog.mozilla.org/testpilot',
-    favicon: 'https://testpilot.firefox.com/static/images/favicon.ico',
+    title: "Test Pilot News Updates",
+    description: "News Updates for Test Pilot experiments",
+    id: "https://blog.mozilla.org/testpilot",
+    link: "https://blog.mozilla.org/testpilot",
+    favicon: "https://testpilot.firefox.com/static/images/favicon.ico",
     feedLinks: {
-      rss: 'https://testpilot.firefox.com/feed.rss',
-      atom: 'https://testpilot.firefox.com/feed.atom',
-      json: 'https://testpilot.firefox.com/feed.json'
+      rss: "https://testpilot.firefox.com/feed.rss",
+      atom: "https://testpilot.firefox.com/feed.atom",
+      json: "https://testpilot.firefox.com/feed.json"
     },
     author: {
-      name: 'Mozilla',
-      link: 'https://testpilot.firefox.com'
+      name: "Mozilla",
+      link: "https://testpilot.firefox.com"
     }
   });
 
@@ -90,7 +90,7 @@ function buildExperimentsFTL() {
     newsUpdates = excludeDevOnlyNewsUpdates(newsUpdates);
     extractNewsUpdateStrings();
     this.push(new gutil.File({
-      path: 'experiments.ftl',
+      path: "experiments.ftl",
       contents: new Buffer(generateFTL())
     }));
     cb();
@@ -98,7 +98,7 @@ function buildExperimentsFTL() {
 
   function extractNewsUpdateStrings() {
     // Extract FTL strings for news updates
-    const newsUpdateL10nFields = ['title', 'content'];
+    const newsUpdateL10nFields = ["title", "content"];
     newsUpdates.forEach(update => {
       newsUpdateL10nFields.forEach(fieldName => {
         strings.push({
@@ -117,13 +117,13 @@ function buildExperimentsFTL() {
       obj.forEach((item, index) => {
         findLocalizableStrings(item, [].concat(pieces, index), experiment);
       });
-    } else if (typeof obj === 'object') {
+    } else if (typeof obj === "object") {
       for (var key in obj) {
         findLocalizableStrings(obj[key], [].concat(pieces, key), experiment);
       }
-    } else if (obj && typeof obj === 'string' && util.isLocalizableField(pieces)) {
+    } else if (obj && typeof obj === "string" && util.isLocalizableField(pieces)) {
       strings.push({
-        key: util.experimentL10nId(experiment, pieces, pieces.join('.')),
+        key: util.experimentL10nId(experiment, pieces, pieces.join(".")),
         value: obj
       });
     }
@@ -131,9 +131,9 @@ function buildExperimentsFTL() {
 
   function generateFTL() {
     return strings.reduce((a, b) => {
-      const value = b.value.replace(/\r?\n|\r/g, '').replace(/\s+/g, ' ');
+      const value = b.value.replace(/\r?\n|\r/g, "").replace(/\s+/g, " ");
       return `${a}\n${b.key} = ${value}`;
-    }, '');
+    }, "");
   }
 
   return through.obj(collectEntry, endStream);
@@ -191,19 +191,19 @@ function buildExperimentsData() {
     const feed = populateRSSFeed(newsUpdates);
 
     this.push(new gutil.File({
-      path: 'api/news_updates.json',
+      path: "api/news_updates.json",
       contents: new Buffer(JSON.stringify(newsUpdates, null, 2))
     }));
     this.push(new gutil.File({
-      path: 'feed.rss',
+      path: "feed.rss",
       contents: new Buffer(feed.rss2())
     }));
     this.push(new gutil.File({
-      path: 'feed.atom',
+      path: "feed.atom",
       contents: new Buffer(feed.atom1())
     }));
     this.push(new gutil.File({
-      path: 'feed.json',
+      path: "feed.json",
       contents: new Buffer(feed.json1())
     }));
 
@@ -211,12 +211,12 @@ function buildExperimentsData() {
     // Measurements Team).  Before changing them, please consult with the
     // appropriate folks!
     this.push(new gutil.File({
-      path: 'api/experiments.json',
+      path: "api/experiments.json",
       contents: new Buffer(JSON.stringify(index, null, 2))
     }));
     this.push(new gutil.File({
-      path: 'static/styles/experiments.css',
-      contents: new Buffer(cssStrings.join('\n'))
+      path: "static/styles/experiments.css",
+      contents: new Buffer(cssStrings.join("\n"))
     }));
     cb();
   }
@@ -226,7 +226,7 @@ function buildExperimentsData() {
 
 // Load the initial set of general news updates not attached to any experiment
 function loadGeneralNewsUpdates() {
-  const newsUpdatesData = fs.readFileSync(NEWS_UPDATES_YAML).toString('utf-8');
+  const newsUpdatesData = fs.readFileSync(NEWS_UPDATES_YAML).toString("utf-8");
   return YAML.parse(newsUpdatesData) || [];
 }
 

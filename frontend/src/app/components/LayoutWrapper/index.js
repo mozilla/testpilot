@@ -1,13 +1,13 @@
-import React from 'react';
-import classnames from 'classnames';
+import React from "react";
+import classnames from "classnames";
 
-import './index.scss';
+import "./index.scss";
 
 const LayoutWrapper = ({ children, flexModifier, helperClass = null }) => {
   if (flexModifier) flexModifier = `layout-wrapper--${flexModifier}`;
 
   return (
-    <div className={classnames('layout-wrapper', flexModifier, helperClass)} >
+    <div className={classnames("layout-wrapper", flexModifier, helperClass)} >
       { children }
     </div>
   );

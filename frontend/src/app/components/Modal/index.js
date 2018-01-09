@@ -1,8 +1,8 @@
 // @flow
 
-import React from 'react';
+import React from "react";
 
-import './index.scss';
+import "./index.scss";
 
 type ModalProps = {
   wrapperClass: string,
@@ -49,10 +49,10 @@ export default class Modal extends React.Component {
     const { onCancel, onComplete } = this.props;
 
     switch (ev.key) {
-      case 'Escape':
+      case "Escape":
         if (onCancel) onCancel(ev);
         break;
-      case 'Enter': {
+      case "Enter": {
         if (onComplete) onComplete(ev);
         break;
       }

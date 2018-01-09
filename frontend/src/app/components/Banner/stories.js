@@ -1,21 +1,21 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
 
-import Banner from './index';
-import LayoutWrapper from '../LayoutWrapper';
-import Copter from '../Copter';
-import MainInstallButton from '../MainInstallButton';
+import Banner from "./index";
+import LayoutWrapper from "../LayoutWrapper";
+import Copter from "../Copter";
+import MainInstallButton from "../MainInstallButton";
 
 
-storiesOf('Banner', module)
+storiesOf("Banner", module)
   .addDecorator(story =>
-    <div className="blue storybook-center" onClick={action('click')} style={{ alignItems: 'stretch' }}>
+    <div className="blue storybook-center" onClick={action("click")} style={{ alignItems: "stretch" }}>
       <div className="stars" />
           {story()}
     </div>
   )
-  .add('Big Banner', () =>
+  .add("Big Banner", () =>
     <Banner>
       <LayoutWrapper flexModifier="row-center-breaking">
         <Copter small="true" animation="fly-up"/>
@@ -30,7 +30,7 @@ storiesOf('Banner', module)
       <MainInstallButton />
     </Banner>
   )
-  .add('Condensed Banner', () =>
+  .add("Condensed Banner", () =>
       <Banner condensed={true}>
       <LayoutWrapper flexModifier="row-between-reverse">
           <h2 className="banner__title">

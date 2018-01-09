@@ -2,7 +2,7 @@ import type {
   MiscAppProps,
   BrowserEnvProps,
   SendToGAProps
-} from '../../containers/types';
+} from "../../containers/types";
 
 export type ExperimentPropsFromApp = {
   isExperimentEnabled: Function,

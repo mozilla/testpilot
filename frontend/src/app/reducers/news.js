@@ -31,7 +31,7 @@ export default function newsReducer(state: NewsState, action: SetStateAction): N
     return defaultState();
   }
   switch (action.type) {
-    case 'NEWS_SET_STATE':
+    case "NEWS_SET_STATE":
       return action.payload;
     default:
       return state;

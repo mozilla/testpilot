@@ -1,17 +1,17 @@
 // @flow
 
-import classnames from 'classnames';
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import classnames from "classnames";
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import LayoutWrapper from '../LayoutWrapper';
-import LocalizedHtml from '../LocalizedHtml';
+import LayoutWrapper from "../LayoutWrapper";
+import LocalizedHtml from "../LocalizedHtml";
 
-import './index.scss';
+import "./index.scss";
 
-import config from '../../config';
+import config from "../../config";
 
-import type { MainInstallButtonProps } from '../types';
+import type { MainInstallButtonProps } from "../types";
 
 type MainInstallButtonState = { isInstalling: boolean };
 
@@ -41,7 +41,7 @@ export default class MainInstallButton extends React.Component {
                       .then(() => {
                         if (postInstallCallback) postInstallCallback();
                       }));
-      } else navigateTo('/experiments');
+      } else navigateTo("/experiments");
       return;
     }
     if (installCallback) {
@@ -66,7 +66,7 @@ export default class MainInstallButton extends React.Component {
     const privacy = <Localized id="landingLegalNoticePrivacyNotice">
       <a href="/privacy"/>
     </Localized>;
-    const layout = experimentTitle ? 'column-center-start-breaking' : 'column-center';
+    const layout = experimentTitle ? "column-center-start-breaking" : "column-center";
 
     return (
       <LayoutWrapper flexModifier={layout} helperClass="main-install">
@@ -122,9 +122,9 @@ export default class MainInstallButton extends React.Component {
       </Localized>;
     }
 
-    const makeInstallButton = (extraClass = '') => {
+    const makeInstallButton = (extraClass = "") => {
       return <button onClick={e => this.install(e)}
-        className={classnames(`button primary main-install__button ${extraClass}`, { 'state-change': isInstalling })}>
+        className={classnames(`button primary main-install__button ${extraClass}`, { "state-change": isInstalling })}>
         {!isInstalling && installButton}
         {isInstalling &&
           <Localized id="landingInstallingButton">

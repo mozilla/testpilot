@@ -93,9 +93,9 @@ export default function experimentsReducer(
     return defaultState();
   }
   switch (action.type) {
-    case 'SET_SLUG':
+    case "SET_SLUG":
       return setSlug(state, action);
-    case 'UPDATE_EXPERIMENT':
+    case "UPDATE_EXPERIMENT":
       return updateExperiment(state, action);
     default:
       return state;

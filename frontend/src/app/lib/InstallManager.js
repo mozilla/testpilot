@@ -1,35 +1,35 @@
-import cookies from 'js-cookie';
-import config from '../config';
-import addonActions from '../actions/addon';
-import { hasAddonSelector } from '../selectors/addon';
-import { updateExperiment } from '../actions/experiments';
-import InstallHistory from './install-history';
+import cookies from "js-cookie";
+import config from "../config";
+import addonActions from "../actions/addon";
+import { hasAddonSelector } from "../selectors/addon";
+import { updateExperiment } from "../actions/experiments";
+import InstallHistory from "./install-history";
 
-const TESTPILOT_ADDON_ID = '@testpilot-addon';
+const TESTPILOT_ADDON_ID = "@testpilot-addon";
 const INSTALL_STATE_WATCH_PERIOD = 2000;
 const RESTART_NEEDED = false; // TODO
 
 let installHistory;
 let mam = null;
-if (typeof navigator !== 'undefined') {
+if (typeof navigator !== "undefined") {
   mam = navigator.mozAddonManager;
 }
 
 function mozAddonManagerInstall(url, sendToGA) {
-  const start = url.indexOf('files/') + 6;
-  const end = url.indexOf('@');
+  const start = url.indexOf("files/") + 6;
+  const end = url.indexOf("@");
   const experimentTitle = url.substring(start, end);
   return mam.createInstall({ url }).then(install => {
     return install.install().then(() => {
-      sendToGA('event', {
-        eventCategory: 'ExperimentDetailsPage Interactions',
-        eventAction: 'Accept From Permission',
+      sendToGA("event", {
+        eventCategory: "ExperimentDetailsPage Interactions",
+        eventAction: "Accept From Permission",
         eventLabel: experimentTitle
       });
     }).catch((err) => {
-      sendToGA('event', {
-        eventCategory: 'ExperimentDetailsPage Interactions',
-        eventAction: 'Cancel From Permission',
+      sendToGA("event", {
+        eventCategory: "ExperimentDetailsPage Interactions",
+        eventAction: "Cancel From Permission",
         eventLabel: experimentTitle
       });
       throw err;
@@ -50,20 +50,20 @@ export function installAddon(
   const { protocol, hostname, port } = window.location;
   const path = config.addonPath;
   const downloadUrl = `${protocol}//${hostname}${port
-    ? ':' + port
-    : ''}${path}`;
+    ? ":" + port
+    : ""}${path}`;
 
   const gaEvent = {
     eventCategory: eventCategory,
-    eventAction: 'install button click',
+    eventAction: "install button click",
     eventLabel: eventLabel
   };
 
-  cookies.set('first-run', 'true');
+  cookies.set("first-run", "true");
 
   return mozAddonManagerInstall(downloadUrl, sendToGA).then(() => {
-    gaEvent.dimension7 = RESTART_NEEDED ? 'restart required' : 'no restart';
-    sendToGA('event', gaEvent);
+    gaEvent.dimension7 = RESTART_NEEDED ? "restart required" : "no restart";
+    sendToGA("event", gaEvent);
     if (RESTART_NEEDED) {
       requireRestart();
     }
@@ -110,7 +110,7 @@ export function setupAddonConnection(store) {
 
   pollMainAddonAvailability(store);
 
-  mam.addEventListener('onEnabled', addon => {
+  mam.addEventListener("onEnabled", addon => {
     if (addon) {
       const { experiments } = store.getState();
       const i = experiments.data.map(x => x.addon_id).indexOf(addon.id);
@@ -144,9 +144,9 @@ export function setupAddonConnection(store) {
       installHistory.setInactive(addon.id);
     }
   }
-  mam.addEventListener('onDisabled', onDisabled);
-  mam.addEventListener('onUninstalled', onDisabled);
-  mam.addEventListener('onInstalled', addon =>
+  mam.addEventListener("onDisabled", onDisabled);
+  mam.addEventListener("onUninstalled", onDisabled);
+  mam.addEventListener("onInstalled", addon =>
     installHistory.setActive(addon.id)
   );
   /*

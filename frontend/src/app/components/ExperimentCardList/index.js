@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import ExperimentRowCard from '../ExperimentRowCard';
-import LayoutWrapper from '../LayoutWrapper';
+import ExperimentRowCard from "../ExperimentRowCard";
+import LayoutWrapper from "../LayoutWrapper";
 
-import './index.scss';
+import "./index.scss";
 
 export default class ExperimentCardList extends React.Component {
   getExperiments() {

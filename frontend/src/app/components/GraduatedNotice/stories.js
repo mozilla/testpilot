@@ -1,14 +1,14 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
 
-import GraduatedNotice from './index';
-import LayoutWrapper from '../LayoutWrapper';
+import GraduatedNotice from "./index";
+import LayoutWrapper from "../LayoutWrapper";
 
 
-storiesOf('GraduatedNotice', module)
+storiesOf("GraduatedNotice", module)
   .addDecorator(story =>
-    <div className="blue storybook-center" onClick={action('click')}>
+    <div className="blue storybook-center" onClick={action("click")}>
       <div className="stars" />
       <div className="default-background">
         <section id="experiment-page">
@@ -28,10 +28,10 @@ storiesOf('GraduatedNotice', module)
       </div>
     </div>
   )
-  .add('base state', () =>
+  .add("base state", () =>
     <GraduatedNotice />
   )
-  .add('with graduation url', () =>
+  .add("with graduation url", () =>
     <GraduatedNotice
       graduation_url="https://medium.com/firefox-test-pilot"
     />

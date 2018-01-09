@@ -1,9 +1,9 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
 
-import MainInstallButton from './index';
-import LayoutWrapper from '../LayoutWrapper';
+import MainInstallButton from "./index";
+import LayoutWrapper from "../LayoutWrapper";
 
 
 const baseProps = {
@@ -14,41 +14,41 @@ const baseProps = {
 };
 
 
-storiesOf('MainInstallButton', module)
+storiesOf("MainInstallButton", module)
   .addDecorator(story =>
-    <div className="blue storybook-center" onClick={action('click')}>
+    <div className="blue storybook-center" onClick={action("click")}>
       <div className="stars" />
       { story() }
     </div>
   )
-  .add('Valid Firefox, Homepage', () =>
+  .add("Valid Firefox, Homepage", () =>
     <LayoutWrapper flexModifier="column-center">
       <MainInstallButton { ...baseProps } />
     </LayoutWrapper>
   )
-  .add('Firefox is not up to date', () =>
+  .add("Firefox is not up to date", () =>
     <LayoutWrapper flexModifier="column-center">
       <MainInstallButton { ...{ ...baseProps, isMinFirefox: false }} />
      </LayoutWrapper>
   )
-  .add('Mobile Browser', () =>
+  .add("Mobile Browser", () =>
     <LayoutWrapper flexModifier="column-center">
       <MainInstallButton  { ...{ ...baseProps, isMobile: true }} />
      </LayoutWrapper>
   )
-  .add('Non-Firefox desktop browser', () =>
+  .add("Non-Firefox desktop browser", () =>
     <LayoutWrapper flexModifier="column-center">
       <MainInstallButton { ...{ ...baseProps, isMinFirefox: null, isFirefox: false }} />
      </LayoutWrapper>
   )
-  .add('Is installing', () =>
+  .add("Is installing", () =>
     <LayoutWrapper flexModifier="column-center">
       <MainInstallButton { ...{ ...baseProps, isInstalling: true }} />
      </LayoutWrapper>
   )
-  .add('Is An Experiment Page', () =>
+  .add("Is An Experiment Page", () =>
     <LayoutWrapper>
-      <MainInstallButton { ...{ ...baseProps, experimentTitle: 'Pizza' }} />
+      <MainInstallButton { ...{ ...baseProps, experimentTitle: "Pizza" }} />
     </LayoutWrapper>
   );
 

@@ -1,18 +1,18 @@
 // @flow
 
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import { experimentL10nId } from '../../lib/utils';
-import ExperimentTourDialog from '../ExperimentTourDialog';
-import FeaturedStatus from './FeaturedStatus';
-import FeaturedButton from './FeaturedButton';
+import { experimentL10nId } from "../../lib/utils";
+import ExperimentTourDialog from "../ExperimentTourDialog";
+import FeaturedStatus from "./FeaturedStatus";
+import FeaturedButton from "./FeaturedButton";
 
-import './index.scss';
+import "./index.scss";
 
-import type { InstalledExperiments } from '../../reducers/addon';
+import type { InstalledExperiments } from "../../reducers/addon";
 
-import ExperimentPlatforms from '../ExperimentPlatforms';
+import ExperimentPlatforms from "../ExperimentPlatforms";
 
 type FeaturedExperimentProps = {
   experiment: Object,
@@ -74,14 +74,14 @@ export default class FeaturedExperiment extends React.Component {
             <h2 className="featured-experiment__title">{title}</h2>
             <div className="featured-experiment__info">
               <ExperimentPlatforms experiment={experiment} />
-              {subtitle && <Localized id={this.l10nId('subtitle')}>
+              {subtitle && <Localized id={this.l10nId("subtitle")}>
                 <h4 className="featured-experiment__subtitle">{subtitle}</h4>
               </Localized>}
             </div>
           </div>
         </header>
 
-        <Localized id={this.l10nId('description')}>
+        <Localized id={this.l10nId("description")}>
           <p className="featured-experiment__description">{description}</p>
         </Localized>
 

@@ -1,5 +1,5 @@
-import { assert } from 'chai';
-import moment from 'moment';
+import { assert } from "chai";
+import moment from "moment";
 
 import experimentSelector, {
   allExperimentSelector,
@@ -8,12 +8,12 @@ import experimentSelector, {
   localeSelector,
   onlyLaunchedExperimentSelector,
   featuredExperimentsSelector
-} from '../../../src/app/selectors/experiment';
+} from "../../../src/app/selectors/experiment";
 
 
-describe('app/selectors/experiment', () => {
+describe("app/selectors/experiment", () => {
 
-  describe('launch date-related selectors', () => {
+  describe("launch date-related selectors", () => {
 
     const _store = (experiments, isDev = false) => ({
       browser: { isDev: isDev },
@@ -21,14 +21,14 @@ describe('app/selectors/experiment', () => {
     });
 
     const _exp = [
-      { name: 'foo', order: 1 },
-      { name: 'baz', order: 3, launch_date: moment.utc() + 99999 },
-      { name: 'bat', order: 2, launch_date: moment.utc() - 99999, is_featured: true },
-      { name: 'xyzzy', order: 4, dev: true }
+      { name: "foo", order: 1 },
+      { name: "baz", order: 3, launch_date: moment.utc() + 99999 },
+      { name: "bat", order: 2, launch_date: moment.utc() - 99999, is_featured: true },
+      { name: "xyzzy", order: 4, dev: true }
     ];
 
-    describe('allExperimentSelector', () => {
-      it('should filter to store.experiments.data', () => {
+    describe("allExperimentSelector", () => {
+      it("should filter to store.experiments.data", () => {
         const store = _store([_exp[0]]);
         assert.deepEqual(
           allExperimentSelector(store),
@@ -36,7 +36,7 @@ describe('app/selectors/experiment', () => {
         );
       });
 
-      it('should sort based on the set order', () => {
+      it("should sort based on the set order", () => {
         const store = _store(_exp);
         assert.deepEqual(
           allExperimentSelector(store),
@@ -45,8 +45,8 @@ describe('app/selectors/experiment', () => {
       });
     });
 
-    describe('onlyLaunchedExperimentSelector', () => {
-      it('should exclude experiments with launch dates in the future', () => {
+    describe("onlyLaunchedExperimentSelector", () => {
+      it("should exclude experiments with launch dates in the future", () => {
         const store = _store(_exp);
         assert.deepEqual(
           onlyLaunchedExperimentSelector(store),
@@ -55,8 +55,8 @@ describe('app/selectors/experiment', () => {
       });
     });
 
-    describe('featuredExperimentsSelector', () => {
-      it('should exclude experiments without is_featured flag', () => {
+    describe("featuredExperimentsSelector", () => {
+      it("should exclude experiments without is_featured flag", () => {
         const store = _store(_exp);
         assert.deepEqual(
           featuredExperimentsSelector(store),
@@ -65,8 +65,8 @@ describe('app/selectors/experiment', () => {
       });
     });
 
-    describe('launchedExperimentSelector', () => {
-      it('should use allExperimentSelector if dev', () => {
+    describe("launchedExperimentSelector", () => {
+      it("should use allExperimentSelector if dev", () => {
         const store = _store(_exp, true);
         assert.deepEqual(
           allExperimentSelector(store),
@@ -74,7 +74,7 @@ describe('app/selectors/experiment', () => {
         );
       });
 
-      it('should use onlyLaunchedExperimentSelector if not dev', () => {
+      it("should use onlyLaunchedExperimentSelector if not dev", () => {
         const store = _store(_exp, false);
         assert.deepEqual(
           onlyLaunchedExperimentSelector(store),
@@ -82,13 +82,13 @@ describe('app/selectors/experiment', () => {
         );
       });
 
-      it('should contain no experiments marked for dev if not dev', () => {
+      it("should contain no experiments marked for dev if not dev", () => {
         const store = _store(_exp, false);
         const result = launchedExperimentSelector(store);
         assert.equal(0, result.filter(exp => exp.dev).length);
       });
 
-      it('should contain experiments marked for dev if dev', () => {
+      it("should contain experiments marked for dev if dev", () => {
         const store = _store(_exp, true);
         const result = launchedExperimentSelector(store);
         assert.equal(1, result.filter(exp => exp.dev).length);
@@ -97,20 +97,20 @@ describe('app/selectors/experiment', () => {
 
   });
 
-  describe('language-related selectors', () => {
+  describe("language-related selectors", () => {
 
-    const BLOCKED_LANG = 'piglatin';
-    const GRANTED_LANG = 'piratespeak';
-    const OTHER_LANG = 'klingon';
+    const BLOCKED_LANG = "piglatin";
+    const GRANTED_LANG = "piratespeak";
+    const OTHER_LANG = "klingon";
 
-    describe('localeSelector', () => {
+    describe("localeSelector", () => {
       const store = {
         browser: {
           locale: BLOCKED_LANG
         }
       };
 
-      it('should filter to store.browser.locale', () => {
+      it("should filter to store.browser.locale", () => {
         assert.equal(
           BLOCKED_LANG,
           localeSelector(store)
@@ -118,28 +118,28 @@ describe('app/selectors/experiment', () => {
       });
     });
 
-    describe('l10nSelector', () => {
+    describe("l10nSelector", () => {
       const experiments = [
         { order: 1 },
         { order: 2, locale_blocklist: [ BLOCKED_LANG ] },
         { order: 3, locale_grantlist: [ GRANTED_LANG ] }
       ];
 
-      it('filters experiments blocklisted for the locale', () => {
+      it("filters experiments blocklisted for the locale", () => {
         assert.deepEqual(
           l10nSelector(BLOCKED_LANG, experiments),
           [experiments[0]]
         );
       });
 
-      it('filters experiments grantlisted for other locales', () => {
+      it("filters experiments grantlisted for other locales", () => {
         assert.deepEqual(
           l10nSelector(OTHER_LANG, experiments),
           [experiments[0], experiments[1]]
         );
       });
 
-      it('keeps experiments grantlisted for the locale', () => {
+      it("keeps experiments grantlisted for the locale", () => {
         assert.deepEqual(
           l10nSelector(GRANTED_LANG, experiments),
           experiments

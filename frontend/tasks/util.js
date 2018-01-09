@@ -1,16 +1,16 @@
 const LOCALIZABLE_FIELDS = [
-  'subtitle',
-  'description',
-  'warning',
-  'introduction',
-  'privacy_preamble',
-  'measurements',
-  'eol_warning',
-  'pre_feedback_copy',
-  'details.copy',
-  'tour_steps.copy',
-  'contributors.title',
-  'contributors_extra'
+  "subtitle",
+  "description",
+  "warning",
+  "introduction",
+  "privacy_preamble",
+  "measurements",
+  "eol_warning",
+  "pre_feedback_copy",
+  "details.copy",
+  "tour_steps.copy",
+  "contributors.title",
+  "contributors_extra"
 ];
 
 function isLocalizableField(pieces) {
@@ -20,7 +20,7 @@ function isLocalizableField(pieces) {
 }
 
 function l10nIdFormat(str) {
-  const segment = String(str).replace(/[^A-Za-z0-9]+/g, '');
+  const segment = String(str).replace(/[^A-Za-z0-9]+/g, "");
   return segment.charAt(0).toUpperCase() + segment.slice(1).toLowerCase();
 }
 
@@ -31,11 +31,11 @@ function l10nId(pieces) {
 }
 
 function lookup(obj, path) {
-  const pieces = path.split('.');
+  const pieces = path.split(".");
   if (pieces.length > 1) {
     try {
-      return lookup(obj[pieces[0]], pieces.slice(1).join('.'));
-    } catch(exc) {
+      return lookup(obj[pieces[0]], pieces.slice(1).join("."));
+    } catch (exc) {
       return null;
     }
   }
@@ -46,13 +46,13 @@ function experimentL10nId(experiment, pieces) {
   if (experiment.dev) { // For dev-only experiments, data-l10n-id=null is omitted from the DOM
     return null;
   }
-  if (typeof pieces === 'string') {
+  if (typeof pieces === "string") {
     pieces = [pieces];
   }
   const piecesOut = [];
-  for (let i=0; i<pieces.length; i++) {
+  for (let i = 0; i < pieces.length; i++) {
     piecesOut.push(pieces[i]);
-    const suffix = lookup(experiment, `${pieces.slice(0, i+1).join('.')}_l10nsuffix`);
+    const suffix = lookup(experiment, `${pieces.slice(0, i + 1).join(".")}_l10nsuffix`);
     if (suffix) {
       piecesOut.push(suffix);
     }
@@ -62,8 +62,8 @@ function experimentL10nId(experiment, pieces) {
 
 function newsUpdateL10nId(update, fieldName) {
   const pieces = [
-    update.experimentSlug || 'testpilot',
-    'news_updates',
+    update.experimentSlug || "testpilot",
+    "news_updates",
     update.slug,
     fieldName
   ];

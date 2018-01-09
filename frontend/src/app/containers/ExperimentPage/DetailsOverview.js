@@ -1,17 +1,17 @@
 // @flow
 
-import React from 'react';
-import { Localized } from 'fluent-react/compat';
-import LocalizedHtml from '../../components/LocalizedHtml';
-import { experimentL10nId, formatDate } from '../../lib/utils';
-import MeasurementsSection from '../../components/Measurements';
+import React from "react";
+import { Localized } from "fluent-react/compat";
+import LocalizedHtml from "../../components/LocalizedHtml";
+import { experimentL10nId, formatDate } from "../../lib/utils";
+import MeasurementsSection from "../../components/Measurements";
 
 import type {
   DetailsOverviewType,
   LaunchStatusType,
   StatsSectionType,
   ContributorsSectionType
-} from './types';
+} from "./types";
 
 export default function DetailsOverview({
   experiment,
@@ -155,7 +155,7 @@ export const ContributorsSection = ({
               {contributor.display_name}
             </p>
             {contributor.title &&
-              <Localized id={l10nId(['contributors', idx, 'title'])}>
+              <Localized id={l10nId(["contributors", idx, "title"])}>
                 <p className="title">
                   {contributor.title}
                 </p>
@@ -166,7 +166,7 @@ export const ContributorsSection = ({
     </ul>
     {contributors_extra &&
       <p className="disclaimer">
-        <Localized id={l10nId('contributors_extra')}>
+        <Localized id={l10nId("contributors_extra")}>
           <span>
             {contributors_extra}
           </span>

@@ -1,12 +1,12 @@
-import classNames from 'classnames';
-import React from 'react';
+import classNames from "classnames";
+import React from "react";
 // TODO ReactDOMFactories is deprecated, can we do this in a different way?
-import ReactDOMFactories from 'react-dom-factories';
-import Symbol from 'es-symbol';
+import ReactDOMFactories from "react-dom-factories";
+import Symbol from "es-symbol";
 
-import Footer from '../Footer';
-import Header from '../Header';
-import NewsletterFooter from '../NewsletterFooter';
+import Footer from "../Footer";
+import Header from "../Header";
+import NewsletterFooter from "../NewsletterFooter";
 
 const DOMFactories = Object.keys(ReactDOMFactories);
 
@@ -35,7 +35,7 @@ export default class View extends React.Component {
      */
     return (
       React.Component.isPrototypeOf.call(React.Component, element) || (
-        element.$$typeof === Symbol.for('react.element') &&
+        element.$$typeof === Symbol.for("react.element") &&
         DOMFactories.indexOf(element.type) === -1
       )
     );
@@ -86,9 +86,9 @@ export default class View extends React.Component {
   }
 
   makeClassNames() {
-    return classNames('view', 'full-page-wrapper', {
+    return classNames("view", "full-page-wrapper", {
       centered: this.props.centered,
-      'space-between': this.props.spaceBetween
+      "space-between": this.props.spaceBetween
     });
   }
 

@@ -1,12 +1,12 @@
 // @flow
 
-import React from 'react';
-import { Localized } from 'fluent-react/compat';
+import React from "react";
+import { Localized } from "fluent-react/compat";
 
-import View from '../../components/View';
-import Copter from '../../components/Copter';
-import LayoutWrapper from '../../components/LayoutWrapper';
-import LocalizedHtml from '../../components/LocalizedHtml';
+import View from "../../components/View";
+import Copter from "../../components/Copter";
+import LayoutWrapper from "../../components/LayoutWrapper";
+import LocalizedHtml from "../../components/LocalizedHtml";
 
 type UpgradeWarningProps = {
   sendToGA: Function,
@@ -20,10 +20,10 @@ export default class UpgradeWarning extends React.Component {
   props: UpgradeWarningProps
 
   componentWillMount() {
-    this.props.sendToGA('event', {
-      eventCategory: 'HomePage Interactions',
-      eventAction: 'Upgrade Warning',
-      eventLabel: 'upgrade notice shown'
+    this.props.sendToGA("event", {
+      eventCategory: "HomePage Interactions",
+      eventAction: "Upgrade Warning",
+      eventLabel: "upgrade notice shown"
     });
   }
 
@@ -36,7 +36,7 @@ export default class UpgradeWarning extends React.Component {
       title = (<Localized id="warningUpgradeFirefoxTitle">
                  <span>Upgrade Firefox to continue!</span>
                </Localized>);
-    } else if (protocol !== 'https:') {
+    } else if (protocol !== "https:") {
       title = (<Localized id="warningHttpsRequiredTitle">
                  <span>HTTPS required!</span>
                </Localized>);
@@ -58,7 +58,7 @@ export default class UpgradeWarning extends React.Component {
       copy = (<LocalizedHtml id="warningUpgradeFirefoxDetail">
                 <p>Test Pilot reqires the latest version of Firefox. <a href="https://www.mozilla.org/firefox/">Upgrade Firefox</a> to get started.</p>
               </LocalizedHtml>);
-    } else if (protocol !== 'https:') {
+    } else if (protocol !== "https:") {
       copy = (<LocalizedHtml id="warningHttpsRequiredDetail">
               <p>Test Pilot must be accessed over HTTPS. Please see <a href="https://github.com/mozilla/testpilot/blob/master/docs/development/quickstart.md">
               our documentation</a> for details.</p></LocalizedHtml>);

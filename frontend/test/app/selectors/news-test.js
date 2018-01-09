@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+import { expect } from "chai";
 
 import newsUpdatesSelector, {
   publishedFilter,
@@ -6,21 +6,21 @@ import newsUpdatesSelector, {
   makeStaleNewsUpdatesSelector,
   makeFreshNewsUpdatesSelector,
   makeNewsUpdatesForDialogSelector
-} from '../../../src/app/selectors/news';
+} from "../../../src/app/selectors/news";
 
-describe('app/selectors/news', () => {
-  describe('publishedFilter', () => {
+describe("app/selectors/news", () => {
+  describe("publishedFilter", () => {
     it('should return false if update does not have "published" field', () => {
       expect(publishedFilter({
-        experimentSlug: 'exp3',
-        created: '2017-05-30T12:00:00Z',
-        title: 'Exp3 News Item 1'
+        experimentSlug: "exp3",
+        created: "2017-05-30T12:00:00Z",
+        title: "Exp3 News Item 1"
       })).to.be.false;
 
       expect(publishedFilter({
-        experimentSlug: 'exp3',
-        published: '2017-05-30T12:00:00Z',
-        title: 'Exp3 News Item 1'
+        experimentSlug: "exp3",
+        published: "2017-05-30T12:00:00Z",
+        title: "Exp3 News Item 1"
       })).to.be.true;
     });
 
@@ -29,9 +29,9 @@ describe('app/selectors/news', () => {
       futureDate.setDate(futureDate.getDate() + 10);
 
       expect(publishedFilter({
-        experimentSlug: 'exp3',
+        experimentSlug: "exp3",
         published: futureDate.toISOString(),
-        title: 'Exp3 News Item 1'
+        title: "Exp3 News Item 1"
       })).to.be.false;
     });
 
@@ -40,64 +40,64 @@ describe('app/selectors/news', () => {
       pastDate.setDate(pastDate.getDate() - 10);
 
       expect(publishedFilter({
-        experimentSlug: 'exp3',
+        experimentSlug: "exp3",
         published: pastDate.toISOString(),
-        title: 'Exp3 News Item 1'
+        title: "Exp3 News Item 1"
       })).to.be.true;
     });
   });
 
-  describe('experimentUpdateAvailable', () => {
-    it('should return true if update does NOT include experimentSlug', () => {
-      const availableExperiments = new Set(['exp1',  'exp2']);
+  describe("experimentUpdateAvailable", () => {
+    it("should return true if update does NOT include experimentSlug", () => {
+      const availableExperiments = new Set(["exp1",  "exp2"]);
       expect(experimentUpdateAvailable({
-        published: '2017-05-30T12:00:00Z',
-        title: 'Exp3 News Item 1'
+        published: "2017-05-30T12:00:00Z",
+        title: "Exp3 News Item 1"
       }, availableExperiments)).to.be.true;
     });
 
     it('should return correctly based on whether "experimentSlug", is in the passed "availableExperiments"', () => {
-      const availableExperiments = new Set(['exp1',  'exp2']);
+      const availableExperiments = new Set(["exp1",  "exp2"]);
       expect(experimentUpdateAvailable({
-        experimentSlug: 'exp1',
-        published: '2017-05-30T12:00:00Z',
-        title: 'Exp3 News Item 1'
+        experimentSlug: "exp1",
+        published: "2017-05-30T12:00:00Z",
+        title: "Exp3 News Item 1"
       }, availableExperiments)).to.be.true;
 
       expect(experimentUpdateAvailable({
-        experimentSlug: 'exp3',
-        published: '2017-05-30T12:00:00Z',
-        title: 'Exp3 News Item 1'
+        experimentSlug: "exp3",
+        published: "2017-05-30T12:00:00Z",
+        title: "Exp3 News Item 1"
       }, availableExperiments)).to.be.false;
     });
   });
 
-  describe('newsUpdatesSelector', () => {
-    it('should gather available news updates from all available experiments', () => {
+  describe("newsUpdatesSelector", () => {
+    it("should gather available news updates from all available experiments", () => {
       const result = experimentSlugsSet(newsUpdatesSelector(makeStore()));
-      expect(result.has('exp1')).to.be.true;
-      expect(result.has('exp2')).to.be.true;
-      expect(result.has('exp3')).to.be.false;
+      expect(result.has("exp1")).to.be.true;
+      expect(result.has("exp2")).to.be.true;
+      expect(result.has("exp3")).to.be.false;
     });
 
-    it('should include Test Pilot general updates', () => {
+    it("should include Test Pilot general updates", () => {
       const result = newsUpdatesSelector(makeStore())
         .filter(update => !update.experimentSlug)
         .map(update => update.title);
-      expect(result).to.deep.equal(['Test Pilot Item 2', 'Test Pilot Item 1']);
+      expect(result).to.deep.equal(["Test Pilot Item 2", "Test Pilot Item 1"]);
     });
 
-    it('should sort news updates in reverse-chronological order', () => {
+    it("should sort news updates in reverse-chronological order", () => {
       const result = newsUpdatesSelector(makeStore()).map(
         update => update.published
       );
       expect(result).to.deep.equal([
-        '2017-06-02T12:00:00Z',
-        '2017-06-01T12:00:00Z',
-        '2017-05-30T12:00:00Z',
-        '2017-05-29T12:00:00Z',
-        '2017-05-28T13:00:00Z',
-        '2017-05-17T13:00:00Z'
+        "2017-06-02T12:00:00Z",
+        "2017-06-01T12:00:00Z",
+        "2017-05-30T12:00:00Z",
+        "2017-05-29T12:00:00Z",
+        "2017-05-28T13:00:00Z",
+        "2017-05-17T13:00:00Z"
       ]);
     });
   });
@@ -120,7 +120,7 @@ describe('app/selectors/news', () => {
       } else {
         dt = twoWeeksAgo - 2000;
       }
-      const key = ['published', 'created'][i % 2];
+      const key = ["published", "created"][i % 2];
       updates[i][key] = new Date(dt).toISOString();
     }
 
@@ -143,26 +143,26 @@ describe('app/selectors/news', () => {
       );
 
     // An empty list should be the end result.
-    expect(shouldBeEmpty).to.have.property('length', 0);
+    expect(shouldBeEmpty).to.have.property("length", 0);
   };
 
-  describe('makeFreshNewsUpdatesSelector', () => {
+  describe("makeFreshNewsUpdatesSelector", () => {
     it(
-      'should only produce updates within the last 2 weeks',
+      "should only produce updates within the last 2 weeks",
       makeNewsUpdateSelectorAgeTest(false, false)
     );
   });
 
-  describe('makeFreshNewsUpdatesSinceLastViewedSelector', () => {
+  describe("makeFreshNewsUpdatesSinceLastViewedSelector", () => {
     it(
-      'should only produce updates since last viewed and major',
+      "should only produce updates since last viewed and major",
       makeNewsUpdateSelectorAgeTest(false, true)
     );
   });
 
-  describe('makeStaleNewsUpdatesSelector', () => {
+  describe("makeStaleNewsUpdatesSelector", () => {
     it(
-      'should only produce updates older than 2 weeks',
+      "should only produce updates older than 2 weeks",
       makeNewsUpdateSelectorAgeTest(true, false)
     );
   });
@@ -178,52 +178,52 @@ const makeStore = () => ({
     isDev: false
   },
   experiments: {
-    data: [{ slug: 'exp1' }, { slug: 'exp2' }]
+    data: [{ slug: "exp1" }, { slug: "exp2" }]
   },
   news: {
     updates: [
       {
-        published: '2017-06-01T12:00:00Z',
-        title: 'Test Pilot Item 1'
+        published: "2017-06-01T12:00:00Z",
+        title: "Test Pilot Item 1"
       },
       {
-        published: '2017-06-02T12:00:00Z',
-        title: 'Test Pilot Item 2'
+        published: "2017-06-02T12:00:00Z",
+        title: "Test Pilot Item 2"
       },
       {
-        experimentSlug: 'exp1',
-        published: '2017-05-29T12:00:00Z',
-        title: 'Exp1 News Item 1'
+        experimentSlug: "exp1",
+        published: "2017-05-29T12:00:00Z",
+        title: "Exp1 News Item 1"
       },
       {
-        experimentSlug: 'exp1',
-        published: '2017-05-28T13:00:00Z',
-        title: 'Exp1 News Item 2'
+        experimentSlug: "exp1",
+        published: "2017-05-28T13:00:00Z",
+        title: "Exp1 News Item 2"
       },
       {
-        experimentSlug: 'exp1',
-        published: '2099-10-24T12:12:12Z',
-        title: 'Exp1 future update'
+        experimentSlug: "exp1",
+        published: "2099-10-24T12:12:12Z",
+        title: "Exp1 future update"
       },
       {
-        experimentSlug: 'exp2',
-        published: '2017-05-30T12:00:00Z',
-        title: 'Exp2 News Item 1'
+        experimentSlug: "exp2",
+        published: "2017-05-30T12:00:00Z",
+        title: "Exp2 News Item 1"
       },
       {
-        experimentSlug: 'exp2',
-        published: '2017-05-17T13:00:00Z',
-        title: 'Exp2 News Item 2'
+        experimentSlug: "exp2",
+        published: "2017-05-17T13:00:00Z",
+        title: "Exp2 News Item 2"
       },
       {
-        experimentSlug: 'exp3',
-        published: '2017-05-30T12:00:00Z',
-        title: 'Exp3 News Item 1'
+        experimentSlug: "exp3",
+        published: "2017-05-30T12:00:00Z",
+        title: "Exp3 News Item 1"
       },
       {
-        experimentSlug: 'exp3',
-        published: '2017-05-17T13:00:00Z',
-        title: 'Exp3 News Item 2'
+        experimentSlug: "exp3",
+        published: "2017-05-17T13:00:00Z",
+        title: "Exp3 News Item 2"
       }
     ]
   }

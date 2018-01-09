@@ -1,7 +1,7 @@
 // @flow
 
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
 type ExperimentEolDialogProps = {
   title: string,
@@ -66,10 +66,10 @@ export default class ExperimentEolDialog extends React.Component {
 
   handleKeyDown(e: Object) {
     switch (e.key) {
-      case 'Escape':
+      case "Escape":
         this.cancel(e);
         break;
-      case 'Enter':
+      case "Enter":
         this.proceed(e);
         break;
       default:

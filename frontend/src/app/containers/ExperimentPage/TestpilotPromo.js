@@ -1,14 +1,14 @@
 // @flow
 
-import React from 'react';
-import { Localized } from 'fluent-react/compat';
+import React from "react";
+import { Localized } from "fluent-react/compat";
 
-import LayoutWrapper from '../../components/LayoutWrapper';
-import Banner from '../../components/Banner';
-import Copter from '../../components/Copter';
-import MainInstallButton from '../../components/MainInstallButton';
+import LayoutWrapper from "../../components/LayoutWrapper";
+import Banner from "../../components/Banner";
+import Copter from "../../components/Copter";
+import MainInstallButton from "../../components/MainInstallButton";
 
-import type { TestpilotPromoProps } from './types';
+import type { TestpilotPromoProps } from "./types";
 
 export default class TestpilotPromo extends React.Component {
   props: TestpilotPromoProps;

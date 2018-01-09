@@ -1,9 +1,9 @@
 // @flow
 
-import classnames from 'classnames';
-import { Localized } from 'fluent-react/compat';
-import parser from 'html-react-parser';
-import React from 'react';
+import classnames from "classnames";
+import { Localized } from "fluent-react/compat";
+import parser from "html-react-parser";
+import React from "react";
 
 type ExperimentPreFeedbackDialogProps = {
   experiment: Object,
@@ -30,7 +30,7 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
       <div className="modal-container" tabIndex="0"
            ref={modalContainer => { this.modalContainer = modalContainer; }}
            onKeyDown={e => this.handleKeyDown(e)}>
-        <div className={classnames('modal', 'step-modal')}>
+        <div className={classnames("modal", "step-modal")}>
           <header className="modal-header-wrapper">
             <Localized id="experimentPreFeedbackTitle" $title={experiment.title}>
               <h3 className="modal-header">{experiment.title} feedback</h3>
@@ -47,7 +47,7 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
               </div>
               <div className="step-text">
                 <Localized id="experimentPreFeedbackLinkCopy" $title={experiment.title}>
-                  <a onClick={e => this.feedback(e, e.target.getAttribute('href'))}
+                  <a onClick={e => this.feedback(e, e.target.getAttribute("href"))}
                      href={surveyURL}>Give feedback about the {experiment.title} experiment</a>
                 </Localized>
               </div>
@@ -60,9 +60,9 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
   feedback(e: Object, url: string) {
     e.preventDefault();
 
-    this.props.sendToGA('event', {
-      eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'PreFeedback Confirm',
+    this.props.sendToGA("event", {
+      eventCategory: "ExperimentDetailsPage Interactions",
+      eventAction: "PreFeedback Confirm",
       eventLabel: this.props.experiment.title,
       outboundURL: url
     });
@@ -70,20 +70,20 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
 
   cancel(e: Object) {
     e.preventDefault();
-    this.props.sendToGA('event', {
-      eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'cancel feedback'
+    this.props.sendToGA("event", {
+      eventCategory: "ExperimentDetailsPage Interactions",
+      eventAction: "button click",
+      eventLabel: "cancel feedback"
     });
     this.props.onCancel(e);
   }
 
   handleKeyDown(e: Object) {
     switch (e.key) {
-      case 'Escape':
+      case "Escape":
         this.cancel(e);
         break;
-      case 'Enter': {
+      case "Enter": {
         const { surveyURL } = this.props;
         this.feedback(e, surveyURL);
 

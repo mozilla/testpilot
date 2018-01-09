@@ -1,10 +1,10 @@
 // @flow
 
-import React from 'react';
-import classnames from 'classnames';
-import { Localized } from 'fluent-react/compat';
-import LayoutWrapper from '../../components/LayoutWrapper';
-import { experimentL10nId } from '../../lib/utils';
+import React from "react";
+import classnames from "classnames";
+import { Localized } from "fluent-react/compat";
+import LayoutWrapper from "../../components/LayoutWrapper";
+import { experimentL10nId } from "../../lib/utils";
 
 import type {
   DetailsHeaderProps,
@@ -13,7 +13,7 @@ import type {
   EnableButtonType,
   MinimumVersionNoticeType,
   MaximumVersionNoticeType
-} from './types';
+} from "./types";
 
 type DetailsHeaderState = {
   useStickyHeader: boolean,
@@ -84,9 +84,9 @@ export default class DetailsHeader extends React.Component {
 
     let statusType = null;
     if (error) {
-      statusType = 'error';
+      statusType = "error";
     } else if (enabled) {
-      statusType = 'enabled';
+      statusType = "enabled";
     }
 
     const hasStatus =
@@ -100,19 +100,19 @@ export default class DetailsHeader extends React.Component {
       <div>
         <div
           key="details-header-wrapper"
-          className={classnames('details-header-wrapper', {
-            'has-status': hasStatus,
+          className={classnames("details-header-wrapper", {
+            "has-status": hasStatus,
             stick: useStickyHeader
           })}
         >
-          <div className={classnames('status-bar', statusType)}>
-            {statusType === 'enabled' &&
+          <div className={classnames("status-bar", statusType)}>
+            {statusType === "enabled" &&
               <Localized id="isEnabledStatusMessage" $title={title}>
                 <span>
                   {title} is enabled.
                 </span>
               </Localized>}
-            {statusType === 'error' &&
+            {statusType === "error" &&
               <Localized id="installErrorMessage" $title={title}>
                 <span>
                   Uh oh. {title} could not be enabled. Try again later.
@@ -128,7 +128,7 @@ export default class DetailsHeader extends React.Component {
                 {title}
               </h1>
               {subtitle &&
-                <Localized id={l10nId('subtitle')}>
+                <Localized id={l10nId("subtitle")}>
                   <h4 className="subtitle">
                     {subtitle}
                   </h4>
@@ -182,7 +182,7 @@ export default class DetailsHeader extends React.Component {
     const { getElementOffsetHeight, getScrollY } = this.props;
     const sy = getScrollY();
     const detailsHeaderWrapperHeight = getElementOffsetHeight(
-      '.details-header-wrapper'
+      ".details-header-wrapper"
     );
     const changeHeaderOn = this.setChangeHeaderOn(detailsHeaderWrapperHeight);
     const useStickyHeader = sy > changeHeaderOn;
@@ -206,8 +206,8 @@ export default class DetailsHeader extends React.Component {
   setChangeHeaderOn(detailsHeaderWrapperHeight: number) {
     const { getElementOffsetHeight, experiment } = this.props;
     const statusBar = experiment.error || this.props.enabled;
-    const detailsHeaderHeight = getElementOffsetHeight('.details-header');
-    let changeHeaderOn = getElementOffsetHeight('#main-header');
+    const detailsHeaderHeight = getElementOffsetHeight(".details-header");
+    let changeHeaderOn = getElementOffsetHeight("#main-header");
 
     if (!statusBar) {
       if (this.state.useStickyHeader) {
@@ -248,7 +248,7 @@ export default class DetailsHeader extends React.Component {
       flashMeasurementPanel
     } = this.props;
     const detailsHeaderWrapperHeight = getElementOffsetHeight(
-      '.details-header-wrapper'
+      ".details-header-wrapper"
     );
     const changeHeaderOn = this.setChangeHeaderOn(detailsHeaderWrapperHeight);
     const stickyHeaderSiblingHeight = this.setStickyHeaderSiblingHeight(
@@ -257,7 +257,7 @@ export default class DetailsHeader extends React.Component {
     );
     evt.preventDefault();
     setScrollY(
-      getElementY('.measurements') +
+      getElementY(".measurements") +
         (stickyHeaderSiblingHeight - PRIVACY_SCROLL_OFFSET)
     );
     this.setState({
@@ -270,13 +270,13 @@ export default class DetailsHeader extends React.Component {
 }
 
 function maxVersionCheck(userAgent: string, max: number) {
-  const version = parseInt(userAgent.split('/').pop(), 10);
-  return typeof max === 'undefined' || version <= max;
+  const version = parseInt(userAgent.split("/").pop(), 10);
+  return typeof max === "undefined" || version <= max;
 }
 
 function minVersionCheck(userAgent: string, min: number) {
-  const version = parseInt(userAgent.split('/').pop(), 10);
-  return typeof min === 'undefined' || version >= min;
+  const version = parseInt(userAgent.split("/").pop(), 10);
+  return typeof min === "undefined" || version >= min;
 }
 
 function isValidVersion(userAgent: string, min: number, max: number) {
@@ -315,23 +315,23 @@ export const ExperimentControls = ({
 
   const handleFeedback = evt => {
     if (pre_feedback_copy === null || !pre_feedback_copy) {
-      sendToGA('event', {
-        eventCategory: 'ExperimentDetailsPage Interactions',
-        eventAction: 'Give Feedback',
+      sendToGA("event", {
+        eventCategory: "ExperimentDetailsPage Interactions",
+        eventAction: "Give Feedback",
         eventLabel: title
       });
     } else {
       doShowPreFeedbackDialog(evt);
-      sendToGA('event', {
-        eventCategory: 'ExperimentDetailsPage Interactions',
-        eventAction: 'Give Feedback',
+      sendToGA("event", {
+        eventCategory: "ExperimentDetailsPage Interactions",
+        eventAction: "Give Feedback",
         eventLabel: experiment.title
       });
     }
   };
 
   if (!hasAddon || !validVersion) {
-    const useWebLink = (platforms || []).indexOf('web') !== -1;
+    const useWebLink = (platforms || []).indexOf("web") !== -1;
     if (!useWebLink) {
       return null;
     }
@@ -344,8 +344,8 @@ export const ExperimentControls = ({
             onClick={doShowEolDialog}
             style={{ minWidth: progressButtonWidth }}
             id="uninstall-button"
-            className={classnames(['button', 'warning'], {
-              'state-change': isDisabling
+            className={classnames(["button", "warning"], {
+              "state-change": isDisabling
             })}
           >
             <span className="state-change-inner" />
@@ -377,7 +377,7 @@ export const ExperimentControls = ({
           }}
           style={{ minWidth: progressButtonWidth }}
           id="install-button"
-          className={classnames(['button', 'default'])}
+          className={classnames(["button", "default"])}
         >
           <Localized id="experimentManuallyDisabled" $title={title}>
             <span className="default-text">
@@ -407,8 +407,8 @@ export const ExperimentControls = ({
           onClick={uninstallExperimentWithSurvey}
           style={{ minWidth: progressButtonWidth }}
           id="uninstall-button"
-          className={classnames(['button', 'secondary'], {
-            'state-change': isDisabling
+          className={classnames(["button", "secondary"], {
+            "state-change": isDisabling
           })}
         >
           <span className="state-change-inner" />
@@ -467,9 +467,9 @@ export const MinimumVersionNotice = ({
         <Localized id="upgradeNoticeLink">
           <a
             onClick={() =>
-              sendToGA('event', {
-                eventCategory: 'ExperimentDetailsPage Interactions',
-                eventAction: 'Upgrade Notice',
+              sendToGA("event", {
+                eventCategory: "ExperimentDetailsPage Interactions",
+                eventAction: "Upgrade Notice",
                 eventLabel: title
               })}
             href="https://support.mozilla.org/kb/find-what-version-firefox-you-are-using"
@@ -504,9 +504,9 @@ export const MaximumVersionNotice = ({
         <Localized id="versionChangeNoticeLink">
           <a
             onClick={() =>
-              sendToGA('event', {
-                eventCategory: 'ExperimentDetailsPage Interactions',
-                eventAction: 'Upgrade Notice',
+              sendToGA("event", {
+                eventCategory: "ExperimentDetailsPage Interactions",
+                eventAction: "Upgrade Notice",
                 eventLabel: title
               })}
             href="https://www.mozilla.org/firefox/"
@@ -528,9 +528,9 @@ export const WebExperimentControls = ({
   sendToGA
 }: WebExperimentControlsType) => {
   function handleGoToLink() {
-    sendToGA('event', {
-      eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'Enable Experiment',
+    sendToGA("event", {
+      eventCategory: "ExperimentDetailsPage Interactions",
+      eventAction: "Enable Experiment",
       eventLabel: title
     });
   }
@@ -559,7 +559,7 @@ export const EnableButton = ({
   progressButtonWidth,
   sendToGA
 }: EnableButtonType) => {
-  const useWebLink = (platforms || []).indexOf('web') !== -1;
+  const useWebLink = (platforms || []).indexOf("web") !== -1;
   if (useWebLink) {
     return <WebExperimentControls {...{ web_url, title, sendToGA }} />;
   }
@@ -569,8 +569,8 @@ export const EnableButton = ({
       onClick={installExperiment}
       style={{ minWidth: progressButtonWidth }}
       id="install-button"
-      className={classnames(['button', 'default'], {
-        'state-change': isEnabling
+      className={classnames(["button", "default"], {
+        "state-change": isEnabling
       })}
     >
       <span className="state-change-inner" />

@@ -1,8 +1,8 @@
 // @flow
 
-import React from 'react';
-import { Localized } from 'fluent-react/compat';
-import { justUpdated, justLaunched } from '../../lib/experiment';
+import React from "react";
+import { Localized } from "fluent-react/compat";
+import { justUpdated, justLaunched } from "../../lib/experiment";
 
 type FeaturedStatusProps = {
   enabled: boolean,

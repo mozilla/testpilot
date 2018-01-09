@@ -10,7 +10,7 @@ type NewsletterFormState = {
 
 export function defaultState(): NewsletterFormState {
   return {
-    email: '',
+    email: "",
     privacy: false,
     submitting: false,
     failed: false,
@@ -91,15 +91,15 @@ export default function newsletterFormReducer(
     return defaultState();
   }
   switch (action.type) {
-    case 'NEWSLETTER_FORM_SET_EMAIL':
+    case "NEWSLETTER_FORM_SET_EMAIL":
       return newsletterFormSetEmail(state, action);
-    case 'NEWSLETTER_FORM_SET_PRIVACY':
+    case "NEWSLETTER_FORM_SET_PRIVACY":
       return newsletterFormSetPrivacy(state, action);
-    case 'NEWSLETTER_FORM_SET_SUBMITTING':
+    case "NEWSLETTER_FORM_SET_SUBMITTING":
       return newsletterFormSetSubmitting(state);
-    case 'NEWSLETTER_FORM_SET_FAILED':
+    case "NEWSLETTER_FORM_SET_FAILED":
       return newsletterFormSetFailed(state);
-    case 'NEWSLETTER_FORM_SET_SUCCEEDED':
+    case "NEWSLETTER_FORM_SET_SUCCEEDED":
       return newsletterFormSetSucceeded(state);
     default:
       return state;

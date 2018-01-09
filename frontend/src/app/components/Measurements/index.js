@@ -1,9 +1,9 @@
 // @flow
 
-import React from 'react';
-import classnames from 'classnames';
-import { Localized } from 'fluent-react/compat';
-import LocalizedHtml from '../../components/LocalizedHtml';
+import React from "react";
+import classnames from "classnames";
+import { Localized } from "fluent-react/compat";
+import LocalizedHtml from "../../components/LocalizedHtml";
 
 type MeasurementsSectionType = {
   experiment: Object,
@@ -15,7 +15,7 @@ const EXPERIMENT_MEASUREMENT_URLS = [
   null,
   null,
   null,
-  'https://www.mozilla.org/privacy/websites'
+  "https://www.mozilla.org/privacy/websites"
 ];
 
 export default function MeasurementsSection({
@@ -31,7 +31,7 @@ export default function MeasurementsSection({
 
   return (
     <section
-      className={classnames('measurements', {
+      className={classnames("measurements", {
         highlight: highlightMeasurementPanel
       })}
     >
@@ -40,7 +40,7 @@ export default function MeasurementsSection({
       </Localized>
       <div data-hook="measurements-html" className="measurement">
         {privacy_preamble &&
-          <Localized id={l10nId('privacy_preamble')}>
+          <Localized id={l10nId("privacy_preamble")}>
             <p>
               {privacy_preamble}
             </p>
@@ -58,7 +58,7 @@ export default function MeasurementsSection({
         </LocalizedHtml>
         <ul>
           {measurements.map((note, idx) =>
-            <LocalizedHtml key={idx} id={l10nId(['measurements', idx])}>
+            <LocalizedHtml key={idx} id={l10nId(["measurements", idx])}>
               <li>
                 {EXPERIMENT_MEASUREMENT_URLS[idx] === null
                   ? null
