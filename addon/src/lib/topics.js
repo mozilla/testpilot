@@ -3,44 +3,44 @@
 
 const topics = {
   bootstrap: {
-    addonManager: ['enabled', 'disabled', 'installed', 'uninstalled'],
-    prefs: ['prefsChange'],
-    channels: ['testpilot-telemetry'],
-    events: ['idle-daily', 'send-metric', 'register-variants'],
-    webExtension: ['portConnected'],
+    addonManager: ["enabled", "disabled", "installed", "uninstalled"],
+    prefs: ["prefsChange"],
+    channels: ["testpilot-telemetry"],
+    events: ["idle-daily", "send-metric", "register-variants"],
+    webExtension: ["portConnected"],
     webExtensionAPI: [
-      'ready',
-      'clickBrowserAction',
-      'getLegacyStorage',
-      'getAvailableAddons',
-      'getCachedClientID',
-      'getAddonMetadata',
-      'getTelemetryEnvironment',
-      'updateClientUUID',
-      'updateEnvironment',
-      'observeEventTopic',
-      'notifyEventTopic',
-      'openChannel',
-      'submitExternalPing'
+      "ready",
+      "clickBrowserAction",
+      "getLegacyStorage",
+      "getAvailableAddons",
+      "getCachedClientID",
+      "getAddonMetadata",
+      "getTelemetryEnvironment",
+      "updateClientUUID",
+      "updateEnvironment",
+      "observeEventTopic",
+      "notifyEventTopic",
+      "openChannel",
+      "submitExternalPing"
     ]
   },
   webExtension: {
-    content: ['clearPopup'],
-    environment: ['change', 'resources']
+    content: ["clearPopup"],
+    environment: ["change", "resources"]
   }
 };
 
 // Utility to construct topics, with validation in development mode
 export default (...parts) => {
   // Outside of development, this just pastes together strings.
-  const success = () => parts.join('.');
-  if (process.env.NODE_ENV !== 'development') return success();
+  const success = () => parts.join(".");
+  if (process.env.NODE_ENV !== "development") return success();
 
   // Failure results in an error logged with trace, but string is still built.
   const fail = reason => {
-    console.error(`Invalid topic ${parts.join('.')} - ${reason}`); // eslint-disable-line no-console
+    console.error(`Invalid topic ${parts.join(".")} - ${reason}`); // eslint-disable-line no-console
     console.trace(); // eslint-disable-line no-console
-    return parts.join('.');
+    return parts.join(".");
   };
 
   // Traverse the tree of topics, validating each part of the incoming parts
@@ -57,7 +57,7 @@ export default (...parts) => {
       }
       return success();
     }
-    if (typeof root[part] === 'undefined') {
+    if (typeof root[part] === "undefined") {
       return fail(`undefined branch ${part}`);
     }
     root = root[part];

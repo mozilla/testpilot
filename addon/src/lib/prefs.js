@@ -3,41 +3,41 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 /* global Components, Services */
-import PubSub from 'pubsub-js';
+import PubSub from "pubsub-js";
 
-import allTopics from './topics';
-import { log } from './utils';
-import { sendToWebextension } from './webExtension';
+import allTopics from "./topics";
+import { log } from "./utils";
+import { sendToWebextension } from "./webExtension";
 
 const { utils: Cu } = Components;
-Cu.import('resource://gre/modules/Services.jsm');
+Cu.import("resource://gre/modules/Services.jsm");
 
-const bootstrapTopics = (...args) => allTopics('bootstrap', ...args);
-const prefsTopics = (...args) => bootstrapTopics('prefs', ...args);
+const bootstrapTopics = (...args) => allTopics("bootstrap", ...args);
+const prefsTopics = (...args) => bootstrapTopics("prefs", ...args);
 const webExtensionTopics = (...args) =>
-  bootstrapTopics('webExtension', ...args);
+  bootstrapTopics("webExtension", ...args);
 
-const PREF_BRANCH = 'testpilot.';
-const ENV_PREF = 'testpilot.env';
+const PREF_BRANCH = "testpilot.";
+const ENV_PREF = "testpilot.env";
 
 const prefObserver = {
   register() {
-    Services.prefs.addObserver(PREF_BRANCH, this, false);
+    Services.prefs.addObserver(PREF_BRANCH, this);
   },
   unregister() {
-    Services.prefs.removeObserver(PREF_BRANCH, this, false);
+    Services.prefs.removeObserver(PREF_BRANCH, this);
   },
   observe(aSubject, aTopic, aData) {
     const message = {};
     message[aData] = Services.prefs.getCharPref(aData);
-    sendToWebextension(prefsTopics('prefsChange'), message);
+    sendToWebextension(prefsTopics("prefsChange"), message);
   }
 };
 
 export async function startupPrefsObserver() {
-  log('startupPrefsObserver');
+  log("startupPrefsObserver");
   prefObserver.register();
-  PubSub.subscribe(webExtensionTopics('portConnected'), (_, { port }) =>
+  PubSub.subscribe(webExtensionTopics("portConnected"), (_, { port }) =>
     sendInitialPrefs(port)
   );
 }
@@ -54,7 +54,7 @@ function sendInitialPrefs(port) {
     // If no pref is set, treat it like the pref is set to ''.
     // In environments.js setCurrentEnv this will cause it to
     // fall back to the default environment.
-    message[ENV_PREF] = '';
+    message[ENV_PREF] = "";
   }
-  port.postMessage({ op: prefsTopics('prefsChange'), message });
+  port.postMessage({ op: prefsTopics("prefsChange"), message });
 }

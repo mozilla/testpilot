@@ -4,32 +4,32 @@
 
 /* global Components, Services */
 
-import PubSub from 'pubsub-js';
-import allTopics from './topics';
+import PubSub from "pubsub-js";
+import allTopics from "./topics";
 
-import { log } from './utils';
-import { registerWebExtensionAPI } from './webExtension';
+import { log } from "./utils";
+import { registerWebExtensionAPI } from "./webExtension";
 
 const { utils: Cu } = Components;
-Cu.import('resource://gre/modules/Services.jsm');
+Cu.import("resource://gre/modules/Services.jsm");
 const { addObserver, removeObserver, notifyObservers } = Services.obs;
 
-const eventsTopics = (...args) => allTopics('bootstrap', 'events', ...args);
+const eventsTopics = (...args) => allTopics("bootstrap", "events", ...args);
 
-const EVENT_PREFIX = 'testpilot::';
+const EVENT_PREFIX = "testpilot::";
 
 const observers = {};
 
 export async function startupEvents() {
-  log('startupEvents');
-  registerWebExtensionAPI('observeEventTopic', observeEventTopic);
-  registerWebExtensionAPI('notifyEventTopic', notifyEventTopic);
-  addObserver(observeIdleDaily, 'idle-daily', false);
+  log("startupEvents");
+  registerWebExtensionAPI("observeEventTopic", observeEventTopic);
+  registerWebExtensionAPI("notifyEventTopic", notifyEventTopic);
+  addObserver(observeIdleDaily, "idle-daily", false);
 }
 
 export async function shutdownEvents() {
-  log('shutdownEvents');
-  removeObserver(observeIdleDaily, 'idle-daily');
+  log("shutdownEvents");
+  removeObserver(observeIdleDaily, "idle-daily");
   Object.keys(observers).forEach(unobserveEventTopic);
 }
 
@@ -49,7 +49,7 @@ export function unobserveEventTopic(eventTopic) {
 }
 
 function observeIdleDaily() {
-  PubSub.publishSync(eventsTopics('idle-daily'));
+  PubSub.publishSync(eventsTopics("idle-daily"));
 }
 
 function EventObserver(topic) {
@@ -67,9 +67,9 @@ Object.assign(EventObserver.prototype, {
     // bits stolen from sdk/system/events
     if (
       subject &&
-      typeof subject === 'object' &&
-      'wrappedJSObject' in subject &&
-      'observersModuleSubjectWrapper' in subject.wrappedJSObject
+      typeof subject === "object" &&
+      "wrappedJSObject" in subject &&
+      "observersModuleSubjectWrapper" in subject.wrappedJSObject
     ) {
       subject = subject.wrappedJSObject.object;
     }

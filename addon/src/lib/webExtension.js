@@ -4,25 +4,25 @@
 
 /* global Components, Services, LegacyExtensionsUtils */
 
-import PubSub from 'pubsub-js';
-import allTopics from './topics';
+import PubSub from "pubsub-js";
+import allTopics from "./topics";
 
-import { log, addonMetadata } from './utils';
+import { log, addonMetadata } from "./utils";
 
 const { utils: Cu } = Components;
-Cu.import('resource://gre/modules/Services.jsm');
-Cu.import('resource://gre/modules/LegacyExtensionsUtils.jsm');
+Cu.import("resource://gre/modules/Services.jsm");
+Cu.import("resource://gre/modules/LegacyExtensionsUtils.jsm");
 
-const bootstrapTopics = (...args) => allTopics('bootstrap', ...args);
+const bootstrapTopics = (...args) => allTopics("bootstrap", ...args);
 const webExtensionTopics = (...args) =>
-  bootstrapTopics('webExtension', ...args);
+  bootstrapTopics("webExtension", ...args);
 const webExtensionAPITopics = (...args) =>
-  bootstrapTopics('webExtensionAPI', ...args);
+  bootstrapTopics("webExtensionAPI", ...args);
 
 const ports = [];
 
 export async function startupWebExtension(data, reason) {
-  log('startupWebExtension');
+  log("startupWebExtension");
 
   const webExtension = LegacyExtensionsUtils.getEmbeddedExtensionFor({
     id: data.id,
@@ -33,11 +33,11 @@ export async function startupWebExtension(data, reason) {
   // Open bootstrap-to-webextension port on connect
   browser.runtime.onConnect.addListener(port => {
     ports.push(port);
-    PubSub.publishSync(webExtensionTopics('portConnected'), { port });
+    PubSub.publishSync(webExtensionTopics("portConnected"), { port });
   });
 
   // Relay topics from bootstrap to WebExtension over the ports
-  ['events', 'channels', 'addonManager'].forEach(name =>
+  ["events", "channels", "addonManager"].forEach(name =>
     PubSub.subscribe(bootstrapTopics(name), sendToWebextension)
   );
 
@@ -49,14 +49,14 @@ export async function startupWebExtension(data, reason) {
   );
 
   // TODO: Move this to a different module?
-  registerWebExtensionAPI('getAddonMetadata', () => addonMetadata);
+  registerWebExtensionAPI("getAddonMetadata", () => addonMetadata);
 
   // TODO: Move this to a different UI-centric module?
-  registerWebExtensionAPI('clickBrowserAction', () => clickBrowserAction());
+  registerWebExtensionAPI("clickBrowserAction", () => clickBrowserAction());
 
   // Return a promise that resolves when the WebExtension signals ready
   return new Promise(resolve => {
-    const token = PubSub.subscribe(webExtensionAPITopics('ready'), () => {
+    const token = PubSub.subscribe(webExtensionAPITopics("ready"), () => {
       PubSub.unsubscribe(token);
       resolve();
     });
@@ -64,7 +64,7 @@ export async function startupWebExtension(data, reason) {
 }
 
 export function shutdownWebExtension(data, reason) {
-  log('shutdownWebExtension');
+  log("shutdownWebExtension");
   const webExtension = LegacyExtensionsUtils.getEmbeddedExtensionFor({
     id: data.id,
     resourceURI: data.resourceURI
@@ -87,9 +87,9 @@ export function sendToWebextension(op, message) {
 }
 
 // TODO: Remove this? Experiment in summoning the pop-up for surveys
-const BROWSER_ACTION_BUTTON_ID = '_testpilot-addon-browser-action';
+const BROWSER_ACTION_BUTTON_ID = "_testpilot-addon-browser-action";
 function clickBrowserAction(sendReply) {
-  const win = Services.wm.getMostRecentWindow('navigator:browser');
+  const win = Services.wm.getMostRecentWindow("navigator:browser");
   const button = win.document.getElementById(BROWSER_ACTION_BUTTON_ID);
   if (button) button.click();
   return sendReply();

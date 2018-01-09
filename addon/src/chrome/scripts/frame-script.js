@@ -5,12 +5,12 @@
  */
 
 /* global content, addEventListener, removeEventListener, addMessageListener, removeMessageListener, sendSyncMessage */
-const debug = process.env.NODE_ENV === 'development';
-const ADDON_ID = '@testpilot-addon';
+const debug = process.env.NODE_ENV === "development";
+const ADDON_ID = "@testpilot-addon";
 const NAVIGATOR_PROPERTY_NAMES = [
-  'testpilotAddon',
-  'testpilotAddonVersion',
-  'testpilotClientUUID'
+  "testpilotAddon",
+  "testpilotAddonVersion",
+  "testpilotClientUUID"
 ];
 
 const properties = {
@@ -23,38 +23,38 @@ const properties = {
 function init() {
   try {
     getProperties();
-    addEventListener('DOMWindowCreated', handleDOMWindowCreated);
-    addEventListener('unload', handleDisable);
+    addEventListener("DOMWindowCreated", handleDOMWindowCreated);
+    addEventListener("unload", handleDisable);
     addMessageListener(`${ADDON_ID}:update`, handleUpdate);
     addMessageListener(`${ADDON_ID}:disable`, handleDisable);
-    log('init');
+    log("init");
   } catch (err) {
-    log('init error', err);
+    log("init error", err);
   }
 }
 
 function handleDisable() {
   clearNavigatorProperties();
-  removeEventListener('DOMWindowCreated', handleDOMWindowCreated);
-  removeEventListener('unload', handleDisable);
+  removeEventListener("DOMWindowCreated", handleDOMWindowCreated);
+  removeEventListener("unload", handleDisable);
   removeMessageListener(`${ADDON_ID}:update`, handleUpdate);
   removeMessageListener(`${ADDON_ID}:disable`, handleDisable);
-  log('disable');
+  log("disable");
 }
 
 function handleDOMWindowCreated() {
   getProperties();
-  log('created');
+  log("created");
 }
 
 function handleUpdate(message) {
   Object.assign(properties, message.data);
   setNavigatorProperties();
-  log('update');
+  log("update");
 }
 
 function getProperties() {
-  const result = sendSyncMessage('@testpilot-addon:getProperies');
+  const result = sendSyncMessage("@testpilot-addon:getProperies");
   Object.assign(properties, result[0]);
   setNavigatorProperties();
 }
@@ -73,7 +73,7 @@ function setNavigatorProperties() {
 
   const isTestPilot = startsWithBaseUrl(currentEnvironment.baseUrl);
   const isWhiteListed = currentEnvironment.whitelist
-    .split(',')
+    .split(",")
     .filter(startsWithBaseUrl).length;
 
   if (isTestPilot || isWhiteListed) {
@@ -88,7 +88,7 @@ function setNavigatorProperties() {
   }
 
   clearNavigatorProperties();
-  log('setNavigatorProperties', navigatorProps);
+  log("setNavigatorProperties", navigatorProps);
   Object.assign(content.wrappedJSObject.navigator, navigatorProps);
 }
 
@@ -101,8 +101,8 @@ init();
 export function log(...args) {
   if (!debug) return;
   // eslint-disable-next-line no-console
-  const c = typeof content.console !== 'undefined' ? content.console : console;
+  const c = typeof content.console !== "undefined" ? content.console : console;
   c.log(
-    ...['[TESTPILOT v2]', '(frame-script)', content.location.href].concat(args)
+    ...["[TESTPILOT v2]", "(frame-script)", content.location.href].concat(args)
   );
 }

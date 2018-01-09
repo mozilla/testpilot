@@ -4,4 +4,4 @@
 
  /* global browser */
 
-browser.runtime.sendMessage({ op: 'clearPopup' });
+browser.runtime.sendMessage({ op: "clearPopup" });

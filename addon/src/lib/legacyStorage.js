@@ -4,21 +4,21 @@
 
 /* global Components, Services */
 
-import { log } from './utils';
-import { registerWebExtensionAPI } from './webExtension';
+import { log } from "./utils";
+import { registerWebExtensionAPI } from "./webExtension";
 
 const { interfaces: Ci, utils: Cu } = Components;
 
 let legacyStorage = {};
 
 export async function startupLegacyStorage() {
-  log('startupLegacyStorage');
-  registerWebExtensionAPI('getLegacyStorage', () => legacyStorage);
+  log("startupLegacyStorage");
+  registerWebExtensionAPI("getLegacyStorage", () => legacyStorage);
   return readLegacyStorage();
 }
 
 export function shutdownLegacyStorage() {
-  log('shutdownLegacyStorage');
+  log("shutdownLegacyStorage");
 }
 
 export function getLegacyStorage() {
@@ -29,27 +29,27 @@ export function getLegacyStorage() {
 // WebExtension asks for this data. But, sendReply() in message handling doesn't
 // seem amenable to async / promises - the reply data never makes it through
 export async function readLegacyStorage() {
-  log('readLegacyStorage');
+  log("readLegacyStorage");
   const { TextDecoder, OS } = Cu.import(
-    'resource://gre/modules/osfile.jsm',
+    "resource://gre/modules/osfile.jsm",
     {}
   );
   // Stolen from sdk/simple-storage.js
-  const storeFile = Services.dirsvc.get('ProfD', Ci.nsIFile);
+  const storeFile = Services.dirsvc.get("ProfD", Ci.nsIFile);
   [
-    'jetpack',
-    '@testpilot-addon',
-    'simple-storage',
-    'store.json'
+    "jetpack",
+    "@testpilot-addon",
+    "simple-storage",
+    "store.json"
   ].forEach(part => storeFile.append(part));
 
   try {
     const raw = await OS.File.read(storeFile.path);
     const txt = new TextDecoder().decode(raw);
     legacyStorage = JSON.parse(txt);
-    log('legacyStorage read', legacyStorage);
+    log("legacyStorage read", legacyStorage);
   } catch (e) {
     legacyStorage = null;
-    log('legacyStorage err', e);
+    log("legacyStorage err", e);
   }
 }

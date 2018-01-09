@@ -3,20 +3,20 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 /* global browser */
-import PubSub from 'pubsub-js';
-import allTopics from '../../lib/topics';
-import { log } from './utils';
+import PubSub from "pubsub-js";
+import allTopics from "../../lib/topics";
+import { log } from "./utils";
 
 const webExtensionAPITopics = (...args) =>
-  allTopics('bootstrap', 'webExtensionAPI', ...args);
+  allTopics("bootstrap", "webExtensionAPI", ...args);
 
 export async function setupBootstrapPort() {
-  log('setupBootstrapPort');
+  log("setupBootstrapPort");
 
   // Mirror bootstrap port messages as PubSub topics
-  const port = browser.runtime.connect({ name: 'main' });
+  const port = browser.runtime.connect({ name: "main" });
   port.onMessage.addListener(({ op, message }) => {
-    PubSub.publish(allTopics(...op.split('.')), message);
+    PubSub.publish(allTopics(...op.split(".")), message);
   });
 }
 

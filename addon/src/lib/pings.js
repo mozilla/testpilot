@@ -23,10 +23,10 @@ export async function submitMainPing(
   event,
   time
 ) {
-  log('submitMainPing', object, event, time);
+  log("submitMainPing", object, event, time);
   return Promise.all([
     submitExternalPing({
-      topic: 'testpilot',
+      topic: "testpilot",
       payload: {
         timestamp: makeTimestamp(),
         test: addonMetadata.id,
@@ -42,8 +42,8 @@ export async function submitMainPing(
       time
     }),
     sendGAEvent(_fetch, _URLSearchParams, clientUUID, {
-      t: 'event',
-      ec: 'add-on Interactions',
+      t: "event",
+      ec: "add-on Interactions",
       ea: object,
       el: event
     })
@@ -71,19 +71,19 @@ export async function sendPingCentreEvent(
     // Note: these two keys are normally inserted by the ping-centre client.
     // TODO: This is the telemetry client ID. Maybe change to add-on client UUID?
     client_id: telemetryClientID,
-    topic: 'testpilot'
+    topic: "testpilot"
   };
 
   // Add any other extra top-level keys from the payload, possibly including
   // 'object' or 'category', among others.
-  const ignored = ['event', 'method', 'timestamp'];
+  const ignored = ["event", "method", "timestamp"];
   Object.keys(payload)
     .filter(f => ignored.includes(f))
     .forEach(f => pcPayload[f] = payload[f]);
 
-  return _fetch('https://tiles.services.mozilla.com/v3/links/ping-centre', {
-    method: 'POST',
-    headers: new _Headers({ 'Content-Type': 'application/json' }),
+  return _fetch("https://tiles.services.mozilla.com/v3/links/ping-centre", {
+    method: "POST",
+    headers: new _Headers({ "Content-Type": "application/json" }),
     body: JSON.stringify(pcPayload)
   });
 }
@@ -91,10 +91,10 @@ export async function sendPingCentreEvent(
 export async function sendGAEvent(_fetch, _URLSearchParams, clientUUID, data) {
   data.v = 1;
   // Version -- https://developers.google.com/analytics/devguides/collection/protocol/v1/
-  data.tid = 'UA-49796218-47';
+  data.tid = "UA-49796218-47";
   data.cid = clientUUID;
-  return _fetch('https://ssl.google-analytics.com/collect', {
-    method: 'POST',
+  return _fetch("https://ssl.google-analytics.com/collect", {
+    method: "POST",
     body: new _URLSearchParams(data)
   });
 }
