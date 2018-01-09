@@ -20,7 +20,30 @@ def test_copter_loads(base_url, selenium):
 def test_install_button_loads(base_url, selenium):
     """Test install button for test pilot addon loads"""
     page = Home(selenium, base_url).open()
-    assert page.header.is_install_button_displayed
+    if not page.featured.is_displayed:
+        assert page.header.is_install_button_displayed
+    else:
+        assert True
+
+
+@pytest.mark.nondestructive
+def test_featured_experiment_actions(base_url, selenium):
+    """Test if featured experiment action buttons exists"""
+    page = Home(selenium, base_url).open()
+    if page.featured.is_displayed:
+        assert page.featured.are_actions_displayed
+    else:
+        assert True
+
+
+@pytest.mark.nondestructive
+def test_featured_experiment(base_url, selenium):
+    """Test if featured experiment video exists"""
+    page = Home(selenium, base_url).open()
+    if page.featured.is_displayed:
+        assert page.featured.is_video_displayed
+    else:
+        assert True
 
 
 @pytest.mark.nondestructive
