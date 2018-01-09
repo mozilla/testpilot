@@ -22,10 +22,10 @@ const ENV_PREF = "testpilot.env";
 
 const prefObserver = {
   register() {
-    Services.prefs.addObserver(PREF_BRANCH, this);
+    Services.prefs.addObserver(PREF_BRANCH, this, false);
   },
   unregister() {
-    Services.prefs.removeObserver(PREF_BRANCH, this);
+    Services.prefs.removeObserver(PREF_BRANCH, this, false);
   },
   observe(aSubject, aTopic, aData) {
     const message = {};
