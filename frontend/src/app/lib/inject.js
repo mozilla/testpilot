@@ -19,11 +19,14 @@ export default function inject(name, component, callback) {
     setupAddonConnection(s);
     if (document.body !== null) {
       let node = document.getElementById('page-container');
-      if (node === null) {
-        node = document.createElement('div');
-        node.id = 'page-container';
-        document.body.appendChild(node);
+      if (node !== null) {
+        node.remove();
       }
+
+      node = document.createElement('div');
+      node.id = 'page-container';
+      document.body.appendChild(node);
+
       ReactDOM.render(provider, node);
     }
   }

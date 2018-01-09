@@ -157,9 +157,9 @@ export default class UpdateList extends React.Component {
            <h1 className="update-list-heading">Latest Updates</h1>
          </Localized>}
         <LayoutWrapper flexModifier="column-center">
-          {shownNewsUpdates.map((update, index) =>
+          {shownNewsUpdates.map(update =>
             <Update
-              key={index}
+              key={update.slug}
               sendToGA={sendToGA}
               update={update}
               experiment={experimentsBySlug[update.experimentSlug]}
