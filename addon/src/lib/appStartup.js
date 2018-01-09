@@ -18,10 +18,10 @@ export function startupDone() {
 
 export const startupObserver = {
   register() {
-    Services.obs.addObserver(this, "sessionstore-windows-restored", false);
+    Services.obs.addObserver(this, "sessionstore-windows-restored");
   },
   unregister() {
-    Services.obs.removeObserver(this, "sessionstore-windows-restored", false);
+    Services.obs.removeObserver(this, "sessionstore-windows-restored");
   },
   observe() {
     startupDone();

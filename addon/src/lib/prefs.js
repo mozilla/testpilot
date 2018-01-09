@@ -22,10 +22,10 @@ const ENV_PREF = "testpilot.env";
 
 const prefObserver = {
   register() {
-    Services.prefs.addObserver(PREF_BRANCH, this, false);
+    Services.prefs.addObserver(PREF_BRANCH, this);
   },
   unregister() {
-    Services.prefs.removeObserver(PREF_BRANCH, this, false);
+    Services.prefs.removeObserver(PREF_BRANCH, this);
   },
   observe(aSubject, aTopic, aData) {
     const message = {};
@@ -48,13 +48,6 @@ export function shutdownPrefsObserver() {
 
 function sendInitialPrefs(port) {
   const message = {};
-  try {
-    message[ENV_PREF] = Services.prefs.getCharPref(ENV_PREF);
-  } catch (e) {
-    // If no pref is set, treat it like the pref is set to ''.
-    // In environments.js setCurrentEnv this will cause it to
-    // fall back to the default environment.
-    message[ENV_PREF] = "";
-  }
+  message[ENV_PREF] = Services.prefs.getCharPref(ENV_PREF, "");
   port.postMessage({ op: prefsTopics("prefsChange"), message });
 }
