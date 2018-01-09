@@ -8,7 +8,6 @@ const gulp = require('gulp');
 const config = require('./frontend/config.js');
 
 const del = require('del');
-const eslint = require('gulp-eslint');
 const runSequence = require('run-sequence');
 
 require('es6-promise').polyfill();
@@ -55,7 +54,6 @@ gulp.task('watch', [
 ]);
 
 gulp.task('default', done => runSequence(
-  'self-lint',
   'clean',
   'build',
   'watch',
@@ -70,8 +68,3 @@ gulp.task('self-watch', () => gulp.watch([
   './debug-config.json',
   './frontend/tasks/*.js'
 ], () => process.exit()));
-
-gulp.task('self-lint', () => gulp.src(['gulpfile.babel.js', 'webpack.config.js'])
-  .pipe(eslint())
-  .pipe(eslint.format())
-  .pipe(eslint.failOnError()));

@@ -11,6 +11,10 @@ plugins:
   - react
   - mozilla
 
+env:
+  node: true
+  browser: true
+
 globals:
   navigator: true
   document: true
@@ -54,4 +58,3 @@ rules:
         - '**/tests.js'
         - '**/stories.{js,jsx}'
         - "./frontend/{stories,tasks,tests}/**/*.{js,jsx}"
-
