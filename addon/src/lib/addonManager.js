@@ -4,31 +4,31 @@
 
 /* global Components, Services, AddonManager */
 
-import PubSub from 'pubsub-js';
-import allTopics from './topics';
+import PubSub from "pubsub-js";
+import allTopics from "./topics";
 
-import { log } from './utils';
-import { registerWebExtensionAPI } from './webExtension';
+import { log } from "./utils";
+import { registerWebExtensionAPI } from "./webExtension";
 
 const { utils: Cu } = Components;
-Cu.import('resource://gre/modules/Services.jsm');
-Cu.import('resource://gre/modules/AddonManager.jsm');
+Cu.import("resource://gre/modules/Services.jsm");
+Cu.import("resource://gre/modules/AddonManager.jsm");
 
-const EXTRACTED_ADDON_PROPERTIES = ['id', 'creator', 'name', 'type', 'version'];
+const EXTRACTED_ADDON_PROPERTIES = ["id", "creator", "name", "type", "version"];
 const availableAddons = {};
 const addonListener = {};
 
-const bootstrapTopics = (...args) => allTopics('bootstrap', ...args);
+const bootstrapTopics = (...args) => allTopics("bootstrap", ...args);
 const addonManagerTopics = (...args) =>
-  bootstrapTopics('addonManager', ...args);
+  bootstrapTopics("addonManager", ...args);
 
-['Enabled', 'Disabled', 'Installed', 'Uninstalled'].forEach(event => {
+["Enabled", "Disabled", "Installed", "Uninstalled"].forEach(event => {
   addonListener[`on${event}`] = rawAddon => {
     const addon = extractAddonDetails(rawAddon);
-    if (event === 'Enabled' || event === 'Installed') {
+    if (event === "Enabled" || event === "Installed") {
       availableAddons[addon.id] = addon;
     }
-    if (event === 'Disabled' || event === 'Uninstalled') {
+    if (event === "Disabled" || event === "Uninstalled") {
       delete availableAddons[addon.id];
     }
     const topic = event.toLowerCase();
@@ -43,9 +43,9 @@ function extractAddonDetails(addon) {
 }
 
 export async function startupAddonManager() {
-  log('startupAddonManager');
+  log("startupAddonManager");
 
-  registerWebExtensionAPI('getAvailableAddons', () => availableAddons);
+  registerWebExtensionAPI("getAvailableAddons", () => availableAddons);
 
   AddonManager.addAddonListener(addonListener);
 
@@ -61,6 +61,6 @@ export async function startupAddonManager() {
 }
 
 export async function shutdownAddonManager() {
-  log('shutdownAddonManager');
+  log("shutdownAddonManager");
   AddonManager.removeAddonListener(addonListener);
 }

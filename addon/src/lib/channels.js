@@ -4,39 +4,39 @@
 
 /* global Components, Services */
 
-import PubSub from 'pubsub-js';
-import allTopics from './topics';
+import PubSub from "pubsub-js";
+import allTopics from "./topics";
 
-import { log } from './utils';
-import { registerWebExtensionAPI } from './webExtension';
+import { log } from "./utils";
+import { registerWebExtensionAPI } from "./webExtension";
 
 const { interfaces: Ci, utils: Cu } = Components;
-Cu.import('resource://gre/modules/Services.jsm');
+Cu.import("resource://gre/modules/Services.jsm");
 const { WebExtensionPolicy } = Cu.getGlobalForObject(
-  Cu.import('resource://gre/modules/Extension.jsm', {})
+  Cu.import("resource://gre/modules/Extension.jsm", {})
 );
 
-const bootstrapTopics = (...args) => allTopics('bootstrap', ...args);
-const channelsTopics = (...args) => bootstrapTopics('channels', ...args);
+const bootstrapTopics = (...args) => allTopics("bootstrap", ...args);
+const channelsTopics = (...args) => bootstrapTopics("channels", ...args);
 
-export const TESTPILOT_TELEMETRY_TOPIC = 'testpilot-telemetry';
+export const TESTPILOT_TELEMETRY_TOPIC = "testpilot-telemetry";
 
 const channels = new Map();
 
 export async function startupChannels() {
-  log('startupChannels');
-  registerWebExtensionAPI('openChannel', ({ addonId, topic }) =>
+  log("startupChannels");
+  registerWebExtensionAPI("openChannel", ({ addonId, topic }) =>
     openChannel(addonId, topic)
   );
-  registerWebExtensionAPI('closeChannel', ({ addonId, topic }) =>
+  registerWebExtensionAPI("closeChannel", ({ addonId, topic }) =>
     closeChannel(addonId, topic)
   );
 }
 
 export async function shutdownChannels() {
-  log('shutdownChannels');
+  log("shutdownChannels");
   for (const id of channels.keys()) {
-    const [topic, addonId] = id.split(':');
+    const [topic, addonId] = id.split(":");
     closeChannel(addonId, topic);
   }
 }
@@ -61,11 +61,11 @@ export default class WebExtensionChannel {
     // (or the BroadcastChannel will stop working).
     this.addonChromeWebNav = addonChromeWebNav;
     this.addonBroadcastChannel = addonBroadcastChannel;
-    this.addonBroadcastChannel.addEventListener('message', this.handleEvent);
+    this.addonBroadcastChannel.addEventListener("message", this.handleEvent);
   }
 
   dispose() {
-    this.addonBroadcastChannel.removeEventListener('message', this.handleEvent);
+    this.addonBroadcastChannel.removeEventListener("message", this.handleEvent);
     this.addonBroadcastChannel.close();
     this.addonChromeWebNav.close();
     this.listeners.clear();
@@ -89,14 +89,14 @@ export default class WebExtensionChannel {
         listener(data, sender);
       } catch (err) {
         // eslint-disable-next-line no-console
-        console.error('Error executing listener', err);
+        console.error("Error executing listener", err);
       }
     }
   }
 }
 
 export function openChannel(addonId, topic) {
-  log('openChannel', addonId, topic);
+  log("openChannel", addonId, topic);
   const id = `${topic}:${addonId}`;
   if (channels.get(id)) {
     // Accept an attempt to open an existing channel as an attempt to re-open
@@ -116,7 +116,7 @@ export function openChannel(addonId, topic) {
 }
 
 export function closeChannel(addonId, topic) {
-  log('closeChannel', addonId, topic);
+  log("closeChannel", addonId, topic);
   const id = `${topic}:${addonId}`;
   const c = channels.get(id);
   if (c) {
@@ -139,11 +139,11 @@ function createChannelForAddonId(name, addonId) {
   // an extension.
   const policy = WebExtensionPolicy.getByID(addonId);
   if (!policy) {
-    log('createChannelForAddonId FAILED (not installed)', name, addonId);
+    log("createChannelForAddonId FAILED (not installed)", name, addonId);
     return null;
   }
   const { mozExtensionHostname } = policy;
-  log('createChannelForAddonId', name, addonId, mozExtensionHostname);
+  log("createChannelForAddonId", name, addonId, mozExtensionHostname);
 
   // Create the special about:blank URL for the extension.
   const baseURI = Services.io.newURI(

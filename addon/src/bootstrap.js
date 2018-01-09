@@ -4,18 +4,18 @@
 
 /* global APP_STARTUP */
 
-import PubSub from 'pubsub-js';
+import PubSub from "pubsub-js";
 
-import { debug, log, setAddonMetadata } from './lib/utils';
-import { startupDone, startupPromise, startupObserver } from './lib/appStartup';
-import { startupLegacyStorage, shutdownLegacyStorage } from './lib/legacyStorage';
-import { startupPrefsObserver, shutdownPrefsObserver } from './lib/prefs';
-import { startupFrameScripts, shutdownFrameScripts } from './lib/frameScripts';
-import { startupWebExtension, shutdownWebExtension } from './lib/webExtension';
-import { startupEvents, shutdownEvents } from './lib/events';
-import { startupChannels, shutdownChannels } from './lib/channels';
-import { startupTelemetry, shutdownTelemetry } from './lib/telemetry';
-import { startupAddonManager, shutdownAddonManager } from './lib/addonManager';
+import { debug, log, setAddonMetadata } from "./lib/utils";
+import { startupDone, startupPromise, startupObserver } from "./lib/appStartup";
+import { startupLegacyStorage, shutdownLegacyStorage } from "./lib/legacyStorage";
+import { startupPrefsObserver, shutdownPrefsObserver } from "./lib/prefs";
+import { startupFrameScripts, shutdownFrameScripts } from "./lib/frameScripts";
+import { startupWebExtension, shutdownWebExtension } from "./lib/webExtension";
+import { startupEvents, shutdownEvents } from "./lib/events";
+import { startupChannels, shutdownChannels } from "./lib/channels";
+import { startupTelemetry, shutdownTelemetry } from "./lib/telemetry";
+import { startupAddonManager, shutdownAddonManager } from "./lib/addonManager";
 
 PubSub.immediateExceptions = true;
 
@@ -38,7 +38,7 @@ export function startup(data, reason) {
     .then(startupChannels)
     .then(startupFrameScripts)
     .then(() => startupWebExtension(data, reason))
-    .catch(err => log('startup error', err));
+    .catch(err => log("startup error", err));
 }
 
 export function shutdown(data, reason) {
@@ -53,13 +53,13 @@ export function shutdown(data, reason) {
     shutdownLegacyStorage();
     PubSub.clearAllSubscriptions();
   } catch (err) {
-    log('shutdown error', err);
+    log("shutdown error", err);
   }
 }
 
 async function setupDebug() {
   if (!debug) return;
-  ['bootstrap', 'webExtension'].forEach(root =>
-    PubSub.subscribe(root, (message, data) => log('pubsub', message, data))
+  ["bootstrap", "webExtension"].forEach(root =>
+    PubSub.subscribe(root, (message, data) => log("pubsub", message, data))
   );
 }

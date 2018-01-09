@@ -4,43 +4,43 @@
 
 /* global browser */
 
-import PubSub from 'pubsub-js';
+import PubSub from "pubsub-js";
 
-import allTopics from '../../lib/topics';
-import { log } from './utils';
-import { getCurrentEnv } from './environments';
-import { sendBootstrapMessage } from './bootstrap';
+import allTopics from "../../lib/topics";
+import { log } from "./utils";
+import { getCurrentEnv } from "./environments";
+import { sendBootstrapMessage } from "./bootstrap";
 
-const webExtensionTopics = (...args) => allTopics('webExtension', ...args);
+const webExtensionTopics = (...args) => allTopics("webExtension", ...args);
 const environmentTopics = (...args) =>
-  webExtensionTopics('environment', ...args);
+  webExtensionTopics("environment", ...args);
 
 const storage = browser.storage.local;
 
 const TWO_WEEKS = 2 * 7 * 24 * 60 * 60 * 1000;
 
 const BROWSER_ACTION_LINK_BASE = [
-  '/experiments',
-  '?utm_source=testpilot-addon',
-  '&utm_medium=firefox-browser',
-  '&utm_campaign=testpilot-doorhanger'
-].join('');
+  "/experiments",
+  "?utm_source=testpilot-addon",
+  "&utm_medium=firefox-browser",
+  "&utm_campaign=testpilot-doorhanger"
+].join("");
 const BROWSER_ACTION_LINK_NOT_BADGED = BROWSER_ACTION_LINK_BASE +
-  '&utm_content=not+badged';
+  "&utm_content=not+badged";
 const BROWSER_ACTION_LINK_BADGED = BROWSER_ACTION_LINK_BASE +
-  '&utm_content=badged';
+  "&utm_content=badged";
 let BROWSER_ACTION_LINK = BROWSER_ACTION_LINK_NOT_BADGED;
 
 export async function setupBrowserAction() {
-  log('setupBrowserAction');
+  log("setupBrowserAction");
 
-  PubSub.subscribe(environmentTopics('resources'), updateBadgeTextOnNew);
+  PubSub.subscribe(environmentTopics("resources"), updateBadgeTextOnNew);
 
-  browser.browserAction.setBadgeBackgroundColor({ color: '#0996f8' });
+  browser.browserAction.setBadgeBackgroundColor({ color: "#0996f8" });
 
   browser.browserAction.onClicked.addListener(() => {
     // reset badge immediately
-    browser.browserAction.setBadgeText({ text: '' });
+    browser.browserAction.setBadgeText({ text: "" });
 
     const baseUrl = getCurrentEnv().baseUrl;
     storage.set({ clicked: Date.now() });
@@ -51,7 +51,7 @@ export async function setupBrowserAction() {
 }
 
 async function updateBadgeTextOnNew(topic, { experiments, news_updates }) {
-  let { clicked } = await storage.get('clicked');
+  let { clicked } = await storage.get("clicked");
   if (!clicked) {
     // Set initial button click timestamp if not found
     clicked = Date.now();
@@ -66,13 +66,13 @@ async function updateBadgeTextOnNew(topic, { experiments, news_updates }) {
   // check for port number on local, we need to strip it off
   // to properly fetch cookies.
   const baseUrl = getCurrentEnv().baseUrl;
-  const portIndex = baseUrl.indexOf(':8000');
+  const portIndex = baseUrl.indexOf(":8000");
   const cookieUrl = (portIndex > -1) ? baseUrl.substring(0, portIndex) : baseUrl;
 
   let lastViewed = 0;
   const cookie = await browser.cookies.get({
     url: cookieUrl,
-    name: 'updates-last-viewed-date'
+    name: "updates-last-viewed-date"
   });
 
   if (cookie) lastViewed = cookie.value;
@@ -94,11 +94,11 @@ async function updateBadgeTextOnNew(topic, { experiments, news_updates }) {
     : BROWSER_ACTION_LINK_NOT_BADGED;
 
   browser.browserAction.setBadgeText({
-    text: (newExperiments.length || newsUpdates.length) > 0 ? '!' : ''
+    text: (newExperiments.length || newsUpdates.length) > 0 ? "!" : ""
   });
 
   browser.browserAction.setBadgeText({
-    text: (newExperiments.length || newsUpdates.length) > 0 ? '!' : ''
+    text: (newExperiments.length || newsUpdates.length) > 0 ? "!" : ""
   });
 }
 
@@ -106,6 +106,6 @@ async function updateBadgeTextOnNew(topic, { experiments, news_updates }) {
 // called on a schedule if necessary
 // eslint-disable-next-line no-unused-vars
 function showSurveyPopup() {
-  browser.browserAction.setPopup({ popup: '/survey-popup/index.html' });
-  sendBootstrapMessage('clickBrowserAction');
+  browser.browserAction.setPopup({ popup: "/survey-popup/index.html" });
+  sendBootstrapMessage("clickBrowserAction");
 }

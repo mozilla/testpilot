@@ -5,7 +5,7 @@
 /* global Components, Services */
 
 const { utils: Cu } = Components;
-Cu.import('resource://gre/modules/Services.jsm');
+Cu.import("resource://gre/modules/Services.jsm");
 
 let resolveAppStartup;
 export const startupPromise = new Promise(resolve => {
@@ -18,10 +18,10 @@ export function startupDone() {
 
 export const startupObserver = {
   register() {
-    Services.obs.addObserver(this, 'sessionstore-windows-restored', false);
+    Services.obs.addObserver(this, "sessionstore-windows-restored", false);
   },
   unregister() {
-    Services.obs.removeObserver(this, 'sessionstore-windows-restored', false);
+    Services.obs.removeObserver(this, "sessionstore-windows-restored", false);
   },
   observe() {
     startupDone();
