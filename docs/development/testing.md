@@ -17,14 +17,8 @@ We also use the following eslint plugin recommended rules:
  - eslint-plugin-flowtype
  - eslint-plugin-react
 
-We are currently migrating away from our old lint configuration, so
-lint errors are treated as warnings until this process is complete.
-You can track the progress of our migration in [the bug][bug].
-
 To lint the frontend, run `npm run lint` in the testpilot directory.
 To lint the addon, run `npm run lint` in the addon directory.
-The migration process should be fairly straightforward, since it mostly
-entails replacing ' with ".
 
 To lint only one file in the frontend, run eslint inside the testpilot directory:
 
@@ -35,7 +29,6 @@ To lint only one file in the addon, run eslint inside the addon directory:
     ./node_modules/.bin/eslint -c ../.eslintrc [path/to/file.js]
 
 [source]: https://dxr.mozilla.org/mozilla-central/source/tools/lint/eslint/eslint-plugin-mozilla
-[bug]: https://github.com/mozilla/testpilot/issues/3119
 
 
 ## All tests
