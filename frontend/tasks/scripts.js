@@ -5,7 +5,6 @@ const fs = require('fs');
 
 const gulpif = require('gulp-if');
 const gutil = require('gulp-util');
-const eslint = require('gulp-eslint');
 const source = require('vinyl-source-stream');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
@@ -14,15 +13,6 @@ const runSequence = require('run-sequence');
 function shouldLint(opt, task) {
   return config[opt] ? [task] : [];
 }
-
-gulp.task('scripts-lint', () => {
-  return gulp.src('./frontend/{src,tests,stories}/**/*.{js,jsx}')
-    .pipe(eslint())
-    .pipe(eslint.format());
-// Until all js files in frontend and addon pass the mozilla-central lint,
-// we still run lint, but don't fail on error.
-//    .pipe(eslint.failOnError());
-});
 
 gulp.task('scripts-clean', () => {
 });
@@ -41,7 +31,6 @@ gulp.task('scripts-misc', () => {
 
 gulp.task('scripts-build', done => runSequence(
   'scripts-clean',
-  'scripts-lint',
   'scripts-misc',
   done
 ));
