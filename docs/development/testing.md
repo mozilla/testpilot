@@ -6,6 +6,38 @@ We have several mechanisms for testing parts of Test Pilot. All of these tests
 must pass for Pull Requests to be accepted into the project, so it's very
 handy to know how to run them and write new ones as code changes.
 
+# Lint
+
+We use the recommended mozilla-central lint rules. See the
+[source for eslint-plugin-mozilla][source] for details about the rules.
+
+We also use the following eslint plugin recommended rules:
+
+ - eslint-plugin-import
+ - eslint-plugin-flowtype
+ - eslint-plugin-react
+
+We are currently migrating away from our old lint configuration, so
+lint errors are treated as warnings until this process is complete.
+You can track the progress of our migration in [the bug][bug].
+
+To lint the frontend, run `npm run lint` in the testpilot directory.
+To lint the addon, run `npm run lint` in the addon directory.
+The migration process should be fairly straightforward, since it mostly
+entails replacing ' with ".
+
+To lint only one file in the frontend, run eslint inside the testpilot directory:
+
+    ./node_modules/.bin/eslint [path/to/file.js]
+
+To lint only one file in the addon, run eslint inside the addon directory:
+
+    ./node_modules/.bin/eslint -c ../.eslintrc [path/to/file.js]
+
+[source]: https://dxr.mozilla.org/mozilla-central/source/tools/lint/eslint/eslint-plugin-mozilla
+[bug]: https://github.com/mozilla/testpilot/issues/3119
+
+
 ## All tests
 
 To quickly run all tests, including addon tests, frontend tests, eslint checks, and flow types coverage reports, use `npm run test:all`.
