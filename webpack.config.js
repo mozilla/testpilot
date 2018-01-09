@@ -143,7 +143,9 @@ module.exports = {
             options: {
               hash: 'sha512',
               digest: 'hex',
-              name: '/static/app/images/[name]-[hash].[ext]'
+              publicPath: '/',
+              outputPath: 'static/app/images/',
+              name: '[name]-[hash].[ext]'
             }
           },
           {
