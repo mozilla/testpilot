@@ -1,12 +1,15 @@
 extends:
   - eslint:recommended
+  - plugin:import/recommended
   - plugin:flowtype/recommended
   - plugin:react/recommended
-  - airbnb/base
+  - plugin:mozilla/recommended
 
 plugins:
+  - import
   - flowtype
   - react
+  - mozilla
 
 globals:
   navigator: true
@@ -51,3 +54,4 @@ rules:
         - '**/tests.js'
         - '**/stories.{js,jsx}'
         - "./frontend/{stories,tasks,tests}/**/*.{js,jsx}"
+
