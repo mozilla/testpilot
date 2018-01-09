@@ -14,7 +14,10 @@ def test_experiment_page_sticky_header(
     add-on installed properly makes the header sticky
     """
     page = Home(selenium, base_url).open()
-    experiments = page.header.click_install_button()
+    if page.featured.is_displayed:
+        experiments = page.featured.click_install_button()
+    else:
+        experiments = page.header.click_install_button()
     firefox.browser.wait_for_notification(
       notifications.AddOnInstallComplete
     ).close()

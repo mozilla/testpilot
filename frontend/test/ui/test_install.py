@@ -13,11 +13,18 @@ def test_install_of_test_pilot_addon(
         base_url, selenium, firefox, notifications):
     """Check that the testpilot addon is installable and installs."""
     page = Home(selenium, base_url).open()
-    experiments = page.header.click_install_button()
-    firefox.browser.wait_for_notification(
-        notifications.AddOnInstallComplete
-    ).close()
-    assert experiments.welcome_popup.is_title_displayed()
+    if not page.featured.is_displayed:
+        experiments = page.header.click_install_button()
+        firefox.browser.wait_for_notification(
+            notifications.AddOnInstallComplete
+        ).close()
+        assert experiments.welcome_popup.is_title_displayed()
+    else:
+        experiments = page.featured.click_install_button()
+        firefox.browser.wait_for_notification(
+            notifications.AddOnInstallComplete
+        ).close()
+        assert experiments.welcome_popup.is_title_displayed()
 
 
 @pytest.mark.nondestructive
@@ -30,7 +37,11 @@ def test_enable_experiment(base_url, selenium, firefox, notifications):
                          'value': datetime.datetime.now().isoformat(),
                          'max_age': 120,
                          'domain': 'example.com'})
-    experiments = page.header.click_install_button()
+    if not page.featured.is_displayed:
+        experiments = page.header.click_install_button()
+    else:
+        experiments = page.featured.click_install_button()
+
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
 
