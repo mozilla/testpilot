@@ -28,8 +28,8 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
 
     return (
       <div className="modal-container" tabIndex="0"
-           ref={modalContainer => { this.modalContainer = modalContainer; }}
-           onKeyDown={e => this.handleKeyDown(e)}>
+        ref={modalContainer => { this.modalContainer = modalContainer; }}
+        onKeyDown={e => this.handleKeyDown(e)}>
         <div className={classnames("modal", "step-modal")}>
           <header className="modal-header-wrapper">
             <Localized id="experimentPreFeedbackTitle" $title={experiment.title}>
@@ -37,21 +37,21 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
             </Localized>
             <div className="modal-cancel" onClick={e => this.cancel(e)}/>
           </header>
-            <div className="step-content">
-              <div className="step-image">
-                <img src={experiment.pre_feedback_image} />
-                <div className="fade" />
-              </div>
-              <div className="step-text">
-                {parser(experiment.pre_feedback_copy)}
-              </div>
-              <div className="step-text">
-                <Localized id="experimentPreFeedbackLinkCopy" $title={experiment.title}>
-                  <a onClick={e => this.feedback(e, e.target.getAttribute("href"))}
-                     href={surveyURL}>Give feedback about the {experiment.title} experiment</a>
-                </Localized>
-              </div>
+          <div className="step-content">
+            <div className="step-image">
+              <img src={experiment.pre_feedback_image} />
+              <div className="fade" />
             </div>
+            <div className="step-text">
+              {parser(experiment.pre_feedback_copy)}
+            </div>
+            <div className="step-text">
+              <Localized id="experimentPreFeedbackLinkCopy" $title={experiment.title}>
+                <a onClick={e => this.feedback(e, e.target.getAttribute("href"))}
+                   href={surveyURL}>Give feedback about the {experiment.title} experiment</a>
+              </Localized>
+            </div>
+          </div>
         </div>
       </div>
     );

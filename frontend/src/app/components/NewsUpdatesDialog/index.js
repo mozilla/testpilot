@@ -47,31 +47,33 @@ export default class NewsUpdatesDialog extends React.Component {
 
   renderUpdate = (newsUpdates: Array<Object>, currentStep: number) => {
     return newsUpdates.map((u, idx) => (idx === currentStep) && (
-        <div key={idx} className='step-content'>
-          {u.image && <div className='step-image'><img src={u.image} /></div>}
-          {u.content &&
-            <div className='step-text'>
-              <h2 className='lighter step-title'>{u.title}</h2>
-              <p className='published-date small-font'>{moment(new Date(u.published)).format("dddd, MMMM Do YYYY")}</p>
-              <p>{u.content}</p>
-              {u.link && (<Localized id='experimentCardLearnMore'>
-                            <a className="learn" href={u.link}>Learn more</a>
-                          </Localized>)}
-              {u.link && (<br/>)}
-              {u.experimentSlug &&
-                 <Localized id='viewExperimentPage'>
-                   <a href={`experiments/${u.experimentSlug}`} className='button default'>View Experiment Page</a>
-                  </Localized>}
-            </div>}
-        </div>
+      <div key={idx} className='step-content'>
+        {u.image && <div className='step-image'><img src={u.image} /></div>}
+        {u.content &&
+          <div className='step-text'>
+            <h2 className='lighter step-title'>{u.title}</h2>
+            <p className='published-date small-font'>{moment(new Date(u.published)).format("dddd, MMMM Do YYYY")}</p>
+            <p>{u.content}</p>
+            {u.link && (<Localized id='experimentCardLearnMore'>
+              <a className="learn" href={u.link}>Learn more</a>
+            </Localized>)}
+            {u.link && (<br/>)}
+            {u.experimentSlug &&
+              <Localized id='viewExperimentPage'>
+              <a href={`experiments/${u.experimentSlug}`} className='button default'>View Experiment Page</a>
+              </Localized>
+            }
+          </div>
+        }
+      </div>
     ));
   };
 
   renderHeaderTitle = (newsUpdates: Array<Object>, currentStep: number) => {
     const { isExperimentEnabled } = this.props;
     const defaultNewsUpdateTitle = (<Localized id='nonExperimentDialogHeaderLink'>
-                                      <h3 className='modal-header lighter'>Test Pilot</h3>
-                                    </Localized>);
+      <h3 className='modal-header lighter'>Test Pilot</h3>
+    </Localized>);
 
     return newsUpdates.map((u, idx) => (idx === currentStep) && (u.experimentSlug ?
        (<h3 className={cn("modal-header lighter", {

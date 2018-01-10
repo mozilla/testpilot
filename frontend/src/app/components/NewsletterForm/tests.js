@@ -1,4 +1,4 @@
- /* global describe, it */
+/* global describe, it */
 import React from "react";
 import { expect } from "chai";
 import sinon from "sinon";

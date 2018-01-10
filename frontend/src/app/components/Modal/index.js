@@ -25,13 +25,13 @@ export default class Modal extends React.Component {
     const { headerTitle, wrapperClass, onCancel, children } = this.props;
 
     const handleKeyDown = this.props.handleKeyDown ?
-          this.props.handleKeyDown.bind(this) :
-          this.handleKeyDown.bind(this);
+      this.props.handleKeyDown.bind(this) :
+      this.handleKeyDown.bind(this);
 
     return (
       <div className="modal-container" tabIndex="0"
-           ref={modalContainer => { this.modalContainer = modalContainer; }}
-           onKeyDown={e => handleKeyDown(e)}>
+        ref={modalContainer => { this.modalContainer = modalContainer; }}
+        onKeyDown={e => handleKeyDown(e)}>
         <div className={`modal ${wrapperClass}`}>
           {!headerTitle && <div className="modal-cancel floating" onClick={e => onCancel(e)}/>}
           {headerTitle && <header className="modal-header-wrapper">

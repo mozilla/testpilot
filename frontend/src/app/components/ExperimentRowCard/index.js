@@ -72,26 +72,26 @@ export default class ExperimentRowCard extends React.Component {
         <div className={`experiment-icon-wrapper-${experiment.slug} experiment-icon-wrapper`}>
           <div className={`experiment-icon-${experiment.slug} experiment-icon`}></div>
         </div>
-      <div className="experiment-information">
-        <header>
-          <div>
-            <h3>{title}</h3>
-            {subtitle && <Localized id={this.l10nId("subtitle")}>
-              <h4 className="subtitle">{subtitle}</h4>
-            </Localized>}
-            {this.statusMsg() &&
-              <h4>{this.statusMsg()}</h4>
-            }
-          </div>
-          {this.renderFeedbackButton()}
-        </header>
-        <ExperimentPlatforms experiment={experiment} />
-        <Localized id={this.l10nId("description")}>
-          <p>{description}</p>
-        </Localized>
-        { this.renderManageButton(enabled, hasAddon, isCompleted, isFirefox, isMinFirefox) }
-      </div>
-    </a>
+        <div className="experiment-information">
+          <header>
+            <div>
+              <h3>{title}</h3>
+              {subtitle && <Localized id={this.l10nId("subtitle")}>
+                <h4 className="subtitle">{subtitle}</h4>
+              </Localized>}
+              {this.statusMsg() &&
+                <h4>{this.statusMsg()}</h4>
+              }
+            </div>
+            {this.renderFeedbackButton()}
+          </header>
+          <ExperimentPlatforms experiment={experiment} />
+          <Localized id={this.l10nId("description")}>
+            <p>{description}</p>
+          </Localized>
+          { this.renderManageButton(enabled, hasAddon, isCompleted, isFirefox, isMinFirefox) }
+        </div>
+      </a>
     );
   }
 
@@ -105,9 +105,9 @@ export default class ExperimentRowCard extends React.Component {
       <div>
         <Localized id="experimentCardFeedback">
           <a onClick={() => this.handleFeedback()}
-             href={surveyURL} target="_blank" rel="noopener noreferrer"
-             className="experiment-feedback">
-             Feedback
+            href={surveyURL} target="_blank" rel="noopener noreferrer"
+            className="experiment-feedback">
+            Feedback
           </a>
         </Localized>
       </div>
@@ -124,7 +124,7 @@ export default class ExperimentRowCard extends React.Component {
   }
 
   renderManageButton(enabled: Boolean, hasAddon: Boolean, isCompleted: Boolean,
-                     isFirefox: Boolean, isMinFirefox: Boolean) {
+    isFirefox: Boolean, isMinFirefox: Boolean) {
     if (enabled && hasAddon) {
       return (
         <Localized id="experimentCardManage">

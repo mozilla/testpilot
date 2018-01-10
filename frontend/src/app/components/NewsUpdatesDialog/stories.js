@@ -62,7 +62,7 @@ const experimentUpdateNoLink = mkupdate(
 storiesOf("NewsUpdatesDialog", module)
   .addDecorator(withKnobs)
   .addDecorator(story =>
-     <div className="content-wrapper" onClick={action("click")}>
+    <div className="content-wrapper" onClick={action("click")}>
       <div className="stars" />
       <LayoutWrapper flexModifier="card-list">
         {story()}

@@ -36,17 +36,17 @@ export class Update extends React.Component {
     const categoryTitleL10nID = experiment ? null : "siteName";
     const iconClassName = experiment
       ? `experiment-icon-${experiment.slug}`
-          : "news-update-test-pilot-icon";
+      : "news-update-test-pilot-icon";
     const iconWrapperClassName = experiment
       ? `experiment-icon-wrapper-${experiment.slug}`
-          : "news-update-test-pilot-icon-wrapper";
+      : "news-update-test-pilot-icon-wrapper";
 
     const isNew = experiment ? new Date(experiment.published) < twoWeeksAgo : false;
 
     return (
       <a className={classnames("update", { "has-link": !!link })}
-          href={link}
-          onClick={() => this.handleLinkClick()}>
+        href={link}
+        onClick={() => this.handleLinkClick()}>
         <div className={classnames(iconWrapperClassName, "update-experiment-icon-wrapper")}>
           <div className={classnames(iconClassName, "update-experiment-icon")} style={ { backgroundColor: gradient_stop } }/>
         </div>
@@ -54,15 +54,15 @@ export class Update extends React.Component {
           <header>
             {experiment
               ? <Localized id={categoryTitleL10nID}>
-                  <h2>
-                    {categoryTitle}
-                  </h2>
-                </Localized>
+                <h2>
+                  {categoryTitle}
+                </h2>
+              </Localized>
               : <Localized id={newsUpdateL10nId(update, "title")}>
-                  <h2 className="update-title">
-                    {title}
-                  </h2>
-                </Localized>}
+                <h2 className="update-title">
+                  {title}
+                </h2>
+              </Localized>}
             <p className="up-date">
               {prettyDate(published || created)}
             </p>
@@ -73,10 +73,10 @@ export class Update extends React.Component {
           </header>
           {experiment
             ? <Localized id={newsUpdateL10nId(update, "title")}>
-                <h4 className="update-title">
-                  {title}
-                </h4>
-              </Localized>
+              <h4 className="update-title">
+                {title}
+              </h4>
+            </Localized>
             : null}
           <Localized id={newsUpdateL10nId(update, "content")}>
             <p className="summary">
@@ -154,8 +154,8 @@ export default class UpdateList extends React.Component {
     return (
       <div className="update-list">
         {!hideHeader && <Localized id="latestUpdatesTitle">
-           <h1 className="update-list-heading">Latest Updates</h1>
-         </Localized>}
+          <h1 className="update-list-heading">Latest Updates</h1>
+        </Localized>}
         <LayoutWrapper flexModifier="column-center">
           {shownNewsUpdates.map(update =>
             <Update
@@ -170,7 +170,7 @@ export default class UpdateList extends React.Component {
           <LayoutWrapper flexModifier="card-list">
             <Localized id="showMoreNewsTitle">
               <div className={classnames(["button", "more-news", "outline"])}
-                  onClick={() => this.handleShowMoreNews()}>
+                onClick={() => this.handleShowMoreNews()}>
                 Show Past News
               </div>
             </Localized>

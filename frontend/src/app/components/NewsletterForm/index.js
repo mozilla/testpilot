@@ -83,7 +83,7 @@ export default class NewsletterForm extends React.Component {
 
     return <div>
       <input name={fieldName} id={fieldName} type="checkbox" checked={this.props.privacy} required
-             onChange={this.handlePrivacyClick} onClick={this.handlePrivacyClick} />
+        onChange={this.handlePrivacyClick} onClick={this.handlePrivacyClick} />
       <label className={this.makeRevealedClassNames()} htmlFor={fieldName}>
         { this.state.privacyNote ? <Localized id="newsletterFormPrivacyAgreementRequired">
           <span>
@@ -111,7 +111,7 @@ export default class NewsletterForm extends React.Component {
     }
     return <Localized id='newsletterFormSubmitButton'>
       <button className={classnames("button", "large", this.props.isModal ? "default" : "outline")}
-              ref={this.props.buttonRef}>Sign Up Now</button>
+        ref={this.props.buttonRef}>Sign Up Now</button>
     </Localized>;
   }
 
@@ -140,7 +140,7 @@ export default class NewsletterForm extends React.Component {
   render() {
     return (
       <form className={ classnames("newsletter-form", { "newsletter-form-modal": this.props.isModal }) }
-            onSubmit={this.handleSubmit} data-no-csrf>
+        onSubmit={this.handleSubmit} data-no-csrf>
         {this.renderEmailField()}
         {this.renderPrivacyField()}
         {this.renderSubmitButton()}

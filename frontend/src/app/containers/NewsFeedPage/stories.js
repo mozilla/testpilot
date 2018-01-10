@@ -17,11 +17,11 @@ const baseProps = {
 storiesOf("NewsFeedPage", module)
   .addDecorator(withKnobs)
   .addDecorator(story =>
-     <div className="blue" style={{ padding: "10px" }} onClick={action("click")}>
-       <div className="stars" />
-       <LayoutWrapper flexModifier="card-list">
-         {story()}
-       </LayoutWrapper>
-     </div>
-   )
+    <div className="blue" style={{ padding: "10px" }} onClick={action("click")}>
+     <div className="stars" />
+     <LayoutWrapper flexModifier="card-list">
+       {story()}
+     </LayoutWrapper>
+    </div>
+  )
   .add("default", () => <NewsFeedPage {...baseProps} />);

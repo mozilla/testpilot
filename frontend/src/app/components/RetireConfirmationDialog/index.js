@@ -25,8 +25,8 @@ export default class RetireConfirmationDialog extends React.Component {
   render() {
     return (
       <div className="modal-container" tabIndex="0"
-           ref={modalContainer => { this.modalContainer = modalContainer; }}
-           onKeyDown={e => this.handleKeyDown(e)}>
+        ref={modalContainer => { this.modalContainer = modalContainer; }}
+        onKeyDown={e => this.handleKeyDown(e)}>
         <div id="retire-dialog-modal" className="modal feedback-modal modal-bounce-in uninstall-modal">
           <header className="modal-header-wrapper warning-modal">
             <Localized id="retireDialogTitle">
