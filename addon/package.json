@@ -51,7 +51,7 @@
     "watch": "cross-env NODE_ENV=development webpack --watch",
     "package": "cross-env NODE_ENV=production webpack",
     "package:dev": "cross-env NODE_ENV=development webpack",
-    "lint": "eslint -c ../.eslintrc src || echo \"not erroring on lint until lint is in sync with mozilla-central config\"",
+    "lint": "eslint -c ../.eslintrc src",
     "test": "mocha --require babel-register --require ./test/test-setup.js --recursive",
     "test:watch": "npm test -- --watch"
   }

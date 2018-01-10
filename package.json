@@ -146,7 +146,7 @@
     "docs": "doctoc README.md && doctoc addon/README.md",
     "lint": "npm-run-all lint:*",
     "lint:styles": "gulp styles-lint",
-    "lint:js": "eslint ./gulpfile.babel.js ./webpack.config.js ./frontend/{src,tests}/**/*.{js,jsx} || echo \"not erroring on lint until lint is in sync with mozilla-central config\"",
+    "lint:js": "eslint ./gulpfile.babel.js ./webpack.config.js ./frontend/{src,tests}/**/*.{js,jsx}",
     "test": "cd frontend && mocha --require babel-register --require test-setup.js --recursive 'test' 'src/**/tests.js'",
     "flow": "flow frontend",
     "l10n:extract": "gulp content-extract-strings",

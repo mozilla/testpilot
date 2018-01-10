@@ -34,7 +34,7 @@ export default class View extends React.Component {
      * { '$$typeof': Symbol(react.element), type: 'div' }
      */
     return (
-      React.Component.isPrototypeOf.call(React.Component, element) || (
+      React.Component.isPrototypeOf(element) || (
         element.$$typeof === Symbol.for("react.element") &&
         DOMFactories.indexOf(element.type) === -1
       )

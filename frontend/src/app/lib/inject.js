@@ -23,8 +23,8 @@ export default function inject(name, component, callback) {
         node.remove();
       }
 
-      node = document.createElement('div');
-      node.id = 'page-container';
+      node = document.createElement("div");
+      node.id = "page-container";
       document.body.appendChild(node);
 
       ReactDOM.render(provider, node);
