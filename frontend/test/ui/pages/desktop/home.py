@@ -22,6 +22,12 @@ class Home(Base):
     def signup_footer(self):
         return self.SignUpFooter(self)
 
+    def bottom_install_button(self):
+        els = self.find_elements(By.CLASS_NAME, 'main-install__button')
+        els[-1].click()
+        from .experiments import Experiments
+        return Experiments(self.selenium, self.base_url)
+
     class Header(Region):
         """Represents the Header portion of the page"""
         _root_locator = (By.CLASS_NAME, 'banner')
@@ -36,7 +42,11 @@ class Home(Base):
         @property
         def is_install_button_displayed(self):
             """Return if the testplot addon install button is displayed."""
-            return self.find_element(*self._install_locator).is_displayed()
+            try:
+                self.find_element(*self._install_locator).is_displayed()
+            except Exception:
+                return False
+            return True
 
         def click_install_button(self):
             """Clicks the button to install the testpilot addon.
