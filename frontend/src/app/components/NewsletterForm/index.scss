@@ -37,34 +37,43 @@
     margin-right: $grid-unit * .25;
   }
 
-  input[type='checkbox'] + label {
-    @include respond-to('small') {
-      margin-left: 0;
-    }
+  .newsletter-form__check {
+    background: url('./img/checks.svg') no-repeat left;
+    background-position: 0 0;
+    background-size: 96px 24px;
+    flex: 0 0 24px;
+    height: 24px;
+    margin-right: 10px;
+    overflow: hidden;
+  }
 
-    background: url('./img/unchecked.svg') no-repeat left;
-    background-size: 21px 21px;
-    line-height: 20px;
-    margin-left: 10px;
-    max-width: 360px;
-    padding-left: 32px;
-    text-align: left;
+  .input[type='checkbox'] + label {
+    @include flex-container(row, flex-start, center);
+    margin: 0 10px;
   }
 
   input[type='checkbox']:hover + label {
-    background: url('./img/unchecked-hover.svg') no-repeat left;
+    .newsletter-form__check {
+      background-position: -24px 0;
+    }
   }
 
   input[type='checkbox']:checked + label {
-    background: url('./img/checked.svg') no-repeat left;
+    .newsletter-form__check {
+      background-position: -48px 0;
+    }
   }
 
   input[type='checkbox']:checked:hover + label {
-    background: url('./img/checked-hover.svg') no-repeat left;
+    .newsletter-form__check {
+      background-position: -72px 0;
+    }
   }
 
   label {
     font-size: $font-unit;
+    line-height: 20px;
+    text-align: left;
 
     a {
       text-decoration: underline;
@@ -74,7 +83,7 @@
   .revealed-field {
     @include flex-container(row, center, center);
     height: 0;
-    margin: 0 auto $grid-unit * .5;
+    margin: 0 $grid-unit * .5 $grid-unit * .5;
     transform: scaleY(0);
     transition: transform 125ms;
     width: 100%;

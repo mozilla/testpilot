@@ -1,4 +1,5 @@
 from datetime import datetime
+import os
 
 import pytest
 import requests
@@ -88,3 +89,13 @@ def test_incomplete_email(base_url, selenium):
     assert page.signup_footer.is_stay_informed_displayed
     page.signup_footer.sign_up('test')
     assert page.signup_footer.is_stay_informed_displayed
+
+
+@pytest.mark.skipif(os.environ.get('SKIP_INSTALL_TEST') is not None,
+                    reason='Skip install on Release and Beta Firefox.')
+@pytest.mark.nondestructive
+def test_install_button_not_shown_when_ext_is_installed(
+        base_url, selenium, install_testpilot):
+    page = Home(selenium, base_url).open()
+    page.wait_for_page_to_load()
+    assert page.header.is_install_button_displayed is False
