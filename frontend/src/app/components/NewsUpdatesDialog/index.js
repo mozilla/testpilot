@@ -60,7 +60,7 @@ export default class NewsUpdatesDialog extends React.Component {
             {u.link && (<br/>)}
             {u.experimentSlug &&
               <Localized id='viewExperimentPage'>
-              <a href={`experiments/${u.experimentSlug}`} className='button default'>View Experiment Page</a>
+                <a href={`experiments/${u.experimentSlug}`} className='button default'>View Experiment Page</a>
               </Localized>
             }
           </div>
@@ -76,24 +76,24 @@ export default class NewsUpdatesDialog extends React.Component {
     </Localized>);
 
     return newsUpdates.map((u, idx) => (idx === currentStep) && (u.experimentSlug ?
-       (<h3 className={cn("modal-header lighter", {
-         enabled: isExperimentEnabled({ addon_id: `@${u.experimentSlug}` })
-       })}>{u.experimentSlug.split("-").join(" ")}</h3>) : (defaultNewsUpdateTitle)
+      (<h3 className={cn("modal-header lighter", {
+        enabled: isExperimentEnabled({ addon_id: `@${u.experimentSlug}` })
+      })}>{u.experimentSlug.split("-").join(" ")}</h3>) : (defaultNewsUpdateTitle)
     ));
   };
 
   render() {
     return (<StepModal
-              steps={this.props.newsUpdates}
-              wrapperClass={"news-updates-modal"}
-              onCancel={this.onCancel}
-              onComplete={this.onComplete}
-              renderStep={this.renderUpdate}
-              renderHeaderTitle={this.renderHeaderTitle}
-              stepNextPing={this.stepNextPing}
-              stepBackPing={this.stepBackPing}
-              stepToDotPing={this.stepToDotPing}
-            />);
+      steps={this.props.newsUpdates}
+      wrapperClass={"news-updates-modal"}
+      onCancel={this.onCancel}
+      onComplete={this.onComplete}
+      renderStep={this.renderUpdate}
+      renderHeaderTitle={this.renderHeaderTitle}
+      stepNextPing={this.stepNextPing}
+      stepBackPing={this.stepBackPing}
+      stepToDotPing={this.stepToDotPing}
+    />);
   }
 
   onCancel = (ev: Object) => {

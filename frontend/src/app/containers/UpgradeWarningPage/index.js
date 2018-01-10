@@ -68,8 +68,8 @@ export default class UpgradeWarning extends React.Component {
               our documentation</a> for details.</p></LocalizedHtml>);
     } else if (!isProdHost) {
       copy = (<LocalizedHtml id="warningBadHostnameDetail">
-              <p>The Test Pilot site may only be accessed from testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, or example.com:8000. Please see <a href="https://github.com/mozilla/testpilot/blob/master/docs/development/quickstart.md">
-              our documentation</a> for details.</p></LocalizedHtml>);
+        <p>The Test Pilot site may only be accessed from testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, or example.com:8000. Please see <a href="https://github.com/mozilla/testpilot/blob/master/docs/development/quickstart.md">
+          our documentation</a> for details.</p></LocalizedHtml>);
     }
 
     return copy;

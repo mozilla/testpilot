@@ -32,12 +32,12 @@ storiesOf("Banner", module)
   )
   .add("Condensed Banner", () =>
     <Banner condensed={true}>
-    <LayoutWrapper flexModifier="row-between-reverse">
+      <LayoutWrapper flexModifier="row-between-reverse">
         <h2 className="banner__title">
           Welcome to Test Pilot!
         </h2>
-      <Copter small={true} />
-    </LayoutWrapper>
+        <Copter small={true} />
+      </LayoutWrapper>
     </Banner>
   );
 

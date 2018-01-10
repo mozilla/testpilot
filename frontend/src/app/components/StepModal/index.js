@@ -58,18 +58,18 @@ export default class StepModal extends React.Component {
 
     return (<div className="step-actions">
       <div onClick={() => this.stepBack()}
-           className={classnames("step-back", { hidden: atStart })}>
+        className={classnames("step-back", { hidden: atStart })}>
         <div className='step-filler'/>
       </div>
 
       <div onClick={() => this.stepNext()}
-           className={classnames("step-next", { "no-display": atEnd })}>
+        className={classnames("step-next", { "no-display": atEnd })}>
         <div className='step-filler'/>
       </div>
 
       <Localized id="stepDoneButton">
         <div onClick={e => this.complete(e)}
-             className={classnames("step-done", { "no-display": !atEnd })}>Done</div>
+          className={classnames("step-done", { "no-display": !atEnd })}>Done</div>
       </Localized>
     </div>);
   }

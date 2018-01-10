@@ -18,4 +18,4 @@ if (typeof(ga) !== 'undefined') {
     'look at our privacy policy to see how we handle your data.'
   );
 }
-/*eslint-enable*/
+/* eslint-enable */

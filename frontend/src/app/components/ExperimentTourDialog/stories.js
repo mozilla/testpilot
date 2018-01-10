@@ -93,12 +93,12 @@ const experiment = {
 storiesOf("components/ExperimentTourDialog", module)
   .add("base state", () =>
     <ExperimentTourDialog
-    {...{
-      experiment,
-      isExperimentEnabled: () => true,
-      onCancel: () => {},
-      onComplete: () => {},
-      sendToGA: () => {}
-    }}
+      {...{
+        experiment,
+        isExperimentEnabled: () => true,
+        onCancel: () => {},
+        onComplete: () => {},
+        sendToGA: () => {}
+      }}
     />
   );

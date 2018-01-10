@@ -86,7 +86,7 @@ export default class MainInstallButton extends React.Component {
   renderEnableExperimentButton(title: string) {
     return (
       <div className="main-install__enable">
-       <LocalizedHtml id="oneClickInstallMajorCta" $title={title}>
+        <LocalizedHtml id="oneClickInstallMajorCta" $title={title}>
           <span className="main-install__minor-cta">Enable {title}</span>
         </LocalizedHtml>
       </div>
@@ -150,14 +150,14 @@ export default class MainInstallButton extends React.Component {
     return (
       <div>
         {!isFirefox ? (
-            <Localized id="landingDownloadFirefoxDesc">
-              <span className="main-install__available">(Test Pilot is available for Firefox on Windows, OS X and Linux)</span>
-            </Localized>
-          ) : (
-            <Localized id="landingUpgradeDesc2" $version={config.minFirefoxVersion}>
-              <span className="parens">Test Pilot requires Firefox { config.minFirefoxVersion } or higher.</span>
-            </Localized>
-          )
+          <Localized id="landingDownloadFirefoxDesc">
+            <span className="main-install__available">(Test Pilot is available for Firefox on Windows, OS X and Linux)</span>
+          </Localized>
+        ) : (
+          <Localized id="landingUpgradeDesc2" $version={config.minFirefoxVersion}>
+            <span className="parens">Test Pilot requires Firefox { config.minFirefoxVersion } or higher.</span>
+          </Localized>
+        )
         }
         {!isMobile && <a href="https://www.mozilla.org/firefox" className="button primary main-install__download">
           <div className="main-install__icon">
@@ -165,14 +165,14 @@ export default class MainInstallButton extends React.Component {
           </div>
           <div className="main-install__copy">
             {(!isFirefox) ? (
-                <Localized id="landingDownloadFirefoxTitle">
-                  <div className="main-install__title">Firefox</div>
-                </Localized>
-              ) : (
-                <Localized id="landingUpgradeFirefoxTitle">
-                  <div className="main-install__title">Upgrade Firefox</div>
-                </Localized>
-              )
+              <Localized id="landingDownloadFirefoxTitle">
+                <div className="main-install__title">Firefox</div>
+              </Localized>
+            ) : (
+              <Localized id="landingUpgradeFirefoxTitle">
+                <div className="main-install__title">Upgrade Firefox</div>
+              </Localized>
+            )
             }
             <Localized id="landingDownloadFirefoxSubTitle">
               <div className="main-install__description">Free Download</div>

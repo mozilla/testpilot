@@ -48,7 +48,7 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
             <div className="step-text">
               <Localized id="experimentPreFeedbackLinkCopy" $title={experiment.title}>
                 <a onClick={e => this.feedback(e, e.target.getAttribute("href"))}
-                   href={surveyURL}>Give feedback about the {experiment.title} experiment</a>
+                  href={surveyURL}>Give feedback about the {experiment.title} experiment</a>
               </Localized>
             </div>
           </div>
