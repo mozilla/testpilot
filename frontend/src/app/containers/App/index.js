@@ -157,7 +157,7 @@ class App extends Component {
       this.props.setLocalizations(langs);
       const staticNode = document.getElementById("static-root");
       if (staticNode) {
-        staticNode.parentNode.removeChild(staticNode);
+        staticNode.remove();
       }
     });
   }
