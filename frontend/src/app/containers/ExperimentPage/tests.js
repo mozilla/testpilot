@@ -761,7 +761,7 @@ describe("app/containers/ExperimentPage/ExperimentPreFeedbackDialog", () => {
     };
     subject = shallow(
       <ExperimentPreFeedbackDialog experiment={experiment} surveyURL={surveyURL}
-                                   onCancel={onCancel} sendToGA={sendToGA} />
+        onCancel={onCancel} sendToGA={sendToGA} />
     );
   });
 

@@ -56,25 +56,25 @@ export default class HomePageNoAddon extends React.Component {
       </LayoutWrapper>
 
       {!featuredExperiment && <MainInstallButton {...this.props}
-                                                 eventCategory="HomePage Interactions"
-                                                 eventLabel="Install the Add-on" />}
+        eventCategory="HomePage Interactions"
+        eventLabel="Install the Add-on" />}
     </Banner>;
 
     const featuredSection = featuredExperiment ? (<Banner background={true}>
       <LayoutWrapper flexModifier="row-between-breaking">
         <FeaturedExperiment {...this.props}
-                            experiment={featuredExperiment}
-                            eventCategory="HomePage Interactions"
-                            enabled={false} />
+          experiment={featuredExperiment}
+          eventCategory="HomePage Interactions"
+          enabled={false} />
       </LayoutWrapper>
     </Banner>) : null;
 
     const headerMessage = !featuredExperiment ? (<Localized id="experimentListHeader">
       <h1 className="emphasis card-list-heading">Pick your experiments</h1>
     </Localized>) :
-    (<Localized id="experimentListHeaderWithFeatured">
-      <h1 className="emphasis card-list-heading">Or try other experiments</h1>
-    </Localized>);
+      (<Localized id="experimentListHeaderWithFeatured">
+        <h1 className="emphasis card-list-heading">Or try other experiments</h1>
+      </Localized>);
 
     return (
       <section id="landing-page">

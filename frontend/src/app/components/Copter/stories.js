@@ -11,8 +11,8 @@ storiesOf("Copter", module)
     <div className="blue storybook-center" onClick={action("click")}>
       <div className="stars" />
       <LayoutWrapper flexModifier="column-center">
-          {story()}
-        </LayoutWrapper>
+        {story()}
+      </LayoutWrapper>
     </div>
   )
   .add("normal", () =>

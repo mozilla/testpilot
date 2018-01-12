@@ -59,14 +59,14 @@ export default class Header extends React.Component {
   renderHeaderMenu() {
     if (this.shouldRenderSettingsMenu()) {
       return (
-          <Settings
-            close={this.close.bind(this)}
-            retire={this.retire.bind(this)}
-            toggleSettings={this.toggleSettings.bind(this)}
-            settingsClick={this.settingsClick.bind(this)}
-            showSettingsMenu={this.showSettingsMenu.bind(this)}
-            {...this.props}
-           />
+        <Settings
+          close={this.close.bind(this)}
+          retire={this.retire.bind(this)}
+          toggleSettings={this.toggleSettings.bind(this)}
+          settingsClick={this.settingsClick.bind(this)}
+          showSettingsMenu={this.showSettingsMenu.bind(this)}
+          {...this.props}
+        />
       );
     }
     return null;
@@ -121,15 +121,15 @@ export default class Header extends React.Component {
                 <a href={ this.setHeaderLinkPath() } className="wordmark">Firefox Test Pilot</a>
               </Localized>
             </h1>
-              <div className="header-links">
-                <Localized id="headerLinkNews">
-                  <a className={classnames("news-link", { active: newsPageActive })} href="/news">News Feed</a>
-                </Localized>
-                <Localized id="headerLinkBlog">
-                  <a className="blog-link" onClick={this.blogLinkClick.bind(this)} href="https://medium.com/firefox-test-pilot" target="_blank" rel="noopener noreferrer">Blog</a>
-                </Localized>
-                {this.renderHeaderMenu()}
-              </div>
+            <div className="header-links">
+              <Localized id="headerLinkNews">
+                <a className={classnames("news-link", { active: newsPageActive })} href="/news">News Feed</a>
+              </Localized>
+              <Localized id="headerLinkBlog">
+                <a className="blog-link" onClick={this.blogLinkClick.bind(this)} href="https://medium.com/firefox-test-pilot" target="_blank" rel="noopener noreferrer">Blog</a>
+              </Localized>
+              {this.renderHeaderMenu()}
+            </div>
           </LayoutWrapper>
         </header>
       </div>

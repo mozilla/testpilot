@@ -24,8 +24,8 @@ export default class ExperimentEolDialog extends React.Component {
     const { title } = this.props;
     return (
       <div className="modal-container" tabIndex="0"
-           ref={modalContainer => { this.modalContainer = modalContainer; }}
-           onKeyDown={e => this.handleKeyDown(e)}>
+        ref={modalContainer => { this.modalContainer = modalContainer; }}
+        onKeyDown={e => this.handleKeyDown(e)}>
         <div id="retire-dialog-modal" className="modal feedback-modal modal-bounce-in">
           <header className="modal-header-wrapper warning-modal">
             <Localized id="disableHeader">

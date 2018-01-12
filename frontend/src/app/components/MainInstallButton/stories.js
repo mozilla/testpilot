@@ -29,22 +29,22 @@ storiesOf("MainInstallButton", module)
   .add("Firefox is not up to date", () =>
     <LayoutWrapper flexModifier="column-center">
       <MainInstallButton { ...{ ...baseProps, isMinFirefox: false }} />
-     </LayoutWrapper>
+    </LayoutWrapper>
   )
   .add("Mobile Browser", () =>
     <LayoutWrapper flexModifier="column-center">
       <MainInstallButton  { ...{ ...baseProps, isMobile: true }} />
-     </LayoutWrapper>
+    </LayoutWrapper>
   )
   .add("Non-Firefox desktop browser", () =>
     <LayoutWrapper flexModifier="column-center">
       <MainInstallButton { ...{ ...baseProps, isMinFirefox: null, isFirefox: false }} />
-     </LayoutWrapper>
+    </LayoutWrapper>
   )
   .add("Is installing", () =>
     <LayoutWrapper flexModifier="column-center">
       <MainInstallButton { ...{ ...baseProps, isInstalling: true }} />
-     </LayoutWrapper>
+    </LayoutWrapper>
   )
   .add("Is An Experiment Page", () =>
     <LayoutWrapper>

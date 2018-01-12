@@ -55,9 +55,9 @@ export default class Warning extends React.Component {
   renderChildren() {
     if (this.props.children) {
       return (
-      <main>
-        { this.props.children }
-      </main>
+        <main>
+          { this.props.children }
+        </main>
       );
     }
     return null;

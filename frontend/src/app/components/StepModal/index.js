@@ -48,8 +48,8 @@ export default class StepModal extends React.Component {
     });
 
     return (<div className="fade dot-wrapper">
-              <div className="dot-row">{dots}</div>
-            </div>);
+      <div className="dot-row">{dots}</div>
+    </div>);
   }
 
   renderStepActions(steps: Array<any>, currentStep: number) {
@@ -57,21 +57,21 @@ export default class StepModal extends React.Component {
     const atEnd   = (currentStep === steps.length - 1);
 
     return (<div className="step-actions">
-              <div onClick={() => this.stepBack()}
-                   className={classnames("step-back", { hidden: atStart })}>
-                <div className='step-filler'/>
-              </div>
+      <div onClick={() => this.stepBack()}
+        className={classnames("step-back", { hidden: atStart })}>
+        <div className='step-filler'/>
+      </div>
 
-              <div onClick={() => this.stepNext()}
-                   className={classnames("step-next", { "no-display": atEnd })}>
-                <div className='step-filler'/>
-              </div>
+      <div onClick={() => this.stepNext()}
+        className={classnames("step-next", { "no-display": atEnd })}>
+        <div className='step-filler'/>
+      </div>
 
-              <Localized id="stepDoneButton">
-                <div onClick={e => this.complete(e)}
-                     className={classnames("step-done", { "no-display": !atEnd })}>Done</div>
-              </Localized>
-            </div>);
+      <Localized id="stepDoneButton">
+        <div onClick={e => this.complete(e)}
+          className={classnames("step-done", { "no-display": !atEnd })}>Done</div>
+      </Localized>
+    </div>);
   }
 
   render() {
@@ -81,15 +81,15 @@ export default class StepModal extends React.Component {
 
     const stepEl = steps.map((step, idx) => (idx === currentStep) && (this.props.renderStep(steps, currentStep)));
     return (
-        <Modal {...this.props} wrapperClass={wrapperClass ? `${wrapperClass} step-modal` : "step-modal"}
-               onCancel={this.cancel.bind(this)}
-               onComplete={this.complete.bind(this)}
-               headerTitle={this.props.renderHeaderTitle(steps, currentStep)}
-               handleKeyDown={this.handleKeyDown.bind(this)}>
-          {stepEl}
-          {this.renderStepActions(steps, currentStep)}
-          {this.renderDots(steps, currentStep)}
-        </Modal>
+      <Modal {...this.props} wrapperClass={wrapperClass ? `${wrapperClass} step-modal` : "step-modal"}
+        onCancel={this.cancel.bind(this)}
+        onComplete={this.complete.bind(this)}
+        headerTitle={this.props.renderHeaderTitle(steps, currentStep)}
+        handleKeyDown={this.handleKeyDown.bind(this)}>
+        {stepEl}
+        {this.renderStepActions(steps, currentStep)}
+        {this.renderDots(steps, currentStep)}
+      </Modal>
     );
   }
 
@@ -125,7 +125,7 @@ export default class StepModal extends React.Component {
     const { currentStep } = this.state;
 
     const newStep = Math.min(currentStep + 1,
-                             this.props.steps.length - 1);
+      this.props.steps.length - 1);
     this.setState({ currentStep: newStep });
 
     this.props.stepNextPing(newStep);

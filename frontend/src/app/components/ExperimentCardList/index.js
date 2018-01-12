@@ -22,9 +22,9 @@ export default class ExperimentCardList extends React.Component {
       <LayoutWrapper flexModifier="card-list">
         {this.getExperiments().map((experiment, key) => (
           <ExperimentRowCard {...this.props}
-                             experiment={experiment}
-                             enabled={isExperimentEnabled(experiment)}
-                             key={key} />
+            experiment={experiment}
+            enabled={isExperimentEnabled(experiment)}
+            key={key} />
         ))}
       </LayoutWrapper>
     );

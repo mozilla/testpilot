@@ -29,7 +29,7 @@ export const onlyLaunchedExperimentSelector = createSelector(
 // If not in a dev environment, filters to only include launched experiments.
 export const launchedExperimentSelector = store => (
   store.browser.isDev ? allExperimentSelector(store) :
-                        onlyLaunchedExperimentSelector(store)
+    onlyLaunchedExperimentSelector(store)
 );
 
 
