@@ -10,7 +10,7 @@ export default class NotFoundPage extends React.Component {
   render() {
     return (
       <View centered={true} showNewsletterFooter={false} showFooter={false} showHeader={false}
-            {...this.props}>
+        {...this.props}>
         <LayoutWrapper flexModifier="column-center">
           <div id="four-oh-four" className="modal not-found-modal">
             <div className="not-found-icon"></div>

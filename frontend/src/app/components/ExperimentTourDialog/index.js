@@ -56,32 +56,32 @@ export default class ExperimentTourDialog extends React.Component {
 
   renderStep = (tourSteps: Array<Object>, currentStep: number) => {
     return tourSteps.map((step, idx) => (idx === currentStep) && (
-        <div key={idx} className="step-content">
-          <div className="step-image">
-            <img src={step.image} />
-          </div>
-          {step.copy &&
-            <div className="step-text">
-              <Localized id={this.l10nId(["tour_steps", idx, "copy"])}>
-                <p>{step.copy}</p>
-              </Localized>
-            </div>}
+      <div key={idx} className="step-content">
+        <div className="step-image">
+          <img src={step.image} />
         </div>
+        {step.copy &&
+          <div className="step-text">
+            <Localized id={this.l10nId(["tour_steps", idx, "copy"])}>
+              <p>{step.copy}</p>
+            </Localized>
+          </div>}
+      </div>
     ));
   };
 
   render() {
     return (<StepModal
-              steps={this.props.experiment.tour_steps || []}
-              onCancel={this.onCancel}
-              onComplete={this.onComplete}
-              renderStep={this.renderStep}
-              renderHeaderTitle={this.renderHeaderTitle}
-              wrapperClass={"tour-modal"}
-              stepToDotPing={this.stepToDotPing}
-              stepNextPing={this.stepNextPing}
-              stepBackPing={this.stepBackPing}
-            />);
+      steps={this.props.experiment.tour_steps || []}
+      onCancel={this.onCancel}
+      onComplete={this.onComplete}
+      renderStep={this.renderStep}
+      renderHeaderTitle={this.renderHeaderTitle}
+      wrapperClass={"tour-modal"}
+      stepToDotPing={this.stepToDotPing}
+      stepNextPing={this.stepNextPing}
+      stepBackPing={this.stepBackPing}
+    />);
   }
 
   onCancel = (ev: Object) => {

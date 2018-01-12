@@ -67,8 +67,7 @@ if (!IS_DEV) {
   plugins.push(
     new UglifyJSPlugin({
       parallel: true,
-      sourceMap: true,
-      compress: true
+      sourceMap: true
     })
   );
 }

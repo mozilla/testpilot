@@ -1,4 +1,4 @@
-/*eslint-disable*/
+/* eslint-disable */
 // HACK: Google Analytics lives here, because CSP won't let it live inline
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)
@@ -18,4 +18,4 @@ if (typeof(ga) !== 'undefined') {
     'look at our privacy policy to see how we handle your data.'
   );
 }
-/*eslint-enable*/
+/* eslint-enable */

@@ -39,7 +39,7 @@ export default class GraduatedNotice extends React.Component {
         </Localized>
         {graduatedText}
       </div>
-        {this.props.graduation_url ? <GraduatedNoticeButton graduation_url={this.props.graduation_url} /> : null}
+      {this.props.graduation_url ? <GraduatedNoticeButton graduation_url={this.props.graduation_url} /> : null}
     </div>;
   }
 }
