@@ -4,21 +4,21 @@
 
 /* global browser */
 
-import PubSub from 'pubsub-js';
+import PubSub from "pubsub-js";
 
-import { log } from './utils';
-import allTopics from '../../lib/topics';
+import { log } from "./utils";
+import allTopics from "../../lib/topics";
 
 const contentTopics = (...args) =>
-  allTopics('webExtension', 'content', ...args);
+  allTopics("webExtension", "content", ...args);
 
 export async function setupContent() {
-  log('setupContent');
+  log("setupContent");
   browser.runtime.onMessage.addListener(({ op, message }) => {
     PubSub.publish(contentTopics(op), message);
   });
   // TODO: Remove this? Experiment in summoning the pop-up for surveys
-  PubSub.subscribe(contentTopics('clearPopup'), () => {
-    browser.browserAction.setPopup({ popup: '' });
+  PubSub.subscribe(contentTopics("clearPopup"), () => {
+    browser.browserAction.setPopup({ popup: "" });
   });
 }

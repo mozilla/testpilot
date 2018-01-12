@@ -2,11 +2,11 @@
 
 # Development Quickstart
 
-Test Pilot uses Node.js [v6.x LTS](https://nodejs.org/dist/latest-v6.x/) for
+Test Pilot uses Node.js [v8.9.4](https://nodejs.org/dist/latest-v8.x/) for
 development. You may be able to get by using
 [the most current release](https://nodejs.org/en/download/current/), but
 earlier versions will definitely result in error messages and problems. [Node
-Version Manager](https://github.com/creationix/nvm/blob/master/README.markdown)
+Version Manager](https://github.com/creationix/nvm/blob/master/README.md)
 might come in handy for installing the right version of Node.js.
 
 ## First Things First

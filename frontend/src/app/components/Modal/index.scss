@@ -60,32 +60,32 @@
   }
 
   &.uninstall-modal {
-    & .retireIcon {
-      width: 65px;
-      height: 59px;
-      margin: 30px auto 25px;
+    & .retire-icon {
       background-image: url('../../../images/face-uninstall.svg');
       background-repeat: none;
+      height: 59px;
+      margin: 30px auto 25px;
+      width: 65px;
     }
   }
 
   &.retire-modal {
-    & .flyingIcon {
-      width: 65px;
-      height: 59px;
-      margin: 30px auto 25px;
+    & .flying-icon {
       background-image: url('../../../images/face-flying.svg');
       background-repeat: none;
+      height: 59px;
+      margin: 30px auto 25px;
+      width: 65px;
     }
   }
 
-  &.notFound-modal {
-    & .notFoundIcon {
-      width: 72px;
-      height: 68px;
-      margin: 50px auto 30px;
+  &.not-found-modal {
+    & .not-found-icon {
       background-image: url('../../../images/face-notfound.svg');
       background-repeat: none;
+      height: 68px;
+      margin: 50px auto 30px;
+      width: 72px;
     }
 
     & .title {
@@ -97,9 +97,9 @@
   .modal-header-wrapper {
     @include flex-container(row, center, center);
     background-color: $teal-70;
-    height: 80px;
     border-top-left-radius: $medium-border-radius;
     border-top-right-radius: $medium-border-radius;
+    height: 80px;
 
     &.warning-modal {
       background: $red-60;
@@ -112,9 +112,7 @@
     font-weight: 200;
     line-height: $font-unit * 4;
     margin: 0;
-    // padding: $grid-unit * .6;
     text-align: center;
-
   }
 
   .modal-cancel {
@@ -122,6 +120,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 24px 24px;
+    border-radius: $medium-border-radius;
     cursor: pointer;
     height: 30px;
     position: absolute;
@@ -129,7 +128,6 @@
     top: 25px;
     width: 30px;
     z-index: 1;
-    border-radius: $medium-border-radius;
 
     &:hover {
       background-color: $transparent-grey-10;
@@ -138,11 +136,17 @@
     &:active {
       background-color: $transparent-grey-20;
     }
+
+    &.floating {
+      position: absolute;
+      right: 0;
+      top: -30px;
+    }
   }
 
   .modal-content {
-    max-width: 420px;
     margin: auto;
+    max-width: 420px;
     overflow: hidden;
     padding: $grid-unit * 1.5 $grid-unit;
     position: relative;

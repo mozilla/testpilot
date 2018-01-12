@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { storiesOf } from "@storybook/react";
+import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 
-import NewsletterForm from './index';
-import LayoutWrapper from '../LayoutWrapper';
+import NewsletterForm from "./index";
+import LayoutWrapper from "../LayoutWrapper";
 
 const baseProps = {
-  email: '',
+  email: "",
   privacy: false,
   isModal: false,
   subscribe: () => null,
@@ -15,7 +15,7 @@ const baseProps = {
   setPrivacy: () => null
 };
 
-storiesOf('NewsletterForm', module)
+storiesOf("NewsletterForm", module)
   .addDecorator(withKnobs)
   .addDecorator(story =>
     <div className="blue" style={{ padding: 10 }}>
@@ -25,29 +25,29 @@ storiesOf('NewsletterForm', module)
       </LayoutWrapper>
     </div>
   )
-  .add('base state with knobs', () =>
+  .add("base state with knobs", () =>
     <NewsletterForm
       {...baseProps}
-      email={text('Email', '')}
-      privacy={boolean('Privacy', false)}
-      isModal={boolean('Is Modal', false)}
+      email={text("Email", "")}
+      privacy={boolean("Privacy", false)}
+      isModal={boolean("Is Modal", false)}
     />)
-  .add('with email but no agreement', () =>
+  .add("with email but no agreement", () =>
     <NewsletterForm
       {...baseProps}
-      email={'foo@example.com'}
+      email={"foo@example.com"}
     />)
-  .add('modal, filled in', () =>
+  .add("modal, filled in", () =>
     <NewsletterForm
       {...baseProps}
-      email={'foo@example.com'}
+      email={"foo@example.com"}
       privacy={true}
       isModal={true}
     />)
-  .add('submitting', () =>
+  .add("submitting", () =>
     <NewsletterForm
       {...baseProps}
-      email={'foo@example.com'}
+      email={"foo@example.com"}
       privacy={true}
       isModal={true}
       submitting={true}

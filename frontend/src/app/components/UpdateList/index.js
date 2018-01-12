@@ -1,18 +1,21 @@
 // @flow
 
-import classnames from 'classnames';
-import { Localized } from 'fluent-react/compat';
-import moment from 'moment';
-import React from 'react';
+import classnames from "classnames";
+import { Localized } from "fluent-react/compat";
+import moment from "moment";
+import React from "react";
 
-import LayoutWrapper from '../LayoutWrapper';
-import { newsUpdateL10nId } from '../../lib/utils';
+import LayoutWrapper from "../LayoutWrapper";
+import { newsUpdateL10nId } from "../../lib/utils";
 
-import './index.scss';
+import "./index.scss";
 
 export function prettyDate(date: string) {
-  return moment(date).format('MMMM Do, YYYY');
+  return moment(date).format("MMMM Do, YYYY");
 }
+
+const TWO_WEEKS = 2 * 7 * 24 * 60 * 60 * 1000;
+const twoWeeksAgo = new Date() - TWO_WEEKS;
 
 type UpdateProps = {
   sendToGA: Function,
@@ -27,17 +30,26 @@ export class Update extends React.Component {
     const { experiment, update } = this.props;
     const { created, published, title, content, link } = update;
 
-    const categoryTitle = experiment ? experiment.title : 'Firefox Test Pilot';
-    const categoryTitleL10nID = experiment ? null : 'siteName';
+    const gradient_stop = experiment ? experiment.gradient_stop : "transparent";
+
+    const categoryTitle = experiment ? experiment.title : "Firefox Test Pilot";
+    const categoryTitleL10nID = experiment ? null : "siteName";
     const iconClassName = experiment
       ? `experiment-icon-${experiment.slug}`
-      : 'news-update-test-pilot-icon';
+          : "news-update-test-pilot-icon";
+    const iconWrapperClassName = experiment
+      ? `experiment-icon-wrapper-${experiment.slug}`
+          : "news-update-test-pilot-icon-wrapper";
+
+    const isNew = experiment ? new Date(experiment.published) < twoWeeksAgo : false;
 
     return (
-      <a className={classnames('update', { 'has-link': !!link })}
+      <a className={classnames("update", { "has-link": !!link })}
           href={link}
           onClick={() => this.handleLinkClick()}>
-        <div className={classnames(iconClassName, 'update-experiment-icon')} />
+        <div className={classnames(iconWrapperClassName, "update-experiment-icon-wrapper")}>
+          <div className={classnames(iconClassName, "update-experiment-icon")} style={ { backgroundColor: gradient_stop } }/>
+        </div>
         <div className="update-content">
           <header>
             {experiment
@@ -46,7 +58,7 @@ export class Update extends React.Component {
                     {categoryTitle}
                   </h2>
                 </Localized>
-              : <Localized id={newsUpdateL10nId(update, 'title')}>
+              : <Localized id={newsUpdateL10nId(update, "title")}>
                   <h2 className="update-title">
                     {title}
                   </h2>
@@ -54,15 +66,19 @@ export class Update extends React.Component {
             <p className="up-date">
               {prettyDate(published || created)}
             </p>
+            {isNew && <div className="star-wrap">
+              <div className="star-icon"></div>
+              <p className="new">new</p>
+            </div>}
           </header>
           {experiment
-            ? <Localized id={newsUpdateL10nId(update, 'title')}>
+            ? <Localized id={newsUpdateL10nId(update, "title")}>
                 <h4 className="update-title">
                   {title}
                 </h4>
               </Localized>
             : null}
-          <Localized id={newsUpdateL10nId(update, 'content')}>
+          <Localized id={newsUpdateL10nId(update, "content")}>
             <p className="summary">
               {content}
             </p>
@@ -81,9 +97,9 @@ export class Update extends React.Component {
 
     if (!link) return;
 
-    sendToGA('event', {
-      eventCategory: 'ExperimentsPage Interactions',
-      eventAction: 'click',
+    sendToGA("event", {
+      eventCategory: "ExperimentsPage Interactions",
+      eventAction: "click",
       eventLabel: `news-item-${slug}`
     });
   }
@@ -94,7 +110,8 @@ type UpdateListProps = {
   staleNewsUpdates: Array<Object>,
   freshNewsUpdates: Array<Object>,
   experiments: Array<Object>,
-  initialShowMoreNews?: boolean
+  initialShowMoreNews?: boolean,
+  hideHeader?: boolean
 };
 
 type UpdateListState = {
@@ -113,7 +130,7 @@ export default class UpdateList extends React.Component {
   }
 
   render() {
-    const { sendToGA, staleNewsUpdates, freshNewsUpdates, experiments } = this.props;
+    const { sendToGA, staleNewsUpdates, freshNewsUpdates, experiments, hideHeader } = this.props;
     const { showMoreNews } = this.state;
 
     const hasStaleNewsUpdates = staleNewsUpdates && staleNewsUpdates.length > 0;
@@ -121,7 +138,7 @@ export default class UpdateList extends React.Component {
     const shouldShowMoreNewsButton = !showMoreNews && hasStaleNewsUpdates;
 
     const shownNewsUpdates = shouldShowStaleNewsUpdates
-      ? [].concat(freshNewsUpdates, staleNewsUpdates.slice(0, 5))
+      ? [].concat(freshNewsUpdates, staleNewsUpdates.slice(0, 10))
       : freshNewsUpdates;
 
     if (!shownNewsUpdates || shownNewsUpdates.length === 0) {
@@ -136,13 +153,13 @@ export default class UpdateList extends React.Component {
 
     return (
       <div className="update-list">
-        <Localized id="latestUpdatesTitle">
-          <h1 className="update-list-heading">Latest Updates</h1>
-        </Localized>
+        {!hideHeader && <Localized id="latestUpdatesTitle">
+           <h1 className="update-list-heading">Latest Updates</h1>
+         </Localized>}
         <LayoutWrapper flexModifier="column-center">
-          {shownNewsUpdates.map((update, index) =>
+          {shownNewsUpdates.map(update =>
             <Update
-              key={index}
+              key={update.slug}
               sendToGA={sendToGA}
               update={update}
               experiment={experimentsBySlug[update.experimentSlug]}
@@ -152,7 +169,7 @@ export default class UpdateList extends React.Component {
         {shouldShowMoreNewsButton &&
           <LayoutWrapper flexModifier="card-list">
             <Localized id="showMoreNewsTitle">
-              <div className={classnames(['button', 'more-news', 'outline'])}
+              <div className={classnames(["button", "more-news", "outline"])}
                   onClick={() => this.handleShowMoreNews()}>
                 Show Past News
               </div>

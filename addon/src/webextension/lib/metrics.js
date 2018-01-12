@@ -4,105 +4,105 @@
 
 /* global browser, Headers, URLSearchParams */
 
-import PubSub from 'pubsub-js';
+import PubSub from "pubsub-js";
 
-import allTopics from '../../lib/topics';
-import { submitMainPing, sendPingCentreEvent } from '../../lib/pings';
-import { log } from './utils';
-import { getResources } from './environments';
-import { sendBootstrapMessage } from './bootstrap';
+import allTopics from "../../lib/topics";
+import { submitMainPing, sendPingCentreEvent } from "../../lib/pings";
+import { log } from "./utils";
+import { getResources } from "./environments";
+import { sendBootstrapMessage } from "./bootstrap";
 
-const webExtensionTopics = (...args) => allTopics('webExtension', ...args);
+const webExtensionTopics = (...args) => allTopics("webExtension", ...args);
 const environmentTopics = (...args) =>
-  webExtensionTopics('environment', ...args);
-const bootstrapTopics = (...args) => allTopics('bootstrap', ...args);
-const eventsTopics = (...args) => bootstrapTopics('events', ...args);
-const channelsTopics = (...args) => bootstrapTopics('channels', ...args);
+  webExtensionTopics("environment", ...args);
+const bootstrapTopics = (...args) => allTopics("bootstrap", ...args);
+const eventsTopics = (...args) => bootstrapTopics("events", ...args);
+const channelsTopics = (...args) => bootstrapTopics("channels", ...args);
 
 const startTime = Date.now();
 
 let availableAddons = [];
 let addonMetadata = {};
-let clientUUID = '';
-let telemetryClientID = '';
+let clientUUID = "";
+let telemetryClientID = "";
 
 function makeTimestamp(timestamp = Date.now()) {
   return Math.round((timestamp - startTime) / 1000);
 }
 
 export async function setupMetrics() {
-  log('setupMetrics');
+  log("setupMetrics");
 
-  addonMetadata = await sendBootstrapMessage('getAddonMetadata');
+  addonMetadata = await sendBootstrapMessage("getAddonMetadata");
   availableAddons = await fetchAvailableAddons();
-  telemetryClientID = await sendBootstrapMessage('getCachedClientID');
-  clientUUID = await browser.storage.local.get('clientUUID').clientUUID;
+  telemetryClientID = await sendBootstrapMessage("getCachedClientID");
+  clientUUID = await browser.storage.local.get("clientUUID").clientUUID;
 
   // Refresh available add-ons list whenever AddonManager does stuff
-  PubSub.subscribe(bootstrapTopics('addonManager'), fetchAvailableAddons);
+  PubSub.subscribe(bootstrapTopics("addonManager"), fetchAvailableAddons);
 
   // Open webextension metrics channel on install
-  PubSub.subscribe(bootstrapTopics('addonManager', 'installed'), (_, { addon }) => {
-    sendBootstrapMessage('openChannel', {
+  PubSub.subscribe(bootstrapTopics("addonManager", "installed"), (_, { addon }) => {
+    sendBootstrapMessage("openChannel", {
       addonId: addon.id,
-      topic: 'testpilot-telemetry'
+      topic: "testpilot-telemetry"
     });
   });
 
   // Close webextension metrics channel on uninstall
-  PubSub.subscribe(bootstrapTopics('addonManager', 'uninstalled'), (_, { addon }) => {
-    sendBootstrapMessage('closeChannel', {
+  PubSub.subscribe(bootstrapTopics("addonManager", "uninstalled"), (_, { addon }) => {
+    sendBootstrapMessage("closeChannel", {
       addonId: addon.id,
-      topic: 'testpilot-telemetry'
+      topic: "testpilot-telemetry"
     });
   });
 
   // Set up daily idle ping with number of enabled experiments
-  PubSub.subscribe(eventsTopics('idle-daily'), submitDailyPing);
+  PubSub.subscribe(eventsTopics("idle-daily"), submitDailyPing);
 
   // Open channels for all known experiments
-  PubSub.subscribe(environmentTopics('resources'), (_, { experiments }) => {
+  PubSub.subscribe(environmentTopics("resources"), (_, { experiments }) => {
     (experiments.results || []).forEach(experiment => {
       const addonId = experiment.addon_id;
-      sendBootstrapMessage('openChannel', {
+      sendBootstrapMessage("openChannel", {
         addonId,
-        topic: 'testpilot-telemetry'
+        topic: "testpilot-telemetry"
       });
     });
   });
 
   // Handle telemetry pings from WebExtensions
-  PubSub.subscribe(channelsTopics('testpilot-telemetry'), (message, data) =>
+  PubSub.subscribe(channelsTopics("testpilot-telemetry"), (message, data) =>
     submitExperimentPing(data));
 
   // Handle telemetry pings from legacy add-ons
-  sendBootstrapMessage('observeEventTopic', 'send-metric');
-  PubSub.subscribe(eventsTopics('send-metric'), (message, data) =>
+  sendBootstrapMessage("observeEventTopic", "send-metric");
+  PubSub.subscribe(eventsTopics("send-metric"), (message, data) =>
     submitExperimentPing(data));
 
   // HACK: register-variants & receive-variants are defunct
   // TODO: should remove? the example add-on goes into loop without an answer
-  sendBootstrapMessage('observeEventTopic', 'register-variants');
-  PubSub.subscribe(eventsTopics('register-variants'), (message, data) => {
-    log('register-variants', data);
-    sendBootstrapMessage('notifyEventTopic', {
-      topic: 'receive-variants',
+  sendBootstrapMessage("observeEventTopic", "register-variants");
+  PubSub.subscribe(eventsTopics("register-variants"), (message, data) => {
+    log("register-variants", data);
+    sendBootstrapMessage("notifyEventTopic", {
+      topic: "receive-variants",
       payload: {}
     });
   });
 }
 
 async function fetchAvailableAddons() {
-  availableAddons = await sendBootstrapMessage('getAvailableAddons');
+  availableAddons = await sendBootstrapMessage("getAvailableAddons");
   return availableAddons;
 }
 
 async function submitDailyPing() {
-  log('submitDailyPing');
+  log("submitDailyPing");
   const { experiments } = getResources();
   const enabledExperiments = (experiments.results || [])
     .filter(experiment => experiment.addon_id in availableAddons);
-  return sendBootstrapMessage('getTelemetryEnvironment').then(environment => {
+  return sendBootstrapMessage("getTelemetryEnvironment").then(environment => {
     submitMainPing(
       log,
       addonMetadata,
@@ -114,17 +114,17 @@ async function submitDailyPing() {
       Headers,
       URLSearchParams,
       enabledExperiments.length.toString(),
-      'daily'
+      "daily"
     );
-  }).catch(err => log('submitDailyPing error', err));
+  }).catch(err => log("submitDailyPing error", err));
 }
 
 async function submitExternalPing(data) {
-  return sendBootstrapMessage('submitExternalPing', data);
+  return sendBootstrapMessage("submitExternalPing", data);
 }
 
 export async function submitExperimentPing({ subject, payload }) {
-  log('submitExperimentPing', subject, payload);
+  log("submitExperimentPing", subject, payload);
 
   const timestamp = makeTimestamp(new Date());
   const addon = availableAddons[subject];
@@ -137,7 +137,7 @@ export async function submitExperimentPing({ subject, payload }) {
 
   return Promise.all([
     submitExternalPing({
-      topic: 'testpilottest',
+      topic: "testpilottest",
       payload: {
         timestamp,
         test: subject,
@@ -145,7 +145,7 @@ export async function submitExperimentPing({ subject, payload }) {
         payload
       }
     }),
-    sendBootstrapMessage('getTelemetryEnvironment').then(environment =>
+    sendBootstrapMessage("getTelemetryEnvironment").then(environment =>
       sendPingCentreEvent(
         environment,
         fetch,

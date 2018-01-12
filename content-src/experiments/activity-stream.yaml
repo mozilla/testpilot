@@ -91,3 +91,14 @@ completed: '2017-07-12T20:00:00.000000Z'
 locale_blocklist:
   - 'de'
 order: 5
+graduation_url: https://medium.com/firefox-test-pilot/graduation-report-activity-stream-31aed429bd49
+news_updates:
+  -
+    slug: as-update-1
+    title: Activity Stream Graduation Report
+    link: 'https://medium.com/firefox-test-pilot/graduation-report-activity-stream-31aed429bd49'
+    created: 2017-12-22T12:00:00Z
+    published: 2017-12-22T12:00:00Z
+    dev: false
+    content: >
+      Activity Stream just jumped from Test Pilot to Firefox. Find out how it happened.

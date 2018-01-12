@@ -1,8 +1,8 @@
-import { createSelector } from 'reselect';
-import experimentSelector from './experiment';
+import { createSelector } from "reselect";
+import experimentSelector from "./experiment";
 
 export function publishedFilter(update) {
-  const hasPublishedField = typeof update.published !== 'undefined';
+  const hasPublishedField = typeof update.published !== "undefined";
   if (!hasPublishedField) {
     return false;
   }
@@ -15,7 +15,7 @@ export function publishedFilter(update) {
 export function experimentUpdateAvailable(update, availableExperiments) {
   // general updates do not include an experimentSlug so we'll just
   // return early in that case
-  const hasExperimentSlug = typeof update.experimentSlug !== 'undefined';
+  const hasExperimentSlug = typeof update.experimentSlug !== "undefined";
   if (!hasExperimentSlug) return true;
   return availableExperiments.has(update.experimentSlug);
 }

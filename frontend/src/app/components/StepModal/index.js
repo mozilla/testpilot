@@ -8,13 +8,13 @@
  * "next" and "back" buttons, as well has some keystroke handlers.
  */
 
-import classnames from 'classnames';
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import classnames from "classnames";
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import Modal from '../Modal';
+import Modal from "../Modal";
 
-import './index.scss';
+import "./index.scss";
 
 type StepModalDialogProps = {
   onCancel: Function,
@@ -58,18 +58,18 @@ export default class StepModal extends React.Component {
 
     return (<div className="step-actions">
               <div onClick={() => this.stepBack()}
-                   className={classnames('step-back', { hidden: atStart })}>
+                   className={classnames("step-back", { hidden: atStart })}>
                 <div className='step-filler'/>
               </div>
 
               <div onClick={() => this.stepNext()}
-                   className={classnames('step-next', { 'no-display': atEnd })}>
+                   className={classnames("step-next", { "no-display": atEnd })}>
                 <div className='step-filler'/>
               </div>
 
               <Localized id="stepDoneButton">
                 <div onClick={e => this.complete(e)}
-                     className={classnames('step-done', { 'no-display': !atEnd })}>Done</div>
+                     className={classnames("step-done", { "no-display": !atEnd })}>Done</div>
               </Localized>
             </div>);
   }
@@ -81,7 +81,7 @@ export default class StepModal extends React.Component {
 
     const stepEl = steps.map((step, idx) => (idx === currentStep) && (this.props.renderStep(steps, currentStep)));
     return (
-        <Modal {...this.props} wrapperClass={wrapperClass ? `${wrapperClass} step-modal` : 'step-modal'}
+        <Modal {...this.props} wrapperClass={wrapperClass ? `${wrapperClass} step-modal` : "step-modal"}
                onCancel={this.cancel.bind(this)}
                onComplete={this.complete.bind(this)}
                headerTitle={this.props.renderHeaderTitle(steps, currentStep)}
@@ -135,16 +135,16 @@ export default class StepModal extends React.Component {
     const { steps } = this.props;
 
     switch (ev.key) {
-      case 'Escape':
+      case "Escape":
         this.cancel(ev);
         break;
-      case 'ArrowRight':
+      case "ArrowRight":
         this.stepNext();
         break;
-      case 'ArrowLeft':
+      case "ArrowLeft":
         this.stepBack();
         break;
-      case 'Enter': {
+      case "Enter": {
         const { currentStep } = this.state;
         const atEnd = (currentStep === steps.length - 1);
         if (atEnd) this.complete(ev);

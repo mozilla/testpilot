@@ -1,20 +1,21 @@
-import 'babel-polyfill/browser';
-import 'whatwg-fetch';
-import Raven from 'raven-js';
-import moment from 'moment';
+import "babel-polyfill/browser";
+import "whatwg-fetch";
+import Raven from "raven-js";
+import moment from "moment";
 
-import './lib/ga-snippet';
-import config from './config';
+import "./lib/ga-snippet";
+import config from "./config";
 
-import notfound from '../pages/notfound.js';
-import error from '../pages/error.js';
-import experiment from '../pages/experiment.js';
-import experiments from '../pages/experiments.js';
-import home from '../pages/home.js';
-import legacy from '../pages/legacy.js';
-import onboarding from '../pages/onboarding.js';
-import retire from '../pages/retire.js';
-import share from '../pages/share.js';
+import notfound from "../pages/notfound.js";
+import error from "../pages/error.js";
+import experiment from "../pages/experiment.js";
+import experiments from "../pages/experiments.js";
+import home from "../pages/home.js";
+import legacy from "../pages/legacy.js";
+import onboarding from "../pages/onboarding.js";
+import retire from "../pages/retire.js";
+import share from "../pages/share.js";
+import news from "../pages/news.js";
 
 Raven.config(config.ravenPublicDSN).install();
 moment.locale(window.navigator.language);
@@ -28,7 +29,8 @@ const routes = {
   legacy,
   onboarding,
   retire,
-  share
+  share,
+  news
 };
 
 const name = document.body.dataset.pageName;

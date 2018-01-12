@@ -4,11 +4,11 @@
 
 /* global browser */
 
-export const debug = process.env.NODE_ENV === 'development';
+export const debug = process.env.NODE_ENV === "development";
 
 export function log(...args) {
   if (!debug) return;
 
   // eslint-disable-next-line no-console
-  console.log(...['[TESTPILOT v2] (background)'].concat(args));
+  console.log(...["[TESTPILOT v2] (background)"].concat(args));
 }

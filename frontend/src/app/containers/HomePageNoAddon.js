@@ -1,36 +1,44 @@
 // @flow
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import Banner from '../components/Banner';
-import Copter from '../components/Copter';
-import ExperimentCardList from '../components/ExperimentCardList';
-import LayoutWrapper from '../components/LayoutWrapper';
-import MainInstallButton from '../components/MainInstallButton';
-import PastExperiments from '../components/PastExperiments';
-import View from '../components/View';
+import Banner from "../components/Banner";
+import Copter from "../components/Copter";
+import ExperimentCardList from "../components/ExperimentCardList";
+import LayoutWrapper from "../components/LayoutWrapper";
+import MainInstallButton from "../components/MainInstallButton";
+import PastExperiments from "../components/PastExperiments";
+import FeaturedExperiment from "../components/FeaturedExperiment";
+import View from "../components/View";
 
+import type { InstalledExperiments } from "../reducers/addon";
 
 type HomePageNoAddonProps = {
   hasAddon: any,
   isFirefox: boolean,
+  installed: InstalledExperiments,
   experiments: Array<Object>,
+  featuredExperiments: Array<Object>,
   isAfterCompletedDate: Function,
-  navigateTo: Function
+  navigateTo: Function,
+  isMinFirefox: boolean,
+  isExperimentEnabled: Function,
+  sendToGA: Function
 }
 
 export default class HomePageNoAddon extends React.Component {
   props: HomePageNoAddonProps
 
   render() {
-    const { experiments, isAfterCompletedDate } = this.props;
-    const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
-    const pastExperiments = experiments.filter(isAfterCompletedDate);
+    const { experiments, isAfterCompletedDate, featuredExperiments } = this.props;
 
     if (experiments.length === 0) { return null; }
 
-    const installSplash = <Banner>
+    const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
+    const pastExperiments = experiments.filter(isAfterCompletedDate);
+    const featuredExperiment = featuredExperiments.length ? featuredExperiments[0] : false;
 
+    const installSplash = <Banner>
       <LayoutWrapper flexModifier="row-center-breaking">
         <Copter small={true} animation="fly-up"/>
         <div className="banner__spacer" />
@@ -47,26 +55,41 @@ export default class HomePageNoAddon extends React.Component {
         </div>
       </LayoutWrapper>
 
-      <MainInstallButton {...this.props} eventCategory="HomePage Interactions" eventLabel="Install the Add-on"/>
-
+      {!featuredExperiment && <MainInstallButton {...this.props}
+                                                 eventCategory="HomePage Interactions"
+                                                 eventLabel="Install the Add-on" />}
     </Banner>;
+
+    const featuredSection = featuredExperiment ? (<Banner background={true}>
+      <LayoutWrapper flexModifier="row-between-breaking">
+        <FeaturedExperiment {...this.props}
+                            experiment={featuredExperiment}
+                            eventCategory="HomePage Interactions"
+                            enabled={false} />
+      </LayoutWrapper>
+    </Banner>) : null;
+
+    const headerMessage = !featuredExperiment ? (<Localized id="experimentListHeader">
+      <h1 className="emphasis card-list-heading">Pick your experiments</h1>
+    </Localized>) :
+    (<Localized id="experimentListHeaderWithFeatured">
+      <h1 className="emphasis card-list-heading">Or try other experiments</h1>
+    </Localized>);
 
     return (
       <section id="landing-page">
         <View {...this.props}>
           { installSplash }
-
-          <Banner background={true}>
+          { featuredSection }
+          <Banner background={!featuredSection}>
             <LayoutWrapper flexModifier="column-center">
-              <Localized id="landingExperimentsTitle">
-                <h2 className="banner__subtitle centered">Try out the latest experimental features</h2>
-              </Localized>
+              {headerMessage}
               <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
               <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
             </LayoutWrapper>
           </Banner>
 
-          <Banner>
+          <Banner background={!!featuredSection}>
             <Localized id="landingCardListTitle">
               <h2 className="banner__subtitle centered">Get started in 3 easy steps</h2>
             </Localized>

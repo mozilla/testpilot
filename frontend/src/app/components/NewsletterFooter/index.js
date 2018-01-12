@@ -1,12 +1,12 @@
 // @flow
-import classnames from 'classnames';
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import classnames from "classnames";
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import LayoutWrapper from '../LayoutWrapper';
-import NewsletterForm from '../NewsletterForm';
+import LayoutWrapper from "../LayoutWrapper";
+import NewsletterForm from "../NewsletterForm";
 
-import './index.scss';
+import "./index.scss";
 
 type NewsletterFooterProps = {
   getWindowLocation: Function,
@@ -22,10 +22,10 @@ export default class NewsletterFooter extends React.Component {
 
   renderError() {
     if (this.props.newsletterForm.failed) {
-      this.props.sendToGA('event', {
-        eventCategory: 'HomePage Interactions',
-        eventAction: 'footer newsletter form submit',
-        eventLabel: 'email failed to submit to basket'
+      this.props.sendToGA("event", {
+        eventCategory: "HomePage Interactions",
+        eventAction: "footer newsletter form submit",
+        eventLabel: "email failed to submit to basket"
       });
 
       return (
@@ -40,10 +40,10 @@ export default class NewsletterFooter extends React.Component {
   }
 
   renderSuccess() {
-    this.props.sendToGA('event', {
-      eventCategory: 'HomePage Interactions',
-      eventAction: 'footer newsletter form success',
-      eventLabel: 'email submitted to basket'
+    this.props.sendToGA("event", {
+      eventCategory: "HomePage Interactions",
+      eventAction: "footer newsletter form success",
+      eventLabel: "email submitted to basket"
     });
 
     return (
@@ -83,7 +83,7 @@ export default class NewsletterFooter extends React.Component {
   }
 
   getClassNames() {
-    return classnames('newsletter-footer', {
+    return classnames("newsletter-footer", {
       success: this.props.newsletterForm.succeeded
     });
   }

@@ -4,16 +4,16 @@
 
 /* global Components, Services */
 
-import { log, debug, addonMetadata } from './utils';
-import { registerWebExtensionAPI } from './webExtension';
+import { log, debug, addonMetadata } from "./utils";
+import { registerWebExtensionAPI } from "./webExtension";
 
-Components.utils.import('resource://gre/modules/Services.jsm');
+Components.utils.import("resource://gre/modules/Services.jsm");
 
 const FRAME_SCRIPT_URL =
-  'chrome://testpilot-addon-scripts/content/frame-script.js';
+  "chrome://testpilot-addon-scripts/content/frame-script.js";
 
 let currentEnvironment = null;
-let clientUUID = '';
+let clientUUID = "";
 
 const frameScriptMessageOps = { getProperties };
 
@@ -22,20 +22,20 @@ function getProperties() {
 }
 
 export async function startupFrameScripts() {
-  log('startupFrameScripts');
+  log("startupFrameScripts");
 
-  registerWebExtensionAPI('updateClientUUID', message => {
+  registerWebExtensionAPI("updateClientUUID", message => {
     clientUUID = message;
     return updateFrameScripts();
   });
 
-  registerWebExtensionAPI('updateEnvironment', message => {
+  registerWebExtensionAPI("updateEnvironment", message => {
     currentEnvironment = message;
     return updateFrameScripts();
   });
 
   Services.mm.addMessageListener(
-    '@testpilot-addon:getProperies',
+    "@testpilot-addon:getProperies",
     getProperties
   );
 

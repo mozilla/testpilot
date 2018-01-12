@@ -1,9 +1,9 @@
 // @flow
 
-import React from 'react';
-import classnames from 'classnames';
+import React from "react";
+import classnames from "classnames";
 
-import './index.scss';
+import "./index.scss";
 
 type BannerProps = {
   background?: boolean,
@@ -17,10 +17,10 @@ export default class Banner extends React.Component {
 
   render() {
     const { children, condensed = false, background = false } = this.props;
-    return <div className={classnames('banner', {
-      'banner--condensed': condensed,
-      'banner--expanded': !condensed,
-      'banner--background': background
+    return <div className={classnames("banner", {
+      "banner--condensed": condensed,
+      "banner--expanded": !condensed,
+      "banner--background": background
     })}>
       { children }
     </div>;

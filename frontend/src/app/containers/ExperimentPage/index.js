@@ -1,37 +1,37 @@
 // @flow
 
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
-import moment from 'moment';
+import { Localized } from "fluent-react/compat";
+import React from "react";
+import moment from "moment";
 
-import { buildSurveyURL, experimentL10nId } from '../../lib/utils';
+import { buildSurveyURL, experimentL10nId } from "../../lib/utils";
 
-import NotFoundPage from '../NotFoundPage';
+import NotFoundPage from "../NotFoundPage";
 
-import View from '../../components/View';
-import EmailDialog from '../../components/EmailDialog';
-import ExperimentCardList from '../../components/ExperimentCardList';
+import View from "../../components/View";
+import EmailDialog from "../../components/EmailDialog";
+import ExperimentCardList from "../../components/ExperimentCardList";
 
-import ExperimentPlatforms from '../../components/ExperimentPlatforms';
-import Banner from '../../components/Banner';
-import LayoutWrapper from '../../components/LayoutWrapper';
+import ExperimentPlatforms from "../../components/ExperimentPlatforms";
+import Banner from "../../components/Banner";
+import LayoutWrapper from "../../components/LayoutWrapper";
 
-import ExperimentPreFeedbackDialog from './ExperimentPreFeedbackDialog';
-import ExperimentDisableDialog from './ExperimentDisableDialog';
-import ExperimentEolDialog from './ExperimentEolDialog';
-import ExperimentTourDialog from './ExperimentTourDialog';
-import TestpilotPromo from './TestpilotPromo';
-import DetailsOverview from './DetailsOverview';
-import DetailsDescription from './DetailsDescription';
-import DetailsHeader from './DetailsHeader';
+import ExperimentPreFeedbackDialog from "./ExperimentPreFeedbackDialog";
+import ExperimentDisableDialog from "./ExperimentDisableDialog";
+import ExperimentEolDialog from "./ExperimentEolDialog";
+import ExperimentTourDialog from "../../components/ExperimentTourDialog";
+import TestpilotPromo from "./TestpilotPromo";
+import DetailsOverview from "./DetailsOverview";
+import DetailsDescription from "./DetailsDescription";
+import DetailsHeader from "./DetailsHeader";
 
-import './index.scss';
+import "./index.scss";
 
 import type {
   ExperimentPageProps,
   ExperimentDetailProps,
   MouseEventWithElementTarget
-} from './types';
+} from "./types";
 
 export default class ExperimentPage extends React.Component {
   props: ExperimentPageProps;
@@ -72,8 +72,8 @@ export class ExperimentDetail extends React.Component {
     } = this.props;
 
     let showEmailDialog = false;
-    if (getCookie('first-run')) {
-      removeCookie('first-run');
+    if (getCookie("first-run")) {
+      removeCookie("first-run");
       if (hasAddon) {
         showEmailDialog = true;
       }
@@ -147,7 +147,6 @@ export class ExperimentDetail extends React.Component {
       isAfterCompletedDate,
       isDev,
       hasAddon,
-      setExperimentLastSeen,
       clientUUID,
       installedAddons,
       setPageTitleL10N,
@@ -186,24 +185,20 @@ export class ExperimentDetail extends React.Component {
 
     const { title, survey_url } = experiment;
 
-    setPageTitleL10N('pageTitleExperiment', experiment);
+    setPageTitleL10N("pageTitleExperiment", experiment);
 
     // Show a 404 page if an experiment is not ready for launch yet
     const utcNow = moment.utc();
     if (
       moment(utcNow).isBefore(experiment.launch_date) &&
-      typeof experiment.launch_date !== 'undefined' &&
+      typeof experiment.launch_date !== "undefined" &&
       !isDev
     ) {
       return <NotFoundPage />;
     }
 
-    // Set the timestamp for when this experiment was last seen (for
-    // ExperimentRowCard updated/launched banner logic)
-    setExperimentLastSeen(experiment);
-
     const surveyURL = buildSurveyURL(
-      'givefeedback',
+      "givefeedback",
       title,
       installed,
       clientUUID,
@@ -360,7 +355,7 @@ export class ExperimentDetail extends React.Component {
     let installAddonPromise = null;
     if (!this.props.hasAddon) {
       const { installAddon, requireRestart } = this.props;
-      const eventCategory = 'ExperimentDetailsPage Interactions';
+      const eventCategory = "ExperimentDetailsPage Interactions";
       const eventLabel = `Install the Add-on from ${experiment.title}`;
       installAddonPromise = installAddon(
         requireRestart,
@@ -384,9 +379,9 @@ export class ExperimentDetail extends React.Component {
     function finishEnabling() {
       enableExperiment(experiment);
 
-      sendToGA('event', {
-        eventCategory: 'ExperimentDetailsPage Interactions',
-        eventAction: 'Enable Experiment',
+      sendToGA("event", {
+        eventCategory: "ExperimentDetailsPage Interactions",
+        eventAction: "Enable Experiment",
         eventLabel: experiment.title
       });
     }
@@ -396,7 +391,23 @@ export class ExperimentDetail extends React.Component {
       return;
     }
 
-    installAddonPromise.then(finishEnabling);
+    installAddonPromise
+      .then(() => {
+        return new Promise((resolve, reject) => {
+          let i = 0;
+          const interval = setInterval(() => {
+            i++;
+            if (this.props.hasAddon) {
+              clearInterval(interval);
+              resolve();
+            } else if (i > 2000) {
+              clearInterval(interval);
+              reject(new Error("hasAddon still false after 200 seconds"));
+            }
+          }, 100);
+        });
+      })
+      .then(finishEnabling);
   };
 
   uninstallExperiment = (evt: MouseEventWithElementTarget) => {
@@ -410,9 +421,9 @@ export class ExperimentDetail extends React.Component {
       return;
     }
 
-    this.props.sendToGA('event', {
-      eventCategory: 'ExperimentDetailsPage Interactions',
-      eventAction: 'Disable Experiment',
+    this.props.sendToGA("event", {
+      eventCategory: "ExperimentDetailsPage Interactions",
+      eventAction: "Disable Experiment",
       eventLabel: experiment.title
     });
 

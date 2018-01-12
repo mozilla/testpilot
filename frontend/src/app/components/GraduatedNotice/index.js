@@ -1,7 +1,7 @@
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import './index.scss';
+import "./index.scss";
 
 class GraduatedNoticeButton extends React.Component {
   render() {

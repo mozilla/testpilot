@@ -3,7 +3,7 @@
 import type {
   Localizations,
   NegotiatedLanguages
-} from '../reducers/localizations.js';
+} from "../reducers/localizations.js";
 
 export type SetLocalizationsAction = {
   type: 'SET_LOCALIZATIONS',
@@ -21,7 +21,7 @@ export function setLocalizations(
   localizations: Localizations
 ): SetLocalizationsAction {
   return {
-    type: 'SET_LOCALIZATIONS',
+    type: "SET_LOCALIZATIONS",
     payload: localizations
   };
 }
@@ -30,7 +30,7 @@ export function setNegotiatedLanguages(
   negotiatedLanguages: NegotiatedLanguages
 ): SetNegotiatedLanguagesAction {
   return {
-    type: 'SET_NEGOTIATED_LANGUAGES',
+    type: "SET_NEGOTIATED_LANGUAGES",
     payload: negotiatedLanguages
   };
 }

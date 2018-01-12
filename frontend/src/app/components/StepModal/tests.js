@@ -1,13 +1,13 @@
 /* global describe, beforeEach, it */
-import React from 'react';
-import { expect } from 'chai';
-import sinon from 'sinon';
-import { mount } from 'enzyme';
-import { findLocalizedById } from '../../../../test/app/util';
+import React from "react";
+import { expect } from "chai";
+import sinon from "sinon";
+import { mount } from "enzyme";
+import { findLocalizedById } from "../../../../test/app/util";
 
-import StepModal from './index';
+import StepModal from "./index";
 
-describe('app/components/StepModal', () => {
+describe("app/components/StepModal", () => {
   let mockClickEvent, props, subject;
   beforeEach(() => {
     mockClickEvent = {
@@ -15,8 +15,8 @@ describe('app/components/StepModal', () => {
       stopPropagation: sinon.spy()
     };
     props = {
-      steps: [{ title: 'yup' }, { title: 'yup' }, { title: 'yup' }],
-      wrapperClass: 'news-updates-modal',
+      steps: [{ title: "yup" }, { title: "yup" }, { title: "yup" }],
+      wrapperClass: "news-updates-modal",
       onCancel: sinon.spy(),
       onComplete: sinon.spy(),
       stepNextPing: sinon.spy(),
@@ -28,8 +28,8 @@ describe('app/components/StepModal', () => {
     subject = mount(<StepModal {...props} />);
   });
 
-  it('should have the expected l10n ID', () => {
-    expect(findLocalizedById(subject, 'stepDoneButton')).to.have.property('length', 1);
+  it("should have the expected l10n ID", () => {
+    expect(findLocalizedById(subject, "stepDoneButton")).to.have.property("length", 1);
   });
 
   // todo(dj): add these back in after next 57 launch
@@ -43,24 +43,24 @@ describe('app/components/StepModal', () => {
   //   expect(props.stepBackPing).to.be.true;
   // });
 
-  it('should call renderStep when rendering', () => {
+  it("should call renderStep when rendering", () => {
     expect(props.renderStep.called).to.be.true;
   });
 
-  it('should call onCancel when clicking close icon', () => {
-    subject.find('.modal-cancel').simulate('click', mockClickEvent);
+  it("should call onCancel when clicking close icon", () => {
+    subject.find(".modal-cancel").simulate("click", mockClickEvent);
     expect(props.onCancel.called).to.be.true;
   });
 
-  it('should call renderHeaderTitle when rendering', () => {
+  it("should call renderHeaderTitle when rendering", () => {
     expect(props.renderHeaderTitle.called).to.be.true;
   });
 
   // todo(dj) add test for wrapperClass (.hasClass
   // method is acting weird rn)
 
-  it('should call onComplete (which will ping GA) when done button is clicked', () => {
-    subject.find('.step-done').simulate('click', mockClickEvent);
+  it("should call onComplete (which will ping GA) when done button is clicked", () => {
+    subject.find(".step-done").simulate("click", mockClickEvent);
     expect(props.onComplete.called).to.be.true;
   });
 });

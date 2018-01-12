@@ -1,6 +1,6 @@
 // @flow
 
-import seedrandom from 'seedrandom';
+import seedrandom from "seedrandom";
 
 export type ChooseTestsAction = {
   type: 'CHOOSE_TESTS'
@@ -31,10 +31,10 @@ function random(choices: { [name: string]: number }): string {
       variants.push(name);
     }
   }
-  let seed = window.localStorage.getItem('testpilot-varianttests-id', null);
+  let seed = window.localStorage.getItem("testpilot-varianttests-id", null);
   if (seed === null) {
     seed = String(Math.random());
-    window.localStorage.setItem('testpilot-varianttests-id', seed);
+    window.localStorage.setItem("testpilot-varianttests-id", seed);
   }
   return variants[Math.floor(seedrandom(seed)() * summedWeight)];
 }
@@ -48,10 +48,10 @@ function chooseTests() {
 
   const tests: Array<TestChooser> = [
     {
-      name: 'installButtonBorder',
+      name: "installButtonBorder",
       getValue: function getValue() {
-        if (!language.startsWith('en')) {
-          return 'default';  // User gets whatever the DefaultCase is.
+        if (!language.startsWith("en")) {
+          return "default";  // User gets whatever the DefaultCase is.
         }
         return random({
           bigBorder: 1,
@@ -65,10 +65,10 @@ function chooseTests() {
     // Only put each user in one test. If we previously found a non-default test,
     // put this user in default for the rest of the tests.
     if (chosenTest !== null) {
-      chosenVariants[test.name] = 'default';
+      chosenVariants[test.name] = "default";
     } else {
       const chosen = test.getValue();
-      if (chosen !== 'default') {
+      if (chosen !== "default") {
         chosenTest = {
           test: test.name,
           variant: chosen
@@ -82,18 +82,18 @@ function chooseTests() {
 export function getChosenTest(): ChosenTestState {
   if (chosenTest === null) {
     return {
-      test: '',
-      variant: ''
+      test: "",
+      variant: ""
     };
   }
   return chosenTest;
 }
 
 export default function variantTestsReducer(action: ChooseTestsAction): ChosenVariantsState {
-  if (typeof action === 'undefined') {
+  if (typeof action === "undefined") {
     return {};
   }
-  if (action.type === 'CHOOSE_TESTS') {
+  if (action.type === "CHOOSE_TESTS") {
     chooseTests();
   }
   return chosenVariants;

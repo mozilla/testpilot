@@ -1,11 +1,11 @@
 // @flow
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import NewsletterForm from '../NewsletterForm';
-import { subscribeToBasket } from '../../lib/utils';
+import NewsletterForm from "../NewsletterForm";
+import { subscribeToBasket } from "../../lib/utils";
 
-import './index.scss';
+import "./index.scss";
 
 type EmailDialogProps = {
   getWindowLocation: Function,
@@ -32,7 +32,7 @@ export default class EmailDialog extends React.Component {
     this.state = {
       isSuccess: false,
       isError: false,
-      email: '',
+      email: "",
       privacy: false
     };
   }
@@ -144,20 +144,20 @@ export default class EmailDialog extends React.Component {
 
   handleSubscribe(email: string) {
     const { sendToGA } = this.props;
-    const source = '' + this.props.getWindowLocation();
+    const source = "" + this.props.getWindowLocation();
 
-    sendToGA('event', {
-      eventCategory: 'HomePage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'Sign me up'
+    sendToGA("event", {
+      eventCategory: "HomePage Interactions",
+      eventAction: "button click",
+      eventLabel: "Sign me up"
     });
 
     subscribeToBasket(email, source).then(response => {
       if (response.ok) {
-        sendToGA('event', {
-          eventCategory: 'HomePage Interactions',
-          eventAction: 'button click',
-          eventLabel: 'email submitted to basket'
+        sendToGA("event", {
+          eventCategory: "HomePage Interactions",
+          eventAction: "button click",
+          eventLabel: "email submitted to basket"
         });
       }
       this.setState({
@@ -179,12 +179,12 @@ export default class EmailDialog extends React.Component {
     e.preventDefault();
     e.stopPropagation();
 
-    sendToGA('event', {
-      eventCategory: 'HomePage Interactions',
-      eventAction: 'button click',
+    sendToGA("event", {
+      eventCategory: "HomePage Interactions",
+      eventAction: "button click",
       // review TODO: The label says 'skip'. Should I just use that? Want to make
       // the events readable and specific on the GA side.
-      eventLabel: 'Skip email'
+      eventLabel: "Skip email"
     });
 
     this.close();
@@ -195,10 +195,10 @@ export default class EmailDialog extends React.Component {
 
     e.preventDefault();
 
-    sendToGA('event', {
-      eventCategory: 'HomePage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'On to the experiments'
+    sendToGA("event", {
+      eventCategory: "HomePage Interactions",
+      eventAction: "button click",
+      eventLabel: "On to the experiments"
     });
 
     this.close();
@@ -212,7 +212,7 @@ export default class EmailDialog extends React.Component {
     const { isSuccess, isError } = this.state;
 
     switch (e.key) {
-      case 'Escape':
+      case "Escape":
         if (!isSuccess && !isError) {
           this.skip(e);
         } else if (isSuccess) {
@@ -221,7 +221,7 @@ export default class EmailDialog extends React.Component {
           this.continue(e);
         }
         break;
-      case 'Enter':
+      case "Enter":
         if (!isSuccess && !isError) {
           e.preventDefault();
           e.stopPropagation();

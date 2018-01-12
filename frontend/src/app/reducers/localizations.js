@@ -4,7 +4,7 @@ import type {
   SetLocalizationsAction,
   SetNegotiatedLanguagesAction,
   LocalizationsAction
-} from '../actions/localizations';
+} from "../actions/localizations";
 
 export type Localizations = {
   [language: string]: string
@@ -46,9 +46,9 @@ export default function localizationsReducer(
     return defaultState();
   }
   switch (action.type) {
-    case 'SET_NEGOTIATED_LANGUAGES':
+    case "SET_NEGOTIATED_LANGUAGES":
       return setNegotiatedLanguages(state, action);
-    case 'SET_LOCALIZATIONS':
+    case "SET_LOCALIZATIONS":
       return setLocalizations(state, action);
     default:
       return state;

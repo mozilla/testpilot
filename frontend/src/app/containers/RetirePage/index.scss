@@ -3,13 +3,13 @@
 .loading-pill {
   border: 1px solid $transparent-white-3;
   border-radius: $small-border-radius;
+  max-width: $grid-unit * 15;
   padding: $grid-unit;
   position: relative;
-  max-width: $grid-unit * 15;
 
   h1 {
-    font-weight: 300;
     font-style: oblique;
+    font-weight: 300;
   }
 
   > * {

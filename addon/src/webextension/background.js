@@ -4,15 +4,15 @@
 
 /* global browser */
 
-import PubSub from 'pubsub-js';
+import PubSub from "pubsub-js";
 
-import { log, debug } from './lib/utils';
-import { setupStorage } from './lib/storage';
-import { setupEnvironment } from './lib/environments';
-import { setupContent } from './lib/content';
-import { setupBrowserAction } from './lib/browserAction';
-import { setupMetrics } from './lib/metrics';
-import { setupBootstrapPort, sendBootstrapMessage } from './lib/bootstrap';
+import { log, debug } from "./lib/utils";
+import { setupStorage } from "./lib/storage";
+import { setupEnvironment } from "./lib/environments";
+import { setupContent } from "./lib/content";
+import { setupBrowserAction } from "./lib/browserAction";
+import { setupMetrics } from "./lib/metrics";
+import { setupBootstrapPort, sendBootstrapMessage } from "./lib/bootstrap";
 
 PubSub.immediateExceptions = true;
 
@@ -24,14 +24,14 @@ function setup() {
     .then(setupEnvironment)
     .then(setupContent)
     .then(setupBootstrapPort)
-    .then(() => sendBootstrapMessage('ready'))
-    .catch(err => log('init error', err));
+    .then(() => sendBootstrapMessage("ready"))
+    .catch(err => log("init error", err));
 }
 
 async function setupDebug() {
   if (!debug) return;
-  ['bootstrap', 'webExtension'].forEach(root =>
-    PubSub.subscribe(root, (message, data) => log('pubsub', message, data))
+  ["bootstrap", "webExtension"].forEach(root =>
+    PubSub.subscribe(root, (message, data) => log("pubsub", message, data))
   );
 }
 

@@ -1,14 +1,14 @@
 // @flow
 
-import classnames from 'classnames';
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import classnames from "classnames";
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import LocalizedHtml from '../LocalizedHtml';
+import LocalizedHtml from "../LocalizedHtml";
 
-import { defaultState } from '../../reducers/newsletter-form';
+import { defaultState } from "../../reducers/newsletter-form";
 
-import './index.scss';
+import "./index.scss";
 
 type NewsletterFormProps = {
   email?: string,
@@ -44,13 +44,13 @@ export default class NewsletterForm extends React.Component {
   }
 
   makeRevealedClassNames() {
-    return classnames('revealed-field', {
+    return classnames("revealed-field", {
       reveal: !!this.props.email
     });
   }
 
   handleEmailChange(evt: Object) {
-    if (typeof this.props.setEmail !== 'undefined') {
+    if (typeof this.props.setEmail !== "undefined") {
       this.props.setEmail(evt.target.value);
     }
   }
@@ -69,13 +69,13 @@ export default class NewsletterForm extends React.Component {
   }
 
   handlePrivacyClick(evt: Object) {
-    if (typeof this.props.setPrivacy !== 'undefined') {
+    if (typeof this.props.setPrivacy !== "undefined") {
       this.props.setPrivacy(evt.target.checked);
     }
   }
 
   renderPrivacyField() {
-    const fieldName = 'privacy';
+    const fieldName = "privacy";
     const privacy = <Localized id="newsletterFormPrivacyNoticePrivacyLink">
       <a target="_blank" rel="noopener noreferrer"
         href="/privacy"/>
@@ -85,6 +85,7 @@ export default class NewsletterForm extends React.Component {
       <input name={fieldName} id={fieldName} type="checkbox" checked={this.props.privacy} required
              onChange={this.handlePrivacyClick} onClick={this.handlePrivacyClick} />
       <label className={this.makeRevealedClassNames()} htmlFor={fieldName}>
+        <span className="newsletter-form__check" />
         { this.state.privacyNote ? <Localized id="newsletterFormPrivacyAgreementRequired">
           <span>
             Please check this box if you want to proceed.
@@ -110,7 +111,7 @@ export default class NewsletterForm extends React.Component {
       );
     }
     return <Localized id='newsletterFormSubmitButton'>
-      <button className={classnames('button', 'large', this.props.isModal ? 'default' : 'outline')}
+      <button className={classnames("button", "large", this.props.isModal ? "default" : "outline")}
               ref={this.props.buttonRef}>Sign Up Now</button>
     </Localized>;
   }
@@ -131,7 +132,7 @@ export default class NewsletterForm extends React.Component {
       this.setState({ privacyNote: true });
     } else {
       this.setState({ privacyNote: false });
-      if (typeof this.props.subscribe !== 'undefined') {
+      if (typeof this.props.subscribe !== "undefined") {
         this.props.subscribe(this.props.email);
       }
     }
@@ -139,7 +140,7 @@ export default class NewsletterForm extends React.Component {
 
   render() {
     return (
-      <form className={ classnames('newsletter-form', { 'newsletter-form-modal': this.props.isModal }) }
+      <form className={ classnames("newsletter-form", { "newsletter-form-modal": this.props.isModal }) }
             onSubmit={this.handleSubmit} data-no-csrf>
         {this.renderEmailField()}
         {this.renderPrivacyField()}

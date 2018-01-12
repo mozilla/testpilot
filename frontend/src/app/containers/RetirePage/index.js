@@ -1,14 +1,14 @@
 // @flow
-import classnames from 'classnames';
-import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import classnames from "classnames";
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import Copter from '../../components/Copter';
-import LayoutWrapper from '../../components/LayoutWrapper';
-import LocalizedHtml from '../../components/LocalizedHtml';
-import View from '../../components/View';
+import Copter from "../../components/Copter";
+import LayoutWrapper from "../../components/LayoutWrapper";
+import LocalizedHtml from "../../components/LocalizedHtml";
+import View from "../../components/View";
 
-import './index.scss';
+import "./index.scss";
 
 type RetirePageProps = {
   setHasAddon: Function,
@@ -61,7 +61,7 @@ export default class RetirePage extends React.Component {
     return (
       <View centered={true} showHeader={false} showFooter={false} showNewsletterFooter={false} {...this.props}>
         <LayoutWrapper flexModifier="column-center">
-          {!uninstalled && <div disabled className={classnames('loading-pill')}>
+          {!uninstalled && <div disabled className={classnames("loading-pill")}>
             <Localized id="retirePageProgressMessage">
               <h1 className="emphasis">Shutting down...</h1>
             </Localized>
@@ -75,7 +75,7 @@ export default class RetirePage extends React.Component {
                 </Localized>
               </div>
               <div className="modal-content">
-                <div className="flyingIcon"></div>
+                <div className="flying-icon"></div>
                 <LocalizedHtml id="retirePageMessage">
                   <p>Hope you had fun experimenting with us. <br/> Come back any time.</p>
                 </LocalizedHtml>
@@ -97,10 +97,10 @@ export default class RetirePage extends React.Component {
   }
 
   takeSurvey() {
-    this.props.sendToGA('event', {
-      eventCategory: 'RetirePage Interactions',
-      eventAction: 'button click',
-      eventLabel: 'take survey'
+    this.props.sendToGA("event", {
+      eventCategory: "RetirePage Interactions",
+      eventAction: "button click",
+      eventLabel: "take survey"
     });
   }
 }

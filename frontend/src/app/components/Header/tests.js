@@ -1,14 +1,14 @@
 /* global describe, beforeEach, it */
 
-import React from 'react';
-import { expect } from 'chai';
-import sinon from 'sinon';
-import { mount } from 'enzyme';
-import { findLocalizedById } from '../../../../test/app/util';
+import React from "react";
+import { expect } from "chai";
+import sinon from "sinon";
+import { mount } from "enzyme";
+import { findLocalizedById } from "../../../../test/app/util";
 
-import Header from './index';
+import Header from "./index";
 
-describe('Header', () => {
+describe("Header", () => {
   let preventDefault, stopPropagation, mockClickEvent, props, subject;
   beforeEach(() => {
     preventDefault = sinon.spy();
@@ -22,87 +22,92 @@ describe('Header', () => {
     subject = mount(<Header {...props} />);
   });
 
-  const expectMenuGA = (label, action = 'drop-down menu') => {
-    expect(props.sendToGA.lastCall.args).to.deep.equal(['event', {
-      eventCategory: 'Menu Interactions',
+  const expectMenuGA = (label, action = "drop-down menu") => {
+    expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
+      eventCategory: "Menu Interactions",
       eventAction: action,
       eventLabel: label
     }]);
   };
 
-  describe('with hasAddon default', () => {
-    it('should render default expected content', () => {
-      expect(subject.find('#main-header')).to.have.property('length', 1);
+  describe("with hasAddon default", () => {
+    it("should render default expected content", () => {
+      expect(subject.find("#main-header")).to.have.property("length", 1);
     });
-    it('should not show the settings button', () => {
-      expect(subject.find('.settings-button')).to.have.property('length', 0);
+    it("should not show the settings button", () => {
+      expect(subject.find(".settings-button")).to.have.property("length", 0);
     });
-    it('should link to /', () => {
-      expect(subject.find('.wordmark').props()).to.have.property('href', '/');
+    it("should link to /", () => {
+      expect(subject.find(".wordmark").props()).to.have.property("href", "/");
     });
   });
 
-  describe('with hasAddon=true', () => {
+  describe("with hasAddon=true", () => {
     beforeEach(() => {
       subject.setProps({ hasAddon: true });
     });
 
-    it('should show the settings button', () => {
-      expect(subject.find('.settings-button')).to.have.property('length', 1);
+    it("should show the settings button", () => {
+      expect(subject.find(".settings-button")).to.have.property("length", 1);
     });
 
-    it('should show a link to the blog', () => {
-      expect(subject.find('.blog-link')).to.have.property('length', 1);
+    it("should show a link to the blog", () => {
+      expect(subject.find(".blog-link")).to.have.property("length", 1);
     });
 
-    it('should ping GA on blog link clicked', () => {
-      subject.find('.blog-link').simulate('click', mockClickEvent);
-      expectMenuGA('open blog', 'click');
+    it("should ping GA on blog link clicked", () => {
+      subject.find(".blog-link").simulate("click", mockClickEvent);
+      expectMenuGA("open blog", "click");
     });
 
-    it('should show the settings menu when the settings button is clicked', () => {
-      subject.find('.settings-button').simulate('click', mockClickEvent);
-      expect(subject.state('showSettings')).to.be.true;
-      expect(subject.find('.settings-contain')).to.have.property('length', 1);
-      expectMenuGA('Toggle Menu');
+    it("should show a link to the news feed", () => {
+      expect(subject.find(".news-link")).to.have.property("length", 1);
+      expect(subject.find(".news-link").props()).to.have.property("href", "/news");
     });
 
-    it('should link to /experiments', () => {
-      expect(subject.find('.wordmark').props()).to.have.property('href', '/experiments');
+    it("should show the settings menu when the settings button is clicked", () => {
+      subject.find(".settings-button").simulate("click", mockClickEvent);
+      expect(subject.state("showSettings")).to.be.true;
+      expect(subject.find(".settings-contain")).to.have.property("length", 1);
+      expectMenuGA("Toggle Menu");
     });
 
-    describe('and showSettings=true', () => {
+    it("should link to /experiments", () => {
+      expect(subject.find(".wordmark").props()).to.have.property("href", "/experiments");
+    });
+
+    describe("and showSettings=true", () => {
       beforeEach(() => {
         subject.setState({ showSettings: true });
       });
 
       const clickItem = name => {
         findLocalizedById(subject, name)
-          .find('a')
-          .simulate('click', mockClickEvent);
+          .find("a")
+          .simulate("click", mockClickEvent);
       };
 
-      it('should ping GA and show retire dialog on retire item click', () => {
-        clickItem('menuRetire');
+      it("should ping GA and show retire dialog on retire item click", () => {
+        clickItem("menuRetire");
         expect(preventDefault.called).to.be.true;
-        expect(subject.state('showRetireDialog')).to.be.true;
-        expect(subject.find('RetireConfirmationDialog')).to.have.property('length', 1);
-        expectMenuGA('Retire');
+        expect(subject.state("showRetireDialog")).to.be.true;
+        expect(subject.find("RetireConfirmationDialog")).to.have.property("length", 1);
+        expectMenuGA("Retire");
       });
 
-      it('should ping GA and and close menu on discuss clicks', () => {
-        clickItem('menuDiscuss');
-        expectMenuGA('Discuss');
+      it("should ping GA and and close menu on discuss clicks", () => {
+        clickItem("menuDiscuss");
+        expectMenuGA("Discuss");
       });
 
-      it('should ping GA and close menu on wiki clicks', () => {
-        clickItem('menuWiki');
-        expectMenuGA('wiki');
+      it("should ping GA and close menu on wiki clicks", () => {
+        clickItem("menuWiki");
+        expectMenuGA("wiki");
       });
 
-      it('should ping GA and close menu on file issue click', () => {
-        clickItem('menuFileIssue');
-        expectMenuGA('file issue');
+      it("should ping GA and close menu on file issue click", () => {
+        clickItem("menuFileIssue");
+        expectMenuGA("file issue");
       });
     });
   });

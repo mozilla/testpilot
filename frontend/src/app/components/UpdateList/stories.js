@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { withKnobs } from '@storybook/addon-knobs';
+import { storiesOf } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
+import { withKnobs } from "@storybook/addon-knobs";
 
-import UpdateList from './index';
-import LayoutWrapper from '../LayoutWrapper';
+import UpdateList from "./index";
+import LayoutWrapper from "../LayoutWrapper";
 
 const time = Date.now();
 
@@ -26,35 +26,35 @@ const mkupdate = (daysAgo, slug, experimentSlug, title, content, rest) => {
 };
 
 const baseProps = {
-  sendToGA: action('sendToGA'),
+  sendToGA: action("sendToGA"),
   experiments: [
-    { slug: 'dev-example', title: 'Dev Example' },
-    { slug: 'min-vid', title: 'Min Vid' },
-    { slug: 'snooze-tabs', title: 'Snooze Tabs' },
-    { slug: 'containers', title: 'Containers' }
+    { slug: "dev-example", title: "Dev Example" },
+    { slug: "min-vid", title: "Min Vid" },
+    { slug: "snooze-tabs", title: "Snooze Tabs" },
+    { slug: "containers", title: "Containers" }
   ],
   freshNewsUpdates: [
     mkupdate(
       1,
-      'story-123',
+      "story-123",
       null,
-      'Example Update #1',
-      'This is an example update'
+      "Example Update #1",
+      "This is an example update"
     ),
     mkupdate(
       2,
-      'story-999',
+      "story-999",
       null,
-      'Blog Post #1',
-      'This is an example update with a blog post link',
-      { link: 'https://medium.com/firefox-test-pilot' }
+      "Blog Post #1",
+      "This is an example update with a blog post link",
+      { link: "https://medium.com/firefox-test-pilot" }
     ),
     mkupdate(
       3,
-      'story-456',
-      'dev-example',
-      'Example Update #2',
-      'This is another example update'
+      "story-456",
+      "dev-example",
+      "Example Update #2",
+      "This is another example update"
     )
   ]
 };
@@ -64,33 +64,33 @@ const basePropsWithStaleNews = Object.assign({}, baseProps, {
     mkupdate(
       15 + idx,
       `stale-${idx}`,
-      [null, 'dev-example', 'snooze-tabs', 'min-vid', 'containers'][idx % 5],
+      [null, "dev-example", "snooze-tabs", "min-vid", "containers"][idx % 5],
       `Stale update #${idx}`,
       `This is an older update, #${idx}`
     )
   )
 });
 
-storiesOf('UpdateList', module)
+storiesOf("UpdateList", module)
   .addDecorator(withKnobs)
   .addDecorator(story =>
     <div className="blue" style={{ padding: 10 }}
-      onClick={action('click')}>
+      onClick={action("click")}>
       <LayoutWrapper flexModifier="card-list">
         {story()}
       </LayoutWrapper>
     </div>
   )
-  .add('no stale news', () => <UpdateList {...baseProps} />)
-  .add('stale news available', () =>
+  .add("no stale news", () => <UpdateList {...baseProps} />)
+  .add("stale news available", () =>
     <UpdateList {...{ ...basePropsWithStaleNews }} />
   )
-  .add('stale news shown', () =>
+  .add("stale news shown", () =>
     <UpdateList {...{ ...basePropsWithStaleNews, initialShowMoreNews: true }} />
   )
-  .add('no fresh news', () =>
+  .add("no fresh news", () =>
     <UpdateList {...{ ...basePropsWithStaleNews, freshNewsUpdates: [] }} />
   )
-  .add('no news at all', () =>
+  .add("no news at all", () =>
     <UpdateList {...{ ...baseProps, freshNewsUpdates: [] }} />
   );

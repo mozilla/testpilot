@@ -15,8 +15,18 @@ class Home(Base):
         return self.Body(self)
 
     @property
+    def featured(self):
+        return self.Featured(self)
+
+    @property
     def signup_footer(self):
         return self.SignUpFooter(self)
+
+    def bottom_install_button(self):
+        els = self.find_elements(By.CLASS_NAME, 'main-install__button')
+        els[-1].click()
+        from .experiments import Experiments
+        return Experiments(self.selenium, self.base_url)
 
     class Header(Region):
         """Represents the Header portion of the page"""
@@ -32,7 +42,45 @@ class Home(Base):
         @property
         def is_install_button_displayed(self):
             """Return if the testplot addon install button is displayed."""
-            return self.find_element(*self._install_locator).is_displayed()
+            try:
+                self.find_element(*self._install_locator).is_displayed()
+            except Exception:
+                return False
+            return True
+
+        def click_install_button(self):
+            """Clicks the button to install the testpilot addon.
+
+            Returns:
+                obj: Experiments object.
+
+            """
+            self.find_element(*self._install_locator).click()
+            from .experiments import Experiments
+            return Experiments(self.selenium, self.page.base_url)
+
+    class Featured(Region):
+        """Represents the Header portion of the page"""
+        _root_locator = (By.CLASS_NAME, 'featured-experiment')
+        _video_locator = (By.CLASS_NAME, 'featured-experiment__video')
+        _action_locator = (By.CLASS_NAME, 'featured-experiment__actions')
+        _install_locator = (By.CLASS_NAME, 'main-install__button')
+        _header_locator = (By.CLASS_NAME, 'featured-experiment__header')
+
+        @property
+        def is_displayed(self):
+            """Return if firefox copter is displayed."""
+            return self.find_element(*self._header_locator).is_displayed()
+
+        @property
+        def is_video_displayed(self):
+            """Return if featured video is displayed."""
+            return self.find_element(*self._video_locator).is_displayed()
+
+        @property
+        def are_actions_displayed(self):
+            """Return if the featured action buttons are displayed."""
+            return self.find_element(*self._action_locator).is_displayed()
 
         def click_install_button(self):
             """Clicks the button to install the testpilot addon.
