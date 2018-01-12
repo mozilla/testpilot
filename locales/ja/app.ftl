@@ -40,7 +40,6 @@ landingIntroOne = 新機能を試す。
 landingIntroTwo = フィードバックを送る。
 landingIntroThree = Firefox の開発に貢献。
 landingLegalNotice = 続けることで、あなたは Test Pilot の <a>利用規約</a> と <a>プライバシー通知</a> に同意したことになります。
-landingExperimentsTitle = 最新の実験的機能を試す
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -48,7 +47,6 @@ landingExperimentsTitle = 最新の実験的機能を試す
 
 landingInstallButton = Test Pilot アドオンをインストール
 landingInstallingButton = インストール中...
-landingInstalledButton = 機能を選ぶ
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -110,6 +108,11 @@ latestUpdatesTitle = 最新情報
 showMoreNewsTitle = 過去のニュースを表示
 
 
+[[ featuredExperiment ]]
+
+moreDetail = 詳細を表示
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -120,6 +123,7 @@ experimentListEndingTomorrow = 明日終了
 experimentListEndingSoon = まもなく終了
 experimentCondensedHeader = Test Pilot へようこそ！
 experimentListHeader = 興味のある実験を選びましょう！
+experimentListHeaderWithFeatured = すべての実験を試す
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -182,7 +186,6 @@ tourLink = ツアーを始める
 contribute = 協力
 bugReports = バグ報告
 discussExperiment = { $title } について議論する
-tourOnboardingTitle = { $title } が有効化されました！
 tourDoneButton = 完了
 userCountContainerAlt = 最近公開！
 highlightPrivacy = プライバシー
