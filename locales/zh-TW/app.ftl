@@ -40,7 +40,6 @@ landingIntroOne = 測試新功能
 landingIntroTwo = 提供意見回饋
 landingIntroThree = 幫忙開發 Firefox
 landingLegalNotice = 安裝此附加元件，代表您同意 Test Pilot 的 <a>使用條款</a> 及 <a>隱私權公告</a>。
-landingExperimentsTitle = 試用最新的實驗功能
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -48,7 +47,6 @@ landingExperimentsTitle = 試用最新的實驗功能
 
 landingInstallButton = 安裝 Test Pilot 附加元件
 landingInstallingButton = 安裝中…
-landingInstalledButton = 選擇您要的功能
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -110,6 +108,11 @@ latestUpdatesTitle = 最新消息
 showMoreNewsTitle = 顯示過去新聞
 
 
+[[ featuredExperiment ]]
+
+moreDetail = 檢視細節
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -120,6 +123,7 @@ experimentListEndingTomorrow = 明天結束
 experimentListEndingSoon = 快要結束
 experimentCondensedHeader = 歡迎來到 Test Pilot！
 experimentListHeader = 挑選一個實驗！
+experimentListHeaderWithFeatured = 嘗試我們所有的實驗
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -179,7 +183,6 @@ tourLink = 導覽
 contribute = 貢獻
 bugReports = 錯誤回報
 discussExperiment = 討論 { $title }
-tourOnboardingTitle = 已開啟 { $title }！
 tourDoneButton = 完成
 userCountContainerAlt = 剛推出！
 highlightPrivacy = 您的隱私權
