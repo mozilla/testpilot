@@ -117,7 +117,7 @@ jobs:
       - image: circleci/node:8.9.4
     steps:
       - attach_workspace:
-        at: .
+          at: .
       - run:
           name: l10n deployment
           command: |
