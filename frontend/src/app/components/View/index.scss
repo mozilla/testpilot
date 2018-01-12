@@ -1,0 +1,7 @@
+$theme-dark: #000f40;
+$theme-light: #513365;
+$view-gradient: linear-gradient($theme-dark, $theme-light);
+
+.view {
+  background: $view-gradient;
+}

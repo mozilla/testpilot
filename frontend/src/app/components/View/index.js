@@ -8,6 +8,8 @@ import Footer from "../Footer";
 import Header from "../Header";
 import NewsletterFooter from "../NewsletterFooter";
 
+import "./index.scss";
+
 const DOMFactories = Object.keys(ReactDOMFactories);
 
 
@@ -95,6 +97,7 @@ export default class View extends React.Component {
   render() {
     return (
       <section className={this.makeClassNames()}>
+        <div className="stars"/>
         {this.renderHeader()}
         {this.renderChildren()}
         {this.renderNewsletterFooter()}
