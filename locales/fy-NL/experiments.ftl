@@ -187,6 +187,7 @@ voicefillContributors7Title = Avansearre ûntwikkeling, opkommende technologyen
 testpilotNewsupdatesGeneralupdate6Title = Test Pilot Untwerpkursus tagonklikheid
 testpilotNewsupdatesGeneralupdate6Content = Test Pilot is koartlyn oparbeide mei ûntwerpstudinten op Ravensbourne om útdagingen fan tagonklikheid op it web te ûndersykjen.
 testpilotNewsupdatesGeneralupdate5Title = Test Pilot ûntwikkelje mei Storybooks
+testpilotNewsupdatesGeneralupdate5Content = Test Pilot brûkt no it Storybooks fisualisaasje-ark om te helpen UI-ûntwikkeling makliker te meitsjen. Lês dit stik foar mear ynformaasje.
 testpilotNewsupdatesGeneralupdate4Title = Page Shot is no Firefox Screenshots
 testpilotNewsupdatesGeneralupdate4Content = It Page Shot-eksperimint befynt har no standert yn Firefox as Firefox Screenshots. Untdek hoe't dit ta stân kaam.
 sendNewsupdatesSendupdate1Title = Ferstjoere mei Safari en Edge!
