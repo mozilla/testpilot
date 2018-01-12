@@ -119,6 +119,12 @@ jobs:
       - attach_workspace:
           at: .
       - run:
+          name: Install AWSCLI
+          command: |
+            sudo apt-get install python-pip python-dev build-essential
+            sudo pip install --upgrade pip
+            sudo pip install awscli --upgrade
+      - run:
           name: l10n deployment
           command: |
             TESTPILOT_BUCKET=testpilot-l10n.dev.mozaws.net ./bin/deploy.sh dev
