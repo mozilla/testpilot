@@ -184,6 +184,7 @@ voicefillContributors4Title = UX de Firefox
 voicefillContributors5Title = Control de Calidad, Softvision
 voicefillContributors6Title = Control de Calidad, Softvision
 voicefillContributors7Title = Desarrollo avanzado, tecnologías emergentes
+testpilotNewsupdatesGeneralupdate6Title = Curso de Diseño de accesibilidad a Test Pilot
 testpilotNewsupdatesGeneralupdate4Title = Page Shot ahora es Firefox Screenshots
 testpilotNewsupdatesGeneralupdate4Content = El experimento Page Shot se incorporó a Firefox como Firefox Screenshots. Descubra cómo sucedió.
 sendNewsupdatesSendupdate1Title = ¡Send con Safari y Edge!
