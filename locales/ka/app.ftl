@@ -40,7 +40,6 @@ landingIntroOne = გამოცადეთ ახალი შესაძლ
 landingIntroTwo = გამოგვეხმაურეთ.
 landingIntroThree = დაგვეხმარეთ Firefox-ის გაუმჯობესებაში.
 landingLegalNotice = გაეცანით Test Pilot-ის <a>გამოყენების პირობებსა</a> და <a>პირადულობის დებულებას</a>
-landingExperimentsTitle = გამოცადეთ უახლესი შესაძლებლობები
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -48,7 +47,6 @@ landingExperimentsTitle = გამოცადეთ უახლესი შ�
 
 landingInstallButton = დააყენეთ Test Pilot დამატება
 landingInstallingButton = მიმდინარეობს ჩადგმა...
-landingInstalledButton = მიუთითეთ სასურველი შესაძლებლობები
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -110,6 +108,11 @@ latestUpdatesTitle = ბოლო განახლებები
 showMoreNewsTitle = ძველი სიახლეების ჩვენება
 
 
+[[ featuredExperiment ]]
+
+moreDetail = დაწვრილებით
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -120,6 +123,7 @@ experimentListEndingTomorrow = სრულდება ხვალ
 experimentListEndingSoon = სრულდება მალე
 experimentCondensedHeader = მოგესალმებათ Test Pilot!
 experimentListHeader = შეარჩიეთ გამოსაცდელი შესაძლებლობები!
+experimentListHeaderWithFeatured = გამოცადეთ ყველა ახალი საცდელი შესაძლებლობა
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -182,7 +186,6 @@ tourLink = გზამკვლევის გაშვება
 contribute = შემოწირულობა
 bugReports = ხარვეზების შესახებ მოხსენება
 discussExperiment = { $title } პროექტის განხილვა
-tourOnboardingTitle = { $title } ჩართულია!
 tourDoneButton = კარგი
 userCountContainerAlt = ახლახან გაეშვა!
 highlightPrivacy = პირადულობის დაცვის შესახებ
