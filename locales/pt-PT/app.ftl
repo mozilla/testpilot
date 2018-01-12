@@ -123,6 +123,7 @@ experimentListEndingTomorrow = Termina amanhã
 experimentListEndingSoon = Termina brevemente
 experimentCondensedHeader = Bem-vindo(a) ao Test Pilot!
 experimentListHeader = Escolha as suas experiências!
+experimentListHeaderWithFeatured = Experimente todas as nossas experiências
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
