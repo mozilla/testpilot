@@ -40,7 +40,6 @@ landingIntroOne = Uji ciri baru.
 landingIntroTwo = Berikan maklum balas anda.
 landingIntroThree = Bantu membina Firefox.
 landingLegalNotice = Dengan meneruskan, anda bersetuju dengan <a>Terma Penggunaan</a> dan <a>Notis Privasi</a> Test Pilot.
-landingExperimentsTitle = Cuba ciri eksperimen yang terkini
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -48,7 +47,6 @@ landingExperimentsTitle = Cuba ciri eksperimen yang terkini
 
 landingInstallButton = Pasang Add-on Test Pilot
 landingInstallingButton = Memasang...
-landingInstalledButton = Pilih ciri anda
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -110,6 +108,11 @@ latestUpdatesTitle = Kemaskini terkini
 showMoreNewsTitle = Papar Berita Lama
 
 
+[[ featuredExperiment ]]
+
+moreDetail = Papar butiran
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -120,6 +123,7 @@ experimentListEndingTomorrow = Tamat Esok
 experimentListEndingSoon = Hampir Tamat
 experimentCondensedHeader = Selamat datang ke Test Pliot!
 experimentListHeader = Pilih eksperimen anda!
+experimentListHeaderWithFeatured = Cuba semua eksperimen kami
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -182,7 +186,6 @@ tourLink = Lancarkan Lawatan
 contribute = Sumbangan
 bugReports = Laporan Pepijat
 discussExperiment = Perbincangan { $title }
-tourOnboardingTitle = { $title } didayakan!
 tourDoneButton = Selesai!
 userCountContainerAlt = baru sahaja dilancarkan!
 highlightPrivacy = Privasi anda

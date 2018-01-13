@@ -184,6 +184,7 @@ voicefillContributors4Title = Firefox UX
 voicefillContributors5Title = QA Softvision
 voicefillContributors6Title = QA Softvision
 voicefillContributors7Title = Pembangunan Lanjutan, Kemunculan Teknologi
+testpilotNewsupdatesGeneralupdate6Title = Kursus Reka bentuk Kebolehcapaian Test Pilot
 testpilotNewsupdatesGeneralupdate4Title = Page Shot sekarang adalah Firefox Screenshots
 testpilotNewsupdatesGeneralupdate4Content = Eksperimen Page Shot kini dipindahkan ke dalam Firefox sebagai Firefox Screenshots. Ketahui cara perlaksanaannya.
 sendNewsupdatesSendupdate1Title = Hantar dengan Safari dan Edge!
