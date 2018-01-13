@@ -40,7 +40,6 @@ landingIntroOne = Testujśo nowe funkcije.
 landingIntroTwo = Grońśo swójo měnjenje.
 landingIntroThree = Pomagajśo Firefox wuwijaś.
 landingLegalNotice = Gaž pókšacujośo, zwolijośo do <a>wužywarskich wuměnjenjow</a> a <a>pokaza priwatnosći</a> Test Pilot.
-landingExperimentsTitle = Wopytajśo nejnowše eksperimentelne funkcije
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -48,7 +47,6 @@ landingExperimentsTitle = Wopytajśo nejnowše eksperimentelne funkcije
 
 landingInstallButton = Dodank Test Pilot instalěrowaś
 landingInstallingButton = Instalěrujo se...
-landingInstalledButton = Wubjeŕśo swóje funkcije
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -110,6 +108,11 @@ latestUpdatesTitle = Nejnowše aktualizacije
 showMoreNewsTitle = Zajźone nowosći pokazaś
 
 
+[[ featuredExperiment ]]
+
+moreDetail = Drobnostki pokazaś
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -120,6 +123,7 @@ experimentListEndingTomorrow = Skóńcyjo se witśe
 experimentListEndingSoon = Skóńcyjo se skóro
 experimentCondensedHeader = Witajśo k Test Pilot!
 experimentListHeader = Wubjeŕśo swóje eksperimenty!
+experimentListHeaderWithFeatured = Wopytajśo wše naše eksperimenty
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -179,7 +183,6 @@ tourLink = Tura
 contribute = Sobu statkowaś
 bugReports = Rozpšawy wó programowych zmólkach
 discussExperiment = Wó { $title } diskutěrowaś
-tourOnboardingTitle = { $title } zmóžnjony!
 tourDoneButton = Gótowo
 userCountContainerAlt = Rowno startowany!
 highlightPrivacy = Waša priwatnosć
