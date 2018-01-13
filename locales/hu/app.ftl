@@ -40,7 +40,6 @@ landingIntroOne = Tesztelje az új funkciókat.
 landingIntroTwo = Adjon visszajelzést.
 landingIntroThree = Segítsen a Firefox készítésében.
 landingLegalNotice = A továbblépéssel elfogadja a Tesztpilóta <a>Használati feltételeit</a> és az <a>Adatvédelmi nyilatkozatot</a>.
-landingExperimentsTitle = Próbálja ki a legújabb kísérleti funkciókat
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -48,7 +47,6 @@ landingExperimentsTitle = Próbálja ki a legújabb kísérleti funkciókat
 
 landingInstallButton = A Tesztpilóta kiegészítő telepítése
 landingInstallingButton = Telepítés…
-landingInstalledButton = Funkciók kiválasztása
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -110,6 +108,11 @@ latestUpdatesTitle = Legújabb frissítések
 showMoreNewsTitle = Múltbeli hírek megjelenítése
 
 
+[[ featuredExperiment ]]
+
+moreDetail = Részletek megtekintése
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -120,6 +123,7 @@ experimentListEndingTomorrow = Holnap véget ér
 experimentListEndingSoon = Hamarosan véget ér
 experimentCondensedHeader = Üdvözli a Tesztpilóta!
 experimentListHeader = Válasszon kísérleteket!
+experimentListHeaderWithFeatured = Próbálja ki az összes kísérletünket
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -182,7 +186,6 @@ tourLink = Kalauz indítása
 contribute = Közreműködés
 bugReports = Hibajelentések
 discussExperiment = A(z) { $title } megvitatása
-tourOnboardingTitle = { $title } bekapcsolva!
 tourDoneButton = Kész
 userCountContainerAlt = Épp most indult!
 highlightPrivacy = Magánszféra
