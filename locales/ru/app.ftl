@@ -40,7 +40,6 @@ landingIntroOne = Тестируйте новые функции.
 landingIntroTwo = Оставляйте свои отзывы.
 landingIntroThree = Помогайте улучшать Firefox.
 landingLegalNotice = Продолжая, вы соглашаетесь с <a>Условиями использования</a> и <a>Политикой приватности</a> программы лётчика-испытателя.
-landingExperimentsTitle = Попробуйте последние экспериментальные функции
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -48,7 +47,6 @@ landingExperimentsTitle = Попробуйте последние экспери
 
 landingInstallButton = Установить расширение лётчика-испытателя
 landingInstallingButton = Установка...
-landingInstalledButton = Выберите возможности
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -110,6 +108,11 @@ latestUpdatesTitle = Последние обновления
 showMoreNewsTitle = Показать прошлые новости
 
 
+[[ featuredExperiment ]]
+
+moreDetail = Показать подробности
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -120,6 +123,7 @@ experimentListEndingTomorrow = Заканчиваются завтра
 experimentListEndingSoon = Скоро заканчиваются
 experimentCondensedHeader = Добро пожаловать в программу лётчиков-испытателей!
 experimentListHeader = Выберите ваши эксперименты!
+experimentListHeaderWithFeatured = Попробуйте все наши эксперименты
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -182,7 +186,6 @@ tourLink = тур
 contribute = Внести вклад
 bugReports = Сообщения об ошибках
 discussExperiment = Обсудить { $title }
-tourOnboardingTitle = { $title } включено!
 tourDoneButton = Готово
 userCountContainerAlt = Только что запущено!
 highlightPrivacy = Ваша приватность
