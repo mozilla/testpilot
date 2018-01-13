@@ -196,6 +196,7 @@ containersNewsupdatesContainersupdate1Title = Reporte de graduación de contened
 containersNewsupdatesContainersupdate1Content = Contenedores ahora brincan de Test Pilot y están disponibles como complementos para todos los usuarios de Firefox.
 notesNewsupdatesNotesupdate2Title = Sincroniza tus notas
 notesNewsupdatesNotesupdate2Content = Ahora puedes sincronizar tus notas donde sea que uses Firefox. Mira como lo hicimos.
+notesNewsupdatesNotesupdate1Title = Mejoras de Notas
 sendNewsupdatesSendupdate1Title = ¡Send con Safari y Edge!
 sendNewsupdatesSendupdate1Content = Se acaba de lanzar Send 1.1.0, con una mejor asistencia al navegador y algunas otras mejoras.
 sendNewsupdatesSendupdate2Title = Saber más de Send
