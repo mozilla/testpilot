@@ -40,7 +40,6 @@ landingIntroOne = Prova le novità.
 landingIntroTwo = Dicci cosa ne pensi.
 landingIntroThree = Contribuisci al futuro di Firefox.
 landingLegalNotice = Procedendo accetti i <a>termini d’uso</a> e l’<a>informativa sulla privacy</a> di Test Pilot.
-landingExperimentsTitle = Prova gli esperimenti più recenti
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -48,7 +47,6 @@ landingExperimentsTitle = Prova gli esperimenti più recenti
 
 landingInstallButton = Installa l’estensione di Test Pilot
 landingInstallingButton = Installazione in corso…
-landingInstalledButton = Scegli i tuoi esperimenti
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -110,6 +108,11 @@ latestUpdatesTitle = Ultime notizie
 showMoreNewsTitle = Visualizza notizie più vecchie
 
 
+[[ featuredExperiment ]]
+
+moreDetail = Visualizza dettagli
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -120,6 +123,7 @@ experimentListEndingTomorrow = Si concluderà domani
 experimentListEndingSoon = Si concluderà a breve
 experimentCondensedHeader = Benvenuto in Test Pilot
 experimentListHeader = Scegli i tuoi esperimenti
+experimentListHeaderWithFeatured = Prova tutti i nostri esperimenti
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -179,7 +183,6 @@ tourLink = Panoramica
 contribute = Collabora
 bugReports = Segnalazione bug
 discussExperiment = Discussioni su { $title }
-tourOnboardingTitle = { $title } attivato.
 tourDoneButton = Fatto
 userCountContainerAlt = Appena lanciato
 highlightPrivacy = La tua privacy
