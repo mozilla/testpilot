@@ -188,6 +188,7 @@ testpilotNewsupdatesGeneralupdate6Title = Corso di Design Accessibility per Test
 testpilotNewsupdatesGeneralupdate5Title = Sviluppo di Test Pilot con Storybooks
 testpilotNewsupdatesGeneralupdate4Title = Page Shot è diventato Firefox Screenshots
 testpilotNewsupdatesGeneralupdate4Content = L’esperimento Page Shot è diventato parte integrante di Firefox con il nome di Firefox Screenshots. Scopri tutta la storia.
+notesNewsupdatesNotesupdate2Title = Sincronizza le tue note
 sendNewsupdatesSendupdate1Title = Send con Safari e Edge
 sendNewsupdatesSendupdate1Content = È disponibile Send 1.1.0, con un supporto più ampio per altri browser e tanti altri miglioramenti.
 sendNewsupdatesSendupdate2Title = Imparare da Send
