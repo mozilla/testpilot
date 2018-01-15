@@ -184,6 +184,7 @@ voicefillContributors4Title = Firefox UX
 voicefillContributors5Title = Softvision QA
 voicefillContributors6Title = Softvision QA
 voicefillContributors7Title = Napredni razvoj, tehnologija u nastajanju
+testpilotNewsupdatesGeneralupdate6Title = Test Pilot kurs za dizajniranje pristupa
 testpilotNewsupdatesGeneralupdate4Title = Page Shot je sada Firefox Screenshots
 testpilotNewsupdatesGeneralupdate4Content = Page Shot je sada uključen u Firefox kao Firefox Screenshots. Naučite kako se desilo.
 sendNewsupdatesSendupdate1Title = Pošaljite sa Safari-jem i Edge-om!
