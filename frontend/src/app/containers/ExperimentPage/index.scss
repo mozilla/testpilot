@@ -59,8 +59,8 @@
   padding-top: $grid-unit * .1;
 
   &.enabled {
-    background: $teal-60;
-    border-bottom: 1px solid $teal-70;
+    background: $green-60;
+    border-bottom: 1px solid $green-70;
     color: $white;
     opacity: 1;
   }
@@ -94,8 +94,10 @@
     @include respond-to('not-small') {
       margin-left: $grid-unit;
     }
-
-    padding: 0 32px;
+    max-width: 180px;
+    height: 48px;
+    border-radius: 3px;
+    padding: 0 42px;
   }
 
   .highlight-privacy {
