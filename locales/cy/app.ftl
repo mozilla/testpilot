@@ -40,7 +40,6 @@ landingIntroOne = Profi nodweddion newydd.
 landingIntroTwo = Rhannu adborth.
 landingIntroThree = Helpu adeiladu Firefox.
 landingLegalNotice = Drwy barhau, rydych yn cytuno i <a>Amodau Defnydd</a> a <a>Hysbysiad Preifatrwydd</a> Test Pilot.
-landingExperimentsTitle = Rhowch gynnig ar ein nodweddion arbrofol diweddaraf
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -48,7 +47,6 @@ landingExperimentsTitle = Rhowch gynnig ar ein nodweddion arbrofol diweddaraf
 
 landingInstallButton = Gosod Ychwanegyn Test Pilot
 landingInstallingButton = Gosod...
-landingInstalledButton = Dewis eich nodweddion
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -110,6 +108,11 @@ latestUpdatesTitle = Diweddariadau diweddaraf
 showMoreNewsTitle = Dangoswch Newyddion Blaenorol
 
 
+[[ featuredExperiment ]]
+
+moreDetail = Gweld manylion
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -120,6 +123,7 @@ experimentListEndingTomorrow = Yn Gorffen Yfory
 experimentListEndingSoon = Yn Gorffen cyn bo Hir
 experimentCondensedHeader = Croeso i Test Pilot!
 experimentListHeader = Dewiswch eich arbrawf!
+experimentListHeaderWithFeatured = Profwch ein arbrofion i gyd
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -129,6 +133,7 @@ experimentListHeader = Dewiswch eich arbrawf!
 experimentCardFeedback = Adborth
 experimentCardManage = Rheoli
 experimentCardGetStarted = Cychwyn Arni
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Dysgu Rhagor
 
 
@@ -178,7 +183,6 @@ tourLink = Cychwyn y Cyflwyniad
 contribute = Cyfrannu
 bugReports = Adroddiadau Gwall
 discussExperiment = Trafod { $title }
-tourOnboardingTitle = Galluogwyd { $title }
 tourDoneButton = Gorffen
 userCountContainerAlt = Newydd ei gyflwyno!
 highlightPrivacy = Eich preifatrwydd
@@ -194,7 +198,6 @@ startedDateLabel = Dyddiad Cychwyn yr Arbrawf: <b>{ $startedDate }</b>
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Test Pilot
-learnMoreLink = DYSGU RHAGOR
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -327,3 +330,5 @@ warningMissingPrefTitle = Datblygu Test Pilot?
 warningMissingPrefDetail = Wrth redeg Test Pilot yn lleol neu mewn amgylchedd datblygu, mae angen ffurfweddiad arbennig. Darllenwch ein <a>dogfennaeth</a> am y manylion.
 warningBadHostnameTitle = Enw gwestai heb ei gymeradwyo!
 warningBadHostnameDetail = Dim ond drwy testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, neu example.com:8000 y mae modd cael mynediad i Test Pilot. Darllenwch <a>ein dogfennaeth</a> am y manylion.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Mae Test Pilot angen JavaScript. Ymddiheuriadau.
