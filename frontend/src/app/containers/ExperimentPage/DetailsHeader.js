@@ -395,7 +395,7 @@ export const ExperimentControls = ({
           <a
             onClick={handleFeedback}
             id="feedback-button"
-            className="button secondary"
+            className="button default"
             href={surveyURL}
             target="_blank"
             rel="noopener noreferrer"

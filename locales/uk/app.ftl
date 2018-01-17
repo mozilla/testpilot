@@ -129,6 +129,7 @@ experimentListHeader = Оберіть свої експерименти!
 experimentCardFeedback = Відгук
 experimentCardManage = Керувати
 experimentCardGetStarted = Розпочати
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Докладніше
 
 
@@ -197,7 +198,6 @@ startedDateLabel = Дата початку експерименту: <b>{ $start
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Test Pilot
-learnMoreLink = ДЕТАЛЬНІШЕ
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -330,3 +330,5 @@ warningMissingPrefTitle = Розробляєте Test Pilot?
 warningMissingPrefDetail = Запускаючи Test Pilot локально або в середовищі розробки необхідно використовувати спеціальну конфігурацію. Для отримання більш детальної інформації, будь ласка, перегляньте <a>нашу документацію</a>.
 warningBadHostnameTitle = Неприйнятне ім'я хоста!
 warningBadHostnameDetail = Доступ до сайту Test Pilot можливий тільки з testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net або example.com:8000. Для отримання більш детальної інформації, будь ласка, перегляньте <a>нашу документацію</a>.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Вибачте, але для роботи Test Pilot необхідний JavaScript.

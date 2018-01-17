@@ -44,11 +44,11 @@ export default class FeaturedButton extends React.Component {
     const { title } = this.props.experiment;
 
     const terms = <Localized id="landingLegalNoticeTermsOfUse">
-            <a href="/terms">terms</a>
-          </Localized>;
+      <a href="/terms">terms</a>
+    </Localized>;
     const privacy = <Localized id="landingLegalNoticePrivacyNotice">
-            <a href="/privacy">privacy</a>
-          </Localized>;
+      <a href="/privacy">privacy</a>
+    </Localized>;
 
     const launchLegalModal = (ev) => {
       ev.preventDefault();
@@ -56,11 +56,11 @@ export default class FeaturedButton extends React.Component {
     };
 
     return (<Localized id={this.l10nId("legal-link")}>
-              <p className="main-install__legal">
-                By proceeding, you agree to the {terms} and {privacy} of Test Pilot
-                and <a href="#" onClick={launchLegalModal}>{title}</a>.
-              </p>
-            </Localized>);
+      <p className="main-install__legal">
+        By proceeding, you agree to the {terms} and {privacy} of Test Pilot
+        and <a href="#" onClick={launchLegalModal}>{title}</a>.
+      </p>
+    </Localized>);
   }
 
   handleManage = () => {
@@ -84,7 +84,7 @@ export default class FeaturedButton extends React.Component {
   render() {
     const { showLegalDialog } = this.state;
     const { experiment, installed, clientUUID, hasAddon,
-            enabled, postInstallCallback } = this.props;
+      enabled, postInstallCallback } = this.props;
     const { slug, survey_url, title } = experiment;
 
     let Buttons;
@@ -96,37 +96,37 @@ export default class FeaturedButton extends React.Component {
           <div className="featured-experiment__enabled-buttons">
             <Localized id="experimentCardManage">
               <a onClick={this.handleManage}
-                 href={`/experiments/${slug}`}
-                 className="button secondary manage-button">
-                 Manage
+                href={`/experiments/${slug}`}
+                className="button secondary manage-button">
+                Manage
               </a>
             </Localized>
             <Localized id="experimentCardFeedback">
               <a onClick={this.handleFeedback}
-                 href={surveyURL} target="_blank" rel="noopener noreferrer"
-                 className="button default featured-feedback">
-                 Feedback
+                href={surveyURL} target="_blank" rel="noopener noreferrer"
+                className="button default featured-feedback">
+                Feedback
               </a>
             </Localized>
           </div>
           {this.renderLegalLink()}
           {showLegalDialog && <Modal wrapperClass='legal-modal'
-                                     onCancel={() => this.setState({ showLegalDialog: false })}
-                                     onComplete={() => this.setState({ showLegalDialog: false })}>
+            onCancel={() => this.setState({ showLegalDialog: false })}
+            onComplete={() => this.setState({ showLegalDialog: false })}>
             <MeasurementSection experiment={experiment}
-                                l10nId={this.l10nId}
-                                highlightMeasurementPanel={false}></MeasurementSection>
+              l10nId={this.l10nId}
+              highlightMeasurementPanel={false}></MeasurementSection>
           </Modal>}
         </div>
       );
     } else {
       Buttons = (<MainInstallButton {...this.props}
-                                    experimentTitle={title}
-                                    experiment={experiment}
-                                    postInstallCallback={postInstallCallback}
-                                    experimentLegalLink={this.renderLegalLink()}
-                                    eventCategory="HomePage Interactions"
-                                    eventLabel="Install the Add-on" />);
+        experimentTitle={title}
+        experiment={experiment}
+        postInstallCallback={postInstallCallback}
+        experimentLegalLink={this.renderLegalLink()}
+        eventCategory="HomePage Interactions"
+        eventLabel="Install the Add-on" />);
     }
 
     return Buttons;

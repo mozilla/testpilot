@@ -129,6 +129,7 @@ experimentListHeader = Pilih eksperimen anda!
 experimentCardFeedback = Maklum balas
 experimentCardManage = Urus
 experimentCardGetStarted = Mulakan
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Ketahui Selanjutnya
 
 
@@ -197,7 +198,6 @@ startedDateLabel = Tarikh Mula Eksperimen: <b>{ $startedDate }</b>
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Test Pilot
-learnMoreLink = KETAHUI SELANJUTNYA
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -330,3 +330,5 @@ warningMissingPrefTitle = Membangunkan Test Pilot?
 warningMissingPrefDetail = Apabila melaksanakan Test Pilot secara lokal atau dalam persekitaran pembangunan, konfigurasi khas diperlukan. Sila rujuk <a>dokumentasi kami</a> untuk butirannya.
 warningBadHostnameTitle = Nama hos tidak diluluskan!
 warningBadHostnameDetail = Laman Test Pilot mungkin hanya boleh diakses di testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, atau example.com:8000. Sila rujuk <a>dokumentasi kami</a> untuk butiran.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot memerlukan JavaScript. Harap maaf.

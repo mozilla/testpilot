@@ -79,52 +79,52 @@ export default class Settings extends React.Component {
   render() {
     return (
       <div id="settings">
-         <div className="settings-contain">
-           <Localized id="menuTitle">
-             <div className={classnames("settings-button", { active: this.showSettingsMenu() })}
-                  onClick={e => this.toggleSettings(e)}>
-               Settings
-             </div>
-           </Localized>
-              {
-                this.showSettingsMenu()
-                &&
-                <div className="settings-menu" onClick={() => this.settingsClick()}>
-                  <ul>
-                    <li>
-                      <Localized id="menuWiki">
-                        <a onClick={() => this.wiki()}
-                         href="https://wiki.mozilla.org/Test_Pilot"
-                         target="_blank" rel="noopener noreferrer">
-                         Test Pilot Wiki
-                        </a>
-                      </Localized>
-                    </li>
-                    <li>
-                      <Localized id="menuDiscuss">
-                        <a onClick={() => this.discuss()}
-                         href="https://discourse.mozilla-community.org/c/test-pilot"
-                         target="_blank" rel="noopener noreferrer">Discuss Test Pilot</a>
-                      </Localized>
-                    </li>
-                    <li>
-                      <Localized id="menuFileIssue">
-                        <a onClick={() => this.fileIssue()}
-                         href="https://github.com/mozilla/testpilot/issues/new"
-                         target="_blank" rel="noopener noreferrer">File an Issue</a>
-                      </Localized>
-                    </li>
-                    <li><hr /></li>
-                    <li>
-                      <Localized id="menuRetire">
-                        <a onClick={e => this.retire(e)}>Uninstall Test Pilot</a>
-                      </Localized>
-                    </li>
-                  </ul>
-                </div>
-              }
-         </div>
-       </div>
+        <div className="settings-contain">
+          <Localized id="menuTitle">
+            <div className={classnames("settings-button", { active: this.showSettingsMenu() })}
+              onClick={e => this.toggleSettings(e)}>
+              Settings
+            </div>
+          </Localized>
+          {
+            this.showSettingsMenu()
+            &&
+            <div className="settings-menu" onClick={() => this.settingsClick()}>
+              <ul>
+                <li>
+                  <Localized id="menuWiki">
+                    <a onClick={() => this.wiki()}
+                      href="https://wiki.mozilla.org/Test_Pilot"
+                      target="_blank" rel="noopener noreferrer">
+                      Test Pilot Wiki
+                    </a>
+                  </Localized>
+                </li>
+                <li>
+                  <Localized id="menuDiscuss">
+                    <a onClick={() => this.discuss()}
+                      href="https://discourse.mozilla-community.org/c/test-pilot"
+                      target="_blank" rel="noopener noreferrer">Discuss Test Pilot</a>
+                  </Localized>
+                </li>
+                <li>
+                  <Localized id="menuFileIssue">
+                    <a onClick={() => this.fileIssue()}
+                      href="https://github.com/mozilla/testpilot/issues/new"
+                      target="_blank" rel="noopener noreferrer">File an Issue</a>
+                  </Localized>
+                </li>
+                <li><hr /></li>
+                <li>
+                  <Localized id="menuRetire">
+                    <a onClick={e => this.retire(e)}>Uninstall Test Pilot</a>
+                  </Localized>
+                </li>
+              </ul>
+            </div>
+          }
+        </div>
+      </div>
     );
   }
 

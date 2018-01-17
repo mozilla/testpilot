@@ -46,8 +46,8 @@ export default class EmailDialog extends React.Component {
 
     return (
       <div className="modal-container" tabIndex="0"
-           ref={modalContainer => { this.modalContainer = modalContainer; }}
-           onKeyDown={e => this.handleKeyDown(e)}>
+        ref={modalContainer => { this.modalContainer = modalContainer; }}
+        onKeyDown={e => this.handleKeyDown(e)}>
         {!isSuccess && !isError && this.renderForm()}
         {isSuccess && this.renderSuccess()}
         {isError && this.renderError()}
@@ -71,11 +71,11 @@ export default class EmailDialog extends React.Component {
             <p>Find out about new experiments and see test results for experiments you&apos;ve tried.</p>
           </Localized>
           <NewsletterForm {...{ email, privacy }}
-                          isModal={true}
-                          setEmail={newEmail => this.setState({ email: newEmail })}
-                          setPrivacy={newPrivacy => this.setState({ privacy: newPrivacy })}
-                          subscribe={this.handleSubscribe.bind(this)}
-                          buttonRef={button => this.submitButton = button} />
+            isModal={true}
+            setEmail={newEmail => this.setState({ email: newEmail })}
+            setPrivacy={newPrivacy => this.setState({ privacy: newPrivacy })}
+            subscribe={this.handleSubscribe.bind(this)}
+            buttonRef={button => this.submitButton = button} />
         </div>
       </div>
     );

@@ -12,7 +12,7 @@ storiesOf("Banner", module)
   .addDecorator(story =>
     <div className="blue storybook-center" onClick={action("click")} style={{ alignItems: "stretch" }}>
       <div className="stars" />
-          {story()}
+      {story()}
     </div>
   )
   .add("Big Banner", () =>
@@ -31,13 +31,13 @@ storiesOf("Banner", module)
     </Banner>
   )
   .add("Condensed Banner", () =>
-      <Banner condensed={true}>
+    <Banner condensed={true}>
       <LayoutWrapper flexModifier="row-between-reverse">
-          <h2 className="banner__title">
-            Welcome to Test Pilot!
-          </h2>
+        <h2 className="banner__title">
+          Welcome to Test Pilot!
+        </h2>
         <Copter small={true} />
       </LayoutWrapper>
-      </Banner>
+    </Banner>
   );
 

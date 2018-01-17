@@ -34,13 +34,13 @@
   .card-icon {
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: $grid-unit * 3.2 $grid-unit * 3.2;
+    background-size: contain;
     filter: drop-shadow(0 2px 0 $transparent-black-2);
-    height: $grid-unit * 3.2;
-    margin: $grid-unit auto;
+    height: $grid-unit * 3.75;
+    margin: $grid-unit auto $grid-unit * 1.4;
     opacity: .9;
     position: relative;
-    width: $grid-unit * 3.2;
+    width: $grid-unit * 3.5;
   }
 
   .card-title {
@@ -66,7 +66,7 @@
   }
 
   .test-pilot-icon {
-    background-image: url('./img/testpilot.svg');
+    background-image: url('./img/enabled-features.svg');
   }
 
   .chat-icon {

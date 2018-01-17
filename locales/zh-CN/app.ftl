@@ -97,7 +97,7 @@ notFoundHeader = 到了什么都没有的太空！
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = 欢迎来到 Test Pilot！
-emailOptInMessage = 了解新的实验，以及查看您尝试过的实验的测试结果。
+emailOptInMessage = 看看有什么新实验，查查参加过的实验结果如何。
 emailOptInConfirmationTitle = 电子邮件已发送
 emailOptInConfirmationClose = 关于此实验...
 emailOptInDialogErrorTitle = 很遗憾
@@ -129,6 +129,7 @@ experimentListHeader = 挑选您的实验！
 experimentCardFeedback = 反馈
 experimentCardManage = 管理
 experimentCardGetStarted = 了解详情
+// also used in NewsUpdateDialog
 experimentCardLearnMore = 详细了解
 
 
@@ -194,7 +195,6 @@ startedDateLabel = 实验开始时间：<b>{ $startedDate }</b>
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Test Pilot
-learnMoreLink = 详细了解
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -279,7 +279,7 @@ newsletterFormSubmitButtonSubmitting = 正在提交...
 
 newsletterFooterError = 提交您的电子邮件地址时出错了。重试？
 newsletterFooterHeader = 保持联系
-newsletterFooterBody = 了解新的实验，以及查看您尝试过的实验的测试结果。
+newsletterFooterBody = 看看有什么新实验，查查参加过的实验结果如何。
 newsletterFooterSuccessHeader = 谢谢！
 newsletterFooterSuccessBody = 如果您以前没有确认过订阅 Mozilla 相关的新闻邮件，您可能需要完成它。请检查您的收件箱或垃圾邮件箱，找到我们发给您的电子邮件。
 
@@ -327,3 +327,5 @@ warningMissingPrefTitle = 开发 Test Pilot？
 warningMissingPrefDetail = 在本地或在开发环境中运行 Test Pilot 必需进行特殊配置。有关详细信息，请查阅<a>我们的文档</a>。
 warningBadHostnameTitle = 未被批准的主机名！
 warningBadHostnameDetail = Test Pilot 网站只能从 testpilot.firefox.com、testpilot.stage.mozaws.net、testpilot.dev.mozaws.net 或 example.com:8000 访问。有关详细信息，请查阅<a>我们的文档</a>。
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = 很抱歉，Test Pilot 需要 JavaScript 来运行。

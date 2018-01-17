@@ -129,6 +129,7 @@ experimentListHeader = Kies jo eksperiminten!
 experimentCardFeedback = Kommentaar
 experimentCardManage = Beheare
 experimentCardGetStarted = Oan de slach
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Mear ynfo
 
 
@@ -194,7 +195,6 @@ startedDateLabel = Startdatum eksperimint: <b>{ $startedDate }</b>
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Test Pilot
-learnMoreLink = MEAR YNFO
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -327,3 +327,5 @@ warningMissingPrefTitle = Untwikkelje jo Test Pilot?
 warningMissingPrefDetail = Foar it lokaal of yn ûntwikkelomjouwingen útfieren fan Test Pilot is spesjale konfiguraasje fereaske. Besjoch <a>ús dokumintaasje</a> foar details.
 warningBadHostnameTitle = Net-goedkarde hostnamme!
 warningBadHostnameDetail = De Test Pilot-website mei allinnich fan testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net of example.com:8000 ôf benadere wurde. Besjoch <a>ús dokumintaasje</a> foar details.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot fereasket JavaScript. Sorry derfoar.

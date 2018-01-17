@@ -21,8 +21,8 @@ npm install
 
 If you just want an XPI package of the add-on, use one of these commands:
 ```
-npm package      # Production mode without logging
-npm package:dev  # Development mode with lots of Browser Console logging
+npm run package      # Production mode without logging
+npm run package:dev  # Development mode with lots of Browser Console logging
 ```
 
 If you'd like to actively work on the add-on, here are some additional steps to set up a more convenient workflow:

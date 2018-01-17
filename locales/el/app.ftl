@@ -129,6 +129,7 @@ experimentListHeader = Επιλέξτε τα πειράματά σας!
 experimentCardFeedback = Σχόλια
 experimentCardManage = Διαχείριση
 experimentCardGetStarted = Ξεκινήστε
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Μάθετε περισσότερα
 
 
@@ -188,8 +189,15 @@ highlightPrivacy = Το απόρρητό σας
 experimentGradReportButton = Αναφορά αποφοίτησης
 experimentGradReportPendingTitle = Αυτό το πείραμα έχει λήξει
 experimentGradReportPendingCopy = Εργαζόμαστε πάνω σε μια πλήρη αναφορά. Ελέγξτε ξανά σύντομα για λεπτομέρειες.
+experimentGradReportReady = Έχουμε προετοιμάσει μια πλήρη αναφορά αποφοίτησης.
 experimentGoToLink = Μετάβαση στο { $title }
 startedDateLabel = Ημερομηνία έναρξης πειράματος: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -217,6 +225,7 @@ versionChangeNoticeLink = Λάβετε την τρέχουσα έκδοση το
 [[ uninstall ]]
 
 retireDialogTitle = Απεγκατάσταση του Test Pilot;
+retireMessageUpdate = Όπως επιθυμείτε. Αυτό θα απεγκαταστήσει το Test Pilot. Μπορείτε να απενεργοποιήσετε μεμονωμένα πειράματα από τη Διαχείριση Πρόσθετων του Firefox.
 retireEmailMessage = Για να απενεργοποιήσετε τις ενημερώσεις μέσω e-mail, κάντε απλά κλικ στο σύνδεσμο <em>κατάργησης εγγραφής</em> σε οποιοδήποτε e-mail από το Test Pilot.
 retireSubmitButton = Συνέχεια
 pageTitleRetirePage = Firefox Test Pilot - Απεγκατάσταση του Test Pilot
@@ -281,6 +290,7 @@ newsletterFooterSuccessBody = Αν δεν έχετε επιβεβαιώσει π
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
+localeNotTranslatedWarningTitle = Αυτό το πείραμα δεν έχει μεταφραστεί στη γλώσσα σας ({ $locale_code }).
 localeWarningSubtitle = Μπορείτε ακόμη να το ενεργοποιήσετε αν θέλετε.
 
 
@@ -320,3 +330,5 @@ warningMissingPrefTitle = Είστε προγραμματιστής του Test 
 warningMissingPrefDetail = Όταν εκτελείτε το Test Pilot τοπικά ή σε προγραμματιστικό περιβάλλον, απαιτείται ειδική ρύθμιση. Παρακαλούμε δείτε <a>την τεκμηρίωσή μας</a> για λεπτομέρειες.
 warningBadHostnameTitle = Μη εγκεκριμένο όνομα host!
 warningBadHostnameDetail = Η πρόσβαση στην ιστοσελίδα του Test Pilot μπορεί να γίνει μόνο από το testpilot.firefox.com, το testpilot.stage.mozaws.net, το testpilot.dev.mozaws.net ή το example.com:8000. Παρακαλούμε δείτε <a>την τεκμηρίωσή μας</a> για λεπτομέρειες.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Το Test Pilot απαιτεί JavaScript. Λυπούμαστε γι' αυτό.

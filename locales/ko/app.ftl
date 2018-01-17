@@ -98,6 +98,7 @@ notFoundHeader = 문제 발생!
 emailOptInDialogTitle = Test Pilot에 오신 것을 환영합니다!
 emailOptInMessage = 새로운 실험과 참여한 실험의 결과를 받아보세요.
 emailOptInConfirmationTitle = 이메일 보냄
+emailOptInConfirmationClose = 실험에...
 emailOptInDialogErrorTitle = 이런!
 
 
@@ -127,6 +128,7 @@ experimentListHeader = 실험을 선택하세요!
 experimentCardFeedback = 피드백
 experimentCardManage = 관리
 experimentCardGetStarted = 시작하기
+// also used in NewsUpdateDialog
 experimentCardLearnMore = 더 알아보기
 
 
@@ -135,6 +137,10 @@ experimentCardLearnMore = 더 알아보기
 
 feedbackSubmitButton = 간단한 설문조사하기
 feedbackUninstallTitle = 감사합니다!
+feedbackUninstallCopy =
+    Firefox Test Pilot 참여는 많은 것을 의미합니다!
+    다른 실험도 확인해 보시고 새로 추가되는 실험도 
+    기대해 주세요!
 
 
 // A modal prompt shown before the feedback survey for some experiments.
@@ -156,6 +162,8 @@ experimentPromoSubheader = 저희는 Firefox의 차세대 기능을 만들고 �
 
 isEnabledStatusMessage = { $title }을 사용하고 있습니다.
 installErrorMessage = { $title }을 사용할 수 없네요. 나중에 시도해주세요.
+otherExperiments = 이 실험도 시도해보세요
+giveFeedback = 의견 보내기
 disableHeader = 실험기능을 비활성화 하시겠습니까?
 disableExperiment = { $title } 비활성화
 disableExperimentTransition = 비활성화 중...
@@ -170,19 +178,23 @@ tour = 둘러보기
 tourLink = 둘러보기 시작
 contribute = 공헌
 bugReports = 버그 리포트
+discussExperiment = { $title } 토론
 tourOnboardingTitle = { $title } 활성화!
 tourDoneButton = 완료
 userCountContainerAlt = 바로 시작!
 highlightPrivacy = 개인 정보 보호
+experimentGradReportButton = 최종 보고서
 experimentGradReportPendingTitle = 이 실험기능은 종료되었음
+experimentGradReportPendingCopy = 전체 보고서를 작성 중입니다. 잠시 후 다시 확인해 보세요.
+experimentGradReportReady = 전체 최종 보고서가 준비 됐습니다.
 experimentGoToLink = { $title }로 이동
+startedDateLabel = 실험 시작일 : <b>{ $startedDate }</b>
 
 
 // news updates dialog.
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = 테스트 파일럿
-learnMoreLink = 자세히 보기
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -210,8 +222,10 @@ versionChangeNoticeLink = Firefox의 최신 버전을 받습니다.
 [[ uninstall ]]
 
 retireDialogTitle = Test Pilot을 제거하시겠습니까?
+retireEmailMessage = 이메일 업데이트를 취소하려면 Test Pilot 이메일의 <em>구독 취소</em> 링크를 클릭하세요.
 retireSubmitButton = 진행
 retirePageProgressMessage = 종료 중...
+retirePageSurveyButton = 간단한 설문 참여
 
 
 // Shown to users after installing Test Pilot if a restart is required.
@@ -226,6 +240,8 @@ restartIntroThree = 실험 선택
 
 shareEmail = 이메일
 shareCopy = 복사
+// Shown on pages of retired or retiring experiments.
+eolIntroMessage = { $title }은 { $completedDate }에 종료합니다
 eolNoticeLink = 더 알아보기
 
 

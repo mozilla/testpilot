@@ -33,8 +33,8 @@ export default class ExperimentDisableDialog extends React.Component {
 
     return (
       <div className="modal-container" tabIndex="0"
-           ref={modalContainer => { this.modalContainer = modalContainer; }}
-           onKeyDown={e => this.handleKeyDown(e)}>
+        ref={modalContainer => { this.modalContainer = modalContainer; }}
+        onKeyDown={e => this.handleKeyDown(e)}>
         <div id="disabled-feedback-modal" className="modal feedback-modal modal-bounce-in">
           <header className="modal-header-wrapper">
             <Localized id="feedbackUninstallTitle" $title={ experiment.title }>
@@ -54,10 +54,10 @@ export default class ExperimentDisableDialog extends React.Component {
           <div className="modal-actions">
             <Localized id="feedbackSubmitButton">
               <a
-                 onClick={e => this.submit(e)} href={surveyURL}
-                 target="_blank" rel="noopener noreferrer"
-                 className="submit button default large quit">
-                 Take a quick survey
+                onClick={e => this.submit(e)} href={surveyURL}
+                target="_blank" rel="noopener noreferrer"
+                className="submit button default large quit">
+                Take a quick survey
               </a>
             </Localized>
           </div>

@@ -37,7 +37,7 @@ export default class PastExperiments extends React.Component {
         {pastExperiments.length > 0 && !showPastExperiments &&
         <Localized id="viewPastExperiments">
           <div className={classnames(["button past-experiments", "outline"])}
-              onClick={() => this.setState({ showPastExperiments: true })}>
+            onClick={() => this.setState({ showPastExperiments: true })}>
             View Past Experiments
           </div>
         </Localized>}
@@ -45,7 +45,7 @@ export default class PastExperiments extends React.Component {
         <div>
           <Localized id="hidePastExperiments">
             <div className={classnames(["button past-experiments", "outline"])}
-                onClick={() => this.setState({ showPastExperiments: false })}>
+              onClick={() => this.setState({ showPastExperiments: false })}>
               Hide Past Experiments
             </div>
           </Localized>

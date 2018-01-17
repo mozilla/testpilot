@@ -32,15 +32,15 @@ export default class MainInstallButton extends React.Component {
       return;
     }
     const { requireRestart, sendToGA, eventCategory, eventLabel,
-            installAddon, installCallback, navigateTo, hasAddon, postInstallCallback,
-            isExperimentEnabled, enableExperiment, experiment } = this.props;
+      installAddon, installCallback, navigateTo, hasAddon, postInstallCallback,
+      isExperimentEnabled, enableExperiment, experiment } = this.props;
 
     if (hasAddon) {
       if (!isExperimentEnabled(experiment)) {
         this.setState({ isInstalling: true }, () => enableExperiment(experiment)
-                      .then(() => {
-                        if (postInstallCallback) postInstallCallback();
-                      }));
+          .then(() => {
+            if (postInstallCallback) postInstallCallback();
+          }));
       } else navigateTo("/experiments");
       return;
     }
@@ -76,7 +76,7 @@ export default class MainInstallButton extends React.Component {
           <p className="main-install__legal">
           By proceeding, you agree to the {terms} and {privacy} of Test Pilot.
           </p>
-         </LocalizedHtml>}
+        </LocalizedHtml>}
 
         {isMinFirefox && !isMobile && experimentLegalLink && experimentLegalLink}
       </LayoutWrapper>
@@ -85,11 +85,11 @@ export default class MainInstallButton extends React.Component {
 
   renderEnableExperimentButton(title: string) {
     return (
-        <div className="main-install__enable">
-         <LocalizedHtml id="oneClickInstallMajorCta" $title={title}>
-            <span className="main-install__minor-cta">Enable {title}</span>
-          </LocalizedHtml>
-        </div>
+      <div className="main-install__enable">
+        <LocalizedHtml id="oneClickInstallMajorCta" $title={title}>
+          <span className="main-install__minor-cta">Enable {title}</span>
+        </LocalizedHtml>
+      </div>
     );
   }
 
@@ -149,36 +149,36 @@ export default class MainInstallButton extends React.Component {
     }
     return (
       <div>
-          {!isFirefox ? (
-              <Localized id="landingDownloadFirefoxDesc">
-                <span className="main-install__available">(Test Pilot is available for Firefox on Windows, OS X and Linux)</span>
+        {!isFirefox ? (
+          <Localized id="landingDownloadFirefoxDesc">
+            <span className="main-install__available">(Test Pilot is available for Firefox on Windows, OS X and Linux)</span>
+          </Localized>
+        ) : (
+          <Localized id="landingUpgradeDesc2" $version={config.minFirefoxVersion}>
+            <span className="parens">Test Pilot requires Firefox { config.minFirefoxVersion } or higher.</span>
+          </Localized>
+        )
+        }
+        {!isMobile && <a href="https://www.mozilla.org/firefox" className="button primary main-install__download">
+          <div className="main-install__icon">
+            <div className="main-install__badge"></div>
+          </div>
+          <div className="main-install__copy">
+            {(!isFirefox) ? (
+              <Localized id="landingDownloadFirefoxTitle">
+                <div className="main-install__title">Firefox</div>
               </Localized>
             ) : (
-              <Localized id="landingUpgradeDesc2" $version={config.minFirefoxVersion}>
-                <span className="parens">Test Pilot requires Firefox { config.minFirefoxVersion } or higher.</span>
+              <Localized id="landingUpgradeFirefoxTitle">
+                <div className="main-install__title">Upgrade Firefox</div>
               </Localized>
             )
-          }
-          {!isMobile && <a href="https://www.mozilla.org/firefox" className="button primary main-install__download">
-            <div className="main-install__icon">
-              <div className="main-install__badge"></div>
-            </div>
-            <div className="main-install__copy">
-              {(!isFirefox) ? (
-                  <Localized id="landingDownloadFirefoxTitle">
-                    <div className="main-install__title">Firefox</div>
-                  </Localized>
-                ) : (
-                  <Localized id="landingUpgradeFirefoxTitle">
-                    <div className="main-install__title">Upgrade Firefox</div>
-                  </Localized>
-                )
-              }
-              <Localized id="landingDownloadFirefoxSubTitle">
-                <div className="main-install__description">Free Download</div>
-              </Localized>
-            </div>
-          </a>}
+            }
+            <Localized id="landingDownloadFirefoxSubTitle">
+              <div className="main-install__description">Free Download</div>
+            </Localized>
+          </div>
+        </a>}
       </div>
     );
   }
