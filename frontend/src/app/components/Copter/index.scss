@@ -65,8 +65,9 @@
       margin: 0;
       position: absolute;
       right: 0;
-      top: $grid-unit * -2;
-      width: $grid-unit * 12.5;
+      top: $grid-unit * -1.5;
+      flex: 0 0 149px;
+      width: 184px;
     }
   }
 
@@ -93,6 +94,9 @@
     .banner--condensed & {
       background-position: right center;
       background-repeat: no-repeat;
+      background-size: 184px 149px;
+      height: 149px;
+      width: 184px;
       filter: drop-shadow(0 0 20px $transparent-black-1);
     }
   }

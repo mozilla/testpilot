@@ -101,6 +101,10 @@
     margin: 0 0 8px;
   }
 
+  #testpilot-promo & {
+    padding-top: 0;
+  }
+
   @include respond-to('small') {
     padding: $grid-unit 2%;
   }
@@ -108,22 +112,23 @@
 
 .banner--condensed {
   @include respond-to('big') {
-    margin: $grid-unit * 1.6 0 $grid-unit * 4.5;
-    padding: 10px 0;
+    margin: 0;
+    padding: 20px 0;
   }
 
   @include respond-to('medium') {
-    margin: $grid-unit * .5 0 $grid-unit * 4;
-    padding: 10px 0;
+    margin: $grid-unit * .5 0 0;
+    padding: 20px 0;
   }
 
   @include respond-to('small') {
-    margin: 0 0 $grid-unit * 2;
-    padding: 10px 0 0;
+    margin: 0;
+    padding: 20px 0;
   }
 
-  background-color: $transparent-black-15;
-  box-shadow: 0 -3px 0 $transparent-black-15 inset;
+  background-color: $transparent-white-02;
+  position: relative;
+  z-index: 1;
 
   .banner__title {
 
@@ -150,6 +155,6 @@
 
 .intro-text {
   @include respond-to('big') {
-    margin-left: 67px;
+    max-width: 540px;
   }
 }
