@@ -197,6 +197,7 @@ containersNewsupdatesContainersupdate1Content = Contenedores ahora brincan de Te
 notesNewsupdatesNotesupdate2Title = Sincroniza tus notas
 notesNewsupdatesNotesupdate2Content = Ahora puedes sincronizar tus notas donde sea que uses Firefox. Mira como lo hicimos.
 notesNewsupdatesNotesupdate1Title = Mejoras de Notas
+notesNewsupdatesNotesupdate1Content = Mejoramos drásticamente las Notas cambiando el editor de texto.
 sendNewsupdatesSendupdate1Title = ¡Send con Safari y Edge!
 sendNewsupdatesSendupdate1Content = Se acaba de lanzar Send 1.1.0, con una mejor asistencia al navegador y algunas otras mejoras.
 sendNewsupdatesSendupdate2Title = Saber más de Send
