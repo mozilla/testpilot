@@ -40,7 +40,6 @@ landingIntroOne = Titojtob'ëx k'ak'a' taq b'anikil.
 landingIntroTwo = Taya' ana'oj chi qe.
 landingIntroThree = Kato'on chunuk'ik Firefox.
 landingLegalNotice = Toq yasamäj qa, ye'awojqaj ri <a>Rojqanem richin rokisaxik</a> chuqa' <a>Rutzijol Ichinanem</a> richin Test Pilot.
-landingExperimentsTitle = Ke'atojtob'ej ri ruk'isib'äl tojtob'enel taq rub'anikil
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -48,7 +47,6 @@ landingExperimentsTitle = Ke'atojtob'ej ri ruk'isib'äl tojtob'enel taq rub'anik
 
 landingInstallButton = Tayaka' ruchokoy Test Pilot
 landingInstallingButton = Tajin niyak...
-landingInstalledButton = Ke'acha' ri taq ab'anikil
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -110,6 +108,11 @@ latestUpdatesTitle = Ruk'isib'äl taq k'exoj
 showMoreNewsTitle = Kek'ut Ojer taq Rutzijol
 
 
+[[ featuredExperiment ]]
+
+moreDetail = Ketz'et taq b'anikil
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -120,6 +123,7 @@ experimentListEndingTomorrow = Nik'is Chwa'q
 experimentListEndingSoon = Nik'is Yan
 experimentCondensedHeader = ¡Ütz apetik pa Test Pilot!
 experimentListHeader = ¡Ke'acha' ri taq asolna'oj!
+experimentListHeaderWithFeatured = Ke'atojtob'ej konojel ri taq qasolna'oj
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -182,7 +186,6 @@ tourLink = Kemil Tz'etoj
 contribute = Kato'on
 bugReports = Kitzijol Sachoj
 discussExperiment = Titzijöx rij ri { $title }
-tourOnboardingTitle = ¡{ $title } tzijon!
 tourDoneButton = Xk'is
 userCountContainerAlt = ¡K'a nimakol tichap qa!
 highlightPrivacy = Awichinanem
