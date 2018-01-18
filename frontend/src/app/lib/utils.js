@@ -40,7 +40,8 @@ export function buildSurveyURL(ref, title, installed, clientUUID, survey_url) {
 }
 
 export function isFirefox(ua) {
-  return ua.indexOf("firefox") > -1 || ua.indexOf("fxios") > -1;
+  const userAgent = ua.toLowerCase();
+  return userAgent.indexOf("firefox") > -1 && userAgent.indexOf("fxios") === -1;
 }
 
 export function isMinFirefoxVersion(ua, minVersion) {
