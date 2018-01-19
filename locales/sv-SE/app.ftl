@@ -40,7 +40,6 @@ landingIntroOne = Testa nya funktioner.
 landingIntroTwo = Ge dina synpunkter.
 landingIntroThree = Hjälp till att utveckla Firefox.
 landingLegalNotice = Genom att fortsätta godkänner du <a>användarvillkoren</a> och <a>sekretesspolicy</a> för Test Pilot.
-landingExperimentsTitle = Testa de senaste experimentella funktionerna
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -48,7 +47,6 @@ landingExperimentsTitle = Testa de senaste experimentella funktionerna
 
 landingInstallButton = Installera tillägget Test Pilot
 landingInstallingButton = Installerar...
-landingInstalledButton = Välj dina funktioner
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -110,6 +108,11 @@ latestUpdatesTitle = Senast uppdaterade
 showMoreNewsTitle = Visa äldre nyheter
 
 
+[[ featuredExperiment ]]
+
+moreDetail = Visa detaljer
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -120,6 +123,7 @@ experimentListEndingTomorrow = Slutar imorgon
 experimentListEndingSoon = Slutar snart
 experimentCondensedHeader = Välkommen till Test Pilot!
 experimentListHeader = Välj dina experiment!
+experimentListHeaderWithFeatured = Testa alla våra experiment
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -182,7 +186,6 @@ tourLink = Starta guidad visning
 contribute = Bidra
 bugReports = Felrapporter
 discussExperiment = Diskutera { $title }
-tourOnboardingTitle = { $title } är aktiverad!
 tourDoneButton = Klar
 userCountContainerAlt = Nyligen startad!
 highlightPrivacy = Din sekretesspolicy

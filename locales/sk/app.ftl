@@ -40,7 +40,6 @@ landingIntroOne = Testujte nové funkcie.
 landingIntroTwo = Poskytnite nám spätnú väzbu.
 landingIntroThree = Pomôžte tvoriť Firefox.
 landingLegalNotice = Pokračovaním vyjadrujete súhlas s <a>podmienkami používania</a> a so <a>zásadami ochrany osobných údajov</a> projektu Test Pilot.
-landingExperimentsTitle = Vyskúšajte najnovšie experimentálne funkcie
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -48,7 +47,6 @@ landingExperimentsTitle = Vyskúšajte najnovšie experimentálne funkcie
 
 landingInstallButton = Nainštalovať doplnok Test Pilot
 landingInstallingButton = Inštaluje sa...
-landingInstalledButton = Vyberte si svoje funkcie
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -110,6 +108,11 @@ latestUpdatesTitle = Najnovšie aktualizácie
 showMoreNewsTitle = Zobraziť predchádzajúce novinky
 
 
+[[ featuredExperiment ]]
+
+moreDetail = Zobraziť podrobnosti
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -120,6 +123,7 @@ experimentListEndingTomorrow = Zajtra končí
 experimentListEndingSoon = Čoskoro končí
 experimentCondensedHeader = Víta vás Test Pilot!
 experimentListHeader = Vyberte si svoje experimenty!
+experimentListHeaderWithFeatured = Vyskúšajte všetky naše experimenty
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -182,7 +186,6 @@ tourLink = prehliadka
 contribute = Zapojte sa
 bugReports = Nahláste chybu
 discussExperiment = Diskutujte o { $title }
-tourOnboardingTitle = Experiment { $title } je aktivovaný!
 tourDoneButton = Hotovo
 userCountContainerAlt = Práve spustený!
 highlightPrivacy = Vaše súkromie

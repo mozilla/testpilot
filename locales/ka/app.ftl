@@ -40,7 +40,6 @@ landingIntroOne = გამოცადეთ ახალი შესაძლ
 landingIntroTwo = გამოგვეხმაურეთ.
 landingIntroThree = დაგვეხმარეთ Firefox-ის გაუმჯობესებაში.
 landingLegalNotice = გაეცანით Test Pilot-ის <a>გამოყენების პირობებსა</a> და <a>პირადულობის დებულებას</a>
-landingExperimentsTitle = გამოცადეთ უახლესი შესაძლებლობები
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -48,7 +47,6 @@ landingExperimentsTitle = გამოცადეთ უახლესი შ�
 
 landingInstallButton = დააყენეთ Test Pilot დამატება
 landingInstallingButton = მიმდინარეობს ჩადგმა...
-landingInstalledButton = მიუთითეთ სასურველი შესაძლებლობები
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -110,6 +108,11 @@ latestUpdatesTitle = ბოლო განახლებები
 showMoreNewsTitle = ძველი სიახლეების ჩვენება
 
 
+[[ featuredExperiment ]]
+
+moreDetail = დაწვრილებით
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -120,6 +123,7 @@ experimentListEndingTomorrow = სრულდება ხვალ
 experimentListEndingSoon = სრულდება მალე
 experimentCondensedHeader = მოგესალმებათ Test Pilot!
 experimentListHeader = შეარჩიეთ გამოსაცდელი შესაძლებლობები!
+experimentListHeaderWithFeatured = გამოცადეთ ყველა ახალი საცდელი შესაძლებლობა
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -154,7 +158,7 @@ experimentPreFeedbackLinkCopy = გამოხმაურება { $title } 
 // A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
-experimentPromoHeader = მზად ხართ გაფრენისთვის?
+experimentPromoHeader = მზად ხართ აფრენისთვის?
 experimentPromoSubheader = ჩვენ ვქმნით ახალი თაობის შესაძლებლობებს Firefox-ისთვის. დააყენეთ Test Pilot და გამოცადეთ!
 
 
@@ -172,7 +176,7 @@ enableExperiment = { $title } პროექტის ჩართვა
 enableExperimentTransition = ირთვება...
 experimentManuallyDisabled = { $title } ამორთულია დამატებების მმართველიდან
 experimentMeasurementIntro = გარდა იმისა, რომ Test Pilot-ის ყველა საცდელ პროექტში აღირიცხება <a>მონაცემები</a>, აქ არის მოცემული რამდენიმე მნიშვნელოვანი საკითხი, რაც უნდა გაითვალისწინოთ უშუალოდ { $experimentTitle } პროექტით სარგებლობისას:
-measurements = პირადი მონაცემების უსაფრთხოება
+measurements = პირადი მონაცემების დებულება
 experimentPrivacyNotice = იხილეთ ვრცლად მონაცემთა აღრიცხვის შესახებ, { $title } პროექტთან დაკავშირებით.
 contributorsHeading = შემქმნელები
 contributorsExtraLearnMore = ვრცლად
@@ -182,7 +186,6 @@ tourLink = გზამკვლევის გაშვება
 contribute = შემოწირულობა
 bugReports = ხარვეზების შესახებ მოხსენება
 discussExperiment = { $title } პროექტის განხილვა
-tourOnboardingTitle = { $title } ჩართულია!
 tourDoneButton = კარგი
 userCountContainerAlt = ახლახან გაეშვა!
 highlightPrivacy = პირადულობის დაცვის შესახებ
@@ -238,7 +241,7 @@ retirePageSurveyButton = შეავსეთ მცირე კითხვ�
 // Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
-restartIntroLead = გაფრენისწინა შემოწმება
+restartIntroLead = აფრენისწინა შემოწმება
 restartIntroOne = ხელახლა გაუშვით ბრაუზერი
 restartIntroTwo = მონახეთ Test Pilot დამატება
 restartIntroThree = აირჩიეთ გამოსაცდელი შესაძლებლობები

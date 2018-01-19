@@ -40,7 +40,6 @@ landingIntroOne = 测试新功能。
 landingIntroTwo = 提供您的反馈。
 landingIntroThree = 帮助打造 Firefox。
 landingLegalNotice = 继续则表示您同意 Test Pilot 的<a>使用条款</a>和<a>隐私声明</a>。
-landingExperimentsTitle = 试用最新鲜的实验功能
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -48,7 +47,6 @@ landingExperimentsTitle = 试用最新鲜的实验功能
 
 landingInstallButton = 安装 Test Pilot 扩展
 landingInstallingButton = 正在安装...
-landingInstalledButton = 选择您的功能
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -110,6 +108,11 @@ latestUpdatesTitle = 最新更新
 showMoreNewsTitle = 显示过去的新闻
 
 
+[[ featuredExperiment ]]
+
+moreDetail = 查看细节
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -120,6 +123,7 @@ experimentListEndingTomorrow = 明天结束
 experimentListEndingSoon = 即将结束
 experimentCondensedHeader = 欢迎使用 Test Pilot！
 experimentListHeader = 挑选您的实验！
+experimentListHeaderWithFeatured = 试试我们的各种实验
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -179,7 +183,6 @@ tourLink = 导览
 contribute = 贡献
 bugReports = 缺陷报告
 discussExperiment = 讨论 { $title }
-tourOnboardingTitle = { $title } 已启用！
 tourDoneButton = 完成
 userCountContainerAlt = 刚刚启动！
 highlightPrivacy = 您的隐私
