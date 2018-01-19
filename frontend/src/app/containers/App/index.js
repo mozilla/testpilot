@@ -180,7 +180,7 @@ class App extends Component {
     function* generateMessages(languages, localizations) {
       for (const lang of languages) {
         if (typeof localizations[lang] === "string") {
-          const cx = new MessageContext(lang);
+          const cx = new MessageContext(lang, {useIsolating: false});
           cx.addMessages(localizations[lang]);
           yield cx;
         }
