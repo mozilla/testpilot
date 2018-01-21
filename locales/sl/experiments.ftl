@@ -184,6 +184,7 @@ voicefillContributors4Title = Firefox UX
 voicefillContributors5Title = Softvision QA
 voicefillContributors6Title = Softvision QA
 voicefillContributors7Title = Napredni razvoj, tehnologije v nastajanju
+testpilotNewsupdatesGeneralupdate6Title = Načrtovanje dostopnosti s Test Pilotom
 testpilotNewsupdatesGeneralupdate6Content = Test Pilot se je pred kratkim povezal s študenti dizajna na Ravensbournu z namenom raziskati izzive dostopnosti na spletu.
 testpilotNewsupdatesGeneralupdate5Title = Razvijanje Test Pilota s Storybooks
 testpilotNewsupdatesGeneralupdate5Content = Test Pilot sedaj uporablja orodje za vizualizacijo Storybooks, ki poenostavlja razvoj uporabniškega vmesnika. Preberite več o tem.
