@@ -191,6 +191,7 @@ containersNewsupdatesContainersupdate1Title = Containers – Poročilo o zaklju�
 notesNewsupdatesNotesupdate2Title = Sinhronizirajte svoje zapiske
 notesNewsupdatesNotesupdate2Content = Od danes naprej lahko sinhronizirate svoje zapiske, kjerkoli uporabljate Firefox. Oglejte si, kako smo to dosegli.
 notesNewsupdatesNotesupdate1Title = Izboljšave zapiskov
+notesNewsupdatesNotesupdate1Content = Močno smo izboljšali zapiske s preklopom besedilnega urejevalnika.
 sendNewsupdatesSendupdate1Title = Pošlji s Safarijem in Edgeem!
 sendNewsupdatesSendupdate1Content = Pravkar je izšel Send 1.1.0 z izboljšano podporo brskalnikom in nekaj drugimi izboljšavami.
 sendNewsupdatesSendupdate2Title = Učimo se od Senda
