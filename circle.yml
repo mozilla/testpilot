@@ -22,9 +22,9 @@ jobs:
       - run:
           name: Build addon and frontend
           command: |
-            sudo ./bin/circleci/build-addon.sh
-            sudo ./bin/circleci/build-version-json.sh
-            sudo ./bin/circleci/build-frontend.sh
+            ./bin/circleci/build-addon.sh
+            ./bin/circleci/build-version-json.sh
+            ./bin/circleci/build-frontend.sh
       - store_artifacts:
           path: ~/testpilot/addon/update.rdf
       - store_artifacts:
