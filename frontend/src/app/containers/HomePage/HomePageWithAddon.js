@@ -5,19 +5,20 @@
 import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
 import React from 'react';
-import Banner from '../components/Banner';
-import Copter from '../components/Copter';
-import UpdateList from '../components/UpdateList';
-import EmailDialog from '../components/EmailDialog';
-import FeaturedExperiment from '../components/FeaturedExperiment';
-import ExperimentCardList from '../components/ExperimentCardList';
-import LayoutWrapper from '../components/LayoutWrapper';
-import MainInstallButton from '../components/MainInstallButton';
-import PastExperiments from '../components/PastExperiments';
-import View from '../components/View';
-import LocalizedHtml from '../components/LocalizedHtml';
-import NewsUpdatesDialog from '../components/NewsUpdatesDialog';
-import type { InstalledExperiments } from '../reducers/addon';
+import Banner from '../../components/Banner';
+import Copter from '../../components/Copter';
+import UpdateList from '../../components/UpdateList';
+import EmailDialog from '../../components/EmailDialog';
+import FeaturedExperiment from '../../components/FeaturedExperiment';
+import ExperimentCardList from '../../components/ExperimentCardList';
+import LayoutWrapper from '../../components/LayoutWrapper';
+import MainInstallButton from '../../components/MainInstallButton';
+import PastExperiments from '../../components/PastExperiments';
+import View from '../../components/View';
+import Visibility from "../../components/Visibility";
+import LocalizedHtml from '../../components/LocalizedHtml';
+import NewsUpdatesDialog from '../../components/NewsUpdatesDialog';
+import type { InstalledExperiments } from '../../reducers/addon';
 
 type HomePageWithAddonProps = {
   hasAddon: any,
@@ -77,7 +78,7 @@ export default class HomePageWithAddon extends React.Component {
   }
 
   renderSplash() {
-    if (typeof window !== 'undefined' && window.location.search.includes('utm_content=no-experiments-installed')) {
+    if (typeof window !== 'undefined' && typeof window.location !== 'undefined' && window.location.search.includes('utm_content=no-experiments-installed')) {
       return (
         <Banner background={true}>
           <LayoutWrapper flexModifier="row-between-breaking">
@@ -169,13 +170,19 @@ export default class HomePageWithAddon extends React.Component {
           {!featuredExperiment &&
             <UpdateList {...{ sendToGA, staleNewsUpdates, freshNewsUpdates, experiments }} />}
         </LayoutWrapper>
-        <Banner>
-        <LayoutWrapper>
-          {headerMessage}
-          <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
-          <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
-          </LayoutWrapper>
+        <Visibility className="landingExperiments">
+          <div className="moreButton">
+            <a href="#experiments">More Experiments</a>
+          </div>
+          <Banner>
+            <LayoutWrapper>
+              <a name="experiments"></a>
+              {headerMessage}
+              <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
+              <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
+            </LayoutWrapper>
           </Banner>
+        </Visibility>
       </View>
     );
   }

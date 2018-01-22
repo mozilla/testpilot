@@ -1,0 +1,30 @@
+@import '../../../styles/_utils';
+
+.landingExperiments {
+  .moreButton {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+
+    a {
+      cursor: pointer;
+      display: inline-block;
+      padding-top: 56px;
+      padding-bottom: 16px;
+      background-image: url(./more-experiments-button.svg);
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: 46px 46px;
+      font-size: 13px;
+      line-height: 15px;
+    }
+  }
+
+  &.isvisible {
+    .moreButton {
+      display: none;
+    }
+  }
+}

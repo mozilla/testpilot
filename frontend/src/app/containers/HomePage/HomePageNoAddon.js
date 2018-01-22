@@ -2,16 +2,17 @@
 import { Localized } from "fluent-react/compat";
 import React from "react";
 
-import Banner from "../components/Banner";
-import Copter from "../components/Copter";
-import ExperimentCardList from "../components/ExperimentCardList";
-import LayoutWrapper from "../components/LayoutWrapper";
-import MainInstallButton from "../components/MainInstallButton";
-import PastExperiments from "../components/PastExperiments";
-import FeaturedExperiment from "../components/FeaturedExperiment";
-import View from "../components/View";
+import Banner from "../../components/Banner";
+import Copter from "../../components/Copter";
+import ExperimentCardList from "../../components/ExperimentCardList";
+import LayoutWrapper from "../../components/LayoutWrapper";
+import MainInstallButton from "../../components/MainInstallButton";
+import PastExperiments from "../../components/PastExperiments";
+import FeaturedExperiment from "../../components/FeaturedExperiment";
+import View from "../../components/View";
+import Visibility from "../../components/Visibility";
 
-import type { InstalledExperiments } from "../reducers/addon";
+import type { InstalledExperiments } from "../../reducers/addon";
 
 type HomePageNoAddonProps = {
   hasAddon: any,
@@ -81,13 +82,19 @@ export default class HomePageNoAddon extends React.Component {
         <View {...this.props}>
           { installSplash }
           { featuredSection }
-          <Banner background={!featuredSection}>
-            <LayoutWrapper flexModifier="column-center">
-              {headerMessage}
-              <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
-              <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
-            </LayoutWrapper>
-          </Banner>
+          <Visibility className="landingExperiments">
+            <div className="moreButton">
+              <a href="#experiments">More Experiments</a>
+            </div>
+            <Banner background={!featuredSection}>
+              <LayoutWrapper flexModifier="column-center">
+                <a name="experiments"></a>
+                {headerMessage}
+                <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
+                <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
+              </LayoutWrapper>
+            </Banner>
+          </Visibility>
 
           <Banner background={!!featuredSection}>
             <Localized id="landingCardListTitle">
