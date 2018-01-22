@@ -1,17 +1,93 @@
+/* global describe, beforeEach, it */
 import React from "react";
 import { expect } from "chai";
 import sinon from "sinon";
 import { shallow, render } from "enzyme";
+import { findLocalizedById } from "../../../../test/app/util";
 
-import HomePageWithAddon from "../../../src/app/containers/HomePageWithAddon";
+import HomePage from "./index";
+import HomePageNoAddon from "./HomePageNoAddon";
+import HomePageWithAddon from "./HomePageWithAddon";
 
 const today = new Date();
 const twoWeeksAgo = today - 1000 * 60 * 60 * 24 * 15;
 const twoDaysAgo = today - 1000 * 60 * 60 * 24 * 2;
 const oneDayAgo = today - 1000 * 60 * 60 * 24 * 1;
 
+describe("app/containers/HomePage", () => {
+  let props, subject;
+  beforeEach(function() {
+    props = {
+      experiments: [],
+      hasAddon: false,
+      isFirefox: false,
+      replaceState: sinon.spy()
+    };
+    subject = shallow(<HomePage {...props} />);
+  });
+
+  it("should return HomePageNoAddon if hasAddon is false", () => {
+    expect(subject.find("HomePageNoAddon")).to.have.property("length", 1);
+    expect(subject.find("HomePageWithAddon")).to.have.property("length", 0);
+    expect(props.replaceState.called).to.be.false;
+  });
+
+  it("should return HomePageWithAddon if hasAddon is true", () => {
+    subject.setProps({ hasAddon: true });
+    expect(subject.find("HomePageWithAddon")).to.have.property("length", 1);
+    expect(subject.find("HomePageNoAddon")).to.have.property("length", 0);
+    expect(props.replaceState.called).to.be.true;
+  });
+});
+
+describe("app/containers/HomePageNoAddon", () => {
+  let props, subject;
+  beforeEach(function() {
+    props = {
+      experiments: [],
+      featuredExperiments: [],
+      hasAddon: false,
+      isFirefox: false,
+      uninstallAddon: sinon.spy(),
+      sendToGA: sinon.spy(),
+      isAfterCompletedDate: sinon.spy(x => !!x.completed)
+    };
+    subject = shallow(<HomePageNoAddon {...props} />);
+  });
+
+  it("should return nothing if no experiments are available", () => {
+    subject.setProps({ experiments: [] });
+    expect(subject.find("#landing-page")).to.have.property("length", 0);
+  });
+
+  it("should render default content with experiments loaded", () => {
+    const experiments = [ { title: "foo" }, { title: "bar" } ];
+    subject.setProps({ experiments });
+    expect(findLocalizedById(subject, "landingIntroOne")).to.have.property("length", 1);
+    expect(subject.find("ExperimentCardList")).to.have.property("length", 1);
+  });
+
+  it("should render featured experiment section if there is a featured experiment", () => {
+    expect(subject.find("FeaturedExperiment")).to.have.property("length", 0);
+
+    const experiments = [ { title: "foo" }, { title: "bar" } ];
+    const featuredExperiments = [ { title: "bar" } ];
+    subject.setProps({ experiments, featuredExperiments });
+    expect(subject.find("FeaturedExperiment")).to.have.property("length", 1);
+  });
+
+  it("should not display completed experiments", () => {
+    const experiments = [ { title: "foo" }, { title: "bar", completed: "2016-10-01" } ];
+    subject.setProps({ experiments });
+    const xs = subject.find("ExperimentCardList").prop("experiments");
+    expect(xs.length).to.equal(1);
+    expect(xs[0].title).to.equal("foo");
+  });
+
+});
+
 describe("app/containers/HomePageWithAddon", () => {
-  let props, experiments, subject;
+  let props, subject;
   beforeEach(function() {
     props = {
       featuredExperiments: [],
@@ -87,7 +163,7 @@ describe("app/containers/HomePageWithAddon", () => {
 
   it("should show an email dialog if the URL contains utm_campaign=restart-required",  () => {
     const getWindowLocation = sinon.spy(() =>
-                                        ({ search: "utm_campaign=restart-required" }));
+      ({ search: "utm_campaign=restart-required" }));
     props = { ...props, getWindowLocation };
     subject = shallow(<HomePageWithAddon {...props} />);
     expect(subject.find("EmailDialog")).to.have.property("length", 1);
