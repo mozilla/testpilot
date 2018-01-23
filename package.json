@@ -147,7 +147,7 @@
     "lint": "npm-run-all lint:*",
     "lint:styles": "sass-lint --verbose 'frontend/src/styles/**/*.scss' 'frontend/src/app/**/*.scss'",
     "lint:js": "eslint ./gulpfile.babel.js ./webpack.config.js './frontend/{src,tests}/**/*.{js,jsx}'",
-    "test": "cd frontend && mocha --require babel-register --require test-setup.js --recursive 'test' 'src/**/tests.js'",
+    "test": "cd frontend && mocha --require babel-register --require test-setup.js --recursive \"test\" \"src/**/tests.js\"",
     "flow": "flow frontend",
     "l10n:extract": "gulp content-extract-strings",
     "l10n:check": "npm run l10n:extract && git diff-files --quiet --ignore-all-space locales && echo 'No missing strings'",
