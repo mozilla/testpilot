@@ -31,7 +31,9 @@ export default class HomePageNoAddon extends React.Component {
   props: HomePageNoAddonProps
 
   render() {
-    const { experiments, isAfterCompletedDate, featuredExperiments } = this.props;
+    const { isAfterCompletedDate, featuredExperiments } = this.props;
+
+    const experiments = this.props.experiments.filter(x => !x.is_featured);
 
     if (experiments.length === 0) { return null; }
 

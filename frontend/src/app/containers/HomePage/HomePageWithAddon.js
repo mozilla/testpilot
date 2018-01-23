@@ -126,8 +126,10 @@ export default class HomePageWithAddon extends React.Component {
   }
 
   render() {
-    const { sendToGA, experiments, isAfterCompletedDate, staleNewsUpdates, freshNewsUpdates,
+    const { sendToGA, isAfterCompletedDate, staleNewsUpdates, freshNewsUpdates,
             majorNewsUpdates, featuredExperiments, isExperimentEnabled } = this.props;
+
+    const experiments = this.props.experiments.filter(x => !x.is_featured);
 
     if (experiments.length === 0) { return null; }
 
