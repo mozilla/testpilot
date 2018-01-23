@@ -161,8 +161,7 @@ workflows:
                 - l10n
       - storybook_deploy:
           requires:
-            - unit_test
-            - integration_test
+            - build
           filters:
             branches:
               ignore:
