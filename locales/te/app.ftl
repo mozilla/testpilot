@@ -28,6 +28,7 @@ home = ముంగిలి
 menuTitle = అమరికలు
 menuWiki = టెస్ట్ పైలట్ వికీ
 menuFileIssue = సమస్యని దాఖలు చేయ౦డి
+headerLinkBlog = బ్లాగు
 
 
 // The splash on the homepage.
@@ -36,14 +37,12 @@ menuFileIssue = సమస్యని దాఖలు చేయ౦డి
 landingIntroOne = కొత్త సౌలభ్యాలను పరీక్షించండి.
 landingIntroTwo = మీ అభిప్రాయం తెలియజేయండి.
 landingIntroThree = Firefoxను రూపొందించడానికి తోడ్పడండి.
-landingExperimentsTitle = సరికొత్త ప్రయోగాత్మక సౌలభ్యాలను ప్రయత్నించి చూడండి
 
 
 // Related to the installation of the Test Pilot add-on.
 [[ landingInstall ]]
 
 landingInstallingButton = స్థాపించబడుతోంది...
-landingInstalledButton = మీ విశేషాలను ఎంచుకోండి
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -92,6 +91,10 @@ emailOptInDialogErrorTitle = అరెరే!
 
 
 
+[[ featuredExperiment ]]
+
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -111,6 +114,7 @@ experimentListHeader = మీ ప్రయోగాలను ఎంచుకో�
 experimentCardFeedback = అభిప్రాయం
 experimentCardManage = నిర్వహించండి
 experimentCardGetStarted = మొదలుపెట్టండి
+// also used in NewsUpdateDialog
 experimentCardLearnMore = మరింత తెలుసుకోండి
 
 
@@ -152,6 +156,11 @@ userCountContainerAlt = ఇప్పుడే ప్రారంభించా�
 highlightPrivacy = మీ గోప్యత
 experimentGradReportPendingTitle = ఈ ప్రయోగం ముగిసింది
 experimentGoToLink = { $title }కు వెళ్ళండి
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
