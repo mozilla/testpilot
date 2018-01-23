@@ -24,8 +24,7 @@ type FeaturedExperimentProps = {
   clientUUID?: string,
   eventCategory: string,
   isExperimentEnabled: Function,
-  sendToGA: Function,
-  navigateTo: Function
+  sendToGA: Function
 }
 
 type FeaturedExperimentState = {
@@ -52,10 +51,7 @@ export default class FeaturedExperiment extends React.Component {
   }
 
   onTourDialogComplete() {
-    const { navigateTo, experiment } = this.props;
-    const { slug } = experiment;
     this.setState({ showTourDialog: false });
-    navigateTo(`/experiments/${slug}`);
   }
 
   render() {
