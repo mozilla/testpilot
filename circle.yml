@@ -25,15 +25,6 @@ jobs:
             ./bin/circleci/build-addon.sh
             ./bin/circleci/build-version-json.sh
             ./bin/circleci/build-frontend.sh
-      - run:
-          name: Codecov
-          command: bash <(curl -s https://codecov.io/bash)
-      - store_artifacts:
-          path: ~/testpilot/addon/update.rdf
-      - store_artifacts:
-          path: ~/testpilot/addon/addon.xpi
-      - store_artifacts:
-          path: ~/testpilot/frontend.zip
       - persist_to_workspace:
           root: .
           paths:
@@ -50,6 +41,15 @@ jobs:
           at: .
       - run: ./bin/circleci/test-addon.sh
       - run: ./bin/circleci/test-frontend.sh
+      - run:
+          name: Codecov
+          command: bash <(curl -s https://codecov.io/bash)
+      - store_artifacts:
+          path: ~/testpilot/addon/update.rdf
+      - store_artifacts:
+          path: ~/testpilot/addon/addon.xpi
+      - store_artifacts:
+          path: ~/testpilot/frontend.zip
   integration_test:
     docker:
       - image: circleci/node:8.9.4
