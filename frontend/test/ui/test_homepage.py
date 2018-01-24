@@ -27,6 +27,8 @@ def test_install_button_loads(base_url, selenium):
         assert True
 
 
+@pytest.mark.skipif(
+  True, reason='Skip featured experiment tests.')
 @pytest.mark.nondestructive
 def test_featured_experiment_actions(base_url, selenium):
     """Test if featured experiment action buttons exists"""
@@ -37,6 +39,8 @@ def test_featured_experiment_actions(base_url, selenium):
         assert True
 
 
+@pytest.mark.skipif(
+  True, reason='Skip featured experiment tests.')
 @pytest.mark.nondestructive
 def test_featured_experiment(base_url, selenium):
     """Test if featured experiment video exists"""
