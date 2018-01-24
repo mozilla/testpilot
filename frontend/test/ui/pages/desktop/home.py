@@ -1,4 +1,5 @@
 from pypom import Region
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 
 from pages.desktop.base import Base
@@ -69,8 +70,11 @@ class Home(Base):
 
         @property
         def is_displayed(self):
-            """Return if firefox copter is displayed."""
-            return self.find_element(*self._header_locator).is_displayed()
+            """Return if featured is displayed."""
+            try:
+                return self.find_element(*self._header_locator).is_displayed()
+            except NoSuchElementException:
+                return False
 
         @property
         def is_video_displayed(self):
