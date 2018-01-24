@@ -63,6 +63,24 @@ export default class FeaturedButton extends React.Component {
     </Localized>);
   }
 
+  renderLegalModal() {
+    const { showLegalDialog } = this.state;
+    const { experiment } = this.props;
+
+    if (!showLegalDialog) {
+      return null;
+    }
+
+    return (
+      <Modal wrapperClass='legal-modal'
+        onCancel={() => this.setState({ showLegalDialog: false })}
+        onComplete={() => this.setState({ showLegalDialog: false })}>
+        <MeasurementSection experiment={experiment}
+          l10nId={this.l10nId}
+          highlightMeasurementPanel={false}></MeasurementSection>
+      </Modal>);
+  }
+
   handleManage = () => {
     const { experiment, eventCategory } = this.props;
     this.props.sendToGA("event", {
@@ -82,7 +100,6 @@ export default class FeaturedButton extends React.Component {
   }
 
   render() {
-    const { showLegalDialog } = this.state;
     const { experiment, installed, clientUUID, hasAddon,
       enabled, postInstallCallback } = this.props;
     const { slug, survey_url, title } = experiment;
@@ -110,23 +127,21 @@ export default class FeaturedButton extends React.Component {
             </Localized>
           </div>
           {this.renderLegalLink()}
-          {showLegalDialog && <Modal wrapperClass='legal-modal'
-            onCancel={() => this.setState({ showLegalDialog: false })}
-            onComplete={() => this.setState({ showLegalDialog: false })}>
-            <MeasurementSection experiment={experiment}
-              l10nId={this.l10nId}
-              highlightMeasurementPanel={false}></MeasurementSection>
-          </Modal>}
+          {this.renderLegalModal()}
         </div>
       );
     } else {
-      Buttons = (<MainInstallButton {...this.props}
-        experimentTitle={title}
-        experiment={experiment}
-        postInstallCallback={postInstallCallback}
-        experimentLegalLink={this.renderLegalLink()}
-        eventCategory="HomePage Interactions"
-        eventLabel="Install the Add-on" />);
+      Buttons = (
+        <div>
+          <MainInstallButton {...this.props}
+            experimentTitle={title}
+            experiment={experiment}
+            postInstallCallback={postInstallCallback}
+            experimentLegalLink={this.renderLegalLink()}
+            eventCategory="HomePage Interactions"
+            eventLabel="Install the Add-on" />
+          {this.renderLegalModal()}
+        </div>);
     }
 
     return Buttons;
