@@ -109,6 +109,12 @@ export default class MainInstallButton extends React.Component {
   renderInstallButton(isInstalling: boolean, hasAddon: any) {
     const { experimentTitle, isExperimentEnabled, experiment } = this.props;
     let installButton = null;
+    const installingButton = (<Localized id="landingInstallingButton">
+      <span className="progress-btn-msg">Installing...</span>
+    </Localized>);
+    const enablingButton = (<Localized id="landingEnablingButton">
+      <span className="progress-btn-msg">Enabling...</span>
+    </Localized>);
 
     if (experimentTitle) {
       if (hasAddon && !isExperimentEnabled(experiment)) {
@@ -123,13 +129,12 @@ export default class MainInstallButton extends React.Component {
     }
 
     const makeInstallButton = (extraClass = "") => {
+      const isEnabling = (experimentTitle && hasAddon && !isExperimentEnabled(experiment) && isInstalling);
+      let btn = isEnabling ? enablingButton : installingButton;
       return <button onClick={e => this.install(e)}
         className={classnames(`button primary main-install__button ${extraClass}`, { "state-change": isInstalling })}>
         {!isInstalling && installButton}
-        {isInstalling &&
-          <Localized id="landingInstallingButton">
-            <span className="progress-btn-msg">Installing...</span>
-          </Localized>}
+        {isInstalling ? btn : null}
         <div className="state-change-inner"></div>
       </button>;
     };
