@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Localized } from "fluent-react/compat";
+import LocalizedHtml from "../LocalizedHtml";
 import { buildSurveyURL, experimentL10nId } from "../../lib/utils";
 
 import Modal from "../Modal";
@@ -41,26 +42,21 @@ export default class FeaturedButton extends React.Component {
   };
 
   renderLegalLink() {
-    const { title } = this.props.experiment;
-
-    const terms = <Localized id="landingLegalNoticeTermsOfUse">
-      <a href="/terms">terms</a>
-    </Localized>;
-    const privacy = <Localized id="landingLegalNoticePrivacyNotice">
-      <a href="/privacy">privacy</a>
-    </Localized>;
-
     const launchLegalModal = (ev) => {
       ev.preventDefault();
       this.setState({ showLegalDialog: true });
     };
 
-    return (<Localized id={this.l10nId("legal-link")}>
+    const { title } = this.props.experiment;
+
+    return (<LocalizedHtml id={this.l10nId("legal-notice")}
+      $title={title}>
       <p className="main-install__legal">
-        By proceeding, you agree to the {terms} and {privacy} of Test Pilot
-        and <a href="#" onClick={launchLegalModal}>{title}</a>.
+        By proceeding, you agree to the <a href="/terms">terms</a>
+        and <a href="/privacy">privacy</a> policies of Test Pilot and the
+        <a href="#" onClick={launchLegalModal}>{title} privacy policy</a>.
       </p>
-    </Localized>);
+    </LocalizedHtml>);
   }
 
   renderLegalModal() {

@@ -1,7 +1,7 @@
 id: 15
 title: 'Notes'
 slug: notes
-is_featured: false
+is_featured: true
 platforms: ['addon']
 min_release: 54
 thumbnail: /static/images/experiments/notes/experiments_experiment/thumbnail.png
@@ -17,6 +17,7 @@ changelog_url: 'https://github.com/mozilla/notes/releases'
 contribute_url: 'https://github.com/mozilla/notes'
 bug_report_url: 'https://github.com/mozilla/notes/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/notes'
+legal_notice: By proceeding, you agree to the <a>terms</a> and <a>privacy</a> policies of Test Pilot and the <a>Notes privacy policy</a>.
 privacy_notice_url: 'https://github.com/mozilla/notes/blob/master/docs/metrics.md'
 measurements:
   - >
