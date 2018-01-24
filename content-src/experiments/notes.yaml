@@ -1,7 +1,7 @@
 id: 15
 title: 'Notes'
 slug: notes
-is_featured: false
+is_featured: true
 platforms: ['addon']
 min_release: 54
 thumbnail: /static/images/experiments/notes/experiments_experiment/thumbnail.png
