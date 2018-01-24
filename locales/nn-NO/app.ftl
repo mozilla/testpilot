@@ -123,6 +123,7 @@ experimentListEndingTomorrow = Sluttar i morgon
 experimentListEndingSoon = Sluttar snart
 experimentCondensedHeader = Velkomen til Test Pilot!
 experimentListHeader = Vel eksperimenta dine!
+experimentListHeaderWithFeatured = Prøv alle eksperimenta våre
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
