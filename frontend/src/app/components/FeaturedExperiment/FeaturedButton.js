@@ -41,7 +41,18 @@ export default class FeaturedButton extends React.Component {
   };
 
   renderLegalLink() {
+    const launchLegalModal = (ev) => {
+      ev.preventDefault();
+      this.setState({ showLegalDialog: true });
+    };
+
     const { title } = this.props.experiment;
+    const privacylink = <Localized id={this.l10nId("privacy-link")}
+      $title={title}>
+      <a href="#" onClick={launchLegalModal}>
+        the {title} privacy policy
+      </a>
+    </Localized>;
 
     const terms = <Localized id="landingLegalNoticeTermsOfUse">
       <a href="/terms">terms</a>
@@ -50,15 +61,13 @@ export default class FeaturedButton extends React.Component {
       <a href="/privacy">privacy</a>
     </Localized>;
 
-    const launchLegalModal = (ev) => {
-      ev.preventDefault();
-      this.setState({ showLegalDialog: true });
-    };
-
-    return (<Localized id={this.l10nId("legal-link")}>
+    return (<Localized id={this.l10nId("legal-notice")}
+      $terms={terms}
+      $privacy={privacy}
+      $privacylink={privacylink}>
       <p className="main-install__legal">
-        By proceeding, you agree to the {terms} and {privacy} of Test Pilot
-        and <a href="#" onClick={launchLegalModal}>{title}</a>.
+        By proceeding, you agree to the {terms} and {privacy} policy of Test Pilot
+        and {privacylink}.
       </p>
     </Localized>);
   }
