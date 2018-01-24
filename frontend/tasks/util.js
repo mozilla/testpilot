@@ -11,7 +11,6 @@ const LOCALIZABLE_FIELDS = [
   "tour_steps.copy",
   "contributors.title",
   "contributors_extra",
-  "privacy_link",
   "legal_notice"
 ];
 
