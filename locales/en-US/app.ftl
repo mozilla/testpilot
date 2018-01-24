@@ -36,7 +36,8 @@ landingLegalNotice = By proceeding, you agree to the <a>Terms of Use</a> and <a>
 // Related to the installation of the Test Pilot add-on.
 [[landingInstall]]
 landingInstallButton = Install the Test Pilot Add-on
-landingInstallingButton = Installing...
+landingInstallingButton = Installing…
+landingEnablingButton = Enabling…
 
 // Related to a one click to install test pilot and an experiment.
 [[oneClickInstall]]
