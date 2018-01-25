@@ -70,6 +70,7 @@ nomore404sContributors2Title = K'amöl B'ey, Wayback Machine, The Internet Archi
 nomore404sContributors3Title = Senior Crawl Engineer, The Internet Archive
 notesDescription = Jun relik ch'utitzijol ruximon ri' pa Firefox. ¿La jun q'ij xk'atzin chawe xatz'ib'an toq tajin atokinäq pa ajk'amaya'l? Re solna'oj re' awichin rat.
 notesIntroduction = Ri Notes nutz'aqatisaj jun relik tzijob'äl pa ajxikin rukajtz'ik awokik'amaya'l. Xeqatz'aqatisaj jujun taq cha'oj kik'u'x taq b'anikil richin titikirisäx, po niqajo' chi naya' rutzijol chi qe, ri nawajo' chi niqatz'aqatisaj.
+notesLegalnotice = Toq nab'än qa niqana'ojij chi nak'ül ri taq runa'ojil <a>ojqanem</a> chuqa' taq <a>ichinanem</a> richin ri Test Pilot chuqa' ri <a>Ruch'utitzijol runa'ojil ichinanem</a>.
 notesMeasurements0 = Ri Notes xkerumöl taq etamab'äl chi rij rokisaxik asamaj, chuqa' jarupe' mul ye'atz'ük taq ch'utitzijol chuqa' jarupe' ramaj nuk'waj chawäch richin ye'anük', jarupe' taq tz'ib' ye'ayäk' pa ri taq ach'utitzijol chuqa' we nawokisaj xab'achike rusamaj nuk'uj (achi'el rucholajem tzij pa q'ëq o wachib'en).
 notesMeasurements1 = Ri Notes chuqa' xtumöl etamab'äl chi rij ri nab'än rik'in ri chokoy, achi'el ri rub'eyal yatok chupam chuqa' ri taq pitz'bäl akuchi' yatikïr yapitz'on.
 notesDetails0Copy = Jun tzijob'äl. ¿Achike ruma man qana'ojin ta yan?
