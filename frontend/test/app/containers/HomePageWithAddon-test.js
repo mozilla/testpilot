@@ -85,17 +85,6 @@ describe("app/containers/HomePageWithAddon", () => {
     expect(subject.find("FeaturedExperiment")).to.have.property("length", 1);
   });
 
-  it("should show an email dialog if the URL contains utm_campaign=restart-required",  () => {
-    const getWindowLocation = sinon.spy(() =>
-                                        ({ search: "utm_campaign=restart-required" }));
-    props = { ...props, getWindowLocation };
-    subject = shallow(<HomePageWithAddon {...props} />);
-    expect(subject.find("EmailDialog")).to.have.property("length", 1);
-
-    subject.setState({ showEmailDialog: false });
-    expect(subject.find("EmailDialog")).to.have.property("length", 0);
-  });
-
   it("should show an email dialog if the first-run cookie is set", () => {
     const getCookie = sinon.spy(name => 1);
     props = { ...props, getCookie };
