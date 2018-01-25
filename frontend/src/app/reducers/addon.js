@@ -153,15 +153,6 @@ function disableExperiment(
   return { ...state, installed: newInstalled };
 }
 
-function requireRestart(state: AddonState): AddonState {
-  return {
-    ...state,
-    restart: {
-      isRequired: true
-    }
-  };
-}
-
 export function getInstalled(state: AddonState): InstalledExperiments {
   return state.installed;
 }
@@ -202,8 +193,6 @@ export default function addonReducer(state: ?AddonState, action: AddonActions): 
       return manuallyEnableExperiment(state, action);
     case "MANUALLY_DISABLE_EXPERIMENT":
       return manuallyDisableExperiment(state, action);
-    case "REQUIRE_RESTART":
-      return requireRestart(state);
     default:
       return state;
   }
