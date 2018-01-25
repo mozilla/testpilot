@@ -31,6 +31,7 @@
   @include respond-to('not-small') {
     @include flex-container(column, flex-start, flex-start, wrap);
     max-height: 500px;
+    padding: 10px;
   }
 
   .featured-experiment__header,
@@ -64,7 +65,7 @@
     }
 
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
     .experiment-icon-wrapper {
       @include respond-to('small') {
@@ -208,7 +209,7 @@
   }
 
   .main-install__available {
-    display: none;
+      font-size: $font-unit * 1.1;
   }
 
   .main-install__legal {
@@ -270,7 +271,7 @@
         width: 112%;
       }
 
-      height: 281px;
+      height: 300px;
       width: 500px;
     }
   }

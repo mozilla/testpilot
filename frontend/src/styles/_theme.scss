@@ -1,7 +1,3 @@
-$theme-dark: $blue-90;
-$theme-light: #513365;
-$body-gradient: linear-gradient($theme-dark, $theme-light);
-
 body {
   background: $white;
   color: $black;
@@ -27,8 +23,7 @@ a {
 }
 
 .blue {
-  background-color: $white;
-  background-image: $body-gradient;
+  background: $blue-90;
   color: $white;
   position: relative;
 }

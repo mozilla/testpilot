@@ -111,8 +111,8 @@ export default class HomePageWithAddon extends React.Component {
       );
     }
     return (
-      <Banner>
-      <LayoutWrapper flexModifier="column-center-reverse">
+      <Banner condensed={true}>
+      <LayoutWrapper flexModifier="row-between-reverse">
         <Localized id="experimentCondensedHeader">
           <h2 className="banner__title">
             Welcome to Test Pilot!

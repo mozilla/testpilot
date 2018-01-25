@@ -22,9 +22,9 @@ jobs:
       - run:
           name: Build addon and frontend
           command: |
-            sudo ./bin/circleci/build-addon.sh
-            sudo ./bin/circleci/build-version-json.sh
-            sudo ./bin/circleci/build-frontend.sh
+            ./bin/circleci/build-addon.sh
+            ./bin/circleci/build-version-json.sh
+            ./bin/circleci/build-frontend.sh
       - store_artifacts:
           path: ~/testpilot/addon/update.rdf
       - store_artifacts:
@@ -47,6 +47,9 @@ jobs:
           at: .
       - run: ./bin/circleci/test-addon.sh
       - run: ./bin/circleci/test-frontend.sh
+      - run:
+          name: Codecov
+          command: bash <(curl -s https://codecov.io/bash)
   integration_test:
     docker:
       - image: circleci/node:8.9.4
@@ -92,7 +95,24 @@ jobs:
          key: integration-test-
          paths:
            - .tox
-  static_and_storybook_deploy:
+  static_deploy:
+    docker:
+      - image: circleci/node:8.9.4
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Install AWSCLI
+          command: |
+            sudo apt-get install python-pip python-dev build-essential
+            sudo pip install --upgrade pip
+            sudo pip install awscli --upgrade
+      - run:
+          name: Static deployment
+          command: |
+            TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/circleci/do-exclusively.sh --branch master ./bin/deploy.sh dev
+            ./bin/circleci/invalidate-cloudfront-cache.sh E2ERG47PHCWD0Z
+  storybook_deploy:
     docker:
       - image: circleci/node:8.9.4
     steps:
@@ -107,11 +127,6 @@ jobs:
       - run:
           name: Storybook Deploy
           command: ./bin/deploy-storybook.sh
-      - run:
-          name: Static deployment
-          command: |
-            TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/circleci/do-exclusively.sh --branch master ./bin/deploy.sh dev
-            ./bin/circleci/invalidate-cloudfront-cache.sh E2ERG47PHCWD0Z
   l10n_deploy:
     docker:
       - image: circleci/node:8.9.4
@@ -144,7 +159,14 @@ workflows:
             branches:
               ignore:
                 - l10n
-      - static_and_storybook_deploy:
+      - storybook_deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore:
+                - l10n
+      - static_deploy:
           requires:
             - unit_test
             - integration_test

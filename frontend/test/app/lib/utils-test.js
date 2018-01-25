@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { l10nIdFormat, l10nId, experimentL10nId, newsUpdateL10nId, lookup } from "../../../src/app/lib/utils";
+import { isFirefox, l10nIdFormat, l10nId, experimentL10nId, newsUpdateL10nId, lookup } from "../../../src/app/lib/utils";
 
 describe("app/lib/utils", () => {
 
@@ -121,6 +121,35 @@ describe("app/lib/utils", () => {
         title: "bazquux"
       }, "title");
       expect(result).to.equal("testpilotNewsupdatesXyzzyTitle");
+    });
+
+  });
+
+  describe("isFirefox", () => {
+
+    it("should recognize Firefox 58's UA string as Firefox", () => {
+      const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:58.0) Gecko/20100101 Firefox/58.0';
+      expect(isFirefox(UA)).to.equal(true);
+    });
+
+    it("should not recognize Chrome's UA string as Firefox", () => {
+      const UA = 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36';
+      expect(isFirefox(UA)).to.equal(false);
+    });
+
+    it("should not recognize Firefox for iOS/iPod's UA string as Firefox", () => {
+      const UA = 'Mozilla/5.0 (iPod touch; CPU iPhone OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) FxiOS/1.0 Mobile/12F69 Safari/600.1.4';
+      expect(isFirefox(UA)).to.equal(false);
+    });
+
+    it("should not recognize Firefox for iOS/iPhone's UA string as Firefox", () => {
+      const UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) FxiOS/1.0 Mobile/12F69 Safari/600.1.4';
+      expect(isFirefox(UA)).to.equal(false);
+    });
+
+    it("should not recognize Firefox for iOS/iPad's UA string as Firefox", () => {
+      const UA = 'Mozilla/5.0 (iPad; CPU iPhone OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) FxiOS/1.0 Mobile/12F69 Safari/600.1.4';
+      expect(isFirefox(UA)).to.equal(false);
     });
 
   });

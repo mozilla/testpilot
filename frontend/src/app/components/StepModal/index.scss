@@ -154,24 +154,4 @@
     background-image: url('../../../images/icon-Arrow.svg');
     transform: rotate(180deg);
   }
-
-  .modal-header.enabled::after {
-    background-color: $green-60;
-    background-image: url('../../../images/icon_enabled.svg');
-    background-position: 8px;
-    background-repeat: no-repeat;
-    background-size: 15%;
-    border-radius: 2px;
-    color: $white;
-    content: 'Enabled';
-    display: block;
-    font-size: 15px;
-    font-weight: normal;
-    left: -10px;
-    line-height: 150%;
-    margin: 0;
-    padding: 4px 5px 0 26px;
-    position: absolute;
-    top: -10px;
-  }
 }

@@ -10,7 +10,8 @@ const LOCALIZABLE_FIELDS = [
   "details.copy",
   "tour_steps.copy",
   "contributors.title",
-  "contributors_extra"
+  "contributors_extra",
+  "legal_notice"
 ];
 
 function isLocalizableField(pieces) {
