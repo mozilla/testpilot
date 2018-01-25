@@ -35,11 +35,7 @@ export const initialState = {
     hasAddon: null,
     installed: {},
     installedLoaded: false,
-    clientUUID: "",
-    restart: {
-      isRequired: false,
-      forExperiment: null
-    }
+    clientUUID: ""
   }
 };
 
