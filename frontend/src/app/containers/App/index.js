@@ -258,7 +258,6 @@ const mapDispatchToProps = dispatch => ({
   },
   enableExperiment: experiment => enableExperiment(dispatch, experiment, sendToGA),
   disableExperiment: experiment => disableExperiment(dispatch, experiment),
-  requireRestart: () => dispatch(addonActions.requireRestart()),
   setHasAddon: installed => dispatch(addonActions.setHasAddon(installed)),
   newsletterForm: {
     setEmail: email =>
