@@ -100,7 +100,6 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
       navigateTo: sinon.spy(),
       isAfterCompletedDate: sinon.stub().returns(false),
       isExperimentEnabled: sinon.spy(),
-      requireRestart: sinon.spy(),
       sendToGA: sinon.spy(),
       openWindow: sinon.spy(),
       enableExperiment: sinon.spy(),
