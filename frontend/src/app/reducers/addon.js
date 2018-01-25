@@ -2,10 +2,6 @@
 
 import type { Experiment } from "./experiments";
 
-type RestartState = {
-  isRequired: boolean,
-};
-
 type InstalledExperiment = {
   active: boolean,
   addon_id: string,
@@ -26,8 +22,7 @@ type AddonState = {
   installed: InstalledExperiments,
   installedLoaded: boolean,
   installedAddons: Array<string>,
-  clientUUID: string,
-  restart: RestartState
+  clientUUID: string
 };
 
 function defaultState(): AddonState {
@@ -38,10 +33,7 @@ function defaultState(): AddonState {
     installed: {},
     installedLoaded: false,
     installedAddons: [],
-    clientUUID: "",
-    restart: {
-      isRequired: false
-    }
+    clientUUID: ""
   };
 }
 
