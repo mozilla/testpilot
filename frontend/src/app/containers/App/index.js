@@ -167,10 +167,6 @@ class App extends Component {
   }
 
   render() {
-    const { restart } = this.props.addon;
-    if (restart.isRequired) {
-      return <RestartPage {...this.props} />;
-    }
 
     if (this.shouldShowUpgradeWarning()) {
       return <UpgradeWarningPage {...this.props} />;
