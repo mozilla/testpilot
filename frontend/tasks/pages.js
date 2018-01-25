@@ -1,77 +1,77 @@
-const gulp = require('gulp');
-const config = require('../config.js');
-const path = require('path');
-const fs = require('fs');
-const gutil = require('gulp-util');
-const multiDest = require('gulp-multi-dest');
-const through = require('through2');
-const YAML = require('yamljs');
-const ReactDOMServer = require('react-dom/server');
+const gulp = require("gulp");
+const config = require("../config.js");
+const path = require("path");
+const fs = require("fs");
+const gutil = require("gulp-util");
+const multiDest = require("gulp-multi-dest");
+const through = require("through2");
+const YAML = require("yamljs");
+const ReactDOMServer = require("react-dom/server");
 
-import Loading from '../src/app/components/Loading';
+import Loading from "../src/app/components/Loading";
 
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import React from "react";
+import ReactMarkdown from "react-markdown";
 
-const THUMBNAIL_FACEBOOK = config.PRODUCTION_URL + '/static/images/thumbnail-facebook.png';
-const THUMBNAIL_TWITTER = config.PRODUCTION_URL + '/static/images/thumbnail-twitter.png';
-const META_TITLE = 'Firefox Test Pilot';
-const META_DESCRIPTION = 'Test new Features. Give us feedback. Help build Firefox.';
+const THUMBNAIL_FACEBOOK = config.PRODUCTION_URL + "/static/images/thumbnail-facebook.png";
+const THUMBNAIL_TWITTER = config.PRODUCTION_URL + "/static/images/thumbnail-twitter.png";
+const META_TITLE = "Firefox Test Pilot";
+const META_DESCRIPTION = "Test new Features. Give us feedback. Help build Firefox.";
 
-gulp.task('pages-misc', () => {
+gulp.task("pages-misc", () => {
   // We just need a dummy file to get a stream going; we're going to ignore
   // the contents in buildLandingPage
-  return gulp.src(config.SRC_PATH + 'pages/*.js')
+  return gulp.src(config.SRC_PATH + "pages/*.js")
     .pipe(buildLandingPage())
     .pipe(gulp.dest(config.DEST_PATH));
 });
 
-gulp.task('pages-experiments', () => {
-  return gulp.src(config.CONTENT_SRC_PATH + 'experiments/*.yaml')
+gulp.task("pages-experiments", () => {
+  return gulp.src(config.CONTENT_SRC_PATH + "experiments/*.yaml")
     .pipe(buildExperimentPage())
-    .pipe(gulp.dest(config.DEST_PATH + 'experiments'));
+    .pipe(gulp.dest(config.DEST_PATH + "experiments"));
 });
 
-gulp.task('pages-compiled', () => {
-  return gulp.src(config.SRC_PATH + 'pages/**/*.md')
+gulp.task("pages-compiled", () => {
+  return gulp.src(config.SRC_PATH + "pages/**/*.md")
              .pipe(convertToCompiledPage())
              .pipe(gulp.dest(config.DEST_PATH));
 });
 
-gulp.task('pages-contributing', () => {
-  gulp.src('./contribute.json')
+gulp.task("pages-contributing", () => {
+  gulp.src("./contribute.json")
     .pipe(gulp.dest(config.DEST_PATH));
 });
 
-gulp.task('pages-build', [
-  'pages-misc',
-  'pages-experiments',
-  'pages-contributing',
-  'pages-compiled'
+gulp.task("pages-build", [
+  "pages-misc",
+  "pages-experiments",
+  "pages-contributing",
+  "pages-compiled"
 ]);
 
-gulp.task('pages-watch', () => {
-  gulp.watch(config.SRC_PATH + 'app.js', ['pages-build']);
-  gulp.watch(config.CONTENT_SRC_PATH + '/**/*.yaml', ['pages-build']);
-  gulp.watch(config.SRC_PATH + 'pages/**/*.md', ['pages-compiled']);
+gulp.task("pages-watch", () => {
+  gulp.watch(config.SRC_PATH + "app.js", ["pages-build"]);
+  gulp.watch(config.CONTENT_SRC_PATH + "/**/*.yaml", ["pages-build"]);
+  gulp.watch(config.SRC_PATH + "pages/**/*.md", ["pages-compiled"]);
 });
 
 function buildLandingPage() {
   return through.obj(function landingPage(file, enc, cb) {
     const fileName = path.basename(file.history[0]);
-    const noExtension = fileName.slice(0, fileName.indexOf('.'));
-    const pageModule = path.join('..', 'src', 'pages', fileName);
-    const outputPath = noExtension === 'home' ? 'index.html' : noExtension + '/index.html'
+    const noExtension = fileName.slice(0, fileName.indexOf("."));
+    const pageModule = path.join("..", "src", "pages", fileName);
+    const outputPath = noExtension === "home" ? "index.html" : noExtension + "/index.html";
     const importedCreate = require(pageModule).default;
     const importedComponent = importedCreate();
     const pageContent = generateStaticPage(
       true,
-      noExtension, '',
+      noExtension, "",
       importedComponent,
       {
         meta_title: META_TITLE,
         meta_description: META_DESCRIPTION,
-        canonical_path: '',
+        canonical_path: "",
         image_facebook: THUMBNAIL_FACEBOOK,
         image_twitter: THUMBNAIL_TWITTER,
         enable_pontoon: config.ENABLE_PONTOON,
@@ -90,16 +90,16 @@ function buildExperimentPage() {
   return through.obj(function experimentPage(file, enc, cb) {
     const yamlData = file.contents.toString();
     const experiment = YAML.parse(yamlData);
-    const requiredCreate = require('../src/pages/experiment.js').default;
+    const requiredCreate = require("../src/pages/experiment.js").default;
     const requiredComponent = requiredCreate(experiment.slug);
     const pageContent = generateStaticPage(
       true,
-      'experiment', experiment.slug,
+      "experiment", experiment.slug,
       requiredComponent,
       {
-        meta_title: META_TITLE + ' - ' + experiment.title,
+        meta_title: META_TITLE + " - " + experiment.title,
         meta_description: experiment.description,
-        canonical_path: 'experiments/' + experiment.slug + '/',
+        canonical_path: "experiments/" + experiment.slug + "/",
         image_facebook: config.PRODUCTION_URL + experiment.image_facebook ||
           THUMBNAIL_FACEBOOK,
         image_twitter: config.PRODUCTION_URL + experiment.image_twitter ||
@@ -109,7 +109,7 @@ function buildExperimentPage() {
       }
     );
     this.push(new gutil.File({
-      path: experiment.slug + '/index.html',
+      path: experiment.slug + "/index.html",
       contents: new Buffer(pageContent)
     }));
     cb();
@@ -118,10 +118,10 @@ function buildExperimentPage() {
 
 function availableLanguages(path) {
   return fs.readdirSync(path)
-    .map(function (f) {
-      return f.split('.')[0]
+    .map(function(f) {
+      return f.split(".")[0];
     })
-    .join(',');
+    .join(",");
 }
 
 function convertToCompiledPage() {
@@ -129,9 +129,9 @@ function convertToCompiledPage() {
     const p = path.parse(file.path);
     const locale = p.name;
     const page = path.basename(p.dir);
-    const noExtension = page.slice(0, page.indexOf('.'));
+    const noExtension = page.slice(0, page.indexOf("."));
     const pageContent = generateStaticPageFromMarkdown(
-      noExtension, '',
+      noExtension, "",
       file.contents.toString(),
       {
         available_locales: availableLanguages(p.dir),
@@ -143,14 +143,14 @@ function convertToCompiledPage() {
       }
     );
     const contents = new Buffer(pageContent);
-    if (locale === 'en-US') {
+    if (locale === "en-US") {
       this.push(new gutil.File({
-        path: path.join(page, 'index.html'),
+        path: path.join(page, "index.html"),
         contents
       }));
     }
     this.push(new gutil.File({
-      path: path.join(page, locale, 'index.html'),
+      path: path.join(page, locale, "index.html"),
       contents
     }));
     callback();
@@ -165,14 +165,14 @@ function makeStaticString(
   const staticRoot = ReactDOMServer.renderToStaticMarkup(staticBodyComponent);
   let dynamicRoot;
   let bootstrapScript;
-  let dynamicPageClass = '';
+  let dynamicPageClass = "";
   if (prepareForClient) {
     dynamicRoot = ReactDOMServer.renderToString(dynamicBodyComponent);
     bootstrapScript = '<script src="/static/app/app.js"></script>';
     dynamicPageClass = ' class="dynamic-page"';
   } else if (dynamicBodyComponent) {
     dynamicRoot = ReactDOMServer.renderToStaticMarkup(dynamicBodyComponent);
-    bootstrapScript = '';
+    bootstrapScript = "";
   }
   return `<!DOCTYPE html>
 <html>
@@ -196,13 +196,11 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
     <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css" />
     <link rel="stylesheet" href="/static/styles/experiments.css" />
     <link rel="stylesheet" href="/static/styles/main.css" />
+    <link rel="stylesheet" href="/static/app/app.css" />
 
     <meta name="defaultLanguage" content="en-US" />
     <meta name="availableLanguages" content={ available_locales } />
     <meta name="viewport" content="width=device-width" />
-
-    <link rel="localization" href="/static/locales/{locale}/app.ftl" />
-    <link rel="localization" href="/static/locales/{locale}/experiments.ftl" />
 
     <link rel="alternate" type="application/atom+xml" href="/feed.atom" title="Atom Feed"/>
     <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="RSS Feed"/>
@@ -210,8 +208,9 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
 
     <link rel="canonical" href={ `https://testpilot.firefox.com/${canonical_path}` } />
 
-    <title data-l10n-id="pageTitleDefault">{ meta_title }</title>
+    <title>{ meta_title }</title>
 
+    <meta property="og:type" content="website" />
     <meta property="og:title" content={ meta_title } />
     <meta name="twitter:title" content={ meta_title } />
     <meta name="description" content={ meta_description } />
@@ -220,20 +219,20 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
     <meta name="twitter:card" content="summary" />
     <meta property="og:image" content={ image_facebook } />
     <meta name="twitter:image" content={ image_twitter } />
-    <meta property="og:url" content="https://testpilot.firefox.com" />
+    <meta property="og:url" content={ `https://testpilot.firefox.com/${canonical_path}` } />
   </head>;
 
   const bodyComponent = <div id="static-root">
     <noscript>
       <div className="full-page-wrapper centered">
         <div className="layout-wrapper layout-wrapper--column-center">
-          <div id="four-oh-four" className="modal delayed-fade-in">
-            <h1 data-l10n-id="noScriptHeading" className="title">Uh oh...</h1>
+          <div id="four-oh-four" className="modal">
+            <h1 className="title">Uh oh...</h1>
             <div className="modal-content">
-              <p data-l10n-id="noScriptMessage">Test Pilot requires JavaScript.<br />Sorry about that.</p>
+              <p>Test Pilot requires JavaScript.<br />Sorry about that.</p>
             </div>
             <div className="modal-actions">
-              <a data-l10n-id="noScriptLink" className="button default large" href="https://github.com/mozilla/testpilot/blob/master/docs/faq.md">Find out why</a>
+              <a className="button default large" href="https://github.com/mozilla/testpilot/blob/master/docs/faq.md">Find out why</a>
             </div>
           </div>
           <div className="copter">
@@ -242,9 +241,7 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
         </div>
       </div>
     </noscript>
-    { prepareForClient ? <Loading /> : null }
     { prepareForClient ? <script src="/static/app/vendor.js"></script> : null }
-    { enable_pontoon ? <script src="https://pontoon.mozilla.org/pontoon.js"></script> : null }
   </div>;
 
   return makeStaticString(prepareForClient, pageName, pageParam, headComponent, bodyComponent, component);
@@ -254,8 +251,13 @@ function generateStaticPageFromMarkdown(pageName, pageParam, markdown, params) {
   const body = <div className="full-page-wrapper">
     <header id="main-header" className="layout-wrapper layout-wrapper--row-between-top">
       <h1>
-        <a href="/" className="wordmark" data-l10n-id="siteName">Firefox Test Pilot</a>
+        <a href="/" className="wordmark">Firefox Test Pilot</a>
       </h1>
+
+      <div className="header-links">
+        <a className="news-link" href="/news">News Feed</a>
+        <a className="blog-link" href="https://medium.com/firefox-test-pilot" target="_blank" rel="noopener noreferrer">Blog</a>
+      </div>
     </header>
     <div className="layout-wrapper static-page-content">
       <ReactMarkdown source={ markdown } />
@@ -265,11 +267,12 @@ function generateStaticPageFromMarkdown(pageName, pageParam, markdown, params) {
       <div id="footer-links" className="layout-wrapper layout-wrapper--row-bottom-breaking">
         <div className="legal-links">
           <a href="https://www.mozilla.org" className="mozilla-logo"></a>
-          <a data-l10n-id="footerLinkLegal" href="https://www.mozilla.org/about/legal/" className="boilerplate">Legal</a>
-          <a data-l10n-id="footerLinkAbout" href="/about" className="boilerplate">About Test Pilot</a>
-          <a data-l10n-id="footerLinkPrivacy" href="/privacy" className="boilerplate">Privacy</a>
-          <a data-l10n-id="footerLinkTerms" href="/terms" className="boilerplate">Terms</a>
-          <a data-l10n-id="footerLinkCookies" href="https://www.mozilla.org/privacy/websites/#cookies" className="boilerplate">Cookies</a>
+          <a href="https://www.mozilla.org/about/legal/" className="boilerplate">Legal</a>
+          <a href="https://qsurvey.mozilla.com/s3/test-pilot-general-feedback" className="boilerplate">Give Feedback</a>
+          <a href="/about" className="boilerplate">About Test Pilot</a>
+          <a href="/privacy" className="boilerplate">Privacy</a>
+          <a href="/terms" className="boilerplate">Terms</a>
+          <a href="https://www.mozilla.org/privacy/websites/#cookies" className="boilerplate">Cookies</a>
         </div>
         <div className="social-links">
           <a href="https://github.com/mozilla/testpilot" target="_blank" title="GitHub" className="link-icon github"></a>

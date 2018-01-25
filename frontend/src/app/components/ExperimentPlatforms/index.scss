@@ -1,0 +1,40 @@
+@import '~photon-colors/colors.scss';
+@import '../../../styles/_utils';
+
+.experiment-platform {
+  @include flex-container(row, flex-start, center);
+  color: $grey-50;
+  font-family: 'Fira Sans Book', sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+
+  .platform-copy,
+  .platform-icon {
+    margin-bottom: 5px;
+  }
+
+  .platform-icon {
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    height: 16px;
+    margin-right: 6px;
+    margin-top: -4px;
+    opacity: .5;
+    width: 16px;
+  }
+
+  .platform-icon-web {
+    background-image: url('./img/experiment-type-web.svg');
+    margin-top: -2px;
+  }
+
+  .platform-icon-addon {
+    background-image: url('./img/experiment-type-addon.svg');
+  }
+
+  .platform-icon-mobile {
+    background-image: url('./img/experiment-type-mobile.svg');
+  }
+}

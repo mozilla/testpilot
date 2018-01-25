@@ -17,6 +17,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Soukromí
 footerLinkTerms = Podmínky
 footerLinkLegal = Právní informace
+footerLinkFeedback = Zpětná vazba
 footerLinkAbout = O programu Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Wiki Test Pilot
 menuDiscuss = Diskutovat o Test Pilot
 menuFileIssue = Nahlásit chybu
 menuRetire = Odinstalovat Test Pilot
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -38,7 +40,6 @@ landingIntroOne = Vyzkoušejte nové funkce.
 landingIntroTwo = Pošlete nám zpětnou vazbu.
 landingIntroThree = Pomozte tvořit Firefox.
 landingLegalNotice = Pokračováním souhlasíte s <a>podmínkami používání</a> a <a>zásadami ochrany osobních údajů</a> projektu Test Pilot.
-landingExperimentsTitle = Vyzkoušejte nejnovější experimentální funkce
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -46,7 +47,6 @@ landingExperimentsTitle = Vyzkoušejte nejnovější experimentální funkce
 
 landingInstallButton = Nainstalovat doplněk Test Pilot
 landingInstallingButton = Probíhá instalace...
-landingInstalledButton = Vyberte si funkce
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -97,14 +97,20 @@ notFoundHeader = Čtyři sta čtyři!
 emailOptInDialogTitle = Vítá vás Test Pilot!
 emailOptInMessage = Nechce si posílat informace o nových experimentech a výsledky experimentů, které jste sami vyzkoušeli.
 emailOptInConfirmationTitle = E-mail odeslán
-emailOptInSuccessMessage2 = Děkujeme!
 emailOptInConfirmationClose = Podívat se na experimenty...
+emailOptInDialogErrorTitle = Ale ne!
 
 
 // news feed updates.
 [[ updateList ]]
 
 latestUpdatesTitle = Poslední aktualizace
+showMoreNewsTitle = Ukázat starší zprávy
+
+
+[[ featuredExperiment ]]
+
+moreDetail = Zobrazit podrobnosti
 
 
 // A listing of all Test Pilot experiments.
@@ -117,13 +123,17 @@ experimentListEndingTomorrow = Zítra končí
 experimentListEndingSoon = Brzy končí
 experimentCondensedHeader = Vítá vás Test Pilot!
 experimentListHeader = Vyberte si experimenty!
+experimentListHeaderWithFeatured = Zkuste všechny naše experimenty
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Zpětná vazba
 experimentCardManage = Správa
 experimentCardGetStarted = Jdeme na to
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Zjistit více
 
 
@@ -155,9 +165,8 @@ experimentPromoSubheader = Vytváříme funkce pro Firefox nové generace. Nains
 // The experiment detail page.
 [[ experimentPage ]]
 
-isEnabledStatusMessage = { $title } je zapnut.
+isEnabledStatusMessage = Experiment { $title } je zapnut.
 installErrorMessage = Jejda. { $title } nelze zapnout. Zkuste to znovu později.
-participantCount = <span>{ $installation_count }</span> účastníků
 otherExperiments = Vyzkoušejte také tyto experimenty
 giveFeedback = Poskytnout zpětnou vazbu
 disableHeader = Vypnout experiment?
@@ -171,17 +180,39 @@ measurements = Vaše soukromí
 experimentPrivacyNotice = Další informace o shromažďování dat pro { $title } můžete najít zde.
 contributorsHeading = Tento experiment přináší
 contributorsExtraLearnMore = Zjistit více
-changelog = seznam změn
+changelog = Seznam změn
 tour = Průvodce
-tourLink = prohlídka
+tourLink = Prohlídka
 contribute = Přispět
 bugReports = Hlášení chyb
 discussExperiment = DIskutujte o experimentu { $title }
-tourOnboardingTitle = Experiment { $title } zapnut!
 tourDoneButton = Hotovo
-userCountContainer = Experiment { $title } zkouší <span>{ $installation_count }</span> lidí!
 userCountContainerAlt = Právě spuštěno!
 highlightPrivacy = Vaše soukromí
+experimentGradReportButton = Zpráva o ukončení experimentu
+experimentGradReportPendingTitle = Tento experiment byl ukončen
+experimentGradReportPendingCopy = Pracujeme na kompletní zprávě o výsledcích. Podrobnosti doplníme brzy.
+experimentGradReportReady = Připravili jsme zprávu o ukončení experimentu.
+experimentGoToLink = Přejít na { $title }
+startedDateLabel = Datum začátku experimentu: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Experiment pro Firefox, web i mobily
+experimentPlatformWebAddon = Experiment pro Firefox a web
+experimentPlatformWebMobile = Experiment pro web a mobily
+experimentPlatformAddonMobile = Experiment pro Firefox a mobily
+experimentPlatformWeb = Experiment pro web
+experimentPlatformAddon = Experiment pro Firefox
+experimentPlatformMobileApp = Experiment pro mobily
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -197,7 +228,7 @@ versionChangeNoticeLink = Získejte aktuální verzi Firefoxu.
 [[ uninstall ]]
 
 retireDialogTitle = Odinstalovat Test Pilot?
-retireMessage = Jak si přejete. Toto zakáže všechny aktivní testy, odinstaluje doplněk a odstraní informace o vašem účtu z našich serverů.
+retireMessageUpdate = Jak si přejete, Test Pilot odinstalujeme. Jednotlivé experimenty můžete zakázat ve Firefoxu ve správci doplňků.
 retireEmailMessage = Pro odhlášení ze zasílání informací klepněte na odkaz <em>unsubscribe</em> v kterémkoliv e-mailu zaslaném Test Pilotem.
 retireSubmitButton = Pokračovat
 pageTitleRetirePage = Firefox Test Pilot - Odinstalovat Test Pilot
@@ -262,7 +293,7 @@ newsletterFooterSuccessBody = Pokud jste dříve nepotvrdili odběr zpravodaje M
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Tento experiment není ve vašem jazyce ({ $locale_code }) podporován.
+localeNotTranslatedWarningTitle = Tento experiment nebyl přeložen do vašeho jazyka ({ $locale_code }).
 localeWarningSubtitle = Můžete ale aktivaci zkusit i bez toho.
 
 
@@ -287,3 +318,20 @@ noScriptLink = Zjistěte proč
 
 viewPastExperiments = Zobrazit ukončené experimenty
 hidePastExperiments = Skrýt ukončené experimenty
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Něco je špatně!
+warningGenericDetail = V Test Pilotu se něco pokazilo. <a>Při hlášení chyby</a> prosím uveďte tuto chybovou zprávu.
+warningUpgradeFirefoxTitle = Pro pokračování aktualizujte Firefox.
+warningUpgradeFirefoxDetail = Test Pilot potřebuje nejnovější verzi Firefoxu. Pro začátek prosím <a>aktualizujte Firefox</a>.
+warningHttpsRequiredTitle = Vyžadováno HTTPS!
+warningHttpsRequiredDetail = Do programu Test Pilot lze přistupovat jenom přes HTTPS. Pro více informací si prosím přečtěte <a>naši dokumentaci</a>.
+warningMissingPrefTitle = Vyvíjíte Test Pilot?
+warningMissingPrefDetail = Při lokálním spuštění nebo ve vývojových prostředích potřebuje Test Pilot speciální konfiguraci. Pro více informací si přečtěte <a>naši dokumentaci</a>.
+warningBadHostnameTitle = Nepovolený hostname!
+warningBadHostnameDetail = Ke stránkám Test Pilotu je možné přistupovat jenom z domén testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net nebo example.com:8000. Pro více informací si přečtěte <a>naši dokumentaci</a>.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Omlouváme se, ale Test Pilot vyžaduje JavaScript.

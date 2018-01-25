@@ -17,6 +17,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Privatësi
 footerLinkTerms = Kushte
 footerLinkLegal = Ligjore
+footerLinkFeedback = Jepni Përshtypjet
 footerLinkAbout = Rreth Pilotit të Testeve
 
 
@@ -29,6 +30,7 @@ menuWiki = Wiki për Pilot Testesh
 menuDiscuss = Diskutojeni Pilotin e Testeve
 menuFileIssue = Njoftoni një Problem
 menuRetire = Çinstaloje Pilotin e Testeve
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -37,7 +39,7 @@ menuRetire = Çinstaloje Pilotin e Testeve
 landingIntroOne = Testoni veçori të reja.
 landingIntroTwo = Jepni përshtypjet tuaja.
 landingIntroThree = Ndihmoni të ndërtohet Firefox-i.
-landingLegalNotice = Duke vazhduar më tutje, pajtoheni me <a>Kushtet e Përdorimit</a> dhe <a>Shënimin mbi Privatësinë</a> të Pilotit të testeve.
+landingLegalNotice = Duke vazhduar më tutje, pajtoheni me <a>Kushtet e Përdorimit</a> dhe <a>Shënimin mbi Privatësinë</a> të Pilotit të Testeve.
 landingExperimentsTitle = Provoni veçoritë tona më të reja eksperimentale
 
 
@@ -62,6 +64,7 @@ oneClickInstallMajorCta = Aktivizo { $title }
 landingRequiresDesktop = Piloti i Testeve lyp Firefox për Desktop në Windows, Mac ose Linux
 landingDownloadFirefoxDesc = (Pilot i Testeve mund të përdoret te Firefox-i në Windows, OS X dhe Linux)
 landingUpgradeDesc = Piloti i testeve lyp Firefox 49 ose më të ri.
+landingUpgradeDesc2 = Piloti i Testeve lyp Firefox { $version } ose më të ri.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Përmirësojeni Firefox-in
 landingDownloadFirefoxSubTitle = Shkarkim Falas
@@ -70,7 +73,7 @@ landingDownloadFirefoxSubTitle = Shkarkim Falas
 // A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
-landingCardListTitle = Fillojani për 3, 2, 1
+landingCardListTitle = Fillojani! 3, 2, 1…
 landingCardOne = Merrni shtesën Pilot Testesh
 landingCardTwo = Aktivizoni veçori eksperimentale
 landingCardThree = Tregonani si ju duket
@@ -96,8 +99,15 @@ notFoundHeader = Katër Zero Katër!
 emailOptInDialogTitle = Mirë se vini te Pilot Testesh!
 emailOptInMessage = Mësoni rreth eksperimentesh të reja dhe shihni përfundime testesh për eksperimente që keni provuar.
 emailOptInConfirmationTitle = Email-i u Dërgua
-emailOptInSuccessMessage2 = Faleminderit!
 emailOptInConfirmationClose = Oburra te eksperimentet…
+emailOptInDialogErrorTitle = Mooos!
+
+
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Përditësimet më të reja
+showMoreNewsTitle = Shfaq Lajme të Së kaluarës
 
 
 // A listing of all Test Pilot experiments.
@@ -108,12 +118,15 @@ experimentListJustLaunchedTab = Të sapohedhur Në Qarkullim
 experimentListJustUpdatedTab = Të sapopërditësuar
 experimentListEndingTomorrow = Përfundon Nesër
 experimentListEndingSoon = Përfundon Së Shpejti
-experimentsListCondensedHeader = Zgjidhni eksperimentet tuaja!
+experimentCondensedHeader = Mirë se vini te Pilot Testesh!
+experimentListHeader = Zgjidhni eksperimentet tuaja!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Përshtypje
 experimentCardManage = Administroni
 experimentCardGetStarted = Si T’ia Fillohet
 experimentCardLearnMore = Mësoni Më Tepër
@@ -126,8 +139,8 @@ feedbackSubmitButton = Plotësoni një anketim të shpejtë
 feedbackUninstallTitle = Faleminderit!
 feedbackUninstallCopy =
     Pjesëmarrja juaj te Piloti i Testeve të Firefox-it
-    ka shumë domethëniet! ju lutemi, shihni eksperimente
-    tonat të tjera, dhe na ndiqni për më tepër në të ardhmen!
+    ka shumë domethënie! ju lutemi, shihni eksperimente
+    tonat të tjera dhe na ndiqni për më tepër në të ardhmen!
 
 
 // A modal prompt shown before the feedback survey for some experiments.
@@ -149,7 +162,6 @@ experimentPromoSubheader = Po krijojmë veçoritë e brezit të ardhshëm për F
 
 isEnabledStatusMessage = { $title } është i aktivizuar.
 installErrorMessage = Hëm. { $title } s’u aktivizua dot. Riprovoni më vonë.
-participantCount = <span>{ $installation_count }</span> pjesëmarrës
 otherExperiments = Provoni edhe këto eksperimente
 giveFeedback = Jepni Përshtypjet
 disableHeader = Të çaktivizohet Eksperimenti?
@@ -171,9 +183,33 @@ bugReports = Njoftime të Metash
 discussExperiment = Diskutoni mbi { $title }
 tourOnboardingTitle = { $title } u aktivizua!
 tourDoneButton = U bë
-userCountContainer = Ka <span>{ $installation_count }</span> vetë që po e provojnë { $title } tani!
 userCountContainerAlt = Të sapohedhura në qarkullim!
 highlightPrivacy = Privatësia juaj
+experimentGradReportButton = Raport Eksperimenti
+experimentGradReportPendingTitle = Ky eksperiment ka përfunduar
+experimentGradReportPendingCopy = Po punojmë për një raport të plotë. Për hollësi, rikthehuni së shpejti.
+experimentGradReportReady = Kemi përgatitur një raport të plotë të eksperimentit.
+experimentGoToLink = Kalo te { $title }
+startedDateLabel = Datë Fillimi Eksperimenti: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Pilot Testesh
+learnMoreLink = MËSONI MË TEPËR
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Eksperiment për Firefox / web / celular
+experimentPlatformWebAddon = Eksperiment Firefox / web
+experimentPlatformWebMobile = eksperiment web / për celular
+experimentPlatformAddonMobile = Eksperiment Firefox / për celular
+experimentPlatformWeb = Eksperiment web
+experimentPlatformAddon = Eksperiment Firefox
+experimentPlatformMobileApp = Eksperiment për celular
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -181,13 +217,15 @@ highlightPrivacy = Privatësia juaj
 
 upgradeNoticeTitle = { $title } lyp Firefox { $min_release } ose më të ri.
 upgradeNoticeLink = Si të përditësohet Firefox-i.
+versionChangeNotice = { $experiment_title } nuk mbulohet për këtë version të Firefox-it.
+versionChangeNoticeLink = Merrni versionin e tanishëm të Firefox-it.
 
 
 // Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
 retireDialogTitle = Të çinstalohet Piloti i Testeve?
-retireMessage = Si të doni. Kjo do të çaktivizojë çfarëdo testi, do të çinstalojë shtojcën dhe do të heqë llogarinë tuaj nga shërbyesit tanë.
+retireMessageUpdate = Si të doni. Kjo do të çinstalojë Pilotin e Testeve. Eksperimentet individuale mund t’i çaktivizoni që nga Përgjegjësi i Shtesave te Firefox-i.
 retireEmailMessage = Që të zgjidhni mosmarrje përditësimesh me email, thjesht klikoni mbi lidhjen <em>shpajtomëni</em> te cilido email i ardhur nga Piloti i Testeve.
 retireSubmitButton = Vazhdoni
 pageTitleRetirePage = Pilot Testesh Firefox - Çinstaloje Pilotin e Testeve
@@ -232,7 +270,7 @@ incompatibleSubheader = Këshillojmë <a>çaktivizimin e këtyre shtesave</a> p�
 
 newsletterFormEmailPlaceholder
     .placeholder = Këtu vini email-in tuaj
-newsletterFormDisclaimer = Do t’ju dërgojmë vetëm të dhëna që kanë lidhje Pilotin e Testeve.
+newsletterFormDisclaimer = Do t’ju dërgojmë vetëm të dhëna që kanë lidhje me Pilotin e Testeve.
 newsletterFormPrivacyNotice = Pajtohem me trajtimin që Mozilla u bën të dhënave të mia, ashtu si shpjegohet te <a>ky shënim mbi privatësinë</a>.
 newsletterFormPrivacyAgreementRequired = Ju lutemi, i vini shenjë kësaj kutize, nëse doni të vazhdohet.
 newsletterFormSubmitButton = Regjistrohuni Tani
@@ -252,7 +290,7 @@ newsletterFooterSuccessBody = Nëse s’e keni ripohuar më parë pajtimin te nj
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Ky eksperiment nuk mbulohet për gjuhën tuaj ({ $locale_code }).
+localeNotTranslatedWarningTitle = Ky eksperiment s’është përkthyer në gjuhën tuaj ({ $locale_code }).
 localeWarningSubtitle = Mundeni ta aktivizoni, nëse doni.
 
 
@@ -277,3 +315,18 @@ noScriptLink = Shihni pe
 
 viewPastExperiments = Shihni Eksperimente të Dikurshme
 hidePastExperiments = Fshihi Eksperimentet e Dikurshëm
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Ka diçka gabim!
+warningGenericDetail = Diç shkoi ters me Pilot-in e Testeve. Ju lutemi, <a>njoftoni një të metë</a> dhe përmendni këtë mesazh gabimi.
+warningUpgradeFirefoxTitle = Që të vazhdohet, përmirësoni Firefox-in!
+warningUpgradeFirefoxDetail = Pilot Testesh lyp versionin më të ri të Firefox-it. Që t’ia fillohet, <a>përmirësoni Firefox-in</a>.
+warningHttpsRequiredTitle = Lypset HTTPS!
+warningHttpsRequiredDetail = Tek Pilot Testesh duhet të hyhet përmes HTTPS-je. Ju lutemi, për hollësi, shihni <a>dokumentimin tonë</a>.
+warningMissingPrefTitle = Dëshironi të zhvilloni për Pilot Testesh?
+warningMissingPrefDetail = Kur Pilot-i i Testeve xhironi lokalisht ose në mjedise zhvillimesh, lyp formësim special. Ju lutemi, për hollësi, shihni <a>dokumentimin tonë</a>.
+warningBadHostnameTitle = Strehëemër i pamiratuar!
+warningBadHostnameDetail = Sajti Pilot Testesh mund të përdoret vetëm që nga testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, ose example.com:8000. Ju lutemi, për hollësi, shihni <a>dokumentimin tonë</a>.

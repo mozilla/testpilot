@@ -1,10 +1,11 @@
 // @flow
 
-import React from 'react';
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import Banner from '../components/Banner';
-import LayoutWrapper from '../components/LayoutWrapper';
-import View from '../components/View';
+import Banner from "../components/Banner";
+import LayoutWrapper from "../components/LayoutWrapper";
+import View from "../components/View";
 
 
 type RestartProps = {
@@ -19,10 +20,10 @@ export default class Restart extends React.Component {
   props: RestartProps
 
   componentWillMount() {
-    this.props.sendToGA('event', {
-      eventCategory: 'PostInstall Interactions',
-      eventAction: 'view modal',
-      eventLabel: 'restart required'
+    this.props.sendToGA("event", {
+      eventCategory: "PostInstall Interactions",
+      eventAction: "view modal",
+      eventLabel: "restart required"
     });
   }
 
@@ -35,11 +36,19 @@ export default class Restart extends React.Component {
               <img src="/static/images/restart-graphic@2x.jpg" width="208" height="273"/>
             </div>
             <div className="banner__copy">
-              <span data-l10n-id="restartIntroLead">Preflight checklist</span>
+              <Localized id="restartIntroLead">
+                <span>Preflight checklist</span>
+              </Localized>
               <ol className="banner__subtitle">
-                <li data-l10n-id="restartIntroOne">Restart your browser</li>
-                <li data-l10n-id="restartIntroTwo">Locate the Test Pilot add-on</li>
-                <li data-l10n-id="restartIntroThree">Select your experiments</li>
+                <Localized id="restartIntroOne">
+                  <li>Restart your browser</li>
+                </Localized>
+                <Localized id="restartIntroTwo">
+                  <li>Locate the Test Pilot add-on</li>
+                </Localized>
+                <Localized id="restartIntroThree">
+                  <li>Select your experiments</li>
+                </Localized>
               </ol>
             </div>
           </LayoutWrapper>

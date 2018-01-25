@@ -1,9 +1,9 @@
 // @flow
 
-import type { ChooseTestsAction } from '../reducers/varianttests';
+import type { ChooseTestsAction } from "../reducers/varianttests";
 
 export function chooseTests(): ChooseTestsAction {
   return {
-    type: 'CHOOSE_TESTS'
+    type: "CHOOSE_TESTS"
   };
 }

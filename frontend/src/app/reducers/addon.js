@@ -1,6 +1,6 @@
 // @flow
 
-import type { Experiment } from './experiments';
+import type { Experiment } from "./experiments";
 
 type RestartState = {
   isRequired: boolean,
@@ -38,7 +38,7 @@ function defaultState(): AddonState {
     installed: {},
     installedLoaded: false,
     installedAddons: [],
-    clientUUID: '',
+    clientUUID: "",
     restart: {
       isRequired: false
     }
@@ -194,23 +194,23 @@ export default function addonReducer(state: ?AddonState, action: AddonActions): 
   }
 
   switch (action.type) {
-    case 'SET_HAS_ADDON':
+    case "SET_HAS_ADDON":
       return setHasAddon(state, action);
-    case 'SET_INSTALLED':
+    case "SET_INSTALLED":
       return setInstalled(state, action);
-    case 'SET_INSTALLED_ADDONS':
+    case "SET_INSTALLED_ADDONS":
       return setInstalledAddons(state, action);
-    case 'SET_CLIENT_UUID':
+    case "SET_CLIENT_UUID":
       return setClientUuid(state, action);
-    case 'ENABLE_EXPERIMENT':
+    case "ENABLE_EXPERIMENT":
       return enableExperiment(state, action);
-    case 'DISABLE_EXPERIMENT':
+    case "DISABLE_EXPERIMENT":
       return disableExperiment(state, action);
-    case 'MANUALLY_ENABLE_EXPERIMENT':
+    case "MANUALLY_ENABLE_EXPERIMENT":
       return manuallyEnableExperiment(state, action);
-    case 'MANUALLY_DISABLE_EXPERIMENT':
+    case "MANUALLY_DISABLE_EXPERIMENT":
       return manuallyDisableExperiment(state, action);
-    case 'REQUIRE_RESTART':
+    case "REQUIRE_RESTART":
       return requireRestart(state);
     default:
       return state;

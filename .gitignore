@@ -3,6 +3,7 @@
 *.log
 *.pyc
 *.sw?
+*~
 *.tox
 *.cache
 
@@ -20,13 +21,17 @@ build/
 dist/
 docs/_build
 frontend/build/
+frontend/storybook/
 media/
 node_modules/
 static/
 tmp/
+addon/build/
+addon/dist/
+addon/locale/
 
 # Files to ignore within specific directories
 addon/*.rdf
 addon/*.xpi
-addon/locale/
 legal-copy/*html
+

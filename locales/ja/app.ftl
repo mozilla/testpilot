@@ -15,8 +15,9 @@ pageTitleExperiment = Firefox Test Pilot - { $title }
 
 footerLinkCookies = Cookie
 footerLinkPrivacy = プライバシー
-footerLinkTerms = 規約
+footerLinkTerms = 利用規約
 footerLinkLegal = 法的通知
+footerLinkFeedback = フィードバックを送る
 footerLinkAbout = Test Pilot について
 
 
@@ -29,6 +30,7 @@ menuWiki = Test Pilot Wiki
 menuDiscuss = Test Pilot について議論する
 menuFileIssue = 問題を報告
 menuRetire = Test Pilot を削除
+headerLinkBlog = ブログ
 
 
 // The splash on the homepage.
@@ -36,9 +38,8 @@ menuRetire = Test Pilot を削除
 
 landingIntroOne = 新機能を試す。
 landingIntroTwo = フィードバックを送る。
-landingIntroThree = Firefox の開発に協力。
+landingIntroThree = Firefox の開発に貢献。
 landingLegalNotice = 続けることで、あなたは Test Pilot の <a>利用規約</a> と <a>プライバシー通知</a> に同意したことになります。
-landingExperimentsTitle = 最新の実験的機能を試す
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -46,23 +47,22 @@ landingExperimentsTitle = 最新の実験的機能を試す
 
 landingInstallButton = Test Pilot アドオンをインストール
 landingInstallingButton = インストール中...
-landingInstalledButton = 機能を選ぶ
 
 
 // Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
-oneClickInstallMinorCta = Test Pilot をインストール &amp;
+oneClickInstallMinorCta = Test Pilot をインストールして
 oneClickInstallMajorCta = { $title } を有効化
 
 
 // Homepage messaging for users not on Firefox or with an old version of Firefox.
 [[ landingFirefox ]]
 
-landingRequiresDesktop = Test Pilot を試すには Windows、Mac または Linux 向けのデスクトップ版 Firefox が必要です
-landingDownloadFirefoxDesc = Test Pilot は Windows、OS X および Linux 版の Firefox に対応しています)
-landingUpgradeDesc = Test Pilot を試すには Firefox 49 以降が必要です。
-landingUpgradeDesc2 = Test Pilot は Firefox { $version } 以上を必要とします。
+landingRequiresDesktop = Test Pilot へ参加するには Windows、Mac または Linux 向けのデスクトップ版 Firefox が必要です
+landingDownloadFirefoxDesc = (Test Pilot は Windows、OS X および Linux 版の Firefox に対応しています)
+landingUpgradeDesc = Test Pilot へ参加するには Firefox 49 以上が必要です。
+landingUpgradeDesc2 = Test Pilot へ参加するには Firefox { $version } 以上が必要です。
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox をアップグレード
 landingDownloadFirefoxSubTitle = 無料ダウンロード
@@ -71,10 +71,10 @@ landingDownloadFirefoxSubTitle = 無料ダウンロード
 // A section of the homepage explaining how Test Pilot works.
 [[ landingCard ]]
 
-landingCardListTitle = 3、2、1 と数えるうちに始めましょう
+landingCardListTitle = 3、2、1 と数えるうちに始めよう
 landingCardOne = Test Pilot アドオンを入手
 landingCardTwo = 実験的機能を有効化
-landingCardThree = あなたの考えをお聞かせください
+landingCardThree = フィードバックを提供
 
 
 // Shown after the user installs the Test Pilot add-on.
@@ -88,7 +88,7 @@ onboardingMessage = Test Pilot をいつでも見つけられるよう、ツー�
 
 errorHeading = おっと！
 errorMessage = 何か問題が発生したようです。<br>また後で試してください。
-notFoundHeader = ページが見つかりません
+notFoundHeader = お探しのページは見つかりませんでした。
 
 
 // A modal prompt to sign up for the Test Pilot newsletter.
@@ -97,14 +97,20 @@ notFoundHeader = ページが見つかりません
 emailOptInDialogTitle = Test Pilot へようこそ！
 emailOptInMessage = 新しい実験について知り、あなたが試した実験のテスト結果を見てみましょう。
 emailOptInConfirmationTitle = メールをお送りしました
-emailOptInSuccessMessage2 = ありがとうございます！
-emailOptInConfirmationClose = 実験に進む...
+emailOptInConfirmationClose = 実験へ進む...
+emailOptInDialogErrorTitle = おっと！
 
 
 // news feed updates.
 [[ updateList ]]
 
 latestUpdatesTitle = 最新情報
+showMoreNewsTitle = 過去のニュースを表示
+
+
+[[ featuredExperiment ]]
+
+moreDetail = 詳細を表示
 
 
 // A listing of all Test Pilot experiments.
@@ -117,13 +123,17 @@ experimentListEndingTomorrow = 明日終了
 experimentListEndingSoon = まもなく終了
 experimentCondensedHeader = Test Pilot へようこそ！
 experimentListHeader = 興味のある実験を選びましょう！
+experimentListHeaderWithFeatured = すべての実験を試す
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = フィードバック
 experimentCardManage = 管理
-experimentCardGetStarted = はじめに
+experimentCardGetStarted = 使ってみる
+// also used in NewsUpdateDialog
 experimentCardLearnMore = 詳細
 
 
@@ -133,7 +143,7 @@ experimentCardLearnMore = 詳細
 feedbackSubmitButton = 簡単なアンケートに答える
 feedbackUninstallTitle = ありがとうございます！
 feedbackUninstallCopy =
-    あなたの Firefox Test Pilot への参加は多くの
+    あなたの Firefox Test Pilot への参加は重要な
     意味を持ちます！ 他の実験についてもチェックし、
     今後追加される実験を楽しみにしてください！
 
@@ -148,17 +158,16 @@ experimentPreFeedbackLinkCopy = { $title } の実験についてフィードバ�
 // A splash shown on top of the experiment page when Test Pilot is not installed.
 [[ experimentPromo ]]
 
-experimentPromoHeader = 離陸準備は整いましたか？
-experimentPromoSubheader = 私たちは Firefox の次世代機能を作っています。Test Pilot をインストールしてそれらを試してください！
+experimentPromoHeader = 離陸準備 OK?
+experimentPromoSubheader = 私たちは Firefox の次世代機能を開発中です。Test Pilot をインストールしてそれらを試してください！
 
 
 // The experiment detail page.
 [[ experimentPage ]]
 
 isEnabledStatusMessage = { $title } が有効化されました。
-installErrorMessage = おっと、{ $title } を有効化できませんでした。また後で試してください。
-participantCount = <span>{ $installation_count }</span> 人の参加者
-otherExperiments = これらの実験的機能も試す
+installErrorMessage = { $title } を有効化できませんでした。また後で試してください。
+otherExperiments = これらの実験的機能も試してください
 giveFeedback = フィードバックを送る
 disableHeader = 実験を無効化しますか？
 disableExperiment = { $title } を無効化
@@ -169,25 +178,47 @@ experimentManuallyDisabled = { $title } はアドオンマネージャーで無�
 experimentMeasurementIntro = すべての Test Pilot 実験によって収集される <a>データ</a> に加えて、{ $experimentTitle } 使用時に何が起きているかについてあなたが知っておくべき主な事柄を以下にまとめました。
 measurements = プライバシー
 experimentPrivacyNotice = { $title } のデータ収集に関する詳細はこちらをご覧ください。
-contributorsHeading = 提供:
+contributorsHeading = 開発スタッフ
 contributorsExtraLearnMore = 詳しくはこちら
-changelog = 変更ログ
+changelog = 変更履歴
 tour = ツアー
-tourLink = ツアー
+tourLink = ツアーを始める
 contribute = 協力
 bugReports = バグ報告
 discussExperiment = { $title } について議論する
-tourOnboardingTitle = { $title } が有効化されました！
 tourDoneButton = 完了
-userCountContainer = 今現在 <span>{ $installation_count }</span> 人のユーザーが { $title } を試しています！
 userCountContainerAlt = 最近公開！
 highlightPrivacy = プライバシー
+experimentGradReportButton = 卒業報告
+experimentGradReportPendingTitle = この実験は終了しました
+experimentGradReportPendingCopy = 現在詳細なレポートを作成中です。また後で見に来てください。
+experimentGradReportReady = 私たちは詳細な卒業報告をまとめました。
+experimentGoToLink = { $title } へ
+startedDateLabel = 実験開始日: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Firefox / ウェブ / モバイル実験
+experimentPlatformWebAddon = Firefox / ウェブ実験
+experimentPlatformWebMobile = ウェブ / モバイル実験
+experimentPlatformAddonMobile = Firefox / モバイル実験
+experimentPlatformWeb = ウェブ実験
+experimentPlatformAddon = Firefox 実験
+experimentPlatformMobileApp = モバイル実験
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
 [[ upgradeNotice ]]
 
-upgradeNoticeTitle = { $title } を試すには Firefox { $min_release } 以降が必要です。
+upgradeNoticeTitle = { $title } を試すには Firefox { $min_release } 以上が必要です。
 upgradeNoticeLink = Firefox の更新方法
 versionChangeNotice = { $experiment_title } はこのバージョンの Firefox には対応していません。
 versionChangeNoticeLink = Firefox の最新版をダウンロード。
@@ -197,8 +228,8 @@ versionChangeNoticeLink = Firefox の最新版をダウンロード。
 [[ uninstall ]]
 
 retireDialogTitle = Test Pilot を削除しますか？
-retireMessage = 了解しました。これにより、アクティブなテストはすべて無効化され、アドオンは削除され、サーバーからあなたのアカウント情報は削除されます。
-retireEmailMessage = メールによる最新情報の配信を停止するには、Test Pilot に関するメール内の <em>購読中止</em> リンクをクリックしてください。
+retireMessageUpdate = 了解しました。これにより Test Pilot は削除されます。個々の実験は Firefox のアドオンマネージャーから無効化できます。
+retireEmailMessage = メールによる最新情報の配信を停止するには、Test Pilot からのメールに記載されている <em>購読中止</em> リンクをクリックしてください。
 retireSubmitButton = 続ける
 pageTitleRetirePage = Firefox Test Pilot - Test Pilot を削除
 retirePageProgressMessage = 終了中...
@@ -241,7 +272,7 @@ incompatibleSubheader = この実験に参加する前に <a>これらのアド�
 [[ newsletterForm ]]
 
 newsletterFormEmailPlaceholder
-    .placeholder = あなたのメールアドレスがここに入ります
+    .placeholder = あなたのメールアドレスをここに入力
 newsletterFormDisclaimer = Test Pilot 関連の情報のみお送りします。
 newsletterFormPrivacyNotice = Mozilla が <a>このプライバシー通知</a> に従って私の個人情報を扱うことに同意します。
 newsletterFormPrivacyAgreementRequired = 続けるにはこのボックスにチェックを入れてください。
@@ -253,7 +284,7 @@ newsletterFormSubmitButtonSubmitting = 送信中...
 [[ newsletterFooter ]]
 
 newsletterFooterError = メールアドレスの送信中に問題が発生しました。再度試しますか？
-newsletterFooterHeader = 今後も情報を受け取る
+newsletterFooterHeader = 最新情報をいち早く
 newsletterFooterBody = 新しい実験について知り、あなたが試した実験のテスト結果を見てみましょう。
 newsletterFooterSuccessHeader = ありがとうございます！
 newsletterFooterSuccessBody = これまでに Mozilla 関連のニュースレターを購読したことがない場合、購読開始の確認が必要となります。お送りした確認メールを受信トレイもしくは迷惑メールフィルタから探してください。
@@ -262,14 +293,14 @@ newsletterFooterSuccessBody = これまでに Mozilla 関連のニュースレ�
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = この実験はあなたの言語 ({ $locale_code }) には対応していません。
+localeNotTranslatedWarningTitle = この実験はあなたの言語 ({ $locale_code }) には翻訳されていません。
 localeWarningSubtitle = お望みなら引き続き有効にしておくこともできます。
 
 
 // An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 [[ experimentsListNoneInstalled ]]
 
-experimentsListNoneInstalledHeader = この機能を離陸させ軌道に乗せましょう！
+experimentsListNoneInstalledHeader = この機能を無事に離陸させましょう！
 experimentsListNoneInstalledSubheader = 新しい Test Pilot の実験を試す準備ができましたか？ どれか選んで有効にし、実際に試してみて、感想を聞かせてください。
 experimentsListNoneInstalledCTA = 興味が湧きませんか？ <a>理由を聞かせてください</a>。
 
@@ -278,7 +309,7 @@ experimentsListNoneInstalledCTA = 興味が湧きませんか？ <a>理由を聞
 [[ noscript ]]
 
 noScriptHeading = おっと...
-noScriptMessage = 申し訳ありませんが、<br>Test Pilot を試すには JavaScript が必要です。
+noScriptMessage = 申し訳ありませんが、<br>Test Pilot へ参加するには JavaScript が必要です。
 noScriptLink = 理由を確かめる
 
 
@@ -287,3 +318,20 @@ noScriptLink = 理由を確かめる
 
 viewPastExperiments = 過去の実験を見る
 hidePastExperiments = 過去の実験を隠す
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = 何か問題が発生しました。
+warningGenericDetail = Test Pilot に何か問題が発生したようです。<a>バグを報告</a> し、このエラーメッセージを教えてください。
+warningUpgradeFirefoxTitle = 続けるには Firefox をアップグレードしてください！
+warningUpgradeFirefoxDetail = Test Pilot へ参加するには Firefox の最新版が必要です。まずは <a>Firefox をアップグレード</a> してください。
+warningHttpsRequiredTitle = HTTPS が必須です。
+warningHttpsRequiredDetail = Test Pilot は HTTPS 経由でのアクセスが必須となっています。詳細は <a>ドキュメント</a> をご覧ください。
+warningMissingPrefTitle = Test Pilot を開発中ですか？
+warningMissingPrefDetail = Test Pilot をローカルもしくは開発環境で実行する場合、特別な設定が必要となります。詳細は <a>ドキュメント</a> をご覧ください。
+warningBadHostnameTitle = 未承認のホスト名です！
+warningBadHostnameDetail = Test Pilot のサイトは、testpilot.firefox.com、testpilot.stage.mozaws.net、testpilot.dev.mozaws.net あるいは example.com:8000 からのみアクセス可能です。詳細は <a>ドキュメント</a> をご覧ください。
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot を使うには JavaScript が必要です。申し訳ありません。

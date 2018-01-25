@@ -17,6 +17,7 @@ footerLinkCookies = Kakor
 footerLinkPrivacy = Sekretesspolicy
 footerLinkTerms = Villkor
 footerLinkLegal = Juridisk information
+footerLinkFeedback = Ge återkoppling
 footerLinkAbout = Om Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Wiki för Test Pilot
 menuDiscuss = Diskutera Test Pilot
 menuFileIssue = Rapportera ett problem
 menuRetire = Avinstallera Test Pilot
+headerLinkBlog = Blogg
 
 
 // The splash on the homepage.
@@ -38,7 +40,6 @@ landingIntroOne = Testa nya funktioner.
 landingIntroTwo = Ge dina synpunkter.
 landingIntroThree = Hjälp till att utveckla Firefox.
 landingLegalNotice = Genom att fortsätta godkänner du <a>användarvillkoren</a> och <a>sekretesspolicy</a> för Test Pilot.
-landingExperimentsTitle = Testa de senaste experimentella funktionerna
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -46,7 +47,6 @@ landingExperimentsTitle = Testa de senaste experimentella funktionerna
 
 landingInstallButton = Installera tillägget Test Pilot
 landingInstallingButton = Installerar...
-landingInstalledButton = Välj dina funktioner
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -97,14 +97,20 @@ notFoundHeader = Fyra noll fyra!
 emailOptInDialogTitle = Välkommen till Test Pilot!
 emailOptInMessage = Få reda på mer om nya experiment och se testresultat för experiment som du har testat.
 emailOptInConfirmationTitle = E-post har skickats
-emailOptInSuccessMessage2 = Tack!
 emailOptInConfirmationClose = Vidare till experimenten...
+emailOptInDialogErrorTitle = Åh nej!
 
 
 // news feed updates.
 [[ updateList ]]
 
 latestUpdatesTitle = Senast uppdaterade
+showMoreNewsTitle = Visa äldre nyheter
+
+
+[[ featuredExperiment ]]
+
+moreDetail = Visa detaljer
 
 
 // A listing of all Test Pilot experiments.
@@ -117,13 +123,17 @@ experimentListEndingTomorrow = Slutar imorgon
 experimentListEndingSoon = Slutar snart
 experimentCondensedHeader = Välkommen till Test Pilot!
 experimentListHeader = Välj dina experiment!
+experimentListHeaderWithFeatured = Testa alla våra experiment
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Återkoppling
 experimentCardManage = Hantera
 experimentCardGetStarted = Kom igång
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Läs mer
 
 
@@ -157,7 +167,6 @@ experimentPromoSubheader = Vi bygger nästa generations funktioner för Firefox.
 
 isEnabledStatusMessage = { $title } är aktiverad.
 installErrorMessage = Hoppsan. { $title } kunde inte aktiveras. Försök igen senare.
-participantCount = <span>{ $installation_count }</span> deltagare
 otherExperiments = Prova dessa experiment också
 giveFeedback = Ge återkoppling
 disableHeader = Inaktivera experiment?
@@ -177,11 +186,33 @@ tourLink = Starta guidad visning
 contribute = Bidra
 bugReports = Felrapporter
 discussExperiment = Diskutera { $title }
-tourOnboardingTitle = { $title } är aktiverad!
 tourDoneButton = Klar
-userCountContainer = Det finns <span>{ $installation_count }</span> personer som provar { $title } just nu!
 userCountContainerAlt = Nyligen startad!
 highlightPrivacy = Din sekretesspolicy
+experimentGradReportButton = Examensrapport
+experimentGradReportPendingTitle = Detta experiment har upphört
+experimentGradReportPendingCopy = Vi arbetar med en fullständig rapport. Återkom snart för detaljer.
+experimentGradReportReady = Vi har utarbetat en fullständig examinationsrapport.
+experimentGoToLink = Gå till { $title }
+startedDateLabel = Startdatum för experiment: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Experiment för Firefox / webb / mobil
+experimentPlatformWebAddon = Experiment för Firefox / webb
+experimentPlatformWebMobile = Experiment för webb / mobil
+experimentPlatformAddonMobile = Experiment för Firefox / mobil
+experimentPlatformWeb = Experiment för webb
+experimentPlatformAddon = Experiment för Firefox
+experimentPlatformMobileApp = Experiment för mobil
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -197,7 +228,7 @@ versionChangeNoticeLink = Hämta den aktuella versionen av Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Avinstallera Test Pilot?
-retireMessage = Som du önskar. Detta kommer att inaktivera alla aktiva tester, avinstallera tillägget och ta bort din kontoinformation från våra servrar.
+retireMessageUpdate = Som du vill. Detta avinstallerar Test Pilot. Du kan inaktivera enskilda experiment från tilläggshanteraren i Firefox.
 retireEmailMessage = För att välja bort e-postuppdateringar, klicka på länken <em>avbryt prenumeration</em> på någon Test Pilot e-post.
 retireSubmitButton = Fortsätt
 pageTitleRetirePage = Firefox Test Pilot - Avinstallera Test Pilot
@@ -262,7 +293,7 @@ newsletterFooterSuccessBody = Om du tidigare inte har bekräftat en prenumeratio
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Detta experiment stöds inte på ditt språk ({ $locale_code }).
+localeNotTranslatedWarningTitle = Detta experiment har inte översatts till ditt språk ({ $locale_code }).
 localeWarningSubtitle = Du kan fortfarande aktivera det om du vill.
 
 
@@ -287,3 +318,20 @@ noScriptLink = Ta reda på varför
 
 viewPastExperiments = Visa tidigare experiment
 hidePastExperiments = Dölj tidigare experiment
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Något gick fel!
+warningGenericDetail = Något har gått fel med Test Pilot. Vänligen <a>skicka in en bugg</a> och ta med detta felmeddelande.
+warningUpgradeFirefoxTitle = Uppgradera Firefox för att fortsätta!
+warningUpgradeFirefoxDetail = Test Pilot kräver den senaste versionen av Firefox. <a>Uppgradera Firefox</a> för att komma igång.
+warningHttpsRequiredTitle = HTTPS krävs!
+warningHttpsRequiredDetail = Test Pilot måste nås via HTTPS. Se <a>vår dokumentation</a> för mer information.
+warningMissingPrefTitle = Utveckla Test Pilot?
+warningMissingPrefDetail = När du kör Test Pilot lokalt eller i utvecklingsmiljöer, krävs särskild konfiguration. Vänligen se <a>vår dokumentation</a> för detaljer.
+warningBadHostnameTitle = Okontrollerat värdnamn!
+warningBadHostnameDetail = Test Pilot webbplats är endast tillgänglig från testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net eller example.com:8000. Se <a>vår dokumentation</a> för mer information.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot kräver JavaScript. Ledsen för det.

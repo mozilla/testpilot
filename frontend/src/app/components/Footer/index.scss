@@ -1,0 +1,105 @@
+@import '../../../styles/_utils';
+
+#main-footer {
+  @include respond-to('not-small') {
+    padding: $grid-unit * 2 0 $grid-unit;
+  }
+
+  @include respond-to('small') {
+    padding: $grid-unit * 1 0;
+  }
+
+  position: relative;
+
+  .newsletter-footer + & {
+    background: $transparent-white-05;
+  }
+}
+
+.legal-links {
+  @include respond-to('not-small') {
+    @include flex-container(row, flex-start, flex-end);
+
+    .boilerplate {
+      position: relative;
+      top: 5px;
+    }
+  }
+
+  @include respond-to('small') {
+    @include flex-container(column, flex-start, flex-start);
+
+  }
+
+  font-size: $font-unit;
+  margin-top: $grid-unit;
+
+  > * {
+    @include respond-to('not-small') {
+      margin-right: $grid-unit * 1.5;
+    }
+
+    @include respond-to('small') {
+      margin-bottom: $grid-unit * .5;
+      margin-right: 0;
+    }
+  }
+}
+
+.social-links {
+  @include flex-container(row, flex-end, flex-end);
+
+  @include respond-to('small') {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  flex: 1;
+
+  .link-icon {
+    @include respond-to('not-small') {
+      margin-left: $grid-unit * .75;
+    }
+
+    @include respond-to('small') {
+      margin-right: $grid-unit * .75;
+    }
+
+    background-repeat: repeat;
+    cursor: pointer;
+    flex: 0 0 32px;
+    height: 32px;
+    opacity: .9;
+    transition: opacity 150ms;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .github {
+    background-image: url('./img/github-icon.svg');
+  }
+
+  .twitter {
+    background-image: url('./img/twitter-icon.svg');
+  }
+}
+
+.legal-container .link-icon {
+  filter: invert(25%);
+}
+
+.mozilla-logo {
+  background-image: url('./img/mozilla.svg');
+  background-repeat: no-repeat;
+  background-size: auto 32px;
+  height: 32px;
+  opacity: .9;
+  transition: opacity 150ms;
+  width: 112px;
+
+  &:hover {
+    opacity: 1;
+  }
+}

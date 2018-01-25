@@ -1,0 +1,22 @@
+
+    <meta charSet="utf-8" />
+
+    <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css" />
+
+    <meta name="defaultLanguage" content="en-US" />
+    <meta name="availableLanguages" content="en-US,cs,de,dsb,es-ES,es-MX,fr,fy-NL,hsb,hu,it,ja,kab,nl,nn-NO,pt-BR,pt-PT,ru,sk,sl,sq,sr,sv-SE,uk,zh-CN,zh-TW" />
+    <link rel="localization" href="/static/locales/{locale}/app.ftl" />
+    <link rel="localization" href="/static/locales/{locale}/experiments.ftl" />
+
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+
+        // HACK: Intercept all clicks and prevent default to disable link clicks
+        // navigating away from storybook iframe
+        document.body.addEventListener('click', function (ev) {
+          console.log('click', ev.target, ev);
+          ev.preventDefault();
+        }, false);
+
+      });
+    </script>

@@ -1,1 +1,12 @@
+activitystreamContributors1Title = 웹 엔지니어
+activitystreamContributors2Title = 소프트웨어 개발자
+activitystreamContributors3Title = 데스크탑 Firefox 엔지니어
+activitystreamContributors4Title = 소프트웨어 엔지니어
+activitystreamContributors5Title = 기술 프로그램 관리자
+activitystreamContributors6Title = 클라우드 서비스 엔지니어
+activitystreamContributors7Title = 엔지니어링 인턴
+activitystreamContributors8Title = 엔지니어링 인턴
+activitystreamContributors9Title = 제품 관리자
+activitystreamContributors10Title = 엔지니어링 관리자
+activitystreamContributors11Title = 
 cliqzToursteps0Copy = URL 창에 입력을 시작 하면 실시간 결과가 나타납니다.

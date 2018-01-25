@@ -1,20 +1,20 @@
-import querystring from 'querystring';
+import querystring from "querystring";
 
-import { experimentL10nId, newsUpdateL10nId, l10nId, l10nIdFormat, lookup } from '../../../tasks/util';
+import { experimentL10nId, newsUpdateL10nId, l10nId, l10nIdFormat, lookup } from "../../../tasks/util";
 
-export const basketUrl = 'https://basket.mozilla.org/news/subscribe/';
+export const basketUrl = "https://basket.mozilla.org/news/subscribe/";
 
 export function subscribeToBasket(email, source) {
-  const sourceUrl = source || 'https://testpilot.firefox.com/';
+  const sourceUrl = source || "https://testpilot.firefox.com/";
   return fetch(basketUrl, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: `newsletters=test-pilot&email=${encodeURIComponent(email)}&source_url=${encodeURIComponent(sourceUrl)}`
   });
 }
 
 export function formatDate(date) {
-  let out = '';
+  let out = "";
   const d = new Date(date);
   if (isNaN(d)) {
     out = null;
@@ -40,15 +40,16 @@ export function buildSurveyURL(ref, title, installed, clientUUID, survey_url) {
 }
 
 export function isFirefox(ua) {
-  return ua.indexOf('firefox') > -1 || ua.indexOf('fxios') > -1;
+  const userAgent = ua.toLowerCase();
+  return userAgent.indexOf("firefox") > -1 && userAgent.indexOf("fxios") === -1;
 }
 
 export function isMinFirefoxVersion(ua, minVersion) {
-  return isFirefox(ua) && parseInt(ua.split('/').pop(), 10) >= minVersion;
+  return isFirefox(ua) && parseInt(ua.split("/").pop(), 10) >= minVersion;
 }
 
 export function isMobile(ua) {
-  return ua.indexOf('mobi') > -1 || ua.indexOf('tablet') > -1;
+  return ua.indexOf("mobi") > -1 || ua.indexOf("tablet") > -1;
 }
 
 

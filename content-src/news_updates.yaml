@@ -8,3 +8,33 @@
 #   dev: false
 #   content: >
 #     Example content goes here
+-
+  slug: general-update-6
+  title: Test Pilot Accessibility Design Course
+  link: https://medium.com/firefox-test-pilot/storybook-test-pilot-26d21fdb6c64
+  created: 2017-12-20T12:00:00Z
+  published: 2017-12-20T12:00:00Z
+  dev: false
+  content: >
+    Test Pilot recently teamed up with design students at Ravensbourne to explore accessibility challenges on the web.
+-
+  slug: general-update-5
+  title: Developing Test Pilot with Storybooks
+  link: https://medium.com/firefox-test-pilot/storybook-test-pilot-26d21fdb6c64
+  created: 2017-11-21T12:00:00Z
+  published: 2017-11-21T12:00:00Z
+  dev: false
+  content: >
+    Test Pilot now uses the Storybooks visualization tool to help simplify UI development. Check out this writeup to learn more.
+-
+  slug: general-update-4
+  title: Page Shot is now Firefox Screenshots
+  link: https://medium.com/firefox-test-pilot/screenshots-is-shipping-in-firefox-56-25ecbe0d5b91
+  created: 2017-10-15T12:00:00Z
+  published: 2017-10-15T12:00:00Z
+  dev: false
+  content: >
+    The Page Shot experiment is now shipping in Firefox as Firefox Screenshots. Find out how it happened.
+
+
+

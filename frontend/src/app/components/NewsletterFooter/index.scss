@@ -1,0 +1,121 @@
+@import '~photon-colors/colors.scss';
+@import '../../../styles/_utils';
+
+$email-icon--width: 74px;
+$email-icon--height: 80px;
+$email-icon--responsive-unit: .66;
+$error-border: #c4c4c4;
+$error-background: #f2f2f2;
+
+
+.newsletter-footer {
+  background: $transparent-white-05;
+  padding: ($grid-unit * 1.75) 0;
+
+  .error {
+    background-color: $error-background;
+    border: 1px solid $error-border;
+    border-radius: 4px;
+    color: $red-70;
+    font-size: $font-unit * 7 / 6;
+    line-height: 8 / 7;
+    margin-bottom: $grid-unit;
+    padding: $grid-unit * .5;
+  }
+
+  header {
+    @include respond-to ('big') {
+      margin-left: 55px;
+    }
+
+    width: 45%;
+  }
+
+  form {
+    @include respond-to ('big') {
+      margin-right: 55px;
+    }
+
+    max-width: 360px;
+    width: 45%;
+  }
+
+  header {
+    @include flex-container(column, center, flex-start);
+    background: url('./img/envelope.svg') no-repeat left;
+    background-size: $email-icon--width $email-icon--height;
+    margin-right: 10%;
+    min-height: $email-icon--height;
+    padding-left: $email-icon--width + ($grid-unit * 1.5);
+
+    h2 {
+      font-size: 22px;
+      font-weight: normal;
+      margin: $grid-unit * .25;
+    }
+
+    p {
+      font-size: 15px;
+      margin: $grid-unit * .25;
+      max-width: $grid-unit * 12.5;
+    }
+  }
+
+  &.success {
+    header {
+      width: 76%;
+    }
+
+    p {
+      max-width: 100%;
+    }
+
+    form {
+      height: 0;
+      overflow: hidden;
+      position: absolute;
+      visibility: hidden;
+      width: 0;
+    }
+  }
+
+  // Shrink the size of the email icon at medium screen sizes.
+  @include respond-to ('medium') {
+    header,
+    form {
+      width: 47.5%;
+    }
+
+    header {
+      background-size: ($email-icon--width * $email-icon--responsive-unit) ($email-icon--height * $email-icon--responsive-unit);
+      margin-right: 5%;
+      min-height: $email-icon--height * $email-icon--responsive-unit;
+      padding-left: ($email-icon--height * $email-icon--responsive-unit) + ($grid-unit * 1.5);
+    }
+
+    &.success header {
+      width: 100%;
+    }
+
+  }
+
+  // Stack the header above the form at small screen sizes.
+  @include respond-to ('small') {
+
+    header,
+    form {
+      width: 100%;
+    }
+
+    header {
+      @include flex-container(column, center, center);
+
+      background-position: top;
+      margin-bottom: $grid-unit * .5;
+      margin-right: 0;
+      padding-left: 0;
+      padding-top: ($email-icon--height * $email-icon--responsive-unit) + ($grid-unit * 1.5);
+      text-align: center;
+    }
+  }
+}

@@ -17,6 +17,7 @@ footerLinkCookies = Piškotki
 footerLinkPrivacy = Zasebnost
 footerLinkTerms = Pogoji
 footerLinkLegal = Pravne informacije
+footerLinkFeedback = Sporočite povratne informacije
 footerLinkAbout = O programu Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Test Pilot Wiki
 menuDiscuss = Razprava o programu Test Pilot
 menuFileIssue = Prijavite težavo
 menuRetire = Odstrani Test Pilot
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -38,7 +40,6 @@ landingIntroOne = Preskusite nove možnosti.
 landingIntroTwo = Pošljite nam povratne informacije.
 landingIntroThree = Pomagajte ustvarjati Firefox.
 landingLegalNotice = Z nadaljevanjem se strinjate s <a>pogoji uporabe</a> in <a>pravilnikom o zasebnosti</a> programa Test Pilot.
-landingExperimentsTitle = Preskusite najnovejše poskusne možnosti
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -46,7 +47,6 @@ landingExperimentsTitle = Preskusite najnovejše poskusne možnosti
 
 landingInstallButton = Namestite dodatek Test Pilot
 landingInstallingButton = Nameščanje ...
-landingInstalledButton = Izberite si možnosti
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -97,14 +97,20 @@ notFoundHeader = Štiristo štiri!
 emailOptInDialogTitle = Dobrodošli v programu Test Pilot!
 emailOptInMessage = Bodite obveščeni o novih poskusih in o rezultatih poskusov, ki ste jih preskusili.
 emailOptInConfirmationTitle = E-poštno sporočilo poslano
-emailOptInSuccessMessage2 = Hvala!
 emailOptInConfirmationClose = Naprej na poskuse ...
+emailOptInDialogErrorTitle = O, ne!
 
 
 // news feed updates.
 [[ updateList ]]
 
 latestUpdatesTitle = Najnovejše posodobitve
+showMoreNewsTitle = Prikaži pretekle novice
+
+
+[[ featuredExperiment ]]
+
+moreDetail = Prikaži podrobnosti
 
 
 // A listing of all Test Pilot experiments.
@@ -117,13 +123,17 @@ experimentListEndingTomorrow = Se konča jutri
 experimentListEndingSoon = Se končuje
 experimentCondensedHeader = Dobrodošli v Test Pilotu!
 experimentListHeader = Izberite si poskuse zase!
+experimentListHeaderWithFeatured = Preizkusite vse naše poskuse
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Povratne informacije
 experimentCardManage = Upravljaj
 experimentCardGetStarted = Začnite
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Več o tem
 
 
@@ -157,7 +167,6 @@ experimentPromoSubheader = Razvijamo funkcije za novo generacijo Firefoxa. Names
 
 isEnabledStatusMessage = { $title } je omogočen.
 installErrorMessage = Ojej. Poskusa { $title } ni mogoče omogočiti. Poskusite znova pozneje.
-participantCount = <span>{ $installation_count }</span> uporabnikov
 otherExperiments = Preskusite tudi te poskuse
 giveFeedback = Sporočite povratne informacije
 disableHeader = Onemogoči poskus?
@@ -177,11 +186,33 @@ tourLink = Začnite predstavitev
 contribute = Prispevajte
 bugReports = Poročila o napakah
 discussExperiment = Pogovor o { $title }
-tourOnboardingTitle = { $title } omogočen!
 tourDoneButton = Končano
-userCountContainer = { $title } v tem trenutku preskuša <span>{ $installation_count }</span> ljudi!
 userCountContainerAlt = Pravkar izdan!
 highlightPrivacy = Vaša zasebnost
+experimentGradReportButton = Poročilo o zaključku
+experimentGradReportPendingTitle = Ta poskus se je končal
+experimentGradReportPendingCopy = Pripravljamo popolno poročilo. Podrobnosti bodo kmalu na voljo.
+experimentGradReportReady = Pripravili smo celotno poročilo o zaključku.
+experimentGoToLink = Pojdi na { $title }
+startedDateLabel = Datum začetka poskusa: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Poskus za Firefox / splet / mobilno aplikacijo
+experimentPlatformWebAddon = Poskus za Firefox / splet
+experimentPlatformWebMobile = Pokus za splet / mobilno aplikacijo
+experimentPlatformAddonMobile = Poksus za Firefox / mobilno aplikacijo
+experimentPlatformWeb = Poskus za splet
+experimentPlatformAddon = Poskus za Firefox
+experimentPlatformMobileApp = Poskus za mobilno aplikacijo
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -197,7 +228,7 @@ versionChangeNoticeLink = Prenesite najnovejšo različico Firefoxa.
 [[ uninstall ]]
 
 retireDialogTitle = Želite odstraniti Test Pilot?
-retireMessage = Kot želite. S tem boste onemogočili vse aktivne poskuse, odstranili dodatek in izbrisali podatke računa z naših strežnikov.
+retireMessageUpdate = Kot želite. S tem boste odstranili Test Pilot. Posamezne poskuse lahko odstranite v Firefoxovem upravitelju dodatkov.
 retireEmailMessage = Za odjavo od e-poštnih novic kliknite povezavo <em>Odjava</em> v kateremkoli od sporočil programa Test Pilot.
 retireSubmitButton = Nadaljuj
 pageTitleRetirePage = Firefox Test Pilot - odstranjevanje
@@ -262,7 +293,7 @@ newsletterFooterSuccessBody = Če še niste potrdili naročila na prejemanje Moz
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Ta poskus ni podprt v vašem jeziku ({ $locale_code }).
+localeNotTranslatedWarningTitle = Ta poskus ni bil preveden v vaš jezik ({ $locale_code }).
 localeWarningSubtitle = Če želite, ga lahko kljub temu omogočite.
 
 
@@ -287,3 +318,20 @@ noScriptLink = Spoznajte, zakaj
 
 viewPastExperiments = Ogled končanih poskusov
 hidePastExperiments = Skrij končane poskuse
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Nekaj ni v redu!
+warningGenericDetail = Pri Test Pilotu se je nekaj zalomilo. <a>Prijavite napako</a> in v poročilu omenite to stran napake.
+warningUpgradeFirefoxTitle = Nadgradite Firefox za nadaljevanje!
+warningUpgradeFirefoxDetail = Test Pilot zahteva najnovejšo različico Firefoxa. Za začetek <a>nadgradite Firefox</a>.
+warningHttpsRequiredTitle = HTTPS zahtevan!
+warningHttpsRequiredDetail = Dostop do Test Pilota mora biti preko HTTPS. Za podrobnosti glejte <a>našo dokumentacijo</a>.
+warningMissingPrefTitle = Razvijate Test Pilot?
+warningMissingPrefDetail = Kadar Test Pilot poganjate lokalno ali v razvojnih okoljih, je zahtevana posebna konfiguracija. Za podrobnosti glejte <a>našo dokumentacijo</a>.
+warningBadHostnameTitle = Neodobreno ime gostitelja!
+warningBadHostnameDetail = Do strani Test Pilota je omogočen dostop samo s testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net ali example.com:8000. Za podrobnosti glejte <a>našo dokumentacijo</a>.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot zahteva JavaScript. Žal nam je.

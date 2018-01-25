@@ -1,0 +1,186 @@
+.button {
+  @include flex-container(row, center, center);
+  border: 1px solid $transparent-black-34;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: $font-unit * 1.25;
+  font-weight: $weight-normal;
+  height: $grid-unit * 2;
+  line-height: $grid-unit * 2;
+  outline: none;
+  padding: 0 10px;
+  position: relative;
+  text-decoration: none;
+  transition: background 150ms, width 150ms;
+  user-select: none;
+  white-space: nowrap;
+
+  &.no-display {
+    display: none;
+  }
+
+  &.outline {
+    background-color: transparent;
+    border-color: $white;
+    color: $white;
+    transition: background 150ms, border 150ms;
+
+    &:hover,
+    &:focus {
+      background-color: $transparent-white-1;
+      border-color: $transparent-white-8;
+    }
+
+    &:active,
+    &.active,
+    &.active:hover,
+    &.active:focus {
+      background-color: $transparent-white-2;
+      border-color: $transparent-white-8;
+    }
+  }
+
+  &.primary {
+    background: $green-60;
+    border: 2px solid $green-70;
+    color: $white;
+
+    &:not([disabled='true']) {
+      &:hover,
+      &:focus {
+        background: $green-70;
+        border: 2px solid $green-80;
+      }
+
+      &:focus:hover {
+        background: $green-70;
+        border: 2px solid $green-80;
+      }
+
+      &:active {
+        background: $green-80;
+        border: 2px solid $green-90;
+      }
+
+      &.state-change {
+        background: $green-70;
+      }
+    }
+  }
+
+  &.secondary {
+    background: $grey-20;
+    border: 0;
+    color: $grey-90;
+    font-size: 15px;
+
+    &:hover,
+    &:focus {
+      background: $grey-30;
+      border: 0;
+    }
+
+    &:active {
+      background: $grey-40;
+      border-color: $transparent-grey-30;
+    }
+  }
+
+  &.default {
+    background: $blue-60;
+    border: 0;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background: $blue-70;
+      border: 0;
+    }
+
+    &:active {
+      background: $blue-80;
+      border-color: $blue-80;
+    }
+  }
+
+  &.warning {
+    background: $red-60;
+    border: 1px solid $red-70;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background: $red-70;
+      border-color: $red-80;
+    }
+
+    &:active {
+      background: $red-80;
+      border-color: $red-90;
+    }
+  }
+
+  &.disabled,
+  &.disabled:hover,
+  &.disabled:active,
+  &.disabled:focus {
+    background-color: $grey-30;
+  }
+
+  &.large {
+    border-radius: $medium-border-radius;
+    font-size: $font-unit * 1.25;
+    height: 48px;
+    line-height: 48px;
+    max-width: 360px;
+    padding: 0 10px;
+  }
+}
+
+// Loading animation concept comes from
+// https://css-tricks.com/uniqlo-stripe-hovers/
+// abstracted out into a modudle bc we use it
+// in buttons and retire contexts.
+.state-change-inner {
+  animation: barberpole 1000ms infinite linear;
+  background-image: linear-gradient(
+    45deg,
+    $transparent-white-1 25%,
+    transparent 25%,
+    transparent 50%,
+    $transparent-white-1 50%,
+    $transparent-white-1 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 50px 50px;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity .1s ease;
+}
+
+.state-change .default-text {
+  display: none;
+}
+
+:not(.state-change) .transition-text {
+  display: none;
+}
+
+.state-change .transition-text {
+  display: block;
+}
+
+.state-change .state-change-inner {
+  opacity: 1;
+}
+
+.loading-pill .state-change-inner {
+  opacity: 1;
+}
+

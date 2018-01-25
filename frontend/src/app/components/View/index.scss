@@ -1,0 +1,10 @@
+$theme-dark: #000f40;
+$theme-light: #513365;
+$view-gradient: linear-gradient($theme-dark, $theme-light);
+
+.view {
+  animation: fade-in 25ms forwards;
+  animation-delay: 125ms;
+  background: $view-gradient;
+  opacity: 0;
+}

@@ -10,32 +10,63 @@ html {
 }
 
 body {
+  @include flex-container(column);
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
   font-family: 'Fira Sans', sans-serif;
   font-size: 1.6rem;
   line-height: 2.2rem;
+  min-height: 100vh;
 }
 
-.parens {
-  color: $transparent-white-8;
-  font-size: $font-unit * 1.2;
-  margin-bottom: $grid-unit * .5;
-}
+.full-page-wrapper {
+  flex: 1;
+  min-height: 100vh;
+  width: 100%;
 
-.emphasis {
-  font-style: italic;
-}
+  &.space-between {
+    @include flex-container(column, space-between, center);
+  }
 
-.bold {
-  font-weight: 900;
-}
+  &.centered {
+    @include flex-container(column, center, center);
+  }
 
-.lighter {
-  font-weight: 300;
+  noscript + &  {
+    display: none;
+  }
 }
 
 .centered {
   text-align: center;
+}
+
+.no-display {
+  display: none;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.small-spacer {
+  height: $grid-unit;
+}
+
+
+// If static page is still rendered; don't display the page container
+// This was added to correct some odd scrollbar behavior when page-container
+// is injected and static-root is removed. These should happen at the same time,
+// but wind up happening a few frames apart. This rule resolves
+#static-root + #page-container.dynamic-page {
+  display: none;
+}
+
+//THis is a layout helper for storybooks
+.storybook-center {
+  @include flex-container(column, center, center);
+  min-height: 100vh;
+}
+
+.small {
+  font-size: 13px;
 }

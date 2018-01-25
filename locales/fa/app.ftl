@@ -17,6 +17,7 @@ footerLinkCookies = کوکی‌ها
 footerLinkPrivacy = حریم‌خصوصی
 footerLinkTerms = شرایط استفاده
 footerLinkLegal = ملاحظات قانونی
+footerLinkFeedback = به ما بازخورد دهید
 footerLinkAbout = درباره خلبان آزمایشی
 
 
@@ -29,6 +30,7 @@ menuWiki = ویکی خلبان آزمایشی
 menuDiscuss = گفت‌وگو در مورد خلبان آزمایشی
 menuFileIssue = گزارش یک مشکل
 menuRetire = حذف خلبان آزمایشی
+headerLinkBlog = وبلاگ
 
 
 // The splash on the homepage.
@@ -97,14 +99,15 @@ notFoundHeader = چهارصد اوه چهار!
 emailOptInDialogTitle = به خلبان آزمایشی خوش آمدید!
 emailOptInMessage = در مورد آزمایش‌های جدید مطلع شوید و نتایج آزمایش‌هایی که امتحانشان کرده‌اید را ببینید.
 emailOptInConfirmationTitle = رایانامه ارسال شد
-emailOptInSuccessMessage2 = ممنون!
 emailOptInConfirmationClose = به سوی تجربه‌ها…
+emailOptInDialogErrorTitle = آه نه !
 
 
 // news feed updates.
 [[ updateList ]]
 
 latestUpdatesTitle = آخرین بروزرسانی
+showMoreNewsTitle = نمایش خبرهای اخیر
 
 
 // A listing of all Test Pilot experiments.
@@ -122,6 +125,8 @@ experimentListHeader = آزمایش‌های خود را انتخاب کنید!
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = بازخورد
 experimentCardManage = مدیریت
 experimentCardGetStarted = شروع کنید
 experimentCardLearnMore = اطلاعات بیشتر
@@ -154,7 +159,6 @@ experimentPromoSubheader = ما در حال ساخت نسل بعدی امکان�
 
 isEnabledStatusMessage = { $title } فعال است.
 installErrorMessage = هممم. امکان فعال کردن { $title } نبود. بعدا دوباره تلاش کنید.
-participantCount = <span>{ $installation_count }</span> مشارکت کننده
 otherExperiments = این آزمایش‌ها را نیز بررسی کنید
 giveFeedback = ارسال بازخورد
 disableHeader = غیرفعال‌سازی آزمایش؟
@@ -176,9 +180,33 @@ bugReports = گزارش اشکال
 discussExperiment = بحث در مورد { $title }
 tourOnboardingTitle = { $title } فعال شد!
 tourDoneButton = انجام شد
-userCountContainer = تعداد <span>{ $installation_count }</span> نفر در حال حاضر از { $title } استفاده می‌کنند!
 userCountContainerAlt = هم‌اکنون منتشر شد!
 highlightPrivacy = حریم‌خصوصی شما
+experimentGradReportButton = گزارش اتمام کار
+experimentGradReportPendingTitle = این آزمایش به پایان رسیده است
+experimentGradReportPendingCopy = ما در حال کار بر روی یک گزارش کامل هستیم. دوباره برگردید برای جزئیات
+experimentGradReportReady = ما یک گزارش اتمام کار خیلی کامل آماده کرده ایم.
+experimentGoToLink = برو به { $title }
+startedDateLabel = شروع تاریخ آزمایش:  <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = خلبان آزمایشی
+learnMoreLink = بیشتر بدانید
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = فایرفاکس/ وب/ آزمایش موبایل
+experimentPlatformWebAddon = فایرفاکس/ آزمایش موبایل
+experimentPlatformWebMobile = وب / آزمایش موبایل
+experimentPlatformAddonMobile = فایرفاکس / آزمایش موبایل
+experimentPlatformWeb = آزمایش وب
+experimentPlatformAddon = آزمایش فایرفاکس
+experimentPlatformMobileApp = آزمایش موبایل
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -194,7 +222,7 @@ versionChangeNoticeLink = نسخه کنونی فایرفاکس را دریافت
 [[ uninstall ]]
 
 retireDialogTitle = حذف خلبان آزمایشی؟
-retireMessage = هر جور دوست دارید. این همه تست‌های فعال را غیرفعال خواهد کرد، افزودنی را حذف و اطلاعات حساب شما را از روی سرورهای ما حذف خواهد کرد.
+retireMessageUpdate = همانطور که میخواستید. این خلبان آزمایشی را پاک می‌کند. شما می‌توانید تک تک آزمایشات را از بخش مدیریت افزونه فایرفاکس غیرفعال کنید.
 retireEmailMessage = برای لغو اشتراک از رایانامه‌ها، به سادگی بر روی پیوند <em>لغو اشتراک</em> در هر کدام از رایانامه‌های خلبان آزمایشی کلیک کنید.
 retireSubmitButton = ادامه
 pageTitleRetirePage = خلبان آزمایشی فایرفاکس - حذف خلبان آزمایشی
@@ -259,7 +287,6 @@ newsletterFooterSuccessBody = اگر شما قبلا مشترک یکی از خب
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = این آزمایش به زبان شما پشتیبانی نمی‌شود ({ $locale_code }).
 localeWarningSubtitle = اگر تمایل دارید، هنوز می‌توانید فعالش کنید.
 
 
@@ -284,3 +311,18 @@ noScriptLink = ببینید چرا
 
 viewPastExperiments = نمایش آزمایش‌های گذشته
 hidePastExperiments = مخفی کردن آزمایش‌های گذشته
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = خطایی رخ داده است!
+warningGenericDetail = مشکلی در خلبان آزمایشی رخ داده است. لطفا <a>یک گزارش خطا ایجاد کنید<a/> و این پیغام خطا را ذکر نمایید.
+warningUpgradeFirefoxTitle = برای ادامه، فایرفاکس را ارتقا دهید!
+warningUpgradeFirefoxDetail = خلبان آزمایشی به آخرین نسخه فایرفاکس احتیاج دارد، برای شروع <a>فایرفاکس را ارتقا دهید</a>.
+warningHttpsRequiredTitle = HTTPS مورد نیاز است!
+warningHttpsRequiredDetail = خلبان آزمایشی باید از طریق HTTPS مورد استفاده قرار بگیرد. برای جزییات لطفا <a>مستندات ما</a> را ببینید.
+warningMissingPrefTitle = در حال توسعه خلبان آزمایشی هستید؟
+warningMissingPrefDetail = وقتی خلبان آزمایشی را محلی یا در محیط‌های توسعه اجرا می‌کنید، پیکربندی ویژه‌ای مورد نیاز است. برای جزییات لطفا <a>مستندات ما<a/> را ببینید.
+warningBadHostnameTitle = نام میزبان تایید نشده!
+warningBadHostnameDetail = ممکن است خلبان آزمایشی تنها از طریق testpilot.firefox.com، testpilot.stage.mozaws.net، testpilot.dev.mozaws.net یا example.com:8000 دردسترس باشد. برای جزییات لطفا <a>مستندات ما</a> را ببینید.

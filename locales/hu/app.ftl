@@ -17,6 +17,7 @@ footerLinkCookies = Sütik
 footerLinkPrivacy = Adatvédelem
 footerLinkTerms = Feltételek
 footerLinkLegal = Jogi információk
+footerLinkFeedback = Adjon visszajelzést
 footerLinkAbout = A Tesztpilóta névjegye
 
 
@@ -29,6 +30,7 @@ menuWiki = Tesztpilóta Wiki
 menuDiscuss = A Tesztpilóta megvitatása
 menuFileIssue = Probléma jelentése
 menuRetire = A Tesztpilóta eltávolítása
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -38,7 +40,6 @@ landingIntroOne = Tesztelje az új funkciókat.
 landingIntroTwo = Adjon visszajelzést.
 landingIntroThree = Segítsen a Firefox készítésében.
 landingLegalNotice = A továbblépéssel elfogadja a Tesztpilóta <a>Használati feltételeit</a> és az <a>Adatvédelmi nyilatkozatot</a>.
-landingExperimentsTitle = Próbálja ki a legújabb kísérleti funkciókat
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -46,7 +47,6 @@ landingExperimentsTitle = Próbálja ki a legújabb kísérleti funkciókat
 
 landingInstallButton = A Tesztpilóta kiegészítő telepítése
 landingInstallingButton = Telepítés…
-landingInstalledButton = Funkciók kiválasztása
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -97,14 +97,20 @@ notFoundHeader = Négy nulla négy!
 emailOptInDialogTitle = Üdvözli a Tesztpilóta!
 emailOptInMessage = Tudjon az új kísérletekről, és lássa a kipróbált kísérletek teszteredményeit.
 emailOptInConfirmationTitle = E-mail elküldve
-emailOptInSuccessMessage2 = Köszönjük!
 emailOptInConfirmationClose = Tovább a kísérletekhez…
+emailOptInDialogErrorTitle = Jaj ne!
 
 
 // news feed updates.
 [[ updateList ]]
 
 latestUpdatesTitle = Legújabb frissítések
+showMoreNewsTitle = Múltbeli hírek megjelenítése
+
+
+[[ featuredExperiment ]]
+
+moreDetail = Részletek megtekintése
 
 
 // A listing of all Test Pilot experiments.
@@ -117,13 +123,17 @@ experimentListEndingTomorrow = Holnap véget ér
 experimentListEndingSoon = Hamarosan véget ér
 experimentCondensedHeader = Üdvözli a Tesztpilóta!
 experimentListHeader = Válasszon kísérleteket!
+experimentListHeaderWithFeatured = Próbálja ki az összes kísérletünket
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Visszajelzés
 experimentCardManage = Kezelés
 experimentCardGetStarted = Kezdő lépések
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Tudjon meg többet
 
 
@@ -157,7 +167,6 @@ experimentPromoSubheader = A Firefox következő generációs funkcióit készí
 
 isEnabledStatusMessage = { $title } bekapcsolva.
 installErrorMessage = O-ó. A(z) { $title } nem kapcsolható be. Próbálkozzon később.
-participantCount = <span>{ $installation_count }</span> résztvevő
 otherExperiments = Próbálja ki ezeket a kísérleteket is
 giveFeedback = Adjon visszajelzést
 disableHeader = Kikapcsolja a kísérletet?
@@ -171,17 +180,39 @@ measurements = Magánszféra
 experimentPrivacyNotice = Itt többet tudhat meg a(z) { $title } adatgyűjtéséről.
 contributorsHeading = Nekik köszönhetően:
 contributorsExtraLearnMore = Tudjon meg többet
-changelog = változások listája
+changelog = Változások listája
 tour = Kalauz
-tourLink = kalauz
+tourLink = Kalauz indítása
 contribute = Közreműködés
 bugReports = Hibajelentések
 discussExperiment = A(z) { $title } megvitatása
-tourOnboardingTitle = { $title } bekapcsolva!
 tourDoneButton = Kész
-userCountContainer = Jelenleg <span>{ $installation_count }</span> ember próbálja ezt ki: { $title }.
 userCountContainerAlt = Épp most indult!
 highlightPrivacy = Magánszféra
+experimentGradReportButton = Kísérlet befejezési jelentés
+experimentGradReportPendingTitle = Ez a kísérlet véget ért
+experimentGradReportPendingCopy = A teljes jelentésen dolgozunk. Nézzen vissza hamarosan a részletekért.
+experimentGradReportReady = Egy teljes zárójelentést készítettünk.
+experimentGoToLink = Ugrás ide: { $title }
+startedDateLabel = Kísérlet kezdő dátuma: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Tesztpilóta
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Firefox / webes / mobilos kísérlet
+experimentPlatformWebAddon = Firefox / webes kísérlet
+experimentPlatformWebMobile = webes / mobilos kísérlet
+experimentPlatformAddonMobile = Firefox / mobilos kísérlet
+experimentPlatformWeb = webes kísérlet
+experimentPlatformAddon = Firefox kísérlet
+experimentPlatformMobileApp = mobilos kísérlet
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -197,7 +228,7 @@ versionChangeNoticeLink = A Firefox jelenlegi verziójának beszerzése.
 [[ uninstall ]]
 
 retireDialogTitle = Eltávolítja a Tesztpilótát?
-retireMessage = Ahogy kívánja. Ez kikapcsol minden aktív tesztet, eltávolítja a kiegészítőt és eltávolítja a fiókinformációit a kiszolgálóinkról.
+retireMessageUpdate = Ahogy kívánja. Ez eltávolítja a Tesztpilótát. Az egyes kísérleteket a Firefox kiegészítőkezelőben is letilthatja.
 retireEmailMessage = Hogy kiszálljon az e-mail értesítésekből, egyszerűen kattintson a <em>leiratkozás</em> hivatkozásra bármelyik Tesztpilóta e-mailben.
 retireSubmitButton = Folytatás
 pageTitleRetirePage = Firefox Tesztpilóta – A Tesztpilóta eltávolítása
@@ -262,7 +293,7 @@ newsletterFooterSuccessBody = Ha korábban nem erősítette meg a Mozillához ka
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Ez a kísérlet nem támogatott az Ön nyelvén ({ $locale_code }).
+localeNotTranslatedWarningTitle = Ez a kísérlet még nem lett lefordítva az Ön nyelvére ({ $locale_code }.
 localeWarningSubtitle = Attól még bekapcsolhatja, ha szeretné.
 
 
@@ -287,3 +318,20 @@ noScriptLink = Tudja meg, mi az oka
 
 viewPastExperiments = Múltbeli kísérletek megtekintése
 hidePastExperiments = Múltbeli kísérletek elrejtése
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Valami baj van!
+warningGenericDetail = Valami baj van a Tesztpilótával. <a>Jelentse be a hibát</a>, és említse meg ezt a hibaüzenetet.
+warningUpgradeFirefoxTitle = A folytatáshoz frissítse a Firefoxot.
+warningUpgradeFirefoxDetail = A Tesztpilótához a Firefox legfrissebb változata szükséges. <a>Frissítse a Firefoxot</a> az induláshoz.
+warningHttpsRequiredTitle = HTTPS szükséges!
+warningHttpsRequiredDetail = A Tesztpilótát HTTPS-en keresztül kell elérnie. Nézze meg a <a>dokumentációt</a> a részletekért.
+warningMissingPrefTitle = A Tesztpilótát fejleszti?
+warningMissingPrefDetail = Ha fejlesztői környezetekben futtatja a Tesztpilótát, akkor speciális konfiguráció szükséges. Olvassa el a <a>dokumentációt</a> a részletekért.
+warningBadHostnameTitle = Nem jóváhagyott gépnév!
+warningBadHostnameDetail = A Tesztpilóta csak a testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net vagy example.com:8000 helyekről érhető el. Olvassa el a <a>dokumentációt</a> a részletekért.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = A Tesztpilótához JavaScript szükséges. Sajnáljuk.

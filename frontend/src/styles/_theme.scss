@@ -1,11 +1,11 @@
 body {
-  background: $body-background;
+  background: $white;
   color: $black;
   min-height: 100vh;
 }
 
 a {
-  color: $default;
+  color: $blue-40;
   text-decoration: none;
 
   .blue &,
@@ -14,7 +14,7 @@ a {
   }
 
   .default-background & {
-    color: $default;
+    color: $blue-40;
   }
 
   .static-page-content & {
@@ -23,16 +23,16 @@ a {
 }
 
 .blue {
-  background-color: $darkest-blue-step;
-  background-image: radial-gradient(ellipse 250% 100% at center 140%, $light-blue-step 12%, $dark-blue-step 50%, $darkest-blue-step 100%);
+  background: $blue-90;
   color: $white;
   position: relative;
 }
 
 .stars {
-  @include hidpi-background-image('stars', 1180px 346px);
-  background-position: center top;
+  background-image: url('../images/stars@2x.png');
+  background-position: center 16px;
   background-repeat: no-repeat;
+  background-size: 1180px 346px;
   bottom: 0;
   left: 0;
   position: fixed;
@@ -42,55 +42,19 @@ a {
 }
 
 .default-background {
-  background: $body-background;
-  color: $black;
+  background: $white;
+  color: $grey-90;
   position: relative;
 }
 
-.transparent-container {
-  background: $transparent-white-1;
-  color: $white;
-  margin: $grid-unit * 2 0;
-  padding: $grid-unit * .25 0;
-}
-
-.mozilla-logo {
-  background-image: url('../images/mozilla.svg');
+.star-icon {
+  background-image: url('../images/star.svg');
+  background-position: left center;
   background-repeat: no-repeat;
-  background-size: auto 32px;
-  height: 32px;
-  opacity: .9;
-  transition: opacity 150ms;
-  width: 112px;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
-.firefox-icon {
-  background: url('../images/fox.svg');
-}
-
-.add-on-icon {
-  background: url('../images/add-on.svg');
-  left: 9px;
-  top: -2px;
-}
-
-.test-pilot-icon {
-  background: url('../images/testpilot.svg');
-}
-
-.chat-icon {
-  background: url('../images/chat-icon.svg');
-}
-
-hr {
-  border: 0;
-  border-bottom: 1px solid $transparent-black-3;
-
-  .static-page-content & {
-    border-bottom: 1px solid $transparent-white-2;
-  }
+  background-size: 12px;
+  height: 12px;
+  margin-right: 6px;
+  margin-top: 4px;
+  opacity: .5;
+  width: 12px;
 }

@@ -17,6 +17,7 @@ footerLinkCookies = Cookie
 footerLinkPrivacy = 隐私
 footerLinkTerms = 条款
 footerLinkLegal = 法律
+footerLinkFeedback = 提供反馈
 footerLinkAbout = 关于 Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Test Pilot Wiki
 menuDiscuss = 讨论 Test Pilot
 menuFileIssue = 填报问题
 menuRetire = 卸载 Test Pilot
+headerLinkBlog = 博客
 
 
 // The splash on the homepage.
@@ -38,7 +40,6 @@ landingIntroOne = 测试新功能。
 landingIntroTwo = 提供您的反馈。
 landingIntroThree = 帮助打造 Firefox。
 landingLegalNotice = 继续则表示您同意 Test Pilot 的<a>使用条款</a>和<a>隐私声明</a>。
-landingExperimentsTitle = 试用最新鲜的实验功能
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -46,7 +47,6 @@ landingExperimentsTitle = 试用最新鲜的实验功能
 
 landingInstallButton = 安装 Test Pilot 扩展
 landingInstallingButton = 正在安装...
-landingInstalledButton = 选择您的功能
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -88,23 +88,29 @@ onboardingMessage = 我们会在您的工具栏放一个图标，以便您回到
 
 errorHeading = 啊呀！
 errorMessage = 这里好像坏掉了。<br>可以待会再试试。
-notFoundHeader = 找不到呢！
+notFoundHeader = 到了什么都没有的太空！
 
 
 // A modal prompt to sign up for the Test Pilot newsletter.
 [[ emailOptIn ]]
 
 emailOptInDialogTitle = 欢迎来到 Test Pilot！
-emailOptInMessage = 了解新的实验，以及查看您尝试过的实验的测试结果。
+emailOptInMessage = 看看有什么新实验，查查参加过的实验结果如何。
 emailOptInConfirmationTitle = 电子邮件已发送
-emailOptInSuccessMessage2 = 谢谢！
 emailOptInConfirmationClose = 关于此实验...
+emailOptInDialogErrorTitle = 很遗憾
 
 
 // news feed updates.
 [[ updateList ]]
 
 latestUpdatesTitle = 最新更新
+showMoreNewsTitle = 显示过去的新闻
+
+
+[[ featuredExperiment ]]
+
+moreDetail = 查看细节
 
 
 // A listing of all Test Pilot experiments.
@@ -117,13 +123,17 @@ experimentListEndingTomorrow = 明天结束
 experimentListEndingSoon = 即将结束
 experimentCondensedHeader = 欢迎使用 Test Pilot！
 experimentListHeader = 挑选您的实验！
+experimentListHeaderWithFeatured = 试试我们的各种实验
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = 反馈
 experimentCardManage = 管理
 experimentCardGetStarted = 了解详情
+// also used in NewsUpdateDialog
 experimentCardLearnMore = 详细了解
 
 
@@ -154,7 +164,6 @@ experimentPromoSubheader = 我们正在为下一代的 Firefox 打造新功能�
 
 isEnabledStatusMessage = { $title } 已启用。
 installErrorMessage = 啊。{ $title } 未能启用。请稍候重试。
-participantCount = <span>{ $installation_count }</span> 人已参与
 otherExperiments = 也试试这些实验吧
 giveFeedback = 提供反馈
 disableHeader = 禁用实验？
@@ -174,11 +183,33 @@ tourLink = 导览
 contribute = 贡献
 bugReports = 缺陷报告
 discussExperiment = 讨论 { $title }
-tourOnboardingTitle = { $title } 已启用！
 tourDoneButton = 完成
-userCountContainer = 已有 <span>{ $installation_count }</span> 人次尝试过 { $title }！
 userCountContainerAlt = 刚刚启动！
 highlightPrivacy = 您的隐私
+experimentGradReportButton = 毕业报告
+experimentGradReportPendingTitle = 此实验已经结束
+experimentGradReportPendingCopy = 我们正在制作完整报告。请过段时间再回来了解详细信息。
+experimentGradReportReady = 我们准备了一份完整的毕业报告。
+experimentGoToLink = 前往 { $title }
+startedDateLabel = 实验开始时间：<b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Firefox / 网页端 / 移动端的实验
+experimentPlatformWebAddon = Firefox / 网页端的实验
+experimentPlatformWebMobile = 网页端 / 移动端的实验
+experimentPlatformAddonMobile = Firefox / 移动端的实验
+experimentPlatformWeb = 网页端的实验
+experimentPlatformAddon = Firefox 的实验
+experimentPlatformMobileApp = 移动端的实验
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -194,7 +225,7 @@ versionChangeNoticeLink = 获取最新 Firefox 版本。
 [[ uninstall ]]
 
 retireDialogTitle = 卸载 Test Pilot？
-retireMessage = 如您所愿。这将禁用所有已激活的测试，卸载该附加组件，以及从我们的服务器上移除您的账户信息。
+retireMessageUpdate = 如您所愿。这将卸载 Test Pilot。您可以在 Firefox 的附加组件管理器中禁用各个实验。
 retireEmailMessage = 要停用电子邮件更新，只需点击任何 Test Pilot 邮件中的<em>退订</em>链接。
 retireSubmitButton = 继续
 pageTitleRetirePage = Firefox Test Pilot - 卸载 Test Pilot
@@ -251,7 +282,7 @@ newsletterFormSubmitButtonSubmitting = 正在提交...
 
 newsletterFooterError = 提交您的电子邮件地址时出错了。重试？
 newsletterFooterHeader = 保持联系
-newsletterFooterBody = 了解新的实验，以及查看您尝试过的实验的测试结果。
+newsletterFooterBody = 看看有什么新实验，查查参加过的实验结果如何。
 newsletterFooterSuccessHeader = 谢谢！
 newsletterFooterSuccessBody = 如果您以前没有确认过订阅 Mozilla 相关的新闻邮件，您可能需要完成它。请检查您的收件箱或垃圾邮件箱，找到我们发给您的电子邮件。
 
@@ -259,7 +290,7 @@ newsletterFooterSuccessBody = 如果您以前没有确认过订阅 Mozilla 相�
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = 此实验尚不支持您的语言 ({ $locale_code })。
+localeNotTranslatedWarningTitle = 此实验未翻译为您的语言 ({ $locale_code })。
 localeWarningSubtitle = 如果您不介意，无妨启用它。
 
 
@@ -284,3 +315,20 @@ noScriptLink = 找出原因
 
 viewPastExperiments = 查看以前的实验
 hidePastExperiments = 隐藏以前的实验
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = 某处出错了！
+warningGenericDetail = Test Pilot 的某处出现问题。请<a>填报 bug</a> 并提及此错误消息。
+warningUpgradeFirefoxTitle = 升级 Firefox 以继续！
+warningUpgradeFirefoxDetail = Test Pilot 需要最新版 Firefox。<a>升级 Firefox</a> 以前进。
+warningHttpsRequiredTitle = 需要 HTTPS！
+warningHttpsRequiredDetail = Test Pilot 必须通过 HTTPS 访问。查阅<a>我们的文档</a>了解详情。
+warningMissingPrefTitle = 开发 Test Pilot？
+warningMissingPrefDetail = 在本地或在开发环境中运行 Test Pilot 必需进行特殊配置。有关详细信息，请查阅<a>我们的文档</a>。
+warningBadHostnameTitle = 未被批准的主机名！
+warningBadHostnameDetail = Test Pilot 网站只能从 testpilot.firefox.com、testpilot.stage.mozaws.net、testpilot.dev.mozaws.net 或 example.com:8000 访问。有关详细信息，请查阅<a>我们的文档</a>。
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = 很抱歉，Test Pilot 需要 JavaScript 来运行。

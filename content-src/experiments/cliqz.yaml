@@ -1,6 +1,7 @@
 id: 9
 title: 'Cliqz'
 slug: cliqz
+platforms: ['addon']
 locales:
   - 'de'
 launch_date: '2017-01-11T00:00:00.00Z'
@@ -77,6 +78,5 @@ contributors:
   -
     display_name: 'Cliqz GmbH'
     avatar: /static/images/experiments/cliqz/avatars/cliqz-avatar.jpg
-installation_count: 1
 created: '2016-12-01T00:06:00.00Z'
 order: 4

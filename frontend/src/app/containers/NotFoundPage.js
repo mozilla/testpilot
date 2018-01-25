@@ -1,21 +1,26 @@
-import React from 'react';
+import { Localized } from "fluent-react/compat";
+import React from "react";
 
-import Copter from '../components/Copter';
-import LayoutWrapper from '../components/LayoutWrapper';
-import View from '../components/View';
+import Copter from "../components/Copter";
+import LayoutWrapper from "../components/LayoutWrapper";
+import View from "../components/View";
 
 
 export default class NotFoundPage extends React.Component {
   render() {
     return (
       <View centered={true} showNewsletterFooter={false} showFooter={false} showHeader={false}
-            {...this.props}>
+        {...this.props}>
         <LayoutWrapper flexModifier="column-center">
-          <div id="four-oh-four" className="modal delayed-fade-in">
-            <h1 data-l10n-id="notFoundHeader" className="title">Four Oh Four!</h1>
-            <br/>
+          <div id="four-oh-four" className="modal not-found-modal">
+            <div className="not-found-icon"></div>
+            <Localized id="notFoundHeader">
+              <h1 className="title">Four Oh Four!</h1>
+            </Localized>
             <div className="modal-actions">
-              <a data-l10n-id="home" className="button default large" href="/">Home</a>
+              <Localized id="home">
+                <a className="button default large" href="/">Home</a>
+              </Localized>
             </div>
           </div>
           <Copter animation="fade-in-fly-up"/>

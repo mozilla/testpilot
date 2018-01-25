@@ -17,6 +17,7 @@ footerLinkCookies = Placki
 footerLinkPrivacy = Priwatnosć
 footerLinkTerms = Wužiwarske wuměnjenja
 footerLinkLegal = Prawniske
+footerLinkFeedback = Komentar pósłać
 footerLinkAbout = Wo Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Wiki Test Pilot
 menuDiscuss = Wo Test Pilot diskutować
 menuFileIssue = Problem zdźělić
 menuRetire = Test Pilot wotinstalować
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -38,7 +40,6 @@ landingIntroOne = Testujće nowe funkcije.
 landingIntroTwo = Prajće swoje měnjenje.
 landingIntroThree = Pomhajće Firefox wuwiwać.
 landingLegalNotice = Hdyž pokročujeće, zwoliće do <a>wužiwarskich wuměnjenjow</a> a <a>pokaza priwatnosće</a> Test Pilot.
-landingExperimentsTitle = Wupruwujće najnowše eksperimentelne funkcije.
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -46,7 +47,6 @@ landingExperimentsTitle = Wupruwujće najnowše eksperimentelne funkcije.
 
 landingInstallButton = Přidatk Test Pilot instalować
 landingInstallingButton = Instaluje so...
-landingInstalledButton = Wubjerće swoje funkcije
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -97,14 +97,20 @@ notFoundHeader = Štyri Nul Štyri!
 emailOptInDialogTitle = Witajće k Test Pilot!
 emailOptInMessage = Zhońće wjace wo nowych eksperimentach a wobhladajće sej testowe wuslědki za eksperimenty, na kotrychž sće so wobdźělił.
 emailOptInConfirmationTitle = E-mejlka je so pósłała
-emailOptInSuccessMessage2 = Wulki dźak!
 emailOptInConfirmationClose = Dale k eksperimentam...
+emailOptInDialogErrorTitle = Ow ně!
 
 
 // news feed updates.
 [[ updateList ]]
 
 latestUpdatesTitle = Najnowše aktualizacije
+showMoreNewsTitle = Zańdźene nowinki pokazać
+
+
+[[ featuredExperiment ]]
+
+moreDetail = Podrobnosće pokazać
 
 
 // A listing of all Test Pilot experiments.
@@ -117,13 +123,17 @@ experimentListEndingTomorrow = Skónči so jutře
 experimentListEndingSoon = Skónči so bórze
 experimentCondensedHeader = Witajće k Test Pilot!
 experimentListHeader = Wubjerće swoje eksperimenty!
+experimentListHeaderWithFeatured = Wupruwujće wšě naše eksperimenty
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Komentary
 experimentCardManage = Rjadować
 experimentCardGetStarted = Start
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Dalše informacije
 
 
@@ -154,7 +164,6 @@ experimentPromoSubheader = Wuwiwamy funkcije přichodneje generacije za Firefox.
 
 isEnabledStatusMessage = { $title } je zmóžnjeny.
 installErrorMessage = Ow, ow. { $title } njeda so zmóžnić. Spytajće pozdźišo hišće raz.
-participantCount = <span>{ $installation_count }</span> wobdźělnikow
 otherExperiments = Wobhladajće sej tež slědowace eksperimenty
 giveFeedback = Prajće swoje měnjenje
 disableHeader = Eksperiment znjemóžnić?
@@ -168,17 +177,39 @@ measurements = Waša priwatnosć
 experimentPrivacyNotice = Móžeće tu wjace wo zběranju datow za { $title } zhonić.
 contributorsHeading = Prezentowany wot
 contributorsExtraLearnMore = Dalše informacije
-changelog = protokol změnow
+changelog = Protokol změnow
 tour = Tura
-tourLink = tura
+tourLink = Tura
 contribute = Sobu skutkować
 bugReports = Rozprawy wo programowych zmylkach
 discussExperiment = Wo { $title } diskutować
-tourOnboardingTitle = { $title } zmóžnjeny!
 tourDoneButton = Hotowo
-userCountContainer = <span>{ $installation_count }</span> wosobow runje { $title } wupruwuje!
 userCountContainerAlt = Runje startowany!
 highlightPrivacy = Waša priwatnosć
+experimentGradReportButton = Kónčna rozprawa
+experimentGradReportPendingTitle = Tutón eksperiment je skónčeny
+experimentGradReportPendingCopy = Dźěłamy na wobšěrnej rozprawje. Hladajće bórze za podrobnosćemi.
+experimentGradReportReady = Smy dospołnu kónčnu rozprawo přihotowali.
+experimentGoToLink = K { $title }
+startedDateLabel = Spočatny datum eksperimenta: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Eksperiment za Firefox, web a mobilne graty
+experimentPlatformWebAddon = Eksperiment za Firefox a web
+experimentPlatformWebMobile = Eksperiment za web a mobilne graty
+experimentPlatformAddonMobile = Eksperiment za Firefox a mobilne graty
+experimentPlatformWeb = webeksperiment
+experimentPlatformAddon = Eksperiment za Firefox
+experimentPlatformMobileApp = Eksperiment za mobilne graty
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -194,7 +225,7 @@ versionChangeNoticeLink = Wobstarajće sej aktualnu wersiju Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Test Pilot wotinstalować?
-retireMessage = Cyle kaž přejeće. To znjemóžni aktiwne testy, wotinstaluje přidatk a wotstroni waše kontowe informacije z našich serwerow.
+retireMessageUpdate = Kaž seh přejeće. To budźe Test Pilot wotinstalować. Móžeće jednotliwe eksperimenty ze zrjadowaka rozšěrenjow přidatkow znjemóžnić.
 retireEmailMessage = Klikńće prosće na wotkaz <em>Wotskazać</em> w e-mejlce Test Pilot, zo njebyšće žane nowinki wjace dóstał.
 retireSubmitButton = Dale
 pageTitleRetirePage = Firefox Test Pilot - Test Pilot wotinstalować
@@ -259,7 +290,7 @@ newsletterFooterSuccessBody = Jeli hišće njejsće abonement powěsćoweho list
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Tutón eksperiment so we wašej rěči njepodpěruje ({ $locale_code }).
+localeNotTranslatedWarningTitle = Tutón eksperiment njeje so do wašeje rěče ({ $locale_code }) přełožił.
 localeWarningSubtitle = Móžeće jón najebać to zmóžnić, jeli chceće.
 
 
@@ -284,3 +315,20 @@ noScriptLink = Zhońće čehodla
 
 viewPastExperiments = Zańdźene eksperimenty sej wobhladać
 hidePastExperiments = Zańdźene eksperimenty schować
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Něšto je so nimokuliło!
+warningGenericDetail = Něšto je so z Test Pilot nimokuliło. Prošu <a>pisajće zmylkowu rozprawu</a> a podajće tutu zmylkowu zdźělenku.
+warningUpgradeFirefoxTitle = Aktualizujće Firefox, zo byšće pokročował!
+warningUpgradeFirefoxDetail = Test Pilot sej najnowšu wersiju Firefox wužaduje. <a>Aktualizujće Firefox</a>, zo byšće započał.
+warningHttpsRequiredTitle = HTTPS trěbny!
+warningHttpsRequiredDetail = Zo byšće přistup na Test Pilot měł, trjebaće HTTPS. Podrobnosće w <a>našej dokumentaciji</a> zhoniće.
+warningMissingPrefTitle = Wuwiwaće Test Pilot?
+warningMissingPrefDetail = Hdyž Test Pilot lokalnje abo we wuwiwanskich wokolinach wuwjedźeće, trjebaće specialnu konfiguraciju. Podrobnosće w <a>našej dokumentaciji</a> namakaće.
+warningBadHostnameTitle = Njedowolene hostmjeno!
+warningBadHostnameDetail = Přistup na websydło Test Pilot maće jenož wot testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net abo example.com:8000. Podrobnosće w <a>našej dokumentaciji</a> namakaće.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Je nam žel, ale TestPilot sej JavaScript wužaduje.

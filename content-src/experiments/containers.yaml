@@ -1,10 +1,11 @@
 id: 12
 title: 'Containers'
 slug: containers
+platforms: ['addon']
 locales:
   - 'en'
 launch_date: '2017-03-01T21:00:00.00Z'
-min_release: 51
+min_release: 53
 incompatible:
   'blok@mozilla.org': 'Tracking Protection'
 thumbnail: /static/images/experiments/containers/icon/thumbnail.png
@@ -12,7 +13,8 @@ description: >
   Contain yourselves! Create different containers for each of your online lives -
   your work self, your social self, your personal self - to stay organized and maintain privacy.
 warning: >
-  Note: Because of the security properties of Containers, Test Pilot experiments such as Page Shot, Snooze Tabs, Pulse, and Activity Stream may not work from within Container tabs. Remember, this is experimental technology!
+  Note: Because of the security properties of Containers, Test Pilot experiments such as Snooze Tabs may not work from within Container tabs. Remember, this is experimental technology!
+warning_l10nsuffix: 'fewer_experiments'
 introduction: >
   Containers let you create profiles in Firefox for all of your online lives. Custom
   labels and color-coded tabs help keep different activities — like online shopping,
@@ -27,14 +29,7 @@ changelog_url: 'https://github.com/mozilla/testpilot-containers/commits/master'
 contribute_url: 'https://github.com/mozilla/testpilot-containers/'
 bug_report_url: 'https://github.com/mozilla/testpilot-containers/issues/new'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/containers'
-privacy_notice_url: 'https://github.com/mozilla/testpilot-containers/blob/master/docs/metrics.md'
-measurements:
-  - >
-    Containers will only send information to us when you interact with it, such as opening, editing, or deleting a container.
-  - >
-    Containers will send information about the type of interaction with Containers, which Container you are interacting with, and the number of tabs in the Container.
-  - >
-    Containers will not send information about open pages; this includes page content, meta information, or URLs.
+privacy_notice_url: 'https://github.com/mozilla/testpilot-containers/blob/3.1.0/docs/metrics.md'
 xpi_url: 'https://testpilot.firefox.com/files/@testpilot-containers/latest'
 addon_id: '@testpilot-containers'
 gradient_start: '#069CD6'
@@ -52,23 +47,6 @@ details:
     image: /static/images/experiments/containers/details/detail3.jpg
     copy: >
       Use color-coded labels to see different Containers at a glance.
-tour_steps:
-  -
-    image: /static/images/experiments/containers/tour/tour1.jpg
-    copy: Start a Container to label and organize a set of tabs.
-  -
-    image: /static/images/experiments/containers/tour/tour2.jpg
-    copy: Hover over the New Tab button to select a container.
-  -
-    image: /static/images/experiments/containers/tour/tour3.jpg
-    copy: Use the toolbar menu to open Container tabs, create new Containers and organize, edit or delete Containers.
-  -
-    image: /static/images/experiments/containers/tour/tour4.jpg
-    copy: You can hide all open tabs in a Container to keep your browser tidy.
-    copy_l10nsuffix: rewordWithoutToolbar
-  -
-    image: /static/images/experiments/containers/tour/tour5.jpg
-    copy: You can always give us feedback or disable Containers from Test Pilot.
 contributors:
   -
     display_name: 'Tanvi Vyas'
@@ -110,6 +88,17 @@ contributors:
     display_name: 'Morpheus Chen'
     title: 'Firefox UX'
     avatar: /static/images/experiments/avatars/mchen.png
-installation_count: 1
 created: '2017-02-17T00:06:00.00Z'
-order: 1
+completed: '2017-09-05T19:38:00.42Z'
+graduation_url: https://medium.com/firefox-test-pilot/firefox-containers-are-go-ed2e3533b6e3
+order: 4
+news_updates:
+  -
+    slug: containers-update-1
+    title: Containers Graduation Report
+    link: 'https://medium.com/firefox-test-pilot/firefox-containers-are-go-ed2e3533b6e3'
+    created: 2017-10-10T12:00:00Z
+    published: 2017-10-10T12:00:00Z
+    dev: false
+    content: >
+      Containers made the jump from Test Pilot and are now available as an add-on for all Firefox users.

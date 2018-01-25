@@ -1,3 +1,5 @@
+/*eslint-disable*/
+// TODO: re-add eslint-enable after reworking things below to pass linting
 (function () {
   var availableLangs = [];
   var defaultLang = null;
@@ -45,9 +47,5 @@
   // if we're not already on a specific locale
   if (window.location.pathname.split('/').filter(function (s) { return !!s.length }).length < 2) {
     navigateToLocale();
-  }
-  else {
-    require('babel-polyfill/browser');
-    require('l20n');
   }
 }());

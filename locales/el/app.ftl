@@ -17,6 +17,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Απόρρητο
 footerLinkTerms = Όροι
 footerLinkLegal = Νομικά
+footerLinkFeedback = Αποστολή σχολίων
 footerLinkAbout = Σχετικά με το Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Test Pilot Wiki
 menuDiscuss = Συζήτηση για το Test Pilot
 menuFileIssue = Αναφορά ζητήματος
 menuRetire = Απεγκατάσταση του Test Pilot
+headerLinkBlog = Ιστολόγιο
 
 
 // The splash on the homepage.
@@ -62,6 +64,7 @@ oneClickInstallMajorCta = Ενεργοποίηση του { $title }
 landingRequiresDesktop = Το Test Pilot απαιτεί το Firefox για υπολογιστές σε Windows, Mac ή Linux
 landingDownloadFirefoxDesc = (Το Test Pilot είναι διαθέσιμο για το Firefox σε Windows, OS X και Linux)
 landingUpgradeDesc = Το Test Pilot απαιτεί το Firefox 49 ή νεότερο.
+landingUpgradeDesc2 = Το Test Pilot απαιτεί το Firefox { $version } ή νεότερο.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Αναβάθμιση του Firefox
 landingDownloadFirefoxSubTitle = Δωρεάν λήψη
@@ -87,6 +90,7 @@ onboardingMessage = Τοποθετήσαμε ένα κουμπί στη γραμ
 
 errorHeading = Ουπς!
 errorMessage = Φαίνεται πως κάτι χαλάσαμε. <br> Δοκιμάστε ξανά αργότερα.
+notFoundHeader = Τέσσερα μηδέν τέσσερα!
 
 
 // A modal prompt to sign up for the Test Pilot newsletter.
@@ -95,8 +99,15 @@ errorMessage = Φαίνεται πως κάτι χαλάσαμε. <br> Δοκι�
 emailOptInDialogTitle = Καλώς ορίσατε στο Test Pilot!
 emailOptInMessage = Μάθετε για νέα πειράματα και δείτε τα αποτελέσματα των δοκιμών για πειράματα που έχετε δοκιμάσει.
 emailOptInConfirmationTitle = Το e-mail απεστάλη
-emailOptInSuccessMessage2 = Σάς ευχαριστούμε!
 emailOptInConfirmationClose = Μετάβαση στα πειράματα...
+emailOptInDialogErrorTitle = Ωχ όχι!
+
+
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Τελευταίες ενημερώσεις
+showMoreNewsTitle = Εμφάνιση προηγούμενων ειδήσεων
 
 
 // A listing of all Test Pilot experiments.
@@ -107,14 +118,18 @@ experimentListJustLaunchedTab = Μόλις ξεκίνησε
 experimentListJustUpdatedTab = Μόλις ενημερώθηκε
 experimentListEndingTomorrow = Λήγει αύριο
 experimentListEndingSoon = Λήγει σύντομα
-experimentsListCondensedHeader = Επιλέξτε τα πειράματά σας!
+experimentCondensedHeader = Καλώς ορίσατε στο Test Pilot!
+experimentListHeader = Επιλέξτε τα πειράματά σας!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Σχόλια
 experimentCardManage = Διαχείριση
 experimentCardGetStarted = Ξεκινήστε
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Μάθετε περισσότερα
 
 
@@ -123,6 +138,10 @@ experimentCardLearnMore = Μάθετε περισσότερα
 
 feedbackSubmitButton = Συμμετοχή σε γρήγορη έρευνα
 feedbackUninstallTitle = Σάς ευχαριστούμε!
+feedbackUninstallCopy =
+    Η συμμετοχή στο Firefox Test Pilot σημαίνει
+    πολλά! Παρακαλούμε δείτε τα άλλα μας πειράματα
+    και μείνετε συντονισμένοι για πολλά άλλα!
 
 
 // A modal prompt shown before the feedback survey for some experiments.
@@ -144,7 +163,6 @@ experimentPromoSubheader = Αναπτύσσουμε καινοτόμες λει�
 
 isEnabledStatusMessage = Το { $title } ενεργοποιήθηκε.
 installErrorMessage = Ωχ ωχ. Αδυναμία ενεργοποίησης του { $title }. Δοκιμάστε ξανά αργότερα.
-participantCount = <span>{ $installation_count }</span> συμμετέχοντες
 otherExperiments = Δοκιμάστε κι αυτά τα πειράματα
 giveFeedback = Υποβολή σχολίων
 disableHeader = Απενεργοποίηση πειράματος;
@@ -153,6 +171,7 @@ disableExperimentTransition = Απενεργοποίηση...
 enableExperiment = Ενεργοποίηση του { $title }
 enableExperimentTransition = Ενεργοποίηση...
 experimentManuallyDisabled = Το { $title } απενεργοποιήθηκε στη Διαχείριση Προσθέτων
+experimentMeasurementIntro = Πέρα από τα <a>δεδομένα</a> που συλλέγονται από όλα τα πειράματα του Test Pilot, ορίστε τα σημαντικά πράγματα που πρέπει να γνωρίζετε σχετικά με το τι συμβαίνει όταν χρησιμοποιείτε το { $experimentTitle }:
 measurements = Το απόρρητό σας
 experimentPrivacyNotice = Μπορείτε να μάθετε περισσότερα σχετικά τη συλλογή δεδομένων για το { $title } εδώ.
 contributorsHeading = Παρέχεται σε εσάς από
@@ -165,9 +184,32 @@ bugReports = Αναφορές σφαλμάτων
 discussExperiment = Συζήτηση για το { $title }
 tourOnboardingTitle = Το { $title } ενεργοποιήθηκε!
 tourDoneButton = Τέλος
-userCountContainer = Υπάρχουν <span>{ $installation_count }</span> άτομα που δοκιμάζουν το { $title } αυτή τη στιγμή!
 userCountContainerAlt = Μόλις ξεκίνησε!
 highlightPrivacy = Το απόρρητό σας
+experimentGradReportButton = Αναφορά αποφοίτησης
+experimentGradReportPendingTitle = Αυτό το πείραμα έχει λήξει
+experimentGradReportPendingCopy = Εργαζόμαστε πάνω σε μια πλήρη αναφορά. Ελέγξτε ξανά σύντομα για λεπτομέρειες.
+experimentGradReportReady = Έχουμε προετοιμάσει μια πλήρη αναφορά αποφοίτησης.
+experimentGoToLink = Μετάβαση στο { $title }
+startedDateLabel = Ημερομηνία έναρξης πειράματος: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = πείραμα Firefox/ιστού/κινητού
+experimentPlatformWebAddon = πείραμα Firefox/ιστού
+experimentPlatformWebMobile = πείραμα ιστού/κινητού
+experimentPlatformAddonMobile = πείραμα Firefox/κινητού
+experimentPlatformWeb = πείραμα ιστού
+experimentPlatformAddon = πείραμα Firefox
+experimentPlatformMobileApp = πείραμα κινητού
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -183,7 +225,7 @@ versionChangeNoticeLink = Λάβετε την τρέχουσα έκδοση το
 [[ uninstall ]]
 
 retireDialogTitle = Απεγκατάσταση του Test Pilot;
-retireMessage = Όπως επιθυμείτε. Αυτό θα απενεργοποιήσει κάθε ενεργή δοκιμή, θα απεγκαταστήσει το πρόσθετο και θα αφαιρέσει τις πληροφορίες του λογαριασμού σας από τους διακομιστές μας.
+retireMessageUpdate = Όπως επιθυμείτε. Αυτό θα απεγκαταστήσει το Test Pilot. Μπορείτε να απενεργοποιήσετε μεμονωμένα πειράματα από τη Διαχείριση Πρόσθετων του Firefox.
 retireEmailMessage = Για να απενεργοποιήσετε τις ενημερώσεις μέσω e-mail, κάντε απλά κλικ στο σύνδεσμο <em>κατάργησης εγγραφής</em> σε οποιοδήποτε e-mail από το Test Pilot.
 retireSubmitButton = Συνέχεια
 pageTitleRetirePage = Firefox Test Pilot - Απεγκατάσταση του Test Pilot
@@ -196,6 +238,7 @@ retirePageSurveyButton = Συμμετοχή σε μια γρήγορη έρευ�
 // Shown to users after installing Test Pilot if a restart is required.
 [[ restartIntro ]]
 
+restartIntroLead = Τι να κάνετε πριν την "απογείωση"
 restartIntroOne = Κάντε επανεκκίνηση του προγράμματος περιήγησής σας
 restartIntroTwo = Εντοπίστε το πρόσθετο Test Pilot
 restartIntroThree = Επιλέξτε τα πειράματά σας
@@ -238,13 +281,16 @@ newsletterFormSubmitButtonSubmitting = Υποβολή...
 [[ newsletterFooter ]]
 
 newsletterFooterError = Προέκυψε σφάλμα κατά την υποβολή της διεύθυνσης e-mail σας. Δοκιμή ξανά;
+newsletterFooterHeader = Μείνετε ενημερωμένοι
+newsletterFooterBody = Μάθετε για τα νέα πειράματα και δείτε τα αποτελέσματα των δοκιμών για πειράματα που έχετε δοκιμάσει.
 newsletterFooterSuccessHeader = Ευχαριστούμε!
+newsletterFooterSuccessBody = Αν δεν έχετε επιβεβαιώσει προηγουμένως μια εγγραφή στο newsletter σχετικά με τη Mozilla, ίσως χρειαστεί να το κάνετε. Παρακαλώ ελέγξτε τα εισερχόμενά σας ή το φάκελο ανεπιθύμητων για ένα email από εμάς.
 
 
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Αυτό το πείραμα δεν υποστηρίζεται στη γλώσσα σας: ({ $locale_code }).
+localeNotTranslatedWarningTitle = Αυτό το πείραμα δεν έχει μεταφραστεί στη γλώσσα σας ({ $locale_code }).
 localeWarningSubtitle = Μπορείτε ακόμη να το ενεργοποιήσετε αν θέλετε.
 
 
@@ -252,6 +298,7 @@ localeWarningSubtitle = Μπορείτε ακόμη να το ενεργοποι
 [[ experimentsListNoneInstalled ]]
 
 experimentsListNoneInstalledHeader = Ας απογειωθούμε!
+experimentsListNoneInstalledSubheader = Έτοιμοι να δοκιμάσετε ένα νέο πείραμα Test Pilot; Επιλέξτε ένα για ενεργοποίηση, δοκιμάστε το και ενημερώστε μας για την άποψή σας.
 experimentsListNoneInstalledCTA = Δεν ενδιαφέρεστε; <a>Πείτε μας γιατί</a>.
 
 
@@ -268,3 +315,20 @@ noScriptLink = Μάθετε γιατί
 
 viewPastExperiments = Προβολή παλαιών πειραμάτων
 hidePastExperiments = Απόκρυψη παλαιών πειραμάτων
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Κάτι δεν πάει καλά!
+warningGenericDetail = Κάτι έχει πάει στραβά με το Test Pilot. Παρακαλούμε <a>αναφέρετε ένα σφάλμα</a> και παραθέστε το μήνυμα του σφάλματος.
+warningUpgradeFirefoxTitle = Αναβαθμίστε το Firefox για να συνεχίσετε!
+warningUpgradeFirefoxDetail = Το Test Pilot απαιτεί την πιο πρόσφατη έκδοση του Firefox. <a>Αναβαθμίστε το Firefox</a> για να ξεκινήσετε.
+warningHttpsRequiredTitle = Απαιτείται HTTPS!
+warningHttpsRequiredDetail = Η πρόσβαση στο Test Pilot πρέπει να γίνεται μέσω HTTPS. Παρακαλούμε δείτε <a>την τεκμηρίωσή μας</a> για λεπτομέρειες.
+warningMissingPrefTitle = Είστε προγραμματιστής του Test Pilot;
+warningMissingPrefDetail = Όταν εκτελείτε το Test Pilot τοπικά ή σε προγραμματιστικό περιβάλλον, απαιτείται ειδική ρύθμιση. Παρακαλούμε δείτε <a>την τεκμηρίωσή μας</a> για λεπτομέρειες.
+warningBadHostnameTitle = Μη εγκεκριμένο όνομα host!
+warningBadHostnameDetail = Η πρόσβαση στην ιστοσελίδα του Test Pilot μπορεί να γίνει μόνο από το testpilot.firefox.com, το testpilot.stage.mozaws.net, το testpilot.dev.mozaws.net ή το example.com:8000. Παρακαλούμε δείτε <a>την τεκμηρίωσή μας</a> για λεπτομέρειες.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Το Test Pilot απαιτεί JavaScript. Λυπούμαστε γι' αυτό.

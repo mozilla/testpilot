@@ -1,0 +1,223 @@
+@import '~photon-colors/colors.scss';
+@import '../../../styles/_utils';
+
+$tab-border-color: rgb(58, 133, 36);
+
+.experiment-summary {
+
+  @include flex-container(column, flex-start, stretch);
+
+  @include respond-to('big') {
+    width: 280px;
+
+    &:nth-child(3n+1) {
+      margin-left: 0;
+    }
+  }
+
+  @include respond-to('medium') {
+    margin: 0 3% $grid-unit * 2;
+    width: 280px;
+  }
+
+  @include respond-to('small') {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    min-width: 280px;
+    width: 98%;
+  }
+
+  background-color: $white;
+  border-radius: $small-border-radius + 1;
+  box-shadow: 0 0 0 1px $transparent-black-1, 0 1px 0 1px $transparent-black-1;
+  cursor: pointer;
+  margin: 0 0 ($grid-unit * 1.75) ($grid-unit * 2);
+  position: relative;
+  z-index: 1;
+
+  .experiment-information {
+    @include flex-container(column, flex-start, flex-start);
+    color: $black;
+    flex: 1;
+    padding: $grid-unit;
+    text-align: left;
+  }
+
+  header {
+    @include flex-container(row, space-between, center);
+    margin-bottom: $grid-unit * .5;
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .experiment-feedback {
+    background-color: $blue-40;
+    background-image: url('./img/feedback.svg');
+    background-position: 6px 3px;
+    background-repeat: no-repeat;
+    background-size: 14px;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px $transparent-black-1;
+    color: $white;
+    cursor: pointer;
+    display: block;
+    font-size: 10px;
+    line-height: 12px;
+    padding: 5px 8px 4px 24px;
+    position: relative;
+    top: -2px;
+
+    &:hover,
+    &:focus {
+      background-color: $blue-50;
+    }
+
+    &:active {
+      background-color: $blue-60;
+    }
+  }
+
+  h3 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  h4 {
+    margin: 0;
+  }
+
+  p {
+    color: $grey-90;
+    flex: 1;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0 0 $grid-unit * .5;
+  }
+
+  span {
+    color: $transparent-black-5;
+    font-size: 1.2 * $font-unit;
+    margin: 0 0 ($grid-unit * .5);
+
+    &.eol-message {
+      color: $eol-orange;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 1px 0 0 $transparent-white-2, 0 0 0 5px $transparent-white-2;
+    transition: box-shadow 150ms;
+  }
+}
+
+.experiment-actions {
+  .has-addon:not(.active) &.show-when-inactive {
+    display: block;
+  }
+
+  .tab {
+    border-color: $tab-border-color;
+    border-radius: $small-border-radius;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    height: $grid-unit * 1.2;
+    left: -5px;
+    line-height: $grid-unit * 1.2;
+    outline: none;
+    padding: 0 7px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    top: -5px;
+    transition: background 150ms;
+    white-space: nowrap;
+    z-index: 99999;
+  }
+
+  .enabled-tab {
+    background: $green-60;
+    color: $white;
+  }
+
+  .enabled-tab::before {
+    background-image: url('./img/check.svg');
+    background-position: center 2px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    display: inline-block;
+    height: 14px;
+    margin-right: 5px;
+    width: 14px;
+  }
+
+  .just-launched-tab {
+    background: $green-60;
+    color: $white;
+  }
+
+  .just-launched-tab::before {
+    background-image: url('./img/star.svg');
+    content: '';
+    display: inline-block;
+    height: 16px;
+    margin-right: 4px;
+    position: relative;
+    top: 2px;
+    width: 16px;
+  }
+
+  .just-updated-tab {
+    background: $green-60;
+    color: $white;
+  }
+
+  .just-updated-tab::before {
+    background-image: url('./img/star.svg');
+    content: '';
+    display: inline-block;
+    height: 16px;
+    margin-right: 4px;
+    position: relative;
+    top: 2px;
+    width: 16px;
+  }
+
+}
+
+.experiment-icon-wrapper {
+  @include flex-container(row, center, center);
+  border-radius: $small-border-radius $small-border-radius 0 0;
+  box-shadow: 0 -2px 2px $transparent-white-1 inset;
+  height: $grid-unit * 7;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    background: $transparent-white-05;
+    content: '';
+    height: $grid-unit * 15;
+    left: -$grid-unit * 7.5;
+    position: absolute;
+    top: -$grid-unit * 7.5;
+    transform: rotate(45deg);
+    width: $grid-unit * 15;
+    z-index: 2;
+  }
+}
+
+.experiment-icon {
+  background-repeat: no-repeat;
+  background-size: 60px 60px;
+  filter: drop-shadow(0 1px 0 $transparent-black-1);
+  flex: 0 0 60px;
+  height: 60px;
+  opacity: .9;
+}

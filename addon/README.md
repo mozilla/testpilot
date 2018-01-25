@@ -1,25 +1,36 @@
-[👈 Back to README](../README.md)
+Test Pilot main add-on
+----------------------
 
-# Test Pilot
-The add-on where ideas come to idea
+This add-on serves a few basic purposes common to participation in any Test Pilot experiment:
 
-## Setup
+* Toolbar button as a quick shortcut to Test Pilot.
+* Notifications when experiments are updated and new ones arrive.
+* General metrics reporting about participation in experiments and Test Pilot in general.
+* Telemetry metrics support for bootstrap & WebExtension based experiments.
+* Signals to about:home and mozilla.com websites indicating participation in Test Pilot.
 
-`npm install`
+## Building and Development
 
-`npm test` runs the unit test suite
+First, ensure that you've followed [the quickstart guide](../docs/development/quickstart.md) for working on the Test Pilot site itself. This includes ensuring you've got the right version of Node.js (currently, [v6.x LTS](https://nodejs.org/dist/latest-v6.x/)).
 
-`npm start` will build the addon and post it to the Extension Auto-Installer
+From there, you'll need to install dependencies specific to the add-on:
+```
+cd addon
+npm install
+```
 
-## configuration
+If you just want an XPI package of the add-on, use one of these commands:
+```
+npm run package      # Production mode without logging
+npm run package:dev  # Development mode with lots of Browser Console logging
+```
 
-see [`../docs/development/environment.md`](../docs/development/environment.md) to configure which server environment the addon connects to.
+If you'd like to actively work on the add-on, here are some additional steps to set up a more convenient workflow:
 
-## development
+1. Install [Firefox Developer Edition][devedition]. (Nightly should work, too, but Dev Edition is preferred.)
 
-A relatively easy path for working on this addon involves the following steps:
-
-1. Install [Firefox Developer Edition][devedition].
+1. Set `extensions.legacy.enabled` to `true` [using `about:config`][aboutconfig],
+   which should allow the use of legacy and unsigned Mozilla Extensions.
 
 1. Install the [DevPrefs][devprefs] Add-on, which sets a number of preferences
    necessary for Add-on development, importantly `xpinstall.signatures.required`
@@ -28,73 +39,100 @@ A relatively easy path for working on this addon involves the following steps:
 1. Install the [Extension Auto-Installer][autoinstaller] Add-on in Firefox
    Developer Edition.
 
-1. In the this directory, run `npm start` to build and run the addon in
-   firefox.
-
 1. Read all about [setting up an extension development
    environment][extensiondev] on MDN.
 
+[aboutconfig]: https://support.mozilla.org/en-US/kb/about-config-editor-firefox
 [devedition]: https://www.mozilla.org/en-US/firefox/developer/
 [devprefs]: https://addons.mozilla.org/en-US/firefox/addon/devprefs/
 [autoinstaller]: https://addons.mozilla.org/en-US/firefox/addon/autoinstaller/
 [extensiondev]: https://developer.mozilla.org/en-US/Add-ons/Setting_up_extension_development_environment
-[quickstart]: ../docs/development/quickstart.md
 
-## tests
+Finally, to start up an add-on build with file watching:
+```
+npm start
+```
 
-`npm test` - just runs the unit tests quickly
-`npm run slow-test` - runs flow and the unit tests with coverage
-`npm run coverage` - runs both flow and the unit tests with coverage
+This command will watch as you edit files, rebuilding the add-on with every change and re-installing it in your browser by way of the [Extension Auto-Installer][autoinstaller] add-on.
 
-## packaging
+## General architecture
 
-`npm run package` builds an unsigned xpi for local testing
-`npm run sign` builds a signed xpi
+This add-on is an [Embedded WebExtension add-on][] - it's a new-style Firefox WebExtension embedded in a legacy-style Bootstrap extension. The legacy wrapper provides capabilities that are not available to WebExtensions in general. This should ideally just be a transitional form where these capabilities are dropped from use over time or replaced by general-use alternatives.
 
-## Design Notes
+[Embedded WebExtension add-on]: https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Embedded_WebExtensions
 
-The addon uses [Redux](http://redux.js.org) to manage app state. Side effects are handled in a similar way to the [Elm Architecture Effects Model](https://guide.elm-lang.org/architecture/effects/). Actions that trigger side effects do so by returning a function from the `sideEffects` reducer. That function gets executed by a store subscriber (created by `sideEffects.enable(store)` in `main.js`) after the dispatch has completed, keeping the reducers pure. You'll notice that the default return value of the reducer is an empty function which prevents the previous side effect from running again.
+The entry point for the Bootstrap extension lives in [`./src/bootstrap.js`](./src/bootstrap.js), while the entry point for the embedded WebExtension lives in [`./src/webextension/background.js`](./src/webextension/background.js). Both of these entry points serve mainly to manage the startup & shutdown of the functional modules into which the add-on is broken up - these live in `./src/lib` and `./src/webextension/lib` respectively.
 
+For the most part, these modules interact using publish/subscribe messaging hubs - one each for the Bootstrap and WebExtension side of things. The shared module at [`./src/lib/topics.js`](./src/lib/topics.js) lists topics for the hubs, as well as providing a utility to construct & validate these topic strings as they're used in modules. With the exception of the `webExtensionAPI` topics, most of these are named for the respective modules that broadcast the topics.
 
-## Code Organization
+ The Bootstrap and WebExtension sides of the add-on also work together via message passing. Modules involved in this integration include:
 
-`/src/main.js`
+ * [`./src/lib/webExtension.js`](./src/lib/webExtension.js) - Bootstrap-side module managing the following:
+   * startup & shutdown of the embedded WebExtension;
+   * utility to send messages to the WebExtension
+   * utility to register service API handlers for WebExtension using `webExtensionAPI` pubsub topics;
+   * relay `bootstrap.{events,channels,addonManager}` pubsub topics to the WebExtension
+ * [`./src/webextension/bootstrap.js`](./src/webextension/bootstrap.js) - WebExtension-side module managing the following:
+   * set up communication port to receive relayed pubsub topics from bootstrap side
+   * utility to send messages to call service API handlers in bootstrap side
 
-- the main entrypoint for the addon
+In general, the Bootstrap side of things exists to offer discrete services to
+the WebExtension based around the elevated capabilities it requires. There are a
+few exceptions to this pattern, which should be described in sections to follow.
 
-`/src/lib/actionCreators`
+## Environments
 
-- contains modules that create [actions](http://redux.js.org/docs/basics/Actions.html)
-- most of the "work" happens here
+The Test Pilot site exists in several parallel deployments - production, stage, development, and local - each with a version of the site in a different stage of development. This add-on requires a preference change to work properly with each of these deployments. See [`../docs/development/environment.md`](../docs/development/environment.md) for more details.
 
-`/src/lib/metrics`
+Source files involved in managing enmvironment-specific settings can be found here:
 
-- contains the API for experiment metrics
+* [`./src/prefs.js`](./src/prefs.js) - Bootstrap-side module that watches for changes in Test Pilot related preferences
+* [`./src/webextension/environments.js`](./src/webextension/environments.js) - WebExtension-side module defining the available environments, also periodically refreshes information from the Test Pilot site such as the current list of experiments and news alerts.
 
-`/src/lib/middleware`
+## Toolbar button & notifications
 
-- contains Redux middleware for communicating with the web app.
+The code implementing the toolbar button lives in [`./src/webextension/lib/browserAction.js`](./src/webextension/lib/browserAction.js). Clicking the button opens up the Test Pilot site, as appropriate for your currently-configured environment.
 
-`/src/lib/reducers`
+The `browserAction.js` module also subscribes to the `webExtension.environment.resources` topic sent by the `environment.js` module when Test Pilot site resources are refreshed. This updated information is used to decide whether a "New" indicator should be displayed on the button.
 
-- all state changes are made here
+## General metrics & Telemetry support for experiments
 
-`/data`
+Several basic measurement features are implemented in [`./src/webextension/metrics.js`](./src/webextension/metrics.js) - including the following:
 
-- assets for the addon
+* A unique identifier is generated on installing the main add-on
+* Metric pings when any Test Pilot experiment is enabled or disabled
+* A daily report of how many experiments are currently enabled
 
-`/flow-typed`
+Additionally, this `metrics.js` module communicates with these Bootstrap modules to process metrics pings from different kinds of experiments:
 
-- Flow type declarations
+* [`./src/lib/channels.js`](./src/lib/channels.js) - implements BroadcastChannel-based message passing from WebExtension experiments for metrics events.
+* [`./src/lib/events.js`](./src/lib/events.js) - implements nsiObserver-based message passing from Bootstrap experiments for metric events.
+* [`./src/lib/telemetry.js`](./src/lib/telemetry.js) - provides the ability to send metrics events to Firefox Telemetry, as well as elevated access to information about the Firefox client.
 
-`/tasks`
+The `telemetry.js` on the Bootstrap side is also responsible for two more things:
 
-- build tasks, etc.
+* Turn on preferences related to metrics collection, while preserving the user's original settings that are restores on uninstalling Test Pilot.
+* Send metric events on installation and uninstallation of the Test Pilot add-on, since the WebExtension cannot react to these events.
 
-`/test`
+The details of what measurements are implemented for any particular experiment can be found with the respective source code repositories for each experiment, generally in a document at `docs/METRICS.md`.
 
-- unit tests
+For more general details on where these metric events are sent for measurement &
+analysis, read [`../docs/metrics/index.md`](../docs/metrics/index.md).
 
-`tools`
+## Participation Indicators
 
-- helpful development tools
+For certain whitelisted URLs - currently just `about:home` and `mozilla.com` sites and Test Pilot itself - these properties are injected into the window:
+
+* `window.navigator.testpilotAddon = true` - indicates Test Pilot participation
+* `window.navigator.testpilotAddonVersion = 2.0` - or current add-on version
+
+Additionally, for the Test Pilot site, this property is included:
+
+* `window.navigator.testpilotClientUUID = {unique id}` - a unique ID generated when the Test Pilot add-on is installed for metrics purposes
+
+Interesting source files for this feature include the following:
+
+* [`./src/chrome/scripts/frame-script.js`](./src/chrome/scripts/frame-script.js) - content process frame script that interacts with pages to inject the properties.
+* [`./src/lib/frameScripts.js`](./src/lib/frameScripts.js) - Bootstrap-side module that injects the frame script into windows and relays property changes from the WebExtension side.
+* [`./src/lib/webextension/environments.js`](./src/lib/webextension/environments.js) - WebExtension-side module that determines which Test Pilot site environment is active, defines the whitelist of sites for property injection.
+* [`./src/lib/webextension/metrics.js`](./src/lib/webextension/metrics.js) - WebExtension-side module that generates the unique client UUID for metrics purposes.

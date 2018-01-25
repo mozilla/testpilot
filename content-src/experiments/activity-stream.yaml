@@ -1,6 +1,7 @@
 id: 2
 title: 'Activity Stream'
 slug: activity-stream
+platforms: ['addon']
 thumbnail: /static/images/experiments/activity-stream/experiments_experiment/e/1/e19739ea25188c866b654d3aa2616b27_thumbnail_1461817294_0590.png
 description: >
   A rich visual history feed and a reimagined home page make it easier than ever
@@ -9,27 +10,13 @@ introduction: >
   <p>Get back to browsing without losing your stream of thought. Activity Stream
     keeps your top sites, bookmarks and recent history close at hand in each new
     tab. And the new timeline view gives you a birds-eye view of your browsing.</p>
-image_twitter: /static/images/experiments/activity-stream/experiments_experiment/e/1/e19739ea25188c866b654d3aa2616b27_image_1473186642_0579.png
-image_facebook: /static/images/experiments/activity-stream/experiments_experiment/e/1/e19739ea25188c866b654d3aa2616b27_image_1473186642_0826.png
+image_twitter: /static/images/experiments/activity-stream/social/e19739ea25188c866b654d3aa2616b27_image_1473186642_0579.png
+image_facebook: /static/images/experiments/activity-stream/social/e19739ea25188c866b654d3aa2616b27_image_1473186642_0826.png
 changelog_url: 'https://github.com/mozilla/activity-stream/blob/master/CHANGELOG.md'
 contribute_url: 'https://github.com/mozilla/activity-stream'
 bug_report_url: 'https://github.com/mozilla/activity-stream/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/activity-stream'
 privacy_notice_url: 'https://github.com/mozilla/activity-stream/blob/master/docs/v1-test-pilot/data_dictionary.md'
-measurements:
-  - >
-    We collect basic usage data regarding how you interact with experimental
-    new tab and timeline pages, such as the types of elements that you click
-    and their position on the page.
-  - >
-    We also collect basic information about your browser profile that affect
-    Activity Stream, such as the number of bookmarks and history items.
-  - >
-    To provide Activity Stream, we fetch metadata about websites you have
-    visited, such as images and icons, using a service called <a
-    href="http://embed.ly/" target="_blank">Embedly</a>. We send these requests
-    to Embedly through Mozilla's servers, so they will not be associated with
-    you.
 xpi_url: 'https://testpilot.firefox.com/files/activitystream/latest'
 addon_id: '@activity-streams'
 gradient_start: '#0996F8'
@@ -46,22 +33,6 @@ details:
     image: /static/images/experiments/activity-stream/experiments_experimentdetail/6/7/67858740793232e7a71f86b4ef272b67_image_1462827231_0657.png
     copy: >
       See where you've been, so you can get on to where you're going.
-tour_steps:
-  -
-    image: /static/images/experiments/activity-stream/experiments_experimenttourstep/b/d/bd3d603ab46949ccb2f98c77f16d9be3_image_1462827230_0789.jpg
-    copy: >
-      Find your top sites, recent history, and bookmarks when you open a new
-      tab.
-  -
-    image: /static/images/experiments/activity-stream/experiments_experimenttourstep/5/7/57b8ba146994300a54ba1528efc30bf5_image_1462827230_0948.jpg
-    copy: >
-      Visit the new timeline view to visually browse all your history and
-      bookmarks.
-  -
-    image: /static/images/experiments/shared/tour-final.jpg
-    copy: >
-      You can always give us feedback or disable Activity Stream from Test
-      Pilot.
 contributors:
   -
     display_name: 'Kate Hudson'
@@ -70,7 +41,7 @@ contributors:
   -
     display_name: 'Ricky Rosario'
     title: 'Web Engineer'
-    avatar: /static/images/experiments/activity-stream/avatars/ricky-rosario.jpg
+    avatar: /static/images/experiments/activity-stream/avatars/ricky-rosario.png
   -
     display_name: 'Nan Jiang'
     title: 'Software Developer'
@@ -114,9 +85,20 @@ contributors:
   -
     display_name: 'Bryan Bell'
     title: 'Senior UX Designer'
-    avatar: /static/images/experiments/activity-stream/avatars/bryan-bell.jpg
-installation_count: 46732
+    avatar: /static/images/experiments/activity-stream/avatars/bryan-bell.png
 created: '2016-03-11T21:05:59.363520Z'
+completed: '2017-07-12T20:00:00.000000Z'
 locale_blocklist:
   - 'de'
 order: 5
+graduation_url: https://medium.com/firefox-test-pilot/graduation-report-activity-stream-31aed429bd49
+news_updates:
+  -
+    slug: as-update-1
+    title: Activity Stream Graduation Report
+    link: 'https://medium.com/firefox-test-pilot/graduation-report-activity-stream-31aed429bd49'
+    created: 2017-12-22T12:00:00Z
+    published: 2017-12-22T12:00:00Z
+    dev: false
+    content: >
+      Activity Stream just jumped from Test Pilot to Firefox. Find out how it happened.

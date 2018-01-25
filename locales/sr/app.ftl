@@ -17,6 +17,7 @@ footerLinkCookies = Колачићи
 footerLinkPrivacy = Приватност
 footerLinkTerms = Услови
 footerLinkLegal = Права
+footerLinkFeedback = Пошаљите повратне информације
 footerLinkAbout = О Test Pilot-у
 
 
@@ -29,6 +30,7 @@ menuWiki = Test Pilot Wiki
 menuDiscuss = Причајте о Test Pilot-у
 menuFileIssue = Пријавите грешку
 menuRetire = Деинсталирај Test Pilot
+headerLinkBlog = Блог
 
 
 // The splash on the homepage.
@@ -97,14 +99,15 @@ notFoundHeader = Четири нула четири!
 emailOptInDialogTitle = Добродошли у Test Pilot!
 emailOptInMessage = Сазнајте за нове експерименте и погледајте резултате експеримената које сте испробали.
 emailOptInConfirmationTitle = Порука послата
-emailOptInSuccessMessage2 = Хвала!
 emailOptInConfirmationClose = Напред на експерименте...
+emailOptInDialogErrorTitle = Ох не!
 
 
 // news feed updates.
 [[ updateList ]]
 
 latestUpdatesTitle = Последња ажурирања
+showMoreNewsTitle = Прикажи старије новости
 
 
 // A listing of all Test Pilot experiments.
@@ -122,8 +125,11 @@ experimentListHeader = Изаберите ваше експерименте!
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Повратна информација
 experimentCardManage = Управљајте
 experimentCardGetStarted = Започните
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Сазнајте више
 
 
@@ -157,7 +163,6 @@ experimentPromoSubheader = Ми градимо могућности следећ
 
 isEnabledStatusMessage = { $title } је омогућен.
 installErrorMessage = Уф. { $title } не може бити омогућен. Покушајте поново касније.
-participantCount = <span>{ $installation_count }</span> учесника
 otherExperiments = Испробајте и ове експерименте
 giveFeedback = Пошаљите повратну информацију
 disableHeader = Онемогућити експеримент?
@@ -179,9 +184,32 @@ bugReports = Пријаве грешака
 discussExperiment = Причајте о { $title }
 tourOnboardingTitle = { $title } омогућен!
 tourDoneButton = Готово
-userCountContainer = Тренутно има <span>{ $installation_count }</span> људи који испробавају { $title }!
 userCountContainerAlt = Управо објављено!
 highlightPrivacy = Ваша приватност
+experimentGradReportButton = Извештај о дипломирању
+experimentGradReportPendingTitle = Овај експеримент се завршио
+experimentGradReportPendingCopy = Радимо на потпуном извештају. Вратите се ускоро за детаље.
+experimentGradReportReady = Припремили смо потпун извештај о дипломирању.
+experimentGoToLink = Иди на { $title }
+startedDateLabel = Датум почетка експеримента: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Firefox / веб / мобилни експеримент
+experimentPlatformWebAddon = Firefox / веб експеримент
+experimentPlatformWebMobile = веб / мобилни експеримент
+experimentPlatformAddonMobile = Firefox / мобилни експеримент
+experimentPlatformWeb = веб експеримент
+experimentPlatformAddon = Firefox експеримент
+experimentPlatformMobileApp = мобилни експеримент
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -197,7 +225,7 @@ versionChangeNoticeLink = Преузмите најновију верзију F
 [[ uninstall ]]
 
 retireDialogTitle = Деинсталирај Test Pilot?
-retireMessage = Како желите. Овим ћете онемогућити све активне тестове, деинсталирати додатак и уклонити ваше податке о налогу са наших сервера.
+retireMessageUpdate = Како желите. Ово ће уклонити Test Pilot-а. Можете онемогућити појединачне експерименте из Firefox-овог управника додатака.
 retireEmailMessage = Да одустанете од обавештења е-поштом, кликните на <em>укини претплату</em> у било којој Test Pilot поруци.
 retireSubmitButton = Настави
 pageTitleRetirePage = Firefox Test Pilot - деинсталирај Test Pilot
@@ -262,7 +290,7 @@ newsletterFooterSuccessBody = Уколико нисте претходно по�
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Овај експеримент није подржан за ваш језик ({ $locale_code }).
+localeNotTranslatedWarningTitle = Овај експеримент није преведен на ваш језик ({ $locale_code }).
 localeWarningSubtitle = Можете га ипак омогућити уколико желите.
 
 
@@ -287,3 +315,20 @@ noScriptLink = Сазнајте зашто
 
 viewPastExperiments = Прикажи прошле експерименте
 hidePastExperiments = Сакриј прошле експерименте
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Нешто није у реду!
+warningGenericDetail = Нешто није у реду са Test Pilot-ом. Молимо вас да <a>пријавите грешку</a> и споменете поруку ове грешке.
+warningUpgradeFirefoxTitle = Надоградите Firefox да наставите!
+warningUpgradeFirefoxDetail = Test Pilot захтева послељњу верзију Firefox-а. <a>Надоградите Firefox</a> да започнете.
+warningHttpsRequiredTitle = HTTPS је потребан!
+warningHttpsRequiredDetail = Test Pilot-у се мора приступити преко HTTPS-а. Погледајте <a>нашу документацију</a> за више детаља.
+warningMissingPrefTitle = Развијате Test Pilot?
+warningMissingPrefDetail = Када покрећете Test Pilot локално или у развојним окружењима, посебна конфигурација је потребна. Погледајте <a>нашу документацију</a> за више детаља.
+warningBadHostnameTitle = Неодобрено  име хоста!
+warningBadHostnameDetail = Test Pilot сајту се може пристуити само са testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net или са example.com:8000. Погледајте <a>нашу документацију</a> за више детаља.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot захтева JavaScript. Жао нам је због овога.

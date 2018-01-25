@@ -61,6 +61,7 @@ oneClickInstallMajorCta = Habilitar { $title }
 landingRequiresDesktop = Test Pilot rique Firefox pa escritoriu en Linux, Windows o Mac
 landingDownloadFirefoxDesc = (Test Pilot ta disponible pa Firefox en Linux, Windows y MacOS)
 landingUpgradeDesc = Test Pilot riqe Firefox 49 o mayor.
+landingUpgradeDesc2 = Test Pilot rique Firefox { $version } o mayor.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Anovar Firefox
 landingDownloadFirefoxSubTitle = Descarga de baldre
@@ -95,7 +96,14 @@ notFoundHeader = ¡Cuatro cero Cuatro!
 emailOptInDialogTitle = ¡Afáyate en Test Pilot!
 emailOptInMessage = Pescuda tocante a esperimentos nuevos y mira los resultaos de les pruebes pa los esperimentos que probesti.
 emailOptInConfirmationTitle = Unvióse'l corréu
-emailOptInSuccessMessage2 = ¡Gracies!
+emailOptInConfirmationClose = A los esperimentos...
+emailOptInDialogErrorTitle = ¡Oh non!
+
+
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Caberos anovamientos
 
 
 // A listing of all Test Pilot experiments.
@@ -106,12 +114,15 @@ experimentListJustLaunchedTab = Ta acabante llanzase
 experimentListJustUpdatedTab = Ta acabante d'anovase
 experimentListEndingTomorrow = Fina mañana
 experimentListEndingSoon = Fina ceo
-experimentsListCondensedHeader = ¡Escueyi los tos esperimentos!
+experimentCondensedHeader = ¡Afáyate en Test Pilot!
+experimentListHeader = ¡Escueyi los tos esperimentos!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Feedback
 experimentCardManage = Xestionar
 experimentCardGetStarted = Entamar
 experimentCardLearnMore = Deprendi más
@@ -145,7 +156,6 @@ experimentPromoSubheader = Tamos construyendo les carauterístiques de nueva xen
 
 isEnabledStatusMessage = { $title } ta habilitáu.
 installErrorMessage = Ai meca, { $title } nun pudo habilitase. Volvi tentalo más sero.
-participantCount = <span>{ $installation_count }</span> participantes
 otherExperiments = Prueba tamién estos esperimentos
 giveFeedback = Dar feedback
 disableHeader = ¿Deshabilitar esperimentu?
@@ -157,16 +167,29 @@ measurements = La to privacidá
 experimentPrivacyNotice = Equí pues deprender más tocante a la recoyida de datos de { $title }.
 contributorsHeading = Esti esperimentu úfrentelu
 contributorsExtraLearnMore = Deprendi más
-changelog = rexistru de cambeos
+changelog = Rexistru de cambeos
 tour = Percorríu
 tourLink = Llanzar percorríu
 contribute = Collaborar
 bugReports = Informes de fallos
+discussExperiment = Aldericar { $title }
 tourOnboardingTitle = ¡Habilitóse { $title }!
 tourDoneButton = Fecho
-userCountContainer = ¡Agora mesmo hai <span>{ $installation_count }</span> persones probando { $title }!
 userCountContainerAlt = ¡Ta acabante llanzase!
 highlightPrivacy = La to privacidá
+experimentGradReportPendingTitle = Esti esperimentu finó
+experimentGradReportPendingCopy = Tamos trabayando nun informe completu. Volvi ceo pa más detalles.
+experimentGoToLink = Dir a { $title }
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -174,13 +197,13 @@ highlightPrivacy = La to privacidá
 
 upgradeNoticeTitle = { $title } rique Firefox { $min_release } o mayor.
 upgradeNoticeLink = Cómo anovar Firefox.
+versionChangeNoticeLink = Consigui la versión actual de Firefox.
 
 
 // Shown while uninstalling Test Pilot.
 [[ uninstall ]]
 
 retireDialogTitle = ¿Desinstalar Test Pilot?
-retireMessage = Como desees. Esto deshabilitará cualesquier prueba activa, desinstalará l'add-on y desaniciará la to información de cuenta de los nuesos sirvidores.
 retireEmailMessage = Pa dexar de recibir anovamientos per corréu, namái primi l'enllaz de <em>desoscribise</em> en cualesquier corréu de Test Pilot.
 retireSubmitButton = Siguir
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar Test Pilot
@@ -227,6 +250,7 @@ newsletterFormEmailPlaceholder
     .placeholder = El to corréu equí
 newsletterFormDisclaimer = Namái t'unviaremos información venceyada a Test Pilot.
 newsletterFormPrivacyNotice = Aceuto que Mozilla remane la mio información como se desplica <a>nesta anuncia de privacidá</a>.
+newsletterFormPrivacyAgreementRequired = Conseña esti caxellu si quies siguir, por favor.
 newsletterFormSubmitButton = Rexistrase agora
 newsletterFormSubmitButtonSubmitting = Unviando...
 
@@ -244,7 +268,6 @@ newsletterFooterSuccessBody = Si enantes nun confirmesti una soscripción al bol
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Esti esperimentu nun ta sofitáu na to llingua ({ $locale_code }).
 localeWarningSubtitle = Entá pues habilitalu si te presta.
 
 
@@ -269,3 +292,10 @@ noScriptLink = Pescuda porqué
 
 viewPastExperiments = Ver esperimentos pasaos
 hidePastExperiments = Anubrir esperimentos pasaos
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = ¡Daqué ta mal!
+warningUpgradeFirefoxTitle = ¡Anueva Firefox pa siguir!

@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "Test Pilot",
+  "author": "Les Orchard <me@lmorchard.com>",
+  "applications": {
+    "gecko": {
+      "id": "@testpilot-addon"
+    }
+  },
+  "version": "2.0.3",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "64": "icons/icon-64.png",
+    "96": "icons/icon-96.png"
+  },
+  "default_locale": "en_US",
+  "permissions": [
+    "notifications",
+    "storage",
+    "cookies",
+    "tabs",
+    "https://example.com/",
+    "https://testpilot.dev.mozaws.net/",
+    "https://testpilot-l10n.dev.mozaws.net/",
+    "https://testpilot.stage.mozaws.net/",
+    "https://testpilot.firefox.com/"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_title": "Firefox Test Pilot",
+    "browser_style": true,
+    "default_icon":  "icons/icon.svg"
+  }
+}

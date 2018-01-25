@@ -17,6 +17,7 @@ footerLinkCookies = Çerezler
 footerLinkPrivacy = Gizlilik
 footerLinkTerms = Koşullar
 footerLinkLegal = Yasal Uyarı
+footerLinkFeedback = Geri bildirim ver
 footerLinkAbout = Test Pilotu Hakkında
 
 
@@ -29,6 +30,7 @@ menuWiki = Test Pilotuu Wiki'si
 menuDiscuss = Test Pilotu'nu tartışın
 menuFileIssue = Sorun bildirin
 menuRetire = Test Pilotu’nu kaldır
+headerLinkBlog = Günlük
 
 
 // The splash on the homepage.
@@ -97,8 +99,15 @@ notFoundHeader = Dört yüz dört!
 emailOptInDialogTitle = Test Pilotu'na hoş geldiniz!
 emailOptInMessage = Yeni deneyleri öğrenin ve denediğiniz deneylerin test sonuçlarını görün.
 emailOptInConfirmationTitle = E-posta gönderildi
-emailOptInSuccessMessage2 = Teşekkürler!
 emailOptInConfirmationClose = Deneylere geçelim...
+emailOptInDialogErrorTitle = Hayır!
+
+
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Son güncellemeler
+showMoreNewsTitle = Eski haberleri göster
 
 
 // A listing of all Test Pilot experiments.
@@ -109,14 +118,18 @@ experimentListJustLaunchedTab = Yeni çıktı
 experimentListJustUpdatedTab = Yeni güncellendi
 experimentListEndingTomorrow = Yarın bitiyor
 experimentListEndingSoon = Yakında bitiyor
-experimentsListCondensedHeader = Deneylerinizi seçin!
+experimentCondensedHeader = Test Pilot'a hoş geldiniz!
+experimentListHeader = Deneylerinizi seçin!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Geri bildirim
 experimentCardManage = Yönet
 experimentCardGetStarted = Bunu deneyin
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Daha fazla bilgi al
 
 
@@ -150,7 +163,6 @@ experimentPromoSubheader = Firefox'un yeni nesil özelliklerini inşa ediyoruz. 
 
 isEnabledStatusMessage = { $title } etkinleştirildi.
 installErrorMessage = { $title } etkinleştirilemedi. Daha sonra yeniden deneyin.
-participantCount = <span>{ $installation_count }</span> katılımcı
 otherExperiments = Bu deneyleri de deneyin
 giveFeedback = Yorum yapın
 disableHeader = Deney kapatılsın mı?
@@ -172,9 +184,32 @@ bugReports = Hata raporları
 discussExperiment = { $title } deneyini tartış
 tourOnboardingTitle = { $title } etkinleştirildi!
 tourDoneButton = Bitti
-userCountContainer = Şu anda { $title } deneyini deneyen <span>{ $installation_count }</span> kişi var!
 userCountContainerAlt = Yeni çıktı!
 highlightPrivacy = Gizliliğiniz
+experimentGradReportButton = Mezuniyet raporu
+experimentGradReportPendingTitle = Deney sona erdi
+experimentGradReportPendingCopy = Kapsamlı bir rapor üzerinde çalışıyoruz. Ayrıntıları öğrenmek için yakında tekrar bakın.
+experimentGradReportReady = Kapsamlı bir mezuniyet raporu hazırladık.
+experimentGoToLink = { $title } deneyine git
+startedDateLabel = Denet başlangıç tarihi:  <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilotu
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Firefox / web / mobil deney
+experimentPlatformWebAddon = Firefox / web deneyi
+experimentPlatformWebMobile = web / mobil deney
+experimentPlatformAddonMobile = Firefox / mobil deney
+experimentPlatformWeb = web deneyi
+experimentPlatformAddon = Firefox deneyi
+experimentPlatformMobileApp = mobil deney
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -190,7 +225,7 @@ versionChangeNoticeLink = Firefox'un son sürümünü indirin.
 [[ uninstall ]]
 
 retireDialogTitle = Test Pilotu kaldırılsın mı?
-retireMessage = Bu işlem tüm aktif testleri kapatacak, eklentiyi kaldıracak ve hesabınızı sunucularımızdan silecektir.
+retireMessageUpdate = Nasıl arzu ederseniz... Böylece Test Pilot kaldıracak. Firefox eklenti yöneticisinden her bir deneyi ayrı olarak da devre dışı bırakabilirsiniz.
 retireEmailMessage = E-posta bültenlerinden çıkmak için herhangi bir Test Pilotu e-postasının altındaki <em>abonelikten ayrıl</em> linkine tıklamalısınız.
 retireSubmitButton = Devam et
 pageTitleRetirePage = Firefox Test Pilotu - Test Pilotu'nu kaldır
@@ -255,7 +290,7 @@ newsletterFooterSuccessBody = Daha önce Mozilla ile ilgili bir bültene aboneli
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Bu deney sizin dilinizde ({ $locale_code }) desteklenmiyor.
+localeNotTranslatedWarningTitle = Bu deney sizin dilinize ({ $locale_code }) çevrilmemiş.
 localeWarningSubtitle = İsterseniz yine de etkinleştirebilirsiniz.
 
 
@@ -280,3 +315,20 @@ noScriptLink = Nedenini öğrenin
 
 viewPastExperiments = Geçmiş deneyleri göster
 hidePastExperiments = Geçmiş deneyleri gizle
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Bir yerde bir sorun var!
+warningGenericDetail = Test Pilotu'nda bir şeyler ters gitti. Lütfen <a>hata bildirimi yapıp</a> bu hata mesajından da bahsedin.
+warningUpgradeFirefoxTitle = Devam etmek için Firefox’u yükseltin!
+warningUpgradeFirefoxDetail = Test Pilotu için Firefox'un son sürümü gerekir. Başlamak için <a>Firefox'u yükseltin</a>.
+warningHttpsRequiredTitle = HTTPS gerekli!
+warningHttpsRequiredDetail = Test Pilotu'na HTTPS üzerinden erişmelisiniz. Ayrıntılar için lütfen <a>belgelerimize</a> bakın.
+warningMissingPrefTitle = Test Pilotu'nu geliştiriyor musunuz?
+warningMissingPrefDetail = Test Pilotu'nu yerel ortamda veya geliştirme ortamlarında çalıştırırken özel yapılandırma gerekir. Ayrıntılar için lütfen <a>belgelerimize</a> bakın.
+warningBadHostnameTitle = Onaylanmamış ana makine adı!
+warningBadHostnameDetail = Test Pilotu sitesinde yalnızca testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net ve example.com:8000 adreslerinden ulaşabilirsiniz. Ayrıntılar için lütfen <a>belgelerimize</a> bakın.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilotu için JavaScript şarttır. Kusura bakmayın.

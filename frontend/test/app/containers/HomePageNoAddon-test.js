@@ -1,16 +1,18 @@
-import React from 'react';
-import { expect } from 'chai';
-import sinon from 'sinon';
-import { shallow } from 'enzyme';
+import React from "react";
+import { expect } from "chai";
+import sinon from "sinon";
+import { shallow } from "enzyme";
+import { findLocalizedById } from "../util";
 
-import HomePageNoAddon from '../../../src/app/containers/HomePageNoAddon';
+import HomePageNoAddon from "../../../src/app/containers/HomePageNoAddon";
 
 
-describe('app/containers/HomePageNoAddon', () => {
+describe("app/containers/HomePageNoAddon", () => {
   let props, subject, experiments;
   beforeEach(function() {
     props = {
       experiments: [],
+      featuredExperiments: [],
       hasAddon: false,
       isFirefox: false,
       uninstallAddon: sinon.spy(),
@@ -20,26 +22,33 @@ describe('app/containers/HomePageNoAddon', () => {
     subject = shallow(<HomePageNoAddon {...props} />);
   });
 
-  const findByL10nID = (id) => subject.findWhere(el => id === el.props()['data-l10n-id']);
-
-  it('should return nothing if no experiments are available', () => {
+  it("should return nothing if no experiments are available", () => {
     subject.setProps({ experiments: [] });
-    expect(subject.find('#landing-page')).to.have.property('length', 0);
+    expect(subject.find("#landing-page")).to.have.property("length", 0);
   });
 
-  it('should render default content with experiments loaded', () => {
-    const experiments = [ { title: 'foo' }, { title: 'bar' } ];
+  it("should render default content with experiments loaded", () => {
+    const experiments = [ { title: "foo" }, { title: "bar" } ];
     subject.setProps({ experiments });
-    expect(findByL10nID('landingIntroOne')).to.have.property('length', 1);
-    expect(subject.find('ExperimentCardList')).to.have.property('length', 1);
+    expect(findLocalizedById(subject, "landingIntroOne")).to.have.property("length", 1);
+    expect(subject.find("ExperimentCardList")).to.have.property("length", 1);
   });
 
-  it('should not display completed experiments', () => {
-    const experiments = [ { title: 'foo' }, { title: 'bar', completed: '2016-10-01' } ];
+  it("should render featured experiment section if there is a featured experiment", () => {
+    expect(subject.find("FeaturedExperiment")).to.have.property("length", 0);
+
+    const experiments = [ { title: "foo" }, { title: "bar" } ];
+    const featuredExperiments = [ { title: "bar" } ];
+    subject.setProps({ experiments, featuredExperiments });
+    expect(subject.find("FeaturedExperiment")).to.have.property("length", 1);
+  });
+
+  it("should not display completed experiments", () => {
+    const experiments = [ { title: "foo" }, { title: "bar", completed: "2016-10-01" } ];
     subject.setProps({ experiments });
-    const xs = subject.find('ExperimentCardList').prop('experiments');
+    const xs = subject.find("ExperimentCardList").prop("experiments");
     expect(xs.length).to.equal(1);
-    expect(xs[0].title).to.equal('foo');
+    expect(xs[0].title).to.equal("foo");
   });
 
 });

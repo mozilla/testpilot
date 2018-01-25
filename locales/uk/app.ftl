@@ -17,6 +17,7 @@ footerLinkCookies = Куки
 footerLinkPrivacy = Приватність
 footerLinkTerms = Умови
 footerLinkLegal = Права
+footerLinkFeedback = Залишити відгук
 footerLinkAbout = Про Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Вікі Test Plot
 menuDiscuss = Обговорити Test Pilot
 menuFileIssue = Повідомити про помилку
 menuRetire = Видалити Test Pilot
+headerLinkBlog = Блог
 
 
 // The splash on the homepage.
@@ -97,14 +99,15 @@ notFoundHeader = Чотириста чотири!
 emailOptInDialogTitle = Вітаємо у Test Pilot!
 emailOptInMessage = Дізнайтеся про нові експерименти та перегляньте результати експериментів, якими ви користувалися.
 emailOptInConfirmationTitle = Повідомлення надіслано
-emailOptInSuccessMessage2 = Дякуємо!
 emailOptInConfirmationClose = Вперед до експериментів...
+emailOptInDialogErrorTitle = О ні!
 
 
 // news feed updates.
 [[ updateList ]]
 
 latestUpdatesTitle = Останні оновлення
+showMoreNewsTitle = Показати минулі новини
 
 
 // A listing of all Test Pilot experiments.
@@ -122,8 +125,11 @@ experimentListHeader = Оберіть свої експерименти!
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Відгук
 experimentCardManage = Керувати
 experimentCardGetStarted = Розпочати
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Докладніше
 
 
@@ -157,7 +163,6 @@ experimentPromoSubheader = Ми будуємо функції наступног
 
 isEnabledStatusMessage = { $title } увімкнено.
 installErrorMessage = Ой-ой. { $title } не вдалося активувати. Повторіть спробу пізніше.
-participantCount = <span>{ $installation_count }</span> учасників
 otherExperiments = Спробуйте ці експерименти також
 giveFeedback = Залишити відгук
 disableHeader = Вимкнути експеримент?
@@ -179,9 +184,32 @@ bugReports = Повідомлення про помилки
 discussExperiment = Обговорити { $title }
 tourOnboardingTitle = { $title } увімкнено!
 tourDoneButton = Готово
-userCountContainer = <span>{ $installation_count }</span> людей пробують { $title } прямо зараз!
 userCountContainerAlt = Щойно запущено!
 highlightPrivacy = Ваша приватність
+experimentGradReportButton = Звіт про завершення
+experimentGradReportPendingTitle = Цей експеримент закінчився
+experimentGradReportPendingCopy = Ми працюємо над повним звітом. Загляньте пізніше, щоб дізнатися деталі.
+experimentGradReportReady = Ми підготували повний звіт про результати експерименту.
+experimentGoToLink = Перейти до { $title }
+startedDateLabel = Дата початку експерименту: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Експеримент для Firefox / Інтернету / мобільного пристрою
+experimentPlatformWebAddon = Експеримент для Firefox / Інтернету
+experimentPlatformWebMobile = Експеримент для Інтернету / мобільного пристрою
+experimentPlatformAddonMobile = Експеримент для Firefox / мобільного пристрою
+experimentPlatformWeb = Експеримент для Інтернету
+experimentPlatformAddon = Експеримент для Firefox
+experimentPlatformMobileApp = Експеримент для мобільного пристрою
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -197,7 +225,7 @@ versionChangeNoticeLink = Отримати свіжу версію Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Видалити Test Pilot?
-retireMessage = Як забажаєте. Це вимкне будь які активні тести, видалить додаток та вилучить вашу інформацію про обліковий запис з наших серверів.
+retireMessageUpdate = Як забажаєте. Ця дія видалить Test Pilot. Ви також можете вимкнути окремі експерименти з вікна керування додатками Firefox.
 retireEmailMessage = Аби відписатися від оновлень на електронну пошту, просто натисніть посилання <em>відписатися</em> у будь-якому повідомленні Test Pilot.
 retireSubmitButton = Продовжити
 pageTitleRetirePage = Firefox Test Pilot - Видалити Test Pilot
@@ -262,7 +290,7 @@ newsletterFooterSuccessBody = Якщо ви досі не підтвердили
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Цей експеримент не підтримує вашу мову ({ $locale_code }).
+localeNotTranslatedWarningTitle = Цей експеримент не був перекладений вашою мовою ({ $locale_code }).
 localeWarningSubtitle = Ви все одно можете увімкнути його, якщо хочете.
 
 
@@ -287,3 +315,20 @@ noScriptLink = Дізнатися, чому
 
 viewPastExperiments = Переглянути минулі експерименти
 hidePastExperiments = Приховати минулі експерименти
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Щось не так!
+warningGenericDetail = З Test Pilot щось пішло не так Будь ласка, <a>повідомте про помилку</a> та вкажіть цей текст помилки.
+warningUpgradeFirefoxTitle = Оновіть Firefox, щоб продовжити!
+warningUpgradeFirefoxDetail = Для роботи Test Pilot необхідно використовувати останню версію Firefox. Щоб почати, <a>оновіть Firefox</a>.
+warningHttpsRequiredTitle = Вимагається HTTPS!
+warningHttpsRequiredDetail = Test Pilot повиннен бути відкритий через HTTPS. Будь ласка, перегляньте <a>нашу документацію</a> для деталей.
+warningMissingPrefTitle = Розробляєте Test Pilot?
+warningMissingPrefDetail = Запускаючи Test Pilot локально або в середовищі розробки необхідно використовувати спеціальну конфігурацію. Для отримання більш детальної інформації, будь ласка, перегляньте <a>нашу документацію</a>.
+warningBadHostnameTitle = Неприйнятне ім'я хоста!
+warningBadHostnameDetail = Доступ до сайту Test Pilot можливий тільки з testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net або example.com:8000. Для отримання більш детальної інформації, будь ласка, перегляньте <a>нашу документацію</a>.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Вибачте, але для роботи Test Pilot необхідний JavaScript.

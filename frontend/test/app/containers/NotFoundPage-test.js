@@ -1,15 +1,14 @@
-import React from 'react';
-import { expect } from 'chai';
-import { shallow } from 'enzyme';
+import React from "react";
+import { expect } from "chai";
+import { shallow } from "enzyme";
+import { findLocalizedById } from "../util";
 
-import NotFoundPage from '../../../src/app/containers/NotFoundPage';
+import NotFoundPage from "../../../src/app/containers/NotFoundPage";
 
 
-describe('app/containers/NotFoundPage', () => {
-  it('should render notFoundHeader string', () => {
-    expect(shallow(<NotFoundPage />)
-      // HACK: .find('[data-l10n-id="errorMessage"]') seems not to work
-      .findWhere(el => 'notFoundHeader' === el.props()['data-l10n-id']))
-      .to.have.length(1);
+describe("app/containers/NotFoundPage", () => {
+  it("should render notFoundHeader string", () => {
+    const subject = shallow(<NotFoundPage />);
+    expect(findLocalizedById(subject, "notFoundHeader")).to.have.length(1);
   });
 });

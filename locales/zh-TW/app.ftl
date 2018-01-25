@@ -17,6 +17,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = 隱私權
 footerLinkTerms = 使用條款
 footerLinkLegal = 法律
+footerLinkFeedback = 提供意見回饋
 footerLinkAbout = 關於 Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Test Pilot Wiki
 menuDiscuss = 討論 Test Pilot
 menuFileIssue = 回報問題
 menuRetire = 移除 Test Pilot
+headerLinkBlog = 部落格
 
 
 // The splash on the homepage.
@@ -38,7 +40,6 @@ landingIntroOne = 測試新功能
 landingIntroTwo = 提供意見回饋
 landingIntroThree = 幫忙開發 Firefox
 landingLegalNotice = 安裝此附加元件，代表您同意 Test Pilot 的 <a>使用條款</a> 及 <a>隱私權公告</a>。
-landingExperimentsTitle = 試用最新的實驗功能
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -46,7 +47,6 @@ landingExperimentsTitle = 試用最新的實驗功能
 
 landingInstallButton = 安裝 Test Pilot 附加元件
 landingInstallingButton = 安裝中…
-landingInstalledButton = 選擇您要的功能
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -97,14 +97,20 @@ notFoundHeader = 找不到！
 emailOptInDialogTitle = 歡迎使用 Test Pilot！
 emailOptInMessage = 看看有什麼新實驗，以及您參與過的實驗測試結果。
 emailOptInConfirmationTitle = 已寄出郵件
-emailOptInSuccessMessage2 = 感謝您！
 emailOptInConfirmationClose = 繼續前往實驗內容…
+emailOptInDialogErrorTitle = 糟糕！
 
 
 // news feed updates.
 [[ updateList ]]
 
 latestUpdatesTitle = 最新消息
+showMoreNewsTitle = 顯示過去新聞
+
+
+[[ featuredExperiment ]]
+
+moreDetail = 檢視細節
 
 
 // A listing of all Test Pilot experiments.
@@ -117,13 +123,17 @@ experimentListEndingTomorrow = 明天結束
 experimentListEndingSoon = 快要結束
 experimentCondensedHeader = 歡迎來到 Test Pilot！
 experimentListHeader = 挑選一個實驗！
+experimentListHeaderWithFeatured = 嘗試我們所有的實驗
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = 意見回饋
 experimentCardManage = 管理
 experimentCardGetStarted = 開始使用
+// also used in NewsUpdateDialog
 experimentCardLearnMore = 了解更多
 
 
@@ -154,7 +164,6 @@ experimentPromoSubheader = 我們正在開發 Firefox 的下一代新功能，�
 
 isEnabledStatusMessage = 已開啟 { $title }。
 installErrorMessage = 唉呀，無法開啟 { $title }。請稍候再試試看。
-participantCount = <span>{ $installation_count }</span> 位參與者
 otherExperiments = 也試試這些實驗
 giveFeedback = 提供意見回饋
 disableHeader = 要關閉實驗嗎？
@@ -174,11 +183,33 @@ tourLink = 導覽
 contribute = 貢獻
 bugReports = 錯誤回報
 discussExperiment = 討論 { $title }
-tourOnboardingTitle = 已開啟 { $title }！
 tourDoneButton = 完成
-userCountContainer = 已經有 <span>{ $installation_count }</span> 個人正在試用 { $title }！
 userCountContainerAlt = 剛推出！
 highlightPrivacy = 您的隱私權
+experimentGradReportButton = 畢業成績單
+experimentGradReportPendingTitle = 此實驗已經結束
+experimentGradReportPendingCopy = 我們正在撰寫實驗報告，請稍後再回來瞭解報告詳情。
+experimentGradReportReady = 我們準備了一份完整的畢業成績單。
+experimentGoToLink = 前往 { $title }
+startedDateLabel = 實驗開始日期: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Firefox / 網頁 / 行動實驗
+experimentPlatformWebAddon = Firefox / 網頁實驗
+experimentPlatformWebMobile = 網頁 / 行動實驗
+experimentPlatformAddonMobile = Firefox / 行動實驗
+experimentPlatformWeb = 網頁實驗
+experimentPlatformAddon = Firefox 實驗
+experimentPlatformMobileApp = 行動實驗
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -194,7 +225,7 @@ versionChangeNoticeLink = 下載最新版 Firefox。
 [[ uninstall ]]
 
 retireDialogTitle = 要移除 Test Pilot 嗎？
-retireMessage = 如您所願。將會停用所有進行中的測試、移除附加元件，並移除我們的伺服器上關於您的帳號資訊。
+retireMessageUpdate = 如您所願，將移除 Test Pilot。您可在 Firefox 的附加元件管理員中停用各個實驗。
 retireEmailMessage = 要停止收到電子報，只要點擊每封信當中的 <em>取消訂閱</em> 鏈結。
 retireSubmitButton = 繼續
 pageTitleRetirePage = Firefox Test Pilot - 移除 Test Pilot
@@ -259,7 +290,7 @@ newsletterFooterSuccessBody = 若您先前沒有確認訂閱任何 Mozilla 電�
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = 此實驗不支援您的語言（{ $locale_code }）。
+localeNotTranslatedWarningTitle = 此實驗尚未翻譯成您的語言（{ $locale_code }）。
 localeWarningSubtitle = 您想要的話還是可以安裝。
 
 
@@ -284,3 +315,20 @@ noScriptLink = 找出原因
 
 viewPastExperiments = 檢視先前的實驗
 hidePastExperiments = 隱藏先前的實驗
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = 有些東西不對勁！
+warningGenericDetail = Test Pilot 有點東西不對勁，請<a>回報 Bug</a> 並包含此錯誤訊息。
+warningUpgradeFirefoxTitle = 升級 Firefox 後再繼續使用！
+warningUpgradeFirefoxDetail = 需要使用最新版本的 Firefox 才能使用 Test Pilot。<a>請升級 Firefox</a> 開始使用。
+warningHttpsRequiredTitle = 必須使用 HTTPS！
+warningHttpsRequiredDetail = 必須透過 HTTPS 通訊協定存取 Test Pilot。請參考<a>文件</a>當中的詳細資訊。
+warningMissingPrefTitle = 正在開發 Test Pilot 嗎？
+warningMissingPrefDetail = 在本機或開發環境中執行 Test Pilot 時，需進行特別設定。請參考<a>文件</a>中的詳細資訊。
+warningBadHostnameTitle = 不允許的主機名稱！
+warningBadHostnameDetail = Test Pilot 只能從 testpilot.firefox.com、testpilot.stage.mozaws.net、testpilot.dev.mozaws.net 或 example.com:8000 這些網址存取，請參考<a>文件</a>當中的詳細資訊。
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = 很抱歉，需要開啟 JavaScript 才能使用 Test Pilot。

@@ -17,6 +17,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Privacidad
 footerLinkTerms = Términos
 footerLinkLegal = Legal
+footerLinkFeedback = Enviar comentario
 footerLinkAbout = Acerca de Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Wiki del Test Pilot
 menuDiscuss = Hablemos de Test Pilot
 menuFileIssue = Abre una incidencia
 menuRetire = Desinstalar Test Pilot
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -38,7 +40,6 @@ landingIntroOne = Prueba novedades.
 landingIntroTwo = Da tu opinión.
 landingIntroThree = Ayuda a construir Firefox.
 landingLegalNotice = Al continuar, aceptas los <a>Términos de uso</a> y el <a>Aviso sobre privacidad</a> de Test Pilot.
-landingExperimentsTitle = Prueba las últimas características experimentales
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -46,13 +47,12 @@ landingExperimentsTitle = Prueba las últimas características experimentales
 
 landingInstallButton = Instalar el complemento Test Pilot
 landingInstallingButton = Instalando...
-landingInstalledButton = Elige tus funciones
 
 
 // Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
-oneClickInstallMinorCta = Inslatar Test Pilot &amp;
+oneClickInstallMinorCta = Instalar Test Pilot &amp;
 oneClickInstallMajorCta = Activar { $title }
 
 
@@ -97,14 +97,20 @@ notFoundHeader = ¡Cuatro cero cuatro!
 emailOptInDialogTitle = ¡Te damos la bienvenida a Test Pilot!
 emailOptInMessage = Descubre nuevos experimentos y mira los resultados de los experimentos en los que has participado.
 emailOptInConfirmationTitle = Email enviado
-emailOptInSuccessMessage2 = ¡Gracias!
 emailOptInConfirmationClose = Vamos a los experimentos...
+emailOptInDialogErrorTitle = ¡Oh no!
 
 
 // news feed updates.
 [[ updateList ]]
 
 latestUpdatesTitle = Últimas actualizaciones
+showMoreNewsTitle = Mostrar noticias antiguas
+
+
+[[ featuredExperiment ]]
+
+moreDetail = Ver detalles
 
 
 // A listing of all Test Pilot experiments.
@@ -117,13 +123,17 @@ experimentListEndingTomorrow = Finaliza mañana
 experimentListEndingSoon = Finaliza pronto
 experimentCondensedHeader = ¡Bienvenido a Test Pilot!
 experimentListHeader = ¡Elige tus experimentos!
+experimentListHeaderWithFeatured = Prueba todos nuestros experimentos
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Comentarios
 experimentCardManage = Administrar
 experimentCardGetStarted = Comenzar
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Descubre más
 
 
@@ -154,7 +164,6 @@ experimentPromoSubheader = Estamos creando la próxima generación de funciones 
 
 isEnabledStatusMessage = { $title } está activado.
 installErrorMessage = Oh, oh. No se pudo activar { $title }. Vuelve a intentarlo luego.
-participantCount = <span>{ $installation_count }</span> participantes
 otherExperiments = Prueba también estos experimentos
 giveFeedback = Enviar comentarios
 disableHeader = ¿Desactivar experimento?
@@ -168,17 +177,39 @@ measurements = Tu privacidad
 experimentPrivacyNotice = Descubre más sobre la recopilación de datos de { $title } aquí.
 contributorsHeading = Diseñado por
 contributorsExtraLearnMore = Descubre más
-changelog = registro de cambios
+changelog = Registro de cambios
 tour = Visita guiada
-tourLink = visita virtual
-contribute = Colabora
+tourLink = Visita virtual
+contribute = Colaborar
 bugReports = Informes de fallos
 discussExperiment = Hablar sobre { $title }
-tourOnboardingTitle = ¡{ $title } activado!
 tourDoneButton = Hecho
-userCountContainer = ¡Hay <span>{ $installation_count }</span> personas probando { $title } ahora mismo!
 userCountContainerAlt = ¡Recién iniciado!
 highlightPrivacy = Tu privacidad
+experimentGradReportButton = Informe de graduación
+experimentGradReportPendingTitle = Este experimento ha terminado
+experimentGradReportPendingCopy = Estamos preparando un informe completo. Vuelve pronto para ver todos los detalles.
+experimentGradReportReady = Hemos preparado un informe de graduación completo.
+experimentGoToLink = Ir a { $title }
+startedDateLabel = Fecha de inicio del experimento: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Firefox / web / experimento móvil
+experimentPlatformWebAddon = Firefox / experimento web
+experimentPlatformWebMobile = web / experimento móvil
+experimentPlatformAddonMobile = Firefox / experimento móvil
+experimentPlatformWeb = experimento web
+experimentPlatformAddon = experimento Firefox
+experimentPlatformMobileApp = experimento móvil
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -194,7 +225,7 @@ versionChangeNoticeLink = Obtén la versión actual de Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = ¿Desinstalamos Test Pilot?
-retireMessage = Como quieras. Se desactivarán los tests activos, se desinstalará el complemento y se eliminará la información de tu cuenta de nuestros servidores.
+retireMessageUpdate = Como quieras. Se desinstalará Test Pilot. Puedes deshabilitar experimentos de forma individual en el Administrador de complementos de Firefox.
 retireEmailMessage = Para no recibir actualizaciones por correo, haz clic en el enlace <em>cancelar suscripción</em> de cualquier correo de Test Pilot.
 retireSubmitButton = Continuar
 pageTitleRetirePage = Firefox Test Pilot - Desinstalar Test Pilot
@@ -259,7 +290,7 @@ newsletterFooterSuccessBody = Tienes que confirmar la suscripción a un boletín
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Este experimento no está disponible en tu idioma ({ $locale_code }).
+localeNotTranslatedWarningTitle = No se ha traducido este experimento a tu idioma ({ $locale_code }).
 localeWarningSubtitle = Si quieres, todavía puedes activarlo.
 
 
@@ -284,3 +315,20 @@ noScriptLink = Descubre por qué
 
 viewPastExperiments = Ver experimentos antiguos
 hidePastExperiments = Ocultar experimentos antiguos
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = ¡Algo está mal!
+warningGenericDetail = Algo ha fallado con Test Pilot. Por favor <a>informa del error</a> y menciona este mensaje de error.
+warningUpgradeFirefoxTitle = ¡Actualiza Firefox para continuar!
+warningUpgradeFirefoxDetail = Test Pilot requiere la última versión de Firefox. <a>Actualiza Firefox</a> para comenzar.
+warningHttpsRequiredTitle = ¡Se requiere HTTPS!
+warningHttpsRequiredDetail = Test Pilot debe ser accedido mediante HTTPS. Por favor mira <a>nuestra documentación</a> para más detalles.
+warningMissingPrefTitle = ¿Desarrollando Test Pilot?
+warningMissingPrefDetail = Al ejecutar Test Pilot localmente o en entornos de desarrollo, se necesita una configuración especial. Por favor mira <a>nuestra documentación</a> para más detalles.
+warningBadHostnameTitle = ¡Nombre de servidor no aprobado!
+warningBadHostnameDetail = El sitio de Test Pilot solo puede ser accedido desde testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, o example.com:8000. Mira <a>nuestra documentación</a> para más detalles.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot requiere JavaScript. Lo sentimos.

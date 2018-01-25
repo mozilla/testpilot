@@ -22,6 +22,13 @@ During the checkin before the end of the [current milestone](https://github.com/
 
 Note: we auto deploy the master branch to our *development environment*: [https://testpilot.dev.mozaws.net](https://testpilot.dev.mozaws.net)
 
+## Merge l10n ##
+
+Before tagging the release, merge the l10n branch into the master branch. These commands assume the remote named `mozilla` points at the mozilla repository on github.
+
+`git checkout -b l10n mozilla/l10n && git pull mozilla l10n && git checkout master && git pull mozilla master && git merge l10n && git push mozilla master`
+
+
 ## Tag Release ##
 
 This will happen on Thursday at the end of sprint.
@@ -38,9 +45,9 @@ Please be as detailed as possible in the release notes. Examples - [2016-07-05](
 
 This will happen on Thursday at the end of sprint.
 
-1. `git checkout stage-static`  (No luck?  Try `get fetch mozilla` and `git checkout -b stage-static mozilla/stage-static` -- both commands assume your remote is named `mozilla`)
+1. `git checkout stage`  (No luck?  Try `get fetch mozilla` and `git checkout -b stage mozilla/stage` -- both commands assume your remote is named `mozilla`)
 2. `git reset --hard YYYY-MM-DD`  # whatever your tag name is
-3. `git push mozilla stage-static -f`  # Replace `mozilla` with whatever you name your upstream.  The `-f` is only necessary if we cherry-picked patches when we pushed last time.
+3. `git push mozilla stage -f`  # Replace `mozilla` with whatever you name your upstream.  The `-f` is only necessary if we cherry-picked patches when we pushed last time.
 
 Notifications of successful deployment will appear on IRC.
 
@@ -50,7 +57,7 @@ This will happen on Thursday at the end of sprint after we've pushed to stage.
 
 Create a deployment issue to track status and potential blockers. [Example](https://github.com/mozilla/testpilot/issues/1643). Give it a `needs:qa` label.
 
-Send out an email notification to `testpilot-dev@mozilla.com` to please test the staging environment. [Example](https://mail.mozilla.org/pipermail/testpilot-dev/2016-October/000306.html).
+Send out an email notification to `testpilot-qa@softvision.ro` to please test the staging environment. [Example](https://mail.mozilla.org/pipermail/testpilot-dev/2016-October/000306.html).
 
 Include Softvision and the issue link in the email notification.
 
@@ -70,9 +77,9 @@ On the following Monday, during our checkin, Softvision will give us an update o
 
 Once we are comfortable that the site has been tested:
 
-1. `git checkout production-static`
+1. `git checkout production`
 2. `git reset --hard YYYY-MM-DD`  # whatever your tag name is
-3. `git push mozilla production-static -f`  # Replace `mozilla` with whatever you name your upstream.  The `-f` is only necessary if we cherry-picked patches when we pushed last time.
+3. `git push mozilla production -f`  # Replace `mozilla` with whatever you name your upstream.  The `-f` is only necessary if we cherry-picked patches when we pushed last time.
 
 Notifications of successful deployment will appear on IRC.
 
@@ -111,6 +118,13 @@ NODE_ENV=production ENABLE_PONTOON=0 npm run static
 
 After all the above commands, you should have an optimized static build of the
 site in the `dist` directory.
+
+If you'd like to preview this static build of the site, you can start up a
+local web server pointed at the `dist` directory with this npm script:
+
+```
+npm run server:dist
+```
 
 The `NODE_ENV` variable in the last command can be set to `development` to
 produce a build that's easier to debug, at the expense of JS bundle size and

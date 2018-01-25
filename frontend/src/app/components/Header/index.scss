@@ -1,0 +1,72 @@
+@import '~photon-colors/colors.scss';
+@import '../../../styles/_utils';
+
+#main-header {
+  position: relative;
+  z-index: 2;
+
+  .active {
+    color: $blue-40;
+  }
+
+  h1 {
+    @include-respond-to('small') {
+      margin: 0;
+    }
+
+    margin: $grid-unit * .75 0 $grid-unit * .75 - $grid-unit * .25;
+    text-indent: -9999px;
+
+    .wordmark {
+      @include respond-to('not-small') {
+        background-size: 302px 64px;
+        height: 90px;
+        width: 302px;
+      }
+
+      background-image: url('./img/wordmark.png');
+      background-position: left 5px;
+      background-repeat: no-repeat;
+      background-size: 194px 41px;
+      display: block;
+      height: 61px;
+      position: relative;
+      width: 200px;
+    }
+  }
+
+  .header-links {
+    @include flex-container(row, flex-end, center);
+    @include respond-to('not-small') {
+      display: flex;
+    }
+
+    display: none;
+
+    > a {
+      background-position: 10px 1px;
+      background-repeat: no-repeat;
+      background-size: 16px 16px;
+      border-radius: 0 0 3px 3px;
+      border-top: 0;
+      height: 20px;
+      line-height: 20px;
+      margin: 0 10px;
+      opacity: .6;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+
+  .blog-link {
+    background-image: url('./img/highlight.svg');
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    border-radius: 0 0 3px 3px;
+    border-top: 0;
+    padding: 0 10px 0 32px;
+  }
+}

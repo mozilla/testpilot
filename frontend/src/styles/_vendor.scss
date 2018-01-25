@@ -1,1 +1,19 @@
 @import 'normalize';
+@import 'photon-colors';
+
+// HACK: Book is missing from fira.css
+// https://github.com/mozilla/Fira/issues/209
+// sass-lint:disable-block no-url-protocols no-url-domains
+@font-face {
+  font-family: 'Fira Sans Book';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Fira Sans Book'), url('https://code.cdn.mozilla.net/fonts/eot/FiraSans-Book.eot') format('embedded-opentype'), url('https://code.cdn.mozilla.net/fonts/woff/FiraSans-Book.woff') format('woff'), url('https://code.cdn.mozilla.net/fonts/ttf/FiraSans-Book.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Fira Sans Book';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Fira Sans Book Italic'), url('https://code.cdn.mozilla.net/fonts/eot/FiraSans-BookItalic.eot') format('embedded-opentype'), url('https://code.cdn.mozilla.net/fonts/woff/FiraSans-BookItalic.woff') format('woff'), url('https://code.cdn.mozilla.net/fonts/ttf/FiraSans-BookItalic.ttf') format('truetype');
+}

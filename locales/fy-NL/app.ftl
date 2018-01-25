@@ -17,6 +17,7 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Privacy
 footerLinkTerms = Betingsten
 footerLinkLegal = Juridysk
+footerLinkFeedback = Kommentaar jaan
 footerLinkAbout = Oer Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Test-Pilot-Wiki
 menuDiscuss = Oer Test Pilot
 menuFileIssue = In probleem melde
 menuRetire = Test Pilot de-ynstallearje
+headerLinkBlog = Blog
 
 
 // The splash on the homepage.
@@ -38,7 +40,6 @@ landingIntroOne = Test nije funksjes.
 landingIntroTwo = Leverje kommentaar.
 landingIntroThree = Help by de ûntwikkeling fan Firefox.
 landingLegalNotice = Troch fierder te gean, gean jo akkoard mei de <a>Servicebetingsten</a> en <a>Privacyferklearring</a> fan Test Pilot.
-landingExperimentsTitle = Test de lêste eksperimintele funksjes
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -46,7 +47,6 @@ landingExperimentsTitle = Test de lêste eksperimintele funksjes
 
 landingInstallButton = Add-on ‘Test Pilot’ ynstallearje
 landingInstallingButton = Ynstallearje…
-landingInstalledButton = Kies jo funksjes
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -97,14 +97,20 @@ notFoundHeader = Fjouwer Nul Fjouwer!
 emailOptInDialogTitle = Wolkom by Test Pilot!
 emailOptInMessage = Untdek mear oer nije eksperiminten en besjoch testresultaten foar eksperiminten dy't jo probearre hawwe.
 emailOptInConfirmationTitle = E-mailberjocht ferstjoerd
-emailOptInSuccessMessage2 = Tige tank!
 emailOptInConfirmationClose = Troch nei de eksperiminten…
+emailOptInDialogErrorTitle = O nee!
 
 
 // news feed updates.
 [[ updateList ]]
 
 latestUpdatesTitle = Lêste fernijingen
+showMoreNewsTitle = Ald nijs toane
+
+
+[[ featuredExperiment ]]
+
+moreDetail = Details besjen
 
 
 // A listing of all Test Pilot experiments.
@@ -117,13 +123,17 @@ experimentListEndingTomorrow = Einiget moarn
 experimentListEndingSoon = Einiget ynkoarten
 experimentCondensedHeader = Wolkom by Test Pilot!
 experimentListHeader = Kies jo eksperiminten!
+experimentListHeaderWithFeatured = Probearje al ús eksperiminten
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Kommentaar
 experimentCardManage = Beheare
 experimentCardGetStarted = Oan de slach
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Mear ynfo
 
 
@@ -154,7 +164,6 @@ experimentPromoSubheader = Wy ûntwikkelje foar Firefox de funksjes fan de folgj
 
 isEnabledStatusMessage = { $title } is ynskeakele.
 installErrorMessage = Oh, oh. { $title } koe net aktivearre wurden. Probearje it letter nochris.
-participantCount = <span>{ $installation_count }</span> dielnimmers
 otherExperiments = Probearje ek ris dizze eksperiminten
 giveFeedback = Leverje kommentaar
 disableHeader = Eksperimint útskeakelje?
@@ -174,11 +183,33 @@ tourLink = toer
 contribute = Bydrage
 bugReports = Bugrapporten
 discussExperiment = Oer { $title } diskusjearje
-tourOnboardingTitle = { $title } ynskeakele!
 tourDoneButton = Dien
-userCountContainer = <span>{ $installation_count }</span> minsken brûke op dit stuit { $title }!
 userCountContainerAlt = Krekt start!
 highlightPrivacy = Jo privacy
+experimentGradReportButton = Einrapport
+experimentGradReportPendingTitle = Dit eksperimint is einige
+experimentGradReportPendingCopy = Wy wurkje oan in folslein rapport. Sjoch ynkoarten nochris foar de details.
+experimentGradReportReady = Wy hawwe in folslein einrapport opsteld.
+experimentGoToLink = Nei { $title }
+startedDateLabel = Startdatum eksperimint: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Firefox- / web- / mobyl-eksperimint
+experimentPlatformWebAddon = Firefox- / web-eksperimint
+experimentPlatformWebMobile = web- / mobyl-eksperimint
+experimentPlatformAddonMobile = Firefox- / mobyl-eksperimint
+experimentPlatformWeb = webeksperimint
+experimentPlatformAddon = Firefox-eksperimint
+experimentPlatformMobileApp = mobyl-eksperimint
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -194,7 +225,7 @@ versionChangeNoticeLink = Download de aktuele ferzje fan Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Test Pilot de-ynstallearje?
-retireMessage = Sa as jo winske. Dit sil elke aktive test útskeakelje, de add-on de-ynstallearje en jo account fuortsmite fan ús servers.
+retireMessageUpdate = Sa as jo wolle. Hjirtroch wurdt Test Pilot de-ynstallearre. Jo kinne yndividuele eksperiminten útskeakelje yn de Add-onbehearder fan Firefox.
 retireEmailMessage = Klik ienfâldichwei op de keppeling <em>ôfmelde</em> yn in e-mail fan Test Pilot, om gjin e-mailfernijingen mear te ûntfangen.
 retireSubmitButton = Fierdergean
 pageTitleRetirePage = Firefox Test Pilot - Test Pilot de-ynstallearje
@@ -259,7 +290,7 @@ newsletterFooterSuccessBody = As jo yn it ferline noch gjin oanmelding befêstig
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Dit eksperimint wurdt net stipe yn jo taal ({ $locale_code }).
+localeNotTranslatedWarningTitle = Dit eksperimint is net oerset nei jo taal ({ $locale_code }).
 localeWarningSubtitle = Jo kinne it dochs ynskeakelje as jo wolle.
 
 
@@ -284,3 +315,20 @@ noScriptLink = Besjoch wêrom
 
 viewPastExperiments = Alde eksperiminten besjen
 hidePastExperiments = Alde eksperiminten ferstopje
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Der is wat mis!
+warningGenericDetail = Der is wat misgien mei Test Pilot. <a>Meld in bug</a> en neam dizze flatermelding.
+warningUpgradeFirefoxTitle = Fernij Firefox om troch te gean!
+warningUpgradeFirefoxDetail = Test Pilot fereasket de nijste ferzje fan Firefox. <a>Fernij Firefox</a> om te begjinnen.
+warningHttpsRequiredTitle = HTTPS fereaske!
+warningHttpsRequiredDetail = Test Pilot moat fia HTTPS benadere wurde. Besjoch <a>ús dokumintaasje</a> foar details.
+warningMissingPrefTitle = Untwikkelje jo Test Pilot?
+warningMissingPrefDetail = Foar it lokaal of yn ûntwikkelomjouwingen útfieren fan Test Pilot is spesjale konfiguraasje fereaske. Besjoch <a>ús dokumintaasje</a> foar details.
+warningBadHostnameTitle = Net-goedkarde hostnamme!
+warningBadHostnameDetail = De Test Pilot-website mei allinnich fan testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net of example.com:8000 ôf benadere wurde. Besjoch <a>ús dokumintaasje</a> foar details.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot fereasket JavaScript. Sorry derfoar.

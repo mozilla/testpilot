@@ -1,0 +1,76 @@
+@import '../../../styles/_utils';
+
+.card-list-heading {
+  @include respond-to('medium') {
+    font-size: 33px;
+    line-height: 33px;
+  }
+
+  @include respond-to('small') {
+    font-size: $font-unit * 2;
+    line-height: $font-unit * 2;
+  }
+
+  font-size: $grid-unit * 1.5;
+  font-weight: 300;
+  line-height: $grid-unit * 2;
+  margin: 0 0 $grid-unit * 1.5;
+  text-align: center;
+  text-shadow: 0 2px 0 $transparent-black-3;
+  width: 100%;
+}
+
+.card {
+  @include flex-container (column, center, center);
+
+  @include respond-to('not-small') {
+    flex: 0 0 32%;
+    margin: 0 .6%;
+  }
+
+  padding: $grid-unit;
+  position: relative;
+
+  .card-icon {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: drop-shadow(0 2px 0 $transparent-black-2);
+    height: $grid-unit * 3.75;
+    margin: $grid-unit auto $grid-unit * 1.4;
+    opacity: .9;
+    position: relative;
+    width: $grid-unit * 3.5;
+  }
+
+  .card-title {
+    font-size: $font-unit * 2;
+    margin: $grid-unit * .5 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .card-copy {
+    font-size: $font-unit * 1.4;
+    text-align: center;
+
+    &.large {
+      font-size: $font-unit * 1.66;
+    }
+  }
+
+  .add-on-icon {
+    background-image: url('./img/add-on.svg');
+    left: 9px;
+    top: -2px;
+  }
+
+  .test-pilot-icon {
+    background-image: url('./img/enabled-features.svg');
+  }
+
+  .chat-icon {
+    background-image: url('./img/chat-icon.svg');
+  }
+}
+

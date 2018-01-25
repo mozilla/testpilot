@@ -2,6 +2,7 @@ id: 5
 title: 'No More 404s'
 subtitle: 'Powered by the Wayback Machine'
 slug: no-more-404s
+platforms: ['addon']
 thumbnail: /static/images/experiments/no-more-404s/experiments_experiment/a/9/a9e6dc66c6a22851721715ae4d0641fb_thumbnail_1470245154_0349.png
 description: >
   Tired of dead ends on the web? We'll let you know when there's a saved version
@@ -10,29 +11,13 @@ introduction: >
   <p>This one is simple. If you hit a 404 page while browsing the web, we will
     let you know if the content you're looking for is archived on the Internet
     Archive's Wayback Machine.</p>
-image_twitter: /static/images/experiments/no-more-404s/experiments_experiment/a/9/a9e6dc66c6a22851721715ae4d0641fb_image_1472573814_0582.png
-image_facebook: /static/images/experiments/no-more-404s/experiments_experiment/a/9/a9e6dc66c6a22851721715ae4d0641fb_image_1472573814_0278.png
+image_twitter: /static/images/experiments/no-more-404s/social/a9e6dc66c6a22851721715ae4d0641fb_image_1472573814_0582.png
+image_facebook: /static/images/experiments/no-more-404s/social/a9e6dc66c6a22851721715ae4d0641fb_image_1472573814_0278.png
 changelog_url: 'https://github.com/internetarchive/FirefoxNoMore404s/blob/master/Changelog.md'
 contribute_url: 'https://github.com/internetarchive/FirefoxNoMore404s'
 bug_report_url: 'https://github.com/internetarchive/FirefoxNoMore404s/issues/new'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/nomore404s'
 privacy_notice_url: 'https://github.com/internetarchive/FirefoxNoMore404s/blob/master/docs/metrics.md'
-measurements:
-  - >
-    We collect basic usage on how many times you encounter a Page Not Found
-    error (code 404), how many times a cached version of that page exists from
-    Archive.org, and how many times you choose to view the cached version.
-  - >
-    To provide cached versions of pages, we send 404 error page URLs to
-    Archive.org. <a href="https://archive.org/" target="_blank">Archive.org</a>
-    discloses its privacy policy <a href="https://archive.org/about/terms.php"
-    target="_blank">here</a>.
-  - >
-    We do not  collect  URLs of the pages you request or the URLs we send to
-    Archive.org.
-  - >
-    We may share survey results you submit to us and aggregated telemetry
-    data related to this experiment with the Internet Archive.
 xpi_url: 'https://testpilot.firefox.com/files/nomore404s/latest'
 addon_id: wayback_machine@mozilla.org
 gradient_start: '#111111'
@@ -49,17 +34,6 @@ details:
     image: /static/images/experiments/no-more-404s/experiments_experimentdetail/c/d/cdb624363e0e87af81125c39bc69c933_image_1470245154_0280.jpg
     copy: >
       Brought to you by our friends at the Internet Archive.
-tour_steps:
-  -
-    image: /static/images/experiments/no-more-404s/experiments_experimenttourstep/d/a/dafca30f93dadf7f13cc48d389e08f84_image_1470245154_0851.jpg
-    copy: >
-      Just browse the web as you normally do. If you encounter a 404 page,
-      we will let you know if an archived version is a available on the Wayback
-      Machine.
-  -
-    image: /static/images/experiments/shared/tour-final.jpg
-    copy: >
-      You can always give us feedback or disable No More 404s from Test Pilot.
 contributors:
   -
     display_name: 'The Internet Archive'
@@ -76,10 +50,8 @@ contributors:
     display_name: 'Adam Miller'
     title: 'Senior Crawl Engineer, The Internet Archive'
     avatar: /static/images/experiments/no-more-404s/avatars/adam-miller.jpg
-installation_count: 20377
 created: '2016-08-03T17:25:54.612365Z'
 completed: '2017-02-15T20:00:00.000000Z'
-eol_warning: The No More 404s experiment will not be removed from your browser and the results will be reported here when it ends. Future updates will be available on addons.mozilla.org.
 locale_blocklist:
   - 'de'
 order: 6
@@ -102,7 +74,7 @@ graduation_report: >
   <p>Both teams wanted to get a sense of how many of the URLs that display 404 errors today had pages archived in the Wayback Machine. <a href="https://docs.google.com/spreadsheets/d/1p2cZFy5DiM0JAFhp4lIisLtTeu4Y3fIusQLE9obOx5s/edit#gid=287298530" target="_blank">We tracked total 404s</a> encountered by Test Pilot participants (1,275,165) as well as results returned by the Archive (185,081). Over the course of the experiment, we averaged a result 14.5 percent of the time, but also observed that over the course of the experiment the daily average rose.</p>
   <figure>
     <img src="/static/images/experiments/no-more-404s/graduation/gr-001.png" />
-    <figcaption>Both the total 404s encountered and the percentage of returned codes grew over the course of the experiment.</figcaption>  
+    <figcaption>Both the total 404s encountered and the percentage of returned codes grew over the course of the experiment.</figcaption>
   </figure>
   <p>In addition to 404s, which are common on the Web, there are other error codes users encounter. For example, users may reach a page with a 408 error code when a server takes too long to respond. In early November, the Internet Archive team decided to <a href="https://github.com/internetarchive/FirefoxNoMore404s/blob/master/src/scripts/background.js#L28" target="_blank">add more error codes to the experiment</a>. We hypothesized that adding additional error codes would cause the overall percentage of sites returned by the Wayback Machine to drop relative to total queries made by the experiment. However, the opposite was true: in the graph above there is a modest uptick in the percentage of valid returns in early November after we made the change.</p>
   <figure>
@@ -113,7 +85,7 @@ graduation_report: >
   <p>We also observed an uptick in the percentage of returned results that correlates to these UI changes. Of course, correlation is not causation, and this uptick remains a mystery: changing UI should not have affected the relative rate of successful returns from the Wayback Machine.</p>
   <figure>
     <img src="/static/images/experiments/no-more-404s/graduation/gr-002.png" />
-    <figcaption>The rate at which users ignored the interface shot up after we changed the user interface.</figcaption>  
+    <figcaption>The rate at which users ignored the interface shot up after we changed the user interface.</figcaption>
   </figure>
   <p>We also wanted to know how often experimenters encountered 404 errors as they browse. While this experiment did not track total sites visited by our users (because of privacy concerns), we did keep tabs on how many times each browser hit a 404 each week. Throughout the life of the experiment, roughly 50 percent of participants encountered at least one 404 per week. Of those who encountered 404s, well over 25 percent did so at a rate of four or more a week!</p>
   <figure>
@@ -132,4 +104,3 @@ graduation_report: >
   <p>Thank you to all the Test Pilots who installed No More 404s, used it, and told us what they thought! We are grateful for your participation.</p>
   <p>Want to try a new experiment? Visit <a href="https://testpilot.firefox.com">https://testpilot.firefox.com</a>.</p>
   <p><strong> - John Gruen, Test Pilot Product Manager, Mozilla &amp; Mark Graham, Director, Wayback Machine, Internet Archive</strong></p>
-    

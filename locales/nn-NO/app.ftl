@@ -17,6 +17,7 @@ footerLinkCookies = Infokapslar
 footerLinkPrivacy = Personvern
 footerLinkTerms = Vilkår
 footerLinkLegal = Juridisk informasjon
+footerLinkFeedback = Gje tilbakemelding
 footerLinkAbout = Om Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Wiki for Test Pilot
 menuDiscuss = Diskuter Test Pilot
 menuFileIssue = Rapporter eit problem
 menuRetire = Avinstaller Test Pilot
+headerLinkBlog = Blogg
 
 
 // The splash on the homepage.
@@ -97,8 +99,15 @@ notFoundHeader = Fire null fire!
 emailOptInDialogTitle = Velkomen til Test Pilot!
 emailOptInMessage = Finn ut meir om nye eksperiment og sjå testresultat for eksperiment som du har testa.
 emailOptInConfirmationTitle = E-post er sendt
-emailOptInSuccessMessage2 = Takk skal du ha!
 emailOptInConfirmationClose = Vidare til eksperimenta…
+emailOptInDialogErrorTitle = Å, nei!
+
+
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Siste oppdateringar
+showMoreNewsTitle = Vis tidlegare nyheiter
 
 
 // A listing of all Test Pilot experiments.
@@ -109,14 +118,18 @@ experimentListJustLaunchedTab = Nettopp starta
 experimentListJustUpdatedTab = Nettopp oppdatert
 experimentListEndingTomorrow = Sluttar i morgon
 experimentListEndingSoon = Sluttar snart
-experimentsListCondensedHeader = Vel eksperimenta dine!
+experimentCondensedHeader = Velkomen til Test Pilot!
+experimentListHeader = Vel eksperimenta dine!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Tilbakemelding
 experimentCardManage = Handsam
 experimentCardGetStarted = Kom i gang
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Les meir
 
 
@@ -150,7 +163,6 @@ experimentPromoSubheader = Vi byggjer neste generasjons funksjonar for Firefox. 
 
 isEnabledStatusMessage = { $title } er slått på.
 installErrorMessage = Hoppsann. { $title } kunne ikkje aktiverast. Prøv igjen seinare.
-participantCount = <span>{ $installation_count }</span> deltakarar
 otherExperiments = Prøv også desse eksperimenta
 giveFeedback = Gje ei tilbakemelding
 disableHeader = Slå av eksperimentet?
@@ -159,8 +171,8 @@ disableExperimentTransition = Slår av…
 enableExperiment = Slå på { $title }
 enableExperimentTransition = Slår på...
 experimentManuallyDisabled = { $title } slått av i utvidingshandsamaren
-experimentMeasurementIntro = I tillegg til dei <a>data</a> som er samla inn av alle Test Pilot-eksperimenta, er dette dei viktigaste tinga du bør vite omkva som skjer når du brukar { $experimentTitle }:
-measurements = Ditt personvern
+experimentMeasurementIntro = I tillegg til dei <a>data</a> som er samla inn av alle Test Pilot-eksperimenta, er dette dei viktigaste tinga du bør vite om kva som skjer når du brukar { $experimentTitle }:
+measurements = Personvernet ditt
 experimentPrivacyNotice = Du kan lese meir om datainnsamlinga for { $title } her.
 contributorsHeading = Presentert av
 contributorsExtraLearnMore = Les meir
@@ -172,9 +184,32 @@ bugReports = Feilrapportar
 discussExperiment = Diskuter { $title }
 tourOnboardingTitle = { $title } er slått på!
 tourDoneButton = Ferdig
-userCountContainer = Det er <span>{ $installation_count }</span> personar som prøver { $title } akkurat no!
 userCountContainerAlt = Nettopp starta!
-highlightPrivacy = Ditt personvern
+highlightPrivacy = Personvernet ditt
+experimentGradReportButton = Eksamensrapport
+experimentGradReportPendingTitle = Dette eksperimentet er avslutta
+experimentGradReportPendingCopy = Vi arbeider med ein fullstendig rapport. Kom tilbake snart for meir info.
+experimentGradReportReady = Vi har utarbeidd ein fullstendig eksaminasjonsrapport.
+experimentGoToLink = Gå til { $title }
+startedDateLabel = Startdato for eksperimentet: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Eksperiment for Firefox / nett / mobil
+experimentPlatformWebAddon = Eksperiment for Firefox / nett
+experimentPlatformWebMobile = Eksperiment for nett / mobil
+experimentPlatformAddonMobile = Eksperiment for Firefox / mobil
+experimentPlatformWeb = nettsideeksperiment
+experimentPlatformAddon = Firefox-eksperiment
+experimentPlatformMobileApp = mobileksperiment
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -190,9 +225,9 @@ versionChangeNoticeLink = Last ned siste versjon av Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Avinstallere Test Pilot?
-retireMessage = Som du vil. Dette kjem til å slå av alle aktive testar, avinstallere utvidinga og fjerne kontoinnformasjonen din frå alle tenarane våre.
-retireEmailMessage = For å trekke seg frå e-postoppdateringar, klikk på lenka <em>avbryt abonnementet</em> i ein Test Pilot e-post.
-retireSubmitButton = Hald fram
+retireMessageUpdate = Som du vil. Dette vil avinstallere Test Pilot. Du kan inaktivere einskilde eksperiment frå utvidingshandsamaren i Firefox.
+retireEmailMessage = For å trekkje seg frå e-postoppdateringar, klikk på lenka <em>avbryt abonnementet</em> i ein Test Pilot e-post.
+retireSubmitButton = Fortset
 pageTitleRetirePage = Firefox Test Pilot - Avinstaller Test Pilot
 retirePageProgressMessage = Avsluttar...
 retirePageHeadline = Takk for at du testar!
@@ -234,7 +269,7 @@ incompatibleSubheader = Vi tilrår at du <a>slår av desse utvidingane</a> før 
 [[ newsletterForm ]]
 
 newsletterFormEmailPlaceholder
-    .placeholder = Din e-post
+    .placeholder = Di e-postadresse
 newsletterFormDisclaimer = Vi sender deg berre Test Pilot-relatert informasjon.
 newsletterFormPrivacyNotice = Det er OK at Mozilla handsamar informasjonen min som skildra i <a>denne personvernmerknaden</a>.
 newsletterFormPrivacyAgreementRequired = Kryss av i denne ruta om du vil halde fram.
@@ -249,13 +284,13 @@ newsletterFooterError = Det oppstod ein feil når e-postadressa di vart sendt in
 newsletterFooterHeader = Hald deg informert
 newsletterFooterBody = Finn ut meir om nye eksperiment, og sjå testresultat for eksperiment som du har testa.
 newsletterFooterSuccessHeader = Takk!
-newsletterFooterSuccessBody = Om du tidlegare ikkje har stadfesta eit abonnement på eit Mozilla-relaterat nyheitsbrev kan du måtte gjere det no. Kontroller innboksen din eller søppelpostmappa di, for å sjå om du har fått ein e-post frå oss.
+newsletterFooterSuccessBody = Om du tidlegare ikkje har stadfesta eit abonnement på eit Mozilla-relaterat nyheitsbrev, må du kanskje gjere det no. Sjå etter ein e-post frå oss i innboksen din eller i søppelpostfilteret ditt.
 
 
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Dette eksperimentet er ikkje støtta på ditt språk ({ $locale_code }).
+localeNotTranslatedWarningTitle = Dette eksperimentet er ikkje omsett til ditt språk ({ $locale_code }).
 localeWarningSubtitle = Du kan framleis slå det på om du vil.
 
 
@@ -280,3 +315,20 @@ noScriptLink = Finn ut kvifor
 
 viewPastExperiments = Vis tidlegare eksperiment
 hidePastExperiments = Gøym tidlegare eksperiment
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Noko gjekk gale!
+warningGenericDetail = Noko gjekk gale med Test Pilot. Gjer vel og <a>send inn ein feilrapport</a> og ta med denne feilmeldinga.
+warningUpgradeFirefoxTitle = Oppgrader Firefox for å fortsetje!
+warningUpgradeFirefoxDetail = Test Pilot krev siste versjon av Firefox. <a>Oppgrader Firefox</a> for att kome i gang.
+warningHttpsRequiredTitle = HTTPS er påkravd!
+warningHttpsRequiredDetail = Test Pilot må brukast via HTTPS. Sjå <a>dokumentasjonen vår</a> for meir informasjon.
+warningMissingPrefTitle = Utvikle Test Pilot?
+warningMissingPrefDetail = Det krevst ein spesiell konfigurasjon for å køyre Test Pilot lokalt eller i utviklingsmiljø. Sjå <a>dokumentasjonen vår</a> for detaljar.
+warningBadHostnameTitle = Ikkje-godkjend vertsnamn!
+warningBadHostnameDetail = Test Pilot-sida er berre tilgjengeleg få testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net eller example.com:8000. Sjå <a>dokumentasjonen vår</a> for meir informasjon.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot krev JavaScript. Lei for det.

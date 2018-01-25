@@ -1,6 +1,7 @@
 id: 6
 title: 'Page Shot'
 slug: page-shot
+platforms: ['addon']
 thumbnail: /static/images/experiments/page-shot/experiments_experiment/thumbnail.png
 description: >
   Intuitive screenshots baked right into the browser. Capture, save and share
@@ -22,27 +23,6 @@ contribute_url: 'https://github.com/mozilla-services/pageshot/'
 bug_report_url: 'https://github.com/mozilla-services/pageshot/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/page-shot'
 privacy_notice_url: 'https://www.mozilla.org/privacy/websites/'
-measurements:
-  - >
-    We store your shots on Mozilla's servers and will have access to those
-    shots. However, we will only access your shots when reasonably necessary
-    for the operation of the service, such as when someone sends us the link
-    to a shot using our "flag" feature, or to diagnose any problems. We will
-    also analyze all shots in the aggregate to help improve Page Shot, for
-    example, by identifying the average size and number of shots taken by
-    users.
-  - >
-    We collect usage data to help us understand your interactions with the
-    product, such as the number of times you click the shots button, save an
-    image, or encounter an error saving an image.
-  - >
-    To prevent abuse of this service, we do basic security monitoring. For
-    example, we collect and retain IP addresses to detect and block individuals
-    who are scanning the service to find private pages.
-  - >
-    For all visits to the Page Shot website, the data we collect is described
-    in our <a href="https://www.mozilla.org/privacy/websites/"
-    target="_blank">Websites, Communications & Cookies Privacy Notice</a>.
 xpi_url: 'https://testpilot.firefox.com/files/pageshot/latest'
 addon_id: jid1-NeEaf3sAHdKHPA@jetpack
 gradient_start: '#02BDAD'
@@ -62,22 +42,6 @@ details:
     image: /static/images/experiments/page-shot/experiments_experimentdetail/detail3.jpg
     copy: >
       Find saved screenshots easily. Browse thumbnails in grid view or search by keyword.
-tour_steps:
-  -
-    image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour1.jpg
-    copy: Select the icon to start using Page Shot.
-  -
-    image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour2.jpg
-    copy: Highlight the area you want to capture.
-  -
-    image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour3.jpg
-    copy: Share, save or delete from the browser.
-  -
-    image: /static/images/experiments/page-shot/experiments_experimenttourstep/tour4.jpg
-    copy: Search or browse to find saved screenshots.
-  -
-    image: /static/images/experiments/shared/tour-final.jpg
-    copy: You can always give us feedback or disable Page Shot from Test Pilot.
 contributors:
   -
     display_name: 'Ian Bicking'
@@ -92,8 +56,9 @@ contributors:
     display_name: 'Bram Pitoyo'
     title: 'UX Designer'
     avatar: /static/images/experiments/page-shot/avatars/bram-pitoyo.jpg
-installation_count: 1
 created: '2016-09-22T00:07:28.847430Z'
+completed: '2017-07-12T20:00:00.000000Z'
+graduation_url: https://medium.com/firefox-test-pilot/screenshots-is-shipping-in-firefox-56-25ecbe0d5b91
 locales:
   - 'en'
 order: 3

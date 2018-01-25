@@ -17,6 +17,7 @@ footerLinkCookies = Куки
 footerLinkPrivacy = Приватность
 footerLinkTerms = Условия использования
 footerLinkLegal = Права
+footerLinkFeedback = Оставить отзыв
 footerLinkAbout = О программе лётчика-испытателя
 
 
@@ -29,6 +30,7 @@ menuWiki = Вики лётчика-испытателя
 menuDiscuss = Обсуждение лётчика-испытателя
 menuFileIssue = Сообщить о проблеме
 menuRetire = Удалить расширение лётчика-испытателя
+headerLinkBlog = Блог
 
 
 // The splash on the homepage.
@@ -38,7 +40,6 @@ landingIntroOne = Тестируйте новые функции.
 landingIntroTwo = Оставляйте свои отзывы.
 landingIntroThree = Помогайте улучшать Firefox.
 landingLegalNotice = Продолжая, вы соглашаетесь с <a>Условиями использования</a> и <a>Политикой приватности</a> программы лётчика-испытателя.
-landingExperimentsTitle = Попробуйте последние экспериментальные функции
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -46,7 +47,6 @@ landingExperimentsTitle = Попробуйте последние экспери
 
 landingInstallButton = Установить расширение лётчика-испытателя
 landingInstallingButton = Установка...
-landingInstalledButton = Выберите возможности
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -97,14 +97,20 @@ notFoundHeader = Четыреста четыре!
 emailOptInDialogTitle = Добро пожаловать в программу лётчиков-испытателей!
 emailOptInMessage = Узнавайте о новых экспериментах и смотрите результаты тех, в которых вы участвовали.
 emailOptInConfirmationTitle = Письмо отправлено
-emailOptInSuccessMessage2 = Спасибо!
 emailOptInConfirmationClose = Вперёд к экспериментам...
+emailOptInDialogErrorTitle = О, нет!
 
 
 // news feed updates.
 [[ updateList ]]
 
 latestUpdatesTitle = Последние обновления
+showMoreNewsTitle = Показать прошлые новости
+
+
+[[ featuredExperiment ]]
+
+moreDetail = Показать подробности
 
 
 // A listing of all Test Pilot experiments.
@@ -117,13 +123,17 @@ experimentListEndingTomorrow = Заканчиваются завтра
 experimentListEndingSoon = Скоро заканчиваются
 experimentCondensedHeader = Добро пожаловать в программу лётчиков-испытателей!
 experimentListHeader = Выберите ваши эксперименты!
+experimentListHeaderWithFeatured = Попробуйте все наши эксперименты
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Отзыв
 experimentCardManage = Управление
 experimentCardGetStarted = Приступить
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Узнать больше
 
 
@@ -157,7 +167,6 @@ experimentPromoSubheader = Мы создаём новое поколение в�
 
 isEnabledStatusMessage = { $title } включено.
 installErrorMessage = О, нет. Не удалось включить { $title }. Попробуйте снова позже.
-participantCount = <span>{ $installation_count }</span> участников
 otherExperiments = Также попробуйте эти эксперименты
 giveFeedback = Оставить отзыв
 disableHeader = Отключить эксперимент?
@@ -177,11 +186,33 @@ tourLink = тур
 contribute = Внести вклад
 bugReports = Сообщения об ошибках
 discussExperiment = Обсудить { $title }
-tourOnboardingTitle = { $title } включено!
 tourDoneButton = Готово
-userCountContainer = Прямо сейчас <span>{ $installation_count }</span> людей пробуют { $title }!
 userCountContainerAlt = Только что запущено!
 highlightPrivacy = Ваша приватность
+experimentGradReportButton = Отчёт о завершении
+experimentGradReportPendingTitle = Этот эксперимент завершён
+experimentGradReportPendingCopy = Мы работаем над полным отчётом. Загляните попозже, чтобы узнать подробности.
+experimentGradReportReady = Мы подготовили полный отчёт о результатах эксперимента.
+experimentGoToLink = Перейти к { $title }
+startedDateLabel = Дата начала эксперимента: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Лётчик-испытатель
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Эксперимент для Firefox / Интернета / мобильного устройства
+experimentPlatformWebAddon = Эксперимент для Firefox / Интернета
+experimentPlatformWebMobile = Эксперимент для Интернета / мобильного устройства
+experimentPlatformAddonMobile = Эксперимент для Firefox / мобильного устройства
+experimentPlatformWeb = Эксперимент для Интернета
+experimentPlatformAddon = Эксперимент для Firefox
+experimentPlatformMobileApp = Эксперимент для мобильного устройства
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -197,7 +228,7 @@ versionChangeNoticeLink = Загрузить свежую версию Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Удалить дополнение лётчика-испытателя?
-retireMessage = Как вы пожелаете. Это действие отключит все активные тесты, удалит дополнение и информацию вашего аккаунта с наших серверов.
+retireMessageUpdate = Как пожелаете. Это действие удалит расширение лётчика-испытателя. Вы также можете отключить отдельные эксперименты из окна управления дополнениями Firefox.
 retireEmailMessage = Чтобы отказаться от получения рассылки, просто щёлкните <em>отписаться</em> в любом письме для лётчиков-испытателей.
 retireSubmitButton = Продолжить
 pageTitleRetirePage = Лётчик-испытатель Firefox - Удалить расширение лётчика-испытателя
@@ -262,7 +293,7 @@ newsletterFooterSuccessBody = Если вы ранее не подтвержда
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Этот эксперимент не поддерживат ваш язык ({ $locale_code }).
+localeNotTranslatedWarningTitle = Этот эксперимент не был переведён на ваш язык ({ $locale_code }).
 localeWarningSubtitle = Вы всё ещё можете включить его, если хотите.
 
 
@@ -287,3 +318,20 @@ noScriptLink = Узнать почему
 
 viewPastExperiments = Посмотреть старые эксперименты
 hidePastExperiments = Скрыть старые эксперименты
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Что-то пошло не так!
+warningGenericDetail = С Лётчиком-испытателем что-то пошло не так. Пожалуйста, <a>напишите об ошибке</a> и укажите там это сообщение об ошибке.
+warningUpgradeFirefoxTitle = Для продолжения обновите Firefox!
+warningUpgradeFirefoxDetail = Для работы Лётчика-испытателя необходимо использовать последнюю версию Firefox. Чтобы начать, <a>обновите Firefox</a>.
+warningHttpsRequiredTitle = Требуется HTTPS!
+warningHttpsRequiredDetail = Для доступа к Летчику-испытателю необходимо использовать HTTPS. Для получения более подробной информации, пожалуйста, обратитесь к <a>нашей документации</a>.
+warningMissingPrefTitle = Вы разработчик Лётчика-испытателя?
+warningMissingPrefDetail = При запуске Лётчика-испытателя локально или в среде разработки необходимо использовать специальную конфигурацию. Для получения более подробной информации, пожалуйста, обратитесь к <a>нашей документации</a>.
+warningBadHostnameTitle = Неутверждённое имя хоста!
+warningBadHostnameDetail = Доступ к сайту Летчика-испытателя возможен только с testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net или example.com:8000. Для получения более подробной информации, пожалуйста, обратитесь к <a>нашей документации</a>.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Для работы Лётчика-испытателя необходимо включить JavaScript. Извините.

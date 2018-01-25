@@ -1,0 +1,191 @@
+@import '~photon-colors/colors.scss';
+@import '../../../styles/_utils';
+
+#four-oh-four,
+#retire,
+#share,
+#legacy-modal,
+#warning,
+#onboarding {
+  animation: fade-in 300ms forwards;
+  animation-delay: 300ms;
+  margin-bottom: $grid-unit * 1.5;
+  position: relative;
+
+  p {
+    font-size: $font-unit * 1.25;
+    line-height: $font-unit * 2;
+    margin: 0;
+  }
+
+  a:not(.button) {
+    color: $blue-40;
+  }
+}
+
+.modal-container {
+  @include flex-container(row, center, center);
+  animation: fade-in 500ms forwards;
+  background: $transparent-black-7;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+}
+
+.modal {
+  animation: fade-in-fly-up 300ms forwards;
+  animation-delay: 250ms;
+  background: $white;
+  border-radius: $medium-border-radius;
+  box-shadow: 0 4px $grid-unit $transparent-black-5;
+  color: $grey-90;
+  opacity: 0;
+  position: relative;
+  user-select: none;
+  width: $grid-unit * 30;
+
+  :not(.content-wrapper) & {
+    @include respond-to('small') {
+      width: 92%;
+    }
+  }
+
+  &.tour-modal {
+    max-width: 644px;
+    width: 644px;
+  }
+
+  &.uninstall-modal {
+    & .retire-icon {
+      background-image: url('../../../images/face-uninstall.svg');
+      background-repeat: none;
+      height: 59px;
+      margin: 30px auto 25px;
+      width: 65px;
+    }
+  }
+
+  &.retire-modal {
+    & .flying-icon {
+      background-image: url('../../../images/face-flying.svg');
+      background-repeat: none;
+      height: 59px;
+      margin: 30px auto 25px;
+      width: 65px;
+    }
+  }
+
+  &.not-found-modal {
+    & .not-found-icon {
+      background-image: url('../../../images/face-notfound.svg');
+      background-repeat: none;
+      height: 68px;
+      margin: 50px auto 30px;
+      width: 72px;
+    }
+
+    & .title {
+      font-weight: 300;
+      margin-bottom: 30px;
+    }
+  }
+
+  .modal-header-wrapper {
+    @include flex-container(row, center, center);
+    background-color: $teal-70;
+    border-top-left-radius: $medium-border-radius;
+    border-top-right-radius: $medium-border-radius;
+    height: 80px;
+
+    &.warning-modal {
+      background: $red-60;
+    }
+  }
+
+  .modal-header {
+    color: $white;
+    font-size: $font-unit * 2.75;
+    font-weight: 200;
+    line-height: $font-unit * 4;
+    margin: 0;
+    text-align: center;
+  }
+
+  .modal-cancel {
+    background-image: url('../../../images/close-icon.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    border-radius: $medium-border-radius;
+    cursor: pointer;
+    height: 30px;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    width: 30px;
+    z-index: 1;
+
+    &:hover {
+      background-color: $transparent-grey-10;
+    }
+
+    &:active {
+      background-color: $transparent-grey-20;
+    }
+
+    &.floating {
+      position: absolute;
+      right: 0;
+      top: -30px;
+    }
+  }
+
+  .modal-content {
+    margin: auto;
+    max-width: 420px;
+    overflow: hidden;
+    padding: $grid-unit * 1.5 $grid-unit;
+    position: relative;
+
+    & >:first-child {
+      margin-top: 0;
+    }
+
+    & >:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .modal-actions {
+    @include flex-container(column, space-between, center);
+    padding: 0 $grid-unit * 2.5 $grid-unit * 2.5;
+
+    .button {
+      font-size: $font-unit * 1.25;
+      padding: 0 ($grid-unit * .5);
+      width: 100%;
+    }
+  }
+
+  .modal-escape {
+    color: $blue-40;
+    position: relative;
+    top: 18px;
+  }
+
+  .copter {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 220px auto;
+    height: 180px;
+    margin: 0 auto;
+  }
+
+  .button {
+    margin: 0 auto;
+  }
+}

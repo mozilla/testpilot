@@ -17,6 +17,7 @@ footerLinkCookies = Inagan n tuqqna
 footerLinkPrivacy = Tabaḍnit
 footerLinkTerms = Tiwtilin
 footerLinkLegal = Usḍif
+footerLinkFeedback = Mudd-d tikti
 footerLinkAbout = Ɣef Test Pilot
 
 
@@ -29,6 +30,7 @@ menuWiki = Awiki Test Pilot
 menuDiscuss = Mmeslay ɣef Test Pilot
 menuFileIssue = Azen ugur
 menuRetire = Kkes Test Pilot
+headerLinkBlog = Ablug
 
 
 // The splash on the homepage.
@@ -97,8 +99,15 @@ notFoundHeader = Ihuh… 404 !
 emailOptInDialogTitle = Ansuf ɣeṛ Test Pilot!
 emailOptInMessage = Awi-d igmaḍ n ikayaden n tirmitin inek udiɣ wali amaynut.
 emailOptInConfirmationTitle = Imayl ittwaciyeɛ
-emailOptInSuccessMessage2 = Tanemirt-ik
 emailOptInConfirmationClose = Ɣef tirmitin…
+emailOptInDialogErrorTitle = Ayuh ala!
+
+
+// news feed updates.
+[[ updateList ]]
+
+latestUpdatesTitle = Ileqqman ineggura
+showMoreNewsTitle = Sken isallen izrin
 
 
 // A listing of all Test Pilot experiments.
@@ -109,12 +118,15 @@ experimentListJustLaunchedTab = Ikker tura akka
 experimentListJustUpdatedTab = Ittwalqem tura akka
 experimentListEndingTomorrow = Ad ifak azekka
 experimentListEndingSoon = Ad ifak ticki
-experimentsListCondensedHeader = Fren tirmitin inek!
+experimentCondensedHeader = Ansuf γeṛ Test Pilot!
+experimentListHeader = Fren tirmitin inek!
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
 [[ experimentCard ]]
 
+// Small button on experiment card that links to a survey for feedback submission
+experimentCardFeedback = Tikti
 experimentCardManage = Sefrek
 experimentCardGetStarted = Bdu
 experimentCardLearnMore = Issin ugar
@@ -150,7 +162,6 @@ experimentPromoSubheader = Nbennu timahilin n uzekka n i tsuta d-iteddun n Firef
 
 isEnabledStatusMessage = { $title } ittwarmed.
 installErrorMessage = Ihuh… { $title } ur yermid ara. Ɛreḍ ticki.
-participantCount = <span>{ $installation_count }</span> imttekkiyen
 otherExperiments = Ɛreḍ ula d tirmitin-agi nniḍen.
 giveFeedback = Mudd-d tikti
 disableHeader = Kkes armed i urmitan?
@@ -172,9 +183,33 @@ bugReports = Ineqqisen n ibugen
 discussExperiment = Sqeṛdec { $title }
 tourOnboardingTitle = { $title } ittwarmed!
 tourDoneButton = Tefra
-userCountContainer = Llan <span>{ $installation_count }</span> n yemdanen ttaɛraḍen { $title } akka tura!
 userCountContainerAlt = Ikker tura akka!
 highlightPrivacy = Tabaḍnit inek
+experimentGradReportButton = Tuɣalin n termit
+experimentGradReportPendingTitle = Tfuk termit
+experimentGradReportPendingCopy = Aqlaɣ nxeddem ɣef uneqqis ummid. Uɣal-d ticki akken ad twaliḍ ugar.
+experimentGradReportReady = Nhegga-d tuɣalin n termit leqqayen.
+experimentGoToLink = Ddu ar { $title }
+startedDateLabel = Azemz n tazwara n termit: <b>{ $startedDate }</b>
+
+
+// news updates dialog.
+[[ newsUpdatesDialog ]]
+
+nonExperimentDialogHeaderLink = Test Pilot
+learnMoreLink = ISSIN UGAR
+
+
+// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
+[[ experimentPlatform ]]
+
+experimentPlatformWebAddonMobile = Firefox / web / tarmit tazirazt
+experimentPlatformWebAddon = Firefox / tarmit web
+experimentPlatformWebMobile = web / tarmit tazirazt
+experimentPlatformAddonMobile = Firefox / tarmit tazirazt
+experimentPlatformWeb = tarmit web
+experimentPlatformAddon = tarmit Firefox
+experimentPlatformMobileApp = tarmit tazirazt
 
 
 // Shown when an experiment requires a version of Firefox newer than the user's.
@@ -190,7 +225,6 @@ versionChangeNoticeLink = Awi lqem amiran n Firefox.
 [[ uninstall ]]
 
 retireDialogTitle = Kkes Test Pilot?
-retireMessage = Akken teɣiḍ. Tigwat-agi ad tessens akk ikayaden urmiden, ad yekkes azegrir akked isefka n umiḍan inek ɣef iqeddacen nneɣ.
 retireEmailMessage = Akken ur tremseḍ ara isallen, sit ɣef useɣwen <em>ffeɣ seg ujerred</em> deg izen i d-yuzen Test pilot.
 retireSubmitButton = Kemmel
 pageTitleRetirePage = Firefox Test Pilot - Kkes Test Pilot
@@ -255,7 +289,6 @@ newsletterFooterSuccessBody = Ma yella ur tsentmeḍ ara ajerred inek ar tebratt
 // A warning shown to users when the experiment is not available in their language
 [[ localeWarning ]]
 
-localeUnavailableWarningTitle = Tarmit-agi ur tettusefrak ara s tutlayt inek ({ $locale_code }).
 localeWarningSubtitle = Tzemreḍ ad tremdeḍ akka tura ma yella tebɣiḍ.
 
 
@@ -280,3 +313,18 @@ noScriptLink = Af ayen
 
 viewPastExperiments = Sken tirmitanin izrin
 hidePastExperiments = Ffer tirmitanin izrin
+
+
+// Text of warnings to the user if various error conditions are detected
+[[ warnings ]]
+
+warningGenericTitle = Yella wayen ixuṣṣen!
+warningGenericDetail = Test Pilot ur iteddu ara akken iwata, Ma ulac aɣilif, <a>azen yir tiddin</a> udiɣ mmel-d izen n tuccḍa.
+warningUpgradeFirefoxTitle = Leqqem Firefox akken ad tkemleḍ!
+warningUpgradeFirefoxDetail = Test Pilot yesra lqem aneggaru n Firefox. <a>Leqqem Firefox</a> akken ad tebduḍ.
+warningHttpsRequiredTitle = Isra HTTPS!
+warningHttpsRequiredDetail = Test Pilot yessefk ad yekcem s HTTPS. Wali <a>tasemlit-nneɣ</a> i ugar n telqayt.
+warningMissingPrefTitle = Ad tesnefliḍ Test Pilot?
+warningMissingPrefDetail = Ticki tselkameḍ Test Pilot di twennafḍt tadigant neɣ n tneflit, tella twila ilaqen. Wali <a>tasemlit-nneɣ</a> i ugar n telɣut.
+warningBadHostnameTitle = Asennefteɣ ur yettwaqeblen ara!
+warningBadHostnameDetail = Asmel Test Pilot ur izmir ara ad yettwakcem deg testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net neɣ example.com:8000. Wali <a>tasemlit-nneɣ</a> i ugar n telɣut.
