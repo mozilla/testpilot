@@ -2,10 +2,6 @@
 
 import type { Experiment } from "./experiments";
 
-type RestartState = {
-  isRequired: boolean,
-};
-
 type InstalledExperiment = {
   active: boolean,
   addon_id: string,
@@ -26,8 +22,7 @@ type AddonState = {
   installed: InstalledExperiments,
   installedLoaded: boolean,
   installedAddons: Array<string>,
-  clientUUID: string,
-  restart: RestartState
+  clientUUID: string
 };
 
 function defaultState(): AddonState {
@@ -38,10 +33,7 @@ function defaultState(): AddonState {
     installed: {},
     installedLoaded: false,
     installedAddons: [],
-    clientUUID: "",
-    restart: {
-      isRequired: false
-    }
+    clientUUID: ""
   };
 }
 
@@ -161,15 +153,6 @@ function disableExperiment(
   return { ...state, installed: newInstalled };
 }
 
-function requireRestart(state: AddonState): AddonState {
-  return {
-    ...state,
-    restart: {
-      isRequired: true
-    }
-  };
-}
-
 export function getInstalled(state: AddonState): InstalledExperiments {
   return state.installed;
 }
@@ -210,8 +193,6 @@ export default function addonReducer(state: ?AddonState, action: AddonActions): 
       return manuallyEnableExperiment(state, action);
     case "MANUALLY_DISABLE_EXPERIMENT":
       return manuallyDisableExperiment(state, action);
-    case "REQUIRE_RESTART":
-      return requireRestart(state);
     default:
       return state;
   }
