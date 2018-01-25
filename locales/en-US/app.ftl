@@ -191,13 +191,6 @@ retirePageHeadline = Thanks for flying!
 retirePageMessage = Hope you had fun experimenting with us. <br> Come back any time.
 retirePageSurveyButton = Take a quick survey
 
-// Shown to users after installing Test Pilot if a restart is required.
-[[restartIntro]]
-restartIntroLead = Preflight checklist
-restartIntroOne = Restart your browser
-restartIntroTwo = Locate the Test Pilot add-on
-restartIntroThree = Select your experiments
-
 // Shown on a page presented to users three days after installing their first experiment.
 [[share]]
 sharePrimary = Love Test Pilot? Help us find some new recruits.
