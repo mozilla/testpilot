@@ -40,7 +40,6 @@ landingIntroOne = Yeni özellikleri test et.
 landingIntroTwo = Yorumlarını paylaş.
 landingIntroThree = Firefox’u inşa etmemize yardım et.
 landingLegalNotice = Devam ederseniz Test Pilotu’nun <a>Kullanım Koşulları</a> ve <a>Gizlilik Bildirimi</a>’ni kabul etmiş sayılırsınız.
-landingExperimentsTitle = En yeni deneysel özellikleri deneyin
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -48,7 +47,6 @@ landingExperimentsTitle = En yeni deneysel özellikleri deneyin
 
 landingInstallButton = Test Pilotu eklentisini yükle
 landingInstallingButton = Yükleniyor...
-landingInstalledButton = Özelliklerinizi seçin
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -110,6 +108,11 @@ latestUpdatesTitle = Son güncellemeler
 showMoreNewsTitle = Eski haberleri göster
 
 
+[[ featuredExperiment ]]
+
+moreDetail = Ayrıntıları göster
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -120,6 +123,7 @@ experimentListEndingTomorrow = Yarın bitiyor
 experimentListEndingSoon = Yakında bitiyor
 experimentCondensedHeader = Test Pilot'a hoş geldiniz!
 experimentListHeader = Deneylerinizi seçin!
+experimentListHeaderWithFeatured = Tüm deneylerimizi deneyin
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -182,7 +186,6 @@ tourLink = tur
 contribute = Katkıda bulunun
 bugReports = Hata raporları
 discussExperiment = { $title } deneyini tartış
-tourOnboardingTitle = { $title } etkinleştirildi!
 tourDoneButton = Bitti
 userCountContainerAlt = Yeni çıktı!
 highlightPrivacy = Gizliliğiniz
