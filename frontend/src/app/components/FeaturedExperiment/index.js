@@ -61,11 +61,11 @@ export default class FeaturedExperiment extends React.Component {
 
     return (
       <div className="featured-experiment">
+        <FeaturedStatus {...this.props} />
         <header className="featured-experiment__header">
           <div className={`experiment-icon-wrapper-${slug} experiment-icon-wrapper`}>
             <div className={`experiment-icon-${slug} experiment-icon`}></div>
           </div>
-          <FeaturedStatus {...this.props} />
           <div className="featured-experiment__title-wrapper">
             <h2 className="featured-experiment__title">{title}</h2>
             <div className="featured-experiment__info">
@@ -91,7 +91,6 @@ export default class FeaturedExperiment extends React.Component {
 
 
         <div className="featured-experiment__video">
-          <FeaturedStatus {...this.props} />
           <iframe
             width="100%"
             height="360"
