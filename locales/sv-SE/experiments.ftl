@@ -70,6 +70,7 @@ nomore404sContributors2Title = Director, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Senior Crawl Engineer, The Internet Archive
 notesDescription = Ett enkelt anteckningsblock inbyggt i Firefox. Har du någonsin behövt anteckna något medan du surfar på webben? Detta är experimentet för dig.
 notesIntroduction = Notes lägger till ett enkelt anteckningsblock på en sida i webbläsarens sidofält. Vi har lagt till några grundläggande formateringsalternativ till att börja med, men vi vill ha din återkoppling för att veta vilka funktioner du vill att vi ska lägga till.
+notesLegalnotice = Genom att fortsätta godkänner du <a>villkoren</a> och <a>sekretesspolicyerna</a> för Test Pilot och <a>Notes sekretesspolicy</a>.
 notesMeasurements0 = Notes kommer att samla in information om hur du använder funktionen, till exempel hur ofta du skapar anteckningar och hur länge du spenderar vid redigering av dem, antalet tecken du sparar i dina anteckningar och om du använder några redigeringsfunktioner (t.ex. fetstil eller stiliserad text).
 notesMeasurements1 = Notes kommer också att samla in information om din interaktion med tillägget, till exempel hur du öppnar funktionen och vilka knappar du kanske klickar på.
 notesDetails0Copy = Det är ett anteckningsblock. Varför tänkte vi inte på det tidigare?
