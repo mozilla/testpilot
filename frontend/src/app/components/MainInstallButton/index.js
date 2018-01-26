@@ -31,7 +31,7 @@ export default class MainInstallButton extends React.Component {
     if (e.button !== 0) {
       return;
     }
-    const { requireRestart, sendToGA, eventCategory, eventLabel,
+    const { sendToGA, eventCategory, eventLabel,
       installAddon, installCallback, navigateTo, hasAddon, postInstallCallback,
       isExperimentEnabled, enableExperiment, experiment } = this.props;
 
@@ -50,7 +50,7 @@ export default class MainInstallButton extends React.Component {
       return;
     }
     this.setState({ isInstalling: true });
-    installAddon(requireRestart, sendToGA, eventCategory, eventLabel)
+    installAddon(sendToGA, eventCategory, eventLabel)
       .then(() => {
         if (postInstallCallback) postInstallCallback();
       });
