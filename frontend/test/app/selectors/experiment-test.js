@@ -7,7 +7,8 @@ import experimentSelector, {
   l10nSelector,
   localeSelector,
   onlyLaunchedExperimentSelector,
-  featuredExperimentsSelector
+  featuredExperimentsSelector,
+  experimentsWithoutFeaturedSelector
 } from "../../../src/app/selectors/experiment";
 
 
@@ -61,6 +62,16 @@ describe("app/selectors/experiment", () => {
         assert.deepEqual(
           featuredExperimentsSelector(store),
           [_exp[2]]
+        );
+      });
+    });
+
+    describe("experimentsWithoutFeaturedSelector", () => {
+      it("should include launched experiments without is_featured flag", () => {
+        const store = _store(_exp);
+        assert.deepEqual(
+          experimentsWithoutFeaturedSelector(store),
+          [_exp[0]]
         );
       });
     });

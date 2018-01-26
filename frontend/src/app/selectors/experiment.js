@@ -53,6 +53,16 @@ export const l10nSelector = (locale, experiments) => experiments.filter(exp => {
   return true;
 });
 
+export const experimentsWithoutFeaturedSelector = createSelector(
+  launchedExperimentSelector,
+  experiments => experiments.filter((e) => !e.is_featured)
+);
+
+export const experimentsWithoutFeaturedSelectorWithL10n = createSelector(
+  [localeSelector, experimentsWithoutFeaturedSelector],
+  l10nSelector
+);
+
 export const featuredExperimentsSelector = createSelector(
   launchedExperimentSelector,
   experiments => experiments.filter((e) => e.is_featured)
