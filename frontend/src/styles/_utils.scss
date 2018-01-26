@@ -127,3 +127,78 @@ $breakpoints: (
     display: none;
   }
 }
+
+@mixin status-flags($left: 0, $top: 0, $mb: 0, $position: absolute) {
+  $tab-border-color: rgb(58, 133, 36);
+
+  .tab {
+    border-color: $tab-border-color;
+    border-radius: $small-border-radius;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    left: $left;
+    line-height: $grid-unit * 1.2;
+    margin-bottom: $mb;
+    outline: none;
+    padding: 1px 7px;
+    position: $position;
+    text-align: center;
+    text-decoration: none;
+    top: $top;
+    transition: background 150ms;
+    white-space: nowrap;
+    z-index: 1;
+  }
+
+  .enabled-tab {
+    background: $green-60;
+    color: $white;
+  }
+
+  .enabled-tab::before {
+    background-image: url('../../../images/check.svg');
+    background-position: center 2px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    display: inline-block;
+    height: 14px;
+    margin-right: 5px;
+    width: 14px;
+  }
+
+  .just-launched-tab {
+    background: $green-60;
+    color: $white;
+  }
+
+  .just-launched-tab::before {
+    background-image: url('../../../images/star.svg');
+    content: '';
+    display: inline-block;
+    height: 16px;
+    margin-right: 5px;
+    position: relative;
+    top: 3px;
+    width: 16px;
+  }
+
+  .just-updated-tab {
+    background: $green-60;
+    color: $white;
+  }
+
+  .just-updated-tab::before {
+    background-image: url('../../../images/star.svg');
+    content: '';
+    display: inline-block;
+    height: 16px;
+    margin-right: 4px;
+    position: relative;
+    top: 2px;
+    width: 16px;
+  }
+}

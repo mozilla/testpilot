@@ -19,11 +19,9 @@ export default class FeaturedStatus extends React.Component {
     const updated = enabled ? false : justUpdated(experiment);
     // justUpdated and enabled trump justLaunched
     const launched = (enabled || updated) ? false : justLaunched(experiment);
-    const showIcon = (enabled || launched || updated);
 
     return (
       <div className="featured-experiment__status">
-        {showIcon && <div className="star-icon"></div>}
 
         {launched && <Localized id="experimentListJustLaunchedTab">
           <div className="tab just-launched-tab">Just Launched</div>

@@ -1,8 +1,6 @@
 @import '~photon-colors/colors.scss';
 @import '../../../styles/_utils';
 
-$tab-border-color: rgb(58, 133, 36);
-
 .experiment-summary {
 
   @include flex-container(column, flex-start, stretch);
@@ -119,77 +117,7 @@ $tab-border-color: rgb(58, 133, 36);
     display: block;
   }
 
-  .tab {
-    border-color: $tab-border-color;
-    border-radius: $small-border-radius;
-    border-style: solid;
-    border-width: 1px;
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    height: $grid-unit * 1.2;
-    left: -5px;
-    line-height: $grid-unit * 1.2;
-    outline: none;
-    padding: 0 7px;
-    position: absolute;
-    text-align: center;
-    text-decoration: none;
-    top: -5px;
-    transition: background 150ms;
-    white-space: nowrap;
-    z-index: 99999;
-  }
-
-  .enabled-tab {
-    background: $green-60;
-    color: $white;
-  }
-
-  .enabled-tab::before {
-    background-image: url('./img/check.svg');
-    background-position: center 2px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    content: '';
-    display: inline-block;
-    height: 14px;
-    margin-right: 5px;
-    width: 14px;
-  }
-
-  .just-launched-tab {
-    background: $green-60;
-    color: $white;
-  }
-
-  .just-launched-tab::before {
-    background-image: url('./img/star.svg');
-    content: '';
-    display: inline-block;
-    height: 16px;
-    margin-right: 4px;
-    position: relative;
-    top: 2px;
-    width: 16px;
-  }
-
-  .just-updated-tab {
-    background: $green-60;
-    color: $white;
-  }
-
-  .just-updated-tab::before {
-    background-image: url('./img/star.svg');
-    content: '';
-    display: inline-block;
-    height: 16px;
-    margin-right: 4px;
-    position: relative;
-    top: 2px;
-    width: 16px;
-  }
-
+  @include status-flags(-5px, -5px);
 }
 
 .experiment-icon-wrapper {

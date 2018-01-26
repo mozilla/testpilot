@@ -11,12 +11,16 @@
       order: 1;
     }
 
-    .featured-experiment__video {
+    .featured-experiment__status {
       order: 2;
     }
 
-    .featured-experiment__description {
+    .featured-experiment__video {
       order: 3;
+    }
+
+    .featured-experiment__description {
+      order: 4;
     }
 
     .featured-experiment__actions {
@@ -24,7 +28,7 @@
     }
 
     .featured-experiment__details {
-      order: 4;
+      order: 6;
     }
   }
 
@@ -34,12 +38,13 @@
     padding: 10px;
   }
 
-  .featured-experiment__header,
+  .featured-experiment__heeader,
+  .featured-experiment__status,
   .featured-experiment__description,
-  .featured-experiment__details,
-  .featured-experiment__actions {
+  .featured-experiment__actions,
+  .featured-experiment__details {
     @include respond-to('medium') {
-      margin-right: 40px;
+      margin-right: 30px;
       max-width: 340px;
       width: 340px;
     }
@@ -56,6 +61,7 @@
   .featured-experiment__header {
     @include respond-to('small') {
       @include flex-container(column, center, center);
+      margin-bottom: 20px;
     }
 
     @include respond-to('not-small') {
@@ -237,13 +243,7 @@
   }
 
   .featured-experiment__status {
-    display: flex;
-    font-weight: bold;
-    margin: -5px 0 10px;
-
-    .star-icon {
-      opacity: 1;
-    }
+    @include status-flags(0, 0, 20px, relative);
 
     &:empty {
       display: none;
@@ -253,11 +253,8 @@
   .featured-experiment__video {
     @include flex-container(column, flex-start, stretch);
 
-    @include respond-to('small') {
-
-      .featured-experiment__status  {
-        display: none;
-      }
+    @include respond-to('not-small') {
+      margin-top: 40px;
     }
 
     iframe {
@@ -265,6 +262,7 @@
         height: 300px;
         width: 380px;
       }
+
       @include respond-to('small') {
         height: 260px;
         margin: 0 -6%;

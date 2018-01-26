@@ -54,11 +54,10 @@ describe("app/components/FeaturedExperiment", () => {
     expect(subject.find(".experiment-summary")).to.have.property("length", 0);
   });
 
-  // HACK: we inject this element into the DOM twice and show/hide based on window size
   it('should display an "enabled" text if the experiment is enabled', () => {
     expect(subject.find(".enabled-tab")).to.have.property("length", 0);
     subject.setProps({ enabled: true });
-    expect(subject.find(".enabled-tab")).to.have.property("length", 2);
+    expect(subject.find(".enabled-tab")).to.have.property("length", 1);
   });
 
   it("should display a feedback button if the experiment is enabled", () => {
@@ -79,7 +78,7 @@ describe("app/components/FeaturedExperiment", () => {
       }
     });
 
-    expect(subject.find(".just-launched-tab")).to.have.property("length", 2);
+    expect(subject.find(".just-launched-tab")).to.have.property("length", 1);
 
     subject.setProps({ enabled: true });
 
@@ -103,7 +102,7 @@ describe("app/components/FeaturedExperiment", () => {
     };
     subject.setProps(props);
 
-    expect(subject.find(".just-updated-tab")).to.have.property("length", 2);
+    expect(subject.find(".just-updated-tab")).to.have.property("length", 1);
 
     subject.setProps({ enabled: true });
 
