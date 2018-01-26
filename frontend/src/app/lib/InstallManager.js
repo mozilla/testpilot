@@ -37,7 +37,6 @@ function mozAddonManagerInstall(url, sendToGA) {
 }
 
 export function installAddon(
-  requireRestart,
   sendToGA,
   eventCategory,
   eventLabel
