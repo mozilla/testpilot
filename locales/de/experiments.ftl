@@ -70,6 +70,7 @@ nomore404sContributors2Title = Leiter, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Senior Crawl Engineer, The Internet Archive
 notesDescription = Ein einfacher, in Firefox integrierter Notizblock. Mussten Sie schon einmal während des Surfens etwas notieren? Dann ist das das richtige Experiment für Sie.
 notesIntroduction = Notes ergänzt die Sidebar Ihres Browsers um einen einfachen, einseitigen Notizblock. Wir haben für den Anfang einige einfache Formatierungsoptionen eingefügt, aber Ihre Meinung zu möglichen zusätzlichen Funktionen ist uns wichtig.
+notesLegalnotice = Indem Sie fortfahren, stimmen Sie den <a>Nutzungsbedingungen</a> und der <a>Datenschutzerklärung</a> von Test Pilot sowie der <a>Datenschutzerklärung von Notes</a> zu.
 notesMeasurements0 = Notes sammelt außerdem Daten über Ihre Nutzung dieser Funktion, zum Beispiel wie oft Sie Notizen erstellen und wie lange Sie sie bearbeiten, die Zeichenzahl, die Ihre Notiz umfasst und ob Sie Bearbeitungsfunktionen (z.B. fetten oder formatierten Text) nutzen.
 notesMeasurements1 = Notes sammelt auch Daten über Ihre Interaktion mit dem Add-on, zum Beispiel wie Sie auf die Funktion zugreifen und auf welche Schaltflächen Sie klicken.
 notesDetails0Copy = Es ist ein Notizblock. Warum ist uns das nicht früher eingefallen?
