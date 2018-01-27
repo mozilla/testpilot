@@ -70,6 +70,7 @@ nomore404sContributors2Title = Pengarah, Wayback Machine, Internet Archive
 nomore404sContributors3Title = Jurutera Kanan Crawl, Internet Archive
 notesDescription = Pad nota ringkas dibina dalam Firefox. Pernahkan anda perlu menulis sesuatu semasa melayar web? Ini eksperimen untuk anda.
 notesIntroduction = Notes ialah pad nota ringkas satu-halaman ditambah di bar sisi pelayar anda. Kami ada menyediakan beberapa pilihan format asas untuk anda mulakan, tapi kami perlukan maklum balas anda untuk kami tambahkan dengan ciri yang anda mahu.
+notesLegalnotice = Dengan meneruskan, anda bersetuju dengan <a>terma</a> dan polisi <a>privasi</a> Test Pilot dan  <a>polisi privasi Notes</a>.
 notesMeasurements0 = Notes ini akan mengumpulkan maklumat perihal ciri yang anda gunakan, seperti kekerapan anda menulis nota dan tempoh yang anda ambil untuk mengeditnya, bilangan aksara yang anda simpan dalam nota, dan ciri mengedit yang anda gunakan (contoh, teks tebal atau gaya).
 notesMeasurements1 = Notes juga akan mengumpulkan maklumat perihal interaksi anda dengan add-on, seperti cara anda mengakses cirinya, dan butang yang anda klik.
 notesDetails0Copy = Ini cuma pad nota. Kenapalah kami tidak terfikirkannya lebih awal?
