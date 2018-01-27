@@ -70,6 +70,7 @@ nomore404sContributors2Title = Wayback Machine 互联网档案馆，主管
 nomore404sContributors3Title = 互联网档案馆，“网络爬虫”高级工程师
 notesDescription = 内置到 Firefox 的简单记事本。浏览网络时突然要记点什么？本实验为你提供场地。
 notesIntroduction = Notes 将一个简单、单页的记事本添加到了您的浏览器侧栏。我们已经添加了一些基本的格式化选项，我们仍需您的反馈来告诉我们还需要哪些功能。
+notesLegalnotice = 继续即代表您同意 Test Pilot 的<a>使用条款</a>和<a>隐私政策</a>，以及<a>隐私政策声明</a>。
 notesMeasurements0 = Notes 将收集有关您使用功能的信息，例如创建笔记的频率和编辑的时长，笔记中保存的字符数，以及是否使用任何编辑功能（例如粗体或文本风格）。
 notesMeasurements1 = Notes 还将收集有关您与附加组件交互的信息，例如您访问功能的方式，以及您可能点击的按钮。
 notesDetails0Copy = 这是一个记事本。为什么我们以前没有想过呢？
