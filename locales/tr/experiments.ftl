@@ -119,6 +119,7 @@ sendContributors5Title = Firefox UX
 sendContributors6Title = UX Geliştirici
 sendContributors7Title = Kadrolu Ürün/UX Tasarımcısı
 snoozetabsDescription = Yanlış zamanda doğru sitede misiniz? Snooze Tabs ile sekmeleri geçici olarak uykuya yatırıp daha sonra açılmaları için alarm kurabilirsiniz.
+snoozetabsMeasurements0 = Snooze Tabs, eklentiyle etkileşiminiz (araç çubuğundaki Uyut düğmesine ne zaman tıkladığınız, uyuyan sekmelere panelden ne zaman eriştiğiniz, onları ne zaman düzenlediğiniz veya sildiğiniz) hakkında bilgi toplar.
 snoozetabsMeasurements2 = Snooze Tabs; sekmelerinizle ilgili adres, meta öznitelikleri ve sayfa içeriği gibi hiçbir bilgiyi ve ayrıntıyı TOPLAMAZ.
 snoozetabsDetails0Copy = Sekmelerinizi uyutun, Firefox'un onları ne zaman açacağını siz seçin.
 snoozetabsDetails1Copy = Snooze Tabs, sekmeniz geri geldiğinde sizi uyaracaktır.
