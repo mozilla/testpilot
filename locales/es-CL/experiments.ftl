@@ -70,6 +70,7 @@ nomore404sContributors2Title = Director, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Ingeniero Senior, The Internet Archive
 notesDescription = Un bloc de notas simple integrado a Firefox. ¿Necesitas anotar algo mientras navegas en la web? Este es un experimento hecho para ti.
 notesIntroduction = Notes añade un sencillo bloc de notas a la barra lateral de tu navegador. Hemos añadido algunas opciones básicas de formato para empezar, pero queremos que con tus comentarios nos digas qué te gustaría que añadiésemos.
+notesLegalnotice = Al proceder, aceptas los <a>términos</a> y la política de <a>privacidad</a> de Test Pilot y la <a>política de privacidad de Notes</a>.
 notesMeasurements0 = Notes reunirá información acerca de tu uso de la función, como la frecuencia con la que creas notas o cuánto tiempo te toma editarlas, el número de caracteres que guardas en las notas, y si usas alguna función de edición (por ejemplo, texto en negrita o estilizado).
 notesMeasurements1 = Notes también reunirá información acerca de tu interacción con el complemento, como la forma en la que accedes y los botones en los que puedes hacer clic.
 notesDetails0Copy = Es un bloc de notas. ¿por qué no pensamos en esto antes?
