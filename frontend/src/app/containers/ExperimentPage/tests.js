@@ -18,6 +18,7 @@ import ExperimentEolDialog from "./ExperimentEolDialog";
 
 import { PRIVACY_SCROLL_OFFSET } from "./DetailsHeader";
 import DetailsDescription, { LocaleWarning } from "./DetailsDescription";
+import { StatsSection } from "./DetailsOverview";
 
 describe("app/containers/ExperimentPage", () => {
   const mockExperiment = {
@@ -820,5 +821,35 @@ describe("app/containers/ExperimentPage/ExperimentPreFeedbackDialog", () => {
       eventLabel: "foobar",
       outboundURL: surveyURL
     }]);
+  });
+});
+
+describe("app/containers/ExperimentPage/DetailsOverview:StatsSection", () => {
+
+  let doShowTourDialog, mockClickEvent, props, sendToGA, subject;
+  beforeEach(() => {
+    mockClickEvent = {};
+    doShowTourDialog = sinon.spy();
+    sendToGA = sinon.spy();
+    props = {
+      experiment: {},
+      doShowTourDialog,
+      sendToGA
+    };
+    subject = shallow(<StatsSection {...props} />);
+  });
+
+  it("should send GA event when 'Take Tour' is clicked", () => {
+    subject.find(".showTour").simulate("click", mockClickEvent);
+    expect(sendToGA.lastCall.args).to.deep.equal(["event", {
+      eventCategory: "ExperimentDetailsPage Interactions",
+      eventAction: "button click",
+      eventLabel: "take tour"
+    }]);
+  });
+
+  it("launch tour when 'Take Tour' is clicked", () => {
+    subject.find(".showTour").simulate("click", mockClickEvent);
+    expect(doShowTourDialog.callCount).to.equal(1);
   });
 });

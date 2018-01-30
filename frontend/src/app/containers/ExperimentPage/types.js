@@ -156,7 +156,8 @@ export type DetailsOverviewType = {
   experiment: Object,
   graduated: boolean,
   highlightMeasurementPanel: boolean,
-  doShowTourDialog: Function
+  doShowTourDialog: Function,
+  sendToGA: Function
 };
 
 export type LaunchStatusType = {
@@ -166,7 +167,8 @@ export type LaunchStatusType = {
 
 export type StatsSectionType = {
   experiment: Object,
-  doShowTourDialog: Function
+  doShowTourDialog: Function,
+  sendToGA: Function
 };
 
 export type ContributorsSectionType = {
