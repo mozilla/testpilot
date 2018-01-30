@@ -18,7 +18,7 @@ footerLinkPrivacy = Gizlilik
 footerLinkTerms = Koşullar
 footerLinkLegal = Yasal Uyarı
 footerLinkFeedback = Geri bildirim ver
-footerLinkAbout = Test Pilotu Hakkında
+footerLinkAbout = Test Pilotu hakkında
 
 
 // Items in the menu.
