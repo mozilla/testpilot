@@ -196,6 +196,24 @@ class App extends Component {
   }
 }
 
+// These mirror breakpoints defined in frontend/src/styles/_utils.scss:$breakpoints
+export const BREAKPOINTS = {
+  BIG: "big",
+  MEDIUM: "medium",
+  SMALL: "small",
+  MOBILE: "mobile"
+};
+export const getBreakpoint = width => {
+  if (width >= 1020) {
+    return BREAKPOINTS.BIG;
+  } else if (width >= 769) {
+    return BREAKPOINTS.MEDIUM;
+  } else if (width >= 521) {
+    return BREAKPOINTS.SMALL;
+  }
+  return BREAKPOINTS.MOBILE;
+};
+
 function sendToGA(type, dataIn) {
   const data = dataIn || {};
   const hitCallback = () => {
@@ -209,6 +227,7 @@ function sendToGA(type, dataIn) {
     data.hitCallback = hitCallback;
     data.dimension8 = chosenTest.test;
     data.dimension9 = chosenTest.variant;
+    data.dimension10 = getBreakpoint(window.innerWidth);
     ga("send", data);
   } else {
     hitCallback();

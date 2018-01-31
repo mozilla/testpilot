@@ -89,6 +89,7 @@ $eol-light-orange: rgba($eol-orange, .25);
 }
 
 // Breakpoint controls
+// Note their use from JavaScript in frontend/src/app/containers/App/index.js:getBreakpoint
 $breakpoints: (
   big: '(min-width: 1020px)',
   medium: '(max-width: 1019px)',

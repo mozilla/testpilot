@@ -183,6 +183,8 @@ Here is a list of dimensions we are currently using
 | Home Page, Experiment Detail Page             | Determine if installation will require a restart  | 7         | {'no restart','restart required'}   |
 | Home Page, Experiment Detail Page, Share Page | Which test has this user been selected for?       | 8         | {'installButtonBorder', ''} |
 | Home Page, Experiment Detail Page, Share Page | Which cohort has this user been selected for?     | 9         | {'bigButton', ''} |
+| All                                           | In which responsive breakpoint is the user?       | 10        | {'mobile','small','medium','big'} |
+
 ### Tagged Links
 
 Whenever we are referring users to the Test Pilot website (either from an external website, or the add-on itself via a doorhanger/notification), we should include `utm_*` paramaters to allow us to properly measure conversion rates of the channel.
