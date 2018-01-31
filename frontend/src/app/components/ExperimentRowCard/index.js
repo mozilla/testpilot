@@ -50,7 +50,7 @@ export default class ExperimentRowCard extends React.Component {
     const launched = (enabled || updated) ? false : justLaunched(experiment);
 
     return (
-      <a href={`/experiments/${slug}`} onClick={() => this.openDetailPage()}
+      <a href={`/experiments/${slug}`} onClick={evt => this.openDetailPage(evt)}
         className={classnames("experiment-summary", {
           enabled,
           "just-launched": launched,
@@ -171,14 +171,15 @@ export default class ExperimentRowCard extends React.Component {
     return "";
   }
 
-  openDetailPage() {
+  openDetailPage(evt: Function) {
     const { eventCategory, experiment, sendToGA } = this.props;
     const { title } = experiment;
-
+    evt.preventDefault();
     sendToGA("event", {
       eventCategory,
       eventAction: "Open detail page",
-      eventLabel: title
+      eventLabel: title,
+      outboundURL: evt.target.href || evt.target.offsetParent.href
     });
   }
 

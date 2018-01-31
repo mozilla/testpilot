@@ -198,7 +198,10 @@ describe("app/components/FeaturedButton", () => {
     };
     mockClickEvent = {
       preventDefault: sinon.spy(),
-      stopPropagation: sinon.spy()
+      stopPropagation: sinon.spy(),
+      target: {
+        href: "/foo"
+      }
     };
     props = {
       enabled: false,
@@ -246,7 +249,8 @@ describe("app/components/FeaturedButton", () => {
     expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: props.eventCategory,
       eventAction: "Open detail page",
-      eventLabel: mockExperiment.title
+      eventLabel: mockExperiment.title,
+      outboundURL: mockClickEvent.target.href
     }]);
   });
 
