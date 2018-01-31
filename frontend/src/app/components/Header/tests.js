@@ -9,17 +9,12 @@ import { findLocalizedById } from "../../../../test/app/util";
 import Header from "./index";
 
 describe("Header", () => {
-  let preventDefault, stopPropagation, mockClickEvent, props, subject;
+  let preventDefault, stopPropagation, mockClickEvent, props, subject, target;
   beforeEach(() => {
     preventDefault = sinon.spy();
     stopPropagation = sinon.spy();
-    mockClickEvent = {
-      preventDefault,
-      stopPropagation,
-      target: {
-        href: "/foo"
-      }
-    };
+    target = { href: "/" };
+    mockClickEvent = { preventDefault, stopPropagation, target };
     props = {
       uninstallAddon: sinon.spy(),
       sendToGA: sinon.spy(),
@@ -44,7 +39,16 @@ describe("Header", () => {
       expect(subject.find(".settings-button")).to.have.property("length", 0);
     });
     it("should link to /", () => {
-      expect(subject.find(".wordmark").props()).to.have.property("href", "/");
+      expect(subject.find(".wordmark").props()).to.have.property("href", target.href);
+    });
+    it("should ping GA when wordmark is clicked", () => {
+      subject.find(".wordmark").simulate("click", mockClickEvent);
+      expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
+        eventCategory: "Menu Interactions",
+        eventAction: "click",
+        eventLabel: "Firefox logo",
+        outboundURL: target.href
+      }]);
     });
   });
 

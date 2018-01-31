@@ -114,6 +114,16 @@ export default class Header extends React.Component {
     });
   }
 
+  homepageClick(evt: Function) {
+    evt.preventDefault();
+    this.props.sendToGA("event", {
+      eventCategory: "Menu Interactions",
+      eventAction: "click",
+      eventLabel: "Firefox logo",
+      outboundURL: evt.target.href
+    });
+  }
+
   render() {
     let newsPageActive = false;
 
@@ -130,7 +140,7 @@ export default class Header extends React.Component {
           <LayoutWrapper flexModifier="row-between-breaking">
             <h1>
               <Localized id="siteName">
-                <a href={ this.setHeaderLinkPath() } className="wordmark">Firefox Test Pilot</a>
+                <a href={ this.setHeaderLinkPath() } className="wordmark" onClick={evt => this.homepageClick(evt)}>Firefox Test Pilot</a>
               </Localized>
             </h1>
             <div className="header-links">
