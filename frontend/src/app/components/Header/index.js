@@ -94,11 +94,13 @@ export default class Header extends React.Component {
     if (this.closeTimer) { clearTimeout(this.closeTimer); }
   }
 
-  blogLinkClick() {
+  blogLinkClick(evt: Object) {
+    evt.preventDefault();
     this.props.sendToGA("event", {
       eventCategory: "Menu Interactions",
       eventAction: "click",
-      eventLabel: "open blog"
+      eventLabel: "open blog",
+      outboundURL: evt.target.href
     });
   }
 
