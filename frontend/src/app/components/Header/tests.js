@@ -71,6 +71,16 @@ describe("Header", () => {
       }]);
     });
 
+    it("should ping GA on newsfeed link clicked", () => {
+      subject.find(".news-link").simulate("click", mockClickEvent);
+      expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
+        eventCategory: "Menu Interactions",
+        eventAction: "click",
+        eventLabel: "open newsfeed",
+        outboundURL: mockClickEvent.target.href
+      }]);
+    });
+
     it("should show a link to the news feed", () => {
       expect(subject.find(".news-link")).to.have.property("length", 1);
       expect(subject.find(".news-link").props()).to.have.property("href", "/news");

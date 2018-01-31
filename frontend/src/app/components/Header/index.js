@@ -104,6 +104,16 @@ export default class Header extends React.Component {
     });
   }
 
+  newsLinkClick(evt: Object) {
+    evt.preventDefault();
+    this.props.sendToGA("event", {
+      eventCategory: "Menu Interactions",
+      eventAction: "click",
+      eventLabel: "open newsfeed",
+      outboundURL: evt.target.href
+    });
+  }
+
   render() {
     let newsPageActive = false;
 
@@ -125,7 +135,7 @@ export default class Header extends React.Component {
             </h1>
             <div className="header-links">
               <Localized id="headerLinkNews">
-                <a className={classnames("news-link", { active: newsPageActive })} href="/news">News Feed</a>
+                <a className={classnames("news-link", { active: newsPageActive })} onClick={this.newsLinkClick.bind(this)} href="/news">News Feed</a>
               </Localized>
               <Localized id="headerLinkBlog">
                 <a className="blog-link" onClick={this.blogLinkClick.bind(this)} href="https://medium.com/firefox-test-pilot" target="_blank" rel="noopener noreferrer">Blog</a>
