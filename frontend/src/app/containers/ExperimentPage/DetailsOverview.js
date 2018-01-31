@@ -17,7 +17,8 @@ export default function DetailsOverview({
   experiment,
   graduated,
   highlightMeasurementPanel,
-  doShowTourDialog
+  doShowTourDialog,
+  sendToGA
 }: DetailsOverviewType) {
   const { slug, thumbnail, measurements } = experiment;
   const l10nId = (pieces: string) => experimentL10nId(experiment, pieces);
@@ -33,7 +34,7 @@ export default function DetailsOverview({
         <section className="user-count">
           <LaunchStatus {...{ experiment, graduated }} />
         </section>
-        {!graduated && <StatsSection {...{ experiment, doShowTourDialog }} />}
+        {!graduated && <StatsSection {...{ experiment, doShowTourDialog, sendToGA }} />}
         <ContributorsSection {...{ experiment, l10nId }} />
         {!graduated &&
           measurements &&
@@ -78,14 +79,22 @@ export const StatsSection = ({
     contribute_url,
     bug_report_url,
     discourse_url
-  }
+  },
+  sendToGA
 }: StatsSectionType) =>
   <div>
     <section className="stats-section">
       {!web_url &&
         <p>
           <Localized id="tourLink">
-            <a className="showTour" onClick={doShowTourDialog} href="#">
+            <a className="showTour" onClick={evt => {
+              sendToGA("event", {
+                eventCategory: "ExperimentDetailsPage Interactions",
+                eventAction: "button click",
+                eventLabel: "take tour"
+              });
+              doShowTourDialog(evt);
+            }} href="#">
               Launch Tour
             </a>
           </Localized>

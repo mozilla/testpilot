@@ -302,7 +302,8 @@ export class ExperimentDetail extends React.Component {
                     graduated,
                     highlightMeasurementPanel,
                     doShowTourDialog,
-                    l10nId
+                    l10nId,
+                    sendToGA
                   }}
                 />
                 <DetailsDescription
