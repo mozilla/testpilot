@@ -234,7 +234,7 @@ export function enableExperiment(dispatch, experiment, sendToGA) {
           })
         );
       },
-      () => {
+      (err) => {
         dispatch(addonActions.disableExperiment(experiment));
         dispatch(
           updateExperiment(experiment.addon_id, {
@@ -242,6 +242,7 @@ export function enableExperiment(dispatch, experiment, sendToGA) {
             error: true
           })
         );
+        if (err) throw err;
       }
     );
 }

@@ -97,8 +97,8 @@ export default class FeaturedButton extends React.Component {
   }
 
   render() {
-    const { experiment, installed, clientUUID, hasAddon,
-      enabled, postInstallCallback } = this.props;
+    const { experiment, installed, clientUUID,
+      hasAddon, enabled, postInstallCallback } = this.props;
     const { slug, survey_url, title } = experiment;
 
     let Buttons;
