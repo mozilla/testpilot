@@ -94,11 +94,23 @@ export default class Header extends React.Component {
     if (this.closeTimer) { clearTimeout(this.closeTimer); }
   }
 
-  blogLinkClick() {
+  blogLinkClick(evt: Object) {
+    evt.preventDefault();
     this.props.sendToGA("event", {
       eventCategory: "Menu Interactions",
       eventAction: "click",
-      eventLabel: "open blog"
+      eventLabel: "open blog",
+      outboundURL: evt.target.href
+    });
+  }
+
+  newsLinkClick(evt: Object) {
+    evt.preventDefault();
+    this.props.sendToGA("event", {
+      eventCategory: "Menu Interactions",
+      eventAction: "click",
+      eventLabel: "open newsfeed",
+      outboundURL: evt.target.href
     });
   }
 
@@ -123,7 +135,7 @@ export default class Header extends React.Component {
             </h1>
             <div className="header-links">
               <Localized id="headerLinkNews">
-                <a className={classnames("news-link", { active: newsPageActive })} href="/news">News Feed</a>
+                <a className={classnames("news-link", { active: newsPageActive })} onClick={this.newsLinkClick.bind(this)} href="/news">News Feed</a>
               </Localized>
               <Localized id="headerLinkBlog">
                 <a className="blog-link" onClick={this.blogLinkClick.bind(this)} href="https://medium.com/firefox-test-pilot" target="_blank" rel="noopener noreferrer">Blog</a>
