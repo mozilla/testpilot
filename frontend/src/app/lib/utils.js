@@ -52,7 +52,6 @@ export function isMobile(ua) {
   return ua.indexOf("mobi") > -1 || ua.indexOf("tablet") > -1;
 }
 
-
 // Passed a string, returns a verison of that string sanitized by stripping all
 // non-alphanumeric characters, lowercasing the entire string, then capitalizing
 // the first character.
@@ -93,3 +92,17 @@ export { experimentL10nId };
 export { lookup };
 
 export { newsUpdateL10nId };
+
+// Returns true if the passed event is a click event that ocurred while the user
+// was ctrl/cmd-clicking or middle-clicking, indicating that that they performed
+// the action expecting the link to open in a new tab.
+export const shouldOpenInNewTab = (e: Object) => {
+  if (
+    !e ||
+    e.type !== "click" ||
+    (!("which" in e) && !("ctrlKey" in e) && !("metaKey" in e))
+  ) {
+    return false;
+  }
+  return e.which === 2 || e.which === 4 || e.ctrlKey || e.metaKey;
+};

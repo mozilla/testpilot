@@ -808,7 +808,7 @@ describe("app/containers/ExperimentPage/ExperimentPreFeedbackDialog", () => {
       eventAction: "PreFeedback Confirm",
       eventLabel: "foobar",
       outboundURL: surveyURL
-    }]);
+    }, mockClickEvent]);
   });
 
   it("should launch feedback on <Enter> key pressed", () => {
@@ -820,7 +820,7 @@ describe("app/containers/ExperimentPage/ExperimentPreFeedbackDialog", () => {
       eventAction: "PreFeedback Confirm",
       eventLabel: "foobar",
       outboundURL: surveyURL
-    }]);
+    }, mockClickEvent]);
   });
 });
 

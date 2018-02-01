@@ -246,7 +246,7 @@ describe("app/components/FeaturedButton", () => {
     });
     subject.find(".manage-button").simulate("click", mockClickEvent);
 
-    expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
+    expect(props.sendToGA.lastCall.args.slice(0, 2)).to.deep.equal(["event", {
       eventCategory: props.eventCategory,
       eventAction: "Open detail page",
       eventLabel: mockExperiment.title,

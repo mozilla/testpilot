@@ -79,13 +79,12 @@ export default class FeaturedButton extends React.Component {
 
   handleManage = (evt: Function) => {
     const { experiment, eventCategory } = this.props;
-    evt.preventDefault();
     this.props.sendToGA("event", {
       eventCategory,
       eventAction: "Open detail page",
       eventLabel: experiment.title,
       outboundURL: evt.target.href
-    });
+    }, evt);
   };
 
   handleFeedback = () => {
