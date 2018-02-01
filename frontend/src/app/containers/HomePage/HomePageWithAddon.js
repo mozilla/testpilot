@@ -172,7 +172,9 @@ export default class HomePageWithAddon extends React.Component {
         </LayoutWrapper>
         <Visibility className="landingExperiments">
           <div className="moreButton">
-            <a className="arrow" href="#experiments">More Experiments</a>
+            <Localized id="landingMoreExperimentsButton">
+              <a className="arrow" href="#experiments">More Experiments</a>
+            </Localized>
           </div>
           <Banner>
             <LayoutWrapper>
