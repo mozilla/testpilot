@@ -31,15 +31,18 @@ export default class MainInstallButton extends React.Component {
     if (e.button !== 0) {
       return;
     }
-    const { requireRestart, sendToGA, eventCategory, eventLabel,
-      installAddon, installCallback, navigateTo, hasAddon, postInstallCallback,
-      isExperimentEnabled, enableExperiment, experiment } = this.props;
+    const { requireRestart, sendToGA, eventCategory,
+      installAddon, installCallback, navigateTo, eventLabel,
+      postInstallCallback, isExperimentEnabled, hasAddon,
+      enableExperiment, experiment } = this.props;
 
     if (hasAddon) {
       if (!isExperimentEnabled(experiment)) {
         this.setState({ isInstalling: true }, () => enableExperiment(experiment)
           .then(() => {
             if (postInstallCallback) postInstallCallback();
+          }).catch((err) => {
+            this.setState({isInstalling: false});
           }));
       } else navigateTo("/experiments");
       return;
