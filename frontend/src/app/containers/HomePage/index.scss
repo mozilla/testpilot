@@ -13,12 +13,72 @@
       display: inline-block;
       padding-top: 56px;
       padding-bottom: 16px;
-      background-image: url(./more-experiments-button.svg);
-      background-repeat: no-repeat;
-      background-position: top center;
-      background-size: 46px 46px;
       font-size: 13px;
       line-height: 15px;
+    }
+  }
+
+  .arrow {
+    width: 150px;
+    height: 70px;
+    position: relative;
+    background-image: url(./more-experiments-button-oval.svg);
+    background-size: 46px 46px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    font-size: 13px;
+    font-family: 'Fira Sans', sans-serif;
+    color: #fff;
+    text-align: center;
+    line-height: 120px;
+  }
+
+  .arrow:before {
+    content: '';
+    width: 46px;
+    height: 46px;
+    background-image: url(./more-experiments-button-arrow.svg);
+    background-position: center 8px;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    animation: move 2.5s infinite ease-out;
+    opacity: 0;
+  }
+
+  .arrow:after {
+    content: '';
+    width: 46px;
+    height: 46px;
+    background-image: url(./more-experiments-button-arrow.svg);
+    background-position: center 8px;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    animation: move 2.5s infinite ease-out .75s;
+    opacity: 0;
+  }
+
+  @keyframes move {
+    0% {
+      opacity: 0;
+      background-position: center 8px;
+    }
+    24% {
+      opacity: 1;
+      background-position: center 17px;
+    }
+    48% {
+      opacity: 0;
+      background-position: center 20px;
     }
   }
 

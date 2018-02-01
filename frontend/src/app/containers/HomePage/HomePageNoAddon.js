@@ -84,7 +84,7 @@ export default class HomePageNoAddon extends React.Component {
           { featuredSection }
           <Visibility className="landingExperiments">
             <div className="moreButton">
-              <a href="#experiments">More Experiments</a>
+              <a className="arrow" href="#experiments">More Experiments</a>
             </div>
             <Banner background={!featuredSection}>
               <LayoutWrapper flexModifier="column-center">
