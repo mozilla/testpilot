@@ -70,6 +70,7 @@ nomore404sContributors2Title = Direktor, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Starejši inženir iskanja, The Internet Archive
 notesDescription = Preprosta beležka, vgrajena v Firefox. Ste si kdaj med brskanjem po spletu morali kaj zapisati? To je poskus za vas.
 notesIntroduction = Notes doda preprosto, enostransko beležko v stransko vrstico brskalnika. Za začetek smo dodali nekaj osnovnih možnosti oblikovanja, želimo pa slišati vaše povratne informacije o tem, katere možnosti bi želeli, da dodamo.
+notesLegalnotice = Z nadaljevanjem se strinjate s <a>pogoji</a> in <a>pravilnikom zasebnosti</a> Test Pilota ter s <a>pravilnikom o zasebnosti Notes</a>.
 notesMeasurements0 = Notes bo zbiral informacije o vaši uporabi funkcije, na primer kako pogosto ustvarjate zapiske in koliko časa porabite za njihovo urejanje, število znakov, ki jih shranite v beležko, in ali uporabljate možnosti urejanja (npr. krepko ali oblikovano besedilo).
 notesMeasurements1 = Notes bo zbiral tudi informacije o vaši interakciji z dodatkom, na primer kako dostopate do funkcije in katere gumbe klikate.
 notesDetails0Copy = To je beležka. Zakaj se tega nismo spomnili prej?

@@ -70,6 +70,7 @@ nomore404sContributors2Title = Riaditeľ, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Senior Crawl Engineer, The Internet Archive
 notesDescription = Jednoduchý poznámkový blok zabudovaný priamo vo FIrefoxe. Potrebovali ste si niekedy pri prehliadaní niečo zapísať? Potom je tento experiment pre vás.
 notesIntroduction = Experiment Notes pridáva do bočného panelu vášho prehliadača jednoduchý poznámkový blok. Na začiatok sme pridali niekoľko základných funkcií na formátovanie a na základe vašej spätnej väzby pridáme ďalšie funkcie.
+notesLegalnotice = Pokračovaním súhlasíte s <a>podmienkami</a> a <a>zásadami ochrany súkromia</a> Test Pilotu a so <a>zásadami ochrany súkromia experimentu Notes</a>.
 notesMeasurements0 = Experiment Notes zbiera údaje o vašom používaní jeho funkcií, napríklad údaje o tom, ako často vytvárate poznámky, koľko času strávite pri ich úprave, ako sú vaše poznámky dlhé a či používate nejaké funkcie editora (tučné písmo alebo štylizovaný text).
 notesMeasurements1 = Experiment Notes zbiera taktiež údaje o vašej interakcii s doplnkom, napríklad o tom, akým spôsobom spúšťate jeho funkcie a na aké tlačidlá klikáte.
 notesDetails0Copy = Poznámkový blok. Prečo nám to nenapadlo skôr?

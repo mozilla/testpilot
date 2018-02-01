@@ -18,7 +18,7 @@ footerLinkPrivacy = Gizlilik
 footerLinkTerms = Koşullar
 footerLinkLegal = Yasal Uyarı
 footerLinkFeedback = Geri bildirim ver
-footerLinkAbout = Test Pilotu Hakkında
+footerLinkAbout = Test Pilotu hakkında
 
 
 // Items in the menu.
@@ -52,7 +52,7 @@ landingInstallingButton = Yükleniyor...
 // Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
-oneClickInstallMinorCta = Test Pilotu’nu yükle &amp;
+oneClickInstallMinorCta = Test Pilotu’nu yükle ve
 oneClickInstallMajorCta = { $title } deneyini etkinleştir
 
 
@@ -180,12 +180,12 @@ measurements = Gizliliğiniz
 experimentPrivacyNotice = Buradan { $title } deneyinin topladığı veriler hakkında daha fazla bilgi alabilirsiniz.
 contributorsHeading = Geliştirenler
 contributorsExtraLearnMore = Daha fazla bilgi al
-changelog = değişiklik günlüğü
+changelog = Değişiklik günlüğü
 tour = Tur
 tourLink = tur
 contribute = Katkıda bulunun
 bugReports = Hata raporları
-discussExperiment = { $title } deneyini tartış
+discussExperiment = { $title } deneyini tartışın
 tourDoneButton = Bitti
 userCountContainerAlt = Yeni çıktı!
 highlightPrivacy = Gizliliğiniz

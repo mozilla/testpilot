@@ -70,6 +70,7 @@ nomore404sContributors2Title = Direkteur, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Senior Crawl Engineer, The Internet Archive
 notesDescription = In ienfâldich yn Firefox ynboud notysjeblok. Wolle jo wolris gau wat notearje wylst jo oer it net sneupe? Dan is dit it eksperimint foar jo.
 notesIntroduction = Notes foeget in ienfâldich, ien side grut notysjeblok ta oan de sidebalke fan jo browser. Wy hawwe in pear basale opmaakopsjes tafoege om te begjinnen, mar hearre graach ko kommentaar oer hokker funksjes jo noch mear sjen soene wolle.
+notesLegalnotice = Troch fierder te gean, geane jo akkoard mei de <a>betingsten</a> en <a>beliedsrigels foar privacy</a> fan Test Pilot en it <a>privacybelied fan Notes</a>.
 notesMeasurements0 = Notes sammelet ynformaasje oer jo gebrûk fan de funksje, lykas hoe faak jo notysjes meitsje en hoefolle tiid jo besteegje om se te bewurkjen, it oantal tekens dat jo yn jo notysjes bewarje, en oft jo bewurkingsfunksjes brûke (lykas fet makke of opmakke tekst).
 notesMeasurements1 = Notes sammelet ek ynformaasje oer jo ynteraksje mei de add-on, lykas hoe't jo de funksje benaderje en op hokker knoppen jo klikke.
 notesDetails0Copy = In notysjeblok. Wêrom hawwe wy dêr net earder oan tocht?

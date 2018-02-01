@@ -70,6 +70,7 @@ nomore404sContributors2Title = Nawjedowaŕ, Wayback Machine, The Internet Archiv
 nomore404sContributors3Title = Senior Crawl Engineer, The Internet Archive
 notesDescription = Jadnory zapisnik zatwarjony w Firefox. Sćo južo musył něco notěrowaś, mjaztym až sćo web pśeglědował? To jo pšawy eksperiment za was. 
 notesIntroduction = Notes bocnicy wašogo wobglědowaka jadnory, jadnobócny zapisnik pśidawa. Smy někotare zakładne formatěrowańske nastajenja pśidali, ale dajśo nam pšosym wašo měnjenje k wěsći, kótare funkcije sebje žycyśo.
+notesLegalnotice = Gaž pókšacujośo, zwólijośo do <a>wuměnjenjow</a> a pšawidłow <a>priwatnosći</a> Test Pilot a do <a>pšawidłow priwatnosći Notes</a>.
 notesMeasurements0 = Notes daty wó wužywanju toś teje funkcije gromaźi, na pśikład kak cesto notice gótujośo a kak dłujko je wobźěłujośo, licbu znamuškow, kótarež w swójich noticach składujośo a lěc někake wobźěłowańske funkcije (na pś. tucny abo formatěrowany tekst) wužywaśo.
 notesMeasurements1 = Notes teke daty wó swójej interakciji z dodankom gromaźi, na pśikład kak na toś tu funkciju pśistup maśo, a na kótare tłocaški kliknjośo.
 notesDetails0Copy = Jo zapisnik. Cogodla njejo se to nam jěsnjej domysliło?
