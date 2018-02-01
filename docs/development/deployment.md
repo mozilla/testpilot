@@ -45,7 +45,7 @@ Please be as detailed as possible in the release notes. Examples - [2016-07-05](
 
 This will happen on Thursday at the end of sprint.
 
-1. `git checkout stage`  (No luck?  Try `get fetch mozilla` and `git checkout -b stage mozilla/stage` -- both commands assume your remote is named `mozilla`)
+1. `git checkout stage`  (No luck?  Try `git fetch mozilla` and `git checkout -b stage mozilla/stage` -- both commands assume your remote is named `mozilla`)
 2. `git reset --hard YYYY-MM-DD`  # whatever your tag name is
 3. `git push mozilla stage -f`  # Replace `mozilla` with whatever you name your upstream.  The `-f` is only necessary if we cherry-picked patches when we pushed last time.
 
