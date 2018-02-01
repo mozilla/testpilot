@@ -95,33 +95,30 @@ export default class Header extends React.Component {
   }
 
   blogLinkClick(evt: Object) {
-    evt.preventDefault();
     this.props.sendToGA("event", {
       eventCategory: "Menu Interactions",
       eventAction: "click",
       eventLabel: "open blog",
       outboundURL: evt.target.href
-    });
+    }, evt);
   }
 
   newsLinkClick(evt: Object) {
-    evt.preventDefault();
     this.props.sendToGA("event", {
       eventCategory: "Menu Interactions",
       eventAction: "click",
       eventLabel: "open newsfeed",
       outboundURL: evt.target.href
-    });
+    }, evt);
   }
 
   homepageClick(evt: Function) {
-    evt.preventDefault();
     this.props.sendToGA("event", {
       eventCategory: "Menu Interactions",
       eventAction: "click",
       eventLabel: "Firefox logo",
       outboundURL: evt.target.href
-    });
+    }, evt);
   }
 
   render() {

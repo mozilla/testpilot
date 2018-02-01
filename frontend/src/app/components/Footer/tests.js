@@ -47,7 +47,7 @@ describe("app/components/Footer", () => {
         eventAction: "social link clicked",
         eventLabel: label,
         outboundURL: mockClickEvent.target.href
-      }]);
+      }, mockClickEvent]);
     });
   });
 });

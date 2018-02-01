@@ -195,7 +195,7 @@ describe("app/components/ExperimentRowCard", () => {
       eventAction: "Open detail page",
       eventLabel: mockExperiment.title,
       outboundURL: mockClickEvent.target.href
-    }]);
+    }, mockClickEvent]);
   });
 
   it("should have an anchor component with the right properties", () => {

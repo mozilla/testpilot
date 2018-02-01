@@ -23,7 +23,12 @@ import addonActions from "../../actions/addon";
 import newsletterFormActions from "../../actions/newsletter-form";
 import RestartPage from "../RestartPage";
 import UpgradeWarningPage from "../UpgradeWarningPage";
-import { isFirefox, isMinFirefoxVersion, isMobile } from "../../lib/utils";
+import {
+  isFirefox,
+  isMinFirefoxVersion,
+  isMobile,
+  shouldOpenInNewTab
+} from "../../lib/utils";
 import {
   makeStaleNewsUpdatesSelector,
   makeFreshNewsUpdatesSelector,
@@ -214,10 +219,40 @@ export const getBreakpoint = width => {
   return BREAKPOINTS.MOBILE;
 };
 
-function sendToGA(type, dataIn) {
+/*
+Pings GA with the passed hitType and event data.
+
+Parameters:
+- type: indicates the type of event being reported to GA. One of 'pageview',
+  'screenview', 'event', 'transaction', 'item', 'social', 'exception', 'timing'.
+- dataIn: an object representing the event with some of the following
+  properties:
+    - eventCategory
+    - eventAction
+    - eventLabel
+    - outboundURL - a URL to which the browser should navigate after ensuring
+      that the event has been received by GA. It is done this way to prevent a
+      race condition between the logging of the event and the navigation to
+      another page. If outboundURL is provided here, evt must also be provided
+      in order to determine if the user would like this URL to open in a news
+      tab.
+- evt: the browser event that triggered the GA ping.
+*/
+function sendToGA(type, dataIn, evt = null) {
   const data = dataIn || {};
+  if (data.outboundURL && !evt) {
+    throw "If outboundURL is defined, you must also provide the click event.";
+  }
+  const openInNewTab = evt && shouldOpenInNewTab(evt);
+
+  // If we'll be opening a URL in the same tab, stop the navigation event from
+  // happening until after we've ensured that the GA ping has been logged.
+  if (data.outboundURL && openInNewTab === false) {
+    evt.preventDefault();
+  }
+
   const hitCallback = () => {
-    if (data.outboundURL) {
+    if (data.outboundURL && openInNewTab === false) {
       document.location = data.outboundURL;
     }
   };

@@ -58,14 +58,12 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
   }
 
   feedback(e: Object, url: string) {
-    e.preventDefault();
-
     this.props.sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "PreFeedback Confirm",
       eventLabel: this.props.experiment.title,
       outboundURL: url
-    });
+    }, e);
   }
 
   cancel(e: Object) {

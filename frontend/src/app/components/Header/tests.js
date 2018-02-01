@@ -43,7 +43,7 @@ describe("Header", () => {
     });
     it("should ping GA when wordmark is clicked", () => {
       subject.find(".wordmark").simulate("click", mockClickEvent);
-      expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
+      expect(props.sendToGA.lastCall.args.slice(0, 2)).to.deep.equal(["event", {
         eventCategory: "Menu Interactions",
         eventAction: "click",
         eventLabel: "Firefox logo",
@@ -67,7 +67,7 @@ describe("Header", () => {
 
     it("should ping GA on blog link clicked", () => {
       subject.find(".blog-link").simulate("click", mockClickEvent);
-      expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
+      expect(props.sendToGA.lastCall.args.slice(0, 2)).to.deep.equal(["event", {
         eventCategory: "Menu Interactions",
         eventAction: "click",
         eventLabel: "open blog",
@@ -77,7 +77,7 @@ describe("Header", () => {
 
     it("should ping GA on newsfeed link clicked", () => {
       subject.find(".news-link").simulate("click", mockClickEvent);
-      expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
+      expect(props.sendToGA.lastCall.args.slice(0, 2)).to.deep.equal(["event", {
         eventCategory: "Menu Interactions",
         eventAction: "click",
         eventLabel: "open newsfeed",
