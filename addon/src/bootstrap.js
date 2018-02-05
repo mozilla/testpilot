@@ -8,7 +8,6 @@ import PubSub from "pubsub-js";
 
 import { debug, log, setAddonMetadata } from "./lib/utils";
 import { startupDone, startupPromise, startupObserver } from "./lib/appStartup";
-import { startupLegacyStorage, shutdownLegacyStorage } from "./lib/legacyStorage";
 import { startupPrefsObserver, shutdownPrefsObserver } from "./lib/prefs";
 import { startupFrameScripts, shutdownFrameScripts } from "./lib/frameScripts";
 import { startupWebExtension, shutdownWebExtension } from "./lib/webExtension";
@@ -30,7 +29,6 @@ export function startup(data, reason) {
 
   return startupPromise
     .then(setupDebug)
-    .then(startupLegacyStorage)
     .then(() => startupTelemetry(data, reason))
     .then(startupAddonManager)
     .then(startupPrefsObserver)
@@ -50,7 +48,6 @@ export function shutdown(data, reason) {
     shutdownPrefsObserver();
     shutdownAddonManager();
     shutdownTelemetry(data, reason);
-    shutdownLegacyStorage();
     PubSub.clearAllSubscriptions();
   } catch (err) {
     log("shutdown error", err);
