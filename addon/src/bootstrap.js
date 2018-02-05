@@ -12,7 +12,6 @@ import { startupLegacyStorage, shutdownLegacyStorage } from "./lib/legacyStorage
 import { startupPrefsObserver, shutdownPrefsObserver } from "./lib/prefs";
 import { startupFrameScripts, shutdownFrameScripts } from "./lib/frameScripts";
 import { startupWebExtension, shutdownWebExtension } from "./lib/webExtension";
-import { startupEvents, shutdownEvents } from "./lib/events";
 import { startupChannels, shutdownChannels } from "./lib/channels";
 import { startupTelemetry, shutdownTelemetry } from "./lib/telemetry";
 import { startupAddonManager, shutdownAddonManager } from "./lib/addonManager";
@@ -34,7 +33,6 @@ export function startup(data, reason) {
     .then(() => startupTelemetry(data, reason))
     .then(startupAddonManager)
     .then(startupPrefsObserver)
-    .then(startupEvents)
     .then(startupChannels)
     .then(startupFrameScripts)
     .then(() => startupWebExtension(data, reason))
@@ -46,7 +44,6 @@ export function shutdown(data, reason) {
     shutdownWebExtension(data, reason);
     shutdownFrameScripts();
     shutdownChannels();
-    shutdownEvents();
     shutdownPrefsObserver();
     shutdownAddonManager();
     shutdownTelemetry(data, reason);

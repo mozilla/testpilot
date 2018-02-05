@@ -106,7 +106,6 @@ Several basic measurement features are implemented in [`./src/webextension/metri
 Additionally, this `metrics.js` module communicates with these Bootstrap modules to process metrics pings from different kinds of experiments:
 
 * [`./src/lib/channels.js`](./src/lib/channels.js) - implements BroadcastChannel-based message passing from WebExtension experiments for metrics events.
-* [`./src/lib/events.js`](./src/lib/events.js) - implements nsiObserver-based message passing from Bootstrap experiments for metric events.
 * [`./src/lib/telemetry.js`](./src/lib/telemetry.js) - provides the ability to send metrics events to Firefox Telemetry, as well as elevated access to information about the Firefox client.
 
 The `telemetry.js` on the Bootstrap side is also responsible for two more things:

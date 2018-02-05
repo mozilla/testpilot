@@ -18,8 +18,6 @@ const topics = {
       "getTelemetryEnvironment",
       "updateClientUUID",
       "updateEnvironment",
-      "observeEventTopic",
-      "notifyEventTopic",
       "openChannel",
       "submitExternalPing"
     ]
