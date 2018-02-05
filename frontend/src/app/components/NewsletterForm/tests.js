@@ -57,24 +57,7 @@ describe("app/components/NewsletterForm", () => {
 
     it("should be unchecked by default", () => {
       const subject = makeSubject().find('input[name="privacy"]');
-      expect(subject.prop("checked")).to.equal(false);
-    });
-
-    it("should take its value from the store", () => {
-      const subject = makeSubject({ privacy: true }).find('input[name="privacy"]');
-      expect(subject.prop("checked")).to.equal(true);
-    });
-
-    it("should fire setPrivacy on click", () => {
-      const initial = false;
-      const setPrivacy = sinon.spy();
-      const subject = makeSubject({
-        setPrivacy,
-        privacy: initial
-      }).find('input[name="privacy"]');
-      subject.simulate("click", { target: { checked: !initial } });
-      expect(setPrivacy.calledOnce).to.equal(true);
-      expect(setPrivacy.getCall(0).args[0]).to.equal(!initial);
+      expect(subject.prop("checked")).to.be.undefined;
     });
   });
 

@@ -16,19 +16,12 @@ type NewsletterFormProps = {
   isModal?: boolean,
   subscribe?: Function,
   setEmail?: Function,
-  setPrivacy?: Function,
   buttonRef?: Function
-}
-
-type NewsletterFormState = {
-  privacyNote: boolean
 }
 
 export default class NewsletterForm extends React.Component {
   props: NewsletterFormProps
-  state: NewsletterFormState
   handleEmailChange: Function
-  handlePrivacyClick: Function
   handleSubmit: Function
 
   static defaultProps = defaultState();
@@ -36,11 +29,7 @@ export default class NewsletterForm extends React.Component {
   constructor(props: NewsletterFormProps) {
     super(props);
     this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handlePrivacyClick = this.handlePrivacyClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = {
-      privacyNote: false
-    };
   }
 
   makeRevealedClassNames() {
@@ -68,12 +57,6 @@ export default class NewsletterForm extends React.Component {
     );
   }
 
-  handlePrivacyClick(evt: Object) {
-    if (typeof this.props.setPrivacy !== "undefined") {
-      this.props.setPrivacy(evt.target.checked);
-    }
-  }
-
   renderPrivacyField() {
     const fieldName = "privacy";
     const privacy = <Localized id="newsletterFormPrivacyNoticePrivacyLink">
@@ -82,15 +65,8 @@ export default class NewsletterForm extends React.Component {
     </Localized>;
 
     return <div>
-      <input name={fieldName} id={fieldName} type="checkbox" checked={this.props.privacy} required
-        onChange={this.handlePrivacyClick} onClick={this.handlePrivacyClick} />
       <label className={this.makeRevealedClassNames()} htmlFor={fieldName}>
-        <span className="newsletter-form__check" />
-        { this.state.privacyNote ? <Localized id="newsletterFormPrivacyAgreementRequired">
-          <span className="error-msg">
-            Please check this box if you want to proceed.
-          </span>
-        </Localized> : null }
+        <input name={fieldName} id={fieldName} type="checkbox" required />
         <LocalizedHtml id="newsletterFormPrivacyNotice" $privacy={privacy}>
           <span>
             I&apos;m okay with Mozilla handling my info as explained in {privacy}.
@@ -112,7 +88,7 @@ export default class NewsletterForm extends React.Component {
     }
     return <Localized id='newsletterFormSubmitButton'>
       <button className={classnames("button", "large", this.props.isModal ? "default" : "outline")}
-        ref={this.props.buttonRef} onClick={this.checkPrivacy}>Sign Up Now</button>
+        ref={this.props.buttonRef}>Sign Up Now</button>
     </Localized>;
   }
 
@@ -126,21 +102,10 @@ export default class NewsletterForm extends React.Component {
     );
   }
 
-  checkPrivacy = () => {
-    if (!this.props.privacy) {
-      this.setState({ privacyNote: true });
-    }
-  }
-
   handleSubmit(evt: Object) {
     evt.preventDefault();
-    if (!this.props.privacy) {
-      this.setState({ privacyNote: true });
-    } else {
-      this.setState({ privacyNote: false });
-      if (typeof this.props.subscribe !== "undefined") {
-        this.props.subscribe(this.props.email);
-      }
+    if (typeof this.props.subscribe !== "undefined") {
+      this.props.subscribe(this.props.email);
     }
   }
 
