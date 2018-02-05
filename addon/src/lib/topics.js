@@ -11,7 +11,6 @@ const topics = {
     webExtensionAPI: [
       "ready",
       "clickBrowserAction",
-      "getLegacyStorage",
       "getAvailableAddons",
       "getCachedClientID",
       "getAddonMetadata",
