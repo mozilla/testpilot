@@ -19,6 +19,7 @@ describe("app/containers/HomePage", () => {
   beforeEach(function() {
     props = {
       experiments: [],
+      experimentsWithoutFeatured: [],
       hasAddon: false,
       isFirefox: false,
       replaceState: sinon.spy()
@@ -46,6 +47,7 @@ describe("app/containers/HomePageNoAddon", () => {
     props = {
       experiments: [],
       featuredExperiments: [],
+      experimentsWithoutFeatured: [],
       hasAddon: false,
       isFirefox: false,
       uninstallAddon: sinon.spy(),
@@ -56,13 +58,14 @@ describe("app/containers/HomePageNoAddon", () => {
   });
 
   it("should return nothing if no experiments are available", () => {
-    subject.setProps({ experiments: [] });
+    subject.setProps({ experiments: [], experimentsWithoutFeatured: [] });
     expect(subject.find("#landing-page")).to.have.property("length", 0);
   });
 
   it("should render default content with experiments loaded", () => {
     const experiments = [ { title: "foo" }, { title: "bar" } ];
-    subject.setProps({ experiments });
+    const experimentsWithoutFeatured = [ { title: "foo" }, { title: "bar" } ];
+    subject.setProps({ experiments, experimentsWithoutFeatured });
     expect(findLocalizedById(subject, "landingIntroOne")).to.have.property("length", 1);
     expect(subject.find("ExperimentCardList")).to.have.property("length", 1);
   });
@@ -72,13 +75,15 @@ describe("app/containers/HomePageNoAddon", () => {
 
     const experiments = [ { title: "foo" }, { title: "bar" } ];
     const featuredExperiments = [ { title: "bar" } ];
-    subject.setProps({ experiments, featuredExperiments });
+    const experimentsWithoutFeatured = [ { title: "foo" } ];
+    subject.setProps({ experiments, featuredExperiments, experimentsWithoutFeatured });
     expect(subject.find("FeaturedExperiment")).to.have.property("length", 1);
   });
 
   it("should not display completed experiments", () => {
     const experiments = [ { title: "foo" }, { title: "bar", completed: "2016-10-01" } ];
-    subject.setProps({ experiments });
+    const experimentsWithoutFeatured = [ { title: "foo" }, { title: "bar", completed: "2016-10-01" } ];
+    subject.setProps({ experiments, experimentsWithoutFeatured });
     const xs = subject.find("ExperimentCardList").prop("experiments");
     expect(xs.length).to.equal(1);
     expect(xs[0].title).to.equal("foo");
@@ -91,7 +96,8 @@ describe("app/containers/HomePageWithAddon", () => {
   beforeEach(function() {
     props = {
       featuredExperiments: [],
-      experiments: [ { title: "foo" }, { title: "bar" } ],
+      experiments: [ { title: "foo" }, { title: "bar" }, {title: "featured", is_featured: true} ],
+      experimentsWithoutFeatured: [ { title: "foo" }, { title: "bar" } ],
       hasAddon: true,
       uninstallAddon: sinon.spy(),
       navigateTo: sinon.spy(),
@@ -148,16 +154,17 @@ describe("app/containers/HomePageWithAddon", () => {
   });
 
   it("should not show anything if no experiments are available", () => {
-    subject.setProps({ experiments: [] });
+    subject.setProps({ experiments: [], experimentsWithoutFeatured: [] });
     expect(subject.find("View")).to.have.property("length", 0);
   });
 
   it("should render featured experiment section if there is a featured experiment", () => {
     expect(subject.find("FeaturedExperiment")).to.have.property("length", 0);
 
-    const experiments = [ { title: "foo" }, { title: "bar" } ];
-    const featuredExperiments = [ { title: "bar" } ];
-    subject.setProps({ experiments, featuredExperiments });
+    const experiments = [ { title: "foo" }, { title: "bar" }, {title: "featured", is_featured: true} ];
+    const experimentsWithoutFeatured = [ { title: "foo" }, { title: "bar" } ];
+    const featuredExperiments = [ {title: "featured", is_featured: true} ];
+    subject.setProps({ experiments, featuredExperiments, experimentsWithoutFeatured });
     expect(subject.find("FeaturedExperiment")).to.have.property("length", 1);
   });
 

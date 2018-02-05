@@ -1,5 +1,4 @@
 /* eslint-disable */
-
 // @flow
 
 import classnames from 'classnames';
@@ -23,6 +22,7 @@ import type { InstalledExperiments } from '../../reducers/addon';
 type HomePageWithAddonProps = {
   hasAddon: any,
   experiments: Array<Object>,
+  experimentsWithoutFeatured: Array<Object>,
   installed: InstalledExperiments,
   featuredExperiments: Array<Object>,
   majorNewsUpdates: Array<Object>,
@@ -126,14 +126,15 @@ export default class HomePageWithAddon extends React.Component {
   }
 
   render() {
-    const { sendToGA, experiments, isAfterCompletedDate, staleNewsUpdates, freshNewsUpdates,
-            majorNewsUpdates, featuredExperiments, isExperimentEnabled } = this.props;
+    const { sendToGA, isAfterCompletedDate, staleNewsUpdates, freshNewsUpdates,
+            majorNewsUpdates, featuredExperiments, isExperimentEnabled,
+            experimentsWithoutFeatured, experiments } = this.props;
 
-    if (experiments.length === 0) { return null; }
+    if (experimentsWithoutFeatured.length === 0) { return null; }
 
     const { showEmailDialog, showNewsUpdateDialog } = this.state;
-    const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
-    const pastExperiments = experiments.filter(isAfterCompletedDate);
+    const currentExperiments = experimentsWithoutFeatured.filter(x => !isAfterCompletedDate(x));
+    const pastExperiments = experimentsWithoutFeatured.filter(isAfterCompletedDate);
     const featuredExperiment = featuredExperiments.length ? featuredExperiments[0] : false;
 
     const featuredSection = featuredExperiment ? (<Banner background={true}>

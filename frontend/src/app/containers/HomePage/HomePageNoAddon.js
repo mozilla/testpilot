@@ -19,6 +19,7 @@ type HomePageNoAddonProps = {
   isFirefox: boolean,
   installed: InstalledExperiments,
   experiments: Array<Object>,
+  experimentsWithoutFeatured: Array<Object>,
   featuredExperiments: Array<Object>,
   isAfterCompletedDate: Function,
   navigateTo: Function,
@@ -31,12 +32,12 @@ export default class HomePageNoAddon extends React.Component {
   props: HomePageNoAddonProps
 
   render() {
-    const { experiments, isAfterCompletedDate, featuredExperiments } = this.props;
+    const { isAfterCompletedDate, featuredExperiments, experimentsWithoutFeatured } = this.props;
 
-    if (experiments.length === 0) { return null; }
+    if (experimentsWithoutFeatured.length === 0) { return null; }
 
-    const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
-    const pastExperiments = experiments.filter(isAfterCompletedDate);
+    const currentExperiments = experimentsWithoutFeatured.filter(x => !isAfterCompletedDate(x));
+    const pastExperiments = experimentsWithoutFeatured.filter(isAfterCompletedDate);
     const featuredExperiment = featuredExperiments.length ? featuredExperiments[0] : false;
 
     const installSplash = <Banner>

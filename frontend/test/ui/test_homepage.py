@@ -58,8 +58,12 @@ def test_number_of_experiments(base_url, selenium):
     completed_experiments = len(
         [value for value in data['results'] if 'completed' in value and
          value['completed'] < str(datetime.utcnow())]) + 1
-    assert len(page.body.experiments) == int(
-        len(data['results']) - completed_experiments)
+    if page.featured.is_displayed:
+        assert len(page.body.experiments) == int(
+            len(data['results']) - completed_experiments - 1)
+    else:
+        assert len(page.body.experiments) == int(
+            len(data['results']) - completed_experiments)
 
 
 @pytest.mark.nondestructive
