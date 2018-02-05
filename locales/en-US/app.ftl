@@ -224,7 +224,6 @@ newsletterFormEmailPlaceholder
     .placeholder = Your email here
 newsletterFormDisclaimer = We will only send you Test Pilot-related information.
 newsletterFormPrivacyNotice = I'm okay with Mozilla handling my info as explained in <a>this privacy notice</a>.
-newsletterFormPrivacyAgreementRequired = Please check this box if you want to proceed.
 newsletterFormSubmitButton = Sign Up Now
 newsletterFormSubmitButtonSubmitting = Submitting...
 
