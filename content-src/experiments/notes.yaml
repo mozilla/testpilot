@@ -3,7 +3,7 @@ title: 'Notes'
 slug: notes
 is_featured: true
 platforms: ['addon']
-min_release: 54
+min_release: 57
 thumbnail: /static/images/experiments/notes/experiments_experiment/thumbnail.png
 description: >
   A simple notepad built into Firefox. Ever need to jot
