@@ -6,7 +6,7 @@ const topics = {
     addonManager: ["enabled", "disabled", "installed", "uninstalled"],
     prefs: ["prefsChange"],
     channels: ["testpilot-telemetry"],
-    events: ["idle-daily", "send-metric", "register-variants"],
+    events: ["idle-daily", "send-metric"],
     webExtension: ["portConnected"],
     webExtensionAPI: [
       "ready",
