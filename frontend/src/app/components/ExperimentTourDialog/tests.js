@@ -86,7 +86,8 @@ describe("app/components/ExperimentTourDialog", () => {
     expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
-      eventLabel: "forward to step 1"
+      eventLabel: "forward to step 1",
+      dimension11: props.experiment.slug
     }]);
   });
 
@@ -98,7 +99,8 @@ describe("app/components/ExperimentTourDialog", () => {
     expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
-      eventLabel: "cancel tour"
+      eventLabel: "cancel tour",
+      dimension11: props.experiment.slug
     }]);
   });
 
@@ -110,7 +112,8 @@ describe("app/components/ExperimentTourDialog", () => {
     expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
-      eventLabel: "cancel tour"
+      eventLabel: "cancel tour",
+      dimension11: props.experiment.slug
     }]);
   });
 });

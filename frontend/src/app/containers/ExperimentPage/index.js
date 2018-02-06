@@ -362,7 +362,8 @@ export class ExperimentDetail extends React.Component {
         requireRestart,
         sendToGA,
         eventCategory,
-        eventLabel
+        eventLabel,
+        experiment.slug
       );
     }
     let progressButtonWidth;
@@ -383,7 +384,8 @@ export class ExperimentDetail extends React.Component {
       sendToGA("event", {
         eventCategory: "ExperimentDetailsPage Interactions",
         eventAction: "Enable Experiment",
-        eventLabel: experiment.title
+        eventLabel: experiment.title,
+        dimension11: experiment.slug
       });
     }
 
@@ -425,7 +427,8 @@ export class ExperimentDetail extends React.Component {
     this.props.sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "Disable Experiment",
-      eventLabel: experiment.title
+      eventLabel: experiment.title,
+      dimension11: experiment.slug
     });
 
     this.setState({

@@ -80,7 +80,7 @@ export default class DetailsHeader extends React.Component {
 
     const { useStickyHeader, stickyHeaderSiblingHeight } = this.state;
 
-    const { title, subtitle, error, min_release, max_release } = experiment;
+    const { slug, title, subtitle, error, min_release, max_release } = experiment;
 
     let statusType = null;
     if (error) {
@@ -155,12 +155,13 @@ export default class DetailsHeader extends React.Component {
               }}
             />
             <MinimumVersionNotice
-              {...{ userAgent, title, hasAddon, min_release, sendToGA }}
+              {...{ userAgent, slug, title, hasAddon, min_release, sendToGA }}
             />
             <MaximumVersionNotice
               {...{
                 userAgent,
                 title,
+                slug,
                 hasAddon,
                 max_release,
                 graduated,
@@ -308,7 +309,8 @@ export const ExperimentControls = ({
     max_release,
     platforms,
     addon_id,
-    pre_feedback_copy
+    pre_feedback_copy,
+    slug
   } = experiment;
 
   const validVersion = isValidVersion(userAgent, min_release, max_release);
@@ -318,14 +320,16 @@ export const ExperimentControls = ({
       sendToGA("event", {
         eventCategory: "ExperimentDetailsPage Interactions",
         eventAction: "Give Feedback",
-        eventLabel: title
+        eventLabel: title,
+        dimension11: slug
       });
     } else {
       doShowPreFeedbackDialog(evt);
       sendToGA("event", {
         eventCategory: "ExperimentDetailsPage Interactions",
         eventAction: "Give Feedback",
-        eventLabel: experiment.title
+        eventLabel: experiment.title,
+        dimension11: slug
       });
     }
   };
@@ -448,6 +452,7 @@ export const ExperimentControls = ({
 export const MinimumVersionNotice = ({
   userAgent,
   title,
+  slug,
   hasAddon,
   min_release,
   sendToGA
@@ -470,7 +475,8 @@ export const MinimumVersionNotice = ({
               sendToGA("event", {
                 eventCategory: "ExperimentDetailsPage Interactions",
                 eventAction: "Upgrade Notice",
-                eventLabel: title
+                eventLabel: title,
+                dimension11: slug
               })}
             href="https://support.mozilla.org/kb/find-what-version-firefox-you-are-using"
             target="_blank"
@@ -488,6 +494,7 @@ export const MinimumVersionNotice = ({
 export const MaximumVersionNotice = ({
   userAgent,
   title,
+  slug,
   hasAddon,
   max_release,
   graduated,
@@ -507,7 +514,8 @@ export const MaximumVersionNotice = ({
               sendToGA("event", {
                 eventCategory: "ExperimentDetailsPage Interactions",
                 eventAction: "Upgrade Notice",
-                eventLabel: title
+                eventLabel: title,
+                dimension11: slug
               })}
             href="https://www.mozilla.org/firefox/"
             target="_blank"
@@ -525,13 +533,15 @@ export const MaximumVersionNotice = ({
 export const WebExperimentControls = ({
   web_url,
   title,
+  slug,
   sendToGA
 }: WebExperimentControlsType) => {
   function handleGoToLink() {
     sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "Enable Experiment",
-      eventLabel: title
+      eventLabel: title,
+      dimension11: slug
     });
   }
 
@@ -553,7 +563,7 @@ export const WebExperimentControls = ({
 };
 
 export const EnableButton = ({
-  experiment: { title, web_url, platforms },
+  experiment: { platforms, slug, title, web_url },
   installExperiment,
   isEnabling,
   progressButtonWidth,
@@ -561,7 +571,7 @@ export const EnableButton = ({
 }: EnableButtonType) => {
   const useWebLink = (platforms || []).indexOf("web") !== -1;
   if (useWebLink) {
-    return <WebExperimentControls {...{ web_url, title, sendToGA }} />;
+    return <WebExperimentControls {...{ web_url, title, slug, sendToGA }} />;
   }
 
   return (

@@ -327,7 +327,8 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
         expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
           eventCategory: "ExperimentDetailsPage Interactions",
           eventAction: "Enable Experiment",
-          eventLabel: experiment.title
+          eventLabel: experiment.title,
+          dimension11: experiment.slug
         }]);
       });
 
@@ -351,7 +352,8 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
         expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
           eventCategory: "ExperimentDetailsPage Interactions",
           eventAction: "Upgrade Notice",
-          eventLabel: experiment.title
+          eventLabel: experiment.title,
+          dimension11: experiment.slug
         }]);
 
         subject.setProps({ userAgent: `${userAgentPre}50.0` });
@@ -385,7 +387,8 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
         expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
           eventCategory: "ExperimentDetailsPage Interactions",
           eventAction: "Upgrade Notice",
-          eventLabel: experiment.title
+          eventLabel: experiment.title,
+          dimension11: experiment.slug
         }]);
       });
 
@@ -449,7 +452,8 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
           expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
             eventCategory: "ExperimentDetailsPage Interactions",
             eventAction: "Disable Experiment",
-            eventLabel: experiment.title
+            eventLabel: experiment.title,
+            dimension11: experiment.slug
           }]);
         });
 
@@ -470,7 +474,8 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
           expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
             eventCategory: "ExperimentDetailsPage Interactions",
             eventAction: "Give Feedback",
-            eventLabel: experiment.title
+            eventLabel: experiment.title,
+            dimension11: experiment.slug
           }]);
         });
 
@@ -598,7 +603,11 @@ describe("app/containers/ExperimentPage/TestpilotPromo", () => {
 });
 
 describe("app/containers/ExperimentPage/ExperimentDisableDialog", () => {
-  const experiment = { title: "foobar", survey_url: "https://example.com" };
+  const experiment = {
+    title: "foobar",
+    slug: "foo-bar",
+    survey_url: "https://example.com"
+  };
   const installed = { ex1: true, ex2: true };
   const clientUUID = "38c51b84-9586-499f-ac52-94626e2b29cf";
 
@@ -660,7 +669,8 @@ describe("app/containers/ExperimentPage/ExperimentDisableDialog", () => {
     expect(sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
-      eventLabel: "exit survey disabled"
+      eventLabel: "exit survey disabled",
+      dimension11: experiment.slug
     }]);
   });
 
@@ -677,7 +687,8 @@ describe("app/containers/ExperimentPage/ExperimentDisableDialog", () => {
     expect(sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
-      eventLabel: "exit survey disabled"
+      eventLabel: "exit survey disabled",
+      dimension11: experiment.slug
     }]);
   });
 });
@@ -732,7 +743,8 @@ describe("app/containers/ExperimentPage/ExperimentEolDialog", () => {
 
 describe("app/containers/ExperimentPage/ExperimentPreFeedbackDialog", () => {
   const experiment = {
-    title: "foobar",
+    title: "Foobar",
+    slug: "foobar",
     survey_url: "https://example.com/survey",
     pre_feedback_image: "/foo.png",
     pre_feedback_copy: '<p class="expectedCopy">markup works!</p>'
@@ -785,7 +797,8 @@ describe("app/containers/ExperimentPage/ExperimentPreFeedbackDialog", () => {
     expect(sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
-      eventLabel: "cancel feedback"
+      eventLabel: "cancel feedback",
+      dimension11: experiment.slug
     }]);
   });
 
@@ -795,7 +808,8 @@ describe("app/containers/ExperimentPage/ExperimentPreFeedbackDialog", () => {
     expect(sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
-      eventLabel: "cancel feedback"
+      eventLabel: "cancel feedback",
+      dimension11: experiment.slug
     }]);
   });
 
@@ -806,8 +820,9 @@ describe("app/containers/ExperimentPage/ExperimentPreFeedbackDialog", () => {
     expect(sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "PreFeedback Confirm",
-      eventLabel: "foobar",
-      outboundURL: surveyURL
+      eventLabel: experiment.title,
+      outboundURL: surveyURL,
+      dimension11: experiment.slug
     }, mockClickEvent]);
   });
 
@@ -818,8 +833,9 @@ describe("app/containers/ExperimentPage/ExperimentPreFeedbackDialog", () => {
     expect(sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "PreFeedback Confirm",
-      eventLabel: "foobar",
-      outboundURL: surveyURL
+      eventLabel: experiment.title,
+      outboundURL: surveyURL,
+      dimension11: experiment.slug
     }, mockClickEvent]);
   });
 });

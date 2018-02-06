@@ -165,10 +165,11 @@ describe("app/components/UpdateList", () => {
     it("should ping GA when the link is clicked", () => {
       const slug = "slug-foo";
       const sendToGA = sinon.spy();
+      const experiment = { slug: "foobar" };
       const subject = shallow(<Update
         sendToGA={ sendToGA }
         update={{ slug, title: "foo", link: "https://example.com/" }}
-        experiment={{ slug: "foobar" }}
+        experiment={experiment}
       />);
 
       const mockClickEvent = {
@@ -180,7 +181,8 @@ describe("app/components/UpdateList", () => {
       expect(sendToGA.lastCall.args).to.deep.equal(["event", {
         eventCategory: "ExperimentsPage Interactions",
         eventAction: "click",
-        eventLabel: `news-item-${slug}`
+        eventLabel: `news-item-${slug}`,
+        dimension11: experiment.slug
       }]);
     });
   });

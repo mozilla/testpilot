@@ -250,6 +250,7 @@ describe("app/components/FeaturedButton", () => {
       eventCategory: props.eventCategory,
       eventAction: "Open detail page",
       eventLabel: mockExperiment.title,
+      dimension11: mockExperiment.slug,
       outboundURL: mockClickEvent.target.href
     }]);
   });
@@ -265,7 +266,8 @@ describe("app/components/FeaturedButton", () => {
     expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: props.eventCategory,
       eventAction: "Give Feedback",
-      eventLabel: mockExperiment.title
+      eventLabel: mockExperiment.title,
+      dimension11: mockExperiment.slug
     }]);
   });
 });
