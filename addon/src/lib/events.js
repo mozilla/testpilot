@@ -8,7 +8,6 @@ import PubSub from "pubsub-js";
 import allTopics from "./topics";
 
 import { log } from "./utils";
-import { registerWebExtensionAPI } from "./webExtension";
 
 const { utils: Cu } = Components;
 Cu.import("resource://gre/modules/Services.jsm");
@@ -22,30 +21,12 @@ const observers = {};
 
 export async function startupEvents() {
   log("startupEvents");
-  registerWebExtensionAPI("observeEventTopic", observeEventTopic);
-  registerWebExtensionAPI("notifyEventTopic", notifyEventTopic);
   addObserver(observeIdleDaily, "idle-daily", false);
 }
 
 export async function shutdownEvents() {
   log("shutdownEvents");
   removeObserver(observeIdleDaily, "idle-daily");
-  Object.keys(observers).forEach(unobserveEventTopic);
-}
-
-export function notifyEventTopic({ subject, topic, payload }) {
-  notifyObservers(subject, `${EVENT_PREFIX}${topic}`, JSON.stringify(payload));
-}
-
-export function observeEventTopic(eventTopic) {
-  const observer = new EventObserver(eventTopic);
-  observers[eventTopic] = observer;
-  observer.register();
-}
-
-export function unobserveEventTopic(eventTopic) {
-  observers[eventTopic].unregister();
-  delete observers[eventTopic];
 }
 
 function observeIdleDaily() {
