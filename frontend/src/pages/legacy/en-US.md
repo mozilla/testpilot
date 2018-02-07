@@ -1,9 +1,9 @@
-## Legacy
+## Legacy Test Pilot
 
 Hello there! Once upon a time, you installed an add-on called Test Pilot for Firefox.
 
 Well the Test Pilot program for trying experimental features in Firefox is back, and we thought you might like to check it out.
-The old add-on has been uninstalled for you. If you&apos;d like the new one, just click the link.
+The old add-on has been uninstalled for you. If you&apos;d like the new one, just click the [link](https://testpilot.firefox.com).
 
 If you&apos;re not interested, simply close this tab and get back to browsing.
 
