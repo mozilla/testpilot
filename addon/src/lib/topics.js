@@ -25,7 +25,6 @@ const topics = {
     ]
   },
   webExtension: {
-    content: ["clearPopup"],
     environment: ["change", "resources"]
   }
 };

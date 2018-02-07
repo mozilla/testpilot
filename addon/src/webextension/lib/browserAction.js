@@ -9,7 +9,6 @@ import PubSub from "pubsub-js";
 import allTopics from "../../lib/topics";
 import { log } from "./utils";
 import { getCurrentEnv } from "./environments";
-import { sendBootstrapMessage } from "./bootstrap";
 
 const webExtensionTopics = (...args) => allTopics("webExtension", ...args);
 const environmentTopics = (...args) =>
@@ -100,12 +99,4 @@ async function updateBadgeTextOnNew(topic, { experiments, news_updates }) {
   browser.browserAction.setBadgeText({
     text: (newExperiments.length || newsUpdates.length) > 0 ? "!" : ""
   });
-}
-
-// TODO: Remove this? Experiment in summoning the pop-up for surveys, can be
-// called on a schedule if necessary
-// eslint-disable-next-line no-unused-vars
-function showSurveyPopup() {
-  browser.browserAction.setPopup({ popup: "/survey-popup/index.html" });
-  sendBootstrapMessage("clickBrowserAction");
 }

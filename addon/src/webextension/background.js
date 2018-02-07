@@ -9,7 +9,6 @@ import PubSub from "pubsub-js";
 import { log, debug } from "./lib/utils";
 import { setupStorage } from "./lib/storage";
 import { setupEnvironment } from "./lib/environments";
-import { setupContent } from "./lib/content";
 import { setupBrowserAction } from "./lib/browserAction";
 import { setupMetrics } from "./lib/metrics";
 import { setupBootstrapPort, sendBootstrapMessage } from "./lib/bootstrap";
@@ -22,7 +21,6 @@ function setup() {
     .then(setupBrowserAction)
     .then(setupMetrics)
     .then(setupEnvironment)
-    .then(setupContent)
     .then(setupBootstrapPort)
     .then(() => sendBootstrapMessage("ready"))
     .catch(err => log("init error", err));
