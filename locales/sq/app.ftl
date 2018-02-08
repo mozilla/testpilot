@@ -40,7 +40,6 @@ landingIntroOne = Testoni veçori të reja.
 landingIntroTwo = Jepni përshtypjet tuaja.
 landingIntroThree = Ndihmoni të ndërtohet Firefox-i.
 landingLegalNotice = Duke vazhduar më tutje, pajtoheni me <a>Kushtet e Përdorimit</a> dhe <a>Shënimin mbi Privatësinë</a> të Pilotit të Testeve.
-landingExperimentsTitle = Provoni veçoritë tona më të reja eksperimentale
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -48,7 +47,6 @@ landingExperimentsTitle = Provoni veçoritë tona më të reja eksperimentale
 
 landingInstallButton = Instaloni shtesën Pilot Testesh
 landingInstallingButton = Po instalohet...
-landingInstalledButton = Zgjidhni veçoritë tuaja
 
 
 // Related to a one click to install test pilot and an experiment.
@@ -110,6 +108,11 @@ latestUpdatesTitle = Përditësimet më të reja
 showMoreNewsTitle = Shfaq Lajme të Së kaluarës
 
 
+[[ featuredExperiment ]]
+
+moreDetail = Shihni hollësi
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -120,6 +123,7 @@ experimentListEndingTomorrow = Përfundon Nesër
 experimentListEndingSoon = Përfundon Së Shpejti
 experimentCondensedHeader = Mirë se vini te Pilot Testesh!
 experimentListHeader = Zgjidhni eksperimentet tuaja!
+experimentListHeaderWithFeatured = Provoni krejt eksperimentet tona
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -129,6 +133,7 @@ experimentListHeader = Zgjidhni eksperimentet tuaja!
 experimentCardFeedback = Përshtypje
 experimentCardManage = Administroni
 experimentCardGetStarted = Si T’ia Fillohet
+// also used in NewsUpdateDialog
 experimentCardLearnMore = Mësoni Më Tepër
 
 
@@ -181,7 +186,6 @@ tourLink = Niseni Turin
 contribute = Kontribuoni
 bugReports = Njoftime të Metash
 discussExperiment = Diskutoni mbi { $title }
-tourOnboardingTitle = { $title } u aktivizua!
 tourDoneButton = U bë
 userCountContainerAlt = Të sapohedhura në qarkullim!
 highlightPrivacy = Privatësia juaj
@@ -197,7 +201,6 @@ startedDateLabel = Datë Fillimi Eksperimenti: <b>{ $startedDate }</b>
 [[ newsUpdatesDialog ]]
 
 nonExperimentDialogHeaderLink = Pilot Testesh
-learnMoreLink = MËSONI MË TEPËR
 
 
 // Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
@@ -330,3 +333,5 @@ warningMissingPrefTitle = Dëshironi të zhvilloni për Pilot Testesh?
 warningMissingPrefDetail = Kur Pilot-i i Testeve xhironi lokalisht ose në mjedise zhvillimesh, lyp formësim special. Ju lutemi, për hollësi, shihni <a>dokumentimin tonë</a>.
 warningBadHostnameTitle = Strehëemër i pamiratuar!
 warningBadHostnameDetail = Sajti Pilot Testesh mund të përdoret vetëm që nga testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, ose example.com:8000. Ju lutemi, për hollësi, shihni <a>dokumentimin tonë</a>.
+// This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot lyp JavaScript. Na ndjeni për këtë.
