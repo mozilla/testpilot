@@ -139,7 +139,6 @@ snoozetabsContributors4Title = Cyfrannwr Cynllunio
 snoozetabsContributors5Title = QA Firefox
 snoozetabsContributors6Title = QA Softvision
 snoozetabsContributors7Title = QA Softvision
-tabcenterDescription = 
 tabcenterWarning = Mae Firefox yn newid yn gyflym. Gall Canolfan tab fod a gwallau yn Firefox 55 a bydd yn cael ei analluogi'n llwyr yn Firefox 56+.
 tabcenterIntroduction = <p>Symudwch eich tab o'r ffordd. Mae'r Tab Center yn symud eich tab i ochr ffenestr eich porwr fel eu bod o'r golwg pan nad oes eu hangen ond yn hawdd eu ehangu a'u dal, pan fydd.</p>
 tabcenterDetails0Copy = Cymrwch eich tabiau i un och.
