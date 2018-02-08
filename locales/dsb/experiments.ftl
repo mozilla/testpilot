@@ -112,7 +112,6 @@ sendDetails0Copy = Send wam zmóžnja, skoděrowane dataje nagraś a źěliś.
 sendDetails1Copy = Send buźo waše daty za jadno ześěgnjenje abo 24 góźinow składowaś.
 sendDetails2Copy = Móžośo Send w modernem wobglědowaku wužywaś.
 sendContributors0Title = Wuwijarski praktikant
-sendContributors1Title = 
 sendContributors2Title = Wuwijaŕ za datowe pórěźenje
 sendContributors3Title = Wizuelny designer UX
 sendContributors4Title = Firefox UX
