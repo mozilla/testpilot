@@ -70,7 +70,8 @@ export default class ExperimentDisableDialog extends React.Component {
     this.props.sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
-      eventLabel: "exit survey disabled"
+      eventLabel: "exit survey disabled",
+      dimension11: this.props.experiment.slug
     });
     this.props.onSubmit(e);
   }

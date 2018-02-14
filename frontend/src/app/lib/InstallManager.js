@@ -15,7 +15,7 @@ if (typeof navigator !== "undefined") {
   mam = navigator.mozAddonManager;
 }
 
-function mozAddonManagerInstall(url, sendToGA) {
+function mozAddonManagerInstall(url, sendToGA, slug = null) {
   const start = url.indexOf("files/") + 6;
   const end = url.indexOf("@");
   const experimentTitle = url.substring(start, end);
@@ -24,13 +24,15 @@ function mozAddonManagerInstall(url, sendToGA) {
       sendToGA("event", {
         eventCategory: "ExperimentDetailsPage Interactions",
         eventAction: "Accept From Permission",
-        eventLabel: experimentTitle
+        eventLabel: experimentTitle,
+        dimension11: slug
       });
     }).catch((err) => {
       sendToGA("event", {
         eventCategory: "ExperimentDetailsPage Interactions",
         eventAction: "Cancel From Permission",
-        eventLabel: experimentTitle
+        eventLabel: experimentTitle,
+        dimension11: slug
       });
       throw err;
     });
@@ -41,7 +43,8 @@ export function installAddon(
   requireRestart,
   sendToGA,
   eventCategory,
-  eventLabel
+  eventLabel,
+  experimentSlug = null
 ) {
   if (!mam) {
     return false;
@@ -56,7 +59,8 @@ export function installAddon(
   const gaEvent = {
     eventCategory: eventCategory,
     eventAction: "install button click",
-    eventLabel: eventLabel
+    eventLabel: eventLabel,
+    dimension11: experimentSlug
   };
 
   cookies.set("first-run", "true");
@@ -221,7 +225,7 @@ export function enableExperiment(dispatch, experiment, sendToGA) {
           // already enabled
           return Promise.resolve();
         }
-        return mozAddonManagerInstall(experiment.xpi_url, sendToGA);
+        return mozAddonManagerInstall(experiment.xpi_url, sendToGA, experiment.slug);
       } // TODO error case
     )
     .then(

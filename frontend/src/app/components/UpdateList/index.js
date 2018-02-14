@@ -92,15 +92,17 @@ export class Update extends React.Component {
   }
 
   handleLinkClick() {
-    const { sendToGA, update } = this.props;
+    const { experiment, sendToGA, update } = this.props;
     const { slug, link } = update;
+    const { slug: experimentSlug } = experiment;
 
     if (!link) return;
 
     sendToGA("event", {
       eventCategory: "ExperimentsPage Interactions",
       eventAction: "click",
-      eventLabel: `news-item-${slug}`
+      eventLabel: `news-item-${slug}`,
+      dimension11: experimentSlug
     });
   }
 }

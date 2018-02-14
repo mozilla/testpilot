@@ -185,6 +185,7 @@ Here is a list of dimensions we are currently using
 | Home Page, Experiment Detail Page, Share Page | Which test has this user been selected for?       | 8         | {'installButtonBorder', ''} |
 | Home Page, Experiment Detail Page, Share Page | Which cohort has this user been selected for?     | 9         | {'bigButton', ''} |
 | All                                           | In which responsive breakpoint is the user?       | 10        | {'mobile','small','medium','big'} |
+| All experiment-specific locations and events  | On which experiment did this action take?         | 11        | experiment slug | 
 
 ### Tagged Links
 
