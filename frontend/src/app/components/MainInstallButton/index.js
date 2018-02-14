@@ -31,7 +31,7 @@ export default class MainInstallButton extends React.Component {
     if (e.button !== 0) {
       return;
     }
-    const { sendToGA, eventCategory,
+    const { requireRestart, sendToGA, eventCategory,
       installAddon, installCallback, navigateTo, eventLabel,
       postInstallCallback, isExperimentEnabled, hasAddon,
       enableExperiment, experiment } = this.props;
@@ -53,7 +53,7 @@ export default class MainInstallButton extends React.Component {
       return;
     }
     this.setState({ isInstalling: true });
-    installAddon(sendToGA, eventCategory, eventLabel)
+    installAddon(requireRestart, sendToGA, eventCategory, eventLabel)
       .then(() => {
         if (postInstallCallback) postInstallCallback();
       });
@@ -113,81 +113,4 @@ export default class MainInstallButton extends React.Component {
     const { experimentTitle, isExperimentEnabled, experiment } = this.props;
     let installButton = null;
     const installingButton = (<Localized id="landingInstallingButton">
-      <span className="progress-btn-msg">Installing...</span>
-    </Localized>);
-    const enablingButton = (<Localized id="landingEnablingButton">
-      <span className="progress-btn-msg">Enabling...</span>
-    </Localized>);
-
-    if (experimentTitle) {
-      if (hasAddon && !isExperimentEnabled(experiment)) {
-        installButton = this.renderEnableExperimentButton(experimentTitle);
-      } else installButton = this.renderOneClickInstallButton(experimentTitle);
-    } else {
-      installButton = <Localized id="landingInstallButton">
-        <span className="default-btn-msg">
-          Install the Test Pilot Add-on
-        </span>
-      </Localized>;
-    }
-
-    const makeInstallButton = (extraClass = "") => {
-      const isEnabling = (experimentTitle && hasAddon && !isExperimentEnabled(experiment) && isInstalling);
-      let btn = isEnabling ? enablingButton : installingButton;
-      return <button onClick={e => this.install(e)}
-        className={classnames(`button primary main-install__button ${extraClass}`, { "state-change": isInstalling })}>
-        {!isInstalling && installButton}
-        {isInstalling ? btn : null}
-        <div className="state-change-inner"></div>
-      </button>;
-    };
-
-    return makeInstallButton();
-  }
-
-  renderAltButton(isFirefox: boolean, isMobile: boolean) {
-    if (isFirefox && isMobile) {
-      return (
-        <div>
-          <Localized id="landingRequiresDesktop">
-            <span>Test Pilot requires Firefox for Desktop on Windows, Mac or Linux</span>
-          </Localized>
-        </div>
-      );
-    }
-    return (
-      <div>
-        {!isFirefox ? (
-          <Localized id="landingDownloadFirefoxDesc">
-            <span className="main-install__available">(Test Pilot is available for Firefox on Windows, OS X and Linux)</span>
-          </Localized>
-        ) : (
-          <Localized id="landingUpgradeDesc2" $version={config.minFirefoxVersion}>
-            <span className="parens">Test Pilot requires Firefox { config.minFirefoxVersion } or higher.</span>
-          </Localized>
-        )
-        }
-        {!isMobile && <a href="https://www.mozilla.org/firefox" className="button primary main-install__download">
-          <div className="main-install__icon">
-            <div className="main-install__badge"></div>
-          </div>
-          <div className="main-install__copy">
-            {(!isFirefox) ? (
-              <Localized id="landingDownloadFirefoxTitle">
-                <div className="main-install__title">Firefox</div>
-              </Localized>
-            ) : (
-              <Localized id="landingUpgradeFirefoxTitle">
-                <div className="main-install__title">Upgrade Firefox</div>
-              </Localized>
-            )
-            }
-            <Localized id="landingDownloadFirefoxSubTitle">
-              <div className="main-install__description">Free Download</div>
-            </Localized>
-          </div>
-        </a>}
-      </div>
-    );
-  }
-}
+      <span className="progress-btn-ms
