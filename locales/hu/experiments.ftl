@@ -70,6 +70,7 @@ nomore404sContributors2Title = Igazgató, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Senior crawler mérnök, The Internet Archive
 notesDescription = Egy egyszerű jegyzettömb, a Firefoxba építve. Volt már arra szüksége, hogy valamit gyorsan leírjon, miközben a webet böngészte? Akkor ez a kísérlet Önnek való,
 notesIntroduction = A Notes egy egyszerű, egyoldalas jegyzetfüzetet ad a böngésző oldalsávjához. Kezdésként hozzáadtunk néhány alapvető formázási beállítást, de várjuk a visszajelzését, hogy milyen funkciókat látna szívesen a kiegészítőben.
+notesLegalnotice = A folytatással Ön elfogadja a Tesztpilóta <a>feltételeit</a> és <a>adatvédelmi</a> irányelveit, valamint a <a>Notes adatvédelmi nyilatkozatát</a>.
 notesMeasurements0 = A Notes információt gyűjt a funkció használatáról, mint hogy milyen gyakran készít jegyzeteket, hogy mennyit tölt a szerkesztésükkel, hány karaktert ment a jegyzetekbe, és hogy használja-e a szerkesztési funkciókat (pl. félkövér vagy stilizált szöveg).
 notesMeasurements1 = A Notes információkat gyűjt a kiegészítővel történő interakciókról is; hogyan éri el a funkciókat, és melyik gombokra kattint.
 notesDetails0Copy = Ez egy jegyzettömb, Miért nem gondoltunk erre hamarabb?

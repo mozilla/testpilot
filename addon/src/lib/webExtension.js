@@ -10,7 +10,6 @@ import allTopics from "./topics";
 import { log, addonMetadata } from "./utils";
 
 const { utils: Cu } = Components;
-Cu.import("resource://gre/modules/Services.jsm");
 Cu.import("resource://gre/modules/LegacyExtensionsUtils.jsm");
 
 const bootstrapTopics = (...args) => allTopics("bootstrap", ...args);
@@ -51,9 +50,6 @@ export async function startupWebExtension(data, reason) {
   // TODO: Move this to a different module?
   registerWebExtensionAPI("getAddonMetadata", () => addonMetadata);
 
-  // TODO: Move this to a different UI-centric module?
-  registerWebExtensionAPI("clickBrowserAction", () => clickBrowserAction());
-
   // Return a promise that resolves when the WebExtension signals ready
   return new Promise(resolve => {
     const token = PubSub.subscribe(webExtensionAPITopics("ready"), () => {
@@ -84,13 +80,4 @@ export function registerWebExtensionAPI(op, handler) {
 
 export function sendToWebextension(op, message) {
   ports.forEach(port => port.postMessage({ op, message }));
-}
-
-// TODO: Remove this? Experiment in summoning the pop-up for surveys
-const BROWSER_ACTION_BUTTON_ID = "_testpilot-addon-browser-action";
-function clickBrowserAction(sendReply) {
-  const win = Services.wm.getMostRecentWindow("navigator:browser");
-  const button = win.document.getElementById(BROWSER_ACTION_BUTTON_ID);
-  if (button) button.click();
-  return sendReply();
 }

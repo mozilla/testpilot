@@ -58,14 +58,14 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
   }
 
   feedback(e: Object, url: string) {
-    e.preventDefault();
-
+    const { slug, title } = this.props.experiment;
     this.props.sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "PreFeedback Confirm",
-      eventLabel: this.props.experiment.title,
-      outboundURL: url
-    });
+      eventLabel: title,
+      outboundURL: url,
+      dimension11: slug
+    }, e);
   }
 
   cancel(e: Object) {
@@ -73,7 +73,8 @@ export default class ExperimentPreFeedbackDialog extends React.Component {
     this.props.sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
-      eventLabel: "cancel feedback"
+      eventLabel: "cancel feedback",
+      dimension11: this.props.experiment.slug
     });
     this.props.onCancel(e);
   }

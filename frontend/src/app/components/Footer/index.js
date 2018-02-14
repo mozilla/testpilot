@@ -56,8 +56,9 @@ export default class Footer extends React.Component {
     this.props.sendToGA("event", {
       eventCategory: "FooterView Interactions",
       eventAction: "social link clicked",
-      eventLabel: label
-    });
+      eventLabel: label,
+      outboundURL: e.target.href
+    }, e);
   }
 
 }

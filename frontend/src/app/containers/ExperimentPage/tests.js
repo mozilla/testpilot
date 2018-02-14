@@ -18,6 +18,7 @@ import ExperimentEolDialog from "./ExperimentEolDialog";
 
 import { PRIVACY_SCROLL_OFFSET } from "./DetailsHeader";
 import DetailsDescription, { LocaleWarning } from "./DetailsDescription";
+import { StatsSection } from "./DetailsOverview";
 
 describe("app/containers/ExperimentPage", () => {
   const mockExperiment = {
@@ -325,7 +326,8 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
         expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
           eventCategory: "ExperimentDetailsPage Interactions",
           eventAction: "Enable Experiment",
-          eventLabel: experiment.title
+          eventLabel: experiment.title,
+          dimension11: experiment.slug
         }]);
       });
 
@@ -349,7 +351,8 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
         expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
           eventCategory: "ExperimentDetailsPage Interactions",
           eventAction: "Upgrade Notice",
-          eventLabel: experiment.title
+          eventLabel: experiment.title,
+          dimension11: experiment.slug
         }]);
 
         subject.setProps({ userAgent: `${userAgentPre}50.0` });
@@ -383,7 +386,8 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
         expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
           eventCategory: "ExperimentDetailsPage Interactions",
           eventAction: "Upgrade Notice",
-          eventLabel: experiment.title
+          eventLabel: experiment.title,
+          dimension11: experiment.slug
         }]);
       });
 
@@ -447,7 +451,8 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
           expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
             eventCategory: "ExperimentDetailsPage Interactions",
             eventAction: "Disable Experiment",
-            eventLabel: experiment.title
+            eventLabel: experiment.title,
+            dimension11: experiment.slug
           }]);
         });
 
@@ -468,7 +473,8 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
           expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
             eventCategory: "ExperimentDetailsPage Interactions",
             eventAction: "Give Feedback",
-            eventLabel: experiment.title
+            eventLabel: experiment.title,
+            dimension11: experiment.slug
           }]);
         });
 
@@ -596,7 +602,11 @@ describe("app/containers/ExperimentPage/TestpilotPromo", () => {
 });
 
 describe("app/containers/ExperimentPage/ExperimentDisableDialog", () => {
-  const experiment = { title: "foobar", survey_url: "https://example.com" };
+  const experiment = {
+    title: "foobar",
+    slug: "foo-bar",
+    survey_url: "https://example.com"
+  };
   const installed = { ex1: true, ex2: true };
   const clientUUID = "38c51b84-9586-499f-ac52-94626e2b29cf";
 
@@ -658,7 +668,8 @@ describe("app/containers/ExperimentPage/ExperimentDisableDialog", () => {
     expect(sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
-      eventLabel: "exit survey disabled"
+      eventLabel: "exit survey disabled",
+      dimension11: experiment.slug
     }]);
   });
 
@@ -675,7 +686,8 @@ describe("app/containers/ExperimentPage/ExperimentDisableDialog", () => {
     expect(sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
-      eventLabel: "exit survey disabled"
+      eventLabel: "exit survey disabled",
+      dimension11: experiment.slug
     }]);
   });
 });
@@ -730,7 +742,8 @@ describe("app/containers/ExperimentPage/ExperimentEolDialog", () => {
 
 describe("app/containers/ExperimentPage/ExperimentPreFeedbackDialog", () => {
   const experiment = {
-    title: "foobar",
+    title: "Foobar",
+    slug: "foobar",
     survey_url: "https://example.com/survey",
     pre_feedback_image: "/foo.png",
     pre_feedback_copy: '<p class="expectedCopy">markup works!</p>'
@@ -783,7 +796,8 @@ describe("app/containers/ExperimentPage/ExperimentPreFeedbackDialog", () => {
     expect(sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
-      eventLabel: "cancel feedback"
+      eventLabel: "cancel feedback",
+      dimension11: experiment.slug
     }]);
   });
 
@@ -793,7 +807,8 @@ describe("app/containers/ExperimentPage/ExperimentPreFeedbackDialog", () => {
     expect(sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
-      eventLabel: "cancel feedback"
+      eventLabel: "cancel feedback",
+      dimension11: experiment.slug
     }]);
   });
 
@@ -804,9 +819,10 @@ describe("app/containers/ExperimentPage/ExperimentPreFeedbackDialog", () => {
     expect(sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "PreFeedback Confirm",
-      eventLabel: "foobar",
-      outboundURL: surveyURL
-    }]);
+      eventLabel: experiment.title,
+      outboundURL: surveyURL,
+      dimension11: experiment.slug
+    }, mockClickEvent]);
   });
 
   it("should launch feedback on <Enter> key pressed", () => {
@@ -816,8 +832,39 @@ describe("app/containers/ExperimentPage/ExperimentPreFeedbackDialog", () => {
     expect(sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "PreFeedback Confirm",
-      eventLabel: "foobar",
-      outboundURL: surveyURL
+      eventLabel: experiment.title,
+      outboundURL: surveyURL,
+      dimension11: experiment.slug
+    }, mockClickEvent]);
+  });
+});
+
+describe("app/containers/ExperimentPage/DetailsOverview:StatsSection", () => {
+
+  let doShowTourDialog, mockClickEvent, props, sendToGA, subject;
+  beforeEach(() => {
+    mockClickEvent = {};
+    doShowTourDialog = sinon.spy();
+    sendToGA = sinon.spy();
+    props = {
+      experiment: {},
+      doShowTourDialog,
+      sendToGA
+    };
+    subject = shallow(<StatsSection {...props} />);
+  });
+
+  it("should send GA event when 'Take Tour' is clicked", () => {
+    subject.find(".showTour").simulate("click", mockClickEvent);
+    expect(sendToGA.lastCall.args).to.deep.equal(["event", {
+      eventCategory: "ExperimentDetailsPage Interactions",
+      eventAction: "button click",
+      eventLabel: "take tour"
     }]);
+  });
+
+  it("launch tour when 'Take Tour' is clicked", () => {
+    subject.find(".showTour").simulate("click", mockClickEvent);
+    expect(doShowTourDialog.callCount).to.equal(1);
   });
 });

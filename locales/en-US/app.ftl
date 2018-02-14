@@ -32,11 +32,13 @@ landingIntroOne = Test new features.
 landingIntroTwo = Give your feedback.
 landingIntroThree = Help build Firefox.
 landingLegalNotice = By proceeding, you agree to the <a>Terms of Use</a> and <a>Privacy Notice</a> of Test Pilot.
+landingMoreExperimentsButton = More Experiments
 
 // Related to the installation of the Test Pilot add-on.
 [[landingInstall]]
 landingInstallButton = Install the Test Pilot Add-on
-landingInstallingButton = Installing...
+landingInstallingButton = Installing…
+landingEnablingButton = Enabling…
 
 // Related to a one click to install test pilot and an experiment.
 [[oneClickInstall]]

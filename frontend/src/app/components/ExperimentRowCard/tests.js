@@ -22,7 +22,10 @@ describe("app/components/ExperimentRowCard", () => {
     };
     mockClickEvent = {
       preventDefault: sinon.spy(),
-      stopPropagation: sinon.spy()
+      stopPropagation: sinon.spy(),
+      target: {
+        href: "/foo"
+      }
     };
     props = {
       experiment: mockExperiment,
@@ -86,7 +89,8 @@ describe("app/components/ExperimentRowCard", () => {
     expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: props.eventCategory,
       eventAction: "Give Feedback",
-      eventLabel: mockExperiment.title
+      eventLabel: mockExperiment.title,
+      dimension11: mockExperiment.slug
     }]);
   });
 
@@ -187,12 +191,13 @@ describe("app/components/ExperimentRowCard", () => {
 
   it("should ping GA when manage is clicked", () => {
     subject.find(".experiment-summary").simulate("click", mockClickEvent);
-
     expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: props.eventCategory,
       eventAction: "Open detail page",
-      eventLabel: mockExperiment.title
-    }]);
+      eventLabel: mockExperiment.title,
+      dimension11: mockExperiment.slug,
+      outboundURL: mockClickEvent.target.href
+    }, mockClickEvent]);
   });
 
   it("should have an anchor component with the right properties", () => {

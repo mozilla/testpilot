@@ -12,31 +12,6 @@ import { sendBootstrapMessage } from "./bootstrap";
 export async function setupStorage() {
   log("setupStorage");
   const storage = browser.storage.local;
-
-  const legacyMigrated = (await storage.get("legacyMigrated")).legacyMigrated;
-  if (!legacyMigrated) {
-    // Need to migrate old storage, but we'll only take a few things and flatten
-    const toMigrate = { legacyMigrated: true };
-    const legacyStorage = await sendBootstrapMessage("getLegacyStorage");
-    if (legacyStorage) {
-      const { originalPrefs } = legacyStorage;
-      Object.assign(toMigrate, { originalPrefs });
-      if (legacyStorage.root) {
-        const { clientUUID, ratings } = legacyStorage.root;
-        Object.assign(toMigrate, { clientUUID, ratings });
-        if (legacyStorage.root.ui) {
-          const {
-            clicked,
-            installTimestamp,
-            shareShown
-          } = legacyStorage.root.ui;
-          Object.assign(toMigrate, { clicked, installTimestamp, shareShown });
-        }
-      }
-    }
-    await storage.set(toMigrate);
-  }
-
   const data = await storage.get("clientUUID");
   if (!data.clientUUID) {
     data.clientUUID = uuidv4();

@@ -70,6 +70,7 @@ nomore404sContributors2Title = Cyfarwyddwr, Wayback Machine, The Internet Archiv
 nomore404sContributors3Title = Uwch Beiriannydd Crawl, The Internet Archive
 notesDescription = Pad ysgrifennu syml wedi ei adeiladu o fewn Firefox. Erioed wedi cael yr angen is nodi rhywbeth wrth bori'r we? Hwn yw'r arbrawf i chi.
 notesIntroduction = Mae Notes yn bad ysgrifennu syml, un tudalen ar gyfer bar ochr eich porwr. Rydym wedi ychwanegu fformatio elfennol i gychwyn, ond mae angen eich adborth i ddweud wrthym ba nodweddion fyddech chi'n hoffi i ni eu hychwanegu.
+notesLegalnotice = Drwy barhau, rydych yn cytuno i <a>amodau</a> a pholisïau <a>preifatrwydd</a> Test Pilot a <a>pholisi preifatrwydd Notes</a>.
 notesMeasurements0 = Mae Notes yn casglu gwybodaeth am eich defnydd o nodwedd, fel pa mor aml ydych chi'n creu nodyn, pa mor hir fyddwch chi'n treulio'n eu golygu, y nifer o nodau rydych yn eu cadw yn eich nodiadau ac a ydych yn defnyddio'r nodweddion golygu (e.e. trwm, italig ac ati).
 notesMeasurements1 = Mae Notes hefyd yn casglu gwybodaeth am eich rhyngweithio â'r ychwanegyn, fel sut rydych yn cael at y nodwedd, a pha fotymau fyddwch yn eu clicio.
 notesDetails0Copy = Mae'n llyfr nodiadau. Pam nad oedd ar gael cyn hyn?

@@ -186,14 +186,6 @@ declare module 'sdk/ui/button/action' {
   }
 }
 
-declare module 'sdk/simple-storage' {
-  declare class SimpleStorage mixins AddonEventTarget {
-    storage: Object;
-    quotaUsage: number;
-  }
-  declare module.exports: SimpleStorage
-}
-
 declare module 'sdk/querystring' {
   declare function stringify(fields: Object, separator?: string, assignment?: string): string;
   declare function parse(querystring: string, separator?: string, assignment?: string): Object;

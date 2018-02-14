@@ -71,6 +71,7 @@ nomore404sContributors2Title = Director, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Senior Crawl Engineer, The Internet Archive
 notesDescription = A simple notepad built into Firefox. Ever need to jot something down while you browse the web? This is the experiment for you.
 notesIntroduction = Notes adds a simple, one-page notepad to your browser’s sidebar. We’ve added a few basic formatting options to start, but we want your feedback to tell us what features you’d like to see us add.
+notesLegalnotice = By proceeding, you agree to the <a>terms</a> and <a>privacy</a> policies of Test Pilot and the <a>Notes privacy policy</a>.
 notesMeasurements0 = Notes will collect information about your use of the feature, such as how often you create notes and how long you spend editing them, the number of characters you save in your notes, and whether you use any editing features (e.g., bold or stylized text).
 notesMeasurements1 = Notes will also collect information about your interaction with the add-on, such as how you access the feature, and what buttons you may click.
 notesDetails0Copy = It’s a notepad. Why didn’t we think of this earlier?

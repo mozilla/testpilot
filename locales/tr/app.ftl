@@ -18,7 +18,7 @@ footerLinkPrivacy = Gizlilik
 footerLinkTerms = Koşullar
 footerLinkLegal = Yasal Uyarı
 footerLinkFeedback = Geri bildirim ver
-footerLinkAbout = Test Pilotu Hakkında
+footerLinkAbout = Test Pilotu hakkında
 
 
 // Items in the menu.
@@ -40,7 +40,6 @@ landingIntroOne = Yeni özellikleri test et.
 landingIntroTwo = Yorumlarını paylaş.
 landingIntroThree = Firefox’u inşa etmemize yardım et.
 landingLegalNotice = Devam ederseniz Test Pilotu’nun <a>Kullanım Koşulları</a> ve <a>Gizlilik Bildirimi</a>’ni kabul etmiş sayılırsınız.
-landingExperimentsTitle = En yeni deneysel özellikleri deneyin
 
 
 // Related to the installation of the Test Pilot add-on.
@@ -48,13 +47,12 @@ landingExperimentsTitle = En yeni deneysel özellikleri deneyin
 
 landingInstallButton = Test Pilotu eklentisini yükle
 landingInstallingButton = Yükleniyor...
-landingInstalledButton = Özelliklerinizi seçin
 
 
 // Related to a one click to install test pilot and an experiment.
 [[ oneClickInstall ]]
 
-oneClickInstallMinorCta = Test Pilotu’nu yükle &amp;
+oneClickInstallMinorCta = Test Pilotu’nu yükle ve
 oneClickInstallMajorCta = { $title } deneyini etkinleştir
 
 
@@ -110,6 +108,11 @@ latestUpdatesTitle = Son güncellemeler
 showMoreNewsTitle = Eski haberleri göster
 
 
+[[ featuredExperiment ]]
+
+moreDetail = Ayrıntıları göster
+
+
 // A listing of all Test Pilot experiments.
 [[ experimentsList ]]
 
@@ -120,6 +123,7 @@ experimentListEndingTomorrow = Yarın bitiyor
 experimentListEndingSoon = Yakında bitiyor
 experimentCondensedHeader = Test Pilot'a hoş geldiniz!
 experimentListHeader = Deneylerinizi seçin!
+experimentListHeaderWithFeatured = Tüm deneylerimizi deneyin
 
 
 // An individual experiment in the listing of all Test Pilot experiments.
@@ -176,13 +180,12 @@ measurements = Gizliliğiniz
 experimentPrivacyNotice = Buradan { $title } deneyinin topladığı veriler hakkında daha fazla bilgi alabilirsiniz.
 contributorsHeading = Geliştirenler
 contributorsExtraLearnMore = Daha fazla bilgi al
-changelog = değişiklik günlüğü
+changelog = Değişiklik günlüğü
 tour = Tur
 tourLink = tur
 contribute = Katkıda bulunun
 bugReports = Hata raporları
-discussExperiment = { $title } deneyini tartış
-tourOnboardingTitle = { $title } etkinleştirildi!
+discussExperiment = { $title } deneyini tartışın
 tourDoneButton = Bitti
 userCountContainerAlt = Yeni çıktı!
 highlightPrivacy = Gizliliğiniz

@@ -84,7 +84,45 @@ Look in the `addon/test` directory for examples of tests.
 
 ## Integration tests
 
-Integration tests are currently disabled and being re-evaluated. See [Issue #1975][]
-for details.
+The tests expect the WebExtension to be built. If not you will receive an error
+stating that the addon or webextension is not found.
 
-[Issue #1975]: https://github.com/mozilla/testpilot/issues/1975
+Please follow the instructions [here](./quickstart.md).
+
+
+### Test environment setup
+
+The tests can be run on any modern version of Firefox, but to run the installation tests, you must
+use Firefox Nightly. Firefox must also be executable from the command line. After installing, you can run
+this command to see if it is:
+
+```sh
+firefox --version
+```
+### Run the tests
+1. Install [Tox].
+2. Download geckodriver [v0.19.1][geckodriver] or later and ensure it's
+   executable and in your path.
+
+```sh
+tox
+```
+
+This will run the integration tests as well as [flake8][flake8].
+
+## Changing or adding element selectors
+
+[Selenium] allows for multiple types of HTML/CSS selection methods. The
+documentation found [here][selenium-api] shows the different ways to use these
+available methods.
+
+The pytest plugin that we use for running tests has a number of advanced command
+line options available. To see the options available, run `pytest --help`. The
+full documentation for the plugin can be found [here][pytest-selenium].
+
+[flake8]: http://flake8.pycqa.org/en/latest/
+[geckodriver]: https://github.com/mozilla/geckodriver/releases/tag/v0.19.1
+[pytest-selenium]: http://pytest-selenium.readthedocs.org/
+[Selenium]: http://selenium-python.readthedocs.io/index.html
+[selenium-api]: http://selenium-python.readthedocs.io/locating-elements.html
+[Tox]: http://tox.readthedocs.io/

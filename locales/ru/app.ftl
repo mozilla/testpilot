@@ -29,7 +29,7 @@ menuTitle = Настройки
 menuWiki = Вики лётчика-испытателя
 menuDiscuss = Обсуждение лётчика-испытателя
 menuFileIssue = Сообщить о проблеме
-menuRetire = Удалить расширение лётчика-испытателя
+menuRetire = Удалить расширение
 headerLinkBlog = Блог
 
 
@@ -273,7 +273,7 @@ incompatibleSubheader = Мы рекомендуем <a>отключить эти
 
 newsletterFormEmailPlaceholder
     .placeholder = Ваша эл. почта
-newsletterFormDisclaimer = Мы будем отправлять вам информацию, относящуюся только к лётчику-испытателям.
+newsletterFormDisclaimer = Мы будем отправлять вам информацию, относящуюся только к лётчику-испытателю.
 newsletterFormPrivacyNotice = Я согласен с тем, как Mozilla обращается с моей информацией, согласно этой <a>Политике приватности</a>.
 newsletterFormPrivacyAgreementRequired = Для продолжения, пожалуйста, установите этот флажок.
 newsletterFormSubmitButton = Подписаться сейчас

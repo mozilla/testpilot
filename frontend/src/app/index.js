@@ -11,7 +11,6 @@ import error from "../pages/error.js";
 import experiment from "../pages/experiment.js";
 import experiments from "../pages/experiments.js";
 import home from "../pages/home.js";
-import legacy from "../pages/legacy.js";
 import onboarding from "../pages/onboarding.js";
 import retire from "../pages/retire.js";
 import share from "../pages/share.js";
@@ -26,7 +25,6 @@ const routes = {
   experiment,
   experiments,
   home,
-  legacy,
   onboarding,
   retire,
   share,

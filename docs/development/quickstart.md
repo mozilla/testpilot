@@ -50,6 +50,9 @@ you should be on your way:
 
 1. Install the [DevPrefs][] add-on in Firefox Developer Edition.
 
+1. Set `extensions.legacy.enabled` to `true` [using `about:config`][aboutconfig],
+   which should allow the use of legacy and unsigned Mozilla Extensions.
+      
 1. Configure your browser to use your local Test Pilot server:
 
    1. Type `about:config` in the URL bar, acknowledge the warning that appears.
@@ -82,6 +85,7 @@ you should be on your way:
 
 1. View your local site in Firefox Developer Edition at https://example.com:8000/
 
+[aboutconfig]: https://support.mozilla.org/en-US/kb/about-config-editor-firefox
 [devedition]: https://www.mozilla.org/en-US/firefox/developer/
 [devprefs]: https://addons.mozilla.org/en-US/firefox/addon/devprefs/
 

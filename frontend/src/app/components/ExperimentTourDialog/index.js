@@ -23,7 +23,8 @@ export default class ExperimentTourDialog extends React.Component {
     this.props.sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
-      eventLabel: `forward to step ${newStep}`
+      eventLabel: `forward to step ${newStep}`,
+      dimension11: this.props.experiment.slug
     });
   };
 
@@ -31,7 +32,8 @@ export default class ExperimentTourDialog extends React.Component {
     this.props.sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
-      eventLabel: `back to step ${newStep}`
+      eventLabel: `back to step ${newStep}`,
+      dimension11: this.props.experiment.slug
     });
   };
 
@@ -39,7 +41,8 @@ export default class ExperimentTourDialog extends React.Component {
     this.props.sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
-      eventLabel: `dot to step ${index}`
+      eventLabel: `dot to step ${index}`,
+      dimension11: this.props.experiment.slug
     });
   };
 
@@ -90,7 +93,8 @@ export default class ExperimentTourDialog extends React.Component {
     sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
-      eventLabel: "cancel tour"
+      eventLabel: "cancel tour",
+      dimension11: this.props.experiment.slug
     });
     if (onCancel) { onCancel(ev); }
   };
@@ -101,7 +105,8 @@ export default class ExperimentTourDialog extends React.Component {
     sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
-      eventLabel: "complete tour"
+      eventLabel: "complete tour",
+      dimension11: this.props.experiment.slug
     });
     if (onComplete) { onComplete(ev); }
   };

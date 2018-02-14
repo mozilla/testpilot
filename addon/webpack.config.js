@@ -93,9 +93,7 @@ module.exports = [
   Object.assign({}, baseConfig, {
     entry: {
       'chrome/scripts/frame-script': './src/chrome/scripts/frame-script.js',
-      'webextension/background': './src/webextension/background.js',
-      'webextension/survey-popup/index':
-        './src/webextension/survey-popup/index.js'
+      'webextension/background': './src/webextension/background.js'
     },
     plugins: [
       new CopyWebpackPlugin([
@@ -104,11 +102,7 @@ module.exports = [
         { from: './package.json' },
         { from: './src/chrome.manifest' },
         { from: './src/webextension/manifest.json', to: './webextension/' },
-        { from: './src/webextension/icons', to: './webextension/icons' },
-        {
-          from: './src/webextension/survey-popup/index.html',
-          to: './webextension/survey-popup/'
-        }
+        { from: './src/webextension/icons', to: './webextension/icons' }
       ])
     ].concat(baseConfig.plugins)
   })

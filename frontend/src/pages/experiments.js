@@ -2,7 +2,7 @@
 import React from "react";
 
 import inject from "../app/lib/inject";
-import HomePageWithAddon from "../app/containers/HomePageWithAddon";
+import HomePageWithAddon from "../app/containers/HomePage/HomePageWithAddon";
 
 // Since google has an index of /experiments/ from when
 // the site was django, show something useful at this url.

@@ -5,7 +5,6 @@
 /* global Components, Services, TelemetryController, TelemetryEnvironment, ClientID, ADDON_INSTALL, ADDON_ENABLE, ADDON_UNINSTALL, ADDON_DISABLE */
 
 import { log } from "./utils";
-import { getLegacyStorage } from "./legacyStorage";
 import { registerWebExtensionAPI } from "./webExtension";
 import { submitMainPing } from "./pings";
 
@@ -56,22 +55,12 @@ export function shutdownTelemetry(data, reason) {
 }
 
 function backupAndSetPrefs() {
-  const legacyStorage = getLegacyStorage() || {};
-  const legacyOriginalPrefs = {};
-  if (legacyStorage.originalPrefs) {
-    legacyStorage.originalPrefs.forEach(([k, v]) => legacyOriginalPrefs[k] = v);
-  }
-
   TELEMETRY_PREFS.forEach(name => {
     // Skip backup for any existing backup prefs
     const backupName = `testpilot.backup.${name}`;
     const hasBackup = prefs.getPrefType(backupName) !== 0;
     if (hasBackup) {
       log("backup pref exists", backupName);
-    } else if (typeof legacyOriginalPrefs[name] !== "undefined") {
-      // Migrate pref values from the legacy addon storage
-      log("migrate backup pref", backupName);
-      prefs.setBoolPref(backupName, legacyOriginalPrefs[name]);
     } else {
       // Backup any existing pref values, lacking legacy migration
       log("backup pref", backupName);

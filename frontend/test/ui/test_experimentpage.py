@@ -14,6 +14,9 @@ def test_experiment_page_sticky_header(
     add-on installed properly makes the header sticky
     """
     page = Home(selenium, base_url).open()
+    selenium.execute_script(
+        "document.querySelector('.landingExperiments').scrollIntoView();"
+    )
     if page.featured.is_displayed:
         experiments = page.featured.click_install_button()
     else:

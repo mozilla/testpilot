@@ -9,11 +9,12 @@ import { findLocalizedById } from "../../../../test/app/util";
 import Header from "./index";
 
 describe("Header", () => {
-  let preventDefault, stopPropagation, mockClickEvent, props, subject;
+  let preventDefault, stopPropagation, mockClickEvent, props, subject, target;
   beforeEach(() => {
     preventDefault = sinon.spy();
     stopPropagation = sinon.spy();
-    mockClickEvent = { preventDefault, stopPropagation };
+    target = { href: "/" };
+    mockClickEvent = { preventDefault, stopPropagation, target };
     props = {
       uninstallAddon: sinon.spy(),
       sendToGA: sinon.spy(),
@@ -38,7 +39,16 @@ describe("Header", () => {
       expect(subject.find(".settings-button")).to.have.property("length", 0);
     });
     it("should link to /", () => {
-      expect(subject.find(".wordmark").props()).to.have.property("href", "/");
+      expect(subject.find(".wordmark").props()).to.have.property("href", target.href);
+    });
+    it("should ping GA when wordmark is clicked", () => {
+      subject.find(".wordmark").simulate("click", mockClickEvent);
+      expect(props.sendToGA.lastCall.args.slice(0, 2)).to.deep.equal(["event", {
+        eventCategory: "Menu Interactions",
+        eventAction: "click",
+        eventLabel: "Firefox logo",
+        outboundURL: target.href
+      }]);
     });
   });
 
@@ -57,7 +67,22 @@ describe("Header", () => {
 
     it("should ping GA on blog link clicked", () => {
       subject.find(".blog-link").simulate("click", mockClickEvent);
-      expectMenuGA("open blog", "click");
+      expect(props.sendToGA.lastCall.args.slice(0, 2)).to.deep.equal(["event", {
+        eventCategory: "Menu Interactions",
+        eventAction: "click",
+        eventLabel: "open blog",
+        outboundURL: mockClickEvent.target.href
+      }]);
+    });
+
+    it("should ping GA on newsfeed link clicked", () => {
+      subject.find(".news-link").simulate("click", mockClickEvent);
+      expect(props.sendToGA.lastCall.args.slice(0, 2)).to.deep.equal(["event", {
+        eventCategory: "Menu Interactions",
+        eventAction: "click",
+        eventLabel: "open newsfeed",
+        outboundURL: mockClickEvent.target.href
+      }]);
     });
 
     it("should show a link to the news feed", () => {

@@ -2,22 +2,24 @@
 import { Localized } from "fluent-react/compat";
 import React from "react";
 
-import Banner from "../components/Banner";
-import Copter from "../components/Copter";
-import ExperimentCardList from "../components/ExperimentCardList";
-import LayoutWrapper from "../components/LayoutWrapper";
-import MainInstallButton from "../components/MainInstallButton";
-import PastExperiments from "../components/PastExperiments";
-import FeaturedExperiment from "../components/FeaturedExperiment";
-import View from "../components/View";
+import Banner from "../../components/Banner";
+import Copter from "../../components/Copter";
+import ExperimentCardList from "../../components/ExperimentCardList";
+import LayoutWrapper from "../../components/LayoutWrapper";
+import MainInstallButton from "../../components/MainInstallButton";
+import PastExperiments from "../../components/PastExperiments";
+import FeaturedExperiment from "../../components/FeaturedExperiment";
+import View from "../../components/View";
+import Visibility from "../../components/Visibility";
 
-import type { InstalledExperiments } from "../reducers/addon";
+import type { InstalledExperiments } from "../../reducers/addon";
 
 type HomePageNoAddonProps = {
   hasAddon: any,
   isFirefox: boolean,
   installed: InstalledExperiments,
   experiments: Array<Object>,
+  experimentsWithoutFeatured: Array<Object>,
   featuredExperiments: Array<Object>,
   isAfterCompletedDate: Function,
   navigateTo: Function,
@@ -30,12 +32,12 @@ export default class HomePageNoAddon extends React.Component {
   props: HomePageNoAddonProps
 
   render() {
-    const { experiments, isAfterCompletedDate, featuredExperiments } = this.props;
+    const { isAfterCompletedDate, featuredExperiments, experimentsWithoutFeatured } = this.props;
 
-    if (experiments.length === 0) { return null; }
+    if (experimentsWithoutFeatured.length === 0) { return null; }
 
-    const currentExperiments = experiments.filter(x => !isAfterCompletedDate(x));
-    const pastExperiments = experiments.filter(isAfterCompletedDate);
+    const currentExperiments = experimentsWithoutFeatured.filter(x => !isAfterCompletedDate(x));
+    const pastExperiments = experimentsWithoutFeatured.filter(isAfterCompletedDate);
     const featuredExperiment = featuredExperiments.length ? featuredExperiments[0] : false;
 
     const installSplash = <Banner>
@@ -81,13 +83,21 @@ export default class HomePageNoAddon extends React.Component {
         <View {...this.props}>
           { installSplash }
           { featuredSection }
-          <Banner background={!featuredSection}>
-            <LayoutWrapper flexModifier="column-center">
-              {headerMessage}
-              <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
-              <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
-            </LayoutWrapper>
-          </Banner>
+          <Visibility className="landingExperiments">
+            <div className="moreButton">
+              <Localized id="landingMoreExperimentsButton">
+                <a className="arrow" href="#experiments">More Experiments</a>
+              </Localized>
+            </div>
+            <Banner background={!featuredSection}>
+              <LayoutWrapper flexModifier="column-center">
+                <a name="experiments"></a>
+                {headerMessage}
+                <ExperimentCardList {...this.props} experiments={currentExperiments} eventCategory="HomePage Interactions" />
+                <PastExperiments {...this.props} pastExperiments={ pastExperiments } />
+              </LayoutWrapper>
+            </Banner>
+          </Visibility>
 
           <Banner background={!!featuredSection}>
             <Localized id="landingCardListTitle">

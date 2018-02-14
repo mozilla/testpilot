@@ -11,7 +11,6 @@ const topics = {
     webExtensionAPI: [
       "ready",
       "clickBrowserAction",
-      "getLegacyStorage",
       "getAvailableAddons",
       "getCachedClientID",
       "getAddonMetadata",
@@ -25,7 +24,6 @@ const topics = {
     ]
   },
   webExtension: {
-    content: ["clearPopup"],
     environment: ["change", "resources"]
   }
 };

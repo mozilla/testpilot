@@ -70,6 +70,7 @@ nomore404sContributors2Title = The Internet Archive の Wayback Machine 担当�
 nomore404sContributors3Title = The Internet Archive の上級クロールエンジニア
 notesDescription = Firefox に組み込まれたシンプルなメモ帳。ウェブブラウジング中に何か書き留めたいと思ったことはありませんか？ これはそんな人のための実験です。
 notesIntroduction = Notes はブラウザーのサイドバーにシンプルな 1 ページメモ帳を追加します。まずはいくつかの基本的な書式設定を用意しましたが、どんな機能を追加して欲しいか、皆さんからのフィードバックをお待ちしています。
+notesLegalnotice = 続けることで、あなたは Test Pilot の <a>規約</a> と <a>プライバシー</a> ポリシー、並びに <a>Notes のプライバシーポリシー</a> に同意したことになります。
 notesMeasurements0 = Notes は機能の使用状況に関する情報を収集します。これには、メモの作成頻度、編集に費やした時間、メモに保存した文字数、編集機能 (太字や文字スタイルなど) の使用状況が含まれます。
 notesMeasurements1 = Notes は、どのように機能にアクセスしたか、どのボタンをクリックしたかといった、あなたのアドオンとのインタラクションに関する情報も収集します。
 notesDetails0Copy = これはメモ帳です。なぜもっと早く思い付かなかったんでしょう？

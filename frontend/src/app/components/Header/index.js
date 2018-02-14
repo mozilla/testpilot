@@ -94,12 +94,31 @@ export default class Header extends React.Component {
     if (this.closeTimer) { clearTimeout(this.closeTimer); }
   }
 
-  blogLinkClick() {
+  blogLinkClick(evt: Object) {
     this.props.sendToGA("event", {
       eventCategory: "Menu Interactions",
       eventAction: "click",
-      eventLabel: "open blog"
-    });
+      eventLabel: "open blog",
+      outboundURL: evt.target.href
+    }, evt);
+  }
+
+  newsLinkClick(evt: Object) {
+    this.props.sendToGA("event", {
+      eventCategory: "Menu Interactions",
+      eventAction: "click",
+      eventLabel: "open newsfeed",
+      outboundURL: evt.target.href
+    }, evt);
+  }
+
+  homepageClick(evt: Function) {
+    this.props.sendToGA("event", {
+      eventCategory: "Menu Interactions",
+      eventAction: "click",
+      eventLabel: "Firefox logo",
+      outboundURL: evt.target.href
+    }, evt);
   }
 
   render() {
@@ -118,12 +137,12 @@ export default class Header extends React.Component {
           <LayoutWrapper flexModifier="row-between-breaking">
             <h1>
               <Localized id="siteName">
-                <a href={ this.setHeaderLinkPath() } className="wordmark">Firefox Test Pilot</a>
+                <a href={ this.setHeaderLinkPath() } className="wordmark" onClick={evt => this.homepageClick(evt)}>Firefox Test Pilot</a>
               </Localized>
             </h1>
             <div className="header-links">
               <Localized id="headerLinkNews">
-                <a className={classnames("news-link", { active: newsPageActive })} href="/news">News Feed</a>
+                <a className={classnames("news-link", { active: newsPageActive })} onClick={this.newsLinkClick.bind(this)} href="/news">News Feed</a>
               </Localized>
               <Localized id="headerLinkBlog">
                 <a className="blog-link" onClick={this.blogLinkClick.bind(this)} href="https://medium.com/firefox-test-pilot" target="_blank" rel="noopener noreferrer">Blog</a>
