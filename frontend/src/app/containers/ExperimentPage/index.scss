@@ -94,9 +94,9 @@
     @include respond-to('not-small') {
       margin-left: $grid-unit;
     }
-    max-width: 180px;
-    height: 48px;
     border-radius: 3px;
+    height: 48px;
+    max-width: 180px;
     padding: 0 42px;
   }
 

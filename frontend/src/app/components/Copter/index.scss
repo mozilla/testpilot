@@ -62,11 +62,11 @@
 
   .banner--condensed & {
     @include respond-to('not-small') {
+      flex: 0 0 149px;
       margin: 0;
       position: absolute;
       right: 0;
       top: $grid-unit * -1.5;
-      flex: 0 0 149px;
       width: 184px;
     }
   }
@@ -95,9 +95,9 @@
       background-position: right center;
       background-repeat: no-repeat;
       background-size: 184px 149px;
+      filter: drop-shadow(0 0 20px $transparent-black-1);
       height: 149px;
       width: 184px;
-      filter: drop-shadow(0 0 20px $transparent-black-1);
     }
   }
 }

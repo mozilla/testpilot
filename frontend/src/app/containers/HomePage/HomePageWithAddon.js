@@ -171,8 +171,8 @@ export default class HomePageWithAddon extends React.Component {
           {!featuredExperiment &&
             <UpdateList {...{ sendToGA, staleNewsUpdates, freshNewsUpdates, experiments }} />}
         </LayoutWrapper>
-        <Visibility className="landingExperiments">
-          <div className="moreButton">
+        <Visibility className="landing-experiments">
+          <div className="more-button">
             <Localized id="landingMoreExperimentsButton">
               <a className="arrow" href="#experiments">More Experiments</a>
             </Localized>
