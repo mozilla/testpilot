@@ -24,9 +24,8 @@ Test Pilot is not intended to replace trains for most features, nor is it a test
     - [Dev Deployment](docs/development/dev-deployment.md) - Deploying Test Pilot to the dev environment
     - [Verifying deployments](docs/development/verification.md) - Verifying Test Pilot deployments.
 - Developing experiments
+    - [Recommended process](docs/experiments/developing_an_experiment.md) 
     - [Experiment metrics](docs/experiments/ga.md) - The use of Google Analytics to track experiment data.
-    - [Variant testing](docs/experiments/variants.md) - Creating variant (e.g. A/B) tests in experiments.
-    - [Example experiments](docs/experiments/)
     - [Experiment Feedback Integration](docs/examples/feedback-buttons.md)
 - Metrics
     - [Telemetry](docs/metrics/telemetry.md) - How we use Firefox telemetry.
