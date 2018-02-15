@@ -9,7 +9,6 @@ import PubSub from "pubsub-js";
 import { debug, log, setAddonMetadata } from "./lib/utils";
 import { startupDone, startupPromise, startupObserver } from "./lib/appStartup";
 import { startupPrefsObserver, shutdownPrefsObserver } from "./lib/prefs";
-import { startupFrameScripts, shutdownFrameScripts } from "./lib/frameScripts";
 import { startupWebExtension, shutdownWebExtension } from "./lib/webExtension";
 import { startupEvents, shutdownEvents } from "./lib/events";
 import { startupChannels, shutdownChannels } from "./lib/channels";
@@ -34,7 +33,6 @@ export function startup(data, reason) {
     .then(startupPrefsObserver)
     .then(startupEvents)
     .then(startupChannels)
-    .then(startupFrameScripts)
     .then(() => startupWebExtension(data, reason))
     .catch(err => log("startup error", err));
 }
@@ -42,7 +40,6 @@ export function startup(data, reason) {
 export function shutdown(data, reason) {
   try {
     shutdownWebExtension(data, reason);
-    shutdownFrameScripts();
     shutdownChannels();
     shutdownEvents();
     shutdownPrefsObserver();

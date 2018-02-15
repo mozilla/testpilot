@@ -92,7 +92,6 @@ module.exports = [
   // The rest of the JS can get bundled like usual
   Object.assign({}, baseConfig, {
     entry: {
-      'chrome/scripts/frame-script': './src/chrome/scripts/frame-script.js',
       'webextension/background': './src/webextension/background.js'
     },
     plugins: [
