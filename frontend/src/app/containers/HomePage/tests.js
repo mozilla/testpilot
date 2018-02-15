@@ -179,8 +179,8 @@ describe("app/containers/HomePageWithAddon", () => {
     expect(subject.find("EmailDialog")).to.have.property("length", 0);
   });
 
-  it("should show an email dialog if the first-run cookie is set", () => {
-    const getCookie = sinon.spy(name => 1);
+  it("should show an email dialog if the visit-count cookie is set to 2", () => {
+    const getCookie = sinon.spy(name => 2);
     props = { ...props, getCookie };
     subject = shallow(<HomePageWithAddon {...props} />);
     expect(subject.find("EmailDialog")).to.have.property("length", 1);

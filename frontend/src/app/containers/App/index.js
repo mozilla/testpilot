@@ -368,6 +368,7 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
       return el ? el.offsetHeight : 0;
     },
     getCookie: name => cookies.get(name),
+    setCookie: (name, value) => cookies.set(name, value),
     removeCookie: name => cookies.remove(name)
   }, ownProps, stateProps, dispatchProps, {
     newsletterForm
