@@ -15,7 +15,7 @@ def test_install_of_test_pilot_addon(
     """Check that the testpilot addon is installable and installs."""
     page = Home(selenium, base_url).open()
     selenium.execute_script(
-        "document.querySelector('.landingExperiments').scrollIntoView();"
+        "document.querySelector('.landing-experiments').scrollIntoView();"
     )
     if not page.featured.is_displayed:
         experiments = page.header.click_install_button()
@@ -71,7 +71,7 @@ def test_enable_and_disable_experiment(
                          'max_age': 120,
                          'domain': 'example.com'})
     selenium.execute_script(
-        "document.querySelector('.landingExperiments').scrollIntoView();"
+        "document.querySelector('.landing-experiments').scrollIntoView();"
     )
     if not page.featured.is_displayed:
         experiments = page.header.click_install_button()

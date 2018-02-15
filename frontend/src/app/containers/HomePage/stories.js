@@ -74,8 +74,8 @@ storiesOf("HomePage", module)
       <div style={{ padding: "1em", height: 1000 }}>
         (This space left intentionally blank. Scroll down.)
       </div>
-      <Visibility className="landingExperiments">
-        <div className="moreButton">
+      <Visibility className="landing-experiments">
+        <div className="more-button">
           <a href="#experiments">More Experiments</a>
         </div>
         <Banner background={true}>

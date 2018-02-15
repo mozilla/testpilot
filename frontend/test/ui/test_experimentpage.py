@@ -15,7 +15,7 @@ def test_experiment_page_sticky_header(
     """
     page = Home(selenium, base_url).open()
     selenium.execute_script(
-        "document.querySelector('.landingExperiments').scrollIntoView();"
+        "document.querySelector('.landing-experiments').scrollIntoView();"
     )
     if page.featured.is_displayed:
         experiments = page.featured.click_install_button()

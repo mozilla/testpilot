@@ -83,8 +83,8 @@ export default class HomePageNoAddon extends React.Component {
         <View {...this.props}>
           { installSplash }
           { featuredSection }
-          <Visibility className="landingExperiments">
-            <div className="moreButton">
+          <Visibility className="landing-experiments">
+            <div className="more-button">
               <Localized id="landingMoreExperimentsButton">
                 <a className="arrow" href="#experiments">More Experiments</a>
               </Localized>
