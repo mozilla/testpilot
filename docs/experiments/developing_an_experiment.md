@@ -89,8 +89,8 @@ Skill labels should accompany any `good first issue` label:
 * `skill:css`
 * `skill:html`
 * `skill:js`
-* `skill:python`
 * `skill:react`
+* `skill:swift`
 * `skill:webextension`
 
 Blocked on something:
@@ -108,5 +108,3 @@ Priority lables are based on [bugzilla's triage process](https://wiki.mozilla.or
 * `p2`
 * `p3`
 * `p5`
-
-
