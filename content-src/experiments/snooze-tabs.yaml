@@ -96,4 +96,7 @@ contributors:
     title: 'Softvision QA'
     avatar: /static/images/experiments/avatars/ciprian.jpg
 created: '2017-02-22T17:00:00.00Z'
+graduation_url: http://example.com/graduation-report
+eol_warning: Snooze Tabs will soon be available as an add-on for all Firefox users. If you have the experiment installed, you will be updated automatically.
+completed: '2018-03-06T12:00:00.000000Z'
 order: 3
