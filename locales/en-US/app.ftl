@@ -1,6 +1,6 @@
 siteName = Firefox Test Pilot
 
-## Page titles, put in the <title> HTML tag.
+## Page titles, shown as title of HTML pages.
 pageTitleDefault = Firefox Test Pilot
 pageTitleLandingPage = Firefox Test Pilot
 pageTitleExperimentListPage = Firefox Test Pilot - Experiments
@@ -37,6 +37,7 @@ landingEnablingButton = Enabling…
 
 ## Related to a one click to install test pilot and an experiment.
 oneClickInstallMinorCta = Install Test Pilot &amp;
+# $title is replaced by the name of an experiment
 oneClickInstallMajorCta = Enable {$title}
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
@@ -60,6 +61,9 @@ onboardingMessage = We put an icon in your toolbar so you can always find Test P
 ## Error message pages.
 errorHeading = Whoops!
 errorMessage = Looks like we broke something. <br> Maybe try again later.
+# 404 is the HTTP standard response code for a page not found. This title is a
+# word play in English, being "Oh" both an exclamation and the pronunciation of
+# the number 0.
 notFoundHeader = Four Oh Four!
 
 ## A modal prompt to sign up for the Test Pilot newsletter.
