@@ -64,7 +64,7 @@ export default class NewsletterForm extends React.Component {
 
     return <div>
       <label className={this.makeRevealedClassNames()} htmlFor={fieldName}>
-        <input name={fieldName} id={fieldName} type="checkbox" required="required"/>
+        <input name={fieldName} id={fieldName} type="checkbox" required />
         <LocalizedHtml id="newsletterFormPrivacyNotice" $privacy={privacy}>
           <span>
             I&apos;m okay with Mozilla handling my info as explained in {privacy}.
