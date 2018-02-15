@@ -355,11 +355,10 @@ export class ExperimentDetail extends React.Component {
 
     let installAddonPromise = null;
     if (!this.props.hasAddon) {
-      const { installAddon, requireRestart } = this.props;
+      const { installAddon } = this.props;
       const eventCategory = "ExperimentDetailsPage Interactions";
       const eventLabel = `Install the Add-on from ${experiment.title}`;
       installAddonPromise = installAddon(
-        requireRestart,
         sendToGA,
         eventCategory,
         eventLabel,

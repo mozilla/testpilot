@@ -27,6 +27,5 @@ export default {
   manuallyEnableExperiment: makeSimpleActionCreator("MANUALLY_ENABLE_EXPERIMENT"),
   manuallyDisableExperiment: makeSimpleActionCreator("MANUALLY_DISABLE_EXPERIMENT"),
   enableExperiment: makeSimpleActionCreator("ENABLE_EXPERIMENT"),
-  disableExperiment: makeSimpleActionCreator("DISABLE_EXPERIMENT"),
-  requireRestart: makeSimpleActionCreator("REQUIRE_RESTART")
+  disableExperiment: makeSimpleActionCreator("DISABLE_EXPERIMENT")
 };

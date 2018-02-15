@@ -7,7 +7,6 @@ import InstallHistory from "./install-history";
 
 const TESTPILOT_ADDON_ID = "@testpilot-addon";
 const INSTALL_STATE_WATCH_PERIOD = 2000;
-const RESTART_NEEDED = false; // TODO
 
 let installHistory;
 let mam = null;
@@ -40,7 +39,6 @@ function mozAddonManagerInstall(url, sendToGA, slug = null) {
 }
 
 export function installAddon(
-  requireRestart,
   sendToGA,
   eventCategory,
   eventLabel,
@@ -66,11 +64,8 @@ export function installAddon(
   cookies.set("first-run", "true");
 
   return mozAddonManagerInstall(downloadUrl, sendToGA).then(() => {
-    gaEvent.dimension7 = RESTART_NEEDED ? "restart required" : "no restart";
+    gaEvent.dimension7 = "no restart";
     sendToGA("event", gaEvent);
-    if (RESTART_NEEDED) {
-      requireRestart();
-    }
   });
 }
 

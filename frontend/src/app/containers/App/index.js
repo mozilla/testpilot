@@ -21,7 +21,6 @@ import { localizationsSelector, negotiatedLanguagesSelector } from "../../select
 import { chooseTests } from "../../actions/varianttests";
 import addonActions from "../../actions/addon";
 import newsletterFormActions from "../../actions/newsletter-form";
-import RestartPage from "../RestartPage";
 import UpgradeWarningPage from "../UpgradeWarningPage";
 import {
   isFirefox,
@@ -173,10 +172,6 @@ class App extends Component {
   }
 
   render() {
-    const { restart } = this.props.addon;
-    if (restart.isRequired) {
-      return <RestartPage {...this.props} />;
-    }
 
     if (this.shouldShowUpgradeWarning()) {
       return <UpgradeWarningPage {...this.props} />;
@@ -318,7 +313,6 @@ const mapDispatchToProps = dispatch => ({
   },
   enableExperiment: experiment => enableExperiment(dispatch, experiment, sendToGA),
   disableExperiment: experiment => disableExperiment(dispatch, experiment),
-  requireRestart: () => dispatch(addonActions.requireRestart()),
   setHasAddon: installed => dispatch(addonActions.setHasAddon(installed)),
   newsletterForm: {
     setEmail: email =>
