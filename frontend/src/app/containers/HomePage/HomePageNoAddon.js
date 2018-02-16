@@ -25,6 +25,7 @@ type HomePageNoAddonProps = {
   navigateTo: Function,
   isMinFirefox: boolean,
   isExperimentEnabled: Function,
+  enableExperiment: Function,
   sendToGA: Function
 }
 
@@ -32,7 +33,8 @@ export default class HomePageNoAddon extends React.Component {
   props: HomePageNoAddonProps
 
   render() {
-    const { isAfterCompletedDate, featuredExperiments, experimentsWithoutFeatured } = this.props;
+    const { isAfterCompletedDate, featuredExperiments,
+            experimentsWithoutFeatured, enableExperiment } = this.props;
 
     if (experimentsWithoutFeatured.length === 0) { return null; }
 
@@ -67,6 +69,7 @@ export default class HomePageNoAddon extends React.Component {
         <FeaturedExperiment {...this.props}
           experiment={featuredExperiment}
           eventCategory="HomePage Interactions"
+          enableExperiment={enableExperiment}
           enabled={false} />
       </LayoutWrapper>
     </Banner>) : null;

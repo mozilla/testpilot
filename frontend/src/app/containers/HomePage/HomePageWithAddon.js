@@ -37,6 +37,7 @@ type HomePageWithAddonProps = {
   openWindow: Function,
   isExperimentEnabled: Function,
   isAfterCompletedDate: Function,
+  enableExperiment: Function,
   navigateTo: Function,
   isMinFirefox: boolean,
   isFirefox: boolean
@@ -132,7 +133,8 @@ export default class HomePageWithAddon extends React.Component {
   render() {
     const { sendToGA, isAfterCompletedDate, staleNewsUpdates, freshNewsUpdates,
             majorNewsUpdates, featuredExperiments, isExperimentEnabled,
-            experimentsWithoutFeatured, experiments, removeCookie } = this.props;
+            experimentsWithoutFeatured, experiments, removeCookie,
+            enableExperiment } = this.props;
 
     if (experimentsWithoutFeatured.length === 0) { return null; }
 
@@ -145,6 +147,7 @@ export default class HomePageWithAddon extends React.Component {
       <LayoutWrapper flexModifier="row-center">
         <FeaturedExperiment {...this.props} experiment={featuredExperiment}
                             eventCategory="HomePage Interactions"
+                            enableExperiment={enableExperiment}
                             enabled={isExperimentEnabled(featuredExperiment)} />
       </LayoutWrapper>
     </Banner>) : null;
