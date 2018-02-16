@@ -34,7 +34,7 @@ export default class HomePageNoAddon extends React.Component {
 
   render() {
     const { isAfterCompletedDate, featuredExperiments,
-            experimentsWithoutFeatured, enableExperiment } = this.props;
+      experimentsWithoutFeatured, enableExperiment } = this.props;
 
     if (experimentsWithoutFeatured.length === 0) { return null; }
 
