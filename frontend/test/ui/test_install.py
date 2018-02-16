@@ -22,13 +22,11 @@ def test_install_of_test_pilot_addon(
         firefox.browser.wait_for_notification(
             notifications.AddOnInstallComplete
         ).close()
-        assert experiments.welcome_popup.is_title_displayed()
     else:
         experiments = page.featured.click_install_button()
         firefox.browser.wait_for_notification(
             notifications.AddOnInstallComplete
         ).close()
-        assert experiments.welcome_popup.is_title_displayed()
 
 
 @pytest.mark.skipif(os.environ.get('SKIP_INSTALL_TEST') is not None,
@@ -39,7 +37,6 @@ def test_bottom_install_button(base_url, selenium, firefox, notifications):
     experiments = page.bottom_install_button()
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
-    assert experiments.welcome_popup.is_title_displayed()
 
 
 @pytest.mark.skipif(os.environ.get('SKIP_INSTALL_TEST') is not None,
@@ -80,8 +77,6 @@ def test_enable_and_disable_experiment(
 
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
-
-    experiments.welcome_popup.close()
 
     experiment = experiments.find_experiment(experiment='Dev Example')
     experiment.enable()
