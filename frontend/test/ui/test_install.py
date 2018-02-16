@@ -18,12 +18,12 @@ def test_install_of_test_pilot_addon(
         "document.querySelector('.landing-experiments').scrollIntoView();"
     )
     if not page.featured.is_displayed:
-        experiments = page.header.click_install_button()
+        page.header.click_install_button()
         firefox.browser.wait_for_notification(
             notifications.AddOnInstallComplete
         ).close()
     else:
-        experiments = page.featured.click_install_button()
+        page.featured.click_install_button()
         firefox.browser.wait_for_notification(
             notifications.AddOnInstallComplete
         ).close()
@@ -34,7 +34,7 @@ def test_install_of_test_pilot_addon(
 @pytest.mark.nondestructive
 def test_bottom_install_button(base_url, selenium, firefox, notifications):
     page = Home(selenium, base_url).open()
-    experiments = page.bottom_install_button()
+    page.bottom_install_button()
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
 
