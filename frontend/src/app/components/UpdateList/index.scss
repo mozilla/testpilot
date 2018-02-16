@@ -118,12 +118,13 @@
 
     &:hover {
       border-color: $transparent-white-2;
-      background:rgba(255,255,255,0.05);
+      background: $transparent-white-05;
     }
 
     &:active {
       border-color: $transparent-white-4;
-      background:rgba(255,255,255,0.08);
+      background: $transparent-white-08;
+      
     }
 
     .link-chevron {
