@@ -63,7 +63,7 @@ export function installAddon(
     dimension11: experimentSlug
   };
 
-  cookies.set("first-run", "true");
+  cookies.set("visit-count", 1);
 
   return mozAddonManagerInstall(downloadUrl, sendToGA).then(() => {
     gaEvent.dimension7 = RESTART_NEEDED ? "restart required" : "no restart";

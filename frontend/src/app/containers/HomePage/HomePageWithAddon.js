@@ -29,6 +29,7 @@ type HomePageWithAddonProps = {
   freshNewsUpdates: Array<Object>,
   staleNewsUpdates: Array<Object>,
   getCookie: Function,
+  setCookie: Function,
   removeCookie: Function,
   getWindowLocation: Function,
   uninstallAddon: Function,
@@ -60,12 +61,15 @@ export default class HomePageWithAddon extends React.Component {
   }
 
   componentDidMount() {
-    const { getCookie, removeCookie, getWindowLocation } = this.props;
+    const { getCookie, setCookie, getWindowLocation } = this.props;
 
-    if (getCookie('first-run') ||
+    if ((getCookie('visit-count') === '2') ||
       getWindowLocation().search.indexOf('utm_campaign=restart-required') > -1) {
-      removeCookie('first-run');
       this.setState({showEmailDialog: true});
+    }
+
+    if (getCookie('visit-count') === '1') {
+      setCookie('visit-count', 2);
     }
   }
 
@@ -128,7 +132,7 @@ export default class HomePageWithAddon extends React.Component {
   render() {
     const { sendToGA, isAfterCompletedDate, staleNewsUpdates, freshNewsUpdates,
             majorNewsUpdates, featuredExperiments, isExperimentEnabled,
-            experimentsWithoutFeatured, experiments } = this.props;
+            experimentsWithoutFeatured, experiments, removeCookie } = this.props;
 
     if (experimentsWithoutFeatured.length === 0) { return null; }
 
@@ -152,11 +156,15 @@ export default class HomePageWithAddon extends React.Component {
       <h1 className="emphasis card-list-heading">Or try other experiments</h1>
      </Localized>);
 
+    const onEmailDialogDismissed = () => {
+      removeCookie('visit-count');
+      this.setState({ showEmailDialog: false });
+    };
+
     return (
       <View {...this.props}>
         {showEmailDialog &&
-          <EmailDialog {...this.props}
-            onDismiss={() => this.setState({ showEmailDialog: false })} />}
+          <EmailDialog {...this.props} onDismiss={onEmailDialogDismissed} />}
 
       {this.renderSplash()}
       {featuredSection}

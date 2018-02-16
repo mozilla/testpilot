@@ -290,8 +290,8 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
         expect(subject.find("MainInstallButton")).to.have.property("length", 0);
       });
 
-      it("should show an email dialog if the first-run cookie is set", () => {
-        const getCookie = sinon.spy(() => 1);
+      it("should show an email dialog if the visit-count cookie is set to 2", () => {
+        const getCookie = sinon.spy(() => 2);
         const removeCookie = sinon.spy();
         props = { ...props, hasAddon: true, getCookie, removeCookie };
         subject = shallow(<ExperimentDetail {...props} />);

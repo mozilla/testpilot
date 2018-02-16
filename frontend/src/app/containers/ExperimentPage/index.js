@@ -72,8 +72,8 @@ export class ExperimentDetail extends React.Component {
     } = this.props;
 
     let showEmailDialog = false;
-    if (getCookie("first-run")) {
-      removeCookie("first-run");
+    if (getCookie("visit-count") === 2) {
+      removeCookie("visit-count");
       if (hasAddon) {
         showEmailDialog = true;
       }
