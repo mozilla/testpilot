@@ -69,9 +69,9 @@ $news-feed-box-shadow: #111648;
 
 @include respond-to('small') {
   #news-feed-page {
-    border-left: 0;
+    border-left: 2px solid $news-feed-page-border;
     margin-top: 20px;
-    padding-left: 0;
+    padding-left: 30px;
 
     > h1 {
       text-align: center;
