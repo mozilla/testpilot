@@ -78,12 +78,6 @@ def test_enable_and_disable_experiment(
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
 
-    experiment = experiments.find_experiment(experiment='Dev Example')
-    experiment.enable()
-    firefox.browser.wait_for_notification(
-        notifications.AddOnInstallConfirmation).install()
-    firefox.browser.wait_for_notification(
-        notifications.AddOnInstallComplete).close()
     exp_detail = Detail(selenium, base_url)
     assert exp_detail.enabled_popup.is_popup_displayed()
     exp_detail.enabled_popup.close()
