@@ -4,7 +4,6 @@ import datetime
 import pytest
 from pages.desktop.experiments import Experiments
 from pages.desktop.home import Home
-from pages.desktop.detail import Detail
 
 
 @pytest.mark.nondestructive
@@ -43,7 +42,7 @@ def test_bottom_install_button(base_url, selenium, firefox, notifications):
                     reason='Skip install on Release and Beta Firefox.')
 @pytest.mark.nondestructive
 def test_install_and_enable(base_url, selenium, firefox, notifications):
-    Home(selenium, base_url).open()
+    page = Home(selenium, base_url).open()
     experiments = Experiments(selenium, base_url)
     experiment = experiments.find_experiment(experiment='Dev Example')
     experiment.install_and_enable()
@@ -53,7 +52,7 @@ def test_install_and_enable(base_url, selenium, firefox, notifications):
         notifications.AddOnInstallConfirmation).install()
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
-    assert Detail(selenium, base_url).enabled_popup.is_popup_displayed()
+    assert page.enabled_popup.is_popup_displayed()
 
 
 @pytest.mark.nondestructive
@@ -78,9 +77,8 @@ def test_enable_and_disable_experiment(
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
 
-    exp_detail = Detail(selenium, base_url)
-    assert exp_detail.enabled_popup.is_popup_displayed()
-    exp_detail.enabled_popup.close()
+    assert page.enabled_popup.is_popup_displayed()
+    page.enabled_popup.close()
 
     experiment = experiments.find_experiment(experiment='Dev Example')
     experiment.disable()

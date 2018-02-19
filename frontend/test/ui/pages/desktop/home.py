@@ -16,6 +16,10 @@ class Home(Base):
         return self.Body(self)
 
     @property
+    def enabled_popup(self):
+        return self.EnabledPopup(self)
+
+    @property
     def featured(self):
         return self.Featured(self)
 
@@ -59,6 +63,22 @@ class Home(Base):
             self.find_element(*self._install_locator).click()
             from .experiments import Experiments
             return Experiments(self.selenium, self.page.base_url)
+
+    class EnabledPopup(Region):
+        _root_locator = (By.CSS_SELECTOR, '.tour-modal')
+        _popup_header_locator = (By.CSS_SELECTOR, '.modal-header-wrapper')
+        _close_button_locator = (By.CLASS_NAME, 'modal-cancel')
+
+        def wait_for_region_to_load(self):
+            self.wait.until(
+                lambda _: self.root.is_displayed())
+
+        def is_popup_displayed(self):
+            el = self.find_element(*self._popup_header_locator).is_displayed()
+            return el
+
+        def close(self):
+            self.find_element(*self._close_button_locator).click()
 
     class Featured(Region):
         """Represents the Header portion of the page"""
