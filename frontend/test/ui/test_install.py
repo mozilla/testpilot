@@ -81,6 +81,7 @@ def test_enable_and_disable_experiment(
     exp_detail = Detail(selenium, base_url)
     assert exp_detail.enabled_popup.is_popup_displayed()
     exp_detail.enabled_popup.close()
+
     experiment = experiments.find_experiment(experiment='Dev Example')
     experiment.disable()
     assert experiment.enable_button.is_displayed()

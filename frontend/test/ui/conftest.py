@@ -17,6 +17,7 @@ def capabilities(capabilities):
 def firefox_options(firefox_options):
     firefox_options.set_preference(
         'extensions.install.requireBuiltInCerts', False)
+    firefox_options.set_preference('ui.popup.disable_autohide', True)
     firefox_options.set_preference('xpinstall.signatures.required', False)
     firefox_options.set_preference('extensions.webapi.testing', True)
     firefox_options.set_preference('extensions.legacy.enabled', True)
