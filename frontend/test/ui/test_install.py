@@ -77,8 +77,9 @@ def test_enable_and_disable_experiment(
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
 
-    assert page.enabled_popup.is_popup_displayed()
-    page.enabled_popup.close()
+    if page.featured.is_displayed:
+        assert page.enabled_popup.is_popup_displayed()
+        page.enabled_popup.close()
 
     experiment = experiments.find_experiment(experiment='Dev Example')
     experiment.disable()
