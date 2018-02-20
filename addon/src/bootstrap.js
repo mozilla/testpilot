@@ -2,12 +2,9 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-/* global APP_STARTUP */
-
 import PubSub from "pubsub-js";
 
 import { debug, log, setAddonMetadata } from "./lib/utils";
-import { startupDone, startupPromise, startupObserver } from "./lib/appStartup";
 import { startupPrefsObserver, shutdownPrefsObserver } from "./lib/prefs";
 import { startupFrameScripts, shutdownFrameScripts } from "./lib/frameScripts";
 import { startupWebExtension, shutdownWebExtension } from "./lib/webExtension";
@@ -21,14 +18,7 @@ PubSub.immediateExceptions = true;
 export function startup(data, reason) {
   setAddonMetadata(data);
 
-  if (reason === APP_STARTUP) {
-    startupObserver.register();
-  } else {
-    startupDone();
-  }
-
-  return startupPromise
-    .then(setupDebug)
+  return new Promise().then(setupDebug)
     .then(() => startupTelemetry(data, reason))
     .then(startupAddonManager)
     .then(startupPrefsObserver)
