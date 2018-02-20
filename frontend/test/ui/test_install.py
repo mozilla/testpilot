@@ -43,7 +43,7 @@ def test_bottom_install_button(base_url, selenium, firefox, notifications):
                     reason='Skip install on Release and Beta Firefox.')
 @pytest.mark.nondestructive
 def test_install_and_enable(base_url, selenium, firefox, notifications):
-    page = Home(selenium, base_url).open()
+    Home(selenium, base_url).open()
     experiments = Experiments(selenium, base_url)
     experiment = experiments.find_experiment(experiment='Dev Example')
     experiment.install_and_enable()
