@@ -291,7 +291,7 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
       });
 
       it("should show an email dialog if the visit-count cookie is set to 2", () => {
-        const getCookie = sinon.spy(() => 2);
+        const getCookie = sinon.spy(() => "2");
         const removeCookie = sinon.spy();
         props = { ...props, hasAddon: true, getCookie, removeCookie };
         subject = shallow(<ExperimentDetail {...props} />);

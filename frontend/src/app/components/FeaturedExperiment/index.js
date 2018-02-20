@@ -24,6 +24,7 @@ type FeaturedExperimentProps = {
   clientUUID?: string,
   eventCategory: string,
   isExperimentEnabled: Function,
+  enableExperiment: Function,
   sendToGA: Function
 }
 

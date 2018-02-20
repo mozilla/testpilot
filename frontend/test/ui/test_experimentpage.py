@@ -24,7 +24,6 @@ def test_experiment_page_sticky_header(
     firefox.browser.wait_for_notification(
       notifications.AddOnInstallComplete
     ).close()
-    experiments.welcome_popup.close()
     experiment = experiments.find_experiment(
         experiment='Dev Example')
     selenium.execute_script(

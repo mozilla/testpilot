@@ -18,17 +18,15 @@ def test_install_of_test_pilot_addon(
         "document.querySelector('.landing-experiments').scrollIntoView();"
     )
     if not page.featured.is_displayed:
-        experiments = page.header.click_install_button()
+        page.header.click_install_button()
         firefox.browser.wait_for_notification(
             notifications.AddOnInstallComplete
         ).close()
-        assert experiments.welcome_popup.is_title_displayed()
     else:
-        experiments = page.featured.click_install_button()
+        page.featured.click_install_button()
         firefox.browser.wait_for_notification(
             notifications.AddOnInstallComplete
         ).close()
-        assert experiments.welcome_popup.is_title_displayed()
 
 
 @pytest.mark.skipif(os.environ.get('SKIP_INSTALL_TEST') is not None,
@@ -36,10 +34,9 @@ def test_install_of_test_pilot_addon(
 @pytest.mark.nondestructive
 def test_bottom_install_button(base_url, selenium, firefox, notifications):
     page = Home(selenium, base_url).open()
-    experiments = page.bottom_install_button()
+    page.bottom_install_button()
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
-    assert experiments.welcome_popup.is_title_displayed()
 
 
 @pytest.mark.skipif(os.environ.get('SKIP_INSTALL_TEST') is not None,
@@ -73,15 +70,17 @@ def test_enable_and_disable_experiment(
     selenium.execute_script(
         "document.querySelector('.landing-experiments').scrollIntoView();"
     )
+
     if not page.featured.is_displayed:
+        selenium.execute_script(
+            "document.querySelector('.landing-experiments').scrollIntoView();"
+        )
         experiments = page.header.click_install_button()
     else:
-        experiments = page.featured.click_install_button()
+        experiments = page.bottom_install_button()
 
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
-
-    experiments.welcome_popup.close()
 
     experiment = experiments.find_experiment(experiment='Dev Example')
     experiment.enable()

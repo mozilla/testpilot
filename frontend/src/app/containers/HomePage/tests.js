@@ -180,11 +180,10 @@ describe("app/containers/HomePageWithAddon", () => {
   });
 
   it("should show an email dialog if the visit-count cookie is set to 2", () => {
-    const getCookie = sinon.spy(name => 2);
+    const getCookie = sinon.spy(name => "2");
     props = { ...props, getCookie };
     subject = shallow(<HomePageWithAddon {...props} />);
     expect(subject.find("EmailDialog")).to.have.property("length", 1);
-    expect(props.removeCookie.called).to.be.true;
     subject.setState({ showEmailDialog: false });
     expect(subject.find("EmailDialog")).to.have.property("length", 0);
   });
