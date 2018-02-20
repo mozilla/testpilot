@@ -19,28 +19,23 @@ export const environmentTopics = (...args) =>
 export const environments = {
   local: {
     name: "local",
-    baseUrl: "https://example.com:8000",
-    whitelist: "https://www.mozilla.org/,about:home"
+    baseUrl: "https://example.com:8000"
   },
   dev: {
     name: "dev",
-    baseUrl: "https://testpilot.dev.mozaws.net",
-    whitelist: "https://www.mozilla.org/,about:home"
+    baseUrl: "https://testpilot.dev.mozaws.net"
   },
   l10n: {
     name: "l10n",
-    baseUrl: "https://testpilot-l10n.dev.mozaws.net",
-    whitelist: "https://www.mozilla.org/,about:home"
+    baseUrl: "https://testpilot-l10n.dev.mozaws.net"
   },
   stage: {
     name: "stage",
-    baseUrl: "https://testpilot.stage.mozaws.net",
-    whitelist: "https://www.mozilla.org/,about:home"
+    baseUrl: "https://testpilot.stage.mozaws.net"
   },
   production: {
     name: "production",
-    baseUrl: "https://testpilot.firefox.com",
-    whitelist: "https://www.mozilla.org/,about:home"
+    baseUrl: "https://testpilot.firefox.com"
   }
 };
 

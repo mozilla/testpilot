@@ -119,20 +119,7 @@ The details of what measurements are implemented for any particular experiment c
 For more general details on where these metric events are sent for measurement &
 analysis, read [`../docs/metrics/index.md`](../docs/metrics/index.md).
 
-## Participation Indicators
-
-For certain whitelisted URLs - currently just `about:home` and `mozilla.com` sites and Test Pilot itself - these properties are injected into the window:
-
-* `window.navigator.testpilotAddon = true` - indicates Test Pilot participation
-* `window.navigator.testpilotAddonVersion = 2.0` - or current add-on version
-
-Additionally, for the Test Pilot site, this property is included:
-
-* `window.navigator.testpilotClientUUID = {unique id}` - a unique ID generated when the Test Pilot add-on is installed for metrics purposes
-
 Interesting source files for this feature include the following:
 
-* [`./src/chrome/scripts/frame-script.js`](./src/chrome/scripts/frame-script.js) - content process frame script that interacts with pages to inject the properties.
-* [`./src/lib/frameScripts.js`](./src/lib/frameScripts.js) - Bootstrap-side module that injects the frame script into windows and relays property changes from the WebExtension side.
-* [`./src/lib/webextension/environments.js`](./src/lib/webextension/environments.js) - WebExtension-side module that determines which Test Pilot site environment is active, defines the whitelist of sites for property injection.
+* [`./src/lib/webextension/environments.js`](./src/lib/webextension/environments.js) - WebExtension-side module that determines which Test Pilot site environment is active.
 * [`./src/lib/webextension/metrics.js`](./src/lib/webextension/metrics.js) - WebExtension-side module that generates the unique client UUID for metrics purposes.
