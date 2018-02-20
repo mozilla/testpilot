@@ -3,35 +3,60 @@
 
 .landing-experiments {
   .more-button {
+    @include respond-to('medium') {
+      justify-content: flex-end;
+      padding: 0 20px;
+    }
+
     bottom: 0;
-    display: block;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
     position: fixed;
     text-align: center;
     width: 100%;
 
     a {
       cursor: pointer;
-      display: inline-block;
+      display: flex;
       font-size: 13px;
       line-height: 15px;
-      padding-bottom: 16px;
-      padding-top: 56px;
+      pointer-events: auto;
     }
   }
 
   .arrow {
+
+    @include respond-to('medium') {
+      background-color: $transparent-white-1;
+    }
+
+    align-items: flex-end;
     background-image: url('./more-experiments-button-oval.svg');
-    background-position: center top;
+    background-position: center 10px;
     background-repeat: no-repeat;
     background-size: 46px 46px;
+    border-radius: 10px 10px 0 0;
     color: $white;
+    display: flex;
     font-family: 'Fira Sans', sans-serif;
     font-size: 13px;
-    height: 70px;
-    line-height: 120px;
+    height: 86px;
+    padding: 10px;
     position: relative;
     text-align: center;
-    width: 150px;
+    transition: background-color 125ms, background-position 125ms, box-shadow 125ms;
+
+    &:hover {
+      background-color: $transparent-white-2;
+      background-position: center 13px;
+      box-shadow: 0 0 0 3px $transparent-white-5;
+
+      &::before,
+      &::after {
+        top: 13px;
+      }
+    }
   }
 
   .arrow::before {
@@ -47,7 +72,8 @@
     opacity: 0;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 10px;
+    transition: top 125ms;
     width: 46px;
   }
 
@@ -64,7 +90,8 @@
     opacity: 0;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 10px;
+    transition: top 125ms;
     width: 46px;
   }
 

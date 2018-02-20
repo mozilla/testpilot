@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="16px" height="11px" viewBox="0 0 16 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
-    <title>Shape</title>
-    <desc>Created with Sketch.</desc>
-    <defs/>
-    <g id="Photon-style" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Revides_Featured-experiment_txp-sticky-banner" transform="translate(-593.000000, -677.000000)" fill-rule="nonzero" fill="#FFFFFF">
-            <g id="Group-5" transform="translate(578.000000, 663.000000)">
-                <g id="Group" transform="translate(15.000000, 14.000000)">
-                    <g id="arrowhead-down-16-copy-2">
-                        <path d="M8.01228798,10.1161192 C7.65796925,10.1160435 7.31819011,9.97522982 7.06768677,9.7246508 L0.387338776,3.0443028 C-0.118994472,2.5200573 -0.111753194,1.68674282 0.403614007,1.17137562 C0.918981209,0.65600842 1.75229569,0.648767143 2.27654119,1.15510039 L8.01228798,6.89084718 L13.7480348,1.15510039 C14.2722803,0.648767143 15.1055947,0.65600842 15.620962,1.17137562 C16.1363292,1.68674282 16.1435704,2.5200573 15.6372372,3.0443028 L8.95688919,9.7246508 C8.70638585,9.97522982 8.36660671,10.1160435 8.01228798,10.1161192 Z" id="Shape"/>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="16" height="11" viewBox="0 0 16 11" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path d="M8.012 10.116c-.354 0-.694-.14-.944-.391l-6.68-6.68a1.336 1.336 0 0 1 1.889-1.89l5.735 5.736 5.736-5.736a1.336 1.336 0 0 1 1.89 1.89l-6.681 6.68c-.25.25-.59.391-.945.391z" fill-rule="nonzero" fill="#FFF"/></svg>
