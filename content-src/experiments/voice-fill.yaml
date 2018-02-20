@@ -98,3 +98,5 @@ locale_grantlist:
   - 'en-us'
   - 'en-gb'
   - 'en-ca'
+eol_warning: Voice Fill will soon be available as an add-on for all Firefox users. If you have the experiment installed, you will be updated automatically.
+completed: '2018-03-06T12:00:00.000000Z'
