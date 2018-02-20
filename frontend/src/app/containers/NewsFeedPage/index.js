@@ -26,7 +26,7 @@ export default class NewsFeedPage extends React.Component {
 
   render() {
     return (
-      <View spaceBetween={true} showNewsletterFooter={false} {...this.props}>
+      <View spaceBetween={false} showNewsletterFooter={false} {...this.props}>
         <LayoutWrapper flexModifier="column-center">
           <div id="news-feed-page">
             <Localized id="newsFeedPageHeading">
