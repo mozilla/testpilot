@@ -90,7 +90,6 @@ def test_enable_and_disable_experiment(
         notifications.AddOnInstallComplete).close()
     exp_detail = Detail(selenium, base_url)
     assert exp_detail.enabled_popup.is_popup_displayed()
-
-    experiment = experiments.find_experiment(experiment='Dev Example')
+    exp_detail.enabled_popup.close()
     experiment.disable()
     assert experiment.enable_button.is_displayed()
