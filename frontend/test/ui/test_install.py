@@ -70,26 +70,26 @@ def test_enable_and_disable_experiment(
     selenium.execute_script(
         "document.querySelector('.landing-experiments').scrollIntoView();"
     )
+
     if not page.featured.is_displayed:
+        selenium.execute_script(
+            "document.querySelector('.landing-experiments').scrollIntoView();"
+        )
         experiments = page.header.click_install_button()
     else:
-        experiments = page.featured.click_install_button()
+        experiments = page.bottom_install_button()
 
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
 
-    if not page.featured.is_displayed:
-        experiment = experiments.find_experiment(experiment='Dev Example')
-        experiment.enable()
-        firefox.browser.wait_for_notification(
-            notifications.AddOnInstallConfirmation).install()
-        firefox.browser.wait_for_notification(
-            notifications.AddOnInstallComplete).close()
-        exp_detail = Detail(selenium, base_url)
-        assert exp_detail.enabled_popup.is_popup_displayed()
-    else:
-        assert page.enabled_popup.is_popup_displayed()
-        page.enabled_popup.close()
+    experiment = experiments.find_experiment(experiment='Dev Example')
+    experiment.enable()
+    firefox.browser.wait_for_notification(
+        notifications.AddOnInstallConfirmation).install()
+    firefox.browser.wait_for_notification(
+        notifications.AddOnInstallComplete).close()
+    exp_detail = Detail(selenium, base_url)
+    assert exp_detail.enabled_popup.is_popup_displayed()
 
     experiment = experiments.find_experiment(experiment='Dev Example')
     experiment.disable()
