@@ -76,6 +76,8 @@ def test_enable_and_disable_experiment(
         experiments = page.featured.click_install_button()
 
     firefox.browser.wait_for_notification(
+        notifications.AddOnInstallConfirmation).install()
+    firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
 
     if not page.featured.is_displayed:
