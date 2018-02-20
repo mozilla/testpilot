@@ -4,6 +4,7 @@ import datetime
 import pytest
 from pages.desktop.experiments import Experiments
 from pages.desktop.home import Home
+from pages.desktop.detail import Detail
 
 
 @pytest.mark.nondestructive
@@ -52,7 +53,7 @@ def test_install_and_enable(base_url, selenium, firefox, notifications):
         notifications.AddOnInstallConfirmation).install()
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
-    assert page.enabled_popup.is_popup_displayed()
+    assert Detail(selenium, base_url).enabled_popup.is_popup_displayed()
 
 
 @pytest.mark.nondestructive
@@ -77,7 +78,16 @@ def test_enable_and_disable_experiment(
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
 
-    if page.featured.is_displayed:
+    if not page.featured.is_displayed:
+        experiment = experiments.find_experiment(experiment='Dev Example')
+        experiment.enable()
+        firefox.browser.wait_for_notification(
+            notifications.AddOnInstallConfirmation).install()
+        firefox.browser.wait_for_notification(
+            notifications.AddOnInstallComplete).close()
+        exp_detail = Detail(selenium, base_url)
+        assert exp_detail.enabled_popup.is_popup_displayed()
+    else:
         assert page.enabled_popup.is_popup_displayed()
         page.enabled_popup.close()
 
