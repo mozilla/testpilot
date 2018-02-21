@@ -62,17 +62,16 @@ export default class MainInstallButton extends React.Component {
       return;
     }
 
-    // one click install and enable handling
-    if (experimentTitle) {
-      installAddon(requireRestart, sendToGA, eventCategory, eventLabel)
-        .then(() => this.enableExperimentWrapped());
-    } else {
-      this.setState({ isInstalling: true },
-        () => installAddon(requireRestart, sendToGA, eventCategory, eventLabel)
-          .then(() => {
-            if (postInstallCallback) postInstallCallback();
-          }));
-    }
+    this.setState({ isInstalling: true },
+      () => installAddon(requireRestart, sendToGA, eventCategory, eventLabel)
+        .then(() => {
+          // one click install and enable handling
+          if (experimentTitle) {
+            this.enableExperimentWrapped();
+          } else if (postInstallCallback) {
+            postInstallCallback();
+          }
+        }));
   }
 
   render() {
