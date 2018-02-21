@@ -70,7 +70,7 @@ export default class HomePageWithAddon extends React.Component {
     }
 
     if (getCookie('visit-count') === '1') {
-      setCookie('visit-count', 2);
+      setCookie('visit-count', '2');
     }
   }
 
