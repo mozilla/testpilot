@@ -26,6 +26,17 @@ export default class MainInstallButton extends React.Component {
     };
   }
 
+  enableExperimentWrapped() {
+    const { experiment, enableExperiment, postInstallCallback } = this.props;
+
+    this.setState({ isInstalling: true }, () => enableExperiment(experiment)
+      .then(() => {
+        if (postInstallCallback) postInstallCallback();
+      }).catch((err) => {
+        this.setState({isInstalling: false});
+      }));
+  }
+
   install(e: Object) {
     // Don't install if a mouse button other than the primary button was clicked
     if (e.button !== 0) {
@@ -34,29 +45,32 @@ export default class MainInstallButton extends React.Component {
     const { requireRestart, sendToGA, eventCategory,
       installAddon, installCallback, navigateTo, eventLabel,
       postInstallCallback, isExperimentEnabled, hasAddon,
-      enableExperiment, experiment } = this.props;
+      experiment, experimentTitle } = this.props;
 
     if (hasAddon) {
       if (!isExperimentEnabled(experiment)) {
-        this.setState({ isInstalling: true }, () => enableExperiment(experiment)
-          .then(() => {
-            if (postInstallCallback) postInstallCallback();
-          }).catch((err) => {
-            this.setState({isInstalling: false});
-          }));
+        this.enableExperimentWrapped();
       } else navigateTo("/experiments");
       return;
     }
+
     if (installCallback) {
       this.setState({ isInstalling: true });
       installCallback(e);
       return;
     }
-    this.setState({ isInstalling: true });
-    installAddon(requireRestart, sendToGA, eventCategory, eventLabel)
-      .then(() => {
-        if (postInstallCallback) postInstallCallback();
-      });
+
+    // one click install and enable handling
+    if (experimentTitle) {
+      installAddon(requireRestart, sendToGA, eventCategory, eventLabel)
+        .then(() => this.enableExperimentWrapped());
+    } else {
+      this.setState({ isInstalling: true },
+        () => installAddon(requireRestart, sendToGA, eventCategory, eventLabel)
+          .then(() => {
+            if (postInstallCallback) postInstallCallback();
+          }));
+    }
   }
 
   render() {
