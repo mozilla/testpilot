@@ -8,5 +8,5 @@ activitystreamContributors7Title = 엔지니어링 인턴
 activitystreamContributors8Title = 엔지니어링 인턴
 activitystreamContributors9Title = 제품 관리자
 activitystreamContributors10Title = 엔지니어링 관리자
-activitystreamContributors11Title = 
+activitystreamContributors11Title = 소프트웨어 엔지니어
 cliqzToursteps0Copy = URL 창에 입력을 시작 하면 실시간 결과가 나타납니다.
