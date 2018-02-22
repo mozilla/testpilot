@@ -67,7 +67,6 @@ export class ExperimentDetail extends React.Component {
       isExperimentEnabled,
       experiment,
       getCookie,
-      removeCookie,
       hasAddon
     } = this.props;
 
@@ -156,7 +155,8 @@ export class ExperimentDetail extends React.Component {
       getScrollY,
       sendToGA,
       addScrollListener,
-      removeScrollListener
+      removeScrollListener,
+      removeCookie
     } = this.props;
 
     const {
@@ -215,7 +215,7 @@ export class ExperimentDetail extends React.Component {
             {...this.props}
             onDismiss={() => {
               removeCookie("visit-count");
-              this.setState({ showEmailDialog: false })
+              this.setState({ showEmailDialog: false });
             }}
           />}
 

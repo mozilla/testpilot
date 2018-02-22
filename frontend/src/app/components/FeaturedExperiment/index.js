@@ -25,6 +25,7 @@ type FeaturedExperimentProps = {
   eventCategory: string,
   isExperimentEnabled: Function,
   enableExperiment: Function,
+  navigateTo: Function,
   sendToGA: Function
 }
 

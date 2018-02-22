@@ -33,7 +33,7 @@ export default class HomePageNoAddon extends React.Component {
   props: HomePageNoAddonProps
 
   render() {
-    const { isAfterCompletedDate, featuredExperiments,
+    const { isAfterCompletedDate, featuredExperiments, navigateTo,
       experimentsWithoutFeatured, enableExperiment } = this.props;
 
     if (experimentsWithoutFeatured.length === 0) { return null; }
@@ -61,7 +61,9 @@ export default class HomePageNoAddon extends React.Component {
 
       {!featuredExperiment && <MainInstallButton {...this.props}
         eventCategory="HomePage Interactions"
-        eventLabel="Install the Add-on" />}
+        eventLabel="Install the Add-on"
+        postInstallCallback={() => navigateTo("/experiments")}
+      />}
     </Banner>;
 
     const featuredSection = featuredExperiment ? (<Banner background={true}>
@@ -128,7 +130,7 @@ export default class HomePageNoAddon extends React.Component {
             </LayoutWrapper>
             <LayoutWrapper flexModifier="column-center">
               <div className="centered">
-                <MainInstallButton {...this.props} eventCategory="HomePage Interactions" eventLabel="Install the Add-on"/>
+                <MainInstallButton {...this.props} eventCategory="HomePage Interactions" eventLabel="Install the Add-on" postInstallCallback={() => navigateTo("/experiments")}/>
               </div>
             </LayoutWrapper>
           </Banner>
@@ -136,5 +138,4 @@ export default class HomePageNoAddon extends React.Component {
       </section>
     );
   }
-
 }
