@@ -55,7 +55,9 @@ export default class FeaturedExperiment extends React.Component {
   onTourDialogComplete() {
     const { navigateTo } = this.props;
     this.setState({ showTourDialog: false });
-    if (window.location.pathname !== "/experiments") navigateTo("/experiments");
+    if (window.location.pathname !== "/experiments") {
+      navigateTo("/experiments");
+    }
   }
 
   render() {

@@ -133,7 +133,9 @@ export default class HomePageNoAddon extends React.Component {
             <LayoutWrapper flexModifier="column-center">
               <div className="centered">
                 <MainInstallButton {...this.props} eventCategory="HomePage Interactions" eventLabel="Install the Add-on" postInstallCallback={() => {
-                  if (window.location.pathname !== "/experiments")navigateTo("/experiments");
+                  if (window.location.pathname !== "/experiments") {
+                    navigateTo("/experiments");
+                  }
                 }}/>
               </div>
             </LayoutWrapper>
