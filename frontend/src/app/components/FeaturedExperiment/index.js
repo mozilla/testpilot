@@ -48,14 +48,12 @@ export default class FeaturedExperiment extends React.Component {
   }
 
   postInstallCallback() {
-    const { experiment, enableExperiment } = this.props;
-    enableExperiment(experiment).then(() => {
-      this.setState({ showTourDialog: true });
-    });
+    this.setState({ showTourDialog: true });
   }
 
   onTourDialogComplete() {
     this.setState({ showTourDialog: false });
+    this.props.navigateTo("/experiments");
   }
 
   render() {
