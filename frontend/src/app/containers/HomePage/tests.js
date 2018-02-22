@@ -22,7 +22,8 @@ describe("app/containers/HomePage", () => {
       experimentsWithoutFeatured: [],
       hasAddon: false,
       isFirefox: false,
-      replaceState: sinon.spy()
+      replaceState: sinon.spy(),
+      getCookie: sinon.spy(() => "2")
     };
     subject = shallow(<HomePage {...props} />);
   });
@@ -34,7 +35,7 @@ describe("app/containers/HomePage", () => {
   });
 
   it("should return HomePageWithAddon if hasAddon is true", () => {
-    subject.setProps({ hasAddon: true });
+    subject.setProps({ hasAddon: true, getCookie: sinon.spy(() => undefined) });
     expect(subject.find("HomePageWithAddon")).to.have.property("length", 1);
     expect(subject.find("HomePageNoAddon")).to.have.property("length", 0);
     expect(props.replaceState.called).to.be.true;
