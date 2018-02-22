@@ -33,6 +33,7 @@ export default class MainInstallButton extends React.Component {
       .then(() => {
         if (postInstallCallback) {
           postInstallCallback();
+          this.setState({isInstalling: false});
         }
       }).catch((err) => {
         this.setState({isInstalling: false});
