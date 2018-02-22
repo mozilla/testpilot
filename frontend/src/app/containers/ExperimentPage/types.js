@@ -29,6 +29,7 @@ export type ExperimentPropsFromApp = {
 };
 
 export type ExperimentPageProps = ExperimentPropsFromApp & {
+  removeCookie: Function,
   getExperimentBySlug: Function,
   slug: string
 };

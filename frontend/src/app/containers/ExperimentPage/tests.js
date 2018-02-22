@@ -298,7 +298,6 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
         setExperiment(mockExperiment);
 
         expect(subject.find("EmailDialog")).to.have.property("length", 1);
-        expect(removeCookie.called).to.be.true;
 
         subject.setState({ showEmailDialog: false });
         expect(subject.find("EmailDialog")).to.have.property("length", 0);

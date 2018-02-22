@@ -62,7 +62,7 @@ def test_install_and_enable(base_url, selenium, firefox, notifications):
 def test_enable_and_disable_experiment(
         base_url, selenium, firefox, notifications):
     """Test enabling of an experiment."""
-    page = Home(selenium, base_url).open()
+    page = Home(selenium, base_url + '/experiments').open()
     selenium.add_cookie({'name': 'updates-last-viewed-date',
                          'value': datetime.datetime.now().isoformat(),
                          'max_age': 120,
