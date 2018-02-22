@@ -53,6 +53,7 @@ export default class FeaturedExperiment extends React.Component {
 
   onTourDialogComplete() {
     this.setState({ showTourDialog: false });
+    this.props.navigateTo("/experiments");
   }
 
   render() {
