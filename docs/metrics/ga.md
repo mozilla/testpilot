@@ -109,14 +109,20 @@ Here are the current events on the website as of this writing, grouped by their 
 
 #### `Featured Experiment`
 
-| Description                     | `eventAction`         | `eventLabel`                  | Custom Dimensions |
-| ------------------------------- | --------------------- | ----------------------------- | ----------------- |
-| Click Featured Experiment Video | video click           | Play Featured video           | [12]              |
-| Click View Details              | link click            | View Featured details         | [4]               |
-| Featured Experiment Button      | button click          | Manage Featured Button State  | [1, 4, 5]         |
-| Click General Terms link        | link click            | Open general terms            |                   |
-| Click General Privacy link      | link click            | Open general privacy          |                   |
-| Click Featured Privacy link     | link click            | Popup Featured privacy        |                   |
+| Description                      | `eventAction`         | `eventLabel`                  | Custom Dimensions |
+| -------------------------------- | --------------------- | ----------------------------- | ----------------- |
+| Click Featured Experiment Video  | video click           | Play Featured video           | [12]              |
+| Click View Details               | link click            | View Featured details         | [4]               |
+| Featured Experiment Button       | button click          | Manage Featured Button State  | [1, 4, 5]         |
+| Click Cancel on tour dialogue    | button click          | cancel tour                   |                   |
+| Complete the tour                | button click          | complete tour                 |                   |
+| Click Take Tour on tour dialogue | button click          | take tour                     |                   |
+| Click next during Tour           | button click          | forward to step `n`           |                   |
+| Click back during Tour           | button click          | back to step `n`              |                   |
+| Click pagination dot during Tour | button click          | dot to step `n`               |                   |
+| Click General Terms link         | link click            | Open general terms            |                   |
+| Click General Privacy link       | link click            | Open general privacy          |                   |
+| Click Featured Privacy link      | link click            | Popup Featured privacy        |                   |
 
 
 #### `RetirePage Interactions`
