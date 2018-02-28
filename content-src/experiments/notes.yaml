@@ -59,18 +59,6 @@ contributors:
     title: 'Community Contributor'
     avatar: /static/images/experiments/avatars/cedric-a.png
   -
-    display_name: 'Anwesh Nayak'
-    title: 'Community Contributor'
-    avatar: /static/images/experiments/avatars/anwesh-n.jpg
-  -
-    display_name: 'Soumya Himanish Mohapatra'
-    title: 'Community Contributor'
-    avatar: /static/images/experiments/avatars/soumya-h.jpg
-  -
-    display_name: 'Sébastien Barbier'
-    title: 'Software Engineer'
-    avatar: /static/images/experiments/avatars/sebastien-b.jpg
-  -
     display_name: 'Ryan Feeley'
     title: 'Senior Product/UX Designer'
     avatar: /static/images/experiments/avatars/ryan-f.jpg
@@ -83,10 +71,6 @@ contributors:
     title: 'Senior Engineer'
     avatar: /static/images/experiments/avatars/vlad-f.jpg
   -
-    display_name: 'Ethan Glasser-Camp'
-    title: 'Software Engineer'
-    avatar: /static/images/experiments/avatars/ethan-g.jpg
-  -
     display_name: 'Peter Dehaan'
     title: 'Firefox QA'
     avatar: /static/images/experiments/avatars/peter.jpg
@@ -94,6 +78,22 @@ contributors:
     display_name: 'Emil Pasca'
     title: 'Softvision QA'
     avatar: /static/images/experiments/avatars/emil.jpg
+  -
+    display_name: 'Ethan Glasser-Camp'
+    title: 'Software Engineer'
+    avatar: /static/images/experiments/avatars/ethan-g.jpg
+  -
+    display_name: 'Anwesh Nayak'
+    title: 'Community Contributor'
+    avatar: /static/images/experiments/avatars/anwesh-n.jpg
+  -
+    display_name: 'Soumya Himanish Mohapatra'
+    title: 'Community Contributor'
+    avatar: /static/images/experiments/avatars/soumya-h.jpg
+  -
+    display_name: 'Sébastien Barbier'
+    title: 'Software Engineer'
+    avatar: /static/images/experiments/avatars/sebastien-b.jpg
   -
     display_name: 'Marius Coman'
     title: 'Softvision QA'
