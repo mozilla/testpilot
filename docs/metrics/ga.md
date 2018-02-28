@@ -107,6 +107,18 @@ Here are the current events on the website as of this writing, grouped by their 
 | Retire from Test Pilot | button click | Retire |
 | Shows upgrade notice | Upgrade Warning | upgrade notice shown |
 
+#### `Featured Experiment`
+
+| Description                     | `eventAction`         | `eventLabel`                  | Custom Dimensions |
+| ------------------------------- | --------------------- | ----------------------------- | ----------------- |
+| Click Featured Experiment Video | video click           | Play Featured video           | [12]              |
+| Click View Details              | link click            | View Featured details         | [4]               |
+| Featured Experiment Button      | button click          | Manage Featured Button State  | [1, 4, 5]         |
+| Click General Terms link        | link click            | Open general terms            |                   |
+| Click General Privacy link      | link click            | Open general privacy          |                   |
+| Click Featured Privacy link     | link click            | Popup Featured privacy        |                   |
+
+
 #### `RetirePage Interactions`
 
 | Description | `eventAction` | `eventLabel` |
@@ -185,7 +197,8 @@ Here is a list of dimensions we are currently using
 | Home Page, Experiment Detail Page, Share Page | Which test has this user been selected for?       | 8         | {'installButtonBorder', ''} |
 | Home Page, Experiment Detail Page, Share Page | Which cohort has this user been selected for?     | 9         | {'bigButton', ''} |
 | All                                           | In which responsive breakpoint is the user?       | 10        | {'mobile','small','medium','big'} |
-| All experiment-specific locations and events  | On which experiment did this action take?         | 11        | experiment slug | 
+| All experiment-specific locations and events  | On which experiment did this action take?         | 11        | experiment slug |
+| Featured Experiment Video Progress            | Duration of Featured YouTube video                | 12        | {n}
 
 ### Tagged Links
 
