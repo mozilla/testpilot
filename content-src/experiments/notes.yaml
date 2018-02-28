@@ -94,6 +94,10 @@ contributors:
     display_name: 'Emil Pasca'
     title: 'Softvision QA'
     avatar: /static/images/experiments/avatars/emil.jpg
+  -
+    display_name: 'Marius Coman'
+    title: 'Softvision QA'
+    avatar: /static/images/experiments/avatars/marius.jpg
 created: '2017-08-01T14:00:00Z'
 launch_date: '2017-08-01T14:00:00Z'
 order: 1
