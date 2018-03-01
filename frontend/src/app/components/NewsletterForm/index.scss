@@ -33,7 +33,6 @@
   }
 
   input[type='checkbox'] {
-    @include flex-container(row, flex-start, center);
     -moz-appearance: none;
     background: url('./img/checks.svg') no-repeat left;
     background-position: 0 0;
