@@ -188,6 +188,7 @@ voicefillContributors7Title = Старший розробник, Передов�
 testpilotNewsupdatesGeneralupdate4Title = Page Shot тепер називається Firefox Screenshots
 testpilotNewsupdatesGeneralupdate4Content = Експеримент Page Shot тепер вбудовано у Firefox і називається Firefox Screenshots. Дізнайтеся, як це сталося.
 notesNewsupdatesNotesupdate2Title = Синхронізуйте свої нотатки
+notesNewsupdatesNotesupdate2Content = Тепер ви можете синхронізувати нотатки скрізь, де маєте Firefox. Погляньте, як це втілено.
 notesNewsupdatesNotesupdate1Title = Вдосконалення Notes
 notesNewsupdatesNotesupdate1Content = Ми суттєво покращили Notes, перемінивши текстовий редактор.
 sendNewsupdatesSendupdate1Title = Використовуйте Send у Safari та Edge!
