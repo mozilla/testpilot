@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
 import { setupAddonConnection } from "./InstallManager";
+import { routes } from "../routes";
 import store from "../store";
 import App from "../containers/App";
 
@@ -27,8 +28,12 @@ export default function inject(name, component, callback) {
       node.id = "page-container";
       document.body.appendChild(node);
 
-      ReactDOM.render(provider, node);
+      ReactDOM.render(<Provider store={ s }>
+        <App>{ routes() }</App>
+      </Provider>, node);
     }
   }
-  return provider;
+  return <Provider store={ s }>
+    <App>{ component }</App>
+  </Provider>;
 }
