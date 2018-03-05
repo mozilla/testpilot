@@ -12,9 +12,6 @@ export default function inject(name, component, callback) {
   if (callback !== undefined) {
     callback(s);
   }
-  const provider = <Provider store={ s }>
-    <App>{ component }</App>
-  </Provider>;
 
   if (typeof document !== "undefined") {
     setupAddonConnection(s);
@@ -29,7 +26,7 @@ export default function inject(name, component, callback) {
       document.body.appendChild(node);
 
       ReactDOM.render(<Provider store={ s }>
-        <App>{ routes() }</App>
+        { routes() }
       </Provider>, node);
     }
   }
