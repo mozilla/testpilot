@@ -106,7 +106,7 @@ export default class FeaturedExperiment extends React.Component {
         </div>
 
         {showTourDialog && <ExperimentTourDialog {...this.props}
-          onCancel={() => this.setState({ showTourDialog: false })}
+          onCancel={this.onTourDialogComplete.bind(this)}
           onComplete={this.onTourDialogComplete.bind(this)}
         />}
       </div>
