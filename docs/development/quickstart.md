@@ -48,8 +48,6 @@ you should be on your way:
 
 1. Install [Firefox Developer Edition][devedition].
 
-1. Install the [DevPrefs][] add-on in Firefox Developer Edition.
-
 1. Set `extensions.legacy.enabled` to `true` [using `about:config`][aboutconfig],
    which should allow the use of legacy and unsigned Mozilla Extensions.
       
