@@ -2,6 +2,7 @@
 
 import { Localized } from "fluent-react/compat";
 import React from "react";
+import { Link } from "react-router-dom";
 import classnames from "classnames";
 
 import LayoutWrapper from "../LayoutWrapper";
@@ -137,7 +138,9 @@ export default class Header extends React.Component {
           <LayoutWrapper flexModifier="row-between-breaking">
             <h1>
               <Localized id="siteName">
-                <a href={ this.setHeaderLinkPath() } className="wordmark" onClick={evt => this.homepageClick(evt)}>Firefox Test Pilot</a>
+                <Link to={ this.setHeaderLinkPath() } className="wordmark" onClick={evt => this.homepageClick(evt)}>
+                  Firefox Test Pilot
+                </Link>
               </Localized>
             </h1>
             <div className="header-links">

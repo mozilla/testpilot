@@ -59,7 +59,7 @@ export default class NewsletterForm extends React.Component {
     const fieldName = "privacy";
     const privacy = <Localized id="newsletterFormPrivacyNoticePrivacyLink">
       <a target="_blank" rel="noopener noreferrer"
-        href="/privacy"/>
+        href="/privacy" />
     </Localized>;
 
     return <div>
