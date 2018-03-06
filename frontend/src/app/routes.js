@@ -9,7 +9,8 @@ import HomePageWithAddon from "./containers/HomePage/HomePageWithAddon";
 
 
 function appFactoryFor(Component) {
-  return function appFactoryForComponent() {
+  return function appFactoryForComponent(_props) {
+    // The react-router match information is available as props here if needed.
     return <App>
       <Component />
     </App>;
@@ -19,9 +20,9 @@ function appFactoryFor(Component) {
 export function routes() {
   return <BrowserRouter>
     <div>
-      <Route path="/" component={appFactoryFor(HomePage)} />
-      <Route path="/experiments" component={appFactoryFor(HomePageWithAddon)} />
-      <Route path="/experiment/:experimentname" component={appFactoryFor(ExperimentPage)} />
+      <Route exact path="/" component={appFactoryFor(HomePage)} />
+      <Route exact path="/experiments" component={appFactoryFor(HomePageWithAddon)} />
+      <Route path="/experiments/:experimentname" component={appFactoryFor(ExperimentPage)} />
     </div>
   </BrowserRouter>;
 }
