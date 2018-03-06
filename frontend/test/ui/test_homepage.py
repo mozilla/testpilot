@@ -8,7 +8,6 @@ from pages.desktop.home import Home
 from pages.desktop.privacy import Privacy
 from pages.desktop.terms import Terms
 from pages.desktop.about import About
-from pages.desktop.legacy import Legacy
 
 
 @pytest.mark.nondestructive
@@ -79,8 +78,7 @@ def test_experiments_load_correct_pages(base_url, selenium):
 @pytest.mark.parametrize('page, title', [
     [Privacy, 'Test Pilot Privacy Notice'],
     [Terms, 'Test Pilot Terms of Use'],
-    [About, 'About Test Pilot'],
-    [Legacy, 'Legacy Test Pilot']])
+    [About, 'About Test Pilot']])
 @pytest.mark.nondestructive
 def test_support_pages(base_url, selenium, page, title):
     """Test the support pages load correctly"""
