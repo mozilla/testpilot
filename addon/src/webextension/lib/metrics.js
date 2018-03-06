@@ -79,17 +79,6 @@ export async function setupMetrics() {
   sendBootstrapMessage("observeEventTopic", "send-metric");
   PubSub.subscribe(eventsTopics("send-metric"), (message, data) =>
     submitExperimentPing(data));
-
-  // HACK: register-variants & receive-variants are defunct
-  // TODO: should remove? the example add-on goes into loop without an answer
-  sendBootstrapMessage("observeEventTopic", "register-variants");
-  PubSub.subscribe(eventsTopics("register-variants"), (message, data) => {
-    log("register-variants", data);
-    sendBootstrapMessage("notifyEventTopic", {
-      topic: "receive-variants",
-      payload: {}
-    });
-  });
 }
 
 async function fetchAvailableAddons() {
