@@ -13,7 +13,6 @@ import experiments from "../pages/experiments.js";
 import home from "../pages/home.js";
 import onboarding from "../pages/onboarding.js";
 import retire from "../pages/retire.js";
-import share from "../pages/share.js";
 import news from "../pages/news.js";
 
 Raven.config(config.ravenPublicDSN).install();
@@ -27,7 +26,6 @@ const routes = {
   home,
   onboarding,
   retire,
-  share,
   news
 };
 
