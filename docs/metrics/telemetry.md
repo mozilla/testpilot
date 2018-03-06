@@ -210,7 +210,6 @@ The `testpilottest` ping type consists of the following fields:
 * The version of the experiment (the `version` field of the add-on)
 * A timestamp of when the event happened in seconds since the browser was
   started
-* A variants object with details of any [variants](experiments/variants.md) which are running
 * The data payload
 
 An example ping would look like:
