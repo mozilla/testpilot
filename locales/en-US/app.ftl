@@ -181,12 +181,6 @@ restartIntroOne = Restart your browser
 restartIntroTwo = Locate the Test Pilot add-on
 restartIntroThree = Select your experiments
 
-## Shown on a page presented to users three days after installing their first experiment.
-sharePrimary = Love Test Pilot? Help us find some new recruits.
-shareSecondary = or just copy and paste this link...
-shareEmail = E-mail
-shareCopy = Copy
-
 ## Shown on pages of retired or retiring experiments.
 eolIntroMessage = {$title} is ending on {$completedDate}
 eolNoticeLink = Learn more
