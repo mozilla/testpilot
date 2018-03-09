@@ -6,6 +6,7 @@ from pages.desktop.base import Base
 
 class Experiments(Base):
     """Represents the experiments page"""
+    URL_TEMPLATE = '/experiments/'
 
     _experiment_locator = (By.CLASS_NAME, 'experiment-summary')
 
