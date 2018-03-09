@@ -67,10 +67,6 @@ def test_enable_and_disable_experiment(
                          'value': datetime.datetime.now().isoformat(),
                          'max_age': 120,
                          'domain': 'example.com'})
-    # experiments = page.header.click_install_button()
-    # firefox.browser.wait_for_notification(
-    #    notifications.AddOnInstallComplete).close()
-
     experiment = page.find_experiment(experiment='Dev Example')
     experiment.install_and_enable()
     firefox.browser.wait_for_notification(
