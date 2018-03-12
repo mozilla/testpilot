@@ -10,6 +10,10 @@ class Experiments(Base):
 
     _experiment_locator = (By.CLASS_NAME, 'experiment-summary')
 
+    def wait_for_page_to_load(self):
+        self.wait.until(self.list is not None)
+        return self
+
     @property
     def list(self):
         """Return list of experiments on experiments page."""
