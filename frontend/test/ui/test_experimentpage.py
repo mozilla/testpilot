@@ -24,8 +24,7 @@ def test_experiment_page_sticky_header(
     firefox.browser.wait_for_notification(
       notifications.AddOnInstallComplete
     ).close()
-    experiment = experiments.find_experiment(
-        experiment='Dev Example')
+    experiment = experiments.list[0].click()
     selenium.execute_script(
         "document.querySelector('#main-footer').scrollIntoView();"
     )
