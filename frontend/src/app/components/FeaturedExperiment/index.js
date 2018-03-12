@@ -2,6 +2,7 @@
 
 import { Localized } from "fluent-react/compat";
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { experimentL10nId } from "../../lib/utils";
 import ExperimentTourDialog from "../ExperimentTourDialog";
@@ -88,7 +89,9 @@ export default class FeaturedExperiment extends React.Component {
         </Localized>
 
         {!enabled && <Localized id='moreDetail'>
-          <a className="featured-experiment__details" href={`/experiments/${slug}`}>Details</a>
+          <Link className="featured-experiment__details" to={`/experiments/${slug}`}>
+            Details
+          </Link>
         </Localized>}
 
         <div className="featured-experiment__actions">

@@ -3,6 +3,7 @@
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { buildSurveyURL, experimentL10nId } from "../../lib/utils";
 import { justUpdated, justLaunched } from "../../lib/experiment";
@@ -50,7 +51,7 @@ export default class ExperimentRowCard extends React.Component {
     const launched = (enabled || updated) ? false : justLaunched(experiment);
 
     return (
-      <a href={`/experiments/${slug}`} onClick={evt => this.openDetailPage(evt)}
+      <Link to={`/experiments/${slug}`} onClick={evt => this.openDetailPage(evt)}
         className={classnames("experiment-summary", {
           enabled,
           "just-launched": launched,
@@ -91,7 +92,7 @@ export default class ExperimentRowCard extends React.Component {
           </Localized>
           { this.renderManageButton(enabled, hasAddon, isCompleted, isFirefox, isMinFirefox) }
         </div>
-      </a>
+      </Link>
     );
   }
 
