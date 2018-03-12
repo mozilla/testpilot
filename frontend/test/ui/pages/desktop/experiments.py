@@ -11,7 +11,7 @@ class Experiments(Base):
     _experiment_locator = (By.CLASS_NAME, 'experiment-summary')
 
     def wait_for_page_to_load(self):
-        self.wait.until(self.list is not None)
+        self.wait.until(lambda _: self.list is not None)
         return self
 
     @property
