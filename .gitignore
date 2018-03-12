@@ -29,6 +29,7 @@ tmp/
 addon/build/
 addon/dist/
 addon/locale/
+.vscode/
 
 # Files to ignore within specific directories
 addon/*.rdf

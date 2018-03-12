@@ -2,6 +2,7 @@
 
 import { Localized } from "fluent-react/compat";
 import React from "react";
+import { Link } from "react-router-dom";
 import classnames from "classnames";
 
 import LayoutWrapper from "../LayoutWrapper";
@@ -107,8 +108,7 @@ export default class Header extends React.Component {
     this.props.sendToGA("event", {
       eventCategory: "Menu Interactions",
       eventAction: "click",
-      eventLabel: "open newsfeed",
-      outboundURL: evt.target.href
+      eventLabel: "open newsfeed"
     }, evt);
   }
 
@@ -116,8 +116,7 @@ export default class Header extends React.Component {
     this.props.sendToGA("event", {
       eventCategory: "Menu Interactions",
       eventAction: "click",
-      eventLabel: "Firefox logo",
-      outboundURL: evt.target.href
+      eventLabel: "Firefox logo"
     }, evt);
   }
 
@@ -137,12 +136,12 @@ export default class Header extends React.Component {
           <LayoutWrapper flexModifier="row-between-breaking">
             <h1>
               <Localized id="siteName">
-                <a href={ this.setHeaderLinkPath() } className="wordmark" onClick={evt => this.homepageClick(evt)}>Firefox Test Pilot</a>
+                <Link to={ this.setHeaderLinkPath() } className="wordmark" onClick={evt => this.homepageClick(evt)}>Firefox Test Pilot</Link>
               </Localized>
             </h1>
             <div className="header-links">
               <Localized id="headerLinkNews">
-                <a className={classnames("news-link", { active: newsPageActive })} onClick={this.newsLinkClick.bind(this)} href="/news">News Feed</a>
+                <Link className={classnames("news-link", { active: newsPageActive })} onClick={this.newsLinkClick.bind(this)} to="/news">News Feed</Link>
               </Localized>
               <Localized id="headerLinkBlog">
                 <a className="blog-link" onClick={this.blogLinkClick.bind(this)} href="https://medium.com/firefox-test-pilot" target="_blank" rel="noopener noreferrer">Blog</a>

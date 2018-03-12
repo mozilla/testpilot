@@ -1,6 +1,7 @@
 // @flow
 
 import React from "react";
+import { Link } from "react-router-dom";
 import { Localized } from "fluent-react/compat";
 import LocalizedHtml from "../LocalizedHtml";
 import { buildSurveyURL, experimentL10nId } from "../../lib/utils";
@@ -84,8 +85,7 @@ export default class FeaturedButton extends React.Component {
       eventCategory,
       eventAction: "Open detail page",
       eventLabel: title,
-      dimension11: slug,
-      outboundURL: evt.target.href
+      dimension11: slug
     }, evt);
   };
 
@@ -112,11 +112,11 @@ export default class FeaturedButton extends React.Component {
         <div>
           <div className="featured-experiment__enabled-buttons">
             <Localized id="experimentCardManage">
-              <a onClick={this.handleManage}
-                href={`/experiments/${slug}`}
+              <Link onClick={this.handleManage}
+                to={`/experiments/${slug}`}
                 className="button secondary manage-button">
                 Manage
-              </a>
+              </Link>
             </Localized>
             <Localized id="experimentCardFeedback">
               <a onClick={this.handleFeedback}

@@ -104,6 +104,10 @@ class App extends Component {
     }
   }
 
+  componentDidUpdate() {
+    window.scrollTo(0, 0);
+  }
+
   componentDidMount() {
     const userAgent = navigator.userAgent.toLowerCase();
     this.props.setHasAddon(!!window.navigator.testpilotAddon);
@@ -128,8 +132,7 @@ class App extends Component {
     function addLang(lang, response) {
       if (response.ok) {
         return response.text().then(data => {
-          langs[lang] = `${langs[lang] || ""}${data}
-`;
+          langs[lang] = `${langs[lang] || ""}${data}`;
         });
       }
       return Promise.resolve();
@@ -304,7 +307,6 @@ const mapStateToProps = state => ({
   newsletterForm: state.newsletterForm,
   protocol: state.browser.protocol,
   routing: state.routing,
-  slug: state.experiments.slug,
   staleNewsUpdates: makeStaleNewsUpdatesSelector(Date.now())(state),
   varianttests: state.varianttests
 });

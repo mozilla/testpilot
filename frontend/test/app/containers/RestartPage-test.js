@@ -1,4 +1,5 @@
 import React from "react";
+import { MemoryRouter } from "react-router";
 import { expect } from "chai";
 import sinon from "sinon";
 import { shallow, mount } from "enzyme";
@@ -16,12 +17,14 @@ describe("app/containers/RestartPage", () => {
       sendToGA: sinon.spy(),
       openWindow: sinon.spy()
     };
-    subject = shallow(<Restart {...props} />);
+    subject = mount(
+      <MemoryRouter>
+        <Restart {...props} />
+      </MemoryRouter>
+    );
   });
 
   it("should ping GA on component mount", () => {
-    const mountedProps = { ...props };
-    const mountedSubject = mount(<Restart {...mountedProps} />);
     expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "PostInstall Interactions",
       eventAction: "view modal",

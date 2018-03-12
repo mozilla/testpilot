@@ -1,5 +1,6 @@
 /* global describe, beforeEach, it */
 import React from "react";
+import { MemoryRouter } from "react-router";
 import { expect } from "chai";
 import sinon from "sinon";
 import { shallow, render } from "enzyme";
@@ -13,6 +14,14 @@ const today = new Date();
 const twoWeeksAgo = today - 1000 * 60 * 60 * 24 * 15;
 const twoDaysAgo = today - 1000 * 60 * 60 * 24 * 2;
 const oneDayAgo = today - 1000 * 60 * 60 * 24 * 1;
+const enzymeOptions = {
+  context: {
+    router: new MemoryRouter()
+  },
+  childContextTypes: {
+    router: sinon.spy()
+  }
+};
 
 describe("app/containers/HomePage", () => {
   let props, subject;
@@ -145,7 +154,7 @@ describe("app/containers/HomePageWithAddon", () => {
       openWindow: sinon.spy(),
       isAfterCompletedDate: sinon.spy(x => !!x.completed)
     };
-    subject = shallow(<HomePageWithAddon {...props} />);
+    subject = shallow(<HomePageWithAddon {...props} />, enzymeOptions);
   });
 
   it("should render expected content", () => {
@@ -193,10 +202,10 @@ describe("app/containers/HomePageWithAddon", () => {
     window.localStorage = {
       getItem: () => {}
     };
-    subject = render(<HomePageWithAddon {...props} />);
+    subject = render(<HomePageWithAddon {...props} />, enzymeOptions);
     expect(subject.find(".news-updates-modal")).to.have.property("length", 1);
 
-    subject = render(<HomePageWithAddon {...props} majorNewsUpdates={[]} />);
+    subject = render(<HomePageWithAddon {...props} majorNewsUpdates={[]} />, enzymeOptions);
     expect(subject.find(".news-updates-modal")).to.have.property("length", 0);
   });
 });

@@ -1,12 +1,22 @@
 /* global describe, beforeEach, it */
 
 import React from "react";
+import { MemoryRouter } from "react-router";
 import { expect } from "chai";
 import sinon from "sinon";
 import { mount } from "enzyme";
 import { findLocalizedById } from "../../../../test/app/util";
 
 import Header from "./index";
+
+const enzymeOptions = {
+  context: {
+    router: new MemoryRouter()
+  },
+  childContextTypes: {
+    router: sinon.spy()
+  }
+};
 
 describe("Header", () => {
   let preventDefault, stopPropagation, mockClickEvent, props, subject, target;
@@ -20,7 +30,7 @@ describe("Header", () => {
       sendToGA: sinon.spy(),
       openWindow: sinon.spy()
     };
-    subject = mount(<Header {...props} />);
+    subject = mount(<Header {...props} />, enzymeOptions);
   });
 
   const expectMenuGA = (label, action = "drop-down menu") => {
@@ -39,15 +49,14 @@ describe("Header", () => {
       expect(subject.find(".settings-button")).to.have.property("length", 0);
     });
     it("should link to /", () => {
-      expect(subject.find(".wordmark").props()).to.have.property("href", target.href);
+      expect(subject.find("a.wordmark").props()).to.have.property("href", target.href);
     });
     it("should ping GA when wordmark is clicked", () => {
-      subject.find(".wordmark").simulate("click", mockClickEvent);
+      subject.find("a.wordmark").simulate("click", mockClickEvent);
       expect(props.sendToGA.lastCall.args.slice(0, 2)).to.deep.equal(["event", {
         eventCategory: "Menu Interactions",
         eventAction: "click",
-        eventLabel: "Firefox logo",
-        outboundURL: target.href
+        eventLabel: "Firefox logo"
       }]);
     });
   });
@@ -76,18 +85,17 @@ describe("Header", () => {
     });
 
     it("should ping GA on newsfeed link clicked", () => {
-      subject.find(".news-link").simulate("click", mockClickEvent);
+      subject.find("a.news-link").simulate("click", mockClickEvent);
       expect(props.sendToGA.lastCall.args.slice(0, 2)).to.deep.equal(["event", {
         eventCategory: "Menu Interactions",
         eventAction: "click",
-        eventLabel: "open newsfeed",
-        outboundURL: mockClickEvent.target.href
+        eventLabel: "open newsfeed"
       }]);
     });
 
     it("should show a link to the news feed", () => {
-      expect(subject.find(".news-link")).to.have.property("length", 1);
-      expect(subject.find(".news-link").props()).to.have.property("href", "/news");
+      expect(subject.find("a.news-link")).to.have.property("length", 1);
+      expect(subject.find("a.news-link").props()).to.have.property("href", "/news");
     });
 
     it("should show the settings menu when the settings button is clicked", () => {
@@ -98,7 +106,7 @@ describe("Header", () => {
     });
 
     it("should link to /experiments", () => {
-      expect(subject.find(".wordmark").props()).to.have.property("href", "/experiments");
+      expect(subject.find("a.wordmark").props()).to.have.property("href", "/experiments");
     });
 
     describe("and showSettings=true", () => {

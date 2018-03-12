@@ -1,8 +1,9 @@
 /* global describe, beforeEach, it */
 import React from "react";
+import { MemoryRouter } from "react-router";
 import { expect } from "chai";
 import sinon from "sinon";
-import { mount } from "enzyme";
+import { shallow } from "enzyme";
 import moment from "moment";
 
 import { findLocalizedById } from "../../../../test/app/util";
@@ -35,7 +36,8 @@ describe("app/components/FeaturedExperiment", () => {
       sendToGA: sinon.spy(),
       isExperimentEnabled: sinon.spy()
     };
-    subject = mount(<FeaturedExperiment {...props} />);
+    const component = shallow(<MemoryRouter><FeaturedExperiment {...props} /></MemoryRouter>);
+    subject = component.find(FeaturedExperiment).dive();
   });
 
   it("should render expected content", () => {
@@ -48,81 +50,11 @@ describe("app/components/FeaturedExperiment", () => {
     expect(findLocalizedById(subject, "testingDescription")).to.have.property("length", 1);
   });
 
-  it("should change button text based on hasAddon", () => {
-    expect(subject.find(".main-install__minor-cta")).to.have.property("length", 1);
-    subject.setProps({ hasAddon: true });
-    expect(subject.find(".experiment-summary")).to.have.property("length", 0);
-  });
-
-  it('should display an "enabled" text if the experiment is enabled', () => {
-    expect(subject.find(".enabled-tab")).to.have.property("length", 0);
-    subject.setProps({ enabled: true });
-    expect(subject.find(".enabled-tab")).to.have.property("length", 1);
-  });
-
-  it("should display a feedback button if the experiment is enabled", () => {
-    expect(subject.find(".featured-experiment__enabled-buttons")).to.have.property("length", 0);
-
-    subject.setProps({ enabled: true, hasAddon: true });
-
-    expect(subject.find(".featured-experiment__enabled-buttons")).to.have.property("length", 1);
-  });
-
-  it('should display "just launched" banner if created date within 2 weeks, never seen, and not enabled', () => {
-    expect(subject.find(".just-launched-tab")).to.have.property("length", 0);
-
-    subject.setProps({
-      enabled: false,
-      experiment: { ...mockExperiment,
-        created: moment().subtract(1, "week").utc()
-      }
-    });
-
-    expect(subject.find(".just-launched-tab")).to.have.property("length", 1);
-
-    subject.setProps({ enabled: true });
-
-    expect(subject.find(".just-launched-tab")).to.have.property("length", 0);
-
-    subject.setProps({
-      enabled: true
-    });
-
-    expect(subject.find(".just-launched-tab")).to.have.property("length", 0);
-  });
-
-  it('should display "just updated" banner if modified date within 2 weeks, not enabled, and no just launched', () => {
-    expect(subject.find(".just-updated-tab")).to.have.property("length", 0);
-
-    props = { ...props,
-      enabled: false,
-      experiment: { ...mockExperiment,
-        modified: moment().subtract(1, "week").utc()
-      }
-    };
-    subject.setProps(props);
-
-    expect(subject.find(".just-updated-tab")).to.have.property("length", 1);
-
-    subject.setProps({ enabled: true });
-
-    expect(subject.find(".just-updated-tab")).to.have.property("length", 0);
-  });
-
   it('should have a "More Detail" button if not enabled', () => {
     subject.setProps({ enabled: true });
     expect(findLocalizedById(subject, "moreDetail")).to.have.property("length", 0);
     subject.setProps({ enabled: false });
     expect(findLocalizedById(subject, "moreDetail")).to.have.property("length", 1);
-  });
-
-  it('should have a "Manage" button if the experiment is enabled and has an addon', () => {
-    expect(findLocalizedById(subject, "experimentCardManage")).to.have.property("length", 0);
-    subject.setProps({
-      enabled: true,
-      hasAddon: true
-    });
-    expect(findLocalizedById(subject, "experimentCardManage")).to.have.property("length", 1);
   });
 });
 
@@ -143,7 +75,8 @@ describe("app/components/FeaturedStatus", () => {
       experiment: mockExperiment,
       enabled: false
     };
-    subject = mount(<FeaturedStatus {...props} />);
+    const component = shallow(<MemoryRouter><FeaturedStatus {...props} /></MemoryRouter>);
+    subject = component.find(FeaturedStatus).dive();
   });
 
   it("should show just launched if launched within 2 weeks", () => {
@@ -182,6 +115,38 @@ describe("app/components/FeaturedStatus", () => {
 
     expect(subject.find(".enabled-tab")).to.have.property("length", 1);
   });
+
+  it('should display "just updated" banner if modified date within 2 weeks, not enabled, and no just launched', () => {
+    expect(subject.find(".just-updated-tab")).to.have.property("length", 0);
+
+    props = { ...props,
+      enabled: false,
+      experiment: { ...mockExperiment,
+        modified: moment().subtract(1, "week").utc()
+      }
+    };
+    subject.setProps(props);
+
+    expect(subject.find(".just-updated-tab")).to.have.property("length", 1);
+
+    subject.setProps({ enabled: true });
+
+    expect(subject.find(".just-updated-tab")).to.have.property("length", 0);
+  });
+
+  it('should display "just launched" banner if created date within 2 weeks, never seen, and not enabled', () => {
+    subject.setProps({ enabled: true });
+    expect(subject.find(".just-launched-tab")).to.have.property("length", 0);
+
+    subject.setProps({
+      enabled: false,
+      experiment: { ...mockExperiment,
+        created: moment().subtract(1, "week").utc()
+      }
+    });
+
+    expect(subject.find(".just-launched-tab")).to.have.property("length", 1);
+  });
 });
 
 describe("app/components/FeaturedButton", () => {
@@ -210,7 +175,8 @@ describe("app/components/FeaturedButton", () => {
       installed: [],
       sendToGA: sinon.spy()
     };
-    subject = mount(<FeaturedButton {...props} />);
+    const component = shallow(<MemoryRouter><FeaturedButton {...props} /></MemoryRouter>);
+    subject = component.find(FeaturedButton).dive();
   });
 
   it("should show manage and feedback buttons if enabled and hasAddon", () => {
@@ -250,8 +216,7 @@ describe("app/components/FeaturedButton", () => {
       eventCategory: props.eventCategory,
       eventAction: "Open detail page",
       eventLabel: mockExperiment.title,
-      dimension11: mockExperiment.slug,
-      outboundURL: mockClickEvent.target.href
+      dimension11: mockExperiment.slug
     }]);
   });
 
@@ -269,5 +234,22 @@ describe("app/components/FeaturedButton", () => {
       eventLabel: mockExperiment.title,
       dimension11: mockExperiment.slug
     }]);
+  });
+
+  it('should have a "Manage" button if the experiment is enabled and has an addon', () => {
+    expect(findLocalizedById(subject, "experimentCardManage")).to.have.property("length", 0);
+    subject.setProps({
+      enabled: true,
+      hasAddon: true
+    });
+    expect(findLocalizedById(subject, "experimentCardManage")).to.have.property("length", 1);
+  });
+
+  it("should display a feedback button if the experiment is enabled", () => {
+    expect(subject.find(".featured-experiment__enabled-buttons")).to.have.property("length", 0);
+
+    subject.setProps({ enabled: true, hasAddon: true });
+
+    expect(subject.find(".featured-experiment__enabled-buttons")).to.have.property("length", 1);
   });
 });

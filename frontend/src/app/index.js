@@ -6,33 +6,70 @@ import moment from "moment";
 import "./lib/ga-snippet";
 import config from "./config";
 
-import notfound from "../pages/notfound.js";
-import error from "../pages/error.js";
-import experiment from "../pages/experiment.js";
-import experiments from "../pages/experiments.js";
-import home from "../pages/home.js";
-import onboarding from "../pages/onboarding.js";
-import retire from "../pages/retire.js";
-import news from "../pages/news.js";
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+
+import { setupAddonConnection } from "./lib/InstallManager";
+import store from "./store";
+import App from "./containers/App";
+
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import HomePage from "./containers/HomePage";
+import HomePageWithAddon from "./containers/HomePage/HomePageWithAddon";
+import ExperimentPage from "./containers/ExperimentPage";
+import NewsFeedPage from "./containers/NewsFeedPage";
+import RetirePage from "./containers/RetirePage";
+import OnboardingPage from "./containers/OnboardingPage";
+import NotFoundPage from "./containers/NotFoundPage";
+import ErrorPage from "./containers/ErrorPage";
 
 Raven.config(config.ravenPublicDSN).install();
 moment.locale(window.navigator.language);
 
-const routes = {
-  notfound,
-  error,
-  experiment,
-  experiments,
-  home,
-  onboarding,
-  retire,
-  news
-};
 
-const name = document.body.dataset.pageName;
-const param = document.body.dataset.pageParam;
-if (name in routes) {
-  routes[name](param);
-} else {
-  routes.error();
+function appFactoryFor(Component) {
+  return function appFactoryForComponent(props) {
+    const match = props.match;
+    if (match && match.params && match.params.slug) {
+      return <App><Component slug={match.params.slug} /></App>;
+    }
+    return <App><Component/></App>;
+  };
+}
+
+function routes() {
+  return <BrowserRouter>
+    <Switch>
+      <Route exact path="/" render={appFactoryFor(HomePage)} />
+      <Route exact path="/experiments" render={appFactoryFor(HomePageWithAddon)} />
+      <Route path="/experiments/:slug" render={appFactoryFor(ExperimentPage)} />
+      <Route exact path="/news" render={appFactoryFor(NewsFeedPage)} />
+      <Route exact path="/onboarding" render={appFactoryFor(OnboardingPage)} />
+      <Route exact path="/retire" render={appFactoryFor(RetirePage)} />
+      <Route exact path="/error" render={appFactoryFor(ErrorPage)} />
+      <Route render={appFactoryFor(NotFoundPage)} />
+    </Switch>
+  </BrowserRouter>;
+}
+
+const s = store();
+const provider = <Provider store={ s }>
+  { routes() }
+</Provider>;
+
+if (typeof document !== "undefined") {
+  setupAddonConnection(s);
+  if (document.body !== null) {
+    let node = document.getElementById("page-container");
+    if (node !== null) {
+      node.remove();
+    }
+
+    node = document.createElement("div");
+    node.id = "page-container";
+    document.body.appendChild(node);
+
+    ReactDOM.render(provider, node);
+  }
 }
