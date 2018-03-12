@@ -1,7 +1,7 @@
 import os
 import pytest
 
-from pages.desktop.home import Home
+from pages.desktop.experiments import Experiments
 
 
 @pytest.mark.nondestructive
@@ -13,19 +13,18 @@ def test_experiment_page_sticky_header(
     """Test that scrolling down on an experiment page with the
     add-on installed properly makes the header sticky
     """
-    page = Home(selenium, base_url).open()
+    experiments = Experiments(selenium, base_url).open()
     selenium.execute_script(
         "document.querySelector('.landing-experiments').scrollIntoView();"
     )
-    if page.featured.is_displayed:
-        experiments = page.featured.click_install_button()
-    else:
-        experiments = page.header.click_install_button()
+    experiment = experiments.list[0].click()
+    experiment.install_and_enable()
     firefox.browser.wait_for_notification(
-      notifications.AddOnInstallComplete
-    ).close()
-    experiment = experiments.find_experiment(
-        experiment='Dev Example')
+        notifications.AddOnInstallComplete).close()
+    firefox.browser.wait_for_notification(
+        notifications.AddOnInstallConfirmation).install()
+    firefox.browser.wait_for_notification(
+        notifications.AddOnInstallComplete).close()
     selenium.execute_script(
         "document.querySelector('#main-footer').scrollIntoView();"
     )

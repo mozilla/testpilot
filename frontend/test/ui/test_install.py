@@ -62,28 +62,15 @@ def test_install_and_enable(base_url, selenium, firefox, notifications):
 def test_enable_and_disable_experiment(
         base_url, selenium, firefox, notifications):
     """Test enabling of an experiment."""
-    page = Home(selenium, base_url + '/experiments').open()
+    page = Experiments(selenium, base_url).open()
     selenium.add_cookie({'name': 'updates-last-viewed-date',
                          'value': datetime.datetime.now().isoformat(),
                          'max_age': 120,
                          'domain': 'example.com'})
-    selenium.execute_script(
-        "document.querySelector('.landing-experiments').scrollIntoView();"
-    )
-
-    if not page.featured.is_displayed:
-        selenium.execute_script(
-            "document.querySelector('.landing-experiments').scrollIntoView();"
-        )
-        experiments = page.header.click_install_button()
-    else:
-        experiments = page.bottom_install_button()
-
+    experiment = page.find_experiment(experiment='Dev Example')
+    experiment.install_and_enable()
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
-
-    experiment = experiments.find_experiment(experiment='Dev Example')
-    experiment.enable()
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallConfirmation).install()
     firefox.browser.wait_for_notification(

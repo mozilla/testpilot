@@ -6,8 +6,13 @@ from pages.desktop.base import Base
 
 class Experiments(Base):
     """Represents the experiments page"""
+    URL_TEMPLATE = '/experiments/'
 
     _experiment_locator = (By.CLASS_NAME, 'experiment-summary')
+
+    def wait_for_page_to_load(self):
+        self.wait.until(lambda _: self.list is not None)
+        return self
 
     @property
     def list(self):
