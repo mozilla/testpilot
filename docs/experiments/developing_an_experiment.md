@@ -24,6 +24,9 @@ Yay meetings. :)
 - Schedule a product and analysis meeting.  This meeting is focused on
   reviewing the analytics and talking about actions we should take based on
   them.
+- Test Pilot's [public calendar](https://wiki.mozilla.org/Test_Pilot#Come_to_our_meetings.21)
+  would be a great place to track these meetings to make sure everyone knows
+  about them.
 - Every Test Pilot experiment has a [forum on discourse](https://discourse.mozilla.org/c/test-pilot).
   Be sure to visit regularly and engage with your users.
 
@@ -31,7 +34,12 @@ Yay meetings. :)
 ## Development
 Using GitHub is the easiest way to get going and includes several useful tools
 for free.  Test Pilot already has teams organized on GitHub so adding them to
-your experiment is easy.
+your experiment is easy if you use the `Mozilla` organization.
+
+Test Pilot currently uses CircleCI for automated testing on request of our
+operations team.  If you already something else set up, let's talk.  If you
+weren't planning on writing automated tests, we should talk too. :)  (please
+write tests)
 
 ### Code
 
@@ -41,6 +49,11 @@ Test Pilot is all about measuring and analyzing data.  Make sure you're
 [using Google Analytics to it's full potential](https://github.com/mozilla/testpilot/blob/master/docs/experiments/ga.md).
 
 If you're writing JavaScript, use [Mozilla's ESLint rules](https://www.npmjs.com/package/eslint-plugin-mozilla).
+
+You should be writing Web Extensions, if possible.  You may need to write a
+[Web Extension Experiment](https://webextensions-experiments.readthedocs.io/en/latest/)
+with some custom APIs.  Under very few circumstances should you write any other
+type of add-on and please bring up your plans early.
 
 
 ### Triage and Milestones
