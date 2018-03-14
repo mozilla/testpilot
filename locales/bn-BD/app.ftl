@@ -1,17 +1,13 @@
 siteName = Firefox Test Pilot
 
-
-// Page titles, put in the <title> HTML tag.
-[[ pageTitle ]]
+## Page titles, put in the <title> HTML tag.
 
 pageTitleDefault = Firefox Test Pilot
 pageTitleLandingPage = Firefox Test Pilot
 pageTitleExperimentListPage = Firefox Test Pilot - পরীক্ষা-নীরিক্ষা
 pageTitleExperiment = Firefox Test Pilot - { $title }
 
-
-// Links in the footer.
-[[ footerLink ]]
+## Links in the footer.
 
 footerLinkCookies = কুকি
 footerLinkPrivacy = গোপনীয়তা
@@ -20,9 +16,7 @@ footerLinkLegal = আইনী
 footerLinkFeedback = প্রতিক্রিয়া জানান
 footerLinkAbout = Test Pilot পরিচিতি
 
-
-// Items in the menu.
-[[ menu ]]
+## Items in the menu.
 
 home = নীড়
 menuTitle = সেটিং
@@ -32,34 +26,24 @@ menuFileIssue = ইস্যু ফাইল করুন
 menuRetire = Test Pilot আনইন্সটল করুন
 headerLinkBlog = ব্লগ
 
-
-// The splash on the homepage.
-[[ landing ]]
+## The splash on the homepage.
 
 landingIntroOne = নতুন নতুন ফিচার পরখ করুন।
 landingIntroTwo = আপনার প্রতিক্রিয়া জানান।
 landingIntroThree = Firefox তৈরিতে সহযোগিতা করুন।
 landingLegalNotice = এর মাধ্যমে, আপনি Test Pilot এর <a>ব্যবহারের শর্তাবলী</a> এবং <a>গোপনীয়তা নোটিশের</a> সাথে সম্মত আছেন।
-landingExperimentsTitle = সাম্প্রতিক পরীক্ষামূলক ফিচারগুলো ব্যবহার করুন
 
-
-// Related to the installation of the Test Pilot add-on.
-[[ landingInstall ]]
+## Related to the installation of the Test Pilot add-on.
 
 landingInstallButton = Test Pilot অ্যাড-অন ইন্সটল করুন
 landingInstallingButton = ইন্সটল হচ্ছে...
-landingInstalledButton = আপনার ফিচারটি বেছে নিন
 
-
-// Related to a one click to install test pilot and an experiment.
-[[ oneClickInstall ]]
+## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Test Pilot ইন্সটল করুন &amp;
 oneClickInstallMajorCta = { $title } সক্রিয় করুন
 
-
-// Homepage messaging for users not on Firefox or with an old version of Firefox.
-[[ landingFirefox ]]
+## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
 landingRequiresDesktop = Test Pilot এর জন্য Windows, Mac অথবা Linux এ ডেস্কটপের জন্য Firefox প্রয়োজন
 landingDownloadFirefoxDesc = (Windows, OS X and Linux এ Firefox এর জন্য Test Pilot পাওয়া যাচ্ছে)
@@ -68,32 +52,24 @@ landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox হালানাগাদ করুন
 landingDownloadFirefoxSubTitle = বিনামূল্যে ডাউনলোড
 
-
-// A section of the homepage explaining how Test Pilot works.
-[[ landingCard ]]
+## A section of the homepage explaining how Test Pilot works.
 
 landingCardListTitle = শুরু করুন 3, 2, 1
 landingCardOne = Test Pilot অ্যাড-অন ডাউনলোড করুন
 landingCardTwo = পরীক্ষামূলক ফিচার সক্রিয় করুন
 landingCardThree = আপনার কি মনে হয় আমাদের জানান
 
-
-// Shown after the user installs the Test Pilot add-on.
-[[ onboarding ]]
+## Shown after the user installs the Test Pilot add-on.
 
 onboardingMessage = আমরা আপনার টুলবারে একটি আইকন দিব যাতে আপনি সবসময় Test Pilot পেতে পারেন।
 
-
-// Error message pages.
-[[ error ]]
+## Error message pages.
 
 errorHeading = ওপস!
 errorMessage = মনে হচ্ছে আমরা কিছু ভেঙ্গেছি। <br> পরে আবার চেষ্টা করুন।
 notFoundHeader = চারে চার!
 
-
-// A modal prompt to sign up for the Test Pilot newsletter.
-[[ emailOptIn ]]
+## A modal prompt to sign up for the Test Pilot newsletter.
 
 emailOptInDialogTitle = Test Pilot এ আপনাকে স্বাগতম!
 emailOptInMessage = নতুন পরীক্ষা-নীরিক্ষা সম্পর্কে জানুন এবং আপনার করা পরীক্ষাগুলোর ফলাফল দেখুন।
@@ -101,15 +77,16 @@ emailOptInConfirmationTitle = ইমেইল পাঠানো হয়েছে
 emailOptInConfirmationClose = অন্যান্য পরীক্ষার উপরে...
 emailOptInDialogErrorTitle = ওহ না!
 
-
-// news feed updates.
-[[ updateList ]]
+## news feed updates.
 
 latestUpdatesTitle = সর্বশেষ হালনাগাদ
+showMoreNewsTitle = আগের খবর দেখাও
 
 
-// A listing of all Test Pilot experiments.
-[[ experimentsList ]]
+
+moreDetail = বিস্তারিত দেখুন
+
+## A listing of all Test Pilot experiments.
 
 experimentListEnabledTab = সক্রিয় হয়েছে
 experimentListJustLaunchedTab = নতুন শুরু হয়েছে
@@ -118,41 +95,33 @@ experimentListEndingTomorrow = আগামীকাল শেষ হবে
 experimentListEndingSoon = শীগ্রই শেষ হচ্ছে
 experimentCondensedHeader = Test Pilot এ স্বাগতম!
 experimentListHeader = আপনার পরীক্ষণ নির্বাচন করুন!
+experimentListHeaderWithFeatured = আপনার সকল পরীক্ষা চেস্টা করুন
 
+## An individual experiment in the listing of all Test Pilot experiments.
 
-// An individual experiment in the listing of all Test Pilot experiments.
-[[ experimentCard ]]
-
-// Small button on experiment card that links to a survey for feedback submission
+# Small button on experiment card that links to a survey for feedback submission
 experimentCardFeedback = প্রতিক্রিয়া
 experimentCardManage = পরিচালনা
 experimentCardGetStarted = শুরু করুন
+# also used in NewsUpdateDialog
 experimentCardLearnMore = আরও জানুন
 
-
-// A modal prompt shown when a user disables an experiment.
-[[ feedback ]]
+## A modal prompt shown when a user disables an experiment.
 
 feedbackSubmitButton = জরীপে অংশ নিন
 feedbackUninstallTitle = ধন্যবাদ!
 
-
-// A modal prompt shown before the feedback survey for some experiments.
-[[ experimentPreFeedback ]]
+## A modal prompt shown before the feedback survey for some experiments.
 
 experimentPreFeedbackTitle = { $title } প্রতিক্রিয়া
 experimentPreFeedbackLinkCopy = { $title } পরীক্ষা সম্পর্কে প্রতিক্রিয়া জানান
 
-
-// A splash shown on top of the experiment page when Test Pilot is not installed.
-[[ experimentPromo ]]
+## A splash shown on top of the experiment page when Test Pilot is not installed.
 
 experimentPromoHeader = আরম্ভের জন্য প্রস্তুত?
 experimentPromoSubheader = আমরা Firefox এর পরবর্তী প্রজন্মের ফিচার তৈরি করছি। সেগুলো ব্যবহার করতে Test Pilot ইন্সটল করুন!
 
-
-// The experiment detail page.
-[[ experimentPage ]]
+## The experiment detail page.
 
 isEnabledStatusMessage = { $title } সক্রিয়।
 installErrorMessage = { $title } সক্রিয় করা হয়নি। পরে আবার চেষ্টা করুন।
@@ -174,16 +143,17 @@ tourLink = ভ্রমণ শুরু করুন
 contribute = অবদান রাখুন
 bugReports = বাগ রিপোর্ট
 discussExperiment = আলোচনা { $title }
-tourOnboardingTitle = { $title } সক্রিয়!
 tourDoneButton = সম্পন্ন
 userCountContainerAlt = নতুন শুরু হয়েছে
 highlightPrivacy = আপনার গোপনীয়তা
 experimentGradReportPendingTitle = পরীক্ষণটি শেষ হয়েছে।
 experimentGoToLink = { $title } এ যাও
 
+## news updates dialog.
 
-// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
-[[ experimentPlatform ]]
+nonExperimentDialogHeaderLink = Test Pilot
+
+## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
 experimentPlatformWebAddonMobile = Firefox / ওয়েব / মোবাইল পরীক্ষণ
 experimentPlatformWebAddon = Firefox / মোবাইল পরীক্ষণ
@@ -193,20 +163,16 @@ experimentPlatformWeb = ওয়েব পরীক্ষণ
 experimentPlatformAddon = Firefox পরীক্ষণ
 experimentPlatformMobileApp = মোবাইল পরীক্ষণ
 
-
-// Shown when an experiment requires a version of Firefox newer than the user's.
-[[ upgradeNotice ]]
+## Shown when an experiment requires a version of Firefox newer than the user's.
 
 upgradeNoticeTitle = { $title } এর জন্য প্রয়োজন Firefox { $min_release } অথবা পরের কোন সংস্করণ।
 upgradeNoticeLink = কিভাবে Firefox হালনাগাদ করবেন।
+versionChangeNotice = Firefox এর এই সংস্করণে { $experiment_title } সমর্থন করে না।
 versionChangeNoticeLink = Firefox এর বর্তমান সংষ্করণ নিন।
 
-
-// Shown while uninstalling Test Pilot.
-[[ uninstall ]]
+## Shown while uninstalling Test Pilot.
 
 retireDialogTitle = Test Pilot আনইন্সটল করবেন?
-retireMessage = আপনি যেভাবে ইচ্ছা করেন। এটা যেকোন সক্রিয় টেস্ট কে নিষক্রিয় করবে, অ্যাড-অন আনইনস্টল করবে এবং আমাদের সার্ভার থেকে আপনার অ্যাকাউন্টের তথ্য সরিয়ে দিবে।
 retireEmailMessage = ইমেইল এর হালনাগাদ না পেতে চাইলে, শুধু Test Pilot ইমেইলের কোন <em>আনসাবস্ক্রাইব</em> লিঙ্কে ক্লিক করুন।
 retireSubmitButton = অগ্রসর হন
 pageTitleRetirePage = Firefox Test Pilot - Test Pilot আনইস্টল করুন
@@ -215,82 +181,61 @@ retirePageHeadline = ব্যবহারের জন্য ধন্যবা
 retirePageMessage = আশা করি আমাদের সাথে পরীক্ষা-নীরিক্ষা করতে আপনি বেশ মজা পেয়েছেন। <br> আবার ব্যবহার করবেন।
 retirePageSurveyButton = জরিপে অংশ নিন
 
-
-// Shown to users after installing Test Pilot if a restart is required.
-[[ restartIntro ]]
+## Shown to users after installing Test Pilot if a restart is required.
 
 restartIntroLead = পূর্বে যা দেখেছেন
 restartIntroOne = আপনার ব্রাউজার পুনরারম্ভ করুন
 restartIntroTwo = Test Pilot অ্যাড-অন এর স্থান নির্বাচন করুন
 restartIntroThree = আপনার পরীক্ষণ নির্বাচন করুন
 
-
-// Shown on a page presented to users three days after installing their first experiment.
-[[ share ]]
+## Shown on a page presented to users three days after installing their first experiment.
 
 sharePrimary = Test Pilot ভালবাসেন? আমাদের সাহায্য করুন নতুন অবদানকারী পেতে।
 shareSecondary = অথবা লিঙ্কটি শুধু কপি এবং পেস্ট করুন...
 shareEmail = ই-মেইল
 shareCopy = অনুলিপি
-// Shown on pages of retired or retiring experiments.
+# Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } শেষ হয়েছে { $completedDate } এ
 eolNoticeLink = আরো শিখুন
 eolDisableMessage = { $title } পরীক্ষা শেষ হয়েছে। আপনি একবার এটি আনইন্সটল করলে, Test Pilot দ্বারা আর ইনস্টল করতে পারবেন না।
 completedDateLabel = পরীক্ষণের সর্বশেষ তারিখ: <b>{ $completedDate }</b>
 
-
-// A warning shown to users looking at experiments incompatible with add-ons they already have installed.
-[[ incompatible ]]
+## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 
 incompatibleHeader = আপনি যে এড-অনসটি ইন্সটল করছেন সেটার সাথে এই গবেষণাটি সামঞ্জস্যপূর্ণ নয়।
 
+## A form prompting the user to sign up for the Test Pilot Newsletter.
 
-// A form prompting the user to sign up for the Test Pilot Newsletter.
-[[ newsletterForm ]]
-
-newsletterFormEmailPlaceholder
+newsletterFormEmailPlaceholder =
     .placeholder = আপনার ইমেইল এখানে দিন
 newsletterFormDisclaimer = আমরা আপনাকে Test Pilot সম্পর্কিত তথ্য পাঠাবো।
 newsletterFormPrivacyNotice = Mozilla কিভাবে আমার তথ্যাদি ব্যবহার করছে এ সম্পর্কিত <a>এই গোপনীয়তা নোটিশে</a> ব্যাখ্যায় আমি সন্তুষ্ট।
 newsletterFormSubmitButton = এখনই সাইন আপ করুন
 newsletterFormSubmitButtonSubmitting = জমা দেওয়া হচ্ছে...
 
-
-// A section of the footer containing a newsletter signup form.
-[[ newsletterFooter ]]
+## A section of the footer containing a newsletter signup form.
 
 newsletterFooterHeader = অবগত থাকুন
 newsletterFooterBody = নতুন নতুন পরীক্ষা-নীরিক্ষা সম্পর্কে জানুন এবং আপনার করা পরীক্ষাগুলোর ফলাফল দেখুন।
 newsletterFooterSuccessHeader = ধন্যবাদ!
 
-
-// A warning shown to users when the experiment is not available in their language
-[[ localeWarning ]]
-
-localeUnavailableWarningTitle = পরীক্ষাটি আপনার ভাষায় অনুমোদন করবে না ({ $locale_code })।
+## A warning shown to users when the experiment is not available in their language
 
 
-// An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
-[[ experimentsListNoneInstalled ]]
+## An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 
 
-
-// Shown to users who do not have JavaScript enabled.
-[[ noscript ]]
+## Shown to users who do not have JavaScript enabled.
 
 noScriptHeading = উহ ওহ...
 noScriptLink = কারণ খুঁজুন
 
-
-// Text of a button to toggle visibility of a list of past experiments.
-[[ pastExperiments ]]
+## Text of a button to toggle visibility of a list of past experiments.
 
 viewPastExperiments = পূর্বের পরীক্ষণ দেখাও
 hidePastExperiments = পূর্বের পরীক্ষণ লুকাও
 
-
-// Text of warnings to the user if various error conditions are detected
-[[ warnings ]]
+## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = কিছু একটা ভুল হচ্ছে!
 warningHttpsRequiredTitle = HTTPS প্রয়োজন!

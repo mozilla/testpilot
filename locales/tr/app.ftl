@@ -1,17 +1,13 @@
 siteName = Firefox Test Pilotu
 
-
-// Page titles, put in the <title> HTML tag.
-[[ pageTitle ]]
+## Page titles, put in the <title> HTML tag.
 
 pageTitleDefault = Firefox Test Pilotu
 pageTitleLandingPage = Firefox Test Pilotu
 pageTitleExperimentListPage = Firefox Test Pilotu - Deneyler
 pageTitleExperiment = Firefox Test Pilotu - { $title }
 
-
-// Links in the footer.
-[[ footerLink ]]
+## Links in the footer.
 
 footerLinkCookies = Çerezler
 footerLinkPrivacy = Gizlilik
@@ -20,9 +16,7 @@ footerLinkLegal = Yasal Uyarı
 footerLinkFeedback = Geri bildirim ver
 footerLinkAbout = Test Pilotu hakkında
 
-
-// Items in the menu.
-[[ menu ]]
+## Items in the menu.
 
 home = Ana sayfa
 menuTitle = Ayarlar
@@ -32,32 +26,24 @@ menuFileIssue = Sorun bildirin
 menuRetire = Test Pilotu’nu kaldır
 headerLinkBlog = Günlük
 
-
-// The splash on the homepage.
-[[ landing ]]
+## The splash on the homepage.
 
 landingIntroOne = Yeni özellikleri test et.
 landingIntroTwo = Yorumlarını paylaş.
 landingIntroThree = Firefox’u inşa etmemize yardım et.
 landingLegalNotice = Devam ederseniz Test Pilotu’nun <a>Kullanım Koşulları</a> ve <a>Gizlilik Bildirimi</a>’ni kabul etmiş sayılırsınız.
 
-
-// Related to the installation of the Test Pilot add-on.
-[[ landingInstall ]]
+## Related to the installation of the Test Pilot add-on.
 
 landingInstallButton = Test Pilotu eklentisini yükle
 landingInstallingButton = Yükleniyor...
 
-
-// Related to a one click to install test pilot and an experiment.
-[[ oneClickInstall ]]
+## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Test Pilotu’nu yükle ve
 oneClickInstallMajorCta = { $title } deneyini etkinleştir
 
-
-// Homepage messaging for users not on Firefox or with an old version of Firefox.
-[[ landingFirefox ]]
+## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
 landingRequiresDesktop = Test Pilotu için Firefox'un masaüstü Windows, Mac veya Linux sürümü gerekir
 landingDownloadFirefoxDesc = (Test Pilotu Firox'un Windows, OS X ve Linux sürümlerinde çalışır.)
@@ -67,32 +53,24 @@ landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox'u yükseltin
 landingDownloadFirefoxSubTitle = Ücretsiz indirin
 
-
-// A section of the homepage explaining how Test Pilot works.
-[[ landingCard ]]
+## A section of the homepage explaining how Test Pilot works.
 
 landingCardListTitle = Üç adımda başlayın
 landingCardOne = Test Pilotu eklentisini indirin
 landingCardTwo = Deneysel özellikleri etkinleştirin
 landingCardThree = Ne düşündüğünüzü bize anlatın
 
-
-// Shown after the user installs the Test Pilot add-on.
-[[ onboarding ]]
+## Shown after the user installs the Test Pilot add-on.
 
 onboardingMessage = Test Pilotu'nu her zaman bulabilmeniz için araç çubuğunuza bir simge ekledik.
 
-
-// Error message pages.
-[[ error ]]
+## Error message pages.
 
 errorHeading = Hata oluştu!
 errorMessage = Bozuldu galiba bu. <br> Siz daha sonra yeniden gelin.
 notFoundHeader = Dört yüz dört!
 
-
-// A modal prompt to sign up for the Test Pilot newsletter.
-[[ emailOptIn ]]
+## A modal prompt to sign up for the Test Pilot newsletter.
 
 emailOptInDialogTitle = Test Pilotu'na hoş geldiniz!
 emailOptInMessage = Yeni deneyleri öğrenin ve denediğiniz deneylerin test sonuçlarını görün.
@@ -100,21 +78,16 @@ emailOptInConfirmationTitle = E-posta gönderildi
 emailOptInConfirmationClose = Deneylere geçelim...
 emailOptInDialogErrorTitle = Hayır!
 
-
-// news feed updates.
-[[ updateList ]]
+## news feed updates.
 
 latestUpdatesTitle = Son güncellemeler
 showMoreNewsTitle = Eski haberleri göster
 
 
-[[ featuredExperiment ]]
 
 moreDetail = Ayrıntıları göster
 
-
-// A listing of all Test Pilot experiments.
-[[ experimentsList ]]
+## A listing of all Test Pilot experiments.
 
 experimentListEnabledTab = Etkinleştirildi
 experimentListJustLaunchedTab = Yeni çıktı
@@ -125,20 +98,16 @@ experimentCondensedHeader = Test Pilot'a hoş geldiniz!
 experimentListHeader = Deneylerinizi seçin!
 experimentListHeaderWithFeatured = Tüm deneylerimizi deneyin
 
+## An individual experiment in the listing of all Test Pilot experiments.
 
-// An individual experiment in the listing of all Test Pilot experiments.
-[[ experimentCard ]]
-
-// Small button on experiment card that links to a survey for feedback submission
+# Small button on experiment card that links to a survey for feedback submission
 experimentCardFeedback = Geri bildirim
 experimentCardManage = Yönet
 experimentCardGetStarted = Bunu deneyin
-// also used in NewsUpdateDialog
+# also used in NewsUpdateDialog
 experimentCardLearnMore = Daha fazla bilgi al
 
-
-// A modal prompt shown when a user disables an experiment.
-[[ feedback ]]
+## A modal prompt shown when a user disables an experiment.
 
 feedbackSubmitButton = Küçük anketimize katılın
 feedbackUninstallTitle = Teşekkürler!
@@ -147,23 +116,17 @@ feedbackUninstallCopy =
     anlamlı. Lütfen deneylerimizi inceleyin ve yeni 
     deneyler için beklemede kalın!
 
-
-// A modal prompt shown before the feedback survey for some experiments.
-[[ experimentPreFeedback ]]
+## A modal prompt shown before the feedback survey for some experiments.
 
 experimentPreFeedbackTitle = { $title } geri bildirimi
 experimentPreFeedbackLinkCopy = { $title } deneyi hakkında yorum yapın
 
-
-// A splash shown on top of the experiment page when Test Pilot is not installed.
-[[ experimentPromo ]]
+## A splash shown on top of the experiment page when Test Pilot is not installed.
 
 experimentPromoHeader = Kalkışa hazır mısınız?
 experimentPromoSubheader = Firefox'un yeni nesil özelliklerini inşa ediyoruz. Onları denemek için Test Pilotu'nu yükleyin!
 
-
-// The experiment detail page.
-[[ experimentPage ]]
+## The experiment detail page.
 
 isEnabledStatusMessage = { $title } etkinleştirildi.
 installErrorMessage = { $title } etkinleştirilemedi. Daha sonra yeniden deneyin.
@@ -194,17 +157,13 @@ experimentGradReportPendingTitle = Deney sona erdi
 experimentGradReportPendingCopy = Kapsamlı bir rapor üzerinde çalışıyoruz. Ayrıntıları öğrenmek için yakında tekrar bakın.
 experimentGradReportReady = Kapsamlı bir mezuniyet raporu hazırladık.
 experimentGoToLink = { $title } deneyine git
-startedDateLabel = Denet başlangıç tarihi:  <b>{ $startedDate }</b>
+startedDateLabel = Deney başlangıç tarihi: <b>{ $startedDate }</b>
 
-
-// news updates dialog.
-[[ newsUpdatesDialog ]]
+## news updates dialog.
 
 nonExperimentDialogHeaderLink = Test Pilotu
 
-
-// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
-[[ experimentPlatform ]]
+## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
 experimentPlatformWebAddonMobile = Firefox / web / mobil deney
 experimentPlatformWebAddon = Firefox / web deneyi
@@ -214,18 +173,14 @@ experimentPlatformWeb = web deneyi
 experimentPlatformAddon = Firefox deneyi
 experimentPlatformMobileApp = mobil deney
 
-
-// Shown when an experiment requires a version of Firefox newer than the user's.
-[[ upgradeNotice ]]
+## Shown when an experiment requires a version of Firefox newer than the user's.
 
 upgradeNoticeTitle = { $title } için Firefox { $min_release } veya üstü gerekir.
 upgradeNoticeLink = Firefox nasıl güncellenir?
 versionChangeNotice = { $experiment_title } Firefox'un bu sürümünde desteklenmiyor.
 versionChangeNoticeLink = Firefox'un son sürümünü indirin.
 
-
-// Shown while uninstalling Test Pilot.
-[[ uninstall ]]
+## Shown while uninstalling Test Pilot.
 
 retireDialogTitle = Test Pilotu kaldırılsın mı?
 retireMessageUpdate = Nasıl arzu ederseniz... Böylece Test Pilot kaldıracak. Firefox eklenti yöneticisinden her bir deneyi ayrı olarak da devre dışı bırakabilirsiniz.
@@ -237,41 +192,33 @@ retirePageHeadline = Bizimle uçtuğunuz için teşekkürler!
 retirePageMessage = Umarız deneylerimizden memnun kalmışsınızdır. <br>Yine bekleriz.
 retirePageSurveyButton = Küçük anketimize katılın
 
-
-// Shown to users after installing Test Pilot if a restart is required.
-[[ restartIntro ]]
+## Shown to users after installing Test Pilot if a restart is required.
 
 restartIntroLead = Uçuş öncesi kontroller
 restartIntroOne = Tarayıcınızı yeniden başlatın
 restartIntroTwo = Test Pilotu eklentisini bulun
 restartIntroThree = Deneylerinizi seçin
 
-
-// Shown on a page presented to users three days after installing their first experiment.
-[[ share ]]
+## Shown on a page presented to users three days after installing their first experiment.
 
 sharePrimary = Test Pilotu'nu sevdiniz mi? Yeni pilotlar bulmamıza yardım edin.
 shareSecondary = veya bu linki kopyalayıp yapıştırın...
 shareEmail = E-postayla paylaş
 shareCopy = Kopyala
-// Shown on pages of retired or retiring experiments.
+# Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } { $completedDate } tarihinde sona eriyor
 eolNoticeLink = Daha fazlası...
 eolDisableMessage = { $title } deneyi sonra erdi. Onu kaldırdıktan sonra Test Pilotu üzerinden yeniden yükleme şansınız olmayacak.
 completedDateLabel = Deney bitiş tarihi: <b>{ $completedDate }</b>
 
-
-// A warning shown to users looking at experiments incompatible with add-ons they already have installed.
-[[ incompatible ]]
+## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 
 incompatibleHeader = Bu deney, yüklü eklentilerinizle uyumlu olmayabilir.
 incompatibleSubheader = Bu deneyi etkinleştirmeden önce şu eklentileri <a>devre dışı bırakmanızı</a> öneriyoruz:
 
+## A form prompting the user to sign up for the Test Pilot Newsletter.
 
-// A form prompting the user to sign up for the Test Pilot Newsletter.
-[[ newsletterForm ]]
-
-newsletterFormEmailPlaceholder
+newsletterFormEmailPlaceholder =
     .placeholder = E-posta adresiniz
 newsletterFormDisclaimer = Yalnızca Test Pilotu ile ilgili bilgiler göndereceğiz.
 newsletterFormPrivacyNotice = Bilgilerimi <a>bu gizlilik bildiriminde</a> açıklandığı şekilde Mozilla ile paylaşmayı kabul ediyorum.
@@ -279,9 +226,7 @@ newsletterFormPrivacyAgreementRequired = Devam etmek istiyorsanız bu kutuyu iş
 newsletterFormSubmitButton = Kaydol
 newsletterFormSubmitButtonSubmitting = Gönderiliyor...
 
-
-// A section of the footer containing a newsletter signup form.
-[[ newsletterFooter ]]
+## A section of the footer containing a newsletter signup form.
 
 newsletterFooterError = E-posta adresiniz gönderilirken bir hata oluştu. Yeniden deneyelim mi?
 newsletterFooterHeader = Haberdar olun
@@ -289,39 +234,29 @@ newsletterFooterBody = Yeni deneylerden haberdar olun ve denediğiniz deneylerin
 newsletterFooterSuccessHeader = Teşekkürler!
 newsletterFooterSuccessBody = Daha önce Mozilla ile ilgili bir bültene aboneliğinizi onaylamadıysanız şimdi onaylamanız gerekebilir. Lütfen gelen kutunuzu veya spam filtrenizi kontrol edin.
 
-
-// A warning shown to users when the experiment is not available in their language
-[[ localeWarning ]]
+## A warning shown to users when the experiment is not available in their language
 
 localeNotTranslatedWarningTitle = Bu deney sizin dilinize ({ $locale_code }) çevrilmemiş.
 localeWarningSubtitle = İsterseniz yine de etkinleştirebilirsiniz.
 
-
-// An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
-[[ experimentsListNoneInstalled ]]
+## An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 
 experimentsListNoneInstalledHeader = Ayaklarınızı yerden kesme vakti!
 experimentsListNoneInstalledSubheader = Yeni bir Test Pilotu deneyine hazır mısınız? Birini seçip etkinleştirin, deneyin, ne düşündüğünüzü bize de söyleyin.
 experimentsListNoneInstalledCTA = İlginizi çekmedi mi? <a>Nedenini bize de söyleyin</a>.
 
-
-// Shown to users who do not have JavaScript enabled.
-[[ noscript ]]
+## Shown to users who do not have JavaScript enabled.
 
 noScriptHeading = Haydaa...
 noScriptMessage = Test Pilotu için JavaScript şarttır.<br>Kusura bakmayın.
 noScriptLink = Nedenini öğrenin
 
-
-// Text of a button to toggle visibility of a list of past experiments.
-[[ pastExperiments ]]
+## Text of a button to toggle visibility of a list of past experiments.
 
 viewPastExperiments = Geçmiş deneyleri göster
 hidePastExperiments = Geçmiş deneyleri gizle
 
-
-// Text of warnings to the user if various error conditions are detected
-[[ warnings ]]
+## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Bir yerde bir sorun var!
 warningGenericDetail = Test Pilotu'nda bir şeyler ters gitti. Lütfen <a>hata bildirimi yapıp</a> bu hata mesajından da bahsedin.
@@ -333,5 +268,5 @@ warningMissingPrefTitle = Test Pilotu'nu geliştiriyor musunuz?
 warningMissingPrefDetail = Test Pilotu'nu yerel ortamda veya geliştirme ortamlarında çalıştırırken özel yapılandırma gerekir. Ayrıntılar için lütfen <a>belgelerimize</a> bakın.
 warningBadHostnameTitle = Onaylanmamış ana makine adı!
 warningBadHostnameDetail = Test Pilotu sitesinde yalnızca testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net ve example.com:8000 adreslerinden ulaşabilirsiniz. Ayrıntılar için lütfen <a>belgelerimize</a> bakın.
-// This string does not appear in app, but we will use it to localize our `no script` message
+# This string does not appear in app, but we will use it to localize our `no script` message
 jsDisabledWarning = Test Pilotu için JavaScript şarttır. Kusura bakmayın.
