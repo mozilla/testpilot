@@ -14,8 +14,8 @@
   },
   "author": "Mozilla (https://mozilla.org/)",
   "engines": {
-    "firefox": ">=51",
-    "fennec": ">=51"
+    "firefox": ">=58",
+    "fennec": ">=58"
   },
   "permissions": {
     "multiprocess": true
