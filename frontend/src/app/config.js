@@ -1,6 +1,6 @@
 const defaultConfig = {
   isDev: true,
-  minFirefoxVersion: 54,
+  minFirefoxVersion: 58,
   experimentsURL: "/api/experiments.json",
   usageCountsURL:
     "https://analysis-output.telemetry.mozilla.org/testpilot/data/installation-counts/latest.json",
