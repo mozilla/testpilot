@@ -58,18 +58,14 @@ const provider = <Provider store={ s }>
   { routes() }
 </Provider>;
 
-if (typeof document !== "undefined") {
-  setupAddonConnection(s);
-  if (document.body !== null) {
-    let node = document.getElementById("page-container");
-    if (node !== null) {
-      node.remove();
-    }
-
-    node = document.createElement("div");
-    node.id = "page-container";
-    document.body.appendChild(node);
-
-    ReactDOM.render(provider, node);
-  }
+setupAddonConnection(s);
+let node = document.getElementById("page-container");
+if (node !== null) {
+  node.remove();
 }
+
+node = document.createElement("div");
+node.id = "page-container";
+document.body.appendChild(node);
+
+ReactDOM.render(provider, node);

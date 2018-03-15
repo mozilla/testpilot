@@ -21,7 +21,14 @@ const META_DESCRIPTION = "Test new Features. Give us feedback. Help build Firefo
 gulp.task("pages-misc", () => {
   // We just need a dummy file to get a stream going; we're going to ignore
   // the contents in buildLandingPage
-  return gulp.src(config.SRC_PATH + "pages/*.js")
+  return gulp.src(config.SRC_PATH + "pages/index.js")
+    .pipe(through.obj(function (file, enc, cb) {
+      const pages = require('../src/pages').pages;
+      for (const page of pages) {
+        this.push(page);
+      }
+      cb();
+    }))
     .pipe(buildLandingPage())
     .pipe(gulp.dest(config.DEST_PATH));
 });
@@ -57,16 +64,13 @@ gulp.task("pages-watch", () => {
 });
 
 function buildLandingPage() {
-  return through.obj(function landingPage(file, enc, cb) {
-    const fileName = path.basename(file.history[0]);
-    const noExtension = fileName.slice(0, fileName.indexOf("."));
-    const pageModule = path.join("..", "src", "pages", fileName);
-    const outputPath = noExtension === "home" ? "index.html" : noExtension + "/index.html";
-    const importedCreate = require(pageModule).default;
-    const importedComponent = importedCreate();
+  return through.obj(function landingPage(page, enc, cb) {
+    const name = page[0];
+    const outputPath = name === "home" ? "index.html" : name + "/index.html";
+    const importedComponent = page[1];
     const pageContent = generateStaticPage(
       true,
-      noExtension, "",
+      name, "",
       importedComponent,
       {
         meta_title: META_TITLE,
@@ -90,7 +94,7 @@ function buildExperimentPage() {
   return through.obj(function experimentPage(file, enc, cb) {
     const yamlData = file.contents.toString();
     const experiment = YAML.parse(yamlData);
-    const requiredCreate = require("../src/pages/experiment.js").default;
+    const requiredCreate = require("../src/pages").experiment;
     const requiredComponent = requiredCreate(experiment.slug);
     const pageContent = generateStaticPage(
       true,
