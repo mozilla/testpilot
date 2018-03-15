@@ -81,7 +81,9 @@ if (RUN_ANALYZER) {
 module.exports = {
   entry: {
     "static/app/app": "./frontend/src/app/index.js",
-    "static/app/vendor": vendorModules
+    "static/app/vendor": vendorModules,
+    "static/scripts/legal": "./frontend/src/scripts/legal.js",
+    "static/scripts/locale": "./frontend/src/scripts/locale.js"
   },
   output: {
     path: path.resolve(__dirname, "frontend/build"),
