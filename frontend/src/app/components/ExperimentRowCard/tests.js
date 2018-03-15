@@ -1,5 +1,7 @@
 /* global describe, beforeEach, it */
 import React from "react";
+import { MemoryRouter } from "react-router";
+import { Link } from "react-router-dom";
 import { expect } from "chai";
 import sinon from "sinon";
 import { shallow } from "enzyme";
@@ -38,7 +40,8 @@ describe("app/components/ExperimentRowCard", () => {
       sendToGA: sinon.spy(),
       isAfterCompletedDate: sinon.spy()
     };
-    subject = shallow(<ExperimentRowCard {...props} />);
+    const component = shallow(<MemoryRouter><ExperimentRowCard {...props} /></MemoryRouter>);
+    subject = component.find(ExperimentRowCard).dive();
   });
 
   it("should render expected content", () => {
@@ -47,6 +50,7 @@ describe("app/components/ExperimentRowCard", () => {
 
   it("should have the expected l10n ID", () => {
     // Title field not localized; see #1732.
+    expect(subject.find("#testingDescription")).to.have.property("length", 1);
     expect(findLocalizedById(subject, "testingTitle")).to.have.property("length", 0);
     expect(findLocalizedById(subject, "testingSubtitleFoo")).to.have.property("length", 1);
     expect(findLocalizedById(subject, "testingDescription")).to.have.property("length", 1);
@@ -195,16 +199,15 @@ describe("app/components/ExperimentRowCard", () => {
       eventCategory: props.eventCategory,
       eventAction: "Open detail page",
       eventLabel: mockExperiment.title,
-      dimension11: mockExperiment.slug,
-      outboundURL: mockClickEvent.target.href
+      dimension11: mockExperiment.slug
     }, mockClickEvent]);
   });
 
-  it("should have an anchor component with the right properties", () => {
-    const link = subject.find("a");
+  it("should have Link component with the right properties", () => {
+    const link = subject.find(Link);
     expect(link).to.not.be.a("null");
     expect(link.props()).to.contain({
-      href: `/experiments/${mockExperiment.slug}`,
+      to: `/experiments/${mockExperiment.slug}`,
       className: "experiment-summary"
     });
   });

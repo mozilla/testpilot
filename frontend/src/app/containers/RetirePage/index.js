@@ -2,6 +2,7 @@
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Copter from "../../components/Copter";
 import LayoutWrapper from "../../components/LayoutWrapper";
@@ -85,7 +86,7 @@ export default class RetirePage extends React.Component {
                   <a onClick={() => this.takeSurvey()} href="https://qsurvey.mozilla.com/s3/test-pilot" target="_blank" rel="noopener noreferrer" className="button default large">Take a quick survey</a>
                 </Localized>
                 <Localized id="home">
-                  <a href="/" className="modal-escape">Home</a>
+                  <Link to="/" className="modal-escape">Home</Link>
                 </Localized>
               </div>
             </div>

@@ -1,5 +1,6 @@
 /* global describe, it */
 import React from "react";
+import { MemoryRouter } from "react-router";
 import { assert, expect } from "chai";
 import { shallow, mount } from "enzyme";
 
@@ -21,15 +22,17 @@ const baseProps = {
 describe("app/components/View", () => {
   it("should pass its props to child components", () => {
     const wrapper = mount(
-      <View {...baseProps} foo="bar">
-        <FooComponent />
-      </View>
+      <MemoryRouter>
+        <View {...baseProps} foo="bar">
+          <FooComponent />
+        </View>
+      </MemoryRouter>
     );
     expect(wrapper.find("p").first().props("foo").children).to.equal("bar");
   });
 
   it("should not pass its props to child DOM elements", () => {
-    const wrapper = mount(
+    const wrapper = shallow(
       <View {...baseProps} foo="bar">
         <p></p>
       </View>
@@ -39,7 +42,7 @@ describe("app/components/View", () => {
 
   it("should gracefully skip falsy elements", () => {
     assert.doesNotThrow(() => {
-      mount(
+      shallow(
         <View {...baseProps} >
           {false && <FooComponent />}
           <FooComponent />
@@ -49,7 +52,7 @@ describe("app/components/View", () => {
   });
 
   it("should only use the child's children", () => {
-    const wrapper = mount(
+    const wrapper = shallow(
       <View {...baseProps} foo="baz">
         <FooComponent foo="bar">
           <p>Hello, friend.</p>
@@ -61,8 +64,8 @@ describe("app/components/View", () => {
   });
 
   it("should rerender its children", () => {
-    const wrapper = mount(<View {...baseProps}><FooComponent /></View>);
-    expect(wrapper.find("FooComponent")).to.have.length(1);
+    const wrapper = mount(<MemoryRouter><View {...baseProps}><FooComponent /></View></MemoryRouter>);
+    expect(wrapper.find(FooComponent)).to.have.length(1);
   });
 
   it("should render the footer by default", () => {

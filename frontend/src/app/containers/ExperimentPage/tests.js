@@ -1,5 +1,6 @@
 /* global describe, beforeEach, it */
 import React from "react";
+import { MemoryRouter } from "react-router";
 import { expect } from "chai";
 import sinon from "sinon";
 import { shallow, mount } from "enzyme";
@@ -120,8 +121,15 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
       getWindowLocation: sinon.spy(() => "https://example.com"),
       setPageTitleL10N: sinon.spy()
     };
-
-    subject = mount(<ExperimentDetail {...props} />);
+    const options = {
+      context: {
+        router: new MemoryRouter()
+      },
+      childContextTypes: {
+        router: sinon.spy()
+      }
+    };
+    subject = mount(<ExperimentDetail {...props} />, options);
   });
 
   const setExperiment = experiment => {
@@ -829,13 +837,13 @@ describe("app/containers/ExperimentPage/ExperimentPreFeedbackDialog", () => {
     subject.find(".modal-container").simulate("keyDown", mockEnterKeyDownEvent);
     expect(global.window.open.calledOnce).to.be.true;
     expect(onCancel.called).to.be.false;
-    expect(sendToGA.lastCall.args).to.deep.equal(["event", {
+    expect(sendToGA.lastCall.args[1]).to.deep.equal({
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "PreFeedback Confirm",
       eventLabel: experiment.title,
       outboundURL: surveyURL,
       dimension11: experiment.slug
-    }, mockClickEvent]);
+    });
   });
 });
 
