@@ -46,12 +46,15 @@ export default class NewsletterForm extends React.Component {
 
   renderEmailField() {
     return (
-      <input
-        type='email'
-        required
-        value={this.props.email}
-        onChange={this.handleEmailChange}
-      />
+      <Localized id="newsletterFormEmailPlaceholder" attrs={{placeholder: true}}>
+        <input
+          type='email'
+          placeholder="Your email here"
+          required
+          value={this.props.email}
+          onChange={this.handleEmailChange}
+        />
+      </Localized>
     );
   }
 
