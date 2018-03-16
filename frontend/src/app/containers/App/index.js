@@ -11,7 +11,6 @@ import Clipboard from "clipboard";
 import likelySubtagsData from "cldr-core/supplemental/likelySubtags.json";
 
 import { getInstalled, isExperimentEnabled, isAfterCompletedDate, isInstalledLoaded } from "../../reducers/addon";
-import { setState as setBrowserState } from "../../actions/browser";
 import { getExperimentBySlug } from "../../reducers/experiments";
 import { getChosenTest } from "../../reducers/varianttests";
 import experimentSelector, { featuredExperimentsSelectorWithL10n, experimentsWithoutFeaturedSelectorWithL10n } from "../../selectors/experiment";
@@ -24,9 +23,6 @@ import newsletterFormActions from "../../actions/newsletter-form";
 import RestartPage from "../RestartPage";
 import UpgradeWarningPage from "../UpgradeWarningPage";
 import {
-  isFirefox,
-  isMinFirefoxVersion,
-  isMobile,
   shouldOpenInNewTab
 } from "../../lib/utils";
 import {
@@ -109,21 +105,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const userAgent = navigator.userAgent.toLowerCase();
-    this.props.setHasAddon(!!window.navigator.testpilotAddon);
-    this.props.setBrowserState({
-      userAgent,
-      host: window.location.host,
-      protocol: window.location.protocol,
-      hasAddonManager: (typeof navigator.mozAddonManager !== "undefined"),
-      isFirefox: isFirefox(userAgent),
-      isMobile: isMobile(userAgent),
-      isMinFirefox: isMinFirefoxVersion(userAgent, config.minFirefoxVersion),
-      isProdHost: window.location.host === config.prodHost,
-      isDevHost: config.devHosts.includes(window.location.host),
-      isDev: config.isDev,
-      locale: (navigator.language || "").split("-")[0]
-    });
     this.props.chooseTests();
     this.measurePageview();
 
@@ -171,8 +152,8 @@ class App extends Component {
   }
 
   shouldShowUpgradeWarning() {
-    const { hasAddon, hasAddonManager, host } = this.props;
-    return shouldShowUpgradeWarning(hasAddon, hasAddonManager, this.props.isFirefox, host);
+    const { hasAddon, hasAddonManager, host, isFirefox } = this.props;
+    return shouldShowUpgradeWarning(hasAddon, hasAddonManager, isFirefox, host);
   }
 
   render() {
@@ -313,7 +294,6 @@ const mapStateToProps = state => ({
 
 
 const mapDispatchToProps = dispatch => ({
-  setBrowserState: state => dispatch(setBrowserState(state)),
   chooseTests: () => dispatch(chooseTests()),
   navigateTo: path => {
     window.location = path;

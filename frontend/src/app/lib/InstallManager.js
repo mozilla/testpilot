@@ -89,15 +89,19 @@ export function setupAddonConnection(store) {
     return;
   }
 
+  function experimentById(id) {
+    const { experiments } = store.getState();
+    return experiments.data.filter(x => x.addon_id === id)[0];
+  }
+
   mam.addEventListener("onEnabled", addon => {
     if (!addon) { return false; }
     if (addon.id === TESTPILOT_ADDON_ID) {
       return store.dispatch(addonActions.setHasAddon(true));
     }
-    const { experiments } = store.getState();
-    const i = experiments.data.map(x => x.addon_id).indexOf(addon.id);
-    if (i > -1) {
-      const x = experiments.data[i];
+
+    const x = experimentById(addon.id);
+    if (x) {
       store.dispatch(addonActions.enableExperiment(x));
       store.dispatch(
         updateExperiment(x.addon_id, {
@@ -122,10 +126,8 @@ export function setupAddonConnection(store) {
     if (addon.id === TESTPILOT_ADDON_ID) {
       return store.dispatch(addonActions.setHasAddon(false));
     }
-    const { experiments } = store.getState();
-    const i = experiments.data.map(x => x.addon_id).indexOf(addon.id);
-    if (i > -1) {
-      const x = experiments.data[i];
+    const x = experimentById(addon.id);
+    if (x) {
       store.dispatch(addonActions.disableExperiment(x));
       store.dispatch(
         updateExperiment(x.addon_id, {
@@ -157,37 +159,41 @@ export function setupAddonConnection(store) {
   mam.addEventListener('onPropertyChanged', (addon, p) => {
   });
 */
-  getExperimentAddons(store.getState().experiments.data).then(addons => {
-    const enabled = addons.filter(a => a && a.isEnabled);
-    const installed = {};
-    enabled.forEach(a => {
-      installed[a.id] = {
+  mam.getAddonByID(TESTPILOT_ADDON_ID).then(addon => {
+    store.dispatch(addonActions.setHasAddon(!!addon));
+  })
+    .then(() => getExperimentAddons(store.getState().experiments.data))
+    .then(addons => {
+      const enabled = addons.filter(a => a && a.isEnabled);
+      const installed = {};
+      enabled.forEach(a => {
+        installed[a.id] = {
         // TODO see which of these are required
-        active: true,
-        addon_id: a.id
+          active: true,
+          addon_id: a.id
         // created:
         // html_url:
         // installDate:
         // thumbnail:
         // title:
-      };
-    });
-    store.dispatch(addonActions.setInstalled(installed));
-
-    // populate install history for initial load
-    if (!installHistory) {
-      const installations = Object.assign({}, installed);
-      store.getState().experiments.data.forEach(e => {
-        if (!installations[e.addon_id]) {
-          installations[e.addon_id] = {
-            active: false,
-            addon_id: e.addon_id
-          };
-        }
+        };
       });
-      installHistory = new InstallHistory(installations);
-    }
-  });
+      store.dispatch(addonActions.setInstalled(installed));
+
+      // populate install history for initial load
+      if (!installHistory) {
+        const installations = Object.assign({}, installed);
+        store.getState().experiments.data.forEach(e => {
+          if (!installations[e.addon_id]) {
+            installations[e.addon_id] = {
+              active: false,
+              addon_id: e.addon_id
+            };
+          }
+        });
+        installHistory = new InstallHistory(installations);
+      }
+    });
 }
 
 export function enableExperiment(dispatch, experiment, sendToGA) {

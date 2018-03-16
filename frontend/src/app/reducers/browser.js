@@ -1,7 +1,5 @@
-// @flow
-
-
 import config from "../config";
+import { isFirefox, isMinFirefoxVersion, isMobile } from "../lib/utils";
 
 export type BrowserState = {
   isFirefox: boolean,
@@ -12,13 +10,29 @@ export type BrowserState = {
 };
 
 function defaultState(): BrowserState {
+  if (typeof navigator === "undefined") {
+    return {
+      userAgent: "",
+      isFirefox: true,
+      isMinFirefox: true,
+      isMobile: false,
+      isDev: config.isDev,
+      locale: "en-US"
+    };
+  }
+  const userAgent = navigator.userAgent.toLowerCase();
   return {
-    userAgent: "",
-    isFirefox: true,
-    isMinFirefox: true,
-    isMobile: false,
+    userAgent,
+    isFirefox: isFirefox(userAgent),
+    isMinFirefox: isMinFirefoxVersion(userAgent, config.minFirefoxVersion),
+    isMobile: isMobile(userAgent),
+    host: window.location.host,
+    protocol: window.location.protocol,
+    hasAddonManager: (typeof navigator.mozAddonManager !== "undefined"),
+    isProdHost: window.location.host === config.prodHost,
+    isDevHost: config.devHosts.includes(window.location.host),
     isDev: config.isDev,
-    locale: "en-US"
+    locale: (navigator.language || "").split("-")[0]
   };
 }
 

@@ -43,6 +43,11 @@ export const initialState = {
   }
 };
 
+try {
+  if (typeof window !== "undefined") {
+    initialState.addon.hasAddon = window.localStorage.getItem("hasAddon") === "true";
+  }
+} catch (e) {}
 
 export function createMiddleware() {
   return compose(
