@@ -7,6 +7,8 @@ const morgan = require("morgan");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const WriteFilePlugin = require("write-file-webpack-plugin");
 
 const {
   DevServerMiddleware,
@@ -54,6 +56,13 @@ const plugins = [
     "process.env.ENABLE_DEV_LOCALES": process.env.ENABLE_DEV_LOCALE || 0,
     "process.env.ENABLE_DEV_CONTENT": process.env.ENABLE_DEV_CONTENT || 0
   }),
+  new CopyWebpackPlugin([
+    { from: "./addon/addon.xpi", to: "static/addon/"},
+    { from: "./addon/update.rdf", to: "static/addon/"},
+    { context: "./locales", from: "**/*", to: "static/locales/" },
+    { context: "./frontend/src/images", from: "**/*", to: "static/images/" }
+  ]),
+  new WriteFilePlugin(),
   // Include only moment locale modules that match AVAILABLE_LOCALES
   new webpack.ContextReplacementPlugin(
     /moment[\/\\]locale$/, // eslint-disable-line no-useless-escape
