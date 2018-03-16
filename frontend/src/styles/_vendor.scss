@@ -1,5 +1,5 @@
-@import 'normalize';
-@import 'photon-colors';
+@import '~node-normalize-scss/normalize';
+@import '~photon-colors/colors';
 
 // HACK: Book is missing from fira.css
 // https://github.com/mozilla/Fira/issues/209

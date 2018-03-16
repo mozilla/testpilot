@@ -58,7 +58,6 @@ const plugins = [
   }),
   new CopyWebpackPlugin([
     { from: "./addon/addon.xpi", to: "static/addon/"},
-    { from: "./addon/update.rdf", to: "static/addon/"},
     { context: "./locales", from: "**/*", to: "static/locales/" },
     { context: "./frontend/src/images", from: "**/*", to: "static/images/" }
   ]),
@@ -139,7 +138,11 @@ module.exports = {
       {
         test: /\.scss$/,
         use: extractSass.extract({
-          use: [{ loader: "css-loader" }, { loader: "sass-loader" }],
+          use: [
+            { loader: "css-loader" },
+            { loader: "postcss-loader" },
+            { loader: "sass-loader" }
+          ],
           // use style-loader in development
           fallback: "style-loader"
         })
