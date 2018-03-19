@@ -101,7 +101,8 @@ module.exports = [
         { from: './package.json' },
         { from: './src/chrome.manifest' },
         { from: './src/webextension/manifest.json', to: './webextension/' },
-        { from: './src/webextension/icons', to: './webextension/icons' }
+        { from: './src/webextension/icons', to: './webextension/icons' },
+        { from: './src/webextension/options', to: './webextension/options' }
       ])
     ].concat(baseConfig.plugins)
   })
