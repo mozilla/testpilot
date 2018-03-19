@@ -35,5 +35,9 @@
     "default_title": "Firefox Test Pilot",
     "browser_style": true,
     "default_icon":  "icons/icon.svg"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "browser_style": true
   }
 }

@@ -16,28 +16,6 @@ export const webExtensionTopics = (...args) =>
 export const environmentTopics = (...args) =>
   webExtensionTopics("environment", ...args);
 
-export const environments = {
-  local: {
-    name: "local",
-    baseUrl: "https://example.com:8000"
-  },
-  dev: {
-    name: "dev",
-    baseUrl: "https://testpilot.dev.mozaws.net"
-  },
-  l10n: {
-    name: "l10n",
-    baseUrl: "https://testpilot-l10n.dev.mozaws.net"
-  },
-  stage: {
-    name: "stage",
-    baseUrl: "https://testpilot.stage.mozaws.net"
-  },
-  production: {
-    name: "production",
-    baseUrl: "https://testpilot.firefox.com"
-  }
-};
 
 const RESOURCE_UPDATE_INTERVAL = 1000 * 60 * 60 * 4; // 4 hours
 
@@ -46,27 +24,33 @@ const resources = {
   news_updates: null
 };
 
-let currentEnvironment = environments.production;
-
-export async function setupEnvironment() {
-  log("setupEnvironment");
-  PubSub.subscribe(bootstrapTopics("prefs", "prefsChange"), (message, data) => {
-    const env = setCurrentEnv(data["testpilot.env"]);
-    sendBootstrapMessage("updateEnvironment", env);
-  });
-  setInterval(fetchResources, RESOURCE_UPDATE_INTERVAL);
-  PubSub.subscribe(environmentTopics("change"), fetchResources);
-}
+let currentEnvironment = {
+  name: "production",
+  baseUrl: "https://testpilot.firefox.com"
+};
 
 export function getCurrentEnv() {
   return currentEnvironment;
 }
 
-export function setCurrentEnv(env) {
-  currentEnvironment =
-    env in environments ? environments[env] : environments.production;
-  PubSub.publish(environmentTopics("change"), currentEnvironment);
-  return currentEnvironment;
+function getEnvironment(onSuccess, onErr) {
+  browser.storage.local.get("environment")
+    .then((result) => {
+      onSuccess(result.environment);
+    }, onErr);
+}
+
+export async function setupEnvironment() {
+  log("setupEnvironment");
+  setInterval(fetchResources, RESOURCE_UPDATE_INTERVAL);
+  browser.storage.onChanged.addListener((changes) => {
+    Object.keys(changes).forEach((k) => {
+      if (k === 'environment') {
+        currentEnvironment = changes[k];
+        fetchResources();
+      }
+    });
+  });
 }
 
 export function getResources() {
