@@ -209,10 +209,15 @@ newsletterFormSubmitButtonSubmitting = 제출 중...
 
 ## A section of the footer containing a newsletter signup form.
 
+newsletterFooterError = 이메일 주소를 제출하는데 실패했습니다. 다시 시도하시겠습니까?
+newsletterFooterHeader = 최신 정보를 받아보세요
+newsletterFooterBody = 새 실험 기능을 찾아보시거나 이미 써보셨던 기능 실험 결과를 확인해보세요.
 newsletterFooterSuccessHeader = 감사합니다!
 
 ## A warning shown to users when the experiment is not available in their language
 
+localeNotTranslatedWarningTitle = 이 실험 기능은 사용중이신 언어 ({ $locale_code })로 번역되지 않았습니다.
+localeWarningSubtitle = 그래도 원하시면 활성화하실 수 있습니다.
 
 ## An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 
@@ -235,3 +240,10 @@ warningGenericDetail = Test Pilot에 문제가 발생했습니다. <a>버그 리
 warningUpgradeFirefoxTitle = 계속하려면 Firefox를 업그레이드하세요!
 warningUpgradeFirefoxDetail = Test Pilot을 쓰려면 Firefox가 최신 버전이어야 합니다. 시작하려면 <a>Firefox를 업그레이드</a>하세요.
 warningHttpsRequiredTitle = HTTPS가 필요합니다!
+warningHttpsRequiredDetail = Test Pilot을 쓰려면 HTTPS로 접속해야 합니다. 자세한 사항은 <a>문서</a>를 확인해주세요.
+warningMissingPrefTitle = Test Pilot을 개발하고 계십니까?
+warningMissingPrefDetail = 로컬 또는 개발 환경에서 Test Pilot을 실행하는 경우 따로 설정이 필요합니다. 자세한 사항은 <a>문서</a>를 확인해주세요.
+warningBadHostnameTitle = 비인가된 호스트명입니다!
+warningBadHostnameDetail = Test Pilot 사이트는 testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net 및 example.com:8000 주소로만 접속 가능합니다. 자세한 사항은 <a>문서</a>를 확인해주세요.
+# This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot을 쓰려면 JavaScript가 필요합니다. 죄송합니다.
