@@ -1,3 +1,5 @@
+import type { InstalledExperiments } from "../reducers/addon"; // eslint-disable-line no-unused-vars
+
 import {
   MiscAppProps,
   BrowserEnvProps,
@@ -9,6 +11,8 @@ export type VariantTestsProps = {
 };
 
 export type MainInstallButtonProps = {
+  isFeatured?: boolean,
+  installed: InstallExperiments,
   experiment?: Object,
   experimentTitle: string,
   installCallback?: Function,

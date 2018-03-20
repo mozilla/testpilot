@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Localized } from "fluent-react/compat";
 import LocalizedHtml from "../LocalizedHtml";
 import { buildSurveyURL, experimentL10nId } from "../../lib/utils";
+import { getBreakpoint } from "../../containers/App";
 
 import Modal from "../Modal";
 import MeasurementSection from "../Measurements";
@@ -42,9 +43,50 @@ export default class FeaturedButton extends React.Component {
   };
 
   renderLegalLink() {
+    const { sendToGA, eventCategory, hasAddon, installed,
+      experiment } = this.props;
     const launchLegalModal = (ev) => {
       ev.preventDefault();
       this.setState({ showLegalDialog: true });
+      sendToGA("event", {
+        eventCategory,
+        eventAction: "link click",
+        eventLabel: "Popup Featured privacy",
+        dimension1: hasAddon,
+        dimension2: Object.keys(installed).length > 0,
+        dimension3: Object.keys(installed).length,
+        dimension10: getBreakpoint(window.innerWidth),
+        dimension11: experiment.slug,
+        dimension13: "Featured Experiment"
+      }, ev);
+    };
+
+    const sendTermsMetric = (ev) => {
+      sendToGA("event", {
+        eventCategory,
+        eventAction: "link click",
+        eventLabel: "Open general terms",
+        dimension1: hasAddon,
+        dimension2: Object.keys(installed).length > 0,
+        dimension3: Object.keys(installed).length,
+        dimension10: getBreakpoint(window.innerWidth),
+        dimension11: experiment.slug,
+        dimension13: "Featured Experiment"
+      }, ev);
+    };
+
+    const sendPrivacyMetric = (ev) => {
+      sendToGA("event", {
+        eventCategory,
+        eventAction: "link click",
+        eventLabel: "Open general privacy",
+        dimension1: hasAddon,
+        dimension2: Object.keys(installed).length > 0,
+        dimension3: Object.keys(installed).length,
+        dimension10: getBreakpoint(window.innerWidth),
+        dimension11: experiment.slug,
+        dimension13: "Featured Experiment"
+      }, ev);
     };
 
     const { title } = this.props.experiment;
@@ -52,8 +94,8 @@ export default class FeaturedButton extends React.Component {
     return (<LocalizedHtml id={this.l10nId("legal-notice")}
       $title={title}>
       <p className="main-install__legal">
-        By proceeding, you agree to the <a href="/terms">terms</a>
-        and <a href="/privacy">privacy</a> policies of Test Pilot and the
+            By proceeding, you agree to the <a href="/terms" onClick={sendTermsMetric}>terms</a>
+       and <a href="/privacy" onClick={sendPrivacyMetric}>privacy</a> policies of Test Pilot and the
         <a href="#" onClick={launchLegalModal}>{title} privacy policy</a>.
       </p>
     </LocalizedHtml>);
@@ -78,24 +120,40 @@ export default class FeaturedButton extends React.Component {
   }
 
   handleManage = (evt: Function) => {
-    const { experiment, eventCategory } = this.props;
+    const { experiment, eventCategory, hasAddon, enabled, installed } = this.props;
     const { slug, title } = experiment;
+
     this.props.sendToGA("event", {
       eventCategory,
-      eventAction: "Open detail page",
-      eventLabel: title,
-      dimension11: slug
+      eventAction: "button click",
+      eventLabel: "Manage Featured Button",
+      dimension1: hasAddon,
+      dimension2: Object.keys(installed).length > 0,
+      dimension3: Object.keys(installed).length,
+      dimension4: enabled,
+      dimension5: title,
+      dimension10: getBreakpoint(window.innerWidth),
+      dimension11: slug,
+      dimension13: "Featured Experiment"
     }, evt);
   };
 
-  handleFeedback = () => {
-    const { experiment, eventCategory } = this.props;
+  handleFeedback = (evt: Function) => {
+    const { experiment, eventCategory, hasAddon, enabled, installed } = this.props;
+    const { slug, title } = experiment;
     this.props.sendToGA("event", {
       eventCategory,
-      eventAction: "Give Feedback",
-      eventLabel: experiment.title,
-      dimension11: experiment.slug
-    });
+      eventAction: "button click",
+      eventLabel: "Feedback Featured Button",
+      dimension1: hasAddon,
+      dimension2: Object.keys(installed).length > 0,
+      dimension3: Object.keys(installed).length,
+      dimension4: enabled,
+      dimension5: title,
+      dimension10: getBreakpoint(window.innerWidth),
+      dimension11: slug,
+      dimension13: "Featured Experiment"
+    }, evt);
   }
 
   render() {
@@ -131,6 +189,7 @@ export default class FeaturedButton extends React.Component {
       Buttons = (
         <div>
           <MainInstallButton {...this.props}
+            isFeatured={true}
             experimentTitle={title}
             experiment={experiment}
             experimentLegalLink={this.renderLegalLink()}

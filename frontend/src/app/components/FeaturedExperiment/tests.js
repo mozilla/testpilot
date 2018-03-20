@@ -214,9 +214,16 @@ describe("app/components/FeaturedButton", () => {
 
     expect(props.sendToGA.lastCall.args.slice(0, 2)).to.deep.equal(["event", {
       eventCategory: props.eventCategory,
-      eventAction: "Open detail page",
-      eventLabel: mockExperiment.title,
-      dimension11: mockExperiment.slug
+      eventAction: "button click",
+      eventLabel: "Manage Featured Button",
+      dimension1: true,
+      dimension2: false,
+      dimension3: 0,
+      dimension4: true,
+      dimension5: "Testing Experiment",
+      dimension10: "big",
+      dimension11: mockExperiment.slug,
+      dimension13: "Featured Experiment"
     }]);
   });
 
@@ -230,10 +237,17 @@ describe("app/components/FeaturedButton", () => {
 
     expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: props.eventCategory,
-      eventAction: "Give Feedback",
-      eventLabel: mockExperiment.title,
-      dimension11: mockExperiment.slug
-    }]);
+      eventAction: "button click",
+      eventLabel: "Feedback Featured Button",
+      dimension1: true,
+      dimension2: false,
+      dimension3: 0,
+      dimension4: true,
+      dimension5: "Testing Experiment",
+      dimension10: "big",
+      dimension11: mockExperiment.slug,
+      dimension13: "Featured Experiment"
+    }, mockClickEvent]);
   });
 
   it('should have a "Manage" button if the experiment is enabled and has an addon', () => {
@@ -251,5 +265,65 @@ describe("app/components/FeaturedButton", () => {
     subject.setProps({ enabled: true, hasAddon: true });
 
     expect(subject.find(".featured-experiment__enabled-buttons")).to.have.property("length", 1);
+  });
+
+  it("should call sendToGA when legal modal launched", () => {
+    subject.setProps({
+      hasAddon: true,
+      enabled: true
+    });
+    subject.find(".main-install__legal a[href='#']").simulate("click", mockClickEvent);
+
+    expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
+      eventCategory: props.eventCategory,
+      eventAction: "link click",
+      eventLabel: "Popup Featured privacy",
+      dimension1: true,
+      dimension2: false,
+      dimension3: 0,
+      dimension10: "big",
+      dimension11: mockExperiment.slug,
+      dimension13: "Featured Experiment"
+    }, mockClickEvent]);
+  });
+
+  it("should call sendToGA when terms link clicked", () => {
+    subject.setProps({
+      hasAddon: true,
+      enabled: true
+    });
+    subject.find(".main-install__legal a[href='/terms']").simulate("click", mockClickEvent);
+
+    expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
+      eventCategory: props.eventCategory,
+      eventAction: "link click",
+      eventLabel: "Open general terms",
+      dimension1: true,
+      dimension2: false,
+      dimension3: 0,
+      dimension10: "big",
+      dimension11: mockExperiment.slug,
+      dimension13: "Featured Experiment"
+    }, mockClickEvent]);
+  });
+
+  it("should call sendToGA when privacy link clicked", () => {
+    subject.setProps({
+      hasAddon: true,
+      enabled: true
+    });
+    subject.find(".main-install__legal a[href='/privacy']").simulate("click", mockClickEvent);
+
+    expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
+      eventCategory: props.eventCategory,
+      eventAction: "link click",
+      eventLabel: "Open general privacy",
+      dimension1: true,
+      dimension2: false,
+      dimension3: 0,
+      dimension10: "big",
+      dimension11: mockExperiment.slug,
+      dimension13: "Featured Experiment"
+    }, mockClickEvent]);
   });
 });
