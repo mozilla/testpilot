@@ -137,7 +137,7 @@ enableExperimentTransition = 활성화 중...
 experimentManuallyDisabled = 부가 기능 관리자에서 { $title } 비활성화
 measurements = 개인 정보 보호
 experimentPrivacyNotice = { $title }의 데이터 수집에 대한 자세한 정보를 알 수 있습니다.
-contributorsExtraLearnMore = 더 알아보기
+contributorsExtraLearnMore = 자세히 보기
 changelog = 변경 사항
 tour = 둘러보기
 tourLink = 둘러보기 시작
@@ -180,6 +180,7 @@ versionChangeNoticeLink = Firefox의 최신 버전을 받습니다.
 retireDialogTitle = Test Pilot을 제거하시겠습니까?
 retireEmailMessage = 이메일 업데이트를 취소하려면 Test Pilot 이메일의 <em>구독 취소</em> 링크를 클릭하세요.
 retireSubmitButton = 진행
+pageTitleRetirePage = Firefox Test Pilot - Test Pilot 제거
 retirePageProgressMessage = 종료 중...
 retirePageSurveyButton = 간단한 설문 참여
 
@@ -229,3 +230,8 @@ hidePastExperiments = 지나간 실험 가리기
 
 ## Text of warnings to the user if various error conditions are detected
 
+warningGenericTitle = 문제가 생겼습니다!
+warningGenericDetail = Test Pilot에 문제가 발생했습니다. <a>버그 리포트</a>를 작성하시고 이 오류 메시지를 같이 언급해주세요.
+warningUpgradeFirefoxTitle = 계속하려면 Firefox를 업그레이드하세요!
+warningUpgradeFirefoxDetail = Test Pilot을 쓰려면 Firefox가 최신 버전이어야 합니다. 시작하려면 <a>Firefox를 업그레이드</a>하세요.
+warningHttpsRequiredTitle = HTTPS가 필요합니다!
