@@ -6,24 +6,24 @@ import React from "react";
 
 import LocalizedHtml from "../LocalizedHtml";
 
-import { defaultState } from "../../reducers/newsletter-form";
-
 import "./index.scss";
 
 type NewsletterFormProps = {
-  privacy?: boolean,
+  isSubmitting?: boolean,
   isModal?: boolean,
   subscribe?: Function,
   buttonRef?: Function
+}
+
+type NewsletterFormState = {
+  email: string
 }
 
 export default class NewsletterForm extends React.Component {
   props: NewsletterFormProps
   handleEmailChange: Function
   handleSubmit: Function
-  state: any
-
-  static defaultProps = defaultState();
+  state: NewsletterFormState
 
   constructor(props: NewsletterFormProps) {
     super(props);
@@ -78,7 +78,7 @@ export default class NewsletterForm extends React.Component {
   }
 
   renderSubmitButton() {
-    if (this.props.submitting) {
+    if (this.props.isSubmitting) {
       return (
         <Localized id='newsletterFormSubmitButtonSubmitting'>
           <button disabled={true} className="button outline large newsletter-form-submitting">

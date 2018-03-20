@@ -5,15 +5,16 @@ import sinon from "sinon";
 import { mount } from "enzyme";
 
 import NewsletterForm from "./index";
-import { defaultState } from "../../reducers/newsletter-form";
 
 describe("app/components/NewsletterForm", () => {
   const makeSubject = (args = {}) => {
-    const props = Object.assign(defaultState(), {
+    const props = {
       subscribe: sinon.spy(),
-      setPrivacy: sinon.spy(),
+      isSubmitting: false,
+      isSuccess: false,
+      isError: false,
       ...args
-    });
+    };
     return mount(<NewsletterForm {...props} />);
   };
 
@@ -53,7 +54,7 @@ describe("app/components/NewsletterForm", () => {
     });
 
     it("should be disabled if submitting", () => {
-      const subject = makeSubject({ submitting: true }).find("button");
+      const subject = makeSubject({ isSubmitting: true }).find("button");
       expect(subject.prop("disabled")).to.equal(true);
     });
 
