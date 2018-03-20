@@ -11,9 +11,7 @@ describe("app/components/NewsletterFooter", () => {
     getWindowLocation: sinon.spy(() => "https://example.com"),
     sendToGA: sinon.spy(),
     newsletterForm: {
-      subscribe: sinon.spy(),
-      setEmail: sinon.spy(),
-      setPrivacy: sinon.spy()
+      subscribe: sinon.spy()
     }
   };
 
@@ -22,8 +20,6 @@ describe("app/components/NewsletterFooter", () => {
       getWindowLocation: sinon.spy(() => "https://example.com"),
       newsletterForm: {
         subscribe: sinon.spy(),
-        setEmail: sinon.spy(),
-        setPrivacy: sinon.spy(),
         ...form
       }
     });

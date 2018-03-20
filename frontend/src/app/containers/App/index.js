@@ -303,10 +303,6 @@ const mapDispatchToProps = dispatch => ({
   requireRestart: () => dispatch(addonActions.requireRestart()),
   setHasAddon: installed => dispatch(addonActions.setHasAddon(installed)),
   newsletterForm: {
-    setEmail: email =>
-      dispatch(newsletterFormActions.newsletterFormSetEmail(email)),
-    setPrivacy: privacy =>
-      dispatch(newsletterFormActions.newsletterFormSetPrivacy(privacy)),
     subscribe: (email) =>
       dispatch(newsletterFormActions.newsletterFormSubscribe(dispatch, email, "" + window.location))
   },

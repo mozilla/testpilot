@@ -3,8 +3,6 @@ import { expect } from "chai";
 import sinon from "sinon";
 
 import { defaultState,
-         newsletterFormSetEmail as setEmail,
-         newsletterFormSetPrivacy as setPrivacy,
          newsletterFormSetSubmitting as setSubmitting,
          newsletterFormSetFailed as setFailed,
          newsletterFormSetSucceeded as setSucceeded }
@@ -12,23 +10,6 @@ import { defaultState,
 
 
 describe("app/reducers/newsletter-form", () => {
-  describe("setEmail", () => {
-    const NEW_EMAIL = "foo@bar.com";
-
-    it("should update email", () => {
-      const reduced = setEmail(defaultState(), { payload: NEW_EMAIL });
-      expect(reduced.email).to.equal(NEW_EMAIL);
-    });
-  });
-
-  describe("setPrivacy", () => {
-    const NEW_PRIVACY = true;
-
-    it("should update privacy", () => {
-      const reduced = setPrivacy(defaultState(), { payload: NEW_PRIVACY });
-      expect(reduced.privacy).to.equal(NEW_PRIVACY);
-    });
-  });
 
   describe("setSubmitting", () => {
     const reduced = setSubmitting(defaultState());

@@ -11,11 +11,9 @@ import { defaultState } from "../../reducers/newsletter-form";
 import "./index.scss";
 
 type NewsletterFormProps = {
-  email?: string,
   privacy?: boolean,
   isModal?: boolean,
   subscribe?: Function,
-  setEmail?: Function,
   buttonRef?: Function
 }
 
@@ -23,6 +21,7 @@ export default class NewsletterForm extends React.Component {
   props: NewsletterFormProps
   handleEmailChange: Function
   handleSubmit: Function
+  state: any
 
   static defaultProps = defaultState();
 
@@ -30,18 +29,19 @@ export default class NewsletterForm extends React.Component {
     super(props);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      email: ""
+    };
   }
 
   makeRevealedClassNames() {
     return classnames("revealed-field", {
-      reveal: !!this.props.email
+      reveal: !!this.state.email
     });
   }
 
   handleEmailChange(evt: Object) {
-    if (typeof this.props.setEmail !== "undefined") {
-      this.props.setEmail(evt.target.value);
-    }
+    this.setState({email: evt.target.value});
   }
 
   renderEmailField() {
@@ -51,7 +51,7 @@ export default class NewsletterForm extends React.Component {
           type='email'
           placeholder="Your email here"
           required
-          value={this.props.email}
+          value={this.state.email}
           onChange={this.handleEmailChange}
         />
       </Localized>
@@ -106,7 +106,7 @@ export default class NewsletterForm extends React.Component {
   handleSubmit(evt: Object) {
     evt.preventDefault();
     if (typeof this.props.subscribe !== "undefined") {
-      this.props.subscribe(this.props.email);
+      this.props.subscribe(this.state.email);
     }
   }
 

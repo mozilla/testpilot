@@ -11,7 +11,6 @@ describe("app/components/NewsletterForm", () => {
   const makeSubject = (args = {}) => {
     const props = Object.assign(defaultState(), {
       subscribe: sinon.spy(),
-      setEmail: sinon.spy(),
       setPrivacy: sinon.spy(),
       ...args
     });
@@ -19,27 +18,10 @@ describe("app/components/NewsletterForm", () => {
   };
 
   describe("email field", () => {
-    const FOO = "foo";
-    const setEmail = sinon.spy();
-
-    const subject = makeSubject({
-      email: FOO,
-      setEmail
-    }).find('input[type="email"]');
+    const subject = makeSubject().find('input[type="email"]');
 
     it("should be rendered by default", () => {
       expect(subject).to.have.length(1);
-    });
-
-    it("should take its value from the store", () => {
-      expect(subject.prop("value")).to.equal(FOO);
-    });
-
-    it("should fire setEmail on change", () => {
-      const newValue = `${FOO}2`;
-      subject.simulate("change", { target: { value: newValue } });
-      expect(setEmail.calledOnce).to.equal(true);
-      expect(setEmail.getCall(0).args[0]).to.equal(newValue);
     });
   });
 
@@ -51,8 +33,10 @@ describe("app/components/NewsletterForm", () => {
     });
 
     it("should be shown when an email is entered", () => {
-      const subject = makeSubject({ email: "a" }).find("label");
-      expect(subject.hasClass("reveal")).to.equal(true);
+      const subject = makeSubject();
+      subject.setState({email: "a"});
+      const label = subject.find("label");
+      expect(label.hasClass("reveal")).to.equal(true);
     });
 
     it("should be unchecked by default", () => {
