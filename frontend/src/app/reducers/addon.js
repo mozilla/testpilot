@@ -79,6 +79,9 @@ function setHasAddon(
   state: AddonState,
   { payload: hasAddon }: SetHasAddonAction
 ): AddonState {
+  try {
+    window.localStorage.setItem("hasAddon", hasAddon);
+  } catch (e) {}
   return {
     ...state,
     hasAddon,
