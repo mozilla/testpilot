@@ -84,6 +84,7 @@ showMoreNewsTitle = 지난 뉴스 보기
 
 
 
+moreDetail = 상세 보기
 
 ## A listing of all Test Pilot experiments.
 
@@ -94,6 +95,7 @@ experimentListEndingTomorrow = 내일 끝남
 experimentListEndingSoon = 곧 끝남
 experimentCondensedHeader = Test Pilot에 오신 것을 환영합니다!
 experimentListHeader = 실험을 선택하세요!
+experimentListHeaderWithFeatured = 모든 실험 시도
 
 ## An individual experiment in the listing of all Test Pilot experiments.
 
