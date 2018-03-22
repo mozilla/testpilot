@@ -100,8 +100,10 @@ class App extends Component {
     }
   }
 
-  componentDidUpdate() {
-    window.scrollTo(0, 0);
+  componentDidUpdate(prevProps) {
+    if (this.props.path !== prevProps.path) {
+      window.scrollTo(0, 0);
+    }
   }
 
   componentDidMount() {

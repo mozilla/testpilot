@@ -32,9 +32,9 @@ function appFactoryFor(Component) {
   return function appFactoryForComponent(props) {
     const match = props.match;
     if (match && match.params && match.params.slug) {
-      return <App><Component slug={match.params.slug} /></App>;
+      return <App path={match.url}><Component slug={match.params.slug} /></App>;
     }
-    return <App><Component/></App>;
+    return <App path={match.url}><Component/></App>;
   };
 }
 
