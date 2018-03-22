@@ -5,29 +5,36 @@ import React from "react";
 
 import LayoutWrapper from "../LayoutWrapper";
 import NewsletterForm from "../NewsletterForm";
+import { subscribeToBasket } from "../../lib/utils";
 
 import "./index.scss";
 
 type NewsletterFooterProps = {
   getWindowLocation: Function,
-  sendToGA: Function,
-  newsletterForm: {
-    failed: boolean,
-    succeeded: boolean
-  }
+  sendToGA: Function
+}
+
+type NewsletterFooterState = {
+  isSuccess: boolean,
+  isError: boolean,
+  isSubmitting: boolean
 }
 
 export default class NewsletterFooter extends React.Component {
   props: NewsletterFooterProps
+  state: NewsletterFooterState
+
+  constructor(props: NewsletterFooterProps) {
+    super(props);
+    this.state = {
+      isSuccess: false,
+      isError: false,
+      isSubmitting: false
+    };
+  }
 
   renderError() {
-    if (this.props.newsletterForm.failed) {
-      this.props.sendToGA("event", {
-        eventCategory: "HomePage Interactions",
-        eventAction: "footer newsletter form submit",
-        eventLabel: "email failed to submit to basket"
-      });
-
+    if (this.state.isError) {
       return (
         <Localized id="newsletterFooterError">
           <div className="error">
@@ -40,12 +47,6 @@ export default class NewsletterFooter extends React.Component {
   }
 
   renderSuccess() {
-    this.props.sendToGA("event", {
-      eventCategory: "HomePage Interactions",
-      eventAction: "footer newsletter form success",
-      eventLabel: "email submitted to basket"
-    });
-
     return (
       <header className="success-header">
         <Localized id="newsletterFooterSuccessHeader">
@@ -63,7 +64,7 @@ export default class NewsletterFooter extends React.Component {
   }
 
   renderHeader() {
-    if (this.props.newsletterForm.succeeded) {
+    if (this.state.isSuccess) {
       return this.renderSuccess();
     }
 
@@ -84,8 +85,39 @@ export default class NewsletterFooter extends React.Component {
 
   getClassNames() {
     return classnames("newsletter-footer", {
-      success: this.props.newsletterForm.succeeded
+      success: this.state.isSuccess
     });
+  }
+
+  handleSubscribe(email: string) {
+    const { sendToGA } = this.props;
+    const source = "" + this.props.getWindowLocation();
+
+    sendToGA("event", {
+      eventCategory: "HomePage Interactions",
+      eventAction: "button click",
+      eventLabel: "Sign me up"
+    });
+    this.setState({isSubmitting: true, isSuccess: false, isError: false});
+    subscribeToBasket(email, source).then(response => {
+      if (!response.ok) {
+        throw new Error(response.status);
+      }
+      this.setState({isSuccess: true, isSubmitting: false});
+      sendToGA("event", {
+        eventCategory: "HomePage Interactions",
+        eventAction: "footer newsletter form success",
+        eventLabel: "email submitted to basket"
+      });
+    })
+      .catch(err => {
+        this.setState({isSuccess: false, isError: true, isSubmitting: false});
+        sendToGA("event", {
+          eventCategory: "HomePage Interactions",
+          eventAction: "footer newsletter form submit",
+          eventLabel: "email failed to submit to basket"
+        });
+      });
   }
 
   render() {
@@ -95,7 +127,7 @@ export default class NewsletterFooter extends React.Component {
           {this.renderError()}
           <LayoutWrapper flexModifier="row-between-breaking">
             {this.renderHeader()}
-            <NewsletterForm {...this.props.newsletterForm} />
+            <NewsletterForm subscribe={this.handleSubscribe.bind(this)} isSubmitting={this.state.isSubmitting} />
           </LayoutWrapper>
         </LayoutWrapper>
       </div>

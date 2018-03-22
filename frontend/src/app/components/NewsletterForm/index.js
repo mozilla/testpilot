@@ -6,42 +6,42 @@ import React from "react";
 
 import LocalizedHtml from "../LocalizedHtml";
 
-import { defaultState } from "../../reducers/newsletter-form";
-
 import "./index.scss";
 
 type NewsletterFormProps = {
-  email?: string,
-  privacy?: boolean,
+  isSubmitting?: boolean,
   isModal?: boolean,
   subscribe?: Function,
-  setEmail?: Function,
   buttonRef?: Function
+}
+
+type NewsletterFormState = {
+  email: string
 }
 
 export default class NewsletterForm extends React.Component {
   props: NewsletterFormProps
   handleEmailChange: Function
   handleSubmit: Function
-
-  static defaultProps = defaultState();
+  state: NewsletterFormState
 
   constructor(props: NewsletterFormProps) {
     super(props);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      email: ""
+    };
   }
 
   makeRevealedClassNames() {
     return classnames("revealed-field", {
-      reveal: !!this.props.email
+      reveal: !!this.state.email
     });
   }
 
   handleEmailChange(evt: Object) {
-    if (typeof this.props.setEmail !== "undefined") {
-      this.props.setEmail(evt.target.value);
-    }
+    this.setState({email: evt.target.value});
   }
 
   renderEmailField() {
@@ -51,7 +51,7 @@ export default class NewsletterForm extends React.Component {
           type='email'
           placeholder="Your email here"
           required
-          value={this.props.email}
+          value={this.state.email}
           onChange={this.handleEmailChange}
         />
       </Localized>
@@ -78,7 +78,7 @@ export default class NewsletterForm extends React.Component {
   }
 
   renderSubmitButton() {
-    if (this.props.submitting) {
+    if (this.props.isSubmitting) {
       return (
         <Localized id='newsletterFormSubmitButtonSubmitting'>
           <button disabled={true} className="button outline large newsletter-form-submitting">
@@ -106,7 +106,7 @@ export default class NewsletterForm extends React.Component {
   handleSubmit(evt: Object) {
     evt.preventDefault();
     if (typeof this.props.subscribe !== "undefined") {
-      this.props.subscribe(this.props.email);
+      this.props.subscribe(this.state.email);
     }
   }
 

@@ -10,9 +10,7 @@ const baseProps = {
   email: "",
   privacy: false,
   isModal: false,
-  subscribe: () => null,
-  setEmail: () => null,
-  setPrivacy: () => null
+  subscribe: () => null
 };
 
 storiesOf("NewsletterForm", module)

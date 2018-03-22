@@ -19,7 +19,6 @@ import { setLocalizations, setNegotiatedLanguages } from "../../actions/localiza
 import { localizationsSelector, negotiatedLanguagesSelector } from "../../selectors/localizations";
 import { chooseTests } from "../../actions/varianttests";
 import addonActions from "../../actions/addon";
-import newsletterFormActions from "../../actions/newsletter-form";
 import RestartPage from "../RestartPage";
 import UpgradeWarningPage from "../UpgradeWarningPage";
 import {
@@ -285,7 +284,6 @@ const mapStateToProps = state => ({
   locale: state.browser.locale,
   localizations: localizationsSelector(state),
   negotiatedLanguages: negotiatedLanguagesSelector(state),
-  newsletterForm: state.newsletterForm,
   protocol: state.browser.protocol,
   routing: state.routing,
   staleNewsUpdates: makeStaleNewsUpdatesSelector(Date.now())(state),
@@ -302,14 +300,6 @@ const mapDispatchToProps = dispatch => ({
   disableExperiment: experiment => disableExperiment(dispatch, experiment),
   requireRestart: () => dispatch(addonActions.requireRestart()),
   setHasAddon: installed => dispatch(addonActions.setHasAddon(installed)),
-  newsletterForm: {
-    setEmail: email =>
-      dispatch(newsletterFormActions.newsletterFormSetEmail(email)),
-    setPrivacy: privacy =>
-      dispatch(newsletterFormActions.newsletterFormSetPrivacy(privacy)),
-    subscribe: (email) =>
-      dispatch(newsletterFormActions.newsletterFormSubscribe(dispatch, email, "" + window.location))
-  },
   setNegotiatedLanguages: negotiatedLanguages =>
     dispatch(setNegotiatedLanguages(negotiatedLanguages)),
   setLocalizations: localizations =>
@@ -318,8 +308,6 @@ const mapDispatchToProps = dispatch => ({
 
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
-  const newsletterForm = Object.assign({},
-    stateProps.newsletterForm, dispatchProps.newsletterForm);
   return Object.assign({
     installAddon,
     uninstallAddon,
@@ -352,9 +340,7 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     getCookie: name => cookies.get(name),
     setCookie: (name, value) => cookies.set(name, value),
     removeCookie: name => cookies.remove(name)
-  }, ownProps, stateProps, dispatchProps, {
-    newsletterForm
-  });
+  }, ownProps, stateProps, dispatchProps);
 };
 
 

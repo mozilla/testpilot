@@ -15,9 +15,7 @@ type EmailDialogProps = {
 
 type EmailDialogState = {
   isSuccess: boolean,
-  isError: boolean,
-  email: string,
-  privacy: boolean
+  isError: boolean
 }
 
 export default class EmailDialog extends React.Component {
@@ -31,9 +29,7 @@ export default class EmailDialog extends React.Component {
     super(props);
     this.state = {
       isSuccess: false,
-      isError: false,
-      email: "",
-      privacy: false
+      isError: false
     };
   }
 
@@ -56,8 +52,6 @@ export default class EmailDialog extends React.Component {
   }
 
   renderForm() {
-    const { email, privacy } = this.state;
-
     return (
       <div id="first-page" className="modal feedback-modal modal-bounce-in">
         <header className="modal-header-wrapper">
@@ -70,10 +64,8 @@ export default class EmailDialog extends React.Component {
           <Localized id="emailOptInMessage">
             <p>Find out about new experiments and see test results for experiments you&apos;ve tried.</p>
           </Localized>
-          <NewsletterForm {...{ email, privacy }}
+          <NewsletterForm
             isModal={true}
-            setEmail={newEmail => this.setState({ email: newEmail })}
-            setPrivacy={newPrivacy => this.setState({ privacy: newPrivacy })}
             subscribe={this.handleSubscribe.bind(this)}
             buttonRef={button => this.submitButton = button} />
         </div>
@@ -136,10 +128,6 @@ export default class EmailDialog extends React.Component {
       return;
     }
     this.modalContainer.focus();
-  }
-
-  handleEmailChange(e: Object) {
-    this.setState({ email: e.target.value });
   }
 
   handleSubscribe(email: string) {
