@@ -51,7 +51,7 @@ landingUpgradeDesc = O Test Pilot requer o Firefox 49 ou superior.
 landingUpgradeDesc2 = O Test Pilot requer o Firefox { $version } ou superior.
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Atualizar o Firefox
-landingDownloadFirefoxSubTitle = Descarga gratuita
+landingDownloadFirefoxSubTitle = Transferência gratuita
 
 ## A section of the homepage explaining how Test Pilot works.
 
