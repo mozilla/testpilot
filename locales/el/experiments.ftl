@@ -94,4 +94,6 @@ voicefillContributors2Title = Οπτικός σχεδιαστής
 voicefillContributors3Title = Firefox UX
 voicefillContributors4Title = Firefox UX
 voicefillContributors7Title = Προηγμένη ανάπτυξη, ανερχόμενες τεχνολογίες
+notesNewsupdatesNotesupdate1Title = Βελτιώσεις για το Notes
+notesNewsupdatesNotesupdate1Content = Βελτιώσαμε δραματικά το Notes αλλάζοντας το πρόγραμμα επεξεργασίας κειμένου.
 sendNewsupdatesSendupdate1Title = Αποστολή με Safari και Edge!
