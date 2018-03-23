@@ -126,8 +126,6 @@ export default class FeaturedButton extends React.Component {
               </a>
             </Localized>
           </div>
-          {this.renderLegalLink()}
-          {this.renderLegalModal()}
         </div>
       );
     } else {
