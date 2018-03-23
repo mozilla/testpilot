@@ -84,8 +84,7 @@ function setHasAddon(
   } catch (e) {}
   return {
     ...state,
-    hasAddon,
-    installed: hasAddon ? state.installed : {}
+    hasAddon
   };
 }
 

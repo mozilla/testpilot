@@ -29,15 +29,15 @@ export default class MainInstallButton extends React.Component {
   enableExperimentWrapped() {
     const { experiment, enableExperiment, postInstallCallback } = this.props;
 
-    this.setState({ isInstalling: true }, () => enableExperiment(experiment)
+    this.setState({ isInstalling: true });
+    enableExperiment(experiment)
       .then(() => {
         if (postInstallCallback) {
           postInstallCallback();
-          this.setState({isInstalling: false});
         }
       }).catch((err) => {
         this.setState({isInstalling: false});
-      }));
+      });
   }
 
   install(e: Object) {
@@ -127,7 +127,11 @@ export default class MainInstallButton extends React.Component {
 
   renderInstallButton(isInstalling: boolean, hasAddon: any) {
     const { experimentTitle, isExperimentEnabled, experiment } = this.props;
-    let installButton = null;
+    let installButton = <Localized id="landingInstallButton">
+      <span className="default-btn-msg">
+        Install the Test Pilot Add-on
+      </span>
+    </Localized>;
     const installingButton = (<Localized id="landingInstallingButton">
       <span className="progress-btn-msg">Installing...</span>
     </Localized>);
@@ -136,15 +140,12 @@ export default class MainInstallButton extends React.Component {
     </Localized>);
 
     if (experimentTitle) {
-      if (hasAddon && !isExperimentEnabled(experiment)) {
+      const enabled = isExperimentEnabled(experiment);
+      if (hasAddon && !enabled) {
         installButton = this.renderEnableExperimentButton(experimentTitle);
-      } else installButton = this.renderOneClickInstallButton(experimentTitle);
-    } else {
-      installButton = <Localized id="landingInstallButton">
-        <span className="default-btn-msg">
-          Install the Test Pilot Add-on
-        </span>
-      </Localized>;
+      } else if (!hasAddon && !enabled) {
+        installButton = this.renderOneClickInstallButton(experimentTitle);
+      }
     }
 
     const makeInstallButton = (extraClass = "") => {

@@ -34,7 +34,7 @@ export default class HomePageNoAddon extends React.Component {
 
   render() {
     const { isAfterCompletedDate, featuredExperiments, navigateTo,
-      experimentsWithoutFeatured, enableExperiment } = this.props;
+      experimentsWithoutFeatured, enableExperiment, isExperimentEnabled } = this.props;
 
     if (experimentsWithoutFeatured.length === 0) { return null; }
 
@@ -74,7 +74,7 @@ export default class HomePageNoAddon extends React.Component {
           experiment={featuredExperiment}
           eventCategory="HomePage Interactions"
           enableExperiment={enableExperiment}
-          enabled={false} />
+          enabled={isExperimentEnabled(featuredExperiment)} />
       </LayoutWrapper>
     </Banner>) : null;
 

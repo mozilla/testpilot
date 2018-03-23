@@ -13,6 +13,10 @@
     padding: 0 20px;
   }
 
+  @include respond-to('medium') {
+    font-size: 21px;
+  }
+
   @include respond-to('small') {
     font-size: 21px;
     height: $grid-unit * 4;
