@@ -2,10 +2,11 @@
 
 function saveOptions(e) {
   e.preventDefault();
+  const select = document.querySelector("#environment");
   browser.storage.local.set({
     environment: {
-      name: document.getElementById("environment > option:changed").textContent,
-      baseUrl: document.getElementById("environment").value}
+      name: select.options[select.selectedIndex].text,
+      baseUrl: select.value}
   });
 }
 
@@ -17,7 +18,7 @@ function restoreOptions() {
         o.selected = (o.value === result.environment.value);
       });
   }, (err) => {
-    console.log(`Error: ${err}`);
+    console.log(`Error: ${err}`); // eslint-disable-line no-console
   });
 }
 

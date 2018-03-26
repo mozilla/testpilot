@@ -26,13 +26,10 @@ media/
 node_modules/
 static/
 tmp/
-addon/build/
-addon/dist/
-addon/locale/
 .vscode/
+addon/_locales/
 
 # Files to ignore within specific directories
-addon/*.rdf
 addon/*.xpi
 legal-copy/*html
 

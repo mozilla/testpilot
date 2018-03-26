@@ -1,13 +1,14 @@
 {
   "manifest_version": 2,
   "name": "Test Pilot",
-  "author": "Les Orchard <me@lmorchard.com>",
+  "author": "Les Orchard <me@lmorchard.com>, Dave Justice <djustice@mozilla.com>",
   "applications": {
     "gecko": {
-      "id": "@testpilot-addon"
+      "id": "@testpilot-addon",
+      "update_url": "https://testpilot.firefox.com/files/@testpilot-addon/updates.json"
     }
   },
-  "version": "2.0.3",
+  "version": "3.0.0-dev-1207ff1",
   "icons": {
     "16": "icons/icon-16.png",
     "32": "icons/icon-32.png",
@@ -16,6 +17,7 @@
   },
   "default_locale": "en_US",
   "permissions": [
+    "management",
     "notifications",
     "storage",
     "cookies",
@@ -34,7 +36,7 @@
   "browser_action": {
     "default_title": "Firefox Test Pilot",
     "browser_style": true,
-    "default_icon":  "icons/icon.svg"
+    "default_icon": "icons/icon.svg"
   },
   "options_ui": {
     "page": "options/options.html",
