@@ -221,7 +221,6 @@ describe("app/components/FeaturedButton", () => {
       dimension3: 0,
       dimension4: true,
       dimension5: "Testing Experiment",
-      dimension10: "big",
       dimension11: mockExperiment.slug,
       dimension13: "Featured Experiment"
     }]);
@@ -244,7 +243,6 @@ describe("app/components/FeaturedButton", () => {
       dimension3: 0,
       dimension4: true,
       dimension5: "Testing Experiment",
-      dimension10: "big",
       dimension11: mockExperiment.slug,
       dimension13: "Featured Experiment"
     }, mockClickEvent]);
@@ -281,7 +279,6 @@ describe("app/components/FeaturedButton", () => {
       dimension1: true,
       dimension2: false,
       dimension3: 0,
-      dimension10: "big",
       dimension11: mockExperiment.slug,
       dimension13: "Featured Experiment"
     }, mockClickEvent]);
@@ -301,7 +298,6 @@ describe("app/components/FeaturedButton", () => {
       dimension1: true,
       dimension2: false,
       dimension3: 0,
-      dimension10: "big",
       dimension11: mockExperiment.slug,
       dimension13: "Featured Experiment"
     }, mockClickEvent]);
@@ -321,7 +317,6 @@ describe("app/components/FeaturedButton", () => {
       dimension1: true,
       dimension2: false,
       dimension3: 0,
-      dimension10: "big",
       dimension11: mockExperiment.slug,
       dimension13: "Featured Experiment"
     }, mockClickEvent]);

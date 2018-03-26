@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { Localized } from "fluent-react/compat";
 import LocalizedHtml from "../LocalizedHtml";
 import { buildSurveyURL, experimentL10nId } from "../../lib/utils";
-import { getBreakpoint } from "../../containers/App";
 
 import Modal from "../Modal";
 import MeasurementSection from "../Measurements";
@@ -55,7 +54,6 @@ export default class FeaturedButton extends React.Component {
         dimension1: hasAddon,
         dimension2: Object.keys(installed).length > 0,
         dimension3: Object.keys(installed).length,
-        dimension10: getBreakpoint(window.innerWidth),
         dimension11: experiment.slug,
         dimension13: "Featured Experiment"
       }, ev);
@@ -69,7 +67,6 @@ export default class FeaturedButton extends React.Component {
         dimension1: hasAddon,
         dimension2: Object.keys(installed).length > 0,
         dimension3: Object.keys(installed).length,
-        dimension10: getBreakpoint(window.innerWidth),
         dimension11: experiment.slug,
         dimension13: "Featured Experiment"
       }, ev);
@@ -83,7 +80,6 @@ export default class FeaturedButton extends React.Component {
         dimension1: hasAddon,
         dimension2: Object.keys(installed).length > 0,
         dimension3: Object.keys(installed).length,
-        dimension10: getBreakpoint(window.innerWidth),
         dimension11: experiment.slug,
         dimension13: "Featured Experiment"
       }, ev);
@@ -132,7 +128,6 @@ export default class FeaturedButton extends React.Component {
       dimension3: Object.keys(installed).length,
       dimension4: enabled,
       dimension5: title,
-      dimension10: getBreakpoint(window.innerWidth),
       dimension11: slug,
       dimension13: "Featured Experiment"
     }, evt);
@@ -150,7 +145,6 @@ export default class FeaturedButton extends React.Component {
       dimension3: Object.keys(installed).length,
       dimension4: enabled,
       dimension5: title,
-      dimension10: getBreakpoint(window.innerWidth),
       dimension11: slug,
       dimension13: "Featured Experiment"
     }, evt);

@@ -4,8 +4,6 @@ import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
 import React from "react";
 
-import { getBreakpoint } from "../../containers/App";
-
 import LayoutWrapper from "../LayoutWrapper";
 import LocalizedHtml from "../LocalizedHtml";
 
@@ -49,7 +47,6 @@ export default class MainInstallButton extends React.Component {
         dimension3: installed ? Object.keys(installed).length : 0,
         dimension4: false, // enabled?
         dimension5: experimentTitle,
-        dimension10: getBreakpoint(window.innerWidth),
         dimension11: slug,
         dimension13: "Featured Experiment"
       });

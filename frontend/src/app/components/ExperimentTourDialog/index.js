@@ -8,7 +8,6 @@ import StepModal from "../StepModal";
 
 import type { InstalledExperiments } from "../../reducers/addon";
 
-import { getBreakpoint } from "../../containers/App";
 import { experimentL10nId } from "../../lib/utils";
 
 type ExperimentTourDialogProps = {
@@ -31,7 +30,6 @@ export default class ExperimentTourDialog extends React.Component {
       dimension1: hasAddon,
       dimension2: installed ? Object.keys(installed).length > 0 : false,
       dimension3: installed ? Object.keys(installed).length : 0,
-      dimension10: getBreakpoint(window.innerWidth),
       dimension11: experiment.slug,
       dimension13: "Featured Experiment"
     });

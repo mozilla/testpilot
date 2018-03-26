@@ -96,7 +96,6 @@ export default class FeaturedExperiment extends React.Component {
             <FeaturedButton {...this.props} />
           </div>
 
-
           <div className="featured-experiment__video">
             <iframe
               width="100%"
@@ -106,16 +105,6 @@ export default class FeaturedExperiment extends React.Component {
               allowFullScreen />
           </div>
         </div>
-<<<<<<< 6a8c3d1b74a963521f87f1a3952714ba470b769d
-=======
-
-        {showTourDialog && <ExperimentTourDialog {...this.props}
-          onCancel={() => {
-            this.onTourDialogComplete(true);
-          }}
-          onComplete={this.onTourDialogComplete}
-        />}
->>>>>>> Auditing metrics for featured experiment
       </div>
     );
   }

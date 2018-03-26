@@ -86,7 +86,6 @@ describe("app/components/MainInstallButton", () => {
       dimension3: 0,
       dimension4: false,
       dimension5: mockExperiment.title,
-      dimension10: "big",
       dimension11: mockExperiment.slug,
       dimension13: "Featured Experiment"
     }]);
