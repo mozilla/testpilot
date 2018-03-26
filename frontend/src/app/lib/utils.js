@@ -97,12 +97,10 @@ export { newsUpdateL10nId };
 // was ctrl/cmd-clicking or middle-clicking, indicating that that they performed
 // the action expecting the link to open in a new tab.
 export const shouldOpenInNewTab = (e: Object) => {
-  if (
-    !e ||
-    e.type !== "click" ||
-    (!("which" in e) && !("ctrlKey" in e) && !("metaKey" in e))
-  ) {
-    return false;
+  if (!e) { return false; }
+  if (e.type === "click" && e.button === 1) {
+    // middle-click
+    return true;
   }
-  return e.which === 2 || e.which === 4 || e.ctrlKey || e.metaKey;
+  return e.ctrlKey || e.metaKey;
 };
