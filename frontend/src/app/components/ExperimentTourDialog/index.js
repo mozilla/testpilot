@@ -25,23 +25,22 @@ export default class ExperimentTourDialog extends React.Component {
   props: ExperimentTourDialogProps
 
   applyAdditionalMetricsArgs(gaArgs: Object) {
-    const { experiment, installed, hasAddon } = this.props;
+    const { installed, hasAddon } = this.props;
     return Object.assign(gaArgs, {
       dimension1: hasAddon,
       dimension2: installed ? Object.keys(installed).length > 0 : false,
       dimension3: installed ? Object.keys(installed).length : 0,
-      dimension11: experiment.slug,
       dimension13: "Featured Experiment"
     });
   }
 
   stepNextPing = (newStep: number) => {
-    const { sendToGA, isFeatured } = this.props;
-
+    const { sendToGA, isFeatured, experiment } = this.props;
     let gaArgs = {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
       eventLabel: `forward to step ${newStep}`,
+      dimension11: experiment.slug,
       dimension13: "Experiment Detail"
     };
 
@@ -53,11 +52,12 @@ export default class ExperimentTourDialog extends React.Component {
   };
 
   stepBackPing = (newStep: number) => {
-    const { sendToGA, isFeatured } = this.props;
+    const { sendToGA, isFeatured, experiment } = this.props;
     let gaArgs = {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
       eventLabel: `back to step ${newStep}`,
+      dimension11: experiment.slug,
       dimension13: "Experiment Detail"
     };
 
@@ -69,12 +69,12 @@ export default class ExperimentTourDialog extends React.Component {
   };
 
   stepToDotPing = (index: number) => {
-    const { sendToGA, isFeatured } = this.props;
-
+    const { sendToGA, isFeatured, experiment } = this.props;
     let gaArgs = {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
       eventLabel: `dot to step ${index}`,
+      dimension11: experiment.slug,
       dimension13: "Experiment Detail"
     };
 
@@ -127,25 +127,25 @@ export default class ExperimentTourDialog extends React.Component {
   }
 
   onCancel = (ev: Object) => {
-    const { sendToGA, onCancel } = this.props;
+    const { sendToGA, onCancel, experiment } = this.props;
 
     sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
       eventLabel: "cancel tour",
-      dimension11: this.props.experiment.slug
+      dimension11: experiment.slug
     });
     if (onCancel) { onCancel(ev); }
   };
 
   onComplete = (ev: Object) => {
-    const { sendToGA, onComplete } = this.props;
+    const { sendToGA, onComplete, experiment } = this.props;
 
     sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "button click",
       eventLabel: "complete tour",
-      dimension11: this.props.experiment.slug
+      dimension11: experiment.slug
     });
     if (onComplete) { onComplete(ev); }
   };
