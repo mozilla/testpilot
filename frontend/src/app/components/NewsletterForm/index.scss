@@ -33,7 +33,7 @@
   }
 
   input[type='checkbox'] {
-    -moz-appearance: none;
+    -moz-appearance: none; // sass-lint:disable-line no-vendor-prefixes
     background: url('./img/checks.svg') no-repeat left;
     background-position: 0 0;
     background-size: 96px 24px;

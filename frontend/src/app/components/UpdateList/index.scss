@@ -117,13 +117,13 @@
     transition: background 50ms;
 
     &:hover {
-      border-color: $transparent-white-2;
       background: $transparent-white-05;
+      border-color: $transparent-white-2;
     }
 
     &:active {
-      border-color: $transparent-white-4;
       background: $transparent-white-08;
+      border-color: $transparent-white-4;
     }
 
     .link-chevron {
