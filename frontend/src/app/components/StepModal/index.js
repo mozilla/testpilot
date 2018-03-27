@@ -9,7 +9,6 @@
  */
 
 import classnames from "classnames";
-import { Localized } from "fluent-react/compat";
 import React from "react";
 
 import Modal from "../Modal";
@@ -67,10 +66,11 @@ export default class StepModal extends React.Component {
         <div className='step-filler'/>
       </div>
 
-      <Localized id="stepDoneButton">
-        <div onClick={e => this.complete(e)}
-          className={classnames("step-done", { "no-display": !atEnd })}>Done</div>
-      </Localized>
+      <div onClick={e => this.complete(e)}
+        className={classnames("step-done", { "no-display": !atEnd })}>
+        <div className='step-filler'/>
+      </div>
+
     </div>);
   }
 
