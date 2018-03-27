@@ -3,7 +3,6 @@ import React from "react";
 import { expect } from "chai";
 import sinon from "sinon";
 import { mount } from "enzyme";
-import { findLocalizedById } from "../../../../test/app/util";
 
 import StepModal from "./index";
 
@@ -26,10 +25,6 @@ describe("app/components/StepModal", () => {
       renderHeaderTitle: sinon.spy()
     };
     subject = mount(<StepModal {...props} />);
-  });
-
-  it("should have the expected l10n ID", () => {
-    expect(findLocalizedById(subject, "stepDoneButton")).to.have.property("length", 1);
   });
 
   // todo(dj): add these back in after next 57 launch
@@ -64,4 +59,3 @@ describe("app/components/StepModal", () => {
     expect(props.onComplete.called).to.be.true;
   });
 });
-

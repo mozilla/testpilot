@@ -120,7 +120,8 @@
   }
 
   .step-next,
-  .step-back {
+  .step-back,
+  .step-done {
     background: $white;
 
     & > .step-filler {
@@ -136,14 +137,8 @@
     }
   }
 
-  .step-done {
-    background-color: $white;
-    color: $green-50;
-
-    &:hover {
-      background-color: $green-50;
-      color: $white;
-    }
+  .step-done > .step-filler {
+    background-image: url('../../../images/done.svg');
   }
 
   .step-back > .step-filler {
