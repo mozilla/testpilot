@@ -30,7 +30,7 @@ export default class MainInstallButton extends React.Component {
     const { experiment, enableExperiment, postInstallCallback } = this.props;
 
     this.setState({ isInstalling: true });
-    enableExperiment(experiment)
+    return enableExperiment(experiment)
       .then(() => {
         if (postInstallCallback) {
           postInstallCallback();
@@ -68,10 +68,14 @@ export default class MainInstallButton extends React.Component {
         .then(() => {
           // one click install and enable handling
           if (experimentTitle) {
-            this.enableExperimentWrapped();
+            return this.enableExperimentWrapped();
           } else if (postInstallCallback) {
             postInstallCallback();
           }
+          return Promise.resolve();
+        })
+        .catch(err => {
+          this.setState({ isInstalling: false });
         }));
   }
 

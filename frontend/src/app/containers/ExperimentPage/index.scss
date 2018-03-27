@@ -66,9 +66,16 @@
   }
 
   &.error {
-    background: $error-red-background;
-    border-bottom: 1px solid $error-red-border;
+    background: $error-background;
+    border-bottom: 1px solid $error-border;
+    color: $black;
     opacity: 1;
+  }
+
+  &.featured {
+    border-radius: 0 0 4px 4px;
+    margin: $grid-unit * -2 auto $grid-unit * .2;
+    max-width: 500px;
   }
 
   .stick & {
@@ -271,25 +278,6 @@
   border-radius: 3px;
   margin-bottom: 20px;
   padding: 10px;
-}
-
-.completed-block {
-  background: $error-red-background;
-  border: 1px solid $error-red-border;
-  border-radius: 3px;
-  margin-bottom: $grid-unit;
-  padding: $grid-unit;
-
-  h3,
-  p {
-    font-size: $font-unit * (7 / 6);
-    margin: 0;
-  }
-
-  p {
-    line-height: $line-unit;
-    padding-top: 10px;
-  }
 }
 
 .details-sections {
