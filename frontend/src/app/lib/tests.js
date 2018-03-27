@@ -10,7 +10,7 @@ describe("app/lib/utils:shouldOpenInNewTab", () => {
       ctrlKey: false,
       metaKey: false,
       type: "click",
-      which: 1
+      button: 0
     };
   });
 
@@ -34,17 +34,12 @@ describe("app/lib/utils:shouldOpenInNewTab", () => {
   });
 
   it("should return true for middle clicks", () => {
-    mockClickEvent.which = 2;
+    mockClickEvent.button = 1;
     expect(shouldOpenInNewTab(mockClickEvent)).to.be.true;
   });
 
   it("should return false for right clicks", () => {
-    mockClickEvent.which = 3;
+    mockClickEvent.button = 2;
     expect(shouldOpenInNewTab(mockClickEvent)).to.be.false;
-  });
-
-  it("should return true for side clicks", () => {
-    mockClickEvent.which = 4;
-    expect(shouldOpenInNewTab(mockClickEvent)).to.be.true;
   });
 });

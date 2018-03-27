@@ -86,7 +86,8 @@ describe("app/containers/HomePageNoAddon", () => {
     const experiments = [ { title: "foo" }, { title: "bar" } ];
     const featuredExperiments = [ { title: "bar" } ];
     const experimentsWithoutFeatured = [ { title: "foo" } ];
-    subject.setProps({ experiments, featuredExperiments, experimentsWithoutFeatured });
+    const isExperimentEnabled = () => true;
+    subject.setProps({ experiments, featuredExperiments, experimentsWithoutFeatured, isExperimentEnabled });
     expect(subject.find("FeaturedExperiment")).to.have.property("length", 1);
   });
 
