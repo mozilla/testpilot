@@ -45,39 +45,48 @@ export function installAddon(
   slug = null
 ) {
   if (!mam) {
-    return false;
+    return Promise.reject();
   }
 
-  const { protocol, hostname, port } = window.location;
-  const path = config.addonPath;
-  const downloadUrl = `${protocol}//${hostname}${port
-    ? ":" + port
-    : ""}${path}`;
+  return mam.getAddonByID(TESTPILOT_ADDON_ID)
+    .then(addon => {
+      if (addon) {
+        if (!addon.isEnabled) {
+          return addon.setEnabled(true);
+        }
+        return Promise.resolve();
+      }
+      const { protocol, hostname, port } = window.location;
+      const path = config.addonPath;
+      const downloadUrl = `${protocol}//${hostname}${port
+        ? ":" + port
+        : ""}${path}`;
 
-  const gaEvent = {
-    eventCategory: eventCategory,
-    eventAction: "install button click",
-    eventLabel: eventLabel,
-    dimension11: slug
-  };
+      const gaEvent = {
+        eventCategory: eventCategory,
+        eventAction: "install button click",
+        eventLabel: eventLabel,
+        dimension11: slug
+      };
 
-  cookies.set("visit-count", 1);
+      cookies.set("visit-count", 1);
 
-  return mozAddonManagerInstall(downloadUrl, sendToGA).then(() => {
-    gaEvent.dimension7 = RESTART_NEEDED ? "restart required" : "no restart";
-    sendToGA("event", gaEvent);
-    if (RESTART_NEEDED) {
-      requireRestart();
-    }
-  });
+      return mozAddonManagerInstall(downloadUrl, sendToGA).then(() => {
+        gaEvent.dimension7 = RESTART_NEEDED ? "restart required" : "no restart";
+        sendToGA("event", gaEvent);
+        if (RESTART_NEEDED) {
+          requireRestart();
+        }
+      });
+    });
 }
 
 export function uninstallAddon() {
   if (!mam) {
-    return;
+    return Promise.reject();
   }
 
-  mam.getAddonByID(TESTPILOT_ADDON_ID).then(addon => {
+  return mam.getAddonByID(TESTPILOT_ADDON_ID).then(addon => {
     if (addon) {
       addon.uninstall();
     }
@@ -160,7 +169,7 @@ export function setupAddonConnection(store) {
   });
 */
   mam.getAddonByID(TESTPILOT_ADDON_ID).then(addon => {
-    store.dispatch(addonActions.setHasAddon(!!addon));
+    store.dispatch(addonActions.setHasAddon(!!addon && addon.isEnabled));
   })
     .then(() => getExperimentAddons(store.getState().experiments.data))
     .then(addons => {
