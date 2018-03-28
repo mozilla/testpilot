@@ -113,7 +113,12 @@ order: 0
 
 ## `is_featured`
 
-Determines whether the experiment will be featured on the home page. Optional.
+Determines whether the experiment will be featured on the home page.
+
+Featured experiments must include a `video_url` as well.
+
+ Optional.
+
 
 ```yaml
 is_featured: false
