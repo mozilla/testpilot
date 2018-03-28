@@ -127,9 +127,9 @@
     & > .step-filler {
       background-position: center center;
       background-repeat: no-repeat;
-      height: $grid-unit * 2;
+      height: $grid-unit;
       opacity: .8;
-      width: $grid-unit * 2;
+      width: $grid-unit;
     }
 
     &:hover {
