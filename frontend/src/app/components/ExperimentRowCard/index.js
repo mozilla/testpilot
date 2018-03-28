@@ -3,7 +3,7 @@
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
 import React from "react";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 import { buildSurveyURL, experimentL10nId } from "../../lib/utils";
 import { justUpdated, justLaunched } from "../../lib/experiment";
@@ -20,6 +20,7 @@ const ONE_WEEK = 7 * ONE_DAY;
 type ExperimentRowCardProps = {
   experiment: Object,
   hasAddon: any,
+  history: Object,
   enabled: Boolean,
   isFirefox: Boolean,
   isMinFirefox: Boolean,
@@ -31,7 +32,7 @@ type ExperimentRowCardProps = {
   isAfterCompletedDate: Function
 }
 
-export default class ExperimentRowCard extends React.Component {
+class ExperimentRowCard extends React.Component {
   props: ExperimentRowCardProps
 
   l10nId(pieces: string) {
@@ -42,7 +43,7 @@ export default class ExperimentRowCard extends React.Component {
     const { hasAddon, experiment, enabled, isAfterCompletedDate,
       isFirefox, isMinFirefox } = this.props;
 
-    const { description, title, subtitle, slug } = experiment;
+    const { description, title, subtitle } = experiment;
     const isCompleted = isAfterCompletedDate(experiment);
 
     // enabled trumps justUpdated
@@ -51,7 +52,7 @@ export default class ExperimentRowCard extends React.Component {
     const launched = (enabled || updated) ? false : justLaunched(experiment);
 
     return (
-      <Link to={`/experiments/${slug}`} onClick={evt => this.openDetailPage(evt)}
+      <div onClick={evt => this.openDetailPage(evt)}
         className={classnames("experiment-summary", {
           enabled,
           "just-launched": launched,
@@ -92,7 +93,7 @@ export default class ExperimentRowCard extends React.Component {
           </Localized>
           { this.renderManageButton(enabled, hasAddon, isCompleted, isFirefox, isMinFirefox) }
         </div>
-      </Link>
+      </div>
     );
   }
 
@@ -105,7 +106,7 @@ export default class ExperimentRowCard extends React.Component {
     return (
       <div>
         <Localized id="experimentCardFeedback">
-          <a onClick={() => this.handleFeedback()}
+          <a onClick={e => { e.stopPropagation(); this.handleFeedback(); }}
             href={surveyURL} target="_blank" rel="noopener noreferrer"
             className="experiment-feedback">
             Feedback
@@ -174,7 +175,7 @@ export default class ExperimentRowCard extends React.Component {
   }
 
   openDetailPage(evt: Object) {
-    const { eventCategory, experiment, sendToGA } = this.props;
+    const { eventCategory, experiment, sendToGA, history } = this.props;
     const { slug, title } = experiment;
     sendToGA("event", {
       eventCategory,
@@ -182,6 +183,8 @@ export default class ExperimentRowCard extends React.Component {
       eventLabel: title,
       dimension11: slug
     }, evt);
+    history.push(`/experiments/${slug}`);
   }
-
 }
+
+export default withRouter(ExperimentRowCard);
