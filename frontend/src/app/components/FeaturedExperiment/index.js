@@ -5,7 +5,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { experimentL10nId } from "../../lib/utils";
-import ExperimentTourDialog from "../ExperimentTourDialog";
 import FeaturedStatus from "./FeaturedStatus";
 import FeaturedButton from "./FeaturedButton";
 
@@ -25,45 +24,22 @@ type FeaturedExperimentProps = {
   clientUUID?: string,
   eventCategory: string,
   isExperimentEnabled: Function,
-  enableExperiment: Function,
-  navigateTo: Function,
   sendToGA: Function
-}
-
-type FeaturedExperimentState = {
-  showTourDialog: boolean
 }
 
 export default class FeaturedExperiment extends React.Component {
   props: FeaturedExperimentProps
-  state: FeaturedExperimentState
 
   constructor(props: FeaturedExperimentProps) {
     super(props);
-    this.state = {
-      showTourDialog: false
-    };
   }
 
   l10nId(pieces: string) {
     return experimentL10nId(this.props.experiment, pieces);
   }
 
-  postInstallCallback() {
-    this.setState({ showTourDialog: true });
-  }
-
-  onTourDialogComplete() {
-    const { navigateTo } = this.props;
-    this.setState({ showTourDialog: false });
-    if (window.location.pathname !== "/experiments") {
-      navigateTo("/experiments");
-    }
-  }
-
   render() {
     const { experiment, enabled } = this.props;
-    const { showTourDialog } = this.state;
     const { description, title, subtitle, slug, video_url, error } = experiment;
 
     return (
@@ -101,7 +77,7 @@ export default class FeaturedExperiment extends React.Component {
           </Localized>}
 
           <div className="featured-experiment__actions">
-            <FeaturedButton {...this.props} postInstallCallback={this.postInstallCallback.bind(this)} />
+            <FeaturedButton {...this.props} />
           </div>
 
 
@@ -113,11 +89,6 @@ export default class FeaturedExperiment extends React.Component {
               frameBorder="0"
               allowFullScreen />
           </div>
-
-          {showTourDialog && <ExperimentTourDialog {...this.props}
-            onCancel={this.onTourDialogComplete.bind(this)}
-            onComplete={this.onTourDialogComplete.bind(this)}
-          />}
         </div>
       </div>
     );

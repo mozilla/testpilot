@@ -16,7 +16,6 @@ import App from "./containers/App";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import HomePage from "./containers/HomePage";
-import HomePageWithAddon from "./containers/HomePage/HomePageWithAddon";
 import ExperimentPage from "./containers/ExperimentPage";
 import NewsFeedPage from "./containers/NewsFeedPage";
 import RetirePage from "./containers/RetirePage";
@@ -42,7 +41,7 @@ function routes() {
   return <BrowserRouter>
     <Switch>
       <Route exact path="/" render={appFactoryFor(HomePage)} />
-      <Route exact path="/experiments" render={appFactoryFor(HomePageWithAddon)} />
+      <Route exact path="/experiments" render={appFactoryFor(HomePage)} />
       <Route path="/experiments/:slug" render={appFactoryFor(ExperimentPage)} />
       <Route exact path="/news" render={appFactoryFor(NewsFeedPage)} />
       <Route exact path="/onboarding" render={appFactoryFor(OnboardingPage)} />

@@ -1,6 +1,7 @@
 // @flow
 
 import type { Experiment } from "./experiments";
+import cookies from "js-cookie";
 
 type RestartState = {
   isRequired: boolean,
@@ -127,24 +128,6 @@ function setClientUuid(
   return { ...state, clientUUID };
 }
 
-function manuallyEnableExperiment(
-  state: AddonState,
-  { payload: experiment }: ExperimentPayloadAction
-): AddonState {
-  const newInstalled = { ...state.installed };
-  newInstalled[experiment.addon_id] = { manuallyDisabled: false, ...experiment };
-  return { ...state, installed: newInstalled };
-}
-
-function manuallyDisableExperiment(
-  state: AddonState,
-  { payload: experiment }: ExperimentPayloadAction
-): AddonState {
-  const newInstalled = { ...state.installed };
-  newInstalled[experiment.addon_id] = { manuallyDisabled: true, ...experiment };
-  return { ...state, installed: newInstalled };
-}
-
 function enableExperiment(
   state: AddonState,
   { payload: experiment }: ExperimentPayloadAction
@@ -161,15 +144,6 @@ function disableExperiment(
   const newInstalled = { ...state.installed };
   delete newInstalled[experiment.addon_id];
   return { ...state, installed: newInstalled };
-}
-
-function requireRestart(state: AddonState): AddonState {
-  return {
-    ...state,
-    restart: {
-      isRequired: true
-    }
-  };
 }
 
 export function getInstalled(state: AddonState): InstalledExperiments {
@@ -196,6 +170,9 @@ export default function addonReducer(state: ?AddonState, action: AddonActions): 
   }
 
   switch (action.type) {
+    case "TXP_INSTALLED":
+      cookies.set("txp-installed", "1");
+      return setHasAddon(state, {type: "SET_HAS_ADDON", payload: true});
     case "SET_HAS_ADDON":
       return setHasAddon(state, action);
     case "SET_INSTALLED":
@@ -204,16 +181,13 @@ export default function addonReducer(state: ?AddonState, action: AddonActions): 
       return setInstalledAddons(state, action);
     case "SET_CLIENT_UUID":
       return setClientUuid(state, action);
+    case "EXPERIMENT_INSTALLED":
+      cookies.set("exp-installed", action.payload.addon_id);
+      return enableExperiment(state, { type: "ENABLE_EXPERIMENT", payload: action.payload });
     case "ENABLE_EXPERIMENT":
       return enableExperiment(state, action);
     case "DISABLE_EXPERIMENT":
       return disableExperiment(state, action);
-    case "MANUALLY_ENABLE_EXPERIMENT":
-      return manuallyEnableExperiment(state, action);
-    case "MANUALLY_DISABLE_EXPERIMENT":
-      return manuallyDisableExperiment(state, action);
-    case "REQUIRE_RESTART":
-      return requireRestart(state);
     default:
       return state;
   }

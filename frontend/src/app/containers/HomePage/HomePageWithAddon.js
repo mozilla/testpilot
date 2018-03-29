@@ -8,10 +8,10 @@ import Banner from '../../components/Banner';
 import Copter from '../../components/Copter';
 import UpdateList from '../../components/UpdateList';
 import EmailDialog from '../../components/EmailDialog';
+import ExperimentTourDialog from "../../components/ExperimentTourDialog";
 import FeaturedExperiment from '../../components/FeaturedExperiment';
 import ExperimentCardList from '../../components/ExperimentCardList';
 import LayoutWrapper from '../../components/LayoutWrapper';
-import MainInstallButton from '../../components/MainInstallButton';
 import PastExperiments from '../../components/PastExperiments';
 import View from '../../components/View';
 import Visibility from "../../components/Visibility";
@@ -45,7 +45,8 @@ type HomePageWithAddonProps = {
 
 type HomePageWithAddonState = {
   showEmailDialog: boolean,
-  showNewsUpdateDialog: boolean
+  showNewsUpdateDialog: boolean,
+  showTourDialog: boolean
 }
 
 export default class HomePageWithAddon extends React.Component {
@@ -57,21 +58,37 @@ export default class HomePageWithAddon extends React.Component {
 
     this.state = {
       showEmailDialog: false,
+      showTourDialog: false,
       showNewsUpdateDialog: true
     };
   }
 
-  componentDidMount() {
-    const { getCookie, setCookie, getWindowLocation } = this.props;
+  checkCookies() {
+    const { getCookie, removeCookie, featuredExperiments } = this.props;
+    const exp = getCookie("exp-installed");
+    const featured = featuredExperiments[0];
 
-    if ((getCookie('visit-count') === '2') ||
-      getWindowLocation().search.indexOf('utm_campaign=restart-required') > -1) {
-      this.setState({showEmailDialog: true});
+    if (getCookie("txp-installed")) {
+      removeCookie("txp-installed");
+      this.setState({ showEmailDialog: true })
+    } else if (exp && !this.state.showEmailDialog) {
+      if (featured && featured.addon_id === exp) {
+        removeCookie("exp-installed");
+        this.setState({ showTourDialog: true });
+      }
     }
+  }
 
-    if (getCookie('visit-count') === '1') {
-      setCookie('visit-count', '2');
-    }
+  componentWillMount() {
+    this.checkCookies();
+  }
+
+  componentDidUpdate() {
+    this.checkCookies();
+  }
+
+  onTourDialogComplete() {
+    this.setState({ showTourDialog: false });
   }
 
   onNotInterestedSurveyClick() {
@@ -133,15 +150,15 @@ export default class HomePageWithAddon extends React.Component {
   render() {
     const { sendToGA, isAfterCompletedDate, staleNewsUpdates, freshNewsUpdates,
             majorNewsUpdates, featuredExperiments, isExperimentEnabled,
-            experimentsWithoutFeatured, experiments, removeCookie,
+            experimentsWithoutFeatured, experiments,
             enableExperiment } = this.props;
 
     if (experimentsWithoutFeatured.length === 0) { return null; }
 
-    const { showEmailDialog, showNewsUpdateDialog } = this.state;
+    const { showEmailDialog, showNewsUpdateDialog, showTourDialog } = this.state;
     const currentExperiments = experimentsWithoutFeatured.filter(x => !isAfterCompletedDate(x));
     const pastExperiments = experimentsWithoutFeatured.filter(isAfterCompletedDate);
-    const featuredExperiment = featuredExperiments.length ? featuredExperiments[0] : false;
+    const featuredExperiment = featuredExperiments[0];
 
     const featuredSection = featuredExperiment ? (<Banner background={true}>
       <LayoutWrapper flexModifier="row-center">
@@ -160,7 +177,6 @@ export default class HomePageWithAddon extends React.Component {
      </Localized>);
 
     const onEmailDialogDismissed = () => {
-      removeCookie('visit-count');
       this.setState({ showEmailDialog: false });
     };
 
@@ -168,7 +184,12 @@ export default class HomePageWithAddon extends React.Component {
       <View {...this.props}>
         {showEmailDialog &&
           <EmailDialog {...this.props} onDismiss={onEmailDialogDismissed} />}
-
+        {showTourDialog && <ExperimentTourDialog
+            experiment={featuredExperiment}
+            {...this.props}
+            onCancel={this.onTourDialogComplete.bind(this)}
+            onComplete={this.onTourDialogComplete.bind(this)}
+          />}
       {this.renderSplash()}
       {featuredSection}
 

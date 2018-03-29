@@ -102,7 +102,6 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
       navigateTo: sinon.spy(),
       isAfterCompletedDate: sinon.stub().returns(false),
       isExperimentEnabled: sinon.spy(),
-      requireRestart: sinon.spy(),
       sendToGA: sinon.spy(),
       openWindow: sinon.spy(),
       enableExperiment: sinon.spy(),
@@ -262,24 +261,6 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
       expect(subject.find(".experiment-video")).to.have.property("length", 1);
     });
 
-    it("should show the tour dialog if shouldShowTourDialog is true and experiment then becomes enabled", () => {
-      // Flag the tour dialog to be shown, but experiment isn't enabled yet.
-      subject.setState({ shouldShowTourDialog: true });
-
-      // Tour dialog isn't shown yet...
-      expect(subject.state("shouldShowTourDialog")).to.be.true;
-      expect(subject.state("showTourDialog")).to.be.false;
-      expect(subject.find("ExperimentTourDialog")).to.have.property("length", 0);
-
-      // Enable the experiment...
-      subject.setProps({ isExperimentEnabled: () => true });
-
-      // Now show the tour dialog...
-      expect(subject.state("shouldShowTourDialog")).to.be.false;
-      expect(subject.state("showTourDialog")).to.be.true;
-      expect(subject.find("ExperimentTourDialog")).to.have.property("length", 1);
-    });
-
     it("should display a call-to-action to try other experiments", () => {
       const experiment = setExperiment(mockExperiment);
       expect(subject.find(".banner__subtitle")).to.have.property("length", 1);
@@ -298,19 +279,6 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
         expect(subject.find("MainInstallButton")).to.have.property("length", 0);
       });
 
-      it("should show an email dialog if the visit-count cookie is set to 2", () => {
-        const getCookie = sinon.spy(() => "2");
-        const removeCookie = sinon.spy();
-        props = { ...props, hasAddon: true, getCookie, removeCookie };
-        subject = shallow(<ExperimentDetail {...props} />);
-        setExperiment(mockExperiment);
-
-        expect(subject.find("EmailDialog")).to.have.property("length", 1);
-
-        subject.setState({ showEmailDialog: false });
-        expect(subject.find("EmailDialog")).to.have.property("length", 0);
-      });
-
       it('should not show a "Disable" button', () =>
         expect(subject.find("#uninstall-button")).to.have.property("length", 0));
       it('should not show a "Give Feedback" button', () =>
@@ -320,15 +288,14 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
       it('should show an "Your privacy" button', () =>
         expect(subject.find(".highlight-privacy")).to.have.property("length", 1));
 
-      it('should enable experiment and schedule tour when "Enable" clicked', () => {
+      it('should enable experiment when "Enable" clicked', () => {
         const experiment = setExperiment(mockExperiment);
         subject.find("#install-button").simulate("click", mockClickEvent);
 
-        expect(props.enableExperiment.lastCall.args)
-          .to.deep.equal([experiment]);
+        expect(props.enableExperiment.lastCall.args[0])
+          .to.deep.equal(experiment);
         expect(subject.state("isEnabling")).to.be.true;
         expect(subject.state("isDisabling")).to.be.false;
-        expect(subject.state("shouldShowTourDialog")).to.be.true;
         expect(subject.state("progressButtonWidth"))
           .to.equal(mockClickEvent.target.offsetWidth);
         expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {

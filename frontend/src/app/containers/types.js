@@ -13,7 +13,6 @@ export type SendToGAProps = {
 
 // TODO: Reorg this vague grab-bag into more descriptive types
 export type MiscAppProps = {
-  requireRestart: boolean,
   installAddon: Function,
   navigateTo: Function
 };
