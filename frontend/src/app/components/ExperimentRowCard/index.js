@@ -32,7 +32,7 @@ type ExperimentRowCardProps = {
   isAfterCompletedDate: Function
 }
 
-class ExperimentRowCard extends React.Component {
+export class ExperimentRowCard extends React.Component {
   props: ExperimentRowCardProps
 
   l10nId(pieces: string) {

@@ -1,14 +1,22 @@
 /* global describe, beforeEach, it */
 import React from "react";
-import { MemoryRouter } from "react-router";
-import { Link } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 import { expect } from "chai";
 import sinon from "sinon";
 import { shallow } from "enzyme";
 import moment from "moment";
 import { findLocalizedById } from "../../../../test/app/util";
 
-import ExperimentRowCard from "./index";
+import { ExperimentRowCard } from "./index";
+
+const enzymeOptions = {
+  context: {
+    router: new MemoryRouter()
+  },
+  childContextTypes: {
+    router: sinon.spy()
+  }
+};
 
 describe("app/components/ExperimentRowCard", () => {
   let mockExperiment, mockClickEvent, props, subject;
@@ -31,6 +39,7 @@ describe("app/components/ExperimentRowCard", () => {
     };
     props = {
       experiment: mockExperiment,
+      history: { push: sinon.spy() },
       hasAddon: false,
       enabled: false,
       isFirefox: true,
@@ -40,8 +49,8 @@ describe("app/components/ExperimentRowCard", () => {
       sendToGA: sinon.spy(),
       isAfterCompletedDate: sinon.spy()
     };
-    const component = shallow(<MemoryRouter><ExperimentRowCard {...props} /></MemoryRouter>);
-    subject = component.find(ExperimentRowCard).dive();
+    subject = shallow(<ExperimentRowCard {...props} />, enzymeOptions);
+    // subject = component.find(ExperimentRowCard).dive();
   });
 
   it("should render expected content", () => {
@@ -201,14 +210,5 @@ describe("app/components/ExperimentRowCard", () => {
       eventLabel: mockExperiment.title,
       dimension11: mockExperiment.slug
     }, mockClickEvent]);
-  });
-
-  it("should have Link component with the right properties", () => {
-    const link = subject.find(Link);
-    expect(link).to.not.be.a("null");
-    expect(link.props()).to.contain({
-      to: `/experiments/${mockExperiment.slug}`,
-      className: "experiment-summary"
-    });
   });
 });

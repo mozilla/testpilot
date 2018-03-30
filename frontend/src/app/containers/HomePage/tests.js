@@ -3,12 +3,13 @@ import React from "react";
 import { MemoryRouter } from "react-router";
 import { expect } from "chai";
 import sinon from "sinon";
-import { shallow, render } from "enzyme";
+import { shallow } from "enzyme";
 import { findLocalizedById } from "../../../../test/app/util";
 
 import HomePage from "./index";
 import HomePageNoAddon from "./HomePageNoAddon";
 import HomePageWithAddon from "./HomePageWithAddon";
+import NewsUpdateDialog from "../../components/NewsUpdatesDialog";
 
 const today = new Date();
 const twoWeeksAgo = today - 1000 * 60 * 60 * 24 * 15;
@@ -203,10 +204,10 @@ describe("app/containers/HomePageWithAddon", () => {
     window.localStorage = {
       getItem: () => {}
     };
-    subject = render(<HomePageWithAddon {...props} />, enzymeOptions);
-    expect(subject.find(".news-updates-modal")).to.have.property("length", 1);
+    subject = shallow(<HomePageWithAddon {...props} />, enzymeOptions);
+    expect(subject.find(NewsUpdateDialog)).to.have.property("length", 1);
 
-    subject = render(<HomePageWithAddon {...props} majorNewsUpdates={[]} />, enzymeOptions);
-    expect(subject.find(".news-updates-modal")).to.have.property("length", 0);
+    subject = shallow(<HomePageWithAddon {...props} majorNewsUpdates={[]} />, enzymeOptions);
+    expect(subject.find(NewsUpdateDialog)).to.have.property("length", 0);
   });
 });

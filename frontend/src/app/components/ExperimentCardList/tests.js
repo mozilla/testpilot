@@ -5,6 +5,7 @@ import sinon from "sinon";
 import { shallow } from "enzyme";
 
 import ExperimentCardList from "./index";
+import ExperimentRowCard from "../../components/ExperimentRowCard";
 
 
 describe("app/components/ExperimentCardList", () => {
@@ -31,11 +32,11 @@ describe("app/components/ExperimentCardList", () => {
   });
 
   it("renders ExperimentRowCards for each experiment", () => {
-    expect(subject.find("ExperimentRowCard")).to.have.length(props.experiments.length);
+    expect(subject.find(ExperimentRowCard)).to.have.length(props.experiments.length);
   });
 
   it("respects an exception if specified", () => {
     subject.setProps({ except: props.experiments[0].slug });
-    expect(subject.find("ExperimentRowCard")).to.have.length(props.experiments.length - 1);
+    expect(subject.find(ExperimentRowCard)).to.have.length(props.experiments.length - 1);
   });
 });
