@@ -41,7 +41,8 @@ export default class FeaturedExperiment extends React.Component {
   }
 
   render() {
-    const { experiment, enabled, installed, hasAddon, eventCategory } = this.props;
+    const { experiment, enabled, installed, hasAddon, sendToGA,
+      eventCategory } = this.props;
     const { description, title, subtitle, slug, video_url, error } = experiment;
 
     return (

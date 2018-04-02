@@ -34,7 +34,8 @@ export default class MainInstallButton extends React.Component {
 
     const { sendToGA, eventCategory, installAddon,
       installCallback, eventLabel, experiment,
-      experimentTitle, isFeatured, installed } = this.props;
+      experimentTitle, isFeatured, installed,
+      hasAddon, enableExperiment } = this.props;
 
     if (isFeatured) {
       const { slug } = experiment;

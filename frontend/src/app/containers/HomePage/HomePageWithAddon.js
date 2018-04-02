@@ -88,9 +88,9 @@ export default class HomePageWithAddon extends React.Component {
     this.checkCookies();
   }
 
-  onTourDialogComplete = (cancel?: boolean) => {
-    const { experiment, hasAddon, enabled, installed, sendToGA } = this.props;
-    const { slug, title } = experiment;
+  onTourDialogComplete = (featuredExperiment: Object, cancel?: boolean) => {
+    const { isExperimentEnabled, hasAddon, installed, sendToGA } = this.props;
+    const { slug, title } = featuredExperiment;
     this.setState({ showTourDialog: false });
     sendToGA("event", {
       eventCategory: "FeaturedExperiment Interactions",
@@ -99,7 +99,7 @@ export default class HomePageWithAddon extends React.Component {
       dimension1: hasAddon,
       dimension2: Object.keys(installed).length > 0,
       dimension3: Object.keys(installed).length,
-      dimension4: enabled,
+      dimension4: isExperimentEnabled(featuredExperiment),
       dimension5: title,
       dimension10: getBreakpoint(window.innerWidth),
       dimension11: slug,
@@ -203,8 +203,8 @@ export default class HomePageWithAddon extends React.Component {
         {showTourDialog && <ExperimentTourDialog
             experiment={featuredExperiment}
             {...this.props}
-            onCancel={() => this.onTourDialogComplete(true)}
-            onComplete={this.onTourDialogComplete}
+            onCancel={() => this.onTourDialogComplete(featuredExperiment, true)}
+            onComplete={() => this.onTourDialogComplete(featuredExperiment)}
           />}
       {this.renderSplash()}
       {featuredSection}
