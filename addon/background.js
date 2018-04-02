@@ -10,7 +10,8 @@ function log(...args) {
 
 const storage = browser.storage.local;
 const RESOURCE_UPDATE_INTERVAL = 4 * 60 * 60 * 1000; // 4 hours
-const TWO_WEEKS = 2 * 7 * 24 * 60 * 60 * 1000;
+const ONE_DAY = 60 * 60 * 1000 * 24;
+const TWO_WEEKS = 2 * 7 * ONE_DAY;
 
 /* browser action constants */
 const BROWSER_ACTION_LINK_BASE = [
@@ -40,7 +41,7 @@ function uuidv4() {
                                               (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));
 }
 
-function setInstalledTxpAddons() {
+function getInstalledTxpAddons() {
   return browser.management.getAll().then((infoArray) => {
     const installed = infoArray.map((exp) => exp.id);
     const txpAddons = resources.experiments.map((exp) => exp.id);
@@ -52,25 +53,38 @@ function setInstalledTxpAddons() {
 }
 
 async function setup() {
-  const { clientUUID } = await storage.get("clientUUID");
-  if (!clientUUID) {
-    await storage.set({ clientUUID: uuidv4() });
-  }
   setupEnvironment();
   setupBrowserAction();
   await fetchResources();
-  setDailyPing();
+  await setDailyPing();
+}
+
+async function sendPingOnAlarm(alarmInfo) {
+  if (alarmInfo.name === "daily-ping") {
+    const { lastPing } = await storage.get("lastPing");
+    if (((new Date) - lastPing) > ONE_DAY) {
+      const installedTxpAddons = await getInstalledTxpAddons();
+      let { clientUUID } = await storage.get("clientUUID");
+      if (!clientUUID) {
+        await storage.set({ clientUUID: clientUUID = uuidv4() });
+      }
+      submitPing(alarmInfo.name, "installed-addons", installedTxpAddons, clientUUID);
+      await storage.set({lastPing: Date.now()});
+    }
+  }
 }
 
 async function setDailyPing() {
   const delayInMinutes = 1;
   const periodInMinutes = 60; // check hourly
   const { lastPing } = await storage.get("lastPing");
-  let initial = false;
 
   if (!lastPing) {
-    initial = true;
-    await storage.set({ lastPing: Date.now()});
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    await storage.set({
+      lastPing: yesterday
+    });
   }
 
   browser.alarms.create("daily-ping", {
@@ -78,18 +92,7 @@ async function setDailyPing() {
     periodInMinutes
   });
 
-  browser.alarms.onAlarm.addListener((alarmInfo) => {
-    if (alarmInfo.name === "daily-ping") {
-      const ONE_DAY = 60 * 60 * 1000 * 24; /* ms */
-      const { lastPing } = await storage.get("lastPing");
-      if (initial || ((new Date) - lastPing) > ONE_DAY) {
-        setInstalledTxpAddons().then((installedTxpAddons) => {
-          const { clientUUID } = await storage.get({ clientUUID: uuidv4() });
-          submitPing(alarmInfo.name, "installed-addons", installedTxpAddons, clientUUID);
-        });
-      }
-    }
-  });
+  browser.alarms.onAlarm.addListener(sendPingOnAlarm);
 }
 
 function setupBrowserAction() {
