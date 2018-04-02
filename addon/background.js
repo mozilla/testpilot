@@ -9,7 +9,7 @@ function log(...args) {
 }
 
 const storage = browser.storage.local;
-const RESOURCE_UPDATE_INTERVAL = 10000; // 4 hours
+const RESOURCE_UPDATE_INTERVAL = 4 * 60 * 60 * 1000; // 4 hours
 const TWO_WEEKS = 2 * 7 * 24 * 60 * 60 * 1000;
 
 /* browser action constants */
@@ -35,8 +35,6 @@ let currentEnvironment = {
   baseUrl: "https://testpilot.firefox.com"
 };
 
-let clientUUID;
-
 function uuidv4() {
   return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c => // eslint-disable-line space-infix-ops
                                               (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));
@@ -54,9 +52,9 @@ function setInstalledTxpAddons() {
 }
 
 async function setup() {
-  const data = await storage.get("clientUUID");
-  if (!data.clientUUID) {
-    await storage.set({ clientUUID: clientUUID = uuidv4() });
+  const { clientUUID } = await storage.get("clientUUID");
+  if (!clientUUID) {
+    await storage.set({ clientUUID: uuidv4() });
   }
   setupEnvironment();
   setupBrowserAction();
@@ -67,10 +65,10 @@ async function setup() {
 async function setDailyPing() {
   const delayInMinutes = 1;
   const periodInMinutes = 60; // check hourly
-  const data = await storage.get("lastPing");
+  const { lastPing } = await storage.get("lastPing");
   let initial = false;
 
-  if (!data.lastPing) {
+  if (!lastPing) {
     initial = true;
     await storage.set({ lastPing: Date.now()});
   }
@@ -83,10 +81,11 @@ async function setDailyPing() {
   browser.alarms.onAlarm.addListener((alarmInfo) => {
     if (alarmInfo.name === "daily-ping") {
       const ONE_DAY = 60 * 60 * 1000 * 24; /* ms */
-      const data = await storage.get("lastPing");
-      if (initial || ((new Date) - data.lastPing) > ONE_DAY) {
+      const { lastPing } = await storage.get("lastPing");
+      if (initial || ((new Date) - lastPing) > ONE_DAY) {
         setInstalledTxpAddons().then((installedTxpAddons) => {
-          submitPing(alarmInfo.name, "installed-addons", installedTxpAddons);
+          const { clientUUID } = await storage.get({ clientUUID: uuidv4() });
+          submitPing(alarmInfo.name, "installed-addons", installedTxpAddons, clientUUID);
         });
       }
     }
@@ -188,7 +187,7 @@ async function updateBadgeTextOnNew(experiments, news_updates) {
   });
 }
 
-function submitPing(object, event, addons) {
+function submitPing(object, event, addons, clientUUID) {
   return fetch("https://ssl.google-analytics.com/collect", {
     method: "POST",
     body: new URLSearchParams({
