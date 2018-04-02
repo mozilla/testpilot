@@ -84,6 +84,7 @@ showMoreNewsTitle = 지난 뉴스 보기
 
 
 
+moreDetail = 상세 보기
 
 ## A listing of all Test Pilot experiments.
 
@@ -94,6 +95,7 @@ experimentListEndingTomorrow = 내일 끝남
 experimentListEndingSoon = 곧 끝남
 experimentCondensedHeader = Test Pilot에 오신 것을 환영합니다!
 experimentListHeader = 실험을 선택하세요!
+experimentListHeaderWithFeatured = 모든 실험 시도
 
 ## An individual experiment in the listing of all Test Pilot experiments.
 
@@ -135,9 +137,11 @@ disableExperimentTransition = 비활성화 중...
 enableExperiment = { $title } 활성화
 enableExperimentTransition = 활성화 중...
 experimentManuallyDisabled = 부가 기능 관리자에서 { $title } 비활성화
+experimentMeasurementIntro = 모든 Test Pilot 실험기능이 수집하는 <a>데이터</a> 외에 { $experimentTitle } 사용 중 알아야 할 주요 사항:
 measurements = 개인 정보 보호
 experimentPrivacyNotice = { $title }의 데이터 수집에 대한 자세한 정보를 알 수 있습니다.
-contributorsExtraLearnMore = 더 알아보기
+contributorsHeading = 기여한 사람들
+contributorsExtraLearnMore = 자세히 보기
 changelog = 변경 사항
 tour = 둘러보기
 tourLink = 둘러보기 시작
@@ -180,6 +184,7 @@ versionChangeNoticeLink = Firefox의 최신 버전을 받습니다.
 retireDialogTitle = Test Pilot을 제거하시겠습니까?
 retireEmailMessage = 이메일 업데이트를 취소하려면 Test Pilot 이메일의 <em>구독 취소</em> 링크를 클릭하세요.
 retireSubmitButton = 진행
+pageTitleRetirePage = Firefox Test Pilot - Test Pilot 제거
 retirePageProgressMessage = 종료 중...
 retirePageSurveyButton = 간단한 설문 참여
 
@@ -208,10 +213,15 @@ newsletterFormSubmitButtonSubmitting = 제출 중...
 
 ## A section of the footer containing a newsletter signup form.
 
+newsletterFooterError = 이메일 주소를 제출하는데 실패했습니다. 다시 시도하시겠습니까?
+newsletterFooterHeader = 최신 정보를 받아보세요
+newsletterFooterBody = 새 실험 기능을 찾아보시거나 이미 써보셨던 기능 실험 결과를 확인해보세요.
 newsletterFooterSuccessHeader = 감사합니다!
 
 ## A warning shown to users when the experiment is not available in their language
 
+localeNotTranslatedWarningTitle = 이 실험 기능은 사용중이신 언어 ({ $locale_code })로 번역되지 않았습니다.
+localeWarningSubtitle = 그래도 원하시면 활성화하실 수 있습니다.
 
 ## An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 
@@ -229,3 +239,15 @@ hidePastExperiments = 지나간 실험 가리기
 
 ## Text of warnings to the user if various error conditions are detected
 
+warningGenericTitle = 문제가 생겼습니다!
+warningGenericDetail = Test Pilot에 문제가 발생했습니다. <a>버그 리포트</a>를 작성하시고 이 오류 메시지를 같이 언급해주세요.
+warningUpgradeFirefoxTitle = 계속하려면 Firefox를 업그레이드하세요!
+warningUpgradeFirefoxDetail = Test Pilot을 쓰려면 Firefox가 최신 버전이어야 합니다. 시작하려면 <a>Firefox를 업그레이드</a>하세요.
+warningHttpsRequiredTitle = HTTPS가 필요합니다!
+warningHttpsRequiredDetail = Test Pilot을 쓰려면 HTTPS로 접속해야 합니다. 자세한 사항은 <a>문서</a>를 확인해주세요.
+warningMissingPrefTitle = Test Pilot을 개발하고 계십니까?
+warningMissingPrefDetail = 로컬 또는 개발 환경에서 Test Pilot을 실행하는 경우 따로 설정이 필요합니다. 자세한 사항은 <a>문서</a>를 확인해주세요.
+warningBadHostnameTitle = 비인가된 호스트명입니다!
+warningBadHostnameDetail = Test Pilot 사이트는 testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net 및 example.com:8000 주소로만 접속 가능합니다. 자세한 사항은 <a>문서</a>를 확인해주세요.
+# This string does not appear in app, but we will use it to localize our `no script` message
+jsDisabledWarning = Test Pilot을 쓰려면 JavaScript가 필요합니다. 죄송합니다.
