@@ -54,7 +54,6 @@ export class ExperimentDetail extends React.Component {
     progressButtonWidth: ?number,
     showEmailDialog: boolean,
     showDisableDialog: boolean,
-    shouldShowTourDialog: boolean,
     showTourDialog: boolean,
     showPreFeedbackDialog: boolean,
     showEolDialog: boolean
@@ -65,17 +64,8 @@ export class ExperimentDetail extends React.Component {
 
     const {
       isExperimentEnabled,
-      experiment,
-      getCookie,
-      hasAddon
+      experiment
     } = this.props;
-
-    let showEmailDialog = false;
-    if (getCookie("visit-count") === "2") {
-      if (hasAddon) {
-        showEmailDialog = true;
-      }
-    }
 
     // TODO: Clean this up per #1367
     this.state = {
@@ -84,18 +74,37 @@ export class ExperimentDetail extends React.Component {
       isEnabling: false,
       isDisabling: false,
       progressButtonWidth: null,
-      showEmailDialog,
+      showEmailDialog: false,
       showDisableDialog: false,
-      shouldShowTourDialog: false,
       showTourDialog: false,
       showPreFeedbackDialog: false,
       showEolDialog: false
     };
   }
 
-  componentWillReceiveProps(nextProps: ExperimentDetailProps) {
-    const { shouldShowTourDialog, enabled: prevEnabled } = this.state;
+  checkCookies() {
+    const { getCookie, removeCookie, experiment } = this.props;
+    const exp = getCookie("exp-installed");
+    if (getCookie("txp-installed")) {
+      removeCookie("txp-installed");
+      this.setState({ showEmailDialog: true });
+    } else if (exp && !this.state.showEmailDialog) {
+      if (experiment && experiment.addon_id === exp) {
+        removeCookie("exp-installed");
+        this.setState({ showTourDialog: true });
+      }
+    }
+  }
 
+  componentWillMount() {
+    this.checkCookies();
+  }
+
+  componentDidUpdate() {
+    this.checkCookies();
+  }
+
+  componentWillReceiveProps(nextProps: ExperimentDetailProps) {
     const prevExperiment = this.props.experiment;
     const prevInProgress = prevExperiment && prevExperiment.inProgress;
 
@@ -114,15 +123,6 @@ export class ExperimentDetail extends React.Component {
     this.setState({
       enabled: nextEnabled
     });
-
-    // On enable state change, stop installation indicators & show tour dialog if needed.
-    if (prevEnabled !== nextEnabled) {
-      const showTourDialog = shouldShowTourDialog && nextEnabled;
-      this.setState({
-        shouldShowTourDialog: false,
-        showTourDialog
-      });
-    }
   }
 
   render() {
@@ -155,8 +155,7 @@ export class ExperimentDetail extends React.Component {
       getScrollY,
       sendToGA,
       addScrollListener,
-      removeScrollListener,
-      removeCookie
+      removeScrollListener
     } = this.props;
 
     const {
@@ -214,7 +213,6 @@ export class ExperimentDetail extends React.Component {
           <EmailDialog
             {...this.props}
             onDismiss={() => {
-              removeCookie("visit-count");
               this.setState({ showEmailDialog: false });
             }}
           />}
@@ -355,19 +353,6 @@ export class ExperimentDetail extends React.Component {
       return;
     }
 
-    let installAddonPromise = null;
-    if (!this.props.hasAddon) {
-      const { installAddon, requireRestart } = this.props;
-      const eventCategory = "ExperimentDetailsPage Interactions";
-      const eventLabel = `Install the Add-on from ${experiment.title}`;
-      installAddonPromise = installAddon(
-        requireRestart,
-        sendToGA,
-        eventCategory,
-        eventLabel,
-        experiment.slug
-      );
-    }
     let progressButtonWidth;
     if (this.props.hasAddon) {
       progressButtonWidth = evt.target.offsetWidth;
@@ -376,27 +361,20 @@ export class ExperimentDetail extends React.Component {
     this.setState({
       isEnabling: true,
       isDisabling: false,
-      shouldShowTourDialog: true,
       progressButtonWidth
     });
 
-    function finishEnabling() {
-      enableExperiment(experiment);
+    const eventCategory = "ExperimentDetailsPage Interactions";
+    const eventLabel = `Install the Add-on from ${experiment.title}`;
 
-      sendToGA("event", {
-        eventCategory: "ExperimentDetailsPage Interactions",
-        eventAction: "Enable Experiment",
-        eventLabel: experiment.title,
-        dimension11: experiment.slug
-      });
-    }
+    enableExperiment(experiment, eventCategory, eventLabel);
 
-    if (installAddonPromise === null) {
-      finishEnabling();
-      return;
-    }
-
-    installAddonPromise.then(finishEnabling);
+    sendToGA("event", {
+      eventCategory: "ExperimentDetailsPage Interactions",
+      eventAction: "Enable Experiment",
+      eventLabel: experiment.title,
+      dimension11: experiment.slug
+    });
   };
 
   uninstallExperiment = (evt: MouseEventWithElementTarget) => {

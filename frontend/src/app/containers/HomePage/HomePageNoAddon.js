@@ -22,7 +22,6 @@ type HomePageNoAddonProps = {
   experimentsWithoutFeatured: Array<Object>,
   featuredExperiments: Array<Object>,
   isAfterCompletedDate: Function,
-  navigateTo: Function,
   isMinFirefox: boolean,
   isExperimentEnabled: Function,
   enableExperiment: Function,
@@ -33,7 +32,7 @@ export default class HomePageNoAddon extends React.Component {
   props: HomePageNoAddonProps
 
   render() {
-    const { isAfterCompletedDate, featuredExperiments, navigateTo,
+    const { isAfterCompletedDate, featuredExperiments,
       experimentsWithoutFeatured, enableExperiment, isExperimentEnabled } = this.props;
 
     if (experimentsWithoutFeatured.length === 0) { return null; }
@@ -61,11 +60,7 @@ export default class HomePageNoAddon extends React.Component {
 
       {!featuredExperiment && <MainInstallButton {...this.props}
         eventCategory="HomePage Interactions"
-        eventLabel="Install the Add-on"
-        postInstallCallback={() => {
-          if (window.location.pathname !== "/experiments")navigateTo("/experiments");
-        }}
-      />}
+        eventLabel="Install the Add-on" />}
     </Banner>;
 
     const featuredSection = featuredExperiment ? (<Banner background={true}>
@@ -132,11 +127,7 @@ export default class HomePageNoAddon extends React.Component {
             </LayoutWrapper>
             <LayoutWrapper flexModifier="column-center">
               <div className="centered">
-                <MainInstallButton {...this.props} eventCategory="HomePage Interactions" eventLabel="Install the Add-on" postInstallCallback={() => {
-                  if (window.location.pathname !== "/experiments") {
-                    navigateTo("/experiments");
-                  }
-                }}/>
+                <MainInstallButton {...this.props} eventCategory="HomePage Interactions" eventLabel="Install the Add-on" />
               </div>
             </LayoutWrapper>
           </Banner>

@@ -31,9 +31,7 @@ describe("app/containers/HomePage", () => {
       experiments: [],
       experimentsWithoutFeatured: [],
       hasAddon: false,
-      isFirefox: false,
-      replaceState: sinon.spy(),
-      getCookie: sinon.spy(() => "2")
+      isFirefox: false
     };
     subject = shallow(<HomePage {...props} />);
   });
@@ -41,14 +39,12 @@ describe("app/containers/HomePage", () => {
   it("should return HomePageNoAddon if hasAddon is false", () => {
     expect(subject.find("HomePageNoAddon")).to.have.property("length", 1);
     expect(subject.find("HomePageWithAddon")).to.have.property("length", 0);
-    expect(props.replaceState.called).to.be.false;
   });
 
   it("should return HomePageWithAddon if hasAddon is true", () => {
-    subject.setProps({ hasAddon: true, getCookie: sinon.spy(() => undefined) });
+    subject.setProps({ hasAddon: true });
     expect(subject.find("HomePageWithAddon")).to.have.property("length", 1);
     expect(subject.find("HomePageNoAddon")).to.have.property("length", 0);
-    expect(props.replaceState.called).to.be.true;
   });
 });
 
@@ -180,19 +176,10 @@ describe("app/containers/HomePageWithAddon", () => {
     expect(subject.find("FeaturedExperiment")).to.have.property("length", 1);
   });
 
-  it("should show an email dialog if the URL contains utm_campaign=restart-required",  () => {
-    const getWindowLocation = sinon.spy(() =>
-      ({ search: "utm_campaign=restart-required" }));
-    props = { ...props, getWindowLocation };
-    subject = shallow(<HomePageWithAddon {...props} />);
-    expect(subject.find("EmailDialog")).to.have.property("length", 1);
-
-    subject.setState({ showEmailDialog: false });
-    expect(subject.find("EmailDialog")).to.have.property("length", 0);
-  });
-
-  it("should show an email dialog if the visit-count cookie is set to 2", () => {
-    const getCookie = sinon.spy(name => "2");
+  it("should show an email dialog if the txp-installed cookie exists", () => {
+    const getCookie = sinon.stub();
+    getCookie.withArgs("txp-installed").onFirstCall().returns("1");
+    getCookie.returns(null);
     props = { ...props, getCookie };
     subject = shallow(<HomePageWithAddon {...props} />);
     expect(subject.find("EmailDialog")).to.have.property("length", 1);

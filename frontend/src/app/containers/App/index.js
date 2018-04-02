@@ -300,9 +300,8 @@ const mapDispatchToProps = dispatch => ({
   navigateTo: path => {
     window.location = path;
   },
-  enableExperiment: experiment => enableExperiment(dispatch, experiment, sendToGA),
+  enableExperiment: (experiment, eventCategory, eventLabel) => enableExperiment(dispatch, experiment, sendToGA, eventCategory, eventLabel),
   disableExperiment: experiment => disableExperiment(dispatch, experiment),
-  requireRestart: () => dispatch(addonActions.requireRestart()),
   setHasAddon: installed => dispatch(addonActions.setHasAddon(installed)),
   newsletterForm: {
     setEmail: email =>
