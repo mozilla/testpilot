@@ -21,12 +21,11 @@ function setInstalled(installed: InstalledExperiments): SetInstalledAction {
 
 export default {
   setInstalled,
+  txpInstalled: makeSimpleActionCreator("TXP_INSTALLED"),
   setHasAddon: makeSimpleActionCreator("SET_HAS_ADDON"),
   setClientUuid: makeSimpleActionCreator("SET_CLIENT_UUID"),
   setInstalledAddons: makeSimpleActionCreator("SET_INSTALLED_ADDONS"),
-  manuallyEnableExperiment: makeSimpleActionCreator("MANUALLY_ENABLE_EXPERIMENT"),
-  manuallyDisableExperiment: makeSimpleActionCreator("MANUALLY_DISABLE_EXPERIMENT"),
+  experimentInstalled: makeSimpleActionCreator("EXPERIMENT_INSTALLED"),
   enableExperiment: makeSimpleActionCreator("ENABLE_EXPERIMENT"),
-  disableExperiment: makeSimpleActionCreator("DISABLE_EXPERIMENT"),
-  requireRestart: makeSimpleActionCreator("REQUIRE_RESTART")
+  disableExperiment: makeSimpleActionCreator("DISABLE_EXPERIMENT")
 };

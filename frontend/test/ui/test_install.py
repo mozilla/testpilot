@@ -61,7 +61,10 @@ def test_install_and_enable(base_url, selenium, firefox, notifications):
         notifications.AddOnInstallConfirmation).install()
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
-    assert Detail(selenium, base_url).enabled_popup.is_popup_displayed()
+    exp_detail = Detail(selenium, base_url)
+    assert exp_detail.email_popup.is_popup_displayed()
+    exp_detail.email_popup.close()
+    assert exp_detail.enabled_popup.is_popup_displayed()
 
 
 @pytest.mark.nondestructive
@@ -86,6 +89,8 @@ def test_enable_and_disable_experiment(
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
     exp_detail = Detail(selenium, base_url)
+    assert exp_detail.email_popup.is_popup_displayed()
+    exp_detail.email_popup.close()
     assert exp_detail.enabled_popup.is_popup_displayed()
     exp_detail.enabled_popup.close()
     experiment.disable()

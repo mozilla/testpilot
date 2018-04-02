@@ -19,8 +19,7 @@ type FeaturedButtonProps = {
   eventCategory: string,
   hasAddon: any,
   installed: InstalledExperiments,
-  sendToGA: Function,
-  postInstallCallback: Function
+  sendToGA: Function
 }
 
 type FeaturedButtonState = {
@@ -101,7 +100,7 @@ export default class FeaturedButton extends React.Component {
 
   render() {
     const { experiment, installed, clientUUID,
-      hasAddon, enabled, postInstallCallback } = this.props;
+      hasAddon, enabled } = this.props;
     const { slug, survey_url, title } = experiment;
 
     let Buttons;
@@ -134,7 +133,6 @@ export default class FeaturedButton extends React.Component {
           <MainInstallButton {...this.props}
             experimentTitle={title}
             experiment={experiment}
-            postInstallCallback={postInstallCallback}
             experimentLegalLink={this.renderLegalLink()}
             eventCategory="HomePage Interactions"
             eventLabel="Install the Add-on" />

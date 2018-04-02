@@ -12,5 +12,4 @@ export type MainInstallButtonProps = {
   experiment?: Object,
   experimentTitle: string,
   installCallback?: Function,
-  postInstallCallback?: Function
 } & VariantTestsProps & MiscAppProps & SendToGAProps & BrowserEnvProps;

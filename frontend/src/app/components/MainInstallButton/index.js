@@ -26,62 +26,34 @@ export default class MainInstallButton extends React.Component {
     };
   }
 
-  enableExperimentWrapped() {
-    const { experiment, enableExperiment, postInstallCallback } = this.props;
-
-    this.setState({ isInstalling: true });
-    return enableExperiment(experiment)
-      .then(() => {
-        if (postInstallCallback) {
-          postInstallCallback();
-        }
-      }).catch((err) => {
-        this.setState({isInstalling: false});
-      });
-  }
-
   install(e: Object) {
     // Don't install if a mouse button other than the primary button was clicked
     if (e.button !== 0) {
       return;
     }
-    const { requireRestart, sendToGA, eventCategory,
-      installAddon, installCallback, navigateTo, eventLabel,
-      postInstallCallback, isExperimentEnabled, hasAddon,
-      experiment, experimentTitle } = this.props;
 
-    if (hasAddon) {
-      if (!isExperimentEnabled(experiment)) {
-        this.enableExperimentWrapped();
-      } else navigateTo("/experiments");
-      return;
-    }
+    const { sendToGA, eventCategory, enableExperiment,
+      installAddon, installCallback, eventLabel,
+      experiment } = this.props;
+
+    this.setState({ isInstalling: true });
 
     if (installCallback) {
-      this.setState({ isInstalling: true });
       installCallback(e);
-      return;
-    }
+    } else {
+      const install = experiment ?
+        enableExperiment(experiment, eventCategory, eventLabel) :
+        installAddon(sendToGA, eventCategory, eventLabel);
 
-    this.setState({ isInstalling: true },
-      () => installAddon(requireRestart, sendToGA, eventCategory, eventLabel)
-        .then(() => {
-          // one click install and enable handling
-          if (experimentTitle) {
-            return this.enableExperimentWrapped();
-          } else if (postInstallCallback) {
-            postInstallCallback();
-          }
-          return Promise.resolve();
-        })
-        .catch(err => {
-          this.setState({ isInstalling: false });
-        }));
+      install.catch(err => {
+        this.setState({ isInstalling: false });
+      });
+    }
   }
 
   render() {
-    const { isFirefox, isMinFirefox, isMobile, hasAddon, experimentTitle, experimentLegalLink } = this.props;
-    const { isInstalling } = this.state;
+    const { isFirefox, isMinFirefox, isMobile, hasAddon, experimentTitle, experimentLegalLink, experiment } = this.props;
+    const isInstalling = this.state.isInstalling || (experiment && experiment.inProgress);
 
     const terms = <Localized id="landingLegalNoticeTermsOfUse">
       <a href="/terms"/>
@@ -152,18 +124,14 @@ export default class MainInstallButton extends React.Component {
       }
     }
 
-    const makeInstallButton = (extraClass = "") => {
-      const isEnabling = (experimentTitle && hasAddon && !isExperimentEnabled(experiment) && isInstalling);
-      let btn = isEnabling ? enablingButton : installingButton;
-      return <button onClick={e => this.install(e)}
-        className={classnames(`button primary main-install__button ${extraClass}`, { "state-change": isInstalling })}>
-        {!isInstalling && installButton}
-        {isInstalling ? btn : null}
-        <div className="state-change-inner"></div>
-      </button>;
-    };
-
-    return makeInstallButton();
+    const isEnabling = (experimentTitle && hasAddon && !isExperimentEnabled(experiment) && isInstalling);
+    let btn = isEnabling ? enablingButton : installingButton;
+    return <button onClick={e => this.install(e)}
+      className={classnames(`button primary main-install__button`, { "state-change": isInstalling })}>
+      {!isInstalling && installButton}
+      {isInstalling ? btn : null}
+      <div className="state-change-inner"></div>
+    </button>;
   }
 
   renderAltButton(isFirefox: boolean, isMobile: boolean) {
