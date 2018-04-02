@@ -20,14 +20,14 @@ def test_install_of_test_pilot_addon(
     if not page.featured.is_displayed:
         page.header.click_install_button()
         firefox.browser.wait_for_notification(
-        notifications.AddOnInstallConfirmation).install()
+            notifications.AddOnInstallConfirmation).install()
         firefox.browser.wait_for_notification(
             notifications.AddOnInstallComplete
         ).close()
     else:
         page.featured.click_install_button()
         firefox.browser.wait_for_notification(
-        notifications.AddOnInstallConfirmation).install()
+            notifications.AddOnInstallConfirmation).install()
         firefox.browser.wait_for_notification(
             notifications.AddOnInstallComplete
         ).close()
