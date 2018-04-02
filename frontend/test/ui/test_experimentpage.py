@@ -20,6 +20,8 @@ def test_experiment_page_sticky_header(
     experiment = experiments.list[0].click()
     experiment.install_and_enable()
     firefox.browser.wait_for_notification(
+        notifications.AddOnInstallConfirmation).install()
+    firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallConfirmation).install()

@@ -20,10 +20,14 @@ def test_install_of_test_pilot_addon(
     if not page.featured.is_displayed:
         page.header.click_install_button()
         firefox.browser.wait_for_notification(
+            notifications.AddOnInstallConfirmation).install()
+        firefox.browser.wait_for_notification(
             notifications.AddOnInstallComplete
         ).close()
     else:
         page.featured.click_install_button()
+        firefox.browser.wait_for_notification(
+            notifications.AddOnInstallConfirmation).install()
         firefox.browser.wait_for_notification(
             notifications.AddOnInstallComplete
         ).close()
@@ -36,6 +40,8 @@ def test_bottom_install_button(base_url, selenium, firefox, notifications):
     page = Home(selenium, base_url).open()
     page.bottom_install_button()
     firefox.browser.wait_for_notification(
+        notifications.AddOnInstallConfirmation).install()
+    firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
 
 
@@ -47,6 +53,8 @@ def test_install_and_enable(base_url, selenium, firefox, notifications):
     experiments = Experiments(selenium, base_url)
     experiment = experiments.find_experiment(experiment='Dev Example')
     experiment.install_and_enable()
+    firefox.browser.wait_for_notification(
+        notifications.AddOnInstallConfirmation).install()
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
     firefox.browser.wait_for_notification(
@@ -69,6 +77,8 @@ def test_enable_and_disable_experiment(
                          'domain': 'example.com'})
     experiment = page.find_experiment(experiment='Dev Example')
     experiment.install_and_enable()
+    firefox.browser.wait_for_notification(
+        notifications.AddOnInstallConfirmation).install()
     firefox.browser.wait_for_notification(
         notifications.AddOnInstallComplete).close()
     firefox.browser.wait_for_notification(
