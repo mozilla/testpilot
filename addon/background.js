@@ -35,7 +35,7 @@ let currentEnvironment = {
   baseUrl: "https://testpilot.firefox.com"
 };
 
-let clientUUID, installedTxpAddons;
+let clientUUID;
 
 function uuidv4() {
   return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c => // eslint-disable-line space-infix-ops
@@ -43,11 +43,11 @@ function uuidv4() {
 }
 
 function setInstalledTxpAddons() {
-  browser.management.getAll().then((infoArray) => {
+  return browser.management.getAll().then((infoArray) => {
     const installed = infoArray.map((exp) => exp.id);
     const txpAddons = resources.experiments.map((exp) => exp.id);
 
-    installedTxpAddons = installed.filter(function(n) {
+    return installed.filter(function(n) {
       return txpAddons.indexOf(n) !== -1;
     });
   });
@@ -61,19 +61,19 @@ async function setup() {
   setupEnvironment();
   setupBrowserAction();
   await fetchResources();
-  setInstalledTxpAddons();
-
-  browser.management.onEnabled.addListener(setInstalledTxpAddons);
-  browser.management.onDisabled.addListener(setInstalledTxpAddons);
-  browser.management.onInstalled.addListener(setInstalledTxpAddons);
-  browser.management.onUninstalled.addListener(setInstalledTxpAddons);
-
   setDailyPing();
 }
 
-function setDailyPing() {
-  const delayInMinutes = 5;
-  const periodInMinutes = 60 * 24; // daily
+async function setDailyPing() {
+  const delayInMinutes = 1;
+  const periodInMinutes = 60; // check hourly
+  const data = await storage.get("lastPing");
+  let initial = false;
+
+  if (!data.lastPing) {
+    initial = true;
+    await storage.set({ lastPing: Date.now()});
+  }
 
   browser.alarms.create("daily-ping", {
     delayInMinutes,
@@ -82,7 +82,13 @@ function setDailyPing() {
 
   browser.alarms.onAlarm.addListener((alarmInfo) => {
     if (alarmInfo.name === "daily-ping") {
-      submitPing(alarmInfo.name, "installed-addons", installedTxpAddons);
+      const ONE_DAY = 60 * 60 * 1000 * 24; /* ms */
+      const data = await storage.get("lastPing");
+      if (initial || ((new Date) - data.lastPing) > ONE_DAY) {
+        setInstalledTxpAddons().then((installedTxpAddons) => {
+          submitPing(alarmInfo.name, "installed-addons", installedTxpAddons);
+        });
+      }
     }
   });
 }
@@ -106,7 +112,7 @@ function setupEnvironment() {
   browser.storage.onChanged.addListener((changes) => {
     Object.keys(changes).forEach((k) => {
       if (k === "environment") {
-        currentEnvironment = changes[k];
+        currentEnvironment = changes[k].newValue;
         fetchResources();
       }
     });
@@ -116,16 +122,16 @@ function setupEnvironment() {
 function fetchResources() {
   log("fetchResources");
   return Promise.all(
-    Object.keys(resources).map(path =>
-                               fetch(`${currentEnvironment.baseUrl}/api/${path}.json`)
-                               .then(res => res.json())
-                               .then((data) => data.results ? data.results : data)
-                               .then((data) => [path, data])
-                               .catch(err => {
-                                 log("fetchResources error", path, err);
-                                 return [path, null];
-                               })
-                              )
+    Object.keys(resources).map(path => {
+      fetch(`${currentEnvironment.baseUrl}/api/${path}.json`)
+        .then(res => res.json())
+        .then((data) => data.results ? data.results : data)
+        .then((data) => [path, data])
+        .catch(err => {
+          log("fetchResources error", path, err);
+          return [path, null];
+        });
+    })
   ).then(results => {
     log("fetchResources results", results);
     results.forEach(([path, data]) => (resources[path] = data));
@@ -170,16 +176,12 @@ async function updateBadgeTextOnNew(experiments, news_updates) {
   const twoWeeksAgo = Date.now() - TWO_WEEKS;
   const newsUpdates = (news_updates || []).filter((u) => u.major)
         .filter((u) => new Date(u.published).getTime() >= twoWeeksAgo)
-        .filter((u) => new Date(u.published).getTime() >= new Date(lastViewed))
+        .filter((u) => new Date(u.published).getTime() >= lastViewed)
         .filter((u) => new Date(u.published).getTime() >= clicked);
 
   BROWSER_ACTION_LINK = (newExperiments.length || newsUpdates.length) > 0
     ? BROWSER_ACTION_LINK_BADGED
     : BROWSER_ACTION_LINK_NOT_BADGED;
-
-  browser.browserAction.setBadgeText({
-    text: (newExperiments.length || newsUpdates.length) > 0 ? "!" : ""
-  });
 
   browser.browserAction.setBadgeText({
     text: (newExperiments.length || newsUpdates.length) > 0 ? "!" : ""
