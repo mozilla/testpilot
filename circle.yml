@@ -45,8 +45,14 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+      - run: mkdir junit
       - run: ./bin/circleci/test-addon.sh
-      - run: ./bin/circleci/test-frontend.sh
+      - run:
+          command: ./bin/circleci/test-frontend.sh
+          environment:
+            MOCHA_FILE: junit/test-results.xml
+      - store_test_results:
+          path: junit
       - run:
           name: Codecov
           command: bash <(curl -s https://codecov.io/bash)
