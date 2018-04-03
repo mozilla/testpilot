@@ -181,7 +181,7 @@ export class ExperimentDetail extends React.Component {
       return <NotFoundPage {...this.props} />;
     }
 
-    const { title, survey_url } = experiment;
+    const { title, survey_url, tour_steps } = experiment;
 
     setPageTitleL10N("pageTitleExperiment", experiment);
 
@@ -209,6 +209,7 @@ export class ExperimentDetail extends React.Component {
 
     return (
       <section id="experiment-page">
+        {tour_steps && tour_steps.map((step, key) => <link rel="preload" as="image" href={step.image} key={key}/>)}
         {showEmailDialog &&
           <EmailDialog
             {...this.props}
