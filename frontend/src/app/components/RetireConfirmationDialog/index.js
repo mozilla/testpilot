@@ -1,6 +1,7 @@
 // @flow
 import { Localized } from "fluent-react/compat";
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 import LocalizedHtml from "../LocalizedHtml";
 
@@ -8,10 +9,10 @@ type RetireConfirmationDialogProps = {
   uninstallAddon: Function,
   onDismiss: Function,
   sendToGA: Function,
-  navigateTo?: Function
+  history: Object
 }
 
-export default class RetireConfirmationDialog extends React.Component {
+export class RetireConfirmationDialog extends React.Component {
   props: RetireConfirmationDialogProps
 
   modalContainer: Object
@@ -56,7 +57,7 @@ export default class RetireConfirmationDialog extends React.Component {
   }
 
   proceed(e: Object) {
-    const { sendToGA, navigateTo, uninstallAddon } = this.props;
+    const { sendToGA, uninstallAddon, history } = this.props;
     e.preventDefault();
     uninstallAddon();
     sendToGA("event", {
@@ -64,9 +65,7 @@ export default class RetireConfirmationDialog extends React.Component {
       eventAction: "button click",
       eventLabel: "Retire"
     });
-    if (typeof navigateTo !== "undefined") {
-      navigateTo("/retire");
-    }
+    history.push("/retire");
   }
 
   cancel(e: Object) {
@@ -87,3 +86,5 @@ export default class RetireConfirmationDialog extends React.Component {
     }
   }
 }
+
+export default withRouter(RetireConfirmationDialog);

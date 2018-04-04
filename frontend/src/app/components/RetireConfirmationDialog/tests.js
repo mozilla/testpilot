@@ -6,7 +6,7 @@ import sinon from "sinon";
 import { shallow } from "enzyme";
 import { findLocalizedById } from "../../../../test/app/util";
 
-import RetireConfirmationDialog from "./index";
+import { RetireConfirmationDialog } from "./index";
 
 describe("app/components/RetireConfirmationDialog", () => {
   let props, mockClickEvent, subject,
@@ -15,7 +15,9 @@ describe("app/components/RetireConfirmationDialog", () => {
     props = {
       uninstallAddon: sinon.spy(),
       onDismiss: sinon.spy(),
-      navigateTo: sinon.spy(),
+      history: {
+        push: sinon.spy()
+      },
       sendToGA: sinon.spy()
     };
     mockClickEvent = {
@@ -49,8 +51,8 @@ describe("app/components/RetireConfirmationDialog", () => {
   it("should uninstall the addon and ping GA when the proceed button is clicked", () => {
     findLocalizedById(subject, "retireSubmitButton").find("button").simulate("click", mockClickEvent);
     expect(props.uninstallAddon.called).to.be.true;
-    expect(props.navigateTo.called).to.be.true;
-    expect(props.navigateTo.lastCall.args[0]).to.equal("/retire");
+    expect(props.history.push.called).to.be.true;
+    expect(props.history.push.lastCall.args[0]).to.equal("/retire");
     expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "HomePage Interactions",
       eventAction: "button click",
@@ -61,8 +63,8 @@ describe("app/components/RetireConfirmationDialog", () => {
   it("should uninstall the addon and ping GA when the <Enter> key is pressed", () => {
     subject.find(".modal-container").simulate("keyDown", mockEnterKeyDownEvent);
     expect(props.uninstallAddon.called).to.be.true;
-    expect(props.navigateTo.called).to.be.true;
-    expect(props.navigateTo.lastCall.args[0]).to.equal("/retire");
+    expect(props.history.push.called).to.be.true;
+    expect(props.history.push.lastCall.args[0]).to.equal("/retire");
     expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "HomePage Interactions",
       eventAction: "button click",

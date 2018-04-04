@@ -45,7 +45,6 @@ describe("app/components/ExperimentRowCard", () => {
       isFirefox: true,
       isMinFirefox: true,
       eventCategory: "test category",
-      navigateTo: sinon.spy(),
       sendToGA: sinon.spy(),
       isAfterCompletedDate: sinon.spy()
     };

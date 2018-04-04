@@ -13,6 +13,5 @@ export type SendToGAProps = {
 
 // TODO: Reorg this vague grab-bag into more descriptive types
 export type MiscAppProps = {
-  installAddon: Function,
-  navigateTo: Function
+  installAddon: Function
 };

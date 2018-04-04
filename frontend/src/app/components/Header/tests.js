@@ -120,14 +120,6 @@ describe("Header", () => {
           .simulate("click", mockClickEvent);
       };
 
-      it("should ping GA and show retire dialog on retire item click", () => {
-        clickItem("menuRetire");
-        expect(preventDefault.called).to.be.true;
-        expect(subject.state("showRetireDialog")).to.be.true;
-        expect(subject.find("RetireConfirmationDialog")).to.have.property("length", 1);
-        expectMenuGA("Retire");
-      });
-
       it("should ping GA and and close menu on discuss clicks", () => {
         clickItem("menuDiscuss");
         expectMenuGA("Discuss");

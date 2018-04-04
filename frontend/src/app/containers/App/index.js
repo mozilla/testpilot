@@ -297,9 +297,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   chooseTests: () => dispatch(chooseTests()),
-  navigateTo: path => {
-    window.location = path;
-  },
   enableExperiment: (experiment, eventCategory, eventLabel) => enableExperiment(dispatch, experiment, sendToGA, eventCategory, eventLabel),
   disableExperiment: experiment => disableExperiment(dispatch, experiment),
   setHasAddon: installed => dispatch(addonActions.setHasAddon(installed)),
@@ -335,7 +332,6 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     },
     openWindow: (href, name) => window.open(href, name),
     getWindowLocation: () => window.location,
-    replaceState: (state, title, location) => window.history.replaceState(state, title, location),
     addScrollListener: listener =>
       window.addEventListener("scroll", listener),
     removeScrollListener: listener =>
