@@ -32,7 +32,6 @@ describe("app/components/FeaturedExperiment", () => {
       isMinFirefox: true,
       installed: [],
       eventCategory: "test category",
-      navigateTo: sinon.spy(),
       sendToGA: sinon.spy(),
       isExperimentEnabled: sinon.spy()
     };

@@ -28,7 +28,6 @@ type ExperimentRowCardProps = {
   clientUUID: ?string,
   eventCategory: string,
   sendToGA: Function,
-  navigateTo: Function,
   isAfterCompletedDate: Function
 }
 

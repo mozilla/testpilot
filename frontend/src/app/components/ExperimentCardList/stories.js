@@ -35,7 +35,6 @@ const baseProps = {
   isAfterCompletedDate: () => false,
   isExperimentEnabled: (e) => e.enabled === true,
   sendToGA: action("sendToGA"),
-  navigateTo: action("navigateTo"),
   installed: {},
   clientUUID: "867-5309"
 };

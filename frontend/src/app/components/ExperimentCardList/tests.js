@@ -20,8 +20,7 @@ describe("app/components/ExperimentCardList", () => {
       // required by ExperimentRowCard {...this.props}
       hasAddon: true,
       eventCategory: "test category",
-      sendToGA: sinon.spy(),
-      navigateTo: sinon.spy()
+      sendToGA: sinon.spy()
     };
     subject = shallow(<ExperimentCardList {...props} />);
   });

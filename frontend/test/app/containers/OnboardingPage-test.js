@@ -9,7 +9,6 @@ import OnboardingPage from "../../../src/app/containers/OnboardingPage";
 describe("app/containers/OnboardingPage", () => {
   it("should render onboarding page", () => {
     const props = {
-      navigateTo: sinon.spy(),
       uninstallAddon: sinon.spy(),
       openWindow: sinon.spy(),
       sendToGA: sinon.spy()

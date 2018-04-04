@@ -29,7 +29,6 @@ const baseProps = {
   eventCategory: "storybook",
   isAfterCompletedDate: () => false,
   sendToGA: action("sendToGA"),
-  navigateTo: action("navigateTo"),
   installed: {},
   clientUUID: "867-5309"
 };
