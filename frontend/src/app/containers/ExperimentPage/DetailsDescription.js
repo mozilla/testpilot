@@ -47,6 +47,7 @@ export default function DetailsDescription({
 
       {video_url &&
         <iframe
+          key={video_url} // see issue #3469
           width="100%"
           height="360"
           src={video_url}
