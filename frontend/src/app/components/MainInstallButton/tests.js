@@ -21,7 +21,6 @@ describe("app/components/MainInstallButton", () => {
       installAddon: sinon.spy(() => Promise.resolve()),
       isExperimentEnabled: sinon.spy(),
       enableExperiment: sinon.spy(() => Promise.resolve()),
-      navigateTo: sinon.spy(),
       varianttests: {
         installButtonBorder: "default"
       }

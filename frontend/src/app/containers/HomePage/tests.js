@@ -108,7 +108,6 @@ describe("app/containers/HomePageWithAddon", () => {
       experimentsWithoutFeatured: [ { title: "foo" }, { title: "bar" } ],
       hasAddon: true,
       uninstallAddon: sinon.spy(),
-      navigateTo: sinon.spy(),
       newsletterForm: {succeeded: true},
       majorNewsUpdates: [
         {

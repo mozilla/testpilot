@@ -33,7 +33,6 @@ const baseProps = {
   isAfterCompletedDate: () => false,
   installAddon: action("installAddon"),
   sendToGA: action("sendToGA"),
-  navigateTo: action("navigateTo"),
   clientUUID: "867-5309"
 };
 
