@@ -7,7 +7,7 @@ import { shallow } from "enzyme";
 import moment from "moment";
 import { findLocalizedById } from "../../../../test/app/util";
 
-import { ExperimentRowCard } from "./index";
+import ExperimentRowCard from "./index";
 
 const enzymeOptions = {
   context: {
@@ -49,7 +49,6 @@ describe("app/components/ExperimentRowCard", () => {
       isAfterCompletedDate: sinon.spy()
     };
     subject = shallow(<ExperimentRowCard {...props} />, enzymeOptions);
-    // subject = component.find(ExperimentRowCard).dive();
   });
 
   it("should render expected content", () => {
