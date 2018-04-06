@@ -22,6 +22,7 @@ menuDiscuss = Discuss Test Pilot
 menuFileIssue = File an Issue
 menuRetire = Uninstall Test Pilot
 headerLinkBlog = Blog
+headerLinkNews = News Feed
 
 ## The splash on the homepage.
 landingIntroOne = Test new features.
