@@ -111,7 +111,7 @@ export default class MainInstallButton extends React.Component {
     const installingButton = (<Localized id="landingInstallingButton">
       <span className="progress-btn-msg">Installing...</span>
     </Localized>);
-    const enablingButton = (<Localized id="landingEnablingButton">
+    const enablingButton = (<Localized id="enableExperimentTransition">
       <span className="progress-btn-msg">Enabling...</span>
     </Localized>);
 
