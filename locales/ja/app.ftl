@@ -32,7 +32,7 @@ landingIntroOne = 新機能を試す。
 landingIntroTwo = フィードバックを送る。
 landingIntroThree = Firefox の開発に貢献。
 landingLegalNotice = 続けることで、あなたは Test Pilot の <a>利用規約</a> と <a>プライバシー通知</a> に同意したことになります。
-landingMoreExperimentsButton = 他の実験
+landingMoreExperimentsButton = その他の実験
 
 ## Related to the installation of the Test Pilot add-on.
 
