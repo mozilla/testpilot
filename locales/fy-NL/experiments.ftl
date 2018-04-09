@@ -193,6 +193,7 @@ voicefillContributors4Title = Firefox UX
 voicefillContributors5Title = Softvision QA
 voicefillContributors6Title = Softvision QA
 voicefillContributors7Title = Avansearre ûntwikkeling, opkommende technologyen
+voicefillEolwarning = Voice Fill komt ynkoarten beskikber as in add-on foar alle Firefox-brûkers. As jo it eksperimint ynstallearre hawwe, sil de fernijing automatysk útfierd wurde.
 testpilotNewsupdatesGeneralupdate6Title = Test Pilot Untwerpkursus tagonklikheid
 testpilotNewsupdatesGeneralupdate6Content = Test Pilot is koartlyn oparbeide mei ûntwerpstudinten op Ravensbourne om útdagingen fan tagonklikheid op it web te ûndersykjen.
 testpilotNewsupdatesGeneralupdate5Title = Test Pilot ûntwikkelje mei Storybooks
