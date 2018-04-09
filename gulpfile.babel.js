@@ -14,10 +14,6 @@ require("es6-promise").polyfill();
 require("isomorphic-fetch");
 
 require("./frontend/tasks/content");
-require("./frontend/tasks/scripts");
-require("./frontend/tasks/styles");
-require("./frontend/tasks/images");
-require("./frontend/tasks/assets");
 require("./frontend/tasks/pages");
 require("./frontend/tasks/dist");
 
@@ -35,10 +31,6 @@ gulp.task("distclean", () => del([
 
 gulp.task("build", done => runSequence(
   "content-build",
-  "scripts-build",
-  "styles-build",
-  "images-build",
-  "assets-build",
   "pages-build",
   done
 ));
@@ -46,10 +38,6 @@ gulp.task("build", done => runSequence(
 gulp.task("watch", [
   "self-watch",
   "content-watch",
-  "scripts-watch",
-  "styles-watch",
-  "images-watch",
-  "assets-watch",
   "pages-watch"
 ]);
 

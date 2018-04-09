@@ -199,7 +199,6 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
     <link rel="shortcut icon" href="/static/images/favicon.ico" />
     <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css" />
     <link rel="stylesheet" href="/static/styles/experiments.css" />
-    <link rel="stylesheet" href="/static/styles/main.css" />
     <link rel="stylesheet" href="/static/app/app.css" />
 
     <meta name="defaultLanguage" content="en-US" />

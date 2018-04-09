@@ -1,3 +1,5 @@
+import "../styles/main.scss";
+
 import "babel-polyfill/browser";
 import "whatwg-fetch";
 import Raven from "raven-js";
