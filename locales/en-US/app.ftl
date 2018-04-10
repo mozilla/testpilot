@@ -75,6 +75,7 @@ emailOptInDialogErrorTitle = Oh no!
 ## News feed updates.
 latestUpdatesTitle = Latest updates
 showMoreNewsTitle = Show Past News
+englishArticleLink = Link to English article
 
 ## Featured experiment.
 moreDetail = View details

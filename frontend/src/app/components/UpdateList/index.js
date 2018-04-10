@@ -42,6 +42,7 @@ export class Update extends React.Component {
       : "news-update-test-pilot-icon-wrapper";
 
     const isNew = experiment ? new Date(experiment.published) < twoWeeksAgo : false;
+    const nonEn = typeof window !== "undefined" ? window.navigator.language !== "en-US" : false;
 
     return (
       <a className={classnames("update", { "has-link": !!link })}
@@ -83,6 +84,12 @@ export class Update extends React.Component {
               {content}
             </p>
           </Localized>
+          {nonEn && !!link && <div className="en-article-notice">
+            <Localized id={"englishArticleLink"}>
+              <p>Link to English article</p>
+            </Localized>
+            <span className="en-link-icon">&nbsp;</span>
+          </div>}
         </div>
         <div className="link-chevron">
           <span className="chevron">&nbsp;</span>
