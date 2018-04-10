@@ -45,7 +45,7 @@ export default class ExperimentTourDialog extends React.Component {
     };
 
     if (isFeatured) {
-      gaArgs = this.applyAdditionalMetricsArgs;
+      gaArgs = this.applyAdditionalMetricsArgs(gaArgs);
     }
 
     sendToGA("event", gaArgs);
@@ -62,7 +62,7 @@ export default class ExperimentTourDialog extends React.Component {
     };
 
     if (isFeatured) {
-      gaArgs = this.applyAdditionalMetricsArgs;
+      gaArgs = this.applyAdditionalMetricsArgs(gaArgs);
     }
 
     sendToGA("event", gaArgs);
@@ -79,7 +79,7 @@ export default class ExperimentTourDialog extends React.Component {
     };
 
     if (isFeatured) {
-      gaArgs = this.applyAdditionalMetricsArgs;
+      gaArgs = this.applyAdditionalMetricsArgs(gaArgs);
     }
 
     sendToGA("event", gaArgs);

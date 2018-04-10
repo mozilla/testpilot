@@ -44,54 +44,30 @@ export default class FeaturedButton extends React.Component {
   renderLegalLink() {
     const { sendToGA, eventCategory, hasAddon, installed,
       experiment } = this.props;
+    const { title } = experiment;
+    const sendMetric = (ev, eventLabel) => {
+      sendToGA("event", {
+        eventCategory,
+        eventLabel,
+        eventAction: "link click",
+        dimension1: hasAddon,
+        dimension2: Object.keys(installed).length > 0,
+        dimension3: Object.keys(installed).length,
+        dimension11: experiment.slug,
+        dimension13: "Featured Experiment"
+      }, ev);
+    };
     const launchLegalModal = (ev) => {
       ev.preventDefault();
       this.setState({ showLegalDialog: true });
-      sendToGA("event", {
-        eventCategory,
-        eventAction: "link click",
-        eventLabel: "Popup Featured privacy",
-        dimension1: hasAddon,
-        dimension2: Object.keys(installed).length > 0,
-        dimension3: Object.keys(installed).length,
-        dimension11: experiment.slug,
-        dimension13: "Featured Experiment"
-      }, ev);
+      sendMetric(ev, "Popup Featured privacy");
     };
-
-    const sendTermsMetric = (ev) => {
-      sendToGA("event", {
-        eventCategory,
-        eventAction: "link click",
-        eventLabel: "Open general terms",
-        dimension1: hasAddon,
-        dimension2: Object.keys(installed).length > 0,
-        dimension3: Object.keys(installed).length,
-        dimension11: experiment.slug,
-        dimension13: "Featured Experiment"
-      }, ev);
-    };
-
-    const sendPrivacyMetric = (ev) => {
-      sendToGA("event", {
-        eventCategory,
-        eventAction: "link click",
-        eventLabel: "Open general privacy",
-        dimension1: hasAddon,
-        dimension2: Object.keys(installed).length > 0,
-        dimension3: Object.keys(installed).length,
-        dimension11: experiment.slug,
-        dimension13: "Featured Experiment"
-      }, ev);
-    };
-
-    const { title } = this.props.experiment;
 
     return (<LocalizedHtml id={this.l10nId("legal-notice")}
       $title={title}>
       <p className="main-install__legal">
-            By proceeding, you agree to the <a href="/terms" onClick={sendTermsMetric}>terms</a>
-       and <a href="/privacy" onClick={sendPrivacyMetric}>privacy</a> policies of Test Pilot and the
+            By proceeding, you agree to the <a href="/terms" onClick={(ev) => sendMetric(ev, "Open general terms")}>terms</a>
+       and <a href="/privacy" onClick={(ev) => sendMetric(ev, "Open general privacy")}>privacy</a> policies of Test Pilot and the
         <a href="#" onClick={launchLegalModal}>{title} privacy policy</a>.
       </p>
     </LocalizedHtml>);
