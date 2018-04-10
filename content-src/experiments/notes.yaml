@@ -4,14 +4,15 @@ slug: notes
 is_featured: false
 platforms: ['addon']
 min_release: 57
-thumbnail: /static/images/experiments/notes/experiments_experiment/thumbnail.png
+thumbnail: /static/images/experiments/notes/notes-thumbnail.png
 description: >
   A simple notepad built into Firefox. Ever need to jot
   something down while you browse the web? This is the experiment for you.
 introduction: >
-  Notes adds a simple, one-page notepad to your browser’s sidebar. We’ve added a few basic formatting options to start, but we want your feedback to tell us what features you’d like to see us add.
-image_twitter: /static/images/experiments/notes/social/notes-twitter.jpg
-image_facebook: /static/images/experiments/notes/social/notes-fb.jpg
+  Notes adds a simple notepad to your browser’s sidebar. Sign in to your Firefox Account to sync all of your notes with end-to-end encryption.
+introduction_l10nsuffix: 'multinote'
+image_twitter: /static/images/experiments/notes/notes-twitter.jpg
+image_facebook: /static/images/experiments/notes/notes-fb.jpg
 video_url: https://www.youtube.com/embed/vaFvr_70yxw
 changelog_url: 'https://github.com/mozilla/notes/releases'
 contribute_url: 'https://github.com/mozilla/notes'
@@ -33,21 +34,31 @@ gradient_start: '#A665B4'
 gradient_stop: '#CF5858'
 details:
   -
-    image: /static/images/experiments/notes/experiments_experimentdetail/detail1.jpg
+    image: /static/images/experiments/notes/notes-detail-1.jpg
     copy: >
       It’s a notepad. Why didn’t we think of this earlier?
+  -
+    image: /static/images/experiments/notes/notes-detail-2.jpg
+    copy: >
+      Take as many notes as you like and stay in sync with your Firefox Account.
 tour_steps:
   -
-    image: /static/images/experiments/notes/experiments_experimenttourstep/notes-tour-1.jpg
+    image: /static/images/experiments/notes/notes-tour-1.jpg
     copy: Notes adds a simple notepad to your browser’s sidebar.
   -
-    image: /static/images/experiments/notes/experiments_experimenttourstep/notes-tour-2.jpg
-    copy: We’ve built some basic formatting options into Notes. With your feedback we will add more features.
+    image: /static/images/experiments/notes/notes-tour-2.jpg
+    copy: Hit the arrow button to see all of your notes.
+    copy_l10nsuffix: 'multinote'
   -
-    image: /static/images/experiments/notes/experiments_experimenttourstep/notes-tour-3.jpg
-    copy: You can get back to the Notes experiment by clicking on the sidebar icon.
+    image: /static/images/experiments/notes/notes-tour-3.jpg
+    copy: Create a new note whenever you need to jot something down.
+    copy_l10nsuffix: 'multinote'
   -
-    image: /static/images/experiments/notes/experiments_experimenttourstep/notes-tour-4.jpg
+    image: /static/images/experiments/notes/notes-tour-4.jpg
+    copy: Sign in to your Firefox Account to sync your notes.
+    copy_l10nsuffix: 'multinote'
+  -
+    image: /static/images/experiments/notes/notes-tour-5.jpg
     copy: You can always give us feedback or disable Notes from Test Pilot.
 contributors:
   -
