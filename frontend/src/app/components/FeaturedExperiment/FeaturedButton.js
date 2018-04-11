@@ -41,33 +41,33 @@ export default class FeaturedButton extends React.Component {
     return experimentL10nId(this.props.experiment, pieces);
   };
 
-  renderLegalLink() {
+  sendMetric = (ev: Object, args: Object) => {
     const { sendToGA, eventCategory, hasAddon, installed,
       experiment } = this.props;
-    const { title } = experiment;
-    const sendMetric = (ev, eventLabel) => {
-      sendToGA("event", {
-        eventCategory,
-        eventLabel,
-        eventAction: "link click",
-        dimension1: hasAddon,
-        dimension2: Object.keys(installed).length > 0,
-        dimension3: Object.keys(installed).length,
-        dimension11: experiment.slug,
-        dimension13: "Featured Experiment"
-      }, ev);
-    };
+    sendToGA("event", Object.assign({
+      eventCategory,
+      eventAction: "link click",
+      dimension1: hasAddon,
+      dimension2: Object.keys(installed).length > 0,
+      dimension3: Object.keys(installed).length,
+      dimension11: experiment.slug,
+      dimension13: "Featured Experiment"
+    }, args), ev);
+  };
+
+  renderLegalLink() {
+    const { title } = this.props.experiment;
     const launchLegalModal = (ev) => {
       ev.preventDefault();
       this.setState({ showLegalDialog: true });
-      sendMetric(ev, "Popup Featured privacy");
+      this.sendMetric(ev, {eventLabel: "Popup Featured privacy"});
     };
 
     return (<LocalizedHtml id={this.l10nId("legal-notice")}
       $title={title}>
       <p className="main-install__legal">
-            By proceeding, you agree to the <a href="/terms" onClick={(ev) => sendMetric(ev, "Open general terms")}>terms</a>
-       and <a href="/privacy" onClick={(ev) => sendMetric(ev, "Open general privacy")}>privacy</a> policies of Test Pilot and the
+            By proceeding, you agree to the <a href="/terms" onClick={(ev) => this.sendMetric(ev, {eventLabel: "Open general terms"})}>terms</a>
+            and <a href="/privacy" onClick={(ev) => this.sendMetric(ev, {eventLabel: "Open general privacy"})}>privacy</a> policies of Test Pilot and the
         <a href="#" onClick={launchLegalModal}>{title} privacy policy</a>.
       </p>
     </LocalizedHtml>);
@@ -92,38 +92,25 @@ export default class FeaturedButton extends React.Component {
   }
 
   handleManage = (evt: Function) => {
-    const { experiment, eventCategory, hasAddon, enabled, installed } = this.props;
-    const { slug, title } = experiment;
-
-    this.props.sendToGA("event", {
-      eventCategory,
+    const { enabled, experiment } = this.props;
+    const { title } = experiment;
+    this.sendMetric(evt, {
       eventAction: "button click",
       eventLabel: "Manage Featured Button",
-      dimension1: hasAddon,
-      dimension2: Object.keys(installed).length > 0,
-      dimension3: Object.keys(installed).length,
       dimension4: enabled,
-      dimension5: title,
-      dimension11: slug,
-      dimension13: "Featured Experiment"
-    }, evt);
+      dimension5: title
+    });
   };
 
   handleFeedback = (evt: Function) => {
-    const { experiment, eventCategory, hasAddon, enabled, installed } = this.props;
-    const { slug, title } = experiment;
-    this.props.sendToGA("event", {
-      eventCategory,
+    const { enabled, experiment } = this.props;
+    const { title } = experiment;
+    this.sendMetric(evt, {
       eventAction: "button click",
-      eventLabel: "Feedback Featured Button",
-      dimension1: hasAddon,
-      dimension2: Object.keys(installed).length > 0,
-      dimension3: Object.keys(installed).length,
+      eventLabel: "Manage Featured Button",
       dimension4: enabled,
-      dimension5: title,
-      dimension11: slug,
-      dimension13: "Featured Experiment"
-    }, evt);
+      dimension5: title
+    });
   }
 
   render() {
