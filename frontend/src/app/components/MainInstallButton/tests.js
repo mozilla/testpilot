@@ -67,4 +67,26 @@ describe("app/components/MainInstallButton", () => {
     subject.find(".main-install__button").simulate("click", { button: 1 });
     expect(props.installAddon.called).to.equal(false);
   });
+
+  it("fires sendToGA when install is called", () => {
+    const mockExperiment = {slug: "testing", title: "Testing Experiment"};
+    subject.setProps({
+      isFeatured: true,
+      experiment: mockExperiment,
+      experimentTitle: mockExperiment.title
+    });
+    subject.find(".main-install__button").simulate("click", { button: 0 });
+    expect(props.sendToGA.lastCall.args.slice(0, 2)).to.deep.equal(["event", {
+      eventCategory: props.eventCategory,
+      eventAction: "button click",
+      eventLabel: "MainInstall Featured Button",
+      dimension1: false,
+      dimension2: false,
+      dimension3: 0,
+      dimension4: false,
+      dimension5: mockExperiment.title,
+      dimension11: mockExperiment.slug,
+      dimension13: "Featured Experiment"
+    }]);
+  });
 });

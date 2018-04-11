@@ -32,11 +32,26 @@ export default class MainInstallButton extends React.Component {
       return;
     }
 
-    const { sendToGA, eventCategory, enableExperiment,
-      installAddon, installCallback, eventLabel,
-      experiment } = this.props;
+    const { sendToGA, eventCategory, installAddon,
+      installCallback, eventLabel, experiment,
+      experimentTitle, isFeatured, installed,
+      hasAddon, enableExperiment } = this.props;
 
-    this.setState({ isInstalling: true });
+    if (isFeatured) {
+      const { slug } = experiment;
+      sendToGA("event", {
+        eventCategory,
+        eventAction: "button click",
+        eventLabel: "MainInstall Featured Button",
+        dimension1: hasAddon,
+        dimension2: installed ? Object.keys(installed).length > 0 : false,
+        dimension3: installed ? Object.keys(installed).length : 0,
+        dimension4: false, // enabled?
+        dimension5: experimentTitle,
+        dimension11: slug,
+        dimension13: "Featured Experiment"
+      });
+    }
 
     if (installCallback) {
       installCallback(e);

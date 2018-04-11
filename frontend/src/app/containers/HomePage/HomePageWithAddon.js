@@ -18,6 +18,7 @@ import Visibility from "../../components/Visibility";
 import LocalizedHtml from '../../components/LocalizedHtml';
 import NewsUpdatesDialog from '../../components/NewsUpdatesDialog';
 import type { InstalledExperiments } from '../../reducers/addon';
+import { getBreakpoint } from "../App";
 
 type HomePageWithAddonProps = {
   hasAddon: any,
@@ -86,8 +87,23 @@ export default class HomePageWithAddon extends React.Component {
     this.checkCookies();
   }
 
-  onTourDialogComplete() {
+  onTourDialogComplete = (featuredExperiment: Object, cancel?: boolean) => {
+    const { isExperimentEnabled, hasAddon, installed, sendToGA } = this.props;
+    const { slug, title } = featuredExperiment;
     this.setState({ showTourDialog: false });
+    sendToGA("event", {
+      eventCategory: "FeaturedExperiment Interactions",
+      eventAction: "button click",
+      eventLabel: cancel ? "cancel tour" : "complete tour",
+      dimension1: hasAddon,
+      dimension2: Object.keys(installed).length > 0,
+      dimension3: Object.keys(installed).length,
+      dimension4: isExperimentEnabled(featuredExperiment),
+      dimension5: title,
+      dimension10: getBreakpoint(window.innerWidth),
+      dimension11: slug,
+      dimension13: "Featured Experiment"
+    });
   }
 
   onNotInterestedSurveyClick() {
@@ -162,7 +178,7 @@ export default class HomePageWithAddon extends React.Component {
     const featuredSection = featuredExperiment ? (<Banner background={true}>
       <LayoutWrapper flexModifier="row-center">
         <FeaturedExperiment {...this.props} experiment={featuredExperiment}
-                            eventCategory="HomePage Interactions"
+                            eventCategory="FeaturedExperiment Interactions"
                             enableExperiment={enableExperiment}
                             enabled={isExperimentEnabled(featuredExperiment)} />
       </LayoutWrapper>
@@ -186,8 +202,8 @@ export default class HomePageWithAddon extends React.Component {
         {showTourDialog && <ExperimentTourDialog
             experiment={featuredExperiment}
             {...this.props}
-            onCancel={this.onTourDialogComplete.bind(this)}
-            onComplete={this.onTourDialogComplete.bind(this)}
+            onCancel={() => this.onTourDialogComplete(featuredExperiment, true)}
+            onComplete={() => this.onTourDialogComplete(featuredExperiment)}
           />}
       {this.renderSplash()}
       {featuredSection}
