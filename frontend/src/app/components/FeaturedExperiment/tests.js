@@ -266,8 +266,8 @@ describe("app/components/FeaturedButton", () => {
 
   it("should call sendToGA when legal modal launched", () => {
     subject.setProps({
-      hasAddon: true,
-      enabled: true
+      hasAddon: false,
+      enabled: false
     });
     subject.find(".main-install__legal a[href='#']").simulate("click", mockClickEvent);
 
@@ -285,8 +285,8 @@ describe("app/components/FeaturedButton", () => {
 
   it("should call sendToGA when terms link clicked", () => {
     subject.setProps({
-      hasAddon: true,
-      enabled: true
+      hasAddon: false,
+      enabled: false
     });
     subject.find(".main-install__legal a[href='/terms']").simulate("click", mockClickEvent);
 
@@ -304,8 +304,8 @@ describe("app/components/FeaturedButton", () => {
 
   it("should call sendToGA when privacy link clicked", () => {
     subject.setProps({
-      hasAddon: true,
-      enabled: true
+      hasAddon: false,
+      enabled: false
     });
     subject.find(".main-install__legal a[href='/privacy']").simulate("click", mockClickEvent);
 
