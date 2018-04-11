@@ -37,8 +37,12 @@ let currentEnvironment = {
 };
 
 function uuidv4() {
-  return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c => // eslint-disable-line space-infix-ops
-                                              (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));
+  return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+    (
+      c ^
+      (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+    ).toString(16)
+  );
 }
 
 function getInstalledTxpAddons() {
@@ -164,10 +168,11 @@ async function updateBadgeTextOnNew(experiments, news_updates) {
    * - update has not been "seen" by the addon (clicked)
    */
   const twoWeeksAgo = Date.now() - TWO_WEEKS;
-  const newsUpdates = (news_updates || []).filter((u) => u.major)
-        .filter((u) => new Date(u.published).getTime() >= twoWeeksAgo)
-        .filter((u) => new Date(u.published).getTime() >= lastViewed)
-        .filter((u) => new Date(u.published).getTime() >= clicked);
+  const newsUpdates = (news_updates || [])
+    .filter(u => u.major)
+    .filter(u => new Date(u.published).getTime() >= twoWeeksAgo)
+    .filter(u => new Date(u.published).getTime() >= lastViewed)
+    .filter(u => new Date(u.published).getTime() >= clicked);
 
   BROWSER_ACTION_LINK = (newExperiments.length || newsUpdates.length) > 0
     ? BROWSER_ACTION_LINK_BADGED

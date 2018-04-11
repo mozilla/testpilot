@@ -23,17 +23,18 @@ here are some shell commands to get you started on Linux & OS X:
 ```bash
 cd testpilot
 
+# Install project dependencies
+npm install
+
 # Set up add-on environment and build an unsigned package
 cd addon
 npm install
 npm run package
 
 # Set up frontend web site environment
-cd ..
-npm install
-
 # Add hostname alias to /etc/hosts and start up dev webserver
 echo '127.0.0.1 example.com' | sudo tee -a /etc/hosts
+cd ..
 npm start
 ```
 
@@ -98,15 +99,15 @@ After installing Node.js for Windows, run these commands to get started:
 
 ```cmd
 cd testpilot
+npm install
 
 :: Set up add-on environment and build an unsigned package
 cd addon
 npm install
-npm run package-win
+npm run package
 
 :: Set up frontend web site environment
 cd ..
-npm install
 ```
 
 Now, open a second command prompt window, this time with admin privileges and run this:
@@ -119,7 +120,7 @@ echo 127.0.0.1 example.com >> %WINDIR%\System32\Drivers\Etc\Hosts
 Go back to the previous command prompt window and run
 
 ```cmd
-USE_HTTPS=1 npm start
+npm start
 ```
 
 Follow the remaining instructions from **Linux & OS X** section and you're all set.
