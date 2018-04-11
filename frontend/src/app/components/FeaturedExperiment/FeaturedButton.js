@@ -107,7 +107,7 @@ export default class FeaturedButton extends React.Component {
     const { title } = experiment;
     this.sendMetric(evt, {
       eventAction: "button click",
-      eventLabel: "Manage Featured Button",
+      eventLabel: "Feedback Featured Button",
       dimension4: enabled,
       dimension5: title
     });
