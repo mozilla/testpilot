@@ -12,7 +12,7 @@ Since Test Pilot is an open source project, you can see all of the cool ways we 
 
 ## Why isn't a Test Pilot icon showing up in my toolbar?
 
-Test Pilot can't be installed in [private browsing mode](https://support.mozilla.org/en-US/kb/private-browsing-use-firefox-without-history?redirectlocale=en-US&redirectslug=Private+Browsing), 
+Test Pilot can't be installed in [private browsing mode](https://support.mozilla.org/en-US/kb/private-browsing-use-firefox-without-history?redirectlocale=en-US&redirectslug=Private+Browsing),
 and if you have it installed already, it is disabled in private browsing mode.
 
 ## Does Test Pilot work in private browsing mode?
@@ -33,9 +33,19 @@ If you'd like to contribute to an experiment, take a look at the experiment's de
 
 ## I used to see an experiment, but now it's missing?
 
-We've recently shipped localization for Test Pilot and decided to restrict experiments from certain locales to ensure a smooth roll out. We didn't uninstall any experiments, but if your default language is German, some experiments may have been hidden from Test Pilot. 
+We've recently shipped localization for Test Pilot and decided to restrict experiments from certain locales to ensure a smooth roll out. We didn't uninstall any experiments, but if your default language is German, some experiments may have been hidden from Test Pilot.
 Experiments you've previously installed are still accessible through `about:addons` and can be uninstalled from there. It's also possible that the experiment you're looking for has already graduated.
 You can see graduated experiments by clicking on the `View Past Experiments` button on [Test Pilot](https://testpilot.firefox.com/).
+
+## Why is Test Pilot telling me that something went wrong?
+
+If you've enabled `privacy.resistFingerprinting`, Firefox may be blocking add-on installation, and you will need to update your browser's configuration. To do so, do the following:
+1. Go to `about:config`.
+2. Right-click on the list of preferences, and select New > Boolean.
+3. Enter `privacy.resistFingerprinting.block_mozAddonManager` as the preference name.
+4. Enter `false` as the preference value.
+
+Otherwise, please see the instructions below to file a bug.
 
 ## Where can I file a bug?
 
@@ -49,7 +59,7 @@ Test Pilot uses GA event tracking to measure certain interactions within experim
 
 If you're uncomfortable with submitting data to GA, all of our experiments respect the Do Not Track flag in `about:preferences`.
 
-## What browsers are supported by Test Pilot? 
+## What browsers are supported by Test Pilot?
 
 While you can only install Test Pilot on Firefox, the site should render and work correctly in the following Contexts.
 

@@ -228,7 +228,7 @@ hidePastExperiments = Hide Past Experiments
 
 ## Text of warnings to the user if various error conditions are detected
 warningGenericTitle = Something is wrong!
-warningGenericDetail = Something has gone wrong with Test Pilot. Please <a>file a bug</a> and mention this error message.
+warningGoToFAQDetail = Something has gone wrong with Test Pilot. Please <a>check the FAQs</a> to learn more.
 warningUpgradeFirefoxTitle = Upgrade Firefox to continue!
 warningUpgradeFirefoxDetail = Test Pilot requires the latest version of Firefox. <a>Upgrade Firefox</a> to get started.
 warningHttpsRequiredTitle = HTTPS required!
