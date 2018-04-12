@@ -51,8 +51,8 @@ export default class UpgradeWarning extends React.Component {
 
   renderCopy() {
     const { isMinFirefox, protocol, isProdHost, isDevHost } = this.props;
-    let copy = (<LocalizedHtml id="warningGoToFAQDetail">
-      <p>Something has gone wrong with Test Pilot. Please {" "}<a href="https://github.com/mozilla/testpilot/blob/master/docs/faq.md#whyi-is-test-pilot-telling-me-that-something-went-wrong">check the FAQs</a>{" "} to learn more.</p>
+    let copy = (<LocalizedHtml id="warningGenericDetail">
+      <p>Something has gone wrong with Test Pilot. Please <a href="https://github.com/mozilla/testpilot/issues/new">file a bug</a> and mention this error message.</p>
     </LocalizedHtml>);
     if (!isMinFirefox) {
       copy = (<LocalizedHtml id="warningUpgradeFirefoxDetail">
