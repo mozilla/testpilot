@@ -5,7 +5,7 @@ var util = require('util');
 var childProcess = require('child_process');
 
 // Load the current package.json
-var packageFilename = __dirname + '/../build/package.json';
+var packageFilename = __dirname + '/../package.json';
 var package = require(packageFilename);
 
 // Come up with a version tag suffix based on CIRCLE_TAG, or fall back to
@@ -29,15 +29,8 @@ package.version = versionParts[0] + '-' + tag;
 var packageJSON = JSON.stringify(package, null, '  ');
 fs.writeFileSync(packageFilename, packageJSON);
 
-var manifestFilename = __dirname + '/../build/webextension/manifest.json';
+var manifestFilename = __dirname + '/../manifest.json';
 var manifest = require(manifestFilename);
 manifest.version = package.version;
 var manifestJSON = JSON.stringify(manifest, null, '  ');
 fs.writeFileSync(manifestFilename, manifestJSON);
-
-var installFilename = __dirname + '/../build/install.rdf';
-var install = fs.readFileSync(installFilename, { encoding: 'utf8' });
-fs.writeFileSync(installFilename, install.replace(
-  /<em:version>([\d\.]+)<\/em:version>/,
-  `<em:version>${package.version}</em:version>`
-));

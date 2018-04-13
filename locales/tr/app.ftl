@@ -1,6 +1,6 @@
 siteName = Firefox Test Pilotu
 
-## Page titles, put in the <title> HTML tag.
+## Page titles, shown as title of HTML pages.
 
 pageTitleDefault = Firefox Test Pilotu
 pageTitleLandingPage = Firefox Test Pilotu
@@ -32,6 +32,7 @@ landingIntroOne = Yeni özellikleri test et.
 landingIntroTwo = Yorumlarını paylaş.
 landingIntroThree = Firefox’u inşa etmemize yardım et.
 landingLegalNotice = Devam ederseniz Test Pilotu’nun <a>Kullanım Koşulları</a> ve <a>Gizlilik Bildirimi</a>’ni kabul etmiş sayılırsınız.
+landingMoreExperimentsButton = Diğer deneyler
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -41,6 +42,7 @@ landingInstallingButton = Yükleniyor...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Test Pilotu’nu yükle ve
+# $title is replaced by the name of an experiment
 oneClickInstallMajorCta = { $title } deneyini etkinleştir
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
@@ -68,6 +70,9 @@ onboardingMessage = Test Pilotu'nu her zaman bulabilmeniz için araç çubuğunu
 
 errorHeading = Hata oluştu!
 errorMessage = Bozuldu galiba bu. <br> Siz daha sonra yeniden gelin.
+# 404 is the HTTP standard response code for a page not found. This title is a
+# word play in English, being "Oh" both an exclamation and the pronunciation of
+# the number 0.
 notFoundHeader = Dört yüz dört!
 
 ## A modal prompt to sign up for the Test Pilot newsletter.
@@ -78,12 +83,12 @@ emailOptInConfirmationTitle = E-posta gönderildi
 emailOptInConfirmationClose = Deneylere geçelim...
 emailOptInDialogErrorTitle = Hayır!
 
-## news feed updates.
+## News feed updates.
 
 latestUpdatesTitle = Son güncellemeler
 showMoreNewsTitle = Eski haberleri göster
 
-
+## Featured experiment.
 
 moreDetail = Ayrıntıları göster
 
@@ -104,7 +109,7 @@ experimentListHeaderWithFeatured = Tüm deneylerimizi deneyin
 experimentCardFeedback = Geri bildirim
 experimentCardManage = Yönet
 experimentCardGetStarted = Bunu deneyin
-# also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog
 experimentCardLearnMore = Daha fazla bilgi al
 
 ## A modal prompt shown when a user disables an experiment.
@@ -159,7 +164,7 @@ experimentGradReportReady = Kapsamlı bir mezuniyet raporu hazırladık.
 experimentGoToLink = { $title } deneyine git
 startedDateLabel = Deney başlangıç tarihi: <b>{ $startedDate }</b>
 
-## news updates dialog.
+## News updates dialog.
 
 nonExperimentDialogHeaderLink = Test Pilotu
 
@@ -199,13 +204,8 @@ restartIntroOne = Tarayıcınızı yeniden başlatın
 restartIntroTwo = Test Pilotu eklentisini bulun
 restartIntroThree = Deneylerinizi seçin
 
-## Shown on a page presented to users three days after installing their first experiment.
+## Shown on pages of retired or retiring experiments.
 
-sharePrimary = Test Pilotu'nu sevdiniz mi? Yeni pilotlar bulmamıza yardım edin.
-shareSecondary = veya bu linki kopyalayıp yapıştırın...
-shareEmail = E-postayla paylaş
-shareCopy = Kopyala
-# Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } { $completedDate } tarihinde sona eriyor
 eolNoticeLink = Daha fazlası...
 eolDisableMessage = { $title } deneyi sonra erdi. Onu kaldırdıktan sonra Test Pilotu üzerinden yeniden yükleme şansınız olmayacak.
@@ -222,7 +222,6 @@ newsletterFormEmailPlaceholder =
     .placeholder = E-posta adresiniz
 newsletterFormDisclaimer = Yalnızca Test Pilotu ile ilgili bilgiler göndereceğiz.
 newsletterFormPrivacyNotice = Bilgilerimi <a>bu gizlilik bildiriminde</a> açıklandığı şekilde Mozilla ile paylaşmayı kabul ediyorum.
-newsletterFormPrivacyAgreementRequired = Devam etmek istiyorsanız bu kutuyu işaretleyin.
 newsletterFormSubmitButton = Kaydol
 newsletterFormSubmitButtonSubmitting = Gönderiliyor...
 
@@ -268,5 +267,7 @@ warningMissingPrefTitle = Test Pilotu'nu geliştiriyor musunuz?
 warningMissingPrefDetail = Test Pilotu'nu yerel ortamda veya geliştirme ortamlarında çalıştırırken özel yapılandırma gerekir. Ayrıntılar için lütfen <a>belgelerimize</a> bakın.
 warningBadHostnameTitle = Onaylanmamış ana makine adı!
 warningBadHostnameDetail = Test Pilotu sitesinde yalnızca testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net ve example.com:8000 adreslerinden ulaşabilirsiniz. Ayrıntılar için lütfen <a>belgelerimize</a> bakın.
-# This string does not appear in app, but we will use it to localize our `no script` message
+
+## This string does not appear in app, but we will use it to localize our `no script` message
+
 jsDisabledWarning = Test Pilotu için JavaScript şarttır. Kusura bakmayın.

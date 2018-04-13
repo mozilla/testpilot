@@ -1,6 +1,6 @@
 siteName = Firefox Test Pilot
 
-## Page titles, put in the <title> HTML tag.
+## Page titles, shown as title of HTML pages.
 
 pageTitleDefault = Firefox Test Pilot
 pageTitleLandingPage = Firefox Test Pilot
@@ -32,6 +32,7 @@ landingIntroOne = Тестирајте нове могућности.
 landingIntroTwo = Пошаљите повратне информације.
 landingIntroThree = Помозите да изградимо Firefox.
 landingLegalNotice = Наставком коришћења прихватате <a>услове коришћења</a> и <a>обавештење о приватности</a> Test Pilot-а.
+landingMoreExperimentsButton = Још експеримената
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -41,6 +42,7 @@ landingInstallingButton = Инсталирање...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Инсталирај Test Pilot &amp;
+# $title is replaced by the name of an experiment
 oneClickInstallMajorCta = Омогући { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
@@ -68,6 +70,9 @@ onboardingMessage = Ставили смо иконицу у вашу траку 
 
 errorHeading = Упс!
 errorMessage = Изгледа да смо нешто покварили. <br> Покушајте поново касније.
+# 404 is the HTTP standard response code for a page not found. This title is a
+# word play in English, being "Oh" both an exclamation and the pronunciation of
+# the number 0.
 notFoundHeader = Четири нула четири!
 
 ## A modal prompt to sign up for the Test Pilot newsletter.
@@ -78,12 +83,12 @@ emailOptInConfirmationTitle = Порука послата
 emailOptInConfirmationClose = Напред на експерименте...
 emailOptInDialogErrorTitle = Ох не!
 
-## news feed updates.
+## News feed updates.
 
 latestUpdatesTitle = Последња ажурирања
 showMoreNewsTitle = Прикажи старије новости
 
-
+## Featured experiment.
 
 moreDetail = Погледај детаље
 
@@ -104,7 +109,7 @@ experimentListHeaderWithFeatured = Пробајте све наше експер
 experimentCardFeedback = Повратна информација
 experimentCardManage = Управљајте
 experimentCardGetStarted = Започните
-# also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog
 experimentCardLearnMore = Сазнајте више
 
 ## A modal prompt shown when a user disables an experiment.
@@ -159,7 +164,7 @@ experimentGradReportReady = Припремили смо потпун извеш�
 experimentGoToLink = Иди на { $title }
 startedDateLabel = Датум почетка експеримента: <b>{ $startedDate }</b>
 
-## news updates dialog.
+## News updates dialog.
 
 nonExperimentDialogHeaderLink = Test Pilot
 
@@ -199,13 +204,8 @@ restartIntroOne = Рестартујте ваш прегледач
 restartIntroTwo = Лоцирајте Test Pilot додатак
 restartIntroThree = Изаберите своје експерименте
 
-## Shown on a page presented to users three days after installing their first experiment.
+## Shown on pages of retired or retiring experiments.
 
-sharePrimary = Допада вам се Test Pilot? Помозите нам да пронађемо нове регруте.
-shareSecondary = или само ископирајте и налепите ову везу...
-shareEmail = Е-пошта
-shareCopy = Копирај
-# Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } се завршава { $completedDate }
 eolNoticeLink = Сазнајте више
 eolDisableMessage = Експеримент { $title } је завршен. Уколико га деинсталирате, нећете моћи да га поново инсталирате путем Test Pilot-a.
@@ -222,7 +222,6 @@ newsletterFormEmailPlaceholder =
     .placeholder = Ваша е-пошта овде
 newsletterFormDisclaimer = Слаћемо вам искључиво информације у вези Test Pilot-a.
 newsletterFormPrivacyNotice = Прихватам да Mozilla рукује мојим подацима како је објашњено у <a>овом обавештењу о приватности</a>.
-newsletterFormPrivacyAgreementRequired = Означите ово поље ако желите да наставите.
 newsletterFormSubmitButton = Претплатите се
 newsletterFormSubmitButtonSubmitting = Слање...
 
@@ -268,5 +267,7 @@ warningMissingPrefTitle = Развијате Test Pilot?
 warningMissingPrefDetail = Када покрећете Test Pilot локално или у развојним окружењима, посебна конфигурација је потребна. Погледајте <a>нашу документацију</a> за више детаља.
 warningBadHostnameTitle = Неодобрено  име хоста!
 warningBadHostnameDetail = Test Pilot сајту се може пристуити само са testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net или са example.com:8000. Погледајте <a>нашу документацију</a> за више детаља.
-# This string does not appear in app, but we will use it to localize our `no script` message
+
+## This string does not appear in app, but we will use it to localize our `no script` message
+
 jsDisabledWarning = Test Pilot захтева JavaScript. Жао нам је због овога.

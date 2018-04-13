@@ -1,17 +1,13 @@
 siteName = Firefox Test Pilot
 
-
-// Page titles, put in the <title> HTML tag.
-[[ pageTitle ]]
+## Page titles, shown as title of HTML pages.
 
 pageTitleDefault = Firefox Test Pilot
 pageTitleLandingPage = Firefox Test Pilot
 pageTitleExperimentListPage = Firefox Test Pilot - Experimenty
 pageTitleExperiment = Firefox Test Pilot - { $title }
 
-
-// Links in the footer.
-[[ footerLink ]]
+## Links in the footer.
 
 footerLinkCookies = Cookies
 footerLinkPrivacy = Súkromie
@@ -20,9 +16,7 @@ footerLinkLegal = Právne informácie
 footerLinkFeedback = Poskytnúť spätnú väzbu
 footerLinkAbout = O projekte Test Pilot
 
-
-// Items in the menu.
-[[ menu ]]
+## Items in the menu.
 
 home = Domov
 menuTitle = Nastavenia
@@ -32,32 +26,26 @@ menuFileIssue = Nahlásiť chybu
 menuRetire = Odinštalovať Test Pilot
 headerLinkBlog = Blog
 
-
-// The splash on the homepage.
-[[ landing ]]
+## The splash on the homepage.
 
 landingIntroOne = Testujte nové funkcie.
 landingIntroTwo = Poskytnite nám spätnú väzbu.
 landingIntroThree = Pomôžte tvoriť Firefox.
 landingLegalNotice = Pokračovaním vyjadrujete súhlas s <a>podmienkami používania</a> a so <a>zásadami ochrany osobných údajov</a> projektu Test Pilot.
+landingMoreExperimentsButton = Ďalšie experimenty
 
-
-// Related to the installation of the Test Pilot add-on.
-[[ landingInstall ]]
+## Related to the installation of the Test Pilot add-on.
 
 landingInstallButton = Nainštalovať doplnok Test Pilot
 landingInstallingButton = Inštaluje sa...
 
-
-// Related to a one click to install test pilot and an experiment.
-[[ oneClickInstall ]]
+## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Nainštalovať Test Pilot a
+# $title is replaced by the name of an experiment
 oneClickInstallMajorCta = aktivovať { $title }
 
-
-// Homepage messaging for users not on Firefox or with an old version of Firefox.
-[[ landingFirefox ]]
+## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
 landingRequiresDesktop = Test Pilot vyžaduje Firefox pre počítače v systéme Windows, Mac alebo Linux
 landingDownloadFirefoxDesc = (Test Pilot je dostupný pre Firefox pre Windows, OS X a Linux)
@@ -67,32 +55,27 @@ landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Aktualizovať Firefox
 landingDownloadFirefoxSubTitle = Prevziať zadarmo
 
-
-// A section of the homepage explaining how Test Pilot works.
-[[ landingCard ]]
+## A section of the homepage explaining how Test Pilot works.
 
 landingCardListTitle = Poďme na to
 landingCardOne = Nainštalujte si doplnok Test Pilot
 landingCardTwo = Aktivujte experimentálne funkcie
 landingCardThree = Povedzte nám váš názor
 
-
-// Shown after the user installs the Test Pilot add-on.
-[[ onboarding ]]
+## Shown after the user installs the Test Pilot add-on.
 
 onboardingMessage = Do vášho panela nástrojov sme umiestnili ikonu, aby ste mali Test Pilot vždy po ruke.
 
-
-// Error message pages.
-[[ error ]]
+## Error message pages.
 
 errorHeading = Upps!
 errorMessage = Zdá sa, že sa niečo pokazilo. <br> Skúste to neskôr.
+# 404 is the HTTP standard response code for a page not found. This title is a
+# word play in English, being "Oh" both an exclamation and the pronunciation of
+# the number 0.
 notFoundHeader = 404!
 
-
-// A modal prompt to sign up for the Test Pilot newsletter.
-[[ emailOptIn ]]
+## A modal prompt to sign up for the Test Pilot newsletter.
 
 emailOptInDialogTitle = Víta vás Test Pilot!
 emailOptInMessage = Dozviete sa informácie o nových experimentoch a uvidíte výsledky testov doplnkov, ktoré ste skúšali.
@@ -100,21 +83,16 @@ emailOptInConfirmationTitle = E-mail bol odoslaný
 emailOptInConfirmationClose = Prejsť na experimenty...
 emailOptInDialogErrorTitle = Ale nie!
 
-
-// news feed updates.
-[[ updateList ]]
+## News feed updates.
 
 latestUpdatesTitle = Najnovšie aktualizácie
 showMoreNewsTitle = Zobraziť predchádzajúce novinky
 
-
-[[ featuredExperiment ]]
+## Featured experiment.
 
 moreDetail = Zobraziť podrobnosti
 
-
-// A listing of all Test Pilot experiments.
-[[ experimentsList ]]
+## A listing of all Test Pilot experiments.
 
 experimentListEnabledTab = Aktivovaný
 experimentListJustLaunchedTab = Práve spustený
@@ -125,20 +103,16 @@ experimentCondensedHeader = Víta vás Test Pilot!
 experimentListHeader = Vyberte si svoje experimenty!
 experimentListHeaderWithFeatured = Vyskúšajte všetky naše experimenty
 
+## An individual experiment in the listing of all Test Pilot experiments.
 
-// An individual experiment in the listing of all Test Pilot experiments.
-[[ experimentCard ]]
-
-// Small button on experiment card that links to a survey for feedback submission
+# Small button on experiment card that links to a survey for feedback submission
 experimentCardFeedback = Spätná väzba
 experimentCardManage = Spravovať
 experimentCardGetStarted = Aktivovať
-// also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog
 experimentCardLearnMore = Ďalšie informácie
 
-
-// A modal prompt shown when a user disables an experiment.
-[[ feedback ]]
+## A modal prompt shown when a user disables an experiment.
 
 feedbackSubmitButton = Vyplniť krátky dotazník
 feedbackUninstallTitle = Ďakujeme!
@@ -147,23 +121,17 @@ feedbackUninstallCopy =
     znamená veľmi veľa! Určite si pozrite aj naše ďalšie 
     experimenty, ku ktorým sa čoskoro pridajú nové!
 
-
-// A modal prompt shown before the feedback survey for some experiments.
-[[ experimentPreFeedback ]]
+## A modal prompt shown before the feedback survey for some experiments.
 
 experimentPreFeedbackTitle = { $title } - spätná väzba
 experimentPreFeedbackLinkCopy = Poskytnite nám spätnú väzbu o experimente { $title }.
 
-
-// A splash shown on top of the experiment page when Test Pilot is not installed.
-[[ experimentPromo ]]
+## A splash shown on top of the experiment page when Test Pilot is not installed.
 
 experimentPromoHeader = Ste pripravení na vzlet?
 experimentPromoSubheader = Tvoríme funkcie novej generácie pre Firefox. Nainštalujte si Test Pilot a vyskúšajte ich!
 
-
-// The experiment detail page.
-[[ experimentPage ]]
+## The experiment detail page.
 
 isEnabledStatusMessage = Experiment { $title } je aktivovaný!
 installErrorMessage = Ojoj. Experiment { $title } nemohol byť aktivovaný. Skúste to znova neskôr.
@@ -196,15 +164,11 @@ experimentGradReportReady = Pripravili sme správu o ukončení experimentu.
 experimentGoToLink = Prejsť na experiment { $title }
 startedDateLabel = Dátum začiatku experimentu: <b>{ $startedDate }</b>
 
-
-// news updates dialog.
-[[ newsUpdatesDialog ]]
+## News updates dialog.
 
 nonExperimentDialogHeaderLink = Test Pilot
 
-
-// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
-[[ experimentPlatform ]]
+## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
 experimentPlatformWebAddonMobile = Experiment pre Firefox, web a mobilné zariadenia
 experimentPlatformWebAddon = Experiment pre Firefox a web
@@ -214,18 +178,14 @@ experimentPlatformWeb = Experiment pre web
 experimentPlatformAddon = Experiment pre Firefox
 experimentPlatformMobileApp = Experiment pre mobilné zariadenia
 
-
-// Shown when an experiment requires a version of Firefox newer than the user's.
-[[ upgradeNotice ]]
+## Shown when an experiment requires a version of Firefox newer than the user's.
 
 upgradeNoticeTitle = { $title } vyžaduje Firefox { $min_release } alebo novší.
 upgradeNoticeLink = Ako aktualizovať Firefox.
 versionChangeNotice = Experiment { $experiment_title } nie je v tejto verzii Firefoxu podporovaný.
 versionChangeNoticeLink = Prevezmite si najnovšiu verziu Firefoxu.
 
-
-// Shown while uninstalling Test Pilot.
-[[ uninstall ]]
+## Shown while uninstalling Test Pilot.
 
 retireDialogTitle = Odinštalovať Test Pilot?
 retireMessageUpdate = Ako si želáte. Test Pilot bude odinštalovaný. Jednotlivé experimenty môžete odinštalovať pomocou Správcu doplnkov vo Firefoxe.
@@ -237,51 +197,35 @@ retirePageHeadline = Vďaka za let!
 retirePageMessage = Dúfame, že vás experimentovanie bavilo. <br> Radi vás opäť uvidíme.
 retirePageSurveyButton = Vyplniť krátky dotazník
 
-
-// Shown to users after installing Test Pilot if a restart is required.
-[[ restartIntro ]]
+## Shown to users after installing Test Pilot if a restart is required.
 
 restartIntroLead = Predletová kontrola
 restartIntroOne = Reštartujte svoj prehliadač
 restartIntroTwo = Nájdite doplnok Test Pilot
 restartIntroThree = Vyberte si svoje experimenty
 
+## Shown on pages of retired or retiring experiments.
 
-// Shown on a page presented to users three days after installing their first experiment.
-[[ share ]]
-
-sharePrimary = Páči sa vám Test Pilot? Povedzte o ňom ďalším ľuďom.
-shareSecondary = alebo skopírujte a vložte tento odkaz...
-shareEmail = E-mail
-shareCopy = Kopírovať
-// Shown on pages of retired or retiring experiments.
 eolIntroMessage = Experiment { $title } končí { $completedDate }
 eolNoticeLink = Ďalšie informácie
 eolDisableMessage = Experiment { $title } sa skončil. Ak ho odinštalujete, nebudete ho môcť opäť nainštalovať cez Test Pilot.
 completedDateLabel = Dátum ukončenia experimentu: <b>{ $completedDate }</b>
 
-
-// A warning shown to users looking at experiments incompatible with add-ons they already have installed.
-[[ incompatible ]]
+## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 
 incompatibleHeader = Tento experiment nemusí byť kompatibilný s doplnkami, ktoré máte nainštalované.
 incompatibleSubheader = Odporučame vám pred spustením experimentu <a>tieto doplnky</a> vypnúť:
 
+## A form prompting the user to sign up for the Test Pilot Newsletter.
 
-// A form prompting the user to sign up for the Test Pilot Newsletter.
-[[ newsletterForm ]]
-
-newsletterFormEmailPlaceholder
+newsletterFormEmailPlaceholder =
     .placeholder = Sem zadajte svoju e-mailovú adresu
 newsletterFormDisclaimer = Budeme vám posielať len informácie súvisiace s programom Test Pilot.
 newsletterFormPrivacyNotice = Súhlasím s tým, aby Mozilla zaobchádzala s informáciami o mne tak, ako je to popísané v <a>zásadách ochrany súkromia</a>.
-newsletterFormPrivacyAgreementRequired = Pred pokračovaním musíte označiť toto políčko.
 newsletterFormSubmitButton = Prihlásiť sa na odber noviniek
 newsletterFormSubmitButtonSubmitting = Odosiela sa...
 
-
-// A section of the footer containing a newsletter signup form.
-[[ newsletterFooter ]]
+## A section of the footer containing a newsletter signup form.
 
 newsletterFooterError = Pri odosielaní vašej e-mailovej adresy sa vyskytla chyba. Chcete to skúsiť znova?
 newsletterFooterHeader = Zostaňte v obraze
@@ -289,39 +233,29 @@ newsletterFooterBody = Dozviete sa informácie o nových experimentoch a uvidít
 newsletterFooterSuccessHeader = Ďakujeme!
 newsletterFooterSuccessBody = Ak ste v minulosti nepotvrdili odber noviniek Mozilly, budete to musieť urobiť teraz. Pozrite sa, prosím, do vašej e-mailovej schránky, prípadne i do priečinku s nevyžiadanou poštou, či sa tam nenachádza e-mail od nás.
 
-
-// A warning shown to users when the experiment is not available in their language
-[[ localeWarning ]]
+## A warning shown to users when the experiment is not available in their language
 
 localeNotTranslatedWarningTitle = Tento experiment nebol preložený do vášho jazyka ({ $locale_code }).
 localeWarningSubtitle = To vám však nebráni ho aktivovať.
 
-
-// An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
-[[ experimentsListNoneInstalled ]]
+## An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 
 experimentsListNoneInstalledHeader = Poďme na to!
 experimentsListNoneInstalledSubheader = Ste pripravení na nový experiment? Zvoľte si jeden z ponuky, vyskúšajte ho a povedzte nám, čo si o ňom myslíte.
 experimentsListNoneInstalledCTA = Nemáte záujem? <a>Povedzte nám prečo</a>.
 
-
-// Shown to users who do not have JavaScript enabled.
-[[ noscript ]]
+## Shown to users who do not have JavaScript enabled.
 
 noScriptHeading = Hups...
 noScriptMessage = Test Pilot vyžaduje JavaScript.<br>Ospravedlňujeme sa za problémy.
 noScriptLink = Zistite prečo
 
-
-// Text of a button to toggle visibility of a list of past experiments.
-[[ pastExperiments ]]
+## Text of a button to toggle visibility of a list of past experiments.
 
 viewPastExperiments = Zobraziť predchádzajúce experimenty
 hidePastExperiments = Skryť predchádzajúce experimenty
 
-
-// Text of warnings to the user if various error conditions are detected
-[[ warnings ]]
+## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Niečo nie je v poriadku!
 warningGenericDetail = V Test Pilote sa niečo pokazilo. <a>Pri nahlásení chyby</a>, prosím, uveďte túto chybovú správu.
@@ -333,5 +267,7 @@ warningMissingPrefTitle = Vyvíjate Test Pilot?
 warningMissingPrefDetail = Pri lokálnom spustení alebo vo vývojových prostrediach vyžaduje Test Pilot špeciálnu konfiguráciu. Viac informácií nájdete v <a>našej dokumentácií</a>.
 warningBadHostnameTitle = Nepovolený hostname!
 warningBadHostnameDetail = Stránka Test Pilotu je prístupná len z domén testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net alebo example.com:8000. Ďalšie informácie nájdete v <a>našej dokumentácií</a>.
-// This string does not appear in app, but we will use it to localize our `no script` message
+
+## This string does not appear in app, but we will use it to localize our `no script` message
+
 jsDisabledWarning = Test Pilot vyžaduje JavaScript. Ospravedlňujeme sa za problémy.

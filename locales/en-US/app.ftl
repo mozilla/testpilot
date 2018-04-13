@@ -33,7 +33,6 @@ landingMoreExperimentsButton = More Experiments
 ## Related to the installation of the Test Pilot add-on.
 landingInstallButton = Install the Test Pilot Add-on
 landingInstallingButton = Installing…
-landingEnablingButton = Enabling…
 
 ## Related to a one click to install test pilot and an experiment.
 oneClickInstallMinorCta = Install Test Pilot &amp;
