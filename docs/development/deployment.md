@@ -4,9 +4,10 @@ This document details the process we use to deploy Test Pilot to our stage and p
 
 ## Overview of schedule ##
 
-(you can read more below)
-
-- Thursday at 1pm PST the train is cut, all code is in.
+- Thursday (a week before we freeze) merge new strings to the `l10n` branch so
+  localizers have a week to get any new strings in.  Hold off committing any
+  major new strings at this point.
+- Thursday (a week after step 1) at 1pm PST the train is cut, all code is in.
 - Thursday at 4pm PST we tag and push stage, and send email out.
 - Friday is a buffer day.
 - Monday at regular stand-up we review anything that Softvision found and fix it.
@@ -14,7 +15,23 @@ This document details the process we use to deploy Test Pilot to our stage and p
 
 ## Softvision ##
 
-Softvision is our embedded QA team. Their main functions are to write test plans and verify deployments.
+Softvision is our embedded QA team. They maintain the test plans, verify bugs
+as they are closed, and ensure deployments don't push new bugs into the wild.
+
+## Merge master to l10n ##
+
+We try to front load any patches that have major string changes into the first
+week of the sprint so we can give localizers time to work on them.  When it's
+time to merge `master` to `l10n` follow the steps below.
+
+```
+git checkout master
+git pull mozilla master
+git checkout -b l10n mozilla/l10n  # If you already have an l10n branch this can just be: git checkout l10n
+git pull mozilla l10n
+git merge master
+git push mozilla l10n
+```
 
 ## Team Notification ##
 
@@ -22,7 +39,7 @@ During the checkin before the end of the [current milestone](https://github.com/
 
 Note: we auto deploy the master branch to our *development environment*: [https://testpilot.dev.mozaws.net](https://testpilot.dev.mozaws.net)
 
-## Merge l10n ##
+## Merge l10n to master ##
 
 Before tagging the release, merge the l10n branch into the master branch. These commands assume the remote named `mozilla` points at the mozilla repository on github.
 
