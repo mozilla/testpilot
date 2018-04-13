@@ -1,29 +1,24 @@
 #!/usr/bin/env node
 
-var fs = require('fs');
-var util = require('util');
-var childProcess = require('child_process');
+const fs = require('fs');
+const util = require('util');
+const childProcess = require('child_process');
 
 // Load the current package.json
-var packageFilename = __dirname + '/../package.json';
-var package = require(packageFilename);
+const packageFilename = __dirname + '/../package.json';
+const package = require(packageFilename);
+
 
 // Come up with a version tag suffix based on CIRCLE_TAG, or fall back to
 // looking up the current git commit hash.
-var tag;
-if (process.env['CIRCLE_TAG']) {
-  tag = 'tag-' + process.env['CIRCLE_TAG'];
-} else {
-  // Note: Must use short git hash, because AMO rejects versions > 32 chars
-  tag = 'dev-' + childProcess.execSync('git rev-parse --short HEAD')
-                             .toString('utf-8')
-                             .trim();
-}
+const tag = 'v' + childProcess
+    .execSync('git rev-parse --short HEAD').toString('utf-8').trim()
+    .split('').sort().reverse().join('');
+
+const semver = /^(\d+\.?){1,3}/.exec(package.version)[0];
 
 // Update the version tag suffix.
-var versionParts = package.version.split('-');
-var origVersion = package.version;
-package.version = versionParts[0] + '-' + tag;
+package.version = semver + tag;
 
 // Write the modified package.json
 var packageJSON = JSON.stringify(package, null, '  ');
