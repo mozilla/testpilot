@@ -198,7 +198,7 @@ newsletterFooterError = S-a produs o eroare la trimiterea adresei tale de e-mail
 newsletterFooterHeader = Fii la curent
 newsletterFooterBody = Află despre noi experimente și vezi rezultatele de test pentru experimentele pe care le-ai încercat.
 newsletterFooterSuccessHeader = Îți mulțumim!
-newsletterFooterSuccessBody = Dacă nu ai mai confirmat o abonare la un buletin informativ Mozilla, s-ar putea să fie necesar. Te rugăm să verifici căsuța de primire sau dosarul de spam pentru e-mail-ul de la noi.
+newsletterFooterSuccessBody = Dacă nu ai confirmat anterior o abonare la un buletin de știri care are legătură cu Mozilla, este posibil să fie nevoie să o faci. Te rugăm să verifici mesajele primite sau dosarul spam pentru a găsi e-mailul de la noi.
 
 ## A warning shown to users when the experiment is not available in their language
 
