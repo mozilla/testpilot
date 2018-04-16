@@ -4,6 +4,7 @@ import { negotiateLanguages } from "fluent-langneg/compat";
 import { LocalizationProvider } from "fluent-react/compat";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Helmet } from "react-helmet";
 
 import cookies from "js-cookie";
 import Clipboard from "clipboard";
@@ -187,12 +188,17 @@ class App extends Component {
       }
     }
 
-    return <LocalizationProvider messages={ generateMessages(
-      this.props.negotiatedLanguages,
-      this.props.localizations
-    ) }>
-      { React.cloneElement(this.props.children, this.props) }
-    </LocalizationProvider>;
+    return <div>
+      <Helmet>
+        <title>Firefox Test Pilot</title>
+      </Helmet>
+      <LocalizationProvider messages={ generateMessages(
+        this.props.negotiatedLanguages,
+        this.props.localizations
+      ) }>
+        { React.cloneElement(this.props.children, this.props) }
+      </LocalizationProvider>
+    </div>;
   }
 }
 
