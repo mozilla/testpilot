@@ -192,6 +192,7 @@ voicefillContributors4Title = Firefox UX
 voicefillContributors5Title = Softvision QA
 voicefillContributors6Title = Softvision QA
 voicefillContributors7Title = Napredni razvoj, tehnologije v nastajanju
+voicefillEolwarning = Voice Fill bo kmalu na voljo za vse uporabnike Firefoxa kot dodatek. Če ste poskus namestili, boste posodobitev prejeli samodejno.
 testpilotNewsupdatesGeneralupdate6Title = Načrtovanje dostopnosti s Test Pilotom
 testpilotNewsupdatesGeneralupdate6Content = Test Pilot se je pred kratkim povezal s študenti dizajna na Ravensbournu z namenom raziskati izzive dostopnosti na spletu.
 testpilotNewsupdatesGeneralupdate5Title = Razvijanje Test Pilota s Storybooks
