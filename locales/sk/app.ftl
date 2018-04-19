@@ -25,6 +25,7 @@ menuDiscuss = Diskusia o Test Pilote
 menuFileIssue = Nahlásiť chybu
 menuRetire = Odinštalovať Test Pilot
 headerLinkBlog = Blog
+headerLinkNews = Novinky
 
 ## The splash on the homepage.
 
@@ -87,6 +88,8 @@ emailOptInDialogErrorTitle = Ale nie!
 
 latestUpdatesTitle = Najnovšie aktualizácie
 showMoreNewsTitle = Zobraziť predchádzajúce novinky
+# "Link" is a noun in this context
+englishArticleLink = Odkaz na článok v angličtine
 
 ## Featured experiment.
 
@@ -150,7 +153,7 @@ contributorsHeading = Tento experiment vám priniesli
 contributorsExtraLearnMore = Ďalšie informácie
 changelog = Zoznam zmien
 tour = Prehliadka
-tourLink = prehliadka
+tourLink = Prehliadka
 contribute = Zapojte sa
 bugReports = Nahláste chybu
 discussExperiment = Diskutujte o { $title }
@@ -258,7 +261,7 @@ hidePastExperiments = Skryť predchádzajúce experimenty
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Niečo nie je v poriadku!
-warningGenericDetail = V Test Pilote sa niečo pokazilo. <a>Pri nahlásení chyby</a>, prosím, uveďte túto chybovú správu.
+warningGoToFAQDetail = S Test Pilotom niečo nie je v poriadku. Ďalšie informácie nájdete v <a>často kladených otázkach</a>.
 warningUpgradeFirefoxTitle = Pre pokračovanie aktualizujte Firefox.
 warningUpgradeFirefoxDetail = Test Pilot vyžaduje najnovšiu verziu Firefoxu. Pred začiatkom, prosím, <a>aktualizujte svoj Firefox</a>.
 warningHttpsRequiredTitle = Je vyžadované HTTPS!
