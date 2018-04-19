@@ -25,6 +25,7 @@ menuDiscuss = Bincangkan Test Pilot
 menuFileIssue = Failkan Isu
 menuRetire = Nyahpasang Test Pilot
 headerLinkBlog = Blog
+headerLinkNews = Suapan Berita
 
 ## The splash on the homepage.
 
@@ -87,6 +88,8 @@ emailOptInDialogErrorTitle = Oh tidak!
 
 latestUpdatesTitle = Kemaskini terkini
 showMoreNewsTitle = Papar Berita Lama
+# "Link" is a noun in this context
+englishArticleLink = Pautan ke artikel Bahasa Inggeris
 
 ## Featured experiment.
 
@@ -258,7 +261,7 @@ hidePastExperiments = Sorok Eksperimen Terdahulu
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Ada sesuatu yang tidak kena!
-warningGenericDetail = Ada sesuatu yang tidak kena dengan Test Pilot. Sila <a>failkan pepijat</a> dan nyatakan mesej ralat ini.
+warningGoToFAQDetail = Sesuatu tidak kena dengan Test Pilot. Sila <a> semak Soalan Lazim</a> untuk maklumat lanjut.
 warningUpgradeFirefoxTitle = Naik taraf Firefox untuk teruskan!
 warningUpgradeFirefoxDetail = Test Pilot memerlukan Firefox versi terbaru. <a>Naik taraf Firefox</a> untuk mula.
 warningHttpsRequiredTitle = HTTPS diperlukan!
