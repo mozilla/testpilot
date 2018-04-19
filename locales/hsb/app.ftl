@@ -25,6 +25,7 @@ menuDiscuss = Wo Test Pilot diskutować
 menuFileIssue = Problem zdźělić
 menuRetire = Test Pilot wotinstalować
 headerLinkBlog = Blog
+headerLinkNews = Powěsće
 
 ## The splash on the homepage.
 
@@ -87,6 +88,8 @@ emailOptInDialogErrorTitle = Ow ně!
 
 latestUpdatesTitle = Najnowše aktualizacije
 showMoreNewsTitle = Zańdźene nowinki pokazać
+# "Link" is a noun in this context
+englishArticleLink = Wotkaz k jendźelskemu nastawkej
 
 ## Featured experiment.
 
@@ -255,7 +258,7 @@ hidePastExperiments = Zańdźene eksperimenty schować
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Něšto je so nimokuliło!
-warningGenericDetail = Něšto je so z Test Pilot nimokuliło. Prošu <a>pisajće zmylkowu rozprawu</a> a podajće tutu zmylkowu zdźělenku.
+warningGoToFAQDetail = Něšto je so z Test Pilot nimokuliło. Prošu <a>čitajće huste prašenja</a>, zo byšće wjace zhonił.
 warningUpgradeFirefoxTitle = Aktualizujće Firefox, zo byšće pokročował!
 warningUpgradeFirefoxDetail = Test Pilot sej najnowšu wersiju Firefox wužaduje. <a>Aktualizujće Firefox</a>, zo byšće započał.
 warningHttpsRequiredTitle = HTTPS trěbny!
