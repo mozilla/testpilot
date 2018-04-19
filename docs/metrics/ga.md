@@ -116,7 +116,6 @@ Here are the current events on the website as of this writing, grouped by their 
 | Featured Experiment Button       | button click          | Manage Featured Button State  | [1, 2, 3, 4, 5, 10, 11, 13]|
 | Click Cancel on tour dialogue    | button click          | cancel tour                   | [1, 2, 3, 10, 11, 13]      |
 | Complete the tour                | button click          | complete tour                 | [1, 2, 3, 10, 11, 13]      |
-| Click Take Tour on tour dialogue | button click          | take tour                     | [1, 2, 3, 10, 11, 13]      |
 | Click next during Tour           | button click          | forward to step `n`           | [1, 2, 3, 10, 11, 13]      |
 | Click back during Tour           | button click          | back to step `n`              | [1, 2, 3, 10, 11, 13]      |
 | Click pagination dot during Tour | button click          | dot to step `n`               | [1, 2, 3, 10, 11, 13]      |

@@ -3,6 +3,7 @@
 import { Localized } from "fluent-react/compat";
 import React from "react";
 import moment from "moment";
+import { Helmet } from "react-helmet";
 
 import { buildSurveyURL, experimentL10nId } from "../../lib/utils";
 
@@ -209,6 +210,9 @@ export class ExperimentDetail extends React.Component {
 
     return (
       <section id="experiment-page">
+        <Helmet>
+          <title>Firefox Test Pilot - {title}</title>
+        </Helmet>
         {tour_steps && tour_steps.map((step, key) => <link rel="preload" as="image" href={step.image} key={key}/>)}
         {showEmailDialog &&
           <EmailDialog

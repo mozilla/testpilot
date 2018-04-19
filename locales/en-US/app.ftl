@@ -22,6 +22,7 @@ menuDiscuss = Discuss Test Pilot
 menuFileIssue = File an Issue
 menuRetire = Uninstall Test Pilot
 headerLinkBlog = Blog
+headerLinkNews = News Feed
 
 ## The splash on the homepage.
 landingIntroOne = Test new features.
@@ -75,6 +76,8 @@ emailOptInDialogErrorTitle = Oh no!
 ## News feed updates.
 latestUpdatesTitle = Latest updates
 showMoreNewsTitle = Show Past News
+# "Link" is a noun in this context
+englishArticleLink = Link to English article
 
 ## Featured experiment.
 moreDetail = View details
@@ -225,7 +228,7 @@ hidePastExperiments = Hide Past Experiments
 
 ## Text of warnings to the user if various error conditions are detected
 warningGenericTitle = Something is wrong!
-warningGenericDetail = Something has gone wrong with Test Pilot. Please <a>file a bug</a> and mention this error message.
+warningGoToFAQDetail = Something has gone wrong with Test Pilot. Please <a>check the FAQs</a> to learn more.
 warningUpgradeFirefoxTitle = Upgrade Firefox to continue!
 warningUpgradeFirefoxDetail = Test Pilot requires the latest version of Firefox. <a>Upgrade Firefox</a> to get started.
 warningHttpsRequiredTitle = HTTPS required!

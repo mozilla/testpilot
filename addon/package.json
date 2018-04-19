@@ -2,7 +2,7 @@
   "title": "Test Pilot",
   "name": "testpilot-addon",
   "id": "@testpilot-addon",
-  "version": "3.0.0",
+  "version": "3.0.0vffeb6433",
   "private": true,
   "description": "Test Pilot is a privacy-sensitive user research program focused on getting new features into Firefox faster.",
   "repository": "mozilla/testpilot",
@@ -14,16 +14,17 @@
   "license": "MPL-2.0",
   "devDependencies": {
     "cross-env": "5.0.1",
-    "eslint": "3.19.0",
+    "eslint": "4.15.0",
     "eslint-plugin-import": "2.8.0",
     "pontoon-to-webext": "^1.0.2",
+    "shx": "^0.2.2",
     "web-ext": "^2.6.0"
   },
   "scripts": {
     "start": "web-ext run",
-    "prepackage": "npm run locale && npm run lint && npm run lint:extension",
-    "package": "cross-env web-ext build --overwrite-dest && mv web-ext-artifacts/test_pilot-$npm_package_version.zip ./addon.xpi",
-    "lint": "eslint -c ../.eslintrc .",
+    "prepackage": "npm run locale && npm run lint && npm run lint:extension && npm run update-version",
+    "package": "shx rm -rf web-ext-artifacts && cross-env web-ext build --overwrite-dest && shx mv web-ext-artifacts/test_pilot-*.zip ./addon.xpi",
+    "lint": "eslint .",
     "lint:extension": "web-ext lint --self-hosted",
     "locale": "pontoon-to-webext --src ../locales --dest _locales",
     "update-version": "node bin/update-version"

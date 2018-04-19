@@ -213,9 +213,15 @@ describe("app/components/FeaturedButton", () => {
 
     expect(props.sendToGA.lastCall.args.slice(0, 2)).to.deep.equal(["event", {
       eventCategory: props.eventCategory,
-      eventAction: "Open detail page",
-      eventLabel: mockExperiment.title,
-      dimension11: mockExperiment.slug
+      eventAction: "button click",
+      eventLabel: "Manage Featured Button",
+      dimension1: true,
+      dimension2: false,
+      dimension3: 0,
+      dimension4: true,
+      dimension5: "Testing Experiment",
+      dimension11: mockExperiment.slug,
+      dimension13: "Featured Experiment"
     }]);
   });
 
@@ -229,10 +235,16 @@ describe("app/components/FeaturedButton", () => {
 
     expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: props.eventCategory,
-      eventAction: "Give Feedback",
-      eventLabel: mockExperiment.title,
-      dimension11: mockExperiment.slug
-    }]);
+      eventAction: "button click",
+      eventLabel: "Feedback Featured Button",
+      dimension1: true,
+      dimension2: false,
+      dimension3: 0,
+      dimension4: true,
+      dimension5: "Testing Experiment",
+      dimension11: mockExperiment.slug,
+      dimension13: "Featured Experiment"
+    }, mockClickEvent]);
   });
 
   it('should have a "Manage" button if the experiment is enabled and has an addon', () => {

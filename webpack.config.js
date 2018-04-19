@@ -7,6 +7,8 @@ const morgan = require("morgan");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const WriteFilePlugin = require("write-file-webpack-plugin");
 
 const {
   DevServerMiddleware,
@@ -54,6 +56,12 @@ const plugins = [
     "process.env.ENABLE_DEV_LOCALES": process.env.ENABLE_DEV_LOCALE || 0,
     "process.env.ENABLE_DEV_CONTENT": process.env.ENABLE_DEV_CONTENT || 0
   }),
+  new CopyWebpackPlugin([
+    { from: "./addon/addon.xpi", to: "static/addon/"},
+    { context: "./locales", from: "**/*", to: "static/locales/" },
+    { context: "./frontend/src/images", from: "**/*", to: "static/images/" }
+  ]),
+  new WriteFilePlugin(),
   // Include only moment locale modules that match AVAILABLE_LOCALES
   new webpack.ContextReplacementPlugin(
     /moment[\/\\]locale$/, // eslint-disable-line no-useless-escape
@@ -81,7 +89,9 @@ if (RUN_ANALYZER) {
 module.exports = {
   entry: {
     "static/app/app": "./frontend/src/app/index.js",
-    "static/app/vendor": vendorModules
+    "static/app/vendor": vendorModules,
+    "static/scripts/legal": "./frontend/src/scripts/legal.js",
+    "static/scripts/locale": "./frontend/src/scripts/locale.js"
   },
   output: {
     path: path.resolve(__dirname, "frontend/build"),
@@ -128,7 +138,11 @@ module.exports = {
       {
         test: /\.scss$/,
         use: extractSass.extract({
-          use: [{ loader: "css-loader" }, { loader: "sass-loader" }],
+          use: [
+            { loader: "css-loader" },
+            { loader: "postcss-loader" },
+            { loader: "sass-loader" }
+          ],
           // use style-loader in development
           fallback: "style-loader"
         })

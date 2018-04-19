@@ -67,7 +67,7 @@ export default class HomePageNoAddon extends React.Component {
       <LayoutWrapper flexModifier="row-between-breaking">
         <FeaturedExperiment {...this.props}
           experiment={featuredExperiment}
-          eventCategory="HomePage Interactions"
+          eventCategory="FeaturedExperiment Interactions"
           enableExperiment={enableExperiment}
           enabled={isExperimentEnabled(featuredExperiment)} />
       </LayoutWrapper>

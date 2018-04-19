@@ -4,6 +4,7 @@ import { negotiateLanguages } from "fluent-langneg/compat";
 import { LocalizationProvider } from "fluent-react/compat";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Helmet } from "react-helmet";
 
 import cookies from "js-cookie";
 import Clipboard from "clipboard";
@@ -22,6 +23,7 @@ import addonActions from "../../actions/addon";
 import newsletterFormActions from "../../actions/newsletter-form";
 import RestartPage from "../RestartPage";
 import UpgradeWarningPage from "../UpgradeWarningPage";
+import Loading from "../../components/Loading";
 import {
   shouldOpenInNewTab
 } from "../../lib/utils";
@@ -50,6 +52,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.lastPingPathname = null;
+    this.state = {
+      loading: true
+    };
   }
 
   measurePageview() {
@@ -145,6 +150,7 @@ class App extends Component {
     );
 
     Promise.all(promises).then(() => {
+      this.setState({ loading: false });
       this.props.setLocalizations(langs);
       const staticNode = document.getElementById("static-root");
       if (staticNode) {
@@ -160,6 +166,10 @@ class App extends Component {
 
   render() {
     const { restart } = this.props.addon;
+    const { loading } = this.state;
+    if (loading) {
+      return <Loading />;
+    }
     if (restart.isRequired) {
       return <RestartPage {...this.props} />;
     }
@@ -178,12 +188,17 @@ class App extends Component {
       }
     }
 
-    return <LocalizationProvider messages={ generateMessages(
-      this.props.negotiatedLanguages,
-      this.props.localizations
-    ) }>
-      { React.cloneElement(this.props.children, this.props) }
-    </LocalizationProvider>;
+    return <div>
+      <Helmet>
+        <title>Firefox Test Pilot</title>
+      </Helmet>
+      <LocalizationProvider messages={ generateMessages(
+        this.props.negotiatedLanguages,
+        this.props.localizations
+      ) }>
+        { React.cloneElement(this.props.children, this.props) }
+      </LocalizationProvider>
+    </div>;
   }
 }
 

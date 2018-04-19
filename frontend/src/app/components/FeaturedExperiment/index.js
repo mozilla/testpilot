@@ -5,6 +5,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { experimentL10nId } from "../../lib/utils";
+import { getBreakpoint } from "../../containers/App";
+
 import FeaturedStatus from "./FeaturedStatus";
 import FeaturedButton from "./FeaturedButton";
 
@@ -39,7 +41,8 @@ export default class FeaturedExperiment extends React.Component {
   }
 
   render() {
-    const { experiment, enabled } = this.props;
+    const { experiment, enabled, installed, hasAddon, sendToGA,
+      eventCategory } = this.props;
     const { description, title, subtitle, slug, video_url, error } = experiment;
 
     return (
@@ -73,13 +76,26 @@ export default class FeaturedExperiment extends React.Component {
           </Localized>
 
           {!enabled && <Localized id='moreDetail'>
-            <Link className="featured-experiment__details" to={`/experiments/${slug}`}>Details</Link>
+            <Link className="featured-experiment__details" to={`/experiments/${slug}`}
+              onClick={() => {
+                sendToGA("event", {
+                  eventCategory,
+                  eventAction: "link click",
+                  eventLabel: "View Featured details",
+                  dimension1: hasAddon,
+                  dimension2: Object.keys(installed).length > 0,
+                  dimension3: Object.keys(installed).length,
+                  dimension4: enabled,
+                  dimension10: getBreakpoint(window.innerWidth),
+                  dimension11: slug,
+                  dimension13: "Featured Experiment"
+                });
+              }}>View Details</Link>
           </Localized>}
 
           <div className="featured-experiment__actions">
             <FeaturedButton {...this.props} />
           </div>
-
 
           <div className="featured-experiment__video">
             <iframe
