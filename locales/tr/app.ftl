@@ -25,6 +25,7 @@ menuDiscuss = Test Pilotu'nu tartışın
 menuFileIssue = Sorun bildirin
 menuRetire = Test Pilotu’nu kaldır
 headerLinkBlog = Günlük
+headerLinkNews = Haberler
 
 ## The splash on the homepage.
 
@@ -87,6 +88,8 @@ emailOptInDialogErrorTitle = Hayır!
 
 latestUpdatesTitle = Son güncellemeler
 showMoreNewsTitle = Eski haberleri göster
+# "Link" is a noun in this context
+englishArticleLink = İngilizce haberin linki
 
 ## Featured experiment.
 
@@ -258,7 +261,6 @@ hidePastExperiments = Geçmiş deneyleri gizle
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Bir yerde bir sorun var!
-warningGenericDetail = Test Pilotu'nda bir şeyler ters gitti. Lütfen <a>hata bildirimi yapıp</a> bu hata mesajından da bahsedin.
 warningUpgradeFirefoxTitle = Devam etmek için Firefox’u yükseltin!
 warningUpgradeFirefoxDetail = Test Pilotu için Firefox'un son sürümü gerekir. Başlamak için <a>Firefox'u yükseltin</a>.
 warningHttpsRequiredTitle = HTTPS gerekli!
