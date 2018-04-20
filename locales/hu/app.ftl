@@ -261,6 +261,7 @@ hidePastExperiments = Múltbeli kísérletek elrejtése
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Valami baj van!
+warningGoToFAQDetail = Valami hiba történt a Tesztpilótával. <a>Nézze meg a GyIK-et</a> hogy többet tudjon meg.
 warningUpgradeFirefoxTitle = A folytatáshoz frissítse a Firefoxot.
 warningUpgradeFirefoxDetail = A Tesztpilótához a Firefox legfrissebb változata szükséges. <a>Frissítse a Firefoxot</a> az induláshoz.
 warningHttpsRequiredTitle = HTTPS szükséges!
