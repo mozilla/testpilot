@@ -25,6 +25,7 @@ menuDiscuss = 討論 Test Pilot
 menuFileIssue = 回報問題
 menuRetire = 移除 Test Pilot
 headerLinkBlog = 部落格
+headerLinkNews = 新聞來源
 
 ## The splash on the homepage.
 
@@ -87,6 +88,8 @@ emailOptInDialogErrorTitle = 糟糕！
 
 latestUpdatesTitle = 最新消息
 showMoreNewsTitle = 顯示過去新聞
+# "Link" is a noun in this context
+englishArticleLink = 英文文章鏈結
 
 ## Featured experiment.
 
@@ -255,7 +258,6 @@ hidePastExperiments = 隱藏先前的實驗
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = 有些東西不對勁！
-warningGenericDetail = Test Pilot 有點東西不對勁，請<a>回報 Bug</a> 並包含此錯誤訊息。
 warningUpgradeFirefoxTitle = 升級 Firefox 後再繼續使用！
 warningUpgradeFirefoxDetail = 需要使用最新版本的 Firefox 才能使用 Test Pilot。<a>請升級 Firefox</a> 開始使用。
 warningHttpsRequiredTitle = 必須使用 HTTPS！
