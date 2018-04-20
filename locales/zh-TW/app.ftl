@@ -258,6 +258,7 @@ hidePastExperiments = 隱藏先前的實驗
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = 有些東西不對勁！
+warningGoToFAQDetail = Test Pilot 有些東西怪怪的，請<a>參考 FAQ</a> 了解更多資訊。
 warningUpgradeFirefoxTitle = 升級 Firefox 後再繼續使用！
 warningUpgradeFirefoxDetail = 需要使用最新版本的 Firefox 才能使用 Test Pilot。<a>請升級 Firefox</a> 開始使用。
 warningHttpsRequiredTitle = 必須使用 HTTPS！
