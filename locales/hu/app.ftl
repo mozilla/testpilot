@@ -25,6 +25,7 @@ menuDiscuss = A Tesztpilóta megvitatása
 menuFileIssue = Probléma jelentése
 menuRetire = A Tesztpilóta eltávolítása
 headerLinkBlog = Blog
+headerLinkNews = Hírfolyam
 
 ## The splash on the homepage.
 
@@ -87,6 +88,8 @@ emailOptInDialogErrorTitle = Jaj ne!
 
 latestUpdatesTitle = Legújabb frissítések
 showMoreNewsTitle = Múltbeli hírek megjelenítése
+# "Link" is a noun in this context
+englishArticleLink = Hivatkozás az angol cikkre
 
 ## Featured experiment.
 
@@ -258,7 +261,6 @@ hidePastExperiments = Múltbeli kísérletek elrejtése
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Valami baj van!
-warningGenericDetail = Valami baj van a Tesztpilótával. <a>Jelentse be a hibát</a>, és említse meg ezt a hibaüzenetet.
 warningUpgradeFirefoxTitle = A folytatáshoz frissítse a Firefoxot.
 warningUpgradeFirefoxDetail = A Tesztpilótához a Firefox legfrissebb változata szükséges. <a>Frissítse a Firefoxot</a> az induláshoz.
 warningHttpsRequiredTitle = HTTPS szükséges!
