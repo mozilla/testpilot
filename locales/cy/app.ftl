@@ -25,6 +25,7 @@ menuDiscuss = Trafod Test Pilot
 menuFileIssue = Ffeilio gwall
 menuRetire = Dadosod Test Pilot
 headerLinkBlog = Blog
+headerLinkNews = Llif Newyddion
 
 ## The splash on the homepage.
 
@@ -87,6 +88,8 @@ emailOptInDialogErrorTitle = O na!
 
 latestUpdatesTitle = Diweddariadau diweddaraf
 showMoreNewsTitle = Dangoswch Newyddion Blaenorol
+# "Link" is a noun in this context
+englishArticleLink = Dolen i'r erthygl Saesneg
 
 ## Featured experiment.
 
@@ -255,7 +258,7 @@ hidePastExperiments = Cuddio Arbrofion y Gorffennol
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Aeth rhywbeth o'i le!
-warningGenericDetail = Aeth rhywbeth o'i le gyda Test Pilot. Anfonwch <a>adroddiad gwall</a> a sôn am y neges gwall hon.
+warningGoToFAQDetail = Aeth rhywbeth o'i le ar Test Pilot. Gwiriwch y <a>Cwestiynau Cyffredin</a> i wybod mwy.
 warningUpgradeFirefoxTitle = Diweddarwch Firefox i barhau!
 warningUpgradeFirefoxDetail = Mae Test Pilot angen y fersiwn diweddaraf o Firefox. <a>Diweddarwch Firefox</a> i gychwyn arno.
 warningHttpsRequiredTitle = Mae angen HTTPS!
