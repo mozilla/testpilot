@@ -25,6 +25,7 @@ menuDiscuss = Diskutera Test Pilot
 menuFileIssue = Rapportera ett problem
 menuRetire = Avinstallera Test Pilot
 headerLinkBlog = Blogg
+headerLinkNews = Nyhetsflöde
 
 ## The splash on the homepage.
 
@@ -87,6 +88,8 @@ emailOptInDialogErrorTitle = Åh nej!
 
 latestUpdatesTitle = Senast uppdaterade
 showMoreNewsTitle = Visa äldre nyheter
+# "Link" is a noun in this context
+englishArticleLink = Länk till engelsk artikel
 
 ## Featured experiment.
 
@@ -258,7 +261,7 @@ hidePastExperiments = Dölj tidigare experiment
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Något gick fel!
-warningGenericDetail = Något har gått fel med Test Pilot. Vänligen <a>skicka in en bugg</a> och ta med detta felmeddelande.
+warningGoToFAQDetail = Något har gått fel med Test Pilot. Var god <a>se vanliga frågor</a> om du vill veta mer.
 warningUpgradeFirefoxTitle = Uppgradera Firefox för att fortsätta!
 warningUpgradeFirefoxDetail = Test Pilot kräver den senaste versionen av Firefox. <a>Uppgradera Firefox</a> för att komma igång.
 warningHttpsRequiredTitle = HTTPS krävs!
