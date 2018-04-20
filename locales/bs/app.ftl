@@ -25,6 +25,7 @@ menuDiscuss = Rasprava o programu Test Pilot
 menuFileIssue = Prijavite grešku
 menuRetire = Deinstaliraj Test Pilot
 headerLinkBlog = Blog
+headerLinkNews = Kanal vijesti
 
 ## The splash on the homepage.
 
@@ -87,6 +88,8 @@ emailOptInDialogErrorTitle = Oh ne!
 
 latestUpdatesTitle = Najnovija ažuriranja
 showMoreNewsTitle = Prikaži starije novosti
+# "Link" is a noun in this context
+englishArticleLink = Link za članak na engleskom
 
 ## Featured experiment.
 
@@ -258,7 +261,7 @@ hidePastExperiments = Sakrij prošle eksperimente
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Nešto nije u redu!
-warningGenericDetail = Nešto nije u redu sa Test Pilot-om. Molimo vas da <a>prijavite grešku</a> i spomenite poruku ove greške.
+warningGoToFAQDetail = Nešto nije uredu sa Test Pilot-om. Molimo <a>provjerite često postavljena pitanja</a> da biste saznali više.
 warningUpgradeFirefoxTitle = Nadogradite Firefox da nastavite!
 warningUpgradeFirefoxDetail = Test Pilot zahtjeva najnoviju verziju Firefoxa. <a>Nadogradite Firefox</a> da započnete.
 warningHttpsRequiredTitle = HTTPS je potreban!
