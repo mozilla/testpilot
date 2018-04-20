@@ -25,6 +25,7 @@ menuDiscuss = Test Pilot について議論する
 menuFileIssue = 問題を報告
 menuRetire = Test Pilot を削除
 headerLinkBlog = ブログ
+headerLinkNews = ニュースフィード
 
 ## The splash on the homepage.
 
@@ -87,6 +88,8 @@ emailOptInDialogErrorTitle = おっと！
 
 latestUpdatesTitle = 最新情報
 showMoreNewsTitle = 過去のニュースを表示
+# "Link" is a noun in this context
+englishArticleLink = 英語記事へのリンク
 
 ## Featured experiment.
 
@@ -258,7 +261,7 @@ hidePastExperiments = 過去の実験を隠す
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = 何か問題が発生しました。
-warningGenericDetail = Test Pilot に何か問題が発生したようです。<a>バグを報告</a> し、このエラーメッセージを教えてください。
+warningGoToFAQDetail = Test Pilot に何か問題が発生しました。詳しくは <a>FAQ</a> をご覧ください。
 warningUpgradeFirefoxTitle = 続けるには Firefox をアップグレードしてください！
 warningUpgradeFirefoxDetail = Test Pilot へ参加するには Firefox の最新版が必要です。まずは <a>Firefox をアップグレード</a> してください。
 warningHttpsRequiredTitle = HTTPS が必須です。
