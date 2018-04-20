@@ -71,6 +71,7 @@ nomore404sContributors1Title = The Internet Archive 的 Wayback Machine 開發�
 nomore404sContributors2Title = The Internet Archive 的 Wayback Machine 總監
 nomore404sContributors3Title = The Internet Archive 資深爬蟲工程師
 notesDescription = Firefox 內的簡易記事本。上網時會突然想到什麼事情需要記下來嗎？這個實驗就是您最好用的工具。
+notesIntroductionMultinote = Notes 會在瀏覽器的側邊欄新增一個簡單的筆記本。登入至您的 Firefox 帳號後，即可在點對點加密的保護下，同步所有筆記。
 notesLegalnotice = 若繼續，代表您同意<a>使用條款</a>、<a>Test Pilot 的隱私權保護政策</a>以及 <a>Notes 的隱私權保護政策</a>。
 notesMeasurements0 = Notes 會收集您如何使用各功能的資訊，例如您多常會建立筆記、花多少時間編輯、您在筆記中儲存的字數，以及您是否使用任何編輯功能（粗體、為文字加上格式）等。
 notesMeasurements1 = Notes 也會收集您如何與附加元件互動的相關資訊，例如您如何使用各種功能、點擊了哪些按鈕。
