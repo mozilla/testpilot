@@ -261,6 +261,7 @@ hidePastExperiments = Geçmiş deneyleri gizle
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Bir yerde bir sorun var!
+warningGoToFAQDetail = Test Pilotu’nda bir sorun oluştu. Daha fazla bilgi için <a>SSS’mize</a> bakabilirsiniz.
 warningUpgradeFirefoxTitle = Devam etmek için Firefox’u yükseltin!
 warningUpgradeFirefoxDetail = Test Pilotu için Firefox'un son sürümü gerekir. Başlamak için <a>Firefox'u yükseltin</a>.
 warningHttpsRequiredTitle = HTTPS gerekli!

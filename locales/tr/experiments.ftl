@@ -71,6 +71,7 @@ nomore404sContributors1Title = Geliştirici, Wayback Makinesi, The Internet Arch
 nomore404sContributors2Title = Müdür, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Kıdemli Tarama Mühendisi, The Internet Archive
 notesDescription = Firefox'un içinde basit bir not defteri. Web'de gezinirken kısa notlar almanız gerektiği oluyor mu? Öyleyse bu deney tam size göre.
+notesIntroductionMultinote = Notes, tarayıcınızın kenar çubuğuna basit bir not defteri ekler. Firefox Hesabınıza giriş yaparak tüm notlarınızı uçtan uca şifrelemeyle eşitleyebilirsiniz.
 notesLegalnotice = Devam ettiğinizde Test Pilotu <a>koşulları</a> ve <a>gizlilik ilkeleri</a> ile <a>Notes gizlilik ilkelerini</a> kabul etmiş sayılırsınız.
 notesMeasurements0 = Notes, ne sıklıkla not ouşturduğunuz ve notlarınızı düzenlerken ne kadar zaman harcadığınız, notlarınızdaki karakter sayısı, düzenleme özelliklerini (kalın veya biçemli metin) kullanıp kullanmadığınız gibi kullanım bilgilerinizi toplar.
 notesMeasurements1 = Notes ayrıca bu özelliğe nasıl eriştiğiniz ve hangi düğmelere tıkladığınız gibi etkileşim bilgilerinizi de toplar.
