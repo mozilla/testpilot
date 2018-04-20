@@ -76,6 +76,7 @@ notesLegalnotice = 続けることで、あなたは Test Pilot の <a>規約</a
 notesMeasurements0 = Notes は機能の使用状況に関する情報を収集します。これには、メモの作成頻度、編集に費やした時間、メモに保存した文字数、編集機能 (太字や文字スタイルなど) の使用状況が含まれます。
 notesMeasurements1 = Notes は、どのように機能にアクセスしたか、どのボタンをクリックしたかといった、あなたのアドオンとのインタラクションに関する情報も収集します。
 notesDetails0Copy = これはメモ帳です。なぜもっと早く思い付かなかったんでしょう？
+notesDetails1Copy = いくつでも好きなだけメモを取って、Firefox アカウントで常時同期しましょう。
 notesToursteps0Copy = Notes はブラウザーのサイドバーにシンプルなメモ帳を追加します。
 notesContributors0Title = エンジニアリングインターン
 notesContributors1Title = コミュニティ貢献者
