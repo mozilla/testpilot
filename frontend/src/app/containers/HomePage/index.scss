@@ -3,15 +3,11 @@
 
 .landing-experiments {
   .more-button {
-    @include respond-to('medium') {
-      justify-content: flex-end;
-      padding: 0 20px;
-    }
-
     bottom: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     pointer-events: none;
+    padding: 0 20px;
     position: fixed;
     text-align: center;
     width: 100%;
