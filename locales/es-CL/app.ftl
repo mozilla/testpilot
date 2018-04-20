@@ -25,6 +25,7 @@ menuDiscuss = Discuss de Test Pilot
 menuFileIssue = Ingresar un reporte
 menuRetire = Desinstalar Test Pilot
 headerLinkBlog = Blog
+headerLinkNews = Canales web
 
 ## The splash on the homepage.
 
@@ -87,6 +88,8 @@ emailOptInDialogErrorTitle = ¡Oh no!
 
 latestUpdatesTitle = Últimas actualizaciones
 showMoreNewsTitle = Ver noticias anteriores
+# "Link" is a noun in this context
+englishArticleLink = Enlace al artículo en inglés
 
 ## Featured experiment.
 
@@ -258,7 +261,7 @@ hidePastExperiments = Ocultar experimentos anteriores
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = ¡Algo se fue a las pailas!
-warningGenericDetail = Algo falló en Test Pilot. Por favor, <a>ingresa un bug</a> y menciona este mensaje de error.
+warningGoToFAQDetail = Algo se fue a las pailas en Test Pilot. Por favor, <a>revisa las preguntas frecuentes</a> para aprender más.
 warningUpgradeFirefoxTitle = ¡Actualiza Firefox para continuar!
 warningUpgradeFirefoxDetail = Test Pilot requiere la última versión de Firefox. <a>Actualiza Firefox</a> para empezar.
 warningHttpsRequiredTitle = ¡HTTPS requerido!
