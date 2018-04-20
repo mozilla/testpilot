@@ -25,6 +25,7 @@ menuDiscuss = Test Pilot bespreken
 menuFileIssue = Een probleem melden
 menuRetire = Test Pilot verwijderen
 headerLinkBlog = Blog
+headerLinkNews = Nieuwsfeed
 
 ## The splash on the homepage.
 
@@ -87,6 +88,8 @@ emailOptInDialogErrorTitle = O nee!
 
 latestUpdatesTitle = Nieuwste updates
 showMoreNewsTitle = Eerder nieuws tonen
+# "Link" is a noun in this context
+englishArticleLink = Koppeling naar Engelstalig artikel
 
 ## Featured experiment.
 
@@ -258,7 +261,7 @@ hidePastExperiments = Oude experimenten verbergen
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Er is iets mis!
-warningGenericDetail = Er is iets misgegaan met Test Pilot. <a>Meld een bug</a> en noem deze foutmelding.
+warningGoToFAQDetail = Er is iets misgegaan met Test Pilot. <a>Lees de FAQ’s</a> voor meer info.
 warningUpgradeFirefoxTitle = Upgrade Firefox om door te gaan!
 warningUpgradeFirefoxDetail = Test Pilot vereist de nieuwste versie van Firefox. <a>Upgrade Firefox</a> om te beginnen.
 warningHttpsRequiredTitle = HTTPS vereist!
