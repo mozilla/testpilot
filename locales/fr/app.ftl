@@ -25,6 +25,7 @@ menuDiscuss = Discuter de Test Pilot
 menuFileIssue = Signaler un problème
 menuRetire = Désinstaller Test Pilot
 headerLinkBlog = Blog
+headerLinkNews = Fil d’actualités
 
 ## The splash on the homepage.
 
@@ -87,6 +88,8 @@ emailOptInDialogErrorTitle = Oups !
 
 latestUpdatesTitle = Dernières mises à jour
 showMoreNewsTitle = Afficher les nouvelles précédentes
+# "Link" is a noun in this context
+englishArticleLink = Lien vers un article en anglais
 
 ## Featured experiment.
 
@@ -255,7 +258,6 @@ hidePastExperiments = Masquer les expériences passées
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Des erreurs se sont produites
-warningGenericDetail = Test Pilot ne fonctionne pas correctement, veuillez <a>signaler un dysfonctionnement</a> et mentionner ce message d’erreur.
 warningUpgradeFirefoxTitle = Vous devez mettre à jour Firefox pour continuer
 warningUpgradeFirefoxDetail = Test Pilot nécessite la dernière version de Firefox. <a>Mettez Firefox à jour</a> pour pouvoir commencer.
 warningHttpsRequiredTitle = HTTPS obligatoire
