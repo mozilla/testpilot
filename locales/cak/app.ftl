@@ -25,6 +25,7 @@ menuDiscuss = Kojch'o chi rij Test Pilot
 menuFileIssue = Tiyak jun k'ayewal
 menuRetire = Telesäx Test Pilot
 headerLinkBlog = Ichinya'l
+headerLinkNews = Kixe'el Tzijol
 
 ## The splash on the homepage.
 
@@ -87,6 +88,8 @@ emailOptInDialogErrorTitle = ¡Mani'!
 
 latestUpdatesTitle = Ruk'isib'äl taq k'exoj
 showMoreNewsTitle = Kek'ut Ojer taq Rutzijol
+# "Link" is a noun in this context
+englishArticleLink = Ruximonel cholna'oj pa Q'anchi'
 
 ## Featured experiment.
 
@@ -258,7 +261,7 @@ hidePastExperiments = Ke'ewäx Ojer taq Solna'oj
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = ¡K'o ri man ütz ta rub'anon!
-warningGenericDetail = K'o man ütz ta xub'än pa Test Pilot. Tab'ana' utzilr <a>tatz'ib'aj jun sachoj</a> chuqa' tasik'ij re rutzijol sachoj re'.
+warningGoToFAQDetail = K'o ri man ütz xel pa Test Pilot. Tab'ana' utzil <a>tanik'oj ri Jutaqil taq K'utunïk</a> richin netamäx ch'aqa' chik.
 warningUpgradeFirefoxTitle = ¡Tak'exa' Firefox richin yasamäj qa!
 warningUpgradeFirefoxDetail = Test Pilot nrajo' ri ruk'isib'äl ruwäch Firefox. <a>Tik'ex Firefox</a> richin natikirisaj qa.
 warningHttpsRequiredTitle = ¡Nrajo' HTTPS!
