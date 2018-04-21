@@ -25,6 +25,7 @@ menuDiscuss = Обсуждение лётчика-испытателя
 menuFileIssue = Сообщить о проблеме
 menuRetire = Удалить расширение
 headerLinkBlog = Блог
+headerLinkNews = Лента новостей
 
 ## The splash on the homepage.
 
@@ -87,6 +88,8 @@ emailOptInDialogErrorTitle = О, нет!
 
 latestUpdatesTitle = Последние обновления
 showMoreNewsTitle = Показать прошлые новости
+# "Link" is a noun in this context
+englishArticleLink = Ссылка на статью на английском
 
 ## Featured experiment.
 
@@ -258,7 +261,7 @@ hidePastExperiments = Скрыть старые эксперименты
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Что-то пошло не так!
-warningGenericDetail = С Лётчиком-испытателем что-то пошло не так. Пожалуйста, <a>напишите об ошибке</a> и укажите там это сообщение об ошибке.
+warningGoToFAQDetail = C Лётчиком-испытателем что-то пошло не так. Чтобы узнать больше, пожалуйста, <a>просмотрите ответы на часто задаваемые вопросы</a>.
 warningUpgradeFirefoxTitle = Для продолжения обновите Firefox!
 warningUpgradeFirefoxDetail = Для работы Лётчика-испытателя необходимо использовать последнюю версию Firefox. Чтобы начать, <a>обновите Firefox</a>.
 warningHttpsRequiredTitle = Требуется HTTPS!
