@@ -53,7 +53,7 @@ landingDownloadFirefoxDesc = (Test Pilot ხელმისაწვდომი
 landingUpgradeDesc = Test Pilot საჭიროებს Firefox 49 ან უფრო ახალ ვერსიას.
 landingUpgradeDesc2 = Test Pilot საჭიროებს Firefox { $version } ან უფრო ახალ ვერსიას.
 landingDownloadFirefoxTitle = Firefox
-landingUpgradeFirefoxTitle = Firefox განახლება
+landingUpgradeFirefoxTitle = განაახლეთ Firefox
 landingDownloadFirefoxSubTitle = უფასო ჩამოტვირთვა
 
 ## A section of the homepage explaining how Test Pilot works.
