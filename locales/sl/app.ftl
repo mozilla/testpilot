@@ -261,6 +261,7 @@ hidePastExperiments = Skrij končane poskuse
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Nekaj ni v redu!
+warningGoToFAQDetail = S Test Pilotom nekaj ni v redu. Preberite <a>pogosta vprašanja</a>, da izveste več.
 warningUpgradeFirefoxTitle = Nadgradite Firefox za nadaljevanje!
 warningUpgradeFirefoxDetail = Test Pilot zahteva najnovejšo različico Firefoxa. Za začetek <a>nadgradite Firefox</a>.
 warningHttpsRequiredTitle = HTTPS zahtevan!
