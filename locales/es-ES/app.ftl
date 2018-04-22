@@ -25,6 +25,7 @@ menuDiscuss = Hablemos de Test Pilot
 menuFileIssue = Abre una incidencia
 menuRetire = Desinstalar Test Pilot
 headerLinkBlog = Blog
+headerLinkNews = Noticias
 
 ## The splash on the homepage.
 
