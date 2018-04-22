@@ -78,6 +78,7 @@ notesDetails0Copy = C’est un bloc-notes. Pourquoi n’y avons-nous pas pensé 
 notesDetails1Copy = Prenez autant de notes que nécessaire et synchronisez-les avec votre compte Firefox.
 notesToursteps0Copy = Notes est un simple bloc-notes qui s’ajoute à la barre latérale de votre navigateur.
 notesToursteps3CopyMultinote = Connectez-vous à votre compte Firefox pour synchroniser vos notes.
+notesToursteps4Copy = Vous pouvez nous faire part de votre avis à tout moment ou désactiver Notes du programme Test Pilot.
 notesContributors0Title = Stagiaire en développement
 notesContributors1Title = Contributeur bénévole
 notesContributors2Title = Designer produit/ergonomie confirmé
