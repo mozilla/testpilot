@@ -87,6 +87,8 @@ emailOptInDialogErrorTitle = ¡Oh no!
 
 latestUpdatesTitle = Últimas actualizaciones
 showMoreNewsTitle = Mostrar noticias antiguas
+# "Link" is a noun in this context
+englishArticleLink = Enlace al artículo en inglés
 
 ## Featured experiment.
 
@@ -255,7 +257,6 @@ hidePastExperiments = Ocultar experimentos antiguos
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = ¡Algo está mal!
-warningGenericDetail = Algo ha fallado con Test Pilot. Por favor <a>informa del error</a> y menciona este mensaje de error.
 warningUpgradeFirefoxTitle = ¡Actualiza Firefox para continuar!
 warningUpgradeFirefoxDetail = Test Pilot requiere la última versión de Firefox. <a>Actualiza Firefox</a> para comenzar.
 warningHttpsRequiredTitle = ¡Se requiere HTTPS!
