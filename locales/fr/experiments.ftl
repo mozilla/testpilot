@@ -75,6 +75,7 @@ notesLegalnotice = En poursuivant, vous acceptez les <a>conditions</a> et la <a>
 notesMeasurements0 = Notes collecte des informations à propos de votre utilisation comme par exemple la fréquence à laquelle vous créez des notes, combien de temps vous mettez à les éditer, le nombre de caractères que vous sauvegardez, si vous utilisez des fonctions de mise en forme (comme la mise en gras ou l’utilisation de styles de texte).
 notesMeasurements1 = Notes collecte aussi des informations relatives à votre interaction avec ce module comme par exemple comment vous y accédez et sur quels boutons vous pouvez cliquer.
 notesDetails0Copy = C’est un bloc-notes. Pourquoi n’y avons-nous pas pensé plus tôt ?
+notesDetails1Copy = Prenez autant de notes que nécessaire et synchronisez-les avec votre compte Firefox.
 notesToursteps0Copy = Notes est un simple bloc-notes qui s’ajoute à la barre latérale de votre navigateur.
 notesToursteps3CopyMultinote = Connectez-vous à votre compte Firefox pour synchroniser vos notes.
 notesContributors0Title = Stagiaire en développement

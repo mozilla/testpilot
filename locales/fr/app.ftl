@@ -258,6 +258,7 @@ hidePastExperiments = Masquer les expériences passées
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Des erreurs se sont produites
+warningGoToFAQDetail = Test Pilot a rencontré un problème. Veuillez <a>consulter la FAQ</a> pour en savoir plus.
 warningUpgradeFirefoxTitle = Vous devez mettre à jour Firefox pour continuer
 warningUpgradeFirefoxDetail = Test Pilot nécessite la dernière version de Firefox. <a>Mettez Firefox à jour</a> pour pouvoir commencer.
 warningHttpsRequiredTitle = HTTPS obligatoire
