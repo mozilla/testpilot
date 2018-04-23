@@ -3,14 +3,10 @@
 
 .landing-experiments {
   .more-button {
-    @include respond-to('medium') {
-      justify-content: flex-end;
-      padding: 0 20px;
-    }
-
     bottom: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    padding: 0 20px;
     pointer-events: none;
     position: fixed;
     text-align: center;
@@ -26,12 +22,8 @@
   }
 
   .arrow {
-
-    @include respond-to('medium') {
-      background-color: $transparent-white-1;
-    }
-
     align-items: flex-end;
+    background-color: $transparent-white-1;
     background-image: url('./more-experiments-button-oval.svg');
     background-position: center 10px;
     background-repeat: no-repeat;
