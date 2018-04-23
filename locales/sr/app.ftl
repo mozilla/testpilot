@@ -25,6 +25,7 @@ menuDiscuss = Причајте о Test Pilot-у
 menuFileIssue = Пријавите грешку
 menuRetire = Деинсталирај Test Pilot
 headerLinkBlog = Блог
+headerLinkNews = Вести
 
 ## The splash on the homepage.
 
@@ -87,6 +88,8 @@ emailOptInDialogErrorTitle = Ох не!
 
 latestUpdatesTitle = Последња ажурирања
 showMoreNewsTitle = Прикажи старије новости
+# "Link" is a noun in this context
+englishArticleLink = Веза ка енглеском чланку
 
 ## Featured experiment.
 
@@ -258,7 +261,7 @@ hidePastExperiments = Сакриј прошле експерименте
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Нешто није у реду!
-warningGenericDetail = Нешто није у реду са Test Pilot-ом. Молимо вас да <a>пријавите грешку</a> и споменете поруку ове грешке.
+warningGoToFAQDetail = Дошло је до грешке са Test Pilot-ом. Проверите <a>FAQ</a> да сазнате више о овоме.
 warningUpgradeFirefoxTitle = Надоградите Firefox да наставите!
 warningUpgradeFirefoxDetail = Test Pilot захтева послељњу верзију Firefox-а. <a>Надоградите Firefox</a> да започнете.
 warningHttpsRequiredTitle = HTTPS је потребан!
