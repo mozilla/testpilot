@@ -99,11 +99,9 @@ export default function DetailsDescription({
       {hasAddon &&
         !graduated &&
         measurements &&
-        <div>
           <MeasurementsSection
             {...{ experiment, highlightMeasurementPanel, l10nId }}
-          />
-        </div>}
+          />}
     </div>
   );
 }

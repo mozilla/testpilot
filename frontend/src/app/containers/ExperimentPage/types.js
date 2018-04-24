@@ -55,8 +55,7 @@ export type IncompatibleAddonsProps = {
 export type TestpilotPromoProps = {
   hasAddon: any,
   graduated: boolean,
-  experiment: Object,
-  installCallback: Function
+  experiment: Object
 } & MiscAppProps & SendToGAProps & BrowserEnvProps;
 
 export type DetailsHeaderProps = {
@@ -89,7 +88,6 @@ export type ExperimentControlsType = {
   experiment: Object,
   installed: Object,
   graduated: boolean,
-  surveyURL: string,
   enabled: boolean,
   progressButtonWidth: number,
   installExperiment: Function,

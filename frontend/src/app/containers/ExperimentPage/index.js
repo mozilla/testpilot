@@ -13,7 +13,6 @@ import View from "../../components/View";
 import EmailDialog from "../../components/EmailDialog";
 import ExperimentCardList from "../../components/ExperimentCardList";
 
-import ExperimentPlatforms from "../../components/ExperimentPlatforms";
 import Banner from "../../components/Banner";
 import LayoutWrapper from "../../components/LayoutWrapper";
 
@@ -259,8 +258,7 @@ export class ExperimentDetail extends React.Component {
             {...{
               ...this.props,
               graduated,
-              experiment,
-              installCallback: installExperiment
+              experiment
             }}
           />
           <div className="default-background">
@@ -293,22 +291,31 @@ export class ExperimentDetail extends React.Component {
               }}
             />
             <div id="details">
-              <LayoutWrapper>
-                {experiment.platforms &&
-                  <ExperimentPlatforms experiment={experiment} />}
-              </LayoutWrapper>
               <LayoutWrapper
                 helperClass="details-content"
                 flexModifier="details-content"
               >
                 <DetailsOverview
                   {...{
-                    experiment,
+                    sendToGA,
+                    userAgent,
+                    hasAddon,
+                    progressButtonWidth,
+                    isDisabling,
+                    isEnabling,
+                    enabled,
+                    installed,
                     graduated,
+                    experiment,
+                    surveyURL,
+                    installExperiment,
+                    doShowEolDialog,
+                    doShowPreFeedbackDialog,
+                    uninstallExperimentWithSurvey,
                     highlightMeasurementPanel,
+                    flashMeasurementPanel,
                     doShowTourDialog,
-                    l10nId,
-                    sendToGA
+                    l10nId
                   }}
                 />
                 <DetailsDescription
