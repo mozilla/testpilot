@@ -10,6 +10,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const WriteFilePlugin = require("write-file-webpack-plugin");
 
+const ContentPlugin = require("./frontend/lib/content");
+
 const {
   DevServerMiddleware,
   DevServerHTTPSOptions
@@ -61,6 +63,7 @@ const plugins = [
     { context: "./locales", from: "**/*", to: "static/locales/" },
     { context: "./frontend/src/images", from: "**/*", to: "static/images/" }
   ]),
+  ContentPlugin(),
   new WriteFilePlugin(),
   // Include only moment locale modules that match AVAILABLE_LOCALES
   new webpack.ContextReplacementPlugin(
