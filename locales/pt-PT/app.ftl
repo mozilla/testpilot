@@ -1,6 +1,6 @@
 siteName = Firefox Test Pilot
 
-## Page titles, put in the <title> HTML tag.
+## Page titles, shown as title of HTML pages.
 
 pageTitleDefault = Firefox Test Pilot
 pageTitleLandingPage = Firefox Test Pilot
@@ -25,6 +25,7 @@ menuDiscuss = Discutir o Test Pilot
 menuFileIssue = Submeter um issue
 menuRetire = Desinstalar o Test Pilot
 headerLinkBlog = Blogue
+headerLinkNews = Fonte de notícias
 
 ## The splash on the homepage.
 
@@ -32,6 +33,7 @@ landingIntroOne = Teste novas funcionalidades.
 landingIntroTwo = Dê o seu feedback.
 landingIntroThree = Ajude a construir o Firefox.
 landingLegalNotice = Ao proceder, concorda com os <a>Termos de utilização</a> e com o <a>Aviso de privacidade</a> do Test Pilot.
+landingMoreExperimentsButton = Mais experiências
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -41,6 +43,7 @@ landingInstallingButton = A instalar...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Instalar o Test Pilot e
+# $title is replaced by the name of an experiment
 oneClickInstallMajorCta = Ativar o { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
@@ -68,6 +71,9 @@ onboardingMessage = Colocámos um ícone na sua barra de ferramentas para que co
 
 errorHeading = Ups!
 errorMessage = Parece que partimos algo. <br>Talvez tente novamente mais tarde.
+# 404 is the HTTP standard response code for a page not found. This title is a
+# word play in English, being "Oh" both an exclamation and the pronunciation of
+# the number 0.
 notFoundHeader = 404!
 
 ## A modal prompt to sign up for the Test Pilot newsletter.
@@ -78,12 +84,14 @@ emailOptInConfirmationTitle = Email enviado
 emailOptInConfirmationClose = Para as experiências...
 emailOptInDialogErrorTitle = Oh não!
 
-## news feed updates.
+## News feed updates.
 
 latestUpdatesTitle = Atualizações mais recentes
 showMoreNewsTitle = Mostrar notícias passadas
+# "Link" is a noun in this context
+englishArticleLink = Ligação para o artigo em Inglês
 
-
+## Featured experiment.
 
 moreDetail = Ver detalhes
 
@@ -104,7 +112,7 @@ experimentListHeaderWithFeatured = Experimente todas as nossas experiências
 experimentCardFeedback = Feedback
 experimentCardManage = Gerir
 experimentCardGetStarted = Começar
-# also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog
 experimentCardLearnMore = Saber mais
 
 ## A modal prompt shown when a user disables an experiment.
@@ -159,7 +167,7 @@ experimentGradReportReady = Preparámos um relatório de graduação completo.
 experimentGoToLink = Ir para { $title }
 startedDateLabel = Data de início da experiência: <b>{ $startedDate }</b>
 
-## news updates dialog.
+## News updates dialog.
 
 nonExperimentDialogHeaderLink = Piloto de testes
 
@@ -199,13 +207,8 @@ restartIntroOne = Reinicie o seu navegador
 restartIntroTwo = Localize o extra do Test Pilot
 restartIntroThree = Selecione as suas experiências
 
-## Shown on a page presented to users three days after installing their first experiment.
+## Shown on pages of retired or retiring experiments.
 
-sharePrimary = Gostou do Test Pilot? Ajude-nos a encontrar alguns novos recrutas.
-shareSecondary = ou apenas copie e cole esta ligação...
-shareEmail = E-mail
-shareCopy = Copiar
-# Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } termina a { $completedDate }
 eolNoticeLink = Saber mais
 eolDisableMessage = A experiência { $title } terminou. Assim que a desinstalar não vai conseguir reinstalá-la novamente através do Test Pilot.
@@ -222,7 +225,6 @@ newsletterFormEmailPlaceholder =
     .placeholder = O seu email aqui
 newsletterFormDisclaimer = Apenas lhe iremos enviar informação relacionada com o Test Pilot.
 newsletterFormPrivacyNotice = Concordo que a Mozilla faça a gestão da minha informação tal como explicado <a>neste aviso de privacidade</a>.
-newsletterFormPrivacyAgreementRequired = Por favor marque esta caixa se deseja proceder.
 newsletterFormSubmitButton = Registar-se agora
 newsletterFormSubmitButtonSubmitting = A submeter...
 
@@ -259,7 +261,7 @@ hidePastExperiments = Ocultar experiências passadas
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Algo está errado!
-warningGenericDetail = Algo correu mal com o Test Pilot. Por favor <a>submeta um bug</a> e mencione esta mensagem de erro.
+warningGoToFAQDetail = Algo correu mal com o Test Pilot. Por favor <a>verifique as FAQs</a> para saber mais.
 warningUpgradeFirefoxTitle = Atualize o Firefox para continuar!
 warningUpgradeFirefoxDetail = O Test Pilot requer a versão mais recente do Firefox. <a>Atualize o Firefox</a> para começar.
 warningHttpsRequiredTitle = HTTPS é obrigatório!
@@ -268,5 +270,7 @@ warningMissingPrefTitle = A programar no Test Pilot?
 warningMissingPrefDetail = Ao executar o Test Pilot localmente ou em ambiente de desenvolvimento, é necessária uma configuração especial. Por favor, consulte a <a>nossa documentação</a> para detalhes.
 warningBadHostnameTitle = Nome de servidor não aprovado!
 warningBadHostnameDetail = O site do Test Pilot apenas pode ser acedido a partir de testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, ou example.com:8000. Por favor, consulte a <a>nossa documentação</a> para detalhes.
-# This string does not appear in app, but we will use it to localize our `no script` message
+
+## This string does not appear in app, but we will use it to localize our `no script` message
+
 jsDisabledWarning = O Test Pilot requer JavaScript. Pedimos desculpa.

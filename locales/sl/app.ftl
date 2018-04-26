@@ -1,17 +1,13 @@
 siteName = Firefox Test Pilot
 
-
-// Page titles, put in the <title> HTML tag.
-[[ pageTitle ]]
+## Page titles, shown as title of HTML pages.
 
 pageTitleDefault = Firefox Test Pilot
 pageTitleLandingPage = Firefox Test Pilot
 pageTitleExperimentListPage = Firefox Test Pilot - Poskusi
 pageTitleExperiment = Firefox Test Pilot - { $title }
 
-
-// Links in the footer.
-[[ footerLink ]]
+## Links in the footer.
 
 footerLinkCookies = Piškotki
 footerLinkPrivacy = Zasebnost
@@ -20,9 +16,7 @@ footerLinkLegal = Pravne informacije
 footerLinkFeedback = Sporočite povratne informacije
 footerLinkAbout = O programu Test Pilot
 
-
-// Items in the menu.
-[[ menu ]]
+## Items in the menu.
 
 home = Domov
 menuTitle = Nastavitve
@@ -31,33 +25,28 @@ menuDiscuss = Razprava o programu Test Pilot
 menuFileIssue = Prijavite težavo
 menuRetire = Odstrani Test Pilot
 headerLinkBlog = Blog
+headerLinkNews = Vir novic
 
-
-// The splash on the homepage.
-[[ landing ]]
+## The splash on the homepage.
 
 landingIntroOne = Preskusite nove možnosti.
 landingIntroTwo = Pošljite nam povratne informacije.
 landingIntroThree = Pomagajte ustvarjati Firefox.
 landingLegalNotice = Z nadaljevanjem se strinjate s <a>pogoji uporabe</a> in <a>pravilnikom o zasebnosti</a> programa Test Pilot.
+landingMoreExperimentsButton = Več poskusov
 
-
-// Related to the installation of the Test Pilot add-on.
-[[ landingInstall ]]
+## Related to the installation of the Test Pilot add-on.
 
 landingInstallButton = Namestite dodatek Test Pilot
 landingInstallingButton = Nameščanje ...
 
-
-// Related to a one click to install test pilot and an experiment.
-[[ oneClickInstall ]]
+## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Namesti Test Pilot in
+# $title is replaced by the name of an experiment
 oneClickInstallMajorCta = omogoči { $title }
 
-
-// Homepage messaging for users not on Firefox or with an old version of Firefox.
-[[ landingFirefox ]]
+## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
 landingRequiresDesktop = Test Pilot zahteva Firefox za namizja in sistem Windows, Mac ali Linux
 landingDownloadFirefoxDesc = (Test Pilot je na voljo za Firefox v sistemih Windows, OS X in Linux)
@@ -67,32 +56,27 @@ landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Nadgradi Firefox
 landingDownloadFirefoxSubTitle = Brezplačen prenos
 
-
-// A section of the homepage explaining how Test Pilot works.
-[[ landingCard ]]
+## A section of the homepage explaining how Test Pilot works.
 
 landingCardListTitle = Začnite 3, 2, 1
 landingCardOne = Namestite dodatek Test Pilot
 landingCardTwo = Omogočite poskusne možnosti
 landingCardThree = Povejte nam svoje mnenje
 
-
-// Shown after the user installs the Test Pilot add-on.
-[[ onboarding ]]
+## Shown after the user installs the Test Pilot add-on.
 
 onboardingMessage = V orodno vrstico smo dodali gumb, ki vam vedno omogoča najti dodatek Test Pilot.
 
-
-// Error message pages.
-[[ error ]]
+## Error message pages.
 
 errorHeading = Opla!
 errorMessage = Očitno smo nekaj pokvarili. <br> Poskusite znova kasneje.
+# 404 is the HTTP standard response code for a page not found. This title is a
+# word play in English, being "Oh" both an exclamation and the pronunciation of
+# the number 0.
 notFoundHeader = Štiristo štiri!
 
-
-// A modal prompt to sign up for the Test Pilot newsletter.
-[[ emailOptIn ]]
+## A modal prompt to sign up for the Test Pilot newsletter.
 
 emailOptInDialogTitle = Dobrodošli v programu Test Pilot!
 emailOptInMessage = Bodite obveščeni o novih poskusih in o rezultatih poskusov, ki ste jih preskusili.
@@ -100,21 +84,18 @@ emailOptInConfirmationTitle = E-poštno sporočilo poslano
 emailOptInConfirmationClose = Naprej na poskuse ...
 emailOptInDialogErrorTitle = O, ne!
 
-
-// news feed updates.
-[[ updateList ]]
+## News feed updates.
 
 latestUpdatesTitle = Najnovejše posodobitve
 showMoreNewsTitle = Prikaži pretekle novice
+# "Link" is a noun in this context
+englishArticleLink = Povezava na angleški članek
 
-
-[[ featuredExperiment ]]
+## Featured experiment.
 
 moreDetail = Prikaži podrobnosti
 
-
-// A listing of all Test Pilot experiments.
-[[ experimentsList ]]
+## A listing of all Test Pilot experiments.
 
 experimentListEnabledTab = Omogočen
 experimentListJustLaunchedTab = Pravkar začet
@@ -125,20 +106,16 @@ experimentCondensedHeader = Dobrodošli v Test Pilotu!
 experimentListHeader = Izberite si poskuse zase!
 experimentListHeaderWithFeatured = Preizkusite vse naše poskuse
 
+## An individual experiment in the listing of all Test Pilot experiments.
 
-// An individual experiment in the listing of all Test Pilot experiments.
-[[ experimentCard ]]
-
-// Small button on experiment card that links to a survey for feedback submission
+# Small button on experiment card that links to a survey for feedback submission
 experimentCardFeedback = Povratne informacije
 experimentCardManage = Upravljaj
 experimentCardGetStarted = Začnite
-// also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog
 experimentCardLearnMore = Več o tem
 
-
-// A modal prompt shown when a user disables an experiment.
-[[ feedback ]]
+## A modal prompt shown when a user disables an experiment.
 
 feedbackSubmitButton = Izpolnite kratek vprašalnik
 feedbackUninstallTitle = Hvala!
@@ -147,23 +124,17 @@ feedbackUninstallCopy =
     pomeni! Preizkusite še druge eksperimente,
     ki so na voljo, pričakujte pa še veliko novih!
 
-
-// A modal prompt shown before the feedback survey for some experiments.
-[[ experimentPreFeedback ]]
+## A modal prompt shown before the feedback survey for some experiments.
 
 experimentPreFeedbackTitle = Povratne informacije za { $title }
 experimentPreFeedbackLinkCopy = Pošljite povratne informacije o poskusu { $title }
 
-
-// A splash shown on top of the experiment page when Test Pilot is not installed.
-[[ experimentPromo ]]
+## A splash shown on top of the experiment page when Test Pilot is not installed.
 
 experimentPromoHeader = Pripravljeni na vzlet?
 experimentPromoSubheader = Razvijamo funkcije za novo generacijo Firefoxa. Namestite dodatek Test Pilot, da jih preskusite!
 
-
-// The experiment detail page.
-[[ experimentPage ]]
+## The experiment detail page.
 
 isEnabledStatusMessage = { $title } je omogočen.
 installErrorMessage = Ojej. Poskusa { $title } ni mogoče omogočiti. Poskusite znova pozneje.
@@ -196,15 +167,11 @@ experimentGradReportReady = Pripravili smo celotno poročilo o zaključku.
 experimentGoToLink = Pojdi na { $title }
 startedDateLabel = Datum začetka poskusa: <b>{ $startedDate }</b>
 
-
-// news updates dialog.
-[[ newsUpdatesDialog ]]
+## News updates dialog.
 
 nonExperimentDialogHeaderLink = Test Pilot
 
-
-// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
-[[ experimentPlatform ]]
+## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
 experimentPlatformWebAddonMobile = Poskus za Firefox / splet / mobilno aplikacijo
 experimentPlatformWebAddon = Poskus za Firefox / splet
@@ -214,18 +181,14 @@ experimentPlatformWeb = Poskus za splet
 experimentPlatformAddon = Poskus za Firefox
 experimentPlatformMobileApp = Poskus za mobilno aplikacijo
 
-
-// Shown when an experiment requires a version of Firefox newer than the user's.
-[[ upgradeNotice ]]
+## Shown when an experiment requires a version of Firefox newer than the user's.
 
 upgradeNoticeTitle = { $title } zahteva Firefox { $min_release } ali novejši.
 upgradeNoticeLink = Kako posodobim Firefox.
 versionChangeNotice = { $experiment_title } ni podprt v vaši različici Firefoxa.
 versionChangeNoticeLink = Prenesite najnovejšo različico Firefoxa.
 
-
-// Shown while uninstalling Test Pilot.
-[[ uninstall ]]
+## Shown while uninstalling Test Pilot.
 
 retireDialogTitle = Želite odstraniti Test Pilot?
 retireMessageUpdate = Kot želite. S tem boste odstranili Test Pilot. Posamezne poskuse lahko odstranite v Firefoxovem upravitelju dodatkov.
@@ -237,51 +200,35 @@ retirePageHeadline = Hvala, ker ste leteli z nami!
 retirePageMessage = Upamo, da ste se zabavali pri eksperimentiranju z nami. <br> Kadarkoli ste dobrodošli nazaj.
 retirePageSurveyButton = Izpolnite kratek vprašalnik
 
-
-// Shown to users after installing Test Pilot if a restart is required.
-[[ restartIntro ]]
+## Shown to users after installing Test Pilot if a restart is required.
 
 restartIntroLead = Kontrolni seznam pred poletom
 restartIntroOne = Ponovno zaženi brskalnik
 restartIntroTwo = Poiščite dodatek Test Pilot
 restartIntroThree = Izberite si poskuse
 
+## Shown on pages of retired or retiring experiments.
 
-// Shown on a page presented to users three days after installing their first experiment.
-[[ share ]]
-
-sharePrimary = Vam je Test Pilot všeč? Pomagajte nam najti nove preizkuševalce.
-shareSecondary = ali samo kopirajte in prilepite to povezavo ...
-shareEmail = E-pošta
-shareCopy = Kopiraj
-// Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } se konča { $completedDate }
 eolNoticeLink = Več o tem
 eolDisableMessage = Poskus { $title } je končan. Ko ga odstranite, ga ne boste več mogli namestiti preko Test Pilota.
 completedDateLabel = Datum konca poskusa: <b>{ $completedDate }</b>
 
-
-// A warning shown to users looking at experiments incompatible with add-ons they already have installed.
-[[ incompatible ]]
+## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 
 incompatibleHeader = Ta poskus morda ni združljiv z dodatki, ki jih imate nameščene.
 incompatibleSubheader = Pred vključitvijo tega poskusa vam priporočamo, da <a>onemogočite naslednje dodatke</a>:
 
+## A form prompting the user to sign up for the Test Pilot Newsletter.
 
-// A form prompting the user to sign up for the Test Pilot Newsletter.
-[[ newsletterForm ]]
-
-newsletterFormEmailPlaceholder
+newsletterFormEmailPlaceholder =
     .placeholder = Sem vpišite svoj e-poštni naslov
 newsletterFormDisclaimer = Pošiljali vam bomo samo informacije o programu Test Pilot.
 newsletterFormPrivacyNotice = Strinjam se, da Mozilla obdela te podatke, kot je razloženo v <a>obvestilu o zasebnosti</a>.
-newsletterFormPrivacyAgreementRequired = Odkljukajte to izbiro, če želite nadaljevati.
 newsletterFormSubmitButton = Naroči se zdaj
 newsletterFormSubmitButtonSubmitting = Pošiljanje ...
 
-
-// A section of the footer containing a newsletter signup form.
-[[ newsletterFooter ]]
+## A section of the footer containing a newsletter signup form.
 
 newsletterFooterError = Pri naročanju vašega e-poštnega naslova je prišlo do napake. Želite poskusiti znova?
 newsletterFooterHeader = Ostanite v stiku
@@ -289,42 +236,32 @@ newsletterFooterBody = Bodite obveščeni o novih poskusih in o rezultatih posku
 newsletterFooterSuccessHeader = Hvala!
 newsletterFooterSuccessBody = Če še niste potrdili naročila na prejemanje Mozillinih e-novic, to še lahko storite. Preverite svoj e-poštni nabiralnik ali mapo z neželeno pošto, tam nekje bi moralo biti naše sporočilo.
 
-
-// A warning shown to users when the experiment is not available in their language
-[[ localeWarning ]]
+## A warning shown to users when the experiment is not available in their language
 
 localeNotTranslatedWarningTitle = Ta poskus ni bil preveden v vaš jezik ({ $locale_code }).
 localeWarningSubtitle = Če želite, ga lahko kljub temu omogočite.
 
-
-// An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
-[[ experimentsListNoneInstalled ]]
+## An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 
 experimentsListNoneInstalledHeader = Poletimo!
 experimentsListNoneInstalledSubheader = Ste pripravljeni za nov poskus Test Pilot? Izberite enega, naredite z njim nekaj lupingov in nam sporočite, kaj si mislite o njem.
 experimentsListNoneInstalledCTA = Vas ne zanima? <a>Povejte nam, zakaj</a>.
 
-
-// Shown to users who do not have JavaScript enabled.
-[[ noscript ]]
+## Shown to users who do not have JavaScript enabled.
 
 noScriptHeading = Ojoj ...
 noScriptMessage = Test Pilot zahteva JavaScript.<br>Opravičujemo se za nevšečnosti.
 noScriptLink = Spoznajte, zakaj
 
-
-// Text of a button to toggle visibility of a list of past experiments.
-[[ pastExperiments ]]
+## Text of a button to toggle visibility of a list of past experiments.
 
 viewPastExperiments = Ogled končanih poskusov
 hidePastExperiments = Skrij končane poskuse
 
-
-// Text of warnings to the user if various error conditions are detected
-[[ warnings ]]
+## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Nekaj ni v redu!
-warningGenericDetail = Pri Test Pilotu se je nekaj zalomilo. <a>Prijavite napako</a> in v poročilu omenite to stran napake.
+warningGoToFAQDetail = S Test Pilotom nekaj ni v redu. Preberite <a>pogosta vprašanja</a>, da izveste več.
 warningUpgradeFirefoxTitle = Nadgradite Firefox za nadaljevanje!
 warningUpgradeFirefoxDetail = Test Pilot zahteva najnovejšo različico Firefoxa. Za začetek <a>nadgradite Firefox</a>.
 warningHttpsRequiredTitle = HTTPS zahtevan!
@@ -333,5 +270,7 @@ warningMissingPrefTitle = Razvijate Test Pilot?
 warningMissingPrefDetail = Kadar Test Pilot poganjate lokalno ali v razvojnih okoljih, je zahtevana posebna konfiguracija. Za podrobnosti glejte <a>našo dokumentacijo</a>.
 warningBadHostnameTitle = Neodobreno ime gostitelja!
 warningBadHostnameDetail = Do strani Test Pilota je omogočen dostop samo s testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net ali example.com:8000. Za podrobnosti glejte <a>našo dokumentacijo</a>.
-// This string does not appear in app, but we will use it to localize our `no script` message
+
+## This string does not appear in app, but we will use it to localize our `no script` message
+
 jsDisabledWarning = Test Pilot zahteva JavaScript. Žal nam je.

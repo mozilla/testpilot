@@ -1,17 +1,13 @@
 siteName = Firefox Test Pilot
 
-
-// Page titles, put in the <title> HTML tag.
-[[ pageTitle ]]
+## Page titles, shown as title of HTML pages.
 
 pageTitleDefault = Firefox Test Pilot
 pageTitleLandingPage = Firefox Test Pilot
 pageTitleExperimentListPage = Firefox Test Pilot - 实验
 pageTitleExperiment = Firefox Test Pilot - { $title }
 
-
-// Links in the footer.
-[[ footerLink ]]
+## Links in the footer.
 
 footerLinkCookies = Cookie
 footerLinkPrivacy = 隐私
@@ -20,9 +16,7 @@ footerLinkLegal = 法律
 footerLinkFeedback = 提供反馈
 footerLinkAbout = 关于 Test Pilot
 
-
-// Items in the menu.
-[[ menu ]]
+## Items in the menu.
 
 home = 首页
 menuTitle = 设置
@@ -31,33 +25,28 @@ menuDiscuss = 讨论 Test Pilot
 menuFileIssue = 填报问题
 menuRetire = 卸载 Test Pilot
 headerLinkBlog = 博客
+headerLinkNews = 新闻收取点
 
-
-// The splash on the homepage.
-[[ landing ]]
+## The splash on the homepage.
 
 landingIntroOne = 测试新功能。
 landingIntroTwo = 提供您的反馈。
 landingIntroThree = 帮助打造 Firefox。
 landingLegalNotice = 继续则表示您同意 Test Pilot 的<a>使用条款</a>和<a>隐私声明</a>。
+landingMoreExperimentsButton = 更多实验
 
-
-// Related to the installation of the Test Pilot add-on.
-[[ landingInstall ]]
+## Related to the installation of the Test Pilot add-on.
 
 landingInstallButton = 安装 Test Pilot 扩展
 landingInstallingButton = 正在安装...
 
-
-// Related to a one click to install test pilot and an experiment.
-[[ oneClickInstall ]]
+## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = 安装 Test Pilot &amp;
+# $title is replaced by the name of an experiment
 oneClickInstallMajorCta = 启用 { $title }
 
-
-// Homepage messaging for users not on Firefox or with an old version of Firefox.
-[[ landingFirefox ]]
+## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
 landingRequiresDesktop = Test Pilot 需要在 Windows、Mac 或 Linux 上的 Firefox 桌面版中运行
 landingDownloadFirefoxDesc = （Test Pilot 可用于 Windows、Mac 或 Linux 上运行的 Firefox）
@@ -67,32 +56,27 @@ landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = 升级 Firefox
 landingDownloadFirefoxSubTitle = 免费下载
 
-
-// A section of the homepage explaining how Test Pilot works.
-[[ landingCard ]]
+## A section of the homepage explaining how Test Pilot works.
 
 landingCardListTitle = 准备好了吗？3，2，1
 landingCardOne = 获取 Test Pilot 扩展
 landingCardTwo = 启用实验功能
 landingCardThree = 告诉我们你的想法
 
-
-// Shown after the user installs the Test Pilot add-on.
-[[ onboarding ]]
+## Shown after the user installs the Test Pilot add-on.
 
 onboardingMessage = 我们会在您的工具栏放一个图标，以便您回到 Test Pilot。
 
-
-// Error message pages.
-[[ error ]]
+## Error message pages.
 
 errorHeading = 啊呀！
 errorMessage = 这里好像坏掉了。<br>可以待会再试试。
+# 404 is the HTTP standard response code for a page not found. This title is a
+# word play in English, being "Oh" both an exclamation and the pronunciation of
+# the number 0.
 notFoundHeader = 到了什么都没有的太空！
 
-
-// A modal prompt to sign up for the Test Pilot newsletter.
-[[ emailOptIn ]]
+## A modal prompt to sign up for the Test Pilot newsletter.
 
 emailOptInDialogTitle = 欢迎来到 Test Pilot！
 emailOptInMessage = 看看有什么新实验，查查参加过的实验结果如何。
@@ -100,21 +84,18 @@ emailOptInConfirmationTitle = 电子邮件已发送
 emailOptInConfirmationClose = 关于此实验...
 emailOptInDialogErrorTitle = 很遗憾
 
-
-// news feed updates.
-[[ updateList ]]
+## News feed updates.
 
 latestUpdatesTitle = 最新更新
 showMoreNewsTitle = 显示过去的新闻
+# "Link" is a noun in this context
+englishArticleLink = 链接到英文文章
 
-
-[[ featuredExperiment ]]
+## Featured experiment.
 
 moreDetail = 查看细节
 
-
-// A listing of all Test Pilot experiments.
-[[ experimentsList ]]
+## A listing of all Test Pilot experiments.
 
 experimentListEnabledTab = 已启用
 experimentListJustLaunchedTab = 刚刚启动
@@ -125,42 +106,32 @@ experimentCondensedHeader = 欢迎使用 Test Pilot！
 experimentListHeader = 挑选您的实验！
 experimentListHeaderWithFeatured = 试试我们的各种实验
 
+## An individual experiment in the listing of all Test Pilot experiments.
 
-// An individual experiment in the listing of all Test Pilot experiments.
-[[ experimentCard ]]
-
-// Small button on experiment card that links to a survey for feedback submission
+# Small button on experiment card that links to a survey for feedback submission
 experimentCardFeedback = 反馈
 experimentCardManage = 管理
 experimentCardGetStarted = 了解详情
-// also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog
 experimentCardLearnMore = 详细了解
 
-
-// A modal prompt shown when a user disables an experiment.
-[[ feedback ]]
+## A modal prompt shown when a user disables an experiment.
 
 feedbackSubmitButton = 来份快速调查
 feedbackUninstallTitle = 谢谢您！
 feedbackUninstallCopy = 您参与的 Firefox Test Pilot 有着无限可能。希望您也查看我们的其他实验，并期待着无限的未来！
 
-
-// A modal prompt shown before the feedback survey for some experiments.
-[[ experimentPreFeedback ]]
+## A modal prompt shown before the feedback survey for some experiments.
 
 experimentPreFeedbackTitle = { $title } 反馈
 experimentPreFeedbackLinkCopy = 提供关于 { $title } 实验的反馈
 
-
-// A splash shown on top of the experiment page when Test Pilot is not installed.
-[[ experimentPromo ]]
+## A splash shown on top of the experiment page when Test Pilot is not installed.
 
 experimentPromoHeader = 准备好起飞了吗？
 experimentPromoSubheader = 我们正在为下一代的 Firefox 打造新功能。安装 Test Pilot 尝试它们吧！
 
-
-// The experiment detail page.
-[[ experimentPage ]]
+## The experiment detail page.
 
 isEnabledStatusMessage = { $title } 已启用。
 installErrorMessage = 啊。{ $title } 未能启用。请稍候重试。
@@ -193,15 +164,11 @@ experimentGradReportReady = 我们准备了一份完整的毕业报告。
 experimentGoToLink = 前往 { $title }
 startedDateLabel = 实验开始时间：<b>{ $startedDate }</b>
 
-
-// news updates dialog.
-[[ newsUpdatesDialog ]]
+## News updates dialog.
 
 nonExperimentDialogHeaderLink = Test Pilot
 
-
-// Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
-[[ experimentPlatform ]]
+## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
 experimentPlatformWebAddonMobile = Firefox / 网页端 / 移动端的实验
 experimentPlatformWebAddon = Firefox / 网页端的实验
@@ -211,18 +178,14 @@ experimentPlatformWeb = 网页端的实验
 experimentPlatformAddon = Firefox 的实验
 experimentPlatformMobileApp = 移动端的实验
 
-
-// Shown when an experiment requires a version of Firefox newer than the user's.
-[[ upgradeNotice ]]
+## Shown when an experiment requires a version of Firefox newer than the user's.
 
 upgradeNoticeTitle = { $title } 需要 Firefox { $min_release } 或更高版本。
 upgradeNoticeLink = 如何更新 Firefox。
 versionChangeNotice = { $experiment_title } 在此版本 Firefox 中不受支持。
 versionChangeNoticeLink = 获取最新 Firefox 版本。
 
-
-// Shown while uninstalling Test Pilot.
-[[ uninstall ]]
+## Shown while uninstalling Test Pilot.
 
 retireDialogTitle = 卸载 Test Pilot？
 retireMessageUpdate = 如您所愿。这将卸载 Test Pilot。您可以在 Firefox 的附加组件管理器中禁用各个实验。
@@ -234,51 +197,35 @@ retirePageHeadline = 感谢您的体验！
 retirePageMessage = 希望您喜欢我们的实验。<br>随时回来看看。
 retirePageSurveyButton = 参与快速调查
 
-
-// Shown to users after installing Test Pilot if a restart is required.
-[[ restartIntro ]]
+## Shown to users after installing Test Pilot if a restart is required.
 
 restartIntroLead = 起飞前检查单
 restartIntroOne = 重启您的浏览器
 restartIntroTwo = 找到 Test Pilot 扩展
 restartIntroThree = 选择您的实验
 
+## Shown on pages of retired or retiring experiments.
 
-// Shown on a page presented to users three days after installing their first experiment.
-[[ share ]]
-
-sharePrimary = 喜欢 Test Pilot？再帮我们找点新人吧！
-shareSecondary = 或者只需复制和粘贴此链接...
-shareEmail = 电子邮件地址
-shareCopy = 复制
-// Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } 将于 { $completedDate } 结束
 eolNoticeLink = 详细了解
 eolDisableMessage = { $title } 实验已结束。一旦您卸载它，您就不能再通过 Test Pilot 安装它了。
 completedDateLabel = 实验结束时间：{ $completedDate }
 
-
-// A warning shown to users looking at experiments incompatible with add-ons they already have installed.
-[[ incompatible ]]
+## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 
 incompatibleHeader = 此实验与您已经安装的附加组件可能不兼容。
 incompatibleSubheader = 在激活此实验前，我们推荐<a>禁用这些附加组件</a>：
 
+## A form prompting the user to sign up for the Test Pilot Newsletter.
 
-// A form prompting the user to sign up for the Test Pilot Newsletter.
-[[ newsletterForm ]]
-
-newsletterFormEmailPlaceholder
+newsletterFormEmailPlaceholder =
     .placeholder = 在这里填入您的电子邮件地址
 newsletterFormDisclaimer = 我们只会给您发送 Test Pilot 相关的信息。
 newsletterFormPrivacyNotice = 我允许 Mozilla 按照<a>隐私声明</a>处理我的信息。
-newsletterFormPrivacyAgreementRequired = 如果要继续，请选中此框。
 newsletterFormSubmitButton = 立即注册
 newsletterFormSubmitButtonSubmitting = 正在提交...
 
-
-// A section of the footer containing a newsletter signup form.
-[[ newsletterFooter ]]
+## A section of the footer containing a newsletter signup form.
 
 newsletterFooterError = 提交您的电子邮件地址时出错了。重试？
 newsletterFooterHeader = 保持联系
@@ -286,42 +233,32 @@ newsletterFooterBody = 看看有什么新实验，查查参加过的实验结果
 newsletterFooterSuccessHeader = 谢谢！
 newsletterFooterSuccessBody = 如果您以前没有确认过订阅 Mozilla 相关的新闻邮件，您可能需要完成它。请检查您的收件箱或垃圾邮件箱，找到我们发给您的电子邮件。
 
-
-// A warning shown to users when the experiment is not available in their language
-[[ localeWarning ]]
+## A warning shown to users when the experiment is not available in their language
 
 localeNotTranslatedWarningTitle = 此实验未翻译为您的语言 ({ $locale_code })。
 localeWarningSubtitle = 如果您不介意，无妨启用它。
 
-
-// An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
-[[ experimentsListNoneInstalled ]]
+## An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 
 experimentsListNoneInstalledHeader = 让我们飞上蓝天吧！
 experimentsListNoneInstalledSubheader = 准备好参与新的 Test Pilot 实验了吗？选择一项启用它，之后让我们了解您的看法。
 experimentsListNoneInstalledCTA = 不感兴趣？也请<a>跟我们聊聊看法</a>。
 
-
-// Shown to users who do not have JavaScript enabled.
-[[ noscript ]]
+## Shown to users who do not have JavaScript enabled.
 
 noScriptHeading = 哦不...
 noScriptMessage = Test Pilot 需要 JavaScript。<br>就是这样。
 noScriptLink = 找出原因
 
-
-// Text of a button to toggle visibility of a list of past experiments.
-[[ pastExperiments ]]
+## Text of a button to toggle visibility of a list of past experiments.
 
 viewPastExperiments = 查看以前的实验
 hidePastExperiments = 隐藏以前的实验
 
-
-// Text of warnings to the user if various error conditions are detected
-[[ warnings ]]
+## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = 某处出错了！
-warningGenericDetail = Test Pilot 的某处出现问题。请<a>填报 bug</a> 并提及此错误消息。
+warningGoToFAQDetail = Test Pilot 出现问题。请<a>查看常见问题解答</a>以了解更多信息。
 warningUpgradeFirefoxTitle = 升级 Firefox 以继续！
 warningUpgradeFirefoxDetail = Test Pilot 需要最新版 Firefox。<a>升级 Firefox</a> 以前进。
 warningHttpsRequiredTitle = 需要 HTTPS！
@@ -330,5 +267,7 @@ warningMissingPrefTitle = 开发 Test Pilot？
 warningMissingPrefDetail = 在本地或在开发环境中运行 Test Pilot 必需进行特殊配置。有关详细信息，请查阅<a>我们的文档</a>。
 warningBadHostnameTitle = 未被批准的主机名！
 warningBadHostnameDetail = Test Pilot 网站只能从 testpilot.firefox.com、testpilot.stage.mozaws.net、testpilot.dev.mozaws.net 或 example.com:8000 访问。有关详细信息，请查阅<a>我们的文档</a>。
-// This string does not appear in app, but we will use it to localize our `no script` message
+
+## This string does not appear in app, but we will use it to localize our `no script` message
+
 jsDisabledWarning = 很抱歉，Test Pilot 需要 JavaScript 来运行。
