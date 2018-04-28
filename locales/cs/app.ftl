@@ -25,6 +25,7 @@ menuDiscuss = Diskutovat o Test Pilot
 menuFileIssue = Nahlásit chybu
 menuRetire = Odinstalovat Test Pilot
 headerLinkBlog = Blog
+headerLinkNews = Novinky
 
 ## The splash on the homepage.
 
@@ -87,6 +88,8 @@ emailOptInDialogErrorTitle = Ale ne!
 
 latestUpdatesTitle = Poslední aktualizace
 showMoreNewsTitle = Ukázat starší zprávy
+# "Link" is a noun in this context
+englishArticleLink = Odkaz na anglický článek
 
 ## Featured experiment.
 
@@ -258,7 +261,7 @@ hidePastExperiments = Skrýt ukončené experimenty
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Něco je špatně!
-warningGenericDetail = V Test Pilotu se něco pokazilo. <a>Při hlášení chyby</a> prosím uveďte tuto chybovou zprávu.
+warningGoToFAQDetail = Něco se pokazilo. Podívejte se na <a>nejčastěji kladené otázky</a>.
 warningUpgradeFirefoxTitle = Pro pokračování aktualizujte Firefox.
 warningUpgradeFirefoxDetail = Test Pilot potřebuje nejnovější verzi Firefoxu. Pro začátek prosím <a>aktualizujte Firefox</a>.
 warningHttpsRequiredTitle = Vyžadováno HTTPS!
