@@ -56,13 +56,13 @@ export default class MainInstallButton extends React.Component {
     if (installCallback) {
       installCallback(e);
     } else {
+      this.setState({ isInstalling: true });
       const install = experiment ?
         enableExperiment(experiment, eventCategory, eventLabel) :
         installAddon(sendToGA, eventCategory, eventLabel);
 
-      install.catch(err => {
-        this.setState({ isInstalling: false });
-      });
+      const after = () => this.setState({ isInstalling: false });
+      install.then(after, after);
     }
   }
 
