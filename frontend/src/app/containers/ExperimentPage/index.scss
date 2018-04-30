@@ -100,8 +100,9 @@
 
   .button {
     border-radius: 3px;
-    height: 48px;
+    height: 100%;
     margin-top: 8px;
+    padding: 4px;
     width: 100%;
   }
 
@@ -109,9 +110,26 @@
     margin-top: 0;
   }
 
+  .one-click-minor {
+    font-weight: 300;
+    line-height: 24px;
+  }
+
+  .one-click-major {
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 30px;
+  }
+
   span {
     text-wrap: nowrap;
   }
+}
+
+#one-click-button {
+  border: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .privacy-link {
@@ -125,6 +143,17 @@
   font-size: 15px;
   padding: 10px;
   text-align: center;
+
+  .legal-section {
+    font-size: $font-unit;
+    font-weight: 300;
+    line-height: $line-unit;
+    margin: 0;
+
+    a {
+      cursor: pointer;
+    }
+  }
 }
 
 .details-header {

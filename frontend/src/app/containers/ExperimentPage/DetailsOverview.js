@@ -19,6 +19,7 @@ export default function DetailsOverview({
   userAgent,
   hasAddon,
   progressButtonWidth,
+  showControls,
   isDisabling,
   isEnabling,
   enabled,
@@ -46,7 +47,7 @@ export default function DetailsOverview({
           <img className="experiment-icon" src={thumbnail} />
         </div>
         <div>
-          <ExperimentControls
+          {showControls && <ExperimentControls
             {...{
               sendToGA,
               hasAddon,
@@ -65,7 +66,7 @@ export default function DetailsOverview({
               uninstallExperimentWithSurvey,
               surveyURL
             }}
-          />
+          />}
         </div>
       </div>
       <div className="details-sections">

@@ -1,6 +1,8 @@
 import React from "react";
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
+import LocalizedHtml from "../../components/LocalizedHtml";
+import { experimentL10nId } from "../../lib/utils";
 
 import type {
   ExperimentControlsType,
@@ -124,7 +126,7 @@ export default function ExperimentControls({
       );
     }
   } else if (validVersion) {
-    const button = hasAddon && <EnableButton
+    const button = <EnableButton
       {...{
         hasAddon,
         experiment,
@@ -137,16 +139,27 @@ export default function ExperimentControls({
     }
   }
 
+  let legalSection = <div className="privacy-link">
+    <Localized id="highlightPrivacy">
+      <a onClick={highlightPrivacy} className="highlight-privacy">
+      Your privacy
+      </a>
+    </Localized>
+  </div>;
+
+  if (!hasAddon) {
+    legalSection = <div className="privacy-link"><LocalizedHtml id={experimentL10nId(experiment, "legal-notice")}
+      $title={title}>
+      <p className="legal-section">
+        By proceeding, you agree to the <a href="/terms"></a> and <a href="/privacy"></a> policies of Test Pilot and the <a onClick={highlightPrivacy}></a>.
+      </p>
+    </LocalizedHtml></div>;
+  }
+
   return (
     <div className="details-controls">
       { controls }
-      <div className="privacy-link">
-        <Localized id="highlightPrivacy">
-          <a onClick={highlightPrivacy} className="highlight-privacy">
-          Your privacy
-          </a>
-        </Localized>
-      </div>
+      { legalSection }
     </div>
   );
 }
@@ -212,7 +225,23 @@ export const EnableButton = ({
   }
 
   if (!hasAddon) {
-    return null; // TODO "install testpilot & enable X"
+    return (
+      <button
+        id="one-click-button"
+        onClick={installExperiment}
+        className={classnames(["button", "primary"], {
+          "state-change": isEnabling
+        })}
+      >
+        <div className="state-change-inner" />
+        <LocalizedHtml id="oneClickInstallMinorCta">
+          <span className="one-click-minor">Install Test Pilot &amp;</span>
+        </LocalizedHtml>
+        <Localized id="oneClickInstallMajorCta" $title={title}>
+          <span className="one-click-major">Enable {title}</span>
+        </Localized>
+      </button>
+    );
   }
 
   return (

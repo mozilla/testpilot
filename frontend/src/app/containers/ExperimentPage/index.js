@@ -144,6 +144,8 @@ export class ExperimentDetail extends React.Component {
       installed,
       isAfterCompletedDate,
       isDev,
+      isFirefox,
+      isMinFirefox,
       hasAddon,
       clientUUID,
       installedAddons,
@@ -254,13 +256,13 @@ export class ExperimentDetail extends React.Component {
           />}
 
         <View {...this.props}>
-          <TestpilotPromo
+          {(!isFirefox || !isMinFirefox) && <TestpilotPromo
             {...{
               ...this.props,
               graduated,
               experiment
             }}
-          />
+          />}
           <div className="default-background">
             <DetailsHeader
               {...{
@@ -297,6 +299,7 @@ export class ExperimentDetail extends React.Component {
               >
                 <DetailsOverview
                   {...{
+                    showControls: isFirefox && isMinFirefox,
                     sendToGA,
                     userAgent,
                     hasAddon,
