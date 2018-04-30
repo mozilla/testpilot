@@ -31,6 +31,8 @@ headerLinkNews = Nyhedsstrøm
 
 landingIntroOne = Test nye funktioner.
 landingIntroTwo = Giv feedback.
+landingIntroThree = Hjælp med at udvikle Firefox.
+landingLegalNotice = Hvis du fortsætter, accepterer du automatisk Testpilots <a>Betingelser for brug</a> og <a>Privatlivspolitik</a>.
 landingMoreExperimentsButton = Flere eksperimenter
 
 ## Related to the installation of the Test Pilot add-on.
@@ -259,6 +261,7 @@ hidePastExperiments = Skjul tidligere eksperimenter
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Der er noget galt!
+warningGoToFAQDetail = Noget er gået galt for Testpilot. <a>Tjek FAQs</a> og få flere oplysninger.
 warningUpgradeFirefoxTitle = Opgrader Firefox for at fortsætte.
 warningUpgradeFirefoxDetail = Testpilot kræver den nyeste version af Firefox. <a>Opgrader Firefox</a> for at komme i gang.
 warningHttpsRequiredTitle = HTTPS kræves!
