@@ -66,9 +66,9 @@ export default class FeaturedButton extends React.Component {
     return (<LocalizedHtml id={this.l10nId("legal-notice")}
       $title={title}>
       <p className="main-install__legal">
-            By proceeding, you agree to the <a href="/terms" onClick={(ev) => this.sendMetric(ev, {eventLabel: "Open general terms"})}>terms</a>
-            and <a href="/privacy" onClick={(ev) => this.sendMetric(ev, {eventLabel: "Open general privacy"})}>privacy</a> policies of Test Pilot and the
-        <a href="#" onClick={launchLegalModal}>{title} privacy policy</a>.
+            By proceeding, you agree to the <a href="/terms" onClick={(ev) => this.sendMetric(ev, {eventLabel: "Open general terms"})}></a>
+            and <a href="/privacy" onClick={(ev) => this.sendMetric(ev, {eventLabel: "Open general privacy"})}></a> policies of Test Pilot and the
+        <a href="#" onClick={launchLegalModal}></a>.
       </p>
     </LocalizedHtml>);
   }
