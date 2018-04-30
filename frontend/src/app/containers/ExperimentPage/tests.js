@@ -206,7 +206,9 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
     beforeEach(() => {
       setExperiment(mockExperiment);
       subject.setProps({
-        isExperimentEnabled: () => false
+        isExperimentEnabled: () => false,
+        isFirefox: true,
+        isMinFirefox: true
       });
     });
 
