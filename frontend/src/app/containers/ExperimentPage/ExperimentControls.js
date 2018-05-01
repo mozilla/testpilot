@@ -139,27 +139,15 @@ export default function ExperimentControls({
     }
   }
 
-  let legalSection = <div className="privacy-link">
-    <Localized id="highlightPrivacy">
-      <a onClick={highlightPrivacy} className="highlight-privacy">
-      Your privacy
-      </a>
-    </Localized>
-  </div>;
-
-  if (!hasAddon) {
-    legalSection = <div className="privacy-link"><LocalizedHtml id={experimentL10nId(experiment, "legal-notice")}
-      $title={title}>
-      <p className="legal-section">
-        By proceeding, you agree to the <a href="/terms"></a> and <a href="/privacy"></a> policies of Test Pilot and the <a onClick={highlightPrivacy}></a>.
-      </p>
-    </LocalizedHtml></div>;
-  }
-
   return (
     <div className="details-controls">
       { controls }
-      { legalSection }
+      { !hasAddon && <LocalizedHtml id={experimentL10nId(experiment, "legal-notice")}
+        $title={title}>
+        <p className="legal-section">
+          By proceeding, you agree to the <a href="/terms"></a> and <a href="/privacy"></a> policies of Test Pilot and the <a onClick={highlightPrivacy}></a>.
+        </p>
+      </LocalizedHtml>}
     </div>
   );
 }

@@ -35,17 +35,12 @@ export default function DetailsOverview({
   doShowTourDialog,
   surveyURL
 }: DetailsOverviewType) {
-  const { slug, thumbnail, measurements } = experiment;
+  const { measurements } = experiment;
   const l10nId = (pieces: string) => experimentL10nId(experiment, pieces);
 
   return (
     <div className="details-overview">
       <div>
-        <div
-          className={`experiment-icon-wrapper-${slug} experiment-icon-wrapper`}
-        >
-          <img className="experiment-icon" src={thumbnail} />
-        </div>
         <div>
           {showControls && <ExperimentControls
             {...{
@@ -73,7 +68,7 @@ export default function DetailsOverview({
         <section className="user-count">
           <LaunchStatus {...{ experiment, graduated }} />
         </section>
-        {!graduated && <StatsSection {...{ experiment, doShowTourDialog, sendToGA }} />}
+        {!graduated && <StatsSection {...{ experiment, doShowTourDialog, sendToGA, flashMeasurementPanel }} />}
         <ContributorsSection {...{ experiment, l10nId }} />
         {!graduated &&
           measurements &&
@@ -119,10 +114,27 @@ export const StatsSection = ({
     bug_report_url,
     discourse_url
   },
-  sendToGA
-}: StatsSectionType) =>
-  <section className="stats-section">
+  sendToGA,
+  flashMeasurementPanel
+}: StatsSectionType) => {
+  const highlightPrivacy = () => {
+    document.querySelectorAll(".measurements").forEach(
+      el => {
+        if (el.offsetTop) {
+          window.scrollTo(0, el.offsetTop);
+        }
+      });
+    flashMeasurementPanel();
+  };
+  return <section className="stats-section">
     <ul>
+      <li>
+        <Localized id="highlightPrivacy">
+          <a onClick={highlightPrivacy} className="highlight-privacy">
+          Your privacy
+          </a>
+        </Localized>
+      </li>
       {!web_url &&
           <li>
             <Localized id="tourLink">
@@ -163,6 +175,7 @@ export const StatsSection = ({
       </li>
     </ul>
   </section>;
+};
 
 export const ContributorsSection = ({
   experiment: { contributors, contributors_extra, contributors_extra_url },

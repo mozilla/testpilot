@@ -58,11 +58,6 @@ export default class DetailsHeader extends React.Component {
           "has-status": hasStatus
         })}
       >
-        <div
-          className={`experiment-icon-wrapper-${slug} experiment-icon-wrapper`}
-        >
-          <img className="experiment-icon" src={thumbnail} />
-        </div>
         <div className={classnames("status-bar", statusType)}>
           {statusType === "enabled" &&
               <Localized id="isEnabledStatusMessage" $title={title}>
@@ -81,6 +76,9 @@ export default class DetailsHeader extends React.Component {
           helperClass="details-header"
           flexModifier="row-between-breaking"
         >
+          <div className={`experiment-icon-wrapper-${slug} experiment-icon-wrapper`}>
+            <img className="experiment-icon" src={thumbnail} />
+          </div>
           <header>
             <h1>
               {title}
@@ -92,6 +90,7 @@ export default class DetailsHeader extends React.Component {
                   </h4>
                 </Localized>}
           </header>
+          <div className="spacer"></div>
           {experiment.platforms &&
                   <ExperimentPlatforms experiment={experiment} />}
           <MinimumVersionNotice
