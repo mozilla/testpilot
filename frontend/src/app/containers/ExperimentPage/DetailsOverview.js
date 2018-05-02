@@ -15,11 +15,11 @@ import type {
 } from "./types";
 
 export default function DetailsOverview({
+  isMinFirefox,
   sendToGA,
   userAgent,
   hasAddon,
   progressButtonWidth,
-  showControls,
   isDisabling,
   isEnabling,
   enabled,
@@ -42,8 +42,9 @@ export default function DetailsOverview({
     <div className="details-overview">
       <div>
         <div>
-          {showControls && <ExperimentControls
+          <ExperimentControls
             {...{
+              isMinFirefox,
               sendToGA,
               hasAddon,
               userAgent,
@@ -61,14 +62,14 @@ export default function DetailsOverview({
               uninstallExperimentWithSurvey,
               surveyURL
             }}
-          />}
+          />
         </div>
       </div>
       <div className="details-sections">
         <section className="user-count">
           <LaunchStatus {...{ experiment, graduated }} />
         </section>
-        {!graduated && <StatsSection {...{ experiment, doShowTourDialog, sendToGA, flashMeasurementPanel }} />}
+        {!graduated && <StatsSection {...{ experiment, doShowTourDialog, sendToGA }} />}
         <ContributorsSection {...{ experiment, l10nId }} />
         {!graduated &&
           measurements &&
@@ -114,27 +115,10 @@ export const StatsSection = ({
     bug_report_url,
     discourse_url
   },
-  sendToGA,
-  flashMeasurementPanel
+  sendToGA
 }: StatsSectionType) => {
-  const highlightPrivacy = () => {
-    document.querySelectorAll(".measurements").forEach(
-      el => {
-        if (el.offsetTop) {
-          window.scrollTo(0, el.offsetTop);
-        }
-      });
-    flashMeasurementPanel();
-  };
   return <section className="stats-section">
     <ul>
-      <li>
-        <Localized id="highlightPrivacy">
-          <a onClick={highlightPrivacy} className="highlight-privacy">
-          Your privacy
-          </a>
-        </Localized>
-      </li>
       {!web_url &&
           <li>
             <Localized id="tourLink">

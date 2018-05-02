@@ -299,7 +299,7 @@ export class ExperimentDetail extends React.Component {
               >
                 <DetailsOverview
                   {...{
-                    showControls: isFirefox && isMinFirefox,
+                    isMinFirefox,
                     sendToGA,
                     userAgent,
                     hasAddon,

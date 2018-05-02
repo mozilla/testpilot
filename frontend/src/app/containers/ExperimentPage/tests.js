@@ -23,7 +23,8 @@ import { StatsSection } from "./DetailsOverview";
 describe("app/containers/ExperimentPage", () => {
   const mockExperiment = {
     slug: "testing",
-    foo: "bar"
+    foo: "bar",
+    platforms: []
   };
   const mockProps = {
     slug: mockExperiment.slug,
@@ -64,6 +65,7 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
       privacy_notice_url: "https://example.com/privacy",
       changelog_url: "https://example.com/changelog",
       survey_url: "https://example.com/survey",
+      platforms: ["addon"],
       contributors: [
         {
           display_name: "Jorge Soler",
@@ -247,12 +249,6 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
 
       expect(subject.state("isEnabling")).to.be.false;
       expect(subject.state("isDisabling")).to.be.false;
-    });
-
-    it("should include an ExperimentPlatforms component if `platforms` is set", () => {
-      expect(subject.find("ExperimentPlatforms")).to.have.property("length", 0);
-      subject.setProps({ experiment: { ...mockExperiment, platforms: ["addon", "web"] } });
-      expect(subject.find("ExperimentPlatforms")).to.have.property("length", 1);
     });
 
     it("should render video iframe if video available", () => {

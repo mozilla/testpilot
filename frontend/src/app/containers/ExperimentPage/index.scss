@@ -124,19 +124,21 @@
   flex-direction: column;
 }
 
-
-.legal-section {
+.privacy-link {
   font-size: $font-unit;
-  font-weight: 300;
-  line-height: 15px;
-  margin: 0;
   padding: 10px;
   text-align: center;
 
-  a {
-    color: $black;
-    cursor: pointer;
-    text-decoration: underline;
+  .legal-section {
+    font-weight: 300;
+    line-height: 15px;
+    margin: 0;
+
+    a {
+      color: $black;
+      cursor: pointer;
+      text-decoration: underline;
+    }
   }
 }
 
@@ -295,7 +297,7 @@
     margin-bottom: $grid-unit;
 
     h3 {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: $weight-light;
       letter-spacing: 0;
       line-height: 28px;
@@ -305,7 +307,7 @@
 }
 
 .user-count {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: $weight-light;
 }
 

@@ -11,6 +11,7 @@ import type {
 } from "./types";
 
 export default function ExperimentControls({
+  isMinFirefox,
   hasAddon,
   userAgent,
   experiment,
@@ -31,6 +32,7 @@ export default function ExperimentControls({
     title,
     min_release,
     max_release,
+    platforms,
     pre_feedback_copy,
     slug
   } = experiment;
@@ -66,10 +68,13 @@ export default function ExperimentControls({
     flashMeasurementPanel();
   };
 
-  let controls = <div></div>;
+  let controls = null;
+  let legalSection = null;
+  let showLegal = true;
 
-  if (enabled) {
-    if (graduated) {
+  if (graduated) {
+    showLegal = false;
+    if (enabled) {
       controls = (
         <div className="experiment-controls">
           <button
@@ -91,63 +96,78 @@ export default function ExperimentControls({
           </button>
         </div>
       );
-    } else {
-      controls = (
-        <div className="experiment-controls">
-          <button
-            onClick={uninstallExperimentWithSurvey}
-            id="uninstall-button"
-            className={classnames(["button", "secondary"], {
-              "state-change": isDisabling
-            })}
-          >
-            <span className="state-change-inner" />
-            <Localized id="disableExperimentTransition">
-              <span className="transition-text">Disabling...</span>
-            </Localized>
-            <Localized id="disableExperiment" $title={title}>
-              <span className="default-text">
-                Disable {title}
-              </span>
-            </Localized>
-          </button>
-          <a
-            id="feedback-button"
-            onClick={handleFeedback}
-            className="button default"
-            href={surveyURL}
-            target="_blank"
-            rel="noopener noreferrer">
-            <Localized id="giveFeedback">
-              <span className="default-text">Give Feedback</span>
-            </Localized>
-          </a>
-        </div>
-      );
     }
+  } else if (enabled) {
+    controls = (
+      <div className="experiment-controls">
+        <button
+          onClick={uninstallExperimentWithSurvey}
+          id="uninstall-button"
+          className={classnames(["button", "secondary"], {
+            "state-change": isDisabling
+          })}
+        >
+          <span className="state-change-inner" />
+          <Localized id="disableExperimentTransition">
+            <span className="transition-text">Disabling...</span>
+          </Localized>
+          <Localized id="disableExperiment" $title={title}>
+            <span className="default-text">
+              Disable {title}
+            </span>
+          </Localized>
+        </button>
+        <a
+          id="feedback-button"
+          onClick={handleFeedback}
+          className="button default"
+          href={surveyURL}
+          target="_blank"
+          rel="noopener noreferrer">
+          <Localized id="giveFeedback">
+            <span className="default-text">Give Feedback</span>
+          </Localized>
+        </a>
+      </div>
+    );
   } else if (validVersion) {
-    const button = <EnableButton
-      {...{
-        hasAddon,
-        experiment,
-        installExperiment,
-        isEnabling,
-        sendToGA
-      }}/>;
-    if (button) {
-      controls = <div className="experiment-controls">{button}</div>;
+    const buttons = platforms.map(platform => createButton({
+      platform,
+      isMinFirefox,
+      hasAddon,
+      experiment,
+      installExperiment,
+      isEnabling,
+      sendToGA
+    })).filter(b => b);
+    if (buttons.length === 0) {
+      showLegal = false;
     }
+    controls = <div className="experiment-controls">{buttons}</div>;
+  }
+
+  legalSection = <div className="privacy-link">
+    <Localized id="highlightPrivacy">
+      <a onClick={highlightPrivacy} className="highlight-privacy">
+      Your privacy
+      </a>
+    </Localized>
+  </div>;
+
+  if (isMinFirefox && !hasAddon && !enabled && platforms && platforms.includes("addon")) {
+    legalSection = <div className="privacy-link">
+      <LocalizedHtml id={experimentL10nId(experiment, "legal-notice")} $title={title}>
+        <p className="legal-section">
+          By proceeding, you agree to the <a href="/terms"></a> and <a href="/privacy"></a> policies of Test Pilot and the <a onClick={highlightPrivacy}></a>.
+        </p>
+      </LocalizedHtml>
+    </div>;
   }
 
   return (
     <div className="details-controls">
       { controls }
-      { !hasAddon && <LocalizedHtml id={experimentL10nId(experiment, "legal-notice")}
-        $title={title}>
-        <p className="legal-section">
-          By proceeding, you agree to the <a href="/terms"></a> and <a href="/privacy"></a> policies of Test Pilot and the <a onClick={highlightPrivacy}></a>.
-        </p>
-      </LocalizedHtml>}
+      { showLegal && legalSection }
     </div>
   );
 }
@@ -199,56 +219,64 @@ export const WebExperimentControls = ({
   );
 };
 
-export const EnableButton = ({
+function createButton({
+  platform,
+  isMinFirefox,
   hasAddon,
   experiment,
   installExperiment,
   isEnabling,
   sendToGA
-}: EnableButtonType) => {
-  const { platforms, slug, title, web_url } = experiment;
-  const useWebLink = (platforms || []).indexOf("web") !== -1;
-  if (useWebLink) {
-    return <WebExperimentControls {...{ web_url, title, slug, sendToGA }} />;
-  }
+}: EnableButtonType) {
+  const { slug, title, web_url } = experiment;
+  if (platform === "web") {
+    return <WebExperimentControls {...{ key: web_url, web_url, title, slug, sendToGA }} />;
+  } else if (platform === "addon") {
+    if (!isMinFirefox) {
+      return null;
+    }
 
-  if (!hasAddon) {
+    if (!hasAddon) {
+      return (
+        <button
+          key="one-click-button"
+          id="one-click-button"
+          onClick={installExperiment}
+          className={classnames(["button", "primary"], {
+            "state-change": isEnabling
+          })}
+        >
+          <div className="state-change-inner" />
+          <LocalizedHtml id="oneClickInstallMinorCta">
+            <span className="one-click-minor">Install Test Pilot &amp;</span>
+          </LocalizedHtml>
+          <Localized id="oneClickInstallMajorCta" $title={title}>
+            <span className="one-click-major">Enable {title}</span>
+          </Localized>
+        </button>
+      );
+    }
+
     return (
       <button
-        id="one-click-button"
+        key="install-button"
         onClick={installExperiment}
-        className={classnames(["button", "primary"], {
+        id="install-button"
+        className={classnames(["button", "default"], {
           "state-change": isEnabling
         })}
       >
-        <div className="state-change-inner" />
-        <LocalizedHtml id="oneClickInstallMinorCta">
-          <span className="one-click-minor">Install Test Pilot &amp;</span>
-        </LocalizedHtml>
-        <Localized id="oneClickInstallMajorCta" $title={title}>
-          <span className="one-click-major">Enable {title}</span>
+        <span className="state-change-inner" />
+        <Localized id="enableExperimentTransition">
+          <span className="transition-text">Enabling...</span>
+        </Localized>
+        <Localized id="enableExperiment" $title={title}>
+          <span className="default-text">
+            Enable {title}
+          </span>
         </Localized>
       </button>
     );
   }
-
-  return (
-    <button
-      onClick={installExperiment}
-      id="install-button"
-      className={classnames(["button", "default"], {
-        "state-change": isEnabling
-      })}
-    >
-      <span className="state-change-inner" />
-      <Localized id="enableExperimentTransition">
-        <span className="transition-text">Enabling...</span>
-      </Localized>
-      <Localized id="enableExperiment" $title={title}>
-        <span className="default-text">
-          Enable {title}
-        </span>
-      </Localized>
-    </button>
-  );
-};
+  return null;
+}
