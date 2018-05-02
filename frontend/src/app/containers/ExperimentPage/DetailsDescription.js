@@ -30,7 +30,6 @@ export default function DetailsDescription({
     introduction,
     warning,
     details,
-    measurements,
     video_url,
     graduation_url,
     completed
@@ -96,14 +95,10 @@ export default function DetailsDescription({
           </div>
         )}
       </div>
-      {hasAddon &&
-        !graduated &&
-        measurements &&
-        <div>
+      {!graduated &&
           <MeasurementsSection
             {...{ experiment, highlightMeasurementPanel, l10nId }}
-          />
-        </div>}
+          />}
     </div>
   );
 }

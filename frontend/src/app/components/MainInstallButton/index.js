@@ -33,9 +33,8 @@ export default class MainInstallButton extends React.Component {
     }
 
     const { sendToGA, eventCategory, installAddon,
-      installCallback, eventLabel, experiment,
-      experimentTitle, isFeatured, installed,
-      hasAddon, enableExperiment } = this.props;
+      eventLabel, experiment, experimentTitle, isFeatured,
+      installed, hasAddon, enableExperiment } = this.props;
 
     if (isFeatured) {
       const { slug } = experiment;
@@ -53,17 +52,13 @@ export default class MainInstallButton extends React.Component {
       });
     }
 
-    if (installCallback) {
-      installCallback(e);
-    } else {
-      this.setState({ isInstalling: true });
-      const install = experiment ?
-        enableExperiment(experiment, eventCategory, eventLabel) :
-        installAddon(sendToGA, eventCategory, eventLabel);
+    this.setState({ isInstalling: true });
+    const install = experiment ?
+      enableExperiment(experiment, eventCategory, eventLabel) :
+      installAddon(sendToGA, eventCategory, eventLabel);
 
-      const after = () => this.setState({ isInstalling: false });
-      install.then(after, after);
-    }
+    const after = () => this.setState({ isInstalling: false });
+    install.then(after, after);
   }
 
   render() {
