@@ -9,7 +9,7 @@ class Detail(Base):
     _root_locator = (By.CLASS_NAME, 'default-background')
     _name_locator = (By.CSS_SELECTOR, '.details-header > header > h1')
     _enable_locator = (By.ID, 'install-button')
-    _install_and_enable_locator = (By.CLASS_NAME, 'main-install__button')
+    _install_and_enable_locator = (By.ID, 'one-click-button')
     _uninstall_button_locator = (By.ID, 'uninstall-button')
 
     def wait_for_page_to_load(self):
