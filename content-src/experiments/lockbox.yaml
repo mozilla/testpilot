@@ -1,0 +1,161 @@
+id: 15
+slug: lockbox
+title: 'Lockbox'
+# subtitle: 'Take your passwords everywhere'
+order: 3
+is_featured: true
+platforms: ['mobile']
+web_url: https://example.com/web-experiment
+
+description: >
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum cum ad deserunt
+  iusto possimus. Fugiat odit corrupti cumque.
+warning: >
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum cum ad deserunt
+  iusto possimus. Fugiat odit corrupti cumque.
+introduction: >
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Consectetur adipisicing elit.</p>
+
+image_twitter: /static/images/experiments/lockbox/social/twitter.jpg
+image_facebook: /static/images/experiments/lockbox/social/facebook.jpg
+
+thumbnail: /static/images/experiments/lockbox/icon/thumbnail.png
+gradient_start: '#00BCD8'
+gradient_stop: '#0086DC'
+
+xpi_url: 'https://testpilot.firefox.com/files/experiment-name/latest'
+addon_id: 'experiment-name@mozilla.com'
+
+created: '2016-01-01T00:00:00.000000Z'
+# completed: '2016-01-01T00:00:00.000000Z'
+# uninstalled: '2016-01-02T00:00:00.000000Z'
+# launch_date: '2016-01-01T00:00:00.000000Z'
+
+changelog_url: 'https://www.github.com/mozilla/experiment-name/blob/master/docs/changelog.md'
+contribute_url: 'https://www.github.com/mozilla/experiment-name'
+bug_report_url: 'https://www.github.com/mozilla/experiment-name/issues'
+discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/experiment-name'
+privacy_notice_url: 'https://www.github.com/mozilla/experiment-name/blob/master/docs/metrics.md'
+
+details:
+  -
+    headline: 'Lorem ipsum'
+    image: /static/images/experiments/lockbox/details/details-1.jpg
+    copy: >
+      dolor sit amet, consectetur adipisicing elit. Ipsum cum ad deserunt
+      iusto possimus. Fugiat odit corrupti cumque.
+
+contributors:
+  -
+    display_name: 'Sandy Sage'
+    title: 'Sr. Product Manager'
+    avatar: /static/images/experiments/lockbox/avatars/ssage.png
+  -
+    display_name: 'Devin Reams'
+    title: 'Engineering Manager'
+    avatar: /static/images/experiments/lockbox/avatars/dreams.png
+  -
+    display_name: 'Ryan Gaddis'
+    title: 'Sr. Interaction Designer'
+    avatar: /static/images/experiments/lockbox/avatars/rgaddis.png
+  -
+    display_name: 'Matt Miller'
+    title: 'Engineering Architect'
+    avatar: /static/images/experiments/lockbox/avatars/mmiller.png
+  -
+    display_name: 'Sasha Heinen'
+    title: 'Mobile Engineer'
+    avatar: /static/images/experiments/lockbox/avatars/sheinen.png
+  -
+    display_name: 'Jim Porter'
+    title: 'Sr Engineer'
+    avatar: /static/images/experiments/lockbox/avatars/jporter.png
+  -
+    display_name: 'James Hugman'
+    title: 'Mobile Engineer'
+    avatar: /static/images/experiments/lockbox/avatars/jhugman.png
+  -
+    display_name: 'Leif Oines'
+    title: 'Product Data Scientist'
+    avatar: /static/images/experiments/lockbox/avatars/loines.png
+  -
+    display_name: 'Heather McGaw'
+    title: 'Sr. UX Researcher'
+    avatar: /static/images/experiments/lockbox/avatars/hmcgaw.png
+  -
+    display_name: 'Michelle Heubusch'
+    title: 'Content Strategy Lead'
+    avatar: /static/images/experiments/lockbox/avatars/mheubusch.png
+  -
+    display_name: 'Nick Brandt'
+    title: 'Sr. UX Designer'
+    avatar: /static/images/experiments/lockbox/avatars/nbrandt.png
+  -
+    display_name: 'Peter deHaan'
+    title: 'QA Developer'
+    avatar: /static/images/experiments/lockbox/avatars/pdehaan.png
+  -
+    display_name: 'Joe Gasiorek'
+    title: 'Community Contributor'
+    avatar: /static/images/experiments/lockbox/avatars/jgasiorek.png
+  -
+    display_name: 'Paul Nyondo'
+    title: 'Community Contributor'
+    avatar: /static/images/experiments/lockbox/avatars/pnyondo.png
+
+# contributors_extra: >
+#     This experiment was also made possible by a generous grant from
+#     the Institute for RoboCop Studies.
+# contributors_extra_url: https://robocop.org
+tour_steps:
+  -
+    image: /static/images/experiments/lockbox/tour/tour-1.jpg
+    copy: >
+      <p>Lorem ipsum dolor sit amet.</p>
+
+measurements:
+  - >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
+    suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
+    cupiditate vitae praesentium eveniet unde totam, architecto molestiae?
+  - >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
+    suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
+    cupiditate vitae praesentium eveniet unde totam, architecto molestiae?
+
+pre_feedback_image: /static/images/experiments/experiment-name/pre-feedback.jpg
+pre_feedback_copy: >
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
+    suscipit, nam commodi excepturi error modi.</p>
+
+graduation_url: 'http://example.com/graduation-report'
+
+eol_warning: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+min_release: 99
+incompatible:
+  '@fake-incompatible': 'Fake Incompatible Add-on Name'
+
+locales:
+  - 'en'
+locale_blocklist:
+  - 'de'
+locale_grantlist:
+  - 'de'
+
+dev: false
+
+testpilot_options:
+  ratings: enabled
+
+# news_updates:
+#   -
+#     slug: testpilot-update-1
+#     title: My Update title
+#     link: 'https://blog.mozilla.org/testpilot/example'
+#     created: '2017-06-01T12:00:00Z'
+#     published: '2017-06-02T12:00:00Z'
+#     image: 'images/link/to/image.jpg' # optional
+#     major: true # optional
+#     content: >
+#       Example content goes here
