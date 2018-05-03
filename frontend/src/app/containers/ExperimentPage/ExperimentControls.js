@@ -100,6 +100,17 @@ export default function ExperimentControls({
   } else if (enabled) {
     controls = (
       <div className="experiment-controls">
+        <a
+          id="feedback-button"
+          onClick={handleFeedback}
+          className="button default"
+          href={surveyURL}
+          target="_blank"
+          rel="noopener noreferrer">
+          <Localized id="giveFeedback">
+            <span className="default-text">Give Feedback</span>
+          </Localized>
+        </a>
         <button
           onClick={uninstallExperimentWithSurvey}
           id="uninstall-button"
@@ -117,17 +128,6 @@ export default function ExperimentControls({
             </span>
           </Localized>
         </button>
-        <a
-          id="feedback-button"
-          onClick={handleFeedback}
-          className="button default"
-          href={surveyURL}
-          target="_blank"
-          rel="noopener noreferrer">
-          <Localized id="giveFeedback">
-            <span className="default-text">Give Feedback</span>
-          </Localized>
-        </a>
       </div>
     );
   } else if (validVersion) {
