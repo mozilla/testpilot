@@ -77,7 +77,7 @@ export default class DetailsHeader extends React.Component {
           flexModifier="row-between-breaking"
         >
           <div className={`experiment-icon-wrapper-${slug} experiment-icon-wrapper`}>
-            <img className="experiment-icon" src={thumbnail} />
+            <div className="experiment-icon" style={{backgroundImage: `url(${thumbnail})`}} />
           </div>
           <header>
             <h1>
