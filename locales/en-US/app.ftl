@@ -22,7 +22,6 @@ menuDiscuss = Discuss Test Pilot
 menuFileIssue = File an Issue
 menuRetire = Uninstall Test Pilot
 headerLinkBlog = Blog
-headerLinkNews = News Feed
 
 ## The splash on the homepage.
 landingIntroOne = Test new features.
@@ -72,12 +71,6 @@ emailOptInMessage = Find out about new experiments and see test results for expe
 emailOptInConfirmationTitle = Email Sent
 emailOptInConfirmationClose = On to the experiments...
 emailOptInDialogErrorTitle = Oh no!
-
-## News feed updates.
-latestUpdatesTitle = Latest updates
-showMoreNewsTitle = Show Past News
-# "Link" is a noun in this context
-englishArticleLink = Link to English article
 
 ## Featured experiment.
 moreDetail = View details
@@ -134,9 +127,9 @@ contributorsHeading = Brought to you by
 contributorsExtraLearnMore = Learn more
 changelog = Changelog
 tour = Tour
-tourLink = Launch Tour
+tourLink = Launch tour
 contribute = Contribute
-bugReports = Bug Reports
+bugReports = Bug reports
 discussExperiment = Discuss { $title }
 tourDoneButton = Done
 userCountContainerAlt = Just launched!
@@ -146,7 +139,7 @@ experimentGradReportPendingTitle = This experiment has ended
 experimentGradReportPendingCopy = We are working on a full report. Check back soon for the details.
 experimentGradReportReady = We have prepared a full graduation report.
 experimentGoToLink = Go to { $title }
-startedDateLabel = Experiment Start Date: <b>{$startedDate}</b>
+startedDateLabel = Experiment start date: <b>{$startedDate}</b>
 
 ## News updates dialog.
 nonExperimentDialogHeaderLink = Test Pilot
@@ -187,7 +180,7 @@ restartIntroThree = Select your experiments
 eolIntroMessage = {$title} is ending on {$completedDate}
 eolNoticeLink = Learn more
 eolDisableMessage = The {$title} experiment has ended. Once you uninstall it you won't be able to re-install it through Test Pilot again.
-completedDateLabel = Experiment End Date: <b>{$completedDate}</b>
+completedDateLabel = Experiment end date: <b>{$completedDate}</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 incompatibleHeader = This experiment may not be compatible with add-ons you have installed.

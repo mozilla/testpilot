@@ -4,57 +4,38 @@
 .details-header-wrapper {
 
   &:not(.has-status) {
-    padding-top: $grid-unit * 1.8;
-
     .status-bar {
       display: none;
     }
   }
 
+  & .experiment-icon-wrapper {
+    border-radius: 0;
+    height: 80px;
+    width: 200%;
+  }
+
+  .experiment-icon {
+    background-position: center center;
+    background-size: 32px 32px;
+  }
+
+  & .spacer {
+    flex: 1 0 auto;
+  }
+
   @include respond-to('not-small') {
-    &.stick {
-      background: $transparent-white-96;
-      box-shadow: 0 0 5px $transparent-black-5;
-      left: 0;
-      padding-top: 0;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 999;
+
+    & .experiment-icon-wrapper {
+      clip-path: circle(32px at center);
+      width: 64px;
     }
-  }
-}
-
-@include respond-to('small') {
-
-  .details-header {
-    padding-top: $grid-unit * .75;
-  }
-
-  .experiment-controls {
-    @include flex-container (column, center, stretch);
-
-    .button {
-      margin: $grid-unit * .5 0;
-      width: 100%;
-    }
-  }
-
-  .highlight-privacy {
-    display: none;
-  }
-
-
-  .sticky-header-sibling {
-    display: none;
   }
 }
 
 .status-bar {
   @include flex-container(row, center, center);
-  // animation: fade-in 500ms forwards;
   height: $grid-unit * 1.6;
-  margin-bottom: $grid-unit * .2;
   opacity: 0;
   padding-top: $grid-unit * .1;
 
@@ -87,55 +68,98 @@
   margin-bottom: $grid-unit;
 }
 
+.details-controls {
+  @include respond-to('small') {
+    margin-bottom: 0;
+  }
+}
+
+.highlight-privacy {
+  cursor: pointer;
+}
+
 .experiment-controls {
-  @include respond-to('not-small') {
-    @include flex-container(row, flex-end, center);
+  @include respond-to('small') {
+    border: 0;
+    padding: 0;
   }
 
-  flex: 1;
-  position: relative;
-  transition: top 200ms;
-  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   .button {
-    @include respond-to('not-small') {
-      margin-left: $grid-unit;
-    }
     border-radius: 3px;
-    height: 48px;
-    max-width: 180px;
-    padding: 0 42px;
+    font-size: 18px;
+    height: 100%;
+    margin-top: 12px;
+    padding: 6px 4px;
+    width: 100%;
   }
 
-  .highlight-privacy {
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: $weight-semi-bold;
+  .button:first-child {
+    margin-top: 0;
+  }
+
+  .one-click-minor {
+    font-weight: 300;
+    line-height: 24px;
+  }
+
+  .one-click-major {
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 30px;
   }
 
   span {
     text-wrap: nowrap;
   }
+
+  .default,
+  #one-click-button {
+    box-shadow: 0 2px 0 $transparent-black-2, 0 -2px 0 $transparent-black-2 inset;
+    text-shadow: 0 2px 0 $transparent-black-1;
+  }
+}
+
+#one-click-button {
+  border: 0;
+  border-radius: $large-border-radius;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 4px;
+}
+
+.privacy-link {
+  font-size: $font-unit;
+  padding: 10px;
+  text-align: center;
+
+  .legal-section {
+    line-height: 15px;
+    margin: 0;
+
+    a {
+      color: $black;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
 }
 
 .details-header {
+
   @include respond-to('not-small') {
-    height: $grid-unit * 4.5;
-    margin-bottom: 0;
+    padding: 20px 10px 10px;
   }
 
-  margin-bottom: $grid-unit;
-  position: relative;
-
   h1 {
-    @include respond-to('small') {
-      margin: 15px 0;
-    }
-
     display: flex;
     flex: 1;
     font-weight: $weight-light;
-    margin: 0;
+    margin: $grid-unit * .75;
   }
 
   h4 {
@@ -181,9 +205,7 @@
 
   padding-top: $grid-unit * .5;
 
-  .contributors-section,
-  .stats-section,
-  .measurements {
+  .details-sections {
     @include hide-on-small;
   }
 }
@@ -281,13 +303,13 @@
 }
 
 .details-sections {
+  margin-top: 20px;
 
   section {
     margin-bottom: $grid-unit;
-    padding-bottom: $grid-unit;
 
     h3 {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: $weight-light;
       letter-spacing: 0;
       line-height: 28px;
@@ -297,10 +319,8 @@
 }
 
 .user-count {
-  background: $transparent-black-05;
-  font-size: 15px;
-  padding: $grid-unit;
-  text-align: center;
+  font-size: 20px;
+  font-weight: $weight-light;
 }
 
 .disclaimer,
@@ -387,32 +407,8 @@
 .stats-section {
   width: 100%;
 
-  dl {
-    margin-bottom: 0;
-  }
-
-  dt {
-    font-size: 15px;
-    font-weight: regular;
-    margin: 0 0 $grid-unit * .25;
-  }
-
-  dd {
-    font-size: 13px;
-    font-weight: regular;
-    margin: 0 0 12px;
-    width: 100%;
-    word-break: break-all;
-  }
-
-  dd:last-child {
-    margin-bottom: 0;
-  }
-
-  p {
-    font-size: 15px;
-    font-weight: $weight-semi-bold;
-    width: 35%;
+  ul {
+    padding-left: 1em;
   }
 }
 

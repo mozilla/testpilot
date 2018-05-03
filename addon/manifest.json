@@ -1,20 +1,22 @@
 {
   "manifest_version": 2,
   "name": "Test Pilot",
-  "author": "Les Orchard <me@lmorchard.com>, Dave Justice <djustice@mozilla.com>",
+  "author": "Mozilla (https://mozilla.org/)",
   "applications": {
     "gecko": {
       "id": "@testpilot-addon",
       "update_url": "https://testpilot.firefox.com/files/@testpilot-addon/updates.json"
     }
   },
-  "version": "3.0.0vffeb6433",
+  "version": "3.0.1",
   "icons": {
     "16": "icons/icon-16.png",
     "32": "icons/icon-32.png",
     "64": "icons/icon-64.png",
     "96": "icons/icon-96.png"
   },
+  "description": "Test Pilot is a privacy-sensitive user research program focused on getting new features into Firefox faster.",
+  "homepage_url": "https://testpilot.firefox.com",
   "default_locale": "en_US",
   "permissions": [
     "alarms",

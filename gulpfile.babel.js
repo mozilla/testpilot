@@ -13,7 +13,6 @@ const runSequence = require("run-sequence");
 require("es6-promise").polyfill();
 require("isomorphic-fetch");
 
-require("./frontend/tasks/content");
 require("./frontend/tasks/pages");
 require("./frontend/tasks/dist");
 
@@ -30,14 +29,12 @@ gulp.task("distclean", () => del([
 ]));
 
 gulp.task("build", done => runSequence(
-  "content-build",
   "pages-build",
   done
 ));
 
 gulp.task("watch", [
   "self-watch",
-  "content-watch",
   "pages-watch"
 ]);
 

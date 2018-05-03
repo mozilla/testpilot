@@ -9,18 +9,19 @@
     font-size: 26px;
     height: 92px;
     line-height: $grid-unit * 3;
-    min-width: $grid-unit * 15;
+    min-width: $grid-unit * 19;
     padding: 0 20px;
   }
 
   @include respond-to('medium') {
     font-size: 21px;
+    min-width: $grid-unit * 16;
   }
 
   @include respond-to('small') {
     font-size: 21px;
     height: $grid-unit * 4;
-    min-width: $grid-unit * 12;
+    min-width: $grid-unit * 16;
   }
 
   border-radius: $large-border-radius;

@@ -17,14 +17,14 @@ import ExperimentPreFeedbackDialog from "./ExperimentPreFeedbackDialog";
 import ExperimentDisableDialog from "./ExperimentDisableDialog";
 import ExperimentEolDialog from "./ExperimentEolDialog";
 
-import { PRIVACY_SCROLL_OFFSET } from "./DetailsHeader";
 import DetailsDescription, { LocaleWarning } from "./DetailsDescription";
 import { StatsSection } from "./DetailsOverview";
 
 describe("app/containers/ExperimentPage", () => {
   const mockExperiment = {
     slug: "testing",
-    foo: "bar"
+    foo: "bar",
+    platforms: []
   };
   const mockProps = {
     slug: mockExperiment.slug,
@@ -65,6 +65,7 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
       privacy_notice_url: "https://example.com/privacy",
       changelog_url: "https://example.com/changelog",
       survey_url: "https://example.com/survey",
+      platforms: ["addon"],
       contributors: [
         {
           display_name: "Jorge Soler",
@@ -207,7 +208,9 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
     beforeEach(() => {
       setExperiment(mockExperiment);
       subject.setProps({
-        isExperimentEnabled: () => false
+        isExperimentEnabled: () => false,
+        isFirefox: true,
+        isMinFirefox: true
       });
     });
 
@@ -246,12 +249,6 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
 
       expect(subject.state("isEnabling")).to.be.false;
       expect(subject.state("isDisabling")).to.be.false;
-    });
-
-    it("should include an ExperimentPlatforms component if `platforms` is set", () => {
-      expect(subject.find("ExperimentPlatforms")).to.have.property("length", 0);
-      subject.setProps({ experiment: { ...mockExperiment, platforms: ["addon", "web"] } });
-      expect(subject.find("ExperimentPlatforms")).to.have.property("length", 1);
     });
 
     it("should render video iframe if video available", () => {
@@ -319,7 +316,6 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
 
         subject.setProps({ userAgent: `${userAgentPre}23.0` });
         expect(subject.find(".upgrade-notice")).to.have.property("length", 1);
-        expect(subject.find(".experiment-controls")).to.have.property("length", 0);
 
         findLocalizedById(subject, "upgradeNoticeLink").find("a").simulate("click", mockClickEvent);
         expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
@@ -331,11 +327,9 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
 
         subject.setProps({ userAgent: `${userAgentPre}50.0` });
         expect(subject.find(".upgrade-notice")).to.have.property("length", 0);
-        expect(subject.find(".experiment-controls")).to.have.property("length", 1);
 
         subject.setProps({ userAgent: `${userAgentPre}51.0` });
         expect(subject.find(".upgrade-notice")).to.have.property("length", 0);
-        expect(subject.find(".experiment-controls")).to.have.property("length", 1);
       });
 
       it("should display a warning only if userAgent does not meet maximum version limit", () => {
@@ -345,15 +339,12 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
 
         subject.setProps({ userAgent: `${userAgentPre}49.0` });
         expect(subject.find(".upgrade-notice")).to.have.property("length", 0);
-        expect(subject.find(".experiment-controls")).to.have.property("length", 1);
 
         subject.setProps({ userAgent: `${userAgentPre}50.0` });
         expect(subject.find(".upgrade-notice")).to.have.property("length", 0);
-        expect(subject.find(".experiment-controls")).to.have.property("length", 1);
 
         subject.setProps({ userAgent: `${userAgentPre}53.0` });
         expect(subject.find(".upgrade-notice")).to.have.property("length", 1);
-        expect(subject.find(".experiment-controls")).to.have.property("length", 0);
 
         findLocalizedById(subject, "versionChangeNoticeLink").find("a").simulate("click", mockClickEvent);
 
@@ -372,30 +363,6 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
         expect(findLocalizedById(subject, "installErrorMessage")).to.have.property("length", 1);
       });
 
-      it('should scroll down to measurements block when "Your privacy" clicked', (done) => {
-        const elementY = 400;
-        const genericElementHeight = 125;
-
-        subject.setProps({
-          getElementY: () => elementY,
-          getElementOffsetHeight: () => genericElementHeight
-        });
-
-        subject.find(".highlight-privacy").simulate("click", mockClickEvent);
-        expect(props.setScrollY.lastCall.args[0]).to.equal(
-          elementY + (genericElementHeight - PRIVACY_SCROLL_OFFSET));
-        expect(subject.state("highlightMeasurementPanel")).to.be.true;
-
-        // TODO: 5 second delay is too much. Skip until/unless we mock setTimeout.
-        done();
-        /*
-        setTimeout(() => {
-          expect(subject.state('highlightMeasurementPanel')).to.be.false;
-          done();
-        }, 5010);
-        */
-      });
-
       describe("with experiment enabled", () => {
         beforeEach(() => {
           subject.setProps({ isExperimentEnabled: () => true });
@@ -407,8 +374,6 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
           expect(subject.find("#feedback-button")).to.have.property("length", 1));
         it('should not show an "Enable" button', () =>
           expect(subject.find("#install-button")).to.have.property("length", 0));
-        it('should not show an "Your privacy" button', () =>
-          expect(subject.find(".highlight-privacy")).to.have.property("length", 0));
 
         it('should disable experiment and show a dialog when "Disable" clicked', () => {
           const experiment = setExperiment(mockExperiment);
@@ -480,10 +445,6 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
             experiment: Object.assign({}, mockExperiment, { completed: "2016-10-01" }),
             isAfterCompletedDate: sinon.stub().returns(true)
           });
-        });
-
-        it("does not render controls", () => {
-          expect(subject.find(".experiment-controls").length).to.equal(0);
         });
 
         it("displays the end date instead of install count", () => {
