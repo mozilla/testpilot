@@ -19,7 +19,6 @@ import App from "./containers/App";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import HomePage from "./containers/HomePage";
 import ExperimentPage from "./containers/ExperimentPage";
-import NewsFeedPage from "./containers/NewsFeedPage";
 import RetirePage from "./containers/RetirePage";
 import OnboardingPage from "./containers/OnboardingPage";
 import NotFoundPage from "./containers/NotFoundPage";
@@ -45,7 +44,6 @@ function routes() {
       <Route exact path="/" render={appFactoryFor(HomePage)} />
       <Route exact path="/experiments" render={appFactoryFor(HomePage)} />
       <Route path="/experiments/:slug" render={appFactoryFor(ExperimentPage)} />
-      <Route exact path="/news" render={appFactoryFor(NewsFeedPage)} />
       <Route exact path="/onboarding" render={appFactoryFor(OnboardingPage)} />
       <Route exact path="/retire" render={appFactoryFor(RetirePage)} />
       <Route exact path="/error" render={appFactoryFor(ErrorPage)} />
