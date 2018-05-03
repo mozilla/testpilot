@@ -1,4 +1,4 @@
-attrs==17.4.0
+attrs==18.1.0
 pluggy==0.6.0
 PyPOM==2.0.0
 pytest==3.5.1
