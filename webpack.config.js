@@ -59,7 +59,7 @@ const plugins = [
     "process.env.ENABLE_DEV_CONTENT": process.env.ENABLE_DEV_CONTENT || 0
   }),
   new CopyWebpackPlugin([
-    { from: "./addon/addon.xpi", to: "static/addon/"},
+    { from: "./addon/*.xpi", to: "static/"},
     { context: "./locales", from: "**/*", to: "static/locales/" },
     { context: "./frontend/src/images", from: "**/*", to: "static/images/" }
   ]),
