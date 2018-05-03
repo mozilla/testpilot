@@ -55,7 +55,6 @@ Here are the current events on the website as of this writing, grouped by their 
 |-------------|---------------|--------------|
 | Click Firefox logo from header | click | Firefox logo |
 | Visit blog from menu | click | open blog |
-| Visit newsfeed from menu | click | open newsfeed |
 | Toggle settings menu | drop-down menu | Toggle |
 | Click `Leave` from settings | drop-down menu | Retire |
 | Click `Discuss` from settings | drop-down menu | Discuss |
@@ -67,7 +66,6 @@ Here are the current events on the website as of this writing, grouped by their 
 | Description | `eventAction` | `eventLabel` |
 |-------------|---------------|--------------|
 | Click on experiment from landing page | Open detail page | `{experiment title}` |
-| Click on news item | click | `news-item-${slug}`
 
 #### `ExperimentDetailsPage Interactions`
 

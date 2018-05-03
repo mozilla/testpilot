@@ -258,7 +258,6 @@ function generateStaticPageFromMarkdown(pageName, pageParam, markdown, params) {
       </h1>
 
       <div className="header-links">
-        <a className="news-link" href="/news">News Feed</a>
         <a className="blog-link" href="https://medium.com/firefox-test-pilot" target="_blank" rel="noopener noreferrer">Blog</a>
       </div>
     </header>

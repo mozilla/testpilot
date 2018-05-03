@@ -7,7 +7,6 @@ import ErrorPage from "../app/containers/ErrorPage";
 import ExperimentPage from "../app/containers/ExperimentPage";
 import HomePageWithAddon from "../app/containers/HomePage/HomePageWithAddon";
 import HomePage from "../app/containers/HomePage";
-import NewsFeedPage from "../app/containers/NewsFeedPage";
 import NotFoundPage from "../app/containers/NotFoundPage";
 import OnboardingPage from "../app/containers/OnboardingPage";
 import RetirePage from "../app/containers/RetirePage";
@@ -30,7 +29,6 @@ export const pages = new Map(Object.entries({
   error: wrap(<ErrorPage/>),
   experiments: wrap(<HomePageWithAddon/>),
   home: wrap(<HomePage/>),
-  news: wrap(<NewsFeedPage/>),
   notfound: wrap(<NotFoundPage/>),
   onboarding: wrap(<OnboardingPage/>),
   retire: wrap(<RetirePage/>)
