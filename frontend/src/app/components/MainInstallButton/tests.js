@@ -86,7 +86,7 @@ describe("app/components/MainInstallButton", () => {
       dimension4: false,
       dimension5: mockExperiment.title,
       dimension11: mockExperiment.slug,
-      dimension13: "Featured Experiment"
+      dimension12: "Featured Experiment"
     }]);
   });
 });

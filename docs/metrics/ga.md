@@ -109,17 +109,17 @@ Here are the current events on the website as of this writing, grouped by their 
 
 | Description                      | `eventAction`         | `eventLabel`                  | Custom Dimensions          |
 | -------------------------------- | --------------------- | ----------------------------- | -------------------------- |
-| Click Featured Experiment Video  | video click           | Play Featured video           | [1, 2, 3, 12, 10, 11, 13]  |
-| Click View Details               | link click            | View Featured details         | [1, 2, 3, 4, 10, 11, 13]   |
-| Featured Experiment Button       | button click          | Manage Featured Button State  | [1, 2, 3, 4, 5, 10, 11, 13]|
-| Click Cancel on tour dialogue    | button click          | cancel tour                   | [1, 2, 3, 10, 11, 13]      |
-| Complete the tour                | button click          | complete tour                 | [1, 2, 3, 10, 11, 13]      |
-| Click next during Tour           | button click          | forward to step `n`           | [1, 2, 3, 10, 11, 13]      |
-| Click back during Tour           | button click          | back to step `n`              | [1, 2, 3, 10, 11, 13]      |
-| Click pagination dot during Tour | button click          | dot to step `n`               | [1, 2, 3, 10, 11, 13]      |
-| Click General Terms link         | link click            | Open general terms            | [1, 2, 3, 10, 11, 13]      |
-| Click General Privacy link       | link click            | Open general privacy          | [1, 2, 3, 10, 11, 13]      |
-| Click Featured Privacy link      | link click            | Popup Featured privacy        | [1, 2, 3, 10, 11, 13]      |
+| Click Featured Experiment Video  | video click           | Play Featured video           | [1, 2, 3, 10, 11, 12]      |
+| Click View Details               | link click            | View Featured details         | [1, 2, 3, 4, 10, 11, 12]   |
+| Featured Experiment Button       | button click          | Manage Featured Button State  | [1, 2, 3, 4, 5, 10, 11, 12]|
+| Click Cancel on tour dialogue    | button click          | cancel tour                   | [1, 2, 3, 10, 11, 12]      |
+| Complete the tour                | button click          | complete tour                 | [1, 2, 3, 10, 11, 12]      |
+| Click next during Tour           | button click          | forward to step `n`           | [1, 2, 3, 10, 11, 12]      |
+| Click back during Tour           | button click          | back to step `n`              | [1, 2, 3, 10, 11, 12]      |
+| Click pagination dot during Tour | button click          | dot to step `n`               | [1, 2, 3, 10, 11, 12]      |
+| Click General Terms link         | link click            | Open general terms            | [1, 2, 3, 10, 11, 12]      |
+| Click General Privacy link       | link click            | Open general privacy          | [1, 2, 3, 10, 11, 12]      |
+| Click Featured Privacy link      | link click            | Popup Featured privacy        | [1, 2, 3, 10, 11, 12]      |
 
 
 #### `RetirePage Interactions`
@@ -201,8 +201,7 @@ Here is a list of dimensions we are currently using
 | Home Page, Experiment Detail Page, Share Page | Which cohort has this user been selected for?           | 9         | {'bigButton', ''} |
 | All                                           | In which responsive breakpoint is the user?             | 10        | {'mobile','small','medium','big'} |
 | All experiment-specific locations and events  | On which experiment did this action take?               | 11        | experiment slug |
-| Home Page                                     | How much did the video did the user watch?              | 12        | {'None (<10)','Some (10-90)','All (>90)'}|
-| Home Page, Experiment Detail Page             | Which section did this action occur?                    | 13        | {'Experiment Detail', 'Experiment List', 'Featured Experiment'}
+| Home Page, Experiment Detail Page             | Which section did this action occur?                    | 12        | {'Experiment Detail', 'Experiment List', 'Featured Experiment'}
 
 
 ### Tagged Links

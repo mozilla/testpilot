@@ -51,7 +51,7 @@ export default class FeaturedButton extends React.Component {
       dimension2: Object.keys(installed).length > 0,
       dimension3: Object.keys(installed).length,
       dimension11: experiment.slug,
-      dimension13: "Featured Experiment"
+      dimension12: "Featured Experiment"
     }, args), ev);
   };
 

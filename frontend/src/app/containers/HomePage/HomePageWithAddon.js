@@ -102,7 +102,7 @@ export default class HomePageWithAddon extends React.Component {
       dimension5: title,
       dimension10: getBreakpoint(window.innerWidth),
       dimension11: slug,
-      dimension13: "Featured Experiment"
+      dimension12: "Featured Experiment"
     });
   }
 

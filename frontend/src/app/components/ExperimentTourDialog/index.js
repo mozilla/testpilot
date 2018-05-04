@@ -30,7 +30,7 @@ export default class ExperimentTourDialog extends React.Component {
       dimension1: hasAddon,
       dimension2: installed ? Object.keys(installed).length > 0 : false,
       dimension3: installed ? Object.keys(installed).length : 0,
-      dimension13: "Featured Experiment"
+      dimension12: "Featured Experiment"
     });
   }
 
@@ -41,7 +41,7 @@ export default class ExperimentTourDialog extends React.Component {
       eventAction: "button click",
       eventLabel: `forward to step ${newStep}`,
       dimension11: experiment.slug,
-      dimension13: "Experiment Detail"
+      dimension12: "Experiment Detail"
     };
 
     if (isFeatured) {
@@ -58,7 +58,7 @@ export default class ExperimentTourDialog extends React.Component {
       eventAction: "button click",
       eventLabel: `back to step ${newStep}`,
       dimension11: experiment.slug,
-      dimension13: "Experiment Detail"
+      dimension12: "Experiment Detail"
     };
 
     if (isFeatured) {
@@ -75,7 +75,7 @@ export default class ExperimentTourDialog extends React.Component {
       eventAction: "button click",
       eventLabel: `dot to step ${index}`,
       dimension11: experiment.slug,
-      dimension13: "Experiment Detail"
+      dimension12: "Experiment Detail"
     };
 
     if (isFeatured) {
