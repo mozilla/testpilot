@@ -1,1 +1,0 @@
-This page has been moved to [metrics/telemetry.md](metrics/telemetry.md).
