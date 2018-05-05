@@ -88,7 +88,7 @@ describe("app/components/ExperimentTourDialog", () => {
       eventAction: "button click",
       eventLabel: "forward to step 1",
       dimension11: props.experiment.slug,
-      dimension13: "Experiment Detail"
+      dimension12: "Experiment Detail"
     }]);
   });
 

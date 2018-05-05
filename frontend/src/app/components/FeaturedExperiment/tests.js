@@ -221,7 +221,7 @@ describe("app/components/FeaturedButton", () => {
       dimension4: true,
       dimension5: "Testing Experiment",
       dimension11: mockExperiment.slug,
-      dimension13: "Featured Experiment"
+      dimension12: "Featured Experiment"
     }]);
   });
 
@@ -243,7 +243,7 @@ describe("app/components/FeaturedButton", () => {
       dimension4: true,
       dimension5: "Testing Experiment",
       dimension11: mockExperiment.slug,
-      dimension13: "Featured Experiment"
+      dimension12: "Featured Experiment"
     }, mockClickEvent]);
   });
 

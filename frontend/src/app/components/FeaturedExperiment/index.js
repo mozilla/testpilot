@@ -36,6 +36,31 @@ export default class FeaturedExperiment extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    const { sendToGA, eventCategory, hasAddon, installed, experiment } = this.props;
+
+    // we have to do a little bit of a hack here in order to get the first
+    // click on the featured video metric. This allows us to bypass adding
+    // the whole YouTube iframe api and possibly opening up a security concern.
+    const videoClickInterval = setInterval(() => {
+      const el = document.activeElement;
+      if (el && el.tagName == "IFRAME") {
+        clearInterval(videoClickInterval);
+        sendToGA("event", {
+          eventCategory,
+          eventAction: "video click",
+          eventLabel: "View Featured video",
+          dimension1: hasAddon,
+          dimension2: Object.keys(installed).length > 0,
+          dimension3: Object.keys(installed).length,
+          dimension10: getBreakpoint(window.innerWidth),
+          dimension11: experiment.slug,
+          dimension12: "Featured Experiment"
+        });
+      }
+    }, 100);
+  }
+
   l10nId(pieces: string) {
     return experimentL10nId(this.props.experiment, pieces);
   }
@@ -88,7 +113,7 @@ export default class FeaturedExperiment extends React.Component {
                   dimension4: enabled,
                   dimension10: getBreakpoint(window.innerWidth),
                   dimension11: slug,
-                  dimension13: "Featured Experiment"
+                  dimension12: "Featured Experiment"
                 });
               }}>View Details</Link>
           </Localized>}

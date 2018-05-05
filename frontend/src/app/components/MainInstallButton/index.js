@@ -48,7 +48,7 @@ export default class MainInstallButton extends React.Component {
         dimension4: false, // enabled?
         dimension5: experimentTitle,
         dimension11: slug,
-        dimension13: "Featured Experiment"
+        dimension12: "Featured Experiment"
       });
     }
 
