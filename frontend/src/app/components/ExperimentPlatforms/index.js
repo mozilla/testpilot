@@ -7,7 +7,7 @@ import "./index.scss";
 const AVAILABLE_PLATFORMS = ["web", "addon", "mobile"];
 
 export default function ExperimentPlatforms({ experiment }) {
-  const platforms = experiment.platforms || [];
+  const platforms = experiment.platforms.map(p => (p === "android" || p === "ios") ? "mobile" : p) || [];
   const enabledPlatforms = AVAILABLE_PLATFORMS
     .filter(platform => platforms.indexOf(platform) !== -1);
   if (enabledPlatforms.length === 0) { return null; }
