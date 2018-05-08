@@ -34,6 +34,17 @@ your add-on's ID:
 },
 ```
 
+You must add `--self-hosted` if you run the add-ons linter.  This is often an
+npm command in package.json.  For example:
+
+`package.json`
+```
+"scripts": {
+  "lint:addon": "addons-linter build/addon --self-hosted",
+...
+}
+```
+
 
 ## The bigger picture
 
