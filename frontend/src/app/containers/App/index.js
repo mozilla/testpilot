@@ -28,8 +28,6 @@ import {
   shouldOpenInNewTab
 } from "../../lib/utils";
 import {
-  makeStaleNewsUpdatesSelector,
-  makeFreshNewsUpdatesSelector,
   makeNewsUpdatesForDialogSelector
 } from "../../selectors/news";
 import config from "../../config";
@@ -276,7 +274,6 @@ const mapStateToProps = state => ({
   experiments: experimentSelector(state),
   featuredExperiments: featuredExperimentsSelectorWithL10n(state),
   experimentsWithoutFeatured: experimentsWithoutFeaturedSelectorWithL10n(state),
-  freshNewsUpdates: makeFreshNewsUpdatesSelector(Date.now())(state),
   majorNewsUpdates: makeNewsUpdatesForDialogSelector(
     cookies.get("updates-last-viewed-date"),
     Date.now()
@@ -305,7 +302,6 @@ const mapStateToProps = state => ({
   newsletterForm: state.newsletterForm,
   protocol: state.browser.protocol,
   routing: state.routing,
-  staleNewsUpdates: makeStaleNewsUpdatesSelector(Date.now())(state),
   varianttests: state.varianttests
 });
 

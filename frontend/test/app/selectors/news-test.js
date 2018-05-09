@@ -3,8 +3,6 @@ import { expect } from "chai";
 import newsUpdatesSelector, {
   publishedFilter,
   experimentUpdateAvailable,
-  makeStaleNewsUpdatesSelector,
-  makeFreshNewsUpdatesSelector,
   makeNewsUpdatesForDialogSelector
 } from "../../../src/app/selectors/news";
 
@@ -124,11 +122,7 @@ describe("app/selectors/news", () => {
       updates[i][key] = new Date(dt).toISOString();
     }
 
-    const selector = useLastViewed
-      ? makeNewsUpdatesForDialogSelector(lastViewedDate, today)
-      : useStale
-        ? makeStaleNewsUpdatesSelector(today)
-        : makeFreshNewsUpdatesSelector(today);
+    const selector = makeNewsUpdatesForDialogSelector(lastViewedDate, today);
 
     // Filter result to assert no updates contradict the selector
     const shouldBeEmpty = selector(store)
@@ -146,24 +140,10 @@ describe("app/selectors/news", () => {
     expect(shouldBeEmpty).to.have.property("length", 0);
   };
 
-  describe("makeFreshNewsUpdatesSelector", () => {
-    it(
-      "should only produce updates within the last 2 weeks",
-      makeNewsUpdateSelectorAgeTest(false, false)
-    );
-  });
-
   describe("makeFreshNewsUpdatesSinceLastViewedSelector", () => {
     it(
       "should only produce updates since last viewed and major",
       makeNewsUpdateSelectorAgeTest(false, true)
-    );
-  });
-
-  describe("makeStaleNewsUpdatesSelector", () => {
-    it(
-      "should only produce updates older than 2 weeks",
-      makeNewsUpdateSelectorAgeTest(true, false)
     );
   });
 });
