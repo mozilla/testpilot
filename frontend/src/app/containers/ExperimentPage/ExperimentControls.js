@@ -68,39 +68,27 @@ export default function ExperimentControls({
     flashMeasurementPanel();
   };
 
-  let controls = null;
-  let legalSection = null;
-  let showLegal = true;
-
-  if (graduated) {
-    showLegal = false;
-    if (enabled) {
-      controls = (
-        <div className="experiment-controls">
-          <button
-            onClick={doShowEolDialog}
-            id="uninstall-button"
-            className={classnames(["button", "warning"], {
-              "state-change": isDisabling
-            })}
-          >
-            <span className="state-change-inner" />
-            <Localized id="disableExperimentTransition">
-              <span className="transition-text">Disabling...</span>
-            </Localized>
-            <Localized id="disableExperiment" $title={title}>
-              <span className="default-text">
-                Disable {title}
-              </span>
-            </Localized>
-          </button>
-        </div>
-      );
-    }
-  } else if (enabled) {
-    controls = (
-      <div className="experiment-controls">
+  const buttons = platforms.map(platform => createButton({
+    doShowEolDialog,
+    enabled,
+    experiment,
+    graduated,
+    hasAddon,
+    installExperiment,
+    isDisabling,
+    isEnabling,
+    isMinFirefox,
+    platform,
+    sendToGA,
+    uninstallExperimentWithSurvey,
+    userAgent,
+    validVersion
+  })).filter(b => b);
+  if (enabled) {
+    if (!graduated) {
+      buttons.unshift(
         <a
+          key="feedback-button"
           id="feedback-button"
           onClick={handleFeedback}
           className="button default"
@@ -111,63 +99,56 @@ export default function ExperimentControls({
             <span className="default-text">Give Feedback</span>
           </Localized>
         </a>
+      );
+    }
+    if (!hasAddon) {
+      buttons.unshift(
         <button
-          onClick={uninstallExperimentWithSurvey}
-          id="uninstall-button"
-          className={classnames(["button", "secondary"], {
-            "state-change": isDisabling
+          key="txp-button"
+          id="one-click-button"
+          onClick={installExperiment}
+          className={classnames(["button", "primary"], {
+            "state-change": isEnabling
           })}
         >
-          <span className="state-change-inner" />
-          <Localized id="disableExperimentTransition">
-            <span className="transition-text">Disabling...</span>
-          </Localized>
-          <Localized id="disableExperiment" $title={title}>
-            <span className="default-text">
-              Disable {title}
+          <div className="state-change-inner" />
+          <Localized id="landingInstallButton">
+            <span className="default-btn-msg">
+              Install the Test Pilot Add-on
             </span>
           </Localized>
         </button>
-      </div>
-    );
-  } else if (validVersion) {
-    const buttons = platforms.map(platform => createButton({
-      platform,
-      isMinFirefox,
-      hasAddon,
-      experiment,
-      installExperiment,
-      isEnabling,
-      sendToGA
-    })).filter(b => b);
-    if (buttons.length === 0) {
-      showLegal = false;
+      );
     }
-    controls = <div className="experiment-controls">{buttons}</div>;
   }
+  const controls = <div className="experiment-controls">{buttons}</div>;
 
-  legalSection = <div className="privacy-link">
-    <Localized id="highlightPrivacy">
-      <a onClick={highlightPrivacy} className="highlight-privacy">
-      Your privacy
-      </a>
-    </Localized>
-  </div>;
-
-  if (isMinFirefox && !hasAddon && !enabled && platforms && platforms.includes("addon")) {
-    legalSection = <div className="privacy-link">
-      <LocalizedHtml id={experimentL10nId(experiment, "legal-notice")} $title={title}>
-        <p className="legal-section">
-          By proceeding, you agree to the <a href="/terms"></a> and <a href="/privacy"></a> policies of Test Pilot and the <a onClick={highlightPrivacy}></a>.
-        </p>
-      </LocalizedHtml>
-    </div>;
+  const showLegal = buttons.length > 0 && !graduated;
+  let legalSection = null;
+  if (showLegal) {
+    if (isMinFirefox && !hasAddon && !enabled && platforms.includes("addon")) {
+      legalSection = <div className="privacy-link">
+        <LocalizedHtml id={experimentL10nId(experiment, "legal-notice")} $title={title}>
+          <p className="legal-section">
+            By proceeding, you agree to the <a href="/terms"></a> and <a href="/privacy"></a> policies of Test Pilot and the <a onClick={highlightPrivacy}></a>.
+          </p>
+        </LocalizedHtml>
+      </div>;
+    } else {
+      legalSection = <div className="privacy-link">
+        <Localized id="highlightPrivacy">
+          <a onClick={highlightPrivacy} className="highlight-privacy">
+          Your privacy
+          </a>
+        </Localized>
+      </div>;
+    }
   }
 
   return (
     <div className="details-controls">
       { controls }
-      { showLegal && legalSection }
+      { legalSection }
     </div>
   );
 }
@@ -220,19 +201,72 @@ export const WebExperimentControls = ({
 };
 
 function createButton({
-  platform,
-  isMinFirefox,
-  hasAddon,
+  doShowEolDialog,
+  enabled,
   experiment,
+  graduated,
+  hasAddon,
   installExperiment,
+  isDisabling,
   isEnabling,
-  sendToGA
+  isMinFirefox,
+  platform,
+  sendToGA,
+  uninstallExperimentWithSurvey,
+  userAgent,
+  validVersion
 }: EnableButtonType) {
-  const { slug, title, web_url } = experiment;
+  const { slug, title, web_url, ios_url, android_url } = experiment;
   if (platform === "web") {
     return <WebExperimentControls {...{ key: web_url, web_url, title, slug, sendToGA }} />;
   } else if (platform === "addon") {
-    if (!isMinFirefox) {
+    if (graduated && enabled) {
+      return (
+        <button
+          key="graduated-button"
+          onClick={doShowEolDialog}
+          id="uninstall-button"
+          className={classnames(["button", "warning"], {
+            "state-change": isDisabling
+          })}
+        >
+          <span className="state-change-inner" />
+          <Localized id="disableExperimentTransition">
+            <span className="transition-text">Disabling...</span>
+          </Localized>
+          <Localized id="disableExperiment" $title={title}>
+            <span className="default-text">
+              Disable {title}
+            </span>
+          </Localized>
+        </button>
+      );
+    }
+
+    if (enabled) {
+      return (
+        <button
+          key="uninstall-button"
+          onClick={uninstallExperimentWithSurvey}
+          id="uninstall-button"
+          className={classnames(["button", "secondary"], {
+            "state-change": isDisabling
+          })}
+        >
+          <span className="state-change-inner" />
+          <Localized id="disableExperimentTransition">
+            <span className="transition-text">Disabling...</span>
+          </Localized>
+          <Localized id="disableExperiment" $title={title}>
+            <span className="default-text">
+              Disable {title}
+            </span>
+          </Localized>
+        </button>
+      );
+    }
+
+    if (!isMinFirefox || !validVersion) {
       return null;
     }
 
@@ -277,6 +311,25 @@ function createButton({
         </Localized>
       </button>
     );
+  } else if (platform === "ios") {
+    return <a
+      key={ios_url}
+      href={ios_url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="button mobile"
+    >
+      <img height="80px" src="/static/images/ios.svg" />
+    </a>;
+  } else if (platform === "android") {
+    return <a
+      key={android_url}
+      href={android_url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="button mobile">
+      <img height="80px" src="/static/images/google-play.png" />
+    </a>;
   }
   return null;
 }

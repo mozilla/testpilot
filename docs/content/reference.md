@@ -138,10 +138,14 @@ description: >
 
 ## `platform`
 
-A list of platforms on which this experiment is available - one or more of `addon`, `web`, and `mobile`.
+A list of platforms on which this experiment is available - one or more of `addon`, `web`, `ios`, `android`.
+
+When `ios` is included an `ios_url` is also required.
+When `android` is included an `android_url` is also required.
+When `web` is included a `web_url` is also required.
 
 ```yaml
-platform: ['addon', 'mobile']
+platform: ['addon', 'ios']
 ```
 ## `web_url`
 
@@ -150,6 +154,14 @@ If the experiment is on `web` platform, this is the URL to which the details pag
 ```yaml
 web_url: 'https://example.com/some-web-experiment'
 ```
+
+## `ios_url`
+
+Url to the iOS app store page for the app. Required when `platform` includes `ios`.
+
+## `android_url`
+
+Url to the Google Play store page for the app. Required when `platform` includes `android`.
 
 ## `warning`
 
