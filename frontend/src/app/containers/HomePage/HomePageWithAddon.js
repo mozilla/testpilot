@@ -6,7 +6,6 @@ import { Localized } from 'fluent-react/compat';
 import React from 'react';
 import Banner from '../../components/Banner';
 import Copter from '../../components/Copter';
-import UpdateList from '../../components/UpdateList';
 import EmailDialog from '../../components/EmailDialog';
 import ExperimentTourDialog from "../../components/ExperimentTourDialog";
 import FeaturedExperiment from '../../components/FeaturedExperiment';
@@ -27,8 +26,6 @@ type HomePageWithAddonProps = {
   installed: InstalledExperiments,
   featuredExperiments: Array<Object>,
   majorNewsUpdates: Array<Object>,
-  freshNewsUpdates: Array<Object>,
-  staleNewsUpdates: Array<Object>,
   getCookie: Function,
   setCookie: Function,
   removeCookie: Function,
@@ -163,7 +160,7 @@ export default class HomePageWithAddon extends React.Component {
   }
 
   render() {
-    const { sendToGA, isAfterCompletedDate, staleNewsUpdates, freshNewsUpdates,
+    const { sendToGA, isAfterCompletedDate, 
             majorNewsUpdates, featuredExperiments, isExperimentEnabled,
             experimentsWithoutFeatured, experiments,
             enableExperiment } = this.props;
@@ -213,11 +210,6 @@ export default class HomePageWithAddon extends React.Component {
                              currentExperiments={currentExperiments}
                              onCancel={() => this.setState({ showNewsUpdateDialog: false })}
                              onComplete={() => this.setState({ showNewsUpdateDialog: false })} />) : null}
-
-        <LayoutWrapper flexModifier="card-list">
-          {!featuredExperiment &&
-            <UpdateList {...{ sendToGA, staleNewsUpdates, freshNewsUpdates, experiments }} />}
-        </LayoutWrapper>
         <Visibility className="landing-experiments">
           <div className="more-button">
             <Localized id="landingMoreExperimentsButton">
