@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const fs = require('fs-extra');
+const manifestBase = require('../manifest-base.json');
+const manifestFilename = __dirname + '/../manifest.json';
+let backgroundBaseFile = fs.readFileSync('../background-base.js');
+
+fs.writeJson(manifestFilename, Object.assign(manifestBase, {
+  permissions: env.url
+})).then(() => {
+  backgroundBaseFile.replace('$ENVIRONMENT_TITLE', process.env['ENVIRONMENT_TITLE']);
+  backgroundBaseFile.replace('$ENVIRONMENT_URL', process.env['ENVIRONMENT_url']);
+  fs.writeFile('../background.js', backgroundBaseFile).then(() => {
+    console.log('it is complete');
+    process.exit();
+  });
+}).catch(err => {
+  console.error(err)
+});

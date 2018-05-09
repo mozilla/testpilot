@@ -32,8 +32,8 @@ const resources = {
 };
 
 let currentEnvironment = {
-  name: "production",
-  baseUrl: "https://testpilot.firefox.com"
+  name: $ENVIRONMENT_TITLE,
+  baseUrl: $ENVIRONMENT_URL
 };
 
 function uuidv4() {
@@ -124,7 +124,8 @@ function fetchResources() {
         .catch(err => {
           log("fetchResources error", path, err);
           return [path, null];
-        }))
+        });
+    )
   ).then(results => {
     log("fetchResources results", results);
     results.forEach(([path, data]) => (resources[path] = data));
