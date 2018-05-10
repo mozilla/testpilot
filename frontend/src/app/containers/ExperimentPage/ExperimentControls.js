@@ -112,11 +112,15 @@ export default function ExperimentControls({
           })}
         >
           <div className="state-change-inner" />
-          <Localized id="landingInstallButton">
+          {!isEnabling && <Localized id="landingInstallButton">
             <span className="default-btn-msg">
               Install the Test Pilot Add-on
             </span>
-          </Localized>
+          </Localized>}
+          {isEnabling &&
+          <Localized id="landingInstallingButton">
+            <span className="progress-btn-msg">Installing...</span>
+          </Localized>}
         </button>
       );
     }
