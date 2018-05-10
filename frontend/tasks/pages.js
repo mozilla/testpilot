@@ -268,7 +268,7 @@ function generateStaticPageFromMarkdown(pageName, pageParam, markdown, params) {
     <footer id="main-footer">
       <div id="footer-links" className="layout-wrapper layout-wrapper--row-bottom-breaking">
         <div className="legal-links">
-          <a href="https://www.mozilla.org" className="mozilla-logo"></a>
+          <a href="https://www.mozilla.org" className="mozilla-logo" alt="Mozilla Site"></a>
           <a href="https://www.mozilla.org/about/legal/" className="boilerplate">Legal</a>
           <a href="https://qsurvey.mozilla.com/s3/test-pilot-general-feedback" className="boilerplate">Give Feedback</a>
           <a href="/about" className="boilerplate">About Test Pilot</a>
@@ -277,8 +277,8 @@ function generateStaticPageFromMarkdown(pageName, pageParam, markdown, params) {
           <a href="https://www.mozilla.org/privacy/websites/#cookies" className="boilerplate">Cookies</a>
         </div>
         <div className="social-links">
-          <a href="https://github.com/mozilla/testpilot" target="_blank" title="GitHub" className="link-icon github"></a>
-          <a href="https://twitter.com/FxTestPilot" target="_blank" title="Twitter" className="link-icon twitter"></a>
+          <a href="https://github.com/mozilla/testpilot" target="_blank" title="GitHub" className="link-icon github" alt="Testpilot GitHub Repo"></a>
+          <a href="https://twitter.com/FxTestPilot" target="_blank" title="Twitter" className="link-icon twitter" alt="Testpilot Twitter"></a>
         </div>
       </div>
     </footer>

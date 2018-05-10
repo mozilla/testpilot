@@ -18,7 +18,7 @@ export default class Footer extends React.Component {
       <footer id="main-footer">
         <LayoutWrapper flexModifier="row-bottom-breaking">
           <div className="legal-links">
-            <a href="https://www.mozilla.org" className="mozilla-logo"></a>
+            <a href="https://www.mozilla.org" className="mozilla-logo" alt="Mozilla Site"></a>
             <Localized id="footerLinkLegal">
               <a href="https://www.mozilla.org/about/legal/" className="boilerplate">Legal</a>
             </Localized>
@@ -41,10 +41,10 @@ export default class Footer extends React.Component {
           <div className="social-links">
             <a onClick={(e) => this.eventToGA(e)} href="https://github.com/mozilla/testpilot"
               target="_blank" className="link-icon github"
-              rel="noopener noreferrer" title="GitHub"></a>
+              rel="noopener noreferrer" title="GitHub" alt="Testpilot GitHub Repo"></a>
             <a onClick={(e) => this.eventToGA(e)} href="https://twitter.com/FxTestPilot"
               target="_blank" rel="noopener noreferrer"
-              className="link-icon twitter" title="Twitter"></a>
+              className="link-icon twitter" title="Twitter" alt="Testpilot Twitter"></a>
           </div>
         </LayoutWrapper>
       </footer>

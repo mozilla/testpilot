@@ -113,6 +113,9 @@ class App extends Component {
     this.props.chooseTests();
     this.measurePageview();
 
+    // set lang attr on <html> for a11y
+    document.documentElement.setAttribute("lang", window.navigator.language);
+
     const langs = {};
 
     function addLang(lang, response) {
