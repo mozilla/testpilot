@@ -270,7 +270,7 @@ function createButton({
       );
     }
 
-    if (!isMinFirefox || !validVersion) {
+    if (!isMinFirefox || !validVersion || graduated) {
       return null;
     }
 
