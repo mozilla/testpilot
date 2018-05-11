@@ -78,6 +78,7 @@ notesMeasurements1 = Notes collecte aussi des informations relatives à votre in
 notesDetails0Copy = C’est un bloc-notes. Pourquoi n’y avons-nous pas pensé plus tôt ?
 notesDetails1Copy = Prenez autant de notes que nécessaire et synchronisez-les avec votre compte Firefox.
 notesToursteps0Copy = Notes est un simple bloc-notes qui s’ajoute à la barre latérale de votre navigateur.
+notesToursteps1CopyMultinote = Cliquez sur le bouton avec la flèche pour afficher toutes vos notes.
 notesToursteps2CopyMultinote = Créez une nouvelle note chaque fois que vous avez besoin d’écrire quelque chose.
 notesToursteps3CopyMultinote = Connectez-vous à votre compte Firefox pour synchroniser vos notes.
 notesToursteps4Copy = Vous pouvez nous faire part de votre avis à tout moment ou désactiver Notes du programme Test Pilot.

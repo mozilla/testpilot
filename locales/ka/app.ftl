@@ -25,7 +25,6 @@ menuDiscuss = Test Pilot განხილვა
 menuFileIssue = ხარვეზის მოხსენება
 menuRetire = Test Pilot ამოშლა
 headerLinkBlog = სვეტი
-headerLinkNews = სიახლეების არხი
 
 ## The splash on the homepage.
 
@@ -83,13 +82,6 @@ emailOptInMessage = მოიძიეთ ახალი საცდელი 
 emailOptInConfirmationTitle = წერილი გამოგზავნილია
 emailOptInConfirmationClose = წინ, ახალი შესაძლებლობების გამოცდისკენ...
 emailOptInDialogErrorTitle = ოჰ, არა!
-
-## News feed updates.
-
-latestUpdatesTitle = ბოლო განახლებები
-showMoreNewsTitle = ძველი სიახლეების ჩვენება
-# "Link" is a noun in this context
-englishArticleLink = ბმული ინგლისურ სტატიაზე
 
 ## Featured experiment.
 
@@ -267,7 +259,7 @@ warningUpgradeFirefoxDetail = Test Pilot საჭიროებს Firefox-ი
 warningHttpsRequiredTitle = აუცილებელია HTTPS!
 warningHttpsRequiredDetail = Test Pilot წვდომისთვის საჭიროებს HTTPS პროტოკოლს. დამატებითი ინფორმაციისთვის, გთხოვთ გაეცნოთ <a>ჩვენს დოკუმენტაციას</a>.
 warningMissingPrefTitle = Test Pilot პროექტის შემმუშავებელი ხართ?
-warningMissingPrefDetail = Test Pilot-ის გაშვება ლოკალურად საჭიროებს სპეციალურ სამუშაო გარემოს და კონფიგურაციას. დამატებითი ინფორმაციისთვის, გთხოვთ გაეცნოთ <a>ჩვენს დოკუმენტაციას</a>.
+warningMissingPrefDetail = Test Pilot-ის გაშვება ლოკალურად საჭიროებს საგანგებოდ გამართულ სამუშაო გარემოს. დამატებითი ინფორმაციისთვის, გთხოვთ გაეცნოთ <a>ჩვენს დოკუმენტაციას</a>.
 warningBadHostnameTitle = ჰოსტის არამართებული სახელი!
 warningBadHostnameDetail = Test Pilot ვებსაიტი ხელმისაწვდომია მხოლოდ testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, ან example.com:8000 მისამართებიდან. დამატებითი ინფორმაციისთვის, გთხოვთ, გაეცნოთ <a>ჩვენს დოკუმენტაციას</a>.
 
