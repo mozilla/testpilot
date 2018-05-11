@@ -285,12 +285,16 @@ function createButton({
           })}
         >
           <div className="state-change-inner" />
-          <LocalizedHtml id="oneClickInstallMinorCta">
+          {!isEnabling && <LocalizedHtml id="oneClickInstallMinorCta">
             <span className="one-click-minor">Install Test Pilot &amp;</span>
-          </LocalizedHtml>
-          <Localized id="oneClickInstallMajorCta" $title={title}>
+          </LocalizedHtml>}
+          {!isEnabling && <Localized id="oneClickInstallMajorCta" $title={title}>
             <span className="one-click-major">Enable {title}</span>
-          </Localized>
+          </Localized>}
+          {isEnabling &&
+          <Localized id="landingInstallingButton">
+            <span className="progress-btn-msg">Installing...</span>
+          </Localized>}
         </button>
       );
     }
