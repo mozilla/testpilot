@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 STORYBOOK_BUCKET=${STORYBOOK_BUCKET:-testpilot-storybook.dev.mozaws.net}
 if [ -z "$STORYBOOK_BUCKET" ]; then

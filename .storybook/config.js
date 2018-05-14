@@ -2,8 +2,7 @@
 
 import { configure } from '@storybook/react';
 
-import '../frontend/build/static/styles/experiments.css';
-import '../frontend/build/static/styles/main.css';
+import '../frontend/build/static/app/app.css';
 
 const reqInSrcTree = require.context('../frontend/src/app', true, /\/stories.jsx?$/);
 
