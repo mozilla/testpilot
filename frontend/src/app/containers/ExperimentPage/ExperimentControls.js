@@ -2,7 +2,7 @@ import React from "react";
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
 import LocalizedHtml from "../../components/LocalizedHtml";
-import { experimentL10nId } from "../../lib/utils";
+import { experimentL10nId, isMobile } from "../../lib/utils";
 
 import type {
   ExperimentControlsType,
@@ -270,7 +270,7 @@ function createButton({
       );
     }
 
-    if (!isMinFirefox || !validVersion || graduated) {
+    if (!isMinFirefox || !validVersion || graduated || isMobile(userAgent)) {
       return null;
     }
 
