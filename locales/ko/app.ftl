@@ -201,12 +201,20 @@ restartIntroThree = 실험 선택
 
 eolIntroMessage = { $title }은 { $completedDate }에 종료합니다
 eolNoticeLink = 더 알아보기
+eolDisableMessage = { $title } 기능 실험 기간이 종료되었습니다. 한번 삭제하시면 더이상 Test Pilot 페이지에서 재설치하실 수 없습니다.
+completedDateLabel = 실험 종료일: <b>{ $completedDate }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 
+incompatibleHeader = 이 실험 기능은 이미 설치된 다른 추가 기능과 호환되지 않을 수 있습니다.
+incompatibleSubheader = <a>이 추가 기능들을 비활성화</a>한 뒤 이 실험을 활성화하기를 추천함:
 
 ## A form prompting the user to sign up for the Test Pilot Newsletter.
 
+newsletterFormEmailPlaceholder =
+    .placeholder = 이메일 주소를 적어주세요
+newsletterFormDisclaimer = Test Pilot 관련 정보 이외 다른 정보는 보내지 않습니다.
+newsletterFormPrivacyNotice = <a>개인 정보 보호 정책</a>에 따라 Mozilla가 내 정보를 사용하는 것에 동의합니다.
 newsletterFormSubmitButton = 지금 가입
 newsletterFormSubmitButtonSubmitting = 제출 중...
 
@@ -216,6 +224,7 @@ newsletterFooterError = 이메일 주소를 제출하는데 실패했습니다. 
 newsletterFooterHeader = 최신 정보를 받아보세요
 newsletterFooterBody = 새 실험 기능을 찾아보시거나 이미 써보셨던 기능 실험 결과를 확인해보세요.
 newsletterFooterSuccessHeader = 감사합니다!
+newsletterFooterSuccessBody = Mozilla 관련 뉴스레터 구독 인증을 해본 적이 없으면 따로 인증이 필요할 수 있습니다. 메일함을 확인해보시고 메일이 없으면 혹시 스팸 필터에 걸린 메일이 없는지도 살펴보세요.
 
 ## A warning shown to users when the experiment is not available in their language
 
