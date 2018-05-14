@@ -113,8 +113,14 @@ class App extends Component {
     this.props.chooseTests();
     this.measurePageview();
 
+    const lang = window.navigator.language;
+
     // set lang attr on <html> for a11y
-    document.documentElement.setAttribute("lang", window.navigator.language);
+    document.documentElement.setAttribute("lang", lang);
+
+    // we should expand upon this in the future, but this should get us
+    // working for arabic
+    document.documentElement.setAttribute("dir", (lang === "ar" ? "rtl" : "ltr"));
 
     const langs = {};
 
