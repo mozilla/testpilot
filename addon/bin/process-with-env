@@ -6,10 +6,10 @@ const manifestFilename = __dirname + '/../manifest.json';
 let backgroundBaseFile = fs.readFileSync('../background-base.js');
 
 fs.writeJson(manifestFilename, Object.assign(manifestBase, {
-  permissions: env.url
+  permissions: process.env['ENVIRONMENT_URL']
 })).then(() => {
   backgroundBaseFile.replace('$ENVIRONMENT_TITLE', process.env['ENVIRONMENT_TITLE']);
-  backgroundBaseFile.replace('$ENVIRONMENT_URL', process.env['ENVIRONMENT_url']);
+  backgroundBaseFile.replace('$ENVIRONMENT_URL', process.env['ENVIRONMENT_URL']);
   fs.writeFile('../background.js', backgroundBaseFile).then(() => {
     console.log('it is complete');
     process.exit();
