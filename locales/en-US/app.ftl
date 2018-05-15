@@ -12,6 +12,7 @@ footerLinkPrivacy = Privacy
 footerLinkTerms = Terms
 footerLinkLegal = Legal
 footerLinkFeedback = Give Feedback
+# This is a header displayed above a set of links about Mozilla and Test Pilot
 footerLinkAboutHeader = About
 footerLinkAboutUs = About us
 footerLinkSupportHeader = Support
