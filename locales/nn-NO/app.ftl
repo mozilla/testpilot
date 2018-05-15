@@ -25,6 +25,7 @@ menuDiscuss = Diskuter Test Pilot
 menuFileIssue = Rapporter eit problem
 menuRetire = Avinstaller Test Pilot
 headerLinkBlog = Blogg
+headerLinkNews = Nyheitskjelde
 
 ## The splash on the homepage.
 
@@ -87,6 +88,8 @@ emailOptInDialogErrorTitle = Å, nei!
 
 latestUpdatesTitle = Siste oppdateringar
 showMoreNewsTitle = Vis tidlegare nyheiter
+# "Link" is a noun in this context
+englishArticleLink = Lenk til artikkel på engelsk
 
 ## Featured experiment.
 

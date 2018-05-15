@@ -17,21 +17,13 @@ Example from https://trello.com/c/4PNAwpwQ/3-new-experiment-add-on-ui
 
 ## Create (a) measurement issue(s) for the feature that's part of the milestone.
 
-- Are we using Telemetry or GA or a combination of both?
-- See below for specifications on requesting Telemetry and GA.
 - Define & publicly document the data collection schema that would answer the question.
 - Should we just create an issue for this right away?
-- Do we need a new dashboard/report for results? This is re:dash or GA.
-
-## Telemetry
-
-All measurements from within the add-on are done with Telemetry.
-
-Example: TODO: come up with an example.
+- Do we need a new dashboard/report for results?
 
 ## Google Analytics
 
-https://github.com/mozilla/testpilot/blob/master/docs/README-GOOGLE-ANALYTICS.md
+https://github.com/mozilla/testpilot/blob/master/docs/ga.md
 
 All measurements from within the web site are done in Google Analytics.  This includes links from the add-on to the website (meaning, we include GA variables in the URL).  GA provides a robust foundation for analytics and let's us have funnel tracking for free.
 
@@ -47,7 +39,3 @@ Make the link to the home page with the appropriate utm_ variables.  An example:
 After push to production, notify Gareth when it goes live so he can confirm it is working and add to our dashboards
 
 An aside, but if you want to put GA inside of an add-on, Google Analytics in Firefox addons would use this: https://developers.google.com/analytics/devguides/collection/protocol/v1/
-
-## Dashboarding
-
-Dashboarding is done in re:dash or Google Analytics custom reports.

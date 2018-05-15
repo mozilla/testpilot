@@ -84,20 +84,6 @@ describe("Header", () => {
       }]);
     });
 
-    it("should ping GA on newsfeed link clicked", () => {
-      subject.find("a.news-link").simulate("click", mockClickEvent);
-      expect(props.sendToGA.lastCall.args.slice(0, 2)).to.deep.equal(["event", {
-        eventCategory: "Menu Interactions",
-        eventAction: "click",
-        eventLabel: "open newsfeed"
-      }]);
-    });
-
-    it("should show a link to the news feed", () => {
-      expect(subject.find("a.news-link")).to.have.property("length", 1);
-      expect(subject.find("a.news-link").props()).to.have.property("href", "/news");
-    });
-
     it("should show the settings menu when the settings button is clicked", () => {
       subject.find(".settings-button").simulate("click", mockClickEvent);
       expect(subject.state("showSettings")).to.be.true;

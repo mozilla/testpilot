@@ -19,7 +19,8 @@ describe("app/components/ExperimentPlatforms", () => {
       subtitle_l10nsuffix: "foo",
       description: "This is a description.",
       created: moment().subtract(2, "months").utc(),
-      modified: moment().subtract(2, "months").utc()
+      modified: moment().subtract(2, "months").utc(),
+      platforms: []
     };
     props = {
       experiment: mockExperiment

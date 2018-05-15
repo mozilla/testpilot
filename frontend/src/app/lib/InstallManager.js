@@ -202,42 +202,50 @@ export function enableExperiment(dispatch, experiment, sendToGA, eventCategory, 
     })
   );
   return installAddon(sendToGA, eventCategory, eventLabel, experiment.slug)
-    .then(() => mam.getAddonByID(experiment.addon_id))
     .then(
-      addon => {
-        if (addon) {
-          // already installed
-          if (!addon.isEnabled) {
-            return addon.setEnabled(true);
+      () => mam.getAddonByID(experiment.addon_id)
+        .then(
+          addon => {
+            if (addon) {
+              // already installed
+              if (!addon.isEnabled) {
+                return addon.setEnabled(true);
+              }
+              // already enabled
+              return Promise.resolve();
+            }
+            return mozAddonManagerInstall(experiment.xpi_url, sendToGA, experiment.slug)
+              .then(() => dispatch(addonActions.experimentInstalled(experiment)));
           }
-          // already enabled
-          return Promise.resolve();
-        }
-        return mozAddonManagerInstall(experiment.xpi_url, sendToGA, experiment.slug)
-          .then(() => dispatch(addonActions.experimentInstalled(experiment)));
-      }
-    )
-    .then(
-      () => {
-        dispatch(addonActions.enableExperiment(experiment));
-        dispatch(
-          updateExperiment(experiment.addon_id, {
-            inProgress: false,
-            error: false
-          })
-        );
-      },
+        )
+        .then(
+          () => {
+            dispatch(addonActions.enableExperiment(experiment));
+            dispatch(
+              updateExperiment(experiment.addon_id, {
+                inProgress: false,
+                error: false
+              })
+            );
+          },
+          err => {
+            dispatch(addonActions.disableExperiment(experiment));
+            dispatch(
+              updateExperiment(experiment.addon_id, {
+                inProgress: false,
+                error: true
+              })
+            );
+            throw err;
+          }
+        ),
       err => {
-        dispatch(addonActions.disableExperiment(experiment));
         dispatch(
           updateExperiment(experiment.addon_id, {
-            inProgress: false,
-            error: true
+            inProgress: false
           })
         );
-        throw err;
-      }
-    );
+      });
 }
 
 export function disableExperiment(dispatch, experiment) {
