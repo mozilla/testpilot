@@ -55,10 +55,10 @@ export default class Footer extends React.Component {
         <Localized id="footerLinkAboutUs">
           <a href="https://www.mozilla.org/about" className="boilerplate">About us</a>
         </Localized>
-        <Localized id="footerLinkWiki">
-          <a href="https://wiki.mozilla.org/Test_Pilot" className="boilerplate">Wiki page</a>
+        <Localized id="menuWiki">
+          <a href="https://wiki.mozilla.org/Test_Pilot" className="boilerplate">Test Pilot Wiki</a>
         </Localized>
-        <Localized id="footerLinkBlog">
+        <Localized id="headerLinkBlog">
           <a href="https://medium.com/firefox-test-pilot" className="boilerplate">Blog</a>
         </Localized>
       </section>
@@ -71,14 +71,14 @@ export default class Footer extends React.Component {
         <Localized id="footerLinkSupportHeader">
           <h3>Support</h3>
         </Localized>
-        <Localized id="footerLinkFeedback">
+        <Localized id="giveFeedback">
           <a href="https://qsurvey.mozilla.com/s3/test-pilot-general-feedback" className="boilerplate">Give Feedback</a>
         </Localized>
-        <Localized id="footerLinkDiscuss">
+        <Localized id="menuDiscuss">
           <a href="https://discourse.mozilla.org/c/test-pilot" className="boilerplate">Discuss Test Pilot</a>
         </Localized>
-        <Localized id="footerLinkBug">
-          <a href="https://github.com/mozilla/testpilot/issues/new" className="boilerplate">File a bug</a>
+        <Localized id="menuFileIssue">
+          <a href="https://github.com/mozilla/testpilot/issues/new" className="boilerplate">File an Issue</a>
         </Localized>
         <div className="social-links social-testpilot">
           <a onClick={(e) => this.eventToGA(e)} href="https://github.com/mozilla/testpilot"
@@ -95,7 +95,7 @@ export default class Footer extends React.Component {
   renderFirefoxSection() {
     return (
       <section className="footer-section">
-        <Localized id="footerLinkFirefoxHeader">
+        <Localized id="landingDownloadFirefoxTitle">
           <h3>Firefox</h3>
         </Localized>
         <Localized id="footerLinkDownload">
@@ -104,7 +104,7 @@ export default class Footer extends React.Component {
         <Localized id="footerLinkMobile">
           <a href="https://www.mozilla.org/en-US/firefox/mobile/" className="boilerplate">Mobile</a>
         </Localized>
-        <Localized id="footerLinkBeta">
+        <Localized id="footerLinkFeatures">
           <a href="https://www.mozilla.org/en-US/firefox/features/" className="boilerplate">Features</a>
         </Localized>
         <Localized id="footerLinkBeta">
@@ -135,9 +135,9 @@ export default class Footer extends React.Component {
             {this.renderAboutSection()}
             {this.renderSupportSection()}
             {this.renderFirefoxSection()}
-            {hasAddon && <section className="footer-section"><Localized id="footerLinkUninstall">
-              <a href="#" onClick={(e) => this.retire(e)} className="boilerplate uninstall-header" title="Uninstall Test Pilot"><h3>Uninstall Test Pilot</h3></a>
-            </Localized></section>}
+            {hasAddon && <section className="footer-section"><h3><Localized id="menuRetire">
+              <a href="#" onClick={(e) => this.retire(e)} className="boilerplate uninstall-header" title="Uninstall Test Pilot">Uninstall Test Pilot</a>
+            </Localized></h3></section>}
           </div>
 
           <div className="legal-links">

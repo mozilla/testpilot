@@ -12,9 +12,16 @@ footerLinkPrivacy = Privacy
 footerLinkTerms = Terms
 footerLinkLegal = Legal
 footerLinkFeedback = Give Feedback
-footerLinkAbout = About Test Pilot
+footerLinkAboutHeader = About
+footerLinkAboutUs = About us
+footerLinkSupportHeader = Support
+footerLinkDownload = Download Firefox
+footerLinkMobile = Mobile
+footerLinkFeatures = Features
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = <h3>Uninstall Test Pilot</h3>
 
-## Items in the menu.
+## Items in the menu and footer
 home = Home
 menuTitle = Settings
 menuWiki = Test Pilot Wiki
@@ -44,6 +51,7 @@ landingRequiresDesktop = Test Pilot requires Firefox for Desktop on Windows, Mac
 landingDownloadFirefoxDesc = (Test Pilot is available for Firefox on Windows, OS X and Linux)
 landingUpgradeDesc = Test Pilot requires Firefox 49 or higher.
 landingUpgradeDesc2 = Test Pilot requires Firefox {$version} or higher.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Upgrade Firefox
 landingDownloadFirefoxSubTitle = Free Download

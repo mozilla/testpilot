@@ -64,14 +64,22 @@
 
     background-repeat: repeat;
     cursor: pointer;
-    flex: 0 0 32px;
-    height: 32px;
+    flex: 0 0 25px;
+    height: 25px;
     opacity: .9;
     transition: opacity 150ms;
 
     &:hover {
       opacity: 1;
     }
+
+    &:first-child {
+      margin-left: 0px;
+    }
+  }
+
+  &:first-child {
+    margin-left: 0px !important;
   }
 
   .github {
@@ -80,6 +88,11 @@
 
   .twitter {
     background-image: url('./img/twitter-icon.svg');
+  }
+
+  .youtube {
+    background-image: url('./img/youtube-icon.svg');
+    background-position: 50%;
   }
 }
 
