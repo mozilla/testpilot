@@ -16,10 +16,11 @@ footerLinkAboutHeader = About
 footerLinkAboutUs = About us
 footerLinkSupportHeader = Support
 footerLinkDownload = Download Firefox
+# link to page detailing firefox mobile browser options
 footerLinkMobile = Mobile
 footerLinkFeatures = Features
 footerLinkBeta = Beta, Nightly, Developer Edition
-footerLinkRetire = <h3>Uninstall Test Pilot</h3>
+footerLinkRetire = Uninstall Test Pilot
 
 ## Items in the menu and footer
 home = Home

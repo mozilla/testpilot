@@ -71,7 +71,7 @@ export default class Footer extends React.Component {
         <Localized id="footerLinkSupportHeader">
           <h3>Support</h3>
         </Localized>
-        <Localized id="giveFeedback">
+        <Localized id="footerLinkFeedback">
           <a href="https://qsurvey.mozilla.com/s3/test-pilot-general-feedback" className="boilerplate">Give Feedback</a>
         </Localized>
         <Localized id="menuDiscuss">
