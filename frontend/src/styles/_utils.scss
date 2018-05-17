@@ -72,6 +72,9 @@ $eol-dark-orange: #f46323;
 $eol-orange: #ff9300;
 $eol-light-orange: rgba($eol-orange, .25);
 
+// no-support-red
+$no-support-red: #D70022;
+
 // flexing container
 @mixin flex-container($direction, $justification: flex-start, $alignment: stretch, $wrap: nowrap) {
   display: flex;
