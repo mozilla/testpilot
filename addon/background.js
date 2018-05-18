@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-/* global browser */
+/* global browser, currentEnvironment */
 
 function log(...args) {
   // console.log(...["[TESTPILOT v2] (background)"].concat(args)); // eslint-disable-lint no-console
@@ -31,10 +31,7 @@ const resources = {
   news_updates: []
 };
 
-let currentEnvironment = {
-  name: $ENVIRONMENT_TITLE,
-  baseUrl: $ENVIRONMENT_URL
-};
+console.log("DO I ACTUALY HAVE ACCESS TO CURRENT ENV??", currentEnvironment);
 
 function uuidv4() {
   return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
@@ -57,7 +54,7 @@ function getInstalledTxpAddons() {
 }
 
 async function setup() {
-  setupEnvironment();
+  setInterval(fetchResources, RESOURCE_UPDATE_INTERVAL);
   setupBrowserAction();
   await fetchResources();
   setDailyPing();
@@ -96,19 +93,6 @@ function setupBrowserAction() {
     storage.set({ clicked: Date.now() });
     browser.tabs.create({
       url: `${currentEnvironment.baseUrl}${BROWSER_ACTION_LINK}`
-    });
-  });
-}
-
-function setupEnvironment() {
-  log("setupEnvironment");
-  setInterval(fetchResources, RESOURCE_UPDATE_INTERVAL);
-  browser.storage.onChanged.addListener((changes) => {
-    Object.keys(changes).forEach((k) => {
-      if (k === "environment") {
-        currentEnvironment = changes[k].newValue;
-        fetchResources();
-      }
     });
   });
 }

@@ -22,8 +22,9 @@
   },
   "scripts": {
     "start": "web-ext run",
-    "prepackage": "npm run lint && npm run lint:extension && npm run update-version",
-    "package": "shx rm -rf web-ext-artifacts && rm background.js && rm manifest.json && node bin/process-with-env && cross-env web-ext build --ignore-files package.json package-lock.json bin/update-version README.md LICENSE --overwrite-dest && shx mv web-ext-artifacts/test_pilot-*.zip ./addon.xpi",
+    "clean": "shx rm -rf web-ext-artifacts && rm -f current-environment.js && rm manifest.json",
+    "prepackage": "npm run clean && node bin/process-with-env && npm run lint && npm run lint:extension && npm run update-version",
+    "package": "cross-env web-ext build --ignore-files package.json package-lock.json bin/update-version README.md LICENSE --overwrite-dest && shx mv web-ext-artifacts/test_pilot-*.zip ./addon.xpi",
     "lint": "eslint .",
     "lint:extension": "web-ext lint --self-hosted",
     "update-version": "node bin/update-version"
