@@ -4,6 +4,8 @@ const fs = require("fs-extra");
 const manifestBase = require("../manifest-base.json");
 const manifestFilename = __dirname + "/../manifest.json";
 
+const newName = (process.env["ENVIRONMENT_TITLE"] === "production") ?
+      "Test Pilot" : `Test Pilot ${process.env["ENVIRONMENT_TITLE"]} build`;
 const newId = (process.env["ENVIRONMENT_TITLE"] === "production") ?
       "@testpilot-addon" : `@testpilot-addon-${process.env["ENVIRONMENT_TITLE"]}`;
 
@@ -17,6 +19,7 @@ const currentEnvironment = {
 `;
 
 fs.writeJson(manifestFilename, Object.assign(manifestBase, {
+  name: newName,
   applications: {
     gecko: Object.assign(manifestBase.applications.gecko, {id: newId})
   },
