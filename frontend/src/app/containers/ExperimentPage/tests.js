@@ -80,6 +80,12 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
           copy: "Testing"
         }
       ],
+      tour_steps: [
+        {
+          image: "/hello.jpg",
+          copy: "spiral pizza"
+        }
+      ],
       min_release: 48.0,
       error: false
     };
@@ -776,15 +782,17 @@ describe("app/containers/ExperimentPage/ExperimentPreFeedbackDialog", () => {
 
 describe("app/containers/ExperimentPage/DetailsOverview:StatsSection", () => {
 
-  let doShowTourDialog, mockClickEvent, props, sendToGA, subject;
+  let doShowTourDialog, mockClickEvent, props, sendToGA, hasTour, subject;
   beforeEach(() => {
     mockClickEvent = {};
     doShowTourDialog = sinon.spy();
     sendToGA = sinon.spy();
+    hasTour = true;
     props = {
       experiment: {},
       doShowTourDialog,
-      sendToGA
+      sendToGA,
+      hasTour
     };
     subject = shallow(<StatsSection {...props} />);
   });
