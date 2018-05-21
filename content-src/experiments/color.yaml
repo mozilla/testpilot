@@ -1,0 +1,82 @@
+id: 17
+title: 'Color'
+slug: color
+is_featured: false
+platforms: ['addon', 'web']
+min_release: 60
+thumbnail: /static/images/experiments/color/color-thumbnail.png
+description: >
+  Show your colors. Create and share your own Firefox themes with just a few clicks.
+introduction: >
+  Firefox Color makes it easy for anyone to change the look of Firefox.
+  It’s a simple tool that lets you choose different color combinations
+  and background textures for your own Firefox theme.
+image_twitter: /static/images/experiments/notes/notes-twitter.jpg
+image_facebook: /static/images/experiments/notes/notes-fb.jpg
+video_url: https://www.youtube.com/embed/vaFvr_70yxw
+changelog_url: 'https://github.com/mozilla/FirefoxColor/releases'
+contribute_url: 'https://github.com/mozilla/FirefoxColor'
+bug_report_url: 'https://github.com/mozilla/FirefoxColor/issues'
+discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/color'
+legal_notice: By proceeding, you agree to the <a>terms</a> and <a>privacy</a> policies of Test Pilot and the <a>Firefox Color privacy policy</a>.
+privacy_notice_url: 'https://github.com/mozilla/FirefoxColor/blob/master/docs/metrics.md'
+measurements:
+  - >
+    Information about how you interact with the experiment, such as how you
+    access
+    the feature, which buttons you click, and how frequently you use it.
+  - >
+    Information about whether you have the experimental add-on installed
+    while visiting the Firefox Color website.
+  - >
+    Information about which colors and backgrounds you use to create custom themes.
+    This helps us understand the most popular choices among experiment
+    participants.
+xpi_url: 'https://testpilot.firefox.com/files/FirefoxColor@mozilla.com/latest'
+addon_id: 'FirefoxColor@mozilla.com'
+gradient_start: '#7193c9'
+gradient_center: '#fda8bb'
+gradient_stop: '#f7bc69'
+details:
+  -
+    image: /static/images/experiments/color/color-detail-1.jpg
+    copy: >
+      Create themes by picking colors and background textures.
+      You can share your creations or save them for yourself.
+  -
+    image: /static/images/experiments/color/color-detail-2.jpg
+    copy: >
+      We created some preset themes to help you get started.
+contributors:
+  -
+    display_name: 'Les Orchard'
+    title: 'Senior Engineer'
+    avatar: /static/images/experiments/avatars/les.jpg
+  -
+    display_name: 'John Gruen'
+    title: 'Test Pilot PM'
+    avatar: /static/images/experiments/avatars/johng.jpg
+  -
+    display_name: 'Shruti Singh'
+    title: 'Test Pilot Intern'
+    avatar: /static/images/experiments/avatars/shrutis.jpg
+  -
+    display_name: 'Mark Liang'
+    title: 'Firefox UX'
+    avatar: /static/images/experiments/avatars/mliang.png
+  -
+    display_name: 'Peko Chen'
+    title: 'UX Visual Designer'
+    avatar: /static/images/experiments/avatars/peko-c.jpg
+  -
+    display_name: 'Marius Coman'
+    title: 'SoftVision QA'
+    avatar: /static/images/experiments/avatars/marius.jpg
+  -
+    display_name: 'Andreea Cupsa'
+    title: 'SoftVision QA'
+    avatar: /static/images/experiments/avatars/andreeac.jpg
+created: '2018-06-05T15:00:00Z'
+launch_date: '2018-06-05T15:00:00Z'
+order: 0
+
