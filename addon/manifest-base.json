@@ -1,11 +1,10 @@
-
 {
   "manifest_version": 2,
   "name": "Test Pilot",
   "author": "Mozilla (https://mozilla.org/)",
   "applications": {
     "gecko": {
-      "id": "@testpilot-addon-local",
+      "id": "@testpilot-addon",
       "update_url": "https://testpilot.firefox.com/files/@testpilot-addon/updates.json"
     }
   },
@@ -24,8 +23,7 @@
     "notifications",
     "storage",
     "cookies",
-    "tabs",
-    "https://example.com:8000/"
+    "tabs"
   ],
   "background": {
     "scripts": [
