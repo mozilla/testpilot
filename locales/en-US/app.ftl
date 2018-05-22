@@ -112,6 +112,8 @@ experimentPromoSubheader = We're building next-generation features for Firefox. 
 ## The experiment detail page.
 isEnabledStatusMessage = {$title} is enabled.
 installErrorMessage = Uh oh. {$title} could not be enabled. Try again later.
+wrongPlatformIOS = This experiment is available for iOS devices only.
+wrongPlatformAndroid = This experiment is available for Android devices only.
 otherExperiments = Try out these experiments as well
 giveFeedback = Give Feedback
 disableHeader = Disable Experiment?

@@ -5,7 +5,7 @@ import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
 import LayoutWrapper from "../../components/LayoutWrapper";
 import ExperimentPlatforms from "../../components/ExperimentPlatforms";
-import { experimentL10nId } from "../../lib/utils";
+import { experimentL10nId, isMobile } from "../../lib/utils";
 
 import type {
   DetailsHeaderProps,
@@ -35,13 +35,29 @@ export default class DetailsHeader extends React.Component {
       experiment
     } = this.props;
 
-    const { slug, thumbnail, title, subtitle, error, min_release, max_release } = experiment;
+    const { slug, thumbnail, title, subtitle, error, min_release, max_release,
+      platforms } = experiment;
+
+    const isIOS = (/iphone|ipod|ipad/i.test(userAgent));
+    const isAndroid = (/android/i.test(userAgent));
+
+    const both = (platforms.includes("ios") && platforms.includes("android"));
+    const none = (!platforms.includes("ios") && !platforms.includes("android"));
 
     let statusType = null;
     if (error) {
       statusType = "error";
     } else if (enabled) {
       statusType = "enabled";
+      // mobile and only 1 mobile platform is available
+    } else if (isMobile(userAgent) && !both && !none) {
+      // is ios & ios not available
+      if (isIOS && !platforms.includes("ios")) {
+        statusType = "wrongPlatformAndroid";
+      // is android & android not available
+      } else if (isAndroid && !platforms.includes("android")) {
+        statusType = "wrongPlatformIOS";
+      }
     }
 
     const hasStatus =
@@ -69,6 +85,18 @@ export default class DetailsHeader extends React.Component {
               <Localized id="installErrorMessage" $title={title}>
                 <span>
                   Uh oh. {title} could not be enabled. Try again later.
+                </span>
+              </Localized>}
+          {statusType === "wrongPlatformIOS" &&
+              <Localized id="wrongPlatformIOS">
+                <span>
+                  This experiment is available for iOS devices only.
+                </span>
+              </Localized>}
+          {statusType === "wrongPlatformAndroid" &&
+              <Localized id="wrongPlatformAndroid">
+                <span>
+                  This experiment is available for Android devices only.
                 </span>
               </Localized>}
         </div>
