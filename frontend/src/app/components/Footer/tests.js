@@ -31,21 +31,26 @@ describe("app/components/Footer", () => {
   });
 
   it("should render expected social links", () => {
-    expect(subject.find(".social-links")).to.have.property("length", 1);
+    expect(subject.find(".social-links")).to.have.property("length", 2);
   });
 
   it("should ping GA on social link clicks", () => {
-    ["github", "twitter"].forEach(label => {
-      const { mockClickEvent, getAttribute } = clickEventFactory(label);
+    [
+      {sel: ".social-links .link-icon.github", label: "github"},
+      {sel: ".social-links .link-icon.youtube", label: "youtube"},
+      {sel: ".social-links .link-icon.twitter.fx", label: "twitter"},
+      {sel: ".social-links .link-icon.twitter.txp", label: "twitter"}
+    ].forEach(o => {
+      const { mockClickEvent, getAttribute } = clickEventFactory(o.label);
 
-      subject.find(`.social-links .link-icon.${label}`)
+      subject.find(o.sel)
         .simulate("click", mockClickEvent);
 
       expect(getAttribute.called).to.be.true;
       expect(sendToGA.lastCall.args).to.deep.equal(["event", {
         eventCategory: "FooterView Interactions",
         eventAction: "social link clicked",
-        eventLabel: label,
+        eventLabel: o.label,
         outboundURL: mockClickEvent.target.href
       }, mockClickEvent]);
     });

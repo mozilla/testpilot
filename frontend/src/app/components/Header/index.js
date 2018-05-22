@@ -13,7 +13,6 @@ import "./index.scss";
 type HeaderProps = {
   uninstallAddon: Function,
   sendToGA: Function,
-  openWindow: Function,
   hasAddon: any,
   forceHideSettings: boolean
 }

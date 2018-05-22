@@ -1,3 +1,4 @@
+@import '~photon-colors/colors.scss';
 @import '../../../styles/_utils';
 
 #main-footer {
@@ -10,10 +11,6 @@
   }
 
   position: relative;
-
-  .newsletter-footer + & {
-    background: $transparent-white-05;
-  }
 }
 
 .legal-links {
@@ -47,7 +44,7 @@
 }
 
 .social-links {
-  @include flex-container(row, flex-end, flex-end);
+  @include flex-container(row, flex-start, flex-start);
 
   @include respond-to('small') {
     justify-content: flex-start;
@@ -67,14 +64,22 @@
 
     background-repeat: repeat;
     cursor: pointer;
-    flex: 0 0 32px;
-    height: 32px;
+    flex: 0 0 25px;
+    height: 25px;
     opacity: .9;
     transition: opacity 150ms;
 
     &:hover {
       opacity: 1;
     }
+
+    &:first-child {
+      margin-left: 0px;
+    }
+  }
+
+  &:first-child {
+    margin-left: 0px !important;
   }
 
   .github {
@@ -83,6 +88,11 @@
 
   .twitter {
     background-image: url('./img/twitter-icon.svg');
+  }
+
+  .youtube {
+    background-image: url('./img/youtube-icon.svg');
+    background-position: 50%;
   }
 }
 
@@ -101,5 +111,40 @@
 
   &:hover {
     opacity: 1;
+  }
+}
+
+footer {
+  background: $black;
+
+  .uninstall-header {
+    color: $red-60;
+  }
+}
+
+.footer-container {
+  margin: 0 auto;
+  width: 85%;
+}
+
+.footer-wrap {
+  @include respond-to('small') {
+    flex-direction: column;
+  }
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  width: 85%;
+}
+
+.footer-section {
+  @include respond-to('not-small') {
+    min-width: 25%;
+  }
+  display: flex;
+  flex-direction: column;
+
+  a {
+    padding-bottom: 10px;
   }
 }
