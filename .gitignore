@@ -27,9 +27,7 @@ node_modules/
 static/
 tmp/
 .vscode/
-addon/_locales/
 
 # Files to ignore within specific directories
 addon/*.xpi
 legal-copy/*html
-
