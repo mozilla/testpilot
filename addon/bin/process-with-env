@@ -4,6 +4,11 @@ const fs = require("fs-extra");
 const manifestBase = require("../manifest-base.json");
 const manifestFilename = __dirname + "/../manifest.json";
 
+if (typeof process.env["ENVIRONMENT_TITLE"] === "undefined") {
+  process.env["ENVIRONMENT_TITLE"] = "local";
+  process.env["ENVIRONMENT_URL"] = "https://example.com:8000/";
+}
+
 const newName = (process.env["ENVIRONMENT_TITLE"] === "production") ?
       "Test Pilot" : `Test Pilot ${process.env["ENVIRONMENT_TITLE"]} build`;
 const newId = (process.env["ENVIRONMENT_TITLE"] === "production") ?
