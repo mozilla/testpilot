@@ -20,6 +20,12 @@ if [ "$CIRCLE_PROJECT_USERNAME" != "mozilla" ]; then
   exit 0;
 fi
 
+# Skip builds without credentials
+if [ -z "$AWS_ACCESS_KEY_ID" || -z "$AWS_SECRET_ACCESS_KEY" ]; then;
+  echo "Skipping Storybook deploy for missing credentials";
+  exit 0;
+fi
+
 # HACK: Build static storybook with URL paths edited to include git hash
 HASH=$(git --no-pager log --format=format:"%H" -1)
 cp -r .storybook .storybook-$HASH
