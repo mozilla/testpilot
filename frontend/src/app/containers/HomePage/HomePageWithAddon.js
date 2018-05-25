@@ -58,6 +58,11 @@ export default class HomePageWithAddon extends React.Component {
       showTourDialog: false,
       showNewsUpdateDialog: true
     };
+
+    fetch('https://www.mozilla.org/country-code.json')
+      .then((res) => res.json())
+      .then((data) => {console.log("COUNTRY CODE", data)})
+      .catch((err) => {console.log("COUNTRY CODE ERROR", err)})
   }
 
   checkCookies() {
