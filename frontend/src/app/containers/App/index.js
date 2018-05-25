@@ -57,7 +57,7 @@ import { getInstalled, isExperimentEnabled, isAfterCompletedDate, isInstalledLoa
 import { getExperimentBySlug } from "../../reducers/experiments";
 import { getChosenTest } from "../../reducers/varianttests";
 import experimentSelector, { featuredExperimentsSelectorWithL10n, experimentsWithoutFeaturedSelectorWithL10n } from "../../selectors/experiment";
-import { uninstallAddon, installAddon, enableExperiment, disableExperiment } from "../../lib/InstallManager";
+import { uninstallAddon, installAddon, enableExperiment, disableExperiment, checkForStagingAndUninstall } from "../../lib/InstallManager";
 import { setLocalizations, setNegotiatedLanguages } from "../../actions/localizations";
 import { localizationsSelector, negotiatedLanguagesSelector } from "../../selectors/localizations";
 import { chooseTests } from "../../actions/varianttests";
@@ -205,6 +205,10 @@ class App extends Component {
       if (staticNode) {
         staticNode.remove();
       }
+    });
+
+    checkForStagingAndUninstall().then(() => {
+      console.log("checkForStagingAndUninstalled called ");
     });
   }
 
