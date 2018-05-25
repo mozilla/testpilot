@@ -176,24 +176,26 @@ export const WebExperimentControls = ({
   web_url,
   title,
   slug,
-  sendToGA
+  sendToGA,
+  platforms,
+  validVersion
 }: WebExperimentControlsType) => {
   function handleGoToLink() {
     sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
-      eventAction: "Enable Experiment",
+      eventAction: "Go to Web Experiment",
       eventLabel: title,
       dimension11: slug
     });
   }
-
+  const buttonType = platforms.includes("addon") && validVersion ? "secondary" : "default";
   return (
     <a
       href={web_url}
       onClick={handleGoToLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="button default"
+      className={classnames("button", buttonType)}
     >
       <Localized id="experimentGoToLink" $title={title}>
         <span className="default-text">
@@ -220,9 +222,9 @@ function createButton({
   userAgent,
   validVersion
 }: EnableButtonType) {
-  const { slug, title, web_url, ios_url, android_url } = experiment;
-  if (platform === "web") {
-    return <WebExperimentControls {...{ key: web_url, web_url, title, slug, sendToGA }} />;
+  const { slug, title, web_url, ios_url, android_url, platforms } = experiment;
+  if (platform === "web" && web_url) {
+    return <WebExperimentControls {...{ key: web_url, web_url, title, slug, sendToGA, platforms, validVersion }} />;
   } else if (platform === "addon") {
     if (graduated && enabled) {
       return (
