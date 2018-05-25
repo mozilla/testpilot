@@ -154,8 +154,6 @@ export default class Footer extends React.Component {
               <a href="https://www.mozilla.org/privacy/websites/#cookies" className="boilerplate">Cookies</a>
             </Localized>
           </div>
-          <br/>
-          <hr/>
         </div>
       </footer>
     );

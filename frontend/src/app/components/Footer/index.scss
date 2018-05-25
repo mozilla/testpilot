@@ -3,7 +3,7 @@
 
 #main-footer {
   @include respond-to('not-small') {
-    padding: $grid-unit * 2 0 $grid-unit;
+    padding: $grid-unit * 2 0;
   }
 
   @include respond-to('small') {
@@ -105,6 +105,7 @@
   background-repeat: no-repeat;
   background-size: auto 32px;
   height: 32px;
+  margin-top: 12px;
   opacity: .9;
   transition: opacity 150ms;
   width: 112px;
@@ -118,7 +119,7 @@ footer {
   background: $black;
 
   .uninstall-header {
-    color: $red-60;
+    color: $red-70;
   }
 }
 
