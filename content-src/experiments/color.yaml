@@ -1,7 +1,7 @@
 id: 17
 title: 'Color'
 slug: color
-is_featured: false
+is_featured: true
 platforms: ['addon', 'web']
 web_url: 'https://color.firefox.com'
 min_release: 60
@@ -12,13 +12,13 @@ introduction: >
   Firefox Color makes it easy for anyone to change the look of Firefox.
   It’s a simple tool that lets you choose different color combinations
   and background textures for your own Firefox theme.
-image_twitter: /static/images/experiments/notes/notes-twitter.jpg
-image_facebook: /static/images/experiments/notes/notes-fb.jpg
-video_url: https://www.youtube.com/embed/vaFvr_70yxw
+image_twitter: /static/images/experiments/notes/color-twitter.jpg
+image_facebook: /static/images/experiments/notes/color-fb.jpg
+video_url: https://www.youtube.com/embed/5B5Eus2tWyw
 changelog_url: 'https://github.com/mozilla/FirefoxColor/releases'
 contribute_url: 'https://github.com/mozilla/FirefoxColor'
 bug_report_url: 'https://github.com/mozilla/FirefoxColor/issues'
-discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/color'
+discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/firefox-color'
 legal_notice: By proceeding, you agree to the <a>terms</a> and <a>privacy</a> policies of Test Pilot and the <a>Firefox Color privacy policy</a>.
 privacy_notice_url: 'https://github.com/mozilla/FirefoxColor/blob/master/docs/metrics.md'
 measurements:
