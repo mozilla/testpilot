@@ -12,9 +12,9 @@ introduction: >
   Ever wanted to watch YouTube videos while shopping, or keep up to date on
   Twitter while working on a spreadsheet? Side View lets you send websites and
   links to your Firefox sidebar to make multitasking easier than ever.
-image_twitter: /static/images/experiments/notes/notes-twitter.jpg
-image_facebook: /static/images/experiments/notes/notes-fb.jpg
-video_url: https://www.youtube.com/embed/vaFvr_70yxw
+image_twitter: /static/images/experiments/notes/side-view-twitter.jpg
+image_facebook: /static/images/experiments/notes/side-view-fb.jpg
+video_url: https://www.youtube.com/embed/9Rgk1CegW2E
 changelog_url: 'https://github.com/mozilla/side-view/releases'
 contribute_url: 'https://github.com/mozilla/side-view/'
 bug_report_url: 'https://github.com/mozilla/side-view/issues'
