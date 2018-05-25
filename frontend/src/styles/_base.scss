@@ -61,6 +61,39 @@ body {
   display: none;
 }
 
+noscript {
+
+  .layout-wrapper {
+    margin: 80px;
+  }
+
+  p {
+    margin: 0 0 10px;
+  }
+
+  p:nth-child(odd) {
+    font-weight: bold;
+  }
+
+  p:nth-child(4n) {
+    font-size: 12px;
+  }
+
+  p:nth-child(5n + 1) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  p:nth-child(12n - 2) {
+    font-size: 36px;
+    line-height: 46px;
+  }
+
+  .copter {
+    margin: 20px auto;
+  }
+}
+
 //THis is a layout helper for storybooks
 .storybook-center {
   @include flex-container(column, center, center);
