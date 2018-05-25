@@ -1,7 +1,7 @@
 id: 17
 title: 'Color'
 slug: color
-is_featured: false
+is_featured: true
 platforms: ['addon', 'web']
 min_release: 60
 thumbnail: /static/images/experiments/color/color-thumbnail.png
