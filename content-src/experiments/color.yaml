@@ -3,6 +3,7 @@ title: 'Color'
 slug: color
 is_featured: false
 platforms: ['addon', 'web']
+web_url: 'https://color.firefox.com'
 min_release: 60
 thumbnail: /static/images/experiments/color/color-thumbnail.png
 description: >
