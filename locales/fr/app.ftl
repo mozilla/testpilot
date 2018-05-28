@@ -25,14 +25,13 @@ menuDiscuss = Discuter de Test Pilot
 menuFileIssue = Signaler un problème
 menuRetire = Désinstaller Test Pilot
 headerLinkBlog = Blog
-headerLinkNews = Fil d’actualité
 
 ## The splash on the homepage.
 
 landingIntroOne = Testez les nouveautés.
 landingIntroTwo = Donnez votre avis.
 landingIntroThree = Faites avancer Firefox.
-landingLegalNotice = En continuant, vous acceptez implicitement les  <a>Conditions d’utilisation</a> et la <a>Politique de confidentialité</a> de Test Pilot.
+landingLegalNotice = En continuant, vous acceptez implicitement les <a>Conditions d’utilisation</a> et la <a>Politique de confidentialité</a> de Test Pilot.
 landingMoreExperimentsButton = Davantage d’expériences
 
 ## Related to the installation of the Test Pilot add-on.
@@ -83,13 +82,6 @@ emailOptInMessage = Obtenez les résultats des tests de vos expériences et déc
 emailOptInConfirmationTitle = Courriel envoyé
 emailOptInConfirmationClose = À propos d’expériences…
 emailOptInDialogErrorTitle = Oups !
-
-## News feed updates.
-
-latestUpdatesTitle = Dernières mises à jour
-showMoreNewsTitle = Afficher les nouvelles précédentes
-# "Link" is a noun in this context
-englishArticleLink = Lien vers un article en anglais
 
 ## Featured experiment.
 
