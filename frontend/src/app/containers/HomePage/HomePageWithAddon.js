@@ -59,9 +59,9 @@ export default class HomePageWithAddon extends React.Component {
       showNewsUpdateDialog: true
     };
 
-    fetch('https://www.mozilla.org/country-code.json')
+    fetch('https://www.mozilla.org/country-code.json', {mode: "no-cors"})
       .then((res) => res.json())
-      .then((data) => {console.log("COUNTRY CODE", data)})
+      .then((data, blah) => {console.log("COUNTRY CODE", data, blah)})
       .catch((err) => {console.log("COUNTRY CODE ERROR", err)})
   }
 
