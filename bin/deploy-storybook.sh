@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 STORYBOOK_BUCKET=${STORYBOOK_BUCKET:-testpilot-storybook.dev.mozaws.net}
 if [ -z "$STORYBOOK_BUCKET" ]; then
@@ -16,6 +17,12 @@ fi
 # Skip builds for non-Mozilla users
 if [ "$CIRCLE_PROJECT_USERNAME" != "mozilla" ]; then
   echo "Skipping Storybook deploy for non-Mozilla CircleCI";
+  exit 0;
+fi
+
+# Skip builds without credentials
+if [ -z "$AWS_ACCESS_KEY_ID" || -z "$AWS_SECRET_ACCESS_KEY" ]; then
+  echo "Skipping Storybook deploy for missing credentials";
   exit 0;
 fi
 

@@ -229,18 +229,55 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
     <noscript>
       <div className="full-page-wrapper centered">
         <div className="layout-wrapper layout-wrapper--column-center">
-          <div id="four-oh-four" className="modal">
-            <h1 className="title">Uh oh...</h1>
-            <div className="modal-content">
-              <p>Test Pilot requires JavaScript.<br />Sorry about that.</p>
-            </div>
-            <div className="modal-actions">
-              <a className="button default large" href="https://github.com/mozilla/testpilot/blob/master/docs/faq.md">Find out why</a>
-            </div>
-          </div>
+          <p>Test Pilot zahteva JavaScript. Žal nam je.</p>
+          <p>Test Pilot vyžaduje JavaScript. Ospravedlňujeme sa za problémy.</p>
+          <p>Test Pilot fereasket JavaScript. Sorry derfoar.</p>
+          <p>Test Pilot lyp JavaScript. Na ndjeni për këtë.</p>
+          <p>Test Pilot memerlukan JavaScript. Harap maaf.</p>
+          <p>Test Pilot krev JavaScript. Lei for det.</p>
+          <p>Test Pilot requiere JavaScript. Lo sentimos.</p>
+          <p>Testpilot kræver JavaScript. Beklager.</p>
+          <p>Test Pilot requiere JavaScript. Lo sentimos por ello.</p>
+          <p>Test Pilot を使うには JavaScript が必要です。申し訳ありません</p>
           <div className="copter">
             <div className="copter__inner"></div>
           </div>
+          <p>Το Test Pilot απαιτεί JavaScript. Λυπούμαστε γι' αυτό.</p>
+          <p>Test Pilot requiere JavaScript. Disculpe</p>
+          <p>Siamo spiacenti, Test Pilot richiede JavaScript.</p>
+          <p>Omlouváme se, ale Test Pilot vyžaduje JavaScript.</p>
+          <p>Test Pilot requiere JavaScript. Lo sentimos.</p>
+          <p>Для работы Лётчика-испытателя необходимо включить JavaScript. Извините.</p>
+          <p>Je nam žel, ale TestPilot sej JavaScript wužaduje.</p>
+          <p>Ri Test Pilot nrajo' JavaScript. Kojakuyu'.</p>
+          <p>很抱歉，Test Pilot 需要 JavaScript 来运行。</p>
+          <p>Вибачте, але для роботи Test Pilot необхідний JavaScript.</p>
+          <p>Test Pilot захтева JavaScript. Жао нам је због овога.</p>
+          <p>O Test Pilot requer JavaScript. Pedimos desculpa.</p>
+          <p>Test Pilot zahtjeva JavaScript. Žao nam je zbog toga.</p>
+          <p>很抱歉，需要開啟 JavaScript 才能使用 Test Pilot</p>
+          <p>Desculpe, o Test Pilot requer JavaScript.</p>
+          <p>A Tesztpilótához JavaScript szükséges. Sajnáljuk.</p>
+          <p>Test Pilot vereist JavaScript. Sorry daarvoor.</p>
+          <p>Test Pilot საჭიროებს JavaScript-ს. ვწუხვართ, ამის გამო.</p>
+          <p>Test Pilot benötigt JavaScript. Das tut uns leid.</p>
+          <p>Test Pilot을 쓰려면 JavaScript가 필요합니다. 죄송합니다.</p>
+          <p>Désolé, Test Pilot nécessite JavaScript.</p>
+          <p>Test Pilot kräver JavaScript. Ledsen för det.</p>
+          <p>Mae Test Pilot angen JavaScript. Ymddiheuriadau.</p>
+          <p>Test Pilot requires JavaScript. Sorry about that.</p>
+          <p>Jo nam luto, ale TestPilot se JavaScript pomina.</p>
+          <p>Test Pilotu için JavaScript şarttır. Kusura bakmayın.</p>
+          <p>Test Pilot vereist JavaScript. Sorry daarvoor.</p>
+          <p>Test Pilot საჭიროებს JavaScript-ს. ვწუხვართ, ამის გამო.</p>
+          <p>Test Pilot benötigt JavaScript. Das tut uns leid.</p>
+          <p>Test Pilot을 쓰려면 JavaScript가 필요합니다. 죄송합니다.</p>
+          <p>Désolé, Test Pilot nécessite JavaScript.</p>
+          <p>Test Pilot kräver JavaScript. Ledsen för det.</p>
+          <p>Mae Test Pilot angen JavaScript. Ymddiheuriadau.</p>
+          <p>Test Pilot requires JavaScript. Sorry about that.</p>
+          <p>Jo nam luto, ale TestPilot se JavaScript pomina.</p>
+          <p>Test Pilotu için JavaScript şarttır. Kusura bakmayın.</p>
         </div>
       </div>
     </noscript>
@@ -268,7 +305,7 @@ function generateStaticPageFromMarkdown(pageName, pageParam, markdown, params) {
     <footer id="main-footer">
       <div id="footer-links" className="layout-wrapper layout-wrapper--row-bottom-breaking">
         <div className="legal-links">
-          <a href="https://www.mozilla.org" className="mozilla-logo"></a>
+          <a href="https://www.mozilla.org" className="mozilla-logo" alt="Mozilla Site"></a>
           <a href="https://www.mozilla.org/about/legal/" className="boilerplate">Legal</a>
           <a href="https://qsurvey.mozilla.com/s3/test-pilot-general-feedback" className="boilerplate">Give Feedback</a>
           <a href="/about" className="boilerplate">About Test Pilot</a>
@@ -277,8 +314,8 @@ function generateStaticPageFromMarkdown(pageName, pageParam, markdown, params) {
           <a href="https://www.mozilla.org/privacy/websites/#cookies" className="boilerplate">Cookies</a>
         </div>
         <div className="social-links">
-          <a href="https://github.com/mozilla/testpilot" target="_blank" title="GitHub" className="link-icon github"></a>
-          <a href="https://twitter.com/FxTestPilot" target="_blank" title="Twitter" className="link-icon twitter"></a>
+          <a href="https://github.com/mozilla/testpilot" target="_blank" title="GitHub" className="link-icon github" alt="Testpilot GitHub Repo"></a>
+          <a href="https://twitter.com/FxTestPilot" target="_blank" title="Twitter" className="link-icon twitter" alt="Testpilot Twitter"></a>
         </div>
       </div>
     </footer>

@@ -17,7 +17,6 @@
   },
   "description": "Test Pilot is a privacy-sensitive user research program focused on getting new features into Firefox faster.",
   "homepage_url": "https://testpilot.firefox.com",
-  "default_locale": "en_US",
   "permissions": [
     "alarms",
     "management",

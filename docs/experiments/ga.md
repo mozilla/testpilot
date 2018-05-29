@@ -5,6 +5,10 @@ Test Pilot experiments use Google Analytics for metrics collection, and Google D
 
 Events are reported through the low-level [Google Analytics Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/). Refer to the documentation for the [developer guide](https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide) and [parameter reference](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters) to understand to basics of how data is reported. The [hit builder](https://ga-dev-tools.appspot.com/hit-builder/) can help you construct and validate events before reporting. Use the [`testpilot-ga` library](https://www.npmjs.com/package/testpilot-ga) to simplify the reporting prociess.
 
+## testpilot-ga package
+We have a package on npm to simplify sending ga pings in a testpilot experiment.
+https://github.com/mozilla/testpilot-ga
+
 ## Submission
 The following fields are used in experiment event reporting. All fields are required, unless noted. Experiments should implement additional properties of [sessions](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#session), [exceptions](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#exception), [social interactions](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#social), [traffic sources](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#trafficsources), [content information](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#content), and [system attributes](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#system), where appropriate.
 
@@ -18,7 +22,6 @@ The following fields are used in experiment event reporting. All fields are requ
 
 ### User Fields
 - [`cid`](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#cid) - a [UUIDv4](https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_.28random.29) that should be consistent across all events reported with this user. It should be stored with a persistent mechanism. If there is a sync component to the experiment, this should also be synced and be made consistent across clients and devices. This can be generated with [the `uuid` npm package](https://www.npmjs.com/package/uuid).
-- [`uid`](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#uid) - the user’s telemetry ID, available at `toolkit.telemetry.cachedClientID`. _(Optional)_
 
 ### Session
 - [`ua`](https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#ua) - the user agent, as reported by [`navigator.userAgent`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/userAgent).

@@ -1,0 +1,89 @@
+id: 16
+title: 'Side View'
+slug: side-view
+is_featured: false
+platforms: ['addon']
+min_release: 57
+thumbnail: /static/images/experiments/side-view/side-view-thumbnail.png
+description: >
+  Multitask like a boss. Side View lets you keep two websites open side by side
+  without switching tabs.
+introduction: >
+  Ever wanted to watch YouTube videos while shopping, or keep up to date on
+  Twitter while working on a spreadsheet? Side View lets you send websites and
+  links to your Firefox sidebar to make multitasking easier than ever.
+image_twitter: /static/images/experiments/notes/side-view-twitter.jpg
+image_facebook: /static/images/experiments/notes/side-view-fb.jpg
+video_url: https://www.youtube.com/embed/9Rgk1CegW2E
+changelog_url: 'https://github.com/mozilla/side-view/releases'
+contribute_url: 'https://github.com/mozilla/side-view/'
+bug_report_url: 'https://github.com/mozilla/side-view/issues'
+discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/side-view'
+legal_notice: By proceeding, you agree to the <a>terms</a> and <a>privacy</a> policies of Test Pilot and the <a>Side View privacy policy</a>.
+privacy_notice_url: 'https://github.com/mozilla/side-view/blob/master/docs/metrics.md'
+measurements:
+  - >
+    Information about your interactions with the add-on, such as how you access
+    the feature, which buttons you click, and how frequently you use it.
+  - >
+    Information about your browsing environment, such as the width of your
+    browser window,
+    and the number of tabs you have open when you access the feature.
+  - >
+    Side View does not collect any information about sites you visit.
+
+xpi_url: 'https://testpilot.firefox.com/files/side-view@mozilla.org/latest'
+addon_id: 'side-view@mozilla.org'
+gradient_start: '#8ba3e6'
+gradient_stop: '#b468b1'
+details:
+  -
+    image: /static/images/experiments/side-view/side-view-detail-1.jpg
+    copy: >
+      Keep two sites open at once. Side View shows sites in a mobile view so
+      they fit in a smaller space.
+  -
+    image: /static/images/experiments/side-view/side-view-detail-2.jpg
+    copy: >
+      Click the toolbar button to send any tab to Side View.
+  -
+    image: /static/images/experiments/side-view/side-view-detail-3.jpg
+    copy: >
+      As you browse the web, you can also open links in Side View so you don’t lose your place.
+tour_steps:
+  -
+    image: /static/images/experiments/side-view/side-view-tour-1.jpg
+    copy: Side View lets you send websites to your Firefox sidebar.
+  -
+    image: /static/images/experiments/side-view/side-view-tour-2.jpg
+    copy: Send open tabs or recent tabs by clicking on the Side View menu.
+  -
+    image: /static/images/experiments/side-view/side-view-tour-3.jpg
+    copy: By default, Side View displays mobile sites to keep everything looking good in a narrow window.
+  -
+    image: /static/images/experiments/side-view/side-view-tour-4.jpg
+    copy: Right click to open links in Side View.
+  -
+    image: /static/images/experiments/side-view/side-view-tour-5.jpg
+    copy: You can always give us feedback or disable Side View from Test Pilot.
+contributors:
+  -
+    display_name: 'Donovan Preston'
+    title: 'Software Engineer'
+    avatar: /static/images/experiments/page-shot/avatars/donovan-preston.jpg
+  -
+    display_name: 'Ian Bicking'
+    title: 'Software Engineer'
+    title_l10nsuffix: 'engineer'
+    avatar: /static/images/experiments/page-shot/avatars/ian-bicking.jpg
+  -
+    display_name: 'Morpheus Chen'
+    title: 'Firefox UX'
+    avatar: /static/images/experiments/avatars/mchen.png
+  -
+    display_name: 'Cristina Badescu'
+    title: 'SoftVision QA'
+    avatar: /static/images/experiments/avatars/cristinab.jpg
+created: '2018-06-05T15:00:00Z'
+launch_date: '2018-06-05T15:00:00Z'
+order: 0

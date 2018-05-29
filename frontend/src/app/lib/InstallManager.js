@@ -202,42 +202,66 @@ export function enableExperiment(dispatch, experiment, sendToGA, eventCategory, 
     })
   );
   return installAddon(sendToGA, eventCategory, eventLabel, experiment.slug)
-    .then(() => mam.getAddonByID(experiment.addon_id))
+    .then(
+      () => mam.getAddonByID(experiment.addon_id)
+        .then(
+          addon => {
+            if (addon) {
+              // already installed
+              if (!addon.isEnabled) {
+                return addon.setEnabled(true);
+              }
+              // already enabled
+              return Promise.resolve();
+            }
+            return mozAddonManagerInstall(experiment.xpi_url, sendToGA, experiment.slug)
+              .then(() => dispatch(addonActions.experimentInstalled(experiment)));
+          }
+        )
+        .then(
+          () => {
+            dispatch(addonActions.enableExperiment(experiment));
+            dispatch(
+              updateExperiment(experiment.addon_id, {
+                inProgress: false,
+                error: false
+              })
+            );
+          },
+          err => {
+            dispatch(addonActions.disableExperiment(experiment));
+            dispatch(
+              updateExperiment(experiment.addon_id, {
+                inProgress: false,
+                error: true
+              })
+            );
+            throw err;
+          }
+        ),
+      err => {
+        dispatch(
+          updateExperiment(experiment.addon_id, {
+            inProgress: false
+          })
+        );
+      });
+}
+
+// issue 3580
+export function checkForStagingAndUninstall() {
+  return mam
+    .getAddonByID("@testpilot-addon-stage")
     .then(
       addon => {
         if (addon) {
-          // already installed
-          if (!addon.isEnabled) {
-            return addon.setEnabled(true);
-          }
-          // already enabled
-          return Promise.resolve();
+          return addon.uninstall();
         }
-        return mozAddonManagerInstall(experiment.xpi_url, sendToGA, experiment.slug)
-          .then(() => dispatch(addonActions.experimentInstalled(experiment)));
-      }
-    )
-    .then(
-      () => {
-        dispatch(addonActions.enableExperiment(experiment));
-        dispatch(
-          updateExperiment(experiment.addon_id, {
-            inProgress: false,
-            error: false
-          })
-        );
-      },
-      err => {
-        dispatch(addonActions.disableExperiment(experiment));
-        dispatch(
-          updateExperiment(experiment.addon_id, {
-            inProgress: false,
-            error: true
-          })
-        );
-        throw err;
-      }
-    );
+        return Promise.resolve();
+      } // TODO error case
+    ).catch(err => {
+      console.log("ERROR finding and uninstalling @testpilot-addon-stage", err);
+    });
 }
 
 export function disableExperiment(dispatch, experiment) {

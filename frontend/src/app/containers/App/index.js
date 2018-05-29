@@ -1,4 +1,46 @@
 /* global ga */
+/*
+This is the toplevel container for Test Pilot. It does too much and it would
+be nice to move parts of this into other modules.
+
+When the page is rendered, it:
+
+- starts by rendering Loading
+- Checks to see if restartRequired (see below)
+- Sets the title using Hemlet (but doesn't localize it -- this code is
+  redundant with the title element in the static html and should probably be
+  removed)
+- Wraps children of App with LocalizationProvider, allowing use of fluent-react
+  for localization
+
+Then, in componentDidMount it:
+
+- Chooses variant tests, placing the user in a particular group for any
+  varianttests (there aren't any)
+- Calls measurePageview. The implementation of measurePageview should
+  move into lib/utils.
+- Negotiates the language and triggers the translation with fluent-react.
+- Finally, it sets loading to false, causing the full page to render.
+
+restartRequired is very old code. We have not required a restart in a long
+time. It can be removed.
+
+  https://github.com/mozilla/testpilot/issues/3571
+
+Helmet is not doing anything but increase our bundle size. We could either
+just remove it, or fix it so that it works with fluent-react to properly
+localize the title.
+
+  https://github.com/mozilla/testpilot/issues/3572
+
+mapStateToProps and mapDispatchToProps is implemented for the entire
+application here. For better performance and separation of concerns, it
+would be better to split out a different map*ToProps for each Container,
+not just the toplevel App Container.
+
+  https://github.com/mozilla/testpilot/issues/2924
+*/
+
 import { MessageContext } from "fluent/compat";
 import { negotiateLanguages } from "fluent-langneg/compat";
 import { LocalizationProvider } from "fluent-react/compat";
@@ -15,7 +57,7 @@ import { getInstalled, isExperimentEnabled, isAfterCompletedDate, isInstalledLoa
 import { getExperimentBySlug } from "../../reducers/experiments";
 import { getChosenTest } from "../../reducers/varianttests";
 import experimentSelector, { featuredExperimentsSelectorWithL10n, experimentsWithoutFeaturedSelectorWithL10n } from "../../selectors/experiment";
-import { uninstallAddon, installAddon, enableExperiment, disableExperiment } from "../../lib/InstallManager";
+import { uninstallAddon, installAddon, enableExperiment, disableExperiment, checkForStagingAndUninstall } from "../../lib/InstallManager";
 import { setLocalizations, setNegotiatedLanguages } from "../../actions/localizations";
 import { localizationsSelector, negotiatedLanguagesSelector } from "../../selectors/localizations";
 import { chooseTests } from "../../actions/varianttests";
@@ -28,8 +70,6 @@ import {
   shouldOpenInNewTab
 } from "../../lib/utils";
 import {
-  makeStaleNewsUpdatesSelector,
-  makeFreshNewsUpdatesSelector,
   makeNewsUpdatesForDialogSelector
 } from "../../selectors/news";
 import config from "../../config";
@@ -115,6 +155,15 @@ class App extends Component {
     this.props.chooseTests();
     this.measurePageview();
 
+    const lang = window.navigator.language;
+
+    // set lang attr on <html> for a11y
+    document.documentElement.setAttribute("lang", lang);
+
+    // we should expand upon this in the future, but this should get us
+    // working for arabic
+    document.documentElement.setAttribute("dir", (lang === "ar" ? "rtl" : "ltr"));
+
     const langs = {};
 
     function addLang(lang, response) {
@@ -156,6 +205,10 @@ class App extends Component {
       if (staticNode) {
         staticNode.remove();
       }
+    });
+
+    checkForStagingAndUninstall().then(() => {
+      console.log("checkForStagingAndUninstalled called ");
     });
   }
 
@@ -276,7 +329,6 @@ const mapStateToProps = state => ({
   experiments: experimentSelector(state),
   featuredExperiments: featuredExperimentsSelectorWithL10n(state),
   experimentsWithoutFeatured: experimentsWithoutFeaturedSelectorWithL10n(state),
-  freshNewsUpdates: makeFreshNewsUpdatesSelector(Date.now())(state),
   majorNewsUpdates: makeNewsUpdatesForDialogSelector(
     cookies.get("updates-last-viewed-date"),
     Date.now()
@@ -305,7 +357,6 @@ const mapStateToProps = state => ({
   newsletterForm: state.newsletterForm,
   protocol: state.browser.protocol,
   routing: state.routing,
-  staleNewsUpdates: makeStaleNewsUpdatesSelector(Date.now())(state),
   varianttests: state.varianttests
 });
 

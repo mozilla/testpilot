@@ -12,7 +12,7 @@
   & .experiment-icon-wrapper {
     border-radius: 0;
     height: 80px;
-    width: 200%;
+    width: 109%;
   }
 
   .experiment-icon {
@@ -50,6 +50,22 @@
     background: $error-background;
     border-bottom: 1px solid $error-border;
     color: $black;
+    opacity: 1;
+  }
+
+  &.wrongPlatformIOS {
+    background: $no-support-red;
+    border-bottom: 1px solid $no-support-red;
+    color: $white;
+    font-size: 13px;
+    opacity: 1;
+  }
+
+  &.wrongPlatformAndroid {
+    background: $no-support-red;
+    border-bottom: 1px solid $no-support-red;
+    color: $white;
+    font-size: 13px;
     opacity: 1;
   }
 
@@ -100,6 +116,12 @@
 
   .button:first-child {
     margin-top: 0;
+  }
+
+  .mobile {
+    border: 0;
+    padding: 0;
+    width: auto;
   }
 
   .one-click-minor {

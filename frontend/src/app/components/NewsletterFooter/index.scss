@@ -7,7 +7,6 @@ $email-icon--responsive-unit: .66;
 $error-border: #c4c4c4;
 $error-background: #f2f2f2;
 
-
 .newsletter-footer {
   background: $transparent-white-05;
   padding: ($grid-unit * 1.75) 0;
@@ -118,4 +117,9 @@ $error-background: #f2f2f2;
       text-align: center;
     }
   }
+}
+
+html[dir="rtl"] .newsletter-footer header {
+    background: url('./img/envelope.svg') no-repeat right;
+    padding-right: $email-icon--width + ($grid-unit * 1.5);
 }
