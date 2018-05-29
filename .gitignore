@@ -15,6 +15,7 @@ debug-config.json
 MANIFEST
 .nyc_output
 version.json
+addon.xpi
 
 # Directories to ignore
 build/

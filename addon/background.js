@@ -106,8 +106,7 @@ function fetchResources() {
         .catch(err => {
           log("fetchResources error", path, err);
           return [path, null];
-        });
-    )
+        }))
   ).then(results => {
     log("fetchResources results", results);
     results.forEach(([path, data]) => (resources[path] = data));
