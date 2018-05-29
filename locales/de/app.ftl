@@ -14,9 +14,18 @@ footerLinkPrivacy = Datenschutz
 footerLinkTerms = Nutzungsbedingungen
 footerLinkLegal = Rechtliches
 footerLinkFeedback = Ihre Meinung sagen
-footerLinkAbout = Über Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Über
+footerLinkAboutUs = Über uns
+footerLinkSupportHeader = Hilfe
+footerLinkDownload = Firefox herunterladen
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobilgeräte
+footerLinkFeatures = Funktionen
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Test Pilot deinstallieren
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Startseite
 menuTitle = Einstellungen
@@ -25,7 +34,6 @@ menuDiscuss = Über Test Pilot diskutieren
 menuFileIssue = Ein Problem melden
 menuRetire = Test Pilot deinstallieren
 headerLinkBlog = Blog
-headerLinkNews = Nachrichten-Feed
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = Test Pilot erfordert Firefox für Desktop unter Windows
 landingDownloadFirefoxDesc = (Test Pilot gibt es nur für Firefox unter Windows, OS X und Linux)
 landingUpgradeDesc = Test Pilot benötigt Firefox 49 oder höher.
 landingUpgradeDesc2 = Test Pilot benötigt Firefox { $version } oder höher.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox aktualisieren
 landingDownloadFirefoxSubTitle = Kostenloser Download
@@ -83,13 +92,6 @@ emailOptInMessage = Erfahren Sie mehr über neue Experimente und lesen Sie die T
 emailOptInConfirmationTitle = E-Mail gesendet
 emailOptInConfirmationClose = Weiter zu den Experimenten…
 emailOptInDialogErrorTitle = Oh nein!
-
-## News feed updates.
-
-latestUpdatesTitle = Neueste Nachrichten
-showMoreNewsTitle = Nachrichtenarchiv anzeigen
-# "Link" is a noun in this context
-englishArticleLink = Link zum englischsprachigen Artikel
 
 ## Featured experiment.
 
@@ -135,6 +137,8 @@ experimentPromoSubheader = Wir entwickeln für Firefox die Funktionen der nächs
 
 isEnabledStatusMessage = { $title } ist aktiviert.
 installErrorMessage = Oh, oh. { $title } konnte nicht aktiviert werden. Versuchen Sie es später erneut.
+wrongPlatformIOS = Dieses Experiment ist nur für iOS-Geräte verfügbar.
+wrongPlatformAndroid = Dieses Experiment ist nur für Android-Geräte verfügbar.
 otherExperiments = Sehen Sie sich auch die folgenden Experimente an
 giveFeedback = Sagen Sie Ihre Meinung
 disableHeader = Experiment deaktivieren?
