@@ -14,9 +14,18 @@ footerLinkPrivacy = Preifatrwydd
 footerLinkTerms = Amodau
 footerLinkLegal = Cyfreithiol
 footerLinkFeedback = Rhowch Adborth
-footerLinkAbout = Ynghylch Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Ynghylch
+footerLinkAboutUs = Amdanom ni
+footerLinkSupportHeader = Cymorth
+footerLinkDownload = Llwytho Firefox i Lawr
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Symudol
+footerLinkFeatures = Nodweddion
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Dadosod Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Cartref
 menuTitle = Gosodiadau
@@ -25,7 +34,6 @@ menuDiscuss = Trafod Test Pilot
 menuFileIssue = Ffeilio gwall
 menuRetire = Dadosod Test Pilot
 headerLinkBlog = Blog
-headerLinkNews = Llif Newyddion
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = Mae Test Pilot angen Firefox Bwrdd Gwaith ar Windows, M
 landingDownloadFirefoxDesc = (Mae Test Pilot ar gael ar gyfer Firefox ar Windows, OS X a Linux)
 landingUpgradeDesc = Mae Test Pilot angen Firefox 49 neu uwch.
 landingUpgradeDesc2 = Mae Test Pilot angen Firefox { $version } neu uwch.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Diweddaru Firefox
 landingDownloadFirefoxSubTitle = Llwytho i Lawr am Ddim
@@ -83,13 +92,6 @@ emailOptInMessage = Gallwch ddarganfod ein harbrofion newydd a gweld canlyniadau
 emailOptInConfirmationTitle = Wedi anfon E-bost
 emailOptInConfirmationClose = Ymlaen at yr arbrofion...
 emailOptInDialogErrorTitle = O na!
-
-## News feed updates.
-
-latestUpdatesTitle = Diweddariadau diweddaraf
-showMoreNewsTitle = Dangoswch Newyddion Blaenorol
-# "Link" is a noun in this context
-englishArticleLink = Dolen i'r erthygl Saesneg
 
 ## Featured experiment.
 
