@@ -23,6 +23,7 @@ footerLinkDownload = Baixe o Firefox
 footerLinkMobile = Móvel
 footerLinkFeatures = Funcionalidades
 footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Remover o Test Pilot
 
 ## Items in the menu and footer
 
@@ -139,6 +140,8 @@ experimentPromoSubheader = Estamos construindo novos recursos para o Firefox. In
 
 isEnabledStatusMessage = { $title } está habilitado.
 installErrorMessage = Oh, oh. { $title } não pode ser habilitado. Tente novamente mais tarde.
+wrongPlatformIOS = Este experimento está disponível somente para iOS.
+wrongPlatformAndroid = Este experimento está disponível somente para Android.
 otherExperiments = Teste este experimentos também
 giveFeedback = Dê sua opinião
 disableHeader = Desabilitar o experimento?
