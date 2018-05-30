@@ -209,6 +209,8 @@ class App extends Component {
 
     checkForStagingAndUninstall().then(() => {
       console.log("checkForStagingAndUninstalled called ");
+    }).catch(err => {
+      console.log("checkForStagingAndUninstalled error ", err);
     });
   }
 

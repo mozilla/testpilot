@@ -250,6 +250,9 @@ export function enableExperiment(dispatch, experiment, sendToGA, eventCategory, 
 
 // issue 3580
 export function checkForStagingAndUninstall() {
+  if (!mam) {
+    return Promise.reject("no mozAddonManager");
+  }
   return mam
     .getAddonByID("@testpilot-addon-stage")
     .then(
