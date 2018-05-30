@@ -14,9 +14,18 @@ footerLinkPrivacy = Adatvédelem
 footerLinkTerms = Feltételek
 footerLinkLegal = Jogi információk
 footerLinkFeedback = Adjon visszajelzést
-footerLinkAbout = A Tesztpilóta névjegye
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Névjegy
+footerLinkAboutUs = Rólunk
+footerLinkSupportHeader = Támogatás
+footerLinkDownload = Firefox letöltése
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobil
+footerLinkFeatures = Funkciók
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Tesztpilóta eltávolítása
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Kezdőlap
 menuTitle = Beállítások
@@ -25,7 +34,6 @@ menuDiscuss = A Tesztpilóta megvitatása
 menuFileIssue = Probléma jelentése
 menuRetire = A Tesztpilóta eltávolítása
 headerLinkBlog = Blog
-headerLinkNews = Hírfolyam
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = A Tesztpilótához asztali Firefox szükséges Windowso
 landingDownloadFirefoxDesc = (A Tesztpilóta a Windowsos, OS X-es és Linuxos Firefoxhoz érhető el)
 landingUpgradeDesc = A Tesztpilótához Firefox 49 vagy újabb szükséges.
 landingUpgradeDesc2 = A Tesztpilótához Firefox { $version } vagy újabb szükséges.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox frissítése
 landingDownloadFirefoxSubTitle = Ingyenes letöltés
@@ -83,13 +92,6 @@ emailOptInMessage = Tudjon az új kísérletekről, és lássa a kipróbált kí
 emailOptInConfirmationTitle = E-mail elküldve
 emailOptInConfirmationClose = Tovább a kísérletekhez…
 emailOptInDialogErrorTitle = Jaj ne!
-
-## News feed updates.
-
-latestUpdatesTitle = Legújabb frissítések
-showMoreNewsTitle = Múltbeli hírek megjelenítése
-# "Link" is a noun in this context
-englishArticleLink = Hivatkozás az angol cikkre
 
 ## Featured experiment.
 
@@ -138,6 +140,8 @@ experimentPromoSubheader = A Firefox következő generációs funkcióit készí
 
 isEnabledStatusMessage = { $title } bekapcsolva.
 installErrorMessage = O-ó. A(z) { $title } nem kapcsolható be. Próbálkozzon később.
+wrongPlatformIOS = Ez a kísérlet csak iOS eszközökön érhető el.
+wrongPlatformAndroid = Ez a kísérlet csak Android eszközökön érhető el.
 otherExperiments = Próbálja ki ezeket a kísérleteket is
 giveFeedback = Adjon visszajelzést
 disableHeader = Kikapcsolja a kísérletet?
