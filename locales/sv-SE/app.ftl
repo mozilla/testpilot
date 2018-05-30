@@ -21,6 +21,8 @@ footerLinkSupportHeader = Support
 footerLinkDownload = Ladda ner Firefox
 # link to page detailing firefox mobile browser options
 footerLinkMobile = Mobil
+footerLinkFeatures = Funktioner
+footerLinkBeta = Beta, Nightly, Developer Edition
 footerLinkRetire = Avinstallera Test Pilot
 
 ## Items in the menu and footer
@@ -138,6 +140,8 @@ experimentPromoSubheader = Vi bygger nästa generations funktioner för Firefox.
 
 isEnabledStatusMessage = { $title } är aktiverad.
 installErrorMessage = Hoppsan. { $title } kunde inte aktiveras. Försök igen senare.
+wrongPlatformIOS = Detta experiment är endast tillgängligt för iOS-enheter.
+wrongPlatformAndroid = Detta experiment är endast tillgängligt för Android-enheter.
 otherExperiments = Prova dessa experiment också
 giveFeedback = Ge återkoppling
 disableHeader = Inaktivera experiment?
