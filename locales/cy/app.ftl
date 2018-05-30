@@ -137,6 +137,8 @@ experimentPromoSubheader = Rydym yn adeiladu'r nodweddion nesaf ar gyfer Firefox
 
 isEnabledStatusMessage = Mae { $title } wedi ei alluogi.
 installErrorMessage = Ow. Does dim modd galluogi { $title }. Ceisiwch eto'n hwyrach
+wrongPlatformIOS = Mae'r arbrawf yma ar gael ar gyfer dyfeisiau iOS yn unig.
+wrongPlatformAndroid = Mae'r arbrawf yma ar gael ar gyfer dyfeisiau Android yn unig.
 otherExperiments = Rhowch gynnig ar yr arbrofion hyn hefyd
 giveFeedback = Rhowch Adborth
 disableHeader = Analluogi'r Arbrawf?
