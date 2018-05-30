@@ -14,9 +14,18 @@ footerLinkPrivacy = Privacy
 footerLinkTerms = Betingsten
 footerLinkLegal = Juridysk
 footerLinkFeedback = Kommentaar jaan
-footerLinkAbout = Oer Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Oer
+footerLinkAboutUs = Oer ús
+footerLinkSupportHeader = Stipe
+footerLinkDownload = Download Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobyl
+footerLinkFeatures = Funksjes
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Test Pilot deynstallearje
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Start
 menuTitle = Ynstellingen
@@ -25,7 +34,6 @@ menuDiscuss = Oer Test Pilot
 menuFileIssue = In probleem melde
 menuRetire = Test Pilot de-ynstallearje
 headerLinkBlog = Blog
-headerLinkNews = Nijsfeed
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = Test Pilot fereasket Firefox foar desktop op Windows, M
 landingDownloadFirefoxDesc = (Test Pilot is beskikber foar Firefox op Windows, OS X en Linux)
 landingUpgradeDesc = Test Pilot fereasket Firefox 49 of heger.
 landingUpgradeDesc2 = Test Pilot fereasket Firefox { $version } of heger.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox fernije
 landingDownloadFirefoxSubTitle = Fergeze download
@@ -83,13 +92,6 @@ emailOptInMessage = Untdek mear oer nije eksperiminten en besjoch testresultaten
 emailOptInConfirmationTitle = E-mailberjocht ferstjoerd
 emailOptInConfirmationClose = Troch nei de eksperiminten…
 emailOptInDialogErrorTitle = O nee!
-
-## News feed updates.
-
-latestUpdatesTitle = Lêste fernijingen
-showMoreNewsTitle = Ald nijs toane
-# "Link" is a noun in this context
-englishArticleLink = Keppeling nei Ingelsktalich artikel
 
 ## Featured experiment.
 
@@ -135,6 +137,8 @@ experimentPromoSubheader = Wy ûntwikkelje foar Firefox de funksjes fan de folgj
 
 isEnabledStatusMessage = { $title } is ynskeakele.
 installErrorMessage = Oh, oh. { $title } koe net aktivearre wurden. Probearje it letter nochris.
+wrongPlatformIOS = Dit eksperimint is allinnich beskikber foar iOS-apparaten.
+wrongPlatformAndroid = Dit eksperimint is allinnich beskikber foar Android-apparaten.
 otherExperiments = Probearje ek ris dizze eksperiminten
 giveFeedback = Leverje kommentaar
 disableHeader = Eksperimint útskeakelje?
