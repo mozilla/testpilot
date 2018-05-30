@@ -14,9 +14,11 @@ footerLinkPrivacy = Zasebnost
 footerLinkTerms = Pogoji
 footerLinkLegal = Pravne informacije
 footerLinkFeedback = Sporočite povratne informacije
-footerLinkAbout = O programu Test Pilot
+footerLinkSupportHeader = Podpora
+footerLinkDownload = Prenesi Firefox
+footerLinkRetire = Odstrani Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Domov
 menuTitle = Nastavitve
@@ -25,7 +27,6 @@ menuDiscuss = Razprava o programu Test Pilot
 menuFileIssue = Prijavite težavo
 menuRetire = Odstrani Test Pilot
 headerLinkBlog = Blog
-headerLinkNews = Vir novic
 
 ## The splash on the homepage.
 
@@ -52,6 +53,7 @@ landingRequiresDesktop = Test Pilot zahteva Firefox za namizja in sistem Windows
 landingDownloadFirefoxDesc = (Test Pilot je na voljo za Firefox v sistemih Windows, OS X in Linux)
 landingUpgradeDesc = Test Pilot zahteva Firefox 49 ali novejšega.
 landingUpgradeDesc2 = Test Pilot zahteva Firefox { $version } ali novejšega.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Nadgradi Firefox
 landingDownloadFirefoxSubTitle = Brezplačen prenos
@@ -83,13 +85,6 @@ emailOptInMessage = Bodite obveščeni o novih poskusih in o rezultatih poskusov
 emailOptInConfirmationTitle = E-poštno sporočilo poslano
 emailOptInConfirmationClose = Naprej na poskuse ...
 emailOptInDialogErrorTitle = O, ne!
-
-## News feed updates.
-
-latestUpdatesTitle = Najnovejše posodobitve
-showMoreNewsTitle = Prikaži pretekle novice
-# "Link" is a noun in this context
-englishArticleLink = Povezava na angleški članek
 
 ## Featured experiment.
 
@@ -138,6 +133,8 @@ experimentPromoSubheader = Razvijamo funkcije za novo generacijo Firefoxa. Names
 
 isEnabledStatusMessage = { $title } je omogočen.
 installErrorMessage = Ojej. Poskusa { $title } ni mogoče omogočiti. Poskusite znova pozneje.
+wrongPlatformIOS = Ta poskus je na voljo le za naprave iOS.
+wrongPlatformAndroid = Ta poskus je na voljo le za naprave Android.
 otherExperiments = Preskusite tudi te poskuse
 giveFeedback = Sporočite povratne informacije
 disableHeader = Onemogoči poskus?
