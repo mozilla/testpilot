@@ -14,9 +14,18 @@ footerLinkPrivacy = プライバシー
 footerLinkTerms = 利用規約
 footerLinkLegal = 法的通知
 footerLinkFeedback = フィードバックを送る
-footerLinkAbout = Test Pilot について
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = このサイトについて
+footerLinkAboutUs = Mozilla について
+footerLinkSupportHeader = サポート
+footerLinkDownload = Firefox をダウンロード
+# link to page detailing firefox mobile browser options
+footerLinkMobile = モバイル
+footerLinkFeatures = 機能
+footerLinkBeta = Beta、Nightly、Developer Edition
+footerLinkRetire = Test Pilot を削除
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = ホーム
 menuTitle = 設定
@@ -25,7 +34,6 @@ menuDiscuss = Test Pilot について議論する
 menuFileIssue = 問題を報告
 menuRetire = Test Pilot を削除
 headerLinkBlog = ブログ
-headerLinkNews = ニュースフィード
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = Test Pilot へ参加するには Windows、Mac また�
 landingDownloadFirefoxDesc = (Test Pilot は Windows、OS X および Linux 版の Firefox に対応しています)
 landingUpgradeDesc = Test Pilot へ参加するには Firefox 49 以上が必要です。
 landingUpgradeDesc2 = Test Pilot へ参加するには Firefox { $version } 以上が必要です。
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox をアップグレード
 landingDownloadFirefoxSubTitle = 無料ダウンロード
@@ -83,13 +92,6 @@ emailOptInMessage = 新しい実験について知り、あなたが試した実
 emailOptInConfirmationTitle = メールをお送りしました
 emailOptInConfirmationClose = 実験へ進む...
 emailOptInDialogErrorTitle = おっと！
-
-## News feed updates.
-
-latestUpdatesTitle = 最新情報
-showMoreNewsTitle = 過去のニュースを表示
-# "Link" is a noun in this context
-englishArticleLink = 英語記事へのリンク
 
 ## Featured experiment.
 
@@ -138,6 +140,8 @@ experimentPromoSubheader = 私たちは Firefox の次世代機能を開発中�
 
 isEnabledStatusMessage = { $title } が有効化されました。
 installErrorMessage = { $title } を有効化できませんでした。また後で試してください。
+wrongPlatformIOS = この実験は iOS 端末専用です。
+wrongPlatformAndroid = この実験は Android 端末専用です。
 otherExperiments = これらの実験的機能も試してください
 giveFeedback = フィードバックを送る
 disableHeader = 実験を無効化しますか？
