@@ -40,7 +40,7 @@ headerLinkBlog = სვეტი
 landingIntroOne = გამოცადეთ ახალი შესაძლებლობები.
 landingIntroTwo = გამოგვეხმაურეთ.
 landingIntroThree = დაგვეხმარეთ Firefox-ის გაუმჯობესებაში.
-landingLegalNotice = გაეცანით Test Pilot-ის <a>გამოყენების პირობებსა</a> და <a>პირადულობის დებულებას</a>
+landingLegalNotice = გაგრძელების შემთხვევაში, თქვენ ეთანხმებით Test Pilot-ის <a>გამოყენების პირობებსა</a> და <a>პირადი მონაცემების დაცვის განაცხადს</a>.
 landingMoreExperimentsButton = სხვა საცდელი პროექტები
 
 ## Related to the installation of the Test Pilot add-on.
