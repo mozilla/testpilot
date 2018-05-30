@@ -14,9 +14,16 @@ footerLinkPrivacy = Sekretesspolicy
 footerLinkTerms = Villkor
 footerLinkLegal = Juridisk information
 footerLinkFeedback = Ge återkoppling
-footerLinkAbout = Om Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Om
+footerLinkAboutUs = Om oss
+footerLinkSupportHeader = Support
+footerLinkDownload = Ladda ner Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobil
+footerLinkRetire = Avinstallera Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Hem
 menuTitle = Inställningar
@@ -25,7 +32,6 @@ menuDiscuss = Diskutera Test Pilot
 menuFileIssue = Rapportera ett problem
 menuRetire = Avinstallera Test Pilot
 headerLinkBlog = Blogg
-headerLinkNews = Nyhetsflöde
 
 ## The splash on the homepage.
 
@@ -52,6 +58,7 @@ landingRequiresDesktop = Test Pilot kräver Firefox för datorer i Windows, Mac 
 landingDownloadFirefoxDesc = (Test Pilot är tillgänglig för Firefox på Windows, OS X och Linux)
 landingUpgradeDesc = Test Pilot kräver Firefox 49 eller högre.
 landingUpgradeDesc2 = Test Pilot kräver Firefox { $version } eller högre.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Uppgradera Firefox
 landingDownloadFirefoxSubTitle = Gratis nedladdning
@@ -83,13 +90,6 @@ emailOptInMessage = Få reda på mer om nya experiment och se testresultat för 
 emailOptInConfirmationTitle = E-post har skickats
 emailOptInConfirmationClose = Vidare till experimenten...
 emailOptInDialogErrorTitle = Åh nej!
-
-## News feed updates.
-
-latestUpdatesTitle = Senast uppdaterade
-showMoreNewsTitle = Visa äldre nyheter
-# "Link" is a noun in this context
-englishArticleLink = Länk till engelsk artikel
 
 ## Featured experiment.
 
