@@ -14,9 +14,18 @@ footerLinkPrivacy = პირადულობა
 footerLinkTerms = პირობები
 footerLinkLegal = სამართლებრივი საკითხები
 footerLinkFeedback = გამოხმაურება
-footerLinkAbout = Test Pilot-ის შესახებ
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = შესახებ
+footerLinkAboutUs = ჩვენ შესახებ
+footerLinkSupportHeader = მხარდაჭერა
+footerLinkDownload = Firefox ჩამოტვირთვა
+# link to page detailing firefox mobile browser options
+footerLinkMobile = მობილური
+footerLinkFeatures = შესაძლებლობები
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Test Pilot ამოშლა
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = მთავარი
 menuTitle = პარამეტრები
@@ -51,6 +60,7 @@ landingRequiresDesktop = Test Pilot-ის გამოსაყენებლ�
 landingDownloadFirefoxDesc = (Test Pilot ხელმისაწვდომია Firefox-ზე, Windows, OS X და Linux სისტემებისთვის)
 landingUpgradeDesc = Test Pilot საჭიროებს Firefox 49 ან უფრო ახალ ვერსიას.
 landingUpgradeDesc2 = Test Pilot საჭიროებს Firefox { $version } ან უფრო ახალ ვერსიას.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = განაახლეთ Firefox
 landingDownloadFirefoxSubTitle = უფასო ჩამოტვირთვა
@@ -130,6 +140,8 @@ experimentPromoSubheader = ჩვენ ვქმნით ახალი თ�
 
 isEnabledStatusMessage = { $title } ჩართულია.
 installErrorMessage = ოჰ არა. { $title } პროექტის ჩართვა ვერ ხერხდება. სცადეთ მოგვიანებით.
+wrongPlatformIOS = ეს საცდელი შესაძლებლობა მხოლოდ iOS მოწყობილობებზეა ხელმისაწვდომი.
+wrongPlatformAndroid = ეს საცდელი შესაძლებლობა მხოლოდ Android მოწყობილობებზეა ხელმისაწვდომი.
 otherExperiments = ეს პროექტებიც გამოსცადეთ
 giveFeedback = გამოგვეხმაურეთ
 disableHeader = გსურთ საცდელი პროექტის გამორთვა?
