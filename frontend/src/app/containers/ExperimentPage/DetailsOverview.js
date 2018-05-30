@@ -33,7 +33,8 @@ export default function DetailsOverview({
   highlightMeasurementPanel,
   flashMeasurementPanel,
   doShowTourDialog,
-  surveyURL
+  surveyURL,
+  hasTour
 }: DetailsOverviewType) {
   const { measurements } = experiment;
   const l10nId = (pieces: string) => experimentL10nId(experiment, pieces);
@@ -60,7 +61,8 @@ export default function DetailsOverview({
               doShowPreFeedbackDialog,
               flashMeasurementPanel,
               uninstallExperimentWithSurvey,
-              surveyURL
+              surveyURL,
+              hasTour
             }}
           />
         </div>
@@ -69,7 +71,7 @@ export default function DetailsOverview({
         <section className="user-count">
           <LaunchStatus {...{ experiment, graduated }} />
         </section>
-        {!graduated && <StatsSection {...{ experiment, doShowTourDialog, sendToGA }} />}
+        {!graduated && <StatsSection {...{ experiment, doShowTourDialog, sendToGA, hasTour }} />}
         <ContributorsSection {...{ experiment, l10nId }} />
         {!graduated &&
           measurements &&
@@ -115,11 +117,12 @@ export const StatsSection = ({
     bug_report_url,
     discourse_url
   },
-  sendToGA
+  sendToGA,
+  hasTour
 }: StatsSectionType) => {
   return <section className="stats-section">
     <ul>
-      {!web_url &&
+      {!web_url && hasTour &&
           <li>
             <Localized id="tourLink">
               <a className="showTour" onClick={evt => {

@@ -248,6 +248,25 @@ export function enableExperiment(dispatch, experiment, sendToGA, eventCategory, 
       });
 }
 
+// issue 3580
+export function checkForStagingAndUninstall() {
+  if (!mam) {
+    return Promise.reject("no mozAddonManager");
+  }
+  return mam
+    .getAddonByID("@testpilot-addon-stage")
+    .then(
+      addon => {
+        if (addon) {
+          return addon.uninstall();
+        }
+        return Promise.resolve();
+      } // TODO error case
+    ).catch(err => {
+      console.log("ERROR finding and uninstalling @testpilot-addon-stage", err);
+    });
+}
+
 export function disableExperiment(dispatch, experiment) {
   if (!mam) {
     return Promise.reject("no mozAddonManager");

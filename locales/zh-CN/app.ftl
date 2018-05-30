@@ -25,7 +25,6 @@ menuDiscuss = 讨论 Test Pilot
 menuFileIssue = 填报问题
 menuRetire = 卸载 Test Pilot
 headerLinkBlog = 博客
-headerLinkNews = 新闻收取点
 
 ## The splash on the homepage.
 
@@ -83,13 +82,6 @@ emailOptInMessage = 看看有什么新实验，查查参加过的实验结果如
 emailOptInConfirmationTitle = 电子邮件已发送
 emailOptInConfirmationClose = 关于此实验...
 emailOptInDialogErrorTitle = 很遗憾
-
-## News feed updates.
-
-latestUpdatesTitle = 最新更新
-showMoreNewsTitle = 显示过去的新闻
-# "Link" is a noun in this context
-englishArticleLink = 链接到英文文章
 
 ## Featured experiment.
 
@@ -200,7 +192,7 @@ retirePageSurveyButton = 参与快速调查
 ## Shown to users after installing Test Pilot if a restart is required.
 
 restartIntroLead = 起飞前检查单
-restartIntroOne = 重启您的浏览器
+restartIntroOne = 重开您的浏览器
 restartIntroTwo = 找到 Test Pilot 扩展
 restartIntroThree = 选择您的实验
 

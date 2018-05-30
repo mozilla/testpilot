@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Увімкнено"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Новий експеримент"
+  },
+  "experiment_list_view_all": {
+    "message": "Переглянути усі експерименти"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Закінчуються завтра"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Скоро закінчаться"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Експеримент завершено"
+  },
+  "installed_message": {
+    "message": "<strong>До вашого відома:</strong> Ми додали кнопку на вашу панель інструментів,<br> щоб ви завжди могли знайти Test Pilot."
+  },
+  "survey_show_rating_label": {
+    "message": "Оцініть, будь ласка %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Дякуємо за оцінку %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Пройти швидке опитування"
+  },
+  "survey_launch_survey_label": {
+    "message": "%s експеримент завершено. Які ваші враження?"
+  },
+  "no_experiment_message": {
+    "message": "Протестуйте останні експериментальні функції Firefox за допомогою Test Pilot!"
+  },
+  "no_experiment_button": {
+    "message": "Які експерименти?"
+  },
+  "new_badge": {
+    "message": "Новий"
+  },
+  "share_label": {
+    "message": "Подобається Test Pilot?"
+  },
+  "share_button": {
+    "message": "Поділитися"
+  }
+}

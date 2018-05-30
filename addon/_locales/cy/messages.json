@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Galluogwyd"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Arbrawf Newydd"
+  },
+  "experiment_list_view_all": {
+    "message": "Gweld yr holl arbrofion"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Yn dod i ben Yfory"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Yn dod i ben cyn bo hir"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Arbrawf wedi ei Gwblhau"
+  },
+  "installed_message": {
+    "message": "<strong>Er gwybodaeth:</strong> Rydym yn gosod botwm yn eich bar offer <br> fel bod Test Pilot wrth law."
+  },
+  "survey_show_rating_label": {
+    "message": "Graddiwch %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Diolch am raddio %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Cymrwch Arolwg Sydyn"
+  },
+  "survey_launch_survey_label": {
+    "message": "Mae arbrawf %s wedi gorffen. Beth yw eich barn?"
+  },
+  "no_experiment_message": {
+    "message": "Rhowch brawf ar nodweddion arbrofol diweddaraf Firefox gyda Test Pilot!"
+  },
+  "no_experiment_button": {
+    "message": "Pa arbrofion?"
+  },
+  "new_badge": {
+    "message": "Newydd"
+  },
+  "share_label": {
+    "message": "Hoffi Test Pilot?"
+  },
+  "share_button": {
+    "message": "Rhannu"
+  }
+}

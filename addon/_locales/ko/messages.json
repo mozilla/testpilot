@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "활성화됨"
+  },
+  "experiment_list_new_experiment": {
+    "message": "새로운 실험"
+  },
+  "experiment_list_view_all": {
+    "message": "모든 실험 보기"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "내일 종료될 예정"
+  },
+  "experiment_eol_soon_message": {
+    "message": "곧 종료될 예정"
+  },
+  "experiment_eol_complete_message": {
+    "message": "실험 완료"
+  },
+  "installed_message": {
+    "message": "<strong>귀띔:</strong> Test Pilot을 아무때고 찾을 수 있도록 <br> 여러분의 도구 모음에 단추를 넣어드렸습니다."
+  },
+  "survey_show_rating_label": {
+    "message": "%s 를 평가해주세요"
+  },
+  "survey_rating_thank_you": {
+    "message": "%s 를 평가해주셔서 감사합니다."
+  },
+  "survey_rating_survey_button": {
+    "message": "빠른 설문조사 참여하기"
+  },
+  "survey_launch_survey_label": {
+    "message": "%s 실험은 종료되었습니다. 어땠나요?"
+  },
+  "no_experiment_message": {
+    "message": "Test Pilot 을 통해 Firefox의 최신 기능들을 테스트해보세요!"
+  },
+  "no_experiment_button": {
+    "message": "어떤 기능인가요?"
+  },
+  "new_badge": {
+    "message": "새로운 실험"
+  },
+  "share_label": {
+    "message": "Test Poilot이 마음에 들었나요?"
+  },
+  "share_button": {
+    "message": "공유하기"
+  }
+}

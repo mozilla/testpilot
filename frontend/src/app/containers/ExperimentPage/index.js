@@ -184,6 +184,7 @@ export class ExperimentDetail extends React.Component {
     }
 
     const { title, survey_url, tour_steps } = experiment;
+    const hasTour = typeof tour_steps !== "undefined";
 
     setPageTitleL10N("pageTitleExperiment", experiment);
 
@@ -231,7 +232,8 @@ export class ExperimentDetail extends React.Component {
             onSubmit={() => this.setState({ showDisableDialog: false })}
           />}
 
-        {showTourDialog &&
+        {/* Only show the tour dialog if there are tour steps in the experiment YAML */}
+        {hasTour && showTourDialog &&
           <ExperimentTourDialog
             {...this.props}
             onCancel={() => this.setState({ showTourDialog: false })}
@@ -318,7 +320,8 @@ export class ExperimentDetail extends React.Component {
                     highlightMeasurementPanel,
                     flashMeasurementPanel,
                     doShowTourDialog,
-                    l10nId
+                    l10nId,
+                    hasTour
                   }}
                 />
                 <DetailsDescription

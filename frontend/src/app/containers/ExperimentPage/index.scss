@@ -53,6 +53,22 @@
     opacity: 1;
   }
 
+  &.wrongPlatformIOS {
+    background: $no-support-red;
+    border-bottom: 1px solid $no-support-red;
+    color: $white;
+    font-size: 13px;
+    opacity: 1;
+  }
+
+  &.wrongPlatformAndroid {
+    background: $no-support-red;
+    border-bottom: 1px solid $no-support-red;
+    color: $white;
+    font-size: 13px;
+    opacity: 1;
+  }
+
   &.featured {
     border-radius: 0 0 4px 4px;
     margin: $grid-unit * -2 auto $grid-unit * .2;

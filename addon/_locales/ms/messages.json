@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Didayakan"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Eksperimen Baru"
+  },
+  "experiment_list_view_all": {
+    "message": "Papar semua eksperimen"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Tamat Esok"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Hampir Tamat"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Eksperimen Selesai"
+  },
+  "installed_message": {
+    "message": "<strong>FYI:</strong> Kami letak satu butang pada bar alatan anda <br> supaya anda sentiasa boleh mencari Ujian Perintis."
+  },
+  "survey_show_rating_label": {
+    "message": "Sila tarafkan %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Terima kasih untuk penarafan %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Sertai Kajian Ringkas"
+  },
+  "survey_launch_survey_label": {
+    "message": "Eksperimen %s sudah tamat. Apa pendapat anda?"
+  },
+  "no_experiment_message": {
+    "message": "Uji ciri eksperimen Firefox terkini dengan Ujian Perintis!"
+  },
+  "no_experiment_button": {
+    "message": "Eksperimen apa?"
+  },
+  "new_badge": {
+    "message": "Baru"
+  },
+  "share_label": {
+    "message": "Suka Ujian Perintis?"
+  },
+  "share_button": {
+    "message": "Kongsi"
+  }
+}

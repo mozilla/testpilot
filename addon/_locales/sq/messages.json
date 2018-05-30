@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "E aktivizuar"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Eksperiment i Ri"
+  },
+  "experiment_list_view_all": {
+    "message": "Shihni krejt eksperimentet"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Përfundon Nesër"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Përfundon Së Shpejti"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Eksperiment i Plotësuar"
+  },
+  "installed_message": {
+    "message": "<strong>FYI:</strong> Vumë një buton te paneli juaj <br> që të mund ta gjeni përherë Pilotin e Testeve."
+  },
+  "survey_show_rating_label": {
+    "message": "Ju lutemi, jepni një vlerësim për %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Faleminderit për vlerësimin e %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Plotësoni një Anketim të Shpejtë"
+  },
+  "survey_launch_survey_label": {
+    "message": "Eksperimenti %s përfundoi. Ç’mendoni?"
+  },
+  "no_experiment_message": {
+    "message": "Provoni veçoritë më të reja eksperimentale të Firefox-it përmes Pilotit të Testeve!"
+  },
+  "no_experiment_button": {
+    "message": "Çfarë eksperimentesh?"
+  },
+  "new_badge": {
+    "message": "E re"
+  },
+  "share_label": {
+    "message": "E doni Pilotin e Testeve?"
+  },
+  "share_button": {
+    "message": "Ndajeni me të tjerët"
+  }
+}

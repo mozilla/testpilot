@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Activóse"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Esperimentu nuevu"
+  },
+  "experiment_list_view_all": {
+    "message": "Ver tolos esperimentos"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Fina mañana"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Fina ceo"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Completóse l'esperimentu"
+  },
+  "installed_message": {
+    "message": "<strong>FYI:</strong> Punximos un botón na barra de ferramientes<br> pa qu'asina pueas alcontrar siempres Test Pilot."
+  },
+  "survey_show_rating_label": {
+    "message": "Valora %s, por favor"
+  },
+  "survey_rating_thank_you": {
+    "message": "Gracies por valorar %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Facer encuesta rápida"
+  },
+  "survey_launch_survey_label": {
+    "message": "Yá finó l'esperimentu %s. ¿Qué pensabes?"
+  },
+  "no_experiment_message": {
+    "message": "¡Prueba con Test Pilot les caberes funcionalidaes esperimentales de Firefox!"
+  },
+  "no_experiment_button": {
+    "message": "¿Qué esperimentos?"
+  },
+  "new_badge": {
+    "message": "Nuevu"
+  },
+  "share_label": {
+    "message": "¿Préstate Test Pilot?"
+  },
+  "share_button": {
+    "message": "Compartir"
+  }
+}

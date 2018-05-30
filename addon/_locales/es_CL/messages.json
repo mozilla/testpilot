@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Activado"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Nuevo experimento"
+  },
+  "experiment_list_view_all": {
+    "message": "Ver todos los experimentos"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Termina mañana"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Termina pronto"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Experimento completado"
+  },
+  "installed_message": {
+    "message": "<strong>Para tu información:</strong> Hemos colocado un botón en tu barra de herramientas <br> para que te sea más fácil llegar a Test Pilot."
+  },
+  "survey_show_rating_label": {
+    "message": "Por favor, evalúa %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Gracias por evaluar %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Responder una breve encuesta"
+  },
+  "survey_launch_survey_label": {
+    "message": "El experimento %s ha terminado. ¿Qué te pareció?"
+  },
+  "no_experiment_message": {
+    "message": "¡Prueba nuestras últimas funciones experimentales con Test Pilot!"
+  },
+  "no_experiment_button": {
+    "message": "¿Qué experimentos?"
+  },
+  "new_badge": {
+    "message": "Nuevo"
+  },
+  "share_label": {
+    "message": "¿Te gusta Test Pilot?"
+  },
+  "share_button": {
+    "message": "Compartir"
+  }
+}

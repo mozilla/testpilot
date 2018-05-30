@@ -1,6 +1,6 @@
 siteName = Firefox Test Pilot
 
-## Page titles, put in the <title> HTML tag.
+## Page titles, shown as title of HTML pages.
 
 pageTitleDefault = Firefox Test Pilot
 pageTitleLandingPage = Firefox Test Pilot
@@ -32,6 +32,7 @@ landingIntroOne = Тестуйте нові функції.
 landingIntroTwo = Дайте свій відгук.
 landingIntroThree = Допоможіть збудувати Firefox.
 landingLegalNotice = Продовжуючи, ви погоджуєтеся з <a>Правилами використання</a> та <a>Політикою приватності</a> Test Pilot.
+landingMoreExperimentsButton = Більше експериментів
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -41,6 +42,7 @@ landingInstallingButton = Встановлення...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Встановити Test Pilot
+# $title is replaced by the name of an experiment
 oneClickInstallMajorCta = Увімкнути { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
@@ -68,6 +70,9 @@ onboardingMessage = Ми додали значок на вашу панель і
 
 errorHeading = Отакої!
 errorMessage = Здається, ми щось зламали. <br> Можливо спробуйте ще раз пізніше.
+# 404 is the HTTP standard response code for a page not found. This title is a
+# word play in English, being "Oh" both an exclamation and the pronunciation of
+# the number 0.
 notFoundHeader = Чотириста чотири!
 
 ## A modal prompt to sign up for the Test Pilot newsletter.
@@ -78,12 +83,7 @@ emailOptInConfirmationTitle = Повідомлення надіслано
 emailOptInConfirmationClose = Вперед до експериментів...
 emailOptInDialogErrorTitle = О ні!
 
-## news feed updates.
-
-latestUpdatesTitle = Останні оновлення
-showMoreNewsTitle = Показати минулі новини
-
-
+## Featured experiment.
 
 moreDetail = Докладніше
 
@@ -104,7 +104,7 @@ experimentListHeaderWithFeatured = Спробуйте всі наші дослі
 experimentCardFeedback = Відгук
 experimentCardManage = Керувати
 experimentCardGetStarted = Розпочати
-# also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog
 experimentCardLearnMore = Докладніше
 
 ## A modal prompt shown when a user disables an experiment.
@@ -159,7 +159,7 @@ experimentGradReportReady = Ми підготували повний звіт п
 experimentGoToLink = Перейти до { $title }
 startedDateLabel = Дата початку експерименту: <b>{ $startedDate }</b>
 
-## news updates dialog.
+## News updates dialog.
 
 nonExperimentDialogHeaderLink = Test Pilot
 
@@ -199,13 +199,8 @@ restartIntroOne = Перезапустіть ваш браузер
 restartIntroTwo = Знайдіть додаток Test Pilot
 restartIntroThree = Оберіть ваші експерименти
 
-## Shown on a page presented to users three days after installing their first experiment.
+## Shown on pages of retired or retiring experiments.
 
-sharePrimary = Подобається Test Pilot? Допоможіть нам знайти нових учасників.
-shareSecondary = або просто скопіюйте і вставте це посилання...
-shareEmail = Ел. пошта
-shareCopy = Копіювати
-# Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } закінчується { $completedDate }
 eolNoticeLink = Докладніше
 eolDisableMessage = Експеримент { $title } завершився. Щойно ви видалите його, ви не зможете його перевстановити через Test Pilot ще раз.
@@ -222,7 +217,6 @@ newsletterFormEmailPlaceholder =
     .placeholder = Ваша е-пошта тут
 newsletterFormDisclaimer = Ми будемо надсилати вам лише інформацію, яка стосується Test Pilot.
 newsletterFormPrivacyNotice = Я погоджуюсь з тим, як Mozilla поводиться з моїми даними згідно з <a>цим повідомленням про приватність</a>.
-newsletterFormPrivacyAgreementRequired = Будь ласка, встановіть цей прапорець, щоб продовжити.
 newsletterFormSubmitButton = Підписатися зараз
 newsletterFormSubmitButtonSubmitting = Надсилаємо...
 
@@ -259,7 +253,7 @@ hidePastExperiments = Приховати минулі експерименти
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Щось не так!
-warningGenericDetail = З Test Pilot щось пішло не так Будь ласка, <a>повідомте про помилку</a> та вкажіть цей текст помилки.
+warningGoToFAQDetail = Щось пішло не так з Test Pilot. Щоб дізнатися більше, <a>перегляньте відповіді на часті питання</a>.
 warningUpgradeFirefoxTitle = Оновіть Firefox, щоб продовжити!
 warningUpgradeFirefoxDetail = Для роботи Test Pilot необхідно використовувати останню версію Firefox. Щоб почати, <a>оновіть Firefox</a>.
 warningHttpsRequiredTitle = Вимагається HTTPS!
@@ -268,5 +262,7 @@ warningMissingPrefTitle = Розробляєте Test Pilot?
 warningMissingPrefDetail = Запускаючи Test Pilot локально або в середовищі розробки необхідно використовувати спеціальну конфігурацію. Для отримання більш детальної інформації, будь ласка, перегляньте <a>нашу документацію</a>.
 warningBadHostnameTitle = Неприйнятне ім'я хоста!
 warningBadHostnameDetail = Доступ до сайту Test Pilot можливий тільки з testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net або example.com:8000. Для отримання більш детальної інформації, будь ласка, перегляньте <a>нашу документацію</a>.
-# This string does not appear in app, but we will use it to localize our `no script` message
+
+## This string does not appear in app, but we will use it to localize our `no script` message
+
 jsDisabledWarning = Вибачте, але для роботи Test Pilot необхідний JavaScript.

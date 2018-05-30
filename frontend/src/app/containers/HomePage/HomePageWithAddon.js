@@ -160,7 +160,7 @@ export default class HomePageWithAddon extends React.Component {
   }
 
   render() {
-    const { sendToGA, isAfterCompletedDate, 
+    const { sendToGA, isAfterCompletedDate,
             majorNewsUpdates, featuredExperiments, isExperimentEnabled,
             experimentsWithoutFeatured, experiments,
             enableExperiment } = this.props;
@@ -192,11 +192,13 @@ export default class HomePageWithAddon extends React.Component {
       this.setState({ showEmailDialog: false });
     };
 
+    const hasTour = featuredExperiments.length && featuredExperiment.hasOwnProperty("tour_steps");
+
     return (
       <View {...this.props}>
         {showEmailDialog &&
           <EmailDialog {...this.props} onDismiss={onEmailDialogDismissed} />}
-        {showTourDialog && <ExperimentTourDialog
+        {hasTour && showTourDialog && <ExperimentTourDialog
             experiment={featuredExperiment}
             {...this.props}
             onCancel={() => this.onTourDialogComplete(featuredExperiment, true)}

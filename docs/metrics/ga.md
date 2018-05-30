@@ -74,6 +74,7 @@ Here are the current events on the website as of this writing, grouped by their 
 | Click on Install from experiment details page | install button click | Install the Add-on from `${experiment title}`|
 | Click on the "Try out these experiments as well" section | Open detail page | try out `{experiment title}` |
 | Click Enable Experiment | Enable Experiment | `{experiment title}` |
+| Click Link to Web Experiment | Go to Web Experiment | `{experiment title}` |
 | Click Disable Experiment | Disable Experiment | `{experiment title}` |
 | Click Give Feedback for experiment | Give Feedback | `{experiment title}` |
 | Click Give Feedback for experiment from PreFeedback | PreFeedback Confirm | `{experiment title}` |

@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Включено"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Новый эксперимент"
+  },
+  "experiment_list_view_all": {
+    "message": "Посмотреть все эксперименты"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Заканчивается завтра"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Скоро заканчивается"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Эксперимент завершён"
+  },
+  "installed_message": {
+    "message": "<strong>К вашему сведению:</strong> Мы разместили кнопку в вашей панели инструментов, <br> так что вы всегда можете найти режим лётчика-испытателя."
+  },
+  "survey_show_rating_label": {
+    "message": "Пожалуйста, оцените %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Спасибо за оценку %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Пройти быстрый опрос"
+  },
+  "survey_launch_survey_label": {
+    "message": "%s эксперимент завершён. Каково ваше мнение?"
+  },
+  "no_experiment_message": {
+    "message": "Протестируйте последние экспериментальные возможности Firefox с помощью Лётчика-испытателя!"
+  },
+  "no_experiment_button": {
+    "message": "Какие эксперименты?"
+  },
+  "new_badge": {
+    "message": "Новый"
+  },
+  "share_label": {
+    "message": "Нравится лётчик-испытатель?"
+  },
+  "share_button": {
+    "message": "Поделиться"
+  }
+}

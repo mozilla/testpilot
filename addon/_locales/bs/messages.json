@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Omogućeno"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Novi eksperiment"
+  },
+  "experiment_list_view_all": {
+    "message": "Pogledaj sve eksperimente"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Završava se sutra"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Završava se uskoro"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Eksperiment završen"
+  },
+  "installed_message": {
+    "message": "<strong>FYI:</strong> Postavili smo dugme u vašu traku s alatima <br> tako da možete uvijek pronaći Test Pilot."
+  },
+  "survey_show_rating_label": {
+    "message": "Ocijenite %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Hvala što ste ocijenili %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Ispunite kratku anketu"
+  },
+  "survey_launch_survey_label": {
+    "message": "Eksperiment %s je završen. Šta mislite o njemu?"
+  },
+  "no_experiment_message": {
+    "message": "Isprobajte najnovije eksperimentalne mogućnosti s Test Pilotom!"
+  },
+  "no_experiment_button": {
+    "message": "Koji eksperimenti?"
+  },
+  "new_badge": {
+    "message": "Novi"
+  },
+  "share_label": {
+    "message": "Sviđa li vam se Test Pilot?"
+  },
+  "share_button": {
+    "message": "Dijeli"
+  }
+}

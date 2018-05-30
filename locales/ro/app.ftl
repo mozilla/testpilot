@@ -78,9 +78,6 @@ emailOptInMessage = Află despre noile experimente și vezi rezultatele de testa
 emailOptInConfirmationTitle = E-mail trimis
 emailOptInConfirmationClose = Mai departe spre experimente...
 
-## News feed updates.
-
-
 ## Featured experiment.
 
 
@@ -169,7 +166,7 @@ retirePageSurveyButton = Participă la un sondaj scurt
 restartIntroLead = Cerințe preliminare
 restartIntroOne = Repornește browserul
 restartIntroTwo = Găsește suplimentul Test Pilot
-restartIntroThree = Alege experimentele tale
+restartIntroThree = Selectează experimentele
 
 ## Shown on pages of retired or retiring experiments.
 
@@ -207,7 +204,7 @@ localeWarningSubtitle = Dar poți să o activezi dacă dorești.
 ## An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 
 experimentsListNoneInstalledHeader = Hai să pornim!
-experimentsListNoneInstalledSubheader = Ești gata să încerci un nou experiment Test Pilot? Alege unul pentru a-l activa, încerca, și apoi să ne spui ce părere ai.
+experimentsListNoneInstalledSubheader = Ești gata să încerci un nou experiment Test Pilot? Selectează unul pentru a-l activa, încerca, și apoi să ne spui ce părere ai.
 experimentsListNoneInstalledCTA = Nu ești interesat? <a>Spune-ne de ce</a>.
 
 ## Shown to users who do not have JavaScript enabled.

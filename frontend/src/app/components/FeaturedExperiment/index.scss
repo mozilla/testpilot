@@ -61,7 +61,7 @@
   .featured-experiment__header {
     @include respond-to('small') {
       @include flex-container(column, center, center);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     @include respond-to('not-small') {
@@ -79,10 +79,11 @@
       }
 
       border-radius: 50%;
-      flex: 0 0 54px;
-      height: 54px;
-      margin: 0 10px 0 0;
-      width: 54px;
+      box-shadow: 0 0 5px $transparent-black-05;
+      flex: 0 0 64px;
+      height: 64px;
+      margin: 0 15px 0 0;
+      width: 64px;
     }
 
     .experiment-icon {
@@ -122,11 +123,11 @@
       @include flex-container(column, center, center);
     }
 
-    @include flex-container(column, space-between, flex-start);
+    @include flex-container(column, space-around, flex-start);
 
     .featured-experiment__title {
       @include respond-to('small') {
-        margin: 10px 0 20px;
+        margin: 10px 0 5px;
       }
 
       font-size: 33px;

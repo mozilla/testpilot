@@ -2,7 +2,6 @@
 @import '../../../styles/_utils';
 
 .experiment-summary {
-
   @include flex-container(column, flex-start, stretch);
 
   @include respond-to('big') {
@@ -136,4 +135,12 @@
   flex: 0 0 40px;
   height: 40px;
   opacity: .9;
+}
+
+html[dir="rtl"] .experiment-summary {
+    @include respond-to('big') {
+        &:nth-child(3n+1) {
+            margin-left: 40px;
+        }
+    }
 }

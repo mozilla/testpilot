@@ -12,9 +12,18 @@ footerLinkPrivacy = Privacy
 footerLinkTerms = Terms
 footerLinkLegal = Legal
 footerLinkFeedback = Give Feedback
-footerLinkAbout = About Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = About
+footerLinkAboutUs = About us
+footerLinkSupportHeader = Support
+footerLinkDownload = Download Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobile
+footerLinkFeatures = Features
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Uninstall Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 home = Home
 menuTitle = Settings
 menuWiki = Test Pilot Wiki
@@ -44,6 +53,7 @@ landingRequiresDesktop = Test Pilot requires Firefox for Desktop on Windows, Mac
 landingDownloadFirefoxDesc = (Test Pilot is available for Firefox on Windows, OS X and Linux)
 landingUpgradeDesc = Test Pilot requires Firefox 49 or higher.
 landingUpgradeDesc2 = Test Pilot requires Firefox {$version} or higher.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Upgrade Firefox
 landingDownloadFirefoxSubTitle = Free Download
@@ -112,6 +122,8 @@ experimentPromoSubheader = We're building next-generation features for Firefox. 
 ## The experiment detail page.
 isEnabledStatusMessage = {$title} is enabled.
 installErrorMessage = Uh oh. {$title} could not be enabled. Try again later.
+wrongPlatformIOS = This experiment is available for iOS devices only.
+wrongPlatformAndroid = This experiment is available for Android devices only.
 otherExperiments = Try out these experiments as well
 giveFeedback = Give Feedback
 disableHeader = Disable Experiment?

@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Ingeschakeld"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Nieuw experiment"
+  },
+  "experiment_list_view_all": {
+    "message": "Alle experimenten bekijken"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Eindigt morgen"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Eindigt binnenkort"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Experiment voltooid"
+  },
+  "installed_message": {
+    "message": "<strong>Ter info:</strong> we hebben een knop op uw werkbalk geplaatst, <br> zodat u Test Pilot altijd kunt vinden."
+  },
+  "survey_show_rating_label": {
+    "message": "Beoordeel %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Bedankt voor het beoordelen van %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Vul een snelle enquête in"
+  },
+  "survey_launch_survey_label": {
+    "message": "Het experiment %s is beëindigd. Wat vond u ervan?"
+  },
+  "no_experiment_message": {
+    "message": "Test de nieuwste experimentele functies van Firefox met Test Pilot!"
+  },
+  "no_experiment_button": {
+    "message": "Welke experimenten?"
+  },
+  "new_badge": {
+    "message": "Nieuw"
+  },
+  "share_label": {
+    "message": "Gek op Test Pilot?"
+  },
+  "share_button": {
+    "message": "Delen"
+  }
+}

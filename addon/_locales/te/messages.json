@@ -1,0 +1,32 @@
+{
+  "experiment_list_enabled": {
+    "message": "చేతనం"
+  },
+  "experiment_list_new_experiment": {
+    "message": "కొత్త ప్రయోగం"
+  },
+  "experiment_list_view_all": {
+    "message": "అన్ని ప్రయోగాలనూ చూడండి"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "రేపు ముగుస్తుంది"
+  },
+  "experiment_eol_soon_message": {
+    "message": "త్వరలో ముగుస్తుంది"
+  },
+  "experiment_eol_complete_message": {
+    "message": "ప్రయోగం పూర్తయ్యింది"
+  },
+  "no_experiment_button": {
+    "message": "ఏం ప్రయోగాలు?"
+  },
+  "new_badge": {
+    "message": "కొత్తది"
+  },
+  "share_label": {
+    "message": "Test Pilot నచ్చిందా?"
+  },
+  "share_button": {
+    "message": "పంచుకో"
+  }
+}

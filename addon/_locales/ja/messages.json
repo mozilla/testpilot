@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "有効"
+  },
+  "experiment_list_new_experiment": {
+    "message": "新しい実験"
+  },
+  "experiment_list_view_all": {
+    "message": "すべての実験を見る"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "明日終了"
+  },
+  "experiment_eol_soon_message": {
+    "message": "まもなく終了"
+  },
+  "experiment_eol_complete_message": {
+    "message": "実験完了"
+  },
+  "installed_message": {
+    "message": "<strong>参考:</strong> Test Pilot をいつでも見つけられるよう、<br>ツールバーにボタンを追加しました。"
+  },
+  "survey_show_rating_label": {
+    "message": "%s を評価してください"
+  },
+  "survey_rating_thank_you": {
+    "message": "%s を評価していただきありがとうございます。"
+  },
+  "survey_rating_survey_button": {
+    "message": "簡単なアンケートに答える"
+  },
+  "survey_launch_survey_label": {
+    "message": "%s の実験は終了しました。どのように思われましたか？"
+  },
+  "no_experiment_message": {
+    "message": "Test Pilot で Firefox の最新の実験的機能を試そう！"
+  },
+  "no_experiment_button": {
+    "message": "どのような実験？"
+  },
+  "new_badge": {
+    "message": "新着"
+  },
+  "share_label": {
+    "message": "Test Pilot を気に入ってもらえましたか？"
+  },
+  "share_button": {
+    "message": "共有"
+  }
+}

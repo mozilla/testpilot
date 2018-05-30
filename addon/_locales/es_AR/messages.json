@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Habilitado"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Experimento nuevo"
+  },
+  "experiment_list_view_all": {
+    "message": "Ver todos los experimentos"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Termina mañana"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Terminará en breve"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Experimento completo"
+  },
+  "installed_message": {
+    "message": "<strong> Para que lo sepas:</strong> Pusimos un botón en tu barra de herramientas <br> para que siempre sepas dónde está Test Pilot."
+  },
+  "survey_show_rating_label": {
+    "message": "Por favor calificá %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Gracias por tu calificación %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Respondé una breve encuesta"
+  },
+  "survey_launch_survey_label": {
+    "message": "El experimento %s terminó. ¿Qué opinás?"
+  },
+  "no_experiment_message": {
+    "message": "¡Probá las últimas funciones experimentales de nuestro Firefox con Test Pilot!"
+  },
+  "no_experiment_button": {
+    "message": "¿Qué experimentos?"
+  },
+  "new_badge": {
+    "message": "Nuevo"
+  },
+  "share_label": {
+    "message": "¿Te gusta Test Pilot?"
+  },
+  "share_button": {
+    "message": "Compartí"
+  }
+}
