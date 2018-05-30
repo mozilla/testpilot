@@ -21,7 +21,7 @@ if [ "$CIRCLE_PROJECT_USERNAME" != "mozilla" ]; then
 fi
 
 # Skip builds without credentials
-if [ -z "$AWS_ACCESS_KEY_ID" || -z "$AWS_SECRET_ACCESS_KEY" ]; then
+if [[ -z "$AWS_ACCESS_KEY_ID" || -z "$AWS_SECRET_ACCESS_KEY" ]]; then
   echo "Skipping Storybook deploy for missing credentials";
   exit 0;
 fi
