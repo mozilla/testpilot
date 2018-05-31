@@ -14,9 +14,15 @@ footerLinkPrivacy = Zasebnost
 footerLinkTerms = Pogoji
 footerLinkLegal = Pravne informacije
 footerLinkFeedback = Sporočite povratne informacije
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Predstavitev
 footerLinkAboutUs = O nas
 footerLinkSupportHeader = Podpora
 footerLinkDownload = Prenesi Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobilnik
+footerLinkFeatures = Značilnosti
+footerLinkBeta = Beta, Nightly, Developer Edition
 footerLinkRetire = Odstrani Test Pilot
 
 ## Items in the menu and footer
