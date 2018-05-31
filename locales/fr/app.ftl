@@ -14,9 +14,8 @@ footerLinkPrivacy = Confidentialité
 footerLinkTerms = Conditions
 footerLinkLegal = Mentions légales
 footerLinkFeedback = Donner votre avis
-footerLinkAbout = À propos de Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Accueil
 menuTitle = Paramètres
@@ -51,6 +50,7 @@ landingRequiresDesktop = Pour utiliser Test Pilot il vous faut Firefox pour ordi
 landingDownloadFirefoxDesc = (Test Pilot est disponible pour Firefox sous Windows, OS X et Linux)
 landingUpgradeDesc = Test Pilot nécessite Firefox 49 ou supérieur.
 landingUpgradeDesc2 = Test Pilot nécessite Firefox { $version } ou supérieur.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Mettez Firefox à jour
 landingDownloadFirefoxSubTitle = Téléchargement gratuit
@@ -142,7 +142,7 @@ contributorsHeading = Conçu et réalisé par
 contributorsExtraLearnMore = En savoir plus
 changelog = Notes de version
 tour = Visite guidée
-tourLink = visite guidée
+tourLink = Visite guidée
 contribute = Participer
 bugReports = Rapports de bogues
 discussExperiment = Discuter de { $title }
