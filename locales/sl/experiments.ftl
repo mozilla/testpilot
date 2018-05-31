@@ -136,6 +136,7 @@ sendContributors6Title = Razvijalec UX
 sendContributors7Title = Generalni načrtovalec izdelka/uporabniške izkušnje
 sideviewLegalnotice = Z nadaljevanjem se strinjate s <a>pogoji</a> in <a>pravilnikom zasebnosti</a> Test Pilota ter s <a>pravilnikom o zasebnosti Side View</a>.
 sideviewMeasurements2 = Side View ne zbira podatkov o obiskanih straneh.
+sideviewDetails0Copy = Imejte odprti dve strani naenkrat. Side View prikaže strani v mobilnem pogledu, tako da se priležejo v manjši prostor.
 sideviewToursteps4Copy = Vedno nam lahko sporočite povratne informacije ali onemogočite Side View v Test Pilotu.
 snoozetabsDescription = Prava spletna stran ob nepravem času? Uspavajte jo, dokler nimate časa zanjo. Snooze Tabs vam omogoča skriti zavihke do časa, ki ga določite.
 snoozetabsIntroduction = Snooze Tabs vam omogoča, da se na spletu laže osredotočite, v kolikor želite za zdaj odstraniti odvračajoče dejavnike ali kaj shraniti za kasneje. Kliknite ikono za dremež, da pospravite zavihek, ki ga trenutno ne potrebujete, in nastavite, kdaj naj se povrne. Uspavajte zanimiv članek do večera. Uspavajte ta recept do drugega meseca. Ko bo dremež končan, se bo zavihek nazaj odprl.
