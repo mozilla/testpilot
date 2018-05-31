@@ -20,7 +20,7 @@ footerLinkAboutUs = 关于我们
 footerLinkSupportHeader = 支持
 footerLinkDownload = 下载 Firefox
 # link to page detailing firefox mobile browser options
-footerLinkMobile = 移动设备
+footerLinkMobile = 移动端
 footerLinkFeatures = 功能
 footerLinkBeta = Beta、Nightly、Developer 版本
 footerLinkRetire = 卸载 Test Pilot
