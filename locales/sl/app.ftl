@@ -14,6 +14,7 @@ footerLinkPrivacy = Zasebnost
 footerLinkTerms = Pogoji
 footerLinkLegal = Pravne informacije
 footerLinkFeedback = Sporočite povratne informacije
+footerLinkAboutUs = O nas
 footerLinkSupportHeader = Podpora
 footerLinkDownload = Prenesi Firefox
 footerLinkRetire = Odstrani Test Pilot
