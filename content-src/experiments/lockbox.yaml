@@ -1,6 +1,6 @@
-id: 15
-slug: lockbox
-title: 'Lockbox'
+id: 16
+slug: firefox-lockbox
+title: 'Firefox Lockbox'
 # subtitle: 'Take your passwords everywhere'
 order: 3
 is_featured: true
@@ -8,14 +8,12 @@ platforms: ['mobile']
 web_url: https://example.com/web-experiment
 
 description: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum cum ad deserunt
-  iusto possimus. Fugiat odit corrupti cumque.
-warning: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum cum ad deserunt
-  iusto possimus. Fugiat odit corrupti cumque.
+  Take your passwords everywhere with Firefox Lockbox, a secure mobile app.
+# warning: >
+#   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum cum ad deserunt
+#   iusto possimus. Fugiat odit corrupti cumque.
 introduction: >
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Consectetur adipisicing elit.</p>
+  <p>Firefox Lockbox lets you take your passwords everywhere. Easily access logins you've saved to Firefox Desktop from your iOS device. Logins are stored and synced securely using 256-bit encryption, keeping your information safe. Never again find yourself locked out of your account while on the go.</p>
 
 image_twitter: /static/images/experiments/lockbox/social/twitter.jpg
 image_facebook: /static/images/experiments/lockbox/social/facebook.jpg
@@ -32,19 +30,27 @@ created: '2016-01-01T00:00:00.000000Z'
 # uninstalled: '2016-01-02T00:00:00.000000Z'
 # launch_date: '2016-01-01T00:00:00.000000Z'
 
-changelog_url: 'https://www.github.com/mozilla/experiment-name/blob/master/docs/changelog.md'
-contribute_url: 'https://www.github.com/mozilla/experiment-name'
-bug_report_url: 'https://www.github.com/mozilla/experiment-name/issues'
-discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/experiment-name'
-privacy_notice_url: 'https://www.github.com/mozilla/experiment-name/blob/master/docs/metrics.md'
+changelog_url: 'https://github.com/mozilla-lockbox/lockbox-ios/releases'
+contribute_url: 'https://github.com/mozilla-lockbox/lockbox-ios'
+bug_report_url: 'https://github.com/mozilla-lockbox/lockbox-ios/issues'
+discourse_url: 'https://discourse.mozilla.org/c/test-pilot/lockbox'
+privacy_notice_url: 'https://lockbox.firefox.com/privacy.html'
 
 details:
   -
-    headline: 'Lorem ipsum'
-    image: /static/images/experiments/lockbox/details/details-1.jpg
+    image: /static/images/experiments/lockbox/details/access.png
     copy: >
-      dolor sit amet, consectetur adipisicing elit. Ipsum cum ad deserunt
-      iusto possimus. Fugiat odit corrupti cumque.
+      Access the username and password for all the accounts you save to Firefox.
+
+  -
+    image: /static/images/experiments/lockbox/details/sync.png
+    copy: >
+      Manage accounts in Firefox and sync changes automatically to Lockbox.
+
+  -
+    image: /static/images/experiments/lockbox/details/sort-filter.png
+    copy: >
+      Sort and filter on your accounts to quickly locate the one you need.
 
 contributors:
   -
@@ -116,13 +122,17 @@ tour_steps:
 
 measurements:
   - >
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
-    suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
-    cupiditate vitae praesentium eveniet unde totam, architecto molestiae?
+    Credential data: Your credentials are synced in encrypted form using Firefox Sync. Learn more <strong>here</strong>.
   - >
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
-    suscipit, nam commodi excepturi error modi. Laborum eum, quae, alias facere,
-    cupiditate vitae praesentium eveniet unde totam, architecto molestiae?
+    Interaction data. Mozilla receives information about your interaction with Firefox Lockbox, including (1) frequency of editing, viewing, copying, and syncing credentials, (2) whether you are a new or existing Firefox Account user, (3) interactions with Firefox Lockbox menus and icons, (4) length of time the app is in background.
+  - >
+    Technical data. We receive your device, operating system, version, and language preference. We also receive your IP address in connection with your usage of a Firefox Account. Learn more <strong>here</strong>.
+  - >
+    Third-Party Services. We use Apple’s TestFlight for beta testing, which has separate <strong>Legal</strong> and <strong>Privacy</strong> terms. Apple receives crash data by default, which may include personally identifiable data, and which may be sent to Mozilla.
+  - >
+    Other Mozilla Services. Unlike most Test Pilot experiments, Firefox Lockbox requires a Firefox Account and uses the Firefox Sync service. Learn more about <strong>Firefox Accounts</strong>, and <strong>Sync</strong>.
+  - >
+    You can learn more about the data collection for Firefox Lockbox <strong>here</strong>.
 
 pre_feedback_image: /static/images/experiments/experiment-name/pre-feedback.jpg
 pre_feedback_copy: >
