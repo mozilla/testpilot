@@ -14,9 +14,18 @@ footerLinkPrivacy = Privatnost
 footerLinkTerms = Uslovi
 footerLinkLegal = Pravno
 footerLinkFeedback = Dajte povratnu informaciju
-footerLinkAbout = O Test Pilotu
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Informacije o
+footerLinkAboutUs = O nama
+footerLinkSupportHeader = Podrška
+footerLinkDownload = Preuzmite Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobilni
+footerLinkFeatures = Funkcije
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Deinstaliraj Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Početna
 menuTitle = Postavke
@@ -25,7 +34,6 @@ menuDiscuss = Rasprava o programu Test Pilot
 menuFileIssue = Prijavite grešku
 menuRetire = Deinstaliraj Test Pilot
 headerLinkBlog = Blog
-headerLinkNews = Kanal vijesti
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = Test Pilot zahtjeva Firefox za Windows, Mac ili Linux r
 landingDownloadFirefoxDesc = (Test Pilot je dostupan za Firefox za Windows, OS X i Linux)
 landingUpgradeDesc = Test Pilot zahtjeva Firefox 49 ili noviji.
 landingUpgradeDesc2 = Test pilot zahtjeva Firefox { $version } ili noviji.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Nadogradi Firefox
 landingDownloadFirefoxSubTitle = Besplatno preuzimanje
@@ -83,13 +92,6 @@ emailOptInMessage = Saznajte za nove eksperimente i pogledajte rezultate eksperi
 emailOptInConfirmationTitle = E-pošta poslana
 emailOptInConfirmationClose = Naprijed na eksperimente...
 emailOptInDialogErrorTitle = Oh ne!
-
-## News feed updates.
-
-latestUpdatesTitle = Najnovija ažuriranja
-showMoreNewsTitle = Prikaži starije novosti
-# "Link" is a noun in this context
-englishArticleLink = Link za članak na engleskom
 
 ## Featured experiment.
 
@@ -138,6 +140,8 @@ experimentPromoSubheader = Mi gradimo mogućnosti sljedeće generacije za Firefo
 
 isEnabledStatusMessage = { $title } јe omogućen.
 installErrorMessage = Uf. { $title } ne može biti omogućen. Pokušajte ponovo kasnije.
+wrongPlatformIOS = Ovaj eksperiment je dostupan samo za iOS uređaje.
+wrongPlatformAndroid = Ovaj eksperiment je dostupan samo za Android uređaje.
 otherExperiments = Isprobajte i ove eksperimente
 giveFeedback = Pošaljite povratnu informaciju
 disableHeader = Onemogućiti eksperiment?
