@@ -24,6 +24,7 @@ type ExperimentRowCardProps = {
   enabled: Boolean,
   isFirefox: Boolean,
   isMinFirefox: Boolean,
+  isMobile: Boolean,
   installed: InstalledExperiments,
   clientUUID: ?string,
   eventCategory: string,
@@ -40,7 +41,7 @@ export default class ExperimentRowCard extends React.Component {
 
   render() {
     const { hasAddon, experiment, enabled, isAfterCompletedDate,
-      isFirefox, isMinFirefox } = this.props;
+      isFirefox, isMinFirefox, isMobile } = this.props;
 
     const { description, title, slug, subtitle } = experiment;
     const isCompleted = isAfterCompletedDate(experiment);
@@ -90,7 +91,7 @@ export default class ExperimentRowCard extends React.Component {
           <Localized id={this.l10nId("description")}>
             <p>{description}</p>
           </Localized>
-          { this.renderManageButton(enabled, hasAddon, isCompleted, isFirefox, isMinFirefox) }
+          { this.renderManageButton(enabled, hasAddon, isCompleted, isFirefox, isMinFirefox, isMobile) }
         </div>
       </Link>
     );
@@ -126,7 +127,11 @@ export default class ExperimentRowCard extends React.Component {
   }
 
   renderManageButton(enabled: Boolean, hasAddon: Boolean, isCompleted: Boolean,
-    isFirefox: Boolean, isMinFirefox: Boolean) {
+    isFirefox: Boolean, isMinFirefox: Boolean, isMobile: Boolean) {
+    const learnMoreBtn = (<Localized id="experimentCardLearnMore">
+      <div className="button secondary">Learn More</div>
+    </Localized>);
+
     if (enabled && hasAddon) {
       return (
         <Localized id="experimentCardManage">
@@ -134,18 +139,15 @@ export default class ExperimentRowCard extends React.Component {
         </Localized>
       );
     } else if (isCompleted) {
-      return (
-        <Localized id="experimentCardLearnMore">
-          <div className="button secondary">Learn More</div>
-        </Localized>
-      );
+      return (learnMoreBtn);
     } else if (!isFirefox || !isMinFirefox) {
-      return (
-        <Localized id="experimentCardLearnMore">
-          <div className="button secondary">Learn More</div>
-        </Localized>
-      );
+      return (learnMoreBtn);
     }
+
+    if (isMobile) {
+      return (learnMoreBtn);
+    }
+
     return (
       <Localized id="experimentCardGetStarted">
         <div className="button default">Get Started</div>
