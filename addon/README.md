@@ -26,6 +26,16 @@ If your packaging for another environment then you must include some environment
 ENVIRONMENT_TITLE=production ENVIRONMENT_URL=https://testpilot.firefox.com/ npm run package
 ```
 
+Here is the full list of urls for each environment:
+
+```
+ENVIRONMENT_TITLE=local ENVIRONMENT_URL=https://example.com/
+ENVIRONMENT_TITLE=dev ENVIRONMENT_URL=https://testpilot.dev.mozaws.net/
+ENVIRONMENT_TITLE=l10n ENVIRONMENT_URL=https://testpilot-l10n.dev.mozaws.net/
+ENVIRONMENT_TITLE=stage ENVIRONMENT_URL=https://testpilot.stage.mozaws.net/
+ENVIRONMENT_TITLE=production ENVIRONMENT_URL=https://testpilot.firefox.com/
+```
+
 If you'd like to actively work on the add-on, here are some additional steps to set up a more convenient workflow:
 
 1. Install [Firefox Developer Edition][devedition]. (Nightly should work, too, but Dev Edition is preferred.)

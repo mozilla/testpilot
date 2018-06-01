@@ -17,11 +17,12 @@
     "eslint": "4.15.0",
     "eslint-plugin-import": "2.8.0",
     "fs-extra": "^6.0.0",
+    "onchange": "^4.0.0",
     "shx": "^0.2.2",
     "web-ext": "^2.6.0"
   },
   "scripts": {
-    "start": "web-ext run",
+    "start": "onchange -p -v \"*.js\" -- npm run package",
     "clean": "shx rm -rf web-ext-artifacts && rm -f current-environment.js && rm -f manifest.json",
     "prepackage": "npm run clean && node bin/process-with-env && npm run lint && npm run lint:extension && npm run update-version",
     "package": "cross-env web-ext build --ignore-files manifest-base.json package.json package-lock.json bin/update-version bin/process-with-env README.md LICENSE --overwrite-dest && shx mv web-ext-artifacts/test_pilot*.zip ./addon.xpi",
