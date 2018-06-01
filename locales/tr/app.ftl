@@ -14,9 +14,18 @@ footerLinkPrivacy = Gizlilik
 footerLinkTerms = Koşullar
 footerLinkLegal = Yasal Uyarı
 footerLinkFeedback = Geri bildirim ver
-footerLinkAbout = Test Pilotu hakkında
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Hakkında
+footerLinkAboutUs = Hakkımızda
+footerLinkSupportHeader = Destek
+footerLinkDownload = Firefox’u indir
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobil
+footerLinkFeatures = Özellikler
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Test Pilotu’nu kaldır
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Ana sayfa
 menuTitle = Ayarlar
@@ -25,7 +34,6 @@ menuDiscuss = Test Pilotu'nu tartışın
 menuFileIssue = Sorun bildirin
 menuRetire = Test Pilotu’nu kaldır
 headerLinkBlog = Günlük
-headerLinkNews = Haberler
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = Test Pilotu için Firefox'un masaüstü Windows, Mac ve
 landingDownloadFirefoxDesc = (Test Pilotu Firox'un Windows, OS X ve Linux sürümlerinde çalışır.)
 landingUpgradeDesc = Test Pilotu için Firefox 49 veya daha yeni bir sürüm gerekir.
 landingUpgradeDesc2 = Test Pilotu için Firefox { $version } veya daha yeni bir sürüm gerekir.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox'u yükseltin
 landingDownloadFirefoxSubTitle = Ücretsiz indirin
@@ -83,13 +92,6 @@ emailOptInMessage = Yeni deneyleri öğrenin ve denediğiniz deneylerin test son
 emailOptInConfirmationTitle = E-posta gönderildi
 emailOptInConfirmationClose = Deneylere geçelim...
 emailOptInDialogErrorTitle = Hayır!
-
-## News feed updates.
-
-latestUpdatesTitle = Son güncellemeler
-showMoreNewsTitle = Eski haberleri göster
-# "Link" is a noun in this context
-englishArticleLink = İngilizce haberin linki
 
 ## Featured experiment.
 
@@ -138,6 +140,8 @@ experimentPromoSubheader = Firefox'un yeni nesil özelliklerini inşa ediyoruz. 
 
 isEnabledStatusMessage = { $title } etkinleştirildi.
 installErrorMessage = { $title } etkinleştirilemedi. Daha sonra yeniden deneyin.
+wrongPlatformIOS = Bu deney yalnızca iOS cihazlarda kullanılabilir.
+wrongPlatformAndroid = Bu deney yalnızca Android cihazlarda kullanılabilir.
 otherExperiments = Bu deneyleri de deneyin
 giveFeedback = Yorum yapın
 disableHeader = Deney kapatılsın mı?
