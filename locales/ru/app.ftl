@@ -14,9 +14,18 @@ footerLinkPrivacy = Приватность
 footerLinkTerms = Условия использования
 footerLinkLegal = Права
 footerLinkFeedback = Оставить отзыв
-footerLinkAbout = О программе лётчика-испытателя
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = О нас
+footerLinkAboutUs = О нас
+footerLinkSupportHeader = Поддержка
+footerLinkDownload = Загрузить Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Мобильный
+footerLinkFeatures = Возможности
+footerLinkBeta = Бета, Nightly, Developer Edition
+footerLinkRetire = Удалить лётчик-испытатель
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Главная
 menuTitle = Настройки
@@ -25,7 +34,6 @@ menuDiscuss = Обсуждение лётчика-испытателя
 menuFileIssue = Сообщить о проблеме
 menuRetire = Удалить расширение
 headerLinkBlog = Блог
-headerLinkNews = Лента новостей
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = Лётчику-испытателю требуется 
 landingDownloadFirefoxDesc = (Лётчик-испытатель доступен для Firefox на Windows, OS X и Linux)
 landingUpgradeDesc = Лётчику-испытателю необходим Firefox 49 или выше.
 landingUpgradeDesc2 = Лётчику-испытателю необходим Firefox { $version } или выше.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Обновить Firefox
 landingDownloadFirefoxSubTitle = Загрузить бесплатно
@@ -83,13 +92,6 @@ emailOptInMessage = Узнавайте о новых экспериментах 
 emailOptInConfirmationTitle = Письмо отправлено
 emailOptInConfirmationClose = Вперёд к экспериментам...
 emailOptInDialogErrorTitle = О, нет!
-
-## News feed updates.
-
-latestUpdatesTitle = Последние обновления
-showMoreNewsTitle = Показать прошлые новости
-# "Link" is a noun in this context
-englishArticleLink = Ссылка на статью на английском
 
 ## Featured experiment.
 
@@ -138,6 +140,8 @@ experimentPromoSubheader = Мы создаём новое поколение в�
 
 isEnabledStatusMessage = { $title } включено.
 installErrorMessage = О, нет. Не удалось включить { $title }. Попробуйте снова позже.
+wrongPlatformIOS = Этот эксперимент доступен только для iOS-устройств.
+wrongPlatformAndroid = Этот эксперимент доступен только для Android-устройств.
 otherExperiments = Также попробуйте эти эксперименты
 giveFeedback = Оставить отзыв
 disableHeader = Отключить эксперимент?
