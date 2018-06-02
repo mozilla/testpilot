@@ -138,6 +138,8 @@ experimentPromoSubheader = Vytváříme funkce pro Firefox nové generace. Nains
 
 isEnabledStatusMessage = Experiment { $title } je zapnut.
 installErrorMessage = Jejda. { $title } nelze zapnout. Zkuste to znovu později.
+wrongPlatformIOS = Tento experiment je dostupný pouze pro zařízení s iOS.
+wrongPlatformAndroid = Tento experiment je dostupný pouze pro zařízení s Android.
 otherExperiments = Vyzkoušejte také tyto experimenty
 giveFeedback = Poskytnout zpětnou vazbu
 disableHeader = Vypnout experiment?
