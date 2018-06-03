@@ -1,9 +1,6 @@
 activitystreamDescription = Daftar riwayat yang kaya visual dan simbol baru beranda yang mempermudah Anda mencari apa yang Anda inginkan di Firefox.
 activitystreamIntroduction = <p>Kembali menjelajah tanpa kehilangan pemikiran Anda sebelumnya. Activity Stream menempatkan situs terbaik, markah, dan riwayat baru-baru ini Anda tetap dekat di setiap tab baru. Tampilan linimasanya juga memberikan gambaran besar penjelajahan Anda.</p>
-activitystreamMeasurements0 = Kami mengumpulkan data penggunaan dasar mengenai cara Anda berinteraksi dengan tab baru percobaan dan laman linimasa, seperti tipe elemen yang Anda klik dan posisi mereka di laman.
-activitystreamMeasurements1 = Kami juga mengumpulkan informasi dasar tentang profil peramban Anda yang mempengaruhi Activity Stream, seperti jumlah markah dan riwayat.
-activitystreamMeasurements2 = Dalam menyajikan Activity Stream, kami mengambil metadata tentang situs yang Anda kunjungi, seperti gambar dan ikon, menggunakan layanan <a href="http://embed.ly/" target="_blank">Embedly</a>. Kami mengirim permintaan ke Embedly melalui server Mozilla, sehingga mereka tidak akan berasosiasi dengan Anda.
-activitystreamToursteps0Copy = Temukan situs teratas, riwayat terkini, dan markah ketika Anda membuka tab baru.
+activitystreamDetails0Copy = Klik tab baru, dan situs favorit Anda hanya sejauh satu klik saja.
 activitystreamContributors0Title = Insinyur Software
 activitystreamContributors1Title = Insinyur Web
 activitystreamContributors3Title = Insinyur Firefox Desktop
@@ -14,6 +11,7 @@ activitystreamContributors8Title = Insinyur Magang
 activitystreamContributors9Title = Manajer Produk
 activitystreamContributors10Title = Insinyur Manager
 activitystreamContributors11Title = Insinyur Software
+cliqzDetails2Copy = Kembali ke situs favorit Anda dengan satu klik saat Anda membuka tab baru. Anda bahkan dapat menyesuaikan favorit Anda.
 cliqzToursteps0Copy = Mulailah mengetik di bilah URL untuk melihat hasilnya secara langsung.
 containersContributors1Title = Insinyur Platform
 containersContributors2Title = Insinyur Privasi
@@ -53,7 +51,6 @@ snoozetabsContributors4Title = Kontributor Desain
 snoozetabsContributors5Title = QA Firefox
 snoozetabsContributors6Title = QA Softvision
 snoozetabsContributors7Title = QA Softvision
-trackingprotectionToursteps2Copy = Anda selalu dapat menonaktifkan Perlindungan Pelacakan dari Test Pilot.
 trackingprotectionContributors2Title = Insinyur QA Senior
 universalsearchContributors2Title = Staf Insinyur
 universalsearchContributors3Title = Insinyur Senior
