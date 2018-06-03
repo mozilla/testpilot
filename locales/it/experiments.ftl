@@ -32,6 +32,7 @@ colorDescription = Definisci il tuo stile. Crea e condividi temi di Firefox in p
 colorIntroduction = Con Firefox Color chiunque è in grado di modificare l’aspetto di Firefox. Si tratta di un semplice strumento che permette di scegliere tra diverse combinazioni di colori e trame di sfondo per creare il proprio tema di Firefox.
 colorLegalnotice = Procedendo, accetti i <a>termini d’uso</a>, l’<a>informativa sulla privacy</a> di Test Pilot e l’<a>informativa sulla privacy di Firefox Color</a>.
 colorMeasurements0 = Informazioni riguardo l’utilizzo dell’esperimento, ad esempio come accedi alla caratteristica, quali bottoni premi e la frequenza con cui la utilizzi.
+colorMeasurements1 = Informazioni sullo stato di installazione del componente aggiuntivo sperimentale quando si visita il sito web di Firefox Color.
 colorMeasurements2 = Informazioni riguardo quali colori e sfondi utilizzi per creare temi personalizzati. Questo ci aiuta a capire le scelte più popolari tra tutti i partecipanti all’esperimento.
 colorDetails0Copy = Crea temi scegliendo colori e trame di sfondo. Puoi anche condividere le tue creazioni o salvarle per te stesso.
 colorDetails1Copy = Abbiamo creato alcuni temi preimpostati per aiutarti a iniziare.
