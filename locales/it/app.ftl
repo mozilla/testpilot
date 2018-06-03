@@ -14,9 +14,18 @@ footerLinkPrivacy = Privacy
 footerLinkTerms = Condizioni di utilizzo
 footerLinkLegal = Note legali
 footerLinkFeedback = Dacci la tua opinione
-footerLinkAbout = Informazioni su Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Informazioni
+footerLinkAboutUs = Chi siamo
+footerLinkSupportHeader = Supporto
+footerLinkDownload = Scarica Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobile
+footerLinkFeatures = Funzionalità
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Disinstalla Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Pagina iniziale
 menuTitle = Impostazioni
@@ -25,7 +34,6 @@ menuDiscuss = Discussioni su Test Pilot
 menuFileIssue = Segnala un problema
 menuRetire = Disinstalla Test Pilot
 headerLinkBlog = Blog
-headerLinkNews = Feed di notizie
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = Test Pilot è compatibile con Firefox per computer Wind
 landingDownloadFirefoxDesc = (Test Pilot è disponibile per Firefox su Windows, OS X e Linux)
 landingUpgradeDesc = Test Pilot è compatibile con Firefox 49 o versioni successive.
 landingUpgradeDesc2 = Test Pilot è compatibile con Firefox { $version } o superiore.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Aggiorna Firefox
 landingDownloadFirefoxSubTitle = Download gratuito
@@ -83,13 +92,6 @@ emailOptInMessage = Scopri nuovi esperimenti e consulta i risultati di quelli a 
 emailOptInConfirmationTitle = Email inviata
 emailOptInConfirmationClose = A proposito degli esperimenti…
 emailOptInDialogErrorTitle = Accidenti!
-
-## News feed updates.
-
-latestUpdatesTitle = Ultime notizie
-showMoreNewsTitle = Visualizza notizie più vecchie
-# "Link" is a noun in this context
-englishArticleLink = Link all'articolo inglese
 
 ## Featured experiment.
 
@@ -135,6 +137,8 @@ experimentPromoSubheader = Stiamo realizzando funzioni di ultima generazione per
 
 isEnabledStatusMessage = { $title } è attivo.
 installErrorMessage = Oops. Non è stato possibile attivare { $title }. Riprova più tardi.
+wrongPlatformIOS = Questo esperimento è disponibile solo per dispositivi iOS.
+wrongPlatformAndroid = Questo esperimento è disponibile solo per dispositivi Android.
 otherExperiments = Prova anche questi esperimenti
 giveFeedback = Dacci la tua opinione
 disableHeader = Disattivare l’esperimento?
