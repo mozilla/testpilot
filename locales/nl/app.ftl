@@ -14,9 +14,18 @@ footerLinkPrivacy = Privacy
 footerLinkTerms = Voorwaarden
 footerLinkLegal = Juridisch
 footerLinkFeedback = Feedback geven
-footerLinkAbout = Over Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Over
+footerLinkAboutUs = Over ons
+footerLinkSupportHeader = Ondersteuning
+footerLinkDownload = Firefox downloaden
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobiel
+footerLinkFeatures = Functies
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Test Pilot verwijderen
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Startpagina
 menuTitle = Instellingen
@@ -25,7 +34,6 @@ menuDiscuss = Test Pilot bespreken
 menuFileIssue = Een probleem melden
 menuRetire = Test Pilot verwijderen
 headerLinkBlog = Blog
-headerLinkNews = Nieuwsfeed
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = Test Pilot vereist Firefox voor desktop in Windows, Mac
 landingDownloadFirefoxDesc = (Test Pilot is beschikbaar voor Firefox in Windows, OS X en Linux)
 landingUpgradeDesc = Test Pilot vereist Firefox 49 of hoger.
 landingUpgradeDesc2 = Test Pilot vereist Firefox { $version } of hoger.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Upgrade Firefox
 landingDownloadFirefoxSubTitle = Gratis download
@@ -83,13 +92,6 @@ emailOptInMessage = Ontdek nieuwe experimenten en bekijk testresultaten voor exp
 emailOptInConfirmationTitle = E-mail verzonden
 emailOptInConfirmationClose = Door naar de experimenten...
 emailOptInDialogErrorTitle = O nee!
-
-## News feed updates.
-
-latestUpdatesTitle = Nieuwste updates
-showMoreNewsTitle = Eerder nieuws tonen
-# "Link" is a noun in this context
-englishArticleLink = Koppeling naar Engelstalig artikel
 
 ## Featured experiment.
 
@@ -138,6 +140,8 @@ experimentPromoSubheader = We bouwen functies van de volgende generatie voor Fir
 
 isEnabledStatusMessage = { $title } is ingeschakeld.
 installErrorMessage = O, o. { $title } kon niet worden ingeschakeld. Probeer het later opnieuw.
+wrongPlatformIOS = Dit experiment is alleen beschikbaar voor iOS-apparaten.
+wrongPlatformAndroid = Dit experiment is alleen beschikbaar voor Android-apparaten.
 otherExperiments = Probeer ook deze experimenten
 giveFeedback = Geef feedback
 disableHeader = Experiment uitschakelen?
