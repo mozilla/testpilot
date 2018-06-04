@@ -55,6 +55,7 @@ export class ExperimentDetail extends React.Component {
     showEmailDialog: boolean,
     showDisableDialog: boolean,
     showTourDialog: boolean,
+    showMobileDialog: boolean,
     showPreFeedbackDialog: boolean,
     showEolDialog: boolean
   };
@@ -77,6 +78,7 @@ export class ExperimentDetail extends React.Component {
       showEmailDialog: false,
       showDisableDialog: false,
       showTourDialog: false,
+      showMobileDialog: false,
       showPreFeedbackDialog: false,
       showEolDialog: false
     };
@@ -134,6 +136,7 @@ export class ExperimentDetail extends React.Component {
       flashMeasurementPanel,
       doShowEolDialog,
       doShowTourDialog,
+      doShowMobileDialog,
       doShowPreFeedbackDialog
     } = this;
 
@@ -240,6 +243,13 @@ export class ExperimentDetail extends React.Component {
             onComplete={() => this.setState({ showTourDialog: false })}
           />}
 
+        {showMobileDialog &&
+          <ExperimentMobileDialog
+            {...this.props}
+            onCancel={() => this.setState({ showMobileDialog: false })}
+            onComplete={() => this.setState({ showMobileDialog: false })}
+          />}
+
         {showPreFeedbackDialog &&
           <ExperimentPreFeedbackDialog
             {...this.props}
@@ -320,6 +330,7 @@ export class ExperimentDetail extends React.Component {
                     highlightMeasurementPanel,
                     flashMeasurementPanel,
                     doShowTourDialog,
+                    doShowMobileDialog,
                     l10nId,
                     hasTour
                   }}
@@ -420,6 +431,11 @@ export class ExperimentDetail extends React.Component {
     });
 
     disableExperiment(experiment);
+  };
+
+  launchMobileAppDialog = (evt: MouseEvent) => {
+    evt.preventDefault();
+    this.setState({ showMobileDialog: true });
   };
 
   doShowTourDialog = (evt: MouseEvent) => {

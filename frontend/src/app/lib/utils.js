@@ -14,8 +14,9 @@ export function subscribeToBasket(email, source) {
   });
 }
 
+export const acceptedSMSCountries = ["US"];
+
 export function subscribeToBasketSMS(number, country, lang, msgId) {
-  // const optin = optin || "N";
   const sourceUrl = source || "https://testpilot.firefox.com/";
   return fetch(basketSMSUrl, {
     method: "POST",
