@@ -140,6 +140,8 @@ experimentPromoSubheader = Estamos preparando la siguiente generación de funcio
 
 isEnabledStatusMessage = { $title } está activado.
 installErrorMessage = Chuta. { $title } no pudo ser activado. Vuelve a intentarlo más tarde.
+wrongPlatformIOS = Este experimento está disponible solo para dispositivos iOS.
+wrongPlatformAndroid = Este experimento está disponible solo para dispositivos Android.
 otherExperiments = Prueba también estos experimentos
 giveFeedback = Da tu opinión
 disableHeader = ¿Desactivar experimento?
