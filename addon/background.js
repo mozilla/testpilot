@@ -116,7 +116,7 @@ function setupEnvironment() {
 function fetchResources() {
   log("fetchResources");
   return Promise.all(
-    Object.keys(resources).map(path => {
+    Object.keys(resources).map(path =>
       fetch(`${currentEnvironment.baseUrl}/api/${path}.json`)
         .then(res => res.json())
         .then((data) => data.results ? data.results : data)
@@ -124,8 +124,7 @@ function fetchResources() {
         .catch(err => {
           log("fetchResources error", path, err);
           return [path, null];
-        });
-    })
+        }))
   ).then(results => {
     log("fetchResources results", results);
     results.forEach(([path, data]) => (resources[path] = data));
