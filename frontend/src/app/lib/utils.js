@@ -3,6 +3,7 @@ import querystring from "querystring";
 import { experimentL10nId, l10nId, l10nIdFormat, lookup } from "../../../tasks/util";
 
 export const basketUrl = "https://basket.mozilla.org/news/subscribe/";
+export const basketSMSUrl = "https://basket.mozilla.org/news/subscribe_sms/";
 
 export function subscribeToBasket(email, source) {
   const sourceUrl = source || "https://testpilot.firefox.com/";
@@ -10,6 +11,16 @@ export function subscribeToBasket(email, source) {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: `newsletters=test-pilot&email=${encodeURIComponent(email)}&source_url=${encodeURIComponent(sourceUrl)}`
+  });
+}
+
+export function subscribeToBasketSMS(number, country, lang, msgId) {
+  // const optin = optin || "N";
+  const sourceUrl = source || "https://testpilot.firefox.com/";
+  return fetch(basketSMSUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: `mobile_number=${encodeURIComponent(number)}&country=${country}`
   });
 }
 

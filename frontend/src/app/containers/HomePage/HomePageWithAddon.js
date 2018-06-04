@@ -18,6 +18,7 @@ import LocalizedHtml from '../../components/LocalizedHtml';
 import NewsUpdatesDialog from '../../components/NewsUpdatesDialog';
 import type { InstalledExperiments } from '../../reducers/addon';
 import { getBreakpoint } from "../App";
+import { subscribeToBasketSMS } from "../../lib/utils";
 
 type HomePageWithAddonProps = {
   hasAddon: any,
@@ -59,10 +60,19 @@ export default class HomePageWithAddon extends React.Component {
       showNewsUpdateDialog: true
     };
 
-    fetch('https://www.mozilla.org/country-code.json', {mode: "no-cors"})
-      .then((res) => res.json())
-      .then((data, blah) => {console.log("COUNTRY CODE", data, blah)})
-      .catch((err) => {console.log("COUNTRY CODE ERROR", err)})
+
+    const req = new XMLHttpRequest();
+    req.onload = function(e) {
+      console.log("Country code", e.target.response["country_code"]);
+
+      subscribeToBasketSMS(
+        "4349441440",
+        e.target.response["country_code"]
+      );
+    }
+    req.open("GET", "https://location.services.mozilla.com/v1/country?key=ae6d80f83cac4f3797f3cd2e309d4fb8");
+    req.responseType = "json";
+    req.send();
   }
 
   checkCookies() {
