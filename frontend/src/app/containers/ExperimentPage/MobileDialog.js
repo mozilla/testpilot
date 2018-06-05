@@ -79,31 +79,35 @@ export default class MobileDialog extends React.Component {
 
   render() {
     const { isSuccess, allowSMS, loading } = this.state;
+    const isIOS = false;
+    // const { isIOS, experiment } = this.props;
+    // const { title } = experiment;
+    const title = "Send";
+
+    const headerMessage = isIOS ? (<Localized id="mobileDialogMessageIOS" $title={title}>
+      <p>Download {title} from the iOS App Store.</p></Localized>) : (<Localized id="mobileDialogMessageAndroid" $title={title}><p>Download {title} from the Google Play Store.</p></Localized>);
 
     return (
       <div className="modal-container" tabIndex="0"
         ref={modalContainer => { this.modalContainer = modalContainer; }}
       onKeyDown={e => this.handleKeyDown(e)}>
         <div className="modal feedback-modal modal-bounce-in">
-          {loading && <Loading/>}
-          {!loading && allowSMS && this.renderSMSHeader()}
-          {!loading && allowSMS && this.renderHeader()}
-          <hr/>
-          {!loading && !isSuccess && this.renderForm()}
-          {isSuccess && this.renderSuccess()}
+          <header className="modal-header-wrapper">
+            <Localized id="mobileDialogTitle">
+              <h3 className="modal-header">Get the App</h3>
+            </Localized>
+            <div className="modal-cancel" onClick={e => this.skip(e)}/>
+          </header>
+          <div className="modal-content centered">
+            {headerMessage}
+            <hr/>
+            {loading && <Loading/>}
+            {!loading && !isSuccess && this.renderForm()}
+            {isSuccess && this.renderSuccess()}
+          </div>
         </div>
       </div>
     );
-  }
-
-  renderSMSHeader() {
-    const { isIOS, experiment } = this.props;
-    const { title } = experiment;
-
-    const message = isIOS ? (<Localized id="mobileDialogMessageIOS" $title={title}>
-      <p>Download {title} from the iOS App Store.</p></Localized>) : (<Localized id="mobileDialogMessageAndroid" $title={title}><p>Download {title} from the Google Play Store.</p></Localized>);
-
-    return ({message});
   }
 
   renderSuccess() {
@@ -150,15 +154,17 @@ export default class MobileDialog extends React.Component {
     return (
       <form className="mobile-link-form"
         onSubmit={this.handleSubmit} data-no-csrf>
-        <Localized id={placeholderId} attrs={{placeholder: true}}>
-          <input
-            type='text'
-            placeholder={placeholderText}
-            required
-            value={this.props.recipient}
-            onChange={this.handleRecipientChange}
-          />
-        </Localized>
+        {//<Localized id={placeholderId} attrs={{placeholder: true}}>
+        // <input
+          //   type='text'
+          //   placeholder={placeholderText}
+          //   required
+          //   value={this.props.recipient}
+          //   onChange={this.handleRecipientChange}
+            // />
+        
+          // </Localized>
+        }
         {this.state.isError && <Localized id={errorId}>
           <p className="error">{errorText}</p>
         </Localized>}
