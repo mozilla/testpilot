@@ -1,8 +1,9 @@
 // @flow
 import { Localized } from "fluent-react/compat";
 import React from "react";
+import { isValidNumber } from "libphonenumber-js";
+import { validator } from "email-validator";
 
-import NewsletterForm from "../../NewsletterForm";
 import { subscribeToBasket, subscribeToBasketSMS, acceptedSMSCountries } from "../../lib/utils";
 
 // import "./index.scss";
@@ -16,8 +17,8 @@ type MobileDialogProps = {
 type MobileDialogState = {
   isSuccess: boolean,
   isError: boolean,
-  email: string,
-  privacy: boolean
+  allowSMS: boolean,
+  recipient: string
 }
 
 export default class MobileDialog extends React.Component {
@@ -25,16 +26,14 @@ export default class MobileDialog extends React.Component {
   state: MobileDialogState
 
   modalContainer: Object
-  submitButton: Object
 
   constructor(props: MobileDialogProps) {
     super(props);
     this.state = {
       isSuccess: false,
       isError: false,
-      email: "",
-      number: "",
-      privacy: false
+      allowSMS: false,
+      recipient: ""
     };
   }
 
@@ -43,27 +42,94 @@ export default class MobileDialog extends React.Component {
   }
 
   render() {
-    const { isSuccess, isError } = this.state;
+    const { isSuccess } = this.state;
 
     return (
       <div className="modal-container" tabIndex="0"
         ref={modalContainer => { this.modalContainer = modalContainer; }}
         onKeyDown={e => this.handleKeyDown(e)}>
-        {!isSuccess && !isError && this.renderForm()}
+        {allowSMS && this.renderSMSHeader()}
+        {allowSMS && this.renderHeader()}
+        <hr/>
+        {!isSuccess && this.renderForm()}
         {isSuccess && this.renderSuccess()}
-        {isError && this.renderError()}
       </div>
     );
   }
 
-  renderForm() {
-    const { email, privacy } = this.state;
+  renderSMSHeader() {
+    const message = isIOS ? (<Localized id="mobileDialogMessageIOS" $title={title}><p>Download {title} from the iOS App Store.</p></Localized>)
+          : (<Localized id="mobileDialogMessageAndroid" $title={title}><p>Download {title} from the Google Play Store.</p></Localized>);
 
+    return ({message});
+  }
+
+  renderSuccess() {
+    const secondaryId = allowSMS ? "mobileDialogSuccessSecondarySMS" : "mobileDialogSuccessSecondary";
+    const secondaryText = allowSMS ? "Check your device for the email or text message." : "Check your device for the email.";
+
+    return (
+      <div>
+        <Localized id="mobileDialogSuccessMain">
+          <p className="success primary">Download link sent!</p>
+        </Localized>
+        <Localized id={secondaryId}>
+          <p className="success primary">{secondaryText}</p>
+        </Localized>
+        <Localized id="mobileDialogButtonSuccess">
+          <button className="button large default">Thanks!</button>
+        </Localized>
+        <Localized id="mobileDialogAnotherDeviceLink">
+          <a className="default"
+            onClick={this.reset}>Send to another device</a>
+        </Localized>
+      </div>
+
+    );
+  }
+
+  handleRecipientChange(evt: Object) {
+    if (this.state.allowSMS) {
+      return (isValidNumber(evt.target.value) || validator(evt.target.value));
+    }
+    return validator(evt.target.value);
+  }
+
+  renderForm() {
+    const { allowSMS } = this.props;
+    const placeholderId = allowSMS ? "mobileDialogPlaceholderSMS" : "mobileDialogPlaceholder";
+    const placeholderText = allowSMS ? "Enter your Phone/Email" : "Enter your Email";
+    const errorId = allowSMS ? "mobileDialogErrorSMS" : "mobileDialogError";
+    const errorText = allowSMS ? "Enter a valid phone number or email:" : "Enter a valid email:";
+
+    return (
+      <form className="mobile-link-form"
+        onSubmit={this.handleSubmit} data-no-csrf>
+        <Localized id={placeholderId} attrs={{placeholder: true}}>
+          <input
+            type='text'
+            placeholder={placeholderText}
+            required
+            value={this.props.recipient}
+            onChange={this.handleRecipientChange}
+          />
+        </Localized>
+        {this.state.isError && <Localized id={errorId}>
+         <p className="error">{errorText}</p>
+         </Localized>}
+        <Localized id="mobileDialogButton">
+          <button className={"button large default"}>Send me the Download Link</button>
+        </Localized>
+      </form>
+    );
+  }
+
+  renderForm() {
     return (
       <div id="first-page" className="modal feedback-modal modal-bounce-in">
         <header className="modal-header-wrapper">
-          <Localized id="emailOptInDialogTitle">
-            <h3 className="modal-header">Welcome to Test Pilot!</h3>
+          <Localized id="mobileDialogTitle">
+            <h3 className="modal-header">Get the App</h3>
           </Localized>
           <div className="modal-cancel" onClick={e => this.skip(e)}/>
         </header>
@@ -82,65 +148,11 @@ export default class MobileDialog extends React.Component {
     );
   }
 
-  renderSuccess() {
-    return (
-      <div id="second-page" className="modal">
-        <header className="modal-header-wrapper">
-          <Localized id="newsletterFooterSuccessHeader">
-            <h3 className="modal-header">Thanks!</h3>
-          </Localized>
-          <div className="modal-cancel" onClick={e => this.continue(e)} />
-        </header>
-        <div className="modal-content centered">
-          <div className="envelope" />
-          <Localized id="newsletterFooterSuccessBody">
-            <p>Thank you!</p>
-          </Localized>
-        </div>
-        <div className="modal-actions">
-          <Localized id="emailOptInConfirmationClose">
-            <button id="email-success-continue" onClick={e => this.continue(e)} className="button default large">On to the experiments&hellip;</button>
-          </Localized>
-        </div>
-      </div>
-    );
-  }
-
-  renderError() {
-    return (
-      <div id="second-page" className="modal">
-        <header className="modal-header-wrapper">
-          <Localized id="emailOptInDialogErrorTitle">
-            <h3 className="modal-header">Oh no!</h3>
-          </Localized>
-          <div className="modal-cancel" onClick={e => this.continue(e)} />
-        </header>
-        <div className="modal-content centered">
-          <div className="envelope" />
-          <Localized id="newsletterFooterError">
-            <p className="error">
-              There was an error submitting your email address. Try again?
-            </p>
-          </Localized>
-        </div>
-        <div className="modal-actions">
-          <Localized id="newsletterFormSubmitButton">
-            <button id="email-success-continue" onClick={e => this.reset(e)} className="button default large">Sign Up Now</button>
-          </Localized>
-        </div>
-      </div>
-    );
-  }
-
   focusModalContainer() {
     if (!this.modalContainer) {
       return;
     }
     this.modalContainer.focus();
-  }
-
-  handleEmailChange(e: Object) {
-    this.setState({ email: e.target.value });
   }
 
   handleSubscribe(email: string) {
