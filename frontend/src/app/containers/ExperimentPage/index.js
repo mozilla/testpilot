@@ -249,7 +249,6 @@ export class ExperimentDetail extends React.Component {
           <MobileDialog
             {...this.props}
             onCancel={() => this.setState({ showMobileDialog: false })}
-            onComplete={() => this.setState({ showMobileDialog: false })}
           />}
 
         {showPreFeedbackDialog &&

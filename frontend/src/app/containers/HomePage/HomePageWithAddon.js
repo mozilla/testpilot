@@ -61,18 +61,18 @@ export default class HomePageWithAddon extends React.Component {
     };
 
 
-    const req = new XMLHttpRequest();
-    req.onload = function(e) {
-      console.log("Country code", e.target.response["country_code"]);
+    // const req = new XMLHttpRequest();
+    // req.onload = function(e) {
+    //   console.log("Country code", e.target.response["country_code"]);
 
-      subscribeToBasketSMS(
-        "4349441440",
-        e.target.response["country_code"]
-      );
-    }
-    req.open("GET", "https://location.services.mozilla.com/v1/country?key=ae6d80f83cac4f3797f3cd2e309d4fb8");
-    req.responseType = "json";
-    req.send();
+    //   subscribeToBasketSMS(
+    //     "4349441440",
+    //     e.target.response["country_code"]
+    //   );
+    // }
+    // req.open("GET", "https://location.services.mozilla.com/v1/country?key=ae6d80f83cac4f3797f3cd2e309d4fb8");
+    // req.responseType = "json";
+    // req.send();
   }
 
   checkCookies() {

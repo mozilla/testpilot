@@ -463,6 +463,21 @@
   }
 }
 
+// MobileDialog
+.mobile-modal {
+  .mobile-header-img {
+    width: 150px;
+  }
+
+  .loading {
+    margin: 30px auto;
+
+    .loading-bar {
+      background-color: $teal-70;
+    }
+  }
+}
+
 @include respond-to('small') {
   #experiment-page {
     .card-list {
