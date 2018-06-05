@@ -89,6 +89,9 @@ Here are the current events on the website as of this writing, grouped by their 
 | Cancel during PreFeedback confirmation | button click | cancel feedback |
 | Accept Firefox permission dialog | Accept From Permission | `{experiment title}`
 | Cancel Firefox permission dialog | Cancel From Permission | `{experiment title}`
+| Send experiment app link to device | button click | Send link to device |
+| Send experiment link to email success | button | link sent to email |
+| Send experiment link to phone success | button | link sent to phone |
 
 #### `HomePage Interactions`
 

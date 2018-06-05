@@ -27,7 +27,7 @@ export default function ExperimentControls({
   flashMeasurementPanel,
   sendToGA,
   surveyURL,
-  launchMobileAppDialog
+  doShowMobileAppDialog
 }: ExperimentControlsType) {
   const {
     title,
@@ -127,8 +127,8 @@ export default function ExperimentControls({
     }
   }
   const controls = <div className="experiment-controls">
-        {buttons}
-        <button className="send-app-link" onClick={launchMobileAppDialog}>send app link</button>
+    {buttons}
+    <button className="send-app-link" onClick={doShowMobileAppDialog}>send app link</button>
   </div>;
 
   const showLegal = buttons.length > 0 && !graduated;

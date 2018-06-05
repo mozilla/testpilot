@@ -24,6 +24,7 @@ import TestpilotPromo from "./TestpilotPromo";
 import DetailsOverview from "./DetailsOverview";
 import DetailsDescription from "./DetailsDescription";
 import DetailsHeader from "./DetailsHeader";
+import MobileDialog from "./MobileDialog";
 
 import "./index.scss";
 
@@ -136,7 +137,7 @@ export class ExperimentDetail extends React.Component {
       flashMeasurementPanel,
       doShowEolDialog,
       doShowTourDialog,
-      doShowMobileDialog,
+      doShowMobileAppDialog,
       doShowPreFeedbackDialog
     } = this;
 
@@ -172,6 +173,7 @@ export class ExperimentDetail extends React.Component {
       showTourDialog,
       showPreFeedbackDialog,
       showEolDialog,
+      showMobileDialog,
       isEnabling,
       isDisabling
     } = this.state;
@@ -244,7 +246,7 @@ export class ExperimentDetail extends React.Component {
           />}
 
         {showMobileDialog &&
-          <ExperimentMobileDialog
+          <MobileDialog
             {...this.props}
             onCancel={() => this.setState({ showMobileDialog: false })}
             onComplete={() => this.setState({ showMobileDialog: false })}
@@ -330,7 +332,7 @@ export class ExperimentDetail extends React.Component {
                     highlightMeasurementPanel,
                     flashMeasurementPanel,
                     doShowTourDialog,
-                    doShowMobileDialog,
+                    doShowMobileAppDialog,
                     l10nId,
                     hasTour
                   }}
@@ -433,7 +435,7 @@ export class ExperimentDetail extends React.Component {
     disableExperiment(experiment);
   };
 
-  launchMobileAppDialog = (evt: MouseEvent) => {
+  doShowMobileAppDialog = (evt: MouseEvent) => {
     evt.preventDefault();
     this.setState({ showMobileDialog: true });
   };

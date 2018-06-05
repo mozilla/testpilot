@@ -217,7 +217,9 @@ class App extends Component {
     const { restart } = this.props.addon;
     const { loading } = this.state;
     if (loading) {
-      return <Loading />;
+      return (<div className="full-page-wrapper centered overflow-hidden">
+        <Loading/>
+      </div>);
     }
     if (restart.isRequired) {
       return <RestartPage {...this.props} />;
