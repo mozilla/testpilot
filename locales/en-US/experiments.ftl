@@ -60,10 +60,10 @@ containersContributors6Title = Front End Security
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
-firefoxlockboxDescription = Take your passwords everywhere with Firefox Lockbox, a secure mobile app.
-firefoxlockboxIntroduction = <p>Firefox Lockbox lets you take your passwords everywhere. Easily access logins you've saved to Firefox Desktop from your iOS device. Logins are stored and synced securely using 256-bit encryption, keeping your information safe. Never again find yourself locked out of your account while on the go.</p>
-firefoxlockboxDetails0Copy = Access the username and password for all the accounts you save to Firefox.
-firefoxlockboxDetails1Copy = Manage accounts in Firefox and sync changes automatically to Lockbox.
+firefoxlockboxDescription = Take your passwords everywhere with Firefox Lockbox, an iOS mobile app.
+firefoxlockboxIntroduction = <p>Firefox Lockbox lets you easily access your passwords everywhere. Logins are stored and synced securely, using 256-bit encryption, keeping your information safe. Easily copy username and password details to get into apps and websites. Never again find yourself locked out of your account while on your phone!</p> <p><strong>Firefox Lockbox requires a Firefox Account in order to access your previously saved logins. If you do not have an account set up, get started <a href="https://lockbox.firefox.com/faq.html#how-do-i-enable-sync-on-firefox">here</a>.</strong></p>
+firefoxlockboxDetails0Copy = Access username and password information for all the accounts you save to Firefox.
+firefoxlockboxDetails1Copy = Manage accounts in Firefox and sync changes automatically to Firefox Lockbox.
 firefoxlockboxDetails2Copy = Sort and filter on your accounts to quickly locate the one you need.
 firefoxlockboxContributors0Title = Sr. Product Manager
 firefoxlockboxContributors1Title = Engineering Manager
@@ -80,12 +80,12 @@ firefoxlockboxContributors11Title = QA Developer
 firefoxlockboxContributors12Title = Community Contributor
 firefoxlockboxContributors13Title = Community Contributor
 firefoxlockboxToursteps0Copy = <p>Lorem ipsum dolor sit amet.</p>
-firefoxlockboxMeasurements0 = Credential data: Your credentials are synced in encrypted form using Firefox Sync. Learn more <strong>here</strong>.
+firefoxlockboxMeasurements0 = Credential data: Your credentials are synced in encrypted form using Firefox Sync. Learn more <a href="https://www.mozilla.org/en-US/privacy/firefox/#sync">here</a>.
 firefoxlockboxMeasurements1 = Interaction data. Mozilla receives information about your interaction with Firefox Lockbox, including (1) frequency of editing, viewing, copying, and syncing credentials, (2) whether you are a new or existing Firefox Account user, (3) interactions with Firefox Lockbox menus and icons, (4) length of time the app is in background.
-firefoxlockboxMeasurements2 = Technical data. We receive your device, operating system, version, and language preference. We also receive your IP address in connection with your usage of a Firefox Account. Learn more <strong>here</strong>.
-firefoxlockboxMeasurements3 = Third-Party Services. We use Apple’s TestFlight for beta testing, which has separate <strong>Legal</strong> and <strong>Privacy</strong> terms. Apple receives crash data by default, which may include personally identifiable data, and which may be sent to Mozilla.
-firefoxlockboxMeasurements4 = Other Mozilla Services. Unlike most Test Pilot experiments, Firefox Lockbox requires a Firefox Account and uses the Firefox Sync service. Learn more about <strong>Firefox Accounts</strong>, and <strong>Sync</strong>.
-firefoxlockboxMeasurements5 = You can learn more about the data collection for Firefox Lockbox <strong>here</strong>.
+firefoxlockboxMeasurements2 = Technical data. We receive your device, operating system, version, and language preference. We also receive your IP address in connection with your usage of a Firefox Account. Learn more <a href="https://www.mozilla.org/en-US/privacy/firefox/#search">here</a>.
+firefoxlockboxMeasurements3 = Third-Party Services. We use Apple’s TestFlight for beta testing, which has separate <a href="https://www.apple.com/legal/internet-services/itunes/testflight/sren/terms.html">Legal</a> and <a href="https://www.apple.com/privacy/">Privacy</a> terms. Apple receives crash data by default, which may include personally identifiable data, and which may be sent to Mozilla.
+firefoxlockboxMeasurements4 = Other Mozilla Services. Unlike most Test Pilot experiments, Firefox Lockbox requires a Firefox Account and uses the Firefox Sync service. Learn more about <a href="https://www.mozilla.org/en-US/privacy/firefox/">Firefox Accounts</a>, and <a href="https://moz-services-docs.readthedocs.io/en/latest/sync/">Sync</a>.
+firefoxlockboxMeasurements5 = You can learn more about the data collection for Firefox Lockbox <a href="https://github.com/mozilla-lockbox/lockbox-ios/blob/master/docs/metrics.md">here</a>.
 firefoxlockboxPrefeedbackcopy = <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus, suscipit, nam commodi excepturi error modi.</p>
 firefoxlockboxEolwarning = Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 minvidDescription = Keep videos front and center. Min Vid lets you display YouTube and Vimeo videos in a small frame that stays in the foreground as you browse the web.

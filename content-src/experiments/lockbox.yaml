@@ -8,12 +8,13 @@ platforms: ['mobile']
 web_url: https://example.com/web-experiment
 
 description: >
-  Take your passwords everywhere with Firefox Lockbox, a secure mobile app.
+  Take your passwords everywhere with Firefox Lockbox, an iOS mobile app.
 # warning: >
 #   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum cum ad deserunt
 #   iusto possimus. Fugiat odit corrupti cumque.
 introduction: >
-  <p>Firefox Lockbox lets you take your passwords everywhere. Easily access logins you've saved to Firefox Desktop from your iOS device. Logins are stored and synced securely using 256-bit encryption, keeping your information safe. Never again find yourself locked out of your account while on the go.</p>
+  <p>Firefox Lockbox lets you easily access your passwords everywhere. Logins are stored and synced securely, using 256-bit encryption, keeping your information safe. Easily copy username and password details to get into apps and websites. Never again find yourself locked out of your account while on your phone!</p>
+  <p><strong>Firefox Lockbox requires a Firefox Account in order to access your previously saved logins. If you do not have an account set up, get started <a href="https://lockbox.firefox.com/faq.html#how-do-i-enable-sync-on-firefox">here</a>.</strong></p>
 
 image_twitter: /static/images/experiments/lockbox/social/twitter.jpg
 image_facebook: /static/images/experiments/lockbox/social/facebook.jpg
@@ -40,12 +41,12 @@ details:
   -
     image: /static/images/experiments/lockbox/details/access.png
     copy: >
-      Access the username and password for all the accounts you save to Firefox.
+      Access username and password information for all the accounts you save to Firefox.
 
   -
     image: /static/images/experiments/lockbox/details/sync.png
     copy: >
-      Manage accounts in Firefox and sync changes automatically to Lockbox.
+      Manage accounts in Firefox and sync changes automatically to Firefox Lockbox.
 
   -
     image: /static/images/experiments/lockbox/details/sort-filter.png
@@ -122,17 +123,17 @@ tour_steps:
 
 measurements:
   - >
-    Credential data: Your credentials are synced in encrypted form using Firefox Sync. Learn more <strong>here</strong>.
+    Credential data: Your credentials are synced in encrypted form using Firefox Sync. Learn more <a href="https://www.mozilla.org/en-US/privacy/firefox/#sync">here</a>.
   - >
     Interaction data. Mozilla receives information about your interaction with Firefox Lockbox, including (1) frequency of editing, viewing, copying, and syncing credentials, (2) whether you are a new or existing Firefox Account user, (3) interactions with Firefox Lockbox menus and icons, (4) length of time the app is in background.
   - >
-    Technical data. We receive your device, operating system, version, and language preference. We also receive your IP address in connection with your usage of a Firefox Account. Learn more <strong>here</strong>.
+    Technical data. We receive your device, operating system, version, and language preference. We also receive your IP address in connection with your usage of a Firefox Account. Learn more <a href="https://www.mozilla.org/en-US/privacy/firefox/#search">here</a>.
   - >
-    Third-Party Services. We use Apple’s TestFlight for beta testing, which has separate <strong>Legal</strong> and <strong>Privacy</strong> terms. Apple receives crash data by default, which may include personally identifiable data, and which may be sent to Mozilla.
+    Third-Party Services. We use Apple’s TestFlight for beta testing, which has separate <a href="https://www.apple.com/legal/internet-services/itunes/testflight/sren/terms.html">Legal</a> and <a href="https://www.apple.com/privacy/">Privacy</a> terms. Apple receives crash data by default, which may include personally identifiable data, and which may be sent to Mozilla.
   - >
-    Other Mozilla Services. Unlike most Test Pilot experiments, Firefox Lockbox requires a Firefox Account and uses the Firefox Sync service. Learn more about <strong>Firefox Accounts</strong>, and <strong>Sync</strong>.
+    Other Mozilla Services. Unlike most Test Pilot experiments, Firefox Lockbox requires a Firefox Account and uses the Firefox Sync service. Learn more about <a href="https://www.mozilla.org/en-US/privacy/firefox/">Firefox Accounts</a>, and <a href="https://moz-services-docs.readthedocs.io/en/latest/sync/">Sync</a>.
   - >
-    You can learn more about the data collection for Firefox Lockbox <strong>here</strong>.
+    You can learn more about the data collection for Firefox Lockbox <a href="https://github.com/mozilla-lockbox/lockbox-ios/blob/master/docs/metrics.md">here</a>.
 
 pre_feedback_image: /static/images/experiments/experiment-name/pre-feedback.jpg
 pre_feedback_copy: >
