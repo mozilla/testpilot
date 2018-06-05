@@ -78,7 +78,7 @@ onboardingMessage = Colocámos um ícone na sua barra de ferramentas para que co
 
 ## Error message pages.
 
-errorHeading = Ups!
+errorHeading = Ops!
 errorMessage = Parece que partimos algo. <br>Talvez tente novamente mais tarde.
 # 404 is the HTTP standard response code for a page not found. This title is a
 # word play in English, being "Oh" both an exclamation and the pronunciation of
