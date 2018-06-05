@@ -14,9 +14,18 @@ footerLinkPrivacy = Приватність
 footerLinkTerms = Умови
 footerLinkLegal = Права
 footerLinkFeedback = Залишити відгук
-footerLinkAbout = Про Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Про нас
+footerLinkAboutUs = Про нас
+footerLinkSupportHeader = Підтримка
+footerLinkDownload = Завантажити Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Мобільний
+footerLinkFeatures = Можливості
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Видалити Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Домівка
 menuTitle = Налаштування
@@ -51,6 +60,7 @@ landingRequiresDesktop = Test Pilot потребує Firefox на Windows, Mac �
 landingDownloadFirefoxDesc = (Test Pilot доступний для Firefox на Windows, OS X та Linux)
 landingUpgradeDesc = Test Pilot потребує Firefox 49 або вище.
 landingUpgradeDesc2 = Test Pilot потребує Firefox { $version } або вище.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Оновити Firefox
 landingDownloadFirefoxSubTitle = Безкоштовне завантаження
@@ -130,6 +140,8 @@ experimentPromoSubheader = Ми будуємо функції наступног
 
 isEnabledStatusMessage = { $title } увімкнено.
 installErrorMessage = Ой-ой. { $title } не вдалося активувати. Повторіть спробу пізніше.
+wrongPlatformIOS = Експеримент доступний лише для пристроїв на iOS.
+wrongPlatformAndroid = Експеримент доступний лише для пристроїв на Android.
 otherExperiments = Спробуйте ці експерименти також
 giveFeedback = Залишити відгук
 disableHeader = Вимкнути експеримент?
