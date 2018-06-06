@@ -137,6 +137,8 @@ experimentPromoSubheader = Wuwiwamy funkcije přichodneje generacije za Firefox.
 
 isEnabledStatusMessage = { $title } je zmóžnjeny.
 installErrorMessage = Ow, ow. { $title } njeda so zmóžnić. Spytajće pozdźišo hišće raz.
+wrongPlatformIOS = Tutón eksperiment je jenož za graty iOS k dispoziciji.
+wrongPlatformAndroid = Tutón eksperiment je jenož za graty Android k dispoziciji.
 otherExperiments = Wobhladajće sej tež slědowace eksperimenty
 giveFeedback = Prajće swoje měnjenje
 disableHeader = Eksperiment znjemóžnić?
