@@ -14,9 +14,18 @@ footerLinkPrivacy = Priwatnosć
 footerLinkTerms = Wužywarske wuměnjenja
 footerLinkLegal = Pšawniske
 footerLinkFeedback = Komentar pósłaś
-footerLinkAbout = Wó Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Wó
+footerLinkAboutUs = Wó nas
+footerLinkSupportHeader = Pódpěra
+footerLinkDownload = Firefox ześěgnuś
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobilne rědy
+footerLinkFeatures = Funkcije
+footerLinkBeta = Beta, Nightly, wuwijarska edicija
+footerLinkRetire = Test Pilot wótinstalěrowaś
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Startowy bok
 menuTitle = Nastajenja
@@ -25,7 +34,6 @@ menuDiscuss = Wó Test Pilot diskutěrowaś
 menuFileIssue = Problem k wěsći daś
 menuRetire = Test Pilot wótinstalěrowaś
 headerLinkBlog = Blog
-headerLinkNews = Powěsći
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = Test Pilot pomina se Firefox za desktop na Windows, Mac
 landingDownloadFirefoxDesc = (Test Pilot jo za Firefox na Windows, OS X a Linux k dispoziciji)
 landingUpgradeDesc = Test Pilot pomina se Firefox 49 abo nowšy.
 landingUpgradeDesc2 = Test Pilot pomina se Firefox { $version } abo nowšy.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox aktualizěrowaś
 landingDownloadFirefoxSubTitle = Dermotne ześěgnjenje
@@ -83,13 +92,6 @@ emailOptInMessage = Zgóńśo wěcej wó nowych eksperimentach a woglědajśo se
 emailOptInConfirmationTitle = Mejlka jo se pósłała
 emailOptInConfirmationClose = Dalej k eksperimentam...
 emailOptInDialogErrorTitle = Ow ně!
-
-## News feed updates.
-
-latestUpdatesTitle = Nejnowše aktualizacije
-showMoreNewsTitle = Zajźone nowosći pokazaś
-# "Link" is a noun in this context
-englishArticleLink = Wótkaz k engelskemu nastawkoju
 
 ## Featured experiment.
 
@@ -135,6 +137,8 @@ experimentPromoSubheader = Wuwijamy funkcije pśiduceje generacije za Firefox. I
 
 isEnabledStatusMessage = { $title } jo zmóžnjony.
 installErrorMessage = Ow, ow. { $title } njedajo se zmóžniś. Wopytajśo pózdźej hyšći raz.
+wrongPlatformIOS = Toś ten eksperiment jo jano za rědy iOS k dispoziciji.
+wrongPlatformAndroid = Toś ten eksperiment jo jano za rědy Android k dispoziciji.
 otherExperiments = Woglědajśo se teke slědujuce eksperimenty
 giveFeedback = Grońśo swójo měnjenje
 disableHeader = Eksperiment znjemóžniś?
