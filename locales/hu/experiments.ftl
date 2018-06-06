@@ -151,6 +151,7 @@ sideviewMeasurements1 = Információk a böngészési környezetéről: a böng�
 sideviewMeasurements2 = A Side View nem gyűjt semmilyen információt a meglátogatott oldalakról. 
 sideviewDetails0Copy = Tartson nyitva két oldalt egyszerre. A Side View mobilnézetben jeleníti meg az oldalakat, így kisebb helyen is elférnek.
 sideviewDetails1Copy = Kattintson az eszköztárgombra, és küldje bármelyik lapot a Side View-ba.
+sideviewToursteps4Copy = Bármikor adhat visszajelzést vagy letilthatja a Side View-t a Tesztpilótából.
 sideviewContributors0Title = Szoftverfejlesztő mérnök
 sideviewContributors1TitleEngineer = Szoftverfejlesztő mérnök
 sideviewContributors2Title = Firefox UX
