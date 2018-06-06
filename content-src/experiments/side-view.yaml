@@ -14,7 +14,7 @@ introduction: >
   links to your Firefox sidebar to make multitasking easier than ever.
 image_twitter: /static/images/experiments/notes/side-view-twitter.jpg
 image_facebook: /static/images/experiments/notes/side-view-fb.jpg
-video_url: https://www.youtube.com/embed/9Rgk1CegW2E
+video_url: https://www.youtube.com/embed/no6D_B4wgo8
 changelog_url: 'https://github.com/mozilla/side-view/releases'
 contribute_url: 'https://github.com/mozilla/side-view/'
 bug_report_url: 'https://github.com/mozilla/side-view/issues'
@@ -84,6 +84,6 @@ contributors:
     display_name: 'Cristina Badescu'
     title: 'SoftVision QA'
     avatar: /static/images/experiments/avatars/cristinab.jpg
-created: '2018-06-05T15:00:00Z'
-launch_date: '2018-06-05T15:00:00Z'
+created: '2018-06-05T14:00:00Z'
+launch_date: '2018-06-05T14:00:00Z'
 order: 0
