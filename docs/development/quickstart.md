@@ -49,9 +49,6 @@ you should be on your way:
 
 1. Install [Firefox Developer Edition][devedition].
 
-1. Set `extensions.legacy.enabled` to `true` [using `about:config`][aboutconfig],
-   which should allow the use of legacy and unsigned Mozilla Extensions.
-      
 1. Configure your browser to use your local Test Pilot server:
 
    1. Type `about:config` in the URL bar, acknowledge the warning that appears.
@@ -65,17 +62,6 @@ you should be on your way:
 
    1. Right click the list of preferences to summon a menu, pick New > Boolean
       to create a new preference.
-
-   1. Enter `extensions.install.requireBuiltInCerts` for the name.
-
-   1. Enter `false` for the value.
-
-   1. Right click the list of preferences to summon a menu, pick New > Boolean
-      to create a new preference.
-
-   1. Enter `xpinstall.signatures.required` for the name.
-
-   1. Enter `false` for the value.
 
    1. Enter `extensions.webapi.testing` for the name.
 
