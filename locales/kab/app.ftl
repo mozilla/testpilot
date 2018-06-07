@@ -265,6 +265,7 @@ hidePastExperiments = Ffer tirmitanin izrin
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Yella wayen ixuṣṣen!
+warningGoToFAQDetail = Yella wayen yeḍran akked Test Pilot.<a> Wali isteqsiyen FAQ</a> akken ad tissineḍ ugar.
 warningUpgradeFirefoxTitle = Leqqem Firefox akken ad tkemleḍ!
 warningUpgradeFirefoxDetail = Test Pilot yesra lqem aneggaru n Firefox. <a>Leqqem Firefox</a> akken ad tebduḍ.
 warningHttpsRequiredTitle = Isra HTTPS!
