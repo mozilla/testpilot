@@ -100,7 +100,7 @@ moreDetail = დაწვრილებით
 ## A listing of all Test Pilot experiments.
 
 experimentListEnabledTab = ჩართულია
-experimentListJustLaunchedTab = ახლახან გაეშვა
+experimentListJustLaunchedTab = ახლახან გაშვებული
 experimentListJustUpdatedTab = ახლახან განახლდა
 experimentListEndingTomorrow = სრულდება ხვალ
 experimentListEndingSoon = სრულდება მალე
@@ -114,7 +114,7 @@ experimentListHeaderWithFeatured = გამოცადეთ ყველა �
 experimentCardFeedback = გამოხმაურება
 experimentCardManage = მართვა
 experimentCardGetStarted = დაწყება
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = ვრცლად
 
 ## A modal prompt shown when a user disables an experiment.
@@ -162,7 +162,7 @@ contribute = შემოწირულობა
 bugReports = ხარვეზების შესახებ მოხსენება
 discussExperiment = { $title } განხილვა
 tourDoneButton = კარგი
-userCountContainerAlt = ახლახან გაეშვა!
+userCountContainerAlt = ახლახან გაშვებული!
 highlightPrivacy = პირადულობის დაცვის შესახებ
 experimentGradReportButton = საბოლოო მოხსენება
 experimentGradReportPendingTitle = ეს საცდელი პროექტი დასრულებულია
