@@ -114,7 +114,7 @@ experimentListHeaderWithFeatured = Experimente todas as nossas experiências
 experimentCardFeedback = Feedback
 experimentCardManage = Gerir
 experimentCardGetStarted = Começar
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Saber mais
 
 ## A modal prompt shown when a user disables an experiment.
@@ -158,9 +158,9 @@ contributorsExtraLearnMore = Saber mais
 changelog = Registo de alterações
 tour = Visita guiada
 tourLink = Iniciar visita guiada
-contribute = Contribua
+contribute = Contribuir
 bugReports = Relatórios de bugs
-discussExperiment = Discuta o { $title }
+discussExperiment = Discutir o { $title }
 tourDoneButton = Feito
 userCountContainerAlt = Acaba de ser lançado!
 highlightPrivacy = A sua privacidade
