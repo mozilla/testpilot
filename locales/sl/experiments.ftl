@@ -31,6 +31,7 @@ cliqzEolwarning = Ta poskus se bo kmalu končal. Če ga imate omogočenega, ga l
 colorDescription = Pokažite svoje barve. Ustvarite in delite lastne teme Firefoxa s samo nekaj kliki.
 colorIntroduction = Firefox Color omogoča preprosto spreminjanje videza Firefoxa. To je preprosto orodje, ki vam omogoča, da izberete različne barvne kombinacije in teksture ozadja za svojo temo Firefoxa.
 colorLegalnotice = Z nadaljevanjem se strinjate s <a>pogoji</a> in <a>pravilnikom zasebnosti</a> Test Pilota ter s <a>pravilnikom o zasebnosti Firefox Color</a>.
+colorMeasurements2 = Informacije o tem, katere barve in ozadja uporabljate pri ustvarjanju tem po meri. To nam pomaga razumeti najbolj priljubljene izbire med udeleženci poskusa.
 colorDetails0Copy = Ustvarite teme z izbiranjem barv in tekstur ozadja. Svoje teme lahko delite ali shranite. 
 colorDetails1Copy = Za lažji začetek smo že ustvarili nekaj prednastavljenih tem.
 colorContributors0Title = Višji inženir
