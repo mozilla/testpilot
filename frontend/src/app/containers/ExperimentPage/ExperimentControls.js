@@ -85,6 +85,16 @@ export default function ExperimentControls({
     userAgent,
     validVersion
   })).filter(b => b);
+
+  if (platforms.includes("ios") || platforms.includes("android")) {
+    buttons.push(
+        <Localized id="mobileDialogLaunchButton">
+          <a
+            className="button secondary"
+            onClick={doShowMobileAppDialog}>Send App Link to Device</a>
+        </Localized>
+    );
+  }
   if (enabled) {
     if (!graduated) {
       buttons.unshift(
@@ -128,7 +138,6 @@ export default function ExperimentControls({
   }
   const controls = <div className="experiment-controls">
     {buttons}
-    <button className="send-app-link" onClick={doShowMobileAppDialog}>send app link</button>
   </div>;
 
   const showLegal = buttons.length > 0 && !graduated;

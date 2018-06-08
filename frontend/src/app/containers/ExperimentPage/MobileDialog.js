@@ -1,34 +1,23 @@
 // @flow
-import { Localized } from "fluent-react/compat";
 import React from "react";
+import classnames from "classnames";
 import { isValidNumber } from "libphonenumber-js";
 import { validate } from "email-validator";
+import { Localized } from "fluent-react/compat";
+import LocalizedHtml from "../../components/LocalizedHtml";
 import Loading from "../../components/Loading";
 
 import { subscribeToBasket, subscribeToBasketSMS, acceptedSMSCountries } from "../../lib/utils";
 
-const LOCATION_SERVICES_URL = "https://location.services.mozilla.com/v1/country";
-const LOCATION_SERVICES_API_KEY = "ae6d80f83cac4f3797f3cd2e309d4fb8";
+const COUNTRY_CODE_ENDPOINT = "https://www.mozilla.org/country-code.json";
 
 /* TODO:
-- add instructions
 - fix input localization
 - learn more notice links
 
-- only show input validation after first submission attempt
-- make sure that errors don't make the form jump too much
-
-- add link to play store or app store for image
-
-- style send link to device button in ExperimentControls and add render logic for it
-- figure out best way to handle location service api key
-
 - fill in acceptedSMSCountries list and verify them
-- style everything to the spec
 - add tests for allowSMS and non states
 - add tests for android and ios states
-- document what fields need to be present in order to show button/modal
-- sync with john/sevaan about getting the correct urls for android
 */
 
 type MobileDialogProps = {
@@ -42,6 +31,7 @@ type MobileDialogState = {
   isSuccess: boolean,
   isError: boolean,
   allowSMS: boolean,
+  submitAttempted: boolean,
   recipient: string,
   country: string
 }
@@ -51,6 +41,7 @@ const DEFAULT_STATE = {
   isSuccess: false,
   isError: false,
   allowSMS: false,
+  submitAttempted: false,
   recipient: "",
   country: "US"
 };
@@ -72,11 +63,11 @@ export default class MobileDialog extends React.Component {
   }
 
   fetchCountryCode() {
-    // we use XMLHttpRequest here over
-    // fetch country code, set it in state and set loading to false
+    // we use XMLHttpRequest here over fetch, because of issues with
+    // the country code endpoint not being parse correctly with
+    // fetch() for some reason I haven't figured out yet.
     const req = new XMLHttpRequest();
     req.onerror = (e) => {
-      console.log("Country code fetch error", req.statusText, e.target.response);
       this.setState({ loading: false });
     };
 
@@ -90,38 +81,40 @@ export default class MobileDialog extends React.Component {
         });
       } else this.setState({ loading: false });
     };
-    req.open("GET", `${LOCATION_SERVICES_URL}?key=${LOCATION_SERVICES_API_KEY}`);
+    req.open("GET", COUNTRY_CODE_ENDPOINT);
     req.responseType = "json";
     req.send();
   }
 
   render() {
+    const { experiment } = this.props;
+    const { title, android_url, ios_url } = experiment;
     const { isSuccess, allowSMS, loading } = this.state;
-    const isIOS = false;
-    // const { isIOS, experiment } = this.props;
-    // const { title } = experiment;
-    const title = "Send";
 
-    const headerMessage = isIOS ? (<Localized id="mobileDialogMessageIOS" $title={title}>
-      <p>Download {title} from the iOS App Store.</p></Localized>) : (<Localized id="mobileDialogMessageAndroid" $title={title}><p>Download {title} from the Google Play Store.</p></Localized>);
+    const headerMessage = ios_url ? (<LocalizedHtml id="mobileDialogMessageIOS" $title={title}>
+      <p>Download <b>{title}</b> from the iOS App Store.</p></LocalizedHtml>) : (<LocalizedHtml id="mobileDialogMessageAndroid" $title={title}><p>Download <b>{title}</b> from the Google Play Store.</p></LocalizedHtml>);
 
-    const headerImg = isIOS ? (<img className="mobile-header-img" src="/static/images/ios.svg"/>) : (<img className="mobile-header-img" src="/static/images/google-play.png"/>);
+    const headerImg = ios_url ? (<a href={ios_url}><img className="mobile-header-img" src="/static/images/ios.svg"/></a>) : (<a href={android_url}><img className="mobile-header-img" src="/static/images/google-play.png"/></a>);
 
-    const notice = allowSMS ? (<Localized id="mobileDialogNoticeSMS"><p>SMS service available in select countries only. SMS & data rates may apply. The intended recipient of the email or SMS must have consented. <a>Learn more</a></p></Localized>)
-      : (<Localized id="mobileDialogNotice"><p>The intended recipient of the email must have consented. <a>Learn more</a></p></Localized>);
+    const learnMore = (<Localized id="mobileDialogNoticeLearnMoreLink">
+      <a target="_blank" rel="noopener noreferrer" href="">Learn More</a>
+    </Localized>);
+
+    const notice = allowSMS ? (<Localized id="mobileDialogNoticeSMS" $learnMore={learnMore}><p className="notice">SMS service available in select countries only. SMS & data rates may apply. The intended recipient of the email or SMS must have consented. {learnMore}</p></Localized>)
+      : (<Localized id="mobileDialogNotice" $learnMore={learnMore}><p className="notice">The intended recipient of the email must have consented. {learnMore}</p></Localized>);
 
     return (
       <div className="modal-container mobile-modal" tabIndex="0"
         ref={modalContainer => { this.modalContainer = modalContainer; }}
-      onKeyDown={e => this.handleKeyDown(e)}>
+        onKeyDown={e => this.handleKeyDown(e)}>
         <div className="modal feedback-modal modal-bounce-in">
           <header className="modal-header-wrapper">
             <Localized id="mobileDialogTitle">
               <h3 className="modal-header">Get the App</h3>
             </Localized>
-            <div className="modal-cancel" onClick={e => this.skip(e)}/>
+            <div className="modal-cancel" onClick={this.close}/>
           </header>
-          <div className="modal-content centered">
+          <div className="modal-content centered default-background">
             {headerMessage}
             {headerImg}
             <hr/>
@@ -141,18 +134,18 @@ export default class MobileDialog extends React.Component {
     const secondaryText = allowSMS ? "Check your device for the email or text message." : "Check your device for the email.";
 
     return (
-      <div>
+      <div className="success-section">
         <Localized id="mobileDialogSuccessMain">
-          <p className="success primary">Download link sent!</p>
+          <p className="success-msg">Download link sent!</p>
         </Localized>
         <Localized id={secondaryId}>
-          <p className="success primary">{secondaryText}</p>
+          <p className="success-secondary">{secondaryText}</p>
         </Localized>
         <Localized id="mobileDialogButtonSuccess">
-          <button className="button large default" onClick={this.close}>Thanks!</button>
+          <button className="button large secondary" onClick={this.close}>Thanks!</button>
         </Localized>
         <Localized id="mobileDialogAnotherDeviceLink">
-          <a href="#" className="default blue" onClick={this.reset}>Send to another device</a>
+          <a href="#" className="send-to-device" onClick={this.reset}>Send to another device</a>
         </Localized>
       </div>
 
@@ -167,37 +160,58 @@ export default class MobileDialog extends React.Component {
   }
 
   handleRecipientChange = (evt: Object) => {
-    this.setState({
+    if (!this.state.submitAttempted) {
+      return this.setState({
+        recipient: evt.currentTarget.value
+      });
+    }
+
+    return this.setState({
       isError: !this.validateRecipient(evt.currentTarget.value),
       recipient: evt.currentTarget.value
     });
   }
 
   renderForm = () => {
-    const { allowSMS } = this.state;
-    // const placeholderId = allowSMS ? "mobileDialogPlaceholderSMS" : "mobileDialogPlaceholder";
-    const placeholderText = allowSMS ? "Enter your Phone/Email" : "Enter your Email";
+    const { allowSMS, isError, submitAttempted } = this.state;
+
     const errorId = allowSMS ? "mobileDialogErrorSMS" : "mobileDialogError";
     const errorText = allowSMS ? "Enter a valid phone number or email:" : "Enter a valid email:";
+    const instructionId = allowSMS ? "mobileDialogInstructionsSMS" : "mobileDialogInstructions";
+    const instructionText = allowSMS ? "Enter your phone number or email to send a download link to your phone:" : "Enter your email to send a download link to your phone:";
 
-    console.log("renderform:::", // placeholderId,
-                placeholderText, errorId, errorText);
-    // <Localized id={placeholderId} attrs={{placeholder: true}}>          </Localized>
     return (
       <form className="mobile-link-form" data-no-csrf onSubmit={this.handleSubscribe}>
-        {this.state.isError && <Localized id={errorId}>
+        {!submitAttempted && <Localized id={instructionId}>
+          <p className="instruction">{instructionText}</p>
+        </Localized>}
+
+        {submitAttempted && isError && <Localized id={errorId}>
           <p className="error">{errorText}</p>
         </Localized>}
+
+        {allowSMS && // <Localized id="mobileDialogPlaceholderSMS" attrs={{placeholder: true}}>
           <input
-            type='text'
-            placeholder={placeholderText}
-            required
+            className={classnames({"input-error": isError && submitAttempted})}
+            type="text"
+            placeholder="Enter your Phone/Email"
             value={this.props.recipient}
-            onChange={this.handleRecipientChange}
-            />        
+            onChange={this.handleRecipientChange} />
+        // </Localized>
+        }
+
+        {!allowSMS && // <Localized id="mobileDialogPlaceholder" attrs={{placeholder: true}}>
+          <input
+            className={classnames({"input-error": isError && submitAttempted})}
+            type="text"
+            placeholder="Enter your Email"
+            value={this.props.recipient}
+            onChange={this.handleRecipientChange} />
+        // </LocalizedHtml>
+        }
 
         <Localized id="mobileDialogButton">
-        <button className={"button large default"}>Send me the Download Link</button>
+          <button className={"button large default"}>Send me the Download Link</button>
         </Localized>
       </form>
     );
@@ -212,10 +226,13 @@ export default class MobileDialog extends React.Component {
 
   handleSubscribe = (evt: Object) => {
     evt.preventDefault();
-    console.log("handleSubscribe", evt);
+
     const { allowSMS, recipient, country } = this.state;
     const { sendToGA } = this.props;
     const source = "" + this.props.getWindowLocation();
+
+    // return early and show errors if submit attempt fails
+    if (!this.validateRecipient(recipient)) return this.setState({submitAttempted: true, isError: true});
 
     sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
@@ -225,7 +242,7 @@ export default class MobileDialog extends React.Component {
 
     if (allowSMS && isValidNumber(recipient, country)) {
       // country, lang, msgId
-      subscribeToBasketSMS(recipient, country, null, null).then(response => {
+      return subscribeToBasketSMS(recipient, country, null, null).then(response => {
         if (response.ok) {
           sendToGA("event", {
             eventCategory: "ExperimentDetailsPage Interactions",
@@ -238,21 +255,21 @@ export default class MobileDialog extends React.Component {
           isError: !response.ok
         });
       });
-    } else {
-      subscribeToBasket(recipient, source).then(response => {
-        if (response.ok) {
-          sendToGA("event", {
-            eventCategory: "ExperimentDetailsPage Interactions",
-            eventAction: "button click",
-            eventLabel: "link sent to email"
-          });
-        }
-        this.setState({
-          isSuccess: response.ok,
-          isError: !response.ok
-        });
-      });
     }
+
+    return subscribeToBasket(recipient, source).then(response => {
+      if (response.ok) {
+        sendToGA("event", {
+          eventCategory: "ExperimentDetailsPage Interactions",
+          eventAction: "button click",
+          eventLabel: "link sent to email"
+        });
+      }
+      this.setState({
+        isSuccess: response.ok,
+        isError: !response.ok
+      });
+    });
   }
 
   reset = (e: Object) => {
@@ -262,12 +279,11 @@ export default class MobileDialog extends React.Component {
     this.fetchCountryCode();
   }
 
-  close() {
+  close = () => {
     if (this.props.onCancel) { this.props.onCancel(); }
   }
 
   handleKeyDown(e: Object) {
     if (e.key === "Escape") this.close();
   }
-
 }

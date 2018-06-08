@@ -476,6 +476,72 @@
       background-color: $teal-70;
     }
   }
+
+  .mobile-link-form {
+    button, input {
+      width: 100%;
+      padding: 10px;
+      font-size: 19px;
+      margin: 15px auto;
+    }
+
+    input {
+      border-radius: 4px;
+    }
+
+    .input-error {
+      border: 1px solid $red-50;
+    }
+
+    button {
+      padding: 2px 10px;
+      font-size: 15px;
+    }
+  }
+
+  .success-section {
+    .button {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  .success-msg {
+    color: $green-60;
+    font-size: 19px;
+  }
+
+  .success-secondary {
+    font-size: 15px;
+  }
+
+  .send-to-device {
+    color: $blue-40;
+    font-size: 15px;
+
+    &:after {
+      content: '>>';
+      padding-left: 5px;
+    }
+  }
+
+  .error {
+    color: $red-50;
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+
+  .notice, .instruction {
+    color: $grey-50;
+  }
+
+  .notice {
+    font-size: 11px;
+  }
+
+  .instructions {
+    font-size: 15px;
+  }
 }
 
 @include respond-to('small') {
