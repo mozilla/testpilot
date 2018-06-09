@@ -14,6 +14,16 @@ footerLinkPrivacy = Confidentialité
 footerLinkTerms = Conditions
 footerLinkLegal = Mentions légales
 footerLinkFeedback = Donner votre avis
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = À propos
+footerLinkAboutUs = À propos de nous
+footerLinkSupportHeader = Assistance
+footerLinkDownload = Télécharger Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobile
+footerLinkFeatures = Fonctionnalités
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Désinstaller Test Pilot
 
 ## Items in the menu and footer
 
@@ -104,7 +114,7 @@ experimentListHeaderWithFeatured = Essayer l’ensemble des expériences
 experimentCardFeedback = Réagir
 experimentCardManage = Gérer
 experimentCardGetStarted = Lancez-vous
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Apprenez-en davantage
 
 ## A modal prompt shown when a user disables an experiment.
@@ -127,6 +137,8 @@ experimentPromoSubheader = Nous élaborons les fonctionnalités de prochaine gé
 
 isEnabledStatusMessage = { $title } est activé.
 installErrorMessage = Hum… { $title } n’a pas pu être activé. Réessayez plus tard.
+wrongPlatformIOS = Cette expérience est uniquement disponible pour les appareils iOS.
+wrongPlatformAndroid = Cette expérience est uniquement disponible pour les appareils Android.
 otherExperiments = Essayez aussi ces autres expériences
 giveFeedback = Faites-nous part de vos observations
 disableHeader = Désactiver l’expérience ?
