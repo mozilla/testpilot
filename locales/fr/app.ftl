@@ -106,7 +106,7 @@ experimentListEndingTomorrow = Se termine demain
 experimentListEndingSoon = Se termine bientôt
 experimentCondensedHeader = Bienvenue sur Test Pilot !
 experimentListHeader = Choisissez vos expériences !
-experimentListHeaderWithFeatured = Essayer l’ensemble des expériences
+experimentListHeaderWithFeatured = Essayez l’ensemble des expériences
 
 ## An individual experiment in the listing of all Test Pilot experiments.
 
