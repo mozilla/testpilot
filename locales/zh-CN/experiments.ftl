@@ -144,6 +144,7 @@ sendContributors5Title = Firefox 用户体验
 sendContributors6Title = 用户体验开发员
 sendContributors7Title = 员工产品/用户体验设计师
 sideviewDescription = 帅气的多任务。Side View 可以让您并排打开两个网站，无需来回切换标签页。
+sideviewIntroduction = 您是否想过在购物时看视频，或是办公时刷微博？Side View 允许您将网站和链接发送到您的 Firefox 侧栏，使多任务操作更加容易。
 sideviewLegalnotice = 继续即代表您同意 Test Pilot 的<a>使用条款</a>和<a>隐私政策</a>，以及 <a>Side View 隐私政策</a>。
 sideviewMeasurements0 = 有关您与该附加组件交互的信息，例如您使用功能的方式、您点击的按钮，以及您使用它的频率。
 sideviewMeasurements1 = 有关您的浏览环境的信息，例如浏览器窗口的宽度，您访问该功能时已打开的标签页数量。
