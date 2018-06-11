@@ -34,6 +34,7 @@ colorLegalnotice = Ma tkemmleḍ, ad tqebleḍ tasertit n <a>tiwtilin</a> akked 
 colorMeasurements0 = Talqut ɣef temyigawt d termit, am wamek ara tkecmeḍ ar tmahilt, anta tiqeffalin fiɣef ara tsiteḍ, d wacḥal tikal ara ten-tesqedceḍ.
 colorMeasurements1 = Talɣur ɣef waddad n usebded n uzegrir armitan deg tirza n usmel web Firefox Color.
 colorMeasurements2 = Talɣut ɣef yiniten akked igilalen i tseqdaceḍ i tmerna n isental udmawanen. Ayagi ad aɣ-d-dyefk afus ad negzu afran aɣerfan gar imttekkiyen n termit.
+colorDetails0Copy = Rnu isental s ufran n yiniten akked taseḍrist n ugilal. Tzemreḍ ad tebḍuḍ timrena-ik neɣ ad tḥ€rzeḍ i kečč sakin ad ten-teskelsed.
 colorDetails1Copy = Nerna kra n ufran uzwir akken ad ak-d-numdd tallelt ad tebduḍ.
 colorContributors0Title = Ajenyuṛ amusnaw
 colorContributors1Title = Test Pilot PM
