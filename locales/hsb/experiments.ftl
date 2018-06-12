@@ -143,6 +143,7 @@ sendContributors4Title = Firefox UX
 sendContributors5Title = Firefox UX
 sendContributors6Title = UX-wuwiwar
 sendContributors7Title = Staff Product/UX Designer
+sideviewDescription = Čińće wjacore wěcy naraz kaž šef. Side View wam zmóžnja, dwě websydle jedne pódle druheho wočinić, bjez toho zo byšće mjez rajtarkami přepinał.
 sideviewLegalnotice = Hdyž pokročujeće, zwoliće do <a>wuměnjenjow</a> a prawidłow <a>priwatnosće</a> Test Pilot a do <a>prawidłow priwatnosće Side View</a>.
 sideviewMeasurements2 = Side View žane informacije wo wot was wopytanych sydłach njehromadźi.
 sideviewDetails1Copy = Klikńće na tłočatko w symbolowej lajsće, zo byšće Side View rajtark słać.
