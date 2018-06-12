@@ -14,16 +14,13 @@ const COUNTRY_CODE_ENDPOINT = "https://www.mozilla.org/country-code.json";
 /* TODO:
 - fix input localization
 - learn more notice links
-
-- fill in acceptedSMSCountries list and verify them
-- add tests for allowSMS and non states
-- add tests for android and ios states
 */
 
 type MobileDialogProps = {
   getWindowLocation: Function,
   onCancel: Function,
-  sendToGA: Function
+  sendToGA: Function,
+  experiment: Object
 }
 
 type MobileDialogState = {
@@ -195,7 +192,7 @@ export default class MobileDialog extends React.Component {
             className={classnames({"input-error": isError && submitAttempted})}
             type="text"
             placeholder="Enter your Phone/Email"
-            value={this.props.recipient}
+            value={this.state.recipient}
             onChange={this.handleRecipientChange} />
         // </Localized>
         }
@@ -205,9 +202,9 @@ export default class MobileDialog extends React.Component {
             className={classnames({"input-error": isError && submitAttempted})}
             type="text"
             placeholder="Enter your Email"
-            value={this.props.recipient}
+            value={this.state.recipient}
             onChange={this.handleRecipientChange} />
-        // </LocalizedHtml>
+        // </Localized>
         }
 
         <Localized id="mobileDialogButton">
@@ -228,8 +225,9 @@ export default class MobileDialog extends React.Component {
     evt.preventDefault();
 
     const { allowSMS, recipient, country } = this.state;
-    const { sendToGA } = this.props;
-    const source = "" + this.props.getWindowLocation();
+    const { sendToGA, getWindowLocation } = this.props;
+    const basketMsgId = this.props.experiment.basket_msg_id;
+    const source = "" + getWindowLocation();
 
     // return early and show errors if submit attempt fails
     if (!this.validateRecipient(recipient)) return this.setState({submitAttempted: true, isError: true});
@@ -242,7 +240,7 @@ export default class MobileDialog extends React.Component {
 
     if (allowSMS && isValidNumber(recipient, country)) {
       // country, lang, msgId
-      return subscribeToBasketSMS(recipient, country, null, null).then(response => {
+      return subscribeToBasketSMS(recipient, country, basketMsgId).then(response => {
         if (response.ok) {
           sendToGA("event", {
             eventCategory: "ExperimentDetailsPage Interactions",
@@ -280,7 +278,14 @@ export default class MobileDialog extends React.Component {
   }
 
   close = () => {
-    if (this.props.onCancel) { this.props.onCancel(); }
+    if (this.props.onCancel) {
+      this.props.onCancel();
+      this.props.sendToGA("event", {
+        eventCategory: "ExperimentDetailsPage Interactions",
+        eventAction: "button click",
+        eventLabel: "cancel Send link to device dialog"
+      });
+    }
   }
 
   handleKeyDown(e: Object) {

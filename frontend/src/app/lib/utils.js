@@ -14,13 +14,14 @@ export function subscribeToBasket(email, source) {
   });
 }
 
-export const acceptedSMSCountries = ["US"];
+export const acceptedSMSCountries = ["US", "DE", "FR"];
 
-export function subscribeToBasketSMS(number, country, lang, msgId) {
+export function subscribeToBasketSMS(number, country, msgId) {
+  let lang = (country === "US") ? "en" : country.toLowerCase();
   return fetch(basketSMSUrl, {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: `mobile_number=${encodeURIComponent(number)}&country=${country}`
+    body: `mobile_number=${encodeURIComponent(number)}&country=${country}&lang=${lang}&msgId=$msgId`
   });
 }
 

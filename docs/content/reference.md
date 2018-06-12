@@ -165,6 +165,10 @@ Url to the iOS app store page for the app. Required when `platform` includes `io
 
 Url to the Google Play store page for the app. Required when `platform` includes `android`.
 
+## `basket_msg_id`
+
+The message id send to basket for sending mobile app store link to device
+
 ## `warning`
 
 A warning message to let users know when an experiment is going to

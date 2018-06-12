@@ -92,6 +92,7 @@ Here are the current events on the website as of this writing, grouped by their 
 | Send experiment app link to device | button click | Send link to device |
 | Send experiment link to email success | button | link sent to email |
 | Send experiment link to phone success | button | link sent to phone |
+| Cancel Send link to device dialog | button | cancel Send link to device dialog|
 
 #### `HomePage Interactions`
 
