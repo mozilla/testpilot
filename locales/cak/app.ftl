@@ -21,6 +21,7 @@ footerLinkSupportHeader = To'ïk
 footerLinkDownload = Tiqasäx Firefox
 # link to page detailing firefox mobile browser options
 footerLinkMobile = Oyonib'äl
+footerLinkFeatures = Taq rub'anikil
 
 ## Items in the menu and footer
 
