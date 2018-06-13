@@ -14,9 +14,18 @@ footerLinkPrivacy = Personvern
 footerLinkTerms = Vilkår
 footerLinkLegal = Juridisk informasjon
 footerLinkFeedback = Gje tilbakemelding
-footerLinkAbout = Om Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Om
+footerLinkAboutUs = Om oss
+footerLinkSupportHeader = Hjelp
+footerLinkDownload = Last ned Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobil
+footerLinkFeatures = Funksjonar
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Avinstaller Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Heim
 menuTitle = Innstillingar
@@ -25,7 +34,6 @@ menuDiscuss = Diskuter Test Pilot
 menuFileIssue = Rapporter eit problem
 menuRetire = Avinstaller Test Pilot
 headerLinkBlog = Blogg
-headerLinkNews = Nyheitskjelde
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = Test Pilot krev Firefox for desktop på Windows, Mac el
 landingDownloadFirefoxDesc = (Test Pilot er tillgjengleg for Firefox på Windows, OS X og Linux)
 landingUpgradeDesc = Test Pilot krev Firefox 49 eller høgare.
 landingUpgradeDesc2 = Test Pilot krev Firefox { $version } eller høgare.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Oppgrader Firefox
 landingDownloadFirefoxSubTitle = Gratis nedlasting
@@ -84,13 +93,6 @@ emailOptInConfirmationTitle = E-post er sendt
 emailOptInConfirmationClose = Vidare til eksperimenta…
 emailOptInDialogErrorTitle = Å, nei!
 
-## News feed updates.
-
-latestUpdatesTitle = Siste oppdateringar
-showMoreNewsTitle = Vis tidlegare nyheiter
-# "Link" is a noun in this context
-englishArticleLink = Lenk til artikkel på engelsk
-
 ## Featured experiment.
 
 moreDetail = Vis detaljar
@@ -112,7 +114,7 @@ experimentListHeaderWithFeatured = Prøv alle eksperimenta våre
 experimentCardFeedback = Tilbakemelding
 experimentCardManage = Handsam
 experimentCardGetStarted = Kom i gang
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Les meir
 
 ## A modal prompt shown when a user disables an experiment.
