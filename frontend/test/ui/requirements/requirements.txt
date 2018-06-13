@@ -7,5 +7,5 @@ pytest-firefox==0.1.1
 pytest-repeat==0.4.1
 pytest-xdist==1.22.2
 pytest-variables==1.7.1
-requests==2.18.4
+requests==2.19.0
 selenium==3.12.0
