@@ -21,6 +21,7 @@ footerLinkSupportHeader = Ayuda
 footerLinkDownload = Descargar Firefox
 # link to page detailing firefox mobile browser options
 footerLinkMobile = Móvil
+footerLinkFeatures = Características
 footerLinkRetire = Desinstalar Test PIlot
 
 ## Items in the menu and footer
