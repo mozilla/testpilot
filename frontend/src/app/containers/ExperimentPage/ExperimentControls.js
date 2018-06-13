@@ -88,11 +88,11 @@ export default function ExperimentControls({
 
   if (platforms.includes("ios") || platforms.includes("android")) {
     buttons.push(
-        <Localized id="mobileDialogLaunchButton">
-          <a
-            className="button secondary"
-            onClick={doShowMobileAppDialog}>Send App Link to Device</a>
-        </Localized>
+      <Localized id="mobileDialogLaunchButton">
+        <a
+          className="button secondary"
+          onClick={doShowMobileAppDialog}>Send App Link to Device</a>
+      </Localized>
     );
   }
   if (enabled) {
