@@ -53,7 +53,7 @@ export default class Footer extends React.Component {
           <h3>About</h3>
         </Localized>
         <Localized id="footerLinkAboutUs">
-          <a href="https://www.mozilla.org/about" className="boilerplate">About us</a>
+          <a href="/about" className="boilerplate">About us</a>
         </Localized>
         <Localized id="menuWiki">
           <a href="https://wiki.mozilla.org/Test_Pilot" className="boilerplate">Test Pilot Wiki</a>
