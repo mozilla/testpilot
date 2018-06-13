@@ -69,11 +69,13 @@ export default class MobileDialog extends React.Component {
     };
 
     req.onload = (e) => {
+      // $FlowFixMe - EventTarget type is missing response property
       const country = e.target.response.country_code;
       if (acceptedSMSCountries.includes(country)) {
         this.setState({
           loading: false,
           allowSMS: true,
+          // $FlowFixMe - EventTarget type is missing response property
           country: e.target.response.country_code
         });
       } else this.setState({ loading: false });
@@ -149,7 +151,7 @@ export default class MobileDialog extends React.Component {
     );
   }
 
-  validateRecipient = (value) => {
+  validateRecipient = (value: string) => {
     if (this.state.allowSMS) {
       return (isValidNumber(value, this.state.country) || validate(value));
     }

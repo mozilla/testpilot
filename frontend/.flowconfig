@@ -1,4 +1,5 @@
 [ignore]
+../node_modules/libphonenumber-js/*.
 
 [include]
 ../node_modules/seedrandom/*.
@@ -8,6 +9,7 @@
 ../node_modules/moment/*.
 ../node_modules/fluent-react/*.
 ../node_modules/js-cookie/*.
+../node_modules/email-validator/*.
 
 [libs]
 ../flow-typed
