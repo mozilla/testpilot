@@ -1,7 +1,9 @@
 // @flow
 import React from "react";
 import classnames from "classnames";
+// $FlowFixMe
 import { isValidNumber } from "libphonenumber-js";
+// $FlowFixMe
 import { validate } from "email-validator";
 import { Localized } from "fluent-react/compat";
 import LocalizedHtml from "../../components/LocalizedHtml";
