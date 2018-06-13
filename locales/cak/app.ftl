@@ -18,6 +18,9 @@ footerLinkFeedback = Titaq Na'oj
 footerLinkAboutHeader = Chi rij
 footerLinkAboutUs = Chi qij
 footerLinkSupportHeader = To'ïk
+footerLinkDownload = Tiqasäx Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Oyonib'äl
 
 ## Items in the menu and footer
 
@@ -108,7 +111,7 @@ experimentListHeaderWithFeatured = Ke'atojtob'ej konojel ri taq qasolna'oj
 experimentCardFeedback = Taq tzijol
 experimentCardManage = Tinuk'samajïx
 experimentCardGetStarted = Titikirisäx
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Tetamäx Ch'aqa' Chik
 
 ## A modal prompt shown when a user disables an experiment.
