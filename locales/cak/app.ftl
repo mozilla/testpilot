@@ -22,6 +22,8 @@ footerLinkDownload = Tiqasäx Firefox
 # link to page detailing firefox mobile browser options
 footerLinkMobile = Oyonib'äl
 footerLinkFeatures = Taq rub'anikil
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Telesäx Test Pilot
 
 ## Items in the menu and footer
 
@@ -138,6 +140,8 @@ experimentPromoSubheader = Tajin yeqab'än kik'ojlem ri ruk'isib'äl tanaj samaj
 
 isEnabledStatusMessage = { $title } tzijon.
 installErrorMessage = Uy. Man xtzij ta ri { $title }. Tatojtob'ej chik na.
+wrongPlatformIOS = Re solna'oj re' xa xe k'o pa iOS taq okisab'äl.
+wrongPlatformAndroid = Re solna'oj re' xa xe k'o pan Android taq okisab'äl.
 otherExperiments = Ketojtob'ëx chuqa' re taq solna'oj re'
 giveFeedback = Titaq Na'oj
 disableHeader = ¿La Nichup ri Solna'oj?
