@@ -14,6 +14,10 @@ might come in handy for installing the right version of Node.js.
 Make sure you clone the Test Pilot repo:
 
   `git clone https://github.com/mozilla/testpilot.git`
+  
+Windows users will want to enable symlinks:
+
+  `git clone -c core.symlinks=true https://github.com/mozilla/testpilot.git`
 
 ## For Linux & OS X hosts
 
