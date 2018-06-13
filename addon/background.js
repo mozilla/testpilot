@@ -142,6 +142,8 @@ async function updateBadgeTextOnNew(experiments, news_updates) {
   }
 
   const newExperiments = (experiments || []).filter(experiment => {
+    // don't include experiments which haven't launched yet
+    if (new Date() < new Date(experiment.launch_date)) return false;
     const dt = new Date(experiment.modified || experiment.created).getTime();
     return dt >= clicked;
   });
