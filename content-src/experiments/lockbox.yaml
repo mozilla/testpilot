@@ -1,17 +1,14 @@
-id: 16
+id: 18
 slug: firefox-lockbox
 title: 'Firefox Lockbox'
 # subtitle: 'Take your passwords everywhere'
 order: 3
 is_featured: true
 platforms: ['mobile']
-web_url: https://example.com/web-experiment
+web_url: https://lockbox.firefox.com/
 
 description: >
   Take your passwords everywhere with Firefox Lockbox, an iOS mobile app.
-# warning: >
-#   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum cum ad deserunt
-#   iusto possimus. Fugiat odit corrupti cumque.
 introduction: >
   <p>Firefox Lockbox lets you easily access your passwords everywhere. Logins are stored and synced securely, using 256-bit encryption, keeping your information safe. Easily copy username and password details to get into apps and websites. Never again find yourself locked out of your account while on your phone!</p>
   <p><strong>Firefox Lockbox requires a Firefox Account in order to access your previously saved logins. If you do not have an account set up, get started <a href="https://lockbox.firefox.com/faq.html#how-do-i-enable-sync-on-firefox">here</a>.</strong></p>
@@ -23,13 +20,8 @@ thumbnail: /static/images/experiments/lockbox/icon/thumbnail.png
 gradient_start: '#00BCD8'
 gradient_stop: '#0086DC'
 
-xpi_url: 'https://testpilot.firefox.com/files/experiment-name/latest'
-addon_id: 'experiment-name@mozilla.com'
-
-created: '2016-01-01T00:00:00.000000Z'
-# completed: '2016-01-01T00:00:00.000000Z'
-# uninstalled: '2016-01-02T00:00:00.000000Z'
-# launch_date: '2016-01-01T00:00:00.000000Z'
+created: '2018-06-14T00:00:00.000000Z'
+launch_date: '2018-07-10T16:00:00.000000Z' # 8 AM Pacific on July 10th
 
 changelog_url: 'https://github.com/mozilla-lockbox/lockbox-ios/releases'
 contribute_url: 'https://github.com/mozilla-lockbox/lockbox-ios'
@@ -111,10 +103,6 @@ contributors:
     title: 'Community Contributor'
     avatar: /static/images/experiments/lockbox/avatars/pnyondo.png
 
-# contributors_extra: >
-#     This experiment was also made possible by a generous grant from
-#     the Institute for RoboCop Studies.
-# contributors_extra_url: https://robocop.org
 tour_steps:
   -
     image: /static/images/experiments/lockbox/tour/tour-1.jpg
@@ -130,33 +118,10 @@ pre_feedback_copy: >
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus,
     suscipit, nam commodi excepturi error modi.</p>
 
-graduation_url: 'http://example.com/graduation-report'
-
-eol_warning: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-min_release: 99
-incompatible:
-  '@fake-incompatible': 'Fake Incompatible Add-on Name'
-
 locales:
   - 'en'
-locale_blocklist:
-  - 'de'
-locale_grantlist:
-  - 'de'
 
-dev: false
+dev: true
 
 testpilot_options:
   ratings: enabled
-
-# news_updates:
-#   -
-#     slug: testpilot-update-1
-#     title: My Update title
-#     link: 'https://blog.mozilla.org/testpilot/example'
-#     created: '2017-06-01T12:00:00Z'
-#     published: '2017-06-02T12:00:00Z'
-#     image: 'images/link/to/image.jpg' # optional
-#     major: true # optional
-#     content: >
-#       Example content goes here
