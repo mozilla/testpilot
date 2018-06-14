@@ -123,17 +123,7 @@ tour_steps:
 
 measurements:
   - >
-    Credential data: Your credentials are synced in encrypted form using Firefox Sync. Learn more <a href="https://www.mozilla.org/en-US/privacy/firefox/#sync">here</a>.
-  - >
-    Interaction data. Mozilla receives information about your interaction with Firefox Lockbox, including (1) frequency of editing, viewing, copying, and syncing credentials, (2) whether you are a new or existing Firefox Account user, (3) interactions with Firefox Lockbox menus and icons, (4) length of time the app is in background.
-  - >
-    Technical data. We receive your device, operating system, version, and language preference. We also receive your IP address in connection with your usage of a Firefox Account. Learn more <a href="https://www.mozilla.org/en-US/privacy/firefox/#search">here</a>.
-  - >
-    Third-Party Services. We use Apple’s TestFlight for beta testing, which has separate <a href="https://www.apple.com/legal/internet-services/itunes/testflight/sren/terms.html">Legal</a> and <a href="https://www.apple.com/privacy/">Privacy</a> terms. Apple receives crash data by default, which may include personally identifiable data, and which may be sent to Mozilla.
-  - >
-    Other Mozilla Services. Unlike most Test Pilot experiments, Firefox Lockbox requires a Firefox Account and uses the Firefox Sync service. Learn more about <a href="https://www.mozilla.org/en-US/privacy/firefox/">Firefox Accounts</a>, and <a href="https://moz-services-docs.readthedocs.io/en/latest/sync/">Sync</a>.
-  - >
-    You can learn more about the data collection for Firefox Lockbox <a href="https://github.com/mozilla-lockbox/lockbox-ios/blob/master/docs/metrics.md">here</a>.
+    PUT SOMETHING ELSE HERE.
 
 pre_feedback_image: /static/images/experiments/experiment-name/pre-feedback.jpg
 pre_feedback_copy: >

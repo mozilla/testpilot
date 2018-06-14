@@ -80,12 +80,7 @@ firefoxlockboxContributors11Title = QA Developer
 firefoxlockboxContributors12Title = Community Contributor
 firefoxlockboxContributors13Title = Community Contributor
 firefoxlockboxToursteps0Copy = <p>Lorem ipsum dolor sit amet.</p>
-firefoxlockboxMeasurements0 = Credential data: Your credentials are synced in encrypted form using Firefox Sync. Learn more <a href="https://www.mozilla.org/en-US/privacy/firefox/#sync">here</a>.
-firefoxlockboxMeasurements1 = Interaction data. Mozilla receives information about your interaction with Firefox Lockbox, including (1) frequency of editing, viewing, copying, and syncing credentials, (2) whether you are a new or existing Firefox Account user, (3) interactions with Firefox Lockbox menus and icons, (4) length of time the app is in background.
-firefoxlockboxMeasurements2 = Technical data. We receive your device, operating system, version, and language preference. We also receive your IP address in connection with your usage of a Firefox Account. Learn more <a href="https://www.mozilla.org/en-US/privacy/firefox/#search">here</a>.
-firefoxlockboxMeasurements3 = Third-Party Services. We use Apple’s TestFlight for beta testing, which has separate <a href="https://www.apple.com/legal/internet-services/itunes/testflight/sren/terms.html">Legal</a> and <a href="https://www.apple.com/privacy/">Privacy</a> terms. Apple receives crash data by default, which may include personally identifiable data, and which may be sent to Mozilla.
-firefoxlockboxMeasurements4 = Other Mozilla Services. Unlike most Test Pilot experiments, Firefox Lockbox requires a Firefox Account and uses the Firefox Sync service. Learn more about <a href="https://www.mozilla.org/en-US/privacy/firefox/">Firefox Accounts</a>, and <a href="https://moz-services-docs.readthedocs.io/en/latest/sync/">Sync</a>.
-firefoxlockboxMeasurements5 = You can learn more about the data collection for Firefox Lockbox <a href="https://github.com/mozilla-lockbox/lockbox-ios/blob/master/docs/metrics.md">here</a>.
+firefoxlockboxMeasurements0 = PUT SOMETHING ELSE HERE.
 firefoxlockboxPrefeedbackcopy = <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam atque accusamus, suscipit, nam commodi excepturi error modi.</p>
 firefoxlockboxEolwarning = Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 minvidDescription = Keep videos front and center. Min Vid lets you display YouTube and Vimeo videos in a small frame that stays in the foreground as you browse the web.
