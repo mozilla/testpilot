@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Zmóžnjeny"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Nowy eksperiment"
+  },
+  "experiment_list_view_all": {
+    "message": "Wšě eksperimenty pokazać"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Skónči so jutře"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Skónči so bórze"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Eksperiment zakónčeny"
+  },
+  "installed_message": {
+    "message": "<strong>Pokiw:</strong> Smy tłóčatko do wašeje symboloweje lajsty stajili, <br>zo byšće Test Pilot přeco zaso namakał."
+  },
+  "survey_show_rating_label": {
+    "message": "Prošu pohódnoćće %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Wulki dźak, zo sće %s pohódnoćił."
+  },
+  "survey_rating_survey_button": {
+    "message": "Wobdźělće so na krótkim naprašowanju"
+  },
+  "survey_launch_survey_label": {
+    "message": "Eksperiment %s je so skónčił. Što wo tym mysliće?"
+  },
+  "no_experiment_message": {
+    "message": "Testujće najnowše eksperimentelne funkcije Firefox z Test Pilot!"
+  },
+  "no_experiment_button": {
+    "message": "Kotre eksperimenty?"
+  },
+  "new_badge": {
+    "message": "Nowy"
+  },
+  "share_label": {
+    "message": "Spodoba so wam Test Pilot?"
+  },
+  "share_button": {
+    "message": "Dźělić"
+  }
+}

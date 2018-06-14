@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Omogočen"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Nov poskus"
+  },
+  "experiment_list_view_all": {
+    "message": "Ogled vseh poskusov"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Se konča jutri"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Se končuje"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Poskus končan"
+  },
+  "installed_message": {
+    "message": "<strong>FYI,</strong> v orodno vrstico smo dodali gumb,<br> ki vam vedno omogoča najti dodatek Test Pilot."
+  },
+  "survey_show_rating_label": {
+    "message": "Ocenite %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Hvala za oceno poskusa %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Izpolnite kratek vprašalnik"
+  },
+  "survey_launch_survey_label": {
+    "message": "Poskus %s je končan. Kaj menite o njem?"
+  },
+  "no_experiment_message": {
+    "message": "Preizkusite Firefoxove najnovejše poskusne možnosti z dodatkom Test Pilot!"
+  },
+  "no_experiment_button": {
+    "message": "Katere poskuse?"
+  },
+  "new_badge": {
+    "message": "Novo"
+  },
+  "share_label": {
+    "message": "Vam je Test Pilot všeč?"
+  },
+  "share_button": {
+    "message": "Deli"
+  }
+}

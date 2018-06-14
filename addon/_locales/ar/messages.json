@@ -1,0 +1,41 @@
+{
+  "experiment_list_enabled": {
+    "message": "مفعل"
+  },
+  "experiment_list_new_experiment": {
+    "message": "تجربة جديدة"
+  },
+  "experiment_list_view_all": {
+    "message": "عرض جميع التجارب"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "تنتهي غدا"
+  },
+  "experiment_eol_soon_message": {
+    "message": "تنتهي قريباً"
+  },
+  "experiment_eol_complete_message": {
+    "message": "اكتملت التجربة"
+  },
+  "installed_message": {
+    "message": "<strong>FYI:</strong> لقد وضعنا زراً في شريط الأدوات الخاص بك <br> حتى تتمكن دائماً من إيجاد Test Pilot."
+  },
+  "survey_show_rating_label": {
+    "message": "الرجاء التقيم %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "شكراً على التقييم %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "املأ هذا الاستبيان السريع"
+  },
+  "survey_launch_survey_label": {
+    "message": "لقد انتهت التجربة %s. ما رأيك؟"
+  },
+  "no_experiment_message": {
+    "message": "اختبر أحدث مميزات فيرفكس التجريبية مع Test pilot!"
+  },
+  "no_experiment_button": {
+    "message": "ما التجارب؟"
+  }
+}

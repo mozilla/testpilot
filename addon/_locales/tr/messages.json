@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Etkinleştirildi"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Yeni deney"
+  },
+  "experiment_list_view_all": {
+    "message": "Tüm deneyleri gör"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Yarın bitiyor"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Yakında bitiyor"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Deney tamamlandı"
+  },
+  "installed_message": {
+    "message": "<strong>Not:</strong>Test Pilotu'nu kolayca bulabilmeniz <br>için araç çubuğunuza bir düğme ekledik."
+  },
+  "survey_show_rating_label": {
+    "message": "%s deneyine puan verin"
+  },
+  "survey_rating_thank_you": {
+    "message": "%s deneyine puan verdiğiniz için teşekkür ederiz."
+  },
+  "survey_rating_survey_button": {
+    "message": "Küçük anketimize katılın"
+  },
+  "survey_launch_survey_label": {
+    "message": "%s deneyi sona erdi. Bu deney hakkında ne düşündünüz?"
+  },
+  "no_experiment_message": {
+    "message": "Firefox'un en yeni deneysel özelliklerini Test Pilotu ile deneyin!"
+  },
+  "no_experiment_button": {
+    "message": "Deneyler nerede?"
+  },
+  "new_badge": {
+    "message": "Yeni"
+  },
+  "share_label": {
+    "message": "Test Pilotu'nu beğendiniz mi?"
+  },
+  "share_button": {
+    "message": "Paylaşın"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Омогућено"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Нови експеримент"
+  },
+  "experiment_list_view_all": {
+    "message": "Прикажи све експерименте"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Завршава се сутра"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Завршава се ускоро"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Експеримент завршен"
+  },
+  "installed_message": {
+    "message": "<strong>FYI:</strong> Поставили смо дугме у вашу траку са алатима<br> тако да увек можете пронаћи Test Pilot."
+  },
+  "survey_show_rating_label": {
+    "message": "Оцените %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Хвала што сте оценили %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Попуните кратку анкету"
+  },
+  "survey_launch_survey_label": {
+    "message": "Експеримент %s је завршен. Шта мислите о њему?"
+  },
+  "no_experiment_message": {
+    "message": "Испробајте најновије експерименталне могућности Firefox-a са Test Pilot-ом!"
+  },
+  "no_experiment_button": {
+    "message": "Који експерименти?"
+  },
+  "new_badge": {
+    "message": "Нови"
+  },
+  "share_label": {
+    "message": "Свиђа вам се Test Pilot?"
+  },
+  "share_button": {
+    "message": "Подели"
+  }
+}

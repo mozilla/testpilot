@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "פעיל"
+  },
+  "experiment_list_new_experiment": {
+    "message": "ניסוי חדש"
+  },
+  "experiment_list_view_all": {
+    "message": "הצגת כל הניסויים"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "מסתיים מחר"
+  },
+  "experiment_eol_soon_message": {
+    "message": "מסתיים בקרוב"
+  },
+  "experiment_eol_complete_message": {
+    "message": "הניסוי הושלם"
+  },
+  "installed_message": {
+    "message": "<strong>לידיעתך:</strong> אנו שמים כפתור בסרגל הכלים שלך <br> כך שיהיה קל לחזור אל Test Pilot בעתיד."
+  },
+  "survey_show_rating_label": {
+    "message": "בבקשה לדרג את %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "תודה שדירגת את %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "השתתפות בסקר קצר"
+  },
+  "survey_launch_survey_label": {
+    "message": "הניסוי %s הסתיים. מה דעתך עליו?"
+  },
+  "no_experiment_message": {
+    "message": "נסו את התכונות הניסיוניות האחרונות של Firefox עם טייס הניסוי!"
+  },
+  "no_experiment_button": {
+    "message": "אלו ניסוים?"
+  },
+  "new_badge": {
+    "message": "חדש"
+  },
+  "share_label": {
+    "message": "אוהבים את Test Pilot?"
+  },
+  "share_button": {
+    "message": "שיתוף"
+  }
+}

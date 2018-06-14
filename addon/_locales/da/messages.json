@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Aktiveret"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Nyt eksperiment"
+  },
+  "experiment_list_view_all": {
+    "message": "Vis alle eksperimenter"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Slutter i morgen"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Slutter snart"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Eksperiment gennemført"
+  },
+  "installed_message": {
+    "message": "<strong>NB:</strong> Vi placerer en knap på din værktøjslinje <br> så kan du altid finde Testpilot."
+  },
+  "survey_show_rating_label": {
+    "message": "Vurder %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Tak for at du vurderede %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Deltag i en hurtig undersøgelse"
+  },
+  "survey_launch_survey_label": {
+    "message": "Eksperimentet %s er gennemført. Hvad synes du om det?"
+  },
+  "no_experiment_message": {
+    "message": "Prøv de nyeste eksperimentelle funktioner i Firefox med Testpilot!"
+  },
+  "no_experiment_button": {
+    "message": "Hvilke eksperimenter?"
+  },
+  "new_badge": {
+    "message": "Nyt"
+  },
+  "share_label": {
+    "message": "Synes du om Testpilot?"
+  },
+  "share_button": {
+    "message": "Del"
+  }
+}

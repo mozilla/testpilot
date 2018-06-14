@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Slått på"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Nytt eksperiment"
+  },
+  "experiment_list_view_all": {
+    "message": "Vis alle eksperiment"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Sluttar i morgon"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Sluttar snart"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Eksperiment fullført"
+  },
+  "installed_message": {
+    "message": "<strong>Til info:</strong> Vi plaserer ein knapp i verktøylinja di <br> slik at du alltid kan finne Test Pilot."
+  },
+  "survey_show_rating_label": {
+    "message": "Ver snill og vurder %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Takk for at du vurderte %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Ta ei kjapp undersøking"
+  },
+  "survey_launch_survey_label": {
+    "message": "Eksperimentet %s er avslutta. Kva synest du?"
+  },
+  "no_experiment_message": {
+    "message": "Test Firefox' siste eksperimentelle funksjonar med Test Pilot!"
+  },
+  "no_experiment_button": {
+    "message": "Kva for eksperiment?"
+  },
+  "new_badge": {
+    "message": "Nytt"
+  },
+  "share_label": {
+    "message": "LIkar du Test Pilot?"
+  },
+  "share_button": {
+    "message": "Del"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Urmid"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Tarmit tamaynut"
+  },
+  "experiment_list_view_all": {
+    "message": "Wali akk tirmitin"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Ad ifak azekka"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Ur yettaɛṭil ara ad ifak"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Tarmit temmed"
+  },
+  "installed_message": {
+    "message": "<strong>Ẓeṛ d akken :</strong> nerna taqeffalt ar ufeggag n ifecka <br> akken ad tgebreḍ i lebda Test Pilot ɣef afus."
+  },
+  "survey_show_rating_label": {
+    "message": "Ma ulac aɣilif mudd tazmilt i %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Tanemmirt ɣef tezmilt n %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Bdu aḥedqis fessusen"
+  },
+  "survey_launch_survey_label": {
+    "message": "Tarmit %s tfuk. D acu tenniḍ?"
+  },
+  "no_experiment_message": {
+    "message": "Sekyed timhaltin tirmitanin tineggura n Firefox akked Test Pilot!"
+  },
+  "no_experiment_button": {
+    "message": "Acu n tirmitin?"
+  },
+  "new_badge": {
+    "message": "Amaynut"
+  },
+  "share_label": {
+    "message": "Tḥemleḍ Test Pilot?"
+  },
+  "share_button": {
+    "message": "Bḍu"
+  }
+}

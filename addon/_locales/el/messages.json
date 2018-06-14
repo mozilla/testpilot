@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Ενεργό"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Νέο πείραμα"
+  },
+  "experiment_list_view_all": {
+    "message": "Προβολή όλων των πειραμάτων"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Λήγει αύριο"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Λήγει σύντομα"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Το πείραμα ολοκληρώθηκε"
+  },
+  "installed_message": {
+    "message": "<strong>Πληροφορία:</strong> Τοποθετήσαμε ένα κουμπί στη γραμμή εργαλείων σας, <br> ώστε να μπορείτε πάντα να βρίσκετε το Test Pilot."
+  },
+  "survey_show_rating_label": {
+    "message": "Παρακαλώ αξιολογήστε το %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Σάς ευχαριστούμε για την αξιολόγηση του %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Λάβετε μέρος σε μια γρήγορη έρευνα"
+  },
+  "survey_launch_survey_label": {
+    "message": "Το πείραμα %s έχει τελειώσει. Ποια είναι η γνώμη σας;"
+  },
+  "no_experiment_message": {
+    "message": "Δοκιμάστε τις πιο πρόσφατες, πειραματικές λειτουργίες του Firefox με το Test Pilot!"
+  },
+  "no_experiment_button": {
+    "message": "Ποια πειράματα;"
+  },
+  "new_badge": {
+    "message": "Νέο"
+  },
+  "share_label": {
+    "message": "Σάς αρέσει το Test Pilot;"
+  },
+  "share_button": {
+    "message": "Κοινοποίηση"
+  }
+}

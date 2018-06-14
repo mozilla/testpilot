@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Tzijon"
+  },
+  "experiment_list_new_experiment": {
+    "message": "K'ak'a' Solna'oj"
+  },
+  "experiment_list_view_all": {
+    "message": "Ketz'et ronojel ri taq solna'oj"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Nik'is ri Nimaq'a'"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Nik'is Yan"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Tz'aqät Solna'oj"
+  },
+  "installed_message": {
+    "message": "<strong>FYI:</strong> Xqatz'aqatisaj jun pitz'b'äl pa ri amolsamajib'al <br> richin junelïk yatok pa Test Pilot."
+  },
+  "survey_show_rating_label": {
+    "message": "Tapaja' %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Matyox ruma xapajon %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Tanojisaj jun Aninäq Molna'oj"
+  },
+  "survey_launch_survey_label": {
+    "message": "Xk'is ri %s solna'oj. ¿Achike nana'ojij chi rij?"
+  },
+  "no_experiment_message": {
+    "message": "¡Ke'atojtob'ej ri ruk'isib'äl taq rub'anikil Firefox rik'in Test Pilot!"
+  },
+  "no_experiment_button": {
+    "message": "¿Achike taq solna'oj?"
+  },
+  "new_badge": {
+    "message": "K'ak'a'"
+  },
+  "share_label": {
+    "message": "¿La niqa chawäch ri Test Pilot?"
+  },
+  "share_button": {
+    "message": "Tikomonïx"
+  }
+}

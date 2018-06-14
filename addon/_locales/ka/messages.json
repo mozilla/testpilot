@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "ჩართულია"
+  },
+  "experiment_list_new_experiment": {
+    "message": "ახალი საცდელი პროექტი"
+  },
+  "experiment_list_view_all": {
+    "message": "ყველა საცდელი პროექტი"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "სრულდება ხვალ"
+  },
+  "experiment_eol_soon_message": {
+    "message": "სრულდება მალე"
+  },
+  "experiment_eol_complete_message": {
+    "message": "საცდელი პროექტი დასრულებულია"
+  },
+  "installed_message": {
+    "message": "<strong>FYI:</strong> ღილაკი განთავსდება თქვენს ხელსაწყოთა ზოლზე, <br> ასე რომ ყოველთვის ადვილად შეგეძლებათ მიაგნოთ Test Pilot-ს."
+  },
+  "survey_show_rating_label": {
+    "message": "გთხოვთ, შეაფასოთ %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "გმადლობთ %s პროექტის შეფასებისთვის."
+  },
+  "survey_rating_survey_button": {
+    "message": "შეავსეთ მცირე კითხვარი"
+  },
+  "survey_launch_survey_label": {
+    "message": "%s საცდელი პროექტი დასრულებულია. რას ფიქრობთ, მის შესახებ?"
+  },
+  "no_experiment_message": {
+    "message": "გამოცადეთ Firefox-ის უახლესი საცდელი შესაძლებლობები Test Pilot-ის დახმარებით!"
+  },
+  "no_experiment_button": {
+    "message": "რა არის საცდელი პროექტები?"
+  },
+  "new_badge": {
+    "message": "ახალი"
+  },
+  "share_label": {
+    "message": "მოგწონთ Test Pilot?"
+  },
+  "share_button": {
+    "message": "გაზიარება"
+  }
+}

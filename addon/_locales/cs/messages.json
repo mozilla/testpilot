@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Zapnuto"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Nový experiment"
+  },
+  "experiment_list_view_all": {
+    "message": "Zobrazit všechny experimenty"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Zítra končí"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Brzy končí"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Experiment dokončen"
+  },
+  "installed_message": {
+    "message": "<strong>Pro vaši informaci:</strong> Na vaši lištu jsme přidali tlačítko Test Pilot,<br> takže ho vždy najdete."
+  },
+  "survey_show_rating_label": {
+    "message": "Ohodnoťte prosím %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Děkujeme za hodnocení %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Vyplnit krátký dotazník"
+  },
+  "survey_launch_survey_label": {
+    "message": "Experiment %s skončil. Jaký je vás názor?"
+  },
+  "no_experiment_message": {
+    "message": "Vyzkoušejte s Test Pilotem nejnovější experimentální funkce Firefoxu!"
+  },
+  "no_experiment_button": {
+    "message": "Jaké experimenty?"
+  },
+  "new_badge": {
+    "message": "Nové"
+  },
+  "share_label": {
+    "message": "Líbí se vám Test Pilot?"
+  },
+  "share_button": {
+    "message": "Sdílet"
+  }
+}

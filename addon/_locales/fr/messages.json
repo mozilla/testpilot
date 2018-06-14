@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "Activé"
+  },
+  "experiment_list_new_experiment": {
+    "message": "Nouvelle expérience"
+  },
+  "experiment_list_view_all": {
+    "message": "Voir toutes les expériences"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "Se termine demain"
+  },
+  "experiment_eol_soon_message": {
+    "message": "Se termine bientôt"
+  },
+  "experiment_eol_complete_message": {
+    "message": "Expérience terminée"
+  },
+  "installed_message": {
+    "message": "<strong>À noter :</strong> nous avons ajouté un bouton à votre barre d’outils afin que vous gardiez toujours Test Pilot sous la main."
+  },
+  "survey_show_rating_label": {
+    "message": "Merci d’attribuer une note à %s"
+  },
+  "survey_rating_thank_you": {
+    "message": "Merci d’avoir attribué une note à %s."
+  },
+  "survey_rating_survey_button": {
+    "message": "Répondre à un court sondage"
+  },
+  "survey_launch_survey_label": {
+    "message": "L’expérience %s est terminée. Qu’en avez-vous pensé ?"
+  },
+  "no_experiment_message": {
+    "message": "Essayez les toutes dernières fonctionnalités expérimentales de Firefox grâce à Test Pilot !"
+  },
+  "no_experiment_button": {
+    "message": "Quelles expériences ?"
+  },
+  "new_badge": {
+    "message": "Nouveau"
+  },
+  "share_label": {
+    "message": "Vous appréciez Test Pilot ?"
+  },
+  "share_button": {
+    "message": "Partager"
+  }
+}

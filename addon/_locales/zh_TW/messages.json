@@ -1,0 +1,50 @@
+{
+  "experiment_list_enabled": {
+    "message": "已啟用"
+  },
+  "experiment_list_new_experiment": {
+    "message": "新實驗"
+  },
+  "experiment_list_view_all": {
+    "message": "檢視所有實驗"
+  },
+  "experiment_eol_tomorrow_message": {
+    "message": "明天結束"
+  },
+  "experiment_eol_soon_message": {
+    "message": "快要結束"
+  },
+  "experiment_eol_complete_message": {
+    "message": "實驗已完成"
+  },
+  "installed_message": {
+    "message": "<strong>提醒您:</strong> 我們在工具列放上按鈕，<br>這樣就可以隨時找到 Test Pilot。"
+  },
+  "survey_show_rating_label": {
+    "message": "請幫 %s 打分數"
+  },
+  "survey_rating_thank_you": {
+    "message": "感謝您幫 %s 打分數。"
+  },
+  "survey_rating_survey_button": {
+    "message": "寫一份小問卷"
+  },
+  "survey_launch_survey_label": {
+    "message": "%s 實驗已結束，您覺得如何？"
+  },
+  "no_experiment_message": {
+    "message": "使用 Test Pilot，測試 Firefox 最新的實驗性功能！"
+  },
+  "no_experiment_button": {
+    "message": "有哪些實驗？"
+  },
+  "new_badge": {
+    "message": "新上架"
+  },
+  "share_label": {
+    "message": "喜歡 Test Pilot 嗎？"
+  },
+  "share_button": {
+    "message": "分享"
+  }
+}
