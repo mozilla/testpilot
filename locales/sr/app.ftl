@@ -14,9 +14,18 @@ footerLinkPrivacy = Приватност
 footerLinkTerms = Услови
 footerLinkLegal = Права
 footerLinkFeedback = Пошаљите повратне информације
-footerLinkAbout = О Test Pilot-у
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = О Test Pilot-у
+footerLinkAboutUs = О нама
+footerLinkSupportHeader = Подршка
+footerLinkDownload = Преузмите Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Мобилни
+footerLinkFeatures = Могућности
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Деинсталирајте Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Почетна
 menuTitle = Поставке
@@ -25,7 +34,6 @@ menuDiscuss = Причајте о Test Pilot-у
 menuFileIssue = Пријавите грешку
 menuRetire = Деинсталирај Test Pilot
 headerLinkBlog = Блог
-headerLinkNews = Вести
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = Test Pilot захтева Firefox за Windows, Mac и�
 landingDownloadFirefoxDesc = (Test Pilot је доступан за Firefox за Windows, OS X и Linux)
 landingUpgradeDesc = Test Pilot захтева Firefox 49 или новији.
 landingUpgradeDesc2 = Test Pilot захтева Firefox { $version } или новију верзију.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Надогради Firefox
 landingDownloadFirefoxSubTitle = Бесплатно преузимање
@@ -84,13 +93,6 @@ emailOptInConfirmationTitle = Порука послата
 emailOptInConfirmationClose = Напред на експерименте...
 emailOptInDialogErrorTitle = Ох не!
 
-## News feed updates.
-
-latestUpdatesTitle = Последња ажурирања
-showMoreNewsTitle = Прикажи старије новости
-# "Link" is a noun in this context
-englishArticleLink = Веза ка енглеском чланку
-
 ## Featured experiment.
 
 moreDetail = Погледај детаље
@@ -112,7 +114,7 @@ experimentListHeaderWithFeatured = Пробајте све наше експер
 experimentCardFeedback = Повратна информација
 experimentCardManage = Управљајте
 experimentCardGetStarted = Започните
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Сазнајте више
 
 ## A modal prompt shown when a user disables an experiment.
@@ -138,6 +140,8 @@ experimentPromoSubheader = Ми градимо могућности следећ
 
 isEnabledStatusMessage = { $title } је омогућен.
 installErrorMessage = Уф. { $title } не може бити омогућен. Покушајте поново касније.
+wrongPlatformIOS = Овај експеримент је доступан само за iOS уређаје.
+wrongPlatformAndroid = Овај експеримент је доступан само за Android уређаје.
 otherExperiments = Испробајте и ове експерименте
 giveFeedback = Пошаљите повратну информацију
 disableHeader = Онемогућити експеримент?
