@@ -71,7 +71,7 @@ contributors:
   -
     display_name: 'Jim Porter'
     title: 'Sr. Engineer'
-    avatar: /static/images/experiments/lockbox/avatars/jporter.png
+    avatar: /static/images/experiments/lockbox/avatars/anon.png
   -
     display_name: 'James Hugman'
     title: 'Mobile Engineer'
@@ -93,8 +93,24 @@ contributors:
     title: 'Sr. UX Designer'
     avatar: /static/images/experiments/lockbox/avatars/nbrandt.png
   -
+    display_name: 'Matt Brandt'
+    title: 'Sr. Test Engineer'
+    avatar: /static/images/experiments/lockbox/avatars/mbrandt.png
+  -
+    display_name: 'Isabel Rios'
+    title: 'Mobile QA Engineer'
+    avatar: /static/images/experiments/lockbox/avatars/irios.png
+  -
+    display_name: 'Simion Basca'
+    title: 'Mobile QA Engineer'
+    avatar: /static/images/experiments/lockbox/avatars/sbasca.png
+  -
+    display_name: 'Catalin Sasca'
+    title: 'Mobile QA Engineer'
+    avatar: /static/images/experiments/lockbox/avatars/anon.png
+  -
     display_name: 'Peter deHaan'
-    title: 'QA Developer'
+    title: 'Firefox QA'
     avatar: /static/images/experiments/lockbox/avatars/pdehaan.png
   -
     display_name: 'Joe Gasiorek'
