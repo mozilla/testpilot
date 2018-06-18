@@ -4,6 +4,12 @@ import { Localized } from "fluent-react/compat";
 import LocalizedHtml from "../../components/LocalizedHtml";
 import { experimentL10nId, isMobile } from "../../lib/utils";
 
+/* TODO
+   - send to device button should be first and '.default' if no web option
+   - should be secondary if 'web' is also an option
+   - make sure that "download on the app store" is primary and first in list on mobile
+ */
+
 import type {
   ExperimentControlsType,
   WebExperimentControlsType,
@@ -86,15 +92,6 @@ export default function ExperimentControls({
     validVersion
   })).filter(b => b);
 
-  if (platforms.includes("ios") || platforms.includes("android")) {
-    buttons.push(
-      <Localized id="mobileDialogLaunchButton">
-        <a
-          className="button secondary"
-          onClick={doShowMobileAppDialog}>Send App Link to Device</a>
-      </Localized>
-    );
-  }
   if (enabled) {
     if (!graduated) {
       buttons.unshift(
@@ -136,6 +133,17 @@ export default function ExperimentControls({
       );
     }
   }
+
+  if (platforms.includes("ios") || platforms.includes("android")) {
+    buttons.unshift(
+        <Localized id="mobileDialogLaunchButton">
+        <a
+      className="button default"
+      onClick={doShowMobileAppDialog}>Send App Link to Device</a>
+        </Localized>
+    );
+  }
+
   const controls = <div className="experiment-controls">
     {buttons}
   </div>;

@@ -465,6 +465,10 @@
 
 // MobileDialog
 .mobile-modal {
+  .modal-content {
+    max-width: 100%;
+  }
+
   .mobile-header-img {
     width: 150px;
   }
@@ -477,12 +481,22 @@
     }
   }
 
+  .header-wrapped {
+    border-bottom: 1px solid $grey-30;
+    padding-bottom: 20px;
+
+    p {
+      margin-top: 0;
+    }
+  }
+
   .mobile-link-form {
     button, input {
-      width: 100%;
-      padding: 10px;
       font-size: 19px;
       margin: 15px auto;
+      max-width: 360px;
+      padding: 10px;
+      width: 100%;
     }
 
     input {

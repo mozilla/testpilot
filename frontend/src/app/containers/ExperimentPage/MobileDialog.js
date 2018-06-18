@@ -14,6 +14,7 @@ import { subscribeToBasket, subscribeToBasketSMS, acceptedSMSCountries } from ".
 const COUNTRY_CODE_ENDPOINT = "https://www.mozilla.org/country-code.json";
 
 /* TODO:
+- fix "mobile experiment" logic to include "ios" and "android" when only 1 is present.
 - fix input localization
 - learn more notice links
 */
@@ -67,7 +68,7 @@ export default class MobileDialog extends React.Component {
     // fetch() for some reason I haven't figured out yet.
     const req = new XMLHttpRequest();
     req.onerror = (e) => {
-      this.setState({ loading: false });
+      this.setState({ loading: false});
     };
 
     req.onload = (e) => {
@@ -95,7 +96,7 @@ export default class MobileDialog extends React.Component {
     const headerMessage = ios_url ? (<LocalizedHtml id="mobileDialogMessageIOS" $title={title}>
       <p>Download <b>{title}</b> from the iOS App Store.</p></LocalizedHtml>) : (<LocalizedHtml id="mobileDialogMessageAndroid" $title={title}><p>Download <b>{title}</b> from the Google Play Store.</p></LocalizedHtml>);
 
-    const headerImg = ios_url ? (<a href={ios_url}><img className="mobile-header-img" src="/static/images/ios.svg"/></a>) : (<a href={android_url}><img className="mobile-header-img" src="/static/images/google-play.png"/></a>);
+    const headerImg = ios_url ? (<a href={ios_url} target="_blank"><img className="mobile-header-img" src="/static/images/ios.svg"/></a>) : (<a href={android_url} target="_blank"><img className="mobile-header-img" src="/static/images/google-play.png"/></a>);
 
     const learnMore = (<Localized id="mobileDialogNoticeLearnMoreLink">
       <a target="_blank" rel="noopener noreferrer" href="">Learn More</a>
@@ -116,9 +117,10 @@ export default class MobileDialog extends React.Component {
             <div className="modal-cancel" onClick={this.close}/>
           </header>
           <div className="modal-content centered default-background">
-            {headerMessage}
-            {headerImg}
-            <hr/>
+            <div className="header-wrapped">
+              {headerMessage}
+              {headerImg}
+            </div>
             {loading && <Loading/>}
             {!loading && !isSuccess && this.renderForm()}
             {!loading && !isSuccess && notice}
