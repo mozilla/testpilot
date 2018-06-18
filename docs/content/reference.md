@@ -21,6 +21,8 @@ An experiment's YAML file is considered to contain the canonical localization fo
 
 To manually extract strings for Pontoon, run the command `npm run l10n:extract`. If you have a dev server running via `npm start`, this should happen automatically when you change YAML files. In either case, the FTL file should *not* be edited manually.
 
+*Note: any experiments set to `dev: true` will be skipped during extraction so as to not add strings to the translation files as they're likely still actively changing and should not be reviewed by localizers.*
+
 Be sure to include changes to `locales/en-US/experiments.ftl` in your pull requests with changed content. The `npm run l10n:check` command will be run in CircleCI to help ensure any string changes have been picked up - uncommitted string changes will cause the test run to fail.
 
 If a new field is added to the experiment YAML - and it needs to be localized - that field **must** be also added to [the list of `LOCALIZABLE_FIELDS` in `frontend/tasks/util.js`][LOCALIZABLE_FIELDS].
@@ -593,11 +595,13 @@ locale_grantlist:
 
 ## `dev`
 
-A boolean indicating whether this experiment should only appear in a dev environment, i.e. for testing or localization. Required.
+A boolean indicating whether this experiment should only appear in a dev environment, i.e. for testing or active development. Required.
 
 ```yaml
 dev: false
 ```
+
+*Note: experiments set to `dev: true` are intentionally skipped during localization string export.*
 
 ## `testpilot_options`
 
