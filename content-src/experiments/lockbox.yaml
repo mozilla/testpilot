@@ -2,9 +2,9 @@ id: 18
 slug: firefox-lockbox
 title: 'Firefox Lockbox'
 # subtitle: 'Take your passwords everywhere'
-order: 1
-is_featured: true
-dev: true
+order: 4
+is_featured: false # TODO: set to true for launch
+dev: true # TODO: set to false for launch
 web_url: https://lockbox.firefox.com/
 platforms: ['mobile']
 locales:
@@ -123,6 +123,6 @@ contributors:
 
 measurements:
   - >
-    PUT SOMETHING ELSE HERE.
+    REMOVE ME
 
 privacy_notice_url: 'https://lockbox.firefox.com/privacy.html'
