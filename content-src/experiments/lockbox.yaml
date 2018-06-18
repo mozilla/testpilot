@@ -17,9 +17,9 @@ introduction: >
   <p>Firefox Lockbox lets you easily access your passwords everywhere. Logins are stored and synced securely, using 256-bit encryption, keeping your information safe. Easily copy username and password details to get into apps and websites. Never again find yourself locked out of your account while on your phone!</p>
   <p><strong>Firefox Lockbox requires a Firefox Account in order to access your previously saved logins. If you do not have an account set up, get started <a href="https://lockbox.firefox.com/faq.html#how-do-i-enable-sync-on-firefox">here</a>.</strong></p>
 
-image_twitter: /static/images/experiments/lockbox/social/twitter.jpg
-image_facebook: /static/images/experiments/lockbox/social/facebook.jpg
-
+# video_url: # TODO: add this
+# image_twitter: /static/images/experiments/lockbox/social/twitter.jpg # TODO: add this
+# image_facebook: /static/images/experiments/lockbox/social/facebook.jpg # TODO: add this
 thumbnail: /static/images/experiments/lockbox/icon/thumbnail.png
 gradient_start: '#00BCD8'
 gradient_stop: '#0086DC'
