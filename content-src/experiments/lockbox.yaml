@@ -6,7 +6,8 @@ order: 4
 is_featured: false # TODO: set to true for launch
 dev: true # TODO: set to false for launch
 web_url: https://lockbox.firefox.com/
-platforms: ['mobile']
+platforms: ['ios']
+ios_url: https://itunes.apple.com/us/app/firefox-lockbox/id1314000270?ls=1&mt=8
 locales:
   - 'en'
 
