@@ -67,7 +67,7 @@ export default class MobileDialog extends React.Component {
     // fetch() for some reason I haven't figured out yet.
     const req = new XMLHttpRequest();
     req.onerror = (e) => {
-      this.setState({ loading: false});
+      this.setState({ loading: false });
     };
 
     req.onload = (e) => {

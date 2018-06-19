@@ -491,7 +491,8 @@
   }
 
   .mobile-link-form {
-    button, input {
+    button,
+    input {
       font-size: 19px;
       max-width: 360px;
       padding: 10px;
@@ -517,8 +518,8 @@
 
   .success-section {
     .button {
-      width: 100%;
       margin-bottom: 20px;
+      width: 100%;
     }
   }
 
@@ -535,7 +536,7 @@
     color: $blue-40;
     font-size: 15px;
 
-    &:after {
+    &::after {
       content: '>>';
       padding-left: 5px;
     }
@@ -546,14 +547,15 @@
     font-size: 15px;
   }
 
-  .notice, .instruction {
+  .notice,
+  .instruction {
     color: $grey-50;
   }
 
   .notice {
     font-size: 11px;
 
-    a:after {
+    a::after {
       content: '>>';
       padding-left: 2px;
     }
@@ -561,7 +563,7 @@
 
   .instruction {
     font-size: 15px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 }
 

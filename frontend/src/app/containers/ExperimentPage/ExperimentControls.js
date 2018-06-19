@@ -136,11 +136,11 @@ export default function ExperimentControls({
 
   if (platforms.includes("ios") || platforms.includes("android")) {
     buttons.unshift(
-        <Localized id="mobileDialogLaunchButton">
+      <Localized id="mobileDialogLaunchButton">
         <a
-      className="button default"
-      onClick={doShowMobileAppDialog}>Send App Link to Device</a>
-        </Localized>
+          className="button default"
+          onClick={doShowMobileAppDialog}>Send App Link to Device</a>
+      </Localized>
     );
   }
 
