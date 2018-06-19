@@ -16,7 +16,6 @@ const COUNTRY_CODE_ENDPOINT = "https://www.mozilla.org/country-code.json";
 /* TODO:
 - fix "mobile experiment" logic to include "ios" and "android" when only 1 is present.
 - fix input localization
-- learn more notice links
 */
 
 type MobileDialogProps = {
@@ -99,7 +98,7 @@ export default class MobileDialog extends React.Component {
     const headerImg = ios_url ? (<a href={ios_url} target="_blank"><img className="mobile-header-img" src="/static/images/ios.svg"/></a>) : (<a href={android_url} target="_blank"><img className="mobile-header-img" src="/static/images/google-play.png"/></a>);
 
     const learnMore = (<Localized id="mobileDialogNoticeLearnMoreLink">
-      <a target="_blank" rel="noopener noreferrer" href="">Learn More</a>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.mozilla.org/en-US/privacy/websites/#campaigns">Learn More</a>
     </Localized>);
 
     const notice = allowSMS ? (<Localized id="mobileDialogNoticeSMS" $learnMore={learnMore}><p className="notice">SMS service available in select countries only. SMS & data rates may apply. The intended recipient of the email or SMS must have consented. {learnMore}</p></Localized>)
