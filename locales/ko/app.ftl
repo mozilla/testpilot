@@ -14,9 +14,8 @@ footerLinkPrivacy = 개인 정보
 footerLinkTerms = 이용 약관
 footerLinkLegal = 법적 고지
 footerLinkFeedback = 피드백
-footerLinkAbout = Test Pilot에 대하여
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = 홈
 menuTitle = 설정
@@ -50,6 +49,7 @@ landingRequiresDesktop = Windows, Mac 또는 Linux에 깔린 데스크톱용 Fir
 landingDownloadFirefoxDesc = (Windows, Mac 또는 Linux에 깔린 Firefox에서만 Test Pilot을 쓸 수 있음)
 landingUpgradeDesc = Test Pilot은 Firefox 49 이상에서만 쓸 수 있습니다.
 landingUpgradeDesc2 = Test Pilot은 Firefox { $version }나 상위 버전이 필요합니다.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox 업그레이드
 landingDownloadFirefoxSubTitle = 무료 다운로드
@@ -102,7 +102,7 @@ experimentListHeaderWithFeatured = 모든 실험 시도
 experimentCardFeedback = 피드백
 experimentCardManage = 관리
 experimentCardGetStarted = 시작하기
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = 더 알아보기
 
 ## A modal prompt shown when a user disables an experiment.

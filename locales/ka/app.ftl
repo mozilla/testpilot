@@ -14,11 +14,20 @@ footerLinkPrivacy = პირადულობა
 footerLinkTerms = პირობები
 footerLinkLegal = სამართლებრივი საკითხები
 footerLinkFeedback = გამოხმაურება
-footerLinkAbout = Test Pilot-ის შესახებ
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = შესახებ
+footerLinkAboutUs = ჩვენ შესახებ
+footerLinkSupportHeader = მხარდაჭერა
+footerLinkDownload = Firefox ჩამოტვირთვა
+# link to page detailing firefox mobile browser options
+footerLinkMobile = მობილური
+footerLinkFeatures = შესაძლებლობები
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Test Pilot ამოშლა
 
-## Items in the menu.
+## Items in the menu and footer
 
-home = მთავარი
+home = საწყისი გვერდი
 menuTitle = პარამეტრები
 menuWiki = Test Pilot Wiki
 menuDiscuss = Test Pilot განხილვა
@@ -31,7 +40,7 @@ headerLinkBlog = სვეტი
 landingIntroOne = გამოცადეთ ახალი შესაძლებლობები.
 landingIntroTwo = გამოგვეხმაურეთ.
 landingIntroThree = დაგვეხმარეთ Firefox-ის გაუმჯობესებაში.
-landingLegalNotice = გაეცანით Test Pilot-ის <a>გამოყენების პირობებსა</a> და <a>პირადულობის დებულებას</a>
+landingLegalNotice = გაგრძელების შემთხვევაში, თქვენ ეთანხმებით Test Pilot-ის <a>გამოყენების პირობებსა</a> და <a>პირადი მონაცემების დაცვის განაცხადს</a>.
 landingMoreExperimentsButton = სხვა საცდელი პროექტები
 
 ## Related to the installation of the Test Pilot add-on.
@@ -51,6 +60,7 @@ landingRequiresDesktop = Test Pilot-ის გამოსაყენებლ�
 landingDownloadFirefoxDesc = (Test Pilot ხელმისაწვდომია Firefox-ზე, Windows, OS X და Linux სისტემებისთვის)
 landingUpgradeDesc = Test Pilot საჭიროებს Firefox 49 ან უფრო ახალ ვერსიას.
 landingUpgradeDesc2 = Test Pilot საჭიროებს Firefox { $version } ან უფრო ახალ ვერსიას.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = განაახლეთ Firefox
 landingDownloadFirefoxSubTitle = უფასო ჩამოტვირთვა
@@ -90,7 +100,7 @@ moreDetail = დაწვრილებით
 ## A listing of all Test Pilot experiments.
 
 experimentListEnabledTab = ჩართულია
-experimentListJustLaunchedTab = ახლახან გაეშვა
+experimentListJustLaunchedTab = ახლახან გაშვებული
 experimentListJustUpdatedTab = ახლახან განახლდა
 experimentListEndingTomorrow = სრულდება ხვალ
 experimentListEndingSoon = სრულდება მალე
@@ -104,7 +114,7 @@ experimentListHeaderWithFeatured = გამოცადეთ ყველა �
 experimentCardFeedback = გამოხმაურება
 experimentCardManage = მართვა
 experimentCardGetStarted = დაწყება
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = ვრცლად
 
 ## A modal prompt shown when a user disables an experiment.
@@ -130,6 +140,8 @@ experimentPromoSubheader = ჩვენ ვქმნით ახალი თ�
 
 isEnabledStatusMessage = { $title } ჩართულია.
 installErrorMessage = ოჰ არა. { $title } პროექტის ჩართვა ვერ ხერხდება. სცადეთ მოგვიანებით.
+wrongPlatformIOS = ეს საცდელი შესაძლებლობა მხოლოდ iOS მოწყობილობებზეა ხელმისაწვდომი.
+wrongPlatformAndroid = ეს საცდელი შესაძლებლობა მხოლოდ Android მოწყობილობებზეა ხელმისაწვდომი.
 otherExperiments = ეს პროექტებიც გამოსცადეთ
 giveFeedback = გამოგვეხმაურეთ
 disableHeader = გსურთ საცდელი პროექტის გამორთვა?
@@ -146,11 +158,11 @@ contributorsExtraLearnMore = ვრცლად
 changelog = ცვლილებები
 tour = გზამკვლევი
 tourLink = გზამკვლევის გაშვება
-contribute = შემოწირულობა
+contribute = წვლილის შეტანა
 bugReports = ხარვეზების შესახებ მოხსენება
 discussExperiment = { $title } განხილვა
 tourDoneButton = კარგი
-userCountContainerAlt = ახლახან გაეშვა!
+userCountContainerAlt = ახლახან გაშვებული!
 highlightPrivacy = პირადულობის დაცვის შესახებ
 experimentGradReportButton = საბოლოო მოხსენება
 experimentGradReportPendingTitle = ეს საცდელი პროექტი დასრულებულია
@@ -183,7 +195,7 @@ versionChangeNoticeLink = გადმოწერეთ Firefox-ის მი�
 ## Shown while uninstalling Test Pilot.
 
 retireDialogTitle = გსურთ Test Pilot-ის წაშლა?
-retireMessageUpdate = როგორც გენებოთ. Test Pilot ამოიშლება. შეგიძლიათ, ცალკეული საცდელი შესაძლებლობების ამოშლაც, დამატებების მმართველიდან.
+retireMessageUpdate = როგორც გენებოთ. Test Pilot ამოიშლება. ცალკეული საცდელი შესაძლებლობების ამოშლა შეგეძლებათ დამატებების მმართველიდან.
 retireEmailMessage = ელფოსტაზე მოსული სიახლეების შესაწყვეტად, უბრალოდ დააწკაპეთ <em>გამოწერის გაუქმების</em> ბმულს, Test Pilot-ისგან გამოგზავნილ წერილში.
 retireSubmitButton = გაგრძელება
 pageTitleRetirePage = Firefox Test Pilot - Test Pilot-ის ამოშლა

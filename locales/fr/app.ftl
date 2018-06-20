@@ -14,9 +14,18 @@ footerLinkPrivacy = Confidentialité
 footerLinkTerms = Conditions
 footerLinkLegal = Mentions légales
 footerLinkFeedback = Donner votre avis
-footerLinkAbout = À propos de Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = À propos
+footerLinkAboutUs = À propos de nous
+footerLinkSupportHeader = Assistance
+footerLinkDownload = Télécharger Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobile
+footerLinkFeatures = Fonctionnalités
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Désinstaller Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Accueil
 menuTitle = Paramètres
@@ -51,6 +60,7 @@ landingRequiresDesktop = Pour utiliser Test Pilot il vous faut Firefox pour ordi
 landingDownloadFirefoxDesc = (Test Pilot est disponible pour Firefox sous Windows, OS X et Linux)
 landingUpgradeDesc = Test Pilot nécessite Firefox 49 ou supérieur.
 landingUpgradeDesc2 = Test Pilot nécessite Firefox { $version } ou supérieur.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Mettez Firefox à jour
 landingDownloadFirefoxSubTitle = Téléchargement gratuit
@@ -96,7 +106,7 @@ experimentListEndingTomorrow = Se termine demain
 experimentListEndingSoon = Se termine bientôt
 experimentCondensedHeader = Bienvenue sur Test Pilot !
 experimentListHeader = Choisissez vos expériences !
-experimentListHeaderWithFeatured = Essayer l’ensemble des expériences
+experimentListHeaderWithFeatured = Essayez l’ensemble des expériences
 
 ## An individual experiment in the listing of all Test Pilot experiments.
 
@@ -104,7 +114,7 @@ experimentListHeaderWithFeatured = Essayer l’ensemble des expériences
 experimentCardFeedback = Réagir
 experimentCardManage = Gérer
 experimentCardGetStarted = Lancez-vous
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Apprenez-en davantage
 
 ## A modal prompt shown when a user disables an experiment.
@@ -127,6 +137,8 @@ experimentPromoSubheader = Nous élaborons les fonctionnalités de prochaine gé
 
 isEnabledStatusMessage = { $title } est activé.
 installErrorMessage = Hum… { $title } n’a pas pu être activé. Réessayez plus tard.
+wrongPlatformIOS = Cette expérience est uniquement disponible pour les appareils iOS.
+wrongPlatformAndroid = Cette expérience est uniquement disponible pour les appareils Android.
 otherExperiments = Essayez aussi ces autres expériences
 giveFeedback = Faites-nous part de vos observations
 disableHeader = Désactiver l’expérience ?
@@ -142,7 +154,7 @@ contributorsHeading = Conçu et réalisé par
 contributorsExtraLearnMore = En savoir plus
 changelog = Notes de version
 tour = Visite guidée
-tourLink = visite guidée
+tourLink = Visite guidée
 contribute = Participer
 bugReports = Rapports de bogues
 discussExperiment = Discuter de { $title }

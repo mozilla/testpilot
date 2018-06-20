@@ -14,9 +14,8 @@ footerLinkPrivacy = Privatësi
 footerLinkTerms = Kushte
 footerLinkLegal = Ligjore
 footerLinkFeedback = Jepni Përshtypjet
-footerLinkAbout = Rreth Pilotit të Testeve
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Kreu
 menuTitle = Rregullime
@@ -51,6 +50,7 @@ landingRequiresDesktop = Piloti i Testeve lyp Firefox për Desktop në Windows, 
 landingDownloadFirefoxDesc = (Pilot i Testeve mund të përdoret te Firefox-i në Windows, OS X dhe Linux)
 landingUpgradeDesc = Piloti i testeve lyp Firefox 49 ose më të ri.
 landingUpgradeDesc2 = Piloti i Testeve lyp Firefox { $version } ose më të ri.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Përmirësojeni Firefox-in
 landingDownloadFirefoxSubTitle = Shkarkim Falas
@@ -104,7 +104,7 @@ experimentListHeaderWithFeatured = Provoni krejt eksperimentet tona
 experimentCardFeedback = Përshtypje
 experimentCardManage = Administroni
 experimentCardGetStarted = Si T’ia Fillohet
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Mësoni Më Tepër
 
 ## A modal prompt shown when a user disables an experiment.

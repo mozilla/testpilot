@@ -14,9 +14,18 @@ footerLinkPrivacy = Súkromie
 footerLinkTerms = Podmienky používania
 footerLinkLegal = Právne informácie
 footerLinkFeedback = Poskytnúť spätnú väzbu
-footerLinkAbout = O projekte Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = O nás
+footerLinkAboutUs = O nás
+footerLinkSupportHeader = Podpora
+footerLinkDownload = Prevziať Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobilné zariadenia
+footerLinkFeatures = Funkcie
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Odinštalovať Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Domov
 menuTitle = Nastavenia
@@ -25,7 +34,6 @@ menuDiscuss = Diskusia o Test Pilote
 menuFileIssue = Nahlásiť chybu
 menuRetire = Odinštalovať Test Pilot
 headerLinkBlog = Blog
-headerLinkNews = Novinky
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = Test Pilot vyžaduje Firefox pre počítače v systéme
 landingDownloadFirefoxDesc = (Test Pilot je dostupný pre Firefox pre Windows, OS X a Linux)
 landingUpgradeDesc = Test Pilot vyžaduje Firefox 49 alebo novší.
 landingUpgradeDesc2 = Test Pilot vyžaduje Firefox { $version } alebo novší.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Aktualizovať Firefox
 landingDownloadFirefoxSubTitle = Prevziať zadarmo
@@ -84,13 +93,6 @@ emailOptInConfirmationTitle = E-mail bol odoslaný
 emailOptInConfirmationClose = Prejsť na experimenty...
 emailOptInDialogErrorTitle = Ale nie!
 
-## News feed updates.
-
-latestUpdatesTitle = Najnovšie aktualizácie
-showMoreNewsTitle = Zobraziť predchádzajúce novinky
-# "Link" is a noun in this context
-englishArticleLink = Odkaz na článok v angličtine
-
 ## Featured experiment.
 
 moreDetail = Zobraziť podrobnosti
@@ -112,7 +114,7 @@ experimentListHeaderWithFeatured = Vyskúšajte všetky naše experimenty
 experimentCardFeedback = Spätná väzba
 experimentCardManage = Spravovať
 experimentCardGetStarted = Aktivovať
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Ďalšie informácie
 
 ## A modal prompt shown when a user disables an experiment.
@@ -138,6 +140,8 @@ experimentPromoSubheader = Tvoríme funkcie novej generácie pre Firefox. Nainš
 
 isEnabledStatusMessage = Experiment { $title } je aktivovaný!
 installErrorMessage = Ojoj. Experiment { $title } nemohol byť aktivovaný. Skúste to znova neskôr.
+wrongPlatformIOS = Tento experiment je dostupný len pre zariadenia s iOS.
+wrongPlatformAndroid = Tento experiment je dostupný len pre zariadenia s Androidom.
 otherExperiments = Vyskúšajte aj tieto experimenty
 giveFeedback = Poskytnúť spätnú väzbu
 disableHeader = Ukončiť experiment?

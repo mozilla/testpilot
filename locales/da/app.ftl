@@ -14,9 +14,8 @@ footerLinkPrivacy = Privatlivspolitik
 footerLinkTerms = Betingelser
 footerLinkLegal = Juridisk
 footerLinkFeedback = Giv feedback
-footerLinkAbout = Om Testpilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Start
 menuTitle = Indstillinger
@@ -25,7 +24,6 @@ menuDiscuss = Diskuter Testpilot
 menuFileIssue = Rapportér et problem
 menuRetire = Afinstaller Testpilot
 headerLinkBlog = Blog
-headerLinkNews = Nyhedsstrøm
 
 ## The splash on the homepage.
 
@@ -52,6 +50,7 @@ landingRequiresDesktop = Testpilot kræver Firefox til Windows, Mac eller Linux
 landingDownloadFirefoxDesc = (Testpilot er tilgængelig til Firefox til Windows, OS X og Linux)
 landingUpgradeDesc = Testpilot kræver Firefox 49 eller nyere.
 landingUpgradeDesc2 = Testpilot kræver Firefox { $version } eller nyere.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Opgrader Firefox
 landingDownloadFirefoxSubTitle = Gratis download
@@ -84,13 +83,6 @@ emailOptInConfirmationTitle = Mail sendt
 emailOptInConfirmationClose = Videre til eksperimenterne...
 emailOptInDialogErrorTitle = Åh nej!
 
-## News feed updates.
-
-latestUpdatesTitle = Seneste opdateringer
-showMoreNewsTitle = Vis ældre nyheder
-# "Link" is a noun in this context
-englishArticleLink = Link til artikel på engelsk
-
 ## Featured experiment.
 
 moreDetail = Se flere oplysninger
@@ -112,7 +104,7 @@ experimentListHeaderWithFeatured = Prøv alle vores eksperimenter
 experimentCardFeedback = Feedback
 experimentCardManage = Håndter
 experimentCardGetStarted = Kom i gang
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Læs mere
 
 ## A modal prompt shown when a user disables an experiment.
