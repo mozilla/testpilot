@@ -114,7 +114,7 @@ experimentListHeaderWithFeatured = Prueba todos nuestros experimentos
 experimentCardFeedback = Comentarios
 experimentCardManage = Gestionar
 experimentCardGetStarted = Empezar
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Aprender más
 
 ## A modal prompt shown when a user disables an experiment.
