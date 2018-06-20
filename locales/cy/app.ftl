@@ -114,7 +114,7 @@ experimentListHeaderWithFeatured = Profwch ein arbrofion i gyd
 experimentCardFeedback = Adborth
 experimentCardManage = Rheoli
 experimentCardGetStarted = Cychwyn Arni
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Dysgu Rhagor
 
 ## A modal prompt shown when a user disables an experiment.
