@@ -112,7 +112,7 @@ experimentListHeaderWithFeatured = Zkuste všechny naše experimenty
 experimentCardFeedback = Zpětná vazba
 experimentCardManage = Správa
 experimentCardGetStarted = Jdeme na to
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Zjistit více
 
 ## A modal prompt shown when a user disables an experiment.
