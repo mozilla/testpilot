@@ -101,7 +101,7 @@ experimentListHeader = Velg dine eksperiment!
 experimentCardFeedback = Tilbakemelding
 experimentCardManage = Administrer
 experimentCardGetStarted = Kom i gang
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Les mer
 
 ## A modal prompt shown when a user disables an experiment.
