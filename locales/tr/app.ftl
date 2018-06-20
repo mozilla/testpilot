@@ -114,7 +114,7 @@ experimentListHeaderWithFeatured = Tüm deneylerimizi deneyin
 experimentCardFeedback = Geri bildirim
 experimentCardManage = Yönet
 experimentCardGetStarted = Bunu deneyin
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Daha fazla bilgi al
 
 ## A modal prompt shown when a user disables an experiment.
