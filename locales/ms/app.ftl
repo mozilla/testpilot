@@ -114,7 +114,7 @@ experimentListHeaderWithFeatured = Cuba semua eksperimen kami
 experimentCardFeedback = Maklum balas
 experimentCardManage = Urus
 experimentCardGetStarted = Mulakan
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Ketahui Selanjutnya
 
 ## A modal prompt shown when a user disables an experiment.
