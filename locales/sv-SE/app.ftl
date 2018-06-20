@@ -114,7 +114,7 @@ experimentListHeaderWithFeatured = Testa alla våra experiment
 experimentCardFeedback = Återkoppling
 experimentCardManage = Hantera
 experimentCardGetStarted = Kom igång
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Läs mer
 
 ## A modal prompt shown when a user disables an experiment.
