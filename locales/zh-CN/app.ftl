@@ -114,7 +114,7 @@ experimentListHeaderWithFeatured = 试试我们的各种实验
 experimentCardFeedback = 反馈
 experimentCardManage = 管理
 experimentCardGetStarted = 了解详情
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = 详细了解
 
 ## A modal prompt shown when a user disables an experiment.
