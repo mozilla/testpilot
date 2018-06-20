@@ -114,7 +114,7 @@ experimentListHeaderWithFeatured = Probearje al ús eksperiminten
 experimentCardFeedback = Kommentaar
 experimentCardManage = Beheare
 experimentCardGetStarted = Oan de slach
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Mear ynfo
 
 ## A modal prompt shown when a user disables an experiment.
