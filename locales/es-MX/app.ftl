@@ -243,7 +243,7 @@ newsletterFooterSuccessBody = Tienes que confirmar la suscripción a un boletín
 ## A warning shown to users when the experiment is not available in their language
 
 localeNotTranslatedWarningTitle = No se ha traducido este experimento a tu idioma ({ $locale_code }).
-localeWarningSubtitle = Si quieres, todavía puedes activarlo.
+localeWarningSubtitle = Aún puedes habilitarlo si quieres.
 
 ## An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 
