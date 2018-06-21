@@ -14,6 +14,16 @@ footerLinkPrivacy = Απόρρητο
 footerLinkTerms = Όροι
 footerLinkLegal = Νομικά
 footerLinkFeedback = Αποστολή σχολίων
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Σχετικά
+footerLinkAboutUs = Σχετικά με εμάς
+footerLinkSupportHeader = Υποστήριξη
+footerLinkDownload = Λήψη του Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Κινητό τηλέφωνο
+footerLinkFeatures = Χαρακτηριστικά
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Απεγκατάσταση του Test Pilot
 
 ## Items in the menu and footer
 
@@ -31,6 +41,7 @@ landingIntroOne = Δοκιμάστε νέες λειτουργίες.
 landingIntroTwo = Υποβάλετε τα σχόλιά σας.
 landingIntroThree = Βοηθήστε στην ανάπτυξη του Firefox.
 landingLegalNotice = Συνεχίζοντας, συμφωνείτε με τους <a>όρους χρήσης</a> και τη <a>σημείωση απορρήτου</a> του Test Pilot.
+landingMoreExperimentsButton = Περισσότερα πειράματα
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -84,6 +95,7 @@ emailOptInDialogErrorTitle = Ωχ όχι!
 
 ## Featured experiment.
 
+moreDetail = Προβολή λεπτομερειών
 
 ## A listing of all Test Pilot experiments.
 
@@ -94,6 +106,7 @@ experimentListEndingTomorrow = Λήγει αύριο
 experimentListEndingSoon = Λήγει σύντομα
 experimentCondensedHeader = Καλώς ορίσατε στο Test Pilot!
 experimentListHeader = Επιλέξτε τα πειράματά σας!
+experimentListHeaderWithFeatured = Δοκιμάστε όλα τα πειράματά μας
 
 ## An individual experiment in the listing of all Test Pilot experiments.
 
@@ -127,6 +140,8 @@ experimentPromoSubheader = Αναπτύσσουμε καινοτόμες λει�
 
 isEnabledStatusMessage = Το { $title } ενεργοποιήθηκε.
 installErrorMessage = Ωχ ωχ. Αδυναμία ενεργοποίησης του { $title }. Δοκιμάστε ξανά αργότερα.
+wrongPlatformIOS = Αυτό το πείραμα είναι διαθέσιμο μόνο για συσκευές iOS.
+wrongPlatformAndroid = Αυτό το πείραμα είναι διαθέσιμο μόνο για συσκευές Android.
 otherExperiments = Δοκιμάστε κι αυτά τα πειράματα
 giveFeedback = Υποβολή σχολίων
 disableHeader = Απενεργοποίηση πειράματος;
