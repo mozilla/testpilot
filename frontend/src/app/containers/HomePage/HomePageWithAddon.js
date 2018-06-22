@@ -18,6 +18,7 @@ import LocalizedHtml from '../../components/LocalizedHtml';
 import NewsUpdatesDialog from '../../components/NewsUpdatesDialog';
 import type { InstalledExperiments } from '../../reducers/addon';
 import { getBreakpoint } from "../App";
+import { subscribeToBasketSMS } from "../../lib/utils";
 
 type HomePageWithAddonProps = {
   hasAddon: any,

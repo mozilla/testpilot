@@ -82,6 +82,26 @@ emailOptInConfirmationTitle = Email Sent
 emailOptInConfirmationClose = On to the experiments...
 emailOptInDialogErrorTitle = Oh no!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+mobileDialogLaunchButton = Send App Link to Device
+mobileDialogTitle = Get the App
+mobileDialogMessageIOS = Download <b>{$title}</b> from the iOS App Store.
+mobileDialogMessageAndroid = Download <b>{$title}</b> from the Google Play Store.
+mobileDialogInstructionsSMS = Enter your phone number or email to send a download link to your phone:
+mobileDialogInstructions = Enter your email to send a download link to your phone:
+mobileDialogPlaceholder = Enter your Email
+mobileDialogPlaceholderSMS = Enter your Phone/Email
+mobileDialogButton = Send me the Download Link
+mobileDialogButtonSuccess = Thanks!
+mobileDialogSuccessMain = Download link sent!
+mobileDialogSuccessSecondarySMS = Check your device for the email or text message.
+mobileDialogSuccessSecondary = Check your device for the email.
+mobileDialogAnotherDeviceLink = Send to another device
+mobileDialogError = Enter a valid email:
+mobileDialogErrorSMS = Enter a valid phone number or email:
+mobileDialogNoticeSMS = SMS service available in select countries only. SMS & data rates may apply. The intended recipient of the email or SMS must have consented. {$learnMore}
+mobileDialogNotice = The intended recipient of the email must have consented. {$learnMore}
+
 ## Featured experiment.
 moreDetail = View details
 
