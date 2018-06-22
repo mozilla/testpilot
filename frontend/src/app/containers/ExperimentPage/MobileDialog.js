@@ -11,18 +11,12 @@ import Loading from "../../components/Loading";
 
 import { subscribeToBasket, subscribeToBasketSMS, acceptedSMSCountries } from "../../lib/utils";
 
-const COUNTRY_CODE_ENDPOINT = "https://www.mozilla.org/country-code.json";
-
-/* TODO:
-- fix "mobile experiment" logic to include "ios" and "android" when only 1 is present.
-- fix input localization
-*/
-
 type MobileDialogProps = {
   getWindowLocation: Function,
   onCancel: Function,
   sendToGA: Function,
-  experiment: Object
+  experiment: Object,
+  fetchCountryCode: Function
 }
 
 type MobileDialogState = {
@@ -62,29 +56,18 @@ export default class MobileDialog extends React.Component {
   }
 
   fetchCountryCode() {
-    // we use XMLHttpRequest here over fetch, because of issues with
-    // the country code endpoint not being parse correctly with
-    // fetch() for some reason I haven't figured out yet.
-    const req = new XMLHttpRequest();
-    req.onerror = (e) => {
-      this.setState({ loading: false });
-    };
-
-    req.onload = (e) => {
-      // $FlowFixMe - EventTarget type is missing response property
-      const country = e.target.response.country_code;
-      if (acceptedSMSCountries.includes(country)) {
-        this.setState({
-          loading: false,
-          allowSMS: true,
-          // $FlowFixMe - EventTarget type is missing response property
-          country: e.target.response.country_code
-        });
-      } else this.setState({ loading: false });
-    };
-    req.open("GET", COUNTRY_CODE_ENDPOINT);
-    req.responseType = "json";
-    req.send();
+    this.props.fetchCountryCode()
+      .then((resp) => resp.json())
+      .then((data) => {
+        const country = data.country_code;
+        if (acceptedSMSCountries.includes(country)) {
+          this.setState({
+            loading: false,
+            allowSMS: true,
+            country: country
+          });
+        } else this.setState({ loading: false });
+      }).catch((e) => this.setState({ loading: false }));
   }
 
   render() {

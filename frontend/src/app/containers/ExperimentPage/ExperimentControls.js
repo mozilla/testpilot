@@ -4,12 +4,6 @@ import { Localized } from "fluent-react/compat";
 import LocalizedHtml from "../../components/LocalizedHtml";
 import { experimentL10nId, isMobile } from "../../lib/utils";
 
-/* TODO
-   - send to device button should be first and '.default' if no web option
-   - should be secondary if 'web' is also an option
-   - make sure that "download on the app store" is primary and first in list on mobile
- */
-
 import type {
   ExperimentControlsType,
   WebExperimentControlsType,

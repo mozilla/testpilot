@@ -67,7 +67,8 @@ import RestartPage from "../RestartPage";
 import UpgradeWarningPage from "../UpgradeWarningPage";
 import Loading from "../../components/Loading";
 import {
-  shouldOpenInNewTab
+  shouldOpenInNewTab,
+  fetchCountryCode
 } from "../../lib/utils";
 import {
   makeNewsUpdatesForDialogSelector
@@ -325,12 +326,9 @@ const mapStateToProps = state => ({
   addon: state.addon,
   clientUUID: state.addon.clientUUID,
   experiments: experimentSelector(state),
-  featuredExperiments: featuredExperimentsSelectorWithL10n(state),
   experimentsWithoutFeatured: experimentsWithoutFeaturedSelectorWithL10n(state),
-  majorNewsUpdates: makeNewsUpdatesForDialogSelector(
-    cookies.get("updates-last-viewed-date"),
-    Date.now()
-  )(state),
+  featuredExperiments: featuredExperimentsSelectorWithL10n(state),
+  fetchCountryCode: fetchCountryCode,
   getExperimentBySlug: slug =>
     getExperimentBySlug(state.experiments, slug),
   hasAddon: state.addon.hasAddon,
@@ -351,6 +349,10 @@ const mapStateToProps = state => ({
   userAgent: state.browser.userAgent,
   locale: state.browser.locale,
   localizations: localizationsSelector(state),
+  majorNewsUpdates: makeNewsUpdatesForDialogSelector(
+    cookies.get("updates-last-viewed-date"),
+    Date.now()
+  )(state),
   negotiatedLanguages: negotiatedLanguagesSelector(state),
   newsletterForm: state.newsletterForm,
   protocol: state.browser.protocol,

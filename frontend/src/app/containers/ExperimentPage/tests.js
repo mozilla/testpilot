@@ -831,7 +831,12 @@ describe("app/containers/ExperimentPage/MobileDialog", () => {
       key: "Escape"
     };
     subject = shallow(
-      <MobileDialog experiment={experiment} onCancel={onCancel} sendToGA={sendToGA} />
+      <MobileDialog experiment={experiment} onCancel={onCancel} sendToGA={sendToGA}
+        fetchCountryCode={() => {
+          return Promise.resolve({json: () => {
+            return {country_code: "US"};
+          }});
+        }} />
     );
   });
 
