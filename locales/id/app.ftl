@@ -16,8 +16,12 @@ footerLinkLegal = Legal
 # This is a header displayed above a set of links about Mozilla and Test Pilot
 footerLinkAboutHeader = Tentang
 footerLinkAboutUs = Tentang kami
+footerLinkSupportHeader = Dukungan
 footerLinkDownload = Unduh Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Seluler
 footerLinkFeatures = Fitur
+footerLinkRetire = Copot Test Pilot
 
 ## Items in the menu and footer
 
@@ -88,6 +92,7 @@ emailOptInDialogErrorTitle = Oh tidak!
 
 ## Featured experiment.
 
+moreDetail = Lihat detail
 
 ## A listing of all Test Pilot experiments.
 
