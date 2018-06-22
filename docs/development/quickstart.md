@@ -57,13 +57,6 @@ you should be on your way:
 
    1. Type `about:config` in the URL bar, acknowledge the warning that appears.
 
-   1. Right click the list of preferences to summon a menu, pick New > String
-      to create a new preference.
-
-   1. Enter `testpilot.env` for the name.
-
-   1. Enter `local` for the value.
-
    1. Right click the list of preferences to summon a menu, pick New > Boolean
       to create a new preference.
 

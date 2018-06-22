@@ -15,7 +15,7 @@ const TWO_WEEKS = 2 * 7 * ONE_DAY;
 
 /* browser action constants */
 const BROWSER_ACTION_LINK_BASE = [
-  "/experiments",
+  "experiments",
   "?utm_source=testpilot-addon",
   "&utm_medium=firefox-browser",
   "&utm_campaign=testpilot-doorhanger"
@@ -99,7 +99,7 @@ function fetchResources() {
   log("fetchResources");
   return Promise.all(
     Object.keys(resources).map(path =>
-      fetch(`${currentEnvironment.baseUrl}/api/${path}.json`)
+      fetch(`${currentEnvironment.baseUrl}api/${path}.json`)
         .then(res => res.json())
         .then((data) => data.results ? data.results : data)
         .then((data) => [path, data])
