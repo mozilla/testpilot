@@ -124,6 +124,8 @@ contributors:
 
 measurements:
   - >
-    REMOVE ME
+    Firefox Lockbox allows Firefox Accounts users to access the login and password information on mobile phones, outside any browser, by using Firefox Sync.
+  - >
+    Firefox Lockbox may also collect interaction data and technical data.
 
 privacy_notice_url: 'https://lockbox.firefox.com/privacy.html'
