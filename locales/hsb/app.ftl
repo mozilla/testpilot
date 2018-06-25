@@ -14,9 +14,18 @@ footerLinkPrivacy = Priwatnosć
 footerLinkTerms = Wužiwarske wuměnjenja
 footerLinkLegal = Prawniske
 footerLinkFeedback = Komentar pósłać
-footerLinkAbout = Wo Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Wo
+footerLinkAboutUs = Wo nas
+footerLinkSupportHeader = Podpěra
+footerLinkDownload = Firefox sćahnyć
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobilne graty
+footerLinkFeatures = Funkcije
+footerLinkBeta = Beta, Nightly, wuwiwarska edicija
+footerLinkRetire = Test Pilot wotinstalować
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Startowa strona
 menuTitle = Nastajenja
@@ -25,7 +34,6 @@ menuDiscuss = Wo Test Pilot diskutować
 menuFileIssue = Problem zdźělić
 menuRetire = Test Pilot wotinstalować
 headerLinkBlog = Blog
-headerLinkNews = Powěsće
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = Test Pilot sej Firefox za desktop na Windows, Mac abo L
 landingDownloadFirefoxDesc = (Test Pilot je za Firefox na Windows, OS X a Linux k dispoziciji)
 landingUpgradeDesc = Test Pilot sej Firefox 49 abo nowši wužaduje.
 landingUpgradeDesc2 = Test Pilot sej Firefox { $version } abo nowši wužaduje.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox aktualizować
 landingDownloadFirefoxSubTitle = Darmotne sćehnjenje
@@ -84,13 +93,6 @@ emailOptInConfirmationTitle = E-mejlka je so pósłała
 emailOptInConfirmationClose = Dale k eksperimentam...
 emailOptInDialogErrorTitle = Ow ně!
 
-## News feed updates.
-
-latestUpdatesTitle = Najnowše aktualizacije
-showMoreNewsTitle = Zańdźene nowinki pokazać
-# "Link" is a noun in this context
-englishArticleLink = Wotkaz k jendźelskemu nastawkej
-
 ## Featured experiment.
 
 moreDetail = Podrobnosće pokazać
@@ -112,7 +114,7 @@ experimentListHeaderWithFeatured = Wupruwujće wšě naše eksperimenty
 experimentCardFeedback = Komentary
 experimentCardManage = Rjadować
 experimentCardGetStarted = Start
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Dalše informacije
 
 ## A modal prompt shown when a user disables an experiment.
@@ -135,6 +137,8 @@ experimentPromoSubheader = Wuwiwamy funkcije přichodneje generacije za Firefox.
 
 isEnabledStatusMessage = { $title } je zmóžnjeny.
 installErrorMessage = Ow, ow. { $title } njeda so zmóžnić. Spytajće pozdźišo hišće raz.
+wrongPlatformIOS = Tutón eksperiment je jenož za graty iOS k dispoziciji.
+wrongPlatformAndroid = Tutón eksperiment je jenož za graty Android k dispoziciji.
 otherExperiments = Wobhladajće sej tež slědowace eksperimenty
 giveFeedback = Prajće swoje měnjenje
 disableHeader = Eksperiment znjemóžnić?

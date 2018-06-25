@@ -14,9 +14,18 @@ footerLinkPrivacy = 隐私
 footerLinkTerms = 条款
 footerLinkLegal = 法律
 footerLinkFeedback = 提供反馈
-footerLinkAbout = 关于 Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = 关于
+footerLinkAboutUs = 关于我们
+footerLinkSupportHeader = 支持
+footerLinkDownload = 下载 Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = 移动端
+footerLinkFeatures = 功能
+footerLinkBeta = Beta、Nightly、Developer 版本
+footerLinkRetire = 卸载 Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = 首页
 menuTitle = 设置
@@ -51,6 +60,7 @@ landingRequiresDesktop = Test Pilot 需要在 Windows、Mac 或 Linux 上的 Fir
 landingDownloadFirefoxDesc = （Test Pilot 可用于 Windows、Mac 或 Linux 上运行的 Firefox）
 landingUpgradeDesc = Test Pilot 需要 Firefox 49 或更高版本。
 landingUpgradeDesc2 = Test Pilot 需要 Firefox { $version } 或更高版本。
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = 升级 Firefox
 landingDownloadFirefoxSubTitle = 免费下载
@@ -104,7 +114,7 @@ experimentListHeaderWithFeatured = 试试我们的各种实验
 experimentCardFeedback = 反馈
 experimentCardManage = 管理
 experimentCardGetStarted = 了解详情
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = 详细了解
 
 ## A modal prompt shown when a user disables an experiment.
@@ -127,6 +137,8 @@ experimentPromoSubheader = 我们正在为下一代的 Firefox 打造新功能�
 
 isEnabledStatusMessage = { $title } 已启用。
 installErrorMessage = 啊。{ $title } 未能启用。请稍候重试。
+wrongPlatformIOS = 该实验仅适用于 iOS 设备。
+wrongPlatformAndroid = 该实验仅适用于 Android 设备。
 otherExperiments = 也试试这些实验吧
 giveFeedback = 提供反馈
 disableHeader = 禁用实验？

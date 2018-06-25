@@ -26,7 +26,8 @@ export default function ExperimentControls({
   doShowPreFeedbackDialog,
   flashMeasurementPanel,
   sendToGA,
-  surveyURL
+  surveyURL,
+  doShowMobileAppDialog
 }: ExperimentControlsType) {
   const {
     title,
@@ -84,6 +85,7 @@ export default function ExperimentControls({
     userAgent,
     validVersion
   })).filter(b => b);
+
   if (enabled) {
     if (!graduated) {
       buttons.unshift(
@@ -125,7 +127,20 @@ export default function ExperimentControls({
       );
     }
   }
-  const controls = <div className="experiment-controls">{buttons}</div>;
+
+  if (platforms.includes("ios") || platforms.includes("android")) {
+    buttons.unshift(
+      <Localized id="mobileDialogLaunchButton">
+        <a
+          className="button default"
+          onClick={doShowMobileAppDialog}>Send App Link to Device</a>
+      </Localized>
+    );
+  }
+
+  const controls = <div className="experiment-controls">
+    {buttons}
+  </div>;
 
   const showLegal = buttons.length > 0 && !graduated;
   let legalSection = null;

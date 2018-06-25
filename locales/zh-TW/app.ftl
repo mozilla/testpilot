@@ -14,9 +14,18 @@ footerLinkPrivacy = 隱私權
 footerLinkTerms = 使用條款
 footerLinkLegal = 法律
 footerLinkFeedback = 提供意見回饋
-footerLinkAbout = 關於 Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = 關於
+footerLinkAboutUs = 關於我們
+footerLinkSupportHeader = 技術支援
+footerLinkDownload = 下載 Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = 行動版
+footerLinkFeatures = 功能
+footerLinkBeta = Beta、Nightly、Developer Edition
+footerLinkRetire = 移除 Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = 首頁
 menuTitle = 設定
@@ -25,7 +34,6 @@ menuDiscuss = 討論 Test Pilot
 menuFileIssue = 回報問題
 menuRetire = 移除 Test Pilot
 headerLinkBlog = 部落格
-headerLinkNews = 新聞來源
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = 需要使用 Windows、Mac 或 Linux 的 Firefox 才能
 landingDownloadFirefoxDesc = （Test Pilot 可供 Windows、OS X 及 Linux 版 Firefox 使用）
 landingUpgradeDesc = 需要安裝 Firefox 49 或更新版本才能使用 Test Pilot。
 landingUpgradeDesc2 = 需使用 Firefox { $version } 或更新版，才能使用 Test Pilot。
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = 升級 Firefox
 landingDownloadFirefoxSubTitle = 免費下載
@@ -84,13 +93,6 @@ emailOptInConfirmationTitle = 已寄出郵件
 emailOptInConfirmationClose = 繼續前往實驗內容…
 emailOptInDialogErrorTitle = 糟糕！
 
-## News feed updates.
-
-latestUpdatesTitle = 最新消息
-showMoreNewsTitle = 顯示過去新聞
-# "Link" is a noun in this context
-englishArticleLink = 英文文章鏈結
-
 ## Featured experiment.
 
 moreDetail = 檢視細節
@@ -112,7 +114,7 @@ experimentListHeaderWithFeatured = 嘗試我們所有的實驗
 experimentCardFeedback = 意見回饋
 experimentCardManage = 管理
 experimentCardGetStarted = 開始使用
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = 了解更多
 
 ## A modal prompt shown when a user disables an experiment.
@@ -135,6 +137,8 @@ experimentPromoSubheader = 我們正在開發 Firefox 的下一代新功能，�
 
 isEnabledStatusMessage = 已開啟 { $title }。
 installErrorMessage = 唉呀，無法開啟 { $title }。請稍候再試試看。
+wrongPlatformIOS = 此實驗僅提供 iOS 裝置參加。
+wrongPlatformAndroid = 此實驗僅提供 Android 裝置參加。
 otherExperiments = 也試試這些實驗
 giveFeedback = 提供意見回饋
 disableHeader = 要關閉實驗嗎？

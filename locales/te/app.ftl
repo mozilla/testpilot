@@ -14,9 +14,8 @@ footerLinkPrivacy = గోప్యత
 footerLinkTerms = నియమాలు
 footerLinkLegal = చట్టపరమైన
 footerLinkFeedback = అభిప్రాయం తెలియజేయండి
-footerLinkAbout = టెస్ట్ పైలట్ గురించి
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = ముంగిలి
 menuTitle = అమరికలు
@@ -40,6 +39,7 @@ landingInstallingButton = స్థాపించబడుతోంది...
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox నవీకరించు
 landingDownloadFirefoxSubTitle = ఉచిత దింపుకోలు
@@ -67,9 +67,6 @@ emailOptInConfirmationTitle = ఈ-మెయిలు పంపబడింది
 emailOptInConfirmationClose = ప్రయోగాల ఆర౦భ దశ...
 emailOptInDialogErrorTitle = అరెరే!
 
-## News feed updates.
-
-
 ## Featured experiment.
 
 moreDetail = వివరాలను వీక్షించండి
@@ -91,7 +88,7 @@ experimentListHeaderWithFeatured = మా ప్రయోగాలు అన్�
 experimentCardFeedback = అభిప్రాయం
 experimentCardManage = నిర్వహించండి
 experimentCardGetStarted = మొదలుపెట్టండి
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = మరింత తెలుసుకోండి
 
 ## A modal prompt shown when a user disables an experiment.

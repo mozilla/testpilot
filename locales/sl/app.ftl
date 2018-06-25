@@ -14,9 +14,18 @@ footerLinkPrivacy = Zasebnost
 footerLinkTerms = Pogoji
 footerLinkLegal = Pravne informacije
 footerLinkFeedback = Sporočite povratne informacije
-footerLinkAbout = O programu Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Predstavitev
+footerLinkAboutUs = O nas
+footerLinkSupportHeader = Podpora
+footerLinkDownload = Prenesi Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobilnik
+footerLinkFeatures = Značilnosti
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Odstrani Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Domov
 menuTitle = Nastavitve
@@ -25,7 +34,6 @@ menuDiscuss = Razprava o programu Test Pilot
 menuFileIssue = Prijavite težavo
 menuRetire = Odstrani Test Pilot
 headerLinkBlog = Blog
-headerLinkNews = Vir novic
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = Test Pilot zahteva Firefox za namizja in sistem Windows
 landingDownloadFirefoxDesc = (Test Pilot je na voljo za Firefox v sistemih Windows, OS X in Linux)
 landingUpgradeDesc = Test Pilot zahteva Firefox 49 ali novejšega.
 landingUpgradeDesc2 = Test Pilot zahteva Firefox { $version } ali novejšega.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Nadgradi Firefox
 landingDownloadFirefoxSubTitle = Brezplačen prenos
@@ -84,13 +93,6 @@ emailOptInConfirmationTitle = E-poštno sporočilo poslano
 emailOptInConfirmationClose = Naprej na poskuse ...
 emailOptInDialogErrorTitle = O, ne!
 
-## News feed updates.
-
-latestUpdatesTitle = Najnovejše posodobitve
-showMoreNewsTitle = Prikaži pretekle novice
-# "Link" is a noun in this context
-englishArticleLink = Povezava na angleški članek
-
 ## Featured experiment.
 
 moreDetail = Prikaži podrobnosti
@@ -112,7 +114,7 @@ experimentListHeaderWithFeatured = Preizkusite vse naše poskuse
 experimentCardFeedback = Povratne informacije
 experimentCardManage = Upravljaj
 experimentCardGetStarted = Začnite
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Več o tem
 
 ## A modal prompt shown when a user disables an experiment.
@@ -138,6 +140,8 @@ experimentPromoSubheader = Razvijamo funkcije za novo generacijo Firefoxa. Names
 
 isEnabledStatusMessage = { $title } je omogočen.
 installErrorMessage = Ojej. Poskusa { $title } ni mogoče omogočiti. Poskusite znova pozneje.
+wrongPlatformIOS = Ta poskus je na voljo le za naprave iOS.
+wrongPlatformAndroid = Ta poskus je na voljo le za naprave Android.
 otherExperiments = Preskusite tudi te poskuse
 giveFeedback = Sporočite povratne informacije
 disableHeader = Onemogoči poskus?

@@ -14,9 +14,18 @@ footerLinkPrivacy = Privasi
 footerLinkTerms = Terma
 footerLinkLegal = Perundangan
 footerLinkFeedback = Beri maklum balas
-footerLinkAbout = Perihal Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Perihal
+footerLinkAboutUs = Perihal kami
+footerLinkSupportHeader = Sokongan
+footerLinkDownload = Muat turun Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mudah Alih
+footerLinkFeatures = Ciri
+footerLinkBeta = Edisi Beta, Nightly, Developer
+footerLinkRetire = Nyahpasang Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Halaman Utama
 menuTitle = Tetapan
@@ -25,7 +34,6 @@ menuDiscuss = Bincangkan Test Pilot
 menuFileIssue = Failkan Isu
 menuRetire = Nyahpasang Test Pilot
 headerLinkBlog = Blog
-headerLinkNews = Suapan Berita
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = Test Pilot memerlukan Firefox untuk Desktop menggunakan
 landingDownloadFirefoxDesc = Test Pilot tersedia untuk Firefox menggunakan Windows, OS X dan Linux)
 landingUpgradeDesc = Test Pilot memerlukan Firefox 49 atau lebih tinggi.
 landingUpgradeDesc2 = Test Pilot memerlukan Firefox { $version } atau lebih tinggi.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Naiktaraf Firefox
 landingDownloadFirefoxSubTitle = Muat turun Percuma
@@ -84,13 +93,6 @@ emailOptInConfirmationTitle = E-mel Dihantar
 emailOptInConfirmationClose = Masih dalam eksperimen...
 emailOptInDialogErrorTitle = Oh tidak!
 
-## News feed updates.
-
-latestUpdatesTitle = Kemaskini terkini
-showMoreNewsTitle = Papar Berita Lama
-# "Link" is a noun in this context
-englishArticleLink = Pautan ke artikel Bahasa Inggeris
-
 ## Featured experiment.
 
 moreDetail = Papar butiran
@@ -112,7 +114,7 @@ experimentListHeaderWithFeatured = Cuba semua eksperimen kami
 experimentCardFeedback = Maklum balas
 experimentCardManage = Urus
 experimentCardGetStarted = Mulakan
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Ketahui Selanjutnya
 
 ## A modal prompt shown when a user disables an experiment.
@@ -138,6 +140,8 @@ experimentPromoSubheader = Kami membina ciri generasi-akan-datang untuk Firefox.
 
 isEnabledStatusMessage = { $title } didayakan.
 installErrorMessage = Uh oh. { $title } tidak boleh didayakan. Cuba lagi nanti.
+wrongPlatformIOS = Eksperimen ini tersedia untuk peranti iOS sahaja.
+wrongPlatformAndroid = Eksperimen ini tersedia untuk peranti Android sahaja.
 otherExperiments = Cubalah juga eksperimen berikut
 giveFeedback = Beri maklum balas
 disableHeader = Nyahdayakan Eksperimen?

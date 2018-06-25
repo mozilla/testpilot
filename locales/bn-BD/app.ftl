@@ -1,6 +1,6 @@
 siteName = Firefox Test Pilot
 
-## Page titles, put in the <title> HTML tag.
+## Page titles, shown as title of HTML pages.
 
 pageTitleDefault = Firefox Test Pilot
 pageTitleLandingPage = Firefox Test Pilot
@@ -14,9 +14,8 @@ footerLinkPrivacy = গোপনীয়তা
 footerLinkTerms = শর্তাবলী
 footerLinkLegal = আইনী
 footerLinkFeedback = প্রতিক্রিয়া জানান
-footerLinkAbout = Test Pilot পরিচিতি
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = নীড়
 menuTitle = সেটিং
@@ -41,6 +40,7 @@ landingInstallingButton = ইন্সটল হচ্ছে...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Test Pilot ইন্সটল করুন &amp;
+# $title is replaced by the name of an experiment
 oneClickInstallMajorCta = { $title } সক্রিয় করুন
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
@@ -48,6 +48,7 @@ oneClickInstallMajorCta = { $title } সক্রিয় করুন
 landingRequiresDesktop = Test Pilot এর জন্য Windows, Mac অথবা Linux এ ডেস্কটপের জন্য Firefox প্রয়োজন
 landingDownloadFirefoxDesc = (Windows, OS X and Linux এ Firefox এর জন্য Test Pilot পাওয়া যাচ্ছে)
 landingUpgradeDesc = Test Pilot ব্যবহার করতে Firefox 49 বা পরবর্তী সংস্করণ প্রয়োজন।
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox হালানাগাদ করুন
 landingDownloadFirefoxSubTitle = বিনামূল্যে ডাউনলোড
@@ -67,6 +68,9 @@ onboardingMessage = আমরা আপনার টুলবারে একট
 
 errorHeading = ওপস!
 errorMessage = মনে হচ্ছে আমরা কিছু ভেঙ্গেছি। <br> পরে আবার চেষ্টা করুন।
+# 404 is the HTTP standard response code for a page not found. This title is a
+# word play in English, being "Oh" both an exclamation and the pronunciation of
+# the number 0.
 notFoundHeader = চারে চার!
 
 ## A modal prompt to sign up for the Test Pilot newsletter.
@@ -77,12 +81,7 @@ emailOptInConfirmationTitle = ইমেইল পাঠানো হয়েছে
 emailOptInConfirmationClose = অন্যান্য পরীক্ষার উপরে...
 emailOptInDialogErrorTitle = ওহ না!
 
-## news feed updates.
-
-latestUpdatesTitle = সর্বশেষ হালনাগাদ
-showMoreNewsTitle = আগের খবর দেখাও
-
-
+## Featured experiment.
 
 moreDetail = বিস্তারিত দেখুন
 
@@ -103,7 +102,7 @@ experimentListHeaderWithFeatured = আপনার সকল পরীক্ষ�
 experimentCardFeedback = প্রতিক্রিয়া
 experimentCardManage = পরিচালনা
 experimentCardGetStarted = শুরু করুন
-# also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = আরও জানুন
 
 ## A modal prompt shown when a user disables an experiment.
@@ -149,7 +148,7 @@ highlightPrivacy = আপনার গোপনীয়তা
 experimentGradReportPendingTitle = পরীক্ষণটি শেষ হয়েছে।
 experimentGoToLink = { $title } এ যাও
 
-## news updates dialog.
+## News updates dialog.
 
 nonExperimentDialogHeaderLink = Test Pilot
 
@@ -188,13 +187,8 @@ restartIntroOne = আপনার ব্রাউজার পুনরারম
 restartIntroTwo = Test Pilot অ্যাড-অন এর স্থান নির্বাচন করুন
 restartIntroThree = আপনার পরীক্ষণ নির্বাচন করুন
 
-## Shown on a page presented to users three days after installing their first experiment.
+## Shown on pages of retired or retiring experiments.
 
-sharePrimary = Test Pilot ভালবাসেন? আমাদের সাহায্য করুন নতুন অবদানকারী পেতে।
-shareSecondary = অথবা লিঙ্কটি শুধু কপি এবং পেস্ট করুন...
-shareEmail = ই-মেইল
-shareCopy = অনুলিপি
-# Shown on pages of retired or retiring experiments.
 eolIntroMessage = { $title } শেষ হয়েছে { $completedDate } এ
 eolNoticeLink = আরো শিখুন
 eolDisableMessage = { $title } পরীক্ষা শেষ হয়েছে। আপনি একবার এটি আনইন্সটল করলে, Test Pilot দ্বারা আর ইনস্টল করতে পারবেন না।
@@ -239,3 +233,6 @@ hidePastExperiments = পূর্বের পরীক্ষণ লুকা�
 
 warningGenericTitle = কিছু একটা ভুল হচ্ছে!
 warningHttpsRequiredTitle = HTTPS প্রয়োজন!
+
+## This string does not appear in app, but we will use it to localize our `no script` message
+

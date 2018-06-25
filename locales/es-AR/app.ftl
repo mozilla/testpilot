@@ -14,9 +14,18 @@ footerLinkPrivacy = Privacidad
 footerLinkTerms = Términos
 footerLinkLegal = Legales
 footerLinkFeedback = Enviar opinión
-footerLinkAbout = Acerca de Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Acerca
+footerLinkAboutUs = Acerca de nosotros
+footerLinkSupportHeader = Soporte
+footerLinkDownload = Descargar Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Móvil
+footerLinkFeatures = Características
+footerLinkBeta = Beta, Nightly, Edición de desarrollador
+footerLinkRetire = Desinstalar Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Inicio
 menuTitle = Configuración
@@ -25,7 +34,6 @@ menuDiscuss = Discutir Test Pilot
 menuFileIssue = Informar sobre un problema
 menuRetire = Desinstalar Test Pilot
 headerLinkBlog = Blog
-headerLinkNews = Fuente de noticias
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = Test Pilot necesita Firefox para escritorio para Window
 landingDownloadFirefoxDesc = (Test Pilot está disponible para Firefox en Windows, OS X y Linux)
 landingUpgradeDesc = Test Pilot requiere Firefox 49 o superior.
 landingUpgradeDesc2 = Test Pilot requiere Firefox { $version } o  superior
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Actualizar Firefox
 landingDownloadFirefoxSubTitle = Descarga gratuita
@@ -84,13 +93,6 @@ emailOptInConfirmationTitle = Correo enviado
 emailOptInConfirmationClose = Hacia los experimentos...
 emailOptInDialogErrorTitle = ¡No!
 
-## News feed updates.
-
-latestUpdatesTitle = Últimas actualizaciones
-showMoreNewsTitle = Mostrar noticias pasadas
-# "Link" is a noun in this context
-englishArticleLink = Enlace al artículo en inglés
-
 ## Featured experiment.
 
 moreDetail = Ver detalles
@@ -112,7 +114,7 @@ experimentListHeaderWithFeatured = Pruebe todos nuestros experimentos
 experimentCardFeedback = Opinión
 experimentCardManage = Administrar
 experimentCardGetStarted = Comenzá
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Concer más
 
 ## A modal prompt shown when a user disables an experiment.
@@ -138,6 +140,8 @@ experimentPromoSubheader = Estamos creando funciones de última generación para
 
 isEnabledStatusMessage = { $title } está habilitado.
 installErrorMessage = Oh oh. { $title } no se pudo habilitar. Probá de nuevo más tarde.
+wrongPlatformIOS = Este experimento solamente está disponible para dispositivos iOS.
+wrongPlatformAndroid = Este experimento solamente está disponible para dispositivos Android.
 otherExperiments = Probá también estos experimentos
 giveFeedback = Opine
 disableHeader = ¿Deshabilitar experimentos?

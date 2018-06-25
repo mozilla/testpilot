@@ -14,9 +14,18 @@ footerLinkPrivacy = Privacidade
 footerLinkTerms = Termos
 footerLinkLegal = Legal
 footerLinkFeedback = Dar feedback
-footerLinkAbout = Acerca do Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Acerca
+footerLinkAboutUs = Acerca de nós
+footerLinkSupportHeader = Apoio
+footerLinkDownload = Transferir o Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Móvel
+footerLinkFeatures = Funcionalidades
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Desinstalar Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Página inicial
 menuTitle = Definições
@@ -25,7 +34,6 @@ menuDiscuss = Discutir o Test Pilot
 menuFileIssue = Submeter um issue
 menuRetire = Desinstalar o Test Pilot
 headerLinkBlog = Blogue
-headerLinkNews = Fonte de notícias
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = O Test Pilot requer o Firefox para Computador no Window
 landingDownloadFirefoxDesc = (O Test Pilot está disponível para o Firefox no Windows, OS X e Linux)
 landingUpgradeDesc = O Test Pilot requer o Firefox 49 ou superior.
 landingUpgradeDesc2 = O Test Pilot requer o Firefox { $version } ou superior.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Atualizar o Firefox
 landingDownloadFirefoxSubTitle = Transferência gratuita
@@ -69,7 +78,7 @@ onboardingMessage = Colocámos um ícone na sua barra de ferramentas para que co
 
 ## Error message pages.
 
-errorHeading = Ups!
+errorHeading = Ops!
 errorMessage = Parece que partimos algo. <br>Talvez tente novamente mais tarde.
 # 404 is the HTTP standard response code for a page not found. This title is a
 # word play in English, being "Oh" both an exclamation and the pronunciation of
@@ -83,13 +92,6 @@ emailOptInMessage = Descubra acerca de novas experiências e veja os resultados 
 emailOptInConfirmationTitle = Email enviado
 emailOptInConfirmationClose = Para as experiências...
 emailOptInDialogErrorTitle = Oh não!
-
-## News feed updates.
-
-latestUpdatesTitle = Atualizações mais recentes
-showMoreNewsTitle = Mostrar notícias passadas
-# "Link" is a noun in this context
-englishArticleLink = Ligação para o artigo em Inglês
 
 ## Featured experiment.
 
@@ -112,7 +114,7 @@ experimentListHeaderWithFeatured = Experimente todas as nossas experiências
 experimentCardFeedback = Feedback
 experimentCardManage = Gerir
 experimentCardGetStarted = Começar
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Saber mais
 
 ## A modal prompt shown when a user disables an experiment.
@@ -138,6 +140,8 @@ experimentPromoSubheader = Estamos a construir funcionalidades de última geraç
 
 isEnabledStatusMessage = { $title } está ativado.
 installErrorMessage = Uh oh. { $title } não pôde ser ativado. Tente novamente mais tarde.
+wrongPlatformIOS = Esta experiência está disponível para dispositivos iOS apenas.
+wrongPlatformAndroid = Esta experiência está disponível para dispositivos Android apenas.
 otherExperiments = Experimente estas experiências também
 giveFeedback = Dê feedback
 disableHeader = Desativar experiência?
@@ -154,9 +158,9 @@ contributorsExtraLearnMore = Saber mais
 changelog = Registo de alterações
 tour = Visita guiada
 tourLink = Iniciar visita guiada
-contribute = Contribua
+contribute = Contribuir
 bugReports = Relatórios de bugs
-discussExperiment = Discuta o { $title }
+discussExperiment = Discutir o { $title }
 tourDoneButton = Feito
 userCountContainerAlt = Acaba de ser lançado!
 highlightPrivacy = A sua privacidade

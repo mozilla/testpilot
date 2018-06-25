@@ -33,6 +33,7 @@ export default function DetailsOverview({
   highlightMeasurementPanel,
   flashMeasurementPanel,
   doShowTourDialog,
+  doShowMobileAppDialog,
   surveyURL,
   hasTour
 }: DetailsOverviewType) {
@@ -62,6 +63,7 @@ export default function DetailsOverview({
               flashMeasurementPanel,
               uninstallExperimentWithSurvey,
               surveyURL,
+              doShowMobileAppDialog,
               hasTour
             }}
           />

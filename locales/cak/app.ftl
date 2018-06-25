@@ -14,9 +14,18 @@ footerLinkPrivacy = Ichinanem
 footerLinkTerms = Taq ojqanem
 footerLinkLegal = Taqanel tzijol
 footerLinkFeedback = Titaq Na'oj
-footerLinkAbout = Chi rij Test Pilot
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Chi rij
+footerLinkAboutUs = Chi qij
+footerLinkSupportHeader = To'ïk
+footerLinkDownload = Tiqasäx Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Oyonib'äl
+footerLinkFeatures = Taq rub'anikil
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Telesäx Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Tikirib'äl
 menuTitle = Nuk’ulem
@@ -25,7 +34,6 @@ menuDiscuss = Kojch'o chi rij Test Pilot
 menuFileIssue = Tiyak jun k'ayewal
 menuRetire = Telesäx Test Pilot
 headerLinkBlog = Ichinya'l
-headerLinkNews = Kixe'el Tzijol
 
 ## The splash on the homepage.
 
@@ -52,6 +60,7 @@ landingRequiresDesktop = Test Pilot nrajo' Firefox richin ajkematz'ib' pa Window
 landingDownloadFirefoxDesc = (Test Pilot wachel pa Firefox pa Windows, OS X chuqa' Linux)
 landingUpgradeDesc = Test Pilot nrajo' chi man tiqa chi re ri Firefox 49.
 landingUpgradeDesc2 = Test Pilot nrajo' Firefox { $version } o nïm chuwäch.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Tik'ex Firefox
 landingDownloadFirefoxSubTitle = Sipan Ruqasaxik
@@ -84,13 +93,6 @@ emailOptInConfirmationTitle = Xtaq Taqoya'l
 emailOptInConfirmationClose = Jo' pa ri taq solna'oj...
 emailOptInDialogErrorTitle = ¡Mani'!
 
-## News feed updates.
-
-latestUpdatesTitle = Ruk'isib'äl taq k'exoj
-showMoreNewsTitle = Kek'ut Ojer taq Rutzijol
-# "Link" is a noun in this context
-englishArticleLink = Ruximonel cholna'oj pa Q'anchi'
-
 ## Featured experiment.
 
 moreDetail = Ketz'et taq b'anikil
@@ -112,7 +114,7 @@ experimentListHeaderWithFeatured = Ke'atojtob'ej konojel ri taq qasolna'oj
 experimentCardFeedback = Taq tzijol
 experimentCardManage = Tinuk'samajïx
 experimentCardGetStarted = Titikirisäx
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Tetamäx Ch'aqa' Chik
 
 ## A modal prompt shown when a user disables an experiment.
@@ -138,6 +140,8 @@ experimentPromoSubheader = Tajin yeqab'än kik'ojlem ri ruk'isib'äl tanaj samaj
 
 isEnabledStatusMessage = { $title } tzijon.
 installErrorMessage = Uy. Man xtzij ta ri { $title }. Tatojtob'ej chik na.
+wrongPlatformIOS = Re solna'oj re' xa xe k'o pa iOS taq okisab'äl.
+wrongPlatformAndroid = Re solna'oj re' xa xe k'o pan Android taq okisab'äl.
 otherExperiments = Ketojtob'ëx chuqa' re taq solna'oj re'
 giveFeedback = Titaq Na'oj
 disableHeader = ¿La Nichup ri Solna'oj?

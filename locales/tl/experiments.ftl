@@ -24,4 +24,3 @@ universalsearchContributors0Title = Product Manager
 universalsearchContributors1Title = Senior UX Designer
 universalsearchContributors2Title = Staff Engineer
 universalsearchContributors3Title = Senior Engineer
-universalsearchEolwarning = Awtomatiko naming i-disable ang eksperimento sa Universal Search at mag-ulat ng mga resulta kapag ito ay nagtatapos.

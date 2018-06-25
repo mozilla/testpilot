@@ -13,9 +13,8 @@ footerLinkCookies = Cookie-uri
 footerLinkPrivacy = Confidențialitate
 footerLinkTerms = Termeni
 footerLinkLegal = Legale
-footerLinkAbout = Despre Test Pilot
 
-## Items in the menu.
+## Items in the menu and footer
 
 home = Acasă
 menuTitle = Setări
@@ -47,6 +46,7 @@ oneClickInstallMajorCta = Activează { $title }
 landingRequiresDesktop = Test Pilot funcționează pe Firefox pentru desktop pe Windows, Mac sau Linux
 landingDownloadFirefoxDesc = (Test Pilot este disponibil pentru Firefox pe Windows, OSX și Linux)
 landingUpgradeDesc = Test Pilot are nevoie de Firefox 49 sau mai recent.
+# also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Actualizează Firefox
 landingDownloadFirefoxSubTitle = Descarcă gratuit
@@ -93,7 +93,7 @@ experimentListEndingSoon = Se termină în curând
 
 experimentCardManage = Gestionează
 experimentCardGetStarted = Pornește
-# Also used in NewsUpdateDialog
+# Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Află mai multe
 
 ## A modal prompt shown when a user disables an experiment.
