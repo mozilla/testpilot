@@ -23,15 +23,11 @@
     "notifications",
     "storage",
     "cookies",
-    "tabs",
-    "https://example.com/",
-    "https://testpilot.dev.mozaws.net/",
-    "https://testpilot-l10n.dev.mozaws.net/",
-    "https://testpilot.stage.mozaws.net/",
-    "https://testpilot.firefox.com/"
+    "tabs"
   ],
   "background": {
     "scripts": [
+      "current-environment.js",
       "background.js"
     ]
   },
@@ -39,9 +35,5 @@
     "default_title": "Firefox Test Pilot",
     "browser_style": true,
     "default_icon": "icons/icon.svg"
-  },
-  "options_ui": {
-    "page": "options/options.html",
-    "browser_style": true
   }
 }
