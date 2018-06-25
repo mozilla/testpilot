@@ -18,7 +18,22 @@ npm start
 
 If you just want an XPI package of the add-on, use one of these commands:
 ```
-npm run package      # Production mode without logging
+npm run package      # builds for local dev by default
+```
+
+If your packaging for another environment then you must include some environment variables:
+```
+ENVIRONMENT_TITLE=production ENVIRONMENT_URL=https://testpilot.firefox.com/ npm run package
+```
+
+Here is the full list of urls for each environment:
+
+```
+ENVIRONMENT_TITLE=local ENVIRONMENT_URL=https://example.com/
+ENVIRONMENT_TITLE=dev ENVIRONMENT_URL=https://testpilot.dev.mozaws.net/
+ENVIRONMENT_TITLE=l10n ENVIRONMENT_URL=https://testpilot-l10n.dev.mozaws.net/
+ENVIRONMENT_TITLE=stage ENVIRONMENT_URL=https://testpilot.stage.mozaws.net/
+ENVIRONMENT_TITLE=production ENVIRONMENT_URL=https://testpilot.firefox.com/
 ```
 
 If you'd like to actively work on the add-on, here are some additional steps to set up a more convenient workflow:

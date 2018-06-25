@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-/* global browser */
+/* global browser, currentEnvironment */
 
 function log(...args) {
   // console.log(...["[TESTPILOT v2] (background)"].concat(args)); // eslint-disable-lint no-console
@@ -15,7 +15,7 @@ const TWO_WEEKS = 2 * 7 * ONE_DAY;
 
 /* browser action constants */
 const BROWSER_ACTION_LINK_BASE = [
-  "/experiments",
+  "experiments",
   "?utm_source=testpilot-addon",
   "&utm_medium=firefox-browser",
   "&utm_campaign=testpilot-doorhanger"
@@ -29,11 +29,6 @@ let BROWSER_ACTION_LINK = BROWSER_ACTION_LINK_NOT_BADGED;
 const resources = {
   experiments: [],
   news_updates: []
-};
-
-let currentEnvironment = {
-  name: "production",
-  baseUrl: "https://testpilot.firefox.com"
 };
 
 function uuidv4() {
@@ -57,7 +52,7 @@ function getInstalledTxpAddons() {
 }
 
 async function setup() {
-  setupEnvironment();
+  setInterval(fetchResources, RESOURCE_UPDATE_INTERVAL);
   setupBrowserAction();
   await fetchResources();
   setDailyPing();
@@ -100,24 +95,11 @@ function setupBrowserAction() {
   });
 }
 
-function setupEnvironment() {
-  log("setupEnvironment");
-  setInterval(fetchResources, RESOURCE_UPDATE_INTERVAL);
-  browser.storage.onChanged.addListener((changes) => {
-    Object.keys(changes).forEach((k) => {
-      if (k === "environment") {
-        currentEnvironment = changes[k].newValue;
-        fetchResources();
-      }
-    });
-  });
-}
-
 function fetchResources() {
   log("fetchResources");
   return Promise.all(
     Object.keys(resources).map(path =>
-      fetch(`${currentEnvironment.baseUrl}/api/${path}.json`)
+      fetch(`${currentEnvironment.baseUrl}api/${path}.json`)
         .then(res => res.json())
         .then((data) => data.results ? data.results : data)
         .then((data) => [path, data])
