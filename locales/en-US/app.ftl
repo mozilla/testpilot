@@ -184,6 +184,7 @@ experimentPlatformWeb = web experiment
 experimentPlatformAddonWeb = Firefox / web experiment
 experimentPlatformAddonAndroid = Android / Firefox experiment
 experimentPlatformAddonIos = iOS / Firefox experiment
+experimentPlatformAddonAndroidIos = Android / iOS / Firefox experiment
 experimentPlatformAddonAndroidWeb = Android / Firefox / web experiment
 experimentPlatformAddonAndroidIosWeb = Android / iOS / Firefox / web experiment
 experimentPlatformAndroidWeb = Android / web experiment
