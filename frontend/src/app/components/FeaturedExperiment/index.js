@@ -17,15 +17,17 @@ import type { InstalledExperiments } from "../../reducers/addon";
 import ExperimentPlatforms from "../ExperimentPlatforms";
 
 type FeaturedExperimentProps = {
-  experiment: Object,
-  hasAddon: any,
+  clientUUID?: string,
   enabled: boolean,
+  eventCategory: string,
+  experiment: Object,
+  fetchCountryCode: Function,
+  getWindowLocation: Function,
+  hasAddon: any,
   isFirefox: boolean,
+  isExperimentEnabled: Function,
   isMinFirefox: boolean,
   installed: InstalledExperiments,
-  clientUUID?: string,
-  eventCategory: string,
-  isExperimentEnabled: Function,
   sendToGA: Function
 }
 

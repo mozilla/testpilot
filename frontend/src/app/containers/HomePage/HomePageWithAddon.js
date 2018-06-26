@@ -21,24 +21,25 @@ import { getBreakpoint } from "../App";
 import { subscribeToBasketSMS } from "../../lib/utils";
 
 type HomePageWithAddonProps = {
-  hasAddon: any,
+  enableExperiment: Function,
   experiments: Array<Object>,
   experimentsWithoutFeatured: Array<Object>,
-  installed: InstalledExperiments,
   featuredExperiments: Array<Object>,
-  majorNewsUpdates: Array<Object>,
+  fetchCountryCode: Function,
   getCookie: Function,
-  setCookie: Function,
-  removeCookie: Function,
   getWindowLocation: Function,
-  uninstallAddon: Function,
-  sendToGA: Function,
-  openWindow: Function,
+  hasAddon: any,
+  installed: InstalledExperiments,
   isExperimentEnabled: Function,
   isAfterCompletedDate: Function,
-  enableExperiment: Function,
   isMinFirefox: boolean,
-  isFirefox: boolean
+  isFirefox: boolean,
+  majorNewsUpdates: Array<Object>,
+  openWindow: Function,
+  removeCookie: Function,
+  sendToGA: Function,
+  setCookie: Function,
+  uninstallAddon: Function
 }
 
 type HomePageWithAddonState = {

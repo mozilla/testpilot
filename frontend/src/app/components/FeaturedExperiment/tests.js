@@ -158,7 +158,8 @@ describe("app/components/FeaturedButton", () => {
       subtitle_l10nsuffix: "foo",
       description: "This is a description.",
       created: moment().subtract(1, "week").utc(),
-      modified: moment().subtract(1, "week").utc()
+      modified: moment().subtract(1, "week").utc(),
+      platforms: ["web"]
     };
     mockClickEvent = {
       preventDefault: sinon.spy(),
