@@ -60,8 +60,8 @@ containersContributors6Title = Front End Security
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
-firefoxlockboxDescription = Take your passwords everywhere with Firefox Lockbox, an iOS mobile app.
-firefoxlockboxIntroduction = <p>Firefox Lockbox lets you easily access your passwords everywhere. Logins are stored and synced securely, using 256-bit encryption, keeping your information safe. Easily copy username and password details to get into apps and websites. Never again find yourself locked out of your account while on your phone!</p> <p><strong>Firefox Lockbox requires a Firefox Account in order to access your previously saved logins. If you do not have an account set up, get started <a href="https://lockbox.firefox.com/faq.html#how-do-i-enable-sync-on-firefox">here</a>.</strong></p>
+firefoxlockboxDescription = Take your passwords everywhere with the Firefox Lockbox App for iPhone.
+firefoxlockboxIntroduction = <pTake your passwords everywhere with Firefox Lockbox. This Test Pilot experiment gives you access to all the logins you've saved to Firefox, in a secure app on your iPhone. Just log in to Lockbox with your Firefox Account, and your saved usernames and passwords will sync to the app using 256-bit encryption. So you’ll have easy access to online accounts, even on the go.</p> <p><strong>Firefox Lockbox requires a Firefox Account in order to access your previously <a href="chrome://passwordmgr/content/passwordManager.xul">saved logins</a>. If you do not have an account set up, get started <a href="https://lockbox.firefox.com/faq.html#how-do-i-get-my-firefox-saved-logins-into-firefox-lockbox">here</a>.</strong></p> <p><em>Want to be notified when our Android app launches? Sign up <a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83"></a></em></p>
 firefoxlockboxDetails0Copy = Access username and password information for all the accounts you save to Firefox.
 firefoxlockboxDetails1Copy = Manage accounts in Firefox and sync changes automatically to Firefox Lockbox.
 firefoxlockboxDetails2Copy = Sort and filter your accounts to quickly locate the one you need.

@@ -1,10 +1,9 @@
 id: 18
 slug: firefox-lockbox
 title: 'Firefox Lockbox'
-# subtitle: 'Take your passwords everywhere'
 order: 1
-is_featured: true # TODO: set to true for launch
-dev: false # TODO: set to false for launch
+is_featured: true
+dev: false
 web_url: https://lockbox.firefox.com/
 platforms: ['ios']
 ios_url: https://itunes.apple.com/us/app/firefox-lockbox/id1314000270?ls=1&mt=8
@@ -12,10 +11,11 @@ locales:
   - 'en'
 
 description: >
-  Take your passwords everywhere with Firefox Lockbox, an iOS mobile app.
+  Take your passwords everywhere with the Firefox Lockbox App for iPhone.
 introduction: >
-  <p>Firefox Lockbox lets you easily access your passwords everywhere. Logins are stored and synced securely, using 256-bit encryption, keeping your information safe. Easily copy username and password details to get into apps and websites. Never again find yourself locked out of your account while on your phone!</p>
-  <p><strong>Firefox Lockbox requires a Firefox Account in order to access your previously saved logins. If you do not have an account set up, get started <a href="https://lockbox.firefox.com/faq.html#how-do-i-enable-sync-on-firefox">here</a>.</strong></p>
+  <pTake your passwords everywhere with Firefox Lockbox. This Test Pilot experiment gives you access to all the logins you've saved to Firefox, in a secure app on your iPhone. Just log in to Lockbox with your Firefox Account, and your saved usernames and passwords will sync to the app using 256-bit encryption. So you’ll have easy access to online accounts, even on the go.</p>
+  <p><strong>Firefox Lockbox requires a Firefox Account in order to access your previously <a href="chrome://passwordmgr/content/passwordManager.xul">saved logins</a>. If you do not have an account set up, get started <a href="https://lockbox.firefox.com/faq.html#how-do-i-get-my-firefox-saved-logins-into-firefox-lockbox">here</a>.</strong></p>
+  <p><em>Want to be notified when our Android app launches? Sign up <a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83"></a></em></p>
 
 video_url: https://www.youtube.com/embed/d88LqTejpE8
 image_twitter: /static/images/experiments/lockbox/social/share-twitter.jpg
