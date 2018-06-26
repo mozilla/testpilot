@@ -79,7 +79,6 @@ export default class MobileDialog extends React.Component {
 
     const headerMessage = ios_url ? (<LocalizedHtml id="mobileDialogMessageIOS" $title={title}>
       <p>Download <b>{title}</b> from the iOS App Store.</p></LocalizedHtml>) : (<LocalizedHtml id="mobileDialogMessageAndroid" $title={title}><p>Download <b>{title}</b> from the Google Play Store.</p></LocalizedHtml>);
-
     const headerImg = ios_url ? (<a href={ios_url} target="_blank" rel="noopener noreferrer"><img className="mobile-header-img" src="/static/images/ios-light.svg"/></a>) : (<a href={android_url} target="_blank" rel="noopener noreferrer"><img className="mobile-header-img" src="/static/images/google-play.png"/></a>);
 
     const learnMoreLink = "https://www.mozilla.org/privacy/websites/#campaigns";
