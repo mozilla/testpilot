@@ -85,5 +85,6 @@ notesContributors9Title = Bidragsyder fra fællesskabet
 notesContributors10Title = Software-udvikler
 notesContributors11Title = Softvision kvalitetskontrol
 pageshotDescription = Intuitive skærmbilleder direkte i din browser. Tag, gem og del skærmbilleder med Firefox, mens du browser.
+pageshotIntroduction = <p>Skærmbilleder lader dig tage, dele og hente skærmbilleder - uden at forlade Firefox</p><ul> <li><strong>Gitter-visning:</strong> Se dine skærmbilleder som miniaturer</li> <li><strong>Smart søgning:</strong> Find dine skærmbilleder ved hjælp af nøgleord. Skærmbilleder indekserer side-titler og tekst i skærmbilleder</li> <li><strong>Nem deling:</strong> Send dine skærmbilleder til sociale medier eller kopíer et delbart link direkte fra din browser.</li></ul>
 sendDescription = Krypter og send filer med et link, der automatisk udløber. Så er du sikker på, at dine vigtige dokumenter ikke bliver på nettet for evigt.
 sendMeasurementsFilehash3 = Send er også underlagt vores <a>privatlivspolitik for websteder</a>. Når du besøger Send-webstedet, vil information som fx din IP-adresse blive gemt som del af en almindelig server-log.
