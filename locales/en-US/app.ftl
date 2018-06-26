@@ -177,13 +177,17 @@ startedDateLabel = Experiment start date: <b>{$startedDate}</b>
 nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
-experimentPlatformWebAddonMobile = Firefox / web / mobile experiment
-experimentPlatformWebAddon = Firefox / web experiment
-experimentPlatformWebMobile = web / mobile experiment
-experimentPlatformAddonMobile = Firefox / mobile experiment
-experimentPlatformWeb = web experiment
 experimentPlatformAddon = Firefox experiment
-experimentPlatformMobileApp = mobile experiment
+experimentPlatformAndroid = Android experiment
+experimentPlatformIos = iOS experiment
+experimentPlatformWeb = web experiment
+experimentPlatformAddonWeb = Firefox / web experiment
+experimentPlatformAddonAndroid = Android / Firefox experiment
+experimentPlatformAddonIos = iOS / Firefox experiment
+experimentPlatformAddonAndroidWeb = Android / Firefox / web experiment
+experimentPlatformAddonAndroidIosWeb = Android / iOS / Firefox / web experiment
+experimentPlatformAndroidWeb = Android / web experiment
+experimentPlatformAndroidIos = Android / iOS experiment
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 upgradeNoticeTitle = {$title} requires Firefox {$min_release} or later.

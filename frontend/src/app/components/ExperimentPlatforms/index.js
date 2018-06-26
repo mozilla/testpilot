@@ -4,22 +4,19 @@ import { Localized } from "fluent-react/compat";
 
 import "./index.scss";
 
-const AVAILABLE_PLATFORMS = ["web", "addon", "mobile"];
+const AVAILABLE_PLATFORMS = ["web", "addon", "ios", "android"];
 
 export default function ExperimentPlatforms({ experiment }) {
-  const platforms = experiment.platforms.map(p => (p === "android" || p === "ios") ? "mobile" : p) || [];
-  const enabledPlatforms = AVAILABLE_PLATFORMS
-    .filter(platform => platforms.indexOf(platform) !== -1);
+  let enabledPlatforms = AVAILABLE_PLATFORMS
+    .filter(platform => experiment.platforms.includes(platform));
   if (enabledPlatforms.length === 0) { return null; }
+
+  // sort list so that l10n ids are consistent regardless of array order in YAML
+  enabledPlatforms.sort();
 
   let l10nId = "experimentPlatform" + enabledPlatforms
     .map(platform => platform.charAt(0).toUpperCase() + platform.slice(1))
     .join("");
-
-  if (l10nId === "experimentPlatformMobile") {
-    // HACK: string changed after initial commit, so the ID had to change
-    l10nId = "experimentPlatformMobileApp";
-  }
 
   return (
     <h4 className="experiment-platform">
