@@ -1,3 +1,4 @@
+activitystreamContributors0Title = సాఫ్ట్‌వేర్ ఇంజనీర్
 activitystreamContributors1Title = వెబ్ ఇంజనీర్
 activitystreamContributors2Title = సాఫ్ట్ వేర్ డెవలపర్
 activitystreamContributors3Title = డెస్క్ టాప్ Firefox ఇంజనీర్
@@ -10,6 +11,8 @@ activitystreamContributors9Title = ఉత్పత్తి మేనేజర�
 activitystreamContributors10Title = ఇంజనీరింగ్ మేనేజర్
 activitystreamContributors11Title = సాఫ్ట్ వేర్ ఇంజనీర్
 activitystreamContributors12Title = సీనియర్ UX డిజైనర్
+colorContributors0Title = సీనియర్ ఇంజనీర్
+containersContributors0Title = వాడుకరి భద్రత, గోప్యత
 containersContributors1Title = వేదిక ఇంజనీర్
 containersContributors2Title = గోప్యతా ఇంజనీర్
 containersContributors3Title = QA టెస్ట్ ఇంజనీర్
