@@ -2,7 +2,8 @@ id: 17
 title: 'Color'
 slug: color
 is_featured: true
-platforms: ['addon', 'web']
+platforms: ['ios', 'web']
+ios_url: 'https://color.firefox.com'
 web_url: 'https://color.firefox.com'
 min_release: 60
 thumbnail: /static/images/experiments/color/color-thumbnail.png
