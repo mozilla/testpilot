@@ -15,16 +15,18 @@ import Visibility from "../../components/Visibility";
 import type { InstalledExperiments } from "../../reducers/addon";
 
 type HomePageNoAddonProps = {
-  hasAddon: any,
-  isFirefox: boolean,
-  installed: InstalledExperiments,
+  enableExperiment: Function,
   experiments: Array<Object>,
   experimentsWithoutFeatured: Array<Object>,
   featuredExperiments: Array<Object>,
+  fetchCountryCode: Function,
+  getWindowLocation: Function,
+  hasAddon: any,
   isAfterCompletedDate: Function,
-  isMinFirefox: boolean,
   isExperimentEnabled: Function,
-  enableExperiment: Function,
+  isFirefox: boolean,
+  isMinFirefox: boolean,
+  installed: InstalledExperiments,
   sendToGA: Function
 }
 

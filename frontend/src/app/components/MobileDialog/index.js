@@ -6,8 +6,10 @@ import { isValidNumber } from "libphonenumber-js";
 // $FlowFixMe
 import { validate } from "email-validator";
 import { Localized } from "fluent-react/compat";
-import LocalizedHtml from "../../components/LocalizedHtml";
-import Loading from "../../components/Loading";
+import LocalizedHtml from "../LocalizedHtml";
+import Loading from "../Loading";
+
+import "./index.scss";
 
 import { subscribeToBasket, subscribeToBasketSMS, acceptedSMSCountries } from "../../lib/utils";
 

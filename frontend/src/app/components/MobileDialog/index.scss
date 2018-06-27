@@ -1,0 +1,106 @@
+@import '~photon-colors/colors.scss';
+@import '../../../styles/_utils';
+
+// MobileDialog
+.mobile-modal {
+  .modal-content {
+    max-width: 100%;
+  }
+
+  .mobile-header-img {
+    width: 150px;
+  }
+
+  .loading {
+    margin: 30px auto;
+
+    .loading-bar {
+      background-color: $teal-70;
+    }
+  }
+
+  .header-wrapped {
+    border-bottom: 1px solid $grey-30;
+    padding-bottom: 20px;
+
+    p {
+      margin-top: 0;
+    }
+  }
+
+  .mobile-link-form {
+    button,
+    input {
+      font-size: 19px;
+      max-width: 360px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    input {
+      border: 1px solid $grey-40;
+      border-radius: 4px;
+      margin-top: 14px;
+    }
+
+    .input-error {
+      border: 1px solid $red-50;
+    }
+
+    button {
+      font-size: 15px;
+      margin: 14px auto;
+      padding: 2px 10px;
+    }
+  }
+
+  .success-section {
+    .button {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+  }
+
+  .success-msg {
+    color: $green-60;
+    font-size: 19px;
+  }
+
+  .success-secondary {
+    font-size: 15px;
+  }
+
+  .send-to-device {
+    color: $blue-40;
+    font-size: 15px;
+
+    &::after {
+      content: '>>';
+      padding-left: 5px;
+    }
+  }
+
+  .error {
+    color: $red-50;
+    font-size: 15px;
+  }
+
+  .notice,
+  .instruction {
+    color: $grey-50;
+  }
+
+  .notice {
+    font-size: 11px;
+
+    a::after {
+      content: '>>';
+      padding-left: 2px;
+    }
+  }
+
+  .instruction {
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+}
