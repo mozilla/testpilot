@@ -48,10 +48,10 @@ export default function MeasurementsSection({
         {measurements &&
         <div>
           <LocalizedHtml
-              id="experimentMeasurementIntro"
-              $experimentTitle={title}
-              $privacy={privacy}
-            >
+            id="experimentMeasurementIntro"
+            $experimentTitle={title}
+            $privacy={privacy}
+          >
             <p>
               In addition to the {privacy} collected by all Test Pilot
               experiments, here are the key things you should know about what is

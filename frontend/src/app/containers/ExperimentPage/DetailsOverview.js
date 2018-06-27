@@ -37,7 +37,6 @@ export default function DetailsOverview({
   surveyURL,
   hasTour
 }: DetailsOverviewType) {
-  const { measurements } = experiment;
   const l10nId = (pieces: string) => experimentL10nId(experiment, pieces);
 
   return (
