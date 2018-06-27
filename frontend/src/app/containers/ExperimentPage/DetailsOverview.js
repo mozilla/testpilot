@@ -37,7 +37,6 @@ export default function DetailsOverview({
   surveyURL,
   hasTour
 }: DetailsOverviewType) {
-  const { measurements } = experiment;
   const l10nId = (pieces: string) => experimentL10nId(experiment, pieces);
 
   return (
@@ -76,7 +75,6 @@ export default function DetailsOverview({
         {!graduated && <StatsSection {...{ experiment, doShowTourDialog, sendToGA, hasTour }} />}
         <ContributorsSection {...{ experiment, l10nId }} />
         {!graduated &&
-          measurements &&
           <MeasurementsSection
             {...{ experiment, highlightMeasurementPanel, l10nId }}
           />}
