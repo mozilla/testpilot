@@ -76,7 +76,6 @@ export default function DetailsOverview({
         {!graduated && <StatsSection {...{ experiment, doShowTourDialog, sendToGA, hasTour }} />}
         <ContributorsSection {...{ experiment, l10nId }} />
         {!graduated &&
-          measurements &&
           <MeasurementsSection
             {...{ experiment, highlightMeasurementPanel, l10nId }}
           />}
