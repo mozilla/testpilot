@@ -109,7 +109,7 @@
     border-radius: 3px;
     font-size: 18px;
     height: 100%;
-    margin-top: 12px;
+    margin-top: 16px;
     padding: 6px 4px;
     width: 100%;
   }
@@ -118,10 +118,31 @@
     margin-top: 0;
   }
 
+  .mobile-trigger {
+    padding: 12px 4px;
+
+    img {
+      height: 24px;
+      margin-right: 10px;
+      position: relative;
+      top: -2px;
+      width: auto;
+    }
+  }
+
   .mobile {
     border: 0;
     padding: 0;
-    width: auto;
+
+    img {
+      @include respond-to('small') {
+        height: 80px;
+        margin-top: 10px;
+      }
+
+      height: 54px;
+      width: auto;
+    }
   }
 
   .one-click-minor {
@@ -178,6 +199,11 @@
   }
 
   h1 {
+
+    @include respond-to('small') {
+      padding: $grid-unit * .5 0;
+    }
+
     display: flex;
     flex: 1;
     font-weight: $weight-light;
@@ -222,6 +248,7 @@
 
   @include respond-to('small') {
     flex: 0 0;
+    margin-top: 10px;
     width: 100%;
   }
 

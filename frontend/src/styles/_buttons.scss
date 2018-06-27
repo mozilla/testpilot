@@ -42,24 +42,24 @@
   }
 
   &.primary {
-    background: $green-60;
+    background-color: $green-60;
     border: 2px solid $green-70;
     color: $white;
 
     &:not([disabled='true']) {
       &:hover,
       &:focus {
-        background: $green-70;
+        background-color: $green-70;
         border: 2px solid $green-80;
       }
 
       &:focus:hover {
-        background: $green-70;
+        background-color: $green-70;
         border: 2px solid $green-80;
       }
 
       &:active {
-        background: $green-80;
+        background-color: $green-80;
         border: 2px solid $green-90;
       }
 
@@ -70,53 +70,53 @@
   }
 
   &.secondary {
-    background: $grey-20;
+    background-color: $grey-20;
     border: 0;
     color: $grey-90;
     font-size: 15px;
 
     &:hover,
     &:focus {
-      background: $grey-30;
+      background-color: $grey-30;
       border: 0;
     }
 
     &:active {
-      background: $grey-40;
+      background-color: $grey-40;
       border-color: $transparent-grey-30;
     }
   }
 
   &.default {
-    background: $blue-60;
+    background-color: $blue-60;
     border: 0;
     color: $white;
 
     &:hover,
     &:focus {
-      background: $blue-70;
+      background-color: $blue-70;
       border: 0;
     }
 
     &:active {
-      background: $blue-80;
+      background-color: $blue-80;
       border-color: $blue-80;
     }
   }
 
   &.warning {
-    background: $red-60;
+    background-color: $red-60;
     border: 1px solid $red-70;
     color: $white;
 
     &:hover,
     &:focus {
-      background: $red-70;
+      background-color: $red-70;
       border-color: $red-80;
     }
 
     &:active {
-      background: $red-80;
+      background-color: $red-80;
       border-color: $red-90;
     }
   }
