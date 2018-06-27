@@ -17,7 +17,7 @@ introduction: >
   <p><strong>Firefox Lockbox requires a Firefox Account in order to access your previously <a href="chrome://passwordmgr/content/passwordManager.xul">saved logins</a>. If you do not have an account set up, get started <a href="https://lockbox.firefox.com/faq.html#how-do-i-get-my-firefox-saved-logins-into-firefox-lockbox">here</a>.</strong></p>
   <p><em>Want to be notified when our Android app launches? Sign up <a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">here</a></em></p>
 
-video_url: https://www.youtube.com/embed/d88LqTejpE8
+video_url: https://www.youtube.com/embed/EovIidcHFgQ #TODO: replace with final marketing version
 image_twitter: /static/images/experiments/lockbox/social/share-twitter.jpg
 image_facebook: /static/images/experiments/lockbox/social/share-facebook.jpg
 thumbnail: /static/images/experiments/lockbox/icon/thumbnail.png
