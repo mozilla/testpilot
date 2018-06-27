@@ -265,6 +265,7 @@ hidePastExperiments = Απόκρυψη παλαιών πειραμάτων
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Κάτι δεν πάει καλά!
+warningGoToFAQDetail = Έχει προκύψει σφάλμα με το Test Pilot. Παρακαλούμε <a>δείτε τς συχνές ερωτήσεις</a> για να μάθετε περισσότερα.
 warningUpgradeFirefoxTitle = Αναβαθμίστε το Firefox για να συνεχίσετε!
 warningUpgradeFirefoxDetail = Το Test Pilot απαιτεί την πιο πρόσφατη έκδοση του Firefox. <a>Αναβαθμίστε το Firefox</a> για να ξεκινήσετε.
 warningHttpsRequiredTitle = Απαιτείται HTTPS!
