@@ -15,6 +15,7 @@ import ExperimentCardList from "../../components/ExperimentCardList";
 
 import Banner from "../../components/Banner";
 import LayoutWrapper from "../../components/LayoutWrapper";
+import MobileDialog from "../../components/MobileDialog";
 
 import ExperimentPreFeedbackDialog from "./ExperimentPreFeedbackDialog";
 import ExperimentDisableDialog from "./ExperimentDisableDialog";
@@ -24,7 +25,6 @@ import TestpilotPromo from "./TestpilotPromo";
 import DetailsOverview from "./DetailsOverview";
 import DetailsDescription from "./DetailsDescription";
 import DetailsHeader from "./DetailsHeader";
-import MobileDialog from "./MobileDialog";
 
 import "./index.scss";
 

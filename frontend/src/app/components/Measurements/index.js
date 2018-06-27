@@ -45,28 +45,32 @@ export default function MeasurementsSection({
               {privacy_preamble}
             </p>
           </Localized>}
-        <LocalizedHtml
-          id="experimentMeasurementIntro"
-          $experimentTitle={title}
-          $privacy={privacy}
-        >
-          <p>
-            In addition to the {privacy} collected by all Test Pilot
-            experiments, here are the key things you should know about what is
-            happening when you use {title}:
-          </p>
-        </LocalizedHtml>
-        <ul>
-          {measurements.map((note, idx) =>
-            <LocalizedHtml key={idx} id={l10nId(["measurements", idx])}>
-              <li>
-                {EXPERIMENT_MEASUREMENT_URLS[idx] === null
-                  ? null
-                  : <a href={EXPERIMENT_MEASUREMENT_URLS[idx]} />}
-              </li>
-            </LocalizedHtml>
-          )}
-        </ul>
+        {measurements &&
+        <div>
+          <LocalizedHtml
+            id="experimentMeasurementIntro"
+            $experimentTitle={title}
+            $privacy={privacy}
+          >
+            <p>
+              In addition to the {privacy} collected by all Test Pilot
+              experiments, here are the key things you should know about what is
+              happening when you use {title}:
+            </p>
+          </LocalizedHtml>
+
+          <ul>
+            {measurements.map((note, idx) =>
+              <LocalizedHtml key={idx} id={l10nId(["measurements", idx])}>
+                <li>
+                  {EXPERIMENT_MEASUREMENT_URLS[idx] === null
+                    ? null
+                    : <a href={EXPERIMENT_MEASUREMENT_URLS[idx]} />}
+                </li>
+              </LocalizedHtml>
+            )}
+          </ul>
+        </div>}
       </div>
       {privacy_notice_url &&
         <Localized id="experimentPrivacyNotice" $title={title}>
