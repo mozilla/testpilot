@@ -122,12 +122,7 @@ contributors:
     title: 'Community Contributor'
     avatar: /static/images/experiments/lockbox/avatars/pnyondo.png
 
-measurements:
-  - >
-    <strong>Technical and Interaction Data.</strong> We receive technical data (such as your device operating system, version, and language preference) and interaction data (such as how often you edit, view, or copy login credentials with Firefox Lockbox).
-  - >
-    <strong>Other Mozilla Services.</strong> Unlike most Test Pilot experiments, Firefox Lockbox requires a Firefox Account and uses the Firefox Sync service.
-  - >
-    <strong>Third-Party Services.</strong> We use Apple's TestFlight for beta testing, which has separate Legal and Privacy terms. Apple receives crash data by default, which may include personally identifiable data, and which may be sent to Mozilla.
+privacy_preamble: >
+  Firefox Lockbox allows Firefox Accounts users to access the login and password information (which we call “credentials”) on their mobile phones, outside any browser, by using Firefox Sync. In addition to the data collected by all Test Pilot experiments...
 privacy_notice_url: 'https://lockbox.firefox.com/privacy.html'
 legal_notice: By proceeding, you agree to the <a>terms</a> and <a>privacy</a> policies of Test Pilot and the <a>Firefox Lockbox privacy policy</a>.
