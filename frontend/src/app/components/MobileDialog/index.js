@@ -84,8 +84,6 @@ export default class MobileDialog extends React.Component {
 
     const learnMoreLink = "https://www.mozilla.org/privacy/websites/#campaigns";
 
-    const learnMoreLink = "https://www.mozilla.org/privacy/websites/#campaigns";
-
     const learnMore = (<Localized id="mobileDialogNoticeLearnMoreLink">
       <a target="_blank" rel="noopener noreferrer" href={learnMoreLink}>Learn More</a>
     </Localized>);
