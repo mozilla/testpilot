@@ -45,7 +45,8 @@ export default class FeaturedExperiment extends React.Component {
   render() {
     const { experiment, enabled, installed, hasAddon, sendToGA,
       eventCategory } = this.props;
-    const { description, title, subtitle, slug, video_url, error } = experiment;
+    const { description, title, subtitle, slug, video_url, error, platforms } = experiment;
+    const isMobile = platforms.includes("ios") || platforms.includes("android");
 
     return (
       <div>
@@ -77,7 +78,7 @@ export default class FeaturedExperiment extends React.Component {
             <p className="featured-experiment__description">{description}</p>
           </Localized>
 
-          {!enabled && <Localized id='moreDetail'>
+          {(!enabled || isMobile) && <Localized id='moreDetail'>
             <Link className="featured-experiment__details" to={`/experiments/${slug}`}
               onClick={() => {
                 sendToGA("event", {

@@ -131,14 +131,14 @@ export default function ExperimentControls({
   if (!isMobile(userAgent)) {
     if (platforms.includes("ios") || platforms.includes("android")) {
       buttons.unshift(
-        <Localized id="mobileDialogLaunchButton">
-          <a
-            className="button default mobile-trigger"
-            onClick={doShowMobileAppDialog}>
-            <img src="/static/images/mobile-white.svg" />
-            Send App Link to Device
-          </a>
-        </Localized>
+        <a
+          className="button default mobile-trigger"
+          onClick={doShowMobileAppDialog}>
+          <img src="/static/images/mobile-white.svg" />
+          <Localized id="mobileDialogTitle">
+            <span>Get the App</span>
+          </Localized>
+        </a>
       );
     }
   }
