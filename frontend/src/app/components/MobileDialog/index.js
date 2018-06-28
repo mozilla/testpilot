@@ -101,15 +101,15 @@ export default class MobileDialog extends React.Component {
 
     const privacy = (<Localized id="newsletterFormPrivacyNoticePrivacyLink">
       <a target="_blank" rel="noopener noreferrer" href={learnMoreLink} />
-                     </Localized>);
+    </Localized>);
 
     const notice = allowSMS ? (<Localized id="mobileDialogNoticeSMS" $learnMore={learnMore}><p className="notice">SMS service available in select countries only. SMS & data rates may apply. The intended recipient of the email or SMS must have consented. {learnMore}</p></Localized>)
-          : (<LocalizedHtml id="newsletterFormPrivacyNotice" $privacy={privacy}>
-             <p className="notice">
-             I&apos;m okay with Mozilla handling my info as explained in {privacy}.
-             </p>
-             </LocalizedHtml>
-            );
+      : (<LocalizedHtml id="newsletterFormPrivacyNotice" $privacy={privacy}>
+        <p className="notice">
+        I&apos;m okay with Mozilla handling my info as explained in {privacy}.
+        </p>
+      </LocalizedHtml>
+      );
 
     return (
       <div className="modal-container mobile-modal" tabIndex="0"

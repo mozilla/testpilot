@@ -93,7 +93,9 @@ Here are the current events on the website as of this writing, grouped by their 
 | Click app store links on experiment page | mobile store click | `{experiment title}` `{ios || android}` |
 
 #### `SMS Modal Interactions`
-| Click app store links in modal | mobile link request | `{sms}` || `{email}` |
+| Description | `eventAction` | `eventLabel` |
+|-------------|---------------|--------------|
+| Click app store links in modal | mobile link request | `{sms || email}` |
 | Send experiment link  success | request handled | success |
 | Send experiment link error | request handled | error |
 | Cancel Send link to device dialog | dialog dismissed | cancel Send link to device dialog|
