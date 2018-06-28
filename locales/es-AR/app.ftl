@@ -50,7 +50,7 @@ landingInstallingButton = Instalando...
 
 ## Related to a one click to install test pilot and an experiment.
 
-oneClickInstallMinorCta = Instalá Test Pilot &amp;
+oneClickInstallMinorCta = Instale Test Pilot &amp;
 # $title is replaced by the name of an experiment
 oneClickInstallMajorCta = Habilitar { $title }
 
