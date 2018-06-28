@@ -38,7 +38,7 @@
     padding: 10px;
   }
 
-  .featured-experiment__heeader,
+  .featured-experiment__header,
   .featured-experiment__status,
   .featured-experiment__description,
   .featured-experiment__actions,
@@ -112,7 +112,8 @@
         background-image: url('./img/experiment-type-web-white.svg');
       }
 
-      .platform-icon-mobile {
+      .platform-icon-ios,
+      .platform-icon-android {
         background-image: url('./img/experiment-type-mobile-white.svg');
       }
     }
@@ -209,6 +210,12 @@
 
     height: 84px;
     width: 352px;
+
+    img {
+      height: 24px;
+      width: auto;
+      padding-right: 10px;
+    }
   }
 
   .main-install__spacer {
@@ -269,7 +276,7 @@
         width: 112%;
       }
 
-      height: 300px;
+      height: 320px;
       width: 500px;
     }
   }
