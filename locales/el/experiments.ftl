@@ -39,6 +39,7 @@ nomore404sContributors1Title = Προγραμματιστής, Wayback Machine, 
 nomore404sContributors2Title = Διευθυντής, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Επικεφαλής μηχανικός περιήγησης, The Internet Archive
 notesDetails0Copy = Είναι ένα σημειωματάριο. Γιατί δεν το σκεφτήκαμε νωρίτερα;
+notesContributors1Title = Εθελοντής κοινότητας
 notesContributors2Title = Επικεφαλής σχεδιαστής προϊόντος/UX
 notesContributors3Title = Μηχανικός λογισμικού
 notesContributors4Title = Επικεφαλής μηχανικός
