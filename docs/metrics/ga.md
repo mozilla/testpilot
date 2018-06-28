@@ -89,10 +89,16 @@ Here are the current events on the website as of this writing, grouped by their 
 | Cancel during PreFeedback confirmation | button click | cancel feedback |
 | Accept Firefox permission dialog | Accept From Permission | `{experiment title}`
 | Cancel Firefox permission dialog | Cancel From Permission | `{experiment title}`
-| Send experiment app link to device | button click | Send link to device |
-| Send experiment link to email success | button | link sent to email |
-| Send experiment link to phone success | button | link sent to phone |
-| Cancel Send link to device dialog | button | cancel Send link to device dialog|
+| Send experiment app link to device | mobile send click | `{experiment title}` |
+| Click app store links on experiment page | mobile store click | `{experiment title}` `{ios || android}` |
+
+#### `SMS Modal Interactions`
+| Description | `eventAction` | `eventLabel` |
+|-------------|---------------|--------------|
+| Click app store links in modal | mobile link request | `{sms || email}` |
+| Send experiment link  success | request handled | success |
+| Send experiment link error | request handled | error |
+| Cancel Send link to device dialog | dialog dismissed | cancel Send link to device dialog|
 
 #### `HomePage Interactions`
 
@@ -125,7 +131,7 @@ Here are the current events on the website as of this writing, grouped by their 
 | Click General Terms link         | link click            | Open general terms            | [1, 2, 3, 10, 11, 13]      |
 | Click General Privacy link       | link click            | Open general privacy          | [1, 2, 3, 10, 11, 13]      |
 | Click Featured Privacy link      | link click            | Popup Featured privacy        | [1, 2, 3, 10, 11, 13]      |
-
+| Send experiment app link to device | mobile send click | `{experiment title}` | [1, 4, 5, 6, 10, 11] |
 
 #### `RetirePage Interactions`
 

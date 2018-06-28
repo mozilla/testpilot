@@ -18,7 +18,8 @@ type MobileDialogProps = {
   onCancel: Function,
   sendToGA: Function,
   experiment: Object,
-  fetchCountryCode: Function
+  fetchCountryCode: Function,
+  fromFeatured?: boolean
 }
 
 type MobileDialogState = {
@@ -73,21 +74,42 @@ export default class MobileDialog extends React.Component {
   }
 
   render() {
-    const { experiment } = this.props;
+    const { experiment, sendToGA, fromFeatured } = this.props;
     const { title, android_url, ios_url } = experiment;
     const { isSuccess, allowSMS, loading } = this.state;
 
+    const handleAppLinkClick = () => {
+      const platform = ios_url ? "ios" : "android";
+      sendToGA("event", {
+        eventCategory: "SMS Modal Interactions",
+        eventAction: "mobile store click",
+        eventLabel: `${experiment.title} ${platform} `,
+        dimension11: experiment.slug,
+        dimension13: fromFeatured ? "Featured Experiment" : "Experiment Detail"
+      });
+    };
+
     const headerMessage = ios_url ? (<LocalizedHtml id="mobileDialogMessageIOS" $title={title}>
       <p>Download <b>{title}</b> from the iOS App Store.</p></LocalizedHtml>) : (<LocalizedHtml id="mobileDialogMessageAndroid" $title={title}><p>Download <b>{title}</b> from the Google Play Store.</p></LocalizedHtml>);
+    const headerImg = ios_url ? (<a href={ios_url} onClick={handleAppLinkClick} target="_blank" rel="noopener noreferrer"><img className="mobile-header-img" src="/static/images/ios-light.svg"/></a>) : (<a href={android_url} onClick={handleAppLinkClick} target="_blank" rel="noopener noreferrer"><img className="mobile-header-img" src="/static/images/google-play.png"/></a>);
 
-    const headerImg = ios_url ? (<a href={ios_url} target="_blank"><img className="mobile-header-img" src="/static/images/ios-light.svg"/></a>) : (<a href={android_url} target="_blank"><img className="mobile-header-img" src="/static/images/google-play.png"/></a>);
+    const learnMoreLink = "https://www.mozilla.org/privacy/websites/#campaigns";
 
     const learnMore = (<Localized id="mobileDialogNoticeLearnMoreLink">
-      <a target="_blank" rel="noopener noreferrer" href="https://www.mozilla.org/en-US/privacy/websites/#campaigns">Learn More</a>
+      <a target="_blank" rel="noopener noreferrer" href={learnMoreLink}>Learn More</a>
+    </Localized>);
+
+    const privacy = (<Localized id="newsletterFormPrivacyNoticePrivacyLink">
+      <a target="_blank" rel="noopener noreferrer" href={learnMoreLink} />
     </Localized>);
 
     const notice = allowSMS ? (<Localized id="mobileDialogNoticeSMS" $learnMore={learnMore}><p className="notice">SMS service available in select countries only. SMS & data rates may apply. The intended recipient of the email or SMS must have consented. {learnMore}</p></Localized>)
-      : (<Localized id="mobileDialogNotice" $learnMore={learnMore}><p className="notice">The intended recipient of the email must have consented. {learnMore}</p></Localized>);
+      : (<LocalizedHtml id="newsletterFormPrivacyNotice" $privacy={privacy}>
+        <p className="notice">
+        I&apos;m okay with Mozilla handling my info as explained in {privacy}.
+        </p>
+      </LocalizedHtml>
+      );
 
     return (
       <div className="modal-container mobile-modal" tabIndex="0"
@@ -215,29 +237,30 @@ export default class MobileDialog extends React.Component {
     evt.preventDefault();
 
     const { allowSMS, recipient, country } = this.state;
-    const { sendToGA, getWindowLocation } = this.props;
+    const { sendToGA, getWindowLocation, fromFeatured, experiment } = this.props;
     const basketMsgId = this.props.experiment.basket_msg_id;
     const source = "" + getWindowLocation();
 
     // return early and show errors if submit attempt fails
     if (!this.validateRecipient(recipient)) return this.setState({submitAttempted: true, isError: true});
 
-    sendToGA("event", {
-      eventCategory: "ExperimentDetailsPage Interactions",
-      eventAction: "button click",
-      eventLabel: "Send link to device"
-    });
-
     if (allowSMS && isValidNumber(recipient, country)) {
+      sendToGA("event", {
+        eventCategory: "SMS Modal Interactions",
+        eventAction: "mobile link request",
+        eventLabel: "sms",
+        dimension11: experiment.slug,
+        dimension13: fromFeatured ? "Featured Experiment" : "Experiment Detail"
+      });
       // country, lang, msgId
       return subscribeToBasketSMS(recipient, country, basketMsgId).then(response => {
-        if (response.ok) {
-          sendToGA("event", {
-            eventCategory: "ExperimentDetailsPage Interactions",
-            eventAction: "button click",
-            eventLabel: "link sent to phone"
-          });
-        }
+        sendToGA("event", {
+          eventCategory: "SMS Modal Interactions",
+          eventAction: "request handled",
+          eventLabel: response.ok ? "success" : "error",
+          dimension11: experiment.slug,
+          dimension13: fromFeatured ? "Featured Experiment" : "Experiment Detail"
+        });
         this.setState({
           isSuccess: response.ok,
           isError: !response.ok
@@ -245,14 +268,23 @@ export default class MobileDialog extends React.Component {
       });
     }
 
+    sendToGA("event", {
+      eventCategory: "SMS Modal Interactions",
+      eventAction: "mobile link request",
+      eventLabel: "email",
+      dimension11: experiment.slug,
+      dimension13: fromFeatured ? "Featured Experiment" : "Experiment Detail"
+    });
+
     return subscribeToBasket(recipient, source).then(response => {
-      if (response.ok) {
-        sendToGA("event", {
-          eventCategory: "ExperimentDetailsPage Interactions",
-          eventAction: "button click",
-          eventLabel: "link sent to email"
-        });
-      }
+      sendToGA("event", {
+        eventCategory: "SMS Modal Interactions",
+        eventAction: "request handled",
+        eventLabel: response.ok ? "success" : "error",
+        dimension11: experiment.slug,
+        dimension13: fromFeatured ? "Featured Experiment" : "Experiment Detail"
+      });
+
       this.setState({
         isSuccess: response.ok,
         isError: !response.ok
@@ -268,12 +300,15 @@ export default class MobileDialog extends React.Component {
   }
 
   close = () => {
-    if (this.props.onCancel) {
-      this.props.onCancel();
-      this.props.sendToGA("event", {
-        eventCategory: "ExperimentDetailsPage Interactions",
-        eventAction: "button click",
-        eventLabel: "cancel Send link to device dialog"
+    const { onCancel, sendToGA, fromFeatured, experiment } = this.props;
+    if (onCancel) {
+      onCancel();
+      sendToGA("event", {
+        eventCategory: "SMS Modal Interactions",
+        eventAction: "dialog dismissed",
+        eventLabel: "cancel Send link to device dialog",
+        dimension11: experiment.slug,
+        dimension13: fromFeatured ? "Featured Experiment" : "Experiment Detail"
       });
     }
   }

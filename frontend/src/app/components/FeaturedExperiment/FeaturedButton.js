@@ -121,7 +121,15 @@ export default class FeaturedButton extends React.Component {
 
   doShowMobileAppDialog = (evt: MouseEvent) => {
     evt.preventDefault();
+    const { experiment }  = this.props;
+
     this.setState({ showMobileDialog: true });
+    this.props.sendToGA("event", {
+      eventCategory: "Featured Experiment",
+      eventAction: "mobile send click",
+      eventLabel: experiment.title,
+      dimension11: experiment.slug
+    });
   };
 
   render() {
@@ -133,33 +141,25 @@ export default class FeaturedButton extends React.Component {
 
     let Buttons;
 
-    const terms = <Localized id="landingLegalNoticeTermsOfUse">
-      <a href="/terms"/>
-    </Localized>;
-    const privacy = <Localized id="landingLegalNoticePrivacyNotice">
-      <a href="/privacy"/>
-    </Localized>;
-
     if (platforms.includes("ios") || platforms.includes("android")) {
       Buttons = (
         <div>
           {showMobileDialog &&
-           <MobileDialog {...this.props}
+           <MobileDialog {...this.props} fromFeatured={true}
              onCancel={() => this.setState({ showMobileDialog: false })}
            />}
           <LayoutWrapper flexModifier={"column-center-start-breaking"}
             helperClass="main-install">
             <div className="main-install__spacer"></div>
-            <Localized id="mobileDialogLaunchButton">
-              <a
-                className="button primary main-install__button"
-                onClick={this.doShowMobileAppDialog}>Send App Link to Device</a>
-            </Localized>
-            <LocalizedHtml id="landingLegalNotice" $terms={terms} $privacy={privacy}>
-              <p className="main-install__legal">
-                By proceeding, you agree to the {terms} and {privacy} of Test Pilot.
-              </p>
-            </LocalizedHtml>
+            <a
+              className="button primary main-install__button"
+              onClick={this.doShowMobileAppDialog}>
+              <img src="/static/images/mobile-white.svg" />
+              <Localized id="mobileDialogTitle">
+                <span>Get the App</span>
+              </Localized>
+            </a>
+            { this.renderLegalLink() }
           </LayoutWrapper>
           {this.renderLegalModal()}
         </div>
