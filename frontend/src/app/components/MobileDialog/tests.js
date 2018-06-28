@@ -6,7 +6,7 @@ import { shallow } from "enzyme";
 
 import MobileDialog from "./index.js";
 
-describe("app/containers/ExperimentPage/MobileDialog", () => {
+describe("app/components/MobileDialog", () => {
   const experiment = {
     title: "Foobar",
     slug: "foobar",
@@ -43,9 +43,11 @@ describe("app/containers/ExperimentPage/MobileDialog", () => {
     subject.find(".modal-cancel").simulate("click", mockClickEvent);
     expect(onCancel.called).to.be.true;
     expect(sendToGA.lastCall.args).to.deep.equal(["event", {
-      eventCategory: "ExperimentDetailsPage Interactions",
-      eventAction: "button click",
-      eventLabel: "cancel Send link to device dialog"
+      eventCategory: "SMS Modal Interactions",
+      eventAction: "dialog dismissed",
+      eventLabel: "cancel Send link to device dialog",
+      dimension11: experiment.slug,
+      dimension13: "Experiment Detail"
     }]);
   });
 
@@ -53,9 +55,11 @@ describe("app/containers/ExperimentPage/MobileDialog", () => {
     subject.find(".modal-container").simulate("keyDown", mockEscapeKeyDownEvent);
     expect(onCancel.called).to.be.true;
     expect(sendToGA.lastCall.args).to.deep.equal(["event", {
-      eventCategory: "ExperimentDetailsPage Interactions",
-      eventAction: "button click",
-      eventLabel: "cancel Send link to device dialog"
+      eventCategory: "SMS Modal Interactions",
+      eventAction: "dialog dismissed",
+      eventLabel: "cancel Send link to device dialog",
+      dimension11: experiment.slug,
+      dimension13: "Experiment Detail"
     }]);
   });
 });

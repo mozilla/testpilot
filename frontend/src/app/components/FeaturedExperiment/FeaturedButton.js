@@ -121,7 +121,15 @@ export default class FeaturedButton extends React.Component {
 
   doShowMobileAppDialog = (evt: MouseEvent) => {
     evt.preventDefault();
+    const { experiment }  = this.props;
+
     this.setState({ showMobileDialog: true });
+    this.props.sendToGA("event", {
+      eventCategory: "Featured Experiment",
+      eventAction: "mobile send click",
+      eventLabel: experiment.title,
+      dimension11: experiment.slug
+    });
   };
 
   render() {
@@ -137,7 +145,7 @@ export default class FeaturedButton extends React.Component {
       Buttons = (
         <div>
           {showMobileDialog &&
-           <MobileDialog {...this.props}
+           <MobileDialog {...this.props} fromFeatured={true}
              onCancel={() => this.setState({ showMobileDialog: false })}
            />}
           <LayoutWrapper flexModifier={"column-center-start-breaking"}

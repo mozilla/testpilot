@@ -436,7 +436,15 @@ export class ExperimentDetail extends React.Component {
 
   doShowMobileAppDialog = (evt: MouseEvent) => {
     evt.preventDefault();
+    const { experiment }  = this.props;
+
     this.setState({ showMobileDialog: true });
+    this.props.sendToGA("event", {
+      eventCategory: "ExperimentDetailsPage Interactions",
+      eventAction: "mobile send click",
+      eventLabel: experiment.title,
+      dimension11: experiment.slug
+    });
   };
 
   doShowTourDialog = (evt: MouseEvent) => {
