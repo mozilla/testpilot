@@ -140,6 +140,8 @@ experimentPromoSubheader = Vi byggjer neste generasjons funksjonar for Firefox. 
 
 isEnabledStatusMessage = { $title } er slått på.
 installErrorMessage = Hoppsann. { $title } kunne ikkje aktiverast. Prøv igjen seinare.
+wrongPlatformIOS = Dette eksperimentet er berre tilgjengeleg for iOS-einingar.
+wrongPlatformAndroid = Dette eksperimentet er berre tilgjengeleg for Android-einingar.
 otherExperiments = Prøv også desse eksperimenta
 giveFeedback = Gje ei tilbakemelding
 disableHeader = Slå av eksperimentet?
@@ -263,6 +265,7 @@ hidePastExperiments = Gøym tidlegare eksperiment
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Noko gjekk gale!
+warningGoToFAQDetail = Noko gjekk gale med Test Pilot. Gjer vel og <a>sjå vanlege spørsmål</a> om du vil vite meir.
 warningUpgradeFirefoxTitle = Oppgrader Firefox for å fortsetje!
 warningUpgradeFirefoxDetail = Test Pilot krev siste versjon av Firefox. <a>Oppgrader Firefox</a> for att kome i gang.
 warningHttpsRequiredTitle = HTTPS er påkravd!

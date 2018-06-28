@@ -14,6 +14,16 @@ footerLinkPrivacy = Privatlivspolitik
 footerLinkTerms = Betingelser
 footerLinkLegal = Juridisk
 footerLinkFeedback = Giv feedback
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Om
+footerLinkAboutUs = Om os
+footerLinkSupportHeader = Hjælp
+footerLinkDownload = Hent Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobil
+footerLinkFeatures = Funktioner
+footerLinkBeta = Beta, Nightly, Developer Edition
+footerLinkRetire = Afinstaller Testpilot
 
 ## Items in the menu and footer
 
@@ -130,6 +140,8 @@ experimentPromoSubheader = Vi bygger den nyeste generation af funktioner til Fir
 
 isEnabledStatusMessage = { $title } er aktiveret.
 installErrorMessage = Åh-åh, { $title } kunne ikke aktiveres. Prøv igen senere.
+wrongPlatformIOS = Dette eksperiment er kun tilgængeligt til iOS.
+wrongPlatformAndroid = Dette eksperiment er kun tilgængeligt til Android.
 otherExperiments = Prøv også disse eksperimenter
 giveFeedback = Giv feedback
 disableHeader = Deaktiver eksperiment?

@@ -18,6 +18,7 @@ containersContributors0Title = Keamanan dan Privasi Pengguna
 containersContributors1Title = Insinyur Platform
 containersContributors2Title = Insinyur Privasi
 containersContributors3Title = Insinyur Tes QA
+minvidToursteps2Copy = Kendali akses dalam rangka menyesuaikan suara, memainkan, memberi jeda dan memindah video.
 minvidContributors0Title = Insinyur
 minvidContributors1Title = Staf Insinyur
 minvidContributors2Title = Insinyur Magang

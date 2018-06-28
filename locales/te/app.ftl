@@ -14,6 +14,13 @@ footerLinkPrivacy = గోప్యత
 footerLinkTerms = నియమాలు
 footerLinkLegal = చట్టపరమైన
 footerLinkFeedback = అభిప్రాయం తెలియజేయండి
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = గురించి
+footerLinkAboutUs = మా గురించి
+footerLinkSupportHeader = తోడ్పాటు
+# link to page detailing firefox mobile browser options
+footerLinkMobile = మొబైల్
+footerLinkFeatures = విశేషాలు
 
 ## Items in the menu and footer
 
@@ -36,6 +43,8 @@ landingInstallingButton = స్థాపించబడుతోంది...
 
 ## Related to a one click to install test pilot and an experiment.
 
+# $title is replaced by the name of an experiment
+oneClickInstallMajorCta = { $title } చేతనించు
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -46,6 +55,7 @@ landingDownloadFirefoxSubTitle = ఉచిత దింపుకోలు
 
 ## A section of the homepage explaining how Test Pilot works.
 
+landingCardListTitle = 3, 2, 1 మొదలుపెట్టండి
 landingCardOne = Test Pilot పొడిగింతను పొందండి
 landingCardThree = మీరు ఏమని అనుకుంటున్నారో చెప్పండి
 
@@ -103,10 +113,14 @@ experimentPreFeedbackLinkCopy = { $title } ప్రయోగంపై మీ �
 
 ## A splash shown on top of the experiment page when Test Pilot is not installed.
 
+experimentPromoHeader = ఎగరడానికి తయారుగా ఉన్నారా?
 
 ## The experiment detail page.
 
+isEnabledStatusMessage = { $title } చేతనమయింది.
+otherExperiments = అలాగే ఈ ప్రయోగాలను కూడా ప్రయత్నించండి
 giveFeedback = అభిప్రాయం తెలియజేయండి
+disableHeader = ప్రయోగాన్ని నిలిపివేయాలా?
 disableExperiment = అచేతనం { $title }
 enableExperiment = చేతనం { $title }
 enableExperimentTransition = చేతనంచేస్తోంది...
@@ -153,6 +167,7 @@ retirePageSurveyButton = త్వరిత సర్వేలో పాల్�
 
 ## Shown to users after installing Test Pilot if a restart is required.
 
+restartIntroOne = మీ విహారిణిని పునఃప్రారంభించండి
 restartIntroThree = మీ ప్రయోగాలను ఎంచుకోండి
 
 ## Shown on pages of retired or retiring experiments.

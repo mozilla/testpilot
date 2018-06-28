@@ -226,7 +226,7 @@ incompatibleSubheader = Před aktivací tohoto experimentu doporučujeme <a>zak�
 newsletterFormEmailPlaceholder =
     .placeholder = místo pro e-mailovou adresu
 newsletterFormDisclaimer = Budeme vám zasílat pouze informace související s Test Pilotem.
-newsletterFormPrivacyNotice = Souhlasím s tím, aby Mozilla zpracovávala mé informace tak, jak je popsáno v <a>těchto Zásadách ochrany soukromí</a>.
+newsletterFormPrivacyNotice = Souhlasím s tím, aby Mozilla zpracovávala mé informace tak, jak je popsáno v těchto <a>zásadách ochrany osobních údajů</a>.
 newsletterFormSubmitButton = Přihlásit se
 newsletterFormSubmitButtonSubmitting = Odesílání...
 
