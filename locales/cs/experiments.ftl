@@ -73,7 +73,7 @@ nomore404sContributors2Title = Ředitel, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Vedoucí inženýr, The Internet Archive
 notesDescription = Jednoduchý poznámkový blok zabudovaný ve Firefoxu. Potřebujete si psát při prohlížení webu poznámky? Pak je toto experiment pro vás.
 notesIntroductionMultinote = Notes přidává do postranní lišty prohlížeče jednoduchý poznámkový blok. Přihlaste se k účtu Firefoxu a synchronizujte všechny své poznámky s end-to-end šifrováním.
-notesLegalnotice = Pokračováním souhlasíte s <a>podmínkami</a> a <a>zásadami ochrany soukromí</a> Test Pilotu a <a>zásadami ochrany soukromí Notes</a>.
+notesLegalnotice = Pokračováním souhlasíte s <a>podmínkami</a> a <a>zásadami ochrany osobních údajů</a> Test Pilotu a <a>zásadami ochrany osobních údajů Notes</a>.
 notesMeasurements0 = Experiment Notes bude shromažďovat informace o jeho používání, jako jsou třeba údaje o tom, jak často vytváříte poznámky, kolik času strávíte nad jejich úpravou, jak dlouhé vaše poznámky jsou a jestli používáte funkce některé editoru (například tučný nebo jinak stylizovaný text).
 notesMeasurements1 = Experiment bude také shromažďovat informace o vaší interakci s doplňkem, například o tom, jakým způsobem spouštíte jeho funkce a na jaké tlačítka jste klepli.
 notesDetails0Copy = Je to poznámkový blok. Proč jsme na něco takového nemysleli dříve?
@@ -116,7 +116,7 @@ sendIntroduction = <p>Se službou Send můžete nahrát a zašifrovat soubor až
 sendMeasurementsFilehash0 = Když používáte Send, Mozilla získává zašifrovanou kopii souboru, který nahráváte, a základní informace o souboru, jako je jeho název, hash a velikost. Mozilla nemá možnost, jak přistupovat k obsahu zašifrovaného souboru a uchovává ho pouze po zvolenou dobu nebo počet stažení.
 sendMeasurementsFilehash1 = Abyste mohli vidět stav dříve nahraných souborů a mazat je, jsou na vašem zařízení uloženy základní informace o nahraných souborech, např. identifikátor souboru ve službě Send, název souboru a unikátní odkaz pro stažení. Ke smazání těchto dat dojde automaticky při smazání souboru, nebo pokud navštívíte stránky služby Send poté, co platnost souboru vyprší.
 sendMeasurementsFilehash2 = Přístup ke stažení souboru bude mít každý, komu poskytnete odkaz ke stažení se šifrovacím klíčem. Odkaz byste neměly dávat nikomu, komu nechcete dát ani přístup k nahranému souboru.
-sendMeasurementsFilehash3 = Pro Send platí také naše <a href="https://www.mozilla.org/privacy/websites/" target="_blank">Zásady ochrany soukromí</a> na webových stránkách. Při návštěvě webové stránky Send jsou dočasně uloženy informace jako vaše IP adresa, které jsou součástí serverových logů.
+sendMeasurementsFilehash3 = Pro Send platí také naše <a href="https://www.mozilla.org/privacy/websites/" target="_blank">Zásady ochrany osobních údajů</a> na webových stránkách. Při návštěvě webové stránky Send jsou dočasně uloženy informace jako vaše IP adresa, které jsou součástí serverových logů.
 sendMeasurementsFilehash4 = Experiment Send bude také shromažďovat informace o výkonu a vašem využívání služby, např. jak často nahráváte nové soubory, jak dlouho jsou soubory uložené na serveru před jejich smazáním, chyby během přenosu souborů, nebo jaké kryptografické protokoly prohlížeče podporují.
 sendDetails0Copy = S experimentem Send můžete nahrávat a sdílet soubory šifrovaně.
 sendDetails1Copy = Send ukládá vaše soubory pouze do prvního stažení, nebo do uplynutí 24 hodin.
