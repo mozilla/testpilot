@@ -48,6 +48,21 @@ export default class FeaturedExperiment extends React.Component {
     const { description, title, subtitle, slug, video_url, error, platforms } = experiment;
     const isMobileExperiment = platforms.includes("ios") || platforms.includes("android");
 
+    const handleDetailsLinkClick = () => {
+      sendToGA("event", {
+        eventCategory,
+        eventAction: "link click",
+        eventLabel: "View Featured details",
+        dimension1: hasAddon,
+        dimension2: Object.keys(installed).length > 0,
+        dimension3: Object.keys(installed).length,
+        dimension4: enabled,
+        dimension10: getBreakpoint(window.innerWidth),
+        dimension11: slug,
+        dimension13: "Featured Experiment"
+      });
+    };
+
     return (
       <div>
         { error && <div className="status-bar error featured">
@@ -60,11 +75,15 @@ export default class FeaturedExperiment extends React.Component {
         <div className="featured-experiment">
           <FeaturedStatus {...this.props} />
           <header className="featured-experiment__header">
-            <div className={`experiment-icon-wrapper-${slug} experiment-icon-wrapper`}>
-              <div className={`experiment-icon-${slug} experiment-icon`}></div>
-            </div>
+            <Link to={`/experiments/${slug}`} onClick={handleDetailsLinkClick}>
+              <div className={`experiment-icon-wrapper-${slug} experiment-icon-wrapper`}>
+                <div className={`experiment-icon-${slug} experiment-icon`}></div>
+              </div>
+            </Link>
             <div className="featured-experiment__title-wrapper">
-              <h2 className="featured-experiment__title">{title}</h2>
+              <Link to={`/experiments/${slug}`} onClick={handleDetailsLinkClick}>
+                <h2 className="featured-experiment__title">{title}</h2>
+              </Link>
               <div className="featured-experiment__info">
                 <ExperimentPlatforms experiment={experiment} />
                 {subtitle && <Localized id={this.l10nId("subtitle")}>
@@ -80,20 +99,7 @@ export default class FeaturedExperiment extends React.Component {
 
           {(!enabled || isMobileExperiment) && <Localized id='moreDetail'>
             <Link className="featured-experiment__details" to={`/experiments/${slug}`}
-              onClick={() => {
-                sendToGA("event", {
-                  eventCategory,
-                  eventAction: "link click",
-                  eventLabel: "View Featured details",
-                  dimension1: hasAddon,
-                  dimension2: Object.keys(installed).length > 0,
-                  dimension3: Object.keys(installed).length,
-                  dimension4: enabled,
-                  dimension10: getBreakpoint(window.innerWidth),
-                  dimension11: slug,
-                  dimension13: "Featured Experiment"
-                });
-              }}>View Details</Link>
+              onClick={handleDetailsLinkClick}>View Details</Link>
           </Localized>}
 
           <div className="featured-experiment__actions">
