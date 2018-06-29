@@ -200,6 +200,11 @@ experimentPlatformWeb = arbrawf gwe
 experimentPlatformAddonWeb = Arbrawf Firefox/gwe
 experimentPlatformAddonAndroid = Arbrawf Android / Firefox
 experimentPlatformAddonIos = Arbrawf iOS / Firefox
+experimentPlatformAddonAndroidIos = Arbrawf Android / iOS / Firefox
+experimentPlatformAddonAndroidWeb = Arbrawf Android / Firefox / gwe
+experimentPlatformAddonAndroidIosWeb = Arbrawf Android / iOS / Firefox / gwe
+experimentPlatformAndroidWeb = Arbrawf Android / gwe
+experimentPlatformAndroidIos = Arbrawf Android / iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
