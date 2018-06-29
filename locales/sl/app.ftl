@@ -93,6 +93,10 @@ emailOptInConfirmationTitle = E-poštno sporočilo poslano
 emailOptInConfirmationClose = Naprej na poskuse ...
 emailOptInDialogErrorTitle = O, ne!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Pridobite aplikacijo
+
 ## Featured experiment.
 
 moreDetail = Prikaži podrobnosti
@@ -177,13 +181,8 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Poskus za Firefox / splet / mobilno aplikacijo
-experimentPlatformWebAddon = Poskus za Firefox / splet
-experimentPlatformWebMobile = Pokus za splet / mobilno aplikacijo
-experimentPlatformAddonMobile = Poksus za Firefox / mobilno aplikacijo
-experimentPlatformWeb = Poskus za splet
 experimentPlatformAddon = Poskus za Firefox
-experimentPlatformMobileApp = Poskus za mobilno aplikacijo
+experimentPlatformWeb = Poskus za splet
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
