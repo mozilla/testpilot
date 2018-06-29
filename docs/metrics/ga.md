@@ -90,12 +90,12 @@ Here are the current events on the website as of this writing, grouped by their 
 | Accept Firefox permission dialog | Accept From Permission | `{experiment title}`
 | Cancel Firefox permission dialog | Cancel From Permission | `{experiment title}`
 | Send experiment app link to device | mobile send click | `{experiment title}` |
-| Click app store links on experiment page | mobile store click | `{experiment title}` `{ios || android}` |
+| Click app store links on experiment page | mobile store click | `{experiment title}` `{ios \|\| android}` |
 
 #### `SMS Modal Interactions`
 | Description | `eventAction` | `eventLabel` |
 |-------------|---------------|--------------|
-| Click app store links in modal | mobile link request | `{sms || email}` |
+| Click app store links in modal | mobile link request | `{sms \|\| email}` |
 | Send experiment link  success | request handled | success |
 | Send experiment link error | request handled | error |
 | Cancel Send link to device dialog | dialog dismissed | cancel Send link to device dialog|
