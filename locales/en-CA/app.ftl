@@ -93,6 +93,25 @@ emailOptInConfirmationTitle = Email Sent
 emailOptInConfirmationClose = On to the experiments...
 emailOptInDialogErrorTitle = Oh no!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Get the App
+mobileDialogMessageIOS = Download <b>{ $title }</b> from the iOS App Store.
+mobileDialogMessageAndroid = Download <b>{ $title }</b> from the Google Play Store.
+mobileDialogInstructionsSMS = Enter your phone number or email to send a download link to your phone:
+mobileDialogInstructions = Enter your email to send a download link to your phone:
+mobileDialogPlaceholder = Enter your Email
+mobileDialogPlaceholderSMS = Enter your Phone/Email
+mobileDialogButton = Send me the Download Link
+mobileDialogButtonSuccess = Thanks!
+mobileDialogSuccessMain = Download link sent!
+mobileDialogSuccessSecondarySMS = Check your device for the email or text message.
+mobileDialogSuccessSecondary = Check your device for the email.
+mobileDialogAnotherDeviceLink = Send to another device
+mobileDialogError = Enter a valid email:
+mobileDialogErrorSMS = Enter a valid phone number or email:
+mobileDialogNoticeSMS = SMS service available in select countries only. SMS & data rates may apply. The intended recipient of the email or SMS must have consented. { $learnMore }
+
 ## Featured experiment.
 
 moreDetail = View details
@@ -177,13 +196,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Firefox / web / mobile experiment
-experimentPlatformWebAddon = Firefox / web experiment
-experimentPlatformWebMobile = web / mobile experiment
-experimentPlatformAddonMobile = Firefox / mobile experiment
-experimentPlatformWeb = web experiment
 experimentPlatformAddon = Firefox experiment
-experimentPlatformMobileApp = mobile experiment
+experimentPlatformAndroid = Android experiment
+experimentPlatformIos = iOS experiment
+experimentPlatformWeb = web experiment
+experimentPlatformAddonWeb = Firefox / web experiment
+experimentPlatformAddonAndroid = Android / Firefox experiment
+experimentPlatformAddonIos = iOS / Firefox experiment
+experimentPlatformAddonAndroidIos = Android / iOS / Firefox experiment
+experimentPlatformAddonAndroidWeb = Android / Firefox / web experiment
+experimentPlatformAddonAndroidIosWeb = Android / iOS / Firefox / web experiment
+experimentPlatformAndroidWeb = Android / web experiment
+experimentPlatformAndroidIos = Android / iOS experiment
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
