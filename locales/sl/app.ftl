@@ -96,6 +96,8 @@ emailOptInDialogErrorTitle = O, ne!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Pridobite aplikacijo
+mobileDialogMessageIOS = Prenesite <b>{ $title }</b> iz trgovine iOS App.
+mobileDialogMessageAndroid = Prenesite <b>{ $title }</b> iz trgovine Google Play.
 mobileDialogPlaceholder = Vnesite e-poštni naslov
 mobileDialogPlaceholderSMS = Vnesite telefonsko številko/e-poštni naslov
 mobileDialogButton = Pošlji mi povezavo za prenos
@@ -194,6 +196,14 @@ experimentPlatformAddon = Poskus za Firefox
 experimentPlatformAndroid = Poskus za Android
 experimentPlatformIos = Poskus za iOS
 experimentPlatformWeb = Poskus za splet
+experimentPlatformAddonWeb = Poskus za Firefox / splet
+experimentPlatformAddonAndroid = Poskus za Android / Firefox
+experimentPlatformAddonIos = Poskus za iOS / Firefox
+experimentPlatformAddonAndroidIos = Poskus za Android / iOS / Firefox
+experimentPlatformAddonAndroidWeb = Poskus za Android / Firefox / splet
+experimentPlatformAddonAndroidIosWeb = Poskus za Android / iOS / Firefox / splet
+experimentPlatformAndroidWeb = Poskus za Android / splet
+experimentPlatformAndroidIos = Poskus za Android / iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
