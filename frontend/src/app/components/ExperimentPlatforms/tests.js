@@ -36,11 +36,11 @@ describe("app/components/ExperimentPlatforms", () => {
     subject.setProps({
       experiment: {
         ...mockExperiment,
-        platforms: ["addon", "mobile", "web", "diving", "political"]
+        platforms: ["addon", "ios", "android", "web", "diving", "political"]
       }
     });
-    expect(findLocalizedById(subject, "experimentPlatformWebAddonMobile")).to.have.property("length", 1);
-    ["addon", "mobile", "web"].forEach(platform =>
+    expect(findLocalizedById(subject, "experimentPlatformAddonAndroidIosWeb")).to.have.property("length", 1);
+    ["addon", "android", "ios", "web"].forEach(platform =>
       expect(subject.find(`.platform-icon-${platform}`)).to.have.property("length", 1));
     ["diving", "political"].forEach(platform =>
       expect(subject.find(`.platform-icon-${platform}`)).to.have.property("length", 0));

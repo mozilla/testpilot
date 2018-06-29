@@ -1,7 +1,7 @@
 id: 17
 title: 'Color'
 slug: color
-is_featured: true
+is_featured: false
 platforms: ['addon', 'web']
 web_url: 'https://color.firefox.com'
 min_release: 60
@@ -80,4 +80,3 @@ contributors:
 created: '2018-06-05T14:00:00Z'
 launch_date: '2018-06-05T14:00:00Z'
 order: 0
-

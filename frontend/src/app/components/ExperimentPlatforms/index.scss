@@ -42,7 +42,13 @@
     background-image: url('./img/experiment-type-addon.svg');
   }
 
-  .platform-icon-mobile {
+  .platform-icon-ios,
+  .platform-icon-android {
     background-image: url('./img/experiment-type-mobile.svg');
+  }
+
+  // don't show two mobile icons if we support both platforms
+  .platform-icon-android + .platform-icon-ios {
+    display: none;
   }
 }

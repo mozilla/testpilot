@@ -9,6 +9,8 @@ import { buildSurveyURL, experimentL10nId } from "../../lib/utils";
 import Modal from "../Modal";
 import MeasurementSection from "../Measurements";
 import MainInstallButton from "../MainInstallButton";
+import MobileDialog from "../MobileDialog";
+import LayoutWrapper from "../LayoutWrapper";
 
 import type { InstalledExperiments } from "../../reducers/addon";
 
@@ -17,13 +19,16 @@ type FeaturedButtonProps = {
   enabled: boolean,
   experiment: Object,
   eventCategory: string,
+  fetchCountryCode: Function,
+  getWindowLocation: Function,
   hasAddon: any,
   installed: InstalledExperiments,
-  sendToGA: Function
+  sendToGA: Function,
 }
 
 type FeaturedButtonState = {
-  showLegalDialog: boolean
+  showLegalDialog: boolean,
+  showMobileDialog: boolean
 }
 
 export default class FeaturedButton extends React.Component {
@@ -33,7 +38,8 @@ export default class FeaturedButton extends React.Component {
   constructor(props: FeaturedButtonProps) {
     super(props);
     this.state = {
-      showLegalDialog: false
+      showLegalDialog: false,
+      showMobileDialog: false
     };
   }
 
@@ -113,14 +119,52 @@ export default class FeaturedButton extends React.Component {
     });
   }
 
+  doShowMobileAppDialog = (evt: MouseEvent) => {
+    evt.preventDefault();
+    const { experiment }  = this.props;
+
+    this.setState({ showMobileDialog: true });
+    this.props.sendToGA("event", {
+      eventCategory: "Featured Experiment",
+      eventAction: "mobile send click",
+      eventLabel: experiment.title,
+      dimension11: experiment.slug
+    });
+  };
+
   render() {
     const { experiment, installed, clientUUID,
       hasAddon, enabled } = this.props;
-    const { slug, survey_url, title } = experiment;
+    const { slug, survey_url, title, platforms } = experiment;
+
+    const { showMobileDialog } = this.state;
 
     let Buttons;
 
-    if (enabled && hasAddon) {
+    if (platforms.includes("ios") || platforms.includes("android")) {
+      Buttons = (
+        <div>
+          {showMobileDialog &&
+           <MobileDialog {...this.props} fromFeatured={true}
+             onCancel={() => this.setState({ showMobileDialog: false })}
+           />}
+          <LayoutWrapper flexModifier={"column-center-start-breaking"}
+            helperClass="main-install">
+            <div className="main-install__spacer"></div>
+            <a
+              className="button primary main-install__button"
+              onClick={this.doShowMobileAppDialog}>
+              <img src="/static/images/mobile-white.svg" />
+              <Localized id="mobileDialogTitle">
+                <span>Get the App</span>
+              </Localized>
+            </a>
+            { this.renderLegalLink() }
+          </LayoutWrapper>
+          {this.renderLegalModal()}
+        </div>
+      );
+    } else if (enabled && hasAddon) {
       const surveyURL = buildSurveyURL("givefeedback", title, installed, clientUUID, survey_url);
       Buttons = (
         <div>

@@ -26,7 +26,8 @@ export default function ExperimentControls({
   doShowPreFeedbackDialog,
   flashMeasurementPanel,
   sendToGA,
-  surveyURL
+  surveyURL,
+  doShowMobileAppDialog
 }: ExperimentControlsType) {
   const {
     title,
@@ -84,6 +85,7 @@ export default function ExperimentControls({
     userAgent,
     validVersion
   })).filter(b => b);
+
   if (enabled) {
     if (!graduated) {
       buttons.unshift(
@@ -125,7 +127,25 @@ export default function ExperimentControls({
       );
     }
   }
-  const controls = <div className="experiment-controls">{buttons}</div>;
+
+  if (!isMobile(userAgent)) {
+    if (platforms.includes("ios") || platforms.includes("android")) {
+      buttons.unshift(
+        <a
+          className="button default mobile-trigger"
+          onClick={doShowMobileAppDialog}>
+          <img src="/static/images/mobile-white.svg" />
+          <Localized id="mobileDialogTitle">
+            <span>Get the App</span>
+          </Localized>
+        </a>
+      );
+    }
+  }
+
+  const controls = <div className="experiment-controls">
+    {buttons}
+  </div>;
 
   const showLegal = buttons.length > 0 && !graduated;
   let legalSection = null;
@@ -223,6 +243,7 @@ function createButton({
   validVersion
 }: EnableButtonType) {
   const { slug, title, web_url, ios_url, android_url, platforms } = experiment;
+
   if (platform === "web" && web_url) {
     return <WebExperimentControls {...{ key: web_url, web_url, title, slug, sendToGA, platforms, validVersion }} />;
   } else if (platform === "addon") {
@@ -329,7 +350,7 @@ function createButton({
       rel="noopener noreferrer"
       className="button mobile"
     >
-      <img height="80px" src="/static/images/ios.svg" />
+      <img src="/static/images/ios-light.svg" />
     </a>;
   } else if (platform === "android") {
     return <a
@@ -338,7 +359,7 @@ function createButton({
       target="_blank"
       rel="noopener noreferrer"
       className="button mobile">
-      <img height="80px" src="/static/images/google-play.png" />
+      <img src="/static/images/google-play.png" />
     </a>;
   }
   return null;

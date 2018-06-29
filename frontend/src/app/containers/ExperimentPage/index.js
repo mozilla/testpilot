@@ -15,6 +15,7 @@ import ExperimentCardList from "../../components/ExperimentCardList";
 
 import Banner from "../../components/Banner";
 import LayoutWrapper from "../../components/LayoutWrapper";
+import MobileDialog from "../../components/MobileDialog";
 
 import ExperimentPreFeedbackDialog from "./ExperimentPreFeedbackDialog";
 import ExperimentDisableDialog from "./ExperimentDisableDialog";
@@ -55,6 +56,7 @@ export class ExperimentDetail extends React.Component {
     showEmailDialog: boolean,
     showDisableDialog: boolean,
     showTourDialog: boolean,
+    showMobileDialog: boolean,
     showPreFeedbackDialog: boolean,
     showEolDialog: boolean
   };
@@ -77,6 +79,7 @@ export class ExperimentDetail extends React.Component {
       showEmailDialog: false,
       showDisableDialog: false,
       showTourDialog: false,
+      showMobileDialog: false,
       showPreFeedbackDialog: false,
       showEolDialog: false
     };
@@ -134,6 +137,7 @@ export class ExperimentDetail extends React.Component {
       flashMeasurementPanel,
       doShowEolDialog,
       doShowTourDialog,
+      doShowMobileAppDialog,
       doShowPreFeedbackDialog
     } = this;
 
@@ -169,6 +173,7 @@ export class ExperimentDetail extends React.Component {
       showTourDialog,
       showPreFeedbackDialog,
       showEolDialog,
+      showMobileDialog,
       isEnabling,
       isDisabling
     } = this.state;
@@ -238,6 +243,12 @@ export class ExperimentDetail extends React.Component {
             {...this.props}
             onCancel={() => this.setState({ showTourDialog: false })}
             onComplete={() => this.setState({ showTourDialog: false })}
+          />}
+
+        {showMobileDialog &&
+          <MobileDialog
+            {...this.props}
+            onCancel={() => this.setState({ showMobileDialog: false })}
           />}
 
         {showPreFeedbackDialog &&
@@ -320,6 +331,7 @@ export class ExperimentDetail extends React.Component {
                     highlightMeasurementPanel,
                     flashMeasurementPanel,
                     doShowTourDialog,
+                    doShowMobileAppDialog,
                     l10nId,
                     hasTour
                   }}
@@ -420,6 +432,19 @@ export class ExperimentDetail extends React.Component {
     });
 
     disableExperiment(experiment);
+  };
+
+  doShowMobileAppDialog = (evt: MouseEvent) => {
+    evt.preventDefault();
+    const { experiment }  = this.props;
+
+    this.setState({ showMobileDialog: true });
+    this.props.sendToGA("event", {
+      eventCategory: "ExperimentDetailsPage Interactions",
+      eventAction: "mobile send click",
+      eventLabel: experiment.title,
+      dimension11: experiment.slug
+    });
   };
 
   doShowTourDialog = (evt: MouseEvent) => {

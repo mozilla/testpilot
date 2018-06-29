@@ -3,12 +3,20 @@ import addonActions from "../actions/addon";
 import { updateExperiment } from "../actions/experiments";
 import InstallHistory from "./install-history";
 
-const TESTPILOT_ADDON_ID = "@testpilot-addon";
-
 let installHistory;
 let mam = null;
 if (typeof navigator !== "undefined") {
   mam = navigator.mozAddonManager;
+}
+
+function getAddonId() {
+  return {
+    "example.com:8000": "@testpilot-addon-local",
+    "testpilot.dev.mozaws.net": "@testpilot-addon-dev",
+    "testpilot-l10n.dev.mozaws.net": "@testpilot-addon-l10n",
+    "testpilot.stage.mozaws.net": "@testpilot-addon-stage",
+    "testpilot.firefox.com": "@testpilot-addon"
+  }[window.location.host];
 }
 
 function mozAddonManagerInstall(url, sendToGA, slug = null) {
@@ -44,7 +52,7 @@ export function installAddon(
     return Promise.reject();
   }
 
-  return mam.getAddonByID(TESTPILOT_ADDON_ID)
+  return mam.getAddonByID(getAddonId())
     .then(addon => {
       if (addon) {
         if (!addon.isEnabled) {
@@ -77,7 +85,7 @@ export function uninstallAddon() {
     return Promise.reject();
   }
 
-  return mam.getAddonByID(TESTPILOT_ADDON_ID).then(addon => {
+  return mam.getAddonByID(getAddonId()).then(addon => {
     if (addon) {
       addon.uninstall();
     }
@@ -96,7 +104,7 @@ export function setupAddonConnection(store) {
 
   mam.addEventListener("onEnabled", addon => {
     if (!addon) { return false; }
-    if (addon.id === TESTPILOT_ADDON_ID) {
+    if (addon.id === getAddonId()) {
       return store.dispatch(addonActions.setHasAddon(true));
     }
 
@@ -114,7 +122,7 @@ export function setupAddonConnection(store) {
   });
 
   mam.addEventListener("onInstalled", addon => {
-    if (addon && addon.id === TESTPILOT_ADDON_ID) {
+    if (addon && addon.id === getAddonId()) {
       return store.dispatch(addonActions.txpInstalled());
     }
     installHistory.setActive(addon.id);
@@ -123,7 +131,7 @@ export function setupAddonConnection(store) {
 
   function onDisabled(addon) {
     if (!addon) { return false; }
-    if (addon.id === TESTPILOT_ADDON_ID) {
+    if (addon.id === getAddonId()) {
       return store.dispatch(addonActions.setHasAddon(false));
     }
     const x = experimentById(addon.id);
@@ -159,7 +167,7 @@ export function setupAddonConnection(store) {
   mam.addEventListener('onPropertyChanged', (addon, p) => {
   });
   */
-  mam.getAddonByID(TESTPILOT_ADDON_ID)
+  mam.getAddonByID(getAddonId())
     .then(addon => {
       store.dispatch(addonActions.setHasAddon(!!addon && addon.isEnabled));
     })
@@ -246,25 +254,6 @@ export function enableExperiment(dispatch, experiment, sendToGA, eventCategory, 
           })
         );
       });
-}
-
-// issue 3580
-export function checkForStagingAndUninstall() {
-  if (!mam) {
-    return Promise.reject("no mozAddonManager");
-  }
-  return mam
-    .getAddonByID("@testpilot-addon-stage")
-    .then(
-      addon => {
-        if (addon) {
-          return addon.uninstall();
-        }
-        return Promise.resolve();
-      } // TODO error case
-    ).catch(err => {
-      console.log("ERROR finding and uninstalling @testpilot-addon-stage", err);
-    });
 }
 
 export function disableExperiment(dispatch, experiment) {

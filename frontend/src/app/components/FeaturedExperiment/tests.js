@@ -22,7 +22,8 @@ describe("app/components/FeaturedExperiment", () => {
       subtitle_l10nsuffix: "foo",
       description: "This is a description.",
       created: moment().subtract(2, "months").utc(),
-      modified: moment().subtract(2, "months").utc()
+      modified: moment().subtract(2, "months").utc(),
+      platforms: ["addon"]
     };
     props = {
       experiment: mockExperiment,
@@ -158,7 +159,8 @@ describe("app/components/FeaturedButton", () => {
       subtitle_l10nsuffix: "foo",
       description: "This is a description.",
       created: moment().subtract(1, "week").utc(),
-      modified: moment().subtract(1, "week").utc()
+      modified: moment().subtract(1, "week").utc(),
+      platforms: ["web"]
     };
     mockClickEvent = {
       preventDefault: sinon.spy(),

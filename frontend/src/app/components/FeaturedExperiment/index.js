@@ -17,15 +17,17 @@ import type { InstalledExperiments } from "../../reducers/addon";
 import ExperimentPlatforms from "../ExperimentPlatforms";
 
 type FeaturedExperimentProps = {
-  experiment: Object,
-  hasAddon: any,
+  clientUUID?: string,
   enabled: boolean,
+  eventCategory: string,
+  experiment: Object,
+  fetchCountryCode: Function,
+  getWindowLocation: Function,
+  hasAddon: any,
   isFirefox: boolean,
+  isExperimentEnabled: Function,
   isMinFirefox: boolean,
   installed: InstalledExperiments,
-  clientUUID?: string,
-  eventCategory: string,
-  isExperimentEnabled: Function,
   sendToGA: Function
 }
 
@@ -43,7 +45,8 @@ export default class FeaturedExperiment extends React.Component {
   render() {
     const { experiment, enabled, installed, hasAddon, sendToGA,
       eventCategory } = this.props;
-    const { description, title, subtitle, slug, video_url, error } = experiment;
+    const { description, title, subtitle, slug, video_url, error, platforms } = experiment;
+    const isMobileExperiment = platforms.includes("ios") || platforms.includes("android");
 
     return (
       <div>
@@ -75,7 +78,7 @@ export default class FeaturedExperiment extends React.Component {
             <p className="featured-experiment__description">{description}</p>
           </Localized>
 
-          {!enabled && <Localized id='moreDetail'>
+          {(!enabled || isMobileExperiment) && <Localized id='moreDetail'>
             <Link className="featured-experiment__details" to={`/experiments/${slug}`}
               onClick={() => {
                 sendToGA("event", {

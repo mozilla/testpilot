@@ -1,11 +1,11 @@
 attrs==18.1.0
 pluggy==0.6.0
 PyPOM==2.0.0
-pytest==3.6.0
+pytest==3.6.2
 pytest-selenium==1.13.0
 pytest-firefox==0.1.1
 pytest-repeat==0.4.1
 pytest-xdist==1.22.2
 pytest-variables==1.7.1
-requests==2.18.4
-selenium==3.12.0
+requests==2.19.1
+selenium==3.13.0

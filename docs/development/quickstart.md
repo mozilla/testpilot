@@ -14,6 +14,10 @@ might come in handy for installing the right version of Node.js.
 Make sure you clone the Test Pilot repo:
 
   `git clone https://github.com/mozilla/testpilot.git`
+  
+Windows users will want to enable symlinks:
+
+  `git clone -c core.symlinks=true https://github.com/mozilla/testpilot.git`
 
 ## For Linux & OS X hosts
 
@@ -49,33 +53,12 @@ you should be on your way:
 
 1. Install [Firefox Developer Edition][devedition].
 
-1. Set `extensions.legacy.enabled` to `true` [using `about:config`][aboutconfig],
-   which should allow the use of legacy and unsigned Mozilla Extensions.
-      
 1. Configure your browser to use your local Test Pilot server:
 
    1. Type `about:config` in the URL bar, acknowledge the warning that appears.
 
-   1. Right click the list of preferences to summon a menu, pick New > String
-      to create a new preference.
-
-   1. Enter `testpilot.env` for the name.
-
-   1. Enter `local` for the value.
-
    1. Right click the list of preferences to summon a menu, pick New > Boolean
       to create a new preference.
-
-   1. Enter `extensions.install.requireBuiltInCerts` for the name.
-
-   1. Enter `false` for the value.
-
-   1. Right click the list of preferences to summon a menu, pick New > Boolean
-      to create a new preference.
-
-   1. Enter `xpinstall.signatures.required` for the name.
-
-   1. Enter `false` for the value.
 
    1. Enter `extensions.webapi.testing` for the name.
 
