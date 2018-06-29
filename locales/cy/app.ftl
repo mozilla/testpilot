@@ -93,6 +93,11 @@ emailOptInConfirmationTitle = Wedi anfon E-bost
 emailOptInConfirmationClose = Ymlaen at yr arbrofion...
 emailOptInDialogErrorTitle = O na!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Estyn yr Ap
+mobileDialogMessageIOS = Llwytho <b>{ $title }</b> i Lawr o'r iOS App Store.
+
 ## Featured experiment.
 
 moreDetail = Gweld manylion
@@ -174,13 +179,8 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Arbrawf Firefox / gwe / symudol
-experimentPlatformWebAddon = Firefox / arbrawf gwe
-experimentPlatformWebMobile = arbrawf gwe / symudol
-experimentPlatformAddonMobile = Firefox / arbrawf symudol
-experimentPlatformWeb = arbrawf gwe
 experimentPlatformAddon = arbrawf Firefox
-experimentPlatformMobileApp = arbrawf symudol
+experimentPlatformWeb = arbrawf gwe
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
