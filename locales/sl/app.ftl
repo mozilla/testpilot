@@ -96,6 +96,14 @@ emailOptInDialogErrorTitle = O, ne!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Pridobite aplikacijo
+mobileDialogPlaceholder = Vnesite e-poštni naslov
+mobileDialogPlaceholderSMS = Vnesite telefonsko številko/e-poštni naslov
+mobileDialogButton = Pošlji mi povezavo za prenos
+mobileDialogButtonSuccess = Hvala!
+mobileDialogSuccessMain = Povezava za prenos poslana!
+mobileDialogAnotherDeviceLink = Pošlji na drugo napravo
+mobileDialogError = Vnesite veljaven e-poštni naslov:
+mobileDialogErrorSMS = Vnesite veljavno telefonsko številko ali e-poštni naslov:
 
 ## Featured experiment.
 
