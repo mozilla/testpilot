@@ -104,6 +104,7 @@ mobileDialogSuccessMain = Povezava za prenos poslana!
 mobileDialogAnotherDeviceLink = Pošlji na drugo napravo
 mobileDialogError = Vnesite veljaven e-poštni naslov:
 mobileDialogErrorSMS = Vnesite veljavno telefonsko številko ali e-poštni naslov:
+mobileDialogNoticeSMS = Storitev SMS je na voljo samo v določenih državah. Sporočila in prenos podatkov so morda plačljivi. Namenjeni prejemnik e-pošte ali SMS-a se mora strinjati s prejemom. { $learnMore }
 
 ## Featured experiment.
 
@@ -190,6 +191,8 @@ nonExperimentDialogHeaderLink = Test Pilot
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
 experimentPlatformAddon = Poskus za Firefox
+experimentPlatformAndroid = Poskus za Android
+experimentPlatformIos = Poskus za iOS
 experimentPlatformWeb = Poskus za splet
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
