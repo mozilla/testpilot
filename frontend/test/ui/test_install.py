@@ -1,36 +1,36 @@
 import os
-import datetime
+# import datetime
 
 import pytest
-from pages.desktop.experiments import Experiments
+# from pages.desktop.experiments import Experiments
 from pages.desktop.home import Home
-from pages.desktop.detail import Detail
+# from pages.desktop.detail import Detail
 
 
-@pytest.mark.nondestructive
-@pytest.mark.skipif(os.environ.get('SKIP_INSTALL_TEST') is not None,
-                    reason='Skip install on Release and Beta Firefox.')
-def test_install_of_test_pilot_addon(
-        base_url, selenium, firefox, notifications):
-    """Check that the testpilot addon is installable and installs."""
-    page = Home(selenium, base_url).open()
-    selenium.execute_script(
-        "document.querySelector('.landing-experiments').scrollIntoView();"
-    )
-    if not page.featured.is_displayed:
-        page.header.click_install_button()
-        firefox.browser.wait_for_notification(
-            notifications.AddOnInstallConfirmation).install()
-        firefox.browser.wait_for_notification(
-            notifications.AddOnInstallComplete
-        ).close()
-    else:
-        page.featured.click_install_button()
-        firefox.browser.wait_for_notification(
-            notifications.AddOnInstallConfirmation).install()
-        firefox.browser.wait_for_notification(
-            notifications.AddOnInstallComplete
-        ).close()
+# @pytest.mark.nondestructive
+# @pytest.mark.skipif(os.environ.get('SKIP_INSTALL_TEST') is not None,
+#                     reason='Skip install on Release and Beta Firefox.')
+# def test_install_of_test_pilot_addon(
+#         base_url, selenium, firefox, notifications):
+#     """Check that the testpilot addon is installable and installs."""
+#     page = Home(selenium, base_url).open()
+#     selenium.execute_script(
+#         "document.querySelector('.landing-experiments').scrollIntoView();"
+#     )
+#     if not page.featured.is_displayed:
+#         page.header.click_install_button()
+#         firefox.browser.wait_for_notification(
+#             notifications.AddOnInstallConfirmation).install()
+#         firefox.browser.wait_for_notification(
+#             notifications.AddOnInstallComplete
+#         ).close()
+#     else:
+#         page.featured.click_install_button()
+#         firefox.browser.wait_for_notification(
+#             notifications.AddOnInstallConfirmation).install()
+#         firefox.browser.wait_for_notification(
+#             notifications.AddOnInstallComplete
+#         ).close()
 
 
 @pytest.mark.skipif(os.environ.get('SKIP_INSTALL_TEST') is not None,
