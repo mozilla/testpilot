@@ -105,9 +105,12 @@ mobileDialogPlaceholderSMS = Insira seu telefone/e-mail
 mobileDialogButton = Enviar o link de download
 mobileDialogButtonSuccess = Obrigado!
 mobileDialogSuccessMain = Link para download enviado!
+mobileDialogSuccessSecondarySMS = Verifique seu dispositivo pelo e-mail ou mensagem de texto.
+mobileDialogSuccessSecondary = Verifique seu dispositivo pelo e-mail.
 mobileDialogAnotherDeviceLink = Enviar para outro dispositivo
 mobileDialogError = Insira um e-mail válido:
 mobileDialogErrorSMS = Insira um número de telefone ou e-mail válido:
+mobileDialogNoticeSMS = O serviço de envio de SMS está disponível somente em alguns países. Cobranças de dados e SMS podem ser aplicados. O destinatário do e-mail ou SMS deve ter consentido. { $learnMore }
 
 ## Featured experiment.
 
