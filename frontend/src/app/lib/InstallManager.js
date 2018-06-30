@@ -61,10 +61,13 @@ export function installAddon(
         return Promise.resolve();
       }
       const { protocol, hostname, port } = window.location;
-      const path = config.addonPath;
-      const downloadUrl = `${protocol}//${hostname}${port
-        ? ":" + port
-        : ""}${path}`;
+      let downloadUrl;
+
+      if (hostname === "example.com") {
+        downloadUrl = `${protocol}//${hostname}:${port}/${config.addonPath}`;
+      } else {
+        downloadUrl = `https://testpilot.firefox.com/files/${getAddonId()}/latest`;
+      }
 
       const gaEvent = {
         eventCategory: eventCategory,
