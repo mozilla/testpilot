@@ -110,6 +110,7 @@ mobileDialogSuccessSecondary = 請到您的裝置上收信。
 mobileDialogAnotherDeviceLink = 傳送到其他裝置
 mobileDialogError = 請輸入有效的 E-Mail 信箱:
 mobileDialogErrorSMS = 請輸入有效的手機號碼或電子郵件信箱:
+mobileDialogNoticeSMS = 僅在部分國家提供簡訊服務。可能會收取簡訊與數據費用。寄發電子郵件或簡訊前，請先獲得收件者同意。{ $learnMore }
 
 ## Featured experiment.
 
