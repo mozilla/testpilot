@@ -82,6 +82,7 @@ firefoxlockboxContributors14Title = Engenheira(o) de Qualidade para dispositivos
 firefoxlockboxContributors15Title = Garantia de Qualidade do Firefox
 firefoxlockboxContributors16Title = Contribuidor(a) da Comunidade
 firefoxlockboxContributors17Title = Contribuidor(a) da Comunidade
+firefoxlockboxPrivacypreamble = O Firefox Lockbox permite aos usuários da Conta Firefox acessar as informações de contas de acesso (que nós chamamos de "credenciais") nos seus dispositivos móveis, fora de qualquer navegador, ao utilizar o Firefox Sync. Além dos dados coletados por todos os experimentos do Test Pilot...
 minvidDescription = Mantenha os vídeos ao seu alcance. O Min Vid lhe permite reproduzir vídeos do YouTube e Vimeo em um pequeno quadro que fica visível enquanto você navega na web.
 minvidIntroduction = <P>Adora assistir a um vídeo? O amor que faz as coisas acontecerem enquanto você presta atenção ao vídeo? Experimente o Min Vid. É como picture-in-picture onde uma imagem é um vídeo e a outra é toda a Web.</P><ul><li><strong> Clique e vá:</strong></Li><li><strong> Coloque-o onde quiser: </ strong> O Min Vid permite-lhe arrastar o enquadramento de vídeo em qualquer local do ambiente de trabalho.</Li><li><Strong> Controles onde você precisa deles: </strong>O Min Vid inclui controles que permitem pausar / reproduzir, esfregar, arrastar, minimizar e ajustar o volume diretamente no quadro.</ Li></ ul>
 minvidMeasurements0 = Nós coletamos os dados de uso quando você acessa o menu, ícones dos experimentos e os controles do tocador.
