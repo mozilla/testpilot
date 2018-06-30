@@ -105,6 +105,12 @@ mobileDialogPlaceholderSMS = Zapodajće swoje telefonowe čisło/swoju e-mejlowu
 mobileDialogButton = Sćehnjenski wotkaz na mnje pósłać
 mobileDialogButtonSuccess = Wulki dźak!
 mobileDialogSuccessMain = Sćehnjenski wotkaz je so pósłał!
+mobileDialogSuccessSecondarySMS = Hladajće za mejlku abo tekstowej powěsću na swojim graće.
+mobileDialogSuccessSecondary = Hladajće za mejlku na swojim graće.
+mobileDialogAnotherDeviceLink = Na druhi grat pósłać
+mobileDialogError = Zapodajće płaćiwu e-mejlowu adresu:
+mobileDialogErrorSMS = Zapodajće płaćiwe telefonowe čisło abo płaćiwu e-mejlowu adresu:
+mobileDialogNoticeSMS = Słužba SMS jenož we wubranych krajach k dispoziciji steji. Za SMS a daty mógu popłatki nastać. Přijimar mejlki abo SMS dyrbi přezjedny być. { $learnMore }
 
 ## Featured experiment.
 
@@ -188,7 +194,17 @@ nonExperimentDialogHeaderLink = Test Pilot
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
 experimentPlatformAddon = Eksperiment za Firefox
+experimentPlatformAndroid = Eksperiment za Android
+experimentPlatformIos = Eksperiment za iOS
 experimentPlatformWeb = webeksperiment
+experimentPlatformAddonWeb = Eksperiment za Firefox / web
+experimentPlatformAddonAndroid = Eksperiment za Android / Firefox
+experimentPlatformAddonIos = Eksperiment za iOS / Firefox
+experimentPlatformAddonAndroidIos = Eksperiment za Android / iOS / Firefox
+experimentPlatformAddonAndroidWeb = Eksperiment za Android / Firefox / web
+experimentPlatformAddonAndroidIosWeb = Eksperiment za Android /iOS / Firefox / web
+experimentPlatformAndroidWeb = Eksperiment za Android / web
+experimentPlatformAndroidIos = Eksperiment za Android / iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
