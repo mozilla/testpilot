@@ -110,6 +110,7 @@ mobileDialogSuccessSecondary = Перевірте пошту на своєму �
 mobileDialogAnotherDeviceLink = Надіслати на інший пристрій
 mobileDialogError = Введіть е-пошту:
 mobileDialogErrorSMS = Введіть номер телефону чи е-пошту:
+mobileDialogNoticeSMS = SMS послуги доступні лише в обраних країнах. Може стягуватись плата за SMS та мобільні дані. Адресат електронного листа чи SMS повинен надати згоду. { $learnMore }
 
 ## Featured experiment.
 
@@ -196,7 +197,17 @@ nonExperimentDialogHeaderLink = Test Pilot
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
 experimentPlatformAddon = Експеримент для Firefox
+experimentPlatformAndroid = Експеримент для Android
+experimentPlatformIos = Експеримент для iOS
 experimentPlatformWeb = Експеримент для Інтернету
+experimentPlatformAddonWeb = Firefox / Веб-експеримент
+experimentPlatformAddonAndroid = Android / Експеримент для Firefox
+experimentPlatformAddonIos = iOS / Експеримент для Firefox
+experimentPlatformAddonAndroidIos = Android / iOS / Експеримент для Firefox
+experimentPlatformAddonAndroidWeb = Android / Firefox / Веб-експеримент
+experimentPlatformAddonAndroidIosWeb = Android / iOS / Firefox / Веб-експеримент
+experimentPlatformAndroidWeb = Android / Веб-експеримент
+experimentPlatformAndroidIos = Android / Експеримент для iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
