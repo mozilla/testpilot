@@ -93,6 +93,24 @@ emailOptInConfirmationTitle = Повідомлення надіслано
 emailOptInConfirmationClose = Вперед до експериментів...
 emailOptInDialogErrorTitle = О ні!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Отримати додаток
+mobileDialogMessageIOS = Завантажити <b>{ $title }</b> з App Store для iOS.
+mobileDialogMessageAndroid = Завантажити <b>{ $title }</b> з магазину Google Play.
+mobileDialogInstructionsSMS = Введіть свій номер телефону чи е-пошту для надсилання посилання:
+mobileDialogInstructions = Введіть свою е-пошту для надсилання посилання:
+mobileDialogPlaceholder = Введіть адресу е-пошти
+mobileDialogPlaceholderSMS = Введіть номер телефону / адресу е-пошти
+mobileDialogButton = Надіслати посилання
+mobileDialogButtonSuccess = Дякуємо!
+mobileDialogSuccessMain = Посилання для завантаження надіслано!
+mobileDialogSuccessSecondarySMS = Перевірте на своєму пристрої пошту чи текстове повідомлення.
+mobileDialogSuccessSecondary = Перевірте пошту на своєму пристрої.
+mobileDialogAnotherDeviceLink = Надіслати на інший пристрій
+mobileDialogError = Введіть е-пошту:
+mobileDialogErrorSMS = Введіть номер телефону чи е-пошту:
+
 ## Featured experiment.
 
 moreDetail = Докладніше
@@ -177,13 +195,8 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Експеримент для Firefox / Інтернету / мобільного пристрою
-experimentPlatformWebAddon = Експеримент для Firefox / Інтернету
-experimentPlatformWebMobile = Експеримент для Інтернету / мобільного пристрою
-experimentPlatformAddonMobile = Експеримент для Firefox / мобільного пристрою
-experimentPlatformWeb = Експеримент для Інтернету
 experimentPlatformAddon = Експеримент для Firefox
-experimentPlatformMobileApp = Експеримент для мобільного пристрою
+experimentPlatformWeb = Експеримент для Інтернету
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
