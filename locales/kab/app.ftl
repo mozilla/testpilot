@@ -110,6 +110,7 @@ mobileDialogSuccessSecondary = Senqed ibenkan-ik ma tremseḍ-d imayl.
 mobileDialogAnotherDeviceLink = Azen ar yibenk-nniḍen
 mobileDialogError = Sekcem imayl ameɣtu:
 mobileDialogErrorSMS = Sekcem uṭṭun n tiliɣri ameɣtu neɣ imayl:
+mobileDialogNoticeSMS = Ameẓlu SMS yella kan di kra n tmura yettwafernen. Tasqamt n SMS & yisefka ad yettwasnes. Aɣerwaḍ  n yimayl neɣ SMS yessefk ad yeqbel. { $learnMore }
 
 ## Featured experiment.
 
