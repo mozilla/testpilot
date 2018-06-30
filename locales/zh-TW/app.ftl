@@ -98,6 +98,9 @@ emailOptInDialogErrorTitle = 糟糕！
 mobileDialogTitle = 取得應用程式
 mobileDialogMessageIOS = 到 iOS App Store 下載 <b>{ $title }</b>。
 mobileDialogMessageAndroid = 到 Google Play Store 下載 <b>{ $title }</b>。
+mobileDialogPlaceholder = 請輸入您的 E-Mail 信箱
+mobileDialogPlaceholderSMS = 請輸入您的 手機 / E-Mail 信箱
+mobileDialogButton = 傳送下載鏈結給我
 mobileDialogButtonSuccess = 感謝！
 mobileDialogSuccessMain = 已寄出下載鏈結！
 
