@@ -60,6 +60,7 @@ containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
 firefoxlockboxDescription = Wzmiće z Firefox Lockbox za iPhone swoje hesła wšudźe sobu.
+firefoxlockboxIntroduction = <p>Wzmiće z Firefox Lockbox swoje hesła wšudźe sobu. Tutón eksperiment Test Pilot da wam přistup na wšě přizjewjenja, kotrež sće w Firefox, we wěstym nałoženju na swojim iPhone składował. Přizjewće so prosće pola Lockbox ze swojim kontom Fiefox, a waše składowane wužiwarske mjena a hesła budu so z nałoženjom z 256-bitowym zaklučowanjom synchronizować. Tak maće lochki přistup na konta online, samo po puću.</p><p><strong>Firefox Lockbox sej konto Firefox wužaduje, zo by přistup na do toho <a href="chrome://passwordmgr/content/passwordManager.xul">składowane přizjewjenja</a> měł. Jeli hišće njejsće konto załožił, čińće to <a href="https://lockbox.firefox.com/faq.html#how-do-i-get-my-firefox-saved-logins-into-firefox-lockbox">tu</a>. </strong></p><p><em>Chceće zdźělenku dóstać, hdyž so naše nałoženje Android startuje? Registrujće so <a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">tu</a>.</em></p>
 firefoxlockboxDetails0Copy = Mějće přistup na wužiwarske mjena a hesłowe daty za wšě konta, kotrež w Firefox składujeće.
 firefoxlockboxDetails1Copy = Rjadujće konta w Firefox a synchronizujće změny awtomatisce z Firefox Lockbox.
 firefoxlockboxDetails2Copy = Sortěrujće a filtrujće swoje konta, zo byšće te, kotrež trjebaće, spěšnje namakał.
@@ -81,6 +82,7 @@ firefoxlockboxContributors14Title = Wuwiwar za kwalitne zawěsćenje mobilnych g
 firefoxlockboxContributors15Title = Kwalitne zawěsćenje Firefox
 firefoxlockboxContributors16Title = Sobuskutkowar zhromadźenstwa
 firefoxlockboxContributors17Title = Sobuskutkowar zhromadźenstwa
+firefoxlockboxPrivacypreamble = Firefox Lockbox zmóžnja wužiwarjam konta Firefox přistup na přizjewjenje a hesłowe daty (kotrež "přistupne daty" mjenujemy) na jich mobilnych telefonach, zwonka wobhladowaka, z pomocu Firefox Sync. Přidatnje k datam, kotrež so přez wšě eksperimenty Test Pilot zběraja...
 firefoxlockboxLegalnotice = Hdyž pokročujeće, zwoliće do <a>wuměnjenjow</a> a prawidłow <a>priwatnosće</a> Test Pilot a do <a>prawidłow priwatnosće Firefox Lockbox</a>.
 minvidDescription = Staja fokus na wideja. Min Vid wam zmóžnja, wideja YouTube a Vimeo w małym wobłuku pokazać, kotryž w prědku wostanje, mjeztym zo web přehladujeće.
 minvidIntroduction = <p>Wobhladujeće sej rady wideja? Činiće rady swoje dźěło, mjeztym zo sej widejo wohladujeće? Wupruwujće Min Vid. Skići wobraz we wobrazu, hdźež jedyn wobraz je widejo a druhi wobraz cyły web.</p><ul> <li><strong>Kliknyć a start:</strong> Wočińće wobłuk Min Vid, zo byšće wideja w prědku wothrał, mjeztym zo přehladujeće.</li> <li><strong>Přesuńće jón, hdźež chceće:</strong> Min Vid wam zmóžnja, widejowy wobłuk něhdźe na wašim desktopje doćahnyć.</li><li><strong>Wodźi na prawym městnje:</strong> Min Vid ma wodźenske elementy, kotrež wam zmóžnjeja, wideja direktnje we wobłuku pawzować, wothrać, přeběžeć, ćahnyć, miniměrować a sylnosć zwuka změnić.</li></ul>
