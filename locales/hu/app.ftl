@@ -93,6 +93,25 @@ emailOptInConfirmationTitle = E-mail elküldve
 emailOptInConfirmationClose = Tovább a kísérletekhez…
 emailOptInDialogErrorTitle = Jaj ne!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Szerezze be az alkalmazást
+mobileDialogMessageIOS = A <b>{ $title }</b> letöltése az iOS App Store-ból.
+mobileDialogMessageAndroid = A <b>{ $title }</b> letöltése a Google Play Store-ból.
+mobileDialogInstructionsSMS = Adja meg a telefonszámát vagy e-mail címét, hogy elküldjük a letöltési hivatkozást a telefonjára:
+mobileDialogInstructions = Adja meg az e-mail címét, hogy elküldjük a letöltési hivatkozást a telefonjára:
+mobileDialogPlaceholder = Adja meg az e-mail címét
+mobileDialogPlaceholderSMS = Adja meg a telefonszámát/e-mail címét
+mobileDialogButton = Küldje el a letöltési hivatkozást
+mobileDialogButtonSuccess = Köszönjük!
+mobileDialogSuccessMain = Letöltési hivatkozás elküldve.
+mobileDialogSuccessSecondarySMS = Nézze meg az eszközét, hogy megérkezett-e az e-mail vagy a szöveges üzenet.
+mobileDialogSuccessSecondary = Nézze meg az eszközét, hogy megérkezett-e az e-mail.
+mobileDialogAnotherDeviceLink = Küldés egy másik eszközre
+mobileDialogError = Adjon meg egy érvényes e-mail címet:
+mobileDialogErrorSMS = Adjon meg egy érvényes telefonszámot vagy e-mail címet:
+mobileDialogNoticeSMS = Az SMS szolgáltatás csak néhány országban érhető el. SMS és adathasználati költségek merülhetnek fel. Az e-mail vagy SMS címzettjének hozzájárulása szükséges. { $learnMore }
+
 ## Featured experiment.
 
 moreDetail = Részletek megtekintése
@@ -177,13 +196,18 @@ nonExperimentDialogHeaderLink = Tesztpilóta
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Firefox / webes / mobilos kísérlet
-experimentPlatformWebAddon = Firefox / webes kísérlet
-experimentPlatformWebMobile = webes / mobilos kísérlet
-experimentPlatformAddonMobile = Firefox / mobilos kísérlet
-experimentPlatformWeb = webes kísérlet
 experimentPlatformAddon = Firefox kísérlet
-experimentPlatformMobileApp = mobilos kísérlet
+experimentPlatformAndroid = Android kísérlet
+experimentPlatformIos = iOS kísérlet
+experimentPlatformWeb = webes kísérlet
+experimentPlatformAddonWeb = Firefox / webes kísérlet
+experimentPlatformAddonAndroid = Android / Firefox kísérlet
+experimentPlatformAddonIos = iOS / Firefox kísérlet
+experimentPlatformAddonAndroidIos = Android / iOS / Firefox kísérlet
+experimentPlatformAddonAndroidWeb = Android / Firefox / webes kísérlet
+experimentPlatformAddonAndroidIosWeb = Android / iOS / Firefox / webes kísérlet
+experimentPlatformAndroidWeb = Android / webes kísérlet
+experimentPlatformAndroidIos = Android / iOS kísérlet
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
