@@ -194,6 +194,14 @@ experimentPlatformAddon = Firefox 實驗
 experimentPlatformAndroid = Android 實驗
 experimentPlatformIos = iOS 實驗
 experimentPlatformWeb = 網頁實驗
+experimentPlatformAddonWeb = Firefox / 網頁實驗
+experimentPlatformAddonAndroid = Android / Firefox 實驗
+experimentPlatformAddonIos = iOS / Firefox 實驗
+experimentPlatformAddonAndroidIos = Android / iOS / Firefox 實驗
+experimentPlatformAddonAndroidWeb = Android / Firefox / 網頁實驗
+experimentPlatformAddonAndroidIosWeb = Android / iOS / Firefox / 網頁實驗
+experimentPlatformAndroidWeb = Android / 網頁實驗
+experimentPlatformAndroidIos = Android / iOS 實驗
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
