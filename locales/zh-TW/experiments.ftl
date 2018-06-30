@@ -78,6 +78,7 @@ firefoxlockboxContributors14Title = 行動 QA 工程師
 firefoxlockboxContributors15Title = Firefox QA
 firefoxlockboxContributors16Title = 社群貢獻者
 firefoxlockboxContributors17Title = 社群貢獻者
+firefoxlockboxLegalnotice = 若繼續，代表您同意<a>使用條款</a>、<a>Test Pilot 的隱私權保護政策</a>以及 <a>Firefox Lockbox 的隱私權保護政策</a>。
 minvidDescription = 把影片放在畫面正中間。Min Vid 讓您可以將 YouTube 和 Vimeo 的影片放到前景的一個小方塊，瀏覽網頁時可以保持在前景播放。
 minvidIntroduction = <p>喜歡看影片嗎？喜歡一邊看影片一邊作事情嗎？快試試 Min Vid。這個實驗就跟電視一樣，可提供網頁內容與影片的子母畫面。</p><ul><li><strong>隨點即用:</strong> 在您上網時可將 Mid Vid 影片框彈出到前景。</li><li><strong>隨處可放:</strong> 您可將 Min Vid 的影片框拖曳到桌面上任何地方。</li><li><strong>控制功能:</strong> Min Vid 影片框當中有暫停、播放、快轉、拖曳、最小化、調整音量等功能。</li></ul>
 minvidMeasurements0 = 我們會收集您使用滑鼠右鍵選單、實驗圖示及播放器控制元件的使用資料
