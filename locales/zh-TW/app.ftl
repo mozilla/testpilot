@@ -103,6 +103,11 @@ mobileDialogPlaceholderSMS = 請輸入您的 手機 / E-Mail 信箱
 mobileDialogButton = 傳送下載鏈結給我
 mobileDialogButtonSuccess = 感謝！
 mobileDialogSuccessMain = 已寄出下載鏈結！
+mobileDialogSuccessSecondarySMS = 請到您的裝置上收信或簡訊。
+mobileDialogSuccessSecondary = 請到您的裝置上收信。
+mobileDialogAnotherDeviceLink = 傳送到其他裝置
+mobileDialogError = 請輸入有效的 E-Mail 信箱:
+mobileDialogErrorSMS = 請輸入有效的手機號碼或電子郵件信箱:
 
 ## Featured experiment.
 
