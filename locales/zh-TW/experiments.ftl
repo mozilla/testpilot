@@ -59,6 +59,7 @@ containersContributors6Title = 前端安全性
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+firefoxlockboxDescription = 使用 Firefox Lockbox App for iPhone，將您的密碼隨身帶著走。
 firefoxlockboxContributors0Title = 資深產品經理
 firefoxlockboxContributors1Title = 工程經理
 firefoxlockboxContributors2Title = 資深互動設計師
