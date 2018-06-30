@@ -60,6 +60,7 @@ containersContributors7Title = Imcebbeḥ Firefox
 containersContributors8Title = Imcebbeḥ Firefox
 containersContributors9Title = Imcebbeḥ Firefox
 firefoxlockboxDescription = Awi awalen-ik uffiren sekra wanida teddiḍ akked usnas Firefox Lockbox i iPhone.
+firefoxlockboxIntroduction = <p>Awi awalen-ik uffiren sekra wanida tebɣiḍ s Firefox Lockbox. Tarmit-a Test Pilotad ak-tefk anekcum ar ar yisem-ik n useqdac d wawal uffir yettwaskelsen di Firefox, deg usnas aɣelsan n  iPhone. Qqen kan ar Lockbox s umiḍan-ik Firefox, sakin ismawen  n useqdac yettwakelsen akked wawalen uffiren ad mtawin akked usnas s useqdec n uwgelhen n 256-ibiten. Ihi, ad tkeccmeḍ s zreb ar yimiḍanen-ik srid ɣas ar zdat.</p> <p><strong>Firefox Lockbox yesra amiḍan Firefox akken ad yekcem ar <a href="chrome://passwordmgr/content/passwordManager.xul">inekcukem yettwaskelsen</a> yezrin. MA yella ur ɣur-k ara amiḍan ibedden account, bdu <a href="https://lockbox.firefox.com/faq.html#how-do-i-get-my-firefox-saved-logins-into-firefox-lockbox">dagi</a>.</strong></p> <p><em>Tebɣiḍ ad ttwalɣuḍ ticki asnas Android app yekker? Jerred <a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">dagi</a>.</em></p>
 firefoxlockboxDetails0Copy = Kcem ar teɣut n yisem n useqdac akked wawal uffir i yimiḍanen meṛṛa i teskelseḍ di Firefox.
 firefoxlockboxDetails1Copy = Seffrek imiḍanen di Firefox daɣen mtawi ibeddilen s wudem awurman ar Firefox Lockbox.
 firefoxlockboxDetails2Copy = Smizzwer daɣen sizdeg imiḍanen-ik akken ad tafeḍ s zreb win tebɣiḍ.
