@@ -96,6 +96,10 @@ emailOptInDialogErrorTitle = Accidenti!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Scarica l’app
+mobileDialogMessageIOS = Scarica <b>{ $title }</b> da App Store.
+mobileDialogMessageAndroid = Scarica <b>{ $title }</b> da Play Store.
+mobileDialogInstructionsSMS = Inserisci il numero di telefono o l’email per inviare al tuo cellulare un link per scaricare l’app:
+mobileDialogInstructions = Inserisci l’email per inviare al tuo cellulare un link per scaricare l’app:
 mobileDialogPlaceholder = Inserisci la tua email
 mobileDialogPlaceholderSMS = Inserisci il tuo numero di cellulare o la tua email
 mobileDialogButton = Inviami il link di download
@@ -105,6 +109,7 @@ mobileDialogSuccessSecondarySMS = Controlla le email o i messaggi sul tuo dispos
 mobileDialogSuccessSecondary = Controlla le email sul tuo dispositivo.
 mobileDialogAnotherDeviceLink = Invia a un altro dispositivo
 mobileDialogError = Inserisci un indirizzo email valido:
+mobileDialogNoticeSMS = Il servizio SMS è disponibile solo in alcune nazioni. Potrebbero essere applicati costi aggiuntivi per SMS o traffico dati. Il destinatario dell’email o del messaggio devono aver fornito il proprio consenso. { $learnMore }
 
 ## Featured experiment.
 
