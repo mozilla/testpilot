@@ -83,6 +83,7 @@ firefoxlockboxContributors15Title = Firefox QA
 firefoxlockboxContributors16Title = Komunitný prispievateľ
 firefoxlockboxContributors17Title = Komunitný prispievateľ
 firefoxlockboxPrivacypreamble = Firefox Lockbox poskytuje používateľom účtov Firefox prístup k ich prihlasovacím údajom na ich mobilných telefónoch, mimo akéhokoľvek prehliadača, pomocou služby Firefox Sync. Okrem údajov zbieraných každým experimentom programu Test Pilot...
+firefoxlockboxLegalnotice = Pokračovaním súhlasíte s <a>podmienkami</a> a <a>zásadami ochrany súkromia</a> Test Pilotu a so <a>zásadami ochrany súkromia experimentu Firefox Lockbox</a>.
 minvidDescription = Majte videá na očiach. Min Vid vám umožňuje zobraziť videá z YouTube a Vimea v malom ráme, ktorý je vždy v popredí, nezávisle od stránky, na ktorej sa nachádzate.
 minvidIntroduction = <p>Radi pozeráte videá? Chcete pri pozeraní videí robiť aj niečo iné? Vyskúšajte Min Vid. Video sa vám zobrazí ako malý obrázok a web bude v popredí.</p><ul> <li><strong>Stačí jeden klik:</strong> Po kliknutí sa vám otvorí malý rám s videom, ktoré sa bude prehrávať v popredí a vy môžete pokračovať v prehliadaní.</li> <li><strong>Premiestnite ho kamkoľvek:</strong> Min Vid vám umožňuje premiestniť rám s videom kamkoľvek.</li> <li><strong>Jednoduché ovládanie:</strong> Min Vid obsahuje ovládanie pre prehrávanie/pauzu, zastavenie videa, presun minimalizovanie či úpravu hlasitosti.</li></ul>
 minvidMeasurements0 = Zbierame údaje o používaní kontextovej ponuky, ikony experimentu a ovládaní prehrávača.
