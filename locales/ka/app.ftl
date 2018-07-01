@@ -93,6 +93,24 @@ emailOptInConfirmationTitle = წერილი გამოგზავნი�
 emailOptInConfirmationClose = წინ, ახალი შესაძლებლობების გამოცდისკენ...
 emailOptInDialogErrorTitle = ოჰ, არა!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = პროგრამის გადმოწერა
+mobileDialogMessageIOS = ჩამოტვირთეთ <b>{ $title }</b> iOS App Store-იდან.
+mobileDialogMessageAndroid = ჩამოტვირთეთ <b>{ $title }</b> Google Play Store-იდან.
+mobileDialogInstructionsSMS = შეიყვანეთ თქვენი ტელეფონის ნომერი ან ელფოსტა, ჩამოსატვირთი ბმულის ტელეფონზე მისაღებად:
+mobileDialogInstructions = შეიყვანეთ თქვენი ელფოსტა, ჩამოსატვირთი ბმულის ტელეფონზე მისაღებად:
+mobileDialogPlaceholder = შეიყვანეთ თქვენი ელფოსტა
+mobileDialogPlaceholderSMS = შეიყვანეთ თქვენი ტელეფონი/ელფოსტა
+mobileDialogButton = ჩამოსატვირთი ბმულის მიღება
+mobileDialogButtonSuccess = გმადლობთ!
+mobileDialogSuccessMain = ჩამოსატვირთი ბმული გამოგზავნილია!
+mobileDialogSuccessSecondarySMS = შეამოწმეთ მოწყობილობაზე მიღებული წერილები ან შეტყობინებები.
+mobileDialogSuccessSecondary = შეამოწმეთ მოწყობილობაზე მიღებული წერილები.
+mobileDialogAnotherDeviceLink = სხვა მოწყობილობაზე გაგზავნა
+mobileDialogError = შეიყვანეთ მართებული ელფოსტა:
+mobileDialogErrorSMS = შეიყვანეთ მართებული სატელეფონო ნომერი ან ელფოსტა:
+
 ## Featured experiment.
 
 moreDetail = დაწვრილებით
@@ -177,13 +195,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = საცდელი Firefox / მობილური / ვებპროექტები
-experimentPlatformWebAddon = საცდელი Firefox / ვებპროექტები
-experimentPlatformWebMobile = საცდელი მობილური / ვებპროექტები
-experimentPlatformAddonMobile = საცდელი Firefox / მობილური პროექტები
-experimentPlatformWeb = საცდელი ვებპროექტი
 experimentPlatformAddon = Firefox საცდელი შესაძლებლობა
-experimentPlatformMobileApp = საცდელი მობილური პროექტები
+experimentPlatformAndroid = Android საცდელი შესაძლებლობა
+experimentPlatformIos = iOS საცდელი შესაძლებლობა
+experimentPlatformWeb = საცდელი ვებპროექტი
+experimentPlatformAddonWeb = Firefox / ვებპროექტი
+experimentPlatformAddonAndroid = Android / Firefox საცდელი შესაძლებლობა
+experimentPlatformAddonIos = iOS / Firefox საცდელი შესაძლებლობა
+experimentPlatformAddonAndroidIos = Android / iOS / Firefox საცდელი შესაძლებლობა
+experimentPlatformAddonAndroidWeb = Android / Firefox / ვებპროექტი
+experimentPlatformAddonAndroidIosWeb = Android / iOS / Firefox / ვებპროექტი
+experimentPlatformAndroidWeb = Android / ვებპროექტი
+experimentPlatformAndroidIos = Android / iOS საცდელი შესაძლებლობა
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
