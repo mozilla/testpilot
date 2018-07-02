@@ -28,7 +28,8 @@ type FeaturedExperimentProps = {
   isExperimentEnabled: Function,
   isMinFirefox: boolean,
   installed: InstalledExperiments,
-  sendToGA: Function
+  sendToGA: Function,
+  userAgent: string
 }
 
 export default class FeaturedExperiment extends React.Component {

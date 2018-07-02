@@ -39,7 +39,8 @@ type HomePageWithAddonProps = {
   removeCookie: Function,
   sendToGA: Function,
   setCookie: Function,
-  uninstallAddon: Function
+  uninstallAddon: Function,
+  userAgent: string
 }
 
 type HomePageWithAddonState = {
