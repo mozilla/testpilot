@@ -307,6 +307,13 @@ UTM-formatted date indicating the official launch of the experiment. Used to cal
 created: '2016-01-01T00:00:00.000000Z'
 ```
 
+## `Modified`
+
+UTM-formatted date indicating the last major modification to your experiment. This adds a star to your experiment's card.
+
+```yaml
+modified: '2016-01-01T00:00:00.000000Z'
+```
 
 ## `completed`
 

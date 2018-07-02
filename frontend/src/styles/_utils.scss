@@ -175,14 +175,15 @@ $breakpoints: (
     width: 14px;
   }
 
-  .just-launched-tab {
+  .just-launched-tab,
+  .just-updated-tab {
     background: $blue-50;
     border-color: $blue-60;
     color: $white;
   }
 
   .just-launched-tab::before,
-  .just-updatad-tab::before {
+  .just-updated-tab::before {
     background-image: url('../../../images/star.svg');
     background-repeat: no-repeat;
     content: '';
