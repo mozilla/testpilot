@@ -93,6 +93,9 @@ emailOptInConfirmationTitle = Courriel envoyé
 emailOptInConfirmationClose = À propos d’expériences…
 emailOptInDialogErrorTitle = Oups !
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+
 ## Featured experiment.
 
 moreDetail = Afficher les détails
@@ -174,13 +177,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Expérience Firefox / Web / mobile
-experimentPlatformWebAddon = Expérience Firefox / Web
-experimentPlatformWebMobile = Expérience web / mobile
-experimentPlatformAddonMobile = Expérience Firefox / mobile
-experimentPlatformWeb = Expérience web
 experimentPlatformAddon = Expérience Firefox
-experimentPlatformMobileApp = Expérience mobile
+experimentPlatformAndroid = Expérience Android
+experimentPlatformIos = Expérience iOS
+experimentPlatformWeb = Expérience web
+experimentPlatformAddonWeb = Expérience Firefox / Web
+experimentPlatformAddonAndroid = Expérience Firefox / Android
+experimentPlatformAddonIos = Expérience Firefox / iOS
+experimentPlatformAddonAndroidIos = Expérience Firefox / iOS / Android
+experimentPlatformAddonAndroidWeb = Expérience Firefox / Android / Web
+experimentPlatformAddonAndroidIosWeb = Expérience Firefox / Android / iOS / Web
+experimentPlatformAndroidWeb = Expérience Android / Web
+experimentPlatformAndroidIos = Expérience Android / iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
