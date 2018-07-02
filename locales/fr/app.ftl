@@ -95,6 +95,21 @@ emailOptInDialogErrorTitle = Oups !
 
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
+mobileDialogTitle = Installer l’application
+mobileDialogMessageIOS = Télécharger <b>{ $title }</b> depuis l’App Store pour iOS.
+mobileDialogMessageAndroid = Télécharger <b>{ $title }</b> depuis Google Play Store.
+mobileDialogInstructionsSMS = Saisissez votre numéro de téléphone ou adresse électronique pour envoyer un lien de téléchargement sur votre téléphone :
+mobileDialogInstructions = Saisissez votre adresse électronique pour envoyer un lien de téléchargement sur votre téléphone :
+mobileDialogPlaceholder = Saisissez votre adresse électronique
+mobileDialogPlaceholderSMS = Saisissez votre n° de téléphone/adresse électronique
+mobileDialogButton = Envoyez-moi un lien de téléchargement
+mobileDialogButtonSuccess = Merci !
+mobileDialogSuccessMain = Le lien de téléchargement a été envoyé.
+mobileDialogSuccessSecondarySMS = Consultez le courriel ou le SMS envoyé sur votre appareil.
+mobileDialogSuccessSecondary = Consultez le courriel envoyé sur votre appareil.
+mobileDialogAnotherDeviceLink = Envoyer à un autre appareil
+mobileDialogError = Saisissez une adresse électronique valide :
+mobileDialogErrorSMS = Saisissez un numéro de téléphone ou une adresse électronique valide :
 
 ## Featured experiment.
 
