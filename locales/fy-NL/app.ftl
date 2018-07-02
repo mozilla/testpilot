@@ -202,6 +202,9 @@ experimentPlatformAddonAndroid = Android- / Firefox-eksperimint
 experimentPlatformAddonIos = iOS- / Firefox-eksperimint
 experimentPlatformAddonAndroidIos = Android- / iOS- / Firefox-eksperimint
 experimentPlatformAddonAndroidWeb = Android- / Firefox- / web-eksperimint
+experimentPlatformAddonAndroidIosWeb = Android- / iOS- / Firefox- / webeksperimint
+experimentPlatformAndroidWeb = Android- / webeksperimint
+experimentPlatformAndroidIos = Android- / iOS_eksperimint
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 

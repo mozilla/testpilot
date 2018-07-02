@@ -59,6 +59,7 @@ containersContributors6Title = Front End Security
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+firefoxlockboxDescription = Nim mei de app ‘Firefox Lockbox’ foar de iPhone alle jo wachtwurden mei jo mei.
 minvidDescription = Hâld fideo's foarop en yn it midden. Min Vid lit jo fideo's fan YouTube en Vimeo yn in lyts finster toane dat op de foargrûn bliuwt as jo sneupe op it web.
 minvidIntroduction = <p>Besjogge jo graach fideo's? En wolle jo ûndertusken graach trochwurkje wylst jo de fideo besjogge? Probearje Min Vid. It is as picture-in-picture wêr ien ôfbylding in fideo is en de oare it folsleine web is.</p><ul> <li><strong>Klik en gean:</strong> Pop up it Min Vid-frame om fideo's op de foargrûn ôf te spyljen wylst jo sneupe.</li> <li><strong>Pleats it wêr't jo it wolle:</strong> Min Vid lit jo it fideoframe oeral hinne op jo desktop fersleepje.</li> <li><strong>Betsjinning wêr't jo se nedich hawwe:</strong> Min Vid befettet betsjinningen om te pauzearjen/ôfspyljen, scrub, sleepje, minimalisearje, en it folume oanpasse yn it frame.</li></ul>
 minvidMeasurements0 = Wy sammelje gegevensgebrûk as jo gebrûk meitsje fan it kontekstmenu, eksperimintikoantsje en spilerknoppen.
