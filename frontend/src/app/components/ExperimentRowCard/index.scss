@@ -53,7 +53,7 @@
 
   .experiment-feedback {
     background-color: $blue-50;
-    background-image: url('./img/feedback.svg');
+    background-image: url('../../../images/feedback-white.svg');
     background-position: 6px 3px;
     background-repeat: no-repeat;
     background-size: 14px;
@@ -64,6 +64,7 @@
     display: block;
     font-size: 11px;
     line-height: 12px;
+    margin-right: 5px;
     padding: 5px 10px 4px 26px;
     position: relative;
     top: -2px;

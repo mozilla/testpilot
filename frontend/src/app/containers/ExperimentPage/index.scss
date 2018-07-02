@@ -97,6 +97,7 @@
 .experiment-controls {
   @include respond-to('small') {
     border: 0;
+    margin-bottom: 20px;
     padding: 0;
   }
 
@@ -108,26 +109,14 @@
   .button {
     border-radius: 3px;
     font-size: 18px;
-    height: 100%;
     margin-top: 16px;
+    min-height: 54px;
     padding: 6px 4px;
     width: 100%;
   }
 
   .button:first-child {
     margin-top: 0;
-  }
-
-  .mobile-trigger {
-    padding: 12px 4px;
-
-    img {
-      height: 24px;
-      margin-right: 10px;
-      position: relative;
-      top: -2px;
-      width: auto;
-    }
   }
 
   .mobile {
@@ -161,18 +150,36 @@
   }
 
   .default,
+  .primary,
   #one-click-button {
+    border: 0;
     box-shadow: 0 2px 0 $transparent-black-2, 0 -2px 0 $transparent-black-2 inset;
     text-shadow: 0 2px 0 $transparent-black-1;
   }
+
+  #one-click-button,
+  .primary {
+    border: 0;
+    border-radius: $large-border-radius;
+    display: flex;
+    padding: 12px 4px;
+  }
+
+  #one-click-button {
+    min-height: 78px;
+
+    img {
+      height: auto;
+      margin-right: 32px;
+      width: 32px;
+    }
+  }
 }
 
-#one-click-button {
-  border: 0;
-  border-radius: $large-border-radius;
+.one-click-cta-text {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  padding: 12px 4px;
 }
 
 .privacy-link {

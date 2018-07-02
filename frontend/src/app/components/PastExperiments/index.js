@@ -33,26 +33,30 @@ export default class PastExperiments extends React.Component {
     const { showPastExperiments } = this.state;
 
     return (
-      <LayoutWrapper flexModifier="card-list">
+      <React.Fragment>
         {pastExperiments.length > 0 && !showPastExperiments &&
-        <Localized id="viewPastExperiments">
-          <div className={classnames(["button past-experiments", "outline"])}
-            onClick={() => this.setState({ showPastExperiments: true })}>
-            View Past Experiments
-          </div>
-        </Localized>}
-        {showPastExperiments &&
-        <div>
-          <Localized id="hidePastExperiments">
-            <div className={classnames(["button past-experiments", "outline"])}
-              onClick={() => this.setState({ showPastExperiments: false })}>
-              Hide Past Experiments
-            </div>
-          </Localized>
-          <div className="past-experiments-padding" />
-          <ExperimentCardList {...this.props} experiments={pastExperiments} eventCategory="HomePage Interactions" />
-        </div>}
-      </LayoutWrapper>
+          <div className="past-experiments-button-wrapper">
+            <Localized id="viewPastExperiments">
+              <div className={classnames(["button past-experiments", "outline"])}
+                onClick={() => this.setState({ showPastExperiments: true })}>
+                View Past Experiments
+              </div>
+            </Localized>
+          </div>}
+        < LayoutWrapper flexModifier = "card-list" >
+          {showPastExperiments &&
+          <div>
+            <Localized id="hidePastExperiments">
+              <div className={classnames(["button past-experiments", "outline"])}
+                onClick={() => this.setState({ showPastExperiments: false })}>
+                Hide Past Experiments
+              </div>
+            </Localized>
+            <div className="past-experiments-padding" />
+            <ExperimentCardList {...this.props} experiments={pastExperiments} eventCategory="HomePage Interactions" />
+          </div>}
+        </LayoutWrapper>
+      </React.Fragment>
     );
   }
 }

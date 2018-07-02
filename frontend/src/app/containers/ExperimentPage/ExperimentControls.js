@@ -1,76 +1,63 @@
 import React from "react";
-import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
 import LocalizedHtml from "../../components/LocalizedHtml";
 import { experimentL10nId, isMobile } from "../../lib/utils";
+import {
+  FeedbackButton,
+  MobileTriggerButton,
+  GraduatedButton,
+  UninstallButton,
+  InstallTestPilotButton,
+  EnableExperimentButton,
+  MobileStoreButton,
+  WebExperimentButton
+} from "./ExperimentButtons";
 
 import type {
   ExperimentControlsType,
-  WebExperimentControlsType,
-  EnableButtonType
+  CreateButtonsType
 } from "./types";
 
 export default function ExperimentControls({
-  isMinFirefox,
-  hasAddon,
-  userAgent,
-  experiment,
-  installed,
-  graduated,
-  enabled,
-  installExperiment,
-  uninstallExperimentWithSurvey,
-  isEnabling,
-  isDisabling,
   doShowEolDialog,
+  doShowMobileAppDialog,
   doShowPreFeedbackDialog,
+  enabled,
+  experiment,
   flashMeasurementPanel,
+  graduated,
+  hasAddon,
+  installExperiment,
+  isDisabling,
+  isEnabling,
+  isMinFirefox,
   sendToGA,
   surveyURL,
-  doShowMobileAppDialog
+  uninstallExperimentWithSurvey,
+  userAgent
 }: ExperimentControlsType) {
   const {
-    title,
-    min_release,
     max_release,
+    min_release,
     platforms,
-    pre_feedback_copy,
-    slug
+    title
   } = experiment;
 
   const validVersion = isValidVersion(userAgent, min_release, max_release);
 
-  const handleFeedback = evt => {
-    if (pre_feedback_copy === null || !pre_feedback_copy) {
-      sendToGA("event", {
-        eventCategory: "ExperimentDetailsPage Interactions",
-        eventAction: "Give Feedback",
-        eventLabel: title,
-        dimension11: slug
-      });
-    } else {
-      doShowPreFeedbackDialog(evt);
-      sendToGA("event", {
-        eventCategory: "ExperimentDetailsPage Interactions",
-        eventAction: "Give Feedback",
-        eventLabel: experiment.title,
-        dimension11: slug
-      });
-    }
-  };
-
   const highlightPrivacy = () => {
-    document.querySelectorAll(".measurements").forEach(
-      el => {
-        if (el.offsetTop) {
-          window.scrollTo(0, el.offsetTop);
-        }
-      });
+    document.querySelectorAll(".measurements").forEach(el => {
+      if (el.offsetTop) {
+        window.scrollTo(0, el.offsetTop);
+      }
+    });
     flashMeasurementPanel();
   };
 
-  const buttons = platforms.map(platform => createButton({
+  const buttons = createButtons({
     doShowEolDialog,
+    doShowMobileAppDialog,
+    doShowPreFeedbackDialog,
     enabled,
     experiment,
     graduated,
@@ -79,100 +66,51 @@ export default function ExperimentControls({
     isDisabling,
     isEnabling,
     isMinFirefox,
-    platform,
+    platforms,
     sendToGA,
+    surveyURL,
     uninstallExperimentWithSurvey,
     userAgent,
     validVersion
-  })).filter(b => b);
+  });
 
-  if (enabled) {
-    if (!graduated) {
-      buttons.unshift(
-        <a
-          key="feedback-button"
-          id="feedback-button"
-          onClick={handleFeedback}
-          className="button default"
-          href={surveyURL}
-          target="_blank"
-          rel="noopener noreferrer">
-          <Localized id="giveFeedback">
-            <span className="default-text">Give Feedback</span>
-          </Localized>
-        </a>
-      );
-    }
-    if (!hasAddon) {
-      buttons.unshift(
-        <button
-          key="txp-button"
-          id="one-click-button"
-          onClick={installExperiment}
-          className={classnames(["button", "primary"], {
-            "state-change": isEnabling
-          })}
-        >
-          <div className="state-change-inner" />
-          {!isEnabling && <Localized id="landingInstallButton">
-            <span className="default-btn-msg">
-              Install the Test Pilot Add-on
-            </span>
-          </Localized>}
-          {isEnabling &&
-          <Localized id="landingInstallingButton">
-            <span className="progress-btn-msg">Installing...</span>
-          </Localized>}
-        </button>
-      );
-    }
-  }
+  const controls = <div className="experiment-controls">{buttons}</div>;
 
-  if (!isMobile(userAgent)) {
-    if (platforms.includes("ios") || platforms.includes("android")) {
-      buttons.unshift(
-        <a
-          className="button default mobile-trigger"
-          onClick={doShowMobileAppDialog}>
-          <img src="/static/images/mobile-white.svg" />
-          <Localized id="mobileDialogTitle">
-            <span>Get the App</span>
-          </Localized>
-        </a>
-      );
-    }
-  }
-
-  const controls = <div className="experiment-controls">
-    {buttons}
-  </div>;
-
-  const showLegal = buttons.length > 0 && !graduated;
+  const showLegal = !graduated;
   let legalSection = null;
   if (showLegal) {
     if (isMinFirefox && !hasAddon && !enabled && platforms.includes("addon")) {
-      legalSection = <div className="privacy-link">
-        <LocalizedHtml id={experimentL10nId(experiment, "legal-notice")} $title={title}>
-          <p className="legal-section">
-            By proceeding, you agree to the <a href="/terms"></a> and <a href="/privacy"></a> policies of Test Pilot and the <a onClick={highlightPrivacy}></a>.
-          </p>
-        </LocalizedHtml>
-      </div>;
+      legalSection = (
+        <div className="privacy-link">
+          <LocalizedHtml
+            id={experimentL10nId(experiment, "legal-notice")}
+            $title={title}
+          >
+            <p className="legal-section">
+              By proceeding, you agree to the <a href="/terms" /> and{" "}
+              <a href="/privacy" /> policies of Test Pilot and the{" "}
+              <a onClick={highlightPrivacy} />.
+            </p>
+          </LocalizedHtml>
+        </div>
+      );
     } else {
-      legalSection = <div className="privacy-link">
-        <Localized id="highlightPrivacy">
-          <a onClick={highlightPrivacy} className="highlight-privacy">
-          Your privacy
-          </a>
-        </Localized>
-      </div>;
+      legalSection = ( buttons !== null &&
+        <div className="privacy-link">
+          <Localized id="highlightPrivacy">
+            <a onClick={highlightPrivacy} className="highlight-privacy">
+              Your privacy
+            </a>
+          </Localized>
+        </div>
+      );
     }
   }
 
   return (
     <div className="details-controls">
-      { controls }
-      { legalSection }
+      {controls}
+      {legalSection}
     </div>
   );
 }
@@ -192,42 +130,10 @@ function isValidVersion(userAgent: string, min: number, max: number) {
   return minVersionCheck(userAgent, min) && maxVersionCheck(userAgent, max);
 }
 
-export const WebExperimentControls = ({
-  web_url,
-  title,
-  slug,
-  sendToGA,
-  platforms,
-  validVersion
-}: WebExperimentControlsType) => {
-  function handleGoToLink() {
-    sendToGA("event", {
-      eventCategory: "ExperimentDetailsPage Interactions",
-      eventAction: "Go to Web Experiment",
-      eventLabel: title,
-      dimension11: slug
-    });
-  }
-  const buttonType = platforms.includes("addon") && validVersion ? "secondary" : "default";
-  return (
-    <a
-      href={web_url}
-      onClick={handleGoToLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={classnames("button", buttonType)}
-    >
-      <Localized id="experimentGoToLink" $title={title}>
-        <span className="default-text">
-          Go to {title}
-        </span>
-      </Localized>
-    </a>
-  );
-};
-
-function createButton({
+function createButtons({
   doShowEolDialog,
+  doShowMobileAppDialog,
+  doShowPreFeedbackDialog,
   enabled,
   experiment,
   graduated,
@@ -236,60 +142,72 @@ function createButton({
   isDisabling,
   isEnabling,
   isMinFirefox,
-  platform,
   sendToGA,
+  surveyURL,
   uninstallExperimentWithSurvey,
   userAgent,
   validVersion
-}: EnableButtonType) {
-  const { slug, title, web_url, ios_url, android_url, platforms } = experiment;
+}: CreateButtonsType) {
+  const { slug, title, web_url, ios_url, android_url, platforms, pre_feedback_copy } = experiment;
 
-  if (platform === "web" && web_url) {
-    return <WebExperimentControls {...{ key: web_url, web_url, title, slug, sendToGA, platforms, validVersion }} />;
-  } else if (platform === "addon") {
+  const formatGenerator = (platforms) => {
+    const type = [];
+    if (platforms.includes("addon")) type.push("Addon");
+    if (platforms.includes("web")) type.push("Web");
+    if (platforms.includes("ios") || platforms.includes("android")) type.push("Mobile");
+    return type.join("");
+  };
+
+  const controlsFormat = formatGenerator(platforms);
+
+  const mobileControls = () => {
+    if (!isMobile(userAgent)) {
+      return <MobileTriggerButton {...{ doShowMobileAppDialog, color: "default" }} />;
+    }
+    return (
+      <React.Fragment>
+        {platforms.includes("ios") && <MobileStoreButton {...{ url: ios_url, platform: "ios" }} />}
+        {platforms.includes("android") && <MobileStoreButton {...{ url: android_url, platform: "android" }} />}
+      </React.Fragment>
+    );
+  };
+
+
+  const webControls = (color) => <WebExperimentButton
+    {...{
+      web_url,
+      title,
+      slug,
+      sendToGA,
+      platforms,
+      validVersion,
+      color
+    }}
+  />;
+
+  const addonControls = (color) => {
     if (graduated && enabled) {
-      return (
-        <button
-          key="graduated-button"
-          onClick={doShowEolDialog}
-          id="uninstall-button"
-          className={classnames(["button", "warning"], {
-            "state-change": isDisabling
-          })}
-        >
-          <span className="state-change-inner" />
-          <Localized id="disableExperimentTransition">
-            <span className="transition-text">Disabling...</span>
-          </Localized>
-          <Localized id="disableExperiment" $title={title}>
-            <span className="default-text">
-              Disable {title}
-            </span>
-          </Localized>
-        </button>
-      );
+      return <GraduatedButton {...{ doShowEolDialog, isDisabling, title }} />;
     }
 
     if (enabled) {
       return (
-        <button
-          key="uninstall-button"
-          onClick={uninstallExperimentWithSurvey}
-          id="uninstall-button"
-          className={classnames(["button", "secondary"], {
-            "state-change": isDisabling
-          })}
-        >
-          <span className="state-change-inner" />
-          <Localized id="disableExperimentTransition">
-            <span className="transition-text">Disabling...</span>
-          </Localized>
-          <Localized id="disableExperiment" $title={title}>
-            <span className="default-text">
-              Disable {title}
-            </span>
-          </Localized>
-        </button>
+        <React.Fragment>
+          <FeedbackButton
+            {...{
+              title,
+              slug,
+              surveyURL,
+              pre_feedback_copy,
+              sendToGA,
+              doShowPreFeedbackDialog,
+              color
+            }}
+          />
+          <UninstallButton
+            {...{ uninstallExperimentWithSurvey, isDisabling, title }}
+          />
+        </React.Fragment>
       );
     }
 
@@ -299,68 +217,52 @@ function createButton({
 
     if (!hasAddon) {
       return (
-        <button
-          key="one-click-button"
-          id="one-click-button"
-          onClick={installExperiment}
-          className={classnames(["button", "primary"], {
-            "state-change": isEnabling
-          })}
-        >
-          <div className="state-change-inner" />
-          {!isEnabling && <LocalizedHtml id="oneClickInstallMinorCta">
-            <span className="one-click-minor">Install Test Pilot &amp;</span>
-          </LocalizedHtml>}
-          {!isEnabling && <Localized id="oneClickInstallMajorCta" $title={title}>
-            <span className="one-click-major">Enable {title}</span>
-          </Localized>}
-          {isEnabling &&
-          <Localized id="landingInstallingButton">
-            <span className="progress-btn-msg">Installing...</span>
-          </Localized>}
-        </button>
+        <InstallTestPilotButton {...{ installExperiment, isEnabling, title }} />
       );
     }
 
     return (
-      <button
-        key="install-button"
-        onClick={installExperiment}
-        id="install-button"
-        className={classnames(["button", "default"], {
-          "state-change": isEnabling
-        })}
-      >
-        <span className="state-change-inner" />
-        <Localized id="enableExperimentTransition">
-          <span className="transition-text">Enabling...</span>
-        </Localized>
-        <Localized id="enableExperiment" $title={title}>
-          <span className="default-text">
-            Enable {title}
-          </span>
-        </Localized>
-      </button>
+      <EnableExperimentButton {...{ installExperiment, isEnabling, title, color }} />
     );
-  } else if (platform === "ios") {
-    return <a
-      key={ios_url}
-      href={ios_url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="button mobile"
-    >
-      <img src="/static/images/ios-light.svg" />
-    </a>;
-  } else if (platform === "android") {
-    return <a
-      key={android_url}
-      href={android_url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="button mobile">
-      <img src="/static/images/google-play.png" />
-    </a>;
+  };
+
+  switch (controlsFormat) {
+    case "Addon":
+      return addonControls("default");
+    case "Web":
+      return webControls("default");
+    case "Mobile":
+      return mobileControls();
+    case "WebMobile":
+      return (
+        <React.Fragment>
+          {mobileControls()}
+          {webControls("secondary")}
+        </React.Fragment>
+      );
+    case "AddonWeb":
+      return (
+        <React.Fragment>
+          {addonControls("default")}
+          {webControls("secondary")}
+        </React.Fragment>
+      );
+    case "AddonMobile":
+      return (
+        <React.Fragment>
+          {mobileControls()}
+          {addonControls("secondary")}
+        </React.Fragment>
+      );
+    case "AddonWebMobile":
+      return (
+        <React.Fragment>
+          {mobileControls()}
+          {addonControls("secondary")}
+          {webControls("secondary")}
+        </React.Fragment>
+      );
+    default:
+      return null;
   }
-  return null;
 }
