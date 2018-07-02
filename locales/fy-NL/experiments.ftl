@@ -60,6 +60,7 @@ containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
 firefoxlockboxDescription = Nim mei de app ‘Firefox Lockbox’ foar de iPhone alle jo wachtwurden mei jo mei.
+firefoxlockboxIntroduction = <p>Nim jo wachtwurden oeral mei nei ta mei Firefox Lockbox. Dit Test Pilot-eksperimint joutt jo tagong ta alle oanmeldingen dy't jo yn Firefox bewarre hawwe, yn in befeilige app op jo iPhone. Meld jo gewoan oan by Lockbox mei jo Firefox-account, en jo bewarre brûkersnammen en wachtwurden wurde fia 256-bits fersifering mei de app syngronisearre. Dêrtroch hawwe jo ienfâldige tagong ta online-accounts, sels ûnderweis.</p> <p><strong>Firefox Lockbox fereasket in Firefox-account foar tagong ta jo earder <a href="chrome://passwordmgr/content/passwordManager.xul">bewarre oanmeldingen</a>. As jo gjin account konfigurearre hawwe, begjin dan <a href="https://lockbox.firefox.com/faq.html#how-do-i-get-my-firefox-saved-logins-into-firefox-lockbox">hjir</a>.</strong></p> <p><em>Wolle jo in berjocht ûntfange sa gau as ús Android-app lansearre wurdt? Skriuw jo dan <a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">hjir</a> yn.</em></p>
 firefoxlockboxDetails0Copy = Benaderje brûkersnamme- en wachtwurdynformaasje foar alle accounts dy't jo yn Firefox bewarje.
 firefoxlockboxDetails1Copy = Behear accounts yn Firefox en syngronisearje wizigingen automatysk mei Firefox Lockbox.
 firefoxlockboxDetails2Copy = Sortearje en filterje jo accounts om fluch de winske te finen.
@@ -81,6 +82,8 @@ firefoxlockboxContributors14Title = Mobile QA Engineer
 firefoxlockboxContributors15Title = Firefox QA
 firefoxlockboxContributors16Title = Mienskipsmeiwurker
 firefoxlockboxContributors17Title = Mienskipsmeiwurker
+firefoxlockboxPrivacypreamble = Mei Firefox Lockbox kinne brûkers fan Firefox-accounts fia Firefox Sync oer harren oanmeld- en wachtwurdgegevens (de ‘Tagongsgegevens’) op harren mobyl, bûten de browsers om, tagong krije. Neist de gegevens, dy't alle Test-Pilot-eksperiminten sammelje…
+firefoxlockboxLegalnotice = Troch fierder te gean, geane jo akkoard mei de <a>betingsten</a> en <a>beliedsrigels foar privacy</a> fan Test Pilot en it <a>privacybelied fan Firefox Lockbox</a>.
 minvidDescription = Hâld fideo's foarop en yn it midden. Min Vid lit jo fideo's fan YouTube en Vimeo yn in lyts finster toane dat op de foargrûn bliuwt as jo sneupe op it web.
 minvidIntroduction = <p>Besjogge jo graach fideo's? En wolle jo ûndertusken graach trochwurkje wylst jo de fideo besjogge? Probearje Min Vid. It is as picture-in-picture wêr ien ôfbylding in fideo is en de oare it folsleine web is.</p><ul> <li><strong>Klik en gean:</strong> Pop up it Min Vid-frame om fideo's op de foargrûn ôf te spyljen wylst jo sneupe.</li> <li><strong>Pleats it wêr't jo it wolle:</strong> Min Vid lit jo it fideoframe oeral hinne op jo desktop fersleepje.</li> <li><strong>Betsjinning wêr't jo se nedich hawwe:</strong> Min Vid befettet betsjinningen om te pauzearjen/ôfspyljen, scrub, sleepje, minimalisearje, en it folume oanpasse yn it frame.</li></ul>
 minvidMeasurements0 = Wy sammelje gegevensgebrûk as jo gebrûk meitsje fan it kontekstmenu, eksperimintikoantsje en spilerknoppen.
