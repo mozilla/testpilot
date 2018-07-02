@@ -110,6 +110,7 @@ mobileDialogSuccessSecondary = Kontrolearje jo apparaat foar it e-mailberjocht.
 mobileDialogAnotherDeviceLink = Nei oar apparaat fertjoere
 mobileDialogError = Fier in falide e-mailadres yn:
 mobileDialogErrorSMS = Fier in falide telefoannûmer of e-mailadres yn:
+mobileDialogNoticeSMS = De sms-tsjinst is allinnich yn de selektearre lannen beskikber. Sms- en gegevenskosten kinne fan tapassing wêze. De ûntfanger fan it e-mailberjocht of de sms moat tastimming jûn hawwe. { $learnMore }
 
 ## Featured experiment.
 
@@ -193,7 +194,14 @@ nonExperimentDialogHeaderLink = Test Pilot
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
 experimentPlatformAddon = Firefox-eksperimint
+experimentPlatformAndroid = Android-eksperimint
+experimentPlatformIos = iOS-eksperimint
 experimentPlatformWeb = webeksperimint
+experimentPlatformAddonWeb = Firefox- / webeksperimint
+experimentPlatformAddonAndroid = Android- / Firefox-eksperimint
+experimentPlatformAddonIos = iOS- / Firefox-eksperimint
+experimentPlatformAddonAndroidIos = Android- / iOS- / Firefox-eksperimint
+experimentPlatformAddonAndroidWeb = Android- / Firefox- / web-eksperimint
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
