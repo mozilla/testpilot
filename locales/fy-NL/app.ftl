@@ -93,6 +93,24 @@ emailOptInConfirmationTitle = E-mailberjocht ferstjoerd
 emailOptInConfirmationClose = Troch nei de eksperiminten…
 emailOptInDialogErrorTitle = O nee!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Download de app
+mobileDialogMessageIOS = Download <b>{ $title }</b> fan de iOS App Store.
+mobileDialogMessageAndroid = Download <b>{ $title }</b> fan de Google Play Store.
+mobileDialogInstructionsSMS = Fier jo telefoannûmer of e-mailadres yn, om in downloadkeppeling nei jo mobyl te stjoeren:
+mobileDialogInstructions = Fier jo e-mailadres yn, om in downloadkeppeling nei jo mobyl te stjoeren:
+mobileDialogPlaceholder = Fier jo e-mailadres yn
+mobileDialogPlaceholderSMS = Fier jo telefoannûmer/e-mailadres yn
+mobileDialogButton = Stjoer my de downloadkeppeling
+mobileDialogButtonSuccess = Tank!
+mobileDialogSuccessMain = Downloadkeppeling ferstjoerd!
+mobileDialogSuccessSecondarySMS = Kontrolearje jo apparaat foar it e-mail- of sms-berjocht.
+mobileDialogSuccessSecondary = Kontrolearje jo apparaat foar it e-mailberjocht.
+mobileDialogAnotherDeviceLink = Nei oar apparaat fertjoere
+mobileDialogError = Fier in falide e-mailadres yn:
+mobileDialogErrorSMS = Fier in falide telefoannûmer of e-mailadres yn:
+
 ## Featured experiment.
 
 moreDetail = Details besjen
@@ -174,13 +192,8 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Firefox- / web- / mobyl-eksperimint
-experimentPlatformWebAddon = Firefox- / web-eksperimint
-experimentPlatformWebMobile = web- / mobyl-eksperimint
-experimentPlatformAddonMobile = Firefox- / mobyl-eksperimint
-experimentPlatformWeb = webeksperimint
 experimentPlatformAddon = Firefox-eksperimint
-experimentPlatformMobileApp = mobyl-eksperimint
+experimentPlatformWeb = webeksperimint
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
