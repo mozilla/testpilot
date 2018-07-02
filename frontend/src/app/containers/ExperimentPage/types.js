@@ -83,35 +83,93 @@ export type DetailsHeaderProps = {
 };
 
 export type ExperimentControlsType = {
-  hasAddon: any,
-  userAgent: string,
-  experiment: Object,
-  installed: Object,
-  graduated: boolean,
-  enabled: boolean,
-  progressButtonWidth: number,
-  installExperiment: Function,
-  uninstallExperimentWithSurvey: Function,
-  isEnabling: boolean,
-  isDisabling: boolean,
   doShowEolDialog: Function,
+  doShowMobileAppDialog: Function,
   doShowPreFeedbackDialog: Function,
-  sendToGA: Function,
-  highlightPrivacy: Function
-};
-
-export type WebExperimentControlsType = {
-  web_url: string,
-  title: string,
-  sendToGA: Function
-};
-
-export type EnableButtonType = {
+  enabled: boolean,
   experiment: Object,
+  flashMeasurementPanel: Function,
+  graduated: boolean,
+  hasAddon: any,
+  installExperiment: Function,
+  isDisabling: boolean,
+  isEnabling: boolean,
+  isMinFirefox: Function,
+  sendToGA: Function,
+  surveyURL: string,
+  uninstallExperimentWithSurvey: Function,
+  userAgent: string,
+};
+
+export type CreateButtonsType = {
+  doShowEolDialog: Function,
+  doShowMobileAppDialog: Function,
+  doShowPreFeedbackDialog: Function,
+  enabled: boolean,
+  experiment: Object,
+  graduated: boolean,
+  hasAddon: boolean,
+  installExperiment: Function,
+  isDisabling: boolean,
+  isEnabling: boolean,
+  isMinFirefox: Function,
+  pre_feedback_copy: string,
+  sendToGA: Function,
+  surveyURL: string,
+  uninstallExperimentWithSurvey: Function,
+  userAgent: string,
+  validVersion: boolean
+};
+
+export type FeedbackButtonType = {
+  title: string,
+  slug: string,
+  surveyUrl: string,
+  pre_feedback_copy: string,
+  sendToGA: Function,
+  color: string,
+};
+
+export type MobileTriggerButtonType = {
+  doShowMobileAppDialog: Function
+};
+
+export type GraduatedButtonType = {
+  doShowEolDialog: Function,
+  isDisabling: boolean,
+  title: DOMStringList
+};
+
+export type UninstallButtonType = {
+  uninstallExperimentWithSurvey: Function,
+  isDisabling: boolean,
+  title: string
+};
+
+export type InstallTestPilotButtonType = {
   installExperiment: Function,
   isEnabling: boolean,
-  progressButtonWidth: number,
-  sendToGA: Function
+  title: string
+};
+
+export type EnableExperimentButtonType = {
+  installExperiment: Function,
+  isEnabling: boolean,
+  title: string,
+  color: string
+};
+
+export type MobileStoreButtonType = {
+  url: string,
+  platform: string
+};
+
+export type WebExperimentButtonType = {
+  color: string,
+  sendToGA: Function,
+  slug: string,
+  title: string,
+  web_url: string
 };
 
 export type MinimumVersionNoticeType = {

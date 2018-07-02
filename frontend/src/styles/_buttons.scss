@@ -1,23 +1,41 @@
 .button {
-  @include flex-container(row, center, center);
+  @include flex-container(column, center, center);
   border: 1px solid $transparent-black-34;
   border-radius: 2px;
   cursor: pointer;
   font-family: 'Fira Sans', sans-serif;
   font-size: $font-unit * 1.25;
   font-weight: $weight-normal;
-  height: $grid-unit * 2;
-  line-height: $grid-unit * 2;
+  min-height: $grid-unit * 2;
   outline: none;
-  padding: 0 10px;
+  padding: 5px 10px;
   position: relative;
   text-decoration: none;
+  text-align: center;
   transition: background 150ms, width 150ms;
   user-select: none;
-  white-space: nowrap;
 
   &.no-display {
     display: none;
+  }
+
+  &.icon-button {
+    flex-direction: row;
+    padding: 12px 4px;
+
+    img {
+      height: 24px;
+      margin-right: 10px;
+      position: relative;
+      top: -1px;
+      width: auto;
+    }
+
+    &.secondary {
+      img {
+        opacity: .8;
+      }
+    }
   }
 
   &.outline {
@@ -131,10 +149,9 @@
   &.large {
     border-radius: $medium-border-radius;
     font-size: $font-unit * 1.25;
-    height: 48px;
-    line-height: 48px;
+    min-height: 48px;
     max-width: 360px;
-    padding: 0 10px;
+    padding: 6px 10px;
   }
 }
 

@@ -35,16 +35,16 @@
   }
 
   .platform-icon-web {
-    background-image: url('./img/experiment-type-web.svg');
+    background-image: url('../../../images/experiment-type-web.svg');
   }
 
   .platform-icon-addon {
-    background-image: url('./img/experiment-type-addon.svg');
+    background-image: url('../../../images/experiment-type-addon.svg');
   }
 
   .platform-icon-ios,
   .platform-icon-android {
-    background-image: url('./img/experiment-type-mobile.svg');
+    background-image: url('../../../images/experiment-type-mobile.svg');
   }
 
   // don't show two mobile icons if we support both platforms

@@ -152,7 +152,7 @@ export default class FeaturedButton extends React.Component {
             helperClass="main-install">
             <div className="main-install__spacer"></div>
             <a
-              className="button primary main-install__button"
+              className="button primary icon-button main-install__button"
               onClick={this.doShowMobileAppDialog}>
               <img src="/static/images/mobile-white.svg" />
               <Localized id="mobileDialogTitle">
