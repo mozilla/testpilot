@@ -238,7 +238,7 @@ export default class MobileDialog extends React.Component {
 
     const { allowSMS, recipient, country } = this.state;
     const { sendToGA, getWindowLocation, fromFeatured, experiment } = this.props;
-    const basketMsgId = this.props.experiment.basket_msg_id;
+    const basketMsgId = `txp-${this.props.experiment.slug}`;
     const source = "" + getWindowLocation();
 
     // return early and show errors if submit attempt fails
@@ -276,7 +276,7 @@ export default class MobileDialog extends React.Component {
       dimension13: fromFeatured ? "Featured Experiment" : "Experiment Detail"
     });
 
-    return subscribeToBasket(recipient, source).then(response => {
+    return subscribeToBasket(recipient, source, basketMsgId).then(response => {
       sendToGA("event", {
         eventCategory: "SMS Modal Interactions",
         eventAction: "request handled",
