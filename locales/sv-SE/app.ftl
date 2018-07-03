@@ -93,6 +93,13 @@ emailOptInConfirmationTitle = E-post har skickats
 emailOptInConfirmationClose = Vidare till experimenten...
 emailOptInDialogErrorTitle = Åh nej!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogMessageIOS = Ladda ner <b>{ $title }</b> från iOS Appstore.
+mobileDialogMessageAndroid = Ladda ner <b>{ $title }</b> från Google Play Butik
+mobileDialogButtonSuccess = Tack!
+mobileDialogAnotherDeviceLink = Skicka till en annan enhet
+
 ## Featured experiment.
 
 moreDetail = Visa detaljer
@@ -177,13 +184,10 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Experiment för Firefox / webb / mobil
-experimentPlatformWebAddon = Experiment för Firefox / webb
-experimentPlatformWebMobile = Experiment för webb / mobil
-experimentPlatformAddonMobile = Experiment för Firefox / mobil
-experimentPlatformWeb = Experiment för webb
 experimentPlatformAddon = Experiment för Firefox
-experimentPlatformMobileApp = Experiment för mobil
+experimentPlatformAndroid = Android experiment
+experimentPlatformIos = iOS experiment
+experimentPlatformWeb = Experiment för webb
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
