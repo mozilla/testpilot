@@ -11,7 +11,6 @@ describe("app/components/MainInstallButton", () => {
   let subject, props;
   beforeEach(() => {
     props = {
-      restartRequired: false,
       sendToGA: sinon.spy(),
       eventCategory: "test",
       hasAddon: false,
