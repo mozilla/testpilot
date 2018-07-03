@@ -48,6 +48,7 @@ oneClickInstallMajorCta = { $title } చేతనించు
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
+landingUpgradeDesc = Test Pilotకి Firefox 49 లేదా ఆపై వెర్షను కావాలి.
 # also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox నవీకరించు
@@ -214,6 +215,7 @@ hidePastExperiments = పాత ప్రయోగాలు దాయి
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = ఏదో తప్పు ఉంది!
+warningUpgradeFirefoxTitle = కొనసాగుటకు Firefoxను తాజాకరించండి!
 warningHttpsRequiredTitle = HTTPS అవసరం!
 warningMissingPrefTitle = Test Pilot ని అభివృద్ధి చేస్తున్నారా?
 warningBadHostnameTitle = ఆమోదించని హోస్ట్పేరు!
