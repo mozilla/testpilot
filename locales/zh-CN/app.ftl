@@ -95,12 +95,14 @@ emailOptInDialogErrorTitle = 很遗憾
 
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
+mobileDialogTitle = 获取 APP
 mobileDialogMessageIOS = 到 iOS App Store 下载 <b>{ $title }</b> 。
 mobileDialogMessageAndroid = 到 Google Play 商店下载 <b>{ $title }</b> 。
 mobileDialogPlaceholder = 请输入您的电子邮件地址：
 mobileDialogPlaceholderSMS = 请输入您的手机号码/电子邮件地址：
 mobileDialogButtonSuccess = 感谢！
 mobileDialogError = 请输入有效的电子邮件地址：
+mobileDialogErrorSMS = 请输入有效的手机号码或电子邮件地址：
 mobileDialogNoticeSMS = 仅在部分国家/地区提供短信服务。可能会收取短信与数据费用。发送电子邮件或短信前，请先获得收件人同意。{ $learnMore }
 
 ## Featured experiment.
