@@ -197,6 +197,14 @@ experimentPlatformAddon = Eksperiment til Firefox
 experimentPlatformAndroid = Android-eksperiment
 experimentPlatformIos = iOS-eksperiment
 experimentPlatformWeb = Eksperiment til nettet
+experimentPlatformAddonWeb = Firefox/net-eksperiment
+experimentPlatformAddonAndroid = Android/Firefox-eksperiment
+experimentPlatformAddonIos = iOS/Firefox-eksperiment
+experimentPlatformAddonAndroidIos = Android/iOS/Firefox-eksperiment
+experimentPlatformAddonAndroidWeb = Android/Firefox/net-eksperiment
+experimentPlatformAddonAndroidIosWeb = Android/iOS/Firefox/net-eksperiment
+experimentPlatformAndroidWeb = Android/net-eksperiment
+experimentPlatformAndroidIos = Android/iOS-eksperiment
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
