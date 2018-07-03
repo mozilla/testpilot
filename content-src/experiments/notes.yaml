@@ -6,11 +6,11 @@ platforms: ['addon', 'android']
 min_release: 57
 thumbnail: /static/images/experiments/notes/notes-thumbnail.png
 description: >
-  Take notes as you browse the web, or keep in sync with our our new Android app.
+  Take notes as you browse the web, and keep in sync with our new Android app.
 description_l10nsuffix: 'mobile'
 introduction: >
-  Notes adds a simple notepad to your browser’s sidebar. Sign in to your Firefox Account to sync all of your notes with end-to-end encryption,
-  and take your notes with you wherever you go by connecting with our new Android app.
+  Notes by Firefox is a simple, secure notepad extension that now comes with a companion app for Android.
+  Sign in with your Firefox Account to access, edit, or delete notes, and your notes will automatically sync between Firefox for desktop and Android.
 introduction_l10nsuffix: 'mobile'
 image_twitter: /static/images/experiments/notes/notes-twitter.jpg
 image_facebook: /static/images/experiments/notes/notes-fb.jpg
