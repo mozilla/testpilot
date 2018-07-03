@@ -173,7 +173,9 @@ restartIntroThree = మీ ప్రయోగాలను ఎంచుకోం�
 
 ## Shown on pages of retired or retiring experiments.
 
+eolIntroMessage = { $title } { $completedDate } నాడు ముగుస్తోంది
 eolNoticeLink = మరింత తెలుసుకోండి
+completedDateLabel = ప్రయోగం ముగింపు తేదీ: <b>{ $completedDate }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 
@@ -193,6 +195,7 @@ newsletterFooterSuccessHeader = ధన్యవాదములు!
 
 ## A warning shown to users when the experiment is not available in their language
 
+localeWarningSubtitle = మీరు కావాలనుకుంటే దాన్ని చేతనించుకోవచ్చు.
 
 ## An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 
