@@ -2,18 +2,18 @@ id: 15
 title: 'Notes'
 slug: notes
 is_featured: false
-platforms: ['addon']
+platforms: ['addon', 'android']
 min_release: 57
 thumbnail: /static/images/experiments/notes/notes-thumbnail.png
 description: >
-  A simple notepad built into Firefox. Ever need to jot
-  something down while you browse the web? This is the experiment for you.
+  Take notes as you browse the web, and keep in sync with our new Android app.
+description_l10nsuffix: 'mobile'
 introduction: >
-  Notes adds a simple notepad to your browser’s sidebar. Sign in to your Firefox Account to sync all of your notes with end-to-end encryption.
-introduction_l10nsuffix: 'multinote'
+  Notes by Firefox is a simple, secure notepad extension that now comes with a companion app for Android.
+  Sign in with your Firefox Account to access, edit, or delete notes, and your notes will automatically sync between Firefox for desktop and Android.
+introduction_l10nsuffix: 'mobile'
 image_twitter: /static/images/experiments/notes/notes-twitter.jpg
 image_facebook: /static/images/experiments/notes/notes-fb.jpg
-video_url: https://www.youtube.com/embed/vaFvr_70yxw
 changelog_url: 'https://github.com/mozilla/notes/releases'
 contribute_url: 'https://github.com/mozilla/notes'
 bug_report_url: 'https://github.com/mozilla/notes/issues'
@@ -36,11 +36,13 @@ details:
   -
     image: /static/images/experiments/notes/notes-detail-1.jpg
     copy: >
-      It’s a notepad. Why didn’t we think of this earlier?
+      Notes keeps you connected in Firefox and on Android.
+    copy_l10nsuffix: 'mobile'
   -
     image: /static/images/experiments/notes/notes-detail-2.jpg
     copy: >
-      Take as many notes as you like and stay in sync with your Firefox Account.
+      Use your Firefox Account to sign in and securely sync your notes.
+    copy_l10nsuffix: 'mobile'
 tour_steps:
   -
     image: /static/images/experiments/notes/notes-tour-1.jpg
@@ -55,11 +57,14 @@ tour_steps:
     copy_l10nsuffix: 'multinote'
   -
     image: /static/images/experiments/notes/notes-tour-4.jpg
-    copy: Sign in to your Firefox Account to sync your notes.
-    copy_l10nsuffix: 'multinote'
+    copy: Sign in to your Firefox Account to sync your notes on desktop and Android.
+    copy_l10nsuffix: 'mobile'
   -
     image: /static/images/experiments/notes/notes-tour-5.jpg
     copy: You can always give us feedback or disable Notes from Test Pilot.
+  -
+    image: /static/images/experiments/notes/notes-tour-5.jpg
+    copy: Make sure to check out our new Android app as well!
 contributors:
   -
     display_name: 'Udara Weerasinghege'
@@ -111,23 +116,4 @@ contributors:
     avatar: /static/images/experiments/avatars/marius.jpg
 created: '2017-08-01T14:00:00Z'
 launch_date: '2017-08-01T14:00:00Z'
-order: 1
-news_updates:
-  -
-    slug: notes-update-2
-    title: Sync Your Notes
-    link: 'https://medium.com/firefox-test-pilot/notes-sync-feature-is-now-available-with-end-to-end-encryption-a4cf47bbf9ae'
-    created: 2017-12-12T12:00:00Z
-    published: 2017-12-12T12:00:00Z
-    dev: false
-    content: >
-      As of today, you can now Sync your notes wherever you use Firefox. See how we did it.
-  -
-    slug: notes-update-1
-    title: Notes Improvements
-    link: 'https://medium.com/firefox-test-pilot/testpilot-notes-v1-9-0-b166c6cd7353'
-    created: 2017-12-12T12:00:00Z
-    published: 2017-12-12T12:00:00Z
-    dev: false
-    content: >
-      We dramatically improved Notes by switching the text editor.
+order: 0

@@ -1,8 +1,13 @@
+.past-experiments-button-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
 
 .past-experiments {
-  display: table;
-  margin: 17px auto 12px;
-  padding: 0 15px;
+  flex: 0 0 220px;
+  width: 220px;
+  margin: 0 auto;
 }
 
 .past-experiments-padding {

@@ -96,6 +96,7 @@
     .experiment-platform {
       color: $white;
       font-size: 16px;
+      margin-top: 6px;
       white-space: nowrap;
 
       .platform-icon,
@@ -105,16 +106,16 @@
       }
 
       .platform-icon-addon {
-        background-image: url('./img/experiment-type-addon-white.svg');
+        background-image: url('../../../images/experiment-type-addon-white.svg');
       }
 
       .platform-icon-web {
-        background-image: url('./img/experiment-type-web-white.svg');
+        background-image: url('../../../images/experiment-type-web-white.svg');
       }
 
       .platform-icon-ios,
       .platform-icon-android {
-        background-image: url('./img/experiment-type-mobile-white.svg');
+        background-image: url('../../../images/experiment-type-mobile-white.svg');
       }
     }
   }
