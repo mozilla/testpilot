@@ -6,7 +6,6 @@ be nice to move parts of this into other modules.
 When the page is rendered, it:
 
 - starts by rendering Loading
-- Checks to see if restartRequired (see below)
 - Sets the title using Hemlet (but doesn't localize it -- this code is
   redundant with the title element in the static html and should probably be
   removed)
@@ -21,9 +20,6 @@ Then, in componentDidMount it:
   move into lib/utils.
 - Negotiates the language and triggers the translation with fluent-react.
 - Finally, it sets loading to false, causing the full page to render.
-
-restartRequired is very old code. We have not required a restart in a long
-time. It can be removed.
 
   https://github.com/mozilla/testpilot/issues/3571
 
@@ -63,7 +59,6 @@ import { localizationsSelector, negotiatedLanguagesSelector } from "../../select
 import { chooseTests } from "../../actions/varianttests";
 import addonActions from "../../actions/addon";
 import newsletterFormActions from "../../actions/newsletter-form";
-import RestartPage from "../RestartPage";
 import UpgradeWarningPage from "../UpgradeWarningPage";
 import Loading from "../../components/Loading";
 import {
@@ -215,15 +210,11 @@ class App extends Component {
   }
 
   render() {
-    const { restart } = this.props.addon;
     const { loading } = this.state;
     if (loading) {
       return (<div className="full-page-wrapper centered overflow-hidden">
         <Loading/>
       </div>);
-    }
-    if (restart.isRequired) {
-      return <RestartPage {...this.props} />;
     }
 
     if (this.shouldShowUpgradeWarning()) {
