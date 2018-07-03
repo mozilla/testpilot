@@ -93,6 +93,22 @@ emailOptInConfirmationTitle = Mail sendt
 emailOptInConfirmationClose = Videre til eksperimenterne...
 emailOptInDialogErrorTitle = Åh nej!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Hent appen
+mobileDialogMessageIOS = Hent <b>{ $title }</b> fra App Store.
+mobileDialogMessageAndroid = Hent <b>{ $title }</b>  fra Google Play.
+mobileDialogPlaceholder = Indtast din mailadresse
+mobileDialogPlaceholderSMS = Indtast dit telefonnummer eller din mailadresse
+mobileDialogButton = Send mig linket til at hente appen
+mobileDialogButtonSuccess = Tak!
+mobileDialogSuccessMain = Link til at hente appen er sendt!
+mobileDialogSuccessSecondarySMS = Kontrollér om du har modtaget mailen eller SMS'en på din enhed.
+mobileDialogSuccessSecondary = Kontrollér om du har modtaget mailen på din enhed.
+mobileDialogAnotherDeviceLink = Send til en anden enhed
+mobileDialogError = Indtast en gyldig mailadresse:
+mobileDialogErrorSMS = Indtast et gyldigt telefonnummer eller en gyldig mailadresse:
+
 ## Featured experiment.
 
 moreDetail = Se flere oplysninger
@@ -177,13 +193,10 @@ nonExperimentDialogHeaderLink = Testpilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Eksperiment til Firefox/nettet/mobil
-experimentPlatformWebAddon = Eksperiment til Firefox/nettet
-experimentPlatformWebMobile = Eksperiment til nettet/mobil
-experimentPlatformAddonMobile = Eksperiment til Firefox/mobil
-experimentPlatformWeb = Eksperiment til nettet
 experimentPlatformAddon = Eksperiment til Firefox
-experimentPlatformMobileApp = Eksperiment til mobil
+experimentPlatformAndroid = Android-eksperiment
+experimentPlatformIos = iOS-eksperiment
+experimentPlatformWeb = Eksperiment til nettet
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
