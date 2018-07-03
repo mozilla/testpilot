@@ -73,6 +73,7 @@ universalsearchContributors1Title = సీనియర్ UX డిజైన�
 universalsearchContributors2Title = స్టాఫ్ ఇంజనీర్
 universalsearchContributors3Title = సీనియర్ ఇంజనీర్
 voicefillDetails0Copy = Yahoo, DuckDuckGo మరియు Google లో మైక్రోఫోన్ చిహ్నం కోసం చూడండి.
+voicefillToursteps1Copy = వాయిస్ ఫిల్ మాట్లాడి వెతకడానికి వీలుకల్పిస్తుంది.
 voicefillContributors0Title = స్పీచ్ ఇంజనీరు
 voicefillContributors1Title = స్పీచ్ ఇంజనీరు
 voicefillContributors2Title = విజువల్ డిజైనర్
