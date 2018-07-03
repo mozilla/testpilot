@@ -98,6 +98,8 @@ emailOptInDialogErrorTitle = Åh nej!
 mobileDialogTitle = Hent appen
 mobileDialogMessageIOS = Hent <b>{ $title }</b> fra App Store.
 mobileDialogMessageAndroid = Hent <b>{ $title }</b>  fra Google Play.
+mobileDialogInstructionsSMS = Indtast dit telefonnummer eller din mailadresse for at sende et download-link til din telefon:
+mobileDialogInstructions = Indtast din mailadresse for at sende et download-link til din telefon:
 mobileDialogPlaceholder = Indtast din mailadresse
 mobileDialogPlaceholderSMS = Indtast dit telefonnummer eller din mailadresse
 mobileDialogButton = Send mig linket til at hente appen
@@ -108,6 +110,7 @@ mobileDialogSuccessSecondary = Kontrollér om du har modtaget mailen på din enh
 mobileDialogAnotherDeviceLink = Send til en anden enhed
 mobileDialogError = Indtast en gyldig mailadresse:
 mobileDialogErrorSMS = Indtast et gyldigt telefonnummer eller en gyldig mailadresse:
+mobileDialogNoticeSMS = SMS-tjenesten er kun tilgængelig i udvalgte lande. Du skal muligvis betale for SMS- og data-trafik. Mailen eller SMS'ens modtager skal have givet sit samtykke. { $learnMore }
 
 ## Featured experiment.
 
