@@ -93,6 +93,13 @@ emailOptInConfirmationTitle = 电子邮件已发送
 emailOptInConfirmationClose = 关于此实验...
 emailOptInDialogErrorTitle = 很遗憾
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogPlaceholder = 请输入您的电子邮件地址：
+mobileDialogButtonSuccess = 感谢！
+mobileDialogError = 请输入有效的电子邮件地址：
+mobileDialogNoticeSMS = 仅在部分国家/地区提供短信服务。可能会收取短信与数据费用。发送电子邮件或短信前，请先获得收件人同意。{ $learnMore }
+
 ## Featured experiment.
 
 moreDetail = 查看细节
@@ -174,13 +181,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Firefox / 网页端 / 移动端的实验
-experimentPlatformWebAddon = Firefox / 网页端的实验
-experimentPlatformWebMobile = 网页端 / 移动端的实验
-experimentPlatformAddonMobile = Firefox / 移动端的实验
-experimentPlatformWeb = 网页端的实验
 experimentPlatformAddon = Firefox 的实验
-experimentPlatformMobileApp = 移动端的实验
+experimentPlatformAndroid = Android 端的实验
+experimentPlatformIos = iOS 端的实验
+experimentPlatformWeb = 网页端的实验
+experimentPlatformAddonWeb = Firefox / 网页端的实验
+experimentPlatformAddonAndroid = Android / Firefox 端的实验
+experimentPlatformAddonIos = iOS / Firefox 端的实验
+experimentPlatformAddonAndroidIos = Android / iOS / Firefox 端的实验
+experimentPlatformAddonAndroidWeb = Android / Firefox / 网页端的实验
+experimentPlatformAddonAndroidIosWeb = Android / iOS / Firefox / 网页端的实验
+experimentPlatformAndroidWeb = Android / 网页端的实验
+experimentPlatformAndroidIos = Android / iOS 端的实验
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
