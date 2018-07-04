@@ -98,6 +98,7 @@ emailOptInDialogErrorTitle = ¡Oh no!
 mobileDialogTitle = Obtener la aplicación
 mobileDialogMessageIOS = Descargar <b>{ $title }</b> de la App Store de iOS.
 mobileDialogMessageAndroid = Descargar <b>{ $title }</b> de Play Store de Google.
+mobileDialogButtonSuccess = ¡Gracias!
 
 ## Featured experiment.
 
@@ -184,6 +185,7 @@ nonExperimentDialogHeaderLink = Test Pilot
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
 experimentPlatformAddon = experimento Firefox
+experimentPlatformAndroid = Experimento de Android
 experimentPlatformWeb = experimento web
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
