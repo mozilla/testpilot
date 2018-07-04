@@ -111,6 +111,7 @@ nomore404sContributors1Title = Pembangun, Wayback Machine, Internet Archive
 nomore404sContributors2Title = Pengarah, Wayback Machine, Internet Archive
 nomore404sContributors3Title = Jurutera Kanan Crawl, Internet Archive
 notesDescriptionMobile = Ambil nota sambil melayari web dan kekal selaras menggunakan aplikasi Android baru kami.
+notesIntroductionMobile = Notes oleh Firefox ialah ekstensi pad nota yang mudah dan selamat, yang kini disertakan bersama dengan aplikasi untuk Android. Daftar masuk ke Akaun Firefox untuk mengakses, mengedit atau membuang nota, dan nota akan diselaraskan secara automatik antara Firefox untuk desktop dan Android.
 notesLegalnotice = Dengan meneruskan, anda bersetuju dengan <a>terma</a> dan polisi <a>privasi</a> Test Pilot dan  <a>polisi privasi Notes</a>.
 notesMeasurements0 = Notes ini akan mengumpulkan maklumat perihal ciri yang anda gunakan, seperti kekerapan anda menulis nota dan tempoh yang anda ambil untuk mengeditnya, bilangan aksara yang anda simpan dalam nota, dan ciri mengedit yang anda gunakan (contoh, teks tebal atau gaya).
 notesMeasurements1 = Notes juga akan mengumpulkan maklumat perihal interaksi anda dengan add-on, seperti cara anda mengakses cirinya, dan butang yang anda klik.
