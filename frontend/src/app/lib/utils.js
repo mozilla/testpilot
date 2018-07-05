@@ -7,12 +7,12 @@ export const basketSMSUrl = "https://basket.mozilla.org/news/subscribe_sms/";
 export const COUNTRY_CODE_ENDPOINT = "https://location.services.mozilla.com/v1/country";
 // "https://www.mozilla.org/country-code.json";
 
-export function subscribeToBasket(email, source) {
+export function subscribeToBasket(email, source, msgId = "test-pilot") {
   const sourceUrl = source || "https://testpilot.firefox.com/";
   return fetch(basketUrl, {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: `newsletters=test-pilot&email=${encodeURIComponent(email)}&source_url=${encodeURIComponent(sourceUrl)}`
+    body: `newsletters=${msgId}&email=${encodeURIComponent(email)}&source_url=${encodeURIComponent(sourceUrl)}`
   });
 }
 
@@ -23,7 +23,7 @@ export function subscribeToBasketSMS(number, country, msgId) {
   return fetch(basketSMSUrl, {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: `mobile_number=${encodeURIComponent(number)}&country=${country}&lang=${lang}&msgId=$msgId`
+    body: `mobile_number=${encodeURIComponent(number)}&country=${country}&lang=${lang}&msg_name=${msgId}`
   });
 }
 
