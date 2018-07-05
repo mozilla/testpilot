@@ -7,6 +7,7 @@ import Banner from "../components/Banner";
 import LayoutWrapper from "../components/LayoutWrapper";
 import View from "../components/View";
 
+import imageRestart from "../../images/restart-graphic@2x.jpg";
 
 type RestartProps = {
   experimentTitle: string,
@@ -33,7 +34,7 @@ export default class Restart extends React.Component {
         <Banner>
           <LayoutWrapper flexModifier="row-around-breaking">
             <div className="restart-image">
-              <img src="/static/images/restart-graphic@2x.jpg" width="208" height="273"/>
+              <img src={imageRestart} width="208" height="273"/>
             </div>
             <div className="banner__copy">
               <Localized id="restartIntroLead">

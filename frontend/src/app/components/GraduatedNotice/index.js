@@ -3,6 +3,8 @@ import React from "react";
 
 import "./index.scss";
 
+import iconInfo from "../../../images/info-16.svg";
+
 class GraduatedNoticeButton extends React.Component {
   render() {
     return <Localized id="experimentGradReportButton">
@@ -30,7 +32,7 @@ export default class GraduatedNotice extends React.Component {
       </Localized>;
     }
     return <div className="graduated-notice">
-      <img className="graduated-notice-image" src="/static/images/info-16.svg" width="40" height="40"/>
+      <img className="graduated-notice-image" src={iconInfo} width="40" height="40"/>
       <div className="graduated-notice-text">
         <Localized id="experimentGradReportPendingTitle">
           <h1>

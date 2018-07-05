@@ -14,6 +14,17 @@ import type {
   WebExperimentButtonType
 } from "./types";
 
+// Import all the icon images as webpack dependencies
+import iconFeedbackDefault from "../../../images/feedback.svg";
+import iconFeedbackWhite from "../../../images/feedback-white.svg";
+import iconExperimentTypeAddonDefault from "../../../images/experiment-type-addon.svg";
+import iconExperimentTypeAddonWhite from "../../../images/experiment-type-addon-white.svg";
+import iconExperimentTypeWebDefault from "../../../images/experiment-type-web.svg";
+import iconExperimentTypeWebWhite from "../../../images/experiment-type-web-white.svg";
+import iconExperimentTypeMobileWhite from "../../../images/experiment-type-mobile-white.svg";
+import iconIos from "../../../images/ios-light.svg";
+import iconGoogle from "../../../images/google-play.png";
+
 export const FeedbackButton = ({
   title,
   slug,
@@ -41,7 +52,6 @@ export const FeedbackButton = ({
       });
     }
   };
-  const iconPath = `/static/images/feedback${color === "default" ? "-white" : ""}.svg`;
 
   return (
     <a
@@ -53,7 +63,9 @@ export const FeedbackButton = ({
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img src={iconPath} />
+      <img
+        src={color === "default" ? iconFeedbackDefault : iconFeedbackWhite}
+      />
       <Localized id="giveFeedback">
         <span className="default-text">Give Feedback</span>
       </Localized>
@@ -61,13 +73,15 @@ export const FeedbackButton = ({
   );
 };
 
-export const MobileTriggerButton = ({ doShowMobileAppDialog }: MobileTriggerButtonType) => {
+export const MobileTriggerButton = ({
+  doShowMobileAppDialog
+}: MobileTriggerButtonType) => {
   return (
     <a
       className="button mobile-trigger default icon-button"
       onClick={doShowMobileAppDialog}
     >
-      <img src="/static/images/mobile-white.svg" />
+      <img src={iconExperimentTypeMobileWhite} />
       <Localized id="mobileDialogTitle">
         <span>Get the App</span>
       </Localized>
@@ -75,7 +89,11 @@ export const MobileTriggerButton = ({ doShowMobileAppDialog }: MobileTriggerButt
   );
 };
 
-export const GraduatedButton = ({ doShowEolDialog, isDisabling, title }: GraduatedButtonType) => {
+export const GraduatedButton = ({
+  doShowEolDialog,
+  isDisabling,
+  title
+}: GraduatedButtonType) => {
   return (
     <button
       key="graduated-button"
@@ -86,7 +104,7 @@ export const GraduatedButton = ({ doShowEolDialog, isDisabling, title }: Graduat
       })}
     >
       <span className="state-change-inner" />
-      <img src="/static/images/experiment-type-addon-white.svg" />
+      <img src={iconExperimentTypeAddonWhite} />
       <Localized id="disableExperimentTransition">
         <span className="transition-text">Disabling...</span>
       </Localized>
@@ -112,7 +130,7 @@ export const UninstallButton = ({
       })}
     >
       <span className="state-change-inner" />
-      <img src="/static/images/experiment-type-addon.svg" />
+      <img src={iconExperimentTypeAddonDefault} />
       <Localized id="disableExperimentTransition">
         <span className="transition-text">Disabling...</span>
       </Localized>
@@ -138,7 +156,7 @@ export const InstallTestPilotButton = ({
       })}
     >
       <div className="state-change-inner" />
-      <img src="/static/images/experiment-type-addon-white.svg" />
+      <img src={iconExperimentTypeAddonWhite} />
       <div className="one-click-cta-text">
         {!isEnabling && (
           <LocalizedHtml id="oneClickInstallMinorCta">
@@ -165,47 +183,43 @@ export const EnableExperimentButton = ({
   isEnabling,
   title,
   color
-}: EnableExperimentButtonType) => {
-  const iconPath = `/static/images/experiment-type-addon${color === "default" ? "-white" : ""}.svg`;
+}: EnableExperimentButtonType) => (
+  <button
+    key="install-button"
+    onClick={installExperiment}
+    id="install-button"
+    className={classnames(["button", "icon-button", color], {
+      "state-change": isEnabling
+    })}
+  >
+    <span className="state-change-inner" />
+    <img
+      src={
+        color === "default"
+          ? iconExperimentTypeAddonDefault
+          : iconExperimentTypeAddonWhite
+      }
+    />
+    <Localized id="enableExperimentTransition">
+      <span className="transition-text">Enabling...</span>
+    </Localized>
+    <Localized id="enableExperiment" $title={title}>
+      <span className="default-text">Enable {title}</span>
+    </Localized>
+  </button>
+);
 
-  return (
-    <button
-      key="install-button"
-      onClick={installExperiment}
-      id="install-button"
-      className={classnames(["button", "icon-button", color], {
-        "state-change": isEnabling
-      })}
-    >
-      <span className="state-change-inner" />
-      <img src={iconPath}/>
-      <Localized id="enableExperimentTransition">
-        <span className="transition-text">Enabling...</span>
-      </Localized>
-      <Localized id="enableExperiment" $title={title}>
-        <span className="default-text">Enable {title}</span>
-      </Localized>
-    </button>
-  );
-};
-
-export const MobileStoreButton = ({ url, platform }: MobileStoreButtonType) => {
-  const src =
-    platform === "ios"
-      ? "/static/images/ios-light.svg"
-      : "/static/images/google-play.png";
-  return (
-    <a
-      key={url}
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="button mobile"
-    >
-      <img src={src} />
-    </a>
-  );
-};
+export const MobileStoreButton = ({ url, platform }: MobileStoreButtonType) => (
+  <a
+    key={url}
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="button mobile"
+  >
+    <img src={platform === "ios" ? iconIos : iconGoogle} />
+  </a>
+);
 
 export const WebExperimentButton = ({
   color,
@@ -214,8 +228,6 @@ export const WebExperimentButton = ({
   title,
   web_url
 }: WebExperimentButtonType) => {
-  const iconPath = `/static/images/experiment-type-web${color === "default" ? "-white" : ""}.svg`;
-
   function handleGoToLink() {
     sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
@@ -232,7 +244,13 @@ export const WebExperimentButton = ({
       rel="noopener noreferrer"
       className={classnames("button icon-button", color)}
     >
-      <img src={iconPath} />
+      <img
+        src={
+          color === "default"
+            ? iconExperimentTypeWebDefault
+            : iconExperimentTypeWebWhite
+        }
+      />
       <Localized id="experimentGoToLink" $title={title}>
         <span className="default-text">Go to {title}</span>
       </Localized>

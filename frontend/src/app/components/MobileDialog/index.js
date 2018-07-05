@@ -11,6 +11,9 @@ import Loading from "../Loading";
 
 import "./index.scss";
 
+import iconIos from "../../../images/ios-light.svg";
+import iconGoogle from "../../../images/google-play.png";
+
 import { subscribeToBasket, subscribeToBasketSMS, acceptedSMSCountries } from "../../lib/utils";
 
 type MobileDialogProps = {
@@ -91,7 +94,7 @@ export default class MobileDialog extends React.Component {
 
     const headerMessage = ios_url ? (<LocalizedHtml id="mobileDialogMessageIOS" $title={title}>
       <p>Download <b>{title}</b> from the iOS App Store.</p></LocalizedHtml>) : (<LocalizedHtml id="mobileDialogMessageAndroid" $title={title}><p>Download <b>{title}</b> from the Google Play Store.</p></LocalizedHtml>);
-    const headerImg = ios_url ? (<a href={ios_url} onClick={handleAppLinkClick} target="_blank" rel="noopener noreferrer"><img className="mobile-header-img" src="/static/images/ios-light.svg"/></a>) : (<a href={android_url} onClick={handleAppLinkClick} target="_blank" rel="noopener noreferrer"><img className="mobile-header-img" src="/static/images/google-play.png"/></a>);
+    const headerImg = ios_url ? (<a href={ios_url} onClick={handleAppLinkClick} target="_blank" rel="noopener noreferrer"><img className="mobile-header-img" src={iconIos}/></a>) : (<a href={android_url} onClick={handleAppLinkClick} target="_blank" rel="noopener noreferrer"><img className="mobile-header-img" src={iconGoogle}/></a>);
 
     const learnMoreLink = "https://www.mozilla.org/privacy/websites/#campaigns";
 

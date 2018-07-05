@@ -12,6 +12,8 @@ import MainInstallButton from "../MainInstallButton";
 import MobileDialog from "../MobileDialog";
 import LayoutWrapper from "../LayoutWrapper";
 
+import iconMobileWhite from "../../../images/mobile-white.svg";
+
 import type { InstalledExperiments } from "../../reducers/addon";
 
 type FeaturedButtonProps = {
@@ -154,7 +156,7 @@ export default class FeaturedButton extends React.Component {
             <a
               className="button primary icon-button main-install__button"
               onClick={this.doShowMobileAppDialog}>
-              <img src="/static/images/mobile-white.svg" />
+              <img src={iconMobileWhite} />
               <Localized id="mobileDialogTitle">
                 <span>Get the App</span>
               </Localized>
