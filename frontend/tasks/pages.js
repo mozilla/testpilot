@@ -18,6 +18,11 @@ const THUMBNAIL_TWITTER = config.PRODUCTION_URL + "/static/images/thumbnail-twit
 const META_TITLE = "Firefox Test Pilot";
 const META_DESCRIPTION = "Test new Features. Give us feedback. Help build Firefox.";
 
+// HACK: Ignore non-JS imports used for asset dependencies in Webpack
+require.extensions[".scss"] = function() {};
+require.extensions['.svg'] = () => "";
+require.extensions['.png'] = () => "";
+
 gulp.task("pages-misc", () => {
   // We just need a dummy file to get a stream going; we're going to ignore
   // the contents in buildLandingPage
