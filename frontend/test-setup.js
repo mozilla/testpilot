@@ -7,6 +7,9 @@ Enzyme.configure({ adapter: new Adapter() });
 
 // HACK: Ignore non-JS imports used for asset dependencies in Webpack
 require.extensions[".scss"] = function() {};
+require.extensions[".svg"] = () => "";
+require.extensions[".png"] = () => "";
+require.extensions[".jpg"] = () => "";
 
 // We need jsdom for enzyme mount()'ed components - mainly the sticky header
 // scroll handler stuff on the experiments page.
