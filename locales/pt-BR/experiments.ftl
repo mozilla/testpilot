@@ -110,6 +110,7 @@ nomore404sDetails1Copy = Oferecido pelos nossos amigos do Internet Archive.
 nomore404sContributors1Title = Desenvolvedor, da Máquina do Tempo, Internet Archive
 nomore404sContributors2Title = Administrador, da Máquina do Tempo, Internet Archive
 nomore404sContributors3Title = Engenheiro de Rastreamento, Internet Archive
+notesDescriptionMobile = Escreva notas enquanto navega na Web, e sincronize com nosso novo aplicativo Android.
 notesLegalnotice = Ao prosseguir, você concorda com os <a>termos</a> e as políticas de privacidade do Test Pilot e com a <a>política de privacidade</a> do Notes .
 notesMeasurements0 = O Notes coletará informações sobre como você usa a funcionalidade, como a frequência que você cria anotações e quanto tempo você gasta editando-as, o número de caracteres que você salva em uma nota, e se você usa alguma das funcionalidades de edição (ex., negrito ou itálico).
 notesMeasurements1 = O Notes também coletará informações sobre suas interações com a extensão, como você acessa a funcionalidade e quais botões você clica para isso.
