@@ -93,6 +93,25 @@ emailOptInConfirmationTitle = Imayl ittwaciyeɛ
 emailOptInConfirmationClose = Ɣef tirmitin…
 emailOptInDialogErrorTitle = Ayuh ala!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Awi asnas
+mobileDialogMessageIOS = Sider <b>{ $title }</b> si iOS App Store.
+mobileDialogMessageAndroid = Sider <b>{ $title }</b> si Google Play Store.
+mobileDialogInstructionsSMS = Sekcem uṭṭun-ik n tiliɣri neɣ tansa n yimayl akken ad tazneḍ aseɣwen n usider ar tiliɣri-ik:
+mobileDialogInstructions = Sekcem tansa n yimayl akken ad tazneḍ aseɣwen n usider ar tiliɣri-ik:
+mobileDialogPlaceholder = Sekcem tansa-ik imayl
+mobileDialogPlaceholderSMS = Sekcem tiliɣri/tansa-ik imayl
+mobileDialogButton = Azen-iyi-d aseɣwen n usider
+mobileDialogButtonSuccess = Tanemmirt!
+mobileDialogSuccessMain = Aseɣwen n usider yettwazen!
+mobileDialogSuccessSecondarySMS = Senqed ibenkan-ik ma tremseḍ-d imayl neɣ izenan.
+mobileDialogSuccessSecondary = Senqed ibenkan-ik ma tremseḍ-d imayl.
+mobileDialogAnotherDeviceLink = Azen ar yibenk-nniḍen
+mobileDialogError = Sekcem imayl ameɣtu:
+mobileDialogErrorSMS = Sekcem uṭṭun n tiliɣri ameɣtu neɣ imayl:
+mobileDialogNoticeSMS = Ameẓlu SMS yella kan di kra n tmura yettwafernen. Tasqamt n SMS & yisefka ad yettwasnes. Aɣerwaḍ  n yimayl neɣ SMS yessefk ad yeqbel. { $learnMore }
+
 ## Featured experiment.
 
 moreDetail = Wali talqayt
@@ -177,13 +196,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Firefox / web / tarmit tazirazt
-experimentPlatformWebAddon = Firefox / tarmit web
-experimentPlatformWebMobile = web / tarmit tazirazt
-experimentPlatformAddonMobile = Firefox / tarmit tazirazt
-experimentPlatformWeb = tarmit web
 experimentPlatformAddon = tarmit Firefox
-experimentPlatformMobileApp = tarmit tazirazt
+experimentPlatformAndroid = Tarmit Android
+experimentPlatformIos = Tarmit iOS
+experimentPlatformWeb = tarmit web
+experimentPlatformAddonWeb = Tarmit Firefox / web
+experimentPlatformAddonAndroid = Tarmit Android / Firefox
+experimentPlatformAddonIos = tarmit iOS / Firefox
+experimentPlatformAddonAndroidIos = Tarmit Android / iOS / Firefox
+experimentPlatformAddonAndroidWeb = Tarmit Android / Firefox / Web
+experimentPlatformAddonAndroidIosWeb = Tarmit Android / iOS / Firefox / web
+experimentPlatformAndroidWeb = Tarmit Android / web
+experimentPlatformAndroidIos = Tarmit Android / iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 

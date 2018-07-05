@@ -93,6 +93,25 @@ emailOptInConfirmationTitle = E-mail verzonden
 emailOptInConfirmationClose = Door naar de experimenten...
 emailOptInDialogErrorTitle = O nee!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Download de app
+mobileDialogMessageIOS = Download <b>{ $title }</b> vanaf de iOS App Store.
+mobileDialogMessageAndroid = Download <b>{ $title }</b> vanaf de Google Play Store.
+mobileDialogInstructionsSMS = Voer uw telefoonnummer of e-mailadres in om een downloadkoppeling naar uw telefoon te sturen:
+mobileDialogInstructions = Voer uw e-mailadres in om een downloadkoppeling naar uw telefoon te sturen:
+mobileDialogPlaceholder = Voer uw e-mailadres in
+mobileDialogPlaceholderSMS = Voer uw telefoonnummer/e-mailadres in
+mobileDialogButton = Downloadkoppeling versturen
+mobileDialogButtonSuccess = Bedankt!
+mobileDialogSuccessMain = Downloadkoppeling verstuurd!
+mobileDialogSuccessSecondarySMS = Bekijk het e-mail- of sms-bericht op uw apparaat.
+mobileDialogSuccessSecondary = Bekijk het e-mailbericht op uw apparaat.
+mobileDialogAnotherDeviceLink = Naar een ander apparaat sturen
+mobileDialogError = Voer een geldig e-mailadres in:
+mobileDialogErrorSMS = Voer een geldig telefoonnummer of e-mailadres in:
+mobileDialogNoticeSMS = De sms-service is alleen in bepaalde landen beschikbaar. Mogelijk zijn er kosten voor sms en gegevens van toepassing. De beoogde ontvanger van het e-mail- of sms-bericht moet hiermee akkoord zijn gegaan. { $learnMore }
+
 ## Featured experiment.
 
 moreDetail = Details bekijken
@@ -177,13 +196,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Firefox- / web- / mobiel-experiment
-experimentPlatformWebAddon = Firefox- / web-experiment
-experimentPlatformWebMobile = web- / mobiel-experiment
-experimentPlatformAddonMobile = Firefox- / mobiel-experiment
-experimentPlatformWeb = webexperiment
 experimentPlatformAddon = Firefox-experiment
-experimentPlatformMobileApp = mobiel-experiment
+experimentPlatformAndroid = Android-experiment
+experimentPlatformIos = iOS-experiment
+experimentPlatformWeb = webexperiment
+experimentPlatformAddonWeb = Firefox- / webexperiment
+experimentPlatformAddonAndroid = Android- / Firefox-experiment
+experimentPlatformAddonIos = iOS- / Firefox-experiment
+experimentPlatformAddonAndroidIos = Android- / iOS- / Firefox-experiment
+experimentPlatformAddonAndroidWeb = Android- / Firefox- / webexperiment
+experimentPlatformAddonAndroidIosWeb = Android- / iOS- / Firefox- / webexperiment
+experimentPlatformAndroidWeb = Android- / webexperiment
+experimentPlatformAndroidIos = Android- / iOS-experiment
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 

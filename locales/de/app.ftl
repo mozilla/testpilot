@@ -93,6 +93,25 @@ emailOptInConfirmationTitle = E-Mail gesendet
 emailOptInConfirmationClose = Weiter zu den Experimenten…
 emailOptInDialogErrorTitle = Oh nein!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Holen Sie sich die App
+mobileDialogMessageIOS = Herunterladen <b>{ $title }</b> im iOS App Store
+mobileDialogMessageAndroid = Herunterladen <b>{ $title }</b> im Google Play Store.
+mobileDialogInstructionsSMS = Geben Sie Ihre Telefonnummer oder E-Mail-Adresse ein, um einen Download-Link an Ihr Handy zu senden:
+mobileDialogInstructions = Geben Sie Ihre E-Mail-Adresse ein, um einen Download-Link an Ihr Handy zu senden:
+mobileDialogPlaceholder = Geben Sie Ihre E-Mail-Adresse ein
+mobileDialogPlaceholderSMS = Geben Sie Ihre Telefonnummer/E-Mail-Adresse ein
+mobileDialogButton = Download-Link an mich senden
+mobileDialogButtonSuccess = Vielen Dank!
+mobileDialogSuccessMain = Download-Link gesendet!
+mobileDialogSuccessSecondarySMS = Sehen Sie auf Ihrem Gerät nach der E-Mail oder Textnachricht.
+mobileDialogSuccessSecondary = Sehen Sie auf Ihrem Gerät nach der E-Mail.
+mobileDialogAnotherDeviceLink = An ein weiteres Gerät senden
+mobileDialogError = Geben Sie eine gültige E-Mail-Adresse ein:
+mobileDialogErrorSMS = Geben Sie eine gültige Telefonnummer oder E-Mail-Adresse ein:
+mobileDialogNoticeSMS = Der SMS-Dienst steht nur in ausgewählten Ländern zur Verfügung. Es können Gebühren für SMS und Datenübertragung anfallen. Der Empfänger der E-Mail oder SMS muss zugestimmt haben. { $learnMore }
+
 ## Featured experiment.
 
 moreDetail = Details anzeigen
@@ -174,13 +193,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Experiment für Firefox / Web / Mobilgerät
-experimentPlatformWebAddon = Experiment für Firefox / Web
-experimentPlatformWebMobile = Experiment für Web / Mobilgerät
-experimentPlatformAddonMobile = Experiment für Firefox / Mobilgerät
-experimentPlatformWeb = Experiment für Web
 experimentPlatformAddon = Experiment für Firefox
-experimentPlatformMobileApp = Experiment für Mobilgerät
+experimentPlatformAndroid = Experiment für Android
+experimentPlatformIos = Experiment für iOS
+experimentPlatformWeb = Experiment für Web
+experimentPlatformAddonWeb = Experiment für Firefox / Web
+experimentPlatformAddonAndroid = Experiment für Android / Firefox
+experimentPlatformAddonIos = Experiment für Firefox / iOS
+experimentPlatformAddonAndroidIos = Experiment für Android / iOS/ Firefox
+experimentPlatformAddonAndroidWeb = Experiment für Android / Firefox / Web
+experimentPlatformAddonAndroidIosWeb = Experiment für Android / iOS/ Firefox / Web
+experimentPlatformAndroidWeb = Experiment für Android / Web
+experimentPlatformAndroidIos = Experiment für Android / iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 

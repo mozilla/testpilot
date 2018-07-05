@@ -93,6 +93,22 @@ emailOptInConfirmationTitle = Correo enviado
 emailOptInConfirmationClose = Hacia los experimentos...
 emailOptInDialogErrorTitle = ¡No!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Obtener la aplicación
+mobileDialogMessageIOS = Descargar <b>{ $title }</b> de iOS App Store.
+mobileDialogMessageAndroid = Descargar <b>{ $title }</b> de Google Play Store.
+mobileDialogPlaceholder = Ingresá tu correo electrónico
+mobileDialogPlaceholderSMS = Ingresá tu teléfono/correo electrónico
+mobileDialogButton = Enviame el enlace de descarga
+mobileDialogButtonSuccess = ¡Gracias!
+mobileDialogSuccessMain = ¡Enlace de descarga enviado!
+mobileDialogSuccessSecondarySMS = Verificá tu dispositivo por el correo electrónico  o el mensaje de texto.
+mobileDialogSuccessSecondary = Verificá tu dispositivo por el correo electrónico.
+mobileDialogAnotherDeviceLink = Enviar a otro dispositivo
+mobileDialogError = Ingresá un correo electrónico válido:
+mobileDialogErrorSMS = Ingresá un número de teléfono o correo electrónico válido:
+
 ## Featured experiment.
 
 moreDetail = Ver detalles
@@ -177,13 +193,9 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = experimento Firefox / web / móvil
-experimentPlatformWebAddon = experimento Firefox / web
-experimentPlatformWebMobile = experimento web / móvil
-experimentPlatformAddonMobile = experimento Firefox / móvil
-experimentPlatformWeb = experimento web
 experimentPlatformAddon = experimento Firefox
-experimentPlatformMobileApp = experimento móvil
+experimentPlatformAndroid = Experimento de Android
+experimentPlatformWeb = experimento web
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 

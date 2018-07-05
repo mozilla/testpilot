@@ -93,6 +93,17 @@ emailOptInConfirmationTitle = Το e-mail απεστάλη
 emailOptInConfirmationClose = Μετάβαση στα πειράματα...
 emailOptInDialogErrorTitle = Ωχ όχι!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Απόκτηση εφαρμογής
+mobileDialogMessageIOS = Λήψη του <b>{ $title }</b> από το iOS App Store.
+mobileDialogMessageAndroid = Λήψη του <b>{ $title }</b> από το Google Play Store.
+mobileDialogButtonSuccess = Ευχαριστούμε!
+mobileDialogSuccessMain = Απεστάλη σύνδεσμος λήψης!
+mobileDialogAnotherDeviceLink = Αποστολή σε άλλη συσκευή
+mobileDialogError = Εισάγετε ένα έγκυρο email:
+mobileDialogErrorSMS = Εισάγετε ένα έγκυρο αριθμό τηλεφώνου ή email:
+
 ## Featured experiment.
 
 moreDetail = Προβολή λεπτομερειών
@@ -177,13 +188,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = πείραμα Firefox/ιστού/κινητού
-experimentPlatformWebAddon = πείραμα Firefox/ιστού
-experimentPlatformWebMobile = πείραμα ιστού/κινητού
-experimentPlatformAddonMobile = πείραμα Firefox/κινητού
-experimentPlatformWeb = πείραμα ιστού
 experimentPlatformAddon = πείραμα Firefox
-experimentPlatformMobileApp = πείραμα κινητού
+experimentPlatformAndroid = Πείραμα Android
+experimentPlatformIos = Πείραμα iOS
+experimentPlatformWeb = πείραμα ιστού
+experimentPlatformAddonWeb = Πείραμα Firefox/διαδικτύου
+experimentPlatformAddonAndroid = Πείραμα Android/Firefox
+experimentPlatformAddonIos = Πείραμα iOS/Firefox
+experimentPlatformAddonAndroidIos = Πείραμα Android/iOS/Firefox
+experimentPlatformAddonAndroidWeb = Πείραμα Android/Firefox/διαδικτύου
+experimentPlatformAddonAndroidIosWeb = Πείραμα Android/iOS/Firefox/διαδικτύου
+experimentPlatformAndroidWeb = Πείραμα Android/διαδικτύου
+experimentPlatformAndroidIos = Πείραμα Android/iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 

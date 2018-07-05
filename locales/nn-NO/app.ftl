@@ -93,6 +93,25 @@ emailOptInConfirmationTitle = E-post er sendt
 emailOptInConfirmationClose = Vidare til eksperimenta…
 emailOptInDialogErrorTitle = Å, nei!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Få appen
+mobileDialogMessageIOS = Last ned <b>{ $title }</b> frå iOS App Store.
+mobileDialogMessageAndroid = Last ned <b>{ $title }</b> frå Google Play Store.
+mobileDialogInstructionsSMS = Skriv inn telefonnummeret ditt eller e-postadressa di for å få sendt ei nedlastingslenke til telefonen din:
+mobileDialogInstructions = Skriv inn e-postadressa di for få sendt ei nedlastingslenke til telefonen din:
+mobileDialogPlaceholder = Skriv inn e-postadressa di
+mobileDialogPlaceholderSMS = Skriv inn telefon/e-post
+mobileDialogButton = Send meg nedlastingslenka
+mobileDialogButtonSuccess = Takk!
+mobileDialogSuccessMain = Nedlastingslenke sendt!
+mobileDialogSuccessSecondarySMS = Sjå om du har fått e-posten, eller tekstmeldinga, på eininga di.
+mobileDialogSuccessSecondary = Sjå om du har fått e-posten på eininga di.
+mobileDialogAnotherDeviceLink = Send til ei anna eining
+mobileDialogError = Skriv inn ei gyldig e-postadresse:
+mobileDialogErrorSMS = Skriv inn eit gyldig telefonnummer eller ei gyldig e-postadresse:
+mobileDialogNoticeSMS = SMS-tenesta er berre tilgjengeleg i utvalde land. Kostnadar for SMS- og dataoverføringar kan førekome. Mottakaren av e-posten og SMS-en må ha samtykka. { $learnMore }
+
 ## Featured experiment.
 
 moreDetail = Vis detaljar
@@ -177,13 +196,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Eksperiment for Firefox / nett / mobil
-experimentPlatformWebAddon = Eksperiment for Firefox / nett
-experimentPlatformWebMobile = Eksperiment for nett / mobil
-experimentPlatformAddonMobile = Eksperiment for Firefox / mobil
-experimentPlatformWeb = nettsideeksperiment
 experimentPlatformAddon = Firefox-eksperiment
-experimentPlatformMobileApp = mobileksperiment
+experimentPlatformAndroid = Android-eksperiment
+experimentPlatformIos = iOS-eksperiment
+experimentPlatformWeb = nettsideeksperiment
+experimentPlatformAddonWeb = Firefox/nett-eksperiment
+experimentPlatformAddonAndroid = Android/Firefox-eksperiment
+experimentPlatformAddonIos = iOS/Firefox-eksperiment
+experimentPlatformAddonAndroidIos = Android/iOS/Firefox-eksperiment
+experimentPlatformAddonAndroidWeb = Android/Firefox/nett-eksperiment
+experimentPlatformAddonAndroidIosWeb = Android/iOS/Firefox/nett-eksperiment
+experimentPlatformAndroidWeb = Android/nett-eksperiment
+experimentPlatformAndroidIos = Android/iOS-eksperiment
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 

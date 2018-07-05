@@ -31,6 +31,7 @@ landingIntroOne = 새로운 기능을 테스트합니다.
 landingIntroTwo = 피드백을 주세요.
 landingIntroThree = Firefox를 만드는데 도움을 주세요.
 landingLegalNotice = 계속하시면, Test Pilot의 <a>이용약관</a>과 <a>개인정보취급방침</a>에 동의하는 것으로 간주합니다.
+landingMoreExperimentsButton = 다른 실험
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -56,6 +57,7 @@ landingDownloadFirefoxSubTitle = 무료 다운로드
 
 ## A section of the homepage explaining how Test Pilot works.
 
+landingCardListTitle = 3, 2, 1 시작
 landingCardOne = Test Pilot 부가 기능 받기
 landingCardTwo = 시험적인 기능 쓰기
 landingCardThree = 의견을 알려주세요
@@ -80,6 +82,9 @@ emailOptInMessage = 새로운 실험과 참여한 실험의 결과를 받아보�
 emailOptInConfirmationTitle = 이메일 보냄
 emailOptInConfirmationClose = 실험에...
 emailOptInDialogErrorTitle = 이런!
+
+## modal prompt for sending link to experiment mobile apps via email or sms
+
 
 ## Featured experiment.
 
@@ -135,7 +140,7 @@ disableExperiment = { $title } 비활성화
 disableExperimentTransition = 비활성화 중...
 enableExperiment = { $title } 활성화
 enableExperimentTransition = 활성화 중...
-experimentManuallyDisabled = 부가 기능 관리자에서 { $title } 비활성화
+experimentManuallyDisabled = 부가 기능 관리자에서 { $title } 비활성화됨
 experimentMeasurementIntro = 모든 Test Pilot 실험기능이 수집하는 <a>데이터</a> 외에 { $experimentTitle } 사용 중 알아야 할 주요 사항:
 measurements = 개인 정보 보호
 experimentPrivacyNotice = { $title }의 데이터 수집에 대한 자세한 정보를 알 수 있습니다.
@@ -163,13 +168,8 @@ nonExperimentDialogHeaderLink = 테스트 파일럿
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Firefox / 웹 / 모바일 실험
-experimentPlatformWebAddon = Firefox / 웹 실험
-experimentPlatformWebMobile = 웹 / 모바일 실험
-experimentPlatformAddonMobile = Firefox 모바일 / 실험
-experimentPlatformWeb = 웹 실험
 experimentPlatformAddon = Firefox 실험
-experimentPlatformMobileApp = 모바일 실험
+experimentPlatformWeb = 웹 실험
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
