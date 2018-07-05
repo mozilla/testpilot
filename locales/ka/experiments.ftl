@@ -66,6 +66,7 @@ firefoxlockboxDetails1Copy = მართეთ ანგარიშები F
 firefoxlockboxDetails2Copy = დაალაგეთ და გამოარჩიეთ თქვენი ანგარიშები, სასურველის სწრაფად მოსანახად.
 firefoxlockboxContributors0Title = პროდუქტების განვითარების უფროსი ხელმძღვანელი
 firefoxlockboxContributors1Title = ინჟინერ-ხელმძღვანელი
+firefoxlockboxContributors2Title = სამომხმარებლო იერსახის ინტერაქციის უფროსი სპეციალისტი
 firefoxlockboxContributors3Title = ინჟინერ-არქიტექტორი
 firefoxlockboxContributors4Title = მობილური მიმართულების ინჟინერი
 firefoxlockboxContributors5Title = უფროსი ინჟინერი
