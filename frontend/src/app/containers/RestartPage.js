@@ -7,8 +7,6 @@ import Banner from "../components/Banner";
 import LayoutWrapper from "../components/LayoutWrapper";
 import View from "../components/View";
 
-import imageRestart from "../../images/restart-graphic@2x.jpg";
-
 type RestartProps = {
   experimentTitle: string,
   hasAddon: any,
@@ -33,9 +31,6 @@ export default class Restart extends React.Component {
       <View spaceBetween={true} showNewsletterFooter={false} {...this.props}>
         <Banner>
           <LayoutWrapper flexModifier="row-around-breaking">
-            <div className="restart-image">
-              <img src={imageRestart} width="208" height="273"/>
-            </div>
             <div className="banner__copy">
               <Localized id="restartIntroLead">
                 <span>Preflight checklist</span>
