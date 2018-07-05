@@ -23,7 +23,7 @@ thumbnail: /static/images/experiments/lockbox/icon/thumbnail.png
 gradient_start: '#00BCD8'
 gradient_stop: '#0086DC'
 
-created: '2018-07-10T14:00:00.000000Z' # 8 AM Mountain, 7 Pacific (3 PM GMT) on July 10th
+created: '2018-07-10T13:00:00.000000Z' # 6 AM Pacific, 1 PM GMT on July 10th
 launch_date: '2018-07-10T14:00:00.000000Z'
 
 changelog_url: 'https://github.com/mozilla-lockbox/lockbox-ios/releases'
