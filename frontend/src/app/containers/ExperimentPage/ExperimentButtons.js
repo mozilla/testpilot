@@ -15,11 +15,11 @@ import type {
 } from "./types";
 
 // Import all the icon images as webpack dependencies
-import iconFeedbackDefault from "../../../images/feedback.svg";
+import iconFeedbackDark from "../../../images/feedback.svg";
 import iconFeedbackWhite from "../../../images/feedback-white.svg";
-import iconExperimentTypeAddonDefault from "../../../images/experiment-type-addon.svg";
+import iconExperimentTypeAddonDark from "../../../images/experiment-type-addon.svg";
 import iconExperimentTypeAddonWhite from "../../../images/experiment-type-addon-white.svg";
-import iconExperimentTypeWebDefault from "../../../images/experiment-type-web.svg";
+import iconExperimentTypeWebDark from "../../../images/experiment-type-web.svg";
 import iconExperimentTypeWebWhite from "../../../images/experiment-type-web-white.svg";
 import iconExperimentTypeMobileWhite from "../../../images/experiment-type-mobile-white.svg";
 import iconIos from "../../../images/ios-light.svg";
@@ -64,7 +64,7 @@ export const FeedbackButton = ({
       rel="noopener noreferrer"
     >
       <img
-        src={color === "default" ? iconFeedbackDefault : iconFeedbackWhite}
+        src={color === "default" ? iconFeedbackWhite : iconFeedbackDark}
       />
       <Localized id="giveFeedback">
         <span className="default-text">Give Feedback</span>
@@ -130,7 +130,7 @@ export const UninstallButton = ({
       })}
     >
       <span className="state-change-inner" />
-      <img src={iconExperimentTypeAddonDefault} />
+      <img src={iconExperimentTypeAddonDark} />
       <Localized id="disableExperimentTransition">
         <span className="transition-text">Disabling...</span>
       </Localized>
@@ -196,8 +196,8 @@ export const EnableExperimentButton = ({
     <img
       src={
         color === "default"
-          ? iconExperimentTypeAddonDefault
-          : iconExperimentTypeAddonWhite
+          ? iconExperimentTypeAddonWhite
+          : iconExperimentTypeAddonDark
       }
     />
     <Localized id="enableExperimentTransition">
@@ -247,8 +247,8 @@ export const WebExperimentButton = ({
       <img
         src={
           color === "default"
-            ? iconExperimentTypeWebDefault
-            : iconExperimentTypeWebWhite
+            ? iconExperimentTypeWebWhite
+            : iconExperimentTypeWebDark
         }
       />
       <Localized id="experimentGoToLink" $title={title}>
