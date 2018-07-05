@@ -93,6 +93,21 @@ emailOptInConfirmationTitle = E-poštno sporočilo poslano
 emailOptInConfirmationClose = Naprej na poskuse ...
 emailOptInDialogErrorTitle = O, ne!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Pridobite aplikacijo
+mobileDialogMessageIOS = Prenesite <b>{ $title }</b> iz trgovine iOS App.
+mobileDialogMessageAndroid = Prenesite <b>{ $title }</b> iz trgovine Google Play.
+mobileDialogPlaceholder = Vnesite e-poštni naslov
+mobileDialogPlaceholderSMS = Vnesite telefonsko številko/e-poštni naslov
+mobileDialogButton = Pošlji mi povezavo za prenos
+mobileDialogButtonSuccess = Hvala!
+mobileDialogSuccessMain = Povezava za prenos poslana!
+mobileDialogAnotherDeviceLink = Pošlji na drugo napravo
+mobileDialogError = Vnesite veljaven e-poštni naslov:
+mobileDialogErrorSMS = Vnesite veljavno telefonsko številko ali e-poštni naslov:
+mobileDialogNoticeSMS = Storitev SMS je na voljo samo v določenih državah. Sporočila in prenos podatkov so morda plačljivi. Namenjeni prejemnik e-pošte ali SMS-a se mora strinjati s prejemom. { $learnMore }
+
 ## Featured experiment.
 
 moreDetail = Prikaži podrobnosti
@@ -177,13 +192,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Poskus za Firefox / splet / mobilno aplikacijo
-experimentPlatformWebAddon = Poskus za Firefox / splet
-experimentPlatformWebMobile = Pokus za splet / mobilno aplikacijo
-experimentPlatformAddonMobile = Poksus za Firefox / mobilno aplikacijo
-experimentPlatformWeb = Poskus za splet
 experimentPlatformAddon = Poskus za Firefox
-experimentPlatformMobileApp = Poskus za mobilno aplikacijo
+experimentPlatformAndroid = Poskus za Android
+experimentPlatformIos = Poskus za iOS
+experimentPlatformWeb = Poskus za splet
+experimentPlatformAddonWeb = Poskus za Firefox / splet
+experimentPlatformAddonAndroid = Poskus za Android / Firefox
+experimentPlatformAddonIos = Poskus za iOS / Firefox
+experimentPlatformAddonAndroidIos = Poskus za Android / iOS / Firefox
+experimentPlatformAddonAndroidWeb = Poskus za Android / Firefox / splet
+experimentPlatformAddonAndroidIosWeb = Poskus za Android / iOS / Firefox / splet
+experimentPlatformAndroidWeb = Poskus za Android / splet
+experimentPlatformAndroidIos = Poskus za Android / iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 

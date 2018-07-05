@@ -1,52 +1,68 @@
-siteName = الاختبار التجريبي لفيرفكس
+siteName = اختبار منتجات فَيَرفُكس
 
 ## Page titles, shown as title of HTML pages.
 
-pageTitleDefault = الاختبار التجريبي لفيرفكس
-pageTitleLandingPage = الاختبار التجريبي لفيرفكس
-pageTitleExperimentListPage = الاختبار التجريبي لفيرفكس - التجارب
-pageTitleExperiment = الاختبار التجريبي لفيرفكس - { $title }
+pageTitleDefault = اختبار منتجات فَيَرفُكس
+pageTitleLandingPage = اختبار منتجات فَيَرفُكس
+pageTitleExperimentListPage = اختبار منتجات فَيَرفُكس - التجارب
+pageTitleExperiment = اختبار منتجات فَيَرفُكس - { $title }
 
 ## Links in the footer.
 
-footerLinkCookies = الكوكيز
+footerLinkCookies = الكعكات
 footerLinkPrivacy = الخصوصيّة
 footerLinkTerms = الشروط
-footerLinkLegal = قانوني
+footerLinkLegal = القانونية
+footerLinkFeedback = أعلِمنا بانطباعك
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = عن
+footerLinkAboutUs = عنّا
+footerLinkSupportHeader = الدعم
+footerLinkDownload = نزِّل فَيَرفُكس
+# link to page detailing firefox mobile browser options
+footerLinkMobile = المحمول
+footerLinkFeatures = الميزات
+footerLinkRetire = أزِل اختبار المنتجات
 
 ## Items in the menu and footer
 
 home = الرئيسية
 menuTitle = الإعدادات
-menuWiki = الويكي خالصة بالاختبار التجريبي
-menuDiscuss = مناقشة الاختبار التجريبي
-menuFileIssue = أبلغ عن مشكلة
-menuRetire = إزالة تثبيت الاختبار التجريبي
+menuWiki = ويكي اختبار المنتجات
+menuDiscuss = ناقِش اختبار المنتجات
+menuFileIssue = أبلِغ عن مشكلة
+menuRetire = أزِل اختبار المنتجات
+headerLinkBlog = المدوّنة
 
 ## The splash on the homepage.
 
-landingIntroOne = أختبر ميزات جديدة.
-landingIntroTwo = قدم ملاحظاتك.
-landingIntroThree = ساعد في بناء فَيَرفُكس.
-landingLegalNotice = من خلال المتابعة، فإنك توافق على <a>شروط الاستخدام</a> و<a>الخصوصية</a> للاختبار التجريبي.
+landingIntroOne = اختر ميزات جديدة.
+landingIntroTwo = أعلِمنا بانطباعاتك.
+landingIntroThree = ساعدنا على بناء فَيَرفُكس.
+landingLegalNotice = المتابعة تعني موافقتك على <a>شروط استخدام</a> و<a>تنويه خصوصية</a> اختبار المنتجات.
+landingMoreExperimentsButton = تجارب أخرى
 
 ## Related to the installation of the Test Pilot add-on.
 
-landingInstallButton = تثبيت إضافة الاختبار التجريبي
-landingInstallingButton = جارِ التثبيت...
+landingInstallButton = ثبِّت ملحقة اختبار المنتجات
+landingInstallingButton = يُثبّت…
 
 ## Related to a one click to install test pilot and an experiment.
 
+oneClickInstallMinorCta = نزِّل اختبار المنتجات و
+# $title is replaced by the name of an experiment
+oneClickInstallMajorCta = فعّل { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
-landingRequiresDesktop = الاختبار التجريبي يتطلب نسخة فيرفكس لسطح المكتب على ويندوز، ماك أو لينكس
-landingDownloadFirefoxDesc = (الاختبار التجريبي متاح لفيرفكس على أنظمة التشغيل Windows, OS X و Linux)
-landingUpgradeDesc = يتطلب الاختبار التجريبي نسخة فيرفكس 49 أو أعلى.
+landingRequiresDesktop = يحتاج اختبار المنتجات نسخة فَيَرفُكس لسطح المكتب على وندوز أو ماك أو لينكس
+landingDownloadFirefoxDesc = (يتوفر اختبار المنتجات لِـفَيَرفُكس على وندوز وماك أوإس إكس ولينكس)
+landingUpgradeDesc = يحتاج اختبار المنتجات فَيَرفُكس ٤٩ فأعلى.
+landingUpgradeDesc2 = يحتاج اختبار المنتجات فَيَرفُكس { $version } فأعلى.
 # also in footer
-landingDownloadFirefoxTitle = فيرفكس
-landingUpgradeFirefoxTitle = ترقية فيرفكس
-landingDownloadFirefoxSubTitle = تحميل مجاني
+landingDownloadFirefoxTitle = فَيَرفُكس
+landingUpgradeFirefoxTitle = رقِّ نسخة فَيَرفُكس
+landingDownloadFirefoxSubTitle = تنزيل مجاني
 
 ## A section of the homepage explaining how Test Pilot works.
 
@@ -74,6 +90,9 @@ emailOptInDialogTitle = مرحبا بكم في الاختبار التجريبي
 emailOptInMessage = تعرف على تجارب جديدة و اطلع على نتائج الاختبار للتجارب التي جربتها.
 emailOptInConfirmationTitle = تم إرسال البريد الإلكتروني
 emailOptInConfirmationClose = إلى التجارب...
+
+## modal prompt for sending link to experiment mobile apps via email or sms
+
 
 ## Featured experiment.
 

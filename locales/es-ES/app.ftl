@@ -22,6 +22,7 @@ footerLinkDownload = Descargar Firefox
 # link to page detailing firefox mobile browser options
 footerLinkMobile = Móvil
 footerLinkFeatures = Características
+footerLinkBeta = Beta, Nightly, Developer Edition
 footerLinkRetire = Desinstalar Test PIlot
 
 ## Items in the menu and footer
@@ -91,6 +92,9 @@ emailOptInMessage = Descubre nuevos experimentos y mira los resultados de los ex
 emailOptInConfirmationTitle = Email enviado
 emailOptInConfirmationClose = Vamos a los experimentos...
 emailOptInDialogErrorTitle = ¡Oh no!
+
+## modal prompt for sending link to experiment mobile apps via email or sms
+
 
 ## Featured experiment.
 
@@ -173,13 +177,8 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Firefox / web / experimento móvil
-experimentPlatformWebAddon = Firefox / experimento web
-experimentPlatformWebMobile = web / experimento móvil
-experimentPlatformAddonMobile = Firefox / experimento móvil
-experimentPlatformWeb = experimento web
 experimentPlatformAddon = experimento Firefox
-experimentPlatformMobileApp = experimento móvil
+experimentPlatformWeb = experimento web
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 

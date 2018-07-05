@@ -24,3 +24,4 @@ minvidContributors0Title = 엔지니어
 minvidContributors1Title = 직원 엔지니어
 minvidContributors2Title = 엔지니어링 인턴
 minvidContributors3Title = 엔지니어링 기여자
+nomore404sSubtitle = Wayback Machine에 의해 제공

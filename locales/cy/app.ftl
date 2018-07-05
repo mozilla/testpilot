@@ -93,6 +93,25 @@ emailOptInConfirmationTitle = Wedi anfon E-bost
 emailOptInConfirmationClose = Ymlaen at yr arbrofion...
 emailOptInDialogErrorTitle = O na!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Estyn yr Ap
+mobileDialogMessageIOS = Llwytho <b>{ $title }</b> i Lawr o'r iOS App Store.
+mobileDialogMessageAndroid = Llwytho <b>{ $title }</b> i Lawr o'r Google Play Store.
+mobileDialogInstructionsSMS = Rhowch eich rhif ffôn neu e-bost i anfon dolen llwytho i lawr i'ch ffôn:
+mobileDialogInstructions = Rhowch eich e-bost i anfon dolen llwytho i lawr i'ch ffôn:
+mobileDialogPlaceholder = Rhowch eich E-bost
+mobileDialogPlaceholderSMS = Rhowch eich Ffôn/E-bost
+mobileDialogButton = Anfon y Ddolen Llwytho i Lawr Ataf I
+mobileDialogButtonSuccess = Diolch!
+mobileDialogSuccessMain = Dolen llwytho i lawr wedi ei anfon!
+mobileDialogSuccessSecondarySMS = Edrychwch ar eich dyfais am yr e-bost neu'r neges testun.
+mobileDialogSuccessSecondary = Edrychwch ar eich dyfais am yr e-bost
+mobileDialogAnotherDeviceLink = Anfon i ddyfais arall
+mobileDialogError = Rhowch e-bost dilys:
+mobileDialogErrorSMS = Rhowch rif ffôn neu e-bost dilys:
+mobileDialogNoticeSMS = Mae gwasanaeth SMS ar gael mewn gwledydd dethol yn unig. Gall cyfraddau SMS a data fod yn ychwanegol. Rhaid i'r derbynnydd penodol yr e-bost neu negeseuon testun fod wedi cydsynio. { $learnMore }
+
 ## Featured experiment.
 
 moreDetail = Gweld manylion
@@ -174,13 +193,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Arbrawf Firefox / gwe / symudol
-experimentPlatformWebAddon = Firefox / arbrawf gwe
-experimentPlatformWebMobile = arbrawf gwe / symudol
-experimentPlatformAddonMobile = Firefox / arbrawf symudol
-experimentPlatformWeb = arbrawf gwe
 experimentPlatformAddon = arbrawf Firefox
-experimentPlatformMobileApp = arbrawf symudol
+experimentPlatformAndroid = Arbrawf Firefox
+experimentPlatformIos = Arbrawf iOS
+experimentPlatformWeb = arbrawf gwe
+experimentPlatformAddonWeb = Arbrawf Firefox/gwe
+experimentPlatformAddonAndroid = Arbrawf Android / Firefox
+experimentPlatformAddonIos = Arbrawf iOS / Firefox
+experimentPlatformAddonAndroidIos = Arbrawf Android / iOS / Firefox
+experimentPlatformAddonAndroidWeb = Arbrawf Android / Firefox / gwe
+experimentPlatformAddonAndroidIosWeb = Arbrawf Android / iOS / Firefox / gwe
+experimentPlatformAndroidWeb = Arbrawf Android / gwe
+experimentPlatformAndroidIos = Arbrawf Android / iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 

@@ -93,6 +93,24 @@ emailOptInConfirmationTitle = メールをお送りしました
 emailOptInConfirmationClose = 実験へ進む...
 emailOptInDialogErrorTitle = おっと！
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = アプリを入手
+mobileDialogMessageIOS = iOS App Store から <b>{ $title }</b> をダウンロード
+mobileDialogMessageAndroid = Google Play Store から <b>{ $title }</b> をダウンロード
+mobileDialogInstructionsSMS = 携帯電話にダウンロードリンクを送るには電話番号かメールアドレスを入力してください:
+mobileDialogInstructions = 携帯電話にダウンロードリンクを送るにはメールアドレスを入力してください:
+mobileDialogPlaceholder = メールアドレスを入力
+mobileDialogPlaceholderSMS = 電話番号かメールアドレスを入力
+mobileDialogButton = ダウンロードリンクを送信
+mobileDialogButtonSuccess = ありがとうございます！
+mobileDialogSuccessMain = リンクを送信しました
+mobileDialogSuccessSecondarySMS = 携帯を開いて新着メールかテキストメッセージを確認してください。
+mobileDialogSuccessSecondary = 携帯を開いて新着メールを確認してください。
+mobileDialogAnotherDeviceLink = 他の端末にも送信
+mobileDialogError = 正しいメールアドレスを入力してください:
+mobileDialogErrorSMS = 正しい電話番号かメールアドレスを入力してください:
+
 ## Featured experiment.
 
 moreDetail = 詳細を表示
@@ -177,13 +195,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Firefox / ウェブ / モバイル実験
-experimentPlatformWebAddon = Firefox / ウェブ実験
-experimentPlatformWebMobile = ウェブ / モバイル実験
-experimentPlatformAddonMobile = Firefox / モバイル実験
-experimentPlatformWeb = ウェブ実験
 experimentPlatformAddon = Firefox 実験
-experimentPlatformMobileApp = モバイル実験
+experimentPlatformAndroid = Android 実験
+experimentPlatformIos = iOS 実験
+experimentPlatformWeb = ウェブ実験
+experimentPlatformAddonWeb = Firefox / ウェブ実験
+experimentPlatformAddonAndroid = Android / Firefox 実験
+experimentPlatformAddonIos = iOS / Firefox 実験
+experimentPlatformAddonAndroidIos = Android / iOS / Firefox 実験
+experimentPlatformAddonAndroidWeb = Android / Firefox / ウェブ実験
+experimentPlatformAddonAndroidIosWeb = Android / iOS / Firefox / ウェブ実験
+experimentPlatformAndroidWeb = Android / ウェブ実験
+experimentPlatformAndroidIos = Android / iOS 実験
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 

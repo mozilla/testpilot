@@ -93,6 +93,25 @@ emailOptInConfirmationTitle = E-mail bol odoslaný
 emailOptInConfirmationClose = Prejsť na experimenty...
 emailOptInDialogErrorTitle = Ale nie!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Získajte aplikáciu
+mobileDialogMessageIOS = Prevezmite si <b>{ $title }</b> z App Store.
+mobileDialogMessageAndroid = Prevezmite si <b>{ $title }</b> z Obchodu Play.
+mobileDialogInstructionsSMS = Zadajte svoje telefónne číslo alebo e-mailovú adresu a do vášho telefónu odošleme odkaz na prevzatie.
+mobileDialogInstructions = Zadajte svoju e-mailovú adresu a do vášho telefónu odošleme odkaz na prevzatie.
+mobileDialogPlaceholder = Zadajte svoju e-mailovú adresu
+mobileDialogPlaceholderSMS = Zadajte svoje telefónne číslo/e-mail
+mobileDialogButton = Odoslať odkaz na prevzatie
+mobileDialogButtonSuccess = Ďakujeme!
+mobileDialogSuccessMain = Odkaz na prevzatie sme odoslali!
+mobileDialogSuccessSecondarySMS = Skontrolujte si svoje e-maily alebo správy.
+mobileDialogSuccessSecondary = Skontrolujte si svoje e-maily.
+mobileDialogAnotherDeviceLink = Pošlite mi odkaz do ďalšieho zariadenia
+mobileDialogError = Zadajte platnú e-mailovú adresu.
+mobileDialogErrorSMS = Zadajte platné telefónne číslo alebo e-mailovú adresu.
+mobileDialogNoticeSMS = SMS služby sú dostupné len vo vybraných krajinách. Môžu sa vzťahovať poplatky za SMS a mobilné dáta. Príjemca e-mailu alebo SMS musí vysloviť súhlas. { $learnMore }
+
 ## Featured experiment.
 
 moreDetail = Zobraziť podrobnosti
@@ -177,13 +196,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Experiment pre Firefox, web a mobilné zariadenia
-experimentPlatformWebAddon = Experiment pre Firefox a web
-experimentPlatformWebMobile = Experiment pre web a mobilné zariadenia
-experimentPlatformAddonMobile = Experiment pre Firefox a mobilné zariadenia
-experimentPlatformWeb = Experiment pre web
 experimentPlatformAddon = Experiment pre Firefox
-experimentPlatformMobileApp = Experiment pre mobilné zariadenia
+experimentPlatformAndroid = Experiment pre Android
+experimentPlatformIos = Experiment pre iOS
+experimentPlatformWeb = Experiment pre web
+experimentPlatformAddonWeb = Experiment pre Firefox a web
+experimentPlatformAddonAndroid = Experiment pre Android a Firefox
+experimentPlatformAddonIos = Experiment pre iOS a Firefox
+experimentPlatformAddonAndroidIos = Experiment pre Android, iOS a Firefox
+experimentPlatformAddonAndroidWeb = Experiment pre Android, Firefox a web
+experimentPlatformAddonAndroidIosWeb = Experiment pre Android, iOS, Firefox a web
+experimentPlatformAndroidWeb = Experiment pre Android a web
+experimentPlatformAndroidIos = Experiment pre Android a iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 

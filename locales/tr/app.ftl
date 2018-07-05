@@ -93,6 +93,13 @@ emailOptInConfirmationTitle = E-posta gönderildi
 emailOptInConfirmationClose = Deneylere geçelim...
 emailOptInDialogErrorTitle = Hayır!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Uygulamayı indirin
+mobileDialogButtonSuccess = Teşekkürler!
+mobileDialogSuccessMain = İndirme bağlantısı gönderildi!
+mobileDialogAnotherDeviceLink = Başka bir cihaza gönder
+
 ## Featured experiment.
 
 moreDetail = Ayrıntıları göster
@@ -177,13 +184,18 @@ nonExperimentDialogHeaderLink = Test Pilotu
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Firefox / web / mobil deney
-experimentPlatformWebAddon = Firefox / web deneyi
-experimentPlatformWebMobile = web / mobil deney
-experimentPlatformAddonMobile = Firefox / mobil deney
-experimentPlatformWeb = web deneyi
 experimentPlatformAddon = Firefox deneyi
-experimentPlatformMobileApp = mobil deney
+experimentPlatformAndroid = Android deneyi
+experimentPlatformIos = iOS deneyi
+experimentPlatformWeb = web deneyi
+experimentPlatformAddonWeb = Firefox / web deneyi
+experimentPlatformAddonAndroid = Android / Firefox deneyi
+experimentPlatformAddonIos = iOS / Firefox deneyi
+experimentPlatformAddonAndroidIos = Android / iOS / Firefox deneyi
+experimentPlatformAddonAndroidWeb = Android / Firefox / web deneyi
+experimentPlatformAddonAndroidIosWeb = Android / iOS / Firefox / web deneyi
+experimentPlatformAndroidWeb = Android / web deneyi
+experimentPlatformAndroidIos = Android / iOS deneyi
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 

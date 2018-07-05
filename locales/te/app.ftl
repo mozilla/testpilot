@@ -48,6 +48,7 @@ oneClickInstallMajorCta = { $title } చేతనించు
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
+landingUpgradeDesc = Test Pilotకి Firefox 49 లేదా ఆపై వెర్షను కావాలి.
 # also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox నవీకరించు
@@ -57,6 +58,7 @@ landingDownloadFirefoxSubTitle = ఉచిత దింపుకోలు
 
 landingCardListTitle = 3, 2, 1 మొదలుపెట్టండి
 landingCardOne = Test Pilot పొడిగింతను పొందండి
+landingCardTwo = ప్రయోగాత్మక సౌలభ్యాలను చేతనించు
 landingCardThree = మీరు ఏమని అనుకుంటున్నారో చెప్పండి
 
 ## Shown after the user installs the Test Pilot add-on.
@@ -76,6 +78,9 @@ emailOptInDialogTitle = Test Pilotకు స్వాగతం!
 emailOptInConfirmationTitle = ఈ-మెయిలు పంపబడింది
 emailOptInConfirmationClose = ప్రయోగాల ఆర౦భ దశ...
 emailOptInDialogErrorTitle = అరెరే!
+
+## modal prompt for sending link to experiment mobile apps via email or sms
+
 
 ## Featured experiment.
 
@@ -122,6 +127,7 @@ otherExperiments = అలాగే ఈ ప్రయోగాలను కూడ�
 giveFeedback = అభిప్రాయం తెలియజేయండి
 disableHeader = ప్రయోగాన్ని నిలిపివేయాలా?
 disableExperiment = అచేతనం { $title }
+disableExperimentTransition = అచేతనమవుతూంది...
 enableExperiment = చేతనం { $title }
 enableExperimentTransition = చేతనంచేస్తోంది...
 measurements = మీ గోప్యత
@@ -145,13 +151,8 @@ experimentGoToLink = { $title }కు వెళ్ళండి
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Firefox / వెబ్ / మొబైల్ ప్రయోగం
-experimentPlatformWebAddon = Firefox / వెబ్ ప్రయోగం
-experimentPlatformWebMobile = వెబ్ / మొబైల్ ప్రయోగం
-experimentPlatformAddonMobile = Firefox / మొబైల్ ప్రయోగం
-experimentPlatformWeb = వెబ్ ప్రయోగం
 experimentPlatformAddon = Firefox ప్రయోగం
-experimentPlatformMobileApp = మొబైల్ ప్రయోగం
+experimentPlatformWeb = వెబ్ ప్రయోగం
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
@@ -160,6 +161,7 @@ versionChangeNoticeLink = Firefox యొక్క ప్రస్తుత ర�
 
 ## Shown while uninstalling Test Pilot.
 
+retireDialogTitle = టెస్ట్ పైలట్‌ని తీసివేయాలా?
 retireSubmitButton = కొనసాగు
 retirePageProgressMessage = షట్‌డౌన్ అవుతోంది...
 retirePageHeadline = ఎగురుతున్నందుకు ధన్యవాదాలు!
@@ -172,7 +174,9 @@ restartIntroThree = మీ ప్రయోగాలను ఎంచుకోం�
 
 ## Shown on pages of retired or retiring experiments.
 
+eolIntroMessage = { $title } { $completedDate } నాడు ముగుస్తోంది
 eolNoticeLink = మరింత తెలుసుకోండి
+completedDateLabel = ప్రయోగం ముగింపు తేదీ: <b>{ $completedDate }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 
@@ -192,6 +196,7 @@ newsletterFooterSuccessHeader = ధన్యవాదములు!
 
 ## A warning shown to users when the experiment is not available in their language
 
+localeWarningSubtitle = మీరు కావాలనుకుంటే దాన్ని చేతనించుకోవచ్చు.
 
 ## An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 
@@ -210,6 +215,7 @@ hidePastExperiments = పాత ప్రయోగాలు దాయి
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = ఏదో తప్పు ఉంది!
+warningUpgradeFirefoxTitle = కొనసాగుటకు Firefoxను తాజాకరించండి!
 warningHttpsRequiredTitle = HTTPS అవసరం!
 warningMissingPrefTitle = Test Pilot ని అభివృద్ధి చేస్తున్నారా?
 warningBadHostnameTitle = ఆమోదించని హోస్ట్పేరు!

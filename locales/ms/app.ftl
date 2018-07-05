@@ -93,6 +93,25 @@ emailOptInConfirmationTitle = E-mel Dihantar
 emailOptInConfirmationClose = Masih dalam eksperimen...
 emailOptInDialogErrorTitle = Oh tidak!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Dapatkan Aplikasi
+mobileDialogMessageIOS = Muat turun <b>{ $title }</b> dari iOS App Store.
+mobileDialogMessageAndroid = Muat turun <b>{ $title }</b> dari Google Play Store.
+mobileDialogInstructionsSMS = Masukkan nombor telefon atau e-mel untuk dihantar pautan muat turun ke telefon:
+mobileDialogInstructions = Masukkan e-mel untuk dihantar pautan muat turun ke telefon:
+mobileDialogPlaceholder = Masukkan E-mel anda
+mobileDialogPlaceholderSMS = Masukkan Telefon/E-mel anda
+mobileDialogButton = Hantarkan Pautan Muat turun kepada saya
+mobileDialogButtonSuccess = Terima kasih!
+mobileDialogSuccessMain = Pautan muat turun sudah dihantar!
+mobileDialogSuccessSecondarySMS = Semak e-mel atau mesej teks dalam peranti anda.
+mobileDialogSuccessSecondary = Semak e-mel dalam peranti anda.
+mobileDialogAnotherDeviceLink = Hantar ke peranti lain
+mobileDialogError = Masukkan e-mel yang sah:
+mobileDialogErrorSMS = Masukkan nombor telefon atau e-mel yang sah:
+mobileDialogNoticeSMS = Perkhidmatan SMS tersedia dalam negara tertentu sahaja. Kadar SMS & data boleh dikenakan. Penerima e-mel atau SMS yang ditentukan perlu memberi kebenaran. { $learnMore }
+
 ## Featured experiment.
 
 moreDetail = Papar butiran
@@ -177,13 +196,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Eksperimen Firefox / web / mobile
-experimentPlatformWebAddon = Eksperimen Firefox / web
-experimentPlatformWebMobile = eksperimen web / mobile
-experimentPlatformAddonMobile = eksperimen Firefox / mobile
-experimentPlatformWeb = eksperimen web
 experimentPlatformAddon = eskperimen Firefox
-experimentPlatformMobileApp = eksperimen mobile
+experimentPlatformAndroid = Eksperimen Android
+experimentPlatformIos = Eksperimen iOS
+experimentPlatformWeb = eksperimen web
+experimentPlatformAddonWeb = Eksperimen Firefox / web
+experimentPlatformAddonAndroid = Eksperimen Android / Firefox
+experimentPlatformAddonIos = Eksperimen iOS / Firefox
+experimentPlatformAddonAndroidIos = Eksperimen Android / iOS / Firefox
+experimentPlatformAddonAndroidWeb = Eksperimen Android / Firefox / web
+experimentPlatformAddonAndroidIosWeb = Eksperimen Android / iOS / Firefox / web
+experimentPlatformAndroidWeb = Eksperimen Android / web
+experimentPlatformAndroidIos = Eksperimen Android / iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 

@@ -93,6 +93,25 @@ emailOptInConfirmationTitle = 已寄出郵件
 emailOptInConfirmationClose = 繼續前往實驗內容…
 emailOptInDialogErrorTitle = 糟糕！
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = 取得應用程式
+mobileDialogMessageIOS = 到 iOS App Store 下載 <b>{ $title }</b>。
+mobileDialogMessageAndroid = 到 Google Play Store 下載 <b>{ $title }</b>。
+mobileDialogInstructionsSMS = 輸入您的手機號碼或 E-Mail 信箱，即可傳送下載鏈結到您的手機:
+mobileDialogInstructions = 輸入您的 E-Mail 信箱，即可傳送下載鏈結到您的手機:
+mobileDialogPlaceholder = 請輸入您的 E-Mail 信箱
+mobileDialogPlaceholderSMS = 請輸入您的 手機 / E-Mail 信箱
+mobileDialogButton = 傳送下載鏈結給我
+mobileDialogButtonSuccess = 感謝！
+mobileDialogSuccessMain = 已寄出下載鏈結！
+mobileDialogSuccessSecondarySMS = 請到您的裝置上收信或簡訊。
+mobileDialogSuccessSecondary = 請到您的裝置上收信。
+mobileDialogAnotherDeviceLink = 傳送到其他裝置
+mobileDialogError = 請輸入有效的 E-Mail 信箱:
+mobileDialogErrorSMS = 請輸入有效的手機號碼或電子郵件信箱:
+mobileDialogNoticeSMS = 僅在部分國家提供簡訊服務。可能會收取簡訊與數據費用。寄發電子郵件或簡訊前，請先獲得收件者同意。{ $learnMore }
+
 ## Featured experiment.
 
 moreDetail = 檢視細節
@@ -174,13 +193,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Firefox / 網頁 / 行動實驗
-experimentPlatformWebAddon = Firefox / 網頁實驗
-experimentPlatformWebMobile = 網頁 / 行動實驗
-experimentPlatformAddonMobile = Firefox / 行動實驗
-experimentPlatformWeb = 網頁實驗
 experimentPlatformAddon = Firefox 實驗
-experimentPlatformMobileApp = 行動實驗
+experimentPlatformAndroid = Android 實驗
+experimentPlatformIos = iOS 實驗
+experimentPlatformWeb = 網頁實驗
+experimentPlatformAddonWeb = Firefox / 網頁實驗
+experimentPlatformAddonAndroid = Android / Firefox 實驗
+experimentPlatformAddonIos = iOS / Firefox 實驗
+experimentPlatformAddonAndroidIos = Android / iOS / Firefox 實驗
+experimentPlatformAddonAndroidWeb = Android / Firefox / 網頁實驗
+experimentPlatformAddonAndroidIosWeb = Android / iOS / Firefox / 網頁實驗
+experimentPlatformAndroidWeb = Android / 網頁實驗
+experimentPlatformAndroidIos = Android / iOS 實驗
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
