@@ -4,7 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Localized } from "fluent-react/compat";
 import LocalizedHtml from "../LocalizedHtml";
-import { buildSurveyURL, experimentL10nId } from "../../lib/utils";
+import { buildSurveyURL, experimentL10nId, isMobile } from "../../lib/utils";
 
 import Modal from "../Modal";
 import MeasurementSection from "../Measurements";
@@ -12,7 +12,10 @@ import MainInstallButton from "../MainInstallButton";
 import MobileDialog from "../MobileDialog";
 import LayoutWrapper from "../LayoutWrapper";
 
-import iconMobileWhite from "../../../images/mobile-white.svg";
+import {
+  MobileTriggerButton,
+  MobileStoreButton
+} from "../../containers/ExperimentPage/ExperimentButtons";
 
 import type { InstalledExperiments } from "../../reducers/addon";
 
@@ -26,6 +29,7 @@ type FeaturedButtonProps = {
   hasAddon: any,
   installed: InstalledExperiments,
   sendToGA: Function,
+  userAgent: string
 }
 
 type FeaturedButtonState = {
@@ -136,10 +140,28 @@ export default class FeaturedButton extends React.Component {
 
   render() {
     const { experiment, installed, clientUUID,
-      hasAddon, enabled } = this.props;
-    const { slug, survey_url, title, platforms } = experiment;
+      hasAddon, enabled, userAgent } = this.props;
+    const { slug, survey_url, title, platforms, ios_url, android_url } = experiment;
 
     const { showMobileDialog } = this.state;
+
+    const mobileControls = () => {
+      if (!isMobile(userAgent)) {
+        return (
+          <React.Fragment>
+            <div className="main-install__spacer"></div>
+            <MobileTriggerButton optionalClass={"main-install__button"} doShowMobileAppDialog={this.doShowMobileAppDialog} color={"default"} />
+            { this.renderLegalLink() }
+          </React.Fragment>
+        );
+      }
+      return (
+        <React.Fragment>
+          {platforms.includes("ios") && <MobileStoreButton {...{ url: ios_url, platform: "ios" }} />}
+          {platforms.includes("android") && <MobileStoreButton {...{ url: android_url, platform: "android" }} />}
+        </React.Fragment>
+      );
+    };
 
     let Buttons;
 
@@ -152,18 +174,9 @@ export default class FeaturedButton extends React.Component {
            />}
           <LayoutWrapper flexModifier={"column-center-start-breaking"}
             helperClass="main-install">
-            <div className="main-install__spacer"></div>
-            <a
-              className="button primary icon-button main-install__button"
-              onClick={this.doShowMobileAppDialog}>
-              <img src={iconMobileWhite} />
-              <Localized id="mobileDialogTitle">
-                <span>Get the App</span>
-              </Localized>
-            </a>
-            { this.renderLegalLink() }
+            { mobileControls() }
           </LayoutWrapper>
-          {this.renderLegalModal()}
+          { this.renderLegalModal() }
         </div>
       );
     } else if (enabled && hasAddon) {
@@ -198,7 +211,7 @@ export default class FeaturedButton extends React.Component {
             experimentLegalLink={this.renderLegalLink()}
             eventCategory="HomePage Interactions"
             eventLabel="Install the Add-on" />
-          {this.renderLegalModal()}
+          { this.renderLegalModal() }
         </div>);
     }
 

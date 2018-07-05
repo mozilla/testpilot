@@ -1,4 +1,4 @@
-@import '~photon-colors/colors.scss';
+ @import '~photon-colors/colors.scss';
 @import '../../../styles/_utils';
 
 .featured-experiment {
@@ -24,11 +24,11 @@
     }
 
     .featured-experiment__actions {
-      order: 5;
+      order: 6;
     }
 
     .featured-experiment__details {
-      order: 6;
+      order: 5;
     }
   }
 
@@ -255,6 +255,22 @@
 
     &:empty {
       display: none;
+    }
+  }
+
+  .featured-experiment__actions {
+    .button.mobile {
+      @include respond-to('small') {
+        margin: 20px auto 0;
+      }
+
+      border: 0;
+      margin: 0;
+
+      img {
+        height: 60px;
+        width: auto;
+      }
     }
   }
 

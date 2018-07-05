@@ -74,11 +74,11 @@ export const FeedbackButton = ({
 };
 
 export const MobileTriggerButton = ({
-  doShowMobileAppDialog
+  doShowMobileAppDialog, optionalClass
 }: MobileTriggerButtonType) => {
   return (
     <a
-      className="button mobile-trigger default icon-button"
+      className={`button mobile-trigger default icon-button ${optionalClass}`}
       onClick={doShowMobileAppDialog}
     >
       <img src={iconExperimentTypeMobileWhite} />

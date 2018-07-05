@@ -27,7 +27,8 @@ type HomePageNoAddonProps = {
   isFirefox: boolean,
   isMinFirefox: boolean,
   installed: InstalledExperiments,
-  sendToGA: Function
+  sendToGA: Function,
+  userAgent: string
 }
 
 export default class HomePageNoAddon extends React.Component {

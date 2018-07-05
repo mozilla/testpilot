@@ -131,7 +131,8 @@ export type FeedbackButtonType = {
 };
 
 export type MobileTriggerButtonType = {
-  doShowMobileAppDialog: Function
+  doShowMobileAppDialog: Function,
+  optionalClass?: string
 };
 
 export type GraduatedButtonType = {
