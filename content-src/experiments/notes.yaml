@@ -3,6 +3,7 @@ title: 'Notes'
 slug: notes
 is_featured: false
 platforms: ['addon', 'android']
+android_url: https://play.google.com/store/apps/details?id=org.mozilla.testpilot.notes
 min_release: 57
 thumbnail: /static/images/experiments/notes/notes-thumbnail.png
 description: >
@@ -30,8 +31,8 @@ measurements:
     access the feature, and what buttons you may click.
 xpi_url: 'https://testpilot.firefox.com/files/notes@mozilla.com/latest'
 addon_id: 'notes@mozilla.com'
-gradient_start: '#A665B4'
-gradient_stop: '#CF5858'
+gradient_start: '#85A9EC'
+gradient_stop: '#4173CE'
 details:
   -
     image: /static/images/experiments/notes/notes-detail-1.jpg
@@ -63,7 +64,7 @@ tour_steps:
     image: /static/images/experiments/notes/notes-tour-5.jpg
     copy: You can always give us feedback or disable Notes from Test Pilot.
   -
-    image: /static/images/experiments/notes/notes-tour-5.jpg
+    image: /static/images/experiments/notes/notes-tour-6.jpg
     copy: Make sure to check out our new Android app as well!
 contributors:
   -
@@ -116,4 +117,5 @@ contributors:
     avatar: /static/images/experiments/avatars/marius.jpg
 created: '2017-08-01T14:00:00Z'
 launch_date: '2017-08-01T14:00:00Z'
+modified: '2018-07-10T13:00:00.000000Z'
 order: 0
