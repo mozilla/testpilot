@@ -150,7 +150,7 @@ export default class FeaturedButton extends React.Component {
         return (
           <React.Fragment>
             <div className="main-install__spacer"></div>
-            <MobileTriggerButton optionalClass={"main-install__button"} doShowMobileAppDialog={this.doShowMobileAppDialog} color={"default"} />
+            <MobileTriggerButton optionalClass={"main-install__button"} doShowMobileAppDialog={this.doShowMobileAppDialog} color={"primary"} />
             { this.renderLegalLink() }
           </React.Fragment>
         );
