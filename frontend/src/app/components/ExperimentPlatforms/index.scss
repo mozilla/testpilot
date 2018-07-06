@@ -9,6 +9,7 @@
   font-weight: normal;
   line-height: 16px;
   margin: 0;
+  width: 100%;
 
   .platform-copy,
   .platform-icon {
@@ -22,29 +23,34 @@
   .platform-copy {
     align-items: center;
     display: flex;
+    flex: 1 0;
+    order: 4;
   }
 
   .platform-icon {
     background-position: left center;
     background-repeat: no-repeat;
-    background-size: 16px;
+    background-size: auto 16px;
+    flex: 0 0 16px;
     height: 16px;
     margin-right: 6px;
     opacity: .5;
-    width: 16px;
   }
 
   .platform-icon-web {
     background-image: url('../../../images/experiment-type-web.svg');
+    order: 3;
   }
 
   .platform-icon-addon {
     background-image: url('../../../images/experiment-type-addon.svg');
+    order: 2;
   }
 
   .platform-icon-ios,
   .platform-icon-android {
     background-image: url('../../../images/experiment-type-mobile.svg');
+    order: 1;
   }
 
   // don't show two mobile icons if we support both platforms
