@@ -60,7 +60,7 @@ containersContributors7Title = Firefox 用户体验
 containersContributors8Title = Firefox 用户体验
 containersContributors9Title = Firefox 用户体验
 firefoxlockboxDescription = 使用 iPhone 版 Firefox Lockbox 应用，将您的密码随身携带。
-firefoxlockboxIntroduction = 使用 Firefox Lockbox 将密码随身携带。此 Test Pilot 实验可让您在 iPhone 的安全应用程序中存取保存到 Firefox 的所有登录信息。只需使用 Firefox 账户登录 Lockbox，您保存的用户名和密码就会使用 AES-256 位加密同步到应用程序。这样你就可以很容易地访问在线账户，甚至在旅途中亦可如此 。</p><p><strong>Firefox Lockbox 需要登录 Firefox 帐户才能访问到您之前<a href="chrome://passwordmgr/content/passwordManager.xul">已保存的登录信息</a>。如果您还未完成账户设置，请在<a href="https://lockbox.firefox.com/faq.html#how-do-i-get-my-firefox-saved-logins-into-firefox-lockbox">此处</a>参阅入门指南</a>。</strong></p><p><em>想要在我们发布 Android 版本应用时收到通知？请在<a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">此处</a>登记。</em></p>
+firefoxlockboxIntroduction = 使用 Firefox Lockbox 将密码随身携带。此 Test Pilot 实验可让您在 iPhone 的安全应用程序中存取保存到 Firefox 的所有登录信息。只需使用 Firefox 账户登录 Lockbox，您保存的用户名和密码就会使用 AES-256 位加密同步到应用程序。这样你就可以很容易地访问在线账户，甚至在旅途中亦可如此 。</p><p><strong>Firefox Lockbox 需要登录 Firefox 账户才能访问到您之前<a href="chrome://passwordmgr/content/passwordManager.xul">已保存的登录信息</a>。如果您还未完成账户设置，请在<a href="https://lockbox.firefox.com/faq.html#how-do-i-get-my-firefox-saved-logins-into-firefox-lockbox">此处</a>参阅入门指南</a>。</strong></p><p><em>想要在我们发布 Android 版本应用时收到通知？请在<a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">此处</a>登记。</em></p>
 firefoxlockboxDetails0Copy = 查看所有保存到 Firefox 的账号与密码。
 firefoxlockboxDetails1Copy = 在 Firefox 中管理账号并自动将变更同步到 Firefox Lockbox。
 firefoxlockboxDetails2Copy = 对账号排序和过滤，快速定位所需。
