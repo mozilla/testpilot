@@ -98,6 +98,8 @@ emailOptInDialogErrorTitle = ¡No!
 mobileDialogTitle = Obtener la aplicación
 mobileDialogMessageIOS = Descargar <b>{ $title }</b> de iOS App Store.
 mobileDialogMessageAndroid = Descargar <b>{ $title }</b> de Google Play Store.
+mobileDialogInstructionsSMS = Ingresá tu número de teléfono o tu correo electrónico para enviar un enlace de descarga a tu teléfono:
+mobileDialogInstructions = Ingresá tu correo electrónico para enviar un enlace de descarga a tu teléfono:
 mobileDialogPlaceholder = Ingresá tu correo electrónico
 mobileDialogPlaceholderSMS = Ingresá tu teléfono/correo electrónico
 mobileDialogButton = Enviame el enlace de descarga
@@ -108,6 +110,7 @@ mobileDialogSuccessSecondary = Verificá tu dispositivo por el correo electróni
 mobileDialogAnotherDeviceLink = Enviar a otro dispositivo
 mobileDialogError = Ingresá un correo electrónico válido:
 mobileDialogErrorSMS = Ingresá un número de teléfono o correo electrónico válido:
+mobileDialogNoticeSMS = El servicio de SMS está disponible solo en ciertos países. Podrían aplicarse tarifas de SMS y de datos. El receptor del correo electrónico o el SMS debe aceptar. { $learnMore }
 
 ## Featured experiment.
 
