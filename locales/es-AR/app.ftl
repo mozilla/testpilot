@@ -198,7 +198,16 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 experimentPlatformAddon = experimento Firefox
 experimentPlatformAndroid = Experimento de Android
+experimentPlatformIos = Experimento en iOS
 experimentPlatformWeb = experimento web
+experimentPlatformAddonWeb = Experimento con Firefox/web
+experimentPlatformAddonAndroid = Experimento con Android/Firefox
+experimentPlatformAddonIos = Experimento en iOS/FIrefox
+experimentPlatformAddonAndroidIos = Experimento con Android/iOS/Firefox
+experimentPlatformAddonAndroidWeb = Experimento con Android/Firefox/web
+experimentPlatformAddonAndroidIosWeb = Experimento con Android/iOS/Firefox/web
+experimentPlatformAndroidWeb = Experimento con Android/web
+experimentPlatformAndroidIos = Experimento con Android/iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
