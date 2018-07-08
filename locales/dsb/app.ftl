@@ -93,6 +93,25 @@ emailOptInConfirmationTitle = Mejlka jo se pósłała
 emailOptInConfirmationClose = Dalej k eksperimentam...
 emailOptInDialogErrorTitle = Ow ně!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Wobstarajśo se nałoženje
+mobileDialogMessageIOS = <b>{ $title }</b> z iOS App Store ześěgnuś.
+mobileDialogMessageAndroid = <b>{ $title }</b> z Google Play Store ześěgnuś.
+mobileDialogInstructionsSMS = Zapódajśo swój telefonowy numero abo e-maijlowu adresu, aby ześěgnjeński wótkaz na swój telefon słał:
+mobileDialogInstructions = Zapódajśo swóju e-mailowu adresu, aby ześěgnjeński wótkaz na swój telefon słał:
+mobileDialogPlaceholder = Zapódajśo swóju e-mailowu adresu
+mobileDialogPlaceholderSMS = Zapódajśo swój telefonowy numer/swóju e-mailowu adresu
+mobileDialogButton = Ześěgnjeński wótkaz na mnjo pósłaś
+mobileDialogButtonSuccess = Wjeliki źěk!
+mobileDialogSuccessMain = Ześěgnjeński wótkaz pósłany!
+mobileDialogSuccessSecondarySMS = Glědajśo za mejlku abo tekstoweju powěsću na swójom rěźe.
+mobileDialogSuccessSecondary = Glědajśo za mejlku na swójom rěźe.
+mobileDialogAnotherDeviceLink = Na drugi rěd pósłaś
+mobileDialogError = Zapódajśo płaśiwu e-mailowu adresu:
+mobileDialogErrorSMS = Zapódajśo płaśiwy telefonowy numer abo płaśiwu e-mailowu adresu:
+mobileDialogNoticeSMS = Słužba SMS stoj jano we wubranych krajach k dispoziciji. Za SMS a daty mógu płaśonki nastaś. Dostawaŕ mejlki abo SMS musy wobjadny byś. { $learnMore }
+
 ## Featured experiment.
 
 moreDetail = Drobnostki pokazaś
@@ -174,13 +193,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Eksperiment za Firefox, web a mobilne rědy
-experimentPlatformWebAddon = Eksperiment za Firefox a web
-experimentPlatformWebMobile = Eksperiment za web a mobilne rědy
-experimentPlatformAddonMobile = Eksperiment za Firefox a mobilne rědy
-experimentPlatformWeb = webeksperiment
 experimentPlatformAddon = Eksperiment za Firefox
-experimentPlatformMobileApp = Eksperiment za mobilne rědy
+experimentPlatformAndroid = Eksperiment za Android
+experimentPlatformIos = Eksperiment za iOS
+experimentPlatformWeb = webeksperiment
+experimentPlatformAddonWeb = Eksperiment za Firefox / web
+experimentPlatformAddonAndroid = Eksperiment za Android / Firefox
+experimentPlatformAddonIos = Eksperiment za iOS / Firefox
+experimentPlatformAddonAndroidIos = Eksperiment za Android / iOS / Firefox
+experimentPlatformAddonAndroidWeb = Eksperiment za Android / Firefox / web
+experimentPlatformAddonAndroidIosWeb = Eksperiment za Android /iOS / Firefox / web
+experimentPlatformAndroidWeb = Eksperiment za Android / web
+experimentPlatformAndroidIos = Eksperiment za Android / iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
