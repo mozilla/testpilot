@@ -60,6 +60,16 @@ containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
 firefoxlockboxDescription = Wzejśo z Firefox Lockbox za iPhone swóje gronidła wšuźi sobu.
+firefoxlockboxIntroduction = <p>Wzejśo z Firefox Lockbox swóje gronidła wšuźi sobu. Toś ten eksperiment Test Pilot dajo wam pśistup na wšykne pśizjawjenja, kótarež sćo składł w Firefox, we wěstem nałoženju na swójom iPhone. Pśizjawśo se jadnorje pla Lockbox ze swójim kontom Firefox, a waše skłaźone wužywarske mjenja a gronidła budu se z nałoženim z 256-bitowym koděrowanim synchronizěrowaś. Tak maśo lažki pśistup na konta online, samo pó droze.</p><p><strong>Firefox Lockbox se konto Firefox pomina, aby pśistup na do togo <a href="chrome://passwordmgr/content/passwordManager.xul">skłaźone pśizjawjenja</a> měł. Jolic hyšći njejsćo konto załožył, cyńśo to <a href="https://lockbox.firefox.com/faq.html#how-do-i-get-my-firefox-saved-logins-into-firefox-lockbox">how</a>. </strong></p><p><em>Cośo powěźeńku dostaś, gaž se našo nałoženje Android startujo? Registrěrujśo se <a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">how</a>.</em></p>
+firefoxlockboxDetails0Copy = Mějśo pśistup na wužywarske mjenja a gronidłowe daty za wšykne konta, kótarež w Firefox składujośo.
+firefoxlockboxDetails1Copy = Zastojśo konta w Firefox a synchronizěrujśo změny awtomatiski z Firefox Lockbox.
+firefoxlockboxDetails2Copy = Sortěrujśo a filtrujśo swóje konta, aby te, kótarež trjebaśo, malsnje namakał.
+firefoxlockboxContributors0Title = Wušy produktowy manager
+firefoxlockboxContributors1Title = Wuwijarski manager
+firefoxlockboxContributors2Title = Wušy interakciski designer
+firefoxlockboxContributors3Title = Wuwijarski architekt
+firefoxlockboxContributors4Title = Wuwijaŕ za mobilne rědy
+firefoxlockboxContributors5Title = Wušy wuwijaŕ
 minvidDescription = Staja fokus na wideo. Min Vid wam zmóžnja, wideo YouTube a Vimeo w małem wobłuku pokazaś, kótaryž na prědku wóstanjo, mjaztym až pśeglědujośo web.
 minvidIntroduction = <p>Woglědujośo se rady wideo? Cyniśo rady swójo źěło, mjaztym až se wideo woglědujośo? Wopytajśo Min Vid. Bitujo wobraz we wobrazu, źož jaden wobraz jo wideo a drugi wobraz ceły web.</p><ul> <li><strong>Kliknuś a start:</strong> Wócyńśo wobłuk Min Vid, aby wideo na prědku wótgrał, mjaztym až pśeglědujośo.</li> <li><strong>Pśesuńśo jen, źož cośo:</strong> Min Vid wam zmóžnja, wideowy wobłuk něźi na wašim desktopje śěgnuś.</li><li><strong>Wóźi na pšawem městnje:</strong> Min Vid ma wóźeńske elementy, kótarež wam zmóžnjaju, wideo direktnje we wobłuku pawzěrowaś, wótgraś, pśewóźiś, śěgnuś, miniměrowaś a głosnosć změniś.</li></ul>
 minvidMeasurements0 = Gromaźimy zakładne wužywańske daty, gaž źěłaśo z kontekstowym menijom, eksperimentowym symbolom a wóźeńskimi elementami wótgrawaka.
