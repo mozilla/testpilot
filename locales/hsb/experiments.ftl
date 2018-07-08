@@ -60,13 +60,13 @@ containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
 firefoxlockboxDescription = Wzmiće z Firefox Lockbox za iPhone swoje hesła wšudźe sobu.
-firefoxlockboxIntroduction = <p>Wzmiće z Firefox Lockbox swoje hesła wšudźe sobu. Tutón eksperiment Test Pilot da wam přistup na wšě přizjewjenja, kotrež sće w Firefox, we wěstym nałoženju na swojim iPhone składował. Přizjewće so prosće pola Lockbox ze swojim kontom Fiefox, a waše składowane wužiwarske mjena a hesła budu so z nałoženjom z 256-bitowym zaklučowanjom synchronizować. Tak maće lochki přistup na konta online, samo po puću.</p><p><strong>Firefox Lockbox sej konto Firefox wužaduje, zo by přistup na do toho <a href="chrome://passwordmgr/content/passwordManager.xul">składowane přizjewjenja</a> měł. Jeli hišće njejsće konto załožił, čińće to <a href="https://lockbox.firefox.com/faq.html#how-do-i-get-my-firefox-saved-logins-into-firefox-lockbox">tu</a>. </strong></p><p><em>Chceće zdźělenku dóstać, hdyž so naše nałoženje Android startuje? Registrujće so <a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">tu</a>.</em></p>
+firefoxlockboxIntroduction = <p>Wzmiće z Firefox Lockbox swoje hesła wšudźe sobu. Tutón eksperiment Test Pilot da wam přistup na wšě přizjewjenja, kotrež sće w Firefox, we wěstym nałoženju na swojim iPhone składował. Přizjewće so prosće pola Lockbox ze swojim kontom Firefox, a waše składowane wužiwarske mjena a hesła budu so z nałoženjom z 256-bitowym zaklučowanjom synchronizować. Tak maće lochki přistup na konta online, samo po puću.</p><p><strong>Firefox Lockbox sej konto Firefox wužaduje, zo by přistup na do toho <a href="chrome://passwordmgr/content/passwordManager.xul">składowane přizjewjenja</a> měł. Jeli hišće njejsće konto załožił, čińće to <a href="https://lockbox.firefox.com/faq.html#how-do-i-get-my-firefox-saved-logins-into-firefox-lockbox">tu</a>. </strong></p><p><em>Chceće zdźělenku dóstać, hdyž so naše nałoženje Android startuje? Registrujće so <a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">tu</a>.</em></p>
 firefoxlockboxDetails0Copy = Mějće přistup na wužiwarske mjena a hesłowe daty za wšě konta, kotrež w Firefox składujeće.
 firefoxlockboxDetails1Copy = Rjadujće konta w Firefox a synchronizujće změny awtomatisce z Firefox Lockbox.
 firefoxlockboxDetails2Copy = Sortěrujće a filtrujće swoje konta, zo byšće te, kotrež trjebaće, spěšnje namakał.
 firefoxlockboxContributors0Title = Wyši produktowy manager
 firefoxlockboxContributors1Title = Wuwiwarski manager
-firefoxlockboxContributors2Title = Wyši interakcfiski designer
+firefoxlockboxContributors2Title = Wyši interakciski designer
 firefoxlockboxContributors3Title = Wuwiwarski architekt
 firefoxlockboxContributors4Title = Wuwiwar za mobilne graty
 firefoxlockboxContributors5Title = Wyši wuwiwar
