@@ -117,6 +117,7 @@ notesToursteps0Copy = Notes 在您的浏览器侧栏中添加了一个简单的�
 notesToursteps1CopyMultinote = 点击箭头按钮查看您的所有笔记。
 notesToursteps2CopyMultinote = 当需要记下一些东西时，创建一篇新笔记。
 notesToursteps4Copy = 您可以随时向我们提供反馈，或者从 Test Pilot 禁用 Notes。
+notesToursteps5Copy = 请务必试试我们全新推出的 Android 应用程序！
 notesContributors0Title = 实习工程师
 notesContributors1Title = 社区贡献者
 notesContributors2Title = 高级产品/UX 设计师
