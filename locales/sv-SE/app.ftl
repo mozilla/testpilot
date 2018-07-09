@@ -95,10 +95,16 @@ emailOptInDialogErrorTitle = Åh nej!
 
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
+mobileDialogTitle = Ladda ner Appen
 mobileDialogMessageIOS = Ladda ner <b>{ $title }</b> från iOS Appstore.
 mobileDialogMessageAndroid = Ladda ner <b>{ $title }</b> från Google Play Butik
+mobileDialogPlaceholder = Ange din e-postadress
+mobileDialogPlaceholderSMS = Ange ditt telefonnummer eller e-postadress
 mobileDialogButtonSuccess = Tack!
+mobileDialogSuccessMain = Nerladdningslänk skickad!
 mobileDialogAnotherDeviceLink = Skicka till en annan enhet
+mobileDialogError = Ange en giltig e-postadress:
+mobileDialogErrorSMS = Ange ett giltigt telefonnummer eller e-postadress:
 
 ## Featured experiment.
 
@@ -188,6 +194,14 @@ experimentPlatformAddon = Experiment för Firefox
 experimentPlatformAndroid = Android experiment
 experimentPlatformIos = iOS experiment
 experimentPlatformWeb = Experiment för webb
+experimentPlatformAddonWeb = Firefox / web experiment
+experimentPlatformAddonAndroid = Android / Firefox experiment
+experimentPlatformAddonIos = iOS / Firefox experiment
+experimentPlatformAddonAndroidIos = Android / iOS / Firefox experiment
+experimentPlatformAddonAndroidWeb = Android / Firefox / web experiment
+experimentPlatformAddonAndroidIosWeb = Android / iOS / Firefox / web experiment
+experimentPlatformAndroidWeb = Android / web experiment
+experimentPlatformAndroidIos = Android / iOS experiment
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
