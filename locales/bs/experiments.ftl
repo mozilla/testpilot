@@ -109,6 +109,7 @@ nomore404sDetails1Copy = Omogućili naši prijatelji iz Internet Archive.
 nomore404sContributors1Title = Programer, Wayback Machine, The Internet Archive
 nomore404sContributors2Title = Direktor, Wayback Machine, The Internet Archive
 nomore404sContributors3Title = Stariji inženjer popisivanja, The Internet Archive
+notesDescriptionMobile = Pravite bilješke dok pretražujete web i budite sinhronizovani s našom novom android aplikacijom.
 notesLegalnotice = Nastavkom prihvatate police <a>uslova</a> i <a>privatnosti</a> Test Pilot-a i <a>policu privatnosti bilješki</a>.
 notesMeasurements0 = Notes će prikupljati podatke o vašem korištenju mogućnosti, kao što je to koliko često pravite nove bilješke i koliko dugo provodite uređujući ih, broj karaktera koji sačuvate u vašim bilješkama i da li ste koristili neku mogućnost uređivanja (podebljanje slova, i sl.).
 notesMeasurements1 = Notes će takođe prikupljati podatke o vašoj interakciji sa dodatkom, kao što je to kako pristupate mogućnostima i koje dugme će te kliknuti.
