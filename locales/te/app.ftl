@@ -27,6 +27,7 @@ footerLinkFeatures = విశేషాలు
 home = ముంగిలి
 menuTitle = అమరికలు
 menuWiki = టెస్ట్ పైలట్ వికీ
+menuDiscuss = Test Pilot గురించి చర్చి౦చండి
 menuFileIssue = సమస్యని దాఖలు చేయ౦డి
 headerLinkBlog = బ్లాగు
 
@@ -43,6 +44,7 @@ landingInstallingButton = స్థాపించబడుతోంది...
 
 ## Related to a one click to install test pilot and an experiment.
 
+oneClickInstallMinorCta = Test Pilotని స్థాపి౦చ౦డి &amp;
 # $title is replaced by the name of an experiment
 oneClickInstallMajorCta = { $title } చేతనించు
 
