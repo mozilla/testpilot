@@ -61,6 +61,7 @@ snoozetabsContributors4Title = రూపకల్పన సహాయకులు
 snoozetabsContributors5Title = Firefox QA
 snoozetabsContributors6Title = Softvision QA
 snoozetabsContributors7Title = Softvision QA
+tabcenterDetails1Copy = మీకు వెంటనే అవసరంలేని ట్యాబులను అవి కావలిసినంతవరకూ దాచేయండి.
 tabcenterContributors0Title = Firefox UX
 tabcenterContributors1Title = Firefox UX
 tabcenterContributors2Title = Firefox UX

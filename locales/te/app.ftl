@@ -29,6 +29,7 @@ menuTitle = అమరికలు
 menuWiki = టెస్ట్ పైలట్ వికీ
 menuDiscuss = Test Pilot గురించి చర్చి౦చండి
 menuFileIssue = సమస్యని దాఖలు చేయ౦డి
+menuRetire = Test Pilotని నిర్మూలించండి
 headerLinkBlog = బ్లాగు
 
 ## The splash on the homepage.
@@ -224,3 +225,4 @@ warningBadHostnameTitle = ఆమోదించని హోస్ట్పే�
 
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
+jsDisabledWarning = Test Pilot వాడటానికి జావాస్క్రిప్టు కావాలి. క్షమించండి.
