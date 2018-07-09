@@ -60,6 +60,7 @@ containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
 firefoxlockboxDescription = Imajte sa sobom lozinke bilo gdje sa Firefox Lockbox aplikacijom za iPhone.
+firefoxlockboxIntroduction = <p>Ponesite svoje lozinke bilo gdje sa Firefox Lockbox-om. Ovaj Test Pilot eksperiment dam daje pristup svim prijavama koje ste sačuvali u Firefox, u sigurnoj aplikaciji na vašem iPhone-u. Samo se prijavite na Lockbox sa vašim Firefox računom i vaša sačuvana korisnička imena i lozinke će se sinhronizovati sa aplikacijom koristeći 256-bitno šifrovanje. Tako da ćete imati jednostavan pristup online računima, čak i usput.</p><p><strong>Firefox Lockbox zahtijeva Firefox račun u slučaju pristupa vašim prethodnim <a href="chrome://passwordmgr/content/passwordManager.xul">sačuvanim prijavama</a>. Ako nemate postavljen račun, započnite ovdje <a href="https://lockbox.firefox.com/faq.html#how-do-i-get-my-firefox-saved-logins-into-firefox-lockbox"></a>.</strong></p> <p><em>Želite biti obaviješteni kada se objavi naša Android aplikacija? Registrujte se ovdje <a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83"></a>.</em></p>
 firefoxlockboxDetails0Copy = Pristupite informacijama korisničkog imena i lozinke za sve račune koje sačuvate u Firefoxu.
 firefoxlockboxDetails1Copy = Upravljajte računima u Firefoxu i sinhronizujte promjene automatski na Firefox Lockbox.
 firefoxlockboxDetails2Copy = Poredajte i filtrirajte vaše račune za brzi pronalazak onog kojeg trebate.
