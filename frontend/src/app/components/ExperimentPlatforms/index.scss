@@ -20,6 +20,11 @@
     }
   }
 
+  .details-header & {
+    width: auto;
+    white-space: nowrap;
+  }
+
   .platform-copy {
     align-items: center;
     display: flex;
