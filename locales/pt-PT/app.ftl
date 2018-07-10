@@ -93,6 +93,24 @@ emailOptInConfirmationTitle = Email enviado
 emailOptInConfirmationClose = Para as experiências...
 emailOptInDialogErrorTitle = Oh não!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Obtenha a aplicação
+mobileDialogMessageIOS = Transfira o <b>{ $title }</b> a partir da App Store do iOS.
+mobileDialogMessageAndroid = Transfira o <b>{ $title }</b> a partir da Google Play Store.
+mobileDialogInstructionsSMS = Introduza o seu número de telefone ou email para enviar uma ligação de transferência para o seu telefone: 
+mobileDialogInstructions = Introduza o seu email para enviar uma ligação de transferência para o seu telefone: 
+mobileDialogPlaceholder = Introduzir o seu email
+mobileDialogPlaceholderSMS = Introduzir o seu telefone/email
+mobileDialogButton = Enviar-me a ligação de transferência
+mobileDialogButtonSuccess = Obrigado!
+mobileDialogSuccessMain = Ligação de transferência enviada!
+mobileDialogSuccessSecondarySMS = Verifique o seu dispositivo pelo email ou mensagem de texto.
+mobileDialogSuccessSecondary = Verifique o seu dispositivo pelo email.
+mobileDialogAnotherDeviceLink = Enviar para outro dispositivo
+mobileDialogError = Introduza um email válido:
+mobileDialogErrorSMS = Introduza um número de telefone ou email válido:
+
 ## Featured experiment.
 
 moreDetail = Ver detalhes
@@ -177,13 +195,18 @@ nonExperimentDialogHeaderLink = Piloto de testes
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = experiência do Firefox / web / móvel
-experimentPlatformWebAddon = experiência do Firefox / web
-experimentPlatformWebMobile = experiência da web / móvel
-experimentPlatformAddonMobile = experiência do Firefox / móvel
-experimentPlatformWeb = experiência da web
 experimentPlatformAddon = experiência do Firefox
-experimentPlatformMobileApp = experiência móvel
+experimentPlatformAndroid = experiência Android
+experimentPlatformIos = experiência iOS
+experimentPlatformWeb = experiência da web
+experimentPlatformAddonWeb = experiência do Firefox / web
+experimentPlatformAddonAndroid = experiência Android / Firefox
+experimentPlatformAddonIos = experiência iOS / Firefox
+experimentPlatformAddonAndroidIos = experiência Android / iOS / Firefox
+experimentPlatformAddonAndroidWeb = experiência Android / Firefox / web
+experimentPlatformAddonAndroidIosWeb = experiência Android / iOS / Firefox / web
+experimentPlatformAndroidWeb = experiência Android / web
+experimentPlatformAndroidIos = experiência Android / iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
