@@ -96,9 +96,21 @@ emailOptInDialogErrorTitle = Hayır!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Uygulamayı indirin
+mobileDialogMessageIOS = <b>{ $title }</b> uygulamasını iOS App Store’dan indirin.
+mobileDialogMessageAndroid = <b>{ $title }</b> uygulamasını Google Play Store’dan indirin.
+mobileDialogInstructionsSMS = Telefon numaranızı veya e-posta adresinizi yazın, indirme bağlantısını telefonunuza gönderelim:
+mobileDialogInstructions = E-posta adresinizi yazın, indirme bağlantısını telefonunuza gönderelim:
+mobileDialogPlaceholder = E-posta adresinizi yazın
+mobileDialogPlaceholderSMS = Telefon/e-posta adresinizi yazın
+mobileDialogButton = İndirme bağlantısını gönder
 mobileDialogButtonSuccess = Teşekkürler!
 mobileDialogSuccessMain = İndirme bağlantısı gönderildi!
+mobileDialogSuccessSecondarySMS = Cihazınıza gönderdiğimiz e-posta veya kısa mesajı kontrol edin.
+mobileDialogSuccessSecondary = Cihazınıza gönderdiğimiz e-postayı kontrol edin.
 mobileDialogAnotherDeviceLink = Başka bir cihaza gönder
+mobileDialogError = Geçerli bir e-posta yazın:
+mobileDialogErrorSMS = Geçerli bir telefon numarası veya e-posta yazın:
+mobileDialogNoticeSMS = SMS servisi yalnızca belirli ülkelerde kullanılabilir. SMS ve veri ücretleri uygulanabilir. E-posta veya SMS alıcısı bu mesajı almaya rıza göstermiş olmalıdır. { $learnMore }
 
 ## Featured experiment.
 
