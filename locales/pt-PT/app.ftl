@@ -110,6 +110,7 @@ mobileDialogSuccessSecondary = Verifique o seu dispositivo pelo email.
 mobileDialogAnotherDeviceLink = Enviar para outro dispositivo
 mobileDialogError = Introduza um email válido:
 mobileDialogErrorSMS = Introduza um número de telefone ou email válido:
+mobileDialogNoticeSMS = Serviço de SMS apenas disponível em países selecionados. Taxas de SMS e dados podem ser aplicadas. O destinatário intendido do email ou SMS deve ter consentido. { $learnMore }
 
 ## Featured experiment.
 
