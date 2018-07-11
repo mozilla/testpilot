@@ -95,6 +95,11 @@ emailOptInDialogErrorTitle = ¡Oh no!
 
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
+mobileDialogButtonSuccess = ¡Gracias!
+mobileDialogSuccessMain = ¡Enlace de descarga enviado!
+mobileDialogAnotherDeviceLink = Enviar a otro dispositivo
+mobileDialogError = Introducir un correo válido:
+mobileDialogErrorSMS = Introducir un número de teléfono o correo válido:
 
 ## Featured experiment.
 
@@ -178,6 +183,8 @@ nonExperimentDialogHeaderLink = Test Pilot
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
 experimentPlatformAddon = experimento Firefox
+experimentPlatformAndroid = Experimento Android
+experimentPlatformIos = Experimento iOS
 experimentPlatformWeb = experimento web
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
