@@ -115,6 +115,10 @@ contributors:
     display_name: 'Marius Coman'
     title: 'Softvision QA'
     avatar: /static/images/experiments/avatars/marius.jpg
+  -
+    display_name: 'Anthony Lam'
+    title: 'Designer'
+    avatar: /static/images/experiments/avatars/antlam.jpg
 created: '2017-08-01T14:00:00Z'
 launch_date: '2017-08-01T14:00:00Z'
 modified: '2018-07-10T13:00:00.000000Z'
