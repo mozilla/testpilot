@@ -119,7 +119,7 @@ moreDetail = დაწვრილებით
 ## A listing of all Test Pilot experiments.
 
 experimentListEnabledTab = ჩართულია
-experimentListJustLaunchedTab = ახლახან გაშვებული
+experimentListJustLaunchedTab = ახლახან გაეშვა
 experimentListJustUpdatedTab = ახლახან განახლდა
 experimentListEndingTomorrow = სრულდება ხვალ
 experimentListEndingSoon = სრულდება მალე
@@ -181,7 +181,7 @@ contribute = წვლილის შეტანა
 bugReports = ხარვეზების შესახებ მოხსენება
 discussExperiment = { $title } განხილვა
 tourDoneButton = კარგი
-userCountContainerAlt = ახლახან გაშვებული!
+userCountContainerAlt = ახლახან გაეშვა!
 highlightPrivacy = პირადულობის დაცვის შესახებ
 experimentGradReportButton = საბოლოო მოხსენება
 experimentGradReportPendingTitle = ეს საცდელი პროექტი დასრულებულია
