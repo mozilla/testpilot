@@ -93,6 +93,10 @@ emailOptInConfirmationTitle = Письмо отправлено
 emailOptInConfirmationClose = Вперёд к экспериментам...
 emailOptInDialogErrorTitle = О, нет!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogButtonSuccess = Спасибо!
+
 ## Featured experiment.
 
 moreDetail = Показать подробности
@@ -177,13 +181,8 @@ nonExperimentDialogHeaderLink = Лётчик-испытатель
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Эксперимент для Firefox / Интернета / мобильного устройства
-experimentPlatformWebAddon = Эксперимент для Firefox / Интернета
-experimentPlatformWebMobile = Эксперимент для Интернета / мобильного устройства
-experimentPlatformAddonMobile = Эксперимент для Firefox / мобильного устройства
-experimentPlatformWeb = Эксперимент для Интернета
 experimentPlatformAddon = Эксперимент для Firefox
-experimentPlatformMobileApp = Эксперимент для мобильного устройства
+experimentPlatformWeb = Эксперимент для Интернета
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
