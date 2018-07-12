@@ -86,7 +86,7 @@ export default class MobileDialog extends React.Component {
       sendToGA("event", {
         eventCategory: "SMS Modal Interactions",
         eventAction: "mobile store click",
-        eventLabel: `${experiment.title} ${platform} `,
+        eventLabel: `${platform}`,
         dimension11: experiment.slug,
         dimension13: fromFeatured ? "Featured Experiment" : "Experiment Detail"
       });

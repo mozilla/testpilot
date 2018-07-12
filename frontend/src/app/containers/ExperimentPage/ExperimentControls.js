@@ -164,10 +164,11 @@ function createButtons({
     if (!isMobile(userAgent)) {
       return <MobileTriggerButton {...{ doShowMobileAppDialog, color: "default" }} />;
     }
+    const category = "ExperimentDetailsPage Interactions";
     return (
       <React.Fragment>
-        {platforms.includes("ios") && <MobileStoreButton {...{ url: ios_url, platform: "ios" }} />}
-        {platforms.includes("android") && <MobileStoreButton {...{ url: android_url, platform: "android" }} />}
+        {platforms.includes("ios") && <MobileStoreButton {...{ url: ios_url, platform: "ios", category, sendToGA, slug }} />}
+        {platforms.includes("android") && <MobileStoreButton {...{ url: android_url, platform: "android", category, sendToGA, slug }} />}
       </React.Fragment>
     );
   };

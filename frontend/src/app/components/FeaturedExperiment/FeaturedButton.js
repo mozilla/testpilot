@@ -142,10 +142,12 @@ export default class FeaturedButton extends React.Component {
 
   render() {
     const { experiment, installed, clientUUID,
-      hasAddon, enabled, userAgent } = this.props;
+      hasAddon, enabled, userAgent, sendToGA } = this.props;
     const { slug, survey_url, title, platforms, ios_url, android_url } = experiment;
 
     const { showMobileDialog } = this.state;
+
+    const category = "Featured Experiment";
 
     const mobileControls = () => {
       if (!isMobile(userAgent)) {
@@ -159,8 +161,8 @@ export default class FeaturedButton extends React.Component {
       }
       return (
         <React.Fragment>
-          {platforms.includes("ios") && <MobileStoreButton {...{ url: ios_url, platform: "ios" }} />}
-          {platforms.includes("android") && <MobileStoreButton {...{ url: android_url, platform: "android" }} />}
+          {platforms.includes("ios") && <MobileStoreButton {...{ url: ios_url, platform: "ios", slug, category, sendToGA }} />}
+          {platforms.includes("android") && <MobileStoreButton {...{ url: android_url, platform: "android", slug, category, sendToGA }} />}
         </React.Fragment>
       );
     };
