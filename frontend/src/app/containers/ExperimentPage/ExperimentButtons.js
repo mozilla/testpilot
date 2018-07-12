@@ -209,17 +209,28 @@ export const EnableExperimentButton = ({
   </button>
 );
 
-export const MobileStoreButton = ({ url, platform }: MobileStoreButtonType) => (
-  <a
+export const MobileStoreButton = ({ url, platform, slug, category, sendToGA }: MobileStoreButtonType) => {
+  function handleClick() {
+    sendToGA("event", {
+      eventCategory: category,
+      eventAction: "mobile store click",
+      eventLabel: `${platform}`,
+      dimension11: slug,
+      dimension13: category === "Featured Experiment" ? "Featured Experiment" : "Experiment Detail"
+    });
+  }
+  return (<a
     key={url}
     href={url}
     target="_blank"
     rel="noopener noreferrer"
     className="button mobile"
+    onClick={handleClick}
   >
     <img src={platform === "ios" ? iconIos : iconGoogle} />
   </a>
-);
+  );
+};
 
 export const WebExperimentButton = ({
   color,
