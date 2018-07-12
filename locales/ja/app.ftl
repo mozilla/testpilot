@@ -110,6 +110,7 @@ mobileDialogSuccessSecondary = 携帯を開いて新着メールを確認して�
 mobileDialogAnotherDeviceLink = 他の端末にも送信
 mobileDialogError = 正しいメールアドレスを入力してください:
 mobileDialogErrorSMS = 正しい電話番号かメールアドレスを入力してください:
+mobileDialogNoticeSMS = SMS サービスは一部の国でのみ利用可能です。SMS およびデータ料金が適用されます。メールや SMS を他人に送る場合、その受信者の同意を得る必要があります。{ $learnMore }
 
 ## Featured experiment.
 
