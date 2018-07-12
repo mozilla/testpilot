@@ -205,7 +205,7 @@ Here is a list of dimensions we are currently using
 | Home Page, Share Page                         | Does the user have any experiments installed            | 2         | {0,1}  |
 | Home Page, Share Page                         | How many experiments does the user have installed       | 3         | {n}    |
 | Experiment Detail Page                        | Is the experiment enabled                               | 4         | {0,1}  |
-| Experiment Detail Page                        | Experiment title                                        | 5         | "xyz"  |
+| Experiment Detail Page                        | ~Experiment title~ USE dimension11 instead!             | 5         | "xyz"  |
 | Experiment Detail Page                        | Installation count                                      | 6         | {n}    |
 | Home Page, Experiment Detail Page             | Determine if installation will require a restart        | 7         | {'no restart','restart required'}   |
 | Home Page, Experiment Detail Page, Share Page | Which test has this user been selected for?             | 8         | {'installButtonBorder', ''} |
