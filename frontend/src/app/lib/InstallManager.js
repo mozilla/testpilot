@@ -19,7 +19,7 @@ function getAddonId() {
   }[window.location.host];
 }
 
-function mozAddonManagerInstall(url, sendToGA, slug = null) {
+function mozAddonManagerInstall(url, sendToGA, slug = "test-pilot-addon") {
   const start = url.indexOf("files/") + 6;
   const end = url.indexOf("@");
   const experimentTitle = url.substring(start, end);
