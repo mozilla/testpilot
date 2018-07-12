@@ -9,6 +9,8 @@ platforms: ['ios']
 ios_url: https://itunes.apple.com/us/app/firefox-lockbox/id1314000270?ls=1&mt=8
 locales:
   - 'en'
+locale_grantlist:
+  - 'en'
 description: >
   Take your passwords everywhere with the Firefox Lockbox App for iPhone.
 introduction: >
