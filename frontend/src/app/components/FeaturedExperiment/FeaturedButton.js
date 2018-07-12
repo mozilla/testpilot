@@ -105,23 +105,25 @@ export default class FeaturedButton extends React.Component {
 
   handleManage = (evt: Function) => {
     const { enabled, experiment } = this.props;
-    const { title } = experiment;
+    const { title, slug } = experiment;
     this.sendMetric(evt, {
       eventAction: "button click",
       eventLabel: "Manage Featured Button",
       dimension4: enabled,
-      dimension5: title
+      dimension5: title,
+      dimension11: slug
     });
   };
 
   handleFeedback = (evt: Function) => {
     const { enabled, experiment } = this.props;
-    const { title } = experiment;
+    const { title, slug } = experiment;
     this.sendMetric(evt, {
       eventAction: "button click",
       eventLabel: "Feedback Featured Button",
       dimension4: enabled,
-      dimension5: title
+      dimension5: title,
+      dimension11: slug
     });
   }
 
