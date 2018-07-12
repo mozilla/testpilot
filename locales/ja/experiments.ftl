@@ -81,6 +81,7 @@ firefoxlockboxContributors14Title = モバイル QA エンジニア
 firefoxlockboxContributors15Title = Firefox QA
 firefoxlockboxContributors16Title = コミュニティ貢献者
 firefoxlockboxContributors17Title = コミュニティ貢献者
+firefoxlockboxPrivacypreamble = Firefox Lockbox は、Firefox アカウントユーザーが Firefox Sync を使って、携帯電話上のブラウザー以外のアプリでも、自分のユーザー名やパスワード (ログイン情報) へアクセスできるようにします。すべての Test Pilot 実験で収集されるデータに加えて...
 firefoxlockboxLegalnotice = 続けることで、あなたは Test Pilot の <a>規約</a> と <a>プライバシー</a> ポリシー、並びに <a>Firefox Lockbox のプライバシーポリシー</a> に同意したことになります。
 minvidDescription = 動画を全面に、中心に置いておきましょう。Min Vid を使えば、ウェブブラウジング中前面に固定される小さなフレーム内に YouTube や Vimeo の動画を表示することができます。
 minvidIntroduction = <p>マルチタスクが好きですか？ それなら Min Vid を試してください。これは、ひとつのピクチャーをメディアプレイヤー、もうひとつをウェブ全体として捉えた場合に「ピクチャー・イン・ピクチャー」機能と呼べるようなものです。</p><ul> <li><strong>クリックして移動:</strong> Min Vid のフレームをポップアップさせて、ブラウジング中に前面で動画を再生したままにしておくことができます。</li> <li><strong>好きな場所に配置:</strong> Min Vid の動画フレームはデスクトップ上のどこへでもドラッグして移動できます。</li> <li><strong>必要な場面でコントロール:</strong> Min Vid では、一時停止や再生、早送り、シーク、最小化、音量調節といった操作を、フレーム内で直接行うことができます。</li> <li><strong>音楽再生にも対応:</strong> Min Vid は SoundCloud や MP3 直リンクからの再生にも対応しました。</li> <li><strong>キューの作成:</strong> Min Vid はキューにも対応しました。動画を再生して、あらゆる対応ドメインからトラックを追加できます (YouTube、Vimeo、SoundCloud、直リンク)。</li> <li><strong>履歴の表示:</strong> Min Vid は再生履歴を保存します。プレーヤーの右上からキューパネルを開けば、これまでに再生したすべてのメディアにアクセスできます。</li></ul>
