@@ -95,7 +95,22 @@ emailOptInDialogErrorTitle = О, нет!
 
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
+mobileDialogTitle = Загрузить приложение
+mobileDialogMessageIOS = Загрузить <b>{ $title }</b> из iOS App Store.
+mobileDialogMessageAndroid = Загрузить <b>{ $title }</b> из Google Play Store.
+mobileDialogInstructionsSMS = Введите ваш номер телефона или адрес электронной почты, чтобы отправить ссылку на ваш телефон:
+mobileDialogInstructions = Введите ваш адрес электронной почты, чтобы отправить ссылку на ваш телефон:
+mobileDialogPlaceholder = Введите ваш адрес электронной почты
+mobileDialogPlaceholderSMS = Введите ваш телефон/электронную почту
+mobileDialogButton = Отправить мне ссылку на загрузку
 mobileDialogButtonSuccess = Спасибо!
+mobileDialogSuccessMain = Ссылка на загрузку отправлена!
+mobileDialogSuccessSecondarySMS = Проверьте, пришло ли на ваше устройство письмо или SMS.
+mobileDialogSuccessSecondary = Проверьте, пришло ли на ваше устройство письмо.
+mobileDialogAnotherDeviceLink = Отправить на другое устройство
+mobileDialogError = Введите эл. почту:
+mobileDialogErrorSMS = Введите эл. почту или номер телефона:
+mobileDialogNoticeSMS = Услуга SMS доступна только в определенных странах. За SMS и данные может взиматься плата. Необходимо согласие от получателя почтового сообщения или SMS. { $learnMore }
 
 ## Featured experiment.
 
@@ -182,7 +197,17 @@ nonExperimentDialogHeaderLink = Лётчик-испытатель
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
 experimentPlatformAddon = Эксперимент для Firefox
+experimentPlatformAndroid = Эксперименты для Android
+experimentPlatformIos = Эксперименты для iOS
 experimentPlatformWeb = Эксперимент для Интернета
+experimentPlatformAddonWeb = Firefox/веб-эксперименты
+experimentPlatformAddonAndroid = Эксперименты для Android и Firefox
+experimentPlatformAddonIos = Эксперименты для iOS и Firefox
+experimentPlatformAddonAndroidIos = Эксперименты для Android, iOS и Firefox
+experimentPlatformAddonAndroidWeb = Android/Firefox/веб-эксперименты
+experimentPlatformAddonAndroidIosWeb = Android/iOS/Firefox/веб-эксперименты
+experimentPlatformAndroidWeb = Android/веб-эксперименты
+experimentPlatformAndroidIos = Эксперименты для Android и iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
