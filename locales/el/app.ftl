@@ -98,11 +98,19 @@ emailOptInDialogErrorTitle = Ωχ όχι!
 mobileDialogTitle = Απόκτηση εφαρμογής
 mobileDialogMessageIOS = Λήψη του <b>{ $title }</b> από το iOS App Store.
 mobileDialogMessageAndroid = Λήψη του <b>{ $title }</b> από το Google Play Store.
+mobileDialogInstructionsSMS = Εισάγετε τον αριθμό τηλεφώνου ή το email σας για αποστολή συνδέσμου λήψης στο τηλέφωνό σας:
+mobileDialogInstructions = Εισάγετε το email σας για αποστολή συνδέσμου λήψης στο τηλέφωνό σας:
+mobileDialogPlaceholder = Εισάγετε το email σας
+mobileDialogPlaceholderSMS = Εισάγετε το τηλέφωνο/email σας
+mobileDialogButton = Αποστολή συνδέσμου λήψης σε μένα
 mobileDialogButtonSuccess = Ευχαριστούμε!
 mobileDialogSuccessMain = Απεστάλη σύνδεσμος λήψης!
+mobileDialogSuccessSecondarySMS = Ελέγξτε τη συσκευή σας για το email ή το μήνυμα.
+mobileDialogSuccessSecondary = Ελέγξτε τη συσκευή σας για το email.
 mobileDialogAnotherDeviceLink = Αποστολή σε άλλη συσκευή
 mobileDialogError = Εισάγετε ένα έγκυρο email:
 mobileDialogErrorSMS = Εισάγετε ένα έγκυρο αριθμό τηλεφώνου ή email:
+mobileDialogNoticeSMS = Η υπηρεσία SMS είναι διαθέσιμη σε επιλεγμένες μόνο χώρες. Ενδέχεται να υπάρξουν χρεώσεις SMS & δεδομένων. Ο παραλήπτης του email ή του SMS πρέπει να έχει συναινέσει. { $learnMore }
 
 ## Featured experiment.
 
