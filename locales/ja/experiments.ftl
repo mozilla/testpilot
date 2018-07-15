@@ -60,6 +60,7 @@ containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
 firefoxlockboxDescription = iPhone 向け Firefox Lockbox アプリでパスワードをどこへでも持ち歩こう。
+firefoxlockboxIntroduction = <p>Take your passwords everywhere with Firefox Lockbox. This Test Pilot experiment gives you access to all the logins you've saved to Firefox, in a secure app on your iPhone. Just log in to Lockbox with your Firefox Account, and your saved usernames and passwords will sync to the app using 256-bit encryption. So you’ll have easy access to online accounts, even on the go.</p> <p><strong>Firefox Lockbox requires a Firefox Account in order to access your previously <a href="chrome://passwordmgr/content/passwordManager.xul">saved logins</a>. If you do not have an account set up, get started <a href="https://lockbox.firefox.com/faq.html#how-do-i-get-my-firefox-saved-logins-into-firefox-lockbox">here</a>.</strong></p> <p><em>Want to be notified when our Android app launches? Sign up <a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">here</a>.</em></p>
 firefoxlockboxDetails0Copy = Firefox へ保存したすべてのアカウントのユーザー名とパスワード情報へアクセス。
 firefoxlockboxDetails1Copy = Firefox でアカウントを管理し、Firefox Lockbox へ自動的に変更を同期。
 firefoxlockboxDetails2Copy = アカウントを並び替え、フィルタリングして、必要なログイン情報を素早く発見。
