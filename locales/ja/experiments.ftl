@@ -113,6 +113,7 @@ nomore404sContributors1Title = The Internet Archive の Wayback Machine 担当�
 nomore404sContributors2Title = The Internet Archive の Wayback Machine 担当ディレクター
 nomore404sContributors3Title = The Internet Archive のシニアクロールエンジニア
 notesDescriptionMobile = ウェブブラウジング中にメモを取って、新しい Android アプリと自動的に同期。
+notesIntroductionMobile = Notes by Firefox はシンプルで安全なメモ帳拡張機能で、このたび Android 向けの同伴アプリも公開されました。Firefox アカウントでログインしてメモを参照、編集、削除すれば、デスクトップ版 Firefox と Android 間で自動的に同期されます。
 notesLegalnotice = 続けることで、あなたは Test Pilot の <a>規約</a> と <a>プライバシー</a> ポリシー、並びに <a>Notes のプライバシーポリシー</a> に同意したことになります。
 notesMeasurements0 = Notes は機能の使用状況に関する情報を収集します。これには、メモの作成頻度、編集に費やした時間、メモに保存した文字数、編集機能 (太字や文字スタイルなど) の使用状況が含まれます。
 notesMeasurements1 = Notes は、どのように機能にアクセスしたか、どのボタンをクリックしたかといった、あなたのアドオンとのインタラクションに関する情報も収集します。
