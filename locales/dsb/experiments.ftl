@@ -135,6 +135,7 @@ notesContributors8Title = Sobustatkujucy zgromaźeństwa
 notesContributors9Title = Sobustatkujucy zgromaźeństwa
 notesContributors10Title = Wuwijaŕ softwary
 notesContributors11Title = Softvision QA
+notesContributors12Title = Designer
 pageshotDescription = Intuitiwne fota wobrazowki direktne z wobglědowaka. Móžośo fota wobrazowki cyniś, składowaś a źěliś, mjaztym až pśeglědujośo web z pomocu Firefox.
 pageshotIntroduction = <p>Z Page Shot móžośo fota wobrazowki cyniś, źěliś a wótwołaś - bźez togo, aby Firefox spušćił.</p><ul><li><strong>Pśepletański naglěd:</strong> Pśepytujśo miniaturki skłaźonych fotow wobrazowki</li><li><strong>Inteligentne pytanje:</strong> Pytajśo pominane foto wobrazowki z klucnym słowom. Page Shot indicěrujo titele bokow a tekst we fotach wobrazowki</li> <li><strong>Źělenje w jadnom kšacu:</strong> Sćelśo swójo foto wobrazowki na socialne medije abo kopěrujśo źělobny wótkaz direktnje górjejce z wokna wobglědowaka.</li></ul>
 pageshotDetails0Copy = Wubjeŕśo wobrazowy wobcerk a składujśo, lěc se wam spódoba, což wiźiśo, abo pśetergniśo bźez togo, aby składował, jolic nic.
