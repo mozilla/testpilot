@@ -135,6 +135,7 @@ notesContributors8Title = Mitwirkender der Gemeinschaft
 notesContributors9Title = Mitwirkender der Gemeinschaft
 notesContributors10Title = Software-Entwickler
 notesContributors11Title = Softvision QA
+notesContributors12Title = Designer
 pageshotDescription = Intuitive Screenshots direkt aus dem Browser. Während des Surfens mit Firefox können Sie Screenshots machen, speichern und teilen.
 pageshotIntroduction = <p>Mit Page Shot können Sie Screenshots machen – ohne Firefox zu verlassen.</p><ul> <li><strong>Gitteransicht:</strong> Durchsuchen Sie Vorschaugrafiken gespeicherter Screenshots</li> <li><strong>Intelligente Suche:</strong> Finden Sie den gesuchten Screenshot mit einem Stichwort. Page Shot indexiert Seitentitel und Text in Screenshots</li> <li><strong>Teilen in einem Schritt:</strong> Veröffentlichen Sie Ihre Screenshots in sozialen Medien oder kopieren Sie den teilbaren Link direkt oben aus Ihrem Browser-Fenster.</li></ul>
 pageshotDetails0Copy = Wählen Sie den Bildbereich und speichern Sie ihn bei Gefallen, oder brechen Sie den Vorgang ab.
