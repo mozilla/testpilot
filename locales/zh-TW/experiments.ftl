@@ -135,6 +135,7 @@ notesContributors8Title = 社群貢獻者
 notesContributors9Title = 社群貢獻者
 notesContributors10Title = 軟體工程師
 notesContributors11Title = Softvision QA
+notesContributors12Title = 設計師
 pageshotDescription = 在瀏覽器中直接加入直覺式的畫面擷圖功能。在您使用 Firefox 時，隨時都能拍照、儲存、分享擷圖。
 pageshotIntroduction = <p>Page Shot 可讓您不用離開 Firefox 就拍攝、分享、取得網頁的畫面擷圖。</p><ul><li><strong>格狀檢視: </strong>瀏覽儲存的擷取圖˙的縮圖</li><li><strong>智慧搜尋:</strong> Page Shot 會索引擷取圖片時的網頁標題與內容文字，讓您可使用關鍵字快速尋找想要的擷圖。</li><li><strong>一鍵分享:</strong> 直接在瀏覽器視窗中將您拍下來的擷圖貼到社交網路，或分享圖片鏈結。</li></ul>
 pageshotDetails0Copy = 如果只要一部分的話，可選擇要儲存的圖片範圍，或是直接取消不存。
