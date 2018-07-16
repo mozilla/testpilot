@@ -135,6 +135,7 @@ notesContributors8Title = 社区贡献者
 notesContributors9Title = 社区贡献者
 notesContributors10Title = 软件工程师
 notesContributors11Title = Softvision 质量保证
+notesContributors12Title = 设计师
 pageshotDescription = 直观的截图工具入驻浏览器啦。使用 Firefox 浏览时，捕捉、保存和分享网页截图。
 pageshotIntroduction = <p>Page Shot 可以让您截取、分享和检索截图 - 无须离开 Firefox。</p><ul> <li><strong>网格视图：</strong>浏览已保存截图的缩略图</li> <li><strong>智能搜索：</strong>使用关键词查找相关的屏幕截图。Page Shot 会将页面标题和截图中的文本索引</li> <li><strong>快捷分享：</strong>将您的截图发到社交网络，或者复制可共享的链接，只需在您的浏览器窗口上方进行。</li></ul>
 pageshotDetails0Copy = 选择您想要的图像区域并保存，或者取消而放弃保存。
