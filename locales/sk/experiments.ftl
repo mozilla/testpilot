@@ -135,6 +135,7 @@ notesContributors8Title = Komunitný prispievateľ
 notesContributors9Title = Komunitný prispievateľ
 notesContributors10Title = Vývojár softvéru
 notesContributors11Title = Softvision QA
+notesContributors12Title = Dizajnér
 pageshotDescription = Intuitívne snímky obrazovky zabudované priamo v prehliadači. Zachyťte, uložte a zdieľajte snímky z prehliadania webových stránok priamo vo Firefoxe.
 pageshotIntroduction = <p>Page Shot vám umožňuje vytvoriť, zdielať a ukladať snímky obrazovky - a to všetko priamo vo Firefoxe.</p><ul> <li><strong>Mriežkové zobrazenie:</strong> Prezerajte si náhľady uložených snímok.</li> <li><strong>Inteligentné vyhľadávanie:</strong> Nájdite snímku obrazovky podľa kľúčového slova. Page Shot indexuje nadpisy stránok a text na snímkach.</li> <li><strong>Jednoduché zdieľanie:</strong> Uverejnite svoju snímku obrazovky na sociálnych sieťach alebo skopírujte odkaz priamo z rohu okna vášho prehliadača.</li></ul>
 pageshotDetails0Copy = Vyberte si oblasť, ktorá sa vám páči a uložte si ju vo forme obrázku.
