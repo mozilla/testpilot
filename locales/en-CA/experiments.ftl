@@ -135,6 +135,7 @@ notesContributors8Title = Community Contributor
 notesContributors9Title = Community Contributor
 notesContributors10Title = Software Engineer
 notesContributors11Title = Softvision QA
+notesContributors12Title = Designer
 pageshotDescription = Intuitive screenshots baked right into the browser. Capture, save and share screenshots as you browse the Web using Firefox.
 pageshotIntroduction = <p>Page Shot lets you take, share, and retrieve screenshots - without leaving Firefox.</p><ul> <li><strong>Grid view:</strong> Browse thumbnails of saved screenshots</li> <li><strong>Smart search:</strong> Find the screenshot you're looking for with just a keyword. Page Shot indexes page titles and text in screenshots</li> <li><strong>One-step sharing:</strong> Post your screenshot to social media or copy the shareable link right from the top of your browser window.</li></ul>
 pageshotDetails0Copy = Select the image area and save if you like what you see, cancel without saving if you don’t.
