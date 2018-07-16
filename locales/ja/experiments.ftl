@@ -137,6 +137,7 @@ notesContributors8Title = コミュニティ貢献者
 notesContributors9Title = コミュニティ貢献者
 notesContributors10Title = ソフトウェアエンジニア
 notesContributors11Title = Softvision QA
+notesContributors12Title = デザイナー
 pageshotDescription = 直感的なスクリーンショットをブラウザー内に直接組み込みました。Firefox を使ってウェブをブラウジングしながら、スクリーンショットをキャプチャー、保存、共有できます。
 pageshotIntroduction = <p>Page Shot を使えば、Firefox を離れることなく、スクリーンショットを撮影、共有、検索できます。</p><ul> <li><strong>グリッド表示:</strong> 保存されたスクリーンショットのサムネイルを閲覧</li> <li><strong>スマート検索:</strong> 探しているスクリーンショットをキーワードで見つけ出せます。Page Shot はページタイトルやスクリーンショット内の文字をインデックスします</li> <li><strong>ワンステップ共有:</strong> ブラウザーウィンドウ上部から直接、スクリーンショットをソーシャルメディアへ投稿したり、共有可能なリンクをコピーしたりできます</li></ul>
 pageshotDetails0Copy = 画像範囲を選択し、その内容に満足したら保存、そうでなければ保存せずにキャンセルできます。
