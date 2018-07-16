@@ -135,6 +135,7 @@ notesContributors8Title = Contribuidor da Comunidade
 notesContributors9Title = Contribuidor da Comunidade
 notesContributors10Title = Engenheiro de Software
 notesContributors11Title = Softvision QA
+notesContributors12Title = Designer
 pageshotDescription = Capturas de ecrã intuitivas diretamente do navegador. Capture, guarde e partilhe capturas de ecrã enquanto navega na Web utilizando o Firefox.
 pageshotIntroduction = <p>O Page Shot permite-lhe tirar, partilhar e recuperar capturas de ecrã - sem deixar o Firefox.</p><ul><li><strong>Visualização em grade:</strong> Navegue pelas miniaturas de capturas de ecrã guardadas</li> <li><strong>Pesquisa inteligente:</strong> Encontre a captura de ecrã que você procura com apenas uma palavra-chave. O Page Shot indexa os títulos da página e o texto nas capturas de ecrã</li> <li><strong>Partilhar num passo:</strong> Publique a sua captura de ecrã nas redes sociais ou copie a ligação partilhável diretamente a partir do topo da janela do seu navegador.</li></ul>
 pageshotDetails0Copy = Selecione a área da imagem e guarde se gostar do que vê ou cancele sem guardar se assim o desejar.
