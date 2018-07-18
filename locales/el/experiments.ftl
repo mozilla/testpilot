@@ -27,6 +27,7 @@ cliqzDetails2Copy = Επιστρέψτε στις αγαπημένες σας ι
 cliqzToursteps0Copy = Αρχίστε να πληκτρολογείτε στη γραμμή URL για να δείτε αποτελέσματα σε πραγματικό χρόνο.
 cliqzToursteps1Copy = Ανοίξτε μια νέα καρτέλα και προσθέστε τις αγαπημένες σας ιστοσελίδες για πρόσβαση με ένα κλικ.
 cliqzToursteps2Copy = Μπορείτε πάντα να μάς στέλνετε τα σχόλια σας ή να απενεργοποιήσετε το Cliqz από το Test Pilot.
+colorDetails1Copy = Δημιουργήσαμε μερικά προκαθορισμένα θέματα για να ξεκινήσετε.
 colorContributors0Title = Επικεφαλής μηχανικός
 colorContributors1Title = Test Pilot PM
 colorContributors2Title = Test Pilot Intern
