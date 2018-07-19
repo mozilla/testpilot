@@ -135,6 +135,7 @@ notesContributors8Title = Cyfrannwr Cymunedol
 notesContributors9Title = Cyfrannwr Cymunedol
 notesContributors10Title = Peiriannydd Meddalwedd
 notesContributors11Title = Softvision QA
+notesContributors12Title = Dylunydd
 pageshotDescription = Lluniau sgrin hawdd eu creu yn syth o'ch porwr. Cipio, cadw a rhannu lluniau sgrin wrth i chi bori'r We gyda Firefox.
 pageshotIntroduction = <p>Mae Page Shot yn gadael i chi gymryd, rhannu ac adalw lluniau sgrin heb adael Firefox.</p><ul><li><strong>Golwg grid:</strong> Porwch y lluniau sgrin sydd wedi'u cadw</li><li><strong>Chwilio clyfar:</strong> Dod o hyd i lun rydych yn chwilio amdano gyda dim ond un allweddair. Mae Page Shot yn mynegeio teitlau a thestun tudalennau mewn lluniau sgrin</li><li><strong>Rhannu un cam:</strong> Anfonwch eich llun sgrin i'r cyfryngau cymdeithasol neu gopïo'r ddolen ranadwy o frig ffenestr eich porwr.</li></ul>
 pageshotDetails0Copy = Dewiswch ardal y ddelwedd a chadw os ydych yn hoffi beth rydych yn ei weld, diddymu heb gadw os nad.
