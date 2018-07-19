@@ -135,6 +135,7 @@ notesContributors8Title = Community Contributor
 notesContributors9Title = Community Contributor
 notesContributors10Title = Software Engineer
 notesContributors11Title = QA Softvision
+notesContributors12Title = Designer
 pageshotDescription = Un metodo intuitivo per salvare schermate direttamente dal browser. Cattura, salva e condividi le schermate mentre navighi sul Web con Firefox.
 pageshotIntroduction = <p>Page Shot di permette di catturare, condividere e salvare schermate senza lasciare Firefox.</p><ul> <li><strong>Visualizzazione a griglia:</strong> sfoglia le miniature delle schermate salvate.</li> <li><strong>Ricerca intelligente:</strong> trova la schermata che stai cercando con semplici parole chiave. Page Shot indicizza i titoli delle pagine e il testo nelle schermate.</li> <li><strong>Condivisione in un clic:</strong> condividi le schermate sui social o copia il link per la condivisione direttamente dalla finestra del browser.</li></ul>
 pageshotDetails0Copy = Seleziona un’area dell’immagine e salva se il risultato ti piace, annulla se non va bene.

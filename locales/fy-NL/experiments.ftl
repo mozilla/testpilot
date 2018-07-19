@@ -135,6 +135,7 @@ notesContributors8Title = Mienskipsmeiwurker
 notesContributors9Title = Mienskipsmeiwurker
 notesContributors10Title = Software-yngenieur
 notesContributors11Title = Softvision QA
+notesContributors12Title = Untwerper
 pageshotDescription = Yntuïtive skermôfdrukken streekrjocht ynbakt yn de browser. Wylst jo sneupe oer it web mei Firefox, kinne jo skermôfdrukken meitsje, bewarje en diele.
 pageshotIntroduction = <p>Page Shot lit jo skermôfdrukken nimme, diele en weromsjen – sûnder Firefox te ferlitten.</p><ul> <li><strong>Rasterbyld:</strong> Besjoch foarbylden fan bewarre skermôfdrukken</li> <li><strong>Tûk sykje:</strong> Fyn de skermôfdruk dêr't jo nei sykje mei mar ien kaaiwurd. Page Shot yndeksearret titels en tekst yn skermôfdrukken</li> <li><strong>Ien-stap diele:</strong> Pleats jo skermôfdrukken op sosjale media of kopiearje de dielbere keppeling daliks fan de boppekant fan jo browserkerm út.</li></ul>
 pageshotDetails0Copy = Selektearje it ôfbyldingsgebiet en bewarje as it jo befalt wat jo sjogge, annulearje sûnder te bewarjen as dat net sa is.

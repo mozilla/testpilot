@@ -135,6 +135,7 @@ notesContributors8Title = Contribuidor(a) da comunidade
 notesContributors9Title = Contribuidor(a) da comunidade
 notesContributors10Title = Engenheira(o) de software
 notesContributors11Title = Softvision QA
+notesContributors12Title = Designer
 pageshotDescription = Capturas de telas feitas diretamente do navegador. Capture, salve e compartilhe as capturas de telas enquanto você navega na Web utilizando o Firefox.
 pageshotIntroduction = <p>Page Shot deixa você capturar, compartilhar e recuperar telas - sem sair do Firefox.</p><ul><li><strong>Modo grade:</strong> Visualize as miniaturas das capturas de tela salvas</li> <li><strong>Pesquisa inteligente:</strong> Encontre a captura de tela que você está procurando através de palavra-chave. O Page Shot lista os títulos das páginas e o texto das capturas de tela</li> <li><strong> Compartilhamento rápido:</strong> Compartilhe suas capturas de tela nas mídias sociais ou copie o link público na parte superior do seu navegador.</li></ul>
 pageshotDetails0Copy = Selecione uma área da imagem e salve se você gostar do que vê, cancele sem salvar se não gostar.

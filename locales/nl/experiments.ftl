@@ -135,6 +135,7 @@ notesContributors8Title = Community Contributor
 notesContributors9Title = Community Contributor
 notesContributors10Title = Software Engineer
 notesContributors11Title = Softvision QA
+notesContributors12Title = Designer
 pageshotDescription = Intuïtieve schermafbeeldingen, rechtstreeks in de browser. Terwijl u met Firefox op het web surft, kunt u schermafbeeldingen maken, opslaan en delen.
 pageshotIntroduction = <p>Met Page Shot kunt u schermafbeeldingen maken, delen en ophalen - zonder Firefox te verlaten.</p><ul> <li><strong>Rasterweergave:</strong> blader door miniaturen van opgeslagen schermafbeeldingen</li> <li><strong>Slim zoeken:</strong> vind de gezochte schermafbeelding met slechts een trefwoord. Page Shot indexeert paginatitels en tekst in afbeeldingen</li> <li><strong>Delen via één stap:</strong> plaats uw schermafbeelding op sociale media of kopieer de deelbare koppeling direct vanuit de bovenkant van uw browservenster.</li></ul>
 pageshotDetails0Copy = Selecteer het gebied van de afbeelding en sla het op als dit bevalt; annuleer zonder opslaan als dat niet zo is.

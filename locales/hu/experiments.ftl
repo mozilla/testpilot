@@ -127,6 +127,7 @@ notesContributors8Title = Közösségi közreműködő
 notesContributors9Title = Közösségi közreműködő
 notesContributors10Title = Szoftverfejlesztő mérnök
 notesContributors11Title = Softvision QA
+notesContributors12Title = Dizájner
 pageshotDescription = Intuitív képernyőképek közvetlenül a böngészőjében. Készítsen, mentsen és osszon meg képernyőképeket, miközben böngészi a Webet a Firefoxszal.
 pageshotIntroduction = <p>A Page Shottal képernyőképeket készíthet, oszthat meg és kereshet elő – a Firefox elhagyása nélkül.</p><ul><li><strong>Rács nézet:</strong> böngéssze a mentett képernyőképek bélyegképeit</li> <li><strong>Okos keresés:</strong> találja meg amit keres egyetlen kulcsszóval. A Lapkép indexeli a lapcímeket és a szöveget a képernyőképen</li> <li><strong>Egy lépéses megosztás:</strong> tegye közzé a képernyőképet a közösségi médiában, vagy másolja ki a megosztható hivatkozást a böngészőablak tetejéről.</li></ul>
 pageshotDetails0Copy = Válassza ki a képterületet, és mentse el, ha tetszik amit lát; szakítsa meg mentés nélkül, ha nem.

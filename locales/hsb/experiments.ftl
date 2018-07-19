@@ -135,6 +135,7 @@ notesContributors8Title = Sobuskutkowar zhromadźenstwa
 notesContributors9Title = Sobuskutkowar zhromadźenstwa
 notesContributors10Title = Wuwiwar softwary
 notesContributors11Title = Softvision QA
+notesContributors12Title = Designer
 pageshotDescription = Intuitiwne fota wobrazowki direktne z wobhladowaka. Móžeće fota wobrazowki činić, składować a dźělić, mjeztym zo z pomocu Firefox web přehladujeće.
 pageshotIntroduction = <p>Z Page Shot móžeće fota wobrazowki činić, dźělić a wotwołać - bjez toho zo, byšće Firefox wopušćił.</p><ul><li><strong>Lěsyčny napohlad:</strong> Přepytujće miniaturki składowanych fotow wobrazowki</li><li><strong>Inteligentne pytanje:</strong> Pytajće požadane foto wobrazowki z klučnym słowom. Page Shot indikuje titule stronow a tekst we fotach wobrazowki</li> <li><strong>Dźělenje w jednym kroku:</strong> Sćelće swoje foto wobrazowki na socialne medije abo kopěrujće dźělomny wotkaz direktnje horjeka z wokna wobhladowaka.</li></ul>
 pageshotDetails0Copy = Wubjerće wobrazowy wobwod a składujće, hač so wam spodoba, štož widźiće, abo přetorhńće bjez toho zo, byšće składował, jeli nic.

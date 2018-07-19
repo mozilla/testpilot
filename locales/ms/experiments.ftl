@@ -135,6 +135,7 @@ notesContributors8Title = Penyumbang Komuniti
 notesContributors9Title = Penyumbang Komuniti
 notesContributors10Title = Jurutera Perisian
 notesContributors11Title = QA Softvision
+notesContributors12Title = Designer
 pageshotDescription = Skrinsyot intuitif terus ke dalam pelayar. Ambil, simpan dan kongsi skrinsyot sambil anda melayar Web menggunakan Firefox.
 pageshotIntroduction = <p>Syot Halaman membolehkan anda mengambil, berkongsi dan mendapatkan semula skrinsyot - tanpa keluar dari Firefox.</p><ul> <li><strong>Paparan grid:</strong> Layari imej kecil skrinsyot yang disimpan</li> <li><strong>Carian pintar:</strong> Cari skrinsyot yang anda mahu dengan hanya satu kata kunci. Syot Halaman mengindeks teks dan tajuk halaman dalam skrinsyot</li> <li><strong>Perkongsian satu-langkah:</strong> Siarkan skrinsyot anda di laman sosial atau salin pautan yang boleh dikongsi terus dari atas tetingkap pelayar anda.</li></ul>
 pageshotDetails0Copy = Pilih kawasan imej dan simpan jika anda suka imej yang anda lihat, batalkan tanpa simpan jika sebaliknya.
