@@ -110,6 +110,7 @@ mobileDialogSuccessSecondary = Tanik'oj ri awoyonib'al pan ataqoya'l.
 mobileDialogAnotherDeviceLink = Titaq pa jun chik okisab'äl
 mobileDialogError = Tatz'ib'aj jun okel taqoya'l:
 mobileDialogErrorSMS = Tatz'ib'aj jun okel rajilab'al oyonib'äl o taqoya'l:
+mobileDialogNoticeSMS = Ri SMS samaj xa xe okel pa jujun taq amaq'. Rik'in jub'a' nisamajïx kajil ri SMS o taq tzij. Ri nik'ulu ri taqoya'l o ri SMS k'o chi nikochin. { $learnMore }
 
 ## Featured experiment.
 
@@ -196,7 +197,17 @@ nonExperimentDialogHeaderLink = Test Pilot
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
 experimentPlatformAddon = Firefox solna'oj
+experimentPlatformAndroid = Android solna'oj
+experimentPlatformIos = iOS solna'oj
 experimentPlatformWeb = Ajk'amaya'l solna'oj
+experimentPlatformAddonWeb = Firefox /ajk'amaya'l solna'oj
+experimentPlatformAddonAndroid = Android / Firefox solna'oj
+experimentPlatformAddonIos = iOS / Firefox solna'oj
+experimentPlatformAddonAndroidIos = Android / iOS / Firefox solna'oj
+experimentPlatformAddonAndroidWeb = Android / Firefox / ajk'amaya'l solna'oj
+experimentPlatformAddonAndroidIosWeb = Android / iOS / Firefox / ajk'amaya'l solna'oj
+experimentPlatformAndroidWeb = Android / ajk'amaya'l solna'oj
+experimentPlatformAndroidIos = Android / iOS solna'oj
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
