@@ -124,6 +124,7 @@ notesContributors8Title = Colaborador de la comunidad
 notesContributors9Title = Colaborador de la comunidad
 notesContributors10Title = Ingeniero de software
 notesContributors11Title = Control de calidad de Softvision
+notesContributors12Title = Diseñador
 pageshotDescription = Una forma intuitiva de hacer capturas de pantalla en tu navegador. Capturá, guardá y compartí capturas de pantalla mientras navegás la web con Firefox.
 pageshotIntroduction = <p>Page Shot te permite tomar, compartir y recuperar capturas de pantalla directamente desde Firefox.</p><ul><li><strong>Vista de grilla:</strong> Navegá por miniaturas de las capturas guardadas</li><li><strong>Búsqueda inteligente:</strong> Encontrá la captura que estabas buscando con sólo una palabra clave. Page Shot indexa los títulos y textos de la página</li><li><strong>Compartí en un solo paso:</strong> Publicá tus capturas de pantalla en redes sociales o copiá un enlace para compartir desde la parte superior de la ventana de tu navegador.</li></ul>
 pageshotDetails0Copy = Seleccioná el área de la imagen y guardá si te gusta lo que ves, cancelá sin guardar si no querés.
