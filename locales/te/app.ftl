@@ -129,6 +129,7 @@ experimentPromoHeader = ఎగరడానికి తయారుగా ఉన
 ## The experiment detail page.
 
 isEnabledStatusMessage = { $title } చేతనమయింది.
+installErrorMessage = అయ్యయ్యో. { $title }‌ను చేతనించలేకపోతున్నాం. కాసేపాగి మళ్ళీ ప్రయత్నించండి.
 otherExperiments = అలాగే ఈ ప్రయోగాలను కూడా ప్రయత్నించండి
 giveFeedback = అభిప్రాయం తెలియజేయండి
 disableHeader = ప్రయోగాన్ని నిలిపివేయాలా?
