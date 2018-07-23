@@ -290,11 +290,11 @@ warningGoToFAQDetail = Něco njejo se z Test Pilot raźiło. Pšosym <a>cytajśo
 warningUpgradeFirefoxTitle = Aktualizěrujśo Firefox, aby pókšacował!
 warningUpgradeFirefoxDetail = Test Pilot se nejnowšu wersiju Firefox pomina. <a>Aktualizěrujśo Firefox</a>, aby zachopił.
 warningHttpsRequiredTitle = HTTPS trěbny!
-warningHttpsRequiredDetail = Aby pśistup na Test Pilot měł, trjebaśo HTTPS. Drobnostki w <a>našej dokumentaciji</a> zgónijośo.
+warningHttpsRequiredDetail = Aby pśistup k Test Pilot měł, trjebaśo HTTPS. Drobnostki w <a>našej dokumentaciji</a> zgónijośo.
 warningMissingPrefTitle = Wuwijaśo Test Pilot?
 warningMissingPrefDetail = Gaž Test Pilot lokalnje abo we wuwijańskich wokolinach wuwjedujośo, trjebaśo specialnu konfiguraciju. Drobnostki w <a>našej dokumentaciji</a> namakajośo.
 warningBadHostnameTitle = Njedówolone hostmě!
-warningBadHostnameDetail = Pśistup na websedło Test Pilot maśo jano wót testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net abo example.com:8000. Drobnostki w <a>našej dokumentaciji</a> namakajośo.
+warningBadHostnameDetail = Pśistup k websedłoju Test Pilot maśo jano wót testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net abo example.com:8000. Drobnostki w <a>našej dokumentaciji</a> namakajośo.
 
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
