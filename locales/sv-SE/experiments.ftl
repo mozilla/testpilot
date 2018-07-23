@@ -106,6 +106,7 @@ notesContributors8Title = Community Contributor
 notesContributors9Title = Community Contributor
 notesContributors10Title = Software Engineer
 notesContributors11Title = Softvision QA
+notesContributors12Title = Designer
 pageshotDescription = Intuitiva skärmbilder direkt från webbläsaren. Fånga, spara och dela skärmbilder när du surfar på webben med hjälp av Firefox.
 pageshotIntroduction = <p>Page Shot låter dig ta, dela och hämta skärmdumpar - utan att lämna Firefox.</p><ul> <li><strong>Rutnätsvy:</strong> Bläddra bland miniatyrer av sparade skärmdumpar</li> <li><strong>Smart sökning:</strong> Hitta skärmdumpen du letar efter med bara ett nyckelord. Page Shot indexerar sidtitlar och text i skärmdumpar</li> <li><strong>Ett-stegs-delning:</strong> Lägg upp dina skärmdumpar på sociala medier eller kopiera den delningsbara länken direkt från webbläsaren.</li></ul>
 pageshotDetails0Copy = Välj bildyta och spara om du gillar vad du ser, avbryta utan att spara om du inte gör det.
