@@ -95,7 +95,7 @@ emailOptInDialogErrorTitle = Oh não!
 
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
-mobileDialogTitle = Obtenha a aplicação
+mobileDialogTitle = Obter a aplicação
 mobileDialogMessageIOS = Transfira o <b>{ $title }</b> a partir da App Store do iOS.
 mobileDialogMessageAndroid = Transfira o <b>{ $title }</b> a partir da Google Play Store.
 mobileDialogInstructionsSMS = Introduza o seu número de telefone ou email para enviar uma ligação de transferência para o seu telefone: 
