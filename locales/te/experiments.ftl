@@ -31,6 +31,7 @@ minvidContributors1Title = స్టాఫ్ ఇంజనీర్
 minvidContributors2Title = ఇంజనీరింగ్ ఇంటర్న్
 minvidContributors3Title = ఇంజనీరింగ్ సహకారి
 nomore404sSubtitle = Wayback Machine చేత శక్తివంతం
+nomore404sDetails1Copy = ఇంటర్నెట్ ఆర్కైవ్‌లో ఉన్న మా స్నేహితుల సహకారంతో మీ వద్దకు తేబడింది.
 nomore404sContributors1Title = డెవలపర్, వేబ్యాక్ మెషిన్, ది ఇంటర్నెట్ ఆర్కైవ్
 nomore404sContributors2Title = డైరెక్టర్, వేబ్యాక్ మెషిన్, ది ఇంటర్నెట్ ఆర్కైవ్
 nomore404sContributors3Title = సీనియర్ క్రాల్ ఇంజనీర్, ది ఇంటర్నెట్ ఆర్కైవ్
