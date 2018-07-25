@@ -75,6 +75,7 @@ tabcenterContributors3Title = Firefox UX
 trackingprotectionContributors0Title = వెబ్ డెవలపర్
 trackingprotectionContributors1Title = సీనియర్ UX డిజైనర్
 trackingprotectionContributors2Title = సీనియర్ QA డిజైనర్
+universalsearchDetails0Copy = ప్రాచుర్యమైన సైట్లు, ప్రజలు, వికీపీడియా వ్యాసాలు మీరు టైపు చేసేకొద్దీ కనిపిస్తాయి.
 universalsearchContributors0Title = ప్రొడక్ట్ మేనేజర్
 universalsearchContributors1Title = సీనియర్ UX డిజైనర్
 universalsearchContributors2Title = స్టాఫ్ ఇంజనీర్
