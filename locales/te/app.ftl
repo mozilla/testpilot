@@ -53,7 +53,9 @@ oneClickInstallMajorCta = { $title } చేతనించు
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
+landingRequiresDesktop = Test Pilotకి డెస్క్‌టాప్ విండోస్, మ్యాక్ లేదా లినక్సులలో Firefox కావాలి
 landingUpgradeDesc = Test Pilotకి Firefox 49 లేదా ఆపై వెర్షను కావాలి.
+landingUpgradeDesc2 = Test Pilotకి Firefox { $version }  లేదా ఆపై వెర్షను అవసరం.
 # also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Firefox నవీకరించు
@@ -68,6 +70,7 @@ landingCardThree = మీరు ఏమని అనుకుంటున్న�
 
 ## Shown after the user installs the Test Pilot add-on.
 
+onboardingMessage = మీ పనిముట్ల పట్టీలో Test Pilot ప్రతీకాన్ని చేర్చాము, కనుక మీరు దీన్ని ఎప్పుడైనా కనుక్కోవచ్చు.
 
 ## Error message pages.
 
@@ -80,6 +83,7 @@ notFoundHeader = అరెరే!
 ## A modal prompt to sign up for the Test Pilot newsletter.
 
 emailOptInDialogTitle = Test Pilotకు స్వాగతం!
+emailOptInMessage = కొత్త ప్రయోగాల గురి౦చి తెలుసుకోవచ్చు, మీరు ప్రయత్ని౦చిన ప్రయోగాల ఫలితాలు చూడవచ్చు.
 emailOptInConfirmationTitle = ఈ-మెయిలు పంపబడింది
 emailOptInConfirmationClose = ప్రయోగాల ఆర౦భ దశ...
 emailOptInDialogErrorTitle = అరెరే!
@@ -174,11 +178,13 @@ retireDialogTitle = టెస్ట్ పైలట్‌ని తీసివ�
 retireSubmitButton = కొనసాగు
 retirePageProgressMessage = షట్‌డౌన్ అవుతోంది...
 retirePageHeadline = ఎగురుతున్నందుకు ధన్యవాదాలు!
+retirePageMessage = మాతో కలిసి ప్రయోగాలు చేయడంలో ఆనందించారని ఆశిస్తున్నాము. <br> ఎప్పుడైనా తిరిగి రండి.
 retirePageSurveyButton = త్వరిత సర్వేలో పాల్గొనండి
 
 ## Shown to users after installing Test Pilot if a restart is required.
 
 restartIntroOne = మీ విహారిణిని పునఃప్రారంభించండి
+restartIntroTwo = Test Pilot యాడ్-ఆన్‌ని గుర్తించండి
 restartIntroThree = మీ ప్రయోగాలను ఎంచుకోండి
 
 ## Shown on pages of retired or retiring experiments.
@@ -199,6 +205,7 @@ newsletterFormSubmitButtonSubmitting = సమర్పిస్తోంది�
 
 ## A section of the footer containing a newsletter signup form.
 
+newsletterFooterError = మీ ఈమెయిలు చిరునామాను సమర్పించడంలో పొరపాటు జరిగింది. మళ్లీ ప్రయత్నిస్తారా?
 newsletterFooterHeader = తాజా సమాచారం తెలుసుకోండి
 newsletterFooterBody = కొత్త ప్రయోగాల గురించి తెలుసుకోండి, మీరు ప్రయత్నించిన ప్రయోగాల పరీక్షా ఫలితాలను చూడండి.
 newsletterFooterSuccessHeader = ధన్యవాదములు!
@@ -214,6 +221,7 @@ experimentsListNoneInstalledCTA = ఆసక్తి లేదు? <a> ఎంద
 ## Shown to users who do not have JavaScript enabled.
 
 noScriptHeading = అయ్యో...
+noScriptMessage = Test Pilotకు జావాస్క్రిప్ట్ అవసరం.<br> క్షమించండి.
 noScriptLink = ఎందుకో తెలుసుకోండి
 
 ## Text of a button to toggle visibility of a list of past experiments.
@@ -225,6 +233,7 @@ hidePastExperiments = పాత ప్రయోగాలు దాయి
 
 warningGenericTitle = ఏదో తప్పు ఉంది!
 warningUpgradeFirefoxTitle = కొనసాగుటకు Firefoxను తాజాకరించండి!
+warningUpgradeFirefoxDetail = Test Pilotకి సరికొత్త Firefox వెర్షను కావాలి. మొదలుపెట్టడానికి <a>Firefoxను తాజాకరించుకోండి</a>.
 warningHttpsRequiredTitle = HTTPS అవసరం!
 warningMissingPrefTitle = Test Pilot ని అభివృద్ధి చేస్తున్నారా?
 warningBadHostnameTitle = ఆమోదించని హోస్ట్పేరు!
