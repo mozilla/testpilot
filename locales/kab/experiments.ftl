@@ -135,6 +135,7 @@ notesContributors8Title = Imetteki di tmezdagnut
 notesContributors9Title = Imetteki di tmezdagnut
 notesContributors10Title = Ajenyuṛ n tneflit
 notesContributors11Title = Ajenyuṛ n tɣara Softvision
+notesContributors12Title = Imfeṣṣel
 pageshotDescription = Tuṭṭfiwin n ugdil srid deg imin inek. Qɛed, sekles udiɣ bḍu tuṭṭfiwin n ugdil di tunigin di Web s Firefox.
 pageshotIntroduction = <p>Page Shot ad yeǧǧ timerna, ad yebḍu udiɣ ad d-inadi tuṭṭfiwin n ugdil, war ma tesriḍ ad teffɣeḍ si Firefox.</p><ul><li><strong>Asebter n iqurmiḍen:</strong> snirem iqurmiḍen n tuṭṭfiwin yettwakelsen</li><li><strong>Anadi uḥric:</strong> af-d tuṭṭfiwin n ugdil i tesriḍ ad kan s wawal n tsarutt. Page Shot iseklas azwel n isebtar akked umnaḍ yellan di tuṭṭfiwin</li><li><strong>Beṭṭu deg iwen umecwar:</strong> azen tuṭṭfiwin deg iẓaḍwan n tmetti neq nɣel aseɣwen yettwabḍayens ufella n usfaylu n tunigin.</li></ul>
 pageshotDetails0Copy = Sbadu tamnaṭ n tuṭṭfa n ugdil n tugna udiɣ sekles-itt ma yella telha, ma ualc sefsex-itt war ma tettwasekles.

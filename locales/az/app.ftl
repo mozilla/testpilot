@@ -37,6 +37,7 @@ headerLinkBlog = Bloq
 
 ## The splash on the homepage.
 
+landingIntroTwo = Rəylərinizi bildirin.
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -65,6 +66,9 @@ landingUpgradeDesc2 = Test Pilotu Firefox { $version } və ya daha üst buraxıl
 
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
+mobileDialogPlaceholder = E-poçt ünvanınızı daxil edin
+mobileDialogPlaceholderSMS = Telefonunuzu/E-poçtunuzu daxil edin
+mobileDialogButtonSuccess = Təşəkkürlər!
 
 ## Featured experiment.
 

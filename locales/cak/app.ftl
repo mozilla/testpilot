@@ -93,6 +93,25 @@ emailOptInConfirmationTitle = Xtaq Taqoya'l
 emailOptInConfirmationClose = Jo' pa ri taq solna'oj...
 emailOptInDialogErrorTitle = ¡Mani'!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Tik'ul ri Chokoy
+mobileDialogMessageIOS = Tiqasäx ri <b>{ $title }</b> pa ri iOS App Store.
+mobileDialogMessageAndroid = Tiqasäx ri <b>{ $title }</b> pa ri Google Play Store.
+mobileDialogInstructionsSMS = Tatz'ib'aj ri rajilab'al awoyonib'al o ri ataqoya'l richin nitaq jun ruximonel qasanem pan awoyonib'al:
+mobileDialogInstructions = Tatz'ib'aj ri ataqoya'l richin nitaq jun ruximonel qasanem pan awoyonib'al:
+mobileDialogPlaceholder = Tatz'ib'aj ri Ataqoya'l
+mobileDialogPlaceholderSMS = Tatz'ib'aj ri Awoyonib'al/Ataqoya'l
+mobileDialogButton = Titaq ri Ruximonel Qasanem chwe
+mobileDialogButtonSuccess = ¡Nink'awomaj!
+mobileDialogSuccessMain = ¡Xtaq ri Ruximonel Qasanem!
+mobileDialogSuccessSecondarySMS = Tanik'oj ri awoyonib'al pan ataqoya'l o tz'ib'an rutzijol.
+mobileDialogSuccessSecondary = Tanik'oj ri awoyonib'al pan ataqoya'l.
+mobileDialogAnotherDeviceLink = Titaq pa jun chik okisab'äl
+mobileDialogError = Tatz'ib'aj jun okel taqoya'l:
+mobileDialogErrorSMS = Tatz'ib'aj jun okel rajilab'al oyonib'äl o taqoya'l:
+mobileDialogNoticeSMS = Ri SMS samaj xa xe okel pa jujun taq amaq'. Rik'in jub'a' nisamajïx kajil ri SMS o taq tzij. Ri nik'ulu ri taqoya'l o ri SMS k'o chi nikochin. { $learnMore }
+
 ## Featured experiment.
 
 moreDetail = Ketz'et taq b'anikil
@@ -177,13 +196,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Firefox / ajk'amaya'l / ajoyonib'äl solna'oj
-experimentPlatformWebAddon = Firefox /ajk'amaya'l solna'oj
-experimentPlatformWebMobile = Ajk'amaya'l / ajoyonib'äl solna'oj
-experimentPlatformAddonMobile = Firefox / ajoyonib'äl solna'oj
-experimentPlatformWeb = Ajk'amaya'l solna'oj
 experimentPlatformAddon = Firefox solna'oj
-experimentPlatformMobileApp = ajoyonib'äl solna'oj
+experimentPlatformAndroid = Android solna'oj
+experimentPlatformIos = iOS solna'oj
+experimentPlatformWeb = Ajk'amaya'l solna'oj
+experimentPlatformAddonWeb = Firefox /ajk'amaya'l solna'oj
+experimentPlatformAddonAndroid = Android / Firefox solna'oj
+experimentPlatformAddonIos = iOS / Firefox solna'oj
+experimentPlatformAddonAndroidIos = Android / iOS / Firefox solna'oj
+experimentPlatformAddonAndroidWeb = Android / Firefox / ajk'amaya'l solna'oj
+experimentPlatformAddonAndroidIosWeb = Android / iOS / Firefox / ajk'amaya'l solna'oj
+experimentPlatformAndroidWeb = Android / ajk'amaya'l solna'oj
+experimentPlatformAndroidIos = Android / iOS solna'oj
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
