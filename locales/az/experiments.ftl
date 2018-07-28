@@ -1,5 +1,6 @@
 activitystreamContributors0Title = Proqram Təminatı Mühəndisi
 activitystreamContributors1Title = Web Mühəndisi
+activitystreamContributors2Title = Proqram Tərtibatçısı
 activitystreamContributors4Title = Proqram Təminatı Mühəndisi
 activitystreamContributors5Title = Texniki Proqram Meneceri
 activitystreamContributors6Title = Bulud Xidmətləri Mühəndisi
