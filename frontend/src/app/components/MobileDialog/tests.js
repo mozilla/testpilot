@@ -45,7 +45,7 @@ describe("app/components/MobileDialog", () => {
     expect(sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "SMS Modal Interactions",
       eventAction: "dialog dismissed",
-      eventLabel: "cancel Send link to device dialog",
+      eventLabel: "cancel",
       dimension11: experiment.slug,
       dimension13: "Experiment Detail"
     }]);
@@ -57,7 +57,7 @@ describe("app/components/MobileDialog", () => {
     expect(sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "SMS Modal Interactions",
       eventAction: "dialog dismissed",
-      eventLabel: "cancel Send link to device dialog",
+      eventLabel: "cancel",
       dimension11: experiment.slug,
       dimension13: "Experiment Detail"
     }]);
