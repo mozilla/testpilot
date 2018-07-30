@@ -314,11 +314,9 @@ function sendToGA(type, dataIn, evt = null) {
     const chosenTest = getChosenTest();
     data.hitType = type;
     data.hitCallback = hitCallback;
-    if (typeof window !== "undefined") {
-      data.dimension1 = (window.localStorage.getItem("hasAddon") === "true");
-      data.dimension2 = installed = JSON.parse(window.localStorage.installations);
-      data.dimension3 = Object.keys(installed).length;
-    }
+    data.dimension1 = (window.localStorage.getItem("hasAddon") === "true");
+    data.dimension2 = installed = JSON.parse(window.localStorage.installations);
+    data.dimension3 = Object.keys(installed).length;
     data.dimension8 = chosenTest.test;
     data.dimension9 = chosenTest.variant;
     data.dimension10 = getBreakpoint(window.innerWidth);
