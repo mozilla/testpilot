@@ -105,6 +105,7 @@ nomore404sDetails1Copy = Un service qui vous est offert par nos amis de the Inte
 nomore404sContributors1Title = Développeur Wayback Machine chez The Internet Archive
 nomore404sContributors2Title = Directeur Wayback Machine chez The Internet Archive
 nomore404sContributors3Title = Développeur expérimenté pour le système de récupération des pages chez The Internet Archive
+notesDescriptionMobile = Prenez des notes pendant que vous naviguez, elles se synchronisent avec notre nouvelle appli Android.
 notesLegalnotice = En poursuivant, vous acceptez les <a>conditions</a> et la <a>politique de confidentialité</a> de Test Pilot, ainsi que <a>la politique de confidentialité</a> de Notes.
 notesMeasurements0 = Notes collecte des informations à propos de votre utilisation comme par exemple la fréquence à laquelle vous créez des notes, combien de temps vous mettez à les éditer, le nombre de caractères que vous sauvegardez, si vous utilisez des fonctions de mise en forme (comme la mise en gras ou l’utilisation de styles de texte).
 notesMeasurements1 = Notes collecte aussi des informations relatives à votre interaction avec ce module comme par exemple comment vous y accédez et sur quels boutons vous pouvez cliquer.
