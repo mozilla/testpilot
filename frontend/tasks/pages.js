@@ -236,6 +236,7 @@ function generateStaticPageFromMarkdown(pageName, pageParam, markdown, params) {
       <ReactMarkdown source={markdown} />
     </LayoutWrapper>
 
+    <div style={{height:"200px"}}></div>
     <Footer />
     <script src="/static/app/vendor.js"></script>
     <script src="/static/scripts/locale.js"></script>
