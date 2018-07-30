@@ -98,13 +98,19 @@ emailOptInDialogErrorTitle = Åh nej!
 mobileDialogTitle = Ladda ner Appen
 mobileDialogMessageIOS = Ladda ner <b>{ $title }</b> från iOS Appstore.
 mobileDialogMessageAndroid = Ladda ner <b>{ $title }</b> från Google Play Butik
+mobileDialogInstructionsSMS = Ange ditt telefonnummer eller e-postadress för att skicka en nedladdningslänk till din telefon:
+mobileDialogInstructions = Ange din e-postadress för att skicka en nedladdningslänk till din telefon:
 mobileDialogPlaceholder = Ange din e-postadress
 mobileDialogPlaceholderSMS = Ange ditt telefonnummer eller e-postadress
+mobileDialogButton = Skicka mig nedladdningslänken
 mobileDialogButtonSuccess = Tack!
 mobileDialogSuccessMain = Nerladdningslänk skickad!
+mobileDialogSuccessSecondarySMS = Kontrollera din enhet för e-postmeddelandet eller textmeddelandet.
+mobileDialogSuccessSecondary = Kontrollera din enhet för e-postmeddelandet.
 mobileDialogAnotherDeviceLink = Skicka till en annan enhet
 mobileDialogError = Ange en giltig e-postadress:
 mobileDialogErrorSMS = Ange ett giltigt telefonnummer eller e-postadress:
+mobileDialogNoticeSMS = SMS-tjänst tillgänglig endast i vissa länder. SMS- och datapriser kan tillkomma. Den avsedda mottagaren av e-post eller SMS måste ha samtyckt. { $learnMore }
 
 ## Featured experiment.
 
