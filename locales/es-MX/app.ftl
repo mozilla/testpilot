@@ -93,6 +93,25 @@ emailOptInConfirmationTitle = Correo electrónico enviado
 emailOptInConfirmationClose = Vamos a los experimentos...
 emailOptInDialogErrorTitle = ¡Oh no!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Obtén la aplicación
+mobileDialogMessageIOS = Descarga <b>{ $title }</b> desde iOS App Store. 
+mobileDialogMessageAndroid = Descarga <b>{ $title }</b> desde la Google Play Store.
+mobileDialogInstructionsSMS = Ingresa tu número de teléfono o tu correo electrónico para enviar un enlace de descarga a tu teléfono:
+mobileDialogInstructions = Ingresa tu correo electrónico para enviar un enlace de descarga a tu teléfono:
+mobileDialogPlaceholder = Ingresa tu correo electrónico
+mobileDialogPlaceholderSMS = Ingresa tu teléfono/correo electrónico
+mobileDialogButton = Envíame el enlace de descarga
+mobileDialogButtonSuccess = ¡Gracias!
+mobileDialogSuccessMain = ¡Enlace de descarga enviado!
+mobileDialogSuccessSecondarySMS = Verifica tu dispositivo por el correo electrónico  o el mensaje de texto.
+mobileDialogSuccessSecondary = Verifica tu dispositivo por el correo electrónico.
+mobileDialogAnotherDeviceLink = Enviar a otro dispositivo
+mobileDialogError = Ingresar un correo electrónico válido:
+mobileDialogErrorSMS = Ingresa un número de teléfono o correo electrónico válido:
+mobileDialogNoticeSMS = El servicio de SMS está disponible solo en ciertos países. Podrían aplicarse tarifas de SMS y de datos. El receptor del correo electrónico o el SMS debe aceptar. { $learnMore }
+
 ## Featured experiment.
 
 moreDetail = Ver detalles
@@ -177,13 +196,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Firefox / web / experimento móvil
-experimentPlatformWebAddon = Firefox / experimento web
-experimentPlatformWebMobile = web / experimento móvil
-experimentPlatformAddonMobile = Firefox / experimento móvil
-experimentPlatformWeb = experimento web
 experimentPlatformAddon = experimento Firefox
-experimentPlatformMobileApp = experimento móvil
+experimentPlatformAndroid = Experimento de Android
+experimentPlatformIos = Experimento iOS
+experimentPlatformWeb = experimento web
+experimentPlatformAddonWeb = Experimento de Firefox/web
+experimentPlatformAddonAndroid = Experimento de Android/Firefox
+experimentPlatformAddonIos = Experimento de iOS/Firefox
+experimentPlatformAddonAndroidIos = Experimento de Android/iOS/Firefox
+experimentPlatformAddonAndroidWeb = Experimento de Android/Firefox/web
+experimentPlatformAddonAndroidIosWeb = Experimento de Android/iOS/Firefox/web
+experimentPlatformAndroidWeb = Experimento de Android/web
+experimentPlatformAndroidIos = Experimento de Android/iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
