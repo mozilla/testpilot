@@ -310,9 +310,13 @@ function sendToGA(type, dataIn, evt = null) {
     }
   };
   if (window.ga && ga.loaded) {
+    const installed = JSON.parse(window.localStorage.installations);
     const chosenTest = getChosenTest();
     data.hitType = type;
     data.hitCallback = hitCallback;
+    data.dimension1 = (window.localStorage.getItem("hasAddon") === "true");
+    data.dimension2 = installed;
+    data.dimension3 = Object.keys(installed).length;
     data.dimension8 = chosenTest.test;
     data.dimension9 = chosenTest.variant;
     data.dimension10 = getBreakpoint(window.innerWidth);
