@@ -436,16 +436,13 @@ export class ExperimentDetail extends React.Component {
 
   doShowMobileAppDialog = (evt: MouseEvent) => {
     evt.preventDefault();
-    const { experiment, hasAddon, installed }  = this.props;
+    const { experiment }  = this.props;
 
     this.setState({ showMobileDialog: true });
     this.props.sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "open mobile dialog",
       eventLabel: experiment.title,
-      dimension1: hasAddon,
-      dimension2: Object.keys(installed).length > 0,
-      dimension3: Object.keys(installed).length,
       dimension11: experiment.slug,
       dimension13: (window.location.pathname === "/") ? "Featured Experiment" : "Experiment Detail"
     });
