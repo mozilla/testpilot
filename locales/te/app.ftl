@@ -200,6 +200,8 @@ completedDateLabel = ప్రయోగం ముగింపు తేదీ: <
 
 newsletterFormEmailPlaceholder =
     .placeholder = ఇక్కడ మీ ఇమెయిల్
+newsletterFormDisclaimer = మేము కేవల౦ Test Pilotకి స౦బ౦ధి౦చిన సమాచారాన్నే మీకు ప౦పుతాము.
+newsletterFormPrivacyNotice = <a>ఈ గోప్యతా విధానం</a>లో వివరించిన విధంగా Mozilla నా సమాచారాన్ని సంబాళించడానికి నేను ఒప్పుకుంటున్నాను.
 newsletterFormSubmitButton = ఇప్పుడే సైన్ అప్ చేయండి
 newsletterFormSubmitButtonSubmitting = సమర్పిస్తోంది…
 

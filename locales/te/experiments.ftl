@@ -1,3 +1,4 @@
+activitystreamDetails0Copy = కొత్త ట్యాబు మీద నొక్కండి, మీ అభిమాన సైట్లు ఒక నొక్కు చేరువ లోనే ఉంటాయి.
 activitystreamDetails1Copy = మీరు ఎక్కడ ఉన్నారో చూసుకుంటే, మీరు ఎక్కడికి వెళ్తున్నారో తెలుసుకోవచ్చు.
 activitystreamContributors0Title = సాఫ్ట్‌వేర్ ఇంజనీర్
 activitystreamContributors1Title = వెబ్ ఇంజనీర్
