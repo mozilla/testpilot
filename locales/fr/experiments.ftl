@@ -65,6 +65,7 @@ firefoxlockboxDetails0Copy = Accédez aux noms d’utilisateur et aux mots de pa
 firefoxlockboxDetails1Copy = Gérez vos comptes depuis Firefox, les changements seront automatiquement synchronisés par Firefox Lockbox.
 firefoxlockboxDetails2Copy = Filtrez et triez vos comptes afin de repérer en un clin d’œil celui dont vous avez besoin.
 firefoxlockboxContributors1Title = Responsable de l’ingénierie
+firefoxlockboxContributors3Title = Architecte logiciel
 firefoxlockboxContributors4Title = Développeur mobile
 firefoxlockboxContributors5Title = Développeur confirmé
 firefoxlockboxContributors6Title = Développeur mobile
