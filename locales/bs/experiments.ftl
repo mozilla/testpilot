@@ -135,6 +135,7 @@ notesContributors8Title = Doprinosilac zajednice
 notesContributors9Title = Doprinosilac zajednice
 notesContributors10Title = Softverski inženjer
 notesContributors11Title = Softvision QA
+notesContributors12Title = Dizajner
 pageshotDescription = Intuitivni snimci ekrana direktno iz pretraživača. Snimite, sačuvajte i dijelite snimke ekrana dok pretražujete web koristeći Firefox.
 pageshotIntroduction = <p>Page Shot vam omogućava da snimite, dijelite i pregledate snimke ekrana - bez napuštanja Firefoxa.</p><ul><li><strong>Mrežni pregled:</strong> Pregledajte slike sačuvanih snimaka</li><li><strong>Pametna pretraga:</strong> Pronađite snimak ekrana koji želite samo sa ključnom riječi. Page Shot popisuje naslove strana i teksta u snimcima ekrana.</li><li><strong>Dijeljenje jednim korakom:</strong> Postavite vaš snimak na socijalne mreže ili iskopirajte djeljivu vezu odmah iz vrha vašeg pretraživača.</li></ul>
 pageshotDetails0Copy = Odaberite prostor na slici i sačuvajte ako vam se dopada šta vidite, u suprotnom otkažite bez čuvanja.
