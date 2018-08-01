@@ -205,6 +205,13 @@
     padding: 20px 10px 10px;
   }
 
+  header {
+    display: flex;
+    justify-content: center;
+    line-height: 1;
+    flex-direction: column;
+  }
+
   h1 {
 
     @include respond-to('small') {
@@ -214,11 +221,14 @@
     display: flex;
     flex: 1;
     font-weight: $weight-light;
-    margin: $grid-unit * .75;
+    margin: 0 $grid-unit * .75;
   }
 
   h4 {
-    margin: 0;
+    color: $grey-80;
+    font-size: 18px;
+    font-weight: normal;
+    margin: $grid-unit * .25 $grid-unit * .75 0;
   }
 
   .upgrade-notice {
