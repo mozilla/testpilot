@@ -19,6 +19,8 @@ footerLinkAboutHeader = Informace
 footerLinkAboutUs = O nás
 footerLinkSupportHeader = Podpora
 footerLinkDownload = Stáhnout Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Mobil
 footerLinkFeatures = Funkce
 footerLinkBeta = Beta, Nightly, Developer Edition
 footerLinkRetire = Odinstalovat Test Pilot
@@ -90,6 +92,13 @@ emailOptInMessage = Nechce si posílat informace o nových experimentech a výsl
 emailOptInConfirmationTitle = E-mail odeslán
 emailOptInConfirmationClose = Podívat se na experimenty...
 emailOptInDialogErrorTitle = Ale ne!
+
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Stáhnout aplikaci
+mobileDialogMessageIOS = Stáhnout <b>{ $title }</b> z iOS App Store.
+mobileDialogMessageAndroid = Stáhnout <b>{ $title }</b> z obchodu Google Play.
+mobileDialogPlaceholder = Zadejte svoji e-mailovou adresu
 
 ## Featured experiment.
 
@@ -175,13 +184,8 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Experiment pro Firefox, web i mobily
-experimentPlatformWebAddon = Experiment pro Firefox a web
-experimentPlatformWebMobile = Experiment pro web a mobily
-experimentPlatformAddonMobile = Experiment pro Firefox a mobily
-experimentPlatformWeb = Experiment pro web
 experimentPlatformAddon = Experiment pro Firefox
-experimentPlatformMobileApp = Experiment pro mobily
+experimentPlatformWeb = Experiment pro web
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
