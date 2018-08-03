@@ -16,7 +16,7 @@
     @include flex-container(column, space-around, flex-start);
     background: url('./img/warning.svg') no-repeat left;
     background-size: ($grid-unit * 2) auto;
-    margin: $grid-unit 0 0;
+    margin: $grid-unit;
     min-height: $grid-unit * 2;
     padding-left: $grid-unit * 3;
 
