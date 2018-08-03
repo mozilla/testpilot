@@ -123,7 +123,7 @@ export default class MobileDialog extends React.Component {
             <Localized id="mobileDialogTitle">
               <h3 className="modal-header">Get the App</h3>
             </Localized>
-            <div className="modal-cancel" onClick={this.close}/>
+            <div className="modal-cancel" onClick={() => this.close("cancel")}/>
           </header>
           <div className="modal-content centered default-background">
             <div className="header-wrapped">
@@ -154,7 +154,7 @@ export default class MobileDialog extends React.Component {
           <p className="success-secondary">{secondaryText}</p>
         </Localized>
         <Localized id="mobileDialogButtonSuccess">
-          <button className="button large secondary" onClick={this.close}>Thanks!</button>
+          <button className="button large secondary" onClick={() => this.close("close after success")}>Thanks!</button>
         </Localized>
         <Localized id="mobileDialogAnotherDeviceLink">
           <a href="#" className="send-to-device" onClick={this.reset}>Send to another device</a>
@@ -302,14 +302,18 @@ export default class MobileDialog extends React.Component {
     this.fetchCountryCode();
   }
 
-  close = () => {
+  close = (label: string) => {
+    if (label === "cancel" && this.state.isError) {
+      label = "close after error";
+    }
+
     const { onCancel, sendToGA, fromFeatured, experiment } = this.props;
     if (onCancel) {
       onCancel();
       sendToGA("event", {
         eventCategory: "SMS Modal Interactions",
         eventAction: "dialog dismissed",
-        eventLabel: "cancel Send link to device dialog",
+        eventLabel: label,
         dimension11: experiment.slug,
         dimension13: fromFeatured ? "Featured Experiment" : "Experiment Detail"
       });
@@ -317,6 +321,6 @@ export default class MobileDialog extends React.Component {
   }
 
   handleKeyDown(e: Object) {
-    if (e.key === "Escape") this.close();
+    if (e.key === "Escape") this.close("cancel");
   }
 }

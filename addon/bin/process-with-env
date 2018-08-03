@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require("fs-extra");
+const packageInfo = require("../package.json");
 const manifestBase = require("../manifest-base.json");
 const manifestFilename = __dirname + "/../manifest.json";
 
@@ -25,6 +26,7 @@ const currentEnvironment = {
 
 fs.writeJson(manifestFilename, Object.assign(manifestBase, {
   name: newName,
+  version: packageInfo.version,
   applications: {
     gecko: Object.assign(manifestBase.applications.gecko, {id: newId})
   },

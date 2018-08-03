@@ -79,8 +79,7 @@ export const MobileTriggerButton = ({
   return (
     <a
       className={`button mobile-trigger ${color} icon-button ${optionalClass}`}
-      onClick={doShowMobileAppDialog}
-    >
+      onClick={doShowMobileAppDialog}>
       <img src={iconExperimentTypeMobileWhite} />
       <Localized id="mobileDialogTitle">
         <span>Get the App</span>

@@ -441,9 +441,10 @@ export class ExperimentDetail extends React.Component {
     this.setState({ showMobileDialog: true });
     this.props.sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
-      eventAction: "mobile send click",
+      eventAction: "open mobile dialog",
       eventLabel: experiment.title,
-      dimension11: experiment.slug
+      dimension11: experiment.slug,
+      dimension13: (window.location.pathname === "/") ? "Featured Experiment" : "Experiment Detail"
     });
   };
 

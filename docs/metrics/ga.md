@@ -61,12 +61,6 @@ Here are the current events on the website as of this writing, grouped by their 
 | Click `Wiki` from settings | drop-down menu | wiki |
 | Click `File Issue` from settings | drop-down menu | File Issue |
 
-#### `ExperimentsPage Interactions`
-
-| Description | `eventAction` | `eventLabel` |
-|-------------|---------------|--------------|
-| Click on experiment from landing page | Open detail page | `{experiment title}` |
-
 #### `ExperimentDetailsPage Interactions`
 
 | Description | `eventAction` | `eventLabel` |
@@ -145,12 +139,6 @@ Here are the current events on the website as of this writing, grouped by their 
 |-------------|---------------|--------------|
 | Click on Twitter link in footer | social link clicked | Twitter |
 | Click on GitHub link in footer | social link clicked | GitHub |
-
-#### `ShareView Interactions`
-
-| Description | `eventAction` | `eventLabel` |
-|-------------|---------------|--------------|
-| Click on a button in the Share section | button click | {facebook,twitter,email,copy} |
 
 #### `PostInstall Interactions`
 
