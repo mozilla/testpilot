@@ -88,7 +88,7 @@ notFoundHeader = Four Oh Four!
 ## A modal prompt to sign up for the Test Pilot newsletter.
 
 emailOptInDialogTitle = Welcome to Test Pilot!
-emailOptInMessage = Find out about new experiments and see test results for experiments you've tried.
+emailOptInMessage = Find out about new experiments and see test results for experiments you’ve tried.
 emailOptInConfirmationTitle = Email Sent
 emailOptInConfirmationClose = On to the experiments...
 emailOptInDialogErrorTitle = Oh no!
@@ -153,7 +153,7 @@ experimentPreFeedbackLinkCopy = Give feedback about the { $title } experiment
 ## A splash shown on top of the experiment page when Test Pilot is not installed.
 
 experimentPromoHeader = Ready for Takeoff?
-experimentPromoSubheader = We're building next-generation features for Firefox. Install Test Pilot to try them!
+experimentPromoSubheader = We’re building next-generation features for Firefox. Install Test Pilot to try them!
 
 ## The experiment detail page.
 
@@ -239,7 +239,7 @@ restartIntroThree = Select your experiments
 
 eolIntroMessage = { $title } is ending on { $completedDate }
 eolNoticeLink = Learn more
-eolDisableMessage = The { $title } experiment has ended. Once you uninstall it you won't be able to re-install it through Test Pilot again.
+eolDisableMessage = The { $title } experiment has ended. Once you uninstall it you won’t be able to re-install it through Test Pilot again.
 completedDateLabel = Experiment end date: <b>{ $completedDate }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
@@ -252,7 +252,7 @@ incompatibleSubheader = We recommend <a>disabling these add-ons</a> before activ
 newsletterFormEmailPlaceholder =
     .placeholder = Your email here
 newsletterFormDisclaimer = We will only send you Test Pilot-related information.
-newsletterFormPrivacyNotice = I'm okay with Mozilla handling my info as explained in <a>this privacy notice</a>.
+newsletterFormPrivacyNotice = I’m okay with Mozilla handling my info as explained in <a>this privacy notice</a>.
 newsletterFormSubmitButton = Sign Up Now
 newsletterFormSubmitButtonSubmitting = Submitting...
 
@@ -260,9 +260,9 @@ newsletterFormSubmitButtonSubmitting = Submitting...
 
 newsletterFooterError = There was an error submitting your email address. Try again?
 newsletterFooterHeader = Stay Informed
-newsletterFooterBody = Find out about new experiments and see test results for experiments you've tried.
+newsletterFooterBody = Find out about new experiments and see test results for experiments you’ve tried.
 newsletterFooterSuccessHeader = Thanks!
-newsletterFooterSuccessBody = If you haven't previously confirmed a subscription to a Mozilla-related newsletter you may have to do so. Please check your inbox or your spam filter for an email from us.
+newsletterFooterSuccessBody = If you haven’t previously confirmed a subscription to a Mozilla-related newsletter you may have to do so. Please check your inbox or your spam filter for an email from us.
 
 ## A warning shown to users when the experiment is not available in their language
 
@@ -271,7 +271,7 @@ localeWarningSubtitle = You can still enable it if you like.
 
 ## An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 
-experimentsListNoneInstalledHeader = Let's get this baby off the ground!
+experimentsListNoneInstalledHeader = Let’s get this baby off the ground!
 experimentsListNoneInstalledSubheader = Ready to try a new Test Pilot experiment? Select one to enable, take it for a spin, and let us know what you think.
 experimentsListNoneInstalledCTA = Not interested? <a>Let us know why</a>.
 
