@@ -11,22 +11,16 @@ description: "See where the web takes you. Advance notes the webpage you’re on
 details:
   -
     copy: "Advance shows Read Next suggestions in your browser's sidebar."
-    image: /static/images/experiments/advance/details/detail1.png
+    image: /static/images/experiments/advance/details/detail1.jpg
+    copy_l10nsuffix: "launch"
   -
-    copy: "Open a new tab, and the Advance sidebar updates with new For You recommendations based on your recent browsing history."
-    image: /static/images/experiments/advance/details/detail2.png
+    copy: "The sidebar's For You section shows content recommended for you based on your recent browsing history."
+    image: /static/images/experiments/advance/details/detail2.jpg
+    copy_l10nsuffix: "launch"
   -
-    copy: "Hide the sidebar and access Read Next anytime from the Firefox toolbar. When Advance finds content related to your current page, a green badge appears on the Advance toolbar icon."
-    image: /static/images/experiments/advance/details/detail3.png
-  -
-    copy: "Select the Advance toolbar icon to open the Read Next panel."
-    image: /static/images/experiments/advance/details/detail4.png
-  -
-    copy: "When Advance finds content you might like anytime, the toolbar icon shows a red badge."
-    image: /static/images/experiments/advance/details/detail5.png
-  -
-    copy: "Select the icon to reveal the panel with For You content."
-    image: /static/images/experiments/advance/details/detail6.png
+    copy: "Open a new tab, and the Advance sidebar updates with new For You recommendations."
+    image: /static/images/experiments/advance/details/detail3.jpg
+    copy_l10nsuffix: "launch"
 discourse_url: "https://discourse.mozilla-community.org/c/test-pilot/advance"
 gradient_start: "#007991"
 gradient_stop: "#78ffd6"
@@ -56,11 +50,12 @@ title: Advance
 tour_steps:
   -
     copy: "Keep recommended content close at hand in a sidebar."
-    image: /static/images/experiments/advance/tour/tour1.png
+    image: /static/images/experiments/advance/tour/tour1.jpg
   -
-    copy: "Or access suggestions only when you want from the Advance toolbar icon."
-    image: /static/images/experiments/advance/tour/tour2.png
+    copy: "Or access suggestions when you want from the Advance toolbar icon."
+    copy_l10nsuffix: "launch"
+    image: /static/images/experiments/advance/tour/tour2.jpg
   -
     copy: "You can always give us feedback or disable Advance from Test Pilot."
-    image: /static/images/experiments/shared/tour-final.png
+    image: /static/images/experiments/advance/tour/tour3.jpg
 xpi_url: "https://testpilot.firefox.com/files/support@laserlike.com/latest"
