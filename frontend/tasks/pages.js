@@ -26,6 +26,14 @@ require.extensions[".svg"] = () => "";
 require.extensions[".png"] = () => "";
 require.extensions[".jpg"] = () => "";
 
+// Absolute paths to localized pages sourced from node_modules mapped to page names
+const NODE_MODULES_PAGES = Object.entries({
+  "node_modules/legal-docs/firefox_testpilot_PrivacyNotice/": "privacy",
+  "node_modules/legal-docs/firefox_testpilot_Terms/": "terms"
+}).reduce((accum, [relativePath, pageName]) => ({
+  ...accum, [path.join(__dirname, "../..", relativePath)]: pageName
+}), {});
+
 gulp.task("pages-misc", () => {
   // We just need a dummy file to get a stream going; we're going to ignore
   // the contents in buildLandingPage
@@ -48,9 +56,12 @@ gulp.task("pages-experiments", () => {
 });
 
 gulp.task("pages-compiled", () => {
-  return gulp.src(config.SRC_PATH + "pages/**/*.md")
-             .pipe(convertToCompiledPage())
-             .pipe(gulp.dest(config.DEST_PATH));
+  const localPages = [ config.SRC_PATH + "pages/**/*.md" ];
+  const nodeModulePages = Object.keys(NODE_MODULES_PAGES)
+    .map(path => path + "**/*.md")
+  return gulp.src(localPages.concat(nodeModulePages))
+    .pipe(convertToCompiledPage())
+    .pipe(gulp.dest(config.DEST_PATH));
 });
 
 gulp.task("pages-contributing", () => {
@@ -140,7 +151,9 @@ function convertToCompiledPage() {
   return through.obj(function compiledConvert(file, encoding, callback) {
     const p = path.parse(file.path);
     const locale = p.name;
-    const page = path.basename(p.dir);
+    const page = (file.base in NODE_MODULES_PAGES)
+      ? NODE_MODULES_PAGES[file.base]
+      : path.basename(p.dir);
     const noExtension = page.slice(0, page.indexOf("."));
     const pageContent = generateStaticPageFromMarkdown(
       noExtension, "",
