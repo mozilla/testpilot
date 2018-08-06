@@ -77,7 +77,7 @@ def test_enable_and_disable_experiment(
     selenium.add_cookie({'name': 'updates-last-viewed-date',
                          'value': datetime.datetime.now().isoformat(),
                          'max_age': 120,
-                         'domain': 'example.com'})
+                         'domain': 'testpilot.dev.mozaws.net'})
     experiment = page.find_experiment(experiment='Dev Example')
     experiment.install_and_enable()
     firefox.browser.wait_for_notification(
