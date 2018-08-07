@@ -194,27 +194,6 @@ introduction: >
 
 ![Example use of introduction](img/introduction.png)
 
-## `news_updates`
-An object describing a news update for an experiment. May link to a blog post.
-
-``` yaml
-news_updates:
-  -
-    slug: min-vid-update-1
-    title: My Update title
-    link: 'https://blog.mozilla.org/testpilot/example'
-    created: '2017-06-01T12:00:00Z'
-    published: '2017-06-02T12:00:00Z'
-    image: 'images/link/to/image.jpg' # optional
-    major: true # optional
-    dev: false
-    content: >
-      Example content goes here
-```
-see also:[General news updates](#general-news-updates)
-
-![Example use of news_updates](img/news_update.png)
-
 ## `video_url`
 
 If there's a youtube video for the experiment use this field. Note that this should be the embed URL
@@ -624,24 +603,3 @@ Enabling / disabling the rating feedback prompt is the only option right now. Va
 testpilot_options:
   ratings: enabled
 ```
-
-# `General News Updates`
-General news updates about testpilot can be added in `content/news_updates.yaml`.
-These will show up on the `/experiments` page in reverse chronilogical order along with
-the experiment updates.
-
-``` yaml
-# News updates for Test Pilot in general expressed as a YAML list
- -
-   slug: general-update-1
-   title: Example title
-   link: https://blog.mozilla.org/testpilot/example
-   created: '2017-06-01T12:00:00Z'
-   published: '2017-06-02T12:00:00Z'
-   image: 'images/link/to/image.jpg' # optional
-   major: true # optional
-   content: >
-     Example content goes here
-```
-
-![Example general news update](img/general_news_update.png)
