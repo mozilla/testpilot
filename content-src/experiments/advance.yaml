@@ -41,7 +41,7 @@ measurements:
 order: 1
 platforms:
   - addon
-privacy_notice_url: "https://github.com/laserlikeinc/firefox-addon/blob/docs/metrics.md"
+privacy_notice_url: "https://github.com/LaserlikeInc/firefox-addon/blob/master/metrics.md"
 privacy_preamble: "The Advance Test Pilot experiment is a collaboration between Laserlike and Mozilla."
 slug: advance
 subtitle: "Powered by Laserlike"
