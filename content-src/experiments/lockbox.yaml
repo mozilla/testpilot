@@ -31,18 +31,6 @@ contribute_url: 'https://github.com/mozilla-lockbox/lockbox-ios'
 bug_report_url: 'https://github.com/mozilla-lockbox/lockbox-ios/issues'
 discourse_url: 'https://discourse.mozilla.org/c/test-pilot/lockbox'
 
-news_updates:
-  -
-    slug: lockbox-update
-    title: We bid farewell to the Lockbox extension for Firefox desktop
-    link: 'https://medium.com/404' # TODO: actual URL
-    created: '2018-08-07T23:00:00Z'
-    published: '2017-08-07T23:00:00Z'
-    major: true # optional
-    dev: false
-    content: >
-      How did we get here? It's been a process of discovery...
-
 details:
   -
     image: /static/images/experiments/lockbox/details/access.png
