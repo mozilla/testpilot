@@ -106,6 +106,7 @@ module.exports = {
     poll: 1000
   },
   node: {
+    fs: "empty",
     crypto: false
   },
   stats: {

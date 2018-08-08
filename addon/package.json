@@ -2,7 +2,7 @@
   "title": "Test Pilot",
   "name": "testpilot-addon",
   "id": "@testpilot-addon",
-  "version": "3.0.4",
+  "version": "3.0.4vb887332",
   "private": true,
   "description": "Test Pilot is a privacy-sensitive user research program focused on getting new features into Firefox faster.",
   "repository": "mozilla/testpilot",
@@ -13,6 +13,7 @@
   "author": "Mozilla (https://mozilla.org/)",
   "license": "MPL-2.0",
   "devDependencies": {
+    "babel-eslint": "^8.2.6",
     "cross-env": "5.0.1",
     "eslint": "4.15.0",
     "eslint-plugin-import": "2.8.0",
