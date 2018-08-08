@@ -102,6 +102,9 @@ module.exports = {
     // filename: "[name].[hash].js"
     filename: "[name].js"
   },
+  watchOptions: {
+    poll: 1000
+  },
   node: {
     crypto: false
   },
