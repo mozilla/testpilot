@@ -301,7 +301,12 @@ function sendToGA(type, dataIn, evt = null) {
     }
   };
   if (window.ga && ga.loaded) {
-    const installed = JSON.parse(window.localStorage.installations);
+    let installed = {};
+    try {
+      installed = JSON.parse(window.localStorage.installations);
+    } catch (e) {
+      /* no-op */
+    }
     const chosenTest = getChosenTest();
     data.hitType = type;
     data.hitCallback = hitCallback;
