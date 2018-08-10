@@ -23,6 +23,7 @@ advanceIntroduction = 隨您上網時，Advance 會在側邊欄提供即時的�
 advanceLegalnotice = 若繼續，代表您同意<a>使用條款</a>、<a>Test Pilot 的隱私權保護政策</a>以及 <a>Advance 的隱私權保護政策</a>。
 advanceMeasurements0 = 敏感性資料: 安裝完成後，Laserlike 將會取得您的上網紀錄；在隱私瀏覽或暫停模式中的資料則不會被送出。若實驗結束，或您停用本實驗，也不會再送出資料。Laserlike 也會取得您的 IP 位置、日期、時間戳記、以及在各個頁面停留的時間。此資料將用來索引網路上的公開網頁網址。
 advanceMeasurements1 = 控制項目: 設定畫面當中將允許您要求 Laserlike 提供他們從此實驗中，取得哪些有關您的資料。您也可以刪除 Cookie、上網記錄，以及 Laserlike 相關帳號資訊。
+advanceMeasurements2 = 技術與互動資料: Mozilla 與 Laserlike 雙方都會收到推薦內容的點擊率、您的停留時間長度、您如何與側邊欄和此實驗互動，以及您的作業系統、瀏覽器、語系等技術資料。
 advancePrivacypreamble = 本 Test Pilot 實驗 Advance 是由 Laserlike 與 Mozilla 共同合作推出。
 advanceSubtitle = Powered by Laserlike
 advanceToursteps0Copy = 在側邊欄中快速看見推薦內容。
