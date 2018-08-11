@@ -23,6 +23,7 @@ advanceIntroduction = Advance dodawa poručenja we woprawdźitym času za wašu 
 advanceLegalnotice = Hdyž pokročujeće, zwoliće do <a>wuměnjenjow</a> a prawidłow <a>priwatnosće</a> Test Pilot a <a>prawidłow priwatnosće Advance</a>.
 advanceMeasurements0 = Sensibelne daty: Laserlike po instalaciji wašu přehladowansku historiju dóstanje. Jeli sće w priwatnym abp přestawkowym modusu, eksperiment spadnje abo wy jón znjemóžniće, so žane daty njesćelu. Laserlike tež waše IP-adresy, datumowe/časowe kołki a čas, kotryž sće na webstronach přebył, dóstanje. Tute daty so wužiwaja, zo bychu URL indikowali, kotrež su zjawnje widźomne we webje.
 advanceMeasurements1 = Kontrole: Nastajenja wam zmóžnjeja postajić, kotre daty Laserlike wo was z tutoho eksperimenta dóstanje. Móžeće tež placki, přehladowansku historiju a přisłušne kontowe informacije Laserlike zhašeć.
+advanceMeasurements2 = Technhiske a interakciske daty: Mozilla kaž tež Laserlike dóstanu kliknjenske raty a čas, kotryž sće z doporučenym wobsahom přebywał, daty wo tym, kak z bóčnicu a eksperimentom interagujeće a techniske daty wo wašim dźěłowym systemje, wobhladowaku a lokali.
 advancePrivacypreamble = Eksperiment Test Pilot Advance je zhromadne dźěło mjez Laserlike a Mozilla.
 advanceSubtitle = Powered by Laserlike
 advanceToursteps0Copy = Dźeržće doporučeny wobsah w bóćnicy k ruce.
