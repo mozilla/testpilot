@@ -15,6 +15,7 @@ activitystreamContributors9Title = Product Manager
 activitystreamContributors10Title = Engineering Manager
 activitystreamContributors11Title = Software Engineer
 activitystreamContributors12Title = Senior UX Designer
+advanceDescription = Vai dove ti porta il Web. Advance esamina la pagina web in cui stai navigando e ti offre consigli sulla prossima cosa che potresti voler leggere.
 advancePrivacypreamble = L’esperimento Advance per Test Pilot è una collaborazione tra Laserlike e Mozilla.
 advanceSubtitle = Con tecnologia Laserlike
 advanceToursteps0Copy = Mantieni i contenuti consigliati a portata di mano nella barra laterale.
