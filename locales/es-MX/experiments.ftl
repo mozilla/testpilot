@@ -15,6 +15,7 @@ activitystreamContributors9Title = Director de Producto
 activitystreamContributors10Title = Director de Ingeniería
 activitystreamContributors11Title = Ingeniero de Software
 activitystreamContributors12Title = Diseñador Principal de UX
+advanceDescription = Mira hacía dónde te lleva la web. Advance señala la página web que estás viendo y recomienda lo siguiente que quisieras leer.
 cliqzDescription = Obtén resultados de búsqueda más rápidos. Cliqz muestra sugerencias debajo de la barra de direcciones cuando escribes. Todo eso manteniendo tu privacidad.
 cliqzIntroduction = Obtén resultados de búsqueda más rápidamente, directamente en el navegador. Comienza a escribir y ve las sugerencias de la Web en tiempo real, justo debajo de la barra de direcciones. Y como Cliqz evita recoger datos personales o crear perfiles de usuario, tus resultados son más privados.
 cliqzPrivacypreamble = El experimento Cliqz Test Pilot nace de la colaboración entre Cliqz GmbH y Mozilla. Cliqz está diseñado para proteger tu privacidad y evitar que recopilen información sensible que pueda utilizarse para crear perfiles de usuarios. Sin embargo, es muy difícil que este tipo de información sea anónima y se podría llegar a identificar a personas específicas.
