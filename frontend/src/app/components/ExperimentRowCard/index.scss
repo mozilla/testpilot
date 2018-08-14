@@ -42,7 +42,7 @@
   }
 
   header {
-    @include flex-container(row, space-between, center);
+    @include flex-container(row, space-between, flex-start);
     margin-bottom: $grid-unit * .5;
     width: 100%;
   }
