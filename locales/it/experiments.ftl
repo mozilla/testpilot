@@ -23,6 +23,7 @@ advanceIntroduction = Advance offre contenuti consigliati in tempo reale, visual
 advanceLegalnotice = Procedendo accetti i <a>termini d’utilizzo</a>, l’<a>informativa sulla privacy</a> di Test Pilot e l’<a>informativa sulla privacy di Advance</a>.
 advanceMeasurements0 = Dati sensibili: dopo l’installazione, Laserlike riceverà la tua cronologia di navigazione. Nessun dato viene inviato se sei in navigazione anonima o se è attiva la modalità pausa, se l’esperimento è scaduto o se viene disattivato. Laserlike riceve anche gli indirizzi IP, date/timestamp e il tempo trascorso sulle pagine web. Questi dati vengono utilizzati per indicizzare gli URL visibili pubblicamente sul Web.
 advanceMeasurements1 = Controlli: le impostazioni ti permettono di richiedere i dati che Laserlike riceve su di te attraverso questo esperimento. Puoi anche eliminare i cookie, la cronologia di navigazione e le informazioni relative all’account Laserlike.
+advanceMeasurements2 = Dati tecnici e interazione: sia Mozilla sia Laserlike riceveranno il conteggio dei clic e il tempo trascorso sui contenuti consigliati; dati su come interagisci con la barra laterale e con l’esperimento; dati tecnici relativi al sistema operativo, al browser, alla lingua.
 advancePrivacypreamble = L’esperimento Advance per Test Pilot è una collaborazione tra Laserlike e Mozilla.
 advanceSubtitle = Con tecnologia Laserlike
 advanceToursteps0Copy = Mantieni i contenuti consigliati a portata di mano nella barra laterale.
