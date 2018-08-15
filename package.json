@@ -85,7 +85,7 @@
     "gulp-util": "3.0.8",
     "image-webpack-loader": "3.4.2",
     "isomorphic-fetch": "^2.2.1",
-    "jsdom": "^11.12.0",
+    "jsdom": "^11.5.1",
     "mkdirp": "0.5.1",
     "mocha": "5.2.0",
     "mocha-junit-reporter": "1.18.0",
