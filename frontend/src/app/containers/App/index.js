@@ -226,6 +226,9 @@ class App extends Component {
         if (typeof localizations[lang] === "string") {
           const cx = new MessageContext(lang, {useIsolating: false});
           cx.addMessages(localizations[lang]);
+
+          // HACK: #3631 - hoist the attribute for this string up into its own separate string
+          cx.addMessages("newsletterFormEmailPlaceholderHackedString = {newsletterFormEmailPlaceholder.placeholder}");
           yield cx;
         }
       }

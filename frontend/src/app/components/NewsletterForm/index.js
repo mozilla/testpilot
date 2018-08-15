@@ -1,7 +1,8 @@
 // @flow
 
 import classnames from "classnames";
-import { Localized } from "fluent-react/compat";
+// $FlowFixMe: Flow says withLocation isn't a named export, but we can still import it
+import { Localized, withLocalization } from "fluent-react/compat";
 import React from "react";
 
 import LocalizedHtml from "../LocalizedHtml";
@@ -18,6 +19,25 @@ type NewsletterFormProps = {
   setEmail?: Function,
   buttonRef?: Function
 }
+
+// HACK: #3631 - avoid an error with <Localized> by using withLocalization and
+// a hacked string from generateMessages in App container
+const EmailField = withLocalization(({ value, onChange, getString }) => (
+  <input
+    ref={el => {
+      if (el) {
+        el.setAttribute(
+          "placeholder",
+          getString("newsletterFormEmailPlaceholderHackedString")
+        );
+      }
+    }}
+    {...{ value, onChange }}
+    type='email'
+    placeholder="Your email here"
+    required
+  />
+));
 
 export default class NewsletterForm extends React.Component {
   props: NewsletterFormProps
@@ -46,15 +66,7 @@ export default class NewsletterForm extends React.Component {
 
   renderEmailField() {
     return (
-      <Localized id="newsletterFormEmailPlaceholder" attrs={{placeholder: true}}>
-        <input
-          type='email'
-          placeholder="Your email here"
-          required
-          value={this.props.email}
-          onChange={this.handleEmailChange}
-        />
-      </Localized>
+      <EmailField value={this.props.email} onChange={this.handleEmailChange} />
     );
   }
 

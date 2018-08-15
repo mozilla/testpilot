@@ -31,7 +31,7 @@ describe("app/components/NewsletterForm", () => {
       expect(subject).to.have.length(1);
     });
 
-    it("should take its value from the store", () => {
+    it("should take its value from the prop", () => {
       expect(subject.prop("value")).to.equal(FOO);
     });
 
