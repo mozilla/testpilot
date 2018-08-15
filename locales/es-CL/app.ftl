@@ -98,6 +98,8 @@ emailOptInDialogErrorTitle = ¡Oh no!
 mobileDialogTitle = Obtener la aplicación
 mobileDialogMessageIOS = Descargar <b>{ $title }</b> de la App Store de iOS.
 mobileDialogMessageAndroid = Descargar <b>{ $title }</b> de Play Store de Google.
+mobileDialogInstructionsSMS = Ingresa tu número de teléfono o correo para enviar un enlace de descarga a tu teléfono:
+mobileDialogInstructions = Ingresa tu correo para enviar un enlace de descarga a tu teléfono:
 mobileDialogPlaceholder = Ingresa tu correo
 mobileDialogPlaceholderSMS = Ingresa tu teléfono/correo
 mobileDialogButton = Enviarme el enlace de descarga
@@ -145,7 +147,7 @@ feedbackUninstallCopy =
 
 ## A modal prompt shown before the feedback survey for some experiments.
 
-experimentPreFeedbackTitle = Comentarios de { $title }
+experimentPreFeedbackTitle = Comentarios sobre { $title }
 experimentPreFeedbackLinkCopy = Danos comentarios sobre el experimento { $title }
 
 ## A splash shown on top of the experiment page when Test Pilot is not installed.
