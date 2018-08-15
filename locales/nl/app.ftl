@@ -222,7 +222,7 @@ retireDialogTitle = Test Pilot verwijderen?
 retireMessageUpdate = Zoals u wilt. Hierdoor wordt Test Pilot gede-installeerd. U kunt individuele experimenten uitschakelen in de Add-onbeheerder van Firefox.
 retireEmailMessage = Om u van updates per e-mail uit te schrijven, klikt u eenvoudig op de koppeling <em>uitschrijven</em> in een willekeurige Test Pilot-e-mail.
 retireSubmitButton = Doorgaan
-pageTitleRetirePage = Firefox Test Pilot - Test Pilot verwijderen
+pageTitleRetirePage = Firefox Test Pilot - Test Pilot de-installeren
 retirePageProgressMessage = Afsluiten...
 retirePageHeadline = Bedankt voor het vliegen!
 retirePageMessage = We hopen dat u plezier had met het experimenteren. <br> U kunt altijd terugkomen.
@@ -239,7 +239,7 @@ restartIntroThree = Selecteer uw experimenten
 
 eolIntroMessage = { $title } eindigt op { $completedDate }
 eolNoticeLink = Meer info
-eolDisableMessage = Het experiment { $title } is beëindigd. Zodra u het verwijdert, kunt u het niet meer opnieuw installeren via Test Pilot.
+eolDisableMessage = Het experiment { $title } is beëindigd. Zodra u het de-installeert, kunt u het niet meer opnieuw installeren via Test Pilot.
 completedDateLabel = Einddatum van experiment: <b>{ $completedDate }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
