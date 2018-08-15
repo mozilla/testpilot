@@ -1,6 +1,6 @@
 // @flow
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 
 import NewsletterForm from "../NewsletterForm";
 import { subscribeToBasket } from "../../lib/utils";
@@ -20,12 +20,9 @@ type EmailDialogState = {
   privacy: boolean
 }
 
-export default class EmailDialog extends React.Component {
-  props: EmailDialogProps
-  state: EmailDialogState
-
-  modalContainer: Object
-  submitButton: Object
+export default class EmailDialog extends Component<EmailDialogProps, EmailDialogState> {
+  modalContainer: ?HTMLElement
+  submitButton: ?HTMLElement
 
   constructor(props: EmailDialogProps) {
     super(props);
@@ -228,7 +225,7 @@ export default class EmailDialog extends React.Component {
           // Keeps the modal-container focused
           // after success/error state renders
           this.focusModalContainer();
-          this.submitButton.click();
+          if (this.submitButton) this.submitButton.click();
         } else if (isSuccess) {
           this.continue(e);
         } else if (isError) {

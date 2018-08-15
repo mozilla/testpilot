@@ -3,7 +3,7 @@
 
 import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import React, { Component } from 'react';
 import Banner from '../../components/Banner';
 import Copter from '../../components/Copter';
 import EmailDialog from '../../components/EmailDialog';
@@ -34,11 +34,13 @@ type HomePageWithAddonProps = {
   isAfterCompletedDate: Function,
   isMinFirefox: boolean,
   isFirefox: boolean,
+  isMobile: boolean,
   majorNewsUpdates: Array<Object>,
   openWindow: Function,
   removeCookie: Function,
   sendToGA: Function,
   setCookie: Function,
+  installAddon: Function,
   uninstallAddon: Function,
   userAgent: string
 }
@@ -49,9 +51,7 @@ type HomePageWithAddonState = {
   showTourDialog: boolean
 }
 
-export default class HomePageWithAddon extends React.Component {
-  props: HomePageWithAddonProps
-  state: HomePageWithAddonState
+export default class HomePageWithAddon extends Component<HomePageWithAddonProps, HomePageWithAddonState> {
 
   constructor(props: HomePageWithAddonProps) {
     super(props);
@@ -174,7 +174,6 @@ export default class HomePageWithAddon extends React.Component {
     const currentExperiments = experimentsWithoutFeatured.filter(x => !isAfterCompletedDate(x));
     const pastExperiments = experimentsWithoutFeatured.filter(isAfterCompletedDate);
     const featuredExperiment = featuredExperiments[0];
-
     const featuredSection = featuredExperiment ? (<Banner background={true}>
       <LayoutWrapper flexModifier="row-center">
         <FeaturedExperiment {...this.props} experiment={featuredExperiment}

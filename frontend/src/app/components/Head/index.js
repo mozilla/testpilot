@@ -1,4 +1,5 @@
-import React from "react";
+// @flow
+import React, { Component } from "react";
 
 type HeadProps = {
   metaTitle: string,
@@ -9,8 +10,7 @@ type HeadProps = {
   imageTwitter: string
 }
 
-export default class Head extends React.Component {
-  props: HeadProps
+export default class Head extends Component<HeadProps> {
 
   render() {
     const {

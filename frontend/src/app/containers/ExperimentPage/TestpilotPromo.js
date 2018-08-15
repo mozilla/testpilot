@@ -1,6 +1,6 @@
 // @flow
 
-import React from "react";
+import React, { Component } from "react";
 import { Localized } from "fluent-react/compat";
 
 import LayoutWrapper from "../../components/LayoutWrapper";
@@ -10,8 +10,7 @@ import MainInstallButton from "../../components/MainInstallButton";
 
 import type { TestpilotPromoProps } from "./types";
 
-export default class TestpilotPromo extends React.Component {
-  props: TestpilotPromoProps;
+export default class TestpilotPromo extends Component<TestpilotPromoProps> {
 
   render() {
     const { hasAddon, graduated, experiment } = this.props;

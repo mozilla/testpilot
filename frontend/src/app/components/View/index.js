@@ -38,7 +38,7 @@ export default class View extends React.Component {
     return (
       React.Component.isPrototypeOf(element) || (
         element.$$typeof === Symbol.for("react.element") &&
-        DOMFactories.indexOf(element.type) === -1
+        !DOMFactories.includes(element.type)
       )
     );
   }

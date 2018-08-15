@@ -1,6 +1,6 @@
 // @flow
 
-import React from "react";
+import React, { Component } from "react";
 import classnames from "classnames";
 
 type BannerProps = {
@@ -13,10 +13,8 @@ type BannerState = {
   isVisible: boolean
 };
 
-export default class Visibility extends React.Component {
-  props: BannerProps;
-  state: BannerState;
-  elementRef: Element;
+export default class Visibility extends Component<BannerProps, BannerState> {
+  elementRef: ?HTMLElement
 
   constructor(props: BannerProps) {
     super(props);
@@ -32,7 +30,7 @@ export default class Visibility extends React.Component {
     unregister(this.handleVisibilityChange);
   }
 
-  setElementRef = (elementRef: Element) => (this.elementRef = elementRef);
+  setElementRef = (elementRef: HTMLElement | null) => (this.elementRef = elementRef);
 
   handleVisibilityChange = () => {
     if (!this.elementRef) {
