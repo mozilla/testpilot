@@ -1,6 +1,6 @@
 // @flow
 
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Localized } from "fluent-react/compat";
 import LocalizedHtml from "../LocalizedHtml";
@@ -27,6 +27,12 @@ type FeaturedButtonProps = {
   fetchCountryCode: Function,
   getWindowLocation: Function,
   hasAddon: any,
+  isMobile: boolean,
+  enableExperiment: Function,
+  installAddon: Function,
+  isExperimentEnabled: Function,
+  isFirefox: boolean,
+  isMinFirefox: boolean,
   installed: InstalledExperiments,
   sendToGA: Function,
   userAgent: string
@@ -37,10 +43,7 @@ type FeaturedButtonState = {
   showMobileDialog: boolean
 }
 
-export default class FeaturedButton extends React.Component {
-  props: FeaturedButtonProps
-  state: FeaturedButtonState
-
+export default class FeaturedButton extends Component<FeaturedButtonProps, FeaturedButtonState> {
   constructor(props: FeaturedButtonProps) {
     super(props);
     this.state = {

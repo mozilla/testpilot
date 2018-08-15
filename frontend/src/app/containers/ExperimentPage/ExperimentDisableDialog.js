@@ -1,6 +1,6 @@
 // @flow
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 
 import Copter from "../../components/Copter";
 import { buildSurveyURL } from "../../lib/utils";
@@ -14,15 +14,11 @@ type ExperimentDisableDialogProps = {
   sendToGA: Function
 }
 
-export default class ExperimentDisableDialog extends React.Component {
-  props: ExperimentDisableDialogProps
-
-  modalContainer: Object
+export default class ExperimentDisableDialog extends Component<ExperimentDisableDialogProps> {
+  modalContainer: ?HTMLElement
 
   componentDidMount() {
-    if (this.modalContainer !== undefined) {
-      this.modalContainer.focus();
-    }
+    if (this.modalContainer) this.modalContainer.focus();
   }
 
   render() {

@@ -85,6 +85,7 @@ Here are the current events on the website as of this writing, grouped by their 
 | Cancel Firefox permission dialog | Cancel From Permission | `{experiment title}`
 | Send experiment app link to device | mobile send click | `{experiment title}` |
 | Click app store links on experiment page | mobile store click | `{experiment title}` `{ios \|\| android}` |
+| Click Download Firefox in Promo on experiment page | download firefox click | Download Firefox at `${title}`|
 
 #### `SMS Modal Interactions`
 | Description | `eventAction` | `eventLabel` |

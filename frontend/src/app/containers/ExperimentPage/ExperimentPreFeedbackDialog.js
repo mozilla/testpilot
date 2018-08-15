@@ -3,7 +3,7 @@
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
 import parser from "html-react-parser";
-import React from "react";
+import React, { Component } from "react";
 
 type ExperimentPreFeedbackDialogProps = {
   experiment: Object,
@@ -12,13 +12,11 @@ type ExperimentPreFeedbackDialogProps = {
   sendToGA: Function
 }
 
-export default class ExperimentPreFeedbackDialog extends React.Component {
-  props: ExperimentPreFeedbackDialogProps
-
-  modalContainer: Object
+export default class ExperimentPreFeedbackDialog extends Component<ExperimentPreFeedbackDialogProps> {
+  modalContainer: ?HTMLElement
 
   componentDidMount() {
-    if (this.modalContainer !== undefined) {
+    if (this.modalContainer) {
       this.modalContainer.focus();
     }
   }
