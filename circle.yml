@@ -13,7 +13,9 @@ jobs:
       - checkout
       - restore_cache:
          keys:
-           - node-modules-
+           - v2-npm-deps-{{ checksum "package.json" }}-{{ checksum "addon/package.json" }}
+           - v2-npm-deps-{{ checksum "package.json" }}-
+           - v2-npm-deps-
       - run:
           name: Setup env
           command: |
@@ -36,8 +38,9 @@ jobs:
           paths:
             - ./*
       - save_cache:
-         key: node-modules-
+         key: v2-npm-deps-{{ checksum "package.json" }}-{{ checksum "addon/package.json" }}
          paths:
+           - node_modules
            - addon/node_modules
   unit_test:
     docker:
@@ -66,9 +69,9 @@ jobs:
           at: .
       - restore_cache:
          keys:
-           - integration-test-{{ checksum "frontend/test/ui/requirements/flake8.txt" }}
-           - integration-test-{{ checksum "frontend/test/ui/requirements/requirements.txt" }}
-           - integration-test-
+           - v2-integration-test-{{ checksum "frontend/test/ui/requirements/requirements.txt" }}-{{ checksum "frontend/test/ui/requirements/flake8.txt" }}
+           - v2-integration-test-{{ checksum "frontend/test/ui/requirements/requirements.txt" }}-
+           - v2-integration-test-
       - run:
           name: Set hosts
           command: |
@@ -90,15 +93,7 @@ jobs:
       - store_artifacts:
           path: ~/project/integration-test-results
       - save_cache:
-         key: integration-test-{{ checksum "frontend/test/ui/requirements/flake8.txt" }}
-         paths:
-           - frontend/test/ui/requirements/flake8.txt
-      - save_cache:
-         key: integration-test-{{ checksum "frontend/test/ui/requirements/requirements.txt" }}
-         paths:
-           - frontend/test/ui/requirements/requirements.txt
-      - save_cache:
-         key: integration-test-
+         key: v2-integration-test-{{ checksum "frontend/test/ui/requirements/requirements.txt" }}-{{ checksum "frontend/test/ui/requirements/flake8.txt" }}
          paths:
            - .tox
   static_deploy:
