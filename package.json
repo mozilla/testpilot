@@ -23,7 +23,7 @@
     "fluent": "0.4.3",
     "fluent-langneg": "0.1.0",
     "fluent-react": "0.4.1",
-    "globby": "^8.0.1",
+    "glob": "^7.1.2",
     "html-react-parser": "^0.4.6",
     "js-cookie": "2.2.0",
     "legal-docs": "https://github.com/mozilla/legal-docs.git",
@@ -41,7 +41,7 @@
     "redux": "4.0.0",
     "redux-promise": "0.6.0",
     "reselect": "3.0.1",
-    "seedrandom": "^2.4.4",
+    "seedrandom": "^2.4.3",
     "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
@@ -60,6 +60,7 @@
     "babel-preset-stage-0": "6.24.1",
     "babel-register": "6.26.0",
     "chai": "4.1.2",
+    "class-utils": "^0.3.6",
     "copy-webpack-plugin": "^4.5.2",
     "cross-env": "^5.2.0",
     "del": "3.0.0",

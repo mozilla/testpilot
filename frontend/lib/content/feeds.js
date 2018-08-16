@@ -1,4 +1,4 @@
-const Feed = require("feed").Feed;
+const Feed = require("feed");
 const config = require("../../config.js");
 const { extractNewsUpdates } = require("./utils");
 
