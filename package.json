@@ -84,7 +84,7 @@
     "flow-bin": "0.47.0",
     "flow-coverage-report": "0.4.0",
     "flow-typed": "2.2.3",
-    "gulp": "^4.0.0",
+    "gulp": "3.9.1",
     "gulp-cache": "1.0.2",
     "gulp-if": "2.0.2",
     "gulp-multi-dest": "0.0.4",
