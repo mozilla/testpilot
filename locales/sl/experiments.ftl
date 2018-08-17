@@ -16,6 +16,7 @@ activitystreamContributors10Title = Vodja inženirstva
 activitystreamContributors11Title = Programski inženir
 activitystreamContributors12Title = Višji načrtovalec up. izkušnje
 advanceLegalnotice = Z nadaljevanjem se strinjate s <a>pogoji</a> in <a>pravilnikom zasebnosti</a> Test Pilota ter s <a>pravilnikom o zasebnosti Advance</a>.
+advancePrivacypreamble = Test Pilotov poskus Advance je plod sodelovanja med Laserlikom in Mozillo.
 advanceSubtitle = Omogoča Laserlike
 advanceToursteps0Copy = Imejte priporočeno vsebino na dosegu roke v stranski vrstici.
 advanceToursteps2Copy = Vedno nam lahko sporočite povratne informacije ali onemogočite Advance v Test Pilotu.
