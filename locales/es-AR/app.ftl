@@ -147,7 +147,7 @@ feedbackUninstallCopy =
 
 ## A modal prompt shown before the feedback survey for some experiments.
 
-experimentPreFeedbackTitle = { $title }opinión
+experimentPreFeedbackTitle = { $title } opinión
 experimentPreFeedbackLinkCopy = Opine acerca del experimento { $title }
 
 ## A splash shown on top of the experiment page when Test Pilot is not installed.
