@@ -45,6 +45,9 @@
     "seedrandom": "2.4.3",
     "whatwg-fetch": "2.0.3"
   },
+  "optionalDependencies": {
+    "fsevents": "^1.2.4"
+  },
   "devDependencies": {
     "@storybook/addon-actions": "3.4.0-alpha.1",
     "@storybook/addon-knobs": "3.4.0-alpha.1",
@@ -85,7 +88,6 @@
     "flow-bin": "0.47.0",
     "flow-coverage-report": "0.4.0",
     "flow-typed": "2.2.3",
-    "fsevents": "^1.2.4",
     "gulp": "3.9.1",
     "gulp-cache": "1.0.2",
     "gulp-if": "2.0.2",
