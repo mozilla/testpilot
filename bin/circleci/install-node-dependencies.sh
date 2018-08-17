@@ -1,5 +1,5 @@
 #!/bin/bash
 set -ex
 
-npm install
-cd addon && npm install
+npm ci
+cd addon && npm ci
