@@ -92,7 +92,7 @@
     "gulp-rev-all": "0.9.7",
     "gulp-uglify": "3.0.0",
     "gulp-util": "3.0.8",
-    "image-webpack-loader": "3.4.2",
+    "image-webpack-loader": "^4.3.1",
     "jsdom": "11.5.1",
     "merge-stream": "1.0.1",
     "mkdirp": "0.5.1",
