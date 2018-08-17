@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Setup env
           command: |
-            curl -L -o ~/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 && chmod +x ~/bin/jq
+            curl -L --create-dirs -o ~/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 && chmod +x ~/bin/jq
             ./bin/circleci/install-node-dependencies.sh
       - run:
           name: Build addon and frontend
