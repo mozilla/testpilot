@@ -48,6 +48,7 @@
   "devDependencies": {
     "@storybook/addon-actions": "3.4.0-alpha.1",
     "@storybook/addon-knobs": "3.4.0-alpha.1",
+    "@storybook/addons": "^3.4.10",
     "@storybook/react": "3.4.0-alpha.1",
     "autoprefixer": "^8.6.5",
     "babel-core": "6.26.0",
