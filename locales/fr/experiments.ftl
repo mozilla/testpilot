@@ -21,6 +21,7 @@ advanceLegalnotice = En poursuivant, vous acceptez les <a>conditions</a> et la <
 advanceMeasurements1 = Contrôle des données : Les paramètres vous permettent de récupérer les données reçues par Laserlike grâce à cette expérience. Vous pouvez aussi supprimer les cookies, l’historique de navigation web ainsi que les informations associées à votre compte Laserlike.
 advancePrivacypreamble = L’expérience Advance de Test Pilot est le fruit d’une collaboration entre Laserlike et Mozilla.
 advanceSubtitle = Propulsé par Laserlike
+advanceToursteps0Copy = Gardez du contenu personnalisé à portée de main au sein d’une barre latérale.
 advanceToursteps1CopyLaunch = Vous pouvez aussi y accéder n’importe quand à l’aide de l’icône Advance dans la barre d’outils
 advanceToursteps2Copy = Vous pouvez nous faire part de votre avis à tout moment ou désactiver Advance de Test Pilot.
 cliqzDescription = Obtenez des résultats de recherche plus rapidement. Cliqz affiche des suggestions sous la barre d’adresse au fur et à mesure de la saisie. Tout en protégeant votre vie privée.
