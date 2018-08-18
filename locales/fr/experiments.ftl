@@ -15,6 +15,7 @@ activitystreamContributors9Title = Responsable produit
 activitystreamContributors10Title = Responsable de l’ingénierie
 activitystreamContributors11Title = Développeur logiciel
 activitystreamContributors12Title = Ergonome confirmé
+advanceToursteps2Copy = Vous pouvez nous faire part de votre avis à tout moment ou désactiver Advance de Test Pilot.
 cliqzDescription = Obtenez des résultats de recherche plus rapidement. Cliqz affiche des suggestions sous la barre d’adresse au fur et à mesure de la saisie. Tout en protégeant votre vie privée.
 cliqzIntroduction = Obtenez des résultats de recherche plus rapidement, directement dans le navigateur. Commencez à saisir une requête et obtenez des suggestions en temps réel sous la barre d’adresse. Et parce que Cliqz évite de collecter des données personnelles identifiables ou de créer un profil des utilisateurs, vos résultats sont davantage privés.
 cliqzPrivacypreamble = L’expérience Test Pilot Cliqz est le fruit de la collaboration entre Cliqz GmbH et Mozilla. Cliqz est conçu pour protéger votre vie privée et éviter la collecte des informations sensibles qui peuvent être utilisées pour créer des profils d’utilisateurs. Cependant, anonymiser des données telles que celles-ci est difficile, et il est possible que certains individus puissent encore être identifiés.
