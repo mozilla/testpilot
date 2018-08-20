@@ -1,5 +1,5 @@
 // @flow
-
+/* eslint no-nested-ternary: 0 */
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
 import React from "react";
@@ -12,6 +12,10 @@ import "./index.scss";
 import config from "../../config";
 
 import type { MainInstallButtonProps } from "../types";
+
+import {
+  WebExperimentButton
+} from "../../containers/ExperimentPage/ExperimentButtons";
 
 type MainInstallButtonState = { isInstalling: boolean };
 
@@ -61,9 +65,25 @@ export default class MainInstallButton extends React.Component {
     install.then(after, after);
   }
 
+  renderWebExperimentButton() {
+    const { sendToGA, experiment } = this.props;
+    const { title, slug, web_url } = experiment;
+    return (
+      <WebExperimentButton {...{
+        web_url,
+        title,
+        slug,
+        sendToGA,
+        color: "default main-install__button"
+      }} />
+    );
+  }
+
   render() {
     const { isFirefox, isMinFirefox, isMobile, hasAddon, experimentTitle, experimentLegalLink, experiment } = this.props;
+
     const isInstalling = this.state.isInstalling || (experiment && experiment.inProgress);
+    const showWebButton = (experiment && experiment.platforms.includes("web") && experiment.platforms.length === 1);
 
     const terms = <Localized id="landingLegalNoticeTermsOfUse">
       <a href="/terms"/>
@@ -76,14 +96,15 @@ export default class MainInstallButton extends React.Component {
     return (
       <LayoutWrapper flexModifier={layout} helperClass="main-install">
         <div className="main-install__spacer" />
-        {(isMinFirefox && !isMobile) ? this.renderInstallButton(isInstalling, hasAddon) : this.renderAltButton(isFirefox, isMobile) }
+        {(showWebButton) ? this.renderWebExperimentButton() : (isMinFirefox && !isMobile) ? this.renderInstallButton(isInstalling, hasAddon) : this.renderAltButton(isFirefox, isMobile)
+        }
         {isMinFirefox && !isMobile && !experimentLegalLink && <LocalizedHtml id="landingLegalNotice" $terms={terms} $privacy={privacy}>
           <p className="main-install__legal">
           By proceeding, you agree to the {terms} and {privacy} of Test Pilot.
           </p>
         </LocalizedHtml>}
 
-        {isMinFirefox && !isMobile && experimentLegalLink && experimentLegalLink}
+        {!showWebButton &&isMinFirefox && !isMobile && experimentLegalLink && experimentLegalLink}
       </LayoutWrapper>
     );
   }

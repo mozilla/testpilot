@@ -14,5 +14,5 @@ export type MainInstallButtonProps = {
   isFeatured?: boolean,
   installed: InstallExperiments,
   experiment?: Object,
-  experimentTitle: string,
+  experimentTitle: string
 } & VariantTestsProps & MiscAppProps & SendToGAProps & BrowserEnvProps;
