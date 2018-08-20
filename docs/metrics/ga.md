@@ -206,7 +206,7 @@ Here is a list of dimensions we are currently using
 
 ### Tagged Links
 
-Whenever we are referring users to the Test Pilot website (either from an external website, or the add-on itself via a doorhanger/notification), we should include `utm_*` paramaters to allow us to properly measure conversion rates of the channel.
+Whenever we are referring users to the Test Pilot website (either from an external website, or the add-on itself via a doorhanger/notification), we should include `utm_*` parameters to allow us to properly measure conversion rates of the channel.
 
 Here is a description of the different utm tags ([URL builder tool from Google](https://support.google.com/analytics/answer/1033867))
 
