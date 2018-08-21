@@ -67,7 +67,7 @@ export default class HomePageNoAddon extends React.Component {
     </Banner>;
 
     const featuredSection = featuredExperiment ? (<Banner background={true}>
-      <LayoutWrapper flexModifier="row-between-breaking">
+      <LayoutWrapper flexModifier="row-center">
         <FeaturedExperiment {...this.props}
           experiment={featuredExperiment}
           eventCategory="FeaturedExperiment Interactions"
