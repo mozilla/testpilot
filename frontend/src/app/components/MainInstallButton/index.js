@@ -101,7 +101,7 @@ export default class MainInstallButton extends Component<MainInstallButtonProps,
           </p>
         </LocalizedHtml>}
 
-        {!showWebButton &&isMinFirefox && !isMobile && experimentLegalLink && experimentLegalLink}
+        {!showWebButton && isMinFirefox && !isMobile && experimentLegalLink && experimentLegalLink}
       </LayoutWrapper>
     );
   }
