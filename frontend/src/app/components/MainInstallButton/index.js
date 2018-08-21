@@ -104,7 +104,7 @@ export default class MainInstallButton extends React.Component {
           </p>
         </LocalizedHtml>}
 
-        {!showWebButton &&isMinFirefox && !isMobile && experimentLegalLink && experimentLegalLink}
+        {!showWebButton && isMinFirefox && !isMobile && experimentLegalLink && experimentLegalLink}
       </LayoutWrapper>
     );
   }
