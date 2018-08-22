@@ -22,7 +22,7 @@ geckodriver --version
 sudo apt-get install python-pip python-dev build-essential
 sudo pip install --upgrade pip
 
-sudo pip install tox mozdownload mozinstall
+sudo pip install tox mozdownload mozinstall==1.15
 
 mkdir -p ~/project/firefox-downloads/
 find  ~/project/firefox-downloads/ -type f -mtime +90 -delete
