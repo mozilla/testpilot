@@ -153,13 +153,6 @@ workflows:
       - unit_test:
           requires:
             - build
-      - integration_test:
-          requires:
-            - build
-          filters:
-            branches:
-              ignore:
-                - l10n
       - storybook_deploy:
           requires:
             - build
