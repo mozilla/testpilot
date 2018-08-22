@@ -117,6 +117,7 @@
     "sinon": "4.1.4",
     "through2": "2.0.3",
     "uglifyjs-webpack-plugin": "1.1.6",
+    "uri-js": "4.2.2",
     "url-loader": "0.6.2",
     "vinyl-source-stream": "2.0.0",
     "webpack": "3.10.0",
