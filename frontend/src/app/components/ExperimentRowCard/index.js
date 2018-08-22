@@ -2,7 +2,7 @@
 
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import { buildSurveyURL, experimentL10nId } from "../../lib/utils";
@@ -32,8 +32,7 @@ type ExperimentRowCardProps = {
   isAfterCompletedDate: Function
 }
 
-export default class ExperimentRowCard extends React.Component {
-  props: ExperimentRowCardProps
+export default class ExperimentRowCard extends Component<ExperimentRowCardProps> {
 
   l10nId(pieces: string) {
     return experimentL10nId(this.props.experiment, pieces);

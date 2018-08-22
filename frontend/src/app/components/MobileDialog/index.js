@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import React, { Component } from "react";
 import classnames from "classnames";
 // $FlowFixMe
 import { isValidNumber } from "libphonenumber-js";
@@ -45,11 +45,8 @@ const DEFAULT_STATE = {
   country: "US"
 };
 
-export default class MobileDialog extends React.Component {
-  props: MobileDialogProps
-  state: MobileDialogState
-
-  modalContainer: Object
+export default class MobileDialog extends Component<MobileDialogProps, MobileDialogState> {
+  modalContainer: ?HTMLElement
 
   constructor(props: MobileDialogProps) {
     super(props);

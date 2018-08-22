@@ -1,21 +1,22 @@
 // @flow
 
-import React from "react";
+import React, { Component } from "react";
 
 type VariantTestCaseProps = {
   value: string,
   children: Array<any>
 }
 
-export class VariantTestCase extends React.Component {
-  props: VariantTestCaseProps
-
+export class VariantTestCase extends Component<VariantTestCaseProps> {
   render() {
     return <span>{ this.props.children }</span>;
   }
 }
 
-export class VariantTestDefault extends React.Component {
+type VariantTestDefaultProps = {
+  children: Array<any>
+}
+export class VariantTestDefault extends Component<VariantTestDefaultProps> {
   render() {
     return <span>{ this.props.children }</span>;
   }
@@ -24,12 +25,11 @@ export class VariantTestDefault extends React.Component {
 type VariantTestsProps = {
   name: string,
   varianttests: Object,
-  children: Array<any>
+  children: Array<any>,
+  isExperimentEnabled: Function
 }
 
-export class VariantTests extends React.Component {
-  props: VariantTestsProps
-
+export class VariantTests extends Component<VariantTestsProps> {
   render() {
     const testVariant = this.props.varianttests[this.props.name];
     let defaultElement = <span>

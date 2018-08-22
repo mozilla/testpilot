@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-const globby = require('globby');
 const YAML = require("yamljs");
 const ContentTransformerPlugin = require(__dirname + "/../frontend/lib/content-transformer-plugin");
 const buildJSON = require(__dirname + "/../frontend/lib/content/json");

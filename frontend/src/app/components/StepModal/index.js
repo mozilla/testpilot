@@ -9,7 +9,7 @@
  */
 
 import classnames from "classnames";
-import React from "react";
+import React, { Component } from "react";
 
 import Modal from "../Modal";
 
@@ -31,9 +31,7 @@ type StepModalDialogState = {
   currentStep: number
 }
 
-export default class StepModal extends React.Component {
-  props: StepModalDialogProps
-  state: StepModalDialogState
+export default class StepModal extends Component<StepModalDialogProps, StepModalDialogState> {
 
   constructor(props: StepModalDialogProps) {
     super(props);
@@ -87,6 +85,7 @@ export default class StepModal extends React.Component {
         headerTitle={this.props.renderHeaderTitle(steps, currentStep)}
         handleKeyDown={this.handleKeyDown.bind(this)}>
         {stepEl}
+        {/* $FlowFixMe */}
         {this.renderStepActions(steps, currentStep)}
         {this.renderDots(steps, currentStep)}
       </Modal>

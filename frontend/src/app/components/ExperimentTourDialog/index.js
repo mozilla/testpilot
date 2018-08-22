@@ -2,7 +2,7 @@
 
 import cn from "classnames";
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 
 import StepModal from "../StepModal";
 
@@ -21,8 +21,7 @@ type ExperimentTourDialogProps = {
   isFeatured?: boolean
 }
 
-export default class ExperimentTourDialog extends React.Component {
-  props: ExperimentTourDialogProps
+export default class ExperimentTourDialog extends Component<ExperimentTourDialogProps> {
 
   applyAdditionalMetricsArgs(gaArgs: Object) {
     const { installed, hasAddon } = this.props;
@@ -97,7 +96,8 @@ export default class ExperimentTourDialog extends React.Component {
   };
 
   renderStep = (tourSteps: Array<Object>, currentStep: number) => {
-    return tourSteps.map((step, idx) => (idx === currentStep) && (
+    // $FlowFixMe
+    return tourSteps.map((step: Object, idx: number) => (idx === currentStep) && (
       <div key={idx} className="step-content">
         <div className="step-image">
           <img src={step.image} />

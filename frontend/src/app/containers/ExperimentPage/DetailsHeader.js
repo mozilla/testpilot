@@ -1,6 +1,6 @@
 // @flow
 
-import React from "react";
+import React, { Component } from "react";
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
 import LayoutWrapper from "../../components/LayoutWrapper";
@@ -13,8 +13,7 @@ import type {
   MaximumVersionNoticeType
 } from "./types";
 
-export default class DetailsHeader extends React.Component {
-  props: DetailsHeaderProps;
+export default class DetailsHeader extends Component<DetailsHeaderProps> {
   didScroll: boolean;
   scrollListener: Function;
 

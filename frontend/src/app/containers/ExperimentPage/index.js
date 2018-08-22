@@ -1,7 +1,7 @@
 // @flow
 
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 import moment from "moment";
 import { Helmet } from "react-helmet";
 
@@ -31,11 +31,11 @@ import "./index.scss";
 import type {
   ExperimentPageProps,
   ExperimentDetailProps,
+  ExperimentDetailState,
   MouseEventWithElementTarget
 } from "./types";
 
-export default class ExperimentPage extends React.Component {
-  props: ExperimentPageProps;
+export default class ExperimentPage extends Component<ExperimentPageProps> {
 
   render() {
     const { getExperimentBySlug, slug } = this.props;
@@ -44,22 +44,7 @@ export default class ExperimentPage extends React.Component {
   }
 }
 
-export class ExperimentDetail extends React.Component {
-  props: ExperimentDetailProps;
-
-  state: {
-    enabled: boolean,
-    highlightMeasurementPanel: boolean,
-    isEnabling: boolean,
-    isDisabling: boolean,
-    progressButtonWidth: ?number,
-    showEmailDialog: boolean,
-    showDisableDialog: boolean,
-    showTourDialog: boolean,
-    showMobileDialog: boolean,
-    showPreFeedbackDialog: boolean,
-    showEolDialog: boolean
-  };
+export class ExperimentDetail extends Component<ExperimentDetailProps, ExperimentDetailState> {
 
   constructor(props: ExperimentDetailProps) {
     super(props);
@@ -75,7 +60,6 @@ export class ExperimentDetail extends React.Component {
       highlightMeasurementPanel: false,
       isEnabling: false,
       isDisabling: false,
-      progressButtonWidth: null,
       showEmailDialog: false,
       showDisableDialog: false,
       showTourDialog: false,
@@ -99,7 +83,7 @@ export class ExperimentDetail extends React.Component {
     }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.checkCookies();
   }
 
@@ -107,7 +91,7 @@ export class ExperimentDetail extends React.Component {
     this.checkCookies();
   }
 
-  componentWillReceiveProps(nextProps: ExperimentDetailProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: ExperimentDetailProps) {
     const prevExperiment = this.props.experiment;
     const prevInProgress = prevExperiment && prevExperiment.inProgress;
 
@@ -166,7 +150,6 @@ export class ExperimentDetail extends React.Component {
 
     const {
       enabled,
-      progressButtonWidth,
       highlightMeasurementPanel,
       showEmailDialog,
       showDisableDialog,
@@ -188,7 +171,7 @@ export class ExperimentDetail extends React.Component {
       return <NotFoundPage {...this.props} />;
     }
 
-    const { title, survey_url, tour_steps } = experiment;
+    const { title, survey_url, tour_steps, pre_feedback_copy } = experiment;
     const hasTour = typeof tour_steps !== "undefined";
 
     setPageTitleL10N("pageTitleExperiment", experiment);
@@ -273,7 +256,10 @@ export class ExperimentDetail extends React.Component {
             {...{
               ...this.props,
               graduated,
-              experiment
+              experiment,
+              eventCategory: "ExperimentDetailsPage Interactions",
+              eventLabel: `Download Firefox at ${experiment.title}`,
+              eventAction: "download firefox click"
             }}
           />}
           <div className="default-background">
@@ -286,7 +272,6 @@ export class ExperimentDetail extends React.Component {
                 installed,
                 graduated,
                 surveyURL,
-                progressButtonWidth,
                 flashMeasurementPanel,
                 installExperiment,
                 uninstallExperiment,
@@ -316,7 +301,6 @@ export class ExperimentDetail extends React.Component {
                     sendToGA,
                     userAgent,
                     hasAddon,
-                    progressButtonWidth,
                     isDisabling,
                     isEnabling,
                     enabled,
@@ -324,6 +308,7 @@ export class ExperimentDetail extends React.Component {
                     graduated,
                     experiment,
                     surveyURL,
+                    pre_feedback_copy,
                     installExperiment,
                     doShowEolDialog,
                     doShowPreFeedbackDialog,
@@ -383,15 +368,9 @@ export class ExperimentDetail extends React.Component {
       return;
     }
 
-    let progressButtonWidth;
-    if (this.props.hasAddon) {
-      progressButtonWidth = evt.target.offsetWidth;
-    }
-
     this.setState({
       isEnabling: true,
-      isDisabling: false,
-      progressButtonWidth
+      isDisabling: false
     });
 
     const eventCategory = "ExperimentDetailsPage Interactions";
@@ -427,8 +406,7 @@ export class ExperimentDetail extends React.Component {
 
     this.setState({
       isEnabling: false,
-      isDisabling: true,
-      progressButtonWidth: evt.target.offsetWidth
+      isDisabling: true
     });
 
     disableExperiment(experiment);
@@ -463,8 +441,9 @@ export class ExperimentDetail extends React.Component {
     this.setState({ showPreFeedbackDialog: true });
   };
 
-  uninstallExperimentWithSurvey = (evt: MouseEvent) => {
+  uninstallExperimentWithSurvey = (evt: MouseEventWithElementTarget) => {
     evt.preventDefault();
+    // $FlowFixMe
     this.uninstallExperiment(evt);
     this.setState({ showDisableDialog: true });
   };

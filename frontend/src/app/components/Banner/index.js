@@ -9,12 +9,10 @@ type BannerProps = {
   background?: boolean,
   condensed?: boolean,
   dataL10nId?: string,
-  children?: Array<any>
+  children?: any
 }
 
-export default class Banner extends React.Component {
-  props: BannerProps
-
+export default class Banner extends React.Component<BannerProps> {
   render() {
     const { children, condensed = false, background = false } = this.props;
     return <div className={classnames("banner", {

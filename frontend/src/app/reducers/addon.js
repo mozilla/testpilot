@@ -108,7 +108,7 @@ function setInstalledAddons(
   const actuallyInstalledAddons = (installedAddons || []);
   for (const addonId of Object.keys(state.installed)) {
     const experiment = state.installed[addonId];
-    if (actuallyInstalledAddons.indexOf(addonId) === -1) {
+    if (!actuallyInstalledAddons.includes(addonId)) {
       newInstalled[addonId] = { manuallyDisabled: true, ...experiment };
     } else {
       newInstalled[addonId] = experiment;
@@ -170,13 +170,16 @@ export default function addonReducer(state: ?AddonState, action: AddonActions): 
   }
 
   switch (action.type) {
+    // $FlowFixMe
     case "TXP_INSTALLED":
       cookies.set("txp-installed", "1");
       return setHasAddon(state, {type: "SET_HAS_ADDON", payload: true});
     case "SET_HAS_ADDON":
       return setHasAddon(state, action);
     case "SET_INSTALLED":
+      // $FlowFixMe
       return setInstalled(state, action);
+    // $FlowFixMe
     case "SET_INSTALLED_ADDONS":
       return setInstalledAddons(state, action);
     case "SET_CLIENT_UUID":
