@@ -2,7 +2,7 @@
 
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 
 import LocalizedHtml from "../LocalizedHtml";
 
@@ -11,6 +11,7 @@ import { defaultState } from "../../reducers/newsletter-form";
 import "./index.scss";
 
 type NewsletterFormProps = {
+  submitting?: boolean,
   email?: string,
   privacy?: boolean,
   isModal?: boolean,
@@ -19,8 +20,7 @@ type NewsletterFormProps = {
   buttonRef?: Function
 }
 
-export default class NewsletterForm extends React.Component {
-  props: NewsletterFormProps
+export default class NewsletterForm extends Component<NewsletterFormProps> {
   handleEmailChange: Function
   handleSubmit: Function
 

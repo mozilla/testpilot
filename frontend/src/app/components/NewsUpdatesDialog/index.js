@@ -2,7 +2,7 @@
 
 import cn from "classnames";
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 import moment from "moment";
 import cookies from "js-cookie";
 
@@ -18,8 +18,7 @@ type newsUpdatesDialogProps = {
   sendToGA: Function
 }
 
-export default class NewsUpdatesDialog extends React.Component {
-  props: newsUpdatesDialogProps
+export default class NewsUpdatesDialog extends Component<newsUpdatesDialogProps> {
 
   stepNextPing = (newStep: number) => {
     this.props.sendToGA("event", {
@@ -46,7 +45,8 @@ export default class NewsUpdatesDialog extends React.Component {
   };
 
   renderUpdate = (newsUpdates: Array<Object>, currentStep: number) => {
-    return newsUpdates.map((u, idx) => (idx === currentStep) && (
+    // $FlowFixMe
+    return newsUpdates.map((u: Object, idx: number) => (idx === currentStep) && (
       <div key={idx} className='step-content'>
         {u.image && <div className='step-image'><img src={u.image} /></div>}
         {u.content &&
@@ -74,8 +74,8 @@ export default class NewsUpdatesDialog extends React.Component {
     const defaultNewsUpdateTitle = (<Localized id='nonExperimentDialogHeaderLink'>
       <h3 className='modal-header lighter'>Test Pilot</h3>
     </Localized>);
-
-    return newsUpdates.map((u, idx) => (idx === currentStep) && (u.experimentSlug ?
+    // $FlowFixMe
+    return newsUpdates.map((u: Object, idx: number) => (idx === currentStep) && (u.experimentSlug ?
       (<h3 className={cn("modal-header lighter", {
         enabled: isExperimentEnabled({ addon_id: `@${u.experimentSlug}` })
       })}>{u.experimentSlug.split("-").join(" ")}</h3>) : (defaultNewsUpdateTitle)

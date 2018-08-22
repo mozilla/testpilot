@@ -1,6 +1,6 @@
 // @flow
 
-import React from "react";
+import React, { Component } from "react";
 import { Localized } from "fluent-react/compat";
 import { justUpdated, justLaunched } from "../../lib/experiment";
 
@@ -9,8 +9,7 @@ type FeaturedStatusProps = {
   experiment: Object
 }
 
-export default class FeaturedStatus extends React.Component {
-  props: FeaturedStatusProps
+export default class FeaturedStatus extends Component<FeaturedStatusProps> {
 
   render() {
     const { enabled, experiment } = this.props;

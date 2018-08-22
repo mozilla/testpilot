@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import React, { Component } from "react";
 import { Localized } from "fluent-react/compat";
 import LocalizedHtml from "../../components/LocalizedHtml";
 
@@ -7,8 +7,7 @@ import "./index.scss";
 
 import type { IncompatibleAddonsProps } from "./types";
 
-export default class IncompatibleAddons extends React.Component {
-  props: IncompatibleAddonsProps
+export default class IncompatibleAddons extends Component<IncompatibleAddonsProps> {
 
   render() {
     const { incompatible } = this.props.experiment;
@@ -47,9 +46,8 @@ export default class IncompatibleAddons extends React.Component {
       return [];
     }
     const installed = this.props.installedAddons || [];
-    return Object.keys(incompatible).filter(guid => (
-      installed.indexOf(guid) !== -1
-    ));
+    // $FlowFixMe
+    return Object.keys(incompatible).filter((guid: string) => (installed.includes(guid)));
   }
 
 }

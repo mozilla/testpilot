@@ -1,6 +1,6 @@
 // @flow
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 
 import "./index.scss";
 
@@ -14,8 +14,7 @@ type WarningProps = {
   children?: Array<any>
 }
 
-export default class Warning extends React.Component {
-  props: WarningProps
+export default class Warning extends Component<WarningProps> {
 
   renderSubtitle() {
     if (this.props.subtitle) {

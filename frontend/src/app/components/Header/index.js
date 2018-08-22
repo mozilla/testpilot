@@ -1,7 +1,7 @@
 // @flow
 
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import LayoutWrapper from "../LayoutWrapper";
@@ -22,9 +22,7 @@ type HeaderState = {
   showSettings: boolean
 }
 
-export default class Header extends React.Component {
-  props: HeaderProps
-  state: HeaderState
+export default class Header extends Component<HeaderProps, HeaderState> {
   closeTimer: any
 
   constructor(props: HeaderProps) {

@@ -1,7 +1,7 @@
 // @flow
 
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 
 import Copter from "../components/Copter";
 import LayoutWrapper from "../components/LayoutWrapper";
@@ -15,9 +15,7 @@ type ErrorPageProps = {
 }
 
 
-export default class ErrorPage extends React.Component {
-  props: ErrorPageProps
-
+export default class ErrorPage extends Component<ErrorPageProps> {
   render() {
     return (
       <View spaceBetween={true} showNewsletterFooter={false} {...this.props}>

@@ -1,4 +1,5 @@
-import React from "react";
+// @flow
+import React, { Fragment } from "react";
 import { Localized } from "fluent-react/compat";
 import LocalizedHtml from "../../components/LocalizedHtml";
 import { experimentL10nId, isMobile } from "../../lib/utils";
@@ -31,6 +32,7 @@ export default function ExperimentControls({
   isDisabling,
   isEnabling,
   isMinFirefox,
+  pre_feedback_copy,
   sendToGA,
   surveyURL,
   uninstallExperimentWithSurvey,
@@ -67,6 +69,7 @@ export default function ExperimentControls({
     isEnabling,
     isMinFirefox,
     platforms,
+    pre_feedback_copy,
     sendToGA,
     surveyURL,
     uninstallExperimentWithSurvey,
@@ -166,10 +169,10 @@ function createButtons({
     }
     const category = "ExperimentDetailsPage Interactions";
     return (
-      <React.Fragment>
+      <Fragment>
         {platforms.includes("ios") && <MobileStoreButton {...{ url: ios_url, platform: "ios", category, sendToGA, slug }} />}
         {platforms.includes("android") && <MobileStoreButton {...{ url: android_url, platform: "android", category, sendToGA, slug }} />}
-      </React.Fragment>
+      </Fragment>
     );
   };
 
@@ -193,7 +196,7 @@ function createButtons({
 
     if (enabled) {
       return (
-        <React.Fragment>
+        <Fragment>
           <FeedbackButton
             {...{
               title,
@@ -208,7 +211,7 @@ function createButtons({
           <UninstallButton
             {...{ uninstallExperimentWithSurvey, isDisabling, title }}
           />
-        </React.Fragment>
+        </Fragment>
       );
     }
 
@@ -236,32 +239,32 @@ function createButtons({
       return mobileControls();
     case "WebMobile":
       return (
-        <React.Fragment>
+        <Fragment>
           {mobileControls()}
           {webControls("secondary")}
-        </React.Fragment>
+        </Fragment>
       );
     case "AddonWeb":
       return (
-        <React.Fragment>
+        <Fragment>
           {addonControls("default")}
           {webControls("secondary")}
-        </React.Fragment>
+        </Fragment>
       );
     case "AddonMobile":
       return (
-        <React.Fragment>
+        <Fragment>
           {mobileControls()}
           {addonControls("secondary")}
-        </React.Fragment>
+        </Fragment>
       );
     case "AddonWebMobile":
       return (
-        <React.Fragment>
+        <Fragment>
           {mobileControls()}
           {addonControls("secondary")}
           {webControls("secondary")}
-        </React.Fragment>
+        </Fragment>
       );
     default:
       return null;
