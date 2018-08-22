@@ -1,6 +1,6 @@
 // @flow
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 
 import RetireConfirmationDialog from "../RetireConfirmationDialog";
 
@@ -16,10 +16,7 @@ type FooterState = {
   showRetireDialog: boolean
 }
 
-export default class Footer extends React.Component {
-  props: FooterProps
-  state: FooterState
-
+export default class Footer extends Component<FooterProps, FooterState> {
   constructor(props: FooterProps) {
     super(props);
 

@@ -43,7 +43,7 @@ const includeVendorModules = [
 ];
 
 const vendorModules = Object.keys(packageJSON.dependencies)
-  .filter(name => excludeVendorModules.indexOf(name) < 0)
+  .filter(name => !excludeVendorModules.includes(name))
   .concat(includeVendorModules);
 
 const extractSass = new ExtractTextPlugin({
@@ -106,6 +106,7 @@ module.exports = {
     poll: 1000
   },
   node: {
+    fs: "empty",
     crypto: false
   },
   stats: {
