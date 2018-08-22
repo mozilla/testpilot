@@ -46,7 +46,8 @@ export default class IncompatibleAddons extends Component<IncompatibleAddonsProp
       return [];
     }
     const installed = this.props.installedAddons || [];
-    return Object.keys(incompatible).filter(guid => (installed.includes(guid)));
+    // $FlowFixMe
+    return Object.keys(incompatible).filter((guid: string) => (installed.includes(guid)));
   }
 
 }
