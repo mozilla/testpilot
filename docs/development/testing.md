@@ -11,20 +11,20 @@ handy to know how to run them and write new ones as code changes.
 We use the recommended mozilla-central lint rules. See the
 [source for eslint-plugin-mozilla][source] for details about the rules.
 
-We also use the following eslint plugin recommended rules:
+We also use the following ESLint plugin recommended rules:
 
  - eslint-plugin-import
  - eslint-plugin-flowtype
  - eslint-plugin-react
 
 To lint the frontend, run `npm run lint` in the testpilot directory.
-To lint the addon, run `npm run lint` in the addon directory.
+To lint the add-on, run `npm run lint` in the `addon` directory.
 
-To lint only one file in the frontend, run eslint inside the testpilot directory:
+To lint only one file in the frontend, run ESLint inside the testpilot directory:
 
     ./node_modules/.bin/eslint [path/to/file.js]
 
-To lint only one file in the addon, run eslint inside the addon directory:
+To lint only one file in the add-on, run eslint inside the `addon` directory:
 
     ./node_modules/.bin/eslint -c ../.eslintrc [path/to/file.js]
 
@@ -33,7 +33,7 @@ To lint only one file in the addon, run eslint inside the addon directory:
 
 ## All tests
 
-To quickly run all tests, including addon tests, frontend tests, eslint checks, and flow types coverage reports, use `npm run test:all`.
+To quickly run all tests, including add-on tests, frontend tests, eslint checks, and flow types coverage reports, use `npm run test:all`.
 
 ## Front-end client tests
 
@@ -85,7 +85,7 @@ Look in the `addon/test` directory for examples of tests.
 ## Integration tests
 
 The tests expect the WebExtension to be built. If not you will receive an error
-stating that the addon or webextension is not found.
+stating that the add-on or WebExtension is not found.
 
 Please follow the instructions [here](./quickstart.md).
 
