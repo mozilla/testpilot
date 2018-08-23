@@ -156,6 +156,7 @@ workflows:
       - static_deploy:
           requires:
             - unit_test
+            - integration_test
           filters:
             branches:
               only: master
