@@ -31,4 +31,4 @@ mozdownload --version latest-beta --destination ~/project/firefox-downloads/fire
 mozdownload --version latest --type daily --destination ~/project/firefox-downloads/firefox_nightly/
 
 # Dependencies for firefox
-sudo apt-get install -y libgtk3.0-cil-dev libasound2 libasound2 libdbus-glib-1-2 libdbus-1-3
+sudo apt-get update && sudo apt-get install -y libgtk3.0-cil-dev libasound2 libasound2 libdbus-glib-1-2 libdbus-1-3
