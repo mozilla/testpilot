@@ -66,6 +66,19 @@
   user-select: none;
   width: 280px;
 
+  &:hover .main-install__badge {
+    animation: bounce 0.15s infinite alternate;
+
+    @keyframes bounce {
+      from {
+        transform: translateY(0px);
+      }
+      to {
+        transform: translateY(3px);
+      }
+    } 
+  }
+
   .layout-wrapper--column-center & {
     margin-left: auto;
     margin-right: auto;
@@ -84,7 +97,6 @@
     padding: 14px;
     position: absolute;
     right: 2px;
-    transition-duration: 150ms;
     width: 16px;
   }
 
