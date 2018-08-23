@@ -153,7 +153,7 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
     expect(findLocalizedHtmlById(subject, "testingIntroduction")).to.have.property("length", 1);
     expect(findLocalizedById(subject, "testingContributors0Title")).to.have.property("length", 1);
     expect(findLocalizedById(subject, "testingDetails0Headline")).to.have.property("length", 1);
-    expect(findLocalizedById(subject, "testingDetails0Copy")).to.have.property("length", 1);
+    expect(findLocalizedHtmlById(subject, "testingDetails0Copy")).to.have.property("length", 1);
 
     // Fields only available when the add-on is installed.
     subject.setProps({ hasAddon: true });
@@ -167,7 +167,7 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
     expect(findLocalizedHtmlById(subject, "testingIntroduction")).to.have.property("length", 0);
     expect(findLocalizedById(subject, "testingContributors0Title")).to.have.property("length", 0);
     expect(findLocalizedById(subject, "testingDetails0Headline")).to.have.property("length", 0);
-    expect(findLocalizedById(subject, "testingDetails0Copy")).to.have.property("length", 0);
+    expect(findLocalizedHtmlById(subject, "testingDetails0Copy")).to.have.property("length", 0);
   });
 
   it("should not render experiment content if no experiment content is loaded", () => {

@@ -1,7 +1,6 @@
 // @flow
 
 import React from "react";
-import parser from "html-react-parser";
 import { Localized } from "fluent-react/compat";
 import LocalizedHtml from "../../components/LocalizedHtml";
 
@@ -67,7 +66,7 @@ export default function DetailsDescription({
               </div>}
             <LocalizedHtml id={l10nId("introduction")}>
               <div>
-                {parser(introduction)}
+                {introduction}
               </div>
             </LocalizedHtml>
           </section>}
@@ -85,11 +84,11 @@ export default function DetailsDescription({
                     </strong>
                   </Localized>}
                 {copy &&
-                  <Localized id={l10nId(["details", idx, "copy"])}>
+                  <LocalizedHtml id={l10nId(["details", idx, "copy"])}>
                     <span>
-                      {parser(copy)}
+                      {copy}
                     </span>
-                  </Localized>}
+                  </LocalizedHtml>}
               </p>
             </div>
           </div>
@@ -138,11 +137,11 @@ export const EolBlock = ({ experiment, l10nId }: EolBlockProps) => {
       titleL10nArgs={JSON.stringify({ title: experiment.title, completedDate })}
       title={title}
     >
-      <Localized id={l10nId("eolWarning")}>
+      <LocalizedHtml id={l10nId("eolWarning")}>
         <div>
-          {parser(experiment.eol_warning)}
+          {experiment.eol_warning}
         </div>
-      </Localized>
+      </LocalizedHtml>
       <div className="small-spacer" />
       <Localized id="eolNoticeLink">
         <a href="/about" target="_blank" rel="noopener noreferrer">
