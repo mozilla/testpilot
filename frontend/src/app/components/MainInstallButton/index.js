@@ -64,7 +64,9 @@ export default class MainInstallButton extends Component<MainInstallButtonProps,
 
   renderWebExperimentButton() {
     const { sendToGA, experiment } = this.props;
+    if (!experiment) return;
     const { title, slug, web_url } = experiment;
+    // eslint-disable-next-line consistent-return
     return (
       <WebExperimentButton {...{
         web_url,
@@ -93,6 +95,7 @@ export default class MainInstallButton extends Component<MainInstallButtonProps,
     return (
       <LayoutWrapper flexModifier={layout} helperClass="main-install">
         <div className="main-install__spacer" />
+        {/* $FlowFixMe */}
         {(showWebButton) ? this.renderWebExperimentButton() : (isMinFirefox && !isMobile) ? this.renderInstallButton(isInstalling, hasAddon) : this.renderAltButton(isFirefox, isMobile)
         }
         {isMinFirefox && !isMobile && !experimentLegalLink && <LocalizedHtml id="landingLegalNotice" $terms={terms} $privacy={privacy}>
