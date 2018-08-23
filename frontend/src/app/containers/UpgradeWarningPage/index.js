@@ -1,6 +1,6 @@
 // @flow
 
-import React from "react";
+import React, { Component } from "react";
 import { Localized } from "fluent-react/compat";
 
 import View from "../../components/View";
@@ -16,10 +16,9 @@ type UpgradeWarningProps = {
   isProdHost: Boolean
 }
 
-export default class UpgradeWarning extends React.Component {
-  props: UpgradeWarningProps
+export default class UpgradeWarning extends Component<UpgradeWarningProps> {
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.props.sendToGA("event", {
       eventCategory: "HomePage Interactions",
       eventAction: "Upgrade Warning",

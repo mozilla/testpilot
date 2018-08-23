@@ -226,7 +226,6 @@ function generateStaticPage(prepareForClient, pageName, pageParam, component, {
 
   const bodyComponent = <div id="static-root">
     <NoScript />
-    {prepareForClient ? <script src="/static/app/vendor.js"></script> : null}
   </div>;
 
   return makeStaticString(prepareForClient, pageName, pageParam, headComponent, bodyComponent, component);
@@ -250,7 +249,6 @@ function generateStaticPageFromMarkdown(pageName, pageParam, markdown, params) {
     </LayoutWrapper>
 
     <Footer />
-    <script src="/static/app/vendor.js"></script>
     <script src="/static/scripts/locale.js"></script>
     <script src="/static/scripts/legal.js"></script>
   </div>;

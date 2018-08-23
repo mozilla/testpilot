@@ -1,3 +1,4 @@
+// @flow
 import React from "react";
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
@@ -74,7 +75,7 @@ export const FeedbackButton = ({
 };
 
 export const MobileTriggerButton = ({
-  doShowMobileAppDialog, optionalClass, color = "default"
+  doShowMobileAppDialog, optionalClass = "", color = "default"
 }: MobileTriggerButtonType) => {
   return (
     <a

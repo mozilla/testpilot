@@ -298,8 +298,6 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
           .to.deep.equal(experiment);
         expect(subject.state("isEnabling")).to.be.true;
         expect(subject.state("isDisabling")).to.be.false;
-        expect(subject.state("progressButtonWidth"))
-          .to.equal(mockClickEvent.target.offsetWidth);
         expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
           eventCategory: "ExperimentDetailsPage Interactions",
           eventAction: "Enable Experiment",
@@ -391,8 +389,6 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
           expect(subject.find("ExperimentDisableDialog")).to.have.property("length", 1);
           expect(subject.state("isEnabling")).to.be.false;
           expect(subject.state("isDisabling")).to.be.true;
-          expect(subject.state("progressButtonWidth"))
-            .to.equal(mockClickEvent.target.offsetWidth);
           expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
             eventCategory: "ExperimentDetailsPage Interactions",
             eventAction: "Disable Experiment",

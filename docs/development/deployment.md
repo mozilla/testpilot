@@ -7,11 +7,11 @@ This document details the process we use to deploy Test Pilot to our stage and p
 - Thursday (a week before we freeze) merge new strings to the `l10n` branch so
   localizers have a week to get any new strings in.  Hold off committing any
   major new strings at this point.
-- Thursday (a week after step 1) at 1pm PST the train is cut, all code is in.
-- Thursday at 4pm PST we tag and push stage, and send email out.
+- Thursday (a week after step 1) at 1PM PST the train is cut, all code is in.
+- Thursday at 4PM PST we tag and push stage, and send email out.
 - Friday is a buffer day.
 - Monday at regular stand-up we review anything that Softvision found and fix it.
-- Tuesday at 8am PST we push and Softvision verifies.
+- Tuesday at 8AM PST we push and Softvision verifies.
 
 ## Softvision ##
 
@@ -41,7 +41,7 @@ Note: we auto deploy the master branch to our *development environment*: [https:
 
 ## Merge l10n to master ##
 
-Before tagging the release, merge the l10n branch into the master branch. These commands assume the remote named `mozilla` points at the mozilla repository on github.
+Before tagging the release, merge the l10n branch into the master branch. These commands assume the remote named `mozilla` points at the mozilla repository on GitHub.
 
 `git checkout -b l10n mozilla/l10n && git pull mozilla l10n && git checkout master && git pull mozilla master && git merge l10n && git push mozilla master`
 

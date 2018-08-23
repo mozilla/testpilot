@@ -2,7 +2,7 @@
 /* eslint no-nested-ternary: 0 */
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 
 import LayoutWrapper from "../LayoutWrapper";
 import LocalizedHtml from "../LocalizedHtml";
@@ -19,9 +19,7 @@ import {
 
 type MainInstallButtonState = { isInstalling: boolean };
 
-export default class MainInstallButton extends React.Component {
-  props: MainInstallButtonProps;
-  state: MainInstallButtonState;
+export default class MainInstallButton extends Component<MainInstallButtonProps, MainInstallButtonState> {
 
   constructor(props: MainInstallButtonProps) {
     super(props);
@@ -40,8 +38,7 @@ export default class MainInstallButton extends React.Component {
       eventLabel, experiment, experimentTitle, isFeatured,
       installed, hasAddon, enableExperiment } = this.props;
 
-    if (isFeatured) {
-      const { slug } = experiment;
+    if (isFeatured && experiment && experiment.slug) {
       sendToGA("event", {
         eventCategory,
         eventAction: "button click",
@@ -51,7 +48,7 @@ export default class MainInstallButton extends React.Component {
         dimension3: installed ? Object.keys(installed).length : 0,
         dimension4: false, // enabled?
         dimension5: experimentTitle,
-        dimension11: slug,
+        dimension11: experiment.slug,
         dimension13: "Featured Experiment"
       });
     }
@@ -146,7 +143,7 @@ export default class MainInstallButton extends React.Component {
       <span className="progress-btn-msg">Enabling...</span>
     </Localized>);
 
-    if (experimentTitle) {
+    if (experimentTitle && experiment) {
       const enabled = isExperimentEnabled(experiment);
       if (hasAddon && !enabled) {
         installButton = this.renderEnableExperimentButton(experimentTitle);

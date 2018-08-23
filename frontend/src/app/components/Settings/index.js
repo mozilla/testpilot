@@ -2,7 +2,7 @@
 
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 
 import "./index.scss";
 
@@ -17,8 +17,7 @@ type SettingsProps = {
   showSettings?: Function
 }
 
-export default class Settings extends React.Component {
-  props: SettingsProps
+export default class Settings extends Component<SettingsProps> {
 
   wiki() {
     this.props.sendToGA("event", {
@@ -142,7 +141,6 @@ export default class Settings extends React.Component {
   }
 
   componentWillUnmount() {
-    if (this.closeTimer) { clearTimeout(this.closeTimer); }
     if (typeof document !== "undefined"
       && document.body !== null) {
       document.body.removeEventListener("click", this.props.close);

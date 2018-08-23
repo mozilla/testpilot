@@ -1,3 +1,4 @@
+// @flow
 export type BrowserEnvProps = {
   isFirefox: boolean,
   isMinFirefox: boolean,

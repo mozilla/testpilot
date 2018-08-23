@@ -9,7 +9,7 @@ To make a new experiment:
 
 1. Copy the `template.yaml` file below into `./content-src/experiments`
 2. Rename your file to match the eventual slug of your experiment eg `tab-center.yaml`
-3. You'll need a place to put image assets for your experiment. Make a new directory './frontend/src/images/experiments' to match the name of your yaml file
+3. You'll need a place to put image assets for your experiment. Make a new directory './frontend/src/images/experiments' to match the name of your YAML file
 4. In the directory you've created, `mkdir details social avatars tour icon`. You'll put various image assets into these folders.
 5. As you add images, please compress them. You can do this with an [app](https://imageoptim.com/mac) or [command line tool](https://www.npmjs.com/package/image-min).
 6. Populate the content as appropriate, using the [reference](#reference) to help.
@@ -159,11 +159,11 @@ web_url: 'https://example.com/some-web-experiment'
 
 ## `ios_url`
 
-Url to the iOS app store page for the app. Required when `platform` includes `ios`.
+URL to the iOS app store page for the app. Required when `platform` includes `ios`.
 
 ## `android_url`
 
-Url to the Google Play store page for the app. Required when `platform` includes `android`.
+URL to the Google Play store page for the app. Required when `platform` includes `android`.
 
 ## `basket_msg_id`
 
@@ -217,8 +217,8 @@ see also:[General news updates](#general-news-updates)
 
 ## `video_url`
 
-If there's a youtube video for the experiment use this field. Note that this should be the embed URL
-rather than the sharing url
+If there's a YouTube video for the experiment use this field. Note that this should be the embed URL
+rather than the sharing URL
 
 ```yaml
 video_url: 'video_url: https://www.youtube.com/embed/lDv68xYHFXM'
@@ -456,7 +456,7 @@ contributors_extra: 'https://example.com'
 
 ## `tour_steps`
 
-An array of one or more steps to a tour presented to users after instsalling the experiment. Each one should contain:
+An array of one or more steps to a tour presented to users after installing the experiment. Each one should contain:
 
 - `image` - The URL to an image. Should be 1280x720. Required.
 - `copy` - A caption for the image. Should be wrapped in `<p>` tags. Localized, required, HTML allowed.
@@ -530,7 +530,7 @@ graduation_url: http://example.com/graduation-report
 
 ## `eol_warning`
 
-When your experiement is ending, add this field to idicate to users what will happen next.
+When your experiment is ending, add this field to indicate to users what will happen next.
 
 Localized, required when you add a `completed` field.
 
@@ -606,7 +606,7 @@ locale_grantlist:
 
 ## `dev`
 
-A boolean indicating whether this experiment should only appear in a dev environment, i.e. for testing or active development. Required.
+A Boolean indicating whether this experiment should only appear in a dev environment, i.e. for testing or active development. Required.
 
 ```yaml
 dev: false
@@ -616,7 +616,7 @@ dev: false
 
 ## `testpilot_options`
 
-A set of options for configuring testpilot features for this experiment.
+A set of options for configuring TestPilot features for this experiment.
 
 Enabling / disabling the rating feedback prompt is the only option right now. Valid values are `enabled` or `disabled`. Defaults to `enabled`.
 
@@ -626,8 +626,8 @@ testpilot_options:
 ```
 
 # `General News Updates`
-General news updates about testpilot can be added in `content/news_updates.yaml`.
-These will show up on the `/experiments` page in reverse chronilogical order along with
+General news updates about TestPilot can be added in `content/news_updates.yaml`.
+These will show up on the `/experiments` page in reverse chronological order along with
 the experiment updates.
 
 ``` yaml

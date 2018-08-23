@@ -15,6 +15,10 @@ env:
   node: true
   browser: true
 
+settings:
+  react:
+    version: "16.0.0"
+
 globals:
   navigator: true
   document: true
@@ -23,11 +27,10 @@ globals:
   Promise: true
 
 parserOptions:
-  ecmaVersion: 6
+  ecmaVersion: 9
   sourceType: module
   ecmaFeatures:
     jsx: true
-    experimentalObjectRestSpread: true
 
 rules:
   "import/prefer-default-export": [0]

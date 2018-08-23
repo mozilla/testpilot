@@ -1,6 +1,7 @@
 // @flow
 
-import React from "react";
+import React, { Component } from "react";
+import type { Element } from "react";
 
 import "./index.scss";
 
@@ -9,16 +10,17 @@ type ModalProps = {
   onCancel: Function,
   onComplete: Function,
   handleKeyDown?: Function,
-  headerTitle?: React.Element<any>,
-  children: Array<React.Element<any>> | React.Element<any>
+  headerTitle?: Element<"h3">,
+  children: any
 }
 
-export default class Modal extends React.Component {
-  props: ModalProps
-  modalContainer: Object
+export default class Modal extends Component<ModalProps> {
+  modalContainer: ?any
 
   componentDidMount() {
-    this.modalContainer.focus();
+    if (this.modalContainer) {
+      this.modalContainer.focus();
+    }
   }
 
   render() {

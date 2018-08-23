@@ -187,7 +187,6 @@ const detailsHeaderBaseProps = {
   experiment,
   installed: {},
   enabled: false,
-  progressButtonWidth: 248,
   isDisabling: false,
   isEnabling: false,
   surveyURL: "https://example.com/survey",

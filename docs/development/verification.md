@@ -65,7 +65,7 @@
 
 ### Firefox <small>(ETA: 25m)</small>
 
-1. Open Firefox (any channel, preferrably _Release_ or _Nightly_).
+1. Open Firefox (any channel, preferably _Release_ or _Nightly_).
 
 1. Go to **about:addons** and verify that you don't have any existing Test Pilot add-on or experiment add-ons installed.
 
@@ -116,7 +116,7 @@
     - In the case of **Tab Center**, you should see your top tabs disappear and reappear on the left hand side.
     - In the case of **Universal Search** you should see a new search UI in the Awesome Bar if you search for a movie or something on Wikipedia.
 
-1. After the experiment is successsfully installed, verify that a dialog box appears saying **"{Experiment name} enabled!"**. Click the **"Take the Tour"** button and verify the tour works and closes as expected. Confirm that after installing the experiment, the number of active users increases by 1.
+1. After the experiment is successfully installed, verify that a dialog box appears saying **"{Experiment name} enabled!"**. Click the **"Take the Tour"** button and verify the tour works and closes as expected. Confirm that after installing the experiment, the number of active users increases by 1.
 
 1. After enabling an experiment, the header area should now say **"{Experiment name} is enabled."** in green.
 
@@ -130,7 +130,7 @@
 
 1. Click the Test Pilot icon in the toolbar and verify that both active experiments are listed as **"{Experiment name} is enabled."**.
 
-1. Go back to the original Test Pilot exeriment details page and click the gray **"Disable {experiment name}"** button. Verify that the number of active experiment users decreases by 1.
+1. Go back to the original Test Pilot experiment details page and click the gray **"Disable {experiment name}"** button. Verify that the number of active experiment users decreases by 1.
 
 1. Verify that you see a **"Thank You!"** modal dialog which has an icon and thanks the user for their participation, and has two buttons:
     - a blue **"Take a quick survey"** button
@@ -146,7 +146,7 @@
 
 1. Click the **"Uninstall Test Pilot"** link in the pop-up menu.
 
-1. Verify that you're prompted to uninstall test pilot and given the option of proceeding (a big, scary red button), or cancelling (a non-threatening blue link). Clicking the Cancel button takes you back to safetly. Clicking the scary red button will uninstall the Test Pilot add-on and any experiments you have currently installed.
+1. Verify that you're prompted to uninstall test pilot and given the option of proceeding (a big, scary red button), or cancelling (a non-threatening blue link). Clicking the Cancel button takes you back to safety. Clicking the scary red button will uninstall the Test Pilot add-on and any experiments you have currently installed.
 
 1. Click the red **"Proceed"** button to leave the Test Pilot program. You should see a **"Shutting down"** spinner and then a **"Thanks for flying!"** modal dialog thanking you for your participaction and prompting you to **"Take a quick survey"** or returning to the Home page.
 

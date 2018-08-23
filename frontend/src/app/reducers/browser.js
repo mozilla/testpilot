@@ -1,3 +1,4 @@
+// @flow
 import config from "../config";
 import { isFirefox, isMinFirefoxVersion, isMobile } from "../lib/utils";
 
@@ -28,6 +29,7 @@ function defaultState(): BrowserState {
     isMobile: isMobile(userAgent),
     host: window.location.host,
     protocol: window.location.protocol,
+    // $FlowFixMe
     hasAddonManager: (typeof navigator.mozAddonManager !== "undefined"),
     isProdHost: window.location.host === config.prodHost,
     isDevHost: config.devHosts.includes(window.location.host),
