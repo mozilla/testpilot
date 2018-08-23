@@ -141,11 +141,13 @@ export const StatsSection = ({
               <Localized id="changelog"><span>Changelog</span></Localized>
             </a>
           </li>}
-      <li>
-        <a href={contribute_url}>
-          <Localized id="contribute"><span>Contribute</span></Localized>
-        </a>
-      </li>
+      {contribute_url &&
+          <li>
+            <a href={contribute_url}>
+              <Localized id="contribute"><span>Contribute</span></Localized>
+            </a>
+          </li>
+      }
       <li>
         <a href={bug_report_url}>
           <Localized id="bugReports"><span>Bug Reports</span></Localized>
