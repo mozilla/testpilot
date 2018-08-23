@@ -1,7 +1,6 @@
 // @flow
 import React, { Component } from "react";
 import { Localized } from "fluent-react/compat";
-import LocalizedHtml from "../../components/LocalizedHtml";
 
 import "./index.scss";
 
@@ -24,11 +23,11 @@ export default class IncompatibleAddons extends Component<IncompatibleAddonsProp
               This experiment may not be compatible with add-ons you have installed.
             </h3>
           </Localized>
-          <LocalizedHtml id="incompatibleSubheader">
+          <Localized id="incompatibleSubheader" a={<a href={helpUrl}/>}>
             <p>
-              We recommend <a href={helpUrl}>disabling these add-ons</a> before activating this experiment:
+              We recommend <a>disabling these add-ons</a> before activating this experiment:
             </p>
-          </LocalizedHtml>
+          </Localized>
         </header>
         <main>
           <ul>

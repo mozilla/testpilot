@@ -2,7 +2,6 @@
 
 import React from "react";
 import { Localized } from "fluent-react/compat";
-import LocalizedHtml from "../../components/LocalizedHtml";
 import { experimentL10nId, formatDate } from "../../lib/utils";
 import MeasurementsSection from "../../components/Measurements";
 import ExperimentControls from "./ExperimentControls";
@@ -87,21 +86,21 @@ export const LaunchStatus = ({ experiment, graduated }: LaunchStatusType) => {
   const completedDate = formatDate(completed);
   if (graduated) {
     return (
-      <LocalizedHtml id="completedDateLabel" $completedDate={completedDate}>
+      <Localized id="completedDateLabel" $completedDate={completedDate} b={<b></b>}>
         <span>
           Experiment End Date: <b>{completedDate}</b>
         </span>
-      </LocalizedHtml>
+      </Localized>
     );
   }
 
   const startedDate = formatDate(created);
   return (
-    <LocalizedHtml id="startedDateLabel" $startedDate={startedDate}>
+    <Localized id="startedDateLabel" $startedDate={startedDate} b={<b></b>}>
       <span>
         Experiment Start Date: <b>{startedDate}</b>
       </span>
-    </LocalizedHtml>
+    </Localized>
   );
 };
 

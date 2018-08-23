@@ -14,7 +14,6 @@ import LayoutWrapper from '../../components/LayoutWrapper';
 import PastExperiments from '../../components/PastExperiments';
 import View from '../../components/View';
 import Visibility from "../../components/Visibility";
-import LocalizedHtml from '../../components/LocalizedHtml';
 import NewsUpdatesDialog from '../../components/NewsUpdatesDialog';
 import type { InstalledExperiments } from '../../reducers/addon';
 import { getBreakpoint } from "../App";
@@ -131,16 +130,14 @@ export default class HomePageWithAddon extends Component<HomePageWithAddonProps,
                   it for a spin, and let us know what you think.
                 </p>
               </Localized>
-              <LocalizedHtml id="experimentsListNoneInstalledCTA">
+              <Localized id="experimentsListNoneInstalledCTA"
+                a={<a onClick={() => this.onNotInterestedSurveyClick()}
+                  href="https://qsurvey.mozilla.com/s3/TxP-User" target="_blank"
+                  className="banner__link"/>}>
                 <p className="banner__copy">
-                  Not interested?
-                  <a onClick={() => this.onNotInterestedSurveyClick()}
-                     href="https://qsurvey.mozilla.com/s3/TxP-User" target="_blank"
-                     className="banner__link">
-                   Let us know why
-                  </a>.
+                  Not interested? <a>Let us know why</a>.
                 </p>
-              </LocalizedHtml>
+              </Localized>
             </div>
             <div className="banner__spacer" />
             <Copter/>

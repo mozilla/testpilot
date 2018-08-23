@@ -158,7 +158,7 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
     // Fields only available when the add-on is installed.
     subject.setProps({ hasAddon: true });
     // The measurements section is rendered twice, for responsiveness reasons.
-    expect(findLocalizedHtmlById(subject, "testingMeasurements0")).to.have.property("length", 2);
+    expect(findLocalizedById(subject, "testingMeasurements0")).to.have.property("length", 2);
   });
 
   it("should omit l10n IDs for dev-only content", () => {
@@ -450,7 +450,7 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
         });
 
         it("displays the end date instead of install count", () => {
-          expect(findLocalizedHtmlById(subject, "completedDateLabel").length).to.equal(1);
+          expect(findLocalizedById(subject, "completedDateLabel").length).to.equal(1);
           expect(findLocalizedById(subject, "userCountContainer").length).to.equal(0);
           expect(findLocalizedById(subject, "userCountContainerAlt").length).to.equal(0);
         });
