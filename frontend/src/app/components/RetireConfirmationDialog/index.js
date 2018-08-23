@@ -22,7 +22,7 @@ export class RetireConfirmationDialog extends Component<RetireConfirmationDialog
   render() {
     return (
       <div className="modal-container" tabIndex="0"
-        ref={(modalContainer: any | null) => { this.modalContainer = modalContainer; }}
+        ref={(modalContainer: any) => { this.modalContainer = modalContainer; }}
         onKeyDown={e => this.handleKeyDown(e)}>
         <div id="retire-dialog-modal" className="modal feedback-modal modal-bounce-in uninstall-modal">
           <header className="modal-header-wrapper warning-modal">
