@@ -65,8 +65,7 @@ def test_support_pages(base_url, selenium, page, title):
     assert title in page.title
 
 
-@pytest.mark.skip(reason="Test is really inconsistent, hard to
-actuallycheck if element is displayed?")
+@pytest.mark.skip(reason="hard to check if el is displayed?")
 @pytest.mark.nondestructive
 def test_incomplete_email(base_url, selenium):
     """Test signup with incorrect email"""
