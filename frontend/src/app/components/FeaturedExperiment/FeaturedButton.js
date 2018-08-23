@@ -164,8 +164,8 @@ export default class FeaturedButton extends Component<FeaturedButtonProps, Featu
       }
       return (
         <React.Fragment>
-          {platforms.includes("ios") && <MobileStoreButton {...{ url: ios_url, platform: "ios", slug, category, sendToGA }} />}
-          {platforms.includes("android") && <MobileStoreButton {...{ url: android_url, platform: "android", slug, category, sendToGA }} />}
+          {/iPad|iPhone|iPod/i.test(userAgent) && platforms.includes("ios") && <MobileStoreButton {...{ url: ios_url, platform: "ios", slug, category, sendToGA }} />}
+          {/android/i.test(userAgent) && platforms.includes("android") && <MobileStoreButton {...{ url: android_url, platform: "android", slug, category, sendToGA }} />}
         </React.Fragment>
       );
     };
