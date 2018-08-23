@@ -1,6 +1,6 @@
 // @flow
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 
 import Banner from "../../components/Banner";
 import Copter from "../../components/Copter";
@@ -24,15 +24,16 @@ type HomePageNoAddonProps = {
   hasAddon: any,
   isAfterCompletedDate: Function,
   isExperimentEnabled: Function,
+  isMobile: boolean,
   isFirefox: boolean,
   isMinFirefox: boolean,
+  installAddon: Function,
   installed: InstalledExperiments,
   sendToGA: Function,
   userAgent: string
 }
 
-export default class HomePageNoAddon extends React.Component {
-  props: HomePageNoAddonProps
+export default class HomePageNoAddon extends Component<HomePageNoAddonProps> {
 
   render() {
     const { isAfterCompletedDate, featuredExperiments,
@@ -67,7 +68,7 @@ export default class HomePageNoAddon extends React.Component {
     </Banner>;
 
     const featuredSection = featuredExperiment ? (<Banner background={true}>
-      <LayoutWrapper flexModifier="row-between-breaking">
+      <LayoutWrapper flexModifier="row-center">
         <FeaturedExperiment {...this.props}
           experiment={featuredExperiment}
           eventCategory="FeaturedExperiment Interactions"

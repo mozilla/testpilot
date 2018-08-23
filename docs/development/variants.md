@@ -27,7 +27,7 @@ is not English and choosing a random value otherwise:
       }
     }
 
-To provide variant ui for your test, import the `VariantTests`,
+To provide variant UI for your test, import the `VariantTests`,
 `VariantTestCase`, and `VariantTestDefault` react components from the
 `components/VariantTests` module. Then define your variants as so:
 

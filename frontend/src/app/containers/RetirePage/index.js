@@ -1,7 +1,7 @@
 // @flow
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import Copter from "../../components/Copter";
@@ -21,9 +21,7 @@ type RetirePageState = {
   fakeUninstalled: boolean
 }
 
-export default class RetirePage extends React.Component {
-  props: RetirePageProps
-  state: RetirePageState
+export default class RetirePage extends Component<RetirePageProps, RetirePageState> {
   fakeUninstallTimer: any
 
   static defaultProps = {

@@ -1,7 +1,7 @@
 // @flow
 
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import { experimentL10nId } from "../../lib/utils";
@@ -27,14 +27,15 @@ type FeaturedExperimentProps = {
   isFirefox: boolean,
   isExperimentEnabled: Function,
   isMinFirefox: boolean,
+  installAddon: Function,
   installed: InstalledExperiments,
+  enableExperiment: Function,
+  isMobile: boolean,
   sendToGA: Function,
   userAgent: string
 }
 
-export default class FeaturedExperiment extends React.Component {
-  props: FeaturedExperimentProps
-
+export default class FeaturedExperiment extends Component<FeaturedExperimentProps> {
   constructor(props: FeaturedExperimentProps) {
     super(props);
   }

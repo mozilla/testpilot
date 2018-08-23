@@ -1,6 +1,6 @@
 // @flow
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
 import LocalizedHtml from "../LocalizedHtml";
@@ -12,21 +12,17 @@ type RetireConfirmationDialogProps = {
   history: Object
 }
 
-export class RetireConfirmationDialog extends React.Component {
-  props: RetireConfirmationDialogProps
-
-  modalContainer: Object
+export class RetireConfirmationDialog extends Component<RetireConfirmationDialogProps> {
+  modalContainer: ?any
 
   componentDidMount() {
-    if (this.modalContainer !== undefined) {
-      this.modalContainer.focus();
-    }
+    if (this.modalContainer) this.modalContainer.focus();
   }
 
   render() {
     return (
       <div className="modal-container" tabIndex="0"
-        ref={modalContainer => { this.modalContainer = modalContainer; }}
+        ref={(modalContainer: any) => { this.modalContainer = modalContainer; }}
         onKeyDown={e => this.handleKeyDown(e)}>
         <div id="retire-dialog-modal" className="modal feedback-modal modal-bounce-in uninstall-modal">
           <header className="modal-header-wrapper warning-modal">

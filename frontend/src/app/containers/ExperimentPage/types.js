@@ -1,8 +1,13 @@
+// @flow
 import type {
   MiscAppProps,
   BrowserEnvProps,
   SendToGAProps
 } from "../../containers/types";
+
+import type {
+  MainInstallButtonProps
+} from "../../components/types";
 
 export type ExperimentPropsFromApp = {
   isExperimentEnabled: Function,
@@ -12,26 +17,51 @@ export type ExperimentPropsFromApp = {
   userAgent: string,
   experiments: Array<Object>,
   installed: Object,
+  installAddon: Function,
+  isMobile: boolean,
   isAfterCompletedDate: Function,
   isDev: boolean,
+  fetchCountryCode: Function,
   clientUUID: string,
-  installedAddons: Object,
+  installedAddons: Array<Object>,
   setPageTitleL10N: Function,
   locale: string,
   getElementOffsetHeight: Function,
   getElementY: Function,
+  getWindowLocation: Function,
   setScrollY: Function,
   getScrollY: Function,
+  installed: Object,
+  installExperiment: Function,
+  isFirefox: boolean,
+  isMinFirefox: boolean,
+  enabled: boolean,
   sendToGA: Function,
+  isEnabling: boolean,
+  isDisabling: boolean,
   addScrollListener: Function,
   removeScrollListener: Function,
-  disableExperiment: Function
+  disableExperiment: Function,
+  enableExperiment: Function
 };
 
 export type ExperimentPageProps = ExperimentPropsFromApp & {
   removeCookie: Function,
   getExperimentBySlug: Function,
   slug: string
+};
+
+export type ExperimentDetailState = {
+  enabled: boolean,
+  highlightMeasurementPanel: boolean,
+  isEnabling: boolean,
+  isDisabling: boolean,
+  showEmailDialog: boolean,
+  showDisableDialog: boolean,
+  showTourDialog: boolean,
+  showMobileDialog: boolean,
+  showPreFeedbackDialog: boolean,
+  showEolDialog: boolean
 };
 
 export type ExperimentDetailProps = ExperimentPropsFromApp & {
@@ -49,14 +79,14 @@ export type MouseEventWithElementTarget = {
 
 export type IncompatibleAddonsProps = {
   experiment: Object,
-  installedAddons: Array<string>
+  installedAddons: Array<Object>
 };
 
 export type TestpilotPromoProps = {
   hasAddon: any,
   graduated: boolean,
   experiment: Object
-} & MiscAppProps & SendToGAProps & BrowserEnvProps;
+} & MainInstallButtonProps & MiscAppProps & SendToGAProps & BrowserEnvProps;
 
 export type DetailsHeaderProps = {
   hasAddon: any,
@@ -64,7 +94,7 @@ export type DetailsHeaderProps = {
   experiment: Object,
   installed: Object,
   enabled: boolean,
-  progressButtonWidth: string,
+  graduated: boolean,
   isDisabling: boolean,
   isEnabling: boolean,
   surveyURL: string,
@@ -94,7 +124,8 @@ export type ExperimentControlsType = {
   installExperiment: Function,
   isDisabling: boolean,
   isEnabling: boolean,
-  isMinFirefox: Function,
+  isMinFirefox: boolean,
+  pre_feedback_copy: string,
   sendToGA: Function,
   surveyURL: string,
   uninstallExperimentWithSurvey: Function,
@@ -112,7 +143,7 @@ export type CreateButtonsType = {
   installExperiment: Function,
   isDisabling: boolean,
   isEnabling: boolean,
-  isMinFirefox: Function,
+  isMinFirefox: boolean,
   pre_feedback_copy: string,
   sendToGA: Function,
   surveyURL: string,
@@ -124,8 +155,9 @@ export type CreateButtonsType = {
 export type FeedbackButtonType = {
   title: string,
   slug: string,
-  surveyUrl: string,
+  surveyURL: string,
   pre_feedback_copy: string,
+  doShowPreFeedbackDialog: Function,
   sendToGA: Function,
   color: string,
 };
@@ -139,7 +171,7 @@ export type MobileTriggerButtonType = {
 export type GraduatedButtonType = {
   doShowEolDialog: Function,
   isDisabling: boolean,
-  title: DOMStringList
+  title: string
 };
 
 export type UninstallButtonType = {
@@ -163,7 +195,10 @@ export type EnableExperimentButtonType = {
 
 export type MobileStoreButtonType = {
   url: string,
-  platform: string
+  category: string,
+  platform: string,
+  sendToGA: Function,
+  slug: string
 };
 
 export type WebExperimentButtonType = {
@@ -177,8 +212,9 @@ export type WebExperimentButtonType = {
 export type MinimumVersionNoticeType = {
   userAgent: string,
   title: string,
+  slug: string,
   hasAddon: any,
-  min_release: string,
+  min_release: number,
   sendToGA: Function
 };
 
@@ -186,7 +222,8 @@ export type MaximumVersionNoticeType = {
   userAgent: string,
   title: string,
   hasAddon: any,
-  max_release: string,
+  slug: string,
+  max_release: number,
   graduated: boolean,
   sendToGA: Function
 };
@@ -196,8 +233,8 @@ export type DetailsDescriptionProps = {
   graduated: boolean,
   locale: string,
   hasAddon: any,
-  installedAddons: Object,
-  highlightMeasurementPanel: Function
+  installedAddons: Array<Object>,
+  highlightMeasurementPanel: boolean
 };
 
 export type LocaleWarningType = {
@@ -214,9 +251,24 @@ export type EolBlockProps = {
 export type DetailsOverviewType = {
   experiment: Object,
   graduated: boolean,
+  userAgent: string,
+  hasAddon: boolean,
+  enabled: boolean,
+  isEnabling: boolean,
+  isDisabling: boolean,
+  installExperiment: Function,
+  isMinFirefox: boolean,
   highlightMeasurementPanel: boolean,
+  uninstallExperimentWithSurvey: Function,
+  flashMeasurementPanel: Function,
+  doShowMobileAppDialog: Function,
+  doShowPreFeedbackDialog: Function,
+  doShowEolDialog: Function,
   doShowTourDialog: Function,
-  sendToGA: Function
+  pre_feedback_copy: string,
+  sendToGA: Function,
+  surveyURL: string,
+  hasTour: boolean
 };
 
 export type LaunchStatusType = {
@@ -227,7 +279,8 @@ export type LaunchStatusType = {
 export type StatsSectionType = {
   experiment: Object,
   doShowTourDialog: Function,
-  sendToGA: Function
+  sendToGA: Function,
+  hasTour: boolean
 };
 
 export type ContributorsSectionType = {

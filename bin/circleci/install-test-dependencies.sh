@@ -22,7 +22,7 @@ geckodriver --version
 sudo apt-get install python-pip python-dev build-essential
 sudo pip install --upgrade pip
 
-sudo pip install tox mozdownload mozinstall
+sudo pip install tox mozdownload mozinstall==1.15
 
 mkdir -p ~/project/firefox-downloads/
 find  ~/project/firefox-downloads/ -type f -mtime +90 -delete
@@ -31,4 +31,4 @@ mozdownload --version latest-beta --destination ~/project/firefox-downloads/fire
 mozdownload --version latest --type daily --destination ~/project/firefox-downloads/firefox_nightly/
 
 # Dependencies for firefox
-sudo apt-get install -y libgtk3.0-cil-dev libasound2 libasound2 libdbus-glib-1-2 libdbus-1-3
+sudo apt-get update && sudo apt-get install -y libgtk3.0-cil-dev libasound2 libasound2 libdbus-glib-1-2 libdbus-1-3

@@ -1,4 +1,5 @@
-import React from "react";
+// @flow
+import React, { Component } from "react";
 
 import LayoutWrapper from "../LayoutWrapper";
 import Copter from "../Copter";
@@ -7,8 +8,10 @@ type NoScriptProps = {
   showCopter: boolean
 }
 
-export default class NoScript extends React.Component {
-  props: NoScriptProps
+export default class NoScript extends Component<NoScriptProps> {
+  static defaultProps = {
+    showCopter: true
+  }
 
   renderCopter() {
     if (this.props.showCopter) {
@@ -75,7 +78,3 @@ export default class NoScript extends React.Component {
     </noscript>;
   }
 }
-
-NoScript.defaultProps = {
-  showCopter: true
-};

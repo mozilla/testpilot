@@ -1,7 +1,7 @@
 // @flow
 
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 
 type ExperimentEolDialogProps = {
   title: string,
@@ -9,13 +9,11 @@ type ExperimentEolDialogProps = {
   onSubmit: Function
 }
 
-export default class ExperimentEolDialog extends React.Component {
-  props: ExperimentEolDialogProps
-
-  modalContainer: Object
+export default class ExperimentEolDialog extends Component<ExperimentEolDialogProps> {
+  modalContainer: ?HTMLElement
 
   componentDidMount() {
-    if (this.modalContainer !== undefined) {
+    if (this.modalContainer) {
       this.modalContainer.focus();
     }
   }
