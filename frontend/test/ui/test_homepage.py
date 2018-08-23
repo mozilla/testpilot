@@ -65,13 +65,13 @@ def test_support_pages(base_url, selenium, page, title):
     assert title in page.title
 
 
-@pytest.mark.nondestructive
-def test_incomplete_email(base_url, selenium):
-    """Test signup with incorrect email"""
-    page = Home(selenium, base_url).open()
-    assert page.signup_footer.is_stay_informed_displayed
-    page.signup_footer.sign_up('test')
-    assert page.signup_footer.is_stay_informed_displayed
+# @pytest.mark.nondestructive
+# def test_incomplete_email(base_url, selenium):
+#     """Test signup with incorrect email"""
+#     page = Home(selenium, base_url).open()
+#     assert page.signup_footer.is_stay_informed_displayed
+#     page.signup_footer.sign_up('test')
+#     assert page.signup_footer.is_stay_informed_displayed
 
 
 @pytest.mark.skipif(os.environ.get('SKIP_INSTALL_TEST') is not None,
