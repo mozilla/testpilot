@@ -99,6 +99,13 @@ mobileDialogTitle = Stáhnout aplikaci
 mobileDialogMessageIOS = Stáhnout <b>{ $title }</b> z iOS App Store.
 mobileDialogMessageAndroid = Stáhnout <b>{ $title }</b> z obchodu Google Play.
 mobileDialogPlaceholder = Zadejte svoji e-mailovou adresu
+mobileDialogPlaceholderSMS = Zadejte svůj telefon/e-mail
+mobileDialogButtonSuccess = Děkujeme!
+mobileDialogSuccessSecondarySMS = Zkontrolujte e-maily a textové zprávy na svém zařízení.
+mobileDialogSuccessSecondary = Zkontrolujte e-maily na svém zařízení.
+mobileDialogAnotherDeviceLink = Odeslat do jiného zařízení
+mobileDialogError = Zadejte platnou e-mailovou adresu:
+mobileDialogErrorSMS = Zadejte platné telefonní číslo nebo e-mail:
 
 ## Featured experiment.
 
@@ -185,7 +192,13 @@ nonExperimentDialogHeaderLink = Test Pilot
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
 experimentPlatformAddon = Experiment pro Firefox
+experimentPlatformAndroid = Experiment pro Android
+experimentPlatformIos = Experiment pro iOS
 experimentPlatformWeb = Experiment pro web
+experimentPlatformAddonAndroid = Experiment pro Android / Firefox
+experimentPlatformAddonIos = Experiment pro iOS / Firefox
+experimentPlatformAddonAndroidIos = Experiment pro Android / iOS / Firefox
+experimentPlatformAndroidIos = Experiment pro Android / iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 

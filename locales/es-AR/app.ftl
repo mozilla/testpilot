@@ -147,7 +147,7 @@ feedbackUninstallCopy =
 
 ## A modal prompt shown before the feedback survey for some experiments.
 
-experimentPreFeedbackTitle = { $title }opinión
+experimentPreFeedbackTitle = { $title } opinión
 experimentPreFeedbackLinkCopy = Opine acerca del experimento { $title }
 
 ## A splash shown on top of the experiment page when Test Pilot is not installed.
@@ -202,7 +202,7 @@ experimentPlatformIos = Experimento en iOS
 experimentPlatformWeb = experimento web
 experimentPlatformAddonWeb = Experimento con Firefox/web
 experimentPlatformAddonAndroid = Experimento con Android/Firefox
-experimentPlatformAddonIos = Experimento en iOS/FIrefox
+experimentPlatformAddonIos = Experimento en iOS/Firefox
 experimentPlatformAddonAndroidIos = Experimento con Android/iOS/Firefox
 experimentPlatformAddonAndroidWeb = Experimento con Android/Firefox/web
 experimentPlatformAddonAndroidIosWeb = Experimento con Android/iOS/Firefox/web

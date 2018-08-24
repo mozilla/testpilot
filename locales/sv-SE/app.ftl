@@ -95,7 +95,7 @@ emailOptInDialogErrorTitle = Åh nej!
 
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
-mobileDialogTitle = Ladda ner Appen
+mobileDialogTitle = Ladda ner appen
 mobileDialogMessageIOS = Ladda ner <b>{ $title }</b> från iOS Appstore.
 mobileDialogMessageAndroid = Ladda ner <b>{ $title }</b> från Google Play Butik
 mobileDialogInstructionsSMS = Ange ditt telefonnummer eller e-postadress för att skicka en nedladdningslänk till din telefon:

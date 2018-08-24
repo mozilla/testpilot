@@ -50,7 +50,7 @@ landingInstallingButton = მიმდინარეობს ჩადგმ�
 
 ## Related to a one click to install test pilot and an experiment.
 
-oneClickInstallMinorCta = დააყენეთ Test Pilot &amp;
+oneClickInstallMinorCta = დააყენეთ Test Pilot და
 # $title is replaced by the name of an experiment
 oneClickInstallMajorCta = ჩართეთ { $title }
 
