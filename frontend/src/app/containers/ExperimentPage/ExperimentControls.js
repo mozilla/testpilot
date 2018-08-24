@@ -84,7 +84,7 @@ export default function ExperimentControls({
       legalSection = (
         <div className="privacy-link">
           <Localized
-            id={experimentL10nId(experiment, "legal-notice")}
+            id={experimentL10nId(experiment, "legal_notice")}
             terms-link={<a href="/terms" />}
             privacy-link={<a href="/privacy" />}
             modal-link={<a onClick={highlightPrivacy} />}

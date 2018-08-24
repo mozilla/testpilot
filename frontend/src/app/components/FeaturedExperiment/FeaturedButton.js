@@ -77,7 +77,7 @@ export default class FeaturedButton extends Component<FeaturedButtonProps, Featu
       this.sendMetric(ev, {eventLabel: "Popup Featured privacy"});
     };
 
-    return (<Localized id={this.l10nId("legal-notice")}
+    return (<Localized id={this.l10nId("legal_notice")}
       $title={title}
       terms-link={<a href="/terms" onClick={(ev) => this.sendMetric(ev, {eventLabel: "Open general terms"})}></a>}
       privacy-link={<a href="/privacy" onClick={(ev) => this.sendMetric(ev, {eventLabel: "Open general privacy"})}></a>}

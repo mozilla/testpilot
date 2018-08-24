@@ -25,7 +25,8 @@ changelog_url: 'https://github.com/meandavejustice/min-vid/blob/master/CHANGELOG
 contribute_url: 'https://github.com/meandavejustice/min-vid'
 bug_report_url: 'https://github.com/meandavejustice/min-vid/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/min-vid'
-legal_notice: By proceeding, you agree to the <a>terms</a> and <a>privacy</a> policies of Test Pilot and the <a>Dev Example privacy policy</a>.
+legal_notice: By proceeding, you agree to the <terms-link>terms</terms-link> and <privacy-link>privacy</privacy-link> policies of Test Pilot and the <modal-link>Dev Example privacy policy</modal-link>.
+legal_notice_l10nsuffix: withlinks
 privacy_notice_url: 'https://github.com/meandavejustice/min-vid/blob/master/docs/metrics.md'
 xpi_url: 'https://testpilot.firefox.com/files/@sloth/latest'
 addon_id: '@sloth'

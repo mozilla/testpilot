@@ -27,7 +27,8 @@ image_facebook: /static/images/experiments/advance/social/advance-facebook.png
 image_twitter: /static/images/experiments/advance/social/advance-twitter.png
 introduction: "Advance delivers real-time recommendations to your Firefox sidebar while you browse. Advance uses your current browsing to suggest related news and similar pages to read next, and uses your browsing history to create a personalized feed of quality content."
 launch_date: "2018-08-07T13:00:00.00Z"
-legal_notice: By proceeding, you agree to the <a>terms</a> and <a>privacy</a> policies of Test Pilot and the <a>Advance privacy policy</a>.
+legal_notice: By proceeding, you agree to the <terms-link>terms</terms-link> and <privacy-link>privacy</privacy-link> policies of Test Pilot and the <modal-link>Advance privacy policy</modal-link>.
+legal_notice_l10nsuffix: withlinks
 locale_grantlist:
   - en
 locales:

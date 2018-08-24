@@ -100,7 +100,7 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
     const learnMoreLink = "https://www.mozilla.org/privacy/websites/#campaigns";
 
     const notice = allowSMS
-      ? <Localized id="mobileDialogNoticeSMS"
+      ? <Localized id="mobileDialogNoticeSMSWithLink"
         a={<a target="_blank" rel="noopener noreferrer" href={learnMoreLink}></a>}>
         <p className="notice">
           SMS service available in select countries only. SMS &amp; data rates may apply.

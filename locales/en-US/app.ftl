@@ -36,7 +36,7 @@ headerLinkBlog = Blog
 landingIntroOne = Test new features.
 landingIntroTwo = Give your feedback.
 landingIntroThree = Help build Firefox.
-landingLegalNotice = By proceeding, you agree to the <terms-link>Terms of Use</terms-link> and <privacy-link>Privacy Notice</privacy-link> of Test Pilot.
+landingLegalNoticeWithLinks = By proceeding, you agree to the <terms-link>Terms of Use</terms-link> and <privacy-link>Privacy Notice</privacy-link> of Test Pilot.
 landingMoreExperimentsButton = More Experiments
 
 ## Related to the installation of the Test Pilot add-on.
@@ -98,7 +98,7 @@ mobileDialogSuccessSecondary = Check your device for the email.
 mobileDialogAnotherDeviceLink = Send to another device
 mobileDialogError = Enter a valid email:
 mobileDialogErrorSMS = Enter a valid phone number or email:
-mobileDialogNoticeSMS = SMS service available in select countries only. SMS & data rates may apply. The intended recipient of the email or SMS must have consented. <a>Learn more</a>.
+mobileDialogNoticeSMSWithLink = SMS service available in select countries only. SMS & data rates may apply. The intended recipient of the email or SMS must have consented. <a>Learn more</a>.
 
 ## Featured experiment.
 moreDetail = View details
