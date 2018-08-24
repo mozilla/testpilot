@@ -1,8 +1,9 @@
 // @flow
 
 import React from "react";
+import { FluentDateTime } from "fluent/compat";
 import { Localized } from "fluent-react/compat";
-import { experimentL10nId, formatDate } from "../../lib/utils";
+import { experimentL10nId } from "../../lib/utils";
 import MeasurementsSection from "../../components/Measurements";
 import ExperimentControls from "./ExperimentControls";
 
@@ -83,22 +84,32 @@ export default function DetailsOverview({
 export const LaunchStatus = ({ experiment, graduated }: LaunchStatusType) => {
   const { created, completed } = experiment;
 
-  const completedDate = formatDate(completed);
+  const completedDate = new FluentDateTime(completed, {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
+
   if (graduated) {
     return (
-      <Localized id="completedDateLabel" $completedDate={completedDate} b={<b></b>}>
+      <Localized id="completedDate" $completedDate={completedDate} b={<b></b>}>
         <span>
-          Experiment End Date: <b>{completedDate}</b>
+          Experiment End Date: <b>{completed}</b>
         </span>
       </Localized>
     );
   }
 
-  const startedDate = formatDate(created);
+  const startedDate = new FluentDateTime(created, {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
+
   return (
-    <Localized id="startedDateLabel" $startedDate={startedDate} b={<b></b>}>
+    <Localized id="startedDate" $startedDate={startedDate} b={<b></b>}>
       <span>
-        Experiment Start Date: <b>{startedDate}</b>
+        Experiment Start Date: <b>{created}</b>
       </span>
     </Localized>
   );

@@ -7,10 +7,10 @@ import "./index.scss";
 type WarningProps = {
   title: string,
   titleL10nId: string,
-  titleL10nArgs: string,
+  titleL10nArgs?: Object,
   subtitle?: string,
   subtitleL10nId?: string,
-  subtitleL10nArgs?: string,
+  subtitleL10nArgs?: Object,
   children?: Array<any>
 }
 
@@ -18,13 +18,8 @@ export default class Warning extends Component<WarningProps> {
 
   renderSubtitle() {
     if (this.props.subtitle) {
-      const parsed = this.props.subtitleL10nArgs ? JSON.parse(this.props.subtitleL10nArgs) : {};
-      const args = {};
-      Object.keys(parsed).map(key => {
-        return args[`$${key}`] = parsed[key];
-      });
       return (
-        <Localized id={this.props.subtitleL10nId} {...args}>
+        <Localized id={this.props.subtitleL10nId} {...this.props.subtitleL10nArgs}>
           <p>{this.props.subtitle}</p>
         </Localized>
       );
@@ -34,14 +29,9 @@ export default class Warning extends Component<WarningProps> {
 
   renderHeader() {
     if (this.props.title) {
-      const parsed = this.props.titleL10nArgs ? JSON.parse(this.props.titleL10nArgs) : {};
-      const args = {};
-      Object.keys(parsed).map(key => {
-        return args[`$${key}`] = parsed[key];
-      });
       return (
         <header>
-          <Localized id={this.props.titleL10nId} {...args}>
+          <Localized id={this.props.titleL10nId} {...this.props.titleL10nArgs}>
             <h3>{this.props.title}</h3>
           </Localized>
           {this.renderSubtitle()}

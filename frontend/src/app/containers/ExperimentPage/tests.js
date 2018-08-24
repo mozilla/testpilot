@@ -450,7 +450,7 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
         });
 
         it("displays the end date instead of install count", () => {
-          expect(findLocalizedById(subject, "completedDateLabel").length).to.equal(1);
+          expect(findLocalizedById(subject, "completedDate").length).to.equal(1);
           expect(findLocalizedById(subject, "userCountContainer").length).to.equal(0);
           expect(findLocalizedById(subject, "userCountContainerAlt").length).to.equal(0);
         });

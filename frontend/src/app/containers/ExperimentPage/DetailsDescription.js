@@ -1,11 +1,12 @@
 // @flow
 
 import React from "react";
+import { FluentDateTime } from "fluent/compat";
 import { Localized } from "fluent-react/compat";
 import LocalizedHtml from "../../components/LocalizedHtml";
 
 import Warning from "../../components/Warning";
-import { experimentL10nId, formatDate } from "../../lib/utils";
+import { experimentL10nId } from "../../lib/utils";
 
 import GraduatedNotice from "../../components/GraduatedNotice";
 import IncompatibleAddons from "./IncompatibleAddons";
@@ -117,7 +118,7 @@ export const LocaleWarning = ({
     return (
       <Warning
         titleL10nId="localeNotTranslatedWarningTitle"
-        titleL10nArgs={JSON.stringify({ locale_code: locale })}
+        titleL10nArgs={{$locale_code: locale}}
         title="This experiment has not been translated to your language (en)."
         subtitleL10nId="localeWarningSubtitle"
         subtitle="You can still enable it if you like."
@@ -128,14 +129,18 @@ export const LocaleWarning = ({
 };
 
 export const EolBlock = ({ experiment, l10nId }: EolBlockProps) => {
-  const completedDate = formatDate(experiment.completed);
-  const title = `${experiment.title} is ending on ${completedDate}`;
+  const $title = experiment.title;
+  const $completedDate = new FluentDateTime(experiment.completed, {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
 
   return (
     <Warning
-      titleL10nId="eolIntroMessage"
-      titleL10nArgs={JSON.stringify({ title: experiment.title, completedDate })}
-      title={title}
+      titleL10nId="eolTitleMessage"
+      titleL10nArgs={{$title, $completedDate}}
+      title={`${experiment.title} is ending on ${experiment.completed}`}
     >
       <LocalizedHtml id={l10nId("eolWarning")}>
         <div>
