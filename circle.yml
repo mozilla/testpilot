@@ -75,7 +75,7 @@ jobs:
       - run:
           name: Set hosts
           command: |
-            echo 127.0.0.1 example.com | sudo tee -a /etc/hosts
+            echo 127.0.0.1 testpilot.dev.mozaws.net | sudo tee -a /etc/hosts
             cat /etc/hosts
       - run:
           name: Install dependencies
