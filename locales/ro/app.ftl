@@ -43,7 +43,7 @@ oneClickInstallMajorCta = Activează { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
-landingRequiresDesktop = Test Pilot funcționează pe Firefox pentru desktop pe Windows, Mac sau Linux
+landingRequiresDesktop = Test Pilot necesită Firefox pentru Desktop pe Windows, Mac sau Linux
 landingDownloadFirefoxDesc = (Test Pilot este disponibil pentru Firefox pe Windows, OSX și Linux)
 landingUpgradeDesc = Test Pilot are nevoie de Firefox 49 sau mai recent.
 # also in footer
@@ -77,6 +77,9 @@ emailOptInDialogTitle = Bun venit în Test Pilot!
 emailOptInMessage = Află despre noile experimente și vezi rezultatele de testare pentru experimentele încercate.
 emailOptInConfirmationTitle = E-mail trimis
 emailOptInConfirmationClose = Mai departe spre experimente...
+
+## modal prompt for sending link to experiment mobile apps via email or sms
+
 
 ## Featured experiment.
 
@@ -118,7 +121,7 @@ experimentPromoSubheader = Noi construim funcțiile de viitor pentru Firefox. In
 ## The experiment detail page.
 
 isEnabledStatusMessage = { $title } este activat.
-installErrorMessage = Ups. { $title } nu a putut fi încărcat. Încearcă din nou mai târziu.
+installErrorMessage = Ups. { $title } nu a putut fi activat. Încearcă din nou mai târziu.
 otherExperiments = Încearcă și aceste experimente
 giveFeedback = Oferă feedback
 disableHeader = Dezactivează experimentul?
