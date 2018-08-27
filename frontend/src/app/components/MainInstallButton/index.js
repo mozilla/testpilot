@@ -85,7 +85,7 @@ export default class MainInstallButton extends Component<MainInstallButtonProps,
 
     if (showWebButton) {
       return this.renderWebExperimentButton();
-    } else if (!!experiment && isMinFirefox && !isMobile) {
+    } else if (isMinFirefox && !isMobile) {
       return this.renderInstallButton(isInstalling, hasAddon);
     }
 
@@ -107,7 +107,9 @@ export default class MainInstallButton extends Component<MainInstallButtonProps,
     return (
       <LayoutWrapper flexModifier={layout} helperClass="main-install">
         <div className="main-install__spacer" />
+
         {this.renderMainButton()}
+
         {isMinFirefox && !isMobile && !experimentLegalLink && <LocalizedHtml id="landingLegalNotice" $terms={terms} $privacy={privacy}>
           <p className="main-install__legal">
           By proceeding, you agree to the {terms} and {privacy} of Test Pilot.
