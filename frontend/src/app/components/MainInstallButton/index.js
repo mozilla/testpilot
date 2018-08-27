@@ -1,5 +1,4 @@
 // @flow
-/* eslint no-nested-ternary: 0 */
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
 import React, { Component } from "react";
