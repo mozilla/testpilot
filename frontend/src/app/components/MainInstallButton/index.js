@@ -1,5 +1,4 @@
 // @flow
-
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
 import React, { Component } from "react";
@@ -12,6 +11,10 @@ import "./index.scss";
 import config from "../../config";
 
 import type { MainInstallButtonProps } from "../types";
+
+import {
+  WebExperimentButton
+} from "../../containers/ExperimentPage/ExperimentButtons";
 
 type MainInstallButtonState = { isInstalling: boolean };
 
@@ -58,9 +61,40 @@ export default class MainInstallButton extends Component<MainInstallButtonProps,
     install.then(after, after);
   }
 
+  renderWebExperimentButton() {
+    const { sendToGA, experiment } = this.props;
+    if (!experiment) return;
+    const { title, slug, web_url } = experiment;
+    // eslint-disable-next-line consistent-return
+    return (
+      <WebExperimentButton {...{
+        web_url,
+        title,
+        slug,
+        sendToGA,
+        color: "default main-install__button"
+      }} />
+    );
+  }
+
+  renderMainButton() {
+    const { isFirefox, isMinFirefox, isMobile, hasAddon, experiment } = this.props;
+
+    const isInstalling = this.state.isInstalling || (!!experiment && experiment.inProgress);
+    const showWebButton = (!!experiment && experiment.platforms.includes("web") && experiment.platforms.length === 1);
+
+    if (showWebButton) {
+      return this.renderWebExperimentButton();
+    } else if (isMinFirefox && !isMobile) {
+      return this.renderInstallButton(isInstalling, hasAddon);
+    }
+
+    return this.renderAltButton(isFirefox, isMobile);
+  }
+
   render() {
-    const { isFirefox, isMinFirefox, isMobile, hasAddon, experimentTitle, experimentLegalLink, experiment } = this.props;
-    const isInstalling = this.state.isInstalling || (experiment && experiment.inProgress);
+    const { isMinFirefox, isMobile, experimentTitle, experimentLegalLink, experiment } = this.props;
+    const showWebButton = (experiment && experiment.platforms.includes("web") && experiment.platforms.length === 1);
 
     const terms = <Localized id="landingLegalNoticeTermsOfUse">
       <a href="/terms"/>
@@ -73,15 +107,16 @@ export default class MainInstallButton extends Component<MainInstallButtonProps,
     return (
       <LayoutWrapper flexModifier={layout} helperClass="main-install">
         <div className="main-install__spacer" />
-        {/* $FlowFixMe */}
-        {(isMinFirefox && !isMobile) ? this.renderInstallButton(isInstalling, hasAddon) : this.renderAltButton(isFirefox, isMobile) }
+
+        {this.renderMainButton()}
+
         {isMinFirefox && !isMobile && !experimentLegalLink && <LocalizedHtml id="landingLegalNotice" $terms={terms} $privacy={privacy}>
           <p className="main-install__legal">
           By proceeding, you agree to the {terms} and {privacy} of Test Pilot.
           </p>
         </LocalizedHtml>}
 
-        {isMinFirefox && !isMobile && experimentLegalLink && experimentLegalLink}
+        {!showWebButton && isMinFirefox && !isMobile && experimentLegalLink && experimentLegalLink}
       </LayoutWrapper>
     );
   }
