@@ -98,8 +98,8 @@ emailOptInDialogErrorTitle = Oh não!
 mobileDialogTitle = Obter a aplicação
 mobileDialogMessageIOS = Transfira o <b>{ $title }</b> a partir da App Store do iOS.
 mobileDialogMessageAndroid = Transfira o <b>{ $title }</b> a partir da Google Play Store.
-mobileDialogInstructionsSMS = Introduza o seu número de telefone ou email para enviar uma ligação de transferência para o seu telefone: 
-mobileDialogInstructions = Introduza o seu email para enviar uma ligação de transferência para o seu telefone: 
+mobileDialogInstructionsSMS = Introduza o seu número de telefone ou email para enviar uma ligação de transferência para o seu telefone:
+mobileDialogInstructions = Introduza o seu email para enviar uma ligação de transferência para o seu telefone:
 mobileDialogPlaceholder = Introduzir o seu email
 mobileDialogPlaceholderSMS = Introduzir o seu telefone/email
 mobileDialogButton = Enviar-me a ligação de transferência
@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Verifique o seu dispositivo pelo email.
 mobileDialogAnotherDeviceLink = Enviar para outro dispositivo
 mobileDialogError = Introduza um email válido:
 mobileDialogErrorSMS = Introduza um número de telefone ou email válido:
-mobileDialogNoticeSMS = Serviço de SMS apenas disponível em países selecionados. Taxas de SMS e dados podem ser aplicadas. O destinatário intendido do email ou SMS deve ter consentido. { $learnMore }
+mobileDialogNoticeSMSWithLink = Serviço de SMS apenas disponível em países selecionados. Taxas de SMS e dados podem ser aplicadas. O destinatário intendido do email ou SMS deve ter consentido. <a>Saber mais</a>.
 
 ## Featured experiment.
 
