@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Semak e-mel dalam peranti anda.
 mobileDialogAnotherDeviceLink = Hantar ke peranti lain
 mobileDialogError = Masukkan e-mel yang sah:
 mobileDialogErrorSMS = Masukkan nombor telefon atau e-mel yang sah:
-mobileDialogNoticeSMS = Perkhidmatan SMS tersedia dalam negara tertentu sahaja. Kadar SMS & data boleh dikenakan. Penerima e-mel atau SMS yang ditentukan perlu memberi kebenaran. { $learnMore }
+mobileDialogNoticeSMSWithLink = Perkhidmatan SMS tersedia dalam negara tertentu sahaja. Kadar SMS & data boleh dikenakan. Penerima e-mel atau SMS yang ditentukan perlu memberi kebenaran. <a>Ketahui selanjutnya</a>.
 
 ## Featured experiment.
 
