@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Nézze meg az eszközét, hogy megérkezett-e az 
 mobileDialogAnotherDeviceLink = Küldés egy másik eszközre
 mobileDialogError = Adjon meg egy érvényes e-mail címet:
 mobileDialogErrorSMS = Adjon meg egy érvényes telefonszámot vagy e-mail címet:
-mobileDialogNoticeSMS = Az SMS szolgáltatás csak néhány országban érhető el. SMS és adathasználati költségek merülhetnek fel. Az e-mail vagy SMS címzettjének hozzájárulása szükséges. { $learnMore }
+mobileDialogNoticeSMSWithLink = Az SMS szolgáltatás csak néhány országban érhető el. SMS és adathasználati költségek merülhetnek fel. Az e-mail vagy SMS címzettjének hozzájárulása szükséges. <a>További tudnivalók</a>.
 
 ## Featured experiment.
 
