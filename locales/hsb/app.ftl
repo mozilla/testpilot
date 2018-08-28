@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Hladajće za mejlku na swojim graće.
 mobileDialogAnotherDeviceLink = Na druhi grat pósłać
 mobileDialogError = Zapodajće płaćiwu e-mejlowu adresu:
 mobileDialogErrorSMS = Zapodajće płaćiwe telefonowe čisło abo płaćiwu e-mejlowu adresu:
-mobileDialogNoticeSMS = Słužba SMS jenož we wubranych krajach k dispoziciji steji. Za SMS a daty mógu popłatki nastać. Přijimar mejlki abo SMS dyrbi přezjedny być. { $learnMore }
+mobileDialogNoticeSMSWithLink = SMS-słužba je jenož we wěstych krajach k dispoziciji. Za SMS a datowe přenjesenje dyrbja so snano popłatki płaćić. Přijimar mejlki abo SMS dyrbi přezjedny być. <a>Dalše informacije</a>.
 
 ## Featured experiment.
 
