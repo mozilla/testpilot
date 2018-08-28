@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Check your device for the email.
 mobileDialogAnotherDeviceLink = Send to another device
 mobileDialogError = Enter a valid email:
 mobileDialogErrorSMS = Enter a valid phone number or email:
-mobileDialogNoticeSMS = SMS service available in select countries only. SMS & data rates may apply. The intended recipient of the email or SMS must have consented. { $learnMore }
+mobileDialogNoticeSMSWithLink = SMS service available in select countries only. SMS & data rates may apply. The intended recipient of the email or SMS must have consented. <a>Learn more</a>.
 
 ## Featured experiment.
 
