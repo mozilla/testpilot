@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Sehen Sie auf Ihrem Gerät nach der E-Mail.
 mobileDialogAnotherDeviceLink = An ein weiteres Gerät senden
 mobileDialogError = Geben Sie eine gültige E-Mail-Adresse ein:
 mobileDialogErrorSMS = Geben Sie eine gültige Telefonnummer oder E-Mail-Adresse ein:
-mobileDialogNoticeSMS = Der SMS-Dienst steht nur in ausgewählten Ländern zur Verfügung. Es können Gebühren für SMS und Datenübertragung anfallen. Der Empfänger der E-Mail oder SMS muss zugestimmt haben. { $learnMore }
+mobileDialogNoticeSMSWithLink = Der SMS-Dienst steht nur in ausgewählten Ländern zur Verfügung. Es können Gebühren für SMS und Datenübertragung anfallen. Der Empfänger der E-Mail oder SMS muss zugestimmt haben. <a>Weitere Informationen</a>.
 
 ## Featured experiment.
 
