@@ -1,6 +1,7 @@
+// @flow
 import type { InstalledExperiments } from "../reducers/addon"; // eslint-disable-line no-unused-vars
 
-import {
+import type {
   MiscAppProps,
   BrowserEnvProps,
   SendToGAProps
@@ -12,7 +13,12 @@ export type VariantTestsProps = {
 
 export type MainInstallButtonProps = {
   isFeatured?: boolean,
-  installed: InstallExperiments,
+  installed: InstalledExperiments,
   experiment?: Object,
-  experimentTitle: string,
-} & VariantTestsProps & MiscAppProps & SendToGAProps & BrowserEnvProps;
+  experimentTitle?: string,
+  experimentLegalLink?: any,
+  isExperimentEnabled: Function,
+  enableExperiment: Function,
+  installAddon: Function,
+  varianttests?: Object
+} & MiscAppProps & SendToGAProps & BrowserEnvProps;

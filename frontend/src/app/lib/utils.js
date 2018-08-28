@@ -5,7 +5,6 @@ import { experimentL10nId, l10nId, l10nIdFormat, lookup } from "../../../tasks/u
 export const basketUrl = "https://basket.mozilla.org/news/subscribe/";
 export const basketSMSUrl = "https://basket.mozilla.org/news/subscribe_sms/";
 export const COUNTRY_CODE_ENDPOINT = "https://location.services.mozilla.com/v1/country";
-// "https://www.mozilla.org/country-code.json";
 
 export function subscribeToBasket(email, source, msgId = "test-pilot") {
   const sourceUrl = source || "https://testpilot.firefox.com/";
@@ -31,22 +30,6 @@ export function fetchCountryCode(onSuccess, onError) {
   return fetch(COUNTRY_CODE_ENDPOINT);
 }
 
-export function formatDate(date) {
-  let out = "";
-  const d = new Date(date);
-  if (isNaN(d)) {
-    out = null;
-  } else {
-    // safari is the new IE :(
-    try {
-      out = d.toLocaleDateString(navigator.language);
-    } catch (e) {
-      out = `${d.getMonth() + 1} / ${d.getDate()} / ${d.getFullYear()}`;
-    }
-  }
-  return out;
-}
-
 export function buildSurveyURL(ref, title, installed, clientUUID, survey_url) {
   const queryParams = querystring.stringify({
     ref,
@@ -59,7 +42,7 @@ export function buildSurveyURL(ref, title, installed, clientUUID, survey_url) {
 
 export function isFirefox(ua) {
   const userAgent = ua.toLowerCase();
-  return userAgent.indexOf("firefox") > -1 && userAgent.indexOf("fxios") === -1;
+  return userAgent.includes("firefox") && !userAgent.includes("fxios");
 }
 
 export function isMinFirefoxVersion(ua, minVersion) {
@@ -67,7 +50,7 @@ export function isMinFirefoxVersion(ua, minVersion) {
 }
 
 export function isMobile(ua) {
-  return ua.indexOf("mobi") > -1 || ua.indexOf("tablet") > -1;
+  return ua.includes("mobi") || ua.includes("tablet");
 }
 
 // Passed a string, returns a verison of that string sanitized by stripping all
@@ -112,7 +95,7 @@ export { lookup };
 // Returns true if the passed event is a click event that ocurred while the user
 // was ctrl/cmd-clicking or middle-clicking, indicating that that they performed
 // the action expecting the link to open in a new tab.
-export const shouldOpenInNewTab = (e: Object) => {
+export const shouldOpenInNewTab = (e) => {
   if (!e) { return false; }
   if (e.type === "click" && e.button === 1) {
     // middle-click

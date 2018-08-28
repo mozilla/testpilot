@@ -1,9 +1,7 @@
 // @flow
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-
-import LocalizedHtml from "../LocalizedHtml";
 
 type RetireConfirmationDialogProps = {
   uninstallAddon: Function,
@@ -12,21 +10,17 @@ type RetireConfirmationDialogProps = {
   history: Object
 }
 
-export class RetireConfirmationDialog extends React.Component {
-  props: RetireConfirmationDialogProps
-
-  modalContainer: Object
+export class RetireConfirmationDialog extends Component<RetireConfirmationDialogProps> {
+  modalContainer: ?any
 
   componentDidMount() {
-    if (this.modalContainer !== undefined) {
-      this.modalContainer.focus();
-    }
+    if (this.modalContainer) this.modalContainer.focus();
   }
 
   render() {
     return (
       <div className="modal-container" tabIndex="0"
-        ref={modalContainer => { this.modalContainer = modalContainer; }}
+        ref={(modalContainer: any) => { this.modalContainer = modalContainer; }}
         onKeyDown={e => this.handleKeyDown(e)}>
         <div id="retire-dialog-modal" className="modal feedback-modal modal-bounce-in uninstall-modal">
           <header className="modal-header-wrapper warning-modal">
@@ -41,9 +35,9 @@ export class RetireConfirmationDialog extends React.Component {
               <Localized id="retireMessageUpdate">
                 <p>As you wish. This will uninstall Test Pilot. You can disable individual experiments from the Firefox Add-ons Manager.</p>
               </Localized>
-              <LocalizedHtml id="retireEmailMessage">
+              <Localized id="retireEmailMessage" em={<em></em>}>
                 <p>To opt out of email updates, simply click the <em>unsubscribe</em> link on any Test Pilot email.</p>
-              </LocalizedHtml>
+              </Localized>
             </div>
             <div className="modal-actions">
               <Localized id="retireSubmitButton">

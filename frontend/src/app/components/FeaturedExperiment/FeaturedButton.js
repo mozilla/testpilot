@@ -1,9 +1,8 @@
 // @flow
 
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Localized } from "fluent-react/compat";
-import LocalizedHtml from "../LocalizedHtml";
 import { buildSurveyURL, experimentL10nId, isMobile } from "../../lib/utils";
 
 import Modal from "../Modal";
@@ -27,6 +26,12 @@ type FeaturedButtonProps = {
   fetchCountryCode: Function,
   getWindowLocation: Function,
   hasAddon: any,
+  isMobile: boolean,
+  enableExperiment: Function,
+  installAddon: Function,
+  isExperimentEnabled: Function,
+  isFirefox: boolean,
+  isMinFirefox: boolean,
   installed: InstalledExperiments,
   sendToGA: Function,
   userAgent: string
@@ -37,10 +42,7 @@ type FeaturedButtonState = {
   showMobileDialog: boolean
 }
 
-export default class FeaturedButton extends React.Component {
-  props: FeaturedButtonProps
-  state: FeaturedButtonState
-
+export default class FeaturedButton extends Component<FeaturedButtonProps, FeaturedButtonState> {
   constructor(props: FeaturedButtonProps) {
     super(props);
     this.state = {
@@ -75,14 +77,17 @@ export default class FeaturedButton extends React.Component {
       this.sendMetric(ev, {eventLabel: "Popup Featured privacy"});
     };
 
-    return (<LocalizedHtml id={this.l10nId("legal-notice")}
-      $title={title}>
+    return (<Localized id={this.l10nId("legal_notice")}
+      $title={title}
+      terms-link={<a href="/terms" onClick={(ev) => this.sendMetric(ev, {eventLabel: "Open general terms"})}></a>}
+      privacy-link={<a href="/privacy" onClick={(ev) => this.sendMetric(ev, {eventLabel: "Open general privacy"})}></a>}
+      modal-link={<a href="#" onClick={launchLegalModal}></a>}>
       <p className="main-install__legal">
-            By proceeding, you agree to the <a href="/terms" onClick={(ev) => this.sendMetric(ev, {eventLabel: "Open general terms"})}></a>
-            and <a href="/privacy" onClick={(ev) => this.sendMetric(ev, {eventLabel: "Open general privacy"})}></a> policies of Test Pilot and the
-        <a href="#" onClick={launchLegalModal}></a>.
+        By proceeding, you agree to the <terms-link>terms</terms-link>{" "}
+        and <privacy-link>privacy</privacy-link> policies of Test Pilot and{" "}
+        <modal-link>this experiment&apos;s privacy policy</modal-link>.
       </p>
-    </LocalizedHtml>);
+    </Localized>);
   }
 
   renderLegalModal() {

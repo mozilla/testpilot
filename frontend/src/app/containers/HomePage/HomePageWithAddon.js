@@ -3,7 +3,7 @@
 
 import classnames from 'classnames';
 import { Localized } from 'fluent-react/compat';
-import React from 'react';
+import React, { Component } from 'react';
 import Banner from '../../components/Banner';
 import Copter from '../../components/Copter';
 import EmailDialog from '../../components/EmailDialog';
@@ -14,7 +14,6 @@ import LayoutWrapper from '../../components/LayoutWrapper';
 import PastExperiments from '../../components/PastExperiments';
 import View from '../../components/View';
 import Visibility from "../../components/Visibility";
-import LocalizedHtml from '../../components/LocalizedHtml';
 import NewsUpdatesDialog from '../../components/NewsUpdatesDialog';
 import type { InstalledExperiments } from '../../reducers/addon';
 import { getBreakpoint } from "../App";
@@ -34,11 +33,13 @@ type HomePageWithAddonProps = {
   isAfterCompletedDate: Function,
   isMinFirefox: boolean,
   isFirefox: boolean,
+  isMobile: boolean,
   majorNewsUpdates: Array<Object>,
   openWindow: Function,
   removeCookie: Function,
   sendToGA: Function,
   setCookie: Function,
+  installAddon: Function,
   uninstallAddon: Function,
   userAgent: string
 }
@@ -49,9 +50,7 @@ type HomePageWithAddonState = {
   showTourDialog: boolean
 }
 
-export default class HomePageWithAddon extends React.Component {
-  props: HomePageWithAddonProps
-  state: HomePageWithAddonState
+export default class HomePageWithAddon extends Component<HomePageWithAddonProps, HomePageWithAddonState> {
 
   constructor(props: HomePageWithAddonProps) {
     super(props);
@@ -131,16 +130,14 @@ export default class HomePageWithAddon extends React.Component {
                   it for a spin, and let us know what you think.
                 </p>
               </Localized>
-              <LocalizedHtml id="experimentsListNoneInstalledCTA">
+              <Localized id="experimentsListNoneInstalledCTA"
+                a={<a onClick={() => this.onNotInterestedSurveyClick()}
+                  href="https://qsurvey.mozilla.com/s3/TxP-User" target="_blank"
+                  className="banner__link"/>}>
                 <p className="banner__copy">
-                  Not interested?
-                  <a onClick={() => this.onNotInterestedSurveyClick()}
-                     href="https://qsurvey.mozilla.com/s3/TxP-User" target="_blank"
-                     className="banner__link">
-                   Let us know why
-                  </a>.
+                  Not interested? <a>Let us know why</a>.
                 </p>
-              </LocalizedHtml>
+              </Localized>
             </div>
             <div className="banner__spacer" />
             <Copter/>
@@ -174,7 +171,6 @@ export default class HomePageWithAddon extends React.Component {
     const currentExperiments = experimentsWithoutFeatured.filter(x => !isAfterCompletedDate(x));
     const pastExperiments = experimentsWithoutFeatured.filter(isAfterCompletedDate);
     const featuredExperiment = featuredExperiments[0];
-
     const featuredSection = featuredExperiment ? (<Banner background={true}>
       <LayoutWrapper flexModifier="row-center">
         <FeaturedExperiment {...this.props} experiment={featuredExperiment}

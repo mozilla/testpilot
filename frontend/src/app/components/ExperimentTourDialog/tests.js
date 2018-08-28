@@ -43,7 +43,7 @@ describe("app/components/ExperimentTourDialog", () => {
     const expectedTourStep = props.experiment.tour_steps[0];
     expect(subject.find(".step-image > img").prop("src"))
       .to.equal(expectedTourStep.image);
-    // There is now a LocalizedHtml element between the
+    // There is now a Localized element between the
     // .step-text element and the p element, so
     // '.step-text > p' won't work, but '.step-text p' does
     expect(subject.find(".step-text p").html())

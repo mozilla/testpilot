@@ -52,7 +52,7 @@ deploy snapshots of Storybook that can be shared and viewed by many people on
 the team to preview component work in progress.
 
 The main prerequisite is that this work needs to happen on branches in the 
-[`mozilla/testpilot`][repo] repository on Github. Branches in personal fork
+[`mozilla/testpilot`][repo] repository on GitHub. Branches in personal fork
 repositories cannot participate in automated Storybook deployment. This runs
 counter to our usual process, and limits participation to core team members
 with commit access to the main repository.

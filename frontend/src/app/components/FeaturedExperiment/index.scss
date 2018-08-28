@@ -1,4 +1,4 @@
- @import '~photon-colors/colors.scss';
+@import '~photon-colors/photon-colors.scss';
 @import '../../../styles/_utils';
 
 .featured-experiment {
@@ -266,6 +266,7 @@
 
       border: 0;
       margin: 0;
+      z-index : 2;
 
       img {
         height: 60px;

@@ -1,7 +1,7 @@
 // @flow
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 
 import LayoutWrapper from "../LayoutWrapper";
 import NewsletterForm from "../NewsletterForm";
@@ -17,8 +17,7 @@ type NewsletterFooterProps = {
   }
 }
 
-export default class NewsletterFooter extends React.Component {
-  props: NewsletterFooterProps
+export default class NewsletterFooter extends Component<NewsletterFooterProps> {
 
   renderError() {
     if (this.props.newsletterForm.failed) {

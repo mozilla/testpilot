@@ -2,7 +2,7 @@
 
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 
 import ExperimentCardList from "../ExperimentCardList";
 import LayoutWrapper from "../LayoutWrapper";
@@ -17,9 +17,7 @@ type PastExperimentsState = {
   showPastExperiments: boolean
 }
 
-export default class PastExperiments extends React.Component {
-  props: PastExperimentsProps
-  state: PastExperimentsState
+export default class PastExperiments extends Component<PastExperimentsProps, PastExperimentsState> {
 
   constructor(props: PastExperimentsProps) {
     super(props);

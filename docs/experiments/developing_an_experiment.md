@@ -116,7 +116,7 @@ Blocked on something:
 * `needs:qa`
 * `needs:ux`
 
-Priority lables are based on [bugzilla's triage process](https://wiki.mozilla.org/Bugmasters/Process/Triage#Weekly_or_More_Frequently_.28depending_on_the_component.29):
+Priority labels are based on [bugzilla's triage process](https://wiki.mozilla.org/Bugmasters/Process/Triage#Weekly_or_More_Frequently_.28depending_on_the_component.29):
 * `p1`
 * `p2`
 * `p3`

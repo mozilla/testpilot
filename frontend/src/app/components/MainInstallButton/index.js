@@ -1,11 +1,9 @@
 // @flow
-
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
-import React from "react";
+import React, { Component } from "react";
 
 import LayoutWrapper from "../LayoutWrapper";
-import LocalizedHtml from "../LocalizedHtml";
 
 import "./index.scss";
 
@@ -13,11 +11,13 @@ import config from "../../config";
 
 import type { MainInstallButtonProps } from "../types";
 
+import {
+  WebExperimentButton
+} from "../../containers/ExperimentPage/ExperimentButtons";
+
 type MainInstallButtonState = { isInstalling: boolean };
 
-export default class MainInstallButton extends React.Component {
-  props: MainInstallButtonProps;
-  state: MainInstallButtonState;
+export default class MainInstallButton extends Component<MainInstallButtonProps, MainInstallButtonState> {
 
   constructor(props: MainInstallButtonProps) {
     super(props);
@@ -36,8 +36,7 @@ export default class MainInstallButton extends React.Component {
       eventLabel, experiment, experimentTitle, isFeatured,
       installed, hasAddon, enableExperiment } = this.props;
 
-    if (isFeatured) {
-      const { slug } = experiment;
+    if (isFeatured && experiment && experiment.slug) {
       sendToGA("event", {
         eventCategory,
         eventAction: "button click",
@@ -47,7 +46,7 @@ export default class MainInstallButton extends React.Component {
         dimension3: installed ? Object.keys(installed).length : 0,
         dimension4: false, // enabled?
         dimension5: experimentTitle,
-        dimension11: slug,
+        dimension11: experiment.slug,
         dimension13: "Featured Experiment"
       });
     }
@@ -61,29 +60,58 @@ export default class MainInstallButton extends React.Component {
     install.then(after, after);
   }
 
-  render() {
-    const { isFirefox, isMinFirefox, isMobile, hasAddon, experimentTitle, experimentLegalLink, experiment } = this.props;
-    const isInstalling = this.state.isInstalling || (experiment && experiment.inProgress);
+  renderWebExperimentButton() {
+    const { sendToGA, experiment } = this.props;
+    if (!experiment) return;
+    const { title, slug, web_url } = experiment;
+    // eslint-disable-next-line consistent-return
+    return (
+      <WebExperimentButton {...{
+        web_url,
+        title,
+        slug,
+        sendToGA,
+        color: "default main-install__button"
+      }} />
+    );
+  }
 
-    const terms = <Localized id="landingLegalNoticeTermsOfUse">
-      <a href="/terms"/>
-    </Localized>;
-    const privacy = <Localized id="landingLegalNoticePrivacyNotice">
-      <a href="/privacy"/>
-    </Localized>;
+  renderMainButton() {
+    const { isFirefox, isMinFirefox, isMobile, hasAddon, experiment } = this.props;
+
+    const isInstalling = this.state.isInstalling || (!!experiment && experiment.inProgress);
+    const showWebButton = (!!experiment && experiment.platforms.includes("web") && experiment.platforms.length === 1);
+
+    if (showWebButton) {
+      return this.renderWebExperimentButton();
+    } else if (isMinFirefox && !isMobile) {
+      return this.renderInstallButton(isInstalling, hasAddon);
+    }
+
+    return this.renderAltButton(isFirefox, isMobile);
+  }
+
+  render() {
+    const { isMinFirefox, isMobile, experimentTitle, experimentLegalLink, experiment } = this.props;
+    const showWebButton = (experiment && experiment.platforms.includes("web") && experiment.platforms.length === 1);
     const layout = experimentTitle ? "column-center-start-breaking" : "column-center";
 
     return (
       <LayoutWrapper flexModifier={layout} helperClass="main-install">
         <div className="main-install__spacer" />
-        {(isMinFirefox && !isMobile) ? this.renderInstallButton(isInstalling, hasAddon) : this.renderAltButton(isFirefox, isMobile) }
-        {isMinFirefox && !isMobile && !experimentLegalLink && <LocalizedHtml id="landingLegalNotice" $terms={terms} $privacy={privacy}>
-          <p className="main-install__legal">
-          By proceeding, you agree to the {terms} and {privacy} of Test Pilot.
-          </p>
-        </LocalizedHtml>}
 
-        {isMinFirefox && !isMobile && experimentLegalLink && experimentLegalLink}
+        {this.renderMainButton()}
+
+        {isMinFirefox && !isMobile && !experimentLegalLink && <Localized id="landingLegalNoticeWithLinks"
+          terms-link={<a href="/terms/"></a>}
+          privacy-link={<a href="/privacy/"></a>}>
+          <p className="main-install__legal">
+            By proceeding, you agree to the <terms-link>Terms of Use</terms-link> and{" "}
+            <privacy-link>Privacy Notice</privacy-link> of Test Pilot.
+          </p>
+        </Localized>}
+
+        {!showWebButton && isMinFirefox && !isMobile && experimentLegalLink && experimentLegalLink}
       </LayoutWrapper>
     );
   }
@@ -91,9 +119,9 @@ export default class MainInstallButton extends React.Component {
   renderEnableExperimentButton(title: string) {
     return (
       <div className="main-install__enable">
-        <LocalizedHtml id="oneClickInstallMajorCta" $title={title}>
+        <Localized id="oneClickInstallMajorCta" $title={title}>
           <span className="main-install__minor-cta">Enable {title}</span>
-        </LocalizedHtml>
+        </Localized>
       </div>
     );
   }
@@ -101,9 +129,9 @@ export default class MainInstallButton extends React.Component {
   renderOneClickInstallButton(title: string) {
     return (
       <div className="main-install__one-click">
-        <LocalizedHtml id="oneClickInstallMinorCta">
+        <Localized id="oneClickInstallMinorCta">
           <span className="main-install__minor-cta">Install Test Pilot &amp;</span>
-        </LocalizedHtml>
+        </Localized>
         <Localized id="oneClickInstallMajorCta" $title={title}>
           <span className="main-install__major-cta">Enable {title}</span>
         </Localized>
@@ -125,7 +153,7 @@ export default class MainInstallButton extends React.Component {
       <span className="progress-btn-msg">Enabling...</span>
     </Localized>);
 
-    if (experimentTitle) {
+    if (experimentTitle && experiment) {
       const enabled = isExperimentEnabled(experiment);
       if (hasAddon && !enabled) {
         installButton = this.renderEnableExperimentButton(experimentTitle);

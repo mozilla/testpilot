@@ -68,7 +68,7 @@ describe("app/components/MainInstallButton", () => {
   });
 
   it("fires sendToGA when install is called", () => {
-    const mockExperiment = {slug: "testing", title: "Testing Experiment"};
+    const mockExperiment = {slug: "testing", title: "Testing Experiment", platforms: ["addon"]};
     subject.setProps({
       isFeatured: true,
       experiment: mockExperiment,

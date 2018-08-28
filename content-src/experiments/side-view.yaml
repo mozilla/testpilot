@@ -19,7 +19,8 @@ changelog_url: 'https://github.com/mozilla/side-view/releases'
 contribute_url: 'https://github.com/mozilla/side-view/'
 bug_report_url: 'https://github.com/mozilla/side-view/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/side-view'
-legal_notice: By proceeding, you agree to the <a>terms</a> and <a>privacy</a> policies of Test Pilot and the <a>Side View privacy policy</a>.
+legal_notice: By proceeding, you agree to the <terms-link>terms</terms-link> and <privacy-link>privacy</privacy-link> policies of Test Pilot and the <modal-link>Side View privacy policy</modal-link>.
+legal_notice_l10nsuffix: withlinks
 privacy_notice_url: 'https://github.com/mozilla/side-view/blob/master/docs/metrics.md'
 measurements:
   - >

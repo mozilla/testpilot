@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const util = require("util");
-const globby = require("globby");
+const glob = require("glob");
 const mkdirp = util.promisify(require("mkdirp"));
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
@@ -19,7 +19,7 @@ class ContentTransformerPlugin {
     // Resolve configured input globs into file tracking records
     this.inputs = {};
     Object.entries(this.options.inputs).forEach(([key, patterns]) => {
-      this.inputs[key] = globby.sync(patterns).map(filename => ({
+      this.inputs[key] = glob.sync(patterns).map(filename => ({
         filename,
         content: null,
         parsed: null,
@@ -45,7 +45,7 @@ class ContentTransformerPlugin {
       context: "."
     };
     const compilation = {
-      fileDependencies: [],
+      fileDependencies: new Set([]),
       fileTimestamps: {},
       assets: {}
     };
@@ -69,7 +69,7 @@ class ContentTransformerPlugin {
       file.path = path.join(compiler.context, file.filename);
 
       // Add the file to the dependency watch list
-      compilation.fileDependencies.push(file.path);
+      compilation.fileDependencies.add(file.path);
 
       // Work out whether this file has been modified.
       const currentModified = compilation.fileTimestamps[file.path];

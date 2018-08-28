@@ -19,6 +19,7 @@ body {
 }
 
 .full-page-wrapper {
+  @include flex-container(column, flex-start, stretch);
   flex: 1;
   min-height: 100vh;
   width: 100%;
@@ -59,6 +60,10 @@ body {
 // but wind up happening a few frames apart. This rule resolves
 #static-root + #page-container.dynamic-page {
   display: none;
+}
+
+.static-page-content {
+  flex: 1;
 }
 
 noscript {

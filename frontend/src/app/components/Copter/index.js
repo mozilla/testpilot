@@ -1,6 +1,6 @@
 // @flow
 
-import React from "react";
+import React, { Component } from "react";
 import classnames from "classnames";
 
 import "./index.scss";
@@ -10,8 +10,7 @@ type CopterProps = {
   animation?: string
 }
 
-export default class Copter extends React.Component {
-  props: CopterProps
+export default class Copter extends Component<CopterProps> {
 
   render() {
     const { small = false, animation = null } = this.props;

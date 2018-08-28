@@ -45,7 +45,7 @@ npm start
 **Note:** While you *will* be able to see the web site locally via
 http://localhost:8000/ - the `example.com` hostname alias is important to
 several features of this site for local development. The domain `example.com`
-is whitelisted and allowed to use the mozAddonManager api to manage add-ons.
+is whitelisted and allowed to use the mozAddonManager API to manage add-ons.
 
 These steps will give you a working development web server and file
 watcher that will rebuild site assets as you edit. Just a few more steps and

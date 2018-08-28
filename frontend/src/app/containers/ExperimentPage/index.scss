@@ -1,4 +1,4 @@
-@import '~photon-colors/colors.scss';
+@import '~photon-colors/photon-colors.scss';
 @import '../../../styles/_utils';
 
 .details-header-wrapper {
@@ -225,7 +225,7 @@
     margin: 0 $grid-unit * .75;
   }
 
-  h4 {
+  .subtitle {
     color: $grey-80;
     font-size: 18px;
     font-weight: normal;
@@ -526,6 +526,16 @@
 
     #footer-links {
       padding-top: 0;
+    }
+  }
+
+  .details-header{
+    header{
+      align-items: center;
+    }
+
+    .experiment-platform {
+      justify-content : center;
     }
   }
 }

@@ -46,7 +46,7 @@ function getInstalledTxpAddons() {
     const txpAddons = resources.experiments.map((exp) => exp.id);
 
     return installed.filter(function(n) {
-      return txpAddons.indexOf(n) !== -1;
+      return txpAddons.includes(n);
     });
   });
 }

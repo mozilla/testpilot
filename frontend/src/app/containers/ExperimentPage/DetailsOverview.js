@@ -1,9 +1,9 @@
 // @flow
 
 import React from "react";
+import { FluentDateTime } from "fluent/compat";
 import { Localized } from "fluent-react/compat";
-import LocalizedHtml from "../../components/LocalizedHtml";
-import { experimentL10nId, formatDate } from "../../lib/utils";
+import { experimentL10nId } from "../../lib/utils";
 import MeasurementsSection from "../../components/Measurements";
 import ExperimentControls from "./ExperimentControls";
 
@@ -19,13 +19,12 @@ export default function DetailsOverview({
   sendToGA,
   userAgent,
   hasAddon,
-  progressButtonWidth,
   isDisabling,
   isEnabling,
   enabled,
-  installed,
   graduated,
   experiment,
+  pre_feedback_copy,
   installExperiment,
   doShowEolDialog,
   doShowPreFeedbackDialog,
@@ -50,13 +49,12 @@ export default function DetailsOverview({
               hasAddon,
               userAgent,
               experiment,
-              installed,
               graduated,
               enabled,
-              progressButtonWidth,
               installExperiment,
               isEnabling,
               isDisabling,
+              pre_feedback_copy,
               doShowEolDialog,
               doShowPreFeedbackDialog,
               flashMeasurementPanel,
@@ -86,24 +84,34 @@ export default function DetailsOverview({
 export const LaunchStatus = ({ experiment, graduated }: LaunchStatusType) => {
   const { created, completed } = experiment;
 
-  const completedDate = formatDate(completed);
+  const completedDate = new FluentDateTime(completed, {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
+
   if (graduated) {
     return (
-      <LocalizedHtml id="completedDateLabel" $completedDate={completedDate}>
+      <Localized id="completedDate" $completedDate={completedDate} b={<b></b>}>
         <span>
-          Experiment End Date: <b>{completedDate}</b>
+          Experiment End Date: <b>{completed}</b>
         </span>
-      </LocalizedHtml>
+      </Localized>
     );
   }
 
-  const startedDate = formatDate(created);
+  const startedDate = new FluentDateTime(created, {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
+
   return (
-    <LocalizedHtml id="startedDateLabel" $startedDate={startedDate}>
+    <Localized id="startedDate" $startedDate={startedDate} b={<b></b>}>
       <span>
-        Experiment Start Date: <b>{startedDate}</b>
+        Experiment Start Date: <b>{created}</b>
       </span>
-    </LocalizedHtml>
+    </Localized>
   );
 };
 
@@ -143,11 +151,13 @@ export const StatsSection = ({
               <Localized id="changelog"><span>Changelog</span></Localized>
             </a>
           </li>}
-      <li>
-        <a href={contribute_url}>
-          <Localized id="contribute"><span>Contribute</span></Localized>
-        </a>
-      </li>
+      {contribute_url &&
+          <li>
+            <a href={contribute_url}>
+              <Localized id="contribute"><span>Contribute</span></Localized>
+            </a>
+          </li>
+      }
       <li>
         <a href={bug_report_url}>
           <Localized id="bugReports"><span>Bug Reports</span></Localized>

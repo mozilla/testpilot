@@ -1,6 +1,6 @@
-import React from "react";
+// @flow
+import React, { Fragment } from "react";
 import { Localized } from "fluent-react/compat";
-import LocalizedHtml from "../../components/LocalizedHtml";
 import { experimentL10nId, isMobile } from "../../lib/utils";
 import {
   FeedbackButton,
@@ -31,6 +31,7 @@ export default function ExperimentControls({
   isDisabling,
   isEnabling,
   isMinFirefox,
+  pre_feedback_copy,
   sendToGA,
   surveyURL,
   uninstallExperimentWithSurvey,
@@ -39,8 +40,7 @@ export default function ExperimentControls({
   const {
     max_release,
     min_release,
-    platforms,
-    title
+    platforms
   } = experiment;
 
   const validVersion = isValidVersion(userAgent, min_release, max_release);
@@ -67,6 +67,7 @@ export default function ExperimentControls({
     isEnabling,
     isMinFirefox,
     platforms,
+    pre_feedback_copy,
     sendToGA,
     surveyURL,
     uninstallExperimentWithSurvey,
@@ -82,16 +83,18 @@ export default function ExperimentControls({
     if (isMinFirefox && !hasAddon && !enabled && platforms.includes("addon")) {
       legalSection = (
         <div className="privacy-link">
-          <LocalizedHtml
-            id={experimentL10nId(experiment, "legal-notice")}
-            $title={title}
+          <Localized
+            id={experimentL10nId(experiment, "legal_notice")}
+            terms-link={<a href="/terms" />}
+            privacy-link={<a href="/privacy" />}
+            modal-link={<a onClick={highlightPrivacy} />}
           >
             <p className="legal-section">
-              By proceeding, you agree to the <a href="/terms" /> and{" "}
-              <a href="/privacy" /> policies of Test Pilot and the{" "}
-              <a onClick={highlightPrivacy} />.
+              By proceeding, you agree to the <terms-link>terms</terms-link> and{" "}
+              <privacy-link>privacy</privacy-link> policies of Test Pilot and{" "}
+              <modal-link>this experiment&apos;s privacy policy</modal-link>.
             </p>
-          </LocalizedHtml>
+          </Localized>
         </div>
       );
     } else {
@@ -166,10 +169,10 @@ function createButtons({
     }
     const category = "ExperimentDetailsPage Interactions";
     return (
-      <React.Fragment>
+      <Fragment>
         {platforms.includes("ios") && <MobileStoreButton {...{ url: ios_url, platform: "ios", category, sendToGA, slug }} />}
         {platforms.includes("android") && <MobileStoreButton {...{ url: android_url, platform: "android", category, sendToGA, slug }} />}
-      </React.Fragment>
+      </Fragment>
     );
   };
 
@@ -193,7 +196,7 @@ function createButtons({
 
     if (enabled) {
       return (
-        <React.Fragment>
+        <Fragment>
           <FeedbackButton
             {...{
               title,
@@ -208,7 +211,7 @@ function createButtons({
           <UninstallButton
             {...{ uninstallExperimentWithSurvey, isDisabling, title }}
           />
-        </React.Fragment>
+        </Fragment>
       );
     }
 
@@ -236,32 +239,32 @@ function createButtons({
       return mobileControls();
     case "WebMobile":
       return (
-        <React.Fragment>
+        <Fragment>
           {mobileControls()}
           {webControls("secondary")}
-        </React.Fragment>
+        </Fragment>
       );
     case "AddonWeb":
       return (
-        <React.Fragment>
+        <Fragment>
           {addonControls("default")}
           {webControls("secondary")}
-        </React.Fragment>
+        </Fragment>
       );
     case "AddonMobile":
       return (
-        <React.Fragment>
+        <Fragment>
           {mobileControls()}
           {addonControls("secondary")}
-        </React.Fragment>
+        </Fragment>
       );
     case "AddonWebMobile":
       return (
-        <React.Fragment>
+        <Fragment>
           {mobileControls()}
           {addonControls("secondary")}
           {webControls("secondary")}
-        </React.Fragment>
+        </Fragment>
       );
     default:
       return null;

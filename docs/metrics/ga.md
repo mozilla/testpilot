@@ -85,6 +85,7 @@ Here are the current events on the website as of this writing, grouped by their 
 | Cancel Firefox permission dialog | Cancel From Permission | `{experiment title}`
 | Send experiment app link to device | mobile send click | `{experiment title}` |
 | Click app store links on experiment page | mobile store click | `{experiment title}` `{ios \|\| android}` |
+| Click Download Firefox in Promo on experiment page | download firefox click | Download Firefox at `${title}`|
 
 #### `SMS Modal Interactions`
 | Description | `eventAction` | `eventLabel` |
@@ -206,7 +207,7 @@ Here is a list of dimensions we are currently using
 
 ### Tagged Links
 
-Whenever we are referring users to the Test Pilot website (either from an external website, or the add-on itself via a doorhanger/notification), we should include `utm_*` paramaters to allow us to properly measure conversion rates of the channel.
+Whenever we are referring users to the Test Pilot website (either from an external website, or the add-on itself via a doorhanger/notification), we should include `utm_*` parameters to allow us to properly measure conversion rates of the channel.
 
 Here is a description of the different utm tags ([URL builder tool from Google](https://support.google.com/analytics/answer/1033867))
 

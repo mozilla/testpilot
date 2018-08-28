@@ -2,15 +2,14 @@
 
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
-import React from "react";
-
-import LocalizedHtml from "../LocalizedHtml";
+import React, { Component } from "react";
 
 import { defaultState } from "../../reducers/newsletter-form";
 
 import "./index.scss";
 
 type NewsletterFormProps = {
+  submitting?: boolean,
   email?: string,
   privacy?: boolean,
   isModal?: boolean,
@@ -19,8 +18,7 @@ type NewsletterFormProps = {
   buttonRef?: Function
 }
 
-export default class NewsletterForm extends React.Component {
-  props: NewsletterFormProps
+export default class NewsletterForm extends Component<NewsletterFormProps> {
   handleEmailChange: Function
   handleSubmit: Function
 
@@ -60,19 +58,16 @@ export default class NewsletterForm extends React.Component {
 
   renderPrivacyField() {
     const fieldName = "privacy";
-    const privacy = <Localized id="newsletterFormPrivacyNoticePrivacyLink">
-      <a target="_blank" rel="noopener noreferrer"
-        href="/privacy"/>
-    </Localized>;
 
     return <div>
       <label className={this.makeRevealedClassNames()} htmlFor={fieldName}>
         <input name={fieldName} id={fieldName} type="checkbox" required />
-        <LocalizedHtml id="newsletterFormPrivacyNotice" $privacy={privacy}>
+        <Localized id="newsletterFormPrivacyNotice"
+          a={<a target="_blank" rel="noopener noreferrer" href="/privacy"/>}>
           <span>
-            I&apos;m okay with Mozilla handling my info as explained in {privacy}.
+            I&apos;m okay with Mozilla handling my info as explained in <a>this privacy notice</a>.
           </span>
-        </LocalizedHtml>
+        </Localized>
       </label>
     </div>;
   }

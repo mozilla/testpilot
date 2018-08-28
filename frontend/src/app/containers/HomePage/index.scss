@@ -1,4 +1,4 @@
-@import '~photon-colors/colors.scss';
+@import '~photon-colors/photon-colors.scss';
 @import '../../../styles/_utils';
 
 .landing-experiments {
@@ -38,6 +38,7 @@
     position: relative;
     text-align: center;
     transition: background-color 125ms, background-position 125ms, box-shadow 125ms;
+    z-index : 1;
 
     &:hover {
       background-color: $transparent-white-2;
