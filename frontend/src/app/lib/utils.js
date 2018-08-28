@@ -30,22 +30,6 @@ export function fetchCountryCode(onSuccess, onError) {
   return fetch(COUNTRY_CODE_ENDPOINT);
 }
 
-export function formatDate(date) {
-  let out = "";
-  const d = new Date(date);
-  if (isNaN(d)) {
-    out = null;
-  } else {
-    // safari is the new IE :(
-    try {
-      out = d.toLocaleDateString(navigator.language);
-    } catch (e) {
-      out = `${d.getMonth() + 1} / ${d.getDate()} / ${d.getFullYear()}`;
-    }
-  }
-  return out;
-}
-
 export function buildSurveyURL(ref, title, installed, clientUUID, survey_url) {
   const queryParams = querystring.stringify({
     ref,

@@ -6,7 +6,6 @@ import { isValidNumber } from "libphonenumber-js";
 // $FlowFixMe
 import { validate } from "email-validator";
 import { Localized } from "fluent-react/compat";
-import LocalizedHtml from "../LocalizedHtml";
 import Loading from "../Loading";
 
 import "./index.scss";
@@ -89,27 +88,32 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
       });
     };
 
-    const headerMessage = ios_url ? (<LocalizedHtml id="mobileDialogMessageIOS" $title={title}>
-      <p>Download <b>{title}</b> from the iOS App Store.</p></LocalizedHtml>) : (<LocalizedHtml id="mobileDialogMessageAndroid" $title={title}><p>Download <b>{title}</b> from the Google Play Store.</p></LocalizedHtml>);
+    const headerMessage = ios_url
+      ? <Localized id="mobileDialogMessageIOS" $title={title} b={<b></b>}>
+        <p>Download <b>{title}</b> from the iOS App Store.</p>
+      </Localized>
+      : <Localized id="mobileDialogMessageAndroid" $title={title} b={<b></b>}>
+        <p>Download <b>{title}</b> from the Google Play Store.</p>
+      </Localized>;
     const headerImg = ios_url ? (<a href={ios_url} onClick={handleAppLinkClick} target="_blank" rel="noopener noreferrer"><img className="mobile-header-img" src={iconIos}/></a>) : (<a href={android_url} onClick={handleAppLinkClick} target="_blank" rel="noopener noreferrer"><img className="mobile-header-img" src={iconGoogle}/></a>);
 
     const learnMoreLink = "https://www.mozilla.org/privacy/websites/#campaigns";
 
-    const learnMore = (<Localized id="mobileDialogNoticeLearnMoreLink">
-      <a target="_blank" rel="noopener noreferrer" href={learnMoreLink}>Learn More</a>
-    </Localized>);
-
-    const privacy = (<Localized id="newsletterFormPrivacyNoticePrivacyLink">
-      <a target="_blank" rel="noopener noreferrer" href={learnMoreLink} />
-    </Localized>);
-
-    const notice = allowSMS ? (<Localized id="mobileDialogNoticeSMS" $learnMore={learnMore}><p className="notice">SMS service available in select countries only. SMS & data rates may apply. The intended recipient of the email or SMS must have consented. {learnMore}</p></Localized>)
-      : (<LocalizedHtml id="newsletterFormPrivacyNotice" $privacy={privacy}>
+    const notice = allowSMS
+      ? <Localized id="mobileDialogNoticeSMSWithLink"
+        a={<a target="_blank" rel="noopener noreferrer" href={learnMoreLink}></a>}>
         <p className="notice">
-        I&apos;m okay with Mozilla handling my info as explained in {privacy}.
+          SMS service available in select countries only. SMS &amp; data rates may apply.
+          The intended recipient of the email or SMS must have consented.{" "}
+          <a>Learn More</a>.
         </p>
-      </LocalizedHtml>
-      );
+      </Localized>
+      : <Localized id="newsletterFormPrivacyNotice"
+        a={<a target="_blank" rel="noopener noreferrer" href={learnMoreLink} />}>
+        <p className="notice">
+          I&apos;m okay with Mozilla handling my info as explained in <a>this privacy notice</a>.
+        </p>
+      </Localized>;
 
     return (
       <div className="modal-container mobile-modal" tabIndex="0"

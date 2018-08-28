@@ -1,7 +1,6 @@
 // @flow
 import React, { Fragment } from "react";
 import { Localized } from "fluent-react/compat";
-import LocalizedHtml from "../../components/LocalizedHtml";
 import { experimentL10nId, isMobile } from "../../lib/utils";
 import {
   FeedbackButton,
@@ -41,8 +40,7 @@ export default function ExperimentControls({
   const {
     max_release,
     min_release,
-    platforms,
-    title
+    platforms
   } = experiment;
 
   const validVersion = isValidVersion(userAgent, min_release, max_release);
@@ -85,16 +83,18 @@ export default function ExperimentControls({
     if (isMinFirefox && !hasAddon && !enabled && platforms.includes("addon")) {
       legalSection = (
         <div className="privacy-link">
-          <LocalizedHtml
-            id={experimentL10nId(experiment, "legal-notice")}
-            $title={title}
+          <Localized
+            id={experimentL10nId(experiment, "legal_notice")}
+            terms-link={<a href="/terms" />}
+            privacy-link={<a href="/privacy" />}
+            modal-link={<a onClick={highlightPrivacy} />}
           >
             <p className="legal-section">
-              By proceeding, you agree to the <a href="/terms" /> and{" "}
-              <a href="/privacy" /> policies of Test Pilot and the{" "}
-              <a onClick={highlightPrivacy} />.
+              By proceeding, you agree to the <terms-link>terms</terms-link> and{" "}
+              <privacy-link>privacy</privacy-link> policies of Test Pilot and{" "}
+              <modal-link>this experiment&apos;s privacy policy</modal-link>.
             </p>
-          </LocalizedHtml>
+          </Localized>
         </div>
       );
     } else {

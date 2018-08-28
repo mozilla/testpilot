@@ -153,12 +153,12 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
     expect(findLocalizedHtmlById(subject, "testingIntroduction")).to.have.property("length", 1);
     expect(findLocalizedById(subject, "testingContributors0Title")).to.have.property("length", 1);
     expect(findLocalizedById(subject, "testingDetails0Headline")).to.have.property("length", 1);
-    expect(findLocalizedById(subject, "testingDetails0Copy")).to.have.property("length", 1);
+    expect(findLocalizedHtmlById(subject, "testingDetails0Copy")).to.have.property("length", 1);
 
     // Fields only available when the add-on is installed.
     subject.setProps({ hasAddon: true });
     // The measurements section is rendered twice, for responsiveness reasons.
-    expect(findLocalizedHtmlById(subject, "testingMeasurements0")).to.have.property("length", 2);
+    expect(findLocalizedById(subject, "testingMeasurements0")).to.have.property("length", 2);
   });
 
   it("should omit l10n IDs for dev-only content", () => {
@@ -167,7 +167,7 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
     expect(findLocalizedHtmlById(subject, "testingIntroduction")).to.have.property("length", 0);
     expect(findLocalizedById(subject, "testingContributors0Title")).to.have.property("length", 0);
     expect(findLocalizedById(subject, "testingDetails0Headline")).to.have.property("length", 0);
-    expect(findLocalizedById(subject, "testingDetails0Copy")).to.have.property("length", 0);
+    expect(findLocalizedHtmlById(subject, "testingDetails0Copy")).to.have.property("length", 0);
   });
 
   it("should not render experiment content if no experiment content is loaded", () => {
@@ -450,7 +450,7 @@ describe("app/containers/ExperimentPage:ExperimentDetail", () => {
         });
 
         it("displays the end date instead of install count", () => {
-          expect(findLocalizedHtmlById(subject, "completedDateLabel").length).to.equal(1);
+          expect(findLocalizedById(subject, "completedDate").length).to.equal(1);
           expect(findLocalizedById(subject, "userCountContainer").length).to.equal(0);
           expect(findLocalizedById(subject, "userCountContainerAlt").length).to.equal(0);
         });

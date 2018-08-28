@@ -3,7 +3,6 @@
 import React from "react";
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
-import LocalizedHtml from "../../components/LocalizedHtml";
 
 type MeasurementsSectionType = {
   experiment: Object,
@@ -23,12 +22,6 @@ export default function MeasurementsSection({
   highlightMeasurementPanel,
   l10nId
 }: MeasurementsSectionType) {
-  const privacy = (
-    <Localized id="experimentMeasurementIntroPrivacyLink">
-      <a target="_blank" rel="noopener noreferrer" href="/privacy" />
-    </Localized>
-  );
-
   return (
     <section
       className={classnames("measurements", {
@@ -47,27 +40,25 @@ export default function MeasurementsSection({
           </Localized>}
         {measurements &&
         <div>
-          <LocalizedHtml
+          <Localized
             id="experimentMeasurementIntro"
             $experimentTitle={title}
-            $privacy={privacy}
-          >
+            a={<a target="_blank" rel="noopener noreferrer" href="/privacy" />}>
             <p>
-              In addition to the {privacy} collected by all Test Pilot
+              In addition to the <a>data</a> collected by all Test Pilot
               experiments, here are the key things you should know about what is
               happening when you use {title}:
             </p>
-          </LocalizedHtml>
+          </Localized>
 
           <ul>
             {measurements.map((note, idx) =>
-              <LocalizedHtml key={idx} id={l10nId(["measurements", idx])}>
-                <li>
-                  {EXPERIMENT_MEASUREMENT_URLS[idx] === null
-                    ? null
-                    : <a href={EXPERIMENT_MEASUREMENT_URLS[idx]} />}
-                </li>
-              </LocalizedHtml>
+              <Localized key={idx} id={l10nId(["measurements", idx])}
+                a={EXPERIMENT_MEASUREMENT_URLS[idx] === null
+                  ? null
+                  : <a href={EXPERIMENT_MEASUREMENT_URLS[idx]} />}>
+                <li></li>
+              </Localized>
             )}
           </ul>
         </div>}

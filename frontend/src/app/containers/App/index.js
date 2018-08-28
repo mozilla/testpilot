@@ -37,7 +37,7 @@ not just the toplevel App Container.
   https://github.com/mozilla/testpilot/issues/2924
 */
 
-import { MessageContext } from "fluent/compat";
+import { FluentBundle } from "fluent/compat";
 import { negotiateLanguages } from "fluent-langneg/compat";
 import { LocalizationProvider } from "fluent-react/compat";
 import React, { Component } from "react";
@@ -221,12 +221,12 @@ class App extends Component {
       return <UpgradeWarningPage {...this.props} />;
     }
 
-    function* generateMessages(languages, localizations) {
+    function* generateBundles(languages, localizations) {
       for (const lang of languages) {
         if (typeof localizations[lang] === "string") {
-          const cx = new MessageContext(lang, {useIsolating: false});
-          cx.addMessages(localizations[lang]);
-          yield cx;
+          const bundle = new FluentBundle(lang, {useIsolating: false});
+          bundle.addMessages(localizations[lang]);
+          yield bundle;
         }
       }
     }
@@ -235,7 +235,7 @@ class App extends Component {
       <Helmet>
         <title>Firefox Test Pilot</title>
       </Helmet>
-      <LocalizationProvider messages={ generateMessages(
+      <LocalizationProvider bundles={ generateBundles(
         this.props.negotiatedLanguages,
         this.props.localizations
       ) }>

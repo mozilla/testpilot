@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 import Copter from "../../components/Copter";
 import LayoutWrapper from "../../components/LayoutWrapper";
-import LocalizedHtml from "../../components/LocalizedHtml";
 import View from "../../components/View";
 
 import "./index.scss";
@@ -75,9 +74,9 @@ export default class RetirePage extends Component<RetirePageProps, RetirePageSta
               </div>
               <div className="modal-content">
                 <div className="flying-icon"></div>
-                <LocalizedHtml id="retirePageMessage">
+                <Localized id="retirePageMessage" br={<br/>}>
                   <p>Hope you had fun experimenting with us. <br/> Come back any time.</p>
-                </LocalizedHtml>
+                </Localized>
               </div>
               <div className="modal-actions">
                 <Localized id="retirePageSurveyButton">

@@ -2,7 +2,6 @@
 import React from "react";
 import classnames from "classnames";
 import { Localized } from "fluent-react/compat";
-import LocalizedHtml from "../../components/LocalizedHtml";
 
 import type {
   FeedbackButtonType,
@@ -159,9 +158,9 @@ export const InstallTestPilotButton = ({
       <img src={iconExperimentTypeAddonWhite} />
       <div className="one-click-cta-text">
         {!isEnabling && (
-          <LocalizedHtml id="oneClickInstallMinorCta">
+          <Localized id="oneClickInstallMinorCta">
             <span className="one-click-minor">Install Test Pilot &amp;</span>
-          </LocalizedHtml>
+          </Localized>
         )}
         {!isEnabling && (
           <Localized id="oneClickInstallMajorCta" $title={title}>

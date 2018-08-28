@@ -1,12 +1,12 @@
 // @flow
 
 import React from "react";
-import parser from "html-react-parser";
+import { FluentDateTime } from "fluent/compat";
 import { Localized } from "fluent-react/compat";
 import LocalizedHtml from "../../components/LocalizedHtml";
 
 import Warning from "../../components/Warning";
-import { experimentL10nId, formatDate } from "../../lib/utils";
+import { experimentL10nId } from "../../lib/utils";
 
 import GraduatedNotice from "../../components/GraduatedNotice";
 import IncompatibleAddons from "./IncompatibleAddons";
@@ -67,7 +67,7 @@ export default function DetailsDescription({
               </div>}
             <LocalizedHtml id={l10nId("introduction")}>
               <div>
-                {parser(introduction)}
+                {introduction}
               </div>
             </LocalizedHtml>
           </section>}
@@ -85,11 +85,11 @@ export default function DetailsDescription({
                     </strong>
                   </Localized>}
                 {copy &&
-                  <Localized id={l10nId(["details", idx, "copy"])}>
+                  <LocalizedHtml id={l10nId(["details", idx, "copy"])}>
                     <span>
-                      {parser(copy)}
+                      {copy}
                     </span>
-                  </Localized>}
+                  </LocalizedHtml>}
               </p>
             </div>
           </div>
@@ -118,7 +118,7 @@ export const LocaleWarning = ({
     return (
       <Warning
         titleL10nId="localeNotTranslatedWarningTitle"
-        titleL10nArgs={JSON.stringify({ locale_code: locale })}
+        titleL10nArgs={{$locale_code: locale}}
         title="This experiment has not been translated to your language (en)."
         subtitleL10nId="localeWarningSubtitle"
         subtitle="You can still enable it if you like."
@@ -129,20 +129,24 @@ export const LocaleWarning = ({
 };
 
 export const EolBlock = ({ experiment, l10nId }: EolBlockProps) => {
-  const completedDate = formatDate(experiment.completed);
-  const title = `${experiment.title} is ending on ${completedDate}`;
+  const $title = experiment.title;
+  const $completedDate = new FluentDateTime(experiment.completed, {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
 
   return (
     <Warning
-      titleL10nId="eolIntroMessage"
-      titleL10nArgs={JSON.stringify({ title: experiment.title, completedDate })}
-      title={title}
+      titleL10nId="eolTitleMessage"
+      titleL10nArgs={{$title, $completedDate}}
+      title={`${experiment.title} is ending on ${experiment.completed}`}
     >
-      <Localized id={l10nId("eolWarning")}>
+      <LocalizedHtml id={l10nId("eolWarning")}>
         <div>
-          {parser(experiment.eol_warning)}
+          {experiment.eol_warning}
         </div>
-      </Localized>
+      </LocalizedHtml>
       <div className="small-spacer" />
       <Localized id="eolNoticeLink">
         <a href="/about" target="_blank" rel="noopener noreferrer">

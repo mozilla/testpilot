@@ -3,8 +3,6 @@ import { Localized } from "fluent-react/compat";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
-import LocalizedHtml from "../LocalizedHtml";
-
 type RetireConfirmationDialogProps = {
   uninstallAddon: Function,
   onDismiss: Function,
@@ -37,9 +35,9 @@ export class RetireConfirmationDialog extends Component<RetireConfirmationDialog
               <Localized id="retireMessageUpdate">
                 <p>As you wish. This will uninstall Test Pilot. You can disable individual experiments from the Firefox Add-ons Manager.</p>
               </Localized>
-              <LocalizedHtml id="retireEmailMessage">
+              <Localized id="retireEmailMessage" em={<em></em>}>
                 <p>To opt out of email updates, simply click the <em>unsubscribe</em> link on any Test Pilot email.</p>
-              </LocalizedHtml>
+              </Localized>
             </div>
             <div className="modal-actions">
               <Localized id="retireSubmitButton">

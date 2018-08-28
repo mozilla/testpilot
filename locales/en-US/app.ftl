@@ -36,7 +36,7 @@ headerLinkBlog = Blog
 landingIntroOne = Test new features.
 landingIntroTwo = Give your feedback.
 landingIntroThree = Help build Firefox.
-landingLegalNotice = By proceeding, you agree to the <a>Terms of Use</a> and <a>Privacy Notice</a> of Test Pilot.
+landingLegalNoticeWithLinks = By proceeding, you agree to the <terms-link>Terms of Use</terms-link> and <privacy-link>Privacy Notice</privacy-link> of Test Pilot.
 landingMoreExperimentsButton = More Experiments
 
 ## Related to the installation of the Test Pilot add-on.
@@ -98,7 +98,7 @@ mobileDialogSuccessSecondary = Check your device for the email.
 mobileDialogAnotherDeviceLink = Send to another device
 mobileDialogError = Enter a valid email:
 mobileDialogErrorSMS = Enter a valid phone number or email:
-mobileDialogNoticeSMS = SMS service available in select countries only. SMS & data rates may apply. The intended recipient of the email or SMS must have consented. {$learnMore}
+mobileDialogNoticeSMSWithLink = SMS service available in select countries only. SMS & data rates may apply. The intended recipient of the email or SMS must have consented. <a>Learn more</a>.
 
 ## Featured experiment.
 moreDetail = View details
@@ -169,7 +169,7 @@ experimentGradReportPendingTitle = This experiment has ended
 experimentGradReportPendingCopy = We are working on a full report. Check back soon for the details.
 experimentGradReportReady = We have prepared a full graduation report.
 experimentGoToLink = Go to { $title }
-startedDateLabel = Experiment start date: <b>{$startedDate}</b>
+startedDate = Experiment start date: <b>{DATETIME($startedDate)}</b>
 
 ## News updates dialog.
 nonExperimentDialogHeaderLink = Test Pilot
@@ -212,10 +212,10 @@ restartIntroTwo = Locate the Test Pilot add-on
 restartIntroThree = Select your experiments
 
 ## Shown on pages of retired or retiring experiments.
-eolIntroMessage = {$title} is ending on {$completedDate}
+eolTitleMessage = {$title} is ending on {DATETIME($completedDate)}
 eolNoticeLink = Learn more
 eolDisableMessage = The {$title} experiment has ended. Once you uninstall it you won't be able to re-install it through Test Pilot again.
-completedDateLabel = Experiment end date: <b>{$completedDate}</b>
+completedDate = Experiment end date: <b>{DATETIME($completedDate)}</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 incompatibleHeader = This experiment may not be compatible with add-ons you have installed.
