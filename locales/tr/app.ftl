@@ -40,7 +40,7 @@ headerLinkBlog = Günlük
 landingIntroOne = Yeni özellikleri test et.
 landingIntroTwo = Yorumlarını paylaş.
 landingIntroThree = Firefox’u inşa etmemize yardım et.
-landingLegalNotice = Devam ederseniz Test Pilotu’nun <a>Kullanım Koşulları</a> ve <a>Gizlilik Bildirimi</a>’ni kabul etmiş sayılırsınız.
+landingLegalNoticeWithLinks = Devam ederseniz Test Pilotu’nun <terms-link>Kullanım Koşulları</terms-link> ve <privacy-link>Gizlilik Bildirimi</privacy-link>’ni kabul etmiş sayılırsınız.
 landingMoreExperimentsButton = Diğer deneyler
 
 ## Related to the installation of the Test Pilot add-on.
@@ -188,7 +188,7 @@ experimentGradReportPendingTitle = Deney sona erdi
 experimentGradReportPendingCopy = Kapsamlı bir rapor üzerinde çalışıyoruz. Ayrıntıları öğrenmek için yakında tekrar bakın.
 experimentGradReportReady = Kapsamlı bir mezuniyet raporu hazırladık.
 experimentGoToLink = { $title } deneyine git
-startedDateLabel = Deney başlangıç tarihi: <b>{ $startedDate }</b>
+startedDate = Deney başlangıç tarihi: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -237,10 +237,10 @@ restartIntroThree = Deneylerinizi seçin
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } { $completedDate } tarihinde sona eriyor
+eolTitleMessage = { $title } { DATETIME($completedDate) } tarihinde sona eriyor
 eolNoticeLink = Daha fazlası...
 eolDisableMessage = { $title } deneyi sonra erdi. Onu kaldırdıktan sonra Test Pilotu üzerinden yeniden yükleme şansınız olmayacak.
-completedDateLabel = Deney bitiş tarihi: <b>{ $completedDate }</b>
+completedDate = Deney bitiş tarihi: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

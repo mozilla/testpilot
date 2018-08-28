@@ -40,7 +40,7 @@ headerLinkBlog = Blog
 landingIntroOne = Tesztelje az új funkciókat.
 landingIntroTwo = Adjon visszajelzést.
 landingIntroThree = Segítsen a Firefox készítésében.
-landingLegalNotice = A továbblépéssel elfogadja a Tesztpilóta <a>Használati feltételeit</a> és az <a>Adatvédelmi nyilatkozatot</a>.
+landingLegalNoticeWithLinks = A továbblépéssel elfogadja a Tesztpilóta <terms-link>Használati feltételeit</terms-link> és az <privacy-link>Adatvédelmi nyilatkozatot</privacy-link>.
 landingMoreExperimentsButton = További kísérletek
 
 ## Related to the installation of the Test Pilot add-on.
@@ -188,7 +188,7 @@ experimentGradReportPendingTitle = Ez a kísérlet véget ért
 experimentGradReportPendingCopy = A teljes jelentésen dolgozunk. Nézzen vissza hamarosan a részletekért.
 experimentGradReportReady = Egy teljes zárójelentést készítettünk.
 experimentGoToLink = Ugrás ide: { $title }
-startedDateLabel = Kísérlet kezdő dátuma: <b>{ $startedDate }</b>
+startedDate = Kísérlet kezdő dátuma: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -237,10 +237,10 @@ restartIntroThree = Válassza ki a kísérleteket
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } véget ér ekkor: { $completedDate }
+eolTitleMessage = { $title } véget ér ekkor: { DATETIME($completedDate) }
 eolNoticeLink = Tudjon meg többet
 eolDisableMessage = A(z) { $title } kísérlet véget ért. Ha eltávolítja, akkor többé nem fogja tudni újra telepíteni a Tesztpilótán keresztül.
-completedDateLabel = Kísérlet záródátuma: <b>{ $completedDate }</b>
+completedDate = Kísérlet záródátuma: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

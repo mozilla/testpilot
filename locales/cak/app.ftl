@@ -40,7 +40,7 @@ headerLinkBlog = Ichinya'l
 landingIntroOne = Titojtob'ëx k'ak'a' taq b'anikil.
 landingIntroTwo = Taya' ana'oj chi qe.
 landingIntroThree = Kato'on chunuk'ik Firefox.
-landingLegalNotice = Toq yasamäj qa, ye'awojqaj ri <a>Rojqanem richin rokisaxik</a> chuqa' <a>Rutzijol Ichinanem</a> richin Test Pilot.
+landingLegalNoticeWithLinks = Toq yasamäj qa, ye'awojqaj ri <terms-link>Rojqanem richin rokisaxik</terms-link> chuqa' <privacy-link>Rutzijol Ichinanem</privacy-link> richin Test Pilot.
 landingMoreExperimentsButton = Ch'aqa' chik taq Solna'oj
 
 ## Related to the installation of the Test Pilot add-on.
@@ -188,7 +188,7 @@ experimentGradReportPendingTitle = Xk'is re solna'oj re'
 experimentGradReportPendingCopy = Tajin niqasamajij jun tz'aqät rutzijol. K'a xkatzolin pe richin ye'atz'ët ri taq rub'anikil.
 experimentGradReportReady = Xqanük' jun tz'aqät rutzijol ch'akoj tijonïk.
 experimentGoToLink = Tib'an b'enam pa { $title }
-startedDateLabel = Rutikirib'al Q'ij Solna'oj: <b>{ $startedDate }</b>
+startedDate = Rutikirib'al Q'ij Solna'oj: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -237,10 +237,10 @@ restartIntroThree = Ke'acha' ri taq asolna'oj
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } tajin nuk'ïs ri { $completedDate }
+eolTitleMessage = { $title } tajin nuk'ïs ri { DATETIME($completedDate) }
 eolNoticeLink = Tetamäx ch'aqa' chik
 eolDisableMessage = Ri { $title } solna'oj xk'is. We xtelesäx el man xkatikïr ta chik xtayäk rik'in ri Test Pilot.
-completedDateLabel = Ruq'ijul Xtik'is: <b>{ $completedDate }</b>
+completedDate = Ruq'ijul Xtik'is: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

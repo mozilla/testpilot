@@ -28,7 +28,7 @@ menuRetire = Dezinstalează Test Pilot
 landingIntroOne = Testează noi funcții.
 landingIntroTwo = Oferă-ne feedback.
 landingIntroThree = Ajută la construirea Firefox.
-landingLegalNotice = Prin continuare ești de acord cu <a>Termenii de folosire</a> și <a>Nota privind confidențialitatea</a> pentru Test Pilot.
+landingLegalNoticeWithLinks = Prin continuare ești de acord cu <terms-link>Termenii de folosire</terms-link> și <privacy-link>Nota privind confidențialitatea</privacy-link> pentru Test Pilot.
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -173,10 +173,10 @@ restartIntroThree = Selectează experimentele
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } se termină pe { $completedDate }
+eolTitleMessage = { $title } se termină pe { DATETIME($completedDate) }
 eolNoticeLink = Află mai multe
 eolDisableMessage = Experimentul { $title } s-a terminat. După ce l-ai dezinstalat nu-l vei mai putea instala din nou prin Test Pilot.
-completedDateLabel = Data de sfârșit a experimentului: <b>{ $completedDate }</b>
+completedDate = Data de sfârșit a experimentului: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

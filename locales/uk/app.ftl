@@ -40,7 +40,7 @@ headerLinkBlog = Блог
 landingIntroOne = Тестуйте нові функції.
 landingIntroTwo = Дайте свій відгук.
 landingIntroThree = Допоможіть збудувати Firefox.
-landingLegalNotice = Продовжуючи, ви погоджуєтеся з <a>Правилами використання</a> та <a>Політикою приватності</a> Test Pilot.
+landingLegalNoticeWithLinks = Продовжуючи, ви погоджуєтеся з <terms-link>Правилами використання</terms-link> та <privacy-link>Політикою приватності</privacy-link> Test Pilot.
 landingMoreExperimentsButton = Більше експериментів
 
 ## Related to the installation of the Test Pilot add-on.
@@ -188,7 +188,7 @@ experimentGradReportPendingTitle = Цей експеримент закінчи�
 experimentGradReportPendingCopy = Ми працюємо над повним звітом. Загляньте пізніше, щоб дізнатися деталі.
 experimentGradReportReady = Ми підготували повний звіт про результати експерименту.
 experimentGoToLink = Перейти до { $title }
-startedDateLabel = Дата початку експерименту: <b>{ $startedDate }</b>
+startedDate = Дата початку експерименту: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -237,10 +237,10 @@ restartIntroThree = Оберіть ваші експерименти
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } закінчується { $completedDate }
+eolTitleMessage = { $title } закінчується { DATETIME($completedDate) }
 eolNoticeLink = Докладніше
 eolDisableMessage = Експеримент { $title } завершився. Щойно ви видалите його, ви не зможете його перевстановити через Test Pilot ще раз.
-completedDateLabel = Дата закінчення експерименту: <b>{ $completedDate }</b>
+completedDate = Дата закінчення експерименту: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

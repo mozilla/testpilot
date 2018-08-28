@@ -39,7 +39,7 @@ headerLinkBlog = المدوّنة
 landingIntroOne = اختر ميزات جديدة.
 landingIntroTwo = أعلِمنا بانطباعاتك.
 landingIntroThree = ساعدنا على بناء فَيَرفُكس.
-landingLegalNotice = المتابعة تعني موافقتك على <a>شروط استخدام</a> و<a>تنويه خصوصية</a> اختبار المنتجات.
+landingLegalNoticeWithLinks = المتابعة تعني موافقتك على <terms-link>شروط استخدام</terms-link> و<privacy-link>تنويه خصوصية</privacy-link> اختبار المنتجات.
 landingMoreExperimentsButton = تجارب أخرى
 
 ## Related to the installation of the Test Pilot add-on.
@@ -182,10 +182,10 @@ restartIntroThree = حدد تجاربك
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } ينتهي في { $completedDate }
+eolTitleMessage = { $title } ينتهي في { DATETIME($completedDate) }
 eolNoticeLink = اعرف المزيد
 eolDisableMessage = لقد انتهت التجربة { $title }. عندما تقوم بإلغاء التثبيت لن تتمكن من إعادة تثبيته من خلال الاختبار التجريبي مرة أخرى.
-completedDateLabel = تاريخ انتهاء التجربة: <b>{ $completedDate }</b>
+completedDate = تاريخ انتهاء التجربة: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

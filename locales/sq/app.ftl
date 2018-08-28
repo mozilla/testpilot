@@ -30,7 +30,7 @@ headerLinkBlog = Blog
 landingIntroOne = Testoni veçori të reja.
 landingIntroTwo = Jepni përshtypjet tuaja.
 landingIntroThree = Ndihmoni të ndërtohet Firefox-i.
-landingLegalNotice = Duke vazhduar më tutje, pajtoheni me <a>Kushtet e Përdorimit</a> dhe <a>Shënimin mbi Privatësinë</a> të Pilotit të Testeve.
+landingLegalNoticeWithLinks = Duke vazhduar më tutje, pajtoheni me <terms-link>Kushtet e Përdorimit</terms-link> dhe <privacy-link>Shënimin mbi Privatësinë</privacy-link> të Pilotit të Testeve.
 landingMoreExperimentsButton = Më tepër Eksperimente
 
 ## Related to the installation of the Test Pilot add-on.
@@ -157,7 +157,7 @@ experimentGradReportPendingTitle = Ky eksperiment ka përfunduar
 experimentGradReportPendingCopy = Po punojmë për një raport të plotë. Për hollësi, rikthehuni së shpejti.
 experimentGradReportReady = Kemi përgatitur një raport të plotë të eksperimentit.
 experimentGoToLink = Kalo te { $title }
-startedDateLabel = Datë Fillimi Eksperimenti: <b>{ $startedDate }</b>
+startedDate = Datë Fillimi Eksperimenti: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -201,10 +201,10 @@ restartIntroThree = Përzgjidhni eksperimentin tuaj
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } përfundon më { $completedDate }
+eolTitleMessage = { $title } përfundon më { DATETIME($completedDate) }
 eolNoticeLink = Mësoni më tepër
 eolDisableMessage = Eksperimenti { $title } përfundoi. Pasi ta çinstaloni, s’do të jeni në gjendje ta ri-instaloni përmes Pilotit të Testeve.
-completedDateLabel = Datë Përfundimi e Eksperimenteve: <b>{ $completedDate }</b>
+completedDate = Datë Përfundimi e Eksperimenteve: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

@@ -40,7 +40,7 @@ headerLinkBlog = Blog
 landingIntroOne = Profi nodweddion newydd.
 landingIntroTwo = Rhannu adborth.
 landingIntroThree = Helpu adeiladu Firefox.
-landingLegalNotice = Drwy barhau, rydych yn cytuno i <a>Amodau Defnydd</a> a <a>Hysbysiad Preifatrwydd</a> Test Pilot.
+landingLegalNoticeWithLinks = Drwy barhau, rydych yn cytuno i <terms-link>Amodau Defnydd</terms-link> a <privacy-link>Hysbysiad Preifatrwydd</privacy-link> Test Pilot.
 landingMoreExperimentsButton = Rhagor o Arbrofion
 
 ## Related to the installation of the Test Pilot add-on.
@@ -185,7 +185,7 @@ experimentGradReportPendingTitle = Mae'r arbrawf hwn wedi dod i ben
 experimentGradReportPendingCopy = Rydym yn gweithio ar adroddiad llawn. Dewch nôl cyn bo hir am y manylion.
 experimentGradReportReady = Rydym wedi paratoi adroddiad graddio llawn.
 experimentGoToLink = Mynd i { $title }
-startedDateLabel = Dyddiad Cychwyn yr Arbrawf: <b>{ $startedDate }</b>
+startedDate = Dyddiad Cychwyn yr Arbrawf: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -234,10 +234,10 @@ restartIntroThree = Dewiswch eich arbrofion
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = Mae { $title } yn gorffen ar { $completedDate }
+eolTitleMessage = Mae { $title } yn gorffen ar { DATETIME($completedDate) }
 eolNoticeLink = Dysgu rhagor
 eolDisableMessage = Mae arbrawf { $title } wedi dod i ben. Unwaith i chi ei ddadosod ni fydd modd i chi ei ailosod drwy Test Pilot eto.
-completedDateLabel = Dyddiad Gorffen yr Arbrawf: <b>{ $completedDate }</b>
+completedDate = Dyddiad Gorffen yr Arbrawf: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

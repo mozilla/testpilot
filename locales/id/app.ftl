@@ -39,7 +39,7 @@ headerLinkBlog = Blog
 landingIntroOne = Uji fitur-fitur terbaru.
 landingIntroTwo = Berikan saran Anda.
 landingIntroThree = Bantu kami membangun Firefox.
-landingLegalNotice = Dengan melanjutkan, Anda menyetujui <a>Ketentuan Penggunaan</a> dan <a>Pernyataan Privasi</a> Test Pilot.
+landingLegalNoticeWithLinks = Dengan melanjutkan, Anda menyetujui <terms-link>Ketentuan Penggunaan</terms-link> dan <privacy-link>Pernyataan Privasi</privacy-link> Test Pilot.
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -222,10 +222,10 @@ restartIntroThree = Pilih percobaan Anda
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } berakhir pada { $completedDate }
+eolTitleMessage = { $title } berakhir pada { DATETIME($completedDate) }
 eolNoticeLink = Pelajari lebih lanjut
 eolDisableMessage = Percobaan { $title } telah berakhir. Setelah Anda menghapusnya, Anda tidak dapat memasangnya kembali melalui Test Pilot.
-completedDateLabel = Tanggal Akhir Percobaan: <b>{ $completedDate }</b>
+completedDate = Tanggal Akhir Percobaan: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 
