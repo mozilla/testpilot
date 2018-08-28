@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Glědajśo za mejlku na swójom rěźe.
 mobileDialogAnotherDeviceLink = Na drugi rěd pósłaś
 mobileDialogError = Zapódajśo płaśiwu e-mailowu adresu:
 mobileDialogErrorSMS = Zapódajśo płaśiwy telefonowy numer abo płaśiwu e-mailowu adresu:
-mobileDialogNoticeSMS = Słužba SMS stoj jano we wubranych krajach k dispoziciji. Za SMS a daty mógu płaśonki nastaś. Dostawaŕ mejlki abo SMS musy wobjadny byś. { $learnMore }
+mobileDialogNoticeSMSWithLink = SMS-słužba jo jano we wěstych krajach k dispoziciji. Za SMS a datowe pśenjasenje datow mógu płaśonki nastaś. Dostawaŕ mejlki abo SMS musy pśigłosyś. <a>Dalšne informacije</a>.
 
 ## Featured experiment.
 
