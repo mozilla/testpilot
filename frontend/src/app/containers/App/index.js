@@ -57,13 +57,13 @@ import { uninstallAddon, installAddon, enableExperiment, disableExperiment } fro
 import { setLocalizations, setNegotiatedLanguages } from "../../actions/localizations";
 import { localizationsSelector, negotiatedLanguagesSelector } from "../../selectors/localizations";
 import { chooseTests } from "../../actions/varianttests";
+import { fetchCountryCode } from "../../actions/browser";
 import addonActions from "../../actions/addon";
 import newsletterFormActions from "../../actions/newsletter-form";
 import UpgradeWarningPage from "../UpgradeWarningPage";
 import Loading from "../../components/Loading";
 import {
-  shouldOpenInNewTab,
-  fetchCountryCode
+  shouldOpenInNewTab
 } from "../../lib/utils";
 import {
   makeNewsUpdatesForDialogSelector
@@ -324,11 +324,11 @@ function sendToGA(type, dataIn, evt = null) {
 
 const mapStateToProps = state => ({
   addon: state.addon,
+  countryCode: state.browser.countryCode,
   clientUUID: state.addon.clientUUID,
   experiments: experimentSelector(state),
   experimentsWithoutFeatured: experimentsWithoutFeaturedSelectorWithL10n(state),
   featuredExperiments: featuredExperimentsSelectorWithL10n(state),
-  fetchCountryCode: fetchCountryCode,
   getExperimentBySlug: slug =>
     getExperimentBySlug(state.experiments, slug),
   hasAddon: state.addon.hasAddon,
@@ -363,6 +363,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   chooseTests: () => dispatch(chooseTests()),
+  fetchCountryCode: () => dispatch(fetchCountryCode()),
   enableExperiment: (experiment, eventCategory, eventLabel) => enableExperiment(dispatch, experiment, sendToGA, eventCategory, eventLabel),
   disableExperiment: experiment => disableExperiment(dispatch, experiment),
   setHasAddon: installed => dispatch(addonActions.setHasAddon(installed)),

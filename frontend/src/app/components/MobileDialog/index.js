@@ -54,29 +54,17 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
 
   componentDidMount() {
     this.focusModalContainer();
-    this.fetchCountryCode();
-  }
-
-  fetchCountryCode() {
-    this.props.fetchCountryCode()
-      .then((resp) => resp.json())
-      .then((data) => {
-        const country = data.country_code;
-        if (acceptedSMSCountries.includes(country)) {
-          this.setState({
-            loading: false,
-            allowSMS: true,
-            country: country
-          });
-        } else this.setState({ loading: false });
-      }).catch((e) => this.setState({ loading: false }));
+    this.props.fetchCountryCode();
   }
 
   render() {
-    const { experiment, sendToGA, fromFeatured } = this.props;
+    const { countryCode, experiment, sendToGA, fromFeatured } = this.props;
     const { title, android_url, ios_url } = experiment;
-    const { isSuccess, allowSMS, loading } = this.state;
+    const loading = countryCode === null ? true : false;
+    const allowSMS = util.foo(countryCode);
+    const { isSuccess } = this.state;
 
+    
     const handleAppLinkClick = () => {
       const platform = ios_url ? "ios" : "android";
       sendToGA("event", {
