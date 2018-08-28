@@ -40,7 +40,7 @@ headerLinkBlog = სვეტი
 landingIntroOne = გამოცადეთ ახალი შესაძლებლობები.
 landingIntroTwo = გამოგვეხმაურეთ.
 landingIntroThree = დაგვეხმარეთ Firefox-ის გაუმჯობესებაში.
-landingLegalNotice = გაგრძელების შემთხვევაში, თქვენ ეთანხმებით Test Pilot-ის <a>გამოყენების პირობებსა</a> და <a>პირადი მონაცემების დაცვის განაცხადს</a>.
+landingLegalNoticeWithLinks = გაგრძელების შემთხვევაში, თქვენ ეთანხმებით Test Pilot-ის <terms-link>გამოყენების პირობებსა</terms-link> და <privacy-link>პირადი მონაცემების დაცვის განაცხადს</privacy-link>.
 landingMoreExperimentsButton = სხვა საცდელი პროექტები
 
 ## Related to the installation of the Test Pilot add-on.
@@ -188,7 +188,7 @@ experimentGradReportPendingTitle = ეს საცდელი პროექ�
 experimentGradReportPendingCopy = ჩვენ ვმუშაობთ სრულ მოხსენებაზე. დამატებით ინფორმაციას იხილავთ მოგვიანებით.
 experimentGradReportReady = ჩვენ უკვე მოვამზადეთ სრული საბოლოო მოხსენება.
 experimentGoToLink = { $title }-ზე გადასვლა
-startedDateLabel = საცდელი პროექტის დაწყების თარიღი: <b>{ $startedDate }</b>
+startedDate = საცდელი პროექტის დაწყების თარიღი: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -237,10 +237,10 @@ restartIntroThree = აირჩიეთ გამოსაცდელი შ�
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } პროექტის დასრულების თარიღია { $completedDate }
+eolTitleMessage = { $title } პროექტის დასრულების თარიღია { DATETIME($completedDate) }
 eolNoticeLink = ვრცლად
 eolDisableMessage = { $title } შესაძლებლობის გამოცდა დასრულებულია. ამოშლის შემდეგ, მისი ხელახლა დაყენება Test Pilot-ის საშუალებით, აღარ შეგეძლებათ.
-completedDateLabel = საცდელი პროექტის დასრულების თარიღი: <b>{ $completedDate }</b>
+completedDate = საცდელი პროექტის დასრულების თარიღი: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

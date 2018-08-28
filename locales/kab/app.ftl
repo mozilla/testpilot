@@ -40,7 +40,7 @@ headerLinkBlog = Ablug
 landingIntroOne = Sekyed timahilin timaynutin.
 landingIntroTwo = Ḥku-yaɣ-d ayen d-ufiḍ.
 landingIntroThree = Mudd afus i Firefox akken ad yaẓ ar zdat.
-landingLegalNotice = Ma tkemleḍ, ad tqebleḍ s wudem usrid  <a>Tiwtilin n useqdec</a> akked <a>Tsertit tabaḍnit</a> n Test Pilot.
+landingLegalNoticeWithLinks = Ma tkemleḍ, ad tqebleḍ s wudem usrid  <terms-link>Tiwtilin n useqdec</terms-link> akked <privacy-link>Tsertit tabaḍnit</privacy-link> n Test Pilot.
 landingMoreExperimentsButton = Ugar n tirmitin
 
 ## Related to the installation of the Test Pilot add-on.
@@ -188,7 +188,7 @@ experimentGradReportPendingTitle = Tfuk termit
 experimentGradReportPendingCopy = Aqlaɣ nxeddem ɣef uneqqis ummid. Uɣal-d ticki akken ad twaliḍ ugar.
 experimentGradReportReady = Nhegga-d tuɣalin n termit leqqayen.
 experimentGoToLink = Ddu ar { $title }
-startedDateLabel = Azemz n tazwara n termit: <b>{ $startedDate }</b>
+startedDate = Azemz n tazwara n termit: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -237,10 +237,10 @@ restartIntroThree = Fren tirmitin inek
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } add ifak di { $completedDate }
+eolTitleMessage = { $title } add ifak di { DATETIME($completedDate) }
 eolNoticeLink = Issin ugar
 eolDisableMessage = Tarmit { $title } tfuk yakan. Ticki tettwakkes, ur tettizmireḍ ara ad tesbeddeḍ tikelt nniḍen si Test Pilot.
-completedDateLabel = Azemz n tagara n termit <b>{ $completedDate }</b>
+completedDate = Azemz n tagara n termit <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

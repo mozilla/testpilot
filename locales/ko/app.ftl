@@ -30,7 +30,7 @@ headerLinkBlog = 블로그
 landingIntroOne = 새로운 기능을 테스트합니다.
 landingIntroTwo = 피드백을 주세요.
 landingIntroThree = Firefox를 만드는데 도움을 주세요.
-landingLegalNotice = 계속하시면, Test Pilot의 <a>이용약관</a>과 <a>개인정보취급방침</a>에 동의하는 것으로 간주합니다.
+landingLegalNoticeWithLinks = 계속하시면, Test Pilot의 <terms-link>이용약관</terms-link>과 <privacy-link>개인정보취급방침</privacy-link>에 동의하는 것으로 간주합니다.
 landingMoreExperimentsButton = 다른 실험
 
 ## Related to the installation of the Test Pilot add-on.
@@ -160,7 +160,7 @@ experimentGradReportPendingTitle = 이 실험기능은 종료되었음
 experimentGradReportPendingCopy = 전체 보고서를 작성 중입니다. 잠시 후 다시 확인해 보세요.
 experimentGradReportReady = 전체 최종 보고서가 준비 됐습니다.
 experimentGoToLink = { $title }로 이동
-startedDateLabel = 실험 시작일 : <b>{ $startedDate }</b>
+startedDate = 실험 시작일 : <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -199,10 +199,10 @@ restartIntroThree = 실험 선택
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title }은 { $completedDate }에 종료합니다
+eolTitleMessage = { $title }은 { DATETIME($completedDate) }에 종료합니다
 eolNoticeLink = 더 알아보기
 eolDisableMessage = { $title } 기능 실험 기간이 종료되었습니다. 한번 삭제하시면 더이상 Test Pilot 페이지에서 재설치하실 수 없습니다.
-completedDateLabel = 실험 종료일: <b>{ $completedDate }</b>
+completedDate = 실험 종료일: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

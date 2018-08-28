@@ -37,7 +37,7 @@ headerLinkBlog = బ్లాగు
 landingIntroOne = కొత్త సౌలభ్యాలను పరీక్షించండి.
 landingIntroTwo = మీ అభిప్రాయం తెలియజేయండి.
 landingIntroThree = Firefoxను రూపొందించడానికి తోడ్పడండి.
-landingLegalNotice = కొనసాగడం ద్వారా, మీరు Test Pilot <a> వాడుక నిబంధనలకు</a>, <a> గోప్యతా విధానానికి</a> అంగీకరిస్తున్నారు.
+landingLegalNoticeWithLinks = కొనసాగడం ద్వారా, మీరు Test Pilot <terms-link> వాడుక నిబంధనలకు</terms-link>, <privacy-link> గోప్యతా విధానానికి</privacy-link> అంగీకరిస్తున్నారు.
 landingMoreExperimentsButton = మరిన్ని ప్రయోగాలు
 
 ## Related to the installation of the Test Pilot add-on.
@@ -189,9 +189,9 @@ restartIntroThree = మీ ప్రయోగాలను ఎంచుకోం�
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } { $completedDate } నాడు ముగుస్తోంది
+eolTitleMessage = { $title } { DATETIME($completedDate) } నాడు ముగుస్తోంది
 eolNoticeLink = మరింత తెలుసుకోండి
-completedDateLabel = ప్రయోగం ముగింపు తేదీ: <b>{ $completedDate }</b>
+completedDate = ప్రయోగం ముగింపు తేదీ: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

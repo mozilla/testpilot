@@ -40,7 +40,7 @@ headerLinkBlog = Ιστολόγιο
 landingIntroOne = Δοκιμάστε νέες λειτουργίες.
 landingIntroTwo = Υποβάλετε τα σχόλιά σας.
 landingIntroThree = Βοηθήστε στην ανάπτυξη του Firefox.
-landingLegalNotice = Συνεχίζοντας, συμφωνείτε με τους <a>όρους χρήσης</a> και τη <a>σημείωση απορρήτου</a> του Test Pilot.
+landingLegalNoticeWithLinks = Συνεχίζοντας, συμφωνείτε με τους <terms-link>όρους χρήσης</terms-link> και τη <privacy-link>σημείωση απορρήτου</privacy-link> του Test Pilot.
 landingMoreExperimentsButton = Περισσότερα πειράματα
 
 ## Related to the installation of the Test Pilot add-on.
@@ -188,7 +188,7 @@ experimentGradReportPendingTitle = Αυτό το πείραμα έχει λήξ�
 experimentGradReportPendingCopy = Εργαζόμαστε πάνω σε μια πλήρη αναφορά. Ελέγξτε ξανά σύντομα για λεπτομέρειες.
 experimentGradReportReady = Έχουμε προετοιμάσει μια πλήρη αναφορά αποφοίτησης.
 experimentGoToLink = Μετάβαση στο { $title }
-startedDateLabel = Ημερομηνία έναρξης πειράματος: <b>{ $startedDate }</b>
+startedDate = Ημερομηνία έναρξης πειράματος: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -237,10 +237,10 @@ restartIntroThree = Επιλέξτε τα πειράματά σας
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = Το { $title } λήγει στις { $completedDate }
+eolTitleMessage = Το { $title } λήγει στις { DATETIME($completedDate) }
 eolNoticeLink = Μάθετε περισσότερα
 eolDisableMessage = Το πείραμα { $title } έχει λήξει. Μόλις το απεγκαταστήσετε, δεν θα μπορείτε να το εγκαταστήσετε ξανά μέσω του Test Pilot.
-completedDateLabel = Ημερομηνία λήξης πειράματος: <b>{ $completedDate }</b>
+completedDate = Ημερομηνία λήξης πειράματος: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 
