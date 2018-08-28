@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = 请检查您的设备是否有电子邮件。
 mobileDialogAnotherDeviceLink = 发送到其他设备
 mobileDialogError = 请输入有效的电子邮件地址：
 mobileDialogErrorSMS = 请输入有效的手机号码或电子邮件地址：
-mobileDialogNoticeSMS = 仅在部分国家/地区提供短信服务。可能会收取短信与数据费用。发送电子邮件或短信前，请先获得收件人同意。{ $learnMore }
+mobileDialogNoticeSMSWithLink = 短信服务仅对部分国家/地区可用。运营商可能向您收取短信或流量费用。电子邮件和短信的预定接收人必须知情。<a>详细了解</a>。
 
 ## Featured experiment.
 
