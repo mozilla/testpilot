@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Skontrolujte si svoje e-maily.
 mobileDialogAnotherDeviceLink = Pošlite mi odkaz do ďalšieho zariadenia
 mobileDialogError = Zadajte platnú e-mailovú adresu.
 mobileDialogErrorSMS = Zadajte platné telefónne číslo alebo e-mailovú adresu.
-mobileDialogNoticeSMS = SMS služby sú dostupné len vo vybraných krajinách. Môžu sa vzťahovať poplatky za SMS a mobilné dáta. Príjemca e-mailu alebo SMS musí vysloviť súhlas. { $learnMore }
+mobileDialogNoticeSMSWithLink = SMS služby sú dostupné len vo vybraných krajinách. Môžu sa vzťahovať poplatky za SMS a mobilné dáta. Príjemca e-mailu alebo SMS musí vysloviť súhlas. <a>Ďalšie informácie</a>.
 
 ## Featured experiment.
 
@@ -294,7 +294,7 @@ warningUpgradeFirefoxTitle = Pre pokračovanie aktualizujte Firefox.
 warningUpgradeFirefoxDetail = Test Pilot vyžaduje najnovšiu verziu Firefoxu. Pred začiatkom, prosím, <a>aktualizujte svoj Firefox</a>.
 warningHttpsRequiredTitle = Je vyžadované HTTPS!
 warningHttpsRequiredDetail = Program Test Pilot je prístupný len prostredníctvom HTTPS. Viac informácií nájdete v <a>našej dokumentácií</a>.
-warningMissingPrefTitle = Vyvíjate Test Pilot? 
+warningMissingPrefTitle = Vyvíjate Test Pilot?
 warningMissingPrefDetail = Pri lokálnom spustení alebo vo vývojových prostrediach vyžaduje Test Pilot špeciálnu konfiguráciu. Viac informácií nájdete v <a>našej dokumentácií</a>.
 warningBadHostnameTitle = Nepovolený hostname!
 warningBadHostnameDetail = Stránka Test Pilotu je prístupná len z domén testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net alebo example.com:8000. Ďalšie informácie nájdete v <a>našej dokumentácií</a>.
