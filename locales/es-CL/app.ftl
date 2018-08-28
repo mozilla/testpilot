@@ -110,7 +110,6 @@ mobileDialogSuccessSecondary = Busca en tu dispositivo el correo.
 mobileDialogAnotherDeviceLink = Enviar a otro dispositivo
 mobileDialogError = Ingresa una dirección de correo válida:
 mobileDialogErrorSMS = Ingresa un número de teléfono o correo válido:
-mobileDialogNoticeSMS = Servicio de SMS disponible solo en algunos países. Pueden aplicar tarifas de SMS y datos. El destinatario del correo o SMS debe haber consentido. { $learnMore }
 
 ## Featured experiment.
 
@@ -188,7 +187,7 @@ experimentGradReportPendingTitle = Este experimento a terminado
 experimentGradReportPendingCopy = Estamos trabajando en un reporte completo. Revisa pronto para más detalles.
 experimentGradReportReady = Hemos preparado un completo de graduación completo.
 experimentGoToLink = Ir a { $title }
-startedDate = Fecha de inicio: <b>{ $completedDate }</b>
+startedDate = Fecha de inicio: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
