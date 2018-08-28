@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Na svoji napravi preverite prejeto e-pošto.
 mobileDialogAnotherDeviceLink = Pošlji na drugo napravo
 mobileDialogError = Vnesite veljaven e-poštni naslov:
 mobileDialogErrorSMS = Vnesite veljavno telefonsko številko ali e-poštni naslov:
-mobileDialogNoticeSMS = Storitev SMS je na voljo samo v določenih državah. Sporočila in prenos podatkov so morda plačljivi. Namenjeni prejemnik e-pošte ali SMS-a se mora strinjati s prejemom. { $learnMore }
+mobileDialogNoticeSMSWithLink = Storitev SMS je na voljo samo v določenih državah. Sporočila in prenos podatkov so morda plačljivi. Namenjeni prejemnik e-pošte ali SMS-a se mora strinjati s prejemom. <a>Več o tem</a>.
 
 ## Featured experiment.
 
