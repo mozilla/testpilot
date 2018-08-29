@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Kontrolearje jo apparaat foar it e-mailberjocht.
 mobileDialogAnotherDeviceLink = Nei oar apparaat fertjoere
 mobileDialogError = Fier in falide e-mailadres yn:
 mobileDialogErrorSMS = Fier in falide telefoannûmer of e-mailadres yn:
-mobileDialogNoticeSMS = De sms-tsjinst is allinnich yn de selektearre lannen beskikber. Sms- en gegevenskosten kinne fan tapassing wêze. De ûntfanger fan it e-mailberjocht of de sms moat tastimming jûn hawwe. { $learnMore }
+mobileDialogNoticeSMSWithLink = De sms-tsjinst is allinnich yn de selektearre lannen beskikber. Sms- en gegevenskosten kinne fan tapassing wêze. De ûntfanger fan it e-mailberjocht of de sms moat tastimming jûn hawwe. <a>Mear ynfo</a>.
 
 ## Featured experiment.
 
