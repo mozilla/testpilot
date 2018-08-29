@@ -7,17 +7,14 @@ import { shallow } from "enzyme";
 import MobileDialog from "./index.js";
 
 describe("app/components/MobileDialog", () => {
-  let props;
   const experiment = {
     title: "Foobar",
     slug: "foobar",
     android_url: "https://example.com/survey"
   };
 
-  let sendToGA, onCancel, preventDefault, subject, mockClickEvent, mockEscapeKeyDownEvent;
+  let props, preventDefault, subject, mockClickEvent, mockEscapeKeyDownEvent;
   beforeEach(() => {
-    sendToGA = sinon.spy();
-    onCancel = 
     preventDefault = sinon.spy();
     mockClickEvent = { preventDefault, target: {} };
     mockEscapeKeyDownEvent = {
@@ -30,7 +27,7 @@ describe("app/components/MobileDialog", () => {
       fetchCountryCode: sinon.spy(),
       onCancel: sinon.spy(),
       sendToGA: sinon.spy()
-    }
+    };
 
     subject = shallow(<MobileDialog {...props}/>);
   });
@@ -53,7 +50,7 @@ describe("app/components/MobileDialog", () => {
 
     subject.setProps({countryCode: "INCORRECT"});
     expect(subject.find(".email-input")).to.be.ok;
-  });  
+  });
 
   it("should call onCancel on cancel button click", () => {
     subject.find(".modal-cancel").simulate("click", mockClickEvent);
