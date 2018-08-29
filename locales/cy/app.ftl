@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Edrychwch ar eich dyfais am yr e-bost
 mobileDialogAnotherDeviceLink = Anfon i ddyfais arall
 mobileDialogError = Rhowch e-bost dilys:
 mobileDialogErrorSMS = Rhowch rif ffôn neu e-bost dilys:
-mobileDialogNoticeSMS = Mae gwasanaeth SMS ar gael mewn gwledydd dethol yn unig. Gall cyfraddau SMS a data fod yn ychwanegol. Rhaid i'r derbynnydd penodol yr e-bost neu negeseuon testun fod wedi cydsynio. { $learnMore }
+mobileDialogNoticeSMSWithLink = Gwasanaeth SMS ar gael mewn gwledydd penodol yn unig. Gall costau SMS a data fodoli. Rhaid i dderbynnydd bwriedig yr e-bost neu SMS fod wedi cytuno. <a>Dysgu rhagor</a>.
 
 ## Featured experiment.
 
@@ -145,7 +145,7 @@ feedbackUninstallCopy = Mae eich cyfraniad i Test Pilot yn golygu llawer i ni! R
 ## A modal prompt shown before the feedback survey for some experiments.
 
 experimentPreFeedbackTitle = Adborth ar { $title }
-experimentPreFeedbackLinkCopy = Rhannwch eich adborth ar arbrawf { $title } 
+experimentPreFeedbackLinkCopy = Rhannwch eich adborth ar arbrawf { $title }
 
 ## A splash shown on top of the experiment page when Test Pilot is not installed.
 
