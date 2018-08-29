@@ -110,6 +110,7 @@ mobileDialogSuccessSecondary = Busca en tu dispositivo el correo.
 mobileDialogAnotherDeviceLink = Enviar a otro dispositivo
 mobileDialogError = Ingresa una dirección de correo válida:
 mobileDialogErrorSMS = Ingresa un número de teléfono o correo válido:
+mobileDialogNoticeSMSWithLink = Servicio de SMS disponible solo en algunos países. Pueden aplicar tarifas de SMS y datos. El destinatario del correo o SMS debe haber consentido. <a>Aprender más</a>.
 
 ## Featured experiment.
 
