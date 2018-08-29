@@ -96,6 +96,7 @@ emailOptInDialogErrorTitle = Oh tidak!
 mobileDialogTitle = Dapatkan Aplikasinya
 mobileDialogMessageIOS = Unduh <b>{ $title }</b> dari iOS App Store
 mobileDialogMessageAndroid = Unduh <b>{ $title }</b> dari Google Play Store
+mobileDialogPlaceholder = Masukkan surel Anda
 mobileDialogButton = Kirimi saya Tautan Unduhan
 mobileDialogButtonSuccess = Terima Kasih!
 mobileDialogSuccessMain = Tautan unduhan terkirim!
