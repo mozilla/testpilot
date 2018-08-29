@@ -7,6 +7,7 @@ import { shallow } from "enzyme";
 import MobileDialog from "./index.js";
 
 describe("app/components/MobileDialog", () => {
+  let props;
   const experiment = {
     title: "Foobar",
     slug: "foobar",
@@ -16,27 +17,33 @@ describe("app/components/MobileDialog", () => {
   let sendToGA, onCancel, preventDefault, subject, mockClickEvent, mockEscapeKeyDownEvent;
   beforeEach(() => {
     sendToGA = sinon.spy();
-    onCancel = sinon.spy();
+    onCancel = 
     preventDefault = sinon.spy();
     mockClickEvent = { preventDefault, target: {} };
     mockEscapeKeyDownEvent = {
       preventDefault,
       key: "Escape"
     };
-    subject = shallow(
-      <MobileDialog experiment={experiment} onCancel={onCancel} sendToGA={sendToGA}
-        fetchCountryCode={() => {
-          return Promise.resolve({json: () => {
-            return {country_code: "US"};
-          }});
-        }} />
-    );
+    props = {
+      experiment: experiment,
+      countryCode: null,
+      fetchCountryCode: sinon.spy(),
+      onCancel: sinon.spy(),
+      sendToGA: sinon.spy()
+    }
+
+    subject = shallow(<MobileDialog {...props}/>);
   });
 
   it("should render expected content", () => {
     expect(subject.find(".modal-container"))
       .to.have.property("length", 1);
     expect(subject.find(".mobile-header-img")).to.be.ok;
+    expect(subject.find(".loading-wrapper")).to.be.ok;
+
+    subject.setProps({countryCode: "US"});
+
+    expect(subject.find(".loading-wrapper")).to.be.not.ok;
   });
 
   it("should call onCancel on cancel button click", () => {
