@@ -15,6 +15,7 @@ import Visibility from "../../components/Visibility";
 import type { InstalledExperiments } from "../../reducers/addon";
 
 type HomePageNoAddonProps = {
+  countryCode: null | string,
   enableExperiment: Function,
   experiments: Array<Object>,
   experimentsWithoutFeatured: Array<Object>,

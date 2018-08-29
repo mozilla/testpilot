@@ -10,6 +10,7 @@ import type {
 } from "../../components/types";
 
 export type ExperimentPropsFromApp = {
+  countryCode: null | string,
   isExperimentEnabled: Function,
   getCookie: Function,
   removeCookie: Function,

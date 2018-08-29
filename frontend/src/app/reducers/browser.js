@@ -8,7 +8,11 @@ export type BrowserState = {
   isMobile: boolean,
   isDev: boolean,
   locale: string,
-  countryCode: string
+  /* countryCode is fetched from a service to determine
+     whether or not the user is in a region where we have
+     the ability to send them an sms. The 'locale' property
+     above is for localization */
+  countryCode: string | null
 };
 
 function defaultState(): BrowserState {
@@ -37,6 +41,8 @@ function defaultState(): BrowserState {
     isDevHost: config.devHosts.includes(window.location.host),
     isDev: config.isDev,
     locale: (navigator.language || "").split("-")[0],
+    /* countryCode returns null here to let the mobileDialog component
+       know that the countryCode hasn't been fetched yet */
     countryCode: null
   };
 }
@@ -46,9 +52,9 @@ export type SetStateAction = {
   payload: BrowserState
 };
 
-export type FetchCountryCodeAction {
+export type FetchCountryCodeAction = {
   type: "FETCH_COUNTRY_CODE",
-  payload: String
+  payload: string
 };
 
 export default function browserReducer(state: BrowserState, action: SetStateAction | FetchCountryCodeAction): BrowserState {
@@ -59,7 +65,7 @@ export default function browserReducer(state: BrowserState, action: SetStateActi
     case "SET_STATE":
       return action.payload;
     case "FETCH_COUNTRY_CODE":
-      return Object.assign({}, state, {countryCode: action.payload});
+      return Object.assign({}, state, { countryCode: action.payload });
     default:
       return state;
   }

@@ -20,6 +20,7 @@ import type { InstalledExperiments } from "../../reducers/addon";
 
 type FeaturedButtonProps = {
   clientUUID?: string,
+  countryCode: null | string,
   enabled: boolean,
   experiment: Object,
   eventCategory: string,

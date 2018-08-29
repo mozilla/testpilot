@@ -4,7 +4,6 @@ import { experimentL10nId, l10nId, l10nIdFormat, lookup } from "../../../tasks/u
 
 export const basketUrl = "https://basket.mozilla.org/news/subscribe/";
 export const basketSMSUrl = "https://basket.mozilla.org/news/subscribe_sms/";
-export const COUNTRY_CODE_ENDPOINT = "https://location.services.mozilla.com/v1/country";
 
 export function subscribeToBasket(email, source, msgId = "test-pilot") {
   const sourceUrl = source || "https://testpilot.firefox.com/";
@@ -15,8 +14,6 @@ export function subscribeToBasket(email, source, msgId = "test-pilot") {
   });
 }
 
-export const acceptedSMSCountries = ["US", "DE", "FR"];
-
 export function subscribeToBasketSMS(number, country, msgId) {
   let lang = (country === "US") ? "en" : country.toLowerCase();
   return fetch(basketSMSUrl, {
@@ -24,10 +21,6 @@ export function subscribeToBasketSMS(number, country, msgId) {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: `mobile_number=${encodeURIComponent(number)}&country=${country}&lang=${lang}&msg_name=${msgId}`
   });
-}
-
-export function fetchCountryCode(onSuccess, onError) {
-  return fetch(COUNTRY_CODE_ENDPOINT);
 }
 
 export function buildSurveyURL(ref, title, installed, clientUUID, survey_url) {
