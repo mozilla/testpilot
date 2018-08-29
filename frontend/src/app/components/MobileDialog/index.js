@@ -194,7 +194,7 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
 
         {allowSMS && // <Localized id="mobileDialogPlaceholderSMS" attrs={{placeholder: true}}>
           <input
-            className={classnames({"input-error": isError && submitAttempted})}
+            className={classnames({"input-error sms-input": isError && submitAttempted})}
             type="text"
             placeholder="Enter your Phone/Email"
             value={this.state.recipient}
@@ -204,7 +204,7 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
 
         {!allowSMS && // <Localized id="mobileDialogPlaceholder" attrs={{placeholder: true}}>
           <input
-            className={classnames({"input-error": isError && submitAttempted})}
+            className={classnames({"input-error email-input": isError && submitAttempted})}
             type="text"
             placeholder="Enter your Email"
             value={this.state.recipient}
