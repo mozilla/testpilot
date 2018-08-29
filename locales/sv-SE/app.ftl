@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Kontrollera din enhet för e-postmeddelandet.
 mobileDialogAnotherDeviceLink = Skicka till en annan enhet
 mobileDialogError = Ange en giltig e-postadress:
 mobileDialogErrorSMS = Ange ett giltigt telefonnummer eller e-postadress:
-mobileDialogNoticeSMS = SMS-tjänst tillgänglig endast i vissa länder. SMS- och datapriser kan tillkomma. Den avsedda mottagaren av e-post eller SMS måste ha samtyckt. { $learnMore }
+mobileDialogNoticeSMSWithLink = SMS-tjänst tillgänglig endast i vissa länder. SMS- och datapriser kan tillkomma. Den avsedda mottagaren av e-post eller SMS måste ha samtyckt. <a>Läs mer</a>.
 
 ## Featured experiment.
 
