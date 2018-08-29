@@ -74,7 +74,7 @@ containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
 firefoxlockboxDescription = 使用 Firefox Lockbox App for iPhone，將您的密碼隨身帶著走。
-firefoxlockboxIntroduction = <p>使用 Firefox Lockbox 把密碼隨身帶著走。這個 Test Pilot 實驗讓您在 iPhone 上的 App 存取您儲存至 Firefox 的帳號與密碼。資料將透過 256 位元的加密安全地同步至 App 當中，讓您在移動中，也可以快速而簡單地找到網站的帳號與密碼。</p><p><strong>Firefox Lockbox 需要註冊 Firefox 帳號，才能同步<a href="chrome://passwordmgr/content/passwordManager.xul">先前儲存的登入資訊</a>。若您尚未註冊帳號，請到<a href="https://lockbox.firefox.com/faq.html#how-do-i-get-my-firefox-saved-logins-into-firefox-lockbox">此處</a>進行註冊。</strong></p><p><em>想要在我們的 Android 版 app 推出時收到通知嗎？請<a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">在此登記</a>。</em></p>
+firefoxlockboxIntroductionUrlsandcountries = <p>使用 Firefox Lockbox，將您的密碼隨身帶著走。本 Test Pilot 實驗讓您可以在 iPhone 上的應用程式，安全地存取您儲存到 Firefox 的登入資訊。只要使用 Firefox 帳號登入 Lockbox，就會用 256 位元加密的方式同步您儲存的帳號與密碼到程式中，這樣就可以在出門時，也輕鬆登入各個網站。</p><p><strong>Firefox Lockbox 需要使用 Firefox 帳號才能存取先前儲存的登入資訊。若您沒有註冊過帳號，請參考本文:<br/><a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></strong></p><p><em>想在我們的 Android app 上線時也收到通知嗎？可在此搶先登記:<br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = 存取所有儲存至 Firefox 的帳號與密碼。
 firefoxlockboxDetails1Copy = 在 Firefox 管理帳號，並自動同步變更到 Firefox Lockbox。
 firefoxlockboxDetails2Copy = 排序並篩選您的帳號，快速找到需要的那一個。
