@@ -96,7 +96,7 @@ emailOptInDialogErrorTitle = ¡Oh no!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Obtén la aplicación
-mobileDialogMessageIOS = Descarga <b>{ $title }</b> desde iOS App Store. 
+mobileDialogMessageIOS = Descarga <b>{ $title }</b> desde iOS App Store.
 mobileDialogMessageAndroid = Descarga <b>{ $title }</b> desde la Google Play Store.
 mobileDialogInstructionsSMS = Ingresa tu número de teléfono o tu correo electrónico para enviar un enlace de descarga a tu teléfono:
 mobileDialogInstructions = Ingresa tu correo electrónico para enviar un enlace de descarga a tu teléfono:
@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Verifica tu dispositivo por el correo electrónic
 mobileDialogAnotherDeviceLink = Enviar a otro dispositivo
 mobileDialogError = Ingresar un correo electrónico válido:
 mobileDialogErrorSMS = Ingresa un número de teléfono o correo electrónico válido:
-mobileDialogNoticeSMS = El servicio de SMS está disponible solo en ciertos países. Podrían aplicarse tarifas de SMS y de datos. El receptor del correo electrónico o el SMS debe aceptar. { $learnMore }
+mobileDialogNoticeSMSWithLink = El servicio de SMS está disponible solo para algunos países. Podrían aplicarse tarifas de SMS y datos. El receptor del correo electrónico o SMS debe aceptar. <a>Saber más</a>.
 
 ## Featured experiment.
 
