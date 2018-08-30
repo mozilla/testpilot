@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Bekijk het e-mailbericht op uw apparaat.
 mobileDialogAnotherDeviceLink = Naar een ander apparaat sturen
 mobileDialogError = Voer een geldig e-mailadres in:
 mobileDialogErrorSMS = Voer een geldig telefoonnummer of e-mailadres in:
-mobileDialogNoticeSMS = De sms-service is alleen in bepaalde landen beschikbaar. Mogelijk zijn er kosten voor sms en gegevens van toepassing. De beoogde ontvanger van het e-mail- of sms-bericht moet hiermee akkoord zijn gegaan. { $learnMore }
+mobileDialogNoticeSMSWithLink = De sms-service is alleen in bepaalde landen beschikbaar. Mogelijk zijn er kosten voor sms en gegevens van toepassing. De beoogde ontvanger van het e-mail- of sms-bericht moet hiermee akkoord zijn gegaan. <a>Meer info</a>.
 
 ## Featured experiment.
 
