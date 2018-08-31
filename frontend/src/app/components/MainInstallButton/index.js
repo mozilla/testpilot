@@ -71,7 +71,7 @@ export default class MainInstallButton extends Component<MainInstallButtonProps,
         title,
         slug,
         sendToGA,
-        color: "default"
+        color: "default main-install__button"
       }} />
     );
   }

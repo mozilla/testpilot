@@ -252,11 +252,11 @@ export const WebExperimentButton = ({
       onClick={handleGoToLink}
       target="_blank"
       rel="noopener noreferrer"
-      className={classnames("button icon-button main-install__button", color)}
+      className={classnames("button icon-button", color)}
     >
       <img
         src={
-          color === "default"
+          color.includes("default")
             ? iconExperimentTypeWebWhite
             : iconExperimentTypeWebDark
         }
