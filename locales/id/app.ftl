@@ -101,6 +101,7 @@ mobileDialogButton = Kirimi saya Tautan Unduhan
 mobileDialogButtonSuccess = Terima Kasih!
 mobileDialogSuccessMain = Tautan unduhan terkirim!
 mobileDialogAnotherDeviceLink = Kirim ke peranti lainnya
+mobileDialogError = Masukkan surel yang valid:
 
 ## Featured experiment.
 
