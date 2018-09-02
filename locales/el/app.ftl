@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Ελέγξτε τη συσκευή σας για 
 mobileDialogAnotherDeviceLink = Αποστολή σε άλλη συσκευή
 mobileDialogError = Εισάγετε ένα έγκυρο email:
 mobileDialogErrorSMS = Εισάγετε ένα έγκυρο αριθμό τηλεφώνου ή email:
-mobileDialogNoticeSMS = Η υπηρεσία SMS είναι διαθέσιμη σε επιλεγμένες μόνο χώρες. Ενδέχεται να υπάρξουν χρεώσεις SMS & δεδομένων. Ο παραλήπτης του email ή του SMS πρέπει να έχει συναινέσει. { $learnMore }
+mobileDialogNoticeSMSWithLink = Η υπηρεσία SMS είναι διαθέσιμη σε επιλεγμένες μόνο χώρες. Ενδέχεται να υπάρξουν χρεώσεις SMS & δεδομένων. Ο παραλήπτης του email ή του SMS πρέπει να έχει συναινέσει. <a>Μάθετε περισσότερα</a>.
 
 ## Featured experiment.
 
