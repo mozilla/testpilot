@@ -78,6 +78,8 @@ mobileDialogButtonSuccess = Təşəkkürlər!
 
 ## An individual experiment in the listing of all Test Pilot experiments.
 
+# Also used in NewsUpdateDialog and card mobile views
+experimentCardLearnMore = Ətraflı Öyrən
 
 ## A modal prompt shown when a user disables an experiment.
 
@@ -90,6 +92,7 @@ mobileDialogButtonSuccess = Təşəkkürlər!
 
 ## The experiment detail page.
 
+contributorsExtraLearnMore = Ətraflı öyrən
 
 ## News updates dialog.
 
@@ -109,6 +112,7 @@ pageTitleRetirePage = Firefox Test Pilotu - Test Pilotunu Sil
 
 ## Shown on pages of retired or retiring experiments.
 
+eolNoticeLink = Ətraflı öyrən
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 
