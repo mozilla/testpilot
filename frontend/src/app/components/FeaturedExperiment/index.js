@@ -18,6 +18,7 @@ import ExperimentPlatforms from "../ExperimentPlatforms";
 
 type FeaturedExperimentProps = {
   clientUUID?: string,
+  countryCode: null | string,
   enabled: boolean,
   eventCategory: string,
   experiment: Object,

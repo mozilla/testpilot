@@ -7,7 +7,12 @@ export type BrowserState = {
   isMinFirefox: boolean,
   isMobile: boolean,
   isDev: boolean,
-  locale: string
+  locale: string,
+  /* countryCode is fetched from a service to determine
+     whether or not the user is in a region where we have
+     the ability to send them an sms. The 'locale' property
+     above is for localization */
+  countryCode: string | null
 };
 
 function defaultState(): BrowserState {
@@ -18,7 +23,8 @@ function defaultState(): BrowserState {
       isMinFirefox: true,
       isMobile: false,
       isDev: config.isDev,
-      locale: "en-US"
+      locale: "en-US",
+      countryCode: null
     };
   }
   const userAgent = navigator.userAgent.toLowerCase();
@@ -34,7 +40,10 @@ function defaultState(): BrowserState {
     isProdHost: window.location.host === config.prodHost,
     isDevHost: config.devHosts.includes(window.location.host),
     isDev: config.isDev,
-    locale: (navigator.language || "").split("-")[0]
+    locale: (navigator.language || "").split("-")[0],
+    /* countryCode returns null here to let the mobileDialog component
+       know that the countryCode hasn't been fetched yet */
+    countryCode: null
   };
 }
 
@@ -43,14 +52,22 @@ export type SetStateAction = {
   payload: BrowserState
 };
 
-export default function browserReducer(state: BrowserState, action: SetStateAction): BrowserState {
+export type FetchCountryCodeAction = {
+  type: "FETCH_COUNTRY_CODE",
+  payload: string
+};
+
+export default function browserReducer(state: BrowserState, action: SetStateAction | FetchCountryCodeAction): BrowserState {
   if (state === undefined) {
     return defaultState();
   }
   switch (action.type) {
     case "SET_STATE":
       return action.payload;
+    case "FETCH_COUNTRY_CODE":
+      return Object.assign({}, state, { countryCode: action.payload });
     default:
       return state;
   }
 }
+

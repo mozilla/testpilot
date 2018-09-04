@@ -13,24 +13,23 @@ describe("app/components/MobileDialog", () => {
     android_url: "https://example.com/survey"
   };
 
-  let sendToGA, onCancel, preventDefault, subject, mockClickEvent, mockEscapeKeyDownEvent;
+  let props, preventDefault, subject, mockClickEvent, mockEscapeKeyDownEvent;
   beforeEach(() => {
-    sendToGA = sinon.spy();
-    onCancel = sinon.spy();
     preventDefault = sinon.spy();
     mockClickEvent = { preventDefault, target: {} };
     mockEscapeKeyDownEvent = {
       preventDefault,
       key: "Escape"
     };
-    subject = shallow(
-      <MobileDialog experiment={experiment} onCancel={onCancel} sendToGA={sendToGA}
-        fetchCountryCode={() => {
-          return Promise.resolve({json: () => {
-            return {country_code: "US"};
-          }});
-        }} />
-    );
+    props = {
+      experiment: experiment,
+      countryCode: null,
+      fetchCountryCode: sinon.spy(),
+      onCancel: sinon.spy(),
+      sendToGA: sinon.spy()
+    };
+
+    subject = shallow(<MobileDialog {...props}/>);
   });
 
   it("should render expected content", () => {
@@ -39,10 +38,24 @@ describe("app/components/MobileDialog", () => {
     expect(subject.find(".mobile-header-img")).to.be.ok;
   });
 
+  it("should render loading section until we recieve a country code", () => {
+    expect(subject.find(".loading-wrapper")).to.be.ok;
+    subject.setProps({countryCode: "US"});
+    expect(subject.find(".loading-wrapper")).to.have.property("length", 0);
+  });
+
+  it("should render sms input if correct country code is provided", () => {
+    subject.setProps({countryCode: "US"});
+    expect(subject.find(".sms-input")).to.be.ok;
+
+    subject.setProps({countryCode: "INCORRECT"});
+    expect(subject.find(".email-input")).to.be.ok;
+  });
+
   it("should call onCancel on cancel button click", () => {
     subject.find(".modal-cancel").simulate("click", mockClickEvent);
-    expect(onCancel.called).to.be.true;
-    expect(sendToGA.lastCall.args).to.deep.equal(["event", {
+    expect(props.onCancel.called).to.be.true;
+    expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "SMS Modal Interactions",
       eventAction: "dialog dismissed",
       eventLabel: "cancel",
@@ -53,8 +66,8 @@ describe("app/components/MobileDialog", () => {
 
   it("should call onCancel when the <Escape> key is pressed", () => {
     subject.find(".modal-container").simulate("keyDown", mockEscapeKeyDownEvent);
-    expect(onCancel.called).to.be.true;
-    expect(sendToGA.lastCall.args).to.deep.equal(["event", {
+    expect(props.onCancel.called).to.be.true;
+    expect(props.sendToGA.lastCall.args).to.deep.equal(["event", {
       eventCategory: "SMS Modal Interactions",
       eventAction: "dialog dismissed",
       eventLabel: "cancel",

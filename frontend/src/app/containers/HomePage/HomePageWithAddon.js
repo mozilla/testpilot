@@ -20,6 +20,7 @@ import { getBreakpoint } from "../App";
 import { subscribeToBasketSMS } from "../../lib/utils";
 
 type HomePageWithAddonProps = {
+  countryCode: null | string,
   enableExperiment: Function,
   experiments: Array<Object>,
   experimentsWithoutFeatured: Array<Object>,
