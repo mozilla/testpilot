@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Consultez le courriel envoyé sur votre appareil.
 mobileDialogAnotherDeviceLink = Envoyer à un autre appareil
 mobileDialogError = Saisissez une adresse électronique valide :
 mobileDialogErrorSMS = Saisissez un numéro de téléphone ou une adresse électronique valide :
-mobileDialogNoticeSMS = L’envoi de SMS n’est possible que dans certains pays. Des frais liés aux SMS ou aux données peuvent s’appliquer. La personne destinataire du courriel ou du SMS doit avoir donné son accord.
+mobileDialogNoticeSMSWithLink = L’envoi de SMS n’est possible que dans certains pays. Des frais liés aux SMS ou aux données peuvent s’appliquer. Le destinataire du courriel ou du SMS doit avoir donné son accord. <a>Pour en savoir plus</a>.
 
 ## Featured experiment.
 
