@@ -40,7 +40,7 @@ headerLinkBlog = Blog
 landingIntroOne = Profi nodweddion newydd.
 landingIntroTwo = Rhannu adborth.
 landingIntroThree = Helpu adeiladu Firefox.
-landingLegalNotice = Drwy barhau, rydych yn cytuno i <a>Amodau Defnydd</a> a <a>Hysbysiad Preifatrwydd</a> Test Pilot.
+landingLegalNoticeWithLinks = Drwy barhau, rydych yn cytuno i <terms-link>Amodau Defnydd</terms-link> a <privacy-link>Hysbysiad Preifatrwydd</privacy-link> Test Pilot.
 landingMoreExperimentsButton = Rhagor o Arbrofion
 
 ## Related to the installation of the Test Pilot add-on.
@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Edrychwch ar eich dyfais am yr e-bost
 mobileDialogAnotherDeviceLink = Anfon i ddyfais arall
 mobileDialogError = Rhowch e-bost dilys:
 mobileDialogErrorSMS = Rhowch rif ffôn neu e-bost dilys:
-mobileDialogNoticeSMS = Mae gwasanaeth SMS ar gael mewn gwledydd dethol yn unig. Gall cyfraddau SMS a data fod yn ychwanegol. Rhaid i'r derbynnydd penodol yr e-bost neu negeseuon testun fod wedi cydsynio. { $learnMore }
+mobileDialogNoticeSMSWithLink = Gwasanaeth SMS ar gael mewn gwledydd penodol yn unig. Gall costau SMS a data fodoli. Rhaid i dderbynnydd bwriedig yr e-bost neu SMS fod wedi cytuno. <a>Dysgu rhagor</a>.
 
 ## Featured experiment.
 
@@ -145,7 +145,7 @@ feedbackUninstallCopy = Mae eich cyfraniad i Test Pilot yn golygu llawer i ni! R
 ## A modal prompt shown before the feedback survey for some experiments.
 
 experimentPreFeedbackTitle = Adborth ar { $title }
-experimentPreFeedbackLinkCopy = Rhannwch eich adborth ar arbrawf { $title } 
+experimentPreFeedbackLinkCopy = Rhannwch eich adborth ar arbrawf { $title }
 
 ## A splash shown on top of the experiment page when Test Pilot is not installed.
 
@@ -185,7 +185,7 @@ experimentGradReportPendingTitle = Mae'r arbrawf hwn wedi dod i ben
 experimentGradReportPendingCopy = Rydym yn gweithio ar adroddiad llawn. Dewch nôl cyn bo hir am y manylion.
 experimentGradReportReady = Rydym wedi paratoi adroddiad graddio llawn.
 experimentGoToLink = Mynd i { $title }
-startedDateLabel = Dyddiad Cychwyn yr Arbrawf: <b>{ $startedDate }</b>
+startedDate = Dyddiad Cychwyn yr Arbrawf: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -234,10 +234,10 @@ restartIntroThree = Dewiswch eich arbrofion
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = Mae { $title } yn gorffen ar { $completedDate }
+eolTitleMessage = Mae { $title } yn gorffen ar { DATETIME($completedDate) }
 eolNoticeLink = Dysgu rhagor
 eolDisableMessage = Mae arbrawf { $title } wedi dod i ben. Unwaith i chi ei ddadosod ni fydd modd i chi ei ailosod drwy Test Pilot eto.
-completedDateLabel = Dyddiad Gorffen yr Arbrawf: <b>{ $completedDate }</b>
+completedDate = Dyddiad Gorffen yr Arbrawf: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

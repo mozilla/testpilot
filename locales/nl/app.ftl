@@ -40,7 +40,7 @@ headerLinkBlog = Blog
 landingIntroOne = Test nieuwe functies.
 landingIntroTwo = Geef uw feedback.
 landingIntroThree = Help Firefox te ontwikkelen.
-landingLegalNotice = Door verder te gaan, gaat u akkoord met de <a>Gebruiksvoorwaarden</a> en <a>Privacyverklaring</a> van Test Pilot.
+landingLegalNoticeWithLinks = Door verder te gaan, gaat u akkoord met de <terms-link>Gebruiksvoorwaarden</terms-link> en <privacy-link>Privacyverklaring</privacy-link> van Test Pilot.
 landingMoreExperimentsButton = Meer experimenten
 
 ## Related to the installation of the Test Pilot add-on.
@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Bekijk het e-mailbericht op uw apparaat.
 mobileDialogAnotherDeviceLink = Naar een ander apparaat sturen
 mobileDialogError = Voer een geldig e-mailadres in:
 mobileDialogErrorSMS = Voer een geldig telefoonnummer of e-mailadres in:
-mobileDialogNoticeSMS = De sms-service is alleen in bepaalde landen beschikbaar. Mogelijk zijn er kosten voor sms en gegevens van toepassing. De beoogde ontvanger van het e-mail- of sms-bericht moet hiermee akkoord zijn gegaan. { $learnMore }
+mobileDialogNoticeSMSWithLink = De sms-service is alleen in bepaalde landen beschikbaar. Mogelijk zijn er kosten voor sms en gegevens van toepassing. De beoogde ontvanger van het e-mail- of sms-bericht moet hiermee akkoord zijn gegaan. <a>Meer info</a>.
 
 ## Featured experiment.
 
@@ -188,7 +188,7 @@ experimentGradReportPendingTitle = Dit experiment is beëindigd
 experimentGradReportPendingCopy = We werken aan een volledig rapport. Kijk binnenkort nog eens voor de details.
 experimentGradReportReady = We hebben een volledig eindrapport opgesteld.
 experimentGoToLink = Naar { $title }
-startedDateLabel = Begindatum van experiment: <b>{ $startedDate }</b>
+startedDate = Begindatum van experiment: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -237,10 +237,10 @@ restartIntroThree = Selecteer uw experimenten
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } eindigt op { $completedDate }
+eolTitleMessage = { $title } eindigt op { DATETIME($completedDate) }
 eolNoticeLink = Meer info
 eolDisableMessage = Het experiment { $title } is beëindigd. Zodra u het de-installeert, kunt u het niet meer opnieuw installeren via Test Pilot.
-completedDateLabel = Einddatum van experiment: <b>{ $completedDate }</b>
+completedDate = Einddatum van experiment: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

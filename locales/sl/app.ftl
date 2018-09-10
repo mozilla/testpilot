@@ -40,7 +40,7 @@ headerLinkBlog = Blog
 landingIntroOne = Preskusite nove možnosti.
 landingIntroTwo = Pošljite nam povratne informacije.
 landingIntroThree = Pomagajte ustvarjati Firefox.
-landingLegalNotice = Z nadaljevanjem se strinjate s <a>pogoji uporabe</a> in <a>pravilnikom o zasebnosti</a> programa Test Pilot.
+landingLegalNoticeWithLinks = Z nadaljevanjem se strinjate s <terms-link>pogoji uporabe</terms-link> in <privacy-link>pravilnikom o zasebnosti</privacy-link> programa Test Pilot.
 landingMoreExperimentsButton = Več poskusov
 
 ## Related to the installation of the Test Pilot add-on.
@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Na svoji napravi preverite prejeto e-pošto.
 mobileDialogAnotherDeviceLink = Pošlji na drugo napravo
 mobileDialogError = Vnesite veljaven e-poštni naslov:
 mobileDialogErrorSMS = Vnesite veljavno telefonsko številko ali e-poštni naslov:
-mobileDialogNoticeSMS = Storitev SMS je na voljo samo v določenih državah. Sporočila in prenos podatkov so morda plačljivi. Namenjeni prejemnik e-pošte ali SMS-a se mora strinjati s prejemom. { $learnMore }
+mobileDialogNoticeSMSWithLink = Storitev SMS je na voljo samo v določenih državah. Sporočila in prenos podatkov so morda plačljivi. Namenjeni prejemnik e-pošte ali SMS-a se mora strinjati s prejemom. <a>Več o tem</a>.
 
 ## Featured experiment.
 
@@ -188,7 +188,7 @@ experimentGradReportPendingTitle = Ta poskus se je končal
 experimentGradReportPendingCopy = Pripravljamo popolno poročilo. Podrobnosti bodo kmalu na voljo.
 experimentGradReportReady = Pripravili smo celotno poročilo o zaključku.
 experimentGoToLink = Pojdi na { $title }
-startedDateLabel = Datum začetka poskusa: <b>{ $startedDate }</b>
+startedDate = Datum začetka poskusa: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -237,10 +237,10 @@ restartIntroThree = Izberite si poskuse
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } se konča { $completedDate }
+eolTitleMessage = { $title } se konča { DATETIME($completedDate) }
 eolNoticeLink = Več o tem
 eolDisableMessage = Poskus { $title } je končan. Ko ga odstranite, ga ne boste več mogli namestiti preko Test Pilota.
-completedDateLabel = Datum konca poskusa: <b>{ $completedDate }</b>
+completedDate = Datum konca poskusa: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

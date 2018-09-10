@@ -40,7 +40,7 @@ headerLinkBlog = Blog
 landingIntroOne = Prueba las nuevas características.
 landingIntroTwo = Da tu opinión.
 landingIntroThree = Ayuda a crear Firefox.
-landingLegalNotice = Al continuar, aceptas los <a>Términos de uso</a> y el <a>Aviso sobre privacidad</a> de Test Pilot.
+landingLegalNoticeWithLinks = Al continuar, aceptas los <terms-link>Términos de uso</terms-link> y el <privacy-link>Aviso sobre privacidad</privacy-link> de Test Pilot.
 landingMoreExperimentsButton = Más experimentos
 
 ## Related to the installation of the Test Pilot add-on.
@@ -96,7 +96,7 @@ emailOptInDialogErrorTitle = ¡Oh no!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Obtén la aplicación
-mobileDialogMessageIOS = Descarga <b>{ $title }</b> desde iOS App Store. 
+mobileDialogMessageIOS = Descarga <b>{ $title }</b> desde iOS App Store.
 mobileDialogMessageAndroid = Descarga <b>{ $title }</b> desde la Google Play Store.
 mobileDialogInstructionsSMS = Ingresa tu número de teléfono o tu correo electrónico para enviar un enlace de descarga a tu teléfono:
 mobileDialogInstructions = Ingresa tu correo electrónico para enviar un enlace de descarga a tu teléfono:
@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Verifica tu dispositivo por el correo electrónic
 mobileDialogAnotherDeviceLink = Enviar a otro dispositivo
 mobileDialogError = Ingresar un correo electrónico válido:
 mobileDialogErrorSMS = Ingresa un número de teléfono o correo electrónico válido:
-mobileDialogNoticeSMS = El servicio de SMS está disponible solo en ciertos países. Podrían aplicarse tarifas de SMS y de datos. El receptor del correo electrónico o el SMS debe aceptar. { $learnMore }
+mobileDialogNoticeSMSWithLink = El servicio de SMS está disponible solo para algunos países. Podrían aplicarse tarifas de SMS y datos. El receptor del correo electrónico o SMS debe aceptar. <a>Saber más</a>.
 
 ## Featured experiment.
 
@@ -188,7 +188,7 @@ experimentGradReportPendingTitle = Este experimento ha terminado
 experimentGradReportPendingCopy = Estamos preparando un reporte completo. Regresa pronto para ver todos los detalles.
 experimentGradReportReady = Hemos preparado un informe de graduación completo.
 experimentGoToLink = Ir a { $title }
-startedDateLabel = Fecha de inicio del experimento <b>{ $startedDate }</b>
+startedDate = Fecha de inicio del experimento <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -237,10 +237,10 @@ restartIntroThree = Selecciona tus experimentos
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } termina el { $completedDate }
+eolTitleMessage = { $title } termina el { DATETIME($completedDate) }
 eolNoticeLink = Saber más
 eolDisableMessage = El experimento { $title } ha finalizado. Cuando lo desinstales, no podrás volver a instalarlo a través de Test Pilot.
-completedDateLabel = Fecha de finalización: <b>{ $completedDate }</b>
+completedDate = Fecha de finalización: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

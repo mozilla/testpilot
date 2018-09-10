@@ -30,7 +30,7 @@ headerLinkBlog = وبلاگ
 landingIntroOne = امکانات جدید را آزمایش کنید.
 landingIntroTwo = بازخورد بدهید.
 landingIntroThree = در ایجاد فایرفاکس کمک کنید.
-landingLegalNotice = با ادامه دادن، شما با <a>شرایط استفاده</a> و <a>نکات حریم‌خصوصی</a> موافقت می‌کنید.
+landingLegalNoticeWithLinks = با ادامه دادن، شما با <terms-link>شرایط استفاده</terms-link> و <privacy-link>نکات حریم‌خصوصی</privacy-link> موافقت می‌کنید.
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -151,7 +151,7 @@ experimentGradReportPendingTitle = این آزمایش به پایان رسید�
 experimentGradReportPendingCopy = ما در حال کار بر روی یک گزارش کامل هستیم. دوباره برگردید برای جزئیات
 experimentGradReportReady = ما یک گزارش اتمام کار خیلی کامل آماده کرده ایم.
 experimentGoToLink = برو به { $title }
-startedDateLabel = شروع تاریخ آزمایش:  <b>{ $startedDate }</b>
+startedDate = شروع تاریخ آزمایش:  <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -195,10 +195,10 @@ restartIntroThree = آزمایش‌های خود را انتخاب کنید
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } در تاریخ { $completedDate } تمام می‌شود
+eolTitleMessage = { $title } در تاریخ { DATETIME($completedDate) } تمام می‌شود
 eolNoticeLink = اطلاعات بیشتر
 eolDisableMessage = آزمایش { $title } تمام شده است. زمانی که حذف‌اش کنید، دیگر قادر به نصب آن از طریق خلبان آزمایشی نخواهید بود.
-completedDateLabel = تاریخ پایان آزمایش: { $completedDate }
+completedDate = تاریخ پایان آزمایش: { DATETIME($completedDate) }
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

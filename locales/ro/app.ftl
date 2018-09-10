@@ -28,7 +28,7 @@ menuRetire = Dezinstalează Test Pilot
 landingIntroOne = Testează noi funcții.
 landingIntroTwo = Oferă-ne feedback.
 landingIntroThree = Ajută la construirea Firefox.
-landingLegalNotice = Prin continuare ești de acord cu <a>Termenii de folosire</a> și <a>Nota privind confidențialitatea</a> pentru Test Pilot.
+landingLegalNoticeWithLinks = Prin continuare ești de acord cu <terms-link>Termenii de folosire</terms-link> și <privacy-link>Nota privind confidențialitatea</privacy-link> pentru Test Pilot.
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -43,7 +43,7 @@ oneClickInstallMajorCta = Activează { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
-landingRequiresDesktop = Test Pilot funcționează pe Firefox pentru desktop pe Windows, Mac sau Linux
+landingRequiresDesktop = Test Pilot necesită Firefox pentru Desktop pe Windows, Mac sau Linux
 landingDownloadFirefoxDesc = (Test Pilot este disponibil pentru Firefox pe Windows, OSX și Linux)
 landingUpgradeDesc = Test Pilot are nevoie de Firefox 49 sau mai recent.
 # also in footer
@@ -77,6 +77,9 @@ emailOptInDialogTitle = Bun venit în Test Pilot!
 emailOptInMessage = Află despre noile experimente și vezi rezultatele de testare pentru experimentele încercate.
 emailOptInConfirmationTitle = E-mail trimis
 emailOptInConfirmationClose = Mai departe spre experimente...
+
+## modal prompt for sending link to experiment mobile apps via email or sms
+
 
 ## Featured experiment.
 
@@ -118,7 +121,7 @@ experimentPromoSubheader = Noi construim funcțiile de viitor pentru Firefox. In
 ## The experiment detail page.
 
 isEnabledStatusMessage = { $title } este activat.
-installErrorMessage = Ups. { $title } nu a putut fi încărcat. Încearcă din nou mai târziu.
+installErrorMessage = Ups. { $title } nu a putut fi activat. Încearcă din nou mai târziu.
 otherExperiments = Încearcă și aceste experimente
 giveFeedback = Oferă feedback
 disableHeader = Dezactivează experimentul?
@@ -170,10 +173,10 @@ restartIntroThree = Selectează experimentele
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } se termină pe { $completedDate }
+eolTitleMessage = { $title } se termină pe { DATETIME($completedDate) }
 eolNoticeLink = Află mai multe
 eolDisableMessage = Experimentul { $title } s-a terminat. După ce l-ai dezinstalat nu-l vei mai putea instala din nou prin Test Pilot.
-completedDateLabel = Data de sfârșit a experimentului: <b>{ $completedDate }</b>
+completedDate = Data de sfârșit a experimentului: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

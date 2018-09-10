@@ -40,7 +40,7 @@ headerLinkBlog = Blog
 landingIntroOne = Testujće nowe funkcije.
 landingIntroTwo = Prajće swoje měnjenje.
 landingIntroThree = Pomhajće Firefox wuwiwać.
-landingLegalNotice = Hdyž pokročujeće, zwoliće do <a>wužiwarskich wuměnjenjow</a> a <a>pokaza priwatnosće</a> Test Pilot.
+landingLegalNoticeWithLinks = Hdyž pokročujeće, zwoliće do <terms-link>wužiwarskich wuměnjenjow</terms-link> a <privacy-link>pokaza priwatnosće</privacy-link> Test Pilot.
 landingMoreExperimentsButton = Dalše eksperimenty
 
 ## Related to the installation of the Test Pilot add-on.
@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Hladajće za mejlku na swojim graće.
 mobileDialogAnotherDeviceLink = Na druhi grat pósłać
 mobileDialogError = Zapodajće płaćiwu e-mejlowu adresu:
 mobileDialogErrorSMS = Zapodajće płaćiwe telefonowe čisło abo płaćiwu e-mejlowu adresu:
-mobileDialogNoticeSMS = Słužba SMS jenož we wubranych krajach k dispoziciji steji. Za SMS a daty mógu popłatki nastać. Přijimar mejlki abo SMS dyrbi přezjedny być. { $learnMore }
+mobileDialogNoticeSMSWithLink = SMS-słužba je jenož we wěstych krajach k dispoziciji. Za SMS a datowe přenjesenje dyrbja so snano popłatki płaćić. Přijimar mejlki abo SMS dyrbi přezjedny być. <a>Dalše informacije</a>.
 
 ## Featured experiment.
 
@@ -185,7 +185,7 @@ experimentGradReportPendingTitle = Tutón eksperiment je skónčeny
 experimentGradReportPendingCopy = Dźěłamy na wobšěrnej rozprawje. Hladajće bórze za podrobnosćemi.
 experimentGradReportReady = Smy dospołnu kónčnu rozprawo přihotowali.
 experimentGoToLink = K { $title }
-startedDateLabel = Spočatny datum eksperimenta: <b>{ $startedDate }</b>
+startedDate = Spočatny datum eksperimenta: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -234,10 +234,10 @@ restartIntroThree = Wubjerće swoje eksperimenty
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } so { $completedDate } kónči
+eolTitleMessage = { $title } so { DATETIME($completedDate) } kónči
 eolNoticeLink = Dalše informacije
 eolDisableMessage = Eksperiment { $title } je so skónčił. Hdyž jón wotinstalujeće, njemóžeće wjace jón hišće raz přez Test Pilot instalować.
-completedDateLabel = Kónčny datum eksperimenta: <b>{ $completedDate }</b>
+completedDate = Kónčny datum eksperimenta: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

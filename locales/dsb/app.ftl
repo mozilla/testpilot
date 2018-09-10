@@ -40,7 +40,7 @@ headerLinkBlog = Blog
 landingIntroOne = Testujśo nowe funkcije.
 landingIntroTwo = Grońśo swójo měnjenje.
 landingIntroThree = Pomagajśo Firefox wuwijaś.
-landingLegalNotice = Gaž pókšacujośo, zwolijośo do <a>wužywarskich wuměnjenjow</a> a <a>pokaza priwatnosći</a> Test Pilot.
+landingLegalNoticeWithLinks = Gaž pókšacujośo, zwolijośo do <terms-link>wužywarskich wuměnjenjow</terms-link> a <privacy-link>pokaza priwatnosći</privacy-link> Test Pilot.
 landingMoreExperimentsButton = Dalšne eksperimenty
 
 ## Related to the installation of the Test Pilot add-on.
@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Glědajśo za mejlku na swójom rěźe.
 mobileDialogAnotherDeviceLink = Na drugi rěd pósłaś
 mobileDialogError = Zapódajśo płaśiwu e-mailowu adresu:
 mobileDialogErrorSMS = Zapódajśo płaśiwy telefonowy numer abo płaśiwu e-mailowu adresu:
-mobileDialogNoticeSMS = Słužba SMS stoj jano we wubranych krajach k dispoziciji. Za SMS a daty mógu płaśonki nastaś. Dostawaŕ mejlki abo SMS musy wobjadny byś. { $learnMore }
+mobileDialogNoticeSMSWithLink = SMS-słužba jo jano we wěstych krajach k dispoziciji. Za SMS a datowe pśenjasenje datow mógu płaśonki nastaś. Dostawaŕ mejlki abo SMS musy pśigłosyś. <a>Dalšne informacije</a>.
 
 ## Featured experiment.
 
@@ -185,7 +185,7 @@ experimentGradReportPendingTitle = Toś ten eksperiment jo skóńcony
 experimentGradReportPendingCopy = Źěłamy na wobšyrnej rozpšawje. Glědajśo skóro za drobnostkami.
 experimentGradReportReady = Smy pśigótowali dopołnu kóńcnu rozpšawu.
 experimentGoToLink = K { $title }
-startedDateLabel = Zachopny datum eksperimenta: <b>{ $startedDate }</b>
+startedDate = Zachopny datum eksperimenta: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -234,10 +234,10 @@ restartIntroThree = Wubjeŕśo swóje eksperimenty
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } kóńcy se { $completedDate }
+eolTitleMessage = { $title } kóńcy se { DATETIME($completedDate) }
 eolNoticeLink = Dalšne informacije
 eolDisableMessage = Eksperiment { $title } jo se dokóńcył. Gaž jen wótinstalěrujośo, njamóžośo wěcej jen hyšći raz pśez Test Pilot instalěrowaś.
-completedDateLabel = Kóńcny datum eksperimenta: <b>{ $completedDate }</b>
+completedDate = Kóńcny datum eksperimenta: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

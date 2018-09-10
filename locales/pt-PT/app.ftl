@@ -40,7 +40,7 @@ headerLinkBlog = Blogue
 landingIntroOne = Teste novas funcionalidades.
 landingIntroTwo = Dê o seu feedback.
 landingIntroThree = Ajude a construir o Firefox.
-landingLegalNotice = Ao proceder, concorda com os <a>Termos de utilização</a> e com o <a>Aviso de privacidade</a> do Test Pilot.
+landingLegalNoticeWithLinks = Ao proceder, concorda com os <terms-link>Termos de utilização</terms-link> e com o <privacy-link>Aviso de privacidade</privacy-link> do Test Pilot.
 landingMoreExperimentsButton = Mais experiências
 
 ## Related to the installation of the Test Pilot add-on.
@@ -98,8 +98,8 @@ emailOptInDialogErrorTitle = Oh não!
 mobileDialogTitle = Obter a aplicação
 mobileDialogMessageIOS = Transfira o <b>{ $title }</b> a partir da App Store do iOS.
 mobileDialogMessageAndroid = Transfira o <b>{ $title }</b> a partir da Google Play Store.
-mobileDialogInstructionsSMS = Introduza o seu número de telefone ou email para enviar uma ligação de transferência para o seu telefone: 
-mobileDialogInstructions = Introduza o seu email para enviar uma ligação de transferência para o seu telefone: 
+mobileDialogInstructionsSMS = Introduza o seu número de telefone ou email para enviar uma ligação de transferência para o seu telefone:
+mobileDialogInstructions = Introduza o seu email para enviar uma ligação de transferência para o seu telefone:
 mobileDialogPlaceholder = Introduzir o seu email
 mobileDialogPlaceholderSMS = Introduzir o seu telefone/email
 mobileDialogButton = Enviar-me a ligação de transferência
@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Verifique o seu dispositivo pelo email.
 mobileDialogAnotherDeviceLink = Enviar para outro dispositivo
 mobileDialogError = Introduza um email válido:
 mobileDialogErrorSMS = Introduza um número de telefone ou email válido:
-mobileDialogNoticeSMS = Serviço de SMS apenas disponível em países selecionados. Taxas de SMS e dados podem ser aplicadas. O destinatário intendido do email ou SMS deve ter consentido. { $learnMore }
+mobileDialogNoticeSMSWithLink = Serviço de SMS apenas disponível em países selecionados. Taxas de SMS e dados podem ser aplicadas. O destinatário intendido do email ou SMS deve ter consentido. <a>Saber mais</a>.
 
 ## Featured experiment.
 
@@ -188,7 +188,7 @@ experimentGradReportPendingTitle = Esta experiência terminou
 experimentGradReportPendingCopy = Estamos a trabalhar num relatório completo. Volte em breve para ver os detalhes.
 experimentGradReportReady = Preparámos um relatório de graduação completo.
 experimentGoToLink = Ir para { $title }
-startedDateLabel = Data de início da experiência: <b>{ $startedDate }</b>
+startedDate = Data de início da experiência: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -237,10 +237,10 @@ restartIntroThree = Selecione as suas experiências
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } termina a { $completedDate }
+eolTitleMessage = { $title } termina a { DATETIME($completedDate) }
 eolNoticeLink = Saber mais
 eolDisableMessage = A experiência { $title } terminou. Assim que a desinstalar não vai conseguir reinstalá-la novamente através do Test Pilot.
-completedDateLabel = Data de fim da experiência: <b>{ $completedDate }</b>
+completedDate = Data de fim da experiência: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

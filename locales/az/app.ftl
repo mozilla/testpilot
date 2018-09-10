@@ -44,6 +44,8 @@ landingIntroTwo = Rəylərinizi bildirin.
 
 ## Related to a one click to install test pilot and an experiment.
 
+# $title is replaced by the name of an experiment
+oneClickInstallMajorCta = { $title } eksperimentini aktivləşdir
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -54,6 +56,7 @@ landingUpgradeDesc2 = Test Pilotu Firefox { $version } və ya daha üst buraxıl
 
 ## A section of the homepage explaining how Test Pilot works.
 
+landingCardTwo = Eksperimental özəllikləri aktivləşdir
 
 ## Shown after the user installs the Test Pilot add-on.
 
@@ -75,9 +78,12 @@ mobileDialogButtonSuccess = Təşəkkürlər!
 
 ## A listing of all Test Pilot experiments.
 
+experimentListEnabledTab = Aktivdir
 
 ## An individual experiment in the listing of all Test Pilot experiments.
 
+# Also used in NewsUpdateDialog and card mobile views
+experimentCardLearnMore = Ətraflı Öyrən
 
 ## A modal prompt shown when a user disables an experiment.
 
@@ -90,6 +96,11 @@ mobileDialogButtonSuccess = Təşəkkürlər!
 
 ## The experiment detail page.
 
+isEnabledStatusMessage = { $title } aktivdir.
+installErrorMessage = Ufff! { $title } aktivləşdirilə bilmir. Daha sonra təkrar yoxlayın.
+enableExperiment = { $title } eksperimentini aktivləşdir
+enableExperimentTransition = Aktivləşdirilir...
+contributorsExtraLearnMore = Ətraflı öyrən
 
 ## News updates dialog.
 
@@ -109,6 +120,7 @@ pageTitleRetirePage = Firefox Test Pilotu - Test Pilotunu Sil
 
 ## Shown on pages of retired or retiring experiments.
 
+eolNoticeLink = Ətraflı öyrən
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 
@@ -127,6 +139,9 @@ pageTitleRetirePage = Firefox Test Pilotu - Test Pilotunu Sil
 
 ## Shown to users who do not have JavaScript enabled.
 
+noScriptHeading = Ufff...
+noScriptMessage = Test Pilotu JavaScript tələb edir.<br>Üzr istəyirik.
+noScriptLink = Səbəbini öyrənin
 
 ## Text of a button to toggle visibility of a list of past experiments.
 

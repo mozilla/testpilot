@@ -30,7 +30,7 @@ headerLinkBlog = ব্লগ
 landingIntroOne = নতুন নতুন ফিচার পরখ করুন।
 landingIntroTwo = আপনার প্রতিক্রিয়া জানান।
 landingIntroThree = Firefox তৈরিতে সহযোগিতা করুন।
-landingLegalNotice = এর মাধ্যমে, আপনি Test Pilot এর <a>ব্যবহারের শর্তাবলী</a> এবং <a>গোপনীয়তা নোটিশের</a> সাথে সম্মত আছেন।
+landingLegalNoticeWithLinks = এর মাধ্যমে, আপনি Test Pilot এর <terms-link>ব্যবহারের শর্তাবলী</terms-link> এবং <privacy-link>গোপনীয়তা নোটিশের</privacy-link> সাথে সম্মত আছেন।
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -189,10 +189,10 @@ restartIntroThree = আপনার পরীক্ষণ নির্বাচ�
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } শেষ হয়েছে { $completedDate } এ
+eolTitleMessage = { $title } শেষ হয়েছে { DATETIME($completedDate) } এ
 eolNoticeLink = আরো শিখুন
 eolDisableMessage = { $title } পরীক্ষা শেষ হয়েছে। আপনি একবার এটি আনইন্সটল করলে, Test Pilot দ্বারা আর ইনস্টল করতে পারবেন না।
-completedDateLabel = পরীক্ষণের সর্বশেষ তারিখ: <b>{ $completedDate }</b>
+completedDate = পরীক্ষণের সর্বশেষ তারিখ: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

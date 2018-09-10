@@ -28,7 +28,7 @@ menuRetire = Desinstalar Test Pilot
 landingIntroOne = Prueba carauterístiques nueves.
 landingIntroTwo = Da'l to feedback.
 landingIntroThree = Ayuda a ameyorar Firefox.
-landingLegalNotice = Siguiendo, tas acordies colos <a>Términos d'Usu</a> y l'<a>Anuncia de Privacidá</a> de Test Pilot.
+landingLegalNoticeWithLinks = Siguiendo, tas acordies colos <terms-link>Términos d'Usu</terms-link> y l'<privacy-link>Anuncia de Privacidá</privacy-link> de Test Pilot.
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -178,10 +178,10 @@ restartIntroThree = Esbillar los tos esperimentos
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } fina'l { $completedDate }
+eolTitleMessage = { $title } fina'l { DATETIME($completedDate) }
 eolNoticeLink = Deprendi más
 eolDisableMessage = Finó l'esperimentu de { $title }. Namái lu desinstales, nun sedrás a reinstalalu de nueves pente Test Pilot.
-completedDateLabel = Data fin d'esperimentu: <b>{ $completedDate }</b>
+completedDate = Data fin d'esperimentu: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

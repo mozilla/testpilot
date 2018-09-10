@@ -40,7 +40,7 @@ headerLinkBlog = 部落格
 landingIntroOne = 測試新功能
 landingIntroTwo = 提供意見回饋
 landingIntroThree = 幫忙開發 Firefox
-landingLegalNotice = 安裝此附加元件，代表您同意 Test Pilot 的 <a>使用條款</a> 及 <a>隱私權公告</a>。
+landingLegalNoticeWithLinks = 安裝此附加元件，代表您同意 Test Pilot 的 <terms-link>使用條款</terms-link> 及 <privacy-link>隱私權公告</privacy-link>。
 landingMoreExperimentsButton = 更多實驗
 
 ## Related to the installation of the Test Pilot add-on.
@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = 請到您的裝置上收信。
 mobileDialogAnotherDeviceLink = 傳送到其他裝置
 mobileDialogError = 請輸入有效的 E-Mail 信箱:
 mobileDialogErrorSMS = 請輸入有效的手機號碼或電子郵件信箱:
-mobileDialogNoticeSMS = 僅在部分國家提供簡訊服務。可能會收取簡訊與數據費用。寄發電子郵件或簡訊前，請先獲得收件者同意。{ $learnMore }
+mobileDialogNoticeSMSWithLink = 僅在部分國家提供簡訊服務。可能會收取簡訊與數據費用。寄發電子郵件或簡訊前，請先獲得收件者同意。<a>了解更多</a>。
 
 ## Featured experiment.
 
@@ -185,7 +185,7 @@ experimentGradReportPendingTitle = 此實驗已經結束
 experimentGradReportPendingCopy = 我們正在撰寫實驗報告，請稍後再回來瞭解報告詳情。
 experimentGradReportReady = 我們準備了一份完整的畢業成績單。
 experimentGoToLink = 前往 { $title }
-startedDateLabel = 實驗開始日期: <b>{ $startedDate }</b>
+startedDate = 實驗開始日期: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -234,10 +234,10 @@ restartIntroThree = 選擇您的實驗
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } 實驗將結束於 { $completedDate }
+eolTitleMessage = { $title } 實驗將結束於 { DATETIME($completedDate) }
 eolNoticeLink = 了解更多
 eolDisableMessage = { $title } 實驗已結束，您移除後就無法透過 Test Pilot 再次安裝。
-completedDateLabel = 實驗結束日期: <b>{ $completedDate }</b>
+completedDate = 實驗結束日期: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

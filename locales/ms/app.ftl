@@ -40,7 +40,7 @@ headerLinkBlog = Blog
 landingIntroOne = Uji ciri baru.
 landingIntroTwo = Berikan maklum balas anda.
 landingIntroThree = Bantu membina Firefox.
-landingLegalNotice = Dengan meneruskan, anda bersetuju dengan <a>Terma Penggunaan</a> dan <a>Notis Privasi</a> Test Pilot.
+landingLegalNoticeWithLinks = Dengan meneruskan, anda bersetuju dengan <terms-link>Terma Penggunaan</terms-link> dan <privacy-link>Notis Privasi</privacy-link> Test Pilot.
 landingMoreExperimentsButton = Lebih banyak Eksperimen
 
 ## Related to the installation of the Test Pilot add-on.
@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Semak e-mel dalam peranti anda.
 mobileDialogAnotherDeviceLink = Hantar ke peranti lain
 mobileDialogError = Masukkan e-mel yang sah:
 mobileDialogErrorSMS = Masukkan nombor telefon atau e-mel yang sah:
-mobileDialogNoticeSMS = Perkhidmatan SMS tersedia dalam negara tertentu sahaja. Kadar SMS & data boleh dikenakan. Penerima e-mel atau SMS yang ditentukan perlu memberi kebenaran. { $learnMore }
+mobileDialogNoticeSMSWithLink = Perkhidmatan SMS tersedia dalam negara tertentu sahaja. Kadar SMS & data boleh dikenakan. Penerima e-mel atau SMS yang ditentukan perlu memberi kebenaran. <a>Ketahui selanjutnya</a>.
 
 ## Featured experiment.
 
@@ -188,7 +188,7 @@ experimentGradReportPendingTitle = Eksperimen ini sudah tamat
 experimentGradReportPendingCopy = Kami sedang meyediakan laporan penuh. Semak semula untuk dapatkan butirannya.
 experimentGradReportReady = Kami telah menyediakan laporan senggatan lengkap.
 experimentGoToLink = Pergi ke { $title }
-startedDateLabel = Tarikh Mula Eksperimen: <b>{ $startedDate }</b>
+startedDate = Tarikh Mula Eksperimen: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -237,10 +237,10 @@ restartIntroThree = Pilih eksperimen anda
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } akan tamat pada { $completedDate }
+eolTitleMessage = { $title } akan tamat pada { DATETIME($completedDate) }
 eolNoticeLink = Ketahui selanjutnya
 eolDisableMessage = Eksperimen { $title } telah dihentikan. Anda tidak akan dapat memasangnya semula melalui Test Pilot apabila anda nyahpasang.
-completedDateLabel = Tarikh Tamat Eksperimen: <b>{ $completedDate }</b>
+completedDate = Tarikh Tamat Eksperimen: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

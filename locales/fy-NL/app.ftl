@@ -40,7 +40,7 @@ headerLinkBlog = Blog
 landingIntroOne = Test nije funksjes.
 landingIntroTwo = Leverje kommentaar.
 landingIntroThree = Help by de ûntwikkeling fan Firefox.
-landingLegalNotice = Troch fierder te gean, gean jo akkoard mei de <a>Servicebetingsten</a> en <a>Privacyferklearring</a> fan Test Pilot.
+landingLegalNoticeWithLinks = Troch fierder te gean, gean jo akkoard mei de <terms-link>Servicebetingsten</terms-link> en <privacy-link>Privacyferklearring</privacy-link> fan Test Pilot.
 landingMoreExperimentsButton = Mear eksperiminten
 
 ## Related to the installation of the Test Pilot add-on.
@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Kontrolearje jo apparaat foar it e-mailberjocht.
 mobileDialogAnotherDeviceLink = Nei oar apparaat fertjoere
 mobileDialogError = Fier in falide e-mailadres yn:
 mobileDialogErrorSMS = Fier in falide telefoannûmer of e-mailadres yn:
-mobileDialogNoticeSMS = De sms-tsjinst is allinnich yn de selektearre lannen beskikber. Sms- en gegevenskosten kinne fan tapassing wêze. De ûntfanger fan it e-mailberjocht of de sms moat tastimming jûn hawwe. { $learnMore }
+mobileDialogNoticeSMSWithLink = De sms-tsjinst is allinnich yn de selektearre lannen beskikber. Sms- en gegevenskosten kinne fan tapassing wêze. De ûntfanger fan it e-mailberjocht of de sms moat tastimming jûn hawwe. <a>Mear ynfo</a>.
 
 ## Featured experiment.
 
@@ -185,7 +185,7 @@ experimentGradReportPendingTitle = Dit eksperimint is einige
 experimentGradReportPendingCopy = Wy wurkje oan in folslein rapport. Sjoch ynkoarten nochris foar de details.
 experimentGradReportReady = Wy hawwe in folslein einrapport opsteld.
 experimentGoToLink = Nei { $title }
-startedDateLabel = Startdatum eksperimint: <b>{ $startedDate }</b>
+startedDate = Startdatum eksperimint: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -234,10 +234,10 @@ restartIntroThree = Selektearje jo eksperiminten
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } einiget op { $completedDate }
+eolTitleMessage = { $title } einiget op { DATETIME($completedDate) }
 eolNoticeLink = Mear ynfo
 eolDisableMessage = It eksperimint{ $title } is einige. As jo it de-ynstallearje, kinne jo it net wer ynstallearje fia Test Pilot.
-completedDateLabel = Eindatum eksperimint: <b>{ $completedDate }</b>
+completedDate = Eindatum eksperimint: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

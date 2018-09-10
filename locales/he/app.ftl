@@ -28,7 +28,7 @@ menuRetire = הסרת Test Pilot
 landingIntroOne = בדקו תכונות חדשות.
 landingIntroTwo = תנו לנו משוב.
 landingIntroThree = עזרו לנו לבנות<br> את Firefox.
-landingLegalNotice = באמצעות המשך, הנך מאשר/ת את <a>תנאי השימוש</a> ואת <a>הצהרת הפרטיות</a> של Test Pilot.
+landingLegalNoticeWithLinks = באמצעות המשך, הנך מאשר/ת את <terms-link>תנאי השימוש</terms-link> ואת <privacy-link>הצהרת הפרטיות</privacy-link> של Test Pilot.
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -173,10 +173,10 @@ restartIntroThree = בחרו את הניסויים שלכם
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } מסתיים בתאריך { $completedDate }
+eolTitleMessage = { $title } מסתיים בתאריך { DATETIME($completedDate) }
 eolNoticeLink = מידע נוסף
 eolDisableMessage = הניסוי { $title } הסתיים. לאחר שהוא יוסר לא ניתן עוד יהיה להתקין אותו מחדש דרך Test Pilot.
-completedDateLabel = תאריך סיום הניסוי: <b>{ $completedDate }</b>
+completedDate = תאריך סיום הניסוי: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

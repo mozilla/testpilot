@@ -13,6 +13,7 @@ footerLinkCookies = Kuki
 footerLinkPrivacy = Privasi
 footerLinkTerms = Ketentuan
 footerLinkLegal = Legal
+footerLinkFeedback = Beri Tanggapan
 # This is a header displayed above a set of links about Mozilla and Test Pilot
 footerLinkAboutHeader = Tentang
 footerLinkAboutUs = Tentang kami
@@ -38,7 +39,7 @@ headerLinkBlog = Blog
 landingIntroOne = Uji fitur-fitur terbaru.
 landingIntroTwo = Berikan saran Anda.
 landingIntroThree = Bantu kami membangun Firefox.
-landingLegalNotice = Dengan melanjutkan, Anda menyetujui <a>Ketentuan Penggunaan</a> dan <a>Pernyataan Privasi</a> Test Pilot.
+landingLegalNoticeWithLinks = Dengan melanjutkan, Anda menyetujui <terms-link>Ketentuan Penggunaan</terms-link> dan <privacy-link>Pernyataan Privasi</privacy-link> Test Pilot.
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -90,6 +91,18 @@ emailOptInConfirmationTitle = Surel Terkirim
 emailOptInConfirmationClose = Pada percobaan...
 emailOptInDialogErrorTitle = Oh tidak!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Dapatkan Aplikasinya
+mobileDialogMessageIOS = Unduh <b>{ $title }</b> dari iOS App Store
+mobileDialogMessageAndroid = Unduh <b>{ $title }</b> dari Google Play Store
+mobileDialogPlaceholder = Masukkan surel Anda
+mobileDialogButton = Kirimi saya Tautan Unduhan
+mobileDialogButtonSuccess = Terima Kasih!
+mobileDialogSuccessMain = Tautan unduhan terkirim!
+mobileDialogAnotherDeviceLink = Kirim ke peranti lainnya
+mobileDialogError = Masukkan surel yang valid:
+
 ## Featured experiment.
 
 moreDetail = Lihat detail
@@ -103,6 +116,7 @@ experimentListEndingTomorrow = Berakhir Besok
 experimentListEndingSoon = Berakhir Segera
 experimentCondensedHeader = Selamat datang di Test Pilot!
 experimentListHeader = Pilih percobaan Anda
+experimentListHeaderWithFeatured = Coba seluruh eksperimen kami
 
 ## An individual experiment in the listing of all Test Pilot experiments.
 
@@ -136,6 +150,8 @@ experimentPromoSubheader = Kami membangun fitur generasi-berikutnya pada Firefox
 
 isEnabledStatusMessage = { $title } diaktifkan.
 installErrorMessage = Uh oh. { $title } tidak dapat diaktifkan. Coba lagi nanti.
+wrongPlatformIOS = Eksperimen ini hanya tersedia untuk peranti iOS saja.
+wrongPlatformAndroid = Eksperimen ini hanya tersedia untuk peranti Android saja.
 otherExperiments = Coba juga percobaan berikut
 giveFeedback = Kirimkan Saran
 disableHeader = Nonaktifkan Percobaan?
@@ -168,13 +184,18 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Firefox / web / percobaan seluler
-experimentPlatformWebAddon = Firefox / percobaan web
-experimentPlatformWebMobile = web / percobaan seluler
-experimentPlatformAddonMobile = Firefox / percobaan seluler
-experimentPlatformWeb = percobaan web
 experimentPlatformAddon = percobaan Firefox
-experimentPlatformMobileApp = percobaan seluler
+experimentPlatformAndroid = Eksperimen Android
+experimentPlatformIos = Eksperimen iOS
+experimentPlatformWeb = percobaan web
+experimentPlatformAddonWeb = Eksperimen Firefox / web
+experimentPlatformAddonAndroid = Eksperimen Android / Firefox
+experimentPlatformAddonIos = Eksperimen iOS / Firefox
+experimentPlatformAddonAndroidIos = Eksperimen Android / iOS / Firefox
+experimentPlatformAddonAndroidWeb = Eksperimen Android / Firefox / web
+experimentPlatformAddonAndroidIosWeb = Eksperimen Android / iOS / Firefox / web
+experimentPlatformAndroidWeb = Eksperimen Android / web
+experimentPlatformAndroidIos = Eksperimen Android / iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
@@ -203,10 +224,10 @@ restartIntroThree = Pilih percobaan Anda
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } berakhir pada { $completedDate }
+eolTitleMessage = { $title } berakhir pada { DATETIME($completedDate) }
 eolNoticeLink = Pelajari lebih lanjut
 eolDisableMessage = Percobaan { $title } telah berakhir. Setelah Anda menghapusnya, Anda tidak dapat memasangnya kembali melalui Test Pilot.
-completedDateLabel = Tanggal Akhir Percobaan: <b>{ $completedDate }</b>
+completedDate = Tanggal Akhir Percobaan: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 

@@ -28,7 +28,7 @@ menuRetire = Uninstall Test Pilot
 landingIntroOne = Subukan ang mga bagong tampok.
 landingIntroTwo = Ibigay ang inyong puna.
 landingIntroThree = Tulungang buuin ang Firefox.
-landingLegalNotice = Sa pamamagitan ng paglilitis, sumasang-ayon ka sa <a>Mga Tuntunin ng Paggamit</a> at <a>Abiso sa Privacy</a> ng Test Pilot.
+landingLegalNoticeWithLinks = Sa pamamagitan ng paglilitis, sumasang-ayon ka sa <terms-link>Mga Tuntunin ng Paggamit</terms-link> at <privacy-link>Abiso sa Privacy</privacy-link> ng Test Pilot.
 
 ## Related to the installation of the Test Pilot add-on.
 

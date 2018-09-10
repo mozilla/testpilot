@@ -40,7 +40,7 @@ headerLinkBlog = Blogg
 landingIntroOne = Testa nya funktioner.
 landingIntroTwo = Ge dina synpunkter.
 landingIntroThree = Hjälp till att utveckla Firefox.
-landingLegalNotice = Genom att fortsätta godkänner du <a>användarvillkoren</a> och <a>sekretesspolicy</a> för Test Pilot.
+landingLegalNoticeWithLinks = Genom att fortsätta godkänner du <terms-link>användarvillkoren</terms-link> och <privacy-link>sekretesspolicy</privacy-link> för Test Pilot.
 landingMoreExperimentsButton = Fler experiment
 
 ## Related to the installation of the Test Pilot add-on.
@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Kontrollera din enhet för e-postmeddelandet.
 mobileDialogAnotherDeviceLink = Skicka till en annan enhet
 mobileDialogError = Ange en giltig e-postadress:
 mobileDialogErrorSMS = Ange ett giltigt telefonnummer eller e-postadress:
-mobileDialogNoticeSMS = SMS-tjänst tillgänglig endast i vissa länder. SMS- och datapriser kan tillkomma. Den avsedda mottagaren av e-post eller SMS måste ha samtyckt. { $learnMore }
+mobileDialogNoticeSMSWithLink = SMS-tjänst tillgänglig endast i vissa länder. SMS- och datapriser kan tillkomma. Den avsedda mottagaren av e-post eller SMS måste ha samtyckt. <a>Läs mer</a>.
 
 ## Featured experiment.
 
@@ -188,7 +188,7 @@ experimentGradReportPendingTitle = Detta experiment har upphört
 experimentGradReportPendingCopy = Vi arbetar med en fullständig rapport. Återkom snart för detaljer.
 experimentGradReportReady = Vi har utarbetat en fullständig examinationsrapport.
 experimentGoToLink = Gå till { $title }
-startedDateLabel = Startdatum för experiment: <b>{ $startedDate }</b>
+startedDate = Startdatum för experiment: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -237,10 +237,10 @@ restartIntroThree = Välj dina experiment
 
 ## Shown on pages of retired or retiring experiments.
 
-eolIntroMessage = { $title } slutar den { $completedDate }
+eolTitleMessage = { $title } slutar den { DATETIME($completedDate) }
 eolNoticeLink = Läs mer
 eolDisableMessage = Experimentet { $title } har avslutats. När du avinstallerar det kommer du inte att kunna återinstallera det genom Test Pilot igen.
-completedDateLabel = Slutdatum för experiment: <b>{ $completedDate }</b>
+completedDate = Slutdatum för experiment: <b>{ DATETIME($completedDate) }</b>
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 
