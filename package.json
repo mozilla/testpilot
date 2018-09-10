@@ -51,7 +51,7 @@
     "@storybook/react": "3.4.10",
     "autoprefixer": "9.1.5",
     "babel-core": "6.26.3",
-    "babel-eslint": "8.2.6",
+    "babel-eslint": "9.0.0",
     "babel-loader": "7.1.5",
     "babel-plugin-istanbul": "4.1.6",
     "babel-plugin-transform-flow-strip-types": "6.22.0",
