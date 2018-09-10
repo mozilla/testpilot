@@ -13,14 +13,14 @@
   "author": "Mozilla (https://mozilla.org/)",
   "license": "MPL-2.0",
   "devDependencies": {
-    "babel-eslint": "8.2.6",
+    "babel-eslint": "9.0.0",
     "cross-env": "5.2.0",
-    "eslint": "5.4.0",
+    "eslint": "5.5.0",
     "eslint-plugin-import": "2.14.0",
     "fs-extra": "7.0.0",
     "onchange": "4.1.0",
     "shx": "0.3.2",
-    "web-ext": "2.8.0"
+    "web-ext": "2.9.1"
   },
   "scripts": {
     "start": "onchange -p -v \"*.js\" -- npm run package",
