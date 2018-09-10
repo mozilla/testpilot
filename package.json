@@ -30,8 +30,8 @@
     "libphonenumber-js": "1.4.5",
     "moment": "2.22.2",
     "raven-js": "3.27.0",
-    "react": "16.5.0",
-    "react-dom": "16.5.0",
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
     "react-dom-factories": "1.0.2",
     "react-helmet": "5.2.0",
     "react-markdown": "3.6.0",
@@ -41,8 +41,8 @@
     "redux": "4.0.0",
     "redux-promise": "0.6.0",
     "reselect": "3.0.1",
-    "seedrandom": "2.4.4",
-    "whatwg-fetch": "2.0.4"
+    "seedrandom": "2.4.3",
+    "whatwg-fetch": "3.0.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "3.4.10",
