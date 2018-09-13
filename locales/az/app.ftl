@@ -38,12 +38,16 @@ headerLinkBlog = Bloq
 ## The splash on the homepage.
 
 landingIntroTwo = Rəylərinizi bildirin.
+landingMoreExperimentsButton = Daha Çox Eksperimentlər
 
 ## Related to the installation of the Test Pilot add-on.
 
+landingInstallButton = Test Pilotu Əlavəsini Qur
+landingInstallingButton = Qurulur…
 
 ## Related to a one click to install test pilot and an experiment.
 
+oneClickInstallMinorCta = Test Pilotunu Qur &amp;
 # $title is replaced by the name of an experiment
 oneClickInstallMajorCta = { $title } eksperimentini aktivləşdir
 
@@ -53,6 +57,10 @@ landingRequiresDesktop = Test Pilotu Windows, Mac və ya Linux-da Masaüstü ü�
 landingDownloadFirefoxDesc = (Test Pilotu Windows, OS X və Linux üçün Firefox-da mövcuddur)
 landingUpgradeDesc = Test Pilotu Firefox 49 və ya daha üst buraxılışları tələb edir.
 landingUpgradeDesc2 = Test Pilotu Firefox { $version } və ya daha üst buraxılışları tələb edir.
+# also in footer
+landingDownloadFirefoxTitle = Firefox
+landingUpgradeFirefoxTitle = Firefox-u Yenilə
+landingDownloadFirefoxSubTitle = Pulsuz Endir
 
 ## A section of the homepage explaining how Test Pilot works.
 
@@ -63,12 +71,17 @@ landingCardTwo = Eksperimental özəllikləri aktivləşdir
 
 ## Error message pages.
 
+errorHeading = Vaxsey!
 
 ## A modal prompt to sign up for the Test Pilot newsletter.
 
+emailOptInDialogErrorTitle = Ola bilməz!
 
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
+mobileDialogTitle = Tətbiqi əldə et
+mobileDialogMessageIOS = <b>{ $title }</b> tətbiqini iOS App Store-dan endir.
+mobileDialogMessageAndroid = <b>{ $title }</b> tətbiqini Google Play Store-dan endir.
 mobileDialogPlaceholder = E-poçt ünvanınızı daxil edin
 mobileDialogPlaceholderSMS = Telefonunuzu/E-poçtunuzu daxil edin
 mobileDialogButtonSuccess = Təşəkkürlər!
@@ -101,12 +114,30 @@ installErrorMessage = Ufff! { $title } aktivləşdirilə bilmir. Daha sonra tək
 enableExperiment = { $title } eksperimentini aktivləşdir
 enableExperimentTransition = Aktivləşdirilir...
 contributorsExtraLearnMore = Ətraflı öyrən
+tour = Tur
+contribute = Dəstək ol
+tourDoneButton = Oldu
+highlightPrivacy = Məxfiliyiniz
+experimentGradReportPendingTitle = Eksperiment qurtardı
 
 ## News updates dialog.
 
+nonExperimentDialogHeaderLink = Test Pilotu
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
+experimentPlatformAddon = Firefox eksperimenti
+experimentPlatformAndroid = Android eksperimenti
+experimentPlatformIos = iOS eksperimenti
+experimentPlatformWeb = web eksperimenti
+experimentPlatformAddonWeb = Firefox / web eksperimenti
+experimentPlatformAddonAndroid = Android / Firefox eksperimenti
+experimentPlatformAddonIos = iOS / Firefox eksperimenti
+experimentPlatformAddonAndroidIos = Android / iOS / Firefox eksperimenti
+experimentPlatformAddonAndroidWeb = Android / Firefox / web eksperimenti
+experimentPlatformAddonAndroidIosWeb = Android / iOS / Firefox / web eksperimenti
+experimentPlatformAndroidWeb = Android / web eksperimenti
+experimentPlatformAndroidIos = Android / iOS eksperimenti
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
@@ -130,6 +161,7 @@ eolNoticeLink = Ətraflı öyrən
 
 ## A section of the footer containing a newsletter signup form.
 
+newsletterFooterSuccessHeader = Təşəkkürlər!
 
 ## A warning shown to users when the experiment is not available in their language
 
@@ -145,10 +177,15 @@ noScriptLink = Səbəbini öyrənin
 
 ## Text of a button to toggle visibility of a list of past experiments.
 
+viewPastExperiments = Əvvəlki Eksperimentləri Gör
+hidePastExperiments = Əvvəlki Eksperimentləri Gizlət
 
 ## Text of warnings to the user if various error conditions are detected
 
+warningGenericTitle = Nəsə səhvdir!
+warningUpgradeFirefoxTitle = Davam etmək üçün Firefox-u yeniləyin!
 warningUpgradeFirefoxDetail = Test Pilotu ən son Firefox versiyasını tələb edir. Başlamaq üçün <a>Firefox-u Yeniləyin</a>.
+warningHttpsRequiredTitle = HTTPS tələb edilir!
 
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
