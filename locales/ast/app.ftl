@@ -13,22 +13,32 @@ footerLinkCookies = Cookies
 footerLinkPrivacy = Privacidá
 footerLinkTerms = Términos
 footerLinkLegal = Llegal
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Tocante a
+footerLinkAboutUs = Tocante a nós
+footerLinkSupportHeader = Sofitu
+footerLinkDownload = Baxar Firefox
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Móvil
+footerLinkFeatures = Carauterístiques
+footerLinkBeta = Beta, Nightly y Developer Edition
+footerLinkRetire = Desinstalar Test Pilot
 
 ## Items in the menu and footer
 
 home = Aniciu
 menuTitle = Axustes
 menuWiki = Wiki de Test Pilot
-menuDiscuss = Test Pilot Discuss
-menuFileIssue = Informar de fallu
+menuDiscuss = Discuss de Test Pilot
+menuFileIssue = Informar d'un fallu
 menuRetire = Desinstalar Test Pilot
+headerLinkBlog = Blogue
 
 ## The splash on the homepage.
 
 landingIntroOne = Prueba carauterístiques nueves.
-landingIntroTwo = Da'l to feedback.
-landingIntroThree = Ayuda a ameyorar Firefox.
 landingLegalNoticeWithLinks = Siguiendo, tas acordies colos <terms-link>Términos d'Usu</terms-link> y l'<privacy-link>Anuncia de Privacidá</privacy-link> de Test Pilot.
+landingMoreExperimentsButton = Más esperimentos
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -78,6 +88,9 @@ emailOptInMessage = Pescuda tocante a esperimentos nuevos y mira los resultaos d
 emailOptInConfirmationTitle = Unvióse'l corréu
 emailOptInConfirmationClose = A los esperimentos...
 emailOptInDialogErrorTitle = ¡Oh non!
+
+## modal prompt for sending link to experiment mobile apps via email or sms
+
 
 ## Featured experiment.
 
