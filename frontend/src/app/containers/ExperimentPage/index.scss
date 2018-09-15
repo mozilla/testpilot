@@ -273,7 +273,9 @@
   padding-top: $grid-unit * .5;
 
   .details-sections {
-    @include hide-on-small;
+    .stats-section, .contributors-section, .measurements {
+      @include hide-on-small
+    }
   }
 }
 
