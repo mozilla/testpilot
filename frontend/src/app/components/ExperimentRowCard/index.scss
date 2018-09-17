@@ -142,10 +142,10 @@
   opacity: .9;
 }
 
-html[dir="rtl"] .experiment-summary {
-    @include respond-to('big') {
-        &:nth-child(3n+1) {
-            margin-left: 40px;
-        }
+html[dir='rtl'] .experiment-summary {
+  @include respond-to('big') {
+    &:nth-child(3n+1) {
+      margin-left: 40px;
     }
+  }
 }

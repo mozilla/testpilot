@@ -208,9 +208,9 @@
 
   header {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     line-height: 1;
-    flex-direction: column;
   }
 
   h1 {
@@ -529,13 +529,13 @@
     }
   }
 
-  .details-header{
-    header{
+  .details-header {
+    header {
       align-items: center;
     }
 
     .experiment-platform {
-      justify-content : center;
+      justify-content: center;
     }
   }
 }

@@ -119,7 +119,7 @@ $error-background: #f2f2f2;
   }
 }
 
-html[dir="rtl"] .newsletter-footer header {
-    background: url('./img/envelope.svg') no-repeat right;
-    padding-right: $email-icon--width + ($grid-unit * 1.5);
+html[dir='rtl'] .newsletter-footer header {
+  background: url('./img/envelope.svg') no-repeat right;
+  padding-right: $email-icon--width + ($grid-unit * 1.5);
 }
