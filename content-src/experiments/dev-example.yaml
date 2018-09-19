@@ -2,8 +2,7 @@ dev: true
 id: 999
 title: 'Dev Example'
 slug: dev-example
-platforms: ['ios', 'web']
-ios_url: https://itunes.apple.com/us/app/firefox-lockbox/id1314000270?ls=1&mt=8
+platforms: ['addon']
 thumbnail: /static/images/check.png
 description: >
   This is an example experiment that you should never see in production.
