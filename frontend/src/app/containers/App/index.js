@@ -217,28 +217,32 @@ class App extends Component {
       </div>);
     }
 
-    if (this.shouldShowUpgradeWarning()) {
-      return <UpgradeWarningPage {...this.props} />;
-    }
-
     function* generateBundles(languages, localizations) {
       for (const lang of languages) {
         if (typeof localizations[lang] === "string") {
-          const bundle = new FluentBundle(lang, {useIsolating: false});
+          const bundle = new FluentBundle(lang, { useIsolating: false });
           bundle.addMessages(localizations[lang]);
           yield bundle;
         }
       }
     }
 
+    const bundles = generateBundles(
+      this.props.negotiatedLanguages,
+      this.props.localizations
+    );
+
+    if (this.shouldShowUpgradeWarning()) {
+      return <LocalizationProvider bundles={bundles}>
+        <UpgradeWarningPage {...this.props} />
+      </LocalizationProvider>;
+    }
+
     return <div>
       <Helmet>
         <title>Firefox Test Pilot</title>
       </Helmet>
-      <LocalizationProvider bundles={ generateBundles(
-        this.props.negotiatedLanguages,
-        this.props.localizations
-      ) }>
+      <LocalizationProvider bundles={bundles}>
         { React.cloneElement(this.props.children, this.props) }
       </LocalizationProvider>
     </div>;
