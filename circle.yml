@@ -82,8 +82,7 @@ jobs:
           command: ./bin/circleci/install-test-dependencies.sh
       - run:
           name: Build addon
-          command: |
-            ENVIRONMENT_TITLE="local" ENVIRONMENT_URL="https://example.com:8000/" ./bin/circleci/build-addon.sh
+          command: ENVIRONMENT_TITLE="local" ENVIRONMENT_URL="https://example.com:8000/" ./bin/circleci/build-addon.sh
       - store_artifacts:
           path: ~/testpilot/addon/addon.xpi
       - run:
