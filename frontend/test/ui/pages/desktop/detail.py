@@ -55,8 +55,7 @@ class Detail(Base):
 
         def wait_for_region_to_load(self):
             self.wait.until(
-                lambda _: self.find_element(*self._root_locator)
-                .is_displayed())
+                lambda _: self.root.is_displayed())
 
         def is_popup_displayed(self):
             el = self.find_element(*self._popup_header_locator).is_displayed()
@@ -72,8 +71,7 @@ class Detail(Base):
 
         def wait_for_region_to_load(self):
             self.wait.until(
-                lambda _: self.find_element(*self._root_locator).is_displayed()
-            )
+                lambda _: self.root.is_displayed())
 
         def is_popup_displayed(self):
             el = self.find_element(*self._popup_header_locator).is_displayed()
