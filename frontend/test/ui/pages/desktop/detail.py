@@ -65,7 +65,7 @@ class Detail(Base):
             self.find_element(*self._close_button_locator).click()
 
     class EmailPopup(Region):
-        _root_locator = (By.CSS_SELECTOR, '.feedback-modal')
+        _root_locator = (By.CSS_SELECTOR, '.modal-container')
         _popup_header_locator = (By.CSS_SELECTOR, '.modal-header-wrapper')
         _close_button_locator = (By.CLASS_NAME, 'modal-cancel')
 
