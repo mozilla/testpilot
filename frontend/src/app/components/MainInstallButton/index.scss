@@ -67,7 +67,7 @@
   width: 280px;
 
   &:hover .main-install__badge {
-    animation: bounce 0.15s infinite alternate;
+    animation: bounce 0.4s infinite alternate;
      @keyframes bounce {
       from {
         transform: translateY(0px);
