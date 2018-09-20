@@ -12,4 +12,5 @@ fi
 mozinstall $(ls -t firefox-downloads/firefox_nightly/*.tar.bz2 | head -1)
 firefox --version
 export PYTEST_ADDOPTS=--html=integration-test-results/ui-test-nightly.html
+npm start
 tox -e ui-tests

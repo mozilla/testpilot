@@ -12,4 +12,5 @@ mozinstall $(ls -t /home/ubuntu/firefox-downloads/firefox_dev/*.tar.bz2 | head -
 firefox --version
 export PYTEST_ADDOPTS=--html=integration-test-results/ui-test-dev.html
 export SKIP_INSTALL_TEST=True
+npm start
 tox -e ui-tests
