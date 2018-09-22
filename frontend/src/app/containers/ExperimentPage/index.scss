@@ -10,8 +10,8 @@
   }
 
   & .experiment-icon-wrapper {
-    border-radius: 50%;
-    height: 64px;
+    border-radius: 0;
+    height: 80px;
     width: 109%;
   }
 
@@ -27,6 +27,8 @@
   @include respond-to('not-small') {
 
     & .experiment-icon-wrapper {
+      border-radius: 50%;
+      height: 64px;
       clip-path: circle(32px at center);
       flex: 0 0 64px;
     }
