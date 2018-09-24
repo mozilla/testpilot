@@ -23,7 +23,7 @@ Example from https://trello.com/c/4PNAwpwQ/3-new-experiment-add-on-ui
 
 ## Google Analytics
 
-https://github.com/mozilla/testpilot/blob/master/docs/ga.md
+https://github.com/mozilla/testpilot/blob/master/docs/metrics/ga.md
 
 All measurements from within the web site are done in Google Analytics.  This includes links from the add-on to the website (meaning, we include GA variables in the URL).  GA provides a robust foundation for analytics and let's us have funnel tracking for free.
 
