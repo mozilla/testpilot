@@ -65,4 +65,4 @@ The entry point for the webextension lives in [`./background.js`](./background.j
 The details of what measurements are implemented for any particular experiment can be found with the respective source code repositories for each experiment, generally in a document at `docs/METRICS.md`.
 
 For more general details on where these metric events are sent for measurement &
-analysis, read [`../docs/metrics/index.md`](../docs/metrics/index.md).
+analysis, read [`../docs/metrics/readme.md`](../docs/metrics/readme.md).

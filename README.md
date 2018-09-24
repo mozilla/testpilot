@@ -1,4 +1,4 @@
-<img src="frontend/src/app/components/Copter/img/copter.png" alt="Test Pilot Logo" width="328" height="265">  
+<img src="frontend/src/app/components/Copter/img/copter.png" alt="Test Pilot Logo" width="328" height="265">
 
 # Test Pilot
 
@@ -18,13 +18,12 @@ Test Pilot is not intended to replace trains for most features, nor is it a test
     - [Testing](docs/development/testing.md) - Automated testing.
     - [Storybook](docs/development/storybook.md) - Interactive development & testing for UI components.
     - [Add-on](addon/README.md) - Working on the Test Pilot add-on.
-    - [Add-on environment](docs/development/environment.md) - Configuring to which server the add-on connects.
     - [Variants](docs/development/variants.md) - Creating variant tests on the Test Pilot website.
     - [Deployment](docs/development/deployment.md) - Deploying Test Pilot to staging and production
     - [Dev Deployment](docs/development/dev-deployment.md) - Deploying Test Pilot to the dev environment
     - [Verifying deployments](docs/development/verification.md) - Verifying Test Pilot deployments.
 - Developing experiments
-    - [Recommended process](docs/experiments/developing_an_experiment.md) 
+    - [Recommended process](docs/experiments/developing_an_experiment.md)
     - [Experiment metrics](docs/experiments/ga.md) - The use of Google Analytics to track experiment data.
     - [Experiment Feedback Integration](docs/examples/feedback-buttons.md)
 - Metrics

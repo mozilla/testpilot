@@ -78,8 +78,6 @@ Send out an email notification to `testpilot-qa@softvision.ro` to please test th
 
 Include Softvision and the issue link in the email notification.
 
-Follow the steps in the ["Test Pilot Deployment Verification Test Plan" doc](DEPLOYMENT-VERIFICATION.md) to verify that the site works as expected. Along with testing any major features in the release.
-
 ## Report Issues & Status ##
 
 Any issues should be reported in the deployment bug.
