@@ -15,6 +15,7 @@ activitystreamContributors9Title = Produktni vodja
 activitystreamContributors10Title = Vodja inženirstva
 activitystreamContributors11Title = Programski inženir
 activitystreamContributors12Title = Višji načrtovalec up. izkušnje
+advanceDetails1CopyLaunch = Odsek "Za vas" v stranski vrstici vam prikazuje priporočeno vsebino glede na vašo nedavno zgodovino brskanja.
 advanceLegalnoticeWithlinks = Z nadaljevanjem se strinjate s <terms-link>pogoji</terms-link> in <privacy-link>pravilnikom zasebnosti</privacy-link> Test Pilota ter s <modal-link>pravilnikom o zasebnosti Advance</modal-link>.
 advancePrivacypreamble = Test Pilotov poskus Advance je plod sodelovanja med Laserlikom in Mozillo.
 advanceSubtitle = Omogoča Laserlike
@@ -66,7 +67,6 @@ containersContributors7Title = Up. izkušnja Firefoxa
 containersContributors8Title = Up. izkušnja Firefoxa
 containersContributors9Title = Up. izkušnja Firefoxa
 firefoxlockboxDescription = Ponesite gesla s seboj z aplikacijo Firefox Lockbox za iPhone.
-firefoxlockboxIntroduction = <p>Ponesite gesla s seboj s Firefox Lockboxom. S tem poskusom Test Pilota lahko na svojem iPhonu preko varne aplikacije dostopate do vseh prijav, ki ste jih shranili v Firefox. Prijavite se v Lockbox in vsa shranjena uporabniška imena in gesla bodo sinhronizirana v aplikacijo z 256-bitnim šifriranjem. Tako boste imeli enostaven dostop do spletnih računov tudi na poti.</p><p><strong>Firefox Lockbox zahteva uporabo Firefox Računa, za dostop do <a href="chrome://passwordmgr/content/passwordManager.xul">shranjenih prijav</a>. Če nimate računa ga lahko nastavite <a href="https://lockbox.firefox.com/faq.html#how-do-i-get-my-firefox-saved-logins-into-firefox-lockbox">tukaj</a>.</strong></p><p><em>Želite biti obveščeni, ko bo na voljo aplikacija za naprave Android? Prijavite se <a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">tukaj</a>.</em></p><p>Firefox Lockbox je trenutno na voljo samo v angleščini in na naslednjih območjih: Avstralija, Nova Zelandija, Velika Britanija, ZDA in Kanada.</p>
 firefoxlockboxDetails0Copy = Uporabljajte podatke o uporabniških imenih in geslih vseh računov, ki jih shranite v Firefox.
 firefoxlockboxDetails1Copy = Upravljajte račune v Firefoxu in samodejno sinhronizirajte spremembe v Firefox Lockbox.
 firefoxlockboxDetails2Copy = Razvrstite in filtrirajte račune za lažje iskanje.
