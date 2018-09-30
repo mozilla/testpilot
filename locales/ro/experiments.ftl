@@ -21,5 +21,5 @@ pageshotContributors0TitleEngineer = Inginer software
 pageshotContributors1Title = Inginer software
 tabcenterDescription = Ce-ar fi dacă ai putea muta filele din partea de sus a browserului în lateral? Și noi dorim să aflăm!
 tabcenterDetails2Copy = Redecorează și mută uneltele! Tab Center funcționează cu temele tale favorite pentru Firefox.
-trackingprotectionDescription = Ne poți ajuta să îmbunătățim protecția față de urmărire? Acest experiment activează protecția față de urmărire pentru toate tipurile de navigare și oferă o metodă rapidă de raportare a problemelor pe măsură ce navighezi.
+trackingprotectionDescription = Ne poți ajuta să îmbunătățim protecția împotriva urmăririi? Acest experiment activează protecția împotriva urmăririi pentru toate tipurile de navigare și oferă o metodă rapidă de raportare a problemelor pe măsură ce navighezi.
 trackingprotectionContributors0Title = Dezvoltator web
