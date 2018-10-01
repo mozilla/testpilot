@@ -98,10 +98,19 @@ export default class NewsletterForm extends Component<NewsletterFormProps> {
     );
   }
 
+  focusNewsletterFooter() {
+    document.querySelectorAll(".newsletter-footer").forEach(el => {
+      if (el.offsetTop) {
+        window.scrollTo(0, el.offsetTop);
+      }
+    });
+  }
+
   handleSubmit(evt: Object) {
     evt.preventDefault();
     if (typeof this.props.subscribe !== "undefined") {
       this.props.subscribe(this.props.email);
+      this.focusNewsletterFooter();
     }
   }
 
