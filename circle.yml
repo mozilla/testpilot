@@ -81,6 +81,11 @@ jobs:
           name: Install dependencies
           command: ./bin/circleci/install-test-dependencies.sh
       - run:
+          name: Build addon
+          command: ENVIRONMENT_TITLE="local" ENVIRONMENT_URL="https://example.com:8000/" ./bin/circleci/build-addon.sh
+      - store_artifacts:
+          path: ~/project/addon/addon.xpi
+      - run:
           name: Flake8
           command: ./bin/circleci/flake8.sh
       - run: mkdir integration-test-results

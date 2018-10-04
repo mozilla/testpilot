@@ -10,8 +10,8 @@
   outline: none;
   padding: 5px 10px;
   position: relative;
-  text-decoration: none;
   text-align: center;
+  text-decoration: none;
   transition: background 150ms, width 150ms;
   user-select: none;
 
@@ -149,8 +149,8 @@
   &.large {
     border-radius: $medium-border-radius;
     font-size: $font-unit * 1.25;
-    min-height: 48px;
     max-width: 360px;
+    min-height: 48px;
     padding: 6px 10px;
   }
 }

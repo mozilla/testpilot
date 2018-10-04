@@ -27,6 +27,8 @@
   @include respond-to('not-small') {
 
     & .experiment-icon-wrapper {
+      border-radius: 50%;
+      height: 64px;
       clip-path: circle(32px at center);
       flex: 0 0 64px;
     }
@@ -208,9 +210,9 @@
 
   header {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     line-height: 1;
-    flex-direction: column;
   }
 
   h1 {
@@ -273,7 +275,9 @@
   padding-top: $grid-unit * .5;
 
   .details-sections {
-    @include hide-on-small;
+    .stats-section, .contributors-section, .measurements {
+      @include hide-on-small
+    }
   }
 }
 
@@ -529,13 +533,13 @@
     }
   }
 
-  .details-header{
-    header{
+  .details-header {
+    header {
       align-items: center;
     }
 
     .experiment-platform {
-      justify-content : center;
+      justify-content: center;
     }
   }
 }

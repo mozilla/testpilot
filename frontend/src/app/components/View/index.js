@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React from "react";
+import React, { Component } from "react";
 // TODO ReactDOMFactories is deprecated, can we do this in a different way?
 import ReactDOMFactories from "react-dom-factories";
 import Symbol from "es-symbol";
@@ -17,7 +17,7 @@ const DOMFactories = Object.keys(ReactDOMFactories);
  * Wraps common view elements (header, footer) in a wrapping component. Passes
  * all props down to all children.
  */
-export default class View extends React.Component {
+export default class View extends Component {
 
   isReactComponent(element) {
     /**

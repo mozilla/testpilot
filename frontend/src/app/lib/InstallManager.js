@@ -253,7 +253,8 @@ export function enableExperiment(dispatch, experiment, sendToGA, eventCategory, 
       err => {
         dispatch(
           updateExperiment(experiment.addon_id, {
-            inProgress: false
+            inProgress: false,
+            error: true
           })
         );
       });

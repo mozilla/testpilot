@@ -1,0 +1,5 @@
+{
+  "extends": [ "config:base", "group:all" ],
+  "schedule": ["before 5am on monday"],
+  "patch": { "enabled": false }
+}

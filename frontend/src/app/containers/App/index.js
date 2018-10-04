@@ -57,13 +57,13 @@ import { uninstallAddon, installAddon, enableExperiment, disableExperiment } fro
 import { setLocalizations, setNegotiatedLanguages } from "../../actions/localizations";
 import { localizationsSelector, negotiatedLanguagesSelector } from "../../selectors/localizations";
 import { chooseTests } from "../../actions/varianttests";
+import { fetchCountryCode } from "../../actions/browser";
 import addonActions from "../../actions/addon";
 import newsletterFormActions from "../../actions/newsletter-form";
 import UpgradeWarningPage from "../UpgradeWarningPage";
 import Loading from "../../components/Loading";
 import {
-  shouldOpenInNewTab,
-  fetchCountryCode
+  shouldOpenInNewTab
 } from "../../lib/utils";
 import {
   makeNewsUpdatesForDialogSelector
@@ -217,28 +217,32 @@ class App extends Component {
       </div>);
     }
 
-    if (this.shouldShowUpgradeWarning()) {
-      return <UpgradeWarningPage {...this.props} />;
-    }
-
     function* generateBundles(languages, localizations) {
       for (const lang of languages) {
         if (typeof localizations[lang] === "string") {
-          const bundle = new FluentBundle(lang, {useIsolating: false});
+          const bundle = new FluentBundle(lang, { useIsolating: false });
           bundle.addMessages(localizations[lang]);
           yield bundle;
         }
       }
     }
 
+    const bundles = generateBundles(
+      this.props.negotiatedLanguages,
+      this.props.localizations
+    );
+
+    if (this.shouldShowUpgradeWarning()) {
+      return <LocalizationProvider bundles={bundles}>
+        <UpgradeWarningPage {...this.props} />
+      </LocalizationProvider>;
+    }
+
     return <div>
       <Helmet>
         <title>Firefox Test Pilot</title>
       </Helmet>
-      <LocalizationProvider bundles={ generateBundles(
-        this.props.negotiatedLanguages,
-        this.props.localizations
-      ) }>
+      <LocalizationProvider bundles={bundles}>
         { React.cloneElement(this.props.children, this.props) }
       </LocalizationProvider>
     </div>;
@@ -324,11 +328,11 @@ function sendToGA(type, dataIn, evt = null) {
 
 const mapStateToProps = state => ({
   addon: state.addon,
+  countryCode: state.browser.countryCode,
   clientUUID: state.addon.clientUUID,
   experiments: experimentSelector(state),
   experimentsWithoutFeatured: experimentsWithoutFeaturedSelectorWithL10n(state),
   featuredExperiments: featuredExperimentsSelectorWithL10n(state),
-  fetchCountryCode: fetchCountryCode,
   getExperimentBySlug: slug =>
     getExperimentBySlug(state.experiments, slug),
   hasAddon: state.addon.hasAddon,
@@ -363,6 +367,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   chooseTests: () => dispatch(chooseTests()),
+  fetchCountryCode: () => dispatch(fetchCountryCode()),
   enableExperiment: (experiment, eventCategory, eventLabel) => enableExperiment(dispatch, experiment, sendToGA, eventCategory, eventLabel),
   disableExperiment: experiment => disableExperiment(dispatch, experiment),
   setHasAddon: installed => dispatch(addonActions.setHasAddon(installed)),

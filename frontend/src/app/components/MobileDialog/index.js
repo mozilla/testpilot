@@ -8,12 +8,14 @@ import { validate } from "email-validator";
 import { Localized } from "fluent-react/compat";
 import Loading from "../Loading";
 
+import { acceptedSMSCountries } from "../../actions/browser";
+
 import "./index.scss";
 
 import iconIos from "../../../images/ios-light.svg";
 import iconGoogle from "../../../images/google-play.png";
 
-import { subscribeToBasket, subscribeToBasketSMS, acceptedSMSCountries } from "../../lib/utils";
+import { subscribeToBasket, subscribeToBasketSMS } from "../../lib/utils";
 
 type MobileDialogProps = {
   getWindowLocation: Function,
@@ -21,27 +23,22 @@ type MobileDialogProps = {
   sendToGA: Function,
   experiment: Object,
   fetchCountryCode: Function,
+  countryCode: null | string,
   fromFeatured?: boolean
 }
 
 type MobileDialogState = {
-  loading: boolean,
   isSuccess: boolean,
   isError: boolean,
-  allowSMS: boolean,
   submitAttempted: boolean,
-  recipient: string,
-  country: string
+  recipient: string
 }
 
 const DEFAULT_STATE = {
-  loading: true,
   isSuccess: false,
   isError: false,
-  allowSMS: false,
   submitAttempted: false,
-  recipient: "",
-  country: "US"
+  recipient: ""
 };
 
 export default class MobileDialog extends Component<MobileDialogProps, MobileDialogState> {
@@ -54,28 +51,15 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
 
   componentDidMount() {
     this.focusModalContainer();
-    this.fetchCountryCode();
-  }
-
-  fetchCountryCode() {
-    this.props.fetchCountryCode()
-      .then((resp) => resp.json())
-      .then((data) => {
-        const country = data.country_code;
-        if (acceptedSMSCountries.includes(country)) {
-          this.setState({
-            loading: false,
-            allowSMS: true,
-            country: country
-          });
-        } else this.setState({ loading: false });
-      }).catch((e) => this.setState({ loading: false }));
+    this.props.fetchCountryCode();
   }
 
   render() {
-    const { experiment, sendToGA, fromFeatured } = this.props;
+    const { countryCode, experiment, sendToGA, fromFeatured } = this.props;
     const { title, android_url, ios_url } = experiment;
-    const { isSuccess, allowSMS, loading } = this.state;
+    const loading = (countryCode === null);
+    const allowSMS = acceptedSMSCountries.includes(countryCode);
+    const { isSuccess } = this.state;
 
     const handleAppLinkClick = () => {
       const platform = ios_url ? "ios" : "android";
@@ -142,7 +126,8 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
   }
 
   renderSuccess() {
-    const { allowSMS } = this.state;
+    const { countryCode } = this.props;
+    const allowSMS = acceptedSMSCountries.includes(countryCode);
     const secondaryId = allowSMS ? "mobileDialogSuccessSecondarySMS" : "mobileDialogSuccessSecondary";
     const secondaryText = allowSMS ? "Check your device for the email or text message." : "Check your device for the email.";
 
@@ -166,8 +151,10 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
   }
 
   validateRecipient = (value: string) => {
-    if (this.state.allowSMS) {
-      return (isValidNumber(value, this.state.country) || validate(value));
+    const { countryCode } = this.props;
+    const allowSMS = acceptedSMSCountries.includes(countryCode);
+    if (allowSMS) {
+      return (isValidNumber(value, countryCode) || validate(value));
     }
     return validate(value);
   }
@@ -186,7 +173,9 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
   }
 
   renderForm = () => {
-    const { allowSMS, isError, submitAttempted } = this.state;
+    const { countryCode } = this.props;
+    const allowSMS = acceptedSMSCountries.includes(countryCode);
+    const { isError, submitAttempted } = this.state;
 
     const errorId = allowSMS ? "mobileDialogErrorSMS" : "mobileDialogError";
     const errorText = allowSMS ? "Enter a valid phone number or email:" : "Enter a valid email:";
@@ -203,24 +192,24 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
           <p className="error">{errorText}</p>
         </Localized>}
 
-        {allowSMS && // <Localized id="mobileDialogPlaceholderSMS" attrs={{placeholder: true}}>
+        {allowSMS && <Localized id="mobileDialogPlaceholderSMS" attrs={{placeholder: true}}>
           <input
-            className={classnames({"input-error": isError && submitAttempted})}
+            className={classnames({"input-error sms-input": isError && submitAttempted})}
             type="text"
             placeholder="Enter your Phone/Email"
             value={this.state.recipient}
             onChange={this.handleRecipientChange} />
-        // </Localized>
+        </Localized>
         }
 
-        {!allowSMS && // <Localized id="mobileDialogPlaceholder" attrs={{placeholder: true}}>
+        {!allowSMS && <Localized id="mobileDialogPlaceholder" attrs={{placeholder: true}}>
           <input
-            className={classnames({"input-error": isError && submitAttempted})}
+            className={classnames({"input-error email-input": isError && submitAttempted})}
             type="text"
             placeholder="Enter your Email"
             value={this.state.recipient}
             onChange={this.handleRecipientChange} />
-        // </Localized>
+        </Localized>
         }
 
         <Localized id="mobileDialogButton">
@@ -240,15 +229,16 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
   handleSubscribe = (evt: Object) => {
     evt.preventDefault();
 
-    const { allowSMS, recipient, country } = this.state;
-    const { sendToGA, getWindowLocation, fromFeatured, experiment } = this.props;
+    const { recipient } = this.state;
+    const { sendToGA, getWindowLocation, fromFeatured, experiment, countryCode } = this.props;
+    const allowSMS = acceptedSMSCountries.includes(countryCode);
     const basketMsgId = `txp-${this.props.experiment.slug}`;
     const source = "" + getWindowLocation();
 
     // return early and show errors if submit attempt fails
     if (!this.validateRecipient(recipient)) return this.setState({submitAttempted: true, isError: true});
 
-    if (allowSMS && isValidNumber(recipient, country)) {
+    if (allowSMS && isValidNumber(recipient, countryCode)) {
       sendToGA("event", {
         eventCategory: "SMS Modal Interactions",
         eventAction: "mobile link request",
@@ -257,7 +247,7 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
         dimension13: fromFeatured ? "Featured Experiment" : "Experiment Detail"
       });
       // country, lang, msgId
-      return subscribeToBasketSMS(recipient, country, basketMsgId).then(response => {
+      return subscribeToBasketSMS(recipient, countryCode, basketMsgId).then(response => {
         sendToGA("event", {
           eventCategory: "SMS Modal Interactions",
           eventAction: "request handled",
@@ -300,7 +290,7 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
     e.preventDefault();
     e.stopPropagation();
     this.setState(DEFAULT_STATE);
-    this.fetchCountryCode();
+    this.props.fetchCountryCode();
   }
 
   close = (label: string) => {

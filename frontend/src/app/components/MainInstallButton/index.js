@@ -103,8 +103,8 @@ export default class MainInstallButton extends Component<MainInstallButtonProps,
         {this.renderMainButton()}
 
         {isMinFirefox && !isMobile && !experimentLegalLink && <Localized id="landingLegalNoticeWithLinks"
-          terms-link={<a href="/terms/"></a>}
-          privacy-link={<a href="/privacy/"></a>}>
+          terms-link={<a href="/terms"></a>}
+          privacy-link={<a href="/privacy"></a>}>
           <p className="main-install__legal">
             By proceeding, you agree to the <terms-link>Terms of Use</terms-link> and{" "}
             <privacy-link>Privacy Notice</privacy-link> of Test Pilot.

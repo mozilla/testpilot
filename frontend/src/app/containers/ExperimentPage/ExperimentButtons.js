@@ -256,7 +256,7 @@ export const WebExperimentButton = ({
     >
       <img
         src={
-          color === "default"
+          color.includes("default")
             ? iconExperimentTypeWebWhite
             : iconExperimentTypeWebDark
         }

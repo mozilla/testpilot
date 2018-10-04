@@ -18,8 +18,6 @@ Test Pilot is not intended to replace trains for most features, nor is it a test
     - [Testing](docs/development/testing.md) - Automated testing.
     - [Storybook](docs/development/storybook.md) - Interactive development & testing for UI components.
     - [Add-on](addon/README.md) - Working on the Test Pilot add-on.
-    - [Add-on environment](docs/development/environment.md) - Configuring to which server the add-on connects.
-    - [Variants](docs/development/variants.md) - Creating variant tests on the Test Pilot website.
     - [Deployment](docs/development/deployment.md) - Deploying Test Pilot to staging and production
     - [Dev Deployment](docs/development/dev-deployment.md) - Deploying Test Pilot to the dev environment
     - [Verifying deployments](docs/development/verification.md) - Verifying Test Pilot deployments.
