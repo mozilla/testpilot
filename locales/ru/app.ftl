@@ -110,6 +110,7 @@ mobileDialogSuccessSecondary = Проверьте, пришло ли на ваш
 mobileDialogAnotherDeviceLink = Отправить на другое устройство
 mobileDialogError = Введите эл. почту:
 mobileDialogErrorSMS = Введите эл. почту или номер телефона:
+mobileDialogNoticeSMSWithLink = Отправка SMS-сообщений доступна только для некоторых стран. За передачу SMS и данных может взиматься плата. Предполагаемый получатель электронного письма или SMS должен быть согласен на его получение. <a>Подробнее</a>.
 
 ## Featured experiment.
 
