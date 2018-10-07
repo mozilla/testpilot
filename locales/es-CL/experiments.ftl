@@ -74,6 +74,7 @@ containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
 firefoxlockboxDescription = Lleva tus contraseñas a cualquier lado con la aplicación Firefox Lockbox para iPhone.
+firefoxlockboxIntroductionUrlsandcountries = <p>Lleva tus contraseñas a todas partes con Firefox Lockbox. Este experimento de Test Pilot te otorga acceso a todas tus conexiones guardadas en Firefox, en una aplicación segura en tu iPhone. Solo conéctate a Lockbox con tu cuenta de Firefox, y tus nombres de usuario y contraseñas guardados serán sincronizados a la aplicación usando cifrado de 256-bit. De esta forma tendrás un acceso fácil a tus cuentas en línea, incluso cuando estés de viaje.</p> <p><strong>Firefox Lockbox requiere una cuenta de Firefox para acceder a tus conexiones guardadas. Si no tienes una cuenta configurada, empieza ahora:<br/><a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></strong></p> <p><em>¿Quieres que se te notifique cuando se lance la aplicación para Android? Inscríbete:<br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = Accede a la información de nombre de usuario y contraseña para todas las cuentas que guardes en Firefox.
 firefoxlockboxDetails1Copy = Gestiona las cuentas en Firefox y sincroniza los cambios automáticamente con Firefox Lockbox.
 firefoxlockboxDetails2Copy = Ordena y filtra tus cuentas para encontrar rápidamente la que necesitas.
@@ -183,6 +184,8 @@ sendContributors4Title = Experiencia de usuario de Firefox
 sendContributors5Title = Experiencia de usuario de Firefox
 sendContributors6Title = Desarrollador UX
 sendContributors7Title = Diseñador de producto/UX
+sideviewDescription = Hazlo todo como un campeón. Side View te permite usar dos sitios a la vez sin siquiera tener que cambiar de pestaña.
+sideviewIntroduction = ¿Alguna ves quisiste ver videos de YouTube mientras comprabas, o mantenerte al día en Twitter mientras trabajabas en una hoja de cálculo? Side View te permite enviar enlaces y sitios web a tu barra lateral de Firefox para hacer que la multitarea sea más fácil que nunca.
 sideviewLegalnoticeWithlinks = Al proceder, aceptas los <terms-link>términos</terms-link> y la política de <privacy-link>privacidad</privacy-link> de Test Pilot y la <modal-link>política de privacidad de Side View</modal-link>.
 sideviewMeasurements0 = Información sobre tu interacción con el complemento, por ejemplo tu forma de acceder a la funcionalidad, qué botones presionas y qué tan frecuente la usas.
 sideviewMeasurements1 = Información sobre tu entorno de navegación, por ejemplo el ancho de tu ventana del navegador y el número de pestañas que tienes abierta cuando usas la funcionalidad.
