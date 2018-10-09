@@ -195,7 +195,7 @@ newsletterFormSubmitButtonSubmitting = Se trimite...
 ## A section of the footer containing a newsletter signup form.
 
 newsletterFooterError = S-a produs o eroare la trimiterea adresei tale de e-mail. Încearcă din nou?
-newsletterFooterHeader = Fii la curent
+newsletterFooterHeader = Fii informat
 newsletterFooterBody = Află despre noi experimente și vezi rezultatele de test pentru experimentele pe care le-ai încercat.
 newsletterFooterSuccessHeader = Îți mulțumim!
 newsletterFooterSuccessBody = Dacă nu ai confirmat anterior o abonare la un buletin de știri care are legătură cu Mozilla, este posibil să fie nevoie să o faci. Te rugăm să verifici mesajele primite sau dosarul spam pentru a găsi e-mailul de la noi.
