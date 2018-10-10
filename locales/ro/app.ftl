@@ -13,6 +13,7 @@ footerLinkCookies = Cookie-uri
 footerLinkPrivacy = Confidențialitate
 footerLinkTerms = Termeni
 footerLinkLegal = Legale
+footerLinkAboutUs = Despre noi
 
 ## Items in the menu and footer
 
