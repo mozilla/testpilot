@@ -24,6 +24,7 @@ type MobileDialogProps = {
   experiment: Object,
   fetchCountryCode: Function,
   countryCode: null | string,
+  isIOS: boolean,
   fromFeatured?: boolean
 }
 
@@ -55,14 +56,14 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
   }
 
   render() {
-    const { countryCode, experiment, sendToGA, fromFeatured } = this.props;
+    const { countryCode, experiment, sendToGA, fromFeatured, isIOS } = this.props;
     const { title, android_url, ios_url } = experiment;
     const loading = (countryCode === null);
     const allowSMS = acceptedSMSCountries.includes(countryCode);
     const { isSuccess } = this.state;
 
     const handleAppLinkClick = () => {
-      const platform = ios_url ? "ios" : "android";
+      const platform = isIOS ? "ios" : "android";
       sendToGA("event", {
         eventCategory: "SMS Modal Interactions",
         eventAction: "mobile store click",
@@ -72,14 +73,14 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
       });
     };
 
-    const headerMessage = ios_url
+    const headerMessage = isIOS
       ? <Localized id="mobileDialogMessageIOS" $title={title} b={<b></b>}>
         <p>Download <b>{title}</b> from the iOS App Store.</p>
       </Localized>
       : <Localized id="mobileDialogMessageAndroid" $title={title} b={<b></b>}>
         <p>Download <b>{title}</b> from the Google Play Store.</p>
       </Localized>;
-    const headerImg = ios_url ? (<a href={ios_url} onClick={handleAppLinkClick} target="_blank" rel="noopener noreferrer"><img className="mobile-header-img" src={iconIos}/></a>) : (<a href={android_url} onClick={handleAppLinkClick} target="_blank" rel="noopener noreferrer"><img className="mobile-header-img" src={iconGoogle}/></a>);
+    const headerImg = isIOS ? (<a href={ios_url} onClick={handleAppLinkClick} target="_blank" rel="noopener noreferrer"><img className="mobile-header-img" src={iconIos}/></a>) : (<a href={android_url} onClick={handleAppLinkClick} target="_blank" rel="noopener noreferrer"><img className="mobile-header-img" src={iconGoogle}/></a>);
 
     const learnMoreLink = "https://www.mozilla.org/privacy/websites/#campaigns";
 

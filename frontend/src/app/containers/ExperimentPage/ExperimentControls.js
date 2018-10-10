@@ -4,7 +4,8 @@ import { Localized } from "fluent-react/compat";
 import { experimentL10nId, isMobile } from "../../lib/utils";
 import {
   FeedbackButton,
-  MobileTriggerButton,
+  MobileTriggerIOSButton,
+  MobileTriggerAndroidButton,
   GraduatedButton,
   UninstallButton,
   InstallTestPilotButton,
@@ -165,8 +166,21 @@ function createButtons({
 
   const mobileControls = () => {
     if (!isMobile(userAgent)) {
-      return <MobileTriggerButton {...{ doShowMobileAppDialog, color: "default" }} />;
+      if (platforms.includes("ios")) {
+        if (platforms.includes("android")) {
+          return (
+            <Fragment>
+              <MobileTriggerIOSButton {...{ doShowMobileAppDialog, color: "default" }} />
+              <MobileTriggerAndroidButton {...{ doShowMobileAppDialog, color: "default" }} />
+            </Fragment>
+          );
+        }
+        return <MobileTriggerIOSButton {...{ doShowMobileAppDialog, color: "default" }} />;
+      }
+
+      if (platforms.includes("android")) return <MobileTriggerAndroidButton {...{ doShowMobileAppDialog, color: "default" }} />;
     }
+
     const category = "ExperimentDetailsPage Interactions";
     return (
       <Fragment>

@@ -55,6 +55,7 @@ export type ExperimentPageProps = ExperimentPropsFromApp & {
 export type ExperimentDetailState = {
   enabled: boolean,
   highlightMeasurementPanel: boolean,
+  isIOSDialog: boolean,
   isEnabling: boolean,
   isDisabling: boolean,
   showEmailDialog: boolean,

@@ -12,8 +12,10 @@ import MobileDialog from "../MobileDialog";
 import LayoutWrapper from "../LayoutWrapper";
 
 import {
+  MobileStoreButton,
   MobileTriggerButton,
-  MobileStoreButton
+  MobileTriggerIOSButton,
+  MobileTriggerAndroidButton
 } from "../../containers/ExperimentPage/ExperimentButtons";
 
 import type { InstalledExperiments } from "../../reducers/addon";
@@ -39,6 +41,7 @@ type FeaturedButtonProps = {
 }
 
 type FeaturedButtonState = {
+  isIOSDialog: boolean,
   showLegalDialog: boolean,
   showMobileDialog: boolean
 }
@@ -47,6 +50,7 @@ export default class FeaturedButton extends Component<FeaturedButtonProps, Featu
   constructor(props: FeaturedButtonProps) {
     super(props);
     this.state = {
+      isIOSDialog: false,
       showLegalDialog: false,
       showMobileDialog: false
     };
@@ -133,11 +137,14 @@ export default class FeaturedButton extends Component<FeaturedButtonProps, Featu
     });
   }
 
-  doShowMobileAppDialog = (evt: MouseEvent) => {
+  doShowMobileAppDialog = (evt: MouseEvent, platform: string) => {
     evt.preventDefault();
     const { experiment }  = this.props;
 
-    this.setState({ showMobileDialog: true });
+    this.setState({
+      showMobileDialog: true,
+      isIOSDialog: (platform === "ios")
+    });
     this.props.sendToGA("event", {
       eventCategory: "Featured Experiment",
       eventAction: "mobile send click",
@@ -151,12 +158,24 @@ export default class FeaturedButton extends Component<FeaturedButtonProps, Featu
       hasAddon, enabled, userAgent, sendToGA } = this.props;
     const { slug, survey_url, title, platforms, ios_url, android_url } = experiment;
 
-    const { showMobileDialog } = this.state;
+    const { showMobileDialog, isIOSDialog } = this.state;
 
     const category = "Featured Experiment";
 
     const mobileControls = () => {
       if (!isMobile(userAgent)) {
+        if (platforms.includes("ios") && platforms.includes("android")) {
+          return (
+            <React.Fragment>
+              <div className="main-install__spacer"></div>
+              <div className="mobile-button-wrap">
+                <MobileTriggerIOSButton doShowMobileAppDialog={this.doShowMobileAppDialog} color={"primary"} />
+                <MobileTriggerAndroidButton doShowMobileAppDialog={this.doShowMobileAppDialog} color={"primary"} />
+              </div>
+              { this.renderLegalLink() }
+            </React.Fragment>
+          );
+        }
         return (
           <React.Fragment>
             <div className="main-install__spacer"></div>
@@ -165,6 +184,7 @@ export default class FeaturedButton extends Component<FeaturedButtonProps, Featu
           </React.Fragment>
         );
       }
+
       return (
         <React.Fragment>
           {platforms.includes("ios") && <MobileStoreButton {...{ url: ios_url, platform: "ios", slug, category, sendToGA }} />}
@@ -179,7 +199,7 @@ export default class FeaturedButton extends Component<FeaturedButtonProps, Featu
       Buttons = (
         <div>
           {showMobileDialog &&
-           <MobileDialog {...this.props} fromFeatured={true}
+           <MobileDialog {...this.props} fromFeatured={true} isIOS={isIOSDialog}
              onCancel={() => this.setState({ showMobileDialog: false })}
            />}
           <LayoutWrapper flexModifier={"column-center-start-breaking"}

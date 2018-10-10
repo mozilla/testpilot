@@ -22,6 +22,8 @@ import iconExperimentTypeAddonWhite from "../../../images/experiment-type-addon-
 import iconExperimentTypeWebDark from "../../../images/experiment-type-web.svg";
 import iconExperimentTypeWebWhite from "../../../images/experiment-type-web-white.svg";
 import iconExperimentTypeMobileWhite from "../../../images/experiment-type-mobile-white.svg";
+import iconExperimentTypeAppleWhite from "../../../images/experiment-type-apple-white.svg";
+import iconExperimentTypeAndroidWhite from "../../../images/experiment-type-android-white.svg";
 import iconIos from "../../../images/ios-light.svg";
 import iconGoogle from "../../../images/google-play.png";
 
@@ -83,6 +85,36 @@ export const MobileTriggerButton = ({
       <img src={iconExperimentTypeMobileWhite} />
       <Localized id="mobileDialogTitle">
         <span>Get the App</span>
+      </Localized>
+    </a>
+  );
+};
+
+export const MobileTriggerAndroidButton = ({
+  doShowMobileAppDialog, optionalClass = "", color = "default"
+}: MobileTriggerButtonType) => {
+  return (
+    <a
+      className={`button mobile-trigger ${color} icon-button ${optionalClass}`}
+      onClick={(evt) => doShowMobileAppDialog(evt, "android")}>
+      <img src={iconExperimentTypeAndroidWhite} />
+      <Localized id="mobileDialogAndroidButton">
+        <span>Get the Android app</span>
+      </Localized>
+    </a>
+  );
+};
+
+export const MobileTriggerIOSButton = ({
+  doShowMobileAppDialog, optionalClass = "", color = "default"
+}: MobileTriggerButtonType) => {
+  return (
+    <a
+      className={`button mobile-trigger ${color} icon-button ${optionalClass}`}
+      onClick={(evt) => doShowMobileAppDialog(evt, "ios") }>
+      <img src={iconExperimentTypeAppleWhite} />
+      <Localized id="mobileDialogIOSButton">
+        <span>Get the iOS app</span>
       </Localized>
     </a>
   );

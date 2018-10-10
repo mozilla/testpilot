@@ -5,8 +5,9 @@ order: 1
 is_featured: true
 dev: false
 web_url: https://lockbox.firefox.com/
-platforms: ['ios']
+platforms: ['ios', 'android']
 ios_url: https://itunes.apple.com/us/app/firefox-lockbox/id1314000270?ls=1&mt=8
+android_url: https://itunes.apple.com/us/app/firefox-lockbox/id1314000270?ls=1&mt=8
 locales:
   - 'en'
 description: >
