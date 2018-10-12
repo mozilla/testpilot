@@ -9,6 +9,10 @@
   }
 }
 
+.mobile-trigger {
+  width: 200px;
+}
+
 .featured-experiment {
   @include respond-to('small') {
     @include flex-container(column, center, stretch, nowrap);
