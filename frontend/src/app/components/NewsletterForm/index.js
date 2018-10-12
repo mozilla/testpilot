@@ -20,6 +20,7 @@ type NewsletterFormProps = {
 
 export default class NewsletterForm extends Component<NewsletterFormProps> {
   handleEmailChange: Function
+  handlePrivacyChange: Function
   handleSubmit: Function
 
   static defaultProps = defaultState();
@@ -27,6 +28,7 @@ export default class NewsletterForm extends Component<NewsletterFormProps> {
   constructor(props: NewsletterFormProps) {
     super(props);
     this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handlePrivacyChange = this.handlePrivacyChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -39,6 +41,12 @@ export default class NewsletterForm extends Component<NewsletterFormProps> {
   handleEmailChange(evt: Object) {
     if (typeof this.props.setEmail !== "undefined") {
       this.props.setEmail(evt.target.value);
+    }
+  }
+
+  handlePrivacyChange(evt: Object) {
+    if (typeof this.props.setPrivacy !== "undefined") {
+      this.props.setPrivacy(evt.target.checked);
     }
   }
 
@@ -61,7 +69,13 @@ export default class NewsletterForm extends Component<NewsletterFormProps> {
 
     return <div>
       <label className={this.makeRevealedClassNames()} htmlFor={fieldName}>
-        <input name={fieldName} id={fieldName} type="checkbox" required />
+        <input
+          name={fieldName}
+          id={fieldName}
+          type="checkbox"
+          checked={this.props.privacy}
+          onChange={this.handlePrivacyChange}
+          required />
         <Localized id="newsletterFormPrivacyNotice"
           a={<a target="_blank" rel="noopener noreferrer" href="/privacy"/>}>
           <span>
