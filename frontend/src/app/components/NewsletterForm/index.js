@@ -15,6 +15,7 @@ type NewsletterFormProps = {
   isModal?: boolean,
   subscribe?: Function,
   setEmail?: Function,
+  setPrivacy? : Function,
   buttonRef?: Function
 }
 
