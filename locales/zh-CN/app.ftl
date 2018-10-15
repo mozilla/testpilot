@@ -11,7 +11,7 @@ pageTitleExperiment = Firefox Test Pilot - { $title }
 
 footerLinkCookies = Cookie
 footerLinkPrivacy = 隐私
-footerLinkTerms = 条款
+footerLinkTerms = 使用条款
 footerLinkLegal = 法律
 footerLinkFeedback = 提供反馈
 # This is a header displayed above a set of links about Mozilla and Test Pilot

@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Проверьте, пришло ли на ваш
 mobileDialogAnotherDeviceLink = Отправить на другое устройство
 mobileDialogError = Введите эл. почту:
 mobileDialogErrorSMS = Введите эл. почту или номер телефона:
-mobileDialogNoticeSMS = Услуга SMS доступна только в определенных странах. За SMS и данные может взиматься плата. Необходимо согласие от получателя почтового сообщения или SMS. { $learnMore }
+mobileDialogNoticeSMSWithLink = Отправка SMS-сообщений доступна только для некоторых стран. За передачу SMS и данных может взиматься плата. Предполагаемый получатель электронного письма или SMS должен быть согласен на его получение. <a>Подробнее</a>.
 
 ## Featured experiment.
 
@@ -176,7 +176,7 @@ contributorsHeading = Создано:
 contributorsExtraLearnMore = Подробнее
 changelog = список изменений
 tour = Тур
-tourLink = тур
+tourLink = Тур
 contribute = Внести вклад
 bugReports = Сообщения об ошибках
 discussExperiment = Обсудить { $title }
