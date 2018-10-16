@@ -40,6 +40,7 @@ landingIntroOne = Uji fitur-fitur terbaru.
 landingIntroTwo = Berikan saran Anda.
 landingIntroThree = Bantu kami membangun Firefox.
 landingLegalNoticeWithLinks = Dengan melanjutkan, Anda menyetujui <terms-link>Ketentuan Penggunaan</terms-link> dan <privacy-link>Pernyataan Privasi</privacy-link> Test Pilot.
+landingMoreExperimentsButton = Lebih Banyak Eksperimen
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -96,12 +97,16 @@ emailOptInDialogErrorTitle = Oh tidak!
 mobileDialogTitle = Dapatkan Aplikasinya
 mobileDialogMessageIOS = Unduh <b>{ $title }</b> dari iOS App Store
 mobileDialogMessageAndroid = Unduh <b>{ $title }</b> dari Google Play Store
+mobileDialogInstructionsSMS = Masukkan nomor telepon atau alamat surel untuk mengirim tautan unduhan ke telepon Anda:
+mobileDialogInstructions = Masukkan alamat surel untuk mengirim tautan unduhan ke telepon Anda:
 mobileDialogPlaceholder = Masukkan surel Anda
+mobileDialogPlaceholderSMS = Masukkan Telepon/Surel Anda
 mobileDialogButton = Kirimi saya Tautan Unduhan
 mobileDialogButtonSuccess = Terima Kasih!
 mobileDialogSuccessMain = Tautan unduhan terkirim!
 mobileDialogAnotherDeviceLink = Kirim ke peranti lainnya
 mobileDialogError = Masukkan surel yang valid:
+mobileDialogErrorSMS = Masukkan nomor telepon atau surel yang valid:
 
 ## Featured experiment.
 
