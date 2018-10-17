@@ -1,8 +1,19 @@
 {
-  "presets": ["es2015", "stage-0", "react"],
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-flow"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-function-bind"
+  ],
   "env": {
     "test": {
-      "plugins": ["istanbul", "transform-flow-strip-types"]
+      "plugins": [
+        "istanbul",
+        "@babel/transform-flow-strip-types"
+      ]
     }
   }
 }
