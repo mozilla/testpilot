@@ -20,18 +20,11 @@ type NewsletterFormProps = {
 }
 
 export default class NewsletterForm extends Component<NewsletterFormProps> {
-  handleEmailChange: Function
-  handlePrivacyChange: Function
-  handleSubmit: Function
+  handleEmailChange: Function = this.handleEmailChange.bind(this);
+  handlePrivacyChange: Function = this.handlePrivacyChange.bind(this);
+  handleSubmit: Function = this.handleSubmit.bind(this);
 
   static defaultProps = defaultState();
-
-  constructor(props: NewsletterFormProps) {
-    super(props);
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handlePrivacyChange = this.handlePrivacyChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
 
   makeRevealedClassNames() {
     return classnames("revealed-field", {

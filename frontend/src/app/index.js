@@ -1,6 +1,6 @@
 import "../styles/main.scss";
 
-import "babel-polyfill/browser";
+import "@babel/polyfill";
 import "whatwg-fetch";
 import Raven from "raven-js";
 import moment from "moment";
