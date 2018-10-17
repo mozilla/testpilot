@@ -78,7 +78,7 @@
     "eslint-plugin-react": "7.11.1",
     "express": "4.16.4",
     "feed": "2.0.1",
-    "fetch-mock": "7.0.7",
+    "fetch-mock": "7.1.0",
     "flow-bin": "0.83.0",
     "flow-coverage-report": "0.6.0",
     "flow-typed": "2.5.1",
