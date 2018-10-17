@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies*/
-require("babel-polyfill");
+require("@babel/polyfill");
 
 // HACK: Ignore non-JS imports used for asset dependencies in Webpack
 require.extensions[".scss"] = () => {};
