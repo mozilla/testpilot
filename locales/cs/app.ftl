@@ -88,7 +88,7 @@ notFoundHeader = Čtyři sta čtyři!
 ## A modal prompt to sign up for the Test Pilot newsletter.
 
 emailOptInDialogTitle = Vítá vás Test Pilot!
-emailOptInMessage = Nechce si posílat informace o nových experimentech a výsledky experimentů, které jste sami vyzkoušeli.
+emailOptInMessage = Nechte si posílat informace o nových experimentech a výsledky experimentů, které jste sami vyzkoušeli.
 emailOptInConfirmationTitle = E-mail odeslán
 emailOptInConfirmationClose = Podívat se na experimenty...
 emailOptInDialogErrorTitle = Ale ne!
@@ -255,7 +255,7 @@ newsletterFormSubmitButtonSubmitting = Odesílání...
 
 newsletterFooterError = Při ukládání vaší e-mailové adresy nastala chyba. Chcete to zkusit znovu?
 newsletterFooterHeader = Nechte se informovat
-newsletterFooterBody = Nechce si posílat informace o nových experimentech a výsledky experimentů, které jste sami vyzkoušeli.
+newsletterFooterBody = Nechte si posílat informace o nových experimentech a výsledky experimentů, které jste sami vyzkoušeli.
 newsletterFooterSuccessHeader = Děkujeme!
 newsletterFooterSuccessBody = Pokud jste dříve nepotvrdili odběr zpravodaje Mozilly, budete tak muset učinit nyní. Podívejte se prosím do vaší e-mailové schránky a případně i nevyžádané pošty, jestli tam není e-mail od nás.
 
