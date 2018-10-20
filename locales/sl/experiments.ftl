@@ -22,6 +22,7 @@ advanceDetails2CopyLaunch = Odprite nov zavihek in stranska vrstica Advance se b
 advanceIntroduction = Advance vas med brskanjem oskrbuje s priporočili v Firefoxovi stranski vrstici. Na podlagi vašega trenutnega brskanja bo predlagal povezane novice in podobne strani, na osnovi vaše zgodovine brskanja pa bo ustvaril prilagojen vir kakovostne vsebine.
 advanceLegalnoticeWithlinks = Z nadaljevanjem se strinjate s <terms-link>pogoji</terms-link> in <privacy-link>pravilnikom zasebnosti</privacy-link> Test Pilota ter s <modal-link>pravilnikom o zasebnosti Advance</modal-link>.
 advanceMeasurements0 = Občutljivi podatki: Po namestitvi bo Laserlike prejel vašo zgodovino brskanja po spletu. Nikakršni podatki se ne pošiljajo, če ste v zasebnem brskanju ali poskus ustavite, ko poskus preteče ali ko ga onemogočite. Laserlike tudi prejme vaš naslov IP ter čas in trajanje obiskov spletnih strani. Ti podatki se uporabljajo za indeksiranje spletnih naslovov, javno dostopnih na internetu.
+advanceMeasurements1 = Nadzor: Nastavitve vam omogočajo zahtevati, katere podatke o vas bo Laserlike prejel od tega poskusa. Lahko tudi izbrišete piškotke, zgodovino brskanja in povezane podatke o računu Laserlike.
 advanceMeasurements2 = Tehnični podatki in podatki o uporabi: Tako Mozilla kot Laserlike bosta prejemala deleže klikov na povezave in trajanje obiskov priporočene vsebine, podatke o načinu uporabe stranske vrstice in poskusa ter tehnične podatke o operacijskem sistemu, brskalniku in območni nastavitvi.
 advancePrivacypreamble = Test Pilotov poskus Advance je plod sodelovanja med Laserlikom in Mozillo.
 advanceSubtitle = Omogoča Laserlike
@@ -73,6 +74,7 @@ containersContributors7Title = Up. izkušnja Firefoxa
 containersContributors8Title = Up. izkušnja Firefoxa
 containersContributors9Title = Up. izkušnja Firefoxa
 firefoxlockboxDescription = Ponesite gesla s seboj z aplikacijo Firefox Lockbox za iPhone.
+firefoxlockboxIntroductionUrlsandcountries = <p>Vzemite svoja gesla s seboj. Test Pilotov poskus Firefox Lockbox vam omogoča dostop do vseh prijav, shranjenih v Firefox, v varni aplikaciji za iPhone. Preprosto se prijavite v Lockbox s svojim Firefox Računom in vaša shranjena uporabniška imena in gesla se bodo sinhronizirala v aplikacijo z uporabo 256-bitnega šifriranja. Tako boste imeli preprost dostop do spletnih računov, tudi če ste na poti.</p> <p><strong>Firefox Lockbox za dostop do shranjenih prijav zahteva Firefox Račun. Če računa še nimate nastavljenega, začnite:<br/><a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></strong></p> <p><em>Želite biti obveščeni o izidu aplikacije za Android? Prijavite se:<br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = Uporabljajte podatke o uporabniških imenih in geslih vseh računov, ki jih shranite v Firefox.
 firefoxlockboxDetails1Copy = Upravljajte račune v Firefoxu in samodejno sinhronizirajte spremembe v Firefox Lockbox.
 firefoxlockboxDetails2Copy = Razvrstite in filtrirajte račune za lažje iskanje.
