@@ -1,0 +1,47 @@
+---
+addon_id: shopping-testpilot@mozilla.org
+bug_report_url: "https://github.com/mozilla/price-wise/issues"
+contributors:
+  -
+    avatar: /static/images/experiments/price-wise/avatars/bianca.jpg
+    display_name: "Bianca Danforth"
+  -
+    avatar: /static/images/experiments/price-wise/avatars/osmose.jpg
+    display_name: Osmose
+created: "2018-11-12T14:00:00Z"
+description: "Price Wise automatically looks for price drops on specific products at Amazon, Walmart and other top retailers."
+details:
+  -
+    copy: "Tell Price Wise to keep an eye on a product and it’s added to your watch list."
+    image: /static/images/experiments/price-wise/details/detail1.png
+  -
+    copy: "When the price drops, Price Wise alerts you with a colorful heads-up."
+    image: /static/images/experiments/price-wise/details/detail2.png
+discourse_url: "https://discourse.mozilla-community.org/c/test-pilot/price-wise"
+is_featured: true
+gradient_start: "#DE5BC5"
+gradient_stop: "#86BBF9"
+id: 19
+image_facebook: /static/images/experiments/price-wise/social/price-wise-facebook.jpg
+image_twitter: /static/images/experiments/price-wise/social/price-wise-twitter.jpg
+introduction: "Price Wise spots price drops on things you’re interested in at Amazon, Best Buy, eBay, Home Depot and Walmart. When Price Wise finds a price drop, the add-on gives you a heads-up about the lower price."
+launch_date: "2018-11-12T14:00:00Z"
+legal_notice: "By proceeding, you agree to the <terms-link>terms</terms-link> and <privacy-link>privacy</privacy-link> policies of Test Pilot and the <modal-link>Price Wise privacy policy</modal-link>."
+locale_grantlist:
+  - en
+locales:
+  - en
+measurements:
+  - "Product Pages: Price Wise collects how often you visit saved product pages."
+  - "Product Data: Price Wise collects data about the products you choose to track such as prices change frequency, size, and the accuracy of that information."
+  - "Interaction Data: Price Wise collects information about how you use the feature such as how often you add, delete and interact with saved products, number of products you choose to track, and how you engage with messages and push notifications."
+min_release: 63
+order: 1
+platforms:
+  - addon
+privacy_notice_url: "https://github.com/mozilla/price-wise/blob/master/docs/METRICS.md"
+slug: price-wise
+thumbnail: /static/images/experiments/price-wise/icon/thumbnail.png
+title: "Price Wise"
+video_url: https://www.youtube.com/embed/dQw4w9WgXcQ
+xpi_url: "https://testpilot.firefox.com/files/shopping-testpilot@mozilla.org/latest"
