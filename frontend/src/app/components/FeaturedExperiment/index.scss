@@ -1,6 +1,18 @@
 @import '~photon-colors/photon-colors.scss';
 @import '../../../styles/_utils';
 
+.mobile-button-wrap {
+  display: flex;
+
+  a:last-child {
+    margin-left: 20px;
+  }
+}
+
+.mobile-trigger {
+  width: 200px;
+}
+
 .featured-experiment {
   @include respond-to('small') {
     @include flex-container(column, center, stretch, nowrap);

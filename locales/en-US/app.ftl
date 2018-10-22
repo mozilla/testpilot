@@ -84,6 +84,8 @@ emailOptInDialogErrorTitle = Oh no!
 
 ## modal prompt for sending link to experiment mobile apps via email or sms
 mobileDialogTitle = Get the App
+mobileDialogAndroidButton = Get the Android app
+mobileDialogIOSButton = Get the iOS app
 mobileDialogMessageIOS = Download <b>{$title}</b> from the iOS App Store.
 mobileDialogMessageAndroid = Download <b>{$title}</b> from the Google Play Store.
 mobileDialogInstructionsSMS = Enter your phone number or email to send a download link to your phone:
