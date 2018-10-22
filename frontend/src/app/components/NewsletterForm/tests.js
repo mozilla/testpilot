@@ -57,7 +57,7 @@ describe("app/components/NewsletterForm", () => {
 
     it("should be unchecked by default", () => {
       const subject = makeSubject().find('input[name="privacy"]');
-      expect(subject.prop("checked")).to.be.undefined;
+      expect(subject.prop("checked")).to.equal(false);
     });
   });
 
