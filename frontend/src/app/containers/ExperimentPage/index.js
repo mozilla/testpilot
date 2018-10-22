@@ -59,6 +59,7 @@ export class ExperimentDetail extends Component<ExperimentDetailProps, Experimen
       enabled: isExperimentEnabled(experiment),
       highlightMeasurementPanel: false,
       isEnabling: false,
+      isIOSDialog: false,
       isDisabling: false,
       showEmailDialog: false,
       showDisableDialog: false,
@@ -150,6 +151,7 @@ export class ExperimentDetail extends Component<ExperimentDetailProps, Experimen
 
     const {
       enabled,
+      isIOSDialog,
       highlightMeasurementPanel,
       showEmailDialog,
       showDisableDialog,
@@ -231,6 +233,7 @@ export class ExperimentDetail extends Component<ExperimentDetailProps, Experimen
         {showMobileDialog &&
           <MobileDialog
             {...this.props}
+            isIOS={isIOSDialog}
             onCancel={() => this.setState({ showMobileDialog: false })}
           />}
 
@@ -412,11 +415,15 @@ export class ExperimentDetail extends Component<ExperimentDetailProps, Experimen
     disableExperiment(experiment);
   };
 
-  doShowMobileAppDialog = (evt: MouseEvent) => {
+  doShowMobileAppDialog = (evt: MouseEvent, platform: string) => {
     evt.preventDefault();
     const { experiment }  = this.props;
 
-    this.setState({ showMobileDialog: true });
+    this.setState({
+      showMobileDialog: true,
+      isIOSDialog: (platform === "ios")
+    });
+
     this.props.sendToGA("event", {
       eventCategory: "ExperimentDetailsPage Interactions",
       eventAction: "open mobile dialog",
