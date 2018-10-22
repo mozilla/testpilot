@@ -80,7 +80,16 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
       : <Localized id="mobileDialogMessageAndroid" $title={title} b={<b></b>}>
         <p>Download <b>{title}</b> from the Google Play Store.</p>
       </Localized>;
-    const headerImg = isIOS ? (<a href={ios_url} onClick={handleAppLinkClick} target="_blank" rel="noopener noreferrer"><img className="mobile-header-img" src={iconIos}/></a>) : (<a href={android_url} onClick={handleAppLinkClick} target="_blank" rel="noopener noreferrer"><img className="mobile-header-img" src={iconGoogle}/></a>);
+
+    const iosHeaderImg = (<a href={ios_url} onClick={handleAppLinkClick}
+      target="_blank" rel="noopener noreferrer">
+      <img className="mobile-header-img" src={iconIos}/>
+    </a>);
+
+    const androidHeaderImg = (<a href={android_url} onClick={handleAppLinkClick}
+      target="_blank" rel="noopener noreferrer">
+      <img className="mobile-header-img" src={iconGoogle}/>
+    </a>);
 
     const learnMoreLink = "https://www.mozilla.org/privacy/websites/#campaigns";
 
@@ -114,7 +123,7 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
           <div className="modal-content centered default-background">
             <div className="header-wrapped">
               {headerMessage}
-              {headerImg}
+              {isIOS ? iosHeaderImg : androidHeaderImg}
             </div>
             {loading && <Loading/>}
             {!loading && !isSuccess && this.renderForm()}

@@ -166,19 +166,12 @@ function createButtons({
 
   const mobileControls = () => {
     if (!isMobile(userAgent)) {
-      if (platforms.includes("ios")) {
-        if (platforms.includes("android")) {
-          return (
-            <Fragment>
-              <MobileTriggerIOSButton {...{ doShowMobileAppDialog, color: "default" }} />
-              <MobileTriggerAndroidButton {...{ doShowMobileAppDialog, color: "default" }} />
-            </Fragment>
-          );
-        }
-        return <MobileTriggerIOSButton {...{ doShowMobileAppDialog, color: "default" }} />;
-      }
-
-      if (platforms.includes("android")) return <MobileTriggerAndroidButton {...{ doShowMobileAppDialog, color: "default" }} />;
+      return (<Fragment>
+        {(platforms.includes("ios")) &&
+          <MobileTriggerIOSButton {...{ doShowMobileAppDialog, color: "default" }} />}
+        {(platforms.includes("android")) &&
+          <MobileTriggerAndroidButton {...{ doShowMobileAppDialog, color: "default" }} />}
+      </Fragment>);
     }
 
     const category = "ExperimentDetailsPage Interactions";
