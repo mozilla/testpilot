@@ -167,7 +167,7 @@ export default class EmailDialog extends Component<EmailDialogProps, EmailDialog
   reset(e: Object) {
     e.preventDefault();
     e.stopPropagation();
-    this.setState({ isSuccess: false, isError: false });
+    this.setState({ isError: false });
   }
 
   skip(e: Object) {
