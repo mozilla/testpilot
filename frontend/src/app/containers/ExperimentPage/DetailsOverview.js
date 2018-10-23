@@ -183,7 +183,7 @@ export const StatsSection = ({
           </Localized>
         </a>
       </li>
-      {!isMinFirefox && !platforms.includes("web") &&
+      {platforms && !isMinFirefox && !platforms.includes("web") &&
         !platforms.includes("ios") && !platforms.includes("android") &&
         <li>
           <a onClick={highlightPrivacy}>
