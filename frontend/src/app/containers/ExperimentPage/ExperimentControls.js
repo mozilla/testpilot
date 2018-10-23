@@ -98,7 +98,7 @@ export default function ExperimentControls({
         </div>
       );
     } else {
-      legalSection = ( buttons !== null && 
+      legalSection = ( buttons !== null &&
         <div className="privacy-link">
           <Localized id="highlightPrivacy">
             <a onClick={highlightPrivacy} className="highlight-privacy">
