@@ -70,7 +70,7 @@ export default function DetailsOverview({
         <section className="user-count">
           <LaunchStatus {...{ experiment, graduated }} />
         </section>
-        {!graduated && <StatsSection {...{ experiment, doShowTourDialog, sendToGA, hasTour }} />}
+        {!graduated && <StatsSection {...{ experiment, doShowTourDialog, flashMeasurementPanel, sendToGA, hasTour, isMinFirefox }} />}
         <ContributorsSection {...{ experiment, l10nId }} />
         {!graduated &&
           <MeasurementsSection
@@ -117,17 +117,30 @@ export const LaunchStatus = ({ experiment, graduated }: LaunchStatusType) => {
 
 export const StatsSection = ({
   doShowTourDialog,
+  flashMeasurementPanel,
   experiment: {
     title,
     web_url,
+    platforms,
     changelog_url,
     contribute_url,
     bug_report_url,
     discourse_url
   },
   sendToGA,
-  hasTour
+  hasTour,
+  isMinFirefox
 }: StatsSectionType) => {
+
+  const highlightPrivacy = () => {
+    document.querySelectorAll(".measurements").forEach(el => {
+      if (el.offsetTop) {
+        window.scrollTo(0, el.offsetTop);
+      }
+    });
+    flashMeasurementPanel();
+  };
+
   return <section className="stats-section">
     <ul>
       {!web_url && hasTour &&
@@ -170,6 +183,14 @@ export const StatsSection = ({
           </Localized>
         </a>
       </li>
+      {!isMinFirefox && !platforms.includes("web") &&
+        !platforms.includes("ios") && !platforms.includes("android") &&
+        <li>
+          <a onClick={highlightPrivacy}>
+            <Localized id="highlightPrivacy"><span>Your privacy</span></Localized>
+          </a>
+        </li>
+      }
     </ul>
   </section>;
 };
