@@ -262,7 +262,7 @@ newsletterFooterError = თქვენი ელფოსტის მისა
 newsletterFooterHeader = დარჩით კავშირზე
 newsletterFooterBody = მოიძიეთ ახალი საცდელი შესაძლებლობები და იხილეთ შემოწმების შედეგები.
 newsletterFooterSuccessHeader = გმადლობთ!
-newsletterFooterSuccessBody = თუ ჯერ არ დაგიმოწმებიათ Mozilla-ს საინფორმაციო ცნობების გამოწერა, ამის გაკეთება ახლაც შეგიძლიათ. გთხოვთ, მონახოთ ჩვენი გზავნილი მიღებული წერილების, ან სპამის საქაღალდეში.
+newsletterFooterSuccessBody = თუ ჯერ არ დაგიმოწმებიათ Mozilla-ს საინფორმაციო ცნობების გამოწერა, ამის გაკეთება ახლაც შეგიძლიათ. გთხოვთ, მონახოთ ჩვენი გზავნილი მიღებული წერილების, ან ჯართის საქაღალდეში.
 
 ## A warning shown to users when the experiment is not available in their language
 
