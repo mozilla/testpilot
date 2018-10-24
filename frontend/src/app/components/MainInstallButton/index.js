@@ -119,8 +119,8 @@ export default class MainInstallButton extends Component<MainInstallButtonProps,
   renderEnableExperimentButton(title: string) {
     return (
       <div className="main-install__enable">
-        <Localized id="oneClickInstallMajorCta" $title={title}>
-          <span className="main-install__minor-cta">Enable {title}</span>
+        <Localized id="enableExperiment" $title={title}>
+          <span className="default-text">Enable {title}</span>
         </Localized>
       </div>
     );
@@ -132,8 +132,8 @@ export default class MainInstallButton extends Component<MainInstallButtonProps,
         <Localized id="oneClickInstallMinorCta">
           <span className="main-install__minor-cta">Install Test Pilot &amp;</span>
         </Localized>
-        <Localized id="oneClickInstallMajorCta" $title={title}>
-          <span className="main-install__major-cta">Enable {title}</span>
+        <Localized id="enableExperiment" $title={title}>
+          <span className="default-text">Enable {title}</span>
         </Localized>
       </div>
     );
