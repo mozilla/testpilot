@@ -195,7 +195,7 @@ export const InstallTestPilotButton = ({
           </Localized>
         )}
         {!isEnabling && (
-          <Localized id="oneClickInstallMajorCta" $title={title}>
+          <Localized id="enableExperiment" $title={title}>
             <span className="one-click-major">Enable {title}</span>
           </Localized>
         )}

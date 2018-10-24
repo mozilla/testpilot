@@ -45,8 +45,6 @@ landingInstallingButton = Installing…
 
 ## Related to a one click to install test pilot and an experiment.
 oneClickInstallMinorCta = Install Test Pilot &amp;
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = Enable {$title}
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 landingRequiresDesktop = Test Pilot requires Firefox for Desktop on Windows, Mac or Linux
