@@ -281,8 +281,10 @@ export type LaunchStatusType = {
 export type StatsSectionType = {
   experiment: Object,
   doShowTourDialog: Function,
+  flashMeasurementPanel: Function,
   sendToGA: Function,
-  hasTour: boolean
+  hasTour: boolean,
+  isMinFirefox: boolean
 };
 
 export type ContributorsSectionType = {
