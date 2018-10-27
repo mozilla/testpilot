@@ -22,6 +22,7 @@ footerLinkDownload = Unduh Firefox
 # link to page detailing firefox mobile browser options
 footerLinkMobile = Seluler
 footerLinkFeatures = Fitur
+footerLinkBeta = Beta, Nightly, Developer Edition
 footerLinkRetire = Copot Test Pilot
 
 ## Items in the menu and footer
@@ -104,6 +105,8 @@ mobileDialogPlaceholderSMS = Masukkan Telepon/Surel Anda
 mobileDialogButton = Kirimi saya Tautan Unduhan
 mobileDialogButtonSuccess = Terima Kasih!
 mobileDialogSuccessMain = Tautan unduhan terkirim!
+mobileDialogSuccessSecondarySMS = Periksa peranti Anda untuk surel atau pesan teks.
+mobileDialogSuccessSecondary = Periksa peranti Anda untuk surelnya.
 mobileDialogAnotherDeviceLink = Kirim ke peranti lainnya
 mobileDialogError = Masukkan surel yang valid:
 mobileDialogErrorSMS = Masukkan nomor telepon atau surel yang valid:
@@ -179,9 +182,11 @@ discussExperiment = Diskusi { $title }
 tourDoneButton = Selesai
 userCountContainerAlt = Baru saja diluncurkan!
 highlightPrivacy = Privasi Anda
+experimentGradReportButton = Laporan Kelulusan
 experimentGradReportPendingTitle = Percobaan ini telah berakhir
 experimentGradReportPendingCopy = Kami sedang mengerjakan laporan lengkapnya. Periksa kembali untuk melihat secara detil.
 experimentGoToLink = Buka { $title }
+startedDate = Tanggal mulai eksperimen: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -280,6 +285,7 @@ hidePastExperiments = Sembunyikan Percobaan Sebelumnya
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Ada kesalahan!
+warningGoToFAQDetail = Terjadi kesalahan pada Test Pilot. Silakan <a>cek FAQs</a> dan pelajari lebih lanjut.
 warningUpgradeFirefoxTitle = Tingkatkan Firefox untuk melanjutkan!
 warningUpgradeFirefoxDetail = Test Pilot memerlukan Firefox versi terbaru. <a>Tingkatkan Firefox</a> untuk memulai.
 warningHttpsRequiredTitle = HTTPS diwajibkan!
@@ -291,3 +297,4 @@ warningBadHostnameDetail = Situs Test Pilot hanya bisa diakses melalui testpilot
 
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
+jsDisabledWarning = Test Pilot memerlukan JavaScript. Maaf.
