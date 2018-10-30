@@ -14,6 +14,16 @@ footerLinkPrivacy = Privatësi
 footerLinkTerms = Kushte
 footerLinkLegal = Ligjore
 footerLinkFeedback = Jepni Përshtypjet
+# This is a header displayed above a set of links about Mozilla and Test Pilot
+footerLinkAboutHeader = Rreth
+footerLinkAboutUs = Rreth nesh
+footerLinkSupportHeader = Asistencë
+footerLinkDownload = Shkarkoni Firefox-in
+# link to page detailing firefox mobile browser options
+footerLinkMobile = Celular
+footerLinkFeatures = Veçori
+footerLinkBeta = Beta, Nightly, Edicioni i Zhvilluesit
+footerLinkRetire = Çinstaloje Pilotin e Testeve
 
 ## Items in the menu and footer
 
@@ -83,6 +93,21 @@ emailOptInConfirmationTitle = Email-i u Dërgua
 emailOptInConfirmationClose = Oburra te eksperimentet…
 emailOptInDialogErrorTitle = Mooos!
 
+## modal prompt for sending link to experiment mobile apps via email or sms
+
+mobileDialogTitle = Merreni Aplikacionin
+mobileDialogMessageIOS = Shkarkojeni <b>{ $title }</b> që nga iOS App Store.
+mobileDialogMessageAndroid = Shkarkojeni <b>{ $title }</b> që nga Google Play Store.
+mobileDialogPlaceholder = Jepni Email-in tuaj
+mobileDialogPlaceholderSMS = Jepni Telefonin/Email-in tuaj
+mobileDialogButton = Dërgomëni Lidhjen e Shkarkimit
+mobileDialogButtonSuccess = Faleminderit!
+mobileDialogSuccessMain = Lidhja e shkarkimit u dërgua!
+mobileDialogAnotherDeviceLink = Dërgojeni në një tjetër pajisje
+mobileDialogError = Jepni një email të vlefshëm.
+mobileDialogErrorSMS = Jepni një numër telefoni ose email të vlefshëm:
+mobileDialogNoticeSMSWithLink = Shërbim SMS i vlefshëm vetëm për disa vende. Mund të aplikohen tarifa SMS-sh &amp; të dhënash. Marrësi i synuar i email-it ose SMS-së duhet të ketë rënë dakord. <a>Mësoni më tepër</a>
+
 ## Featured experiment.
 
 moreDetail = Shihni hollësi
@@ -130,6 +155,8 @@ experimentPromoSubheader = Po krijojmë veçoritë e brezit të ardhshëm për F
 
 isEnabledStatusMessage = { $title } është i aktivizuar.
 installErrorMessage = Hëm. { $title } s’u aktivizua dot. Riprovoni më vonë.
+wrongPlatformIOS = Ky eksperiment është vetëm për pajisje iOS.
+wrongPlatformAndroid = Ky eksperiment është vetëm për pajisje Android.
 otherExperiments = Provoni edhe këto eksperimente
 giveFeedback = Jepni Përshtypjet
 disableHeader = Të çaktivizohet Eksperimenti?
@@ -165,13 +192,18 @@ nonExperimentDialogHeaderLink = Pilot Testesh
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Eksperiment për Firefox / web / celular
-experimentPlatformWebAddon = Eksperiment Firefox / web
-experimentPlatformWebMobile = eksperiment web / për celular
-experimentPlatformAddonMobile = Eksperiment Firefox / për celular
-experimentPlatformWeb = Eksperiment web
 experimentPlatformAddon = Eksperiment Firefox
-experimentPlatformMobileApp = Eksperiment për celular
+experimentPlatformAndroid = Eksperiment Android
+experimentPlatformIos = Eksperiment iOS
+experimentPlatformWeb = Eksperiment web
+experimentPlatformAddonWeb = Eksperiment Firefox / web
+experimentPlatformAddonAndroid = Eksperiment Android / Firefox
+experimentPlatformAddonIos = Eksperiment iOS / Firefox
+experimentPlatformAddonAndroidIos = Eksperiment Android / iOS / Firefox
+experimentPlatformAddonAndroidWeb = Eksperiment Android / Firefox / web
+experimentPlatformAddonAndroidIosWeb = Eksperiment Android / iOS / Firefox / web
+experimentPlatformAndroidWeb = Eksperiment Android / web
+experimentPlatformAndroidIos = Eksperiment Android / iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
