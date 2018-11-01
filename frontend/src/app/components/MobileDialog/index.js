@@ -266,6 +266,7 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
           dimension13: fromFeatured ? "Featured Experiment" : "Experiment Detail"
         });
         this.setState({
+          submitAttempted: true,
           isSuccess: response.ok,
           isError: !response.ok
         });
@@ -290,6 +291,7 @@ export default class MobileDialog extends Component<MobileDialogProps, MobileDia
       });
 
       this.setState({
+        submitAttempted: true,
         isSuccess: response.ok,
         isError: !response.ok
       });
