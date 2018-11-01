@@ -169,7 +169,7 @@ export default class FeaturedButton extends Component<FeaturedButtonProps, Featu
             <React.Fragment>
               <div className="main-install__spacer"></div>
               <div className="mobile-button-wrap">
-                <MobileTriggerIOSButton doShowMobileAppDialog={this.doShowMobileAppDialog} color={"primary"} />
+                <MobileTriggerIOSButton doShowMobileAppDialog={this.doShowMobileAppDialog} color={"default"} />
                 <MobileTriggerAndroidButton doShowMobileAppDialog={this.doShowMobileAppDialog} color={"primary"} />
               </div>
               { this.renderLegalLink() }

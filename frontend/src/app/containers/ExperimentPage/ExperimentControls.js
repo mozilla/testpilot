@@ -170,7 +170,7 @@ function createButtons({
         {(platforms.includes("ios")) &&
           <MobileTriggerIOSButton {...{ doShowMobileAppDialog, color: "default" }} />}
         {(platforms.includes("android")) &&
-          <MobileTriggerAndroidButton {...{ doShowMobileAppDialog, color: "default" }} />}
+          <MobileTriggerAndroidButton {...{ doShowMobileAppDialog, color: "primary" }} />}
       </Fragment>);
     }
 
