@@ -8,4 +8,4 @@ pytest-repeat==0.7.0
 pytest-xdist==1.24.0
 pytest-variables==1.7.1
 requests==2.20.0
-selenium==3.14.1
+selenium==3.141.0
