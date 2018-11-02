@@ -263,6 +263,7 @@ newsletterFooterSuccessBody = Jika Anda belum pernah mengkonfirmasi langganan pa
 
 ## A warning shown to users when the experiment is not available in their language
 
+localeNotTranslatedWarningTitle = Eksperimen ini belum diterjemahkan ke bahasa Anda ({ $locale_code }).
 localeWarningSubtitle = Anda masih dapat mengaktifkannya jika Anda mau.
 
 ## An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
