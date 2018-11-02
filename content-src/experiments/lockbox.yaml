@@ -1,8 +1,8 @@
 id: 18
 slug: firefox-lockbox
 title: 'Firefox Lockbox'
-order: 1
-is_featured: true
+order: 0
+is_featured: false
 dev: false
 web_url: https://lockbox.firefox.com/
 platforms: ['ios']
