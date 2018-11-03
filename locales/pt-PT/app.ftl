@@ -142,8 +142,8 @@ feedbackSubmitButton = Responda a um questionário rápido
 feedbackUninstallTitle = Obrigado!
 feedbackUninstallCopy =
     A sua participação no Firefox Test Pilot significa
-    muito! Por favor, consulte as nossas outras experiências,
-    e fique atento para o que está para vir!
+    muito! Por favor consulte as nossas outras experiências,
+    e fique atento(a) para o que está para vir!
 
 ## A modal prompt shown before the feedback survey for some experiments.
 
@@ -273,7 +273,7 @@ localeWarningSubtitle = Ainda pode ativá-la se desejar.
 
 experimentsListNoneInstalledHeader = Vamos tirar este bebé do chão!
 experimentsListNoneInstalledSubheader = Pronto para experimentar uma nova experiência do Test Pilot? Selecione uma para ativar, leve-a para uma volta, e deixe-nos saber o que pensa.
-experimentsListNoneInstalledCTA = Não esta interessado? <a>Deixe-nos saber porquê</a>.
+experimentsListNoneInstalledCTA = Não esta interessado(a)? <a>Deixe-nos saber porquê</a>.
 
 ## Shown to users who do not have JavaScript enabled.
 
@@ -295,9 +295,9 @@ warningUpgradeFirefoxDetail = O Test Pilot requer a versão mais recente do Fire
 warningHttpsRequiredTitle = HTTPS é obrigatório!
 warningHttpsRequiredDetail = O Test Pilot deve ser acedido através de HTTPS. Por favor, consulte a <a>nossa documentação</a> para detalhes.
 warningMissingPrefTitle = A programar no Test Pilot?
-warningMissingPrefDetail = Ao executar o Test Pilot localmente ou em ambiente de desenvolvimento, é necessária uma configuração especial. Por favor, consulte a <a>nossa documentação</a> para detalhes.
+warningMissingPrefDetail = Ao executar o Test Pilot localmente ou em ambientes de desenvolvimento, uma configuração especial é requerida. Por favor veja a <a>nossa documentação</a> para detalhes.
 warningBadHostnameTitle = Nome de servidor não aprovado!
-warningBadHostnameDetail = O site do Test Pilot apenas pode ser acedido a partir de testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, ou example.com:8000. Por favor, consulte a <a>nossa documentação</a> para detalhes.
+warningBadHostnameDetail = O site do Test Pilot apenas pode ser acedido a partir de testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net, ou example.com:8000. Por favor veja a <a>nossa documentação</a> para detalhes.
 
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
