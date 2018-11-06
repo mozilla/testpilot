@@ -76,12 +76,13 @@ export const FeedbackButton = ({
 };
 
 export const MobileTriggerButton = ({
-  doShowMobileAppDialog, optionalClass = "", color = "default"
+  doShowMobileAppDialog, platforms = [], optionalClass = "", color = "default"
 }: MobileTriggerButtonType) => {
+  const platform = platforms.includes("ios") ? "ios" : "android";
   return (
     <a
       className={`button mobile-trigger ${color} icon-button ${optionalClass}`}
-      onClick={doShowMobileAppDialog}>
+      onClick={(evt) => doShowMobileAppDialog(evt, platform)}>
       <img src={iconExperimentTypeMobileWhite} />
       <Localized id="mobileDialogTitle">
         <span>Get the App</span>
