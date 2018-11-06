@@ -73,6 +73,8 @@ containersContributors6Title = Varnost vmesnika
 containersContributors7Title = Up. izkušnja Firefoxa
 containersContributors8Title = Up. izkušnja Firefoxa
 containersContributors9Title = Up. izkušnja Firefoxa
+emailtabsContributors0Title = Programski inženir
+emailtabsContributors1Title = Inženir
 firefoxlockboxDescription = Ponesite gesla s seboj z aplikacijo Firefox Lockbox za iPhone.
 firefoxlockboxIntroductionUrlsandcountries = <p>Vzemite svoja gesla s seboj. Test Pilotov poskus Firefox Lockbox vam omogoča dostop do vseh prijav, shranjenih v Firefox, v varni aplikaciji za iPhone. Preprosto se prijavite v Lockbox s svojim Firefox Računom in vaša shranjena uporabniška imena in gesla se bodo sinhronizirala v aplikacijo z uporabo 256-bitnega šifriranja. Tako boste imeli preprost dostop do spletnih računov, tudi če ste na poti.</p> <p><strong>Firefox Lockbox za dostop do shranjenih prijav zahteva Firefox Račun. Če računa še nimate nastavljenega, začnite:<br/><a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></strong></p> <p><em>Želite biti obveščeni o izidu aplikacije za Android? Prijavite se:<br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = Uporabljajte podatke o uporabniških imenih in geslih vseh računov, ki jih shranite v Firefox.
