@@ -73,6 +73,9 @@ containersContributors6Title = 前端安全
 containersContributors7Title = Firefox 用户体验
 containersContributors8Title = Firefox 用户体验
 containersContributors9Title = Firefox 用户体验
+emailtabsContributors0Title = 软件工程师
+emailtabsContributors1Title = 工程师
+emailtabsContributors2Title = Firefox 用户体验
 firefoxlockboxDescription = 使用 iPhone 版 Firefox Lockbox 应用，将您的密码随身携带。
 firefoxlockboxIntroductionUrlsandcountries = <p>使用 Firefox Lockbox 随身携带您的密码。此 Test Pilot 实验允许您将所有登录信息保存在 Firefox 中，并可以在您的 iPhone 中用一款安全应用存取。只需用您的 Firefox 账户登录 Lockbox，您已保存的用户名和密码将经过 256 位加密同步到此应用。这样，即便在旅途中，您也可以轻松访问您的在线账户。</p> <p><strong>Firefox Lockbox 需要一个 Firefox 账户才能访问您以前保存的登录信息。如果您还没有账户，从这里开始：<br/><a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></strong></p> <p><em>想关注我们的 Android 应用何时推出？到如下地址订阅: <br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = 查看所有保存到 Firefox 的账号与密码。
