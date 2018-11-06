@@ -179,7 +179,7 @@ export default class FeaturedButton extends Component<FeaturedButtonProps, Featu
         return (
           <React.Fragment>
             <div className="main-install__spacer"></div>
-            <MobileTriggerButton optionalClass={"main-install__button"} doShowMobileAppDialog={this.doShowMobileAppDialog} color={"primary"} />
+            <MobileTriggerButton optionalClass={"main-install__button"} doShowMobileAppDialog={this.doShowMobileAppDialog} color={"primary"} platforms={platforms} />
             { this.renderLegalLink() }
           </React.Fragment>
         );
