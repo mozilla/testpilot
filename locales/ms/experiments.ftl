@@ -74,6 +74,7 @@ containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
 emailtabsDescription = Karang e-mel dengan mudah dalam semua tab serta lebih mudah untuk disimpan dan dikongsi.
+emailtabsIntroduction = <p>Pernahkah anda perlu simpan atau berkongsi tab semasa menyelidik, membeli atau melayari web? Email Tabs membolehkan anda mengarang e-mel dalam tab terbuka untuk disimpan atau dikongsi kemudian. Anda boleh gunakan Email Tabs untuk menghantar pautan secara automatik, skrinsyot atau teks dari artikel. <P> <p>Email Tabs kini berfungsi dengan mel web Gmail, dan kami sedang berusaha untuk menjadikannya berfungsi dengan penyedia mel web lain popular yang lain.</p>
 emailtabsContributors0Title = Jurutera Perisian
 emailtabsContributors1Title = Jurutera
 emailtabsContributors2Title = Firefox UX
