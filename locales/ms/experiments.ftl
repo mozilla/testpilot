@@ -73,6 +73,7 @@ containersContributors6Title = Keselamatan Terunggul
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+emailtabsDescription = Karang e-mel dengan mudah dalam semua tab serta lebih mudah untuk disimpan dan dikongsi.
 firefoxlockboxDescription = Ambil kata laluan di mana-mana sahaja dengan Firefox Lockbox App untuk iPhone.
 firefoxlockboxIntroductionUrlsandcountries = <p>Bawa kata laluan ke mana sahaja dengan Firefox Lockbox. Eksperimen Test Pilot ini memberikan anda  akses ke semua log masuk yang disimpan di Firefox, dalam aplikasi yang selamat dalam iPhone anda. Log masuk ke Lockbox menggunakan Akaun Firefox, dan nama pengguna serta kata laluan yang disimpan akan diselaraskan ke aplikasi menggunakan enkripsi 256-bit. Anda dengan mudah boleh mengakses akaun atas talian di mana-mana sahaja.</p> <p><strong>Firefox Lockbox memerlukan Akaun Firefox Account untuk mengakses log masuk terdahulu. Jika anda belum ada akaun, mulakan:<br/><a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></strong></p> <p><em>Mahu dimaklumkan apabila ada pelancaran aplikasi Android? Daftar:<br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = Akses maklumat nama pengguna dan kata laluan semua akaun yang anda simpan ke Firefox.
