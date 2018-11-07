@@ -73,6 +73,9 @@ containersContributors6Title = Front End Security
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+emailtabsContributors0Title = Software-yngenieur
+emailtabsContributors1Title = Yngenieur
+emailtabsContributors2Title = Firefox UX
 firefoxlockboxDescription = Nim mei de app ‘Firefox Lockbox’ foar de iPhone al jo wachtwurden mei jo mei.
 firefoxlockboxIntroductionUrlsandcountries = <p>Nim mei Firefox Lockbox jo wachtwurden mei. Mei dit Test-Pilot-eksperimint hawwe jo tagong ta alle yn Firefox bewarre oanmeldingen, yn in feilige app op jo iPhone. Meld jo mei jo Firefox-account by Lockbox oan en jo bewarre brûkersnammen en wachtwurden wurde mei 256-bit-fersifering yn de App syngronisearre. Sa hawwe jo ek ûnderweis ienfâldich tagong ta online accounts.</p> <p><strong>Firefox Lockbox hat in Firefox-account nedich foar tagong ta jo bewarre oanmeldgegevens. Wannear't jo noch gjin account hawwe, kinne jo hjir starte:<br/><a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></strong></p> <p><em>Wolle jo in melding krije wannear't ús Android-app ferskynt? Meld jo dan oan:<br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = Benaderje brûkersnamme- en wachtwurdynformaasje foar alle accounts dy't jo yn Firefox bewarje.
