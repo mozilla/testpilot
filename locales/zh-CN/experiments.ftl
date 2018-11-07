@@ -161,6 +161,7 @@ pageshotDetails2Copy = 轻松找到已保存的截图。用网格视图浏览缩
 pageshotContributors0TitleEngineer = 软件工程师
 pageshotContributors1Title = 软件工程师
 pageshotContributors2Title = UX设计师
+pricewiseLegalnotice = 继续即代表您同意 Test Pilot 的<terms-link>使用条款</terms-link>和<privacy-link>隐私政策</privacy-link>，以及 <modal-link>Price Wise 隐私政策</modal-link>。
 pulseDescription = 为我们提供性能评估。添加 Pulse，帮助我们了解哪些网站在 Firefox 中良好运转，哪些运转不太好。
 pulseIntroduction = 我们在打造下一代的 Firefox，我们专注于真实的速度和性能。Pulse 使您可以向我们的工程师反馈您在 Firefox 上使用特定网站的体验是否良好。
 pulseDetails0Copy = 在您浏览时提供网站性能的反馈。
