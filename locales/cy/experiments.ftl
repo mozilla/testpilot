@@ -73,6 +73,7 @@ containersContributors6Title = Diogelwch Blaen
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+emailtabsDescription = Creu e-bost o'ch tabiau i gyd a gwneud cadw a rhannu yn haws nag erioed o'r blaen.
 firefoxlockboxDescription = Cymrwch eich cyfrineiriau i bobman gydag ap Lockbox Firefox ar gyfer iPhone.
 firefoxlockboxIntroductionUrlsandcountries = <p>Cymrwch eich cyfrineiriau i bob man gyda Firefox Lockbox. Mae'r arbrawf Test Pilot yma'n rhoi mynediad i chi i'r holl fewngofnodion rydych wedi eu cadw i Firefox, mewn ap diogel ar eich iPhone. Mewngofnodwch i Lockbox gyda'ch Cyfrif Firefox, a bydd eich enwau defnyddwyr a chyfrineiriau sydd wedi eu cadw yn cael eu cydweddu i'r ap gan ddefnyddio amgryptiad 256 did. Felly fydd gennych fynediad hawdd i gyfrifon ar-lein, hyd yn oed ar daith. </p> <p><strong>Mae Firefox Loxkbox angen cyfrif Firefox er mwyn cael mynediad i'ch mewngofnodion blaenorol. Os nad oes gennych gyfrif, cychwynnwch gyda <br/><a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></strong></p> <p><em>Eisiau hysbysiad pan fydd ein ap Android yn cael ei lansio? Cofrestrwch:<br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = Cewch fynediad i'ch enwau defnyddiwr a chyfrinair ar gyfer pob cyfrif rydych yn eu cadw i Firefox.
