@@ -3,7 +3,7 @@ title: 'Email Tabs'
 slug: email-tabs
 is_featured: false
 platforms: ['addon']
-min_release: 62
+min_release: 57
 thumbnail: /static/images/experiments/email-tabs/email-tabs.png
 description: >
   Easily create emails from all of your tabs and make saving and sharing easier than ever.
