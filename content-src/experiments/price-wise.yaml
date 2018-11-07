@@ -1,4 +1,3 @@
----
 addon_id: shopping-testpilot@mozilla.org
 bug_report_url: "https://github.com/mozilla/price-wise/issues"
 contributors:
@@ -8,6 +7,15 @@ contributors:
   -
     avatar: /static/images/experiments/price-wise/avatars/osmose.jpg
     display_name: Osmose
+  -
+    avatar: /static/images/experiments/price-wise/avatars/carmen.jpg
+    display_name: Carmen Fat
+  -
+    avatar: /static/images/experiments/price-wise/avatars/pablo.jpg
+    display_name: Pablo Oubina
+  -
+    avatar: /static/images/experiments/price-wise/avatars/remus.jpg
+    display_name: Remus Dranca
 created: "2018-11-12T14:00:00Z"
 description: "Price Wise automatically looks for price drops on specific products at Amazon, Walmart and other top retailers."
 details:
@@ -43,5 +51,5 @@ privacy_notice_url: "https://github.com/mozilla/price-wise/blob/master/docs/METR
 slug: price-wise
 thumbnail: /static/images/experiments/price-wise/icon/thumbnail.png
 title: "Price Wise"
-video_url: https://www.youtube.com/embed/dQw4w9WgXcQ
+video_url: "https://www.youtube.com/embed/UpRLjTQmkW4" 
 xpi_url: "https://testpilot.firefox.com/files/shopping-testpilot@mozilla.org/latest"
