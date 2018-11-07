@@ -73,6 +73,9 @@ containersContributors6Title = Segurança Front End
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+emailtabsContributors0Title = Engenheiro de Software
+emailtabsContributors1Title = Engenheiro
+emailtabsContributors2Title = Firefox UX
 firefoxlockboxDescription = Leve as suas palavras-passe para todo o lado com a aplicação Firefox Lockbox para iPhone.
 firefoxlockboxIntroductionUrlsandcountries = <p>Leve as suas palavras-passe para todo o lado com o Firefox Lockbox. Esta experiência Test Pilot dá-lhe acesso a todas as credenciais que guardou no Firefox, numa aplicação segura no seu iPhone. Apenas inicie sessão no Lockbox com a sua Conta Firefox, e os seus nomes de utilizador guardados e palavras-passe irão sincronizar para a aplicação utilizando encriptação 256-bit. Para que tenha acesso fácil às contas online, até mesmo no momento.</p> <p><strong>O Firefox Lockbox requer uma Conta Firefox de maneira a aceder às suas credenciais previamente guardadas. Se não tem uma conta configurada, comece aqui:<br/><a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></strong></p> <p><em>Pretende ser notificado(a) quando a nossa aplicação Android for lançada? Registe-se:<br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = Aceda à informação de nome de utilizador e palavra-passe para todas as contas que guarda no Firefox.
