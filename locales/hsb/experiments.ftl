@@ -73,6 +73,10 @@ containersContributors6Title = Wěstota Front End
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+emailtabsToursteps4Copy = Móžeće nam přeco swoje měnjenje zdźělić abo Email Tabs w Test Pilot znjemóžnić.
+emailtabsContributors0Title = Wuwiwar softwary
+emailtabsContributors1Title = Wuwiwar
+emailtabsContributors2Title = Firefox UX
 firefoxlockboxDescription = Wzmiće z Firefox Lockbox za iPhone swoje hesła wšudźe sobu.
 firefoxlockboxIntroductionUrlsandcountries = <p>Wzmiće swoje hesła z Firefox Lockbox wšudźe sobu. Tutón eksperiment Test Pilot da wam přistup na wšě přizjewjenja, kotrež sće we Firefox, we wěstym nałoženju na swojim iPhone, składował. Přizjewće so prosće ze swojim kontom Firefox pola Lockbox, a waše składowane wužiwarske mjena a hesła budu so z pomocu 256-bitowym zaklučowanjom z nałoženjom synchronizować. Změjeće potom lochki přistup na konta online, samo po puću.</p><p><strong>Firefox Lockbox sej konto Firefox wužaduje, zo by přistup na waše do toho składowane přizjewjenja měł. Jeli konto nimaće, započńće tu:<br/>a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></strong></p> <p><em>Chceće zdźělenje dóstać, hdyž waše nałoženje Android startuje? Registrujće so:<br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = Mějće přistup na wužiwarske mjena a hesłowe daty za wšě konta, kotrež w Firefox składujeće.
