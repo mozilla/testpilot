@@ -74,6 +74,9 @@ containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
 emailtabsDescription = Karang e-mel dengan mudah dalam semua tab serta lebih mudah untuk disimpan dan dikongsi.
+emailtabsContributors0Title = Jurutera Perisian
+emailtabsContributors1Title = Jurutera
+emailtabsContributors2Title = Firefox UX
 firefoxlockboxDescription = Ambil kata laluan di mana-mana sahaja dengan Firefox Lockbox App untuk iPhone.
 firefoxlockboxIntroductionUrlsandcountries = <p>Bawa kata laluan ke mana sahaja dengan Firefox Lockbox. Eksperimen Test Pilot ini memberikan anda  akses ke semua log masuk yang disimpan di Firefox, dalam aplikasi yang selamat dalam iPhone anda. Log masuk ke Lockbox menggunakan Akaun Firefox, dan nama pengguna serta kata laluan yang disimpan akan diselaraskan ke aplikasi menggunakan enkripsi 256-bit. Anda dengan mudah boleh mengakses akaun atas talian di mana-mana sahaja.</p> <p><strong>Firefox Lockbox memerlukan Akaun Firefox Account untuk mengakses log masuk terdahulu. Jika anda belum ada akaun, mulakan:<br/><a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></strong></p> <p><em>Mahu dimaklumkan apabila ada pelancaran aplikasi Android? Daftar:<br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = Akses maklumat nama pengguna dan kata laluan semua akaun yang anda simpan ke Firefox.
@@ -159,6 +162,7 @@ pageshotDetails2Copy = Cari skrinsyot tersimpan dengan mudah. Layari imej kecil 
 pageshotContributors0TitleEngineer = Jurutera Perisian
 pageshotContributors1Title = Jurutera Perisian
 pageshotContributors2Title = Pereka bentuk UX
+pricewiseDescription = Price Wise secara automatik mencari penurunan harga produk tertentu di Amazon, Walmart dan peruncit teratas lain.
 pulseDescription = Berikan kami reviu prestasi. Tambah Pulse, dan bantu kami memahami laman web yang serasi dalam Firefox dan laman web yang sebaliknya.
 pulseIntroduction = Kami sedang membina Firefox generasi baru dan memberi tumpuan kepada prestasi dan kelajuan dunia-sebenar. Pulse membolehkan anda memberi kami maklum balas mengenai laman web yang berfungsi dengan baik dan yang tidak berfungsi dalam Firefox.
 pulseDetails0Copy = Berikan maklum balas prestasi laman web semasa anda melayari web.
