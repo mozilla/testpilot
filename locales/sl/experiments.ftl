@@ -73,6 +73,7 @@ containersContributors6Title = Varnost vmesnika
 containersContributors7Title = Up. izkušnja Firefoxa
 containersContributors8Title = Up. izkušnja Firefoxa
 containersContributors9Title = Up. izkušnja Firefoxa
+emailtabsDetails0Copy = Ustvarite e-poštna sporočila iz odprtih zavihkov s samo nekaj kliki.
 emailtabsContributors0Title = Programski inženir
 emailtabsContributors1Title = Inženir
 firefoxlockboxDescription = Ponesite gesla s seboj z aplikacijo Firefox Lockbox za iPhone.
