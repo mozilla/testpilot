@@ -73,6 +73,7 @@ containersContributors6Title = Seguridad de Front End
 containersContributors7Title = UX de Firefox
 containersContributors8Title = UX de Firefox
 containersContributors9Title = UX de Firefox
+emailtabsDescription = Creá fácilmente correos electrónicos desde todas tus pestañas y hacé que guardar y compartir sea más fácil que nunca.
 firefoxlockboxDescription = Llevá tus contraseñas a cualquier lado con la aplicación Firefox Lockbox para iPhone.
 firefoxlockboxIntroductionUrlsandcountries = <p>Llevá tus contraseñas a todas partes con Firefox Lockbox. Este experimento de Test Pilot te da acceso a todos los inicios de sesión que guardaste en Firefox en una aplicación segura en tu iPhone. No tenés más que entrar a Lockbox con tu cuenta de Firefox y tus nombres de usuario y contraseñas guardados se sincronizarán con la aplicación mediante el cifrado de 256-bit. Así tendrás acceso fácil a cuentas en línea, incluso sobre la marcha.</p><p><strong>Firefox Lockbox requiere una cuenta de Firefox para acceder a tus inicios de sesión guardados anteriormente. Si no tenés una cuenta configurada, empezá:<br><a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></strong></p><p><em>¿Querés recibir una notificación cuando se lance nuestra aplicación para Android? Unite:<br><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = Accedé a la información del nombre de usuario y la contraseña para todas las cuentas que guardás en Firefox.
