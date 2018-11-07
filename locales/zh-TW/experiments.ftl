@@ -73,6 +73,9 @@ containersContributors6Title = 前端安全性
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+emailtabsContributors0Title = 軟體工程師
+emailtabsContributors1Title = 工程師
+emailtabsContributors2Title = Firefox UX
 firefoxlockboxDescription = 使用 Firefox Lockbox App for iPhone，將您的密碼隨身帶著走。
 firefoxlockboxIntroductionUrlsandcountries = <p>使用 Firefox Lockbox，將您的密碼隨身帶著走。本 Test Pilot 實驗讓您可以在 iPhone 上的應用程式，安全地存取您儲存到 Firefox 的登入資訊。只要使用 Firefox 帳號登入 Lockbox，就會用 256 位元加密的方式同步您儲存的帳號與密碼到程式中，這樣就可以在出門時，也輕鬆登入各個網站。</p><p><strong>Firefox Lockbox 需要使用 Firefox 帳號才能存取先前儲存的登入資訊。若您沒有註冊過帳號，請參考本文:<br/><a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></strong></p><p><em>想在我們的 Android app 上線時也收到通知嗎？可在此搶先登記:<br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = 存取所有儲存至 Firefox 的帳號與密碼。
