@@ -161,6 +161,7 @@ pageshotDetails2Copy = Localize capturas de ecrã guardadas facilmente. Navegue 
 pageshotContributors0TitleEngineer = Engenheiro de Software
 pageshotContributors1Title = Engenheiro de Software
 pageshotContributors2Title = Designer de UX
+pricewiseLegalnotice = Ao proceder, concorda com os <terms-link>termos</terms-link> e políticas de <privacy-link>privacidade</privacy-link> do Test Pilot e com a <modal-link>política de privacidade do Price Wise</modal-link>.
 pulseDescription = Forneça-nos uma análise de desempenho. Adicione o Pulse e ajude-nos a compreender quais os websites que funcionam bem ou não no Firefox.
 pulseIntroduction = Estamos a construir a próxima geração do Firefox e estamos a focar-nos em velocidade e desempenho do mundo real. O Pulse permite-lhe fornecer comentários aos nossos engenheiros acerca da sua experiência em websites que funcionam bem ou não no Firefox.
 pulseDetails0Copy = Envie comentários acerca do desempenho do website à medida que você navega.
