@@ -3,7 +3,7 @@ title: 'Email Tabs'
 slug: email-tabs
 is_featured: false
 platforms: ['addon']
-min_release: 62
+min_release: 63
 thumbnail: /static/images/experiments/email-tabs/email-tabs.png
 description: >
   Easily create emails from all of your tabs and make saving and sharing easier than ever.
@@ -17,6 +17,7 @@ contribute_url: 'https://github.com/mozilla/email-tabs'
 bug_report_url: 'https://github.com/mozilla/email-tabs/issues'
 discourse_url: 'https://discourse.mozilla-community.org/c/test-pilot/email-tabs'
 privacy_notice_url: 'https://github.com/mozilla/email-tabs/blob/master/docs/metrics.md'
+legal_notice: By proceeding, you agree to the <terms-link>terms</terms-link> and <privacy-link>privacy</privacy-link> policies of Test Pilot and the <modal-link>Firefox Color privacy policy</modal-link>.
 measurements:
   - >
     Email Tabs collects information about your use of the feature such as which email provider you choose, how often you interact with Email Tabs UI,  and whether you choose to send all tabs at once or just a selection.
