@@ -1,6 +1,6 @@
 const defaultConfig = {
   isDev: true,
-  minFirefoxVersion: 58,
+  minFirefoxVersion: 63,
   experimentsURL: "/api/experiments.json",
   ravenPublicDSN:
     "https://5ceef9a20a6e4cdd93cc9a935be78c73@sentry.prod.mozaws.net/169",
