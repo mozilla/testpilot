@@ -233,11 +233,16 @@
     font-weight: normal;
     margin: $grid-unit * .25 $grid-unit * .75 0;
   }
+}
 
+.upgrade-notice-wrapper {
   .upgrade-notice {
+    background: $eol-light-orange;
+    border: 2px dashed $eol-orange;
     font-size: 13px;
     line-height: 1.6em;
-    text-align: right;
+    margin: $grid-unit * .5 0;
+    padding: $grid-unit;
 
     a {
       font-size: 15px;

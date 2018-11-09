@@ -120,6 +120,8 @@ export default class DetailsHeader extends Component<DetailsHeaderProps> {
           <div className="spacer"></div>
           {experiment.platforms &&
                   <ExperimentPlatforms experiment={experiment} />}
+        </LayoutWrapper>
+        <LayoutWrapper helperClass="upgrade-notice-wrapper">
           <MinimumVersionNotice
             {...{ userAgent, slug, title, hasAddon, min_release, sendToGA }}
           />
