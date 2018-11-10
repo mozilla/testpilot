@@ -51,8 +51,6 @@ landingInstallingButton = Po instalohet...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Instalo Pilotin e Testeve &amp;
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = Aktivizo { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -96,13 +94,19 @@ emailOptInDialogErrorTitle = Mooos!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Merreni Aplikacionin
+mobileDialogAndroidButton = Merrni aplikacionin për Android
+mobileDialogIOSButton = Merrni aplikacionin për iOS
 mobileDialogMessageIOS = Shkarkojeni <b>{ $title }</b> që nga iOS App Store.
 mobileDialogMessageAndroid = Shkarkojeni <b>{ $title }</b> që nga Google Play Store.
+mobileDialogInstructionsSMS = Jepni numrin tuaj të telefonit ose email-in që të dërgohet te telefoni juaj një lidhje shkarkimi:
+mobileDialogInstructions = Jepni email-in që të dërgohet te telefoni juaj një lidhje shkarkimi:
 mobileDialogPlaceholder = Jepni Email-in tuaj
 mobileDialogPlaceholderSMS = Jepni Telefonin/Email-in tuaj
 mobileDialogButton = Dërgomëni Lidhjen e Shkarkimit
 mobileDialogButtonSuccess = Faleminderit!
 mobileDialogSuccessMain = Lidhja e shkarkimit u dërgua!
+mobileDialogSuccessSecondarySMS = Kontrolloni te pajisja juaj për email-in ose mesazhin tekst.
+mobileDialogSuccessSecondary = Kontrolloni te pajisja juaj për email-in.
 mobileDialogAnotherDeviceLink = Dërgojeni në një tjetër pajisje
 mobileDialogError = Jepni një email të vlefshëm.
 mobileDialogErrorSMS = Jepni një numër telefoni ose email të vlefshëm:
