@@ -51,8 +51,6 @@ landingInstallingButton = მიმდინარეობს ჩადგმ�
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = დააყენეთ Test Pilot და
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = ჩართეთ { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -96,6 +94,8 @@ emailOptInDialogErrorTitle = ოჰ, არა!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = პროგრამის გადმოწერა
+mobileDialogAndroidButton = გადმოწერეთ Android-პროგრამა
+mobileDialogIOSButton = გადმოწერეთ iOS-პროგრამა
 mobileDialogMessageIOS = ჩამოტვირთეთ <b>{ $title }</b> iOS App Store-იდან.
 mobileDialogMessageAndroid = ჩამოტვირთეთ <b>{ $title }</b> Google Play Store-იდან.
 mobileDialogInstructionsSMS = შეიყვანეთ თქვენი ტელეფონის ნომერი ან ელფოსტა, ჩამოსატვირთი ბმულის ტელეფონზე მისაღებად:
