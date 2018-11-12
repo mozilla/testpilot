@@ -170,6 +170,7 @@ pageshotDetails2Copy = Namakajće składowane fota wobrazowki lochko. Přepytuj�
 pageshotContributors0TitleEngineer = Wuwiwar softwary
 pageshotContributors1Title = Wuwiwar softwary
 pageshotContributors2Title = UX-designer
+pricewiseDescription = Price Wise awtomatisce za zniženjemi płaćizny za wěste produkty na Amazon, Walmart a druhich nawodnych wikowarjach pyta.
 pricewiseDetails0Copy = Zdźělće Price Wise, zo ma produkt we wóčku wobchować a přidawa so wašej wobkedźbowanskej lisćinje.
 pricewiseDetails1Copy = Hdyž płaćizna pada, Price Wise was z barbojtej zdźělenku warnuje.
 pricewiseMeasurements0 = Produktowe strony: Price Wise zběra, kak husto składowane produktowe strony wopytujeće.
