@@ -73,6 +73,7 @@ containersContributors6Title = Front End Security
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+emailtabsDescription = Meitsje ienfâldich e-mailberjochten fan al jo ljepblêden út en meitsje bewarjen en dielen ienfâldiger as ea.
 emailtabsContributors0Title = Software-yngenieur
 emailtabsContributors1Title = Yngenieur
 emailtabsContributors2Title = Firefox UX
