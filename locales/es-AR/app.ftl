@@ -134,7 +134,7 @@ experimentCardFeedback = Opinión
 experimentCardManage = Administrar
 experimentCardGetStarted = Comenzá
 # Also used in NewsUpdateDialog and card mobile views
-experimentCardLearnMore = Concer más
+experimentCardLearnMore = Conocer más
 
 ## A modal prompt shown when a user disables an experiment.
 
@@ -173,7 +173,7 @@ experimentMeasurementIntro = Además de la <a>información</a> que se obtiene a 
 measurements = Tu privacidad
 experimentPrivacyNotice = Aquí { $title } puede aprender más acerca de la recolección de datos.
 contributorsHeading = Ofrecido por
-contributorsExtraLearnMore = Concer más
+contributorsExtraLearnMore = Conocer más
 changelog = Lista de cambios
 tour = Visita
 tourLink = Comenzar la visita
