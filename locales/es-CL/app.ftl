@@ -51,8 +51,6 @@ landingInstallingButton = Instalando...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Instalar Test Pilot y
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = Activar { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -96,6 +94,8 @@ emailOptInDialogErrorTitle = ¡Oh no!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Obtener la aplicación
+mobileDialogAndroidButton = Obtén la app para Android
+mobileDialogIOSButton = Obtén la app para iOS
 mobileDialogMessageIOS = Descargar <b>{ $title }</b> de la App Store de iOS.
 mobileDialogMessageAndroid = Descargar <b>{ $title }</b> de Play Store de Google.
 mobileDialogInstructionsSMS = Ingresa tu número de teléfono o correo para enviar un enlace de descarga a tu teléfono:
