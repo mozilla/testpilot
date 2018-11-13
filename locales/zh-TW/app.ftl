@@ -40,7 +40,7 @@ headerLinkBlog = 部落格
 landingIntroOne = 測試新功能
 landingIntroTwo = 提供意見回饋
 landingIntroThree = 幫忙開發 Firefox
-landingLegalNoticeWithLinks = 安裝此附加元件，代表您同意 Test Pilot 的 <terms-link>使用條款</terms-link> 及 <privacy-link>隱私權公告</privacy-link>。
+landingLegalNoticeWithLinks = 安裝此附加元件，代表您同意 Test Pilot 的 <terms-link>使用條款</terms-link>以及<privacy-link>隱私權公告</privacy-link>。
 landingMoreExperimentsButton = 更多實驗
 
 ## Related to the installation of the Test Pilot add-on.
