@@ -51,5 +51,5 @@ privacy_notice_url: "https://github.com/mozilla/price-wise/blob/master/docs/METR
 slug: price-wise
 thumbnail: /static/images/experiments/price-wise/icon/thumbnail.png
 title: "Price Wise"
-video_url: "https://www.youtube.com/embed/UpRLjTQmkW4" 
+video_url: "https://www.youtube.com/embed/UpRLjTQmkW4"
 xpi_url: "https://testpilot.firefox.com/files/shopping-testpilot@mozilla.org/latest"

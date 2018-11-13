@@ -22,6 +22,7 @@ footerLinkDownload = Unduh Firefox
 # link to page detailing firefox mobile browser options
 footerLinkMobile = Seluler
 footerLinkFeatures = Fitur
+footerLinkBeta = Beta, Nightly, Developer Edition
 footerLinkRetire = Copot Test Pilot
 
 ## Items in the menu and footer
@@ -40,6 +41,7 @@ landingIntroOne = Uji fitur-fitur terbaru.
 landingIntroTwo = Berikan saran Anda.
 landingIntroThree = Bantu kami membangun Firefox.
 landingLegalNoticeWithLinks = Dengan melanjutkan, Anda menyetujui <terms-link>Ketentuan Penggunaan</terms-link> dan <privacy-link>Pernyataan Privasi</privacy-link> Test Pilot.
+landingMoreExperimentsButton = Lebih Banyak Eksperimen
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -96,12 +98,18 @@ emailOptInDialogErrorTitle = Oh tidak!
 mobileDialogTitle = Dapatkan Aplikasinya
 mobileDialogMessageIOS = Unduh <b>{ $title }</b> dari iOS App Store
 mobileDialogMessageAndroid = Unduh <b>{ $title }</b> dari Google Play Store
+mobileDialogInstructionsSMS = Masukkan nomor telepon atau alamat surel untuk mengirim tautan unduhan ke telepon Anda:
+mobileDialogInstructions = Masukkan alamat surel untuk mengirim tautan unduhan ke telepon Anda:
 mobileDialogPlaceholder = Masukkan surel Anda
+mobileDialogPlaceholderSMS = Masukkan Telepon/Surel Anda
 mobileDialogButton = Kirimi saya Tautan Unduhan
 mobileDialogButtonSuccess = Terima Kasih!
 mobileDialogSuccessMain = Tautan unduhan terkirim!
+mobileDialogSuccessSecondarySMS = Periksa peranti Anda untuk surel atau pesan teks.
+mobileDialogSuccessSecondary = Periksa peranti Anda untuk surelnya.
 mobileDialogAnotherDeviceLink = Kirim ke peranti lainnya
 mobileDialogError = Masukkan surel yang valid:
+mobileDialogErrorSMS = Masukkan nomor telepon atau surel yang valid:
 
 ## Featured experiment.
 
@@ -174,9 +182,11 @@ discussExperiment = Diskusi { $title }
 tourDoneButton = Selesai
 userCountContainerAlt = Baru saja diluncurkan!
 highlightPrivacy = Privasi Anda
+experimentGradReportButton = Laporan Kelulusan
 experimentGradReportPendingTitle = Percobaan ini telah berakhir
 experimentGradReportPendingCopy = Kami sedang mengerjakan laporan lengkapnya. Periksa kembali untuk melihat secara detil.
 experimentGoToLink = Buka { $title }
+startedDate = Tanggal mulai eksperimen: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -253,6 +263,7 @@ newsletterFooterSuccessBody = Jika Anda belum pernah mengkonfirmasi langganan pa
 
 ## A warning shown to users when the experiment is not available in their language
 
+localeNotTranslatedWarningTitle = Eksperimen ini belum diterjemahkan ke bahasa Anda ({ $locale_code }).
 localeWarningSubtitle = Anda masih dapat mengaktifkannya jika Anda mau.
 
 ## An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
@@ -275,6 +286,7 @@ hidePastExperiments = Sembunyikan Percobaan Sebelumnya
 ## Text of warnings to the user if various error conditions are detected
 
 warningGenericTitle = Ada kesalahan!
+warningGoToFAQDetail = Terjadi kesalahan pada Test Pilot. Silakan <a>cek FAQs</a> dan pelajari lebih lanjut.
 warningUpgradeFirefoxTitle = Tingkatkan Firefox untuk melanjutkan!
 warningUpgradeFirefoxDetail = Test Pilot memerlukan Firefox versi terbaru. <a>Tingkatkan Firefox</a> untuk memulai.
 warningHttpsRequiredTitle = HTTPS diwajibkan!
@@ -286,3 +298,4 @@ warningBadHostnameDetail = Situs Test Pilot hanya bisa diakses melalui testpilot
 
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
+jsDisabledWarning = Test Pilot memerlukan JavaScript. Maaf.

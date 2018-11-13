@@ -73,6 +73,7 @@ containersContributors6Title = Front End bezpečnosť
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+emailtabsContributors2Title = Firefox UX
 firefoxlockboxDescription = Vezmite si svoje heslá všade so sebou s aplikáciou Firefox Lockbox pre iPhone
 firefoxlockboxIntroductionUrlsandcountries = <p>Vezmite si svoje heslá so sebou s aplikáciou Firefox Lockbox. Tento experiment programu Test Pilot vám ponúka prístup ku všetkým prihlasovacím údajom, ktoré ste uložili do Firefoxu, v podobe aplikácie pre váš iPhone. Stačí, ak sa do Lockboxu prihlásite s účtom Firefox a vaše uložené prihlasovacie mená a heslá sa zosynchronizujú s aplikáciou pomocou 256-bitového šifrovania. </p> <p><strong>Firefox Lockbox vyžaduje účet Firefox. Ak účet nemáte, začnite tu:<br/><a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></strong></p> <p><em>Chcete dostať správu, keď vyjde naša aplikácia pre Android? Prihláste sa tu:<br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = Pristupujte k používateľským menám a heslám pre všetky účty uložené vo Firefoxe

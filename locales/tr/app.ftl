@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Cihazınıza gönderdiğimiz e-postayı kontrol e
 mobileDialogAnotherDeviceLink = Başka bir cihaza gönder
 mobileDialogError = Geçerli bir e-posta yazın:
 mobileDialogErrorSMS = Geçerli bir telefon numarası veya e-posta yazın:
-mobileDialogNoticeSMS = SMS servisi yalnızca belirli ülkelerde kullanılabilir. SMS ve veri ücretleri uygulanabilir. E-posta veya SMS alıcısı bu mesajı almaya rıza göstermiş olmalıdır. { $learnMore }
+mobileDialogNoticeSMSWithLink = SMS servisi yalnızca belirli ülkelerde kullanılabilir. SMS ve veri ücretleri uygulanabilir. E-posta veya SMS alıcısı bu mesajı almaya rıza göstermiş olmalıdır. <a>Daha fazla bilgi alın</a>.
 
 ## Featured experiment.
 

@@ -73,6 +73,8 @@ containersContributors6Title = Sécurité du front end
 containersContributors7Title = Ergonome pour Firefox
 containersContributors8Title = Ergonome pour Firefox
 containersContributors9Title = Ergonome pour Firefox
+emailtabsToursteps1Copy = Vous pouvez choisir d’envoyer tous vos onglets par courrier électronique ou d’en sélectionner seulement quelques-uns.
+emailtabsToursteps2Copy = Vous pouvez envoyer des liens vers vos onglets, des captures d’écran et des liens, voire des articles complets.
 firefoxlockboxDescription = Emportez tous vos mots de passe avec vous grâce à l’application Firefox Lockbox pour iPhone.
 firefoxlockboxIntroductionUrlsandcountries = <p>Emportez vos mots de passe partout avec Firefox Lockbox. Cette expérience Test Pilot vous donne accès à tous les identifiants enregistrés dans Firefox depuis une application sécurisée sur votre iPhone. Identifiez-vous sur Lockbox avec votre compte Firefox et vos noms d’utilisateur et mots de passe seront synchronisés avec l’application à l’aide d’un chiffrement 256 bits. Vous aurez alors accès à vos comptes en ligne à tout moment.</p> <p><strong>Firefox Lockbox a besoin d’un compte Firefox pour accéder à vos identifiants enregistrés. Si vous n’avez pas encore de compte, inscrivez-vous :<br/><a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></a></strong></p> <p><em>Vous souhaitez que nous vous avertissions lorsque l’application Android sera disponible ? Inscrivez-vous :<br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = Accédez aux noms d’utilisateur et aux mots de passe de tous les comptes que vous enregistrez dans Firefox.

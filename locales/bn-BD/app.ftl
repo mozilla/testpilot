@@ -31,6 +31,7 @@ landingIntroOne = নতুন নতুন ফিচার পরখ করু�
 landingIntroTwo = আপনার প্রতিক্রিয়া জানান।
 landingIntroThree = Firefox তৈরিতে সহযোগিতা করুন।
 landingLegalNoticeWithLinks = এর মাধ্যমে, আপনি Test Pilot এর <terms-link>ব্যবহারের শর্তাবলী</terms-link> এবং <privacy-link>গোপনীয়তা নোটিশের</privacy-link> সাথে সম্মত আছেন।
+landingMoreExperimentsButton = আরও পরীক্ষণ
 
 ## Related to the installation of the Test Pilot add-on.
 
@@ -40,8 +41,6 @@ landingInstallingButton = ইন্সটল হচ্ছে...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Test Pilot ইন্সটল করুন &amp;
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = { $title } সক্রিয় করুন
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -80,6 +79,9 @@ emailOptInMessage = নতুন পরীক্ষা-নীরিক্ষা 
 emailOptInConfirmationTitle = ইমেইল পাঠানো হয়েছে
 emailOptInConfirmationClose = অন্যান্য পরীক্ষার উপরে...
 emailOptInDialogErrorTitle = ওহ না!
+
+## modal prompt for sending link to experiment mobile apps via email or sms
+
 
 ## Featured experiment.
 
@@ -154,13 +156,8 @@ nonExperimentDialogHeaderLink = Test Pilot
 
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
-experimentPlatformWebAddonMobile = Firefox / ওয়েব / মোবাইল পরীক্ষণ
-experimentPlatformWebAddon = Firefox / মোবাইল পরীক্ষণ
-experimentPlatformWebMobile = ওয়েব / মোবাইল পরীক্ষণ
-experimentPlatformAddonMobile = Firefox / মোবাইল পরীক্ষণ
-experimentPlatformWeb = ওয়েব পরীক্ষণ
 experimentPlatformAddon = Firefox পরীক্ষণ
-experimentPlatformMobileApp = মোবাইল পরীক্ষণ
+experimentPlatformWeb = ওয়েব পরীক্ষণ
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 

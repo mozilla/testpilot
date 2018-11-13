@@ -51,8 +51,6 @@ landingInstallingButton = Gosod...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Gosod Test Pilot a
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = Galluogi { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -96,6 +94,8 @@ emailOptInDialogErrorTitle = O na!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Estyn yr Ap
+mobileDialogAndroidButton = Estyn yr ap Android
+mobileDialogIOSButton = Estyn yr ap iOS
 mobileDialogMessageIOS = Llwytho <b>{ $title }</b> i Lawr o'r iOS App Store.
 mobileDialogMessageAndroid = Llwytho <b>{ $title }</b> i Lawr o'r Google Play Store.
 mobileDialogInstructionsSMS = Rhowch eich rhif ffôn neu e-bost i anfon dolen llwytho i lawr i'ch ffôn:
