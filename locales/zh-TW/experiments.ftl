@@ -73,6 +73,7 @@ containersContributors6Title = 前端安全性
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+emailtabsDescription = 很簡單就能從分頁建立新郵件，讓儲存與分享變得更簡單。
 emailtabsContributors0Title = 軟體工程師
 emailtabsContributors1Title = 工程師
 emailtabsContributors2Title = Firefox UX
