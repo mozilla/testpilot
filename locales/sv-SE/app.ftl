@@ -51,8 +51,6 @@ landingInstallingButton = Installerar...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Installera Test Pilot &amp;
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = Aktivera { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -96,6 +94,8 @@ emailOptInDialogErrorTitle = Åh nej!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Ladda ner appen
+mobileDialogAndroidButton = Ladda ner Android-appen
+mobileDialogIOSButton = Ladda ner iOS-appen
 mobileDialogMessageIOS = Ladda ner <b>{ $title }</b> från iOS Appstore.
 mobileDialogMessageAndroid = Ladda ner <b>{ $title }</b> från Google Play Butik
 mobileDialogInstructionsSMS = Ange ditt telefonnummer eller e-postadress för att skicka en nedladdningslänk till din telefon:
@@ -174,7 +174,7 @@ measurements = Din sekretesspolicy
 experimentPrivacyNotice = Du kan läsa mer om datainsamlingen för { $title } här.
 contributorsHeading = Presenteras av
 contributorsExtraLearnMore = Läs mer
-changelog = ändringslogg
+changelog = Ändringslogg
 tour = Guidad visning
 tourLink = Starta guidad visning
 contribute = Bidra

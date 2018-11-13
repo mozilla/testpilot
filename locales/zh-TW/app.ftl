@@ -40,7 +40,7 @@ headerLinkBlog = 部落格
 landingIntroOne = 測試新功能
 landingIntroTwo = 提供意見回饋
 landingIntroThree = 幫忙開發 Firefox
-landingLegalNoticeWithLinks = 安裝此附加元件，代表您同意 Test Pilot 的 <terms-link>使用條款</terms-link> 及 <privacy-link>隱私權公告</privacy-link>。
+landingLegalNoticeWithLinks = 安裝此附加元件，代表您同意 Test Pilot 的 <terms-link>使用條款</terms-link>以及<privacy-link>隱私權公告</privacy-link>。
 landingMoreExperimentsButton = 更多實驗
 
 ## Related to the installation of the Test Pilot add-on.
@@ -51,8 +51,6 @@ landingInstallingButton = 安裝中…
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = 安裝 Test Pilot &amp;
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = 開啟 { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -96,6 +94,8 @@ emailOptInDialogErrorTitle = 糟糕！
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = 取得應用程式
+mobileDialogAndroidButton = 下載 Android 應用程式
+mobileDialogIOSButton = 下載 iOS 應用程式
 mobileDialogMessageIOS = 到 iOS App Store 下載 <b>{ $title }</b>。
 mobileDialogMessageAndroid = 到 Google Play Store 下載 <b>{ $title }</b>。
 mobileDialogInstructionsSMS = 輸入您的手機號碼或 E-Mail 信箱，即可傳送下載鏈結到您的手機:

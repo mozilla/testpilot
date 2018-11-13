@@ -73,6 +73,9 @@ containersContributors6Title = 前端安全
 containersContributors7Title = Firefox 用户体验
 containersContributors8Title = Firefox 用户体验
 containersContributors9Title = Firefox 用户体验
+emailtabsContributors0Title = 软件工程师
+emailtabsContributors1Title = 工程师
+emailtabsContributors2Title = Firefox 用户体验
 firefoxlockboxDescription = 使用 iPhone 版 Firefox Lockbox 应用，将您的密码随身携带。
 firefoxlockboxIntroductionUrlsandcountries = <p>使用 Firefox Lockbox 随身携带您的密码。此 Test Pilot 实验允许您将所有登录信息保存在 Firefox 中，并可以在您的 iPhone 中用一款安全应用存取。只需用您的 Firefox 账户登录 Lockbox，您已保存的用户名和密码将经过 256 位加密同步到此应用。这样，即便在旅途中，您也可以轻松访问您的在线账户。</p> <p><strong>Firefox Lockbox 需要一个 Firefox 账户才能访问您以前保存的登录信息。如果您还没有账户，从这里开始：<br/><a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></strong></p> <p><em>想关注我们的 Android 应用何时推出？到如下地址订阅: <br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = 查看所有保存到 Firefox 的账号与密码。
@@ -158,6 +161,7 @@ pageshotDetails2Copy = 轻松找到已保存的截图。用网格视图浏览缩
 pageshotContributors0TitleEngineer = 软件工程师
 pageshotContributors1Title = 软件工程师
 pageshotContributors2Title = UX设计师
+pricewiseLegalnotice = 继续即代表您同意 Test Pilot 的<terms-link>使用条款</terms-link>和<privacy-link>隐私政策</privacy-link>，以及 <modal-link>Price Wise 隐私政策</modal-link>。
 pulseDescription = 为我们提供性能评估。添加 Pulse，帮助我们了解哪些网站在 Firefox 中良好运转，哪些运转不太好。
 pulseIntroduction = 我们在打造下一代的 Firefox，我们专注于真实的速度和性能。Pulse 使您可以向我们的工程师反馈您在 Firefox 上使用特定网站的体验是否良好。
 pulseDetails0Copy = 在您浏览时提供网站性能的反馈。

@@ -51,8 +51,6 @@ landingInstallingButton = Memasang...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Pasang Test Pilot &amp;
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = Dayakan { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -96,6 +94,8 @@ emailOptInDialogErrorTitle = Oh tidak!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Dapatkan Aplikasi
+mobileDialogAndroidButton = Dapatkan aplikasi Android
+mobileDialogIOSButton = Dapatkan aplikasi iOS
 mobileDialogMessageIOS = Muat turun <b>{ $title }</b> dari iOS App Store.
 mobileDialogMessageAndroid = Muat turun <b>{ $title }</b> dari Google Play Store.
 mobileDialogInstructionsSMS = Masukkan nombor telefon atau e-mel untuk dihantar pautan muat turun ke telefon:

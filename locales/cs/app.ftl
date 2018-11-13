@@ -88,7 +88,7 @@ notFoundHeader = Čtyři sta čtyři!
 ## A modal prompt to sign up for the Test Pilot newsletter.
 
 emailOptInDialogTitle = Vítá vás Test Pilot!
-emailOptInMessage = Nechce si posílat informace o nových experimentech a výsledky experimentů, které jste sami vyzkoušeli.
+emailOptInMessage = Nechte si posílat informace o nových experimentech a výsledky experimentů, které jste sami vyzkoušeli.
 emailOptInConfirmationTitle = E-mail odeslán
 emailOptInConfirmationClose = Podívat se na experimenty...
 emailOptInDialogErrorTitle = Ale ne!
@@ -247,7 +247,7 @@ incompatibleSubheader = Před aktivací tohoto experimentu doporučujeme <a>zak�
 newsletterFormEmailPlaceholder =
     .placeholder = místo pro e-mailovou adresu
 newsletterFormDisclaimer = Budeme vám zasílat pouze informace související s Test Pilotem.
-newsletterFormPrivacyNotice = Souhlasím s tím, aby Mozilla zpracovávala mé informace tak, jak je popsáno v těchto <a>zásadách ochrany osobních údajů</a>.
+newsletterFormPrivacyNotice = Souhlasím s tím, aby Mozilla zpracovávala mé informace tak, jak je popsáno v <a>zásadách ochrany osobních údajů</a>.
 newsletterFormSubmitButton = Přihlásit se
 newsletterFormSubmitButtonSubmitting = Odesílání...
 
@@ -255,7 +255,7 @@ newsletterFormSubmitButtonSubmitting = Odesílání...
 
 newsletterFooterError = Při ukládání vaší e-mailové adresy nastala chyba. Chcete to zkusit znovu?
 newsletterFooterHeader = Nechte se informovat
-newsletterFooterBody = Nechce si posílat informace o nových experimentech a výsledky experimentů, které jste sami vyzkoušeli.
+newsletterFooterBody = Nechte si posílat informace o nových experimentech a výsledky experimentů, které jste sami vyzkoušeli.
 newsletterFooterSuccessHeader = Děkujeme!
 newsletterFooterSuccessBody = Pokud jste dříve nepotvrdili odběr zpravodaje Mozilly, budete tak muset učinit nyní. Podívejte se prosím do vaší e-mailové schránky a případně i nevyžádané pošty, jestli tam není e-mail od nás.
 

@@ -51,8 +51,6 @@ landingInstallingButton = Установка...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Установить лётчика-испытателя &amp;
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = Включить { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -96,6 +94,8 @@ emailOptInDialogErrorTitle = О, нет!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Загрузить приложение
+mobileDialogAndroidButton = Загрузить приложение для Android
+mobileDialogIOSButton = Загрузить приложение для iOS
 mobileDialogMessageIOS = Загрузить <b>{ $title }</b> из iOS App Store.
 mobileDialogMessageAndroid = Загрузить <b>{ $title }</b> из Google Play Store.
 mobileDialogInstructionsSMS = Введите ваш номер телефона или адрес электронной почты, чтобы отправить ссылку на ваш телефон:

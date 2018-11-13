@@ -15,6 +15,7 @@ activitystreamContributors9Title = Ürün Müdürü
 activitystreamContributors10Title = Mühendislik Müdürü
 activitystreamContributors11Title = Yazılım Mühendisi
 activitystreamContributors12Title = Kıdemli UX Tasarımcısı
+advanceSubtitle = Laserlike desteğiyle
 cliqzDescription = Arama sonuçlarını daha hızlı alın. Cliqz, siz adres çubuğuna bir şey yazarken önerileri hemen çubuğun altında gösterir. Bu aşamada gizliliğiniz de korunur.
 cliqzIntroduction = Arama sonuçlarını daha hızlı, doğrudan tarayıcıdan alın. Bir şeyler yazmaya başladığınızda web'den gelen öneriler gerçek zamanlı olarak adres çubuğunun altında görünecek. Üstelik Cliqz kişisel veri toplamadığı ve kullanıcı profilleri oluşturmadığı için sonuçlarınızın gizliliği daha iyi korunuyor.
 cliqzPrivacypreamble = Cliqz Test Pilotu deneyi Cliqz GmbH ve Mozilla tarafından size sunulmaktadır. Cliqz, gizliliğinizi korumak ve kişi profilleri oluşturmak için kullanılan hassas bilgilerin toplanmasını engellemek için tasarlanmıştır. Ancak verileri bu şekilde anonimleştirmek zordur ve belirli kişileri tespit etmek hala mümkün olabilir.
