@@ -73,6 +73,9 @@ containersContributors6Title = Felületi biztonság
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+emailtabsContributors0Title = Szoftverfejlesztő mérnök
+emailtabsContributors1Title = Mérnök
+emailtabsContributors2Title = Firefox UX
 firefoxlockboxDescription = Vigyel el mindenhová a jelszavait a Firefox Lockbox alkalmazással iPhone-ra.
 firefoxlockboxIntroductionUrlsandcountries = <p>Vigye magával a jelszavait mindenhová a Firefox Lockboxszal. Ez a Tesztpilóta kísérlet hozzáférést ad az összes Firefoxba mentett bejelentkezéséhez, egy biztonságos alkalmazásban az iPhone-ján. Csak jelentkezzen be a Lockboxba, és a mentett felhasználónevei és jelszavai szinronizálva lesznek az alkalmazással, 256-bites titkosítást használva.Így könnyen hozzáfér az online fiókjaihoz, akár menet közben is.</p> <p><strong>A Firefox Lockboxhoz Firefox fiók szükséges, hogy elérje az előzőleg mentett bejelentkezéseket. Ha nincs még fiókja beállítva, akkor lásson neki:<br/><a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></strong></p> <p><em>Szeretne értesülni, ha az androidos alkalmazás elkészül? Iratkozzon fel:<br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = Érje el a felhasználónév és jelszóinformációit az összes fiókjához, melyet a Firefoxban ment.
