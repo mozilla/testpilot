@@ -22,7 +22,7 @@ footerLinkDownload = Descarcă Firefox
 # link to page detailing firefox mobile browser options
 footerLinkMobile = Mobil
 footerLinkFeatures = Funcționalități
-footerLinkBeta = Edițiile Beta, Nightly și Developer
+footerLinkBeta = Beta, Nightly, Developer Edition
 footerLinkRetire = Dezinstalează Test Pilot
 
 ## Items in the menu and footer
@@ -51,8 +51,6 @@ landingInstallingButton = Se instalează...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Instalează Test Pilot &amp;
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = Activează { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
