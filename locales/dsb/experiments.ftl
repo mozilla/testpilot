@@ -73,7 +73,10 @@ containersContributors6Title = Wěstota Front End
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+emailtabsDetails0Copy = Napórajśo mejlki ze swójich wócynjonych rejtarkow z jano mało kliknjenjami.
 emailtabsContributors0Title = Wuwijaŕ softwary
+emailtabsContributors1Title = Wuwijaŕ
+emailtabsContributors2Title = Firefox UX
 firefoxlockboxDescription = Wzejśo z Firefox Lockbox za iPhone swóje gronidła wšuźi sobu.
 firefoxlockboxIntroductionUrlsandcountries = <p>Wzejśo swóje gronidła z Firefox Lockbox wšuźi sobu. Toś ten eksperiment Test Pilot dajo wam pśistup k wšym pśizjawjenjam, kótarež sćo składł we Firefox, we wěstem nałoženju na swójom iPhone. Pśizjawśo se jadnorje ze swójim kontom Firefox pla Lockbox, a waše skłaźone wužywarske mjenja a gronidła budu se z pomocu 256-bitowym koděrowanim z nałoženim synchronizěrowaś. Změjośo pótom lažki pśistup ku kontam online, samo ducy.</p><p><strong>Firefox Lockbox se konto Firefox pomina, aby pśistup k wašym do togo skłaźonym pśizjawjenjam měł. Jolic konto njamaśo, zachopśo how:<br/>a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></strong></p> <p><em>Cośo powěźeńku dostaś, gaž wašo nałoženje Android startujo? Registrěrujśo se:<br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = Mějśo pśistup k wužywarskim mjenjam a gronidłowym datam za wšykne konta, kótarež w Firefox składujośo.
