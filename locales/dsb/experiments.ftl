@@ -73,6 +73,7 @@ containersContributors6Title = Wěstota Front End
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+emailtabsDescription = Napórajśo lažko mejlki ze wšych swójich rejtarkow a cyńśo składowanje a źělenje lažčejšej ako do togo.
 emailtabsDetails0Copy = Napórajśo mejlki ze swójich wócynjonych rejtarkow z jano mało kliknjenjami.
 emailtabsContributors0Title = Wuwijaŕ softwary
 emailtabsContributors1Title = Wuwijaŕ
