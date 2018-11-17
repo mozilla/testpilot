@@ -73,6 +73,8 @@ containersContributors6Title = Front End Security
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+emailtabsDescription = Crea facilmente email partendo dalle tue schede aperte: è più facile che mai salvarle e condividerle.
+emailtabsDetails0Copy = Crea email dalle schede aperte in pochi clic.
 firefoxlockboxDescription = Porta le tue password sempre con te grazie all’app Firefox Lockbox per iPhone.
 firefoxlockboxIntroductionUrlsandcountries = <p>Porta le tue password sempre con te grazie a Firefox Lockbox. Questo esperimento di Test Pilot ti permette di accedere a tutti gli accessi salvati in Firefox, in una sicura app per iPhone. Basta accedere a Lockbox con il proprio account Firefox e tutti i nomi utente e le password salvate verranno sincronizzate con l’app utilizzando crittografia a 256-bit. In questa maniera avrai accesso rapidamente ai tuoi account online, anche quando sei in movimento.</p><p><strong>Per utilizzare Firefox Lockbox è necessario avere un account Firefox per poter accedere agli accessi salvati. Se ancora non hai un account, segui queste istruzioni per iniziare: <a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a>.</strong></p><p><em>Vuoi essere avvisato quando l’app sarà disponibile per Android? Iscriviti utilizzando questo modulo:<br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a>.</em></p>
 firefoxlockboxDetails0Copy = Accedi a nomi utente e password di accesso per tutti gli account salvati in Firefox.
