@@ -17,7 +17,8 @@ contributors:
     avatar: /static/images/experiments/price-wise/avatars/remus.jpg
     display_name: Remus Dranca
 created: "2018-11-12T14:00:00Z"
-description: "Price Wise automatically looks for price drops on specific products at Amazon, Walmart and other top retailers."
+description: "Price Wise automatically looks for price drops on specific products at Amazon, Walmart and other top U.S. retailers."
+description_l10nsuffix: "us_clarification"
 details:
   -
     copy: "Tell Price Wise to keep an eye on a product and it’s added to your watch list."
@@ -32,7 +33,8 @@ gradient_stop: "#86BBF9"
 id: 19
 image_facebook: /static/images/experiments/price-wise/social/price-wise-facebook.jpg
 image_twitter: /static/images/experiments/price-wise/social/price-wise-twitter.jpg
-introduction: "Price Wise spots price drops on things you’re interested in at Amazon, Best Buy, eBay, Home Depot and Walmart. When Price Wise finds a price drop, the add-on gives you a heads-up about the lower price."
+introduction: "Price Wise spots price drops on things you’re interested in at Amazon and AmazonSmile, Best Buy, eBay, Home Depot and Walmart (U.S. domains only for now). When Price Wise finds a price drop, the add-on gives you a heads-up about the lower price."
+introduction_l10nsuffix: "us_clarification"
 launch_date: "2018-11-12T14:00:00Z"
 legal_notice: "By proceeding, you agree to the <terms-link>terms</terms-link> and <privacy-link>privacy</privacy-link> policies of Test Pilot and the <modal-link>Price Wise privacy policy</modal-link>."
 locale_grantlist:
