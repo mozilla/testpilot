@@ -75,8 +75,17 @@ containersContributors8Title = Ergonome pour Firefox
 containersContributors9Title = Ergonome pour Firefox
 emailtabsDescription = Créez facilement des courriels à partir de tous vos onglets et simplifiez plus que jamais l’enregistrement et le partage.
 emailtabsIntroduction = <p>Vous avez déjà eu besoin de sauvegarder ou de partager de nombreux onglets lorsque vous faites des recherches ou des achats en ligne, ou tout simplement quand naviguez sur le Web ? Email Tabs vous permet de créer de beaux courriels à partir de vos onglets ouverts pour les enregistrer ultérieurement ou les partager. Vous pouvez utiliser Email Tabs pour envoyer automatiquement des liens, des captures d’écran ou même le texte d’articles. <p>Email Tabs fonctionne actuellement avec le client de messagerie web de Gmail, mais nous travaillons à prendre en charge d’autres fournisseurs de messagerie web populaires.</p>
+emailtabsDetails0Copy = Créez des courriels à partir de vos onglets ouverts en quelques clics.
+emailtabsDetails1Copy = Email Tabs vous permet d’envoyer des liens, des captures d’écran ou encore des articles entiers.
+emailtabsDetails2Copy = Email Tabs crée automatiquement un courriel. Ajoutez simplement vos destinataires et vous pouvez l’envoyer directement.
+emailtabsToursteps0Copy = Accédez à Email Tabs à partir de votre barre d’outils
 emailtabsToursteps1Copy = Vous pouvez choisir d’envoyer tous vos onglets par courrier électronique ou d’en sélectionner seulement quelques-uns.
 emailtabsToursteps2Copy = Vous pouvez envoyer des liens vers vos onglets, des captures d’écran et des liens, voire des articles complets.
+emailtabsToursteps3Copy = Email Tabs mettra en page automatiquement votre courriel. Il vous suffit d’ajouter les destinataires et de l’envoyer.
+emailtabsToursteps4Copy = Vous pouvez nous faire part de votre avis à tout moment ou désactiver Email Tabs depuis Test Pilot.
+emailtabsContributors0Title = Développeur logiciel
+emailtabsContributors1Title = Développeur
+emailtabsContributors2Title = Ergonome pour Firefox
 firefoxlockboxDescription = Emportez tous vos mots de passe avec vous grâce à l’application Firefox Lockbox pour iPhone.
 firefoxlockboxIntroductionUrlsandcountries = <p>Emportez vos mots de passe partout avec Firefox Lockbox. Cette expérience Test Pilot vous donne accès à tous les identifiants enregistrés dans Firefox depuis une application sécurisée sur votre iPhone. Identifiez-vous sur Lockbox avec votre compte Firefox et vos noms d’utilisateur et mots de passe seront synchronisés avec l’application à l’aide d’un chiffrement 256 bits. Vous aurez alors accès à vos comptes en ligne à tout moment.</p> <p><strong>Firefox Lockbox a besoin d’un compte Firefox pour accéder à vos identifiants enregistrés. Si vous n’avez pas encore de compte, inscrivez-vous :<br/><a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></a></strong></p> <p><em>Vous souhaitez que nous vous avertissions lorsque l’application Android sera disponible ? Inscrivez-vous :<br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = Accédez aux noms d’utilisateur et aux mots de passe de tous les comptes que vous enregistrez dans Firefox.
