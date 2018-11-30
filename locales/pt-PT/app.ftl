@@ -27,7 +27,7 @@ footerLinkRetire = Desinstalar Test Pilot
 
 ## Items in the menu and footer
 
-home = Página inicial
+home = Início
 menuTitle = Definições
 menuWiki = Wiki do Test Pilot
 menuDiscuss = Discutir o Test Pilot
