@@ -94,6 +94,8 @@ emailOptInDialogErrorTitle = O, nu!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Obține aplicația
+mobileDialogAndroidButton = Descarcă aplicația pentru Android
+mobileDialogIOSButton = Descarcă aplicația pentru iOS
 mobileDialogMessageIOS = Descarcă <b>{ $title }</b> din iOS App Store.
 mobileDialogMessageAndroid = Descarcă <b>{ $title }</b> din Google Play Store.
 mobileDialogInstructionsSMS = Introdu numărul de telefon sau adresa e-mail pentru a trimite un link de descărcare pe telefonul tău:
@@ -167,6 +169,7 @@ disableExperimentTransition = Se dezactivează...
 enableExperiment = Activează { $title }
 enableExperimentTransition = Se activează...
 experimentManuallyDisabled = { $title } dezactivat în managerul de suplimente
+experimentMeasurementIntro = În plus față de <a>datele</a> colectate de toate experimentele Test Pilot, iată câteva aspecte-cheie pe care trebuie să le știi despre ce se întâmplă când folosești { $experimentTitle }:
 measurements = Confidențialitatea ta
 experimentPrivacyNotice = Poți afla mai mult despre colectarea de date pentru { $title } aici.
 contributorsHeading = Produs de
@@ -182,7 +185,10 @@ userCountContainerAlt = Nou lansat!
 highlightPrivacy = Confidențialitatea ta
 experimentGradReportButton = Raport de absolvire
 experimentGradReportPendingTitle = Acest experiment s-a încheiat.
+experimentGradReportPendingCopy = Lucrăm la un raport complet. Revino în scurt timp pentru detalii.
+experimentGradReportReady = Am pregătit un raport complet de absolvire.
 experimentGoToLink = Mergi la { $title }
+startedDate = Data de început a experimentului: <b>{ DATETIME($startedDate) }</b>
 
 ## News updates dialog.
 
@@ -213,6 +219,7 @@ versionChangeNoticeLink = Obține versiunea actuală a Firefox.
 ## Shown while uninstalling Test Pilot.
 
 retireDialogTitle = Dezinstalează Test Pilot?
+retireMessageUpdate = Cum vrei. Test Pilot va fi dezinstalat. Poți dezactiva experimente individuale din managerul de suplimente Firefox.
 retireEmailMessage = Pentru a nu mai primi actualizări pe e-mail, clic pe linkul <em>dezabonare</em> (unsubscribe) din orice e-mail Test Pilot.
 retireSubmitButton = Continuă
 pageTitleRetirePage = Firefox Test Pilot - Dezinstalează Test Pilot
@@ -259,6 +266,7 @@ newsletterFooterSuccessBody = Dacă nu ai confirmat anterior o abonare la un bul
 
 ## A warning shown to users when the experiment is not available in their language
 
+localeNotTranslatedWarningTitle = Acest experiment nu a fost tradus în limba ta ({ $locale_code }).
 localeWarningSubtitle = Dar poți să o activezi dacă dorești.
 
 ## An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
@@ -280,9 +288,16 @@ hidePastExperiments = Ascunde experimentele trecute
 
 ## Text of warnings to the user if various error conditions are detected
 
+warningGenericTitle = Ceva nu este în regulă!
+warningGoToFAQDetail = Ceva nu a funcționat în Test Pilot. Te rugăm <a>să verifici întrebările adresate frecvent</a> pentru a afla mai multe.
 warningUpgradeFirefoxTitle = Actualizează Firefox pentru a continua!
+warningUpgradeFirefoxDetail = Test Pilot necesită ultima versiune de Firefox. <a>Actualizează Firefox</a> ca să poți începe.
 warningHttpsRequiredTitle = Necesită HTTPS!
 warningHttpsRequiredDetail = Test Pilot trebuie accesat printr-o conexiune HTTPS. Te rugăm să consulți <a>documentaţia noastră</a> pentru detalii.
+warningMissingPrefTitle = Contribui la dezvoltarea Test Pilot?
+warningMissingPrefDetail = Când rulezi Test Pilot local sau în medii de dezvoltare, este necesară o configurație specială. Vezi <a>documentația noastră</a> pentru detalii.
+warningBadHostnameTitle = Denumire gazdă neaprobată!
+warningBadHostnameDetail = Site-ul Test Pilot poate fi accesat numai de pe testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net sau exemplu.com:8000. Vezi <a>documentația noastră</a> pentru detalii.
 
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
