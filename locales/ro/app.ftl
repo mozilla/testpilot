@@ -12,8 +12,8 @@ pageTitleExperiment = Firefox Test Pilot - { $title }
 footerLinkCookies = Cookie-uri
 footerLinkPrivacy = Confidențialitate
 footerLinkTerms = Termeni
-footerLinkLegal = Legale
-footerLinkFeedback = Oferă feedback
+footerLinkLegal = Mențiuni legale
+footerLinkFeedback = Dă-ne feedback
 # This is a header displayed above a set of links about Mozilla and Test Pilot
 footerLinkAboutHeader = Despre
 footerLinkAboutUs = Despre noi
@@ -37,10 +37,10 @@ headerLinkBlog = Blog
 
 ## The splash on the homepage.
 
-landingIntroOne = Testează noi funcții.
-landingIntroTwo = Oferă-ne feedback.
+landingIntroOne = Testează funcționalități noi.
+landingIntroTwo = Dă-ne feedback.
 landingIntroThree = Ajută la construirea Firefox.
-landingLegalNoticeWithLinks = Prin continuare, ești de acord cu <terms-link>Termenii de utilizare</terms-link> și <privacy-link>Notificarea privind confidențialitatea</privacy-link> Test Pilot.
+landingLegalNoticeWithLinks = Prin continuare, agreezi <terms-link>Termenii de utilizare</terms-link> și <privacy-link>Politica de confidențialitate</privacy-link> Test Pilot.
 landingMoreExperimentsButton = Mai multe experimente
 
 ## Related to the installation of the Test Pilot add-on.
@@ -61,13 +61,13 @@ landingUpgradeDesc2 = Test Pilot necesită Firefox { $version } sau o versiune s
 # also in footer
 landingDownloadFirefoxTitle = Firefox
 landingUpgradeFirefoxTitle = Actualizează Firefox
-landingDownloadFirefoxSubTitle = Descarcă gratuit
+landingDownloadFirefoxSubTitle = Descărcare gratuită
 
 ## A section of the homepage explaining how Test Pilot works.
 
 landingCardListTitle = Începe în 3, 2, 1
 landingCardOne = Obține suplimentul Test Pilot
-landingCardTwo = Activează funcții experimentale
+landingCardTwo = Activează funcționalități experimentale
 landingCardThree = Spune-ne ce părere ai
 
 ## Shown after the user installs the Test Pilot add-on.
@@ -77,7 +77,7 @@ onboardingMessage = Am adăugat o pictogramă în bara de unelte ca să poți g�
 ## Error message pages.
 
 errorHeading = Ups!
-errorMessage = S-a produs o eroare. <br> Încearcă din nou mai târziu.
+errorMessage = Pare că s-a produs o eroare. <br> Încearcă din nou mai târziu.
 # 404 is the HTTP standard response code for a page not found. This title is a
 # word play in English, being "Oh" both an exclamation and the pronunciation of
 # the number 0.
@@ -85,15 +85,15 @@ notFoundHeader = Patru zero patru!
 
 ## A modal prompt to sign up for the Test Pilot newsletter.
 
-emailOptInDialogTitle = Bun venit în Test Pilot!
-emailOptInMessage = Află despre noile experimente și vezi rezultatele de testare pentru experimentele încercate.
+emailOptInDialogTitle = Bine ai venit la Test Pilot!
+emailOptInMessage = Află despre noile experimente și vezi rezultatele testelor pentru experimentele pe care le-ai încercat.
 emailOptInConfirmationTitle = E-mail trimis
-emailOptInConfirmationClose = Mai departe spre experimente...
+emailOptInConfirmationClose = Către experimente...
 emailOptInDialogErrorTitle = O, nu!
 
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
-mobileDialogTitle = Obține aplicația
+mobileDialogTitle = Descarcă aplicația
 mobileDialogAndroidButton = Descarcă aplicația pentru Android
 mobileDialogIOSButton = Descarcă aplicația pentru iOS
 mobileDialogMessageIOS = Descarcă <b>{ $title }</b> din iOS App Store.
