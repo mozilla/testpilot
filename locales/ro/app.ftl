@@ -296,7 +296,7 @@ warningHttpsRequiredTitle = Necesită HTTPS!
 warningHttpsRequiredDetail = Test Pilot trebuie accesat printr-o conexiune HTTPS. Te rugăm să consulți <a>documentația noastră</a> pentru detalii.
 warningMissingPrefTitle = Contribui la dezvoltarea Test Pilot?
 warningMissingPrefDetail = Când rulezi Test Pilot local sau în medii de dezvoltare, este necesară o configurație specială. Vezi <a>documentația noastră</a> pentru detalii.
-warningBadHostnameTitle = Denumire gazdă neaprobată!
+warningBadHostnameTitle = Denumire neaprobată de gazdă!
 warningBadHostnameDetail = Site-ul Test Pilot poate fi accesat numai de pe testpilot.firefox.com, testpilot.stage.mozaws.net, testpilot.dev.mozaws.net sau exemplu.com:8000. Vezi <a>documentația noastră</a> pentru detalii.
 
 ## This string does not appear in app, but we will use it to localize our `no script` message
