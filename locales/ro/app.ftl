@@ -103,7 +103,7 @@ mobileDialogInstructions = Introdu adresa e-mail pentru a trimite un link de des
 mobileDialogPlaceholder = Introdu adresa e-mail
 mobileDialogPlaceholderSMS = Introdu numărul de telefon/adresa e-mail
 mobileDialogButton = Trimite-mi linkul de descărcare
-mobileDialogButtonSuccess = Mulțumim!
+mobileDialogButtonSuccess = Îți mulțumim!
 mobileDialogSuccessMain = Link de descărcare trimis!
 mobileDialogSuccessSecondarySMS = Verifică-ți dispozitivul pentru mesaje text sau e-mail.
 mobileDialogSuccessSecondary = Verifică-ți dispozitivul pentru e-mail.
@@ -139,7 +139,7 @@ experimentCardLearnMore = Află mai multe
 ## A modal prompt shown when a user disables an experiment.
 
 feedbackSubmitButton = Participă la un scurt sondaj
-feedbackUninstallTitle = Mulțumim!
+feedbackUninstallTitle = Îți mulțumim!
 feedbackUninstallCopy =
     Participarea ta în Firefox Test Pilot înseamnă
     mult pentru noi! Poți încerca alte experimente,
@@ -148,12 +148,12 @@ feedbackUninstallCopy =
 ## A modal prompt shown before the feedback survey for some experiments.
 
 experimentPreFeedbackTitle = feedback { $title }
-experimentPreFeedbackLinkCopy = Oferă feedback despre experimentul { $title }
+experimentPreFeedbackLinkCopy = Dă-ne feedback despre experimentul { $title }
 
 ## A splash shown on top of the experiment page when Test Pilot is not installed.
 
 experimentPromoHeader = Ești gata de decolare?
-experimentPromoSubheader = Noi construim funcțiile de viitor pentru Firefox. Instalează Test Pilot pentru a le încerca!
+experimentPromoSubheader = Noi construim funcționalități de generație viitoare pentru Firefox. Instalează Test Pilot și încearcă-le!
 
 ## The experiment detail page.
 
@@ -162,8 +162,8 @@ installErrorMessage = Ups. { $title } nu a putut fi activat. Încearcă din nou 
 wrongPlatformIOS = Acest experiment este disponibil doar pentru dispozitivele iOS.
 wrongPlatformAndroid = Acest experiment este disponibil doar pentru dispozitivele Android.
 otherExperiments = Încearcă și aceste experimente
-giveFeedback = Oferă feedback
-disableHeader = Dezactivează experimentul?
+giveFeedback = Dă-ne feedback
+disableHeader = Dezactivezi experimentul?
 disableExperiment = Dezactivează { $title }
 disableExperimentTransition = Se dezactivează...
 enableExperiment = Activează { $title }
@@ -171,7 +171,7 @@ enableExperimentTransition = Se activează...
 experimentManuallyDisabled = { $title } dezactivat în managerul de suplimente
 experimentMeasurementIntro = În plus față de <a>datele</a> colectate de toate experimentele Test Pilot, iată câteva aspecte-cheie pe care trebuie să le știi despre ce se întâmplă când folosești { $experimentTitle }:
 measurements = Confidențialitatea ta
-experimentPrivacyNotice = Poți afla mai mult despre colectarea de date pentru { $title } aici.
+experimentPrivacyNotice = Poți afla mai multe despre colectarea de date pentru { $title } aici.
 contributorsHeading = Produs de
 contributorsExtraLearnMore = Află mai multe
 changelog = Jurnal de schimbări
@@ -184,7 +184,7 @@ tourDoneButton = Gata
 userCountContainerAlt = Nou lansat!
 highlightPrivacy = Confidențialitatea ta
 experimentGradReportButton = Raport de absolvire
-experimentGradReportPendingTitle = Acest experiment s-a încheiat.
+experimentGradReportPendingTitle = Acest experiment s-a încheiat
 experimentGradReportPendingCopy = Lucrăm la un raport complet. Revino în scurt timp pentru detalii.
 experimentGradReportReady = Am pregătit un raport complet de absolvire.
 experimentGoToLink = Mergi la { $title }
@@ -211,16 +211,16 @@ experimentPlatformAndroidIos = Experiment Android / iOS
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.
 
-upgradeNoticeTitle = { $title } necesită Firefox { $min_release } sau mai recent.
+upgradeNoticeTitle = { $title } necesită Firefox { $min_release } sau o versiune superioară.
 upgradeNoticeLink = Cum să actualizezi Firefox.
 versionChangeNotice = { $experiment_title } nu e suportat în această versiune de Firefox.
-versionChangeNoticeLink = Obține versiunea actuală a Firefox.
+versionChangeNoticeLink = Instalează versiunea actuală de Firefox.
 
 ## Shown while uninstalling Test Pilot.
 
-retireDialogTitle = Dezinstalează Test Pilot?
+retireDialogTitle = Dezinstalezi Test Pilot?
 retireMessageUpdate = Cum vrei. Test Pilot va fi dezinstalat. Poți dezactiva experimente individuale din managerul de suplimente Firefox.
-retireEmailMessage = Pentru a nu mai primi actualizări pe e-mail, clic pe linkul <em>dezabonare</em> (unsubscribe) din orice e-mail Test Pilot.
+retireEmailMessage = Pentru a nu mai primi actualizări pe e-mail, dă clic pe linkul <em>dezabonare</em> (unsubscribe) din orice e-mail Test Pilot.
 retireSubmitButton = Continuă
 pageTitleRetirePage = Firefox Test Pilot - Dezinstalează Test Pilot
 retirePageProgressMessage = Se închide...
@@ -230,7 +230,7 @@ retirePageSurveyButton = Participă la un sondaj scurt
 
 ## Shown to users after installing Test Pilot if a restart is required.
 
-restartIntroLead = Cerințe preliminare
+restartIntroLead = Listă de verificare înainte de decolare
 restartIntroOne = Repornește browserul
 restartIntroTwo = Găsește suplimentul Test Pilot
 restartIntroThree = Selectează experimentele
@@ -244,23 +244,23 @@ completedDate = Data de sfârșit a experimentului: <b>{ DATETIME($completedDate
 
 ## A warning shown to users looking at experiments incompatible with add-ons they already have installed.
 
-incompatibleHeader = Acest experiment ar putea să nu fie compatibil cu suplimentele deja instalate.
+incompatibleHeader = S-ar putea ca acest experiment să nu fie compatibil cu suplimentele deja instalate.
 incompatibleSubheader = Recomandăm <a>dezactivarea acestor suplimente</a> înainte de activarea acestui experiment:
 
 ## A form prompting the user to sign up for the Test Pilot Newsletter.
 
 newsletterFormEmailPlaceholder =
     .placeholder = Adresa ta de e-mail aici
-newsletterFormDisclaimer = Vom trimite doar informații referitoare la Test Pilot.
+newsletterFormDisclaimer = Îți vom trimite doar informații referitoare la Test Pilot.
 newsletterFormPrivacyNotice = Sunt de acord ca Mozilla să îmi prelucreze informațiile așa cum este explicat în <a>această Politică de confidențialitate</a>.
-newsletterFormSubmitButton = Alătură-te acum
+newsletterFormSubmitButton = Înregistrează-te acum
 newsletterFormSubmitButtonSubmitting = Se trimite...
 
 ## A section of the footer containing a newsletter signup form.
 
-newsletterFooterError = S-a produs o eroare la trimiterea adresei tale de e-mail. Încearcă din nou?
+newsletterFooterError = S-a produs o eroare la trimiterea adresei tale de e-mail. Încerci din nou?
 newsletterFooterHeader = Fii informat
-newsletterFooterBody = Află despre noi experimente și vezi rezultatele de test pentru experimentele pe care le-ai încercat.
+newsletterFooterBody = Află despre noile experimente și vezi rezultatele testelor pentru experimentele pe care le-ai încercat.
 newsletterFooterSuccessHeader = Îți mulțumim!
 newsletterFooterSuccessBody = Dacă nu ai confirmat anterior o abonare la un buletin de știri care are legătură cu Mozilla, este posibil să fie nevoie să o faci. Te rugăm să verifici mesajele primite sau dosarul spam pentru a găsi e-mailul de la noi.
 
@@ -271,14 +271,14 @@ localeWarningSubtitle = Dar poți să o activezi dacă dorești.
 
 ## An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 
-experimentsListNoneInstalledHeader = Hai să pornim!
-experimentsListNoneInstalledSubheader = Ești gata să încerci un nou experiment Test Pilot? Selectează unul pentru a-l activa, încerca, și apoi să ne spui ce părere ai.
+experimentsListNoneInstalledHeader = Să decolăm!
+experimentsListNoneInstalledSubheader = Ești gata să încerci un nou experiment Test Pilot? Selectează unul, activează-l, fă o tură și spune-ne ce părere ai.
 experimentsListNoneInstalledCTA = Nu ești interesat? <a>Spune-ne de ce</a>.
 
 ## Shown to users who do not have JavaScript enabled.
 
 noScriptHeading = Ups...
-noScriptMessage = Test Pilot are nevoie de JavaScript.<br>Ne pare rău.
+noScriptMessage = Test Pilot necesită JavaScript.<br>Ne pare rău.
 noScriptLink = Află de ce
 
 ## Text of a button to toggle visibility of a list of past experiments.
@@ -293,7 +293,7 @@ warningGoToFAQDetail = Ceva nu a funcționat în Test Pilot. Te rugăm <a>să ve
 warningUpgradeFirefoxTitle = Actualizează Firefox pentru a continua!
 warningUpgradeFirefoxDetail = Test Pilot necesită ultima versiune de Firefox. <a>Actualizează Firefox</a> ca să poți începe.
 warningHttpsRequiredTitle = Necesită HTTPS!
-warningHttpsRequiredDetail = Test Pilot trebuie accesat printr-o conexiune HTTPS. Te rugăm să consulți <a>documentaţia noastră</a> pentru detalii.
+warningHttpsRequiredDetail = Test Pilot trebuie accesat printr-o conexiune HTTPS. Te rugăm să consulți <a>documentația noastră</a> pentru detalii.
 warningMissingPrefTitle = Contribui la dezvoltarea Test Pilot?
 warningMissingPrefDetail = Când rulezi Test Pilot local sau în medii de dezvoltare, este necesară o configurație specială. Vezi <a>documentația noastră</a> pentru detalii.
 warningBadHostnameTitle = Denumire gazdă neaprobată!
