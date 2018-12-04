@@ -93,9 +93,9 @@ emailOptInDialogErrorTitle = O, nu!
 
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
-mobileDialogTitle = Descarcă aplicația
-mobileDialogAndroidButton = Descarcă aplicația pentru Android
-mobileDialogIOSButton = Descarcă aplicația pentru iOS
+mobileDialogTitle = Instalează aplicația
+mobileDialogAndroidButton = Instalează aplicația pentru Android
+mobileDialogIOSButton = Instalează aplicația pentru iOS
 mobileDialogMessageIOS = Descarcă <b>{ $title }</b> din iOS App Store.
 mobileDialogMessageAndroid = Descarcă <b>{ $title }</b> din Google Play Store.
 mobileDialogInstructionsSMS = Introdu numărul de telefon sau adresa e-mail pentru a trimite un link de descărcare pe telefonul tău:
@@ -104,12 +104,12 @@ mobileDialogPlaceholder = Introdu adresa e-mail
 mobileDialogPlaceholderSMS = Introdu numărul de telefon/adresa e-mail
 mobileDialogButton = Trimite-mi linkul de descărcare
 mobileDialogButtonSuccess = Mulțumim!
-mobileDialogSuccessMain = Linkul de descărcare s-a trimis!
+mobileDialogSuccessMain = Link de descărcare trimis!
 mobileDialogSuccessSecondarySMS = Verifică-ți dispozitivul pentru mesaje text sau e-mail.
 mobileDialogSuccessSecondary = Verifică-ți dispozitivul pentru e-mail.
-mobileDialogAnotherDeviceLink = Trimite unui alt dispozitiv
+mobileDialogAnotherDeviceLink = Trimite către alt dispozitiv
 mobileDialogError = Introdu o adresă e-mail validă:
-mobileDialogErrorSMS = Introdu un număr de telefon sau o adresă e-mail validă:
+mobileDialogErrorSMS = Introdu un număr de telefon sau o adresă e-mail valid(ă):
 mobileDialogNoticeSMSWithLink = Serviciul SMS este disponibil doar în anumite țări. Se pot aplica tarife pentru trimiteri de date sau mesaje SMS. Destinatarul mesajului prin e-mail sau SMS trebuie să își fi dat consimțământul. <a>Află mai multe</a>.
 
 ## Featured experiment.
@@ -123,7 +123,7 @@ experimentListJustLaunchedTab = Tocmai lansat
 experimentListJustUpdatedTab = Tocmai actualizat
 experimentListEndingTomorrow = Se termină mâine
 experimentListEndingSoon = Se termină în curând
-experimentCondensedHeader = Bun venit în Test Pilot!
+experimentCondensedHeader = Bine ai venit la Test Pilot!
 experimentListHeader = Alege-ți experimentele!
 experimentListHeaderWithFeatured = Încearcă toate experimentele noastre
 
@@ -132,7 +132,7 @@ experimentListHeaderWithFeatured = Încearcă toate experimentele noastre
 # Small button on experiment card that links to a survey for feedback submission
 experimentCardFeedback = Feedback
 experimentCardManage = Gestionează
-experimentCardGetStarted = Pornește
+experimentCardGetStarted = Începe
 # Also used in NewsUpdateDialog and card mobile views
 experimentCardLearnMore = Află mai multe
 
