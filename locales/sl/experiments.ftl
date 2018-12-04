@@ -178,6 +178,7 @@ pricewiseDescription = Price Wise samodejno poišče padce cen določenih izdelk
 pricewiseDetails0Copy = Izdelke, za katere želite, da vas Price Wise obvešča, dodajte na seznam spremljanja.
 pricewiseDetails1Copy = Ko cena pade, vas Price Wise obvesti z barvnimi obvestili.
 pricewiseLegalnotice = Z nadaljevanjem se strinjate s <terms-link>pogoji uporabe</terms-link> in <privacy-link>politiko zasebnosti</privacy-link> Test Pilota ter s <modal-link>politiko zasebnosti Price Wise</modal-link>.
+pricewiseMeasurements0 = Strani izdelkov: Price Wise si shranjuje, kako pogosto obiščete shranjene strani izdelkov.
 pulseDescription = Pošiljajte nam povratne informacije o učinkovitosti delovanja. Dodajte Pulse in nam pomagajte razumeti, katere strani v Firefoxu delujejo dobro in katere ne.
 pulseIntroduction = Ustvarjamo novo generacijo Firefoxa in cilj nam je hitrost ter zmogljivost v resničnem svetu. Pulse vam omogoča, da našim programerjem sporočite povratne informacije o tem, katere strani v Firefoxu delujejo dobro in katere ne.
 pulseDetails0Copy = Sporočajte nam povratne informacije o učinkovitosti delovanja spletnih strani, ki jih obiskujete.
