@@ -50,10 +50,10 @@ describe("app/components/FeaturedExperiment", () => {
     expect(findLocalizedById(subject, "testingDescription")).to.have.property("length", 1);
   });
 
-  it('should have a "More Detail" button if not enabled', () => {
-    subject.setProps({ enabled: true });
+  it('should have a "More Detail" button if hasAddon', () => {
+    subject.setProps({ hasAddon: true });
     expect(findLocalizedById(subject, "moreDetail")).to.have.property("length", 0);
-    subject.setProps({ enabled: false });
+    subject.setProps({ hasAddon: false });
     expect(findLocalizedById(subject, "moreDetail")).to.have.property("length", 1);
   });
 });
