@@ -100,7 +100,7 @@ export default class FeaturedExperiment extends Component<FeaturedExperimentProp
             <p className="featured-experiment__description">{description}</p>
           </Localized>
 
-          {(!enabled || isMobileExperiment) && <Localized id='moreDetail'>
+          {(!hasAddon || isMobileExperiment) && <Localized id='moreDetail'>
             <Link className="featured-experiment__details" to={`/experiments/${slug}`}
               onClick={handleDetailsLinkClick}>View Details</Link>
           </Localized>}
