@@ -15,7 +15,7 @@ Main features:
 ```
 npm install
 npm start
-open https://example.com:8080/
+open https://example.com:8000/
 ```
 
 There's currently no build process, just a static web server with SSL enabled
