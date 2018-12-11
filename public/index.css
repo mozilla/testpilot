@@ -1,0 +1,5 @@
+button#uninstall-addon {
+  padding: 1em;
+  font-weight: bold;
+  cursor: pointer;
+}

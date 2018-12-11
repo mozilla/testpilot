@@ -1,0 +1,24 @@
+{
+  "name": "testpilot-eol",
+  "description": "Simpler Test Pilot site for post-graduation",
+  "version": "0.0.1",
+  "author": "Mozilla (https://mozilla.org/)",
+  "license": "MPL-2.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -p 8000 --ssl --cert certs/server/my-server.crt.pem --key certs/server/my-server.key.pem ./public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mozilla/testpilot-eol.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mozilla/testpilot-eol/issues"
+  },
+  "homepage": "https://github.com/mozilla/testpilot-eol#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}

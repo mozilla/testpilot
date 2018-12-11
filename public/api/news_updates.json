@@ -1,0 +1,12 @@
+[
+ {
+  "slug": "eol-update-1",
+  "title": "Test Pilot Has Graduated",
+  "content": "Test Pilot has graduated and left the building.",
+  "link": "https://medium.com/firefox-test-pilot/",
+  "created": "2019-01-22T12:00:00.000Z",
+  "published": "2019-01-22T12:00:00.000Z",
+  "dev": false,
+  "major": true
+ }
+]
