@@ -51,6 +51,7 @@ containersContributors6Title = Front End-sikkerheit
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+firefoxlockboxDescription = Ta passorda dine med deg overalt med Firefox-appen Lockbox for iPhone.
 firefoxlockboxContributors7Title = Produktdataforskar
 minvidDescription = Fokus på videoklipp. Min Vid viser filmar frå YouTube og Vimeo i ei lita ramme som vert verande i framgrunnen medan du surfar.
 minvidIntroduction = <p>Likar du å sjå på video? Likar du å få ting gjort medan du ser på video? Prøv Min Vid. Det er som bilde-i-bilde, der det eine bildet er ein video og det andre er heile nettet.</p><ul> <li><strong>Klikk og begynn:</strong> Opne ramma for Min Vid for å spele av videoen i framgrunnen medan du surfar.</li> <li><strong>Plasser han der du vil:</strong> Min Vid lar deg dra videoruta kvar som helst på skrivbordet.</li> <li><strong>Kontrollar der du treng dei:</strong> Min Vid inneheld kontrollar som lar deg pause/spele, hoppe over, dra, minimere og justere volumet direkte i ramma.</li></ul>
