@@ -38,7 +38,7 @@ headerLinkBlog = Blogg
 ## The splash on the homepage.
 
 landingIntroOne = Test nye funksjonar.
-landingIntroTwo = Gje ei tilbakjemelding.
+landingIntroTwo = Gje oss ei tilbakemelding.
 landingIntroThree = Hjelp til med å utvikle Firefox.
 landingLegalNoticeWithLinks = Ved å fortsetje godkjenner du <terms-link>brukarvilkåra</terms-link> og <privacy-link>personvernmerknaden</privacy-link> for Test Pilot.
 landingMoreExperimentsButton = Fleire eksperiment
@@ -51,8 +51,6 @@ landingInstallingButton = Installerer...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Installer Test Pilot &amp;
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = Slå på { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -96,6 +94,8 @@ emailOptInDialogErrorTitle = Å, nei!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Få appen
+mobileDialogAndroidButton = Last ned Android-appen
+mobileDialogIOSButton = Last ned iOS-appen
 mobileDialogMessageIOS = Last ned <b>{ $title }</b> frå iOS App Store.
 mobileDialogMessageAndroid = Last ned <b>{ $title }</b> frå Google Play Store.
 mobileDialogInstructionsSMS = Skriv inn telefonnummeret ditt eller e-postadressa di for å få sendt ei nedlastingslenke til telefonen din:
@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Sjå om du har fått e-posten på eininga di.
 mobileDialogAnotherDeviceLink = Send til ei anna eining
 mobileDialogError = Skriv inn ei gyldig e-postadresse:
 mobileDialogErrorSMS = Skriv inn eit gyldig telefonnummer eller ei gyldig e-postadresse:
-mobileDialogNoticeSMS = SMS-tenesta er berre tilgjengeleg i utvalde land. Kostnadar for SMS- og dataoverføringar kan førekome. Mottakaren av e-posten og SMS-en må ha samtykka. { $learnMore }
+mobileDialogNoticeSMSWithLink = SMS-tenesta er berre tilgjengeleg i enkelte utvalde land. Det kan vere at du må betale for SMS- og datatrafikk. Mottakaren av e-posten eller SMS-en må ha samtykka. <a>Les meir</a>.
 
 ## Featured experiment.
 
