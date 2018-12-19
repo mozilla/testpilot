@@ -9,7 +9,7 @@ body {
 }
 
 h1 {
-	font-size: 2.5rem;
+	font-size: 2.4rem;
 	font-weight: normal;
 	line-height: 1.2;
 	margin-top: 0;
@@ -27,11 +27,11 @@ header div {
 	height: 115px;
 	margin: 0 auto;
 	position: relative;
-	padding: 0 20px;
+	padding: 15px 20px 0;
 }
 
 header h1 {
-	margin: 15px 0 10px;
+	margin: 0 0 10px;
 	text-indent: -9999px;
 }
 
@@ -88,7 +88,7 @@ section .container {
 	max-width: 550px;
 	width: calc(100% - 480px);
 	display: inline-block;
-	background-image: linear-gradient(rgba(0,0,0,.2) 40px,rgba(0,0,0,.15));
+	background-image: linear-gradient(rgba(0,0,0,.3) 40px,rgba(0,0,0,.25));
 	padding: 40px;
 	float: left;
 }
@@ -108,15 +108,59 @@ section .container {
 	height: 242px;
 	display: inline-block;
 	margin: 40px 0 40px 60px;
+	animation: float 3s ease-in-out infinite;
+}
+
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+.btn {
+	font-size: 18px;
+    height: 48px;
+    padding: 12px;
+    width: 160px;
+    background-color: #0060df;
+    border: 0;
+    color: #fff;
+    border-radius: 2px;
+	cursor: pointer;
+	font-family: Fira Sans,sans-serif;
+	font-weight: 400;
+	min-height: 40px;
+	outline: none;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	transition: background .15s,width .15s;
+}
+
+.btn:hover {
+    background-color: #003eaa;
+    border: 0;
+}
+
+.btn:active {
+    background-color: #002275;
+    border-color: #002275;
 }
 
 @media only screen and (max-width: 1019px) {
 	body {
-		font-size: 1rem;
+		font-size: 1.1rem;
 	}
 
 	h1 {
-		font-size: 2rem;
+		font-size: 2.2rem;
 	}
 
 	section {
@@ -132,7 +176,9 @@ section .container {
 	}
 
 	.copter {
-		margin: 0 auto 40px auto;
+		width: 200px;
+		height: 196px;
+		margin: 0 auto 20px auto;
 		display: block;
 	}
 
