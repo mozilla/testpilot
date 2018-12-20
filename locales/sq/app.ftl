@@ -46,7 +46,7 @@ landingMoreExperimentsButton = Më tepër Eksperimente
 ## Related to the installation of the Test Pilot add-on.
 
 landingInstallButton = Instaloni shtesën Pilot Testesh
-landingInstallingButton = Po instalohet...
+landingInstallingButton = Po instalohet…
 
 ## Related to a one click to install test pilot and an experiment.
 
@@ -77,7 +77,7 @@ onboardingMessage = Vumë një ikonë te paneli juaj që të mund të gjeni Pilo
 ## Error message pages.
 
 errorHeading = Oh!
-errorMessage = Duket se prishëm diçkla. <br> Ndoshta më mirë të riprovonit më vonë.
+errorMessage = Duket se prishëm diçka. <br> Ndoshta më mirë të riprovonit më vonë.
 # 404 is the HTTP standard response code for a page not found. This title is a
 # word play in English, being "Oh" both an exclamation and the pronunciation of
 # the number 0.
