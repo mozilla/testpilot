@@ -73,6 +73,9 @@ containersContributors6Title = Ασφάλεια προσκηνίου
 containersContributors7Title = Firefox UX
 containersContributors8Title = Firefox UX
 containersContributors9Title = Firefox UX
+emailtabsContributors0Title = Μηχανικός λογισμικού
+emailtabsContributors1Title = Μηχανικός
+emailtabsContributors2Title = Firefox UX
 firefoxlockboxDescription = Πάρτε τους κωδικούς πρόσβασης σας παντού με την εφαρμογή Firefox Lockbox για iPhone.
 firefoxlockboxIntroductionUrlsandcountries = <p>Πάρτε μαζί σας τους κωδικούς πρόσβασής σας με το Firefox Lockbox. Αυτό το πείραμα του Test Pilot σάς παρέχει πρόσβαση σε όλα τα στοιχεία σύνδεσης που έχετε αποθηκεύσει στο Firefox, από μια ασφαλή εφαρμογή στο iPhone σας. Απλά συνδεθείτε στο Lockbox με το λογαριασμό Firefox σας και τα αποθηκευμένα ονόματα χρήστη και κωδικοί πρόσβασής σας θα συγχρονιστούν στην εφαρμογή με κρυπτογράφηση 256-bit. Έτσι, θα έχετε εύκολη πρόσβαση σε διαδικτυακούς λογαριασμούς, ακόμη και εν κινήσει.</p> <p><strong>Το Firefox Lockbox απαιτεί ένα λογαριασμό Firefox προκειμένου να προσπελάσετε προηγούμενες, αποθηκευμένες συνδέσεις. Αν δεν έχετε ρυθμίσει ένα λογαριασμό, ξεκινήστε εδώ:<br/><a href="https://lockbox.firefox.com/faq.html">https://lockbox.firefox.com/faq.html</a></strong></p> <p><em>Θέλετε να ενημερωθείτε όταν κυκλοφορήσει η εφαρμογή για Android; Εγγραφείτε:<br/><a href="https://goo.gl/forms/ZwLIfHSGLrYcM6k83">https://goo.gl/forms/ZwLIfHSGLrYcM6k83</a></em></p>
 firefoxlockboxDetails0Copy = Αποκτήστε πρόσβαση στις πληροφορίες ονόματος χρήστη και κωδικού πρόσβασης για όλους τους λογαριασμούς που αποθηκεύετε στο Firefox.
