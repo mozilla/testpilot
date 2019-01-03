@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    <meta name="defaultLanguage" content="en-US">
+    <meta name="availableLanguages" content="en-US, fr">
     <link rel="stylesheet" href="./index.css">
+    <link rel="localization" href="localization/{locale}/main.ftl">
+    <script defer src="./lib/fluent-web-bundle.js"></script>
   </head>
   <body>
   	<div class="stars"></div>
     <div class="earth"></div>
   	<header>
   		<div>
-  			<h1><a class="wordmark" href="/">Firefox Test Pilot</a></h1>
+  		  <h1><a class="wordmark" href="/">Firefox Test Pilot</a></h1>
   		</div>
   	</header>
   	<section>
   		<div class="container">
         <div class="copter"></div>
 	  		<div class="content">
-			    <h1>Test Pilot has graduated ;(</h1>
-			    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-			    <button class="btn" id="learn-more">Learn More</button>
+			    <h1 data-l10n-id="title">Test Pilot has graduated ;(</h1>
+			    <p data-l10n-id="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+			    <button class="btn" id="learn-more" data-l10n-id="learn-more">Learn More</button>
 			 </div>
   		</div>
   	</section>
