@@ -1,18 +1,18 @@
 body {
-	background-image: linear-gradient(#000f40,#513365);
-	color: white;
-	font-family: Fira Sans,sans-serif;
-	font-size: 1.2rem;
-	line-height: 1.6;
-	margin: 0;
-	min-height: 100vh;
+  background-image: linear-gradient(#000f40,#513365);
+  color: white;
+  font-family: Fira Sans,sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100vh;
 }
 
 h1 {
-	font-size: 2.4rem;
-	font-weight: normal;
-	line-height: 1.2;
-	margin-top: 0;
+  font-size: 2.4rem;
+  font-weight: normal;
+  line-height: 1.2;
+  margin-top: 0;
 }
 
 button#uninstall-addon {
@@ -22,183 +22,183 @@ button#uninstall-addon {
 }
 
 header div {
-	max-width: 1000px;
-	width: 100%;
-	height: 115px;
-	margin: 0 auto;
-	position: relative;
-	padding: 15px 20px 0;
+  max-width: 1000px;
+  width: 100%;
+  height: 115px;
+  margin: 0 auto;
+  position: relative;
+  padding: 15px 20px 0;
 }
 
 header h1 {
-	margin: 0 0 10px;
-	text-indent: -9999px;
+  margin: 0 0 10px;
+  text-indent: -9999px;
 }
 
 header h1 .wordmark {
-	background-size: 302px 64px;
-	height: 90px;
-	width: 302px;
-	background-image: url(/images/wordmark.png);
-	background-position: left 5px;
-	background-repeat: no-repeat;
-	display: block;
-	position: relative;
+  background-size: 302px 64px;
+  height: 90px;
+  width: 302px;
+  background-image: url(/images/wordmark.png);
+  background-position: left 5px;
+  background-repeat: no-repeat;
+  display: block;
+  position: relative;
 }
 
 .stars {
-	background-image: url(/images/stars.png);
-	background-position: center 16px;
-	background-repeat: no-repeat;
-	background-size: 1180px 346px;
-	bottom: 0;
-	left: 0;
-	position: fixed;
-	right: 0;
-	top: 10px;
-	z-index: 0;
+  background-image: url(/images/stars.png);
+  background-position: center 16px;
+  background-repeat: no-repeat;
+  background-size: 1180px 346px;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 10px;
+  z-index: 0;
 }
 
 .earth {
-	background-image: url(/images/background.png);
-	background-position: top left;
-	background-repeat: no-repeat;
-	background-size: 1600px;
-	width: 1200px;
-	height: 800px;
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	z-index: 0;
-	opacity: .75;
+  background-image: url(/images/background.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 1600px;
+  width: 1200px;
+  height: 800px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  opacity: .75;
 }
 
 section {
-	padding: 90px 0;
+  padding: 90px 0;
 }
 
 section .container {
-	max-width: 1000px;
-	width: 100%;
-	margin: 0 auto;
-	position: relative;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
 }
 
 .content {
-	max-width: 550px;
-	width: calc(100% - 480px);
-	display: inline-block;
-	background-image: linear-gradient(rgba(0,0,0,.3) 40px,rgba(0,0,0,.25));
-	padding: 40px;
-	float: left;
+  max-width: 550px;
+  width: calc(100% - 480px);
+  display: inline-block;
+  background-image: linear-gradient(rgba(0,0,0,.3) 40px,rgba(0,0,0,.25));
+  padding: 40px;
+  float: left;
 }
 
 .content p {
-	font-weight: 300;
-	margin-bottom: 40px;
-	position: relative;
+  font-weight: 300;
+  margin-bottom: 40px;
+  position: relative;
 }
 
 .copter {
-	background-image: url(/images/copter.png);
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: contain;
-	width: 300px;
-	height: 242px;
-	display: inline-block;
-	margin: 40px 0 40px 60px;
-	animation: float 3s ease-in-out infinite;
+  background-image: url(/images/copter.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 300px;
+  height: 242px;
+  display: inline-block;
+  margin: 40px 0 40px 60px;
+  animation: float 3s ease-in-out infinite;
 }
 
 
 @keyframes float {
-	0% {
-		transform: translatey(0px);
-	}
-	50% {
-		transform: translatey(-20px);
-	}
-	100% {
-		transform: translatey(0px);
-	}
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
 }
 
 .btn {
-	font-size: 18px;
-    height: 48px;
-    padding: 12px;
-    width: 160px;
-    background-color: #0060df;
-    border: 0;
-    color: #fff;
-    border-radius: 2px;
-	cursor: pointer;
-	font-family: Fira Sans,sans-serif;
-	font-weight: 400;
-	min-height: 40px;
-	outline: none;
-	position: relative;
-	text-align: center;
-	text-decoration: none;
-	transition: background .15s,width .15s;
+  font-size: 18px;
+  height: 48px;
+  padding: 12px;
+  width: 160px;
+  background-color: #0060df;
+  border: 0;
+  color: #fff;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: Fira Sans,sans-serif;
+  font-weight: 400;
+  min-height: 40px;
+  outline: none;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: background .15s,width .15s;
 }
 
 .btn:hover {
-    background-color: #003eaa;
-    border: 0;
+  background-color: #003eaa;
+  border: 0;
 }
 
 .btn:active {
-    background-color: #002275;
-    border-color: #002275;
+  background-color: #002275;
+  border-color: #002275;
 }
 
 @media only screen and (max-width: 1019px) {
-	body {
-		font-size: 1.1rem;
-	}
+  body {
+    font-size: 1.1rem;
+  }
 
-	h1 {
-		font-size: 2.2rem;
-	}
+  h1 {
+    font-size: 2.2rem;
+  }
 
-	section {
-		padding: 40px 0;
-	}
+  section {
+    padding: 40px 0;
+  }
 
-	.content {
-		width: calc(100% - 80px);
-		margin: 0 auto;
-		padding: 40px;
-		display: block;
-		float: inherit;
-	}
+  .content {
+    width: calc(100% - 80px);
+    margin: 0 auto;
+    padding: 40px;
+    display: block;
+    float: inherit;
+  }
 
-	.copter {
-		width: 200px;
-		height: 196px;
-		margin: 0 auto 20px auto;
-		display: block;
-	}
+  .copter {
+    width: 200px;
+    height: 196px;
+    margin: 0 auto 20px auto;
+    display: block;
+  }
 
-	.earth {
-		left: 0;
-		width: 100vw;
-		background-size: 1020px;
-		background-position: center 300px;
-		margin: auto;
-	}
-	
-	header div {
-		height: 90px;
-		padding: 0;
-	}
+  .earth {
+    left: 0;
+    width: 100vw;
+    background-size: 1020px;
+    background-position: center 300px;
+    margin: auto;
+  }
 
-	header h1 .wordmark {
-		background-size: 194px 41px;
-    	height: 61px;
-    	width: 200px;
-    	margin: 0 auto;
-	}
+  header div {
+    height: 90px;
+    padding: 0;
+  }
+
+  header h1 .wordmark {
+    background-size: 194px 41px;
+    height: 61px;
+    width: 200px;
+    margin: 0 auto;
+  }
 }
