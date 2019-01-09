@@ -1,5 +1,5 @@
 attrs==18.2.0
-pluggy==0.8.0
+pluggy==0.8.1
 PyPOM==2.2.0
 pytest==4.0.2
 pytest-selenium==1.15.1
