@@ -1,36 +1,3 @@
-let uninstallButton;
-
-function init() {
-  uninstallButton = document.getElementById("uninstall-addon");
-  updateUninstallButton();
-}
-
-function updateUninstallButton() {
-  detectTestPilotAddon()
-    .then(function (result) {
-      if (result) {
-        uninstallButton.removeAttribute("disabled");
-        uninstallButton.innerHTML = "Uninstall Test Pilot";
-        uninstallButton.addEventListener("click", handleUninstallClick);
-      } else {
-        uninstallButton.setAttribute("disabled", "disabled");
-        uninstallButton.innerHTML = "Test Pilot not installed";
-        uninstallButton.removeEventListener("click", handleUninstallClick);
-      }
-    });
-}
-
-function handleUninstallClick() {
-  uninstallTestPilotAddon()
-    .then(function () {
-      alert("Add-on uninstalled");
-      updateUninstallButton();
-    })
-    .catch(function (err) {
-      alert("Add-on uninstall failed: " + err);
-    });
-}
-
 function detectTestPilotAddon() {
   return getAddonManager()
     .then(function (mam) {
@@ -80,4 +47,19 @@ function getAddonId() {
   }[window.location.host];
 }
 
-init();
+(function() {
+    detectTestPilotAddon()
+    .then(function (result) {
+      if (result) {
+        uninstallTestPilotAddon()
+          .then(function () {
+            console.log("txp successfully uninstalled")
+          })
+          .catch(function (err) {
+            console.log("txp uninstall failed: " + err);
+          });
+      } else {
+        console.log("txp not installed");
+      }
+    });
+})();
