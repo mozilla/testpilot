@@ -95,8 +95,22 @@ section .container {
 
 .content p {
   font-weight: 300;
-  margin-bottom: 40px;
+  margin: 0 0 24px;
+  font-size: 16px;
   position: relative;
+}
+
+.content .close {
+  text-align: right;
+}
+
+.content .close p {
+  margin: 0
+}
+
+.content .close .signature {
+  font-size: 20px;
+  font-style: italic;
 }
 
 .copter {
@@ -122,36 +136,6 @@ section .container {
   100% {
     transform: translatey(0px);
   }
-}
-
-.btn {
-  font-size: 18px;
-  height: 48px;
-  padding: 12px;
-  width: 160px;
-  background-color: #0060df;
-  border: 0;
-  color: #fff;
-  border-radius: 2px;
-  cursor: pointer;
-  font-family: Fira Sans,sans-serif;
-  font-weight: 400;
-  min-height: 40px;
-  outline: none;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  transition: background .15s,width .15s;
-}
-
-.btn:hover {
-  background-color: #003eaa;
-  border: 0;
-}
-
-.btn:active {
-  background-color: #002275;
-  border-color: #002275;
 }
 
 @media only screen and (max-width: 1019px) {
