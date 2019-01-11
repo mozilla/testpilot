@@ -8,7 +8,8 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server -p 8000 --ssl --cert certs/server/my-server.crt.pem --key certs/server/my-server.key.pem ./public",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cp node_modules/fluent-web/fluent-web.js public/lib/fluent-web-bundle.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
   "homepage": "https://github.com/mozilla/testpilot-eol#readme",
   "devDependencies": {
     "http-server": "^0.11.1"
+  },
+  "dependencies": {
+    "fluent-web": "0.1.1"
   }
 }
