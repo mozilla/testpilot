@@ -31,7 +31,7 @@ home = Início
 menuTitle = Definições
 menuWiki = Wiki do Test Pilot
 menuDiscuss = Discutir o Test Pilot
-menuFileIssue = Submeter um issue
+menuFileIssue = Submeter um problema
 menuRetire = Desinstalar o Test Pilot
 headerLinkBlog = Blogue
 
