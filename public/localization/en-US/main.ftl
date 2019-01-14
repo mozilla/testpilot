@@ -20,7 +20,7 @@ eolMessageTwo =
     <a data-l10n-name="activityStreamLink" title="{-exp-activity-stream}">{-exp-activity-stream}</a>, and
     <a data-l10n-name="screenshotsLink" title="{-exp-screenshots}">{-exp-screenshots}</a>.
 eolMessageThree =
-    We've also built great new app experiences like
+    We’ve also built great new app experiences like
     <a data-l10n-name="lockboxLink" title="{-exp-lockbox}">{-exp-lockbox}</a> and
     <a data-l10n-name="sendLink" title="{-exp-send}">{-exp-send}</a>
     which continue to push {-brand} beyond the browser. Look for exciting new developments from both of these projects in 2019.
