@@ -1,49 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="defaultLanguage" content="en-US">
-    <meta name="availableLanguages" content="en-US, fr">
-    <link rel="stylesheet" href="./index.css">
-    <link rel="localization" href="localization/{locale}/main.ftl">
-    <script defer src="./lib/fluent-web-bundle.js"></script>
-  </head>
-  <body>
-    <div class="stars"></div>
-    <div class="earth"></div>
-    <header>
-      <div>
-        <h1><a class="wordmark" href="/">Firefox Test Pilot</a></h1>
-      </div>
-    </header>
-    <section>
-      <div class="container">
-        <div class="copter"></div>
-        <div class="content">
-          <h1 data-l10n-id="eolTitle"></h1>
-          <p data-l10n-id="eolMessageOne">
-            After three years and more than twenty experiments,
-            <a data-l10n-name="testpilot" href="https://testpilot.firefox.com">Firefox Test Pilot</a>
-            is touching down for good.
-          </p>
-          <p data-l10n-id="eolMessageTwo">
-With your generous participation and feedback, we&rsquo;ve shaped Firefox with amazing new features like Containers, Activity Stream, and Screenshots.
-          </p>
-          <p data-l10n-id="eolMessageThree">
-            We&rsquo;ve also built great new app experiences like Firefox Lockbox and Firefox Send which continue to push Firefox beyond the browser. Look for exciting new developments from both of these projects in 2019.
-          </p>
-          <p data-l10n-id="eolMessageFour">
-Other experiments like Firefox Color, Side View, Price Wise, and Email Tabs will remain available to the Firefox community. If you are currently using any of these experiments, no action is required on your part.
-          </p>
-          <p data-l10n-id="eolMessageFive">
-            This blog post provides more detailed information about why Firefox Test Pilot is going away, and what the future will bring.
-          </p>
-          <div class="close">
-            <p data-l10n-id="eolMessageClose">Thank you for flying,</p>
-            <p class="signature" data-l10n-id="eolMessageSignature">The Test Pilot Team</p>
-          </div>
+<head>
+  <meta content="en-US" name="defaultLanguage">
+  <meta content="en-US, fr" name="availableLanguages">
+  <link href="./index.css" rel="stylesheet">
+  <link href="localization/{locale}/main.ftl" rel="localization">
+  <script defer src="./lib/fluent-web-bundle.js"></script>
+  <title></title>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="earth"></div>
+  <header>
+    <div>
+      <h1><a class="wordmark" href="/">Firefox Test Pilot</a></h1>
+    </div>
+  </header>
+  <section>
+    <div class="container">
+      <div class="copter"></div>
+      <div class="content">
+        <h1 data-l10n-id="eolTitle"></h1>
+        <p data-l10n-id="eolMessageOne"></p>
+        <p data-l10n-id="eolMessageTwo">With your generous participation and feedback, we&rsquo;ve shaped Firefox with amazing new features like <a data-l10n-name="containersLink" href=
+        "https://medium.com/firefox-test-pilot/firefox-containers-are-go-ed2e3533b6e3">Containers</a>, <a data-l10n-name="activityStreamLink" href="https://medium.com/firefox-test-pilot/graduation-report-activity-stream-31aed429bd49">Activity
+        Stream</a>, and <a data-l10n-name="screenshotsLink" href="https://medium.com/firefox-test-pilot/screenshots-is-shipping-in-firefox-56-25ecbe0d5b91">Firefox Screenshots</a>.</p>
+        <p data-l10n-id="eolMessageThree">We&rsquo;ve also built great new app experiences like <a data-l10n-name="lockboxLink" href="https://lockbox.firefox.com">Firefox Lockbox</a> and <a data-l10n-name="sendLink" href=
+        "https://send.firefox.com">Firefox Send</a> which continue to push Firefox beyond the browser. Look for exciting new developments from both of these projects in 2019.</p>
+        <p data-l10n-id="eolMessageFour">Our other experiments like <a data-l10n-name="colorLink" href="https://addons.mozilla.org/firefox/addon/firefox-color-prod/">Firefox Color</a>, <a data-l10n-name="sideViewLink" href=
+        "https://addons.mozilla.org/firefox/addon/side-view/">Side View</a>, <a data-l10n-name="notesLink" href="https://example.com/notes">Firefox Notes</a>,<a data-l10n-name="priceWiseLink" href="https://example.com/price-wise">Price Wise</a>, and
+        <a data-l10n-name="emailTabsLink" href="https://example.com/email-tabs">Email Tabs</a> will remain available to { -brand } users. If you have installed these experiments, you can continue to use them.</p>
+        <p data-l10n-id="eolMessageFive">This <a data-l10n-name="blogPostLink" href="https://example.com/blog-post">blog post</a> provides more detailed information about why Firefox Test Pilot is going away, and what the future will bring.</p>
+        <div class="close">
+          <p data-l10n-id="eolMessageClose">Thank you for flying,</p>
+          <p class="signature" data-l10n-id="eolMessageSignature">The Test Pilot Team</p>
         </div>
       </div>
-    </section>
-    <script src="./index.js"></script>
-  </body>
+    </div>
+  </section>
+  <script src="./index.js"></script>
+</body>
 </html>

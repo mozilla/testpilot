@@ -74,7 +74,7 @@ header h1 .wordmark {
 }
 
 section {
-  padding: 90px 0;
+  padding: 60px 0;
 }
 
 section .container {
@@ -88,7 +88,7 @@ section .container {
   max-width: 550px;
   width: calc(100% - 480px);
   display: inline-block;
-  background-image: linear-gradient(rgba(0,0,0,.3) 40px,rgba(0,0,0,.25));
+  background-image: linear-gradient(rgba(0,0,0,.5) 40px,rgba(0,0,0,.4));
   padding: 40px;
   float: left;
 }
@@ -98,6 +98,10 @@ section .container {
   margin: 0 0 24px;
   font-size: 16px;
   position: relative;
+}
+
+.content a {
+  color: white;
 }
 
 .content .close {
