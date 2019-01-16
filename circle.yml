@@ -1,0 +1,64 @@
+version: 2.0
+notify:
+  branches:
+    only:
+      - master
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.9.4
+    working_directory: ~/testpilot
+    steps:
+      - checkout
+      - restore_cache:
+         keys:
+           - v3-npm-deps-{{ checksum "package.json" }}
+           - v3-npm-deps-
+      - run:
+          name: Setup env
+          command: |
+            curl -L --create-dirs -o ~/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 && chmod +x ~/bin/jq
+            ./bin/circleci/install-node-dependencies.sh
+      - run:
+          name: Build addon and frontend
+          command: |
+            ./bin/circleci/build-version-json.sh
+            ./bin/circleci/build-frontend.sh
+      - store_artifacts:
+          path: ~/testpilot/frontend.zip
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./*
+      - save_cache:
+         key: v3-npm-deps-{{ checksum "package.json" }}
+         paths:
+           - node_modules
+  static_deploy:
+    docker:
+      - image: circleci/node:8.9.4
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Install AWSCLI
+          command: |
+            sudo apt-get install python-pip python-dev build-essential
+            sudo pip install --upgrade pip
+            sudo pip install awscli --upgrade
+      - run:
+          name: Static deployment
+          command: |
+            TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/circleci/do-exclusively.sh --branch master ./bin/deploy.sh dev
+            ./bin/circleci/invalidate-cloudfront-cache.sh E2ERG47PHCWD0Z
+workflows:
+  version: 2
+  build_test_deploy:
+    jobs:
+      - build
+      - static_deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

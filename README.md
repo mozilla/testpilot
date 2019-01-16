@@ -18,10 +18,17 @@ npm start
 open https://example.com:8000/
 ```
 
-There's currently no build process, just a static web server with SSL enabled
-using the self-signed development certificates from Test Pilot proper.
-
 If you haven't already followed the Test Pilot quickstart instructions for
 development, you'll need to use Firefox Developer Edition and enable the
 `extensions.webapi.testing` preference in about:config. This is necessary to
 run code for uninstalling the Test Pilot add-on.
+
+## Building for Deployment
+
+```
+npm install
+npm run static
+```
+
+This should leave you with a ready-to-deploy static site under the
+`dist/` directory.
