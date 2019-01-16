@@ -48,8 +48,6 @@ landingInstallingButton = స్థాపించబడుతోంది...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Test Pilotని స్థాపి౦చ౦డి &amp;
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = { $title } చేతనించు
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -90,6 +88,11 @@ emailOptInDialogErrorTitle = అరెరే!
 
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
+mobileDialogButtonSuccess = కృతజ్ఞతలు!
+mobileDialogSuccessMain = దింపుకోలు లంకె పంపించాము!
+mobileDialogSuccessSecondary = ఈమెయిలు కోసం మీ పరికరంలో చూడండి.
+mobileDialogError = సరైన ఈమెయిలు ఇవ్వండి:
+mobileDialogErrorSMS = సరైన ఫోను నెంబరు లేదా ఈమెయిలు ఇవ్వండి:
 
 ## Featured experiment.
 
@@ -155,7 +158,7 @@ userCountContainerAlt = ఇప్పుడే ప్రారంభించా�
 highlightPrivacy = మీ గోప్యత
 experimentGradReportButton = గ్రాడ్యుయేషన్ నివేదిక
 experimentGradReportPendingTitle = ఈ ప్రయోగం ముగిసింది
-experimentGradReportPendingCopy = పూర్తి నివేదికపై మేము పని చేస్తున్నాము. వివరాల కోసం చూస్తూ ఉండండి. 
+experimentGradReportPendingCopy = పూర్తి నివేదికపై మేము పని చేస్తున్నాము. వివరాల కోసం చూస్తూ ఉండండి.
 experimentGradReportReady = మేము ఒక పూర్తి గ్రాడ్యుయేషన్ నివేదికను తయారు చేసాము.
 experimentGoToLink = { $title }కు వెళ్ళండి
 
@@ -165,6 +168,8 @@ experimentGoToLink = { $title }కు వెళ్ళండి
 ## Label shown next to a series of icons indicating whether an experiment is available as an add-on, mobile app, and/or web site
 
 experimentPlatformAddon = Firefox ప్రయోగం
+experimentPlatformAndroid = ఆండ్రాయిడ్ ప్రయోగం
+experimentPlatformIos = iOS ప్రయోగం
 experimentPlatformWeb = వెబ్ ప్రయోగం
 
 ## Shown when an experiment requires a version of Firefox newer than the user's.

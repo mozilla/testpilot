@@ -51,8 +51,6 @@ landingInstallingButton = Telepítés…
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Tesztpilóta telepítése és
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = { $title } bekapcsolása
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -96,6 +94,8 @@ emailOptInDialogErrorTitle = Jaj ne!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Szerezze be az alkalmazást
+mobileDialogAndroidButton = Szerezze be az Android alkalmazást
+mobileDialogIOSButton = Szerezze be az iOS alkalmazást
 mobileDialogMessageIOS = A <b>{ $title }</b> letöltése az iOS App Store-ból.
 mobileDialogMessageAndroid = A <b>{ $title }</b> letöltése a Google Play Store-ból.
 mobileDialogInstructionsSMS = Adja meg a telefonszámát vagy e-mail címét, hogy elküldjük a letöltési hivatkozást a telefonjára:

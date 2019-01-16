@@ -51,8 +51,6 @@ landingInstallingButton = Yükleniyor...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Test Pilotu’nu yükle ve
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = { $title } deneyini etkinleştir
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -96,6 +94,8 @@ emailOptInDialogErrorTitle = Hayır!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Uygulamayı indirin
+mobileDialogAndroidButton = Android uygulamasını indir
+mobileDialogIOSButton = iOS uygulamasını indir
 mobileDialogMessageIOS = <b>{ $title }</b> uygulamasını iOS App Store’dan indirin.
 mobileDialogMessageAndroid = <b>{ $title }</b> uygulamasını Google Play Store’dan indirin.
 mobileDialogInstructionsSMS = Telefon numaranızı veya e-posta adresinizi yazın, indirme bağlantısını telefonunuza gönderelim:

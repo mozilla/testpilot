@@ -51,8 +51,6 @@ landingInstallingButton = インストール中...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Test Pilot をインストールして
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = { $title } を有効化
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -96,6 +94,8 @@ emailOptInDialogErrorTitle = おっと！
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = アプリを入手
+mobileDialogAndroidButton = Android アプリを入手
+mobileDialogIOSButton = iOS アプリを入手
 mobileDialogMessageIOS = iOS App Store から <b>{ $title }</b> をダウンロード
 mobileDialogMessageAndroid = Google Play Store から <b>{ $title }</b> をダウンロード
 mobileDialogInstructionsSMS = 携帯電話にダウンロードリンクを送るには電話番号かメールアドレスを入力してください:
@@ -110,7 +110,6 @@ mobileDialogSuccessSecondary = 携帯を開いて新着メールを確認して�
 mobileDialogAnotherDeviceLink = 他の端末にも送信
 mobileDialogError = 正しいメールアドレスを入力してください:
 mobileDialogErrorSMS = 正しい電話番号かメールアドレスを入力してください:
-mobileDialogNoticeSMS = SMS サービスは一部の国でのみ利用可能です。SMS およびデータ料金が適用されます。メールや SMS を他人に送る場合、その受信者の同意を得る必要があります。{ $learnMore }
 
 ## Featured experiment.
 

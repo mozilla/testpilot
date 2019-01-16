@@ -51,8 +51,6 @@ landingInstallingButton = Asebded...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Sebded Test Pilot&amp;
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = Rmed { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -96,6 +94,8 @@ emailOptInDialogErrorTitle = Ayuh ala!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Awi asnas
+mobileDialogAndroidButton = Sider-d asnas Android
+mobileDialogIOSButton = Sider-d asnas IOS
 mobileDialogMessageIOS = Sider <b>{ $title }</b> si iOS App Store.
 mobileDialogMessageAndroid = Sider <b>{ $title }</b> si Google Play Store.
 mobileDialogInstructionsSMS = Sekcem uṭṭun-ik n tiliɣri neɣ tansa n yimayl akken ad tazneḍ aseɣwen n usider ar tiliɣri-ik:

@@ -51,8 +51,6 @@ landingInstallingButton = Memasang...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Pasang Test Pilot &amp;
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = Aktifkan { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -96,6 +94,8 @@ emailOptInDialogErrorTitle = Oh tidak!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Dapatkan Aplikasinya
+mobileDialogAndroidButton = Dapatkan aplikasi Android-nya
+mobileDialogIOSButton = Dapatkan aplikasi iOS-nya
 mobileDialogMessageIOS = Unduh <b>{ $title }</b> dari iOS App Store
 mobileDialogMessageAndroid = Unduh <b>{ $title }</b> dari Google Play Store
 mobileDialogInstructionsSMS = Masukkan nomor telepon atau alamat surel untuk mengirim tautan unduhan ke telepon Anda:
@@ -110,6 +110,7 @@ mobileDialogSuccessSecondary = Periksa peranti Anda untuk surelnya.
 mobileDialogAnotherDeviceLink = Kirim ke peranti lainnya
 mobileDialogError = Masukkan surel yang valid:
 mobileDialogErrorSMS = Masukkan nomor telepon atau surel yang valid:
+mobileDialogNoticeSMSWithLink = Layanan SMS hanya tersedia di negara tertentu. Tarif SMS & data mungkin berlaku. Penerima surel atau SMS yang dimaksud harus setuju terlebih dahulu. <a>Pelajari lebih lanjut</a>.
 
 ## Featured experiment.
 
