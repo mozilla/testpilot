@@ -318,3 +318,9 @@ jsDisabledWarning = Test Pilot requiere JavaScript. Disculpe
 -exp-notes = Firefox Notes
 -exp-price-wise = Price Wise
 eolTitle = Nos vamos...
+eolMessageOne = Después de tres años y más de veinte experimentos, { -product } está terminando para siempre.
+eolMessageTwo =
+    Con tu generosa participación y opinión, creamos { -brand } con increíbles características nuevas como
+    <a data-l10n-name="containersLink" title="{ -exp-containers }"> { -exp-containers } </a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }"> { -exp-activity-stream } </a>, y
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }"> { -exp-screenshots } </a>.
