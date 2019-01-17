@@ -318,4 +318,13 @@ jsDisabledWarning = Test Pilot kräver JavaScript. Ledsen för det.
 -exp-notes = Firefox Notes
 -exp-price-wise = Price Wise
 eolTitle = Away we go …
+eolMessageOne = Efter tre år och mer än 20 experiment, { -product } stänger vi ner för gått
+eolMessageTwo =
+    Med ert generösa deltagande och feedback, så har vi format { -brand } med fantastiskta nya funktioner som t.e.x <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a><a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a>, and
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
+eolMessageThree = Vi har också byggt bra nya appupplevelser som t.e.x <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> och <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a> som fortsätter att pusha vårat-{ -brand } som mer än en webbläsare. Kolla efter spännande nya utvecklingar från båda dessa projekt 2019.
+eolMessageFour = Andra expriment som <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>, <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>, <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>, <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a>, and <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a> Kommer finnas under vårat { -brand } community. Om du har installerat dessa experiment, Så kan du fortsätta att använda dom.
+eolMessageFive =
+    Denna
+    <a data-l10n-name="blogPostLink"> bloggpost</a> ger mer detaljerad information om varför { -product } försvinner, och vad som kommer hända i framtiden
 eolMessageSignature = Testpilot teamet
