@@ -341,3 +341,5 @@ eolMessageFive =
     Esta
     <a data-l10n-name="blogPostLink"> publicación de blog </a>
     proporciona información más detallada sobre por qué { -product } se termina, y lo que traerá el futuro.
+eolMessageClose = ¡Gracias por instalar Test Pilot!
+eolMessageSignature = Equipo de Test Pilot
