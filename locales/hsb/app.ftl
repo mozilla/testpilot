@@ -299,3 +299,19 @@ warningBadHostnameDetail = Přistup na websydło Test Pilot maće jenož wot tes
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Je nam žel, ale TestPilot sej JavaScript wužaduje.
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
+-exp-containers = Containers
+-exp-activity-stream = Activity Stream
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Wise
+eolMessageSignature = Team Test PIlot
