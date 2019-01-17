@@ -316,3 +316,9 @@ jsDisabledWarning = 很抱歉，需要開啟 JavaScript 才能使用 Test Pilot�
 -exp-price-wise = Price Wise
 eolTitle = 我們要離開了…
 eolMessageOne = 在過去三年中，我們推出超過 20 套實驗，{ -product } 已經平安落地，結束這段旅程。
+eolMessageTwo = 透過您慷慨地參與並提供意見回饋，我們打造出更多全新功能到 { -brand } 當中，例如 <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>、<a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a> 以及 <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>。
+eolMessageThree = 我們也在程式中打造了更新更棒的體驗，包含 <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> 及 <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a>，讓 { -brand } 的發展不僅僅局限於瀏覽器。2019 年也請期待這些產品的持續發展。
+eolMessageFour = 諸如 <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>、<a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>、<a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>、<a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a> 以及 <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a> 等實驗，將保留提供給 { -brand } 社群。若您安裝過這些實驗，將可繼續使用。
+eolMessageFive = <a data-l10n-name="blogPostLink">這篇部落格文章</a>解釋了為什麼 { -product } 即將結束服務的更多詳細資訊，以及未來還會帶來哪些東西。
+eolMessageClose = 感謝您與我們一同飛行
+eolMessageSignature = Test Pilot 團隊
