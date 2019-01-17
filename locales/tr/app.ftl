@@ -306,7 +306,7 @@ jsDisabledWarning = Test Pilotu için JavaScript şarttır. Kusura bakmayın.
 ## eol strings
 
 -brand = Firefox
--product = Firefox Test Pilot
+-product = Firefox Test Pilotu
 -exp-containers = Containers
 -exp-activity-stream = Activity Stream
 -exp-screenshots = Firefox Screenshots
@@ -336,5 +336,6 @@ eolMessageFour =
     <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a> ve
     <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a>
     deneylerini de kullanmaya devam edebilecek. Bu deneyleri daha önce yüklediyseniz otomatik olarak kaldırmayacağız.
+eolMessageFive = { -product } programını neden sonlandırdığımıza ve gelecekte neler yapacağımıza dair daha ayrıntılı bilgiyi bu <a data-l10n-name="blogPostLink">blog yazımızda</a> anlattık.
 eolMessageClose = Bizimle uçtuğunuz için teşekkür ederiz.
 eolMessageSignature = Test Pilotu Ekibi
