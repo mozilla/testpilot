@@ -299,3 +299,8 @@ warningBadHostnameDetail = Le site Test Pilot ne peut être consulté que via te
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Désolé, Test Pilot nécessite JavaScript.
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
