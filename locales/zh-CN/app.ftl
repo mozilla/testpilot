@@ -314,4 +314,7 @@ jsDisabledWarning = 很抱歉，Test Pilot 需要 JavaScript 来运行。
 -exp-email-tabs = Email Tabs
 -exp-notes = Firefox Notes
 -exp-price-wise = Price Wise
+eolTitle = 我们要离开了......
+eolMessageOne = 经过三年二十多次的实验，{ -product } 已顺利完成其使命。
+eolMessageClose = 感谢您的陪伴，
 eolMessageSignature = Test Pilot 团队
