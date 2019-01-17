@@ -314,3 +314,5 @@ jsDisabledWarning = 很抱歉，需要開啟 JavaScript 才能使用 Test Pilot�
 -exp-email-tabs = Email Tabs
 -exp-notes = Firefox Notes
 -exp-price-wise = Price Wise
+eolTitle = 我們要離開了…
+eolMessageOne = 在過去三年中，我們推出超過 20 套實驗，{ -product } 已經平安落地，結束這段旅程。
