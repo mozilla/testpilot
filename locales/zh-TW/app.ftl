@@ -299,3 +299,8 @@ warningBadHostnameDetail = Test Pilot 只能從 testpilot.firefox.com、testpilo
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = 很抱歉，需要開啟 JavaScript 才能使用 Test Pilot。
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
