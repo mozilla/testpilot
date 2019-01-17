@@ -324,3 +324,20 @@ eolMessageTwo =
     <a data-l10n-name="containersLink" title="{ -exp-containers }"> { -exp-containers } </a>,
     <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }"> { -exp-activity-stream } </a>, y
     <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }"> { -exp-screenshots } </a>.
+eolMessageThree =
+    También construimos experiencias maravillosas con aplicaciones nuevas como
+    <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }"> { -exp-lockbox } </a> y
+    <a data-l10n-name="sendLink" title="{ -exp-send }"> { -exp-send } </a>
+    que continúan pujando { -brand } más allá del navegador. Esperá nuevos desarrollos apasionantes de estos dos proyectos en 2019.
+eolMessageFour =
+    Otros experimentos como
+    <a data-l10n-name="colorLink" title={ -exp-color }> { -exp-color } </a>,
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }> { -exp-side-view } </a>,
+    <a data-l10n-name="notesLink" title={ -exp-notes }> { -exp-notes } </a>,
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }> { -exp-price-wise } </a>, y
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }> { -exp-email-tabs } </a>
+    permanecerán disponibles para la comunidad { -brand }. Si instalaste estos experimentos, podés seguir usándolos.
+eolMessageFive =
+    Esta
+    <a data-l10n-name="blogPostLink"> publicación de blog </a>
+    proporciona información más detallada sobre por qué { -product } se termina, y lo que traerá el futuro.
