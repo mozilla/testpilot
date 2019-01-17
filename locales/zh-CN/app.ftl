@@ -299,3 +299,19 @@ warningBadHostnameDetail = Test Pilot 网站只能从 testpilot.firefox.com、te
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = 很抱歉，Test Pilot 需要 JavaScript 来运行。
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
+-exp-containers = Containers
+-exp-activity-stream = Activity Stream
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Wise
+eolMessageSignature = Test Pilot 团队
