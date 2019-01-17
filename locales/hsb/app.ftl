@@ -315,6 +315,7 @@ jsDisabledWarning = Je nam žel, ale TestPilot sej JavaScript wužaduje.
 -exp-notes = Firefox Notes
 -exp-price-wise = Price Wise
 eolTitle = To je było …
+eolMessageOne = Po třoch lětach a přez dwaceći eksperimentach, { -product } na přeco dóńdźe.
 eolMessageFour =
     Druhe eksperimenty kaž
     <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
