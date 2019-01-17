@@ -314,4 +314,14 @@ jsDisabledWarning = Je nam žel, ale TestPilot sej JavaScript wužaduje.
 -exp-email-tabs = Email Tabs
 -exp-notes = Firefox Notes
 -exp-price-wise = Price Wise
+eolTitle = To je było …
+eolMessageFour =
+    Druhe eksperimenty kaž
+    <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>,
+    <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>,
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a>, a
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a>
+    su zhromadźenstwu { -brand } dale k dispoziciji. Jeli sće tute eksperimenty instalował, móžeće je dale wužiwać.
+eolMessageClose = Dźakujemy so za waš čas,
 eolMessageSignature = Team Test PIlot
