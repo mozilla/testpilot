@@ -2,7 +2,7 @@ version: 2.0
 notify:
   branches:
     only:
-      - master
+      - eol
       - l10n
 jobs:
   build:
@@ -116,7 +116,7 @@ jobs:
       - run:
           name: Static deployment
           command: |
-            TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/circleci/do-exclusively.sh --branch master ./bin/deploy.sh dev
+            TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/circleci/do-exclusively.sh --branch eol ./bin/deploy.sh dev
             ./bin/circleci/invalidate-cloudfront-cache.sh E2ERG47PHCWD0Z
   storybook_deploy:
     docker:
@@ -178,7 +178,7 @@ workflows:
             - integration_test
           filters:
             branches:
-              only: master
+              only: eol
       - l10n_deploy:
           requires:
             - unit_test
