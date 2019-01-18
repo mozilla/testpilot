@@ -175,6 +175,7 @@ pageshotDetails2Copy = Retrouvez facilement les captures enregistrées. Faites d
 pageshotContributors0TitleEngineer = Développeur logiciel
 pageshotContributors1Title = Développeur logiciel
 pageshotContributors2Title = Ergonome
+pricewiseDescriptionUsclarification = Price Wise recherche automatiquement les baisses de prix sur des produits spécifiques chez Amazon, Walmart et d’autres grands commerçants américains.
 pricewiseDetails0Copy = Demandez à Price Wise de garder un œil sur un produit et il est ajouté à votre liste de surveillance.
 pricewiseDetails1Copy = Lorsque le prix baisse, Price Wise vous alerte avec un avertissement coloré.
 pricewiseIntroductionUsclarification = Price Wise surveille les prix des produits qui vous intéressent chez Amazon et AmazonSmile, Best Buy, eBay, Home Depot et Walmart (uniquement pour leurs versions américaines, pour l’instant). Lorsque Price Wise détecte une baisse de prix, le module vous signale le prix le plus bas.
