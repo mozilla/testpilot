@@ -318,4 +318,5 @@ jsDisabledWarning = Test Pilot kräver JavaScript. Ledsen för det.
 -exp-notes = Firefox Notes
 -exp-price-wise = Price Wise
 eolTitle = Away we go …
+eolMessageClose = Tack för att du flyger
 eolMessageSignature = Testpilot-teamet
