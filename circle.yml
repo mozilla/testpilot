@@ -2,7 +2,7 @@ version: 2.0
 notify:
   branches:
     only:
-      - master
+      - eol
 jobs:
   build:
     docker:
@@ -20,7 +20,7 @@ jobs:
             curl -L --create-dirs -o ~/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 && chmod +x ~/bin/jq
             ./bin/circleci/install-node-dependencies.sh
       - run:
-          name: Build addon and frontend
+          name: Build frontend
           command: |
             ./bin/circleci/build-version-json.sh
             ./bin/circleci/build-frontend.sh
@@ -49,7 +49,7 @@ jobs:
       - run:
           name: Static deployment
           command: |
-            TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/circleci/do-exclusively.sh --branch master ./bin/deploy.sh dev
+            TESTPILOT_BUCKET=testpilot.dev.mozaws.net ./bin/circleci/do-exclusively.sh --branch eol ./bin/deploy.sh dev
             ./bin/circleci/invalidate-cloudfront-cache.sh E2ERG47PHCWD0Z
 workflows:
   version: 2
@@ -61,4 +61,4 @@ workflows:
             - build
           filters:
             branches:
-              only: master
+              only: eol
