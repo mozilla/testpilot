@@ -7,8 +7,8 @@ Main features:
 1. The simple JSON file at `/api/news_updates.json` should provide one last
    fresh item to trigger the add-on badge alert.
 
-1. A button on the site should trigger code to un-install the Test Pilot
-   add-on.
+1. The site should automatically remove the Test Pilot add-on if it's
+   detected on visit to the site.
 
 ## Development
 
