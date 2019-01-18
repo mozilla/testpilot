@@ -137,12 +137,12 @@ aws s3 sync \
   --acl "public-read" \
   dist/ s3://${TESTPILOT_BUCKET}/
 
-# Everything else; cache forever, because it has hashes in the filenames
+# Everything else; we *should* cache forever, but we stopped putting hashes in filenames
 aws s3 sync \
   --delete \
   --exclude "*.rdf" \
   --exclude "*.xpi" \
-  --cache-control "max-age=${ONE_YEAR}, immutable" \
+  --cache-control "max-age=${TEN_MINUTES}, immutable" \
   --metadata "{${HPKP}, ${HSTS}, ${TYPE}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
