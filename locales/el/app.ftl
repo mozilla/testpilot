@@ -302,3 +302,21 @@ warningBadHostnameDetail = Η πρόσβαση στην ιστοσελίδα τ�
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Το Test Pilot απαιτεί JavaScript. Λυπούμαστε γι' αυτό.
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
+-exp-containers = Containers
+-exp-activity-stream = Activity Stream
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Wise
+eolTitle = Πάμε μακριά…
+eolMessageClose = Ευχαριστούμε για την "πτήση",
+eolMessageSignature = Η ομάδα του Test Pilot
