@@ -302,3 +302,44 @@ warningBadHostnameDetail = Доступ к сайту Летчика-испыт�
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Для работы Лётчика-испытателя необходимо включить JavaScript. Извините.
+
+## eol strings
+
+-brand = Firefox
+-product = Лётчик-испытатель Firefox
+-exp-containers = Контейнеры
+-exp-activity-stream = Activity Stream
+-exp-screenshots = Скриншоты Firefox
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Wise
+eolTitle = Мы уходим …
+eolMessageOne = После трёх лёт и более 20 экспериментов, { -product } закрывается навсегда.
+eolMessageTwo =
+    С помощью вашего активного участия и обратной связи, мы добавили в { -brand } такие новые удивительные возможности, как
+    <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a> и
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
+eolMessageThree =
+    Мы также создали новые крутые приложения, такие как
+    <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> и
+    <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a>,
+    которые продолжат двигать { -brand } вперёд. Ждите новых интересных разработок от этих проектов в 2019 году.
+eolMessageFour =
+    Другие эксперименты, такие как
+    <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>,
+    <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>,
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a> и
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a>
+    останутся доступными сообществу { -brand }. Если у вас установлены эти эксперименты, то вы можете продолжать их использовать.
+eolMessageFive =
+    Этот
+    <a data-l10n-name="blogPostLink">пост в блоге</a>
+    даст более подробную информацию о том, почему { -product } закрывается, и что случится в будущем.
+eolMessageClose = Спасибо за полёты,
+eolMessageSignature = Команда лётчика-испытателя Firefox
