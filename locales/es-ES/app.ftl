@@ -315,3 +315,28 @@ jsDisabledWarning = Test Pilot requiere JavaScript. Lo sentimos.
 -exp-notes = Firefox Notes
 -exp-price-wise = Price Wise
 eolTitle = Nos vamos...
+eolMessageOne = Después de tres años y más de veinte experimentos, { -product } está aterrizando definitivamente.
+eolMessageTwo =
+    Con tu generosa participación y comentarios, hemos dotado a { -brand } de nuevas y asombrosas características como
+    <a data-l10n-name="containersLink" title="{ -exp-containers }"> { -exp-containers } </a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }"> { -exp-activity-stream } </a>, y
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }"> { -exp-screenshots } </a>.
+eolMessageThree =
+    También hemos disfrutado de experiencias maravillosas con nuevas aplicaciones como
+    <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }"> { -exp-lockbox } </a> y
+    <a data-l10n-name="sendLink" title="{ -exp-send }"> { -exp-send } </a>
+    que continúan impulsando a { -brand } más allá de los límites de un simple navegador. Ambos proyectos ofrecerán apasionantes novedades en 2019.
+eolMessageFour =
+    Otros experimentos como
+    <a data-l10n-name="colorLink" title={ -exp-color }> { -exp-color } </a>,
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }> { -exp-side-view } </a>,
+    <a data-l10n-name="notesLink" title={ -exp-notes }> { -exp-notes } </a>,
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }> { -exp-price-wise } </a>, y
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }> { -exp-email-tabs } </a>
+    permanecerán disponibles para la comunidad { -brand }. Si has instalado estos experimentos, puedes seguir usándolos.
+eolMessageFive =
+    Esta
+    <a data-l10n-name="blogPostLink">publicación de blog</a>
+    proporciona información más detallada sobre por qué se termina { -product }, y lo que traerá el futuro.
+eolMessageClose = ¡Gracias por volar con nosotros!
+eolMessageSignature = El equipo de Test Pilot
