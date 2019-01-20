@@ -314,3 +314,9 @@ jsDisabledWarning = Siamo spiacenti, Test Pilot richiede JavaScript.
 -exp-email-tabs = Email Tabs
 -exp-notes = Firefox Notes
 -exp-price-wise = Price Wise
+eolMessageFour =
+    Altri esperimenti come
+    <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>, <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>, <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>, <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a> e
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a> rimarranno disponibili per la comunità { -brand }. Se hai installato questi esperimenti, puoi continuare a utilizzarli.
+eolMessageClose = Grazie mille per aver volato con noi,
+eolMessageSignature = Il team di Test Pilot
