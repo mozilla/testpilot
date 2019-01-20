@@ -299,3 +299,18 @@ warningBadHostnameDetail = È possibile accedere al sito di Test Pilot solo util
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Siamo spiacenti, Test Pilot richiede JavaScript.
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
+-exp-containers = Containers
+-exp-activity-stream = Activity Stream
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Wise
