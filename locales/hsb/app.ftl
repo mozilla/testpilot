@@ -330,5 +330,6 @@ eolMessageFour =
     <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a>, a
     <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a>
     su zhromadźenstwu { -brand } dale k dispoziciji. Jeli sće tute eksperimenty instalował, móžeće je dale wužiwać.
+eolMessageFive = Tutón <a data-l10n-name="blogPostLink">blogowy přinošk</a> dodawa wjace nadrobnych informacijow, čehodla so { -product } skónči a što přichod přinjese.
 eolMessageClose = Dźakujemy so za waš čas,
 eolMessageSignature = Team Test PIlot
