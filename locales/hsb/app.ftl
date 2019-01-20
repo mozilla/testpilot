@@ -321,6 +321,7 @@ eolMessageTwo =
     <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
     <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a> a
     <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
+eolMessageThree = Smy tež wulkotne nowe nałoženja kaž <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> a <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a> wuwili, přez kotrež { -brand } je wjace hač přehladowak. Hladajće za rozbudźacymi nowymi wuwićemi z tuteju wobeju projektow w lěće 2019.
 eolMessageFour =
     Druhe eksperimenty kaž
     <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
