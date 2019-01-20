@@ -316,6 +316,11 @@ jsDisabledWarning = Je nam žel, ale TestPilot sej JavaScript wužaduje.
 -exp-price-wise = Price Wise
 eolTitle = To je było …
 eolMessageOne = Po třoch lětach a přez dwaceći eksperimentach, { -product } na přeco dóńdźe.
+eolMessageTwo =
+    Z wašim wulkomysnym wobdźělenjom a měnjenjom ma { -brand } wulkotne nowe funkcije kaž
+    <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a> a
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
 eolMessageFour =
     Druhe eksperimenty kaž
     <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
