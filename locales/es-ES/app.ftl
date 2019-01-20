@@ -51,8 +51,6 @@ landingInstallingButton = Instalando...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Instalar Test Pilot &amp;
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = Activar { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -96,6 +94,8 @@ emailOptInDialogErrorTitle = ¡Oh no!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Obtén la aplicación
+mobileDialogAndroidButton = Obtén la aplicación para Android
+mobileDialogIOSButton = Obtén la aplicación para iOS
 mobileDialogMessageIOS = Descarga <b>{ $title }</b> desde el iOS App Store.
 mobileDialogMessageAndroid = Descarga <b>{ $title }</b> desde Google Play Store.
 mobileDialogInstructionsSMS = Escribe tu número de teléfono o correo electrónico para enviar un enlace de descarga a tu teléfono:
@@ -299,3 +299,19 @@ warningBadHostnameDetail = El sitio de Test Pilot solo puede ser accedido desde 
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Test Pilot requiere JavaScript. Lo sentimos.
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
+-exp-containers = Contenedores
+-exp-activity-stream = Activity Stream
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Wise
+eolTitle = Nos vamos...
