@@ -317,5 +317,15 @@ jsDisabledWarning = Test Pilot zahteva JavaScript. Žal nam je.
 -exp-email-tabs = Email Tabs
 -exp-notes = Firefox Notes
 -exp-price-wise = Price Wise
+eolTitle = Odhajamo ...
 eolMessageOne = Po treh letih in več kot dvajsetih poskusih se { -product } poslavlja.
+eolMessageTwo =
+    Z vašim velikodušnim sodelovanjem in povratnimi informacijami smo { -brand } opremili z novimi neverjetnimi možnostmi kot so
+    <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a> in
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
+eolMessageFive =
+    Ta
+    <a data-l10n-name="blogPostLink">blog</a>
+    podrobneje opisuje zakaj se { -product } poslavlja in kaj sledi v prihodnosti.
 eolMessageSignature = Ekipa Test Pilota
