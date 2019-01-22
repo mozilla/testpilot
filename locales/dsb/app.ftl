@@ -299,3 +299,37 @@ warningBadHostnameDetail = Pśistup k websedłoju Test Pilot maśo jano wót tes
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Jo nam luto, ale TestPilot se JavaScript pomina.
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
+-exp-containers = Containers
+-exp-activity-stream = Activity Stream
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Wise
+eolTitle = To jo było …
+eolMessageOne = Pó tśich lětach a wěcej ako dwaźasća eksperimentach, { -product } na pśecej pśiźo.
+eolMessageTwo =
+    Z wašim wjelikomyslne wobźělenim a měnjenim ma { -brand } wjelicne nowe funkcije ako
+    <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a> a
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
+eolMessageThree = Smy teke wjelicne nowe nałoženja ako <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> a <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a> wuwili, pśez kótarež { -brand } jo wěcej ako pśeglědowak. Glědajśo za gnujucymi nowymi wuwiśami z toś teju wobeju projektow w lěśe 2019.
+eolMessageFour =
+    Druge eksperimenty ako
+    <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>,
+    <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>,
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a>, a
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a>
+    su zgromaźeństwoju { -brand } dalej k dispoziciji. Jolic sćo toś te eksperimenty zainstalěrował, móžośo je dalej wužywaś.
+eolMessageFive = Toś ten <a data-l10n-name="blogPostLink">blogowy pśinosk</a> dodawa wěcej nadrobnych informacijow, cogodla se { -product } skóńcyjo a co pśichod pśinjaso.
+eolMessageClose = Źěkujomy se za waš cas,
+eolMessageSignature = Team Test PIlot
