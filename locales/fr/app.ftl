@@ -304,7 +304,7 @@ jsDisabledWarning = Désolé, Test Pilot nécessite JavaScript.
 
 -brand = Firefox
 -product = Firefox Test Pilot
--exp-containers = Contextes
+-exp-containers = Containers
 -exp-activity-stream = Activity Stream
 -exp-screenshots = Firefox Screenshots
 -exp-lockbox = Firefox Lockbox
