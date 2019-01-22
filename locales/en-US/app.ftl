@@ -298,11 +298,11 @@ eolMessageThree =
     which continue to push {-brand} beyond the browser. Look for exciting new developments from both of these projects in 2019.
 eolMessageFour =
     Other experiments like
-    <a data-l10n-name="colorLink" title={-exp-color}>{-exp-color}</a>,
-    <a data-l10n-name="sideViewLink" title={-exp-side-view}>{-exp-side-view}</a>,
-    <a data-l10n-name="notesLink" title={-exp-notes}>{ -exp-notes}</a>,
-    <a data-l10n-name="priceWiseLink" title={-exp-price-wise}>{-exp-price-wise}</a>, and
-    <a data-l10n-name="emailTabsLink" title={-exp-email-tabs}>{-exp-email-tabs}</a>
+    <a data-l10n-name="colorLink" title="{-exp-color}">{-exp-color}</a>,
+    <a data-l10n-name="sideViewLink" title="{-exp-side-view}">{-exp-side-view}</a>,
+    <a data-l10n-name="notesLink" title="{-exp-notes}">{ -exp-notes}</a>,
+    <a data-l10n-name="priceWiseLink" title="{-exp-price-wise}">{-exp-price-wise}</a>, and
+    <a data-l10n-name="emailTabsLink" title="{-exp-email-tabs}">{-exp-email-tabs}</a>
     will remain available to the { -brand } community. If you have installed these experiments, you can continue to use them.
 eolMessageFive =
     This
