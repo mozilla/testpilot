@@ -316,6 +316,9 @@ jsDisabledWarning = Test Pilot fereasket JavaScript. Sorry derfoar.
 -exp-price-wise = Price Wise
 eolTitle = Wy gean derfantroch…
 eolMessageOne = Nei trije jier en mear as tweintich eksperiminten, sil { -product } foargoed lâne.
+eolMessageTwo = Mei jo dielname en kommentaar hawwe wy { -brand } foarmjûn mei bjusterbaarlike nije funksjes lykas <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>, <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a> en <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
+eolMessageThree = Wy hawwe ek geweldige nije app-belibbingen lykas <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> en <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a> boud dy't { -brand } de browser foarby trochgean sille. Sjoch út nei spannende nije ûntwikkelingen fan dizze beide projekten yn 2019.
+eolMessageFour = Oare eksperiminten lykas <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>, <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>, <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>, <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a> en <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a> bliuwe beskikber foar de { -brand }-mienskip. As jo dizze eksperiminten ynstallearre hawwe, kinne jo se brûke bliuwe.
 eolMessageFive =
     Dit
     <a data-l10n-name="blogPostLink">blogberjocht</a>
