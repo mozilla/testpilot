@@ -307,7 +307,7 @@ jsDisabledWarning = O Test Pilot requer JavaScript. Pedimos desculpa.
 
 -brand = Firefox
 -product = Firefox Test Pilot
--exp-containers = Contentores
+-exp-containers = Containers
 -exp-activity-stream = Activity Stream
 -exp-screenshots = Firefox Screenshots
 -exp-lockbox = Firefox Lockbox
@@ -318,7 +318,7 @@ jsDisabledWarning = O Test Pilot requer JavaScript. Pedimos desculpa.
 -exp-notes = Firefox Notes
 -exp-price-wise = Price Wise
 eolTitle = Lá vamos nós …
-eolMessageOne = Depois de três anos e mais de vinte experiências, { -product } aterrou de vez.
+eolMessageOne = Depois de três anos e mais de vinte experiências, o { -product } aterrou de vez.
 eolMessageTwo =
     Com sua participação e feedback generosos, moldámos o { -brand } com incríveis novas funcionalidades, como
     <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
@@ -338,8 +338,8 @@ eolMessageFour =
     <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a>
     irão permanecer disponíveis para a comunidade do { -brand }. Se instalou estas experiências, pode continuar a utilizá-las.
 eolMessageFive =
-    Este
-    <a data-l10n-name="blogPostLink"> post no blogue </a>
+    Esta
+    <a data-l10n-name="blogPostLink">publicação no blogue</a>
     providencia informação mais detalhada acerca do porquê do { -product } estar a desaparecer e o que o futuro trará.
 eolMessageClose = Obrigado por voar.
 eolMessageSignature = A Equipa do Test Pilot
