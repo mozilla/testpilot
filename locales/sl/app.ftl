@@ -324,6 +324,11 @@ eolMessageTwo =
     <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
     <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a> in
     <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
+eolMessageThree =
+    Ustvarili smo tudi nove aplikacije, kot sta 
+    <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> in
+    <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a>,
+    ki nadgrajujeta { -brand } na višjo raven. V letu 2019 nadaljujemo njun razvoj.
 eolMessageFour =
     Drugi poskusi, kot so
     <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
