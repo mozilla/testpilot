@@ -302,3 +302,12 @@ warningBadHostnameDetail = Test Pilot-sida er berre tilgjengeleg få testpilot.f
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Test Pilot krev JavaScript. Lei for det.
+
+## eol strings
+
+eolMessageOne = Etter tre år og meir enn 20 eksperiment, vert { -product } stengt for godt.
+eolMessageTwo =
+    Med dykkar generøse deltaking og tilbakemelding har vi forma { -brand } med fantastiske nye funksjonar som t.d. 
+    <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>.
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a> og
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
