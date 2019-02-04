@@ -322,7 +322,7 @@ eolMessageOne = Po troch rokoch a viac než dvadsiatich experimentoch nastal ča
 eolMessageTwo =
     Vďaka vám a vašej spätnej väzbe sme obohatili { -brand } napríklad o tieto funkcie
     <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
-    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a>, and
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a> a
     <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
 eolMessageThree =
     Vytvorili sme taktiež nové aplikácie
@@ -334,7 +334,7 @@ eolMessageFour =
     <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
     <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>,
     <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>,
-    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a>, and
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a> a
     <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a>
     zostanú pre { -brand } komunitu naďalej k dispozícii. Ak máte tieto experimenty nainštalované, môžete ich používať naďalej.
 eolMessageFive =

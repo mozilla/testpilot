@@ -316,6 +316,12 @@ jsDisabledWarning = Je nam žel, ale TestPilot sej JavaScript wužaduje.
 -exp-price-wise = Price Wise
 eolTitle = To je było …
 eolMessageOne = Po třoch lětach a přez dwaceći eksperimentach, { -product } na přeco dóńdźe.
+eolMessageTwo =
+    Z wašim wulkomysnym wobdźělenjom a měnjenjom ma { -brand } wulkotne nowe funkcije kaž
+    <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a> a
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
+eolMessageThree = Smy tež wulkotne nowe nałoženja kaž <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> a <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a> wuwili, přez kotrež { -brand } je wjace hač přehladowak. Hladajće za rozbudźacymi nowymi wuwićemi z tuteju wobeju projektow w lěće 2019.
 eolMessageFour =
     Druhe eksperimenty kaž
     <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
@@ -324,5 +330,6 @@ eolMessageFour =
     <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a>, a
     <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a>
     su zhromadźenstwu { -brand } dale k dispoziciji. Jeli sće tute eksperimenty instalował, móžeće je dale wužiwać.
+eolMessageFive = Tutón <a data-l10n-name="blogPostLink">blogowy přinošk</a> dodawa wjace nadrobnych informacijow, čehodla so { -product } skónči a što přichod přinjese.
 eolMessageClose = Dźakujemy so za waš čas,
 eolMessageSignature = Team Test PIlot

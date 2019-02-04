@@ -317,5 +317,29 @@ jsDisabledWarning = Test Pilot zahteva JavaScript. Žal nam je.
 -exp-email-tabs = Email Tabs
 -exp-notes = Firefox Notes
 -exp-price-wise = Price Wise
+eolTitle = Odhajamo ...
 eolMessageOne = Po treh letih in več kot dvajsetih poskusih se { -product } poslavlja.
+eolMessageTwo =
+    Z vašim velikodušnim sodelovanjem in povratnimi informacijami smo { -brand } opremili z novimi neverjetnimi možnostmi, kot so
+    <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a> in
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
+eolMessageThree =
+    Ustvarili smo tudi nove aplikacije, kot sta 
+    <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> in
+    <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a>,
+    ki nadgrajujeta { -brand } na višjo raven. V letu 2019 nadaljujemo njun razvoj.
+eolMessageFour =
+    Drugi poskusi, kot so
+    <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>,
+    <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>,
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a> in
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a>,
+    bodo skupnosti { -brand }a ostali na voljo. Če ste namestili te poskuse, jih lahko uporabljate naprej.
+eolMessageFive =
+    Ta
+    <a data-l10n-name="blogPostLink">blog</a>
+    podrobneje opisuje, zakaj se { -product } poslavlja in kaj sledi v prihodnosti.
+eolMessageClose = Hvala, ker ste leteli z nami,
 eolMessageSignature = Ekipa Test Pilota
