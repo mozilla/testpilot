@@ -1,3 +1,5 @@
+**NOTE:** The Test Pilot program has ended. The master branch in this repository reflects the state of the project before it ended. [The farewell message mini-site lives in the `eol` branch!](https://github.com/mozilla/testpilot/tree/eol)
+
 <img src="frontend/src/app/components/Copter/img/copter.png" alt="Test Pilot Logo" width="328" height="265">  
 
 # Test Pilot
