@@ -299,3 +299,44 @@ warningBadHostnameDetail = Dim ond drwy testpilot.firefox.com, testpilot.stage.m
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Mae Test Pilot angen JavaScript. Ymddiheuriadau.
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
+-exp-containers = Cynwysyddion
+-exp-activity-stream = Activity Stream
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Wise
+eolTitle = I ffwrdd â ni …
+eolMessageOne = Ar ól tair blynedd,  gyda mwy nag ugain o arbrofion, mae taith { -product } yn dod i ben.
+eolMessageTwo =
+    Gyda'ch cyfranogiad hael ac adborth, rydym wedi siâpio { -brand } gyda nodweddion newydd anhygoel fel
+    <a data-l10n-name="containersLink" title="{ -exp-containers }"> { -exp-containers } </a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }"> { -exp-activity-stream } </a>, a
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }"> { -exp-screenshots } </a>.
+eolMessageThree =
+    Rydym hefyd wedi adeiladu profiadau ap gwych newydd fel
+    <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }"> { -exp-lockbox } </a> a
+    <a data-l10n-name="sendLink" title="{ -exp-send }"> { -exp-send } </a>
+    sy'n parhau i wthio { -brand } y tu hwnt i'r porwr. Edrychwch am ddatblygiadau newydd cyffrous o'r ddau brosiect yma yn 2019.
+eolMessageFour =
+    Bydd arbrofion eraill fel
+    <a data-l10n-name="colorLink" title={ -exp-color }> { -exp-color } </a>,
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }> { -exp-side-view } </a>,
+    <a data-l10n-name="notesLink" title={ -exp-notes }> { -exp-notes } </a>,
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }> { -exp-price-wise } </a>, a
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }> { -exp-email-tabs } </a>
+    yn parhau i fod ar gael i gymuned { -brand }. Os ydych chi wedi gosod yr arbrofion hyn, gallwch barhau i'w defnyddio.
+eolMessageFive =
+    Mae'r
+    <a data-l10n-name="blogPostLink"> cofnod blog </a>
+    yma yn darparu gwybodaeth fanylach am pam mae { -product } yn diflannu, a beth fydd yn dod yn y dyfodol.
+eolMessageClose = Diolch am hedfan,
+eolMessageSignature = Tîm Peilot Prawf

@@ -302,3 +302,44 @@ warningBadHostnameDetail = El sitio de Test Pilot solamente puede ser accedido d
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Test Pilot requiere JavaScript. Disculpe
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
+-exp-containers = Contenedores
+-exp-activity-stream = Activity Stream
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Wise
+eolTitle = Nos vamos...
+eolMessageOne = Después de tres años y más de veinte experimentos, { -product } está terminando para siempre.
+eolMessageTwo =
+    Con tu generosa participación y opinión, creamos { -brand } con increíbles características nuevas como
+    <a data-l10n-name="containersLink" title="{ -exp-containers }"> { -exp-containers } </a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }"> { -exp-activity-stream } </a>, y
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }"> { -exp-screenshots } </a>.
+eolMessageThree =
+    También construimos experiencias maravillosas con aplicaciones nuevas como
+    <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }"> { -exp-lockbox } </a> y
+    <a data-l10n-name="sendLink" title="{ -exp-send }"> { -exp-send } </a>
+    que continúan pujando { -brand } más allá del navegador. Esperá nuevos desarrollos apasionantes de estos dos proyectos en 2019.
+eolMessageFour =
+    Otros experimentos como
+    <a data-l10n-name="colorLink" title={ -exp-color }> { -exp-color } </a>,
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }> { -exp-side-view } </a>,
+    <a data-l10n-name="notesLink" title={ -exp-notes }> { -exp-notes } </a>,
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }> { -exp-price-wise } </a>, y
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }> { -exp-email-tabs } </a>
+    permanecerán disponibles para la comunidad { -brand }. Si instalaste estos experimentos, podés seguir usándolos.
+eolMessageFive =
+    Esta
+    <a data-l10n-name="blogPostLink"> publicación de blog </a>
+    proporciona información más detallada sobre por qué { -product } se termina, y lo que traerá el futuro.
+eolMessageClose = ¡Gracias por instalar Test Pilot!
+eolMessageSignature = Equipo de Test Pilot

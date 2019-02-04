@@ -302,3 +302,43 @@ warningBadHostnameDetail = A Tesztpilóta csak a testpilot.firefox.com, testpilo
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = A Tesztpilótához JavaScript szükséges. Sajnáljuk.
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Tesztpilóta
+-exp-containers = Konténerek
+-exp-activity-stream = Activity Stream
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Wise
+eolTitle = Elmegyünk …
+eolMessageOne = Három év, és több mint húsz kísérlet után, a { -product } végleg leszáll.
+eolMessageTwo =
+    A nagylelkű részvételével és visszajelzésével, olyan nagyszerű funkciókkal bővült a { -brand }, mint a
+    <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>, az
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a>, és a
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
+eolMessageThree =
+    Nagyszerű új alkalmazásélményeket is készítettünk, mint a
+    <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> és a
+    <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a>,
+    amelyek túlmutatnak a { -brand } böngészőn. 2019-ben izgalmas új fejlemények várhatóak mindkét projektnél.
+eolMessageFour =
+    Az egyéb kísérletek, mint a
+    <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>, a
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>, a
+    <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>, a
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a>, és az
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a> továbbra is elérhetőek lesznek a { -brand } közösség számára. Ha telepítette ezeket a kísérleteket, akkor továbbra is használhatja azokat.
+eolMessageFive =
+    Ez a
+    <a data-l10n-name="blogPostLink">blogbejegyzés</a>
+    részletesebb tájékoztatást nyújt arról, hogy miért fejeződik be a { -product }, és mi várható a jövőben.
+eolMessageClose = Köszönjük a repülést,
+eolMessageSignature = A Tesztpilóta csapata

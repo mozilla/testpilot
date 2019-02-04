@@ -302,3 +302,15 @@ warningBadHostnameDetail = El sitio de Test Pilot solo puede ser accedido desde 
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Test Pilot requiere JavaScript. Lo sentimos.
+
+## eol strings
+
+-exp-containers = Contenedores
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Wise
+eolMessageSignature = El equipo de Test Pilot

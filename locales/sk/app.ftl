@@ -302,3 +302,44 @@ warningBadHostnameDetail = Stránka Test Pilotu je prístupná len z domén test
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Test Pilot vyžaduje JavaScript. Ospravedlňujeme sa za problémy.
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
+-exp-containers = Containers
+-exp-activity-stream = Activity Stream
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Wise
+eolTitle = Všetko má svoj koniec…
+eolMessageOne = Po troch rokoch a viac než dvadsiatich experimentoch nastal čas ukončiť { -product }.
+eolMessageTwo =
+    Vďaka vám a vašej spätnej väzbe sme obohatili { -brand } napríklad o tieto funkcie
+    <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a>, and
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
+eolMessageThree =
+    Vytvorili sme taktiež nové aplikácie
+    <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> a
+    <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a>
+    ktoré posúvajú povedomie o značke { -brand } za hranice prehliadača. V roku 2019 sa tieto projekty dočkajú zaujímavých vecí.
+eolMessageFour =
+    Ďalšie experimenty, ako
+    <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>,
+    <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>,
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a>, and
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a>
+    zostanú pre { -brand } komunitu naďalej k dispozícii. Ak máte tieto experimenty nainštalované, môžete ich používať naďalej.
+eolMessageFive =
+    Tento
+    <a data-l10n-name="blogPostLink">príspevok na blogu</a>
+    hovorí o tom, prečo { -product } končí a čo nám prinesie budúcnosť.
+eolMessageClose = Ďakujeme za váš čas,
+eolMessageSignature = Tím Test Pilotu

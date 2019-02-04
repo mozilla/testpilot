@@ -299,3 +299,30 @@ warningBadHostnameDetail = Přistup na websydło Test Pilot maće jenož wot tes
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Je nam žel, ale TestPilot sej JavaScript wužaduje.
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
+-exp-containers = Containers
+-exp-activity-stream = Activity Stream
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Wise
+eolTitle = To je było …
+eolMessageOne = Po třoch lětach a přez dwaceći eksperimentach, { -product } na přeco dóńdźe.
+eolMessageFour =
+    Druhe eksperimenty kaž
+    <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>,
+    <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>,
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a>, a
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a>
+    su zhromadźenstwu { -brand } dale k dispoziciji. Jeli sće tute eksperimenty instalował, móžeće je dale wužiwać.
+eolMessageClose = Dźakujemy so za waš čas,
+eolMessageSignature = Team Test PIlot
