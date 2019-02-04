@@ -302,3 +302,44 @@ warningBadHostnameDetail = Η πρόσβαση στην ιστοσελίδα τ�
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Το Test Pilot απαιτεί JavaScript. Λυπούμαστε γι' αυτό.
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
+-exp-containers = Containers
+-exp-activity-stream = Activity Stream
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Wise
+eolTitle = Πάμε μακριά…
+eolMessageOne = Μετά από τρία χρόνια και πάνω από είκοσι πειράματα, το { -product } "προσγειώνεται" οριστικά.
+eolMessageTwo =
+    Με τη γενναιόδωρη συμμετοχή και ανατροφοδότησή σας, έχουμε ενσωματώσει στο { -brand } απίθανες νέες λειτουργίες, όπως τα
+    <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a>, and
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
+eolMessageThree =
+    Έχουμε επίσης αναπτύξει υπέροχες, νέες εφαρμογές, όπως τα
+    <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> and
+    <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a>
+    τα οποία επεκτείνουν την εμπειρία του { -brand } πέρα από το πρόγραμμα περιήγησης. Αναμένετε εκπληκτικές εξελίξεις και στα δύο έργα το 2019.
+eolMessageFour =
+    Τα άλλα πειράματα, όπως τα
+    <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>,
+    <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>,
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a>, and
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a>
+    θα παραμείνουν διαθέσιμα στην κοινότητα { -brand }. Αν έχετε εγκαταστήσει αυτά τα πειράματα, μπορείτε να συνεχίσετε να τα χρησιμοποιείτε.
+eolMessageFive =
+    Αυτή η
+    <a data-l10n-name="blogPostLink">δημοσίευση ιστολογίου</a>
+    παρέχει πιο λεπτομερείς πληροφορίες σχετικά με τους λόγους τερματισμού του { -product }, καθώς και τα μελλοντικά σχέδια.
+eolMessageClose = Ευχαριστούμε για την "πτήση",
+eolMessageSignature = Η ομάδα του Test Pilot

@@ -13,7 +13,7 @@ footerLinkCookies = Cookie-uri
 footerLinkPrivacy = Confidențialitate
 footerLinkTerms = Termeni
 footerLinkLegal = Mențiuni legale
-footerLinkFeedback = Dă-ne feedback
+footerLinkFeedback = Oferă feedback
 # This is a header displayed above a set of links about Mozilla and Test Pilot
 footerLinkAboutHeader = Despre
 footerLinkAboutUs = Despre noi
@@ -96,21 +96,21 @@ emailOptInDialogErrorTitle = O, nu!
 mobileDialogTitle = Instalează aplicația
 mobileDialogAndroidButton = Instalează aplicația pentru Android
 mobileDialogIOSButton = Instalează aplicația pentru iOS
-mobileDialogMessageIOS = Descarcă <b>{ $title }</b> din iOS App Store.
-mobileDialogMessageAndroid = Descarcă <b>{ $title }</b> din Google Play Store.
+mobileDialogMessageIOS = Descarcă <b>{ $title }</b> din App Store-ul pentru iOS.
+mobileDialogMessageAndroid = Descarcă <b>{ $title }</b> din Magazinul Google Play.
 mobileDialogInstructionsSMS = Introdu numărul de telefon sau adresa e-mail pentru a trimite un link de descărcare pe telefonul tău:
-mobileDialogInstructions = Introdu adresa e-mail pentru a trimite un link de descărcare pe telefonul tău:
-mobileDialogPlaceholder = Introdu adresa e-mail
-mobileDialogPlaceholderSMS = Introdu numărul de telefon/adresa e-mail
+mobileDialogInstructions = Introdu adresa de e-mail pentru a trimite un link de descărcare pe telefonul tău:
+mobileDialogPlaceholder = Introdu adresa de e-mail
+mobileDialogPlaceholderSMS = Introdu numărul de telefon/adresa de e-mail
 mobileDialogButton = Trimite-mi linkul de descărcare
 mobileDialogButtonSuccess = Îți mulțumim!
 mobileDialogSuccessMain = Link de descărcare trimis!
 mobileDialogSuccessSecondarySMS = Verifică-ți dispozitivul pentru mesaje text sau e-mail.
 mobileDialogSuccessSecondary = Verifică-ți dispozitivul pentru e-mail.
 mobileDialogAnotherDeviceLink = Trimite către alt dispozitiv
-mobileDialogError = Introdu o adresă e-mail validă:
+mobileDialogError = Introdu o adresă de e-mail validă:
 mobileDialogErrorSMS = Introdu un număr de telefon sau o adresă e-mail valid(ă):
-mobileDialogNoticeSMSWithLink = Serviciul SMS este disponibil doar în anumite țări. Se pot aplica tarife pentru trimiteri de date sau mesaje SMS. Destinatarul mesajului prin e-mail sau SMS trebuie să își fi dat consimțământul. <a>Află mai multe</a>.
+mobileDialogNoticeSMSWithLink = Serviciul SMS este disponibil numai în țările selectate. Se pot aplica tarife pentru date și SMS. Destinatarul vizat al e-mailului sau SMS-ului trebuie să își fi dat consimțământul. <a>Află mai multe</a>.
 
 ## Featured experiment.
 
@@ -302,3 +302,6 @@ warningBadHostnameDetail = Site-ul Test Pilot poate fi accesat numai de pe testp
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Test Pilot necesită JavaScript. Ne pare rău.
+
+## eol strings
+

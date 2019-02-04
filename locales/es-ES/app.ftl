@@ -51,8 +51,6 @@ landingInstallingButton = Instalando...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Instalar Test Pilot &amp;
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = Activar { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -96,6 +94,8 @@ emailOptInDialogErrorTitle = ¡Oh no!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Obtén la aplicación
+mobileDialogAndroidButton = Obtén la aplicación para Android
+mobileDialogIOSButton = Obtén la aplicación para iOS
 mobileDialogMessageIOS = Descarga <b>{ $title }</b> desde el iOS App Store.
 mobileDialogMessageAndroid = Descarga <b>{ $title }</b> desde Google Play Store.
 mobileDialogInstructionsSMS = Escribe tu número de teléfono o correo electrónico para enviar un enlace de descarga a tu teléfono:
@@ -299,3 +299,44 @@ warningBadHostnameDetail = El sitio de Test Pilot solo puede ser accedido desde 
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Test Pilot requiere JavaScript. Lo sentimos.
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
+-exp-containers = Contenedores
+-exp-activity-stream = Activity Stream
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Wise
+eolTitle = Nos vamos...
+eolMessageOne = Después de tres años y más de veinte experimentos, { -product } está aterrizando definitivamente.
+eolMessageTwo =
+    Con tu generosa participación y comentarios, hemos dotado a { -brand } de nuevas y asombrosas características como
+    <a data-l10n-name="containersLink" title="{ -exp-containers }"> { -exp-containers } </a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }"> { -exp-activity-stream } </a>, y
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }"> { -exp-screenshots } </a>.
+eolMessageThree =
+    También hemos disfrutado de experiencias maravillosas con nuevas aplicaciones como
+    <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }"> { -exp-lockbox } </a> y
+    <a data-l10n-name="sendLink" title="{ -exp-send }"> { -exp-send } </a>
+    que continúan impulsando a { -brand } más allá de los límites de un simple navegador. Ambos proyectos ofrecerán apasionantes novedades en 2019.
+eolMessageFour =
+    Otros experimentos como
+    <a data-l10n-name="colorLink" title={ -exp-color }> { -exp-color } </a>,
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }> { -exp-side-view } </a>,
+    <a data-l10n-name="notesLink" title={ -exp-notes }> { -exp-notes } </a>,
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }> { -exp-price-wise } </a>, y
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }> { -exp-email-tabs } </a>
+    permanecerán disponibles para la comunidad { -brand }. Si has instalado estos experimentos, puedes seguir usándolos.
+eolMessageFive =
+    Esta
+    <a data-l10n-name="blogPostLink">publicación de blog</a>
+    proporciona información más detallada sobre por qué se termina { -product }, y lo que traerá el futuro.
+eolMessageClose = ¡Gracias por volar con nosotros!
+eolMessageSignature = El equipo de Test Pilot
