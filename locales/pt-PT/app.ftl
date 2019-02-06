@@ -12,7 +12,7 @@ pageTitleExperiment = Firefox Test Pilot - { $title }
 footerLinkCookies = Cookies
 footerLinkPrivacy = Privacidade
 footerLinkTerms = Termos
-footerLinkLegal = Informações legais
+footerLinkLegal = Informação legal
 footerLinkFeedback = Dar feedback
 # This is a header displayed above a set of links about Mozilla and Test Pilot
 footerLinkAboutHeader = Acerca
