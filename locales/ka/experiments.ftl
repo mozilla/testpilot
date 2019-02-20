@@ -175,6 +175,7 @@ pageshotDetails2Copy = მოიძიეთ შენახული სურ�
 pageshotContributors0TitleEngineer = კომპიუტერული პროგრამების სპეციალისტი
 pageshotContributors1Title = კომპიუტერული პროგრამების სპეციალისტი
 pageshotContributors2Title = იერსახის დიზაინერი
+pricewiseDescriptionUsclarification = Price Wise მუდმივად თვალყურს ადევნებს ფასდაკლებებს გარკვეულ პროდუქტებზე Amazon, Walmart და ა.შ.შ-ს სხვა ცნობილ საცალო ვაჭრობის კომპანიებში.
 pricewiseDetails0Copy = მიუთითეთ Price Wise-ს, თვალი ადევნოს პროდუქტს და ჩაამატებს მას სასურველი პროდუქტების სიაში.
 pricewiseDetails1Copy = ფასდაკლების დაწყებისთანავე, Price Wise გაცნობებთ ფერადი შეტყობინებით.
 pricewiseIntroductionUsclarification = Price Wise იღებს ინფორმაციას ფასდაკლებების შესახებ თქვენთვის სასურველ პროდუქტებზე მაღაზიებში Amazon და AmazonSmile, Best Buy, eBay, Home Depot და Walmart (ჯერჯერობით მხოლოდ აშშ-ს ვერსიაზე). როგორც კი Price Wise აღმოაჩენს ფასდაკლებას, დამატება მაშინვე გაცნობებთ დაბალი ფასის თაობაზე.
