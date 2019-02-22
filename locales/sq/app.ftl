@@ -302,3 +302,30 @@ warningBadHostnameDetail = Sajti Pilot Testesh mund të përdoret vetëm që nga
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Test Pilot lyp JavaScript. Na ndjeni për këtë.
+
+## eol strings
+
+-brand = Firefox
+-product = Pilot Testesh Firefox
+-exp-containers = Kontejner
+-exp-activity-stream = Rrjedhë Veprimtarie
+-exp-screenshots = Foto Ekrani Firefox
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Skeda Email-i
+-exp-notes = Shënime Firefox
+-exp-price-wise = Price Wise
+eolTitle = Erdhi ora të ndahemi …
+eolMessageOne = Pas tre vjetësh dhe më shumë se 20 eksperimente, { -product } po ulet përgjithmonë.
+eolMessageTwo =
+    Me pjesëmarrjen dhe idetë tuaja bujare, i dhamë formë { -brand } me veçori të reja mahnitëse si
+    <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a>, dhe
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
+eolMessageThree =
+    Krijuam gjithashtu aplikacione të reja, të tilla si
+    <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> dhe
+    <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a>
+    të cilat vazhdojnë ta shpien { -brand } tej një shfletuesi. Ndiqini për zhvillime të reja gjatë 2019-s  që të dy projektet.
