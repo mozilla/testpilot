@@ -329,3 +329,17 @@ eolMessageThree =
     <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> dhe
     <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a>
     të cilat vazhdojnë ta shpien { -brand } tej një shfletuesi. Ndiqini për zhvillime të reja gjatë 2019-s  që të dy projektet.
+eolMessageFour =
+    Eksperimente të tjera si
+    <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>,
+    <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>,
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a>, dhe
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a>
+    do të mbeten të përdorshëm nga bashkësia { -brand }. Nëse i keni instaluar këto eksperimente, mund të vazhdoni t’i përdorni.
+eolMessageFive =
+    Ky
+    <a data-l10n-name="blogPostLink">postim blogu</a>
+    furnizon më tepër të dhëna të hollësishme se pse po mbyllet { -product }, dhe ç’do të sjellë e ardhmja.
+eolMessageClose = Faleminderit për fluturimin,
+eolMessageSignature = Ekipi i Pilotit të Testeve
