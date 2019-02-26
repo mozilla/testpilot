@@ -302,3 +302,44 @@ warningBadHostnameDetail = Test Pilot ვებსაიტი ხელმი�
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Test Pilot საჭიროებს JavaScript-ს. ვწუხვართ, ამის გამო.
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
+-exp-containers = Containers
+-exp-activity-stream = Activity Stream
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Wise
+eolTitle = ჩვენ მივდივართ...
+eolMessageOne = სამი წლისა და ოცზე მეტი საცდელი პროექტის შემდეგ, { -product } სამუდამოდ იხურება.
+eolMessageTwo =
+    თქვენი მხურვალე მონაწილეობითა და გამოხმაურებებით, ჩვენ გავამდიდრეთ { -brand } უამრავი ახალი შესაძლებლობით, როგორიცაა
+    <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a> და
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
+eolMessageThree =
+    ჩვენ ასევე შევქმენით ისეთი მშვენიერი აპლიკაციები, როგორებიცაა
+    <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> და
+    <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a>,
+    მათი დახმარებით კვლავ განვითარდება { -brand }. 2019 წელს ელოდეთ ამ პროექტების კიდევ უფრო მეტად გაუმჯობესებას.
+eolMessageFour =
+    დანარჩენი საცდელი პროექტები, როგორებიცაა
+    <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>,
+    <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>,
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a> და
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a>
+    დარჩება ხელმისაწვდომი { -brand }-ის ერთობაში. თუ უკვე გაქვთ ბრაუზერში დამატებული ეს შესაძლებლობები, შეგიძლიათ განაგრძოთ მათი გამოყენება.
+eolMessageFive =
+    მოცემულ
+    <a data-l10n-name="blogPostLink">სტატიაში ჩვენს სვეტზე</a>
+    იხილავთ დაწვრილებით ინფორმაციას, თუ რატომ იხურება { -product } და რა გველოდება მომავალში.
+eolMessageClose = გმადლობთ თქვენი ფრენისთვის,
+eolMessageSignature = Test Pilot-ის გუნდი

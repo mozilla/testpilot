@@ -318,9 +318,13 @@ jsDisabledWarning = Test Pilot vereist JavaScript. Sorry daarvoor.
 -exp-notes = Firefox Notes
 -exp-price-wise = Price Wise
 eolTitle = We gaan ervandoor…
-eolMessageOne = Na drie jaar en meer dan twintig experimenten, zal { -product } voorgoed landen.
+eolMessageOne = Na drie jaar en meer dan twintig experimenten zal { -product } voorgoed landen.
 eolMessageTwo = Met uw genereuze deelname en feedback hebben we { -brand } vormgegeven met verbazingwekkende nieuwe functies zoals <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>, <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a> en <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
-eolMessageThree = We hebben ook geweldige nieuwe app-belevingen zoals a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> en <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a> gebouwd die { -brand } voorbij de browser zullen blijven stuwen. Kijk uit naar spannende nieuwe ontwikkelingen van deze beide projecten in 2019.
+eolMessageThree =
+    We hebben ook geweldige nieuwe app-belevingen zoals
+    <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> en
+    <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a>
+    gebouwd die { -brand } voorbij de browser zullen blijven stuwen. Kijk uit naar spannende nieuwe ontwikkelingen van deze beide projecten in 2019.
 eolMessageFour = Andere experimenten zoals <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>, <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>, <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>, <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a> en <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a> blijven beschikbaar voor de { -brand }-gemeenschap. Als u deze experimenten hebt geïnstalleerd, kunt u ze blijven gebruiken.
 eolMessageFive =
     Dit

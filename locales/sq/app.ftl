@@ -302,3 +302,44 @@ warningBadHostnameDetail = Sajti Pilot Testesh mund të përdoret vetëm që nga
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Test Pilot lyp JavaScript. Na ndjeni për këtë.
+
+## eol strings
+
+-brand = Firefox
+-product = Pilot Testesh Firefox
+-exp-containers = Kontejner
+-exp-activity-stream = Rrjedhë Veprimtarie
+-exp-screenshots = Foto Ekrani Firefox
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Skeda Email-i
+-exp-notes = Shënime Firefox
+-exp-price-wise = Price Wise
+eolTitle = Erdhi ora të ndahemi …
+eolMessageOne = Pas tre vjetësh dhe më shumë se 20 eksperimente, { -product } po ulet përgjithmonë.
+eolMessageTwo =
+    Me pjesëmarrjen dhe idetë tuaja bujare, i dhamë formë { -brand } me veçori të reja mahnitëse si
+    <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a>, dhe
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
+eolMessageThree =
+    Krijuam gjithashtu aplikacione të reja, të tilla si
+    <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> dhe
+    <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a>
+    të cilat vazhdojnë ta shpien { -brand } tej një shfletuesi. Ndiqini për zhvillime të reja gjatë 2019-s  që të dy projektet.
+eolMessageFour =
+    Eksperimente të tjera si
+    <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>,
+    <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>,
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a>, dhe
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a>
+    do të mbeten të përdorshëm nga bashkësia { -brand }. Nëse i keni instaluar këto eksperimente, mund të vazhdoni t’i përdorni.
+eolMessageFive =
+    Ky
+    <a data-l10n-name="blogPostLink">postim blogu</a>
+    furnizon më tepër të dhëna të hollësishme se pse po mbyllet { -product }, dhe ç’do të sjellë e ardhmja.
+eolMessageClose = Faleminderit për fluturimin,
+eolMessageSignature = Ekipi i Pilotit të Testeve
