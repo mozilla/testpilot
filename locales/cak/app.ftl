@@ -51,8 +51,6 @@ landingInstallingButton = Tajin niyak...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Tiyak Test Pilot &amp;
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = Titzij { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -96,6 +94,7 @@ emailOptInDialogErrorTitle = ¡Mani'!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Tik'ul ri Chokoy
+mobileDialogIOSButton = Tak'ulu' ri iOS chokoy
 mobileDialogMessageIOS = Tiqasäx ri <b>{ $title }</b> pa ri iOS App Store.
 mobileDialogMessageAndroid = Tiqasäx ri <b>{ $title }</b> pa ri Google Play Store.
 mobileDialogInstructionsSMS = Tatz'ib'aj ri rajilab'al awoyonib'al o ri ataqoya'l richin nitaq jun ruximonel qasanem pan awoyonib'al:
@@ -110,7 +109,6 @@ mobileDialogSuccessSecondary = Tanik'oj ri awoyonib'al pan ataqoya'l.
 mobileDialogAnotherDeviceLink = Titaq pa jun chik okisab'äl
 mobileDialogError = Tatz'ib'aj jun okel taqoya'l:
 mobileDialogErrorSMS = Tatz'ib'aj jun okel rajilab'al oyonib'äl o taqoya'l:
-mobileDialogNoticeSMS = Ri SMS samaj xa xe okel pa jujun taq amaq'. Rik'in jub'a' nisamajïx kajil ri SMS o taq tzij. Ri nik'ulu ri taqoya'l o ri SMS k'o chi nikochin. { $learnMore }
 
 ## Featured experiment.
 
@@ -302,3 +300,19 @@ warningBadHostnameDetail = Ri ruxaq ruk'amaya'l Test Pilot tikirel nib'an okem c
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Ri Test Pilot nrajo' JavaScript. Kojakuyu'.
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
+-exp-containers = Taq k'ojlib'äl
+-exp-activity-stream = Ruk'isib'al Samaj
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Wise
+eolTitle = Yojb'e ...
