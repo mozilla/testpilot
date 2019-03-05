@@ -94,6 +94,7 @@ emailOptInDialogErrorTitle = ¡Mani'!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Tik'ul ri Chokoy
+mobileDialogAndroidButton = Tak'ulu' ri chokoy richin Android
 mobileDialogIOSButton = Tak'ulu' ri iOS chokoy
 mobileDialogMessageIOS = Tiqasäx ri <b>{ $title }</b> pa ri iOS App Store.
 mobileDialogMessageAndroid = Tiqasäx ri <b>{ $title }</b> pa ri Google Play Store.
@@ -109,6 +110,7 @@ mobileDialogSuccessSecondary = Tanik'oj ri awoyonib'al pan ataqoya'l.
 mobileDialogAnotherDeviceLink = Titaq pa jun chik okisab'äl
 mobileDialogError = Tatz'ib'aj jun okel taqoya'l:
 mobileDialogErrorSMS = Tatz'ib'aj jun okel rajilab'al oyonib'äl o taqoya'l:
+mobileDialogNoticeSMSWithLink = Ri SMS samaj xa xe okel pa jujun taq amaq'. Rik'in jub'a' nisamajïx kajil ri SMS o taq tzij. Ri nik'ulu ri taqoya'l o ri SMS k'o chi nikochin. <a>Tetamäx mas</a>.
 
 ## Featured experiment.
 
@@ -316,3 +318,14 @@ jsDisabledWarning = Ri Test Pilot nrajo' JavaScript. Kojakuyu'.
 -exp-notes = Firefox Notes
 -exp-price-wise = Price Wise
 eolTitle = Yojb'e ...
+eolMessageOne = Chi rij ri oxi' juna' chuqa' mas juk'al taq tojtob'enïk, { -product } jumul nik'is yan.
+eolMessageTwo =
+    Rik'in ri ato'ik chuqa' atzij, yeqatz'ük { -brand } rik'in jeb'ël k'ak'a' taq kib'anikil achi'el
+    <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a>, chuqa'
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
+eolMessageThree =
+    Chuqa' yeqatz'ük jeb'ël taq etamab'äl kik'in k'ak'a' taq chokoy achi'el
+    <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> chuqa'
+    <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a>
+    ri nik'ïy { -brand } chuwäch ri okik'amaya'l. Tawoyob'ej k'ak'a' taq kik'iyirisanik re ka'i' nuk'samaj re' pa 2019.
