@@ -329,3 +329,17 @@ eolMessageThree =
     <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> chuqa'
     <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a>
     ri nik'ïy { -brand } chuwäch ri okik'amaya'l. Tawoyob'ej k'ak'a' taq kik'iyirisanik re ka'i' nuk'samaj re' pa 2019.
+eolMessageFour =
+    Ch'aqa' chik taq tojtob'enïk achi'el
+    <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>,
+    <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>,
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a>, chuqa'
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a>
+    xtik'oje' pa kiq'a' ri { -brand } tinamït. We xe'ayäk re taq tojtob'enïk re', k'a yatikïr xke'awokisaj na.
+eolMessageFive =
+    Re
+    <a data-l10n-name="blogPostLink">rutzijol ichinya'l</a>
+    nuya' cholotäl etamab'äl chi rij achike ruma { -product } nik'is, chuqa' ri xtuk'äm pe ri chwa'q kab'ij.
+eolMessageClose = Matyox ruma yaxik'an qik'in,
+eolMessageSignature = Ri Rumolaj Test Pilot
