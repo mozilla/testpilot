@@ -15,6 +15,7 @@ activitystreamContributors9Title = Ruk'amöl B'ey Tikojil
 activitystreamContributors10Title = Ruk'amöl B'ey Nojk'ay
 activitystreamContributors11Title = Ajkema' Nojk'ayel
 activitystreamContributors12Title = Nab'ey UX Wachib'enel
+advanceDescription = Tatz'eta' akuchi' yaruk'waj ri ajk'amaya'l. Advance nuya' retal ri ajk'amaya'l ruxaq natz'ët chuqa' nuchilab'ej chawe ri jun chik nawajo' nasik'ij.
 cliqzDescription = Ke'akulu' ketal taq kanoxïk pan aninäq. Cliqz yeruk'üt pe taq chilab'enïk chuxe' ri rukajtz'ik URL toq yatz'ib'an. Chuqa' nuchajij ri awichinanem.
 cliqzIntroduction = Ke'ak'ulu' ketal taq kanoxïk pan aninäq pa okik'amaya'l. Katz'ib'an qa richin natz'etextayij taq ruchilab'exik ajk'amaya'l, chuxe' ri rajtz'ik ochochib'äl. Xa ri Cliqz man yerumöl ta taq tzij, ri nikiya' retal awetamab'al o kinuk'ik ruwäch kib'i' winäq, ri ye'awïl xa e'awichinan.
 cliqzPrivacypreamble = Ri Cliqz Test Pilot solna'oj xalüx ruma to'ïk chi kikojol ri Cliqz GmbH chuqa' Mozilla. Cliqz wachib'en richin nichajïx ri awichinanem chuqa' richin man kekimöl ri awetamab'al, ri tikirel ye'okisäx richin yenuk' ruwäch kib'i' winäq. Ruma ri', k'ayew chi re ruwäch etamab'äl re' xtewäx, rik'in ri' tikirel jujik niya' ketal ri winäq.
