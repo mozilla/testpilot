@@ -77,7 +77,7 @@ onboardingMessage = Colocámos um ícone na sua barra de ferramentas para que co
 ## Error message pages.
 
 errorHeading = Ops!
-errorMessage = Parece que partimos algo. <br>Talvez tente novamente mais tarde.
+errorMessage = Parece que partimos algo. <br> Talvez tente novamente mais tarde.
 # 404 is the HTTP standard response code for a page not found. This title is a
 # word play in English, being "Oh" both an exclamation and the pronunciation of
 # the number 0.
@@ -153,7 +153,7 @@ experimentPreFeedbackLinkCopy = Dê a sua opinião sobre a experiência { $title
 ## A splash shown on top of the experiment page when Test Pilot is not installed.
 
 experimentPromoHeader = Pronto para descolar?
-experimentPromoSubheader = Estamos a construir funcionalidades de última geração no Firefox. Instale o Test Pilot para experimentá-las!
+experimentPromoSubheader = Estamos a criar funcionalidades de última geração para o Firefox. Instale o Test Pilot para experimentá-las!
 
 ## The experiment detail page.
 
