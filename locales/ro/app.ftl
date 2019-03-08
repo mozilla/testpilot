@@ -252,7 +252,7 @@ incompatibleSubheader = Recomandăm <a>dezactivarea acestor suplimente</a> înai
 newsletterFormEmailPlaceholder =
     .placeholder = Adresa ta de e-mail aici
 newsletterFormDisclaimer = Îți vom trimite doar informații referitoare la Test Pilot.
-newsletterFormPrivacyNotice = Sunt de acord ca Mozilla să îmi prelucreze informațiile așa cum este explicat în <a>această Politică de confidențialitate</a>.
+newsletterFormPrivacyNotice = Sunt de acord ca Mozilla să îmi prelucreze informațiile, așa cum se explică în <a>această Politică de confidențialitate</a>.
 newsletterFormSubmitButton = Înregistrează-te acum
 newsletterFormSubmitButtonSubmitting = Se trimite...
 
