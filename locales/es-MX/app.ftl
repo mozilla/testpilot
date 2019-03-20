@@ -312,5 +312,5 @@ jsDisabledWarning = Test Pilot requiere JavaScript. Lo sentimos.
 -exp-color = Firefox Color
 -exp-email-tabs = Email Tabs
 -exp-notes = Firefox Notes
--exp-price-wise = Price Wise
+-exp-price-wise = Price Tracker
 eolMessageSignature = El equipo de Test Pilot
