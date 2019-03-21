@@ -313,7 +313,7 @@ jsDisabledWarning = 很抱歉，需要開啟 JavaScript 才能使用 Test Pilot�
 -exp-side-view = Side View
 -exp-email-tabs = Email Tabs
 -exp-notes = Firefox Notes
--exp-price-wise = Price Wise
+-exp-price-wise = Price Tracker
 eolTitle = 我們要離開了…
 eolMessageOne = 在過去三年中，我們推出超過 20 套實驗，{ -product } 已經平安落地，結束這段旅程。
 eolMessageTwo = 透過您慷慨地參與並提供意見回饋，我們打造出更多全新功能到 { -brand } 當中，例如 <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>、<a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a> 以及 <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>。

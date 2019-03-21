@@ -316,7 +316,7 @@ jsDisabledWarning = Test Pilot vereist JavaScript. Sorry daarvoor.
 -exp-side-view = Side View
 -exp-email-tabs = Email Tabs
 -exp-notes = Firefox Notes
--exp-price-wise = Price Wise
+-exp-price-wise = Price Tracker
 eolTitle = We gaan ervandoor…
 eolMessageOne = Na drie jaar en meer dan twintig experimenten zal { -product } voorgoed landen.
 eolMessageTwo = Met uw genereuze deelname en feedback hebben we { -brand } vormgegeven met verbazingwekkende nieuwe functies zoals <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>, <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a> en <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
