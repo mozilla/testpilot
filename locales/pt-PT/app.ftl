@@ -77,7 +77,7 @@ onboardingMessage = Colocámos um ícone na sua barra de ferramentas para que co
 ## Error message pages.
 
 errorHeading = Ops!
-errorMessage = Parece que partimos algo. <br>Talvez tente novamente mais tarde.
+errorMessage = Parece que partimos algo. <br> Talvez tente novamente mais tarde.
 # 404 is the HTTP standard response code for a page not found. This title is a
 # word play in English, being "Oh" both an exclamation and the pronunciation of
 # the number 0.
@@ -153,7 +153,7 @@ experimentPreFeedbackLinkCopy = Dê a sua opinião sobre a experiência { $title
 ## A splash shown on top of the experiment page when Test Pilot is not installed.
 
 experimentPromoHeader = Pronto para descolar?
-experimentPromoSubheader = Estamos a construir funcionalidades de última geração no Firefox. Instale o Test Pilot para experimentá-las!
+experimentPromoSubheader = Estamos a criar funcionalidades de última geração para o Firefox. Instale o Test Pilot para experimentá-las!
 
 ## The experiment detail page.
 
@@ -316,11 +316,11 @@ jsDisabledWarning = O Test Pilot requer JavaScript. Pedimos desculpa.
 -exp-side-view = Side View
 -exp-email-tabs = Email Tabs
 -exp-notes = Firefox Notes
--exp-price-wise = Price Wise
+-exp-price-wise = Price Tracker
 eolTitle = Lá vamos nós …
 eolMessageOne = Depois de três anos e mais de vinte experiências, o { -product } aterrou de vez.
 eolMessageTwo =
-    Com sua participação e feedback generosos, moldámos o { -brand } com incríveis novas funcionalidades, como
+    Com a sua participação e feedback generosos, moldámos o { -brand } com incríveis novas funcionalidades, como
     <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
     <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a> e
     <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.

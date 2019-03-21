@@ -315,4 +315,4 @@ jsDisabledWarning = Test Pilot を使うには JavaScript が必要です。申�
 -exp-side-view = Side View
 -exp-email-tabs = Email Tabs
 -exp-notes = Firefox Notes
--exp-price-wise = Price Wise
+-exp-price-wise = Price Tracker

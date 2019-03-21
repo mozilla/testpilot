@@ -16,6 +16,7 @@ activitystreamContributors10Title = Vedoucí inženýr
 activitystreamContributors11Title = Softwarový inženýr
 activitystreamContributors12Title = Senior UX designér
 advanceLegalnoticeWithlinks = Pokračováním souhlasíte s <terms-link>podmínkami</terms-link> a <privacy-link>zásadami ochrany osobních údajů</privacy-link> Test Pilotu a <modal-link>zásadami ochrany osobních údajů</modal-link>.
+advanceSubtitle = Powered by Laserlike
 cliqzDescription = Rychlejší výsledky vyhledávání. Cliqz zobrazuje návrhy už během psaní přímo pod adresním řádkem. Bez snížení nebo omezení vašeho soukromí.
 cliqzIntroduction = Rychlejší výsledky vyhledávání přímo v prohlížeči. Začněte psát a hned uvidíte návrhy výsledků přímo pod adresním řádkem. A protože Cliqz nesbírá osobní data, která by vás mohla identifikovat, ani nevytváří váš osobní profil, nijak neohrozí vaše soukromí.
 cliqzPrivacypreamble = Experiment Cliqz vám přinášíme ve spolupráci s Cliqz GmbH. Cliqz je navržen tak, aby chránil vaše soukromí a vyhnul se sběru citlivých informací, ale anonymizace podobných dat je obtížná a bohužel i přes veškeré snahy stále může být možné identifikovat jednotlivé uživatele.

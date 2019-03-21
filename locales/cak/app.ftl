@@ -51,8 +51,6 @@ landingInstallingButton = Tajin niyak...
 ## Related to a one click to install test pilot and an experiment.
 
 oneClickInstallMinorCta = Tiyak Test Pilot &amp;
-# $title is replaced by the name of an experiment
-oneClickInstallMajorCta = Titzij { $title }
 
 ## Homepage messaging for users not on Firefox or with an old version of Firefox.
 
@@ -96,6 +94,8 @@ emailOptInDialogErrorTitle = ¡Mani'!
 ## modal prompt for sending link to experiment mobile apps via email or sms
 
 mobileDialogTitle = Tik'ul ri Chokoy
+mobileDialogAndroidButton = Tak'ulu' ri chokoy richin Android
+mobileDialogIOSButton = Tak'ulu' ri iOS chokoy
 mobileDialogMessageIOS = Tiqasäx ri <b>{ $title }</b> pa ri iOS App Store.
 mobileDialogMessageAndroid = Tiqasäx ri <b>{ $title }</b> pa ri Google Play Store.
 mobileDialogInstructionsSMS = Tatz'ib'aj ri rajilab'al awoyonib'al o ri ataqoya'l richin nitaq jun ruximonel qasanem pan awoyonib'al:
@@ -110,7 +110,7 @@ mobileDialogSuccessSecondary = Tanik'oj ri awoyonib'al pan ataqoya'l.
 mobileDialogAnotherDeviceLink = Titaq pa jun chik okisab'äl
 mobileDialogError = Tatz'ib'aj jun okel taqoya'l:
 mobileDialogErrorSMS = Tatz'ib'aj jun okel rajilab'al oyonib'äl o taqoya'l:
-mobileDialogNoticeSMS = Ri SMS samaj xa xe okel pa jujun taq amaq'. Rik'in jub'a' nisamajïx kajil ri SMS o taq tzij. Ri nik'ulu ri taqoya'l o ri SMS k'o chi nikochin. { $learnMore }
+mobileDialogNoticeSMSWithLink = Ri SMS samaj xa xe okel pa jujun taq amaq'. Rik'in jub'a' nisamajïx kajil ri SMS o taq tzij. Ri nik'ulu ri taqoya'l o ri SMS k'o chi nikochin. <a>Tetamäx mas</a>.
 
 ## Featured experiment.
 
@@ -302,3 +302,44 @@ warningBadHostnameDetail = Ri ruxaq ruk'amaya'l Test Pilot tikirel nib'an okem c
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Ri Test Pilot nrajo' JavaScript. Kojakuyu'.
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
+-exp-containers = Taq k'ojlib'äl
+-exp-activity-stream = Ruk'isib'al Samaj
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Tracker
+eolTitle = Yojb'e ...
+eolMessageOne = Chi rij ri oxi' juna' chuqa' mas juk'al taq tojtob'enïk, { -product } jumul nik'is yan.
+eolMessageTwo =
+    Rik'in ri ato'ik chuqa' atzij, yeqatz'ük { -brand } rik'in jeb'ël k'ak'a' taq kib'anikil achi'el
+    <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a>, chuqa'
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
+eolMessageThree =
+    Chuqa' yeqatz'ük jeb'ël taq etamab'äl kik'in k'ak'a' taq chokoy achi'el
+    <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> chuqa'
+    <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a>
+    ri nik'ïy { -brand } chuwäch ri okik'amaya'l. Tawoyob'ej k'ak'a' taq kik'iyirisanik re ka'i' nuk'samaj re' pa 2019.
+eolMessageFour =
+    Ch'aqa' chik taq tojtob'enïk achi'el
+    <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>,
+    <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>,
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a>, chuqa'
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a>
+    xtik'oje' pa kiq'a' ri { -brand } tinamït. We xe'ayäk re taq tojtob'enïk re', k'a yatikïr xke'awokisaj na.
+eolMessageFive =
+    Re
+    <a data-l10n-name="blogPostLink">rutzijol ichinya'l</a>
+    nuya' cholotäl etamab'äl chi rij achike ruma { -product } nik'is, chuqa' ri xtuk'äm pe ri chwa'q kab'ij.
+eolMessageClose = Matyox ruma yaxik'an qik'in,
+eolMessageSignature = Ri Rumolaj Test Pilot

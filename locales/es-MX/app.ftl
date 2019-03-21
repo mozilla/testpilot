@@ -305,12 +305,16 @@ jsDisabledWarning = Test Pilot requiere JavaScript. Lo sentimos.
 
 ## eol strings
 
+-brand = Firefox
+-product = Firefox Test Pilot
 -exp-containers = Contenedores
+-exp-activity-stream = Activity Stream
 -exp-screenshots = Firefox Screenshots
 -exp-lockbox = Firefox Lockbox
 -exp-send = Firefox Send
 -exp-color = Firefox Color
 -exp-email-tabs = Email Tabs
 -exp-notes = Firefox Notes
--exp-price-wise = Price Wise
+-exp-price-wise = Price Tracker
+eolMessageClose = ¡Gracias por volar con nosotros!
 eolMessageSignature = El equipo de Test Pilot
