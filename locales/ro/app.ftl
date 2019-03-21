@@ -305,3 +305,4 @@ jsDisabledWarning = Test Pilot necesită JavaScript. Ne pare rău.
 
 ## eol strings
 
+-exp-containers = Containere
