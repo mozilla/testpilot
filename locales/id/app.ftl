@@ -311,3 +311,4 @@ jsDisabledWarning = Test Pilot memerlukan JavaScript. Maaf.
 -exp-lockbox = Firefox Lockbox
 -exp-send = Firefox Send
 -exp-color = Firefox Color
+-exp-notes = Firefox Notes
