@@ -300,3 +300,14 @@ warningBadHostnameDetail = Situs Test Pilot hanya bisa diakses melalui testpilot
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Test Pilot memerlukan JavaScript. Maaf.
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
+-exp-containers = Kontainer
+-exp-activity-stream = Aliran Kegiatan
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
