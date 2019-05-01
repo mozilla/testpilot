@@ -267,7 +267,7 @@ newsletterFooterSuccessBody = Dacă nu ai confirmat anterior o abonare la un bul
 ## A warning shown to users when the experiment is not available in their language
 
 localeNotTranslatedWarningTitle = Acest experiment nu a fost tradus în limba ta ({ $locale_code }).
-localeWarningSubtitle = Dar poți să o activezi dacă dorești.
+localeWarningSubtitle = Dar poți să o activezi dacă vrei.
 
 ## An alternate splash page shown to users who have had Test Pilot installed for some time, but have no experiments installed.
 
