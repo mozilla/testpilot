@@ -305,4 +305,41 @@ jsDisabledWarning = Test Pilot necesită JavaScript. Ne pare rău.
 
 ## eol strings
 
+-brand = Firefox
+-product = Firefox Test Pilot
 -exp-containers = Containere
+-exp-activity-stream = Activity Stream
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Tracker
+eolTitle = Și-am pornit ...
+eolMessageOne = După trei ani și peste douăzeci de experimente, { -product } aterizează definitiv.
+eolMessageTwo =
+    Mulțumită participării și feedback-urile voastre generoase, am dat formă { -brand } cu funcționalități uimitoare, precum
+    <a data-l10n-name="containersLink" title="{ -exp-containers }">{ -exp-containers }</a>,
+    <a data-l10n-name="activityStreamLink" title="{ -exp-activity-stream }">{ -exp-activity-stream }</a> și
+    <a data-l10n-name="screenshotsLink" title="{ -exp-screenshots }">{ -exp-screenshots }</a>.
+eolMessageThree =
+    Am creat și experimentat noi aplicații grozave, precum
+    <a data-l10n-name="lockboxLink" title="{ -exp-lockbox }">{ -exp-lockbox }</a> și
+    <a data-l10n-name="sendLink" title="{ -exp-send }">{ -exp-send }</a>
+    care continuă să împingă { -brand } dincolo de limitele unui browser. Așteptați-vă la dezvoltări noi și incitante de la aceste ambe proiecte în anul 2019.
+eolMessageFour =
+    Alte experimente, precum
+    <a data-l10n-name="colorLink" title={ -exp-color }>{ -exp-color }</a>,
+    <a data-l10n-name="sideViewLink" title={ -exp-side-view }>{ -exp-side-view }</a>,
+    <a data-l10n-name="notesLink" title={ -exp-notes }>{ -exp-notes }</a>,
+    <a data-l10n-name="priceWiseLink" title={ -exp-price-wise }>{ -exp-price-wise }</a> și
+    <a data-l10n-name="emailTabsLink" title={ -exp-email-tabs }>{ -exp-email-tabs }</a>
+    vor rămâne disponibile pentru comunitatea { -brand }. Dacă ați instalat aceste experimente, puteți continua să le utilizați.
+eolMessageFive =
+    Acest
+    <a data-l10n-name="blogPostLink">post pe blog</a>
+    oferă mai multe informații detaliate despre motivele pentru care { -product } este retras și ce va aduce viitorul.
+eolMessageClose = Vă mulțumim că zburați cu noi,
+eolMessageSignature = Echipa Test Pilot
