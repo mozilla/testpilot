@@ -138,7 +138,7 @@ experimentCardLearnMore = Află mai multe
 
 ## A modal prompt shown when a user disables an experiment.
 
-feedbackSubmitButton = Participă la un scurt sondaj
+feedbackSubmitButton = Participă la un sondaj rapid
 feedbackUninstallTitle = Îți mulțumim!
 feedbackUninstallCopy =
     Participarea ta în Firefox Test Pilot înseamnă
@@ -147,7 +147,7 @@ feedbackUninstallCopy =
 
 ## A modal prompt shown before the feedback survey for some experiments.
 
-experimentPreFeedbackTitle = feedback { $title }
+experimentPreFeedbackTitle = Feedback despre { $title }
 experimentPreFeedbackLinkCopy = Dă-ne feedback despre experimentul { $title }
 
 ## A splash shown on top of the experiment page when Test Pilot is not installed.
@@ -226,7 +226,7 @@ pageTitleRetirePage = Firefox Test Pilot - Dezinstalează Test Pilot
 retirePageProgressMessage = Se închide...
 retirePageHeadline = Mulțumim că ne-ai fost copilot!
 retirePageMessage = Sperăm că ți-au plăcut experimentele noastre. <br> Poți reveni oricând.
-retirePageSurveyButton = Participă la un sondaj scurt
+retirePageSurveyButton = Participă la un sondaj rapid
 
 ## Shown to users after installing Test Pilot if a restart is required.
 
