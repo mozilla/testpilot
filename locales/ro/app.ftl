@@ -40,7 +40,7 @@ headerLinkBlog = Blog
 landingIntroOne = Testează funcționalități noi.
 landingIntroTwo = Dă-ne feedback.
 landingIntroThree = Ajută la construirea Firefox.
-landingLegalNoticeWithLinks = Prin continuare, ești de acord cu <terms-link>Termenii de utilizare</terms-link> și <privacy-link>Politica de confidențialitate</privacy-link> Test Pilot.
+landingLegalNoticeWithLinks = Prin continuare, ești de acord cu <terms-link>Termenii de utilizare</terms-link> și <privacy-link>Declarația de confidențialitate</privacy-link> Test Pilot.
 landingMoreExperimentsButton = Mai multe experimente
 
 ## Related to the installation of the Test Pilot add-on.
@@ -252,7 +252,7 @@ incompatibleSubheader = Recomandăm <a>dezactivarea acestor suplimente</a> înai
 newsletterFormEmailPlaceholder =
     .placeholder = Adresa ta de e-mail aici
 newsletterFormDisclaimer = Îți vom trimite doar informații referitoare la Test Pilot.
-newsletterFormPrivacyNotice = Sunt de acord ca Mozilla să îmi gestioneze informațiile, conform explicațiilor din <a>această Politică de confidențialitate</a>.
+newsletterFormPrivacyNotice = Sunt de acord ca Mozilla să îmi gestioneze informațiile, conform explicațiilor din <a>această Declarație de confidențialitate</a>.
 newsletterFormSubmitButton = Înregistrează-te acum
 newsletterFormSubmitButtonSubmitting = Se trimite...
 
