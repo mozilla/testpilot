@@ -302,3 +302,19 @@ warningBadHostnameDetail = Asmel Test Pilot ur izmir ara ad yettwakcem deg testp
 ## This string does not appear in app, but we will use it to localize our `no script` message
 
 jsDisabledWarning = Test Pilot yesra JavaScript. Suref-aɣ.
+
+## eol strings
+
+-brand = Firefox
+-product = Firefox Test Pilot
+-exp-containers = Imagbaren
+-exp-activity-stream = Activity Stream
+-exp-screenshots = Firefox Screenshots
+-exp-lockbox = Firefox Lockbox
+-exp-send = Firefox Send
+-exp-color = Firefox Color
+-exp-side-view = Side View
+-exp-email-tabs = Email Tabs
+-exp-notes = Firefox Notes
+-exp-price-wise = Price Tracker
+eolTitle = Ad nṛuḥ...
